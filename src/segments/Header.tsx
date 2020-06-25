@@ -11,15 +11,7 @@ function Header({ badgeCount, bellPressedCB }) {
     <HeaderStyle>
       <ProfileContainer>
         <Logo src="epns.png" />
-      </ProfileContainer>
-      <UserControls>
-        <Bell
-          badgeCount={badgeCount}
-          bellPressedCB={bellPressedCB}
-          width={40}
-          height={40}
-        />
-      </UserControls>
+      </ProfileContainer> 
     </HeaderStyle>
   );
 }
