@@ -18,18 +18,13 @@ export default function() {
   )
 }
 
-function initializeGA() {
-  ReactGA.initialize('UA-165415629-2');
-  ReactGA.pageview('/homepage');
-}
-
 function App() {
   const [ badgeCount, setBadgeCount ] = React.useState(0);
   const [ bellPressed, setBellPressed ] = React.useState(0);
 
   // Initialize GA
-  ReactGA.initialize('UA-165415629-1');
-  ReactGA.pageview('/login');
+  ReactGA.initialize('UA-165415629-2');
+  ReactGA.pageview('/app');
 
   return (
       <>
