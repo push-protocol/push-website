@@ -1,7 +1,8 @@
 {
-  "name": "@project/react-app",
-  "version": "1.0.0",
-  "homepage": "https://app.epns.io",
+  "name": "EPNS Website",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://www.epns.io",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -58,6 +59,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
