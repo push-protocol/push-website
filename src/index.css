@@ -438,3 +438,17 @@ b {
 									   color-stop(0.72, #35b0f3),
 									   color-stop(0.86, #35a1f3));
 }
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  width: 100%;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

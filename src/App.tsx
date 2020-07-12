@@ -74,7 +74,7 @@ const ParentContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 80px 20px 20px 20px;
+  margin: 80px 0px 0px 0px;
   flex: 1;
 `
 
@@ -83,7 +83,8 @@ const HomeContainer = styled.div`
   flex: 1;
   align-self: center;
   width: 100%;
-  max-width: 940px;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const ProviderUpperContainer = styled.div`
