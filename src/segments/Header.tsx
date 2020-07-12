@@ -11,7 +11,7 @@ function Header({ badgeCount, bellPressedCB }) {
     <HeaderStyle>
       <ProfileContainer>
         <Logo src="epns.png" />
-      </ProfileContainer> 
+      </ProfileContainer>
     </HeaderStyle>
   );
 }
@@ -20,7 +20,7 @@ function Header({ badgeCount, bellPressedCB }) {
 const HeaderStyle = styled.div`
   height: 100%;
   padding: 10px 15px;
-  background: transparent;
+  background: #ffffffcc;
   display: flex;
   flex-direction: row;
   align-items: center;
