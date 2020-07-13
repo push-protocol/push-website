@@ -68,18 +68,45 @@ function Home({ setBadgeCount, bellPressed }) {
     if (validateEmail(formEmail)) {
       setProcessing(1);
 
+      const details = {
+        'name': formName,
+        'email': formEmail,
+        'list': 'YPwxHS892tH8Nhs13wzKqWbQ',
+        'api_key': 'TdzMcZVNTn1mjtAJHBpB',
+        'boolean': true
+      }
+
+      let formBody = [];
+      for (let property in details) {
+        let encodedKey = encodeURIComponent(property);
+        let encodedValue = encodeURIComponent(details[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
+      }
+      formBody = formBody.join("&");
+
       // POST request using fetch inside useEffect React hook
       const requestOptions = {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: formName, email: formEmail, list: 'HE6qwLuPWCQywjvYpIe0ow', api_key: 'FVIbWrpi4YVhgQFjydkN' })
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: formBody
       };
 
-      fetch('https://tools.epns.io/sendy/subscribe', requestOptions)
-        .then(response => response.json())
-        .then(data => {
-          setProcessing(2);
+      fetch('https://tools.epns.io/sendy/subscribe', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: formBody
         })
+        .then(response => response.json())
+        .then(jsondata => {
+            console.log(jsondata);
+            setProcessing(2);
+          })
         .catch(err => {
           console.log(err);
           setFormError("Mayday! Mayday! something went wrong. Please retry...");
