@@ -152,6 +152,7 @@ function Home({ setBadgeCount, bellPressed }) {
                   <FormSubmision onSubmit={handleSubmission}>
                     {processing == 0 &&
                       <>
+                        <FormTitle>Subscribe to our mailing list!</FormTitle>
                         <Row>
                           <Header>Name</Header>
                           <Input placeholder="John Wick" value={formName} onChange={(e) => {setFormName(e.target.value)}} autocomplete="name" />
@@ -409,6 +410,16 @@ const FooterSubFull = styled(FooterSubInner)`
 const Showoff = styled.div`
 `
 
+const FormTitle = styled.h2`
+  flex: 100%;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #674b9f;
+`
+
 const FormSubmision = styled.form`
   display: flex;
   align-items: center;
@@ -453,7 +464,7 @@ const Header = styled.label`
   left: 15px;
   padding: 2px 4px;
   font-weight: bold;
-  background: #fff;
+  background: #fafafa;
   color: #e1087f;
 `
 
