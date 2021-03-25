@@ -25,6 +25,9 @@ import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 
+import countdown from 'config/countdown';
+
+import TimerItem from 'components/TimerItem';
 import EPNSChannelItems from 'components/EPNSChannelItems';
 import Medium from 'components/Medium';
 import TeamMember from 'components/TeamMember';
@@ -237,14 +240,21 @@ function Home() {
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
+
                 <H1>Ethereum Push Notification Service</H1>
                 <Span margin="-25px 0 0 0"><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Subscribe. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Notify. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Earn.</Span></Span>
 
-                  <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform agnostic</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
+                <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform agnostic</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
+
+                {!countdown.hide &&
+                  <ItemH align="flex-start" justify="flex-start" margin="-10px 0px -10px 0px" size="0.8rem">
+                    <TimerItem />
+                  </ItemH>
+                }
 
                 <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
-                  <Anchor href="./LitepaperEthereumPushNotificationService.pdf" title="Read Litepaper of Ethereum Push Notification Service (EPNS)" target="_blank" bg="#674c9f" margin="10px" radius="4px">Read Litepaper</Anchor>
-                  <Anchor href="./#contact" title="Integrate Ethereum Push Notification Service Protocol (EPNS)" target="_blank" bg="#674c9f" margin="10px" radius="4px">Integrate</Anchor>
+                  <Anchor href="./LitepaperEthereumPushNotificationService.pdf" title="Read Litepaper of Ethereum Push Notification Service (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Read Litepaper</Anchor>
+                  <Anchor href="./#contact" title="Integrate Ethereum Push Notification Service Protocol (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Integrate</Anchor>
                 </ItemH>
 
               </Item>
@@ -302,6 +312,7 @@ function Home() {
 
                   return (
                     <Feature
+                      key={item.src}
                       title={`${item.title}`}
                       href={`${item.href}`}
                       bg={item.bg ? `${item.bg}` : null}
@@ -322,6 +333,7 @@ function Home() {
 
                   return (
                     <FeatureTabletOptional
+                      key={item.src}
                       title={`${item.title}`}
                       href={`${item.href}`}
                       bg={item.bg ? `${item.bg}` : null}
@@ -345,6 +357,7 @@ function Home() {
 
                       return (
                         <FeatureDesktopOptional
+                          key={item.src}
                           title={`${item.title}`}
                           href={`${item.href}`}
                           bg={item.bg ? `${item.bg}` : null}
@@ -1497,7 +1510,7 @@ function Home() {
                   const item = investorsList.vcs[key]
 
                   return (
-                    <Investor>
+                    <Investor key={item.src}>
                       <Anchor
                         title={`${item.title}`}
                         href={`${item.href}`}
@@ -1535,6 +1548,7 @@ function Home() {
                   return (
                     <Investor>
                       <Anchor
+                        key={item.src}
                         title={`${item.title}`}
                         href={`${item.href}`}
                         disabled={item.disabled}
@@ -1573,6 +1587,7 @@ function Home() {
                   return (
                     <Investor>
                       <Anchor
+                        key={item.src}
                         title={`${item.title}`}
                         href={`${item.href}`}
                         disabled={item.disabled}
