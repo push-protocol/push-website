@@ -29,6 +29,13 @@ import EPNSChannelItems from 'components/EPNSChannelItems';
 import Medium from 'components/Medium';
 import TeamMember from 'components/TeamMember';
 
+// Import lists
+import featuredList from 'config/featuredList';
+import partnersList from 'config/partnersList';
+// import teamList from 'config/teamList';
+// import advisorsList from 'config/advisorsList';
+import investorsList from 'config/investorsList';
+
 const randomTeamQuotes = [
   "ONE AMONG US DOESN'T LIKE FARMING 🙀😱",
   "ONE AMONG US HAS A CAT 🐈",
@@ -73,7 +80,6 @@ function Home() {
   const [contactFormError, setContactFormError] = React.useState('');
 
   React.useEffect(() => {
-
   });
 
   // Handle ANIMATIONS
@@ -290,230 +296,89 @@ function Home() {
                 </Item>
               </Feature>
 
-              <Feature
-                href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants/"
-                target="_blank"
-                title="Ethereum Push Notification featured on Official Ethereum Blog"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/esp.png" srcSet="./featured/esp@2x.png 2x, ./featured/esp@3x.png 3x" alt="Ethereum Support Program Logo" />
-                </Item>
-              </Feature>
+              {
+                Object.keys(featuredList.featured).map(function(key) {
+                  const item = featuredList.featured[key]
 
-              <Feature
-                href="https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users"
-                target="_blank"
-                title="Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/cointelegraph.png" srcSet="./featured/cointelegraph@2x.png 2x, ./featured/cointelegraph@3x.png 3x" alt="Coin Telegraph Logo" />
-                </Item>
-              </Feature>
+                  return (
+                    <Feature
+                      title={`${item.title}`}
+                      href={`${item.href}`}
+                      bg={item.bg ? `${item.bg}` : null}
+                      item={`${item.src}`}
+                      target="_blank"
+                    >
+                      <Item minWidth="auto">
+                        <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                      </Item>
+                    </Feature>
+                  )
+                })
+              }
 
-              <Feature
-                href="https://twitter.com/epnsproject/status/1299018919143849984?s=20"
-                target="_blank"
-                title="Ethereum Push Notification Service selected as top 20 project and unvelied at fireside"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/kernel.png" srcSet="./featured/kernel@2x.png 2x, ./featured/kernel@3x.png 3x" alt="Gitcoin Kernel Logo" />
-                </Item>
-              </Feature>
+              {
+                Object.keys(featuredList.featuredSecondary).map(function(key) {
+                  const item = featuredList.featuredSecondary[key]
 
-              <Feature
-                href="https://medium.com/@ideovc/hello-its-your-users-calling-7599c679e28d"
-                target="_blank"
-                title="IDEO Collab selected and mentored Ethereum Push Notification Service as 30 projects from 120 projects for Product Validation Day"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/ideo.png" srcSet="./featured/ideo@2x.png 2x, ./featured/ideo@3x.png 3x" alt="IDEO Collab Product Validation Day Logo" />
-                </Item>
-              </Feature>
-
-              <Feature
-                href="https://defiprime.com/ethereum-push-notification-service"
-                target="_blank"
-                title="Harsh Rajat, our founder talks about future of banking, EPNS protocol incentives and where is a business model for decentralized push notifications."
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/defiprime.png" srcSet="./featured/defiprime@2x.png 2x, ./featured/defiprime@3x.png 3x" alt="DeFiPrime Logo" />
-                </Item>
-              </Feature>
-
-              <Feature
-                href="https://blog.coinlist.co/introducing-the-coinlist-seed-fall-2020-batch/"
-                target="_blank"
-                title="Ethereum Push Notification Service graduates from CoinList Seed Batch 2020"
-                bg="#e20880"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/coinlist.png" srcSet="./featured/coinlist@2x.png 2x, ./featured/coinlist@3x.png 3x" alt="Coinlist Logo" />
-                </Item>
-              </Feature>
-
-              <FeatureTabletOptional
-                href="https://www.theblockcrypto.com/linked/86953/ethereum-notification-system-seed-funding"
-                target="_blank"
-                title="Balaji Srinivasan, Gitcoin co-founder back $750K seed round for decentralized notification system on Ethereum"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/theblock.png" srcSet="./featured/theblock@2x.png 2x, ./featured/theblock@3x.png 3x" alt="The Block Crypto Logo" />
-                </Item>
-              </FeatureTabletOptional>
-
-              <FeatureTabletOptional
-                href="https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be"
-                target="_blank"
-                title="Alex Saunders talks about EPNS on Nugget News"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/nuggetnews.png" srcSet="./featured/nuggetnews@2x.png 2x, ./featured/nuggetnews@3x.png 3x" alt="Nugget News Logo" />
-                </Item>
-              </FeatureTabletOptional>
-
-              <FeatureTabletOptional
-                href="https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications"
-                target="_blank"
-                title="Yourstory talks about EPNS and why blockchain push notifications are important"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/yourstory.png" srcSet="./featured/yourstory@2x.png 2x, ./featured/yourstory@3x.png 3x" alt="YourStory Logo" />
-                </Item>
-              </FeatureTabletOptional>
-
-              <FeatureTabletOptional
-                href="https://www.youtube.com/watch?v=4k159Kob0Cs"
-                target="_blank"
-                title="Anthony Sassano talks about Ethereum Push Notification Service (EPNS) Project on the DailyGWEI Channel"
-              >
-                <Item minWidth="auto">
-                  <FeatureImage src="./featured/dailygwei.png" srcSet="./featured/dailygwei@2x.png 2x, ./featured/dailygwei@3x.png 3x" alt="DailyGWEI Logo" />
-                </Item>
-              </FeatureTabletOptional>
+                  return (
+                    <FeatureTabletOptional
+                      title={`${item.title}`}
+                      href={`${item.href}`}
+                      bg={item.bg ? `${item.bg}` : null}
+                      item={`${item.src}`}
+                      target="_blank"
+                    >
+                      <Item minWidth="auto">
+                        <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                      </Item>
+                    </FeatureTabletOptional>
+                  )
+                })
+              }
 
               {featuredShowAll &&
                 <>
-                  <FeatureDesktopOptional
-                    href="https://www.theblockcrypto.com/linked/86953/ethereum-notification-system-seed-funding"
-                    target="_blank"
-                    title="Balaji Srinivasan, Gitcoin co-founder back $750K seed round for decentralized notification system on Ethereum"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/theblock.png" srcSet="./featured/theblock@2x.png 2x, ./featured/theblock@3x.png 3x" alt="The Block Crypto Logo" />
-                    </Item>
-                  </FeatureDesktopOptional>
 
-                  <FeatureDesktopOptional
-                    href="https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be"
-                    target="_blank"
-                    title="Alex Saunders talks about EPNS on Nugget News"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/nuggetnews.png" srcSet="./featured/nuggetnews@2x.png 2x, ./featured/nuggetnews@3x.png 3x" alt="Nugget News Logo" />
-                    </Item>
-                  </FeatureDesktopOptional>
+                  {
+                    Object.keys(featuredList.featuredSecondary).map(function(key) {
+                      const item = featuredList.featuredSecondary[key]
 
-                  <FeatureDesktopOptional
-                    href="https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications"
-                    target="_blank"
-                    title="Yourstory talks about EPNS and why blockchain push notifications are important"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/yourstory.png" srcSet="./featured/yourstory@2x.png 2x, ./featured/yourstory@3x.png 3x" alt="YourStory Logo" />
-                    </Item>
-                  </FeatureDesktopOptional>
+                      return (
+                        <FeatureDesktopOptional
+                          title={`${item.title}`}
+                          href={`${item.href}`}
+                          bg={item.bg ? `${item.bg}` : null}
+                          item={`${item.src}`}
+                          target="_blank"
+                        >
+                          <Item minWidth="auto">
+                            <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                          </Item>
+                        </FeatureDesktopOptional>
+                      )
+                    })
+                  }
 
-                  <FeatureDesktopOptional
-                    href="https://www.youtube.com/watch?v=4k159Kob0Cs"
-                    target="_blank"
-                    title="Anthony Sassano talks about Ethereum Push Notification Service (EPNS) Project on the DailyGWEI Channel"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/dailygwei.png" srcSet="./featured/dailygwei@2x.png 2x, ./featured/dailygwei@3x.png 3x" alt="DailyGWEI Logo" />
-                    </Item>
-                  </FeatureDesktopOptional>
+                  {
+                    Object.keys(featuredList.drilldown).map(function(key) {
+                      const item = featuredList.drilldown[key]
 
-                  <Feature
-                    href="https://podcast.ethhub.io/ethhub-weekly-119-yield-farming-defi-valuations-on-the-rise-eths-value-prop-epns-introduced-consensys-staking-as-a-service-reddits-scaling-ethereum-challenge-and-matter-labs-zk-sync"
-                    target="_blank"
-                    title="Anthony Sassano talks about Ethereum Push Notification Service (EPNS) Project on ETHHub"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/ethhub.png" srcSet="./featured/ethhub@2x.png 2x, ./featured/ethhub@3x.png 3x" alt="EthHub Logo" />
-                    </Item>
-                  </Feature>
+                      return (
+                        <Feature
+                          title={`${item.title}`}
+                          href={`${item.href}`}
+                          bg={item.bg ? `${item.bg}` : null}
+                          item={`${item.src}`}
+                          target="_blank"
+                        >
+                          <Item minWidth="auto">
+                            <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                          </Item>
+                        </Feature>
+                      )
+                    })
+                  }
 
-                  <Feature
-                    href="https://twitter.com/DeFi_Dad/status/1297544923219189760?s=20"
-                    target="_blank"
-                    title="DeFi Dad upcoming podcast about EPNS"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/defidad.png" srcSet="./featured/defidad@2x.png 2x, ./featured/defidad@3x.png 3x" alt="DeFi Dad Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://www.edcon.io/#maodian"
-                    target="_blank"
-                    title="EDCON Panel featuring Harsh Rajat, founder, EPNS talks about DeFi Cross Composability"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/edcon.png" srcSet="./featured/edcon@2x.png 2x, ./featured/edcon@3x.png 3x" alt="Edcon Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://inc42.com/buzz/cryptocurrency-this-week-wazirx-talks-defi-indias-crypto-ban-more/"
-                    target="_blank"
-                    title="INC42 talks about epnsproject and how dApps can benefit from it"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/inc42.png" srcSet="./featured/inc42@2x.png 2x, ./featured/inc42@3x.png 3x" alt="INC42 Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://medium.com/paradigm-fund/ethereum-biweekly-vol-46-ecosystem-and-projects-updates-development-tools-and-research-articles-c2732e1502aa"
-                    target="_blank"
-                    title="Paradigm features epnsproject"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/paradigm.png" srcSet="./featured/paradigm@2x.png 2x, ./featured/paradigm@3x.png 3x" alt="Paradigm Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://defipulse.com/defi-list"
-                    target="_blank"
-                    title="DefiPulse includes epnsproject in their esteemed list!"
-                    bg="#e20880"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/defipulse.png" srcSet="./featured/defipulse@2x.png 2x, ./featured/defipulse@3x.png 3x" alt="DefiPulse Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://cryptodose.co/ethereum-based-web3-push-notifications-service-epns-raises-750k-seed/"
-                    target="_blank"
-                    title="CryptoDose covers EPNS Seed Round"
-                    bg="#e20880"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/cryptodose.png" srcSet="./featured/cryptodose@2x.png 2x, ./featured/cryptodose@3x.png 3x" alt="CryptoDose Logo" />
-                    </Item>
-                  </Feature>
-
-                  <Feature
-                    href="https://mojkripto.com/ethereum-push-notification-service-epns-interview/?lang=en"
-                    target="_blank"
-                    title="MojKripto deep dives into Ethereum Push Notification Service and the team behind it!"
-                  >
-                    <Item minWidth="auto">
-                      <FeatureImage src="./featured/mojkripto.png" srcSet="./featured/mojkripto@2x.png 2x, ./featured/mojkripto@3x.png 3x" alt="MojKripto Logo"/>
-                    </Item>
-                  </Feature>
                 </>
               }
 
@@ -1061,125 +926,69 @@ function Home() {
             </Item>
 
             <ItemH margin="0px -20px 20px -20px" rowGap="40px" columnGap="40px" align="stretch" justify="space-around">
-              {/*
-              <Partner margin="20px" minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://medium.com/"
-                  target="_blank"
-                  title="Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service"
-                  bg="#fff"
-                  hover="#eee"
-                  radius="12px"
-                  align="stretch"
-                >
-                  <Item>
-                    <Item margin="30px 60px" maxWidth="320px">
-                      <Image
-                        src="./partners/unstoppable.png"
-                        srcSet="./partners/unstoppable@2x.png 2x, ./partnerspartners/unstoppable@3x.png 3x"
-                        alt="UnstoppableDomains Logo"
-                      />
-                    </Item>
-                    <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">EPNS Collaborates with Unstoppable Domains</Span>
-                  </Item>
-                </Anchor>
-              </Partner>
-              */}
+              {
+                Object.keys(partnersList.featured).map(function(key) {
+                  const item = partnersList.featured[key]
 
-              <Partner margin="20px" minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://medium.com/ethereum-push-notification-service/epns-awarded-aave-grant-cc618dd48915"
-                  target="_blank"
-                  title="Article talking Ethereum Push Notification Service winning grant from AAVE"
-                  bg="#fff"
-                  hover="#000"
-                  radius="12px"
-                  align="stretch"
-                >
-                  <Item>
-                    <Item margin="30px 60px" maxWidth="320px">
-                      <Image
-                        src="./partners/aave.png"
-                        srcSet="./partners/aave@2x.png 2x, ./partners/aave@3x.png 3x"
-                        alt="AAVE Logo"
-                      />
-                    </Item>
-                    <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">EPNS wins Grant from AAVE 👻</Span>
-                  </Item>
-                </Anchor>
-              </Partner>
+                  return (
+                    <Partner margin="20px" minWidth="280px" key={item.src}>
+                      <Anchor
+                        href={`${item.href}`}
+                        target="_blank"
+                        title={`${item.title}`}
+                        bg="#fff"
+                        hover={`${item.hover}`}
+                        radius="12px"
+                        align="stretch"
+                      >
+                        <Item>
+                          <Item margin="30px 60px" maxWidth="320px">
+                            <Image
+                              src={`./partners/${item.src}.png`}
+                              srcSet={`./partners/${item.src}@2x.png 2x, ./partners/${item.src}@3x.png 3x`}
+                              alt={`${item.alt}`}
+                            />
+                          </Item>
+                          <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">{item.display}</Span>
+                        </Item>
+                      </Anchor>
+                    </Partner>
+                  )
+                })
+              }
 
-              <Partner margin="20px" minWidth="280px">
-                <Anchor
-                  href="https://medium.com/ethereum-push-notification-service/epns-secures-partnership-with-matic-along-with-a-sweet-grant-b956a85c3151"
-                  target="_blank"
-                  title="Article talking about winning Grant and Partnership with Matic"
-                  bg="#fff"
-                  hover="#000"
-                  radius="12px"
-                  align="stretch"
-                >
-                  <Item>
-                    <Item margin="30px 60px" maxWidth="320px">
-                      <Image
-                        src="./partners/matic.png"
-                        srcSet="./partners/matic@2x.png 2x, ./partners/matic@3x.png 3x"
-                        alt="Matic Logo"
-                      />
-                    </Item>
-                    <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">EPNS Wins Grants / Partners with Matic</Span>
-                  </Item>
-                </Anchor>
-              </Partner>
-
-              {/* Future Ones
               {partnersShowAll &&
                 <>
-                  <Partner margin="20px" align="stretch">
-                    <Anchor
-                      href="https://medium.com/"
-                      target="_blank"
-                      title="Article talking about Uniswap and Ethereuem Push Notificaion Service Partnership"
-                      bg="#fff"
-                      hover="#000"
-                      radius="12px"
-                      align="stretch"
-                    >
-                      <Item>
-                        <Item margin="30px 60px" maxWidth="320px" align="stretch">
-                          <Image
-                            src="./partners/uniswap.png"
-                            srcSet="./partners/uniswap@2x.png 2x, ./partners/uniswap@3x.png 3x"
-                            alt="Uniswap Logo"
-                          />
-                        </Item>
-                        <Span bg="#000" color="#fff" margin="20px 0px" padding="12px">Uniswap will integrate EPNS Protocol</Span>
-                      </Item>
-                    </Anchor>
-                  </Partner>
+                  {
+                    Object.keys(partnersList.drilldown).map(function(key) {
+                      const item = partnersList.drilldown[key]
 
-                  <Partner margin="20px" minWidth="280px" align="stretch">
-                    <Anchor
-                      href="https://medium.com/"
-                      target="_blank"
-                      title="Article talking about how Gitcoin will be integrating EPNS Protocol"
-                      bg="#fff"
-                      hover="#eee"
-                      radius="12px"
-                      align="stretch"
-                    >
-                      <Item>
-                        <Item margin="30px 60px" maxWidth="320px">
-                          <Image
-                            src="./partners/gitcoin.png"
-                            srcSet="./partners/gitcoin@2x.png 2x, ./partners/gitcoin@3x.png 3x"
-                            alt="Gitcoin Logo"
-                          />
-                        </Item>
-                        <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">EPNS ❤️ Gitcoin</Span>
-                      </Item>
-                    </Anchor>
-                  </Partner>
+                      return (
+                        <Partner margin="20px" minWidth="280px">
+                          <Anchor
+                            title={`${item.title}`}
+                            href={`${item.href}`}
+                            hover={`${item.hover}`}
+                            target="_blank"
+                            bg="#fff"
+                            radius="12px"
+                            align="stretch"
+                          >
+                            <Item>
+                              <Item margin="30px 60px" maxWidth="320px">
+                                <Image
+                                  src={`./partners/${item.src}.png`}
+                                  srcSet={`./partners/${item.src}@2x.png 2x, ./partners/${item.src}@3x.png 3x`}
+                                  alt={`${item.alt}`}
+                                />
+                              </Item>
+                              <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">${item.display}</Span>
+                            </Item>
+                          </Anchor>
+                        </Partner>
+                      )
+                    })
+                  }
                 </>
               }
 
@@ -1207,7 +1016,6 @@ function Home() {
                   </ItemH>
                 </Anchor>
               </Partner>
-              */}
             </ItemH>
           </Item>
         </Content>
@@ -1336,16 +1144,6 @@ function Home() {
                 email="mailto://jaf@epns.io"
               />
               <TeamMember
-                img="./team/andrew.jpg"
-                srcSet="./team/andrew@2x.jpg 2x, ./team/andrew@3x.jpg 3x"
-                type={4}
-                name="Andrew Redden"
-                title="Protocol / Bizdev Lead"
-                twitter="https://twitter.com/androolloyd"
-                linkedin="https://www.linkedin.com/in/androolloyd/"
-                email="mailto://andrew@epns.io"
-              />
-              <TeamMember
                 img="./team/everett.jpg"
                 srcSet="./team/everett@2x.jpg 2x, ./team/everett@3x.jpg 3x"
                 type={4}
@@ -1354,19 +1152,6 @@ function Home() {
                 twitter="https://twitter.com/everett_muzzy"
                 linkedin="https://www.linkedin.com/in/everett-muzzy/"
               />
-              {/*
-              <TeamMember
-                img="./team/awosika.jpg"
-                srcSet="./team/awosika@2x.png 2x, ./team/awosika@3x.png 3x"
-                type={4}
-                name="Awosika Ayodeji"
-                title="Community Lead"
-                twitter="https://twitter.com/Ebunayo08"
-                linkedin="https://www.linkedin.com/in/ayodeji-israel-awosika-69924124/"
-                email="mailto://ayodeji@epns.io"
-              />
-              */}
-
               <TeamMember
                 img="./team/keyur.jpg"
                 srcSet="./team/keyur@2x.jpg 2x, ./team/keyur@3x.jpg 3x"
@@ -1377,12 +1162,30 @@ function Home() {
                 linkedin="https://www.linkedin.com/in/keyur-shah-551b31b3"
               />
               <TeamMember
+                img="./team/andrew.jpg"
+                srcSet="./team/andrew@2x.jpg 2x, ./team/andrew@3x.jpg 3x"
+                type={4}
+                name="Andrew Redden"
+                title="Developer"
+                twitter="https://twitter.com/androolloyd"
+                linkedin="https://www.linkedin.com/in/androolloyd/"
+                email="mailto://andrew@epns.io"
+              />
+              <TeamMember
                 img="./team/jude.jpg"
                 srcSet="./team/jude@2x.jpg 2x, ./team/jude@3x.jpg 3x"
                 type={5}
                 name="Jude Dike"
                 title="Developer"
                 linkedin="https://www.linkedin.com/in/dikejudein/"
+              />
+              <TeamMember
+                img="./team/aishwarya.jpg"
+                srcSet="./team/aishwarya@2x.jpg 2x, ./team/aishwarya@3x.jpg 3x"
+                type={5}
+                name="Aishwarya Walter"
+                title="Developer"
+                linkedin="https://www.linkedin.com/in/aiswaryawalter/"
               />
               <TeamMember
                 img="./team/victor.jpg"
@@ -1393,19 +1196,11 @@ function Home() {
                 linkedin="https://www.linkedin.com/in/victor-nwagbogwu/"
               />
               <TeamMember
-                img="./team/aishwarya.jpg"
-                srcSet="./team/aishwarya@2x.jpg 2x, ./team/aishwarya@3x.jpg 3x"
-                type={5}
-                name="Aishwarya Walter"
-                title="Developer (Intern)"
-                linkedin="https://www.linkedin.com/in/aiswaryawalter/"
-              />
-              <TeamMember
                 img="./team/robin.jpg"
                 srcSet="./team/robin@2x.jpg 2x, ./team/robin@3x.jpg 3x"
                 type={5}
                 name="Robin Roy Thomas"
-                title="Content Writer (Intern)"
+                title="Content Writer"
                 twitter="https://twitter.com/robin_rrtx"
                 linkedin="https://www.linkedin.com/in/robin-roy-thomas-597974198/"
               />
@@ -1697,643 +1492,113 @@ function Home() {
 
             <VCs margin="0px -10px 20px -10px"s align="stretch" justify="center">
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://www.thelao.io/"
-                  target="_blank"
-                  title="Learn about our Investor - TheLAO"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/thelao.png"
-                        srcSet="./investors/thelao@2x.png 2x, ./investors/thelao@3x.png 3x"
-                        alt="Logo of The LAO, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+              {
+                Object.keys(investorsList.vcs).map(function(key) {
+                  const item = investorsList.vcs[key]
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://www.metacartel.org/"
-                  target="_blank"
-                  title="Learn about our Investor - Meta Cartel"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/metacartel.png"
-                        srcSet="./investors/metacartel@2x.png 2x, ./investors/metacartel@3x.png 3x"
-                        alt="Logo of Meta Cartel, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://fourthrevolution.capital/"
-                  target="_blank"
-                  title="Learn about our Investor - Fourth Revolution Capital"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/fourthrevolution.png"
-                        srcSet="./investors/fourthrevolution@2x.png 2x, ./investors/fourthrevolution@3x.png 3x"
-                        alt="Logo of Fourth Revolution Capital, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://br.capital/"
-                  target="_blank"
-                  title="Learn about our Investor - BR Capital"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/brcapital.png"
-                        srcSet="./investors/brcapital@2x.png 2x, ./investors/brcapital@3x.png 3x"
-                        alt="Logo of BR Capital, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://ldcap.com"
-                  target="_blank"
-                  title="Learn about our Investor - LD Capital"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/ldcapital.png"
-                        srcSet="./investors/ldcapital@2x.png 2x, ./investors/ldcapital@3x.png 3x"
-                        alt="Logo of LD Capital, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://d64.vc/"
-                  target="_blank"
-                  title="Learn about our Investor - ProofSystems"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/proofsystems_d64.png"
-                        srcSet="./investors/proofsystems_d64@2x.png 2x, ./investors/proofsystems_d64@3x.png 3x"
-                        alt="Logo of D64 Ventures, VC Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://moonwhale.io"
-                  target="_blank"
-                  title="Learn about our Investor - Moonwhale"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="20px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/moonwhale.png"
-                        srcSet="./investors/moonwhale@2x.png 2x, ./investors/moonwhale@3x.png 3x"
-                        alt="Logo of Moonwhale, Crypto Fund"
-                      />
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+                  return (
+                    <Investor>
+                      <Anchor
+                        title={`${item.title}`}
+                        href={`${item.href}`}
+                        disabled={item.disabled}
+                        target="_blank"
+                        bg="#fff"
+                        hoverBG="transparent"
+                        radius="12px"
+                        align="stretch"
+                        margin="10px"
+                      >
+                        <Item>
+                          <Item>
+                            <Image
+                              src={`./investors/${item.src}.png`}
+                              srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
+                              alt={`${item.alt}`}
+                            />
+                          </Item>
+                        </Item>
+                      </Anchor>
+                    </Investor>
+                  )
+                })
+              }
 
             </VCs>
 
             <Angels margin="0px -10px 20px -10px" align="stretch" justify="center">
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://balajis.com/"
-                  target="_blank"
-                  title="Learn about our Investor - Balaji S. Srinivasan, Serial Entreprenuer"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/balaji.png"
-                        srcSet="./investors/balaji@2x.png 2x, ./investors/balaji@3x.png 3x"
-                        alt="Sketch of Investor - Balaji S. Srinivasan, Serial Entrepreneur"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Balaji S. Srinivasan</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Serial Entrepreneur</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+              {
+                Object.keys(investorsList.angels).map(function(key) {
+                  const item = investorsList.angels[key]
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/nkennethk"
-                  target="_blank"
-                  title="Learn about our Investor - Kenneth Ng, Ethereum Foundation"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/ken.png"
-                        srcSet="./investors/ken@2x.png 2x, ./investors/ken@3x.png 3x"
-                        alt="Sketch of Investor - Kenneth Ng, Ethereum Foundation"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Kenneth Ng</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Ethereum Foundation</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+                  return (
+                    <Investor>
+                      <Anchor
+                        title={`${item.title}`}
+                        href={`${item.href}`}
+                        disabled={item.disabled}
+                        target="_blank"
+                        bg="#fff"
+                        hoverBG="transparent"
+                        radius="12px"
+                        align="stretch"
+                        margin="10px"
+                      >
+                        <Item>
+                          <Item>
+                            <Image
+                              src={`./investors/${item.src}.png`}
+                              srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
+                              alt={`${item.alt}`}
+                            />
+                          <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
+                            <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
+                          </Item>
+                        </Item>
+                      </Anchor>
+                    </Investor>
+                  )
+                })
+              }
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/nanexcool"
-                  target="_blank"
-                  title="Learn about our Investor - Mariano Conti"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/mariano.png"
-                        srcSet="./investors/mariano@2x.png 2x, ./investors/mariano@3x.png 3x"
-                        alt="Sketch of Investor - Mariano Conti"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Mariano Conti</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Awesome Guy</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/notscottmoore"
-                  target="_blank"
-                  title="Learn about our Investor - Scott Moore, Co-Founder, Gitcoin"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/scott.png"
-                        srcSet="./investors/scott@2x.png 2x, ./investors/scott@3x.png 3x"
-                        alt="Sketch of Investor - Scott Moore, Co-Founder, Gitcoin"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Scott Moore</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Co-Founder, Gitcoin</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/iam_preethi"
-                  target="_blank"
-                  title="Learn about our Investor - Preethi Kasireddy, Entrepreneur"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/preethi.png"
-                        srcSet="./investors/preethi@2x.png 2x, ./investors/preethi@3x.png 3x"
-                        alt="Sketch of Investor - Preethi Kasireddy, Entrepreneur"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Preethi Kasireddy</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Writer / Entrepreneur</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/sassal0x"
-                  target="_blank"
-                  title="Learn about our Investor - Anthony Sassano, EthHub"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/anthony.png"
-                        srcSet="./investors/anthony@2x.png 2x, ./investors/anthony@3x.png 3x"
-                        alt="Sketch of Investor - Anthony Sassano, EthHub"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Anthony Sassano</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">EthHub / DailyGWEI</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/DeFi_Dad"
-                  target="_blank"
-                  title="Learn about our Investor - DeFiDad, COO, Zapper.Fi"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/defidadinv.png"
-                        srcSet="./investors/defidadinv@2x.png 2x, ./investors/defidadinv@3x.png 3x"
-                        alt="Sketch of Investor - DeFiDad, COO, Zapper.Fi"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">DeFi Dad</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">All Things DeFi</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/ravidsrk"
-                  target="_blank"
-                  title="Learn about our Investor - Ravindra Kumar, Founder, Frontier Wallet"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/ravindra.png"
-                        srcSet="./investors/ravindra@2x.png 2x, ./investors/ravindra@3x.png 3x"
-                        alt="Sketch of Investor - Ravindra Kumar, Founder, Frontier Wallet"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Ravindra Kumar</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Founder, Frontier Wallet</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
             </Angels>
 
             <AngelsOptional margin="-10px">
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/Beler"
-                  target="_blank"
-                  title="Learn about our Investor - Luka Sukik, Entreprenuer"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/lukasukik.png"
-                        srcSet="./investors/lukasukik@2x.png 2x, ./investors/lukasukik@3x.png 3x"
-                        alt="Sketch of Investor - Luka Sukik, Entrepreneur"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Luka Sučić</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Entrepreneur</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://br.capital/#team"
-                  target="_blank"
-                  title="Learn about our Investor - Rezo Shmertz, CEO, BR Capital"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/rezo.png"
-                        srcSet="./investors/rezo@2x.png 2x, ./investors/rezo@3x.png 3x"
-                        alt="Sketch of Investor - Rezo, CEO, BR Capital"
-                      />
-                    <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Rezo Shmertz</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">CEO, BR Capital</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+              {
+                Object.keys(investorsList.angelsoptional).map(function(key) {
+                  const item = investorsList.angelsoptional[key]
 
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://br.capital/#team"
-                  target="_blank"
-                  title="Learn about our Investor - Evgeny Zandman, Angel Investor"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/evgeny.png"
-                        srcSet="./investors/evgeny@2x.png 2x, ./investors/evgeny@3x.png 3x"
-                        alt="Sketch of Investor - Evgeny Zandman, Angel Investor"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Evgeny Zandman</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Angel Investor</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/benlakoff"
-                  target="_blank"
-                  title="Learn about our Investor - Ben Lakoff, Entrepreneur"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/ben.png"
-                        srcSet="./investors/ben@2x.png 2x, ./investors/ben@3x.png 3x"
-                        alt="Sketch of Investor - Ben Lakoff, Entrepreneur"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Ben Lakoff</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Entreprenuer</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/auryn_macmillan"
-                  target="_blank"
-                  title="Learn about our Investor - Auryn Macmillan, Gnosis"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/auryn.png"
-                        srcSet="./investors/auryn@2x.png 2x, ./investors/auryn@3x.png 3x"
-                        alt="Sketch of Investor - Auryn Macmillan, Gnosis"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Auryn Macmillan</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Gnosis</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://www.linkedin.com/in/dannychrist/"
-                  target="_blank"
-                  title="Learn about our Investor - Danny J.C., Angel Investor"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/danny.png"
-                        srcSet="./investors/danny@2x.png 2x, ./investors/danny@3x.png 3x"
-                        alt="Sketch of Investor - Danny J.C., Angel Investor"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Danny J. C.</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Angel Investor</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://www.linkedin.com/in/acschen/"
-                  disabled={true}
-                  target="_blank"
-                  title="Learn about our Investor -  Andrew Chen, Entrepreneur"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/andrew.png"
-                        srcSet="./investors/andrew@2x.png 2x, ./investors/andrew@3x.png 3x"
-                        alt="Sketch of Investor - Andrew Chen, Entrepreneur"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Andrew Chen</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Entrepreneur</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="#"
-                  disabled={true}
-                  target="_blank"
-                  title="Learn about our Investor -  Thomas Kaseng AO, Angel Investor"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/thomas.png"
-                        srcSet="./investors/thomas@2x.png 2x, ./investors/thomas@3x.png 3x"
-                        alt="Sketch of Investor - Thomas Kaseng AO, Angel Investor"
-                      />
-                    <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Thomas Kaseng AO</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Angel Investor</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="#"
-                  disabled={true}
-                  target="_blank"
-                  title="Learn about our Investor -  Kartik Garg, Angel Investor"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/karthik.png"
-                        srcSet="./investors/karthik@2x.png 2x, ./investors/karthik@3x.png 3x"
-                        alt="Sketch of Investor - Karthik Garg, Angel Investor"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Kartik Garg</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Angel Investor</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
-
-              <Investor minWidth="280px" align="stretch">
-                <Anchor
-                  href="https://twitter.com/ganeshram_g"
-                  target="_blank"
-                  title="Learn about our Investor -  Ganeshram Gunalan, Angel Investor"
-                  bg="#fff"
-                  hoverBG="transparent"
-                  radius="12px"
-                  align="stretch"
-                  margin="10px"
-                  padding="10px"
-                >
-                  <Item>
-                    <Item>
-                      <Image
-                        src="./investors/ganeshram.png"
-                        srcSet="./investors/ganeshram@2x.png 2x, ./investors/ganeshram@3x.png 3x"
-                        alt="Sketch of Investor - Ganeshram Gunalan, Angel Investor"
-                      />
-                      <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">Ganeshram Gunalan</Span>
-                      <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">Angel Investor</AngelJob>
-                    </Item>
-                  </Item>
-                </Anchor>
-              </Investor>
+                  return (
+                    <Investor>
+                      <Anchor
+                        title={`${item.title}`}
+                        href={`${item.href}`}
+                        disabled={item.disabled}
+                        target="_blank"
+                        bg="#fff"
+                        hoverBG="transparent"
+                        radius="12px"
+                        align="stretch"
+                        margin="10px"
+                      >
+                        <Item>
+                          <Item>
+                            <Image
+                              src={`./investors/${item.src}.png`}
+                              srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
+                              alt={`${item.alt}`}
+                            />
+                          <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
+                            <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
+                          </Item>
+                        </Item>
+                      </Anchor>
+                    </Investor>
+                  )
+                })
+              }
 
             </AngelsOptional>
 
