@@ -254,7 +254,9 @@ function Home() {
 
                 <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
                   <Anchor href="./LitepaperEthereumPushNotificationService.pdf" title="Read Litepaper of Ethereum Push Notification Service (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Read Litepaper</Anchor>
+                  {/*}
                   <Anchor href="./#contact" title="Integrate Ethereum Push Notification Service Protocol (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Integrate</Anchor>
+                  */}
                 </ItemH>
 
               </Item>
@@ -320,7 +322,7 @@ function Home() {
                       target="_blank"
                     >
                       <Item minWidth="auto">
-                        <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
                       </Item>
                     </Feature>
                   )
@@ -341,7 +343,7 @@ function Home() {
                       target="_blank"
                     >
                       <Item minWidth="auto">
-                        <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
                       </Item>
                     </FeatureTabletOptional>
                   )
@@ -365,7 +367,7 @@ function Home() {
                           target="_blank"
                         >
                           <Item minWidth="auto">
-                            <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
                           </Item>
                         </FeatureDesktopOptional>
                       )
@@ -385,7 +387,7 @@ function Home() {
                           target="_blank"
                         >
                           <Item minWidth="auto">
-                            <FeatureImage src={`./${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
                           </Item>
                         </Feature>
                       )

@@ -12,7 +12,7 @@ function TimerItem() {
   const [ticker, setTicker] = React.useState(-2);
   const [counter, setCounter] = React.useState(0);
 
-  const [time, setTime] = React.useState({hours: 'zZ', mins: 'zZ', secs: 'zZ'});
+  const [time, setTime] = React.useState({hours: '--', mins: '--', secs: '--'});
 
   const [hhTheme, setHHTheme] = React.useState("#fff");
   const [mmTheme, setMMTheme] = React.useState("#fff");

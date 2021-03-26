@@ -1,5 +1,41 @@
 const investorsList = {
   vcs: {
+    true: {
+      title: "Learn about our Investor - True Ventures",
+      href: "https://trueventures.com/",
+      src: "trueventures",
+      alt: "Logo of True Ventures, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
+    binance: {
+      title: "Learn about our Investor - Binance",
+      href: "https://binance.com/",
+      src: "binance",
+      alt: "Logo of Binance, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
+    mysterio: {
+      title: "Learn about our Investor - Mysterio",
+      href: "#",
+      src: "mysterio",
+      alt: "Logo of Mysterio, Fund / Angel / Nothingness",
+      name: false,
+      job: false,
+      disabled: true,
+    },
+    iosg: {
+      title: "Learn about our Investor - iOSG",
+      href: "https://iosg.vc/",
+      src: "iosgventures",
+      alt: "Logo of iOSG Ventures, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
     thelao: {
       title: "Learn about our Investor - TheLAO",
       href: "https://www.thelao.io/",
@@ -18,11 +54,11 @@ const investorsList = {
       job: false,
       disabled: false,
     },
-    fourthrev: {
-      title: "Learn about our Investor - Fourth Revolution Capital",
-      href: "https://fourthrevolution.capital/",
-      src: "fourthrevolution",
-      alt: "Logo of Fourth Revolution Capital, Crypto Fund",
+    ldcap: {
+      title: "Learn about our Investor - LD Capital",
+      href: "https://ldcap.com",
+      src: "ldcapital",
+      alt: "Logo of LD Capital, Crypto Fund",
       name: false,
       job: false,
       disabled: false,
@@ -36,11 +72,38 @@ const investorsList = {
       job: false,
       disabled: false,
     },
-    ldcap: {
-      title: "Learn about our Investor - LD Capital",
-      href: "https://ldcap.com",
-      src: "ldcapital",
-      alt: "Logo of LD Capital, Crypto Fund",
+    moonwhale: {
+      title: "Learn about our Investor - Moonwhale",
+      href: "https://moonwhale.io",
+      src: "moonwhale",
+      alt: "Learn about our Investor - Moonwhale, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
+    bitscale: {
+      title: "Learn about our Investor - Bitscale Capital",
+      href: "https://bitscale.capital/",
+      src: "bitscale",
+      alt: "Logo of Bitscale Capital, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
+    bixin: {
+      title: "Learn about our Investor - Bixin Ventures",
+      href: "http://bixincapital.com/",
+      src: "bixinventures",
+      alt: "Logo of Bixin Ventures, Crypto Fund",
+      name: false,
+      job: false,
+      disabled: false,
+    },
+    fourthrev: {
+      title: "Learn about our Investor - Fourth Revolution Capital",
+      href: "https://fourthrevolution.capital/",
+      src: "fourthrevolution",
+      alt: "Logo of Fourth Revolution Capital, Crypto Fund",
       name: false,
       job: false,
       disabled: false,
@@ -50,15 +113,6 @@ const investorsList = {
       href: "https://d64.vc/",
       src: "proofsystems_d64",
       alt: "Logo of D64, Crypto Fund",
-      name: false,
-      job: false,
-      disabled: false,
-    },
-    moonwhale: {
-      title: "Learn about our Investor - Moonwhale",
-      href: "https://moonwhale.io",
-      src: "moonwhale",
-      alt: "Learn about our Investor - Moonwhale, Crypto Fund",
       name: false,
       job: false,
       disabled: false,
@@ -101,13 +155,13 @@ const investorsList = {
       job: "Co-Founder, Gitcoin",
       disabled: false,
     },
-    preethi: {
-      title: "Learn about our Investor - Preethi Kasireddy, Entrepreneur",
-      href: "https://twitter.com/iam_preethi",
-      src: "preethi",
-      alt: "Sketch of Investor - Preethi Kasireddy, Entrepreneur",
-      name: "Preethi Kasireddy",
-      job: "Writer / Entrepreneur",
+    sandeep: {
+      title: "Learn about our Investor - Sandeep Nailwal, Co-Founder, Polygon",
+      href: "https://twitter.com/sandeepnailwal",
+      src: "sandeep",
+      alt: "Sketch of Investor - Sandeep Nailwal, Co-Founder, Polygon",
+      name: "Sandeep Nailwal",
+      job: "Co-Founder, Polygon",
       disabled: false,
     },
     defidad: {
@@ -128,6 +182,17 @@ const investorsList = {
       job: "EthHub / DailyGWEI",
       disabled: false,
     },
+    preethi: {
+      title: "Learn about our Investor - Preethi Kasireddy, Entrepreneur",
+      href: "https://twitter.com/iam_preethi",
+      src: "preethi",
+      alt: "Sketch of Investor - Preethi Kasireddy, Entrepreneur",
+      name: "Preethi Kasireddy",
+      job: "Writer / Entrepreneur",
+      disabled: false,
+    },
+  },
+  angelsoptional: {
     ravindra: {
       title: "Learn about our Investor - Ravindra Kumar, Founder, Frontier Wallet",
       href: "https://twitter.com/ravidsrk",
@@ -137,8 +202,15 @@ const investorsList = {
       job: "Founder, Frontier Wallet",
       disabled: false,
     },
-  },
-  angelsoptional: {
+    ajit: {
+      title: "Learn about our Investor - Ajit Tripathi, Head of Institional Business, AAVE",
+      href: "ttps://twitter.com/chainyoda",
+      src: "ajit",
+      alt: "Sketch of Investor - Ajit Tripathi, Head of Institional Business, AAVE",
+      name: "Ajit Tripathi",
+      job: "AAVE",
+      disabled: false,
+    },
     luka: {
       title: "Learn about our Investor - Luka Sukik, Entreprenuer",
       href: "https://twitter.com/Beler",
@@ -184,6 +256,15 @@ const investorsList = {
       job: "Gnosis",
       disabled: false,
     },
+    kaito: {
+      title: "Learn about our Investor - Kaito, Entrepreneur",
+      href: "https://twitter.com/CoffeeTimesTW",
+      src: "kaito",
+      alt: "Sketch of Investor - Kaito, Coffee Times",
+      name: "Kaito (Coffee Times)",
+      job: "Founder, Webshake",
+      disabled: false,
+    },
     danny: {
       title: "Learn about our Investor - Danny J.C., Angel Investor",
       href: "https://www.linkedin.com/in/dannychrist/",
@@ -211,15 +292,15 @@ const investorsList = {
       job: "Angel Investor",
       disabled: false,
     },
-    karthik: {
-      title: "Learn about our Investor -  Kartik Garg, Angel Investor",
-      href: "#",
-      src: "karthik",
-      alt: "Sketch of Investor - Anthony Sassano, EthHub",
-      name: "Kartik Garg",
-      job: "Angel Investor",
-      disabled: true,
-    },
+    // karthik: {
+    //   title: "Learn about our Investor -  Kartik Garg, Angel Investor",
+    //   href: "#",
+    //   src: "karthik",
+    //   alt: "Sketch of Investor - Anthony Sassano, EthHub",
+    //   name: "Kartik Garg",
+    //   job: "Angel Investor",
+    //   disabled: true,
+    // },
     ganeshram: {
       title: "Learn about our Investor -  Ganeshram Gunalan, Angel Investor",
       href: "https://twitter.com/ganeshram_g",
@@ -231,6 +312,5 @@ const investorsList = {
     },
   }
 }
-
 
 export default investorsList;
