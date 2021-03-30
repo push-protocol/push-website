@@ -82,16 +82,18 @@ function TimerItem() {
       }
 
       {countdown.button == true &&
-        <Anchor
-          href={`${countdown.href}`}
-          title={`${countdown.title}`}
-          target="_blank"
-          bg="#e20880"
-          border
-          margin="10px -15px -15px -15px"
-        >
-          {countdown.buttonText}
-        </Anchor>
+        <>
+          <Anchor
+            href={`${countdown.href}`}
+            title={`${countdown.title}`}
+            target="_blank"
+            bg="#e20880"
+            border
+            margin="10px -15px -15px -15px"
+          >
+            {countdown.buttonText}
+          </Anchor>
+        </>
       }
 
     </Item>

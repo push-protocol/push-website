@@ -277,7 +277,7 @@ const investorsList = {
     andrew: {
       title: "Learn about our Investor -  Andrew Chen, Entrepreneur",
       href: "https://www.linkedin.com/in/acschen/",
-      src: "anthony",
+      src: "andrew",
       alt: "Sketch of Investor - Andrew Chen, Entrepreneur",
       name: "Andrew Chen",
       job: "Entrepreneur",

@@ -1,12 +1,12 @@
-const countdownEpoch = 1617123600; // https://www.epochconverter.com/
+const countdownEpoch = 1617210000; // https://www.epochconverter.com/
 
 const countdown = {
   title: "Next News In",
-  href: "https://twitter.com/epnsproject/status/1375130923335753728",
+  href: "https://twitter.com/epnsproject/status/1376897872415711235?s=20",
   countdownEpoch: countdownEpoch,
   button: true,
-  buttonTitle: "Read about our Extended Seed Announcement",
-  buttonText: "Extended Seed Announced!",
+  buttonTitle: "Read about our Polkastarter Crowdsale Announcement",
+  buttonText: "Polkastarter IDO Announced!",
   hide: false,
 }
 
