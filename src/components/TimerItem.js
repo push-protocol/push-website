@@ -5,6 +5,8 @@ import { Item, ItemH, Span, Anchor } from 'components/SharedStyling';
 
 import countdown from 'config/countdown';
 
+import { TiWarning } from 'react-icons/ti';
+
 // Create Header
 function TimerItem() {
   const [timeRemaining, setTimeRemaining] = React.useState(0);
@@ -20,8 +22,10 @@ function TimerItem() {
 
   // For countdown
   React.useEffect(() => {
-    const now = Date.now() / 1000; // Unix timestamp in milliseconds to seconds
-    setTimeRemaining(countdown.countdownEpoch - now);
+    if (timeRemaining == 0) {
+      const now = Date.now() / 1000; // Unix timestamp in milliseconds to seconds
+      setTimeRemaining(countdown.countdownEpoch - now);
+    }
 
   }, [timeRemaining]);
 
@@ -66,36 +70,48 @@ function TimerItem() {
   // to create blockies
 
   return (
-    <Item margin="20px 0px" padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
-      <Item>
-        <Span textAlign="center" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff" flex="inherit">{countdown.title}</Span>
+    <Item margin="10px 0px 20px 0px" align="flex-start">
+      <ItemH direction="row" margin="0px 0px 0px 0px" padding="15px 15px" bg="transparent" radius="8px" overflow="hidden" minWidth="auto">
+        <Item minWidth="auto" margin="0px 5px 0px -10px" flex="initial">
+          <TiWarning size={20} color="#FFCC00"/>
+        </Item>
+
+        <Item minWidth="auto" margin="0px 0px 0px 5px">
+          <Span color="#fff" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff">Beware of scammers: $PUSH Token is not listed anywhere. Information will only be released on official channels.</Span>
+        </Item>
+      </ItemH>
+
+      <Item padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
+        <Item>
+          <Span textAlign="center" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff" flex="inherit">{countdown.title}</Span>
+        </Item>
+
+        {timeRemaining > 0 &&
+          <ItemH size="3em">
+            <Span color={hhTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.hours}</Span>
+            <Span color="#fff" weight="200">:</Span>
+            <Span color={mmTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.mins}</Span>
+            <Span color="#fff" weight="200">:</Span>
+            <Span color={ssTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.secs}</Span>
+          </ItemH>
+        }
+
+        {countdown.button == true &&
+          <>
+            <Anchor
+              href={`${countdown.href}`}
+              title={`${countdown.title}`}
+              target="_blank"
+              bg="#e20880"
+              border
+              margin="10px -15px -15px -15px"
+              self="stretch"
+            >
+              {countdown.buttonText}
+            </Anchor>
+          </>
+        }
       </Item>
-
-      {timeRemaining > 0 &&
-        <ItemH size="3em">
-          <Span color={hhTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.hours}</Span>
-          <Span color="#fff" weight="200">:</Span>
-          <Span color={mmTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.mins}</Span>
-          <Span color="#fff" weight="200">:</Span>
-          <Span color={ssTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.secs}</Span>
-        </ItemH>
-      }
-
-      {countdown.button == true &&
-        <>
-          <Anchor
-            href={`${countdown.href}`}
-            title={`${countdown.title}`}
-            target="_blank"
-            bg="#e20880"
-            border
-            margin="10px -15px -15px -15px"
-          >
-            {countdown.buttonText}
-          </Anchor>
-        </>
-      }
-
     </Item>
   );
 }

@@ -8,6 +8,14 @@ const partnersList = {
       alt: "Uniswap Logo",
       display: "Uniswap does pilot collab with EPNS"
     },
+    pooltogether: {
+      title: "Article talking about partnership between EPNS and Pool Together!",
+      href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "pooltogether",
+      alt: "Pool Together Logo",
+      display: "Pool Together does pilot collab with EPNS"
+    },
     superfluid: {
       title: "Article talking about partnership between EPNS and Superfluid!",
       href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
@@ -16,6 +24,8 @@ const partnersList = {
       alt: "Superfluid Logo",
       display: "Superfluid does pilot collab with EPNS"
     },
+  },
+  drilldown: {
     aave: {
       title: "Article talking about Uniswap and Ethereuem Push Notificaion Service Partnership",
       href: "https://medium.com/ethereum-push-notification-service/epns-awarded-aave-grant-cc618dd48915",
@@ -23,9 +33,7 @@ const partnersList = {
       src: "aave",
       alt: "AAVE Logo",
       display: "EPNS wins Grant from AAVE 👻"
-    }
-  },
-  drilldown: {
+    },
     gnosis: {
       title: "Article talking Ethereum Push Notification Service becoming launch partners of Gnosis SafeShot",
       href: "https://medium.com/ethereum-push-notification-service/epns-honored-to-be-gnosisdaos-safesnap-launch-partner-e8a176b9a36",

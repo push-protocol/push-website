@@ -889,9 +889,11 @@ function Home() {
             </Item>
 
             <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
+              {/**/}
               <EPNSChannelItems
                 numberOfChannels={5}
               />
+              {/**/}
             </Item>
 
             <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
