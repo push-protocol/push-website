@@ -272,7 +272,7 @@ function Foot() {
                       <FaTelegramPlane size={20} color="#674c9f"/>
                     </Anchor>
                     <Anchor
-                      href="https://medium.com/@epnsproject"
+                      href="https://medium.com/ethereum-push-notification-service"
                       target="_blank"
                       bg="#000"
                       radius="4px"

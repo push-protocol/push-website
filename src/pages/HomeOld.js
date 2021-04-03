@@ -198,7 +198,7 @@ function HomeOld({ setBadgeCount, bellPressed }) {
                 <FooterSubInner>
                   <FooterLink bg="#e20880" href="https://twitter.com/epnsproject" target="_blank"><FaTwitter size={20} color="#fff"/></FooterLink>
                   <FooterLink bg="#674c9f" href="https://t.me/epnsproject" target="_blank"><FaTelegramPlane size={20} color="#fff"/></FooterLink>
-                  <FooterLink bg="#35c5f3" href="https://medium.com/@epnsproject" target="_blank"><FaMedium size={20} color="#fff"/></FooterLink>
+                  <FooterLink bg="#35c5f3" href="https://medium.com/ethereum-push-notification-service" target="_blank"><FaMedium size={20} color="#fff"/></FooterLink>
                 </FooterSubInner>
               </FooterSub>
               <FooterSub>

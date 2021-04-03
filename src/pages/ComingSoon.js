@@ -449,7 +449,7 @@ function ComingSoon({ timeRemaining }) {
                   <FaTelegramPlane size={20} color="#fff"/>
                 </Anchor>
                 <Anchor
-                  href="https://medium.com/@epnsproject"
+                  href="https://medium.com/ethereum-push-notification-service"
                   target="_blank"
                   radius="4px"
                   margin="0px 5px"
