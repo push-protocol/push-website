@@ -24,8 +24,7 @@ const partnersList = {
       alt: "Pool Together Logo",
       display: "Pool Together does pilot collab with EPNS"
     },
-  },
-  drilldown: {
+
     unstoppable: {
       title: "Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-unstoppable-domains-4d5507ddb6bd",
@@ -34,6 +33,8 @@ const partnersList = {
       alt: "Unstoppable Domains Logo",
       display: "EPNS Collaborates with Unstoppable Domains"
     },
+  },
+  drilldown: {
     aave: {
       title: "Article talking about Uniswap and Ethereuem Push Notificaion Service Partnership",
       href: "https://medium.com/ethereum-push-notification-service/epns-awarded-aave-grant-cc618dd48915",
