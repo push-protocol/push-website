@@ -5,7 +5,7 @@ import { Item, ItemH, Span, Anchor } from 'components/SharedStyling';
 
 import countdown from 'config/countdown';
 
-import { TiWarning } from 'react-icons/ti';
+import { AiFillHeart } from 'react-icons/ai';
 
 // Create Header
 function TimerItem() {
@@ -73,11 +73,12 @@ function TimerItem() {
     <Item margin="10px 0px 20px 0px" align="flex-start">
       <ItemH direction="row" margin="0px 0px 0px 0px" padding="15px 15px" bg="transparent" radius="8px" overflow="hidden" minWidth="auto">
         <Item minWidth="auto" margin="0px 5px 0px -10px" flex="initial">
-          <TiWarning size={20} color="#FFCC00"/>
+          <AiFillHeart size={20} color="#e20880"/>
         </Item>
 
         <Item minWidth="auto" margin="0px 0px 0px 5px">
-          <Span color="#fff" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff">Beware of scammers: $PUSH Token is not listed anywhere. Information will only be released on official channels.</Span>
+          <Span color="#fff" self="flex-start" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff">$PUSH Token Address</Span>
+          <Span color="#fff" self="flex-start" weight="600" size="0.8em" spacing="0.2em" color="#fff">0xf418588522d5dd018b425E472991E52EBBeEEEEE</Span>
         </Item>
       </ItemH>
 

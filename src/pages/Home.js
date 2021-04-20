@@ -1257,6 +1257,14 @@ function Home() {
                 twitter="https://twitter.com/vsinghdothings"
                 linkedin="https://www.linkedin.com/in/vivek-singh-b5a4b675/"
               />
+              <TeamMember
+                img="./team/kernel.jpg"
+                srcSet="./team/kernel@2x.jpg 2x, ./team/kernel@3x.jpg 3x"
+                type={6}
+                name="Kernel"
+                title="A Gitcoin Collective"
+                twitter="https://twitter.com/KERNEL0x"
+              />
 
             </ItemH>
 

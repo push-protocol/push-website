@@ -1,12 +1,12 @@
-const countdownEpoch = 1617955200; // https://www.epochconverter.com/
+const countdownEpoch = 1618326000; // https://www.epochconverter.com/
 
 const countdown = {
-  title: "Whitelist Closed!",
-  href: "https://twitter.com/epnsproject/status/1379373647727534086?s=20",
+  title: "Thanks for the $PUSH",
+  href: "https://info.uniswap.org/pair/0xAf31Fd9C3B0350424BF96e551d2D1264d8466205",
   countdownEpoch: countdownEpoch,
   button: true,
-  buttonTitle: "Read about how to participate in EPNS Polkastarter Whitelist by creating memes",
-  buttonText: "#PUSHMEME Contest 📣",
+  buttonTitle: "Check $PUSH on Uniswap",
+  buttonText: "$PUSH Listed at Uniswap",
   hide: false,
 }
 
