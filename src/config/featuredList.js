@@ -142,7 +142,7 @@ const featuredList = {
       href: "https://cryptodose.co/ethereum-based-web3-push-notifications-service-epns-raises-750k-seed/",
       src: "cryptodose",
       alt: "CryptoDose Logo",
-      bg: "#e20880",
+      bg: false,
     },
     mojkripto: {
       title: "MojKripto deep dives into Ethereum Push Notification Service and the team behind it!",
