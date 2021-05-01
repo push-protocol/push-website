@@ -1,0 +1,33 @@
+<html>
+  <head></head>
+
+  <body>
+      <script>
+        var CONST_100k = 100000;
+        var CONST_1M = 10 * CONST_100k;
+
+        var totalSupply = 100 * CONST_1M;
+        var circSupply = 3.23 * CONST_1M;
+
+        const params = new URLSearchParams(window.location.search)
+        document.write('<pre style="word-wrap: break-word; white-space: pre-wrap;">');
+
+        if (params.has('q')) {
+          if (params.get('q') == 'total') {
+            document.write(totalSupply);
+          }
+          else if (params.get('q') == 'ciculating') {
+            document.write(circSupply);
+          }
+          else {
+            document.write("Invalid Request");
+          }
+        }
+        else {
+          document.write("Invalid Request");
+        }
+
+        document.write('</pre>');
+      </script>
+  </body>
+</html>

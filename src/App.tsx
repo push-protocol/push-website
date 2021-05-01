@@ -4,7 +4,8 @@ import ReactGA from 'react-ga';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Loader from 'react-loader-spinner'
@@ -15,8 +16,8 @@ import Head from 'segments/Header';
 import Foot from 'segments/Footer';
 
 import Home from 'pages/Home';
-import HomeOld from 'pages/HomeOld';
 import FAQ from 'pages/FAQ';
+import API from 'pages/API';
 
 import Terms from 'pages/Terms';
 import Privacy from 'pages/Privacy';
@@ -77,6 +78,9 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
+          <Route path="/api">
+            <Redirect push to={"/api.html"} />
+          </Route>
           <Route path="/privacy">
             <Privacy />
           </Route>
@@ -195,9 +199,6 @@ function App() {
   //         <Foot />
   //       </Route>
   //       <Route path="/">
-  //         {/*
-  //           <HomeOld setBadgeCount={0} bellPressed={() => {console.log("Bell Pressed!")}}/>
-  //         */}
   //         {/*
   //           <Head />
   //           <Home />
