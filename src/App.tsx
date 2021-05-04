@@ -17,7 +17,6 @@ import Foot from 'segments/Footer';
 
 import Home from 'pages/Home';
 import FAQ from 'pages/FAQ';
-import API from 'pages/API';
 
 import Terms from 'pages/Terms';
 import Privacy from 'pages/Privacy';
