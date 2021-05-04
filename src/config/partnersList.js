@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    bzx: {
+      title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bzx",
+      alt: "bZx logo",
+      display: "EPNS + bZx Collab for critical Notifications"
+    },
     gitcoin: {
       title: "Article talking about partnership between EPNS and Gitcoin!",
       href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
@@ -40,6 +48,8 @@ const partnersList = {
       alt: "Alpha Homora Logo",
       display: "EPNS + Alpha Homora = an Awesome Collab"
     },
+  },
+  drilldown: {
     pooltogether: {
       title: "Article talking about partnership between EPNS and Pool Together!",
       href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
@@ -48,8 +58,6 @@ const partnersList = {
       alt: "Pool Together Logo",
       display: "Pool Together does pilot collab with EPNS"
     },
-  },
-  drilldown: {
     unstoppable: {
       title: "Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-unstoppable-domains-4d5507ddb6bd",
