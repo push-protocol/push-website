@@ -999,7 +999,7 @@ function Home() {
                                   alt={`${item.alt}`}
                                 />
                               </Item>
-                              <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">${item.display}</Span>
+                              <Span bg="#000" color="#fff" margin="20px 0px" padding="12px" textAlign="center">{item.display}</Span>
                             </Item>
                           </Anchor>
                         </Partner>
