@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    ceramic: {
+      title: "Advancing Ceramic Networks decentralized identity network with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ceramic",
+      alt: "ceramic logo",
+      display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
+    },
     bzx: {
       title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
@@ -40,6 +48,8 @@ const partnersList = {
       alt: "Uniswap Logo",
       display: "EPNS 💖 Uniswap"
     },
+  },
+  drilldown: {
     alpha: {
       title: "Article exploring collaboration between Alpha Homara and Ethereuem Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
@@ -48,8 +58,6 @@ const partnersList = {
       alt: "Alpha Homora Logo",
       display: "EPNS + Alpha Homora = an Awesome Collab"
     },
-  },
-  drilldown: {
     pooltogether: {
       title: "Article talking about partnership between EPNS and Pool Together!",
       href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
