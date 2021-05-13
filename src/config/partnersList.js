@@ -1,5 +1,21 @@
 const partnersList = {
   featured: {
+    clrfund: {
+      title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-clr-fund-funding-protocol-with-web3notifs-366b61408aa3",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "clrfund",
+      alt: "clrfund logo",
+      display: "Notifs 🔔 of you favourite projects 📲 through EPNS"
+    },
+    unilend: {
+      title: "EPNS Partners with UniLend Finance To Deliver Notifications for Permissionless Money Markets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-unilend-finance-to-deliver-notifications-for-permissionless-money-markets-e647300b68ce",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "unilend",
+      alt: "unilend logo",
+      display: "Get notifs for your money markets 📈"
+    },
     ceramic: {
       title: "Advancing Ceramic Networks decentralized identity network with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
@@ -32,6 +48,8 @@ const partnersList = {
       alt: "Polygon Logo",
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
     },
+  },
+  drilldown: {
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
       href: "https://medium.com/ethereum-push-notification-service/defi-aggregator-frontier-to-support-web3-notifications-fd9a4927f689",
@@ -48,8 +66,6 @@ const partnersList = {
       alt: "Uniswap Logo",
       display: "EPNS 💖 Uniswap"
     },
-  },
-  drilldown: {
     alpha: {
       title: "Article exploring collaboration between Alpha Homara and Ethereuem Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
