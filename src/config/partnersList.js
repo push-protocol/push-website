@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    chargedparticles: {
+      title: "Advancing Charged Particles Interest-Bearing NFTs with Web3Notifs",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-charged-particles-interest-bearing-nfts-with-epns-dc5643325300",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "chargedparticles",
+      alt: "chargedparticles logo",
+      display: "Charged Particles 🤝 EPNS"
+    },
     clrfund: {
       title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
       href: "https://medium.com/ethereum-push-notification-service/advancing-clr-fund-funding-protocol-with-web3notifs-366b61408aa3",
@@ -40,6 +48,8 @@ const partnersList = {
       alt: "Gitcoin Logo",
       display: "Gitcoin Growing Open Source Using Web3 Notifs"
     },
+  },
+  drilldown: {
     polygon: {
       title: "Article exploring partnership between Polygon and EPNS",
       href: "https://medium.com/ethereum-push-notification-service/scaling-web3notifs-on-polygons-layer-2-100e19e3269d",
@@ -48,8 +58,6 @@ const partnersList = {
       alt: "Polygon Logo",
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
     },
-  },
-  drilldown: {
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
       href: "https://medium.com/ethereum-push-notification-service/defi-aggregator-frontier-to-support-web3-notifications-fd9a4927f689",
