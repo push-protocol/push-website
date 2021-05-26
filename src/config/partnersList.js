@@ -1,5 +1,21 @@
 const partnersList = {
   featured: {
+    yamfinance: {
+      title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
+      href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "yam",
+      alt: "yam logo",
+      display: "Yam Finance integrates EPNS 🔔"
+    },
+    chargedparticles: {
+      title: "Advancing Charged Particles Interest-Bearing NFTs with Web3Notifs",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-charged-particles-interest-bearing-nfts-with-epns-dc5643325300",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "chargedparticles",
+      alt: "chargedparticles logo",
+      display: "Charged Particles 🤝 EPNS"
+    },
     clrfund: {
       title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
       href: "https://medium.com/ethereum-push-notification-service/advancing-clr-fund-funding-protocol-with-web3notifs-366b61408aa3",
@@ -32,6 +48,8 @@ const partnersList = {
       alt: "bZx logo",
       display: "EPNS + bZx Collab for critical Notifications"
     },
+  },
+  drilldown: {
     gitcoin: {
       title: "Article talking about partnership between EPNS and Gitcoin!",
       href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
@@ -48,8 +66,6 @@ const partnersList = {
       alt: "Polygon Logo",
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
     },
-  },
-  drilldown: {
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
       href: "https://medium.com/ethereum-push-notification-service/defi-aggregator-frontier-to-support-web3-notifications-fd9a4927f689",
