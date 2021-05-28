@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    plotx: {
+      title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "plotx",
+      alt: "plotx logo",
+      display: "PlotX 🤝 EPNS Collaboration"
+    },
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
@@ -40,6 +48,8 @@ const partnersList = {
       alt: "ceramic logo",
       display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
     },
+  },
+  drilldown: {
     bzx: {
       title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
@@ -48,8 +58,6 @@ const partnersList = {
       alt: "bZx logo",
       display: "EPNS + bZx Collab for critical Notifications"
     },
-  },
-  drilldown: {
     gitcoin: {
       title: "Article talking about partnership between EPNS and Gitcoin!",
       href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
