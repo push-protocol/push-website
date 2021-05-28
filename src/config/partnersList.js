@@ -8,6 +8,48 @@ const partnersList = {
       alt: "plotx logo",
       display: "PlotX 🤝 EPNS Collaboration"
     },
+    uniswap: {
+      title: "Article talking about Uniswap and Ethereuem Push Notificaion Service",
+      href: "https://medium.com/ethereum-push-notification-service/accelerating-defi-with-epns-f2cbfaa33c91",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "uniswap",
+      alt: "Uniswap Logo",
+      display: "EPNS 💖 Uniswap"
+    },
+    alpha: {
+      title: "Article exploring collaboration between Alpha Homara and Ethereuem Push Notificaion Service",
+      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "alphafinance",
+      alt: "Alpha Homora Logo",
+      display: "EPNS + Alpha Homora = an Awesome Collab"
+    },
+    gitcoin: {
+      title: "Article talking about partnership between EPNS and Gitcoin!",
+      href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "gitcoin",
+      alt: "Gitcoin Logo",
+      display: "Gitcoin Growing Open Source Using Web3 Notifs"
+    },
+    polygon: {
+      title: "Article exploring partnership between Polygon and EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/scaling-web3notifs-on-polygons-layer-2-100e19e3269d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "polygon",
+      alt: "Polygon Logo",
+      display: "Scaling Web3Notifs on Polygon’s Layer-2"
+    },
+    ceramic: {
+      title: "Advancing Ceramic Networks decentralized identity network with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ceramic",
+      alt: "ceramic logo",
+      display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
+    },
+  },
+  drilldown: {
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
@@ -40,16 +82,6 @@ const partnersList = {
       alt: "unilend logo",
       display: "Get notifs for your money markets 📈"
     },
-    ceramic: {
-      title: "Advancing Ceramic Networks decentralized identity network with EPNS",
-      href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "ceramic",
-      alt: "ceramic logo",
-      display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
-    },
-  },
-  drilldown: {
     bzx: {
       title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
@@ -58,22 +90,6 @@ const partnersList = {
       alt: "bZx logo",
       display: "EPNS + bZx Collab for critical Notifications"
     },
-    gitcoin: {
-      title: "Article talking about partnership between EPNS and Gitcoin!",
-      href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "gitcoin",
-      alt: "Gitcoin Logo",
-      display: "Gitcoin Growing Open Source Using Web3 Notifs"
-    },
-    polygon: {
-      title: "Article exploring partnership between Polygon and EPNS",
-      href: "https://medium.com/ethereum-push-notification-service/scaling-web3notifs-on-polygons-layer-2-100e19e3269d",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "polygon",
-      alt: "Polygon Logo",
-      display: "Scaling Web3Notifs on Polygon’s Layer-2"
-    },
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
       href: "https://medium.com/ethereum-push-notification-service/defi-aggregator-frontier-to-support-web3-notifications-fd9a4927f689",
@@ -81,22 +97,6 @@ const partnersList = {
       src: "frontier",
       alt: "Frontier Logo",
       display: "DeFi Aggregator Frontier to Support Web3 Notifs"
-    },
-    uniswap: {
-      title: "Article talking about Uniswap and Ethereuem Push Notificaion Service",
-      href: "https://medium.com/ethereum-push-notification-service/accelerating-defi-with-epns-f2cbfaa33c91",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "uniswap",
-      alt: "Uniswap Logo",
-      display: "EPNS 💖 Uniswap"
-    },
-    alpha: {
-      title: "Article exploring collaboration between Alpha Homara and Ethereuem Push Notificaion Service",
-      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "alphafinance",
-      alt: "Alpha Homora Logo",
-      display: "EPNS + Alpha Homora = an Awesome Collab"
     },
     pooltogether: {
       title: "Article talking about partnership between EPNS and Pool Together!",
