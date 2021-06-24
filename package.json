@@ -25,6 +25,7 @@
     "blockies": "0.0.2",
     "blockies-identicon": "0.1.0",
     "ethers": "5.0.18",
+    "fsevents": "1.2.13",
     "gh-pages": "^2.2.0",
     "graphql": "^14.6.0",
     "ipfs-api": "26.1.2",
@@ -60,7 +61,6 @@
     "@testing-library/dom": "^6.12.2",
     "@types/react": "16.9.50",
     "dotenv": "8.2.0",
-    "eslint": "^6.8.0",
     "eslint-plugin-flowtype": "4.7.0"
   },
   "eslintConfig": {

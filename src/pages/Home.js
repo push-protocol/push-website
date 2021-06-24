@@ -860,7 +860,7 @@ function Home() {
               <Supported margin="20px" minWidth="280px">
                 <Anchor
                   href="#contact"
-                  title="Get Notified from EPNS Dapp (Coming Soon)"
+                  title="Get Notified from EPNS Dapp"
                   direction="column"
                   bg="#fff"
                   hover="#fafafa"
