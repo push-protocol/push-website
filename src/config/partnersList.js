@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    aave: {
+      title: "Article talking about AAVE and Ethereuem Push Notificaion Service Partnership",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-aave-to-bring-push-notifications-to-aave-users-3cdd7baf38e0",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "aave",
+      alt: "AAVE Logo",
+      display: "AAve 👻 🔔 EPNS Collaboration"
+    },
     plotx: {
       title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
@@ -113,14 +121,6 @@ const partnersList = {
       src: "unstoppable",
       alt: "Unstoppable Domains Logo",
       display: "EPNS Collaborates with Unstoppable Domains"
-    },
-    aave: {
-      title: "Article talking about Uniswap and Ethereuem Push Notificaion Service Partnership",
-      href: "https://medium.com/ethereum-push-notification-service/epns-awarded-aave-grant-cc618dd48915",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "aave",
-      alt: "AAVE Logo",
-      display: "EPNS wins Grant from AAVE 👻"
     },
     gnosis: {
       title: "Article talking Ethereum Push Notification Service becoming launch partners of Gnosis SafeShot",
