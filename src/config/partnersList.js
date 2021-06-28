@@ -8,14 +8,6 @@ const partnersList = {
       alt: "AAVE Logo",
       display: "AAve 👻 🔔 EPNS Collaboration"
     },
-    plotx: {
-      title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "plotx",
-      alt: "plotx logo",
-      display: "PlotX 🤝 EPNS Collaboration"
-    },
     uniswap: {
       title: "Article talking about Uniswap and Ethereuem Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/accelerating-defi-with-epns-f2cbfaa33c91",
@@ -58,6 +50,14 @@ const partnersList = {
     },
   },
   drilldown: {
+    plotx: {
+      title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "plotx",
+      alt: "plotx logo",
+      display: "PlotX 🤝 EPNS Collaboration"
+    },
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
