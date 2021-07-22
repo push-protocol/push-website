@@ -154,6 +154,54 @@ const partnersList = {
       alt: "Superfluid Logo",
       display: "Superfluid does pilot collab with EPNS"
     },
+    truefi: {
+      title: "Article talking about partnership between EPNS and TrueFi!",
+      href: "https://medium.com/ethereum-push-notification-service/truefi-taking-defi-to-new-horizons-with-epns-cc4d230d550a",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "truefi",
+      alt: "TrueFi Logo",
+      display: "TrueFi 🤝 EPNS Collaboration"
+    },
+    snapshot: {
+      title: "Article talking about partnership between EPNS and Snapshot!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "snapshot",
+      alt: "Snapshot Logo",
+      display: "Notifs for governance proposals with EPNS 🔔"
+    },
+    boardroom: {
+      title: "Article talking about partnership between EPNS and Boardroom!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-boardroom-to-deliver-push-notifications-for-protocol-and-dao-governance-11bee8c8718e",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "boardroom",
+      alt: "Boardroom Logo",
+      display: "EPNS collaborates with Boardroom"
+    },
+    oasis: {
+      title: "Article talking about partnership between EPNS and Oasis.app!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-arrive-at-defi-on-oasis-app-770ae7ed1b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "oasisapp",
+      alt: "Oasis Logo",
+      display: "Oasis.app integrates EPNS Notifs 🔔"
+    },    
+    bprotocol: {
+      title: "Article talking about partnership between EPNS and B.Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-back-backstop-liquidity-platform-b-protocol-8a93c7b96f4",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bprotocol",
+      alt: "BProtocol Logo",
+      display: "EPNS X B.Protocol"
+    },
+    ruler: {
+      title: "Article talking about partnership between EPNS and Ruler Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ruler",
+      alt: "Ruler Protocol Logo",
+      display: "Get notified for your non-liquidatable loans"
+    },
   }
 }
 
