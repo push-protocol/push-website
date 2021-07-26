@@ -1,5 +1,13 @@
 const partnersList = {
   featured: {
+    ruler: {
+      title: "Article talking about partnership between EPNS and Ruler Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ruler",
+      alt: "Ruler Protocol Logo",
+      display: "Get notified for your non-liquidatable loans"
+    },
     aave: {
       title: "Article talking about AAVE and Ethereuem Push Notificaion Service Partnership",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-aave-to-bring-push-notifications-to-aave-users-3cdd7baf38e0",
@@ -39,7 +47,9 @@ const partnersList = {
       src: "polygon",
       alt: "Polygon Logo",
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
-    },
+    },    
+  },
+  drilldown: {
     ceramic: {
       title: "Advancing Ceramic Networks decentralized identity network with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
@@ -48,8 +58,6 @@ const partnersList = {
       alt: "ceramic logo",
       display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
     },
-  },
-  drilldown: {
     plotx: {
       title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
@@ -193,15 +201,7 @@ const partnersList = {
       src: "bprotocol",
       alt: "BProtocol Logo",
       display: "EPNS X B.Protocol"
-    },
-    ruler: {
-      title: "Article talking about partnership between EPNS and Ruler Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "ruler",
-      alt: "Ruler Protocol Logo",
-      display: "Get notified for your non-liquidatable loans"
-    },
+    },    
   }
 }
 
