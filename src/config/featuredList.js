@@ -150,6 +150,13 @@ const featuredList = {
       src: "mojkripto",
       alt: "MojKrypto Logo",
       bg: false,
+    },
+    cnbc: {
+      title: "CNBC interviews Harsh on EPNS and future of crypto",
+      href: "https://twitter.com/CNBCTV18News/status/1418863890662887430?s=20",
+      src: "cnbc",
+      alt: "CNBC Logo",
+      bg: false,
     }
   }
 }
