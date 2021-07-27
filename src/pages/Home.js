@@ -31,6 +31,7 @@ import TimerItem from 'components/TimerItem';
 import EPNSChannelItems from 'components/EPNSChannelItems';
 import Medium from 'components/Medium';
 import TeamMember from 'components/TeamMember';
+import Advisor from 'components/Advisor';
 
 // Import lists
 import featuredList from 'config/featuredList';
@@ -1169,69 +1170,9 @@ function Home() {
                 twitter="https://twitter.com/everett_muzzy"
                 linkedin="https://www.linkedin.com/in/everett-muzzy/"
               />
-              <TeamMember
-                img="./team/keyur.jpg"
-                srcSet="./team/keyur@2x.jpg 2x, ./team/keyur@3x.jpg 3x"
-                type={5}
-                name="Keyur Shah"
-                title="Finance Consultant (CA)"
-                twitter="https://twitter.com/keyur12392"
-                linkedin="https://www.linkedin.com/in/keyur-shah-551b31b3"
-              />
-              <TeamMember
-                img="./team/andrew.jpg"
-                srcSet="./team/andrew@2x.jpg 2x, ./team/andrew@3x.jpg 3x"
-                type={4}
-                name="Andrew Redden"
-                title="Developer"
-                twitter="https://twitter.com/androolloyd"
-                linkedin="https://www.linkedin.com/in/androolloyd/"
-                email="mailto://andrew@epns.io"
-              />
-              <TeamMember
-                img="./team/jude.jpg"
-                srcSet="./team/jude@2x.jpg 2x, ./team/jude@3x.jpg 3x"
-                type={5}
-                name="Jude Dike"
-                title="Developer"
-                linkedin="https://www.linkedin.com/in/dikejudein/"
-              />
-              <TeamMember
-                img="./team/aishwarya.jpg"
-                srcSet="./team/aishwarya@2x.jpg 2x, ./team/aishwarya@3x.jpg 3x"
-                type={5}
-                name="Aishwarya Walter"
-                title="Developer"
-                linkedin="https://www.linkedin.com/in/aiswaryawalter/"
-              />
-              <TeamMember
-                img="./team/victor.jpg"
-                srcSet="./team/victor@2x.jpg 2x, ./team/victor@3x.jpg 3x"
-                type={5}
-                name="Victor Nwagbogwu"
-                title="Developer"
-                linkedin="https://www.linkedin.com/in/victor-nwagbogwu/"
-              />
-              <TeamMember
-                img="./team/robin.jpg"
-                srcSet="./team/robin@2x.jpg 2x, ./team/robin@3x.jpg 3x"
-                type={5}
-                name="Robin Roy Thomas"
-                title="Content Writer"
-                twitter="https://twitter.com/robin_rrtx"
-                linkedin="https://www.linkedin.com/in/robin-roy-thomas-597974198/"
-              />
-              <TeamMember
-                img="./team/stan.jpg"
-                srcSet="./team/stan@2x.jpg 2x, ./team/stan@3x.jpg 3x"
-                type={5}
-                name="Dantes Stanley"
-                title="Community Manager"
-                linkedin="https://www.linkedin.com/in/igwilo-stanley-12571583"
-              />
             </ItemH>
             <ItemH self="stretch" align="stretch" flex="1" margin="20px 0px" minWidth="auto">
-              <TeamMember
+              <Advisor
                 img="./team/nischal.jpg"
                 srcSet="./team/nischal@2x.jpg 2x, ./team/nischal@3x.jpg 3x"
                 type={6}
@@ -1240,15 +1181,31 @@ function Home() {
                 twitter="https://twitter.com/NischalShetty"
                 linkedIn="https://www.linkedin.com/in/nischalshetty/"
               />
-              <TeamMember
+              <Advisor
+                img="./team/sandeep.jpg"
+                srcSet="./team/sandeep@2x.jpg 2x, ./team/sandeep@3x.jpg 3x"
+                type={6}
+                name="Sandeep Nailwal"
+                title="Co-Founder, Polygon"
+                twitter="https://twitter.com/sandeepnailwal"
+              />
+              <Advisor
                 img="./team/defidad.jpg"
                 srcSet="./team/defidad@2x.jpg 2x, ./team/defidad@3x.jpg 3x"
                 type={6}
                 name="DeFi Dad"
-                title="COO, Zapper.Fi"
+                title="All things DeFi"
                 twitter="https://twitter.com/DeFi_Dad"
               />
-              <TeamMember
+              <Advisor
+                img="./team/kernel.jpg"
+                srcSet="./team/kernel@2x.jpg 2x, ./team/kernel@3x.jpg 3x"
+                type={6}
+                name="Kernel"
+                title="A Gitcoin Collective"
+                twitter="https://twitter.com/KERNEL0x"
+              />
+              <Advisor
                 img="./team/vivek.jpg"
                 srcSet="./team/vivek@2x.jpg 2x, ./team/vivek@3x.jpg 3x"
                 type={6}
@@ -1257,15 +1214,6 @@ function Home() {
                 twitter="https://twitter.com/vsinghdothings"
                 linkedin="https://www.linkedin.com/in/vivek-singh-b5a4b675/"
               />
-              <TeamMember
-                img="./team/kernel.jpg"
-                srcSet="./team/kernel@2x.jpg 2x, ./team/kernel@3x.jpg 3x"
-                type={6}
-                name="Kernel"
-                title="A Gitcoin Collective"
-                twitter="https://twitter.com/KERNEL0x"
-              />
-
             </ItemH>
 
           </Item>
