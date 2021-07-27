@@ -49,23 +49,7 @@ const partnersList = {
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
     },    
   },
-  drilldown: {
-    ceramic: {
-      title: "Advancing Ceramic Networks decentralized identity network with EPNS",
-      href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "ceramic",
-      alt: "ceramic logo",
-      display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
-    },
-    plotx: {
-      title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "plotx",
-      alt: "plotx logo",
-      display: "PlotX 🤝 EPNS Collaboration"
-    },
+  drilldown: {    
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
@@ -74,6 +58,62 @@ const partnersList = {
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
     },
+    snapshot: {
+      title: "Article talking about partnership between EPNS and Snapshot!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "snapshot",
+      alt: "Snapshot Logo",
+      display: "Notifs for governance proposals with EPNS 🔔"
+    },
+    ceramic: {
+      title: "Advancing Ceramic Networks decentralized identity network with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ceramic",
+      alt: "ceramic logo",
+      display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
+    },    
+    truefi: {
+      title: "Article talking about partnership between EPNS and TrueFi!",
+      href: "https://medium.com/ethereum-push-notification-service/truefi-taking-defi-to-new-horizons-with-epns-cc4d230d550a",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "truefi",
+      alt: "TrueFi Logo",
+      display: "TrueFi 🤝 EPNS Collaboration"
+    },
+    oasis: {
+      title: "Article talking about partnership between EPNS and Oasis.app!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-arrive-at-defi-on-oasis-app-770ae7ed1b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "oasisapp",
+      alt: "Oasis Logo",
+      display: "Oasis.app integrates EPNS Notifs 🔔"
+    },
+    bprotocol: {
+      title: "Article talking about partnership between EPNS and B.Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-back-backstop-liquidity-platform-b-protocol-8a93c7b96f4",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bprotocol",
+      alt: "BProtocol Logo",
+      display: "EPNS X B.Protocol"
+    },
+    bzx: {
+      title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bzx",
+      alt: "bZx logo",
+      display: "EPNS + bZx Collab for critical Notifications"
+    },
+    plotx: {
+      title: "EPNS Partners With PlotX to Bring Push Notifications to DeFi Prediction Markets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-plotx-to-bring-push-notifications-to-defi-prediction-markets-6b63952d46f6",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "plotx",
+      alt: "plotx logo",
+      display: "PlotX 🤝 EPNS Collaboration"
+    },    
     chargedparticles: {
       title: "Advancing Charged Particles Interest-Bearing NFTs with Web3Notifs",
       href: "https://medium.com/ethereum-push-notification-service/advancing-charged-particles-interest-bearing-nfts-with-epns-dc5643325300",
@@ -81,6 +121,22 @@ const partnersList = {
       src: "chargedparticles",
       alt: "chargedparticles logo",
       display: "Charged Particles 🤝 EPNS"
+    },
+    superfluid: {
+      title: "Article talking about partnership between EPNS and Superfluid!",
+      href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "superfluid",
+      alt: "Superfluid Logo",
+      display: "Superfluid does pilot collab with EPNS"
+    },    
+    boardroom: {
+      title: "Article talking about partnership between EPNS and Boardroom!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-boardroom-to-deliver-push-notifications-for-protocol-and-dao-governance-11bee8c8718e",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "boardroom",
+      alt: "Boardroom Logo",
+      display: "EPNS collaborates with Boardroom"
     },
     clrfund: {
       title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
@@ -97,15 +153,7 @@ const partnersList = {
       src: "unilend",
       alt: "unilend logo",
       display: "Get notifs for your money markets 📈"
-    },
-    bzx: {
-      title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "bzx",
-      alt: "bZx logo",
-      display: "EPNS + bZx Collab for critical Notifications"
-    },
+    },    
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
       href: "https://medium.com/ethereum-push-notification-service/defi-aggregator-frontier-to-support-web3-notifications-fd9a4927f689",
@@ -153,55 +201,7 @@ const partnersList = {
       src: "matic",
       alt: "Matic Logo",
       display: "EPNS Wins Grants / Partners with Matic"
-    },
-    superfluid: {
-      title: "Article talking about partnership between EPNS and Superfluid!",
-      href: "https://medium.com/ethereum-push-notification-service/programmable-money-2-0-meets-epns-4a2f52dccb32",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "superfluid",
-      alt: "Superfluid Logo",
-      display: "Superfluid does pilot collab with EPNS"
-    },
-    truefi: {
-      title: "Article talking about partnership between EPNS and TrueFi!",
-      href: "https://medium.com/ethereum-push-notification-service/truefi-taking-defi-to-new-horizons-with-epns-cc4d230d550a",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "truefi",
-      alt: "TrueFi Logo",
-      display: "TrueFi 🤝 EPNS Collaboration"
-    },
-    snapshot: {
-      title: "Article talking about partnership between EPNS and Snapshot!",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "snapshot",
-      alt: "Snapshot Logo",
-      display: "Notifs for governance proposals with EPNS 🔔"
-    },
-    boardroom: {
-      title: "Article talking about partnership between EPNS and Boardroom!",
-      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-boardroom-to-deliver-push-notifications-for-protocol-and-dao-governance-11bee8c8718e",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "boardroom",
-      alt: "Boardroom Logo",
-      display: "EPNS collaborates with Boardroom"
-    },
-    oasis: {
-      title: "Article talking about partnership between EPNS and Oasis.app!",
-      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-arrive-at-defi-on-oasis-app-770ae7ed1b",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "oasisapp",
-      alt: "Oasis Logo",
-      display: "Oasis.app integrates EPNS Notifs 🔔"
-    },    
-    bprotocol: {
-      title: "Article talking about partnership between EPNS and B.Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-back-backstop-liquidity-platform-b-protocol-8a93c7b96f4",
-      hover: "#000", //#eee or #000 based on logo og color
-      src: "bprotocol",
-      alt: "BProtocol Logo",
-      display: "EPNS X B.Protocol"
-    },    
+    },        
   }
 }
 
