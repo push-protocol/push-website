@@ -7,13 +7,20 @@ const featuredList = {
       alt: "Ethereum Support Program Logo",
       bg: false,
     },
-    cointelegraph: {
-      title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
-      href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
-      src: "cointelegraph",
-      alt: "Coin Telegraph Logo",
+    cnbc: {
+      title: "CNBC interviews Harsh on EPNS and future of crypto",
+      href: "https://twitter.com/CNBCTV18News/status/1418863890662887430?s=20",
+      src: "cnbc",
+      alt: "CNBC Logo",
       bg: false,
     },
+    nuggetnews: {
+      title: "Alex Saunders talks about EPNS on Nugget News",
+      href: "https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be",
+      src: "nuggetnews",
+      alt: "Nugget News Logo",
+      bg: false,
+    },    
     hackernoon: {
       title: "Hackernoon interview on how Ethereum Push Notifications Will Pull Blockchain Out of the Stone Age",
       href: "https://hackernoon.com/push-notifications-will-pull-blockchain-out-of-the-stone-age-of-communication-unhashed-1-ql1f33d6",
@@ -41,7 +48,9 @@ const featuredList = {
       src: "theblock",
       alt: "The Block Crypto Logo",
       bg: false,
-    },
+    },    
+  },
+  featuredSecondary: {
     defiprime: {
       title: "Harsh Rajat, our founder talks about future of banking, EPNS protocol incentives and where is a business model for decentralized push notifications.",
       href: "https://defiprime.com/ethereum-push-notification-service",
@@ -49,8 +58,6 @@ const featuredList = {
       alt: "DeFiPrime Logo",
       bg: false,
     },
-  },
-  featuredSecondary: {
     coinlist: {
       title: "Ethereum Push Notification Service graduates from CoinList Seed Batch 2020",
       href: "https://blog.coinlist.co/introducing-the-coinlist-seed-fall-2020-batch/",
@@ -71,16 +78,16 @@ const featuredList = {
       src: "ideo",
       alt: "IDEO Collab Product Validation Day Logo",
       bg: false,
-    },
-    nuggetnews: {
-      title: "Alex Saunders talks about EPNS on Nugget News",
-      href: "https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be",
-      src: "nuggetnews",
-      alt: "Nugget News Logo",
-      bg: false,
-    },
+    },    
   },
   drilldown: {
+    cointelegraph: {
+      title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
+      href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
+      src: "cointelegraph",
+      alt: "Coin Telegraph Logo",
+      bg: false,
+    },
     yourstory: {
       title: "Yourstory talks about EPNS and why blockchain push notifications are important",
       href: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications",
@@ -150,14 +157,7 @@ const featuredList = {
       src: "mojkripto",
       alt: "MojKrypto Logo",
       bg: false,
-    },
-    cnbc: {
-      title: "CNBC interviews Harsh on EPNS and future of crypto",
-      href: "https://twitter.com/CNBCTV18News/status/1418863890662887430?s=20",
-      src: "cnbc",
-      alt: "CNBC Logo",
-      bg: false,
-    }
+    }    
   }
 }
 
