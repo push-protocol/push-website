@@ -66,6 +66,14 @@ const partnersList = {
       alt: "Snapshot Logo",
       display: "Notifs for governance proposals with EPNS 🔔"
     },
+    tracer: {
+      title: "Article talking about partnership between EPNS and Tracer DAO",
+      href: "https://medium.com/ethereum-push-notification-service/epns-brings-push-notifs-to-tracer-dao-governance-91f7b9a9ddcc",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "tracer",
+      alt: "tracer logo",
+      display: "EPNS collaborates with Tracer DAO"
+    },
     ceramic: {
       title: "Advancing Ceramic Networks decentralized identity network with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
