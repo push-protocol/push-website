@@ -49,7 +49,7 @@ const partnersList = {
       display: "Scaling Web3Notifs on Polygon’s Layer-2"
     },    
   },
-  drilldown: {    
+  drilldown: {
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
@@ -57,7 +57,7 @@ const partnersList = {
       src: "yam",
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
-    },
+    },    
     snapshot: {
       title: "Article talking about partnership between EPNS and Snapshot!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
@@ -65,6 +65,14 @@ const partnersList = {
       src: "snapshot",
       alt: "Snapshot Logo",
       display: "Notifs for governance proposals with EPNS 🔔"
+    },
+    idlefinance: {
+      title: "Idle to enable Push Notifications for Governance Updates",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-idle-to-enable-push-notifications-for-governance-updates-32e142ed2f33",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "idle",
+      alt: "idle logo",
+      display: "IDLE X EPNS collaboration"
     },
     tracer: {
       title: "Article talking about partnership between EPNS and Tracer DAO",
