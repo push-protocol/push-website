@@ -1171,7 +1171,7 @@ function Home() {
                 linkedin="https://www.linkedin.com/in/everett-muzzy/"
               />
             </ItemH>
-            <ItemH self="stretch" align="stretch" flex="1" margin="20px 0px" minWidth="auto">
+            <ItemH self="stretch" align="stretch" flex="1" margin="0px 0px 20px 0px" minWidth="auto">
               <Advisor
                 img="./team/nischal.jpg"
                 srcSet="./team/nischal@2x.jpg 2x, ./team/nischal@3x.jpg 3x"

@@ -128,7 +128,7 @@ const ConverseInner = styled(ItemH)`
 `
 
 const Profile = styled(ItemH)`
-  max-width: 40%;
+  max-width: 120px;
   margin: 20px 0px;
 `
 

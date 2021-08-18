@@ -14,25 +14,18 @@ const featuredList = {
       alt: "CNBC Logo",
       bg: false,
     },
-    nuggetnews: {
-      title: "Alex Saunders talks about EPNS on Nugget News",
-      href: "https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be",
-      src: "nuggetnews",
-      alt: "Nugget News Logo",
+    cointelegraph: {
+      title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
+      href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
+      src: "cointelegraph",
+      alt: "Coin Telegraph Logo",
       bg: false,
-    },    
+    },
     hackernoon: {
       title: "Hackernoon interview on how Ethereum Push Notifications Will Pull Blockchain Out of the Stone Age",
       href: "https://hackernoon.com/push-notifications-will-pull-blockchain-out-of-the-stone-age-of-communication-unhashed-1-ql1f33d6",
       src: "hackernoon",
       alt: "Hackernoon Logo",
-      bg: false,
-    },
-    gitcoin: {
-      title: "Ethereum Push Notification Service selected as top 20 project and unvelied at fireside",
-      href: "https://twitter.com/epnsproject/status/1299018919143849984?s=20",
-      src: "kernel",
-      alt: "Gitcoin Kernel Logo",
       bg: false,
     },
     epicenter: {
@@ -48,7 +41,7 @@ const featuredList = {
       src: "theblock",
       alt: "The Block Crypto Logo",
       bg: false,
-    },    
+    },
   },
   featuredSecondary: {
     defiprime: {
@@ -72,20 +65,11 @@ const featuredList = {
       alt: "DailyGWEI Logo",
       bg: false,
     },
-    ideo: {
-      title: "IDEO Collab selected and mentored Ethereum Push Notification Service as 30 projects from 120 projects for Product Validation Day",
-      href: "https://medium.com/@ideovc/hello-its-your-users-calling-7599c679e28d",
-      src: "ideo",
-      alt: "IDEO Collab Product Validation Day Logo",
-      bg: false,
-    },    
-  },
-  drilldown: {
-    cointelegraph: {
-      title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
-      href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
-      src: "cointelegraph",
-      alt: "Coin Telegraph Logo",
+    gitcoin: {
+      title: "Ethereum Push Notification Service selected as top 20 project and unvelied at fireside",
+      href: "https://twitter.com/epnsproject/status/1299018919143849984?s=20",
+      src: "kernel",
+      alt: "Gitcoin Kernel Logo",
       bg: false,
     },
     yourstory: {
@@ -93,6 +77,15 @@ const featuredList = {
       href: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications",
       src: "yourstory",
       alt: "YourStory Logo",
+      bg: false,
+    },
+  },
+  drilldown: {
+    ideo: {
+      title: "IDEO Collab selected and mentored Ethereum Push Notification Service as 30 projects from 120 projects for Product Validation Day",
+      href: "https://medium.com/@ideovc/hello-its-your-users-calling-7599c679e28d",
+      src: "ideo",
+      alt: "IDEO Collab Product Validation Day Logo",
       bg: false,
     },
     ethhub: {
@@ -116,6 +109,13 @@ const featuredList = {
       alt: "CoinCrunch India Logo",
       bg: false,
     },
+    nuggetnews: {
+      title: "Alex Saunders talks about EPNS on Nugget News",
+      href: "https://www.youtube.com/watch?v=ptDzAm62ATg&feature=youtu.be",
+      src: "nuggetnews",
+      alt: "Nugget News Logo",
+      bg: false,
+    }, 
     edcon: {
       title: "EDCON Panel featuring Harsh Rajat, founder, EPNS talks about DeFi Cross Composability",
       href: "https://www.edcon.io/#maodian",
@@ -157,7 +157,7 @@ const featuredList = {
       src: "mojkripto",
       alt: "MojKrypto Logo",
       bg: false,
-    }    
+    }
   }
 }
 
