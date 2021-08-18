@@ -14,6 +14,13 @@ const featuredList = {
       alt: "CNBC Logo",
       bg: false,
     },
+    forbes: {
+      title: "Forbes India talks with Harsh about EPNS",
+      href: "https://twitter.com/forbes_india/status/1427857510900269067",
+      src: "forbes",
+      alt: "Forbes Logo",
+      bg: false,
+    },
     cointelegraph: {
       title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
       href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
@@ -34,7 +41,9 @@ const featuredList = {
       src: "epicenter",
       alt: "Epicenter Logo",
       bg: false,
-    },
+    },    
+  },
+  featuredSecondary: {
     theblock: {
       title: "The Block Crypto writes about EPNS: Balaji Srinivasan, Gitcoin co-founder back $750K seed round for decentralized notification system on Ethereum",
       href: "https://www.theblockcrypto.com/linked/86953/ethereum-notification-system-seed-funding",
@@ -42,8 +51,6 @@ const featuredList = {
       alt: "The Block Crypto Logo",
       bg: false,
     },
-  },
-  featuredSecondary: {
     defiprime: {
       title: "Harsh Rajat, our founder talks about future of banking, EPNS protocol incentives and where is a business model for decentralized push notifications.",
       href: "https://defiprime.com/ethereum-push-notification-service",
@@ -71,7 +78,9 @@ const featuredList = {
       src: "kernel",
       alt: "Gitcoin Kernel Logo",
       bg: false,
-    },
+    },    
+  },
+  drilldown: {
     yourstory: {
       title: "Yourstory talks about EPNS and why blockchain push notifications are important",
       href: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications",
@@ -79,8 +88,6 @@ const featuredList = {
       alt: "YourStory Logo",
       bg: false,
     },
-  },
-  drilldown: {
     ideo: {
       title: "IDEO Collab selected and mentored Ethereum Push Notification Service as 30 projects from 120 projects for Product Validation Day",
       href: "https://medium.com/@ideovc/hello-its-your-users-calling-7599c679e28d",
