@@ -1,12 +1,12 @@
 const partnersList = {
-  featured: {
-    ruler: {
-      title: "Article talking about partnership between EPNS and Ruler Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+  featured: {    
+    aragon: {
+      title: "Article talking about partnership between EPNS and Aragon!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-aragon-voice-to-power-unstoppable-decentralized-governance-56182b9d9aa0",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "ruler",
-      alt: "Ruler Protocol Logo",
-      display: "Get notified for your non-liquidatable loans"
+      src: "aragon",
+      alt: "Aragon Logo",
+      display: "EPNS 🤝 Aragon Powering Decentralized Governance"
     },
     aave: {
       title: "Article talking about AAVE and Ethereuem Push Notificaion Service Partnership",
@@ -57,6 +57,14 @@ const partnersList = {
       src: "yam",
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
+    },
+    ruler: {
+      title: "Article talking about partnership between EPNS and Ruler Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ruler",
+      alt: "Ruler Protocol Logo",
+      display: "Get notified for your non-liquidatable loans"
     },    
     snapshot: {
       title: "Article talking about partnership between EPNS and Snapshot!",
