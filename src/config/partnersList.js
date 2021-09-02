@@ -58,14 +58,14 @@ const partnersList = {
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
     },
-    ruler: {
-      title: "Article talking about partnership between EPNS and Ruler Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+    cvi: {
+      title: "EPNS and COTI team up to bring push notifications to CVI users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-cvi-crypto-volatility-index-to-enable-push-notifications-for-their-5ea662ee73a3",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "ruler",
-      alt: "Ruler Protocol Logo",
-      display: "Get notified for your non-liquidatable loans"
-    },    
+      src: "cvi",
+      alt: "cvi logo",
+      display: "Coti 🤝 EPNS Collaboration"
+    },        
     snapshot: {
       title: "Article talking about partnership between EPNS and Snapshot!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
@@ -74,6 +74,14 @@ const partnersList = {
       alt: "Snapshot Logo",
       display: "Notifs for governance proposals with EPNS 🔔"
     },
+    ruler: {
+      title: "Article talking about partnership between EPNS and Ruler Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ruler",
+      alt: "Ruler Protocol Logo",
+      display: "Get notified for your non-liquidatable loans"
+    },    
     idlefinance: {
       title: "Idle to enable Push Notifications for Governance Updates",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-idle-to-enable-push-notifications-for-governance-updates-32e142ed2f33",
