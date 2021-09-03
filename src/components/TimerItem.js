@@ -84,14 +84,25 @@ function TimerItem() {
 
       <ItemH margin="0px 0px 20px 0px" size="3em">
         <Anchor
-          title="Trade $PUSH on MEXC (MXC)"
-          href="https://www.mexc.com/exchange/PUSH_USDT"
+          title="Trade $PUSH on Huobi"
+          href="https://www.gate.io/trade/push_usdt"
           target="_blank"
           bg="transparent"
           width="40px"
           radius="12px"
         >
-          <Image src="./listings/mexc.png" srcSet="./listings/mexc@2x.png 2x, ./listings/mexc@3x.png 3x" />
+          <Image src="./listings/huobi.png" srcSet="./listings/huobi@2x.png 2x, ./listings/huobi@3x.png 3x" />
+        </Anchor>
+
+        <Anchor
+          title="Trade $PUSH on Gate.io"
+          href="https://wazirx.com/exchange/PUSH-USDT"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+        >
+          <Image src="./listings/gateio.png" srcSet="./listings/gateio@2x.png 2x, ./listings/gateio@3x.png 3x" />
         </Anchor>
 
         <Anchor
@@ -106,6 +117,28 @@ function TimerItem() {
         </Anchor>
 
         <Anchor
+          title="Trade $PUSH on Zebpay"
+          href="https://zebpay.com"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+        >
+          <Image src="./listings/zebpay.png" srcSet="./listings/zebpay@2x.png 2x, ./listings/zebpay@3x.png 3x" />
+        </Anchor>
+
+        <Anchor
+          title="Trade $PUSH on MEXC (MXC)"
+          href="https://www.mexc.com/exchange/PUSH_USDT"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+        >
+          <Image src="./listings/mexc.png" srcSet="./listings/mexc@2x.png 2x, ./listings/mexc@3x.png 3x" />
+        </Anchor>
+
+        <Anchor
           title="Trade $PUSH on Uniswap"
           href="https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee"
           target="_blank"
@@ -114,17 +147,6 @@ function TimerItem() {
           radius="12px"
         >
           <Image src="./listings/uniswap.png" srcSet="./listings/uniswap@2x.png 2x, ./listings/uniswap@3x.png 3x" />
-        </Anchor>
-
-        <Anchor
-          title="Trade $PUSH on 1Inch"
-          href="https://app.1inch.io/#/1/swap/ETH/PUSH"
-          target="_blank"
-          bg="transparent"
-          width="40px"
-          radius="12px"
-        >
-          <Image src="./listings/1inch.png" srcSet="./listings/1inch@2x.png 2x, ./listings/1inch@3x.png 3x" />
         </Anchor>
       </ItemH>
 
