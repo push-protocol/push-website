@@ -1,12 +1,12 @@
-const countdownEpoch = 0; //1678914000; // https://www.epochconverter.com/
+const countdownEpoch = 1631023200; //1678914000; // https://www.epochconverter.com/
 
 const countdown = {
-  title: "Introducing Liqudity Rewards Program",
-  href: "https://incentives.epns.io",
+  title: "Push for Governance",
+  href: "#",
   countdownEpoch: countdownEpoch,
   button: true,
-  buttonTitle: "Checkout LP / $PUSH Rewards Program",
-  buttonText: "Checkout Incentives dApp",
+  buttonTitle: "Are you ready for Governance",
+  buttonText: "Incoming Announcement",
   hide: false,
 }
 

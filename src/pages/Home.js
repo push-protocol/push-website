@@ -245,7 +245,7 @@ function Home() {
                 <H1>Ethereum Push Notification Service</H1>
                 <Span margin="-25px 0 0 0"><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Subscribe. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Notify. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Earn.</Span></Span>
 
-                <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform agnostic</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
+                <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">chain agnostic</Span>, <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform independent</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
 
                 {!countdown.hide &&
                   <ItemH align="flex-start" justify="flex-start" margin="-10px 0px -10px 0px" size="0.8rem">

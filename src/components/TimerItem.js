@@ -85,7 +85,7 @@ function TimerItem() {
       <ItemH margin="0px 0px 20px 0px" size="3em">
         <Anchor
           title="Trade $PUSH on Huobi"
-          href="https://www.gate.io/trade/push_usdt"
+          href="https://www.huobi.com/en-us/exchange/push_usdt"
           target="_blank"
           bg="transparent"
           width="40px"
@@ -96,7 +96,7 @@ function TimerItem() {
 
         <Anchor
           title="Trade $PUSH on Gate.io"
-          href="https://wazirx.com/exchange/PUSH-USDT"
+          href="https://www.gate.io/trade/push_usdt"
           target="_blank"
           bg="transparent"
           width="40px"
