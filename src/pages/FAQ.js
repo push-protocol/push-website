@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import MetaTags, {ReactTitle} from 'react-meta-tags';
 
 import styled from 'styled-components';
-import {Section, SectionHero, Content, Item, ItemH, WaveOuter, WaveInner, H1, H2, H3, Image, P, Para, UL, LI, A, B, Span, Anchor, Button} from 'components/SharedStyling';
+import {Section, SectionHero, Content, Item, ItemH, WaveOuter, WaveInner, H1, H2, H3, Image, P, Para, UL,OL , LI, A, B, Span, Anchor, Button} from 'components/SharedStyling';
 
 import { BsChevronExpand } from 'react-icons/bs';
 import Wave from 'react-wavify';
@@ -23,6 +23,13 @@ function FAQ() {
 
     setShowAnswers(newShowAnswers);
   }
+
+  // d
+  // const FAQS = [
+  //   {
+  //     question:
+  //   }
+  // ]
 
   // RENDER
   return (
@@ -216,24 +223,166 @@ function FAQ() {
                 }
               </QnAItem>
 
+
               <QnAItem>
                 <Question
                   onClick={() => {toggleShowAnswer(8)}}
                   hover="#e20880"
                 >
                   <Span>
-                    How can I keep up with EPNS?
+                    How can I stay up-to-date with official EPNS news?
                   </Span>
                   <BsChevronExpand size={20} color={"#ddd"}/>
                 </Question>
 
                 {showAnswers[8] &&
                   <Answer>
-                    <Span>Join our <AMod href="https://t.me/epnsproject" target="_blank" title="Join our EPNS's Telegram channel">Telegram</AMod>, follow us on <AMod href="https://twitter.com/epnsproject" target="_blank" title="Join our EPNS's Twitter channel">Twitter</AMod>, and sign up for our 5 minute <AMod href="https://epns.substack.com/" target="_blank" title="Join our EPNS's Twitter channel">weekly product updates</AMod>.</Span>
+                    <Span>The list below contains all EPNS official channels.</Span>
+                    <UL>
+                      <LIMod>Twitter: <AMod href="https://twitter.com/epnsproject">https://twitter.com/epnsproject</AMod></LIMod>
+                      <LIMod>Official Telegram: <AMod href="https://t.me/epnsproject">https://t.me/epnsproject</AMod></LIMod>
+                      <LIMod>Telegram announcements: <AMod href="https://t.me/epnsprojectnews">https://t.me/epnsprojectnews</AMod></LIMod>
+                      <LIMod>Governance forum: <AMod href="https://gov.epns.io/">https://gov.epns.io/</AMod></LIMod>
+                      <LIMod>Github: <AMod href="https://github.com/ethereum-push-notification-service/">https://github.com/ethereum-push-notification-service/</AMod> </LIMod>
+                      <LIMod>Medium: <AMod href="https://medium.com/ethereum-push-notification-service/">https://medium.com/ethereum-push-notification-service/</AMod></LIMod>
+                      <LIMod>Youtube: <AMod href="https://www.youtube.com/c/EthereumPushNotificationService/">https://www.youtube.com/c/EthereumPushNotificationService/</AMod></LIMod>
+                      <LIMod>TURKISH?</LIMod>
+                    </UL>
                   </Answer>
                 }
               </QnAItem>
 
+              <QnAItem>
+                <Question
+                  onClick={() => {toggleShowAnswer(9)}}
+                  hover="#e20880"
+                >
+                  <Span>
+                    How can I get support for EPNS related queries?
+                  </Span>
+                  <BsChevronExpand size={20} color={"#ddd"}/>
+                </Question>
+
+                {showAnswers[9] &&
+                  <Answer>
+                    <Span>We have multiple channels where support is provided.</Span>
+                    <Span>The Contact Us form on our website is to be considered the one-stop-shop for all support queries: <AMod href="https://epns.io/#contact">https://epns.io/#contact</AMod></Span>
+                    <Span>The Contact Us form on our website is to be considered the one-stop-shop for all support queries: https://epns.io/#contact </Span>
+                    <UL>
+                      <LIMod>General Support about EPNS products & offering</LIMod>
+                      <LIMod>Collaborations and business proposals</LIMod>
+                      <LIMod>Career opportunities</LIMod>
+                      <LIMod>and more!</LIMod>
+                    </UL>
+                    <Span>
+                      Additionally, our development team is always available on our Discord Community Server to help with more technical matters related to integrations.
+                    </Span>
+                    <Span>
+                      Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.
+                    </Span>
+                  </Answer>
+                }
+              </QnAItem>
+
+              <QnAItem>
+                <Question
+                  onClick={() => {toggleShowAnswer(9)}}
+                  hover="#e20880"
+                >
+                  <Span>
+                    Where can I find educational material about EPNS?
+                  </Span>
+                  <BsChevronExpand size={20} color={"#ddd"}/>
+                </Question>
+
+                {showAnswers[9] &&
+                  <Answer>
+                    <UL>
+                      <LIMod>Our Website: <AMod href="https://epns.io/">https://epns.io/</AMod></LIMod>
+                      <LIMod>Our Whitepaper: <AMod href="https://whitepaper.epns.io/">https://whitepaper.epns.io/</AMod></LIMod>
+                      <LIMod>Our Litepaper: <AMod href="https://epns.io/LitepaperEthereumPushNotificationService.pdf">https://epns.io/LitepaperEthereumPushNotificationService.pdf</AMod></LIMod>
+                      <LIMod>Token economics: <AMod href="https://medium.com/ethereum-push-notification-service/announcing-the-epns-push-token-generation-event-4d1699e716f5">https://medium.com/ethereum-push-notification-service/</AMod></LIMod>
+                      <LIMod>Documentation: <AMod href="https://app.gitbook.com/@ethereum-push-notification/spaces">https://app.gitbook.com/@ethereum-push-notification/spaces</AMod></LIMod>
+                      <LIMod>Our Medium Blog is an excellent source of information. Our team is consistently publishing articles to keep the community up-to-speed with our development efforts, partnerships, and more.</LIMod>
+                    </UL>
+                  </Answer>
+                }
+              </QnAItem>
+
+              <QnAItem>
+                <Question
+                  onClick={() => {toggleShowAnswer(10)}}
+                  hover="#e20880"
+                >
+                  <Span>
+                    How can I participate in the EPNS Protocol ecosystem?
+                  </Span>
+                  <BsChevronExpand size={20} color={"#ddd"}/>
+                </Question>
+
+                {showAnswers[10] &&
+                  <Answer>
+                    <Span> First of all, familiarize yourself with EPNS through our Whitepaper, Litepaper, and Medium articles, and then join our official channels. </Span>
+                    <Span> Then, please make sure you keep an eye on the multiple events we run through Twitter and telegram. You will have the opportunity to learn about our partners and collaborations and participate in the contest around them. </Span>
+                    <Span> Also, become an active member in the EPNS Governance and participate in the direction of the protocol. Visit <AMod href="https://gov.epns.io/">https://gov.epns.io/</AMod>, get involved in the conversations, express your opinions, support your favorite PUSH Delegatee, and make your vote count! </Span>
+                    <Span> Where can I get $PUSH? </Span>
+                    <Span> There are many alternatives to obtain $PUSH: </Span>
+                    <OL>
+                      <LIMod>
+                        Participate in our community designed activities:
+                        <OL type="a">
+                          <LIMod> <AMod href="https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of EPNS </AMod></LIMod>
+                          <LIMod> Participate in one of our Pools available at <AMod href="https://incentives.epns.io/">https://incentives.epns.io/</AMod></LIMod>
+                          <LIMod> AMA contests, and Meme contests  </LIMod>
+                          <LIMod> Participate to become an EPNS champion in our Governance process </LIMod><br />
+                        </OL>
+                      </LIMod>
+
+                      <LIMod>
+                        Buy $PUSH directly. We are listed in:
+                        <OL type="a">
+                          <LIMod>
+                            <BoldText>Huobi</BoldText><br/>
+                            <Span>PUSH/USDT: <AMod href="https://m.huobi.com/en-us/market/chart/?s=push_usdt">https://m.huobi.com/en-us/market/chart/?s=push_usdt</AMod></Span><br/>
+                            <Span>PUSH/BTC: <AMod href="https://m.huobi.com/en-us/market/chart/?s=push_btc">https://m.huobi.com/en-us/market/chart/?s=push_btc</AMod></Span>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Uniswap</BoldText><br/>
+                            <Span><AMod href="https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee">https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee</AMod></Span><br/>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Paraswap</BoldText><br/>
+                            <Span><AMod href="Paraswap">Paraswap</AMod></Span><br/>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>WazirX</BoldText><br/>
+                            <Span>PUSH/USDT: <AMod href="https://wazirx.com/exchange/PUSH-USDT">https://wazirx.com/exchange/PUSH-USDT</AMod></Span><br/>
+                            <Span>PUSH/INR: <AMod href="https://wazirx.com/exchange/PUSH-INR">https://wazirx.com/exchange/PUSH-INR</AMod></Span>  
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Mexc</BoldText><br/>
+                            <Span>PUSH/USDT: <AMod href="https://www.mexc.com/exchange/PUSH_USDT">https://www.mexc.com/exchange/PUSH_USDT</AMod></Span><br/>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Zebpay</BoldText><br/>
+                            <Span><AMod href="https://zebpay.com/in/buy-push">https://zebpay.com/in/buy-push</AMod></Span><br/>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Gate</BoldText><br/>
+                            <Span>PUSH/USDT: <AMod href="https://www.gate.io/trade/PUSH_USDT">https://www.gate.io/trade/PUSH_USDT</AMod></Span><br/>
+                            <Span>PUSH/ETH: <AMod href="https://www.gate.io/trade/PUSH_ETH">https://www.gate.io/trade/PUSH_ETH</AMod></Span>
+                          </LIMod>
+                          <LIMod>
+                            <BoldText>Bitbns</BoldText><br/>
+                            <Span>PUSH/INR: <AMod href="https://bitbns.com/trade/#/push/">https://bitbns.com/trade/#/push/</AMod></Span><br/>
+                          </LIMod>
+                        </OL>
+                      </LIMod>
+                    </OL>
+                    <Span>Learn more about the EPNS $PUSH Liquidity Rewards Program <AMod href="https://medium.com/ethereum-push-notification-service/epns-push-liquidity-rewards-program-d16ff2c0fef4">here.</AMod></Span>
+                  </Answer>
+                }
+              </QnAItem>
 
             </Item>
           </Item>
@@ -306,6 +455,14 @@ const AMod = styled(A)`
   font-weight: 400;
   text-decoration: underline;
 `
+
+const LIMod = styled(LI)`
+  color: white;
+`
+
+const BoldText = styled.span`
+  font-weight: bold;
+`;
 
 // Export Default
 export default FAQ;

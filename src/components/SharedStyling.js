@@ -224,6 +224,9 @@ export const UL = styled.ul`
 
 `
 
+export const OL = styled.ol`
+`
+
 export const LI = styled.li`
   margin: 10px 0px;
 `
