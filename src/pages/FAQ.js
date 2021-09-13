@@ -114,7 +114,7 @@ function FAQ() {
       renderAnswer: () => (
         <Answer>
           <Span>We have multiple channels where support is provided.</Span>
-          <Span>The Contact Us form on our website is to be considered the one-stop-shop for all support queries: <AMod href="https://epns.io/#contact">https://epns.io/#contact</AMod></Span>
+          <Span>The <AMod href="https://epns.io/#contact">Contact Us</AMod> form on our website is to be considered the one-stop-shop for all support queries.</Span>
           <UL>
             <LIMod>General Support about EPNS products & offering</LIMod>
             <LIMod>Collaborations and business proposals</LIMod>
@@ -122,7 +122,7 @@ function FAQ() {
             <LIMod>and more!</LIMod>
           </UL>
           <Span>
-            Additionally, our development team is always available on our Discord Community Server to help with more technical matters related to integrations.
+            Additionally, our development team is always available on our <AMod href="https://discord.gg/nYrqZ734nu">Discord Community Server</AMod> to help with more technical matters related to integrations.
           </Span>
           <Span>
             Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.
@@ -141,7 +141,7 @@ function FAQ() {
             <LIMod>Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod></LIMod>
             <LIMod>Token economics: <AMod href="https://medium.com/ethereum-push-notification-service/announcing-the-epns-push-token-generation-event-4d1699e716f5">https://medium.com/ethereum-push-notification-service/</AMod></LIMod>
             <LIMod>Documentation: <AMod href="https://app.gitbook.com/@ethereum-push-notification/spaces">https://app.gitbook.com/@ethereum-push-notification/spaces</AMod></LIMod>
-            <LIMod>Our Medium Blog is an excellent source of information. Our team is consistently publishing articles to keep the community up-to-speed with our development efforts, partnerships, and more.</LIMod>
+            <LIMod>Our <AMod href="https://medium.com/ethereum-push-notification-service">Medium Blog</AMod> is an excellent source of information. Our team is consistently publishing articles to keep the community up-to-speed with our development efforts, partnerships, and more.</LIMod>
           </UL>
         </Answer>
       )
@@ -156,7 +156,7 @@ function FAQ() {
         </Answer>
       )
     },{
-      question: "Where can i get $PUSH?",
+      question: "Where do i get $PUSH?",
       renderAnswer: () => (
         <Answer>
           <OL>
@@ -165,7 +165,7 @@ function FAQ() {
               <OL type="a">
                 <LIMod> <AMod href="https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of EPNS </AMod></LIMod>
                 <LIMod> Participate in one of our Pools available at <AMod href="https://incentives.epns.io/">https://incentives.epns.io/</AMod></LIMod>
-                <LIMod> AMA contests, and Meme contests  </LIMod>
+                <LIMod> Participate in our Collaboration announcements activities (AMAs, Meme contests)  </LIMod>
                 <LIMod> Participate to become an EPNS champion in our Governance process </LIMod>
               </OL>
             </LIMod>
@@ -180,7 +180,7 @@ function FAQ() {
             </LIMod>
             <LIMod>
               <BoldText>Paraswap</BoldText><br/>
-              <Span><AMod href="Paraswap">Paraswap</AMod></Span><br/>
+              <Span><AMod href="https://paraswap.io/#/ETH-PUSH ">Paraswap</AMod></Span><br/>
             </LIMod>
             <LIMod>
               <BoldText>WazirX</BoldText><br/>
