@@ -148,6 +148,28 @@ function TimerItem() {
         >
           <Image src="./listings/uniswap.png" srcSet="./listings/uniswap@2x.png 2x, ./listings/uniswap@3x.png 3x" />
         </Anchor>
+
+        <Anchor
+          title="Trade $PUSH on Coindcx"
+          href="https://coindcx.com/trade/PUSHUSDT"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+        >
+          <Image src="./listings/coindcx.png" srcSet="./listings/coindcx@2x.png 2x, ./listings/coindcx@3x.png 3x" />
+        </Anchor>
+
+        <Anchor
+          title="Trade $PUSH on BitBns"
+          href="https://bitbns.com/trade/#/push"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+        >
+          <Image src="./listings/bitbns.png" srcSet="./listings/bitbns@2x.png 2x, ./listings/bitbns@3x.png 3x" />
+        </Anchor>
       </ItemH>
 
       <Item padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
