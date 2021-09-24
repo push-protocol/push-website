@@ -31,7 +31,7 @@ function FAQ() {
       renderAnswer: () => (
         <Answer>
           <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are triggered if and when a smart contract reaches certain conditions. Other Web3 participants can search, browse, and Opt-In to specific notifications and more confidently interact with dapps.</Span>
+          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are triggered if and when a smart contract reaches certain conditions. Other Web3 participants can search, browse, and subscribe to specific notifications and more confidently interact with dapps.</Span>
         </Answer>
       )
     },
@@ -64,7 +64,7 @@ function FAQ() {
           <Span><b>⚬ Service:</b> A service is any user, wallet owner, dapp, or Web3 services that would like to send notifications. Essentially, a service is any addressable user of EPNS.</Span>
           <Span><b>⚬ Channel:</b> A channel is any service that has activated itself on the EPNS protocol and can therefore begin creating notifications.</Span>
           <Span><b>⚬ User:</b> Any participant in Web3 that wishes to receive notifications about a dapp, wallet, or smart contract.</Span>
-          <Span><b>⚬ Subscriber:</b> A user that has elected to receive notifications from any particular channel (i.e. someone who Opts-In to a channel that sends out a specific notification).</Span>
+          <Span><b>⚬ Subscriber:</b> A user that has elected to receive notifications from any particular channel (i.e. someone who subscribes to a channel that sends out a specific notification).</Span>
         </Answer>
       )
     },
@@ -72,7 +72,7 @@ function FAQ() {
       question: "How do I use EPNS?",
       renderAnswer: () => (
         <Answer>
-          <Span>EPNS is an app on your phone and/or desktop. On the app, you can connect your wallet(s) and Opt-In to different channels based on which notifications you’d like to receive.</Span>
+          <Span>EPNS is an app on your phone and/or desktop. On the app, you can connect your wallet(s) and subscribe to different channels based on which notifications you’d like to receive.</Span>
         </Answer>
       )
     },
