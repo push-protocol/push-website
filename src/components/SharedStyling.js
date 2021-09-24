@@ -85,7 +85,7 @@ export const Item = styled.div`
 export const ItemH = styled(Item)`
   flex-direction: row;
   flex: ${props => props.flex || '1'};
-
+  
   ${ItemBreak} {
     width: auto;
     height: 0;
