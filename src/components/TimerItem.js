@@ -82,7 +82,7 @@ function TimerItem() {
         </Item>
       </ItemH>
 
-      <ItemH style={{'flex-wrap': "nowrap"}} margin="0px 0px 20px 0px" size="3em">
+      <ItemH style={{maxWidth: "403px", justifyContent: "flex-start"}} margin="0px 0px 20px 0px" size="3em">
         <Anchor
           title="Trade $PUSH on Huobi"
           href="https://www.huobi.com/en-us/exchange/push_usdt"
@@ -90,6 +90,7 @@ function TimerItem() {
           bg="transparent"
           width="40px"
           radius="12px"
+
         >
           <Image src="./listings/huobi.png" srcSet="./listings/huobi@2x.png 2x, ./listings/huobi@3x.png 3x" />
         </Anchor>
