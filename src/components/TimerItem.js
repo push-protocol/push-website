@@ -90,6 +90,7 @@ function TimerItem() {
           bg="transparent"
           width="40px"
           radius="12px"
+
         >
           <Image src="./listings/huobi.png" srcSet="./listings/huobi@2x.png 2x, ./listings/huobi@3x.png 3x" />
         </Anchor>
@@ -104,7 +105,6 @@ function TimerItem() {
         >
           <Image src="./listings/gateio.png" srcSet="./listings/gateio@2x.png 2x, ./listings/gateio@3x.png 3x" />
         </Anchor>
-        <br />
 
         <Anchor
           title="Trade $PUSH on WazirX"
