@@ -82,7 +82,7 @@ function TimerItem() {
         </Item>
       </ItemH>
 
-      <ItemH style={{'flex-wrap': "nowrap"}} margin="0px 0px 20px 0px" size="3em">
+      <ItemH style={{maxWidth: "403px", justifyContent: "flex-start"}} margin="0px 0px 20px 0px" size="3em">
         <Anchor
           title="Trade $PUSH on Huobi"
           href="https://www.huobi.com/en-us/exchange/push_usdt"
@@ -104,6 +104,7 @@ function TimerItem() {
         >
           <Image src="./listings/gateio.png" srcSet="./listings/gateio@2x.png 2x, ./listings/gateio@3x.png 3x" />
         </Anchor>
+        <br />
 
         <Anchor
           title="Trade $PUSH on WazirX"
