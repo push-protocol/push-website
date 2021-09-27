@@ -31,7 +31,7 @@ function FAQ() {
       renderAnswer: () => (
         <Answer>
           <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are triggered if and when a smart contract reaches certain conditions. Other Web3 participants can search, browse, and Opt-In to specific notifications and more confidently interact with dapps.</Span>
+          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
         </Answer>
       )
     },
@@ -55,7 +55,7 @@ function FAQ() {
           <Span><b>ENS/Consumer Apps:</b> Apps like the Ethereum Name Service (ENS) can notify users when their subscriptions are about to expire, rather than expecting users to remember or check in regularly to remind themselves of upcoming dates.</Span>
       </Answer>
       )
-    },    
+    },
     {
       question: "What is EPNS's solution?",
       renderAnswer: () => (
@@ -185,7 +185,7 @@ function FAQ() {
             <LIMod>
               <BoldText>WazirX</BoldText><br/>
               <Span>PUSH/USDT: <AMod href="https://wazirx.com/exchange/PUSH-USDT">https://wazirx.com/exchange/PUSH-USDT</AMod></Span><br/>
-              <Span>PUSH/INR: <AMod href="https://wazirx.com/exchange/PUSH-INR">https://wazirx.com/exchange/PUSH-INR</AMod></Span>  
+              <Span>PUSH/INR: <AMod href="https://wazirx.com/exchange/PUSH-INR">https://wazirx.com/exchange/PUSH-INR</AMod></Span>
             </LIMod>
             <LIMod>
               <BoldText>Mexc</BoldText><br/>
@@ -278,7 +278,7 @@ function FAQ() {
                       renderAnswer()
                     }
                   </QnAItem>
-                )) 
+                ))
               }
             </Item>
             {/* Questions and answers */}
