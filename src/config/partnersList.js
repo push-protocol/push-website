@@ -25,7 +25,7 @@ const partnersList = {
       display: "EPNS 💖 Uniswap"
     },
     alpha: {
-      title: "Article exploring collaboration between Alpha Homara and Ethereuem Push Notificaion Service",
+      title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
       href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
       hover: "#000", //#eee or #000 based on logo og color
       src: "alphafinance",
@@ -50,13 +50,21 @@ const partnersList = {
     },    
   },
   drilldown: {
-    yamfinance: {
-      title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
-      href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
+    kyber: {
+      title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-support-kybers-frictionless-liquidity-pools-4fe65746b39",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "yam",
-      alt: "yam logo",
-      display: "Yam Finance integrates EPNS 🔔"
+      src: "kyber",
+      alt: "Kyber logo",
+      display: "Kyber 🤝 EPNS"
+    },
+    armor: {
+      title: "Armor Integrates EPNS for decentralized communication and notifications",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-armor-to-enable-push-notifications-for-its-users-daa70b4f172d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "armor",
+      alt: "Armor logo",
+      display: "EPNS collaborates with Armor"
     },
     cvi: {
       title: "EPNS and COTI team up to bring push notifications to CVI users",
@@ -65,6 +73,14 @@ const partnersList = {
       src: "cvi",
       alt: "cvi logo",
       display: "Coti 🤝 EPNS Collaboration"
+    },
+    yamfinance: {
+      title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
+      href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "yam",
+      alt: "yam logo",
+      display: "Yam Finance integrates EPNS 🔔"
     },        
     snapshot: {
       title: "Article talking about partnership between EPNS and Snapshot!",
@@ -74,14 +90,22 @@ const partnersList = {
       alt: "Snapshot Logo",
       display: "Notifs for governance proposals with EPNS 🔔"
     },
-    ruler: {
-      title: "Article talking about partnership between EPNS and Ruler Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+    easyfi: {
+      title: "Article talking about partnership between EPNS and EasyFi!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-support-easyfi-lending-platform-for-digital-assets-d7e264ea0f41",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "ruler",
-      alt: "Ruler Protocol Logo",
-      display: "Get notified for your non-liquidatable loans"
-    },    
+      src: "easyfi",
+      alt: "EasyFi Protocol Logo",
+      display: "EPNS x EasyFi"
+    },
+    openleverage: {
+      title: "Article talking about partnership between EPNS and OpenLeverage!",
+      href: "https://medium.com/ethereum-push-notification-service/openleverage-leverages-decentralized-push-notifications-with-epns-dc4ecb00f3d3",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "openleverage",
+      alt: "OpenLeverage Protocol Logo",
+      display: "EPNS collaborates with OpenLeverage"
+    },       
     idlefinance: {
       title: "Idle to enable Push Notifications for Governance Updates",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-idle-to-enable-push-notifications-for-governance-updates-32e142ed2f33",
@@ -129,6 +153,14 @@ const partnersList = {
       src: "bprotocol",
       alt: "BProtocol Logo",
       display: "EPNS X B.Protocol"
+    },
+    ruler: {
+      title: "Article talking about partnership between EPNS and Ruler Protocol!",
+      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ruler",
+      alt: "Ruler Protocol Logo",
+      display: "Get notified for your non-liquidatable loans"
     },
     bzx: {
       title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
