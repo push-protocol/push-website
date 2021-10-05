@@ -58,13 +58,13 @@ const partnersList = {
       alt: "Kyber logo",
       display: "Kyber 🤝 EPNS"
     },
-    armor: {
-      title: "Armor Integrates EPNS for decentralized communication and notifications",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-armor-to-enable-push-notifications-for-its-users-daa70b4f172d",
+    poh: {
+      title: "Article talking about partnership between EPNS and Proof of Humanity!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-joins-proof-of-humanity-to-enhance-the-user-experience-of-decentralized-self-sovereign-e734780c9840",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "armor",
-      alt: "Armor logo",
-      display: "EPNS collaborates with Armor"
+      src: "proofofhumanity",
+      alt: "Proof of Humanity logo",
+      display: "Proof of Humanity does pilot collab with EPNS 🔔"
     },
     cvi: {
       title: "EPNS and COTI team up to bring push notifications to CVI users",
@@ -81,7 +81,15 @@ const partnersList = {
       src: "yam",
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
-    },        
+    },
+    armor: {
+      title: "Armor Integrates EPNS for decentralized communication and notifications",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-armor-to-enable-push-notifications-for-its-users-daa70b4f172d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "armor",
+      alt: "Armor logo",
+      display: "EPNS collaborates with Armor"
+    },
     snapshot: {
       title: "Article talking about partnership between EPNS and Snapshot!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
