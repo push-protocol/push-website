@@ -127,15 +127,15 @@ const partnersList = {
       href: "https://medium.com/ethereum-push-notification-service/epns-brings-push-notifs-to-tracer-dao-governance-91f7b9a9ddcc",
       hover: "#000", //#eee or #000 based on logo og color
       src: "tracer",
-      alt: "tracer logo",
+      alt: "Tracer logo",
       display: "EPNS collaborates with Tracer DAO"
-    },
+    },    
     ceramic: {
       title: "Advancing Ceramic Networks decentralized identity network with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/advancing-ceramic-networks-decentralized-identity-network-with-epns-264b24a7508f",
       hover: "#000", //#eee or #000 based on logo og color
       src: "ceramic",
-      alt: "ceramic logo",
+      alt: "Ceramic logo",
       display: "Identity + Notification = 🔶 Ceramic X 🔔 EPNS"
     },    
     truefi: {
@@ -162,14 +162,14 @@ const partnersList = {
       alt: "BProtocol Logo",
       display: "EPNS X B.Protocol"
     },
-    ruler: {
-      title: "Article talking about partnership between EPNS and Ruler Protocol!",
-      href: "https://medium.com/ethereum-push-notification-service/ruler-protocol-innovating-the-defi-space-with-epns-3dc80c739097",
+    mover: {
+      title: "Mover delivering yield harvesting notifications with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/mover-integrates-with-epns-to-deliver-yield-harvesting-notifications-ab3bc9a6b26e",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "ruler",
-      alt: "Ruler Protocol Logo",
-      display: "Get notified for your non-liquidatable loans"
-    },
+      src: "mover",
+      alt: "Mover logo",
+      display: "Get notified for your yield harvesting 🔔"
+    },    
     bzx: {
       title: "EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-bzx-to-deliver-crucial-margin-trading-push-notifications-to-wallets-a2f52e4fcefe",
