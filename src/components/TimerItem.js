@@ -96,6 +96,18 @@ function TimerItem() {
         </Anchor>
 
         <Anchor
+          title="Trade $PUSH on Kucoin"
+          href="https://trade.kucoin.com/PUSH-USDT"
+          target="_blank"
+          bg="transparent"
+          width="40px"
+          radius="12px"
+
+        >
+          <Image src="./listings/kucoin.png" srcSet="./listings/kucoin@2x.png 2x, ./listings/kucoin@3x.png 3x" />
+        </Anchor>
+
+        <Anchor
           title="Trade $PUSH on Gate.io"
           href="https://www.gate.io/trade/push_usdt"
           target="_blank"
