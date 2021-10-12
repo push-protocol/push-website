@@ -50,6 +50,14 @@ const partnersList = {
     },    
   },
   drilldown: {
+    makerdao: {
+      title: "MakerDAO enabling Push Notifications for Protocol Governance Updates with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-makerdao-development-and-ux-core-unit-to-enable-push-notifications-for-protocol-53f777957d26",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "makerdao",
+      alt: "MakerDAO logo",
+      display: "Governance Notifications MakerDAO 🔔 EPNS"
+    },
     kyber: {
       title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
       href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-support-kybers-frictionless-liquidity-pools-4fe65746b39",
