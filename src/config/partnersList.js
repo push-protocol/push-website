@@ -1,13 +1,13 @@
 const partnersList = {
-  featured: {    
-    aragon: {
-      title: "Article talking about partnership between EPNS and Aragon!",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-aragon-voice-to-power-unstoppable-decentralized-governance-56182b9d9aa0",
+  featured: {  
+    makerdao: {
+      title: "MakerDAO enabling Push Notifications for Protocol Governance Updates with EPNS",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-makerdao-development-and-ux-core-unit-to-enable-push-notifications-for-protocol-53f777957d26",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "aragon",
-      alt: "Aragon Logo",
-      display: "EPNS 🤝 Aragon Powering Decentralized Governance"
-    },
+      src: "makerdao",
+      alt: "MakerDAO logo",
+      display: "Governance Notifications MakerDAO 🔔 EPNS"
+    },     
     aave: {
       title: "Article talking about AAVE and Ethereuem Push Notificaion Service Partnership",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-aave-to-bring-push-notifications-to-aave-users-3cdd7baf38e0",
@@ -50,13 +50,13 @@ const partnersList = {
     },    
   },
   drilldown: {
-    makerdao: {
-      title: "MakerDAO enabling Push Notifications for Protocol Governance Updates with EPNS",
-      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-makerdao-development-and-ux-core-unit-to-enable-push-notifications-for-protocol-53f777957d26",
+    aragon: {
+      title: "Article talking about partnership between EPNS and Aragon!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-aragon-voice-to-power-unstoppable-decentralized-governance-56182b9d9aa0",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "makerdao",
-      alt: "MakerDAO logo",
-      display: "Governance Notifications MakerDAO 🔔 EPNS"
+      src: "aragon",
+      alt: "Aragon Logo",
+      display: "EPNS 🤝 Aragon Powering Decentralized Governance"
     },
     kyber: {
       title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
