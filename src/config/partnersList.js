@@ -170,6 +170,14 @@ const partnersList = {
       alt: "BProtocol Logo",
       display: "EPNS X B.Protocol"
     },
+    rabbit: {
+      title: "Article talking about partnership between EPNS and RabbitHole",
+      href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-back-incentivized-web3-community-building-c8b81469f04a",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "rabbithole",
+      alt: "Rabbithole logo",
+      display: "EPNS collaborates with RabbitHole 🐇"
+    },
     mover: {
       title: "Mover delivering yield harvesting notifications with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/mover-integrates-with-epns-to-deliver-yield-harvesting-notifications-ab3bc9a6b26e",
