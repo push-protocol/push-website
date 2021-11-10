@@ -24,13 +24,13 @@ const partnersList = {
       alt: "Uniswap Logo",
       display: "EPNS 💖 Uniswap"
     },
-    alpha: {
-      title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
-      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
+    ens: {
+      title: "EPNS to Add Push Notifications to ENS Decentralized Domain Name Services",
+      href: "https://medium.com/ethereum-push-notification-service/epns-to-add-push-notifications-to-ens-decentralized-domain-name-services-a20f001a7234",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "alphafinance",
-      alt: "Alpha Homora Logo",
-      display: "EPNS + Alpha Homora = an Awesome Collab"
+      src: "ens",
+      alt: "ENS Logo",
+      display: "EPNS ✨ ENS"
     },
     gitcoin: {
       title: "Article talking about partnership between EPNS and Gitcoin!",
@@ -57,6 +57,14 @@ const partnersList = {
       src: "aragon",
       alt: "Aragon Logo",
       display: "EPNS 🤝 Aragon Powering Decentralized Governance"
+    },
+    alpha: {
+      title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
+      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "alphafinance",
+      alt: "Alpha Homora Logo",
+      display: "EPNS + Alpha Homora = an Awesome Collab"
     },
     kyber: {
       title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
@@ -90,6 +98,14 @@ const partnersList = {
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
     },
+    timeswap: {
+      title: "Article talking about collaboration between EPNS and Timeswap!",
+      href: "https://medium.com/ethereum-push-notification-service/timeswap-partners-with-epns-to-bring-push-notifications-to-its-users-42c9772631b8",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "timeswap",
+      alt: "Timeswap logo",
+      display: "🔔 EPNS x Timeswap ⌛"
+    },
     armor: {
       title: "Armor Integrates EPNS for decentralized communication and notifications",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-armor-to-enable-push-notifications-for-its-users-daa70b4f172d",
@@ -99,7 +115,7 @@ const partnersList = {
       display: "EPNS collaborates with Armor"
     },
     snapshot: {
-      title: "Article talking about partnership between EPNS and Snapshot!",
+      title: "Article talking about collaboration between EPNS and Snapshot!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b",
       hover: "#000", //#eee or #000 based on logo og color
       src: "snapshot",
