@@ -66,6 +66,14 @@ const partnersList = {
       alt: "Alpha Homora Logo",
       display: "EPNS + Alpha Homora = an Awesome Collab"
     },
+    iotex: {
+      title: "EPNS Collaborates With World’s Fastest IoT Blockchain IoTeX",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-worlds-fastest-iot-blockchain-iotex-234780db3026",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "iotex",
+      alt: "IoTeX logo",
+      display: "IoTex 🤝 EPNS Connecting Physical & Digital worlds"
+    },
     kyber: {
       title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
       href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-support-kybers-frictionless-liquidity-pools-4fe65746b39",
