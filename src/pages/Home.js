@@ -1544,34 +1544,40 @@ function Home() {
                 Object.keys(investorsList.angelsoptional).map(function(key) {
                   const item = investorsList.angelsoptional[key]
 
-                  return (
-                    <Investor>
-                      <Anchor
-                        key={item.src}
-                        title={`${item.title}`}
-                        href={`${item.href}`}
-                        disabled={item.disabled}
-                        target="_blank"
-                        bg="#fff"
-                        hoverBG="transparent"
-                        radius="12px"
-                        align="stretch"
-                        margin="10px"
-                      >
-                        <Item>
+                  if (!item.hidden) {
+                    return (
+                      <Investor>
+                        <Anchor
+                          key={item.src}
+                          title={`${item.title}`}
+                          href={`${item.href}`}
+                          disabled={item.disabled}
+                          target="_blank"
+                          bg="#fff"
+                          hoverBG="transparent"
+                          radius="12px"
+                          align="stretch"
+                          margin="10px"
+                        >
                           <Item>
-                            <Image
-                              src={`./investors/${item.src}.png`}
-                              srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
-                              alt={`${item.alt}`}
-                            />
-                          <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
-                            <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
+                            <Item>
+                              <Image
+                                src={`./investors/${item.src}.png`}
+                                srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
+                                alt={`${item.alt}`}
+                              />
+                            <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
+                              <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
+                            </Item>
                           </Item>
-                        </Item>
-                      </Anchor>
-                    </Investor>
-                  )
+                        </Anchor>
+                      </Investor>
+                    )
+                  }
+                  else {
+                    return null;
+                  }
+
                 })
               }
 

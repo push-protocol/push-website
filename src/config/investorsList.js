@@ -8,6 +8,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     binance: {
       title: "Learn about our Investor - Binance",
@@ -17,6 +18,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     mysterio: {
       title: "Learn about our Investor - Mysterio",
@@ -26,6 +28,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: true,
+      hidden: false,
     },
     iosg: {
       title: "Learn about our Investor - iOSG",
@@ -44,6 +47,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     metacartel: {
       title: "Learn about our Investor - Meta Cartel",
@@ -53,6 +57,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     ldcap: {
       title: "Learn about our Investor - LD Capital",
@@ -62,6 +67,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     brcapital: {
       title: "Learn about our Investor - BR Capital",
@@ -71,6 +77,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     bitscale: {
       title: "Learn about our Investor - Bitscale Capital",
@@ -80,6 +87,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     bixin: {
       title: "Learn about our Investor - Bixin Ventures",
@@ -89,6 +97,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     fourthrev: {
       title: "Learn about our Investor - Fourth Revolution Capital",
@@ -98,6 +107,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
     d64: {
       title: "Learn about our Investor - D64",
@@ -107,6 +117,7 @@ const investorsList = {
       name: false,
       job: false,
       disabled: false,
+      hidden: false,
     },
   },
   angels: {
@@ -118,6 +129,7 @@ const investorsList = {
       name: "Balaji S. Srinivasan",
       job: "Serial Entrepreneur",
       disabled: false,
+      hidden: false,
     },
     ken: {
       title: "Learn about our Investor - Kenneth Ng, Ethereum Foundation",
@@ -127,6 +139,7 @@ const investorsList = {
       name: "Kenneth Ng",
       job: "Ethereum Foundation",
       disabled: false,
+      hidden: false,
     },
     mariano: {
       title: "Learn about our Investor - Mariano Conti",
@@ -136,6 +149,7 @@ const investorsList = {
       name: "Mariano Conti",
       job: "Awesome Guy",
       disabled: false,
+      hidden: false,
     },
     scott: {
       title: "Learn about our Investor - Scott Moore, Co-Founder, Gitcoin",
@@ -145,6 +159,7 @@ const investorsList = {
       name: "Scott Moore",
       job: "Co-Founder, Gitcoin",
       disabled: false,
+      hidden: false,
     },
     sandeep: {
       title: "Learn about our Investor - Sandeep Nailwal, Co-Founder, Polygon",
@@ -154,6 +169,7 @@ const investorsList = {
       name: "Sandeep Nailwal",
       job: "Co-Founder, Polygon",
       disabled: false,
+      hidden: false,
     },
     defidad: {
       title: "Learn about our Investor - DeFiDad, COO, Zapper.Fi",
@@ -163,6 +179,7 @@ const investorsList = {
       name: "DeFi Dad",
       job: "All Things DeFi",
       disabled: false,
+      hidden: false,
     },
     anthony: {
       title: "Learn about our Investor - Anthony Sassano, EthHub",
@@ -172,6 +189,7 @@ const investorsList = {
       name: "Anthony Sassano",
       job: "EthHub / DailyGWEI",
       disabled: false,
+      hidden: false,
     },
     preethi: {
       title: "Learn about our Investor - Preethi Kasireddy, Entrepreneur",
@@ -181,6 +199,7 @@ const investorsList = {
       name: "Preethi Kasireddy",
       job: "Writer / Entrepreneur",
       disabled: false,
+      hidden: false,
     },
   },
   angelsoptional: {
@@ -192,6 +211,7 @@ const investorsList = {
       name: "Ravindra Kumar",
       job: "Founder, Frontier Wallet",
       disabled: false,
+      hidden: true,
     },
     ajit: {
       title: "Learn about our Investor - Ajit Tripathi, Head of Institional Business, AAVE",
@@ -201,6 +221,7 @@ const investorsList = {
       name: "Ajit Tripathi",
       job: "AAVE",
       disabled: false,
+      hidden: true,
     },
     luka: {
       title: "Learn about our Investor - Luka Sukik, Entreprenuer",
@@ -210,6 +231,7 @@ const investorsList = {
       name: "Luka Sučić",
       job: "Entrepreneur",
       disabled: false,
+      hidden: true,
     },
     rezo: {
       title: "Learn about our Investor - Rezo Shmertz, CEO, BR Capital",
@@ -218,7 +240,8 @@ const investorsList = {
       alt: "Sketch of Investor - Rezo, CEO, BR Capital",
       name: "Rezo Shmertz",
       job: "CEO, BR Capital",
-      disabled: false,
+      disabled: true,
+      hidden: true,
     },
     evgeny: {
       title: "Learn about our Investor - Evgeny Zandman, Angel Investor",
@@ -227,7 +250,8 @@ const investorsList = {
       alt: "Sketch of Investor - Evgeny Zandman, Angel Investor",
       name: "Evgeny Zandman",
       job: "Angel Investor",
-      disabled: false,
+      disabled: true,
+      hidden: true,
     },
     ben: {
       title: "Sketch of Investor - Ben Lakoff, Entrepreneur",
@@ -236,7 +260,8 @@ const investorsList = {
       alt: "Sketch of Investor - Ben Lakoff, Entrepreneur",
       name: "Ben Lakoff",
       job: "Entreprenuer",
-      disabled: false,
+      disabled: true,
+      hidden: true,
     },
     auryn: {
       title: "Learn about our Investor - Auryn Macmillan, Gnosis",
@@ -246,6 +271,7 @@ const investorsList = {
       name: "Auryn Macmillan",
       job: "Gnosis",
       disabled: false,
+      hidden: true,
     },
     kaito: {
       title: "Learn about our Investor - Kaito, Entrepreneur",
@@ -255,6 +281,7 @@ const investorsList = {
       name: "Kaito (Coffee Times)",
       job: "Founder, Webshake",
       disabled: false,
+      hidden: true,
     },
     andrew: {
       title: "Learn about our Investor -  Andrew Chen, Entrepreneur",
@@ -264,6 +291,7 @@ const investorsList = {
       name: "Andrew Chen",
       job: "Entrepreneur",
       disabled: false,
+      hidden: true,
     },
     thomas: {
       title: "Learn about our Investor -  Thomas Kaseng AO, Angel Investor",
@@ -273,6 +301,7 @@ const investorsList = {
       name: "Thomas Kaseng AO",
       job: "Angel Investor",
       disabled: false,
+      hidden: true,
     },
     karthik: {
       title: "Learn about our Investor -  Kartik Garg, Angel Investor",
@@ -281,7 +310,8 @@ const investorsList = {
       alt: "Sketch of Investor - Karthik Garg",
       name: "Kartik Garg",
       job: "Angel Investor",
-      disabled: true,
+      disabled: false,
+      hidden: true,
     },
     ganeshram: {
       title: "Learn about our Investor -  Ganeshram Gunalan, Angel Investor",
@@ -291,6 +321,7 @@ const investorsList = {
       name: "Ganeshram Gunalan",
       job: "Angel Investor",
       disabled: false,
+      hidden: true,
     },
   }
 }
