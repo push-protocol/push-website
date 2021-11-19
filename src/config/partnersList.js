@@ -202,6 +202,14 @@ const partnersList = {
       alt: "Rabbithole logo",
       display: "EPNS collaborates with RabbitHole 🐇"
     },
+    fabwelt: {
+      title: "Article talking about EPNS and Fabwelt bringing push notifications to crypto gaming",
+      href: "https://medium.com/ethereum-push-notification-service/fabwelt-partners-with-epns-to-bring-push-notifications-to-crypto-gaming-c247e70bb627",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "fabwelt",
+      alt: "Fabwelt logo",
+      display: "EPNS 🤝 Fabwelt = Crypto gaming Notifications"
+    },
     mover: {
       title: "Mover delivering yield harvesting notifications with EPNS",
       href: "https://medium.com/ethereum-push-notification-service/mover-integrates-with-epns-to-deliver-yield-harvesting-notifications-ab3bc9a6b26e",
