@@ -1744,12 +1744,13 @@ const Supported = styled(Item)`
 const Partner = styled(Item)`
   flex: 0 1 calc(33% - 40px);
   min-width: auto;
-
   @media (max-width: 768px) {
     flex: 1;
     min-width: 280px;
   }
 
+ 
+  
   ${Anchor} {
     flex: 1;
   }
@@ -1763,6 +1764,10 @@ const Partner = styled(Item)`
     transition: all 0.2s ease-in-out;
   }
 
+  :hover{
+    border: 5px solid gold;
+    border-radius:15px;
+  }
   &:hover ${Image} {
     filter: brightness(1);
   }
