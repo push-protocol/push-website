@@ -10,6 +10,7 @@ import Loader from 'react-loader-spinner';
 import Wave from 'react-wavify';
 
 import Bell from 'components/Bell';
+import Snowfall from 'react-snowfall';
 
 // Create Header
 function Foot() {
@@ -107,6 +108,12 @@ function Foot() {
 
       {/* FOOTER SECTION */}
       <Section theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)">
+        <Snowfall
+          color="white"
+          snowflakeCount={100}
+          radius={[0.5, 2]}
+        />
+
         <Content className="contentBox" padding="0px 0px 20px 0px">
           <Item margin="0px 0px" flex="auto">
             {/* DIVIDE SECTION */}

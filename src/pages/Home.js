@@ -40,6 +40,8 @@ import partnersList from 'config/partnersList';
 // import advisorsList from 'config/advisorsList';
 import investorsList from 'config/investorsList';
 
+import Snowfall from 'react-snowfall';
+
 const randomTeamQuotes = [
   "ONE AMONG US DOESN'T LIKE FARMING 🙀😱",
   "ONE AMONG US HAS A CAT 🐈",
@@ -238,6 +240,11 @@ function Home() {
       {/* HERO SECTION */}
       <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}} triggerOnLoad={false}>
         <SectionFSHero id="hero" padding="15px 0px 0px 0px">
+          <Snowfall
+            color="white"
+            snowflakeCount={100}
+            radius={[0.5, 2]}
+          />
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
@@ -297,6 +304,11 @@ function Home() {
 
       {/* FEATURED SECTION */}
       <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
+        <Snowfall
+          color="white"
+          snowflakeCount={100}
+          radius={[0.5, 1]}
+        />
         <Content className="contentBox">
           <Item margin="20px 0px 20px 0px">
             <Featured>
@@ -596,6 +608,12 @@ function Home() {
             />
           </WaveInner>
         </WaveOuter>
+
+        <Snowfall
+          color="white"
+          snowflakeCount={50}
+          radius={[0.5, 2]}
+        />
 
         <Content className="contentBox" padding="60px 0px 40px 0px">
           <Item margin="0px 20px 0px 20px">
@@ -1056,6 +1074,12 @@ function Home() {
 
       {/* FOLLOW OUR STORY */}
       <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
+        <Snowfall
+          color="white"
+          snowflakeCount={100}
+          radius={[0.5, 2]}
+        />
+
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
@@ -1237,6 +1261,12 @@ function Home() {
 
       {/* CONTACT US SECTION */}
       <Section id="contact" theme="#35c5f3" padding="20px 0px 80px 0px">
+        <Snowfall
+          color="white"
+          snowflakeCount={100}
+          radius={[0.5, 2]}
+        />
+
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="0px 0px 20px 0px" textAlign="right" tabletTextAlign="left">
@@ -1609,6 +1639,7 @@ const Featured = styled.div`
 const Feature = styled.a`
   display: flex;
   flex: 1;
+  position: relative;
   margin: 20px;
   min-width: 220px;
   max-width: 340px;
@@ -1620,6 +1651,45 @@ const Feature = styled.a`
 
   &:hover {
     background: ${props => props.bg || "#fff"};
+  }
+
+  &:nth-child(3n+1):before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -14px;
+    left: 10px;
+    right: -7px;
+    height: 100%;
+    background: url(snow/snowbig.svg);
+    background-size: 120px auto;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(3n+2):before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -24px;
+    left: 6px;
+    right: -6px;
+    height: 40px;
+    background: url(snow/snowmid.svg);
+    background-size: 110px auto;
+    background-repeat: no-repeat;
+  }
+
+  &:nth-child(3n+3):before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -29px;
+    left: calc(100% - 75px);
+    right: 0px;
+    height: 50px;
+    background: url(snow/snowsmall.svg);
+    background-size: 70px auto;
+    background-repeat: no-repeat;
   }
 `
 
