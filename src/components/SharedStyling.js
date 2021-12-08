@@ -191,7 +191,14 @@ export const Para = styled(P)`
   font-size: ${props => props.size || "1.1em"};
   color: ${props => props.color || "#000000ee"};
 `
-
+export const DottedSection=styled.div`
+  padding: 2rem;
+  border:2px dotted gray;
+  font-size: 1.5rem;
+  text-align: center;
+  /* width: 80%; */
+  margin:5rem 0;
+`;
 export const Span = styled.span`
   flex: ${props => props.flex || 'initial'};
   align-self: ${props => props.self || 'auto'};

@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import MetaTags, {ReactTitle} from 'react-meta-tags';
 
 import styled, { css } from 'styled-components';
-import {Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField} from 'components/SharedStyling';
+import {Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
 
 import ScrollTrigger from 'react-scroll-trigger';
 
@@ -269,7 +269,7 @@ function Home() {
           </Content>
           <WaveOuter>
             <WaveInner>
-              <Wave fill='#35c5f3'
+              <Wave fill='white'
                 paused={!animateHero}
                 options={{
                   height: 40,
@@ -280,7 +280,7 @@ function Home() {
               />
             </WaveInner>
             <WaveInner>
-              <Wave fill='#e20880'
+              <Wave fill='white'
                 paused={!animateHero}
                 options={{
                   height: 20,
@@ -293,8 +293,36 @@ function Home() {
           </WaveOuter>
         </SectionFSHero>
       </ScrollTrigger>
+            
+      {/* Governance SECTION START */}
+        <GovernanceSection id="governance"  >
+        
+         
+          <GovernanceHeading >
+          <item><h4><GovernanceSpan>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
+          <item>
+              <p>WHAT IS GOVERNANCE</p>
+          </item>            
+          </GovernanceHeading>
+          <GovernanceHeading flex="flex-end">
+          <item><h4><GovernanceSpan style={{background:"#35C5F3"}}>WHY </GovernanceSpan>GOVERNANCE?</h4></item>
+          <item>
+              <p>WHY GOVERNANCE</p>
+          </item>            
+          </GovernanceHeading>
+         
+          <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <DottedSection>
+          Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement.
 
+          </DottedSection>
+          <GovernanceSomethingBox>
+            Something
+          </GovernanceSomethingBox>
+          </Content>
+        </GovernanceSection>
 
+      {/* FEATURED SECTION END*/}
       {/* FEATURED SECTION */}
       <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
         <Content className="contentBox">
@@ -1597,6 +1625,55 @@ const HeroBanner = styled(Item)`
     display: none;
   }
 `
+const GovernanceHeading=styled.div`
+  display: flex;
+  padding: 2rem;
+  justify-content:  ${props => props.flex || 'flex-start'};
+  align-items:  ${props => props.flex || 'flex-start'};
+  flex-direction: column;
+  
+  h4{
+    font-size: 40px;
+    font-weight:400px;
+  }
+  p{
+    color: #858585;
+    font-size:1.5rem;
+    margin:0;
+  }
+`;
+
+const GovernanceSection=styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+const GovernanceItem=styled.div`
+  display: flex;
+  align-self:stretch;
+  justify-content: center;
+  align-items: center;
+  padding:2rem;
+  width: 100%;
+`;
+
+const GovernanceSomethingBox=styled.div`
+  display: flex;
+  background:#C4C4C4;
+  justify-content: center;
+  align-items:center;
+  height: 25rem;
+  width: 80%;
+`;
+
+const GovernanceSpan=styled.span`
+    background:${props => props.backgroundColor || '#E20880'} ;
+    padding: 10px;
+    color:white;
+    margin:0rem 1rem 2rem 0rem;
+    font-weight:450px ;
+`;
 
 const Featured = styled.div`
   display: flex;
