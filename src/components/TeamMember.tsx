@@ -18,7 +18,7 @@ function TeamMember( {img, srcSet, type, name, title, twitter, linkedin, email }
   // to create blockies
 
   return (
-    <Item margin="20px 15px" minWidth="240px" flex="inherit">
+    <Item margin="20px 15px" minWidth="240px" flex="inherit" >
       {(twitter || linkedin || email) &&
         <Converse margin="0px">
           <ConverseInner>
@@ -76,8 +76,8 @@ function TeamMember( {img, srcSet, type, name, title, twitter, linkedin, email }
         <ProfileBG type={type} />
         <ProfileImage src={img} srcSet={srcSet} />
       </Profile>
-      <Span margin="5px 0px 2px 0px">{name}</Span>
-      <Span weight="400">{title}</Span>
+      <Span margin="5px 0px 2px 0px" color="#F7F7F7">{name}</Span>
+      <Span weight="400" color="white">{title}</Span>
     </Item>
   );
 }
@@ -122,6 +122,7 @@ const ConverseInner = styled(ItemH)`
   flex: unset;
   justify-content: center;
   align-items: center;
+  background-color: black;
   column-gap: inherit;
   border-radius: 20px;
   overflow: hidden;
@@ -132,42 +133,75 @@ const Profile = styled(ItemH)`
   margin: 20px 0px;
 `
 
+
+
 const ProfileBG = styled.div`
   border-radius: 100%;
   position: absolute;
   width: calc(100% + 12px);
   height: calc(100% + 12px);
-  top: -6px;
-  right: 0;
-  left: -6px;
-  bottom: 0;
   z-index: 1;
 
   ${({ type }) => type == 1 && css`
-    background: "#e20880";
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
   `};
 
   ${({ type }) => type == 2 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 50%, rgba(53,197,243,1) 50%, rgba(53,197,243,1) 100%);
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+
   `};
 
   ${({ type }) => type == 3 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 50%, rgba(103,76,159,1) 50%, rgba(103,76,159,1) 100%);
+
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+   
   `};
 
   ${({ type }) => type == 4 && css`
-    background: #35c5f3;
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+   
   `};
 
   ${({ type }) => type == 5 && css`
-    background: #674c9f;
+
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+   
   `};
 
   ${({ type }) => type == 6 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 33%, rgba(53,197,243,1) 33%, rgba(53,197,243,1) 66%, rgba(103,76,159,1) 66%, rgba(103,76,159,1) 100%);
+
+  background: #FFD700;
+  border: 0px solid #dadada;
+  border-radius: 100%;
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+   
   `};
 `
 

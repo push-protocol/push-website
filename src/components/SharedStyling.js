@@ -15,7 +15,9 @@ export const Section = styled.section`
   position: relative;
 `
 
+
 export const SectionFS = styled(Section)`
+
   min-height: 100vh;
 `
 
@@ -26,6 +28,8 @@ export const SectionFSHero = styled(Section)`
   background: url('/christmas/snowfall1.gif') no-repeat ;
   background-size:100%;
 `
+
+
 
 export const SectionHero = styled(Section)`
   background: rgb(31,23,47);
