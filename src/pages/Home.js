@@ -1105,7 +1105,7 @@ function Home() {
 
         <WaveOuter>
           <WaveInner>
-            <Wave fill='#fff'
+            <Wave fill='#000000'
               paused={true}
               options={{
                 height: 20,
@@ -1120,14 +1120,14 @@ function Home() {
 
 
       {/* TEAM SECTION | 1=Founder, 2=Founder+Lead, 3=Founder+Team, 4=Lead, 5=Team, 6=Advisor */}
-      <Section id="team" theme="#fff" padding="20px 0px 120px 0px">
+      <Section id="team" theme="#fff" padding="20px 0px 120px 0px" gradient="linear-gradient(#000000 100%, #414141 80% )"> 
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
-                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Meet</Span><Span weight="200"> the Team</Span>
+                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Meet</Span><Span weight="200" color = "white"> the Team</Span>
               </H2>
-              <H3>{randomTeamQuotes[Math.floor(Math.random() * (randomTeamQuotes.length))]}</H3>
+              <H3 color="white">{randomTeamQuotes[Math.floor(Math.random() * (randomTeamQuotes.length))]}</H3>
             </Item>
 
             <ItemH self="stretch" align="stretch" flex="initial" margin="20px -20px" minWidth="auto">
@@ -1233,7 +1233,6 @@ function Home() {
           </WaveInner>
         </WaveOuter>
       </Section>
-
 
       {/* CONTACT US SECTION */}
       <Section id="contact" theme="#35c5f3" padding="20px 0px 80px 0px">
@@ -1744,12 +1743,13 @@ const Supported = styled(Item)`
 const Partner = styled(Item)`
   flex: 0 1 calc(33% - 40px);
   min-width: auto;
-
   @media (max-width: 768px) {
     flex: 1;
     min-width: 280px;
   }
 
+ 
+  
   ${Anchor} {
     flex: 1;
   }
@@ -1763,6 +1763,10 @@ const Partner = styled(Item)`
     transition: all 0.2s ease-in-out;
   }
 
+  :hover{
+    border: 5px solid gold;
+    border-radius:15px;
+  }
   &:hover ${Image} {
     filter: brightness(1);
   }
