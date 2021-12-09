@@ -17,7 +17,7 @@ import Foot from 'segments/Footer';
 
 import Home from 'pages/Home';
 import FAQ from 'pages/FAQ';
-
+import Gov from './pages/Gov';
 import Terms from 'pages/Terms';
 import Privacy from 'pages/Privacy';
 
@@ -82,6 +82,9 @@ function App() {
           </Route>
           <Route path="/privacy">
             <Privacy />
+          </Route>
+          <Route path="/governance">
+            <Gov/>
           </Route>
           <Route path="/tos">
             <Terms />

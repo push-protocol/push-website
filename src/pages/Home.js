@@ -322,7 +322,7 @@ function Home() {
           </Content>
         </GovernanceSection>
 
-      {/* FEATURED SECTION END*/}
+      {/* Goverance SECTION END*/}
       {/* FEATURED SECTION */}
       <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
         <Content className="contentBox">
