@@ -198,6 +198,9 @@ export const DottedSection=styled.div`
   text-align: center;
   /* width: 80%; */
   margin:5rem 0;
+  @media(max-width:600px){
+    width: 80%;
+  }
 `;
 export const Span = styled.span`
   flex: ${props => props.flex || 'initial'};
