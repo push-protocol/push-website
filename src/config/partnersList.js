@@ -75,12 +75,12 @@ const partnersList = {
       display: "IoTex 🤝 EPNS Connecting Physical & Digital worlds"
     },
     kyber: {
-      title: "Kyber Network Integrates EPNS for decentralized communication and notifications",
+      title: "KyberSwap Integrates EPNS for decentralized communication and notifications",
       href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-support-kybers-frictionless-liquidity-pools-4fe65746b39",
       hover: "#000", //#eee or #000 based on logo og color
       src: "kyber",
       alt: "Kyber logo",
-      display: "Kyber 🤝 EPNS"
+      display: "KyberSwap 🤝 EPNS"
     },
     poh: {
       title: "Article talking about partnership between EPNS and Proof of Humanity!",
