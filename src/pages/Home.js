@@ -187,7 +187,7 @@ function Home() {
           })
         };
 
-        fetch('https://backend-staging.epns.io/apis/mailing/send_mail', requestOptions)
+        fetch('https://backend-kovan.epns.io/apis/mailing/send_mail', requestOptions)
           .then(response => response.json())
           .then(jsondata => {
               // console.log(jsondata);
