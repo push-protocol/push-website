@@ -12,6 +12,7 @@ import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 
+import {MdPersonPin} from 'react-icons/md';
 
 
 const Gov=()=>{
@@ -257,11 +258,52 @@ const Gov=()=>{
           </WaveInner>
         </WaveOuter> */}
       </Section>
+         <Section theme="#fff" padding="0px 0px 50px 0px">
+                <Content className="contentBox">
+                   Learn more about Governance 
+                </Content>
+          </Section>
+          <Section theme="#fff" padding="0px 0px 50px 0px">
+          <GovernanceSection id="governance"  >
+        
+         
+        <GovernanceHeading >
+        <item><h4> GOVERNANCE <GovernanceSpan  style={{background:"#35C5F3"}}>Roles  </GovernanceSpan> </h4></item>
+        <item>
+            <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
+        </item>            
+        </GovernanceHeading>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+             <GovernanceRolesSection>
+               <GovernancePushNomineeCard>
+                 <MdPersonPin fontSize='6rem'/>
+                 <h4>PUSH NOMINEE</h4>
+               </GovernancePushNomineeCard>
+               <item>
+                  <h2>PUSH NOMINEE</h2>
+                  <p>Self nominate</p>
+                  <p>Push holder can delegate votes to them</p>
+                  <p>Can vote and submit proposals on snapshot</p>
+                </item>
+             </GovernanceRolesSection>
+        </Content>
+      </GovernanceSection>
+          </Section>
           {/* End Learnmore Governance */}
 
          {/* Start role Governance */}
+         <Section theme="#fff" padding="0px 0px 50px 0px">
+                <Content className="contentBox">
+                    Governance Role
+                </Content>
+          </Section>
           {/* End role Governance */}
          {/* Start pushDeligatees Governance */}
+         <Section theme="#fff" padding="0px 0px 50px 0px">
+                <Content className="contentBox">
+                    Governance Pushdeligatess
+                </Content>
+          </Section>
           {/* End pushDeligatees Governance */}
 
 
@@ -316,6 +358,11 @@ const Gov=()=>{
 
 
 
+             <Section theme="#fff" padding="0px 0px 50px 0px">
+                <Content className="contentBox">
+                    Governance FAQ
+                </Content>
+          </Section>
           {/* End faq Governance */}
        
         </>
@@ -323,6 +370,40 @@ const Gov=()=>{
     )
 }
 
+const GovernancePushNomineeCard=styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom,#35C5F3,#E20880);
+    min-width: 250px;
+    min-height: 300px;
+
+    h4{
+      letter-spacing: 0.3rem;
+    }
+`;
+const GovernanceRolesSection=styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+
+  h2{
+    color:'#E20880';
+    font-size: 1.5rem;
+
+  }
+
+  p{
+    font-size:1.2rem;
+  }
+
+  @media(max-width:600px){
+    flex-direction: column;
+  }
+`;
 const GovernanceImg=styled.img`
    height: auto;
    width: auto;
