@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import styled, { css } from 'styled-components';
 import {Section, SectionFS,SectionHero, SectionFSHero, Content, Item, ItemH, A,LI,ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
 import Wave from 'react-wavify';
 import Medium from 'components/Medium';
-
+import Carousel from 'react-elastic-carousel';
 
 import { FaCheckCircle, FaSeedling } from 'react-icons/fa';
 import { IoMdRocket } from 'react-icons/io';
@@ -20,7 +20,12 @@ const Gov=()=>{
 
 
   const [showAnswers, setShowAnswers] = React.useState([]);
-
+  const [width, setWidth] = useState(window.screen.availWidth);
+  console.log(width);
+  useEffect(() => {
+    setWidth(window.screen.availWidth);
+    console.log(width);
+  });
   React.useEffect(() => {
   });
 
@@ -30,7 +35,17 @@ const Gov=()=>{
 
     setShowAnswers(newShowAnswers);
   }
-
+  const pushDeligatees=[
+    {
+      name:"Name Here"
+    },
+    {
+      name:"Name Here"
+    },
+    {
+      name:"Name Here"
+    }
+  ]
   const FAQS = [
     {
       question: "WHAT ARE PUSH DELEGATES?",
@@ -131,9 +146,8 @@ const Gov=()=>{
         Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement.
 
         </DottedSection>
-        <GovernanceSomethingBox>
-          Something
-        </GovernanceSomethingBox>
+        <GovernanceImg  src='/governance/REf.PNG'/>
+       
         </Content>
       </GovernanceSection>
 
@@ -276,33 +290,47 @@ const Gov=()=>{
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
              <GovernanceRolesSection>
                <GovernancePushNomineeCard>
-                 <MdPersonPin fontSize='6rem'/>
+                 {/* <MdPersonPin fontSize='6rem'/> */}
+                 <img src='/governance/champions.png'/>
                  <h4>PUSH NOMINEE</h4>
                </GovernancePushNomineeCard>
-               <item>
+               <Item>
                   <h2>PUSH NOMINEE</h2>
                   <p>Self nominate</p>
                   <p>Push holder can delegate votes to them</p>
                   <p>Can vote and submit proposals on snapshot</p>
-                </item>
+                </Item>
              </GovernanceRolesSection>
         </Content>
       </GovernanceSection>
           </Section>
           {/* End Learnmore Governance */}
 
-         {/* Start role Governance */}
-         <Section theme="#fff" padding="0px 0px 50px 0px">
-                <Content className="contentBox">
-                    Governance Role
-                </Content>
-          </Section>
-          {/* End role Governance */}
+        
          {/* Start pushDeligatees Governance */}
          <Section theme="#fff" padding="0px 0px 50px 0px">
-                <Content className="contentBox">
-                    Governance Pushdeligatess
-                </Content>
+          <GovernanceSection id="governance"  >
+        
+         
+        <GovernanceHeading >
+        <item><h4> MEET OUR  <GovernanceSpan  style={{background:"#674C9F"}}>PUSH DELEGATEES  </GovernanceSpan> </h4></item>
+        <item>
+            <p>Active community members who have at least 75,000 $PUSH delegated to them. They will be able to create proposals on Snapshot that are approved on the forum </p>
+        </item>            
+        </GovernanceHeading>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <Carousel itemsToShow={width < 500 ? 1 : 4}>
+            {
+              pushDeligatees.map(({name})=>(
+                <SliderCard>
+              <div className='img'/>
+              <div className='text'>{name}</div>
+            </SliderCard>
+              ))
+            }
+          </Carousel>
+        </Content>
+      </GovernanceSection>
           </Section>
           {/* End pushDeligatees Governance */}
 
@@ -370,6 +398,32 @@ const Gov=()=>{
     )
 }
 
+
+
+const SliderCard=styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    min-width: 300px;
+    min-height:350px;
+    background-image: linear-gradient(360deg,#E20880,#674C9F,#35C5F3);
+    border-radius: 20px;
+    .img{
+      border-radius: 20px;
+      margin: 10px;
+      flex:7;
+      background-color: white;
+      width: 90%;
+      height: 100%;
+    }
+    .text{
+      flex:1;
+      font-size:1.2rem;
+      color: white;
+      font-weight: bolder;
+    }
+`;
 const GovernancePushNomineeCard=styled.div`
     display: flex;
     justify-content: space-around;
@@ -383,13 +437,69 @@ const GovernancePushNomineeCard=styled.div`
       letter-spacing: 0.3rem;
     }
 `;
+
 const GovernanceRolesSection=styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  & ${Item}{
+    align-items:flex-start;
+    justify-content:center;
+    padding: 0 0 0 5rem;
+    
+    flex:2;
+    background-image: linear-gradient(to bottom,#35C5F3 6.48%,#E20880 106.48%);
+    align-self:content;
+    min-height: 300px;
+    display: flex;
 
+    :after {
+    content: '';
+    position: absolute;
+    bottom: -3rem; left: -2rem;
+    border-radius:50%;
+    border-top: 80px solid white;
+    border-left: 80px solid white;
+    width: 0;
+  }
+    :before {
+    content: '';
+    position: absolute;
+    top: -2rem; left: -2rem;
+    border-radius:50%;
+    border-top: 80px solid white;
+    border-left: 80px solid white;
+    width: 0;
+  
+  }
+  }
+  & ${GovernancePushNomineeCard}{
+    flex:1.3;
+    background: black;
+    position: relative;
+    /* -webkit-clip-path: polygon(83% 0, 100% 13%, 100% 83%, 87% 100%, 0 100%, 0% 60%, 0 0); */
+    :after {
+    content: '';
+    position: absolute;
+    bottom: -3rem; right: -2rem;
+    border-radius:50%;
+    border-top: 80px solid white;
+    border-left: 80px solid white;
+    width: 0;
+  }
+    :before {
+    content: '';
+    position: absolute;
+    top: -2rem; right: -2rem;
+    border-radius:50%;
+    border-top: 80px solid white;
+    border-left: 80px solid white;
+    width: 0;
+  
+  }
+  
   h2{
     color:'#E20880';
     font-size: 1.5rem;
