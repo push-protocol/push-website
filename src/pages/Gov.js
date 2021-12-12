@@ -292,7 +292,7 @@ const Gov=()=>{
                <GovernancePushNomineeCard>
                  {/* <MdPersonPin fontSize='6rem'/> */}
                  <img src='/governance/champions.png'/>
-                 <h4>PUSH NOMINEE</h4>
+                 <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
                </GovernancePushNomineeCard>
                <Item>
                   <h2>PUSH NOMINEE</h2>
@@ -318,7 +318,7 @@ const Gov=()=>{
             <p>Active community members who have at least 75,000 $PUSH delegated to them. They will be able to create proposals on Snapshot that are approved on the forum </p>
         </item>            
         </GovernanceHeading>
-        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
         <Carousel itemsToShow={width < 500 ? 1 : 4}>
             {
               pushDeligatees.map(({name})=>(
@@ -329,6 +329,7 @@ const Gov=()=>{
               ))
             }
           </Carousel>
+          <NomineeButton>Submit Your Nominee ---- {'>'} </NomineeButton>
         </Content>
       </GovernanceSection>
           </Section>
@@ -458,7 +459,7 @@ const GovernanceRolesSection=styled.div`
     :after {
     content: '';
     position: absolute;
-    bottom: -3rem; left: -2rem;
+    bottom: -3rem; left: -2.4rem;
     border-radius:50%;
     border-top: 80px solid white;
     border-left: 80px solid white;
@@ -467,7 +468,7 @@ const GovernanceRolesSection=styled.div`
     :before {
     content: '';
     position: absolute;
-    top: -2rem; left: -2rem;
+    top: -2rem; left: -2.4rem;
     border-radius:50%;
     border-top: 80px solid white;
     border-left: 80px solid white;
@@ -483,7 +484,7 @@ const GovernanceRolesSection=styled.div`
     :after {
     content: '';
     position: absolute;
-    bottom: -3rem; right: -2rem;
+    bottom: -3rem; right: -2.4rem;
     border-radius:50%;
     border-top: 80px solid white;
     border-left: 80px solid white;
@@ -492,7 +493,7 @@ const GovernanceRolesSection=styled.div`
     :before {
     content: '';
     position: absolute;
-    top: -2rem; right: -2rem;
+    top: -2rem; right: -2.4rem;
     border-radius:50%;
     border-top: 80px solid white;
     border-left: 80px solid white;
@@ -616,7 +617,13 @@ const ShadowBox = styled(Item)`
 
 
 
-
+const NomineeButton=styled(Button)`
+  align-items:stretch;
+  background: black;
+  color: white;
+  font-size:1.3rem;
+  margin-top:2rem;
+  `;
 const Question = styled(Button)`
   align-items: stretch;
   align-self: stretch;
