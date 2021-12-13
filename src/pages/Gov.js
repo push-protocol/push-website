@@ -18,7 +18,8 @@ import {MdPersonPin} from 'react-icons/md';
 const Gov=()=>{
 
 
-
+  const valuee=document.getElementsByClassName('Roles');
+  console.log("valuee",valuee)
   const [showAnswers, setShowAnswers] = React.useState([]);
   const [width, setWidth] = useState(window.screen.availWidth);
   console.log(width);
@@ -100,6 +101,26 @@ const Gov=()=>{
 
    ]
 
+   const [classShow, setClassShow] = React.useState("Show");
+
+   const handleScroll = React.useCallback((event) => {
+     let scrollTop = window.scrollY;
+     console.log(scrollTop,"classShow");
+       //console.log(scrollTop );  //1,2,...100,...200...etc (in px)
+ 
+       if (scrollTop >=5100 ) {
+         setClassShow("");
+       }
+       else setClassShow("Show");
+ });
+ 
+   React.useEffect(() => {
+     window.addEventListener("scroll", handleScroll);
+    
+     return () => {
+       window.removeEventListener("scroll", handleScroll, false);
+     };
+   }, [classShow]);
     return(
         <>
           <SectionHero padding="50px 0px 80px 0px">
@@ -286,7 +307,7 @@ const Gov=()=>{
                    Learn more about Governance 
                 </Content>
           </Section>
-          <Section theme="#fff" padding="0px 0px 50px 0px">
+          <Section theme="#fff" padding="0px 0px 50px 0px" className="RolesContainer">
           <GovernanceSection id="governance"  >
         
          
@@ -296,12 +317,16 @@ const Gov=()=>{
             <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
         </item>            
         </GovernanceHeading>
-        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-             <GovernanceRolesSection>
+        <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            {
+             (document.getElementsByClassName('Roles')[0]?.classList?.contains("Show"))?<>
+           <GovernanceRolesSection>
                <GovernancePushNomineeCard>
-                 {/* <MdPersonPin fontSize='6rem'/> */}
+                  
                  <img src='/governance/champions.png'/>
-                 <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
+                    <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
+                  
+                  
                </GovernancePushNomineeCard>
                <Item>
                   <h2>PUSH NOMINEE</h2>
@@ -310,6 +335,25 @@ const Gov=()=>{
                   <p>Can vote and submit proposals on snapshot</p>
                 </Item>
              </GovernanceRolesSection>
+              </>:<>
+        <GovernanceRolesSection>
+               <GovernancePushNomineeCard>
+                  
+                 <img src='/governance/champions.png'/>
+                    <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
+                  
+                  
+               </GovernancePushNomineeCard>
+               <Item>
+                  <h2>PUSH DELEGATEES</h2>
+                  <p>Self nominate</p>
+                  <p>Push holder can delegate votes to them</p>
+                  <p>Can vote and submit proposals on snapshot</p>
+                </Item>
+             </GovernanceRolesSection>
+                                  </>
+            }
+             
         </Content>
       </GovernanceSection>
           </Section>
