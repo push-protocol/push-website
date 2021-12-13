@@ -181,45 +181,54 @@ const Gov=()=>{
                
 
                 <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="40px">
-                  <ShadowBox align="flex-start" bg="#e20880" margin="30px 30px">
-                    <Showoff
-                      right="-20px"
-                      bottom="-20px"
-                      opacity="0.2"
-                    >
-                      <FaSeedling size={140} color="#fff"/>
-                    </Showoff>
-                    <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Content Independent</Span>
-                    </H2>
-                    <Span margin="20px" color="#fff" weight="200">Protocol does not dictate what content can or can't be delivered to service users. Only <b>services can decide what to communicate</b> to their users!</Span>
-                  </ShadowBox>
-                  <ShadowBox align="flex-start" bg="#674c9f" margin="30px 35px">
-                    <Showoff
-                      right="-20px"
-                      bottom="-20px"
-                      opacity="0.2"
-                    >
-                      <RiHeartsFill size={140} color="#fff"/>
-                    </Showoff>
-                    <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">User Centric</Span>
-                    </H2>
-                    <Span margin="20px" color="#fff" weight="200"><b>User always opts in</b> for alerts from a service before they can notify you. Indirect consent, while an option will require the service to reward you first!</Span>
-                  </ShadowBox>
-                  <ShadowBox align="flex-start" bg="#35c5f3" margin="30px 30px">
-                    <Showoff
-                      right="-20px"
-                      bottom="-20px"
-                      opacity="0.2"
-                    >
-                      <GiReceiveMoney size={140} color="#fff"/>
-                    </Showoff>
-                    <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Incentivized Alerts!</Span>
-                    </H2>
-                    <Span margin="20px" color="#fff">We are a DeFi protocol but a different one! We use <b>Staking</b> by Service, that is <b>Lend</b> out to AAVE to generate <b>Interest</b> which is distributed among the service's subscribers.</Span>
-                  </ShadowBox>
+
+
+                 
+                <EmphasisBlock margin="10px 10px">
+
+                  <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                          <ProposalImage src='/governance/proposal.png' alt=""/>
+                    </Content>
+
+                  <EmphasisText>
+                   PROPOSAL
+                  </EmphasisText>
+                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                </EmphasisBlock>
+
+
+
+
+                <EmphasisBlock margin="10px 10px">
+
+                  <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                          <DisImage src='/governance/discuss1.svg' alt=""/>
+                    </Content>
+
+                  <EmphasisText>
+                   DISCUSSION
+                  </EmphasisText>
+                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                </EmphasisBlock>
+
+
+
+
+                <EmphasisBlock margin="10px 10px">
+
+                  <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                          <GovImage src='/governance/governance1.svg' alt=""/>
+                    </Content>
+
+                  <EmphasisText>
+                   GOVERNANCE
+                  </EmphasisText>
+                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                </EmphasisBlock>
+
+
+
+
                 </ItemH>
 
               </Solution>
@@ -577,6 +586,70 @@ const LIMod = styled(LI)`
 const BoldText = styled.span`
   font-weight: bold;
 `;
+
+
+
+// emphasis block
+
+
+const ProposalImage=styled.img`
+   height: auto;
+   width: auto;
+
+   @media(max-width:600px){
+     height: 15rem;
+     width: 15rem;
+   }
+`;
+
+
+
+const DisImage=styled.img`
+   height: auto;
+   width: auto;
+
+   @media(max-width:600px){
+     height: 15rem;
+     width: 15rem;
+   }
+`;
+
+
+const GovImage=styled.img`
+   height: auto;
+   width: auto;
+
+   @media(max-width:600px){
+     height: 15rem;
+     width: 15rem;
+   }
+`;
+
+
+
+
+
+
+const EmphasisBlock = styled(Item)`
+  min-width: 280px;
+
+`
+
+const EmphasisImage = styled(Item)`
+  padding: 20px;
+  margin: 20px 0px 20px;
+`
+
+const EmphasisText = styled(Span)`
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 0px 20px;
+`
+
+
+
+// 
 
 
 
