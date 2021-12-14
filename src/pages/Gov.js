@@ -394,15 +394,20 @@ const Gov=()=>{
                 </Content>
           </Section>
           <Section theme="#fff" padding="0px 0px 50px 0px" className="RolesContainer">
+          
           <GovernanceSection id="governance"  >
         
          
        
           <GovernanceHeading >
+         
+          
         <item><h4> GOVERNANCE <GovernanceSpan  style={{background:"#35C5F3"}}>ROLES  </GovernanceSpan> </h4></item>
         <item>
             <p>LOREM IPSUM </p>
-        </item>            
+           
+        </item>   
+              
         </GovernanceHeading>
         {/* <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
             {
@@ -443,12 +448,49 @@ const Gov=()=>{
              
         </Content> */}
       </GovernanceSection>
+      
+       
           </Section>
+
+
+
+          <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+          <WaveOuter bottom="auto" top="70px">
+          <WaveInner transform="rotate(180deg)">
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+          </Section>
+
+
+
           {/* End Learnmore Governance */}
 
         
          {/* Start pushDeligatees Governance */}
          <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+          
+         <WaveOuter>
+          <WaveInner>
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
           <GovernanceSection id="governance"  >
         
          
@@ -472,6 +514,8 @@ const Gov=()=>{
           <NomineeButton>Submit Your Nominee <img src="/governance/arrow_right.png" style={{height:"10px"}}/> </NomineeButton>
         </Content>
       </GovernanceSection>
+      
+       
           </Section>
           {/* End pushDeligatees Governance */}
 
@@ -520,6 +564,7 @@ const Gov=()=>{
             {/* Questions and answers */}
           </Item>
         </Content>
+        
       </Section>
 
 
