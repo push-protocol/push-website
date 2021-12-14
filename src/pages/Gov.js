@@ -123,7 +123,8 @@ const Gov=()=>{
    }, [classShow]);
     return(
         <>
-          <SectionHero padding="50px 0px 80px 0px">
+           <SectionHero padding="50px 0px 80px 0px">
+        {/* <SectionFSHero id="hero" padding="15px 0px 0px 0px"> */}
         <Content className="contentBox">
           <Item margin="0px 20px">
             <H1>Governance</H1>
@@ -131,22 +132,29 @@ const Gov=()=>{
           </Item>
         </Content>
         <WaveOuter>
-          <WaveInner>
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
+            <WaveInner>
+              <Wave fill='#35c5f3'
+                // paused={!animateHero}
+                options={{
+                  height: 40,
+                  amplitude: 30,
+                  speed: 0.35,
+                  points: 3
+                }}
+              />
+            </WaveInner>
+           
+          </WaveOuter>
+          {/* </SectionFSHero> */}
       </SectionHero>
+    
           {/* Start What is Governance */}
-          <Section id="governance" theme="#fff" padding="20px 0px 0px 0px">
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
+          
+      
+          
       <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
+
         
          
         <GovernanceHeading >
@@ -176,13 +184,41 @@ const Gov=()=>{
        
         </Content>
       </GovernanceSection>
-          <Item>
-            <GovernanceImgFixed  src='/governance/Group 6 (1).png'/>
-          </Item>
+         
+
+          <WaveOuter>
+          <WaveInner>
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+         
           </Section>
+
           {/* End What is Governance */}
           {/* Start Future Governance */}
           <Section theme="#fff" padding="0px 0px 50px 0px">
+
+          {/* <WaveOuter bottom="auto" top="70px">
+          <WaveInner transform="rotate(180deg)">
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+            </WaveInner>
+            </WaveOuter> */}
           <GovernanceSection id="governance"  >
         
           <Item align="flex-start" padding="0px 0px 40px 0px">
@@ -211,6 +247,9 @@ const Gov=()=>{
 
 
       <Section id="solution" theme="#fff" padding="20px 0px 0px 0px">
+
+
+      <Section id="solution" theme="#fff" padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             {/* THE PROBLEM */}
@@ -283,11 +322,44 @@ const Gov=()=>{
               </Solution>
             </Item>
         </Content>
+        </Section>
+
+        <WaveOuter>
+          <WaveInner>
+            <Wave fill='#e20880'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+
+
       </Section>
 
           {/* End process Governance */}
          {/* Start Learnmore Governance */}
          <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
+
+         <WaveOuter>
+          <WaveInner>
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+
+
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
