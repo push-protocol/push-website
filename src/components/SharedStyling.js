@@ -13,6 +13,8 @@ export const Section = styled.section`
   overflow: ${props => props.overflow || 'initial'};
   flex: 1;
   position: relative;
+
+ 
 `
 
 export const SectionFS = styled(Section)`
@@ -193,7 +195,9 @@ export const Para = styled(P)`
 `
 export const DottedSection=styled.div`
   padding: 2rem;
-  border:2px dotted gray;
+  border:3px dashed #fff;
+  border-radius:10px;
+  color:white;
   font-size: 1.5rem;
   text-align: center;
   /* width: 80%; */

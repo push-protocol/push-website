@@ -145,18 +145,24 @@ const Gov=()=>{
         </WaveOuter>
       </SectionHero>
           {/* Start What is Governance */}
-          <Section theme="#fff" padding="0px 0px 50px 0px">
-      <GovernanceSection id="governance"  >
+          <Section id="governance" theme="#fff" padding="20px 0px 0px 0px">
+      <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
         
          
         <GovernanceHeading >
-        <item><h4><GovernanceSpan>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
+        <item style={{margin:"0"}}><h4><GovernanceSpan style={{background:"black"}}>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
             <p>WHAT IS GOVERNANCE</p>
         </item>            
         </GovernanceHeading>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <DottedSection>
+        TO Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement
+        </DottedSection>
+       
+        </Content>
         <GovernanceHeading flex="flex-end">
-        <item><h4><GovernanceSpan style={{background:"#35C5F3"}}>WHY </GovernanceSpan>GOVERNANCE?</h4></item>
+        <item><h4><GovernanceSpan style={{background:"black"}}>WHY </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
             <p>WHY GOVERNANCE</p>
         </item>            
@@ -167,24 +173,32 @@ const Gov=()=>{
         Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement.
 
         </DottedSection>
-        <GovernanceImg  src='/governance/REf.PNG'/>
        
         </Content>
       </GovernanceSection>
-
+          <Item>
+            <GovernanceImgFixed  src='/governance/Group 6 (1).png'/>
+          </Item>
           </Section>
           {/* End What is Governance */}
           {/* Start Future Governance */}
           <Section theme="#fff" padding="0px 0px 50px 0px">
           <GovernanceSection id="governance"  >
         
-         
-        <GovernanceHeading >
+          <Item align="flex-start" padding="0px 0px 40px 0px">
+              <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
+                <H2 textTransform="uppercase" spacing="0.1em">
+                  <Span  bg="#674C9F" color="white" weight="600"  padding="0px 8px" margin="0 10px" >FUTURE </Span><Span  color="black" weight="600">OF GOVERNANCE</Span>
+                </H2>
+                <H3 maxWidth="400px">PROPOSAL.DISCUSSION.GOVERNANCE</H3>
+              </Item>
+              </Item>
+        {/* <GovernanceHeading >
         <item><h4><GovernanceSpan style={{background:"#674C9F"}}>FUTURE  </GovernanceSpan> OF GOVERNANCE?</h4></item>
         <item>
             <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
         </item>            
-        </GovernanceHeading>
+        </GovernanceHeading> */}
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
               <GovernanceImg src='/governance/Vectorcurve.png' alt=""/>
         </Content>
@@ -317,7 +331,7 @@ const Gov=()=>{
             <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
         </item>            
         </GovernanceHeading>
-        <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        {/* <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
             {
              (document.getElementsByClassName('Roles')[0]?.classList?.contains("Show"))?<>
            <GovernanceRolesSection>
@@ -354,7 +368,7 @@ const Gov=()=>{
                                   </>
             }
              
-        </Content>
+        </Content> */}
       </GovernanceSection>
           </Section>
           {/* End Learnmore Governance */}
@@ -571,10 +585,21 @@ const GovernanceRolesSection=styled.div`
 const GovernanceImg=styled.img`
    height: auto;
    width: auto;
+   padding: 2rem;
 
    @media(max-width:600px){
      height: 15rem;
      width: 15rem;
+     padding:3rem 0;
+   }
+`;
+const GovernanceImgFixed=styled(GovernanceImg)`
+   height: 20rem;
+   width: 20rem;
+   padding: 5rem;
+
+   @media(max-width:600px){
+     padding: 3rem 0;
    }
 `;
 const GovernanceHeading=styled.div`
@@ -585,14 +610,16 @@ const GovernanceHeading=styled.div`
   flex-direction: column;
   
   h4{
+    color:white;
     font-size: 40px;
     font-weight:400px;
+    margin: 15px 0px 15px 0;
     @media(max-width:600px){
      font-size:1.2rem;
    }
   }
   p{
-    color: #858585;
+    color: white;
     font-size:1.5rem;
     margin:0;
     @media(max-width:600px){
@@ -605,6 +632,7 @@ const GovernanceSection=styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  padding: 2rem 2rem;
 `;
 
 const GovernanceItem=styled.div`
@@ -628,8 +656,9 @@ const GovernanceSomethingBox=styled.div`
 const GovernanceSpan=styled.span`
     background:${props => props.backgroundColor || '#E20880'} ;
     padding: 10px;
+    font-family:"san-";
     color:white;
-    margin:0rem 1rem 2rem 0rem;
+    margin: 0 10px 0 0;
     font-weight:450px ;
 
     @media(max-width:600px){
