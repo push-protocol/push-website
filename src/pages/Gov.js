@@ -13,7 +13,7 @@ import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 
 import {MdPersonPin} from 'react-icons/md';
-
+import './carousel.css';
 
 const Gov=()=>{
 
@@ -150,9 +150,9 @@ const Gov=()=>{
         
          
         <GovernanceHeading >
-        <item style={{margin:"0"}}><h4><GovernanceSpan style={{background:"black"}}>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
+        <item style={{margin:"0"}}><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
-            <p>WHAT IS GOVERNANCE</p>
+            <p style={{color:"#fff"}}>WHAT IS GOVERNANCE</p>
         </item>            
         </GovernanceHeading>
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -162,9 +162,9 @@ const Gov=()=>{
        
         </Content>
         <GovernanceHeading flex="flex-end">
-        <item><h4><GovernanceSpan style={{background:"black"}}>WHY </GovernanceSpan>GOVERNANCE?</h4></item>
+        <item><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}>WHY </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
-            <p>WHY GOVERNANCE</p>
+            <p style={{color:"#fff"}}>WHY GOVERNANCE</p>
         </item>            
         </GovernanceHeading>
        
@@ -325,10 +325,11 @@ const Gov=()=>{
           <GovernanceSection id="governance"  >
         
          
-        <GovernanceHeading >
-        <item><h4> GOVERNANCE <GovernanceSpan  style={{background:"#35C5F3"}}>Roles  </GovernanceSpan> </h4></item>
+       
+          <GovernanceHeading >
+        <item><h4> GOVERNANCE <GovernanceSpan  style={{background:"#35C5F3"}}>ROLES  </GovernanceSpan> </h4></item>
         <item>
-            <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
+            <p>LOREM IPSUM </p>
         </item>            
         </GovernanceHeading>
         {/* <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -375,7 +376,7 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         <Section theme="#fff" padding="0px 0px 50px 0px">
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           <GovernanceSection id="governance"  >
         
          
@@ -396,7 +397,7 @@ const Gov=()=>{
               ))
             }
           </Carousel>
-          <NomineeButton>Submit Your Nominee ---- {'>'} </NomineeButton>
+          <NomineeButton>Submit Your Nominee <img src="/governance/arrow_right.png" style={{height:"10px"}}/> </NomineeButton>
         </Content>
       </GovernanceSection>
           </Section>
@@ -473,16 +474,17 @@ const SliderCard=styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    min-width: 300px;
-    min-height:350px;
+    min-width: 310px;
+    margin: 2rem;
+    min-height:400px;
     background-image: linear-gradient(360deg,#E20880,#674C9F,#35C5F3);
-    border-radius: 20px;
+    border-radius: 8px;
     .img{
-      border-radius: 20px;
+      border-radius: 8px;
       margin: 10px;
       flex:7;
       background-color: white;
-      width: 90%;
+      width: 94%;
       height: 100%;
     }
     .text{
@@ -610,7 +612,7 @@ const GovernanceHeading=styled.div`
   flex-direction: column;
   
   h4{
-    color:white;
+    color:black;
     font-size: 40px;
     font-weight:400px;
     margin: 15px 0px 15px 0;
@@ -619,7 +621,7 @@ const GovernanceHeading=styled.div`
    }
   }
   p{
-    color: white;
+    color: gray;
     font-size:1.5rem;
     margin:0;
     @media(max-width:600px){
@@ -703,8 +705,13 @@ const NomineeButton=styled(Button)`
   align-items:stretch;
   background: black;
   color: white;
+  width: 300px;
   font-size:1.3rem;
   margin-top:2rem;
+  display: flex;
+  border-radius:10px;
+  align-items:center;
+  justify-content:space-around;
   `;
 const Question = styled(Button)`
   align-items: stretch;
