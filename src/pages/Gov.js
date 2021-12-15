@@ -18,7 +18,7 @@ import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
 
 const Gov=()=>{
-// for checking
+// for checking2
 
   const valuee=document.getElementsByClassName('Roles');
   console.log("valuee",valuee)
@@ -628,6 +628,7 @@ const SliderCard=styled.div`
     .text{
       flex:1;
       font-size:1.2rem;
+      font-family: Sourcs sans pro;
       color: white;
       font-weight: bolder;
     }
@@ -643,6 +644,7 @@ const GovernancePushNomineeCard=styled.div`
 
     h4{
       letter-spacing: 0.3rem;
+      font-family: Sourcs sans pro;
     }
 `;
 
@@ -711,11 +713,13 @@ const GovernanceRolesSection=styled.div`
   h2{
     color:'#E20880';
     font-size: 1.5rem;
+    font-family: Sourcs sans pro;
 
   }
 
   p{
     font-size:1.2rem;
+    font-family: Sourcs sans pro;
   }
 
   @media(max-width:600px){
@@ -752,6 +756,7 @@ const GovernanceHeading=styled.div`
   h4{
     color:black;
     font-size: 40px;
+    font-family: Sourcs sans pro;
     font-weight:400px;
     margin: 15px 0px 15px 0;
     @media(max-width:600px){
@@ -762,6 +767,7 @@ const GovernanceHeading=styled.div`
     color: gray;
     font-size:1.5rem;
     margin:0;
+    font-family: Sourcs sans pro;
     @media(max-width:600px){
      font-size:1.2rem;
    }
@@ -796,7 +802,7 @@ const GovernanceSomethingBox=styled.div`
 const GovernanceSpan=styled.span`
     background:${props => props.backgroundColor || '#E20880'} ;
     padding: 10px;
-    font-family:"san-";
+    font-family:Sourcs sans pro;;
     color:white;
     margin: 0 1rem 0 0.21rem;
     font-weight:450px ;
@@ -877,6 +883,7 @@ const QnAItem = styled(Item)`
 
     & ${Span} {
       font-weight: 400;
+      font-family: Sourcs sans pro;
       letter-spacing: 0.2em;
       margin-left: 10px;
       flex: 1;
@@ -911,6 +918,7 @@ const QnAItem = styled(Item)`
 const AMod = styled(A)`
   color: #fff;
   font-weight: 400;
+  font-family: Sourcs sans pro;
   text-decoration: underline;
 `
 
@@ -920,6 +928,7 @@ const LIMod = styled(LI)`
 
 const BoldText = styled.span`
   font-weight: bold;
+  font-family: Sourcs sans pro;
 `;
 
 
@@ -978,14 +987,17 @@ const EmphasisImage = styled(Item)`
 
 const EmphasisText = styled(Span)`
   font-size: 1.1rem;
+  font-family: Sourcs sans pro;
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
 `
 
 const EmphasisTextSmall = styled(Span)`
+  margin-top: 20px;
   font-size: 1.0rem;
-  font-weight: 300;
+  font-family: Sourcs sans pro;
+  font-weight: 250;
   text-align: center;
   padding: 0px 20px;
 `
