@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import {Section, SectionFS,SectionHero, SectionFSHero, Content, Item, ItemH, A,LI,ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
 import Wave from 'react-wavify';
 import Medium from 'components/Medium';
+
+import ScrollTrigger from 'react-scroll-trigger';
 import Carousel from 'react-elastic-carousel';
 
 import { FaCheckCircle, FaSeedling } from 'react-icons/fa';
@@ -114,6 +116,10 @@ const Gov=()=>{
        else setClassShow("Show");
  });
  
+ 
+ const [animateHero, setAnimateHero] = React.useState(true);
+
+
    React.useEffect(() => {
      window.addEventListener("scroll", handleScroll);
     
@@ -123,6 +129,7 @@ const Gov=()=>{
    }, [classShow]);
     return(
         <>
+        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            <SectionHero padding="50px 0px 80px 0px">
         {/* <SectionFSHero id="hero" padding="15px 0px 0px 0px"> */}
         <Content className="contentBox">
@@ -132,9 +139,23 @@ const Gov=()=>{
           </Item>
         </Content>
         <WaveOuter>
+            
+
+
+            <WaveInner>
+              <Wave fill='#e20880'
+                paused={!animateHero}
+                options={{
+                  height: 20,
+                  amplitude: 35,
+                  speed: 0.25,
+                  points: 3
+                }}
+              />
+            </WaveInner>
             <WaveInner>
               <Wave fill='#35c5f3'
-                // paused={!animateHero}
+                paused={!animateHero}
                 options={{
                   height: 40,
                   amplitude: 30,
@@ -147,9 +168,10 @@ const Gov=()=>{
           </WaveOuter>
           {/* </SectionFSHero> */}
       </SectionHero>
+      </ScrollTrigger>
     
           {/* Start What is Governance */}
-          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
           
       
           
@@ -206,19 +228,7 @@ const Gov=()=>{
           {/* Start Future Governance */}
           <Section theme="#fff" padding="0px 0px 50px 0px">
 
-          {/* <WaveOuter bottom="auto" top="70px">
-          <WaveInner transform="rotate(180deg)">
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-            </WaveInner>
-            </WaveOuter> */}
+        
           <GovernanceSection id="governance"  >
         
           <Item align="flex-start" padding="0px 0px 40px 0px">
@@ -241,29 +251,44 @@ const Gov=()=>{
       </GovernanceSection>
           </Section>
           {/* End Future Governance */}
+
+
+
          {/* Start process Governance */}
            
 
 
 
-      <Section id="solution" theme="#fff" padding="20px 0px 0px 0px">
+      <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
+      <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px">
 
+                
+      <GovernanceHeading >
+        <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#e20880"}}>PROCESS </GovernanceSpan>  </h4></item>
+        <item>
+            <p>POPOSAL.DISCUSSION.GOVERNANCE</p>
+        </item>              
+        </GovernanceHeading>
 
-      <Section id="solution" theme="#fff" padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
+     
+
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             {/* THE PROBLEM */}
-            <Item align="flex-start" padding="0px 0px 40px 0px">
+
+            
+
+
+
+
+            {/* <Item align="flex-start" padding="0px 0px 40px 0px">
               <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
                 <H2 textTransform="uppercase" spacing="0.1em">
                   <Span weight="200">GOVERNANCE </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">PROCESS</Span>
                 </H2>
                 <H3 maxWidth="400px">PROPOSAL.DISCUSSION.GOVERNANCE</H3>
               </Item>
-              </Item>
-
-            
-          
+              </Item> */}
            
               <Solution margin="20px 0px">
                
@@ -281,7 +306,7 @@ const Gov=()=>{
                   <EmphasisText>
                    PROPOSAL
                   </EmphasisText>
-                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
 
 
@@ -296,7 +321,7 @@ const Gov=()=>{
                   <EmphasisText>
                    DISCUSSION
                   </EmphasisText>
-                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
 
 
@@ -311,7 +336,7 @@ const Gov=()=>{
                   <EmphasisText>
                    GOVERNANCE
                   </EmphasisText>
-                  <Span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Span>
+                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
 
 
@@ -342,8 +367,12 @@ const Gov=()=>{
       </Section>
 
           {/* End process Governance */}
+
+
+
+
          {/* Start Learnmore Governance */}
-         <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
+         <Section theme="#e20880" padding="0px 0px 80px 0px" >
 
          <WaveOuter>
           <WaveInner>
@@ -358,41 +387,59 @@ const Gov=()=>{
             />
           </WaveInner>
         </WaveOuter>
+         
+
+        <Section id="solution"   padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
+
+        
+
+<GovernanceHeading >
+  <item><h4><GovernanceSpan  style={{background:"#000"}}>LEARN MORE </GovernanceSpan> <GovernanceSpan>ABOUT GOVERNANCE!</GovernanceSpan>  </h4></item>
+
+  <H3 color="#fff" margin="0px 0px 0px 0px">MEDIUM ARTICLES</H3>             
+  </GovernanceHeading>
 
 
-        <Content className="contentBox">
-          <Item align="stretch" justify="flex-start" margin="0px 20px">
-            <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
+        <Content  className = "contentBox" >
+
+
+          <Item align="stretch" justify="flex-start" margin="0px 0px">
+            {/* <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
               <Span bg="#000" color="#fff" weight="600" padding="0px 8px">LEARN MORE</Span><Span weight="200" color="#fff">ABOUT GOVERNANCE</Span>
               </H2>
               <H3 color="#fff">MEDIUM ARTICLES</H3>
-            </Item>
+            </Item> */}
+
 
             <Medium numberOfPosts={3} />
 
+
+            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
+              <Anchor
+                href="https://medium.com/ethereum-push-notification-service"
+                target="_blank"
+                title="Read Medium Blog of Ethereum Push Notification Service"
+                bg="#000"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+              >
+                Read More
+              </Anchor>
+            </Item>
+            
+
           </Item>
         </Content>
+        </Section>
 
-        {/* <WaveOuter>
-          <WaveInner>
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter> */}
       </Section>
-         <Section theme="#fff" padding="0px 0px 50px 0px">
-                <Content className="contentBox">
-                   Learn more about Governance 
-                </Content>
-          </Section>
+
+
+         
           <Section theme="#fff" padding="0px 0px 50px 0px" className="RolesContainer">
           
           <GovernanceSection id="governance"  >
@@ -409,44 +456,7 @@ const Gov=()=>{
         </item>   
               
         </GovernanceHeading>
-        {/* <Content className={`Roles ${classShow}`} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-            {
-             (document.getElementsByClassName('Roles')[0]?.classList?.contains("Show"))?<>
-           <GovernanceRolesSection>
-               <GovernancePushNomineeCard>
-                  
-                 <img src='/governance/champions.png'/>
-                    <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
-                  
-                  
-               </GovernancePushNomineeCard>
-               <Item>
-                  <h2>PUSH NOMINEE</h2>
-                  <p>Self nominate</p>
-                  <p>Push holder can delegate votes to them</p>
-                  <p>Can vote and submit proposals on snapshot</p>
-                </Item>
-             </GovernanceRolesSection>
-              </>:<>
-        <GovernanceRolesSection>
-               <GovernancePushNomineeCard>
-                  
-                 <img src='/governance/champions.png'/>
-                    <h4 style={{color:'white'}}>PUSH NOMINEE</h4>
-                  
-                  
-               </GovernancePushNomineeCard>
-               <Item>
-                  <h2>PUSH DELEGATEES</h2>
-                  <p>Self nominate</p>
-                  <p>Push holder can delegate votes to them</p>
-                  <p>Can vote and submit proposals on snapshot</p>
-                </Item>
-             </GovernanceRolesSection>
-                                  </>
-            }
-             
-        </Content> */}
+        
       </GovernanceSection>
       
        
@@ -529,15 +539,29 @@ const Gov=()=>{
 
 
 
-             <Section theme="#fff" padding="0px 0px 50px 0px">
+             <Section theme="#fff">
+
+
+             <Section id="solution"   padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
+
+<GovernanceHeading >
+  <item><h4><GovernanceSpan>FAQs</GovernanceSpan>  </h4></item>
+
+  <H3 color="#858585" margin="0px 0px 0px 0px">LOREM IPSUM</H3>             
+  </GovernanceHeading>
+
+
+
+             
         <Content className="contentBox">
-          <Item align="stretch" justify="flex-start" margin="0px 20px 40px 20px">
+        
+          {/* <Item align="stretch" justify="flex-start" margin="0px 20px 40px 20px">
             <Item align="stretch" align="flex-start" margin="0px 0px 20px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
                 <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">FAQs</Span>
               </H2>
               <H3>LOREM IPSUM</H3>
-            </Item>
+            </Item> */}
 
             {/* Questions and answers */}
             <Item align="stretch" margin="0px 0px 20px 0px">
@@ -562,21 +586,13 @@ const Gov=()=>{
               }
             </Item>
             {/* Questions and answers */}
-          </Item>
+          {/* </Item> */}
         </Content>
+        </Section>
         
       </Section>
 
 
-              
-
-
-
-             <Section theme="#fff" padding="0px 0px 50px 0px">
-                <Content className="contentBox">
-                    Governance FAQ
-                </Content>
-          </Section>
           {/* End faq Governance */}
        
         </>
@@ -777,7 +793,7 @@ const GovernanceSpan=styled.span`
     padding: 10px;
     font-family:"san-";
     color:white;
-    margin: 0 10px 0 0;
+    margin: 0 0 0 0;
     font-weight:450px ;
 
     @media(max-width:600px){
@@ -945,6 +961,7 @@ const GovImage=styled.img`
 
 
 const EmphasisBlock = styled(Item)`
+align: center;
   min-width: 280px;
 
 `
@@ -957,6 +974,13 @@ const EmphasisImage = styled(Item)`
 const EmphasisText = styled(Span)`
   font-size: 1.1rem;
   font-weight: 400;
+  text-align: center;
+  padding: 0px 20px;
+`
+
+const EmphasisTextSmall = styled(Span)`
+  font-size: 1.0rem;
+  font-weight: 300;
   text-align: center;
   padding: 0px 20px;
 `
