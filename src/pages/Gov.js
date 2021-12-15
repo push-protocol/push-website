@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import {Section, SectionFS,SectionHero, SectionFSHero, Content, Item, ItemH, A,LI,ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
 import Wave from 'react-wavify';
 import Medium from 'components/Medium';
-
+import { keyframes } from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
 import Carousel from 'react-elastic-carousel';
 
@@ -250,7 +250,17 @@ const Gov=()=>{
         </item>            
         </GovernanceHeading> */}
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-              <GovernanceImg src='/governance/Vectorcurve.png' alt=""/>
+            <AnimateSection >
+                <GovernanceImg src='/governance/Vectorcurve.png' alt=""/>
+              <ul>
+                <li>Lorem1</li>
+                <li>Lorem2</li>
+                <li>Lorem3</li>
+                <li>Lorem4</li>
+                <li>Lorem5</li>
+                <li>Lorem6</li>
+              </ul>
+              </AnimateSection>
         </Content>
       </GovernanceSection>
           </Section>
@@ -605,6 +615,95 @@ const Gov=()=>{
     )
 }
 
+
+const animate =keyframes`
+    
+0%{
+    transform:translateY(10vh) ;
+    opacity:0;
+    
+}
+14%{
+  opacity: 1;
+    transform:translateY(0vh) ;
+  
+}
+50%{
+    opacity: 1;
+    transform:translateY(0vh) ;
+    
+}
+60%{
+  opacity: 0;
+  transform:translateY(0vh) ;
+  
+}
+80%{
+  opacity: 0;
+  transform:translateY(0vh) ;
+  
+}
+100%{
+  opacity: 0;
+  transform: translateY(10vh);
+}
+`;
+const AnimateSection=styled.div`
+  /* position: relative; */
+  position: relative;
+  padding: 5rem 0 ;
+  ul{
+  }
+  ul li{
+      position: absolute;
+        list-style:none;
+        width:150px;
+        color: #E20880;
+        height:50px;
+        margin:0 1rem;
+        display:flex;
+        font-weight:800;
+        align-items:center;
+        justify-content:center;
+       
+    }
+
+    ul li:nth-child(1){
+        top:3rem;
+        animation:${animate} 7s linear infinite ;
+        animation-delay:0s;
+      }
+    ul li:nth-child(2){
+      top:5rem;
+      left: 19rem;
+      animation:${animate} 7s linear infinite;
+        animation-delay:.5s;
+    }
+    ul li:nth-child(3){
+        top:13rem;
+        left: 3rem;
+        animation:${animate} 7s linear  infinite;
+        animation-delay:1.0s;
+      }
+    ul li:nth-child(4){
+      top:18rem;
+      right:18rem;
+      animation:${animate} 7s linear  infinite;
+        animation-delay:1.5s;
+    }
+    ul li:nth-child(5){
+        bottom:25rem;
+        left: 18rem;
+        animation:${animate} 7s linear  infinite;
+        animation-delay:2.0s;
+    }
+    ul li:nth-child(6){
+      bottom:12rem;
+      right:5rem;
+      animation:${animate} 7s linear  infinite;
+        animation-delay:2.5s;
+    }
+`;
 
 
 const SliderCard=styled.div`
