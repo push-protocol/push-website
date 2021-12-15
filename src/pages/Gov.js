@@ -205,6 +205,7 @@ const Gov=()=>{
         </DottedSection>
        
         </Content>
+        
       </GovernanceSection>
          
 
@@ -227,18 +228,20 @@ const Gov=()=>{
           {/* End What is Governance */}
           {/* Start Future Governance */}
           <Section theme="#fff" padding="0px 0px 50px 0px">
-
+              
         
           <GovernanceSection id="governance"  >
-        
-          <Item align="flex-start" padding="0px 0px 40px 0px">
-              <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
-                <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span  bg="#674C9F" color="white" weight="600"  padding="0px 8px" margin="0 10px" >FUTURE </Span><Span  color="black" weight="600">OF GOVERNANCE</Span>
-                </H2>
-                <H3 maxWidth="400px">PROPOSAL.DISCUSSION.GOVERNANCE</H3>
-              </Item>
-              </Item>
+          <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+          <GovernanceImgFixed src='/governance/Group 6 (1).png' alt=""/>
+              </Content>
+         
+            
+              <GovernanceHeading >
+        <item style={{margin:"0"}}><h4 style={{color:"black"}}><GovernanceSpan style={{background:"#674C9F"}}>FUTURE </GovernanceSpan> OF GOVERNANCE?</h4></item>
+        <item>
+            <p style={{color:"#fff"}}>WHAT IS GOVERNANCE</p>
+        </item>            
+        </GovernanceHeading>
         {/* <GovernanceHeading >
         <item><h4><GovernanceSpan style={{background:"#674C9F"}}>FUTURE  </GovernanceSpan> OF GOVERNANCE?</h4></item>
         <item>
@@ -501,7 +504,7 @@ const Gov=()=>{
             />
           </WaveInner>
         </WaveOuter>
-          <GovernanceSection id="governance"  >
+          <GovernanceSection id="governance" style={{display:"flex",margin:"0",padding:"5rem 2rem",alignItems:"center"}}   >
         
          
         <GovernanceHeading >
@@ -510,7 +513,7 @@ const Gov=()=>{
             <p>Active community members who have at least 75,000 $PUSH delegated to them. They will be able to create proposals on Snapshot that are approved on the forum </p>
         </item>            
         </GovernanceHeading>
-        <Content className="contentBox" style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+        {/* <Content className="contentBox" style={{display:"flex",margin:"0",padding:"0",alignItems:"center"}}> */}
         <Carousel itemsToShow={width < 500 ? 1 : 4}>
             {
               pushDeligatees.map(({name})=>(
@@ -521,8 +524,8 @@ const Gov=()=>{
               ))
             }
           </Carousel>
-          <NomineeButton>Submit Your Nominee <img src="/governance/arrow_right.png" style={{height:"10px"}}/> </NomineeButton>
-        </Content>
+          <NomineeButton>Submit Your Nomination <img src="/governance/arrow_right.png" style={{height:"10px"}}/> </NomineeButton>
+        {/* </Content> */}
       </GovernanceSection>
       
        
@@ -793,7 +796,7 @@ const GovernanceSpan=styled.span`
     padding: 10px;
     font-family:"san-";
     color:white;
-    margin: 0 0 0 0;
+    margin: 0 1rem 0 0.21rem;
     font-weight:450px ;
 
     @media(max-width:600px){
@@ -838,7 +841,7 @@ const NomineeButton=styled(Button)`
   align-items:stretch;
   background: black;
   color: white;
-  width: 300px;
+  width: 350px;
   font-size:1.3rem;
   margin-top:2rem;
   display: flex;
