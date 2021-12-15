@@ -239,7 +239,8 @@ const Gov=()=>{
               <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"black"}}><GovernanceSpan style={{background:"#674C9F"}}>FUTURE </GovernanceSpan> OF GOVERNANCE?</h4></item>
         <item>
-            <p style={{color:"#fff"}}>WHAT IS GOVERNANCE</p>
+            <p style={{color:"gray"}}>WAY TO PROGRESSIVE DECENTRALIZATION
+</p>
         </item>            
         </GovernanceHeading>
         {/* <GovernanceHeading >
@@ -545,7 +546,7 @@ const Gov=()=>{
              <Section theme="#fff">
 
 
-             <Section id="solution"   padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
+             <Section id="solution"   padding="20px 0px 20px 0px" overflow="hidden" margin="40px">
 
 <GovernanceHeading >
   <item><h4><GovernanceSpan>FAQs</GovernanceSpan>  </h4></item>
