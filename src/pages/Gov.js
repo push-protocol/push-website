@@ -18,7 +18,7 @@ import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
 
 const Gov=()=>{
-
+// for checking
 
   const valuee=document.getElementsByClassName('Roles');
   console.log("valuee",valuee)
@@ -555,8 +555,8 @@ const Gov=()=>{
 
 
 
-             
-        <Content className="contentBox">
+             <Section margin="0px 0px 0px 30px">
+        <Content>
         
           {/* <Item align="stretch" justify="flex-start" margin="0px 20px 40px 20px">
             <Item align="stretch" align="flex-start" margin="0px 0px 20px 0px">
@@ -567,7 +567,7 @@ const Gov=()=>{
             </Item> */}
 
             {/* Questions and answers */}
-            <Item align="stretch" margin="0px 0px 20px 0px">
+            <Item align="stretch" margin="0px 0px 0px 0px">
               {
                 FAQS.map(({question, renderAnswer}, index) => (
                   <QnAItem key={index}>
@@ -591,6 +591,7 @@ const Gov=()=>{
             {/* Questions and answers */}
           {/* </Item> */}
         </Content>
+        </Section>
         </Section>
         
       </Section>
