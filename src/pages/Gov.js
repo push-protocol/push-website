@@ -276,7 +276,7 @@ const Gov=()=>{
 
      
 
-        <Content className="contentBox">
+        <Content >
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             {/* THE PROBLEM */}
 
@@ -294,10 +294,10 @@ const Gov=()=>{
               </Item>
               </Item> */}
            
-              <Solution margin="20px 0px">
+              <Solution margin="0px 0px">
                
 
-                <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="40px">
+                <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="0px">
 
 
                  
@@ -404,7 +404,7 @@ const Gov=()=>{
   </GovernanceHeading>
 
 
-        <Content  className = "contentBox" >
+        <ContentMore>
 
 
           <Item align="stretch" justify="flex-start" margin="0px 0px">
@@ -437,7 +437,7 @@ const Gov=()=>{
             
 
           </Item>
-        </Content>
+        </ContentMore>
         </Section>
 
       </Section>
@@ -994,6 +994,7 @@ const EmphasisText = styled(Span)`
 `
 
 const EmphasisTextSmall = styled(Span)`
+  width: 17vw;
   margin-top: 20px;
   font-size: 1.0rem;
   font-family: Sourcs sans pro;
@@ -1002,6 +1003,12 @@ const EmphasisTextSmall = styled(Span)`
   padding: 0px 20px;
 `
 
+
+
+const ContentMore = styled(Span)`
+  margin: 35px;
+  font-family: Sourcs sans pro;
+`
 
 
 // 
