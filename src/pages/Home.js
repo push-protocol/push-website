@@ -1486,7 +1486,7 @@ function Home() {
       {/* INVESTORS SECTION */}
       <Section id="investors" theme="#fff" padding="20px 0px 120px 0px">
         <Content className="contentBox">
-          <Item align="stretch" justify="flex-start" margin="0px 20px">
+          <Item align="stretch" justify="flex-start" margin="0px 20px" wrap="nowrap">
             <Item align="stretch" align="flex-start" margin="0px 0px 20px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
                 <Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Backed</Span><Span weight="200"> By</Span>
