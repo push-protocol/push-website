@@ -251,7 +251,22 @@ const Gov=()=>{
         </GovernanceHeading> */}
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
             <AnimateSection >
-                <GovernanceImg src='/governance/Vectorcurve.png' alt=""/>
+                {/* <GovernanceImg src='/governance/Vectorcurve.png' alt=""/> */}
+              
+              <ul>
+                <img src="/governance/Vectorcurve (copy).png"/>
+                <img src="/governance/Vectorcurve2.png"/>
+                <img src="/governance/Vectorcurve3.png"/>
+                <img src="/governance/Vectorcurve4.png"/>
+              </ul>  
+              <Span>
+                <img src="/governance/Line2.png"/>
+                <img src="/governance/Line2.png"/>
+                <img src="/governance/Line2.png"/>
+                <img src="/governance/Line2.png"/>
+                <img src="/governance/Line2.png"/>
+                <img src="/governance/Line2.png"/>
+              </Span>  
               <ul>
                 <li>Lorem1</li>
                 <li>Lorem2</li>
@@ -648,12 +663,138 @@ const animate =keyframes`
   transform: translateY(10vh);
 }
 `;
+
+
+const animate2 =keyframes`
+    
+0%{
+    opacity:0;
+    
+}
+14%{
+  opacity: 1;
+  
+}
+50%{
+    opacity: 1;
+    
+}
+60%{
+  opacity: 0;
+  
+}
+80%{
+  opacity: 0;
+  
+}
+100%{
+  opacity: 0;
+}
+`;
 const AnimateSection=styled.div`
   /* position: relative; */
   position: relative;
+  height: 60vh;
+  width: 100%;
   padding: 5rem 0 ;
+
+  & ${Span}{
+    img{
+      position: absolute;
+        list-style:none;
+        /* width: 1rem;
+        height: 3rem; */
+      }
+    img:nth-child(1){
+        top:5.5rem;
+        left:7rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:0s;
+      }
+      img:nth-child(2){
+        top:8.5rem;
+        left:24rem;
+        
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:0.5s;
+      }
+      img:nth-child(3){
+        top:12.5rem;
+        left:4.5rem;
+        
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1s;
+      }
+      img:nth-child(4){
+        top:17rem;
+        left:41rem;
+        
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1.5s;
+      }
+       img:nth-child(5){
+        top:24rem;
+        left:22rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1.5s;
+      }
+      img:nth-child(6){
+        top:32.5rem;
+        left:66rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1.5s;
+      }
+  }
+
   ul{
   }
+  ul img{
+      position: absolute;
+        list-style:none;
+        width:150px;
+        color: #E20880;
+        height:50px;
+        margin:0 1rem;
+        display:flex;
+        font-weight:800;
+        align-items:center;
+        justify-content:center;
+        
+ 
+    }
+    ul img:nth-child(1){
+        top:8rem;
+        left:5rem;
+        width: 20rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:0s;
+      }
+      ul img:nth-child(2){
+        top:11rem;
+        left:-5rem;
+        height: 4rem;
+        width: 100rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:0.5s;
+      }
+      ul img:nth-child(3){
+        top:14.5rem;
+        left:1rem;
+        height: 7rem;
+        width: 50rem;
+     
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1s;
+      }
+      ul img:nth-child(4){
+        top:21rem;
+        left:17rem;
+        height: 15rem;
+        width: 50rem;
+        animation:${animate2} 7s linear infinite ;
+        animation-delay:1.5s;
+      }
+      
   ul li{
       position: absolute;
         list-style:none;
@@ -680,26 +821,26 @@ const AnimateSection=styled.div`
         animation-delay:.5s;
     }
     ul li:nth-child(3){
-        top:13rem;
-        left: 3rem;
+        top:10rem;
+        left: 0rem;
         animation:${animate} 7s linear  infinite;
         animation-delay:1.0s;
       }
     ul li:nth-child(4){
-      top:18rem;
-      right:18rem;
+      top:14rem;
+      right:22rem;
       animation:${animate} 7s linear  infinite;
         animation-delay:1.5s;
     }
     ul li:nth-child(5){
-        bottom:25rem;
+        bottom:15rem;
         left: 18rem;
         animation:${animate} 7s linear  infinite;
         animation-delay:2.0s;
     }
     ul li:nth-child(6){
-      bottom:12rem;
-      right:5rem;
+      bottom:8rem;
+      right:-1rem;
       animation:${animate} 7s linear  infinite;
         animation-delay:2.5s;
     }
