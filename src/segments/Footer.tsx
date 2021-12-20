@@ -3,7 +3,7 @@ import React from "react";
 import styled, { css } from 'styled-components';
 import {Section, Content, Item, ItemH, WaveOuter, WaveInner, Button, Image, Span, Anchor, FormSubmision, Input, ItemBreak} from 'components/SharedStyling';
 
-import { FaCheckCircle, FaTwitter, FaApple, FaTelegramPlane, FaMedium, FaGithub, FaGooglePlay } from 'react-icons/fa';
+import { FaCheckCircle, FaDiscord,FaTwitter, FaApple, FaTelegramPlane, FaMedium, FaGithub, FaGooglePlay } from 'react-icons/fa';
 import { IoMdRocket, IoMdHeart, IoMdNotifications } from 'react-icons/io';
 
 import Loader from 'react-loader-spinner';
@@ -286,6 +286,15 @@ function Foot() {
                       margin="10px"
                     >
                       <FaMedium size={20} color="#35c5f3"/>
+                    </Anchor>
+                    <Anchor
+                      href="https://discord.gg/YVPB99F9W5"
+                      target="_blank"
+                      bg="#000"
+                      radius="4px"
+                      margin="10px"
+                    >
+                      <FaDiscord size={20} color="#674c9f"/>
                     </Anchor>
                   </ItemH>
                 </Item>
