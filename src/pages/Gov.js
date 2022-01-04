@@ -253,7 +253,7 @@ const Gov=()=>{
             <AnimateSection >
                 {/* <GovernanceImg src='/governance/Vectorcurve.png' alt=""/> */}
               
-              <ul>
+              {/* <ul>
                 <img src="/governance/Vectorcurve (copy).png"/>
                 <img src="/governance/Vectorcurve2.png"/>
                 <img src="/governance/Vectorcurve3.png"/>
@@ -266,7 +266,11 @@ const Gov=()=>{
                 <img src="/governance/Line2.png"/>
                 <img src="/governance/Line2.png"/>
                 <img src="/governance/Line2.png"/>
-              </Span>  
+              </Span>   */}
+                <Span>
+                 <img src="/governance/path_1.gif" />
+
+                </Span>
               <ul>
                 <li>Lorem1</li>
                 <li>Lorem2</li>
@@ -634,6 +638,38 @@ const Gov=()=>{
 const animate =keyframes`
     
 0%{
+  transform: translateY(10vh);
+  opacity: 0;
+}
+14%{
+  opacity: 1;
+  transform: translateY(0vh);
+}
+30%{
+  opacity:1;
+  transform: translateY(0vh);
+}
+50%{
+  opacity: 1;
+  transform: translateY(0vh);
+}
+60%{
+  opacity: 1;
+  transform:translateY(0vh);
+}
+80%{
+  opacity: 1;
+  transform:translateY(0vh);
+}
+95%{
+  opacity: 0;
+  transform: translateY(10vh);
+}
+100%{
+  opacity: 0;
+  transform: translateY(10vh);
+}
+/* 0%{
     transform:translateY(10vh) ;
     opacity:0;
     
@@ -658,10 +694,15 @@ const animate =keyframes`
   transform:translateY(0vh) ;
   
 }
+90%{
+  opacity: 0;
+  transform:translateY(0vh) ;
+  
+}
 100%{
   opacity: 0;
-  transform: translateY(10vh);
-}
+  transform: translateY(00vh);
+} */
 `;
 
 
@@ -694,18 +735,18 @@ const animate2 =keyframes`
 const AnimateSection=styled.div`
   /* position: relative; */
   position: relative;
-  height: 60vh;
+  height: 90vh;
   width: 100%;
   padding: 5rem 0 ;
+  background:red;
 
   & ${Span}{
     img{
       position: absolute;
-        list-style:none;
-        /* width: 1rem;
-        height: 3rem; */
+        width: 70rem;
+        height: 50rem;
       }
-    img:nth-child(1){
+    /* img:nth-child(1){
         top:5.5rem;
         left:7rem;
         animation:${animate2} 7s linear infinite ;
@@ -743,7 +784,7 @@ const AnimateSection=styled.div`
         left:66rem;
         animation:${animate2} 7s linear infinite ;
         animation-delay:1.5s;
-      }
+      } */
   }
 
   ul{
@@ -810,39 +851,40 @@ const AnimateSection=styled.div`
     }
 
     ul li:nth-child(1){
-        top:3rem;
-        animation:${animate} 7s linear infinite ;
-        animation-delay:0s;
+      top:10rem;
+        left: 0rem;
+        animation:${animate} 6s linear  infinite;
+        animation-delay:0.3s;
       }
     ul li:nth-child(2){
-      top:5rem;
-      left: 19rem;
-      animation:${animate} 7s linear infinite;
-        animation-delay:.5s;
+      top:11rem;
+      left: 15rem;
+      animation:${animate} 6s linear  infinite;
+        animation-delay:0.2s;
     }
     ul li:nth-child(3){
-        top:10rem;
-        left: 0rem;
-        animation:${animate} 7s linear  infinite;
-        animation-delay:1.0s;
+        top:15.5rem;
+        left: 7rem;
+        animation:${animate} 6s linear  infinite;
+        animation-delay:0.4s;
       }
     ul li:nth-child(4){
-      top:14rem;
+      top:18rem;
       right:22rem;
-      animation:${animate} 7s linear  infinite;
-        animation-delay:1.5s;
+      animation:${animate} 6s linear  infinite;
+        animation-delay:0.5s;
     }
     ul li:nth-child(5){
-        bottom:15rem;
-        left: 18rem;
-        animation:${animate} 7s linear  infinite;
-        animation-delay:2.0s;
+        bottom:24rem;
+        left: 21rem;
+        animation:${animate} 6s linear  infinite;
+        animation-delay:0.6s;
     }
     ul li:nth-child(6){
-      bottom:8rem;
-      right:-1rem;
-      animation:${animate} 7s linear  infinite;
-        animation-delay:2.5s;
+      bottom:12rem;
+      right:2rem;
+      animation:${animate} 6s linear  infinite;
+        animation-delay:0.7s;
     }
 `;
 
