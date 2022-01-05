@@ -25,14 +25,15 @@ function Head() {
         <Nav direction="row" align="stretch" justify="flex-start" minWidth="auto" margin="0px 20px" size="0.8rem">
           <Item align="center" margin="0px" minWidth="auto" flex="0">
             <HeadAnchor
-              href="#"
+              href="/"
               bg="transparent"
               title="Homepage of EPNS"
               hoverBG="#e20880"
               padding="0px"
               overflow="visible"
             >
-              <Bell uri={location.pathname} belltheme="white" hideBadge={false} badgeCount={badge} bellPressedCB={() => setBadge(badge + 1)} width={32} height={32} />
+              <img src="/bell/bell.png" style={{width:"35px ", height:"35px"}}/>
+              {/* <Bell uri={location.pathname} belltheme="white" hideBadge={false} badgeCount={badge} bellPressedCB={() => setBadge(badge + 1)} width={32} height={32} /> */}
             </HeadAnchor>
           </Item>
 
@@ -134,7 +135,17 @@ function Head() {
                   Contact
                 </HeadAnchor>
               </NavItem>
-
+               <NavItem align="center" margin="0px" minWidth="auto" flex="0">
+                <HeadAnchor
+                  href="./governance"
+                  title="Governance"
+                  bg="transparent"
+                  hoverBG="#fff"
+                  padding="4px 15px"
+                >
+                  Governance
+                </HeadAnchor>
+              </NavItem>
               <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
                 <Anchor
                   href="https://app.epns.io"

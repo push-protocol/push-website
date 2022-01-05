@@ -271,14 +271,14 @@ const Gov=()=>{
                  <img src="/governance/path_1.gif" />
 
                 </Span>
-              <ul>
+              {/* <ul>
                 <li>Lorem1</li>
                 <li>Lorem2</li>
                 <li>Lorem3</li>
                 <li>Lorem4</li>
                 <li>Lorem5</li>
                 <li>Lorem6</li>
-              </ul>
+              </ul> */}
               </AnimateSection>
         </Content>
       </GovernanceSection>
@@ -733,18 +733,16 @@ const animate2 =keyframes`
 }
 `;
 const AnimateSection=styled.div`
-  /* position: relative; */
   position: relative;
-  height: 90vh;
+  height: 60vh;
   width: 100%;
-  padding: 5rem 0 ;
-  background:red;
+  padding: 2rem 0 ;
 
   & ${Span}{
     img{
       position: absolute;
         width: 70rem;
-        height: 50rem;
+        height: 35rem;
       }
     /* img:nth-child(1){
         top:5.5rem;
