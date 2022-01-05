@@ -173,15 +173,21 @@ const PressKit = () => {
 				gradient="#F3F7F8"
 			>
 				<PressKitSection id="missingweb3">
-					<PressKitHeading>
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
+					<PressKitHeading style={{display:"flex",flexDirection:"row"}}>
+						<Item style={{ margin: "0" }} align="flex-start">
+							<h4 style={{ color: "#000",marginBottom:"60px" }}>
 								<PressKitSpan style={{ background: "#583D98" }}>
 									MISSING PIECES{" "}
 								</PressKitSpan>
 								OF WEB3
 							</h4>
+							<p>
+								Communication in StoneAge <br/>
+								Web3 can not notify users <br/>
+								Critical Info drop <br/>
+							</p>
 						</Item>
+						<MissingPieceImg src="/presskit/missing1.png"/>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -191,16 +197,23 @@ const PressKit = () => {
 							alignItems: "center",
 						}}
 					></Content>
-					<PressKitHeading flex="flex-end">
-						<Item>
-							<h4 style={{ color: "#000" }}>
+					<PressKitHeading flex="flex-end"  flexDirection="row">
+					<MissingPieceImg src="/presskit/missing2.png"/>
+
+						<Item style={{alignItems:"flex-end",textAlign:"right"}}>
+							<h4 style={{ color: "#000",marginBottom:"60px" }}>
 								THE
 								<PressKitSpan style={{ background: "#583D98" }}>
 									SOLUTION{" "}
 								</PressKitSpan>
 							</h4>
+							<p>
+								Communication in StoneAge <br/>
+								Web3 can not notify users <br/>
+								Critical Info drop <br/>
+							</p>
 						</Item>
-					</PressKitHeading>
+					</PressKitHeading >
 					<Content
 						className="contentBox"
 						style={{
@@ -315,13 +328,22 @@ const PressKit = () => {
 	);
 };
 
+const MissingPieceImg=styled.img`
+	height: 400px;
+	width: 400px;
+`;
+
 const PressKitHeading = styled.div`
 	display: flex;
 	padding: 2rem;
 	justify-content: ${(props) => props.flex || "flex-start"};
-	align-items: ${(props) => props.flex || "flex-start"};
-	flex-direction: column;
-
+	align-items: ${(props) => props.alignItems || "flex-start"};
+	flex-direction: ${(props)=>props.flexDirection ||   "column" };
+	p{
+		font-size:25px !important;
+		color:#252323 !important;
+		line-height:55px;
+	}
 	h4 {
 		color: black;
 		font-size: 40px;
