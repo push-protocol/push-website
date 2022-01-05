@@ -6,6 +6,7 @@ import {
 	Content,
 	Item,
 	H1,
+	Image,
 } from "components/SharedStyling";
 import ScrollTrigger from "react-scroll-trigger";
 
@@ -91,27 +92,53 @@ const PressKit = () => {
 			<Section
 				id="presskit"
 				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
-				padding="20px 0px 80px 0px"
+				padding="20px 0px 80px 30px"
 			>
-				<PressKitSection id="presskit">
-					<PressKitHeading>
-						<item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								EPNS
-								<PressKitSpan style={{ background: "black" }}>
-									PRESS KIT{" "}
-								</PressKitSpan>
-							</h4>
-						</item>
-					</PressKitHeading>
-					<Content
-						className="contentBox"
-						style={{
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					></Content>
+				<PressKitSection
+					id="presskit"
+					style={{
+						display: "flex",
+						flexDirection: "row",
+						justifyContent: "space-between",
+						alignItems: "center",
+					}}
+				>
+					<div>
+						<PressKitHeading>
+							<Item style={{ margin: "0" }}>
+								<h4 style={{ color: "#000" }}>
+									EPNS
+									<PressKitSpan
+										style={{ background: "black" }}
+									>
+										PRESS KIT{" "}
+									</PressKitSpan>
+								</h4>
+							</Item>
+						</PressKitHeading>
+						<Content
+							style={{
+								padding: "15px",
+							}}
+						>
+							<PressKitText>
+								<span style={{ fontWeight: 700 }}>EPNS</span> is
+								an Ethereum-based decentralized protocol that
+								enables any and every Web3 app, irrespective of
+								what blockchain they’re based on, to send push
+								notifications to its users.
+							</PressKitText>
+							<PressKitText>
+								On EPNS, not the apps but the users control what
+								notifications they receive. Besides, they earn
+								regular incentives for subscribing to
+								notifications. Win-win!
+							</PressKitText>
+						</Content>
+					</div>
+					<div>
+						<Img src="/presskit/bell.png" alt="Bell Image" />
+					</div>
 				</PressKitSection>
 			</Section>
 
@@ -119,14 +146,14 @@ const PressKit = () => {
 			<Section id="meetfounders" padding="20px 0px 0px 0px">
 				<PressKitSection id="meetfounders">
 					<PressKitHeading>
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								MEET OUR
 								<PressKitSpan style={{ background: "#D01C85" }}>
 									FOUNDERS{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -147,14 +174,14 @@ const PressKit = () => {
 			>
 				<PressKitSection id="missingweb3">
 					<PressKitHeading>
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								<PressKitSpan style={{ background: "#583D98" }}>
 									MISSING PIECES{" "}
 								</PressKitSpan>
 								OF WEB3
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -165,14 +192,14 @@ const PressKit = () => {
 						}}
 					></Content>
 					<PressKitHeading flex="flex-end">
-						<item>
+						<Item>
 							<h4 style={{ color: "#000" }}>
 								THE
 								<PressKitSpan style={{ background: "#583D98" }}>
 									SOLUTION{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -193,14 +220,14 @@ const PressKit = () => {
 			>
 				<PressKitSection id="epnsproduct">
 					<PressKitHeading flex="flex-end">
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								THE EPNS
 								<PressKitSpan style={{ background: "#1FE3EF" }}>
 									PRODUCT{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -217,14 +244,14 @@ const PressKit = () => {
 			<Section id="history" padding="20px 0px 0px 0px" gradient="#F3F7F8">
 				<PressKitSection id="history">
 					<PressKitHeading flex="flex-end">
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								OUR
 								<PressKitSpan style={{ background: "#D01C85" }}>
 									HISTORY{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -241,14 +268,14 @@ const PressKit = () => {
 			<Section id="news" gradient="#D01C85" padding="20px 0px 0px 0px">
 				<PressKitSection id="news">
 					<PressKitHeading>
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#fff" }}>
 								EPNS
 								<PressKitSpan style={{ background: "black" }}>
 									in the News{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -265,14 +292,14 @@ const PressKit = () => {
 			<Section id="meetadvisors" padding="20px 0px 0px 0px">
 				<PressKitSection id="meetadvisors">
 					<PressKitHeading flex="flex-end">
-						<item style={{ margin: "0" }}>
+						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								MEET OUR
 								<PressKitSpan style={{ background: "#583D98" }}>
 									ADVISORS{" "}
 								</PressKitSpan>
 							</h4>
-						</item>
+						</Item>
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -298,18 +325,36 @@ const PressKitHeading = styled.div`
 	h4 {
 		color: black;
 		font-size: 40px;
-		font-family: Sourcs sans pro;
-		font-weight: 400px;
+		line-height: 50px;
+		letter-spacing: 0.1em;
+		font-family: Source sans pro;
+		font-weight: 600px;
 		margin: 15px 0px 15px 0;
+		@media (max-width: 1200px) {
+			width: 1rem;
+		}
 		@media (max-width: 600px) {
 			font-size: 1.2rem;
+		}
+	}
+	h5 {
+		color: white;
+		font-size: 24px;
+		font-family: Source sans pro;
+		line-height: 30px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: 15px 0px 15px 0;
+		@media (max-width: 600px) {
+			font-size: 0.8rem;
 		}
 	}
 	p {
 		color: gray;
 		font-size: 1.5rem;
 		margin: 0;
-		font-family: Sourcs sans pro;
+		font-family: Source sans pro;
 		@media (max-width: 600px) {
 			font-size: 1.2rem;
 		}
@@ -326,13 +371,44 @@ const PressKitSection = styled.div`
 const PressKitSpan = styled.span`
 	background: ${(props) => props.backgroundColor || "#E20880"};
 	padding: 10px;
-	font-family: Sourcs sans pro;
+	font-family: Source sans pro;
 	color: white;
 	margin: 0 1rem 0 0.21rem;
 	font-weight: 450px;
 
 	@media (max-width: 600px) {
 		font-size: 1.2rem;
+	}
+`;
+
+const Img = styled.img`
+	width: 40rem;
+	@media (max-width: 1200px) {
+		width: 32rem;
+	}
+	@media (max-width: 1040px) {
+		width: 28rem;
+	}
+	@media (max-width: 768px) {
+		width: 24rem;
+	}
+	@media (max-width: 600px) {
+		width: 20rem;
+	}
+`;
+
+const PressKitText = styled.div`
+	color: white;
+	font-style: normal;
+	font-family: Source sans pro;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 30px;
+	padding: 10px;
+	letter-spacing: 0.1em;
+	@media (max-width: 600px) {
+		font-size: 1rem;
 	}
 `;
 
