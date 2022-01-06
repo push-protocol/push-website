@@ -201,7 +201,7 @@ export const DottedSection=styled.div`
   font-size: 1.5rem;
   text-align: center;
   /* width: 80%; */
-  margin:5rem 0;
+  margin:0rem 0;
   @media(max-width:600px){
     width: 80%;
   }

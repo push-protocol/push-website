@@ -132,8 +132,8 @@ const Gov=()=>{
     return(
         <>
         <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
-           <SectionHero padding="150px 0px 180px 0px" >
-        <SectionFSHero id="hero" padding="15px 0px 0px 0px">
+           <SectionHero padding="10px 0px 10px 0px" >
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
           {/* <Item margin="0px 20px">
             <H1>Governance</H1>
             <Span color="#fff" margin="-20px 0 0 0" size="1rem">Defines Governance</Span>
@@ -145,13 +145,10 @@ const Gov=()=>{
             )
           }}>
             <img src="/governance/hero1.jpg" style={{height:"500px",width:"100vw"}} />
-            <img src="/governance/hero2.jpg" style={{height:"500px",width:"120vw"}}/>
+            <img src="/governance/hero2.jpg" style={{height:"500px",width:"100vw"}}/>
           </Carousel>
-        {/* <WaveOuter>
-            
-
-
-            <WaveInner>
+        <WaveOuter>
+         <WaveInner>
               <Wave fill='#e20880'
                 paused={!animateHero}
                 options={{
@@ -174,7 +171,7 @@ const Gov=()=>{
               />
             </WaveInner>
            
-          </WaveOuter> */}
+          </WaveOuter>
           </SectionFSHero>
       </SectionHero>
       </ScrollTrigger>
@@ -187,7 +184,6 @@ const Gov=()=>{
       <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
 
         
-         
         <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
@@ -236,7 +232,7 @@ const Gov=()=>{
 
           {/* End What is Governance */}
           {/* Start Future Governance */}
-          <Section theme="#fff" padding="0px 0px 50px 0px">
+          <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -478,7 +474,7 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
          <WaveOuter>
           <WaveInner>
@@ -516,7 +512,7 @@ const Gov=()=>{
       </GovernanceSection>
       
        
-          </Section> */}
+          </Section>
           {/* End pushDeligatees Governance */}
 
 
@@ -699,7 +695,7 @@ const AnimateSection=styled.div`
     img{
       position: absolute;
         width: 70rem;
-        height: 35rem;
+        height: 60rem;
       
       @media(max-width:900px){
         width: 20rem;
