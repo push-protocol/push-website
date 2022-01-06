@@ -250,49 +250,18 @@ const Gov=()=>{
 </p>
         </item>            
         </GovernanceHeading>
-        {/* <GovernanceHeading >
-        <item><h4><GovernanceSpan style={{background:"#674C9F"}}>FUTURE  </GovernanceSpan> OF GOVERNANCE?</h4></item>
-        <item>
-            <p>WAY TO PROGRESSIVE DECENTRALIZED </p>
-        </item>            
-        </GovernanceHeading> */}
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
             <AnimateSection >
-                {/* <GovernanceImg src='/governance/Vectorcurve.png' alt=""/> */}
               
-              {/* <ul>
-                <img src="/governance/Vectorcurve (copy).png"/>
-                <img src="/governance/Vectorcurve2.png"/>
-                <img src="/governance/Vectorcurve3.png"/>
-                <img src="/governance/Vectorcurve4.png"/>
-              </ul>  
-              <Span>
-                <img src="/governance/Line2.png"/>
-                <img src="/governance/Line2.png"/>
-                <img src="/governance/Line2.png"/>
-                <img src="/governance/Line2.png"/>
-                <img src="/governance/Line2.png"/>
-                <img src="/governance/Line2.png"/>
-              </Span>   */}
                 <Span>
-                 <img src="/governance/path_1.gif" />
+                 <img src="/governance/path.gif" />
 
                 </Span>
-              {/* <ul>
-                <li>Lorem1</li>
-                <li>Lorem2</li>
-                <li>Lorem3</li>
-                <li>Lorem4</li>
-                <li>Lorem5</li>
-                <li>Lorem6</li>
-              </ul> */}
+            
               </AnimateSection>
         </Content>
       </GovernanceSection>
           </Section>
-          {/* End Future Governance */}
-
-         {/* Start process Governance */}
 
       <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
       <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px">
@@ -724,7 +693,7 @@ const AnimateSection=styled.div`
         width: 70rem;
         height: 35rem;
       
-      @media(max-width:600px){
+      @media(max-width:900px){
         width: 20rem;
         height: 20rem;
       }
