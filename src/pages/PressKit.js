@@ -121,14 +121,22 @@ const PressKit = () => {
 								padding: "15px",
 							}}
 						>
-							<PressKitText>
+							<PressKitText
+								textTransform="uppercase"
+								padding="10px"
+								color="white"
+							>
 								<span style={{ fontWeight: 700 }}>EPNS</span> is
 								an Ethereum-based decentralized protocol that
 								enables any and every Web3 app, irrespective of
 								what blockchain they’re based on, to send push
 								notifications to its users.
 							</PressKitText>
-							<PressKitText>
+							<PressKitText
+								textTransform="uppercase"
+								padding="10px"
+								color="white"
+							>
 								On EPNS, not the apps but the users control what
 								notifications they receive. Besides, they earn
 								regular incentives for subscribing to
@@ -143,7 +151,7 @@ const PressKit = () => {
 			</Section>
 
 			{/* Meet Founders Section */}
-			<Section id="meetfounders" padding="20px 0px 0px 0px">
+			<Section id="meetfounders" padding="30px 0px 50px 0px">
 				<PressKitSection id="meetfounders">
 					<PressKitHeading>
 						<Item style={{ margin: "0" }}>
@@ -156,13 +164,92 @@ const PressKit = () => {
 						</Item>
 					</PressKitHeading>
 					<Content
-						className="contentBox"
 						style={{
 							display: "flex",
-							justifyContent: "center",
+							justifyContent: "space-between",
+							flexDirection: "row",
 							alignItems: "center",
 						}}
-					></Content>
+					>
+						<Item padding="0px 50px" margin="0px 50px">
+							<PeopleImg src="/presskit/founder_harsh.png" />
+							<PressKitText
+								color="#000"
+								fontWeight="600"
+								padding="5px"
+							>
+								Harsh Rajat
+							</PressKitText>
+							<PressKitText
+								color="#D01C85"
+								fontWeight="600"
+								padding="5px"
+								textTransform="uppercase"
+								lineHeight="19px"
+								fontSize="15px"
+							>
+								Founder
+							</PressKitText>
+							<PressKitText
+								color="#635C5C"
+								fontWeight="600"
+								padding="5px"
+								lineHeight="18px"
+								textAlign="justify"
+								fontSize="14px"
+							>
+								Harsh Rajat is the founder of Ethereum Push
+								Notification Service (EPNS), a decentralized
+								DeFi notifications protocol that enables users
+								(wallet addresses) to receive notifications.
+								With 11 years of entrepreneurial experience in
+								various spectrum of tech; including
+								architecting, development and design in
+								different tech fields (Mobile, Web Services,
+								SaaS, Blockchain), he realised the gap in the
+								blockchain space and founded EPNS!
+							</PressKitText>
+						</Item>
+						<Item padding="0px 50px" margin="0px 50px">
+							<PeopleImg src="/presskit/founder_richa.png" />
+							<PressKitText
+								color="#000"
+								fontWeight="600"
+								padding="5px"
+							>
+								Richa Joshi
+							</PressKitText>
+							<PressKitText
+								color="#D01C85"
+								fontWeight="600"
+								padding="5px"
+								textTransform="uppercase"
+								lineHeight="19px"
+								fontSize="15px"
+							>
+								Co-Founder
+							</PressKitText>
+							<PressKitText
+								color="#635C5C"
+								fontWeight="600"
+								padding="5px"
+								lineHeight="18px"
+								textAlign="justify"
+								fontSize="14px"
+							>
+								Richa, the co-founder of Ethereum Push
+								Notification Service (EPNS). An alumini of K.J.
+								Somaiya Institute of engineering and Information
+								Technology, Richa began her career with Wipro
+								Limited and has 12 years of techno-functional
+								experience in product management and development
+								across multiple facets of the product lifecycle.
+								She has previously worked with Deloitte,
+								contributing and leading teams before foraying
+								into the blockchain space.
+							</PressKitText>
+						</Item>
+					</Content>
 				</PressKitSection>
 			</Section>
 
@@ -173,21 +260,23 @@ const PressKit = () => {
 				gradient="#F3F7F8"
 			>
 				<PressKitSection id="missingweb3">
-					<PressKitHeading style={{display:"flex",flexDirection:"row"}}>
+					<PressKitHeading
+						style={{ display: "flex", flexDirection: "row" }}
+					>
 						<Item style={{ margin: "0" }} align="flex-start">
-							<h4 style={{ color: "#000",marginBottom:"60px" }}>
+							<h4 style={{ color: "#000", marginBottom: "60px" }}>
 								<PressKitSpan style={{ background: "#583D98" }}>
 									MISSING PIECES{" "}
 								</PressKitSpan>
 								OF WEB3
 							</h4>
 							<p>
-								Communication in StoneAge <br/>
-								Web3 can not notify users <br/>
-								Critical Info drop <br/>
+								Communication in StoneAge <br />
+								Web3 can not notify users <br />
+								Critical Info drop <br />
 							</p>
 						</Item>
-						<MissingPieceImg src="/presskit/missing1.png"/>
+						<MissingPieceImg src="/presskit/missing1.png" />
 					</PressKitHeading>
 					<Content
 						className="contentBox"
@@ -197,23 +286,28 @@ const PressKit = () => {
 							alignItems: "center",
 						}}
 					></Content>
-					<PressKitHeading flex="flex-end"  flexDirection="row">
-					<MissingPieceImg src="/presskit/missing2.png"/>
+					<PressKitHeading flex="flex-end" flexDirection="row">
+						<MissingPieceImg src="/presskit/missing2.png" />
 
-						<Item style={{alignItems:"flex-end",textAlign:"right"}}>
-							<h4 style={{ color: "#000",marginBottom:"60px" }}>
+						<Item
+							style={{
+								alignItems: "flex-end",
+								textAlign: "right",
+							}}
+						>
+							<h4 style={{ color: "#000", marginBottom: "60px" }}>
 								THE
 								<PressKitSpan style={{ background: "#583D98" }}>
 									SOLUTION{" "}
 								</PressKitSpan>
 							</h4>
 							<p>
-								Communication in StoneAge <br/>
-								Web3 can not notify users <br/>
-								Critical Info drop <br/>
+								Communication in StoneAge <br />
+								Web3 can not notify users <br />
+								Critical Info drop <br />
 							</p>
 						</Item>
-					</PressKitHeading >
+					</PressKitHeading>
 					<Content
 						className="contentBox"
 						style={{
@@ -328,9 +422,16 @@ const PressKit = () => {
 	);
 };
 
-const MissingPieceImg=styled.img`
+const MissingPieceImg = styled.img`
 	height: 400px;
 	width: 400px;
+`;
+
+const PeopleImg = styled.img`
+	height: 340px;
+	width: 340px;
+	margin: 20px 0px 10px 0px;
+	border-radius: 50%;
 `;
 
 const PressKitHeading = styled.div`
@@ -338,11 +439,11 @@ const PressKitHeading = styled.div`
 	padding: 2rem;
 	justify-content: ${(props) => props.flex || "flex-start"};
 	align-items: ${(props) => props.alignItems || "flex-start"};
-	flex-direction: ${(props)=>props.flexDirection ||   "column" };
-	p{
-		font-size:25px !important;
-		color:#252323 !important;
-		line-height:55px;
+	flex-direction: ${(props) => props.flexDirection || "column"};
+	p {
+		font-size: 25px !important;
+		color: #252323 !important;
+		line-height: 55px;
 	}
 	h4 {
 		color: black;
@@ -387,7 +488,7 @@ const PressKitSection = styled.div`
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-	padding: 2rem 2rem;
+	padding: ${(props) => props.padding || "2rem 2rem"};
 `;
 
 const PressKitSpan = styled.span`
@@ -420,15 +521,16 @@ const Img = styled.img`
 `;
 
 const PressKitText = styled.div`
-	color: white;
-	font-style: normal;
-	font-family: Source sans pro;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 30px;
-	padding: 10px;
-	letter-spacing: 0.1em;
+	color: ${(props) => props.color || "inherit"};
+	font-style: ${(props) => props.fontStyle || "normal"};
+	font-family: ${(props) => props.fontFamily || "Source sans pro"};
+	text-transform: ${(props) => props.textTransform || "none"};
+	text-align: ${(props) => props.textAlign || "center"};
+	font-weight: ${(props) => props.fontWeight || "400"};
+	font-size: ${(props) => props.fontSize || "24px"};
+	line-height: ${(props) => props.lineHeight || "30px"};
+	padding: ${(props) => props.padding || "0px"};
+	letter-spacing: ${(props) => props.letterSpacing || "0.1em"};
 	@media (max-width: 600px) {
 		font-size: 1rem;
 	}
