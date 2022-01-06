@@ -14,6 +14,8 @@ import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 
+import Circle from './circle-animation/circle-animation'
+
 import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
 
@@ -323,7 +325,7 @@ const Gov=()=>{
               <Solution margin="0px 0px">
                
 
-                <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="0px">
+                <ItemHG margin="-20px" align="stretch" columnGap="40px" rowGap="0px">
               <EmphasisBlock margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -357,7 +359,7 @@ const Gov=()=>{
                   </EmphasisText>
                   <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
-                </ItemH>
+                </ItemHG>
 
               </Solution>
             </Item>
@@ -409,7 +411,7 @@ const Gov=()=>{
         
 
 <GovernanceHeading >
-  <item><h4><GovernanceSpan  style={{background:"#000"}}>LEARN MORE </GovernanceSpan> <GovernanceSpan>ABOUT GOVERNANCE!</GovernanceSpan>  </h4></item>
+  <item><h4><GovernanceSpan  style={{background:"#000"}}>LEARN MORE </GovernanceSpan> <span style={{color:"#FFFFFF"}}>ABOUT GOVERNANCE!</span>  </h4></item>
 
   <H3 color="#fff" margin="0px 0px 0px 0px">MEDIUM ARTICLES</H3>             
   </GovernanceHeading>
@@ -468,7 +470,13 @@ const Gov=()=>{
         <item>
             <p>LOREM IPSUM </p>
            
-        </item>   
+        </item>
+
+
+         <item className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <Circle/>
+          
+          </item>    
               
         </GovernanceHeading>
         
@@ -872,6 +880,22 @@ const AnimateSection=styled.div`
 `;
 
 
+
+export const ItemHG = styled(Item)`
+  flex-direction: row;
+  flex: ${props => props.flex || '1'};
+  
+  ${ItemBreak} {
+    width: auto;
+    height: 0;
+  }
+
+  @media (max-width: 350px ){
+    flex-direction: column;
+  }
+`
+
+
 const SliderCard=styled.div`
     display: flex;
     justify-content: space-evenly;
@@ -893,7 +917,7 @@ const SliderCard=styled.div`
     .text{
       flex:1;
       font-size:1.2rem;
-      font-family: Sourcs sans pro;
+      font-family: Source sans pro;
       color: white;
       font-weight: bolder;
     }
@@ -909,7 +933,7 @@ const GovernancePushNomineeCard=styled.div`
 
     h4{
       letter-spacing: 0.3rem;
-      font-family: Sourcs sans pro;
+      font-family: Source sans pro;
     }
 `;
 
@@ -978,13 +1002,13 @@ const GovernanceRolesSection=styled.div`
   h2{
     color:'#E20880';
     font-size: 1.5rem;
-    font-family: Sourcs sans pro;
+    font-family: Source sans pro;
 
   }
 
   p{
     font-size:1.2rem;
-    font-family: Sourcs sans pro;
+    font-family: Source sans pro;
   }
 
   @media(max-width:600px){
@@ -1021,7 +1045,7 @@ const GovernanceHeading=styled.div`
   h4{
     color:black;
     font-size: 40px;
-    font-family: Sourcs sans pro;
+    font-family: Source sans pro;
     font-weight:400px;
     margin: 15px 0px 15px 0;
     @media(max-width:600px){
@@ -1032,7 +1056,7 @@ const GovernanceHeading=styled.div`
     color: gray;
     font-size:1.5rem;
     margin:0;
-    font-family: Sourcs sans pro;
+    font-family: Source sans pro;
     @media(max-width:600px){
      font-size:1.2rem;
    }
@@ -1067,7 +1091,7 @@ const GovernanceSomethingBox=styled.div`
 const GovernanceSpan=styled.span`
     background:${props => props.backgroundColor || '#E20880'} ;
     padding: 10px;
-    font-family:Sourcs sans pro;;
+    font-family:Source sans pro;;
     color:white;
     margin: 0 1rem 0 0.21rem;
     font-weight:450px ;
@@ -1148,7 +1172,7 @@ const QnAItem = styled(Item)`
 
     & ${Span} {
       font-weight: 400;
-      font-family: Sourcs sans pro;
+      font-family: Source sans pro;
       letter-spacing: 0.2em;
       margin-left: 10px;
       flex: 1;
@@ -1183,7 +1207,7 @@ const QnAItem = styled(Item)`
 const AMod = styled(A)`
   color: #fff;
   font-weight: 400;
-  font-family: Sourcs sans pro;
+  font-family: Source sans pro;
   text-decoration: underline;
 `
 
@@ -1193,7 +1217,7 @@ const LIMod = styled(LI)`
 
 const BoldText = styled.span`
   font-weight: bold;
-  font-family: Sourcs sans pro;
+  font-family: Source sans pro;
 `;
 
 
@@ -1252,18 +1276,19 @@ const EmphasisImage = styled(Item)`
 
 const EmphasisText = styled(Span)`
   font-size: 1.1rem;
-  font-family: Sourcs sans pro;
+  font-family: Source sans pro;
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
 `
 
 const EmphasisTextSmall = styled(Span)`
-  width: 17vw;
+  width: 250px;
   margin-top: 20px;
   font-size: 1.0rem;
-  font-family: Sourcs sans pro;
-  font-weight: 250;
+  font-family: Source sans pro;
+  color: black;
+  font-weight: 400;
   text-align: center;
   padding: 0px 20px;
 `
@@ -1272,7 +1297,7 @@ const EmphasisTextSmall = styled(Span)`
 
 const ContentMore = styled(Span)`
   margin: 35px;
-  font-family: Sourcs sans pro;
+  font-family: Source sans pro;
 `
 
 

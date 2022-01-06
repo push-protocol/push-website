@@ -1,0 +1,131 @@
+.container {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: 0;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 1s;
+  }
+  
+  
+  
+  .text-content {
+    width: 340px;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    /* left: 400px; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* @media (max-width: 800px)
+  {
+    .text-content{
+      left: 225px
+    }
+  } */
+  
+  .text-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.25;
+  }
+  
+  .wrapper {
+    margin-top: 5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+    transition: transform 0ms;
+  }
+  
+  .circle#--active {
+    border: 2px solid white;
+    width: 100px;
+    height: 100px;
+  }
+  .circle#--active img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .circle.blue {
+    background-color: #35c5f3;
+    top: -20px;
+    right: calc(50% - 25px);
+  }
+  .circle.blue#--active {
+    right: calc(50% - 50px);
+    top: -50px;
+  }
+  
+  .circle.red {
+    background-color: #e20880;
+    top: calc(50% - 25px);
+    left: -20px;
+  }
+  
+  .circle.red#--active {
+    top: calc(50% - 50px);
+    left: -50px;
+    transform: rotate(-90deg);
+  }
+  
+  .circle.black {
+    background-color: black;
+    bottom: -20px;
+    right: calc(50% - 25px);
+  }
+  
+  .circle.black#--active {
+    right: calc(50% - 50px);
+    bottom: -50px;
+    transform: rotate(180deg);
+  }
+  
+  .circle.purple {
+    background-color: #674c9f;
+    right: -20px;
+    top: calc(50% - 25px);
+  }
+  .circle.purple#--active {
+    right: -50px;
+    top: calc(50% - 50px);
+    transform: rotate(90deg);
+  }
+  
+  
+  .textCont{
+    color: white;
+    text-align: center;
+  }
+  .textCont div{
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  /* background-color: #674C9F; */
+  
