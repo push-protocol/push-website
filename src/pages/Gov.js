@@ -9,11 +9,11 @@ import Carousel, { consts } from 'react-elastic-carousel';
 
 import { FaCheckCircle, FaSeedling } from 'react-icons/fa';
 import { IoMdRocket } from 'react-icons/io';
-import { BsChevronExpand, BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { BsChevronExpand, BsChevronUp, BsChevronDown, BsChevronRight } from 'react-icons/bs';
 import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
-
+import {BsChevronLeft} from 'react-icons/bs';
 import Circle from './circle-animation/circle-animation'
 
 import {MdPersonPin} from 'react-icons/md';
@@ -132,22 +132,39 @@ const Gov=()=>{
     return(
         <>
         <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
-           <SectionHero padding="10px 0px 10px 0px" >
-        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-          {/* <Item margin="0px 20px">
-            <H1>Governance</H1>
-            <Span color="#fff" margin="-20px 0 0 0" size="1rem">Defines Governance</Span>
-          </Item> */}
-          <Carousel itemsToShow={width < 500 ? 1 : 1} enableAutoPlay={true} renderArrow={({ type, onClick, isEdge })=>{
-            var pointer = type === consts.PREV ? '' : ''
-            return (
-              <></>
-            )
+           <SectionHero  padding="0px 0px 0px 0px" >
+           <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
+           const pointer = type === consts.PREV ? "left" : "right"
+            console.log("ponter",pointer);
+            if(pointer=="left")
+           return (
+             <Button style={{position:"absolute",bottom:"100px",right:"100px",background:"none"}} onClick={onClick} disabled={isEdge}>
+               <BsChevronLeft fontSize="1rem"/>
+             </Button>
+           )
+           else return (
+            <Button style={{position:"absolute",bottom:"100px",right:"70px",background:"none"}} onClick={onClick} disabled={isEdge}>
+              <BsChevronRight fontSize="1rem"/>
+            </Button>
+          ) 
           }}>
-            <img src="/governance/hero1.jpg" style={{height:"500px",width:"100vw"}} />
-            <img src="/governance/hero2.jpg" style={{height:"500px",width:"100vw"}}/>
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero1.png" style={{height:"110vh",width:"100vw"}} />
+        </SectionFSHero>    
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero2.png" style={{height:"110vh",width:"100vw"}} />
+        </SectionFSHero>    
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero3.png" style={{height:"110vh",width:"100vw"}} />
+        </SectionFSHero>    
+        {/* <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+          
+          
+            <img src="/governance/hero2.jpg" style={{height:"500px",width:"100vw"}}/> */}
+       
+          {/* </SectionFSHero> */}
           </Carousel>
-        <WaveOuter>
+          <WaveOuter>
          <WaveInner>
               <Wave fill='#e20880'
                 paused={!animateHero}
@@ -172,7 +189,6 @@ const Gov=()=>{
             </WaveInner>
            
           </WaveOuter>
-          </SectionFSHero>
       </SectionHero>
       </ScrollTrigger>
     

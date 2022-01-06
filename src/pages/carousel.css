@@ -1,3 +1,7 @@
+.rec {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 .rec.rec-arrow:hover {
   border-radius: 90%;
   /* background-color: red; */
