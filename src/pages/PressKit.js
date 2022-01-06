@@ -8,6 +8,8 @@ import {
 	H1,
 	Image,
 } from "components/SharedStyling";
+import Medium from "components/Medium";
+import AdvisorsCard from "components/AdvisorsCard";
 import ScrollTrigger from "react-scroll-trigger";
 
 const PressKit = () => {
@@ -302,9 +304,9 @@ const PressKit = () => {
 								</PressKitSpan>
 							</h4>
 							<p>
-								Communication in StoneAge <br />
-								Web3 can not notify users <br />
-								Critical Info drop <br />
+								Notification Protocol <br />
+								Incentivized Notifications <br />
+								Platform Agnostic Delivery <br />
 							</p>
 						</Item>
 					</PressKitHeading>
@@ -326,7 +328,7 @@ const PressKit = () => {
 				gradient="#583D98"
 			>
 				<PressKitSection id="epnsproduct">
-					<PressKitHeading flex="flex-end">
+					<PressKitHeading flex="flex-end" alignItems="flex-end">
 						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								THE EPNS
@@ -350,7 +352,7 @@ const PressKit = () => {
 			{/* History Section */}
 			<Section id="history" padding="20px 0px 0px 0px" gradient="#F3F7F8">
 				<PressKitSection id="history">
-					<PressKitHeading flex="flex-end">
+					<PressKitHeading flex="flex-end" alignItems="flex-end">
 						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								OUR
@@ -385,20 +387,24 @@ const PressKit = () => {
 						</Item>
 					</PressKitHeading>
 					<Content
-						className="contentBox"
 						style={{
 							display: "flex",
-							justifyContent: "center",
+							flexDirection: "column",
+							justifyContent: "space-between",
 							alignItems: "center",
 						}}
-					></Content>
+					>
+						{/* <Item padding="20px" width="85%">
+							<Medium numberOfPosts={6} />
+						</Item> */}
+					</Content>
 				</PressKitSection>
 			</Section>
 
 			{/* Meet Advisors Section */}
 			<Section id="meetadvisors" padding="20px 0px 0px 0px">
 				<PressKitSection id="meetadvisors">
-					<PressKitHeading flex="flex-end">
+					<PressKitHeading flex="flex-end" alignItems="flex-end">
 						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								MEET OUR
@@ -409,13 +415,56 @@ const PressKit = () => {
 						</Item>
 					</PressKitHeading>
 					<Content
-						className="contentBox"
 						style={{
 							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
+							justifyContent: "space-evenly",
+							flexDirection: "row",
+							flexFlow: "wrap",
 						}}
-					></Content>
+					>
+						{/* Using Harsh's image till getting real images from UI team */}
+						<AdvisorsCard
+							name="Nischal Shetty"
+							imgSrc="/presskit/founder_harsh.png"
+							title="Founder, CEO | WazirX"
+							height="500px"
+							width="350px"
+							subtitle="(India’s Largest Exchange, acquired by Binance)"
+							desc="The Crypto and DeFi ecosystem is missing some key infrastructure pieces. Notification is one such key infrastructure piece that is currently missing and I’m glad that the EPNS team is solving this problem."
+						/>
+						<AdvisorsCard
+							name="DeFi Dad"
+							imgSrc="/presskit/founder_harsh.png"
+							height="500px"
+							width="350px"
+							title="ALL THINGS DEFI"
+							desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
+						/>
+						<AdvisorsCard
+							name="Vivek Singh"
+							imgSrc="/presskit/founder_harsh.png"
+							height="500px"
+							width="350px"
+							title="CO-FOUNDER, GITCOIN"
+							desc="EPNS is building critical infrastructure for Web 3. Tinkering with the incentives around notifications has huge downstream potential as we look to build an internet which serves users, not corporations. Excited to see how Harsh and Richa’s vision unfolds."
+						/>
+						<AdvisorsCard
+							name="Sandeep Nailwal"
+							imgSrc="/presskit/founder_harsh.png"
+							height="500px"
+							width="350px"
+							title="CO-FOUNDER, POLYGON"
+							desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3. I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
+						/>
+						<AdvisorsCard
+							name="Kernel"
+							imgSrc="/presskit/founder_harsh.png"
+							height="500px"
+							width="350px"
+							title="A GITCOIN COLLECTIVE"
+							desc="EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL.They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways."
+						/>
+					</Content>
 				</PressKitSection>
 			</Section>
 		</>
@@ -451,10 +500,10 @@ const PressKitHeading = styled.div`
 		line-height: 50px;
 		letter-spacing: 0.1em;
 		font-family: Source sans pro;
-		font-weight: 600px;
+		font-weight: normal;
 		margin: 15px 0px 15px 0;
 		@media (max-width: 1200px) {
-			width: 1rem;
+			font-size: 2rem;
 		}
 		@media (max-width: 600px) {
 			font-size: 1.2rem;
@@ -486,7 +535,7 @@ const PressKitHeading = styled.div`
 
 const PressKitSection = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: ${(props) => props.justifyContent || "space-between"};
 	flex-direction: column;
 	padding: ${(props) => props.padding || "2rem 2rem"};
 `;
