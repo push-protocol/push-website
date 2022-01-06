@@ -5,7 +5,7 @@ import Wave from 'react-wavify';
 import Medium from 'components/Medium';
 import { keyframes } from 'styled-components';
 import ScrollTrigger from 'react-scroll-trigger';
-import Carousel from 'react-elastic-carousel';
+import Carousel, { consts } from 'react-elastic-carousel';
 
 import { FaCheckCircle, FaSeedling } from 'react-icons/fa';
 import { IoMdRocket } from 'react-icons/io';
@@ -130,15 +130,22 @@ const Gov=()=>{
     return(
         <>
         <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
-           <SectionHero padding="50px 0px 80px 0px">
-        {/* <SectionFSHero id="hero" padding="15px 0px 0px 0px"> */}
-        <Content className="contentBox">
-          <Item margin="0px 20px">
+           <SectionHero padding="150px 0px 180px 0px" >
+        <SectionFSHero id="hero" padding="15px 0px 0px 0px">
+          {/* <Item margin="0px 20px">
             <H1>Governance</H1>
             <Span color="#fff" margin="-20px 0 0 0" size="1rem">Defines Governance</Span>
-          </Item>
-        </Content>
-        <WaveOuter>
+          </Item> */}
+          <Carousel itemsToShow={width < 500 ? 1 : 1} enableAutoPlay={true} renderArrow={({ type, onClick, isEdge })=>{
+            var pointer = type === consts.PREV ? '' : ''
+            return (
+              <></>
+            )
+          }}>
+            <img src="/governance/hero1.jpg" style={{height:"500px",width:"100vw"}} />
+            <img src="/governance/hero2.jpg" style={{height:"500px",width:"120vw"}}/>
+          </Carousel>
+        {/* <WaveOuter>
             
 
 
@@ -165,8 +172,8 @@ const Gov=()=>{
               />
             </WaveInner>
            
-          </WaveOuter>
-          {/* </SectionFSHero> */}
+          </WaveOuter> */}
+          </SectionFSHero>
       </SectionHero>
       </ScrollTrigger>
     
@@ -285,12 +292,7 @@ const Gov=()=>{
           </Section>
           {/* End Future Governance */}
 
-
-
          {/* Start process Governance */}
-           
-
-
 
       <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
       <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px">
@@ -309,12 +311,7 @@ const Gov=()=>{
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             {/* THE PROBLEM */}
 
-            
-
-
-
-
-            {/* <Item align="flex-start" padding="0px 0px 40px 0px">
+          {/* <Item align="flex-start" padding="0px 0px 40px 0px">
               <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
                 <H2 textTransform="uppercase" spacing="0.1em">
                   <Span weight="200">GOVERNANCE </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">PROCESS</Span>
@@ -327,10 +324,7 @@ const Gov=()=>{
                
 
                 <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="0px">
-
-
-                 
-                <EmphasisBlock margin="10px 10px">
+              <EmphasisBlock margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                           <ProposalImage src='/governance/proposal.png' alt=""/>
@@ -341,10 +335,6 @@ const Gov=()=>{
                   </EmphasisText>
                   <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
-
-
-
-
                 <EmphasisBlock margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -356,11 +346,7 @@ const Gov=()=>{
                   </EmphasisText>
                   <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
-
-
-
-
-                <EmphasisBlock margin="10px 10px">
+            <EmphasisBlock margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                           <GovImage src='/governance/governance1.svg' alt=""/>
@@ -371,10 +357,6 @@ const Gov=()=>{
                   </EmphasisText>
                   <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
                 </EmphasisBlock>
-
-
-
-
                 </ItemH>
 
               </Solution>
@@ -519,7 +501,7 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
          <WaveOuter>
           <WaveInner>
@@ -543,8 +525,7 @@ const Gov=()=>{
             <p>Active community members who have at least 75,000 $PUSH delegated to them. They will be able to create proposals on Snapshot that are approved on the forum </p>
         </item>            
         </GovernanceHeading>
-        {/* <Content className="contentBox" style={{display:"flex",margin:"0",padding:"0",alignItems:"center"}}> */}
-        <Carousel itemsToShow={width < 500 ? 1 : 4}>
+        <Carousel itemsToShow={width < 500 ? 1 : 4} enableAutoPlay={true}>
             {
               pushDeligatees.map(({name})=>(
                 <SliderCard>
@@ -555,11 +536,10 @@ const Gov=()=>{
             }
           </Carousel>
           <NomineeButton>Submit Your Nomination <img src="/governance/arrow_right.png" style={{height:"10px"}}/> </NomineeButton>
-        {/* </Content> */}
       </GovernanceSection>
       
        
-          </Section>
+          </Section> */}
           {/* End pushDeligatees Governance */}
 
 
@@ -743,6 +723,11 @@ const AnimateSection=styled.div`
       position: absolute;
         width: 70rem;
         height: 35rem;
+      
+      @media(max-width:600px){
+        width: 20rem;
+        height: 20rem;
+      }
       }
     /* img:nth-child(1){
         top:5.5rem;

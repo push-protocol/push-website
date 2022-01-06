@@ -9,6 +9,7 @@
 
 .rec.rec-arrow {
   /* visibility: hidden; */
+
   background-color: none;
   size: 1rem;
 }
@@ -17,6 +18,7 @@
 }
 
 .rec-arrow {
+  position: static;
   outline: none;
   border: none;
   background-color: #f4f4f4 !important;
