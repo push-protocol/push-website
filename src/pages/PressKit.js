@@ -62,31 +62,31 @@ const PressKit = () => {
 			thumbnail: "/news/news_thumbnail_3.png",
 			link: "https://www.youtube.com/watch?v=kde-wmgNm-o",
 			desc: "DApps can now send push notifications to Ethereum wallet users",
-			logo: "/news/news_logo_temp.png",
+			logo: "/news/news_logo_3.png",
 			key: "news_3",
 		},
 		{
-			title: "COINtelegraph",
+			title: "",
 			thumbnail: "/news/news_thumbnail_4.png",
 			link: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications/amp",
 			desc: "Why this husband-wife duo felt the need for blockchain-  based push notifications",
-			logo: "/news/news_logo_temp.png",
+			logo: "/news/news_logo_4.png",
 			key: "news_4",
 		},
 		{
-			title: "COINtelegraph",
+			title: "",
 			thumbnail: "/news/news_thumbnail_5.png",
 			link: "https://yourstory.com/2021/06/here-are-6-blockchain-startups-watch-out-2021/amp",
 			desc: "Here are 6 blockchain startups to watch out for in 2021",
-			logo: "/news/news_logo_temp.png",
+			logo: "/news/news_logo_5.png",
 			key: "news_5",
 		},
 		{
-			title: "COINtelegraph",
+			title: "",
 			thumbnail: "/news/news_thumbnail_6.png",
 			link: "https://inc42.com/startups/how-indias-epns-is-building-decentralised-push-notifications-for-web3-0/",
 			desc: "How India’s EPNS Is Building Decentralised Push Notifications For Web 3.0",
-			logo: "/news/news_logo_temp.png",
+			logo: "/news/news_logo_6.png",
 			key: "news_6",
 		},
 	];
@@ -157,7 +157,7 @@ const PressKit = () => {
 					}}
 				>
 					<Item>
-						<PressKitHeading>
+						<PressKitHeading style={{ alignSelf: "flex-start" }}>
 							<Item style={{ margin: "0" }}>
 								<PressKitText
 									color="#fff"
@@ -180,6 +180,7 @@ const PressKit = () => {
 								padding="10px"
 								color="white"
 								fontWeight="600px"
+								textAlign="left"
 							>
 								<span style={{ fontWeight: 700 }}>EPNS</span> is
 								an Ethereum-based decentralized protocol that
@@ -192,6 +193,7 @@ const PressKit = () => {
 								padding="10px"
 								color="white"
 								fontWeight="600px"
+								textAlign="left"
 							>
 								On EPNS, not the apps but the users control what
 								notifications they receive. Besides, they earn

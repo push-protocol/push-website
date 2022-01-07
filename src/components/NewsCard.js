@@ -32,7 +32,7 @@ function NewsCard({ title, thumbnail, logo, desc, link }) {
 						<Image
 							src={logo}
 							style={{
-								width: "67px",
+								width: "80px",
 							}}
 						/>
 						<Span
