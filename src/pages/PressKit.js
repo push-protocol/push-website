@@ -170,6 +170,7 @@ const PressKit = () => {
 							display: "flex",
 							justifyContent: "space-between",
 							flexDirection: "row",
+							flexWrap:"wrap",
 							alignItems: "center",
 						}}
 					>
@@ -263,7 +264,7 @@ const PressKit = () => {
 			>
 				<PressKitSection id="missingweb3">
 					<PressKitHeading
-						style={{ display: "flex", flexDirection: "row" }}
+						 flexDirection="row"
 					>
 						<Item style={{ margin: "0" }} align="flex-start">
 							<h4 style={{ color: "#000", marginBottom: "60px" }}>
@@ -280,14 +281,14 @@ const PressKit = () => {
 						</Item>
 						<MissingPieceImg src="/presskit/missing1.png" />
 					</PressKitHeading>
-					<Content
+					{/* <Content
 						className="contentBox"
 						style={{
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
 						}}
-					></Content>
+					></Content> */}
 					<PressKitHeading flex="flex-end" flexDirection="row">
 						<MissingPieceImg src="/presskit/missing2.png" />
 
@@ -310,14 +311,14 @@ const PressKit = () => {
 							</p>
 						</Item>
 					</PressKitHeading>
-					<Content
+					{/* <Content
 						className="contentBox"
 						style={{
 							display: "flex",
 							justifyContent: "center",
 							alignItems: "center",
 						}}
-					></Content>
+					></Content> */}
 				</PressKitSection>
 			</Section>
 
@@ -369,7 +370,9 @@ const PressKit = () => {
 							justifyContent: "center",
 							alignItems: "center",
 						}}
-					></Content>
+					>
+						<OurHistoryImg src="/presskit/ourHistory.png"/>
+					</Content>
 				</PressKitSection>
 			</Section>
 
@@ -422,7 +425,6 @@ const PressKit = () => {
 							flexFlow: "wrap",
 						}}
 					>
-						{/* Using Harsh's image till getting real images from UI team */}
 						<AdvisorsCard
 							name="Nischal Shetty"
 							imgSrc="/presskit/founder_harsh.png"
@@ -474,6 +476,11 @@ const PressKit = () => {
 const MissingPieceImg = styled.img`
 	height: 400px;
 	width: 400px;
+
+	@media(max-width:900px){
+		height: 250px;
+		width: 250px;
+	}
 `;
 
 const PeopleImg = styled.img`
@@ -482,6 +489,11 @@ const PeopleImg = styled.img`
 	margin: 20px 0px 10px 0px;
 	border-radius: 50%;
 `;
+const OurHistoryImg = styled.img`
+	height: 100%;
+	width: 100%;
+	
+`;
 
 const PressKitHeading = styled.div`
 	display: flex;
@@ -489,6 +501,9 @@ const PressKitHeading = styled.div`
 	justify-content: ${(props) => props.flex || "flex-start"};
 	align-items: ${(props) => props.alignItems || "flex-start"};
 	flex-direction: ${(props) => props.flexDirection || "column"};
+	@media(max-width:900px){
+		flex-direction:column;
+	}
 	p {
 		font-size: 25px !important;
 		color: #252323 !important;
