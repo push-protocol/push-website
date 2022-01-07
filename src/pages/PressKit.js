@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useRef , useEffect } from "react";
 import styled from "styled-components";
 import {
 	Section,
@@ -90,6 +90,29 @@ const PressKit = () => {
 			key: "news_6",
 		},
 	];
+
+	const videoRef = useRef(null);
+
+	useEffect(() => {
+		let options = {
+		rootMargin: "0px",
+		threshold: [0.25, 0.75]
+		};
+
+    let handlePlay = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      });
+    };
+
+    let observer = new IntersectionObserver(handlePlay, options);
+
+    observer.observe(videoRef.current);
+  });
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
@@ -360,29 +383,100 @@ const PressKit = () => {
 			{/* Product Section */}
 			<Section
 				id="epnsproduct"
-				padding="20px 0px 0px 0px"
-				gradient="#583D98"
+				padding="10% 0 20% 0"
+				// gradient="#583D98"
 			>
-				<PressKitSection id="epnsproduct">
-					<PressKitHeading flex="flex-end" alignItems="flex-end">
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								THE EPNS
-								<PressKitSpan style={{ background: "#1FE3EF" }}>
-									PRODUCT{" "}
-								</PressKitSpan>
-							</h4>
-						</Item>
-					</PressKitHeading>
-					<Content
-						className="contentBox"
+				<div style={{ background: "linear-gradient(#583D98 60%, #fff 50%)"
+					, padding : "20px" }}>
+					<PressKitSection id="epnsproduct">
+						<PressKitHeading flex="flex-end" alignItems="flex-end">
+							<Item style={{ margin: "0" }}>
+								<h4 style={{ color: "#000" }}>
+									THE EPNS
+									<PressKitSpan style={{ background: "#1FE3EF" }}>
+										PRODUCT{" "}
+									</PressKitSpan>
+								</h4>
+							</Item>
+						</PressKitHeading>
+						{/* <Content
+							className="contentBox"
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+							}}
+						>
+
+							
+						</Content> */}
+					</PressKitSection>
+					<div style={{padding : "0 15%"}}>
+					<div style={{
+						position: "relative",
+						paddingTop: "25px",
+						paddingBottom: "67.5%",
+						height: 0
+					}}> 
+						<video
+						resizeMode='cover'
 						style={{
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
+							boxSizing: "border-box",
+							background: "url(/presskit/laptop.png) center center no-repeat",
+							backgroundSize: "contain",
+							padding: "0% 10.5% 0%",
+							position: "absolute",
+							top: 0,
+							left: 0,
+							width: "100%",
+							height:"100%",
 						}}
-					></Content>
-				</PressKitSection>
+							// style={{width : "50%"}}
+							ref={videoRef}
+							src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+						></video>
+						{/* <iframe 
+						style={{
+							boxSizing: "border-box",
+							background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
+							backgroundSize: "contain",
+							padding: "11.9% 15.5% 14.8%",
+							position: "absolute",
+							top: 0,
+							left: 0,
+							width: "100%",
+							height:"100%",
+						}}
+						width="560" height="390" src="https://www.youtube.com/embed/S_QemrZbOIk" frameborder="0" allowfullscreen>
+						</iframe>  */}
+					</div>
+					</div>
+
+
+
+					{/* <div>
+						<div>
+							<iframe width="560" height="315" src="//www.youtube.com/embed/f890SC1schE" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div> */}
+					<div 
+					// style={{
+					// 	// background :`url(${"/public/presskit/product.png"}) center center no-repeat` ,
+					// 	background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
+					// 	margin : " 0 0 100px 0",
+					// 	padding : "5% 17.5%"
+					// }}
+					// style={{position : "relative" , zIndex : 5 }}
+					// style={{margin : "-700px 0 0 0"}}
+					>
+						{/* <video
+							style={{width : "50%"}}
+							ref={videoRef}
+							src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+						></video> */}
+					</div>
+					{/* <img src="/presskit/product.png" style={{margin : "-200px 0 0 0"}}/> */}
+				</div>
 			</Section>
 
 			{/* Speaker Events Section */}
