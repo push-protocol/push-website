@@ -6,9 +6,14 @@ import {
 	Content,
 	Item,
 	H1,
+	Span,
+	Image,
 } from "components/SharedStyling";
 import AdvisorsCard from "components/AdvisorsCard";
 import ScrollTrigger from "react-scroll-trigger";
+
+// Import lists
+import speakerEventsList from "config/speakerEventsList";
 
 const PressKit = () => {
 	// for checking2
@@ -328,6 +333,59 @@ const PressKit = () => {
 				</PressKitSection>
 			</Section>
 
+			{/* Speaker Events Section */}
+			<Section
+				id="meetfounders"
+				padding="30px 0px 50px 0px"
+				gradient="linear-gradient(180deg, #D01C85 0%, #73459C 116.65%)"
+			>
+				<PressKitSection id="speakerevents">
+					<PressKitHeading>
+						<Item style={{ margin: "0" }}>
+							<h4 style={{ color: "#000" }}>
+								<PressKitSpan style={{ background: "#000" }}>
+									SPEAKER{" "}
+								</PressKitSpan>
+								EVENTS
+							</h4>
+						</Item>
+					</PressKitHeading>
+					<Content className="contentbox">
+						<Item margin="20px 0px 20px 0px">
+							<SpeakerEvents>
+								{Object.keys(speakerEventsList.events).map(
+									function (key) {
+										const item =
+											speakerEventsList.events[key];
+
+										return (
+											<SpeakerEvent
+												key={item.src}
+												title={`${item.title}`}
+												href={`${item.href}`}
+												bg={
+													item.bg
+														? `${item.bg}`
+														: null
+												}
+												item={`${item.src}`}
+												target="_blank"
+											>
+												<Item minWidth="auto">
+													<SpeakerEventImage
+														src={`/speakerevents/${item.src}.png`}
+													/>
+												</Item>
+											</SpeakerEvent>
+										);
+									}
+								)}
+							</SpeakerEvents>
+						</Item>
+					</Content>
+				</PressKitSection>
+			</Section>
+
 			{/* History Section */}
 			<Section id="history" padding="20px 0px 0px 0px" gradient="#F3F7F8">
 				<PressKitSection id="history">
@@ -624,6 +682,91 @@ const PressKitText = styled.div`
 			props.fontSize !== undefined
 				? props.fontSize * 0.75 + "px"
 				: "16px"};
+	}
+`;
+
+const SpeakerEvents = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+`;
+
+const SpeakerEvent = styled.a`
+	display: flex;
+	flex: 1;
+	position: relative;
+	margin: 20px;
+	min-width: 220px;
+	max-width: 340px;
+	padding: 10px;
+	background: #2f1a37;
+	border-radius: 14px;
+	box-shadow: 0px 0px 10px #00000085;
+	text-decoration: none;
+
+	&:hover {
+		background: ${(props) => props.bg || "#fff"};
+	}
+
+	&:nth-child(3n + 1):before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -14px;
+		left: 10px;
+		right: -7px;
+		height: 100%;
+		background: url(snow/snowbig.svg);
+		background-size: 120px auto;
+		background-repeat: no-repeat;
+	}
+
+	&:nth-child(3n + 2):before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -24px;
+		left: 6px;
+		right: -6px;
+		height: 40px;
+		background: url(snow/snowmid.svg);
+		background-size: 110px auto;
+		background-repeat: no-repeat;
+	}
+
+	&:nth-child(3n + 3):before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -29px;
+		left: calc(100% - 75px);
+		right: 0px;
+		height: 50px;
+		background: url(snow/snowsmall.svg);
+		background-size: 70px auto;
+		background-repeat: no-repeat;
+	}
+`;
+
+const SpeakerEventTabletOptional = styled(SpeakerEvent)`
+	@media (max-width: 768px) {
+		display: none;
+	}
+`;
+
+const SpeakerEventDesktopOptional = styled(SpeakerEvent)`
+	@media (min-width: 768px) {
+		display: none;
+	}
+`;
+
+const SpeakerEventImage = styled(Image)`
+	filter: saturate(0) brightness(0) invert(1);
+
+	${SpeakerEvent}:hover & {
+		filter: saturate(1) brightness(1) invert(0);
 	}
 `;
 
