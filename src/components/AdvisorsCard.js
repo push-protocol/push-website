@@ -3,15 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Item } from "components/SharedStyling";
 
-function AdvisorsCard({
-	name,
-	title,
-	subtitle = "",
-	imgSrc,
-	desc,
-	height,
-	width,
-}) {
+function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 	return (
 		<Item margin="20px">
 			<Item align="flex-start">
@@ -29,7 +21,7 @@ function AdvisorsCard({
 						boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 					}}
 				>
-					<PersonImg src={imgSrc} />
+					<PersonImg src={imgSrc} height={250} />
 					<Text
 						color="#000"
 						fontWeight="600"
@@ -44,7 +36,7 @@ function AdvisorsCard({
 						padding="5px"
 						textTransform="capitalize"
 						lineHeight="25px"
-						fontSize="20px"
+						fontSize={20}
 					>
 						{title}
 					</Text>
@@ -54,22 +46,33 @@ function AdvisorsCard({
 							padding="5px"
 							textTransform="capitalize"
 							lineHeight="19px"
-							fontSize="15px"
+							fontSize={15}
 						>
 							{subtitle}
 						</Text>
 					)}
-					<Text
-						color="#000"
-						padding="5px"
-						textTransform="capitalize"
-						lineHeight="18px"
-						textAlign="justify"
-						fontSize="14px"
-						letterSpacing="0.05em"
+					<Item
+						align="flex-start"
+						style={{ flexFlow: "row-reverse" }}
 					>
-						{desc}
-					</Text>
+						<Item style={{ alignSelf: "flex-start" }}>
+							<PersonImg src="/presskit/inverted_comma_right.png" />
+						</Item>
+						<Text
+							color="#000"
+							padding="5px"
+							textTransform="capitalize"
+							lineHeight="18px"
+							textAlign="justify"
+							fontSize={14}
+							letterSpacing="0.05em"
+						>
+							{desc}
+						</Text>
+						<Item style={{ alignSelf: "flex-end" }}>
+							<PersonImg src="/presskit/inverted_comma_left.png" />
+						</Item>
+					</Item>
 				</Item>
 				<Item
 					margin="0px 0px 0px 20px"
@@ -88,10 +91,33 @@ function AdvisorsCard({
 }
 
 const PersonImg = styled.img`
-	height: ${(props) => props.height || "170px"};
-	width: auto;
-	margin: 20px 0px 10px 0px;
-	border-radius: 50%;
+	height: ${(props) => props.height + "px" || "auto"};
+	width: ${(props) => props.width + "px" || "auto"};
+	margin: 10px 0px 0px 0px;
+	@media (max-width: 1200px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.95 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.95 + "px" : "auto"};
+	}
+	@media (max-width: 1040px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.9 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.9 + "px" : "auto"};
+	}
+	@media (max-width: 768px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.85 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.85 + "px" : "auto"};
+	}
+	@media (max-width: 600px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.8 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.8 + "px" : "auto"};
+	}
 `;
 
 const Text = styled.div`
@@ -100,13 +126,35 @@ const Text = styled.div`
 	font-family: ${(props) => props.fontFamily || "Source sans pro"};
 	text-transform: ${(props) => props.textTransform || "none"};
 	text-align: ${(props) => props.textAlign || "center"};
-	font-weight: ${(props) => props.fontWeight || "normal"};
-	font-size: ${(props) => props.fontSize || "24px"};
+	font-weight: ${(props) => props.fontWeight || "400"};
+	font-size: ${(props) =>
+		props.fontSize !== undefined ? props.fontSize + "px" : "24px"};
 	line-height: ${(props) => props.lineHeight || "30px"};
 	padding: ${(props) => props.padding || "0px"};
 	letter-spacing: ${(props) => props.letterSpacing || "0.1em"};
+	@media (max-width: 1200px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.95 + "px"
+				: "22px"};
+	}
+	@media (max-width: 1040px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.9 + "px"
+				: "20px"};
+	}
+	@media (max-width: 768px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.85 + "px"
+				: "18px"};
+	}
 	@media (max-width: 600px) {
-		font-size: 1rem;
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.8 + "px"
+				: "16px"};
 	}
 `;
 

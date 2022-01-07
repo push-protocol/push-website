@@ -6,9 +6,7 @@ import {
 	Content,
 	Item,
 	H1,
-	Image,
 } from "components/SharedStyling";
-import Medium from "components/Medium";
 import AdvisorsCard from "components/AdvisorsCard";
 import ScrollTrigger from "react-scroll-trigger";
 
@@ -42,7 +40,7 @@ const PressKit = () => {
 		return () => {
 			window.removeEventListener("scroll", handleScroll, false);
 		};
-	}, [classShow]);
+	}, [handleScroll]);
 	return (
 		<>
 			<ScrollTrigger
@@ -60,33 +58,6 @@ const PressKit = () => {
 							<H1>Press Kit</H1>
 						</Item>
 					</Content>
-					{/* <WaveOuter>
-						<WaveInner>
-							<Wave
-								fill="#e20880"
-								paused={!animateHero}
-								options={{
-									height: 20,
-									amplitude: 35,
-									speed: 0.25,
-									points: 3,
-								}}
-							/>
-						</WaveInner>
-						<WaveInner>
-							<Wave
-								fill="#35c5f3"
-								paused={!animateHero}
-								options={{
-									height: 40,
-									amplitude: 30,
-									speed: 0.35,
-									points: 3,
-								}}
-							/>
-						</WaveInner>
-					</WaveOuter> */}
-					{/* </SectionFSHero> */}
 				</SectionHero>
 			</ScrollTrigger>
 
@@ -98,24 +69,25 @@ const PressKit = () => {
 			>
 				<PressKitSection
 					id="presskit"
+					flexDirection="row"
 					style={{
 						display: "flex",
-						flexDirection: "row",
 						justifyContent: "space-between",
 						alignItems: "center",
 					}}
 				>
-					<div>
+					<Item>
 						<PressKitHeading>
 							<Item style={{ margin: "0" }}>
-								<h4 style={{ color: "#000" }}>
-									EPNS
-									<PressKitSpan
-										style={{ background: "black" }}
-									>
-										PRESS KIT{" "}
-									</PressKitSpan>
-								</h4>
+								<PressKitText
+									color="#fff"
+									fontWeight="normal"
+									fontSize={40}
+									lineHeight="50px"
+									padding="5px"
+								>
+									EPNS PRESS KIT
+								</PressKitText>
 							</Item>
 						</PressKitHeading>
 						<Content
@@ -127,6 +99,7 @@ const PressKit = () => {
 								textTransform="uppercase"
 								padding="10px"
 								color="white"
+								fontWeight="600px"
 							>
 								<span style={{ fontWeight: 700 }}>EPNS</span> is
 								an Ethereum-based decentralized protocol that
@@ -138,6 +111,7 @@ const PressKit = () => {
 								textTransform="uppercase"
 								padding="10px"
 								color="white"
+								fontWeight="600px"
 							>
 								On EPNS, not the apps but the users control what
 								notifications they receive. Besides, they earn
@@ -145,10 +119,10 @@ const PressKit = () => {
 								notifications. Win-win!
 							</PressKitText>
 						</Content>
-					</div>
-					<div>
+					</Item>
+					<Item>
 						<Img src="/presskit/bell.png" alt="Bell Image" />
-					</div>
+					</Item>
 				</PressKitSection>
 			</Section>
 
@@ -170,12 +144,16 @@ const PressKit = () => {
 							display: "flex",
 							justifyContent: "space-between",
 							flexDirection: "row",
-							flexWrap:"wrap",
+							flexWrap: "wrap",
 							alignItems: "center",
 						}}
 					>
 						<Item padding="0px 50px" margin="0px 50px">
-							<PeopleImg src="/presskit/founder_harsh.png" />
+							<PeopleImg
+								src="/presskit/founder_harsh.png"
+								height={340}
+								width={340}
+							/>
 							<PressKitText
 								color="#000"
 								fontWeight="600"
@@ -189,7 +167,7 @@ const PressKit = () => {
 								padding="5px"
 								textTransform="uppercase"
 								lineHeight="19px"
-								fontSize="15px"
+								fontSize={15}
 							>
 								Founder
 							</PressKitText>
@@ -198,8 +176,7 @@ const PressKit = () => {
 								fontWeight="600"
 								padding="5px"
 								lineHeight="18px"
-								textAlign="justify"
-								fontSize="14px"
+								fontSize={14}
 							>
 								Harsh Rajat is the founder of Ethereum Push
 								Notification Service (EPNS), a decentralized
@@ -214,7 +191,11 @@ const PressKit = () => {
 							</PressKitText>
 						</Item>
 						<Item padding="0px 50px" margin="0px 50px">
-							<PeopleImg src="/presskit/founder_richa.png" />
+							<PeopleImg
+								src="/presskit/founder_richa.png"
+								height={340}
+								width={340}
+							/>
 							<PressKitText
 								color="#000"
 								fontWeight="600"
@@ -228,7 +209,7 @@ const PressKit = () => {
 								padding="5px"
 								textTransform="uppercase"
 								lineHeight="19px"
-								fontSize="15px"
+								fontSize={15}
 							>
 								Co-Founder
 							</PressKitText>
@@ -237,8 +218,7 @@ const PressKit = () => {
 								fontWeight="600"
 								padding="5px"
 								lineHeight="18px"
-								textAlign="justify"
-								fontSize="14px"
+								fontSize={14}
 							>
 								Richa, the co-founder of Ethereum Push
 								Notification Service (EPNS). An alumini of K.J.
@@ -263,9 +243,7 @@ const PressKit = () => {
 				gradient="#F3F7F8"
 			>
 				<PressKitSection id="missingweb3">
-					<PressKitHeading
-						 flexDirection="row"
-					>
+					<PressKitHeading flexDirection="row">
 						<Item style={{ margin: "0" }} align="flex-start">
 							<h4 style={{ color: "#000", marginBottom: "60px" }}>
 								<PressKitSpan style={{ background: "#583D98" }}>
@@ -273,7 +251,7 @@ const PressKit = () => {
 								</PressKitSpan>
 								OF WEB3
 							</h4>
-							<p>
+							<p style={{ marginBottom: "25px" }}>
 								Communication in StoneAge <br />
 								Web3 can not notify users <br />
 								Critical Info drop <br />
@@ -304,7 +282,7 @@ const PressKit = () => {
 									SOLUTION{" "}
 								</PressKitSpan>
 							</h4>
-							<p>
+							<p style={{ marginBottom: "25px" }}>
 								Notification Protocol <br />
 								Incentivized Notifications <br />
 								Platform Agnostic Delivery <br />
@@ -371,7 +349,7 @@ const PressKit = () => {
 							alignItems: "center",
 						}}
 					>
-						<OurHistoryImg src="/presskit/ourHistory.png"/>
+						<OurHistoryImg src="/presskit/ourHistory.png" />
 					</Content>
 				</PressKitSection>
 			</Section>
@@ -427,7 +405,7 @@ const PressKit = () => {
 					>
 						<AdvisorsCard
 							name="Nischal Shetty"
-							imgSrc="/presskit/founder_harsh.png"
+							imgSrc="/presskit/advisor_nishal_shetty.png"
 							title="Founder, CEO | WazirX"
 							height="500px"
 							width="350px"
@@ -436,7 +414,7 @@ const PressKit = () => {
 						/>
 						<AdvisorsCard
 							name="DeFi Dad"
-							imgSrc="/presskit/founder_harsh.png"
+							imgSrc="/presskit/advisor_defi_dad.png"
 							height="500px"
 							width="350px"
 							title="ALL THINGS DEFI"
@@ -444,7 +422,7 @@ const PressKit = () => {
 						/>
 						<AdvisorsCard
 							name="Vivek Singh"
-							imgSrc="/presskit/founder_harsh.png"
+							imgSrc="/presskit/advisor_vivek_singh.png"
 							height="500px"
 							width="350px"
 							title="CO-FOUNDER, GITCOIN"
@@ -452,7 +430,7 @@ const PressKit = () => {
 						/>
 						<AdvisorsCard
 							name="Sandeep Nailwal"
-							imgSrc="/presskit/founder_harsh.png"
+							imgSrc="/presskit/advisor_sandeep_nailwal.png"
 							height="500px"
 							width="350px"
 							title="CO-FOUNDER, POLYGON"
@@ -460,7 +438,7 @@ const PressKit = () => {
 						/>
 						<AdvisorsCard
 							name="Kernel"
-							imgSrc="/presskit/founder_harsh.png"
+							imgSrc="/presskit/advisor_kernel.png"
 							height="500px"
 							width="350px"
 							title="A GITCOIN COLLECTIVE"
@@ -477,22 +455,45 @@ const MissingPieceImg = styled.img`
 	height: 400px;
 	width: 400px;
 
-	@media(max-width:900px){
+	@media (max-width: 900px) {
 		height: 250px;
 		width: 250px;
 	}
 `;
 
 const PeopleImg = styled.img`
-	height: 340px;
-	width: 340px;
+	height: ${(props) => props.height + "px" || "auto"};
+	width: ${(props) => props.width + "px" || "auto"};
 	margin: 20px 0px 10px 0px;
-	border-radius: 50%;
+	@media (max-width: 1200px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.9 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.9 + "px" : "auto"};
+	}
+	@media (max-width: 1040px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.8 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.8 + "px" : "auto"};
+	}
+	@media (max-width: 768px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.7 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.7 + "px" : "auto"};
+	}
+	@media (max-width: 600px) {
+		height: ${(props) =>
+			props.height !== undefined ? props.height * 0.6 + "px" : "auto"};
+		width: ${(props) =>
+			props.width !== undefined ? props.width * 0.6 + "px" : "auto"};
+	}
 `;
+
 const OurHistoryImg = styled.img`
 	height: 100%;
 	width: 100%;
-	
 `;
 
 const PressKitHeading = styled.div`
@@ -501,14 +502,10 @@ const PressKitHeading = styled.div`
 	justify-content: ${(props) => props.flex || "flex-start"};
 	align-items: ${(props) => props.alignItems || "flex-start"};
 	flex-direction: ${(props) => props.flexDirection || "column"};
-	@media(max-width:900px){
-		flex-direction:column;
+	@media (max-width: 900px) {
+		flex-direction: column;
 	}
-	p {
-		font-size: 25px !important;
-		color: #252323 !important;
-		line-height: 55px;
-	}
+
 	h4 {
 		color: black;
 		font-size: 40px;
@@ -516,7 +513,7 @@ const PressKitHeading = styled.div`
 		letter-spacing: 0.1em;
 		font-family: Source sans pro;
 		font-weight: normal;
-		margin: 15px 0px 15px 0;
+		margin: 15px 0px 10px 0;
 		@media (max-width: 1200px) {
 			font-size: 2rem;
 		}
@@ -538,21 +535,29 @@ const PressKitHeading = styled.div`
 		}
 	}
 	p {
-		color: gray;
-		font-size: 1.5rem;
-		margin: 0;
+		font-size: 25px !important;
+		color: #252323 !important;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: normal;
+		line-height: 31px;
 		font-family: Source sans pro;
 		@media (max-width: 600px) {
-			font-size: 1.2rem;
+			font-size: 1rem;
 		}
 	}
 `;
 
 const PressKitSection = styled.div`
 	display: flex;
+	id:${(props) => props.id || "section"}
 	justify-content: ${(props) => props.justifyContent || "space-between"};
-	flex-direction: column;
+	flex-direction: ${(props) => props.flexDirection || "column"};
 	padding: ${(props) => props.padding || "2rem 2rem"};
+
+	@media (max-width: 900px) {
+		flex-direction: column;
+	}
 `;
 
 const PressKitSpan = styled.span`
@@ -591,12 +596,34 @@ const PressKitText = styled.div`
 	text-transform: ${(props) => props.textTransform || "none"};
 	text-align: ${(props) => props.textAlign || "center"};
 	font-weight: ${(props) => props.fontWeight || "400"};
-	font-size: ${(props) => props.fontSize || "24px"};
+	font-size: ${(props) =>
+		props.fontSize !== undefined ? props.fontSize + "px" : "24px"};
 	line-height: ${(props) => props.lineHeight || "30px"};
 	padding: ${(props) => props.padding || "0px"};
 	letter-spacing: ${(props) => props.letterSpacing || "0.1em"};
+	@media (max-width: 1200px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.95 + "px"
+				: "22px"};
+	}
+	@media (max-width: 1040px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.9 + "px"
+				: "20px"};
+	}
+	@media (max-width: 768px) {
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.85 + "px"
+				: "18px"};
+	}
 	@media (max-width: 600px) {
-		font-size: 1rem;
+		font-size: ${(props) =>
+			props.fontSize !== undefined
+				? props.fontSize * 0.75 + "px"
+				: "16px"};
 	}
 `;
 
