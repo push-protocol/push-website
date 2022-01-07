@@ -6,10 +6,11 @@ import {
 	Content,
 	Item,
 	H1,
-	Span,
 	Image,
+	ItemH,
 } from "components/SharedStyling";
 import AdvisorsCard from "components/AdvisorsCard";
+import NewsCard from "components/NewsCard";
 import ScrollTrigger from "react-scroll-trigger";
 
 // Import lists
@@ -38,6 +39,57 @@ const PressKit = () => {
 	});
 
 	const [animateHero, setAnimateHero] = React.useState(true);
+
+	const news = [
+		{
+			title: "Ethereum Foundation",
+			thumbnail: "/news/news_thumbnail_1.png",
+			link: "https://blog.ethereum.org/2020/08/19/esp-beyond-grants/",
+			desc: "ESP: BEYOND GRANTS",
+			logo: "/news/news_logo_1.png",
+			key: "news_1",
+		},
+		{
+			title: "CNBC TV18",
+			thumbnail: "/news/news_thumbnail_2.png",
+			link: "https://www.youtube.com/watch?v=kde-wmgNm-o",
+			desc: "Cryptocurrency Trends In India With Harsh Rajat | Crypto: Digital Assets Of The Future | CNBC-TV18",
+			logo: "/news/news_logo_2.png",
+			key: "news_2",
+		},
+		{
+			title: "COINtelegraph",
+			thumbnail: "/news/news_thumbnail_3.png",
+			link: "https://www.youtube.com/watch?v=kde-wmgNm-o",
+			desc: "DApps can now send push notifications to Ethereum wallet users",
+			logo: "/news/news_logo_temp.png",
+			key: "news_3",
+		},
+		{
+			title: "COINtelegraph",
+			thumbnail: "/news/news_thumbnail_4.png",
+			link: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications/amp",
+			desc: "Why this husband-wife duo felt the need for blockchain-  based push notifications",
+			logo: "/news/news_logo_temp.png",
+			key: "news_4",
+		},
+		{
+			title: "COINtelegraph",
+			thumbnail: "/news/news_thumbnail_5.png",
+			link: "https://yourstory.com/2021/06/here-are-6-blockchain-startups-watch-out-2021/amp",
+			desc: "Here are 6 blockchain startups to watch out for in 2021",
+			logo: "/news/news_logo_temp.png",
+			key: "news_5",
+		},
+		{
+			title: "COINtelegraph",
+			thumbnail: "/news/news_thumbnail_6.png",
+			link: "https://inc42.com/startups/how-indias-epns-is-building-decentralised-push-notifications-for-web3-0/",
+			desc: "How India’s EPNS Is Building Decentralised Push Notifications For Web 3.0",
+			logo: "/news/news_logo_temp.png",
+			key: "news_6",
+		},
+	];
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
@@ -426,9 +478,10 @@ const PressKit = () => {
 						</Item>
 					</PressKitHeading>
 					<Content
+						className="contentbox"
 						style={{
 							display: "flex",
-							flexDirection: "column",
+							flexDirection: "row",
 							justifyContent: "space-between",
 							alignItems: "center",
 						}}
@@ -436,6 +489,20 @@ const PressKit = () => {
 						{/* <Item padding="20px" width="85%">
 							<Medium numberOfPosts={6} />
 						</Item> */}
+						<ItemH
+							margin="-20px"
+							align="stretch"
+							columnGap="40px"
+							rowGap="40px"
+							style={{
+								marginLeft: "30px",
+								marginRight: "30px",
+							}}
+						>
+							{news.map((obj) => (
+								<NewsCard {...obj} />
+							))}
+						</ItemH>
 					</Content>
 				</PressKitSection>
 			</Section>
