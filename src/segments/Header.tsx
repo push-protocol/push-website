@@ -136,7 +136,7 @@ function Head() {
               </NavItem>
                <NavItem align="center" margin="0px" minWidth="auto" flex="0">
                 <HeadAnchor
-                  href="./governance"
+                  href="./govern"
                   title="Governance"
                   bg="transparent"
                   hoverBG="#fff"
