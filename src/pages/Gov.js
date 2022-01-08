@@ -138,24 +138,24 @@ const Gov=()=>{
             console.log("ponter",pointer);
             if(pointer=="left")
            return (
-             <Button style={{position:"absolute",bottom:"100px",right:"100px",background:"none"}} onClick={onClick} disabled={isEdge}>
-               <BsChevronLeft fontSize="1rem"/>
+             <Button style={{position:"absolute",bottom:"100px",right:"110px",background:"none"}} onClick={onClick} disabled={isEdge}>
+               <BsChevronLeft fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
              </Button>
            )
            else return (
-            <Button style={{position:"absolute",bottom:"100px",right:"70px",background:"none"}} onClick={onClick} disabled={isEdge}>
-              <BsChevronRight fontSize="1rem"/>
+            <Button style={{position:"absolute",bottom:"100px",right:"60px",background:"none"}} onClick={onClick} disabled={isEdge}>
+              <BsChevronRight fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
             </Button>
           ) 
           }}>
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governanceHero1.png" style={{height:"110vh",width:"100vw"}} />
+        <img src="/governance/governanceHero1.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governanceHero2.png" style={{height:"110vh",width:"100vw"}} />
+        <img src="/governance/governanceHero2.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governanceHero3.png" style={{height:"110vh",width:"100vw"}} />
+        <img src="/governance/governanceHero3.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         {/* <SectionFSHero id="hero" padding="0px 0px 0px 0px">
           
