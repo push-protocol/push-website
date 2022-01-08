@@ -32,13 +32,13 @@ const partnersList = {
       alt: "ENS Logo",
       display: "EPNS ✨ ENS"
     },
-    gitcoin: {
-      title: "Article talking about partnership between EPNS and Gitcoin!",
-      href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
+    dydx: {
+      title: "EPNS and dYdX Foundation team up to create a communication channel for governance updates",
+      href: "https://medium.com/ethereum-push-notification-service/epns-teams-up-with-dydx-foundation-to-enable-notifications-for-governance-updates-5794a5e22c4d",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "gitcoin",
-      alt: "Gitcoin Logo",
-      display: "Gitcoin Growing Open Source Using Web3 Notifs"
+      src: "dydx",
+      alt: "dYdX Logo",
+      display: "dydX 🤝 EPNS"
     },
     polygon: {
       title: "Article exploring partnership between Polygon and EPNS",
@@ -50,6 +50,14 @@ const partnersList = {
     },    
   },
   drilldown: {
+    gitcoin: {
+      title: "Article talking about partnership between EPNS and Gitcoin!",
+      href: "https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "gitcoin",
+      alt: "Gitcoin Logo",
+      display: "Gitcoin Growing Open Source Using Web3 Notifs"
+    },
     aragon: {
       title: "Article talking about partnership between EPNS and Aragon!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-aragon-voice-to-power-unstoppable-decentralized-governance-56182b9d9aa0",
@@ -57,6 +65,14 @@ const partnersList = {
       src: "aragon",
       alt: "Aragon Logo",
       display: "EPNS 🤝 Aragon Powering Decentralized Governance"
+    },
+    bancor: {
+      title: "Article talking about collaboration between EPNS and Bancor!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-integrates-with-bancor-network-to-facilitate-decentralized-push-notifications-d35b5e27d4a9",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bancor",
+      alt: "Bancor Logo",
+      display: "Bancor 💖 EPNS Collaboration"
     },
     alpha: {
       title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
