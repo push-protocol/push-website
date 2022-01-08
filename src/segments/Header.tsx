@@ -24,16 +24,15 @@ function Head() {
       <Section className="contentBox" direction="row">
         <Nav direction="row" align="stretch" justify="flex-start" minWidth="auto" margin="0px 20px" size="0.8rem">
           <Item align="center" margin="0px" minWidth="auto" flex="0">
-            <HeadAnchor
-              href="/"
+          <HeadAnchor
+              href="#"
               bg="transparent"
               title="Homepage of EPNS"
               hoverBG="#e20880"
               padding="0px"
               overflow="visible"
             >
-              <img src="/bell/bell.png" style={{width:"35px ", height:"35px"}}/>
-              {/* <Bell uri={location.pathname} belltheme="white" hideBadge={false} badgeCount={badge} bellPressedCB={() => setBadge(badge + 1)} width={32} height={32} /> */}
+              <Bell uri={location.pathname} belltheme="white" hideBadge={false} badgeCount={badge} bellPressedCB={() => setBadge(badge + 1)} width={32} height={32} />
             </HeadAnchor>
           </Item>
 
