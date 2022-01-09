@@ -14,7 +14,7 @@ import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 
-import Circle from './circle-animation/circle-animation'
+import Circle from '../components/circle-animation/circle-animation';
 
 import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
@@ -264,34 +264,32 @@ const Gov=()=>{
         </Content>
       </GovernanceSection>
           </Section>
+          {/* start process governance */}
 
-      <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
-      <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px">
-
-                
-      <GovernanceHeading >
+      {/* <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
+      <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px"> */}
+<SectionEU>
+<GovernanceHeadingE >
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#e20880"}}>PROCESS </GovernanceSpan>  </h4></item>
         <item>
-            <p>POPOSAL.DISCUSSION.GOVERNANCE</p>
+          <Line>
+          <H2EU color="#858585">PROPOSAL.DISCUSSION</H2EU> 
+          <H2EU color="#858585">.GOVERNANCE</H2EU>
+          </Line>
         </item>              
-        </GovernanceHeading>
+        </GovernanceHeadingE>
+
+<SectionEEU>
+                
+   
 
      
 
-        <Content >
+        {/* <Content >
           <Item align="stretch" justify="flex-start" margin="0px 20px">
-            {/* THE PROBLEM */}
-
-          {/* <Item align="flex-start" padding="0px 0px 40px 0px">
-              <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
-                <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span weight="200">GOVERNANCE </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">PROCESS</Span>
-                </H2>
-                <H3 maxWidth="400px">PROPOSAL.DISCUSSION.GOVERNANCE</H3>
-              </Item>
-              </Item> */}
            
-              <Solution margin="0px 0px">
+           
+              <Solution margin="0px 0px"> */}
                
 
                 <ItemHG margin="-20px" align="stretch" columnGap="40px" rowGap="0px">
@@ -330,10 +328,10 @@ const Gov=()=>{
                 </EmphasisBlock>
                 </ItemHG>
 
-              </Solution>
+              {/* </Solution>
             </Item>
-        </Content>
-        </Section>
+        </Content> */}
+        </SectionEEU>
 
         <WaveOuter>
           <WaveInner>
@@ -350,7 +348,7 @@ const Gov=()=>{
         </WaveOuter>
 
 
-      </Section>
+      </SectionEU>
 
           {/* End process Governance */}
 
@@ -358,7 +356,7 @@ const Gov=()=>{
 
 
          {/* Start Learnmore Governance */}
-         <Section theme="#e20880" padding="0px 0px 80px 0px" >
+         <SectionE >
 
          <WaveOuter>
           <WaveInner>
@@ -373,30 +371,35 @@ const Gov=()=>{
             />
           </WaveInner>
         </WaveOuter>
+        {/* <GovernanceHeading >
+  <item><H1E><GovernanceSpan  style={{background:"#000"}} margin='2.5rem'>LEARN MORE </GovernanceSpan> <span style={{color:"#FFFFFF"}}>ABOUT GOVERNANCE!</span>  </H1E></item>
+
+  <H2E color="#fff">MEDIUM ARTICLES</H2E>             
+  </GovernanceHeading> */}
+
+
+<GovernanceHeadingE>
+        <item><h4><GovernanceSpan  margint='50px' style={{background:"#000"}}>LEARN MORE</GovernanceSpan>ABOUT GOVERNANCE</h4></item>
+        <item>
+        <H2E color="#fff">MEDIUM ARTICLES</H2E>
+        </item>              
+        </GovernanceHeadingE>
          
 
-        <Section id="solution"   padding="20px 0px 0px 0px" overflow="hidden" margin="40px">
-
         
-
-<GovernanceHeading >
-  <item><h4><GovernanceSpan  style={{background:"#000"}}>LEARN MORE </GovernanceSpan> <span style={{color:"#FFFFFF"}}>ABOUT GOVERNANCE!</span>  </h4></item>
-
-  <H3 color="#fff" margin="0px 0px 0px 0px">MEDIUM ARTICLES</H3>             
-  </GovernanceHeading>
+  
+  
+  <SectionEE  >
+    
 
 
-        <ContentMore>
+  
+
+  <ContentMore>
 
 
           <Item align="stretch" justify="flex-start" margin="0px 0px">
-            {/* <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
-              <H2 textTransform="uppercase" spacing="0.1em">
-              <Span bg="#000" color="#fff" weight="600" padding="0px 8px">LEARN MORE</Span><Span weight="200" color="#fff">ABOUT GOVERNANCE</Span>
-              </H2>
-              <H3 color="#fff">MEDIUM ARTICLES</H3>
-            </Item> */}
-
+          
 
             <Medium numberOfPosts={3} />
 
@@ -420,43 +423,36 @@ const Gov=()=>{
 
           </Item>
         </ContentMore>
-        </Section>
 
-      </Section>
+  
 
 
-         
-          <Section theme="#fff" padding="0px 0px 50px 0px" className="RolesContainer">
-          
-          <GovernanceSection id="governance"  >
+        </SectionEE>
+
+      </SectionE>
+
+
+      {/* end learn more about governance */}
+ 
+          <Section margin="0px 0px 120px 0px ">
         
-         
-       
-          <GovernanceHeading >
-         
-          
-        <item><h4> GOVERNANCE <GovernanceSpan  style={{background:"#35C5F3"}}>ROLES  </GovernanceSpan> </h4></item>
+      <GovernanceHeadingE >
+        <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#35C5F3"}}>ROLES</GovernanceSpan></h4></item>
         <item>
-            <p>LOREM IPSUM </p>
-           
-        </item>
-
-
-         <item className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <H2EU color="#858585">LOREM IPSUM</H2EU> 
+        </item>              
+        </GovernanceHeadingE>
+         
+        <SectionC>
+            {/* <item style={{display:"flex",justifyContent:"center",alignItems:"center"}}> */}
             <Circle/>
           
-          </item>    
-              
-        </GovernanceHeading>
-        
-      </GovernanceSection>
-      
+          {/* </item>    */}
+        </SectionC>
        
           </Section>
 
-
-
-          <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+          {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           <WaveOuter bottom="auto" top="70px">
           <WaveInner transform="rotate(180deg)">
             <Wave fill='#fff'
@@ -470,7 +466,7 @@ const Gov=()=>{
             />
           </WaveInner>
         </WaveOuter>
-          </Section>
+          </Section> */}
 
 
 
@@ -663,6 +659,137 @@ const animate =keyframes`
 `;
 
 
+// padding="20px 0px 0px 0px" overflow="hidden" margin="40px"
+// theme="#e20880" padding="0px 0px 80px 0px"
+
+const SectionE = styled.section`
+  display: flex;
+  flex-direction:column;
+  background:#e20880;
+  margin: 0px
+  padding: 0px
+  overflow: hidden;
+  position: relative;
+
+ @media(max-width:380px){
+   width:300pp;
+   padding: 6px;
+   overflow-y: hidden;
+   overflow-x: hidden;
+ }
+`;
+
+const SectionC = styled.section`
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ alignItems: center;
+ overflow: hidden;
+//  flex-basis: 0;
+//  flex-shrink: 1;
+ @media(max-width:450px)
+ {
+   margin-left:1rem;
+  //  min-width: 350px;
+ }
+`;
+
+
+const Line = styled.section`
+  display: flex;
+  flex-direction:row;
+
+  @media(max-width:400px)
+  {
+    flex-direction: column;
+  }
+ 
+`;
+
+const SectionEE = styled.section`
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 120px;
+ column: 0px;
+ @media(min-width:400px)
+ {
+  margin-left: 3rem;
+ margin-right: 3rem;
+ }
+
+ @media(max-width:450px ){
+  {
+   margin-left: 2rem;
+   margin-right: 1rem;
+  }
+ 
+
+
+ @media(max-width: 380px)
+ {
+   margin-bottom: 100px;
+ }
+ @media(max-width:900px ){
+  @media(min-width: 500px)
+  {
+    justify-content: center;
+  }
+}
+`;
+
+
+
+const SectionEU = styled.section`
+  display: flex;
+  flex-direction:column;
+  background:#fff;
+  margin: 0px
+  padding: 0px
+  overflow: hidden;
+  position: relative;
+
+ @media(max-width:380px){
+   width:300pp;
+   padding: 6px;
+   overflow-y: hidden;
+   overflow-x: hidden;
+ }
+`;
+
+
+
+const SectionEEU = styled.section`
+ display: flex;
+ flex-direction: row;
+ margin-bottom: 120px;
+ column: 0px;
+ @media(min-width:400px)
+ {
+  margin-left: 3rem;
+ margin-right: 3rem;
+ }
+
+ @media(max-width:450px ){
+  {
+   margin-left: 2rem;
+   margin-right: 1rem;
+  }
+ 
+
+
+ @media(max-width: 380px)
+ {
+   margin-bottom: 100px;
+ }
+ @media(max-width:900px ){
+  @media(min-width: 500px)
+  {
+    justify-content: center;
+  }
+}
+`;
+
+
 const animate2 =keyframes`
     
 0%{
@@ -705,6 +832,7 @@ const AnimateSection=styled.div`
         width: 20rem;
         height: 20rem;
       }
+
       }
     /* img:nth-child(1){
         top:5.5rem;
@@ -848,10 +976,62 @@ const AnimateSection=styled.div`
     }
 `;
 
+export const H1E = styled.h1`
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
+`
 
 
-export const ItemHG = styled(Item)`
+
+export const H2E = styled.h2`
+  color: ${props => props.color || '#000'};
+  font-weight: ${props => props.weight || 300};
+  font-size: ${props => props.size || "1.5rem"};
+  text-transform: ${props => props.textTransform || "inherit"};
+  margin: ${props => props.margin || "20px 0px"};
+  padding: ${props => props.padding || "0px"};
+  letter-spacing: ${props => props.spacing || "inherit"};
+  font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
+  text-align: ${props => props.textAlign || "inherit"};
+  @media(max-width: 400px)
+  {
+    margin-top: -10px;
+    font-size: 1rem;
+  }
+  @media(min-width: 400px)
+  {
+    margin-top: 0px;
+  }
+`
+
+
+export const H2EU = styled.h2`
+  color: ${props => props.color || '#000'};
+  font-weight: ${props => props.weight || 300};
+  font-size: ${props => props.size || "1.5rem"};
+  text-transform: ${props => props.textTransform || "inherit"};
+  margin: ${props => props.margin || "20px 0px"};
+  padding: ${props => props.padding || "0px"};
+  letter-spacing: ${props => props.spacing || "inherit"};
+  font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
+  text-align: ${props => props.textAlign || "inherit"};
+  @media(max-width: 400px)
+  {
+    margin-top: -10px;
+    font-size: 1rem;
+  }
+  @media(min-width: 400px)
+  {
+    margin-top: 0px;
+  }
+`
+
+
+
+ const ItemHG = styled(Item)`
   flex-direction: row;
+  margin-bottom: 60px;
   flex: ${props => props.flex || '1'};
   
   ${ItemBreak} {
@@ -859,7 +1039,7 @@ export const ItemHG = styled(Item)`
     height: 0;
   }
 
-  @media (max-width: 350px ){
+  @media (max-width: 380px ){
     flex-direction: column;
   }
 `
@@ -1032,6 +1212,82 @@ const GovernanceHeading=styled.div`
   }
 `;
 
+
+
+
+const GovernanceHeadingEU=styled.div`
+  display: flex;
+  padding: 2rem;
+  justify-content:  ${props => props.flex || 'flex-start'};
+  align-items:  ${props => props.flex || 'flex-start'};
+  flex-direction: column;
+  @media(min-width:500px)
+  {
+    margin-left:3rem;
+  }
+  
+  h4{
+    color:black;
+    font-size: 40px;
+    font-family: Source sans pro;
+    font-weight:400px;
+    margin: 15px 0px 15px 0;
+    @media(max-width:600px){
+     font-size:1.2rem;
+   }
+  }
+  p{
+    color: gray;
+    font-size:1.5rem;
+    margin:0;
+    font-family: Source sans pro;
+    @media(max-width:600px){
+     font-size:1.2rem;
+   }
+  }
+`;
+
+
+const GovernanceHeadingE=styled.div`
+  display: flex;
+  padding: 2rem;
+  justify-content:  ${props => props.flex || 'flex-start'};
+  align-items:  ${props => props.flex || 'flex-start'};
+  margin-top: ${props => props.margint};
+  flex-direction: column;
+  @media(min-width:500px)
+  {
+    margin-left:3rem;
+  }
+  
+  h4{
+    color:black;
+    font-size: 40px;
+    font-family: Source sans pro;
+    font-weight:400px;
+    margin: 15px 0px 15px 0;
+    @media(max-width:600px){
+     font-size:1.2rem;
+   }
+  }
+  p{
+    color: gray;
+    font-size:1.5rem;
+    margin:0;
+    font-family: Source sans pro;
+    @media(max-width:600px){
+     font-size:1.2rem;
+   }
+  }
+`;
+
+
+
+
+
+
+
+
 const GovernanceSection=styled.div`
   display: flex;
   justify-content: space-between;
@@ -1064,7 +1320,14 @@ const GovernanceSpan=styled.span`
     color:white;
     margin: 0 1rem 0 0.21rem;
     font-weight:450px ;
+    @media(min-width: 450px)
+    {
+      margin-left:${props => props.margin || '0px'};
+      
+    }
+      
 
+   
     @media(max-width:600px){
      font-size:1.2rem;
    }
@@ -1265,9 +1528,16 @@ const EmphasisTextSmall = styled(Span)`
 
 
 const ContentMore = styled(Span)`
-  margin: 35px;
+  margin: 0px  
   font-family: Source sans pro;
+  @media(min-width:600px){
+    margin: 35px;
+    
+  }
 `
+
+
+
 
 
 // 

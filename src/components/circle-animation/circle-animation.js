@@ -3,6 +3,9 @@ import champions from "./images/champions.png";
 import nominee from "./images/nominee.png";
 import delegatee from "./images/delegatee.png";
 import holder from "./images/holder.png";
+// import {Section, SectionFS,SectionHero, SectionFSHero, Content, Item, ItemH, A,LI,ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
+
+import styled, { css } from 'styled-components';
 
 // import gsap from 'gsap';
 
@@ -24,10 +27,10 @@ const CIRCLE_DETAILS = [
     backgroundImage: delegatee,
     Text: () => (
       <div class="textCont">
-        <h1>PUSH DELEGATEE</h1>
-        <h2>Hold at least 75k delegated $PUSH</h2>
-        <h2>PUSH holders can delegate votes to them</h2>
-        <h2>Can vote and submit proposals on snapshot</h2>
+        <H1E>PUSH DELEGATEE</H1E>
+        <H2EU>Hold at least 75k delegated $PUSH</H2EU>
+        <H2EU>PUSH holders can delegate votes to them</H2EU>
+        <H2EU>Can vote and submit proposals on snapshot</H2EU>
       </div>
     ),
   },
@@ -38,10 +41,10 @@ const CIRCLE_DETAILS = [
     backgroundImage: nominee,
     Text: () => (
       <div class="textCont">
-        <h1>PUSH NOMINEE</h1>
-        <h2>Self nominate</h2>
-        <h2>PUSH holders can delegate votes to them</h2>
-        <h2>Can vote and submit proposals on snapshot (depending on the nnumber of delegated votes)</h2>
+        <H1E>PUSH NOMINEE</H1E>
+        <H2EU>Self nominate</H2EU>
+        <H2EU>PUSH holders can delegate votes to them</H2EU>
+        <H2EU>Can vote and submit proposals on snapshot (depending on the number of delegated votes)</H2EU>
       </div>
     ),
   },
@@ -52,10 +55,10 @@ const CIRCLE_DETAILS = [
     backgroundImage: champions,
     Text: () => (
       <div class="textCont">
-        <h1>PUSH CHAMPIONS</h1>
-        <h2>COMMUNITY CHAMPIONS</h2>
-        <h2>TEAM CHAMPIONS</h2>
-        <h2>ELECTED CHAMPIONS</h2>
+        <H1E>PUSH CHAMPIONS</H1E>
+        <H2EU>COMMUNITY CHAMPIONS</H2EU>
+        <H2EU>TEAM CHAMPIONS</H2EU>
+        <H2EU>ELECTED CHAMPIONS</H2EU>
       </div>
     ),
   },
@@ -66,8 +69,8 @@ const CIRCLE_DETAILS = [
     backgroundImage: holder,
     Text: () => (
       <div class="textCont">
-        <h1>PUSH Holders</h1>
-        <h2>Can delegate votes (to themselves or PUSH Delegatees)</h2>
+        <H1E>PUSH Holders</H1E>
+        <H2EU>Can delegate votes (to themselves or PUSH Delegatees)</H2EU>
         {/* <h2>PUSH holders can delegate votes to them</h2>
         <h2>Can vote and submit proposals on snapshot</h2> */}
       </div>
@@ -120,5 +123,36 @@ function Circle() {
     </div>
   );
 }
+
+
+
+export const H2EU = styled.h2`
+  color: ${props => props.color || '#ffffff'};
+  font-weight: ${props => props.weight || 400};
+  font-size: ${props => props.size || "1.5rem"};
+  text-transform: ${props => props.textTransform || "inherit"};
+  margin: ${props => props.margin || "20px 0px"};
+  padding: ${props => props.padding || "0px"};
+  letter-spacing: ${props => props.spacing || "inherit"};
+  font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
+  text-align: ${props => props.textAlign || "inherit"};
+  @media(max-width: 600px)
+  {
+    margin-top: -10px;
+    font-size: 1rem;
+  }
+  @media(min-width: 600px)
+  {
+    margin-top: 0px;
+  }
+`
+
+
+export const H1E = styled.h1`
+font-size: 2rem;
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
+`
 
 export default Circle;

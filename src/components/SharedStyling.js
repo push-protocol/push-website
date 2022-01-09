@@ -164,6 +164,7 @@ export const H3 = styled.h3`
   font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
   text-align: ${props => props.textAlign || "inherit"};
   max-width: ${props => props.maxWidth || 'initial'};
+
 `
 
 export const Image = styled.img`
