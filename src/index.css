@@ -174,7 +174,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +185,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
@@ -351,17 +353,23 @@ template {
 /**
  * Custom CSS
  */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 
-span, p, label, div {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+span,
+p,
+label,
+div {
+  font-family: "Source Sans Pro", Arial, sans-serif;
   font-weight: 300;
   line-height: 1.25em;
 }
 
-button, a, a:before, a:after {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+button,
+a,
+a:before,
+a:after {
+  font-family: "Source Sans Pro", Arial, sans-serif;
   text-transform: uppercase;
   border: 0;
   outline: 0;
@@ -373,7 +381,7 @@ button, a, a:before, a:after {
 }
 
 h1 {
-  font-family: 'Monstrat', Helvetica, sans-serif;
+  font-family: "Monstrat", Helvetica, sans-serif;
   font-weight: 700;
   line-height: 1.25em;
   color: #fff;
@@ -383,8 +391,12 @@ h1 {
   letter-spacing: 0.1em;
 }
 
-h2, h3, h4, h5, h6 {
-  font-family: 'Monstrat', Helvetica, sans-serif;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Monstrat", Helvetica, sans-serif;
   font-weight: 700;
   line-height: 1.25em;
 }
@@ -412,17 +424,35 @@ h2, h3, h4, h5, h6 {
 }
 
 @-webkit-keyframes BGColorTransition {
-    0%{background-position:0% 4%}
-    50%{background-position:100% 97%}
-    100%{background-position:0% 4%}
+  0% {
+    background-position: 0% 4%;
+  }
+  50% {
+    background-position: 100% 97%;
+  }
+  100% {
+    background-position: 0% 4%;
+  }
 }
 @-moz-keyframes BGColorTransition {
-    0%{background-position:0% 4%}
-    50%{background-position:100% 97%}
-    100%{background-position:0% 4%}
+  0% {
+    background-position: 0% 4%;
+  }
+  50% {
+    background-position: 100% 97%;
+  }
+  100% {
+    background-position: 0% 4%;
+  }
 }
 @keyframes BGColorTransition {
-    0%{background-position:0% 4%}
-    50%{background-position:100% 97%}
-    100%{background-position:0% 4%}
+  0% {
+    background-position: 0% 4%;
+  }
+  50% {
+    background-position: 100% 97%;
+  }
+  100% {
+    background-position: 0% 4%;
+  }
 }

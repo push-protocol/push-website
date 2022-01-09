@@ -9,12 +9,13 @@ import Carousel, { consts } from 'react-elastic-carousel';
 
 import { FaCheckCircle, FaSeedling } from 'react-icons/fa';
 import { IoMdRocket } from 'react-icons/io';
-import { BsChevronExpand, BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { BsChevronExpand, BsChevronUp, BsChevronDown, BsChevronRight } from 'react-icons/bs';
 import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
 
 import Circle from '../components/circle-animation/circle-animation';
+import {BsChevronLeft} from 'react-icons/bs';
 
 import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
@@ -131,27 +132,35 @@ const Gov=()=>{
    }, [classShow]);
     return(
         <>
-        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
-           <SectionHero padding="150px 0px 180px 0px" >
-        <SectionFSHero id="hero" padding="15px 0px 0px 0px">
-          {/* <Item margin="0px 20px">
-            <H1>Governance</H1>
-            <Span color="#fff" margin="-20px 0 0 0" size="1rem">Defines Governance</Span>
-          </Item> */}
-          <Carousel itemsToShow={width < 500 ? 1 : 1} enableAutoPlay={true} renderArrow={({ type, onClick, isEdge })=>{
-            var pointer = type === consts.PREV ? '' : ''
-            return (
-              <></>
-            )
+        {/* <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
+           <SectionHero  padding="0px 0px 0px 0px" >
+           <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
+           const pointer = type === consts.PREV ? "left" : "right"
+            console.log("ponter",pointer);
+            if(pointer=="left")
+           return (
+             <Button style={{position:"absolute",bottom:"100px",right:"110px",background:"none"}} onClick={onClick} disabled={isEdge}>
+               <BsChevronLeft fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
+             </Button>
+           )
+           else return (
+            <Button style={{position:"absolute",bottom:"100px",right:"60px",background:"none"}} onClick={onClick} disabled={isEdge}>
+              <BsChevronRight fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
+            </Button>
+          ) 
           }}>
-            <img src="/governance/hero1.jpg" style={{height:"500px",width:"100vw"}} />
-            <img src="/governance/hero2.jpg" style={{height:"500px",width:"120vw"}}/>
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero1.png" style={{height:"100vh",width:"100vw"}} />
+        </SectionFSHero>    
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero2.png" style={{height:"100vh",width:"100vw"}} />
+        </SectionFSHero>    
+        <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+        <img src="/governance/governanceHero3.png" style={{height:"100vh",width:"100vw"}} />
+        </SectionFSHero>    
           </Carousel>
-        {/* <WaveOuter>
-            
-
-
-            <WaveInner>
+          <WaveOuter>
+         <WaveInner>
               <Wave fill='#e20880'
                 paused={!animateHero}
                 options={{
@@ -174,10 +183,9 @@ const Gov=()=>{
               />
             </WaveInner>
            
-          </WaveOuter> */}
-          </SectionFSHero>
+          </WaveOuter>
       </SectionHero>
-      </ScrollTrigger>
+      </ScrollTrigger> */}
     
           {/* Start What is Governance */}
           <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
@@ -187,7 +195,6 @@ const Gov=()=>{
       <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
 
         
-         
         <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}>WHAT IS </GovernanceSpan>GOVERNANCE?</h4></item>
         <item>
@@ -236,7 +243,7 @@ const Gov=()=>{
 
           {/* End What is Governance */}
           {/* Start Future Governance */}
-          <Section theme="#fff" padding="0px 0px 50px 0px">
+          <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -513,6 +520,11 @@ const Gov=()=>{
       
        
           </Section> */}
+
+          
+
+
+          
           {/* End pushDeligatees Governance */}
 
 
@@ -826,7 +838,7 @@ const AnimateSection=styled.div`
     img{
       position: absolute;
         width: 70rem;
-        height: 35rem;
+        height: 60rem;
       
       @media(max-width:900px){
         width: 20rem;

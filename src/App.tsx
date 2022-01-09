@@ -83,9 +83,9 @@ function App() {
           <Route path="/privacy">
             <Privacy />
           </Route>
-          <Route path="/governance">
-            <Gov/>
-          </Route>
+          <Route path="/govern">
+							<Gov />
+						</Route>
           <Route path="/tos">
             <Terms />
           </Route>
