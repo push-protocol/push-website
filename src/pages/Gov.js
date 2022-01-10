@@ -275,7 +275,7 @@ const Gov=()=>{
 
       {/* <Section id="solution"  padding="20px 0px 0px 0px" theme="#fff">
       <Section id="solution" theme="#fff"  padding="20px 0px 0px 0px" overflow="hidden" margin="0px 40px 120px"> */}
-<SectionEU>
+<SectionProcess>
 <GovernanceHeadingE >
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#e20880"}}>PROCESS </GovernanceSpan>  </h4></item>
         <item>
@@ -286,7 +286,7 @@ const Gov=()=>{
         </item>              
         </GovernanceHeadingE>
 
-<SectionEEU>
+<SectionProcessGovernance>
                 
    
 
@@ -338,7 +338,7 @@ const Gov=()=>{
               {/* </Solution>
             </Item>
         </Content> */}
-        </SectionEEU>
+        </SectionProcessGovernance>
 
         <WaveOuter>
           <WaveInner>
@@ -355,7 +355,7 @@ const Gov=()=>{
         </WaveOuter>
 
 
-      </SectionEU>
+      </SectionProcess>
 
           {/* End process Governance */}
 
@@ -363,7 +363,7 @@ const Gov=()=>{
 
 
          {/* Start Learnmore Governance */}
-         <SectionE >
+         <SectionLearn>
 
          <WaveOuter>
           <WaveInner>
@@ -396,7 +396,7 @@ const Gov=()=>{
         
   
   
-  <SectionEE  >
+  <SectionLearnGovernance>
     
 
 
@@ -434,14 +434,16 @@ const Gov=()=>{
   
 
 
-        </SectionEE>
+        </SectionLearnGovernance>
 
-      </SectionE>
+      </SectionLearn>
 
 
       {/* end learn more about governance */}
  
           <Section margin="0px 0px 120px 0px ">
+
+
         
       <GovernanceHeadingE >
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#35C5F3"}}>ROLES</GovernanceSpan></h4></item>
@@ -481,9 +483,9 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px"> */}
           
-         <WaveOuter>
+         {/* <WaveOuter>
           <WaveInner>
             <Wave fill='#fff'
               paused={true}
@@ -674,7 +676,7 @@ const animate =keyframes`
 // padding="20px 0px 0px 0px" overflow="hidden" margin="40px"
 // theme="#e20880" padding="0px 0px 80px 0px"
 
-const SectionE = styled.section`
+const SectionLearn = styled.section`
   display: flex;
   flex-direction:column;
   background:#e20880;
@@ -683,9 +685,9 @@ const SectionE = styled.section`
   overflow: hidden;
   position: relative;
 
- @media(max-width:380px){
-   width:300pp;
-   padding: 6px;
+ @media(max-width:5000px){
+  margin-top: 0px;
+  margin-bottom: 0px;
    overflow-y: hidden;
    overflow-x: hidden;
  }
@@ -718,23 +720,18 @@ const Line = styled.section`
  
 `;
 
-const SectionEE = styled.section`
+const SectionLearnGovernance = styled.section`
  display: flex;
  flex-direction: row;
  margin-bottom: 120px;
+ justify-content: center;
  column: 0px;
- @media(min-width:400px)
+ @media(min-width:500px)
  {
   margin-left: 3rem;
  margin-right: 3rem;
  }
 
- @media(max-width:450px ){
-  {
-   margin-left: 2rem;
-   margin-right: 1rem;
-  }
- 
 
 
  @media(max-width: 380px)
@@ -751,7 +748,7 @@ const SectionEE = styled.section`
 
 
 
-const SectionEU = styled.section`
+const SectionProcess = styled.section`
   display: flex;
   flex-direction:column;
   background:#fff;
@@ -760,9 +757,7 @@ const SectionEU = styled.section`
   overflow: hidden;
   position: relative;
 
- @media(max-width:380px){
-   width:300pp;
-   padding: 6px;
+ @media(max-width:500px){
    overflow-y: hidden;
    overflow-x: hidden;
  }
@@ -770,8 +765,9 @@ const SectionEU = styled.section`
 
 
 
-const SectionEEU = styled.section`
+const SectionProcessGovernance = styled.section`
  display: flex;
+
  flex-direction: row;
  margin-bottom: 120px;
  column: 0px;
@@ -1271,6 +1267,12 @@ const GovernanceHeadingE=styled.div`
   {
     margin-left:3rem;
   }
+
+  @media(max-width:500px)
+  {
+    margin-left: 2.5rem;
+  }
+  
   
   h4{
     color:black;
