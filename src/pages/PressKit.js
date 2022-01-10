@@ -1,4 +1,4 @@
-import React, { useState , useRef , useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import {
 	Section,
@@ -8,6 +8,8 @@ import {
 	H1,
 	Image,
 	ItemH,
+	Span,
+	Anchor,
 } from "components/SharedStyling";
 import AdvisorsCard from "components/AdvisorsCard";
 import NewsCard from "components/NewsCard";
@@ -95,24 +97,24 @@ const PressKit = () => {
 
 	useEffect(() => {
 		let options = {
-		rootMargin: "0px",
-		threshold: [0.25, 0.75]
+			rootMargin: "0px",
+			threshold: [0.25, 0.75],
 		};
 
-    let handlePlay = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          videoRef.current.play();
-        } else {
-          videoRef.current.pause();
-        }
-      });
-    };
+		let handlePlay = (entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					videoRef.current.play();
+				} else {
+					videoRef.current.pause();
+				}
+			});
+		};
 
-    let observer = new IntersectionObserver(handlePlay, options);
+		let observer = new IntersectionObserver(handlePlay, options);
 
-    observer.observe(videoRef.current);
-  });
+		observer.observe(videoRef.current);
+	});
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
@@ -271,6 +273,15 @@ const PressKit = () => {
 								SaaS, Blockchain), he realised the gap in the
 								blockchain space and founded EPNS!
 							</PressKitText>
+							<Anchor
+								href="https://www.linkedin.com/in/harshrajat/"
+								target="_blank"
+							>
+								<img
+									src="/presskit/linkedin_logo.png"
+									alt="LinkedIn"
+								/>
+							</Anchor>
 						</Item>
 						<Item padding="0px 50px" margin="0px 50px">
 							<PeopleImg
@@ -313,6 +324,15 @@ const PressKit = () => {
 								contributing and leading teams before foraying
 								into the blockchain space.
 							</PressKitText>
+							<Anchor
+								href="https://in.linkedin.com/in/richa-joshi-90b04126"
+								target="_blank"
+							>
+								<img
+									src="/presskit/linkedin_logo.png"
+									alt="LinkedIn"
+								/>
+							</Anchor>
 						</Item>
 					</Content>
 				</PressKitSection>
@@ -388,14 +408,20 @@ const PressKit = () => {
 				padding="10% 0 20% 0"
 				// gradient="#583D98"
 			>
-				<div style={{ background: "linear-gradient(#583D98 60%, #fff 50%)"
-					, padding : "20px" }}>
+				<div
+					style={{
+						background: "linear-gradient(#583D98 60%, #fff 50%)",
+						padding: "20px",
+					}}
+				>
 					<PressKitSection id="epnsproduct">
 						<PressKitHeading flex="flex-end" alignItems="flex-end">
 							<Item style={{ margin: "0" }}>
 								<h4 style={{ color: "#000" }}>
 									THE EPNS
-									<PressKitSpan style={{ background: "#1FE3EF" }}>
+									<PressKitSpan
+										style={{ background: "#1FE3EF" }}
+									>
 										PRODUCT{" "}
 									</PressKitSpan>
 								</h4>
@@ -413,31 +439,34 @@ const PressKit = () => {
 							
 						</Content> */}
 					</PressKitSection>
-					<div style={{padding : "0 15%"}}>
-					<div style={{
-						position: "relative",
-						paddingTop: "25px",
-						paddingBottom: "67.5%",
-						height: 0
-					}}> 
-						<video
-						resizeMode='cover'
-						style={{
-							boxSizing: "border-box",
-							background: "url(/presskit/laptop.png) center center no-repeat",
-							backgroundSize: "contain",
-							padding: "0% 10.5% 0%",
-							position: "absolute",
-							top: 0,
-							left: 0,
-							width: "100%",
-							height:"100%",
-						}}
-							// style={{width : "50%"}}
-							ref={videoRef}
-							src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-						></video>
-						{/* <iframe 
+					<div style={{ padding: "0 15%" }}>
+						<div
+							style={{
+								position: "relative",
+								paddingTop: "25px",
+								paddingBottom: "67.5%",
+								height: 0,
+							}}
+						>
+							<video
+								resizeMode="cover"
+								style={{
+									boxSizing: "border-box",
+									background:
+										"url(/presskit/laptop.png) center center no-repeat",
+									backgroundSize: "contain",
+									padding: "0% 10.5% 0%",
+									position: "absolute",
+									top: 0,
+									left: 0,
+									width: "100%",
+									height: "100%",
+								}}
+								// style={{width : "50%"}}
+								ref={videoRef}
+								src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+							></video>
+							{/* <iframe 
 						style={{
 							boxSizing: "border-box",
 							background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
@@ -451,17 +480,15 @@ const PressKit = () => {
 						}}
 						width="560" height="390" src="https://www.youtube.com/embed/S_QemrZbOIk" frameborder="0" allowfullscreen>
 						</iframe>  */}
+						</div>
 					</div>
-					</div>
-
-
 
 					{/* <div>
 						<div>
 							<iframe width="560" height="315" src="//www.youtube.com/embed/f890SC1schE" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div> */}
-					<div 
+					<div
 					// style={{
 					// 	// background :`url(${"/public/presskit/product.png"}) center center no-repeat` ,
 					// 	background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
@@ -488,7 +515,7 @@ const PressKit = () => {
 				gradient="linear-gradient(180deg, #D01C85 0%, #73459C 116.65%)"
 			>
 				<PressKitSection id="speakerevents">
-					<PressKitHeading>
+					{/* <PressKitHeading>
 						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
 								<PressKitSpan style={{ background: "#000" }}>
@@ -497,10 +524,22 @@ const PressKit = () => {
 								EVENTS
 							</h4>
 						</Item>
-					</PressKitHeading>
+					</PressKitHeading> */}
 					<Content className="contentbox">
 						<Item margin="20px 0px 20px 0px">
 							<SpeakerEvents>
+								<SpeakerEvent disabled={true} bg="#2f1a37">
+									<Item minWidth="auto">
+										<Span
+											color="#fff"
+											weight="400"
+											size="1rem"
+											spacing="0.1em"
+										>
+											Speaker Events
+										</Span>
+									</Item>
+								</SpeakerEvent>
 								{Object.keys(speakerEventsList.events).map(
 									function (key) {
 										const item =
@@ -536,7 +575,7 @@ const PressKit = () => {
 
 			{/* History Section */}
 			<Section id="history" padding="20px 0px 0px 0px" gradient="#F3F7F8">
-				<PressKitSection id="history">
+				<PressKitSection id="history" style={{ padding: "0px" }}>
 					<PressKitHeading flex="flex-end" alignItems="flex-end">
 						<Item style={{ margin: "0" }}>
 							<h4 style={{ color: "#000" }}>
@@ -548,7 +587,6 @@ const PressKit = () => {
 						</Item>
 					</PressKitHeading>
 					<Content
-						className="contentBox"
 						style={{
 							display: "flex",
 							justifyContent: "center",
