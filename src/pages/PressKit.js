@@ -10,7 +10,10 @@ import {
 	ItemH,
 	Span,
 	Anchor,
+	WaveInner,
+	WaveOuter,
 } from "components/SharedStyling";
+import Wave from "react-wavify";
 import AdvisorsCard from "components/AdvisorsCard";
 import NewsCard from "components/NewsCard";
 import ScrollTrigger from "react-scroll-trigger";
@@ -139,6 +142,32 @@ const PressKit = () => {
 							<H1>Press Kit</H1>
 						</Item>
 					</Content>
+					<WaveOuter>
+						<WaveInner>
+							<Wave
+								fill="#35c5f3"
+								paused={!animateHero}
+								options={{
+									height: 40,
+									amplitude: 30,
+									speed: 0.35,
+									points: 3,
+								}}
+							/>
+						</WaveInner>
+						<WaveInner>
+							<Wave
+								fill="#D01C85"
+								paused={!animateHero}
+								options={{
+									height: 20,
+									amplitude: 35,
+									speed: 0.25,
+									points: 3,
+								}}
+							/>
+						</WaveInner>
+					</WaveOuter>
 				</SectionHero>
 			</ScrollTrigger>
 
@@ -207,6 +236,20 @@ const PressKit = () => {
 						<Img src="/presskit/bell.png" alt="Bell Image" />
 					</Item>
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#fff"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* Meet Founders Section */}
@@ -281,15 +324,35 @@ const PressKit = () => {
 									Blockchain), he realised the gap in the
 									blockchain space and founded EPNS!
 								</PressKitText>
-								<Anchor
-									href="https://www.linkedin.com/in/harshrajat/"
-									target="_blank"
-								>
-									<img
-										src="/presskit/linkedin_logo.png"
-										alt="LinkedIn"
-									/>
-								</Anchor>
+								<Item direction="row">
+									<Anchor
+										href="https://twitter.com/harshrajat"
+										target="_blank"
+									>
+										<img
+											src="/presskit/twitter_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+									<Anchor
+										href="https://www.linkedin.com/in/harshrajat/"
+										target="_blank"
+									>
+										<img
+											src="/presskit/linkedin_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+									<Anchor
+										href="mailto://harsh@epns.io"
+										target="_blank"
+									>
+										<img
+											src="/presskit/mail_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+								</Item>
 							</Item>
 							<Item padding="0px 20px">
 								<PeopleImg
@@ -333,19 +396,53 @@ const PressKit = () => {
 									contributing and leading teams before
 									foraying into the blockchain space.
 								</PressKitText>
-								<Anchor
-									href="https://in.linkedin.com/in/richa-joshi-90b04126"
-									target="_blank"
-								>
-									<img
-										src="/presskit/linkedin_logo.png"
-										alt="LinkedIn"
-									/>
-								</Anchor>
+								<Item direction="row">
+									<Anchor
+										href="https://twitter.com/riijo"
+										target="_blank"
+									>
+										<img
+											src="/presskit/twitter_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+									<Anchor
+										href="https://in.linkedin.com/in/richa-joshi-90b04126"
+										target="_blank"
+									>
+										<img
+											src="/presskit/linkedin_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+									<Anchor
+										href="mailto://richa@epns.io"
+										target="_blank"
+									>
+										<img
+											src="/presskit/mail_logo.png"
+											alt="Twitter"
+										/>
+									</Anchor>
+								</Item>
 							</Item>
 						</Item>
 					</Content>
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#F3F7F8"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* Web3 Section */}
@@ -414,17 +511,31 @@ const PressKit = () => {
 						}}
 					></Content> */}
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#583D98"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* Product Section */}
 			<Section
 				id="epnsproduct"
 				padding="10% 0 20% 0"
-				// gradient="#583D98"
+				style={{ marginTop: "3rem" }}
 			>
 				<div
 					style={{
-						background: "linear-gradient(#583D98 60%, #fff 50%)",
+						background: "linear-gradient(#583D98 50%, #fff 50%)",
 						padding: "20px",
 					}}
 				>
@@ -504,6 +615,20 @@ const PressKit = () => {
 						</div>
 					</div>
 				</div>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#D01C85"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* Speaker Events Section */}
@@ -574,6 +699,20 @@ const PressKit = () => {
 						</Item>
 					</Content>
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#F3F7F8"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* History Section */}
@@ -599,6 +738,20 @@ const PressKit = () => {
 						<OurHistoryImg src="/presskit/ourHistory.png" />
 					</Content>
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#D01C85"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* EPNS News Section */}
@@ -641,6 +794,20 @@ const PressKit = () => {
 						</ItemH>
 					</Content>
 				</PressKitSection>
+				<WaveOuter>
+					<WaveInner>
+						<Wave
+							fill="#fff"
+							paused={true}
+							options={{
+								height: 20,
+								amplitude: 30,
+								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+				</WaveOuter>
 			</Section>
 
 			{/* Meet Advisors Section */}

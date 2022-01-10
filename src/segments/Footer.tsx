@@ -108,11 +108,12 @@ function Foot() {
 
       {/* FOOTER SECTION */}
       <Section theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)">
+        {/* Snowing 
         <Snowfall
           color="white"
           snowflakeCount={100}
           radius={[0.5, 2]}
-        />
+        /> */}
 
         <Content className="contentBox" padding="0px 0px 20px 0px">
           <Item margin="0px 0px" flex="auto">

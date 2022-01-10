@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import { Item } from "components/SharedStyling";
+import { Item, ItemH } from "components/SharedStyling";
 
 function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 	let boxWidth = width;
@@ -10,8 +10,12 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 	}
 	boxWidth += "px";
 	return (
-		<Item margin="20px">
-			<Item align="flex-start">
+		<Item
+			margin="20px"
+			height="auto"
+			style={{ justifyContent: "flex-start" }}
+		>
+			{/* <Item align="flex-start">
 				<Item
 					justify="flex-start"
 					height="auto"
@@ -90,10 +94,125 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 						borderTop: "25px solid #DBD6D3",
 					}}
 				></Item>
-			</Item>
+			</Item> */}
+
+			<Converse
+				margin="0px"
+				style={{
+					background: "rgba(249, 251, 251, 0.5)",
+					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+					alignItems: "flex-start",
+				}}
+			>
+				<ConverseInner>
+					<Item
+						justify="flex-start"
+						height="auto"
+						minWidth={boxWidth}
+						maxWidth={boxWidth}
+						direction="column"
+						padding="20px"
+						radius="5px"
+					>
+						<PersonImg src={imgSrc} height={250} />
+						<Text
+							color="#000"
+							fontWeight="600"
+							padding="5px"
+							textTransform="capitalize"
+						>
+							{name}
+						</Text>
+						<Text
+							color="#D01C85"
+							fontWeight="600"
+							padding="5px"
+							textTransform="capitalize"
+							lineHeight="25px"
+							fontSize={20}
+						>
+							{title}
+						</Text>
+						{subtitle !== "" && (
+							<Text
+								color="#000"
+								padding="5px"
+								textTransform="capitalize"
+								lineHeight="19px"
+								fontSize={15}
+							>
+								{subtitle}
+							</Text>
+						)}
+						<Item
+							align="flex-start"
+							style={{ flexFlow: "row-reverse" }}
+						>
+							<Item style={{ alignSelf: "flex-start" }}>
+								<PersonImg src="/presskit/inverted_comma_right.png" />
+							</Item>
+							<Text
+								color="#000"
+								padding="5px"
+								textTransform="capitalize"
+								lineHeight="18px"
+								textAlign="justify"
+								fontSize={14}
+								letterSpacing="0.05em"
+							>
+								{desc}
+							</Text>
+							<Item style={{ alignSelf: "flex-end" }}>
+								<PersonImg src="/presskit/inverted_comma_left.png" />
+							</Item>
+						</Item>
+					</Item>
+				</ConverseInner>
+			</Converse>
 		</Item>
 	);
 }
+
+const Converse = styled(ItemH)`
+	justify-content: center;
+	align-items: center;
+	column-gap: inherit;
+	border: 1px solid #eee;
+	border-radius: 12px;
+	z-index: 1;
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 22px solid transparent;
+		border-right: 22px solid transparent;
+		border-top: 22px solid #eeeeee;
+		bottom: -22px;
+		left: 14px;
+		z-index: 1;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 18px solid transparent;
+		border-right: 18px solid transparent;
+		border-top: 18px solid #fff;
+		bottom: -18px;
+		left: 16px;
+		z-index: 2;
+	}
+`;
+
+const ConverseInner = styled(ItemH)`
+	align-items: center;
+	column-gap: inherit;
+	border-radius: 20px;
+	overflow: hidden;
+`;
 
 const PersonImg = styled.img`
 	height: ${(props) => props.height + "px" || "auto"};
