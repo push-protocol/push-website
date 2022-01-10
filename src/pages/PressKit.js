@@ -127,7 +127,7 @@ const PressKit = () => {
 	}, [handleScroll]);
 	return (
 		<>
-			<ScrollTrigger
+			{/* <ScrollTrigger
 				onEnter={() => {
 					setAnimateHero(true);
 				}}
@@ -136,7 +136,6 @@ const PressKit = () => {
 				}}
 			>
 				<SectionHero padding="50px 0px 80px 0px">
-					{/* <SectionFSHero id="hero" padding="15px 0px 0px 0px"> */}
 					<Content className="contentBox">
 						<Item margin="0px 20px">
 							<H1>Press Kit</H1>
@@ -169,12 +168,12 @@ const PressKit = () => {
 						</WaveInner>
 					</WaveOuter>
 				</SectionHero>
-			</ScrollTrigger>
+			</ScrollTrigger> */}
 
 			{/* Start EPNS Press Kit */}
 			<Section
 				id="presskit"
-				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
+				gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(90deg, #35C5F3 0%, #E20880 100%);"
 				padding="20px 0px 80px 30px"
 			>
 				<PressKitSection
@@ -239,7 +238,7 @@ const PressKit = () => {
 				<WaveOuter>
 					<WaveInner>
 						<Wave
-							fill="#fff"
+							fill="#D01C81"
 							paused={true}
 							options={{
 								height: 20,
@@ -253,7 +252,11 @@ const PressKit = () => {
 			</Section>
 
 			{/* Meet Founders Section */}
-			<Section id="meetfounders" padding="30px 0px 50px 0px">
+			<Section 
+				id="meetfounders" 
+				padding="30px 0px 50px 0px"
+				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
+				>
 				<PressKitSection id="meetfounders">
 					<PressKitHeading>
 						<Item style={{ margin: "0" }}>
@@ -530,15 +533,16 @@ const PressKit = () => {
 			{/* Product Section */}
 			<Section
 				id="epnsproduct"
-				padding="10% 0 20% 0"
-				style={{ marginTop: "3rem" }}
+				gradient="linear-gradient(#583D98 50%, #fff 50%)"
+				padding="0 0 15% 0"
+				// style={{ marginTop: "3rem" }}
 			>
-				<div
+				{/* <div
 					style={{
-						background: "linear-gradient(#583D98 50%, #fff 50%)",
-						padding: "20px",
+						// background: "linear-gradient(#583D98 50%, #fff 50%)",
+						// padding: "20px",
 					}}
-				>
+				> */}
 					<PressKitSection id="epnsproduct">
 						<PressKitHeading flex="flex-end" alignItems="flex-end">
 							<Item style={{ margin: "0" }}>
@@ -563,25 +567,28 @@ const PressKit = () => {
 
 							
 						</Content> */}
-					</PressKitSection>
-					<div style={{ padding: "0 15%" }}>
+					
+					<div 
+					style={{ padding: "0 15%" , height : "auto" }}
+					>
 						<div
 							style={{
 								position: "relative",
-								paddingTop: "25px",
-								paddingBottom: "67.5%",
-								height: 0,
+								// paddingTop: "25px",
+								// paddingBottom: "67.5%",
+								// height : "0"
+								// height: "200px",
 							}}
 						>
 							<video
-								resizeMode="cover"
+								// resizeMode="cover"
 								style={{
 									boxSizing: "border-box",
 									background:
 										"url(/presskit/laptop.png) center center no-repeat",
 									backgroundSize: "contain",
-									padding: "0% 10.5% 0%",
-									position: "absolute",
+									padding: "10% 10.5% 10%",
+									// position: "absolute",
 									top: 0,
 									left: 0,
 									width: "100%",
@@ -589,7 +596,7 @@ const PressKit = () => {
 								}}
 								ref={videoRef}
 								src="/presskit/epns.mp4"
-								// muted
+								muted
 								// controls
 							/>
 
@@ -614,7 +621,8 @@ const PressKit = () => {
 						</iframe>  */}
 						</div>
 					</div>
-				</div>
+				{/* </div> */}
+				</PressKitSection>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -758,7 +766,7 @@ const PressKit = () => {
 			<Section id="news" gradient="#D01C85" padding="20px 0px 0px 0px">
 				<PressKitSection id="news">
 					<PressKitHeading>
-						<Item style={{ margin: "0" }}>
+						<Item style={{ margin: "0 0 0 0" }}>
 							<h4 style={{ color: "#fff" }}>
 								EPNS
 								<PressKitSpan style={{ background: "black" }}>
@@ -785,7 +793,9 @@ const PressKit = () => {
 							columnGap="40px"
 							rowGap="40px"
 							style={{
-								maxWidth: "90%",
+								maxWidth: "100%",
+								fontSize : "13px"
+								// height : "200px"
 							}}
 						>
 							{news.map((obj) => (
@@ -920,7 +930,7 @@ const PeopleImg = styled.img`
 `;
 
 const OurHistoryImg = styled.img`
-	height: 100%;
+	height: auto;
 	width: 100%;
 `;
 
