@@ -4,14 +4,19 @@ import styled from "styled-components";
 import { Item } from "components/SharedStyling";
 
 function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
+	let boxWidth = width;
+	if (window.innerWidth <= "600") {
+		boxWidth *= 0.8;
+	}
+	boxWidth += "px";
 	return (
 		<Item margin="20px">
 			<Item align="flex-start">
 				<Item
 					justify="flex-start"
 					height="auto"
-					minWidth={width}
-					maxWidth={width}
+					minWidth={boxWidth}
+					maxWidth={boxWidth}
 					direction="column"
 					padding="20px"
 					border="10px solid #F9FBFB"
@@ -113,6 +118,7 @@ const PersonImg = styled.img`
 			props.width !== undefined ? props.width * 0.85 + "px" : "auto"};
 	}
 	@media (max-width: 600px) {
+		margin: auto;
 		height: ${(props) =>
 			props.height !== undefined ? props.height * 0.8 + "px" : "auto"};
 		width: ${(props) =>

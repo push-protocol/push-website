@@ -225,113 +225,124 @@ const PressKit = () => {
 					<Content
 						style={{
 							display: "flex",
-							justifyContent: "space-between",
+							justifyContent: "center",
 							flexDirection: "row",
 							flexWrap: "wrap",
 							alignItems: "center",
 						}}
 					>
-						<Item padding="0px 50px" margin="0px 50px">
-							<PeopleImg
-								src="/presskit/founder_harsh.png"
-								height={340}
-								width={340}
-							/>
-							<PressKitText
-								color="#000"
-								fontWeight="600"
-								padding="5px"
-							>
-								Harsh Rajat
-							</PressKitText>
-							<PressKitText
-								color="#D01C85"
-								fontWeight="600"
-								padding="5px"
-								textTransform="uppercase"
-								lineHeight="19px"
-								fontSize={15}
-							>
-								Founder
-							</PressKitText>
-							<PressKitText
-								color="#635C5C"
-								fontWeight="600"
-								padding="5px"
-								lineHeight="18px"
-								fontSize={14}
-							>
-								Harsh Rajat is the founder of Ethereum Push
-								Notification Service (EPNS), a decentralized
-								DeFi notifications protocol that enables users
-								(wallet addresses) to receive notifications.
-								With 11 years of entrepreneurial experience in
-								various spectrum of tech; including
-								architecting, development and design in
-								different tech fields (Mobile, Web Services,
-								SaaS, Blockchain), he realised the gap in the
-								blockchain space and founded EPNS!
-							</PressKitText>
-							<Anchor
-								href="https://www.linkedin.com/in/harshrajat/"
-								target="_blank"
-							>
-								<img
-									src="/presskit/linkedin_logo.png"
-									alt="LinkedIn"
+						<Item
+							align="center"
+							style={{
+								flexDirection: "row",
+								flexWrap: "wrap",
+								padding: "20px",
+							}}
+						>
+							<Item align="center" padding="0px 20px">
+								<PeopleImg
+									src="/presskit/founder_harsh.png"
+									height={340}
+									width={340}
 								/>
-							</Anchor>
-						</Item>
-						<Item padding="0px 50px" margin="0px 50px">
-							<PeopleImg
-								src="/presskit/founder_richa.png"
-								height={340}
-								width={340}
-							/>
-							<PressKitText
-								color="#000"
-								fontWeight="600"
-								padding="5px"
-							>
-								Richa Joshi
-							</PressKitText>
-							<PressKitText
-								color="#D01C85"
-								fontWeight="600"
-								padding="5px"
-								textTransform="uppercase"
-								lineHeight="19px"
-								fontSize={15}
-							>
-								Co-Founder
-							</PressKitText>
-							<PressKitText
-								color="#635C5C"
-								fontWeight="600"
-								padding="5px"
-								lineHeight="18px"
-								fontSize={14}
-							>
-								Richa, the co-founder of Ethereum Push
-								Notification Service (EPNS). An alumini of K.J.
-								Somaiya Institute of engineering and Information
-								Technology, Richa began her career with Wipro
-								Limited and has 12 years of techno-functional
-								experience in product management and development
-								across multiple facets of the product lifecycle.
-								She has previously worked with Deloitte,
-								contributing and leading teams before foraying
-								into the blockchain space.
-							</PressKitText>
-							<Anchor
-								href="https://in.linkedin.com/in/richa-joshi-90b04126"
-								target="_blank"
-							>
-								<img
-									src="/presskit/linkedin_logo.png"
-									alt="LinkedIn"
+								<PressKitText
+									color="#000"
+									fontWeight="600"
+									padding="5px"
+								>
+									Harsh Rajat
+								</PressKitText>
+								<PressKitText
+									color="#D01C85"
+									fontWeight="600"
+									padding="5px"
+									textTransform="uppercase"
+									lineHeight="19px"
+									fontSize={15}
+								>
+									Founder
+								</PressKitText>
+								<PressKitText
+									color="#635C5C"
+									fontWeight="600"
+									padding="5px"
+									lineHeight="18px"
+									fontSize={14}
+								>
+									Harsh Rajat is the founder of Ethereum Push
+									Notification Service (EPNS), a decentralized
+									DeFi notifications protocol that enables
+									users (wallet addresses) to receive
+									notifications. With 11 years of
+									entrepreneurial experience in various
+									spectrum of tech; including architecting,
+									development and design in different tech
+									fields (Mobile, Web Services, SaaS,
+									Blockchain), he realised the gap in the
+									blockchain space and founded EPNS!
+								</PressKitText>
+								<Anchor
+									href="https://www.linkedin.com/in/harshrajat/"
+									target="_blank"
+								>
+									<img
+										src="/presskit/linkedin_logo.png"
+										alt="LinkedIn"
+									/>
+								</Anchor>
+							</Item>
+							<Item padding="0px 20px">
+								<PeopleImg
+									src="/presskit/founder_richa.png"
+									height={340}
+									width={340}
 								/>
-							</Anchor>
+								<PressKitText
+									color="#000"
+									fontWeight="600"
+									padding="5px"
+								>
+									Richa Joshi
+								</PressKitText>
+								<PressKitText
+									color="#D01C85"
+									fontWeight="600"
+									padding="5px"
+									textTransform="uppercase"
+									lineHeight="19px"
+									fontSize={15}
+								>
+									Co-Founder
+								</PressKitText>
+								<PressKitText
+									color="#635C5C"
+									fontWeight="600"
+									padding="5px"
+									lineHeight="18px"
+									fontSize={14}
+								>
+									Richa, the co-founder of Ethereum Push
+									Notification Service (EPNS). An alumini of
+									K.J. Somaiya Institute of engineering and
+									Information Technology, Richa began her
+									career with Wipro Limited and has 12 years
+									of techno-functional experience in product
+									management and development across multiple
+									facets of the product lifecycle. She has
+									previously worked with Deloitte,
+									contributing and leading teams before
+									foraying into the blockchain space.
+								</PressKitText>
+								<Anchor
+									href="https://in.linkedin.com/in/richa-joshi-90b04126"
+									target="_blank"
+								>
+									<img
+										src="/presskit/linkedin_logo.png"
+										alt="LinkedIn"
+									/>
+								</Anchor>
+							</Item>
 						</Item>
 					</Content>
 				</PressKitSection>
@@ -368,7 +379,11 @@ const PressKit = () => {
 							alignItems: "center",
 						}}
 					></Content> */}
-					<PressKitHeading flex="flex-end" flexDirection="row">
+					<PressKitHeading
+						flex="flex-end"
+						flexDirection="row"
+						alignItems="flex-end"
+					>
 						<MissingPieceImg src="/presskit/missing2.png" />
 
 						<Item
@@ -466,10 +481,8 @@ const PressKit = () => {
 								// muted
 								// controls
 							/>
-						
-{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/kwwnlmUpRsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
-
+							{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/kwwnlmUpRsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
 
 							{/* <iframe 
 						style={{
@@ -492,7 +505,6 @@ const PressKit = () => {
 					</div>
 				</div>
 			</Section>
-						
 
 			{/* Speaker Events Section */}
 			<Section
@@ -511,8 +523,11 @@ const PressKit = () => {
 							</h4>
 						</Item>
 					</PressKitHeading> */}
-					<Content className="contentbox">
-						<Item margin="20px 0px 20px 0px">
+					<Content style={{ alignItems: "center" }}>
+						<Item
+							margin="20px 0px 20px 0px"
+							style={{ maxWidth: "90%" }}
+						>
 							<SpeakerEvents>
 								<SpeakerEvent disabled={true} bg="#2f1a37">
 									<Item minWidth="auto">
@@ -546,7 +561,9 @@ const PressKit = () => {
 											>
 												<Item minWidth="auto">
 													<SpeakerEventImage
-														src={`/speakerevents/${item.src}.png`}
+														src={`/speaker/${item.src}/${item.src}1x.png`}
+														srcSet={`./speaker/${item.src}/${item.src}2x.png 2x, ./speaker/${item.src}/${item.src}3x.png 3x`}
+														alt={`${item.alt}`}
 													/>
 												</Item>
 											</SpeakerEvent>
@@ -602,7 +619,7 @@ const PressKit = () => {
 						style={{
 							display: "flex",
 							flexDirection: "row",
-							justifyContent: "space-between",
+							justifyContent: "center",
 							alignItems: "center",
 						}}
 					>
@@ -615,8 +632,7 @@ const PressKit = () => {
 							columnGap="40px"
 							rowGap="40px"
 							style={{
-								marginLeft: "30px",
-								marginRight: "30px",
+								maxWidth: "90%",
 							}}
 						>
 							{news.map((obj) => (
@@ -653,7 +669,7 @@ const PressKit = () => {
 							imgSrc="/presskit/advisor_nishal_shetty.png"
 							title="Founder, CEO | WazirX"
 							height="500px"
-							width="350px"
+							width={350}
 							subtitle="(India’s Largest Exchange, acquired by Binance)"
 							desc="The Crypto and DeFi ecosystem is missing some key infrastructure pieces. Notification is one such key infrastructure piece that is currently missing and I’m glad that the EPNS team is solving this problem."
 						/>
@@ -661,7 +677,7 @@ const PressKit = () => {
 							name="DeFi Dad"
 							imgSrc="/presskit/advisor_defi_dad.png"
 							height="500px"
-							width="350px"
+							width={350}
 							title="ALL THINGS DEFI"
 							desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
 						/>
@@ -669,7 +685,7 @@ const PressKit = () => {
 							name="Vivek Singh"
 							imgSrc="/presskit/advisor_vivek_singh.png"
 							height="500px"
-							width="350px"
+							width={350}
 							title="CO-FOUNDER, GITCOIN"
 							desc="EPNS is building critical infrastructure for Web 3. Tinkering with the incentives around notifications has huge downstream potential as we look to build an internet which serves users, not corporations. Excited to see how Harsh and Richa’s vision unfolds."
 						/>
@@ -677,7 +693,7 @@ const PressKit = () => {
 							name="Sandeep Nailwal"
 							imgSrc="/presskit/advisor_sandeep_nailwal.png"
 							height="500px"
-							width="350px"
+							width={350}
 							title="CO-FOUNDER, POLYGON"
 							desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3. I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
 						/>
@@ -685,7 +701,7 @@ const PressKit = () => {
 							name="Kernel"
 							imgSrc="/presskit/advisor_kernel.png"
 							height="500px"
-							width="350px"
+							width={350}
 							title="A GITCOIN COLLECTIVE"
 							desc="EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL.They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways."
 						/>
@@ -750,6 +766,9 @@ const PressKitHeading = styled.div`
 	@media (max-width: 900px) {
 		flex-direction: column;
 	}
+	@media (max-width: 600px) {
+		padding: 20px 0px;
+	}
 
 	h4 {
 		color: black;
@@ -780,7 +799,7 @@ const PressKitHeading = styled.div`
 		}
 	}
 	p {
-		font-size: 25px !important;
+		font-size: 25px;
 		color: #252323 !important;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -788,7 +807,7 @@ const PressKitHeading = styled.div`
 		line-height: 31px;
 		font-family: Source sans pro;
 		@media (max-width: 600px) {
-			font-size: 1rem;
+			font-size: 15px;
 		}
 	}
 `;
@@ -802,6 +821,9 @@ const PressKitSection = styled.div`
 
 	@media (max-width: 900px) {
 		flex-direction: column;
+	}
+	@media (max-width: 600px) {
+		padding: 10px 10px;
 	}
 `;
 
