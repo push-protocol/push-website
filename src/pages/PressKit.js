@@ -32,7 +32,7 @@ const PressKit = () => {
 
 	const handleScroll = React.useCallback((event) => {
 		let scrollTop = window.scrollY;
-		console.log(scrollTop, "classShow");
+		// console.log(scrollTop, "classShow");
 		//console.log(scrollTop );  //1,2,...100,...200...etc (in px)
 
 		if (scrollTop >= 5100) {
@@ -94,7 +94,6 @@ const PressKit = () => {
 	];
 
 	const videoRef = useRef(null);
-
 	useEffect(() => {
 		let options = {
 			rootMargin: "0px",
@@ -462,51 +461,38 @@ const PressKit = () => {
 									width: "100%",
 									height: "100%",
 								}}
-								// style={{width : "50%"}}
 								ref={videoRef}
-								src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-							></video>
+								src="/presskit/epns.mp4"
+								// muted
+								// controls
+							/>
+						
+{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/kwwnlmUpRsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+
+
+
 							{/* <iframe 
 						style={{
 							boxSizing: "border-box",
-							background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
+							background:
+								"url(/presskit/laptop.png) center center no-repeat",
 							backgroundSize: "contain",
-							padding: "11.9% 15.5% 14.8%",
+							padding: "0% 10.5% 0%",
 							position: "absolute",
 							top: 0,
 							left: 0,
 							width: "100%",
-							height:"100%",
+							height: "100%",
 						}}
-						width="560" height="390" src="https://www.youtube.com/embed/S_QemrZbOIk" frameborder="0" allowfullscreen>
+						width="560" height="315"
+						// ref={videoRef}
+						 src="https://www.youtube.com/embed/kwwnlmUpRsk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 						</iframe>  */}
 						</div>
 					</div>
-
-					{/* <div>
-						<div>
-							<iframe width="560" height="315" src="//www.youtube.com/embed/f890SC1schE" frameborder="0" allowfullscreen></iframe>
-						</div>
-					</div> */}
-					<div
-					// style={{
-					// 	// background :`url(${"/public/presskit/product.png"}) center center no-repeat` ,
-					// 	background: "url(http://i.stack.imgur.com/zZNgk.png) center center no-repeat",
-					// 	margin : " 0 0 100px 0",
-					// 	padding : "5% 17.5%"
-					// }}
-					// style={{position : "relative" , zIndex : 5 }}
-					// style={{margin : "-700px 0 0 0"}}
-					>
-						{/* <video
-							style={{width : "50%"}}
-							ref={videoRef}
-							src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-						></video> */}
-					</div>
-					{/* <img src="/presskit/product.png" style={{margin : "-200px 0 0 0"}}/> */}
 				</div>
 			</Section>
+						
 
 			{/* Speaker Events Section */}
 			<Section
