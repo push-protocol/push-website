@@ -1,12 +1,12 @@
-const countdownEpoch = 1641866400; //1678914000; // https://www.epochconverter.com/
+const countdownEpoch = 1641916800; //1678914000; // https://www.epochconverter.com/
 
 const countdown = {
-  title: "Road to Mainnet",
-  href: "https://medium.com/ethereum-push-notification-service/epns-governance-goes-live-lets-push-for-progressive-decentralized-governance-7448b58b89b4",
+  title: "Push for Mainnet",
+  href: "https://app.epns.io",
   countdownEpoch: countdownEpoch,
   button: true,
-  buttonTitle: "Are you ready for Governance",
-  buttonText: "EPNS Governance is LIVE!",
+  buttonTitle: "Check out EPNS Dapp",
+  buttonText: "EPNS Live on Mainnet!",
   hide: false,
 }
 

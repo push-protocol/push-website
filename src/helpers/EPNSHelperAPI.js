@@ -31,22 +31,19 @@ const EPNSHelperAPI = {
   },
   // To retrieve a channel address from it's id
   getChannelAddressFromID: async (channelID, contract) => {
-    const enableLogs = 0;
-
     return new Promise ((resolve, reject) => {
       // To get channel info from a channel address
-      contract.mapAddressChannels(channelID)
+      contract.channelById(channelID)
         .then(response => {
-          if (enableLogs) console.log("getChannelAddressFromID() --> %o", response.toString());
+          // console.log("getChannelAddressFromID() --> %o", response.toString());
           resolve(response.toString());
         })
-        .catch(err => { if (enableLogs) console.log("!!!Error, getChannelAddressFromID() --> %o", err); reject(err); });
+        .catch(err => { console.log("!!!Error, getChannelAddressFromID() --> %o", err); reject(err); });
     })
   },
   // To retrieve a channel's Info from channel address
   getChannelInfo: async (channel, contract) => {
     const enableLogs = 0;
-
     return new Promise ((resolve, reject) => {
       // To get channel info from a channel address
       contract.channels(channel)
@@ -101,12 +98,16 @@ const EPNSHelperAPI = {
     })
   },
   // Retrive IPFS File from ipfshash
-  getJsonFileFromIdentity: async(identity) => {
+  getJsonFileFromIdentity: async(identity, channel) => {
     const enableLogs = 0;
+
 
     return new Promise ((resolve, reject) => {
       // Split Channel Identity, delimeter of identity is "+"
-      const ids = identity.split("+"); // First segment is storage type, second is the pointer to it
+      if(!identity){
+        reject("There is no identity file for channel:",channel);
+      }
+      const ids = identity?.split("+") || []; // First segment is storage type, second is the pointer to it
 
       if (ids[0] == 1) {
         // IPFS HASH
@@ -132,9 +133,14 @@ const EPNSHelperAPI = {
 
     return new Promise ((resolve, reject) => {
       // To get channel info from a channel address
-      EPNSHelperAPI.getChannelInfo(channel, contract)
-        .then(response => EPNSHelperAPI.getChannelEvent(channel, response.channelStartBlock.toNumber(), response.channelUpdateBlock.toNumber(), contract))
-        .then(response => EPNSHelperAPI.getJsonFileFromIdentity(response))
+      this.getChannelInfo(channel, contract)
+        .then(response => this.getChannelEvent(channel, response.channelStartBlock.toNumber(), response.channelUpdateBlock.toNumber(), contract))
+        .then(response => {
+          // add little hack for now to change coindesk's descriptioon
+          const hash = channel === "0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c" ? "1+bafkreif643vf3cteadznccivnsk5uj26e3ls7onbshnldb3aej3omrxsau" : response
+          return this.getJsonFileFromIdentity(hash, channel)
+          // return this.getJsonFileFromIdentity(response, channel)
+        })
         .then(response => {
           if (enableLogs) console.log("getChannelJsonFromChannelAddress() --> %o", response);
           resolve(response);
@@ -151,8 +157,9 @@ const EPNSHelperAPI = {
 
     return new Promise ((resolve, reject) => {
       // To get channel info from a channel address
-      EPNSHelperAPI.getUserInfo(user, contract)
-        .then(response => EPNSHelperAPI.getChannelJsonFromChannelAddress(user, contract))
+      // EPNSCoreHelper.getUserInfo(user, contract)
+      //   .then(response => EPNSCoreHelper.getChannelJsonFromChannelAddress(user, contract))
+      this.getChannelJsonFromChannelAddress(user, contract)
         .then(response => {
           if (enableLogs) console.log("getChannelJsonFromUserAddress() --> %o", response);
           resolve(response);
@@ -185,7 +192,7 @@ const EPNSHelperAPI = {
     const enableLogs = 0;
 
     return new Promise ((resolve, reject) => {
-      EPNSHelperAPI.getTotalNumberOfChannels(contract)
+      this.getTotalNumberOfChannels(contract)
         .then(async (response) => {
           let channelsInfo = [];
           const channelsCount = response;
@@ -209,8 +216,8 @@ const EPNSHelperAPI = {
           }
 
           const promises = channelArrays.map(async (channelID) => {
-            await EPNSHelperAPI.getChannelAddressFromID(channelID, contract)
-              .then(response => EPNSHelperAPI.getChannelInfo(response, contract))
+            await this.getChannelAddressFromID(channelID, contract)
+              .then(response => this.getChannelInfo(response, contract))
               .then(response => {
                 if (enableLogs) console.log("getChannelsMetaLatestToOldest(%d, %d) --> %o", channelID, numChannels, channelsInfo);
                 channelsInfo = [response, ...channelsInfo];
@@ -240,6 +247,39 @@ const EPNSHelperAPI = {
           resolve(response.toNumber());
         })
         .catch(err => { console.log("!!!Error, getTotalNumberOfUsers() --> %o", err); reject(err); });
+    })
+  },
+  // To retrieve public key of a user
+  getPublicKey: async (address, contract) => {
+    const enableLogs = 0;
+
+    return new Promise ((resolve, reject) => {
+      // To get channel ipfs hash from channel info
+      let filteredResponse;
+      contract.queryFilter('PublicKeyRegistered')
+        .then(response => {
+
+          response.forEach(function (item) {
+            if (item.args[0] == address) {
+              filteredResponse = item;
+            }
+          });
+
+          if (enableLogs) console.log("Public Key Registry Response: " + response);
+          if (enableLogs) console.log("Public Key Registry Filtered: " + filteredResponse);
+
+          if (!filteredResponse || filteredResponse.length == 0) {
+            resolve(null)
+          }
+          else {
+            resolve(filteredResponse.args[1]);
+          }
+
+        })
+        .catch((err) => {
+          console.log(err);
+          reject(err);
+        });
     })
   },
   // Helper Functions
