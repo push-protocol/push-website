@@ -860,7 +860,7 @@ function Home() {
                 <Anchor
                   href="https://app.epns.io"
                   target="_blank"
-                  title="Get Notified from EPNS Dapp (Coming Soon)"
+                  title="Get Notified from EPNS Dapp"
                   direction="column"
                   bg="#fff"
                   hover="#fafafa"
@@ -875,7 +875,7 @@ function Home() {
                     />
                   </Item>
                   <Item margin="5px 0px">
-                    <Span size="0.85em" color="#000" spacing="0.2em" weight="400" textAlign="center">EPNS dApp (Coming Soon)</Span>
+                    <Span size="0.85em" color="#000" spacing="0.2em" weight="400" textAlign="center">EPNS dApp</Span>
                   </Item>
                 </Anchor>
               </Supported>

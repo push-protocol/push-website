@@ -21,6 +21,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/dotenv": "8.2.0",
     "@yisheng90/react-loading": "1.4.4",
+    "axios": "^0.24.0",
     "babel-plugin-styled-components": "1.10.7",
     "blockies": "0.0.2",
     "blockies-identicon": "0.1.0",

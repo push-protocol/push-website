@@ -35,6 +35,15 @@ const featuredList = {
       alt: "Hackernoon Logo",
       bg: false,
     },
+    coindesk: {
+      title: "Ethereum Push Notification Service goes live in bid to bring notifications to web 3",
+      href: "https://www.coindesk.com/tech/2022/01/11/epns-goes-live-in-bid-to-bring-notifications-to-web-3/",
+      src: "coindesk",
+      alt: "Coindesk Logo",
+      bg: false,
+    }, 
+  },
+  featuredSecondary: {
     epicenter: {
       title: "Epicenter podcast about Ethereum Push Notification Service – The Decentralized Notification Protocol",
       href: "https://epicenter.tv/episodes/377",
@@ -42,8 +51,6 @@ const featuredList = {
       alt: "Epicenter Logo",
       bg: false,
     },    
-  },
-  featuredSecondary: {
     theblock: {
       title: "The Block Crypto writes about EPNS: Balaji Srinivasan, Gitcoin co-founder back $750K seed round for decentralized notification system on Ethereum",
       href: "https://www.theblockcrypto.com/linked/86953/ethereum-notification-system-seed-funding",
@@ -65,13 +72,6 @@ const featuredList = {
       alt: "Coinlist Logo",
       bg: "#e20880",
     },
-    dailygwei: {
-      title: "Anthony Sassano talks about Ethereum Push Notification Service (EPNS) Project on the DailyGWEI Channel",
-      href: "https://www.youtube.com/watch?v=4k159Kob0Cs",
-      src: "dailygwei",
-      alt: "DailyGWEI Logo",
-      bg: false,
-    },
     gitcoin: {
       title: "Ethereum Push Notification Service selected as top 20 project and unvelied at fireside",
       href: "https://twitter.com/epnsproject/status/1299018919143849984?s=20",
@@ -81,6 +81,13 @@ const featuredList = {
     },    
   },
   drilldown: {
+    dailygwei: {
+      title: "Anthony Sassano talks about Ethereum Push Notification Service (EPNS) Project on the DailyGWEI Channel",
+      href: "https://www.youtube.com/watch?v=4k159Kob0Cs",
+      src: "dailygwei",
+      alt: "DailyGWEI Logo",
+      bg: false,
+    },
     yourstory: {
       title: "Yourstory talks about EPNS and why blockchain push notifications are important",
       href: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications",
