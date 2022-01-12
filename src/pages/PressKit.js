@@ -100,27 +100,27 @@ const PressKit = () => {
 	let picWidth = window.innerWidth;
 	console.log(picWidth);
 
-	const videoRef = useRef(null);
-	useEffect(() => {
-		let options = {
-			rootMargin: "0px",
-			threshold: [0.25, 0.75],
-		};
+	// const videoRef = useRef(null);
+	// useEffect(() => {
+	// 	let options = {
+	// 		rootMargin: "0px",
+	// 		threshold: [0.25, 0.75],
+	// 	};
 
-		let handlePlay = (entries, observer) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					videoRef.current.play();
-				} else {
-					videoRef.current.pause();
-				}
-			});
-		};
+	// 	let handlePlay = (entries, observer) => {
+	// 		entries.forEach((entry) => {
+	// 			if (entry.isIntersecting) {
+	// 				videoRef.current.play();
+	// 			} else {
+	// 				videoRef.current.pause();
+	// 			}
+	// 		});
+	// 	};
 
-		let observer = new IntersectionObserver(handlePlay, options);
+	// 	let observer = new IntersectionObserver(handlePlay, options);
 
-		observer.observe(videoRef.current);
-	});
+	// 	observer.observe(videoRef.current);
+	// });
 
 	React.useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
@@ -594,25 +594,25 @@ const PressKit = () => {
 
 						<Item padding="0 10%">
 							<Item>
-								<video
-									// resizeMode="cover"
-									style={{
-										boxSizing: "border-box",
-										background:
-											"url(/presskit/laptop.png) center center no-repeat",
-										backgroundSize: "contain",
-										padding: "10% 10.5% 10%",
-										// position: "absolute",
-										top: 0,
-										left: 0,
-										width: "100%",
-										height: "100%",
-									}}
-									ref={videoRef}
-									src="/presskit/epns.mp4"
-									muted
-									// controls
-								/>
+							<ExternalLink href="https://youtu.be/kwwnlmUpRsk"> 
+								<LinkImg src="/presskit/yt1.png"/>
+							</ExternalLink>
+								<video 
+								// resizeMode="cover" 
+									autoPlay loop 
+									style={{ boxSizing: "border-box", 
+									background: "url(/presskit/laptop.png) center center no-repeat", 
+									backgroundSize: "contain", 
+									padding: "10% 10.5% 10%", 
+									// position: "absolute", 
+									top: 0, left: 0, width: "100%", height: "100%", }} 
+									// ref={videoRef} 
+									src="/presskit/epns.mp4" 
+									muted 
+									disablePictureInPicture 
+									controls 
+									controlslist="nofullscreen nodownload noremoteplayback noplaybackrate" 
+								/> 
 							</Item>
 						</Item>
 					</Item>
@@ -977,6 +977,16 @@ const Img = styled.img`
 	@media (max-width: 600px) {
 		width: 20rem;
 	}
+`;
+
+const LinkImg = styled.img`
+	height: 2em;
+`;
+const ExternalLink = styled.a`
+	position : absolute;
+	left : 11.5%;
+	top : 17%;
+	zIndex : 5;
 `;
 
 const PressKitText = styled.div`
