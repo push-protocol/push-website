@@ -389,7 +389,7 @@ const PressKit = () => {
 							direction="row"
 							tabletDirection="column"
 							align="flex-start"
-							padding="20px 0px"
+							padding="20px 0px 80px 0px"
 							style={{ alignSelf: "stretch" }}
 						>
 							<Item align="flex-start">
@@ -463,9 +463,10 @@ const PressKit = () => {
 						</Item>
 						<Item
 							direction="row"
-							align="flex-end"
-							padding="20px 0px"
+							align="flex-start"
+							padding="80px 0px 40px 0px"
 							tabletDirection="column"
+							tabletAlign="flex-end"
 							style={{ alignSelf: "stretch" }}
 						>
 							<MissingPieceImg2 src="/presskit/missing2.png" />
@@ -927,22 +928,23 @@ const MissingPieceImg1 = styled.img`
 `;
 
 const MissingPieceImg2 = styled.img`
-	height: 320px;
-	width: 320px;
-	padding: 0px 200px 0px 20px;
+	height: 400px;
+	width: 400px;
+	padding: 0px 200px 0px 0px;
 
 	@media (max-width: 1140px) {
 		padding: 0px 140px 0px 0px;
 	}
 
 	@media (max-width: 940px) {
-		height: 220px;
-		width: 220px;
+		height: 300px;
+		width: 300px;
 		padding: 0px 70px 0px 0px;
 	}
 
 	@media (max-width: 768px) {
 		padding: 0px;
+		align-items: flex-end;
 	}
 `;
 

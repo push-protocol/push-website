@@ -14,7 +14,7 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 			justify="stretch"
 			align="stretch"
 			minWidth="280px"
-			margin="20px"
+			margin="30px 20px 40px 20px"
 			maxWidth="340px"
 		>
 			<Converse
@@ -32,7 +32,7 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 						padding="0px 10px 10px 10px"
 						radius="5px"
 					>
-						<PersonImg src={imgSrc} height={250} />
+						<PersonImg src={imgSrc} height={220} />
 						<Text
 							color="#000"
 							fontWeight="600"
@@ -54,10 +54,11 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 						{subtitle !== "" && (
 							<Text
 								color="#000"
-								padding="5px"
+								padding="0px 5px 10px 5px"
+								margin="-6px 0px 0px 0px"
 								textTransform="capitalize"
 								lineHeight="19px"
-								fontSize={15}
+								fontSize={12}
 							>
 								{subtitle}
 							</Text>
@@ -173,6 +174,7 @@ const Text = styled.div`
 		props.fontSize !== undefined ? props.fontSize + "px" : "24px"};
 	line-height: ${(props) => props.lineHeight || "30px"};
 	padding: ${(props) => props.padding || "0px"};
+	margin: ${(props) => props.margin || "0px"};
 	letter-spacing: ${(props) => props.letterSpacing || "0.1em"};
 	@media (max-width: 1200px) {
 		font-size: ${(props) =>
