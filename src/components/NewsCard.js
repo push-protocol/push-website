@@ -1,7 +1,14 @@
 import React from "react";
 
 import styled from "styled-components";
-import { Item, Image, Span, Anchor, Button } from "components/SharedStyling";
+import {
+	Item,
+	Image,
+	Span,
+	Anchor,
+	Button,
+	ItemH,
+} from "components/SharedStyling";
 
 import Tilt from "react-tilt";
 
@@ -9,7 +16,7 @@ import Tilt from "react-tilt";
 function NewsCard({ title, thumbnail, logo, desc, link }) {
 	// RENDER
 	return (
-		<Item justify="stretch" align="stretch" minWidth="280px" margin="40px">
+		<Item justify="stretch" align="stretch" minWidth="280px" margin="20px">
 			<TiltModded className="Tilt" options={{ max: 40 }}>
 				<NewsCardLink
 					href={`${link}`}
@@ -68,7 +75,6 @@ function NewsCard({ title, thumbnail, logo, desc, link }) {
 }
 
 // css style
-// box-shadow: rgb(35 29 46 / 0.2) 0px 10px 40px;
 const TiltModded = styled(Tilt)``;
 
 const NewsCardLink = styled(Anchor)`

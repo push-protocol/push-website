@@ -15,6 +15,7 @@ import {
 } from "components/SharedStyling";
 import Wave from "react-wavify";
 import AdvisorsCard from "components/AdvisorsCard";
+import FoundersCard from "components/FoundersCard";
 import NewsCard from "components/NewsCard";
 import ScrollTrigger from "react-scroll-trigger";
 
@@ -96,6 +97,9 @@ const PressKit = () => {
 		},
 	];
 
+	let picWidth = window.innerWidth;
+	console.log(picWidth);
+
 	const videoRef = useRef(null);
 	useEffect(() => {
 		let options = {
@@ -170,80 +174,90 @@ const PressKit = () => {
 				</SectionHero>
 			</ScrollTrigger> */}
 
-			{/* Start EPNS Press Kit */}
+			{/* Start EPNS Press Kit -- Completed*/}
 			<Section
 				id="presskit"
 				gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(90deg, #35C5F3 0%, #E20880 100%);"
-				padding="20px 0px 80px 30px"
+				padding="40px 0px 90px 0px"
 			>
-				<PressKitSection
-					id="presskit"
-					flexDirection="row"
-					style={{
-						display: "flex",
-						justifyContent: "space-between",
-						alignItems: "center",
-					}}
-				>
-					<Item>
-						<PressKitHeading style={{ alignSelf: "flex-start" }}>
-							<Item style={{ margin: "0" }}>
+				<Content className="contentBox">
+					<Item
+						direction="row"
+						margin="0px 20px"
+						align="flex-start"
+						tabletDirection="column"
+					>
+						<Item align="flex-start">
+							<Item
+								align="flex-start"
+								padding="40px 0px 30px 0px"
+							>
 								<PressKitText
 									color="#fff"
 									fontWeight="normal"
 									fontSize={40}
 									lineHeight="50px"
-									padding="5px"
 								>
 									EPNS PRESS KIT
 								</PressKitText>
 							</Item>
-						</PressKitHeading>
-						<Content
-							style={{
-								padding: "15px",
-							}}
-						>
-							<PressKitText
-								textTransform="uppercase"
-								padding="10px"
-								color="white"
-								fontWeight="600px"
-								textAlign="left"
-							>
-								<span style={{ fontWeight: 700 }}>EPNS</span> is
-								an Ethereum-based decentralized protocol that
-								enables any and every Web3 app, irrespective of
-								what blockchain they’re based on, to send push
-								notifications to its users.
-							</PressKitText>
-							<PressKitText
-								textTransform="uppercase"
-								padding="10px"
-								color="white"
-								fontWeight="600px"
-								textAlign="left"
-							>
-								On EPNS, not the apps but the users control what
-								notifications they receive. Besides, they earn
-								regular incentives for subscribing to
-								notifications. Win-win!
-							</PressKitText>
-						</Content>
+							<Item padding="15px 0px">
+								<PressKitText
+									textTransform="uppercase"
+									padding="10px 0px"
+									color="white"
+									fontWeight="600px"
+									textAlign="left"
+								>
+									<span style={{ fontWeight: 700 }}>
+										EPNS
+									</span>{" "}
+									is an Ethereum-based decentralized protocol
+									that enables any and every Web3 app,
+									irrespective of what blockchain they’re
+									based on, to send push notifications to its
+									users.
+								</PressKitText>
+								<PressKitText
+									textTransform="uppercase"
+									padding="10px 0px"
+									color="white"
+									fontWeight="600px"
+									textAlign="left"
+								>
+									On EPNS, not the apps but the users control
+									what notifications they receive. Besides,
+									they earn regular incentives for subscribing
+									to notifications. Win-win!
+								</PressKitText>
+							</Item>
+						</Item>
+						<Item self="center" align="flex-end">
+							<Img src="/presskit/bell.png" alt="Bell Image" />
+						</Item>
 					</Item>
-					<Item>
-						<Img src="/presskit/bell.png" alt="Bell Image" />
-					</Item>
-				</PressKitSection>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
-							fill="#D01C81"
-							paused={true}
+							fill="#35c5f3"
+							paused={!animateHero}
 							options={{
-								height: 20,
+								height: 40,
 								amplitude: 30,
 								speed: 0.35,
+								points: 3,
+							}}
+						/>
+					</WaveInner>
+					<WaveInner>
+						<Wave
+							fill="#D01C85"
+							paused={!animateHero}
+							options={{
+								height: 20,
+								amplitude: 35,
+								speed: 0.25,
 								points: 3,
 							}}
 						/>
@@ -251,187 +265,96 @@ const PressKit = () => {
 				</WaveOuter>
 			</Section>
 
-			{/* Meet Founders Section */}
-			<Section 
-				id="meetfounders" 
-				padding="30px 0px 50px 0px"
+			{/* Meet Founders Section -- Completed*/}
+			<Section
+				id="meetfounders"
+				padding="40px 0px 120px 0px"
 				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
-				>
-				<PressKitSection id="meetfounders">
-					<PressKitHeading>
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								MEET OUR
-								<PressKitSpan style={{ background: "#D01C85" }}>
-									FOUNDERS{" "}
-								</PressKitSpan>
-							</h4>
-						</Item>
-					</PressKitHeading>
-					<Content
-						style={{
-							display: "flex",
-							justifyContent: "center",
-							flexDirection: "row",
-							flexWrap: "wrap",
-							alignItems: "center",
-						}}
+			>
+				<Content className="contentBox">
+					<Item
+						direction="row"
+						margin="0px 20px"
+						align="flex-start"
+						tabletDirection="column"
 					>
-						<Item
-							align="center"
-							style={{
-								flexDirection: "row",
-								flexWrap: "wrap",
-								padding: "20px",
-							}}
-						>
-							<Item align="center" padding="0px 20px">
-								<PeopleImg
-									src="/presskit/founder_harsh.png"
-									height={340}
-									width={340}
-								/>
+						<Item align="flex-start">
+							<Item
+								align="flex-start"
+								padding="40px 0px 30px 0px"
+							>
 								<PressKitText
-									color="#000"
-									fontWeight="600"
-									padding="5px"
+									color="#fff"
+									fontWeight="normal"
+									fontSize={40}
+									lineHeight="50px"
 								>
-									Harsh Rajat
-								</PressKitText>
-								<PressKitText
-									color="#D01C85"
-									fontWeight="600"
-									padding="5px"
-									textTransform="uppercase"
-									lineHeight="19px"
-									fontSize={15}
-								>
-									Founder
-								</PressKitText>
-								<PressKitText
-									color="#635C5C"
-									fontWeight="600"
-									padding="5px"
-									lineHeight="18px"
-									fontSize={14}
-								>
-									Harsh Rajat is the founder of Ethereum Push
-									Notification Service (EPNS), a decentralized
-									DeFi notifications protocol that enables
-									users (wallet addresses) to receive
-									notifications. With 11 years of
-									entrepreneurial experience in various
-									spectrum of tech; including architecting,
-									development and design in different tech
-									fields (Mobile, Web Services, SaaS,
-									Blockchain), he realised the gap in the
-									blockchain space and founded EPNS!
-								</PressKitText>
-								<Item direction="row">
-									<Anchor
-										href="https://twitter.com/harshrajat"
-										target="_blank"
+									MEET OUR{" "}
+									<span
+										style={{
+											background: "#000",
+											fontWeight: 600,
+											padding: "0px 8px",
+										}}
 									>
-										<img
-											src="/presskit/twitter_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-									<Anchor
-										href="https://www.linkedin.com/in/harshrajat/"
-										target="_blank"
-									>
-										<img
-											src="/presskit/linkedin_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-									<Anchor
-										href="mailto://harsh@epns.io"
-										target="_blank"
-									>
-										<img
-											src="/presskit/mail_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-								</Item>
+										FOUNDERS
+									</span>
+								</PressKitText>
 							</Item>
-							<Item padding="0px 20px">
-								<PeopleImg
-									src="/presskit/founder_richa.png"
-									height={340}
-									width={340}
+							<Item
+								justify="space-between"
+								direction="row"
+								wrap="wrap"
+								align="flex-start"
+								tabletDirection="column"
+							>
+								<FoundersCard
+									name="Harsh Rajat"
+									title="Founder"
+									imgSrc="/presskit/founder_harsh.png"
+									twitterUrl="https://twitter.com/harshrajat"
+									mailId="harsh@epns.io"
+									linkedinUrl="https://www.linkedin.com/in/harshrajat/"
+									desc="Harsh Rajat is the founder of
+											Ethereum Push Notification Service
+											(EPNS), a decentralized DeFi
+											notifications protocol that enables
+											users (wallet addresses) to receive
+											notifications. With 11 years of
+											entrepreneurial experience in
+											various spectrum of tech; including
+											architecting, development and design
+											in different tech fields (Mobile,
+											Web Services, SaaS, Blockchain), he
+											realised the gap in the blockchain
+											space and founded EPNS!"
 								/>
-								<PressKitText
-									color="#000"
-									fontWeight="600"
-									padding="5px"
-								>
-									Richa Joshi
-								</PressKitText>
-								<PressKitText
-									color="#D01C85"
-									fontWeight="600"
-									padding="5px"
-									textTransform="uppercase"
-									lineHeight="19px"
-									fontSize={15}
-								>
-									Co-Founder
-								</PressKitText>
-								<PressKitText
-									color="#635C5C"
-									fontWeight="600"
-									padding="5px"
-									lineHeight="18px"
-									fontSize={14}
-								>
-									Richa, the co-founder of Ethereum Push
-									Notification Service (EPNS). An alumini of
-									K.J. Somaiya Institute of engineering and
-									Information Technology, Richa began her
-									career with Wipro Limited and has 12 years
-									of techno-functional experience in product
-									management and development across multiple
-									facets of the product lifecycle. She has
-									previously worked with Deloitte,
-									contributing and leading teams before
-									foraying into the blockchain space.
-								</PressKitText>
-								<Item direction="row">
-									<Anchor
-										href="https://twitter.com/riijo"
-										target="_blank"
-									>
-										<img
-											src="/presskit/twitter_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-									<Anchor
-										href="https://in.linkedin.com/in/richa-joshi-90b04126"
-										target="_blank"
-									>
-										<img
-											src="/presskit/linkedin_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-									<Anchor
-										href="mailto://richa@epns.io"
-										target="_blank"
-									>
-										<img
-											src="/presskit/mail_logo.png"
-											alt="Twitter"
-										/>
-									</Anchor>
-								</Item>
+								<FoundersCard
+									name="Richa Joshi"
+									title="Co-Founder"
+									imgSrc="/presskit/founder_richa.png"
+									twitterUrl="https://twitter.com/riijo"
+									mailId="richa@epns.io"
+									linkedinUrl="https://in.linkedin.com/in/richa-joshi-90b04126"
+									desc="Richa, the co-founder of Ethereum
+											Push Notification Service (EPNS). An
+											alumini of K.J. Somaiya Institute of
+											engineering and Information
+											Technology, Richa began her career
+											with Wipro Limited and has 12 years
+											of techno-functional experience in
+											product management and development
+											across multiple facets of the
+											product lifecycle. She has
+											previously worked with Deloitte,
+											contributing and leading teams
+											before foraying into the blockchain
+											space."
+								/>
 							</Item>
 						</Item>
-					</Content>
-				</PressKitSection>
+					</Item>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -448,72 +371,177 @@ const PressKit = () => {
 				</WaveOuter>
 			</Section>
 
-			{/* Web3 Section */}
+			{/* Web3 Section -- Completed*/}
 			<Section
 				id="missingweb3"
-				padding="20px 0px 0px 0px"
+				padding="40px 0px 120px 0px"
 				gradient="#F3F7F8"
 			>
-				<PressKitSection id="missingweb3">
-					<PressKitHeading flexDirection="row">
-						<Item style={{ margin: "0" }} align="flex-start">
-							<h4 style={{ color: "#000", marginBottom: "60px" }}>
-								<PressKitSpan style={{ background: "#583D98" }}>
-									MISSING PIECES{" "}
-								</PressKitSpan>
-								OF WEB3
-							</h4>
-							<p style={{ marginBottom: "25px" }}>
-								Communication in StoneAge <br />
-								Web3 can not notify users <br />
-								Critical Info drop <br />
-							</p>
-						</Item>
-						<MissingPieceImg src="/presskit/missing1.png" />
-					</PressKitHeading>
-					{/* <Content
-						className="contentBox"
-						style={{
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					></Content> */}
-					<PressKitHeading
-						flex="flex-end"
-						flexDirection="row"
-						alignItems="flex-end"
+				<Content className="contentBox">
+					<Item
+						direction="column"
+						margin="0px 20px"
+						justify="space-between"
+						align="flex-start"
+						tabletDirection="column"
 					>
-						<MissingPieceImg src="/presskit/missing2.png" />
-
 						<Item
-							style={{
-								alignItems: "flex-end",
-								textAlign: "right",
-							}}
+							direction="row"
+							tabletDirection="column"
+							align="flex-start"
+							padding="20px 0px"
+							style={{ alignSelf: "stretch" }}
 						>
-							<h4 style={{ color: "#000", marginBottom: "60px" }}>
-								THE
-								<PressKitSpan style={{ background: "#583D98" }}>
-									SOLUTION{" "}
-								</PressKitSpan>
-							</h4>
-							<p style={{ marginBottom: "25px" }}>
-								Notification Protocol <br />
-								Incentivized Notifications <br />
-								Platform Agnostic Delivery <br />
-							</p>
+							<Item align="flex-start">
+								<Item
+									align="flex-start"
+									padding="40px 0px 60px 0px"
+								>
+									<PressKitText
+										color="#000"
+										fontWeight="400"
+										fontSize={40}
+										lineHeight="50px"
+										textAlign="left"
+									>
+										<span
+											style={{
+												background: "#583D98",
+												color: "#fff",
+												fontWeight: 600,
+												padding: "0px 8px",
+											}}
+										>
+											MISSING PIECES
+										</span>{" "}
+										OF WEB3
+									</PressKitText>
+								</Item>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="left"
+								>
+									<span style={{ fontWeight: 400 }}>
+										Communication is like stone age.
+									</span>
+									Protocols expects users to check their
+									actions and results repeatedly.
+								</PressKitText>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="left"
+								>
+									Wallet addresses{" "}
+									<span style={{ fontWeight: 400 }}>
+										are not notified of any Web3{" "}
+									</span>
+									activity related to them.
+								</PressKitText>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="left"
+								>
+									There is a{" "}
+									<span style={{ fontWeight: 400 }}>
+										high risk of vital information loss.
+									</span>
+								</PressKitText>
+							</Item>
+							<MissingPieceImg1 src="/presskit/missing1.png" />
 						</Item>
-					</PressKitHeading>
-					{/* <Content
-						className="contentBox"
-						style={{
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
-					></Content> */}
-				</PressKitSection>
+						<Item
+							direction="row"
+							align="flex-end"
+							padding="20px 0px"
+							tabletDirection="column"
+							style={{ alignSelf: "stretch" }}
+						>
+							<MissingPieceImg2 src="/presskit/missing2.png" />
+							<Item align="flex-end">
+								<Item
+									align="flex-end"
+									padding="40px 0px 60px 0px"
+								>
+									<PressKitText
+										color="#000"
+										fontWeight="400"
+										fontSize={40}
+										lineHeight="50px"
+									>
+										THE{" "}
+										<span
+											style={{
+												background: "#583D98",
+												color: "#fff",
+												fontWeight: 600,
+												padding: "0px 8px",
+											}}
+										>
+											SOLUTION
+										</span>
+									</PressKitText>
+								</Item>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="right"
+								>
+									With our notification protocol, you won't
+									have to check as frequently because{" "}
+									<span style={{ fontWeight: 400 }}>
+										EPNS will notify the user wallet
+										addresses tied to the service.
+									</span>
+								</PressKitText>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="right"
+								>
+									By{" "}
+									<span style={{ fontWeight: 400 }}>
+										subscribing
+									</span>
+									, you can also{" "}
+									<span style={{ fontWeight: 400 }}>
+										earn incentives.
+									</span>
+								</PressKitText>
+								<PressKitText
+									color="#252323"
+									fontWeight="300"
+									fontSize={20}
+									lineHeight="25px"
+									padding="10px 0px"
+									textAlign="right"
+								>
+									We provide{" "}
+									<span style={{ fontWeight: 400 }}>
+										platform agnostic delivery.
+									</span>
+								</PressKitText>
+							</Item>
+						</Item>
+					</Item>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -534,95 +562,60 @@ const PressKit = () => {
 			<Section
 				id="epnsproduct"
 				gradient="linear-gradient(#583D98 50%, #fff 50%)"
-				padding="0 0 15% 0"
-				// style={{ marginTop: "3rem" }}
+				padding="0 0 50px 0"
 			>
-				{/* <div
-					style={{
-						// background: "linear-gradient(#583D98 50%, #fff 50%)",
-						// padding: "20px",
-					}}
-				> */}
-					<PressKitSection id="epnsproduct">
-						<PressKitHeading flex="flex-end" alignItems="flex-end">
-							<Item style={{ margin: "0" }}>
-								<h4 style={{ color: "#000" }}>
-									THE EPNS
-									<PressKitSpan
-										style={{ background: "#1FE3EF" }}
-									>
-										PRODUCT{" "}
-									</PressKitSpan>
-								</h4>
-							</Item>
-						</PressKitHeading>
-						{/* <Content
-							className="contentBox"
-							style={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}
-						>
-
-							
-						</Content> */}
-					
-					<div 
-					style={{ padding: "0 15%" , height : "auto" }}
+				<Content className="contentBox">
+					<Item
+						direction="column"
+						margin="0px 20px"
+						align="flex-end"
+						tabletDirection="column"
 					>
-						<div
-							style={{
-								position: "relative",
-								// paddingTop: "25px",
-								// paddingBottom: "67.5%",
-								// height : "0"
-								// height: "200px",
-							}}
-						>
-							<video
-								// resizeMode="cover"
-								style={{
-									boxSizing: "border-box",
-									background:
-										"url(/presskit/laptop.png) center center no-repeat",
-									backgroundSize: "contain",
-									padding: "10% 10.5% 10%",
-									// position: "absolute",
-									top: 0,
-									left: 0,
-									width: "100%",
-									height: "100%",
-								}}
-								ref={videoRef}
-								src="/presskit/epns.mp4"
-								muted
-								// controls
-							/>
+						<Item align="flex-end" padding="40px 0px 60px 0px">
+							<PressKitText
+								color="#fff"
+								fontWeight="400"
+								fontSize={40}
+								lineHeight="50px"
+							>
+								THE EPNS{" "}
+								<span
+									style={{
+										background: "#1FE3EF",
+										fontWeight: 600,
+										padding: "0px 8px",
+									}}
+								>
+									PRODUCT
+								</span>
+							</PressKitText>
+						</Item>
 
-							{/* <iframe width="560" height="315" src="https://www.youtube.com/embed/kwwnlmUpRsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-
-							{/* <iframe 
-						style={{
-							boxSizing: "border-box",
-							background:
-								"url(/presskit/laptop.png) center center no-repeat",
-							backgroundSize: "contain",
-							padding: "0% 10.5% 0%",
-							position: "absolute",
-							top: 0,
-							left: 0,
-							width: "100%",
-							height: "100%",
-						}}
-						width="560" height="315"
-						// ref={videoRef}
-						 src="https://www.youtube.com/embed/kwwnlmUpRsk?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-						</iframe>  */}
-						</div>
-					</div>
-				{/* </div> */}
-				</PressKitSection>
+						<Item padding="0 10%">
+							<Item>
+								<video
+									// resizeMode="cover"
+									style={{
+										boxSizing: "border-box",
+										background:
+											"url(/presskit/laptop.png) center center no-repeat",
+										backgroundSize: "contain",
+										padding: "10% 10.5% 10%",
+										// position: "absolute",
+										top: 0,
+										left: 0,
+										width: "100%",
+										height: "100%",
+									}}
+									ref={videoRef}
+									src="/presskit/epns.mp4"
+									muted
+									// controls
+								/>
+							</Item>
+						</Item>
+					</Item>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -642,71 +635,51 @@ const PressKit = () => {
 			{/* Speaker Events Section */}
 			<Section
 				id="meetfounders"
-				padding="30px 0px 50px 0px"
+				padding="40px 0px 120px 0px"
 				gradient="linear-gradient(180deg, #D01C85 0%, #73459C 116.65%)"
 			>
-				<PressKitSection id="speakerevents">
-					{/* <PressKitHeading>
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								<PressKitSpan style={{ background: "#000" }}>
-									SPEAKER{" "}
-								</PressKitSpan>
-								EVENTS
-							</h4>
-						</Item>
-					</PressKitHeading> */}
-					<Content style={{ alignItems: "center" }}>
-						<Item
-							margin="20px 0px 20px 0px"
-							style={{ maxWidth: "90%" }}
-						>
-							<SpeakerEvents>
-								<SpeakerEvent disabled={true} bg="#2f1a37">
-									<Item minWidth="auto">
-										<Span
-											color="#fff"
-											weight="400"
-											size="1rem"
-											spacing="0.1em"
-										>
-											Speaker Events
-										</Span>
-									</Item>
-								</SpeakerEvent>
-								{Object.keys(speakerEventsList.events).map(
-									function (key) {
-										const item =
-											speakerEventsList.events[key];
+				<Content className="contentBox">
+					<Item margin="20px 0px 20px 0px">
+						<SpeakerEvents>
+							<SpeakerEvent disabled={true} bg="#2f1a37">
+								<Item minWidth="auto">
+									<Span
+										color="#fff"
+										weight="400"
+										size="1rem"
+										spacing="0.1em"
+									>
+										Speaker Events
+									</Span>
+								</Item>
+							</SpeakerEvent>
+							{Object.keys(speakerEventsList.events).map(
+								function (key) {
+									const item = speakerEventsList.events[key];
 
-										return (
-											<SpeakerEvent
-												key={item.src}
-												title={`${item.title}`}
-												href={`${item.href}`}
-												bg={
-													item.bg
-														? `${item.bg}`
-														: null
-												}
-												item={`${item.src}`}
-												target="_blank"
-											>
-												<Item minWidth="auto">
-													<SpeakerEventImage
-														src={`/speaker/${item.src}/${item.src}1x.png`}
-														srcSet={`./speaker/${item.src}/${item.src}2x.png 2x, ./speaker/${item.src}/${item.src}3x.png 3x`}
-														alt={`${item.alt}`}
-													/>
-												</Item>
-											</SpeakerEvent>
-										);
-									}
-								)}
-							</SpeakerEvents>
-						</Item>
-					</Content>
-				</PressKitSection>
+									return (
+										<SpeakerEvent
+											key={item.src}
+											title={`${item.title}`}
+											href={`${item.href}`}
+											bg={item.bg ? `${item.bg}` : null}
+											item={`${item.src}`}
+											target="_blank"
+										>
+											<Item minWidth="auto">
+												<SpeakerEventImage
+													src={`/speaker/${item.src}/${item.src}1x.png`}
+													srcSet={`./speaker/${item.src}/${item.src}2x.png 2x, ./speaker/${item.src}/${item.src}3x.png 3x`}
+													alt={`${item.alt}`}
+												/>
+											</Item>
+										</SpeakerEvent>
+									);
+								}
+							)}
+						</SpeakerEvents>
+					</Item>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -724,28 +697,49 @@ const PressKit = () => {
 			</Section>
 
 			{/* History Section */}
-			<Section id="history" padding="20px 0px 0px 0px" gradient="#F3F7F8">
-				<PressKitSection id="history" style={{ padding: "0px" }}>
-					<PressKitHeading flex="flex-end" alignItems="flex-end">
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								OUR
-								<PressKitSpan style={{ background: "#D01C85" }}>
-									HISTORY{" "}
-								</PressKitSpan>
-							</h4>
-						</Item>
-					</PressKitHeading>
-					<Content
-						style={{
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
+			<Section
+				id="history"
+				padding="40px 0px 120px 0px"
+				gradient="#F3F7F8"
+			>
+				<Content className="contentBox">
+					<Item
+						direction="column"
+						align="flex-end"
+						margin="0px 20px"
+						tabletDirection="column"
 					>
-						<OurHistoryImg src="/presskit/ourHistory.png" />
-					</Content>
-				</PressKitSection>
+						<Item align="flex-end" padding="40px 0px 30px 0px">
+							<PressKitText
+								color="#000"
+								fontWeight="400"
+								fontSize={40}
+								lineHeight="50px"
+							>
+								OUR{" "}
+								<span
+									style={{
+										background: "#D01C85",
+										color: "#fff",
+										fontWeight: 600,
+										padding: "0px 8px",
+									}}
+								>
+									HISTORY
+								</span>
+							</PressKitText>
+						</Item>
+					</Item>
+				</Content>
+				<Content
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
+					<OurHistoryImg src="/presskit/ourHistory.png" />
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -763,47 +757,54 @@ const PressKit = () => {
 			</Section>
 
 			{/* EPNS News Section */}
-			<Section id="news" gradient="#D01C85" padding="20px 0px 0px 0px">
-				<PressKitSection id="news">
-					<PressKitHeading>
-						<Item style={{ margin: "0 0 0 0" }}>
-							<h4 style={{ color: "#fff" }}>
-								EPNS
-								<PressKitSpan style={{ background: "black" }}>
-									in the News{" "}
-								</PressKitSpan>
-							</h4>
-						</Item>
-					</PressKitHeading>
-					<Content
-						className="contentbox"
-						style={{
-							display: "flex",
-							flexDirection: "row",
-							justifyContent: "center",
-							alignItems: "center",
-						}}
+			<Section id="news" gradient="#D01C85" padding="40px 0px 120px 0px">
+				<Content className="contentBox">
+					<Item
+						direction="row"
+						margin="0px 20px"
+						align="flex-start"
+						tabletDirection="column"
 					>
-						{/* <Item padding="20px" width="85%">
-							<Medium numberOfPosts={6} />
-						</Item> */}
-						<ItemH
-							margin="-20px"
-							align="stretch"
-							columnGap="40px"
-							rowGap="40px"
-							style={{
-								maxWidth: "100%",
-								fontSize : "13px"
-								// height : "200px"
-							}}
-						>
-							{news.map((obj) => (
-								<NewsCard {...obj} />
-							))}
-						</ItemH>
-					</Content>
-				</PressKitSection>
+						<Item align="flex-start">
+							<Item
+								align="flex-start"
+								padding="40px 0px 60px 0px"
+							>
+								<PressKitText
+									color="#fff"
+									fontWeight="normal"
+									fontSize={40}
+									lineHeight="50px"
+								>
+									EPNS{" "}
+									<span
+										style={{
+											background: "#000",
+											fontWeight: 600,
+											padding: "0px 8px",
+										}}
+									>
+										in the News
+									</span>
+								</PressKitText>
+							</Item>
+							<ItemH
+								align="stretch"
+								columnGap="40px"
+								rowGap="40px"
+								margin="-20px"
+								style={{
+									fontSize: "15px",
+									// height : "200px"
+								}}
+							>
+								{news.map((obj) => (
+									<NewsCard {...obj} />
+								))}
+							</ItemH>
+						</Item>
+					</Item>
+				</Content>
 				<WaveOuter>
 					<WaveInner>
 						<Wave
@@ -821,212 +822,155 @@ const PressKit = () => {
 			</Section>
 
 			{/* Meet Advisors Section */}
-			<Section id="meetadvisors" padding="20px 0px 0px 0px">
-				<PressKitSection id="meetadvisors">
-					<PressKitHeading flex="flex-end" alignItems="flex-end">
-						<Item style={{ margin: "0" }}>
-							<h4 style={{ color: "#000" }}>
-								MEET OUR
-								<PressKitSpan style={{ background: "#583D98" }}>
-									ADVISORS{" "}
-								</PressKitSpan>
-							</h4>
-						</Item>
-					</PressKitHeading>
-					<Content
-						style={{
-							display: "flex",
-							justifyContent: "space-evenly",
-							flexDirection: "row",
-							flexFlow: "wrap",
-						}}
+			<Section id="meetadvisors" padding="40px 0px 120px 0px">
+				<Content className="contentBox">
+					<Item
+						direction="column"
+						margin="0px 20px"
+						align="flex-end"
+						tabletDirection="column"
 					>
-						<AdvisorsCard
-							name="Nischal Shetty"
-							imgSrc="/presskit/advisor_nishal_shetty.png"
-							title="Founder, CEO | WazirX"
-							height="500px"
-							width={350}
-							subtitle="(India’s Largest Exchange, acquired by Binance)"
-							desc="The Crypto and DeFi ecosystem is missing some key infrastructure pieces. Notification is one such key infrastructure piece that is currently missing and I’m glad that the EPNS team is solving this problem."
-						/>
-						<AdvisorsCard
-							name="DeFi Dad"
-							imgSrc="/presskit/advisor_defi_dad.png"
-							height="500px"
-							width={350}
-							title="ALL THINGS DEFI"
-							desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
-						/>
-						<AdvisorsCard
-							name="Vivek Singh"
-							imgSrc="/presskit/advisor_vivek_singh.png"
-							height="500px"
-							width={350}
-							title="CO-FOUNDER, GITCOIN"
-							desc="EPNS is building critical infrastructure for Web 3. Tinkering with the incentives around notifications has huge downstream potential as we look to build an internet which serves users, not corporations. Excited to see how Harsh and Richa’s vision unfolds."
-						/>
-						<AdvisorsCard
-							name="Sandeep Nailwal"
-							imgSrc="/presskit/advisor_sandeep_nailwal.png"
-							height="500px"
-							width={350}
-							title="CO-FOUNDER, POLYGON"
-							desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3. I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
-						/>
-						<AdvisorsCard
-							name="Kernel"
-							imgSrc="/presskit/advisor_kernel.png"
-							height="500px"
-							width={350}
-							title="A GITCOIN COLLECTIVE"
-							desc="EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL.They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways."
-						/>
-					</Content>
-				</PressKitSection>
+						<Item align="flex-end" padding="40px 0px 60px 0px">
+							<PressKitText
+								color="#000"
+								fontWeight="400"
+								fontSize={40}
+								lineHeight="50px"
+							>
+								MEET OUR{" "}
+								<span
+									style={{
+										background: "#583D98",
+										color: "#fff",
+										fontWeight: 600,
+										padding: "0px 8px",
+									}}
+								>
+									ADVISORS
+								</span>
+							</PressKitText>
+						</Item>
+						<ItemH
+							align="stretch"
+							columnGap="40px"
+							rowGap="40px"
+							self="center"
+							margin="0px -20px"
+						>
+							<AdvisorsCard
+								name="Nischal Shetty"
+								imgSrc="/presskit/advisor_nishal_shetty.png"
+								title="Founder, CEO | WazirX"
+								height="500px"
+								width={320}
+								subtitle="(India’s Largest Exchange, acquired by Binance)"
+								desc="The Crypto and DeFi ecosystem is missing some key infrastructure pieces. Notification is one such key infrastructure piece that is currently missing and I’m glad that the EPNS team is solving this problem."
+							/>
+							<AdvisorsCard
+								name="DeFi Dad"
+								imgSrc="/presskit/advisor_defi_dad.png"
+								height="500px"
+								width={320}
+								title="ALL THINGS DEFI"
+								desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
+							/>
+							<AdvisorsCard
+								name="Vivek Singh"
+								imgSrc="/presskit/advisor_vivek_singh.png"
+								height="500px"
+								width={320}
+								title="CO-FOUNDER, GITCOIN"
+								desc="EPNS is building critical infrastructure for Web 3. Tinkering with the incentives around notifications has huge downstream potential as we look to build an internet which serves users, not corporations. Excited to see how Harsh and Richa’s vision unfolds."
+							/>
+							<AdvisorsCard
+								name="Sandeep Nailwal"
+								imgSrc="/presskit/advisor_sandeep_nailwal.png"
+								height="500px"
+								width={320}
+								title="CO-FOUNDER, POLYGON"
+								desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3. I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
+							/>
+							<AdvisorsCard
+								name="Kernel"
+								imgSrc="/presskit/advisor_kernel.png"
+								height="500px"
+								width={320}
+								title="A GITCOIN COLLECTIVE"
+								desc="EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL.They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways."
+							/>
+						</ItemH>
+					</Item>
+				</Content>
 			</Section>
 		</>
 	);
 };
 
-const MissingPieceImg = styled.img`
-	height: 400px;
-	width: 400px;
+const MissingPieceImg1 = styled.img`
+	height: 320px;
+	width: 320px;
+	padding: 0px 0px 0px 200px;
 
-	@media (max-width: 900px) {
-		height: 250px;
-		width: 250px;
+	@media (max-width: 1140px) {
+		padding: 0px 0px 0px 140px;
+	}
+
+	@media (max-width: 940px) {
+		height: 220px;
+		width: 220px;
+		padding: 0px 0px 0px 70px;
+	}
+
+	@media (max-width: 768px) {
+		padding: 0px;
 	}
 `;
 
-const PeopleImg = styled.img`
-	height: ${(props) => props.height + "px" || "auto"};
-	width: ${(props) => props.width + "px" || "auto"};
-	margin: 20px 0px 10px 0px;
-	@media (max-width: 1200px) {
-		height: ${(props) =>
-			props.height !== undefined ? props.height * 0.9 + "px" : "auto"};
-		width: ${(props) =>
-			props.width !== undefined ? props.width * 0.9 + "px" : "auto"};
+const MissingPieceImg2 = styled.img`
+	height: 320px;
+	width: 320px;
+	padding: 0px 200px 0px 20px;
+
+	@media (max-width: 1140px) {
+		padding: 0px 140px 0px 0px;
 	}
-	@media (max-width: 1040px) {
-		height: ${(props) =>
-			props.height !== undefined ? props.height * 0.8 + "px" : "auto"};
-		width: ${(props) =>
-			props.width !== undefined ? props.width * 0.8 + "px" : "auto"};
+
+	@media (max-width: 940px) {
+		height: 220px;
+		width: 220px;
+		padding: 0px 70px 0px 0px;
 	}
+
 	@media (max-width: 768px) {
-		height: ${(props) =>
-			props.height !== undefined ? props.height * 0.7 + "px" : "auto"};
-		width: ${(props) =>
-			props.width !== undefined ? props.width * 0.7 + "px" : "auto"};
-	}
-	@media (max-width: 600px) {
-		height: ${(props) =>
-			props.height !== undefined ? props.height * 0.6 + "px" : "auto"};
-		width: ${(props) =>
-			props.width !== undefined ? props.width * 0.6 + "px" : "auto"};
+		padding: 0px;
 	}
 `;
 
 const OurHistoryImg = styled.img`
 	height: auto;
-	width: 100%;
-`;
-
-const PressKitHeading = styled.div`
-	display: flex;
-	padding: 2rem;
-	justify-content: ${(props) => props.flex || "flex-start"};
-	align-items: ${(props) => props.alignItems || "flex-start"};
-	flex-direction: ${(props) => props.flexDirection || "column"};
+	width: 98.6vw;
+	max-width: 1600px;
+	@media (max-width: 1200px) {
+		width: 97.6vw;
+	}
 	@media (max-width: 900px) {
-		flex-direction: column;
+		width: 96.6vw;
 	}
 	@media (max-width: 600px) {
-		padding: 20px 0px;
-	}
-
-	h4 {
-		color: black;
-		font-size: 40px;
-		line-height: 50px;
-		letter-spacing: 0.1em;
-		font-family: Source sans pro;
-		font-weight: normal;
-		margin: 15px 0px 10px 0;
-		@media (max-width: 1200px) {
-			font-size: 2rem;
-		}
-		@media (max-width: 600px) {
-			font-size: 1.2rem;
-		}
-	}
-	h5 {
-		color: white;
-		font-size: 24px;
-		font-family: Source sans pro;
-		line-height: 30px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		font-weight: bold;
-		margin: 15px 0px 15px 0;
-		@media (max-width: 600px) {
-			font-size: 0.8rem;
-		}
-	}
-	p {
-		font-size: 25px;
-		color: #252323 !important;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		font-weight: normal;
-		line-height: 31px;
-		font-family: Source sans pro;
-		@media (max-width: 600px) {
-			font-size: 15px;
-		}
-	}
-`;
-
-const PressKitSection = styled.div`
-	display: flex;
-	id:${(props) => props.id || "section"}
-	justify-content: ${(props) => props.justifyContent || "space-between"};
-	flex-direction: ${(props) => props.flexDirection || "column"};
-	padding: ${(props) => props.padding || "2rem 2rem"};
-
-	@media (max-width: 900px) {
-		flex-direction: column;
-	}
-	@media (max-width: 600px) {
-		padding: 10px 10px;
-	}
-`;
-
-const PressKitSpan = styled.span`
-	background: ${(props) => props.backgroundColor || "#E20880"};
-	padding: 10px;
-	font-family: Source sans pro;
-	color: white;
-	margin: 0 1rem 0 0.21rem;
-	font-weight: 450px;
-
-	@media (max-width: 600px) {
-		font-size: 1.2rem;
+		width: 96.2vw;
 	}
 `;
 
 const Img = styled.img`
-	width: 40rem;
+	width: 30rem;
 	@media (max-width: 1200px) {
-		width: 32rem;
-	}
-	@media (max-width: 1040px) {
 		width: 28rem;
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 1040px) {
 		width: 24rem;
+	}
+	@media (max-width: 768px) {
+		width: 22rem;
 	}
 	@media (max-width: 600px) {
 		width: 20rem;

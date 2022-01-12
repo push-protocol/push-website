@@ -11,93 +11,13 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 	boxWidth += "px";
 	return (
 		<Item
+			justify="stretch"
+			align="stretch"
+			minWidth="280px"
 			margin="20px"
-			height="auto"
-			style={{ justifyContent: "flex-start" }}
+			maxWidth="340px"
 		>
-			{/* <Item align="flex-start">
-				<Item
-					justify="flex-start"
-					height="auto"
-					minWidth={boxWidth}
-					maxWidth={boxWidth}
-					direction="column"
-					padding="20px"
-					border="10px solid #F9FBFB"
-					radius="5px"
-					style={{
-						background: "rgba(249, 251, 251, 0.5)",
-						boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-					}}
-				>
-					<PersonImg src={imgSrc} height={250} />
-					<Text
-						color="#000"
-						fontWeight="600"
-						padding="5px"
-						textTransform="capitalize"
-					>
-						{name}
-					</Text>
-					<Text
-						color="#D01C85"
-						fontWeight="600"
-						padding="5px"
-						textTransform="capitalize"
-						lineHeight="25px"
-						fontSize={20}
-					>
-						{title}
-					</Text>
-					{subtitle !== "" && (
-						<Text
-							color="#000"
-							padding="5px"
-							textTransform="capitalize"
-							lineHeight="19px"
-							fontSize={15}
-						>
-							{subtitle}
-						</Text>
-					)}
-					<Item
-						align="flex-start"
-						style={{ flexFlow: "row-reverse" }}
-					>
-						<Item style={{ alignSelf: "flex-start" }}>
-							<PersonImg src="/presskit/inverted_comma_right.png" />
-						</Item>
-						<Text
-							color="#000"
-							padding="5px"
-							textTransform="capitalize"
-							lineHeight="18px"
-							textAlign="justify"
-							fontSize={14}
-							letterSpacing="0.05em"
-						>
-							{desc}
-						</Text>
-						<Item style={{ alignSelf: "flex-end" }}>
-							<PersonImg src="/presskit/inverted_comma_left.png" />
-						</Item>
-					</Item>
-				</Item>
-				<Item
-					margin="0px 0px 0px 20px"
-					style={{
-						boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.25)",
-						minHeight: "0px",
-						maxHeight: "0px",
-						borderLeft: "20px solid transparent",
-						borderRight: "20px solid transparent",
-						borderTop: "25px solid #DBD6D3",
-					}}
-				></Item>
-			</Item> */}
-
 			<Converse
-				margin="0px"
 				style={{
 					background: "rgba(249, 251, 251, 0.5)",
 					boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -108,17 +28,15 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 					<Item
 						justify="flex-start"
 						height="auto"
-						minWidth={boxWidth}
-						maxWidth={boxWidth}
 						direction="column"
-						padding="20px"
+						padding="0px 10px 10px 10px"
 						radius="5px"
 					>
 						<PersonImg src={imgSrc} height={250} />
 						<Text
 							color="#000"
 							fontWeight="600"
-							padding="5px"
+							padding="5px 0px"
 							textTransform="capitalize"
 						>
 							{name}
@@ -156,7 +74,6 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 								padding="5px"
 								textTransform="capitalize"
 								lineHeight="18px"
-								textAlign="justify"
 								fontSize={14}
 								letterSpacing="0.05em"
 							>
@@ -178,7 +95,7 @@ const Converse = styled(ItemH)`
 	align-items: center;
 	column-gap: inherit;
 	border: 1px solid #eee;
-	border-radius: 12px;
+	border-radius: 6px;
 	z-index: 1;
 
 	&:before {
