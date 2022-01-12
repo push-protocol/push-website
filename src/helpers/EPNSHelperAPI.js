@@ -128,7 +128,7 @@ const EPNSHelperAPI = {
     });
   },
   // Helper to get Channel from Channel's address
-  getChannelJsonFromChannelAddress: async (channel, contract) => {
+  getChannelJsonFromChannelAddress: function (channel, contract) {
     const enableLogs = 0;
 
     return new Promise ((resolve, reject) => {
