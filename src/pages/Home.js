@@ -880,6 +880,30 @@ function Home() {
                 </Anchor>
               </Supported>
 
+              <Supported margin="20px" minWidth="280px" align="stretch">
+                <Anchor
+                  href="https://app.epns.io"
+                  target="_blank"
+                  title="Get Notified from EPNS Dapp"
+                  direction="column"
+                  bg="#fff"
+                  hover="#fafafa"
+                  radius="12px"
+                  align="stretch"
+                >
+                  <Item margin="0px 0px 5px 0px" self="center">
+                    <Image
+                      src="./supported/epnschromeextension.png"
+                      srcSet="./supported/epnschromeextension@2x.png 2x, ./supported/epnschromeextension@3x.png 3x"
+                      alt="Ethereum Push Notification Service (EPNS) dApp Logo"
+                    />
+                  </Item>
+                  <Item margin="5px 0px">
+                    <Span size="0.85em" color="#000" spacing="0.2em" weight="400" textAlign="center">EPNS Chrome Extension</Span>
+                  </Item>
+                </Anchor>
+              </Supported>
+
               <ItemBreak margin="10px 0px"/>
 
               <Supported margin="20px" minWidth="280px">
