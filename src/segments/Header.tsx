@@ -147,7 +147,7 @@ function Head() {
                   radius="4px"
                   hover="#e20880"
                 >
-                  Alpha dApp
+                  dApp
                 </Anchor>
               </NavItem>
             </NavItems>
