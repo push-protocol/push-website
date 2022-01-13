@@ -17,19 +17,19 @@ const DEFAULT_CHANNELS_FIRST_ROW = [
   "0x983110309620D911731Ac0932219af06091b6744",
   "0x2dbf5aFead4759E6151590E4a8F6cD596B7044F8",
 ];
-const DEFAULT_CHANNELS_SECOND_ROW = [
-  "0x12b3eE60Df8ea26D03b8035Ec90434a38A82C4C7",
-  "0xb754601d2C8C1389E6633b1449B84CcE57788566",
-];
+// const DEFAULT_CHANNELS_SECOND_ROW = [
+//   "0x12b3eE60Df8ea26D03b8035Ec90434a38A82C4C7",
+//   "0xb754601d2C8C1389E6633b1449B84CcE57788566",
+// ];
 
 // Create
 function EPNSChannelItems({ numberOfChannels }) {
   const [epnsInteactable, setEPNSInteractable] = React.useState(null);
   const [channelsLoaded, setChannelsLoaded] = React.useState(true);
   const [channels, setChannels] = React.useState(DEFAULT_CHANNELS_FIRST_ROW);
-  const [secondChannels, setSecondChannels] = React.useState(
-    DEFAULT_CHANNELS_SECOND_ROW
-  );
+  // const [secondChannels, setSecondChannels] = React.useState(
+  //   DEFAULT_CHANNELS_SECOND_ROW
+  // );
 
   React.useEffect(() => {
     if (numberOfChannels) {
@@ -104,7 +104,7 @@ function EPNSChannelItems({ numberOfChannels }) {
           );
         })}
       </ItemH>
-      <ItemH margin="40px 0px">
+      {/* <ItemH margin="40px 0px">
         {secondChannels.map(function (item, id) {
           return (
             <EPNSChannelItem
@@ -115,7 +115,7 @@ function EPNSChannelItems({ numberOfChannels }) {
             />
           );
         })}
-      </ItemH>
+      </ItemH> */}
     </ItemH>
   );
 }
