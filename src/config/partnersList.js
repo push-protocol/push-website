@@ -282,6 +282,14 @@ const partnersList = {
       alt: "Boardroom Logo",
       display: "EPNS collaborates with Boardroom"
     },
+    atlantis: {
+      title: "EPNS and Atlantis World Collaborate To Build a Communication Layer for the Social Metaverse",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-atlantis-world-collaborate-to-build-a-communication-layer-for-the-social-metaverse-a15805dc3e14",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "atlantisworld",
+      alt: "Atlantis logo",
+      display: "Notifs 🔔 for the Social Metaverse"
+    },
     clrfund: {
       title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
       href: "https://medium.com/ethereum-push-notification-service/advancing-clr-fund-funding-protocol-with-web3notifs-366b61408aa3",
