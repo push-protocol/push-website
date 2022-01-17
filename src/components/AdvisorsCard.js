@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { Item, ItemH } from "components/SharedStyling";
 
 function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
-	let boxWidth = width;
-	if (window.innerWidth <= "600") {
-		boxWidth *= 0.8;
-	}
-	boxWidth += "px";
+	// let boxWidth = width;
+	// if (window.innerWidth <= "600") {
+	// 	boxWidth *= 0.8;
+	// }
+	// boxWidth += "px";
 	return (
 		<Item
 			justify="stretch"
