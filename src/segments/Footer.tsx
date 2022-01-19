@@ -348,7 +348,7 @@ function Foot() {
             <ItemH self="stretch" justify="center" minWidth="auto" size="0.8em" margin="0px 20px 0px 20px">
               <Item align="center" margin="0px" minWidth="auto" flex="initial">
                 <Anchor
-                  href="./privacy"
+                  href="/privacy"
                   bg="transparent"
                   padding="4px 15px"
                   margin="10px"
@@ -359,7 +359,7 @@ function Foot() {
 
               <Item align="center" margin="0px" minWidth="auto" flex="initial">
                 <Anchor
-                  href="./tos"
+                  href="/tos"
                   bg="transparent"
                   padding="4px 15px"
                   margin="10px"

@@ -25,7 +25,7 @@ function Head() {
         <Nav direction="row" align="stretch" justify="flex-start" minWidth="auto" margin="0px 20px" size="0.8rem">
           <Item align="center" margin="0px" minWidth="auto" flex="0">
             <HeadAnchor
-              href="#"
+              href="/"
               bg="transparent"
               title="Homepage of EPNS"
               hoverBG="#e20880"
@@ -69,7 +69,7 @@ function Head() {
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="./#contact"
+                      href="/#contact"
                       title="Read Integration Guide"
                       bg="transparent"
                       hoverBG="#fff"
@@ -99,7 +99,7 @@ function Head() {
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="./#story"
+                      href="/#story"
                       title="Read our story"
                       bg="transparent"
                       hoverBG="#fff"
@@ -111,7 +111,19 @@ function Head() {
 
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="./faq"
+                      href="/presskit"
+                      title="EPNS Press Kit"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Press Kit
+                    </HeadAnchor>
+                  </NavSubItem>
+
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="/faq"
                       title="Frequently Asked Questions"
                       bg="transparent"
                       hoverBG="#fff"
@@ -125,7 +137,7 @@ function Head() {
 
               <NavItem align="center" margin="0px" minWidth="auto" flex="0">
                 <HeadAnchor
-                  href="./#contact"
+                  href="/#contact"
                   title="Contact Us"
                   bg="transparent"
                   hoverBG="#fff"
@@ -134,7 +146,7 @@ function Head() {
                   Contact
                 </HeadAnchor>
               </NavItem>
-
+              
               <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
                 <Anchor
                   href="https://app.epns.io"
