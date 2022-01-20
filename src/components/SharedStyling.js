@@ -88,12 +88,6 @@ export const Item = styled.div`
 	}
 
 	@media (max-width: 768px) {
-		flex-direction: ${(props) =>
-			(props.tabletDirection
-				? props.tabletDirection
-				: props.direction
-				? props.direction
-				: "column") || "column"};
 		align-items: ${(props) =>
 			(props.tabletAlign
 				? props.tabletAlign
