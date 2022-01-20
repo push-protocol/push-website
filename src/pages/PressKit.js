@@ -181,7 +181,7 @@ const PressKit = () => {
 				padding="40px 0px 90px 0px"
 			>
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="row"
 						margin="0px 20px"
 						align="flex-start"
@@ -235,7 +235,7 @@ const PressKit = () => {
 						<Item self="center" align="flex-end">
 							<Img src="/presskit/bell.png" alt="Bell Image" />
 						</Item>
-					</Item>
+					</CustomItem>
 				</Content>
 				<WaveOuter>
 					<WaveInner>
@@ -272,7 +272,7 @@ const PressKit = () => {
 				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
 			>
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="row"
 						margin="0px 20px"
 						align="flex-start"
@@ -301,7 +301,7 @@ const PressKit = () => {
 									</span>
 								</PressKitText>
 							</Item>
-							<Item
+							<CustomItem
 								justify="space-between"
 								direction="row"
 								wrap="wrap"
@@ -351,9 +351,9 @@ const PressKit = () => {
 											before foraying into the blockchain
 											space."
 								/>
-							</Item>
+							</CustomItem>
 						</Item>
-					</Item>
+					</CustomItem>
 				</Content>
 				<WaveOuter>
 					<WaveInner>
@@ -378,14 +378,14 @@ const PressKit = () => {
 				gradient="#F3F7F8"
 			>
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="column"
 						margin="0px 20px"
 						justify="space-between"
 						align="flex-start"
 						tabletDirection="column"
 					>
-						<Item
+						<CustomItem
 							direction="row"
 							tabletDirection="column"
 							align="flex-start"
@@ -460,8 +460,8 @@ const PressKit = () => {
 								</PressKitText>
 							</Item>
 							<MissingPieceImg1 src="/presskit/missing1.png" />
-						</Item>
-						<Item
+						</CustomItem>
+						<CustomItem
 							direction="row"
 							align="flex-start"
 							padding="80px 0px 40px 0px"
@@ -540,8 +540,8 @@ const PressKit = () => {
 									</span>
 								</PressKitText>
 							</Item>
-						</Item>
-					</Item>
+						</CustomItem>
+					</CustomItem>
 				</Content>
 				<WaveOuter>
 					<WaveInner>
@@ -566,7 +566,7 @@ const PressKit = () => {
 				padding="0 0 50px 0"
 			>
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="column"
 						margin="0px 20px"
 						align="flex-end"
@@ -622,7 +622,7 @@ const PressKit = () => {
 								/>
 							</Item>
 						</Item>
-					</Item>
+					</CustomItem>
 				</Content>
 				<WaveOuter>
 					<WaveInner>
@@ -677,7 +677,7 @@ const PressKit = () => {
 											<Item minWidth="auto">
 												<SpeakerEventImage
 													src={`/speaker/${item.src}/${item.src}1x.png`}
-													srcSet={`./speaker/${item.src}/${item.src}2x.png 2x, ./speaker/${item.src}/${item.src}3x.png 3x`}
+													srcSet={`/speaker/${item.src}/${item.src}2x.png 2x, /speaker/${item.src}/${item.src}3x.png 3x`}
 													alt={`${item.alt}`}
 												/>
 											</Item>
@@ -711,7 +711,7 @@ const PressKit = () => {
 				gradient="#F3F7F8"
 			>
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="column"
 						align="flex-end"
 						margin="0px 20px"
@@ -737,7 +737,7 @@ const PressKit = () => {
 								</span>
 							</PressKitText>
 						</Item>
-					</Item>
+					</CustomItem>
 				</Content>
 				<Content
 					style={{
@@ -767,7 +767,7 @@ const PressKit = () => {
 			{/* EPNS News Section */}
 			<Section id="news" gradient="#D01C85" padding="40px 0px 120px 0px">
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="row"
 						margin="0px 20px"
 						align="flex-start"
@@ -811,7 +811,7 @@ const PressKit = () => {
 								))}
 							</ItemH>
 						</Item>
-					</Item>
+					</CustomItem>
 				</Content>
 				<WaveOuter>
 					<WaveInner>
@@ -832,7 +832,7 @@ const PressKit = () => {
 			{/* Meet Advisors Section */}
 			<Section id="meetadvisors" padding="40px 0px 120px 0px">
 				<Content className="contentBox">
-					<Item
+					<CustomItem
 						direction="column"
 						margin="0px 20px"
 						align="flex-end"
@@ -907,7 +907,7 @@ const PressKit = () => {
 								desc="EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL.They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways."
 							/>
 						</ItemH>
-					</Item>
+					</CustomItem>
 				</Content>
 			</Section>
 		</>
@@ -1120,3 +1120,61 @@ const SpeakerEventImage = styled(Image)`
 `;
 
 export default PressKit;
+
+export const CustomItem = styled.div`
+	display: flex;
+	flex-direction: column;
+	flex-wrap: ${(props) => props.wrap || "wrap"};
+	position: relative;
+	justify-content: center;
+	background: ${(props) => props.bg || "transparent"};
+	flex: ${(props) => props.flex || "1"};
+	flex-direction: ${(props) => props.direction || "column"};
+	align-self: ${(props) => props.self || "auto"};
+	align-items: ${(props) => props.align || "center"};
+	justify-content: ${(props) => props.justify || "center"};
+	padding: ${(props) => props.padding || "0px"};
+	margin: ${(props) => props.margin || "0px"};
+	min-width: ${(props) => props.minWidth || "auto"};
+	max-width: ${(props) => props.maxWidth || "initial"};
+	font-size: ${(props) => props.size || "inherit"};
+	text-align: ${(props) => props.textAlign || "inherit"};
+	filter: ${(props) => props.filter || "none"};
+
+	width: ${(props) => props.width || "auto"};
+	height: ${(props) => props.height || "auto"};
+
+	border: ${(props) => props.border || "none"};
+	border-radius: ${(props) => props.radius || "0px"};
+	overflow: ${(props) => props.overflow || "initial"};
+
+	&:hover & {
+		filter: ${(props) =>
+			(props.filterHover
+				? props.filterHover
+				: props.hover
+				? props.hover
+				: "none") || "none"};
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: ${(props) =>
+			(props.tabletDirection
+				? props.tabletDirection
+				: props.direction
+				? props.direction
+				: "initial") || "initial"};
+		align-items: ${(props) =>
+			(props.tabletAlign
+				? props.tabletAlign
+				: props.align
+				? props.align
+				: "center") || "center"};
+		text-align: ${(props) =>
+			(props.tabletTextAlign
+				? props.tabletTextAlign
+				: props.textAlign
+				? props.textAlign
+				: "inherit") || "inherit"};
+	}
+`;
