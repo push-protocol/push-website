@@ -132,7 +132,7 @@ const Gov=()=>{
    }, [classShow]);
     return(
         <>
-        {/* <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
+        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            <SectionHero  padding="0px 0px 0px 0px" >
            <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
@@ -151,11 +151,28 @@ const Gov=()=>{
           }}>
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
         <img src="/governance/governanceHero1.png" style={{height:"100vh",width:"100vw"}} />
+        
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
         <img src="/governance/governanceHero2.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+       
+              <Anchor
+                href="https://medium.com/ethereum-push-notification-service"
+                target="_blank"
+                title="Read Medium Blog of Ethereum Push Notification Service"
+                bg="#674C9F"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+                style={{position:"absolute",left:"49px",width:"180px",top:"430px",height:"30px",fontSize:"1.2rem"}}
+              >
+                Learn More!
+              </Anchor>
+            
         <img src="/governance/governanceHero3.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
           </Carousel>
@@ -185,7 +202,7 @@ const Gov=()=>{
            
           </WaveOuter>
       </SectionHero>
-      </ScrollTrigger> */}
+      </ScrollTrigger>
     
           {/* Start What is Governance */}
           <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
@@ -461,7 +478,7 @@ const Gov=()=>{
        
           </Section>
 
-          {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+          <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           <WaveOuter bottom="auto" top="70px">
           <WaveInner transform="rotate(180deg)">
             <Wave fill='#fff'
@@ -475,7 +492,7 @@ const Gov=()=>{
             />
           </WaveInner>
         </WaveOuter>
-          </Section> */}
+          </Section>
 
 
 
@@ -483,9 +500,9 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px"> */}
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
-         {/* <WaveOuter>
+         <WaveOuter>
           <WaveInner>
             <Wave fill='#fff'
               paused={true}
@@ -521,7 +538,7 @@ const Gov=()=>{
       </GovernanceSection>
       
        
-          </Section> */}
+          </Section>
 
           
 
