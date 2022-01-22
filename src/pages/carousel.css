@@ -53,3 +53,10 @@
   margin: 0rem 10px !important;
   background-color: gray !important;
 }
+
+.Dashedline{
+  display: flex;
+flex-direction: row;
+justify-content: center;
+  border-top: 1px solid black;
+}
