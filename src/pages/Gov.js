@@ -43,14 +43,67 @@ const Gov=()=>{
   }
   const pushDeligatees=[
     {
-      name:"Name Here"
+      name:"aiswarya",
+      image:"/governance/aiswarya.jpg",
     },
     {
-      name:"Name Here"
+      name:"alex",
+      image:"/governance/alex.jpg",
     },
     {
-      name:"Name Here"
-    }
+      name:"ashis",
+      image:"/governance/ashis.jpg",
+    },
+    {
+      name:"auryn",
+      image:"/governance/auryn.jpg",
+    },
+    {
+      name:"beler",
+      image:"/governance/beler.jpg",
+    },
+    {
+      name:"blake",
+      image:"/governance/blake.jpg",
+    },
+    {
+      name:"defi_dad",
+      image:"/governance/defi_dad.jpg",
+    },
+    {
+      name:"imvijaygir",
+      image:"/governance/imvijaygir.jpg",
+    },
+    {
+      name:"jaf",
+      image:"/governance/jaf.jpg",
+    },
+    {
+      name:"jude",
+      image:"/governance/jude.jpg",
+    },
+    {
+      name:"krishna",
+      image:"/governance/krishna.jpg",
+    },
+    {
+      name:"pranshu",
+      image:"/governance/pranshu.jpg",
+    },
+    {
+      name:"ray",
+      image:"/governance/ray.jpg",
+    },
+    {
+      name:"robin_rrtx",
+      image:"/governance/robin_rrtx.jpg",
+    },
+    
+   
+    {
+      name:"jude",
+      image:"/governance/jude.jpg",
+    },
   ]
   const FAQS = [
     {
@@ -155,11 +208,28 @@ const Gov=()=>{
           }}>
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
         <img src="/governance/governanceHero1.png" style={{height:"100vh",width:"100vw"}} />
+        
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
         <img src="/governance/governanceHero2.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
+       
+              <Anchor
+                href="https://gov.epns.io/t/epns-push-delegatee-nominations-start-here/401"
+                target="_blank"
+                title="Read Medium Blog of Ethereum Push Notification Service"
+                bg="#674C9F"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+                style={{position:"absolute",left:"49px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
+              >
+                Learn More!
+              </Anchor>
+            
         <img src="/governance/governanceHero3.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
           </Carousel>
@@ -207,7 +277,7 @@ const Gov=()=>{
         </GovernanceHeading>
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <DottedSection>
-        TO Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement
+        Once the proposal on the Governance Discussion section meets the promotion criteria, It’s considered a formal proposal and requires formal voting which takes place on Snapshot. This is initiated by any of our PUSH Delegatees and voting will be open to all PUSH holders & stakers. Votes are open for at least 7 days and require 4% of PUSH circulating supply voting in support to pass.
         </DottedSection>
        
         </Content>
@@ -220,8 +290,8 @@ const Gov=()=>{
        
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <DottedSection>
-        Give the community a sense of ownership and responsibility which comes with governance. It’s not just a mere tool, it's an ideology which we support and want to implement.
-
+        Our progressive governance model aims to hand over the various levers of control to the EPNS governing community. We want to establish a system for the community where ideas and proposals are considered, respected, and incentivized.
+With EPNS Governance we aim to offer individuals clear paths to participate in our protocol and bolster innovation to the EPNS ecosystem.
         </DottedSection>
        
         </Content>
@@ -340,7 +410,7 @@ Social Followers & Friends">COMMUNITY</TextImg>
                   <EmphasisText>
                    DISCUSSION
                   </EmphasisText>
-                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the Governance Discussions Forum. Proposals in this phase should further the discussion towards finalizing the proposal. We expect and encourage the community to debate them and express approval or disapproval. share their support for or opposition against the proposal. At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
+                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the Governance Discussions Forum.Proposals in this phase should further the discussion towards finalizing the proposal. We expect and encourage the community to debate them and express approval or disapproval. share their support for or opposition against the proposal. At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
                 </EmphasisBlock>
             <EmphasisBlock margin="10px 10px">
 
@@ -358,6 +428,7 @@ Social Followers & Friends">COMMUNITY</TextImg>
               {/* </Solution>
             </Item>
         </Content> */}
+        
         </SectionProcessGovernance>
 
         <WaveOuter>
@@ -481,7 +552,7 @@ Social Followers & Friends">COMMUNITY</TextImg>
        
           </Section>
 
-          {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+          <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           <WaveOuter bottom="auto" top="70px">
           <WaveInner transform="rotate(180deg)">
             <Wave fill='#fff'
@@ -495,7 +566,7 @@ Social Followers & Friends">COMMUNITY</TextImg>
             />
           </WaveInner>
         </WaveOuter>
-          </Section> */}
+          </Section>
 
 
 
@@ -527,11 +598,12 @@ Social Followers & Friends">COMMUNITY</TextImg>
             <p>Active community members who have at least 75,000 $PUSH delegated to them. They will be able to create proposals on Snapshot that are approved on the forum </p>
         </item>            
         </GovernanceHeading>
-        <Carousel itemsToShow={width < 500 ? 1 : 4} enableAutoPlay={true}>
+        <Carousel itemsToShow={width < 500 ? 1 : 3} enableAutoPlay={true}>
             {
-              pushDeligatees.map(({name})=>(
-                <SliderCard>
-              <div className='img'/>
+              pushDeligatees.map(({name,image})=>(
+                <SliderCard >
+                  
+              <img className='img' src={image}/>
               <div className='text'>{name}</div>
             </SliderCard>
               ))
