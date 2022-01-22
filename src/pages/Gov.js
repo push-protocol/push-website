@@ -130,9 +130,13 @@ const Gov=()=>{
        window.removeEventListener("scroll", handleScroll, false);
      };
    }, [classShow]);
+
+  //  const communityText = "Notification Channel Subscribers App & Dapp Users Social Followers & Friends"
+
+                
     return(
         <>
-        {/* <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
+        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            <SectionHero  padding="0px 0px 0px 0px" >
            <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
@@ -185,7 +189,7 @@ const Gov=()=>{
            
           </WaveOuter>
       </SectionHero>
-      </ScrollTrigger> */}
+      </ScrollTrigger>
     
           {/* Start What is Governance */}
           <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
@@ -242,14 +246,30 @@ const Gov=()=>{
           </Section>
 
           {/* End What is Governance */}
+          <Section theme="#fff" padding="0px 0px 30px 0px" >
+              
+        
+              <GovernanceSection id="governance"  >
+              <Content className="contentBox" style={{display:"flex",justifyContent:"center",flexDirection:"row",alignItems:"center"}}>
+                <TextImg title="Notification Channel Subscribers
+
+App & Dapp Users
+
+Social Followers & Friends">COMMUNITY</TextImg>
+              <GovernanceImgFixed src='/governance/Group 6 (1).png' alt=""/>
+              <TextImg>PUSH Holders</TextImg>
+                  </Content>
+                  <TextImgBtm>Protoccol</TextImgBtm>
+              </GovernanceSection>
+            </Section>
           {/* Start Future Governance */}
           <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
-          <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+          {/* <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
           <GovernanceImgFixed src='/governance/Group 6 (1).png' alt=""/>
-              </Content>
+              </Content> */}
          
             
               <GovernanceHeading >
@@ -309,7 +329,7 @@ const Gov=()=>{
                   <EmphasisText>
                    PROPOSAL
                   </EmphasisText>
-                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
+                  <EmphasisTextSmall>This is the very start of the entire governance journey. For any proposal to be accepted and executed for EPNS Governance, the initial proposer needs to submit their proposal on the Governance Proposal Forum.</EmphasisTextSmall>
                 </EmphasisBlock>
                 <EmphasisBlock margin="10px 10px">
 
@@ -320,7 +340,7 @@ const Gov=()=>{
                   <EmphasisText>
                    DISCUSSION
                   </EmphasisText>
-                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
+                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the Governance Discussions Forum. Proposals in this phase should further the discussion towards finalizing the proposal. We expect and encourage the community to debate them and express approval or disapproval. share their support for or opposition against the proposal. At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
                 </EmphasisBlock>
             <EmphasisBlock margin="10px 10px">
 
@@ -329,9 +349,9 @@ const Gov=()=>{
                     </Content>
 
                   <EmphasisText>
-                   GOVERNANCE
+                  SNAPSHOT
                   </EmphasisText>
-                  <EmphasisTextSmall>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</EmphasisTextSmall>
+                  <EmphasisTextSmall>Once the proposal on the Governance Discussion section meets the promotion criteria, It’s considered a formal proposal and requires formal voting which takes place on Snapshot. This is initiated by any of our PUSH Delegatees and voting will be open to all PUSH holders & stakers. Votes are open for at least 7 days and require 4% of PUSH circulating supply voting in support to pass.</EmphasisTextSmall>
                 </EmphasisBlock>
                 </ItemHG>
 
@@ -483,9 +503,9 @@ const Gov=()=>{
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px"> */}
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
-         {/* <WaveOuter>
+         <WaveOuter>
           <WaveInner>
             <Wave fill='#fff'
               paused={true}
@@ -521,7 +541,7 @@ const Gov=()=>{
       </GovernanceSection>
       
        
-          </Section> */}
+          </Section>
 
           
 
@@ -1039,7 +1059,8 @@ export const H2EU = styled.h2`
 
  const ItemHG = styled(Item)`
   flex-direction: row;
-  margin-bottom: 60px;
+  margin-bottom: 60px ;
+  
   flex: ${props => props.flex || '1'};
   
   ${ItemBreak} {
@@ -1512,6 +1533,7 @@ const GovImage=styled.img`
 const EmphasisBlock = styled(Item)`
 align: center;
   min-width: 280px;
+  // margin-bottom: 60px;
 
 `
 
@@ -1526,6 +1548,8 @@ const EmphasisText = styled(Span)`
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
+  
+  
 `
 
 const EmphasisTextSmall = styled(Span)`
@@ -1548,8 +1572,31 @@ const ContentMore = styled(Span)`
     margin: 35px;
     
   }
+
 `
 
+const TextImg = styled.div`
+display:flex;
+font-family: Source sans pro;
+font-weight: 500;
+font-size: 25px;
+margin-bottom: 15rem;
+
+&:hover{
+  
+}
+`
+const TextImgBtm = styled.div`
+display:flex;
+flex-direction: row;
+align-item: center;
+justify-content:center;
+font-family: Source sans pro;
+font-weight: 500;
+font-size: 25px;
+margin-top: -40px;
+
+`
 
 
 

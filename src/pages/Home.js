@@ -1057,7 +1057,7 @@ function Home() {
 
       {/* FOLLOW OUR STORY */}
       <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
-        <Content className="contentBox">
+        <Content classNameF="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
