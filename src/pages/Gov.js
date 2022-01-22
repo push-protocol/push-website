@@ -207,11 +207,26 @@ const Gov=()=>{
           ) 
           }}>
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governanceHero1.png" style={{height:"100vh",width:"100vw"}} />
+        <img src="/governance/governancebanner.png" style={{height:"100vh",width:"100vw"}} />
         
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governanceHero2.png" style={{height:"100vh",width:"100vw"}} />
+        <Anchor
+                href="https://gov.epns.io/t/epns-push-delegatee-nominations-start-here/401"
+                target="_blank"
+                title="Read Medium Blog of Ethereum Push Notification Service"
+                bg="#674C9F"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+                style={{position:"absolute",left:"100px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
+              >
+                Learn More!
+              </Anchor>
+            
+        <img src="/governance/grantsbanner.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
        
@@ -225,12 +240,12 @@ const Gov=()=>{
                 size="0.8rem"
                 margin="10px 0px"
                 radius="4px"
-                style={{position:"absolute",left:"49px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
+                style={{position:"absolute",left:"100px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
               >
                 Learn More!
               </Anchor>
             
-        <img src="/governance/governanceHero3.png" style={{height:"100vh",width:"100vw"}} />
+        <img src="/governance/nominationsfinal.png" style={{height:"100vh",width:"100vw"}} />
         </SectionFSHero>    
           </Carousel>
           <WaveOuter>
@@ -277,7 +292,7 @@ const Gov=()=>{
         </GovernanceHeading>
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <DottedSection>
-        Once the proposal on the Governance Discussion section meets the promotion criteria, It’s considered a formal proposal and requires formal voting which takes place on Snapshot. This is initiated by any of our PUSH Delegatees and voting will be open to all PUSH holders & stakers. Votes are open for at least 7 days and require 4% of PUSH circulating supply voting in support to pass.
+        Decentralized governance is all about giving users direct control of the products they use. Rather than a central authority, the community ($PUSH token holders in our case) looks after the organization. This reduces beauracracy and opens up users to collaborate and innovate like never before.
         </DottedSection>
        
         </Content>
@@ -443,7 +458,11 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                   <EmphasisText>
                    DISCUSSION
                   </EmphasisText>
+<<<<<<< HEAD
                   <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the <A style={{textDecoration: "none"}} href="https://gov.epns.io/c/governance-discussions/5">Governance Discussions Forum</A> .Proposals in this phase should further the discussion towards finalizing the proposal. We expect and encourage the community to debate them and express approval or disapproval. share their support for or opposition against the proposal. At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
+=======
+                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft .</EmphasisTextSmall>
+>>>>>>> b94ddd80abd2d22065664533a8bd2ea169ff55b6
                 </EmphasisBlock>
             <EmphasisBlock2 margin="10px 10px">
 
@@ -453,7 +472,11 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                     </Content>
 
                   <EmphasisText>
+<<<<<<< HEAD
                   SNAPSHOT
+=======
+                  Snapshot
+>>>>>>> b94ddd80abd2d22065664533a8bd2ea169ff55b6
                   </EmphasisText>
                   <EmphasisTextSmall>Once the proposal on the Governance Discussion section meets the promotion criteria, It’s considered a formal proposal and requires formal voting which takes place on Snapshot. This is initiated by any of our PUSH Delegatees and voting will be open to all PUSH holders & stakers. Votes are open for at least 7 days and require 4% of PUSH circulating supply voting in support to pass.</EmphasisTextSmall>
                 </EmphasisBlock2>
@@ -536,21 +559,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
             <Medium numberOfPosts={3} />
 
 
-            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
-              <Anchor
-                href="https://medium.com/ethereum-push-notification-service"
-                target="_blank"
-                title="Read Medium Blog of Ethereum Push Notification Service"
-                bg="#000"
-                color="#fff"
-                spacing="0.2em"
-                size="0.8rem"
-                margin="10px 0px"
-                radius="4px"
-              >
-                Read More
-              </Anchor>
-            </Item>
+            
             
 
           </Item>
