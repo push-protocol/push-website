@@ -348,7 +348,14 @@ App & Dapp Users
 
 Social Followers & Friends">COMMUNITY</TextImg1>
               <GovernanceImgFixed src='/governance/Group 6 (1).png' alt=""/>
+              <ArrowSection>
               <LineImage src='/governance/line.svg' alt=""/>
+              <TextImgCenter>
+                  EPNSgov Team
+              </TextImgCenter>
+
+              </ArrowSection>
+              
               
               <TextImg title="These are the Voters!
 
@@ -356,14 +363,12 @@ Supporters who purchase and hold the token
 
 Stakers who provide liquidity (Uniswap currently, more coming soon)
 
-Yield Farmers earning $PUSH rewards on our Incentives Dapp">PUSH Holders</TextImg>
+Yield Farmers earning $PUSH rewards on our Incentives Dapp">PUSH HOLDERS</TextImg>
                   </Content>
-                  <TextImgCenter>
-                  EPNSgov Team
-              </TextImgCenter>
+                  
                   <TextImgBtm title="Contract Development & Management
 
-Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protocol</TextImgBtm>
+Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm>
               </GovernanceSection>
             </Section>
 
@@ -417,8 +422,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#e20880"}}>PROCESS </GovernanceSpan>  </h4></item>
         <item>
           <Line>
-          <H2EU color="#858585">PROPOSAL.DISCUSSION</H2EU> 
-          <H2EU color="#858585">.GOVERNANCE</H2EU>
+          <H2EU color="#858585">PROPOSAL.DISCUSSION.GOVERNANCE</H2EU> 
+          {/* <H2EU color="#858585"></H2EU> */}
           </Line>
         </item>              
         </GovernanceHeadingE>
@@ -437,7 +442,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                
 
                 <ItemHG margin="-20px"  columnGap="40px" rowGap="0px">
-              <EmphasisBlock1 margin="10px 10px">
+              <EmphasisBlock2 margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                           <ProposalImage src='/governance/proposal.png' alt=""/>
@@ -447,7 +452,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                    PROPOSAL
                   </EmphasisText>
                   <EmphasisTextSmall>This is the very start of the entire governance journey. For any proposal to be accepted and executed for EPNS Governance, the initial proposer needs to submit their proposal on the <A style={{textDecoration: "none"}}  href="https://gov.epns.io/c/governance-proposals/8">Governance Proposal</A>  Forum.</EmphasisTextSmall>
-                </EmphasisBlock1>
+                </EmphasisBlock2>
                 <EmphasisBlock margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -458,13 +463,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                   <EmphasisText>
                    DISCUSSION
                   </EmphasisText>
-<<<<<<< HEAD
-                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the <A style={{textDecoration: "none"}} href="https://gov.epns.io/c/governance-discussions/5">Governance Discussions Forum</A> .Proposals in this phase should further the discussion towards finalizing the proposal. We expect and encourage the community to debate them and express approval or disapproval. share their support for or opposition against the proposal. At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
-=======
-                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft .</EmphasisTextSmall>
->>>>>>> b94ddd80abd2d22065664533a8bd2ea169ff55b6
+                  <EmphasisTextSmall>The next step in the governance journey is discussion. Draft proposals from the Proposal phase that meet the promotion criteria are promoted to the <A style={{textDecoration: "none"}} href="https://gov.epns.io/c/governance-discussions/5">Governance Discussions Forum</A> . At this phase, users express their support for proposals by liking, commenting, and move on to a formal vote before moving on to the next stage: Snapshot voting (final phase).</EmphasisTextSmall>
                 </EmphasisBlock>
-            <EmphasisBlock2 margin="10px 10px">
+            <EmphasisBlock3 margin="10px 10px">
 
                   <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                           <GovImage src='/governance/governance1.svg' alt=""/>
@@ -472,14 +473,10 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
                     </Content>
 
                   <EmphasisText>
-<<<<<<< HEAD
                   SNAPSHOT
-=======
-                  Snapshot
->>>>>>> b94ddd80abd2d22065664533a8bd2ea169ff55b6
                   </EmphasisText>
                   <EmphasisTextSmall>Once the proposal on the Governance Discussion section meets the promotion criteria, It’s considered a formal proposal and requires formal voting which takes place on Snapshot. This is initiated by any of our PUSH Delegatees and voting will be open to all PUSH holders & stakers. Votes are open for at least 7 days and require 4% of PUSH circulating supply voting in support to pass.</EmphasisTextSmall>
-                </EmphasisBlock2>
+                </EmphasisBlock3>
                 </ItemHG>
 
               {/* </Solution>
@@ -581,9 +578,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">Protoc
         
       <GovernanceHeadingE >
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#35C5F3"}}>ROLES</GovernanceSpan></h4></item>
-        <item>
+        {/* <item>
         <H2EU color="#858585">LOREM IPSUM</H2EU> 
-        </item>              
+        </item>               */}
         </GovernanceHeadingE>
          
         <SectionC>
@@ -1137,12 +1134,12 @@ export const H2E = styled.h2`
   letter-spacing: ${props => props.spacing || "inherit"};
   font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
   text-align: ${props => props.textAlign || "inherit"};
-  @media(max-width: 400px)
+  @media(max-width: 500px)
   {
-    margin-top: -10px;
+    margin-top: 0px;
     font-size: 1rem;
   }
-  @media(min-width: 400px)
+  @media(min-width: 500px)
   {
     margin-top: 0px;
   }
@@ -1159,12 +1156,12 @@ export const H2EU = styled.h2`
   letter-spacing: ${props => props.spacing || "inherit"};
   font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
   text-align: ${props => props.textAlign || "inherit"};
-  @media(max-width: 400px)
+  @media(max-width: 500px)
   {
-    margin-top: -10px;
+    margin-top: 0px;
     font-size: 1rem;
   }
-  @media(min-width: 400px)
+  @media(min-width: 500px)
   {
     margin-top: 0px;
   }
@@ -1638,8 +1635,7 @@ const DisImage=styled.img`
 const GovImage=styled.img`
    height: auto;
    width: auto;
-   position: absolute;
-   z-index: 1;
+   
 
    @media(max-width:600px){
      height: 15rem;
@@ -1649,69 +1645,29 @@ const GovImage=styled.img`
 
 
 
-
-export const ItemV = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: ${props => props.wrap || 'wrap'};
-  position: relative;
-  // justify-content: center;
-  background: ${props => props.bg || 'transparent'};
-  flex: ${props => props.flex || '1'};
-  flex-direction: ${props => props.direction || 'column'};
-  align-self: ${props => props.self || 'auto'};
-  align-items: ${props => props.align || 'center'};
-  // justify-content: ${props => props.justify || 'center'};
-  padding: ${props => props.padding || "0px"};
-  margin: ${props => props.margin || '0px'};
-  min-width: ${props => props.minWidth || 'auto'};
-  max-width: ${props => props.maxWidth || 'initial'};
-  font-size: ${props => props.size || "inherit"};
-  text-align: ${props => props.textAlign || "inherit"};
-  filter: ${props => props.filter || "none"};
-
-  width: ${props => props.width || "auto" };
-  height: ${props => props.height || "auto" };
-
-  border: ${props => props.border || "none"};
-  border-radius: ${props => props.radius || "0px"};
-  overflow: ${props => props.overflow || "initial"};
-
-  &:hover & {
-    filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : "none")) || "none"};
-  }
-
-  @media (max-width: 768px) {
-    align-items: ${props => (props.tabletAlign ? props.tabletAlign : (props.align ? props.align : "center")) || "center"};
-    text-align: ${props => (props.tabletTextAlign ? props.tabletTextAlign : (props.textAlign ? props.textAlign : "inherit")) || "inherit"};
-  }
-
-  ${ItemBreak} {
-    width: 0;
-  }
+const EmphasisBlock = styled(Item)`
+  
+  align: center;
+  min-width: 280px;
 `
-
-
-const EmphasisBlock = styled(ItemV)`
+const EmphasisBlock2 = styled(Item)`
+  
+  align: center;
+  min-width: 280px;
+  margin-bottom: 4rem;
+`
+const EmphasisBlock3 = styled(Item)`
+  
+  align: center;
   min-width: 280px;
   @media(max-width: 500px)
   {
-    margin-top: -100px;
+    margin-top: 3rem;
   }
+  
 `
 
-const EmphasisBlock1 = styled(ItemV)`
-margin-bottom: 13rem;
-  min-width: 280px;
-`
-const EmphasisBlock2 = styled(ItemV)`
-margin-bottom: 8rem;
-  min-width: 280px;
-  @media(max-width: 500px)
-  {
-    margin-top: 5rem;
-  }
-`
+
 
 const EmphasisImage = styled(Item)`
   padding: 20px;
@@ -1724,8 +1680,6 @@ const EmphasisText = styled(Span)`
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
-  
-  
 `
 
 const EmphasisTextSmall = styled(Span)`
@@ -1790,15 +1744,27 @@ font-weight: 500;
 font-size: 25px;
 position: absolute;
 z-index: 1;
-@media(min-width: 900px)
+@media(min-width:1000px)
 {
-  margin-left: 57rem;
-margin-top: 23rem
-
+  margin-left: 13rem;
+  margin-top: 7rem;
 }
 
-// margin-left: 60%;
-// margin-top: 25%;
+@media(min-width: 500px)
+{
+  @media(max-width: 1000px)
+  {
+    margin-left: 12rem;
+margin-top: 8rem;
+
+  }
+  
+}
+@media(max-width: 500px)
+{
+  margin-left: 9rem;
+margin-top: 5rem;
+}
 
 `
 
@@ -1820,6 +1786,7 @@ font-size: 25px;
 }
 
 
+
 &:hover{
   
 }
@@ -1831,19 +1798,32 @@ font-size: 25px;
 const LineImage=styled.img`
 position: absolute;
 z-index:2;
-margin-left: 13%;
-margin-top: 8%;
-width: 200px;
+@media(max-width:500px)
+{
+  width: 150px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+@media(min-width: 1000px)
+{
+  width: 250px
+}
+@media(min-width: 500px)
+{
+  width: 200px
+}
+
+
    
 `;
-
-
-
+const ArrowSection = styled.div`
+position: absolute;
+z-index:2;
+display: flex;
+flex-direction: row;
+`
 
 // 
-
-
-
 
 
 // 
