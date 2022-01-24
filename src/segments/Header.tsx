@@ -120,6 +120,17 @@ function Head() {
                       FAQ
                     </HeadAnchor>
                   </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="./govern"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Governance
+                    </HeadAnchor>
+                  </NavSubItem>
                 </NavSubItems>
               </NavSub>
 
@@ -134,17 +145,7 @@ function Head() {
                   Contact
                 </HeadAnchor>
               </NavItem>
-               <NavItem align="center" margin="0px" minWidth="auto" flex="0">
-                <HeadAnchor
-                  href="./govern"
-                  title="Governance"
-                  bg="transparent"
-                  hoverBG="#fff"
-                  padding="4px 15px"
-                >
-                  Governance
-                </HeadAnchor>
-              </NavItem>
+               
               <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
                 <Anchor
                   href="https://app.epns.io"
