@@ -207,7 +207,7 @@ const Gov=()=>{
           ) 
           }}>
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
-        <img src="/governance/governancebanner.png" style={{height:"100vh",width:"100vw"}} />
+        <HeroImg src="/governance/governancebanner.png" />
         
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
@@ -226,7 +226,7 @@ const Gov=()=>{
                 Learn More!
               </Anchor>
             
-        <img src="/governance/grantsbanner.png" style={{height:"100vh",width:"100vw"}} />
+        <HeroImg src="/governance/grantsbanner.png" />
         </SectionFSHero>    
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
        
@@ -245,7 +245,7 @@ const Gov=()=>{
                 Learn More!
               </Anchor>
             
-        <img src="/governance/nominationsfinal.png" style={{height:"100vh",width:"100vw"}} />
+        <HeroImg src="/governance/nominationsfinal.png"  />
         </SectionFSHero>    
           </Carousel>
           <WaveOuter>
@@ -955,6 +955,12 @@ const animate2 =keyframes`
 100%{
   opacity: 0;
 }
+`;
+const HeroImg=styled.img`
+  @media(max-width:500px){
+    width: 180vw;
+    height: 100vh;
+  }
 `;
 const AnimateSection=styled.div`
   position: relative;
