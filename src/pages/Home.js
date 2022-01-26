@@ -882,7 +882,7 @@ function Home() {
 
               <Supported margin="20px" minWidth="280px" align="stretch">
                 <Anchor
-                  href="https://app.epns.io"
+                  href="https://chrome.google.com/webstore/detail/epns-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg"
                   target="_blank"
                   title="Get Notified from EPNS Dapp"
                   direction="column"
