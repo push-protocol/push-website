@@ -107,51 +107,48 @@ const Gov=()=>{
   ]
   const FAQS = [
     {
-      question: "WHAT ARE PUSH DELEGATES?",
+      question: "who can participate in governance?",
       renderAnswer: () => (
         <Answer>
-          <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+          <Span>Anyone and everyone with a web3 wallet with at least 1 $PUSH in it..</Span>
         </Answer>
       )
     },
    
       {
-        question: "WHAT ARE PUSH NOMINEES?",
+        question: "Is any sort of KYC required?",
         renderAnswer: () => (
           <Answer>
-            <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-            <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+            <Span>No, your wallet is your gateway to web3 and we have no KYC requirement</Span>
           </Answer>
         )
       },
 
       {
-        question: "HOW CAN I BECOME A PUSH NOMINEE?",
+        question: "Is there a wallet requirement to participate in PUSH Governance?",
         renderAnswer: () => (
           <Answer>
-            <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-            <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+            <Span>Any wallet that supports a connection i.e Metamask, Wallet Connect, or Portis works just fine.</Span>
           </Answer>
         )
       },
 
       {
-        question: "WHAT IF DON'T WISH TO BE A PUSH NOMINEE?",
+        question: "My $PUSH is currently in an exchange can I participate?        ",
         renderAnswer: () => (
           <Answer>
-            <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-            <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+            <Span>The tokens in an exchange belong to the exchange and as of now there isn't a way to participate in
+governance.
+.</Span>
           </Answer>
         )
       },
 
       {
-        question: "WHERE SHOULD I START?",
+        question: "Can I use Ethereum to vote?",
         renderAnswer: () => (
           <Answer>
-            <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-            <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+            <Span>No this is protocol-specific governance and as such you need $PUSH which is an ERC-20 token to participate.</Span>
           </Answer>
         )
       }
@@ -957,8 +954,10 @@ const animate2 =keyframes`
 }
 `;
 const HeroImg=styled.img`
+  height:100vh;
+  width:100vw;
   @media(max-width:500px){
-    width: 180vw;
+    width: 100vw;
     height: 100vh;
   }
 `;
