@@ -93,12 +93,12 @@ function App() {
 						<Route path="/faq">
 							<FAQ />
 						</Route>
-            <Route
+            {/* <Route
                 path="/grants"
               >
                 <RedirectToDiffUrl loc="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies" />
              
-              </Route>
+              </Route> */}
 						<Route path="/">
 							<Home />
 						</Route>
