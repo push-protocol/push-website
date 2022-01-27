@@ -20,7 +20,7 @@ import FAQ from "pages/FAQ";
 import PressKit from "./pages/PressKit";
 import Terms from "pages/Terms";
 import Privacy from "pages/Privacy";
-
+import RedirectToDiffUrl from './components/RedirectToDiffUrl';
 import ComingSoon from "pages/ComingSoon";
 
 import config from "config/config";
@@ -93,6 +93,12 @@ function App() {
 						<Route path="/faq">
 							<FAQ />
 						</Route>
+            <Route
+                path="/grants"
+              >
+                <RedirectToDiffUrl loc="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies" />
+             
+              </Route>
 						<Route path="/">
 							<Home />
 						</Route>
