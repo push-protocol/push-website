@@ -19,6 +19,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 
 import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
+import MediumCard from '../components/MediumCard';
 
 const Gov=()=>{
 // for checking2
@@ -550,7 +551,26 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
           <Item align="stretch" justify="flex-start" margin="0px 0px">
           
 
-            <Medium numberOfPosts={3} />
+            {/* <Medium numberOfPosts={3} /> */}
+            <ItemHE margin="-20px" align="stretch" columnGap="40px" rowGap="40px">
+    
+                    <MediumCard
+                      title="Governance Goes Live"
+                      thumbnail="https://miro.medium.com/max/1400/1*TozW0q7pvnNLDHo2ZfsPDA.gif"
+                      link="https://medium.com/ethereum-push-notification-service/epns-governance-goes-live-lets-push-for-progressive-decentralized-governance-7448b58b89b4"
+                    />
+                    <MediumCard
+                      title="Grant Goes Live"
+                      thumbnail="https://miro.medium.com/max/1400/1*FbPPmp_sWRXOf5kBtwd-1Q.png"
+                      link="https://medium.com/ethereum-push-notification-service/push-grants-program-going-live-6841515f95d8"
+                    />
+                    <MediumCard
+                      title="Snapshot Step By Step Guide"
+                      thumbnail="https://miro.medium.com/max/1400/1*sT8bP2tX88fn82mJkuyLzQ.png"
+                      link="https://medium.com/ethereum-push-notification-service/epns-snapshot-voting-a-step-by-step-guide-832e44243e2a"
+                    />
+                  
+    </ItemHE>
 
 
             
@@ -730,6 +750,16 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
     )
 }
 
+const ItemHE = styled(Item)`
+  flex-direction: row;
+  flex: ${props => props.flex || '1'};
+  
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 20rem;
+  }
+`
 
 const animate =keyframes`
     
