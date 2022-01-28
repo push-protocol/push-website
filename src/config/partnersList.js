@@ -305,6 +305,14 @@ const partnersList = {
       src: "unilend",
       alt: "unilend logo",
       display: "Get notifs for your money markets 📈"
+    },
+    bridgemututal: {
+      title: "EPNS Allies With Bridgemutual to Enable Decentralized Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-bridgemutual-to-enable-decentralized-notifications-for-users-cb2fabc4c1d8",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "bridgemutual",
+      alt: "Bridge Mutual logo",
+      display: "Bridge Mutual 🤝 EPNS"
     },    
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
@@ -321,6 +329,14 @@ const partnersList = {
       src: "pooltogether",
       alt: "Pool Together Logo",
       display: "Pool Together does pilot collab with EPNS"
+    },
+    anglemoney: {
+      title: "EPNS Allies With Angle Protocol to Facilitate Push Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-angle-protocol-to-facilitate-push-notifications-for-users-af77cf4d3e2b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "anglemoney",
+      alt: "Angle Protocol Logo",
+      display: "EPNS x ANGLE"
     },
     unstoppable: {
       title: "Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service",
