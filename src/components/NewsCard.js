@@ -1,14 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import {
-	Item,
-	Image,
-	Span,
-	Anchor,
-	Button,
-	ItemH,
-} from "components/SharedStyling";
+import { Item, Image, Span, Anchor } from "components/SharedStyling";
 
 import Tilt from "react-tilt";
 
@@ -22,6 +15,7 @@ function NewsCard({ title, thumbnail, logo, desc, link }) {
 					href={`${link}`}
 					direction="column"
 					target="_blank"
+					style={{ margin: "10px 0px" }}
 					title={`Article talking About ${title}`}
 					bg="#000"
 					hover="#000"
@@ -60,14 +54,14 @@ function NewsCard({ title, thumbnail, logo, desc, link }) {
 					>
 						{desc}
 					</Span>
-					<Button
+					{/* <Button
 						href={link}
 						border="2px solid #fff"
 						radius="10px"
 						style={{ background: "transparent" }}
 					>
 						KNOW MORE!
-					</Button>
+					</Button> */}
 				</NewsCardLink>
 			</TiltModded>
 		</Item>

@@ -178,7 +178,7 @@ const PressKit = () => {
 			<Section
 				id="presskit"
 				gradient="linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(90deg, #35C5F3 0%, #E20880 100%);"
-				padding="40px 0px 90px 0px"
+				padding="40px 0px 70px 0px"
 			>
 				<Content className="contentBox">
 					<CustomItem
@@ -252,7 +252,7 @@ const PressKit = () => {
 					</WaveInner>
 					<WaveInner>
 						<Wave
-							fill="#D01C85"
+							fill="#e20880"
 							paused={!animateHero}
 							options={{
 								height: 20,
@@ -269,7 +269,8 @@ const PressKit = () => {
 			<Section
 				id="meetfounders"
 				padding="40px 0px 120px 0px"
-				gradient="linear-gradient(180.71deg, #D01C85 0.62%, rgba(28, 46, 208, 0) 330.2%);"
+				theme="#e20880"
+				gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)"
 			>
 				<Content className="contentBox">
 					<CustomItem
@@ -452,6 +453,7 @@ const PressKit = () => {
 									lineHeight="25px"
 									padding="10px 0px"
 									textAlign="left"
+									margin="0px 0px 20px"
 								>
 									There is a{" "}
 									<span style={{ fontWeight: 400 }}>
@@ -480,6 +482,7 @@ const PressKit = () => {
 										fontWeight="400"
 										fontSize={40}
 										lineHeight="50px"
+										margin="20px 0px 0px"
 									>
 										THE{" "}
 										<span
@@ -627,7 +630,7 @@ const PressKit = () => {
 				<WaveOuter>
 					<WaveInner>
 						<Wave
-							fill="#D01C85"
+							fill="#e20880"
 							paused={true}
 							options={{
 								height: 20,
@@ -644,7 +647,8 @@ const PressKit = () => {
 			<Section
 				id="meetfounders"
 				padding="40px 0px 120px 0px"
-				gradient="linear-gradient(180deg, #D01C85 0%, #73459C 116.65%)"
+				theme="#e20880"
+				gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)"
 			>
 				<Content className="contentBox">
 					<Item margin="20px 0px 20px 0px">
@@ -792,7 +796,7 @@ const PressKit = () => {
 											padding: "0px 8px",
 										}}
 									>
-										in the News
+										IN THE NEWS
 									</span>
 								</PressKitText>
 							</Item>
@@ -871,7 +875,7 @@ const PressKit = () => {
 								title="Founder, CEO | WazirX"
 								height="500px"
 								width={320}
-								subtitle="(India’s Largest Exchange, acquired by Binance)"
+								// subtitle="(India’s Largest Exchange, acquired by Binance)"
 								desc="The Crypto and DeFi ecosystem is missing some key infrastructure pieces. Notification is one such key infrastructure piece that is currently missing and I’m glad that the EPNS team is solving this problem."
 							/>
 							<AdvisorsCard
@@ -880,7 +884,8 @@ const PressKit = () => {
 								height="500px"
 								width={320}
 								title="ALL THINGS DEFI"
-								desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
+								desc="EPNS was a oh-shit light bulb moment for me. DeFi and crypto communications are a mess at the moment. The ability to share product updates, notifications related to invested assets (ie real-time CDP liquidation warnings), "
+								more="urgent messages about bugs, new liquidity mining opportunities, or simply engage with your users based on wallets actually holding exposure to the native asset of your protocol… is a huge step forward. We needed EPNS yesterday and that’s why I’m excited to be invested and working with this team."
 							/>
 							<AdvisorsCard
 								name="Vivek Singh"
@@ -896,7 +901,7 @@ const PressKit = () => {
 								height="500px"
 								width={320}
 								title="CO-FOUNDER, POLYGON"
-								desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3. I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
+								desc="The lack of notifications and communication of key information to users of Web3 protocols and services has been one of the greatest user experience barriers in Web3.  I’m excited to be a part of this journey and to see Harsh and Richa pull this amazing feat off."
 							/>
 							<AdvisorsCard
 								name="Kernel"
@@ -1007,6 +1012,7 @@ const PressKitText = styled.div`
 		props.fontSize !== undefined ? props.fontSize + "px" : "24px"};
 	line-height: ${(props) => props.lineHeight || "30px"};
 	padding: ${(props) => props.padding || "0px"};
+	margin: ${(props) => props.margin || "0px"};
 	letter-spacing: ${(props) => props.letterSpacing || "0.1em"};
 	@media (max-width: 1200px) {
 		font-size: ${(props) =>

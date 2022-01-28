@@ -33,7 +33,7 @@ const speakerEventsList = {
 			href: "",
 			src: "ethindia",
 			alt: "EPNS ETH India Speaker Events",
-			bg: false,
+			bg: "#e20880",
 		},
 		ethsgp: {
 			title: "Ethereum Push Notification ETH Singapore Speaker Events",
@@ -68,7 +68,7 @@ const speakerEventsList = {
 			href: "",
 			src: "solanabreakpoint",
 			alt: "EPNS Solana Breakpoint Speaker Events",
-			bg: false,
+			bg: "#e20880",
 		},
 		thetalkshow: {
 			title: "Ethereum Push Notification The Talk Show 25 Speaker Events",

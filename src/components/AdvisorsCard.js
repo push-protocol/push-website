@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
-import { Item, ItemH } from "components/SharedStyling";
+import { BsChevronDoubleRight, BsChevronDoubleLeft } from "react-icons/bs";
+import { Item, ItemH, Button, Span } from "components/SharedStyling";
 
-function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
+function AdvisorsCard({
+	name,
+	title,
+	subtitle = "",
+	imgSrc,
+	desc,
+	width,
+	more = "",
+}) {
+	const [readMore, setReadMore] = useState(false);
 	// let boxWidth = width;
 	// if (window.innerWidth <= "600") {
 	// 	boxWidth *= 0.8;
@@ -35,23 +45,24 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 						<PersonImg src={imgSrc} height={220} />
 						<Text
 							color="#000"
-							fontWeight="600"
-							padding="5px 0px"
+							fontWeight={900}
+							padding="5px 0px 0px"
 							textTransform="capitalize"
+							fontSize={23}
 						>
 							{name}
 						</Text>
 						<Text
 							color="#D01C85"
-							fontWeight="600"
-							padding="5px"
+							fontWeight={900}
+							padding="0px 5px 5px"
 							textTransform="capitalize"
 							lineHeight="25px"
-							fontSize={20}
+							fontSize={15}
 						>
 							{title}
 						</Text>
-						{subtitle !== "" && (
+						{/* {subtitle !== "" && (
 							<Text
 								color="#000"
 								padding="0px 5px 10px 5px"
@@ -62,7 +73,7 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 							>
 								{subtitle}
 							</Text>
-						)}
+						)} */}
 						<Item
 							align="flex-start"
 							style={{ flexFlow: "row-reverse" }}
@@ -73,16 +84,67 @@ function AdvisorsCard({ name, title, subtitle = "", imgSrc, desc, width }) {
 							<Text
 								color="#000"
 								padding="5px"
+								margin="0px 0px 10px"
 								textTransform="capitalize"
 								lineHeight="18px"
 								fontSize={14}
 								letterSpacing="0.05em"
 							>
 								{desc}
+								{readMore && more}
 							</Text>
 							<Item style={{ alignSelf: "flex-end" }}>
 								<PersonImg src="/presskit/inverted_comma_left.png" />
 							</Item>
+						</Item>
+						<Item
+							style={{ alignSelf: "flex-end" }}
+							margin="5px 25px 5px 0px"
+						>
+							{!readMore && more !== "" && (
+								<Button
+									onClick={() => setReadMore(true)}
+									bg="none"
+									padding="5px 7px"
+									radius="4px"
+								>
+									<Span
+										margin="0px 5px 0px 0px"
+										color="#D01C85"
+										weight={900}
+										size="0.8rem"
+									>
+										Read More
+									</Span>
+									<BsChevronDoubleRight
+										size={11}
+										margin="0px 5px"
+										color="#D01C85"
+									/>
+								</Button>
+							)}
+							{readMore && more !== "" && (
+								<Button
+									onClick={() => setReadMore(false)}
+									bg="none"
+									padding="5px 7px"
+									radius="4px"
+								>
+									<Span
+										margin="0px 5px 0px 0px"
+										color="#D01C85"
+										weight={900}
+										size="0.8rem"
+									>
+										Read Less
+									</Span>
+									<BsChevronDoubleLeft
+										size={11}
+										margin="0px 5px"
+										color="#D01C85"
+									/>
+								</Button>
+							)}
 						</Item>
 					</Item>
 				</ConverseInner>
