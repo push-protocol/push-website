@@ -134,6 +134,84 @@ function Head() {
                 </NavSubItems>
               </NavSub>
 
+              <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
+                <NavItem align="center" margin="0px" minWidth="auto" flex="none">
+                  <HeadAnchor
+                    title="Documentation"
+                    bg="transparent"
+                    hoverBG="#fff"
+                    padding="4px 15px"
+                  >
+                    <ItemH minWidth="auto" margin="0px">
+                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Governance</Span>
+                      <BsChevronDown size={12} color="#fff"/>
+                    </ItemH>
+                  </HeadAnchor>
+                </NavItem>
+
+                <NavSubItems>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="./govern"
+                      title="Read our story"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Website
+                    </HeadAnchor>
+                  </NavSubItem>
+
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="http://gov.ens.io/"
+                      title="Frequently Asked Questions"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Forum
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Grants
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://snapshot.org/#/epns.eth"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Snapshot
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem  align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                    className="Glow"
+                      href="http://incentives.epns.io/"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      <div >
+                      DELEGATE
+                      </div>
+                    </HeadAnchor>
+                  </NavSubItem>
+                </NavSubItems>
+              </NavSub>
+
               <NavItem align="center" margin="0px" minWidth="auto" flex="0">
                 <HeadAnchor
                   href="./#contact"
@@ -298,7 +376,7 @@ const NavSubItem = styled(NavItem)`
     justify-content: center;
     align-items: center;
     flex: 1;
-
+    
     &:before {
       top: 0;
       bottom: 0;
@@ -308,6 +386,13 @@ const NavSubItem = styled(NavItem)`
     &:hover:before {
       opacity: 0.25;
     }
+  }
+
+  .Glow{
+    &:hover{
+      background:#e22780
+    }
+  }
   }
 `
 
