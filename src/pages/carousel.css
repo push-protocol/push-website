@@ -75,7 +75,7 @@ justify-content: center;
 
 
 .wave{
- 
+  height: 151px;
   margin-top: 10px;
   margin-right: -10px;
   margin-left: auto;
@@ -103,4 +103,17 @@ font-size: 20px;
   margin-top: 15px;
   font-family: source sans pro;
    background-color: #5CC2EE;
+}
+
+.budgettext{
+
+  position: absolute;
+  left: 0px;
+  font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    font-family: source sans pro;
+     background-color: #EC008C;
+  
+
 }

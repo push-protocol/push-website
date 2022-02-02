@@ -523,7 +523,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 <ItemGrants margin="4rem" >
 
   <GrantsCard>
-Hello
+  <span class="budgettext"><span style={{marginLeft:"20px", marginRight:"60px", color:"#FFFFFF"}}>TOTAL BUDGET</span></span>
+
   </GrantsCard>
 
   <GrantsCard>
