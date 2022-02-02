@@ -60,3 +60,47 @@ flex-direction: row;
 justify-content: center;
   border-top: 1px solid black;
 }
+
+
+/* grant section cards  */
+.key{
+  height: 151px;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  margin-right: 10px;
+  margin-left: auto;
+  position: relative;
+
+}
+
+
+.wave{
+ 
+  margin-top: 10px;
+  margin-right: -10px;
+  margin-left: auto;
+  position: relative;
+
+}
+
+.keytext {
+  left: 0px;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 15px;
+  font-family: source sans pro;
+  background-color: #674C9F;
+
+
+}
+
+.wavetext{
+  position: absolute;
+left: 0px;
+font-size: 20px;
+  font-weight: 400;
+  margin-top: 15px;
+  font-family: source sans pro;
+   background-color: #5CC2EE;
+}

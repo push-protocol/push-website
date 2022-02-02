@@ -482,8 +482,74 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
         </Content> */}
         
         </SectionProcessGovernance>
+        
+{/* <WaveOuter>
+          <WaveInner>
+            <Wave fill='#e20880'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter> */}
 
-        <WaveOuter>
+       
+
+
+      </SectionProcess>
+
+          {/* End process Governance */}
+{/* start push grants secton */}
+
+<SectionProcess>
+
+
+<GovernanceHeadingE >
+        <item><h4>PUSH<GovernanceSpan  style={{background:"#e20880"}}>GRANTS PROGRAM </GovernanceSpan>  </h4></item>
+                   
+        </GovernanceHeadingE>
+
+        <GrantsText>
+        The grants are open for beginners and experienced people. Whatever your level of familiarity with development, we'll start the conversation in order to try to help and find ways to grow your contribution over time.The program will have initially a small scope, funding target 
+        </GrantsText>
+
+        <SectionGrants>
+<SectionProcessGovernance>
+
+<ItemGrants margin="4rem" >
+
+  <GrantsCard>
+Hello
+  </GrantsCard>
+
+  <GrantsCard>
+<img class="key" src="/governance/KEY.svg"/>
+
+<span class="keytext"><span style={{marginLeft:"20px", marginRight:"60px", color:"#FFFFFF"}}>TIME FRAME</span></span>
+
+
+  </GrantsCard>
+
+  <GrantsCard>
+  <img class="wave" src="/governance/wavenumber.svg"/>
+  <span class="wavetext"><span style={{marginLeft:"15px", marginRight:"10px", color:"#FFFFFF"}}>APPLICATIONS RECEIVED</span></span>
+
+  </GrantsCard>
+
+  </ItemGrants>
+  
+ 
+</SectionProcessGovernance>
+
+
+  </SectionGrants>
+
+
+<WaveOuter>
           <WaveInner>
             <Wave fill='#e20880'
               paused={true}
@@ -498,10 +564,18 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
         </WaveOuter>
 
 
-      </SectionProcess>
 
-          {/* End process Governance */}
 
+</SectionProcess>
+
+
+
+
+
+
+
+
+{/* end push grants section */}
 
 
 
@@ -761,6 +835,53 @@ const ItemHE = styled(Item)`
   }
 `
 
+
+
+const SectionGrants = styled.div`
+display: flex;
+flex-direction: column;
+`;
+
+const ItemGrants = styled(Item)`
+flex-direction: row;
+flex: ${props => props.flex || '1'};
+justify-content: space-between;
+
+
+@media (max-width: 480px) {
+  flex-direction: column;
+`
+
+const GrantsText = styled(Span)`
+
+font-size: 24px;
+font-family: source sans pro;
+font-weight: 400;
+max-width: 81rem;
+ text-align: center;
+ margin-right: 8rem;
+ margin-left: 8rem;
+`;
+
+const GrantsCard = styled.div`
+display: flex;
+width: 315px;
+background-color:#FFFFFF ;
+height: 160px;
+border: 2px solid black;
+border-radius: 10px;
+margin-bottom: 5rem;
+position: relative;
+z-index: 0;
+@media(min-width: 500px)
+{
+  @media(max-width: 1000px)
+  {
+    margin-left: 10rem;
+  }
+}
+`;
+
 const animate =keyframes`
     
 0%{
@@ -921,6 +1042,11 @@ const SectionProcess = styled.section`
    overflow-x: hidden;
  }
 `;
+
+
+
+
+
 
 
 
