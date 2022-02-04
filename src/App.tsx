@@ -99,6 +99,12 @@ function App() {
                 <RedirectToDiffUrl loc="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies" />
              
               </Route> */}
+			  <Route
+                path="/notify"
+              >
+                <RedirectToDiffUrl />
+             
+              </Route>
 						<Route path="/">
 							<Home />
 						</Route>
