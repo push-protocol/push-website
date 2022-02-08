@@ -314,7 +314,7 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
 
           <WaveOuter>
           <WaveInner>
-            <Wave fill='#fff'
+            <Wave fill='#FFFFFF'
               paused={true}
               options={{
                 height: 20,
@@ -483,9 +483,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
         
         </SectionProcessGovernance>
         
-{/* <WaveOuter>
+<WaveOuter>
           <WaveInner>
-            <Wave fill='#e20880'
+            <Wave fill='#B3E5FC'
               paused={true}
               options={{
                 height: 20,
@@ -495,9 +495,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
               }}
             />
           </WaveInner>
-        </WaveOuter> */}
+        </WaveOuter>
 
-       
+     
 
 
       </SectionProcess>
@@ -505,7 +505,15 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
           {/* End process Governance */}
 {/* start push grants secton */}
 
-<SectionProcess>
+{/* <SectionProcess> */}
+{/* gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)"  */}
+{/* style={{backgrounImage: '/governance/gradient.png'}} */}
+{/* #FFCCFF 100%, */}
+{/* background:"linear-gradient(180deg,#B3E5FC 0%,#D2B4DE 100%)" */}
+{/* <GrantsImage> */}
+  <GrantsContainer style={{background:"linear-gradient(180deg,#B3E5FC 0%,#D2B4DE 100%)"}}>
+  {/* <GrantsContainer className="grantscontainer"> */}
+  {/* <GrantImg src="/governance/gradient.png"  /> */}
 
 
 <GovernanceHeadingE >
@@ -523,25 +531,55 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 <ItemGrants margin="4rem" >
 
   <GrantsCard>
-  <span class="budgettext"><span style={{marginLeft:"20px", marginRight:"60px", color:"#FFFFFF"}}>TOTAL BUDGET</span></span>
+  <img class="money" src="/governance/save-money.svg"/>
 
+
+  <GrantsContent>
+  <Keytext bgcolor="#EC008C" width="15rem"><span style={{marginLeft:"20px", color:"#FFFFFF"}}>TOTAL GRANTS BUDGET</span></Keytext>
+  <Keyheading ftcolor="#EC008C" style={{marginLeft:"2rem"}}>$1,000,000 USD</Keyheading>
+  {/* <KeyContent>*The grants are open for beginners and experienced people.</KeyContent> */}
+  </GrantsContent>
+
+  
   </GrantsCard>
 
   <GrantsCard>
 <img class="key" src="/governance/KEY.svg"/>
+<GrantsContent>
+<Keytext bgcolor="#674C9F" width="10rem"><span style={{marginLeft:"20px", color:"#FFFFFF"}}>TIME FRAME</span></Keytext>
+<Keyheading ftcolor="#674C9F" style={{marginLeft:"2.4rem"}}>JUN 26- JUL 26</Keyheading>
+<KeyContent style={{marginLeft:"2rem"}}>*The grants are open for beginners and experienced people.</KeyContent>
+</GrantsContent>
 
-<span class="keytext"><span style={{marginLeft:"20px", marginRight:"60px", color:"#FFFFFF"}}>TIME FRAME</span></span>
+
 
 
   </GrantsCard>
 
   <GrantsCard>
-  <img class="wave" src="/governance/wavenumber.svg"/>
-  <span class="wavetext"><span style={{marginLeft:"15px", marginRight:"10px", color:"#FFFFFF"}}>APPLICATIONS RECEIVED</span></span>
+  <img class="wave" src="/governance/application.svg"/>
+  <GrantsContent>
+
+  <Keytext bgcolor="#5CC2EE" width="15rem"><span style={{marginLeft:"15px", color:"#FFFFFF"}}>APPLICATIONS RECEIVED</span></Keytext>
+  <Keyheading ftcolor="#5CC2EE" style={{marginLeft:"7rem"}}>54321</Keyheading>
+  {/* <KeyContent>*The grants are open for beginners and experienced people.</KeyContent> */}
+  </GrantsContent>
+
+ 
 
   </GrantsCard>
 
   </ItemGrants>
+
+
+  <Links>
+  <a href="" class="link" style={{textDecoration:"none"}}>{'GRANTS SITE>>'}</a>
+  <a href="" class="link"  style={{textDecoration:"none"}}>{'LIVE DISCUSSION>>'}</a>
+  <a href="" class="link"  style={{textDecoration:"none"}}>{'VOTE FOR PROPOSAL>>'}</a>
+  <a href="" class="link"  style={{textDecoration:"none"}}>{'APPLY HERE>>'}</a>
+  </Links>
+
+  
   
  
 </SectionProcessGovernance>
@@ -566,8 +604,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 
 
-
-</SectionProcess>
+        </GrantsContainer>
+        {/* </GrantsImage> */}
+{/* </SectionProcess> */}
 
 
 
@@ -837,6 +876,57 @@ const ItemHE = styled(Item)`
 `
 
 
+const Keytext = styled.div`
+left: 0px;
+font-size: 20px;
+width: ${props => props.width || '70px'};
+font-weight: 400;
+margin-top: 15px;
+font-family: Source Sans Pro;
+background-color: ${props => props.bgcolor || '#FFFFFF'};
+`;
+
+
+const Keyheading = styled.div`
+font-size: 35px;
+font-weight: 600;
+font-family: Source Sans Pro;
+margin-top: 1rem;
+align: center;
+color: ${props => props.ftcolor || '#FFFFFF'};
+
+`;
+
+const KeyContent = styled.div`
+
+font-size: 12px;
+font-weight: 400;
+font-family: Source Sans Pro;
+align: center;
+width: 270px;
+height: 30px;
+margin-top: 0.7rem;
+`;
+
+const GrantsContent = styled.div`
+display: flex;
+flex-direction: column;
+position : absolute;
+justify-content: space-between;
+`;
+
+const GrantImg=styled.img`
+  height:100vh;
+  width:100vw;
+  position: absolute;
+  z-index: 0;
+  @media(max-width:500px){
+    width: 100vw;
+    height: 100vh;
+  }
+`;
+
+
 
 const SectionGrants = styled.div`
 display: flex;
@@ -849,9 +939,29 @@ flex: ${props => props.flex || '1'};
 justify-content: space-between;
 
 
+
 @media (max-width: 480px) {
   flex-direction: column;
 `
+
+const Links = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-left: 4rem;
+margin-right: 3rem;
+margin-bottom: 100px;
+align: center;
+// position: absolute;
+
+
+@media(max-width: 500px)
+{
+  // flex-direction: column;
+  margin-left: 2.5rem;
+  margin-bottom: 40px;
+}
+`;
 
 const GrantsText = styled(Span)`
 
@@ -869,11 +979,12 @@ display: flex;
 width: 315px;
 background-color:#FFFFFF ;
 height: 160px;
-border: 2px solid black;
+// border: 2px solid black;
 border-radius: 10px;
 margin-bottom: 5rem;
 position: relative;
 z-index: 0;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 @media(min-width: 500px)
 {
   @media(max-width: 1000px)
@@ -1045,6 +1156,28 @@ const SectionProcess = styled.section`
 `;
 
 
+const GrantsImage = styled.div`
+  background-image: linear-gradient(red,blue);
+`;
+
+
+const GrantsContainer = styled.section`
+  display: flex;
+  flex-direction:column;
+  background:#fff;
+  margin: 0px
+  padding: 0px
+  overflow: hidden;
+  position: relative;
+  
+
+ @media(max-width:500px){
+   overflow-y: hidden;
+   overflow-x: hidden;
+ }
+`;
+
+
 
 
 
@@ -1054,7 +1187,7 @@ const SectionProcess = styled.section`
 const SectionProcessGovernance = styled.section`
  display: flex;
 
- flex-direction: row;
+ flex-direction: column;
  margin-bottom: 120px;
  column: 0px;
  @media(min-width:400px)
