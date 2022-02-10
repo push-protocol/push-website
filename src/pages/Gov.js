@@ -487,7 +487,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
         
 <WaveOuter>
           <WaveInner>
-            <Wave fill='#B3E5FC'
+            <Wave fill='#C7E9F6'
               paused={true}
               options={{
                 height: 20,
@@ -499,12 +499,14 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
           </WaveInner>
         </WaveOuter>
 
-     
 
 
       </SectionProcess>
 
           {/* End process Governance */}
+
+
+
 {/* start push grants secton */}
 
 
@@ -525,7 +527,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
         <ItemGrants margin="4rem" >
 
-  <GrantsCard>
+  <GrantsCard className="first">
   <img class="money" src="/governance/save-money.svg"/>
 
 
@@ -537,7 +539,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
   
   </GrantsCard>
 
-  <GrantsCard>
+  <GrantsCard className="second">
 <img class="key" src="/governance/KEY.svg"/>
 <GrantsContent>
 <Keytext bgcolor="#674C9F" style={{width:'8rem',marginRight:"10rem"}}><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
@@ -550,7 +552,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
   </GrantsCard>
 
-  <GrantsCard>
+  <GrantsCard className="third">
   <img class="wave" src="/governance/application.svg"/>
   <GrantsContent>
 
@@ -587,6 +589,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
           </WaveInner>
         </WaveOuter>
 
+
       
               
         
@@ -615,12 +618,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
             />
           </WaveInner>
         </WaveOuter>
-        {/* <GovernanceHeading >
-  <item><H1E><GovernanceSpan  style={{background:"#000"}} margin='2.5rem'>LEARN MORE </GovernanceSpan> <span style={{color:"#FFFFFF"}}>ABOUT GOVERNANCE!</span>  </H1E></item>
-
-  <H2E color="#fff">MEDIUM ARTICLES</H2E>             
-  </GovernanceHeading> */}
-
+      
 
 <GovernanceHeadingE>
         <item><h4><GovernanceSpan  margint='50px' style={{background:"#000"}}><b>LEARN MORE</b></GovernanceSpan>ABOUT GOVERNANCE</h4></item>
