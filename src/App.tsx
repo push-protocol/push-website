@@ -22,7 +22,7 @@ import Terms from "pages/Terms";
 import Privacy from "pages/Privacy";
 import RedirectToDiffUrl from './components/RedirectToDiffUrl';
 import ComingSoon from "pages/ComingSoon";
-
+import Ethdenver from 'pages/Ethdenver';
 import config from "config/config";
 
 export default function () {
@@ -92,6 +92,9 @@ function App() {
 						</Route>
 						<Route path="/faq">
 							<FAQ />
+						</Route>
+						<Route path="/ethdenver">
+							<Ethdenver />
 						</Route>
             {/* <Route
                 path="/grants"
