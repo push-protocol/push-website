@@ -51,69 +51,56 @@
   color: black !important;
   box-shadow: none !important;
   margin: 0rem 10px !important;
-  background-color: gray !important;
+  /* background-color: rgb(65, 37, 37) !important; */
 }
 
-.Dashedline{
+.Dashedline {
   display: flex;
-flex-direction: row;
-justify-content: center;
+  flex-direction: row;
+  justify-content: center;
   border-top: 1px solid black;
 }
 
-
 /* grant section cards  */
-.key{
+.key {
   height: 151px;
   margin-top: 3px;
   margin-bottom: 1px;
   margin-right: 10px;
-  position: absolute;
-  margin-left: 8.5rem;
-
+  margin-left: auto;
 }
 
-
-.money{
+.money {
   height: 151px;
   margin-bottom: 5px;
   margin-right: -30px;
-  position: absolute;
-  margin-left: 7rem;
-
+  position: relative;
+  margin-left: auto;
 }
 
-
-.wave{
+.wave {
   height: 151px;
   margin-top: 10px;
   margin-right: 10px;
-  position: absolute;
-  margin-left: 10rem;
-
+  position: relative;
+  margin-left: auto;
 }
 
-.link{
+.link {
   font-size: 20px;
   font-weight: 600;
   font-family: Source Sans Pro;
   color: #534949;
   text-align: center;
-
 }
 
-
-
-@media(max-width: 500px)
-{
-  .link{
+@media (max-width: 500px) {
+  .link {
     margin-right: 0.4rem;
     font-size: 15px;
-
   }
 }
 
-
-.grantscontainer{
-  background-image:url('gradient.png');
+.grantscontainer {
+  background-image: url("gradient.png");
 }
