@@ -1490,7 +1490,7 @@ const SliderCard=styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    min-width: 310px;
+    width: 310px;
     margin: 2rem;
     min-height:400px;
     background-image: linear-gradient(360deg,#E20880,#674C9F,#35C5F3);
