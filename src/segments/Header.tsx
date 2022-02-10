@@ -201,7 +201,7 @@ function Head() {
                       href="http://incentives.epns.io/"
                       title="Governance"
                       bg="transparent"
-                      hoverBG="#fff"
+                      hoverBG="#e20880"
                       padding="4px 15px"
                     >
                       <div >
