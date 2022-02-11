@@ -70,7 +70,7 @@ function App() {
 	});
 
 	console.log("url",window.location)
-	if(window.location.pathname==="/ethdenver"){
+	if(window.location.pathname==="/ethdenver" || window.location.pathname==="/ethdenver/" ){
 		return (
 			<>
 		<Ethdenver />
