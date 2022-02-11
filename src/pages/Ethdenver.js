@@ -19,7 +19,7 @@ function Ethdenver() {
       <SectionHero padding="50px 0px 80px 0px">
         <Content className="contentBox">
           <Item margin="0px 20px">
-            <H1>ETHDenver</H1>
+            <H1>PUSH for ETH Denver</H1>
             {/* <Span color="#fff" margin="-20px 0 0 0" size="1rem">Frequently asked Questions and their answers!</Span> */}
           </Item>
         </Content>
@@ -40,11 +40,11 @@ function Ethdenver() {
 
       <Section theme="#fff" padding="0px 0px 50px 0px">
         <Content className="contentBox">
-              <H2>Keep in touch with EPNS @ ETHDenver : </H2>
+              <H2>3 Simple Steps to get your PRIZES : </H2>
               <Item padding="30px 0" margin="50px 0 0 0">
-              <StepsBox>Visit https://app.epns.io, search for the Push@ETHDenver channel using the search bar, and Opt-in to receive notifications!</StepsBox>
-              <StepsBox>Keep your EPNS visiting card  handy! You might be 1 of the lucky winners of EPNS random drops!</StepsBox>
-              <StepsBox>Keep the QR code of your treasure chest protected! This contains the secret phrase to claim your prizes!</StepsBox>
+              <StepsBox><span>STEP 1:</span> <div> Visit  <a href="https://app.epns.io/"> https://app.epns.io</a>, search for the Push@ETHDenver channel using the search bar, and Opt-in to receive notifications!</div></StepsBox>
+              <StepsBox><span>STEP 2:</span><div> Keep your EPNS visiting card  handy! You might be 1 of the lucky winners of EPNS random drops!</div></StepsBox>
+              <StepsBox><span>STEP 3:</span><div>Keep the QR code of your treasure chest protected! This contains the secret phrase to claim your prizes!</div></StepsBox>
               </Item>
         </Content>
       </Section>
@@ -78,6 +78,13 @@ const StepsBox=styled.div`
     font-family: ${(props) =>
 		props.family || "'Source Sans Pro', Helvetica, sans-serif"};
     padding: 0px 20px;
+
+    a{
+      text-decoration: none;
+      color:white;
+    text-transform:lowercase;
+      display: inline;
+    }
     @media (max-width: 1008px) {
         padding: 0px 5px;
         margin: 30px 10px;
