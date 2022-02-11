@@ -69,6 +69,15 @@ function App() {
 			});
 	});
 
+	console.log("url",window.location)
+	if(window.location.pathname==="/ethdenver"){
+		return (
+			<>
+		<Ethdenver />
+		<Foot />
+		</>
+		);
+	}
 	return (
 		<>
 			<Router>

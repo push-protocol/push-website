@@ -19,8 +19,8 @@ function Ethdenver() {
       <SectionHero padding="50px 0px 80px 0px">
         <Content className="contentBox">
           <Item margin="0px 20px">
-            <H1>Ethdenver</H1>
-            <Span color="#fff" margin="-20px 0 0 0" size="1rem">Frequently asked Questions and their answers!</Span>
+            <H1>ETHDenver</H1>
+            {/* <Span color="#fff" margin="-20px 0 0 0" size="1rem">Frequently asked Questions and their answers!</Span> */}
           </Item>
         </Content>
         <WaveOuter>
@@ -40,11 +40,11 @@ function Ethdenver() {
 
       <Section theme="#fff" padding="0px 0px 50px 0px">
         <Content className="contentBox">
-              <H2>Follow This Steps : </H2>
+              <H2>Keep in touch with EPNS @ ETHDenver : </H2>
               <Item padding="30px 0" margin="50px 0 0 0">
-              <StepsBox>Visit app.epns.io and subscribe to Push@EthDenver Channel, we will only communicate winners over here</StepsBox>
-              <StepsBox>Keep the card handy, we will be selecting and communicating the winners code via Push@EthDenver Channel</StepsBox>
-              <StepsBox>Keep the QR code of treasure chest protected, that contains the secret phrase which they have to give to us to verify their claim if they won</StepsBox>
+              <StepsBox>Visit https://app.epns.io, search for the Push@ETHDenver channel using the search bar, and Opt-in to receive notifications!</StepsBox>
+              <StepsBox>Keep your EPNS visiting card  handy! You might be 1 of the lucky winners of EPNS random drops!</StepsBox>
+              <StepsBox>Keep the QR code of your treasure chest protected! This contains the secret phrase to claim your prizes!</StepsBox>
               </Item>
         </Content>
       </Section>
@@ -60,10 +60,10 @@ const StepsBox=styled.div`
     display: flex;
     flex-direction: column;
     background: linear-gradient(283deg,rgba(31,23,47,1) 0%,rgba(62,9,40,1) 45%,rgba(17,58,72,1) 100%);
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin: 0 auto;
-    /* width: 100%; */
+    width: 90%;
     /* max-width: 1200px; */
     min-height: 150px;
     color:#fff;
