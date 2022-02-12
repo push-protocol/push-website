@@ -65,23 +65,24 @@
   margin-top: 3px;
   margin-bottom: 1px;
   margin-right: 10px;
-  margin-left: auto;
+  position: absolute;
+  margin-left: 8.5rem;
 }
 
 .money {
   height: 151px;
   margin-bottom: 5px;
   margin-right: -30px;
-  position: relative;
-  margin-left: auto;
+  position: absolute;
+  margin-left: 7rem;
 }
 
 .wave {
   height: 151px;
   margin-top: 10px;
   margin-right: 10px;
-  position: relative;
-  margin-left: auto;
+  position: absolute;
+  margin-left: 10rem;
 }
 
 @media(max-width: 600px)
