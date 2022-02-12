@@ -93,6 +93,20 @@ justify-content: center;
 
 }
 
+@media(max-width: 600px)
+{
+  .key{
+    margin-left: 6.5rem;
+
+  }
+  .money{
+margin-left: 5rem;
+  }
+  .wave{
+margin-left: 8rem;
+  }
+}
+
 .link{
   font-size: 20px;
   font-weight: 600;
@@ -101,6 +115,7 @@ justify-content: center;
   text-align: center;
 
 }
+
 
 @media(min-width: 600px)
 {
