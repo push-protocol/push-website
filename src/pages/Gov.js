@@ -187,7 +187,7 @@ governance.
                 
     return(
         <>
-        {/* <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
+        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            <SectionHero  padding="0px 0px 0px 0px" >
            <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
@@ -272,10 +272,10 @@ governance.
            
           </WaveOuter>
       </SectionHero>
-      </ScrollTrigger> */}
+      </ScrollTrigger>
     
           {/* Start What is Governance */}
-          {/* <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
           
       
           
@@ -326,7 +326,7 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
           </WaveInner>
         </WaveOuter>
          
-          </Section> */}
+          </Section>
 
           {/* End What is Governance */}
 
@@ -385,7 +385,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 
           {/* Start Future Governance */}
-          {/* <Section theme="#fff" padding="0px 0px 250px 0px" >
+          <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -410,7 +410,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
               </AnimateSection>
         </Content>
       </GovernanceSection>
-          </Section> */}
+          </Section>
           {/* start process governance */}
 
 
@@ -695,7 +695,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
          <WaveOuter>
           <WaveInner>
@@ -734,7 +734,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
       </GovernanceSection>
       
        
-          </Section> */}
+          </Section>
 
           
 
