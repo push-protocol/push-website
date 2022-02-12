@@ -25,13 +25,10 @@ const Gov=()=>{
 // for checking2
 
   const valuee=document.getElementsByClassName('Roles');
-  console.log("valuee",valuee)
   const [showAnswers, setShowAnswers] = React.useState([]);
   const [width, setWidth] = useState(window.screen.availWidth);
-  console.log(width);
   useEffect(() => {
     setWidth(window.screen.availWidth);
-    console.log(width);
   });
   React.useEffect(() => {
   });
@@ -161,7 +158,6 @@ governance.
 
    const handleScroll = React.useCallback((event) => {
      let scrollTop = window.scrollY;
-     console.log(scrollTop,"classShow");
        //console.log(scrollTop );  //1,2,...100,...200...etc (in px)
  
        if (scrollTop >=5100 ) {
@@ -187,11 +183,11 @@ governance.
                 
     return(
         <>
+           <HeroSection>
         <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
-           <SectionHero  padding="0px 0px 0px 0px" >
+           {/* <SectionHero  padding="0px 0px 0px 0px" > */}
            <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
-            console.log("ponter",pointer);
             if(pointer=="left")
            return (
              <Button style={{position:"absolute",bottom:"100px",right:"110px",background:"none"}} onClick={onClick} disabled={isEdge}>
@@ -219,7 +215,7 @@ governance.
                 size="0.8rem"
                 margin="10px 0px"
                 radius="4px"
-                style={{position:"absolute",left:"100px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
+                // style={{}}
               >
                 Learn More!
               </Anchor>
@@ -238,7 +234,7 @@ governance.
                 size="0.8rem"
                 margin="10px 0px"
                 radius="4px"
-                style={{position:"absolute",left:"100px",width:"180px",top:"425px",height:"30px",fontSize:"1.2rem"}}
+                // style={{}}
               >
                 Learn More!
               </Anchor>
@@ -271,8 +267,9 @@ governance.
             </WaveInner>
            
           </WaveOuter>
-      </SectionHero>
+      {/* </SectionHero> */}
       </ScrollTrigger>
+      </HeroSection>
     
           {/* Start What is Governance */}
           <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
@@ -399,16 +396,25 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 </p>
         </item>            
         </GovernanceHeading>
-        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        {/* <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}> */}
             <AnimateSection >
               
                 <Span>
-                 <img src="/governance/path.gif" />
-
+                 {/* <img src="/governance/path.gif"  /> */}
+                
+                <video
+									// resizeMode="cover"
+									autoPlay
+								
+									// ref={videoRef}
+									src="/governance/pathVideo.mp4"
+									muted
+									disablePictureInPicture
+								/>
                 </Span>
             
               </AnimateSection>
-        </Content>
+        {/* </Content> */}
       </GovernanceSection>
           </Section>
           {/* start process governance */}
@@ -468,7 +474,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
         
         </SectionProcessGovernance>
         
-<WaveOuter>
+        <WaveOuter>
           <WaveInner>
             <Wave fill='#C7E9F6'
               paused={true}
@@ -1026,7 +1032,35 @@ const animate =keyframes`
 
 // padding="20px 0px 0px 0px" overflow="hidden" margin="40px"
 // theme="#e20880" padding="0px 0px 80px 0px"
+const HeroImg=styled.img`
+  height:100vh;
+  width:100vw;
+  @media(max-width:500px){
+    width: 100vw;
+    height: 100vh;
+  }
+`;
+const HeroSection=styled.div`
+  & ${Anchor}{
+    position:absolute;
+    left:100px;
+    width:180px;
+    top:425px;
+    height:30px;
+    font-size:1.2rem;
+    
+    @media(max-width:700px){
+      top:500px;
+    }
+  }
 
+  & ${HeroImg}{
+    @media(max-width:700px){
+      object-fit: scale-down;
+    }
+  }
+  
+`;
 const SectionLearn = styled.section`
   display: flex;
   flex-direction:column;
@@ -1201,14 +1235,7 @@ const animate2 =keyframes`
   opacity: 0;
 }
 `;
-const HeroImg=styled.img`
-  height:100vh;
-  width:100vw;
-  @media(max-width:500px){
-    width: 100vw;
-    height: 100vh;
-  }
-`;
+
 const AnimateSection=styled.div`
   position: relative;
   height: 60vh;
@@ -1216,14 +1243,25 @@ const AnimateSection=styled.div`
   padding: 2rem 0 ;
 
   & ${Span}{
+    video{
+      box-sizing: border-box;							
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150%;
+      @media(max-width:700px){
+        height: 250%;
+        width: 100%;
+      }
+    }
     img{
       position: absolute;
         width: 70rem;
         height: 60rem;
       
       @media(max-width:900px){
-        width: 20rem;
-        height: 20rem;
+        width: 25rem;
+        height: 50rem;
       }
 
       }
