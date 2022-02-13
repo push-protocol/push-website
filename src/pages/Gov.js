@@ -187,7 +187,7 @@ governance.
                 
     return(
         <>
-        <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
+        {/* <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            <SectionHero  padding="0px 0px 0px 0px" >
            <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
@@ -272,10 +272,10 @@ governance.
            
           </WaveOuter>
       </SectionHero>
-      </ScrollTrigger>
+      </ScrollTrigger> */}
     
           {/* Start What is Governance */}
-          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
+          {/* <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
           
       
           
@@ -326,7 +326,7 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
           </WaveInner>
         </WaveOuter>
          
-          </Section>
+          </Section> */}
 
           {/* End What is Governance */}
 
@@ -385,7 +385,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 
           {/* Start Future Governance */}
-          <Section theme="#fff" padding="0px 0px 250px 0px" >
+          {/* <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -410,7 +410,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
               </AnimateSection>
         </Content>
       </GovernanceSection>
-          </Section>
+          </Section> */}
           {/* start process governance */}
 
 
@@ -504,53 +504,46 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
                    
         </GovernanceHeadingE>
 
-        <GrantsInner>
+        {/* <GrantsInner> */}
         <GrantsText>
                   The grants are open for beginners and experienced people. Whatever your level of familiarity with development, we'll start the conversation in order to try to help and find ways to grow your contribution over time.The program will have initially a small scope, funding target 
               </GrantsText>
-        </GrantsInner>
+              {/* </GrantsInner> */}
 
 
         <ItemGrants>
 
   <GrantsCard className="first">
   <img class="money" src="/governance/save-money.svg"/>
-
-
   <GrantsContent>
-  <Keytext bgcolor="#EC008C" mright="4rem" style={{width:'14rem'}} ><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TOTAL GRANTS BUDGET</b></span></Keytext>
-  <Keyheading ftcolor="#EC008C" style={{marginLeft:'1.8rem'}}>$1,000,000 USD</Keyheading>
+  <Keytext bgcolor="#EC008C" mright="4rem" width='14rem' ><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TOTAL GRANTS BUDGET</b></span></Keytext>
+  <Keyheading ftcolor="#EC008C" mleft='1.8rem'>$1,000,000 USD</Keyheading>
   </GrantsContent>
 
   
   </GrantsCard>
-
   <GrantsCard className="second">
 <img class="key" src="/governance/KEY.svg"/>
 <GrantsContent>
-<Keytext bgcolor="#674C9F" mright="10rem" style={{width:'8rem'}}><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
-<Keyheading ftcolor="#674C9F" style={{marginLeft:'1.8rem'}}>JUN 26- JUL 26</Keyheading>
-<KeyContent style={{width:'15rem',marginLeft:'1.8rem'}}>"Accross Two Consecutive Three Month" "Push Period"</KeyContent>
+<Keytext bgcolor="#674C9F" mright="10rem" width='8rem'><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
+<Keyheading ftcolor="#674C9F" mleft='1.8rem'>JUN 26- JUL 26</Keyheading>
+<KeyContent width='15rem' mleft='1.8rem'>"Accross Two Consecutive Three Month" "Push Period"</KeyContent>
 </GrantsContent>
 
 
 
 
   </GrantsCard>
-
   <GrantsCard className="third">
   <img class="wave" src="/governance/application.svg"/>
   <GrantsContent>
-
-  <Keytext bgcolor="#5CC2EE" mright="3rem" style={{width:'15rem'}}><span style={{color:"#FFFFFF",marginLeft:"1rem"}}><b>APPLICATIONS RECEIVED</b></span></Keytext>
-  <Keyheading ftcolor="#5CC2EE" style={{marginLeft:'6rem'}}>54321</Keyheading>
+  <Keytext bgcolor="#5CC2EE" mright="3rem" width='15rem'><span style={{color:"#FFFFFF",marginLeft:"1rem"}}><b>APPLICATIONS RECEIVED</b></span></Keytext>
+  <Keyheading ftcolor="#5CC2EE" mleft='6rem'>54321</Keyheading>
   </GrantsContent>
-
- 
-
   </GrantsCard>
 
   </ItemGrants>
+ 
 
   <Links>
   <a href="" class="link" style={{textDecoration:"none"}}>{'GRANTS SITE>>'}</a>
@@ -558,6 +551,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
   <a href="" class="link"  style={{textDecoration:"none"}}>{'VOTE FOR PROPOSAL>>'}</a>
   <a href="" class="link"  style={{textDecoration:"none"}}>{'APPLY HERE>>'}</a>
   </Links>
+
+  
 
 
 
@@ -607,7 +602,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
       
 
 <GovernanceHeadingE>
-        <item><h4><GovernanceSpan  margint='50px' style={{background:"#000"}}><b>LEARN MORE</b></GovernanceSpan>ABOUT GOVERNANCE</h4></item>
+        <item><h4><GovernanceSpan  margint='50px' style={{background:"#000"}}><b>LEARN MORE</b></GovernanceSpan> ABOUT GOVERNANCE</h4></item>
         <item>
         <H2E color="#fff">MEDIUM ARTICLES</H2E>
         </item>              
@@ -695,7 +690,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
         
          {/* Start pushDeligatees Governance */}
-         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
          <WaveOuter>
           <WaveInner>
@@ -734,7 +729,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
       </GovernanceSection>
       
        
-          </Section>
+          </Section> */}
 
           
 
@@ -803,6 +798,11 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
     )
 }
 
+
+
+
+
+
 const ItemHE = styled(Item)`
   flex-direction: row;
   flex: ${props => props.flex || '1'};
@@ -816,44 +816,60 @@ const ItemHE = styled(Item)`
 
 
 const Keytext = styled.div`
+display: flex;
 font-size: 20px;
 font-weight: 400;
 margin-top: 15px;
 font-family: Source Sans Pro;
 background-color: ${props => props.bgcolor || '#FFFFFF'};
 margin-right:${props => props.mright || '0px'};
+width:${props => props.width || '10rem'};
 @media(max-width: 600px)
 {
   margin-right:${props => (props.mright-2) || '0px'};
+  width:${props => (props.width) || '10rem'};
+  font-size: 16px;
 }
 `;
 
 
 const Keyheading = styled.div`
+display: flex;
+justify-content: center;
 font-size: 35px;
 font-weight: 600;
 font-family: Source Sans Pro;
 margin-top: 1rem;
 align: center;
 color: ${props => props.ftcolor || '#FFFFFF'};
+// margin-left: ${props => props.mleft || '0'};
+@media(max-width: 500px)
+{
+  font-size: 30px;
+  // margin-left: ${props => (props.mleft-0.5) || '0'};
+}
 
 `;
 
 const KeyContent = styled.div`
-
+display:flex;
+justify-content: center;
 font-size: 12px;
 font-weight: 400;
 font-family: Source Sans Pro;
-align: center;
-width: 270px;
 height: 30px;
 margin-top: 0.7rem;
+width: ${props => props.width || '0'};
+margin-left:${props => props.mleft || '0'};
+@media(max-width: 600px)
+{
+  margin-left: 0;
+}
 `;
 
 const GrantsContent = styled.div`
 display: flex;
 flex-direction: column;
-// position : absolute;
 justify-content: space-between;
 `;
 
@@ -879,8 +895,7 @@ const ItemGrants = styled(Item)`
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-// margin-right: 0.5rem;
-// margin-left:0.5rem;
+margin-top: 3rem;
 
 @media(min-width: 500px)
 {
@@ -888,10 +903,9 @@ align-items: center;
   padding-right: 7rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   flex-direction: column;
   justify-content: center;
-  // padding: 1rem;
 `
 
 const Links = styled.div`
@@ -911,24 +925,26 @@ align: center;
 
 @media(max-width: 500px)
 {
-  // flex-direction: column;
   margin-left: 2.5rem;
   margin-bottom: 120px;
 }
 `;
 
 const GrantsText = styled(Span)`
-
+display: flex;
 font-size: 24px;
 font-family: source sans pro;
 font-weight: 400;
-padding-left:3.5rem;
-padding-right: 3.5rem;
+justify-content: center;
  text-align: center;
  margin-top: 4rem;
+ padding-left: 5rem;
+ padding-right: 5rem;
  @media(max-width:600px)
  {
   font-size: 18px;
+  padding-left: 3rem;
+  padding-right: 3rem;
  }
 `;
 
@@ -937,7 +953,6 @@ display: flex;
 flex-direction: column;
 justify-content; center;
 align-items: center;
-padding: 20px;
 `;
 
 const GrantsCard = styled.div`

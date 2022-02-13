@@ -88,14 +88,14 @@
 @media(max-width: 600px)
 {
   .key{
-    margin-left: 6.5rem;
+    margin-left: 6rem;
 
   }
   .money{
-margin-left: 5rem;
+margin-left: 3.5rem;
   }
   .wave{
-margin-left: 8rem;
+margin-left: 7.3rem;
   }
 }
 
@@ -108,7 +108,8 @@ margin-left: 8rem;
 }
 
 
-@media(min-width: 600px)
+
+/* @media(min-width: 600px)
 {
   @media(max-width:1000px)
   {
@@ -130,7 +131,7 @@ margin-left: 8rem;
 
     }
   }
-}
+} */
 
 @media (max-width: 500px) {
   .link {
