@@ -20,7 +20,7 @@ import {BsChevronLeft} from 'react-icons/bs';
 import {MdPersonPin} from 'react-icons/md';
 import './carousel.css';
 import MediumCard from '../components/MediumCard';
-
+import { Tooltip } from 'react-hover-tooltip';
 const Gov=()=>{
 // for checking2
 
@@ -272,8 +272,10 @@ governance.
       </HeroSection>
     
           {/* Start What is Governance */}
-          {/* <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
           
+
+       
       
           
       <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
@@ -309,7 +311,7 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
       </GovernanceSection>
          
 
-          <WaveOuter>
+      <WaveOuter>
           <WaveInner>
             <Wave fill='#FFFFFF'
               paused={true}
@@ -322,8 +324,10 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
             />
           </WaveInner>
         </WaveOuter>
+
+
          
-          </Section> */}
+          </Section>
 
           {/* End What is Governance */}
 
@@ -337,11 +341,25 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
         
               <GovernanceSection id="governance"  >
               <Content className="contentBox" style={{display:"flex",justifyContent:"center",flexDirection:"row",alignItems:"center"}}>
-                <TextImg1 title="Notification Channel Subscribers
+                {/* <TextImg1 title="Notification Channel Subscribers
 
 App & Dapp Users
 
-Social Followers & Friends">COMMUNITY</TextImg1>
+Social Followers & Friends">COMMUNITY</TextImg1> */}
+<Cont mbtm="15rem">
+<Tooltip bottom content="Notification Channel Subscribers
+
+App & Dapp Users
+
+Social Followers & Friends">
+  <TextImg1>
+    COMMUNITY
+  </TextImg1>
+  </Tooltip>
+</Cont>
+
+
+
               <GovernanceImgFixed src='/governance/Group 6 (1).png' alt=""/>
               <ArrowSection>
               <LineImage src='/governance/line.svg' alt=""/>
@@ -352,18 +370,42 @@ Social Followers & Friends">COMMUNITY</TextImg1>
               </ArrowSection>
               
               
-              <TextImg title="These are the Voters!
+              {/* <TextImg title="These are the Voters!
 
 Supporters who purchase and hold the token
 
 Stakers who provide liquidity (Uniswap currently, more coming soon)
 
-Yield Farmers earning $PUSH rewards on our Incentives Dapp">PUSH HOLDERS</TextImg>
+Yield Farmers earning $PUSH rewards on our Incentives Dapp">PUSH HOLDERS</TextImg> */}
+<Cont mbtm="15rem">
+
+<Tooltip bottom content="These are the Voters!
+
+Supporters who purchase and hold the token
+
+Stakers who provide liquidity (Uniswap currently, more coming soon)
+
+Yield Farmers earning $PUSH rewards on our Incentives Dapp">
+  <TextImg>PUSH HOLDERS</TextImg>
+  </Tooltip>
+
+</Cont>
+
+
+
                   </Content>
                   
-                  <TextImgBtm title="Contract Development & Management
+                  {/* <TextImgBtm title="Contract Development & Management
 
-Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm>
+            Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm> */}
+            <Cont>
+            <Tooltip bottom content="Contract Development & Management
+
+Core Administration: Marketing, Engineering, Content, Social Media, etc.">
+              <TextImgBtm>PROTOCOL</TextImgBtm>
+            </Tooltip>
+            </Cont>
+            
 
 
               </GovernanceSection>
@@ -382,7 +424,10 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 
           {/* Start Future Governance */}
-          {/* <Section theme="#fff" padding="0px 0px 250px 0px" >
+
+
+          
+          <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -396,7 +441,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 </p>
         </item>            
         </GovernanceHeading>
-        {/* <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}> */}
+        {/* <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
             <AnimateSection >
               
                 <Span>
@@ -411,12 +456,16 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 									muted
 									disablePictureInPicture
 								/>
-                </Span>
+                {/* </Span> */}
             
-              </AnimateSection>
+              {/* </AnimateSection> */}
         {/* </Content> */}
-      {/* </GovernanceSection> */}
-          {/* // </Section>  */}
+      </GovernanceSection>
+           </Section> 
+
+
+
+
           {/* start process governance */}
 
 
@@ -473,7 +522,6 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
         
         </SectionProcessGovernance>
-        
         <WaveOuter>
           <WaveInner>
             <Wave fill='#C7E9F6'
@@ -487,6 +535,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
             />
           </WaveInner>
         </WaveOuter>
+
+       
 
 
 
@@ -504,7 +554,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 {/* style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} */}
   <GrantsContainer  style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} >
-
+ 
   <GovernanceHeadingE >
         <item><h4>PUSH<GovernanceSpan  style={{background:"#e20880"}}><b>GRANTS PROGRAM</b></GovernanceSpan>  </h4></item>
                    
@@ -659,7 +709,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
       {/* end learn more about governance */}
  
-          <Section margin="0px 0px 120px 0px ">
+          <SectionCircle>
 
 
 
@@ -687,7 +737,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
     </WaveOuter>
   </Section>
 
-</Section>
+</SectionCircle>
 
 
 
@@ -696,7 +746,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
         
          {/* Start pushDeligatees Governance */}
-         {/* <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
+         <Section theme="#F4F4F4" padding="0px 0px 50px 0px">
           
          <WaveOuter>
           <WaveInner>
@@ -735,7 +785,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
       </GovernanceSection>
       
        
-          </Section> */}
+          </Section>
 
           
 
@@ -806,7 +856,22 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOC
 
 
 
+const SectionCircle = styled.section`
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-items: ${props => props.align || 'initial'};
+  flex-direction: ${props => props.direction || 'column'};
+  background: ${props => props.theme || 'transparent'};
+  background: ${props => props.gradient || 'undefined'};
+  padding: ${props => props.padding || '0px'};
+  overflow: ${props => props.overflow || 'initial'};
+  flex: 1;
+  position: relative;
+  // margin-bottom:10rem;
 
+ 
+`
 
 
 const ItemHE = styled(Item)`
@@ -1099,6 +1164,7 @@ const SectionC = styled.section`
  justify-content: center;
  alignItems: center;
  overflow: hidden;
+ margin-bottom: 5rem;
 //  flex-basis: 0;
 //  flex-shrink: 1;
  @media(max-width:450px)
@@ -1123,7 +1189,7 @@ const Line = styled.section`
 const SectionLearnGovernance = styled.section`
  display: flex;
  flex-direction: row;
- margin-bottom: 120px;
+ margin-bottom: 10rem;
  justify-content: center;
  column: 0px;
  @media(min-width:500px)
@@ -1156,6 +1222,7 @@ const SectionProcess = styled.section`
   padding: 0px
   overflow: hidden;
   position: relative;
+  margin-bottom: 4rem;
 
  @media(max-width:500px){
    overflow-y: hidden;
@@ -1627,11 +1694,13 @@ const GovernanceImg=styled.img`
    }
 `;
 const GovernanceImgFixed=styled(GovernanceImg)`
+
    height: 20rem;
    width: 22rem;
    padding: 5rem;
    object-fit: cover;
    position: relative;
+   margin-left: 3rem;
   //  @media(min-width:700px)
   //  {
   //    @media(max-width:100px)
@@ -2022,13 +2091,16 @@ const ContentMore = styled(Span)`
   }
 
 `
+const Cont = styled.div`
+margin-bottom: ${props => props.mbtm || ''};
+`;
 
 const TextImg = styled.div`
 display:flex;
 font-family: Source sans pro;
 font-weight: 500;
 font-size: 25px;
-margin-bottom: 15rem;
+// margin-bottom: 15rem;
 
 @media(max-width: 500px)
 {
@@ -2044,7 +2116,7 @@ display:flex;
 font-family: Source sans pro;
 font-weight: 500;
 font-size: 25px;
-margin-bottom: 15rem;
+// margin-bottom: 15rem;
 position: relative;
 @media(min-width: 500px)
 {
@@ -2053,7 +2125,7 @@ position: relative;
 @media(max-width: 500px)
 {
   font-size: 17px;
-  margin-right: -70px;
+  margin-right: -110px;
   margin-top: -20px;
 }
 
@@ -2104,6 +2176,7 @@ justify-content:center;
 font-family: Source sans pro;
 font-weight: 500;
 font-size: 25px;
+// margin-right: 2rem;
 @media(min-width:500px){
   margin-top: -80px;
   margin-left: -30px;
@@ -2153,6 +2226,7 @@ const CircleSection = styled.section`
   align-items: ${props => props.align || 'initial'};
   flex: 1;
   position: relative;
+  margin-bottom: 20rem;
   @media(max-width: 500px)
   {
     max-width: 400px;

@@ -42,6 +42,7 @@
     "react-ga": "2.7.0",
     "react-google-recaptcha": "2.1.0",
     "react-gsap": "2.2.1",
+    "react-hover-tooltip": "^0.0.3",
     "react-icons": "3.11.0",
     "react-loader-spinner": "3.1.14",
     "react-meta-tags": "1.0.0",
