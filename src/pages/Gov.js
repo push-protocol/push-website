@@ -562,8 +562,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         {/* <GrantsInner> */}
         <GrantsText>
-                  The grants are open for beginners and experienced people. Whatever your level of familiarity with development, we'll start the conversation in order to try to help and find ways to grow your contribution over time.The program will have initially a small scope, funding target 
-              </GrantsText>
+        This program aims to enable contributors with the resources they need (be those needing direct assistance or financial support or otherwise) to focus their energies on the advancement of the EPNS protocol.
+               </GrantsText>
               {/* </GrantsInner> */}
 
 
@@ -582,7 +582,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 <img class="key" src="/governance/KEY.svg"/>
 <GrantsContent>
 <Keytext bgcolor="#674C9F" mright="10rem" width='8rem'><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
-<Keyheading ftcolor="#674C9F" mleft='1.8rem'>JUN 26- JUL 26</Keyheading>
+<Keyheading ftcolor="#674C9F" mleft='1.8rem'>Jan 26, 22 - Jul 26, 2022</Keyheading>
 <KeyContent width='15rem' mleft='1.8rem'>"Accross Two Consecutive Three Month" "Push Period"</KeyContent>
 </GrantsContent>
 
@@ -594,7 +594,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
   <img class="wave" src="/governance/application.svg"/>
   <GrantsContent>
   <Keytext bgcolor="#5CC2EE" mright="3rem" width='15rem'><span style={{color:"#FFFFFF",marginLeft:"1rem"}}><b>APPLICATIONS RECEIVED</b></span></Keytext>
-  <Keyheading ftcolor="#5CC2EE" mleft='6rem'>54321</Keyheading>
+  <Keyheading ftcolor="#5CC2EE" mleft='6rem'>1</Keyheading>
+  <KeyContent width='15rem' mleft='1.8rem'>"As of XXXdate, updated twice weekly"</KeyContent>
   </GrantsContent>
   </GrantsCard>
 
@@ -811,7 +812,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 <GovernanceHeading >
   <item><h4><GovernanceSpan><b>FAQs</b></GovernanceSpan>  </h4></item>
 
-  <H3 color="#858585" margin="0px 0px 0px 0px">LOREM IPSUM</H3>             
+  <H3 color="#858585" margin="0px 0px 0px 0px">Frequently Asked Questions</H3>             
   </GovernanceHeading>
 
 
@@ -911,6 +912,7 @@ font-size: 35px;
 font-weight: 600;
 font-family: Source Sans Pro;
 margin-top: 1rem;
+padding:0 1rem;
 align: center;
 color: ${props => props.ftcolor || '#FFFFFF'};
 // margin-left: ${props => props.mleft || '0'};
@@ -1123,9 +1125,9 @@ const HeroImg=styled.img`
 const HeroSection=styled.div`
   & ${Anchor}{
     position:absolute;
-    left:100px;
+    left:150px;
     width:180px;
-    top:425px;
+    top:505px;
     height:30px;
     font-size:1.2rem;
     
