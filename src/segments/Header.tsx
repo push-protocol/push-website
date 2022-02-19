@@ -195,7 +195,7 @@ function Head() {
                       Snapshot
                     </HeadAnchor>
                   </NavSubItem>
-                  <NavSubItem  align="center" margin="0px" minWidth="auto" flex="0" style={{border:"1px solid #e20880"}}>
+                  <NavSubItem  align="center" margin="0px" minWidth="auto" flex="0" style={{border:"1px solid #fff"}}>
                     <HeadAnchor
                     className="Glow"
                       href="http://incentives.epns.io/"

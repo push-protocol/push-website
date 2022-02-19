@@ -427,7 +427,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 
           
-          <Section theme="#fff" padding="0px 0px 250px 0px" >
+          {/* <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -441,27 +441,18 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 </p>
         </item>            
         </GovernanceHeading>
-        {/* <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-            <AnimateSection >
-              
-                <Span>
-                 {/* <img src="/governance/path.gif"  /> */}
+        
                 
                 <video
-									// resizeMode="cover"
 									autoPlay
 								
-									// ref={videoRef}
 									src="/governance/pathVideo.mp4"
 									muted
 									disablePictureInPicture
 								/>
-                {/* </Span> */}
-            
-              {/* </AnimateSection> */}
-        {/* </Content> */}
+              
       </GovernanceSection>
-           </Section> 
+           </Section>  */}
 
 
 
@@ -562,7 +553,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         {/* <GrantsInner> */}
         <GrantsText>
-        This program aims to enable contributors with the resources they need (be those needing direct assistance or financial support or otherwise) to focus their energies on the advancement of the EPNS protocol.
+        This program aims to enable contributors with the resources they need (be those needing direct assistance or financial support or otherwise to focus their energies on the advancement of the EPNS protocol.
                </GrantsText>
               {/* </GrantsInner> */}
 
@@ -582,7 +573,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 <img class="key" src="/governance/KEY.svg"/>
 <GrantsContent>
 <Keytext bgcolor="#674C9F" mright="10rem" width='8rem'><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
-<Keyheading ftcolor="#674C9F" mleft='1.8rem'>Jan 26, 22 - Jul 26, 2022</Keyheading>
+<Keyheading ftcolor="#674C9F" mleft='1.8rem'>Jan 26, 22 - Jul 26, 22</Keyheading>
 <KeyContent width='15rem' mleft='1.8rem'>"Accross Two Consecutive Three Month" "Push Period"</KeyContent>
 </GrantsContent>
 
@@ -1250,6 +1241,7 @@ const GrantsContainer = styled.section`
  @media(max-width:500px){
    overflow-y: hidden;
    overflow-x: hidden;
+   margin-top: -4rem;
  }
 `;
 
@@ -2127,7 +2119,7 @@ position: relative;
 @media(max-width: 500px)
 {
   font-size: 17px;
-  margin-right: -110px;
+  margin-right: -6rem;
   margin-top: -20px;
 }
 
