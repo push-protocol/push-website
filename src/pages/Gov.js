@@ -248,7 +248,7 @@ governance.
                 paused={!animateHero}
                 options={{
                   height: 20,
-                  amplitude: 35,
+                  amplitude: 30,
                   speed: 0.25,
                   points: 3
                 }}
@@ -272,7 +272,7 @@ governance.
       </HeroSection>
     
           {/* Start What is Governance */}
-          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px" >
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 0px 0px" >
           
 
        
@@ -427,7 +427,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 
           
-          {/* <Section theme="#fff" padding="0px 0px 250px 0px" >
+          <Section theme="#fff" padding="0px 0px 250px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -452,7 +452,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 								/>
               
       </GovernanceSection>
-           </Section>  */}
+           </Section> 
 
 
 
@@ -594,10 +594,10 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
  
 
   <Links>
-  <a href="" class="link" style={{textDecoration:"none"}}>{'GRANTS SITE>>'}</a>
-  <a href="" class="link"  style={{textDecoration:"none"}}>{'LIVE DISCUSSION>>'}</a>
-  <a href="" class="link"  style={{textDecoration:"none"}}>{'VOTE FOR PROPOSAL>>'}</a>
-  <a href="" class="link"  style={{textDecoration:"none"}}>{'APPLY HERE>>'}</a>
+  <a href="https://www.notion.so/epns/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a" target="_blank" class="link" style={{textDecoration:"none"}}>{'GRANTS SITE>>'}</a>
+  <a href="https://gov.epns.io/c/grants/10" target="_blank" class="link"  style={{textDecoration:"none"}}>{'LIVE DISCUSSION>>'}</a>
+  <a href="https://snapshot.org/#/epns.eth" target="_blank" class="link"  style={{textDecoration:"none"}}>{'VOTE FOR PROPOSAL>>'}</a>
+  <a href="https://gov.epns.io/t/push-grants-program-pgp-details-start-here/41" target="_blank" class="link"  style={{textDecoration:"none"}}>{'APPLY HERE>>'}</a>
   </Links>
 
   
@@ -845,6 +845,29 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
     )
 }
+
+
+export const SectionG = styled.section`
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-items: ${props => props.align || 'initial'};
+  flex-direction: ${props => props.direction || 'column'};
+  background: ${props => props.theme || 'transparent'};
+  background: ${props => props.gradient || 'undefined'};
+  margin: ${props => props.margin || '0px'};
+  padding: ${props => props.padding || '0px'};
+  overflow: ${props => props.overflow || 'initial'};
+  flex: 1;
+  position: relative;
+
+  // @media(max-width: 500px)
+  // {
+  //   margin-top: -3rem;
+  // }
+
+ 
+`
 
 
 
@@ -1132,6 +1155,11 @@ const HeroSection=styled.div`
       object-fit: scale-down;
     }
   }
+
+  // @media(max-width:500px){
+  //   margin-bottom: -3rem;
+  // }
+  
   
 `;
 const SectionLearn = styled.section`
