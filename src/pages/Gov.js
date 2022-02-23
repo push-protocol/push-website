@@ -27,6 +27,7 @@ const Gov=()=>{
   const valuee=document.getElementsByClassName('Roles');
   const [showAnswers, setShowAnswers] = React.useState([]);
   const [width, setWidth] = useState(window.screen.availWidth);
+  const carouselRef = React.useRef(null);
   useEffect(() => {
     setWidth(window.screen.availWidth);
   });
@@ -180,13 +181,26 @@ governance.
 
   //  const communityText = "Notification Channel Subscribers App & Dapp Users Social Followers & Friends"
 
-                
+  let resetTimeout;          
     return(
         <>
            <HeroSection>
         <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}}>
            {/* <SectionHero  padding="0px 0px 0px 0px" > */}
-           <Carousel itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={1800} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
+           <Carousel ref={carouselRef} 
+            onNextEnd={({ index }) => {
+              clearTimeout(resetTimeout)
+              if (index + 1 === 3) {
+                  if (carouselRef?.current?.goTo) {
+                      resetTimeout = setTimeout(() => {
+                          if (carouselRef?.current?.goTo) {
+                              carouselRef.current.goTo(0)
+                          }
+                      }, 3000)
+                  }
+              }
+          }}
+           itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={3000} loop={true} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
             if(pointer=="left")
            return (
