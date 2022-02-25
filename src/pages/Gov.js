@@ -314,7 +314,7 @@ governance.
         </item>            
         </GovernanceHeading>
        
-        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"5rem 0"}}>
         <DottedSection>
         Our progressive governance model aims to hand over the various levers of control to the EPNS governing community. We want to establish a system for the community where ideas and proposals are considered, respected, and incentivized.
 With EPNS Governance we aim to offer individuals clear paths to participate in our protocol and bolster innovation to the EPNS ecosystem.
@@ -353,24 +353,24 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
           <CircleSection theme="#fff" padding="0px 0px 30px 0px" >
               
         
-              <GovernanceSection id="governance"  >
+              {/* <GovernanceSection id="governance"  > */}
               <Content className="contentBox" style={{display:"flex",justifyContent:"center",flexDirection:"row",alignItems:"center"}}>
                 {/* <TextImg1 title="Notification Channel Subscribers
 
-App & Dapp Users
+              App & Dapp Users
 
-Social Followers & Friends">COMMUNITY</TextImg1> */}
-<Cont mbtm="15rem">
-<Tooltip bottom content="Notification Channel Subscribers
+              Social Followers & Friends">COMMUNITY</TextImg1> */}
+              <Cont mbtm="15rem">
+              <Tooltip bottom content="Notification Channel Subscribers
 
-App & Dapp Users
+              App & Dapp Users
 
-Social Followers & Friends">
-  <TextImg1>
-    COMMUNITY
-  </TextImg1>
-  </Tooltip>
-</Cont>
+              Social Followers & Friends">
+                <TextImg1>
+                  COMMUNITY
+                </TextImg1>
+                </Tooltip>
+              </Cont>
 
 
 
@@ -413,16 +413,16 @@ Yield Farmers earning $PUSH rewards on our Incentives Dapp">
 
             Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm> */}
             <Cont>
-            <Tooltip bottom content="Contract Development & Management
+            {/* <Tooltip bottom content="Contract Development & Management
 
 Core Administration: Marketing, Engineering, Content, Social Media, etc.">
               <TextImgBtm>PROTOCOL</TextImgBtm>
-            </Tooltip>
+            </Tooltip> */}
             </Cont>
             
 
 
-              </GovernanceSection>
+              {/* </GovernanceSection> */}
             </CircleSection>
 
 
@@ -440,6 +440,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
           {/* Start Future Governance */}
 
 
+        <DeskTopView>
           
           <Section theme="#fff" padding="0px 0px 250px 0px" >
               
@@ -455,8 +456,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 </p>
         </item>            
         </GovernanceHeading>
-        
-                
+
                 <video
 									autoPlay
 								
@@ -468,6 +468,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
       </GovernanceSection>
            </Section> 
 
+           </DeskTopView>
 
 
 
@@ -902,6 +903,11 @@ const SectionCircle = styled.section`
  
 `
 
+const DeskTopView=styled.div`
+  @media(max-width:600px){
+    display:none;
+  }
+`;
 
 const ItemHE = styled(Item)`
   flex-direction: row;
@@ -2156,12 +2162,15 @@ font-size: 25px;
 position: relative;
 @media(min-width: 500px)
 {
-  margin-right: -60px;
+  margin-right: -160px;
+}
+@media(max-width:900px){
+  left:10rem;
 }
 @media(max-width: 500px)
 {
   font-size: 17px;
-  margin-right: -6rem;
+  // margin-right: -7rem;
   margin-top: -20px;
 }
 
