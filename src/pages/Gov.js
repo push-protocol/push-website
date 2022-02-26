@@ -297,9 +297,9 @@ governance.
         
         <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}><b>WHAT IS</b></GovernanceSpan>GOVERNANCE?</h4></item>
-        <item>
+        {/* <item>
             <p style={{color:"#fff"}}>WHAT IS GOVERNANCE</p>
-        </item>            
+        </item>             */}
         </GovernanceHeading>
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <DottedSection>
@@ -309,9 +309,9 @@ governance.
         </Content>
         <GovernanceHeading flex="flex-end">
         <item><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}><b>WHY</b></GovernanceSpan>GOVERNANCE?</h4></item>
-        <item>
+        {/* <item>
             <p style={{color:"#fff"}}>WHY GOVERNANCE</p>
-        </item>            
+        </item>             */}
         </GovernanceHeading>
        
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
@@ -378,7 +378,7 @@ Social Followers & Friends">
               <ArrowSection>
               <LineImage src='/governance/line.svg' alt=""/>
               <TextImgCenter>
-                  EPNSgov Team
+                  #PUSHgov Team
               </TextImgCenter>
 
               </ArrowSection>
@@ -567,7 +567,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         {/* <GrantsInner> */}
         <GrantsText>
-        This program aims to enable contributors with the resources they need (be those needing direct assistance or financial support or otherwise to focus their energies on the advancement of the EPNS protocol.
+        This program aims to enable contributors with the resources they need (funding, dev support, go-to market planning, etc.) to focus their energies on the advancement of the EPNS protocol.
                </GrantsText>
               {/* </GrantsInner> */}
 
@@ -587,8 +587,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 <img class="key" src="/governance/KEY.svg"/>
 <GrantsContent>
 <Keytext bgcolor="#674C9F" mright="10rem" width='8rem'><span style={{ color:"#FFFFFF",marginLeft:"1rem"}}><b>TIME FRAME</b></span></Keytext>
-<Keyheading ftcolor="#674C9F" mleft='1.8rem'>Jan 26, 22 - Jul 26, 22</Keyheading>
-<KeyContent width='15rem' mleft='1.8rem'>"Accross Two Consecutive Three Month" "Push Period"</KeyContent>
+<Keyheading ftcolor="#674C9F" mleft='1.8rem'>Jan 26 - Jul 26, 2022</Keyheading>
+<KeyContent width='15rem' mleft='1.8rem'>Across Two Consecutive 3-Month Push Periods</KeyContent>
 </GrantsContent>
 
 
@@ -599,8 +599,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
   <img class="wave" src="/governance/application.svg"/>
   <GrantsContent>
   <Keytext bgcolor="#5CC2EE" mright="3rem" width='15rem'><span style={{color:"#FFFFFF",marginLeft:"1rem"}}><b>APPLICATIONS RECEIVED</b></span></Keytext>
-  <Keyheading ftcolor="#5CC2EE" mleft='6rem'>1</Keyheading>
-  <KeyContent width='15rem' mleft='1.8rem'>"As of XXXdate, updated twice weekly"</KeyContent>
+  <Keyheading ftcolor="#5CC2EE" mleft='6rem'>2</Keyheading>
+  <KeyContent width='15rem' mleft='1.8rem'>As of Feb 24, 2022</KeyContent>
   </GrantsContent>
   </GrantsCard>
 
@@ -665,9 +665,9 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 <GovernanceHeadingE>
         <item><h4><GovernanceSpan  margint='50px' style={{background:"#000"}}><b>LEARN MORE</b></GovernanceSpan> ABOUT GOVERNANCE</h4></item>
-        <item>
+        {/* <item>
         <H2E color="#fff">MEDIUM ARTICLES</H2E>
-        </item>              
+        </item>               */}
         </GovernanceHeadingE>
   
   <SectionLearnGovernance>
@@ -683,17 +683,20 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
                     <MediumCard
                       title="Governance Goes Live"
                       thumbnail="https://miro.medium.com/max/1400/1*TozW0q7pvnNLDHo2ZfsPDA.gif"
-                      link="https://medium.com/ethereum-push-notification-service/epns-governance-goes-live-lets-push-for-progressive-decentralized-governance-7448b58b89b4"
+                      link="https://mirror.xyz/0xd0a99De1eD63d9F1Dd7F1a69787764E39e0F5baC/U_qh8oJJP7ft5LS90nnCNtcuZkKWnm01QDhkQhpmKX4"
+                      // link="https://medium.com/ethereum-push-notification-service/epns-governance-goes-live-lets-push-for-progressive-decentralized-governance-7448b58b89b4"
                     />
                     <MediumCard
                       title="Grant Goes Live"
                       thumbnail="https://miro.medium.com/max/1400/1*FbPPmp_sWRXOf5kBtwd-1Q.png"
-                      link="https://medium.com/ethereum-push-notification-service/push-grants-program-going-live-6841515f95d8"
+                      link="https://mirror.xyz/0xd0a99De1eD63d9F1Dd7F1a69787764E39e0F5baC/mCQfIGr08xr6PmqrqvZMnXoLoKDJmYHPvMumJzm2UPk"
+                      // link="https://medium.com/ethereum-push-notification-service/push-grants-program-going-live-6841515f95d8"
                     />
                     <MediumCard
                       title="Snapshot Step By Step Guide"
                       thumbnail="https://miro.medium.com/max/1400/1*sT8bP2tX88fn82mJkuyLzQ.png"
-                      link="https://medium.com/ethereum-push-notification-service/epns-snapshot-voting-a-step-by-step-guide-832e44243e2a"
+                      link="https://mirror.xyz/0xd0a99De1eD63d9F1Dd7F1a69787764E39e0F5baC/UYFbOFI5bxnsd3Ho9DfHQixqYBll_LfScnphKmlQWC4"
+                      // link="https://medium.com/ethereum-push-notification-service/epns-snapshot-voting-a-step-by-step-guide-832e44243e2a"
                     />
                   
     </ItemHE>
@@ -2098,7 +2101,7 @@ const EmphasisImage = styled(Item)`
 `
 
 const EmphasisText = styled(Span)`
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-family: Source sans pro;
   font-weight: 400;
   text-align: center;
