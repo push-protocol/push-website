@@ -200,20 +200,22 @@ governance.
                   }
               }
           }}
-           itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={3000} loop={true} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} renderArrow={({ type, onClick, isEdge })=>{
+           itemsToShow={width < 500 ? 1 : 1} autoPlaySpeed={3000} loop={true} enableAutoPlay={true} style={{background:"green",padding:"0px 0px !important"}} 
+           renderArrow={({ type, onClick, isEdge })=>{
            const pointer = type === consts.PREV ? "left" : "right"
             if(pointer=="left")
            return (
-             <Button style={{position:"absolute",bottom:"100px",right:"110px",background:"none"}} onClick={onClick} disabled={isEdge}>
+             <Button style={{position:"absolute",bottom:"100px",right:"110px",background:"none",display:"none"}} onClick={onClick} disabled={isEdge}>
                <BsChevronLeft fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
              </Button>
            )
            else return (
-            <Button style={{position:"absolute",bottom:"100px",right:"60px",background:"none"}} onClick={onClick} disabled={isEdge}>
+            <Button style={{position:"absolute",bottom:"100px",right:"60px",background:"none",display:"none"}} onClick={onClick} disabled={isEdge}>
               <BsChevronRight fontSize="1.3rem" style={{background:"rgba(0, 0, 0, 0.4)",borderRadius:"50%",padding:"5px"}}/>
             </Button>
           ) 
-          }}>
+          }}
+          >
         <SectionFSHero id="hero" padding="0px 0px 0px 0px">
         <HeroImg src="/governance/governancebanner.png" />
         
@@ -1134,10 +1136,9 @@ const animate =keyframes`
 // theme="#e20880" padding="0px 0px 80px 0px"
 const HeroImg=styled.img`
   height:100vh;
-  width:100vw;
+  width:100%;
   @media(max-width:500px){
-    width: 100vw;
-    height: 100vh;
+    height: 30vh;
   }
 `;
 const HeroSection=styled.div`
@@ -1155,10 +1156,10 @@ const HeroSection=styled.div`
     }
   }
 
-  & ${HeroImg}{
+  /* & ${HeroImg}{
     @media(max-width:700px){
       object-fit: scale-down;
-    }
+    } */
   }
 
   // @media(max-width:500px){
