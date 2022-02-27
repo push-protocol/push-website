@@ -349,22 +349,17 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
 
 
 
-
           <CircleSection theme="#fff" padding="0px 0px 30px 0px" >
               
         
               {/* <GovernanceSection id="governance"  > */}
               <Content className="contentBox" style={{display:"flex",justifyContent:"center",flexDirection:"row",alignItems:"center"}}>
                 {/* <TextImg1 title="Notification Channel Subscribers
-
               App & Dapp Users
-
               Social Followers & Friends">COMMUNITY</TextImg1> */}
               <Cont mbtm="15rem">
               <Tooltip bottom content="Notification Channel Subscribers
-
               App & Dapp Users
-
               Social Followers & Friends">
                 <TextImg1>
                   COMMUNITY
@@ -385,20 +380,14 @@ With EPNS Governance we aim to offer individuals clear paths to participate in o
               
               
               {/* <TextImg title="These are the Voters!
-
 Supporters who purchase and hold the token
-
 Stakers who provide liquidity (Uniswap currently, more coming soon)
-
 Yield Farmers earning $PUSH rewards on our Incentives Dapp">PUSH HOLDERS</TextImg> */}
 <Cont mbtm="15rem">
 
 <Tooltip bottom content="These are the Voters!
-
 Supporters who purchase and hold the token
-
 Stakers who provide liquidity (Uniswap currently, more coming soon)
-
 Yield Farmers earning $PUSH rewards on our Incentives Dapp">
   <TextImg>PUSH HOLDERS</TextImg>
   </Tooltip>
@@ -410,11 +399,9 @@ Yield Farmers earning $PUSH rewards on our Incentives Dapp">
                   </Content>
                   
                   {/* <TextImgBtm title="Contract Development & Management
-
             Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm> */}
             <Cont>
             {/* <Tooltip bottom content="Contract Development & Management
-
 Core Administration: Marketing, Engineering, Content, Social Media, etc.">
               <TextImgBtm>PROTOCOL</TextImgBtm>
             </Tooltip> */}
@@ -424,9 +411,6 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
               {/* </GovernanceSection> */}
             </CircleSection>
-
-
-
 
 
 
@@ -1157,6 +1141,7 @@ const HeroImg=styled.img`
   }
 `;
 const HeroSection=styled.div`
+  
   & ${Anchor}{
     position:absolute;
     left:150px;
@@ -2271,7 +2256,6 @@ const CircleSection = styled.section`
   align-items: ${props => props.align || 'initial'};
   flex: 1;
   position: relative;
-  margin-bottom: 20rem;
   @media(max-width: 500px)
   {
     max-width: 400px;

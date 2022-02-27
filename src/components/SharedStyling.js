@@ -22,7 +22,7 @@ export const SectionFS = styled(Section)`
 `
 
 export const SectionFSHero = styled(Section)`
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background: rgb(31,23,47);
   background: linear-gradient(283deg, rgba(31,23,47,1) 0%, rgba(62,9,40,1) 45%, rgba(17,58,72,1) 100%);
 `
@@ -264,7 +264,7 @@ export const Anchor = styled.a`
   border-radius: ${props => props.radius || "0px"};
   width: ${props => props.width || "initial" };
 
-  position: relative;
+  position: relative; 
   text-decoration: none;
   overflow: ${props => props.overflow || "hidden"};
   z-index: 3;
