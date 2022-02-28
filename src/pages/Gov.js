@@ -428,7 +428,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         <DeskTopView>
           
-          <Section theme="#fff" padding="0px 0px 250px 0px" >
+          <Section theme="#fff" padding="0px 0px 50px 0px" >
               
         
           <GovernanceSection id="governance"  >
@@ -445,7 +445,6 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
                 <video
 									autoPlay
-								
 									src="/governance/pathVideo.mp4"
 									muted
 									disablePictureInPicture
@@ -519,7 +518,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
             <Wave fill='#C7E9F6'
               paused={true}
               options={{
-                height: 20,
+                height: 10,
                 amplitude: 30,
                 speed: 0.35,
                 points: 3
@@ -546,7 +545,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 {/* style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} */}
   <GrantsContainer  style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} >
- 
+              
   <GovernanceHeadingE >
         <item><h4>PUSH<GovernanceSpan  style={{background:"#e20880"}}><b>GRANTS PROGRAM</b></GovernanceSpan>  </h4></item>
                    
@@ -890,6 +889,7 @@ const SectionCircle = styled.section`
 `
 
 const DeskTopView=styled.div`
+height: 100vh;
   @media(max-width:600px){
     display:none;
   }
@@ -1245,8 +1245,8 @@ const SectionProcess = styled.section`
   display: flex;
   flex-direction:column;
   background:#fff;
-  margin: 0px
-  padding: 0px
+  margin-top: 20rem;
+  padding: 0px;
   overflow: hidden;
   position: relative;
   margin-bottom: 4rem;
@@ -1254,6 +1254,7 @@ const SectionProcess = styled.section`
  @media(max-width:500px){
    overflow-y: hidden;
    overflow-x: hidden;
+   margin-top: 0rem;
  }
 `;
 
@@ -1266,11 +1267,11 @@ const GrantsImage = styled.div`
 const GrantsContainer = styled.section`
   display: flex;
   flex-direction:column;
-  margin: 0px
-  padding: 0px
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
   position: relative;
-  
+  margin-top:-4rem;
 
  @media(max-width:500px){
    overflow-y: hidden;
@@ -1859,7 +1860,8 @@ const GovernanceSection=styled.div`
   justify-content: space-between;
   flex-direction: column;
   padding: 2rem 2rem;
-`;
+  
+  `;
 
 const GovernanceItem=styled.div`
   display: flex;
