@@ -288,20 +288,17 @@ governance.
       </HeroSection>
     
           {/* Start What is Governance */}
-          <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 0px 0px" >
+          <Section id="featured" theme="#e20880" gradient="linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)" padding="0px 0px 0px 0px" >
           
 
        
       
           
-      <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}>
-
-        
+      {/* <GovernanceSection id="governance"  style={{background:"linear-gradient(180deg, #35C5F3 0%, #674C9F 100%)"}}> */}
+      <Content className="contentBox">
         <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}><b>WHAT IS</b></GovernanceSpan>GOVERNANCE?</h4></item>
-        {/* <item>
-            <p style={{color:"#fff"}}>WHAT IS GOVERNANCE</p>
-        </item>             */}
+        
         </GovernanceHeading>
         <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <DottedSection>
@@ -311,22 +308,19 @@ governance.
         </Content>
         <GovernanceHeading flex="flex-end">
         <item><h4 style={{color:"#fff"}}><GovernanceSpan style={{background:"black"}}><b>WHY</b></GovernanceSpan>GOVERNANCE?</h4></item>
-        {/* <item>
-            <p style={{color:"#fff"}}>WHY GOVERNANCE</p>
-        </item>             */}
+       
         </GovernanceHeading>
        
-        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"5rem 0"}}>
+        <Content className="contentBox" style={{display:"flex",justifyContent:"center",alignItems:"center",margin:"1rem 0 10rem 0"}}>
         <DottedSection>
         Our progressive governance model aims to hand over the various levers of control to the EPNS governing community. We want to establish a system for the community where ideas and proposals are considered, respected, and incentivized.
 With EPNS Governance we aim to offer individuals clear paths to participate in our protocol and bolster innovation to the EPNS ecosystem.
         </DottedSection>
        
         </Content>
-        
-      </GovernanceSection>
+      {/* </GovernanceSection> */}
          
-
+      </Content>
       <WaveOuter>
           <WaveInner>
             <Wave fill='#FFFFFF'
@@ -396,18 +390,18 @@ Yield Farmers earning $PUSH rewards on our Incentives Dapp">
 
 </Cont>
 
-
+            {/* <Cont>
+                        <Tooltip bottom content="Contract Development & Management
+            Core Administration: Marketing, Engineering, Content, Social Media, etc.">
+              <TextImgBtm>PROTOCOL</TextImgBtm>
+            </Tooltip>
+            </Cont> */}
 
                   </Content>
                   
                   {/* <TextImgBtm title="Contract Development & Management
             Core Administration: Marketing, Engineering, Content, Social Media, etc.">PROTOCOL</TextImgBtm> */}
-            <Cont>
-            {/* <Tooltip bottom content="Contract Development & Management
-Core Administration: Marketing, Engineering, Content, Social Media, etc.">
-              <TextImgBtm>PROTOCOL</TextImgBtm>
-            </Tooltip> */}
-            </Cont>
+           
             
 
 
@@ -428,13 +422,13 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         <DeskTopView>
           
-          <Section theme="#fff" padding="0px 0px 50px 0px" >
+          <Section theme="#fff" padding="0px 0px 0px 0px" >
               
         
-          <GovernanceSection id="governance"  >
+          {/* <GovernanceSection id="governance"  > */}
        
          
-            
+          <Content className="contentBox">
               <GovernanceHeading >
         <item style={{margin:"0"}}><h4 style={{color:"black"}}><GovernanceSpan style={{background:"#674C9F"}}><b>FUTURE</b></GovernanceSpan> OF GOVERNANCE?</h4></item>
         <item>
@@ -450,7 +444,8 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 									disablePictureInPicture
 								/>
               
-      </GovernanceSection>
+      {/* </GovernanceSection> */}
+      </Content>
            </Section> 
 
            </DeskTopView>
@@ -463,6 +458,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 
 <SectionProcess>
+<Content className="contentBox">
 <GovernanceHeadingE >
         <item><h4>GOVERNANCE<GovernanceSpan  style={{background:"#e20880"}}><b>PROCESS</b></GovernanceSpan>  </h4></item>
         <item>
@@ -513,6 +509,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
         
         </SectionProcessGovernance>
+        </Content>
         <WaveOuter>
           <WaveInner>
             <Wave fill='#C7E9F6'
@@ -545,7 +542,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
 {/* style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} */}
   <GrantsContainer  style={{background:"url('/governance/gradient.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover'}} >
-              
+  <Content className="contentBox">
   <GovernanceHeadingE >
         <item><h4>PUSH<GovernanceSpan  style={{background:"#e20880"}}><b>GRANTS PROGRAM</b></GovernanceSpan>  </h4></item>
                    
@@ -554,7 +551,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
         {/* <GrantsInner> */}
         <GrantsText>
         This program aims to enable contributors with the resources they need (funding, dev support, go-to market planning, etc.) to focus their energies on the advancement of the EPNS protocol.
-               </GrantsText>
+        </GrantsText>
               {/* </GrantsInner> */}
 
 
@@ -602,6 +599,7 @@ Core Administration: Marketing, Engineering, Content, Social Media, etc.">
 
   
 
+  </Content>
 
 
   <WaveOuter>
@@ -892,7 +890,7 @@ const SectionCircle = styled.section`
 `
 
 const DeskTopView=styled.div`
-height: 100vh;
+height: 60vh;
   @media(max-width:600px){
     display:none;
   }
@@ -995,14 +993,15 @@ margin-top: 3rem;
 
 @media(min-width: 500px)
 {
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 @media (max-width: 600px) {
   flex-direction: column;
   justify-content: center;
-`
+}
+  `
 
 const Links = styled.div`
 display: flex;
@@ -1011,7 +1010,7 @@ justify-content: space-between;
 margin-left: 4rem;
 margin-right: 3rem;
 margin-bottom: 180px;
-align: center;
+align-items: center;
 @media(min-width: 1000px)
 {
   padding-left: 3rem;
@@ -1047,7 +1046,7 @@ justify-content: center;
 const GrantsInner = styled.div`
 display: flex;
 flex-direction: column;
-justify-content; center;
+justify-content: center;
 align-items: center;
 `;
 
@@ -1163,7 +1162,7 @@ const HeroSection=styled.div`
     @media(max-width:700px){
       object-fit: scale-down;
     } */
-  }
+  
 
   // @media(max-width:500px){
   //   margin-bottom: -3rem;
@@ -1175,8 +1174,8 @@ const SectionLearn = styled.section`
   display: flex;
   flex-direction:column;
   background:#e20880;
-  margin: 0px
-  padding: 0px
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
   position: relative;
 
@@ -1192,7 +1191,7 @@ const SectionC = styled.section`
  display: flex;
  flex-direction: row;
  justify-content: center;
- alignItems: center;
+ align-items: center;
  overflow: hidden;
  margin-bottom: 5rem;
 //  flex-basis: 0;
@@ -1221,7 +1220,7 @@ const SectionLearnGovernance = styled.section`
  flex-direction: row;
  margin-bottom: 10rem;
  justify-content: center;
- column: 0px;
+ /* column: 0px; */
  @media(min-width:500px)
  {
   margin-left: 3rem;
@@ -1295,14 +1294,13 @@ const SectionProcessGovernance = styled.section`
 
  flex-direction: column;
  margin-bottom: 120px;
- column: 0px;
  @media(min-width:400px)
  {
   margin-left: 3rem;
  margin-right: 3rem;
  }
 
- @media(max-width:450px ){
+ @media(max-width:450px )
   {
    margin-left: 2rem;
    margin-right: 1rem;
@@ -1713,6 +1711,7 @@ const GovernanceRolesSection=styled.div`
   @media(max-width:600px){
     flex-direction: column;
   }
+}
 `;
 const GovernanceImg=styled.img`
    height: auto;
@@ -1814,14 +1813,14 @@ const GovernanceHeadingEU=styled.div`
 
 const GovernanceHeadingE=styled.div`
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   justify-content:  ${props => props.flex || 'flex-start'};
   align-items:  ${props => props.flex || 'flex-start'};
   margin-top: ${props => props.margint};
   flex-direction: column;
   @media(min-width:500px)
   {
-    margin-left:3rem;
+    margin-left:0rem;
   }
 
   @media(max-width:500px)
@@ -2116,7 +2115,7 @@ const EmphasisTextSmall = styled(Span)`
 
 
 const ContentMore = styled(Span)`
-  margin: 0px  
+  margin: 0px  ;
   font-family: Source sans pro;
   @media(min-width:600px){
     margin: 35px;
@@ -2153,7 +2152,7 @@ font-size: 25px;
 position: relative;
 @media(min-width: 500px)
 {
-  margin-right: -160px;
+  margin-right: -80px;
 }
 @media(max-width:900px){
   left:10rem;
@@ -2161,7 +2160,7 @@ position: relative;
 @media(max-width: 500px)
 {
   font-size: 17px;
-  // margin-right: -7rem;
+  /* margin-right: -7rem; */
   margin-top: -20px;
 }
 
@@ -2212,19 +2211,14 @@ justify-content:center;
 font-family: Source sans pro;
 font-weight: 500;
 font-size: 25px;
-// margin-right: 2rem;
-@media(min-width:500px){
-  margin-top: -80px;
-  margin-left: -30px;
+left:-30rem;
+bottom:-15rem;
+ /* margin-right: 2rem; */
+
+@media(max-width:700px){
+  left: -10rem;
+  
 }
-@media(max-width:500px){
-  margin-top: -80px;
-  // margin-left: -25px;
-  font-size: 17px;
-}
-
-
-
 &:hover{
   
 }

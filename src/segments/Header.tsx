@@ -38,7 +38,7 @@ function Head() {
 
           <NavPrimary direction="row" forceDisplay={showMenu} align="stretch" justify="flex-start" minWidth="auto" margin="0px 0px 0px 20px">
             <NavItems>
-              <NavItem align="center" margin="0px 10px" minWidth="auto" flex="0">
+              {/* <NavItem align="center" margin="0px 10px" minWidth="auto" flex="0">
                 <HeadAnchor
                   href="https://whitepaper.epns.io"
                   target="_blank"
@@ -49,7 +49,7 @@ function Head() {
                 >
                   Whitepaper
                 </HeadAnchor>
-              </NavItem>
+              </NavItem> */}
 
               <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
                 <NavItem align="center" margin="0px" minWidth="auto" flex="none">
@@ -65,7 +65,7 @@ function Head() {
                     </ItemH>
                   </HeadAnchor>
                 </NavItem>
-
+              
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
@@ -76,6 +76,18 @@ function Head() {
                       padding="4px 15px"
                     >
                       Integration Guide
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                         href="https://whitepaper.epns.io"
+                         target="_blank"
+                         title="Read Whitepaper"
+                         bg="transparent"
+                         hoverBG="#fff"
+                         padding="4px 15px"
+                    >
+                      WhitePaper
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -122,7 +134,7 @@ function Head() {
                   </NavSubItem>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="./govern"
+                      href="./gov"
                       title="Governance"
                       bg="transparent"
                       hoverBG="#fff"
@@ -152,7 +164,7 @@ function Head() {
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="./govern"
+                      href="./gov"
                       title="Read our story"
                       bg="transparent"
                       hoverBG="#fff"

@@ -237,7 +237,7 @@ function Home() {
 
       {/* HERO SECTION */}
       <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}} triggerOnLoad={false}>
-        <SectionFSHero id="hero" padding="15px 0px 0px 0px">
+        <SectionFSHero id="hero" padding="50px 0px 150px 0px">
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
