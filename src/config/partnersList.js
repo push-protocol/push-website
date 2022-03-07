@@ -74,13 +74,21 @@ const partnersList = {
       alt: "Bancor Logo",
       display: "Bancor 💖 EPNS Collaboration"
     },
-    alpha: {
-      title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
-      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
+    thedefiant: {
+      title: "EPNS Teams Up With The Defiant to Bring DeFi News Directly to Users Wallets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-teams-up-with-the-defiant-to-bring-defi-news-directly-to-users-wallets-8b4896d674bb",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "alphafinance",
-      alt: "Alpha Homora Logo",
-      display: "EPNS + Alpha Homora = an Awesome Collab"
+      src: "thedefiant2",
+      alt: "The Defiant Logo",
+      display: "The Defiant 📰  X 🔔 EPNS "
+    },
+    poolz: {
+      title: "Poolz Finance Collaborates with EPNS to Bring Push Notifications to Its Users",
+      href: "https://medium.com/ethereum-push-notification-service/poolz-finance-collaborates-with-epns-to-bring-push-notifications-to-its-users-53ed94392156",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "poolz",
+      alt: "Poolz Logo",
+      display: "EPNS Collaborates with Poolz"
     },
     iotex: {
       title: "EPNS Collaborates With World’s Fastest IoT Blockchain IoTeX",
@@ -114,6 +122,14 @@ const partnersList = {
       alt: "cvi logo",
       display: "Coti 🤝 EPNS Collaboration"
     },
+    alpha: {
+      title: "Article exploring collaboration between Alpha Homora and Ethereum Push Notificaion Service",
+      href: "https://medium.com/ethereum-push-notification-service/we-alpha-homora-innovations-in-defi-with-epns-3873f74dc48",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "alphafinance",
+      alt: "Alpha Homora Logo",
+      display: "EPNS + Alpha Homora = an Awesome Collab"
+    },
     yamfinance: {
       title: "YAM Finance Integrates EPNS for decentralized communication and notifications",
       href: "https://yamfinance.medium.com/yam-finance-integrates-epns-for-decentralized-communication-and-notifications-8611b9a9921c",
@@ -122,6 +138,22 @@ const partnersList = {
       alt: "yam logo",
       display: "Yam Finance integrates EPNS 🔔"
     },
+    nordfinance: {
+      title: "EPNS and Nord Finance Team Up to Push Notifications for the Emergent DeFi Ecosystem",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-nord-finance-team-up-to-push-notifications-for-the-emergent-defi-ecosystem-c2fe029ba724",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "nordfinance",
+      alt: "Nordfinance logo",
+      display: "EPNS 💖 Nord Finance"
+    },
+    gro: {
+      title: "EPNS Collaborates With Gro Protocol to Enable Decentralized Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-gro-protocol-to-enable-decentralized-notifications-for-users-131b14656dfe",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "gro",
+      alt: "Gro logo",
+      display: "EPNS ✨ GRO Protocol"
+    },
     timeswap: {
       title: "Article talking about collaboration between EPNS and Timeswap!",
       href: "https://medium.com/ethereum-push-notification-service/timeswap-partners-with-epns-to-bring-push-notifications-to-its-users-42c9772631b8",
@@ -129,6 +161,14 @@ const partnersList = {
       src: "timeswap",
       alt: "Timeswap logo",
       display: "🔔 EPNS x Timeswap ⌛"
+    },
+    mstable: {
+      title: "EPNS Allies With mStable to Facilitate Decentralized Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-mstable-to-facilitate-decentralized-notifications-for-users-a3e6be14eecc",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "mstable",
+      alt: "mStable logo",
+      display: "EPNS 🤝 mStable collaboration"
     },
     armor: {
       title: "Armor Integrates EPNS for decentralized communication and notifications",
@@ -202,6 +242,14 @@ const partnersList = {
       alt: "Oasis Logo",
       display: "Oasis.app integrates EPNS Notifs 🔔"
     },
+    lifinance: {
+      title: "EPNS and Li.Finance Team Up To Improve User Experience Through Push Notifications",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-li-finance-team-up-to-improve-user-experience-through-push-notifications-bac8a4bd77e2",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "lifinance",
+      alt: "li.Finance Logo",
+      display: "Li.Finance integrates EPNS 🔔"
+    },
     bprotocol: {
       title: "Article talking about partnership between EPNS and B.Protocol!",
       href: "https://medium.com/ethereum-push-notification-service/epns-push-notifications-to-back-backstop-liquidity-platform-b-protocol-8a93c7b96f4",
@@ -217,6 +265,14 @@ const partnersList = {
       src: "rabbithole",
       alt: "Rabbithole logo",
       display: "EPNS collaborates with RabbitHole 🐇"
+    },
+    cryptomanga: {
+      title: "EPNS x CryptoManga: Decentralized Communication for Decentralized Gaming",
+      href: "https://medium.com/ethereum-push-notification-service/epns-x-cryptomanga-decentralized-communication-for-decentralized-gaming-d296956afdeb",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "cryptomanga",
+      alt: "CryptoManga logo",
+      display: "EPNS  ✨  CryptoManga"
     },
     fabwelt: {
       title: "Article talking about EPNS and Fabwelt bringing push notifications to crypto gaming",
@@ -289,6 +345,14 @@ const partnersList = {
       src: "atlantisworld",
       alt: "Atlantis logo",
       display: "Notifs 🔔 for the Social Metaverse"
+    },
+    digible: {
+      title: "EPNS Collaborates With NFT Marketplace Digible to Enable Push Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-nft-marketplace-digible-to-enable-push-notifications-for-users-fab65f3e9eda",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "digible",
+      alt: "Digible logo",
+      display: "EPNS X Digible"
     },
     clrfund: {
       title: "Advancing CLR.fund Funding Protocol with Web3Notifs",
