@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import MetaTags, {ReactTitle} from 'react-meta-tags';
 
 import styled, { css } from 'styled-components';
-import {Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField} from 'components/SharedStyling';
+import {Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
 
 import ScrollTrigger from 'react-scroll-trigger';
 
@@ -239,14 +239,7 @@ function Home() {
 
       {/* HERO SECTION */}
       <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}} triggerOnLoad={false}>
-        <SectionFSHero id="hero" padding="15px 0px 0px 0px">
-          {/* SNOWING
-          <Snowfall
-            color="white"
-            snowflakeCount={100}
-            radius={[0.5, 2]}
-          />
-          */}
+        <SectionFSHero id="hero" padding="50px 0px 150px 0px">
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
@@ -302,8 +295,9 @@ function Home() {
           </WaveOuter>
         </SectionFSHero>
       </ScrollTrigger>
-
-
+            
+      
+       
       {/* FEATURED SECTION */}
       <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
         {/* SNOWING
@@ -1120,7 +1114,7 @@ function Home() {
               </H2>
               <H3 color="#fff">Our Journey so far</H3>
             </Item>
-
+            
             <Medium numberOfPosts={3} />
 
             <ItemH margin="20px -20px 20px -20px" justify="space-between" align="flex-start" columnGap="40px" rowGap="40px">
@@ -1661,6 +1655,7 @@ const HeroBanner = styled(Item)`
     display: none;
   }
 `
+
 
 const Featured = styled.div`
   display: flex;

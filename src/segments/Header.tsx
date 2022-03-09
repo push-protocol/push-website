@@ -24,8 +24,8 @@ function Head() {
       <Section className="contentBox" direction="row">
         <Nav direction="row" align="stretch" justify="flex-start" minWidth="auto" margin="0px 20px" size="0.8rem">
           <Item align="center" margin="0px" minWidth="auto" flex="0">
-            <HeadAnchor
-              href="/"
+          <HeadAnchor
+              href="#"
               bg="transparent"
               title="Homepage of EPNS"
               hoverBG="#e20880"
@@ -38,7 +38,7 @@ function Head() {
 
           <NavPrimary direction="row" forceDisplay={showMenu} align="stretch" justify="flex-start" minWidth="auto" margin="0px 0px 0px 20px">
             <NavItems>
-              <NavItem align="center" margin="0px 10px" minWidth="auto" flex="0">
+              {/* <NavItem align="center" margin="0px 10px" minWidth="auto" flex="0">
                 <HeadAnchor
                   href="https://whitepaper.epns.io"
                   target="_blank"
@@ -49,7 +49,7 @@ function Head() {
                 >
                   Whitepaper
                 </HeadAnchor>
-              </NavItem>
+              </NavItem> */}
 
               <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
                 <NavItem align="center" margin="0px" minWidth="auto" flex="none">
@@ -76,6 +76,18 @@ function Head() {
                       padding="4px 15px"
                     >
                       Integration Guide
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                         href="https://whitepaper.epns.io"
+                         target="_blank"
+                         title="Read Whitepaper"
+                         bg="transparent"
+                         hoverBG="#fff"
+                         padding="4px 15px"
+                    >
+                      WhitePaper
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -130,6 +142,93 @@ function Head() {
                       padding="4px 15px"
                     >
                       FAQ
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="./gov"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Governance
+                    </HeadAnchor>
+                  </NavSubItem>
+                </NavSubItems>
+              </NavSub>
+
+              <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
+                <NavItem align="center" margin="0px" minWidth="auto" flex="none">
+                  <HeadAnchor
+                    title="Documentation"
+                    bg="transparent"
+                    hoverBG="#fff"
+                    padding="4px 15px"
+                  >
+                    <ItemH minWidth="auto" margin="0px">
+                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Governance</Span>
+                      <BsChevronDown size={12} color="#fff"/>
+                    </ItemH>
+                  </HeadAnchor>
+                </NavItem>
+
+                <NavSubItems>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="./gov"
+                      title="Read our story"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Website
+                    </HeadAnchor>
+                  </NavSubItem>
+
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="http://gov.ens.io/"
+                      title="Frequently Asked Questions"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Forum
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Grants
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://snapshot.org/#/epns.eth"
+                      title="Governance"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Snapshot
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      className="Glow"
+                      href="http://incentives.epns.io/"
+                      title="Governance"
+                      bg="#e20880"
+                      hoverBG="#b50465"
+                      padding="4px 15px"
+                    >
+                      Delegate
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -211,11 +310,6 @@ const Header = styled.header`
   position: ${props => (props.forceDisplay ? "fixed" : "absolute") || "absolute"};
 `
 
-const Logo = styled.img`
-  height: 35px;
-  filter: brightness(0) invert(1);
-`
-
 const Nav = styled(Item)`
 
 `
@@ -223,7 +317,7 @@ const Nav = styled(Item)`
 const NavTablet = styled(Item)`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 940px) {
     display: flex;
   }
 `
@@ -241,6 +335,7 @@ const NavItems = styled.ul`
 
 const NavItem = styled.li`
   display: flex;
+  min-width: 140px;
   flex: ${props => props.flex || '1'};
   align-self: ${props => props.self || 'auto'};
   align-items: ${props => props.align || 'center'};
@@ -310,10 +405,17 @@ const NavSubItem = styled(NavItem)`
       opacity: 0.25;
     }
   }
+
+  .Glow{
+    &:hover{
+      background:#e22780
+    }
+  }
+  }
 `
 
 const NavPrimary = styled(Nav)`
-  @media (max-width: 768px) {
+  @media (max-width: 940px) {
     display: ${props => (props.forceDisplay ? "flex" : "none") || "none"};
 
     position: fixed;

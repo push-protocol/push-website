@@ -1,19 +1,21 @@
 import styled, { css } from "styled-components";
 
 export const Section = styled.section`
-	display: flex;
-	align-self: stretch;
-	justify-content: center;
-	align-items: ${(props) => props.align || "initial"};
-	flex-direction: ${(props) => props.direction || "column"};
-	background: ${(props) => props.theme || "transparent"};
-	background: ${(props) => props.gradient || "undefined"};
-	margin: ${(props) => props.margin || "0px"};
-	padding: ${(props) => props.padding || "0px"};
-	overflow: ${(props) => props.overflow || "initial"};
-	flex: 1;
-	position: relative;
-`;
+  display: flex;
+  align-self: stretch;
+  justify-content: center;
+  align-items: ${props => props.align || 'initial'};
+  flex-direction: ${props => props.direction || 'column'};
+  background: ${props => props.theme || 'transparent'};
+  background: ${props => props.gradient || 'undefined'};
+  margin: ${props => props.margin || '0px'};
+  padding: ${props => props.padding || '0px'};
+  overflow: ${props => props.overflow || 'initial'};
+  flex: 1;
+  position: relative;
+
+ 
+`
 
 export const SectionFS = styled(Section)`
 	min-height: 100vh;
@@ -185,18 +187,18 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-	color: ${(props) => props.color || "rgb(0 0 0 / 0.5)"};
-	font-weight: ${(props) => props.weight || 300};
-	font-size: ${(props) => props.size || "1rem"};
-	text-transform: ${(props) => props.textTransform || "uppercase"};
-	margin: ${(props) => props.margin || "-15px 0px 20px 0px"};
-	padding: ${(props) => props.padding || "0px"};
-	letter-spacing: ${(props) => props.spacing || "0.1em"};
-	font-family: ${(props) =>
-		props.family || "'Source Sans Pro', Helvetica, sans-serif"};
-	text-align: ${(props) => props.textAlign || "inherit"};
-	max-width: ${(props) => props.maxWidth || "initial"};
-`;
+  color: ${props => props.color || 'rgb(0 0 0 / 0.5)'};
+  font-weight: ${props => props.weight || 300};
+  font-size: ${props => props.size || "1rem"};
+  text-transform: ${props => props.textTransform || "uppercase"};
+  margin: ${props => props.margin || "-15px 0px 20px 0px"};
+  padding: ${props => props.padding || "0px"};
+  letter-spacing: ${props => props.spacing || "0.1em"};
+  font-family: ${props => props.family || "'Source Sans Pro', Helvetica, sans-serif"};
+  text-align: ${props => props.textAlign || "inherit"};
+  max-width: ${props => props.maxWidth || 'initial'};
+
+`
 
 export const Image = styled.img`
 	width: 100%;
@@ -224,6 +226,20 @@ export const Para = styled(P)`
 	letter-spacing: ${(props) => props.spacing || "0.02em"};
 	font-size: ${(props) => props.size || "1.1em"};
 	color: ${(props) => props.color || "#000000ee"};
+`;
+
+export const DottedSection=styled.div`
+  padding: 2rem;
+  border:3px dashed #fff;
+  border-radius:10px;
+  color:white;
+  font-size: 1.5rem;
+  text-align: center;
+  /* width: 80%; */
+  margin:0rem 0;
+  @media(max-width:600px){
+    width: 80%;
+  }
 `;
 
 export const Span = styled.span`
@@ -263,87 +279,81 @@ export const LI = styled.li`
 `;
 
 export const Anchor = styled.a`
-	display: flex;
-	flex-direction: ${(props) => props.direction || "row"};
-	flex: ${(props) => props.flex || "initial"};
-	align-self: ${(props) => props.self || "auto"};
-	align-items: ${(props) => props.align || "center"};
-	justify-content: ${(props) => props.justify || "center"};
-	font-weight: ${(props) => props.weight || 400};
-	font-size: ${(props) => props.size || "inherit"};
-	color: ${(props) => props.color || "#fff"};
-	background: ${(props) => props.bg || "transparent"};
-	margin: ${(props) => props.margin || "0"};
-	padding: ${(props) => props.padding || "10px 15px"};
-	letter-spacing: ${(props) => props.spacing || "0.2em"};
-	border: ${(props) => props.border || "none"};
-	border-radius: ${(props) => props.radius || "0px"};
-	width: ${(props) => props.width || "initial"};
+  display: flex;
+  flex-direction: ${props => props.direction || 'row'};
+  flex: ${props => props.flex || 'initial'};
+  align-self: ${props => props.self || 'auto'};
+  align-items: ${props => props.align || 'center'};
+  justify-content: ${props => props.justify || 'center'};
+  font-weight: ${props => props.weight || 400};
+  font-size: ${props => props.size || "inherit"};
+  color: ${props => props.color || "#fff"};
+  background: ${props => props.bg || "transparent"};
+  margin: ${props => props.margin || "0"};
+  padding: ${props => props.padding || "10px 15px"};
+  letter-spacing: ${props => props.spacing || "0.2em"};
+  border: ${props => props.border || "none"};
+  border-radius: ${props => props.radius || "0px"};
+  width: ${props => props.width || "initial" };
 
-	position: relative;
-	text-decoration: none;
-	overflow: ${(props) => props.overflow || "hidden"};
-	z-index: 3;
+  position: relative; 
+  text-decoration: none;
+  overflow: ${props => props.overflow || "hidden"};
+  z-index: 3;
 
-	filter: ${(props) => props.filter || "none"};
+  filter: ${props => props.filter || "none"};
 
-	cursor: pointer;
-	pointer: hand;
+  cursor: pointer;
+  pointer: hand;
 
-	&:hover & {
-		filter: ${(props) =>
-			(props.filterHover
-				? props.filterHover
-				: props.hover
-				? props.hover
-				: "none") || "none"};
-	}
+  &:hover & {
+    filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : "none")) || "none"};
+  }
 
-	&:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: ${(props) =>
-			props.hover || (props.bg ? props.bg : "transparent")};
-		display: none;
-		z-index: -1;
-	}
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${props => props.hover || (props.bg ? props.bg : "transparent")};
+    display: none;
+    z-index: -1;
+  }
 
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: ${(props) => props.hoverBG || "#000"};
-		opacity: 0;
-		z-index: -1;
-	}
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${props => props.hoverBG || "#000"};
+    opacity: 0;
+    z-index: -1;
+  }
 
-	&:hover:before {
-		display: block;
-	}
+  &:hover:before {
+    display: block;
+  }
 
-	&:hover:after {
-		opacity: 0.08;
-	}
-	&:active:after {
-		opacity: 0.15;
-	}
-`;
+  &:hover:after {
+    opacity: 0.08;
+  }
+  &:active:after {
+    opacity: 0.15;
+  }
+`
 
 export const A = styled(Anchor)`
-	display: inline;
-	color: #e1087f;
-	background: transparent;
-	padding: 0px;
-	letter-spacing: inherit;
-	text-transform: initial;
-`;
+  display: inline;
+  color: ${props => props.color || '#e1087f'};
+  background: transparent;
+  padding: 0px;
+  letter-spacing: inherit;
+  text-transform: initial;
+`
 
 export const Button = styled.button`
 	display: flex;

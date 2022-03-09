@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled, { css } from 'styled-components';
-import {ItemH} from 'components/SharedStyling';
+import {ItemH,Item} from 'components/SharedStyling';
 
 import Loader from 'react-loader-spinner';
 
@@ -32,7 +32,7 @@ function Medium({ numberOfPosts }) {
 
   // RENDER
   return (
-    <ItemH margin="-20px" align="stretch" columnGap="40px" rowGap="40px">
+    <ItemHE margin="-20px" align="stretch" columnGap="40px" rowGap="40px">
       {!postsLoaded &&
         <Loader
          type="Oval"
@@ -40,6 +40,7 @@ function Medium({ numberOfPosts }) {
          height={32}
          width={32}
         />
+       
       }
 
       {postsLoaded &&
@@ -55,11 +56,27 @@ function Medium({ numberOfPosts }) {
           );
         })
       }
-    </ItemH>
+    </ItemHE>
   );
 }
 
+export const ItemBreak = styled.div`
+  flex-basis: 100%;
+`
+
 // css style
+
+
+export const ItemHE = styled(Item)`
+  flex-direction: row;
+  flex: ${props => props.flex || '1'};
+  
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    width: 20rem;
+  }
+`
 
 
 // Export Default

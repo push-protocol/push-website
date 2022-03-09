@@ -15,18 +15,24 @@ import { SectionFSHero, Item, Image } from "components/SharedStyling";
 import Head from "segments/Header";
 import Foot from "segments/Footer";
 
-import Home from "pages/Home";
-import FAQ from "pages/FAQ";
 import PressKit from "./pages/PressKit";
-import Terms from "pages/Terms";
-import Privacy from "pages/Privacy";
 import RedirectToDiffUrl from './components/RedirectToDiffUrl';
-import ComingSoon from "pages/ComingSoon";
 import Ethdenver from 'pages/Ethdenver';
-import config from "config/config";
+import Home from 'pages/Home';
+import FAQ from 'pages/FAQ';
+import Gov from './pages/Gov';
+import Gov0 from './pages/Gov0';
+import Terms from 'pages/Terms';
+import Privacy from 'pages/Privacy';
 
-export default function () {
-	return <App />;
+import ComingSoon from 'pages/ComingSoon';
+
+import config from 'config/config';
+
+export default function() {
+  return (
+    <App />
+  )
 }
 
 const launchEpoch = 1607446800; // Tuesday, December 8, 2020 5:00:00 PM GMT
@@ -84,49 +90,53 @@ function App() {
 				<Head />
 
 				<ParentContainer>
-					{/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
 					<Switch>
-						<Route path="/api">
-							<Redirect push to={"/api.html"} />
-						</Route>
-						<Route path="/privacy">
-							<Privacy />
-						</Route>
-						<Route path="/tos">
-							<Terms />
-						</Route>
+					
 						<Route path="/presskit">
 							<PressKit />
 						</Route>
-						<Route path="/faq">
-							<FAQ />
-						</Route>
+					
 						<Route path="/ethdenver">
 							<Ethdenver />
 						</Route>
-            {/* <Route
-                path="/grants"
-              >
-                <RedirectToDiffUrl loc="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies" />
-             
-              </Route> */}
-			  <Route
-                path="/notify"
-              >
-                <RedirectToDiffUrl />
-             
-              </Route>
-						<Route path="/">
-							<Home />
+						{/* <Route
+							path="/grants"
+						>
+							<RedirectToDiffUrl loc="https://meetflo.zendesk.com/hc/en-us/articles/230425728-Privacy-Policies" />
+						
+						</Route> */}
+						<Route
+							path="/notify"
+						>
+							<RedirectToDiffUrl />
+						
 						</Route>
+									
+					<Route path="/api">
+						<Redirect push to={"/api.html"} />
+					</Route>
+					<Route path="/privacy">
+						<Privacy />
+					</Route>
+					<Route path="/gov">
+									<Gov />
+								</Route>
+					<Route path="/tos">
+						<Terms />
+					</Route>
+					<Route path="/faq">
+						<FAQ />
+					</Route>
+					<Route path="/">
+						<Home />
+					</Route>
 					</Switch>
 				</ParentContainer>
 
 				<Foot />
-			</Router>
-		</>
-	);
+    </Router>
+    </>
+  );
 }
 
 // <>

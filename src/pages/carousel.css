@@ -1,0 +1,145 @@
+.rec {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.rec.rec-arrow:hover {
+  border-radius: 90%;
+  /* background-color: red; */
+}
+
+/* .rec.rec-arrow:disabled {
+  visibility: hidden;
+} */
+
+.rec.rec-arrow {
+  /* visibility: hidden; */
+
+  background-color: none;
+  size: 1rem;
+}
+
+
+.rec-arrow {
+  position: static;
+  outline: none;
+  border: none;
+  background-color: #f4f4f4 !important;
+  color: gray !important;
+  box-shadow: none !important;
+  font-size: 1rem !important;
+}
+.rec-arrow:focus {
+  outline: none;
+  border: none;
+  /* background-color: black !important; */
+  color: black !important;
+}
+.rec-arrow-active {
+  outline: none;
+  border: none;
+  /* background-color: black !important; */
+  color: black !important;
+}
+.rec-dot-active {
+  color: black !important;
+  background-color: black !important;
+}
+
+.rec-dot {
+  color: black !important;
+  box-shadow: none !important;
+  margin: 0rem 10px !important;
+  /* background-color: rgb(65, 37, 37) !important; */
+}
+
+.Dashedline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: 1px solid black;
+}
+
+/* grant section cards  */
+.key {
+  height: 151px;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  margin-right: 10px;
+  position: absolute;
+  margin-left: 8.5rem;
+}
+
+.money {
+  height: 151px;
+  margin-bottom: 5px;
+  margin-right: -30px;
+  position: absolute;
+  margin-left: 7rem;
+}
+
+.wave {
+  height: 151px;
+  margin-top: 10px;
+  margin-right: 10px;
+  position: absolute;
+  margin-left: 10rem;
+}
+
+@media(max-width: 600px)
+{
+  .key{
+    margin-left: 6rem;
+
+  }
+  .money{
+margin-left: 3.5rem;
+  }
+  .wave{
+margin-left: 7.3rem;
+  }
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Source Sans Pro;
+  color: #534949;
+  text-align: center;
+}
+
+
+
+/* @media(min-width: 600px)
+{
+  @media(max-width:1000px)
+  {
+    .first{
+      margin-left:2rem;
+      margin-right: 2rem;
+
+    }
+    .second{
+
+      margin-left:2rem;
+      margin-right: 2rem
+
+    }
+    .third{
+
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+  }
+} */
+
+@media (max-width: 500px) {
+  .link {
+    margin-right: 0.4rem;
+    font-size: 15px;
+  }
+}
+
+.grantscontainer {
+  background-image: url("gradient.png");
+}
