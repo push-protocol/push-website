@@ -458,7 +458,7 @@ function Governance() {
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" align="flex-start" margin="0px 0px 40px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
-              <Span weight="200">Let's define </Span><Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Gvoernance Roles</Span>
+              <Span weight="200">Let's define </Span><Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Governance Roles</Span>
               </H2>
               <H3>Learn what role might be best for you and how it plugs into the EPNS ecosystem</H3>
             </Item>

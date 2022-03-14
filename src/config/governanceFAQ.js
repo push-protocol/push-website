@@ -59,12 +59,15 @@ const Answer = styled(Item)`
    align-items: stretch;
    align-self: stretch;
    padding:20px ;
-   background: linear-gradient(283deg,rgba(31,23,47,1) 0%,rgba(62,9,40,1) 45%,rgba(17,58,72,1) 100%);
+   border: 1px solid #e6e6e6;
+   border-top: 1px solid #e6e6e6;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   background: #fff;
 
     & ${Span} {
       line-height: 1.5em;
       margin: 10px;
-      color: #fff;
       font-size: 1.05em;
     }
  `

@@ -188,7 +188,8 @@ function Head() {
 
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="http://gov.ens.io/"
+                      href="http://gov.epns.io/"
+                      target="_blank"
                       title="Frequently Asked Questions"
                       bg="transparent"
                       hoverBG="#fff"
@@ -201,6 +202,7 @@ function Head() {
                     <HeadAnchor
                       href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
                       title="Governance"
+                      target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="4px 15px"
@@ -212,6 +214,7 @@ function Head() {
                     <HeadAnchor
                       href="https://snapshot.org/#/epns.eth"
                       title="Governance"
+                      target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="4px 15px"
@@ -224,6 +227,7 @@ function Head() {
                       className="Glow"
                       href="http://incentives.epns.io/"
                       title="Governance"
+                      target="_blank"
                       bg="#e20880"
                       hoverBG="#b50465"
                       padding="4px 15px"
