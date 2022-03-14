@@ -82,6 +82,14 @@ const partnersList = {
       alt: "The Defiant Logo",
       display: "The Defiant 📰  X 🔔 EPNS "
     },
+    earnifi: {
+      title: "Earnifi and EPNS Collaborate to Bring Airdrop Opportunities to Users",
+      href: "https://medium.com/ethereum-push-notification-service/make-the-most-of-airdrops-earnifi-and-epns-collaborate-to-bring-airdrop-opportunities-to-users-48faaf4cbf8d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "earnifi",
+      alt: "Earnifi Logo",
+      display: "🪂 Earnifi x EPNS 🔔  Airdrops Notifs to your wallet! "
+    },
     poolz: {
       title: "Poolz Finance Collaborates with EPNS to Bring Push Notifications to Its Users",
       href: "https://medium.com/ethereum-push-notification-service/poolz-finance-collaborates-with-epns-to-bring-push-notifications-to-its-users-53ed94392156",
