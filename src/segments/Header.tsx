@@ -82,6 +82,7 @@ function Head() {
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="https://docs.epns.io/developer-zone/developer-guides"
+                      target="_blank"
                       title="Read Integration Guide"
                       bg="transparent"
                       hoverBG="#fff"
@@ -93,6 +94,7 @@ function Head() {
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="https://docs.epns.io/epns-governance/governance-guide"
+                      target="_blank"
                       title="Read Integration Guide"
                       bg="transparent"
                       hoverBG="#fff"
