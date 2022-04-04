@@ -1,6 +1,6 @@
 import React from "react";
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {Section, Item, ItemH, Span, Anchor} from 'components/SharedStyling';
 
 import { BsChevronDown } from 'react-icons/bs';
@@ -69,18 +69,7 @@ function Head() {
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                      href="/#contact"
-                      title="Read Integration Guide"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="4px 15px"
-                    >
-                      Integration Guide
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                         href="https://whitepaper.epns.io"
+                         href="https://whitepaper.epns.io/"
                          target="_blank"
                          title="Read Whitepaper"
                          bg="transparent"
@@ -88,6 +77,28 @@ function Head() {
                          padding="4px 15px"
                     >
                       WhitePaper
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://docs.epns.io/developer-zone/developer-guides"
+                      title="Read Integration Guide"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Developer Guides
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://docs.epns.io/epns-governance/governance-guide"
+                      title="Read Integration Guide"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Governance Guides
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -111,6 +122,17 @@ function Head() {
                 <NavSubItems>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
+                      href="/faq"
+                      title="Frequently Asked Questions"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      FAQ
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
                       href="/#story"
                       title="Read our story"
                       bg="transparent"
@@ -130,29 +152,6 @@ function Head() {
                       padding="4px 15px"
                     >
                       Press Kit
-                    </HeadAnchor>
-                  </NavSubItem>
-
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="/faq"
-                      title="Frequently Asked Questions"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="4px 15px"
-                    >
-                      FAQ
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="./gov"
-                      title="Governance"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="4px 15px"
-                    >
-                      Governance
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -414,7 +413,6 @@ const NavSubItem = styled(NavItem)`
     &:hover{
       background:#e22780
     }
-  }
   }
 `
 
