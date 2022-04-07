@@ -440,7 +440,7 @@ const partnersList = {
       hover: "#000", //#eee or #000 based on logo og color
       src: "tokenbrice",
       alt: "TokenBrice Logo",
-      display: "Pool Together does pilot collab with EPNS"
+      display: "DeFi education delivered to you with EPNS 🔔"
     },
     pooltogether: {
       title: "Article talking about partnership between EPNS and Pool Together!",
