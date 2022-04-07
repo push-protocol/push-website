@@ -170,6 +170,14 @@ const partnersList = {
       alt: "Timeswap logo",
       display: "🔔 EPNS x Timeswap ⌛"
     },
+    notional: {
+      title: "Avoiding Loan Liquidation: EPNS Integrates With Notional Finance to Deliver Critical Loan Updates",
+      href: "https://medium.com/ethereum-push-notification-service/avoiding-loan-liquidation-epns-integrates-with-notional-finance-to-deliver-critical-loan-updates-8bfe2bf90112",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "notional",
+      alt: "Notional logo",
+      display: "Notifs to avoid liquidations with EPNS"
+    },
     mstable: {
       title: "EPNS Allies With mStable to Facilitate Decentralized Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-mstable-to-facilitate-decentralized-notifications-for-users-a3e6be14eecc",
@@ -354,6 +362,14 @@ const partnersList = {
       alt: "Atlantis logo",
       display: "Notifs 🔔 for the Social Metaverse"
     },
+    neworder: {
+      title: "EPNS Collaboration With New Order Will Bring Push Notifications to its Venture DAO Governance",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaboration-with-new-order-will-bring-push-notifications-to-its-venture-dao-governance-dd7485494604",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "neworder",
+      alt: "New Order logo",
+      display: "New Order 🗳️ x 🔔 EPNS "
+    },
     digible: {
       title: "EPNS Collaborates With NFT Marketplace Digible to Enable Push Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-nft-marketplace-digible-to-enable-push-notifications-for-users-fab65f3e9eda",
@@ -370,6 +386,14 @@ const partnersList = {
       alt: "clrfund logo",
       display: "Notifs 🔔 of you favourite projects 📲 through EPNS"
     },
+    RealT: {
+      title: "EPNS and RealT Join Forces to Facilitate Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-realt-join-forces-to-facilitate-notifications-for-users-1ba8ac68c04e",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "RealT",
+      alt: "RealT logo",
+      display: "RealT collaborates with EPNS"
+    },
     unilend: {
       title: "EPNS Partners with UniLend Finance To Deliver Notifications for Permissionless Money Markets",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-unilend-finance-to-deliver-notifications-for-permissionless-money-markets-e647300b68ce",
@@ -378,6 +402,14 @@ const partnersList = {
       alt: "unilend logo",
       display: "Get notifs for your money markets 📈"
     },
+    floatcapital: {
+      title: "EPNS Collaborates With Float Capital to Bring Push Notifications to Magic Internet Assets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-float-capital-to-bring-push-notifications-to-magic-internet-assets-ac538c08acb2",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "FLOATCAPITAL",
+      alt: "Float Capital logo",
+      display: "Notifs for your Magic Internet Assets ✨"
+    },
     bridgemututal: {
       title: "EPNS Allies With Bridgemutual to Enable Decentralized Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-bridgemutual-to-enable-decentralized-notifications-for-users-cb2fabc4c1d8",
@@ -385,6 +417,14 @@ const partnersList = {
       src: "bridgemutual",
       alt: "Bridge Mutual logo",
       display: "Bridge Mutual 🤝 EPNS"
+    },
+    flipsidecrypto: {
+      title: "EPNS and Flipside Crypto Join Forces to Facilitate Push Notifications for Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-flipside-crypto-join-forces-to-facilitate-push-notifications-for-users-58df98b7aba7",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "flipside",
+      alt: "Flipside Crypto logo",
+      display: "Flipside Crypto x EPNS"
     },    
     frontier: {
       title: "Article talking about partnership between EPNS and Frontier!",
@@ -393,6 +433,14 @@ const partnersList = {
       src: "frontier",
       alt: "Frontier Logo",
       display: "DeFi Aggregator Frontier to Support Web3 Notifs"
+    },
+    tokenbrice: {
+      title: "EPNS Collaborates With TokenBrice to Bring Decentralized Push Notifications to Readers",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-tokenbrice-to-bring-decentralized-push-notifications-to-readers-629910237582",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "tokenbrice",
+      alt: "TokenBrice Logo",
+      display: "Pool Together does pilot collab with EPNS"
     },
     pooltogether: {
       title: "Article talking about partnership between EPNS and Pool Together!",
