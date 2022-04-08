@@ -42,19 +42,6 @@ function Head() {
 
           <NavPrimary direction="row" forceDisplay={showMenu} align="stretch" justify="flex-start" minWidth="auto" margin="0px 0px 0px 20px">
             <NavItems>
-              {/* <NavItem align="center" margin="0px 10px" minWidth="auto" flex="0">
-                <HeadAnchor
-                  href="https://whitepaper.epns.io"
-                  target="_blank"
-                  title="Read Whitepaper"
-                  bg="transparent"
-                  hoverBG="#fff"
-                  padding="4px 15px"
-                >
-                  Whitepaper
-                </HeadAnchor>
-              </NavItem> */}
-
               <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
                 <NavItem align="center" margin="0px" minWidth="auto" flex="none">
                   <HeadAnchor
@@ -453,6 +440,9 @@ const NavPrimary = styled(Nav)`
       margin: 5px 0px;
       justify-content: center;
       border-radius: 4px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
 
       & ${HeadAnchor} {
         padding: 10px;
