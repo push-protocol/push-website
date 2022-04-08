@@ -14,6 +14,10 @@ function Head() {
   const [badge, setBadge] = React.useState(0);
   const [showMenu, setShowMenu] = React.useState(false);
 
+  const [showHDocsM, setShowDocsM] = React.useState(false)
+  const [showHLearnM, setShowLearnM] = React.useState(false)
+  const [showHGovM, setShowGovM] = React.useState(false)
+
   const location = useLocation();
 
   React.useEffect(() => {
@@ -58,15 +62,16 @@ function Head() {
                     bg="transparent"
                     hoverBG="#fff"
                     padding="4px 15px"
+                    onClick={()=>{setShowDocsM((prev)=>!prev)}}
                   >
                     <ItemH minWidth="auto" margin="0px">
                       <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Docs</Span>
-                      <BsChevronDown size={12} color="#fff"/>
+                      <BsChevronDown size={12} color="#fff" id={showHDocsM ? "up" : "down"}/>
                     </ItemH>
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems>
+                <NavSubItems id={!showHDocsM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                          href="https://whitepaper.epns.io/"
@@ -113,15 +118,16 @@ function Head() {
                     bg="transparent"
                     hoverBG="#fff"
                     padding="4px 15px"
+                    onClick={()=>{setShowLearnM((prev)=>!prev)}}
                   >
                     <ItemH minWidth="auto" margin="0px">
                       <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Learn</Span>
-                      <BsChevronDown size={12} color="#fff"/>
+                      <BsChevronDown size={12} color="#fff" id={showHLearnM ? "up" : "down"}/>
                     </ItemH>
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems>
+                <NavSubItems id={!showHLearnM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="/faq"
@@ -158,7 +164,7 @@ function Head() {
                   </NavSubItem>
                 </NavSubItems>
               </NavSub>
-
+                    
               <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
                 <NavItem align="center" margin="0px" minWidth="auto" flex="none">
                   <HeadAnchor
@@ -166,15 +172,16 @@ function Head() {
                     bg="transparent"
                     hoverBG="#fff"
                     padding="4px 15px"
+                    onClick={()=>{setShowGovM(prev => !prev)}}
                   >
                     <ItemH minWidth="auto" margin="0px">
                       <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Governance</Span>
-                      <BsChevronDown size={12} color="#fff"/>
+                      <BsChevronDown size={12} color="#fff" id={showHGovM ? "up" : "down"}/>
                     </ItemH>
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems>
+                <NavSubItems id={!showHGovM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="./gov"
@@ -444,6 +451,7 @@ const NavPrimary = styled(Nav)`
     ${NavItem} {
       padding: 5px 10px 5px 10px;
       margin: 5px 0px;
+      justify-content: center;
       border-radius: 4px;
 
       & ${HeadAnchor} {
@@ -459,6 +467,16 @@ const NavPrimary = styled(Nav)`
           opacity: 0.25;
         }
       }
+
+      #up{
+        transform: rotate(-180deg);
+        transition: transform 400ms linear;
+      }
+
+      #down{
+        transform: rotate(0);
+        transition: transform 400ms linear;
+      }
     }
 
     ${NavSubItems} {
@@ -470,6 +488,10 @@ const NavPrimary = styled(Nav)`
       margin: 0px;
       opacity: 0.8;
       background: transparent;
+    }
+
+    #hide{
+      display: none;
     }
 
     ${NavSubItem} {
