@@ -14,7 +14,7 @@ function TimerItem() {
   const [ticker, setTicker] = React.useState(-2);
   const [counter, setCounter] = React.useState(0);
 
-  const [time, setTime] = React.useState({hours: '--', mins: '--', secs: '--'});
+  const [time, setTime] = React.useState({days: '--',hours: '--', mins: '--', secs: '--'});
 
   const [hhTheme, setHHTheme] = React.useState("#fff");
   const [mmTheme, setMMTheme] = React.useState("#fff");
@@ -51,15 +51,18 @@ function TimerItem() {
 
   const calculateTimeLeft = (epochInSecs) => {
     if (epochInSecs > 0) {
-      const hh = Math.floor((epochInSecs / (60 * 60))).toString();
-      const mm = Math.floor((epochInSecs / 60) % 60).toString()
-      const ss = Math.floor(epochInSecs % 60).toString()
+      let timeleft = countdown.countdownEpoch - Date.now()
+      var dd = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+      var hh = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var mm = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      var ss = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-      const hhf = hh.length < 2 ? (parseInt(hh) == 0 ? "00" : "0" + hh) : hh;
-      const mmf = mm.length < 2 ? (parseInt(mm) == 0 ? "00" : "0" + mm) : mm;
-      const ssf = ss.length < 2 ? (parseInt(ss) == 0 ? "00" : "0" + ss) : ss;
+      const hhf = hh.length < 2 ? (parseInt(hh) === 0 ? "00" : "0" + hh) : hh;
+      const mmf = mm.length < 2 ? (parseInt(mm) === 0 ? "00" : "0" + mm) : mm;
+      const ssf = ss.length < 2 ? (parseInt(ss) === 0 ? "00" : "0" + ss) : ss;
 
       setTime({
+        days:dd,
         hours: hhf,
         mins: mmf,
         secs: ssf
@@ -192,6 +195,8 @@ function TimerItem() {
 
         {timeRemaining > 0 &&
           <ItemH size="3em">
+            <Span color={hhTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.days}</Span>
+            <Span color="#fff" weight="200">:</Span>
             <Span color={hhTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.hours}</Span>
             <Span color="#fff" weight="200">:</Span>
             <Span color={mmTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.mins}</Span>
