@@ -2,9 +2,10 @@ const countdownEpoch = 1649944800000; //1678914000; // https://www.epochconverte
 
 const countdown = {
   title: "",
-  href: "https://app.epns.io",
+  href: "",
   countdownEpoch: countdownEpoch,
   button: true,
+  haveUrl:false,
   buttonTitle: "Check out EPNS Dapp",
   buttonText: "SOMETHING BIG IS COMING",
   hide: false,

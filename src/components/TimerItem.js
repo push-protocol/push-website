@@ -212,9 +212,9 @@ function TimerItem() {
         {countdown.button == true &&
           <>
             <Anchor
-              href={`${countdown.href}`}
+              href={counter.haveUrl && `${countdown.href}`}
               title={`${countdown.title}`}
-              target="_blank"
+              target={countdown.haveUrl && "_blank"}
               bg="#e20880"
               border
               margin="10px -15px -15px -15px"
