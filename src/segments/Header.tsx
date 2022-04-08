@@ -71,7 +71,7 @@ function Head() {
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems id={showHDocsM ? "show" : "hide"}>
+                <NavSubItems id={!showHDocsM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                          href="https://whitepaper.epns.io/"
@@ -127,7 +127,7 @@ function Head() {
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems id={showHLearnM ? "show" : "hide"}>
+                <NavSubItems id={!showHLearnM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="/faq"
@@ -181,7 +181,7 @@ function Head() {
                   </HeadAnchor>
                 </NavItem>
 
-                <NavSubItems id={showHGovM ? "show" : "hide"}>
+                <NavSubItems id={!showHGovM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="./gov"
