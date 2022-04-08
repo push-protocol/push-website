@@ -429,8 +429,8 @@ const NavPrimary = styled(Nav)`
     }
 
     ${NavItem} {
-      padding: 0;
-      margin: 0px 0px;
+      padding: 5px 10px 5px 10px;
+      margin: 5px 0px;
       border-radius: 4px;
       text-align: center;
       align-items: center;
