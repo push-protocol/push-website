@@ -227,7 +227,7 @@ function Home() {
   return (
     <>
       {/* OPEN GRAPH DEFINITION */}
-      <ReactTitle title="Home"/>
+      <ReactTitle title="EPNS Home"/>
       {/*
       <MetaTags>
         <title>Ethereum Push Notification Service (EPNS) | Homepage</title>
