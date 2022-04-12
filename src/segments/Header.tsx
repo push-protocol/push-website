@@ -61,14 +61,14 @@ function Head() {
                 <NavSubItems id={!showHDocsM && "hide"}>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
-                         href="https://whitepaper.epns.io/"
-                         target="_blank"
-                         title="Read Whitepaper"
-                         bg="transparent"
-                         hoverBG="#fff"
-                         padding="4px 15px"
+                      href="#"
+                      target="_blank"
+                      title="Read Integration Guide"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
                     >
-                      WhitePaper
+                      Quick Guides
                     </HeadAnchor>
                   </NavSubItem>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
@@ -93,6 +93,18 @@ function Head() {
                       padding="4px 15px"
                     >
                       Governance Guides
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                         href="https://whitepaper.epns.io/"
+                         target="_blank"
+                         title="Read Whitepaper"
+                         bg="transparent"
+                         hoverBG="#fff"
+                         padding="4px 15px"
+                    >
+                      WhitePaper
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
