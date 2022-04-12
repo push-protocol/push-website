@@ -52,17 +52,18 @@ function TimerItem() {
   const calculateTimeLeft = (epochInSecs) => {
     if (epochInSecs > 0) {
       let timeleft = countdown.countdownEpoch - Date.now()
-      var dd = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-      var hh = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var mm = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-      var ss = Math.floor((timeleft % (1000 * 60)) / 1000);
+      var dd = Math.floor(timeleft / (1000 * 60 * 60 * 24)).toString();
+      var hh = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString();
+      var mm = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60)).toString();
+      var ss = Math.floor((timeleft % (1000 * 60)) / 1000).toString();
 
-      const hhf = hh.length < 2 ? (parseInt(hh) === 0 ? "00" : "0" + hh) : hh;
-      const mmf = mm.length < 2 ? (parseInt(mm) === 0 ? "00" : "0" + mm) : mm;
-      const ssf = ss.length < 2 ? (parseInt(ss) === 0 ? "00" : "0" + ss) : ss;
+      const ddf = dd.length < 2 ? "0"+dd : dd;
+      const hhf = hh.length < 2 ? "0"+hh : hh;
+      const mmf = mm.length < 2 ? "0"+mm : mm;
+      const ssf = ss.length < 2 ? "0"+ss : ss;
 
       setTime({
-        days:dd,
+        days:ddf,
         hours: hhf,
         mins: mmf,
         secs: ssf
