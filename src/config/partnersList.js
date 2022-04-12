@@ -74,6 +74,14 @@ const partnersList = {
       alt: "Bancor Logo",
       display: "Bancor 💖 EPNS Collaboration"
     },
+    decentraland: {
+      title: "EPNS Team Up with Decentraland to Build Its Communication Layer",
+      href: "https://medium.com/ethereum-push-notification-service/push-notifications-for-the-metaverse-epns-partners-with-decentraland-to-build-its-communication-786afb1e481c",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "decentraland",
+      alt: "Decentraland Logo",
+      display: "Decentraland ✨  EPNS Notifs from the Metaverse"
+    },
     thedefiant: {
       title: "EPNS Teams Up With The Defiant to Bring DeFi News Directly to Users Wallets",
       href: "https://medium.com/ethereum-push-notification-service/epns-teams-up-with-the-defiant-to-bring-defi-news-directly-to-users-wallets-8b4896d674bb",
@@ -386,11 +394,11 @@ const partnersList = {
       alt: "clrfund logo",
       display: "Notifs 🔔 of you favourite projects 📲 through EPNS"
     },
-    RealT: {
+    realt: {
       title: "EPNS and RealT Join Forces to Facilitate Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-and-realt-join-forces-to-facilitate-notifications-for-users-1ba8ac68c04e",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "RealT",
+      src: "realt",
       alt: "RealT logo",
       display: "RealT collaborates with EPNS"
     },
