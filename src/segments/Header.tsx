@@ -59,18 +59,7 @@ function Head() {
                 </NavItem>
 
                 <NavSubItems id={!showHDocsM && "hide"}>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                         href="https://whitepaper.epns.io/"
-                         target="_blank"
-                         title="Read Whitepaper"
-                         bg="transparent"
-                         hoverBG="#fff"
-                         padding="4px 15px"
-                    >
-                      WhitePaper
-                    </HeadAnchor>
-                  </NavSubItem>
+                  
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="https://docs.epns.io/developer-zone/developer-guides"
@@ -95,6 +84,18 @@ function Head() {
                       Governance Guides
                     </HeadAnchor>
                   </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                         href="https://whitepaper.epns.io/"
+                         target="_blank"
+                         title="Read Whitepaper"
+                         bg="transparent"
+                         hoverBG="#fff"
+                         padding="4px 15px"
+                    >
+                      WhitePaper
+                    </HeadAnchor>
+                  </NavSubItem>
                 </NavSubItems>
               </NavSub>
 
@@ -108,13 +109,24 @@ function Head() {
                     onClick={()=>{setShowLearnM((prev)=>!prev)}}
                   >
                     <ItemH minWidth="auto" margin="0px">
-                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Learn</Span>
+                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Learn More</Span>
                       <BsChevronDown size={12} color="#fff" id={showHLearnM ? "up" : "down"}/>
                     </ItemH>
                   </HeadAnchor>
                 </NavItem>
 
                 <NavSubItems id={!showHLearnM && "hide"}>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="https://getstarted.epns.io/"
+                      title="Quick Guide"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Quick Guide
+                    </HeadAnchor>
+                  </NavSubItem>
                   <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                     <HeadAnchor
                       href="/faq"
@@ -147,6 +159,17 @@ function Head() {
                       padding="4px 15px"
                     >
                       Press Kit
+                    </HeadAnchor>
+                  </NavSubItem>
+                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
+                    <HeadAnchor
+                      href="/#contact"
+                      title="Contact Us"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="4px 15px"
+                    >
+                      Contact Us
                     </HeadAnchor>
                   </NavSubItem>
                 </NavSubItems>
@@ -233,17 +256,7 @@ function Head() {
                 </NavSubItems>
               </NavSub>
 
-              <NavItem align="center" margin="0px" minWidth="auto" flex="0">
-                <HeadAnchor
-                  href="/#contact"
-                  title="Contact Us"
-                  bg="transparent"
-                  hoverBG="#fff"
-                  padding="4px 15px"
-                >
-                  Contact
-                </HeadAnchor>
-              </NavItem>
+              
               
               <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
                 <Anchor
@@ -257,12 +270,12 @@ function Head() {
                   radius="4px"
                   hover="#e20880"
                 >
-                  dApp
+                  LAUNCH THE DAPP
                 </Anchor>
               </NavItem>
             </NavItems>
           </NavPrimary>
-
+          
           <NavTablet align="flex-end" margin="0px" minWidth="auto" flex="1">
             <Anchor
               href="#"
