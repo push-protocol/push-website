@@ -260,7 +260,7 @@ function Head() {
               
               <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
                 <Anchor
-                  href="https://app.epns.io"
+                  href="https://app.epns.io/#/live_walkthrough"
                   target="_blank"
                   title="Visit dApp"
                   bg="transparent"
