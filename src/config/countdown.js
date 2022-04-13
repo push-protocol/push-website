@@ -1,14 +1,15 @@
-const countdownEpoch = 1649944800000; //1678914000; // https://www.epochconverter.com/
+const countdownEpoch = 16499448000; //1678914000; // https://www.epochconverter.com/
 
 const countdown = {
-  title: "",
-  href: "",
+  title:"this is news title",
+  href: "https://google.com",
   countdownEpoch: countdownEpoch,
   button: true,
-  haveUrl:false,
+  haveUrl:true,
   buttonTitle: "Check out EPNS Dapp",
-  buttonText: "SOMETHING BIG IS COMING",
+  buttonText: "this is NEWS title",
   hide: false,
+  showTimer:true
 }
 
 export default countdown;
