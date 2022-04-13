@@ -30,8 +30,8 @@ function FAQ() {
       question: "What is EPNS?",
       renderAnswer: () => (
         <Answer>
-          <Span>Ethereum Push Notification Service (EPNS) is a decentralized protocol allowing Ethereum users to receive notifications for on-chain or off-chain activity.</Span>
-          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off chain or on chain logic that can be triggered via smart contract, backend or dApps. These come from open communciation network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend or infra service to display it to Web3 users.</Span>
+          <Span>Ethereum Push Notification Service (EPNS) is a decentralized and blockchain-agnostic communication protocol for the entire web3 world that aims to provide the users to receive notifications for on-chain or off-chain activity.</Span>
+          <Span>EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are can be based on any off-chain or on-chain logic that can be triggered via smart contract, backend or dApps. These come from an open communication network (push nodes) and are tied to wallet addresses allowing any crypto wallet, frontend, or infra service to display it to Web3 users.</Span>
         </Answer>
       )
     },
@@ -72,77 +72,41 @@ function FAQ() {
       question: "How do I use EPNS?",
       renderAnswer: () => (
         <Answer>
-          <Span>EPNS is an app on your phone and/or desktop. On the app, you can connect your wallet(s) and Opt-In to different channels based on which notifications you’d like to receive.</Span>
+          <Span>⚬ Go to <AMod href="https://app.epns.io/#/channels">EPNS dApp</AMod> <br />
+                ⚬ Opt-in to a channel. <br />
+                ⚬ Download the <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910">Mobile Apps</AMod> or <AMod href="https://chrome.google.com/webstore/detail/epns-protocol-beta/lbdcbpaldalgiieffakjhiccoeebchmg">Browser Extension</AMod> to receive a notification. <br />
+                ⚬ Check out our <AMod href="https://getstarted.epns.io/">Quick Guides</AMod>, in case you need any help in the process.</Span>
         </Answer>
       )
     },
     {
-      question: "How can I use EPNS right now?",
+      question: "How do I learn more about EPNS?",
       renderAnswer: () => (
         <Answer>
-          <Span>EPNS right now is live on the Ropsten network. There are a few “run of show” notifications the EPNs team has set up to help demonstrate to the market the utility and UX of EPNS. Those include: Compound liquidity alert, fund tracker from specific crypto wallets, ENS domain expiry alert, and Ethereum gas alert.</Span>
-        </Answer>
-      )
-    },
-    {
-      question: "What's next for EPNS?",
-      renderAnswer: () => (
-        <Answer>
-          <Span>We’re working hard to get EPNS to the Ethereum mainnet and begin powering the Web3 notification ecosystem! Our plan is to launch in late 2020 or early 2021. In the meantime, we’re inviting collaborators, developers, and enthusiasts to test out the product, give feedback, and spread the word.</Span>
-        </Answer>
-      )
-    },
-    {
-      question: "How can I stay up-to-date with official EPNS news?",
-      renderAnswer: () => (
-        <Answer>
-          <Span>The list below contains all EPNS official channels.</Span>
-          <UL>
-            <LIMod>Twitter: <AMod href="https://twitter.com/epnsproject">https://twitter.com/epnsproject</AMod></LIMod>
-            <LIMod>Official Telegram: <AMod href="https://t.me/epnsproject">https://t.me/epnsproject</AMod></LIMod>
-            <LIMod>Telegram announcements: <AMod href="https://t.me/epnsprojectnews">https://t.me/epnsprojectnews</AMod></LIMod>
-            <LIMod>Governance forum: <AMod href="https://gov.epns.io/">https://gov.epns.io/</AMod></LIMod>
-            <LIMod>Github: <AMod href="https://github.com/ethereum-push-notification-service/">https://github.com/ethereum-push-notification-service/</AMod> </LIMod>
-            <LIMod>Medium: <AMod href="https://medium.com/ethereum-push-notification-service/">https://medium.com/ethereum-push-notification-service/</AMod></LIMod>
-            <LIMod>Youtube: <AMod href="https://www.youtube.com/c/EthereumPushNotificationService/">https://www.youtube.com/c/EthereumPushNotificationService/</AMod></LIMod>
-          </UL>
-        </Answer>
-      )
-    },
-    {
-      question: "How can I get support for EPNS related queries?",
-      renderAnswer: () => (
-        <Answer>
-          <Span>We have multiple channels where support is provided.</Span>
-          <Span>The <AMod href="https://epns.io/#contact">Contact Us</AMod> form on our website is to be considered the one-stop-shop for all support queries.</Span>
-          <UL>
-            <LIMod>General Support about EPNS products & offering</LIMod>
-            <LIMod>Collaborations and business proposals</LIMod>
-            <LIMod>Career opportunities</LIMod>
-            <LIMod>and more!</LIMod>
-          </UL>
-          <Span>
-            Additionally, our development team is always available on our <AMod href="https://discord.gg/nYrqZ734nu">Discord Community Server</AMod> to help with more technical matters related to integrations.
+          <Span>⚬ EPNS Documentation HUB - <AMod href="https://docs.epns.io/">https://docs.epns.io/</AMod> <br/>
+                ⚬ Our Whitepaper: <AMod href="https://whitepaper.epns.io/">https://whitepaper.epns.io/</AMod> <br />
+                ⚬ Token economics: <AMod href="https://docs.epns.io/epns-governance/push-tokenomics">https://docs.epns.io/epns-governance/push-tokenomics</AMod> <br />
+                ⚬ Medium Articles: <AMod href="https://medium.com/ethereum-push-notification-service">https://medium.com/ethereum-push-notification-service</AMod> <br />
+                ⚬ Our Litepaper: <AMod href="https://epns.io/LitepaperEthereumPushNotificationService.pdf">https://epns.io/LitepaperEthereumPushNotificationService.pdf</AMod> <br />
+                ⚬ Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod>
           </Span>
-          <Span>
-            Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.
-          </Span>
-      </Answer>
+        </Answer>
       )
     },
     {
-      question: "Where can I find educational material about EPNS?",
+      question: "Where can I find the Developer Docs and Integration guides for EPNS?",
       renderAnswer: () => (
         <Answer>
-          <UL>
-            <LIMod>Our Website: <AMod href="https://epns.io/">https://epns.io/</AMod></LIMod>
-            <LIMod>Our Whitepaper: <AMod href="https://whitepaper.epns.io/">https://whitepaper.epns.io/</AMod></LIMod>
-            <LIMod>Our Litepaper: <AMod href="https://epns.io/LitepaperEthereumPushNotificationService.pdf">https://epns.io/LitepaperEthereumPushNotificationService.pdf</AMod></LIMod>
-            <LIMod>Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod></LIMod>
-            <LIMod>Token economics: <AMod href="https://medium.com/ethereum-push-notification-service/announcing-the-epns-push-token-generation-event-4d1699e716f5">https://medium.com/ethereum-push-notification-service/</AMod></LIMod>
-            <LIMod>Documentation: <AMod href="https://app.gitbook.com/@ethereum-push-notification/spaces">https://app.gitbook.com/@ethereum-push-notification/spaces</AMod></LIMod>
-            <LIMod>Our <AMod href="https://medium.com/ethereum-push-notification-service">Medium Blog</AMod> is an excellent source of information. Our team is consistently publishing articles to keep the community up-to-speed with our development efforts, partnerships, and more.</LIMod>
-          </UL>
+          <Span>All the imperative developer documentation can be found in the <AMod href="https://docs.epns.io/developer-zone/developer-guides">EPNS Documentation HUB</AMod></Span>
+        </Answer>
+      )
+    },
+    {
+      question: "What are the Future Plans for EPNS?",
+      renderAnswer: () => (
+        <Answer>
+          <Span>We have very interesting and imperative plans for the future. Some of the significant ones are becoming a multichain communication layer, decentralization of our push nodes, wallet-to-wallet chat feature, etc.</Span>
+          <Span>Check out our Roadmap to learn more about the future plans of EPNS - <AMod href="https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a">EPNS Roadmap 2022</AMod></Span>
         </Answer>
       )
     },
@@ -155,7 +119,8 @@ function FAQ() {
           <Span> Also, become an active member in the EPNS Governance and participate in the direction of the protocol. Visit <AMod href="https://gov.epns.io/">https://gov.epns.io/</AMod>, get involved in the conversations, express your opinions, support your favorite PUSH Delegatee, and make your vote count! </Span>
         </Answer>
       )
-    },{
+    },
+    {
       question: "Where do i get $PUSH?",
       renderAnswer: () => (
         <Answer>
@@ -208,7 +173,28 @@ function FAQ() {
           <Span>Learn more about the EPNS $PUSH Liquidity Rewards Program <AMod href="https://medium.com/ethereum-push-notification-service/epns-push-liquidity-rewards-program-d16ff2c0fef4">here.</AMod></Span>
         </Answer>
       )
-    }
+    },
+    {
+      question: "How can I get support for EPNS related queries?",
+      renderAnswer: () => (
+        <Answer>
+          <Span>We have multiple channels where support is provided.</Span>
+          <Span>The <AMod href="https://epns.io/#contact">Contact Us</AMod> form on our website is to be considered the one-stop-shop for all support queries.</Span>
+          <UL>
+            <LIMod>General Support about EPNS products & offering</LIMod>
+            <LIMod>Collaborations and business proposals</LIMod>
+            <LIMod>Career opportunities</LIMod>
+            <LIMod>and more!</LIMod>
+          </UL>
+          <Span>
+            Additionally, our development team is always available on our <AMod href="https://discord.gg/nYrqZ734nu">Discord Community Server</AMod> to help with more technical matters related to integrations.
+          </Span>
+          <Span>
+            Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.
+          </Span>
+      </Answer>
+      )
+    },
   ]
 
   // RENDER
