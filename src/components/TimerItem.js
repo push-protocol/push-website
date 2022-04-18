@@ -190,11 +190,13 @@ function TimerItem() {
       </ItemH>
 
       <Item padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
-        <Item>
-          <Span textAlign="center" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff" flex="inherit">{countdown.title}</Span>
-        </Item>
+        {/* { countdown.title &&
+          <Item>
+            <Span textAlign="center" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff" flex="inherit">{countdown.title}</Span>
+          </Item>
+        } */}
 
-        {timeRemaining > 0 &&
+        {(timeRemaining > 0 && !countdown.showTimer) &&
           <ItemH size="3em">
             <Span color={hhTheme} weight="700" family="'Monstrat', Helvetica, sans-serif" margin="0px 5px">{time.days}</Span>
             <Span color="#fff" weight="200">:</Span>
@@ -210,12 +212,12 @@ function TimerItem() {
           <></>
         }
 
-        {countdown.button == true &&
+        {countdown.button &&
           <>
             <Anchor
-              href={counter.haveUrl && `${countdown.href}`}
+              href={countdown.href}
               title={`${countdown.title}`}
-              target={countdown.haveUrl && "_blank"}
+              target={"_blank"}
               bg="#e20880"
               border
               margin="10px -15px -15px -15px"
