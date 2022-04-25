@@ -16,7 +16,7 @@ const featuredList = {
     },
     forbes: {
       title: "Forbes India talks with Harsh about EPNS",
-      href: "https://twitter.com/forbes_india/status/1427857510900269067",
+      href: "https://www.forbesindia.com/audio/forbes-india-daily-tech-conver-sation/harsh-rajat-at-epns-on-going-multichain-new-funding-and-a-grant-for-developers-for-web-3-ideas/75487",
       src: "forbes",
       alt: "Forbes Logo",
       bg: false,
@@ -37,7 +37,7 @@ const featuredList = {
     },
     coindesk: {
       title: "Ethereum Push Notification Service goes live in bid to bring notifications to web 3",
-      href: "https://www.coindesk.com/tech/2022/01/11/epns-goes-live-in-bid-to-bring-notifications-to-web-3/",
+      href: "https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/ ",
       src: "coindesk",
       alt: "Coindesk Logo",
       bg: false,
@@ -90,7 +90,7 @@ const featuredList = {
     },
     yourstory: {
       title: "Yourstory talks about EPNS and why blockchain push notifications are important",
-      href: "https://yourstory.com/2020/11/husband-wife-duo-need-blockchain-push-notifications",
+      href: "https://yourstory.com/the-decrypting-story/funding-alert-epns-raises-10m-jump-crypto-tiger-global-polygon-sino-global-startup-web3/amp",
       src: "yourstory",
       alt: "YourStory Logo",
       bg: false,
@@ -139,7 +139,7 @@ const featuredList = {
     },
     inc42: {
       title: "INC42 talks about epnsproject and how dApps can benefit from it",
-      href: "https://inc42.com/buzz/cryptocurrency-this-week-wazirx-talks-defi-indias-crypto-ban-more/",
+      href: "https://inc42.com/buzz/web3-startup-epns-raises-10-mn-funding-from-jump-crypto-tiger-global-polygon-and-others/",
       src: "inc42",
       alt: "INC42 Logo",
       bg: false,
