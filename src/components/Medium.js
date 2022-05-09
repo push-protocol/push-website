@@ -14,7 +14,7 @@ function Medium({ numberOfPosts }) {
 
   React.useEffect(() => {
     if (numberOfPosts) {
-      fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/ethereum-push-notification-service')
+      fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/ethereum-push-notification-service/')
       .then((res) => res.json())
       .then((data) => {
          // Fillter the array
