@@ -4,7 +4,7 @@ const countdown = {
   title:"this is news title",
   href: "https://google.com",
   countdownEpoch: countdownEpoch,
-  button: true,
+  button: false,
   haveUrl:true,
   buttonTitle: "Check out EPNS Dapp",
   buttonText: "this is NEWS title",

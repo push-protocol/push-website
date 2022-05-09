@@ -189,7 +189,7 @@ function TimerItem() {
         </Anchor>
       </ItemH>
 
-      <Item padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
+      {countdown.button && <Item padding="15px 15px" bg="#000" flex="inital" radius="8px" overflow="hidden">
         {/* { countdown.title &&
           <Item>
             <Span textAlign="center" textTransform="uppercase" size="0.8em" spacing="0.2em" color="#fff" flex="inherit">{countdown.title}</Span>
@@ -212,7 +212,6 @@ function TimerItem() {
           <></>
         }
 
-        {countdown.button &&
           <>
             <Anchor
               href={countdown.href}
@@ -226,8 +225,8 @@ function TimerItem() {
               {countdown.buttonText}
             </Anchor>
           </>
-        }
       </Item>
+      }
     </Item>
   );
 }
