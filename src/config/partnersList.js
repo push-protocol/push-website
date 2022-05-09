@@ -241,6 +241,14 @@ const partnersList = {
       src: "tracer",
       alt: "Tracer logo",
       display: "EPNS collaborates with Tracer DAO"
+    },
+    shapeshift: {
+      title: "EPNS Allies With ShapeShift to Encourage Participation for Platform Governance",
+      href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-shapeshift-to-encourage-participation-for-platform-governance-2b6006342bf4",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "shapeshift",
+      alt: "ShapeShift logo",
+      display: "ShapeShift teams up with EPNS 🔔"
     },    
     ceramic: {
       title: "Advancing Ceramic Networks decentralized identity network with EPNS",
@@ -266,6 +274,14 @@ const partnersList = {
       alt: "Oasis Logo",
       display: "Oasis.app integrates EPNS Notifs 🔔"
     },
+    ovix: {
+      title: "EPNS x 0VIX: Enabling Communication for the Next-Generation of Money Markets",
+      href: "https://medium.com/ethereum-push-notification-service/epns-x-0vix-enabling-communication-for-the-next-generation-of-money-markets-304a26092e14",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ovix",
+      alt: "0vix Logo",
+      display: "Money Market Notifs 🔔 EPNS x Ovix"
+    },
     lifinance: {
       title: "EPNS and Li.Finance Team Up To Improve User Experience Through Push Notifications",
       href: "https://medium.com/ethereum-push-notification-service/epns-and-li-finance-team-up-to-improve-user-experience-through-push-notifications-bac8a4bd77e2",
@@ -289,6 +305,14 @@ const partnersList = {
       src: "rabbithole",
       alt: "Rabbithole logo",
       display: "EPNS collaborates with RabbitHole 🐇"
+    },
+    doingud: {
+      title: "EPNS x DoinGud: Improving User Experience and Creating Impact in the NFT Market",
+      href: "https://medium.com/ethereum-push-notification-service/epns-x-doingud-improving-user-experience-and-creating-impact-in-the-nft-market-ab6604316770",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "doingud",
+      alt: "DoinGud logo",
+      display: "EPNS  💕  DoinGud"
     },
     cryptomanga: {
       title: "EPNS x CryptoManga: Decentralized Communication for Decentralized Gaming",
@@ -458,6 +482,14 @@ const partnersList = {
       alt: "Pool Together Logo",
       display: "Pool Together does pilot collab with EPNS"
     },
+    cryptex: {
+      title: "EPNS Integration Underway to Enable Seamless Communication for Users Within the Cryptex Finance App",
+      href: "https://medium.com/ethereum-push-notification-service/epns-integration-underway-to-enable-seamless-communication-for-users-within-the-cryptex-finance-app-c9f9bfbba612",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "cryptex",
+      alt: "Cryptex Logo",
+      display: "Cryptex Notifs delivered to your wallet!"
+    },
     anglemoney: {
       title: "EPNS Allies With Angle Protocol to Facilitate Push Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-angle-protocol-to-facilitate-push-notifications-for-users-af77cf4d3e2b",
@@ -465,6 +497,14 @@ const partnersList = {
       src: "anglemoney",
       alt: "Angle Protocol Logo",
       display: "EPNS x ANGLE"
+    },
+    openbisea: {
+      title: "Simplifying NFT Trading: EPNS Team Up With OpenBiSea To Facilitate Notifications for NFT Traders",
+      href: "https://medium.com/ethereum-push-notification-service/simplifying-nft-trading-epns-team-up-with-openbisea-to-facilitate-notifications-for-nft-traders-adfb33cfc458",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "openbisea",
+      alt: "OpenBiSea Logo",
+      display: "EPNS teams up with Open Bi Sea"
     },
     unstoppable: {
       title: "Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service",
