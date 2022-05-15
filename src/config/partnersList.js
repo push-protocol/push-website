@@ -58,6 +58,14 @@ const partnersList = {
       alt: "Gitcoin Logo",
       display: "Gitcoin Growing Open Source Using Web3 Notifs"
     },
+    coindesk: {
+      title: "EPNS and CoinDesk Announce Media Push Notifications!",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-coindesk-announce-media-push-notifications-1707b12884d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "coindesk",
+      alt: "CoinDesk Logo",
+      display: "Media Push Notifications CoinDesk 🔔 EPNS"
+    },
     aragon: {
       title: "Article talking about partnership between EPNS and Aragon!",
       href: "https://medium.com/ethereum-push-notification-service/epns-partners-with-aragon-voice-to-power-unstoppable-decentralized-governance-56182b9d9aa0",
