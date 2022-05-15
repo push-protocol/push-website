@@ -346,6 +346,14 @@ const partnersList = {
       alt: "Mover logo",
       display: "Get notified for your yield harvesting 🔔"
     },
+    azuro: {
+      title: "EPNS and Azuro to Bring Push Notifications to the Betting Protocol",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-azuro-announce-a-pilot-collaboration-to-bring-push-notifications-to-the-betting-protocol-140f96f621d8",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "azuro",
+      alt: "Azuro logo",
+      display: "EPNS 🤝 Azuro"
+    },
     symphony: {
       title: "EPNS Collaborates With Symphony Finance To Facilitate Push Notifications for Limit Orders",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-symphony-finance-to-facilitate-push-notifications-for-limit-order-c6f27bf8e02a",
@@ -489,6 +497,14 @@ const partnersList = {
       src: "pooltogether",
       alt: "Pool Together Logo",
       display: "Pool Together does pilot collab with EPNS"
+    },
+    nfttix: {
+      title: "EPNS Allies With NFT-TiX to Bring Push Notifications to the Platform",
+      href: "https://medium.com/ethereum-push-notification-service/epns-allies-with-nft-tix-to-bring-push-notifications-to-the-platform-b88b3b8ee83a",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "nfttix",
+      alt: "NFT-Tix Logo",
+      display: "EPNS collaborates with NFT-Tix"
     },
     cryptex: {
       title: "EPNS Integration Underway to Enable Seamless Communication for Users Within the Cryptex Finance App",
