@@ -418,6 +418,14 @@ const partnersList = {
       alt: "New Order logo",
       display: "New Order 🗳️ x 🔔 EPNS "
     },
+    ethsign: {
+      title: "EPNS team up with EthSign to deliver notifications for the next generation of E-Signing platforms.",
+      href: "https://medium.com/ethereum-push-notification-service/epns-team-up-with-ethsign-to-deliver-notifications-for-the-next-generation-of-e-signing-platforms-a4ee81bacd3d",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "ethsign",
+      alt: "EthSign logo",
+      display: "🔔 EPNS x Ethsign 📝"
+    },
     digible: {
       title: "EPNS Collaborates With NFT Marketplace Digible to Enable Push Notifications for Users",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-nft-marketplace-digible-to-enable-push-notifications-for-users-fab65f3e9eda",
@@ -454,7 +462,7 @@ const partnersList = {
       title: "EPNS Collaborates With Float Capital to Bring Push Notifications to Magic Internet Assets",
       href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-float-capital-to-bring-push-notifications-to-magic-internet-assets-ac538c08acb2",
       hover: "#000", //#eee or #000 based on logo og color
-      src: "FLOATCAPITAL",
+      src: "float",
       alt: "Float Capital logo",
       display: "Notifs for your Magic Internet Assets ✨"
     },
@@ -529,6 +537,14 @@ const partnersList = {
       src: "openbisea",
       alt: "OpenBiSea Logo",
       display: "EPNS teams up with Open Bi Sea"
+    },
+    genshards: {
+      title: "EPNS and Genesis Shards Join Forces to Bring Push Notifications to Users",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-genesis-shards-join-forces-to-bring-push-notifications-to-users-8618270cb009",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "genesisshards",
+      alt: "Genesis Shards Logo",
+      display: "EPNS x Genesis Shards"
     },
     unstoppable: {
       title: "Article talking about collaboration between Unstoppable Domain and Ethereuem Push Notificaion Service",
