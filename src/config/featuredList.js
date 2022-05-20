@@ -42,13 +42,13 @@ const featuredList = {
       alt: "Decrypt Logo",
       bg: false
     },
-    yahoo_finance: {
-      title: "Yahoo Finance talks about EPNS' Series A Funding",
-      href: "https://finance.yahoo.com/news/ethereum-push-notification-raises-10m-135700564.html",
-      src: "yahoo_finance",
-      alt: "Yahoo Finance Logo",
+    hackernoon: {
+      title: "Hackernoon interview on how Ethereum Push Notifications Will Pull Blockchain Out of the Stone Age",
+      href: "https://hackernoon.com/push-notifications-will-pull-blockchain-out-of-the-stone-age-of-communication-unhashed-1-ql1f33d6",
+      src: "hackernoon",
+      alt: "Hackernoon Logo",
       bg: false,
-    },
+    },    
     cointelegraph: {
       title: "Coin Telegraph talks about Push Notifications from Ethereum Push Notification Service",
       href: "https://cointelegraph.com/news/dapps-can-now-send-push-notifications-to-ethereum-wallet-users",
@@ -131,11 +131,11 @@ const featuredList = {
       alt: "Coinspeaker Logo",
       bg: false
     },
-    hackernoon: {
-      title: "Hackernoon interview on how Ethereum Push Notifications Will Pull Blockchain Out of the Stone Age",
-      href: "https://hackernoon.com/push-notifications-will-pull-blockchain-out-of-the-stone-age-of-communication-unhashed-1-ql1f33d6",
-      src: "hackernoon",
-      alt: "Hackernoon Logo",
+    yahoo_finance: {
+      title: "Yahoo Finance talks about EPNS' Series A Funding",
+      href: "https://finance.yahoo.com/news/ethereum-push-notification-raises-10m-135700564.html",
+      src: "yahoo_finance",
+      alt: "Yahoo Finance Logo",
       bg: false,
     },
     defiprime: {
