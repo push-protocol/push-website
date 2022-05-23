@@ -124,7 +124,7 @@ function Foot() {
                 </ItemH>
 
                 <Span color="#ffffffcc" margin="10px 0px" size="1.2em" weight="200">
-                  Ethereum Push Notification Service (EPNS) is a decentralized notification (communication) protocol that enables any dApps or smart contracts to send blockchain agnostic, incentivized and dynamic notifications
+                  EPNS is a decentralized communication protocol for Web3! Using which any dApps, smart contracts, backends or protocols can send communication (starting with on chain / off chain / gasless notifs) tied to user wallet addresses in an open, gasless, multichain and platform agnostic fashion.  Open communication layer allows any crypto wallet / frontend to tap into the network and get the communication across.
                 </Span>
               </Item>
             </ItemH>
