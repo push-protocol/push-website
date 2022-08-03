@@ -1,9 +1,9 @@
 import React from "react";
 import ReactGA from 'react-ga';
-import MetaTags, {ReactTitle} from 'react-meta-tags';
+import MetaTags, { ReactTitle } from 'react-meta-tags';
 
 import styled, { css } from 'styled-components';
-import {Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, P, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField,DottedSection} from 'components/SharedStyling';
+import { Section, SectionFS, SectionFSHero, Content, Item, ItemH, ItemBreak, WaveOuter, WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button, Showoff, FormSubmision, Input, TextField, DottedSection } from 'components/SharedStyling';
 
 import ScrollTrigger from 'react-scroll-trigger';
 
@@ -23,11 +23,7 @@ import { BsChevronExpand, BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import { VscClose } from 'react-icons/vsc';
 import { RiHeartsFill } from 'react-icons/ri';
 import { GiReceiveMoney } from 'react-icons/gi';
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 
-import countdown from 'config/countdown';
-
-import TimerItem from 'components/TimerItem';
 import EPNSChannelItems from 'components/EPNSChannelItems';
 import Medium from 'components/Medium';
 import TeamMember from 'components/TeamMember';
@@ -118,27 +114,27 @@ function Home() {
 
       // POST request using fetch inside useEffect React hook
       const requestOptions = {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-          },
-          body: formBody
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: formBody
       };
 
       fetch('https://tools.epns.io/sendy/subscribe', {
-          method: 'POST',
-          mode: 'cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-          },
-          body: formBody
-        })
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: formBody
+      })
         .then(response => response.json())
         .then(jsondata => {
-            // console.log(jsondata);
-            setMailListProcessing(2);
-          })
+          // console.log(jsondata);
+          setMailListProcessing(2);
+        })
         .catch(err => {
           // console.log(err);
           setMailListError("Mayday! Mayday! something went wrong. Please retry...");
@@ -190,9 +186,9 @@ function Home() {
         fetch('https://backend-kovan.epns.io/apis/mailing/send_mail', requestOptions)
           .then(response => response.json())
           .then(jsondata => {
-              // console.log(jsondata);
-              setContactFormProcessing(2);
-            })
+            // console.log(jsondata);
+            setContactFormProcessing(2);
+          })
           .catch(err => {
             // console.log(err);
             setContactFormError("Mayday! Mayday! something went wrong. Please retry...");
@@ -227,7 +223,7 @@ function Home() {
   return (
     <>
       {/* OPEN GRAPH DEFINITION */}
-      <ReactTitle title="EPNS Home"/>
+      <ReactTitle title="EPNS Home" />
       {/*
       <MetaTags>
         <title>Ethereum Push Notification Service (EPNS) | Homepage</title>
@@ -238,34 +234,28 @@ function Home() {
       */}
 
       {/* HERO SECTION */}
-      <ScrollTrigger onEnter={() => {setAnimateHero(true)}} onExit={() => {setAnimateHero(false)}} triggerOnLoad={false}>
+      <ScrollTrigger onEnter={() => { setAnimateHero(true) }} onExit={() => { setAnimateHero(false) }} triggerOnLoad={false}>
         <SectionFSHero id="hero" padding="50px 0px 150px 0px">
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
 
-                <H1>Ethereum Push Notification Service</H1>
-                <Span margin="-25px 0 0 0"><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Subscribe. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Notify. </Span><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Earn.</Span></Span>
+                <H1>The native communication protocol of Web3</H1>
 
                 <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">chain agnostic</Span>, <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform independent</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
 
-                {!countdown.hide &&
-                  <ItemH align="flex-start" justify="flex-start" margin="-10px 0px -10px 0px" size="0.8rem">
-                    <TimerItem />
-                  </ItemH>
-                }
+                <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
+                  <Anchor href="https://docs.epns.io/developers" title="Developer Docs" target="_blank" bg="#000" margin="10px" radius="4px">Start Developing</Anchor>
+                </ItemH>
 
                 <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
-                  <Anchor href="./LitepaperEthereumPushNotificationService.pdf" title="Read Litepaper of Ethereum Push Notification Service (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Read Litepaper</Anchor>
-                  {/*}
-                  <Anchor href="./#contact" title="Integrate Ethereum Push Notification Service Protocol (EPNS)" target="_blank" bg="#000" margin="10px" radius="4px">Integrate</Anchor>
-                  */}
+                  <Anchor href="https://app.epns.io/" title="EPNS Dapp" target="_blank" bg="#000" margin="10px" radius="4px">Explore Notifications</Anchor>
                 </ItemH>
 
               </Item>
 
               <HeroBanner margin="0px">
-                <Image src="./hero/heroaltv5.png" srcSet="./hero/heroaltv5@2x.png 2x, ./hero/heroaltv5@3x.png 3x" alt="Hero Banner for Ethereum Push Notification Service" />
+                <Image1 src="./hero/heroaltv7.png" srcSet="./hero/heroaltv5@2x.png 2x, ./hero/heroaltv5@3x.png 3x" alt="Hero Banner for Ethereum Push Notification Service" />
               </HeroBanner>
             </ItemH>
           </Content>
@@ -295,157 +285,6 @@ function Home() {
           </WaveOuter>
         </SectionFSHero>
       </ScrollTrigger>
-            
-      
-       
-      {/* FEATURED SECTION */}
-      <Section id="featured" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)" padding="0px 0px 80px 0px">
-        {/* SNOWING
-        <Snowfall
-          color="white"
-          snowflakeCount={100}
-          radius={[0.5, 1]}
-        />
-        */}
-        <Content className="contentBox">
-          <Item margin="20px 0px 20px 0px">
-            <Featured>
-              <Feature
-                disabled={true}
-                bg="#2f1a37"
-              >
-                <Item minWidth="auto">
-                  <Span color="#fff" weight="400" size="1rem" spacing="0.1em">Featured In</Span>
-                </Item>
-              </Feature>
-
-              {
-                Object.keys(featuredList.featured).map(function(key) {
-                  const item = featuredList.featured[key]
-
-                  return (
-                    <Feature
-                      key={item.src}
-                      title={`${item.title}`}
-                      href={`${item.href}`}
-                      bg={item.bg ? `${item.bg}` : null}
-                      item={`${item.src}`}
-                      target="_blank"
-                    >
-                      <Item minWidth="auto">
-                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
-                      </Item>
-                    </Feature>
-                  )
-                })
-              }
-
-              {
-                Object.keys(featuredList.featuredSecondary).map(function(key) {
-                  const item = featuredList.featuredSecondary[key]
-
-                  return (
-                    <FeatureTabletOptional
-                      key={item.src}
-                      title={`${item.title}`}
-                      href={`${item.href}`}
-                      bg={item.bg ? `${item.bg}` : null}
-                      item={`${item.src}`}
-                      target="_blank"
-                    >
-                      <Item minWidth="auto">
-                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
-                      </Item>
-                    </FeatureTabletOptional>
-                  )
-                })
-              }
-
-              {featuredShowAll &&
-                <>
-
-                  {
-                    Object.keys(featuredList.featuredSecondary).map(function(key) {
-                      const item = featuredList.featuredSecondary[key]
-
-                      return (
-                        <FeatureDesktopOptional
-                          key={item.src}
-                          title={`${item.title}`}
-                          href={`${item.href}`}
-                          bg={item.bg ? `${item.bg}` : null}
-                          item={`${item.src}`}
-                          target="_blank"
-                        >
-                          <Item minWidth="auto">
-                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
-                          </Item>
-                        </FeatureDesktopOptional>
-                      )
-                    })
-                  }
-
-                  {
-                    Object.keys(featuredList.drilldown).map(function(key) {
-                      const item = featuredList.drilldown[key]
-
-                      return (
-                        <Feature
-                          title={`${item.title}`}
-                          href={`${item.href}`}
-                          bg={item.bg ? `${item.bg}` : null}
-                          item={`${item.src}`}
-                          target="_blank"
-                        >
-                          <Item minWidth="auto">
-                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
-                          </Item>
-                        </Feature>
-                      )
-                    })
-                  }
-
-                </>
-              }
-
-              <Feature
-                href="#"
-                onClick={(e) => {e.preventDefault(); setFeaturedShowAll(!featuredShowAll)}}
-                title="Toggle Show All / Fewer items in feature section"
-                bg="#e20880"
-              >
-                <ItemH minWidth="auto" justify="" columnGap="10px">
-                  <Item minWidth="auto" margin="10px 0px" flex="none">
-                    {!featuredShowAll &&
-                      <Span color="#fff" weight="400" size="1rem" spacing="0.1em">See All</Span>
-                    }
-                    {featuredShowAll &&
-                      <Span color="#fff" weight="400" size="1rem" spacing="0.1em">See Less</Span>
-                    }
-                  </Item>
-                  <Item minWidth="auto" margin="10px 0px" flex="none">
-                    <BsChevronExpand size={20} color="#fff"/>
-                  </Item>
-                </ItemH>
-              </Feature>
-            </Featured>
-          </Item>
-        </Content>
-        <WaveOuter>
-          <WaveInner>
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
-      </Section>
-
 
       {/* PROBLEM AND SOLUTION - PART 1 */}
       <Section id="solution" theme="#fff" padding="20px 0px 0px 0px">
@@ -454,10 +293,10 @@ function Home() {
             {/* THE PROBLEM */}
             <Item align="flex-start" padding="0px 0px 40px 0px">
               <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
+                <H2 maxWidth="400px"><Span bg="#e20880" color="#fff" padding="0px 8px">EPNS is the missing piece of web3 infrastructure</Span></H2>
                 <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span weight="200">The </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Problem</Span>
+                  <Span weight="300">The </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Problem</Span>
                 </H2>
-                <H3 maxWidth="400px">Why EPNS is the missing piece of Web3 Infrastructure</H3>
               </Item>
 
               <ItemH margin="10px -20px 10px -20px" align="stretch" flex="auto">
@@ -467,7 +306,7 @@ function Home() {
                   </EmphasisImage>
 
                   <EmphasisText>
-                    Services expect users to repeatedly check their actions.
+                    Dapps and services have no way to natively communicate. Users must repeatedly check their actions.
                   </EmphasisText>
                 </EmphasisBlock>
 
@@ -477,7 +316,7 @@ function Home() {
                   </EmphasisImage>
 
                   <EmphasisText>
-                    Wallet addresses do not receive alerts from any Web3 activity.
+                    Wallet addresses and users do not receive alerts or communication from any Web3 activity.
                   </EmphasisText>
                 </EmphasisBlock>
 
@@ -487,7 +326,7 @@ function Home() {
                   </EmphasisImage>
 
                   <EmphasisText>
-                    The disconnection leads to poor UX, communication, and engagement.
+                    The disconnect leads to poor UX, incomplete engagement and lost opportunities.
                   </EmphasisText>
                 </EmphasisBlock>
               </ItemH>
@@ -499,7 +338,7 @@ function Home() {
                 <PreviewBG
                   href="#"
                   bg="transparent"
-                  onClick={(e) => {e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo)}}
+                  onClick={(e) => { e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo) }}
                   flex="1"
 
                 >
@@ -509,12 +348,12 @@ function Home() {
                       bg="transparent"
                       hover="transparent"
                       hoverBG="transparent"
-                      onClick={(e) => {e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo)}}
+                      onClick={(e) => { e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo) }}
                     >
-                      <VscClose size={40} color="#fff"/>
+                      <VscClose size={40} color="#fff" />
                     </PreviewClose>
                     <Preview>
-                      <div class='videoWrapper'><iframe src="https://www.youtube.com/embed/kwwnlmUpRsk?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                      <div className='videoWrapper'><iframe src="https://www.youtube.com/embed/kwwnlmUpRsk?controls=0&autoplay=1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>
                     </Preview>
                   </Content>
                 </PreviewBG>
@@ -523,10 +362,12 @@ function Home() {
 
             <Item padding="20px 0px 30px 0px">
               <Item self="stretch" align="flex-end" tabletAlign="flex-start" margin="20px 0px" textAlign="right" tabletTextAlign="left" >
+                <H2 maxWidth="400px"><Span bg="#674c9f" color="#fff" padding="0px 8px">EPNS is a decentralized middleware for all dapps, smart contracts and services</Span></H2>
                 <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span weight="200">The </Span><Span bg="#674c9f" color="#fff" weight="600" padding="0px 8px">Solution</Span>
+                  <Span weight="300">The </Span><Span bg="#674c9f" color="#fff" weight="600" padding="0px 8px">Solution</Span>
                 </H2>
-                <H3 maxWidth="400px">Creating a decentralized middleware for all dapps / smart contracts / web3 services</H3>
+
+
               </Item>
 
               <Solution margin="20px 0px">
@@ -534,7 +375,7 @@ function Home() {
                   <Anchor
                     href="#"
                     bg="transparent"
-                    onClick={(e) => {e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo)}}
+                    onClick={(e) => { e.preventDefault(); setPlayTeaserVideo(!playTeaserVideo) }}
                     radius="12px"
                   >
                     <Image src="youtubeplay.png" srcSet="youtubeplay@2x.png 2x, youtubeplay@3x.png 3x" />
@@ -548,12 +389,12 @@ function Home() {
                       bottom="-20px"
                       opacity="0.2"
                     >
-                      <FaSeedling size={140} color="#fff"/>
+                      <FaSeedling size={140} color="#fff" />
                     </Showoff>
                     <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Content Independent</Span>
+                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Network Agnostic</Span>
                     </H2>
-                    <Span margin="20px" color="#fff" weight="200">Protocol does not dictate what content can or can't be delivered to service users. Only <b>services can decide what to communicate</b> to their users!</Span>
+                    <Span margin="20px" color="#fff" weight="200">EPNS is built for a multichain world to power communication for any dapp or smart contract. Currently live on Ethereum and Polygon</Span>
                   </ShadowBox>
                   <ShadowBox align="flex-start" bg="#674c9f" margin="30px 0px">
                     <Showoff
@@ -561,12 +402,12 @@ function Home() {
                       bottom="-20px"
                       opacity="0.2"
                     >
-                      <RiHeartsFill size={140} color="#fff"/>
+                      <RiHeartsFill size={140} color="#fff" />
                     </Showoff>
                     <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">User Centric</Span>
+                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Opt-in Communication</Span>
                     </H2>
-                    <Span margin="20px" color="#fff" weight="200"><b>User always opts in</b> for alerts from a service before they can notify you. Indirect consent, while an option will require the service to reward you first!</Span>
+                    <Span margin="20px" color="#fff" weight="200"><b>EPNS users always opt in</b> for alerts and communication from services and dapps. Indirect consent, while an option will require the service to reward users first!</Span>
                   </ShadowBox>
                   <ShadowBox align="flex-start" bg="#35c5f3" margin="30px 0px">
                     <Showoff
@@ -574,12 +415,12 @@ function Home() {
                       bottom="-20px"
                       opacity="0.2"
                     >
-                      <GiReceiveMoney size={140} color="#fff"/>
+                      <GiReceiveMoney size={140} color="#fff" />
                     </Showoff>
                     <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Incentivized Alerts!</Span>
+                      <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Censorship Resistant!</Span>
                     </H2>
-                    <Span margin="20px" color="#fff">We are a DeFi protocol but a different one! We use <b>Staking</b> by Service, that is <b>Lend</b> out to AAVE to generate <b>Interest</b> which is distributed among the service's subscribers.</Span>
+                    <Span margin="20px" color="#fff">The EPNS protocol does not dictate the content can or cannot be communicated among users.</Span>
                   </ShadowBox>
                 </Item>
 
@@ -587,6 +428,7 @@ function Home() {
             </Item>
           </Item>
         </Content>
+
       </Section>
 
 
@@ -607,14 +449,6 @@ function Home() {
           </WaveInner>
         </WaveOuter>
 
-        {/* SNOWING
-        <Snowfall
-          color="white"
-          snowflakeCount={50}
-          radius={[0.5, 2]}
-        />
-        */}
-
         <Content className="contentBox" padding="60px 0px 40px 0px">
           <Item margin="0px 20px 0px 20px">
             <Item self="stretch" align="stretch" margin="20px 0px 40px 0px">
@@ -624,7 +458,7 @@ function Home() {
                 transform="rotate(45deg)"
                 tabletOpacity="0.4"
               >
-                <IoMdRocket size={120} color="#fff"/>
+                <IoMdRocket size={120} color="#fff" />
               </Showoff>
 
               <ItemH>
@@ -650,23 +484,23 @@ function Home() {
                               border="12px"
                               placeholder="John Wick"
                               value={mailListName}
-                              onChange={(e) => {setMailListName(e.target.value)}}
+                              onChange={(e) => { setMailListName(e.target.value) }}
                               autocomplete="name"
                             />
-                              {mailListName.trim().length == 0 &&
-                                <Span
-                                  padding="4px 10px"
-                                  right="0px"
-                                  top="0px"
-                                  pos="absolute"
-                                  color="#fff"
-                                  bg="#000"
-                                  size="0.7rem"
-                                  z="1"
-                                >
-                                  Name
-                                </Span>
-                              }
+                            {mailListName.trim().length == 0 &&
+                              <Span
+                                padding="4px 10px"
+                                right="0px"
+                                top="0px"
+                                pos="absolute"
+                                color="#fff"
+                                bg="#000"
+                                size="0.7rem"
+                                z="1"
+                              >
+                                Name
+                              </Span>
+                            }
                           </Item>
 
                           <Item flex="5" margin="10px 10px" justify="flex-start" align="stretch" minWidth="280px">
@@ -677,23 +511,23 @@ function Home() {
                               padding="12px"
                               bg="#fff"
                               value={mailListEmail}
-                              onChange={(e) => {setMailListEmail(e.target.value)}}
+                              onChange={(e) => { setMailListEmail(e.target.value) }}
                               autocomplete="on"
                             />
-                              {mailListEmail.trim().length == 0 &&
-                                <Span
-                                  padding="4px 10px"
-                                  right="0px"
-                                  top="0px"
-                                  pos="absolute"
-                                  color="#fff"
-                                  bg="#000"
-                                  size="0.7rem"
-                                  z="1"
-                                >
-                                  E-mail
-                                </Span>
-                              }
+                            {mailListEmail.trim().length == 0 &&
+                              <Span
+                                padding="4px 10px"
+                                right="0px"
+                                top="0px"
+                                pos="absolute"
+                                color="#fff"
+                                bg="#000"
+                                size="0.7rem"
+                                z="1"
+                              >
+                                E-mail
+                              </Span>
+                            }
                           </Item>
                         </>
                       }
@@ -709,11 +543,11 @@ function Home() {
                           >
                             {mailListProcessing == 1 &&
                               <Loader
-                                 type="Oval"
-                                 color="#fff"
-                                 height={24}
-                                 width={24}
-                                />
+                                type="Oval"
+                                color="#fff"
+                                height={24}
+                                width={24}
+                              />
                             }
                             {mailListProcessing == 0 &&
                               <Input cursor="hand" color="#fff" weight="400" size="0.8em" spacing="0.2em" type="submit" value="Submit" />
@@ -735,7 +569,7 @@ function Home() {
                         columnGap="0px"
                         rowGap="0px"
                       >
-                        <FaCheckCircle size={24} color="#fff"/>
+                        <FaCheckCircle size={24} color="#fff" />
                         <Span
                           padding="0px 0px 0px 8px"
                           color="#fff"
@@ -789,11 +623,52 @@ function Home() {
       </Section>
 
 
-      {/* NOTIFICATION DELIVERED SECTION */}
-      <Section id="supported" theme="#fff" padding="20px 0px 80px 0px">
+      {/* LATEST CHANNELS SECTION */}
+      <Section id="supported" theme="#fff" padding="20px 0px 10px 0px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
-            <Item align="stretch" justify="flex-start" margin="0px 0px 30px 0px">
+            <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="20px 0px 40px 0px" textAlign="right" tabletTextAlign="left">
+              <H2 textTransform="uppercase" spacing="0.1em">
+                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Latest</Span><Span weight="200"> Channels</Span>
+              </H2>
+              <H3>Delivering Decentralized Notifications For</H3>
+            </Item>
+
+            <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
+              {/**/}
+              <EPNSChannelItems
+                numberOfChannels={5}
+              />
+              {/**/}
+            </Item>
+
+            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
+              <Anchor
+                href="https://app.epns.io"
+                target="_blank"
+                title="Check out the dApp of Ethereum Push Notification Service"
+                bg="#000"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+              >
+                Explore All Channels
+              </Anchor>
+            </Item>
+
+            <ItemBreak margin="10px 0px" />
+
+          </Item>
+        </Content>
+      </Section>
+
+      {/* NOTIFICATIONS ENABLED SECTION */}
+      <Section id="supported" theme="#fff" padding="10px 0px 80px 0px">
+        <Content className="contentBox">
+          <Item align="stretch" justify="flex-start" margin="0px 20px">
+            <Item align="stretch" justify="flex-start" margin="20px 0px 30px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
                 <Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Notifications</Span><Span weight="200"> Enabled Platforms</Span>
               </H2>
@@ -898,66 +773,65 @@ function Home() {
                 </Anchor>
               </Supported>
 
-              <ItemBreak margin="10px 0px"/>
-
-              <Supported margin="20px" minWidth="280px">
-                <Anchor
-                  href="#contact"
-                  title="Get Notified from EPNS Dapp"
-                  direction="column"
-                  bg="#fff"
-                  hover="#fafafa"
-                  radius="12px"
-                  align="stretch"
-                  border="2px dashed #ddd"
-                >
-                  <Item margin="5px 0px 10px 0px">
-                    <Span size="1em" color="#000" spacing="0.2em" weight="200" textAlign="center">Are you a Crypto Wallet?</Span>
-                  </Item>
-                  <ItemH margin="5px 0px 10px 0px">
-                    <Span size="1em" color="#fff" bg="#e20880" padding="2px 5px 4px 8px" margin="0px 5px" spacing="0.2em" weight="400" textAlign="center">Integrate</Span>
-                    <Span size="1em" color="#000" spacing="0.2em" weight="200" padding="2px 5px 4px 8px" textAlign="center">AND</Span>
-                    <Span size="1em" color="#fff" bg="#35c5f3" padding="2px 5px 4px 8px" margin="0px 5px" spacing="0.2em" weight="400" textAlign="center">Earn</Span>
-                  </ItemH>
-                </Anchor>
-              </Supported>
-
             </ItemH>
-
-            <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="20px 0px 40px 0px" textAlign="right" tabletTextAlign="left">
-              <H2 textTransform="uppercase" spacing="0.1em">
-                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Latest</Span><Span weight="200"> Channels</Span>
-              </H2>
-              <H3>Delivering Decentralized Notifications For</H3>
-            </Item>
-
-            <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
-              {/**/}
-              <EPNSChannelItems
-                numberOfChannels={5}
-              />
-              {/**/}
-            </Item>
-
-            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
-              <Anchor
-                href="https://app.epns.io"
-                target="_blank"
-                title="Check out the dApp of Ethereum Push Notification Service"
-                bg="#000"
-                color="#fff"
-                spacing="0.2em"
-                size="0.8rem"
-                margin="10px 0px"
-                radius="4px"
-              >
-                Explore More
-              </Anchor>
-            </Item>
 
           </Item>
         </Content>
+      </Section>
 
+      {/* WEB3 WALLET SECTION */}
+      <Section id="subscribe" theme="#f1f1f1" padding="10px 0px 30px 0px" overflow="hidden">
+        <BlurBG />
+        <WaveOuter bottom="auto" top="70px">
+          <WaveInner transform="rotate(180deg)">
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+
+        <Supported margin="20px" minWidth="280px" padding="50px">
+
+          <Item margin="5px 0px 10px 0px">
+            <Span size="1.8em" color="#000" spacing="0.2em" weight="400" textAlign="center">Are you a Web3 Wallet?</Span>
+          </Item>
+          <ItemH margin="15px 0px 10px 0px">
+            <Span size="1.3em" color="#fff" bg="#e20880" padding="2px 5px 4px 8px" margin="0px 20px" spacing="0.2em" weight="400" textAlign="center">Integrate</Span>
+            <Span size="1.3em" color="#000" spacing="0.2em" weight="200" padding="2px 5px 4px 8px" textAlign="center">AND</Span>
+            <Span size="1.3em" color="#fff" bg="#35c5f3" padding="2px 5px 4px 8px" margin="0px 20px" spacing="0.2em" weight="400" textAlign="center">Earn</Span>
+          </ItemH>
+          <Anchor
+            href="#contact"
+            title="Get Notified from EPNS Dapp"
+            direction="column"
+            radius="12px"
+            align="stretch"
+          >
+            <ItemH margin="15px 0px 10px 0px">
+              <Span size="1.3em" color="#fff" bg="#000" padding="2px 5px 4px 8px" margin="0px 8px" spacing="0.2em" weight="400" textAlign="center">Start Here</Span>
+            </ItemH>
+          </Anchor>
+        </Supported>
+
+        <WaveOuter>
+          <WaveInner>
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
         <WaveOuter>
           <WaveInner>
             <Wave fill='#f1f1f1'
@@ -973,9 +847,9 @@ function Home() {
         </WaveOuter>
       </Section>
 
-
       {/* PARTNERS AND COLLABORATORS */}
       <Section id="partners" theme="#f1f1f1" padding="20px 0px 80px 0px">
+
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" align="flex-start" margin="0px 0px 40px 0px">
@@ -987,7 +861,7 @@ function Home() {
 
             <ItemH margin="0px -20px 20px -20px" rowGap="40px" columnGap="40px" align="stretch" justify="space-around">
               {
-                Object.keys(partnersList.featured).map(function(key) {
+                Object.keys(partnersList.featured).map(function (key) {
                   const item = partnersList.featured[key]
 
                   return (
@@ -1020,7 +894,7 @@ function Home() {
               {partnersShowAll &&
                 <>
                   {
-                    Object.keys(partnersList.drilldown).map(function(key) {
+                    Object.keys(partnersList.drilldown).map(function (key) {
                       const item = partnersList.drilldown[key]
 
                       return (
@@ -1057,7 +931,7 @@ function Home() {
               <Partner minWidth="280px" align="stretch" margin="20px 20px 20px 20px">
                 <Anchor
                   href="#"
-                  onClick={(e) => {e.preventDefault(); setPartnersShowAll(!partnersShowAll)}}
+                  onClick={(e) => { e.preventDefault(); setPartnersShowAll(!partnersShowAll) }}
                   title="Toggle Show All / Fewer items in partners and collaborators section"
                   bg="#fff"
                   hover="#eee"
@@ -1067,10 +941,10 @@ function Home() {
                   <ItemH minWidth="auto">
                     <Item minWidth="auto" flex="none">
                       {!partnersShowAll &&
-                        <BsChevronDown size={40} color="#000"/>
+                        <BsChevronDown size={40} color="#000" />
                       }
                       {partnersShowAll &&
-                        <BsChevronUp size={40} color="#000"/>
+                        <BsChevronUp size={40} color="#000" />
                       }
                     </Item>
                   </ItemH>
@@ -1095,26 +969,17 @@ function Home() {
         </WaveOuter>
       </Section>
 
-
       {/* FOLLOW OUR STORY */}
       <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
-        {/* SNOWING
-        <Snowfall
-          color="white"
-          snowflakeCount={100}
-          radius={[0.5, 2]}
-        />
-        */}
-
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
-                <Span weight="200" color="#fff">What's the </Span><Span bg="#000" color="#fff" weight="600" padding="0px 8px">Latest</Span>
+                <Span weight="200" color="#fff">Keep up with </Span><Span bg="#000" color="#fff" weight="600" padding="0px 8px">EPNS</Span>
               </H2>
-              <H3 color="#fff">Our Journey so far</H3>
+              <H3 color="#fff">The latest developments, announcements, and community updates.</H3>
             </Item>
-            
+
             <Medium numberOfPosts={3} />
 
             <ItemH margin="20px -20px 20px -20px" justify="space-between" align="flex-start" columnGap="40px" rowGap="40px">
@@ -1168,6 +1033,146 @@ function Home() {
         </WaveOuter>
       </Section>
 
+      {/* FEATURED SECTION */}
+      <Section id="featured" theme="#fff" gradient="linear-gradient(0deg, #674c9f 0%, #fff 100%)" padding="0px 0px 80px 0px">
+        <Content className="contentBox">
+          <Item margin="20px 0px 20px 0px">
+            <Featured>
+              <Feature
+                disabled={true}
+                bg="#2f1a37"
+              >
+                <Item minWidth="auto">
+                  <Span color="#fff" weight="400" size="1rem" spacing="0.1em">Featured In</Span>
+                </Item>
+              </Feature>
+
+              {
+                Object.keys(featuredList.featured).map(function (key) {
+                  const item = featuredList.featured[key]
+
+                  return (
+                    <Feature
+                      key={item.src}
+                      title={`${item.title}`}
+                      href={`${item.href}`}
+                      bg={item.bg ? `${item.bg}` : null}
+                      item={`${item.src}`}
+                      target="_blank"
+                    >
+                      <Item minWidth="auto">
+                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                      </Item>
+                    </Feature>
+                  )
+                })
+              }
+
+              {
+                Object.keys(featuredList.featuredSecondary).map(function (key) {
+                  const item = featuredList.featuredSecondary[key]
+
+                  return (
+                    <FeatureTabletOptional
+                      key={item.src}
+                      title={`${item.title}`}
+                      href={`${item.href}`}
+                      bg={item.bg ? `${item.bg}` : null}
+                      item={`${item.src}`}
+                      target="_blank"
+                    >
+                      <Item minWidth="auto">
+                        <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                      </Item>
+                    </FeatureTabletOptional>
+                  )
+                })
+              }
+
+              {featuredShowAll &&
+                <>
+
+                  {
+                    Object.keys(featuredList.featuredSecondary).map(function (key) {
+                      const item = featuredList.featuredSecondary[key]
+
+                      return (
+                        <FeatureDesktopOptional
+                          key={item.src}
+                          title={`${item.title}`}
+                          href={`${item.href}`}
+                          bg={item.bg ? `${item.bg}` : null}
+                          item={`${item.src}`}
+                          target="_blank"
+                        >
+                          <Item minWidth="auto">
+                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                          </Item>
+                        </FeatureDesktopOptional>
+                      )
+                    })
+                  }
+
+                  {
+                    Object.keys(featuredList.drilldown).map(function (key) {
+                      const item = featuredList.drilldown[key]
+
+                      return (
+                        <Feature
+                          title={`${item.title}`}
+                          href={`${item.href}`}
+                          bg={item.bg ? `${item.bg}` : null}
+                          item={`${item.src}`}
+                          target="_blank"
+                        >
+                          <Item minWidth="auto">
+                            <FeatureImage src={`./featured/${item.src}.png`} srcSet={`./featured/${item.src}@2x.png 2x, ./featured/${item.src}@3x.png 3x`} alt={`${item.alt}`} />
+                          </Item>
+                        </Feature>
+                      )
+                    })
+                  }
+
+                </>
+              }
+
+              <Feature
+                href="#"
+                onClick={(e) => { e.preventDefault(); setFeaturedShowAll(!featuredShowAll) }}
+                title="Toggle Show All / Fewer items in feature section"
+                bg="#e20880"
+              >
+                <ItemH minWidth="auto" justify="" columnGap="10px">
+                  <Item minWidth="auto" margin="10px 0px" flex="none">
+                    {!featuredShowAll &&
+                      <Span color="#fff" weight="400" size="1rem" spacing="0.1em">See All</Span>
+                    }
+                    {featuredShowAll &&
+                      <Span color="#fff" weight="400" size="1rem" spacing="0.1em">See Less</Span>
+                    }
+                  </Item>
+                  <Item minWidth="auto" margin="10px 0px" flex="none">
+                    <BsChevronExpand size={20} color="#fff" />
+                  </Item>
+                </ItemH>
+              </Feature>
+            </Featured>
+          </Item>
+        </Content>
+        <WaveOuter>
+          <WaveInner>
+            <Wave fill='#fff'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+      </Section>
 
       {/* TEAM SECTION | 1=Founder, 2=Founder+Lead, 3=Founder+Team, 4=Lead, 5=Team, 6=Advisor */}
       <Section id="team" theme="#fff" padding="20px 0px 120px 0px">
@@ -1328,23 +1333,23 @@ function Home() {
                             border="12px"
                             placeholder="John Wick"
                             value={contactFormName}
-                            onChange={(e) => {setContactFormName(e.target.value)}}
+                            onChange={(e) => { setContactFormName(e.target.value) }}
                             autocomplete="name"
                           />
-                            {contactFormName.trim().length == 0 &&
-                              <Span
-                                padding="4px 10px"
-                                right="0px"
-                                top="0px"
-                                pos="absolute"
-                                color="#fff"
-                                bg="#000"
-                                size="0.7rem"
-                                z="1"
-                              >
-                                Name
-                              </Span>
-                            }
+                          {contactFormName.trim().length == 0 &&
+                            <Span
+                              padding="4px 10px"
+                              right="0px"
+                              top="0px"
+                              pos="absolute"
+                              color="#fff"
+                              bg="#000"
+                              size="0.7rem"
+                              z="1"
+                            >
+                              Name
+                            </Span>
+                          }
                         </Item>
 
                         <Item flex="5" margin="15px" justify="flex-start" align="stretch" minWidth="280px">
@@ -1355,23 +1360,23 @@ function Home() {
                             padding="12px"
                             bg="#fff"
                             value={contactFormEmail}
-                            onChange={(e) => {setContactFormEmail(e.target.value)}}
+                            onChange={(e) => { setContactFormEmail(e.target.value) }}
                             autocomplete="email"
                           />
-                            {contactFormEmail.trim().length == 0 &&
-                              <Span
-                                padding="4px 10px"
-                                right="0px"
-                                top="0px"
-                                pos="absolute"
-                                color="#fff"
-                                bg="#000"
-                                size="0.7rem"
-                                z="1"
-                              >
-                                E-mail
-                              </Span>
-                            }
+                          {contactFormEmail.trim().length == 0 &&
+                            <Span
+                              padding="4px 10px"
+                              right="0px"
+                              top="0px"
+                              pos="absolute"
+                              color="#fff"
+                              bg="#000"
+                              size="0.7rem"
+                              z="1"
+                            >
+                              E-mail
+                            </Span>
+                          }
                         </Item>
                       </ItemH>
 
@@ -1387,23 +1392,23 @@ function Home() {
                           padding="12px"
                           bg="#fff"
                           value={contactFormSub}
-                          onChange={(e) => {setContactFormSub(e.target.value)}}
+                          onChange={(e) => { setContactFormSub(e.target.value) }}
                           autocomplete="on"
                         />
-                          {contactFormSub.trim().length == 0 &&
-                            <Span
-                              padding="4px 10px"
-                              right="0px"
-                              top="0px"
-                              pos="absolute"
-                              color="#fff"
-                              bg="#000"
-                              size="0.7rem"
-                              z="1"
-                            >
-                              Subject
-                            </Span>
-                          }
+                        {contactFormSub.trim().length == 0 &&
+                          <Span
+                            padding="4px 10px"
+                            right="0px"
+                            top="0px"
+                            pos="absolute"
+                            color="#fff"
+                            bg="#000"
+                            size="0.7rem"
+                            z="1"
+                          >
+                            Subject
+                          </Span>
+                        }
                       </Item>
 
                       <Item justify="center" align="stretch" minWidth="280px" margin="15px">
@@ -1415,7 +1420,7 @@ function Home() {
                           padding="12px"
                           bg="#fff"
                           value={contactFormMsg}
-                          onChange={(e) => {setContactFormMsg(e.target.value)}}
+                          onChange={(e) => { setContactFormMsg(e.target.value) }}
                           autocomplete="off"
                         />
                       </Item>
@@ -1431,7 +1436,7 @@ function Home() {
                         columnGap="0px"
                         rowGap="0px"
                       >
-                        <FaCheckCircle size={24} color="#fff"/>
+                        <FaCheckCircle size={24} color="#fff" />
                         <Span
                           padding="0px 0px 0px 8px"
                           color="#fff"
@@ -1476,11 +1481,11 @@ function Home() {
                       >
                         {contactFormProcessing == 1 &&
                           <Loader
-                             type="Oval"
-                             color="#fff"
-                             height={24}
-                             width={24}
-                            />
+                            type="Oval"
+                            color="#fff"
+                            height={24}
+                            width={24}
+                          />
                         }
                         {contactFormProcessing == 0 &&
                           <Input cursor="hand" color="#fff" weight="400" size="0.8em" spacing="0.2em" type="submit" value="Submit" />
@@ -1521,10 +1526,10 @@ function Home() {
               </H2>
             </Item>
 
-            <VCs margin="0px -10px 20px -10px"s align="stretch" justify="center">
+            <VCs margin="0px -10px 20px -10px" s align="stretch" justify="center">
 
               {
-                Object.keys(investorsList.vcs).map(function(key) {
+                Object.keys(investorsList.vcs).map(function (key) {
                   const item = investorsList.vcs[key]
 
                   return (
@@ -1560,7 +1565,7 @@ function Home() {
             <Angels margin="0px -10px 20px -10px" align="stretch" justify="center">
 
               {
-                Object.keys(investorsList.angels).map(function(key) {
+                Object.keys(investorsList.angels).map(function (key) {
                   const item = investorsList.angels[key]
 
                   return (
@@ -1584,7 +1589,7 @@ function Home() {
                               srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
                               alt={`${item.alt}`}
                             />
-                          <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
+                            <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
                             <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
                           </Item>
                         </Item>
@@ -1599,7 +1604,7 @@ function Home() {
             <AngelsOptional margin="-10px">
 
               {
-                Object.keys(investorsList.angelsoptional).map(function(key) {
+                Object.keys(investorsList.angelsoptional).map(function (key) {
                   const item = investorsList.angelsoptional[key]
 
                   if (!item.hidden) {
@@ -1624,7 +1629,7 @@ function Home() {
                                 srcSet={`./investors/${item.src}@2x.png 2x, ./investors/${item.src}@3x.png 3x`}
                                 alt={`${item.alt}`}
                               />
-                            <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
+                              <Span size="0.85em" color="#233234" spacing="0.2em" weight="400" textAlign="center">{item.name}</Span>
                               <AngelJob size="0.5em" color="#233234" spacing="0.2em" weight="600" textAlign="center">{item.job}</AngelJob>
                             </Item>
                           </Item>
@@ -1643,6 +1648,7 @@ function Home() {
 
           </Item>
         </Content>
+
       </Section>
 
     </>
