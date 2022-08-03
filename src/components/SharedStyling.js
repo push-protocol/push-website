@@ -82,24 +82,24 @@ export const Item = styled.div`
 
 	&:hover & {
 		filter: ${(props) =>
-			(props.filterHover
-				? props.filterHover
-				: props.hover
+		(props.filterHover
+			? props.filterHover
+			: props.hover
 				? props.hover
 				: "none") || "none"};
 	}
 
 	@media (max-width: 768px) {
 		align-items: ${(props) =>
-			(props.tabletAlign
-				? props.tabletAlign
-				: props.align
+		(props.tabletAlign
+			? props.tabletAlign
+			: props.align
 				? props.align
 				: "center") || "center"};
 		text-align: ${(props) =>
-			(props.tabletTextAlign
-				? props.tabletTextAlign
-				: props.textAlign
+		(props.tabletTextAlign
+			? props.tabletTextAlign
+			: props.textAlign
 				? props.textAlign
 				: "inherit") || "inherit"};
 	}
@@ -154,8 +154,8 @@ export const Arc = styled.div`
 		left: -100%;
 
 		${(props) =>
-			props.arcRGB &&
-			css`
+		props.arcRGB &&
+		css`
 				background: radial-gradient(
 					ellipse at center,
 					${props.arcRGB}00 0%,
@@ -206,6 +206,12 @@ export const Image = styled.img`
 	display: flex;
 `;
 
+export const Image1 = styled.img`
+	width: 125%;
+	height: auto;
+	display: flex;
+`;
+
 export const P = styled.p`
 	flex: ${(props) => props.flex || "initial"};
 	align-self: ${(props) => props.self || "auto"};
@@ -228,7 +234,7 @@ export const Para = styled(P)`
 	color: ${(props) => props.color || "#000000ee"};
 `;
 
-export const DottedSection=styled.div`
+export const DottedSection = styled.div`
   padding: 2rem;
   border:3px dashed #fff;
   border-radius:10px;
@@ -294,7 +300,7 @@ export const Anchor = styled.a`
   letter-spacing: ${props => props.spacing || "0.2em"};
   border: ${props => props.border || "none"};
   border-radius: ${props => props.radius || "0px"};
-  width: ${props => props.width || "initial" };
+  width: ${props => props.width || "initial"};
 
   position: relative; 
   text-decoration: none;
@@ -304,7 +310,6 @@ export const Anchor = styled.a`
   filter: ${props => props.filter || "none"};
 
   cursor: pointer;
-  pointer: hand;
 
   &:hover & {
     filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : "none")) || "none"};
@@ -386,7 +391,7 @@ export const Button = styled.button`
 		right: 0;
 		bottom: 0;
 		background: ${(props) =>
-			props.hover || (props.bg ? props.bg : "transparent")};
+		props.hover || (props.bg ? props.bg : "transparent")};
 		display: none;
 		z-index: -1;
 	}
@@ -430,48 +435,48 @@ export const Showoff = styled.div`
 
 	@media (max-width: 768px) {
 		align-items: ${(props) =>
-			(props.tabletAlign
-				? props.tabletAlign
-				: props.align
+		(props.tabletAlign
+			? props.tabletAlign
+			: props.align
 				? props.align
 				: "center") || "center"};
 
 		right: ${(props) =>
-			(props.tabletRight
-				? props.tabletRight
-				: props.right
+		(props.tabletRight
+			? props.tabletRight
+			: props.right
 				? props.right
 				: "auto") || "auto"};
 		left: ${(props) =>
-			(props.tabletLeft
-				? props.tabletLeft
-				: props.left
+		(props.tabletLeft
+			? props.tabletLeft
+			: props.left
 				? props.left
 				: "auto") || "auto"};
 		top: ${(props) =>
-			(props.tabletTop
-				? props.tabletTop
-				: props.top
+		(props.tabletTop
+			? props.tabletTop
+			: props.top
 				? props.top
 				: "auto") || "auto"};
 		bottom: ${(props) =>
-			(props.tabletBottom
-				? props.tabletBottom
-				: props.bottom
+		(props.tabletBottom
+			? props.tabletBottom
+			: props.bottom
 				? props.bottom
 				: "auto") || "auto"};
 
 		transform: ${(props) =>
-			(props.tabletTransform
-				? props.tabletTransform
-				: props.transform
+		(props.tabletTransform
+			? props.tabletTransform
+			: props.transform
 				? props.transform
 				: "auto") || "auto"};
 
 		opacity: ${(props) =>
-			(props.tabletOpacity
-				? props.tabletOpacity
-				: props.opacity
+		(props.tabletOpacity
+			? props.tabletOpacity
+			: props.opacity
 				? props.opacity
 				: "auto") || "initial"};
 	}
