@@ -407,7 +407,7 @@ function Home() {
                     <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
                       <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Opt-in Communication</Span>
                     </H2>
-                    <Span margin="20px" color="#fff" weight="200"><b>EPNS users always opt in</b> for alerts and communication from services and dapps. Indirect consent, while an option will require the service to reward users first!</Span>
+                    <Span margin="20px" color="#fff" weight="200">EPNS users always opt in for alerts and communication from services and dapps. Indirect consent, while an option will require the service to reward users first!</Span>
                   </ShadowBox>
                   <ShadowBox align="flex-start" bg="#35c5f3" margin="30px 0px">
                     <Showoff
@@ -637,7 +637,7 @@ function Home() {
             <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
               {/**/}
               <EPNSChannelItems
-                numberOfChannels={5}
+                numberOfChannels={4}
               />
               {/**/}
             </Item>
