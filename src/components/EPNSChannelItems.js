@@ -13,23 +13,22 @@ import EPNSChannelItem from "components/EPNSChannelItem";
 const DEFAULT_CHANNELS_FIRST_ROW = [
   "0xe56f1D3EDFFF1f25855aEF744caFE7991c224FFF",
   "0x8Cd0ad5C55498Aacb72b6689E1da5A284C69c0C7",
-  "0x7F41abf7fDb9E4A6373EC3BAB3Df814b5CCceCC3",
   "0x983110309620D911731Ac0932219af06091b6744",
+  "0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c",
+];
+const DEFAULT_CHANNELS_SECOND_ROW = [
+  "0x23c6b8fB0557FD5e6696BceF3fD4855E0d7018C0",
+  "0x7F41abf7fDb9E4A6373EC3BAB3Df814b5CCceCC3",
+  "0x327a29fcE0a6490E4236240Be176dAA282EcCfdF",
   "0x2dbf5aFead4759E6151590E4a8F6cD596B7044F8",
 ];
-// const DEFAULT_CHANNELS_SECOND_ROW = [
-//   "0x12b3eE60Df8ea26D03b8035Ec90434a38A82C4C7",
-//   "0xb754601d2C8C1389E6633b1449B84CcE57788566",
-// ];
 
 // Create
 function EPNSChannelItems({ numberOfChannels }) {
   const [epnsInteactable, setEPNSInteractable] = React.useState(null);
   const [channelsLoaded, setChannelsLoaded] = React.useState(true);
   const [channels, setChannels] = React.useState(DEFAULT_CHANNELS_FIRST_ROW);
-  // const [secondChannels, setSecondChannels] = React.useState(
-  //   DEFAULT_CHANNELS_SECOND_ROW
-  // );
+  const [secondChannels, setSecondChannels] = React.useState(DEFAULT_CHANNELS_SECOND_ROW);
 
   React.useEffect(() => {
     if (numberOfChannels) {
@@ -104,7 +103,7 @@ function EPNSChannelItems({ numberOfChannels }) {
           );
         })}
       </ItemH>
-      {/* <ItemH margin="40px 0px">
+      <ItemH margin="70px 0px 30px 0px">
         {secondChannels.map(function (item, id) {
           return (
             <EPNSChannelItem
@@ -115,7 +114,7 @@ function EPNSChannelItems({ numberOfChannels }) {
             />
           );
         })}
-      </ItemH> */}
+      </ItemH>
     </ItemH>
   );
 }
