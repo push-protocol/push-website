@@ -91,11 +91,9 @@ function Foot() {
       })
         .then((response) => response.json())
         .then((jsondata) => {
-          // console.log(jsondata);
           setMailListProcessing(2);
         })
         .catch((err) => {
-          // console.log(err);
           setMailListError(
             "Mayday! Mayday! something went wrong. Please retry..."
           );
