@@ -255,7 +255,7 @@ function Home() {
               </Item>
 
               <HeroBanner margin="0px">
-                <Image1 src="./hero/heroaltv7.png" srcSet="./hero/heroaltv5@2x.png 2x, ./hero/heroaltv5@3x.png 3x" alt="Hero Banner for Ethereum Push Notification Service" />
+                <Image1 src="./hero/heroaltv7.png" srcSet="./hero/heroaltv7.png 2x, ./hero/heroaltv7.png 3x" alt="Hero Banner for Ethereum Push Notification Service" />
               </HeroBanner>
             </ItemH>
           </Content>
