@@ -431,6 +431,46 @@ function Home() {
 
       </Section>
 
+      {/* LATEST CHANNELS SECTION */}
+      <Section id="supported" theme="#fff" padding="20px 0px 10px 0px">
+        <Content className="contentBox">
+          <Item align="stretch" justify="flex-start" margin="0px 20px">
+            <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="10px 0px 40px 0px" textAlign="right" tabletTextAlign="left">
+              <H2 textTransform="uppercase" spacing="0.1em">
+                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Latest</Span><Span weight="200"> Channels</Span>
+              </H2>
+              <H3>Delivering Decentralized Notifications For</H3>
+            </Item>
+
+            <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
+              {/**/}
+              <EPNSChannelItems
+                numberOfChannels={4}
+              />
+              {/**/}
+            </Item>
+
+            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
+              <Anchor
+                href="https://app.epns.io"
+                target="_blank"
+                title="Check out the dApp of Ethereum Push Notification Service"
+                bg="#000"
+                color="#fff"
+                spacing="0.2em"
+                size="0.8rem"
+                margin="10px 0px"
+                radius="4px"
+              >
+                Explore All Channels
+              </Anchor>
+            </Item>
+
+            <ItemBreak margin="10px 0px" />
+
+          </Item>
+        </Content>
+      </Section>
 
       {/* SUBSCRIBE SECTION */}
       <Section id="subscribe" theme="#f1f1f1" padding="10px 0px 30px 0px" overflow="hidden">
@@ -620,48 +660,6 @@ function Home() {
             />
           </WaveInner>
         </WaveOuter>
-      </Section>
-
-
-      {/* LATEST CHANNELS SECTION */}
-      <Section id="supported" theme="#fff" padding="20px 0px 10px 0px">
-        <Content className="contentBox">
-          <Item align="stretch" justify="flex-start" margin="0px 20px">
-            <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="20px 0px 40px 0px" textAlign="right" tabletTextAlign="left">
-              <H2 textTransform="uppercase" spacing="0.1em">
-                <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Latest</Span><Span weight="200"> Channels</Span>
-              </H2>
-              <H3>Delivering Decentralized Notifications For</H3>
-            </Item>
-
-            <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
-              {/**/}
-              <EPNSChannelItems
-                numberOfChannels={4}
-              />
-              {/**/}
-            </Item>
-
-            <Item margin="0px 0px 40px 0px" align="flex-end" justify="space-between">
-              <Anchor
-                href="https://app.epns.io"
-                target="_blank"
-                title="Check out the dApp of Ethereum Push Notification Service"
-                bg="#000"
-                color="#fff"
-                spacing="0.2em"
-                size="0.8rem"
-                margin="10px 0px"
-                radius="4px"
-              >
-                Explore All Channels
-              </Anchor>
-            </Item>
-
-            <ItemBreak margin="10px 0px" />
-
-          </Item>
-        </Content>
       </Section>
 
       {/* NOTIFICATIONS ENABLED SECTION */}
@@ -1759,7 +1757,7 @@ const EmphasisImage = styled(Item)`
 `
 
 const EmphasisText = styled(Span)`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
