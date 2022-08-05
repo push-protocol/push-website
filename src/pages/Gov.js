@@ -324,9 +324,12 @@ function Governance() {
                   <RiHeartsFill size={140} color="#fff"/>
                 </Showoff>
                 <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
-                  <Span bg="#fff" color="#000" weight="600" padding="0px 8px">6 Months</Span>
+                  <Span bg="#fff" color="#000" weight="600" padding="0px 8px"> open process</Span>
                 </H2>
-                <Span margin="20px" color="#fff" weight="200" size="large"><b>Program is active</b> from <b>Jan 26, 2022</b> and will remain active till <b>Jun 26, 2022</b></Span>
+                <Span margin="20px" color="#fff" weight="200" size="large"> Join the Push Governance  
+                <b><A color="#fff" href="https://gov.epns.io/" target="_blank" title="Discourse Forum"> Discourse Forum</A></b> and 
+                <b><A color="#fff" href="https://discord.com/invite/YVPB99F9W5" target="_blank" title="EPNS Discord"> Discord</A> </b>
+                </Span>
               </ShadowBox>
               
               <ShadowBox align="flex-start" bg="#000" margin="30px 30px">
@@ -340,7 +343,7 @@ function Governance() {
                 <H2 textTransform="uppercase" spacing="0.1em" margin="30px 0px 0px -1px">
                   <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Grants Given</Span>
                 </H2>
-                <Span margin="20px" color="#fff" size="large">Received <b>2</b> applications out of which <b>1</b> has been accepted by the community</Span>
+                <Span margin="20px" color="#fff" size="large">Received <b>18</b> applications out of which <b>4</b> has been accepted by the community</Span>
               </ShadowBox>
             </ItemH>
 
