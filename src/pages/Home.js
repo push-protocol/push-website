@@ -741,7 +741,7 @@ function Home() {
 
         <WaveOuter>
           <WaveInner>
-            <Wave fill='#e20880'
+            <Wave fill='#ffb4e0'
               paused={true}
               options={{
                 height: 20,
@@ -755,7 +755,7 @@ function Home() {
       </Section>
 
       {/* FOLLOW OUR STORY */}
-      <Section id="story" theme="#e20880" padding="20px 0px 80px 0px">
+      <Section id="story" theme="#e20880" gradient="linear-gradient(0deg, #dabcff 50%, #ffb4e0 100%)" padding="20px 0px 80px 0px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
@@ -946,7 +946,7 @@ function Home() {
         </Content>
         <WaveOuter>
           <WaveInner>
-            <Wave fill='#e20880'
+            <Wave fill='#dabcff'
               paused={true}
               options={{
                 height: 20,
@@ -1079,7 +1079,7 @@ function Home() {
         <BlurBG />
         <WaveOuter bottom="auto" top="70px">
           <WaveInner transform="rotate(180deg)">
-            <Wave fill='#e20880'
+            <Wave fill='#dabcff'
               paused={true}
               options={{
                 height: 20,
