@@ -137,7 +137,7 @@ const EPNSHelperAPI = {
         .then(response => this.getChannelEvent(channel, response.channelStartBlock.toNumber(), response.channelUpdateBlock.toNumber(), contract))
         .then(response => {
           // add little hack for now to change coindesk's descriptioon
-          const hash = channel === "0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c" ? "1+bafkreif643vf3cteadznccivnsk5uj26e3ls7onbshnldb3aej3omrxsau" : response
+          const hash = channel === "0xe56f1D3EDFFF1f25855aEF744caFE7991c224FFF" ? "1+bafkreif643vf3cteadznccivnsk5uj26e3ls7onbshnldb3aej3omrxsau" : response
           return this.getJsonFileFromIdentity(hash, channel)
           // return this.getJsonFileFromIdentity(response, channel)
         })

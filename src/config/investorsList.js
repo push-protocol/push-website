@@ -296,8 +296,8 @@ const investorsList = {
       title:"Learn about our Investor - Andrewkeys",
       href: "https://twitter.com/AndrewDARMACAP",
       src: "andrewkeys",
-      alt: "Sketch of Investor - Andrewkeys",
-      name: "andrewkeys",
+      alt: "Sketch of Investor - Andrew Keys",
+      name: "Andrew Keys",
       job: "Angel Investor",
       disabled: false,
       hidden: false,
@@ -434,7 +434,7 @@ const investorsList = {
       name: "Aniket",
       job: "Co-founder, Biconomy",
       disabled: false,
-      hidden: false,
+      hidden: true,
     },
     david:{
       title:"Learn about our Investor - David",
@@ -444,7 +444,7 @@ const investorsList = {
       name: "David",
       job: "Angel Investor",
       disabled: false,
-      hidden: false,
+      hidden: true,
     },
     jerome:{
       title:"Learn about our Investor - Jerome",
@@ -454,7 +454,7 @@ const investorsList = {
       name: "Jerome",
       job: "Angel Investor",
       disabled: false,
-      hidden: false,
+      hidden: true,
     },
     ajit:{
       title:"Learn about our Investor - Ajit",
@@ -464,7 +464,7 @@ const investorsList = {
       name: "Ajit",
       job: "Angel Investor",
       disabled: false,
-      hidden: false,
+      hidden: true,
     },
     ravindra: {
       title: "Learn about our Investor - Ravindra Kumar, Founder, Frontier Wallet",
