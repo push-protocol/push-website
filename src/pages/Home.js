@@ -760,9 +760,9 @@ function Home() {
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 60px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
-                <Span weight="200" color="#fff">Keep up with </Span><Span bg="#000" color="#fff" weight="600" padding="0px 8px">EPNS</Span>
+                <Span weight="200" color="#000">Keep up with </Span><Span bg="#000" color="#fff" weight="600" padding="0px 8px">EPNS</Span>
               </H2>
-              <H3 color="#fff">The latest developments, announcements, and community updates.</H3>
+              <H3 color="#000">The latest developments, announcements, and community updates.</H3>
             </Item>
 
             <Medium numberOfPosts={3} />
