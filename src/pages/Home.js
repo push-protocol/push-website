@@ -235,23 +235,20 @@ function Home() {
 
       {/* HERO SECTION */}
       <ScrollTrigger onEnter={() => { setAnimateHero(true) }} onExit={() => { setAnimateHero(false) }} triggerOnLoad={false}>
-        <SectionFSHero id="hero" padding="50px 0px 150px 0px">
+        <SectionFSHero id="hero" padding="50px 0px 0px 0px">
           <Content className="contentBox">
             <ItemH columnGap="40px" margin="0px 20px">
               <Item align="flex-start">
 
                 <H1>The native communication protocol of Web3</H1>
+                <Span margin="-25px 0 0 0"><Span color="rgba(255, 255, 255, 0.5)" weight="600" size="0.9rem">Ethereum Push Notification Service</Span></Span>
 
                 <Span margin="20px 0px" color="rgba(255, 255, 255, 0.5)" size="1.5rem" weight="200">Protocol for <Span color="#fff" weight="600">blockchain</Span> based <Span color="#fff" weight="600">notifications</Span> that are <Span color="rgba(255, 255, 255, 0.5)" weight="600">chain agnostic</Span>, <Span color="rgba(255, 255, 255, 0.5)" weight="600">platform independent</Span> and <Span color="rgba(255, 255, 255, 0.5)" weight="600">incentivized!</Span></Span>
 
                 <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
-                  <Anchor href="https://docs.epns.io/developers" title="Developer Docs" target="_blank" bg="#000" margin="10px" radius="4px">Start Developing</Anchor>
-                </ItemH>
-
-                <ItemH align="flex-start" justify="flex-start" margin="10px -10px 10px -10px" size="0.8rem">
+                  <Anchor href="https://docs.epns.io/developers" title="Developer Docs" target="_blank" bg="#e20880" margin="10px" radius="4px">Start Developing</Anchor>
                   <Anchor href="https://app.epns.io/" title="EPNS Dapp" target="_blank" bg="#000" margin="10px" radius="4px">Explore Notifications</Anchor>
                 </ItemH>
-
               </Item>
 
               <HeroBanner margin="0px">
@@ -287,19 +284,19 @@ function Home() {
       </ScrollTrigger>
 
       {/* PROBLEM AND SOLUTION - PART 1 */}
-      <Section id="solution" theme="#fff" padding="20px 0px 0px 0px">
+      <Section id="solution" theme="#e20880" gradient="linear-gradient(0deg, #674c9f 50%, #e20880 100%)" padding="20px 0px 40px 0px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             {/* THE PROBLEM */}
             <Item align="flex-start" padding="0px 0px 40px 0px">
               <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
-                <H2 maxWidth="400px"><Span bg="#e20880" color="#fff" padding="0px 8px">EPNS is the missing piece of web3 infrastructure</Span></H2>
                 <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span weight="300">The </Span><Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Problem</Span>
+                  <Span bg="#fff" color="#e20880" weight="600" padding="0px 8px">EPNS is the missing piece</Span><Span weight="300" color="#fff"> of web3 infrastructure</Span>
                 </H2>
+                <H3 maxWidth="400px" margin="-10px 0px 0px 0px"><Span color="#fff">What's The Problem</Span></H3>
               </Item>
 
-              <ItemH margin="10px -20px 10px -20px" align="stretch" flex="auto">
+              <ItemH margin="40px -20px 60px -20px" align="stretch" flex="auto">
                 <EmphasisBlock margin="10px 10px">
                   <EmphasisImage margin="20px" padding="20px">
                     <Image src="./problem/stone.png" srcSet="./problem/stone@2x.png 2x, ./problem/stone@3x.png 3x" alt="Cavemen representing the current blockchain communication" />
@@ -360,14 +357,12 @@ function Home() {
               </PreviewOuter>
             }
 
-            <Item padding="20px 0px 30px 0px">
+            <Item padding="60px 0px 30px 0px">
               <Item self="stretch" align="flex-end" tabletAlign="flex-start" margin="20px 0px" textAlign="right" tabletTextAlign="left" >
-                <H2 maxWidth="400px"><Span bg="#674c9f" color="#fff" padding="0px 8px">EPNS is a decentralized middleware for all dapps, smart contracts and services</Span></H2>
                 <H2 textTransform="uppercase" spacing="0.1em">
-                  <Span weight="300">The </Span><Span bg="#674c9f" color="#fff" weight="600" padding="0px 8px">Solution</Span>
+                  <Span weight="300" color="#fff">A decentralized middleware </Span><Span bg="#000" color="#fff" weight="600" padding="0px 8px"> for all dapps, smart contracts and services</Span>
                 </H2>
-
-
+                <H3 maxWidth="400px" margin="-10px 0px -10px 0px"><Span color="#fff">And the solution</Span></H3>
               </Item>
 
               <Solution margin="20px 0px">
@@ -429,6 +424,19 @@ function Home() {
           </Item>
         </Content>
 
+        <WaveOuter>
+            <WaveInner>
+              <Wave fill='#fff'
+                paused={true}
+                options={{
+                  height: 20,
+                  amplitude: 30,
+                  speed: 0.35,
+                  points: 3
+                }}
+              />
+            </WaveInner>
+          </WaveOuter>
       </Section>
 
       {/* LATEST CHANNELS SECTION */}
@@ -439,7 +447,7 @@ function Home() {
               <H2 textTransform="uppercase" spacing="0.1em">
                 <Span bg="#e20880" color="#fff" weight="600" padding="0px 8px">Latest</Span><Span weight="200"> Channels</Span>
               </H2>
-              <H3>Delivering Decentralized Notifications For</H3>
+              <H3>EPNS is currently delivering communication from the following dapps</H3>
             </Item>
 
             <Item margin="0px -20px 40px -20px" align="stretch" justify="space-around" width="100%">
@@ -472,203 +480,13 @@ function Home() {
         </Content>
       </Section>
 
-      {/* SUBSCRIBE SECTION */}
-      <Section id="subscribe" theme="#f1f1f1" padding="10px 0px 30px 0px" overflow="hidden">
-        <BlurBG />
-        <WaveOuter bottom="auto" top="70px">
-          <WaveInner transform="rotate(180deg)">
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
-
-        <Content className="contentBox" padding="60px 0px 40px 0px">
-          <Item margin="0px 20px 0px 20px">
-            <Item self="stretch" align="stretch" margin="20px 0px 40px 0px">
-              <Showoff
-                left="-130px"
-                tabletLeft="-60px"
-                transform="rotate(45deg)"
-                tabletOpacity="0.4"
-              >
-                <IoMdRocket size={120} color="#fff" />
-              </Showoff>
-
-              <ItemH>
-                <FormSubmision
-                  flex="1"
-                  direction="row"
-                  margin="20px 0px"
-                  justify="center"
-                  size="1.1rem"
-                  onSubmit={handleMailingListSubmit}
-                >
-
-                  <Item align="stretch">
-                    <Span weight="300" textTransform="uppercase" color="#fff" spacing="0.1em">Subscribe to our mailing list!</Span>
-                    <ItemH margin="10px -10px" rowGap="20px" columnGap="20px">
-                      {mailListProcessing == 0 &&
-                        <>
-                          <Item flex="1" margin="10px 10px" justify="flex-start" align="stretch" minWidth="280px">
-                            <Input
-                              radius="4px"
-                              padding="12px"
-                              bg="#fff"
-                              border="12px"
-                              placeholder="John Wick"
-                              value={mailListName}
-                              onChange={(e) => { setMailListName(e.target.value) }}
-                              autocomplete="name"
-                            />
-                            {mailListName.trim().length == 0 &&
-                              <Span
-                                padding="4px 10px"
-                                right="0px"
-                                top="0px"
-                                pos="absolute"
-                                color="#fff"
-                                bg="#000"
-                                size="0.7rem"
-                                z="1"
-                              >
-                                Name
-                              </Span>
-                            }
-                          </Item>
-
-                          <Item flex="5" margin="10px 10px" justify="flex-start" align="stretch" minWidth="280px">
-                            <Input
-                              required
-                              placeholder="john@wick.com"
-                              radius="4px"
-                              padding="12px"
-                              bg="#fff"
-                              value={mailListEmail}
-                              onChange={(e) => { setMailListEmail(e.target.value) }}
-                              autocomplete="on"
-                            />
-                            {mailListEmail.trim().length == 0 &&
-                              <Span
-                                padding="4px 10px"
-                                right="0px"
-                                top="0px"
-                                pos="absolute"
-                                color="#fff"
-                                bg="#000"
-                                size="0.7rem"
-                                z="1"
-                              >
-                                E-mail
-                              </Span>
-                            }
-                          </Item>
-                        </>
-                      }
-
-                      <Item flex="1" margin="10px 10px" justify="stretch" self="stretch" align="stretch" minWidth="280px">
-                        {mailListProcessing != 2 &&
-                          <Button
-                            bg='#000'
-                            color='#fff'
-                            flex="1"
-                            radius="4px"
-                            disabled={mailListProcessing}
-                          >
-                            {mailListProcessing == 1 &&
-                              <Loader
-                                type="Oval"
-                                color="#fff"
-                                height={24}
-                                width={24}
-                              />
-                            }
-                            {mailListProcessing == 0 &&
-                              <Input cursor="hand" color="#fff" weight="400" size="0.8em" spacing="0.2em" type="submit" value="Submit" />
-                            }
-                          </Button>
-                        }
-                      </Item>
-                    </ItemH>
-                  </Item>
-
-                  <ItemBreak />
-
-                  <Item align="center">
-                    {mailListProcessing == 2 &&
-                      <ItemH
-                        color="#fff"
-                        bg="#000"
-                        padding="10px 15px"
-                        columnGap="0px"
-                        rowGap="0px"
-                      >
-                        <FaCheckCircle size={24} color="#fff" />
-                        <Span
-                          padding="0px 0px 0px 8px"
-                          color="#fff"
-                          textTransform="uppercase"
-                          spacing="0.1em"
-                        >
-                          Thanks for Subscribing! We will be in Touch :)
-                        </Span>
-                      </ItemH>
-                    }
-
-                    {mailListError && mailListProcessing == 0 &&
-                      <Item
-                        color="#fff"
-                        bg="#000"
-                        padding="10px 15px"
-                        columnGap="0px"
-                        rowGap="0px"
-                      >
-                        <Span
-                          color="#fff"
-                          textTransform="uppercase"
-                          spacing="0.1em"
-                        >
-                          {mailListError}
-                        </Span>
-                      </Item>
-                    }
-                  </Item>
-                </FormSubmision>
-
-              </ItemH>
-            </Item>
-
-          </Item>
-        </Content>
-
-        <WaveOuter>
-          <WaveInner>
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
-      </Section>
-
       {/* NOTIFICATIONS ENABLED SECTION */}
       <Section id="supported" theme="#fff" padding="10px 0px 80px 0px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="20px 0px 30px 0px">
               <H2 textTransform="uppercase" spacing="0.1em">
-                <Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Notifications</Span><Span weight="200"> Enabled Platforms</Span>
+                <Span bg="#35c5f3" color="#fff" weight="600" padding="0px 8px">Notifications</Span><Span weight="200"> delivered through</Span>
               </H2>
             </Item>
 
@@ -771,65 +589,34 @@ function Home() {
                 </Anchor>
               </Supported>
 
+              <ItemBreak margin="10px 0px"/>
+
+              <Supported margin="20px" minWidth="280px">
+                <Anchor
+                  href="#contact"
+                  title="Get Notified from EPNS Dapp"
+                  direction="column"
+                  bg="#fff"
+                  hover="#fafafa"
+                  radius="12px"
+                  align="stretch"
+                  border="2px dashed #ddd"
+                >
+                  <Item margin="5px 0px 10px 0px">
+                    <Span size="1em" color="#000" spacing="0.2em" weight="200" textAlign="center">Are you a Crypto Wallet?</Span>
+                  </Item>
+                  <ItemH margin="5px 0px 10px 0px">
+                    <Span size="1em" color="#fff" bg="#e20880" padding="2px 5px 4px 8px" margin="0px 5px" spacing="0.2em" weight="400" textAlign="center">Integrate</Span>
+                    <Span size="1em" color="#000" spacing="0.2em" weight="200" padding="2px 5px 4px 8px" textAlign="center">AND</Span>
+                    <Span size="1em" color="#fff" bg="#35c5f3" padding="2px 5px 4px 8px" margin="0px 5px" spacing="0.2em" weight="400" textAlign="center">Earn</Span>
+                  </ItemH>
+                </Anchor>
+              </Supported>
             </ItemH>
 
           </Item>
         </Content>
-      </Section>
 
-      {/* WEB3 WALLET SECTION */}
-      <Section id="subscribe" theme="#f1f1f1" padding="10px 0px 30px 0px" overflow="hidden">
-        <BlurBG />
-        <WaveOuter bottom="auto" top="70px">
-          <WaveInner transform="rotate(180deg)">
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
-
-        <Supported margin="20px" minWidth="280px" padding="50px">
-
-          <Item margin="5px 0px 10px 0px">
-            <Span size="1.8em" color="#000" spacing="0.2em" weight="400" textAlign="center">Are you a Web3 Wallet?</Span>
-          </Item>
-          <ItemH margin="15px 0px 10px 0px">
-            <Span size="1.3em" color="#fff" bg="#e20880" padding="2px 5px 4px 8px" margin="0px 20px" spacing="0.2em" weight="400" textAlign="center">Integrate</Span>
-            <Span size="1.3em" color="#000" spacing="0.2em" weight="200" padding="2px 5px 4px 8px" textAlign="center">AND</Span>
-            <Span size="1.3em" color="#fff" bg="#35c5f3" padding="2px 5px 4px 8px" margin="0px 20px" spacing="0.2em" weight="400" textAlign="center">Earn</Span>
-          </ItemH>
-          <Anchor
-            href="#contact"
-            title="Get Notified from EPNS Dapp"
-            direction="column"
-            radius="12px"
-            align="stretch"
-          >
-            <ItemH margin="15px 0px 10px 0px">
-              <Span size="1.3em" color="#fff" bg="#000" padding="2px 5px 4px 8px" margin="0px 8px" spacing="0.2em" weight="400" textAlign="center">Start Here</Span>
-            </ItemH>
-          </Anchor>
-        </Supported>
-
-        <WaveOuter>
-          <WaveInner>
-            <Wave fill='#fff'
-              paused={true}
-              options={{
-                height: 20,
-                amplitude: 30,
-                speed: 0.35,
-                points: 3
-              }}
-            />
-          </WaveInner>
-        </WaveOuter>
         <WaveOuter>
           <WaveInner>
             <Wave fill='#f1f1f1'
@@ -1016,9 +803,9 @@ function Home() {
           </Item>
         </Content>
 
-        <WaveOuter>
+        {/* <WaveOuter>
           <WaveInner>
-            <Wave fill='#fff'
+            <Wave fill='#e20880'
               paused={true}
               options={{
                 height: 20,
@@ -1028,13 +815,13 @@ function Home() {
               }}
             />
           </WaveInner>
-        </WaveOuter>
-      </Section>
+        </WaveOuter> */}
+      {/* </Section> */}
 
       {/* FEATURED SECTION */}
-      <Section id="featured" theme="#fff" gradient="linear-gradient(0deg, #674c9f 0%, #fff 100%)" padding="0px 0px 80px 0px">
+      {/* <Section id="featured" theme="#e20880" padding="0px 0px 80px 0px"> */}
         <Content className="contentBox">
-          <Item margin="20px 0px 20px 0px">
+          <Item margin="-60px 0px 0px 0px">
             <Featured>
               <Feature
                 disabled={true}
@@ -1159,7 +946,7 @@ function Home() {
         </Content>
         <WaveOuter>
           <WaveInner>
-            <Wave fill='#fff'
+            <Wave fill='#e20880'
               paused={true}
               options={{
                 height: 20,
@@ -1173,7 +960,7 @@ function Home() {
       </Section>
 
       {/* TEAM SECTION | 1=Founder, 2=Founder+Lead, 3=Founder+Team, 4=Lead, 5=Team, 6=Advisor */}
-      <Section id="team" theme="#fff" padding="20px 0px 120px 0px">
+      {/* <Section id="team" theme="#fff" padding="20px 0px 120px 0px">
         <Content className="contentBox">
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" justify="flex-start" margin="0px 0px 20px 0px">
@@ -1285,11 +1072,201 @@ function Home() {
             />
           </WaveInner>
         </WaveOuter>
+      </Section> */}
+
+      {/* SUBSCRIBE SECTION */}
+      <Section id="subscribe" theme="#f1f1f1" padding="10px 0px 30px 0px" overflow="hidden">
+        <BlurBG />
+        <WaveOuter bottom="auto" top="70px">
+          <WaveInner transform="rotate(180deg)">
+            <Wave fill='#e20880'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
+
+        <Content className="contentBox" padding="60px 0px 40px 0px">
+          <Item margin="0px 20px 0px 20px">
+            <Item self="stretch" align="stretch" margin="20px 0px 40px 0px">
+              <Showoff
+                left="-130px"
+                tabletLeft="-60px"
+                transform="rotate(45deg)"
+                tabletOpacity="0.4"
+              >
+                <IoMdRocket size={120} color="#fff" />
+              </Showoff>
+
+              <ItemH>
+                <FormSubmision
+                  flex="1"
+                  direction="row"
+                  margin="20px 0px"
+                  justify="center"
+                  size="1.1rem"
+                  onSubmit={handleMailingListSubmit}
+                >
+
+                  <Item align="stretch">
+                    <Span weight="300" textTransform="uppercase" color="#fff" spacing="0.1em">Subscribe to our mailing list!</Span>
+                    <ItemH margin="10px -10px" rowGap="20px" columnGap="20px">
+                      {mailListProcessing == 0 &&
+                        <>
+                          <Item flex="1" margin="10px 10px" justify="flex-start" align="stretch" minWidth="280px">
+                            <Input
+                              radius="4px"
+                              padding="12px"
+                              bg="#fff"
+                              border="12px"
+                              placeholder="John Wick"
+                              value={mailListName}
+                              onChange={(e) => { setMailListName(e.target.value) }}
+                              autocomplete="name"
+                            />
+                            {mailListName.trim().length == 0 &&
+                              <Span
+                                padding="4px 10px"
+                                right="0px"
+                                top="0px"
+                                pos="absolute"
+                                color="#fff"
+                                bg="#000"
+                                size="0.7rem"
+                                z="1"
+                              >
+                                Name
+                              </Span>
+                            }
+                          </Item>
+
+                          <Item flex="5" margin="10px 10px" justify="flex-start" align="stretch" minWidth="280px">
+                            <Input
+                              required
+                              placeholder="john@wick.com"
+                              radius="4px"
+                              padding="12px"
+                              bg="#fff"
+                              value={mailListEmail}
+                              onChange={(e) => { setMailListEmail(e.target.value) }}
+                              autocomplete="on"
+                            />
+                            {mailListEmail.trim().length == 0 &&
+                              <Span
+                                padding="4px 10px"
+                                right="0px"
+                                top="0px"
+                                pos="absolute"
+                                color="#fff"
+                                bg="#000"
+                                size="0.7rem"
+                                z="1"
+                              >
+                                E-mail
+                              </Span>
+                            }
+                          </Item>
+                        </>
+                      }
+
+                      <Item flex="1" margin="10px 10px" justify="stretch" self="stretch" align="stretch" minWidth="280px">
+                        {mailListProcessing != 2 &&
+                          <Button
+                            bg='#000'
+                            color='#fff'
+                            flex="1"
+                            radius="4px"
+                            disabled={mailListProcessing}
+                          >
+                            {mailListProcessing == 1 &&
+                              <Loader
+                                type="Oval"
+                                color="#fff"
+                                height={24}
+                                width={24}
+                              />
+                            }
+                            {mailListProcessing == 0 &&
+                              <Input cursor="hand" color="#fff" weight="400" size="0.8em" spacing="0.2em" type="submit" value="Submit" />
+                            }
+                          </Button>
+                        }
+                      </Item>
+                    </ItemH>
+                  </Item>
+
+                  <ItemBreak />
+
+                  <Item align="center">
+                    {mailListProcessing == 2 &&
+                      <ItemH
+                        color="#fff"
+                        bg="#000"
+                        padding="10px 15px"
+                        columnGap="0px"
+                        rowGap="0px"
+                      >
+                        <FaCheckCircle size={24} color="#fff" />
+                        <Span
+                          padding="0px 0px 0px 8px"
+                          color="#fff"
+                          textTransform="uppercase"
+                          spacing="0.1em"
+                        >
+                          Thanks for Subscribing! We will be in Touch :)
+                        </Span>
+                      </ItemH>
+                    }
+
+                    {mailListError && mailListProcessing == 0 &&
+                      <Item
+                        color="#fff"
+                        bg="#000"
+                        padding="10px 15px"
+                        columnGap="0px"
+                        rowGap="0px"
+                      >
+                        <Span
+                          color="#fff"
+                          textTransform="uppercase"
+                          spacing="0.1em"
+                        >
+                          {mailListError}
+                        </Span>
+                      </Item>
+                    }
+                  </Item>
+                </FormSubmision>
+
+              </ItemH>
+            </Item>
+
+          </Item>
+        </Content>
+
+        <WaveOuter>
+          <WaveInner>
+            <Wave fill='#f1f1f1'
+              paused={true}
+              options={{
+                height: 20,
+                amplitude: 30,
+                speed: 0.35,
+                points: 3
+              }}
+            />
+          </WaveInner>
+        </WaveOuter>
       </Section>
 
 
       {/* CONTACT US SECTION */}
-      <Section id="contact" theme="#35c5f3" padding="20px 0px 80px 0px">
+      <Section id="contact" theme="#f1f1f1" padding="20px 0px 80px 0px">
         {/* SNOWING
         <Snowfall
           color="white"
@@ -1302,9 +1279,9 @@ function Home() {
           <Item align="stretch" justify="flex-start" margin="0px 20px">
             <Item align="stretch" align="flex-end" tabletAlign="flex-start" margin="0px 0px 20px 0px" textAlign="right" tabletTextAlign="left">
               <H2 textTransform="uppercase" spacing="0.1em">
-                <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Contact</Span><Span weight="200" color="#fff"> Us!</Span>
+                <Span bg="#fff" color="#000" weight="600" padding="0px 8px">Contact</Span><Span weight="200" color="#000"> Us!</Span>
               </H2>
-              <H3 color="#fff">Get in Touch</H3>
+              <H3 color="#000">Get in Touch</H3>
             </Item>
 
             <Item margin="10px -10px" self="stretch">
@@ -1761,6 +1738,7 @@ const EmphasisText = styled(Span)`
   font-weight: 400;
   text-align: center;
   padding: 0px 20px;
+  color: #fff;
 `
 
 const PreviewOuter = styled.div`
