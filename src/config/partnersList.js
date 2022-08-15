@@ -104,6 +104,33 @@ const partnersList = {
       alt: "The Defiant Logo",
       display: "The Defiant 📰  X 🔔 EPNS ",
     },
+    polychain: {
+      title:
+        "Decentralized Communication for the Digital Collectible Ecosystem",
+      href: "https://medium.com/@epnsproject/epns-x-polychain-monsters-decentralized-communication-for-the-digital-collectible-ecosystem-a4d103a6efdb",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "polymon",
+      alt: "Polychain Monsters Logo",
+      display: "Digital Collectibles meet Web3Notifs ",
+    },
+    dxdao: {
+      title:
+        "EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates",
+      href: "https://medium.com/ethereum-push-notification-service/epns-collaborates-with-dxdao-to-enable-notifications-for-swapr-campaign-updates-3c072e084b0b",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "dxdao",
+      alt: "Dxdao Logo",
+      display: "EPNS team up with Dxdao",
+    },
+    socket: {
+      title:
+        "Socket, the blockchain interoperability infrastructure platform, teams up with EPNS to send decentralized push notifications to its users.",
+      href: "https://medium.com/ethereum-push-notification-service/socket-integrates-epns-to-send-users-important-updates-through-push-notifications-cd58d420e56",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "socket",
+      alt: "Socket Logo",
+      display: "EPNS ✨  Socket",
+    },
     earnifi: {
       title:
         "Earnifi and EPNS Collaborate to Bring Airdrop Opportunities to Users",
@@ -207,6 +234,15 @@ const partnersList = {
       src: "pine",
       alt: "Pine logo",
       display: "EPNS 🔔  X 🌲 Pine ",
+    },
+    cryptocurrencyjobs: {
+      title:
+        "EPNS collaborates with Cryptocurrency Jobs, to bring a decentralized communication medium to the platform.",
+      href: "https://medium.com/ethereum-push-notification-service/epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users-9f69beefc510",
+      hover: "#000", //#eee or #000 based on logo og color
+      src: "cryptocurrencyjobs",
+      alt: "Cryptocurrency jobs logo",
+      display: "EPNS ✨ Cryptocurrency jobs",
     },
     timeswap: {
       title: "Article talking about collaboration between EPNS and Timeswap!",
