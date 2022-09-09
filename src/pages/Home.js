@@ -150,7 +150,7 @@ function Home() {
 
   // HANDLE CONTACT FORM
   // ---------
-  const handleContactFormSubmit = (e) => {
+  const handleContactFormSubmit = async(e) => {
     e.preventDefault();
 
     // Check everything in order
@@ -182,18 +182,13 @@ function Home() {
             msg: contactFormMsg
           })
         };
-
-        fetch('https://backend-kovan.epns.io/apis/V1/mailing/send', requestOptions)
-          .then(response => response.json())
-          .then(jsondata => {
-            // console.log(jsondata);
-            setContactFormProcessing(2);
-          })
-          .catch(err => {
-            // console.log(err);
-            setContactFormError("Mayday! Mayday! something went wrong. Please retry...");
-            setContactFormProcessing(0);
-          });
+        const res = await fetch('https://backend-kovan.epns.io/apis/v1/mailing/send', requestOptions);
+        if(res.ok){
+          setContactFormProcessing(2);
+        }else{
+          setContactFormError("Mayday! Mayday! something went wrong. Please retry...");
+          setContactFormProcessing(0);
+        }
       }
     }
     else {
