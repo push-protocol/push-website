@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -24,7 +25,51 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <!-- HTML Meta Tags -->
+    <title>Ethereum Push Notification Service | EPNS</title>
+    <meta name="description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="http://epns.io">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ethereum Push Notification Service | EPNS">
+    <meta property="og:description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
+    <meta property="og:image" content="https://epns.io/previews/homepage.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="epns.io">
+    <meta property="twitter:url" content="http://epns.io">
+    <meta name="twitter:title" content="Ethereum Push Notification Service | EPNS">
+    <meta name="twitter:description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
+    <meta name="twitter:image" content="https://epns.io/previews/homepagetwitter.jpg">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+    <!-- Start Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
