@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -18,11 +18,6 @@ import { ReactComponent as GithubSVG }  from '../assets/github.svg';
 import { ReactComponent as DiscordSVG }  from '../assets/discord.svg';
 
 function Home() {
-
-    const landingUrlLinksClick = () => {
-        console.log('dummy link');
-    };
-
     return (
         <HomeWrapper>
             <SectionFSHero id="hero" padding="0px 160px 0px 160px">
@@ -74,10 +69,30 @@ function Home() {
                         </Anchor>
                     </ItemH>
 
-                    <ItemH justifyContent="flex-start" gap="18px">
-                        <TwitterSVG  width={32} height={32} onClick={landingUrlLinksClick} />
-                        <GithubSVG width={32} height={32} onClick={landingUrlLinksClick} />
-                        <DiscordSVG width={32} height={32} onClick={landingUrlLinksClick} />
+                    <ItemH justifyContent="flex-start">
+                        <Anchor
+                            href="https://twitter.com/epnsproject"
+                            title="PUSH Twitter"
+                            target="_blank"
+                        >
+                            <TwitterSVG width={32} height={32}/>
+                        </Anchor>
+
+                        <Anchor
+                            href="https://github.com/ethereum-push-notification-service"
+                            title="PUSH Github"
+                            target="_blank"
+                        >
+                            <GithubSVG width={32} height={32}/>
+                        </Anchor>
+
+                        <Anchor
+                            href="https://discord.gg/YVPB99F9W5"
+                            title="PUSH Discord"
+                            target="_blank"
+                        >
+                            <DiscordSVG width={32} height={32}/>
+                        </Anchor>
                     </ItemH>
 
 
