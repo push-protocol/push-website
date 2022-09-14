@@ -344,6 +344,8 @@ export const Span = styled.span`
 	letter-spacing: ${(props) => props.spacing || 'inherit'};
 	text-align: ${(props) => props.textAlign || 'initial'};
 
+	line-height: ${props => props.lineHeight || 'inherit'};
+
 	position: ${(props) => props.pos || 'initial'};
 	right: ${(props) => props.right || 'auto'};
 	left: ${(props) => props.left || 'auto'};

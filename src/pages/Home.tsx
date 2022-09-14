@@ -22,7 +22,7 @@ function Home() {
         <HomeWrapper>
             <SectionFSHero id="hero" padding="0px 160px 0px 160px">
                 <Content className="contentBox">
-                    <ItemH width="620px">
+                    <ItemH width="650px" margin="120px 0 0 0">
                         <ItemV justifyContent="flex-start">
                             <HeroHeader>
                                 The Communication Protocol of Web3
@@ -30,15 +30,15 @@ function Home() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemH width="600px">
+                    <ItemH width="550px">
                         <ItemV justifyContent="flex-start">
-                            <Span margin="20px 0px" color="rgba(255, 255, 255, 1)" size="1.5rem" weight="200" spacing="-0.03em">
+                            <Span margin="20px 0px" color="rgba(255, 255, 255, 1)" size="22px" weight="200" spacing="-0.03em" lineHeight="142%">
                                 Push is a web3-native communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.
                             </Span>
                         </ItemV>
                     </ItemH>
 
-                    <ItemH justifyContent="flex-start" gap="18px">
+                    <ItemH justifyContent="flex-start" gap="18px" margin="15px 0 0 0">
                         <Anchor
                             href="https://docs.epns.io/developers"
                             title="Developer Docs"
@@ -69,11 +69,12 @@ function Home() {
                         </Anchor>
                     </ItemH>
 
-                    <ItemH justifyContent="flex-start">
+                    <ItemH justifyContent="flex-start" margin="15px 0 0 0">
                         <Anchor
                             href="https://twitter.com/epnsproject"
                             title="PUSH Twitter"
                             target="_blank"
+                            margin="0 0 0 -10px"
                         >
                             <TwitterSVG width={32} height={32}/>
                         </Anchor>
@@ -123,6 +124,30 @@ function Home() {
                 </Content>
             </SectionFSHero>
 
+
+
+            <Section id="story" theme="#e20880" gradient="linear-gradient(0deg, #dabcff 50%, #ffb4e0 100%)" padding="20px 0px 80px 0px">
+                <Content className="contentBox">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et augue ut erat elementum lacinia. Aenean fermentum, ipsum at dignissim porttitor, sem nibh semper mauris, eu mattis sapien diam non justo. Phasellus dapibus eu nisi eget scelerisque. Donec quis sollicitudin nunc. Nam sit amet lacus vel tortor molestie posuere. Aliquam ac eleifend ligula, nec ultrices nulla. In laoreet et arcu vitae iaculis. Cras ut venenatis justo, quis convallis nibh. Suspendisse eleifend scelerisque leo. Vivamus posuere malesuada metus, id dignissim arcu venenatis non. Cras vitae nulla tincidunt, mollis arcu a, sagittis ligula. Maecenas aliquet luctus euismod. Quisque non diam vitae nisl gravida rhoncus interdum id lacus. Sed ullamcorper eu tortor ac accumsan.
+
+Sed sit amet orci posuere, laoreet eros at, maximus justo. Aliquam tortor lacus, finibus vitae urna nec, placerat tincidunt mauris. Cras eget sem egestas, congue quam a, placerat diam. Mauris et suscipit elit. Duis est nunc, sodales eget finibus eu, suscipit vitae velit. Suspendisse augue sapien, mattis et gravida dictum, eleifend ut sem. Morbi condimentum volutpat ipsum a egestas. Suspendisse sed sem sagittis, consequat odio ut, pellentesque urna. Quisque sit amet interdum nulla, et efficitur dui. Nam non velit arcu. Aenean at enim aliquam, ornare orci vitae, feugiat tellus. Nam ex sem, fringilla sed eros sit amet, maximus suscipit felis. Maecenas id neque neque. Ut cursus mi sed porta placerat. Phasellus dui neque, imperdiet in nisl eu, tincidunt posuere ipsum. Vestibulum et fringilla tortor.
+
+Ut congue, quam nec molestie pharetra, neque felis dictum diam, vel tincidunt metus dolor in est. In hac habitasse platea dictumst. Maecenas ultricies, massa vitae feugiat consequat, augue sem venenatis odio, eu aliquam orci nunc at dui. Suspendisse ornare magna id placerat tempus. Vestibulum consectetur libero eu malesuada imperdiet. Etiam finibus tellus odio, id maximus nulla elementum eu. Integer tempor velit at ipsum hendrerit suscipit a nec erat. Nunc dignissim magna quis laoreet blandit.
+
+Morbi mattis odio in euismod cursus. In hac habitasse platea dictumst. Vivamus non fermentum risus. Ut gravida convallis odio at dignissim. Fusce tincidunt finibus finibus. Morbi imperdiet iaculis eros, vitae luctus quam. Sed augue odio, dignissim at commodo at, tincidunt ut massa. Proin pharetra vel orci nec maximus.
+
+Mauris quis cursus enim. Nullam diam erat, dapibus ut magna quis, aliquet malesuada purus. Etiam congue finibus mauris ut pretium. Curabitur vel tempor tellus, at tristique arcu. Cras vel lobortis nulla, quis tincidunt libero. Donec sed facilisis dui. Donec faucibus laoreet lectus sed fermentum. Nullam non tellus lorem. Quisque accumsan tellus enim, sit amet luctus magna aliquet a. Aenean nec eros auctor, egestas diam eget, sollicitudin enim. Aenean volutpat arcu ut convallis volutpat. Etiam quis nunc sed est iaculis pharetra vitae vel urna. Vestibulum facilisis ipsum enim, non tempor nibh vehicula non. Suspendisse potenti.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et augue ut erat elementum lacinia. Aenean fermentum, ipsum at dignissim porttitor, sem nibh semper mauris, eu mattis sapien diam non justo. Phasellus dapibus eu nisi eget scelerisque. Donec quis sollicitudin nunc. Nam sit amet lacus vel tortor molestie posuere. Aliquam ac eleifend ligula, nec ultrices nulla. In laoreet et arcu vitae iaculis. Cras ut venenatis justo, quis convallis nibh. Suspendisse eleifend scelerisque leo. Vivamus posuere malesuada metus, id dignissim arcu venenatis non. Cras vitae nulla tincidunt, mollis arcu a, sagittis ligula. Maecenas aliquet luctus euismod. Quisque non diam vitae nisl gravida rhoncus interdum id lacus. Sed ullamcorper eu tortor ac accumsan.
+
+Sed sit amet orci posuere, laoreet eros at, maximus justo. Aliquam tortor lacus, finibus vitae urna nec, placerat tincidunt mauris. Cras eget sem egestas, congue quam a, placerat diam. Mauris et suscipit elit. Duis est nunc, sodales eget finibus eu, suscipit vitae velit. Suspendisse augue sapien, mattis et gravida dictum, eleifend ut sem. Morbi condimentum volutpat ipsum a egestas. Suspendisse sed sem sagittis, consequat odio ut, pellentesque urna. Quisque sit amet interdum nulla, et efficitur dui. Nam non velit arcu. Aenean at enim aliquam, ornare orci vitae, feugiat tellus. Nam ex sem, fringilla sed eros sit amet, maximus suscipit felis. Maecenas id neque neque. Ut cursus mi sed porta placerat. Phasellus dui neque, imperdiet in nisl eu, tincidunt posuere ipsum. Vestibulum et fringilla tortor.
+
+Ut congue, quam nec molestie pharetra, neque felis dictum diam, vel tincidunt metus dolor in est. In hac habitasse platea dictumst. Maecenas ultricies, massa vitae feugiat consequat, augue sem venenatis odio, eu aliquam orci nunc at dui. Suspendisse ornare magna id placerat tempus. Vestibulum consectetur libero eu malesuada imperdiet. Etiam finibus tellus odio, id maximus nulla elementum eu. Integer tempor velit at ipsum hendrerit suscipit a nec erat. Nunc dignissim magna quis laoreet blandit.
+
+Morbi mattis odio in euismod cursus. In hac habitasse platea dictumst. Vivamus non fermentum risus. Ut gravida convallis odio at dignissim. Fusce tincidunt finibus finibus. Morbi imperdiet iaculis eros, vitae luctus quam. Sed augue odio, dignissim at commodo at, tincidunt ut massa. Proin pharetra vel orci nec maximus.
+
+Mauris quis cursus enim. Nullam diam erat, dapibus ut magna quis, aliquet malesuada purus. Etiam congue finibus mauris ut pretium. Curabitur vel tempor tellus, at tristique arcu. Cras vel lobortis nulla, quis tincidunt libero. Donec sed facilisis dui. Donec faucibus laoreet lectus sed fermentum. Nullam non tellus lorem. Quisque accumsan tellus enim, sit amet luctus magna aliquet a. Aenean nec eros auctor, egestas diam eget, sollicitudin enim. Aenean volutpat arcu ut convallis volutpat. Etiam quis nunc sed est iaculis pharetra vitae vel urna. Vestibulum facilisis ipsum enim, non tempor nibh vehicula non. Suspendisse potenti.
+                </Content>
+            </Section>
+
         </HomeWrapper>
     );
 }
@@ -130,7 +155,7 @@ function Home() {
 const HomeWrapper = styled.div`
   & #hero .contentBox {
     flex-grow: 0;
-    row-gap: 24px;
+    row-gap: 18px;
   }
 `;
 
