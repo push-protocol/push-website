@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Span,Item } from '../components/SharedStyling';
+import { Span, ItemV } from '../components/SharedStyling';
 
 
 export const FAQS = [
@@ -55,7 +55,7 @@ export const FAQS = [
 ];
   
 
-const Answer = styled(Item)`
+const Answer = styled(ItemV)`
    align-items: stretch;
    align-self: stretch;
    padding:20px ;

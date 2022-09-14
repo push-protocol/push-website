@@ -26,7 +26,6 @@ function App() {
                     <Route path="/presskit" element={<PressKit />} />
                     <Route path="/notify" element={<RedirectToPlatform />} />
                 </Routes>
-                <div style={{ height: 2000, border: '1px solid blue', width: 100 }}>long dummy content</div>
             </ParentContainer>
             <Footer />
         </AppWrapper>
@@ -34,8 +33,7 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-    scroll-behavior: smooth;
-    background: #F5F5F5;
+    background: #121315;
 `;
 
 const ParentContainer = styled.div`
@@ -43,7 +41,6 @@ const ParentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-
 `;
 
 export default App;

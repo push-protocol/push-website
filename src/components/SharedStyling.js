@@ -1,20 +1,48 @@
 import styled, { css } from 'styled-components';
 
-export const Section = styled.section`
-  display: flex;
-  align-self: stretch;
-  justify-content: center;
-  align-items: ${props => props.align || 'initial'};
-  flex-direction: ${props => props.direction || 'column'};
-  background: ${props => props.theme || 'transparent'};
-  background: ${props => props.gradient || 'undefined'};
-  margin: ${props => props.margin || '0px'};
-  padding: ${props => props.padding || '0px'};
-  overflow: ${props => props.overflow || 'initial'};
-  flex: 1;
-  position: relative;
+/**
+ * Usage Hierarchy
+ * 
+ * Section
+ * 		Content
+ * 			ItemH
+ * 				ItemV  ItemV ItemV  ItemV
+ * 			ItemH
+ * 				ItemV  ItemV ItemV  ItemV
+ */
 
- 
+
+// old Section
+// export const Section = styled.section`
+//   display: flex;
+//   align-self: stretch;
+//   justify-content: center;
+//   align-items: ${props => props.align || 'initial'};
+//   flex-direction: ${props => props.direction || 'column'};
+//   background: ${props => props.theme || 'transparent'};
+//   background: ${props => props.gradient || 'undefined'};
+//   margin: ${props => props.margin || '0px'};
+//   padding: ${props => props.padding || '0px'};
+//   overflow: ${props => props.overflow || 'initial'};
+//   flex: 1;
+//   position: relative;
+// `;
+
+
+// Section covers the entire width and height
+export const Section = styled.section`
+  align-items: ${(props) => props.alignItems || 'center'};
+  align-self: ${(props) => props.alignSelf || 'stretch'};
+  background: ${(props) => props.gradient ? props.gradient : props.background ? props.background : 'transparent' || 'transparent'};
+  display: ${(props) => props.display || 'flex'};
+  flex: ${(props) => props.flex || '1'};
+  flex-direction: ${(props) => props.flexDirection || 'column'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  margin: ${(props) => props.margin || '0px'};
+  min-height: ${(props) => props.minHeight || 'auto'};
+  overflow: ${(props) => props.overflow || 'initial'};
+  padding: ${(props) => props.padding || '0px'};
+  position: ${(props) => props.position || 'relative'};
 `;
 
 export const SectionFS = styled(Section)`
@@ -23,13 +51,8 @@ export const SectionFS = styled(Section)`
 
 export const SectionFSHero = styled(Section)`
 	min-height: 100vh;
-	background: rgb(31, 23, 47);
-	background: linear-gradient(
-		283deg,
-		rgba(31, 23, 47, 1) 0%,
-		rgba(62, 9, 40, 1) 45%,
-		rgba(17, 58, 72, 1) 100%
-	);
+	background: #121315;
+	border-radius: 48px;
 `;
 
 export const SectionHero = styled(Section)`
@@ -47,77 +70,136 @@ export const Content = styled.div`
 	flex-direction: column;
 	padding: ${(props) => props.padding || '40px 0px'};
 	position: relative;
+
+	&.contentBox {
+		width: 100%;
+		align-self: center;
+		flex: 1;
+		display: flex;
+	}
 `;
 
 export const ItemBreak = styled.div`
 	flex-basis: 100%;
 `;
 
-export const Item = styled.div`
-	display: flex;
-	flex-direction: column;
-	flex-wrap: ${(props) => props.wrap || 'wrap'};
-	position: relative;
-	justify-content: center;
-	background: ${(props) => props.bg || 'transparent'};
+// old ItemH
+// export const ItemH = styled(Item)`
+// 	flex-direction: row;
+// 	flex: ${(props) => props.flex || '1'};
+
+// 	${ItemBreak} {
+// 		width: auto;
+// 		height: 0;
+// 	}
+// `;
+
+export const ItemH = styled.div`
+	align-items: ${(props) => props.alignItems || 'center'};
+	align-self: ${(props) => props.alignSelf || 'stretch'};
+	background: ${(props) => props.gradient ? props.gradient : props.background ? props.background : 'transparent' || 'transparent'};
+	border: ${(props) => props.border || 'initial'};
+	border-radius: ${(props) => props.borderRadius || 'initial'};
+	bottom: ${(props) => props.bottom || 'auto'};
+	box-shadow: ${(props) => props.boxShadow || 'initial'};
+	display: ${(props) => props.display || 'flex'};
+	filter: ${(props) => props.filter || 'initial'};
 	flex: ${(props) => props.flex || '1'};
-	flex-direction: ${(props) => props.direction || 'column'};
-	align-self: ${(props) => props.self || 'auto'};
-	align-items: ${(props) => props.align || 'center'};
-	justify-content: ${(props) => props.justify || 'center'};
-	padding: ${(props) => props.padding || '0px'};
-	margin: ${(props) => props.margin || '0px'};
-	min-width: ${(props) => props.minWidth || 'auto'};
-	max-width: ${(props) => props.maxWidth || 'initial'};
-	font-size: ${(props) => props.size || 'inherit'};
-	text-align: ${(props) => props.textAlign || 'inherit'};
-	filter: ${(props) => props.filter || 'none'};
-
-	width: ${(props) => props.width || 'auto'};
+	flex-basis: ${(props) => props.flexBasis || 'auto'};
+	flex-direction: ${(props) => props.flexDirection || 'row'};
+	flex-wrap: ${(props) => props.flexWrap || 'wrap'};
+	gap: ${(props) => props.gap || 'normal'};
+	font-size: ${(props) => props.fontSize || 'initial'};
 	height: ${(props) => props.height || 'auto'};
-
-	border: ${(props) => props.border || 'none'};
-	border-radius: ${(props) => props.radius || '0px'};
+	justify-content: ${(props) => props.justifyContent || 'center'};
+	left: ${(props) => props.left || 'auto'};
+	margin: ${(props) => props.margin || '0px'};
+	max-width: ${(props) => props.maxWidth || 'initial'};
+	min-width: ${(props) => props.minWidth || 'auto'};
 	overflow: ${(props) => props.overflow || 'initial'};
-
+	padding: ${(props) => props.padding || '0px'};
+	position: ${(props) => props.position || 'relative'};
+	right: ${(props) => props.right || 'auto'};
+	text-align: ${(props) => props.textAlign || 'initial'};
+	top: ${(props) => props.top || 'auto'};
+	width: ${(props) => props.width || 'auto'};
+	z-index: ${(props) => props.zIndex || 'auto'};
+	
 	&:hover & {
-		filter: ${(props) =>
-        (props.filterHover
-            ? props.filterHover
-            : props.hover
-                ? props.hover
-                : 'none') || 'none'};
+		filter: ${(props) => (props.filterHover ? props.filterHover : props.hover ? props.hover : 'none') || 'none'};
 	}
-
-	@media (max-width: 768px) {
-		align-items: ${(props) =>
-        (props.tabletAlign
-            ? props.tabletAlign
-            : props.align
-                ? props.align
-                : 'center') || 'center'};
-		text-align: ${(props) =>
-        (props.tabletTextAlign
-            ? props.tabletTextAlign
-            : props.textAlign
-                ? props.textAlign
-                : 'inherit') || 'inherit'};
-	}
-
+	
 	${ItemBreak} {
 		width: 0;
 	}
 `;
 
-export const ItemH = styled(Item)`
-	flex-direction: row;
-	flex: ${(props) => props.flex || '1'};
+// OLD Item
+// export const Item = styled.div`
+// 	display: flex;
+// 	flex-direction: column;
+// 	flex-wrap: ${(props) => props.wrap || 'wrap'};
+// 	position: relative;
+// 	justify-content: center;
+// 	background: ${(props) => props.bg || 'transparent'};
+// 	flex: ${(props) => props.flex || '1'};
+// 	flex-direction: ${(props) => props.direction || 'column'};
+// 	align-self: ${(props) => props.self || 'auto'};
+// 	align-items: ${(props) => props.align || 'center'};
+// 	justify-content: ${(props) => props.justify || 'center'};
+// 	padding: ${(props) => props.padding || '0px'};
+// 	margin: ${(props) => props.margin || '0px'};
+// 	min-width: ${(props) => props.minWidth || 'auto'};
+// 	max-width: ${(props) => props.maxWidth || 'initial'};
+// 	font-size: ${(props) => props.size || 'inherit'};
+// 	text-align: ${(props) => props.textAlign || 'inherit'};
+// 	filter: ${(props) => props.filter || 'none'};
 
-	${ItemBreak} {
-		width: auto;
-		height: 0;
-	}
+// 	width: ${(props) => props.width || 'auto'};
+// 	height: ${(props) => props.height || 'auto'};
+
+// 	border: ${(props) => props.border || 'none'};
+// 	border-radius: ${(props) => props.radius || '0px'};
+// 	overflow: ${(props) => props.overflow || 'initial'};
+
+// 	&:hover & {
+// 		filter: ${(props) =>
+//         (props.filterHover
+//             ? props.filterHover
+//             : props.hover
+//                 ? props.hover
+//                 : 'none') || 'none'};
+// 	}
+
+// 	@media (max-width: 768px) {
+// 		align-items: ${(props) =>
+//         (props.tabletAlign
+//             ? props.tabletAlign
+//             : props.align
+//                 ? props.align
+//                 : 'center') || 'center'};
+// 		text-align: ${(props) =>
+//         (props.tabletTextAlign
+//             ? props.tabletTextAlign
+//             : props.textAlign
+//                 ? props.textAlign
+//                 : 'inherit') || 'inherit'};
+// 	}
+
+// 	${ItemBreak} {
+// 		width: 0;
+// 	}
+// `;
+export const ItemV = styled(ItemH)`
+  flex: ${(props) => props.flex || '1'};
+  flex-direction: row;
+
+  ${ItemBreak} {
+    height: 0;
+    width: auto;
+  }
 `;
+
 
 export const WaveOuter = styled.div`
 	position: absolute;
@@ -252,7 +334,7 @@ export const Span = styled.span`
 	flex: ${(props) => props.flex || 'initial'};
 	align-self: ${(props) => props.self || 'auto'};
 
-	color: ${(props) => props.color || '#000'};
+	color: ${(props) => props.color || '#fff'};
 	background: ${(props) => props.bg || 'transparent'};
 	font-weight: ${(props) => props.weight || 300};
 	font-size: ${(props) => props.size || 'inherit'};
@@ -285,6 +367,8 @@ export const LI = styled.li`
 `;
 
 export const Anchor = styled.a`
+  font-family: 'Strawford';
+  line-height: ${props => props.lineHeight || 'inherit'};
   display: flex;
   flex-direction: ${props => props.direction || 'row'};
   flex: ${props => props.flex || 'initial'};

@@ -6,19 +6,33 @@ import { ReactComponent as PushLogoTextBlack }  from '../assets/PushLogoTextBlac
 
 const DEFAULT_THRESHOLD_HEIGHT = 80;
 
+
+const STICKY_STATES = {
+    ZERO_SCROLL: 'landing',
+    ON_LANDING_SCROLL: 'onLandingScroll',
+    POST_LANDING_SCROLL: 'postLandingScroll'
+};
+
+
 function Header() {
-    const [sticky, setSticky] = useState(false);
+    const [stickyClass, setStickyClass] = useState('');
     const headerRef = useRef<any>(null);
+
+    const PushLogo = stickyClass === STICKY_STATES.POST_LANDING_SCROLL ? PushLogoTextBlack : PushLogoTextWhite;
 
     const stickyHeaderCallback = () => {
         if (window) {
             const scrollheight = window.scrollY;
-            const thresholdHeight = headerRef.current?.clientHeight || DEFAULT_THRESHOLD_HEIGHT;
-            setSticky(scrollheight > thresholdHeight);
+            
+            if (scrollheight > window.innerHeight) {
+                setStickyClass(STICKY_STATES.POST_LANDING_SCROLL);
+            } else if (scrollheight > 0 && scrollheight < window.innerHeight) {
+                setStickyClass(STICKY_STATES.ON_LANDING_SCROLL);
+            } else {
+                setStickyClass(STICKY_STATES.ZERO_SCROLL);
+            }
         }
     };
-
-    const PushLogo = sticky ? PushLogoTextBlack : PushLogoTextWhite;
 
     useEffect(() => {
         window.addEventListener('scroll', stickyHeaderCallback);
@@ -29,35 +43,35 @@ function Header() {
     }, []);
 
     return (
-        <StyledHeader className={`${sticky ? 'stickyHeader' : ''}`} ref={headerRef}>
+        <StyledHeader className={stickyClass} ref={headerRef}>
             <p><PushLogo /></p>
         </StyledHeader>
     );
 }
 
 const StyledHeader = styled.header`
-  position: relative;
-  border-radius: 32px;
-  padding: 22px;
-  z-index: 100000;
-
-  background: rgba(18, 19, 21, 0.75);
-  backdrop-filter: blur(12px);
-
-  &.stickyHeader {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    border-radius: 48px; // initial
+    padding: 22px;
+    z-index: 100000;
+    background: rgba(18, 19, 21, 1);
+   
+    &.onLandingScroll {
+        background: rgba(18, 19, 21, 0.75);
+        backdrop-filter: blur(12px);
+    }
 
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(12px);
-  }
+    &.postLandingScroll {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+    }
 
-
-  @media (max-width: 768px) {
-    padding: 8px 24px;
-  }
+    @media (max-width: 768px) {
+        padding: 8px 24px;
+    }
 `;
 
 
