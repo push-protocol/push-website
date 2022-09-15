@@ -10,7 +10,7 @@ import Wave from 'react-wavify';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 import {
-    Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
+    HeroHeader, CurvedBottomBorderSection, Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
     WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
     Showoff, FormSubmision, Input, TextField, DottedSection
 } from '../components/SharedStyling';
@@ -151,7 +151,7 @@ function Home() {
                         </ItemV>
 
                         <ItemV justifyContent="flex-start" flex="2" gap="22px">
-                            <H2 family="Strawford" size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Push is the missing piece of Web3</H2>
+                            <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Push is the missing piece of Web3</H2>
 
                             <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">
                                 Until Push, no solution existed to enable native communication between wallets in response to on- and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized communication platforms.
@@ -173,40 +173,6 @@ const HomeWrapper = styled.div`
   & #hero .contentBox {
     row-gap: 18px;
   }
-`;
-
-const CurvedBottomBorderSection = styled(Section)`
-    min-height: 100vh;
-    background: #121315;
-
-    &:after {
-        position: absolute;
-        z-index: 1;
-        content: "";
-        top: 100%;
-        left: 0;
-        right: 0;
-        height: 60px;
-        width: 100%;
-        background: #121315;
-        border-bottom-left-radius: 48px;
-        border-bottom-right-radius: 48px;
-    }
-`;
-
-const HeroHeader = styled.h1`
-	font-family: 'Strawford';
-    font-size: 68px;
-    line-height: 110%;
-    font-style: normal;
-	font-weight: 700;
-    letter-spacing: -0.03em;
-	text-align: left;
-	text-transform: none;
-	text-shadow: none;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
 `;
 
 const KPIBanner = styled.div`

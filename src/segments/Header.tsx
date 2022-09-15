@@ -361,6 +361,10 @@ const Header = styled.header`
 
   position: fixed;
 
+  // @media(min-width: 1140px){
+  //   width: 1140px;
+  // }
+
   & .contentBox {
     padding: 20px 160px;
     width: 100%;

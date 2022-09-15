@@ -28,6 +28,20 @@ import styled, { css } from 'styled-components';
 //   position: relative;
 // `;
 
+export const HeroHeader = styled.h1`
+	font-family: 'Strawford';
+    font-size: 68px;
+    line-height: 110%;
+    font-style: normal;
+	font-weight: 700;
+    letter-spacing: -0.03em;
+	text-align: left;
+	text-transform: none;
+	text-shadow: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+`;
 
 // Section covers the entire width and height
 export const Section = styled.section`
@@ -63,6 +77,28 @@ export const SectionHero = styled(Section)`
 		rgba(62, 9, 40, 1) 45%,
 		rgba(17, 58, 72, 1) 100%
 	);
+`;
+
+export const CurvedBottomBorderSection = styled(Section)`
+    min-height: 100vh;
+	background: ${props => props.background || '#121315'};
+
+    padding: ${props => props.padding || '0'};
+    margin: ${props => props.margin || '0'};
+
+    &:after {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 60px;
+        width: 100%;
+        background: ${props => props.background || '#121315'};
+        border-bottom-left-radius: 48px;
+        border-bottom-right-radius: 48px;
+    }
 `;
 
 export const Content = styled.div`
@@ -257,7 +293,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-	color: ${(props) => props.color || '#000'};
+	color: ${(props) => props.color || '#121315'};
 	font-weight: ${(props) => props.weight || 600};
 	font-size: ${(props) => props.size || '2rem'};
 	text-transform: ${(props) => props.textTransform || 'inherit'};
@@ -265,7 +301,7 @@ export const H2 = styled.h2`
 	padding: ${(props) => props.padding || '0px'};
 	letter-spacing: ${(props) => props.spacing || 'inherit'};
 	font-family: ${(props) =>
-        props.family || '\'Source Sans Pro\', Helvetica, sans-serif'};
+        props.family || '\'Strawford\', \'Manrope\', sans-serif'};
 	text-align: ${(props) => props.textAlign || 'inherit'};
 	line-height: ${props => props.lineHeight || 'inherit'};
 `;

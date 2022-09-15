@@ -7,6 +7,7 @@ import Header from './segments/Header';
 import Footer from './segments/Footer';
 
 import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 import PressKit from './pages/PressKit';
 import RedirectToPlatform from './components/RedirectToDiffUrl';
 
@@ -23,6 +24,7 @@ function App() {
                 <Routes>
                     {/* add all the route paths here */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<AboutUs />} />
                     <Route path="/presskit" element={<PressKit />} />
                     <Route path="/notify" element={<RedirectToPlatform />} />
                 </Routes>
