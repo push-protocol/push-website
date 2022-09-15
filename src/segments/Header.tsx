@@ -96,6 +96,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Developer Guides
                                         </HeadAnchor>
@@ -108,6 +109,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Governance Guides
                                         </HeadAnchor>
@@ -120,6 +122,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             WhitePaper
                                         </HeadAnchor>
@@ -151,6 +154,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Quick Guide
                                         </HeadAnchor>
@@ -162,6 +166,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             FAQ
                                         </HeadAnchor>
@@ -173,6 +178,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Blog
                                         </HeadAnchor>
@@ -185,6 +191,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Press Kit
                                         </HeadAnchor>
@@ -196,6 +203,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Contact Us
                                         </HeadAnchor>
@@ -227,6 +235,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Website
                                         </HeadAnchor>
@@ -240,6 +249,7 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Forum
                                         </HeadAnchor>
@@ -264,13 +274,14 @@ function Head() {
                                             bg="transparent"
                                             hoverBG="#fff"
                                             padding="4px 15px"
+                                            className='subLinks'
                                         >
                                             Snapshot
                                         </HeadAnchor>
                                     </NavSubItem>
                                     <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
                                         <HeadAnchor
-                                            className="Glow"
+                                            className="Glow subLinks"
                                             href="http://incentives.epns.io/"
                                             title="Governance"
                                             target="_blank"
@@ -352,6 +363,11 @@ const Header = styled.header`
 
   & .contentBox {
     padding: 20px 160px;
+    width: 100%;
+    align-self: center;
+    max-width: 1140px;
+    flex: 1;
+    display: flex;
   }
 
   & .mainLinks {
@@ -359,7 +375,15 @@ const Header = styled.header`
     font-weight: 200;
     font-size: 15px;
     letter-spacing: 0.2em;
-    margin: 0px 5px 0px 0px;
+    margin: 0px 3px 0px 0px;
+    color: #fff;
+  }
+  
+  & .subLinks {
+    font-family: 'Strawford';
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 0.2em;
     color: #fff;
   }
 

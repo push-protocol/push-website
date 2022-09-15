@@ -73,9 +73,10 @@ export const Content = styled.div`
 
 	&.contentBox {
 		width: 100%;
-		align-self: center;
-		flex: 1;
-		display: flex;
+  		align-self: center;
+  		max-width: 1140px;
+  		flex: 1;
+  		display: flex;
 	}
 `;
 
@@ -266,6 +267,7 @@ export const H2 = styled.h2`
 	font-family: ${(props) =>
         props.family || '\'Source Sans Pro\', Helvetica, sans-serif'};
 	text-align: ${(props) => props.textAlign || 'inherit'};
+	line-height: ${props => props.lineHeight || 'inherit'};
 `;
 
 export const H3 = styled.h3`
@@ -434,6 +436,11 @@ export const Anchor = styled.a`
   }
   &:active:after {
     opacity: 0.15;
+  }
+
+  & .anchorSVGlink {
+	width: 1em;
+	height: 1em
   }
 `;
 
@@ -651,3 +658,4 @@ export const TextField = styled.textarea`
 		transition: all 0.2s ease-in-out;
 	}
 `;
+
