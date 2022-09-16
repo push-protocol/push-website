@@ -398,13 +398,14 @@ const Header = styled.header`
   &.onLandingScroll {
     background: rgba(18, 19, 21, 0.75);
     backdrop-filter: blur(12px);
-    border-radius: 32px;
   }
 
   &.postLandingScroll {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(12px);
-    border-radius: 32px;
+
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 
     & .mainLinks {
        color: #121315;

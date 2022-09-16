@@ -79,6 +79,9 @@ export const SectionHero = styled(Section)`
 	);
 `;
 
+/**
+ * Has curved border on the bottom
+ */
 export const CurvedBottomBorderSection = styled(Section)`
     min-height: 100vh;
 	background: ${props => props.background || '#121315'};
@@ -99,6 +102,45 @@ export const CurvedBottomBorderSection = styled(Section)`
         border-bottom-left-radius: 48px;
         border-bottom-right-radius: 48px;
     }
+`;
+
+/**
+ * Has curved border on both top and bottom
+ */
+export const CurvedBorderSection = styled(Section)`
+	min-height: 100vh;
+	background: ${props => props.background || '#121315'};
+
+	padding: ${props => props.padding || '0'};
+	margin: ${props => props.margin || '0'};
+
+	&:before {
+		position: absolute;
+		z-index: 1;
+		content: "";
+		top: -48px;
+		left: 0;
+		right: 0;
+		height: 60px;
+		width: 100%;
+		background: ${props => props.background || '#121315'};
+		border-top-left-radius: 48px;
+		border-top-right-radius: 48px;
+	}
+
+	&:after {
+		position: absolute;
+		z-index: 1;
+		content: "";
+		top: 100%;
+		left: 0;
+		right: 0;
+		height: 60px;
+		width: 100%;
+		background: ${props => props.background || '#121315'};
+		border-bottom-left-radius: 48px;
+		border-bottom-right-radius: 48px;
+	}
 `;
 
 export const Content = styled.div`
@@ -300,8 +342,7 @@ export const H2 = styled.h2`
 	margin: ${(props) => props.margin || '20px 0px'};
 	padding: ${(props) => props.padding || '0px'};
 	letter-spacing: ${(props) => props.spacing || 'inherit'};
-	font-family: ${(props) =>
-        props.family || '\'Strawford\', \'Manrope\', sans-serif'};
+	font-family: ${props => props.family || '\'Strawford\', \'Manrope\', sans-serif'};
 	text-align: ${(props) => props.textAlign || 'inherit'};
 	line-height: ${props => props.lineHeight || 'inherit'};
 `;
@@ -314,7 +355,7 @@ export const H3 = styled.h3`
   margin: ${props => props.margin || '-15px 0px 20px 0px'};
   padding: ${props => props.padding || '0px'};
   letter-spacing: ${props => props.spacing || '0.1em'};
-  font-family: ${props => props.family || '\'Source Sans Pro\', Helvetica, sans-serif'};
+  font-family: ${props => props.family || '\'Strawford\', \'Manrope\', sans-serif'};
   text-align: ${props => props.textAlign || 'inherit'};
   max-width: ${props => props.maxWidth || 'initial'};
 
@@ -694,4 +735,3 @@ export const TextField = styled.textarea`
 		transition: all 0.2s ease-in-out;
 	}
 `;
-
