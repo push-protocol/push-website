@@ -15,9 +15,18 @@ import {
     Showoff, FormSubmision, Input, TextField, DottedSection
 } from '../components/SharedStyling';
 
+import SignupInput from '../components/SignupInput';
+
 import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG }  from '../assets/github.svg';
 import { ReactComponent as DiscordSVG }  from '../assets/discord.svg';
+import { ReactComponent as AaveSVG }  from '../assets/aave.svg';
+import { ReactComponent as EnsSVG }  from '../assets/ens.svg';
+import { ReactComponent as MakerDAOSVG }  from '../assets/makerdao.svg';
+import { ReactComponent as CoindeskSVG }  from '../assets/coindesk.svg';
+
+import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_black.svg';
+import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
 
 function Home() {
     return (
@@ -165,6 +174,79 @@ function Home() {
                 </Content>
             </Section>
 
+
+            <Section id="patnerships" background="#fff" padding="80px 160px 80px 160px">
+                <Content className="contentBox">
+                    <ItemH margin="0 0 50px 0">
+                        <ItemV justifyContent="flex-start">
+                            <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Powering communication for</H2>
+                        </ItemV>
+                        <ItemV justifyContent="flex-end">
+                            <Anchor
+                                href="https://app.epns.io"
+                                title="PUSH Dapp"
+                                target="_blank"
+                                hoverBG="transparent"
+                                hover="transparent"
+                                filter="none"
+                                color="#DD44B9"
+                                radius="16px"
+                                padding="14px 32px"
+                                size="18px"
+                                weight="500"
+                                spacing="-0.03em"
+                                lineHeight="142%"
+                            >
+                                Explore all channels&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                            </Anchor>
+                        </ItemV>
+                    </ItemH>
+
+                    <ItemH justifyContent="flex-start" gap="33px">
+                        <MakerDAOSVG />
+                        <AaveSVG />
+                        <EnsSVG />
+                        <MakerDAOSVG />
+                        <EnsSVG />
+                        <MakerDAOSVG />
+                        <EnsSVG />
+                        <MakerDAOSVG />
+                        <EnsSVG />
+                        <CoindeskSVG />
+                    </ItemH>
+
+                    <ItemH margin="80px 0 0 0" gap="90px">
+                        <ItemV>
+                            <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon. </Span>
+                        </ItemV>
+
+                        <ItemV>
+                            <LiveNetworks>
+                                <ItemV className="divider">
+                                    <EthLogoTextSVG />
+                                </ItemV>
+                                
+                                <ItemV>
+                                    <PolygonLogoTextSVG />
+                                </ItemV>
+                            </LiveNetworks>
+                        </ItemV>
+                    </ItemH>
+
+
+                    <SignupBox margin="80px 0 0 0">
+                        <ItemV justifyContent="flex-start" gap="12px">
+                            <H2 color="#121315" size="38px" weight="700" spacing="-0.04em" lineHeight="110%" margin="0">Never Miss an Update</H2>
+                            <Span color="#303C5E" size="18px" weight="400" spacing="-0.03em" lineHeight="138.5%">Sign up and stay up to date with ecosystem announcements, giveaways and more.</Span>
+                        </ItemV>
+
+                        <ItemV>
+                            <SignupInput />
+                        </ItemV>
+                    </SignupBox>
+                </Content>
+            </Section>
+
         </HomeWrapper>
     );
 }
@@ -204,6 +286,29 @@ const KPIMetric = styled(Span)`
     color: #FFFFFF;
 `;
 
+const LiveNetworks = styled(ItemH)`
+    background: #FFFFFF;
+    border: 1px solid #BAC4D6;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .divider {
+        border-right: 1px solid #BAC4D6;
+    }
+`;
+
+const SignupBox = styled(ItemH)`
+    background: rgba(214, 177, 242, 0.5);
+    backdrop-filter: blur(15px);
+    border-radius: 32px;
+    margin: 100px 0 0 0;
+    padding: 72px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+`;
 
 
 export default Home;

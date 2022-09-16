@@ -12,8 +12,10 @@ export type InputTextFieldProps = {
 function EmailInputTextField(props: InputTextFieldProps) {
     return (
         <Wrapper>
-            <input type="text" placeholder={props.placeholder} />
-            <AiOutlineArrowRight className='icon'/>
+            <input type="text" placeholder={props.placeholder} tabIndex={1}/>
+            <span className='icon' tabIndex={1} onClick={() => alert('hi')}>
+                <AiOutlineArrowRight />
+            </span>
         </Wrapper>
     );
 }
@@ -43,12 +45,16 @@ const Wrapper = styled.div`
     }
 
     & .icon {
-        height: 1.5rem;
-        width: 1.5rem;
         background-color: transparent;
-        
-        fill: #DD44B9;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        
+        & svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: #DD44B9;
+        }
     }
 `;
 
