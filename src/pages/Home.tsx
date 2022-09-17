@@ -529,7 +529,7 @@ function Home() {
                             <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
 
                             <ArticleSource>
-                                <CoindeskBlackSVG />
+                                <EthFoundationBlackSVG />
                                 <Anchor
                                     href="https://app.epns.io"
                                     title="Read More"
@@ -551,10 +551,10 @@ function Home() {
                         </FeaturedCell>
 
                         <FeaturedCell>
-                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
+                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">The company hopes to address the lack of cross-blockchain communication with easy messaging tools.</Span>
 
                             <ArticleSource>
-                                <EthFoundationBlackSVG />
+                                <CoindeskBlackSVG />
                                 <Anchor
                                     href="https://app.epns.io"
                                     title="Read More"
