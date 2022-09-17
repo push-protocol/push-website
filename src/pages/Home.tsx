@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import ReactMarquee from 'react-fast-marquee';
 import ScrollTrigger from 'react-scroll-trigger';
 import Wave from 'react-wavify';
 
@@ -205,17 +206,38 @@ function Home() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemH justifyContent="flex-start" gap="33px">
-                        <MakerDAOSVG />
-                        <AaveSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <CoindeskSVG />
+                    <ItemH justifyContent="flex-start" gap="32px">
+                        <PartnerMarquee
+                            speed={100}
+                            className
+                        >
+                            <MakerDAOSVG className='partner'/>
+                            <AaveSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <CoindeskSVG className='partner'/>
+                        </PartnerMarquee> 
+
+                        <PartnerMarquee
+                            speed={100}
+                            direction="right"
+                        >
+                            <MakerDAOSVG className='partner'/>
+                            <AaveSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <CoindeskSVG className='partner'/>
+                        </PartnerMarquee> 
                     </ItemH>
 
                     <ItemH margin="80px 0 0 0" gap="90px">
@@ -785,6 +807,12 @@ const ArticleSource = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+`;
+
+const PartnerMarquee = styled(ReactMarquee)`
+  & .partner {
+    margin-right: 32px;
+  }
 `;
 
 
