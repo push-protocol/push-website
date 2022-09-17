@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import ReactMarquee from 'react-fast-marquee';
 import ScrollTrigger from 'react-scroll-trigger';
 import Wave from 'react-wavify';
 
@@ -27,6 +28,9 @@ import { ReactComponent as CoindeskSVG }  from '../assets/coindesk.svg';
 
 import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_black.svg';
 import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
+
+import { ReactComponent as EthFoundationBlackSVG }  from '../assets/eth_foundation_black.svg';
+import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.svg';
 
 function Home() {
     return (
@@ -202,17 +206,38 @@ function Home() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemH justifyContent="flex-start" gap="33px">
-                        <MakerDAOSVG />
-                        <AaveSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <MakerDAOSVG />
-                        <EnsSVG />
-                        <CoindeskSVG />
+                    <ItemH justifyContent="flex-start" gap="32px">
+                        <PartnerMarquee
+                            speed={100}
+                            className
+                        >
+                            <MakerDAOSVG className='partner'/>
+                            <AaveSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <CoindeskSVG className='partner'/>
+                        </PartnerMarquee> 
+
+                        <PartnerMarquee
+                            speed={100}
+                            direction="right"
+                        >
+                            <MakerDAOSVG className='partner'/>
+                            <AaveSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <MakerDAOSVG className='partner'/>
+                            <EnsSVG className='partner'/>
+                            <CoindeskSVG className='partner'/>
+                        </PartnerMarquee> 
                     </ItemH>
 
                     <ItemH margin="80px 0 0 0" gap="90px">
@@ -393,11 +418,165 @@ function Home() {
                             Before Push, blockchain applications, service providers, and wallets had no way to natively communicate with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting in a broken eco-system and problems in daily use.
                         </Span>
                     </ItemH>
-                  
 
 
+                    <ItemH margin="80px 0 0 0">
+                        <ItemV justifyContent="flex-start" alignItems="flex-start">
+                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                                Push Insights & Updates
+                            </H2>
+                        </ItemV>
+
+                        <ItemV justifyContent="flex-end">
+                            <Anchor
+                                href="https://app.epns.io"
+                                title="Exlore all articles"
+                                target="_blank"
+                                hoverBG="transparent"
+                                hover="transparent"
+                                filter="none"
+                                color="#DD44B9"
+                                radius="16px"
+                                padding="14px 32px"
+                                size="18px"
+                                weight="500"
+                                spacing="-0.03em"
+                                lineHeight="142%"
+                            >
+                                Explore all Articles&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                            </Anchor>
+                        </ItemV>
+                    </ItemH>
+
+                    <ItemH margin="40px 0 0 0" gap="48px">
+                        <MainArticle>
+                            <ArticleBanner />
+
+                            <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
+                                My Dapp’ Would Like to Send You Push Notifications
+                            </H3>
+
+                            <ArticleText>
+                                An Introduction to Push Notification: Part 1.2 — In Part 1.1, we introduced modern push technology, which consists of some text that will be truncated
+                            </ArticleText>
+                        </MainArticle>
+
+                        <SubArticles>
+                            <SubArticle>
+                                <SubArticleBanner />
+                                <SubArticleHeader>
+                                    BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022
+                                </SubArticleHeader>
+                            </SubArticle>
+
+                            <SubArticle>
+                                <SubArticleBanner />
+                                <SubArticleHeader>
+                                    Socket Integrates EPNS to Send Users Important Updates Through Push Notifications
+                                </SubArticleHeader>
+                            </SubArticle>
+
+                            <SubArticle>
+                                <SubArticleBanner />
+                                <SubArticleHeader>
+                                    ICYMI — EPNS at EthCC 2022 Paris
+                                </SubArticleHeader>
+                            </SubArticle>
+                        </SubArticles>
+                    </ItemH>
+
+                    <ItemH height="1px" background="#000" margin="20px 0 0 0"/>
                 </Content>
             </CurvedBottomBorderSection>
+
+            <Section id="featuredIn">
+                <Content className="contentBox">
+                    <ItemH margin="80px 0 0 0">
+                        <ItemV justifyContent="flex-start" alignItems="flex-start">
+                            <H2 color="#FFFFFF" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                                Featured in
+                            </H2>
+                        </ItemV>
+                    </ItemH>
+
+                    <ItemH flexDirection="column" margin="80px 0 0 0">
+                        <FeaturedCell>
+                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
+
+                            <ArticleSource>
+                                <EthFoundationBlackSVG />
+                                <Anchor
+                                    href="https://app.epns.io"
+                                    title="Read More"
+                                    target="_blank"
+                                    hoverBG="transparent"
+                                    hover="transparent"
+                                    filter="none"
+                                    color="#DD44B9"
+                                    radius="16px"
+                                    padding="14px 32px"
+                                    size="18px"
+                                    weight="500"
+                                    spacing="-0.03em"
+                                    lineHeight="142%"
+                                >
+                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                </Anchor>
+                            </ArticleSource>
+                        </FeaturedCell>
+
+                        <FeaturedCell>
+                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
+
+                            <ArticleSource>
+                                <EthFoundationBlackSVG />
+                                <Anchor
+                                    href="https://app.epns.io"
+                                    title="Read More"
+                                    target="_blank"
+                                    hoverBG="transparent"
+                                    hover="transparent"
+                                    filter="none"
+                                    color="#DD44B9"
+                                    radius="16px"
+                                    padding="14px 32px"
+                                    size="18px"
+                                    weight="500"
+                                    spacing="-0.03em"
+                                    lineHeight="142%"
+                                >
+                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                </Anchor>
+                            </ArticleSource>
+                        </FeaturedCell>
+
+                        <FeaturedCell>
+                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">The company hopes to address the lack of cross-blockchain communication with easy messaging tools.</Span>
+
+                            <ArticleSource>
+                                <CoindeskBlackSVG />
+                                <Anchor
+                                    href="https://app.epns.io"
+                                    title="Read More"
+                                    target="_blank"
+                                    hoverBG="transparent"
+                                    hover="transparent"
+                                    filter="none"
+                                    color="#DD44B9"
+                                    radius="16px"
+                                    padding="14px 32px"
+                                    size="18px"
+                                    weight="500"
+                                    spacing="-0.03em"
+                                    lineHeight="142%"
+                                >
+                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                </Anchor>
+                            </ArticleSource>
+                        </FeaturedCell>
+                    </ItemH>
+                </Content>
+            </Section>
 
         </HomeWrapper>
     );
@@ -496,8 +675,6 @@ const MatrixRow = styled.div`
   display: flex;
   flex-direction: row;
 
-
-
   &:last-child {
     border-bottom: 1px solid #000;
   }
@@ -514,27 +691,128 @@ const MatrixCell = styled.div`
 
     border-top: 1px solid #000;
     border-right: 1px solid #000;
+    color: '#000';
     
     &::before {
         position: absolute;
         z-index: 1;
         content: "";
-        top: 0;
+        top: -1px;
         left: 0;
-        height: 7px;
+        height: 8px;
         width: 96px;
         background: #DD44B9;
     }
 
     &:last-child {
         border-right: 0;
-      }
+    }
 `;
 
 const MatrixFigure = styled.div`
     width: 109px;
     height: 63px;
     background: #D9D9D9;
+`;
+
+const MainArticle = styled(ItemV)`
+   row-gap: 8px;
+`;
+
+const ArticleBanner = styled.div`
+    width: 544px;
+    height: 284px;
+    background: #D9D9D9;
+    border-radius: 32px;
+`;
+
+const ArticleText = styled.div`
+    width: 524px;
+    color: #303C5E;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 160%;
+    
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+`;
+
+const SubArticles = styled(ItemV)`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 20px;
+`;
+
+const SubArticle = styled.div`
+    display: flex;
+    flex-direction: row;    
+    column-gap: 30px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #000000;
+
+    &:last-child {
+        border-bottom: 0;
+    }
+`;
+
+const SubArticleBanner = styled.div`
+    width: 207px;
+    height: 108px;
+    background: #D9D9D9;
+    border-radius: 20px;
+    flex: 0 0 207px;
+`;
+
+const SubArticleHeader = styled.h4`
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+    color: #09090B;
+    flex: 1;
+`;
+
+const FeaturedCell = styled.div`
+    width: 600px;
+    padding: 48px 0 32px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    flex-basis: 100%;
+
+    border: 1px solid #FFF;
+    color: '#FFF';
+    
+    &::before {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        top: -1px;
+        left: 0;
+        height: 8px;
+        width: 96px;
+        background: #DD44B9;
+    }
+`;
+
+const ArticleSource = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+const PartnerMarquee = styled(ReactMarquee)`
+  & .partner {
+    margin-right: 32px;
+  }
 `;
 
 
