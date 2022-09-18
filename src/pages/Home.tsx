@@ -1,36 +1,40 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React from 'react';
+
+// React + Web3 Essentials
+import React, { useEffect, useRef } from 'react';
+
+// External Components
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Internal Components
 import ReactMarquee from 'react-fast-marquee';
-import ScrollTrigger from 'react-scroll-trigger';
+import { BsArrowUpRight } from 'react-icons/bs';
 import Wave from 'react-wavify';
 
-import { BsArrowUpRight } from 'react-icons/bs';
+// register plugin
+gsap.registerPlugin(ScrollTrigger);
 
-import {
-    HeroHeader, CurvedBottomBorderSection,CurvedBorderSection,  Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
-    WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
-    Showoff, FormSubmision, Input, TextField, DottedSection
-} from '../components/SharedStyling';
-
+// Internal 
+import { ReactComponent as AaveSVG } from '../assets/aave.svg';
+import { ReactComponent as CoindeskSVG } from '../assets/coindesk.svg';
+import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
+import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
+import { ReactComponent as EnsSVG } from '../assets/ens.svg';
+import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum_logo_text_black.svg';
+import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
+import { ReactComponent as GithubSVG } from '../assets/github.svg';
+import { ReactComponent as MakerDAOSVG } from '../assets/makerdao.svg';
+import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
+import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
+import { Anchor, Arc, Button, Content, CurvedBorderSection, CurvedBottomBorderSection, DottedSection, FormSubmision, H1, H2, H3, HeroHeader, Image, Image1, Input, ItemBreak, ItemH, ItemV, Section, SectionFS, SectionFSHero, Showoff, Span, TextField, WaveInner, WaveOuter } from '../components/SharedStyling';
 import SignupInput from '../components/SignupInput';
 
-import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
-import { ReactComponent as GithubSVG }  from '../assets/github.svg';
-import { ReactComponent as DiscordSVG }  from '../assets/discord.svg';
-import { ReactComponent as AaveSVG }  from '../assets/aave.svg';
-import { ReactComponent as EnsSVG }  from '../assets/ens.svg';
-import { ReactComponent as MakerDAOSVG }  from '../assets/makerdao.svg';
-import { ReactComponent as CoindeskSVG }  from '../assets/coindesk.svg';
+// Internal Configs
 
-import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_black.svg';
-import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
-
-import { ReactComponent as EthFoundationBlackSVG }  from '../assets/eth_foundation_black.svg';
-import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.svg';
 
 function Home() {
     return (
