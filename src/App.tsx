@@ -20,29 +20,25 @@ function App() {
     return (
         <AppWrapper>
             <Header />
-            <ParentContainer>
-                <Routes>
-                    {/* add all the route paths here */}
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/presskit" element={<PressKit />} />
-                    <Route path="/notify" element={<RedirectToPlatform />} />
-                </Routes>
-            </ParentContainer>
+            <Routes>
+                {/* add all the route paths here */}
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/presskit" element={<PressKit />} />
+                <Route path="/notify" element={<RedirectToPlatform />} />
+            </Routes>
             <Footer />
         </AppWrapper>
     );
 }
 
-const AppWrapper = styled.div`
-    background: #121315;
-`;
 
-const ParentContainer = styled.div`
+const AppWrapper = styled.div`
 	flex-wrap: wrap;
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+    background: #121315;
 `;
 
 export default App;

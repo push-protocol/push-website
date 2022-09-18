@@ -24,8 +24,8 @@ import { ReactComponent as PushBellSVG }  from '../assets/pushBell.svg';
 
 function Footer() {
     return (
-        <FooterWrapper>
-            <Section id="footerSection" background="#121315" padding="160px 160px 40px 160px">
+        <StyledFooter>
+            <Section id="footer" background="#121315">
                 <Content className="contentBox">
                     {/* Information Cards */}
                     
@@ -146,13 +146,8 @@ function Footer() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemBreak style={{
-                        borderTop: '1px solid #2A2A39',
-                        marginTop: 88
-                    }}/>
-
                     {/* Social Icon Links */}
-                    <ItemH gap="32px" margin="50px 0 0 0">
+                    <SocialLinks gap="32px" margin="50px 0 0 0">
                         <ItemV justifyContent="flex-start" flex="1" gap="12px">
                             <Anchor
                                 href="https://epns.io/"
@@ -239,28 +234,17 @@ function Footer() {
                                 <PushBellSVG width={22} height={22}/>
                             </Anchor>
                         </ItemV>
-                    </ItemH>
+                    </SocialLinks>
                 </Content>
             </Section>
-        </FooterWrapper>
+         
+        </StyledFooter>
     );
 }
 
-const FooterWrapper = styled.div`
+const StyledFooter = styled(Section)`
     font-family: 'Strawford';
-    
-    & .contentBox {
-        padding: 20px 160px;
-        width: 100%;
-        align-self: center;
-        max-width: 1140px;
-        flex: 1;
-        display: flex;
-    }
-
-    & .pushLogo {
-        
-    }
+    display: flex;
 `;
 
 const InfoCard = styled.div`
@@ -278,6 +262,11 @@ const FooterLinks = styled.div`
     flex-direction: column;
     row-gap: 6px;
 `; 
+
+const SocialLinks = styled(ItemH)`
+   border-top: 1px solid #2A2A39;
+   padding-top: 50px;
+`;
 
 
 export default Footer;

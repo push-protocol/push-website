@@ -489,7 +489,7 @@ function Home() {
                 </Content>
             </CurvedBottomBorderSection>
 
-            <Section id="featuredIn">
+            <Section id="featuredIn" background="#121315">
                 <Content className="contentBox">
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
