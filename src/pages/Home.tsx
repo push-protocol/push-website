@@ -485,7 +485,7 @@ function Home() {
                         </SubArticles>
                     </ItemH>
 
-                    <ItemH height="1px" background="#000" margin="20px 0 0 0"/>
+                    <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
                 </Content>
             </CurvedBottomBorderSection>
 
@@ -775,6 +775,7 @@ const SubArticleHeader = styled.h4`
     line-height: 142%;
     color: #09090B;
     flex: 1;
+    align-self: center;
 `;
 
 const FeaturedCell = styled.div`
