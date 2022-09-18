@@ -1,7 +1,7 @@
 {
   "name": "push-frontend-secret",
   "version": "0.1.0",
-  "homepage": "https://ethereum-push-notification-service.github.io/push-frontend-secret/",
+  "homepage": "https://ethereum-push-notification-service.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
