@@ -397,6 +397,8 @@ const PrimaryNav = styled.div`
     display: none;
     position: absolute;
     top: 54px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
     background: #2A2A39;
     border-radius: 18px;
@@ -406,7 +408,7 @@ const PrimaryNav = styled.div`
   & .menuItem-content a {
     display: block;
     min-width: 200px;
-    // text-align: center;
+    text-align: center;
   }
 
 `;
