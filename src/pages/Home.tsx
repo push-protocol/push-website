@@ -37,7 +37,7 @@ import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.sv
 function Home() {
     return (
         <HomeWrapper>
-            <HybridSection curve="bottom" id="hero" padding="0px 160px 0px 160px" data-bkg="dark">
+            <ResponsiveSection curve="bottom" id="hero" padding="0px 160px 0px 160px" data-bkg="dark">
                 <Content className="contentBox">
                     <ItemH width="650px" margin="120px 0 0 0">
                         <ItemV justifyContent="flex-start">
@@ -139,9 +139,9 @@ function Home() {
                     </ItemH>
                     
                 </Content>
-            </HybridSection>
+            </ResponsiveSection>
 
-            <HybridSection id="story" background="#fff" padding="160px 160px 80px 160px" data-bkg="light">
+            <ResponsiveSection id="story" background="#fff" padding="160px 160px 80px 160px" data-bkg="light">
                 <Content className="contentBox">
                     <ItemH gap="105px">
                         <ItemV justifyContent="center" flex="1" alignItems="end">
@@ -254,9 +254,9 @@ function Home() {
                         </ItemV>
                     </ItemH>
                 </Content>
-            </HybridSection>
+            </ResponsiveSection>
 
-            <HybridSection curve="both" id="buildWithPush" padding="0px 160px 80px 160px" data-bkg="dark">
+            <ResponsiveSection curve="both" id="buildWithPush" padding="0px 160px 80px 160px" data-bkg="dark">
                 <Content className="contentBox">
                     <SignupBox margin="0 0 80px 0">
                         <ItemV justifyContent="flex-start" gap="12px">
@@ -315,9 +315,9 @@ function Home() {
                     </ItemH>
 
                 </Content>
-            </HybridSection>
+            </ResponsiveSection>
 
-            <HybridSection curve="bottom" id="integratePush" background="#FFF" padding="80px 160px 80px 160px" data-bkg="light">
+            <ResponsiveSection curve="bottom" id="integratePush" background="#FFF" padding="80px 160px 80px 160px" data-bkg="light">
                 <Content className="contentBox">
                     <ItemH margin="160px 0 0 0" padding="0 160px 0 160px" gap="18px">
                         <H2 color="#121315" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Grow with Push</H2>
@@ -481,9 +481,9 @@ function Home() {
 
                     <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
                 </Content>
-            </HybridSection>
+            </ResponsiveSection>
 
-            <HybridSection id="featuredIn" background="#121315" data-bkg="dark">
+            <ResponsiveSection id="featuredIn" background="#121315" data-bkg="dark">
                 <Content className="contentBox">
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
@@ -493,7 +493,7 @@ function Home() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemH flexDirection="column" margin="80px 0 0 0">
+                    <ItemH flexDirection="column" margin="80px 0 0 0" gap="32px">
                         <FeaturedCell>
                             <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
 
@@ -570,16 +570,28 @@ function Home() {
                         </FeaturedCell>
                     </ItemH>
                 </Content>
-            </HybridSection>
+            </ResponsiveSection>
 
         </HomeWrapper>
     );
 }
 
 const HomeWrapper = styled.main`
-  & #hero .contentBox {
-    row-gap: 18px;
-  }
+    & #hero .contentBox {
+        row-gap: 18px;
+    }
+
+    @media (max-width: 940px) {
+        width: 100%;
+    }
+`;
+
+
+const ResponsiveSection = styled(HybridSection)`
+    @media (max-width: 940px) {
+        padding-left: 30px ;
+        padding-right: 30px;
+    }
 `;
 
 const KPIBanner = styled.div`
@@ -740,6 +752,7 @@ const SubArticles = styled(ItemV)`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: stretch;
     row-gap: 20px;
 `;
 
@@ -773,7 +786,7 @@ const SubArticleHeader = styled.h4`
 `;
 
 const FeaturedCell = styled.div`
-    width: 600px;
+    width: 90%;
     padding: 48px 0 32px 32px;
     position: relative;
     display: flex;

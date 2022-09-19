@@ -29,7 +29,7 @@ function Footer() {
                 <Content className="contentBox">
                     {/* Information Cards */}
                     
-                    <ItemH gap="32px">
+                    <ResponsiveSection gap="32px">
                         <ItemV justifyContent="center" flex="1">
                             <InfoCard>
                                 <Span
@@ -91,11 +91,11 @@ function Footer() {
                                 </Anchor>
                             </InfoCard>
                         </ItemV>
-                    </ItemH>
+                    </ResponsiveSection>
 
 
                     {/* footer links */}
-                    <ItemH gap="32px" margin="120px 0 0 0">
+                    <ResponsiveSection gap="32px" margin="120px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
                             <FooterLinks>
                                 <Span weight="400" size="18px" lineHeight="142%">Company</Span>
@@ -144,7 +144,7 @@ function Footer() {
                                 <EmailInputTextField placeholder='Your Email'/>
                             </FooterLinks>
                         </ItemV>
-                    </ItemH>
+                    </ResponsiveSection>
 
                     {/* Social Icon Links */}
                     <SocialLinks gap="32px" margin="50px 0 0 0">
@@ -242,9 +242,16 @@ function Footer() {
     );
 }
 
-const StyledFooter = styled(Section)`
+const StyledFooter = styled.footer`
     font-family: 'Strawford';
     display: flex;
+`;
+
+const ResponsiveSection = styled(ItemH)`
+    @media (max-width: 940px) {
+        padding-left: 30px ;
+        padding-right: 30px;
+    }
 `;
 
 const InfoCard = styled.div`

@@ -6,9 +6,13 @@ import styled from 'styled-components';
 import {Section, Content, ItemV, ItemH, Span, Anchor} from '../components/SharedStyling';
 import { BsChevronDown } from 'react-icons/bs';
 import { CgMenuHotdog, CgClose } from 'react-icons/cg';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { GrClose } from 'react-icons/gr';
 import { useLocation } from 'react-router-dom';
 import { ReactComponent as PushLogoTextWhite }  from '../assets/PushLogoTextWhite.svg';
 import { ReactComponent as PushLogoTextBlack }  from '../assets/PushLogoTextBlack.svg';
+
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const PUSH_LOGO = {
     dark: PushLogoTextWhite,
@@ -27,8 +31,6 @@ function useScrollDirection() {
             const scrollY = window.pageYOffset;
             const direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
-            console.log('scrollY: --> ', scrollY);
-           
             if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
                 setScrollDirection(direction);
             }
@@ -55,34 +57,72 @@ function useScrollDirection() {
 }
 
 
-function getThemeBasedColor(bkg) {
+function getThemeBasedColor(bkg, isMobileView) {
+    if (isMobileView) return '#FFF';
+
     return bkg === 'light' ? '#121315' : '#FFF';
 }
 
+const defaultMobileMenuState = {
+    0: false,
+    1: false,
+    2: false
+    // add next [index]: false for new main Nav menu item
+};
+
 // Create Header
 function Head() {
-    const [scrollDirection, bkg] = useScrollDirection();  
-    const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
+    const [scrollDirection, bkg] = useScrollDirection();
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    
+    const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState); 
 
-    const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
+    const isMobileView = useMediaQuery('(max-width: 940px)');
+
+    /**
+     * if Mobile view and mobile menu is OPEN then don't hide it ever on scroll
+     */
+
+    const headerClass = `${scrollDirection === 'scrollDown' && !isMobileView ? 'hide' : 'show'}`;
+
+
+
+    const PushLogo = bkg === 'dark' || isMobileView ? PushLogoTextWhite : PushLogoTextBlack;
+
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
+
+    const onHeaderMenuClick = (e, menuIndex) => {
+        e.preventDefault();
+
+        if (isMobileView) {
+            setMobileMenuMap(oldMap => {
+                return {
+                    ...defaultMobileMenuState,
+                    [menuIndex]: !oldMap[menuIndex]
+                };
+            });
+        }
+    };
 
     return (
-        <Header className={`header ${headerClass} ${bkg}`}>
-            <Section padding="0px 160px 0px 160px">
+        <Header className={`header ${headerClass} ${!isMobileView ? bkg : ''}`}>
+            <ResponsiveSection padding="0px 160px 0px 160px">
                 <Content className="contentBox">
-                    <ItemH width="100%">
-                        <ItemV justifyContent="flex-start" alignItems="center" flex="0 0 125px">
+                    <NavHolder width="100%">
+                        <LogoHolder justifyContent="flex-start" alignItems="center">
                             <PushLogo />
-                        </ItemV>
+                        </LogoHolder>
 
-                        <ItemV justifyContent="center" alignItems="center" flex="1">
-                            <PrimaryNav bkg={bkg}>
+                        <ResponsiveNav justifyContent="center" alignItems="center" flex="1" mobileMenuOpen={mobileMenuOpen}>
+                            <PrimaryNav>
                                 <div className="menuItem">
-                                    <div className="menuHeader">
-                                        <Span color={getThemeBasedColor(bkg)}>Docs</Span>
-                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg)} className='chevronIcon'/>
-                                    </div>
-                                    <div className="menuItem-content">
+                                    <MenuHeader className="menuHeader" onClick={(e) => onHeaderMenuClick(e, 0)} expandMobile={mobileMenuMap[0]}>
+                                        <Span color={getThemeBasedColor(bkg, isMobileView)}>Docs</Span>
+                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg, isMobileView)} className='chevronIcon'/>
+                                    </MenuHeader>
+                                    <MenuItemContent className="menuItem-content" expandMobile={mobileMenuMap[0]}>
                                         <Anchor
                                             href="https://docs.epns.io/developers"
                                             target="_blank"
@@ -122,15 +162,15 @@ function Head() {
                                         >
                                           WhitePaper
                                         </Anchor>
-                                    </div>
+                                    </MenuItemContent>
                                 </div>
 
                                 <div className="menuItem">
-                                    <div className="menuHeader">
-                                        <Span color={getThemeBasedColor(bkg)}>Learn More</Span>
-                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg)} className='chevronIcon'/>
-                                    </div>
-                                    <div className="menuItem-content">
+                                    <MenuHeader className="menuHeader" onClick={(e) => onHeaderMenuClick(e, 1)} expandMobile={mobileMenuMap[1]}>
+                                        <Span color={getThemeBasedColor(bkg, isMobileView)}>Learn More</Span>
+                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg, isMobileView)} className='chevronIcon'/>
+                                    </MenuHeader>
+                                    <MenuItemContent className="menuItem-content" expandMobile={mobileMenuMap[1]}>
                                         <Anchor
                                             href="https://getstarted.epns.io/"
                                             target="_blank"
@@ -192,15 +232,15 @@ function Head() {
                                         >
                                           Contact Us
                                         </Anchor>
-                                    </div>
+                                    </MenuItemContent>
                                 </div>
 
                                 <div className="menuItem">
-                                    <div className="menuHeader">
-                                        <Span color={getThemeBasedColor(bkg)}>Governance</Span>
-                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg)} className='chevronIcon'/>
-                                    </div>
-                                    <div className="menuItem-content">
+                                    <MenuHeader className="menuHeader" onClick={(e) => onHeaderMenuClick(e, 2)} expandMobile={mobileMenuMap[2]}>
+                                        <Span color={getThemeBasedColor(bkg, isMobileView)}>Governance</Span>
+                                        <BsChevronDown size={12} color={getThemeBasedColor(bkg, isMobileView)} className='chevronIcon'/>
+                                    </MenuHeader>
+                                    <MenuItemContent className="menuItem-content" expandMobile={mobileMenuMap[2]}>
                                         <Anchor
                                             href="./gov"
                                             title="Read our story"
@@ -264,13 +304,13 @@ function Head() {
                                         >
                                           Delegate
                                         </Anchor>
-                                    </div>
+                                    </MenuItemContent>
                                 </div>
 
                             </PrimaryNav>
-                        </ItemV>
+                        </ResponsiveNav>
                   
-                        <ItemV justifyContent="flex-end" alignItems="center" flex="0 0 180px">
+                        <DappLauncher justifyContent="flex-end" alignItems="center" flex="0 0 180px" mobileMenuOpen={mobileMenuOpen}>
                             <Anchor
                                 href="https://app.epns.io/#/live_walkthrough"
                                 target="_blank"
@@ -285,11 +325,20 @@ function Head() {
                             >
                               Launch App
                             </Anchor>
-                        </ItemV>
-                    </ItemH>
+                        </DappLauncher>
+
+                        <MobileIcon>
+                            {
+                                mobileMenuOpen ? 
+                                    <GrClose size={24} color="#FFFFFF" onClick={toggleMobileMenu} className="mobileIcon"/> :
+                                    <GiHamburgerMenu size={24} color="#FFFFFF" onClick={toggleMobileMenu} className="mobileIcon"/>
+                            }
+                        </MobileIcon>
+                    </NavHolder>
+
                 </Content>
              
-            </Section>
+            </ResponsiveSection>
         </Header>
     );
 }
@@ -326,8 +375,14 @@ const Header = styled.header`
   align-self: stretch;
   align-items: stretch;
 
+
+
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+
+  @media (max-width: 940px) {
+    border-radius: 0;
+  }
   
   transition: top .3s ease-in-out;
 
@@ -342,8 +397,69 @@ const Header = styled.header`
     max-width: 1140px;
     flex: 1;
     display: flex;
+
+    @media (max-width: 940px) {
+      padding: 20px 30px;
+    }
+  }
+`;
+
+const ResponsiveSection = styled(Section)`
+  padding: 0px 160px 0px 160px;  
+  
+  @media (max-width: 940px) {
+    padding: 0px 30px;
+  }
+`;
+
+const NavHolder = styled(ItemH)`
+  @media (max-width: 940px) {
+    justify-content: space-between;
+    position: relative;
+  }
+`;
+
+const LogoHolder = styled(ItemV)`
+  flex: 0 0 125px;
+`;
+
+const DappLauncher = styled(ItemV)`
+  flex: 0 0 180px;
+
+  @media (max-width: 940px) {
+    display: ${props => props.mobileMenuOpen ? 'block' : 'none'};
+    position: absolute;
+    width: 100%;
+    top: calc(100vh - 120px);
+  }
+`;
+
+const MobileIcon = styled.div`
+  display: none;
+  
+  & svg {
+    cursor: pointer;
   }
 
+  & path {
+    stroke: #FFFFFF;
+  }
+
+  @media (max-width: 940px) {
+    display: flex;
+  }
+`;
+
+const ResponsiveNav = styled(ItemV)`
+  @media (max-width: 940px) {
+    display: ${props => props.mobileMenuOpen ? 'block' : 'none'};
+    position: fixed;
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #121315;
+  }
 `;
 
 const PrimaryNav = styled.div`
@@ -351,10 +467,21 @@ const PrimaryNav = styled.div`
   column-gap: 64px;
   align-items: center;
  
+  @media (max-width: 940px) {
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+    column-gap: 16px;
+  }
+
   & .menuItem {
     position: relative;
     display: inline-block;
     cursor: pointer;
+
+    @media (max-width: 940px) {
+      width: 100%;
+    }
 
     & .menuHeader {
       & span {
@@ -376,41 +503,92 @@ const PrimaryNav = styled.div`
     }
 
     &:hover {
-      & span {
-        color: #DD44B9;
-      }
-      
-      & .menuItem-content {
-        display: block;
-      }
+      /* only for desktop+ views */
+      @media (min-width: 941px) {
+        & span {
+          color: #DD44B9;
+        }
 
-      & .menuHeader {  
-        & .chevronIcon {
-          transform: rotate(180deg);
+        & .menuItem-content {
+          display: block;
         }
       }
     }
   }
-  
-  & .menuItem-content {
-    font-family: "Strawford", 'Manrope', sans-serif;
-    display: none;
-    position: absolute;
-    top: 54px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    background: #2A2A39;
-    border-radius: 18px;
-    padding: 10px 0;
+`;
+
+const MenuHeader = styled.div`
+  & span {
+    font-family: 'Strawford';
+
+    padding: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+
+    @media (min-width: 941px) {
+      & .chevronIcon {
+        transform: rotate(180deg);
+      }
+    }
   }
-  
-  & .menuItem-content a {
+
+  align-items: center;
+  display: flex;
+
+  & .chevronIcon {
+    transition-duration: 0.2s;
+    transition-property: transform;
+  }
+
+  @media (max-width: 940px) {
+    & span {
+      color: ${props => props.expandMobile ? '#DD44B9' : '#FFFFFF'};
+    }
+  }
+`;
+
+const MenuItemContent = styled.div`
+  font-family: "Strawford", 'Manrope', sans-serif;
+  display: none;
+  position: absolute;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: #2A2A39;
+  border-radius: 18px;
+  padding: 10px 0;
+
+  @media (max-width: 940px) {
+    background: #121315;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    display: ${props => props.expandMobile ? 'block' : 'none'};
+
+    & + .menuHeader {
+      & span {
+        color: ${props => props.expandMobile ? 'DD44B9' : '#FFFFFF'};
+      }
+    
+      & .chevronIcon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  & a {
     display: block;
     min-width: 200px;
     text-align: center;
-  }
 
+    @media (max-width: 940px) {
+      text-align: left;
+    }
+  }
 `;
 
 
