@@ -16,6 +16,8 @@ import {
     Showoff, FormSubmision, Input, TextField, DottedSection
 } from '../components/SharedStyling';
 
+import HybridSection from '../components/HybridSection';
+
 import SignupInput from '../components/SignupInput';
 
 import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
@@ -35,7 +37,7 @@ import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.sv
 function Home() {
     return (
         <HomeWrapper>
-            <CurvedBottomBorderSection id="hero" padding="0px 160px 0px 160px">
+            <HybridSection curve="bottom" id="hero" padding="0px 160px 0px 160px" data-bkg="dark">
                 <Content className="contentBox">
                     <ItemH width="650px" margin="120px 0 0 0">
                         <ItemV justifyContent="flex-start">
@@ -137,10 +139,9 @@ function Home() {
                     </ItemH>
                     
                 </Content>
-            </CurvedBottomBorderSection>
+            </HybridSection>
 
-
-            <Section id="story" background="#fff" padding="160px 160px 80px 160px">
+            <HybridSection id="story" background="#fff" padding="160px 160px 80px 160px" data-bkg="light">
                 <Content className="contentBox">
                     <ItemH gap="105px">
                         <ItemV justifyContent="center" flex="1" alignItems="end">
@@ -175,13 +176,8 @@ function Home() {
                             </Span>
                         </ItemV>
                     </ItemH>
-                </Content>
-            </Section>
 
-
-            <Section id="patnerships" background="#fff" padding="80px 160px 120px 160px">
-                <Content className="contentBox">
-                    <ItemH margin="0 0 50px 0">
+                    <ItemH margin="160px 0 50px 0">
                         <ItemV justifyContent="flex-start">
                             <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Powering communication for</H2>
                         </ItemV>
@@ -240,7 +236,7 @@ function Home() {
                         </PartnerMarquee> 
                     </ItemH>
 
-                    <ItemH margin="80px 0 0 0" gap="90px">
+                    <ItemH margin="80px 0" gap="90px">
                         <ItemV>
                             <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon. </Span>
                         </ItemV>
@@ -257,12 +253,10 @@ function Home() {
                             </LiveNetworks>
                         </ItemV>
                     </ItemH>
-
                 </Content>
-            </Section>
+            </HybridSection>
 
-
-            <CurvedBorderSection id="buildWithPush" padding="0px 160px 80px 160px">
+            <HybridSection curve="both" id="buildWithPush" padding="0px 160px 80px 160px" data-bkg="dark">
                 <Content className="contentBox">
                     <SignupBox margin="0 0 80px 0">
                         <ItemV justifyContent="flex-start" gap="12px">
@@ -321,9 +315,9 @@ function Home() {
                     </ItemH>
 
                 </Content>
-            </CurvedBorderSection>
+            </HybridSection>
 
-            <CurvedBottomBorderSection id="integratePush" background="#FFF" padding="80px 160px 80px 160px">
+            <HybridSection curve="bottom" id="integratePush" background="#FFF" padding="80px 160px 80px 160px" data-bkg="light">
                 <Content className="contentBox">
                     <ItemH margin="160px 0 0 0" padding="0 160px 0 160px" gap="18px">
                         <H2 color="#121315" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Grow with Push</H2>
@@ -487,9 +481,9 @@ function Home() {
 
                     <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
                 </Content>
-            </CurvedBottomBorderSection>
+            </HybridSection>
 
-            <Section id="featuredIn" background="#121315">
+            <HybridSection id="featuredIn" background="#121315" data-bkg="dark">
                 <Content className="contentBox">
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
@@ -576,13 +570,13 @@ function Home() {
                         </FeaturedCell>
                     </ItemH>
                 </Content>
-            </Section>
+            </HybridSection>
 
         </HomeWrapper>
     );
 }
 
-const HomeWrapper = styled.div`
+const HomeWrapper = styled.main`
   & #hero .contentBox {
     row-gap: 18px;
   }
