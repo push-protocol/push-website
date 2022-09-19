@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -37,9 +37,25 @@ import SignupInput from '../components/SignupInput';
 
 
 function Home() {
+    // store a reference to the box div
+    const heroRef = useRef();
+
+    // Hero Shrink Animation
+    useLayoutEffect(() => {
+        gsap.to(heroRef.current, { 
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: 'top center',
+                scrub: true,
+                markers: true
+            },
+            scale: 0.2
+        });
+    });
+
     return (
         <HomeWrapper>
-            <CurvedBottomBorderSection id="hero" padding="0px 160px 0px 160px">
+            <Section ref={heroRef} id="hero" padding="0px 160px 0px 160px" minHeight="100vh">
                 <Content className="contentBox">
                     <ItemH width="650px" margin="120px 0 0 0">
                         <ItemV justifyContent="flex-start">
@@ -141,7 +157,7 @@ function Home() {
                     </ItemH>
                     
                 </Content>
-            </CurvedBottomBorderSection>
+            </Section>
 
 
             <Section id="story" background="#fff" padding="160px 160px 80px 160px">
