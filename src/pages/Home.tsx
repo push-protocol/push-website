@@ -850,10 +850,7 @@ const HomeWrapper = styled.main`
 
 
 const ResponsiveSection = styled(HybridSection)`
-    @media (max-width: 940px) {
-        padding-left: 30px ;
-        padding-right: 30px;
-    }
+   
 `;
 
 const KPIBanner = styled.div`

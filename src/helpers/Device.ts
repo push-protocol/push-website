@@ -1,4 +1,4 @@
-const size = {
+export const Size = {
     mobileS: '320px',
     mobileM: '375px',
     mobileL: '425px',
@@ -9,14 +9,14 @@ const size = {
 };
   
 const Device = {
-    mobileS: `(max-width: ${size.mobileS})`,
-    mobileM: `(max-width: ${size.mobileM})`,
-    mobileL: `(max-width: ${size.mobileL})`,
-    tablet: `(max-width: ${size.tablet})`,
-    laptop: `(max-width: ${size.laptop})`,
-    laptopL: `(max-width: ${size.laptopL})`,
-    desktop: `(max-width: ${size.desktop})`,
-    desktopL: `(max-width: ${size.desktop})`,
+    mobileS: `(max-width: ${Size.mobileS})`,
+    mobileM: `(max-width: ${Size.mobileM})`,
+    mobileL: `(max-width: ${Size.mobileL})`,
+    tablet: `(max-width: ${Size.tablet})`,
+    laptop: `(max-width: ${Size.laptop})`,
+    laptopL: `(max-width: ${Size.laptopL})`,
+    desktop: `(max-width: ${Size.desktop})`,
+    desktopL: `(max-width: ${Size.desktop})`,
 };
 
 export default Device;
