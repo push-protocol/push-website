@@ -74,7 +74,6 @@ const defaultMobileMenuState = {
 function Head() {
     const [scrollDirection, bkg] = useScrollDirection();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    
     const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState); 
 
     const isMobileView = useMediaQuery('(max-width: 940px)');
@@ -84,8 +83,6 @@ function Head() {
      */
 
     const headerClass = `${scrollDirection === 'scrollDown' && !isMobileView ? 'hide' : 'show'}`;
-
-
 
     const PushLogo = bkg === 'dark' || isMobileView ? PushLogoTextWhite : PushLogoTextBlack;
 
@@ -115,7 +112,7 @@ function Head() {
                             <PushLogo />
                         </LogoHolder>
 
-                        <ResponsiveNav justifyContent="center" alignItems="center" flex="1" mobileMenuOpen={mobileMenuOpen}>
+                        <ResponsiveNav justifyContent="center" alignItems="center" flex="1">
                             <PrimaryNav>
                                 <div className="menuItem">
                                     <MenuHeader className="menuHeader" onClick={(e) => onHeaderMenuClick(e, 0)} expandMobile={mobileMenuMap[0]}>
@@ -310,7 +307,7 @@ function Head() {
                             </PrimaryNav>
                         </ResponsiveNav>
                   
-                        <DappLauncher justifyContent="flex-end" alignItems="center" flex="0 0 180px" mobileMenuOpen={mobileMenuOpen}>
+                        <DappLauncher justifyContent="flex-end" alignItems="center" flex="0 0 180px">
                             <Anchor
                                 href="https://app.epns.io/#/live_walkthrough"
                                 target="_blank"

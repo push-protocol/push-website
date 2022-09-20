@@ -210,6 +210,7 @@ function Home() {
                         <MarqueeAnimation
                             speed={100}
                             gap={32}
+                            gradientWidth={64}
                         >
                             <MakerDAOSVG className='marqueeItem'/>
                             <AaveSVG className='marqueeItem'/>
@@ -227,6 +228,7 @@ function Home() {
                             speed={100}
                             direction="right"
                             gap={32}
+                            gradientWidth={64}
                         >
                             <MakerDAOSVG className='marqueeItem'/>
                             <AaveSVG className='marqueeItem'/>
@@ -744,80 +746,90 @@ we take in our tech and in searching for and finding unexpected treasures.
                     </ItemH>
 
                     <ItemH flexDirection="column" margin="80px 0 0 0" gap="32px">
-                        <FeaturedCell>
-                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
 
-                            <ArticleSource>
-                                <EthFoundationBlackSVG />
-                                <Anchor
-                                    href="https://app.epns.io"
-                                    title="Read More"
-                                    target="_blank"
-                                    hoverBG="transparent"
-                                    hover="transparent"
-                                    filter="none"
-                                    color="#DD44B9"
-                                    radius="16px"
-                                    size="18px"
-                                    weight="500"
-                                    spacing="-0.03em"
-                                    lineHeight="142%"
-                                    padding="0"
-                                >
+                        <MarqueeAnimation
+                            speed={100}
+                            gradient={false}
+                            pauseOnHover
+                        >
+                            <FeaturedCell className='marqueeItem'>
+                                <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
+
+                                <ArticleSource>
+                                    <EthFoundationBlackSVG />
+                                    <Anchor
+                                        href="https://app.epns.io"
+                                        title="Read More"
+                                        target="_blank"
+                                        hoverBG="transparent"
+                                        hover="transparent"
+                                        filter="none"
+                                        color="#DD44B9"
+                                        radius="16px"
+                                        size="18px"
+                                        weight="500"
+                                        spacing="-0.03em"
+                                        lineHeight="142%"
+                                        padding="0"
+                                    >
                                     Read More<BsArrowUpRight className='anchorSVGlink'/>
-                                </Anchor>
-                            </ArticleSource>
-                        </FeaturedCell>
+                                    </Anchor>
+                                </ArticleSource>
+                            </FeaturedCell>
 
-                        <FeaturedCell>
-                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
+                            <FeaturedCell className='marqueeItem'>
+                                <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
 
-                            <ArticleSource>
-                                <EthFoundationBlackSVG />
-                                <Anchor
-                                    href="https://app.epns.io"
-                                    title="Read More"
-                                    target="_blank"
-                                    hoverBG="transparent"
-                                    hover="transparent"
-                                    filter="none"
-                                    color="#DD44B9"
-                                    radius="16px"
-                                    size="18px"
-                                    weight="500"
-                                    spacing="-0.03em"
-                                    lineHeight="142%"
-                                    padding="0"
-                                >
+                                <ArticleSource>
+                                    <EthFoundationBlackSVG />
+                                    <Anchor
+                                        href="https://app.epns.io"
+                                        title="Read More"
+                                        target="_blank"
+                                        hoverBG="transparent"
+                                        hover="transparent"
+                                        filter="none"
+                                        color="#DD44B9"
+                                        radius="16px"
+                                        size="18px"
+                                        weight="500"
+                                        spacing="-0.03em"
+                                        lineHeight="142%"
+                                        padding="0"
+                                    >
                                     Read More<BsArrowUpRight className='anchorSVGlink'/>
-                                </Anchor>
-                            </ArticleSource>
-                        </FeaturedCell>
+                                    </Anchor>
+                                </ArticleSource>
+                            </FeaturedCell>
 
-                        <FeaturedCell>
-                            <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">The company hopes to address the lack of cross-blockchain communication with easy messaging tools.</Span>
+                            <FeaturedCell className='marqueeItem'>
+                                <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">The company hopes to address the lack of cross-blockchain communication with easy messaging tools.</Span>
 
-                            <ArticleSource>
-                                <CoindeskBlackSVG />
-                                <Anchor
-                                    href="https://app.epns.io"
-                                    title="Read More"
-                                    target="_blank"
-                                    hoverBG="transparent"
-                                    hover="transparent"
-                                    filter="none"
-                                    color="#DD44B9"
-                                    radius="16px"
-                                    size="18px"
-                                    weight="500"
-                                    spacing="-0.03em"
-                                    lineHeight="142%"
-                                    padding="0"
-                                >
+                                <ArticleSource>
+                                    <CoindeskBlackSVG />
+                                    <Anchor
+                                        href="https://app.epns.io"
+                                        title="Read More"
+                                        target="_blank"
+                                        hoverBG="transparent"
+                                        hover="transparent"
+                                        filter="none"
+                                        color="#DD44B9"
+                                        radius="16px"
+                                        size="18px"
+                                        weight="500"
+                                        spacing="-0.03em"
+                                        lineHeight="142%"
+                                        padding="0"
+                                    >
                                     Read More<BsArrowUpRight className='anchorSVGlink'/>
-                                </Anchor>
-                            </ArticleSource>
-                        </FeaturedCell>
+                                    </Anchor>
+                                </ArticleSource>
+                            </FeaturedCell>
+                        </MarqueeAnimation>
+
+
+
                     </ItemH>
                 </Content>
             </ResponsiveSection>
@@ -1051,16 +1063,22 @@ const SubArticleHeader = styled.h4`
 `;
 
 const FeaturedCell = styled.div`
-    width: 632px;
+    width: 568px;
+    height: 224px;
+    
     padding: 48px 32px;
+    
     position: relative;
+    
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     row-gap: 30px;
 
     flex-basis: 100%;
 
     border: 1px solid #FFF;
+    border-left: 0;
     color: '#FFF';
     
     &::before {
@@ -1084,7 +1102,7 @@ const ArticleSource = styled.div`
 
 const MarqueeAnimation = styled(ReactMarquee)`
   & .marqueeItem {
-    margin-right: ${props => props.gap || 32}px;
+    margin-right: ${props => props.gap || 0}px;
   }
 `;
 
