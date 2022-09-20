@@ -319,7 +319,6 @@ function Header() {
                 title="PUSH Dapp"
                 bg="#DD44B9"
                 radius="16px"
-                padding="14px 32px"
                 size="18px"
                 weight="500"
                 spacing="-0.03em"
@@ -396,7 +395,6 @@ const StyledHeader = styled.header`
     height: ${props => props.showMobileMenu ? '100%' : '54px'};
     flex-direction: column;
     padding: 30px;
-    border: 1px solid yellow;
   }
 `;
 
@@ -421,7 +419,6 @@ const MenuTop = styled.div`
   display: flex;
   
   @media ${Device.tablet} {
-    color: orange;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
@@ -431,6 +428,9 @@ const MenuTop = styled.div`
 
 const NavigationMenu = styled.ul`
   list-style: none;
+  margin: 0;
+  padding: 0;
+  
   display: flex;
 
   column-gap: 64px;
@@ -439,7 +439,7 @@ const NavigationMenu = styled.ul`
 
   @media ${Device.tablet} {
     flex-direction: column;
-    flex: 0 0 80%;
+    flex: 0 0 75%;
     align-self: stretch;
     display: ${props => props.showMobileMenu ? 'flex' : 'none'};
   }
@@ -495,6 +495,7 @@ const NavigationMenuHeader = styled.div`
 
 const NavigationMenuContent = styled.ul`
   list-style: none;
+
   font-family: "Strawford", 'Manrope', sans-serif;
   display: none;
   position: absolute;
@@ -524,6 +525,9 @@ const NavigationMenuContent = styled.ul`
     display: flex;
     flex-direction: column;
 
+    margin: 0;
+    padding: 0;
+
     display: ${props => props.expanded ? 'flex' : 'none !important'};
 
     & a {
@@ -535,6 +539,8 @@ const NavigationMenuContent = styled.ul`
 
 
 const DappLauncher = styled(Anchor)`
+  padding: 14px 32px;
+
   @media ${Device.tablet} {
     width: 85%;
     align-self: center;

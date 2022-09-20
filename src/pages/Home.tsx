@@ -750,7 +750,6 @@ we take in our tech and in searching for and finding unexpected treasures.
                         <MarqueeAnimation
                             speed={100}
                             gradient={false}
-                            pauseOnHover
                         >
                             <FeaturedCell className='marqueeItem'>
                                 <Span color="#FFFFFF" size="22px" weight="400" spacing="-0.03em" lineHeight="142%">We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.</Span>
@@ -842,10 +841,6 @@ const HomeWrapper = styled.main`
     & #hero .contentBox {
         row-gap: 18px;
     }
-
-    @media (max-width: 940px) {
-        width: 100%;
-    }
 `;
 
 
@@ -893,16 +888,10 @@ const LiveNetworks = styled(ItemH)`
     & .divider {
         border-right: 1px solid #BAC4D6;
     }
-
-    @media (max-width: 940px) {
-        padding: 10px 20px;
-    }
 `;
 
 const Partners = styled(ItemH)`
-    @media (max-width: 940px) {
-        flex-direction: column;
-    }
+
 `;
 
 const SignupBox = styled(ItemH)`
@@ -937,11 +926,6 @@ const IntegrateAndEarn = styled.div`
     backdrop-filter: blur(15px);
     border-radius: 32px;
     padding: 60px 300px;
-
-    @media (max-width: 940px) {
-        padding-left: 120px ;
-        padding-right: 120px;
-    }
 `;
 
 
@@ -1106,11 +1090,6 @@ const MarqueeAnimation = styled(ReactMarquee)`
 
 const BuiltByCards = styled(ItemH)`
     column-gap: 26px;
-
-    @media (max-width: 940px) {
-       flex-direction: column;
-       row-gap: 26px;
-    }
 `;
 
 const BuiltByCard = styled(ItemV)`
@@ -1154,10 +1133,6 @@ const MemberSocial = styled.div`
 const InvestorHeader = styled(H2)`
   flex-direction: column;
   width: 60%;
-
-  @media (max-width: 940px) {
-    width: 100%;
- }
 `;
 
 const InvestorCards = styled(ItemH)`
