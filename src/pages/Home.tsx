@@ -631,10 +631,9 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     <InvestorCards>
                         <MarqueeAnimation
-                            speed={1}
+                            speed={100}
                             gradientWidth={8}
                             gap={18}
-                            pauseOnClick
                         >
                             <InvestorCard className='marqueeItem'>
                                 <ACapital />
@@ -661,6 +660,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                             <InvestorCard className='marqueeItem'>
                                 <Binance />
                             </InvestorCard>
+
                         </MarqueeAnimation> 
                     </InvestorCards>
 
@@ -1153,11 +1153,14 @@ const InvestorCard = styled(ItemV)`
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 74px;
-    padding: 0 40px;
-    min-width: 160px;
+    padding: 8px 0;
+    flex: 0 0 242px;
 
     &.thumbnail {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 8px;
+        column-gap: 16px;
     }
 `;
 
