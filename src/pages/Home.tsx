@@ -1172,7 +1172,7 @@ const InvestorCard = styled(ItemV)`
     border: 1px solid #CCCCCC;
     border-radius: 74px;
     padding: 8px 0;
-    flex: 0 0 242px;
+    min-width: 242px;
 
     &.thumbnail {
         flex-direction: row;
