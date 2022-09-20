@@ -352,6 +352,7 @@ const Header = styled.header`
   background: #121315;
   opacity: 1;
 
+
   &.light {
     color: #121315;
     background: rgba(255, 255, 255, 0.75);

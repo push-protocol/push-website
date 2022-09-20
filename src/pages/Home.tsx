@@ -17,8 +17,8 @@ import {
 } from '../components/SharedStyling';
 
 import HybridSection from '../components/HybridSection';
-
 import SignupInput from '../components/SignupInput';
+import ImageHolder from '../components/ImageHolder';
 
 import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG }  from '../assets/github.svg';
@@ -27,12 +27,16 @@ import { ReactComponent as AaveSVG }  from '../assets/aave.svg';
 import { ReactComponent as EnsSVG }  from '../assets/ens.svg';
 import { ReactComponent as MakerDAOSVG }  from '../assets/makerdao.svg';
 import { ReactComponent as CoindeskSVG }  from '../assets/coindesk.svg';
-
 import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_black.svg';
 import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
-
 import { ReactComponent as EthFoundationBlackSVG }  from '../assets/eth_foundation_black.svg';
 import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.svg';
+import { ReactComponent as TwitterBlack }  from '../assets/twitter_black.svg';
+import { ReactComponent as LinkedInBlack }  from '../assets/linkedin_black.svg';
+import { ReactComponent as ACapital }  from '../assets/a_capital.svg';
+import { ReactComponent as PolygonStudios }  from '../assets/polygon_studios.svg';
+import { ReactComponent as Binance }  from '../assets/binance.svg';
+
 
 function Home() {
     return (
@@ -160,7 +164,7 @@ function Home() {
                                 spacing="-0.03em"
                                 lineHeight="142%"
                             >
-                                How Push works&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                How Push works<BsArrowUpRight className='anchorSVGlink'/>
                             </Anchor>
                         </ItemV>
 
@@ -197,46 +201,47 @@ function Home() {
                                 spacing="-0.03em"
                                 lineHeight="142%"
                             >
-                                Explore all channels&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                Explore all channels<BsArrowUpRight className='anchorSVGlink'/>
                             </Anchor>
                         </ItemV>
                     </ItemH>
 
                     <ItemH justifyContent="flex-start" gap="32px">
-                        <PartnerMarquee
+                        <MarqueeAnimation
                             speed={100}
-                            className
+                            gap={32}
                         >
-                            <MakerDAOSVG className='partner'/>
-                            <AaveSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <CoindeskSVG className='partner'/>
-                        </PartnerMarquee> 
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <AaveSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <CoindeskSVG className='marqueeItem'/>
+                        </MarqueeAnimation> 
 
-                        <PartnerMarquee
+                        <MarqueeAnimation
                             speed={100}
                             direction="right"
+                            gap={32}
                         >
-                            <MakerDAOSVG className='partner'/>
-                            <AaveSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <MakerDAOSVG className='partner'/>
-                            <EnsSVG className='partner'/>
-                            <CoindeskSVG className='partner'/>
-                        </PartnerMarquee> 
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <AaveSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <MakerDAOSVG className='marqueeItem'/>
+                            <EnsSVG className='marqueeItem'/>
+                            <CoindeskSVG className='marqueeItem'/>
+                        </MarqueeAnimation> 
                     </ItemH>
 
-                    <ItemH margin="80px 0" gap="90px">
+                    <Partners margin="80px 0" gap="90px">
                         <ItemV>
                             <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon. </Span>
                         </ItemV>
@@ -252,7 +257,7 @@ function Home() {
                                 </ItemV>
                             </LiveNetworks>
                         </ItemV>
-                    </ItemH>
+                    </Partners>
                 </Content>
             </ResponsiveSection>
 
@@ -414,9 +419,254 @@ function Home() {
                     </ItemH>
 
 
+                    <ItemH margin="40px 160px" flexDirection="column">
+                        <ItemV justifyContent="center">
+                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
+                                Built By
+                            </H2>
+                        </ItemV>
+
+                        <ItemV>
+                            <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="142%">
+                            The most diverse personalities have found each other at Push. Unique
+people with special talents and extraordinary stories. We are united by the joy
+we take in our tech and in searching for and finding unexpected treasures.
+                            </Span>
+                        </ItemV>
+                    </ItemH>
+
+                    <BuiltByCards>
+                        <BuiltByCard>
+                            <MemberImage
+                                width={133}
+                                height={133}
+                                src="/team/harsh.jpg"
+                                srcSet="/team/harsh@2x.jpg 2x, /team/harsh@3x.jpg 3x" />
+
+                            <MemberName>
+                                Harsh Rajat
+                            </MemberName>
+
+                            <MemberTitle>
+                                Co-founder
+                            </MemberTitle>
+
+                            <MemberSocial>
+                                <Anchor
+                                    href="https://twitter.com/harshrajat"
+                                    title="Harsh Twitter"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <TwitterBlack width={19} height={16}/>
+                                </Anchor>
+
+                                <Anchor
+                                    href="https://www.linkedin.com/in/harshrajat/"
+                                    title="Harsh LinkedIn"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <LinkedInBlack width={16} height={16}/>
+                                </Anchor>
+                            </MemberSocial>
+                        </BuiltByCard>
+
+                        <BuiltByCard>
+                            <MemberImage
+                                width={133}
+                                height={133}
+                                src="/team/richa.jpg"
+                                srcSet="/team/richa@2x.jpg 2x, /team/richa@3x.jpg 3x" />
+                            <MemberName>
+                               Richa Joshi
+                            </MemberName>
+
+                            <MemberTitle>
+                                Co-founder
+                            </MemberTitle>
+
+                            <MemberSocial>
+                                <Anchor
+                                    href="https://twitter.com/riijo"
+                                    title="Richa Twitter"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <TwitterBlack width={19} height={16}/>
+                                </Anchor>
+
+                                <Anchor
+                                    href="https://www.linkedin.com/in/richa-joshi-90b04126/"
+                                    title="Richa LinkedIn"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <LinkedInBlack width={16} height={16}/>
+                                </Anchor>
+                            </MemberSocial>
+                        </BuiltByCard>
+
+                        <BuiltByCard>
+                            <MemberImage
+                                width={133}
+                                height={133}
+                                src="/team/harsh.jpg"
+                                srcSet="/team/harsh@2x.jpg 2x, /team/harsh@3x.jpg 3x" />
+
+                            <MemberName>
+                                Harsh Rajat
+                            </MemberName>
+
+                            <MemberTitle>
+                                Co-founder
+                            </MemberTitle>
+
+                            <MemberSocial>
+                                <Anchor
+                                    href="https://twitter.com/harshrajat"
+                                    title="Harsh Twitter"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <TwitterBlack width={19} height={16}/>
+                                </Anchor>
+
+                                <Anchor
+                                    href="https://www.linkedin.com/in/harshrajat/"
+                                    title="Harsh LinkedIn"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <LinkedInBlack width={16} height={16}/>
+                                </Anchor>
+                            </MemberSocial>
+                        </BuiltByCard>
+
+                        <BuiltByCard>
+                            <MemberImage
+                                width={133}
+                                height={133}
+                                src="/team/richa.jpg"
+                                srcSet="/team/richa@2x.jpg 2x, /team/richa@3x.jpg 3x" />
+
+                            <MemberName>
+                               Richa Joshi
+                            </MemberName>
+
+                            <MemberTitle>
+                                Co-founder
+                            </MemberTitle>
+
+                            <MemberSocial>
+                                <Anchor
+                                    href="https://twitter.com/riijo"
+                                    title="Richa Twitter"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <TwitterBlack width={19} height={16}/>
+                                </Anchor>
+
+                                <Anchor
+                                    href="https://www.linkedin.com/in/richa-joshi-90b04126/"
+                                    title="Richa LinkedIn"
+                                    target="_blank"
+                                    margin="0"
+                                    padding="0"
+                                >
+                                    <LinkedInBlack width={16} height={16}/>
+                                </Anchor>
+                            </MemberSocial>
+                        </BuiltByCard>
+
+
+                    </BuiltByCards>
+
+                    <ItemH gap="22px" margin="80px 0">
+                        <Anchor
+                            href="https://docs.epns.io/developers"
+                            title="View More"
+                            target="_blank"
+                            bg="#2A2A39"
+                            radius="16px"
+                            padding="14px 32px"
+                            size="18px"
+                            weight="500"
+                            spacing="-0.03em"
+                            lineHeight="26px"
+                        >
+                            View More
+                        </Anchor>
+                        <Anchor
+                            href="https://app.epns.io/"
+                            title="Jobs"
+                            target="_blank"
+                            bg="#DD44B9"
+                            radius="16px"
+                            padding="14px 32px"
+                            size="18px"
+                            weight="500"
+                            spacing="-0.03em"
+                            lineHeight="26px"
+                        >
+                            Now Hiring, Explore Careers<BsArrowUpRight className='anchorSVGlink'/>
+                        </Anchor>
+                    </ItemH>
+
+                    <ItemH margin="80px 0 80px 0">
+                        <ItemV justifyContent="flex-start" alignItems="flex-start">
+                            <InvestorHeader color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                                Backed by successful entrepreneurs and venture capital funds.
+                            </InvestorHeader>
+                        </ItemV>
+                    </ItemH>
+
+                    <InvestorCards>
+                        <MarqueeAnimation
+                            speed={1}
+                            gradientWidth={8}
+                            gap={18}
+                            pauseOnClick
+                        >
+                            <InvestorCard className='marqueeItem'>
+                                <ACapital />
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem'>
+                                <PolygonStudios />
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem thumbnail'>
+                                <MemberImage
+                                    width={64}
+                                    height={64}
+                                    src="/investors/sandeep_polygon.jpg"
+                                    srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
+                                />
+                                <InvestorDetails>
+                                    <InvestorName>
+                                    Sandeep N.
+                                    </InvestorName>
+                                    <InvestorTitle>
+                                    Co-Founder Polygon
+                                    </InvestorTitle>
+                                </InvestorDetails>
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem'>
+                                <Binance />
+                            </InvestorCard>
+                        </MarqueeAnimation> 
+                    </InvestorCards>
+
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0" width="50%">
                                 Push Insights & Updates
                             </H2>
                         </ItemV>
@@ -437,7 +687,7 @@ function Home() {
                                 spacing="-0.03em"
                                 lineHeight="142%"
                             >
-                                Explore all Articles&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                Explore all Articles<BsArrowUpRight className='anchorSVGlink'/>
                             </Anchor>
                         </ItemV>
                     </ItemH>
@@ -508,13 +758,13 @@ function Home() {
                                     filter="none"
                                     color="#DD44B9"
                                     radius="16px"
-                                    padding="14px 32px"
                                     size="18px"
                                     weight="500"
                                     spacing="-0.03em"
                                     lineHeight="142%"
+                                    padding="0"
                                 >
-                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                    Read More<BsArrowUpRight className='anchorSVGlink'/>
                                 </Anchor>
                             </ArticleSource>
                         </FeaturedCell>
@@ -533,13 +783,13 @@ function Home() {
                                     filter="none"
                                     color="#DD44B9"
                                     radius="16px"
-                                    padding="14px 32px"
                                     size="18px"
                                     weight="500"
                                     spacing="-0.03em"
                                     lineHeight="142%"
+                                    padding="0"
                                 >
-                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                    Read More<BsArrowUpRight className='anchorSVGlink'/>
                                 </Anchor>
                             </ArticleSource>
                         </FeaturedCell>
@@ -558,13 +808,13 @@ function Home() {
                                     filter="none"
                                     color="#DD44B9"
                                     radius="16px"
-                                    padding="14px 32px"
                                     size="18px"
                                     weight="500"
                                     spacing="-0.03em"
                                     lineHeight="142%"
+                                    padding="0"
                                 >
-                                    Read More&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                                    Read More<BsArrowUpRight className='anchorSVGlink'/>
                                 </Anchor>
                             </ArticleSource>
                         </FeaturedCell>
@@ -634,6 +884,16 @@ const LiveNetworks = styled(ItemH)`
     & .divider {
         border-right: 1px solid #BAC4D6;
     }
+
+    @media (max-width: 940px) {
+        padding: 10px 20px;
+    }
+`;
+
+const Partners = styled(ItemH)`
+    @media (max-width: 940px) {
+        flex-direction: column;
+    }
 `;
 
 const SignupBox = styled(ItemH)`
@@ -668,6 +928,11 @@ const IntegrateAndEarn = styled.div`
     backdrop-filter: blur(15px);
     border-radius: 32px;
     padding: 60px 300px;
+
+    @media (max-width: 940px) {
+        padding-left: 120px ;
+        padding-right: 120px;
+    }
 `;
 
 
@@ -786,8 +1051,8 @@ const SubArticleHeader = styled.h4`
 `;
 
 const FeaturedCell = styled.div`
-    width: 90%;
-    padding: 48px 0 32px 32px;
+    width: 632px;
+    padding: 48px 32px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -817,11 +1082,106 @@ const ArticleSource = styled.div`
     justify-content: space-between;
 `;
 
-const PartnerMarquee = styled(ReactMarquee)`
-  & .partner {
-    margin-right: 32px;
+const MarqueeAnimation = styled(ReactMarquee)`
+  & .marqueeItem {
+    margin-right: ${props => props.gap || 32}px;
   }
 `;
+
+
+const BuiltByCards = styled(ItemH)`
+    column-gap: 26px;
+
+    @media (max-width: 940px) {
+       flex-direction: column;
+       row-gap: 26px;
+    }
+`;
+
+const BuiltByCard = styled(ItemV)`
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 55px;
+    padding: 16px 0 35px;
+    flex-direction: column;
+`;
+
+const MemberImage = styled(ImageHolder)`
+   border-radius: 50%;
+`;
+
+const MemberName = styled(Span)`
+    display: block;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142%;
+    text-align: center;
+    color: #09090B;
+    margin-top: 24px;
+`;
+
+const MemberTitle = styled(Span)`
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #303C5E;
+`;
+
+const MemberSocial = styled.div`
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    margin-top: 16px;
+`;
+
+const InvestorHeader = styled(H2)`
+  flex-direction: column;
+  width: 60%;
+
+  @media (max-width: 940px) {
+    width: 100%;
+ }
+`;
+
+const InvestorCards = styled(ItemH)`
+    column-gap: 18px;
+`;
+
+const InvestorCard = styled(ItemV)`
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 74px;
+    padding: 0 40px;
+    min-width: 160px;
+
+    &.thumbnail {
+        flex-direction: column;
+    }
+`;
+
+const InvestorDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const InvestorName = styled(Span)`
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 142%;
+    color: #09090B;
+`;
+
+const InvestorTitle = styled(Span)`
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 160%;
+    letter-spacing: 0.11em;
+    color: #303C5E;
+    text-transform: uppercase;
+`;
+
 
 
 export default Home;

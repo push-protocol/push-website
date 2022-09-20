@@ -517,7 +517,8 @@ export const Anchor = styled.a`
 
   & .anchorSVGlink {
 	width: 1em;
-	height: 1em
+	height: 1em;
+	margin-left: 3px;
   }
 `;
 

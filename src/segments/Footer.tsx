@@ -148,7 +148,7 @@ function Footer() {
 
                     {/* Social Icon Links */}
                     <SocialLinks gap="32px" margin="50px 0 0 0">
-                        <ItemV justifyContent="flex-start" flex="1" gap="12px">
+                        <ItemV justifyContent="flex-start" flex="1" gap="12px" className="pushLinks">
                             <Anchor
                                 href="https://epns.io/"
                                 title="PUSH"
@@ -200,7 +200,7 @@ function Footer() {
                             </Anchor>
                         </ItemV>
 
-                        <ItemV justifyContent="flex-end" flex="1" gap="12px">
+                        <ItemV justifyContent="flex-end" flex="1" gap="12px" className="pushPlatformLinks">
                             <Anchor
                                 href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
                                 title="PUSH iOS app"
@@ -273,6 +273,18 @@ const FooterLinks = styled.div`
 const SocialLinks = styled(ItemH)`
    border-top: 1px solid #2A2A39;
    padding-top: 50px;
+
+   @media (max-width: 940px) {
+    flex-direction: column;
+
+    & .pushLinks {
+        justify-content: center;
+    }
+
+    & .pushPlatformLinks {
+        justify-content: center;
+    }
+   }
 `;
 
 
