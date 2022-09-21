@@ -26,7 +26,14 @@ const HybridSection = (props: HybridSectionProps) => {
 
 const StyledSection = styled(Section)`
     min-height: 100vh;
-    background: ${props => props.background || '#121315'};
+    
+    &[data-bkg="dark"] {
+        background: #121315;
+    }
+
+    &[data-bkg="light"] {
+        background: #FFFFFF;
+    }
 
     padding: ${props => props.padding || '0'};
     margin: ${props => props.margin || '0'};

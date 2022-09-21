@@ -44,9 +44,9 @@ import { ReactComponent as Binance }  from '../assets/binance.svg';
 function Home() {
     return (
         <HomeWrapper>
-            <ResponsiveSection curve="bottom" id="hero" padding="0px 160px 0px 160px" data-bkg="dark">
+            <HeroSection curve="bottom" id="hero" data-bkg="dark">
                 <Content className="contentBox">
-                    <ItemH margin="120px 0 0 0">
+                    <ResponsiveItemH margin="120px 0 0 0">
                         <HeroBox justifyContent="flex-start">
                             <HeroHeader>
                                 The Communication Protocol of Web3
@@ -58,9 +58,9 @@ function Home() {
                         </HeroBox>
 
                         <ItemV justifyContent="flex-start">
-                           blank space
+                           
                         </ItemV>
-                    </ItemH>
+                    </ResponsiveItemH>
 
                     <ItemH justifyContent="flex-start" gap="18px" margin="15px 0 0 0">
                         <Anchor
@@ -123,34 +123,34 @@ function Home() {
 
                     <ItemH margin="120px 0 0 0">
                         <KPIBanner>
-                            <ItemV gap="18px">
+                            <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>4.6M</KPIFigure>
-                                <KPIMetric>Notifications <br />Sent</KPIMetric>
+                                <KPIMetric>Notifications<br />Sent</KPIMetric>
                             </ItemV>
 
-                            <ItemV gap="18px">
+                            <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>500+</KPIFigure>
-                                <KPIMetric>Channels <br /> Created</KPIMetric>
+                                <KPIMetric>Channels<br />Created</KPIMetric>
                             </ItemV>
 
-                            <ItemV gap="18px">
+                            <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>30%</KPIFigure>
-                                <KPIMetric>Click-Through <br /> Rate</KPIMetric>
+                                <KPIMetric>Click-Through<br />Rate</KPIMetric>
                             </ItemV>
 
-                            <ItemV gap="18px">
+                            <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>86%</KPIFigure>
-                                <KPIMetric>Higher Conversion <br /> Rate</KPIMetric>
+                                <KPIMetric>Higher Conversion<br />Rate</KPIMetric>
                             </ItemV>
                         </KPIBanner>
                     </ItemH>
                     
                 </Content>
-            </ResponsiveSection>
+            </HeroSection>
 
-            <ResponsiveSection id="story" background="#fff" padding="160px 160px 80px 160px" data-bkg="light">
+            <StorySection id="story" data-bkg="light">
                 <Content className="contentBox">
-                    <ItemH gap="105px">
+                    <PushWorksRow>
                         <ItemV justifyContent="center" flex="1" alignItems="end">
                             <Anchor
                                 href="https://docs.epns.io/developers"
@@ -172,7 +172,7 @@ function Home() {
                         </ItemV>
 
                         <ItemV justifyContent="flex-start" flex="2" gap="22px">
-                            <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Push is the missing piece of Web3</H2>
+                            <ResponsiveH2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Push is the missing piece of Web3</ResponsiveH2>
 
                             <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">
                                 Until Push, no solution existed to enable native communication between wallets in response to on- and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized communication platforms.
@@ -182,11 +182,11 @@ function Home() {
                                 Push is building the communication network for Web3, addressing a gap in critical infrastructure and improving the everyday experience for blockchain users.
                             </Span>
                         </ItemV>
-                    </ItemH>
+                    </PushWorksRow>
 
-                    <ItemH margin="160px 0 50px 0">
+                    <PoweringCommunicationRow>
                         <ItemV justifyContent="flex-start">
-                            <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Powering communication for</H2>
+                            <ResponsiveH2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Powering communication for</ResponsiveH2>
                         </ItemV>
                         <ItemV justifyContent="flex-end">
                             <Anchor
@@ -207,7 +207,7 @@ function Home() {
                                 Explore all channels<BsArrowUpRight className='anchorSVGlink'/>
                             </Anchor>
                         </ItemV>
-                    </ItemH>
+                    </PoweringCommunicationRow>
 
                     <ItemH justifyContent="flex-start" gap="32px">
                         <MarqueeAnimation
@@ -253,24 +253,26 @@ function Home() {
 
                         <ItemV>
                             <LiveNetworks>
-                                <ItemV className="divider">
+                                <ItemV className='network'>
                                     <EthLogoTextSVG />
                                 </ItemV>
+
+                                <ItemV className="divider" />
                                 
-                                <ItemV>
+                                <ItemV className='network'>
                                     <PolygonLogoTextSVG />
                                 </ItemV>
                             </LiveNetworks>
                         </ItemV>
                     </Partners>
                 </Content>
-            </ResponsiveSection>
+            </StorySection>
 
-            <ResponsiveSection curve="both" id="buildWithPush" padding="0px 160px 80px 160px" data-bkg="dark">
+            <BuildWithPushSection curve="both" id="buildWithPush" data-bkg="dark">
                 <Content className="contentBox">
                     <SignupBox margin="0 0 80px 0">
                         <ItemV justifyContent="flex-start" gap="12px">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Never Miss an Update</H2>
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Never Miss an Update</ResponsiveH2>
                             <Span color="#303C5E" size="18px" weight="400" spacing="-0.03em" lineHeight="138.5%">Sign up and stay up to date with ecosystem announcements, giveaways and more.</Span>
                         </ItemV>
 
@@ -281,7 +283,8 @@ function Home() {
 
                     <ItemH justifyContent="flex-start" gap="15px">
                         <GrowPushCard>
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Build with Push</H2>
+                            <ItemV />
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Build with Push</ResponsiveH2>
                             <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                                 Push offers dapp developers on any blockchain network the opportunity to build solutions on a progressively decentralized stack by enabling web3-native communication.
                             </Span>
@@ -302,7 +305,8 @@ function Home() {
                             </Anchor>
                         </GrowPushCard>
                         <GrowPushCard background="#F0DCFF">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Governed by the Community</H2>
+                            <ItemV />
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Governed by the Community</ResponsiveH2>
                             <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                                 Decentralized communication needs decentralized actors. Get involved in Push governance to build the future of web 3
                             </Span>
@@ -325,12 +329,12 @@ function Home() {
                     </ItemH>
 
                 </Content>
-            </ResponsiveSection>
+            </BuildWithPushSection>
 
-            <ResponsiveSection curve="bottom" id="integratePush" background="#FFF" padding="80px 160px 80px 160px" data-bkg="light">
+            <IntergrateWithPushSection curve="bottom" id="integratePush" data-bkg="light">
                 <Content className="contentBox">
                     <ItemH margin="160px 0 0 0" padding="0 160px 0 160px" gap="18px">
-                        <H2 color="#121315" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Grow with Push</H2>
+                        <ResponsiveH2 color="#121315" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Grow with Push</ResponsiveH2>
 
                         <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                             The $PUSH token enables governance, modification of protocol fees and features, network security, and fee management among all wallets that integrate Push, including Push governance participants.
@@ -339,9 +343,9 @@ function Home() {
 
                     <ItemH margin="120px 0 0 0">
                         <IntegrateAndEarn>
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
                                 Are you a crypto wallet? Integrate and earn.
-                            </H2>
+                            </ResponsiveH2>
 
                             <Anchor
                                 href="https://epns.io/gov"
@@ -363,9 +367,9 @@ function Home() {
 
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
                             Why do you need Push? 
-                            </H2>
+                            </ResponsiveH2>
                         </ItemV>
                     </ItemH>
 
@@ -426,9 +430,9 @@ function Home() {
 
                     <ItemH margin="40px 160px" flexDirection="column">
                         <ItemV justifyContent="center">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
                                 Built By
-                            </H2>
+                            </ResponsiveH2>
                         </ItemV>
 
                         <ItemV>
@@ -671,9 +675,9 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <H2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0" width="50%">
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0" width="50%">
                                 Push Insights & Updates
-                            </H2>
+                            </ResponsiveH2>
                         </ItemV>
 
                         <ItemV justifyContent="flex-end">
@@ -736,15 +740,15 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
                 </Content>
-            </ResponsiveSection>
+            </IntergrateWithPushSection>
 
-            <ResponsiveSection id="featuredIn" background="#121315" data-bkg="dark">
+            <FeaturedInSection id="featuredIn" data-bkg="dark">
                 <Content className="contentBox">
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <H2 color="#FFFFFF" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                            <ResponsiveH2 color="#FFFFFF" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
                                 Featured in
-                            </H2>
+                            </ResponsiveH2>
                         </ItemV>
                     </ItemH>
 
@@ -833,7 +837,7 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     </ItemH>
                 </Content>
-            </ResponsiveSection>
+            </FeaturedInSection>
 
         </HomeWrapper>
     );
@@ -843,18 +847,84 @@ const HomeWrapper = styled.main`
     & #hero .contentBox {
         row-gap: 18px;
     }
+
+    @media ${Device.tablet} {
+       width: 100%;
+    }
 `;
 
 
 const ResponsiveSection = styled(HybridSection)`
     @media ${Device.tablet} {
-        padding-left: 30px;
-        padding-right: 30px; 
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+`;
+/**
+ * Home Page Sections
+ */
+
+const HeroSection = styled(ResponsiveSection)`
+    padding: 0px 160px 0px 160px;
+`;
+
+const StorySection = styled(ResponsiveSection)`
+    padding: 160px 160px 80px 160px;
+
+    @media ${Device.tablet} {
+        padding-bottom: 32px;
+    }
+`;
+
+const BuildWithPushSection = styled(ResponsiveSection)`
+    padding: 0px 160px 80px 160px;
+
+    @media ${Device.tablet} {
+        padding: 0 12px !important;
+
+        & .contentBox {
+            margin-top: -72px;
+            z-index: 1;
+        }
+    } 
+`;
+
+const IntergrateWithPushSection = styled(ResponsiveSection)`
+    padding: 80px 160px 80px 160px;
+`;
+
+const FeaturedInSection = styled(ResponsiveSection)`
+   padding: 0;
+`;
+
+
+/**
+ * Responsive Styled Components for Shared Styling
+ */
+const ResponsiveItemH = styled(ItemH)`
+    @media ${Device.tablet} {
+        flex-direction: column;
+        margin-top: 240px;
+    }
+`;
+
+const ResponsiveH2 = styled(H2)`
+    @media ${Device.tablet} {
+        font-size: 32px;
     }
 `;
 
 const HeroBox = styled(ItemV)`
     flex: 0 0 52%;
+
+    @media ${Device.tablet} {
+       flex: 1;
+
+       & span {
+            font-weight: 400;
+            font-size: 18px;
+       }
+    }
 `;
 
 const KPIBanner = styled.div`
@@ -864,10 +934,29 @@ const KPIBanner = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
     padding: 30px 50px;
     font-family: 'Strawford';
     font-style: normal;
+
+    & .kpiItem {
+        flex-direction: row;
+    }
+
+    @media ${Device.tablet} {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        padding: 24px;
+        row-gap: 32px;
+        column-gap: 8px;
+
+        & .kpiItem {
+            flex: 0 0 48%;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+     }
 `;
 
 const KPIFigure = styled(Span)`
@@ -876,6 +965,10 @@ const KPIFigure = styled(Span)`
     line-height: 110%;
     letter-spacing: -0.02em;
     color: #FFFFFF;
+
+    @media ${Device.tablet} {
+        font-size: 32px;
+    }
 `;
 
 const KPIMetric = styled(Span)`
@@ -884,6 +977,27 @@ const KPIMetric = styled(Span)`
     line-height: 121%;
     letter-spacing: -0.03em;
     color: #FFFFFF;
+
+    @media ${Device.tablet} {
+        font-size: 16px;
+        font-weight: 400;
+    }
+`;
+
+const PushWorksRow = styled(ItemH)`
+    column-gap: 105px;
+
+    @media ${Device.tablet} {
+        row-gap: 30px;
+    }
+`;
+
+const PoweringCommunicationRow = styled(ItemH)`
+    margin: 160px 0 50px 0;
+
+    @media ${Device.tablet} {
+        margin-top: 80px;
+    }
 `;
 
 const LiveNetworks = styled(ItemH)`
@@ -895,7 +1009,23 @@ const LiveNetworks = styled(ItemH)`
     justify-content: space-between;
 
     & .divider {
-        border-right: 1px solid #BAC4D6;
+        background: #BAC4D6;
+        flex: 0 0 1px;
+    }
+
+    @media ${Device.tablet} {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-radius: 18px;
+
+        & .network {
+            padding: 16px;
+
+            & svg {
+                width: 106px;
+                height: 26px;
+            }
+        }
     }
 `;
 
@@ -911,9 +1041,14 @@ const SignupBox = styled(ItemH)`
     display: flex;
     flex-direction: row;
     gap: 24px;
+
+    @media ${Device.tablet} {
+        padding: 24px;
+        flex-direction: column;
+    }
 `;
 
-const GrowPushCard = styled.div`
+const GrowPushCard = styled(ItemV)`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -922,8 +1057,6 @@ const GrowPushCard = styled.div`
 
     background: ${props => props.background || '#FFFBFB'};
     border-radius: 48px;
-    width: 656px;
-    height: 514px;
 `;
 
 const IntegrateAndEarn = styled.div`
@@ -1139,7 +1272,7 @@ const MemberSocial = styled.div`
     margin-top: 16px;
 `;
 
-const InvestorHeader = styled(H2)`
+const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
 `;

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import Device from '../helpers/Device';
 /**
  * Usage Hierarchy
  * 
@@ -41,6 +42,11 @@ export const HeroHeader = styled.h1`
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+
+
+	@media ${Device.tablet} {
+		font-size: 36px;
+	}
 `;
 
 // Section covers the entire width and height

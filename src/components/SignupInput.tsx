@@ -3,6 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Device from '../helpers/Device';
+
 function SignupInput() {
     return (
         <Wrapper>
@@ -22,6 +24,10 @@ const Wrapper = styled.div`
     border: 1px solid #FFFFFF;
     padding: 5px;
     justify-content: space-between;
+
+    @media ${Device.tablet} {
+        column-gap: 3px;
+    }
 
     & input[type="text"] {
         all: unset;
@@ -44,7 +50,11 @@ const Wrapper = styled.div`
         &::placeholder {
             color: #A5A7B4;
             opacity: 1;
-      }
+        }
+
+        @media ${Device.tablet} {
+            min-width: fit-content;
+        }
     }
 
     & button {
