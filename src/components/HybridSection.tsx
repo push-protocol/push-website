@@ -26,13 +26,29 @@ const HybridSection = (props: HybridSectionProps) => {
 
 const StyledSection = styled(Section)`
     min-height: 100vh;
-    
+
     &[data-bkg="dark"] {
         background: #121315;
+
+        &:after {
+            background: #121315;
+        }
+
+        &:before {
+            background: #121315;
+        }
     }
 
     &[data-bkg="light"] {
         background: #FFFFFF;
+
+        &:after {
+            background: #FFFFFF;
+        }
+
+        &:before {
+            background: #FFFFFF;
+        }
     }
 
     padding: ${props => props.padding || '0'};

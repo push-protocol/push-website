@@ -41,7 +41,6 @@ const Wrapper = styled.div`
         line-height: normal;
         letter-spacing: -0.03em; 
         color: #9C9CBE;
-        min-width: 220px;
     }
 
     & .icon {

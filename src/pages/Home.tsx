@@ -1,12 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import ReactMarquee from 'react-fast-marquee';
-import ScrollTrigger from 'react-scroll-trigger';
-import Wave from 'react-wavify';
 
 import { BsArrowUpRight } from 'react-icons/bs';
 
@@ -14,9 +12,7 @@ import Device from '../helpers/Device';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 import {
-    HeroHeader,  Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
-    WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
-    Showoff, FormSubmision, Input, TextField, DottedSection
+    HeroHeader, Content, ItemH, ItemV, H1, H2, H3, Span, Anchor, Button, FormSubmision, Input, TextField
 } from '../components/SharedStyling';
 
 import HybridSection from '../components/HybridSection';
@@ -42,11 +38,18 @@ import { ReactComponent as Binance }  from '../assets/binance.svg';
 
 
 function Home() {
+    const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
+
+    const onClickViewMoreTeamMembers = (e) => {
+        e.preventDefault();
+        setShowMoreTeamMembers(!showMoreTeamMembers);
+    };
+
     return (
         <HomeWrapper>
             <HeroSection curve="bottom" id="hero" data-bkg="dark">
                 <Content className="contentBox">
-                    <ResponsiveItemH margin="120px 0 0 0">
+                    <ResponsiveHeroContent margin="120px 0 0 0">
                         <HeroBox justifyContent="flex-start">
                             <HeroHeader>
                                 The Communication Protocol of Web3
@@ -60,7 +63,7 @@ function Home() {
                         <ItemV justifyContent="flex-start">
                            
                         </ItemV>
-                    </ResponsiveItemH>
+                    </ResponsiveHeroContent>
 
                     <ItemH justifyContent="flex-start" gap="18px" margin="15px 0 0 0">
                         <Anchor
@@ -283,48 +286,55 @@ function Home() {
 
                     <ItemH justifyContent="flex-start" gap="15px">
                         <GrowPushCard>
-                            <ItemV />
-                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Build with Push</ResponsiveH2>
-                            <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
+                            <GrowPushCardFigure />
+
+                            <GrowPushCardDetails>
+                                <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Build with Push</ResponsiveH2>
+                                <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                                 Push offers dapp developers on any blockchain network the opportunity to build solutions on a progressively decentralized stack by enabling web3-native communication.
-                            </Span>
-                            <Anchor
-                                href="https://docs.epns.io/developers"
-                                title="Developer Docs"
-                                target="_blank"
-                                bg="#DD44B9"
-                                radius="16px"
-                                padding="14px 32px"
-                                size="18px"
-                                weight="500"
-                                spacing="-0.03em"
-                                lineHeight="26px"
-                                self="flex-start"
-                            >
+                                </Span>
+                                <Anchor
+                                    href="https://docs.epns.io/developers"
+                                    title="Developer Docs"
+                                    target="_blank"
+                                    bg="#DD44B9"
+                                    radius="16px"
+                                    padding="14px 32px"
+                                    size="18px"
+                                    weight="500"
+                                    spacing="-0.03em"
+                                    lineHeight="26px"
+                                    self="flex-start"
+                                >
                                 Start Building
-                            </Anchor>
+                                </Anchor>
+                            </GrowPushCardDetails>                   
                         </GrowPushCard>
+
                         <GrowPushCard background="#F0DCFF">
-                            <ItemV />
-                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Governed by the Community</ResponsiveH2>
-                            <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
+                            <GrowPushCardFigure />
+
+                            <GrowPushCardDetails>
+                                <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Governed by the Community</ResponsiveH2>
+                                <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                                 Decentralized communication needs decentralized actors. Get involved in Push governance to build the future of web 3
-                            </Span>
-                            <Anchor
-                                href="https://epns.io/gov"
-                                title="Governance"
-                                target="_blank"
-                                bg="#DD44B9"
-                                radius="16px"
-                                padding="14px 32px"
-                                size="18px"
-                                weight="500"
-                                spacing="-0.03em"
-                                lineHeight="26px"
-                                self="flex-start"
-                            >
-                                Know More
-                            </Anchor>
+                                </Span>
+                                <Anchor
+                                    href="https://epns.io/gov"
+                                    title="Governance"
+                                    target="_blank"
+                                    bg="#DD44B9"
+                                    radius="16px"
+                                    padding="14px 32px"
+                                    size="18px"
+                                    weight="500"
+                                    spacing="-0.03em"
+                                    lineHeight="26px"
+                                    self="flex-start"
+                                >
+                                    Know More
+                                </Anchor>
+                            </GrowPushCardDetails>
                         </GrowPushCard>
                     </ItemH>
 
@@ -333,13 +343,13 @@ function Home() {
 
             <IntergrateWithPushSection curve="bottom" id="integratePush" data-bkg="light">
                 <Content className="contentBox">
-                    <ItemH margin="160px 0 0 0" padding="0 160px 0 160px" gap="18px">
+                    <IntegrateGrowWithPushRow gap="18px">
                         <ResponsiveH2 color="#121315" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">Grow with Push</ResponsiveH2>
 
-                        <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
+                        <Span className="growWithPushtext" color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="160%">
                             The $PUSH token enables governance, modification of protocol fees and features, network security, and fee management among all wallets that integrate Push, including Push governance participants.
                         </Span>
-                    </ItemH>
+                    </IntegrateGrowWithPushRow>
 
                     <ItemH margin="120px 0 0 0">
                         <IntegrateAndEarn>
@@ -376,59 +386,56 @@ function Home() {
 
                     <ItemH padding="80px 0 0 0">
                         <Matrix>
-                            <MatrixRow>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Chain Agnostic
-                                    </Span>
-                                </MatrixCell>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Immediate Communication
-                                    </Span>
-                                </MatrixCell>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Decentralized Stack
-                                    </Span>
-                                </MatrixCell>
-                            </MatrixRow>
-
-                            <MatrixRow>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Improved UX
-                                    </Span>
-                                </MatrixCell>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Security Alerts
-                                    </Span>
-                                </MatrixCell>
-                                <MatrixCell>
-                                    <MatrixFigure />
-                                    <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
-                                        Censorship Resistant
-                                    </Span>
-                                </MatrixCell>
-                            </MatrixRow>
-                       
+                           
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Chain Agnostic
+                                </Span>
+                            </MatrixCell>
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Immediate Communication
+                                </Span>
+                            </MatrixCell>
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Decentralized Stack
+                                </Span>
+                            </MatrixCell>
+                            
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Improved UX
+                                </Span>
+                            </MatrixCell>
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Security Alerts
+                                </Span>
+                            </MatrixCell>
+                            <MatrixCell>
+                                <MatrixFigure />
+                                <Span color="#09090B" size="24px" weight="500" spacing="-0.03em" lineHeight="142%">
+                                    Censorship Resistant
+                                </Span>
+                            </MatrixCell>
+                            
                         </Matrix>
                     </ItemH>
 
-                    <ItemH textAlign="center" margin="80px 160px">
+                    <WhyPushTextBox textAlign="center" margin="80px 160px">
                         <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="142%">
                             Before Push, blockchain applications, service providers, and wallets had no way to natively communicate with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting in a broken eco-system and problems in daily use.
                         </Span>
-                    </ItemH>
+                    </WhyPushTextBox>
 
 
-                    <ItemH margin="40px 160px" flexDirection="column">
+                    <BuiltByIntro flexDirection="column">
                         <ItemV justifyContent="center">
                             <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
                                 Built By
@@ -442,7 +449,7 @@ people with special talents and extraordinary stories. We are united by the joy
 we take in our tech and in searching for and finding unexpected treasures.
                             </Span>
                         </ItemV>
-                    </ItemH>
+                    </BuiltByIntro>
 
                     <BuiltByCards>
                         <BuiltByCard>
@@ -599,11 +606,9 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     </BuiltByCards>
 
-                    <ItemH gap="22px" margin="80px 0">
+                    <TeamMemberButtons gap="22px" margin="80px 0">
                         <Anchor
-                            href="https://docs.epns.io/developers"
                             title="View More"
-                            target="_blank"
                             bg="#2A2A39"
                             radius="16px"
                             padding="14px 32px"
@@ -611,6 +616,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                             weight="500"
                             spacing="-0.03em"
                             lineHeight="26px"
+                            onClick={onClickViewMoreTeamMembers}
                         >
                             View More
                         </Anchor>
@@ -628,7 +634,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                         >
                             Now Hiring, Explore Careers<BsArrowUpRight className='anchorSVGlink'/>
                         </Anchor>
-                    </ItemH>
+                    </TeamMemberButtons>
 
                     <ItemH margin="80px 0 80px 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
@@ -744,15 +750,15 @@ we take in our tech and in searching for and finding unexpected treasures.
 
             <FeaturedInSection id="featuredIn" data-bkg="dark">
                 <Content className="contentBox">
-                    <ItemH margin="80px 0 0 0">
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <ResponsiveH2 color="#FFFFFF" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
-                                Featured in
-                            </ResponsiveH2>
-                        </ItemV>
+                    <ItemH justifyContent="flex-start">
+                        {/* <ItemV justifyContent="flex-start" alignItems="flex-start"> */}
+                        <ResponsiveH2 color="#FFFFFF" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                            Featured in
+                        </ResponsiveH2>
+                        {/* </ItemV> */}
                     </ItemH>
 
-                    <ItemH flexDirection="column">
+                    <ItemH flexDirection="column" className="featuredInMarquee">
                         <MarqueeAnimation
                             speed={100}
                             gradient={false}
@@ -843,6 +849,27 @@ we take in our tech and in searching for and finding unexpected treasures.
     );
 }
 
+const BOX_MAX_WIDTH = 1140;
+
+/**
+ * Responsive Styled Components for Shared Styling
+ */
+
+const ResponsiveSection = styled(HybridSection)`
+ @media ${Device.tablet} {
+     padding-left: 30px !important;
+     padding-right: 30px !important;
+ }
+`;
+
+const ResponsiveH2 = styled(H2)`
+ @media ${Device.tablet} {
+     font-size: 32px;
+ }
+`;
+
+
+
 const HomeWrapper = styled.main`
     & #hero .contentBox {
         row-gap: 18px;
@@ -853,13 +880,6 @@ const HomeWrapper = styled.main`
     }
 `;
 
-
-const ResponsiveSection = styled(HybridSection)`
-    @media ${Device.tablet} {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
-    }
-`;
 /**
  * Home Page Sections
  */
@@ -895,22 +915,29 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
    padding: 0;
+
+   & .contentBox {
+    gap: 80px;
+    flex: 0;
+    padding-top: 0;
+    margin-top: -80px;
+   }
+
+   & .featuredInMarquee {
+    margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
+    margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
+
+    @media ${Device.tablet} {
+        margin-left: calc(-100vw / 2);
+        margin-right: calc(-100vw / 2);
+    }
+   }
 `;
 
-
-/**
- * Responsive Styled Components for Shared Styling
- */
-const ResponsiveItemH = styled(ItemH)`
+const ResponsiveHeroContent = styled(ItemH)`
     @media ${Device.tablet} {
         flex-direction: column;
         margin-top: 240px;
-    }
-`;
-
-const ResponsiveH2 = styled(H2)`
-    @media ${Device.tablet} {
-        font-size: 32px;
     }
 `;
 
@@ -1051,12 +1078,49 @@ const SignupBox = styled(ItemH)`
 const GrowPushCard = styled(ItemV)`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-start;
     row-gap: 32px;
-    padding: 72px 88px;
+    padding: 60px 80px;
 
     background: ${props => props.background || '#FFFBFB'};
     border-radius: 48px;
+
+    @media ${Device.tablet} {
+        padding: 28px;
+        border-radius: 36px;
+    }
+`;
+
+const GrowPushCardFigure = styled.div`
+    background: #D9D9D9;
+
+    // temporary
+    width: 335px;
+    height: 227px;
+
+    @media ${Device.tablet} {
+        width: 100%;
+    }
+`;
+
+const GrowPushCardDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+`;
+
+const IntegrateGrowWithPushRow = styled(ItemH)`
+   margin: 160px 0 0 0;
+   padding: 0 160px 0 160px;
+
+   @media ${Device.tablet} {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        & .growWithPushtext {
+            text-align: center;
+        }
+   }
 `;
 
 const IntegrateAndEarn = styled.div`
@@ -1068,36 +1132,43 @@ const IntegrateAndEarn = styled.div`
     backdrop-filter: blur(15px);
     border-radius: 32px;
     padding: 60px 300px;
+
+    @media ${Device.tablet} {
+        padding: 32px 36px;
+    }
 `;
 
 
 const Matrix = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-`;
-
-const MatrixRow = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  &:last-child {
     border-bottom: 1px solid #000;
-  }
 `;
+
  
 const MatrixCell = styled.div`
-    padding: 48px 0 32px 32px;
-    position: relative;
     display: flex;
+    padding: 48px 0 32px 32px;
     flex-direction: column;
-    row-gap: 30px;
-
-    flex-basis: 100%;
-
+    flex-basis: 33.33%;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
-    color: '#000';
+    box-sizing: border-box;
+    position: relative;
+    color: #000;
+
+    flex-direction: column;
+
+
+    &:nth-child(3) {
+        border-right: 0;
+    }
+     
+    &:nth-child(6) {
+        border-right: 0;
+    }
     
     &::before {
         position: absolute;
@@ -1110,8 +1181,30 @@ const MatrixCell = styled.div`
         background: #DD44B9;
     }
 
-    &:last-child {
-        border-right: 0;
+    @media ${Device.tablet} {
+        flex-basis: 50%;
+        padding: 12px;
+        row-gap: 16px;
+          
+        &:nth-child(2) {
+            border-right: 0;
+        }
+        
+        &:nth-child(4) {
+            border-right: 0;
+        }
+        
+        &:nth-child(3) {
+            border-right: 1px solid #000;
+        }
+    
+        &:nth-child(6) {
+            border-right: 0;
+        }
+
+        & span {
+            font-size: 20px;
+        }
     }
 `;
 
@@ -1119,10 +1212,41 @@ const MatrixFigure = styled.div`
     width: 109px;
     height: 63px;
     background: #D9D9D9;
+
+    @media ${Device.tablet} {
+        margin-top: 8px;
+    }
+`;
+
+const WhyPushTextBox = styled(ItemH)`
+    margin: 80px 160px;
+
+    @media ${Device.tablet} {
+       margin: 50px 0;
+
+       & span {
+        text-align: center;
+        font-size: 16px;
+        line-height: 160%;
+       }
+       
+    }
+`;
+
+const BuiltByIntro = styled(ItemH)`
+    margin: 40px 160px;
+
+    @media ${Device.tablet} {
+        margin: 40px 0;
+    }
 `;
 
 const MainArticle = styled(ItemV)`
    row-gap: 8px;
+
+   @media ${Device.tablet} {
+    display: none;
+   }
 `;
 
 const ArticleBanner = styled.div`
@@ -1166,6 +1290,10 @@ const SubArticle = styled.div`
     &:last-child {
         border-bottom: 0;
     }
+
+    @media ${Device.tablet} {
+        align-items: center;
+    }
 `;
 
 const SubArticleBanner = styled.div`
@@ -1173,7 +1301,11 @@ const SubArticleBanner = styled.div`
     height: 108px;
     background: #D9D9D9;
     border-radius: 20px;
-    flex: 0 0 207px;
+
+    @media ${Device.tablet} {
+        width: 118px;
+        height: 108px;
+    }
 `;
 
 const SubArticleHeader = styled.h4`
@@ -1183,6 +1315,10 @@ const SubArticleHeader = styled.h4`
     color: #09090B;
     flex: 1;
     align-self: center;
+
+    @media ${Device.tablet} {
+        font-size: 16px;
+    }
 `;
 
 const FeaturedCell = styled.div`
@@ -1232,6 +1368,13 @@ const MarqueeAnimation = styled(ReactMarquee)`
 
 const BuiltByCards = styled(ItemH)`
     column-gap: 26px;
+
+    @media ${Device.tablet} {
+        flex-direction: column;
+        row-gap: 24px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
 `;
 
 const BuiltByCard = styled(ItemV)`
@@ -1272,9 +1415,23 @@ const MemberSocial = styled.div`
     margin-top: 16px;
 `;
 
+const TeamMemberButtons = styled(ItemH)`
+    @media ${Device.tablet} {
+        & a {
+            width: 100%;
+        }
+        
+    }
+`;
+
 const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
+
+  @media ${Device.tablet} {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const InvestorCards = styled(ItemH)`
