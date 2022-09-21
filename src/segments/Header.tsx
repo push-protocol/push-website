@@ -70,11 +70,8 @@ function Header() {
 
     const showMobileMenu = isMobile && isMobileMenuOpen;
 
-    /**
-     * if Mobile view and mobile menu is OPEN then don't hide it ever on scroll
-     */
-
-    const headerClass = `${scrollDirection === 'scrollDown' && !isMobile ? 'hide' : 'show'} ${!isMobile ? bkg : ''}`;
+    // if mobile view then show only DARK header.
+    const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'} ${!isMobile ? bkg : ''}`;
 
     const PushLogo = bkg === 'dark' || isMobile ? PushLogoTextWhite : PushLogoTextBlack;
 
@@ -395,6 +392,10 @@ const StyledHeader = styled.header`
     height: ${props => props.showMobileMenu ? '100%' : '54px'};
     flex-direction: column;
     padding: 30px;
+
+    &.hide {
+      top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 16}px;
+    }
   }
 `;
 
