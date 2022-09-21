@@ -366,7 +366,7 @@ const StyledHeader = styled.header`
       color: #121315;
     }
 
-    & svg {
+    & svg.chevronIcon {
       fill: #121315;
 
       & path {
@@ -430,7 +430,7 @@ const NavigationMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  
+
   display: flex;
 
   column-gap: 64px;
@@ -445,6 +445,9 @@ const NavigationMenu = styled.ul`
   }
 `;
 
+/**
+ * HOVER happens on this element
+ */
 const NavigationMenuItem = styled.li`
   position: relative;
 
@@ -483,11 +486,15 @@ const NavigationMenuHeader = styled.div`
   }
 
   @media ${Device.tablet} {
+    justify-content: space-between;
+
     & span {
       color: ${props => props.expanded ? '#DD44B9' : '#FFFFFF !important'};
     }
 
     & .chevronIcon {
+      width: 16px;
+      height: 16px;
       transform: ${props => props.expanded ? 'rotate(180deg)' : 'none  !important'};
     }
   }
