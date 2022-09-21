@@ -330,6 +330,7 @@ function Header() {
 
 const HEADER_HEIGHT = 92;
 const HEADER_VERTICAL_GUTTER = 7;
+const BOX_MAX_WIDTH = 1140;
 
 const StyledHeader = styled.header`
   font-family: 'Strawford';
@@ -374,9 +375,8 @@ const StyledHeader = styled.header`
 
   /* this is IMP for boxing the content at 1140px */
   @media (min-width: 1140px) {
-    padding: 0px 160px;
-    max-width: 1140px;
-    margin: auto
+    padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
+    padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
   }
 
   height: ${HEADER_HEIGHT}px;
@@ -391,12 +391,12 @@ const StyledHeader = styled.header`
 
 
   @media ${Device.tablet} {
-    height: ${props => props.showMobileMenu ? '100%' : '54px'};
+    height: ${props => props.showMobileMenu ? '100%' : '48px'};
     flex-direction: column;
     padding: 30px;
 
     &.hide {
-      top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 16}px;
+      top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
     }
   }
 `;

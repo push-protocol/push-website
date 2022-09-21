@@ -748,7 +748,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                         </ItemV>
                     </ItemH>
 
-                    <ItemH flexDirection="column" gap="32px">
+                    <ItemH flexDirection="column">
                         <MarqueeAnimation
                             speed={100}
                             gradient={false}
