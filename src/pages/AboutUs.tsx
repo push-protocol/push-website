@@ -3,22 +3,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import ScrollTrigger from 'react-scroll-trigger';
-import Wave from 'react-wavify';
-
 import { BsArrowUpRight } from 'react-icons/bs';
 
 import {
-    HeroHeader, CurvedBottomBorderSection, Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
-    WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
-    Showoff, FormSubmision, Input, TextField, DottedSection
+    HeroHeader, Content, ItemH, ItemV, H2, Span, Anchor,
 } from '../components/SharedStyling';
+
+import HybridSection from '../components/HybridSection';
 
 function AboutUs() {
     return (
         <AboutUsWrapper>
-            <CurvedBottomBorderSection id="aboutus" padding="40px 160px 0px 160px">
+            <HybridSection curve='bottom' id="aboutus" padding="40px 160px 0px 160px">
                 <Content className="contentBox">
                     <ItemH margin="120px 0 0 0" flex="1">
                         <ItemV justifyContent="center">
@@ -73,10 +69,10 @@ Aliquam dictum leo sed mi placerat, at consectetur eros facilisis. Phasellus ut 
                     </ItemH>
                     
                 </Content>
-            </CurvedBottomBorderSection>
+            </HybridSection>
 
 
-            <CurvedBottomBorderSection id="leadership" background="#fff" padding="120px 160px 80px 160px">
+            <HybridSection curve='bottom' id="leadership" background="#fff" padding="120px 160px 80px 160px">
                 <Content className="contentBox">
                     <ItemH>
                         <ItemV justifyContent="center" gap="22px">
@@ -101,7 +97,7 @@ Aliquam dictum leo sed mi placerat, at consectetur eros facilisis. Phasellus ut 
                         <Span color="#121315" weight="700" size="40px" lineHeight="110%" spacing="-0.02em">Backed by successful entrepreneurs and venture capital funds.</Span>
                     </ItemH>
                 </Content>
-            </CurvedBottomBorderSection>
+            </HybridSection>
 
         </AboutUsWrapper>
     );

@@ -388,6 +388,8 @@ const StyledHeader = styled.header`
   align-items: center;
 
 
+
+
   @media ${Device.tablet} {
     height: ${props => props.showMobileMenu ? '100%' : '54px'};
     flex-direction: column;

@@ -10,8 +10,11 @@ import Wave from 'react-wavify';
 
 import { BsArrowUpRight } from 'react-icons/bs';
 
+import Device from '../helpers/Device';
+import useMediaQuery from '../hooks/useMediaQuery';
+
 import {
-    HeroHeader, CurvedBottomBorderSection,CurvedBorderSection,  Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
+    HeroHeader,  Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
     WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
     Showoff, FormSubmision, Input, TextField, DottedSection
 } from '../components/SharedStyling';
@@ -43,19 +46,19 @@ function Home() {
         <HomeWrapper>
             <ResponsiveSection curve="bottom" id="hero" padding="0px 160px 0px 160px" data-bkg="dark">
                 <Content className="contentBox">
-                    <ItemH width="650px" margin="120px 0 0 0">
-                        <ItemV justifyContent="flex-start">
+                    <ItemH margin="120px 0 0 0">
+                        <HeroBox justifyContent="flex-start">
                             <HeroHeader>
                                 The Communication Protocol of Web3
                             </HeroHeader>
-                        </ItemV>
-                    </ItemH>
 
-                    <ItemH width="550px">
-                        <ItemV justifyContent="flex-start">
                             <Span margin="20px 0px" color="rgba(255, 255, 255, 1)" size="22px" weight="200" spacing="-0.03em" lineHeight="142%">
                                 Push is a web3-native communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.
                             </Span>
+                        </HeroBox>
+
+                        <ItemV justifyContent="flex-start">
+                           blank space
                         </ItemV>
                     </ItemH>
 
@@ -745,8 +748,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                         </ItemV>
                     </ItemH>
 
-                    <ItemH flexDirection="column" margin="80px 0 0 0" gap="32px">
-
+                    <ItemH flexDirection="column" gap="32px">
                         <MarqueeAnimation
                             speed={100}
                             gradient={false}
@@ -845,7 +847,14 @@ const HomeWrapper = styled.main`
 
 
 const ResponsiveSection = styled(HybridSection)`
-   
+    @media ${Device.tablet} {
+        padding-left: 30px;
+        padding-right: 30px; 
+    }
+`;
+
+const HeroBox = styled(ItemV)`
+    flex: 0 0 52%;
 `;
 
 const KPIBanner = styled.div`
