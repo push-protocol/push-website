@@ -3,7 +3,8 @@
 
 import axios from 'axios';
 
-
+const awaitTimeout = delay =>
+    new Promise(resolve => setTimeout(resolve, delay));
 
 const BACKEND_API_URL = 'https://api.analytics.epns.io/apis/analytics';
 
@@ -26,7 +27,6 @@ export async function loadKPIData() {
             totalSubscribersCount: totalSubscribersCountResponse.data,
             totalChannelCount: totalChannelCountResponse.data
         };
-        // use/access the results 
     })).catch(errors => {
         throw Error(errors);
     });
@@ -34,6 +34,8 @@ export async function loadKPIData() {
 
 export async function getBlogData(limit = 4) {
     const requrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/ethereum-push-notification-service/';
+
+    // await awaitTimeout(50000);
 
     return axios.get(requrl)
         .then((apiResponse) => {

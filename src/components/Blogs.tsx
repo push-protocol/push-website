@@ -3,7 +3,8 @@
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { getBlogData } from '../api';
 
 import Device from '../helpers/Device';
@@ -47,15 +48,49 @@ type BlogLoaderProps = {
 
 
 function BlogLoader(props: BlogLoaderProps) {
+    const figureDimensions = props.isMobile ? {
+        width: 118,
+        height: 108
+    } : {
+        width: 207,
+        height: 108
+    };
+
     return (
-        <SkeletonTheme
-            baseColor="#5294e0"
-            highlightColor="#96c7ff"
-            borderRadius="0.5rem"
-            duration={4}
-        >
-            <Skeleton height={40} count={20}/>
-        </SkeletonTheme>
+        <>
+            <ItemH margin="40px 0 0 0" gap="48px">
+                <MainArticle>
+                    <Skeleton height={284} width={544} borderRadius={32} />
+
+                    <ArticleText>
+                        <Skeleton height={20} borderRadius={32} />
+                    </ArticleText>
+                    
+                    <ArticleText>
+                        <Skeleton height={7} borderRadius={23}/>
+                        <Skeleton height={7} width="50%" borderRadius={23}/>
+                    </ArticleText>
+                </MainArticle>
+
+                <SubArticles>
+                    {Array(3).fill().map((idx) => {
+                        return (
+                            <SubArticle className='loader' key={idx}>
+                                <Skeleton height={figureDimensions.height} width={figureDimensions.width} borderRadius={20} />
+    
+                                <SubArticleHeader>
+                                    <Skeleton height={7} borderRadius={23} />
+                                    <Skeleton height={7} width="50%" borderRadius={23} />
+                                </SubArticleHeader>
+                            </SubArticle>
+                        );
+                    })}
+
+                </SubArticles>
+            </ItemH>
+
+            <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
+        </>
     );
 }
 
@@ -73,7 +108,7 @@ function Blogs(props: BlogsProps) {
         try {
             setIsLoading(true);
             const data = await getBlogData(props.count);
-            console.log('GOT ------>>> blogs data: ', data);
+            // console.log('GOT ------>>> blogs data: ', data);
             setBlogsData(data);
         } catch (e) {
             console.error('Blogs API data fetch error: ', e);
@@ -82,22 +117,28 @@ function Blogs(props: BlogsProps) {
         }       
     };
 
+    const onArticleClick = (clickedBlog) => {
+        if (clickedBlog?.link) {
+            window.open(clickedBlog?.link, '_blank');
+        }
+    };
+
 
     useEffect(() => {
         loadData();
     }, []);
 
     if (!blogsData && isLoading) return (
-        <div>loading...</div>
+        <BlogLoader isMobile={isMobile}/>
     );
 
-    console.log('blogsData: ', blogsData);
+    // console.log('blogsData: ', blogsData);
 
     if (Array.isArray(blogsData) && blogsData.length > 0) {
         return (
             <>
                 <ItemH margin="40px 0 0 0" gap="48px">
-                    <MainArticle>
+                    <MainArticle onClick={() => onArticleClick(blogsData[0])} title={blogsData[0].title}>
                         <ArticleBanner src={blogsData[0].thumbnail} />
     
                         <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
@@ -112,7 +153,7 @@ function Blogs(props: BlogsProps) {
                     <SubArticles>
                         {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
                             return (
-                                <SubArticle key={idx}>
+                                <SubArticle key={idx} onClick={() => onArticleClick(blogData)} title={blogData.title}>
                                     <SubArticleBanner src={blogData.thumbnail}/>
                                     <SubArticleHeader>
                                         {blogData.title}
@@ -135,6 +176,10 @@ function Blogs(props: BlogsProps) {
 const MainArticle = styled(ItemV)`
    row-gap: 8px;
 
+   &:hover {
+    cursor: pointer;
+   }
+
    @media ${Device.tablet} {
     display: none;
    }
@@ -155,8 +200,8 @@ const ArticleText = styled.div`
     letter-spacing: -0.03em;
     line-height: 160%;
     
-    text-overflow:ellipsis;
-    overflow:hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -175,8 +220,16 @@ const SubArticle = styled.div`
     display: flex;
     flex-direction: row;    
     column-gap: 30px;
-    padding-bottom: px;
+    padding-bottom: 24px;
     border-bottom: 1px solid #000000;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.loader {
+        padding-bottom: 20px;
+    }
 
     &:last-child {
         border-bottom: 0;

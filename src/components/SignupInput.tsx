@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
@@ -5,16 +6,50 @@ import styled from 'styled-components';
 
 import Device from '../helpers/Device';
 
+import {
+    Span
+} from './SharedStyling';
+
+import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
+
 function SignupInput() {
+    const [
+        isLoading,
+        emailSuccess,
+        emailError,
+        onEmailSubmit,
+        emailSuccessMsg
+    ] = useEmailValidationAndSend();
+
     return (
-        <Wrapper>
-            <input type="text" placeholder="Your Email" tabIndex={1}/>
-            <button tabIndex={1} onClick={() => alert('hi')}>Sign Up</button>
-        </Wrapper>
+        <Box>
+            <Wrapper onSubmit={onEmailSubmit}>
+                <input type="text" name="email" placeholder="Your Email" tabIndex={1} required/>
+                <button tabIndex={1} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
+            
+                {isLoading ? <MaskInput /> : null}
+            </Wrapper>
+            {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
+            {emailError && <Span className="msg" color="red">{emailError}</Span>}
+        </Box>
+       
     );
 }
 
-const Wrapper = styled.div`
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & span.msg {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    margin-top: 12px;
+  }
+`;
+
+const Wrapper = styled.form`
+    position: relative;
     display: flex;
     flex: 1;
     column-gap: 6px;
@@ -59,7 +94,7 @@ const Wrapper = styled.div`
 
     & button {
         cursor: pointer;
-        min-width: 136px;
+        min-width: 160px;
         color: #FFFFFF;
         background: #DD44B9;
         border-radius: 16px;
@@ -69,5 +104,18 @@ const Wrapper = styled.div`
         padding: 14px 32px;
     }
 `;
+
+const MaskInput = styled.div`
+    position: absolute;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 21px;
+    opacity: 0.4;
+    z-index: 10;
+`;
+
 
 export default SignupInput;

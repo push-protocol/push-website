@@ -466,7 +466,6 @@ we take in our tech and in searching for and finding unexpected treasures.
                     </BuiltByIntro>
 
                     <BuiltByCards>
-
                         {TeamList.slice(0,  showMoreTeamMembers ? TeamList.length : 4)
                             .map((teamMember, memberIndex) => {
                                 return (
@@ -480,12 +479,7 @@ we take in our tech and in searching for and finding unexpected treasures.
                                     />
                                 );
                             })}
-                    
-
-                     
-
                     </BuiltByCards>
-
 
 
                     <TeamMemberButtons gap="22px" margin="80px 0">
@@ -1039,6 +1033,10 @@ const FeaturedCell = styled.div`
         &::before {
             background: #FFFFFF;
         }
+
+        & a {
+            color: #FFF;
+        }
     }
 `;
 
@@ -1084,32 +1082,6 @@ const BuiltByCard = styled(ItemV)`
 
 const MemberImage = styled(ImageHolder)`
    border-radius: 50%;
-`;
-
-const MemberName = styled(Span)`
-    display: block;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 142%;
-    text-align: center;
-    color: #09090B;
-    margin-top: 24px;
-`;
-
-const MemberTitle = styled(Span)`
-    display: block;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 160%;
-    text-align: center;
-    color: #303C5E;
-`;
-
-const MemberSocial = styled.div`
-    display: flex;
-    flex-direction: row;
-    column-gap: 16px;
-    margin-top: 16px;
 `;
 
 const TeamMemberButtons = styled(ItemH)`
