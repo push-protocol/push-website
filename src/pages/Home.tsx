@@ -833,7 +833,7 @@ const Matrix = styled.div`
  
 const MatrixCell = styled.div`
     display: flex;
-    padding: 48px 0 32px 32px;
+    padding: 42px 0 32px 32px;
     flex-direction: column;
     flex-basis: 33.33%;
     border-top: 1px solid #000;
@@ -841,6 +841,7 @@ const MatrixCell = styled.div`
     box-sizing: border-box;
     position: relative;
     color: #000;
+    row-gap: 24px;
 
     flex-direction: column;
 
@@ -866,7 +867,7 @@ const MatrixCell = styled.div`
 
     @media ${Device.tablet} {
         flex-basis: 50%;
-        padding: 12px;
+        padding: 16px 12px;
         row-gap: 16px;
           
         &:nth-child(2) {
