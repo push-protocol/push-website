@@ -76,7 +76,7 @@ function AnalyticsStats() {
 
     // for now hard coded, plug back the API when real APIs are there.
     const totalNotifsSent = nFormatter(17737587, 1);
-    const totalSubscribersCount = '700k+';
+    const totalSubscribersCount = '60k+';
     const totalChannelCount = '100+';
 
     return (
