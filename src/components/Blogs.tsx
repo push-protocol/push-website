@@ -73,9 +73,9 @@ function BlogLoader(props: BlogLoaderProps) {
                 </MainArticle>
 
                 <SubArticles>
-                    {Array(3).fill().map((idx) => {
+                    {[1, 2, 3].map((idx) => {
                         return (
-                            <SubArticle className='loader' key={idx}>
+                            <SubArticle className='loader' key={`subarticle-${idx}`}>
                                 <Skeleton height={figureDimensions.height} width={figureDimensions.width} borderRadius={20} />
     
                                 <SubArticleHeader>
@@ -89,7 +89,7 @@ function BlogLoader(props: BlogLoaderProps) {
                 </SubArticles>
             </ItemH>
 
-            <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
+            <ItemH height="1px" background="#000" margin="15px 0 0 0" />
         </>
     );
 }
