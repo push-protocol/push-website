@@ -124,6 +124,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Developer Guides
                         </Anchor>
@@ -137,6 +138,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Governance Guides
                         </Anchor>
@@ -150,6 +152,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             WhitePaper
                         </Anchor>
@@ -175,6 +178,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Quick Guide
                         </Anchor>
@@ -187,6 +191,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             FAQ
                         </Anchor>
@@ -199,6 +204,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Blog
                         </Anchor>
@@ -211,6 +217,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Press Kit
                         </Anchor>
@@ -223,6 +230,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                             Contact Us
                         </Anchor>
@@ -247,6 +255,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                               Website
                         </Anchor>
@@ -259,6 +268,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                               Forum
                         </Anchor>
@@ -272,6 +282,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                               Grants
                         </Anchor>
@@ -285,6 +296,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                               Snapshot
                         </Anchor>
@@ -298,6 +310,7 @@ function Header() {
                             size="16px"
                             weight="400"
                             lineHeight="230%"
+                            spacing="normal"
                         >
                               Delegate
                         </Anchor>

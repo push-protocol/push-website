@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
@@ -10,15 +10,20 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import PressKit from './pages/PressKit';
 import RedirectToPlatform from './components/RedirectToDiffUrl';
+import Loader from './components/Loader';
 
 
 function App() {
+    const [appData, setAppData] = useState<any>({});
+    const [isLoading, setIsLoading] = useState(false);
     // Initialize GA
     ReactGA.initialize('UA-165415629-2');
     ReactGA.pageview('/entry');
 
     return (
         <AppWrapper>
+            {isLoading ? <Loader /> : null}
+
             <Header />
             <Routes>
                 {/* add all the route paths here */}

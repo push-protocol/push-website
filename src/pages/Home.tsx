@@ -19,6 +19,8 @@ import HybridSection from '../components/HybridSection';
 import SignupInput from '../components/SignupInput';
 import ImageHolder from '../components/ImageHolder';
 import TeamMember from '../components/TeamMember';
+import AnalyticsStats from '../components/AnalyticsStats';
+import Blogs from '../components/Blogs';
 
 import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG }  from '../assets/github.svg';
@@ -31,13 +33,12 @@ import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_
 import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as EthFoundationBlackSVG }  from '../assets/eth_foundation_black.svg';
 import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.svg';
-import { ReactComponent as TwitterBlack }  from '../assets/twitter_black.svg';
-import { ReactComponent as LinkedInBlack }  from '../assets/linkedin_black.svg';
 import { ReactComponent as ACapital }  from '../assets/a_capital.svg';
 import { ReactComponent as PolygonStudios }  from '../assets/polygon_studios.svg';
 import { ReactComponent as Binance }  from '../assets/binance.svg';
 
 import TeamList from '../config/teamList';
+
 
 
 function Home() {
@@ -128,28 +129,7 @@ function Home() {
 
 
                     <ItemH margin="120px 0 0 0">
-                        <KPIBanner>
-                            <ItemV gap="18px" className='kpiItem'>
-                                <KPIFigure>4.6M</KPIFigure>
-                                <KPIMetric>Notifications<br />Sent</KPIMetric>
-                            </ItemV>
-
-                            <ItemV gap="18px" className='kpiItem'>
-                                <KPIFigure>30%</KPIFigure>
-                                <KPIMetric>Total<br />Subscribers</KPIMetric>
-                            </ItemV>
-
-                            <ItemV gap="18px" className='kpiItem'>
-                                <KPIFigure>500+</KPIFigure>
-                                <KPIMetric>Channels<br />Created</KPIMetric>
-                            </ItemV>
-
-                         
-                            {/* <ItemV gap="18px" className='kpiItem'>
-                                <KPIFigure>86%</KPIFigure>
-                                <KPIMetric>Total no. of<br />Chats</KPIMetric>
-                            </ItemV> */}
-                        </KPIBanner>
+                        <AnalyticsStats />
                     </ItemH>
                     
                 </Content>
@@ -218,7 +198,7 @@ function Home() {
 
                     <ItemH justifyContent="flex-start" gap="32px">
                         <MarqueeAnimation
-                            speed={100}
+                            speed={90}
                             gap={32}
                             gradientWidth={64}
                         >
@@ -466,44 +446,7 @@ function Home() {
                         </ItemV>
                     </ItemH>
 
-                    <ItemH margin="40px 0 0 0" gap="48px">
-                        <MainArticle>
-                            <ArticleBanner />
-
-                            <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
-                                My Dapp’ Would Like to Send You Push Notifications
-                            </H3>
-
-                            <ArticleText>
-                                An Introduction to Push Notification: Part 1.2 — In Part 1.1, we introduced modern push technology, which consists of some text that will be truncated
-                            </ArticleText>
-                        </MainArticle>
-
-                        <SubArticles>
-                            <SubArticle>
-                                <SubArticleBanner />
-                                <SubArticleHeader>
-                                    BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022
-                                </SubArticleHeader>
-                            </SubArticle>
-
-                            <SubArticle>
-                                <SubArticleBanner />
-                                <SubArticleHeader>
-                                    Socket Integrates EPNS to Send Users Important Updates Through Push Notifications
-                                </SubArticleHeader>
-                            </SubArticle>
-
-                            <SubArticle>
-                                <SubArticleBanner />
-                                <SubArticleHeader>
-                                    ICYMI — EPNS at EthCC 2022 Paris
-                                </SubArticleHeader>
-                            </SubArticle>
-                        </SubArticles>
-                    </ItemH>
-
-                    <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
+                    <Blogs count={4} />
 
 
                     <BuiltByIntro flexDirection="column">
@@ -585,7 +528,7 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     <InvestorCards>
                         <MarqueeAnimation
-                            speed={100}
+                            speed={85}
                             gradientWidth={8}
                             gap={18}
                         >
@@ -633,7 +576,7 @@ we take in our tech and in searching for and finding unexpected treasures.
 
                     <ItemH flexDirection="column" className="featuredInMarquee">
                         <MarqueeAnimation
-                            speed={100}
+                            speed={70}
                             gradient={false}
                         >
                             <FeaturedCell className='marqueeItem'>
@@ -827,65 +770,6 @@ const HeroBox = styled(ItemV)`
     }
 `;
 
-const KPIBanner = styled.div`
-    background: linear-gradient(90deg, rgba(18, 19, 21, 0.5) -2.55%, rgba(42, 42, 57, 0.5) 32.62%, rgba(142, 49, 122, 0.5) 68.34%, rgba(18, 19, 21, 0.5) 102.97%);
-    backdrop-filter: blur(30px);
-    border-radius: 63px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 30px 50px;
-    font-family: 'Strawford';
-    font-style: normal;
-
-    & .kpiItem {
-        flex-direction: row;
-    }
-
-    @media ${Device.tablet} {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        padding: 24px;
-        row-gap: 32px;
-        column-gap: 8px;
-
-        & .kpiItem {
-            // flex: 0 0 48%;
-            // align-items: flex-start;
-            flex-direction: column;
-
-            flex: 0 0 100%;
-            align-items: center;
-        }
-     }
-`;
-
-const KPIFigure = styled(Span)`
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 110%;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
-
-    @media ${Device.tablet} {
-        font-size: 32px;
-    }
-`;
-
-const KPIMetric = styled(Span)`
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 121%;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
-
-    @media ${Device.tablet} {
-        font-size: 16px;
-        font-weight: 400;
-    }
-`;
 
 const PushWorksRow = styled(ItemH)`
     column-gap: 105px;
@@ -1117,85 +1001,7 @@ const BuiltByIntro = styled(ItemH)`
     }
 `;
 
-const MainArticle = styled(ItemV)`
-   row-gap: 8px;
 
-   @media ${Device.tablet} {
-    display: none;
-   }
-`;
-
-const ArticleBanner = styled.div`
-    width: 544px;
-    height: 284px;
-    background: #D9D9D9;
-    border-radius: 32px;
-`;
-
-const ArticleText = styled.div`
-    width: 524px;
-    color: #303C5E;
-    font-size: 19px;
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 160%;
-    
-    text-overflow:ellipsis;
-    overflow:hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-`;
-
-const SubArticles = styled(ItemV)`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    row-gap: 20px;
-`;
-
-const SubArticle = styled.div`
-    display: flex;
-    flex-direction: row;    
-    column-gap: 30px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #000000;
-
-    &:last-child {
-        border-bottom: 0;
-    }
-
-    @media ${Device.tablet} {
-        align-items: center;
-    }
-`;
-
-const SubArticleBanner = styled.div`
-    width: 207px;
-    height: 108px;
-    background: #D9D9D9;
-    border-radius: 20px;
-
-    @media ${Device.tablet} {
-        width: 118px;
-        height: 108px;
-    }
-`;
-
-const SubArticleHeader = styled.h4`
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142%;
-    color: #09090B;
-    flex: 1;
-    align-self: center;
-
-    @media ${Device.tablet} {
-        font-size: 16px;
-    }
-`;
 
 const FeaturedCell = styled.div`
     width: 568px;
@@ -1225,6 +1031,14 @@ const FeaturedCell = styled.div`
         height: 8px;
         width: 96px;
         background: #DD44B9;
+    }
+
+    &:hover {
+        background: linear-gradient(251.72deg, #DD44B9 14.29%, #8B6FD9 86.35%);
+
+        &::before {
+            background: #FFFFFF;
+        }
     }
 `;
 

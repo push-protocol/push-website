@@ -21,7 +21,6 @@ type TeamMemberProps = {
     img?: string[];
     twitter?: string;
     linkedin?: string;
-    key: string;
 };
 
 function TeamMember(props: TeamMemberProps) {
@@ -31,11 +30,10 @@ function TeamMember(props: TeamMemberProps) {
         img = [],
         twitter,
         linkedin,
-        key
     } = props || {};
 
     return (
-        <BuiltByCard key={key}>
+        <BuiltByCard>
             <MemberImage
                 width={133}
                 height={133}
@@ -102,8 +100,15 @@ const BuiltByCard = styled(ItemV)`
 
     @media ${Device.tablet} {
         flex-basis: 100%;
-        padding: 12px;
+        padding: 24px 12px 30px 12px;
         row-gap: 16px;
+
+        margin-left: 24px;
+        margin-right: 24px;
+
+        &:nth-child(9) {
+            flex: 0 0 100%;
+        }
     }
 `;
 
