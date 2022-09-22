@@ -923,15 +923,15 @@ const FeaturedInSection = styled(ResponsiveSection)`
     margin-top: -80px;
    }
 
-   & .featuredInMarquee {
-    margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
-    margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
+//    & .featuredInMarquee {
+//     margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
+//     margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH/2}px);
 
-    @media ${Device.tablet} {
-        margin-left: calc(-100vw / 2);
-        margin-right: calc(-100vw / 2);
-    }
-   }
+//     @media ${Device.tablet} {
+//         margin-left: calc(-100vw / 2);
+//         margin-right: calc(-100vw / 2);
+//     }
+//    }
 `;
 
 const ResponsiveHeroContent = styled(ItemH)`
