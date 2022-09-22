@@ -11,26 +11,24 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import Device from '../helpers/Device';
 import useMediaQuery from '../hooks/useMediaQuery';
 
-import {
-    HeroHeader, Content, ItemH, ItemV, H1, H2, H3, Span, Anchor, Button, FormSubmision, Input, TextField
-} from '../components/SharedStyling';
+import { Anchor, Button, Content, FormSubmision, H1, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, TextField } from '../components/SharedStyling';
 
-import HybridSection from '../components/HybridSection';
-import SignupInput from '../components/SignupInput';
-import ImageHolder from '../components/ImageHolder';
-import TeamMember from '../components/TeamMember';
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
-import PartnerChannels from '../components/PartnerChannels';
+import HybridSection from '../components/HybridSection';
+import ImageHolder from '../components/ImageHolder';
 import InvestorList from '../components/InvestorList';
+import PartnerChannels from '../components/PartnerChannels';
+import SignupInput from '../components/SignupInput';
+import TeamMember from '../components/TeamMember';
 
-import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
-import { ReactComponent as GithubSVG }  from '../assets/github.svg';
-import { ReactComponent as DiscordSVG }  from '../assets/discord.svg';
-import { ReactComponent as EthLogoTextSVG }  from '../assets/ethereum_logo_text_black.svg';
-import { ReactComponent as PolygonLogoTextSVG }  from '../assets/polygon_logo_text_black.svg';
-import { ReactComponent as EthFoundationBlackSVG }  from '../assets/eth_foundation_black.svg';
-import { ReactComponent as CoindeskBlackSVG }  from '../assets/coindesk_black.svg';
+import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
+import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
+import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum_logo_text_black.svg';
+import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
+import { ReactComponent as GithubSVG } from '../assets/github.svg';
+import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
+import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
 import TeamList from '../config/teamList';
 
@@ -54,7 +52,7 @@ function Home() {
                             </HeroHeader>
 
                             <Span margin="20px 0px" color="rgba(255, 255, 255, 1)" size="22px" weight="200" spacing="-0.03em" lineHeight="142%">
-                                Push is a web3-native communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.
+                                Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.
                             </Span>
                         </HeroBox>
 
