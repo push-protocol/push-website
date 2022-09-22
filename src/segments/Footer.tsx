@@ -110,33 +110,197 @@ function Footer() {
                             <FooterColumn>
                                 <FooterLinks>
                                     <Span weight="400" size="18px" lineHeight="142%">Company</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">About</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Careers</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Media Kit</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Terms</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Privacy</Span>
+
+                                    <Anchor
+                                        href="https://epns.io/tos"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Terms
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://epns.io/privacy"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Privacy
+                                    </Anchor>
+
                                 </FooterLinks>
                             </FooterColumn>
 
                             <FooterColumn>
                                 <FooterLinks>
                                     <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Push Governance</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Guides</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Forum</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Grants</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Snapshot</Span>
+
+                                    <Anchor
+                                        href="https://epns.io/gov"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Push Governance
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://docs.epns.io/governance"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Guides
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://gov.epns.io/top?period=yearly"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Forum
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Grants
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://snapshot.org/#/epns.eth"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Snapshot
+                                    </Anchor>
                                 </FooterLinks>
                             </FooterColumn>
 
                             <FooterColumn>
                                 <FooterLinks>
                                     <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Blog</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Whitepaper</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Github</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Discord</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Dev Guides</Span>
+                                    <Anchor
+                                        href="https://medium.com/ethereum-push-notification-service"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Blog
+                                    </Anchor>
+                                    <Anchor
+                                        href="https://whitepaper.epns.io/"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Whitepaper
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://github.com/ethereum-push-notification-service"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Github
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://discord.gg/epns"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Discord
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://docs.epns.io/developers"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Dev Guides
+                                    </Anchor>
                                 </FooterLinks>
                             </FooterColumn>
 
@@ -144,8 +308,37 @@ function Footer() {
                             <FooterColumn>
                                 <FooterLinks>
                                     <Span weight="400" size="18px" lineHeight="142%">Support</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">Contact</Span>
-                                    <Span color="#9C9CBE" size="16px" lineHeight="142%">FAQ</Span>
+
+                                    <Anchor
+                                        href=""
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Contact
+                                    </Anchor>
+                                    
+
+                                    <Anchor
+                                        href="https://docs.epns.io/users/link-and-resources/frequently-asked-questions-faqs"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        FAQ
+                                    </Anchor>
                                 </FooterLinks>
                             </FooterColumn>
 
