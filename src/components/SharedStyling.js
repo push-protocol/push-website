@@ -416,7 +416,7 @@ export const Anchor = styled.a`
 
   filter: ${props => props.filter || 'none'};
 
-  cursor: pointer;
+  cursor: ${props => props.disabled ? 'none' : 'pointer'};
 
   &:hover & {
     filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : 'none')) || 'none'};

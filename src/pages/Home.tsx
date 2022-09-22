@@ -18,6 +18,7 @@ import {
 import HybridSection from '../components/HybridSection';
 import SignupInput from '../components/SignupInput';
 import ImageHolder from '../components/ImageHolder';
+import TeamMember from '../components/TeamMember';
 
 import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG }  from '../assets/github.svg';
@@ -35,6 +36,8 @@ import { ReactComponent as LinkedInBlack }  from '../assets/linkedin_black.svg';
 import { ReactComponent as ACapital }  from '../assets/a_capital.svg';
 import { ReactComponent as PolygonStudios }  from '../assets/polygon_studios.svg';
 import { ReactComponent as Binance }  from '../assets/binance.svg';
+
+import TeamList from '../config/teamList';
 
 
 function Home() {
@@ -132,19 +135,20 @@ function Home() {
                             </ItemV>
 
                             <ItemV gap="18px" className='kpiItem'>
+                                <KPIFigure>30%</KPIFigure>
+                                <KPIMetric>Total<br />Subscribers</KPIMetric>
+                            </ItemV>
+
+                            <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>500+</KPIFigure>
                                 <KPIMetric>Channels<br />Created</KPIMetric>
                             </ItemV>
 
-                            <ItemV gap="18px" className='kpiItem'>
-                                <KPIFigure>30%</KPIFigure>
-                                <KPIMetric>Click-Through<br />Rate</KPIMetric>
-                            </ItemV>
-
-                            <ItemV gap="18px" className='kpiItem'>
+                         
+                            {/* <ItemV gap="18px" className='kpiItem'>
                                 <KPIFigure>86%</KPIFigure>
-                                <KPIMetric>Higher Conversion<br />Rate</KPIMetric>
-                            </ItemV>
+                                <KPIMetric>Total no. of<br />Chats</KPIMetric>
+                            </ItemV> */}
                         </KPIBanner>
                     </ItemH>
                     
@@ -434,251 +438,6 @@ function Home() {
                         </Span>
                     </WhyPushTextBox>
 
-
-                    <BuiltByIntro flexDirection="column">
-                        <ItemV justifyContent="center">
-                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
-                                Built By
-                            </ResponsiveH2>
-                        </ItemV>
-
-                        <ItemV>
-                            <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="142%">
-                            The most diverse personalities have found each other at Push. Unique
-people with special talents and extraordinary stories. We are united by the joy
-we take in our tech and in searching for and finding unexpected treasures.
-                            </Span>
-                        </ItemV>
-                    </BuiltByIntro>
-
-                    <BuiltByCards>
-                        <BuiltByCard>
-                            <MemberImage
-                                width={133}
-                                height={133}
-                                src="/team/harsh.jpg"
-                                srcSet="/team/harsh@2x.jpg 2x, /team/harsh@3x.jpg 3x" />
-
-                            <MemberName>
-                                Harsh Rajat
-                            </MemberName>
-
-                            <MemberTitle>
-                                Co-founder
-                            </MemberTitle>
-
-                            <MemberSocial>
-                                <Anchor
-                                    href="https://twitter.com/harshrajat"
-                                    title="Harsh Twitter"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <TwitterBlack width={19} height={16}/>
-                                </Anchor>
-
-                                <Anchor
-                                    href="https://www.linkedin.com/in/harshrajat/"
-                                    title="Harsh LinkedIn"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <LinkedInBlack width={16} height={16}/>
-                                </Anchor>
-                            </MemberSocial>
-                        </BuiltByCard>
-
-                        <BuiltByCard>
-                            <MemberImage
-                                width={133}
-                                height={133}
-                                src="/team/richa.jpg"
-                                srcSet="/team/richa@2x.jpg 2x, /team/richa@3x.jpg 3x" />
-                            <MemberName>
-                               Richa Joshi
-                            </MemberName>
-
-                            <MemberTitle>
-                                Co-founder
-                            </MemberTitle>
-
-                            <MemberSocial>
-                                <Anchor
-                                    href="https://twitter.com/riijo"
-                                    title="Richa Twitter"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <TwitterBlack width={19} height={16}/>
-                                </Anchor>
-
-                                <Anchor
-                                    href="https://www.linkedin.com/in/richa-joshi-90b04126/"
-                                    title="Richa LinkedIn"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <LinkedInBlack width={16} height={16}/>
-                                </Anchor>
-                            </MemberSocial>
-                        </BuiltByCard>
-
-                        <BuiltByCard>
-                            <MemberImage
-                                width={133}
-                                height={133}
-                                src="/team/harsh.jpg"
-                                srcSet="/team/harsh@2x.jpg 2x, /team/harsh@3x.jpg 3x" />
-
-                            <MemberName>
-                                Harsh Rajat
-                            </MemberName>
-
-                            <MemberTitle>
-                                Co-founder
-                            </MemberTitle>
-
-                            <MemberSocial>
-                                <Anchor
-                                    href="https://twitter.com/harshrajat"
-                                    title="Harsh Twitter"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <TwitterBlack width={19} height={16}/>
-                                </Anchor>
-
-                                <Anchor
-                                    href="https://www.linkedin.com/in/harshrajat/"
-                                    title="Harsh LinkedIn"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <LinkedInBlack width={16} height={16}/>
-                                </Anchor>
-                            </MemberSocial>
-                        </BuiltByCard>
-
-                        <BuiltByCard>
-                            <MemberImage
-                                width={133}
-                                height={133}
-                                src="/team/richa.jpg"
-                                srcSet="/team/richa@2x.jpg 2x, /team/richa@3x.jpg 3x" />
-
-                            <MemberName>
-                               Richa Joshi
-                            </MemberName>
-
-                            <MemberTitle>
-                                Co-founder
-                            </MemberTitle>
-
-                            <MemberSocial>
-                                <Anchor
-                                    href="https://twitter.com/riijo"
-                                    title="Richa Twitter"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <TwitterBlack width={19} height={16}/>
-                                </Anchor>
-
-                                <Anchor
-                                    href="https://www.linkedin.com/in/richa-joshi-90b04126/"
-                                    title="Richa LinkedIn"
-                                    target="_blank"
-                                    margin="0"
-                                    padding="0"
-                                >
-                                    <LinkedInBlack width={16} height={16}/>
-                                </Anchor>
-                            </MemberSocial>
-                        </BuiltByCard>
-
-
-                    </BuiltByCards>
-
-                    <TeamMemberButtons gap="22px" margin="80px 0">
-                        <Anchor
-                            title="View More"
-                            bg="#2A2A39"
-                            radius="16px"
-                            padding="14px 32px"
-                            size="18px"
-                            weight="500"
-                            spacing="-0.03em"
-                            lineHeight="26px"
-                            onClick={onClickViewMoreTeamMembers}
-                        >
-                            View More
-                        </Anchor>
-                        <Anchor
-                            href="https://app.epns.io/"
-                            title="Jobs"
-                            target="_blank"
-                            bg="#DD44B9"
-                            radius="16px"
-                            padding="14px 32px"
-                            size="18px"
-                            weight="500"
-                            spacing="-0.03em"
-                            lineHeight="26px"
-                        >
-                            Now Hiring, Explore Careers<BsArrowUpRight className='anchorSVGlink'/>
-                        </Anchor>
-                    </TeamMemberButtons>
-
-                    <ItemH margin="80px 0 80px 0">
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <InvestorHeader color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
-                                Backed by successful entrepreneurs and venture capital funds.
-                            </InvestorHeader>
-                        </ItemV>
-                    </ItemH>
-
-                    <InvestorCards>
-                        <MarqueeAnimation
-                            speed={100}
-                            gradientWidth={8}
-                            gap={18}
-                        >
-                            <InvestorCard className='marqueeItem'>
-                                <ACapital />
-                            </InvestorCard>
-                            <InvestorCard className='marqueeItem'>
-                                <PolygonStudios />
-                            </InvestorCard>
-                            <InvestorCard className='marqueeItem thumbnail'>
-                                <MemberImage
-                                    width={64}
-                                    height={64}
-                                    src="/investors/sandeep_polygon.jpg"
-                                    srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
-                                />
-                                <InvestorDetails>
-                                    <InvestorName>
-                                    Sandeep N.
-                                    </InvestorName>
-                                    <InvestorTitle>
-                                    Co-Founder Polygon
-                                    </InvestorTitle>
-                                </InvestorDetails>
-                            </InvestorCard>
-                            <InvestorCard className='marqueeItem'>
-                                <Binance />
-                            </InvestorCard>
-
-                        </MarqueeAnimation> 
-                    </InvestorCards>
-
                     <ItemH margin="80px 0 0 0">
                         <ItemV justifyContent="flex-start" alignItems="flex-start">
                             <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0" width="50%">
@@ -745,6 +504,120 @@ we take in our tech and in searching for and finding unexpected treasures.
                     </ItemH>
 
                     <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
+
+
+                    <BuiltByIntro flexDirection="column">
+                        <ItemV justifyContent="center">
+                            <ResponsiveH2 color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="40px 0">
+                                Built By
+                            </ResponsiveH2>
+                        </ItemV>
+
+                        <ItemV>
+                            <Span color="#303C5E" size="19px" weight="400" spacing="-0.03em" lineHeight="142%">
+                            The most diverse personalities have found each other at Push. Unique
+people with special talents and extraordinary stories. We are united by the joy
+we take in our tech and in searching for and finding unexpected treasures.
+                            </Span>
+                        </ItemV>
+                    </BuiltByIntro>
+
+                    <BuiltByCards>
+
+                        {TeamList.slice(0,  showMoreTeamMembers ? TeamList.length : 4)
+                            .map((teamMember, memberIndex) => {
+                                return (
+                                    <TeamMember
+                                        key={memberIndex}
+                                        name={teamMember.name}
+                                        title={teamMember.title}
+                                        img={teamMember.img}
+                                        twitter={teamMember.twitter}
+                                        linkedin={teamMember.linkedin}
+                                    />
+                                );
+                            })}
+                    
+
+                     
+
+                    </BuiltByCards>
+
+
+
+                    <TeamMemberButtons gap="22px" margin="80px 0">
+                        <Anchor
+                            title={!showMoreTeamMembers ? 'View More': 'View Less'}
+                            bg="#2A2A39"
+                            radius="16px"
+                            padding="14px 32px"
+                            size="18px"
+                            weight="500"
+                            spacing="-0.03em"
+                            lineHeight="26px"
+                            onClick={onClickViewMoreTeamMembers}
+                        >
+                            {!showMoreTeamMembers ? 'View More': 'View Less'}
+                        </Anchor>
+                        <Anchor
+                            href="https://app.epns.io/"
+                            title="Jobs"
+                            target="_blank"
+                            bg="#DD44B9"
+                            radius="16px"
+                            padding="14px 32px"
+                            size="18px"
+                            weight="500"
+                            spacing="-0.03em"
+                            lineHeight="26px"
+                        >
+                            Now Hiring, Explore Careers<BsArrowUpRight className='anchorSVGlink'/>
+                        </Anchor>
+                    </TeamMemberButtons>
+
+                    <ItemH margin="80px 0 80px 0">
+                        <ItemV justifyContent="flex-start" alignItems="flex-start">
+                            <InvestorHeader color="#09090B" size="40px" weight="700" spacing="-0.02em" lineHeight="110%" margin="0">
+                                Backed by successful entrepreneurs and venture capital funds.
+                            </InvestorHeader>
+                        </ItemV>
+                    </ItemH>
+
+                    <InvestorCards>
+                        <MarqueeAnimation
+                            speed={100}
+                            gradientWidth={8}
+                            gap={18}
+                        >
+                            <InvestorCard className='marqueeItem'>
+                                <ACapital />
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem'>
+                                <PolygonStudios />
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem thumbnail'>
+                                <MemberImage
+                                    width={64}
+                                    height={64}
+                                    src="/investors/sandeep_polygon.jpg"
+                                    srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
+                                />
+                                <InvestorDetails>
+                                    <InvestorName>
+                                    Sandeep N.
+                                    </InvestorName>
+                                    <InvestorTitle>
+                                    Co-Founder Polygon
+                                    </InvestorTitle>
+                                </InvestorDetails>
+                            </InvestorCard>
+                            <InvestorCard className='marqueeItem'>
+                                <Binance />
+                            </InvestorCard>
+
+                        </MarqueeAnimation> 
+                    </InvestorCards>
+
                 </Content>
             </IntergrateWithPushSection>
 
@@ -979,9 +852,12 @@ const KPIBanner = styled.div`
         column-gap: 8px;
 
         & .kpiItem {
-            flex: 0 0 48%;
-            align-items: flex-start;
+            // flex: 0 0 48%;
+            // align-items: flex-start;
             flex-direction: column;
+
+            flex: 0 0 100%;
+            align-items: center;
         }
      }
 `;
@@ -1234,7 +1110,7 @@ const WhyPushTextBox = styled(ItemH)`
 `;
 
 const BuiltByIntro = styled(ItemH)`
-    margin: 40px 160px;
+    margin: 120px 160px;
 
     @media ${Device.tablet} {
         margin: 40px 0;
@@ -1367,14 +1243,11 @@ const MarqueeAnimation = styled(ReactMarquee)`
 
 
 const BuiltByCards = styled(ItemH)`
-    column-gap: 26px;
-
-    @media ${Device.tablet} {
-        flex-direction: column;
-        row-gap: 24px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 26px;
 `;
 
 const BuiltByCard = styled(ItemV)`
@@ -1382,7 +1255,17 @@ const BuiltByCard = styled(ItemV)`
     border: 1px solid #CCCCCC;
     border-radius: 55px;
     padding: 16px 0 35px;
+    box-sizing: border-box;
+
+    display: flex;
     flex-direction: column;
+    flex-basis: 22%;
+
+    @media ${Device.tablet} {
+        flex-basis: 100%;
+        padding: 12px;
+        row-gap: 16px;
+    }
 `;
 
 const MemberImage = styled(ImageHolder)`
