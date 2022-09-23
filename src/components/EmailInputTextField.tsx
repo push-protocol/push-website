@@ -29,9 +29,9 @@ function EmailInputTextField(props: InputTextFieldProps) {
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input type="text" placeholder={props.placeholder} tabIndex={1} required/>
+        <input type="text" name="email" placeholder={props.placeholder} tabIndex={1} required/>
         <button className='icon' tabIndex={1} type="submit">
-          <AiOutlineArrowRight />
+          {!isLoading ? <AiOutlineArrowRight /> : null}
           {isLoading ? <MaskInput /> : null}
         </button>
 
@@ -77,6 +77,11 @@ const Wrapper = styled.form`
         line-height: normal;
         letter-spacing: -0.03em; 
         color: #9C9CBE;
+    }
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #121315 inset !important;
+      -webkit-text-fill-color: #9C9CBE !important;
     }
 
     & .icon {

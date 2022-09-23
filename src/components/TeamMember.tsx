@@ -101,13 +101,13 @@ const BuiltByCard = styled(ItemV)`
     @media ${device.tablet} {
         flex-basis: 100%;
         padding: 24px 12px 30px 12px;
-        row-gap: 16px;
+        row-gap: 12px;
 
         margin-left: 24px;
         margin-right: 24px;
 
         &:nth-child(9) {
-            flex: 0 0 100%;
+            flex: 0 0 85%;
         }
     }
 `;
