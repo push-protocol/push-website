@@ -33,8 +33,8 @@ export default [
     name: 'Jun',
     title: 'Operations Lead',
     img: [
-      '', 
-      ''
+      '/team/jun@1x.png',
+      '/team/jun@2x.png 2x, /team/jun@3x.png 3x'
     ],
     twitter: 'https://twitter.com/heartofwoods',
     linkedin: ''
@@ -43,7 +43,7 @@ export default [
     name: 'Igor',
     title: 'VP of Tech',
     img: [
-      '/team/igor.png@1x', 
+      '/team/igor@1x.png',
       '/team/igor@2x.png 2x, /team/igor@3x.png 3x'
     ],
     twitter: 'https://twitter.com/IgX_11',
@@ -51,7 +51,7 @@ export default [
   },
   {
     name: 'Zaryab Afser',
-    title: 'Smart Contracts & Dev Lead',
+    title: 'Blockchain & Dev Lead',
     img: [
       '/team/zaryab@1x.png', 
       '/team/zaryab@2x.png 2x, /team/zaryab@3x.png 3x'
@@ -79,14 +79,14 @@ export default [
     twitter: 'https://twitter.com/learn4life6',
     linkedin: ''
   },
-  {
-    name: 'Madeline',
-    title: 'Business Development Lead',
-    img: [
-      '/team/madeline@1x.png', 
-      '/team/madeline@2x.png 2x, /team/madeline@3x.png 3x'
-    ],
-    twitter: '',
-    linkedin: ''
-  }
+  // {
+  //   name: 'Madeline',
+  //   title: 'Business Development Lead',
+  //   img: [
+  //     '/team/madeline@1x.png', 
+  //     '/team/madeline@2x.png 2x, /team/madeline@3x.png 3x'
+  //   ],
+  //   twitter: '',
+  //   linkedin: ''
+  // }
 ];
