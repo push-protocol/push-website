@@ -17,25 +17,25 @@ type Props = {
 };
 
 function PartnerChannels(props: Props) {
-    return (
-        <MarqueeAnimation
-            speed={90}
-            gap={32}
-            gradientWidth={64}
-            direction={props.direction || 'left'}
-        >
-            <MakerDAOSVG className='marqueeItem'/>
-            <AaveSVG className='marqueeItem'/>
-            <EnsSVG className='marqueeItem'/>
-            <MakerDAOSVG className='marqueeItem'/>
-            <EnsSVG className='marqueeItem'/>
-            <MakerDAOSVG className='marqueeItem'/>
-            <EnsSVG className='marqueeItem'/>
-            <MakerDAOSVG className='marqueeItem'/>
-            <EnsSVG className='marqueeItem'/>
-            <CoindeskSVG className='marqueeItem'/>
-        </MarqueeAnimation> 
-    );
+  return (
+    <MarqueeAnimation
+      speed={90}
+      gap={32}
+      gradientWidth={64}
+      direction={props.direction || 'left'}
+    >
+      <MakerDAOSVG className='marqueeItem'/>
+      <AaveSVG className='marqueeItem'/>
+      <EnsSVG className='marqueeItem'/>
+      <MakerDAOSVG className='marqueeItem'/>
+      <EnsSVG className='marqueeItem'/>
+      <MakerDAOSVG className='marqueeItem'/>
+      <EnsSVG className='marqueeItem'/>
+      <MakerDAOSVG className='marqueeItem'/>
+      <EnsSVG className='marqueeItem'/>
+      <CoindeskSVG className='marqueeItem'/>
+    </MarqueeAnimation> 
+  );
 }
 
 const MarqueeAnimation = styled(ReactMarquee)`

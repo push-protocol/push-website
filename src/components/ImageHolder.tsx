@@ -4,26 +4,26 @@
 import React from 'react';
 
 function getPublicImagePath(relativePath) {
-    return process.env.PUBLIC_URL + relativePath;
+  return process.env.PUBLIC_URL + relativePath;
 }
 
 function getSrcSet(srcSet) {
-    return srcSet.split(',')
-        .map(srcSetItem => srcSetItem.trim())
-        .map(srcSetItem => getPublicImagePath(srcSetItem))
-        .join(', ');
+  return srcSet.split(',')
+    .map(srcSetItem => srcSetItem.trim())
+    .map(srcSetItem => getPublicImagePath(srcSetItem))
+    .join(', ');
 }
 
 function ImageHolder(props) {
-    const { src, srcSet, ...restProps } = props || {};
+  const { src, srcSet, ...restProps } = props || {};
 
-    return (
-        <img
-            src={getPublicImagePath(src)}
-            srcSet={getSrcSet(srcSet)}
-            {...restProps}
-        />
-    );
+  return (
+    <img
+      src={getPublicImagePath(src)}
+      srcSet={getSrcSet(srcSet)}
+      {...restProps}
+    />
+  );
 }
 
 export default ImageHolder;

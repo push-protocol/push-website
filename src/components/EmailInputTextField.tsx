@@ -7,7 +7,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BiLoaderAlt } from 'react-icons/bi';
 
 import {
-    Span
+  Span
 } from './SharedStyling';
 
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
@@ -18,29 +18,29 @@ export type InputTextFieldProps = {
 };
 
 function EmailInputTextField(props: InputTextFieldProps) {
-    const [
-        isLoading,
-        emailSuccess,
-        emailError,
-        onEmailSubmit,
-        emailSuccessMsg
-    ] = useEmailValidationAndSend();
+  const [
+    isLoading,
+    emailSuccess,
+    emailError,
+    onEmailSubmit,
+    emailSuccessMsg
+  ] = useEmailValidationAndSend();
 
-    return (
-        <Box>
-            <Wrapper onSubmit={onEmailSubmit}>
-                <input type="text" placeholder={props.placeholder} tabIndex={1} required/>
-                <button className='icon' tabIndex={1} type="submit">
-                    <AiOutlineArrowRight />
-                    {isLoading ? <MaskInput /> : null}
-                </button>
+  return (
+    <Box>
+      <Wrapper onSubmit={onEmailSubmit}>
+        <input type="text" placeholder={props.placeholder} tabIndex={1} required/>
+        <button className='icon' tabIndex={1} type="submit">
+          <AiOutlineArrowRight />
+          {isLoading ? <MaskInput /> : null}
+        </button>
 
-                {isLoading ? <BiLoaderAlt size={24} className='loader'/> : null}
-            </Wrapper>
-            {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
-            {emailError && <Span className="msg" color="red">{emailError}</Span>}
-        </Box>
-    );
+        {isLoading ? <BiLoaderAlt size={24} className='loader'/> : null}
+      </Wrapper>
+      {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
+      {emailError && <Span className="msg" color="red">{emailError}</Span>}
+    </Box>
+  );
 }
 
 const Box = styled.div`

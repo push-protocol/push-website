@@ -4,10 +4,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Device from '../helpers/Device';
+import { device } from '../config/globals';
 
 import {
-    HeroHeader, Content, ItemH, ItemV, H1, H2, H3, Span, Anchor, Button, FormSubmision, Input, TextField
+  HeroHeader, Content, ItemH, ItemV, H1, H2, H3, Span, Anchor, Button, FormSubmision, Input, TextField
 } from './SharedStyling';
 
 import ImageHolder from './ImageHolder';
@@ -24,63 +24,63 @@ type TeamMemberProps = {
 };
 
 function TeamMember(props: TeamMemberProps) {
-    const {
-        name,
-        title,
-        img = [],
-        twitter,
-        linkedin,
-    } = props || {};
+  const {
+    name,
+    title,
+    img = [],
+    twitter,
+    linkedin,
+  } = props || {};
 
-    return (
-        <BuiltByCard>
-            <MemberImage
-                width={133}
-                height={133}
-                src={img[0] || ''}
-                srcSet={img[1] || ''}
-            />
+  return (
+    <BuiltByCard>
+      <MemberImage
+        width={133}
+        height={133}
+        src={img[0] || ''}
+        srcSet={img[1] || ''}
+      />
 
-            <MemberName>
-                {name}
-            </MemberName>
+      <MemberName>
+        {name}
+      </MemberName>
 
-            <MemberTitle>
-                {title}
-            </MemberTitle>
+      <MemberTitle>
+        {title}
+      </MemberTitle>
 
-            <MemberSocial>
-                {twitter ? (
-                    <Anchor
-                        href={twitter}
-                        title={`${name} twitter`}
-                        target="_blank"
-                        margin="0"
-                        padding="0"
-                        hoverBG="transparent"
-                    >
-                        <TwitterBlack width={19} height={16}/>
-                    </Anchor>
-                ) : null}
+      <MemberSocial>
+        {twitter ? (
+          <Anchor
+            href={twitter}
+            title={`${name} twitter`}
+            target="_blank"
+            margin="0"
+            padding="0"
+            hoverBG="transparent"
+          >
+            <TwitterBlack width={19} height={16}/>
+          </Anchor>
+        ) : null}
                
-                {
-                    linkedin ? (
-                        <Anchor
-                            href={linkedin}
-                            title={`${name} LinkedIn`}
-                            target="_blank"
-                            margin="0"
-                            padding="0"
-                            hoverBG="transparent"
-                        >
-                            <LinkedInBlack width={16} height={16}/>
-                        </Anchor>
-                    ) : null
-                }
+        {
+          linkedin ? (
+            <Anchor
+              href={linkedin}
+              title={`${name} LinkedIn`}
+              target="_blank"
+              margin="0"
+              padding="0"
+              hoverBG="transparent"
+            >
+              <LinkedInBlack width={16} height={16}/>
+            </Anchor>
+          ) : null
+        }
                
-            </MemberSocial>
-        </BuiltByCard>
-    );
+      </MemberSocial>
+    </BuiltByCard>
+  );
 }
 
 const BuiltByCard = styled(ItemV)`
@@ -98,7 +98,7 @@ const BuiltByCard = styled(ItemV)`
         flex: 0 0 22%;
     }
 
-    @media ${Device.tablet} {
+    @media ${device.tablet} {
         flex-basis: 100%;
         padding: 24px 12px 30px 12px;
         row-gap: 16px;

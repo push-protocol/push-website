@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -13,10 +13,6 @@ import styled from 'styled-components';
 // Internal Components
 import ReactMarquee from 'react-fast-marquee';
 import { BsArrowUpRight } from 'react-icons/bs';
-import Wave from 'react-wavify';
-
-import Device from '../helpers/Device';
-import useMediaQuery from '../hooks/useMediaQuery';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -26,22 +22,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 import {
   Anchor,
-  Button,
-  Content, FormSubmision,
-  H1,
+  Content,
   H2,
-  H3,
   HeroHeader,
-  Input,
   ItemH,
   ItemV, Section, Span,
-  TextField
 } from '../components/SharedStyling';
 
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
 import HybridSection from '../components/HybridSection';
-import ImageHolder from '../components/ImageHolder';
 import InvestorList from '../components/InvestorList';
 import PartnerChannels from '../components/PartnerChannels';
 import SignupInput from '../components/SignupInput';
@@ -931,14 +921,14 @@ const BOX_MAX_WIDTH = 1140;
  */
 
 const ResponsiveSection = styled(HybridSection)`
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
 `;
 
 const ResponsiveH2 = styled(H2)`
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     font-size: 32px;
   }
 `;
@@ -948,7 +938,7 @@ const HomeWrapper = styled.main`
     row-gap: 18px;
   }
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     width: 100%;
   }
 `;
@@ -964,7 +954,7 @@ const HeroSection = styled(ResponsiveSection)`
 const StorySection = styled(ResponsiveSection)`
   padding: 160px 160px 80px 160px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding-bottom: 32px;
   }
 `;
@@ -972,7 +962,7 @@ const StorySection = styled(ResponsiveSection)`
 const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding: 0 12px !important;
 
     & .contentBox {
@@ -1000,7 +990,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
   //     margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
   //     margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
 
-  //     @media ${Device.tablet} {
+  //     @media ${device.tablet} {
   //         margin-left: calc(-100vw / 2);
   //         margin-right: calc(-100vw / 2);
   //     }
@@ -1008,7 +998,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
 `;
 
 const ResponsiveHeroContent = styled(ItemH)`
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     flex-direction: column;
     margin-top: 240px;
   }
@@ -1017,7 +1007,7 @@ const ResponsiveHeroContent = styled(ItemH)`
 const HeroBox = styled(ItemV)`
   flex: 0 0 52%;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     flex: 1;
 
     & span {
@@ -1030,7 +1020,7 @@ const HeroBox = styled(ItemV)`
 const PushWorksRow = styled(ItemH)`
   column-gap: 105px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     row-gap: 30px;
   }
 `;
@@ -1038,7 +1028,7 @@ const PushWorksRow = styled(ItemH)`
 const PoweringCommunicationRow = styled(ItemH)`
   margin: 160px 0 50px 0;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     margin-top: 80px;
   }
 `;
@@ -1056,7 +1046,7 @@ const LiveNetworks = styled(ItemH)`
     flex: 0 0 1px;
   }
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 18px;
@@ -1083,7 +1073,7 @@ const SignupBox = styled(ItemH)`
   flex-direction: row;
   gap: 24px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding: 24px;
     flex-direction: column;
   }
@@ -1099,7 +1089,7 @@ const GrowPushCard = styled(ItemV)`
   background: ${(props) => props.background || '#FFFBFB'};
   border-radius: 48px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding: 28px;
     border-radius: 36px;
   }
@@ -1112,7 +1102,7 @@ const GrowPushCardFigure = styled.div`
   width: 335px;
   height: 227px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     width: 100%;
   }
 `;
@@ -1127,7 +1117,7 @@ const IntegrateGrowWithPushRow = styled(ItemH)`
   margin: 160px 0 0 0;
   padding: 0 160px 0 160px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding-left: 30px;
     padding-right: 30px;
 
@@ -1147,7 +1137,7 @@ const IntegrateAndEarn = styled.div`
   border-radius: 32px;
   padding: 60px 300px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     padding: 32px 36px;
   }
 `;
@@ -1193,7 +1183,7 @@ const MatrixCell = styled.div`
     background: #dd44b9;
   }
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     flex-basis: 50%;
     padding: 16px 12px;
     row-gap: 16px;
@@ -1225,7 +1215,7 @@ const MatrixFigure = styled.div`
   height: 63px;
   background: #d9d9d9;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     margin-top: 8px;
   }
 `;
@@ -1233,7 +1223,7 @@ const MatrixFigure = styled.div`
 const WhyPushTextBox = styled(ItemH)`
   margin: 80px 160px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     margin: 50px 0;
 
     & span {
@@ -1247,7 +1237,7 @@ const WhyPushTextBox = styled(ItemH)`
 const BuiltByIntro = styled(ItemH)`
   margin: 120px 160px;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     margin: 40px 0;
   }
 `;
@@ -1317,7 +1307,7 @@ const BuiltByCards = styled(ItemH)`
 `;
 
 const TeamMemberButtons = styled(ItemH)`
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     & a {
       width: 100%;
     }
@@ -1328,7 +1318,7 @@ const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
 
-  @media ${Device.tablet} {
+  @media ${device.tablet} {
     width: 100%;
     text-align: center;
   }

@@ -18,45 +18,45 @@ type Props = {
 };
 
 function InvestorList(props: Props) {
-    return (
-        <InvestorCards>
-            <MarqueeAnimation
-                speed={85}
-                gradientWidth={8}
-                gap={18}
-            >
-                <InvestorCard className='marqueeItem'>
-                    <ACapital />
-                </InvestorCard>
+  return (
+    <InvestorCards>
+      <MarqueeAnimation
+        speed={85}
+        gradientWidth={8}
+        gap={18}
+      >
+        <InvestorCard className='marqueeItem'>
+          <ACapital />
+        </InvestorCard>
 
-                <InvestorCard className='marqueeItem'>
-                    <PolygonStudios />
-                </InvestorCard>
+        <InvestorCard className='marqueeItem'>
+          <PolygonStudios />
+        </InvestorCard>
 
-                <InvestorCard className='marqueeItem thumbnail'>
-                    <MemberImage
-                        width={64}
-                        height={64}
-                        src="/investors/sandeep_polygon.jpg"
-                        srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
-                    />
-                    <InvestorDetails>
-                        <InvestorName>
+        <InvestorCard className='marqueeItem thumbnail'>
+          <MemberImage
+            width={64}
+            height={64}
+            src="/investors/sandeep_polygon.jpg"
+            srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
+          />
+          <InvestorDetails>
+            <InvestorName>
                     Sandeep N.
-                        </InvestorName>
-                        <InvestorTitle>
+            </InvestorName>
+            <InvestorTitle>
                     Co-Founder Polygon
-                        </InvestorTitle>
-                    </InvestorDetails>
-                </InvestorCard>
+            </InvestorTitle>
+          </InvestorDetails>
+        </InvestorCard>
             
-                <InvestorCard className='marqueeItem'>
-                    <Binance />
-                </InvestorCard>
+        <InvestorCard className='marqueeItem'>
+          <Binance />
+        </InvestorCard>
 
-            </MarqueeAnimation> 
-        </InvestorCards>
-    );
+      </MarqueeAnimation> 
+    </InvestorCards>
+  );
 }
 
 const MarqueeAnimation = styled(ReactMarquee)`

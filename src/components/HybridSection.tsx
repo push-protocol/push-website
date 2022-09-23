@@ -17,11 +17,11 @@ type HybridSectionProps = {
  */
 
 const HybridSection = (props: HybridSectionProps) => {
-    return (
-        <StyledSection {...props}>
-            {props.children}
-        </StyledSection>
-    );
+  return (
+    <StyledSection {...props}>
+      {props.children}
+    </StyledSection>
+  );
 };
 
 const StyledSection = styled(Section)`
@@ -55,8 +55,8 @@ const StyledSection = styled(Section)`
     margin: ${props => props.margin || '0'};
 
     ${props => {
-        if (props.curve === 'bottom') {
-            return css`
+    if (props.curve === 'bottom') {
+      return css`
                 &:after {
                     position: absolute;
                     z-index: 1;
@@ -71,10 +71,10 @@ const StyledSection = styled(Section)`
                     border-bottom-right-radius: 48px;
                 }
             `;
-        }
+    }
 
-        if (props.curve === 'both') {
-            return css`
+    if (props.curve === 'both') {
+      return css`
                 &:before {
                     position: absolute;
                     z-index: 1;
@@ -103,10 +103,10 @@ const StyledSection = styled(Section)`
                     border-bottom-right-radius: 48px;
                 }
             `;
-        }
+    }
 
-        return '';
-    }}
+    return '';
+  }}
 `;
 
 export default HybridSection;

@@ -4,52 +4,52 @@ import { Span, ItemV } from '../components/SharedStyling';
 
 
 export const FAQS = [
-    {
-        question: 'who can participate in governance?',
-        renderAnswer: () => (
-            <Answer>
-                <Span>Anyone and everyone with a web3 wallet with at least 1 $PUSH in it..</Span>
-            </Answer>
-        )
-    },
+  {
+    question: 'who can participate in governance?',
+    renderAnswer: () => (
+      <Answer>
+        <Span>Anyone and everyone with a web3 wallet with at least 1 $PUSH in it..</Span>
+      </Answer>
+    )
+  },
    
-    {
-        question: 'Is any sort of KYC required?',
-        renderAnswer: () => (
-            <Answer>
-                <Span>No, your wallet is your gateway to web3 and we have no KYC requirement</Span>
-            </Answer>
-        )
-    },
+  {
+    question: 'Is any sort of KYC required?',
+    renderAnswer: () => (
+      <Answer>
+        <Span>No, your wallet is your gateway to web3 and we have no KYC requirement</Span>
+      </Answer>
+    )
+  },
   
-    {
-        question: 'Is there a wallet requirement to participate in PUSH Governance?',
-        renderAnswer: () => (
-            <Answer>
-                <Span>Any wallet that supports a connection i.e Metamask, Wallet Connect, or Portis works just fine.</Span>
-            </Answer>
-        )
-    },
+  {
+    question: 'Is there a wallet requirement to participate in PUSH Governance?',
+    renderAnswer: () => (
+      <Answer>
+        <Span>Any wallet that supports a connection i.e Metamask, Wallet Connect, or Portis works just fine.</Span>
+      </Answer>
+    )
+  },
   
-    {
-        question: 'My $PUSH is currently in an exchange can I participate?        ',
-        renderAnswer: () => (
-            <Answer>
-                <Span>The tokens in an exchange belong to the exchange and as of now there isn&rsquo;t a way to participate in
+  {
+    question: 'My $PUSH is currently in an exchange can I participate?        ',
+    renderAnswer: () => (
+      <Answer>
+        <Span>The tokens in an exchange belong to the exchange and as of now there isn&rsquo;t a way to participate in
   governance.
   .</Span>
-            </Answer>
-        )
-    },
+      </Answer>
+    )
+  },
   
-    {
-        question: 'Can I use Ethereum to vote?',
-        renderAnswer: () => (
-            <Answer>
-                <Span>No this is protocol-specific governance and as such you need $PUSH which is an ERC-20 token to participate.</Span>
-            </Answer>
-        )
-    }
+  {
+    question: 'Can I use Ethereum to vote?',
+    renderAnswer: () => (
+      <Answer>
+        <Span>No this is protocol-specific governance and as such you need $PUSH which is an ERC-20 token to participate.</Span>
+      </Answer>
+    )
+  }
      
   
 ];
