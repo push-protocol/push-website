@@ -13,23 +13,23 @@ import RedirectToPlatform from './components/RedirectToDiffUrl';
 
 
 function App() {
-    // Initialize GA
-    ReactGA.initialize('UA-165415629-2');
-    ReactGA.pageview('/entry');
+  // Initialize GA
+  ReactGA.initialize('UA-165415629-2');
+  ReactGA.pageview('/entry');
 
-    return (
-        <AppWrapper>
-            <Header />
-            <Routes>
-                {/* add all the route paths here */}
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/presskit" element={<PressKit />} />
-                <Route path="/notify" element={<RedirectToPlatform />} />
-            </Routes>
-            <Footer />
-        </AppWrapper>  
-    );
+  return (
+    <AppWrapper>
+      <Header />
+      <Routes>
+        {/* add all the route paths here */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/presskit" element={<PressKit />} />
+        <Route path="/notify" element={<RedirectToPlatform />} />
+      </Routes>
+      <Footer />
+    </AppWrapper>  
+  );
 }
 
 

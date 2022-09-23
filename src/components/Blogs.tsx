@@ -7,38 +7,38 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { getBlogData } from '../api';
 
-import Device from '../helpers/Device';
+import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 import {
-    ItemH, ItemV, H3
+  ItemH, ItemV, H3
 } from './SharedStyling';
 
 
 function extractContent(s) {
-    const span = document.createElement('span');
-    span.innerHTML = s;
-    return span.textContent || span.innerText;
+  const span = document.createElement('span');
+  span.innerHTML = s;
+  return span.textContent || span.innerText;
 }
 
 function getDescription(hypertext) {
-    try {
-        const articleFragments = hypertext.split('\n');
-        const [, descriptionFrag = ''] = articleFragments;
-        return extractContent(descriptionFrag);
-    } catch (e) {
-        return '';
-    }
+  try {
+    const articleFragments = hypertext.split('\n');
+    const [, descriptionFrag = ''] = articleFragments;
+    return extractContent(descriptionFrag);
+  } catch (e) {
+    return '';
+  }
 }
 
 function getSubarticles(isMobile, blogs) {
-    const [, ...otherBlogs] = blogs || [];
+  const [, ...otherBlogs] = blogs || [];
 
-    if (isMobile) {
-        return blogs;
-    }
+  if (isMobile) {
+    return blogs;
+  }
 
-    return otherBlogs;
+  return otherBlogs;
 
 }
 
@@ -48,50 +48,50 @@ type BlogLoaderProps = {
 
 
 function BlogLoader(props: BlogLoaderProps) {
-    const figureDimensions = props.isMobile ? {
-        width: 118,
-        height: 108
-    } : {
-        width: 207,
-        height: 108
-    };
+  const figureDimensions = props.isMobile ? {
+    width: 118,
+    height: 108
+  } : {
+    width: 207,
+    height: 108
+  };
 
-    return (
-        <>
-            <ItemH margin="40px 0 0 0" gap="48px">
-                <MainArticle>
-                    <Skeleton height={284} width={544} borderRadius={32} />
+  return (
+    <>
+      <ItemH margin="40px 0 0 0" gap="48px">
+        <MainArticle>
+          <Skeleton height={284} width={544} borderRadius={32} />
 
-                    <ArticleText>
-                        <Skeleton height={20} borderRadius={32} />
-                    </ArticleText>
+          <ArticleText>
+            <Skeleton height={20} borderRadius={32} />
+          </ArticleText>
                     
-                    <ArticleText>
-                        <Skeleton height={7} borderRadius={23}/>
-                        <Skeleton height={7} width="50%" borderRadius={23}/>
-                    </ArticleText>
-                </MainArticle>
+          <ArticleText>
+            <Skeleton height={7} borderRadius={23}/>
+            <Skeleton height={7} width="50%" borderRadius={23}/>
+          </ArticleText>
+        </MainArticle>
 
-                <SubArticles>
-                    {[1, 2, 3].map((idx) => {
-                        return (
-                            <SubArticle className='loader' key={`subarticle-${idx}`}>
-                                <Skeleton height={figureDimensions.height} width={figureDimensions.width} borderRadius={20} />
+        <SubArticles>
+          {[1, 2, 3].map((idx) => {
+            return (
+              <SubArticle className='loader' key={`subarticle-${idx}`}>
+                <Skeleton height={figureDimensions.height} width={figureDimensions.width} borderRadius={20} />
     
-                                <SubArticleHeader>
-                                    <Skeleton height={7} borderRadius={23} />
-                                    <Skeleton height={7} width="50%" borderRadius={23} />
-                                </SubArticleHeader>
-                            </SubArticle>
-                        );
-                    })}
+                <SubArticleHeader>
+                  <Skeleton height={7} borderRadius={23} />
+                  <Skeleton height={7} width="50%" borderRadius={23} />
+                </SubArticleHeader>
+              </SubArticle>
+            );
+          })}
 
-                </SubArticles>
-            </ItemH>
+        </SubArticles>
+      </ItemH>
 
-            <ItemH height="1px" background="#000" margin="15px 0 0 0" />
-        </>
-    );
+      <ItemH height="1px" background="#000" margin="15px 0 0 0" />
+    </>
+  );
 }
 
 type BlogsProps = {
@@ -100,74 +100,74 @@ type BlogsProps = {
   
 
 function Blogs(props: BlogsProps) {
-    const isMobile = useMediaQuery(Device.tablet);
-    const [blogsData, setBlogsData] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+  const isMobile = useMediaQuery(device.tablet);
+  const [blogsData, setBlogsData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-    const loadData = async() => {
-        try {
-            setIsLoading(true);
-            const data = await getBlogData(props.count);
-            // console.log('GOT ------>>> blogs data: ', data);
-            setBlogsData(data);
-        } catch (e) {
-            console.error('Blogs API data fetch error: ', e);
-        } finally {
-            setIsLoading(false);
-        }       
-    };
+  const loadData = async() => {
+    try {
+      setIsLoading(true);
+      const data = await getBlogData(props.count);
+      // console.log('GOT ------>>> blogs data: ', data);
+      setBlogsData(data);
+    } catch (e) {
+      console.error('Blogs API data fetch error: ', e);
+    } finally {
+      setIsLoading(false);
+    }       
+  };
 
-    const onArticleClick = (clickedBlog) => {
-        if (clickedBlog?.link) {
-            window.open(clickedBlog?.link, '_blank');
-        }
-    };
-
-
-    useEffect(() => {
-        loadData();
-    }, []);
-
-    if (!blogsData && isLoading) return (
-        <BlogLoader isMobile={isMobile}/>
-    );
-
-    // console.log('blogsData: ', blogsData);
-
-    if (Array.isArray(blogsData) && blogsData.length > 0) {
-        return (
-            <>
-                <ItemH margin="40px 0 0 0" gap="48px">
-                    <MainArticle onClick={() => onArticleClick(blogsData[0])} title={blogsData[0].title}>
-                        <ArticleBanner src={blogsData[0].thumbnail} />
-    
-                        <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
-                            {blogsData[0].title}
-                        </H3>
-    
-                        <ArticleText>
-                            {getDescription(blogsData[0].description)}
-                        </ArticleText>
-                    </MainArticle>
-    
-                    <SubArticles>
-                        {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
-                            return (
-                                <SubArticle key={idx} onClick={() => onArticleClick(blogData)} title={blogData.title}>
-                                    <SubArticleBanner src={blogData.thumbnail}/>
-                                    <SubArticleHeader>
-                                        {blogData.title}
-                                    </SubArticleHeader>
-                                </SubArticle>
-                            );
-                        })}
-                    </SubArticles>
-                </ItemH>
-    
-                <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
-            </>
-        );
+  const onArticleClick = (clickedBlog) => {
+    if (clickedBlog?.link) {
+      window.open(clickedBlog?.link, '_blank');
     }
+  };
+
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  if (!blogsData && isLoading) return (
+    <BlogLoader isMobile={isMobile}/>
+  );
+
+  // console.log('blogsData: ', blogsData);
+
+  if (Array.isArray(blogsData) && blogsData.length > 0) {
+    return (
+      <>
+        <ItemH margin="40px 0 0 0" gap="48px">
+          <MainArticle onClick={() => onArticleClick(blogsData[0])} title={blogsData[0].title}>
+            <ArticleBanner src={blogsData[0].thumbnail} />
+    
+            <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
+              {blogsData[0].title}
+            </H3>
+    
+            <ArticleText>
+              {getDescription(blogsData[0].description)}
+            </ArticleText>
+          </MainArticle>
+    
+          <SubArticles>
+            {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
+              return (
+                <SubArticle key={idx} onClick={() => onArticleClick(blogData)} title={blogData.title}>
+                  <SubArticleBanner src={blogData.thumbnail}/>
+                  <SubArticleHeader>
+                    {blogData.title}
+                  </SubArticleHeader>
+                </SubArticle>
+              );
+            })}
+          </SubArticles>
+        </ItemH>
+    
+        <ItemH height="1px" background="#000" margin="15px 0 0 0"/>
+      </>
+    );
+  }
 
 
 
@@ -180,7 +180,7 @@ const MainArticle = styled(ItemV)`
     cursor: pointer;
    }
 
-   @media ${Device.tablet} {
+   @media ${device.tablet} {
     display: none;
    }
 `;
@@ -235,7 +235,7 @@ const SubArticle = styled.div`
         border-bottom: 0;
     }
 
-    @media ${Device.tablet} {
+    @media ${device.tablet} {
         align-items: center;
     }
 `;
@@ -246,7 +246,7 @@ const SubArticleBanner = styled.img`
     background: #D9D9D9;
     border-radius: 20px;
 
-    @media ${Device.tablet} {
+    @media ${device.tablet} {
         width: 118px;
         height: 108px;
     }
@@ -260,19 +260,10 @@ const SubArticleHeader = styled.h4`
     flex: 1;
     align-self: center;
 
-    @media ${Device.tablet} {
+    @media ${device.tablet} {
         font-size: 16px;
     }
 `;
 
-
-const LoaderScreen = styled(ItemH)`
-   & .articleBanner {
-    width: 544px;
-    height: 284px;
-    // background: #D9D9D9;
-    border-radius: 32px;
-   }
-`;
 
 export default Blogs;

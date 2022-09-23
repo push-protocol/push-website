@@ -3,37 +3,36 @@
 // @ts-nocheck
 import React from 'react';
 import styled from 'styled-components';
-
-import Device from '../helpers/Device';
+import { device } from '../config/globals';
 
 import {
-    Span
+  Span
 } from './SharedStyling';
 
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
 
 function SignupInput() {
-    const [
-        isLoading,
-        emailSuccess,
-        emailError,
-        onEmailSubmit,
-        emailSuccessMsg
-    ] = useEmailValidationAndSend();
+  const [
+    isLoading,
+    emailSuccess,
+    emailError,
+    onEmailSubmit,
+    emailSuccessMsg
+  ] = useEmailValidationAndSend();
 
-    return (
-        <Box>
-            <Wrapper onSubmit={onEmailSubmit}>
-                <input type="text" name="email" placeholder="Your Email" tabIndex={1} required/>
-                <button tabIndex={1} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
+  return (
+    <Box>
+      <Wrapper onSubmit={onEmailSubmit}>
+        <input type="text" name="email" placeholder="Your Email" tabIndex={1} required/>
+        <button tabIndex={1} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
             
-                {isLoading ? <MaskInput /> : null}
-            </Wrapper>
-            {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
-            {emailError && <Span className="msg" color="red">{emailError}</Span>}
-        </Box>
+        {isLoading ? <MaskInput /> : null}
+      </Wrapper>
+      {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
+      {emailError && <Span className="msg" color="red">{emailError}</Span>}
+    </Box>
        
-    );
+  );
 }
 
 const Box = styled.div`
@@ -60,7 +59,7 @@ const Wrapper = styled.form`
     padding: 5px;
     justify-content: space-between;
 
-    @media ${Device.tablet} {
+    @media ${device.tablet} {
         column-gap: 3px;
     }
 
@@ -87,7 +86,7 @@ const Wrapper = styled.form`
             opacity: 1;
         }
 
-        @media ${Device.tablet} {
+        @media ${device.tablet} {
             min-width: fit-content;
         }
     }

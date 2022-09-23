@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
-
-import Device from '../helpers/Device';
+import { device } from '../config/globals';
 /**
  * Usage Hierarchy
  * 
@@ -44,7 +43,7 @@ export const HeroHeader = styled.h1`
     margin-bottom: 5px;
 
 
-	@media ${Device.tablet} {
+	@media ${device.tablet} {
 		font-size: 36px;
 	}
 `;
@@ -257,7 +256,7 @@ export const Arc = styled.div`
 		left: -100%;
 
 		${(props) =>
-        props.arcRGB &&
+    props.arcRGB &&
 		css`
 				background: radial-gradient(
 					ellipse at center,
@@ -504,7 +503,7 @@ export const Button = styled.button`
 		right: 0;
 		bottom: 0;
 		background: ${(props) =>
-        props.hover || (props.bg ? props.bg : 'transparent')};
+    props.hover || (props.bg ? props.bg : 'transparent')};
 		display: none;
 		z-index: -1;
 	}
@@ -548,50 +547,50 @@ export const Showoff = styled.div`
 
 	@media (max-width: 768px) {
 		align-items: ${(props) =>
-        (props.tabletAlign
-            ? props.tabletAlign
-            : props.align
-                ? props.align
-                : 'center') || 'center'};
+    (props.tabletAlign
+      ? props.tabletAlign
+      : props.align
+        ? props.align
+        : 'center') || 'center'};
 
 		right: ${(props) =>
-        (props.tabletRight
-            ? props.tabletRight
-            : props.right
-                ? props.right
-                : 'auto') || 'auto'};
+    (props.tabletRight
+      ? props.tabletRight
+      : props.right
+        ? props.right
+        : 'auto') || 'auto'};
 		left: ${(props) =>
-        (props.tabletLeft
-            ? props.tabletLeft
-            : props.left
-                ? props.left
-                : 'auto') || 'auto'};
+    (props.tabletLeft
+      ? props.tabletLeft
+      : props.left
+        ? props.left
+        : 'auto') || 'auto'};
 		top: ${(props) =>
-        (props.tabletTop
-            ? props.tabletTop
-            : props.top
-                ? props.top
-                : 'auto') || 'auto'};
+    (props.tabletTop
+      ? props.tabletTop
+      : props.top
+        ? props.top
+        : 'auto') || 'auto'};
 		bottom: ${(props) =>
-        (props.tabletBottom
-            ? props.tabletBottom
-            : props.bottom
-                ? props.bottom
-                : 'auto') || 'auto'};
+    (props.tabletBottom
+      ? props.tabletBottom
+      : props.bottom
+        ? props.bottom
+        : 'auto') || 'auto'};
 
 		transform: ${(props) =>
-        (props.tabletTransform
-            ? props.tabletTransform
-            : props.transform
-                ? props.transform
-                : 'auto') || 'auto'};
+    (props.tabletTransform
+      ? props.tabletTransform
+      : props.transform
+        ? props.transform
+        : 'auto') || 'auto'};
 
 		opacity: ${(props) =>
-        (props.tabletOpacity
-            ? props.tabletOpacity
-            : props.opacity
-                ? props.opacity
-                : 'auto') || 'initial'};
+    (props.tabletOpacity
+      ? props.tabletOpacity
+      : props.opacity
+        ? props.opacity
+        : 'auto') || 'initial'};
 	}
 `;
 
