@@ -58,9 +58,6 @@ import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import TeamList from '../config/teamList';
 
 function Home() {
-  // store a reference to the box div
-  const heroRef = useRef();
-
   // Hero Shrink Animation
   useEffect(() => {
     gsap.to('#hero', {
@@ -97,9 +94,7 @@ function Home() {
           bottom="0"
           left="0"
           background={GLOBALS.COLORS.BG_DARK}
-        >
-
-        </ItemV>
+        />
         
         <Content className="contentBox">
           <ResponsiveHeroContent margin="120px 0 0 0">
