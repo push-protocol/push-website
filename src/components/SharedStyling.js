@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import Device from '../helpers/Device';
 /**
  * Usage Hierarchy
  * 
@@ -41,6 +42,11 @@ export const HeroHeader = styled.h1`
     display: flex;
     flex-direction: column;
     margin-bottom: 5px;
+
+
+	@media ${Device.tablet} {
+		font-size: 36px;
+	}
 `;
 
 // Section covers the entire width and height
@@ -77,70 +83,6 @@ export const SectionHero = styled(Section)`
 		rgba(62, 9, 40, 1) 45%,
 		rgba(17, 58, 72, 1) 100%
 	);
-`;
-
-/**
- * Has curved border on the bottom
- */
-export const CurvedBottomBorderSection = styled(Section)`
-    min-height: 100vh;
-	background: ${props => props.background || '#121315'};
-
-    padding: ${props => props.padding || '0'};
-    margin: ${props => props.margin || '0'};
-
-    &:after {
-        position: absolute;
-        z-index: 1;
-        content: "";
-        top: 100%;
-        left: 0;
-        right: 0;
-        height: 60px;
-        width: 100%;
-        background: ${props => props.background || '#121315'};
-        border-bottom-left-radius: 48px;
-        border-bottom-right-radius: 48px;
-    }
-`;
-
-/**
- * Has curved border on both top and bottom
- */
-export const CurvedBorderSection = styled(Section)`
-	min-height: 100vh;
-	background: ${props => props.background || '#121315'};
-
-	padding: ${props => props.padding || '0'};
-	margin: ${props => props.margin || '0'};
-
-	&:before {
-		position: absolute;
-		z-index: 1;
-		content: "";
-		top: -48px;
-		left: 0;
-		right: 0;
-		height: 60px;
-		width: 100%;
-		background: ${props => props.background || '#121315'};
-		border-top-left-radius: 48px;
-		border-top-right-radius: 48px;
-	}
-
-	&:after {
-		position: absolute;
-		z-index: 1;
-		content: "";
-		top: 100%;
-		left: 0;
-		right: 0;
-		height: 60px;
-		width: 100%;
-		background: ${props => props.background || '#121315'};
-		border-bottom-left-radius: 48px;
-		border-bottom-right-radius: 48px;
-	}
 `;
 
 export const Content = styled.div`
@@ -474,7 +416,7 @@ export const Anchor = styled.a`
 
   filter: ${props => props.filter || 'none'};
 
-  cursor: pointer;
+  cursor: ${props => props.disabled ? 'none' : 'pointer'};
 
   &:hover & {
     filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : 'none')) || 'none'};
@@ -517,7 +459,8 @@ export const Anchor = styled.a`
 
   & .anchorSVGlink {
 	width: 1em;
-	height: 1em
+	height: 1em;
+	margin-left: 3px;
   }
 `;
 

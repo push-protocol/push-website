@@ -4,23 +4,59 @@ import React from 'react';
 import styled from 'styled-components';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 
+import { BiLoaderAlt } from 'react-icons/bi';
+
+import {
+    Span
+} from './SharedStyling';
+
+import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
+
 export type InputTextFieldProps = {
     placeholder?: string,
     value?: string,
 };
 
 function EmailInputTextField(props: InputTextFieldProps) {
+    const [
+        isLoading,
+        emailSuccess,
+        emailError,
+        onEmailSubmit,
+        emailSuccessMsg
+    ] = useEmailValidationAndSend();
+
     return (
-        <Wrapper>
-            <input type="text" placeholder={props.placeholder} tabIndex={1}/>
-            <span className='icon' tabIndex={1} onClick={() => alert('hi')}>
-                <AiOutlineArrowRight />
-            </span>
-        </Wrapper>
+        <Box>
+            <Wrapper onSubmit={onEmailSubmit}>
+                <input type="text" placeholder={props.placeholder} tabIndex={1} required/>
+                <button className='icon' tabIndex={1} type="submit">
+                    <AiOutlineArrowRight />
+                    {isLoading ? <MaskInput /> : null}
+                </button>
+
+                {isLoading ? <BiLoaderAlt size={24} className='loader'/> : null}
+            </Wrapper>
+            {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
+            {emailError && <Span className="msg" color="red">{emailError}</Span>}
+        </Box>
     );
 }
 
-const Wrapper = styled.div`
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & span.msg {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    margin-top: 12px;
+  }
+`;
+
+const Wrapper = styled.form`
+    position: relative;
     display: flex;
     align-items: center;
     border-radius: 32px;
@@ -41,7 +77,6 @@ const Wrapper = styled.div`
         line-height: normal;
         letter-spacing: -0.03em; 
         color: #9C9CBE;
-        min-width: 220px;
     }
 
     & .icon {
@@ -56,6 +91,34 @@ const Wrapper = styled.div`
             fill: #DD44B9;
         }
     }
+
+    @keyframes loadingAnimation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+    & .loader {
+        animation-name: loadingAnimation;
+        animation-duration: 1500ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+`;
+
+const MaskInput = styled.div`
+    position: absolute;
+    background: #121315;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 21px;
+    opacity: 0.4;
+    z-index: 10;
 `;
 
 export default EmailInputTextField;

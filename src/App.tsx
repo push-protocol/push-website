@@ -28,7 +28,7 @@ function App() {
                 <Route path="/notify" element={<RedirectToPlatform />} />
             </Routes>
             <Footer />
-        </AppWrapper>
+        </AppWrapper>  
     );
 }
 

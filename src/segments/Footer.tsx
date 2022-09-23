@@ -3,12 +3,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BsArrowUpRight } from 'react-icons/bs';
+import Device from '../helpers/Device';
 
 import {
     Section, SectionFS, SectionFSHero, Content, ItemH, ItemV, ItemBreak, WaveOuter,
     WaveInner, Arc, H1, H2, H3, Image, Image1, Span, Anchor, Button,
     Showoff, FormSubmision, Input, TextField, DottedSection
 } from '../components/SharedStyling';
+
 
 import EmailInputTextField from '../components/EmailInputTextField';
 
@@ -25,13 +27,15 @@ import { ReactComponent as PushBellSVG }  from '../assets/pushBell.svg';
 function Footer() {
     return (
         <StyledFooter>
-            <Section id="footer" background="#121315">
-                <Content className="contentBox">
+            <ResponsiveSection id="footer" background="#121315">
+                <Content className="contentBox" padding="0">
                     {/* Information Cards */}
                     
-                    <ItemH gap="32px">
-                        <ItemV justifyContent="center" flex="1">
-                            <InfoCard>
+                    <ItemH gap="32px">     
+                        <InfoCard>
+                            <InfoFigure />
+
+                            <InfoDetails>
                                 <Span
                                     color="#FFF"
                                     weight="500"
@@ -58,11 +62,15 @@ function Footer() {
                                 >
                                     See Open Positions&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
                                 </Anchor>
-                            </InfoCard>
-                        </ItemV>
+                            </InfoDetails>
+                           
+                        </InfoCard>
 
-                        <ItemV justifyContent="center" flex="1">
-                            <InfoCard>
+                        
+                        <InfoCard>
+                            <InfoFigure />
+
+                            <InfoDetails>
                                 <Span
                                     color="#FFF"
                                     weight="500"
@@ -89,67 +97,267 @@ function Footer() {
                                 >
                                     Explore Docs&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
                                 </Anchor>
-                            </InfoCard>
-                        </ItemV>
+                            </InfoDetails>
+                          
+                        </InfoCard>
+                        
                     </ItemH>
 
 
                     {/* footer links */}
                     <ItemH gap="32px" margin="120px 0 0 0">
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <FooterLinks>
-                                <Span weight="400" size="18px" lineHeight="142%">Company</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">About</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Careers</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Media Kit</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Terms</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Privacy</Span>
-                            </FooterLinks>
-                        </ItemV>
+                        <FooterContainer>
+                            <FooterColumn>
+                                <FooterLinks>
+                                    <Span weight="400" size="18px" lineHeight="142%">Company</Span>
 
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <FooterLinks>
-                                <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Push Governance</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Guides</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Forum</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Grants</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Snapshot</Span>
-                            </FooterLinks>
-                        </ItemV>
+                                    <Anchor
+                                        href="https://epns.io/tos"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Terms
+                                    </Anchor>
 
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <FooterLinks>
-                                <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Blog</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Whitepaper</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Github</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Discord</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Dev Guides</Span>
-                            </FooterLinks>
-                        </ItemV>
+                                    <Anchor
+                                        href="https://epns.io/privacy"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Privacy
+                                    </Anchor>
 
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <FooterLinks>
-                                <Span weight="400" size="18px" lineHeight="142%">Support</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">Contact</Span>
-                                <Span color="#9C9CBE" size="16px" lineHeight="142%">FAQ</Span>
-                            </FooterLinks>
-                        </ItemV>
+                                </FooterLinks>
+                            </FooterColumn>
 
-                        <ItemV justifyContent="flex-start" alignItems="flex-start">
-                            <FooterLinks>
-                                <Span weight="400" size="18px" lineHeight="142%">Subscribe</Span>
+                            <FooterColumn>
+                                <FooterLinks>
+                                    <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
 
-                                <EmailInputTextField placeholder='Your Email'/>
-                            </FooterLinks>
-                        </ItemV>
+                                    <Anchor
+                                        href="https://epns.io/gov"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Push Governance
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://docs.epns.io/governance"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Guides
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://gov.epns.io/top?period=yearly"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Forum
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Grants
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://snapshot.org/#/epns.eth"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Snapshot
+                                    </Anchor>
+                                </FooterLinks>
+                            </FooterColumn>
+
+                            <FooterColumn>
+                                <FooterLinks>
+                                    <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
+                                    <Anchor
+                                        href="https://medium.com/ethereum-push-notification-service"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Blog
+                                    </Anchor>
+                                    <Anchor
+                                        href="https://whitepaper.epns.io/"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Whitepaper
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://github.com/ethereum-push-notification-service"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Github
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://discord.gg/epns"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Discord
+                                    </Anchor>
+
+                                    <Anchor
+                                        href="https://docs.epns.io/developers"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Dev Guides
+                                    </Anchor>
+                                </FooterLinks>
+                            </FooterColumn>
+
+
+                            <FooterColumn>
+                                <FooterLinks>
+                                    <Span weight="400" size="18px" lineHeight="142%">Support</Span>
+
+                                    <Anchor
+                                        href=""
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        Contact
+                                    </Anchor>
+                                    
+
+                                    <Anchor
+                                        href="https://docs.epns.io/users/link-and-resources/frequently-asked-questions-faqs"
+                                        target="_blank"
+                                        bg="transparent"
+                                        color="#9C9CBE"
+                                        size="16px"
+                                        weight="300"
+                                        lineHeight="142%"
+                                        padding="0"
+                                        spacing="normal"
+                                        justify="flex-start"
+                                    >
+                                        FAQ
+                                    </Anchor>
+                                </FooterLinks>
+                            </FooterColumn>
+
+                            <FooterColumn>
+                                <FooterLinks>
+                                    <Span weight="400" size="18px" lineHeight="142%">Subscribe</Span>
+
+                                    <EmailInputTextField placeholder='Your Email'/>
+                                </FooterLinks>
+                            </FooterColumn>
+                        </FooterContainer>
+
                     </ItemH>
 
                     {/* Social Icon Links */}
-                    <SocialLinks gap="32px" margin="50px 0 0 0">
-                        <ItemV justifyContent="flex-start" flex="1" gap="12px">
+                    <SocialLinks gap="32px">
+                        <ItemV justifyContent="flex-start" flex="1" gap="12px" className="pushLinks">
                             <Anchor
+                                className="pushLogo"
                                 href="https://epns.io/"
                                 title="PUSH"
                             >
@@ -200,7 +408,7 @@ function Footer() {
                             </Anchor>
                         </ItemV>
 
-                        <ItemV justifyContent="flex-end" flex="1" gap="12px">
+                        <ItemV justifyContent="flex-end" flex="1" gap="12px" className="pushPlatformLinks">
                             <Anchor
                                 href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
                                 title="PUSH iOS app"
@@ -236,25 +444,92 @@ function Footer() {
                         </ItemV>
                     </SocialLinks>
                 </Content>
-            </Section>
+            </ResponsiveSection>
          
         </StyledFooter>
     );
 }
 
-const StyledFooter = styled(Section)`
+const StyledFooter = styled.footer`
     font-family: 'Strawford';
     display: flex;
 `;
 
-const InfoCard = styled.div`
+const ResponsiveSection = styled(Section)`
+    @media ${Device.tablet} {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+`;
+
+
+const InfoCard = styled(ItemV)`
 	border-radius: 32px;
     background: #2A2A39;
-    padding: 48px;
-    padding-left: 180px;
+    padding: 48px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 32px;
+    box-sizing: border-box;
+
+    @media ${Device.tablet} {
+        flex-direction: column;
+        row-gap: 16px;
+    }
+`;
+
+const InfoFigure = styled.div`
+    width: 116px;
+    height: 121px;
+    background: #D9D9D9;
+    flex: 0 0 116px;
+`;
+
+const InfoDetails = styled.div`
+   display: flex;
+   flex-direction: column;
+   flex: 0 0 calc(100% - 116px);
+
+   @media ${Device.tablet} {
+    align-items: center;
+
+    & span {
+        text-align: center;
+    }
+   }
+`;
+
+const FooterContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+`;
+
+const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
-    row-gap: 26px;
+    flex-basis: 20%;
+    box-sizing: border-box;
+    color: #FFFFFF;
+
+    flex-direction: column;
+
+    @media ${Device.tablet} {
+        flex-basis: 50%;
+        padding: 12px;
+        row-gap: 16px;
+        
+        & span {
+            font-size: 20px;
+        }
+
+        &:last-child {
+            flex-basis: 100%;
+        }
+    }
 `;
 
 const FooterLinks = styled.div`
@@ -264,8 +539,35 @@ const FooterLinks = styled.div`
 `; 
 
 const SocialLinks = styled(ItemH)`
-   border-top: 1px solid #2A2A39;
-   padding-top: 50px;
+    margin: 80px 0 40px 0;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        top: -24px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: #2A2A39;
+    }
+
+    @media ${Device.tablet} {
+        flex-direction: column;
+
+        & .pushLinks {
+            justify-content: center;
+
+            & a.pushLogo {
+                flex: 0 0 100%;
+            }
+        }
+
+        & .pushPlatformLinks {
+            justify-content: center;
+        }
+    }
 `;
 
 
