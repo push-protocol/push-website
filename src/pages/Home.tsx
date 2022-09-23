@@ -19,21 +19,22 @@ import Device from '../helpers/Device';
 import useMediaQuery from '../hooks/useMediaQuery';
 
 // Internal Configs
-import globals, { device } from 'globals/globals';
+import GLOBALS, { device } from '../config/globals';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 import {
   Anchor,
   Button,
-  Content,
-  FormSubmision,
+  Content, FormSubmision,
   H1,
   H2,
   H3,
   HeroHeader,
   Input,
   ItemH,
-  ItemV,
-  Span,
+  ItemV, Section, Span,
   TextField
 } from '../components/SharedStyling';
 
@@ -61,17 +62,19 @@ function Home() {
   const heroRef = useRef();
 
   // Hero Shrink Animation
-  useLayoutEffect(() => {
-    gsap.to(heroRef.current, {
+  useEffect(() => {
+    gsap.to('#hero', {
       scrollTrigger: {
-        trigger: heroRef.current,
-        start: 'top center',
+        trigger: '#hero',
+        start: 'center center',
+        end: 'bottom center',
         scrub: true,
         markers: true,
       },
-      scale: 0.2,
+      scale: 0.95,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE
     });
-  });
+  }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
 
@@ -82,12 +85,22 @@ function Home() {
 
   return (
     <HomeWrapper>
-      <HeroSection
-        ref={heroRef}
-        id="hero"
-        curve="bottom"
-        data-bkg="dark"
+      <Section
+        minHeight="100vh"
+        background={GLOBALS.COLORS.BG_LIGHT}
       >
+        <ItemV
+          id="hero"
+          position="absolute"
+          top="0"
+          right="0"
+          bottom="0"
+          left="0"
+          background={GLOBALS.COLORS.BG_DARK}
+        >
+
+        </ItemV>
+        
         <Content className="contentBox">
           <ResponsiveHeroContent margin="120px 0 0 0">
             <HeroBox justifyContent="flex-start">
@@ -187,7 +200,7 @@ function Home() {
             <AnalyticsStats />
           </ItemH>
         </Content>
-      </HeroSection>
+      </Section>
 
       <StorySection
         id="story"

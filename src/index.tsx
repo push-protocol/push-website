@@ -1,20 +1,18 @@
+import * as dotenv from 'dotenv';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
-import * as dotenv from 'dotenv';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 dotenv.config();
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-    <HashRouter>
-        <App />
-    </HashRouter>
+  <HashRouter>
+    <App />
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
