@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
+import { ReactTitle } from 'react-meta-tags';
 import ReactGA from 'react-ga';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -74,6 +75,7 @@ function Home() {
 
   return (
     <HomeWrapper>
+      <ReactTitle title="PUSH | The Communication Protocol of Web3" />
       <Section
         minHeight="100vh"
         background={GLOBALS.COLORS.BG_LIGHT}
