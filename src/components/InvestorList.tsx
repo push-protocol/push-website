@@ -3,7 +3,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import ReactMarquee from 'react-fast-marquee';
+// import ReactMarquee from 'react-fast-marquee';
+
+import MarqueeAnimation from './MarqueeAnimation';
 
 import { ItemH, ItemV, Span } from './SharedStyling';
 
@@ -13,11 +15,8 @@ import { ReactComponent as ACapital }  from '../assets/a_capital.svg';
 import { ReactComponent as PolygonStudios }  from '../assets/polygon_studios.svg';
 import { ReactComponent as Binance }  from '../assets/binance.svg';
 
-type Props = {
-    direction: string;
-};
 
-function InvestorList(props: Props) {
+function InvestorList() {
   return (
     <InvestorCards>
       <MarqueeAnimation
@@ -59,11 +58,11 @@ function InvestorList(props: Props) {
   );
 }
 
-const MarqueeAnimation = styled(ReactMarquee)`
-  & .marqueeItem {
-    margin-right: ${props => props.gap || 0}px;
-  }
-`;
+// const MarqueeAnimation = styled(ReactMarquee)`
+//   & .marqueeItem {
+//     margin-right: ${props => props.gap || 0}px;
+//   }
+// `;
 
 const InvestorCards = styled(ItemH)`
     column-gap: 18px;

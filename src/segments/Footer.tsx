@@ -451,6 +451,7 @@ function Footer() {
 const StyledFooter = styled.footer`
     font-family: 'Strawford';
     display: flex;
+    position: relative;
 `;
 
 const ResponsiveSection = styled(Section)`

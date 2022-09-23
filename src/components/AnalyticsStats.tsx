@@ -126,7 +126,7 @@ const KPIBanner = styled.div`
         flex-wrap: wrap;
 
         padding: 24px;
-        row-gap: 32px;
+        row-gap: 40px;
         column-gap: 8px;
 
         & .kpiItem {
@@ -136,6 +136,7 @@ const KPIBanner = styled.div`
 
             flex: 0 0 100%;
             align-items: center;
+            row-gap: 8px;
         }
      }
 `;

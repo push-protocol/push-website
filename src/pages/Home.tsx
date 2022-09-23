@@ -5,8 +5,8 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { gsap } from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -15,22 +15,24 @@ import ReactMarquee from 'react-fast-marquee';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 // Internal Configs
-import GLOBALS, { device } from '../config/globals';
+import { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 import TeamList from '../config/teamList';
 
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 import {
   Anchor,
   Content,
   H2,
   HeroHeader,
+  ItemBreak,
   ItemH,
   ItemV, Section, Span,
 } from '../components/SharedStyling';
 import PageWrapper from '../components/PageWrapper';
+import MarqueeAnimation from '../components/MarqueeAnimation';
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
 import HybridSection from '../components/HybridSection';
@@ -50,21 +52,6 @@ import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
 
 function Home() {
-  // Hero Shrink Animation
-  useEffect(() => {
-    gsap.to('#hero', {
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'center center',
-        end: 'bottom center',
-        scrub: true,
-        markers: true,
-      },
-      scale: 0.95,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE
-    });
-  }, []);
-
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
 
   const onClickViewMoreTeamMembers = (e) => {
@@ -78,20 +65,7 @@ function Home() {
       pageTitle={PageMeta.HOME.pageTitle}
     >
       <HomeWrapper>
-        <Section
-          minHeight="100vh"
-          background={GLOBALS.COLORS.BG_LIGHT}
-        >
-          <ItemV
-            id="hero"
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            background={GLOBALS.COLORS.BG_DARK}
-          />
-        
+        <HeroSection curve="bottom" id="hero" data-bkg="dark">
           <Content className="contentBox">
             <ResponsiveHeroContent margin="120px 0 0 0">
               <HeroBox justifyContent="flex-start">
@@ -191,7 +165,7 @@ function Home() {
               <AnalyticsStats />
             </ItemH>
           </Content>
-        </Section>
+        </HeroSection>
 
         <StorySection
           id="story"
@@ -301,8 +275,14 @@ function Home() {
               gap="32px"
             >
               <PartnerChannels />
-              <PartnerChannels direction="right" />
             </ItemH>
+
+            <PartnerChannelsRow
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels direction="right" />
+            </PartnerChannelsRow>
 
             <Partners
               margin="80px 0"
@@ -789,23 +769,24 @@ function Home() {
         >
           <Content className="contentBox">
             <ItemH justifyContent="flex-start">
-              {/* <ItemV justifyContent="flex-start" alignItems="flex-start"> */}
-              <ResponsiveH2
-                color="#FFFFFF"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-              >
-              Featured in
-              </ResponsiveH2>
-              {/* </ItemV> */}
+              <ItemV justifyContent="flex-start" alignItems="flex-start" >
+                <ResponsiveH2
+                  color="#FFFFFF"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  Featured in
+                </ResponsiveH2>
+              </ItemV>
             </ItemH>
 
             <ItemH
               flexDirection="column"
               className="featuredInMarquee"
+              margin="0 0 80px 0"
             >
               <MarqueeAnimation
                 speed={70}
@@ -914,6 +895,8 @@ function Home() {
                 </FeaturedCell>
               </MarqueeAnimation>
             </ItemH>
+
+            <ItemBreak/>
           </Content>
         </FeaturedInSection>
       </HomeWrapper>
@@ -985,23 +968,13 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
-
   & .contentBox {
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: -80px;
+    margin-top: 120px;
+    margin-bottom: 240px;
   }
-
-  //    & .featuredInMarquee {
-  //     margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
-  //     margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
-
-  //     @media ${device.tablet} {
-  //         margin-left: calc(-100vw / 2);
-  //         margin-right: calc(-100vw / 2);
-  //     }
-  //    }
 `;
 
 const ResponsiveHeroContent = styled(ItemH)`
@@ -1299,11 +1272,11 @@ const ArticleSource = styled.div`
   justify-content: space-between;
 `;
 
-const MarqueeAnimation = styled(ReactMarquee)`
-  & .marqueeItem {
-    margin-right: ${(props) => props.gap || 0}px;
-  }
-`;
+// const MarqueeAnimation = styled(ReactMarquee)`
+//   & .marqueeItem {
+//     margin-right: ${(props) => props.gap || 0}px;
+//   }
+// `;
 
 const BuiltByCards = styled(ItemH)`
   display: flex;
@@ -1329,6 +1302,10 @@ const InvestorHeader = styled(ResponsiveH2)`
     width: 100%;
     text-align: center;
   }
+`;
+
+const PartnerChannelsRow = styled(ItemH)`
+  margin: 130px 0 140px 0;
 `;
 
 export default Home;
