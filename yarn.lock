@@ -5446,6 +5446,11 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
+gsap@3.11.1:
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.1.tgz#2d99acf9c9ad02f3b6668bfab7567d31f217a91e"
+  integrity sha512-UKuJ0UPhntFHMwT6URFQ4cTQv88xc7Kd9Dhxt7qX9IPhC+d+/a5wKW5E5Vn33hZ53nBI1JfApcEbzKgXkcuPZw==
+
 gzip-size@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-6.0.0.tgz#065367fd50c239c0671cbcbad5be3e2eeb10e462"
@@ -8364,7 +8369,7 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-fast-marquee@^1.3.5:
+react-fast-marquee@1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/react-fast-marquee/-/react-fast-marquee-1.3.5.tgz#e53995027102fbec92da90606d7ca89703db9903"
   integrity sha512-eOqLoz4iVVBvi2wN/web8hd2XX9y2Z6CYR7g++7nTVHlTOXBtqyARQJ9rYNpbp179hAzloMx0yBFAo8LpNYmKQ==
@@ -8394,7 +8399,7 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
-react-loader-spinner@^5.3.4:
+react-loader-spinner@5.3.4:
   version "5.3.4"
   resolved "https://registry.yarnpkg.com/react-loader-spinner/-/react-loader-spinner-5.3.4.tgz#43c22a41944e2bf3c84a249192450f1166592f30"
   integrity sha512-G2vw4ssX+RDZ/vfaeva06yfNqyFViv/u+tVZ3kFLy5TKNlNx2DbuwreBSpRtPespQA+VxinxUJsigwLwG9erOg==

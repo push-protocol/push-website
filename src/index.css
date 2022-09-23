@@ -406,36 +406,58 @@ template {
  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap'); */
 
 
+ /**
+ * Custom CSS
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap');
+
  @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/strawford-light-webfont.woff2') format('woff2'),
-      url('./assets/fonts/strawford-light-webfont.woff') format('woff');
-  font-weight: 100 300;
+  src: url('./assets/fonts/Strawford-ExtraLight.woff2') format('woff2'),
+      url('./assets/fonts/Strawford-ExtraLight.otf') format('otf'),
+      url('./assets/fonts/Strawford-ExtraLight.ttf') format('ttf');
+  font-weight: 100 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/strawford-regular-webfont.woff2') format('woff2'),
-      url('./assets/fonts/strawford-regular-webfont.woff') format('woff');
-  font-weight: 400;
+  src: url('./assets/fonts/Strawford-Light.woff2') format('woff2'),
+      url('./assets/fonts/Strawford-Light.otf') format('otf'),
+      url('./assets/fonts/Strawford-Light.ttf') format('ttf');
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/strawford-medium-webfont.woff2') format('woff2'),
-      url('./assets/fonts/strawford-medium-webfont.woff') format('woff');
-  font-weight: 500 600 700 800 900;
+  src: url('./assets/fonts/Strawford-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Strawford-Regular.woff') format('woff'),
+      url('./assets/fonts/Strawford-Regular.eot') format('eot'),
+      url('./assets/fonts/Strawford-Regular.ttf') format('ttf');
+  font-weight: 400 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Strawford';
-  src: url('assets/fonts/Strawford-Regular.otf');  
+  src: url('./assets/fonts/Strawford-Medium.woff2') format('woff2'),
+      url('./assets/fonts/Strawford-Medium.otf') format('otf'),
+      url('./assets/fonts/Strawford-Medium.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap');
+@font-face {
+  font-family: 'Strawford';
+  src: url('./assets/fonts/Strawford-Black.woff2') format('woff2'),
+        url('./assets/fonts/Strawford-Black.woff') format('woff'),
+        url('./assets/fonts/Strawford-Black.eot'),
+        url('./assets/fonts/Strawford-Black.ttf') format('truetype');
+  font-weight: 700 800 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 span, p, label, div {
   font-family: "Strawford", 'Manrope', sans-serif;
