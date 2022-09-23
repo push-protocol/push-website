@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
+import ReactGA from 'react-ga';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
@@ -48,6 +49,7 @@ import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import TeamList from '../config/teamList';
 
 function Home() {
+  ReactGA.pageview('/home');
   // Hero Shrink Animation
   useEffect(() => {
     gsap.to('#hero', {
