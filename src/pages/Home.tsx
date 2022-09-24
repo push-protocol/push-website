@@ -5,22 +5,21 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
-// import { gsap } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Internal Components
-import ReactMarquee from 'react-fast-marquee';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 // Internal Configs
-import { device } from '../config/globals';
+import GLOBALS, { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 import TeamList from '../config/teamList';
 
 // Register GSAP plugins
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 import {
   Anchor,
@@ -52,6 +51,21 @@ import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
 
 function Home() {
+  // Hero Shrink Animation
+  useEffect(() => {
+    gsap.to('#hero', {
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'center center',
+        end: 'bottom center',
+        scrub: true,
+        markers: true,
+      },
+      scale: 0.95,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE
+    });
+  }, []);
+
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
 
   const onClickViewMoreTeamMembers = (e) => {
@@ -65,7 +79,19 @@ function Home() {
       pageTitle={PageMeta.HOME.pageTitle}
     >
       <HomeWrapper>
-        <HeroSection curve="bottom" id="hero" data-bkg="dark">
+        <Section
+          minHeight="100vh"
+          background={GLOBALS.COLORS.BG_LIGHT}
+        >
+          <ItemV
+            id="hero"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_DARK}
+          />
           <Content className="contentBox">
             <ResponsiveHeroContent margin="120px 0 0 0">
               <HeroBox justifyContent="flex-start">
@@ -165,7 +191,7 @@ function Home() {
               <AnalyticsStats />
             </ItemH>
           </Content>
-        </HeroSection>
+        </Section>
 
         <StorySection
           id="story"
