@@ -7,8 +7,9 @@ import Header from './segments/Header';
 import Footer from './segments/Footer';
 
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+// import AboutUs from './pages/AboutUs';
 import TermsOfService from './pages/TermsOfService';
+import Privacy from './pages/Privacy';
 import RedirectToPlatform from './components/RedirectToDiffUrl';
 
 ReactGA.initialize('UA-165415629-2');
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<AboutUs />} /> */}
         <Route path="/tos" element={<TermsOfService />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
       </Routes>
       <Footer />

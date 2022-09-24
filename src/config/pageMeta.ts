@@ -7,5 +7,8 @@ export default {
     pageName: 'tos',
     pageTitle: 'PUSH | Terms Of Service'
   },
-  
+  PRIVACY: {
+    pageName: 'privacy',
+    pageTitle: 'PUSH | Privacy'
+  }
 };
