@@ -31,10 +31,7 @@ function Privacy() {
               <ItemV align="flex-start" margin="0">
                 <H3 maxWidth="400px">LAST UPDATED: 2ND NOVEMBER 2020</H3>
               </ItemV>
-
-              <ItemV align="flex-start" margin="0px">
-                <Para size="1.5rem"><B>IMPORTANT NOTICE: </B>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS ACTION RIGHTS AS DETAILED IN <B>SCHEDULE B</B>. PLEASE READ THE AGREEMENT CAREFULLY.</Para>
-              </ItemV>           
+         
             </ItemH>
           </Content>
         </ResponsiveSection>
