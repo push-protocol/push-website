@@ -8,14 +8,13 @@ import Footer from './segments/Footer';
 
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import PressKit from './pages/PressKit';
+import TermsOfService from './pages/TermsOfService';
 import RedirectToPlatform from './components/RedirectToDiffUrl';
 
+ReactGA.initialize('UA-165415629-2');
 
 function App() {
   useEffect(() => {
-  // Initialize GA
-    ReactGA.initialize('UA-165415629-2');
     ReactGA.pageview('/entry');
   }, []);
 
@@ -27,7 +26,7 @@ function App() {
         {/* add all the route paths here */}
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<AboutUs />} /> */}
-        {/* <Route path="/presskit" element={<PressKit />} /> */}
+        <Route path="/tos" element={<TermsOfService />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
       </Routes>
       <Footer />

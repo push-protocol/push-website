@@ -39,7 +39,6 @@ export async function getBlogData(limit = 4) {
 
   return axios.get(requrl)
     .then((apiResponse) => {
-      console.log(apiResponse);
       const blogs = apiResponse?.data.items;
       return blogs.slice(0, limit);
     }).catch(error => {
