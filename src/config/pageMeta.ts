@@ -6,5 +6,6 @@ export default {
   TOS: {
     pageName: 'tos',
     pageTitle: 'PUSH | Terms Of Service'
-  }
+  },
+  
 };
