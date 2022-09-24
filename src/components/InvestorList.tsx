@@ -3,7 +3,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-// import ReactMarquee from 'react-fast-marquee';
 
 import MarqueeAnimation from './MarqueeAnimation';
 
@@ -57,12 +56,6 @@ function InvestorList() {
     </InvestorCards>
   );
 }
-
-// const MarqueeAnimation = styled(ReactMarquee)`
-//   & .marqueeItem {
-//     margin-right: ${props => props.gap || 0}px;
-//   }
-// `;
 
 const InvestorCards = styled(ItemH)`
     column-gap: 18px;

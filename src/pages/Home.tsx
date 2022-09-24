@@ -930,8 +930,6 @@ function Home() {
   );
 }
 
-const BOX_MAX_WIDTH = 1140;
-
 /**
  * Responsive Styled Components for Shared Styling
  */
@@ -1297,12 +1295,6 @@ const ArticleSource = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
-// const MarqueeAnimation = styled(ReactMarquee)`
-//   & .marqueeItem {
-//     margin-right: ${(props) => props.gap || 0}px;
-//   }
-// `;
 
 const BuiltByCards = styled(ItemH)`
   display: flex;
