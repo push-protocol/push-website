@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Internal Components
-import ReactMarquee from 'react-fast-marquee';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 // Internal Configs
@@ -27,10 +26,12 @@ import {
   Content,
   H2,
   HeroHeader,
+  ItemBreak,
   ItemH,
   ItemV, Section, Span,
 } from '../components/SharedStyling';
 import PageWrapper from '../components/PageWrapper';
+import MarqueeAnimation from '../components/MarqueeAnimation';
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
 import HybridSection from '../components/HybridSection';
@@ -91,7 +92,6 @@ function Home() {
             left="0"
             background={GLOBALS.COLORS.BG_DARK}
           />
-        
           <Content className="contentBox">
             <ResponsiveHeroContent margin="120px 0 0 0">
               <HeroBox justifyContent="flex-start">
@@ -301,8 +301,14 @@ function Home() {
               gap="32px"
             >
               <PartnerChannels />
-              <PartnerChannels direction="right" />
             </ItemH>
+
+            <PartnerChannelsRow
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels direction="right" />
+            </PartnerChannelsRow>
 
             <Partners
               margin="80px 0"
@@ -789,23 +795,24 @@ function Home() {
         >
           <Content className="contentBox">
             <ItemH justifyContent="flex-start">
-              {/* <ItemV justifyContent="flex-start" alignItems="flex-start"> */}
-              <ResponsiveH2
-                color="#FFFFFF"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-              >
-              Featured in
-              </ResponsiveH2>
-              {/* </ItemV> */}
+              <ItemV justifyContent="flex-start" alignItems="flex-start" >
+                <ResponsiveH2
+                  color="#FFFFFF"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  Featured in
+                </ResponsiveH2>
+              </ItemV>
             </ItemH>
 
             <ItemH
               flexDirection="column"
               className="featuredInMarquee"
+              margin="0 0 80px 0"
             >
               <MarqueeAnimation
                 speed={70}
@@ -914,14 +921,14 @@ function Home() {
                 </FeaturedCell>
               </MarqueeAnimation>
             </ItemH>
+
+            <ItemBreak/>
           </Content>
         </FeaturedInSection>
       </HomeWrapper>
     </PageWrapper>
   );
 }
-
-const BOX_MAX_WIDTH = 1140;
 
 /**
  * Responsive Styled Components for Shared Styling
@@ -985,23 +992,13 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
-
   & .contentBox {
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: -80px;
+    margin-top: 120px;
+    margin-bottom: 240px;
   }
-
-  //    & .featuredInMarquee {
-  //     margin-left: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
-  //     margin-right: calc(-100vw / 2 + ${BOX_MAX_WIDTH / 2}px);
-
-  //     @media ${device.tablet} {
-  //         margin-left: calc(-100vw / 2);
-  //         margin-right: calc(-100vw / 2);
-  //     }
-  //    }
 `;
 
 const ResponsiveHeroContent = styled(ItemH)`
@@ -1299,12 +1296,6 @@ const ArticleSource = styled.div`
   justify-content: space-between;
 `;
 
-const MarqueeAnimation = styled(ReactMarquee)`
-  & .marqueeItem {
-    margin-right: ${(props) => props.gap || 0}px;
-  }
-`;
-
 const BuiltByCards = styled(ItemH)`
   display: flex;
   flex-direction: row;
@@ -1329,6 +1320,10 @@ const InvestorHeader = styled(ResponsiveH2)`
     width: 100%;
     text-align: center;
   }
+`;
+
+const PartnerChannelsRow = styled(ItemH)`
+  margin: 130px 0 140px 0;
 `;
 
 export default Home;

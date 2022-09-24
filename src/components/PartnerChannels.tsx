@@ -2,15 +2,14 @@
 // @ts-nocheck
 
 import React from 'react';
-import styled from 'styled-components';
-import ReactMarquee from 'react-fast-marquee';
+import MarqueeAnimation from './MarqueeAnimation';
 
-import { Item } from '../components/SharedStyling';
 
 import { ReactComponent as AaveSVG }  from '../assets/aave.svg';
 import { ReactComponent as EnsSVG }  from '../assets/ens.svg';
 import { ReactComponent as MakerDAOSVG }  from '../assets/makerdao.svg';
 import { ReactComponent as CoindeskSVG }  from '../assets/coindesk.svg';
+
 
 type Props = {
     direction: string;
@@ -37,12 +36,6 @@ function PartnerChannels(props: Props) {
     </MarqueeAnimation> 
   );
 }
-
-const MarqueeAnimation = styled(ReactMarquee)`
-  & .marqueeItem {
-    margin-right: ${props => props.gap || 0}px;
-  }
-`;
 
 
 export default PartnerChannels;
