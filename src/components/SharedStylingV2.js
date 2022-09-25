@@ -135,7 +135,7 @@ export const H1V2 = styled.h1`
   margin: ${(props) => props.margin || '0px'};
   padding: ${(props) => props.padding || '0px'};
   letter-spacing: ${(props) => props.letterSpacing || '-0.03em'};
-  font-family: ${(props) => props.fontFamily || "'Strawford', Helvetica, sans-serif"};
+  font-family: ${(props) => props.fontFamily || '\'Strawford\', Helvetica, sans-serif'};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
   /* text-shadow: 0 0 20px rgb(255 255 255 / 60%); */
