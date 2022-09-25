@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Internal Components
+import Spline from '@splinetool/react-spline';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 // Internal Configs
@@ -21,6 +22,13 @@ import TeamList from '../config/teamList';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+import AnalyticsStats from '../components/AnalyticsStats';
+import Blogs from '../components/Blogs';
+import HybridSection from '../components/HybridSection';
+import InvestorList from '../components/InvestorList';
+import MarqueeAnimation from '../components/MarqueeAnimation';
+import PageWrapper from '../components/PageWrapper';
+import PartnerChannels from '../components/PartnerChannels';
 import {
   Anchor,
   Content,
@@ -28,15 +36,8 @@ import {
   HeroHeader,
   ItemBreak,
   ItemH,
-  ItemV, Section, Span,
+  ItemV, Section, Span
 } from '../components/SharedStyling';
-import PageWrapper from '../components/PageWrapper';
-import MarqueeAnimation from '../components/MarqueeAnimation';
-import AnalyticsStats from '../components/AnalyticsStats';
-import Blogs from '../components/Blogs';
-import HybridSection from '../components/HybridSection';
-import InvestorList from '../components/InvestorList';
-import PartnerChannels from '../components/PartnerChannels';
 import SignupInput from '../components/SignupInput';
 import TeamMember from '../components/TeamMember';
 
@@ -91,7 +92,13 @@ function Home() {
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_DARK}
-          />
+          >
+            <ItemV>
+
+            <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+            </ItemV>
+          </ItemV>
+          
           <Content className="contentBox">
             <ResponsiveHeroContent margin="120px 0 0 0">
               <HeroBox justifyContent="flex-start">
