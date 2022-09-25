@@ -23,8 +23,21 @@ function InvestorList() {
         gradientWidth={8}
         gap={18}
       >
-        <InvestorCard className='marqueeItem'>
-          <ACapital />
+        <InvestorCard className='marqueeItem thumbnail'>
+          <MemberImage
+            width={64}
+            height={64}
+            src="/investors/balaji@1x.png"
+            srcSet="/investors/balaji@2x.png 2x, /investors/balaji@3x.png 3x"
+          />
+          <InvestorDetails>
+            <InvestorName>
+              Balaji S
+            </InvestorName>
+            <InvestorTitle>
+              Serial Entrepreneur
+            </InvestorTitle>
+          </InvestorDetails>
         </InvestorCard>
 
         <InvestorCard className='marqueeItem'>
@@ -35,15 +48,36 @@ function InvestorList() {
           <MemberImage
             width={64}
             height={64}
-            src="/investors/sandeep_polygon.jpg"
-            srcSet="/investors/sandeep_polygon@2x.jpg 2x, /team/sandeep_polygon@3x.jpg 3x"
+            src="/investors/sandeep@1x.png"
+            srcSet="/investors/sandeep@2x.png 2x, /investors/sandeep@3x.png 3x"
           />
           <InvestorDetails>
             <InvestorName>
-                    Sandeep N.
+              Sandeep N
             </InvestorName>
             <InvestorTitle>
-                    Co-Founder Polygon
+              Co-Founder Polygon
+            </InvestorTitle>
+          </InvestorDetails>
+        </InvestorCard>
+
+        <InvestorCard className='marqueeItem'>
+          <ACapital />
+        </InvestorCard>
+
+        <InvestorCard className='marqueeItem thumbnail'>
+          <MemberImage
+            width={64}
+            height={64}
+            src="/investors/andrew@1x.png"
+            srcSet="/investors/andrew@2x.png 2x, /investors/andrew@3x.png 3x"
+          />
+          <InvestorDetails>
+            <InvestorName>
+              Andrew Keys
+            </InvestorName>
+            <InvestorTitle>
+              Angel Investor
             </InvestorTitle>
           </InvestorDetails>
         </InvestorCard>

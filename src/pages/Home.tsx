@@ -95,7 +95,7 @@ function Home() {
           >
             <ItemV>
 
-            <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+              <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
             </ItemV>
           </ItemV>
           
