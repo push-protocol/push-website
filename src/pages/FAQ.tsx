@@ -203,8 +203,6 @@ function FAQ() {
     });
   };
 
-  console.log('showAnswers: ', showAnswers);
-
   return (
     <PageWrapper
       pageName={PageMeta.FAQS.pageName}
