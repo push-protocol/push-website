@@ -10,5 +10,9 @@ export default {
   PRIVACY: {
     pageName: 'privacy',
     pageTitle: 'PUSH | Privacy'
+  },
+  FAQS: {
+    pageName: 'faqs',
+    pageTitle: 'PUSH | FAQs'
   }
 };

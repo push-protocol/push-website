@@ -11,8 +11,10 @@ import Home from './pages/Home';
 import TermsOfService from './pages/TermsOfService';
 import Privacy from './pages/Privacy';
 import PrivacyMobile from 'pages/PrivacyMobile';
+import FAQ from 'pages/FAQ';
 
 import RedirectToPlatform from './components/RedirectToDiffUrl';
+
 
 
 ReactGA.initialize('UA-165415629-2');
@@ -30,6 +32,7 @@ function App() {
         {/* add all the route paths here */}
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<AboutUs />} /> */}
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/tos" element={<TermsOfService />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/privacymobile" element={<PrivacyMobile />} />
