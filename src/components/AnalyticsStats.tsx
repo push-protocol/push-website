@@ -78,6 +78,7 @@ function AnalyticsStats() {
   const totalNotifsSent = nFormatter(17737587, 1);
   const totalSubscribersCount = '60k+';
   const totalChannelCount = '100+';
+  const totalGrantsGiven = 8;
 
   return (
     <KPIBanner>
@@ -97,10 +98,10 @@ function AnalyticsStats() {
       </ItemV>
 
      
-      {/* <ItemV gap="18px" className='kpiItem'>
-            <KPIFigure>86%</KPIFigure>
-            <KPIMetric>Total no. of<br />Chats</KPIMetric>
-        </ItemV> */}
+      <ItemV gap="18px" className='kpiItem'>
+        <KPIFigure>{totalGrantsGiven}</KPIFigure>
+        <KPIMetric>Grants<br />Given</KPIMetric>
+      </ItemV>
     </KPIBanner>
   );
 }
@@ -125,18 +126,24 @@ const KPIBanner = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
 
+        width: 80%;
+
         padding: 24px;
-        row-gap: 40px;
+        row-gap: 32px;
         column-gap: 8px;
+        
 
         & .kpiItem {
-            // flex: 0 0 48%;
-            // align-items: flex-start;
             flex-direction: column;
-
-            flex: 0 0 100%;
-            align-items: center;
             row-gap: 8px;
+
+            // for 4 items
+            flex: 0 0 48%;
+            // align-items: flex-start;           
+
+            // for 3 items
+            // flex: 0 0 100%;
+            // align-items: center;
         }
      }
 `;
