@@ -205,6 +205,86 @@ function Home() {
           data-bkg="light"
         >
           <Content className="contentBox">
+            <PoweringCommunicationRow>
+              <ItemV justifyContent="flex-start">
+                <ResponsiveH2
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                >
+                Powering communication for
+                </ResponsiveH2>
+              </ItemV>
+              <ItemV justifyContent="flex-end">
+                <Anchor
+                  href="https://app.epns.io"
+                  title="PUSH Dapp"
+                  target="_blank"
+                  hoverBG="transparent"
+                  hover="transparent"
+                  filter="none"
+                  color="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                Explore all channels
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
+              </ItemV>
+            </PoweringCommunicationRow>
+
+            <ItemH
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels />
+            </ItemH>
+
+            <ItemH
+              margin="130px 0 240px 0"
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels direction="right" />
+            </ItemH>
+
+            <Partners
+              margin="40px 0"
+              gap="90px"
+            >
+              <ItemV>
+                <Span
+                  weight="400"
+                  color="#303C5E"
+                  size="19px"
+                  lineHeight="160%"
+                  spacing="-0.03em"
+                >
+                Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
+                NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
+                </Span>
+              </ItemV>
+
+              <ItemV>
+                <LiveNetworks>
+                  <ItemV className="network">
+                    <EthLogoTextSVG />
+                  </ItemV>
+
+                  <ItemV className="divider" />
+
+                  <ItemV className="network">
+                    <PolygonLogoTextSVG />
+                  </ItemV>
+                </LiveNetworks>
+              </ItemV>
+            </Partners>
+            
             <PushWorksRow>
               <ItemV
                 justifyContent="center"
@@ -269,85 +349,7 @@ function Home() {
                 </Span>
               </ItemV>
             </PushWorksRow>
-
-            <PoweringCommunicationRow>
-              <ItemV justifyContent="flex-start">
-                <ResponsiveH2
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
-                  lineHeight="110%"
-                >
-                Powering communication for
-                </ResponsiveH2>
-              </ItemV>
-              <ItemV justifyContent="flex-end">
-                <Anchor
-                  href="https://app.epns.io"
-                  title="PUSH Dapp"
-                  target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                Explore all channels
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
-              </ItemV>
-            </PoweringCommunicationRow>
-
-            <ItemH
-              justifyContent="flex-start"
-              gap="32px"
-            >
-              <PartnerChannels />
-            </ItemH>
-
-            <PartnerChannelsRow
-              justifyContent="flex-start"
-              gap="32px"
-            >
-              <PartnerChannels direction="right" />
-            </PartnerChannelsRow>
-
-            <Partners
-              margin="80px 0"
-              gap="90px"
-            >
-              <ItemV>
-                <Span
-                  weight="400"
-                  color="#303C5E"
-                  size="19px"
-                  lineHeight="160%"
-                  spacing="-0.03em"
-                >
-                Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
-                </Span>
-              </ItemV>
-
-              <ItemV>
-                <LiveNetworks>
-                  <ItemV className="network">
-                    <EthLogoTextSVG />
-                  </ItemV>
-
-                  <ItemV className="divider" />
-
-                  <ItemV className="network">
-                    <PolygonLogoTextSVG />
-                  </ItemV>
-                </LiveNetworks>
-              </ItemV>
-            </Partners>
+   
           </Content>
         </StorySection>
 
@@ -973,7 +975,7 @@ const HeroSection = styled(ResponsiveSection)`
 `;
 
 const StorySection = styled(ResponsiveSection)`
-  padding: 160px 160px 80px 160px;
+  padding: 0px 160px 80px 160px;
 
   @media ${device.tablet} {
     padding-bottom: 32px;
@@ -1030,6 +1032,8 @@ const HeroBox = styled(ItemV)`
 
 const PushWorksRow = styled(ItemH)`
   column-gap: 105px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 
   @media ${device.tablet} {
     row-gap: 30px;
@@ -1037,7 +1041,7 @@ const PushWorksRow = styled(ItemH)`
 `;
 
 const PoweringCommunicationRow = styled(ItemH)`
-  margin: 160px 0 50px 0;
+  margin: 80px 0 50px 0;
 
   @media ${device.tablet} {
     margin-top: 80px;
@@ -1327,10 +1331,6 @@ const InvestorHeader = styled(ResponsiveH2)`
     width: 100%;
     text-align: center;
   }
-`;
-
-const PartnerChannelsRow = styled(ItemH)`
-  margin: 130px 0 140px 0;
 `;
 
 export default Home;
