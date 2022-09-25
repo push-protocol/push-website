@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -29,15 +29,8 @@ import InvestorList from '../components/InvestorList';
 import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
-import {
-  Anchor,
-  Content,
-  H2,
-  HeroHeader,
-  ItemBreak,
-  ItemH,
-  ItemV, Section, Span
-} from '../components/SharedStyling';
+import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
+import { ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
 import TeamMember from '../components/TeamMember';
 
@@ -49,21 +42,19 @@ import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
-
-
 function Home() {
   // Hero Shrink Animation
-  useEffect(() => {
-    gsap.to('#hero', {
+  useLayoutEffect(() => {
+    gsap.to('#herobg', {
       scrollTrigger: {
-        trigger: '#hero',
+        trigger: '#herobg',
         start: 'center center',
         end: 'bottom center',
         scrub: true,
         markers: true,
       },
       scale: 0.95,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
   }, []);
 
@@ -80,126 +71,136 @@ function Home() {
       pageTitle={PageMeta.HOME.pageTitle}
     >
       <HomeWrapper>
-        <Section
-          minHeight="100vh"
+        {/* HERO SECTION */}
+        <SectionV2
+          id="hero"
+          minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
           background={GLOBALS.COLORS.BG_LIGHT}
         >
-          <ItemV
-            id="hero"
+          <ItemVV2
+            id="herobg"
             position="absolute"
             top="0"
             right="0"
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_DARK}
-          >
-            <ItemV>
+            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
+          />
 
+          <ContentV2>
+            <HeroAnimation
+              position="absolute"
+              top="0"
+              left="380px"
+              right="auto"
+              bottom="150px"
+              width="100%"
+              zIndex="1"
+            >
               <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-            </ItemV>
-          </ItemV>
-          
-          <Content className="contentBox">
-            <ResponsiveHeroContent margin="120px 0 0 0">
-              <HeroBox justifyContent="flex-start">
-                <HeroHeader>The Communication Protocol of Web3</HeroHeader>
+            </HeroAnimation>
+            <HeroPrimary
+              flex="initial"
+              justifyContent="flex-start"
+            >
+              <HeroItem
+                maxWidth="60%"
+                alignItems="flex-start"
+              >
+                <H1V2 zIndex="2">The Communication Protocol of Web3</H1V2>
 
-                <Span
-                  margin="20px 0px"
+                <SpanV2
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                   color="rgba(255, 255, 255, 1)"
-                  size="22px"
-                  weight="200"
-                  spacing="-0.03em"
-                  lineHeight="142%"
+                  zIndex="2"
                 >
-                Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
-                dapps, wallets, and services.
-                </Span>
-              </HeroBox>
+                  Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
+                  dapps, wallets, and services.
+                </SpanV2>
 
-              <ItemV justifyContent="flex-start"></ItemV>
-            </ResponsiveHeroContent>
+                <HeroCTA
+                  justifyContent="flex-start"
+                  gap="18px"
+                >
+                  <ButtonV2
+                    href="https://docs.epns.io/developers"
+                    title="Developer Docs"
+                    target="_blank"
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    lineHeight="26px"
+                    onClick={() => window.open('https://docs.epns.io/developers')}
+                    zIndex="2"
+                  >
+                    Start Building
+                  </ButtonV2>
+                  <ButtonV2
+                    href="https://app.epns.io/"
+                    title="EPNS Dapp"
+                    target="_blank"
+                    background={GLOBALS.COLORS.BG_DARK_SECONDARY}
+                    lineHeight="26px"
+                    onClick={() => window.open('https://app.epns.io')}
+                    zIndex="2"
+                  >
+                    Explore Push Protocol
+                  </ButtonV2>
+                </HeroCTA>
 
-            <ItemH
-              justifyContent="flex-start"
-              gap="18px"
-              margin="15px 0 0 0"
+                <ItemHV2
+                  justifyContent="flex-start"
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                >
+                  <Anchor
+                    href="https://twitter.com/epnsproject"
+                    title="PUSH Twitter"
+                    target="_blank"
+                    margin="0 0 0 -10px"
+                  >
+                    <TwitterSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+
+                  <Anchor
+                    href="https://github.com/ethereum-push-notification-service"
+                    title="PUSH Github"
+                    target="_blank"
+                  >
+                    <GithubSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+
+                  <Anchor
+                    href="https://discord.gg/YVPB99F9W5"
+                    title="PUSH Discord"
+                    target="_blank"
+                  >
+                    <DiscordSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+                </ItemHV2>
+              </HeroItem>
+            </HeroPrimary>
+
+            <AnalyticsStatsContainer
+              position="absolute"
+              zIndex="9"
+              left="0"
+              right="0"
+              bottom="10vh"
             >
-              <Anchor
-                href="https://docs.epns.io/developers"
-                title="Developer Docs"
-                target="_blank"
-                bg="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-              >
-              Start Building
-              </Anchor>
-              <Anchor
-                href="https://app.epns.io/"
-                title="EPNS Dapp"
-                target="_blank"
-                bg="#2A2A39"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-              >
-              Explore Push Protocol
-              </Anchor>
-            </ItemH>
-
-            <ItemH
-              justifyContent="flex-start"
-              margin="15px 0 0 0"
-            >
-              <Anchor
-                href="https://twitter.com/epnsproject"
-                title="PUSH Twitter"
-                target="_blank"
-                margin="0 0 0 -10px"
-              >
-                <TwitterSVG
-                  width={32}
-                  height={32}
-                />
-              </Anchor>
-
-              <Anchor
-                href="https://github.com/ethereum-push-notification-service"
-                title="PUSH Github"
-                target="_blank"
-              >
-                <GithubSVG
-                  width={32}
-                  height={32}
-                />
-              </Anchor>
-
-              <Anchor
-                href="https://discord.gg/YVPB99F9W5"
-                title="PUSH Discord"
-                target="_blank"
-              >
-                <DiscordSVG
-                  width={32}
-                  height={32}
-                />
-              </Anchor>
-            </ItemH>
-
-            <ItemH margin="120px 0 0 0">
               <AnalyticsStats />
-            </ItemH>
-          </Content>
-        </Section>
+            </AnalyticsStatsContainer>
+          </ContentV2>
+        </SectionV2>
 
+        {/* MISSING PIECE OF WEB3 */}
         <StorySection
           id="story"
           data-bkg="light"
@@ -213,7 +214,7 @@ function Home() {
                   spacing="-0.02em"
                   lineHeight="110%"
                 >
-                Powering communication for
+                  Powering communication for
                 </ResponsiveH2>
               </ItemV>
               <ItemV justifyContent="flex-end">
@@ -232,7 +233,7 @@ function Home() {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                Explore all channels
+                  Explore all channels
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
@@ -265,8 +266,8 @@ function Home() {
                   lineHeight="160%"
                   spacing="-0.03em"
                 >
-                Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
+                  Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
+                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
                 </Span>
               </ItemV>
 
@@ -284,7 +285,7 @@ function Home() {
                 </LiveNetworks>
               </ItemV>
             </Partners>
-            
+
             <PushWorksRow>
               <ItemV
                 justifyContent="center"
@@ -306,7 +307,7 @@ function Home() {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                How Push works
+                  How Push works
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
@@ -322,7 +323,7 @@ function Home() {
                   spacing="-0.02em"
                   lineHeight="110%"
                 >
-                Push is the missing piece of Web3
+                  Push is the missing piece of Web3
                 </ResponsiveH2>
 
                 <Span
@@ -332,9 +333,9 @@ function Home() {
                   lineHeight="160%"
                   spacing="-0.03em"
                 >
-                Until Push, no solution existed to enable native communication between wallets in response to on- and
-                off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
-                communication platforms.
+                  Until Push, no solution existed to enable native communication between wallets in response to on- and
+                  off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
+                  communication platforms.
                 </Span>
 
                 <Span
@@ -344,12 +345,11 @@ function Home() {
                   lineHeight="142%"
                   spacing="-0.03em"
                 >
-                Push is building the communication network for Web3, addressing a gap in critical infrastructure and
-                improving the everyday experience for blockchain users.
+                  Push is building the communication network for Web3, addressing a gap in critical infrastructure and
+                  improving the everyday experience for blockchain users.
                 </Span>
               </ItemV>
             </PushWorksRow>
-   
           </Content>
         </StorySection>
 
@@ -372,7 +372,7 @@ function Home() {
                   lineHeight="110%"
                   margin="0"
                 >
-                Never Miss an Update
+                  Never Miss an Update
                 </ResponsiveH2>
                 <Span
                   color="#303C5E"
@@ -381,7 +381,7 @@ function Home() {
                   spacing="-0.03em"
                   lineHeight="138.5%"
                 >
-                Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                  Sign up and stay up to date with ecosystem announcements, giveaways and more.
                 </Span>
               </ItemV>
 
@@ -406,7 +406,7 @@ function Home() {
                     lineHeight="110%"
                     margin="0"
                   >
-                  Build with Push
+                    Build with Push
                   </ResponsiveH2>
                   <Span
                     color="#303C5E"
@@ -415,8 +415,8 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="160%"
                   >
-                  Push offers dapp developers on any blockchain network the opportunity to build solutions on a
-                  progressively decentralized stack by enabling web3-native communication.
+                    Push offers dapp developers on any blockchain network the opportunity to build solutions on a
+                    progressively decentralized stack by enabling web3-native communication.
                   </Span>
                   <Anchor
                     href="https://docs.epns.io/developers"
@@ -431,7 +431,7 @@ function Home() {
                     lineHeight="26px"
                     self="flex-start"
                   >
-                  Start Building
+                    Start Building
                   </Anchor>
                 </GrowPushCardDetails>
               </GrowPushCard>
@@ -448,7 +448,7 @@ function Home() {
                     lineHeight="110%"
                     margin="0"
                   >
-                  Governed by the Community
+                    Governed by the Community
                   </ResponsiveH2>
                   <Span
                     color="#303C5E"
@@ -457,8 +457,8 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="160%"
                   >
-                  Decentralized communication needs decentralized actors. Get involved in Push governance to build the
-                  future of web 3
+                    Decentralized communication needs decentralized actors. Get involved in Push governance to build the
+                    future of web 3
                   </Span>
                   <Anchor
                     href="https://epns.io/gov"
@@ -473,7 +473,7 @@ function Home() {
                     lineHeight="26px"
                     self="flex-start"
                   >
-                  Know More
+                    Know More
                   </Anchor>
                 </GrowPushCardDetails>
               </GrowPushCard>
@@ -496,7 +496,7 @@ function Home() {
                 lineHeight="110%"
                 margin="0"
               >
-              Grow with Push
+                Grow with Push
               </ResponsiveH2>
 
               <Span
@@ -507,8 +507,8 @@ function Home() {
                 spacing="-0.03em"
                 lineHeight="160%"
               >
-              The $PUSH token enables governance, modification of protocol fees and features, network security, and fee
-              management among all wallets that integrate Push, including Push governance participants.
+                The $PUSH token enables governance, modification of protocol fees and features, network security, and
+                fee management among all wallets that integrate Push, including Push governance participants.
               </Span>
             </IntegrateGrowWithPushRow>
 
@@ -522,7 +522,7 @@ function Home() {
                   lineHeight="110%"
                   margin="0"
                 >
-                Are you a crypto wallet? Integrate and earn.
+                  Are you a crypto wallet? Integrate and earn.
                 </ResponsiveH2>
 
                 <Anchor
@@ -538,7 +538,7 @@ function Home() {
                   lineHeight="26px"
                   self="center"
                 >
-                Learn about $PUSH
+                  Learn about $PUSH
                 </Anchor>
               </IntegrateAndEarn>
             </ItemH>
@@ -556,7 +556,7 @@ function Home() {
                   lineHeight="110%"
                   margin="0"
                 >
-                Why do you need Push?
+                  Why do you need Push?
                 </ResponsiveH2>
               </ItemV>
             </ItemH>
@@ -572,7 +572,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Chain Agnostic
+                    Chain Agnostic
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
@@ -584,7 +584,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Immediate Communication
+                    Immediate Communication
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
@@ -596,7 +596,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Decentralized Stack
+                    Decentralized Stack
                   </Span>
                 </MatrixCell>
 
@@ -609,7 +609,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Improved UX
+                    Improved UX
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
@@ -621,7 +621,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Security Alerts
+                    Security Alerts
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
@@ -633,7 +633,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  Censorship Resistant
+                    Censorship Resistant
                   </Span>
                 </MatrixCell>
               </Matrix>
@@ -650,9 +650,9 @@ function Home() {
                 spacing="-0.03em"
                 lineHeight="142%"
               >
-              Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
-              with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
-              in a broken eco-system and problems in daily use.
+                Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
+                with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
+                in a broken eco-system and problems in daily use.
               </Span>
             </WhyPushTextBox>
 
@@ -670,7 +670,7 @@ function Home() {
                   margin="0"
                   width="50%"
                 >
-                Push Insights & Updates
+                  Push Insights & Updates
                 </ResponsiveH2>
               </ItemV>
 
@@ -690,7 +690,7 @@ function Home() {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                Explore all Articles
+                  Explore all Articles
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
@@ -708,7 +708,7 @@ function Home() {
                   lineHeight="110%"
                   margin="40px 0"
                 >
-                Built By
+                  Built By
                 </ResponsiveH2>
               </ItemV>
 
@@ -720,9 +720,9 @@ function Home() {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                The most diverse personalities have found each other at Push. Unique people with special talents and
-                extraordinary stories. We are united by the joy we take in our tech and in searching for and finding
-                unexpected treasures.
+                  The most diverse personalities have found each other at Push. Unique people with special talents and
+                  extraordinary stories. We are united by the joy we take in our tech and in searching for and finding
+                  unexpected treasures.
                 </Span>
               </ItemV>
             </BuiltByIntro>
@@ -771,7 +771,7 @@ function Home() {
                 spacing="-0.03em"
                 lineHeight="26px"
               >
-              Now Hiring, Explore Careers
+                Now Hiring, Explore Careers
                 <BsArrowUpRight className="anchorSVGlink" />
               </Anchor>
             </TeamMemberButtons>
@@ -789,7 +789,7 @@ function Home() {
                   lineHeight="110%"
                   margin="0"
                 >
-                Backed by successful entrepreneurs and venture capital funds.
+                  Backed by successful entrepreneurs and venture capital funds.
                 </InvestorHeader>
               </ItemV>
             </ItemH>
@@ -804,7 +804,10 @@ function Home() {
         >
           <Content className="contentBox">
             <ItemH justifyContent="flex-start">
-              <ItemV justifyContent="flex-start" alignItems="flex-start" >
+              <ItemV
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
                 <ResponsiveH2
                   color="#FFFFFF"
                   size="40px"
@@ -835,7 +838,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
+                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
                   </Span>
 
                   <ArticleSource>
@@ -855,7 +858,7 @@ function Home() {
                       lineHeight="142%"
                       padding="0"
                     >
-                    Read More
+                      Read More
                       <BsArrowUpRight className="anchorSVGlink" />
                     </Anchor>
                   </ArticleSource>
@@ -869,7 +872,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
+                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
                   </Span>
 
                   <ArticleSource>
@@ -889,7 +892,7 @@ function Home() {
                       lineHeight="142%"
                       padding="0"
                     >
-                    Read More
+                      Read More
                       <BsArrowUpRight className="anchorSVGlink" />
                     </Anchor>
                   </ArticleSource>
@@ -903,7 +906,7 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
                   </Span>
 
                   <ArticleSource>
@@ -923,7 +926,7 @@ function Home() {
                       lineHeight="142%"
                       padding="0"
                     >
-                    Read More
+                      Read More
                       <BsArrowUpRight className="anchorSVGlink" />
                     </Anchor>
                   </ArticleSource>
@@ -931,13 +934,63 @@ function Home() {
               </MarqueeAnimation>
             </ItemH>
 
-            <ItemBreak/>
+            <ItemBreak />
           </Content>
         </FeaturedInSection>
       </HomeWrapper>
     </PageWrapper>
   );
 }
+
+/**
+ * V2 Design
+ */
+const HeroPrimary = styled(ItemHV2)`
+  margin: 120px 0;
+
+  @media ${device.laptop} {
+    margin: 80px 0;
+  }
+
+  @media ${device.mobileM} {
+    margin: 80px 0;
+  }
+`;
+
+const HeroAnimation = styled(ItemHV2)`
+  @media ${device.laptop} {
+  }
+
+  @media ${device.mobileM} {
+  }
+`;
+
+const HeroItem = styled(ItemVV2)`
+  @media ${device.laptop} {
+    max-width: initial;
+  }
+
+  @media ${device.mobileM} {
+    max-width: initial;
+  }
+`;
+
+const HeroCTA = styled(ItemHV2)`
+  @media ${device.mobileM} {
+    &.Button {
+      display: none;
+    }
+  }
+`;
+
+const AnalyticsStatsContainer = styled(ItemHV2)`
+  @media ${device.laptop} {
+    flex: initial;
+    position: relative;
+    bottom: auto;
+    margin: 30px;
+  }
+`;
 
 /**
  * Responsive Styled Components for Shared Styling

@@ -1,7 +1,7 @@
 export default [
   {
     name: 'Harsh Rajat',
-    title: 'Co-founder',
+    title: 'Founder / Project Lead',
     img: [
       '/team/harsh@1x.png', 
       '/team/harsh@2x.png 2x, /team/harsh@3x.png 3x'
@@ -11,7 +11,7 @@ export default [
   },
   {
     name: 'Richa Joshi',
-    title: 'Co-founder',
+    title: 'Co-founder / Marketing Lead',
     img: [
       '/team/richa@1x.png', 
       '/team/richa@2x.png 2x, /team/richa@3x.png 3x'
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Igor',
-    title: 'VP of Tech',
+    title: 'Tech Lead',
     img: [
       '/team/igor@1x.png',
       '/team/igor@2x.png 2x, /team/igor@3x.png 3x'
@@ -61,7 +61,7 @@ export default [
   },
   {
     name: 'Jafett Sandi',
-    title: 'BD & Governance Lead',
+    title: 'Governance Lead',
     img: [
       '/team/jaf@1x.png', 
       '/team/jaf@2x.png 2x, /team/jaf@3x.png 3x'
@@ -71,7 +71,7 @@ export default [
   },
   {
     name: 'Fabio Costa',
-    title: 'Backend Engineer',
+    title: 'Backend Lead',
     img: [
       '/team/fabio@1x.png', 
       '/team/fabio@2x.png 2x, /team/fabio@3x.png 3x'
