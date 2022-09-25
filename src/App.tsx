@@ -6,16 +6,21 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 
-import RedirectToPlatform from './components/RedirectToDiffUrl';
-import AboutUs from './pages/AboutUs';
 import Home from './pages/Home';
-import PressKit from './pages/PressKit';
+// import AboutUs from './pages/AboutUs';
+import FAQ from 'pages/FAQ';
+import PrivacyMobile from 'pages/PrivacyMobile';
+import Privacy from './pages/Privacy';
+import TermsOfService from './pages/TermsOfService';
 
+import RedirectToPlatform from './components/RedirectToDiffUrl';
+
+
+
+ReactGA.initialize('UA-165415629-2');
 
 function App() {
   useEffect(() => {
-  // Initialize GA
-    ReactGA.initialize('UA-165415629-2');
     ReactGA.pageview('/entry');
   }, []);
 
@@ -27,7 +32,10 @@ function App() {
         {/* add all the route paths here */}
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<AboutUs />} /> */}
-        {/* <Route path="/presskit" element={<PressKit />} /> */}
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/tos" element={<TermsOfService />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/privacymobile" element={<PrivacyMobile />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
       </Routes>
       <Footer />

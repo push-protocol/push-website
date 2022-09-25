@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
+import { useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
 import { BsChevronDown } from 'react-icons/bs';
@@ -68,6 +69,8 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
 
+  const navigate = useNavigate();
+
   const showMobileMenu = isMobile && isMobileMenuOpen;
 
   // if mobile view then show only DARK header.
@@ -96,7 +99,7 @@ function Header() {
     <StyledHeader showMobileMenu={showMobileMenu} className={headerClass}>
     
       <MenuTop>
-        <PushLogo />
+        <PushLogo onClick={() => navigate('/')}/>
         <MobileMenuToggleIcon>
           {isMobileMenuOpen ?
             <GrClose size={28} color="#FFFFFF" onClick={toggleMobileMenu} />
@@ -117,7 +120,7 @@ function Header() {
             <Anchor
               href="https://docs.epns.io/developers"
               target="_blank"
-              title="Read Integration Guide"
+              title="Read Developer Guide"
               bg="transparent"
               hoverBG="#fff"
               padding="7px 30px"
@@ -126,12 +129,12 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Developer Guides
+                Developer Guides
             </Anchor>
             <Anchor
               href="https://docs.epns.io/governance"
               target="_blank"
-              title="Read Integration Guide"
+              title="Read Governance Guide"
               bg="transparent"
               hoverBG="#fff"
               padding="7px 30px"
@@ -140,7 +143,7 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Governance Guides
+                Governance Guides
             </Anchor>
             <Anchor
               href="https://whitepaper.epns.io/"
@@ -154,7 +157,7 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            WhitePaper
+                WhitePaper
             </Anchor>
 
           </NavigationMenuContent>
@@ -180,10 +183,10 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Quick Guide
+                Quick Guide
             </Anchor>
             <Anchor
-              href="/faq"
+              href="#/faq"
               title="Frequently Asked Questions"
               bg="transparent"
               hoverBG="#fff"
@@ -193,10 +196,11 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            FAQ
+                FAQ
             </Anchor>
             <Anchor
-              href="/#story"
+              href="https://medium.com/ethereum-push-notification-service"
+              target="_blank"
               title="Read our story"
               bg="transparent"
               hoverBG="#fff"
@@ -206,10 +210,10 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Blog
+                Blog
             </Anchor>
             <Anchor
-              href="/presskit"
+              href="#/"
               title="EPNS Press Kit"
               bg="transparent"
               hoverBG="#fff"
@@ -219,10 +223,10 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Press Kit
+                Press Kit
             </Anchor>
             <Anchor
-              href="/#contact"
+              href="#/"
               title="Contact Us"
               bg="transparent"
               hoverBG="#fff"
@@ -232,7 +236,7 @@ function Header() {
               lineHeight="230%"
               spacing="normal"
             >
-                            Contact Us
+                Contact Us
             </Anchor>
 
           </NavigationMenuContent>
@@ -247,8 +251,9 @@ function Header() {
 
           <NavigationMenuContent className="menuContent" expanded={mobileMenuMap[2]}>
             <Anchor
-              href="./gov"
-              title="Read our story"
+              href="https://epns.io/gov"
+              target="_blank"
+              title="Push Governance"
               bg="transparent"
               hoverBG="#fff"
               padding="7px 30px"
@@ -260,8 +265,9 @@ function Header() {
               Website
             </Anchor>
             <Anchor
-              href="http://gov.epns.io/"
+              href="https://gov.epns.io/"
               target="_blank"
+              title="Push Governance Forum"
               bg="transparent"
               hoverBG="#fff"
               padding="7px 30px"
@@ -274,7 +280,7 @@ function Header() {
             </Anchor>
             <Anchor
               href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-              title="Governance"
+              title="Push Grants"
               target="_blank"
               bg="transparent"
               hoverBG="#fff"
@@ -288,7 +294,7 @@ function Header() {
             </Anchor>
             <Anchor
               href="https://snapshot.org/#/epns.eth"
-              title="Governance"
+              title="Push Snapshot"
               target="_blank"
               bg="transparent"
               hoverBG="#fff"
@@ -302,7 +308,7 @@ function Header() {
             </Anchor>
             <Anchor
               href="http://incentives.epns.io/"
-              title="Governance"
+              title="Delegate"
               target="_blank"
               bg="transparent"
               hoverBG="#fff"
@@ -434,6 +440,10 @@ const MobileMenuToggleIcon = styled.span`
 const MenuTop = styled.div`
   display: flex;
   
+  & svg {
+    cursor: pointer;
+  }
+
   @media ${device.tablet} {
     flex-direction: row;
     width: 100%;

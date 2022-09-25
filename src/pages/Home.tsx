@@ -70,321 +70,450 @@ function Home() {
       pageName={PageMeta.HOME.pageName}
       pageTitle={PageMeta.HOME.pageTitle}
     >
-      {/* HERO SECTION */}
-      <SectionV2
-        id="hero"
-        minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
-        background={GLOBALS.COLORS.BG_LIGHT}
-      >
-        <ItemVV2
-          id="herobg"
-          position="absolute"
-          top="0"
-          right="0"
-          bottom="0"
-          left="0"
-          background={GLOBALS.COLORS.BG_DARK}
-          borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
-        />
+      <HomeWrapper>
+        {/* HERO SECTION */}
+        <SectionV2
+          id="hero"
+          minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
+          background={GLOBALS.COLORS.BG_LIGHT}
+        >
+          <ItemVV2
+            id="herobg"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_DARK}
+            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
+          />
 
-        <ContentV2>
-          <HeroPrimary
-            flex="initial"
-            justifyContent="flex-start"
-          >
-            <HeroItem
-              maxWidth="60%"
-              alignItems="flex-start"
+          <ContentV2>
+            <HeroAnimation
+              position="absolute"
+              top="0"
+              left="380px"
+              right="auto"
+              bottom="150px"
+              width="100%"
+              zIndex="1"
             >
-              <H1V2>The Communication Protocol of Web3</H1V2>
-
-              <SpanV2
-                margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
-                color="rgba(255, 255, 255, 1)"
+              <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+            </HeroAnimation>
+            <HeroPrimary
+              flex="initial"
+              justifyContent="flex-start"
+            >
+              <HeroItem
+                maxWidth="60%"
+                alignItems="flex-start"
               >
-                Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
-                dapps, wallets, and services.
-              </SpanV2>
+                <H1V2 zIndex="2">The Communication Protocol of Web3</H1V2>
 
-              <HeroCTA
-                justifyContent="flex-start"
-                gap="18px"
+                <SpanV2
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                  color="rgba(255, 255, 255, 1)"
+                  zIndex="2"
+                >
+                  Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
+                  dapps, wallets, and services.
+                </SpanV2>
+
+                <HeroCTA
+                  justifyContent="flex-start"
+                  gap="18px"
+                >
+                  <ButtonV2
+                    href="https://docs.epns.io/developers"
+                    title="Developer Docs"
+                    target="_blank"
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    lineHeight="26px"
+                    onClick={() => window.open('https://docs.epns.io/developers')}
+                    zIndex="2"
+                  >
+                    Start Building
+                  </ButtonV2>
+                  <ButtonV2
+                    href="https://app.epns.io/"
+                    title="EPNS Dapp"
+                    target="_blank"
+                    background={GLOBALS.COLORS.BG_DARK_SECONDARY}
+                    lineHeight="26px"
+                    onClick={() => window.open('https://app.epns.io')}
+                    zIndex="2"
+                  >
+                    Explore Push Protocol
+                  </ButtonV2>
+                </HeroCTA>
+
+                <ItemHV2
+                  justifyContent="flex-start"
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                >
+                  <Anchor
+                    href="https://twitter.com/epnsproject"
+                    title="PUSH Twitter"
+                    target="_blank"
+                    margin="0 0 0 -10px"
+                  >
+                    <TwitterSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+
+                  <Anchor
+                    href="https://github.com/ethereum-push-notification-service"
+                    title="PUSH Github"
+                    target="_blank"
+                  >
+                    <GithubSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+
+                  <Anchor
+                    href="https://discord.gg/YVPB99F9W5"
+                    title="PUSH Discord"
+                    target="_blank"
+                  >
+                    <DiscordSVG
+                      width={32}
+                      height={32}
+                    />
+                  </Anchor>
+                </ItemHV2>
+              </HeroItem>
+            </HeroPrimary>
+
+            <AnalyticsStatsContainer
+              position="absolute"
+              zIndex="9"
+              left="0"
+              right="0"
+              bottom="10vh"
+            >
+              <AnalyticsStats />
+            </AnalyticsStatsContainer>
+          </ContentV2>
+        </SectionV2>
+
+        {/* MISSING PIECE OF WEB3 */}
+        <StorySection
+          id="story"
+          data-bkg="light"
+        >
+          <Content className="contentBox">
+            <PoweringCommunicationRow>
+              <ItemV justifyContent="flex-start">
+                <ResponsiveH2
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                >
+                  Powering communication for
+                </ResponsiveH2>
+              </ItemV>
+              <ItemV justifyContent="flex-end">
+                <Anchor
+                  href="https://app.epns.io"
+                  title="PUSH Dapp"
+                  target="_blank"
+                  hoverBG="transparent"
+                  hover="transparent"
+                  filter="none"
+                  color="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  Explore all channels
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
+              </ItemV>
+            </PoweringCommunicationRow>
+
+            <ItemH
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels />
+            </ItemH>
+
+            <ItemH
+              margin="130px 0 240px 0"
+              justifyContent="flex-start"
+              gap="32px"
+            >
+              <PartnerChannels direction="right" />
+            </ItemH>
+
+            <Partners
+              margin="40px 0"
+              gap="90px"
+            >
+              <ItemV>
+                <Span
+                  weight="400"
+                  color="#303C5E"
+                  size="19px"
+                  lineHeight="160%"
+                  spacing="-0.03em"
+                >
+                  Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
+                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
+                </Span>
+              </ItemV>
+
+              <ItemV>
+                <LiveNetworks>
+                  <ItemV className="network">
+                    <EthLogoTextSVG />
+                  </ItemV>
+
+                  <ItemV className="divider" />
+
+                  <ItemV className="network">
+                    <PolygonLogoTextSVG />
+                  </ItemV>
+                </LiveNetworks>
+              </ItemV>
+            </Partners>
+
+            <PushWorksRow>
+              <ItemV
+                justifyContent="center"
+                flex="1"
+                alignItems="end"
               >
-                <ButtonV2
+                <Anchor
                   href="https://docs.epns.io/developers"
                   title="Developer Docs"
                   target="_blank"
-                  background={GLOBALS.COLORS.HIGHLIGHT}
-                  lineHeight="26px"
-                  onClick={() => window.open('https://docs.epns.io/developers')}
+                  hoverBG="transparent"
+                  hover="transparent"
+                  filter="none"
+                  color="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="142%"
                 >
-                  Start Building
-                </ButtonV2>
-                <ButtonV2
-                  href="https://app.epns.io/"
-                  title="EPNS Dapp"
-                  target="_blank"
-                  background={GLOBALS.COLORS.BG_DARK_SECONDARY}
-                  lineHeight="26px"
-                  onClick={() => window.open('https://app.epns.io')}
-                >
-                  Explore Push Protocol
-                </ButtonV2>
-              </HeroCTA>
+                  How Push works
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
+              </ItemV>
 
-              <ItemHV2
+              <ItemV
                 justifyContent="flex-start"
-                margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                flex="2"
+                gap="22px"
               >
-                <Anchor
-                  href="https://twitter.com/epnsproject"
-                  title="PUSH Twitter"
-                  target="_blank"
-                  margin="0 0 0 -10px"
+                <ResponsiveH2
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
                 >
-                  <TwitterSVG
-                    width={32}
-                    height={32}
-                  />
-                </Anchor>
+                  Push is the missing piece of Web3
+                </ResponsiveH2>
 
-                <Anchor
-                  href="https://github.com/ethereum-push-notification-service"
-                  title="PUSH Github"
-                  target="_blank"
+                <Span
+                  weight="400"
+                  color="#303C5E"
+                  size="19px"
+                  lineHeight="160%"
+                  spacing="-0.03em"
                 >
-                  <GithubSVG
-                    width={32}
-                    height={32}
-                  />
-                </Anchor>
+                  Until Push, no solution existed to enable native communication between wallets in response to on- and
+                  off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
+                  communication platforms.
+                </Span>
 
-                <Anchor
-                  href="https://discord.gg/YVPB99F9W5"
-                  title="PUSH Discord"
-                  target="_blank"
+                <Span
+                  weight="500"
+                  color="#121315"
+                  size="22px"
+                  lineHeight="142%"
+                  spacing="-0.03em"
                 >
-                  <DiscordSVG
-                    width={32}
-                    height={32}
-                  />
-                </Anchor>
-              </ItemHV2>
-            </HeroItem>
-            <ItemVV2>
-              <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-            </ItemVV2>
-          </HeroPrimary>
+                  Push is building the communication network for Web3, addressing a gap in critical infrastructure and
+                  improving the everyday experience for blockchain users.
+                </Span>
+              </ItemV>
+            </PushWorksRow>
+          </Content>
+        </StorySection>
 
-          <AnalyticsStatsContainer
-            position="absolute"
-            zIndex="9"
-            left="0"
-            right="0"
-            bottom="10vh"
-          >
-            <AnalyticsStats />
-          </AnalyticsStatsContainer>
-        </ContentV2>
-      </SectionV2>
-
-      {/* MISSING PIECE OF WEB3 */}
-      <StorySection
-        id="story"
-        data-bkg="light"
-      >
-        <Content className="contentBox">
-          <PushWorksRow>
-            <ItemV
-              justifyContent="center"
-              flex="1"
-              alignItems="end"
-            >
-              <Anchor
-                href="https://docs.epns.io/developers"
-                title="Developer Docs"
-                target="_blank"
-                hoverBG="transparent"
-                hover="transparent"
-                filter="none"
-                color="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="142%"
+        <BuildWithPushSection
+          curve="both"
+          id="buildWithPush"
+          data-bkg="dark"
+        >
+          <Content className="contentBox">
+            <SignupBox margin="0 0 80px 0">
+              <ItemV
+                justifyContent="flex-start"
+                gap="12px"
               >
-                How Push works
-                <BsArrowUpRight className="anchorSVGlink" />
-              </Anchor>
-            </ItemV>
+                <ResponsiveH2
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  Never Miss an Update
+                </ResponsiveH2>
+                <Span
+                  color="#303C5E"
+                  size="18px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="138.5%"
+                >
+                  Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                </Span>
+              </ItemV>
 
-            <ItemV
+              <ItemV>
+                <SignupInput />
+              </ItemV>
+            </SignupBox>
+
+            <ItemH
               justifyContent="flex-start"
-              flex="2"
-              gap="22px"
+              gap="15px"
             >
+              <GrowPushCard>
+                <GrowPushCardFigure />
+
+                <GrowPushCardDetails>
+                  <ResponsiveH2
+                    color="#09090B"
+                    size="40px"
+                    weight="700"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    Build with Push
+                  </ResponsiveH2>
+                  <Span
+                    color="#303C5E"
+                    size="19px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="160%"
+                  >
+                    Push offers dapp developers on any blockchain network the opportunity to build solutions on a
+                    progressively decentralized stack by enabling web3-native communication.
+                  </Span>
+                  <Anchor
+                    href="https://docs.epns.io/developers"
+                    title="Developer Docs"
+                    target="_blank"
+                    bg="#DD44B9"
+                    radius="16px"
+                    padding="14px 32px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="26px"
+                    self="flex-start"
+                  >
+                    Start Building
+                  </Anchor>
+                </GrowPushCardDetails>
+              </GrowPushCard>
+
+              <GrowPushCard background="#F0DCFF">
+                <GrowPushCardFigure />
+
+                <GrowPushCardDetails>
+                  <ResponsiveH2
+                    color="#09090B"
+                    size="40px"
+                    weight="700"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    Governed by the Community
+                  </ResponsiveH2>
+                  <Span
+                    color="#303C5E"
+                    size="19px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="160%"
+                  >
+                    Decentralized communication needs decentralized actors. Get involved in Push governance to build the
+                    future of web 3
+                  </Span>
+                  <Anchor
+                    href="https://epns.io/gov"
+                    title="Governance"
+                    target="_blank"
+                    bg="#DD44B9"
+                    radius="16px"
+                    padding="14px 32px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="26px"
+                    self="flex-start"
+                  >
+                    Know More
+                  </Anchor>
+                </GrowPushCardDetails>
+              </GrowPushCard>
+            </ItemH>
+          </Content>
+        </BuildWithPushSection>
+
+        <IntergrateWithPushSection
+          curve="bottom"
+          id="integratePush"
+          data-bkg="light"
+        >
+          <Content className="contentBox">
+            <IntegrateGrowWithPushRow gap="18px">
               <ResponsiveH2
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-              >
-                Push is the missing piece of Web3
-              </ResponsiveH2>
-
-              <Span
-                weight="400"
-                color="#303C5E"
-                size="19px"
-                lineHeight="160%"
-                spacing="-0.03em"
-              >
-                Until Push, no solution existed to enable native communication between wallets in response to on- and
-                off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
-                communication platforms.
-              </Span>
-
-              <Span
-                weight="500"
                 color="#121315"
-                size="22px"
-                lineHeight="142%"
-                spacing="-0.03em"
-              >
-                Push is building the communication network for Web3, addressing a gap in critical infrastructure and
-                improving the everyday experience for blockchain users.
-              </Span>
-            </ItemV>
-          </PushWorksRow>
-
-          <PoweringCommunicationRow>
-            <ItemV justifyContent="flex-start">
-              <ResponsiveH2
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-              >
-                Powering communication for
-              </ResponsiveH2>
-            </ItemV>
-            <ItemV justifyContent="flex-end">
-              <Anchor
-                href="https://app.epns.io"
-                title="PUSH Dapp"
-                target="_blank"
-                hoverBG="transparent"
-                hover="transparent"
-                filter="none"
-                color="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="142%"
-              >
-                Explore all channels
-                <BsArrowUpRight className="anchorSVGlink" />
-              </Anchor>
-            </ItemV>
-          </PoweringCommunicationRow>
-
-          <ItemH
-            justifyContent="flex-start"
-            gap="32px"
-          >
-            <PartnerChannels />
-          </ItemH>
-
-          <PartnerChannelsRow
-            justifyContent="flex-start"
-            gap="32px"
-          >
-            <PartnerChannels direction="right" />
-          </PartnerChannelsRow>
-
-          <Partners
-            margin="80px 0"
-            gap="90px"
-          >
-            <ItemV>
-              <Span
-                weight="400"
-                color="#303C5E"
-                size="19px"
-                lineHeight="160%"
-                spacing="-0.03em"
-              >
-                Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
-              </Span>
-            </ItemV>
-
-            <ItemV>
-              <LiveNetworks>
-                <ItemV className="network">
-                  <EthLogoTextSVG />
-                </ItemV>
-
-                <ItemV className="divider" />
-
-                <ItemV className="network">
-                  <PolygonLogoTextSVG />
-                </ItemV>
-              </LiveNetworks>
-            </ItemV>
-          </Partners>
-        </Content>
-      </StorySection>
-
-      <BuildWithPushSection
-        curve="both"
-        id="buildWithPush"
-        data-bkg="dark"
-      >
-        <Content className="contentBox">
-          <SignupBox margin="0 0 80px 0">
-            <ItemV
-              justifyContent="flex-start"
-              gap="12px"
-            >
-              <ResponsiveH2
-                color="#09090B"
                 size="40px"
                 weight="700"
                 spacing="-0.02em"
                 lineHeight="110%"
                 margin="0"
               >
-                Never Miss an Update
+                Grow with Push
               </ResponsiveH2>
+
               <Span
+                className="growWithPushtext"
                 color="#303C5E"
-                size="18px"
+                size="19px"
                 weight="400"
                 spacing="-0.03em"
-                lineHeight="138.5%"
+                lineHeight="160%"
               >
-                Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                The $PUSH token enables governance, modification of protocol fees and features, network security, and
+                fee management among all wallets that integrate Push, including Push governance participants.
               </Span>
-            </ItemV>
+            </IntegrateGrowWithPushRow>
 
-            <ItemV>
-              <SignupInput />
-            </ItemV>
-          </SignupBox>
-
-          <ItemH
-            justifyContent="flex-start"
-            gap="15px"
-          >
-            <GrowPushCard>
-              <GrowPushCardFigure />
-
-              <GrowPushCardDetails>
+            <ItemH margin="120px 0 0 0">
+              <IntegrateAndEarn>
                 <ResponsiveH2
                   color="#09090B"
                   size="40px"
@@ -393,63 +522,12 @@ function Home() {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Build with Push
+                  Are you a crypto wallet? Integrate and earn.
                 </ResponsiveH2>
-                <Span
-                  color="#303C5E"
-                  size="19px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="160%"
-                >
-                  Push offers dapp developers on any blockchain network the opportunity to build solutions on a
-                  progressively decentralized stack by enabling web3-native communication.
-                </Span>
-                <Anchor
-                  href="https://docs.epns.io/developers"
-                  title="Developer Docs"
-                  target="_blank"
-                  bg="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="26px"
-                  self="flex-start"
-                >
-                  Start Building
-                </Anchor>
-              </GrowPushCardDetails>
-            </GrowPushCard>
 
-            <GrowPushCard background="#F0DCFF">
-              <GrowPushCardFigure />
-
-              <GrowPushCardDetails>
-                <ResponsiveH2
-                  color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
-                >
-                  Governed by the Community
-                </ResponsiveH2>
-                <Span
-                  color="#303C5E"
-                  size="19px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="160%"
-                >
-                  Decentralized communication needs decentralized actors. Get involved in Push governance to build the
-                  future of web 3
-                </Span>
                 <Anchor
                   href="https://epns.io/gov"
-                  title="Governance"
+                  title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"
                   radius="16px"
@@ -458,63 +536,232 @@ function Home() {
                   weight="500"
                   spacing="-0.03em"
                   lineHeight="26px"
-                  self="flex-start"
+                  self="center"
                 >
-                  Know More
+                  Learn about $PUSH
                 </Anchor>
-              </GrowPushCardDetails>
-            </GrowPushCard>
-          </ItemH>
-        </Content>
-      </BuildWithPushSection>
+              </IntegrateAndEarn>
+            </ItemH>
 
-      <IntergrateWithPushSection
-        curve="bottom"
-        id="integratePush"
-        data-bkg="light"
-      >
-        <Content className="contentBox">
-          <IntegrateGrowWithPushRow gap="18px">
-            <ResponsiveH2
-              color="#121315"
-              size="40px"
-              weight="700"
-              spacing="-0.02em"
-              lineHeight="110%"
-              margin="0"
-            >
-              Grow with Push
-            </ResponsiveH2>
-
-            <Span
-              className="growWithPushtext"
-              color="#303C5E"
-              size="19px"
-              weight="400"
-              spacing="-0.03em"
-              lineHeight="160%"
-            >
-              The $PUSH token enables governance, modification of protocol fees and features, network security, and fee
-              management among all wallets that integrate Push, including Push governance participants.
-            </Span>
-          </IntegrateGrowWithPushRow>
-
-          <ItemH margin="120px 0 0 0">
-            <IntegrateAndEarn>
-              <ResponsiveH2
-                color="#09090B"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
+            <ItemH margin="80px 0 0 0">
+              <ItemV
+                justifyContent="flex-start"
+                alignItems="flex-start"
               >
-                Are you a crypto wallet? Integrate and earn.
-              </ResponsiveH2>
+                <ResponsiveH2
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  Why do you need Push?
+                </ResponsiveH2>
+              </ItemV>
+            </ItemH>
 
+            <ItemH padding="80px 0 0 0">
+              <Matrix>
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Chain Agnostic
+                  </Span>
+                </MatrixCell>
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Immediate Communication
+                  </Span>
+                </MatrixCell>
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Decentralized Stack
+                  </Span>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Improved UX
+                  </Span>
+                </MatrixCell>
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Security Alerts
+                  </Span>
+                </MatrixCell>
+                <MatrixCell>
+                  <MatrixFigure />
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Censorship Resistant
+                  </Span>
+                </MatrixCell>
+              </Matrix>
+            </ItemH>
+
+            <WhyPushTextBox
+              textAlign="center"
+              margin="80px 160px"
+            >
+              <Span
+                color="#303C5E"
+                size="19px"
+                weight="400"
+                spacing="-0.03em"
+                lineHeight="142%"
+              >
+                Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
+                with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
+                in a broken eco-system and problems in daily use.
+              </Span>
+            </WhyPushTextBox>
+
+            <ItemH margin="80px 0 0 0">
+              <ItemV
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <ResponsiveH2
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                  width="50%"
+                >
+                  Push Insights & Updates
+                </ResponsiveH2>
+              </ItemV>
+
+              <ItemV justifyContent="flex-end">
+                <Anchor
+                  href="https://app.epns.io"
+                  title="Exlore all articles"
+                  target="_blank"
+                  hoverBG="transparent"
+                  hover="transparent"
+                  filter="none"
+                  color="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  Explore all Articles
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
+              </ItemV>
+            </ItemH>
+
+            <Blogs count={4} />
+
+            <BuiltByIntro flexDirection="column">
+              <ItemV justifyContent="center">
+                <ResponsiveH2
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="40px 0"
+                >
+                  Built By
+                </ResponsiveH2>
+              </ItemV>
+
+              <ItemV>
+                <Span
+                  color="#303C5E"
+                  size="19px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  The most diverse personalities have found each other at Push. Unique people with special talents and
+                  extraordinary stories. We are united by the joy we take in our tech and in searching for and finding
+                  unexpected treasures.
+                </Span>
+              </ItemV>
+            </BuiltByIntro>
+
+            <BuiltByCards>
+              {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
+                return (
+                  <TeamMember
+                    key={memberIndex}
+                    name={teamMember.name}
+                    title={teamMember.title}
+                    img={teamMember.img}
+                    twitter={teamMember.twitter}
+                    linkedin={teamMember.linkedin}
+                  />
+                );
+              })}
+            </BuiltByCards>
+
+            <TeamMemberButtons
+              gap="22px"
+              margin="80px 0"
+            >
               <Anchor
-                href="https://epns.io/gov"
-                title="Learn about $PUSH"
+                title={!showMoreTeamMembers ? 'View More' : 'View Less'}
+                bg="#2A2A39"
+                radius="16px"
+                padding="14px 32px"
+                size="18px"
+                weight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+                onClick={onClickViewMoreTeamMembers}
+              >
+                {!showMoreTeamMembers ? 'View More' : 'View Less'}
+              </Anchor>
+              <Anchor
+                href="https://app.epns.io/"
+                title="Jobs"
                 target="_blank"
                 bg="#DD44B9"
                 radius="16px"
@@ -523,407 +770,174 @@ function Home() {
                 weight="500"
                 spacing="-0.03em"
                 lineHeight="26px"
-                self="center"
               >
-                Learn about $PUSH
-              </Anchor>
-            </IntegrateAndEarn>
-          </ItemH>
-
-          <ItemH margin="80px 0 0 0">
-            <ItemV
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
-              <ResponsiveH2
-                color="#09090B"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-              >
-                Why do you need Push?
-              </ResponsiveH2>
-            </ItemV>
-          </ItemH>
-
-          <ItemH padding="80px 0 0 0">
-            <Matrix>
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Chain Agnostic
-                </Span>
-              </MatrixCell>
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Immediate Communication
-                </Span>
-              </MatrixCell>
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Decentralized Stack
-                </Span>
-              </MatrixCell>
-
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Improved UX
-                </Span>
-              </MatrixCell>
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Security Alerts
-                </Span>
-              </MatrixCell>
-              <MatrixCell>
-                <MatrixFigure />
-                <Span
-                  color="#09090B"
-                  size="24px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Censorship Resistant
-                </Span>
-              </MatrixCell>
-            </Matrix>
-          </ItemH>
-
-          <WhyPushTextBox
-            textAlign="center"
-            margin="80px 160px"
-          >
-            <Span
-              color="#303C5E"
-              size="19px"
-              weight="400"
-              spacing="-0.03em"
-              lineHeight="142%"
-            >
-              Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
-              with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
-              in a broken eco-system and problems in daily use.
-            </Span>
-          </WhyPushTextBox>
-
-          <ItemH margin="80px 0 0 0">
-            <ItemV
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
-              <ResponsiveH2
-                color="#09090B"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-                width="50%"
-              >
-                Push Insights & Updates
-              </ResponsiveH2>
-            </ItemV>
-
-            <ItemV justifyContent="flex-end">
-              <Anchor
-                href="https://app.epns.io"
-                title="Exlore all articles"
-                target="_blank"
-                hoverBG="transparent"
-                hover="transparent"
-                filter="none"
-                color="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="142%"
-              >
-                Explore all Articles
+                Now Hiring, Explore Careers
                 <BsArrowUpRight className="anchorSVGlink" />
               </Anchor>
-            </ItemV>
-          </ItemH>
+            </TeamMemberButtons>
 
-          <Blogs count={4} />
-
-          <BuiltByIntro flexDirection="column">
-            <ItemV justifyContent="center">
-              <ResponsiveH2
-                color="#09090B"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="40px 0"
+            <ItemH margin="80px 0 80px 0">
+              <ItemV
+                justifyContent="flex-start"
+                alignItems="flex-start"
               >
-                Built By
-              </ResponsiveH2>
-            </ItemV>
-
-            <ItemV>
-              <Span
-                color="#303C5E"
-                size="19px"
-                weight="400"
-                spacing="-0.03em"
-                lineHeight="142%"
-              >
-                The most diverse personalities have found each other at Push. Unique people with special talents and
-                extraordinary stories. We are united by the joy we take in our tech and in searching for and finding
-                unexpected treasures.
-              </Span>
-            </ItemV>
-          </BuiltByIntro>
-
-          <BuiltByCards>
-            {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
-              return (
-                <TeamMember
-                  key={memberIndex}
-                  name={teamMember.name}
-                  title={teamMember.title}
-                  img={teamMember.img}
-                  twitter={teamMember.twitter}
-                  linkedin={teamMember.linkedin}
-                />
-              );
-            })}
-          </BuiltByCards>
-
-          <TeamMemberButtons
-            gap="22px"
-            margin="80px 0"
-          >
-            <Anchor
-              title={!showMoreTeamMembers ? 'View More' : 'View Less'}
-              bg="#2A2A39"
-              radius="16px"
-              padding="14px 32px"
-              size="18px"
-              weight="500"
-              spacing="-0.03em"
-              lineHeight="26px"
-              onClick={onClickViewMoreTeamMembers}
-            >
-              {!showMoreTeamMembers ? 'View More' : 'View Less'}
-            </Anchor>
-            <Anchor
-              href="https://app.epns.io/"
-              title="Jobs"
-              target="_blank"
-              bg="#DD44B9"
-              radius="16px"
-              padding="14px 32px"
-              size="18px"
-              weight="500"
-              spacing="-0.03em"
-              lineHeight="26px"
-            >
-              Now Hiring, Explore Careers
-              <BsArrowUpRight className="anchorSVGlink" />
-            </Anchor>
-          </TeamMemberButtons>
-
-          <ItemH margin="80px 0 80px 0">
-            <ItemV
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
-              <InvestorHeader
-                color="#09090B"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-              >
-                Backed by successful entrepreneurs and venture capital funds.
-              </InvestorHeader>
-            </ItemV>
-          </ItemH>
-
-          <InvestorList />
-        </Content>
-      </IntergrateWithPushSection>
-
-      <FeaturedInSection
-        id="featuredIn"
-        data-bkg="dark"
-      >
-        <Content className="contentBox">
-          <ItemH justifyContent="flex-start">
-            <ItemV
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
-              <ResponsiveH2
-                color="#FFFFFF"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="110%"
-                margin="0"
-              >
-                Featured in
-              </ResponsiveH2>
-            </ItemV>
-          </ItemH>
-
-          <ItemH
-            flexDirection="column"
-            className="featuredInMarquee"
-            margin="0 0 80px 0"
-          >
-            <MarqueeAnimation
-              speed={70}
-              gradient={false}
-            >
-              <FeaturedCell className="marqueeItem">
-                <Span
-                  color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="142%"
+                <InvestorHeader
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
                 >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
-                </Span>
+                  Backed by successful entrepreneurs and venture capital funds.
+                </InvestorHeader>
+              </ItemV>
+            </ItemH>
 
-                <ArticleSource>
-                  <EthFoundationBlackSVG />
-                  <Anchor
-                    href="https://app.epns.io"
-                    title="Read More"
-                    target="_blank"
-                    hoverBG="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
+            <InvestorList />
+          </Content>
+        </IntergrateWithPushSection>
+
+        <FeaturedInSection
+          id="featuredIn"
+          data-bkg="dark"
+        >
+          <Content className="contentBox">
+            <ItemH justifyContent="flex-start">
+              <ItemV
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <ResponsiveH2
+                  color="#FFFFFF"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  Featured in
+                </ResponsiveH2>
+              </ItemV>
+            </ItemH>
+
+            <ItemH
+              flexDirection="column"
+              className="featuredInMarquee"
+              margin="0 0 80px 0"
+            >
+              <MarqueeAnimation
+                speed={70}
+                gradient={false}
+              >
+                <FeaturedCell className="marqueeItem">
+                  <Span
+                    color="#FFFFFF"
+                    size="22px"
+                    weight="400"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    padding="0"
                   >
-                    Read More
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
-                </ArticleSource>
-              </FeaturedCell>
+                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
+                  </Span>
 
-              <FeaturedCell className="marqueeItem">
-                <Span
-                  color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
-                </Span>
+                  <ArticleSource>
+                    <EthFoundationBlackSVG />
+                    <Anchor
+                      href="https://app.epns.io"
+                      title="Read More"
+                      target="_blank"
+                      hoverBG="transparent"
+                      hover="transparent"
+                      filter="none"
+                      color="#DD44B9"
+                      radius="16px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="0"
+                    >
+                      Read More
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                  </ArticleSource>
+                </FeaturedCell>
 
-                <ArticleSource>
-                  <EthFoundationBlackSVG />
-                  <Anchor
-                    href="https://app.epns.io"
-                    title="Read More"
-                    target="_blank"
-                    hoverBG="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
+                <FeaturedCell className="marqueeItem">
+                  <Span
+                    color="#FFFFFF"
+                    size="22px"
+                    weight="400"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    padding="0"
                   >
-                    Read More
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
-                </ArticleSource>
-              </FeaturedCell>
+                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
+                  </Span>
 
-              <FeaturedCell className="marqueeItem">
-                <Span
-                  color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
-                </Span>
+                  <ArticleSource>
+                    <EthFoundationBlackSVG />
+                    <Anchor
+                      href="https://app.epns.io"
+                      title="Read More"
+                      target="_blank"
+                      hoverBG="transparent"
+                      hover="transparent"
+                      filter="none"
+                      color="#DD44B9"
+                      radius="16px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="0"
+                    >
+                      Read More
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                  </ArticleSource>
+                </FeaturedCell>
 
-                <ArticleSource>
-                  <CoindeskBlackSVG />
-                  <Anchor
-                    href="https://app.epns.io"
-                    title="Read More"
-                    target="_blank"
-                    hoverBG="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
+                <FeaturedCell className="marqueeItem">
+                  <Span
+                    color="#FFFFFF"
+                    size="22px"
+                    weight="400"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    padding="0"
                   >
-                    Read More
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
-                </ArticleSource>
-              </FeaturedCell>
-            </MarqueeAnimation>
-          </ItemH>
+                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                  </Span>
 
-          <ItemBreak />
-        </Content>
-      </FeaturedInSection>
+                  <ArticleSource>
+                    <CoindeskBlackSVG />
+                    <Anchor
+                      href="https://app.epns.io"
+                      title="Read More"
+                      target="_blank"
+                      hoverBG="transparent"
+                      hover="transparent"
+                      filter="none"
+                      color="#DD44B9"
+                      radius="16px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="0"
+                    >
+                      Read More
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                  </ArticleSource>
+                </FeaturedCell>
+              </MarqueeAnimation>
+            </ItemH>
+
+            <ItemBreak />
+          </Content>
+        </FeaturedInSection>
+      </HomeWrapper>
     </PageWrapper>
   );
 }
@@ -940,6 +954,14 @@ const HeroPrimary = styled(ItemHV2)`
 
   @media ${device.mobileM} {
     margin: 80px 0;
+  }
+`;
+
+const HeroAnimation = styled(ItemHV2)`
+  @media ${device.laptop} {
+  }
+
+  @media ${device.mobileM} {
   }
 `;
 
@@ -1006,7 +1028,7 @@ const HeroSection = styled(ResponsiveSection)`
 `;
 
 const StorySection = styled(ResponsiveSection)`
-  padding: 160px 160px 80px 160px;
+  padding: 0px 160px 80px 160px;
 
   @media ${device.tablet} {
     padding-bottom: 32px;
@@ -1063,6 +1085,8 @@ const HeroBox = styled(ItemV)`
 
 const PushWorksRow = styled(ItemH)`
   column-gap: 105px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 
   @media ${device.tablet} {
     row-gap: 30px;
@@ -1070,7 +1094,7 @@ const PushWorksRow = styled(ItemH)`
 `;
 
 const PoweringCommunicationRow = styled(ItemH)`
-  margin: 160px 0 50px 0;
+  margin: 80px 0 50px 0;
 
   @media ${device.tablet} {
     margin-top: 80px;
@@ -1360,10 +1384,6 @@ const InvestorHeader = styled(ResponsiveH2)`
     width: 100%;
     text-align: center;
   }
-`;
-
-const PartnerChannelsRow = styled(ItemH)`
-  margin: 130px 0 140px 0;
 `;
 
 export default Home;

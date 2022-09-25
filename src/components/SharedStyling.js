@@ -48,6 +48,21 @@ export const HeroHeader = styled.h1`
 	}
 `;
 
+export const PageHeader = styled.h1`
+	font-family: 'Strawford';
+    font-weight: 700;
+    line-height: 1.25em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+	text-shadow: none;
+
+
+	@media ${device.tablet} {
+		font-size: 1.5rem;
+	}
+`;
+
 // Section covers the entire width and height
 export const Section = styled.section`
   align-items: ${(props) => props.alignItems || 'center'};
