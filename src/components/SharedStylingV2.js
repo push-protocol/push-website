@@ -50,7 +50,7 @@ export const SectionV2 = styled.section`
 
 export const ContentV2 = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => props.flexDirection || 'column'};
   position: relative;
   padding: ${(props) => props.padding || 'initial'};
   
@@ -138,7 +138,9 @@ export const H1V2 = styled.h1`
   font-family: ${(props) => props.fontFamily || "'Strawford', Helvetica, sans-serif"};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
-  text-shadow: 0 0 20px rgb(255 255 255 / 60%);
+  /* text-shadow: 0 0 20px rgb(255 255 255 / 60%); */
+  text-shadow: none;
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   @media ${device.laptop} {
     font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.PRIMARY_HEADING.TABLET};
@@ -235,7 +237,7 @@ export const ButtonV2 = styled.button`
   position: ${(props) => props.position || 'relative'};
   text-decoration: ${(props) => props.textDecoration || 'none'};
   overflow: ${(props) => props.overflow || 'hidden'};
-  z-index: 3;
+  z-index: ${(props) => props.zIndex || '3'};
   pointer: ${(props) => props.pointer || 'hand'};
   cursor: ${(props) => props.cursor || 'pointer'};
 
