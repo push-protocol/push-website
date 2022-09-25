@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
 import ReactGA from 'react-ga';
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Header from './segments/Header';
 import Footer from './segments/Footer';
+import Header from './segments/Header';
 
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import PressKit from './pages/PressKit';
 import RedirectToPlatform from './components/RedirectToDiffUrl';
+import AboutUs from './pages/AboutUs';
+import Home from './pages/Home';
+import PressKit from './pages/PressKit';
 
 
 function App() {
@@ -40,7 +40,6 @@ const AppWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-  background: #121315;
 `;
 
 export default App;

@@ -27,21 +27,21 @@ export const globalsPadding = {};
 export const globalsMargin = {
   DEFAULT: {
     DESKTOP: {
-      TOP: '0px',
-      RIGHT: '30px',
-      BOTTOM: '48px',
-      LEFT: '30px',
+      TOP: '120px',
+      RIGHT: '40px',
+      BOTTOM: '120px',
+      LEFT: '40px',
     },
     TABLET: {
-      TOP: '25px',
+      TOP: '60px',
       RIGHT: '25px',
-      BOTTOM: '25px',
+      BOTTOM: '60px',
       LEFT: '25px',
     },
     MOBILE: {
-      TOP: '20px',
+      TOP: '40px',
       RIGHT: '20px',
-      BOTTOM: '20px',
+      BOTTOM: '40px',
       LEFT: '20px',
     },
   }
@@ -64,9 +64,9 @@ const GLOBALS = {
 
   ADJUSTMENTS: {
     PADDING: {
-      DEFAULT: '20px',
-      BIG: '40px',
       HUGE: '60px',
+      BIG: '40px',
+      SMALL: '20px',
     },
     MARGIN: {
       VERTICAL: '30px',
@@ -80,20 +80,44 @@ const GLOBALS = {
     },
     RADIUS: {
       LARGE: '48px',
+      SMALL: '16px',
     },
     BLUR: {
       DEFAULT: 5,
+    },
+    FONT: {
+      PRIMARY_HEADING: {
+        DESKTOP: '64px',
+        TABLET: '44px',
+        MOBILE: '36px'
+      },
+      HEADING: {
+        DESKTOP: '32px',
+        TABLET: '28px',
+        MOBILE: '26px'
+      },
+      HIGHLIGHTED_TEXT: {
+        DESKTOP: '48px',
+        TABLET: '40px',
+        MOBILE: '32px'
+      },
+      NORMAL_TEXT: {
+        DESKTOP: '22px',
+        TABLET: '18px',
+        MOBILE: '16px'
+      } 
     }
   },
 
   COLORS: {
     HIGHLIGHT: '#DD44B9',
-    COLOR_LIGHT: '#FFF',
-    COLOR_LIGHT_SECONDARY: 'FFF',
-    COLOR_DARK: '#000',
-    COLOR_DARK_SECONDARY: '#303C5E',
+    FONT_LIGHT: '#FFF',
+    FONT_LIGHT_SECONDARY: 'FFF',
+    FONT_DARK: '#121315',
+    FONT_DARK_SECONDARY: '#303C5E',
     BG_LIGHT: '#FFF',
     BG_DARK: '#121315',
+    BG_DARK_SECONDARY: '#2A2A39',
     BG_LIGHT_SECONDARY: '#F0DCFF',
     BG_HIGHLIGHTED_LIGHT_TRANSPARENT: 'rgba(219, 171, 255, 0.7);',
     BG_HIGHLIGHTED_MID_TRANSPARENT: 'rgba(235, 216, 249, 0.5);',

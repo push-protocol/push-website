@@ -444,7 +444,7 @@ template {
   src: url('./assets/fonts/Strawford-Medium.woff2') format('woff2'),
       url('./assets/fonts/Strawford-Medium.otf') format('otf'),
       url('./assets/fonts/Strawford-Medium.ttf') format('ttf');
-  font-weight: 600;
+  font-weight: 600 700;
   font-style: normal;
 }
 
@@ -454,17 +454,17 @@ template {
         url('./assets/fonts/Strawford-Black.woff') format('woff'),
         url('./assets/fonts/Strawford-Black.eot'),
         url('./assets/fonts/Strawford-Black.ttf') format('truetype');
-  font-weight: 700 800 900;
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
 span, p, label, div {
-  font-family: "Strawford", 'Manrope', sans-serif;
+  font-family: "Strawford", Helvetica, sans-serif;
 }
 
 button, a, a:before, a:after {
-  font-family: "Strawford", 'Manrope', sans-serif;
+  font-family: "Strawford", Helvetica, sans-serif;
   border: 0;
   outline: 0;
 
@@ -476,7 +476,7 @@ button, a, a:before, a:after {
 
 
  h1 {
-  font-family: "Strawford", 'Manrope', sans-serif;
+  font-family: "Strawford", Helvetica, sans-serif;
    font-weight: 700;
    line-height: 1.25em;
    color: #fff;
@@ -487,7 +487,7 @@ button, a, a:before, a:after {
  }
 
  h2, h3, h4, h5, h6 {
-   font-family: 'Strawford', 'Manrope', sans-serif;
+   font-family: 'Strawford', Helvetica, sans-serif;
    font-weight: 500;
    font-size: 32px;
    line-height: 1.25em;
