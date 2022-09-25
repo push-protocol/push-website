@@ -41,6 +41,7 @@ export const SectionV2 = styled.section`
   flex: ${(props) => props.flex || '1'};
   flex-direction: ${(props) => props.flexDirection || 'column'};
   justify-content: ${(props) => props.justifyContent || 'center'};
+  width: ${(props) => props.width || 'auto'};
   margin: ${(props) => props.margin || '0px'};
   min-height: ${(props) => props.minHeight || 'auto'};
   overflow: ${(props) => props.overflow || 'initial'};

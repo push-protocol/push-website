@@ -76,6 +76,8 @@ function Home() {
           id="hero"
           minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
           background={GLOBALS.COLORS.BG_LIGHT}
+          width="100%"
+          overflow="hidden"
         >
           <ItemVV2
             id="herobg"
