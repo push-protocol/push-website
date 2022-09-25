@@ -2,6 +2,10 @@
 // @ts-nocheck
 import React from 'react';
 import styled from 'styled-components';
+
+
+import { useNavigate } from 'react-router-dom';
+
 import { BsArrowUpRight } from 'react-icons/bs';
 import { device } from '../config/globals';
 
@@ -23,6 +27,9 @@ import { ReactComponent as AndroidSVG }  from '../assets/android.svg';
 import { ReactComponent as PushBellSVG }  from '../assets/pushBell.svg';
 
 function Footer() {
+
+  const navigate =  useNavigate();
+
   return (
     <StyledFooter>
       <ResponsiveSection id="footer" background="#121315">
@@ -110,8 +117,7 @@ function Footer() {
                   <Span weight="400" size="18px" lineHeight="142%">Company</Span>
 
                   <Anchor
-                    href="https://epns.io/tos"
-                    target="_blank"
+                    onClick={() => navigate('/tos') }
                     bg="transparent"
                     color="#9C9CBE"
                     size="16px"
@@ -125,8 +131,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://epns.io/privacy"
-                    target="_blank"
+                    onClick={() => navigate('/privacy') }
                     bg="transparent"
                     color="#9C9CBE"
                     size="16px"
@@ -324,8 +329,7 @@ function Footer() {
                                     
 
                   <Anchor
-                    href="https://docs.epns.io/users/link-and-resources/frequently-asked-questions-faqs"
-                    target="_blank"
+                    onClick={() => navigate('/faq') }
                     bg="transparent"
                     color="#9C9CBE"
                     size="16px"
@@ -356,10 +360,10 @@ function Footer() {
             <ItemV justifyContent="flex-start" flex="1" gap="12px" className="pushLinks">
               <Anchor
                 className="pushLogo"
-                href="https://epns.io/"
+                onClick={() => navigate('/') }
                 title="PUSH"
               >
-                <PushLogoTextWhite/>
+                <PushLogoTextWhite />
               </Anchor>
                             
                             
