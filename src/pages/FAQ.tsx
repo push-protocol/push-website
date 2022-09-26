@@ -14,7 +14,6 @@ import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
 
 import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, OL, LI, A, B, Span, HeroHeader, Button } from '../components/SharedStyling';
-import { isTemplateHead } from 'typescript';
 
 // define the question and answers seperately in order to seperate data and render logic
 const FAQS = [
@@ -224,7 +223,7 @@ function FAQ() {
         </ResponsiveSection>
 
         
-        <ResponsiveSection curve="bottom" padding="80px 0px 40px 0px" data-bkg="light">
+        <ResponsiveSection curve="bottom" padding="80px 0px 0px 0px" data-bkg="light">
           <Content className="contentBox">
             
             {/* Questions and answers */}
@@ -302,7 +301,11 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const FAQWrapper = styled.div`
+const FAQWrapper = styled.main`
+  & .contentBox {
+    row-gap: 18px;
+  }
+
   @media ${device.tablet} {
     width: 100%;
   }
