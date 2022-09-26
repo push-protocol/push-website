@@ -50,6 +50,7 @@ function Home() {
         trigger: '#herobg',
         start: 'center center',
         end: 'bottom center',
+        // markers: true,
         scrub: true,
       },
       scale: 0.95,
@@ -66,7 +67,7 @@ function Home() {
           trigger: section,
           start: 'top top',
           end: 'bottom 100',
-          markers: true,
+          // markers: true,
           toggleClass: { targets: ['.header', '.headerblur', '.headerlogo'], className: 'light' },
         },
       });
