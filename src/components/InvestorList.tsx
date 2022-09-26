@@ -50,16 +50,17 @@ const investorsSortedGroup = [
       id: 'trueventures'
     },
     {
-      svgIcon: PolygonStudiosSVG,
-      id: 'polygonstudios'
-    }
+      svgIcon: BinancelabsSVG,
+      id: 'binancelabs'
+    },
+   
   ],
 
   // 2nd row
   [
     {
-      svgIcon: BinancelabsSVG,
-      id: 'binancelabs'
+      svgIcon: PolygonStudiosSVG,
+      id: 'polygonstudios'
     },
     {
       svgIcon: IosgSVG,

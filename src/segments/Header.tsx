@@ -17,7 +17,7 @@ import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite
 import { Anchor, Span } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 
-const lastScrollY = window.pageYOffset;
+let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
 
 function useScrollDirection(mobileMenuActive) {
