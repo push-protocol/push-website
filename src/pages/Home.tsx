@@ -51,10 +51,25 @@ function Home() {
         start: 'center center',
         end: 'bottom center',
         scrub: true,
-        markers: true,
       },
       scale: 0.95,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    });
+  }, []);
+
+  useLayoutEffect(() => {
+    const sections = gsap.utils.toArray('.lightBackground');
+
+    sections.forEach((section) => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom 100',
+          markers: true,
+          toggleClass: { targets: '.header .headerblur', className: 'light' },
+        },
+      });
     });
   }, []);
 
@@ -78,6 +93,7 @@ function Home() {
           background={GLOBALS.COLORS.BG_LIGHT}
           width="100%"
           overflow="hidden"
+          className="darkBackground"
         >
           <ItemVV2
             id="herobg"
@@ -87,7 +103,7 @@ function Home() {
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_DARK}
-            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <ContentV2>
@@ -206,6 +222,7 @@ function Home() {
         <StorySection
           id="story"
           data-bkg="light"
+          className="lightBackground"
         >
           <Content className="contentBox">
             <PoweringCommunicationRow>
@@ -359,6 +376,7 @@ function Home() {
           curve="both"
           id="buildWithPush"
           data-bkg="dark"
+          className="darkBackground"
         >
           <Content className="contentBox">
             <SignupBox margin="0 0 80px 0">
@@ -487,6 +505,7 @@ function Home() {
           curve="bottom"
           id="integratePush"
           data-bkg="light"
+          className="lightBackground"
         >
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
@@ -803,6 +822,7 @@ function Home() {
         <FeaturedInSection
           id="featuredIn"
           data-bkg="dark"
+          className="darkBackground"
         >
           <Content className="contentBox">
             <ItemH justifyContent="flex-start">
