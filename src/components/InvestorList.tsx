@@ -49,6 +49,10 @@ const investorsSortedGroup = [
       svgIcon: TrueventuresSVG,
       id: 'trueventures'
     },
+    {
+      svgIcon: PolygonStudiosSVG,
+      id: 'polygonstudios'
+    }
   ],
 
   // 2nd row
@@ -62,11 +66,15 @@ const investorsSortedGroup = [
       id: 'iosg'
     },
     {
+      svgIcon: ACapitalSVG,
+      id: 'acapital'
+    },
+    {
       thumbnail: [
         '/investors/balaji@1x.png',
         '/investors/balaji@2x.png 2x, /investors/balaji@3x.png 3x'
       ],
-      name: 'Balaji S',
+      name: 'Balaji S.',
       title: 'Serial Entrepreneur',
       id: 'balaji'
     },
@@ -75,7 +83,7 @@ const investorsSortedGroup = [
         '/investors/sandeep@1x.png',
         '/investors/sandeep@2x.png 2x, /investors/sandeep@3x.png 3x'
       ],
-      name: 'Sandeep N',
+      name: 'Sandeep N.',
       title: 'Co-founder Polygon',
       id: 'sandeep'
     },
@@ -84,7 +92,7 @@ const investorsSortedGroup = [
         '/investors/andrew@1x.png',
         '/investors/andrew@2x.png 2x, /investors/andrew@3x.png 3x'
       ],
-      name: 'Andrew Keys',
+      name: 'Andrew K.',
       title: 'Angel Investor',
       id: 'andrewkeys'
     }
@@ -210,6 +218,7 @@ const InvestorCard = styled(ItemV)`
     border-radius: 74px;
     padding: 8px 0;
     min-width: 242px;
+    min-height: 66px;
 
     &.thumbnail {
         flex-direction: row;
