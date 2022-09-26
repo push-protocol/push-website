@@ -17,45 +17,45 @@ import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite
 import { Anchor, Span } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 
-let lastScrollY = window.pageYOffset;
+const lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
 
 function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [bkg, setBkg] = useState('dark');
 
-  useEffect(() => {
-    const updateScrollDirection = () => {
+  // useEffect(() => {
+  //   const updateScrollDirection = () => {
 
-      const scrollY = window.pageYOffset;
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
+  //     const scrollY = window.pageYOffset;
+  //     let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
-      if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
-        // check if isMobileMenuOpen then override
-        if (mobileMenuActive) {
-          direction = 'scrollUp';
-        }
-  
-        setScrollDirection(direction);
-      }
-      
-      // hacky way, optimize later when time
-      if (scrollY > 970) {
-        setBkg('light');
-      } else {
-        setBkg('dark');
-      }
+  //     if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
+  //       // check if isMobileMenuOpen then override
+  //       if (mobileMenuActive) {
+  //         direction = 'scrollUp';
+  //       }
 
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
+  //       setScrollDirection(direction);
+  //     }
 
-    // add event listener
-    window.addEventListener('scroll', updateScrollDirection);
+  //     // hacky way, optimize later when time
+  //     if (scrollY > 970) {
+  //       setBkg('light');
+  //     } else {
+  //       setBkg('dark');
+  //     }
 
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, [scrollDirection, mobileMenuActive]);
+  //     lastScrollY = scrollY > 0 ? scrollY : 0;
+  //   };
+
+  //   // add event listener
+  //   window.addEventListener('scroll', updateScrollDirection);
+
+  //   return () => {
+  //     window.removeEventListener('scroll', updateScrollDirection); // clean up
+  //   };
+  // }, [scrollDirection, mobileMenuActive]);
 
   return [scrollDirection, bkg];
 }
@@ -114,7 +114,7 @@ function Header() {
             padding={GLOBALS.ADJUSTMENTS.PADDING.SMALL}
             borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
           >
-            <HeaderBlurV 
+            <HeaderBlurV
               position="absolute"
               top="0"
               right="0"
@@ -122,31 +122,39 @@ function Header() {
               left="0"
               overflow="hidden"
               borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
-              className={`headerblur`}
+              className={'headerblur'}
             />
 
             <MenuTop flex="initial">
-              <PushLogo onClick={() => navigate('/')} />
+              <PushLogoBlackContainer
+                className="headerlogo"
+                flex="initial"
+              >
+                <PushLogoTextBlack onClick={() => navigate('/')} />
+              </PushLogoBlackContainer>
+              <PushLogoWhiteContainer
+                className="headerlogo"
+                flex="initial"
+              >
+                <PushLogoTextWhite onClick={() => navigate('/')} />
+              </PushLogoWhiteContainer>
+
               <MobileMenuToggleIcon>
                 {isMobileMenuOpen ? (
                   <AiOutlineClose
                     size={28}
-                    color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                     onClick={toggleMobileMenu}
                   />
                 ) : (
                   <GiHamburgerMenu
                     size={28}
-                    color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                     onClick={toggleMobileMenu}
                   />
                 )}
               </MobileMenuToggleIcon>
             </MenuTop>
 
-            <HeaderNavItemV
-              showMobileMenu={isMobileMenuOpen}
-            >
+            <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
               <NavigationMenu
                 role="menu"
                 className="navigationMenu"
@@ -158,7 +166,6 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     <Span
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       size="18px"
                       weight="500"
                       spacing="-0.03em"
@@ -169,7 +176,6 @@ function Header() {
                     </Span>
                     <BsChevronDown
                       size={12}
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       className="chevronIcon"
                     />
                   </NavigationMenuHeader>
@@ -229,7 +235,6 @@ function Header() {
                     expanded={mobileMenuMap[1]}
                   >
                     <Span
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       size="18px"
                       weight="500"
                       spacing="-0.03em"
@@ -240,7 +245,6 @@ function Header() {
                     </Span>
                     <BsChevronDown
                       size={12}
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       className="chevronIcon"
                     />
                   </NavigationMenuHeader>
@@ -325,7 +329,6 @@ function Header() {
                     expanded={mobileMenuMap[2]}
                   >
                     <Span
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       size="18px"
                       weight="500"
                       spacing="-0.03em"
@@ -336,7 +339,6 @@ function Header() {
                     </Span>
                     <BsChevronDown
                       size={12}
-                      color={bkg === 'dark' ? GLOBALS.COLORS.FONT_LIGHT : GLOBALS.COLORS.FONT_DARK}
                       className="chevronIcon"
                     />
                   </NavigationMenuHeader>
@@ -420,9 +422,7 @@ function Header() {
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemVV2
-              flex="initial"
-            >
+            <ItemVV2 flex="initial">
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
@@ -447,16 +447,6 @@ function Header() {
 }
 
 // V2 Designs
-const HeaderBlurV = styled(ItemVV2)`
-  backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
-  background: ${GLOBALS.COLORS.HEADER_BG_DARK};
-
-  &.light {
-    background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
-  }
-`;
-
-
 const HeaderItemH = styled(ItemHV2)`
   margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 0 0;
   color: ${GLOBALS.COLORS.FONT_LIGHT};
@@ -476,11 +466,35 @@ const HeaderItemH = styled(ItemHV2)`
     background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
   }
 `;
+
+const HeaderBlurV = styled(ItemVV2)`
+  backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
+  background: ${GLOBALS.COLORS.HEADER_BG_DARK};
+
+  &.light {
+    background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
+  }
+`;
+
 const HeaderNavItemV = styled(ItemVV2)`
   margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
-    margin: ${(props) => props.showMobileMenu ? '20px 0 20px 0' : '0'};
+    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
+  }
+`;
+
+const PushLogoWhiteContainer = styled(ItemVV2)`
+  display: flex;
+  &.light {
+    display: none;
+  }
+`;
+
+const PushLogoBlackContainer = styled(ItemVV2)`
+  display: none;
+  &.light {
+    display: flex;
   }
 `;
 

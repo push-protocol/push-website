@@ -67,7 +67,7 @@ function Home() {
           start: 'top top',
           end: 'bottom 100',
           markers: true,
-          toggleClass: { targets: '.header .headerblur', className: 'light' },
+          toggleClass: { targets: ['.header', '.headerblur', '.headerlogo'], className: 'light' },
         },
       });
     });
