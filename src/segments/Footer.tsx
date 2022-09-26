@@ -26,19 +26,22 @@ import { ReactComponent as AppleSVG }  from '../assets/apple.svg';
 import { ReactComponent as AndroidSVG }  from '../assets/android.svg';
 import { ReactComponent as PushBellSVG }  from '../assets/pushBell.svg';
 
+import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
+import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
+
 function Footer() {
 
   const navigate =  useNavigate();
 
   return (
     <StyledFooter>
-      <ResponsiveSection id="footer" background="#121315">
+      <ResponsiveSection id="footer" background="#121315" padding="160px 0 0 0">
         <Content className="contentBox" padding="0">
           {/* Information Cards */}
                     
           <ItemH gap="32px">     
             <InfoCard>
-              <InfoFigure />
+              <FooterJoinusFigure className='figureSvg'/>
 
               <InfoDetails>
                 <Span
@@ -47,7 +50,7 @@ function Footer() {
                   size="24px"
                   lineHeight="142%"
                 >
-                                    Join us and build the future of Web3 Communication.
+                    Join us and build the future of Web3 Communication.
                 </Span>
                 <Anchor
                   href="https://docs.epns.io/developers"
@@ -65,7 +68,7 @@ function Footer() {
                   lineHeight="142%"
                   justify="flex-start"
                 >
-                                    See Open Positions&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                    See Open Positions&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
                 </Anchor>
               </InfoDetails>
                            
@@ -73,7 +76,7 @@ function Footer() {
 
                         
             <InfoCard>
-              <InfoFigure />
+              <FooterFollowusFigure className='figureSvg'/>
 
               <InfoDetails>
                 <Span
@@ -312,7 +315,7 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Support</Span>
 
-                  <Anchor
+                  {/* <Anchor
                     href=""
                     target="_blank"
                     bg="transparent"
@@ -324,9 +327,9 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                   >
-                                        Contact
+                      Contact
                   </Anchor>
-                                    
+                                     */}
 
                   <Anchor
                     onClick={() => navigate('/faq') }
@@ -339,7 +342,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                   >
-                                        FAQ
+                      FAQ
                   </Anchor>
                 </FooterLinks>
               </FooterColumn>
@@ -469,7 +472,7 @@ const ResponsiveSection = styled(Section)`
 const InfoCard = styled(ItemV)`
 	border-radius: 32px;
     background: #2A2A39;
-    padding: 48px 30px;
+    padding: 48px 30px 48px 40px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -477,9 +480,18 @@ const InfoCard = styled(ItemV)`
     column-gap: 32px;
     box-sizing: border-box;
 
+    & svg.figureSvg {
+      width: 72px;
+      height: 72px;
+    }
+
     @media ${device.tablet} {
         flex-direction: column;
         row-gap: 16px;
+
+        & svg.figureSvg {
+      
+        }
     }
 `;
 

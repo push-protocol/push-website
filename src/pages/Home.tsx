@@ -42,6 +42,18 @@ import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
+import { ReactComponent as PushMissingPieceFigure } from '../assets/figures/pushmissingpiece.svg';
+import { ReactComponent as GrowWithPushFigure } from '../assets/figures/growwithpush.svg';
+
+import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
+import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
+import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
+import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
+import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
+import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
+
+
+
 function Home() {
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -299,6 +311,7 @@ function Home() {
                 flex="1"
                 alignItems="end"
               >
+                <PushMissingPieceFigure className='figureSvg'/>
                 <Anchor
                   href="https://docs.epns.io/developers"
                   title="Developer Docs"
@@ -497,13 +510,15 @@ function Home() {
         >
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
+              <GrowWithPushFigure className='figureSvg'/>
+
               <ResponsiveH2
                 color="#121315"
                 size="40px"
                 weight="700"
                 spacing="-0.02em"
                 lineHeight="110%"
-                margin="0"
+                margin="-32px 0 0 0"
               >
                 Grow with Push
               </ResponsiveH2>
@@ -535,7 +550,7 @@ function Home() {
                 </ResponsiveH2>
 
                 <Anchor
-                  href="https://epns.io/gov"
+                  href="https://docs.epns.io/hub/"
                   title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"
@@ -573,7 +588,7 @@ function Home() {
             <ItemH padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
-                  <MatrixFigure />
+                  <ChainAgnosticFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -585,7 +600,7 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <MatrixFigure />
+                  <ImmediatecommunicationFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -597,7 +612,7 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <MatrixFigure />
+                  <DecentralizedstackFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -610,7 +625,7 @@ function Home() {
                 </MatrixCell>
 
                 <MatrixCell>
-                  <MatrixFigure />
+                  <ImproveduxFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -622,7 +637,7 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <MatrixFigure />
+                  <SecurityalertsFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -634,7 +649,7 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <MatrixFigure />
+                  <CensorshipresistantFigure className='matrixFigure'/>
                   <Span
                     color="#09090B"
                     size="24px"
@@ -685,7 +700,7 @@ function Home() {
 
               <ItemV justifyContent="flex-end">
                 <Anchor
-                  href="https://app.epns.io"
+                  href="https://medium.com/ethereum-push-notification-service"
                   title="Exlore all articles"
                   target="_blank"
                   hoverBG="transparent"
@@ -769,7 +784,7 @@ function Home() {
                 {!showMoreTeamMembers ? 'View More' : 'View Less'}
               </Anchor>
               <Anchor
-                href="https://app.epns.io/"
+                href="https://angel.co/company/ethereum-push-notification-service"
                 title="Jobs"
                 target="_blank"
                 bg="#DD44B9"
@@ -1026,6 +1041,11 @@ const HomeWrapper = styled.main`
 
   @media ${device.tablet} {
     width: 100%;
+
+
+    & svg.figureSvg {
+      width: 100%;
+    }
   }
 `;
 
@@ -1069,8 +1089,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: 80px;
-    margin-bottom: 240px;
+    margin-top: -120px;
   }
 `;
 
@@ -1199,6 +1218,11 @@ const IntegrateGrowWithPushRow = styled(ItemH)`
   @media ${device.tablet} {
     padding-left: 30px;
     padding-right: 30px;
+    margin: 0;
+
+    & svg.figureSvg {
+      height: 180px;
+    }
 
     & .growWithPushtext {
       text-align: center;
@@ -1286,18 +1310,13 @@ const MatrixCell = styled.div`
     & span {
       font-size: 20px;
     }
+
+    & .matrixFigure {
+      margin-top: 8px;
+    }
   }
 `;
 
-const MatrixFigure = styled.div`
-  width: 109px;
-  height: 63px;
-  background: #d9d9d9;
-
-  @media ${device.tablet} {
-    margin-top: 8px;
-  }
-`;
 
 const WhyPushTextBox = styled(ItemH)`
   margin: 80px 160px;
@@ -1377,6 +1396,8 @@ const BuiltByCards = styled(ItemH)`
   flex-wrap: wrap;
   width: 100%;
   gap: 26px;
+
+  transition: all 350ms linear;
 `;
 
 const TeamMemberButtons = styled(ItemH)`
