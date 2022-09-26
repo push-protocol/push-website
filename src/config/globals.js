@@ -80,16 +80,18 @@ const GLOBALS = {
     },
     RADIUS: {
       LARGE: '48px',
+      MID: '32px',
       SMALL: '16px',
     },
     BLUR: {
       DEFAULT: 5,
+      HEADER: 10,
     },
     FONT: {
       PRIMARY_HEADING: {
-        DESKTOP: '64px',
-        TABLET: '44px',
-        MOBILE: '36px'
+        DESKTOP: '62px',
+        TABLET: '42px',
+        MOBILE: '34px'
       },
       HEADING: {
         DESKTOP: '32px',
@@ -102,9 +104,9 @@ const GLOBALS = {
         MOBILE: '32px'
       },
       NORMAL_TEXT: {
-        DESKTOP: '22px',
-        TABLET: '18px',
-        MOBILE: '16px'
+        DESKTOP: '20px',
+        TABLET: '16px',
+        MOBILE: '14px'
       } 
     }
   },
@@ -117,6 +119,8 @@ const GLOBALS = {
     FONT_DARK_SECONDARY: '#303C5E',
     BG_LIGHT: '#FFF',
     BG_DARK: '#121315',
+    HEADER_BG_LIGHT: '#FFFFFFCC',
+    HEADER_BG_DARK: '#121315CC',
     BG_DARK_SECONDARY: '#2A2A39',
     BG_LIGHT_SECONDARY: '#F0DCFF',
     BG_HIGHLIGHTED_LIGHT_TRANSPARENT: 'rgba(219, 171, 255, 0.7);',

@@ -2,8 +2,8 @@
 // @ts-nocheck
 
 import React, { useEffect, useState } from 'react';
+import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { Oval } from  'react-loader-spinner';
 import { loadKPIData } from '../api';
 
 import { device } from '../config/globals';
@@ -78,7 +78,7 @@ function AnalyticsStats() {
   const totalNotifsSent = nFormatter(17737587, 1);
   const totalSubscribersCount = '60k+';
   const totalChannelCount = '100+';
-  const totalGrantsGiven = 8;
+  const totalGrantsGiven = '>$1M';
 
   return (
     <KPIBanner>
@@ -100,7 +100,7 @@ function AnalyticsStats() {
      
       <ItemV gap="18px" className='kpiItem'>
         <KPIFigure>{totalGrantsGiven}</KPIFigure>
-        <KPIMetric>Grants<br />Given</KPIMetric>
+        <KPIMetric>In Grants<br />Given</KPIMetric>
       </ItemV>
     </KPIBanner>
   );

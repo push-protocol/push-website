@@ -39,7 +39,7 @@ export const SectionV2 = styled.section`
     props.gradient ? props.gradient : props.background ? props.background : 'transparent' || 'transparent'};
   display: ${(props) => props.display || 'flex'};
   flex: ${(props) => props.flex || '1'};
-  flex-direction: ${(props) => props.flexDirection || 'column'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
   justify-content: ${(props) => props.justifyContent || 'center'};
   width: ${(props) => props.width || 'auto'};
   margin: ${(props) => props.margin || '0px'};
@@ -50,25 +50,24 @@ export const SectionV2 = styled.section`
 `;
 
 export const ContentV2 = styled.div`
-  display: flex;
+  display: ${(props) => props.display || 'flex'};
   flex-direction: ${(props) => props.flexDirection || 'column'};
-  position: relative;
-  padding: ${(props) => props.padding || 'initial'};
+  position: ${(props) => props.position || 'relative'};
   
-  align-self: center;
+  flex: ${(props) => props.flex || '1'};
+  align-self: ${(props) => props.alignSelf || 'stretch'};
   max-width: 1140px;
-  flex: 1;
   display: flex;
   justify-content: center;
-  padding: ${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
+  box-sizing: ${(props) => props.boxSizing || 'content-box'};
+  padding: ${(props) => props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
 
   @media ${device.laptop} {
-    font-size: 36px;
-    padding: ${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
+    padding: ${(props) => props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
   }
 
   @media ${device.mobileM} {
-    padding: ${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
+    padding: ${(props) => props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
   }
 `;
 
