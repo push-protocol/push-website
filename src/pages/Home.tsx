@@ -241,20 +241,7 @@ function Home() {
               </ItemV>
             </PoweringCommunicationRow>
 
-            <ItemH
-              justifyContent="flex-start"
-              gap="32px"
-            >
-              <PartnerChannels />
-            </ItemH>
-
-            <ItemH
-              margin="130px 0 240px 0"
-              justifyContent="flex-start"
-              gap="32px"
-            >
-              <PartnerChannels direction="right" />
-            </ItemH>
+            <PartnerChannels />
 
             <Partners
               margin="40px 0"
@@ -1056,11 +1043,12 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
+
   & .contentBox {
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: 120px;
+    margin-top: 80px;
     margin-bottom: 240px;
   }
 `;
