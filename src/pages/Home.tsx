@@ -52,6 +52,8 @@ import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 
+import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
+import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 
 
 function Home() {
@@ -413,10 +415,10 @@ function Home() {
 
             <ItemH
               justifyContent="flex-start"
-              gap="15px"
+              gap="16px"
             >
-              <GrowPushCard>
-                <GrowPushCardFigure />
+              <GrowPushCard background="#ECDCD9">
+                <PushbuildsliderFigure className='figureSvg'/>
 
                 <GrowPushCardDetails>
                   <ResponsiveH2
@@ -457,8 +459,8 @@ function Home() {
                 </GrowPushCardDetails>
               </GrowPushCard>
 
-              <GrowPushCard background="#F0DCFF">
-                <GrowPushCardFigure />
+              <GrowPushCard background="#C4A8FB">
+                <PushgovernancesliderFigure className='figureSvg' />
 
                 <GrowPushCardDetails>
                   <ResponsiveH2
@@ -1183,25 +1185,23 @@ const GrowPushCard = styled(ItemV)`
   align-items: flex-start;
   row-gap: 32px;
   padding: 60px 80px;
+  width: 45%;
 
   background: ${(props) => props.background || '#FFFBFB'};
   border-radius: 48px;
 
+  & .figureSvg {
+    width: 100%;
+    height: 227px;
+  
+    @media ${device.tablet} {
+      width: 100%;
+    }
+  }
+
   @media ${device.tablet} {
     padding: 28px;
     border-radius: 36px;
-  }
-`;
-
-const GrowPushCardFigure = styled.div`
-  background: #d9d9d9;
-
-  // temporary
-  width: 335px;
-  height: 227px;
-
-  @media ${device.tablet} {
-    width: 100%;
   }
 `;
 
