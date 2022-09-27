@@ -40,11 +40,11 @@ function useScrollDirection(mobileMenuActive) {
       }
 
       // hacky way, optimize later when time
-      if (scrollY > 970) {
-        setBkg('light');
-      } else {
-        setBkg('dark');
-      }
+      // if (scrollY > 970) {
+      //   setBkg('light');
+      // } else {
+      //   setBkg('dark');
+      // }
 
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
@@ -185,7 +185,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     <Anchor
-                      href="https://docs.epns.io/developers"
+                      href="https://docs.push.org/developers"
                       target="_blank"
                       title="Read Developer Guide"
                       bg="transparent"
@@ -199,7 +199,7 @@ function Header() {
                       Developer Guides
                     </Anchor>
                     <Anchor
-                      href="https://docs.epns.io/governance"
+                      href="https://docs.push.org/governance"
                       target="_blank"
                       title="Read Governance Guide"
                       bg="transparent"
@@ -213,7 +213,7 @@ function Header() {
                       Governance Guides
                     </Anchor>
                     <Anchor
-                      href="https://whitepaper.epns.io/"
+                      href="https://whitepaper.push.org/"
                       target="_blank"
                       title="Read Whitepaper"
                       bg="transparent"
@@ -641,6 +641,10 @@ const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   & .chevronIcon {
     transition-duration: 0.4s;
