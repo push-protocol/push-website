@@ -1143,12 +1143,14 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
+  min-height: auto;
 
   & .contentBox {
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: -120px;
+    margin-top: 160px;
+    margin-bottom: 160px;
   }
 `;
 

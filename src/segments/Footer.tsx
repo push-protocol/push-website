@@ -508,13 +508,6 @@ const InfoCard = styled(ItemV)`
     }
 `;
 
-const InfoFigure = styled.div`
-    width: 116px;
-    height: 121px;
-    background: #D9D9D9;
-    flex: 0 0 116px;
-`;
-
 const InfoDetails = styled.div`
    display: flex;
    flex-direction: column;
