@@ -157,12 +157,12 @@ function Home() {
                   gap="18px"
                 >
                   <ButtonV2
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     lineHeight="26px"
-                    onClick={() => window.open('https://docs.epns.io/developers')}
+                    onClick={() => window.open('https://docs.push.org/developers')}
                     zIndex="2"
                   >
                     Start Building
@@ -315,7 +315,7 @@ function Home() {
               >
                 <PushMissingPieceFigure className='figureSvg'/>
                 <Anchor
-                  href="https://docs.epns.io/developers"
+                  href="https://docs.push.org/developers"
                   title="Developer Docs"
                   target="_blank"
                   hoverBG="transparent"
@@ -442,7 +442,7 @@ function Home() {
                     progressively decentralized stack by enabling web3-native communication.
                   </Span>
                   <Anchor
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
                     bg="#DD44B9"
@@ -552,7 +552,7 @@ function Home() {
                 </ResponsiveH2>
 
                 <Anchor
-                  href="https://docs.epns.io/hub/"
+                  href="https://docs.push.org/hub/"
                   title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"

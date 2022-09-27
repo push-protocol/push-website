@@ -185,7 +185,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     <Anchor
-                      href="https://docs.epns.io/developers"
+                      href="https://docs.push.org/developers"
                       target="_blank"
                       title="Read Developer Guide"
                       bg="transparent"
@@ -199,7 +199,7 @@ function Header() {
                       Developer Guides
                     </Anchor>
                     <Anchor
-                      href="https://docs.epns.io/governance"
+                      href="https://docs.push.org/governance"
                       target="_blank"
                       title="Read Governance Guide"
                       bg="transparent"
@@ -213,7 +213,7 @@ function Header() {
                       Governance Guides
                     </Anchor>
                     <Anchor
-                      href="https://whitepaper.epns.io/"
+                      href="https://whitepaper.push.org/"
                       target="_blank"
                       title="Read Whitepaper"
                       bg="transparent"
