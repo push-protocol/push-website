@@ -186,7 +186,7 @@ function Home() {
                 >
                   <Anchor
                     href="https://twitter.com/epnsproject"
-                    title="PUSH Twitter"
+                    title="Push Twitter"
                     target="_blank"
                     margin="0 0 0 -10px"
                   >
@@ -198,7 +198,7 @@ function Home() {
 
                   <Anchor
                     href="https://github.com/ethereum-push-notification-service"
-                    title="PUSH Github"
+                    title="Push Github"
                     target="_blank"
                   >
                     <GithubSVG
@@ -209,7 +209,7 @@ function Home() {
 
                   <Anchor
                     href="https://discord.gg/YVPB99F9W5"
-                    title="PUSH Discord"
+                    title="Push Discord"
                     target="_blank"
                   >
                     <DiscordSVG
@@ -254,7 +254,7 @@ function Home() {
               <ItemV justifyContent="flex-end">
                 <Anchor
                   href="https://app.push.org"
-                  title="PUSH Dapp"
+                  title="Push Dapp"
                   target="_blank"
                   hoverBG="transparent"
                   hover="transparent"
@@ -297,7 +297,7 @@ function Home() {
                   <ItemV className="network">
                     <EthLogoTextSVG />
                   </ItemV>
-{/* 
+                  {/* 
                   <ItemV className="divider" />
 
                   <ItemV className="network">

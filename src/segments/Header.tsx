@@ -428,7 +428,7 @@ function Header() {
                 className="launchDappBtn"
                 href="https://app.push.org/#/live_walkthrough"
                 target="_blank"
-                title="PUSH Dapp"
+                title="Push Dapp"
                 bg="#DD44B9"
                 radius="16px"
                 size="18px"
