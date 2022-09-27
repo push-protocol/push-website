@@ -40,11 +40,11 @@ function useScrollDirection(mobileMenuActive) {
       }
 
       // hacky way, optimize later when time
-      if (scrollY > 970) {
-        setBkg('light');
-      } else {
-        setBkg('dark');
-      }
+      // if (scrollY > 970) {
+      //   setBkg('light');
+      // } else {
+      //   setBkg('dark');
+      // }
 
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
@@ -641,6 +641,10 @@ const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   & .chevronIcon {
     transition-duration: 0.4s;

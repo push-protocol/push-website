@@ -53,7 +53,7 @@ function Footer() {
                     Join us and build the future of Web3 Communication.
                 </Span>
                 <Anchor
-                  href="https://docs.push.org/developers"
+                  href="https://angel.co/company/ethereum-push-notification-service"
                   title="See Open Positions"
                   target="_blank"
                   hoverBG="transparent"
@@ -360,13 +360,13 @@ function Footer() {
                 </FooterLinks>
               </FooterColumn>
 
-              <FooterColumn>
+              {/* <FooterColumn>
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Subscribe</Span>
 
                   <EmailInputTextField placeholder='Your Email'/>
                 </FooterLinks>
-              </FooterColumn>
+              </FooterColumn> */}
             </FooterContainer>
 
           </ItemH>
@@ -539,23 +539,28 @@ const FooterContainer = styled.div`
 const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
-    flex-basis: 20%;
+    // flex-basis: 20%;
+    flex-basis: 25%;
     box-sizing: border-box;
     color: #FFFFFF;
 
     flex-direction: column;
+    
+    align-items: center;
 
     @media ${device.tablet} {
         flex-basis: 50%;
         padding: 12px;
         row-gap: 16px;
+
+        align-items: flex-start;
         
         & span {
             font-size: 20px;
         }
 
         &:last-child {
-            flex-basis: 100%;
+            // flex-basis: 100%;
         }
     }
 `;

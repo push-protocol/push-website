@@ -38,6 +38,9 @@ import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum_logo_text_black.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
+import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
+import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
+
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
@@ -72,21 +75,21 @@ function Home() {
     });
   }, []);
 
-  useLayoutEffect(() => {
-    const sections = gsap.utils.toArray('.lightBackground');
+  // useLayoutEffect(() => {
+  //   const sections = gsap.utils.toArray('.lightBackground');
 
-    sections.forEach((section) => {
-      gsap.from(section, {
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: 'bottom 100',
-          // markers: true,
-          toggleClass: { targets: ['.header', '.headerblur', '.headerlogo'], className: 'light' },
-        },
-      });
-    });
-  }, []);
+  //   sections.forEach((section) => {
+  //     gsap.from(section, {
+  //       scrollTrigger: {
+  //         trigger: section,
+  //         start: 'top top',
+  //         end: 'bottom 100',
+  //         // markers: true,
+  //         toggleClass: { targets: ['.header', '.headerblur', '.headerlogo'], className: 'light' },
+  //       },
+  //     });
+  //   });
+  // }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
 
@@ -382,7 +385,7 @@ function Home() {
           className="darkBackground"
         >
           <Content className="contentBox">
-            <SignupBox margin="0 0 80px 0">
+            {/* <SignupBox margin="0 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 gap="12px"
@@ -411,7 +414,7 @@ function Home() {
               <ItemV>
                 <SignupInput />
               </ItemV>
-            </SignupBox>
+            </SignupBox> */}
 
             <ItemH
               justifyContent="flex-start"
@@ -885,48 +888,14 @@ function Home() {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
+                    We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
                   </Span>
 
                   <ArticleSource>
                     <EthFoundationBlackSVG />
                     <Anchor
-                      href="https://app.push.org"
-                      title="Read More"
-                      target="_blank"
-                      hoverBG="transparent"
-                      hover="transparent"
-                      filter="none"
-                      color="#DD44B9"
-                      radius="16px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="0"
-                    >
-                      Read More
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
-                  </ArticleSource>
-                </FeaturedCell>
-
-                <FeaturedCell className="marqueeItem">
-                  <Span
-                    color="#FFFFFF"
-                    size="22px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    We saw a driven, innovative builder who was deeply committed to Ethereum’s growth and success.
-                  </Span>
-
-                  <ArticleSource>
-                    <EthFoundationBlackSVG />
-                    <Anchor
-                      href="https://app.push.org"
-                      title="Read More"
+                      href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
+                      title="Read ETH Foundation article about Push"
                       target="_blank"
                       hoverBG="transparent"
                       hover="transparent"
@@ -959,8 +928,76 @@ function Home() {
                   <ArticleSource>
                     <CoindeskBlackSVG />
                     <Anchor
-                      href="https://app.push.org"
-                      title="Read More"
+                      href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
+                      title="Read Coindesk article about Push"
+                      target="_blank"
+                      hoverBG="transparent"
+                      hover="transparent"
+                      filter="none"
+                      color="#DD44B9"
+                      radius="16px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="0"
+                    >
+                      Read More
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                  </ArticleSource>
+                </FeaturedCell>
+
+                <FeaturedCell className="marqueeItem">
+                  <Span
+                    color="#FFFFFF"
+                    size="22px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
+                  </Span>
+
+                  <ArticleSource>
+                    <DefiPrimeBlackSVG />
+                    <Anchor
+                      href="https://defiprime.com/ethereum-push-notification-service"
+                      title="Read Defi Prime article on Push"
+                      target="_blank"
+                      hoverBG="transparent"
+                      hover="transparent"
+                      filter="none"
+                      color="#DD44B9"
+                      radius="16px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="0"
+                    >
+                      Read More
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                  </ArticleSource>
+                </FeaturedCell>
+
+                <FeaturedCell className="marqueeItem">
+                  <Span
+                    color="#FFFFFF"
+                    size="22px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    Decentralized push notifications may transform what dapps can do.
+                  </Span>
+
+                  <ArticleSource>
+                    <BalajiTweethandleBlackSVG />
+                    <Anchor
+                      href="https://twitter.com/epnsproject/status/1336359832081768448"
+                      title="Read Balaji's tweet about Push"
                       target="_blank"
                       hoverBG="transparent"
                       hover="transparent"
