@@ -49,7 +49,7 @@ function TermsOfService() {
                 1. ACCEPTANCE OF TERMS
                 </Para>
                 <Para margin="-10px 0px 0px">
-                Ethereum Push Notifcation Service (<B>&quot;EPNS&rdquo;</B>, <B>&quot;we,&rdquo;</B> <B>&quot;us&rdquo;</B> or <B>&quot;our&rdquo;</B>) provides an experimental open source protocol comprising a set of Ethereum based smart contracts (the <B>&quot;EPNS protocol&rdquo;</B>) that enables any service / DApp or Ethereum based smart contract to create channels, whereby they may display, publish or distribute decentralized and incentivized notifications to subscribers to those channels (each with a unique wallet addresses). Each user/subscriber (unique wallet addresses) will be able to control what notifications they opt in to receive, or are rewarded for indirect opt in by channels. Users may interact with the EPNS protocol directly via the smart contracts, or the dApp located at <A href="https://app.push.org" target="_blank">app.push.org</A> or at <A href="https://staging.push.org" target="_blank">staging.push.org</A> or any other subdomains associated with <B>push.org</B>, including any mobile application or any similar frontend interface that can interact with blockchain smart contracts (the <B>&quot;App&rdquo;</B>). Channels and subscribers/users interact directly in a peer to peer manner via the EPNS protocol (for example, transaction requests and notifications are sent directly from each channel to the subscriber), and EPNS is not, under any circumstances, a party or intermediary to that process.
+                  <B>&quot;PUSH&rdquo;</B>, <B>&quot;we,&rdquo;</B> <B>&quot;us&rdquo;</B> or <B>&quot;our&rdquo;</B> provides an experimental open source protocol comprising a set of Ethereum based smart contracts (the <B>&quot;PUSH protocol&rdquo;</B>) that enables any service / DApp or Ethereum based smart contract to create channels, whereby they may display, publish or distribute decentralized and incentivized notifications to subscribers to those channels (each with a unique wallet addresses). Each user/subscriber (unique wallet addresses) will be able to control what notifications they opt in to receive, or are rewarded for indirect opt in by channels. Users may interact with the PUSH protocol directly via the smart contracts, or the dApp located at <A href="https://app.push.org" target="_blank">app.push.org</A> or at <A href="https://staging.push.org" target="_blank">staging.push.org</A> or any other subdomains associated with <B>push.org</B>, including any mobile application or any similar frontend interface that can interact with blockchain smart contracts (the <B>&quot;App&rdquo;</B>). Channels and subscribers/users interact directly in a peer to peer manner via the PUSH protocol (for example, transaction requests and notifications are sent directly from each channel to the subscriber), and PUSH is not, under any circumstances, a party or intermediary to that process.
                 </Para>
 
                 <Para margin="20px 0px 0px">
@@ -57,7 +57,7 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin="20px 0px 0px">
-                The Site, the App and any other features, tools, materials, or other services offered from time to time by EPNS are referred to here as (the <B>&quot;Services&rdquo;</B>). Please read these Terms of Use (these <B>&quot;Terms&rdquo;</B>) carefully before using the Services. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms, (2) consent to the collection, use, disclosure and other handling of information as described in our <A href="./privacy" target="_blank">Privacy Policy</A> and (3) agree to any additional terms, rules and conditions of participation issued by EPNS from time to time. If you do not agree to these Terms, then you may not access or use the Content or Services.
+                The Site, the App and any other features, tools, materials, or other services offered from time to time by PUSH are referred to here as (the <B>&quot;Services&rdquo;</B>). Please read these Terms of Use (these <B>&quot;Terms&rdquo;</B>) carefully before using the Services. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms, (2) consent to the collection, use, disclosure and other handling of information as described in our <A href="./privacy" target="_blank">Privacy Policy</A> and (3) agree to any additional terms, rules and conditions of participation issued by PUSH from time to time. If you do not agree to these Terms, then you may not access or use the Content or Services.
                 </Para>
 
                 <Para margin="20px 0px 0px">
@@ -74,7 +74,7 @@ function TermsOfService() {
                 2. MODIFICATIONS TO TERMS OF SERVICE / USE
                 </Para>
                 <Para margin="-10px 0px 20px 0px" color="#FFF">
-                EPNS reserves the right, at its sole discretion, to modify or replace these Terms at any time, including the Schedules hereto. The most current version of these Terms will be posted on our Site. You shall be responsible for reviewing and becoming familiar with any such modifications. Use of the Services by you after any modification to these Terms constitutes your acceptance of these Terms as modified.
+                PUSH reserves the right, at its sole discretion, to modify or replace these Terms at any time, including the Schedules hereto. The most current version of these Terms will be posted on our Site. You shall be responsible for reviewing and becoming familiar with any such modifications. Use of the Services by you after any modification to these Terms constitutes your acceptance of these Terms as modified.
                 </Para>
 
 
@@ -114,11 +114,11 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(g)</B> you are responsible for ensuring compliance with the laws of all applicable jurisdictions at your own expense (including without limitation all intellectual property, data protection and privacy laws) and acknowledge that EPNS is not liable for your failure to comply with such laws. EPNS reserves the right to disclose any information as it deems necessary to satisfy any applicable law, regulation, legal process or governmental request;
+                  <B>(g)</B> you are responsible for ensuring compliance with the laws of all applicable jurisdictions at your own expense (including without limitation all intellectual property, data protection and privacy laws) and acknowledge that PUSH is not liable for your failure to comply with such laws. PUSH reserves the right to disclose any information as it deems necessary to satisfy any applicable law, regulation, legal process or governmental request;
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(h)</B> you have not relied and shall not rely upon EPNS for legal advice regarding your compliance with applicable law; and
+                  <B>(h)</B> you have not relied and shall not rely upon PUSH for legal advice regarding your compliance with applicable law; and
                 </Para>
 
                 <Para margin ="20px 0px 20px 20px">
@@ -131,7 +131,7 @@ function TermsOfService() {
                 4. ACCOUNT RELATED, PASSWORD AND SECURITY
                 </Para>
                 <Para margin="-10px 0px 20px">
-                When setting up an account within EPNS, you will be responsible for keeping your own account secrets, which may be a seed phrase with a number of secret words, an account file, or other locally stored secret information or any other information associated with the account. EPNS encrypts this information locally with a password you provide, and it&apos;s never accessible to us or our servers. You agree to (a) never use the same password for EPNS that you have ever used outside of this service, (b) keep your secret information and password confidential and do not share them with anyone else and (c) immediately notify EPNS of any unauthorized use of your account or breach of security. EPNS cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
+                When setting up an account within PUSH, you will be responsible for keeping your own account secrets, which may be a seed phrase with a number of secret words, an account file, or other locally stored secret information or any other information associated with the account. PUSH encrypts this information locally with a password you provide, and it&apos;s never accessible to us or our servers. You agree to (a) never use the same password for PUSH that you have ever used outside of this service, (b) keep your secret information and password confidential and do not share them with anyone else and (c) immediately notify PUSH of any unauthorized use of your account or breach of security. PUSH cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
                 </Para>
 
 
@@ -163,7 +163,7 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(e)</B> express or imply that any statements you make are endorsed by EPNS, without our prior express written consent;
+                  <B>(e)</B> express or imply that any statements you make are endorsed by PUSH, without our prior express written consent;
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
@@ -218,7 +218,7 @@ function TermsOfService() {
                   6.2 Risk of Regulatory Actions
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  EPNS and any supported cryptographic token and blockchain could be impacted by one or more regulatory inquiries or regulatory action, which could impede or limit the ability of EPNS to continue to develop, or which could impede or limit your ability to access or use the Services or the underlying blockchain network.
+                  PUSH and any supported cryptographic token and blockchain could be impacted by one or more regulatory inquiries or regulatory action, which could impede or limit the ability of PUSH to continue to develop, or which could impede or limit your ability to access or use the Services or the underlying blockchain network.
                   </Para>
 
                   {/* 6.3 Warranty Disclaimer */}
@@ -227,7 +227,7 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="-10px 0px 0px 20px">
-                  You expressly understand and agree that your use of the Services is at your sole risk. The Services (including the Site, the App and the Content) are provided on an &quot;as is&rdquo; and &quot;as available&rdquo; basis, without warranties of any kind, either express or implied, including, without limitation, implied warranties of merchantability, fitness for a particular purpose or non-infringement. You acknowledge that EPNS has no control over, and no duty to take any action regarding: which users gain access to or use the Services; what effects the Content may have on you; how you may interpret or use the Content; or what actions you may take as a result of having been exposed to the Content. You release EPNS from all liability for you having acquired or not acquired Content through the Services. EPNS makes no representations concerning any Content contained in or accessed through the Services, and EPNS will not be responsible or liable for the accuracy, copyright compliance, compliance with data protection laws, legality or decency of material contained in or accessed through the Services.
+                  You expressly understand and agree that your use of the Services is at your sole risk. The Services (including the Site, the App and the Content) are provided on an &quot;as is&rdquo; and &quot;as available&rdquo; basis, without warranties of any kind, either express or implied, including, without limitation, implied warranties of merchantability, fitness for a particular purpose or non-infringement. You acknowledge that PUSH has no control over, and no duty to take any action regarding: which users gain access to or use the Services; what effects the Content may have on you; how you may interpret or use the Content; or what actions you may take as a result of having been exposed to the Content. You release PUSH from all liability for you having acquired or not acquired Content through the Services. PUSH makes no representations concerning any Content contained in or accessed through the Services, and PUSH will not be responsible or liable for the accuracy, copyright compliance, compliance with data protection laws, legality or decency of material contained in or accessed through the Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -235,11 +235,11 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You acknowledge that EPNS is not responsible for transferring, safeguarding, or maintaining your private keys or any digital currency associated therewith. If you lose, mishandle or have stolen associated digital currency private keys, you acknowledge that you may not be able to recover associated digital currency, and that EPNS is not responsible for such loss. You acknowledge that EPNS is not responsible for any loss, damage or liability arising from your failure to comply with these Terms hereunder.
+                  You acknowledge that PUSH is not responsible for transferring, safeguarding, or maintaining your private keys or any digital currency associated therewith. If you lose, mishandle or have stolen associated digital currency private keys, you acknowledge that you may not be able to recover associated digital currency, and that PUSH is not responsible for such loss. You acknowledge that PUSH is not responsible for any loss, damage or liability arising from your failure to comply with these Terms hereunder.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>THE SITE, THE APP AND THE SERVICES ARE PROVIDED BY EPNS (AND ITS LICENSORS AND SUPPLIERS) ON AN &quot;AS-IS&rdquo; BASIS, WITHOUT WARRANTIES OR ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, THAT USE OF THE SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, OR THE SECURITY ASSOCIATED USE OF, OR TRANSMISSION OF INFORMATION THROUGH, THE SERVICES. SOME JURISDICTIONS DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. YOU ASSUME ALL RESPONSIBILITY AND RISK FOR YOUR USE OF THE SITE, THE APP, AND THE SERVICES, AND YOUR RELIANCE THEREON. NO OPINION, ADVICE OR STATEMENT OF EPNS OR ITS AFFILIATES, LICENSORS, CUSTOMERS, SUPPLIERS, ADVERTISERS, SPONSORS, AGENTS, MEMBERS OR VISITORS, WHETHER MADE ON THE SITE, THE APP, OR IN CONNECTION WITH THE SERVICES OR OTHERWISE, SHALL CREATE ANY WARRANTY. YOUR USE OF THE SITE, THE APP AND THE SERVICES ARE ENTIRELY AT YOUR OWN RISK.</B> There is a risk that the Site or the App could include inaccuracies or errors. Additionally, a possibility exists that unauthorised alterations could be made by third parties to the Site or the App. Although we attempt to maintain and ensure the integrity of the Site and the App, we make no guarantees as to the completeness or correctness or the Site or the App.
+                    <B>THE SITE, THE APP AND THE SERVICES ARE PROVIDED BY PUSH (AND ITS LICENSORS AND SUPPLIERS) ON AN &quot;AS-IS&rdquo; BASIS, WITHOUT WARRANTIES OR ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, THAT USE OF THE SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, OR THE SECURITY ASSOCIATED USE OF, OR TRANSMISSION OF INFORMATION THROUGH, THE SERVICES. SOME JURISDICTIONS DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS MAY NOT APPLY TO YOU. YOU ASSUME ALL RESPONSIBILITY AND RISK FOR YOUR USE OF THE SITE, THE APP, AND THE SERVICES, AND YOUR RELIANCE THEREON. NO OPINION, ADVICE OR STATEMENT OF PUSH OR ITS AFFILIATES, LICENSORS, CUSTOMERS, SUPPLIERS, ADVERTISERS, SPONSORS, AGENTS, MEMBERS OR VISITORS, WHETHER MADE ON THE SITE, THE APP, OR IN CONNECTION WITH THE SERVICES OR OTHERWISE, SHALL CREATE ANY WARRANTY. YOUR USE OF THE SITE, THE APP AND THE SERVICES ARE ENTIRELY AT YOUR OWN RISK.</B> There is a risk that the Site or the App could include inaccuracies or errors. Additionally, a possibility exists that unauthorised alterations could be made by third parties to the Site or the App. Although we attempt to maintain and ensure the integrity of the Site and the App, we make no guarantees as to the completeness or correctness or the Site or the App.
                   </Para>
 
                   {/* 6.4 Risk of Exploits and Weaknesses in Cryptography Field */}
@@ -247,7 +247,7 @@ function TermsOfService() {
                   6.4 Risk of Exploits and Weaknesses in Cryptography Field
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You acknowledge and understand that Cryptography is a progressing field. Advances in code cracking or technical advances such as the development of quantum computers may present risks to cryptocurrencies and Services of Content, which could result in the theft or loss of your cryptographic tokens or property. To the extent possible, EPNS intends to update the protocol underlying Services to account for any advances in cryptography and to incorporate additional security measures, but does not guarantee or otherwise represent full security of the system. By using the Services or accessing Content, you acknowledge these inherent risks.
+                  You acknowledge and understand that Cryptography is a progressing field. Advances in code cracking or technical advances such as the development of quantum computers may present risks to cryptocurrencies and Services of Content, which could result in the theft or loss of your cryptographic tokens or property. To the extent possible, PUSH intends to update the protocol underlying Services to account for any advances in cryptography and to incorporate additional security measures, but does not guarantee or otherwise represent full security of the system. By using the Services or accessing Content, you acknowledge these inherent risks.
                   </Para>
 
                   {/* 6.5 Cryptocurrency and Volatility */}
@@ -255,7 +255,7 @@ function TermsOfService() {
                   6.5 Cryptocurrency and Volatility
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You understand that Ethereum and other blockchain technologies and associated cryptographic tokens are highly volatile due to many factors including but not limited to adoption, speculation, technology and security risks. You also acknowledge that the cost of transacting on such technologies is variable and may increase at any time causing impact to any activities taking place on the blockchain network. You acknowledge these risks and agree that EPNS cannot be held liable for such fluctuations or increased costs.
+                  You understand that Ethereum and other blockchain technologies and associated cryptographic tokens are highly volatile due to many factors including but not limited to adoption, speculation, technology and security risks. You also acknowledge that the cost of transacting on such technologies is variable and may increase at any time causing impact to any activities taking place on the blockchain network. You acknowledge these risks and agree that PUSH cannot be held liable for such fluctuations or increased costs.
                   </Para>
 
                   {/* 6.6 Application Security */}
@@ -263,7 +263,7 @@ function TermsOfService() {
                   6.6 Application Security
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You further acknowledge that blockchain applications are code subject to flaws and acknowledge that you are solely responsible for evaluating any code provided by the Services or Content and the trustworthiness of any third-party websites, products, smart-contracts, or Content you access or use through the Services. You further expressly acknowledge and represent that blockchain applications can be written maliciously or negligently, that EPNS cannot be held liable for your interaction with such applications and that such applications may cause the loss of property or even identity. This warning and others later provided by EPNS in no way evidence or represent an on-going duty to alert you to all of the potential risks of utilizing the Services or Content.
+                  You further acknowledge that blockchain applications are code subject to flaws and acknowledge that you are solely responsible for evaluating any code provided by the Services or Content and the trustworthiness of any third-party websites, products, smart-contracts, or Content you access or use through the Services. You further expressly acknowledge and represent that blockchain applications can be written maliciously or negligently, that PUSH cannot be held liable for your interaction with such applications and that such applications may cause the loss of property or even identity. This warning and others later provided by PUSH in no way evidence or represent an on-going duty to alert you to all of the potential risks of utilizing the Services or Content.
                   </Para>
 
                   {/* 5.7 Affiliated Service / Third Party Service */}
@@ -275,27 +275,27 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  Service Providers may charge you a fee for use of, or access to, such Additional Services. You acknowledge that EPNS may earn fees from Service Providers in connection with your use of such Additional Services.
+                  Service Providers may charge you a fee for use of, or access to, such Additional Services. You acknowledge that PUSH may earn fees from Service Providers in connection with your use of such Additional Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You agree that EPNS and its affiliates are not in any way associated with the owner or operator of any Third Party Services or responsible or liable for the software and services offered by them or for anything in connection with such Third Party Services. EPNS does not endorse or approve and makes no warranties, representations or undertakings relating to the software, service or content of any Third Party Services.
+                  You agree that PUSH and its affiliates are not in any way associated with the owner or operator of any Third Party Services or responsible or liable for the software and services offered by them or for anything in connection with such Third Party Services. PUSH does not endorse or approve and makes no warranties, representations or undertakings relating to the software, service or content of any Third Party Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  In addition, EPNS disclaims liability for any loss, damage and any other consequence resulting directly or indirectly from or relating to your use or access of Third Party Services or any information that you may provide or any transaction conducted with or through the Third Party Services or the failure of any information, software or services posted or offered by such Service Providers or any error, omission or misrepresentation by such Service Providers or any computer virus arising from or system failure associated with the Third Party Services.
+                  In addition, PUSH disclaims liability for any loss, damage and any other consequence resulting directly or indirectly from or relating to your use or access of Third Party Services or any information that you may provide or any transaction conducted with or through the Third Party Services or the failure of any information, software or services posted or offered by such Service Providers or any error, omission or misrepresentation by such Service Providers or any computer virus arising from or system failure associated with the Third Party Services.
                   </Para>
 
                   <Para margin="20px 0px 20px 20px">
                   In the event of any inconsistency between the terms herein and the terms of the Additional Services, the terms herein will prevail.
                   </Para>
 
-                  {/* 6.8 EPNS Not Liable */}
+                  {/* 6.8 PUSH Not Liable */}
                   <Para weight="400" spacing="0.2em" color="#FFF" margin="20px 0px 20px 20px" textTransform="uppercase" size="1.1em">
-                  6.8 EPNS Not Liable
+                  6.8 PUSH Not Liable
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  Without prejudice to the generality of any of the provisions in these Terms, EPNS shall not be liable for your usage of the Site, the App or the Services in the event of any  unavailability, downtime, suspension or termination:
+                  Without prejudice to the generality of any of the provisions in these Terms, PUSH shall not be liable for your usage of the Site, the App or the Services in the event of any  unavailability, downtime, suspension or termination:
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
@@ -323,7 +323,7 @@ function TermsOfService() {
                   6.9 Sensitive Data
                   </Para>
                   <Para margin="-10px 0px 20px 20px">
-                  Sensitive Data (as defined below) will not be provided to EPNS at any time and without prejudice to the generality of any of the provisions in these Terms, EPNS will have no liability whatsoever for Sensitive Data, whether in connection with a security incident or otherwise. For purposes of these Terms, <B>&quot;Sensitive Data&rdquo;</B> means (a) social security number, passport number, driver’s license number, or similar identifier (or any portion thereof), (b) credit or debit card number, (c) employment, financial, genetic, biometric or health information, (d) racial, ethnic, political or religious affiliation, trade union membership, or information about sexual life or sexual orientation, (e) account passwords, (f) date of birth, (g) criminal history, (h) mother’s maiden name or (i) any other information or combinations of information that is deemed sensitive or private under the legal framework of any applicable jurisdiction.
+                  Sensitive Data (as defined below) will not be provided to PUSH at any time and without prejudice to the generality of any of the provisions in these Terms, PUSH will have no liability whatsoever for Sensitive Data, whether in connection with a security incident or otherwise. For purposes of these Terms, <B>&quot;Sensitive Data&rdquo;</B> means (a) social security number, passport number, driver’s license number, or similar identifier (or any portion thereof), (b) credit or debit card number, (c) employment, financial, genetic, biometric or health information, (d) racial, ethnic, political or religious affiliation, trade union membership, or information about sexual life or sexual orientation, (e) account passwords, (f) date of birth, (g) criminal history, (h) mother’s maiden name or (i) any other information or combinations of information that is deemed sensitive or private under the legal framework of any applicable jurisdiction.
                   </Para>
                 </ListGroup>
 
@@ -342,7 +342,7 @@ function TermsOfService() {
                   7.1 OWNERSHIP AND INTELLECTUAL PROPERTY
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  All title, ownership and intellectual property rights in and to the Site, the App and the Services are owned by EPNS or its licensors. You acknowledge and agree that the Services contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by EPNS in writing, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Site, the App or the Services, in whole or in part.
+                  All title, ownership and intellectual property rights in and to the Site, the App and the Services are owned by PUSH or its licensors. You acknowledge and agree that the Services contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by PUSH in writing, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Site, the App or the Services, in whole or in part.
                   </Para>
 
                   {/* 7.2 Limited and Revocable License */}
@@ -354,19 +354,19 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  The EPNS software application, including without limitation the Site, the App and the Services, are not sold or transferred to you, and EPNS and its licensors retain ownership of all copies of the software applications even after installation on your personal computers, mobile handsets, tablets, wearable devices, speakers and/or other devices (<B>&quot;Devices&rdquo;</B>).
+                  The PUSH software application, including without limitation the Site, the App and the Services, are not sold or transferred to you, and PUSH and its licensors retain ownership of all copies of the software applications even after installation on your personal computers, mobile handsets, tablets, wearable devices, speakers and/or other devices (<B>&quot;Devices&rdquo;</B>).
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  All EPNS trademarks, service marks, trade names, logos, domain names, and any other features of the EPNS brand (“EPNS Brand Features”) are the sole property of EPNS or its licensors. The Terms do not grant you any rights to use any EPNS Brand Features whether for commercial or non-commercial use.
+                  All PUSH trademarks, service marks, trade names, logos, domain names, and any other features of the PUSH brand (“PUSH Brand Features”) are the sole property of PUSH or its licensors. The Terms do not grant you any rights to use any PUSH Brand Features whether for commercial or non-commercial use.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  All EPNS trademarks, service marks, trade names, logos, domain names, and any other features of the EPNS brand (<B>&quot;EPNS Brand Features&rdquo;</B>) are the sole property of EPNS or its licensors. These Terms do not grant you any rights to use any EPNS Brand Features whether for commercial or non-commercial use.
+                  All PUSH trademarks, service marks, trade names, logos, domain names, and any other features of the PUSH brand (<B>&quot;PUSH Brand Features&rdquo;</B>) are the sole property of PUSH or its licensors. These Terms do not grant you any rights to use any PUSH Brand Features whether for commercial or non-commercial use.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You agree to abide by our user guidelines and not to use the Services or any part thereof in any manner not expressly permitted by these Terms. Except for the rights expressly granted to you in these Terms, EPNS grants no right, title, or interest to you in the Site, the App or the Services.
+                  You agree to abide by our user guidelines and not to use the Services or any part thereof in any manner not expressly permitted by these Terms. Except for the rights expressly granted to you in these Terms, PUSH grants no right, title, or interest to you in the Site, the App or the Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -382,7 +382,7 @@ function TermsOfService() {
                   7.3 CONTENT
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  By displaying, publishing or distributing Content via the Site, the App or the Services, you hereby grant to EPNS an irrevocable, perpetual, worldwide, royalty-free, non-exclusive license to use, modify, delete from, add to, create derivative works of, publicly perform, publicly display, reproduce and distribute (and to sublicense the foregoing rights through multiple tiers of licensees) such Content via the Site or the App. From time to time, we may remove Content from the Site or the App, permanently or temporarily.
+                  By displaying, publishing or distributing Content via the Site, the App or the Services, you hereby grant to PUSH an irrevocable, perpetual, worldwide, royalty-free, non-exclusive license to use, modify, delete from, add to, create derivative works of, publicly perform, publicly display, reproduce and distribute (and to sublicense the foregoing rights through multiple tiers of licensees) such Content via the Site or the App. From time to time, we may remove Content from the Site or the App, permanently or temporarily.
                   </Para>
 
                   <Para margin="20px 0px 20px 20px">
@@ -397,7 +397,7 @@ function TermsOfService() {
                 8. Links
                 </Para>
                 <Para margin="-10px 0px 20px 0px">
-                The Services provide, or third parties may provide, links to other World Wide Web or accessible sites, applications or resources. Because EPNS has no control over such sites, applications and resources, you acknowledge and agree that EPNS is not responsible for the availability of such external sites, applications or resources, and does not endorse and is not responsible or liable for any content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that EPNS shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such site or resource.
+                The Services provide, or third parties may provide, links to other World Wide Web or accessible sites, applications or resources. Because PUSH has no control over such sites, applications and resources, you acknowledge and agree that PUSH is not responsible for the availability of such external sites, applications or resources, and does not endorse and is not responsible or liable for any content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that PUSH shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such site or resource.
                 </Para>
 
 
@@ -406,7 +406,7 @@ function TermsOfService() {
                 9. INDEMNITY
                 </Para>
                 <Para margin="-10px 0px 20px 0px">
-                You agree to release and to indemnify, defend and hold harmless EPNS and its parents, subsidiaries, affiliates and agencies, as well as the officers, directors, employees, shareholders and representatives of any of the foregoing entities, from and against any and all losses, liabilities, expenses, damages, costs (including attorneys’ fees and court costs) claims or actions of any kind whatsoever arising or resulting from:
+                You agree to release and to indemnify, defend and hold harmless PUSH and its parents, subsidiaries, affiliates and agencies, as well as the officers, directors, employees, shareholders and representatives of any of the foregoing entities, from and against any and all losses, liabilities, expenses, damages, costs (including attorneys’ fees and court costs) claims or actions of any kind whatsoever arising or resulting from:
                 </Para>
 
                 <ListGroup>
@@ -426,7 +426,7 @@ function TermsOfService() {
             
 
                 <Para margin="20px 0px 20px 0px">
-                EPNS reserves the right, at its own expense, to assume exclusive defence and control of any matter otherwise subject to indemnification by you and, in such case, you agree to cooperate with EPNS in the defence of such matter.
+                PUSH reserves the right, at its own expense, to assume exclusive defence and control of any matter otherwise subject to indemnification by you and, in such case, you agree to cooperate with PUSH in the defence of such matter.
                 </Para>
 
 
@@ -435,7 +435,7 @@ function TermsOfService() {
                 10. LIMITATION ON LIABILITY
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
-                  <B>YOU ACKNOWLEDGE AND AGREE THAT YOU ASSUME FULL RESPONSIBILITY FOR YOUR USE OF THE SITE, THE APP AND THE SERVICES. YOU ACKNOWLEDGE AND AGREE THAT ANY INFORMATION YOU SEND OR RECEIVE DURING YOUR USE OF THE SITE, THE APP AND THE SERVICES MAY NOT BE SECURE AND MAY BE INTERCEPTED OR LATER ACQUIRED BY UNAUTHORIZED PARTIES. YOU ACKNOWLEDGE AND AGREE THAT YOUR USE OF THE SITE, THE APP AND THE SERVICES IS AT YOUR OWN RISK. RECOGNIZING SUCH, YOU UNDERSTAND AND AGREE THAT, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER EPNS NOR ITS SUPPLIERS OR LICENSORS WILL BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY OR OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER TANGIBLE OR INTANGIBLE LOSSES OR ANY OTHER DAMAGES BASED ON CONTRACT, TORT, STRICT LIABILITY OR ANY OTHER THEORY (EVEN IF EPNS HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM THE SITE, THE APP OR SERVICES; THE USE OR THE INABILITY TO USE THE SITE, THE APP OR THE SERVICES; UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE, THE APP OR THE SERVICES; ANY ACTIONS WE TAKE OR FAIL TO TAKE AS A RESULT OF COMMUNICATIONS YOU SEND TO US; HUMAN ERRORS; TECHNICAL MALFUNCTIONS; FAILURES, INCLUDING PUBLIC UTILITY OR TELEPHONE OUTAGES; OMISSIONS, INTERRUPTIONS, LATENCY, DELETIONS OR DEFECTS OF ANY DEVICE OR NETWORK, PROVIDERS, OR SOFTWARE (INCLUDING, BUT NOT LIMITED TO, THOSE THAT DO NOT PERMIT PARTICIPATION IN THE SERVICES); ANY INJURY OR DAMAGE TO COMPUTER EQUIPMENT; INABILITY TO FULLY ACCESS THE SITE, THE APP OR THE SERVICES OR ANY OTHER WEBSITE; THEFT, TAMPERING, DESTRUCTION, OR UNAUTHORIZED ACCESS TO, IMAGES OR OTHER CONTENT OF ANY KIND; DATA THAT IS PROCESSED LATE OR INCORRECTLY OR IS INCOMPLETE OR LOST; TYPOGRAPHICAL, PRINTING OR OTHER ERRORS, OR ANY COMBINATION THEREOF; OR ANY OTHER MATTER RELATING TO THE SITE, THE APP OR ANY OTHER ASPECT OF THE SERVICES.</B>
+                  <B>YOU ACKNOWLEDGE AND AGREE THAT YOU ASSUME FULL RESPONSIBILITY FOR YOUR USE OF THE SITE, THE APP AND THE SERVICES. YOU ACKNOWLEDGE AND AGREE THAT ANY INFORMATION YOU SEND OR RECEIVE DURING YOUR USE OF THE SITE, THE APP AND THE SERVICES MAY NOT BE SECURE AND MAY BE INTERCEPTED OR LATER ACQUIRED BY UNAUTHORIZED PARTIES. YOU ACKNOWLEDGE AND AGREE THAT YOUR USE OF THE SITE, THE APP AND THE SERVICES IS AT YOUR OWN RISK. RECOGNIZING SUCH, YOU UNDERSTAND AND AGREE THAT, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER PUSH NOR ITS SUPPLIERS OR LICENSORS WILL BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, EXEMPLARY OR OTHER DAMAGES OF ANY KIND, INCLUDING WITHOUT LIMITATION DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER TANGIBLE OR INTANGIBLE LOSSES OR ANY OTHER DAMAGES BASED ON CONTRACT, TORT, STRICT LIABILITY OR ANY OTHER THEORY (EVEN IF PUSH HAD BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM THE SITE, THE APP OR SERVICES; THE USE OR THE INABILITY TO USE THE SITE, THE APP OR THE SERVICES; UNAUTHORIZED ACCESS TO OR ALTERATION OF YOUR TRANSMISSIONS OR DATA; STATEMENTS OR CONDUCT OF ANY THIRD PARTY ON THE SITE, THE APP OR THE SERVICES; ANY ACTIONS WE TAKE OR FAIL TO TAKE AS A RESULT OF COMMUNICATIONS YOU SEND TO US; HUMAN ERRORS; TECHNICAL MALFUNCTIONS; FAILURES, INCLUDING PUBLIC UTILITY OR TELEPHONE OUTAGES; OMISSIONS, INTERRUPTIONS, LATENCY, DELETIONS OR DEFECTS OF ANY DEVICE OR NETWORK, PROVIDERS, OR SOFTWARE (INCLUDING, BUT NOT LIMITED TO, THOSE THAT DO NOT PERMIT PARTICIPATION IN THE SERVICES); ANY INJURY OR DAMAGE TO COMPUTER EQUIPMENT; INABILITY TO FULLY ACCESS THE SITE, THE APP OR THE SERVICES OR ANY OTHER WEBSITE; THEFT, TAMPERING, DESTRUCTION, OR UNAUTHORIZED ACCESS TO, IMAGES OR OTHER CONTENT OF ANY KIND; DATA THAT IS PROCESSED LATE OR INCORRECTLY OR IS INCOMPLETE OR LOST; TYPOGRAPHICAL, PRINTING OR OTHER ERRORS, OR ANY COMBINATION THEREOF; OR ANY OTHER MATTER RELATING TO THE SITE, THE APP OR ANY OTHER ASPECT OF THE SERVICES.</B>
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
@@ -457,7 +457,7 @@ function TermsOfService() {
                 12. Termination and Suspension
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
-                EPNS may terminate or suspend all or part of the Services and your EPNS access immediately, without prior notice or liability, if you breach any of the provisions of these Terms, or in the event of any adverse change of regulatory environment. Upon termination of your access, your right to use the Services will immediately cease.
+                PUSH may terminate or suspend all or part of the Services and your PUSH access immediately, without prior notice or liability, if you breach any of the provisions of these Terms, or in the event of any adverse change of regulatory environment. Upon termination of your access, your right to use the Services will immediately cease.
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
@@ -470,7 +470,7 @@ function TermsOfService() {
                 13. NOTICE AND PROCEDURE FOR MAKING CLAIMS
                 </Para>
                 <Para margin="10px 0px 0px 0px">
-                If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide EPNS a written Notice containing the following information:
+                If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide PUSH a written Notice containing the following information:
                 </Para>
 
                 <Para margin="10px 0px 20px 0px">
@@ -522,7 +522,7 @@ function TermsOfService() {
                 1. ENTIRE AGREEMENT
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                These Terms (and any additional terms, rules and conditions of participation that EPNS may post on the Services) constitute the entire agreement between you and EPNS with respect to the Services and supersedes any prior agreements, oral or written, between you and EPNS. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict. These Terms (and any additional terms, rules and conditions of participation that EPNS may post on the Services) constitute the entire agreement between you and EPNS with respect to the Services and supersedes any prior agreements, oral or written, between you and EPNS. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict.
+                These Terms (and any additional terms, rules and conditions of participation that PUSH may post on the Services) constitute the entire agreement between you and PUSH with respect to the Services and supersedes any prior agreements, oral or written, between you and PUSH. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict. These Terms (and any additional terms, rules and conditions of participation that PUSH may post on the Services) constitute the entire agreement between you and PUSH with respect to the Services and supersedes any prior agreements, oral or written, between you and PUSH. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict.
                   </Para>
 
                   {/* 2. Waiver and Severability */}
@@ -530,7 +530,7 @@ function TermsOfService() {
                 2. WAIVER AND SEVERABILITY
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                The failure of EPNS to exercise or enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. If any provision of these Terms is found by an arbitrator or court of competent jurisdiction to be invalid, the parties nevertheless agree that the arbitrator or court should endeavour to give effect to the parties’ intentions as reflected in the provision, and the other provisions of these Terms remain in full force and effect.
+                The failure of PUSH to exercise or enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. If any provision of these Terms is found by an arbitrator or court of competent jurisdiction to be invalid, the parties nevertheless agree that the arbitrator or court should endeavour to give effect to the parties’ intentions as reflected in the provision, and the other provisions of these Terms remain in full force and effect.
                   </Para>
 
                   {/* 3. Statute of Limitations */}
@@ -591,7 +591,7 @@ function TermsOfService() {
                 You may not assign, delegate or transfer these Terms or your rights or obligations hereunder, in any way (by operation of law or otherwise) without our prior written consent. We may transfer, assign, or delegate these Terms and our rights and obligations without consent. These Terms are governed by and will be construed under the laws of Singapore, without regard to the conflicts of laws provisions thereof. Any dispute arising from or relating to the subject matter of these Terms shall be finally settled in Singapore, in English, in accordance with the Arbitration Rules of the Singapore International Arbitration Centre (the <B>&quot;Rules&rdquo;</B>) for the time being in force, which rules are deemed to be incorporated by reference in this Section, by one commercial arbitrator with substantial experience in resolving intellectual property and commercial contract disputes, who shall be selected from the appropriate list of arbitrators in accordance with such Rules. The seat of the arbitration shall be Singapore.
                 </Para>
                 <Para margin="0px 0px 20px 0px">
-                Judgment upon the award rendered by such arbitrator may be entered in any court of competent jurisdiction. Despite the foregoing obligation to arbitrate disputes, each party shall have the right to pursue injunctive or other equitable relief at any time, from any court of competent jurisdiction. For all purposes of this Agreement, the parties consent to exclusive jurisdiction and venue in Singapore. <B> Any arbitration under these Terms will take place on an individual basis: class arbitrations and class actions are not permitted. YOU UNDERSTAND AND AGREE THAT BY ENTERING INTO THESE TERMS, YOU AND EPNS ARE EACH WAIVING THE RIGHT TO TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION</B>
+                Judgment upon the award rendered by such arbitrator may be entered in any court of competent jurisdiction. Despite the foregoing obligation to arbitrate disputes, each party shall have the right to pursue injunctive or other equitable relief at any time, from any court of competent jurisdiction. For all purposes of this Agreement, the parties consent to exclusive jurisdiction and venue in Singapore. <B> Any arbitration under these Terms will take place on an individual basis: class arbitrations and class actions are not permitted. YOU UNDERSTAND AND AGREE THAT BY ENTERING INTO THESE TERMS, YOU AND PUSH ARE EACH WAIVING THE RIGHT TO TRIAL BY JURY OR TO PARTICIPATE IN A CLASS ACTION</B>
                 </Para>
 
 
@@ -600,7 +600,7 @@ function TermsOfService() {
                 3. CLASS ACTION WAIVER
                 </Para>
                 <Para margin="-10px 0px 20px 0px">
-                The parties further agree that any arbitration shall be conducted in their individual capacities only and not as a class action or other representative action, and the parties expressly waive their right to file a class action or seek relief on a class basis. <B>YOU AND EPNS AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</B> If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable for any reason or that an arbitration can proceed on a class basis, then the arbitration provision set forth above shall be deemed null and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.
+                The parties further agree that any arbitration shall be conducted in their individual capacities only and not as a class action or other representative action, and the parties expressly waive their right to file a class action or seek relief on a class basis. <B>YOU AND PUSH AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING.</B> If any court or arbitrator determines that the class action waiver set forth in this paragraph is void or unenforceable for any reason or that an arbitration can proceed on a class basis, then the arbitration provision set forth above shall be deemed null and void in its entirety and the parties shall be deemed to have not agreed to arbitrate disputes.
                 </Para>
               </ItemH>
 
