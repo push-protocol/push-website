@@ -42,15 +42,15 @@ import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 
-import { ReactComponent as PushMissingPieceFigure } from '../assets/figures/pushmissingpiece.svg';
 import { ReactComponent as GrowWithPushFigure } from '../assets/figures/growwithpush.svg';
+import { ReactComponent as PushMissingPieceFigure } from '../assets/figures/pushmissingpiece.svg';
 
+import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
-import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
+import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
@@ -288,7 +288,7 @@ function Home() {
                   spacing="-0.03em"
                 >
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
+                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum.{' '}
                 </Span>
               </ItemV>
 
@@ -297,12 +297,12 @@ function Home() {
                   <ItemV className="network">
                     <EthLogoTextSVG />
                   </ItemV>
-
+{/* 
                   <ItemV className="divider" />
 
                   <ItemV className="network">
                     <PolygonLogoTextSVG />
-                  </ItemV>
+                  </ItemV> */}
                 </LiveNetworks>
               </ItemV>
             </Partners>
@@ -747,8 +747,8 @@ function Home() {
                   lineHeight="142%"
                 >
                   The most diverse personalities have found each other at Push. Unique people with special talents and
-                  extraordinary stories. We are united by the joy we take in our tech and in searching for and finding
-                  unexpected treasures.
+                  extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries 
+                  of everything web3 communication.
                 </Span>
               </ItemV>
             </BuiltByIntro>

@@ -31,7 +31,7 @@ export default [
   },
   {
     name: 'Jun',
-    title: 'Operations Lead',
+    title: 'Growth and Ops Lead',
     img: [
       '/team/jun@1x.png',
       '/team/jun@2x.png 2x, /team/jun@3x.png 3x'
@@ -41,7 +41,7 @@ export default [
   },
   {
     name: 'Igor',
-    title: 'Tech Lead',
+    title: 'Decentralization Lead',
     img: [
       '/team/igor@1x.png',
       '/team/igor@2x.png 2x, /team/igor@3x.png 3x'

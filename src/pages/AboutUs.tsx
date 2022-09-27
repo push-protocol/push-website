@@ -1,13 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
+import { BsArrowUpRight } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { BsArrowUpRight } from 'react-icons/bs';
 
-import {
-  HeroHeader, Content, ItemH, ItemV, H2, Span, Anchor,
-} from '../components/SharedStyling';
+import { Anchor, Content, H2, HeroHeader, ItemH, ItemV, Span } from '../components/SharedStyling';
 
 import HybridSection from '../components/HybridSection';
 
@@ -79,7 +77,7 @@ Aliquam dictum leo sed mi placerat, at consectetur eros facilisis. Phasellus ut 
               <H2 size="40px" weight="700" spacing="-0.02em" lineHeight="110%">Our Leadership</H2>
 
               <Span weight="400" color="#303C5E" size="19px" lineHeight="160%" spacing="-0.03em">
-                                The most diverse personalities have found each other at Push. Unique people with special talents and extraordinary stories. We are united by the joy we take in our tech and in searching for and finding unexpected treasures.
+                                The most diverse personalities have found each other at Push. Unique people with special talents and extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries of everything web3 communication.
               </Span>
             </ItemV>
           </ItemH>
