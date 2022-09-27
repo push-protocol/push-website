@@ -19,7 +19,7 @@ function AboutUs() {
           <ItemH margin="120px 0 0 0" flex="1">
             <ItemV justifyContent="center">
               <HeroHeader>
-                                About Push
+                  About Push
               </HeroHeader>
             </ItemV>
           </ItemH>
@@ -27,7 +27,7 @@ function AboutUs() {
           <ItemH flex="1">
             <ItemV>
               <Anchor
-                href="https://docs.epns.io/developers"
+                href="https://angel.co/company/ethereum-push-notification-service"
                 title="Job Openings"
                 target="_blank"
                 bg="#DD44B9"
@@ -38,7 +38,7 @@ function AboutUs() {
                 spacing="-0.03em"
                 lineHeight="26px"
               >
-                                Now Hiring, Explore Careers&nbsp;&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                  Now Hiring, Explore Careers&nbsp;&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
               </Anchor>
             </ItemV>
           </ItemH>
