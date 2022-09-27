@@ -2,12 +2,11 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Internal Components
