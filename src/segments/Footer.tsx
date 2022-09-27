@@ -103,7 +103,7 @@ function Footer() {
                   lineHeight="142%"
                   justify="flex-start"
                 >
-                                    Explore Docs&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                    Explore Docs&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
                 </Anchor>
               </InfoDetails>
                           
@@ -129,8 +129,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Terms"
                   >
-                                        Terms
+                    Terms
                   </Anchor>
 
                   <Anchor
@@ -143,8 +144,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Privacy"
                   >
-                                        Privacy
+                      Privacy
                   </Anchor>
 
                 </FooterLinks>
@@ -155,7 +157,7 @@ function Footer() {
                   <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
 
                   <Anchor
-                    href="https://epns.io/gov"
+                    href="https://gov.push.org"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -165,8 +167,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Push Governance"
                   >
-                                        Push Governance
+                      Push Governance
                   </Anchor>
 
                   <Anchor
@@ -180,12 +183,13 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Guides"
                   >
-                                        Guides
+                      Guides
                   </Anchor>
 
                   <Anchor
-                    href="https://gov.epns.io/top?period=yearly"
+                    href="https://gov.push.org/top?period=yearly"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -195,8 +199,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Forum"
                   >
-                                        Forum
+                      Forum
                   </Anchor>
 
                   <Anchor
@@ -210,8 +215,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Grants"
                   >
-                                        Grants
+                    Grants
                   </Anchor>
 
                   <Anchor
@@ -225,8 +231,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Snapshot"
                   >
-                                        Snapshot
+                      Snapshot
                   </Anchor>
                 </FooterLinks>
               </FooterColumn>
@@ -245,8 +252,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Blog"
                   >
-                                        Blog
+                      Blog
                   </Anchor>
                   <Anchor
                     href="https://whitepaper.epns.io/"
@@ -259,8 +267,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Whitepaper"
                   >
-                                        Whitepaper
+                      Whitepaper
                   </Anchor>
 
                   <Anchor
@@ -274,8 +283,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Github"
                   >
-                                        Github
+                      Github
                   </Anchor>
 
                   <Anchor
@@ -289,8 +299,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Discord"
                   >
-                                        Discord
+                      Discord
                   </Anchor>
 
                   <Anchor
@@ -304,8 +315,9 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="Dev Guides"
                   >
-                                        Dev Guides
+                      Dev Guides
                   </Anchor>
                 </FooterLinks>
               </FooterColumn>
@@ -341,6 +353,7 @@ function Footer() {
                     padding="0"
                     spacing="normal"
                     justify="flex-start"
+                    title="FAQ"
                   >
                       FAQ
                   </Anchor>
@@ -437,7 +450,7 @@ function Footer() {
               </Anchor>
 
               <Anchor
-                href="https://app.epns.io"
+                href="https://app.push.org"
                 title="PUSH Dapp"
                 target="_blank"
                 border="1px solid #2A2A39"

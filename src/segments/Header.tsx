@@ -296,7 +296,7 @@ function Header() {
                     </Anchor>
                     <Anchor
                       href="#/"
-                      title="EPNS Press Kit"
+                      title="Push Press Kit"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -348,7 +348,7 @@ function Header() {
                     expanded={mobileMenuMap[2]}
                   >
                     <Anchor
-                      href="https://epns.io/gov"
+                      href="https://gov.push.org"
                       target="_blank"
                       title="Push Governance"
                       bg="transparent"
@@ -362,7 +362,7 @@ function Header() {
                       Website
                     </Anchor>
                     <Anchor
-                      href="https://gov.epns.io/"
+                      href="https://gov.push.org"
                       target="_blank"
                       title="Push Governance Forum"
                       bg="transparent"
@@ -426,7 +426,7 @@ function Header() {
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
-                href="https://app.epns.io/#/live_walkthrough"
+                href="https://app.push.org/#/live_walkthrough"
                 target="_blank"
                 title="PUSH Dapp"
                 bg="#DD44B9"

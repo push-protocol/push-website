@@ -168,12 +168,12 @@ function Home() {
                     Start Building
                   </ButtonV2>
                   <ButtonV2
-                    href="https://app.epns.io/"
-                    title="EPNS Dapp"
+                    href="https://app.push.org/"
+                    title="Push Dapp"
                     target="_blank"
                     background={GLOBALS.COLORS.BG_DARK_SECONDARY}
                     lineHeight="26px"
-                    onClick={() => window.open('https://app.epns.io')}
+                    onClick={() => window.open('https://app.push.org')}
                     zIndex="2"
                   >
                     Explore Push Protocol
@@ -253,7 +253,7 @@ function Home() {
               </ItemV>
               <ItemV justifyContent="flex-end">
                 <Anchor
-                  href="https://app.epns.io"
+                  href="https://app.push.org"
                   title="PUSH Dapp"
                   target="_blank"
                   hoverBG="transparent"
@@ -484,7 +484,7 @@ function Home() {
                     future of web 3
                   </Span>
                   <Anchor
-                    href="https://epns.io/gov"
+                    href="https://gov.push.org"
                     title="Governance"
                     target="_blank"
                     bg="#DD44B9"
@@ -590,7 +590,10 @@ function Home() {
             <ItemH padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
-                  <ChainAgnosticFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <ChainAgnosticFigure />
+                  </div>
+                 
                   <Span
                     color="#09090B"
                     size="24px"
@@ -602,7 +605,10 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <ImmediatecommunicationFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <ImmediatecommunicationFigure/>
+                  </div>
+
                   <Span
                     color="#09090B"
                     size="24px"
@@ -614,7 +620,10 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <DecentralizedstackFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <DecentralizedstackFigure/>
+                  </div>
+
                   <Span
                     color="#09090B"
                     size="24px"
@@ -627,7 +636,10 @@ function Home() {
                 </MatrixCell>
 
                 <MatrixCell>
-                  <ImproveduxFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <ImproveduxFigure/>
+                  </div>
+
                   <Span
                     color="#09090B"
                     size="24px"
@@ -639,7 +651,11 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <SecurityalertsFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <SecurityalertsFigure />
+                  </div>
+
+                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -651,7 +667,11 @@ function Home() {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <CensorshipresistantFigure className='matrixFigure'/>
+                  <div className='matrixFigure'>
+                    <CensorshipresistantFigure />
+                  </div>
+
+                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -871,7 +891,7 @@ function Home() {
                   <ArticleSource>
                     <EthFoundationBlackSVG />
                     <Anchor
-                      href="https://app.epns.io"
+                      href="https://app.push.org"
                       title="Read More"
                       target="_blank"
                       hoverBG="transparent"
@@ -905,7 +925,7 @@ function Home() {
                   <ArticleSource>
                     <EthFoundationBlackSVG />
                     <Anchor
-                      href="https://app.epns.io"
+                      href="https://app.push.org"
                       title="Read More"
                       target="_blank"
                       hoverBG="transparent"
@@ -939,7 +959,7 @@ function Home() {
                   <ArticleSource>
                     <CoindeskBlackSVG />
                     <Anchor
-                      href="https://app.epns.io"
+                      href="https://app.push.org"
                       title="Read More"
                       target="_blank"
                       hoverBG="transparent"
@@ -1212,7 +1232,7 @@ const GrowPushCardDetails = styled.div`
 `;
 
 const IntegrateGrowWithPushRow = styled(ItemH)`
-  margin: 160px 0 0 0;
+  margin: 40px 0 0 0;
   padding: 0 160px 0 160px;
 
   @media ${device.tablet} {
@@ -1265,7 +1285,14 @@ const MatrixCell = styled.div`
   color: #000;
   row-gap: 24px;
 
+  justify-content: space-between;
   flex-direction: column;
+
+  & .matrixFigure {
+    display: flex;
+    height: 72px;
+    align-items: center;
+  }
 
   &:nth-child(3) {
     border-right: 0;
