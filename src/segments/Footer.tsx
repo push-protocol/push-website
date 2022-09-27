@@ -377,7 +377,7 @@ function Footer() {
               <Anchor
                 className="pushLogo"
                 onClick={() => navigate('/') }
-                title="PUSH"
+                title="Push"
               >
                 <PushLogoTextWhite />
               </Anchor>
@@ -385,7 +385,7 @@ function Footer() {
                             
               <Anchor
                 href="https://github.com/ethereum-push-notification-service"
-                title="PUSH Github"
+                title="Push Github"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -395,7 +395,7 @@ function Footer() {
               </Anchor>
               <Anchor
                 href="https://twitter.com/epnsproject"
-                title="PUSH Twitter"
+                title="Push Twitter"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -406,7 +406,7 @@ function Footer() {
 
               <Anchor
                 href="https://t.me/epnsproject"
-                title="PUSH Telegram"
+                title="Push Telegram"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -416,7 +416,7 @@ function Footer() {
               </Anchor>
               <Anchor
                 href="https://discord.gg/YVPB99F9W5"
-                title="PUSH Discord"
+                title="Push Discord"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -429,7 +429,7 @@ function Footer() {
             <ItemV justifyContent="flex-end" flex="1" gap="12px" className="pushPlatformLinks">
               <Anchor
                 href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
-                title="PUSH iOS app"
+                title="Push iOS app"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -440,7 +440,7 @@ function Footer() {
 
               <Anchor
                 href="https://play.google.com/store/apps/details?id=io.epns.epns"
-                title="PUSH Android app"
+                title="Push Android app"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"
@@ -451,7 +451,7 @@ function Footer() {
 
               <Anchor
                 href="https://app.push.org"
-                title="PUSH Dapp"
+                title="Push Dapp"
                 target="_blank"
                 border="1px solid #2A2A39"
                 radius="12px"

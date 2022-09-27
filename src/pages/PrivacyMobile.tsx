@@ -26,7 +26,7 @@ function PrivacyMobile() {
           <Content className="contentBox" flex="0">
             <ItemH flexDirection="column" justifyContent="flex-start">
               <HeroHeader>PRIVACY POLICY MOBILE APPS</HeroHeader>
-              <Para margin="20px 0 0 0" size="1.5rem">Defines how PUSH collects, handles and processes data.</Para>
+              <Para margin="20px 0 0 0" size="1.5rem">Defines how Push collects, handles and processes data.</Para>
 
               <ItemV align="flex-start" margin="0">
                 <H3 maxWidth="400px">LAST UPDATED: 24TH SEPTEMBER 2022</H3>
@@ -52,24 +52,24 @@ function PrivacyMobile() {
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
-                This policy (the <B>Policy</B>) outlines how we collect, use, store and disclose your personal data. Please take a moment to read about how we collect, use and/or disclose your personal data so that you know and understand the purposes for which we may collect, use and/or disclose your personal data. By accessing the website at <A href="https://push.org" targer="_blank">push.org</A>, <A href="https://app.push.org" targer="_blank">app.push.org</A> or <A href="https://staging.push.org" targer="_blank">staging.push.org</A> or any other subdomains of <B>push.org</B> (the <B>Website(s)</B>), you agree and consent to Ethereum Push Notification Service Foundation (the <B>Company</B>), its related corporations, business units and affiliates, as well as their respective representatives and/or agents (collectively referred to herein as “PUSH”, “us”, “we” or “our”), collecting, using, disclosing and sharing amongst themselves the personal data, and to disclosing such personal data to relevant third party providers. This Policy supplements but does not supersede nor replace any other consent which you may have previously provided to us nor does it affect any rights that we may have at law in connection with the collection, use and/or disclosure of your personal data. We may from time to time update this Policy to ensure that this Policy is consistent with our future developments, industry trends and/or any changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms of this Policy shall apply. For the avoidance of doubt, this Policy forms part of the Terms of Service governing your relationship with us and should be read in conjunction with such <A href="./terms" target="_blank">Terms of Service</A>. All capitalised terms used but not defined herein shall have the meaning ascribed to them in the Terms of Service.
+                This policy (the <B>Policy</B>) outlines how we collect, use, store and disclose your personal data. Please take a moment to read about how we collect, use and/or disclose your personal data so that you know and understand the purposes for which we may collect, use and/or disclose your personal data. By accessing the website at <A href="https://push.org" targer="_blank">push.org</A>, <A href="https://app.push.org" targer="_blank">app.push.org</A> or <A href="https://staging.push.org" targer="_blank">staging.push.org</A> or any other subdomains of <B>push.org</B> (the <B>Website(s)</B>), you agree and consent to Ethereum Push Notification Service Foundation (the <B>Company</B>), its related corporations, business units and affiliates, as well as their respective representatives and/or agents (collectively referred to herein as “Push”, “us”, “we” or “our”), collecting, using, disclosing and sharing amongst themselves the personal data, and to disclosing such personal data to relevant third party providers. This Policy supplements but does not supersede nor replace any other consent which you may have previously provided to us nor does it affect any rights that we may have at law in connection with the collection, use and/or disclosure of your personal data. We may from time to time update this Policy to ensure that this Policy is consistent with our future developments, industry trends and/or any changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms of this Policy shall apply. For the avoidance of doubt, this Policy forms part of the Terms of Service governing your relationship with us and should be read in conjunction with such <A href="./terms" target="_blank">Terms of Service</A>. All capitalised terms used but not defined herein shall have the meaning ascribed to them in the Terms of Service.
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
-                The security of your personal data is important to us. At each stage of data collection, use and disclosure, PUSH has in place physical, electronic, administrative and procedural safeguards to protect the personal data stored with us. However, do note that no transmission of personal data over the internet can be guaranteed to be 100% secure – accordingly and despite our efforts, PUSH cannot guarantee or warrant the security of any information you transmit to us, or to or from our online services. PUSH shall not have any responsibility or liability for the security of information transmitted via the internet.
+                The security of your personal data is important to us. At each stage of data collection, use and disclosure, Push has in place physical, electronic, administrative and procedural safeguards to protect the personal data stored with us. However, do note that no transmission of personal data over the internet can be guaranteed to be 100% secure – accordingly and despite our efforts, Push cannot guarantee or warrant the security of any information you transmit to us, or to or from our online services. Push shall not have any responsibility or liability for the security of information transmitted via the internet.
                 </Para>
 
                 <Para>
-                This policy (the Policy) outlines how we collect, use, store and disclose your personal data. Please take a moment to read about how we collect, use and/or disclose your personal data so that you know and understand the purposes for which we may collect, use and/or disclose your personal data. By accessing the &quot;PUSH&rdquo; application available on Google Play or Apple App Store (the App), you agree and consent to Ethereum Push Notification Service Foundation (the Company), its related corporations, business units and affiliates, as well as their respective representatives and/or agents (collectively referred to herein as PUSH, us, we or our), collecting, using, disclosing and sharing amongst themselves the personal data, and to disclosing such personal data to relevant third party providers. This Policy supplements but does not supersede nor replace any other consent which you may have previously provided to us nor does it affect any rights that we may have at law in connection with the collection, use and/or disclosure of your personal data. We may from time to time update this Policy to ensure that this Policy is consistent with our future developments, industry trends and/or any changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms of this Policy shall apply. For the avoidance of doubt, this Policy forms part of the terms and conditions governing your relationship with us and should be read in conjunction with such terms and conditions.
+                This policy (the Policy) outlines how we collect, use, store and disclose your personal data. Please take a moment to read about how we collect, use and/or disclose your personal data so that you know and understand the purposes for which we may collect, use and/or disclose your personal data. By accessing the &quot;Push&rdquo; application available on Google Play or Apple App Store (the App), you agree and consent to Ethereum Push Notification Service Foundation (the Company), its related corporations, business units and affiliates, as well as their respective representatives and/or agents (collectively referred to herein as Push, us, we or our), collecting, using, disclosing and sharing amongst themselves the personal data, and to disclosing such personal data to relevant third party providers. This Policy supplements but does not supersede nor replace any other consent which you may have previously provided to us nor does it affect any rights that we may have at law in connection with the collection, use and/or disclosure of your personal data. We may from time to time update this Policy to ensure that this Policy is consistent with our future developments, industry trends and/or any changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms of this Policy shall apply. For the avoidance of doubt, this Policy forms part of the terms and conditions governing your relationship with us and should be read in conjunction with such terms and conditions.
                 </Para>
 
             
-                {/* What personal data is collected by PUSH */}
+                {/* What personal data is collected by Push */}
                 <Para weight="400" spacing="0.2em" color="#000" textTransform="uppercase" size="1.2em">
-                    1 What personal data is collected by PUSH
+                    1 What personal data is collected by Push
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
-                &quot;Personal data&rdquo; means data, whether true or not, about an individual who can be identified (i) from that data, or (ii) from that data and other information to which the organisation has or is likely to have access. Personal data may be collected when you interact with our services or use the App, or may be received by PUSH from third-party databases or service providers that provide business information. For example, PUSH may collect personal data such as particulars of digital wallet addresses, transactions performed by said digital wallet addresses, public cryptographic key relating to digital wallet addresses on distributed ledger networks and/or similar information.
+                &quot;Personal data&rdquo; means data, whether true or not, about an individual who can be identified (i) from that data, or (ii) from that data and other information to which the organisation has or is likely to have access. Personal data may be collected when you interact with our services or use the App, or may be received by Push from third-party databases or service providers that provide business information. For example, Push may collect personal data such as particulars of digital wallet addresses, transactions performed by said digital wallet addresses, public cryptographic key relating to digital wallet addresses on distributed ledger networks and/or similar information.
                 </Para>
 
 
@@ -100,7 +100,7 @@ function PrivacyMobile() {
                
 
                 <Para margin="0px 0px 0px 0px">
-                PUSH may collect, use and/or disclose your personal data for its legitimate interests or business purposes, including operations for these purposes. These may include, without limitation, the following:
+                Push may collect, use and/or disclose your personal data for its legitimate interests or business purposes, including operations for these purposes. These may include, without limitation, the following:
                 </Para>
 
                 <ListGroup>
@@ -162,7 +162,7 @@ function PrivacyMobile() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(f)</B> enabling any actual or proposed assignee or transferee, participant or sub-participant of PUSH&apos;s rights or obligations to evaluate any proposed transaction;
+                    <B>(f)</B> enabling any actual or proposed assignee or transferee, participant or sub-participant of Push&apos;s rights or obligations to evaluate any proposed transaction;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -213,7 +213,7 @@ function PrivacyMobile() {
 
 
                 <Para margin="0px 0px 0px 0px">
-                We may from time to time and in compliance with all applicable laws on data privacy, disclose your personal data to any personnel of PUSH, group entities, or to third parties (including without limitation banks, financial institutions, credit card companies, credit bureaus and their respective service providers, companies providing services relating to insurance and/or reinsurance to us, and associations of insurance companies, agents, contractors or third party service providers who provide services to us such as telecommunications, information technology, payment, data processing, storage and archival, and our professional advisers such as our auditors and lawyers, and regulators and authorities), located in any jurisdiction, in order to carry out the purposes set out above. Please be assured that when we disclose your personal data to such parties, we will disclose only the personal information that is necessary to deliver the service required, and will also require them to ensure that any personal data disclosed to them are kept confidential and secure.
+                We may from time to time and in compliance with all applicable laws on data privacy, disclose your personal data to any personnel of Push, group entities, or to third parties (including without limitation banks, financial institutions, credit card companies, credit bureaus and their respective service providers, companies providing services relating to insurance and/or reinsurance to us, and associations of insurance companies, agents, contractors or third party service providers who provide services to us such as telecommunications, information technology, payment, data processing, storage and archival, and our professional advisers such as our auditors and lawyers, and regulators and authorities), located in any jurisdiction, in order to carry out the purposes set out above. Please be assured that when we disclose your personal data to such parties, we will disclose only the personal information that is necessary to deliver the service required, and will also require them to ensure that any personal data disclosed to them are kept confidential and secure.
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
@@ -221,7 +221,7 @@ function PrivacyMobile() {
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
-                We wish to emphasise that PUSH does not sell personal data to any third parties and we shall remain fully compliant of any duty or obligation of confidentiality imposed on us under the applicable agreement(s) and/or terms and conditions that govern our relationship with you or our customer or any applicable law.
+                We wish to emphasise that Push does not sell personal data to any third parties and we shall remain fully compliant of any duty or obligation of confidentiality imposed on us under the applicable agreement(s) and/or terms and conditions that govern our relationship with you or our customer or any applicable law.
                 </Para>
 
 
@@ -230,7 +230,7 @@ function PrivacyMobile() {
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
-                We may transfer, store, process and/or deal with your personal data in any jurisdiction, and accordingly such personal data may be transferred to computers, servers or hardware located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction. PUSH will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Policy and no transfer of your personal data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information (including without limitation the Standard Contractual Clauses approved by the European Commission). Your consent to this Policy followed by your submission of such information represents your agreement to the transfer of personal data as described herein.
+                We may transfer, store, process and/or deal with your personal data in any jurisdiction, and accordingly such personal data may be transferred to computers, servers or hardware located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those in your jurisdiction. Push will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Policy and no transfer of your personal data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information (including without limitation the Standard Contractual Clauses approved by the European Commission). Your consent to this Policy followed by your submission of such information represents your agreement to the transfer of personal data as described herein.
                 </Para>
 
 
@@ -323,7 +323,7 @@ function PrivacyMobile() {
                 </Para>
 
                 <Para margin="0px 0px 0px 0px">
-                We reserve the right to amend this Policy from time to time to ensure that this Policy is consistent with any developments to the way PUSH uses your personal data or any changes to the laws and regulations applicable to PUSH. We will make available the updated Policy on the App. You are encouraged to visit the App from time to time to ensure that you are well informed of our latest policies in relation to personal data protection. All communications, transactions and dealings with us shall be subject to the latest version of this Policy in force at the time.
+                We reserve the right to amend this Policy from time to time to ensure that this Policy is consistent with any developments to the way Push uses your personal data or any changes to the laws and regulations applicable to Push. We will make available the updated Policy on the App. You are encouraged to visit the App from time to time to ensure that you are well informed of our latest policies in relation to personal data protection. All communications, transactions and dealings with us shall be subject to the latest version of this Policy in force at the time.
                 </Para>
 
 
@@ -379,7 +379,7 @@ function PrivacyMobile() {
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
-                By using the App and/or any services provided by PUSH, you signify your acceptance of this Policy and terms of service. If you do not agree to this Policy or terms of service, please do not use the App or any services provided by PUSH. Your continued use of the App following the posting of changes to this Policy will be deemed your acceptance of those changes.
+                By using the App and/or any services provided by Push, you signify your acceptance of this Policy and terms of service. If you do not agree to this Policy or terms of service, please do not use the App or any services provided by Push. Your continued use of the App following the posting of changes to this Policy will be deemed your acceptance of those changes.
                 </Para>
 
 

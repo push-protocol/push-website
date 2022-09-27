@@ -27,7 +27,7 @@ function PageWrapper(props: PageWrapperProps) {
   return (
     <HelmetProvider data-helmet>
       <Helmet>
-        <title>{pageTitle | 'PUSH | Previously EPNS'}</title>
+        <title>{pageTitle | 'Push | Previously EPNS'}</title>
       </Helmet>
       {props.children}
     </HelmetProvider>

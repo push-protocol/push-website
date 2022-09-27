@@ -49,7 +49,7 @@ function TermsOfService() {
                 1. ACCEPTANCE OF TERMS
                 </Para>
                 <Para margin="-10px 0px 0px">
-                  <B>&quot;PUSH&rdquo;</B>, <B>&quot;we,&rdquo;</B> <B>&quot;us&rdquo;</B> or <B>&quot;our&rdquo;</B> provides an experimental open source protocol comprising a set of Ethereum based smart contracts (the <B>&quot;PUSH protocol&rdquo;</B>) that enables any service / DApp or Ethereum based smart contract to create channels, whereby they may display, publish or distribute decentralized and incentivized notifications to subscribers to those channels (each with a unique wallet addresses). Each user/subscriber (unique wallet addresses) will be able to control what notifications they opt in to receive, or are rewarded for indirect opt in by channels. Users may interact with the PUSH protocol directly via the smart contracts, or the dApp located at <A href="https://app.push.org" target="_blank">app.push.org</A> or at <A href="https://staging.push.org" target="_blank">staging.push.org</A> or any other subdomains associated with <B>push.org</B>, including any mobile application or any similar frontend interface that can interact with blockchain smart contracts (the <B>&quot;App&rdquo;</B>). Channels and subscribers/users interact directly in a peer to peer manner via the PUSH protocol (for example, transaction requests and notifications are sent directly from each channel to the subscriber), and PUSH is not, under any circumstances, a party or intermediary to that process.
+                  <B>&quot;Push&rdquo;</B>, <B>&quot;we,&rdquo;</B> <B>&quot;us&rdquo;</B> or <B>&quot;our&rdquo;</B> provides an experimental open source protocol comprising a set of Ethereum based smart contracts (the <B>&quot;Push Protocol&rdquo;</B>) that enables any service / DApp or Ethereum based smart contract to create channels, whereby they may display, publish or distribute decentralized and incentivized notifications to subscribers to those channels (each with a unique wallet addresses). Each user/subscriber (unique wallet addresses) will be able to control what notifications they opt in to receive, or are rewarded for indirect opt in by channels. Users may interact with the Push Protocol directly via the smart contracts, or the dApp located at <A href="https://app.push.org" target="_blank">app.push.org</A> or at <A href="https://staging.push.org" target="_blank">staging.push.org</A> or any other subdomains associated with <B>push.org</B>, including any mobile application or any similar frontend interface that can interact with blockchain smart contracts (the <B>&quot;App&rdquo;</B>). Channels and subscribers/users interact directly in a peer to peer manner via the Push Protocol (for example, transaction requests and notifications are sent directly from each channel to the subscriber), and Push is not, under any circumstances, a party or intermediary to that process.
                 </Para>
 
                 <Para margin="20px 0px 0px">
@@ -57,7 +57,7 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin="20px 0px 0px">
-                The Site, the App and any other features, tools, materials, or other services offered from time to time by PUSH are referred to here as (the <B>&quot;Services&rdquo;</B>). Please read these Terms of Use (these <B>&quot;Terms&rdquo;</B>) carefully before using the Services. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms, (2) consent to the collection, use, disclosure and other handling of information as described in our <A href="./privacy" target="_blank">Privacy Policy</A> and (3) agree to any additional terms, rules and conditions of participation issued by PUSH from time to time. If you do not agree to these Terms, then you may not access or use the Content or Services.
+                The Site, the App and any other features, tools, materials, or other services offered from time to time by Push are referred to here as (the <B>&quot;Services&rdquo;</B>). Please read these Terms of Use (these <B>&quot;Terms&rdquo;</B>) carefully before using the Services. By using or otherwise accessing the Services, or clicking to accept or agree to these Terms where that option is made available, you (1) accept and agree to these Terms, (2) consent to the collection, use, disclosure and other handling of information as described in our <A href="./privacy" target="_blank">Privacy Policy</A> and (3) agree to any additional terms, rules and conditions of participation issued by Push from time to time. If you do not agree to these Terms, then you may not access or use the Content or Services.
                 </Para>
 
                 <Para margin="20px 0px 0px">
@@ -74,7 +74,7 @@ function TermsOfService() {
                 2. MODIFICATIONS TO TERMS OF SERVICE / USE
                 </Para>
                 <Para margin="-10px 0px 20px 0px" color="#FFF">
-                PUSH reserves the right, at its sole discretion, to modify or replace these Terms at any time, including the Schedules hereto. The most current version of these Terms will be posted on our Site. You shall be responsible for reviewing and becoming familiar with any such modifications. Use of the Services by you after any modification to these Terms constitutes your acceptance of these Terms as modified.
+                Push reserves the right, at its sole discretion, to modify or replace these Terms at any time, including the Schedules hereto. The most current version of these Terms will be posted on our Site. You shall be responsible for reviewing and becoming familiar with any such modifications. Use of the Services by you after any modification to these Terms constitutes your acceptance of these Terms as modified.
                 </Para>
 
 
@@ -114,11 +114,11 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(g)</B> you are responsible for ensuring compliance with the laws of all applicable jurisdictions at your own expense (including without limitation all intellectual property, data protection and privacy laws) and acknowledge that PUSH is not liable for your failure to comply with such laws. PUSH reserves the right to disclose any information as it deems necessary to satisfy any applicable law, regulation, legal process or governmental request;
+                  <B>(g)</B> you are responsible for ensuring compliance with the laws of all applicable jurisdictions at your own expense (including without limitation all intellectual property, data protection and privacy laws) and acknowledge that Push is not liable for your failure to comply with such laws. Push reserves the right to disclose any information as it deems necessary to satisfy any applicable law, regulation, legal process or governmental request;
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(h)</B> you have not relied and shall not rely upon PUSH for legal advice regarding your compliance with applicable law; and
+                  <B>(h)</B> you have not relied and shall not rely upon Push for legal advice regarding your compliance with applicable law; and
                 </Para>
 
                 <Para margin ="20px 0px 20px 20px">
@@ -131,7 +131,7 @@ function TermsOfService() {
                 4. ACCOUNT RELATED, PASSWORD AND SECURITY
                 </Para>
                 <Para margin="-10px 0px 20px">
-                When setting up an account within PUSH, you will be responsible for keeping your own account secrets, which may be a seed phrase with a number of secret words, an account file, or other locally stored secret information or any other information associated with the account. PUSH encrypts this information locally with a password you provide, and it&apos;s never accessible to us or our servers. You agree to (a) never use the same password for PUSH that you have ever used outside of this service, (b) keep your secret information and password confidential and do not share them with anyone else and (c) immediately notify PUSH of any unauthorized use of your account or breach of security. PUSH cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
+                When setting up an account within Push, you will be responsible for keeping your own account secrets, which may be a seed phrase with a number of secret words, an account file, or other locally stored secret information or any other information associated with the account. Push encrypts this information locally with a password you provide, and it&apos;s never accessible to us or our servers. You agree to (a) never use the same password for Push that you have ever used outside of this service, (b) keep your secret information and password confidential and do not share them with anyone else and (c) immediately notify Push of any unauthorized use of your account or breach of security. Push cannot and will not be liable for any loss or damage arising from your failure to comply with this section.
                 </Para>
 
 
@@ -163,7 +163,7 @@ function TermsOfService() {
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
-                  <B>(e)</B> express or imply that any statements you make are endorsed by PUSH, without our prior express written consent;
+                  <B>(e)</B> express or imply that any statements you make are endorsed by Push, without our prior express written consent;
                 </Para>
 
                 <Para margin ="20px 0px 0px 20px">
@@ -218,7 +218,7 @@ function TermsOfService() {
                   6.2 Risk of Regulatory Actions
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  PUSH and any supported cryptographic token and blockchain could be impacted by one or more regulatory inquiries or regulatory action, which could impede or limit the ability of PUSH to continue to develop, or which could impede or limit your ability to access or use the Services or the underlying blockchain network.
+                  Push and any supported cryptographic token and blockchain could be impacted by one or more regulatory inquiries or regulatory action, which could impede or limit the ability of Push to continue to develop, or which could impede or limit your ability to access or use the Services or the underlying blockchain network.
                   </Para>
 
                   {/* 6.3 Warranty Disclaimer */}
@@ -227,7 +227,7 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="-10px 0px 0px 20px">
-                  You expressly understand and agree that your use of the Services is at your sole risk. The Services (including the Site, the App and the Content) are provided on an &quot;as is&rdquo; and &quot;as available&rdquo; basis, without warranties of any kind, either express or implied, including, without limitation, implied warranties of merchantability, fitness for a particular purpose or non-infringement. You acknowledge that PUSH has no control over, and no duty to take any action regarding: which users gain access to or use the Services; what effects the Content may have on you; how you may interpret or use the Content; or what actions you may take as a result of having been exposed to the Content. You release PUSH from all liability for you having acquired or not acquired Content through the Services. PUSH makes no representations concerning any Content contained in or accessed through the Services, and PUSH will not be responsible or liable for the accuracy, copyright compliance, compliance with data protection laws, legality or decency of material contained in or accessed through the Services.
+                  You expressly understand and agree that your use of the Services is at your sole risk. The Services (including the Site, the App and the Content) are provided on an &quot;as is&rdquo; and &quot;as available&rdquo; basis, without warranties of any kind, either express or implied, including, without limitation, implied warranties of merchantability, fitness for a particular purpose or non-infringement. You acknowledge that Push has no control over, and no duty to take any action regarding: which users gain access to or use the Services; what effects the Content may have on you; how you may interpret or use the Content; or what actions you may take as a result of having been exposed to the Content. You release Push from all liability for you having acquired or not acquired Content through the Services. Push makes no representations concerning any Content contained in or accessed through the Services, and Push will not be responsible or liable for the accuracy, copyright compliance, compliance with data protection laws, legality or decency of material contained in or accessed through the Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -235,7 +235,7 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You acknowledge that PUSH is not responsible for transferring, safeguarding, or maintaining your private keys or any digital currency associated therewith. If you lose, mishandle or have stolen associated digital currency private keys, you acknowledge that you may not be able to recover associated digital currency, and that PUSH is not responsible for such loss. You acknowledge that PUSH is not responsible for any loss, damage or liability arising from your failure to comply with these Terms hereunder.
+                  You acknowledge that Push is not responsible for transferring, safeguarding, or maintaining your private keys or any digital currency associated therewith. If you lose, mishandle or have stolen associated digital currency private keys, you acknowledge that you may not be able to recover associated digital currency, and that Push is not responsible for such loss. You acknowledge that Push is not responsible for any loss, damage or liability arising from your failure to comply with these Terms hereunder.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -247,7 +247,7 @@ function TermsOfService() {
                   6.4 Risk of Exploits and Weaknesses in Cryptography Field
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You acknowledge and understand that Cryptography is a progressing field. Advances in code cracking or technical advances such as the development of quantum computers may present risks to cryptocurrencies and Services of Content, which could result in the theft or loss of your cryptographic tokens or property. To the extent possible, PUSH intends to update the protocol underlying Services to account for any advances in cryptography and to incorporate additional security measures, but does not guarantee or otherwise represent full security of the system. By using the Services or accessing Content, you acknowledge these inherent risks.
+                  You acknowledge and understand that Cryptography is a progressing field. Advances in code cracking or technical advances such as the development of quantum computers may present risks to cryptocurrencies and Services of Content, which could result in the theft or loss of your cryptographic tokens or property. To the extent possible, Push intends to update the protocol underlying Services to account for any advances in cryptography and to incorporate additional security measures, but does not guarantee or otherwise represent full security of the system. By using the Services or accessing Content, you acknowledge these inherent risks.
                   </Para>
 
                   {/* 6.5 Cryptocurrency and Volatility */}
@@ -255,7 +255,7 @@ function TermsOfService() {
                   6.5 Cryptocurrency and Volatility
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You understand that Ethereum and other blockchain technologies and associated cryptographic tokens are highly volatile due to many factors including but not limited to adoption, speculation, technology and security risks. You also acknowledge that the cost of transacting on such technologies is variable and may increase at any time causing impact to any activities taking place on the blockchain network. You acknowledge these risks and agree that PUSH cannot be held liable for such fluctuations or increased costs.
+                  You understand that Ethereum and other blockchain technologies and associated cryptographic tokens are highly volatile due to many factors including but not limited to adoption, speculation, technology and security risks. You also acknowledge that the cost of transacting on such technologies is variable and may increase at any time causing impact to any activities taking place on the blockchain network. You acknowledge these risks and agree that Push cannot be held liable for such fluctuations or increased costs.
                   </Para>
 
                   {/* 6.6 Application Security */}
@@ -263,7 +263,7 @@ function TermsOfService() {
                   6.6 Application Security
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  You further acknowledge that blockchain applications are code subject to flaws and acknowledge that you are solely responsible for evaluating any code provided by the Services or Content and the trustworthiness of any third-party websites, products, smart-contracts, or Content you access or use through the Services. You further expressly acknowledge and represent that blockchain applications can be written maliciously or negligently, that PUSH cannot be held liable for your interaction with such applications and that such applications may cause the loss of property or even identity. This warning and others later provided by PUSH in no way evidence or represent an on-going duty to alert you to all of the potential risks of utilizing the Services or Content.
+                  You further acknowledge that blockchain applications are code subject to flaws and acknowledge that you are solely responsible for evaluating any code provided by the Services or Content and the trustworthiness of any third-party websites, products, smart-contracts, or Content you access or use through the Services. You further expressly acknowledge and represent that blockchain applications can be written maliciously or negligently, that Push cannot be held liable for your interaction with such applications and that such applications may cause the loss of property or even identity. This warning and others later provided by Push in no way evidence or represent an on-going duty to alert you to all of the potential risks of utilizing the Services or Content.
                   </Para>
 
                   {/* 5.7 Affiliated Service / Third Party Service */}
@@ -275,27 +275,27 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  Service Providers may charge you a fee for use of, or access to, such Additional Services. You acknowledge that PUSH may earn fees from Service Providers in connection with your use of such Additional Services.
+                  Service Providers may charge you a fee for use of, or access to, such Additional Services. You acknowledge that Push may earn fees from Service Providers in connection with your use of such Additional Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You agree that PUSH and its affiliates are not in any way associated with the owner or operator of any Third Party Services or responsible or liable for the software and services offered by them or for anything in connection with such Third Party Services. PUSH does not endorse or approve and makes no warranties, representations or undertakings relating to the software, service or content of any Third Party Services.
+                  You agree that Push and its affiliates are not in any way associated with the owner or operator of any Third Party Services or responsible or liable for the software and services offered by them or for anything in connection with such Third Party Services. Push does not endorse or approve and makes no warranties, representations or undertakings relating to the software, service or content of any Third Party Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  In addition, PUSH disclaims liability for any loss, damage and any other consequence resulting directly or indirectly from or relating to your use or access of Third Party Services or any information that you may provide or any transaction conducted with or through the Third Party Services or the failure of any information, software or services posted or offered by such Service Providers or any error, omission or misrepresentation by such Service Providers or any computer virus arising from or system failure associated with the Third Party Services.
+                  In addition, Push disclaims liability for any loss, damage and any other consequence resulting directly or indirectly from or relating to your use or access of Third Party Services or any information that you may provide or any transaction conducted with or through the Third Party Services or the failure of any information, software or services posted or offered by such Service Providers or any error, omission or misrepresentation by such Service Providers or any computer virus arising from or system failure associated with the Third Party Services.
                   </Para>
 
                   <Para margin="20px 0px 20px 20px">
                   In the event of any inconsistency between the terms herein and the terms of the Additional Services, the terms herein will prevail.
                   </Para>
 
-                  {/* 6.8 PUSH Not Liable */}
+                  {/* 6.8 Push Not Liable */}
                   <Para weight="400" spacing="0.2em" color="#FFF" margin="20px 0px 20px 20px" textTransform="uppercase" size="1.1em">
-                  6.8 PUSH Not Liable
+                  6.8 Push Not Liable
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  Without prejudice to the generality of any of the provisions in these Terms, PUSH shall not be liable for your usage of the Site, the App or the Services in the event of any  unavailability, downtime, suspension or termination:
+                  Without prejudice to the generality of any of the provisions in these Terms, Push shall not be liable for your usage of the Site, the App or the Services in the event of any  unavailability, downtime, suspension or termination:
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
@@ -323,7 +323,7 @@ function TermsOfService() {
                   6.9 Sensitive Data
                   </Para>
                   <Para margin="-10px 0px 20px 20px">
-                  Sensitive Data (as defined below) will not be provided to PUSH at any time and without prejudice to the generality of any of the provisions in these Terms, PUSH will have no liability whatsoever for Sensitive Data, whether in connection with a security incident or otherwise. For purposes of these Terms, <B>&quot;Sensitive Data&rdquo;</B> means (a) social security number, passport number, driver’s license number, or similar identifier (or any portion thereof), (b) credit or debit card number, (c) employment, financial, genetic, biometric or health information, (d) racial, ethnic, political or religious affiliation, trade union membership, or information about sexual life or sexual orientation, (e) account passwords, (f) date of birth, (g) criminal history, (h) mother’s maiden name or (i) any other information or combinations of information that is deemed sensitive or private under the legal framework of any applicable jurisdiction.
+                  Sensitive Data (as defined below) will not be provided to Push at any time and without prejudice to the generality of any of the provisions in these Terms, Push will have no liability whatsoever for Sensitive Data, whether in connection with a security incident or otherwise. For purposes of these Terms, <B>&quot;Sensitive Data&rdquo;</B> means (a) social security number, passport number, driver’s license number, or similar identifier (or any portion thereof), (b) credit or debit card number, (c) employment, financial, genetic, biometric or health information, (d) racial, ethnic, political or religious affiliation, trade union membership, or information about sexual life or sexual orientation, (e) account passwords, (f) date of birth, (g) criminal history, (h) mother’s maiden name or (i) any other information or combinations of information that is deemed sensitive or private under the legal framework of any applicable jurisdiction.
                   </Para>
                 </ListGroup>
 
@@ -342,7 +342,7 @@ function TermsOfService() {
                   7.1 OWNERSHIP AND INTELLECTUAL PROPERTY
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  All title, ownership and intellectual property rights in and to the Site, the App and the Services are owned by PUSH or its licensors. You acknowledge and agree that the Services contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by PUSH in writing, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Site, the App or the Services, in whole or in part.
+                  All title, ownership and intellectual property rights in and to the Site, the App and the Services are owned by Push or its licensors. You acknowledge and agree that the Services contains proprietary and confidential information that is protected by applicable intellectual property and other laws. Except as expressly authorized by Push in writing, you agree not to copy, modify, rent, lease, loan, sell, distribute, perform, display or create derivative works based on the Site, the App or the Services, in whole or in part.
                   </Para>
 
                   {/* 7.2 Limited and Revocable License */}
@@ -354,19 +354,19 @@ function TermsOfService() {
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  The PUSH software application, including without limitation the Site, the App and the Services, are not sold or transferred to you, and PUSH and its licensors retain ownership of all copies of the software applications even after installation on your personal computers, mobile handsets, tablets, wearable devices, speakers and/or other devices (<B>&quot;Devices&rdquo;</B>).
+                  The Push software application, including without limitation the Site, the App and the Services, are not sold or transferred to you, and Push and its licensors retain ownership of all copies of the software applications even after installation on your personal computers, mobile handsets, tablets, wearable devices, speakers and/or other devices (<B>&quot;Devices&rdquo;</B>).
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  All PUSH trademarks, service marks, trade names, logos, domain names, and any other features of the PUSH brand (“PUSH Brand Features”) are the sole property of PUSH or its licensors. The Terms do not grant you any rights to use any PUSH Brand Features whether for commercial or non-commercial use.
+                  All Push trademarks, service marks, trade names, logos, domain names, and any other features of the Push brand (“Push Brand Features”) are the sole property of Push or its licensors. The Terms do not grant you any rights to use any Push Brand Features whether for commercial or non-commercial use.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  All PUSH trademarks, service marks, trade names, logos, domain names, and any other features of the PUSH brand (<B>&quot;PUSH Brand Features&rdquo;</B>) are the sole property of PUSH or its licensors. These Terms do not grant you any rights to use any PUSH Brand Features whether for commercial or non-commercial use.
+                  All Push trademarks, service marks, trade names, logos, domain names, and any other features of the Push brand (<B>&quot;Push Brand Features&rdquo;</B>) are the sole property of Push or its licensors. These Terms do not grant you any rights to use any Push Brand Features whether for commercial or non-commercial use.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                  You agree to abide by our user guidelines and not to use the Services or any part thereof in any manner not expressly permitted by these Terms. Except for the rights expressly granted to you in these Terms, PUSH grants no right, title, or interest to you in the Site, the App or the Services.
+                  You agree to abide by our user guidelines and not to use the Services or any part thereof in any manner not expressly permitted by these Terms. Except for the rights expressly granted to you in these Terms, Push grants no right, title, or interest to you in the Site, the App or the Services.
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
@@ -382,7 +382,7 @@ function TermsOfService() {
                   7.3 CONTENT
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                  By displaying, publishing or distributing Content via the Site, the App or the Services, you hereby grant to PUSH an irrevocable, perpetual, worldwide, royalty-free, non-exclusive license to use, modify, delete from, add to, create derivative works of, publicly perform, publicly display, reproduce and distribute (and to sublicense the foregoing rights through multiple tiers of licensees) such Content via the Site or the App. From time to time, we may remove Content from the Site or the App, permanently or temporarily.
+                  By displaying, publishing or distributing Content via the Site, the App or the Services, you hereby grant to Push an irrevocable, perpetual, worldwide, royalty-free, non-exclusive license to use, modify, delete from, add to, create derivative works of, publicly perform, publicly display, reproduce and distribute (and to sublicense the foregoing rights through multiple tiers of licensees) such Content via the Site or the App. From time to time, we may remove Content from the Site or the App, permanently or temporarily.
                   </Para>
 
                   <Para margin="20px 0px 20px 20px">
@@ -397,7 +397,7 @@ function TermsOfService() {
                 8. Links
                 </Para>
                 <Para margin="-10px 0px 20px 0px">
-                The Services provide, or third parties may provide, links to other World Wide Web or accessible sites, applications or resources. Because PUSH has no control over such sites, applications and resources, you acknowledge and agree that PUSH is not responsible for the availability of such external sites, applications or resources, and does not endorse and is not responsible or liable for any content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that PUSH shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such site or resource.
+                The Services provide, or third parties may provide, links to other World Wide Web or accessible sites, applications or resources. Because Push has no control over such sites, applications and resources, you acknowledge and agree that Push is not responsible for the availability of such external sites, applications or resources, and does not endorse and is not responsible or liable for any content, advertising, products or other materials on or available from such sites or resources. You further acknowledge and agree that Push shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such site or resource.
                 </Para>
 
 
@@ -406,7 +406,7 @@ function TermsOfService() {
                 9. INDEMNITY
                 </Para>
                 <Para margin="-10px 0px 20px 0px">
-                You agree to release and to indemnify, defend and hold harmless PUSH and its parents, subsidiaries, affiliates and agencies, as well as the officers, directors, employees, shareholders and representatives of any of the foregoing entities, from and against any and all losses, liabilities, expenses, damages, costs (including attorneys’ fees and court costs) claims or actions of any kind whatsoever arising or resulting from:
+                You agree to release and to indemnify, defend and hold harmless Push and its parents, subsidiaries, affiliates and agencies, as well as the officers, directors, employees, shareholders and representatives of any of the foregoing entities, from and against any and all losses, liabilities, expenses, damages, costs (including attorneys’ fees and court costs) claims or actions of any kind whatsoever arising or resulting from:
                 </Para>
 
                 <ListGroup>
@@ -426,7 +426,7 @@ function TermsOfService() {
             
 
                 <Para margin="20px 0px 20px 0px">
-                PUSH reserves the right, at its own expense, to assume exclusive defence and control of any matter otherwise subject to indemnification by you and, in such case, you agree to cooperate with PUSH in the defence of such matter.
+                Push reserves the right, at its own expense, to assume exclusive defence and control of any matter otherwise subject to indemnification by you and, in such case, you agree to cooperate with Push in the defence of such matter.
                 </Para>
 
 
@@ -457,7 +457,7 @@ function TermsOfService() {
                 12. Termination and Suspension
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
-                PUSH may terminate or suspend all or part of the Services and your PUSH access immediately, without prior notice or liability, if you breach any of the provisions of these Terms, or in the event of any adverse change of regulatory environment. Upon termination of your access, your right to use the Services will immediately cease.
+                Push may terminate or suspend all or part of the Services and your Push access immediately, without prior notice or liability, if you breach any of the provisions of these Terms, or in the event of any adverse change of regulatory environment. Upon termination of your access, your right to use the Services will immediately cease.
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
@@ -470,7 +470,7 @@ function TermsOfService() {
                 13. NOTICE AND PROCEDURE FOR MAKING CLAIMS
                 </Para>
                 <Para margin="10px 0px 0px 0px">
-                If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide PUSH a written Notice containing the following information:
+                If you believe that your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, please provide Push a written Notice containing the following information:
                 </Para>
 
                 <Para margin="10px 0px 20px 0px">
@@ -522,7 +522,7 @@ function TermsOfService() {
                 1. ENTIRE AGREEMENT
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                These Terms (and any additional terms, rules and conditions of participation that PUSH may post on the Services) constitute the entire agreement between you and PUSH with respect to the Services and supersedes any prior agreements, oral or written, between you and PUSH. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict. These Terms (and any additional terms, rules and conditions of participation that PUSH may post on the Services) constitute the entire agreement between you and PUSH with respect to the Services and supersedes any prior agreements, oral or written, between you and PUSH. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict.
+                These Terms (and any additional terms, rules and conditions of participation that Push may post on the Services) constitute the entire agreement between you and Push with respect to the Services and supersedes any prior agreements, oral or written, between you and Push. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict. These Terms (and any additional terms, rules and conditions of participation that Push may post on the Services) constitute the entire agreement between you and Push with respect to the Services and supersedes any prior agreements, oral or written, between you and Push. In the event of a conflict between these Terms and the additional terms, rules and conditions of participation, the latter will prevail over these Terms to the extent of the conflict.
                   </Para>
 
                   {/* 2. Waiver and Severability */}
@@ -530,7 +530,7 @@ function TermsOfService() {
                 2. WAIVER AND SEVERABILITY
                   </Para>
                   <Para margin="-10px 0px 0px 20px">
-                The failure of PUSH to exercise or enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. If any provision of these Terms is found by an arbitrator or court of competent jurisdiction to be invalid, the parties nevertheless agree that the arbitrator or court should endeavour to give effect to the parties’ intentions as reflected in the provision, and the other provisions of these Terms remain in full force and effect.
+                The failure of Push to exercise or enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. If any provision of these Terms is found by an arbitrator or court of competent jurisdiction to be invalid, the parties nevertheless agree that the arbitrator or court should endeavour to give effect to the parties’ intentions as reflected in the provision, and the other provisions of these Terms remain in full force and effect.
                   </Para>
 
                   {/* 3. Statute of Limitations */}
