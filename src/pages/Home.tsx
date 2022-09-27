@@ -160,12 +160,12 @@ function Home() {
                   gap="18px"
                 >
                   <ButtonV2
-                    href="https://docs.push.org/developers"
+                    href="https://docs.epns.io/developers"
                     title="Developer Docs"
                     target="_blank"
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     lineHeight="26px"
-                    onClick={() => window.open('https://docs.push.org/developers')}
+                    onClick={() => window.open('https://docs.epns.io/developers')}
                     zIndex="2"
                   >
                     Start Building
@@ -188,8 +188,8 @@ function Home() {
                   margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                 >
                   <Anchor
-                    href="https://twitter.com/epnsproject"
-                    title="Push Twitter"
+                    href="https://twitter.com/pushprotocol"
+                    title="Push Protocol Twitter"
                     target="_blank"
                     margin="0 0 0 -10px"
                   >
@@ -211,7 +211,7 @@ function Home() {
                   </Anchor>
 
                   <Anchor
-                    href="https://discord.gg/YVPB99F9W5"
+                    href="https://discord.gg/pushprotocol"
                     title="Push Discord"
                     target="_blank"
                   >
@@ -318,7 +318,7 @@ function Home() {
               >
                 <PushMissingPieceFigure className='figureSvg'/>
                 <Anchor
-                  href="https://docs.push.org/developers"
+                  href="https://docs.epns.io/developers"
                   title="Developer Docs"
                   target="_blank"
                   hoverBG="transparent"
@@ -445,7 +445,7 @@ function Home() {
                     progressively decentralized stack by enabling web3-native communication.
                   </Span>
                   <Anchor
-                    href="https://docs.push.org/developers"
+                    href="https://docs.epns.io/developers"
                     title="Developer Docs"
                     target="_blank"
                     bg="#DD44B9"
@@ -555,7 +555,7 @@ function Home() {
                 </ResponsiveH2>
 
                 <Anchor
-                  href="https://docs.push.org/hub/"
+                  href="https://docs.epns.io/hub/"
                   title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"
@@ -725,7 +725,7 @@ function Home() {
 
               <ItemV justifyContent="flex-end">
                 <Anchor
-                  href="https://medium.com/ethereum-push-notification-service"
+                  href="https://push-protocol.medium.com/"
                   title="Exlore all articles"
                   target="_blank"
                   hoverBG="transparent"
@@ -996,7 +996,7 @@ function Home() {
                   <ArticleSource>
                     <BalajiTweethandleBlackSVG />
                     <Anchor
-                      href="https://twitter.com/epnsproject/status/1336359832081768448"
+                      href="https://twitter.com/pushprotocol/status/1336359832081768448"
                       title="Read Balaji's tweet about Push"
                       target="_blank"
                       hoverBG="transparent"
@@ -1143,12 +1143,14 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
+  min-height: auto;
 
   & .contentBox {
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: -120px;
+    margin-top: 160px;
+    margin-bottom: 160px;
   }
 `;
 
