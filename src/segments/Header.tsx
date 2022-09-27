@@ -185,7 +185,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     <Anchor
-                      href="https://docs.push.org/developers"
+                      href="https://docs.epns.io/developers"
                       target="_blank"
                       title="Read Developer Guide"
                       bg="transparent"
@@ -199,7 +199,7 @@ function Header() {
                       Developer Guides
                     </Anchor>
                     <Anchor
-                      href="https://docs.push.org/governance"
+                      href="https://docs.epns.io/governance"
                       target="_blank"
                       title="Read Governance Guide"
                       bg="transparent"
@@ -281,7 +281,7 @@ function Header() {
                       FAQ
                     </Anchor>
                     <Anchor
-                      href="https://medium.com/ethereum-push-notification-service"
+                      href="https://push-protocol.medium.com/"
                       target="_blank"
                       title="Read our story"
                       bg="transparent"

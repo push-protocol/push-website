@@ -19,8 +19,7 @@ import { ReactComponent as PolygonStudiosSVG }  from '../assets/investors/polygo
 import { ReactComponent as SinoglobalSVG }  from '../assets/investors/sinoglobal.svg';
 import { ReactComponent as TigerglobalSVG }  from '../assets/investors/tigerglobal.svg';
 import { ReactComponent as TrueventuresSVG }  from '../assets/investors/trueventures.svg';
-
-
+import { ReactComponent as FourRCSVG }  from '../assets/investors/4rc.svg';
 
 /**
  * edit this to change the order
@@ -96,6 +95,10 @@ const investorsSortedGroup = [
       name: 'Andrew K.',
       title: 'Angel Investor',
       id: 'andrewkeys'
+    },
+    {
+      svgIcon: FourRCSVG,
+      id: '4rc'
     }
   ]
 ];

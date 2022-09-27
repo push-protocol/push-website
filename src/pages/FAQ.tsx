@@ -76,8 +76,8 @@ const FAQS = [
       <Answer>
         <Span>⚬ Push Documentation HUB - <AMod href="https://docs.push.org/">https://docs.push.org/</AMod> <br/>
               ⚬ Our Whitepaper: <AMod href="https://whitepaper.push.org/">https://whitepaper.push.org/</AMod> <br />
-              ⚬ Token economics: <AMod href="https://docs.push.org/epns-governance/push-tokenomics">https://docs.push.org/epns-governance/push-tokenomics</AMod> <br />
-              ⚬ Medium Articles: <AMod href="https://medium.com/ethereum-push-notification-service">https://medium.com/ethereum-push-notification-service</AMod> <br />
+              ⚬ Token economics: <AMod href="https://docs.epns.io/epns-governance/push-tokenomics">https://docs.epns.io/epns-governance/push-tokenomics</AMod> <br />
+              ⚬ Medium Articles: <AMod href="https://push-protocol.medium.com/">https://push-protocol.medium.com/</AMod> <br />
               ⚬ Our Litepaper: <AMod href="https://push.org/LitepaperEthereumPushNotificationService.pdf">https://push.org/LitepaperEthereumPushNotificationService.pdf</AMod> <br />
               ⚬ Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod>
         </Span>
@@ -88,7 +88,7 @@ const FAQS = [
     question: 'Where can I find the Developer Docs and Integration guides for Push?',
     renderAnswer: () => (
       <Answer>
-        <Span>All the imperative developer documentation can be found in the <AMod href="https://docs.push.org/developer-zone/developer-guides">Push Documentation HUB</AMod></Span>
+        <Span>All the imperative developer documentation can be found in the <AMod href="https://docs.epns.io/developers">Push Documentation HUB</AMod></Span>
       </Answer>
     )
   },
@@ -97,7 +97,7 @@ const FAQS = [
     renderAnswer: () => (
       <Answer>
         <Span>We have very interesting and imperative plans for the future. Some of the significant ones are becoming a multichain communication layer, decentralization of our push nodes, wallet-to-wallet chat feature, etc.</Span>
-        <Span>Check out our Roadmap to learn more about the future plans of Push - <AMod href="https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a">Push Roadmap 2022</AMod></Span>
+        <Span>Check out our Roadmap to learn more about the future plans of Push - <AMod href="https://push-protocol.medium.com/epns-roadmap-2022-2698ab153c1a">Push Roadmap 2022</AMod></Span>
       </Answer>
     )
   },
@@ -119,7 +119,7 @@ const FAQS = [
           <LIMod>
             Participate in our community designed activities:
             <OL type="a">
-              <LIMod> <AMod href="https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of Push </AMod></LIMod>
+              <LIMod> <AMod href="https://push-protocol.medium.com/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of Push </AMod></LIMod>
               <LIMod> Participate in one of our Pools available at <AMod href="https://incentives.epns.io/">https://incentives.epns.io/</AMod></LIMod>
               <LIMod> Participate in our Collaboration announcements activities (AMAs, Meme contests)  </LIMod>
               <LIMod> Participate to become an Push champion in our Governance process </LIMod>
@@ -161,7 +161,7 @@ const FAQS = [
             <Span>PUSH/INR: <AMod href="https://bitbns.com/trade/#/push/">https://bitbns.com/trade/#/push/</AMod></Span><br/>
           </LIMod>
         </OL>
-        <Span>Learn more about the Push $PUSH Liquidity Rewards Program <AMod href="https://medium.com/ethereum-push-notification-service/epns-push-liquidity-rewards-program-d16ff2c0fef4">here.</AMod></Span>
+        <Span>Learn more about the Push $PUSH Liquidity Rewards Program <AMod href="https://push-protocol.medium.com/epns-push-liquidity-rewards-program-d16ff2c0fef4">here.</AMod></Span>
       </Answer>
     )
   },
@@ -170,7 +170,7 @@ const FAQS = [
     renderAnswer: () => (
       <Answer>
         <Span>We have multiple channels where support is provided.</Span>
-        <Span>The <AMod href="https://discord.gg/YVPB99F9W5">Contact Us</AMod> form on our website is to be considered the one-stop-shop for all support queries.</Span>
+        <Span>The <AMod href="https://discord.gg/pushprotocol">Contact Us</AMod> form on our website is to be considered the one-stop-shop for all support queries.</Span>
         <UL>
           <LIMod>General Support about Push products & offering</LIMod>
           <LIMod>Collaborations and business proposals</LIMod>
@@ -178,7 +178,7 @@ const FAQS = [
           <LIMod>and more!</LIMod>
         </UL>
         <Span>
-          Additionally, our development team is always available on our <AMod href="https://discord.gg/YVPB99F9W5">Discord Community Server</AMod> to help with more technical matters related to integrations.
+          Additionally, our development team is always available on our <AMod href="https://discord.gg/pushprotocol">Discord Community Server</AMod> to help with more technical matters related to integrations.
         </Span>
         <Span>
           Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.

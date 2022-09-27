@@ -88,7 +88,7 @@ function Footer() {
                                     Follow our simple guides to get started in minutes.
                 </Span>
                 <Anchor
-                  href="https://docs.push.org/developers"
+                  href="https://docs.epns.io/developers"
                   title="Explore Docs"
                   target="_blank"
                   hoverBG="transparent"
@@ -173,7 +173,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://docs.push.org/governance"
+                    href="https://docs.epns.io/governance"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -242,7 +242,7 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
                   <Anchor
-                    href="https://medium.com/ethereum-push-notification-service"
+                    href="https://push-protocol.medium.com/"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -289,7 +289,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://discord.gg/epns"
+                    href="https://discord.gg/pushprotocol"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -305,7 +305,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://docs.push.org/developers"
+                    href="https://docs.epns.io/developers"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -394,7 +394,7 @@ function Footer() {
                 <GithubSVG width={22} height={22}/>
               </Anchor>
               <Anchor
-                href="https://twitter.com/epnsproject"
+                href="https://twitter.com/pushprotocol"
                 title="Push Twitter"
                 target="_blank"
                 border="1px solid #2A2A39"
@@ -415,7 +415,7 @@ function Footer() {
                 <TelegramSVG width={22} height={22}/>
               </Anchor>
               <Anchor
-                href="https://discord.gg/YVPB99F9W5"
+                href="https://discord.gg/pushprotocol"
                 title="Push Discord"
                 target="_blank"
                 border="1px solid #2A2A39"
