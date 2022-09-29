@@ -45,3 +45,37 @@ export async function getBlogData(limit = 4) {
       throw Error(error);
     });
 }
+
+export async function sendEmailToMailingList({ email }) {
+  const details = {
+    'name': '',
+    'email': email,
+    'list': 'YPwxHS892tH8Nhs13wzKqWbQ',
+    'api_key': 'TdzMcZVNTn1mjtAJHBpB',
+    'boolean': true
+  };
+  
+  let formBody = [];
+  for (const property in details) {
+    const encodedKey = encodeURIComponent(property);
+    const encodedValue = encodeURIComponent(details[property]);
+    formBody.push(encodedKey + '=' + encodedValue);
+  }
+  formBody = formBody.join('&');
+    
+  return fetch('https://tools.epns.io/sendy/subscribe', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    },
+    body: formBody
+  })
+    // .then(response => {
+    //   return response.json();
+    // })
+    .then((apiData) => {
+      console.log('apiData: ==> ', apiData);
+      return true;
+    });
+}

@@ -384,7 +384,7 @@ function Home() {
           className="darkBackground"
         >
           <Content className="contentBox">
-            {/* <SignupBox margin="0 0 80px 0">
+            <SignupBox margin="0 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 gap="12px"
@@ -413,7 +413,7 @@ function Home() {
               <ItemV>
                 <SignupInput />
               </ItemV>
-            </SignupBox> */}
+            </SignupBox>
 
             <ItemH
               justifyContent="flex-start"
