@@ -30,15 +30,20 @@ function useEmailValidationAndSend() {
     if (validateEmail(formData.email)) {
       try {   
         setIsLoading(true);
-        const emailSent = await sendEmailToMailingList({
+        const sendyAPIResponse = await sendEmailToMailingList({
           email: formData.email,
           name: formData.email
         });
 
-        console.log('emailSent: ', emailSent);
-
-        setEmailSuccess(emailSent);
+        // check https://sendy.co/api for details
+        if (sendyAPIResponse.toString() === '1') {
+          setEmailSuccess(MESSAGES.SUCCESS);
+        } else {
+          setEmailSuccess('');
+          setEmailError(sendyAPIResponse);
+        }
       } catch (e) {
+        setEmailSuccess('');
         setEmailError(MESSAGES.ERROR);
         console.log('emailSent error: ', e);
       } finally {
@@ -46,6 +51,7 @@ function useEmailValidationAndSend() {
       }
          
     } else {
+      setEmailSuccess('');
       setEmailError(MESSAGES.INVALID);
     }
   };
@@ -55,8 +61,7 @@ function useEmailValidationAndSend() {
     isLoading,
     emailSuccess,
     emailError,
-    onEmailSubmit,
-    MESSAGES.SUCCESS,
+    onEmailSubmit
   ];
 }
 

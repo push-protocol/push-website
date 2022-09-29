@@ -869,156 +869,154 @@ function Home() {
                 </ResponsiveH2>
               </ItemV>
             </ItemH>
-
-            <ItemH
-              flexDirection="column"
-              className="featuredInMarquee"
-              margin="0 0 80px 0"
-            >
-              <MarqueeAnimation
-                speed={70}
-                gradient={false}
-              >
-                <FeaturedCell className="marqueeItem">
-                  <Span
-                    color="#FFFFFF"
-                    size="22px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
-                  </Span>
-
-                  <ArticleSource>
-                    <EthFoundationBlackSVG />
-                    <Anchor
-                      href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
-                      title="Read ETH Foundation article about Push"
-                      target="_blank"
-                      hoverBG="transparent"
-                      hover="transparent"
-                      filter="none"
-                      color="#DD44B9"
-                      radius="16px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="0"
-                    >
-                      Read More
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
-                  </ArticleSource>
-                </FeaturedCell>
-
-                <FeaturedCell className="marqueeItem">
-                  <Span
-                    color="#FFFFFF"
-                    size="22px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
-                  </Span>
-
-                  <ArticleSource>
-                    <CoindeskBlackSVG />
-                    <Anchor
-                      href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
-                      title="Read Coindesk article about Push"
-                      target="_blank"
-                      hoverBG="transparent"
-                      hover="transparent"
-                      filter="none"
-                      color="#DD44B9"
-                      radius="16px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="0"
-                    >
-                      Read More
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
-                  </ArticleSource>
-                </FeaturedCell>
-
-                <FeaturedCell className="marqueeItem">
-                  <Span
-                    color="#FFFFFF"
-                    size="22px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
-                  </Span>
-
-                  <ArticleSource>
-                    <DefiPrimeBlackSVG />
-                    <Anchor
-                      href="https://defiprime.com/ethereum-push-notification-service"
-                      title="Read Defi Prime article on Push"
-                      target="_blank"
-                      hoverBG="transparent"
-                      hover="transparent"
-                      filter="none"
-                      color="#DD44B9"
-                      radius="16px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="0"
-                    >
-                      Read More
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
-                  </ArticleSource>
-                </FeaturedCell>
-
-                <FeaturedCell className="marqueeItem">
-                  <Span
-                    color="#FFFFFF"
-                    size="22px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    Decentralized push notifications may transform what dapps can do.
-                  </Span>
-
-                  <ArticleSource>
-                    <BalajiTweethandleBlackSVG />
-                    <Anchor
-                      href="https://twitter.com/pushprotocol/status/1336359832081768448"
-                      title="Read Balaji's tweet about Push"
-                      target="_blank"
-                      hoverBG="transparent"
-                      hover="transparent"
-                      filter="none"
-                      color="#DD44B9"
-                      radius="16px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="0"
-                    >
-                      Read More
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
-                  </ArticleSource>
-                </FeaturedCell>
-              </MarqueeAnimation>
-            </ItemH>
-
-            <ItemBreak />
           </Content>
+
+          <FeaturedInMarquee
+            flexDirection="column"
+            className="featuredInMarquee"
+            margin="0 0 270px 0"
+          >
+            <MarqueeAnimation
+              speed={70}
+              gradient={false}
+            >
+              <FeaturedCell className="marqueeItem">
+                <Span
+                  color="#FFFFFF"
+                  size="22px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                    We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
+                </Span>
+
+                <ArticleSource>
+                  <EthFoundationBlackSVG />
+                  <Anchor
+                    href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
+                    title="Read ETH Foundation article about Push"
+                    target="_blank"
+                    hoverBG="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    radius="16px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                      Read More
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <Span
+                  color="#FFFFFF"
+                  size="22px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                </Span>
+
+                <ArticleSource>
+                  <CoindeskBlackSVG />
+                  <Anchor
+                    href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
+                    title="Read Coindesk article about Push"
+                    target="_blank"
+                    hoverBG="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    radius="16px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                      Read More
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <Span
+                  color="#FFFFFF"
+                  size="22px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                    Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
+                </Span>
+
+                <ArticleSource>
+                  <DefiPrimeBlackSVG />
+                  <Anchor
+                    href="https://defiprime.com/ethereum-push-notification-service"
+                    title="Read Defi Prime article on Push"
+                    target="_blank"
+                    hoverBG="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    radius="16px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                      Read More
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <Span
+                  color="#FFFFFF"
+                  size="22px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                    Decentralized push notifications may transform what dapps can do.
+                </Span>
+
+                <ArticleSource>
+                  <BalajiTweethandleBlackSVG />
+                  <Anchor
+                    href="https://twitter.com/pushprotocol/status/1336359832081768448"
+                    title="Read Balaji's tweet about Push"
+                    target="_blank"
+                    hoverBG="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    radius="16px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                      Read More
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </ArticleSource>
+              </FeaturedCell>
+            </MarqueeAnimation>
+          </FeaturedInMarquee>
         </FeaturedInSection>
       </HomeWrapper>
     </PageWrapper>
@@ -1151,8 +1149,11 @@ const FeaturedInSection = styled(ResponsiveSection)`
     flex: 0;
     padding-top: 0;
     margin-top: 160px;
-    margin-bottom: 160px;
   }
+`;
+
+const FeaturedInMarquee = styled(ItemH)`
+
 `;
 
 const ResponsiveHeroContent = styled(ItemH)`

@@ -63,7 +63,7 @@ export async function sendEmailToMailingList({ email }) {
   }
   formBody = formBody.join('&');
     
-  return fetch('https://tools.epns.io/sendy/subscribe', {
+  return fetch('https://tools.push.org/sendy/subscribe', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -71,11 +71,7 @@ export async function sendEmailToMailingList({ email }) {
     },
     body: formBody
   })
-    // .then(response => {
-    //   return response.json();
-    // })
-    .then((apiData) => {
-      console.log('apiData: ==> ', apiData);
-      return true;
+    .then(response => {
+      return response.text();
     });
 }
