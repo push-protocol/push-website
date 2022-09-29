@@ -14,10 +14,9 @@ import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
 function SignupInput() {
   const [
     isLoading,
-    emailSuccess,
+    apiResponse,
     emailError,
-    onEmailSubmit,
-    emailSuccessMsg
+    onEmailSubmit
   ] = useEmailValidationAndSend();
 
   return (
@@ -28,8 +27,8 @@ function SignupInput() {
             
         {isLoading ? <MaskInput /> : null}
       </Wrapper>
-      {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
-      {emailError && <Span className="msg" color="red">{emailError}</Span>}
+      {apiResponse && <Span className="msg" color='#FFFFFF'>{apiResponse}</Span>}
+      {(!apiResponse && emailError) && <Span className="msg" color="red">{emailError}</Span>}
     </Box>
        
   );

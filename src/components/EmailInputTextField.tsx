@@ -20,10 +20,9 @@ export type InputTextFieldProps = {
 function EmailInputTextField(props: InputTextFieldProps) {
   const [
     isLoading,
-    emailSuccess,
+    apiResponse,
     emailError,
-    onEmailSubmit,
-    emailSuccessMsg
+    onEmailSubmit
   ] = useEmailValidationAndSend();
 
   return (
@@ -37,8 +36,8 @@ function EmailInputTextField(props: InputTextFieldProps) {
 
         {isLoading ? <BiLoaderAlt size={24} className='loader'/> : null}
       </Wrapper>
-      {emailSuccess && <Span className="msg" color='#FFFFFF'>{emailSuccessMsg}</Span>}
-      {emailError && <Span className="msg" color="red">{emailError}</Span>}
+      {apiResponse && <Span className="msg" color='#FFFFFF'>{apiResponse}</Span>}
+      {(!apiResponse && emailError) && <Span className="msg" color="red">{emailError}</Span>}
     </Box>
   );
 }

@@ -2,8 +2,14 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { useState } from 'react';
+import { sendEmailToMailingList } from '../api';
 
-const emailSuccessMsg = 'Thanks for subscribing!';
+const MESSAGES = {
+  SUCCESS: 'Thanks for subscribing!',
+  ERROR: 'Something went wrong!',
+  REPEAT: 'Already subscribed!',
+  INVALID: 'Invalid Email!'
+};
 
 const validateEmail = (email) => {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -15,38 +21,6 @@ function useEmailValidationAndSend() {
   const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  async function sendEmailToMailingList({ email }) {
-    const details = {
-      'name': 'Name',
-      'email': email,
-      'list': 'YPwxHS892tH8Nhs13wzKqWbQ',
-      'api_key': 'TdzMcZVNTn1mjtAJHBpB',
-      'boolean': true
-    };
-    
-    let formBody = [];
-    for (const property in details) {
-      const encodedKey = encodeURIComponent(property);
-      const encodedValue = encodeURIComponent(details[property]);
-      formBody.push(encodedKey + '=' + encodedValue);
-    }
-    formBody = formBody.join('&');
-    
-
-    return fetch('https://tools.epns.io/sendy/subscribe', {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      body: formBody
-    })
-      .then(response => response.json())
-      .then(jsondata => {
-        // console.log(jsondata);
-        return true;
-      });
-  }
 
   const onEmailSubmit = async (e) => {
     e.preventDefault();
@@ -56,19 +30,29 @@ function useEmailValidationAndSend() {
     if (validateEmail(formData.email)) {
       try {   
         setIsLoading(true);
-        const emailSent = await sendEmailToMailingList({
+        const sendyAPIResponse = await sendEmailToMailingList({
           email: formData.email,
           name: formData.email
         });
-        setEmailSuccess(emailSent);
+
+        // check https://sendy.co/api for details
+        if (sendyAPIResponse.toString() === '1') {
+          setEmailSuccess(MESSAGES.SUCCESS);
+        } else {
+          setEmailSuccess('');
+          setEmailError(sendyAPIResponse);
+        }
       } catch (e) {
-        setEmailError('Something went wrong!');
+        setEmailSuccess('');
+        setEmailError(MESSAGES.ERROR);
+        console.log('emailSent error: ', e);
       } finally {
         setIsLoading(false);
       }
          
     } else {
-      setEmailError('Invalid Email!');
+      setEmailSuccess('');
+      setEmailError(MESSAGES.INVALID);
     }
   };
 
@@ -77,8 +61,7 @@ function useEmailValidationAndSend() {
     isLoading,
     emailSuccess,
     emailError,
-    onEmailSubmit,
-    emailSuccessMsg
+    onEmailSubmit
   ];
 }
 

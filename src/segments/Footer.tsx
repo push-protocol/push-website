@@ -360,13 +360,13 @@ function Footer() {
                 </FooterLinks>
               </FooterColumn>
 
-              {/* <FooterColumn>
+              <FooterColumn>
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Subscribe</Span>
 
                   <EmailInputTextField placeholder='Your Email'/>
                 </FooterLinks>
-              </FooterColumn> */}
+              </FooterColumn>
             </FooterContainer>
 
           </ItemH>
@@ -532,8 +532,7 @@ const FooterContainer = styled.div`
 const FooterColumn = styled.div`
     display: flex;
     flex-direction: column;
-    // flex-basis: 20%;
-    flex-basis: 25%;
+    flex-basis: 20%;
     box-sizing: border-box;
     color: #FFFFFF;
 
@@ -553,7 +552,7 @@ const FooterColumn = styled.div`
         }
 
         &:last-child {
-            // flex-basis: 100%;
+            flex-basis: 100%;
         }
     }
 `;
