@@ -1275,6 +1275,10 @@ const IntegrateGrowWithPushRow = styled(ItemH)`
   margin: 40px 0 0 0;
   padding: 0 160px 0 160px;
 
+  & svg.figureSvg {
+    width: 100%;
+  }
+
   @media ${device.tablet} {
     padding-left: 30px;
     padding-right: 30px;
