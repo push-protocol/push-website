@@ -426,7 +426,7 @@ function Header() {
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
-                href="https://app.push.org/#/live_walkthrough"
+                href="https://app.push.org/"
                 target="_blank"
                 title="Push Dapp"
                 bg="#DD44B9"
