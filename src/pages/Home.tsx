@@ -1042,9 +1042,11 @@ const HeroPrimary = styled(ItemHV2)`
 
 const HeroAnimation = styled(ItemHV2)`
   @media ${device.laptop} {
+    display: none;
   }
 
   @media ${device.mobileM} {
+    display: none;
   }
 `;
 
