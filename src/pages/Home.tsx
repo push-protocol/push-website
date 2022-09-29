@@ -33,12 +33,12 @@ import { ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } 
 import SignupInput from '../components/SignupInput';
 import TeamMember from '../components/TeamMember';
 
+import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
 import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
+import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum_logo_text_black.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
-import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
-import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
 
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
@@ -290,7 +290,7 @@ function Home() {
                   spacing="-0.03em"
                 >
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum.{' '}
+                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
                 </Span>
               </ItemV>
 
@@ -299,12 +299,12 @@ function Home() {
                   <ItemV className="network">
                     <EthLogoTextSVG />
                   </ItemV>
-                  {/* 
+                  
                   <ItemV className="divider" />
 
                   <ItemV className="network">
                     <PolygonLogoTextSVG />
-                  </ItemV> */}
+                  </ItemV>
                 </LiveNetworks>
               </ItemV>
             </Partners>
