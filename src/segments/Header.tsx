@@ -82,7 +82,7 @@ function Header() {
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
   const themeClass = `${bkg}`;
 
-  const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
+  // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -376,7 +376,7 @@ function Header() {
                       Forum
                     </Anchor>
                     <Anchor
-                      href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                      href="https://www.notion.so/pushprotocol/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
                       title="Push Grants"
                       target="_blank"
                       bg="transparent"
