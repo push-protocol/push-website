@@ -53,7 +53,7 @@ export const ContentV2 = styled.div`
   display: ${(props) => props.display || 'flex'};
   flex-direction: ${(props) => props.flexDirection || 'column'};
   position: ${(props) => props.position || 'relative'};
-  
+
   flex: ${(props) => props.flex || '1'};
   align-self: ${(props) => props.alignSelf || 'stretch'};
   max-width: 1140px;
@@ -135,7 +135,7 @@ export const H1V2 = styled.h1`
   margin: ${(props) => props.margin || '0px'};
   padding: ${(props) => props.padding || '0px'};
   letter-spacing: ${(props) => props.letterSpacing || '-0.03em'};
-  font-family: ${(props) => props.fontFamily || '\'Strawford\', Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Strawford, Helvetica, sans-serif'};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
   /* text-shadow: 0 0 20px rgb(255 255 255 / 60%); */
@@ -220,6 +220,76 @@ export const SpanV2 = styled.span`
 `;
 
 export const ButtonV2 = styled.button`
+  display: ${(props) => props.display || 'initial'};
+  line-height: ${(props) => props.lineHeight || '26px'};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  align-items: ${(props) => props.alignItems || 'center'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  font-weight: ${(props) => props.fontWeight || 400};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  color: ${(props) => props.color || '#fff'};
+  background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '14px 32px'};
+  border: ${(props) => props.border || 'none'};
+  border-radius: ${(props) => props.borderRadius || GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
+  position: ${(props) => props.position || 'relative'};
+  text-decoration: ${(props) => props.textDecoration || 'none'};
+  overflow: ${(props) => props.overflow || 'hidden'};
+  z-index: ${(props) => props.zIndex || '3'};
+  pointer: ${(props) => props.pointer || 'hand'};
+  cursor: ${(props) => props.cursor || 'pointer'};
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.TABLET};
+  }
+
+  @media ${device.mobileM} {
+    font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.MOBILE};
+  }
+
+  &:before {
+    background: ${(props) => props.hover || (props.background ? props.background : 'transparent')};
+    bottom: 0;
+    content: '';
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &:after {
+    background: ${(props) => props.hoverBackground || '#000'};
+    bottom: 0;
+    content: '';
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &:hover:before {
+    display: block;
+  }
+
+  &:hover:after {
+    opacity: 0.08;
+  }
+  &:active:after {
+    opacity: 0.15;
+  }
+
+  & > div {
+    display: flex;
+  }
+`;
+
+export const Atag = styled.a`
   display: ${(props) => props.display || 'initial'};
   line-height: ${(props) => props.lineHeight || '26px'};
   flex: ${(props) => props.flex || 'initial'};

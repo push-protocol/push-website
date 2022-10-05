@@ -29,7 +29,7 @@ import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
 import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
-import { ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
+import { Atag, ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
 import TeamMember from '../components/TeamMember';
 
@@ -158,28 +158,26 @@ function Home() {
                   justifyContent="flex-start"
                   gap="18px"
                 >
-                  <ButtonV2
+                  <Atag
                     href="https://docs.epns.io/developers"
                     title="Developer Docs"
                     target="_blank"
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     lineHeight="26px"
-                    onClick={() => window.open('https://docs.epns.io/developers')}
                     zIndex="2"
                   >
                     Start Building
-                  </ButtonV2>
-                  <ButtonV2
+                  </Atag>
+                  <Atag
                     href="https://app.push.org/"
                     title="Push Dapp"
                     target="_blank"
                     background={GLOBALS.COLORS.BG_DARK_SECONDARY}
                     lineHeight="26px"
-                    onClick={() => window.open('https://app.push.org')}
                     zIndex="2"
                   >
                     Explore Push Protocol
-                  </ButtonV2>
+                  </Atag>
                 </HeroCTA>
 
                 <ItemHV2
