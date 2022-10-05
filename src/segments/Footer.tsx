@@ -10,7 +10,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { device } from '../config/globals';
 
 import {
-  Section, Content, ItemH, ItemV, Span, Anchor,
+  Section, Content, ItemH, ItemV, Span, Anchor, LinkTo,
 } from '../components/SharedStyling';
 
 
@@ -119,8 +119,8 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Company</Span>
 
-                  <Anchor
-                    onClick={() => navigate('/tos') }
+                  <LinkTo
+                    to="/tos"
                     bg="transparent"
                     color="#9C9CBE"
                     size="16px"
@@ -132,10 +132,10 @@ function Footer() {
                     title="Terms"
                   >
                     Terms
-                  </Anchor>
+                  </LinkTo>
 
-                  <Anchor
-                    onClick={() => navigate('/privacy') }
+                  <LinkTo
+                    to="/privacy"
                     bg="transparent"
                     color="#9C9CBE"
                     size="16px"
@@ -147,7 +147,7 @@ function Footer() {
                     title="Privacy"
                   >
                       Privacy
-                  </Anchor>
+                  </LinkTo>
 
                 </FooterLinks>
               </FooterColumn>
@@ -343,9 +343,9 @@ function Footer() {
                   </Anchor>
                                      */}
 
-                  <Anchor
-                    onClick={() => navigate('/faq') }
+                  <LinkTo
                     bg="transparent"
+                    to='/faq'
                     color="#9C9CBE"
                     size="16px"
                     weight="300"
@@ -356,7 +356,7 @@ function Footer() {
                     title="FAQ"
                   >
                       FAQ
-                  </Anchor>
+                  </LinkTo>
                 </FooterLinks>
               </FooterColumn>
 
@@ -374,13 +374,13 @@ function Footer() {
           {/* Social Icon Links */}
           <SocialLinks gap="32px">
             <ItemV justifyContent="flex-start" flex="1" gap="12px" className="pushLinks">
-              <Anchor
+              <LinkTo
                 className="pushLogo"
-                onClick={() => navigate('/') }
+                to='/'
                 title="Push"
               >
                 <PushLogoTextWhite />
-              </Anchor>
+              </LinkTo>
                             
                             
               <Anchor

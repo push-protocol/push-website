@@ -130,13 +130,13 @@ function Header() {
                 className="headerlogo"
                 flex="initial"
               >
-                <PushLogoTextBlack onClick={() => navigate('/')} />
+                <LinkTo to='/'><PushLogoTextBlack /></LinkTo>
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer
                 className="headerlogo"
                 flex="initial"
               >
-                <PushLogoTextWhite onClick={() => navigate('/')} />
+                <LinkTo to='/'><PushLogoTextWhite  /></LinkTo>
               </PushLogoWhiteContainer>
 
               <MobileMenuToggleIcon>
