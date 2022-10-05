@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { device } from '../config/globals';
 /**
@@ -402,7 +403,80 @@ export const OL = styled.ol``;
 export const LI = styled.li`
 	margin: 10px 0px;
 `;
+export const LinkTo = styled(Link)`
+  font-family: 'Strawford';
+  line-height: ${props => props.lineHeight || 'inherit'};
+  display: flex;
+  flex-direction: ${props => props.direction || 'row'};
+  flex: ${props => props.flex || 'initial'};
+  align-self: ${props => props.self || 'auto'};
+  align-items: ${props => props.align || 'center'};
+  justify-content: ${props => props.justify || 'center'};
+  font-weight: ${props => props.weight || 400};
+  font-size: ${props => props.size || 'inherit'};
+  color: ${props => props.color || '#fff'};
+  background: ${props => props.bg || 'transparent'};
+  margin: ${props => props.margin || '0'};
+  padding: ${props => props.padding || '10px 15px'};
+  letter-spacing: ${props => props.spacing || '0.2em'};
+  border: ${props => props.border || 'none'};
+  border-radius: ${props => props.radius || '0px'};
+  width: ${props => props.width || 'initial'};
 
+  position: relative; 
+  text-decoration: none;
+  overflow: ${props => props.overflow || 'hidden'};
+  z-index: 3;
+
+  filter: ${props => props.filter || 'none'};
+
+  cursor: ${props => props.disabled ? 'none' : 'pointer'};
+
+  &:hover & {
+    filter: ${props => (props.filterHover ? props.filterHover : (props.hover ? props.hover : 'none')) || 'none'};
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${props => props.hover || (props.bg ? props.bg : 'transparent')};
+    display: none;
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${props => props.hoverBG || '#000'};
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover:before {
+    display: block;
+  }
+
+  &:hover:after {
+    opacity: 0.08;
+  }
+  &:active:after {
+    opacity: 0.15;
+  }
+
+  & .anchorSVGlink {
+	width: 1em;
+	height: 1em;
+	margin-left: 3px;
+  }
+`;
 export const Anchor = styled.a`
   font-family: 'Strawford';
   line-height: ${props => props.lineHeight || 'inherit'};

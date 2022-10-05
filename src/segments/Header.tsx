@@ -14,7 +14,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import { ContentV2, ItemHV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
-import { Anchor, Span } from '../components/SharedStyling';
+import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 
 let lastScrollY = window.pageYOffset;
@@ -267,8 +267,8 @@ function Header() {
                     >
                       Quick Guide
                     </Anchor>
-                    <Anchor
-                      href="#/faq"
+                    <LinkTo
+                      to="/faq"
                       title="Frequently Asked Questions"
                       bg="transparent"
                       hoverBG="#fff"
@@ -279,7 +279,7 @@ function Header() {
                       spacing="normal"
                     >
                       FAQ
-                    </Anchor>
+                    </LinkTo>
                     <Anchor
                       href="https://push-protocol.medium.com/"
                       target="_blank"
@@ -294,8 +294,8 @@ function Header() {
                     >
                       Blog
                     </Anchor>
-                    <Anchor
-                      href="#/"
+                    <LinkTo
+                      to="/"
                       title="Push Press Kit"
                       bg="transparent"
                       hoverBG="#fff"
@@ -306,9 +306,9 @@ function Header() {
                       spacing="normal"
                     >
                       Press Kit
-                    </Anchor>
-                    <Anchor
-                      href="#/"
+                    </LinkTo>
+                    <LinkTo
+                      to="/"
                       title="Contact Us"
                       bg="transparent"
                       hoverBG="#fff"
@@ -319,7 +319,7 @@ function Header() {
                       spacing="normal"
                     >
                       Contact Us
-                    </Anchor>
+                    </LinkTo>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
