@@ -138,6 +138,7 @@ function InvestorList() {
                     height={64}
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
+                    alt={investor.name}
                   />
                   <InvestorDetails>
                     <InvestorName>
@@ -184,6 +185,7 @@ function InvestorList() {
                     height={64}
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
+                    alt={investor.name}
                   />
                   <InvestorDetails>
                     <InvestorName>

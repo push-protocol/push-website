@@ -39,6 +39,7 @@ function TeamMember(props: TeamMemberProps) {
         height={133}
         src={img[0] || ''}
         srcSet={img[1] || ''}
+        alt={name}
       />
 
       <MemberName>
