@@ -15,12 +15,13 @@ function getSrcSet(srcSet) {
 }
 
 function ImageHolder(props) {
-  const { src, srcSet, ...restProps } = props || {};
+  const { src, srcSet, alt, ...restProps } = props || {};
 
   return (
     <img
       src={getPublicImagePath(src)}
       srcSet={getSrcSet(srcSet)}
+      alt={alt}
       {...restProps}
     />
   );
