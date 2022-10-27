@@ -308,7 +308,7 @@ function Header() {
                     >
                       Media  Kit
                     </Anchor>
-                    <LinkTo
+                    {/* <LinkTo
                       to="/"
                       title="Contact Us"
                       bg="transparent"
@@ -320,7 +320,7 @@ function Header() {
                       spacing="normal"
                     >
                       Contact Us
-                    </LinkTo>
+                    </LinkTo> */}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -391,7 +391,7 @@ function Header() {
                       Grants
                     </Anchor>
                     <Anchor
-                      href="https://snapshot.org/#/epns.eth"
+                      href="https://snapshot.org/#/pushdao.eth"
                       title="Push Snapshot"
                       target="_blank"
                       bg="transparent"
@@ -405,7 +405,7 @@ function Header() {
                       Snapshot
                     </Anchor>
                     <Anchor
-                      href="http://incentives.epns.io/"
+                      href="https://app.push.org/#/yield"
                       title="Delegate"
                       target="_blank"
                       bg="transparent"
