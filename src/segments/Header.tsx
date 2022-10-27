@@ -404,7 +404,7 @@ function Header() {
                       Snapshot
                     </Anchor>
                     <Anchor
-                      href="http://incentives.epns.io/"
+                      href="https://app.push.org/#/yield"
                       title="Delegate"
                       target="_blank"
                       bg="transparent"
