@@ -307,7 +307,7 @@ function Header() {
                     >
                       Press Kit
                     </LinkTo>
-                    <LinkTo
+                    {/* <LinkTo
                       to="/"
                       title="Contact Us"
                       bg="transparent"
@@ -319,7 +319,7 @@ function Header() {
                       spacing="normal"
                     >
                       Contact Us
-                    </LinkTo>
+                    </LinkTo> */}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
