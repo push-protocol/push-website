@@ -390,7 +390,7 @@ function Header() {
                       Grants
                     </Anchor>
                     <Anchor
-                      href="https://snapshot.org/#/epns.eth"
+                      href="https://snapshot.org/#/pushdao.eth"
                       title="Push Snapshot"
                       target="_blank"
                       bg="transparent"
