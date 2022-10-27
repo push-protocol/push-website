@@ -297,7 +297,7 @@ function Header() {
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
-                      title="Push Press Kit"
+                      title="Push Media Kit"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -306,7 +306,7 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Press Kit
+                      Media  Kit
                     </Anchor>
                     <LinkTo
                       to="/"
