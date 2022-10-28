@@ -119,6 +119,22 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Company</Span>
 
+                  <Anchor
+                    href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
+                    target="_blank"
+                    bg="transparent"
+                    color="#9C9CBE"
+                    size="16px"
+                    weight="300"
+                    lineHeight="142%"
+                    padding="0"
+                    spacing="normal"
+                    justify="flex-start"
+                    title="Guides"
+                  >
+                      Media Kit
+                  </Anchor>
+
                   <LinkTo
                     to="/tos"
                     bg="transparent"
