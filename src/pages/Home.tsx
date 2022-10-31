@@ -399,7 +399,7 @@ function Home() {
                 </ResponsiveH2>
                 <Span
                   color="#303C5E"
-                  size="18px"
+                  size="20px"
                   weight="400"
                   spacing="-0.03em"
                   lineHeight="138.5%"
@@ -542,13 +542,13 @@ function Home() {
               <IntegrateAndEarn>
                 <ResponsiveH2
                   color="#09090B"
-                  size="40px"
+                  size="36px"
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
-                  Are you a crypto wallet? Integrate and earn.
+                  Are you a crypto wallet? <br></br> Integrate and earn.
                 </ResponsiveH2>
 
                 <Anchor

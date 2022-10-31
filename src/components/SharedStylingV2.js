@@ -129,7 +129,7 @@ export const ItemVV2 = styled(ItemHV2)`
 
 export const H1V2 = styled.h1`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
-  font-weight: ${(props) => props.fontWeight || 600};
+  font-weight: ${(props) => props.fontWeight || 700};
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.PRIMARY_HEADING.DESKTOP};
   text-transform: ${(props) => props.textTransform || 'inherit'};
   margin: ${(props) => props.margin || '0px'};
@@ -195,7 +195,7 @@ export const SpanV2 = styled.span`
   align-self: ${(props) => props.alignSelf || 'auto'};
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   background: ${(props) => props.background || 'transparent'};
-  font-weight: ${(props) => props.fontWeight || 300};
+  font-weight: ${(props) => props.fontWeight || 400};
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.DESKTOP};
   text-transform: ${(props) => props.textTransform || 'inherit'};
   margin: ${(props) => props.margin || '0px'};
