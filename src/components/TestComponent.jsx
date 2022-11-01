@@ -31,7 +31,7 @@ const TestComponent = () => {
       ScrollTrigger.matchMedia({
         "(min-width: 1025px)": function() {
           gsap.to(panels.current, {
-            xPercent: -100 * (totalPanels - 1),
+            xPercent: -85 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
               trigger: panelsContainer.current,
@@ -99,7 +99,7 @@ const TestComponent = () => {
                 </GrowPushCardDetails>
               </GrowPushCard>
 
-              <GrowPushCard background="#C4A8FB" margin='0 0 0 5%' ref={(e) => createPanelsRefs(e, 1)} className="panel">
+              <GrowPushCard background="#C4A8FB" margin='0 0 0 2%' ref={(e) => createPanelsRefs(e, 1)} className="panel">
                 <Div>
                  <PushgovernancesliderFigure className='figureSvg' />
                 </Div>
@@ -162,12 +162,16 @@ const SliderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 50px 0px;
   
   @media ${device.laptop}{
     flex-direction: column;
     width: 100%;
     height: auto;
-  }`
+    padding: 0px 0px;
+  }
+
+  `;
 
 const GrowPushCard = styled(ItemV)`
   display: flex;
@@ -175,7 +179,7 @@ const GrowPushCard = styled(ItemV)`
   align-items: flex-start;
   row-gap: 32px;
   padding: 60px 80px;
-  min-width: 80% !important;
+  min-width: 70% !important;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
@@ -183,7 +187,7 @@ const GrowPushCard = styled(ItemV)`
 
   & .figureSvg {
     width: 100%;
-    height: 407px;
+    height: 400px;
   
     @media ${device.tablet} {
       width: 100%;
