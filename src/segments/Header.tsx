@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 import useMediaQuery from '../hooks/useMediaQuery';
 
@@ -77,6 +77,7 @@ function Header() {
 
   
   const navigate = useNavigate();
+  const location = useLocation();
   
   const showMobileMenu = isMobile && isMobileMenuOpen;
   
@@ -108,13 +109,15 @@ function Header() {
     setIsAlertVisible(false);
   };
 
+  console.log(location);
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {isAlertVisible && <Alert hideAlert={hideAlertHandler}/>}
+      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler}/>}
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}

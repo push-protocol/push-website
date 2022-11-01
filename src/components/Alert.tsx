@@ -35,7 +35,7 @@ const Alert = ({hideAlert}:AlertProps)=>{
 
 const AlertContainer = styled(ItemHV2)`
     background: linear-gradient(90deg, rgba(18, 19, 21, 0.5) -2.55%, rgba(42, 42, 57, 0.5) 32.62%, rgba(142, 49, 122, 0.5) 68.34%, rgba(18, 19, 21, 0.5) 102.97%);
-    // background-color: black;
+    background-color: black;
     padding: 0.5rem 0;
     height: 50px;
 `
