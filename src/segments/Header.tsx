@@ -16,6 +16,7 @@ import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
+import Alert from 'components/Alert';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -72,22 +73,24 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const [isAlertVisible, setIsAlertVisible] = useState(true);
 
+  
   const navigate = useNavigate();
-
+  
   const showMobileMenu = isMobile && isMobileMenuOpen;
-
+  
   // if mobile view then show only DARK header.
   // console.log(bkg);
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
   const themeClass = `${bkg}`;
-
+  
   // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
-
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
-
+  
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
@@ -100,12 +103,18 @@ function Header() {
       });
     }
   };
+  
+  const hideAlertHandler = ()=>{
+    setIsAlertVisible(false);
+  }
 
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
+      {/* ALERT SECTION */}
+      {isAlertVisible && <Alert hideAlert={hideAlertHandler}/>}
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
@@ -552,6 +561,7 @@ const StyledHeader = styled.header`
   z-index: 999;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
