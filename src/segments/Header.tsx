@@ -106,7 +106,7 @@ function Header() {
   
   const hideAlertHandler = ()=>{
     setIsAlertVisible(false);
-  }
+  };
 
   return (
     <StyledHeader
