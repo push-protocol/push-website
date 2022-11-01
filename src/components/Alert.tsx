@@ -13,17 +13,15 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 // Internal Configs
 import { device } from '../config/globals';
 
-type AlertProps = {
-    hideAlert: ()=>void;
-};
 
-const Alert = ({hideAlert}:AlertProps)=>{
+const Alert = ({ hideAlert, isAlertVisible }) => {
     const alertMessage = "Decentralized, uncensorable, web3-native chat is here. Powered by Push Protocol.";
     const alertLink = "https://app.push.org/";
 
     return(
         <Section>
-        <AlertContainer>
+        {isAlertVisible && 
+            (<AlertContainer>
             <AlertContent>
                 <AlertText>
                     {alertMessage} 
@@ -36,9 +34,10 @@ const Alert = ({hideAlert}:AlertProps)=>{
                     Know more
                     <FiArrowUpRight />
                 </KnowMoreLinkMobile> 
-                <AiOutlineClose color='white' className='icon' />
+                <AiOutlineClose color='white' className='icon' onClick={hideAlert} />
             </CancelIcon>
-        </AlertContainer>
+        </AlertContainer>)}
+       
         </Section>
     )
 };
@@ -93,6 +92,7 @@ const CancelIcon = styled.div`
     }
 
     .icon{
+        cursor: pointer;
         @media ${device.tablet}{
             width: 15px;
         }

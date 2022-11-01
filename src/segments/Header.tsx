@@ -117,7 +117,7 @@ function Header() {
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler}/>}
+      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
