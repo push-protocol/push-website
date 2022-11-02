@@ -188,7 +188,7 @@ const GrowPushCard = styled(ItemV)`
 
   & .figureSvg {
     width: 100%;
-    height: 350px;
+    height: 300px;
   
     @media ${device.tablet} {
       width: 100%;
