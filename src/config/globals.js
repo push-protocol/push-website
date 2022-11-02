@@ -44,7 +44,7 @@ export const globalsMargin = {
       BOTTOM: '40px',
       LEFT: '20px',
     },
-  }
+  },
 };
 
 // Define Globals
@@ -91,24 +91,24 @@ const GLOBALS = {
       PRIMARY_HEADING: {
         DESKTOP: '62px',
         TABLET: '42px',
-        MOBILE: '34px'
+        MOBILE: '34px',
       },
       HEADING: {
         DESKTOP: '32px',
         TABLET: '28px',
-        MOBILE: '26px'
+        MOBILE: '26px',
       },
       HIGHLIGHTED_TEXT: {
         DESKTOP: '48px',
         TABLET: '40px',
-        MOBILE: '32px'
+        MOBILE: '32px',
       },
       NORMAL_TEXT: {
         DESKTOP: '20px',
         TABLET: '16px',
-        MOBILE: '14px'
-      } 
-    }
+        MOBILE: '14px',
+      },
+    },
   },
 
   COLORS: {
@@ -125,7 +125,7 @@ const GLOBALS = {
     BG_LIGHT_SECONDARY: '#F0DCFF',
     BG_HIGHLIGHTED_LIGHT_TRANSPARENT: 'rgba(219, 171, 255, 0.7);',
     BG_HIGHLIGHTED_MID_TRANSPARENT: 'rgba(235, 216, 249, 0.5);',
-    BG_GRADIENT_PRIMARY: 'linear-gradient(251.72deg, #DD44B9 14.29%, #8B6FD9 86.35%);'
+    BG_GRADIENT_PRIMARY: 'linear-gradient(251.72deg, #DD44B9 14.29%, #8B6FD9 86.35%);',
   },
 };
 export default GLOBALS;
