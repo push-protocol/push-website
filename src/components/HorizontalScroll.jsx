@@ -178,7 +178,7 @@ const GrowPushCard = styled(ItemV)`
   flex-direction: column;
   align-items: flex-start;
   row-gap: 32px;
-  padding: 60px 80px;
+  padding: 0px 80px;
   min-width: 85% !important;
 
   background: ${(props) => props.background || '#FFFBFB'};
@@ -207,13 +207,20 @@ const GrowPushCard = styled(ItemV)`
 
   @media ${device.laptop}{
     margin: ${(props) => '10px 0px' || ''};
+    min-width: 100%;
+    row-gap: 0px;
   }
 `;
 
 const GrowPushCardDetails = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   row-gap: 24px;
+
+  @media ${device.laptop}{
+   row-gap: 10px;
+  }
 `;
 
 const Div = styled.div`
