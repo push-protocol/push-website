@@ -34,7 +34,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
                     Know more
                     <FiArrowUpRight />
                 </KnowMoreLinkMobile> 
-                <AiOutlineClose color='white' className='icon' onClick={hideAlert} />
+                <AiOutlineClose size="1.25rem" color='#7f7b80' className='icon' onClick={hideAlert} />
             </CancelIcon>
         </AlertContainer>)}
        
@@ -81,7 +81,7 @@ const AlertText = styled.b`
     }
 `
 const CancelIcon = styled.div`
-    margin-right: 10px;
+    margin-right: 20px;
     @media ${device.tablet}{
         width: 100%;
         display: flex;
