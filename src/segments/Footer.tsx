@@ -343,8 +343,8 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Support</Span>
 
-                  {/* <Anchor
-                    href=""
+                  <Anchor
+                    href="mailto:support@epns.io"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"
@@ -355,9 +355,9 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                   >
-                      Contact
+                      Contact Us
                   </Anchor>
-                                     */}
+                                    
 
                   <LinkTo
                     bg="transparent"
