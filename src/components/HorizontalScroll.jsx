@@ -2,11 +2,10 @@
 import React, { Fragment, useEffect, useRef } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import './home.css'
 import styled from 'styled-components'
 import GLOBALS, { device } from '../config/globals';
-import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
-import { Atag, ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
+import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from './SharedStyling';
+import { Atag, ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from './SharedStylingV2';
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 
@@ -15,7 +14,7 @@ import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-const TestComponent = () => {
+const HorizontalScroll = () => {
     const panels = useRef([]);
     const panelsContainer = useRef();
 
@@ -31,7 +30,7 @@ const TestComponent = () => {
       ScrollTrigger.matchMedia({
         "(min-width: 1025px)": function() {
           gsap.to(panels.current, {
-            xPercent: -85 * (totalPanels - 1),
+            xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
               trigger: panelsContainer.current,
@@ -157,12 +156,13 @@ const SliderContainer = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // width: 70%;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 50px 0px;
+  flex-wrap: nowrap;
   
   @media ${device.laptop}{
     flex-direction: column;
@@ -179,7 +179,7 @@ const GrowPushCard = styled(ItemV)`
   align-items: flex-start;
   row-gap: 32px;
   padding: 60px 80px;
-  min-width: 70% !important;
+  min-width: 85% !important;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
@@ -219,4 +219,4 @@ const GrowPushCardDetails = styled.div`
 const Div = styled.div`
 `;
 
-export default TestComponent
+export default HorizontalScroll

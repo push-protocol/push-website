@@ -56,7 +56,7 @@ import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securi
 
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
-import TestComponent from 'components/TestComponent';
+import HorizontalScroll from 'components/HorizontalScroll';
 
 
 function Home() {
@@ -416,7 +416,7 @@ function Home() {
             </SignupBox>
 
 
-            <TestComponent />  
+            <HorizontalScroll />  
             
             {/* <ItemH
               justifyContent="flex-start"
@@ -1100,6 +1100,9 @@ const ResponsiveH2 = styled(H2)`
 `;
 
 const HomeWrapper = styled.main`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   & #hero .contentBox {
     row-gap: 18px;
   }

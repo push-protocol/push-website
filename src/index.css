@@ -13,6 +13,21 @@
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+/* needed for :horizontal scroll on homepage */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  font-family: "Signika Negative", sans-serif, Arial;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
 /* Sections
    ========================================================================== */
 
