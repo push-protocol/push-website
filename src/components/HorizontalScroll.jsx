@@ -30,7 +30,7 @@ const HorizontalScroll = () => {
       ScrollTrigger.matchMedia({
         "(min-width: 1025px)": function() {
           gsap.to(panels.current, {
-            xPercent: -100 * (totalPanels - 1),
+            xPercent: -75 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
               trigger: panelsContainer.current,
@@ -156,7 +156,7 @@ const SliderContainer = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  width: 100%;
+  width: 75%;
   height: 100vh;
   display: flex;
   flex-direction: row;
