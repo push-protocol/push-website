@@ -180,28 +180,29 @@ const GrowPushCard = styled(ItemV)`
   row-gap: 32px;
   padding: 0px 60px;
   min-width: 85% !important;
-  min-height: 700px;
+  // min-height: 700px;
+  min-height: auto;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
   border-radius: 48px;
 
   & .figureSvg {
-    width: 100%;
-    height: 300px;
+    width: 200px;
+    height: 100%;
   
     @media ${device.tablet} {
       width: 100%;
     }
 
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
       width: 100%;
       height: 200px;
     }
 
-    @media ${device.desktopL} {
+    @media only screen and (min-width: 1441px) and ${device.desktopL} {
       width: 100%;
-      height: 300px;
+      height: 250px;
     }
   }
 
