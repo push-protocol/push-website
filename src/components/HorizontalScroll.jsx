@@ -180,7 +180,7 @@ const GrowPushCard = styled(ItemV)`
   row-gap: 32px;
   padding: 0px 60px;
   min-width: 85% !important;
-  height: auto;
+  min-height: 700px;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
@@ -208,6 +208,7 @@ const GrowPushCard = styled(ItemV)`
   @media ${device.tablet} {
     padding: 28px 28px;
     border-radius: 36px;
+    min-height: auto;
   }
 
   @media ${device.laptop}{
@@ -215,6 +216,7 @@ const GrowPushCard = styled(ItemV)`
     min-width: 100%;
     row-gap: 32px;
     padding: 28px 28px;
+    min-height: auto;
   }
 
 `;
