@@ -384,7 +384,7 @@ function Home() {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-            <SignupBox margin="0 0 80px 0">
+            <SignupBox margin="0 0 0px 0">
               <ItemV
                 justifyContent="flex-start"
                 gap="12px"
