@@ -2,7 +2,7 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState,useEffect} from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -56,6 +56,7 @@ import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securi
 
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
+import HorizontalScroll from 'components/HorizontalScroll';
 
 
 function Home() {
@@ -96,6 +97,7 @@ function Home() {
     e.preventDefault();
     setShowMoreTeamMembers(!showMoreTeamMembers);
   };
+
 
   return (
     <PageWrapper
@@ -381,7 +383,7 @@ function Home() {
           data-bkg="dark"
           className="darkBackground"
         >
-          <Content className="contentBox">
+          <BodyContent className="contentBox">
             <SignupBox margin="0 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
@@ -413,7 +415,10 @@ function Home() {
               </ItemV>
             </SignupBox>
 
-            <ItemH
+
+            <HorizontalScroll />  
+            
+            {/* <ItemH
               justifyContent="flex-start"
               gap="16px"
             >
@@ -500,9 +505,11 @@ function Home() {
                   </Anchor>
                 </GrowPushCardDetails>
               </GrowPushCard>
-            </ItemH>
-          </Content>
+            </ItemH> */}
+          </BodyContent>
+
         </BuildWithPushSection>
+
 
         <IntergrateWithPushSection
           curve="bottom"
@@ -537,6 +544,8 @@ function Home() {
                 fee management among all wallets that integrate Push, including Push governance participants.
               </Span>
             </IntegrateGrowWithPushRow>
+
+           
 
             <ItemH margin="120px 0 0 0">
               <IntegrateAndEarn>
@@ -1091,6 +1100,9 @@ const ResponsiveH2 = styled(H2)`
 `;
 
 const HomeWrapper = styled.main`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   & #hero .contentBox {
     row-gap: 18px;
   }
@@ -1219,6 +1231,21 @@ const LiveNetworks = styled(ItemH)`
       }
     }
   }
+`;
+
+export const BodyContent = styled.div`
+	// display: flex;
+	// flex-direction: column;
+	padding: ${(props) => props.padding || '40px 0px'};
+	// position: relative;
+
+	&.contentBox {
+	// 	width: 100%;
+  //   align-self: center;
+    max-width: 1140px;
+  //   flex: 1;
+  //   display: flex;
+	// }
 `;
 
 const Partners = styled(ItemH)``;
