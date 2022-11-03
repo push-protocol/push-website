@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 import useMediaQuery from '../hooks/useMediaQuery';
 
@@ -16,6 +16,7 @@ import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
+import Alert from 'components/Alert';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -72,22 +73,25 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const [isAlertVisible, setIsAlertVisible] = useState(true);
 
+  
   const navigate = useNavigate();
-
+  const location = useLocation();
+  
   const showMobileMenu = isMobile && isMobileMenuOpen;
-
+  
   // if mobile view then show only DARK header.
   // console.log(bkg);
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
   const themeClass = `${bkg}`;
-
+  
   // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
-
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
-
+  
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
@@ -100,12 +104,20 @@ function Header() {
       });
     }
   };
+  
+  const hideAlertHandler = ()=>{
+    setIsAlertVisible(false);
+  };
+
+  console.log(location);
 
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
+      {/* ALERT SECTION */}
+      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
@@ -552,6 +564,7 @@ const StyledHeader = styled.header`
   z-index: 999;
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 
