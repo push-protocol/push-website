@@ -109,8 +109,6 @@ function Header() {
     setIsAlertVisible(false);
   };
 
-  console.log(location);
-
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}

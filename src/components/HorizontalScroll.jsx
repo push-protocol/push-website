@@ -28,9 +28,10 @@ const HorizontalScroll = () => {
       const totalPanels = panels.current.length;
 
       ScrollTrigger.matchMedia({
-        "(min-width: 1025px)": function() {
+        "(min-width: 1199px)": function() {
           gsap.to(panels.current, {
             xPercent: -75 * (totalPanels - 1),
+            // xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
               trigger: panelsContainer.current,
@@ -48,10 +49,13 @@ const HorizontalScroll = () => {
   
     
     }, []);
+
+    console.log(window.innerHeight,window.innerWidth)
   return (
     <>
 
           <SliderContainer
+          sizing='calc(100vh-0)'
                ref={panelsContainer}
             >
               <GrowPushCard background="#ECDCD9" ref={(e) => createPanelsRefs(e, 0)} className="panel">
@@ -91,7 +95,8 @@ const HorizontalScroll = () => {
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="26px"
-                    self="flex-start"
+                    // self="flex-start"
+                    className='button'
                   >
                     Start Building
                   </Anchor>
@@ -135,7 +140,8 @@ const HorizontalScroll = () => {
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="26px"
-                    self="flex-start"
+                    // self="flex-start"
+                    className='button'
                   >
                     Know More
                   </Anchor>
@@ -156,20 +162,28 @@ const SliderContainer = styled.div`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  width: 75%;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 50px 0px;
+  align-items:center;
+  padding: calc(calc(100vh - 698px) / 2) 0px;
   flex-wrap: nowrap;
+  margin: auto 0;
   
-  @media ${device.laptop}{
+  @media (max-width: 1200px){
     flex-direction: column;
     width: 100%;
     height: auto;
     padding: 0px 0px;
+    margin-top: 20px;
   }
+
+  @media (min-width: 1200px) and (max-height: 758px) {
+     margin-top: 40px;
+  }
+
 
   `;
 
@@ -177,47 +191,54 @@ const GrowPushCard = styled(ItemV)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
   row-gap: 32px;
-  padding: 0px 60px;
-  min-width: 85% !important;
+  padding: 70px 70px;
+  // min-width: 85% !important;
   // min-height: 700px;
-  min-height: auto;
+  // height: auto;
+  // min-width: 834px;
+  min-width: 68%;
+  // height: 698px;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
   border-radius: 48px;
 
   & .figureSvg {
-    width: 200px;
+    width: 550px;
     height: 100%;
   
     @media ${device.tablet} {
       width: 100%;
     }
 
-    @media ${device.laptopL} {
-      width: 100%;
-      height: 200px;
+    @media (min-width: 1025px) and (max-width: 1250px) {
+       width: 400px;
+       height: 100%;
     }
 
-    @media only screen and (min-width: 1441px) and ${device.desktopL} {
-      width: 100%;
-      height: 250px;
-    }
+    @media (min-width: 1441px) and (max-width: 1800px) {
+      width: 550px;
+      height: 100%;
+   }
+
+   @media (min-width: 1200px) and (max-height: 758px) {
+       width: 400px;
+       height: 100%;
+ }
+
+   
   }
 
   @media ${device.tablet} {
-    padding: 28px 28px;
+    padding: 30px 30px;
     border-radius: 36px;
-    min-height: auto;
   }
 
-  @media ${device.laptop}{
+  @media (max-width: 1200px){
     margin: ${(props) => '10px 0px' || ''};
-    min-width: 100%;
-    row-gap: 32px;
-    padding: 28px 28px;
-    min-height: auto;
+    padding: 40px 40px;
   }
 
 `;
@@ -231,6 +252,14 @@ const GrowPushCardDetails = styled.div`
   @media ${device.laptop}{
    row-gap: 10px;
   }
+
+  .button {
+    align-self: flex-start;
+    @media (max-width: 1200px) {
+    align-self: center;
+    margin: 0 auto;
+   }
+   }
 `;
 
 const Div = styled.div`
