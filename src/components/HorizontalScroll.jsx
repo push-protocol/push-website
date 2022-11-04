@@ -193,7 +193,7 @@ const GrowPushCard = styled(ItemV)`
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 32px;
-  padding: 60px 60px;
+  padding: 70px 70px;
   // min-width: 85% !important;
   // min-height: 700px;
   // height: auto;
@@ -206,7 +206,7 @@ const GrowPushCard = styled(ItemV)`
   border-radius: 48px;
 
   & .figureSvg {
-    width: 600px;
+    width: 550px;
     height: 100%;
   
     @media ${device.tablet} {
@@ -238,7 +238,7 @@ const GrowPushCard = styled(ItemV)`
 
   @media (max-width: 1200px){
     margin: ${(props) => '10px 0px' || ''};
-    padding: 30px 30px;
+    padding: 40px 40px;
   }
 
 `;
