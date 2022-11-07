@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+/* eslint-disable react/prop-types */
 
 // React + Web3 Essentials
 import React, { useLayoutEffect, useState,useEffect} from 'react';
@@ -59,7 +60,7 @@ import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/
 import HorizontalScroll from 'components/HorizontalScroll';
 
 
-function Home() {
+function Home({isAlertVisible}) {
   // Hero Shrink Animation
   useLayoutEffect(() => {
     gsap.to('#herobg', {
@@ -144,6 +145,7 @@ function Home() {
               <HeroItem
                 maxWidth="60%"
                 alignItems="flex-start"
+                MarginTop={isAlertVisible ? '100px' : '0px'}
               >
                 <H1V2 zIndex="2">The Communication Protocol of Web3</H1V2>
 
@@ -1058,6 +1060,7 @@ const HeroAnimation = styled(ItemHV2)`
 const HeroItem = styled(ItemVV2)`
   @media ${device.laptop} {
     max-width: initial;
+    margin-top: ${(props) => props.MarginTop || '0px'};
   }
 
   @media ${device.mobileM} {

@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+/* eslint-disable react/prop-types */
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -68,12 +69,12 @@ const defaultMobileMenuState = {
   // add next [index]: false for new main Nav menu item
 };
 
-function Header() {
+function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
   const isMobile = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [isAlertVisible, setIsAlertVisible] = useState(true);
+  // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   
   const navigate = useNavigate();
@@ -105,9 +106,9 @@ function Header() {
     }
   };
   
-  const hideAlertHandler = ()=>{
-    setIsAlertVisible(false);
-  };
+  // const hideAlertHandler = ()=>{
+  //   setIsAlertVisible(false);
+  // };
 
   return (
     <StyledHeader
@@ -116,6 +117,7 @@ function Header() {
     >
       {/* ALERT SECTION */}
       {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
+
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
