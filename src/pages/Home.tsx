@@ -74,6 +74,19 @@ function Home() {
     });
   }, []);
 
+  useLayoutEffect(() => {
+    gsap.to('#integratePush', {
+      scrollTrigger: {
+        trigger: '#featuredIn',
+        start: 'center center',
+        end: 'bottom top',
+        scrub: true,
+      },
+      scale: 0.98,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    });
+  }, []);
+
   // useLayoutEffect(() => {
   //   const sections = gsap.utils.toArray('.lightBackground');
 
@@ -512,10 +525,20 @@ function Home() {
 
         <IntergrateWithPushSection
           curve="bottom"
-          id="integratePush"
-          data-bkg="light"
-          className="lightBackground"
+          data-bkg="dark"
+          className="darkBackground"
         >
+          <ItemVV2
+            id="integratePush"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+          />
+
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
               <GrowWithPushFigure className='figureSvg'/>
@@ -830,7 +853,8 @@ function Home() {
               </Anchor>
             </TeamMemberButtons>
 
-            <ItemH margin="80px 0 80px 0">
+            <ItemH  
+              margin="80px 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
@@ -1146,7 +1170,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
-  padding: 80px 160px 80px 160px;
+  padding: 80px 160px 180px 160px;
 `;
 
 const FeaturedInSection = styled(ResponsiveSection)`
@@ -1157,7 +1181,8 @@ const FeaturedInSection = styled(ResponsiveSection)`
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: 160px;
+    margin-top: 60px;
+    // margin-top: 160px;
   }
 `;
 
