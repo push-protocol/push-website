@@ -66,11 +66,10 @@ function Home() {
       scrollTrigger: {
         trigger: '#herobg',
         start: 'center center',
-        end: 'bottom center',
-        // markers: true,
+        end: 'bottom top',
         scrub: true,
       },
-      scale: 0.95,
+      scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
   }, []);
