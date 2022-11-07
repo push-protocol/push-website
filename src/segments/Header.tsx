@@ -573,7 +573,8 @@ const StyledHeader = styled.header`
     flex-direction: column;
 
     &.hide {
-      top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
+      // top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
+      top: -100%;
     }
   }
 `;
