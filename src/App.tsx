@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import ReactGA from 'react-ga';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
@@ -12,9 +12,7 @@ import FAQ from 'pages/FAQ';
 import PrivacyMobile from 'pages/PrivacyMobile';
 import Privacy from './pages/Privacy';
 import TermsOfService from './pages/TermsOfService';
-
 import RedirectToPlatform from './components/RedirectToDiffUrl';
-
 
 
 ReactGA.initialize('UA-165415629-2');
@@ -24,13 +22,20 @@ function App() {
     ReactGA.pageview('/entry');
   }, []);
 
+  const [isAlertVisible, setIsAlertVisible] = useState(true);
 
+  const hideAlertHandler = ()=>{
+    setIsAlertVisible(false);
+  };
+
+  
   return (
     <AppWrapper>
-      <Header />
+
+      <Header isAlertVisible={isAlertVisible} setIsAlertVisible={setIsAlertVisible} hideAlertHandler={hideAlertHandler} />
       <Routes>
         {/* add all the route paths here */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home isAlertVisible={isAlertVisible} />} />
         {/* <Route path="/about" element={<AboutUs />} /> */}
         <Route path="/faq" element={<FAQ />} />
         <Route path="/tos" element={<TermsOfService />} />
