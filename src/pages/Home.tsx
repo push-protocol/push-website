@@ -75,21 +75,31 @@ function Home({isAlertVisible}) {
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
-  }, []);
 
-  useLayoutEffect(() => {
     gsap.to('#integratePush', {
       scrollTrigger: {
         trigger: '#newone',
-        start: 'center+100px top',
+        start: 'center top',
         end: '+=500',
-        markers: true,
         scrub: true,
       },
-      scale: 0.98,
+      scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
   }, []);
+
+  // useLayoutEffect(() => {
+  //   gsap.to('#integratePush', {
+  //     scrollTrigger: {
+  //       trigger: '#newone',
+  //       start: 'center+100px top',
+  //       end: '+=500',
+  //       scrub: true,
+  //     },
+  //     scale: 0.98,
+  //     borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+  //   });
+  // }, []);
 
   // useLayoutEffect(() => {
   //   const sections = gsap.utils.toArray('.lightBackground');
@@ -1162,14 +1172,14 @@ const StorySection = styled(ResponsiveSection)`
 const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
 
-  @media ${device.tablet} {
-    padding: 0 12px !important;
+  // @media ${device.tablet} {
+  //   padding: 0 12px !important;
 
-    & .contentBox {
-      margin-top: -72px;
-      z-index: 1;
-    }
-  }
+  //   & .contentBox {
+  //     margin-top: -72px;
+  //     z-index: 1;
+  //   }
+  // }
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
