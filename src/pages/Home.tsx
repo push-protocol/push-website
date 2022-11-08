@@ -12,6 +12,7 @@ import styled from 'styled-components';
 // Internal Components
 import Spline from '@splinetool/react-spline';
 import { BsArrowUpRight } from 'react-icons/bs';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -60,7 +61,7 @@ import HorizontalScroll from 'components/HorizontalScroll';
 
 
 function Home() {
-  const isMobile = window.innerWidth <= 1024;
+  const isMobile = useMediaQuery(device.laptop);
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
