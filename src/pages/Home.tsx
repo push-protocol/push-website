@@ -13,6 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import Spline from '@splinetool/react-spline';
 import { BsArrowUpRight } from 'react-icons/bs';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -59,8 +60,9 @@ import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushb
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 
-
 function Home({isAlertVisible}) {
+  const isMobile = useMediaQuery(device.laptop);
+
   // Hero Shrink Animation
   useLayoutEffect(() => {
     gsap.to('#herobg', {
@@ -93,12 +95,11 @@ function Home({isAlertVisible}) {
   // }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
-
+  
   const onClickViewMoreTeamMembers = (e) => {
     e.preventDefault();
     setShowMoreTeamMembers(!showMoreTeamMembers);
   };
-
 
   return (
     <PageWrapper
@@ -127,17 +128,13 @@ function Home({isAlertVisible}) {
           />
 
           <ContentV2>
-            <HeroAnimation
-              position="absolute"
-              top="0"
-              left="380px"
-              right="auto"
-              bottom="150px"
-              width="100%"
-              zIndex="1"
-            >
-              <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-            </HeroAnimation>
+            {
+              // rendering the main animation only on large laptops and desktops
+              !isMobile && 
+              <HeroAnimation>
+                <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+              </HeroAnimation>
+            }
             <HeroPrimary
               flex="initial"
               justifyContent="flex-start"
@@ -1048,13 +1045,13 @@ const HeroPrimary = styled(ItemHV2)`
 `;
 
 const HeroAnimation = styled(ItemHV2)`
-  @media ${device.laptop} {
-    display: none;
-  }
-
-  @media ${device.mobileM} {
-    display: none;
-  }
+  position: absolute;
+  top: 0;
+  left: 380px;
+  right: auto;
+  bottom: 150px;
+  width: 100%;
+  z-index: 1;
 `;
 
 const HeroItem = styled(ItemVV2)`
