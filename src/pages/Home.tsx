@@ -81,7 +81,6 @@ function Home() {
         start: 'center center',
         end: 'bottom top',
         scrub: true,
-        markers:true
       },
       scale: 0.98,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
