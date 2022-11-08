@@ -69,11 +69,24 @@ function Home({isAlertVisible}) {
       scrollTrigger: {
         trigger: '#herobg',
         start: 'center center',
-        end: 'bottom center',
-        // markers: true,
+        end: 'bottom top',
         scrub: true,
       },
-      scale: 0.95,
+      scale: 0.985,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    });
+  }, []);
+
+  useLayoutEffect(() => {
+    gsap.to('#integratePush', {
+      scrollTrigger: {
+        trigger: '#newone',
+        start: 'center+100px top',
+        end: '+=500',
+        markers: true,
+        scrub: true,
+      },
+      scale: 0.98,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
   }, []);
@@ -512,10 +525,20 @@ function Home({isAlertVisible}) {
 
         <IntergrateWithPushSection
           curve="bottom"
-          id="integratePush"
-          data-bkg="light"
-          className="lightBackground"
+          data-bkg="dark"
+          className="darkBackground"
         >
+          <ItemVV2
+            id="integratePush"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+          />
+
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
               <GrowWithPushFigure className='figureSvg'/>
@@ -830,7 +853,8 @@ function Home({isAlertVisible}) {
               </Anchor>
             </TeamMemberButtons>
 
-            <ItemH margin="80px 0 80px 0">
+            <ItemH  
+              margin="80px 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
@@ -842,6 +866,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
+                  
                 >
                   Backed by successful entrepreneurs and venture capital funds.
                 </InvestorHeader>
@@ -881,6 +906,7 @@ function Home({isAlertVisible}) {
             flexDirection="column"
             className="featuredInMarquee"
             margin="0 0 270px 0"
+            id='newone'
           >
             <MarqueeAnimation
               speed={70}
@@ -1147,7 +1173,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
-  padding: 80px 160px 80px 160px;
+  padding: 80px 160px 180px 160px;
 `;
 
 const FeaturedInSection = styled(ResponsiveSection)`
@@ -1158,7 +1184,8 @@ const FeaturedInSection = styled(ResponsiveSection)`
     gap: 80px;
     flex: 0;
     padding-top: 0;
-    margin-top: 160px;
+    margin-top: 60px;
+    // margin-top: 160px;
   }
 `;
 
