@@ -77,10 +77,11 @@ function Home() {
   useLayoutEffect(() => {
     gsap.to('#integratePush', {
       scrollTrigger: {
-        trigger: '#featuredIn',
+        trigger: '#newone',
         start: 'center center',
         end: 'bottom top',
         scrub: true,
+        markers:true
       },
       scale: 0.98,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
@@ -866,6 +867,7 @@ function Home() {
                   spacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
+                  
                 >
                   Backed by successful entrepreneurs and venture capital funds.
                 </InvestorHeader>
@@ -905,6 +907,7 @@ function Home() {
             flexDirection="column"
             className="featuredInMarquee"
             margin="0 0 270px 0"
+            id='newone'
           >
             <MarqueeAnimation
               speed={70}
