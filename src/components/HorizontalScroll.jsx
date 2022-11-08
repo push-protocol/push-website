@@ -50,7 +50,6 @@ const HorizontalScroll = () => {
     
     }, []);
 
-    console.log(window.innerHeight,window.innerWidth)
   return (
     <>
 
