@@ -60,6 +60,8 @@ import HorizontalScroll from 'components/HorizontalScroll';
 
 
 function Home() {
+  const isMobile = window.innerWidth <= 1024;
+
   // Hero Shrink Animation
   useLayoutEffect(() => {
     gsap.to('#herobg', {
@@ -92,12 +94,11 @@ function Home() {
   // }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
-
+  
   const onClickViewMoreTeamMembers = (e) => {
     e.preventDefault();
     setShowMoreTeamMembers(!showMoreTeamMembers);
   };
-
 
   return (
     <PageWrapper
@@ -126,17 +127,13 @@ function Home() {
           />
 
           <ContentV2>
-            <HeroAnimation
-              position="absolute"
-              top="0"
-              left="380px"
-              right="auto"
-              bottom="150px"
-              width="100%"
-              zIndex="1"
-            >
-              <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-            </HeroAnimation>
+            {
+              // rendering the main animation only on large laptops and desktops
+              !isMobile && 
+              <HeroAnimation>
+                <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+              </HeroAnimation>
+            }
             <HeroPrimary
               flex="initial"
               justifyContent="flex-start"
@@ -1046,13 +1043,13 @@ const HeroPrimary = styled(ItemHV2)`
 `;
 
 const HeroAnimation = styled(ItemHV2)`
-  @media ${device.laptop} {
-    display: none;
-  }
-
-  @media ${device.mobileM} {
-    display: none;
-  }
+  position: absolute;
+  top: 0;
+  left: 380px;
+  right: auto;
+  bottom: 150px;
+  width: 100%;
+  z-index: 1;
 `;
 
 const HeroItem = styled(ItemVV2)`
