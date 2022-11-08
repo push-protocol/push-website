@@ -71,6 +71,7 @@ function Home({isAlertVisible}) {
         start: 'center center',
         end: 'bottom top',
         scrub: true,
+        markers:false
       },
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
@@ -82,6 +83,7 @@ function Home({isAlertVisible}) {
         start: 'center top',
         end: '+=500',
         scrub: true,
+        markers:false
       },
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
