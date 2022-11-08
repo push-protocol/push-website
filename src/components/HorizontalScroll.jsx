@@ -36,8 +36,8 @@ const HorizontalScroll = () => {
             scrollTrigger: {
               trigger: panelsContainer.current,
               pin: true,
-              scrub: 1,
-              snap: 1 / (totalPanels - 1),
+              scrub: true,
+              // snap: 1 / (totalPanels - 1),
               // base vertical scrolling on how wide the container is so it feels more natural.
               end: () => '+=' + panelsContainer.current.offsetWidth
             }
