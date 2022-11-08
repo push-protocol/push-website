@@ -78,8 +78,9 @@ function Home() {
     gsap.to('#integratePush', {
       scrollTrigger: {
         trigger: '#newone',
-        start: 'center center',
-        end: 'bottom top',
+        start: 'center+100px top',
+        end: '+=500',
+        markers: true,
         scrub: true,
       },
       scale: 0.98,
