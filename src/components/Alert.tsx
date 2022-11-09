@@ -16,7 +16,7 @@ import { device } from '../config/globals';
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
     const alertMessage = "Decentralized, uncensorable, web3-native chat is here. Powered by Push Protocol.";
-    const alertLink = "https://app.push.org/";
+    const alertLink = "https://medium.com/push-protocol/announcing-the-push-chat-alpha-launch-f183765ec522";
 
     return(
         <Section>

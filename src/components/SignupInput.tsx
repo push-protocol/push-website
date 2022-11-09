@@ -100,11 +100,12 @@ const Wrapper = styled.form`
         justify-content: center;
         align-items: center;
         padding: 14px 32px;
+        white-space: nowrap;
 
         @media ${device.tablet} {
-          min-width: 128px;
+          min-width: auto;
           font-size: 12px;
-          padding: 14px 24px;
+          padding: 14px 16px;
         }  
     }
 `;
