@@ -265,20 +265,6 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     className="menuContent"
                     expanded={mobileMenuMap[1]}
                   >
-                    <Anchor
-                      href="https://docs.push.org/developers/"
-                      target="_blank"
-                      title="Quick Guide"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Quick Guide
-                    </Anchor>
                     <LinkTo
                       to="/faq"
                       title="Frequently Asked Questions"
