@@ -266,7 +266,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     expanded={mobileMenuMap[1]}
                   >
                     <Anchor
-                      href="https://getstarted.epns.io/"
+                      href="https://docs.push.org/developers/"
                       target="_blank"
                       title="Quick Guide"
                       bg="transparent"
