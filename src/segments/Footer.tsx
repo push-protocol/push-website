@@ -189,7 +189,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://docs.epns.io/governance"
+                    href="https://docs.push.org/governance"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"

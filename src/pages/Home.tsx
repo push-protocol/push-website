@@ -595,7 +595,7 @@ function Home({isAlertVisible}) {
                 </ResponsiveH2>
 
                 <Anchor
-                  href="https://docs.epns.io/hub/"
+                  href="https://docs.push.org/hub/"
                   title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"

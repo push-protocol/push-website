@@ -211,7 +211,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       Developer Guides
                     </Anchor>
                     <Anchor
-                      href="https://docs.epns.io/governance"
+                      href="https://docs.push.org/governance"
                       target="_blank"
                       title="Read Governance Guide"
                       bg="transparent"

@@ -66,7 +66,7 @@ const FAQS = [
         <Span>⚬ Go to <AMod href="https://app.push.org/#/channels">Push dApp</AMod> <br />
               ⚬ Opt-in to a channel. <br />
               ⚬ Download the <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910">Mobile Apps</AMod> or <AMod href="https://chrome.google.com/webstore/detail/epns-protocol-beta/lbdcbpaldalgiieffakjhiccoeebchmg">Browser Extension</AMod> to receive a notification. <br />
-              ⚬ Check out our <AMod href="https://getstarted.epns.io/">Quick Guides</AMod>, in case you need any help in the process.</Span>
+              ⚬ Check out our <AMod href="https://docs.push.org/developers">Quick Guides</AMod>, in case you need any help in the process.</Span>
       </Answer>
     )
   },
@@ -76,7 +76,7 @@ const FAQS = [
       <Answer>
         <Span>⚬ Push Documentation HUB - <AMod href="https://docs.push.org/">https://docs.push.org/</AMod> <br/>
               ⚬ Our Whitepaper: <AMod href="https://whitepaper.push.org/">https://whitepaper.push.org/</AMod> <br />
-              ⚬ Token economics: <AMod href="https://docs.epns.io/epns-governance/push-tokenomics">https://docs.epns.io/epns-governance/push-tokenomics</AMod> <br />
+              ⚬ Token economics: <AMod href="https://docs.push.org/epns-governance/push-tokenomics">https://docs.epns.io/epns-governance/push-tokenomics</AMod> <br />
               ⚬ Medium Articles: <AMod href="https://push-protocol.medium.com/">https://push-protocol.medium.com/</AMod> <br />
               ⚬ Our Litepaper: <AMod href="https://push.org/LitepaperEthereumPushNotificationService.pdf">https://push.org/LitepaperEthereumPushNotificationService.pdf</AMod> <br />
               ⚬ Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod>
