@@ -88,7 +88,7 @@ function Footer() {
                                     Follow our simple guides to get started in minutes.
                 </Span>
                 <Anchor
-                  href="https://docs.epns.io/developers"
+                  href="https://docs.push.org/developers"
                   title="Explore Docs"
                   target="_blank"
                   hoverBG="transparent"
@@ -321,7 +321,7 @@ function Footer() {
                   </Anchor>
 
                   <Anchor
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     target="_blank"
                     bg="transparent"
                     color="#9C9CBE"

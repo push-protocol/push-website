@@ -88,7 +88,7 @@ const FAQS = [
     question: 'Where can I find the Developer Docs and Integration guides for Push?',
     renderAnswer: () => (
       <Answer>
-        <Span>All the imperative developer documentation can be found in the <AMod href="https://docs.epns.io/developers">Push Documentation HUB</AMod></Span>
+        <Span>All the imperative developer documentation can be found in the <AMod href="https://docs.push.org/developers">Push Documentation HUB</AMod></Span>
       </Answer>
     )
   },
