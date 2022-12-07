@@ -185,7 +185,7 @@ function Home({isAlertVisible}) {
                   gap="18px"
                 >
                   <Atag
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
                     background={GLOBALS.COLORS.HIGHLIGHT}
@@ -341,7 +341,7 @@ function Home({isAlertVisible}) {
               >
                 <PushMissingPieceFigure className='figureSvg'/>
                 <Anchor
-                  href="https://docs.epns.io/developers"
+                  href="https://docs.push.org/developers"
                   title="Developer Docs"
                   target="_blank"
                   hoverBG="transparent"
@@ -471,7 +471,7 @@ function Home({isAlertVisible}) {
                     progressively decentralized stack by enabling web3-native communication.
                   </Span>
                   <Anchor
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
                     bg="#DD44B9"
@@ -595,7 +595,7 @@ function Home({isAlertVisible}) {
                 </ResponsiveH2>
 
                 <Anchor
-                  href="https://docs.epns.io/hub/"
+                  href="https://docs.push.org/hub/"
                   title="Learn about $PUSH"
                   target="_blank"
                   bg="#DD44B9"

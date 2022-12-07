@@ -84,7 +84,7 @@ const HorizontalScroll = () => {
                     progressively decentralized stack by enabling web3-native communication.
                   </Span>
                   <Anchor
-                    href="https://docs.epns.io/developers"
+                    href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
                     bg="#DD44B9"
