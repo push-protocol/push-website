@@ -146,6 +146,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="Terms"
+                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
                   >
                     Terms
                   </LinkTo>
@@ -161,6 +162,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="Privacy"
+                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
                   >
                       Privacy
                   </LinkTo>
@@ -370,6 +372,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="FAQ"
+                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
                   >
                       FAQ
                   </LinkTo>
@@ -394,6 +397,7 @@ function Footer() {
                 className="pushLogo"
                 to='/'
                 title="Push"
+                onClick={()=>{document.documentElement.scrollTo(0, 0);}}
               >
                 <PushLogoTextWhite />
               </LinkTo>
