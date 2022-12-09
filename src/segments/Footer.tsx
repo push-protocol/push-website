@@ -33,6 +33,10 @@ function Footer() {
 
   const navigate =  useNavigate();
 
+  const scrollToTop = () => {
+    document.documentElement.scrollTo(0, 0);
+  };
+
   return (
     <StyledFooter>
       <ResponsiveSection id="footer" background="#121315" padding="160px 0 0 0">
@@ -146,7 +150,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="Terms"
-                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
+                    onClick={scrollToTop}
                   >
                     Terms
                   </LinkTo>
@@ -162,7 +166,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="Privacy"
-                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
+                    onClick={scrollToTop}
                   >
                       Privacy
                   </LinkTo>
@@ -372,7 +376,7 @@ function Footer() {
                     spacing="normal"
                     justify="flex-start"
                     title="FAQ"
-                    onClick={()=>{document.documentElement.scrollTo(0, 0);}}
+                    onClick={scrollToTop}
                   >
                       FAQ
                   </LinkTo>
@@ -397,7 +401,7 @@ function Footer() {
                 className="pushLogo"
                 to='/'
                 title="Push"
-                onClick={()=>{document.documentElement.scrollTo(0, 0);}}
+                onClick={scrollToTop}
               >
                 <PushLogoTextWhite />
               </LinkTo>
