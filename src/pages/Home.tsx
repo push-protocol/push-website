@@ -39,7 +39,7 @@ import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitwe
 import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
 import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
-import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum_logo_text_black.svg';
+import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
 
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
