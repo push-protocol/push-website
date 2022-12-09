@@ -94,13 +94,13 @@ function AnalyticsStats() {
 
       <ItemV gap="18px" className='kpiItem'>
         <KPIFigure>{totalChannelCount}</KPIFigure>
-        <KPIMetric>Channels<br />Created</KPIMetric>
+        <KPIMetric>Push<br />Integrations</KPIMetric>
       </ItemV>
 
      
       <ItemV gap="18px" className='kpiItem'>
         <KPIFigure>{totalGrantsGiven}</KPIFigure>
-        <KPIMetric>In Grants<br />Given</KPIMetric>
+        <KPIMetric>Push Chat<br />Sent</KPIMetric>
       </ItemV>
     </KPIBanner>
   );
