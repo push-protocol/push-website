@@ -173,4 +173,4 @@ const KPIMetric = styled(Span)`
     }
 `;
 
-export default AnalyticsStats;
+export default AnalyticsStats
