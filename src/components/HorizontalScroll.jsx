@@ -4,9 +4,10 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
 import { device } from '../config/globals';
-import { Anchor, H2, ItemV,Span } from './SharedStyling';
-import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
-import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
+import { Anchor, H2, ItemV, Span } from './SharedStyling';
+import PushbuildsliderFigure from '../assets/figures/pushbuildsliderfigure.webp';
+import PushgovernancesliderFigure from '../assets/figures/pushgovernancesliderfigure.webp';
+import ImageHolder from './ImageHolder';
 
 
 
@@ -58,7 +59,12 @@ const HorizontalScroll = () => {
             >
               <GrowPushCard background="#ECDCD9" ref={(e) => createPanelsRefs(e, 0)} className="panel">
                 <Div>
-                  <PushbuildsliderFigure className='figureSvg'/>
+                  <MemberImage
+                        className='figureSvg'
+                        src={PushbuildsliderFigure}
+                        srcSet={PushbuildsliderFigure}
+                        alt={'PushbuildsliderFigure'}
+                      />
                 </Div>
 
                 <GrowPushCardDetails>
@@ -103,7 +109,12 @@ const HorizontalScroll = () => {
 
               <GrowPushCard background="#C4A8FB" margin='0 0 0 2%' ref={(e) => createPanelsRefs(e, 1)} className="panel">
                 <Div>
-                 <PushgovernancesliderFigure className='figureSvg' />
+                 <MemberImage
+                        className='figureSvg'
+                        src={PushgovernancesliderFigure}
+                        srcSet={PushgovernancesliderFigure}
+                        alt={'PushgovernancesliderFigure'}
+                      />
                 </Div>
 
                 <GrowPushCardDetails>
@@ -184,6 +195,9 @@ const SliderContainer = styled.div`
 
 
   `;
+
+ const MemberImage = styled(ImageHolder)`
+`;
 
 const GrowPushCard = styled(ItemV)`
   display: flex;
