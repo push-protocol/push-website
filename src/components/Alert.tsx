@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 // External Components
+import React from 'react';
 import styled from 'styled-components';
 import { ItemH, Section } from './SharedStyling';
 import { FiArrowUpRight } from 'react-icons/fi'
@@ -99,4 +100,4 @@ const KnowMoreLink = styled.a`
     }
 `
 
-export default Alert;
+export default React.memo(Alert);
