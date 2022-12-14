@@ -45,9 +45,8 @@ import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundatio
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-
-import { ReactComponent as GrowWithPushFigure } from '../assets/figures/growwithpush.svg';
-import { ReactComponent as PushMissingPieceFigure } from '../assets/figures/pushmissingpiece.svg';
+import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
+import PushMissingPieceFigure from '../assets/figures/pushmissingpiece.webp';
 
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
@@ -59,6 +58,7 @@ import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securi
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
+import ImageHolder from 'components/ImageHolder';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
@@ -339,7 +339,12 @@ function Home({isAlertVisible}) {
                 flex="1"
                 alignItems="end"
               >
-                <PushMissingPieceFigure className='figureSvg'/>
+                <MemberImage
+                  className='figureSvg'
+                  src={PushMissingPieceFigure}
+                  srcSet={PushMissingPieceFigure}
+                  alt={'PushMissingPieceFigure'} />
+
                 <Anchor
                   href="https://docs.push.org/developers"
                   title="Developer Docs"
@@ -553,7 +558,11 @@ function Home({isAlertVisible}) {
 
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
-              <GrowWithPushFigure className='figureSvg'/>
+              <MemberImage
+                className='figureSvg'
+                src={GrowWithPushFigure}
+                srcSet={GrowWithPushFigure}
+                alt={'GrowWithPushFigure'} />
 
               <ResponsiveH2
                 color="#121315"
@@ -1080,6 +1089,9 @@ const HeroPrimary = styled(ItemHV2)`
   @media ${device.mobileM} {
     margin: 80px 0;
   }
+`;
+
+const MemberImage = styled(ImageHolder)`
 `;
 
 const HeroAnimation = styled(ItemHV2)`

@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-// eslint-disable
+/* eslint-disable */
 
 import React, { useEffect, useState } from 'react';
 import { Oval } from 'react-loader-spinner';
@@ -174,4 +174,4 @@ const KPIMetric = styled(Span)`
     }
 `;
 
-export default AnalyticsStats;
+export default AnalyticsStats
