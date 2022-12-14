@@ -2,7 +2,6 @@
 // @ts-nocheck
 import React from 'react';
 import { BsArrowUpRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Anchor, Content, H2, HeroHeader, ItemH, ItemV, Span } from '../components/SharedStyling';
