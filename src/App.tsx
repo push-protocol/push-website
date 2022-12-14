@@ -1,11 +1,14 @@
-import React, { useEffect,useState } from 'react';
-import ReactGA from 'react-ga';
-import { Route, Routes } from 'react-router-dom';
-import styled from 'styled-components';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+// eslint-disable react/prop-types
+/* eslint-disable */
 
+import React, { useLayoutEffect, useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
-
 import Home from './pages/Home';
 // import AboutUs from './pages/AboutUs';
 import FAQ from 'pages/FAQ';
@@ -28,10 +31,18 @@ function App() {
     setIsAlertVisible(false);
   };
 
+  const Wrapper = ({children}) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children;
+  };
+
   
   return (
-    <AppWrapper>
-
+      <Wrapper>
+      <AppWrapper>
       <Header isAlertVisible={isAlertVisible} setIsAlertVisible={setIsAlertVisible} hideAlertHandler={hideAlertHandler} />
       <Routes>
         {/* add all the route paths here */}
@@ -45,6 +56,8 @@ function App() {
       </Routes>
       <Footer />
     </AppWrapper>  
+    </Wrapper>
+
   );
 }
 
