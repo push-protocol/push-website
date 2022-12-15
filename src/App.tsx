@@ -10,11 +10,6 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from "./pages/Home";
-// import AboutUs from './pages/AboutUs';
-import PrivacyMobile from 'pages/PrivacyMobile';
-import Privacy from './pages/Privacy';
-import TermsOfService from './pages/TermsOfService';
-import RedirectToPlatform from './components/RedirectToDiffUrl';
 
 
 ReactGA.initialize('UA-165415629-2');
