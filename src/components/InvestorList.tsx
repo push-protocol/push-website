@@ -264,4 +264,4 @@ const MemberImage = styled(ImageHolder)`
 `;
 
 
-export default InvestorList;
+export default React.memo(InvestorList);

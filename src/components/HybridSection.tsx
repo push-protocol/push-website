@@ -109,4 +109,4 @@ const StyledSection = styled(Section)`
   }}
 `;
 
-export default HybridSection;
+export default React.memo(HybridSection);

@@ -160,4 +160,4 @@ const PartnerRow = styled(ItemHV2)`
 `;
 
 
-export default PartnerChannels;
+export default React.memo(PartnerChannels);

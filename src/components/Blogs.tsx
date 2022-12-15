@@ -266,4 +266,4 @@ const SubArticleHeader = styled.h4`
 `;
 
 
-export default Blogs;
+export default React.memo(Blogs);

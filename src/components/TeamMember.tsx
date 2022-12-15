@@ -143,4 +143,4 @@ const MemberSocial = styled.div`
     margin-top: 16px;
 `;
 
-export default TeamMember;
+export default React.memo(TeamMember);

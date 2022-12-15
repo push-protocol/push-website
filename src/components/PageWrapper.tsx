@@ -34,4 +34,4 @@ function PageWrapper(props: PageWrapperProps) {
   );
 }
 
-export default PageWrapper;
+export default React.memo(PageWrapper);

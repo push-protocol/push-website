@@ -24,4 +24,4 @@ const ImgNextGen = ({ srcWebp, srcJrx, srcJp2, fallback, png, alt, ...props }) =
   );
 };
 
-export default ImgNextGen;
+export default React.memo(ImgNextGen);

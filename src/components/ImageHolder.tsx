@@ -38,4 +38,4 @@ function ImageHolder(props) {
   );
 }
 
-export default ImageHolder;
+export default React.memo(ImageHolder);
