@@ -155,10 +155,11 @@ function Home({isAlertVisible}) {
           <ContentV2>
             {
               // rendering the main animation only on large laptops and desktops
-              !isMobile && 
-              <HeroAnimation>
-                <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-              </HeroAnimation>
+              !isMobile && (
+                <HeroAnimation>
+                  <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+                </HeroAnimation>
+              )
             }
             <HeroPrimary
               flex="initial"
@@ -323,7 +324,7 @@ function Home({isAlertVisible}) {
                   <ItemV className="network">
                     <EthLogoTextSVG />
                   </ItemV>
-                  
+
                   <ItemV className="divider" />
 
                   <ItemV className="network">
@@ -340,10 +341,13 @@ function Home({isAlertVisible}) {
                 alignItems="end"
               >
                 <MemberImage
-                  className='figureSvg'
+                  className="figureSvg"
                   src={PushMissingPieceFigure}
                   srcSet={PushMissingPieceFigure}
-                  alt={'PushMissingPieceFigure'} />
+                  alt={'PushMissingPieceFigure'}
+                  width='100%'
+                  height='100%'
+                />
 
                 <Anchor
                   href="https://docs.push.org/developers"
@@ -444,9 +448,8 @@ function Home({isAlertVisible}) {
               </ItemV>
             </SignupBox>
 
+            <HorizontalScroll />
 
-            <HorizontalScroll />  
-            
             {/* <ItemH
               justifyContent="flex-start"
               gap="16px"
@@ -536,9 +539,7 @@ function Home({isAlertVisible}) {
               </GrowPushCard>
             </ItemH> */}
           </BodyContent>
-
         </BuildWithPushSection>
-
 
         <IntergrateWithPushSection
           curve="bottom"
@@ -559,10 +560,13 @@ function Home({isAlertVisible}) {
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
               <MemberImage
-                className='figureSvg'
+                className="figureSvg"
                 src={GrowWithPushFigure}
                 srcSet={GrowWithPushFigure}
-                alt={'GrowWithPushFigure'} />
+                alt={'GrowWithPushFigure'}
+                width="100%"
+                height="100%"
+              />
 
               <ResponsiveH2
                 color="#121315"
@@ -587,8 +591,6 @@ function Home({isAlertVisible}) {
                 fee management among all wallets that integrate Push, including Push governance participants.
               </Span>
             </IntegrateGrowWithPushRow>
-
-           
 
             <ItemH margin="120px 0 0 0">
               <IntegrateAndEarn>
@@ -642,10 +644,10 @@ function Home({isAlertVisible}) {
             <ItemH padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <ChainAgnosticFigure />
                   </div>
-                 
+
                   <Span
                     color="#09090B"
                     size="24px"
@@ -657,8 +659,8 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <ImmediatecommunicationFigure/>
+                  <div className="matrixFigure">
+                    <ImmediatecommunicationFigure />
                   </div>
 
                   <Span
@@ -672,8 +674,8 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <DecentralizedstackFigure/>
+                  <div className="matrixFigure">
+                    <DecentralizedstackFigure />
                   </div>
 
                   <Span
@@ -688,8 +690,8 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
 
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <ImproveduxFigure/>
+                  <div className="matrixFigure">
+                    <ImproveduxFigure />
                   </div>
 
                   <Span
@@ -703,11 +705,10 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <SecurityalertsFigure />
                   </div>
 
-                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -719,11 +720,10 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <CensorshipresistantFigure />
                   </div>
 
-                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -819,7 +819,7 @@ function Home({isAlertVisible}) {
                   lineHeight="142%"
                 >
                   The most diverse personalities have found each other at Push. Unique people with special talents and
-                  extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries 
+                  extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries
                   of everything web3 communication.
                 </Span>
               </ItemV>
@@ -874,8 +874,7 @@ function Home({isAlertVisible}) {
               </Anchor>
             </TeamMemberButtons>
 
-            <ItemH  
-              margin="80px 0 80px 0">
+            <ItemH margin="80px 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
@@ -887,7 +886,6 @@ function Home({isAlertVisible}) {
                   spacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
-                  
                 >
                   Backed by successful entrepreneurs and venture capital funds.
                 </InvestorHeader>
@@ -927,7 +925,7 @@ function Home({isAlertVisible}) {
             flexDirection="column"
             className="featuredInMarquee"
             margin="0 0 270px 0"
-            id='newone'
+            id="newone"
           >
             <MarqueeAnimation
               speed={70}
@@ -941,7 +939,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
+                  We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
                 </Span>
 
                 <ArticleSource>
@@ -961,7 +959,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -975,7 +973,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
                 </Span>
 
                 <ArticleSource>
@@ -995,7 +993,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1009,7 +1007,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
+                  Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
                 </Span>
 
                 <ArticleSource>
@@ -1029,7 +1027,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1043,7 +1041,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    Decentralized push notifications may transform what dapps can do.
+                  Decentralized push notifications may transform what dapps can do.
                 </Span>
 
                 <ArticleSource>
@@ -1063,7 +1061,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
