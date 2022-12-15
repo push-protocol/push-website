@@ -1,11 +1,10 @@
 /* eslint-disable */
-import React, { Fragment, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
-import GLOBALS, { device } from '../config/globals';
-import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from './SharedStyling';
-import { Atag, ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from './SharedStylingV2';
+import { device } from '../config/globals';
+import { Anchor, H2, ItemV, Span } from './SharedStyling';
 import PushbuildsliderFigure from '../assets/figures/pushbuildsliderfigure.webp';
 import PushgovernancesliderFigure from '../assets/figures/pushgovernancesliderfigure.webp';
 import ImageHolder from './ImageHolder';

@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 
 // React + Web3 Essentials
-import React, { useLayoutEffect, useState,useEffect} from 'react';
+import React, { useLayoutEffect, useState} from 'react';
 
 // External Components
 import { gsap } from 'gsap';

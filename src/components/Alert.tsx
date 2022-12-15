@@ -4,7 +4,7 @@
 // External Components
 import React from 'react';
 import styled from 'styled-components';
-import { ItemH, Section } from './SharedStyling';
+import { Section } from './SharedStyling';
 import { FiArrowUpRight } from 'react-icons/fi'
 import { AiOutlineClose } from 'react-icons/ai'
 

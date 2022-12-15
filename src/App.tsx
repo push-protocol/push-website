@@ -3,15 +3,14 @@
 // eslint-disable react/prop-types
 /* eslint-disable */
 
-import React, { useLayoutEffect, useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState, Suspense } from 'react';
 import ReactGA from 'react-ga';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
-import Home from './pages/Home';
+import Home from "./pages/Home";
 // import AboutUs from './pages/AboutUs';
-import FAQ from 'pages/FAQ';
 import PrivacyMobile from 'pages/PrivacyMobile';
 import Privacy from './pages/Privacy';
 import TermsOfService from './pages/TermsOfService';
@@ -21,6 +20,21 @@ import RedirectToPlatform from './components/RedirectToDiffUrl';
 ReactGA.initialize('UA-165415629-2');
 
 function App() {
+  const FAQ = React.lazy(
+    () => import("pages/FAQ")
+  )
+  const PrivacyMobile = React.lazy(
+    () => import("pages/PrivacyMobile")
+  )
+  const Privacy = React.lazy(
+    () => import("pages/Privacy")
+  )
+  const TermsOfService = React.lazy(
+    () => import("pages/TermsOfService")
+  )
+  const RedirectToPlatform = React.lazy(
+    () => import("./components/RedirectToDiffUrl")
+  )
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -41,6 +55,7 @@ function App() {
 
   
   return (
+    <Suspense fallback={<h1>Loading</h1>}>
       <Wrapper>
       <AppWrapper>
       <Header isAlertVisible={isAlertVisible} setIsAlertVisible={setIsAlertVisible} hideAlertHandler={hideAlertHandler} />
@@ -57,6 +72,7 @@ function App() {
       <Footer />
     </AppWrapper>  
     </Wrapper>
+    </Suspense>
 
   );
 }

@@ -2,12 +2,11 @@
 // @ts-nocheck
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { BsChevronExpand } from 'react-icons/bs';
 
-import GLOBALS, { device } from '../config/globals';
+import { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 
 import PageWrapper from '../components/PageWrapper';
