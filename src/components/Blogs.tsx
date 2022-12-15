@@ -104,6 +104,7 @@ function Blogs(props: BlogsProps) {
   const [blogsData, setBlogsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+
   const loadData = async() => {
     try {
       setIsLoading(true);
@@ -132,14 +133,14 @@ function Blogs(props: BlogsProps) {
     <BlogLoader isMobile={isMobile}/>
   );
 
-  // console.log('blogsData: ', blogsData);
+  console.log('blogsData: ', blogsData);
 
   if (Array.isArray(blogsData) && blogsData.length > 0) {
     return (
       <>
         <ItemH margin="40px 0 0 0" gap="48px">
           <MainArticle onClick={() => onArticleClick(blogsData[0])} title={blogsData[0].title}>
-            <ArticleBanner src={blogsData[0].thumbnail} />
+            <ArticleBanner src={blogsData[0].thumbnail} alt={blogsData[0].title} />
     
             <H3 textTransform="normal" color="#09090B" size="24px" weight="500" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
               {blogsData[0].title}
@@ -154,7 +155,7 @@ function Blogs(props: BlogsProps) {
             {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
               return (
                 <SubArticle key={idx} onClick={() => onArticleClick(blogData)} title={blogData.title}>
-                  <SubArticleBanner src={blogData.thumbnail}/>
+                  <SubArticleBanner src={blogData.thumbnail} alt={blogsData[0].title} />
                   <SubArticleHeader>
                     {blogData.title}
                   </SubArticleHeader>
