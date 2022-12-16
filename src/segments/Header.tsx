@@ -142,13 +142,13 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo to='/'><PushLogoTextBlack /></LinkTo>
+                <LinkTo to='/' aria-label='Push'><PushLogoTextBlack /></LinkTo>
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo to='/'><PushLogoTextWhite  /></LinkTo>
+                <LinkTo to='/' aria-label='Push'><PushLogoTextWhite  /></LinkTo>
               </PushLogoWhiteContainer>
 
               <MobileMenuToggleIcon>
