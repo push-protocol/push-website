@@ -341,12 +341,10 @@ function Home({isAlertVisible}) {
                 alignItems="end"
               >
                 <MemberImage
-                  className="figureSvg"
+                  className="pushMissingSvg figureSvg"
                   src={PushMissingPieceFigure}
                   srcSet={PushMissingPieceFigure}
                   alt={'PushMissingPieceFigure'}
-                  width='100%'
-                  height='100%'
                 />
 
                 <Anchor
@@ -1154,7 +1152,14 @@ const HomeWrapper = styled.main`
   & #hero .contentBox {
     row-gap: 18px;
   }
-
+  & .pushMissingSvg {
+    width: 433px;
+    height: 282px;
+    @media ${device.tablet} {
+      width: 100%;
+      height: auto;
+    }
+  }
   @media ${device.tablet} {
     width: 100%;
 
