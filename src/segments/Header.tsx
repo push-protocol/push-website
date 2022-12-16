@@ -52,7 +52,7 @@ function useScrollDirection(mobileMenuActive) {
     };
 
     // add event listener
-    window.addEventListener('scroll', updateScrollDirection);
+    window.addEventListener('scroll', updateScrollDirection, {passive: true});
 
     return () => {
       window.removeEventListener('scroll', updateScrollDirection); // clean up

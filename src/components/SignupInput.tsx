@@ -22,8 +22,8 @@ function SignupInput() {
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input type="text" name="email" placeholder="Your Email" tabIndex={1} required/>
-        <button tabIndex={1} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
+        <input type="text" name="email" placeholder="Your Email" tabIndex={0} required/>
+        <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
             
         {isLoading ? <MaskInput /> : null}
       </Wrapper>

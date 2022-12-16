@@ -28,8 +28,8 @@ function EmailInputTextField(props: InputTextFieldProps) {
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input type="text" name="email" placeholder={props.placeholder} tabIndex={1} required/>
-        <button className='icon' tabIndex={1} type="submit">
+        <input type="text" name="email" placeholder={props.placeholder} tabIndex={0} required/>
+        <button aria-label="Subscribe" className='icon' tabIndex={0} type="submit">
           {!isLoading ? <AiOutlineArrowRight /> : null}
           {isLoading ? <MaskInput /> : null}
         </button>

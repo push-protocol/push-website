@@ -842,19 +842,19 @@ function Home({isAlertVisible}) {
               gap="22px"
               margin="80px 0"
             >
-              <Anchor
+              <ButtonV2
                 title={!showMoreTeamMembers ? 'View More' : 'View Less'}
-                bg="#2A2A39"
+                background="#2A2A39"
                 radius="16px"
                 padding="14px 32px"
-                size="18px"
-                weight="500"
+                fontSize="18px"
+                fontWeight="500"
                 spacing="-0.03em"
                 lineHeight="26px"
                 onClick={onClickViewMoreTeamMembers}
               >
                 {!showMoreTeamMembers ? 'View More' : 'View Less'}
-              </Anchor>
+              </ButtonV2>
               <Anchor
                 href="https://angel.co/company/ethereum-push-notification-service"
                 title="Jobs"
