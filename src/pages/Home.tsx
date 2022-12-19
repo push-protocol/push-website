@@ -341,10 +341,12 @@ function Home({isAlertVisible}) {
                 alignItems="end"
               >
                 <MemberImage
-                  className="pushMissingSvg figureSvg"
+                  className="pushMissingSvg"
                   src={PushMissingPieceFigure}
                   srcSet={PushMissingPieceFigure}
                   alt={'PushMissingPieceFigure'}
+                  width="100%"
+                  height="100%"
                 />
 
                 <Anchor

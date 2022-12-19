@@ -133,7 +133,6 @@ function Blogs(props: BlogsProps) {
     <BlogLoader isMobile={isMobile}/>
   );
 
-  console.log('blogsData: ', blogsData);
 
   if (Array.isArray(blogsData) && blogsData.length > 0) {
     return (
