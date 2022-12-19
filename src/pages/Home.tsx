@@ -794,7 +794,7 @@ function Home({isAlertVisible}) {
               </ItemV>
             </ItemH>
 
-            <Blogs count={4} />
+            {/* <Blogs count={4} /> */}
 
             <BuiltByIntro flexDirection="column">
               <ItemV justifyContent="center">
