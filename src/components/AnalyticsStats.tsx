@@ -1,3 +1,4 @@
+/* eslint-disable */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
@@ -72,13 +73,13 @@ function AnalyticsStats() {
 
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
   // const totalSubscribersCount = nFormatter(kpiStats?.totalSubscribersCount, 1) || '1.2K';
-  // const totalChannelCount = nFormatter(kpiStats?.totalChannelCount, 1) || '500+';
+  // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
 
   // for now hard coded, plug back the API when real APIs are there.
   const totalNotifsSent = nFormatter(17737587, 1);
   const totalSubscribersCount = '60k+';
-  const totalChannelCount = '100+';
-  const totalGrantsGiven = '>$1M';
+  const pushIntegrations = '450+';
+  const pushChatSent = '>$1M';
 
   return (
     <KPIBanner>
@@ -93,14 +94,14 @@ function AnalyticsStats() {
       </ItemV>
 
       <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{totalChannelCount}</KPIFigure>
-        <KPIMetric>Channels<br />Created</KPIMetric>
+        <KPIFigure>{pushIntegrations}</KPIFigure>
+        <KPIMetric>Push<br />Integrations</KPIMetric>
       </ItemV>
 
      
       <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{totalGrantsGiven}</KPIFigure>
-        <KPIMetric>In Grants<br />Given</KPIMetric>
+        <KPIFigure>{pushChatSent}</KPIFigure>
+        <KPIMetric>In Grants <br />Given</KPIMetric>
       </ItemV>
     </KPIBanner>
   );
@@ -173,4 +174,4 @@ const KPIMetric = styled(Span)`
     }
 `;
 
-export default AnalyticsStats;
+export default AnalyticsStats
