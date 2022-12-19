@@ -79,7 +79,7 @@ function AnalyticsStats() {
   const totalNotifsSent = nFormatter(17737587, 1);
   const totalSubscribersCount = '60k+';
   const pushIntegrations = '450+';
-  const pushChatSent = '...';
+  const pushChatSent = '>$1M';
 
   return (
     <KPIBanner>
@@ -101,7 +101,7 @@ function AnalyticsStats() {
      
       <ItemV gap="18px" className='kpiItem'>
         <KPIFigure>{pushChatSent}</KPIFigure>
-        <KPIMetric>Push<br />Chats Sent</KPIMetric>
+        <KPIMetric>In Grants <br />Given</KPIMetric>
       </ItemV>
     </KPIBanner>
   );
