@@ -95,7 +95,7 @@ function AnalyticsStats() {
 
       <ItemV gap="18px" className='kpiItem'>
         <KPIFigure>{pushIntegrations}</KPIFigure>
-        <KPIMetric>Push<br />Integrations</KPIMetric>
+        <KPIMetric>Total Push<br />Integrations</KPIMetric>
       </ItemV>
 
      
