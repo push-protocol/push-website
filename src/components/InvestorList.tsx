@@ -71,8 +71,8 @@ const investorsSortedGroup = [
     },
     {
       thumbnail: [
-        '/investors/balaji@1x.png',
-        '/investors/balaji@2x.png 2x, /investors/balaji@3x.png 3x'
+        '/investors/balaji@1x.webp',
+        '/investors/balaji@2x.webp 2x, /investors/balaji@3x.webp 3x'
       ],
       name: 'Balaji S.',
       title: 'Serial Entrepreneur',
@@ -80,8 +80,8 @@ const investorsSortedGroup = [
     },
     {
       thumbnail: [
-        '/investors/sandeep@1x.png',
-        '/investors/sandeep@2x.png 2x, /investors/sandeep@3x.png 3x'
+        '/investors/sandeep@1x.webp',
+        '/investors/sandeep@2x.webp 2x, /investors/sandeep@3x.webp 3x'
       ],
       name: 'Sandeep N.',
       title: 'Co-founder Polygon',
@@ -89,8 +89,8 @@ const investorsSortedGroup = [
     },
     {
       thumbnail: [
-        '/investors/andrew@1x.png',
-        '/investors/andrew@2x.png 2x, /investors/andrew@3x.png 3x'
+        '/investors/andrew@1x.webp',
+        '/investors/andrew@2x.webp 2x, /investors/andrew@3x.webp 3x'
       ],
       name: 'Andrew K.',
       title: 'Angel Investor',
@@ -264,4 +264,4 @@ const MemberImage = styled(ImageHolder)`
 `;
 
 
-export default InvestorList;
+export default React.memo(InvestorList);

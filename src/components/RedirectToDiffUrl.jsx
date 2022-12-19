@@ -42,4 +42,4 @@ function RedirectToPlatform() {
   return (<section>Redirecting...</section>);
 }
 
-export default RedirectToPlatform;
+export default React.memo(RedirectToPlatform);

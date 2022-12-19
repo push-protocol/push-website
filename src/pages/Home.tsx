@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 
 // React + Web3 Essentials
-import React, { useLayoutEffect, useState,useEffect} from 'react';
+import React, { useLayoutEffect, useState} from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -45,9 +45,8 @@ import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundatio
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-
-import { ReactComponent as GrowWithPushFigure } from '../assets/figures/growwithpush.svg';
-import { ReactComponent as PushMissingPieceFigure } from '../assets/figures/pushmissingpiece.svg';
+import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
+import PushMissingPieceFigure from '../assets/figures/pushmissingpiece.webp';
 
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
@@ -59,6 +58,7 @@ import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securi
 import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
+import ImageHolder from 'components/ImageHolder';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
@@ -155,10 +155,11 @@ function Home({isAlertVisible}) {
           <ContentV2>
             {
               // rendering the main animation only on large laptops and desktops
-              !isMobile && 
-              <HeroAnimation>
-                <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-              </HeroAnimation>
+              !isMobile && (
+                <HeroAnimation>
+                  <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+                </HeroAnimation>
+              )
             }
             <HeroPrimary
               flex="initial"
@@ -323,7 +324,7 @@ function Home({isAlertVisible}) {
                   <ItemV className="network">
                     <EthLogoTextSVG />
                   </ItemV>
-                  
+
                   <ItemV className="divider" />
 
                   <ItemV className="network">
@@ -339,7 +340,15 @@ function Home({isAlertVisible}) {
                 flex="1"
                 alignItems="end"
               >
-                <PushMissingPieceFigure className='figureSvg'/>
+                <MemberImage
+                  className="pushMissingSvg"
+                  src={PushMissingPieceFigure}
+                  srcSet={PushMissingPieceFigure}
+                  alt={'PushMissingPieceFigure'}
+                  width="100%"
+                  height="100%"
+                />
+
                 <Anchor
                   href="https://docs.push.org/developers"
                   title="Developer Docs"
@@ -439,9 +448,8 @@ function Home({isAlertVisible}) {
               </ItemV>
             </SignupBox>
 
+            <HorizontalScroll />
 
-            <HorizontalScroll />  
-            
             {/* <ItemH
               justifyContent="flex-start"
               gap="16px"
@@ -531,9 +539,7 @@ function Home({isAlertVisible}) {
               </GrowPushCard>
             </ItemH> */}
           </BodyContent>
-
         </BuildWithPushSection>
-
 
         <IntergrateWithPushSection
           curve="bottom"
@@ -553,7 +559,14 @@ function Home({isAlertVisible}) {
 
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
-              <GrowWithPushFigure className='figureSvg'/>
+              <MemberImage
+                className="figureSvg"
+                src={GrowWithPushFigure}
+                srcSet={GrowWithPushFigure}
+                alt={'GrowWithPushFigure'}
+                width="100%"
+                height="100%"
+              />
 
               <ResponsiveH2
                 color="#121315"
@@ -578,8 +591,6 @@ function Home({isAlertVisible}) {
                 fee management among all wallets that integrate Push, including Push governance participants.
               </Span>
             </IntegrateGrowWithPushRow>
-
-           
 
             <ItemH margin="120px 0 0 0">
               <IntegrateAndEarn>
@@ -633,10 +644,10 @@ function Home({isAlertVisible}) {
             <ItemH padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <ChainAgnosticFigure />
                   </div>
-                 
+
                   <Span
                     color="#09090B"
                     size="24px"
@@ -648,8 +659,8 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <ImmediatecommunicationFigure/>
+                  <div className="matrixFigure">
+                    <ImmediatecommunicationFigure />
                   </div>
 
                   <Span
@@ -663,8 +674,8 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <DecentralizedstackFigure/>
+                  <div className="matrixFigure">
+                    <DecentralizedstackFigure />
                   </div>
 
                   <Span
@@ -679,8 +690,8 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
 
                 <MatrixCell>
-                  <div className='matrixFigure'>
-                    <ImproveduxFigure/>
+                  <div className="matrixFigure">
+                    <ImproveduxFigure />
                   </div>
 
                   <Span
@@ -694,11 +705,10 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <SecurityalertsFigure />
                   </div>
 
-                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -710,11 +720,10 @@ function Home({isAlertVisible}) {
                   </Span>
                 </MatrixCell>
                 <MatrixCell>
-                  <div className='matrixFigure'>
+                  <div className="matrixFigure">
                     <CensorshipresistantFigure />
                   </div>
 
-                  
                   <Span
                     color="#09090B"
                     size="24px"
@@ -810,7 +819,7 @@ function Home({isAlertVisible}) {
                   lineHeight="142%"
                 >
                   The most diverse personalities have found each other at Push. Unique people with special talents and
-                  extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries 
+                  extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries
                   of everything web3 communication.
                 </Span>
               </ItemV>
@@ -835,19 +844,19 @@ function Home({isAlertVisible}) {
               gap="22px"
               margin="80px 0"
             >
-              <Anchor
+              <ButtonV2
                 title={!showMoreTeamMembers ? 'View More' : 'View Less'}
-                bg="#2A2A39"
+                background="#2A2A39"
                 radius="16px"
                 padding="14px 32px"
-                size="18px"
-                weight="500"
+                fontSize="18px"
+                fontWeight="500"
                 spacing="-0.03em"
                 lineHeight="26px"
                 onClick={onClickViewMoreTeamMembers}
               >
                 {!showMoreTeamMembers ? 'View More' : 'View Less'}
-              </Anchor>
+              </ButtonV2>
               <Anchor
                 href="https://angel.co/company/ethereum-push-notification-service"
                 title="Jobs"
@@ -865,8 +874,7 @@ function Home({isAlertVisible}) {
               </Anchor>
             </TeamMemberButtons>
 
-            <ItemH  
-              margin="80px 0 80px 0">
+            <ItemH margin="80px 0 80px 0">
               <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
@@ -878,7 +886,6 @@ function Home({isAlertVisible}) {
                   spacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
-                  
                 >
                   Backed by successful entrepreneurs and venture capital funds.
                 </InvestorHeader>
@@ -918,7 +925,7 @@ function Home({isAlertVisible}) {
             flexDirection="column"
             className="featuredInMarquee"
             margin="0 0 270px 0"
-            id='newone'
+            id="newone"
           >
             <MarqueeAnimation
               speed={70}
@@ -932,7 +939,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
+                  We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
                 </Span>
 
                 <ArticleSource>
@@ -952,7 +959,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -966,7 +973,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
                 </Span>
 
                 <ArticleSource>
@@ -986,7 +993,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1000,7 +1007,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
+                  Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
                 </Span>
 
                 <ArticleSource>
@@ -1020,7 +1027,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1034,7 +1041,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                    Decentralized push notifications may transform what dapps can do.
+                  Decentralized push notifications may transform what dapps can do.
                 </Span>
 
                 <ArticleSource>
@@ -1054,7 +1061,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                      Read More
+                    Read More
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1080,6 +1087,9 @@ const HeroPrimary = styled(ItemHV2)`
   @media ${device.mobileM} {
     margin: 80px 0;
   }
+`;
+
+const MemberImage = styled(ImageHolder)`
 `;
 
 const HeroAnimation = styled(ItemHV2)`
@@ -1144,7 +1154,14 @@ const HomeWrapper = styled.main`
   & #hero .contentBox {
     row-gap: 18px;
   }
-
+  & .pushMissingSvg {
+    width: 433px;
+    height: 282px;
+    @media ${device.tablet} {
+      width: 100%;
+      height: auto;
+    }
+  }
   @media ${device.tablet} {
     width: 100%;
 

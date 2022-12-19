@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { device } from '../config/globals';
 
 import {
-  HeroHeader, Content, ItemH, ItemV, H1, H2, H3, Span, Anchor, Button, FormSubmision, Input, TextField
+  ItemV, Span, Anchor,
 } from './SharedStyling';
 
 import ImageHolder from './ImageHolder';
@@ -143,4 +143,4 @@ const MemberSocial = styled.div`
     margin-top: 16px;
 `;
 
-export default TeamMember;
+export default React.memo(TeamMember);
