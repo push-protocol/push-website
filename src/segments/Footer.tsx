@@ -56,24 +56,13 @@ function Footer() {
                 >
                     Join us and build the future of Web3 Communication.
                 </Span>
-                <Anchor
+                <FooterAnchorPrimary
                   href="https://angel.co/company/ethereum-push-notification-service"
                   title="See Open Positions"
                   target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 0"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                  justify="flex-start"
                 >
                     See Open Positions&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
-                </Anchor>
+                </FooterAnchorPrimary>
               </InfoDetails>
                            
             </InfoCard>
@@ -91,24 +80,13 @@ function Footer() {
                 >
                                     Follow our simple guides to get started in minutes.
                 </Span>
-                <Anchor
+                <FooterAnchorPrimary
                   href="https://docs.push.org/developers"
                   title="Explore Docs"
                   target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 0"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                  justify="flex-start"
                 >
                     Explore Docs&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
-                </Anchor>
+                </FooterAnchorPrimary>
               </InfoDetails>
                           
             </InfoCard>
@@ -123,53 +101,31 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Company</Span>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Guides"
+                    target="_blank"
                   >
                       Media Kit
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <LinkTo
+                  <FooterAnchorSecondary
+                    as={LinkTo}
                     to="/tos"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Terms"
                     onClick={scrollToTop}
                   >
                     Terms
-                  </LinkTo>
+                  </FooterAnchorSecondary>
 
-                  <LinkTo
+                  <FooterAnchorSecondary
+                    as={LinkTo}
                     to="/privacy"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Privacy"
                     onClick={scrollToTop}
                   >
                       Privacy
-                  </LinkTo>
+                  </FooterAnchorSecondary>
 
                 </FooterLinks>
               </FooterColumn>
@@ -178,169 +134,89 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://gov.push.org"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Push Governance"
+                    target="_blank"
                   >
                       Push Governance
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://docs.push.org/governance"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Guides"
+                    target="_blank"
                   >
                       Guides
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://gov.push.org/top?period=yearly"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Forum"
+                    target="_blank"
                   >
                       Forum
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Grants"
+                    target="_blank"
                   >
                     Grants
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://snapshot.org/#/epns.eth"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Snapshot"
+                    target="_blank"
                   >
                       Snapshot
-                  </Anchor>
+                  </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://push-protocol.medium.com/"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Blog"
+                    target="_blank"
                   >
                       Blog
-                  </Anchor>
-                  <Anchor
+                  </FooterAnchorSecondary>
+                  <FooterAnchorSecondary
                     href="https://whitepaper.push.org/"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Whitepaper"
+                    target="_blank"
                   >
                       Whitepaper
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://github.com/ethereum-push-notification-service"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Github"
+                    target="_blank"
                   >
                       Github
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://discord.gg/pushprotocol"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Discord"
+                    target="_blank"
                   >
                       Discord
-                  </Anchor>
+                  </FooterAnchorSecondary>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="https://docs.push.org/developers"
-                    target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                     title="Dev Guides"
+                    target="_blank"
                   >
                       Dev Guides
-                  </Anchor>
+                  </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
@@ -349,37 +225,22 @@ function Footer() {
                 <FooterLinks>
                   <Span weight="400" size="18px" lineHeight="142%">Support</Span>
 
-                  <Anchor
+                  <FooterAnchorSecondary
                     href="mailto:support@epns.io"
                     target="_blank"
-                    bg="transparent"
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
                   >
                       Contact Us
-                  </Anchor>
+                  </FooterAnchorSecondary>
                                     
 
-                  <LinkTo
-                    bg="transparent"
-                    to='/faq'
-                    color="#9C9CBE"
-                    size="16px"
-                    weight="300"
-                    lineHeight="142%"
-                    padding="0"
-                    spacing="normal"
-                    justify="flex-start"
+                  <FooterAnchorSecondary
+                    as={LinkTo}
+                    to="/faq"
                     title="FAQ"
                     onClick={scrollToTop}
                   >
                       FAQ
-                  </LinkTo>
+                  </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
@@ -407,82 +268,61 @@ function Footer() {
               </LinkTo>
                             
                             
-              <Anchor
+              <FooterAnchorIcon
                 href="https://github.com/ethereum-push-notification-service"
                 title="Push Github"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <GithubSVG width={22} height={22}/>
-              </Anchor>
-              <Anchor
+              </FooterAnchorIcon>
+              <FooterAnchorIcon
                 href="https://twitter.com/pushprotocol"
                 title="Push Twitter"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <TwitterSVG width={22} height={22}/>
-              </Anchor>
+              </FooterAnchorIcon>
 
-              <Anchor
+              <FooterAnchorIcon
                 href="https://t.me/epnsproject"
                 title="Push Telegram"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <TelegramSVG width={22} height={22}/>
-              </Anchor>
-              <Anchor
+              </FooterAnchorIcon>
+              <FooterAnchorIcon
                 href="https://discord.gg/pushprotocol"
                 title="Push Discord"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <DiscordSVG width={22} height={22}/>
-              </Anchor>
+              </FooterAnchorIcon>
             </ItemV>
 
             <ItemV justifyContent="flex-end" flex="1" gap="12px" className="pushPlatformLinks">
-              <Anchor
+              <FooterAnchorIcon
                 href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
                 title="Push iOS app"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <AppleSVG width={22} height={22}/>
-              </Anchor>
+              </FooterAnchorIcon>
 
-              <Anchor
+              <FooterAnchorIcon
                 href="https://play.google.com/store/apps/details?id=io.epns.epns"
                 title="Push Android app"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <AndroidSVG width={22} height={22}/>
-              </Anchor>
+              </FooterAnchorIcon>
 
-              <Anchor
+              <FooterAnchorIcon
                 href="https://app.push.org"
                 title="Push Dapp"
                 target="_blank"
-                border="1px solid #2A2A39"
-                radius="12px"
-                padding="10px"
               >
                 <PushBellSVG width={22} height={22}/>
-              </Anchor>
+              </FooterAnchorIcon>
             </ItemV>
           </SocialLinks>
         </Content>
@@ -617,6 +457,48 @@ const SocialLinks = styled(ItemH)`
             justify-content: center;
         }
     }
+`;
+
+const FooterAnchorPrimary = styled(Anchor)`
+  color: #dd44b9;
+  border-radius: 16px;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 142%;
+  justify-content: flex-start;
+
+  &:hover & {
+    filter: transparent;
+  }
+  &:before {
+    background: transparent;
+  }
+  &:after {
+    background: transparent;
+  }
+`;
+
+const FooterAnchorSecondary = styled(Anchor)`
+  color: #9c9cbe;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: normal;
+  line-height: 142%;
+  justify-content: flex-start;
+  background: transparent;
+
+  &:before {
+    background: transparent;
+  }
+`;
+
+const FooterAnchorIcon = styled(Anchor)`
+  border: 1px solid #2a2a39;
+  border-radius: 12px;
+  padding: 10px;
 `;
 
 
