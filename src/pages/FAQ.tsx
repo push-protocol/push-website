@@ -75,7 +75,7 @@ const FAQS = [
       <Answer>
         <Span>⚬ Push Documentation HUB - <AMod href="https://docs.push.org/">https://docs.push.org/</AMod> <br/>
               ⚬ Our Whitepaper: <AMod href="https://whitepaper.push.org/">https://whitepaper.push.org/</AMod> <br />
-              ⚬ Token economics: <AMod href="https://docs.push.org/epns-governance/push-tokenomics">https://docs.epns.io/epns-governance/push-tokenomics</AMod> <br />
+              ⚬ Token economics: <AMod href="https://docs.push.org/hub/pusheconomics/push-token-economics">https://docs.push.org/hub/pusheconomics/push-token-economics</AMod> <br />
               ⚬ Medium Articles: <AMod href="https://push-protocol.medium.com/">https://push-protocol.medium.com/</AMod> <br />
               ⚬ Our Litepaper: <AMod href="https://push.org/LitepaperEthereumPushNotificationService.pdf">https://push.org/LitepaperEthereumPushNotificationService.pdf</AMod> <br />
               ⚬ Our Youtube channel: <AMod href="https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA">https://www.youtube.com/channel/UC-1_cBepyH01oVUazWwAdpA</AMod>
@@ -119,7 +119,7 @@ const FAQS = [
             Participate in our community designed activities:
             <OL type="a">
               <LIMod> <AMod href="https://push-protocol.medium.com/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of Push </AMod></LIMod>
-              <LIMod> Participate in one of our Pools available at <AMod href="https://incentives.epns.io/">https://incentives.epns.io/</AMod></LIMod>
+              <LIMod> Participate in one of our Pools available at <AMod href="https://app.push.org/#/yield/">https://app.push.org/#/yield/</AMod></LIMod>
               <LIMod> Participate in our Collaboration announcements activities (AMAs, Meme contests)  </LIMod>
               <LIMod> Participate to become an Push champion in our Governance process </LIMod>
             </OL>
