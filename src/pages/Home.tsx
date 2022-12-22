@@ -90,34 +90,6 @@ function Home({isAlertVisible}) {
     });
   }, []);
 
-  // useLayoutEffect(() => {
-  //   gsap.to('#integratePush', {
-  //     scrollTrigger: {
-  //       trigger: '#newone',
-  //       start: 'center+100px top',
-  //       end: '+=500',
-  //       scrub: true,
-  //     },
-  //     scale: 0.98,
-  //     borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-  //   });
-  // }, []);
-
-  // useLayoutEffect(() => {
-  //   const sections = gsap.utils.toArray('.lightBackground');
-
-  //   sections.forEach((section) => {
-  //     gsap.from(section, {
-  //       scrollTrigger: {
-  //         trigger: section,
-  //         start: 'top top',
-  //         end: 'bottom 100',
-  //         // markers: true,
-  //         toggleClass: { targets: ['.header', '.headerblur', '.headerlogo'], className: 'light' },
-  //       },
-  //     });
-  //   });
-  // }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
   
@@ -450,94 +422,6 @@ function Home({isAlertVisible}) {
 
             <HorizontalScroll />
 
-            {/* <ItemH
-              justifyContent="flex-start"
-              gap="16px"
-            >
-              <GrowPushCard background="#ECDCD9">
-                <PushbuildsliderFigure className='figureSvg'/>
-
-                <GrowPushCardDetails>
-                  <ResponsiveH2
-                    color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    Build with Push
-                  </ResponsiveH2>
-                  <Span
-                    color="#303C5E"
-                    size="19px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="160%"
-                  >
-                    Push offers dapp developers on any blockchain network the opportunity to build solutions on a
-                    progressively decentralized stack by enabling web3-native communication.
-                  </Span>
-                  <Anchor
-                    href="https://docs.push.org/developers"
-                    title="Developer Docs"
-                    target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
-                    padding="14px 32px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="26px"
-                    self="flex-start"
-                  >
-                    Start Building
-                  </Anchor>
-                </GrowPushCardDetails>
-              </GrowPushCard>
-
-              <GrowPushCard background="#C4A8FB">
-                <PushgovernancesliderFigure className='figureSvg' />
-
-                <GrowPushCardDetails>
-                  <ResponsiveH2
-                    color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    Governed by the Community
-                  </ResponsiveH2>
-                  <Span
-                    color="#303C5E"
-                    size="19px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="160%"
-                  >
-                    Decentralized communication needs decentralized actors. Get involved in Push governance to build the
-                    future of web 3
-                  </Span>
-                  <Anchor
-                    href="https://gov.push.org"
-                    title="Governance"
-                    target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
-                    padding="14px 32px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="26px"
-                    self="flex-start"
-                  >
-                    Know More
-                  </Anchor>
-                </GrowPushCardDetails>
-              </GrowPushCard>
-            </ItemH> */}
           </BodyContent>
         </BuildWithPushSection>
 
