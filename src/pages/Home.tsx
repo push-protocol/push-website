@@ -843,7 +843,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    Read More
+                    View Article
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -877,7 +877,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    Read More
+                    View Article
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -911,7 +911,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    Read More
+                    View Article
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -945,7 +945,7 @@ function Home({isAlertVisible}) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    Read More
+                    View Article
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
