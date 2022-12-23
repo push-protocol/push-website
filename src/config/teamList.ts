@@ -30,16 +30,6 @@ export default [
     linkedin: 'https://www.linkedin.com/in/everett-muzzy/'
   },
   {
-    name: 'Jun',
-    title: 'Growth and Ops Lead',
-    img: [
-      '/team/jun@1x.webp',
-      '/team/jun@2x.webp 2x, /team/jun@3x.webp 3x'
-    ],
-    twitter: 'https://twitter.com/heartofwoods',
-    linkedin: ''
-  },
-  {
     name: 'Igor',
     title: 'Decentralization Lead',
     img: [
@@ -48,6 +38,16 @@ export default [
     ],
     twitter: 'https://twitter.com/IgX_11',
     linkedin: 'https://www.linkedin.com/in/igor-artemev-804b872/'
+  },
+  {
+    name: 'Jun',
+    title: 'Growth and Ops Lead',
+    img: [
+      '/team/jun@1x.webp',
+      '/team/jun@2x.webp 2x, /team/jun@3x.webp 3x'
+    ],
+    twitter: 'https://twitter.com/heartofwoods',
+    linkedin: ''
   },
   {
     name: 'Zaryab Afser',
