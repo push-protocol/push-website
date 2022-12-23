@@ -45,7 +45,7 @@ function Footer() {
                     
           <ItemH gap="32px">     
             <InfoCard>
-              <FooterJoinusFigure className='figureSvg'/>
+              <FooterJoinusFigure className='figureSvg' alt='Icon showing Open Positions' title='Join Us'/>
 
               <InfoDetails>
                 <Span
@@ -69,7 +69,7 @@ function Footer() {
 
                         
             <InfoCard>
-              <FooterFollowusFigure className='figureSvg'/>
+              <FooterFollowusFigure className='figureSvg' alt='Icon showing ease of getting started' title='Get Started'/>
 
               <InfoDetails>
                 <Span

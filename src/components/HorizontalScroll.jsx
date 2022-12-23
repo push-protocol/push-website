@@ -63,7 +63,8 @@ const HorizontalScroll = () => {
                         className='figureSvg'
                         src={PushbuildsliderFigure}
                         srcSet={PushbuildsliderFigure}
-                        alt={'PushbuildsliderFigure'}
+                        alt={'Illustration showing ease of building with Push'}
+                        title='Build with Push'
                       />
                 </Div>
 
@@ -113,7 +114,8 @@ const HorizontalScroll = () => {
                         className='figureSvg'
                         src={PushgovernancesliderFigure}
                         srcSet={PushgovernancesliderFigure}
-                        alt={'PushgovernancesliderFigure'}
+                        alt={'Illustration showing community led governance'}
+                        title='Community Governance'
                       />
                 </Div>
 

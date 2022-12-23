@@ -294,13 +294,13 @@ function Home({isAlertVisible}) {
               <ItemV>
                 <LiveNetworks>
                   <ItemV className="network">
-                    <EthLogoTextSVG />
+                    <EthLogoTextSVG alt='Logo for Ethereum' title='Ethereum Logo' />
                   </ItemV>
 
                   <ItemV className="divider" />
 
                   <ItemV className="network">
-                    <PolygonLogoTextSVG />
+                    <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
                   </ItemV>
                 </LiveNetworks>
               </ItemV>
@@ -316,7 +316,8 @@ function Home({isAlertVisible}) {
                   className="pushMissingSvg"
                   src={PushMissingPieceFigure}
                   srcSet={PushMissingPieceFigure}
-                  alt={'PushMissingPieceFigure'}
+                  alt={'Illustration showing Push as the missing piece of web3'}
+                  title='Push is the missing piece of web3'
                   width="100%"
                   height="100%"
                 />
@@ -447,7 +448,8 @@ function Home({isAlertVisible}) {
                 className="figureSvg"
                 src={GrowWithPushFigure}
                 srcSet={GrowWithPushFigure}
-                alt={'GrowWithPushFigure'}
+                alt={'Illustration showing $PUSH tokens'}
+                title='Use the Push token to grow'
                 width="100%"
                 height="100%"
               />
@@ -529,7 +531,7 @@ function Home({isAlertVisible}) {
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <ChainAgnosticFigure />
+                    <ChainAgnosticFigure alt='Icon showing Push is chain agnostic' title='Chain Agnostic' />
                   </div>
 
                   <Span
@@ -544,7 +546,7 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <ImmediatecommunicationFigure />
+                    <ImmediatecommunicationFigure alt='Icon showing Immediate Communication' title='Immediate Communication' />
                   </div>
 
                   <Span
@@ -559,7 +561,7 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <DecentralizedstackFigure />
+                    <DecentralizedstackFigure alt='Icon showing decentralization' title='Decentralized Stack'/>
                   </div>
 
                   <Span
@@ -575,7 +577,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <ImproveduxFigure />
+                    <ImproveduxFigure alt='Icon showing User Experience' title='Improved UX'/>
                   </div>
 
                   <Span
@@ -590,7 +592,7 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <SecurityalertsFigure />
+                    <SecurityalertsFigure alt='Icon showing Security' title='Security Alerts' />
                   </div>
 
                   <Span
@@ -605,7 +607,7 @@ function Home({isAlertVisible}) {
                 </MatrixCell>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <CensorshipresistantFigure />
+                    <CensorshipresistantFigure alt='Icon showing Censorship Resistance' title='Censorship Resistant' />
                   </div>
 
                   <Span
