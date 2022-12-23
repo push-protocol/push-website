@@ -30,27 +30,33 @@ const investorsSortedGroup = [
   [
     {
       svgIcon: JumpSVG,
-      id: 'jump'
+      id: 'jump',
+      alt: 'Jump'
     },
     {
       svgIcon: TigerglobalSVG,
-      id: 'tiger'
+      id: 'tiger',
+      alt: 'Tiger Global'
     },
     {
       svgIcon: ParafiSVG,
-      id: 'parafi'
+      id: 'parafi',
+      alt: 'Parafi'
     },
     {
       svgIcon: SinoglobalSVG,
-      id: 'sinoglobal'
+      id: 'sinoglobal',
+      alt: 'Sino Global'
     },
     {
       svgIcon: TrueventuresSVG,
-      id: 'trueventures'
+      id: 'trueventures',
+      alt: 'True Ventures'
     },
     {
       svgIcon: BinancelabsSVG,
-      id: 'binancelabs'
+      id: 'binancelabs',
+      alt: 'Binance Labs'
     },
    
   ],
@@ -59,15 +65,18 @@ const investorsSortedGroup = [
   [
     {
       svgIcon: PolygonStudiosSVG,
-      id: 'polygonstudios'
+      id: 'polygonstudios',
+      alt: 'Polygon Studios'
     },
     {
       svgIcon: IosgSVG,
-      id: 'iosg'
+      id: 'iosg',
+      alt: 'Iosg'
     },
     {
       svgIcon: ACapitalSVG,
-      id: 'acapital'
+      id: 'acapital',
+      alt: 'A Capital'
     },
     {
       thumbnail: [
@@ -76,7 +85,8 @@ const investorsSortedGroup = [
       ],
       name: 'Balaji S.',
       title: 'Serial Entrepreneur',
-      id: 'balaji'
+      id: 'balaji',
+      alt: 'Balaji S.'
     },
     {
       thumbnail: [
@@ -85,7 +95,8 @@ const investorsSortedGroup = [
       ],
       name: 'Sandeep N.',
       title: 'Co-founder Polygon',
-      id: 'sandeep'
+      id: 'sandeep',
+      alt: 'Sandeep N.'
     },
     {
       thumbnail: [
@@ -94,11 +105,13 @@ const investorsSortedGroup = [
       ],
       name: 'Andrew K.',
       title: 'Angel Investor',
-      id: 'andrewkeys'
+      id: 'andrewkeys',
+      alt: 'Andrew K.',
     },
     {
       svgIcon: FourRCSVG,
-      id: '4rc'
+      id: '4rc',
+      alt: 'Four RCSVG',
     }
   ]
 ];
@@ -123,7 +136,8 @@ function InvestorList() {
             if (SVGIcon) {
               return (
                 <InvestorCard key={id} className='marqueeItem'>
-                  <SVGIcon />
+                  <SVGIcon alt={`Logo for ${investor.alt}`}
+                    title={investor.alt} />
                 </InvestorCard>
               );
             }
@@ -138,7 +152,8 @@ function InvestorList() {
                     height={64}
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
-                    alt={investor.name}
+                    alt={`Logo for ${investor.alt}`}
+                    title={investor.alt}
                   />
                   <InvestorDetails>
                     <InvestorName>
@@ -170,7 +185,8 @@ function InvestorList() {
             if (SVGIcon) {
               return (
                 <InvestorCard key={id} className='marqueeItem'>
-                  <SVGIcon />
+                  <SVGIcon alt={`Logo for ${investor.alt}`}
+                    title={investor.alt} />
                 </InvestorCard>
               );
             }
@@ -185,7 +201,8 @@ function InvestorList() {
                     height={64}
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
-                    alt={investor.name}
+                    alt={`Logo for ${investor.alt}`}
+                    title={investor.alt}
                   />
                   <InvestorDetails>
                     <InvestorName>
