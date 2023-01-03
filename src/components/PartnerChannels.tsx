@@ -82,8 +82,6 @@ const partnerSortedGroup = [
   [
     LensProtocolSVG,
     PolyChainMonstersSVG,
-    // PolyChainMonstersSVG,
-    // PolyChainMonstersSVG,
     EthSVG,
     MaHadaoSVG,
     LifiSVG,
