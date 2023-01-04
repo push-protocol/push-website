@@ -137,7 +137,7 @@ function InvestorList() {
               return (
                 <InvestorCard key={id} className='marqueeItem'>
                   <SVGIcon alt={`Logo for ${investor.alt}`}
-                    title={investor.alt} />
+                    title={`${investor.alt} (Investor of Push)`} />
                 </InvestorCard>
               );
             }
@@ -153,7 +153,7 @@ function InvestorList() {
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
                     alt={`Logo for ${investor.alt}`}
-                    title={investor.alt}
+                    title={`${investor.alt} (Investor of Push)`}
                   />
                   <InvestorDetails>
                     <InvestorName>
@@ -186,7 +186,7 @@ function InvestorList() {
               return (
                 <InvestorCard key={id} className='marqueeItem'>
                   <SVGIcon alt={`Logo for ${investor.alt}`}
-                    title={investor.alt} />
+                    title={`${investor.alt} (Investor of Push)`} />
                 </InvestorCard>
               );
             }
@@ -202,7 +202,7 @@ function InvestorList() {
                     src={thumbnail[0]}
                     srcSet={thumbnail[1]}
                     alt={`Logo for ${investor.alt}`}
-                    title={investor.alt}
+                    title={`${investor.alt} (Investor of Push)`}
                   />
                   <InvestorDetails>
                     <InvestorName>
