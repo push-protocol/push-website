@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn"
+      content="Push (Previously EPNS) | Communication Protocol of Web3"
     />
+    <meta name="google-site-verification" content="vXrU9g3gtQF3uMYK_uvatQN4ItZftF7uFg6PcbcDAyg" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -26,34 +27,25 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <!-- HTML Meta Tags -->
-    <title>Ethereum Push Notification Service | EPNS</title>
-    <meta name="description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
+    <title>Push (Previously EPNS) Communication Protocol of Web3</title>
+    <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3">
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="http://epns.io">
+    <meta property="og:url" content="https://push.org">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ethereum Push Notification Service | EPNS">
-    <meta property="og:description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
-    <meta property="og:image" content="https://epns.io/previews/homepage.jpg">
+    <meta property="og:title" content="Push (Previously EPNS)">
+    <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3">
+    <meta property="og:image" content="https://push.org/previews/homepage.jpg">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="epns.io">
-    <meta property="twitter:url" content="http://epns.io">
-    <meta name="twitter:title" content="Ethereum Push Notification Service | EPNS">
-    <meta name="twitter:description" content="Ethereum Push Notification Service (EPNS) | Subscribe. Notify. Earn">
-    <meta name="twitter:image" content="https://epns.io/previews/homepagetwitter.jpg">
+    <meta property="twitter:domain" content="push.org">
+    <meta property="twitter:url" content="https://push.org">
+    <meta name="twitter:title" content="Push (Previously EPNS)">
+    <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3">
+    <meta name="twitter:image" content="https://push.org/previews/homepagetwitter.jpg">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
-    <!-- Twitter conversion tracking base code -->
-    <script>
-      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-      twq('config','oc3eg');
-    </script>
-    <!-- End Twitter conversion tracking base code -->
 
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
@@ -67,7 +59,8 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      (function(l) {
+      setTimeout(()=> {
+        (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) {
             return s.replace(/~and~/g, '&')
@@ -77,8 +70,69 @@
           );
         }
       }(window.location))
+      },10000)
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
+    
+    <!-- Hotjar Tracking Code for https://push.org -->
+    <script>
+      setTimeout(()=> {
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3114590,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      },10000)
+    </script>
+
+    <!-- Twitter conversion tracking base code -->
+    <script>
+      setTimeout(()=> {
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','oc3eg');
+    },10000)
+    </script>
+
+   	<!-- PWA Script -->
+		<script>
+			// if ('serviceWorker' in navigator) {
+			// 	window.addEventListener('load', () => {
+			// 		navigator.serviceWorker
+			// 			.register('./serviceWorker.js')
+			// 			.then((reg) => console.log('Success: ', reg.scope))
+			// 			.catch((err) => console.log('Failure: ', err));
+			// 	});
+			// }
+
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function() {
+      //     navigator.serviceWorker.register('worker.js').then(function(registration) {
+      //       console.log('Worker registration successful', registration.scope);
+      //     }, function(err) {
+      //       console.log('Worker registration failed', err);
+      //     }).catch(function(err) {
+      //       console.log(err);
+      //     });
+      //   });
+      // } else {
+      //   console.log('Service Worker is not supported by browser.');
+      // }
+		</script>
+
+    <!-- Preloading font files -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="./assets/fonts/Strawford-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Strawford-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Strawford-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Strawford-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Strawford-Black.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- End Twitter conversion tracking base code -->
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

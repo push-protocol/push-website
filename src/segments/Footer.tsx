@@ -1,550 +1,505 @@
-import React from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import React from 'react';
+import styled from 'styled-components';
 
-import styled, { css } from "styled-components";
-import {
-  Section,
-  Content,
-  Item,
-  ItemH,
-  WaveOuter,
-  WaveInner,
-  Button,
-  Image,
-  Span,
-  Anchor,
-  FormSubmision,
-  Input,
-  ItemBreak,
-} from "components/SharedStyling";
+
+import { useNavigate } from 'react-router-dom';
+
+import { BsArrowUpRight } from 'react-icons/bs';
+import { device } from '../config/globals';
 
 import {
-  FaCheckCircle,
-  FaDiscord,
-  FaTwitter,
-  FaApple,
-  FaTelegramPlane,
-  FaMedium,
-  FaGithub,
-  FaGooglePlay,
-} from "react-icons/fa";
-import { IoMdRocket, IoMdHeart, IoMdNotifications } from "react-icons/io";
+  Section, Content, ItemH, ItemV, Span, Anchor, LinkTo,
+} from '../components/SharedStyling';
 
-import Loader from "react-loader-spinner";
-import Wave from "react-wavify";
 
-import Bell from "components/Bell";
+import EmailInputTextField from '../components/EmailInputTextField';
 
-import countdown from "config/countdown";
+import { ReactComponent as PushLogoTextWhite }  from '../assets/PushLogoTextWhite.svg';
+import { ReactComponent as TwitterSVG }  from '../assets/twitter.svg';
+import { ReactComponent as GithubSVG }  from '../assets/github.svg';
+import { ReactComponent as DiscordSVG }  from '../assets/discord.svg';
+import { ReactComponent as TelegramSVG }  from '../assets/telegram.svg';
 
-import TimerItem from "components/TimerItem";
+import { ReactComponent as AppleSVG }  from '../assets/apple.svg';
+import { ReactComponent as AndroidSVG }  from '../assets/android.svg';
+import { ReactComponent as PushBellSVG }  from '../assets/pushBell.svg';
 
-// Create Header
-function Foot() {
-  const [badgeCounter, setBadgeCounter] = React.useState(0);
+import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
+import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
 
-  const [mailListFooterProcessing, setMailListProcessing] = React.useState(0);
-  const [mailListFooterEmail, setMailListEmail] = React.useState("");
-  const [mailListFooterError, setMailListError] = React.useState("");
+function Footer() {
 
-  // HANDLE EMAIL
-  // ---------
-  const handleMailingListFooterSubmit = (e) => {
-    e.preventDefault();
+  const navigate =  useNavigate();
 
-    // Check everything in order
-    if (validateEmailFooter(mailListFooterEmail)) {
-      setMailListProcessing(1);
-
-      const details = {
-        name: "",
-        email: mailListFooterEmail,
-        list: "YPwxHS892tH8Nhs13wzKqWbQ",
-        api_key: "TdzMcZVNTn1mjtAJHBpB",
-        boolean: true,
-      };
-
-      let formBody: any = [];
-      for (let property in details) {
-        let encodedKey = encodeURIComponent(property);
-        let encodedValue = encodeURIComponent(details[property]);
-        formBody.push(encodedKey + "=" + encodedValue);
-      }
-      formBody = formBody.join("&");
-
-      // POST request using fetch inside useEffect React hook
-      const requestOptions = {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-        body: formBody,
-      };
-
-      fetch("https://tools.epns.io/sendy/subscribe", {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-        body: formBody,
-      })
-        .then((response) => response.json())
-        .then((jsondata) => {
-          setMailListProcessing(2);
-        })
-        .catch((err) => {
-          setMailListError(
-            "Mayday! Mayday! something went wrong. Please retry..."
-          );
-          setMailListProcessing(0);
-        });
-    } else {
-      setMailListError("Incorrect e-mail, please check and retry!");
-      setMailListProcessing(0);
-    }
+  const scrollToTop = () => {
+    document.documentElement.scrollTo(0, 0);
   };
-  // ---------
 
-  // HELPER METHODS
-  // ---------
-  const validateEmailFooter = (email) => {
-    const re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  };
-  // ---------
-
-  // RENDER
   return (
-    <Footer>
-      <WaveOuter bottom="auto" top="30px">
-        <WaveInner>
-          <Wave
-            fill="#e20880"
-            paused={true}
-            options={{
-              height: 20,
-              amplitude: 30,
-              speed: 0.35,
-              points: 3,
-            }}
-          />
-        </WaveInner>
-      </WaveOuter>
+    <StyledFooter>
+      <ResponsiveSection id="footer" background="#121315" padding="160px 0 0 0">
+        <Content className="contentBox" padding="0">
+          {/* Information Cards */}
+                    
+          <ItemH gap="32px">     
+            <InfoCard>
+              <FooterJoinusFigure className='figureSvg' alt='Icon showing Open Positions' title='Join Us'/>
 
-      {/* FOOTER SECTION */}
-      <Section
-        theme="#e20880"
-        gradient="linear-gradient(0deg, #674c9f 0%, rgba(226,8,128,1) 100%)"
-      >
-        <Content className="contentBox" padding="0px 0px 20px 0px">
-          <Item margin="0px 0px" flex="auto">
-            {/* DIVIDE SECTION */}
-            <ItemH self="stretch" margin="0px 20px 20px 20px">
-              {/* LOGO AND ABOUT US */}
-              <Item flex="1" minWidth="200px" maxWidth="400px">
-                <ItemH
-                  margin="0px -10px 0px -10px"
-                  columnGap="20px"
-                  rowGap="20px"
-                >
-                  <Item
-                    margin="20px 10px"
-                    height="80px"
-                    width="80px"
-                    bg="#fff"
-                    radius="80px"
-                    flex="initial"
-                  >
-                    <Bell
-                      uri="/"
-                      belltheme="color"
-                      width={48}
-                      height={48}
-                      badgeCount={badgeCounter}
-                      bellPressedCB={() => setBadgeCounter(badgeCounter + 1)}
-                      hideBadge={true}
-                    />
-                  </Item>
-                  <Span
-                    margin="10px 10px"
-                    textTransform="uppercase"
-                    size="1.2em"
-                    spacing="0.2em"
-                    color="#fff"
-                    flex="inherit"
-                  >
-                    Ethereum Push Notification Service
-                  </Span>
-                </ItemH>
-
+              <InfoDetails>
                 <Span
-                  color="#ffffffcc"
-                  margin="10px 0px"
-                  size="1.2em"
-                  weight="200"
+                  color="#FFF"
+                  weight="500"
+                  size="24px"
+                  lineHeight="142%"
                 >
-                  EPNS is a decentralized communication protocol for Web3! Using
-                  which any dApps, smart contracts, backends or protocols can
-                  send communication (starting with on chain / off chain /
-                  gasless notifs) tied to user wallet addresses in an open,
-                  gasless, multichain and platform agnostic fashion. Open
-                  communication layer allows any crypto wallet / frontend to tap
-                  into the network and get the communication across.
+                    Join us and build the future of Web3 Communication.
                 </Span>
-              </Item>
-            </ItemH>
+                <FooterAnchorPrimary
+                  href="https://angel.co/company/ethereum-push-notification-service"
+                  title="See Open Positions"
+                  target="_blank"
+                >
+                    See Open Positions&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                </FooterAnchorPrimary>
+              </InfoDetails>
+                           
+            </InfoCard>
 
-            {!countdown.hide && (
-              <ItemH
-                align="flex-start"
-                justify="flex-start"
-                margin="-10px 0px -10px 0px"
-                size="0.8rem"
+                        
+            <InfoCard>
+              <FooterFollowusFigure className='figureSvg' alt='Icon showing ease of getting started' title='Get Started'/>
+
+              <InfoDetails>
+                <Span
+                  color="#FFF"
+                  weight="500"
+                  size="24px"
+                  lineHeight="142%"
+                >
+                                    Follow our simple guides to get started in minutes.
+                </Span>
+                <FooterAnchorPrimary
+                  href="https://docs.push.org/developers"
+                  title="Explore Docs"
+                  target="_blank"
+                >
+                    Explore Docs&nbsp;<BsArrowUpRight className='anchorSVGlink'/>
+                </FooterAnchorPrimary>
+              </InfoDetails>
+                          
+            </InfoCard>
+                        
+          </ItemH>
+
+
+          {/* footer links */}
+          <ItemH gap="32px" margin="120px 0 0 0">
+            <FooterContainer>
+              <FooterColumn>
+                <FooterLinks>
+                  <Span weight="400" size="18px" lineHeight="142%">Company</Span>
+
+                  <FooterAnchorSecondary
+                    href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
+                    title="Guides"
+                    target="_blank"
+                  >
+                      Media Kit
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    as={LinkTo}
+                    to="/tos"
+                    title="Terms"
+                    onClick={scrollToTop}
+                  >
+                    Terms
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    as={LinkTo}
+                    to="/privacy"
+                    title="Privacy"
+                    onClick={scrollToTop}
+                  >
+                      Privacy
+                  </FooterAnchorSecondary>
+
+                </FooterLinks>
+              </FooterColumn>
+
+              <FooterColumn>
+                <FooterLinks>
+                  <Span weight="400" size="18px" lineHeight="142%">Governance</Span>
+
+                  <FooterAnchorSecondary
+                    href="https://gov.push.org"
+                    title="Push Governance"
+                    target="_blank"
+                  >
+                      Push Governance
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://docs.push.org/governance"
+                    title="Guides"
+                    target="_blank"
+                  >
+                      Guides
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://gov.push.org/top?period=yearly"
+                    title="Forum"
+                    target="_blank"
+                  >
+                      Forum
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                    title="Grants"
+                    target="_blank"
+                  >
+                    Grants
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://snapshot.org/#/epns.eth"
+                    title="Snapshot"
+                    target="_blank"
+                  >
+                      Snapshot
+                  </FooterAnchorSecondary>
+                </FooterLinks>
+              </FooterColumn>
+
+              <FooterColumn>
+                <FooterLinks>
+                  <Span weight="400" size="18px" lineHeight="142%">Resources</Span>
+                  <FooterAnchorSecondary
+                    href="https://push-protocol.medium.com/"
+                    title="Blog"
+                    target="_blank"
+                  >
+                      Blog
+                  </FooterAnchorSecondary>
+                  <FooterAnchorSecondary
+                    href="https://whitepaper.push.org/"
+                    title="Whitepaper"
+                    target="_blank"
+                  >
+                      Whitepaper
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://github.com/ethereum-push-notification-service"
+                    title="Github"
+                    target="_blank"
+                  >
+                      Github
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://discord.gg/pushprotocol"
+                    title="Discord"
+                    target="_blank"
+                  >
+                      Discord
+                  </FooterAnchorSecondary>
+
+                  <FooterAnchorSecondary
+                    href="https://docs.push.org/developers"
+                    title="Dev Guides"
+                    target="_blank"
+                  >
+                      Dev Guides
+                  </FooterAnchorSecondary>
+                </FooterLinks>
+              </FooterColumn>
+
+
+              <FooterColumn>
+                <FooterLinks>
+                  <Span weight="400" size="18px" lineHeight="142%">Support</Span>
+
+                  <FooterAnchorSecondary
+                    href="mailto:support@epns.io"
+                    target="_blank"
+                  >
+                      Contact Us
+                  </FooterAnchorSecondary>
+                                    
+
+                  <FooterAnchorSecondary
+                    as={LinkTo}
+                    to="/faq"
+                    title="FAQ"
+                    onClick={scrollToTop}
+                  >
+                      FAQ
+                  </FooterAnchorSecondary>
+                </FooterLinks>
+              </FooterColumn>
+
+              <FooterColumn>
+                <FooterLinks>
+                  <Span weight="400" size="18px" lineHeight="142%">Subscribe</Span>
+
+                  <EmailInputTextField placeholder='Your Email'/>
+                </FooterLinks>
+              </FooterColumn>
+            </FooterContainer>
+
+          </ItemH>
+
+          {/* Social Icon Links */}
+          <SocialLinks gap="32px">
+            <ItemV justifyContent="flex-start" flex="1" gap="12px" className="pushLinks">
+              <LinkTo
+                className="pushLogo"
+                to='/'
+                title="Push"
+                onClick={scrollToTop}
               >
-                <TimerItem />
-              </ItemH>
-            )}
-
-            {/* MAILING */}
-            <FooterItem
-              self="center"
-              margin="20px 20px 10px 20px"
-              minWidth="800px"
-            >
-              {/* MAILING LIST */}
-              <ItemH margin="20px 0px 0px 0px" self="stretch">
-                <FormSubmision
-                  flex="1"
-                  direction="row"
-                  margin="20px 0px 10px"
-                  justify="center"
-                  size="1.1rem"
-                  onSubmit={handleMailingListFooterSubmit}
-                >
-                  <Item align="stretch">
-                    <Span
-                      weight="400"
-                      textAlign="center"
-                      size="0.9em"
-                      textTransform="uppercase"
-                      color="#ffffff99"
-                      margin="0px 0px 20px 0px"
-                      spacing="0.1em"
-                    >
-                      Keep up to date with all things EPNS!
-                    </Span>
-                    <ItemH margin="10px -10px">
-                      {mailListFooterProcessing == 0 && (
-                        <>
-                          <Item
-                            flex="1"
-                            justify="flex-start"
-                            align="stretch"
-                            minWidth="280px"
-                            margin="10px"
-                          >
-                            <FooterInputText
-                              required
-                              placeholder="john@wick.com"
-                              radius="4px"
-                              padding="12px"
-                              bg="#fff"
-                              value={mailListFooterEmail}
-                              onChange={(e) => {
-                                setMailListEmail(e.target.value);
-                              }}
-                              autocomplete="email"
-                            />
-                            {mailListFooterEmail.trim().length == 0 && (
-                              <Span
-                                padding="4px 10px"
-                                right="0px"
-                                top="0px"
-                                pos="absolute"
-                                color="#fff"
-                                bg="#000"
-                                size="0.7rem"
-                                z="1"
-                              >
-                                E-mail
-                              </Span>
-                            )}
-                          </Item>
-                        </>
-                      )}
-
-                      <Item
-                        flex="0"
-                        justify="stretch"
-                        self="stretch"
-                        align="stretch"
-                        margin="10px"
-                      >
-                        {mailListFooterProcessing != 2 && (
-                          <Button
-                            bg="#00000033"
-                            color="#fff"
-                            flex="1"
-                            radius="4px"
-                            disabled={mailListFooterProcessing}
-                          >
-                            {mailListFooterProcessing == 1 && (
-                              <Loader
-                                type="Oval"
-                                color="#fff"
-                                height={24}
-                                width={24}
-                              />
-                            )}
-                            {mailListFooterProcessing == 0 && (
-                              <Input
-                                cursor="hand"
-                                color="#fff"
-                                weight="400"
-                                size="0.8em"
-                                spacing="0.2em"
-                                type="submit"
-                                value="Submit"
-                              />
-                            )}
-                          </Button>
-                        )}
-                      </Item>
-                    </ItemH>
-                  </Item>
-
-                  <ItemBreak />
-
-                  <Item align="center" margin="10px">
-                    {mailListFooterProcessing == 2 && (
-                      <ItemH color="#fff" bg="#00000033" padding="10px 15px">
-                        <FaCheckCircle size={24} color="#ffffff33" />
-                        <Span
-                          padding="0px 0px 0px 8px"
-                          color="#fff"
-                          textTransform="uppercase"
-                          spacing="0.1em"
-                        >
-                          Thanks for Subscribing! We will be in Touch :)
-                        </Span>
-                      </ItemH>
-                    )}
-
-                    {mailListFooterError && mailListFooterProcessing == 0 && (
-                      <Item color="#fff" bg="#00000033" padding="10px 15px">
-                        <Span
-                          color="#fff"
-                          textTransform="uppercase"
-                          spacing="0.1em"
-                        >
-                          {mailListFooterError}
-                        </Span>
-                      </Item>
-                    )}
-                  </Item>
-                </FormSubmision>
-              </ItemH>
-            </FooterItem>
-
-            {/* SOCIAL LINKS */}
-            <FooterItem
-              self="center"
-              margin="0px 20px 10px 20px"
-              minWidth="800px"
-            >
-              <ItemH
-                self="stretch"
-                margin="0px -20px"
-                align="stretch"
-                justify="center"
+                <PushLogoTextWhite />
+              </LinkTo>
+                            
+                            
+              <FooterAnchorIcon
+                href="https://github.com/ethereum-push-notification-service"
+                title="Push Github"
+                target="_blank"
               >
-                <Item
-                  bg="#fff"
-                  radius="12px"
-                  overflow="hidden"
-                  flex="initial"
-                  minWidth="280px"
-                  margin="20px"
-                >
-                  <ItemH bg="#000" self="stretch" margin="0px 0px 5px">
-                    <Span
-                      color="#fff"
-                      textAlign="center"
-                      padding="6px 4px 6px 4px"
-                    >
-                      Follow our story!
-                    </Span>
-                    <IoMdHeart size={18} color="#C51104" />
-                  </ItemH>
+                <GithubSVG width={22} height={22}/>
+              </FooterAnchorIcon>
+              <FooterAnchorIcon
+                href="https://twitter.com/pushprotocol"
+                title="Push Twitter"
+                target="_blank"
+              >
+                <TwitterSVG width={22} height={22}/>
+              </FooterAnchorIcon>
 
-                  <ItemH padding="10px">
-                    <Anchor
-                      href="https://twitter.com/epnsproject"
-                      target="_blank"
-                      bg="#000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaTwitter size={20} color="#e20880" />
-                    </Anchor>
-                    <Anchor
-                      href="https://t.me/epnsproject"
-                      target="_blank"
-                      bg="#000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaTelegramPlane size={20} color="#674c9f" />
-                    </Anchor>
-                    <Anchor
-                      href="https://medium.com/ethereum-push-notification-service"
-                      target="_blank"
-                      bg="#000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaMedium size={20} color="#35c5f3" />
-                    </Anchor>
-                    <Anchor
-                      href="https://discord.gg/YVPB99F9W5"
-                      target="_blank"
-                      bg="#000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaDiscord size={20} color="#674c9f" />
-                    </Anchor>
-                  </ItemH>
-                </Item>
+              <FooterAnchorIcon
+                href="https://t.me/epnsproject"
+                title="Push Telegram"
+                target="_blank"
+              >
+                <TelegramSVG width={22} height={22}/>
+              </FooterAnchorIcon>
+              <FooterAnchorIcon
+                href="https://discord.gg/pushprotocol"
+                title="Push Discord"
+                target="_blank"
+              >
+                <DiscordSVG width={22} height={22}/>
+              </FooterAnchorIcon>
+            </ItemV>
 
-                <Item
-                  bg="#fff"
-                  align="stretch"
-                  radius="12px"
-                  overflow="hidden"
-                  flex="initial"
-                  minWidth="280px"
-                  margin="20px"
-                >
-                  <ItemH bg="#000" margin="0px 0px 5px">
-                    <Span
-                      color="#fff"
-                      textAlign="center"
-                      padding="6px 4px 6px 4px"
-                    >
-                      Repo / Alpha Access
-                    </Span>
-                  </ItemH>
+            <ItemV justifyContent="flex-end" flex="1" gap="12px" className="pushPlatformLinks">
+              <FooterAnchorIcon
+                href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
+                title="Push iOS app"
+                target="_blank"
+              >
+                <AppleSVG width={22} height={22}/>
+              </FooterAnchorIcon>
 
-                  <ItemH padding="10px">
-                    <Anchor
-                      href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
-                      target="_blank"
-                      bg="#000000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaApple size={20} color="#e20880" />
-                    </Anchor>
-                    <Anchor
-                      href="https://play.google.com/store/apps/details?id=io.epns.epns"
-                      target="_blank"
-                      bg="#000000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaGooglePlay size={20} color="#674c9f" />
-                    </Anchor>
-                    <Anchor
-                      href="https://app.epns.io"
-                      target="_blank"
-                      bg="#000000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <IoMdNotifications size={20} color="#35c5f3" />
-                    </Anchor>
-                    <Anchor
-                      href="https://github.com/ethereum-push-notification-service"
-                      target="_blank"
-                      bg="#000000"
-                      radius="4px"
-                      margin="10px"
-                    >
-                      <FaGithub size={20} color="#fff" />
-                    </Anchor>
-                  </ItemH>
-                </Item>
-              </ItemH>
-            </FooterItem>
+              <FooterAnchorIcon
+                href="https://play.google.com/store/apps/details?id=io.epns.epns"
+                title="Push Android app"
+                target="_blank"
+              >
+                <AndroidSVG width={22} height={22}/>
+              </FooterAnchorIcon>
 
-            {/* FOOTER LINKS */}
-            <ItemH
-              self="stretch"
-              justify="center"
-              minWidth="auto"
-              size="0.8em"
-              margin="0px 20px 0px 20px"
-            >
-              <Item align="center" margin="0px" minWidth="auto" flex="initial">
-                <Anchor
-                  href="/privacy"
-                  bg="transparent"
-                  padding="4px 15px"
-                  margin="10px"
-                >
-                  Privacy Policy
-                </Anchor>
-              </Item>
-
-              <Item align="center" margin="0px" minWidth="auto" flex="initial">
-                <Anchor
-                  href="/tos"
-                  bg="transparent"
-                  padding="4px 15px"
-                  margin="10px"
-                >
-                  Terms of Service
-                </Anchor>
-              </Item>
-            </ItemH>
-          </Item>
+              <FooterAnchorIcon
+                href="https://app.push.org"
+                title="Push Dapp"
+                target="_blank"
+              >
+                <PushBellSVG width={22} height={22}/>
+              </FooterAnchorIcon>
+            </ItemV>
+          </SocialLinks>
         </Content>
-      </Section>
-    </Footer>
+      </ResponsiveSection>
+         
+    </StyledFooter>
   );
 }
 
-// CSS Styles
-const Footer = styled.footer`
-  display: flex;
-  align-self: stretch;
-  align-items: stretch;
-  justify-content: center;
-  position: relative;
-  margin: 60px 0px 0px 0px;
+const StyledFooter = styled.footer`
+    font-family: 'Strawford';
+    display: flex;
+    position: relative;
 `;
 
-const FooterInputText = styled(Input)`
+const ResponsiveSection = styled(Section)`
+    @media ${device.tablet} {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+`;
+
+
+const InfoCard = styled(ItemV)`
+	border-radius: 32px;
+    background: #2A2A39;
+    padding: 48px 30px 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 32px;
+    box-sizing: border-box;
+
+    & svg.figureSvg {
+      width: 72px;
+      height: 72px;
+    }
+
+    @media ${device.tablet} {
+        flex-direction: column;
+        row-gap: 16px;
+
+        & svg.figureSvg {
+      
+        }
+    }
+`;
+
+const InfoDetails = styled.div`
+   display: flex;
+   flex-direction: column;
+   flex: 0 0 calc(100% - 116px);
+
+   @media ${device.tablet} {
+    align-items: center;
+
+    & span {
+        text-align: center;
+    }
+   }
+`;
+
+const FooterContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+`;
+
+const FooterColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    box-sizing: border-box;
+    color: #FFFFFF;
+
+    flex-direction: column;
+    
+    align-items: center;
+
+    @media ${device.tablet} {
+        flex-basis: 50%;
+        padding: 12px;
+        row-gap: 16px;
+
+        align-items: flex-start;
+        
+        & span {
+            font-size: 20px;
+        }
+
+        &:last-child {
+            flex-basis: 100%;
+        }
+    }
+`;
+
+const FooterLinks = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+`; 
+
+const SocialLinks = styled(ItemH)`
+    margin: 80px 0 40px 0;
+    position: relative;
+
+    &:before {
+        position: absolute;
+        z-index: 1;
+        content: "";
+        top: -24px;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: #2A2A39;
+    }
+
+    @media ${device.tablet} {
+        flex-direction: column;
+
+        & .pushLinks {
+            justify-content: center;
+
+            & a.pushLogo {
+                flex: 0 0 100%;
+            }
+        }
+
+        & .pushPlatformLinks {
+            justify-content: center;
+        }
+    }
+`;
+
+const FooterAnchorPrimary = styled(Anchor)`
+  color: #dd44b9;
+  border-radius: 16px;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 142%;
+  justify-content: flex-start;
+
+  &:hover & {
+    filter: transparent;
+  }
+  &:before {
+    background: transparent;
+  }
+  &:after {
+    background: transparent;
+  }
+`;
+
+const FooterAnchorSecondary = styled(Anchor)`
+  color: #9c9cbe;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: normal;
+  line-height: 142%;
+  justify-content: flex-start;
   background: transparent;
-  color: #fff;
-  border-bottom: 1px solid #fff;
-  border-radius: 0px;
 
-  ::placeholder {
-    color: #ffffff00;
+  &:before {
+    background: transparent;
   }
 `;
 
-const FooterItem = styled(Item)`
-  @media (max-width: 800px) {
-    min-width: 280px;
-    flex: auto;
-    align-self: stretch;
-  }
+const FooterAnchorIcon = styled(Anchor)`
+  border: 1px solid #2a2a39;
+  border-radius: 12px;
+  padding: 10px;
 `;
 
-// Export Default
-export default Foot;
+
+export default Footer;

@@ -1,524 +1,720 @@
-import React from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+/* eslint-disable react/prop-types */
 
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {Section, Item, ItemH, Span, Anchor} from 'components/SharedStyling';
 
+import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
-import { CgMenuHotdog, CgClose } from 'react-icons/cg';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { useNavigate,useLocation } from 'react-router-dom';
 
-import Bell from 'components/Bell';
-import { useLocation } from 'react-router-dom';
+import useMediaQuery from '../hooks/useMediaQuery';
 
-// Create Header
-function Head() {
-  const [badge, setBadge] = React.useState(0);
-  const [showMenu, setShowMenu] = React.useState(false);
+import { ContentV2, ItemHV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
+import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
+import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
+import { Anchor, Span, LinkTo } from '../components/SharedStyling';
+import GLOBALS, { device } from '../config/globals';
+import Alert from 'components/Alert';
 
-  const [showHDocsM, setShowDocsM] = React.useState(false)
-  const [showHLearnM, setShowLearnM] = React.useState(false)
-  const [showHGovM, setShowGovM] = React.useState(false)
+let lastScrollY = window.pageYOffset;
+const SCROLL_DELTA = 5;
 
+function useScrollDirection(mobileMenuActive) {
+  const [scrollDirection, setScrollDirection] = useState(null);
+  const [bkg, setBkg] = useState('dark');
+
+  useEffect(() => {
+    const updateScrollDirection = () => {
+
+      const scrollY = window.pageYOffset;
+      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
+
+      if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
+        // check if isMobileMenuOpen then override
+        if (mobileMenuActive) {
+          direction = 'scrollUp';
+        }
+
+        setScrollDirection(direction);
+      }
+
+      // hacky way, optimize later when time
+      // if (scrollY > 970) {
+      //   setBkg('light');
+      // } else {
+      //   setBkg('dark');
+      // }
+
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    // add event listener
+    window.addEventListener('scroll', updateScrollDirection, {passive: true});
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
+  }, [scrollDirection, mobileMenuActive]);
+
+  return [scrollDirection, bkg];
+}
+
+const defaultMobileMenuState = {
+  0: false,
+  1: false,
+  2: false,
+  // add next [index]: false for new main Nav menu item
+};
+
+function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
+  const isMobile = useMediaQuery(device.laptop);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
+  const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  // const [isAlertVisible, setIsAlertVisible] = useState(true);
+
+  
+  const navigate = useNavigate();
   const location = useLocation();
+  
+  const showMobileMenu = isMobile && isMobileMenuOpen;
+  
+  // if mobile view then show only DARK header.
+  // console.log(bkg);
+  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
+  const themeClass = `${bkg}`;
+  
+  // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
+  
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((lastOpen) => !lastOpen);
+  };
+  
+  const onMobileHeaderMenuClick = (e, menuIndex) => {
+    e.preventDefault();
 
-  React.useEffect(() => {
-  });
+    if (isMobile) {
+      setMobileMenuMap((oldMap) => {
+        return {
+          ...defaultMobileMenuState,
+          [menuIndex]: !oldMap[menuIndex],
+        };
+      });
+    }
+  };
+  
+  // const hideAlertHandler = ()=>{
+  //   setIsAlertVisible(false);
+  // };
 
   return (
-    <Header forceDisplay={showMenu}>
-      <Section className="contentBox" direction="row">
-        <Nav direction="row" align="stretch" justify="flex-start" minWidth="auto" margin="0px 20px" size="0.8rem">
-          <Item align="center" margin="0px" minWidth="auto" flex="0">
-          <HeadAnchor
-              href="#"
-              bg="transparent"
-              title="Homepage of EPNS"
-              hoverBG="#e20880"
-              padding="0px"
-              overflow="visible"
-            >
-              <Bell uri={location.pathname} belltheme="white" hideBadge={false} badgeCount={badge} bellPressedCB={() => setBadge(badge + 1)} width={32} height={32} />
-            </HeadAnchor>
-          </Item>
+    <StyledHeader
+      showMobileMenu={showMobileMenu}
+      className={`header ${headerClass}`}
+    >
+      {/* ALERT SECTION */}
+      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
 
-          <NavPrimary direction="row" forceDisplay={showMenu} align="stretch" justify="flex-start" minWidth="auto" margin="0px 0px 0px 20px">
-            <NavItems>
-              <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
-                <NavItem align="center" margin="0px" minWidth="auto" flex="none">
-                  <HeadAnchor
-                    title="Documentation"
-                    bg="transparent"
-                    hoverBG="#fff"
-                    padding="4px 15px"
-                    onClick={()=>{setShowDocsM((prev)=>!prev)}}
+      <SectionV2>
+        <ContentV2 padding="0">
+          {/* Header Content Begins */}
+          <HeaderItemH
+            alignSelf="stretch"
+            padding={GLOBALS.ADJUSTMENTS.PADDING.SMALL}
+            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
+          >
+            <HeaderBlurV
+              position="absolute"
+              top="0"
+              right="0"
+              bottom="0"
+              left="0"
+              overflow="hidden"
+              borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
+              className={'headerblur'}
+            />
+
+            <MenuTop flex="initial">
+              <PushLogoBlackContainer
+                className="headerlogo"
+                flex="initial"
+              >
+                <LinkTo to='/' aria-label='Push'><PushLogoTextBlack /></LinkTo>
+              </PushLogoBlackContainer>
+              <PushLogoWhiteContainer
+                className="headerlogo"
+                flex="initial"
+              >
+                <LinkTo to='/' aria-label='Push'><PushLogoTextWhite  /></LinkTo>
+              </PushLogoWhiteContainer>
+
+              <MobileMenuToggleIcon>
+                {isMobileMenuOpen ? (
+                  <AiOutlineClose
+                    size={28}
+                    onClick={toggleMobileMenu}
+                  />
+                ) : (
+                  <GiHamburgerMenu
+                    size={28}
+                    onClick={toggleMobileMenu}
+                  />
+                )}
+              </MobileMenuToggleIcon>
+            </MenuTop>
+
+            <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
+              <NavigationMenu
+                role="menu"
+                className="navigationMenu"
+                showMobileMenu={isMobileMenuOpen}
+              >
+                <NavigationMenuItem>
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 0)}
+                    expanded={mobileMenuMap[0]}
                   >
-                    <ItemH minWidth="auto" margin="0px">
-                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Docs</Span>
-                      <BsChevronDown size={12} color="#fff" id={showHDocsM ? "up" : "down"}/>
-                    </ItemH>
-                  </HeadAnchor>
-                </NavItem>
+                    <Span
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
+                    >
+                      Docs
+                    </Span>
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                  </NavigationMenuHeader>
 
-                <NavSubItems id={!showHDocsM && "hide"}>
-                  
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="https://docs.epns.io/developers"
+                  <NavigationMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[0]}
+                  >
+                    <Anchor
+                      href="https://docs.push.org/developers"
                       target="_blank"
-                      title="Read Integration Guide"
+                      title="Read Developer Guide"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Developer Guides
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="https://docs.epns.io/governance"
+                    </Anchor>
+                    <Anchor
+                      href="https://docs.push.org/governance"
                       target="_blank"
-                      title="Read Integration Guide"
+                      title="Read Governance Guide"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Governance Guides
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                         href="https://whitepaper.epns.io/"
-                         target="_blank"
-                         title="Read Whitepaper"
-                         bg="transparent"
-                         hoverBG="#fff"
-                         padding="4px 15px"
-                    >
-                      WhitePaper
-                    </HeadAnchor>
-                  </NavSubItem>
-                </NavSubItems>
-              </NavSub>
-
-              <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
-                <NavItem align="center" margin="0px" minWidth="auto" flex="none">
-                  <HeadAnchor
-                    title="Documentation"
-                    bg="transparent"
-                    hoverBG="#fff"
-                    padding="4px 15px"
-                    onClick={()=>{setShowLearnM((prev)=>!prev)}}
-                  >
-                    <ItemH minWidth="auto" margin="0px">
-                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Learn More</Span>
-                      <BsChevronDown size={12} color="#fff" id={showHLearnM ? "up" : "down"}/>
-                    </ItemH>
-                  </HeadAnchor>
-                </NavItem>
-
-                <NavSubItems id={!showHLearnM && "hide"}>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="https://getstarted.epns.io/"
-                      title="Quick Guide"
+                    </Anchor>
+                    <Anchor
+                      href="https://whitepaper.push.org/"
+                      target="_blank"
+                      title="Read Whitepaper"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
-                      Quick Guide
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="/faq"
+                      WhitePaper
+                    </Anchor>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 1)}
+                    expanded={mobileMenuMap[1]}
+                  >
+                    <Span
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
+                    >
+                      Learn More
+                    </Span>
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                  </NavigationMenuHeader>
+
+                  <NavigationMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[1]}
+                  >
+                    <LinkTo
+                      to="/faq"
                       title="Frequently Asked Questions"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       FAQ
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="/#story"
+                    </LinkTo>
+                    <Anchor
+                      href="https://push-protocol.medium.com/"
+                      target="_blank"
                       title="Read our story"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Blog
-                    </HeadAnchor>
-                  </NavSubItem>
-
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="/presskit"
-                      title="EPNS Press Kit"
+                    </Anchor>
+                    <Anchor
+                      href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
+                      target="_blank"
+                      title="Push Media Kit"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
-                      Press Kit
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="/#contact"
+                      Media  Kit
+                    </Anchor>
+                    {/* <LinkTo
+                      to="/"
                       title="Contact Us"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Contact Us
-                    </HeadAnchor>
-                  </NavSubItem>
-                </NavSubItems>
-              </NavSub>
-                    
-              <NavSub align="center" margin="0px 10px" minWidth="auto" flex="none">
-                <NavItem align="center" margin="0px" minWidth="auto" flex="none">
-                  <HeadAnchor
-                    title="Documentation"
-                    bg="transparent"
-                    hoverBG="#fff"
-                    padding="4px 15px"
-                    onClick={()=>{setShowGovM(prev => !prev)}}
-                  >
-                    <ItemH minWidth="auto" margin="0px">
-                      <Span color="#fff" weight="400" size="0.8rem" spacing="0.2em" margin="0px 5px 0px 0px">Governance</Span>
-                      <BsChevronDown size={12} color="#fff" id={showHGovM ? "up" : "down"}/>
-                    </ItemH>
-                  </HeadAnchor>
-                </NavItem>
+                    </LinkTo> */}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-                <NavSubItems id={!showHGovM && "hide"}>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="./gov"
-                      title="Read our story"
+                <NavigationMenuItem>
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                    expanded={mobileMenuMap[2]}
+                  >
+                    <Span
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
+                    >
+                      Governance
+                    </Span>
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                  </NavigationMenuHeader>
+
+                  <NavigationMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[2]}
+                  >
+                    <Anchor
+                      href="https://gov.push.org"
+                      target="_blank"
+                      title="Push Governance"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Website
-                    </HeadAnchor>
-                  </NavSubItem>
-
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="http://gov.epns.io/"
+                    </Anchor>
+                    <Anchor
+                      href="https://gov.push.org"
                       target="_blank"
-                      title="Frequently Asked Questions"
+                      title="Push Governance Forum"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Forum
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="https://epns.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                      title="Governance"
+                    </Anchor>
+                    <Anchor
+                      href="https://www.notion.so/pushprotocol/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
+                      title="Push Grants"
                       target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Grants
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      href="https://snapshot.org/#/epns.eth"
-                      title="Governance"
+                    </Anchor>
+                    <Anchor
+                      href="https://snapshot.org/#/pushdao.eth"
+                      title="Push Snapshot"
                       target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="4px 15px"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Snapshot
-                    </HeadAnchor>
-                  </NavSubItem>
-                  <NavSubItem align="center" margin="0px" minWidth="auto" flex="0">
-                    <HeadAnchor
-                      className="Glow"
-                      href="http://incentives.epns.io/"
-                      title="Governance"
+                    </Anchor>
+                    <Anchor
+                      href="https://app.push.org/#/yield"
+                      title="Delegate"
                       target="_blank"
-                      bg="#e20880"
-                      hoverBG="#b50465"
-                      padding="4px 15px"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
                     >
                       Delegate
-                    </HeadAnchor>
-                  </NavSubItem>
-                </NavSubItems>
-              </NavSub>
+                    </Anchor>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenu>
+            </HeaderNavItemV>
 
-              
-              
-              <NavItem align="center" justify="flex-end" margin="0px" minWidth="auto" flex="1">
-                <Anchor
-                  href="https://app.epns.io/#/live_walkthrough"
-                  target="_blank"
-                  title="Visit dApp"
-                  bg="transparent"
-                  margin="10px 0px"
-                  border="1px solid #fff"
-                  padding="8px 15px"
-                  radius="4px"
-                  hover="#e20880"
-                >
-                  LAUNCH THE DAPP
-                </Anchor>
-              </NavItem>
-            </NavItems>
-          </NavPrimary>
-          
-          <NavTablet align="flex-end" margin="0px" minWidth="auto" flex="1">
-            <Anchor
-              href="#"
-              onClick={(e) => {e.preventDefault(); setShowMenu(!showMenu)}}
-              title="Toggle Menu"
-              bg="transparent"
-              hoverBG="transparent"
-              margin="10px -15px 10px 0px"
-              padding="8px 15px"
-              radius="4px"
-            >
-              {!showMenu &&
-                <CgMenuHotdog size={24} color="#fff"/>
-              }
-
-              {showMenu &&
-                <CgClose size={24} color="#fff"/>
-              }
-
-            </Anchor>
-          </NavTablet>
-
-        </Nav>
-      </Section>
-    </Header>
+            <ItemVV2 flex="initial">
+              <DappLauncher
+                showMobileMenu={showMobileMenu}
+                className="launchDappBtn"
+                href="https://app.push.org/"
+                target="_blank"
+                title="Push Dapp"
+                bg="#DD44B9"
+                radius="16px"
+                size="18px"
+                weight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+              >
+                Launch App
+              </DappLauncher>
+            </ItemVV2>
+          </HeaderItemH>
+        </ContentV2>
+      </SectionV2>
+    </StyledHeader>
   );
 }
 
-// CSS Styles
-const Header = styled.header`
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 65px;
-  top: 0;
-  z-index: 999;
-  justify-content: center;
+// V2 Designs
+const HeaderItemH = styled(ItemHV2)`
+  margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 0 0;
+  color: ${GLOBALS.COLORS.FONT_LIGHT};
 
-  display: flex;
-  align-self: stretch;
-  align-items: stretch;
-  justify-content: center;
-
-  position: ${props => (props.forceDisplay ? "fixed" : "absolute") || "absolute"};
-`
-
-const Nav = styled(Item)`
-
-`
-
-const NavTablet = styled(Item)`
-  display: none;
-
-  @media (max-width: 940px) {
-    display: flex;
-  }
-`
-
-const NavItems = styled.ul`
-  display: flex;
-  align-items: stretch;
-  flex: 1;
-  column-gap: 20px;
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-  position: initial;
-`
-
-const NavItem = styled.li`
-  display: flex;
-  min-width: 140px;
-  flex: ${props => props.flex || '1'};
-  align-self: ${props => props.self || 'auto'};
-  align-items: ${props => props.align || 'center'};
-  justify-content: ${props => props.justify || 'center'};
-
-  position: relative;
-`
-
-const HeadAnchor = styled(Anchor)`
-  display: flex;
-  align-self: stretch;
-  align-items: center;
-  flex: 1;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    opacity: 0;
-    background: ${props => props.hoverBG || 'transparent'};
+  @media ${device.laptop} {
+    margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+    flex-direction: column;
   }
 
-  &:hover:before{
-    opacity: 1;
+  @media ${device.mobileM} {
+    margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+    flex-direction: column;
   }
 
-  &:after {
+  &.light {
+    color: ${GLOBALS.COLORS.FONT_DARK};
+    background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
+  }
+`;
+
+const HeaderBlurV = styled(ItemVV2)`
+  backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
+  background: ${GLOBALS.COLORS.HEADER_BG_DARK};
+
+  &.light {
+    background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
+  }
+`;
+
+const HeaderNavItemV = styled(ItemVV2)`
+  margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+
+  @media ${device.laptop} {
+    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
+  }
+`;
+
+const PushLogoWhiteContainer = styled(ItemVV2)`
+  display: flex;
+  &.light {
     display: none;
   }
-`
+`;
 
-const NavSubItems = styled(NavItems)`
+const PushLogoBlackContainer = styled(ItemVV2)`
   display: none;
-  min-width: 100px;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  background: #000000AA;
-`
-
-const NavSub = styled(NavItems)`
-  flex: initial;
-
-  &:hover ${NavSubItems} {
-    display: block;
-  }
-`
-
-const NavSubItem = styled(NavItem)`
-  & ${HeadAnchor} {
-    height: 40px;
+  &.light {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+  }
+`;
 
-    &:before {
-      top: 0;
-      bottom: 0;
-      height: auto;
+// V1 Designs
+const HEADER_HEIGHT = 92;
+const HEADER_VERTICAL_GUTTER = 7;
+const BOX_MAX_WIDTH = 1140;
+
+const StyledHeader = styled.header`
+  font-family: 'Strawford';
+
+  /* padding: 0px 160px; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* color: #ffffff;
+  background: #121315; */
+  opacity: 1;
+
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+
+  transition: top 0.3s ease-in-out;
+
+  &.hide {
+    top: -100%;
+  }
+
+  &.light {
+    & span {
+      color: #121315;
     }
 
-    &:hover:before {
-      opacity: 0.25;
+    & svg.chevronIcon {
+      fill: #121315;
+
+      & path {
+        stroke: #121315;
+      }
     }
   }
 
-  .Glow{
-    &:hover{
-      background:#e22780
+  /* this is IMP for boxing the content at 1140px
+  @media (min-width: 1140px) {
+    padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
+    padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
+  } */
+
+  /* height: ${HEADER_HEIGHT}px; */
+
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media ${device.laptop} {
+    /* height: ${(props) => (props.showMobileMenu ? '100%' : '48px')}; */
+    flex-direction: column;
+
+    &.hide {
+      // top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
+      top: -100%;
     }
   }
-`
+`;
 
-const NavPrimary = styled(Nav)`
-  @media (max-width: 940px) {
-    display: ${props => (props.forceDisplay ? "flex" : "none") || "none"};
+const MobileMenuToggleIcon = styled.span`
+  display: none;
 
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    align-items: center;
-    justify-content: center;
+  @media ${device.laptop} {
+    display: flex;
+    cursor: pointer;
+  }
+`;
+
+const MenuTop = styled(ItemVV2)`
+  display: flex;
+
+  & svg {
+    cursor: pointer;
+  }
+
+  @media ${device.laptop} {
     flex-direction: row;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(20px);
-    padding: 20px;
-    margin: 0px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
 
-    ${NavItems} {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+const NavigationMenu = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+
+  column-gap: 64px;
+
+  z-index: 999;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+    flex: 0 0 75%;
+    align-self: stretch;
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  }
+`;
+
+/**
+ * HOVER happens on this element
+ */
+const NavigationMenuItem = styled.li`
+  position: relative;
+
+  & span {
+    font-family: 'Strawford';
+
+    padding: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+  }
+
+  &:hover {
+    & span {
+      color: #dd44b9;
     }
 
-    ${NavItem} {
-      padding: 5px 10px 5px 10px;
-      margin: 5px 0px;
-      justify-content: center;
-      border-radius: 4px;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-
-      & ${HeadAnchor} {
-        padding: 10px;
-
-        &:before {
-          top: 0;
-          bottom: 0;
-          height: auto;
-        }
-
-        &:hover:before {
-          opacity: 0.25;
-        }
-      }
-
-      #up{
-        transform: rotate(-180deg);
-        transition: transform 400ms linear;
-      }
-
-      #down{
-        transform: rotate(0);
-        transition: transform 400ms linear;
-      }
+    & .chevronIcon {
+      transform: rotate(180deg);
     }
 
-    ${NavSubItems} {
-      border-radius: 4px;
+    & .menuContent {
       display: block;
-      position: relative;
-      top: auto;
-      padding: 0px;
-      margin: 0px;
-      opacity: 0.8;
-      background: transparent;
-    }
-
-    #hide{
-      display: none;
-    }
-
-    ${NavSubItem} {
-      display: block;
-      position: relative;
-      top: 0;
-      margin: 5px 0px;
-
-      & ${HeadAnchor} {
-        padding: 0px 10px;
-
-        &:before {
-          top: 0;
-          bottom: 0;
-          height: auto;
-        }
-
-        &:hover:before {
-          opacity: 0.25;
-        }
-      }
     }
   }
-`
+`;
 
-// Export Default
-export default Head;
+const NavigationMenuHeader = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & .chevronIcon {
+    transition-duration: 0.4s;
+    transition-property: transform;
+  }
+
+  @media ${device.laptop} {
+    justify-content: space-between;
+
+    & span {
+    }
+
+    & .chevronIcon {
+      width: 16px;
+      height: 16px;
+      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
+    }
+  }
+`;
+
+const NavigationMenuContent = styled.ul`
+  list-style: none;
+
+  font-family: 'Strawford', 'Manrope', sans-serif;
+  display: none;
+  position: absolute;
+
+  // logic - this should touch the parent li for enough hover surface area.
+  top: 54px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background: #2a2a39;
+  border-radius: 18px;
+  padding: 10px 0;
+
+  & a {
+    min-width: 200px;
+  }
+
+  @media ${device.laptop} {
+    width: 100%;
+
+    position: relative;
+    top: 0px;
+    left: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+
+    & a {
+      justify-content: flex-start;
+    }
+  }
+`;
+
+const DappLauncher = styled(Anchor)`
+  padding: 14px 32px;
+
+  @media ${device.laptop} {
+    align-self: stretch;
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  }
+`;
+
+export default Header;

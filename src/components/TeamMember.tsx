@@ -1,180 +1,146 @@
-import React from "react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
-import styled, { css } from 'styled-components';
-import {Section, Content, Item, ItemH, Image, Span, Anchor} from 'components/SharedStyling';
+import React from 'react';
+import styled from 'styled-components';
 
-import { FiTwitter } from 'react-icons/fi';
-import { FaLinkedinIn } from 'react-icons/fa';
-import { AiOutlineMail } from 'react-icons/ai';
+import { device } from '../config/globals';
 
-// Create Header
-function TeamMember( {img, srcSet, type, name, title, twitter, linkedin, email }) {
-  const [openFlag, setOpenFlag] = React.useState(false);
+import {
+  ItemV, Span, Anchor,
+} from './SharedStyling';
 
-  React.useEffect(() => {
+import ImageHolder from './ImageHolder';
 
-  });
+import { ReactComponent as TwitterBlack }  from '../assets/twitter_black.svg';
+import { ReactComponent as LinkedInBlack }  from '../assets/linkedin_black.svg';
 
-  // to create blockies
+type TeamMemberProps = {
+    name: string;
+    title: string;
+    img?: string[];
+    twitter?: string;
+    linkedin?: string;
+};
+
+function TeamMember(props: TeamMemberProps) {
+  const {
+    name,
+    title,
+    img = [],
+    twitter,
+    linkedin,
+  } = props || {};
 
   return (
-    <Item margin="20px 15px" minWidth="240px" flex="inherit">
-      {(twitter || linkedin || email) &&
-        <Converse margin="0px">
-          <ConverseInner>
-            {twitter && type != 6 &&
-              <Anchor
-                href={twitter}
-                target="_blank"
-                title={"Visit Twitter profile of " + name}
-                bg="transparent"
-                radius="4px"
-              >
-                <FiTwitter size={12} color="#e20880"/>
-              </Anchor>
-            }
+    <BuiltByCard>
+      <MemberImage
+        width={133}
+        height={133}
+        src={img[0] || ''}
+        srcSet={img[1] || ''}
+        alt={name}
+      />
 
-            {linkedin && type != 6 &&
-              <Anchor
-                href={linkedin}
-                target="_blank"
-                title={"Visit LinkedIn profile of " + name}
-                bg="transparent"
-                radius="4px"
-              >
-                <FaLinkedinIn size={12} color="#35c5f3"/>
-              </Anchor>
-            }
+      <MemberName>
+        {name}
+      </MemberName>
 
-            {email && type != 6 &&
-              <Anchor
-                href={email}
-                target="_blank"
-                title={"Send email to " + name}
-                bg="transparent"
-                radius="4px"
-              >
-                <AiOutlineMail size={12} color="#674c9f"/>
-              </Anchor>
-            }
+      <MemberTitle>
+        {title}
+      </MemberTitle>
 
-            {type == 6 &&
-              <Anchor
-                href={twitter}
-                target="_blank"
-                title={"Visit Advisor profile of " + name}
-                bg="transparent"
-                radius="4px"
-              >
-                <Span color="#e20880" weight="400">Advisor</Span>
-              </Anchor>
-            }
-          </ConverseInner>
-        </Converse>
-      }
-      <Profile margin="0px">
-        <ProfileBG type={type} />
-        <ProfileImage src={img} srcSet={srcSet} />
-      </Profile>
-      <Span margin="5px 0px 2px 0px">{name}</Span>
-      <Span weight="400">{title}</Span>
-    </Item>
+      <MemberSocial>
+        {twitter ? (
+          <Anchor
+            href={twitter}
+            title={`${name} twitter`}
+            target="_blank"
+            margin="0"
+            padding="0"
+            hoverBG="transparent"
+          >
+            <TwitterBlack width={19} height={16}/>
+          </Anchor>
+        ) : null}
+               
+        {
+          linkedin ? (
+            <Anchor
+              href={linkedin}
+              title={`${name} LinkedIn`}
+              target="_blank"
+              margin="0"
+              padding="0"
+              hoverBG="transparent"
+            >
+              <LinkedInBlack width={16} height={16}/>
+            </Anchor>
+          ) : null
+        }
+               
+      </MemberSocial>
+    </BuiltByCard>
   );
 }
 
-// css styles
-const Converse = styled(ItemH)`
-  flex: unset;
-  justify-content: center;
-  align-items: center;
-  column-gap: inherit;
-  border: 1px solid #eee;
-  border-radius: 20px;
-  z-index: 1;
+const BuiltByCard = styled(ItemV)`
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 55px;
+    padding: 16px 0 35px;
+    box-sizing: border-box;
 
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #eeeeee;
-    bottom: -10px;
-    left: 12px;
-    z-index: 1;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #fff;
-    bottom: -6px;
-    left: 14px;
-    z-index: 2;
-  }
-`
+    display: flex;
+    flex-direction: column;
+    flex-basis: 22%;
 
-const ConverseInner = styled(ItemH)`
-  flex: unset;
-  justify-content: center;
-  align-items: center;
-  column-gap: inherit;
-  border-radius: 20px;
-  overflow: hidden;
-`
+    &:nth-child(9) {
+        flex: 0 0 22%;
+    }
 
-const Profile = styled(ItemH)`
-  max-width: 50%;
-  margin: 20px 0px;
-`
+    @media ${device.tablet} {
+        flex-basis: 100%;
+        padding: 24px 12px 30px 12px;
+        row-gap: 12px;
 
-const ProfileBG = styled.div`
-  border-radius: 100%;
-  position: absolute;
-  width: calc(100% + 12px);
-  height: calc(100% + 12px);
-  top: -6px;
-  right: 0;
-  left: -6px;
-  bottom: 0;
-  z-index: 1;
+        margin-left: 24px;
+        margin-right: 24px;
 
-  ${({ type }) => type == 1 && css`
-    background: "#e20880";
-  `};
+        &:nth-child(9) {
+            flex: 0 0 85%;
+        }
+    }
+`;
 
-  ${({ type }) => type == 2 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 50%, rgba(53,197,243,1) 50%, rgba(53,197,243,1) 100%);
-  `};
+const MemberImage = styled(ImageHolder)`
+   border-radius: 50%;
+`;
 
-  ${({ type }) => type == 3 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 50%, rgba(103,76,159,1) 50%, rgba(103,76,159,1) 100%);
-  `};
+const MemberName = styled(Span)`
+    display: block;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 142%;
+    text-align: center;
+    color: #09090B;
+    margin-top: 24px;
+`;
 
-  ${({ type }) => type == 4 && css`
-    background: #35c5f3;
-  `};
+const MemberTitle = styled(Span)`
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    color: #303C5E;
+`;
 
-  ${({ type }) => type == 5 && css`
-    background: #674c9f;
-  `};
+const MemberSocial = styled.div`
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    margin-top: 16px;
+`;
 
-  ${({ type }) => type == 6 && css`
-    background: rgb(226,8,128);
-    background: linear-gradient(140deg, rgba(226,8,128,1) 0%, rgba(226,8,128,1) 33%, rgba(53,197,243,1) 33%, rgba(53,197,243,1) 66%, rgba(103,76,159,1) 66%, rgba(103,76,159,1) 100%);
-  `};
-`
-
-const ProfileImage = styled(Image)`
-  border-radius: 100%;
-  z-index: 2;
-`
-
-// Export Default
-export default TeamMember;
+export default React.memo(TeamMember);
