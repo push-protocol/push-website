@@ -2,10 +2,10 @@
 
 The website for PUSH
 
-
 # Local Dev
+
 ```bash
-git clone https://github.com/ethereum-push-notification-service/push-frontend-secret.git
+git clone https://github.com/ethereum-push-notification-service/push-website.git
 ```
 
 ```bash
