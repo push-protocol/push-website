@@ -9,7 +9,7 @@ git clone https://github.com/ethereum-push-notification-service/push-website.git
 ```
 
 ```bash
-cd push-frontend-secret
+cd push-website
 yarn install
 ```
 
