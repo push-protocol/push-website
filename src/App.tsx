@@ -3,13 +3,13 @@
 // eslint-disable react/prop-types
 /* eslint-disable */
 
-import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState, Suspense } from 'react';
 import ReactGA from 'react-ga';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import Home from "./pages/Home";
 import Footer from './segments/Footer';
 import Header from './segments/Header';
+import Home from "./pages/Home";
 
 
 ReactGA.initialize('UA-165415629-2');

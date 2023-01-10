@@ -6,12 +6,14 @@ import styled from 'styled-components';
 
 import { device } from '../config/globals';
 
-import { Anchor, ItemV, Span } from './SharedStyling';
+import {
+  ItemV, Span, Anchor,
+} from './SharedStyling';
 
 import ImageHolder from './ImageHolder';
 
-import { ReactComponent as LinkedInBlack } from '../assets/linkedin_black.svg';
-import { ReactComponent as TwitterBlack } from '../assets/twitter_black.svg';
+import { ReactComponent as TwitterBlack }  from '../assets/twitter_black.svg';
+import { ReactComponent as LinkedInBlack }  from '../assets/linkedin_black.svg';
 
 type TeamMemberProps = {
     name: string;

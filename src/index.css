@@ -523,6 +523,7 @@ button, a, a:before, a:after {
   height: 0;
   width: 100%;
 }
+
 .videoWrapper iframe {
   position: absolute;
   top: 0;

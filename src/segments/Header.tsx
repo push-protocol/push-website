@@ -8,16 +8,16 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 
 import useMediaQuery from '../hooks/useMediaQuery';
 
-import Alert from 'components/Alert';
 import { ContentV2, ItemHV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
-import { Anchor, LinkTo, Span } from '../components/SharedStyling';
+import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
+import Alert from 'components/Alert';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
