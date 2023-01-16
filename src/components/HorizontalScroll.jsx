@@ -4,10 +4,12 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
 import { device } from '../config/globals';
-import { Anchor, H2, ItemV, Span } from './SharedStyling';
-import PushbuildsliderFigure from '../assets/figures/pushbuildsliderfigure.webp';
-import PushgovernancesliderFigure from '../assets/figures/pushgovernancesliderfigure.webp';
+import { Anchor, AnchorLink, B, H2, ItemV, Span, SpanLink } from './SharedStyling';
+import PushbuildsliderFigure from '../assets/figures/pushbuildsliderfigure.png';
+import PushgovernancesliderFigure from '../assets/figures/pushgovernancesliderfigure.png';
+import Pushdao from '../assets/figures/pushdao.png';
 import ImageHolder from './ImageHolder';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 
 
@@ -30,7 +32,7 @@ const HorizontalScroll = () => {
       ScrollTrigger.matchMedia({
         "(min-width: 1199px)": function() {
           gsap.to(panels.current, {
-            xPercent: -75 * (totalPanels - 1),
+            xPercent: -79 * (totalPanels - 1),
             // xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
@@ -57,7 +59,37 @@ const HorizontalScroll = () => {
           sizing='calc(100vh-0)'
                ref={panelsContainer}
             >
-              <GrowPushCard background="#ECDCD9" ref={(e) => createPanelsRefs(e, 0)} className="panel">
+              <GrowPushCard background="#2A2A39" ref={(e) => createPanelsRefs(e, 0)} className="panel">
+
+                <GrowPushCardDetails>
+                  <Span
+                    color="#ADB8D7"
+                    size="22px"
+                    weight="500"
+                    // spacing="-0.03em"
+                    lineHeight="146%"
+                  >
+                    <B color="#fff">Push Notifications</B> directly connect applications to individual users, enabling secure and personalized communication in response to customized on- and off-chain activity.
+                  </Span>
+                  <Anchor
+                    href="https://docs.push.org/developers"
+                    title="Developer Docs"
+                    target="_blank"
+                    padding="0px 0px"
+                    size="20px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="26px"
+                    className='button'
+                    margin="10px 0px 0px 0px"
+                  >
+                  <SpanLink>
+                    Build Push Notifications
+                  </SpanLink>
+                  <FiArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </GrowPushCardDetails>
+
                 <Div>
                   <MemberImage
                         className='figureSvg'
@@ -67,97 +99,94 @@ const HorizontalScroll = () => {
                         title='Build with Push'
                       />
                 </Div>
+              </GrowPushCard>
+
+              <GrowPushCard background="#2A2A39" margin='0 0 0 2%' ref={(e) => createPanelsRefs(e, 1)} className="panel">
 
                 <GrowPushCardDetails>
-                  <ResponsiveH2
-                    color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    Build with Push
-                  </ResponsiveH2>
                   <Span
-                    color="#303C5E"
-                    size="19px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="160%"
+                    color="#ADB8D7"
+                    size="22px"
+                    weight="500"
+                    // spacing="-0.03em"
+                    lineHeight="146%"
                   >
-                    Push offers dapp developers on any blockchain network the opportunity to build solutions on a
-                    progressively decentralized stack by enabling web3-native communication.
+                    <B color="#fff">Push Chat</B> is the leading decentralized, web3 native chat application with user friendly features like 1-1, group chat, videos/images, and (soon) streaming.
                   </Span>
                   <Anchor
                     href="https://docs.push.org/developers"
                     title="Developer Docs"
                     target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
-                    padding="14px 32px"
-                    size="18px"
+                    padding="0px 0px"
+                    size="20px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="26px"
-                    // self="flex-start"
                     className='button'
+                    margin="10px 0px 0px 0px"
                   >
-                    Start Building
+                  <SpanLink>
+                    Build with Push Chat
+                  </SpanLink>
+                  <FiArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </GrowPushCardDetails>
-              </GrowPushCard>
 
-              <GrowPushCard background="#C4A8FB" margin='0 0 0 2%' ref={(e) => createPanelsRefs(e, 1)} className="panel">
                 <Div>
-                 <MemberImage
+                  <MemberImage
                         className='figureSvg'
                         src={PushgovernancesliderFigure}
                         srcSet={PushgovernancesliderFigure}
-                        alt={'Illustration showing community led governance'}
-                        title='Community Governance'
+                        alt={'Illustration showing ease of building with Push'}
+                        title='Build with Push'
                       />
                 </Div>
+              </GrowPushCard>
+
+
+              <GrowPushCard background="#2A2A39" margin='0 0 0 2%' ref={(e) => createPanelsRefs(e, 2)} paddingBottom={'54px'} className="panel">
 
                 <GrowPushCardDetails>
-                  <ResponsiveH2
-                    color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    Governed by the Community
-                  </ResponsiveH2>
                   <Span
-                    color="#303C5E"
-                    size="19px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="160%"
+                    color="#ADB8D7"
+                    size="22px"
+                    weight="500"
+                    // spacing="-0.03em"
+                    lineHeight="146%"
                   >
-                    Decentralized communication needs decentralized actors. Get involved in Push governance to build the
-                    future of web 3
+                    <B color="#fff">Push DAO</B> is the home of community ownership of the Push Protocol. Push token holders can view, propose, and vote on critical developments to the protocol.
                   </Span>
                   <Anchor
-                    href="https://gov.push.org"
-                    title="Governance"
+                    href="https://docs.push.org/developers"
+                    title="Developer Docs"
                     target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
-                    padding="14px 32px"
-                    size="18px"
+                    padding="0px 0px"
+                    size="20px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="26px"
-                    // self="flex-start"
                     className='button'
+                    margin="10px 0px 0px 0px"
                   >
-                    Know More
+                  <SpanLink>
+                    Explore Push DAO
+                  </SpanLink>
+                  <FiArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </GrowPushCardDetails>
-              </GrowPushCard>
+
+                <Div>
+                  <MemberImage
+                        className='figureSvg'
+                        src={Pushdao}
+                        srcSet={Pushdao}
+                        alt={'Illustration showing ease of building with Push'}
+                        title='Build with Push'
+                      />
+                </Div>
+                </GrowPushCard>
+
+              
             </SliderContainer>
             </>
   )
@@ -179,7 +208,8 @@ const SliderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  padding: calc(calc(100vh - 698px) / 2) 0px;
+  // padding: calc(calc(100vh - 698px) / 2) 0px;
+  padding: calc(calc(100vh - 750px) / 2) 0px;
   flex-wrap: nowrap;
   margin: auto 0;
   
@@ -204,23 +234,19 @@ const SliderContainer = styled.div`
 const GrowPushCard = styled(ItemV)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  row-gap: 32px;
-  padding: 70px 70px;
-  // min-width: 85% !important;
-  // min-height: 700px;
-  // height: auto;
-  // min-width: 834px;
+  padding: 74px 74px 0px 74px;
+  padding-bottom: ${(props) => props.paddingBottom};
   min-width: 68%;
-  // height: 698px;
+  // min-width: 80%;
+  box-sizing: border-box;
 
   background: ${(props) => props.background || '#FFFBFB'};
   margin: ${(props) => props.margin || ''};
   border-radius: 48px;
 
   & .figureSvg {
-    width: 550px;
+    width: 300px;
     height: 100%;
   
     @media ${device.tablet} {

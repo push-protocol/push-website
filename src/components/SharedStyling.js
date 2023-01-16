@@ -546,6 +546,12 @@ export const Anchor = styled.a`
   }
 `;
 
+export const SpanLink = styled(Span)`
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
+`;
+
 export const A = styled(Anchor)`
   display: inline;
   color: ${(props) => props.color || '#e1087f'};

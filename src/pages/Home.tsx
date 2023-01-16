@@ -59,6 +59,7 @@ import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushb
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
@@ -267,7 +268,7 @@ function Home({isAlertVisible}) {
                   lineHeight="142%"
                 >
                   Explore all channels
-                  <BsArrowUpRight className="anchorSVGlink" />
+                  <FiArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
             </PoweringCommunicationRow>
