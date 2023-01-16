@@ -309,20 +309,10 @@ function Home({isAlertVisible}) {
               </ItemV>
             </Partners>
 
-            {/* <FadeInAnimation wrapperElement="h2" direction="down">
-              Hello CodeSandbox
-            </FadeInAnimation>
-            <FadeInAnimation wrapperElement="h2" direction="right" delay={2}>
-              Start editing to see some magic happen!
-            </FadeInAnimation>
-            <FadeInAnimation wrapperElement="h2" direction="right" delay={2}>
-              Start editing to see some magic happen!
-            </FadeInAnimation> */}
-            <FadeInAnimation wrapperElement="div" direction='up' delay={0.5}>
+            <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
             <PushWorksRow>
-              <ItemV
+              <ItemImage
                 justifyContent="center"
-                flex="1"
                 alignItems="end"
               >
                 <MemberImage
@@ -331,15 +321,16 @@ function Home({isAlertVisible}) {
                   srcSet={PushMissingPieceFigure}
                   alt={'Illustration showing Push as the missing piece of web3'}
                   title='Push is the missing piece of web3'
+                  style={{margin: "0 auto"}}
                   // width="100%"
                   // height="100%"
                 />
 
                
-              </ItemV>
+              </ItemImage>
 
               <ItemV
-                justifyContent="flex-start"
+                justifyContent={isMobile ? "center" : "flex-start"}
                 // alignSelf='center'
                 alignItems='center'
                 // flex="2"
@@ -360,6 +351,7 @@ function Home({isAlertVisible}) {
                   size="19px"
                   lineHeight="160%"
                   spacing="-0.03em"
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   Until Push, no solution existed to enable native communication between wallets in response to on- and
                   off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
@@ -372,6 +364,7 @@ function Home({isAlertVisible}) {
                   size="22px"
                   lineHeight="142%"
                   spacing="-0.03em"
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                   improving the everyday experience for blockchain users.
@@ -391,6 +384,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="26px"
                   self="center"
+                  margin={isMobile && "20px 0px 0px 0px"}
                 >
                   {/* Learn about $PUSH */}
                   How Push works
@@ -995,6 +989,7 @@ const HeroPrimary = styled(ItemHV2)`
 `;
 
 const MemberImage = styled(ImageHolder)`
+
 `;
 
 const HeroAnimation = styled(ItemHV2)`
@@ -1061,10 +1056,11 @@ const HomeWrapper = styled.main`
   }
   & .pushMissingSvg {
     width: 500px;
-    // height: 282px;
+    @media ${device.laptop} {
+    width: 400px;
+    }
     @media ${device.tablet} {
       width: 100%;
-      height: auto;
     }
   }
   @media ${device.tablet} {
@@ -1110,6 +1106,18 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
 `;
 
+const ItemImage = styled(ItemV)`
+    width: 100%;
+    @media ${device.tablet} {
+     width: 400px;
+     margin: 0 auto;
+    }
+
+    @media ${device.mobileL} {
+      width: 100%;
+     }
+`
+
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
   min-height: auto;
@@ -1152,10 +1160,19 @@ const PushWorksRow = styled(ItemH)`
   column-gap: 40px;
   margin-top: 200px;
   margin-bottom: 200px;
+  display: flex;
+  flex-direction: row;
 
   @media ${device.tablet} {
+    flex-direction: column;
     row-gap: 30px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
 
+  @media ${device.mobileL} {
+    row-gap: 30px;
+    flex-direction: column;
     margin-top: 80px;
     margin-bottom: 80px;
   }
