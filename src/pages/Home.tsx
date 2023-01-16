@@ -1,9 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable react/prop-types */
+/* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useLayoutEffect, useState} from 'react';
+import React, { lazy ,useLayoutEffect, useState} from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -46,7 +47,7 @@ import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
-import PushMissingPieceFigure from '../assets/figures/pushmissingpiece.webp';
+import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
 
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
@@ -59,6 +60,7 @@ import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushb
 import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
+import FadeInAnimation from 'components/FadeInAnimation';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
@@ -88,6 +90,7 @@ function Home({isAlertVisible}) {
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
+
   }, []);
 
 
@@ -306,6 +309,16 @@ function Home({isAlertVisible}) {
               </ItemV>
             </Partners>
 
+            {/* <FadeInAnimation wrapperElement="h2" direction="down">
+              Hello CodeSandbox
+            </FadeInAnimation>
+            <FadeInAnimation wrapperElement="h2" direction="right" delay={2}>
+              Start editing to see some magic happen!
+            </FadeInAnimation>
+            <FadeInAnimation wrapperElement="h2" direction="right" delay={2}>
+              Start editing to see some magic happen!
+            </FadeInAnimation> */}
+            <FadeInAnimation wrapperElement="div" direction='up' delay={0.5}>
             <PushWorksRow>
               <ItemV
                 justifyContent="center"
@@ -318,34 +331,19 @@ function Home({isAlertVisible}) {
                   srcSet={PushMissingPieceFigure}
                   alt={'Illustration showing Push as the missing piece of web3'}
                   title='Push is the missing piece of web3'
-                  width="100%"
-                  height="100%"
+                  // width="100%"
+                  // height="100%"
                 />
 
-                <Anchor
-                  href="https://docs.push.org/developers"
-                  title="Developer Docs"
-                  target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  How Push works
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
+               
               </ItemV>
 
               <ItemV
                 justifyContent="flex-start"
-                flex="2"
-                gap="22px"
+                // alignSelf='center'
+                alignItems='center'
+                // flex="2"
+                // gap="22px"
               >
                 <ResponsiveH2
                   size="40px"
@@ -378,8 +376,29 @@ function Home({isAlertVisible}) {
                   Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                   improving the everyday experience for blockchain users.
                 </Span>
+
+                
+
+                <Anchor
+                  href="https://docs.push.org/developers"
+                  title="Developer Docs"
+                  target="_blank"
+                  bg="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  self="center"
+                >
+                  {/* Learn about $PUSH */}
+                  How Push works
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
               </ItemV>
             </PushWorksRow>
+            </FadeInAnimation>
           </Content>
         </StorySection>
 
@@ -1041,8 +1060,8 @@ const HomeWrapper = styled.main`
     row-gap: 18px;
   }
   & .pushMissingSvg {
-    width: 433px;
-    height: 282px;
+    width: 500px;
+    // height: 282px;
     @media ${device.tablet} {
       width: 100%;
       height: auto;
@@ -1129,12 +1148,16 @@ const HeroBox = styled(ItemV)`
 `;
 
 const PushWorksRow = styled(ItemH)`
-  column-gap: 105px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  // column-gap: 105px;
+  column-gap: 40px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 
   @media ${device.tablet} {
     row-gap: 30px;
+
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 `;
 
