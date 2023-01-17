@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
 import { device } from '../config/globals';
 import { Anchor, AnchorLink, B, H2, ItemV, Span, SpanLink } from './SharedStyling';
-import PushbuildsliderFigure from '../assets/figures/pushbuildsliderfigure.png';
-import PushgovernancesliderFigure from '../assets/figures/pushgovernancesliderfigure.png';
-import Pushdao from '../assets/figures/pushdao.png';
+import PushNotifications from '../assets/figures/pushnotifications.webp';
+import PushChat from '../assets/figures/pushchat.webp';
+import Pushdao from '../assets/figures/pushdao.webp';
 import ImageHolder from './ImageHolder';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -93,10 +93,10 @@ const HorizontalScroll = () => {
                 <Div>
                   <MemberImage
                         className='figureSvg'
-                        src={PushbuildsliderFigure}
-                        srcSet={PushbuildsliderFigure}
-                        alt={'Illustration showing ease of building with Push'}
-                        title='Build with Push'
+                        src={PushNotifications}
+                        srcSet={PushNotifications}
+                        alt={'Illustration showing Push Notifications'}
+                        title='Push Notifications'
                       />
                 </Div>
               </GrowPushCard>
@@ -135,8 +135,8 @@ const HorizontalScroll = () => {
                 <Div>
                   <MemberImage
                         className='figureSvg'
-                        src={PushgovernancesliderFigure}
-                        srcSet={PushgovernancesliderFigure}
+                        src={PushChat}
+                        srcSet={PushChat}
                         alt={'Illustration showing ease of building with Push'}
                         title='Build with Push'
                       />
