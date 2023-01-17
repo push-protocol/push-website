@@ -54,9 +54,6 @@ import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/de
 import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-
-import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
-import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
 import { FiArrowUpRight } from 'react-icons/fi';
