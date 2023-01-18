@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
 import { device } from '../config/globals';
-import { Anchor, AnchorLink, B, H2, ItemV, Span, SpanLink } from './SharedStyling';
+import { Anchor, AnchorLink, B, H2, ItemV, Span} from './SharedStyling';
 import PushNotifications from '../assets/figures/pushnotifications.webp';
 import PushChat from '../assets/figures/pushchat.webp';
 import Pushdao from '../assets/figures/pushdao.webp';
@@ -25,12 +25,13 @@ const SlideElement = ({
   title,
   sendRef,
   addMargin,
-  link
+  link,
+  paddingBottom
 }) => {
   const isMobile = useMediaQuery(device.tablet)
 
   return(
-    <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} className="panel">
+    <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom ={ paddingBottom} className="panel">
 
     <GrowPushCardDetails>
       <Span
@@ -144,6 +145,7 @@ const HorizontalScroll = () => {
                 title='Push DAO'
                 addMargin={true}
                 link="https://docs.push.org/developers"
+                paddingBottom={"54px"}
               />
             </SliderContainer>
             </>
@@ -196,7 +198,6 @@ const GrowPushCard = styled(ItemV)`
   padding: 74px 74px 0px 74px;
   padding-bottom: ${(props) => props.paddingBottom};
   min-width: 68%;
-  // min-width: 80%;
   box-sizing: border-box;
 
   background: ${(props) => props.background || '#FFFBFB'};
@@ -204,7 +205,7 @@ const GrowPushCard = styled(ItemV)`
   border-radius: 48px;
 
   & .figureSvg {
-    width: 300px;
+    width: 500px;
     height: 100%;
   
     @media ${device.tablet} {
@@ -222,8 +223,8 @@ const GrowPushCard = styled(ItemV)`
        height: 100%;
     }
 
-    @media (min-width: 1441px) and (max-width: 1800px) {
-      width: 550px;
+    @media (min-width: 1440px) and (max-width: 1800px) {
+      width: 500px;
       height: 100%;
    }
 
@@ -256,6 +257,28 @@ const GrowPushCardDetails = styled.div`
   @media ${device.laptop}{
    row-gap: 10px;
    margin-bottom: 10px;
+  }
+`;
+
+const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 `;
 
