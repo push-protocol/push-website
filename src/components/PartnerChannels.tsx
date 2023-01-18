@@ -1,9 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+/* eslint-disable */
 
 import React from 'react';
 import styled from 'styled-components';
 import MarqueeAnimation from './MarqueeAnimation';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { ItemHV2 } from '../components/SharedStylingV2';
 
@@ -43,6 +46,8 @@ import { ReactComponent as SnapshotSVG }  from '../assets/partners/snapshot.svg'
 import { ReactComponent as SymphonyFinanceSVG }  from '../assets/partners/symphonyfinance.svg';
 import { ReactComponent as UniswapSVG }  from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG }  from '../assets/partners/unstoppable.svg';
+import { Anchor, H2, ItemH, Span } from './SharedStyling';
+import { device } from 'config/globals';
 
 
 
@@ -56,14 +61,14 @@ const partnerSortedGroup = [
     UniswapSVG,
     AaveSVG,
     SnapshotSVG,
-    MakerdaoSVG,
-    ShapeshiftSVG,
-    AragonSVG,
-    DydxSVG,
-    DecentralandSVG,
-    BancorSVG,
-    UnstoppableSVG,
-    FlipsideSVG
+    // MakerdaoSVG,
+    // ShapeshiftSVG,
+    // AragonSVG,
+    // DydxSVG,
+    // DecentralandSVG,
+    // BancorSVG,
+    // UnstoppableSVG,
+    // FlipsideSVG
   ],
   [
     OasisSVG,
@@ -73,11 +78,11 @@ const partnerSortedGroup = [
     KybernetworkSVG,
     IdlefinanceSVG,
     MetastableSVG,
-    QidaoSVG,
-    RektSVG,
-    CryptocurrencyjobsSVG,
-    EarnfiSVG,
-    PodsfinanceSVG
+    // QidaoSVG,
+    // RektSVG,
+    // CryptocurrencyjobsSVG,
+    // EarnfiSVG,
+    // PodsfinanceSVG
   ],
   [
     LensProtocolSVG,
@@ -100,9 +105,100 @@ function PartnerChannels() {
 
   const [firstRow, secondRow, thirdRow] = partnerSortedGroup;
 
+  const onEnter = ({ currentTarget }) => {
+    // gsap.to(currentTarget, { scale: 2 });
+  };
+  
+  const onLeave = ({ currentTarget }) => {
+    // gsap.to(currentTarget, {scale: 1 });
+  };
+
   return (
     <>
+     <PartnerRow
+        justifyContent="flex-start"
+        gap="28px"
+      >
+          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)} 
+      </PartnerRow>
+
       <PartnerRow
+        justifyContent="flex-start"
+        gap="28px"
+      >
+          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </PartnerRow>
+
+      <Body>
+
+      <GridRow>
+          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </GridRow>
+
+      <GridItem
+          display="flex" 
+          flexDirection="column"
+      >
+            <ResponsiveH2
+                color="#121315"
+                size="40px"
+                weight="700"
+                spacing="-0.02em"
+                lineHeight="110%"
+              >
+                Powered by Push
+              </ResponsiveH2>
+
+              <Span
+                color="#303C5E"
+                size="19px"
+                weight="300"
+                spacing="-0.03em"
+                lineHeight="160%"
+              >
+                Quis posuere aliquam est orci lectus. Lectus <br /> amet amet enim non facilisi pretium tempus.
+              </Span>
+
+              <Anchor
+                  href="https://docs.push.org/hub/"
+                  title="Learn about $PUSH"
+                  target="_blank"
+                  bg="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  margin="15px 0px 0px 0px"
+                  self="center"
+                >
+                  Explore dApps
+                </Anchor>
+      </GridItem>
+
+      <GridRow>
+          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </GridRow>
+
+      </Body>
+
+
+      <PartnerRow
+        justifyContent="flex-start"
+        gap="28px"
+      >
+          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </PartnerRow>
+
+      <PartnerRow
+        justifyContent="flex-start"
+        gap="28px"
+      >
+          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </PartnerRow>
+      
+      {/* <PartnerRow
         justifyContent="flex-start"
         gap="32px"
       >
@@ -144,18 +240,47 @@ function PartnerChannels() {
         >
           {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
         </MarqueeAnimation> 
-      </PartnerRow>
+      </PartnerRow> */}
     </>
    
   );
 }
 
 const PartnerRow = styled(ItemHV2)`
+  margin: 16px auto;
   & svg.marqueeItem {
-    width: 102px;
-    height: 102px;
+    width: 96px;
+    height: 96px;
   }
 `;
+
+const GridRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  & svg.marqueeItem {
+    width: 96px;
+    height: 96px;
+  }
+`;
+const GridItem = styled(ItemH)`
+  // padding: 30px 0px;
+  // box-sizing: border-box;
+`
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+`
 
 
 export default React.memo(PartnerChannels);
