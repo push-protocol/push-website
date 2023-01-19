@@ -26,7 +26,8 @@ const SlideElement = ({
   sendRef,
   addMargin,
   link,
-  paddingBottom
+  paddingBottom,
+  paddingMobile
 }) => {
   const isMobile = useMediaQuery(device.tablet)
 
@@ -59,7 +60,7 @@ const SlideElement = ({
       </Anchor>
     </GrowPushCardDetails>
 
-    <Div>
+    <Div padding = {paddingMobile}>
       <MemberImage
             className='figureSvg'
             src={image}
@@ -135,6 +136,7 @@ const HorizontalScroll = () => {
                 title='Push Chat'
                 addMargin={true}
                 link="https://docs.push.org/developers"
+                paddingMobile={"30px 0px"}
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
@@ -146,6 +148,7 @@ const HorizontalScroll = () => {
                 addMargin={true}
                 link="https://docs.push.org/developers"
                 paddingBottom={"54px"}
+                paddingMobile={"30px 0px"}
               />
             </SliderContainer>
             </>
@@ -238,12 +241,15 @@ const GrowPushCard = styled(ItemV)`
 
   @media ${device.tablet} {
    padding: 30px 30px 0px 30px;
+   padding-bottom: ${(props) => props.paddingBottom ? "30px" : "0px"};
+   
    border-radius: 36px;
   }
 
   @media (max-width: 1200px){
     margin: ${(props) => '10px 0px' || ''};
     padding: 30px 30px 0px 30px;
+    padding-bottom: ${(props) => props.paddingBottom ? "30px" : "0px"};
   }
 
 `;
@@ -283,6 +289,12 @@ const SpanLink = styled(Span)`
 `;
 
 const Div = styled.div`
+    padding: 0px 0px;
+    @media ${device.laptop}{
+      // padding: 30px 0px;
+      padding: ${(props) => props.padding ? "20px 0px" : "10px 0px 0px 0px"};
+
+    }
 `;
 
 export default HorizontalScroll
