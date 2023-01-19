@@ -57,53 +57,53 @@ import { device } from 'config/globals';
 
 const partnerSortedGroup = [
   [
-    EnsSVG,
-    UniswapSVG,
+    LepasaMetaverseSVG,
+    MaHadaoSVG,
+    IdlefinanceSVG,
+    PolyChainMonstersSVG
+  ],
+  [
+    UnstoppableSVG,
+    LensProtocolSVG,
+    MeanFinanceSVG,
+    LifiSVG,
+    AragonSVG,
+    MoverSVG,
+    AngleLabsSVG
+  ],
+  [
+    CoindeskSVG,
+    FlipsideSVG,
+    ProofofhumanitySVG,
+    SymphonyFinanceSVG
+  ],
+  [
+    PooltogetherSVG,
+    MakerdaoSVG,
+    MetastableSVG,
+    EthSVG
+  ],
+  [
+    BancorSVG,
     AaveSVG,
     SnapshotSVG,
-    // MakerdaoSVG,
-    // ShapeshiftSVG,
-    // AragonSVG,
-    // DydxSVG,
-    // DecentralandSVG,
-    // BancorSVG,
-    // UnstoppableSVG,
-    // FlipsideSVG
-  ],
-  [
+    QidaoSVG,
+    DydxSVG,
+    UniswapSVG,
     OasisSVG,
-    PooltogetherSVG,
-    CoindeskSVG,
-    ProofofhumanitySVG,
-    KybernetworkSVG,
-    IdlefinanceSVG,
-    MetastableSVG,
-    // QidaoSVG,
-    // RektSVG,
-    // CryptocurrencyjobsSVG,
-    // EarnfiSVG,
-    // PodsfinanceSVG
   ],
   [
-    LensProtocolSVG,
-    PolyChainMonstersSVG,
-    EthSVG,
-    MaHadaoSVG,
-    LifiSVG,
-    AngleLabsSVG,
-    LepasaMetaverseSVG,
-    GroSVG,
-    GoodGhostingSVG,
-    MeanFinanceSVG,
-    SymphonyFinanceSVG,
-    MoverSVG
-  ]
+    DecentralandSVG,
+    CryptocurrencyjobsSVG,
+    ShapeshiftSVG,
+    KybernetworkSVG
+  ],
 ];
 
 
 function PartnerChannels() {
 
-  const [firstRow, secondRow, thirdRow] = partnerSortedGroup;
+  const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
 
   const onEnter = ({ currentTarget }) => {
     // gsap.to(currentTarget, { scale: 2 });
@@ -132,7 +132,7 @@ function PartnerChannels() {
       <Body>
 
       <GridRow>
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
       </GridRow>
 
       <GridItem
@@ -178,7 +178,7 @@ function PartnerChannels() {
       </GridItem>
 
       <GridRow>
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {fourthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
       </GridRow>
 
       </Body>
@@ -188,14 +188,14 @@ function PartnerChannels() {
         justifyContent="flex-start"
         gap="28px"
       >
-          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {fifthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
       </PartnerRow>
 
       <PartnerRow
         justifyContent="flex-start"
         gap="28px"
       >
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
       </PartnerRow>
       
       {/* <PartnerRow
