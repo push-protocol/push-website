@@ -67,6 +67,7 @@ const SlideElement = ({
             srcSet={image}
             alt= {alt}
             title = {title}
+            width="100%"
           />
     </Div>
   </GrowPushCard>
@@ -147,7 +148,7 @@ const HorizontalScroll = () => {
                 title='Push DAO'
                 addMargin={true}
                 link="https://docs.push.org/developers"
-                paddingBottom={"54px"}
+                paddingBottom={"34px"}
                 paddingMobile={"30px 0px"}
               />
             </SliderContainer>
@@ -171,7 +172,6 @@ const SliderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items:center;
-  // padding: calc(calc(100vh - 698px) / 2) 0px;
   padding: calc(calc(100vh - 750px) / 2) 0px;
   flex-wrap: nowrap;
   margin: auto 0;
@@ -210,6 +210,8 @@ const GrowPushCard = styled(ItemV)`
   & .figureSvg {
     width: 500px;
     height: 100%;
+    display: block;
+
   
     @media ${device.tablet} {
       width: 400px;
@@ -219,6 +221,7 @@ const GrowPushCard = styled(ItemV)`
     @media ${device.mobileL} {
       width: 100%;
       height: 100%;
+      display: block;
     }
 
     @media (min-width: 1025px) and (max-width: 1250px) {
@@ -242,7 +245,6 @@ const GrowPushCard = styled(ItemV)`
   @media ${device.tablet} {
    padding: 30px 30px 0px 30px;
    padding-bottom: ${(props) => props.paddingBottom ? "30px" : "0px"};
-   
    border-radius: 36px;
   }
 
@@ -291,7 +293,6 @@ const SpanLink = styled(Span)`
 const Div = styled.div`
     padding: 0px 0px;
     @media ${device.laptop}{
-      // padding: 30px 0px;
       padding: ${(props) => props.padding ? "20px 0px" : "10px 0px 0px 0px"};
 
     }
