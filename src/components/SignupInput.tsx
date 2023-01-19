@@ -30,17 +30,8 @@ function SignupInput() {
             
         {isLoading ? <MaskInput /> : null}
       </Wrapper>
-      <Span
-        color="#121315"
-        size={isMobile ? '18px' : '20px'}
-        weight="300"
-        spacing="-0.03em"
-        margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'}
-        lineHeight="138.5%">
-            Thanks for Subscribing!
-      </Span>
-      {apiResponse && <Span className="msg" color='#FFFFFF'>{apiResponse}</Span>}
-      {(!apiResponse && emailError) && <Span className="msg" color="red">{emailError}</Span>}
+      {apiResponse && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color='#121315'>{apiResponse}</Span>}
+      {(!apiResponse && emailError) && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color="red">{emailError}</Span>}
     </Box>
        
   );
@@ -51,10 +42,10 @@ const Box = styled.div`
   flex-direction: column;
 
   & span.msg {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 142%;
+    font-weight: 300;
+    line-height: 138.5%;
     margin-top: 12px;
+    spacing: -0.03em;
   }
 `;
 
@@ -78,8 +69,6 @@ const Wrapper = styled.form`
         all: unset;
 
         box-sizing: border-box;
-        // border: 1px solid;
-
         font-family: 'Strawford';
         font-style: normal;
         font-weight: 400;
@@ -87,6 +76,7 @@ const Wrapper = styled.form`
         line-height: normal;
         letter-spacing: -0.03em; 
         color: #9C9CBE;
+        background: #FFFFFF;
         min-width: 220px;
         width: 100%;
         padding: 6px;
