@@ -1191,8 +1191,8 @@ export const BodyContent = styled.div`
 const Partners = styled(ItemH)``;
 
 const SignupBox = styled(ItemH)`
-  background: rgba(214, 177, 242, 0.8);
-  backdrop-filter: blur(15px);
+  background: #B9ABEF;
+  backdrop-filter: blur(10px);
   border-radius: 32px;
   padding: 72px;
   display: flex;

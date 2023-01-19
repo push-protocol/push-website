@@ -10,6 +10,7 @@ import {
 } from './SharedStyling';
 
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
+import useMediaQuery from 'hooks/useMediaQuery';
 
 function SignupInput() {
   const [
@@ -19,6 +20,8 @@ function SignupInput() {
     onEmailSubmit
   ] = useEmailValidationAndSend();
 
+  const isMobile = useMediaQuery(device.tablet);
+
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
@@ -27,6 +30,15 @@ function SignupInput() {
             
         {isLoading ? <MaskInput /> : null}
       </Wrapper>
+      <Span
+        color="#121315"
+        size={isMobile ? '18px' : '20px'}
+        weight="300"
+        spacing="-0.03em"
+        margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'}
+        lineHeight="138.5%">
+            Thanks for Subscribing!
+      </Span>
       {apiResponse && <Span className="msg" color='#FFFFFF'>{apiResponse}</Span>}
       {(!apiResponse && emailError) && <Span className="msg" color="red">{emailError}</Span>}
     </Box>
@@ -85,9 +97,6 @@ const Wrapper = styled.form`
             opacity: 1;
         }
 
-        @media ${device.tablet} {
-            min-width: fit-content;
-        }
     }
 
     & button {
