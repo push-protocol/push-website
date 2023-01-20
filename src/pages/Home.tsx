@@ -62,6 +62,7 @@ import ImageHolder from 'components/ImageHolder';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
+  const isLargeScreen = useMediaQuery('(max-width: 1250px)');
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -239,40 +240,8 @@ function Home({isAlertVisible}) {
           className="lightBackground"
         >
           <Content className="contentBox">
-            <PoweringCommunicationRow>
-              <ItemV justifyContent="flex-start">
-                <ResponsiveH2
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
-                  lineHeight="110%"
-                >
-                  Powering communication for
-                </ResponsiveH2>
-              </ItemV>
-              <ItemV justifyContent="flex-end">
-                <Anchor
-                  href="https://app.push.org"
-                  title="Push Dapp"
-                  target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  Explore all channels
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
-              </ItemV>
-            </PoweringCommunicationRow>
 
-            <PartnerChannels />
+            {!isLargeScreen && <PartnerChannels />}
 
             <Partners
               margin="40px 0"

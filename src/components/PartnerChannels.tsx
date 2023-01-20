@@ -118,6 +118,7 @@ function PartnerChannels() {
      <PartnerRow
         justifyContent="flex-start"
         gap="28px"
+        padding="150px 0px 0px 0px"
       >
           {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)} 
       </PartnerRow>
@@ -144,6 +145,7 @@ function PartnerChannels() {
                 size="40px"
                 weight="700"
                 spacing="-0.02em"
+                margin="0px 0px"
                 lineHeight="110%"
               >
                 Powered by Push
@@ -194,6 +196,7 @@ function PartnerChannels() {
       <PartnerRow
         justifyContent="flex-start"
         gap="28px"
+        padding="0px 0px 150px 0px"
       >
           {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
       </PartnerRow>
@@ -245,6 +248,7 @@ function PartnerChannels() {
    
   );
 }
+
 
 const PartnerRow = styled(ItemHV2)`
   margin: 16px auto;
