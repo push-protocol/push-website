@@ -30,6 +30,9 @@ function App() {
   const RedirectToPlatform = React.lazy(
     () => import("./components/RedirectToDiffUrl")
   )
+  const FrensOfPush = React.lazy(
+    () => import("pages/FrensOfPush")
+  )
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -63,6 +66,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/privacymobile" element={<PrivacyMobile />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
+        <Route path="/frens" element={<FrensOfPush />} />
       </Routes>
       <Footer />
     </AppWrapper>  

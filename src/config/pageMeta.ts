@@ -14,5 +14,9 @@ export default {
   FAQS: {
     pageName: 'faqs',
     pageTitle: 'PUSH | FAQs'
+  },
+  FRENS: {
+    pageName: 'frens',
+    pageTitle: 'PUSH | FrensOfPush'
   }
 };
