@@ -14,10 +14,12 @@ import HybridSection from 'components/HybridSection';
 import SignupInput from 'components/SignupInput';
 import { BodyContent } from './Home';
 import useMediaQuery from 'hooks/useMediaQuery';
-import {BsArrowUpRight} from 'react-icons/bs'
 import { BiSearch } from 'react-icons/bi';
 import { getChannels } from 'api';
 import ChannelItem from 'components/ChannelItem';
+import { FiChevronDown } from 'react-icons/fi';
+import SpinnerSVG from 'assets/Spinner.gif';
+
 
 
 
@@ -26,6 +28,9 @@ const FrensOfPush = () => {
 
 const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
+const [page, setPage] = useState(1); 
+const [loading, setLoading] = React.useState(false);
+
 
 const sortList = [
     {
@@ -63,13 +68,31 @@ const sortList = [
 
 const fetchChannels = async () => {
     try {
-        const data = await getChannels()
-        console.log(data)
+        setLoading(true)
+        const data = await getChannels(page)
         setChannels(data)
     } catch (error) {
-        console.error("Channels API data fetch error: ", e)
+        console.error("Channels API data fetch error: ", error)
+    } finally {
+        setLoading(false)
     }
 }
+
+const ShowMore = async () => {
+    let newPage = page + 1;
+    setPage(newPage)
+    try {
+        setLoading(true)
+        const data = await getChannels(newPage)
+        setChannels(current => [...current, ...data])
+    } catch (error) {
+        console.error("Channels API data fetch error: ", error)
+    } finally {
+        setLoading(false)
+    }
+}
+
+console.log(channels)
 
 useEffect(() => {
     fetchChannels()
@@ -124,8 +147,8 @@ useEffect(() => {
                     </PushRow>
 
                     <ToggleSection>
-                        {sortList.map((item) => 
-                        (<ToggleButton>
+                        {sortList.map((item,i) => 
+                        (<ToggleButton key={item?.name}>
                             <Span color={item.count ? "#fff" : "#121315"}>{item?.name}</Span>
 
                             {item.count && (<b>{item?.count}</b>)}
@@ -135,11 +158,20 @@ useEffect(() => {
 
                     <ChannelsSection>
                         {channels?.map((item,i) => (
-                            <Channels key={item}>
+                            <Channels key={item.ipfshash}>
                                 <ChannelItem channelProp={item} />
                             </Channels>
                         ))}
                     </ChannelsSection>
+
+                    {loading && (<ItemH>
+                        <img src={SpinnerSVG} alt='' width={140} />
+                    </ItemH>)}
+
+                    {!loading && (<ShowMoreSection onClick={ShowMore}>
+                        <FiChevronDown size={23} />
+                        <b>Show More</b>
+                    </ShowMoreSection>)}
                 </Content>
 
 
@@ -346,6 +378,24 @@ const Wrapper = styled.div`
 `;
 
 const Channels = styled.div`
+`
+
+const ShowMoreSection = styled.div`
+    border: 1px solid #BAC4D6;
+    border-radius: 24px;
+    margin: 70px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 23px;
+    cursor: pointer;
+    b {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 110%;
+        letter-spacing: -0.03em;
+        color: #1E1E1E;
+    }
 `
 
 export default FrensOfPush

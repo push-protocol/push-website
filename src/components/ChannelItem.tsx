@@ -4,22 +4,31 @@
 /* eslint-disable */
 import React from 'react'
 import styled from 'styled-components';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 const ChannelItem = ({ channelProp }) => {
   const [channelObject, setChannelObject] = React.useState({});
+  const [loading, setLoading] = React.useState(true);
+
 
     React.useEffect(() => {
         if (!channelProp) return;
         setChannelObject(channelProp);
+        setLoading(false)
       }, [channelProp]);
-
-      console.log(channelObject)
 
   return (
     <Container>
-
         <ChannelLogo>
-           <ChannelLogoImg src={`${channelObject.icon}`} />
+            {loading ? (
+                <Skeleton
+                    height={100} width={100} borderRadius={20}
+                />
+                ) : (
+                    <ChannelLogoImg src={`${channelObject.icon}`} />
+                )}
         </ChannelLogo>
         
         <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
@@ -51,6 +60,7 @@ const ChannelLogo = styled.div`
 const ChannelLogoImg = styled.img`
     object-fit: contain;
     width: 100%;
+    border: 1px solid #BAC4D6;
     border-radius: 20px;
     overflow: hidden;
 `;

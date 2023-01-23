@@ -76,8 +76,8 @@ export async function sendEmailToMailingList({ email }) {
     });
 }
 
-export async function getChannels() {
-  const requrl = 'https://backend-staging.epns.io/apis/v1/channels?page=1&limit=10&sort=subscribers&order=desc';
+export async function getChannels(page) {
+  const requrl = `https://backend.epns.io/apis/v1/channels?page=${page}&limit=9&sort=subscribers&order=desc`;
 
 
   return axios.get(requrl)
