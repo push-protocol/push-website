@@ -19,7 +19,7 @@ import { getChannels, getChannelsSearch } from 'api';
 import ChannelItem, { Tilt } from 'components/ChannelItem';
 import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
-
+import Image from 'assets/bg-image.png'
 
 
 
@@ -148,14 +148,14 @@ useEffect(() => {
       pageTitle={pageMeta.FRENS.pageTitle}
     >
         <FrensWrapper>
-            <ResponsiveSection minHeight="60vh" curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
+            <AnimationSection minHeight="60vh" padding="80px 0px 20px 0px">
             <Content className="contentBox" flex="0">
                 <ItemH flexDirection="column" justifyContent="center">
                 <HeroHeader>Frens of Push</HeroHeader>
                 <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isMobile && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
                 </ItemH>
             </Content>
-            </ResponsiveSection>
+            </AnimationSection>
 
             <PoweredSection 
                 id="story"
@@ -398,6 +398,22 @@ const ResponsiveSection = styled(HybridSection)`
   @media ${device.tablet} {
     padding-left: 30px !important;
     padding-right: 30px !important;
+  }
+`;
+
+const AnimationSection = styled(ResponsiveSection)`
+  background-image: url(${Image});
+  background-repeat:no-repeat;
+  background-size: cover;
+//   min-height: 60vh !important;
+  background-position: center center;
+//   background-repeat: no-repeat; background-size: cover;
+  padding-bottom: 50px;
+  @media ${device.tablet} {
+    background: #121315;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+    padding-bottom: 0px;
   }
 `;
 
