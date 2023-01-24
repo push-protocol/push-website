@@ -1051,6 +1051,7 @@ const HomeWrapper = styled.main`
   & #hero .contentBox {
     row-gap: 18px;
   }
+  
   & .pushMissingSvg {
     width: 500px;
     @media ${device.laptop} {
