@@ -313,7 +313,6 @@ function Home({isAlertVisible}) {
             <PushWorksRow>
               <ItemImage
                 justifyContent="center"
-                alignItems="end"
               >
                 <MemberImage
                   className="pushMissingSvg"
