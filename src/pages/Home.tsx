@@ -54,11 +54,9 @@ import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/de
 import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-
-import { ReactComponent as PushbuildsliderFigure } from '../assets/figures/pushbuildsliderfigure.svg';
-import { ReactComponent as PushgovernancesliderFigure } from '../assets/figures/pushgovernancesliderfigure.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 function Home({isAlertVisible}) {
   const isMobile = useMediaQuery(device.laptop);
@@ -267,7 +265,7 @@ function Home({isAlertVisible}) {
                   lineHeight="142%"
                 >
                   Explore all channels
-                  <BsArrowUpRight className="anchorSVGlink" />
+                  <FiArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
             </PoweringCommunicationRow>
@@ -1077,14 +1075,10 @@ const StorySection = styled(ResponsiveSection)`
 const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
 
-  // @media ${device.tablet} {
-  //   padding: 0 12px !important;
+  @media ${device.tablet} {
+    padding: 0px 0px 10px 0px;
+  }
 
-  //   & .contentBox {
-  //     margin-top: -72px;
-  //     z-index: 1;
-  //   }
-  // }
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
@@ -1188,13 +1182,17 @@ export const BodyContent = styled.div`
   //   flex: 1;
   //   display: flex;
 	// }
+
+  @media ${device.tablet} {
+  	padding: ${(props) => props.padding || '10px 0px'};
+  }
 `;
 
 const Partners = styled(ItemH)``;
 
 const SignupBox = styled(ItemH)`
-  background: rgba(214, 177, 242, 0.8);
-  backdrop-filter: blur(15px);
+  background: #B9ABEF;
+  backdrop-filter: blur(10px);
   border-radius: 32px;
   padding: 72px;
   display: flex;
