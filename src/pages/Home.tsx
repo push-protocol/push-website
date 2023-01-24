@@ -1,9 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable react/prop-types */
+/* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useLayoutEffect, useState} from 'react';
+import React, { lazy ,useLayoutEffect, useState} from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -46,7 +47,7 @@ import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
-import PushMissingPieceFigure from '../assets/figures/pushmissingpiece.webp';
+import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
 
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
@@ -56,6 +57,7 @@ import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
+import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 function Home({isAlertVisible}) {
@@ -86,6 +88,7 @@ function Home({isAlertVisible}) {
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
+
   }, []);
 
 
@@ -304,11 +307,10 @@ function Home({isAlertVisible}) {
               </ItemV>
             </Partners>
 
+            {/* <FadeInAnimation wrapperElement="div" direction='up' delay={0}> */}
             <PushWorksRow>
-              <ItemV
+              <ItemImage
                 justifyContent="center"
-                flex="1"
-                alignItems="end"
               >
                 <MemberImage
                   className="pushMissingSvg"
@@ -316,34 +318,20 @@ function Home({isAlertVisible}) {
                   srcSet={PushMissingPieceFigure}
                   alt={'Illustration showing Push as the missing piece of web3'}
                   title='Push is the missing piece of web3'
-                  width="100%"
-                  height="100%"
+                  style={{margin: "0 auto"}}
+                  // width="100%"
+                  // height="100%"
                 />
 
-                <Anchor
-                  href="https://docs.push.org/developers"
-                  title="Developer Docs"
-                  target="_blank"
-                  hoverBG="transparent"
-                  hover="transparent"
-                  filter="none"
-                  color="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  How Push works
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
-              </ItemV>
+               
+              </ItemImage>
 
               <ItemV
-                justifyContent="flex-start"
-                flex="2"
-                gap="22px"
+                justifyContent={isMobile ? "center" : "flex-start"}
+                // alignSelf='center'
+                alignItems='center'
+                // flex="2"
+                // gap="22px"
               >
                 <ResponsiveH2
                   size="40px"
@@ -360,6 +348,7 @@ function Home({isAlertVisible}) {
                   size="19px"
                   lineHeight="160%"
                   spacing="-0.03em"
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   Until Push, no solution existed to enable native communication between wallets in response to on- and
                   off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
@@ -372,12 +361,35 @@ function Home({isAlertVisible}) {
                   size="22px"
                   lineHeight="142%"
                   spacing="-0.03em"
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                   improving the everyday experience for blockchain users.
                 </Span>
+
+                
+
+                <Anchor
+                  href="https://docs.push.org/developers"
+                  title="Developer Docs"
+                  target="_blank"
+                  bg="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  self="center"
+                  margin={isMobile && "20px 0px 0px 0px"}
+                >
+                  {/* Learn about $PUSH */}
+                  How Push works
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Anchor>
               </ItemV>
             </PushWorksRow>
+            {/* </FadeInAnimation> */}
           </Content>
         </StorySection>
 
@@ -974,6 +986,7 @@ const HeroPrimary = styled(ItemHV2)`
 `;
 
 const MemberImage = styled(ImageHolder)`
+
 `;
 
 const HeroAnimation = styled(ItemHV2)`
@@ -1039,11 +1052,12 @@ const HomeWrapper = styled.main`
     row-gap: 18px;
   }
   & .pushMissingSvg {
-    width: 433px;
-    height: 282px;
+    width: 500px;
+    @media ${device.laptop} {
+    width: 400px;
+    }
     @media ${device.tablet} {
       width: 100%;
-      height: auto;
     }
   }
   @media ${device.tablet} {
@@ -1085,6 +1099,18 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
 `;
 
+const ItemImage = styled(ItemV)`
+    width: 100%;
+    @media ${device.tablet} {
+     width: 400px;
+     margin: 0 auto;
+    }
+
+    @media ${device.mobileL} {
+      width: 100%;
+     }
+`
+
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
   min-height: auto;
@@ -1123,12 +1149,25 @@ const HeroBox = styled(ItemV)`
 `;
 
 const PushWorksRow = styled(ItemH)`
-  column-gap: 105px;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  // column-gap: 105px;
+  column-gap: 40px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: row;
 
   @media ${device.tablet} {
+    flex-direction: column;
     row-gap: 30px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  @media ${device.mobileL} {
+    row-gap: 30px;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
 `;
 
