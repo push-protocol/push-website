@@ -309,7 +309,7 @@ function Home({isAlertVisible}) {
               </ItemV>
             </Partners>
 
-            <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
+            {/* <FadeInAnimation wrapperElement="div" direction='up' delay={0}> */}
             <PushWorksRow>
               <ItemImage
                 justifyContent="center"
@@ -392,7 +392,7 @@ function Home({isAlertVisible}) {
                 </Anchor>
               </ItemV>
             </PushWorksRow>
-            </FadeInAnimation>
+            {/* </FadeInAnimation> */}
           </Content>
         </StorySection>
 
