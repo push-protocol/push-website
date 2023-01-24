@@ -1075,14 +1075,10 @@ const StorySection = styled(ResponsiveSection)`
 const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
 
-  // @media ${device.tablet} {
-  //   padding: 0 12px !important;
+  @media ${device.tablet} {
+    padding: 0px 0px 10px 0px;
+  }
 
-  //   & .contentBox {
-  //     margin-top: -72px;
-  //     z-index: 1;
-  //   }
-  // }
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
@@ -1186,6 +1182,10 @@ export const BodyContent = styled.div`
   //   flex: 1;
   //   display: flex;
 	// }
+
+  @media ${device.tablet} {
+  	padding: ${(props) => props.padding || '10px 0px'};
+  }
 `;
 
 const Partners = styled(ItemH)``;
