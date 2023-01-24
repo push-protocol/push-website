@@ -2,15 +2,28 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React from 'react'
+import React, { useEffect ,useRef } from 'react'
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { BsArrowUpRight } from 'react-icons/bs'
+import VanillaTilt from 'vanilla-tilt';
 
+export const Tilt = (props) => {
+    const { options, ...rest } = props;
+    const tilt = useRef(null);
+  
+    useEffect(() => {
+      VanillaTilt.init(tilt.current, options);
+    }, [options]);
+  
+    return <div ref={tilt} {...rest} />;
+  }
 
 const ChannelItem = ({ channelProp }) => {
   const [channelObject, setChannelObject] = React.useState({});
   const [loading, setLoading] = React.useState(true);
+ 
 
 
     React.useEffect(() => {
@@ -20,16 +33,22 @@ const ChannelItem = ({ channelProp }) => {
       }, [channelProp]);
 
   return (
-    <Container>
-        <ChannelLogo>
-            {loading ? (
-                <Skeleton
-                    height={100} width={100} borderRadius={20}
-                />
-                ) : (
-                    <ChannelLogoImg src={`${channelObject.icon}`} />
-                )}
-        </ChannelLogo>
+    <Container href={channelObject.url} target="_blank">
+        <ChannelTop>
+            <ChannelLogo>
+                {loading ? (
+                    <Skeleton
+                        height={100} width={100} borderRadius={20}
+                    />
+                    ) : (
+                        <ChannelLogoImg src={`${channelObject.icon}`} />
+                    )}
+            </ChannelLogo>
+
+            <div className='class'>
+                <BsArrowUpRight size={25} color={'#000'} />
+            </div>
+        </ChannelTop>
         
         <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
 
@@ -41,7 +60,7 @@ const ChannelItem = ({ channelProp }) => {
   )
 }
 
-const Container = styled.div`
+const Container = styled.a`
     border: 1px solid #BAC4D6;
     border-radius: 38.5px;
     padding: 30px;
@@ -49,6 +68,29 @@ const Container = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    flex: 1;
+    &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid #BAC4D6;
+        backdrop-filter: blur(60px);
+        div:first-child {
+            .class{
+                display: block;
+            }
+         }
+    } 
+    div:first-child {
+            .class{
+                display: none;
+            }
+    }
+`;
+
+const ChannelTop = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
 
 const ChannelLogo = styled.div`

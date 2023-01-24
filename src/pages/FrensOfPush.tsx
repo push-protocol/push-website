@@ -16,7 +16,7 @@ import { BodyContent } from './Home';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { BiSearch } from 'react-icons/bi';
 import { getChannels, getChannelsSearch } from 'api';
-import ChannelItem from 'components/ChannelItem';
+import ChannelItem, { Tilt } from 'components/ChannelItem';
 import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
 
@@ -31,6 +31,11 @@ const [channels, setChannels] = useState([]);
 const [page, setPage] = useState(1); 
 const [loading, setLoading] = React.useState(false);
 const [search, setSearch] = React.useState('')
+const options = {
+    scale: 1,
+    speed: 1000,
+    max: 30
+  };
 
 
 const sortList = [
@@ -202,7 +207,11 @@ useEffect(() => {
                     <ChannelsSection>
                         {channels?.map((item,i) => (
                             <Channels key={item.ipfshash}>
-                                <ChannelItem channelProp={item} />
+                                {isMobile ? 
+                                (<ChannelItem channelProp={item} />) :
+                                (<Tilt options={options} className='box'>
+                                     <ChannelItem channelProp={item} />
+                                </Tilt>)}
                             </Channels>
                         ))}
                     </ChannelsSection>
@@ -449,6 +458,10 @@ const Wrapper = styled.div`
 `;
 
 const Channels = styled.div`
+    .box {
+        flex: 1;
+        height: 100% !important;
+    }
 `
 
 const ShowMoreSection = styled.div`

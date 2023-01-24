@@ -9986,6 +9986,11 @@ v8-to-istanbul@^8.1.0:
     convert-source-map "^1.6.0"
     source-map "^0.7.3"
 
+vanilla-tilt@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vanilla-tilt/-/vanilla-tilt-1.8.0.tgz#64528ff3667dc6976270236a56332a123482ce3c"
+  integrity sha512-wVCHyyfRuiRdKhDTNxKPb60lkagmywDSqLgFETEr71Sm646AvGxuf/14Kx9A8FaISyYvMoKQHk6FTqt+YLGhEw==
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
