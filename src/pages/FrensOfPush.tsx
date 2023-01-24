@@ -15,7 +15,7 @@ import SignupInput from 'components/SignupInput';
 import { BodyContent } from './Home';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { BiSearch } from 'react-icons/bi';
-import { getChannels } from 'api';
+import { getChannels, getChannelsSearch } from 'api';
 import ChannelItem from 'components/ChannelItem';
 import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
@@ -30,6 +30,7 @@ const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
 const [page, setPage] = useState(1); 
 const [loading, setLoading] = React.useState(false);
+const [search, setSearch] = React.useState('')
 
 
 const sortList = [
@@ -81,6 +82,8 @@ const fetchChannels = async () => {
 const ShowMore = async () => {
     let newPage = page + 1;
     setPage(newPage)
+    if(search.length === 0){
+
     try {
         setLoading(true)
         const data = await getChannels(newPage)
@@ -91,12 +94,49 @@ const ShowMore = async () => {
         setLoading(false)
     }
 }
+else{
+    getMoreSearchPages(newPage)
+}
+}
 
-console.log(channels)
+const channelSearch = async (e) => {
+    let query = e.target.value;
+    let newPage = 1;
+    setPage(newPage);
+    setSearch(e.target.value);
+    
+
+    try {
+        setLoading(true)
+        const data = await getChannelsSearch(newPage, query)
+        setChannels(data)
+    } catch (error) {
+        console.error("Channels API data fetch error: ", error)
+    } finally {
+        setLoading(false)
+    }
+}
+
+const getMoreSearchPages = async (newPage) => {
+    try {
+        setLoading(true)
+        const data = await getChannelsSearch(newPage, search)
+        setChannels(current => [...current, ...data])
+    } catch (error) {
+        console.error("Channels API data fetch error: ", error)
+    } finally {
+        setLoading(false)
+    }
+}
 
 useEffect(() => {
     fetchChannels()
 }, [])
+
+useEffect(() => {
+    if(search.length > 0) return;
+    fetchChannels()
+}, [search])
   return (
     <PageWrapper
       pageName={pageMeta.FRENS.pageName}
@@ -139,7 +179,10 @@ useEffect(() => {
                       <BiSearch size="23" color='#121315' />
                       <input 
                         type="text"
-                        placeholder='Search dapps'/>
+                        value={search}
+                        placeholder='Search dapps'
+                        onChange={channelSearch}
+                        />
 
                     </Wrapper>
 
@@ -163,6 +206,12 @@ useEffect(() => {
                             </Channels>
                         ))}
                     </ChannelsSection>
+
+                    {search && !loading && channels.length === 0 &&(<CenteredContainerInfo>
+                        <DisplayNotice>
+                             No channels match your query, please search for another name/address
+                        </DisplayNotice>
+                    </CenteredContainerInfo>)}
 
                     {loading && (<ItemH>
                         <img src={SpinnerSVG} alt='' width={140} />
@@ -226,6 +275,28 @@ const FrensWrapper = styled.main`
     width: 100%;
   }
 `;
+
+const CenteredContainerInfo = styled.div`
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DisplayNotice = styled.span`
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  background: rgb(244, 245, 250);
+`
 
 const ToggleSection = styled.div`
   display: flex;

@@ -88,3 +88,15 @@ export async function getChannels(page) {
       throw Error(error);
     });
 }
+
+export const getChannelsSearch = async (page, query) => {
+  const requrl = `https://backend.epns.io/apis/v1/channels/search?page=${page}&limit=9&order=desc&query=${query}`;
+
+  return axios.get(requrl)
+    .then((apiResponse) => {
+      const channels = apiResponse?.data?.channels;
+      return channels;
+    }).catch(error => {
+      throw Error(error);
+    });
+};
