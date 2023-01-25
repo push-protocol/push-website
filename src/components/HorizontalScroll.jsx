@@ -126,7 +126,7 @@ const HorizontalScroll = () => {
                 alt={'Illustration showing Push Notifications'}
                 title='Push Notifications'
                 addMargin={false}
-                link="https://docs.push.org/developers"
+                link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
@@ -136,7 +136,7 @@ const HorizontalScroll = () => {
                 alt={'Illustration showing Push Chat'}
                 title='Push Chat'
                 addMargin={true}
-                link="https://docs.push.org/developers"
+                link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
                 paddingMobile={"30px 0px"}
               />
 
@@ -147,7 +147,7 @@ const HorizontalScroll = () => {
                 alt={'Illustration showing Push DAO'}
                 title='Push DAO'
                 addMargin={true}
-                link="https://docs.push.org/developers"
+                link="https://gov.push.org/"
                 paddingBottom={"34px"}
                 paddingMobile={"30px 0px"}
               />
