@@ -62,7 +62,7 @@ const SlideElement = ({
 
     <Div padding = {paddingMobile}>
       <MemberImage
-            className='figureSvg'
+            className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
             src={image}
             srcSet={image}
             alt= {alt}
@@ -237,9 +237,40 @@ const GrowPushCard = styled(ItemV)`
    @media (min-width: 1200px) and (max-height: 758px) {
        width: 400px;
        height: 100%;
- }
+      }
+  }
 
-   
+  & .secondFigureSvg {
+    width: 575px;
+    height: 100%;
+    display: block;
+
+  
+    @media ${device.tablet} {
+      width: 400px;
+      height: 100%;
+    }
+
+    @media ${device.mobileL} {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1250px) {
+       width: 400px;
+       height: 100%;
+    }
+
+    @media (min-width: 1440px) and (max-width: 1800px) {
+      width: 575px;
+      height: 100%;
+   }
+
+   @media (min-width: 1200px) and (max-height: 758px) {
+       width: 400px;
+       height: 100%;
+      }
   }
 
   @media ${device.tablet} {
