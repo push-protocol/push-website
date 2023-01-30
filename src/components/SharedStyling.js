@@ -546,6 +546,28 @@ export const Anchor = styled.a`
   }
 `;
 
+export const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
+
 export const A = styled(Anchor)`
   display: inline;
   color: ${(props) => props.color || '#e1087f'};

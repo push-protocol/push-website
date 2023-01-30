@@ -19,7 +19,7 @@ function ImageHolder(props) {
   const { srcWebp, fallback ,src, srcSet, alt, ...restProps } = props || {};
 
   return (
-    <picture>
+    <picture> 
     <source
         srcSet={srcWebp}
         type="image/webp"
@@ -34,7 +34,7 @@ function ImageHolder(props) {
       alt={alt}
       {...restProps}
     />
-    </picture>
+     </picture> 
   );
 }
 
