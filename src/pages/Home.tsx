@@ -242,7 +242,8 @@ function Home({isAlertVisible}) {
         >
           <Content className="contentBox">
 
-            {!isLargeScreen && <PartnerChannels />}
+            {/* {!isLargeScreen && } */}
+            <PartnerChannels />
 
             <Partners
               margin="40px 0"

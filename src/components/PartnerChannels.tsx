@@ -48,6 +48,7 @@ import { ReactComponent as UniswapSVG }  from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG }  from '../assets/partners/unstoppable.svg';
 import { Anchor, H2, ItemH, Span } from './SharedStyling';
 import { device } from 'config/globals';
+import useMediaQuery from 'hooks/useMediaQuery';
 
 
 
@@ -101,7 +102,11 @@ const partnerSortedGroup = [
 ];
 
 
+
+
 function PartnerChannels() {
+  const isLargeScreen = useMediaQuery('(max-width: 1250px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
 
@@ -117,17 +122,26 @@ function PartnerChannels() {
     <>
      <PartnerRow
         justifyContent="flex-start"
-        gap="28px"
         padding="150px 0px 0px 0px"
       >
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)} 
+          {isLargeScreen ? 
+          (firstRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (firstRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
 
       <PartnerRow
         justifyContent="flex-start"
-        gap="28px"
       >
-          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {isLargeScreen ? 
+          (secondRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (secondRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
+      </PartnerRow>
+
+      <PartnerRow
+        justifyContent="flex-start"
+      >
+          {isLargeScreen && 
+          (secondRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
       </PartnerRow>
 
       <Body>
@@ -157,8 +171,9 @@ function PartnerChannels() {
                 weight="300"
                 spacing="-0.03em"
                 lineHeight="160%"
+                textAlign={isMobile ? "center" : "initial"}
               >
-                Quis posuere aliquam est orci lectus. Lectus <br /> amet amet enim non facilisi pretium tempus.
+                Quis posuere aliquam est orci lectus. Lectus {!isMobile && (<br />)} amet amet enim non facilisi pretium tempus.
               </Span>
 
               <Anchor
@@ -188,17 +203,28 @@ function PartnerChannels() {
 
       <PartnerRow
         justifyContent="flex-start"
-        gap="28px"
       >
-          {fifthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {/* {fifthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
+          {isLargeScreen ? 
+          (fifthRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (fifthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
 
       <PartnerRow
         justifyContent="flex-start"
-        gap="28px"
+      >
+          {isLargeScreen && 
+          (fifthRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
+      </PartnerRow>
+
+      <PartnerRow
+        justifyContent="flex-start"
         padding="0px 0px 150px 0px"
       >
-          {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          {/* {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
+          {isLargeScreen ? 
+          (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (sixthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
       
       {/* <PartnerRow
@@ -252,10 +278,25 @@ function PartnerChannels() {
 
 const PartnerRow = styled(ItemHV2)`
   margin: 16px auto;
+  gap: 28px;
   & svg.marqueeItem {
     width: 96px;
     height: 96px;
   }
+  @media ${device.laptop} {
+    gap: 14px;
+    margin: 7px auto;
+   }
+
+   @media ${device.mobileL} {
+    gap: 12px;
+    margin: 6px auto;
+   }
+
+   @media ${device.mobileM} {
+    gap: 6px;
+    margin: 3px auto;
+   }
 `;
 
 const GridRow = styled.div`
@@ -266,10 +307,16 @@ const GridRow = styled.div`
     width: 96px;
     height: 96px;
   }
+  @media ${device.laptop} {
+   display: none;
+  }
 `;
 const GridItem = styled(ItemH)`
   // padding: 30px 0px;
   // box-sizing: border-box;
+  @media ${device.laptop} {
+    padding: 30px 0px;
+   }
 `
 
 const ResponsiveH2 = styled(H2)`
