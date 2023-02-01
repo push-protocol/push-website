@@ -45,7 +45,7 @@ const SlideElement = ({
       </Span>
       <Anchor
         href={link}
-        title="Developer Docs"
+        title={title}
         target="_blank"
         padding="0px 0px"
         size={isMobile ? "18px" : "20px"}
@@ -54,6 +54,7 @@ const SlideElement = ({
         lineHeight="26px"
         className='button'
         margin="10px 0px 0px 0px"
+        // hoverShade="none"
       >
       <SpanLink>{linkContent}</SpanLink>
       <FiArrowUpRight className="anchorSVGlink" />
