@@ -105,7 +105,7 @@ const partnerSortedGroup = [
 
 
 function PartnerChannels() {
-  const isLargeScreen = useMediaQuery('(max-width: 1250px)');
+  const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
@@ -122,7 +122,7 @@ function PartnerChannels() {
     <>
      <PartnerRow
         justifyContent="flex-start"
-        padding="150px 0px 0px 0px"
+        padding="150px 0px 14px 0px"
       >
           {isLargeScreen ? 
           (firstRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
@@ -226,50 +226,6 @@ function PartnerChannels() {
           (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
           (sixthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
-      
-      {/* <PartnerRow
-        justifyContent="flex-start"
-        gap="32px"
-      >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="left"
-        >
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
-      </PartnerRow>
-
-      <PartnerRow
-        margin="130px 0 130px 0"
-        justifyContent="flex-start"
-        gap="32px"
-      >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="right"
-        >
-          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
-      </PartnerRow>
-
-      <PartnerRow
-        margin="0px 0 240px 0"
-        justifyContent="flex-start"
-        gap="32px"
-      >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="left"
-        >
-          {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
-      </PartnerRow> */}
     </>
    
   );
@@ -277,7 +233,7 @@ function PartnerChannels() {
 
 
 const PartnerRow = styled(ItemHV2)`
-  margin: 16px auto;
+  margin: 14px auto 0px auto;
   gap: 28px;
   & svg.marqueeItem {
     width: 96px;
@@ -303,18 +259,17 @@ const GridRow = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
+  margin: 7px 0px;
   & svg.marqueeItem {
     width: 96px;
     height: 96px;
   }
-  @media ${device.laptop} {
+  @media (max-width: 1200px) {
    display: none;
   }
 `;
 const GridItem = styled(ItemH)`
-  // padding: 30px 0px;
-  // box-sizing: border-box;
-  @media ${device.laptop} {
+  @media (max-width: 1200px) {
     padding: 30px 0px;
    }
 `
