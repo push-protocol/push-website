@@ -1006,6 +1006,10 @@ const ResponsiveSection = styled(HybridSection)`
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
+  @media (max-width: 320px) {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 `;
 
 const ResponsiveH2 = styled(H2)`
