@@ -121,7 +121,7 @@ const FAQS = [
               <LIMod> <AMod href="https://push-protocol.medium.com/kicking-off-the-epns-nft-community-drops-6a5c49808cf"> Rockstars of Push </AMod></LIMod>
               <LIMod> Participate in one of our Pools available at <AMod href="https://app.push.org/#/yield/">https://app.push.org/#/yield/</AMod></LIMod>
               <LIMod> Participate in our Collaboration announcements activities (AMAs, Meme contests)  </LIMod>
-              <LIMod> Participate to become an Push champion in our Governance process </LIMod>
+              <LIMod> Participate to become a Push champion in our Governance process </LIMod>
             </OL>
           </LIMod>
           <LIMod>
@@ -180,7 +180,7 @@ const FAQS = [
           Additionally, our development team is always available on our <AMod href="https://discord.gg/pushprotocol">Discord Community Server</AMod> to help with more technical matters related to integrations.
         </Span>
         <Span>
-          Finally, our team of community managers will always be ready to hep and get answers to your questions through our telegram.
+          Finally, our team of community managers will always be ready to help and get answers to your questions through our telegram.
         </Span>
       </Answer>
     )
