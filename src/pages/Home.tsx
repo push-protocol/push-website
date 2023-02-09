@@ -241,7 +241,6 @@ function Home({isAlertVisible}) {
           className="lightBackground"
         >
           <Content className="contentBox">
-
             <PartnerChannels />
 
             <Partners
