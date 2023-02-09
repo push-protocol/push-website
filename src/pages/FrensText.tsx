@@ -42,7 +42,7 @@ const options = {
   };
 
 
-const sortList = [
+const typeList = [
                    {
                       name: 'All',
                    },
@@ -95,12 +95,8 @@ const sortList = [
     }
   }
 
-  // useEffect(() => {
-//     fetchChannels()
-// }, [])
-
 useEffect(() => {
-    if(search.length > 0) return;
+    if(search.length > 0 || active !== "All") return;
     fetchChannels()
 }, [search])
 
@@ -165,18 +161,22 @@ useEffect(() => {
 
     const handleSort = (name) => {
       setActive(name);
+      setSearch('');
       if (name == "All"){
         fetchChannels();
+        setCount(objChannelList.length)
       } else {
         setLoading(true);
         let sortList = objChannelList.filter(x => x.type === name);
-        console.log(sortList,'hello');
         setTimeout(() => {
           setChannels(sortList);
           setLoading(false);
+          setCount(sortList.length)
       }, 500);
       }
     }
+
+    console.log(count,active);
 
 
   return (
@@ -234,7 +234,7 @@ useEffect(() => {
                     </PushRow>
 
                     <ToggleSection>
-                        {sortList.map((item,i) => 
+                        {typeList.map((item,i) => 
                         (<ToggleButton 
                             key={item?.name}
                             active={active === item?.name ? true : false}
@@ -242,7 +242,7 @@ useEffect(() => {
                             >
                             <Span>{item?.name}</Span>
 
-                            {item.count && (<b>{item?.count}</b>)}
+                            {active === item?.name && (<b>{count}</b>)}
                         </ToggleButton>))}
                     </ToggleSection>
 
@@ -262,6 +262,12 @@ useEffect(() => {
                     {search && !loading && channels.length === 0 &&(<CenteredContainerInfo>
                         <DisplayNotice>
                              No channels match your query, please search for another name/address
+                        </DisplayNotice>
+                    </CenteredContainerInfo>)}
+
+                    {active !== 'All' && !loading && count === 0 &&(<CenteredContainerInfo>
+                        <DisplayNotice>
+                             No channels under this type yet.
                         </DisplayNotice>
                     </CenteredContainerInfo>)}
 
