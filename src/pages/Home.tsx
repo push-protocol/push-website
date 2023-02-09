@@ -241,7 +241,7 @@ function Home({isAlertVisible}) {
           className="lightBackground"
         >
           <Content className="contentBox">
-          
+
           <PoweringCommunicationRow>
               <ItemV justifyContent="flex-start">
                 <ResponsiveH2
