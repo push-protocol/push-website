@@ -30,6 +30,8 @@ const FrensText = () => {
 const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
 const [page, setPage] = useState(0); 
+const [active, setActive] = useState('All'); 
+const [count, setCount] = useState(objChannelList?.length); 
 const [searchPage, setSearchPage] = useState(0); 
 const [loading, setLoading] = React.useState(true);
 const [search, setSearch] = React.useState('')
@@ -41,9 +43,11 @@ const options = {
 
 
 const sortList = [
+                   {
+                      name: 'All',
+                   },
                     {
                         name: 'DeFi',
-                        count: '124'
                     },
                     {
                         name: 'DAO',
@@ -160,8 +164,18 @@ useEffect(() => {
     }
 
     const handleSort = (name) => {
-      let sortList = objChannelList.filter(x => x.type === name);
-      console.log(sortList,'hello')
+      setActive(name);
+      if (name == "All"){
+        fetchChannels();
+      } else {
+        setLoading(true);
+        let sortList = objChannelList.filter(x => x.type === name);
+        console.log(sortList,'hello');
+        setTimeout(() => {
+          setChannels(sortList);
+          setLoading(false);
+      }, 500);
+      }
     }
 
 
@@ -223,9 +237,10 @@ useEffect(() => {
                         {sortList.map((item,i) => 
                         (<ToggleButton 
                             key={item?.name}
+                            active={active === item?.name ? true : false}
                             onClick={() => handleSort(item?.name)}
                             >
-                            <Span color={item?.count ? "#fff" : "#121315"}>{item?.name}</Span>
+                            <Span>{item?.name}</Span>
 
                             {item.count && (<b>{item?.count}</b>)}
                         </ToggleButton>))}
@@ -254,7 +269,7 @@ useEffect(() => {
                         <img src={SpinnerSVG} alt='' width={140} />
                     </ItemH>)}
 
-                    {!loading && (<ShowMoreSection onClick={ShowMore}>
+                    {!loading && active === "All" && (<ShowMoreSection onClick={ShowMore}>
                         <FiChevronDown size={23} />
                         <b>Show More</b>
                     </ShowMoreSection>)}
@@ -355,7 +370,7 @@ const ChannelsSection = styled.div`
 `
 
 const ToggleButton = styled.div`
-    border: 1px solid #BAC4D6;
+    border: ${(props) => props.active ? 'none' : '1px solid #BAC4D6'};
     border-radius: 62px;
     display: flex;
     flex-direction: row;
@@ -367,8 +382,10 @@ const ToggleButton = styled.div`
     height: fit-content;
     left: 0;
     margin: 5px 5px;
+    background: ${(props) => props.active ? '#D53893' : 'transparent'};
+    color: ${(props) => props.active ? '#fff' : '#000'};
     &:hover {
-        background: #FFDBF0;
+        background: ${(props) => props.active ? '#D53893' : '#FFDBF0'};
         border: none;
         cursor: pointer;
     }
@@ -377,18 +394,19 @@ const ToggleButton = styled.div`
      font-size: 20px;
      font-weight: 500;
      border: none;
+     color: ${(props) => props.active ? '#fff' : '#000'};
     }
 
-    &:has(b) {
-        background: #D53893;
-        color: #fff;
-        border: none;
-        &:hover {
-            background: #D53893;
-            border: none;
-            cursor: pointer;
-        }
-    }
+    // &:has(b) {
+    //     background: #D53893;
+    //     color: #fff;
+    //     border: none;
+    //     &:hover {
+    //         background: #D53893;
+    //         border: none;
+    //         cursor: pointer;
+    //     }
+    // }
 
     b {
         font-weight: 500;
