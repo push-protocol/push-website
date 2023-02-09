@@ -54,7 +54,7 @@ const ChannelItem = ({ channelProp }) => {
 
         <ChannelDesc>{channelObject.info}</ChannelDesc>
 
-        <ChannelType><b>Infrastructure</b></ChannelType>
+        <ChannelType><b>{channelObject?.type}</b></ChannelType>
         
     </Container>
   )

@@ -30,7 +30,8 @@ export const objChannelList = [
             "blocked": 0,
             "is_alias_verified": 0,
             "itemcount": 163,
-            "subscriber_count": 10096
+            "subscriber_count": 10096,
+            "type": "Infrastructure"
         },
         {
             "id": 26,
@@ -53,7 +54,8 @@ export const objChannelList = [
             "blocked": 0,
             "is_alias_verified": 0,
             "itemcount": 163,
-            "subscriber_count": 2161
+            "subscriber_count": 2161,
+            "type": "News"
         },
         {
             "id": 20,

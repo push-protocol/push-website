@@ -30,6 +30,7 @@ const FrensText = () => {
 const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
 const [page, setPage] = useState(0); 
+const [searchPage, setSearchPage] = useState(0); 
 const [loading, setLoading] = React.useState(true);
 const [search, setSearch] = React.useState('')
 const options = {
@@ -74,37 +75,93 @@ const sortList = [
     ]
 
     useEffect(() => {
-        if (objChannelList.length) {
-        let list = objChannelList?.slice(page, page + 9)
+      fetchChannels();
+    },[objChannelList])
+
+    const fetchChannels = () => {
+      let freshPage = 0; 
+      setPage(freshPage)
+      setSearchPage(0)
+      if (objChannelList.length) {
+        let list = objChannelList?.slice(freshPage, freshPage + 9)
         setTimeout(() => {
             setLoading(false)
             setChannels(list)
         }, 1000);
     }
-    },[objChannelList])
+  }
+
+  // useEffect(() => {
+//     fetchChannels()
+// }, [])
+
+useEffect(() => {
+    if(search.length > 0) return;
+    fetchChannels()
+}, [search])
 
     const ShowMore = async () => {
+    //page
     let newPage = page + 9;
     setPage(newPage)
-    // if(search.length === 0){
 
-            try {
-                setLoading(true)
-                let data = objChannelList?.slice(newPage, newPage + 9);
-                setTimeout(()=>{
-                 setChannels(current => [...current, ...data]);
-                }, 500)
-            } catch (error) {
-                console.error("Channels API data fetch error: ", error);
-            } finally {
-                setTimeout(()=>{
-                    setLoading(false);
-                }, 500);
-            }
-        // }
-        // else{
-        //     getMoreSearchPages(newPage)
-        // }
+    //search page 
+    let newSearchPage = searchPage + 1;
+    setSearchPage(newSearchPage);
+    if(search.length == 0){
+
+        try {
+            setLoading(true)
+            let data = objChannelList?.slice(newPage, newPage + 9);
+            setTimeout(() => {
+              setChannels(current => [...current, ...data]);
+            }, 500)
+        } catch (error) {
+            console.error("Channels API data fetch error: ", error);
+        } finally {
+            setTimeout(() => {
+                setLoading(false);
+            }, 500);
+        }
+        }
+        else{
+            getMoreSearchPages(newSearchPage);
+        }
+    }
+
+    const channelSearch = async (e) => {
+      let query = e.target.value;
+      let newPage = 1;
+      setSearchPage(newPage);
+      setSearch(e.target.value);
+      if (e.target.value?.length == 0) return
+
+      try {
+          setLoading(true)
+          const data = await getChannelsSearch(newPage, query)
+          setChannels(data)
+      } catch (error) {
+          console.error("Channels API data fetch error: ", error)
+      } finally {
+          setLoading(false)
+      }
+    }
+
+    const getMoreSearchPages = async (newPage) => {
+        try {
+            setLoading(true)
+            const data = await getChannelsSearch(newPage, search)
+            setChannels(current => [...current, ...data])
+        } catch (error) {
+            console.error("Channels API data fetch error: ", error)
+        } finally {
+            setLoading(false)
+        }
+    }
+
+    const handleSort = (name) => {
+      let sortList = objChannelList.filter(x => x.type === name);
+      console.log(sortList,'hello')
     }
 
 
@@ -148,7 +205,7 @@ const sortList = [
                         maxWidth="350px"
                         justifyContent="flex-end">
 
-                    {/* <Wrapper>
+                    <Wrapper>
                       <BiSearch size="23" color='#121315' />
                       <input 
                         type="text"
@@ -157,15 +214,18 @@ const sortList = [
                         onChange={channelSearch}
                         />
 
-                    </Wrapper> */}
+                    </Wrapper>
 
                     </ItemV>
                     </PushRow>
 
                     <ToggleSection>
                         {sortList.map((item,i) => 
-                        (<ToggleButton key={item?.name}>
-                            <Span color={item.count ? "#fff" : "#121315"}>{item?.name}</Span>
+                        (<ToggleButton 
+                            key={item?.name}
+                            onClick={() => handleSort(item?.name)}
+                            >
+                            <Span color={item?.count ? "#fff" : "#121315"}>{item?.name}</Span>
 
                             {item.count && (<b>{item?.count}</b>)}
                         </ToggleButton>))}
