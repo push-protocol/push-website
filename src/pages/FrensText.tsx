@@ -25,12 +25,12 @@ import ChannelList, { objChannelList } from 'config/ChannelList';
 
 
 
-const FrensOfPush = () => {
+const FrensText = () => {
 
 const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
-const [page, setPage] = useState(1); 
-const [loading, setLoading] = React.useState(false);
+const [page, setPage] = useState(0); 
+const [loading, setLoading] = React.useState(true);
 const [search, setSearch] = React.useState('')
 const options = {
     scale: 1,
@@ -40,109 +40,74 @@ const options = {
 
 
 const sortList = [
-    {
-        name: 'DeFi',
-        count: '124'
-    },
-    {
-        name: 'DAO',
-    },
-    {
-        name: 'NFT',
-    },
-    {
-        name: 'Metaverse',
-    },
-    {
-        name: 'Tooling',
-    },
-    {
-        name: 'Infrastructure',
-    },
-    {
-        name: 'Social',
-    },
-    {
-        name: 'Service',
-    },
-    {
-        name: 'Gaming',
-    },
-    {
-        name: 'Media',
+                    {
+                        name: 'DeFi',
+                        count: '124'
+                    },
+                    {
+                        name: 'DAO',
+                    },
+                    {
+                        name: 'NFT',
+                    },
+                    {
+                        name: 'Metaverse',
+                    },
+                    {
+                        name: 'Tooling',
+                    },
+                    {
+                        name: 'Infrastructure',
+                    },
+                    {
+                        name: 'Social',
+                    },
+                    {
+                        name: 'Service',
+                    },
+                    {
+                        name: 'Gaming',
+                    },
+                    {
+                        name: 'Media',
+                    }
+    ]
+
+    useEffect(() => {
+        if (objChannelList.length) {
+        let list = objChannelList?.slice(page, page + 9)
+        setTimeout(() => {
+            setLoading(false)
+            setChannels(list)
+        }, 1000);
     }
-]
+    },[objChannelList])
 
-// const fetchChannels = async () => {
-//     try {
-//         setLoading(true)
-//         const data = await getChannels(page)
-//         setChannels(data)
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
+    const ShowMore = async () => {
+    let newPage = page + 9;
+    setPage(newPage)
+    // if(search.length === 0){
 
-// const ShowMore = async () => {
-//     let newPage = page + 1;
-//     setPage(newPage)
-//     if(search.length === 0){
+            try {
+                setLoading(true)
+                let data = objChannelList?.slice(newPage, newPage + 9);
+                setTimeout(()=>{
+                 setChannels(current => [...current, ...data]);
+                }, 500)
+            } catch (error) {
+                console.error("Channels API data fetch error: ", error);
+            } finally {
+                setTimeout(()=>{
+                    setLoading(false);
+                }, 500);
+            }
+        // }
+        // else{
+        //     getMoreSearchPages(newPage)
+        // }
+    }
 
-//     try {
-//         setLoading(true)
-//         const data = await getChannels(newPage)
-//         setChannels(current => [...current, ...data])
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
-// else{
-//     getMoreSearchPages(newPage)
-// }
-// }
 
-// const channelSearch = async (e) => {
-//     let query = e.target.value;
-//     let newPage = 1;
-//     setPage(newPage);
-//     setSearch(e.target.value);
-    
-
-//     try {
-//         setLoading(true)
-//         const data = await getChannelsSearch(newPage, query)
-//         setChannels(data)
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
-
-// const getMoreSearchPages = async (newPage) => {
-//     try {
-//         setLoading(true)
-//         const data = await getChannelsSearch(newPage, search)
-//         setChannels(current => [...current, ...data])
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
-
-// useEffect(() => {
-//     fetchChannels()
-// }, [])
-
-// useEffect(() => {
-//     if(search.length > 0) return;
-//     fetchChannels()
-// }, [search])
   return (
     <PageWrapper
       pageName={pageMeta.FRENS.pageName}
@@ -158,7 +123,7 @@ const sortList = [
             </Content>
             </AnimationSection>
 
-            <ChannelList />
+            {/* <ChannelList /> */}
 
             <PoweredSection 
                 id="story"
@@ -208,17 +173,7 @@ const sortList = [
 
 
                     <ChannelsSection>
-                        {/* {channels?.map((item,i) => (
-                            <Channels key={item.ipfshash}>
-                                {isMobile ? 
-                                (<ChannelItem channelProp={item} />) :
-                                (<Tilt options={options} className='box'>
-                                     <ChannelItem channelProp={item} />
-                                </Tilt>)}
-                            </Channels>
-                        ))} */}
-
-                        {objChannelList?.map((item,i) => (
+                        {channels?.map((item,i) => (
                             <Channels key={item.ipfshash}>
                                 {isMobile ? 
                                 (<ChannelItem channelProp={item} />) :
@@ -239,10 +194,10 @@ const sortList = [
                         <img src={SpinnerSVG} alt='' width={140} />
                     </ItemH>)}
 
-                    {/* {!loading && (<ShowMoreSection onClick={ShowMore}>
+                    {!loading && (<ShowMoreSection onClick={ShowMore}>
                         <FiChevronDown size={23} />
                         <b>Show More</b>
-                    </ShowMoreSection>)} */}
+                    </ShowMoreSection>)}
                 </Content>
 
 
@@ -511,4 +466,4 @@ const ShowMoreSection = styled.div`
     }
 `
 
-export default FrensOfPush
+export default FrensText

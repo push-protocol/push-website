@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from "./pages/Home";
+import FrensText from 'pages/FrensText';
 
 
 ReactGA.initialize('UA-165415629-2');
@@ -66,7 +67,8 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/privacymobile" element={<PrivacyMobile />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
-        <Route path="/frens" element={<FrensOfPush />} />
+        {/* <Route path="/frens" element={<FrensOfPush />} /> */}
+        <Route path="/frens" element={<FrensText />} />
       </Routes>
       <Footer />
     </AppWrapper>  
