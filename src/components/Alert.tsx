@@ -16,8 +16,8 @@ import { device } from '../config/globals';
 
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
-    const alertMessage = "Decentralized, uncensorable, web3-native chat is here. Powered by Push Protocol.";
-    const alertLink = "https://medium.com/push-protocol/announcing-the-push-chat-alpha-launch-f183765ec522";
+    const alertMessage = "Superfluid Taps Push to Update Users on Money Streaming,";
+    const alertLink = "https://app.push.org/#/channels?channel=0xa947E9cFc724f05D83b995e53572c4bcCB00D7Aa";
 
     return(
         <Section>
@@ -26,7 +26,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
             <AlertContainer>
                 <AlertText>
                     {alertMessage} 
-                    <KnowMoreLink href={alertLink} target="_blank">Know more </KnowMoreLink>
+                    <KnowMoreLink href={alertLink} target="_blank">Click to get notified</KnowMoreLink>
                     <FiArrowUpRight className='icon' />
                 </AlertText>
 
@@ -86,7 +86,7 @@ const KnowMoreLink = styled.a`
     padding: 0;
     background: none;
     font-size: 1.125rem;
-    padding-left: 1rem;
+    padding-left: 0.3rem;
     color: #fff;
     text-decoration: none;
     cursor: pointer;
