@@ -46,7 +46,7 @@ import { ReactComponent as SnapshotSVG }  from '../assets/partners/snapshot.svg'
 import { ReactComponent as SymphonyFinanceSVG }  from '../assets/partners/symphonyfinance.svg';
 import { ReactComponent as UniswapSVG }  from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG }  from '../assets/partners/unstoppable.svg';
-import { Anchor, H2, ItemH, Span } from './SharedStyling';
+import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
 import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 
@@ -176,10 +176,9 @@ function PartnerChannels() {
                 Quis posuere aliquam est orci lectus. Lectus {!isMobile && (<br />)} amet amet enim non facilisi pretium tempus.
               </Span>
 
-              <Anchor
-                  href="https://docs.push.org/hub/"
+              <LinkTo
+                  to="/frens"
                   title="Learn about $PUSH"
-                  target="_blank"
                   bg="#DD44B9"
                   radius="16px"
                   padding="14px 32px"
@@ -191,7 +190,7 @@ function PartnerChannels() {
                   self="center"
                 >
                   Explore dApps
-                </Anchor>
+                </LinkTo>
       </GridItem>
 
       <GridRow>
