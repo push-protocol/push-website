@@ -36,7 +36,7 @@ const [search, setSearch] = React.useState('')
 const options = {
     scale: 1,
     speed: 1000,
-    max: 30
+    max: 20
   };
 
 

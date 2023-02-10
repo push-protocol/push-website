@@ -266,7 +266,7 @@ export const objChannelList = [
             "is_alias_verified": 0,
             "itemcount": 163,
             "subscriber_count": 536,
-            "type": "Infrastructure"
+            "type": "DeFi"
         },
         {
             "id": 12,
@@ -554,7 +554,7 @@ export const objChannelList = [
             "is_alias_verified": 0,
             "itemcount": 163,
             "subscriber_count": 154,
-            "type": "Tooling"
+            "type": "Service"
         },
         {
             "id": 29,
@@ -866,7 +866,7 @@ export const objChannelList = [
           "is_alias_verified": 0,
           "itemcount": 163,
           "subscriber_count": 87,
-          "type": "Tooling"
+          "type": "DeFi"
       },
       {
           "id": 52,
@@ -986,7 +986,7 @@ export const objChannelList = [
           "is_alias_verified": 0,
           "itemcount": 163,
           "subscriber_count": 61,
-          "type": "Tooling"
+          "type": "Service"
       },
       {
           "id": 155,
@@ -1274,7 +1274,7 @@ export const objChannelList = [
           "is_alias_verified": 0,
           "itemcount": 163,
           "subscriber_count": 1052,
-          "type": "Tooling"
+          "type": "Service"
       },
       {
           "id": 102,
@@ -1370,7 +1370,7 @@ export const objChannelList = [
           "is_alias_verified": 0,
           "itemcount": 163,
           "subscriber_count": 272,
-          "type": "Tooling"
+          "type": "Service"
       },
       {
           "id": 58,
@@ -1779,7 +1779,7 @@ export const objChannelList = [
         "is_alias_verified": 0,
         "itemcount": 163,
         "subscriber_count": 51,
-        "type": "Tooling"
+        "type": "Service"
     },
     {
         "id": 108,
@@ -2163,7 +2163,7 @@ export const objChannelList = [
         "is_alias_verified": 0,
         "itemcount": 163,
         "subscriber_count": 22,
-        "type": "Tooling"
+        "type": "DeFi"
     },
     {
       "id": 122,
@@ -2618,7 +2618,7 @@ export const objChannelList = [
       "is_alias_verified": 0,
       "itemcount": 163,
       "subscriber_count": 10,
-      "type": "Tooling"
+      "type": "DeFi"
   },
   {
       "id": 97,
@@ -3097,7 +3097,7 @@ export const objChannelList = [
     "is_alias_verified": 1,
     "itemcount": 163,
     "subscriber_count": 6,
-    "type": "Tooling"
+    "type": "DeFi"
 },
 {
     "id": 165,
@@ -3169,7 +3169,7 @@ export const objChannelList = [
     "is_alias_verified": 0,
     "itemcount": 163,
     "subscriber_count": 5,
-    "type": "Tooling"
+    "type": "DAO"
 },
 {
     "id": 98,
@@ -3193,7 +3193,7 @@ export const objChannelList = [
     "is_alias_verified": 0,
     "itemcount": 163,
     "subscriber_count": 5,
-    "type": "Tooling"
+    "type": "Service"
 },
 {
     "id": 103,
@@ -3625,7 +3625,7 @@ export const objChannelList = [
   "is_alias_verified": 0,
   "itemcount": 163,
   "subscriber_count": 4,
-  "type": "Tooling"
+  "type": "DeFi"
 },
 {
   "id": 180,
@@ -3721,7 +3721,7 @@ export const objChannelList = [
   "is_alias_verified": 0,
   "itemcount": 163,
   "subscriber_count": 3,
-  "type": "Tooling"
+  "type": "Service"
 },
 {
   "id": 143,
