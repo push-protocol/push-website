@@ -306,19 +306,6 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       Media  Kit
                     </Anchor>
-                    {/* <LinkTo
-                      to="/"
-                      title="Contact Us"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Contact Us
-                    </LinkTo> */}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -334,7 +321,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="142%"
                       padding="16px"
                     >
-                      Governance
+                      Push DAO
                     </Span>
                     <BsChevronDown
                       size={12}
@@ -346,20 +333,6 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     className="menuContent"
                     expanded={mobileMenuMap[2]}
                   >
-                    <Anchor
-                      href="https://gov.push.org"
-                      target="_blank"
-                      title="Push Governance"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Website
-                    </Anchor>
                     <Anchor
                       href="https://gov.push.org"
                       target="_blank"

@@ -533,16 +533,38 @@ export const Anchor = styled.a`
   }
 
   &:hover:after {
-    opacity: 0.08;
+    opacity: ${(props) => (props.hoverShade ? '0.08' : '0')};
   }
   &:active:after {
-    opacity: 0.15;
+    opacity: ${(props) => (props.hoverShade ? '0.15' : '0')};
   }
 
   & .anchorSVGlink {
     width: 1em;
     height: 1em;
     margin-left: 3px;
+  }
+`;
+
+export const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 `;
 
