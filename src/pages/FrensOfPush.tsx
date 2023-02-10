@@ -15,22 +15,23 @@ import SignupInput from 'components/SignupInput';
 import { BodyContent } from './Home';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { BiSearch } from 'react-icons/bi';
-import { getChannels, getChannelsSearch } from 'api';
 import ChannelItem, { Tilt } from 'components/ChannelItem';
 import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png'
-import ChannelList, { objChannelList } from 'config/ChannelList';
+import { objChannelList } from 'config/ChannelList';
 
 
 
 
-const FrensOfPush = () => {
+const FrensText = () => {
 
 const isMobile = useMediaQuery(device.mobileL)
 const [channels, setChannels] = useState([]); 
-const [page, setPage] = useState(1); 
-const [loading, setLoading] = React.useState(false);
+const [page, setPage] = useState(0); 
+const [active, setActive] = useState('All'); 
+const [count, setCount] = useState(objChannelList?.length); 
+const [loading, setLoading] = React.useState(true);
 const [search, setSearch] = React.useState('')
 const options = {
     scale: 1,
@@ -39,110 +40,117 @@ const options = {
   };
 
 
-const sortList = [
-    {
-        name: 'DeFi',
-        count: '124'
-    },
-    {
-        name: 'DAO',
-    },
-    {
-        name: 'NFT',
-    },
-    {
-        name: 'Metaverse',
-    },
-    {
-        name: 'Tooling',
-    },
-    {
-        name: 'Infrastructure',
-    },
-    {
-        name: 'Social',
-    },
-    {
-        name: 'Service',
-    },
-    {
-        name: 'Gaming',
-    },
-    {
-        name: 'Media',
+const typeList = [
+                   {
+                      name: 'All',
+                   },
+                    {
+                        name: 'DeFi',
+                    },
+                    {
+                        name: 'DAO',
+                    },
+                    {
+                        name: 'NFT',
+                    },
+                    {
+                        name: 'Metaverse',
+                    },
+                    {
+                        name: 'Tooling',
+                    },
+                    {
+                        name: 'Infrastructure',
+                    },
+                    {
+                        name: 'Social',
+                    },
+                    {
+                        name: 'Service',
+                    },
+                    {
+                        name: 'Gaming',
+                    },
+                    {
+                        name: 'Media',
+                    }
+    ]
+
+    useEffect(() => {
+      fetchChannels();
+    },[objChannelList])
+
+    const fetchChannels = () => {
+      let freshPage = 0; 
+      setPage(freshPage)
+      if (objChannelList.length) {
+        let list = objChannelList?.slice(freshPage, freshPage + 9)
+        setTimeout(() => {
+            setLoading(false)
+            setChannels(list)
+        }, 1000);
     }
-]
+  }
 
-// const fetchChannels = async () => {
-//     try {
-//         setLoading(true)
-//         const data = await getChannels(page)
-//         setChannels(data)
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
+useEffect(() => {
+    if(search.length > 0 || active !== "All") return;
+    fetchChannels()
+}, [search])
 
-// const ShowMore = async () => {
-//     let newPage = page + 1;
-//     setPage(newPage)
-//     if(search.length === 0){
+    const ShowMore = async () => {
+    //page
+    let newPage = page + 9;
+    setPage(newPage)
 
-//     try {
-//         setLoading(true)
-//         const data = await getChannels(newPage)
-//         setChannels(current => [...current, ...data])
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
-// else{
-//     getMoreSearchPages(newPage)
-// }
-// }
+        try {
+            setLoading(true)
+            let data = objChannelList?.slice(newPage, newPage + 9);
+            setTimeout(() => {
+              setChannels(current => [...current, ...data]);
+            }, 500)
+        } catch (error) {
+            console.error("Channels API data fetch error: ", error);
+        } finally {
+            setTimeout(() => {
+                setLoading(false);
+            }, 500);
+        }
+    }
 
-// const channelSearch = async (e) => {
-//     let query = e.target.value;
-//     let newPage = 1;
-//     setPage(newPage);
-//     setSearch(e.target.value);
-    
+    const channelSearch = async (e) => {
+      let query = e.target.value;
+      setSearch(e.target.value);
+      if (e.target.value?.length == 0) return
 
-//     try {
-//         setLoading(true)
-//         const data = await getChannelsSearch(newPage, query)
-//         setChannels(data)
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
+      try {
+          setLoading(true)
+          const data = objChannelList.filter(x => x.name.toLowerCase().includes(query));
+          setChannels(data)
+      } catch (error) {
+          console.error("Channels API data fetch error: ", error)
+      } finally {
+          setLoading(false)
+      }
+    }
 
-// const getMoreSearchPages = async (newPage) => {
-//     try {
-//         setLoading(true)
-//         const data = await getChannelsSearch(newPage, search)
-//         setChannels(current => [...current, ...data])
-//     } catch (error) {
-//         console.error("Channels API data fetch error: ", error)
-//     } finally {
-//         setLoading(false)
-//     }
-// }
+    const handleSort = (name) => {
+      setActive(name);
+      setSearch('');
+      if (name == "All"){
+        fetchChannels();
+        setCount(objChannelList.length)
+      } else {
+        setLoading(true);
+        let sortList = objChannelList.filter(x => x.type === name);
+        setTimeout(() => {
+          setChannels(sortList);
+          setLoading(false);
+          setCount(sortList.length)
+      }, 500);
+      }
+    }
 
-// useEffect(() => {
-//     fetchChannels()
-// }, [])
 
-// useEffect(() => {
-//     if(search.length > 0) return;
-//     fetchChannels()
-// }, [search])
   return (
     <PageWrapper
       pageName={pageMeta.FRENS.pageName}
@@ -158,7 +166,7 @@ const sortList = [
             </Content>
             </AnimationSection>
 
-            <ChannelList />
+            {/* <ChannelList /> */}
 
             <PoweredSection 
                 id="story"
@@ -183,7 +191,7 @@ const sortList = [
                         maxWidth="350px"
                         justifyContent="flex-end">
 
-                    {/* <Wrapper>
+                    <Wrapper>
                       <BiSearch size="23" color='#121315' />
                       <input 
                         type="text"
@@ -192,33 +200,27 @@ const sortList = [
                         onChange={channelSearch}
                         />
 
-                    </Wrapper> */}
+                    </Wrapper>
 
                     </ItemV>
                     </PushRow>
 
                     <ToggleSection>
-                        {sortList.map((item,i) => 
-                        (<ToggleButton key={item?.name}>
-                            <Span color={item.count ? "#fff" : "#121315"}>{item?.name}</Span>
+                        {typeList.map((item,i) => 
+                        (<ToggleButton 
+                            key={item?.name}
+                            active={active === item?.name ? true : false}
+                            onClick={() => handleSort(item?.name)}
+                            >
+                            <Span>{item?.name}</Span>
 
-                            {item.count && (<b>{item?.count}</b>)}
+                            {active === item?.name && (<b>{count}</b>)}
                         </ToggleButton>))}
                     </ToggleSection>
 
 
                     <ChannelsSection>
-                        {/* {channels?.map((item,i) => (
-                            <Channels key={item.ipfshash}>
-                                {isMobile ? 
-                                (<ChannelItem channelProp={item} />) :
-                                (<Tilt options={options} className='box'>
-                                     <ChannelItem channelProp={item} />
-                                </Tilt>)}
-                            </Channels>
-                        ))} */}
-
-                        {objChannelList?.map((item,i) => (
+                        {channels?.map((item,i) => (
                             <Channels key={item.ipfshash}>
                                 {isMobile ? 
                                 (<ChannelItem channelProp={item} />) :
@@ -235,14 +237,20 @@ const sortList = [
                         </DisplayNotice>
                     </CenteredContainerInfo>)}
 
+                    {active !== 'All' && !loading && count === 0 &&(<CenteredContainerInfo>
+                        <DisplayNotice>
+                             No channels under this type yet.
+                        </DisplayNotice>
+                    </CenteredContainerInfo>)}
+
                     {loading && (<ItemH>
                         <img src={SpinnerSVG} alt='' width={140} />
                     </ItemH>)}
 
-                    {/* {!loading && (<ShowMoreSection onClick={ShowMore}>
+                    {!loading && active === "All" && search.length === 0 && (<ShowMoreSection onClick={ShowMore}>
                         <FiChevronDown size={23} />
                         <b>Show More</b>
-                    </ShowMoreSection>)} */}
+                    </ShowMoreSection>)}
                 </Content>
 
 
@@ -340,7 +348,7 @@ const ChannelsSection = styled.div`
 `
 
 const ToggleButton = styled.div`
-    border: 1px solid #BAC4D6;
+    border: ${(props) => props.active ? 'none' : '1px solid #BAC4D6'};
     border-radius: 62px;
     display: flex;
     flex-direction: row;
@@ -352,8 +360,10 @@ const ToggleButton = styled.div`
     height: fit-content;
     left: 0;
     margin: 5px 5px;
+    background: ${(props) => props.active ? '#D53893' : 'transparent'};
+    color: ${(props) => props.active ? '#fff' : '#000'};
     &:hover {
-        background: #FFDBF0;
+        background: ${(props) => props.active ? '#D53893' : '#FFDBF0'};
         border: none;
         cursor: pointer;
     }
@@ -362,18 +372,19 @@ const ToggleButton = styled.div`
      font-size: 20px;
      font-weight: 500;
      border: none;
+     color: ${(props) => props.active ? '#fff' : '#000'};
     }
 
-    &:has(b) {
-        background: #D53893;
-        color: #fff;
-        border: none;
-        &:hover {
-            background: #D53893;
-            border: none;
-            cursor: pointer;
-        }
-    }
+    // &:has(b) {
+    //     background: #D53893;
+    //     color: #fff;
+    //     border: none;
+    //     &:hover {
+    //         background: #D53893;
+    //         border: none;
+    //         cursor: pointer;
+    //     }
+    // }
 
     b {
         font-weight: 500;
@@ -511,4 +522,4 @@ const ShowMoreSection = styled.div`
     }
 `
 
-export default FrensOfPush
+export default FrensText

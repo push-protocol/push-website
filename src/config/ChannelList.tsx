@@ -3,11 +3,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
-import React, { useEffect,useState } from 'react'
-import axios from 'axios';
-
-var fs = require('fs');
-
 export const objChannelList = [
         {
             "id": 1,
@@ -1858,30 +1853,30 @@ export const objChannelList = [
         "subscriber_count": 44,
         "type": "Metaverse"
     },
-    {
-        "id": 50,
-        "channel": "0xdd9359dA54643d90F530C9A506f6A7A5E32FfbB1",
-        "ipfshash": "bafkreicwxy7ogphy3lxgaj3ujifnp4o6k7aeddklpewatr5qnlpsxpggve",
-        "name": "M31 Capital",
-        "info": "Global investment firm focused on DeFi & Web3. Subscribe to get our latest research and project updates. ",
-        "url": "https://www.m31.capital/",
-        "icon": "https://gateway.ipfs.io/ipfs/QmVfQhJCGkQsQ5jQc5VNkfKhJ4DdbUf8Qh37Wtfgovmthb",
-        "processed": 0,
-        "attempts": 3,
-        "verified_status": 0,
-        "alias_address": "NULL",
-        "activation_status": 1,
-        "timestamp": "2023-01-08T15:29:50.000Z",
-        "counter": null,
-        "subgraph_details": null,
-        "alias_blockchain_id": null,
-        "alias_verification_event": null,
-        "blocked": 0,
-        "is_alias_verified": 0,
-        "itemcount": 163,
-        "subscriber_count": 43,
-        "type": "DeFi"
-    },
+    // {
+    //     "id": 50,
+    //     "channel": "0xdd9359dA54643d90F530C9A506f6A7A5E32FfbB1",
+    //     "ipfshash": "bafkreicwxy7ogphy3lxgaj3ujifnp4o6k7aeddklpewatr5qnlpsxpggve",
+    //     "name": "M31 Capital",
+    //     "info": "Global investment firm focused on DeFi & Web3. Subscribe to get our latest research and project updates. ",
+    //     "url": "https://www.m31.capital/",
+    //     "icon": "https://gateway.ipfs.io/ipfs/QmVfQhJCGkQsQ5jQc5VNkfKhJ4DdbUf8Qh37Wtfgovmthb",
+    //     "processed": 0,
+    //     "attempts": 3,
+    //     "verified_status": 0,
+    //     "alias_address": "NULL",
+    //     "activation_status": 1,
+    //     "timestamp": "2023-01-08T15:29:50.000Z",
+    //     "counter": null,
+    //     "subgraph_details": null,
+    //     "alias_blockchain_id": null,
+    //     "alias_verification_event": null,
+    //     "blocked": 0,
+    //     "is_alias_verified": 0,
+    //     "itemcount": 163,
+    //     "subscriber_count": 43,
+    //     "type": "DeFi"
+    // },
     {
         "id": 59,
         "channel": "0x174e4Bb368B9a31661B4C35bE595369fF1A68a13",
@@ -3920,30 +3915,21 @@ export const objChannelList = [
 ]
 
 
-const ChannelList = () => {
-  const [list, setList] = useState([]);
-  async function getChannels() {
-    const requrl =  `https://backend.epns.io/apis/v1/channels?page=1&limit=9&sort=subscribers&order=desc`;
+// const ChannelList = () => {
+//   const [list, setList] = useState([]);
+//   async function getChannels() {
+//     const requrl =  `https://backend.epns.io/apis/v1/channels?page=1&limit=9&sort=subscribers&order=desc`;
 
   
   
-    try {
-      const apiResponse = await axios.get(requrl);
-      const channels = apiResponse?.data?.channels;
-      return channels;
-    } catch (error) {
-      throw Error(error);
-    }
-  }
+//     try {
+//       const apiResponse = await axios.get(requrl);
+//       const channels = apiResponse?.data?.channels;
+//       return channels;
+//     } catch (error) {
+//       throw Error(error);
+//     }
+//   }
+// }
 
-  // useEffect(() => {
-  //     getChannels()
-  // },[])
-
-  
-  return (
-    <div>channelList</div>
-  )
-}
-
-export default ChannelList
+// export default ChannelList
