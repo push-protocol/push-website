@@ -2,12 +2,380 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { getAllBlogData } from '../api';
+import styled from 'styled-components';
+import { Anchor,B,Content, H2 , H3 , HeroHeader, Input ,ItemH, ItemV, Span } from 'components/SharedStyling';
+import { device } from '../config/globals';
+import useMediaQuery from '../hooks/useMediaQuery';
+import PageWrapper from '../components/PageWrapper';
+import pageMeta from 'config/pageMeta';
+import HybridSection from 'components/HybridSection';
+import Image from 'assets/bg-image.png'
+import { BiSearch } from 'react-icons/bi';
+
+
 
 const Blogs = () => {
+  const isMobile = useMediaQuery(device.tablet);
+  const [blogsData, setBlogsData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+    const loadData = async() => {
+        try {
+          setIsLoading(true);
+          const data = await getAllBlogData();
+          console.log(data);
+          setBlogsData(data);
+        } catch (e) {
+          console.error('Blogs API data fetch error: ', e);
+        } finally {
+          setIsLoading(false);
+        }
+    }
+
+    function getDescription(hypertext) {
+        try {
+          const articleFragments = hypertext.split('\n');
+          const [, descriptionFrag = ''] = articleFragments;
+          return extractContent(descriptionFrag);
+        } catch (e) {
+          return '';
+        }
+      }
+
+      function filterComment(hypertext) {
+        try {
+            var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '')
+            return newString;
+        } catch (e) {
+          return '';
+        }
+      }
+
+      function getSubarticles(isMobile, blogs) {
+        const [, ...otherBlogs] = blogs || [];
+      
+        if (isMobile) {
+          return blogs;
+        }
+      
+        return otherBlogs;
+      
+      }
+
+    useEffect(() => {
+        loadData();
+      }, []);
+
+  if (Array.isArray(blogsData) && blogsData.length > 0) {
   return (
-    <div>Blogs</div>
+        <PageWrapper
+            pageName={pageMeta.BLOGS.pageName}
+            pageTitle={pageMeta.BLOGS.pageTitle}
+            >
+        <BlogsWrapper>
+
+        <AnimationSection minHeight="60vh" padding="80px 0px 20px 0px">
+            <Content className="contentBox" flex="0">
+                <ItemH flexDirection="column" justifyContent="center">
+                <HeroHeader>Frens of Push</HeroHeader>
+                <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isMobile && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
+                </ItemH>
+            </Content>
+            </AnimationSection>
+
+            <BlogsSection 
+                id="story"
+                data-bkg="light"
+                className="lightBackground"
+                curve="bottom">
+                
+                <BlogRow>
+                    <ItemV justifyContent="flex-start">
+                        <ResponsiveH2
+                        size="40px"
+                        weight="500"
+                        spacing="-0.02em"
+                        lineHeight="110%"
+                        >
+                        Push Protocol Insights
+                        </ResponsiveH2>
+                    </ItemV>
+                    <ItemV 
+                        maxWidth="350px"
+                        justifyContent="flex-end">
+
+                    <Wrapper>
+                      <BiSearch size="23" color='#121315' />
+                      <input 
+                        type="text"
+                        placeholder='Search articles'
+                        />
+
+                    </Wrapper>
+
+                    </ItemV>
+                    </BlogRow>
+
+                <MainSection>
+                    {blogsData?.slice(0,2).map((blogData, idx) => {
+                    return (
+                    <MainArticle key={idx} title={blogData?.title}>
+                        <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
+                
+                        <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
+                        {blogData?.title}
+                        </H3>
+                
+                        <ArticleText>
+                        {filterComment(blogData?.description)}
+                        </ArticleText>
+
+                        <ArticleContent>
+                        Jan 18 &#183; 6 min read
+                        </ArticleContent>
+                    </MainArticle>)
+                    })};
+            </MainSection>
+
+                <SubArticles>
+                    {blogsData?.slice(2,blogsData.length++).map((blogData, idx) => {
+                        return (
+                        <MainArticle key={idx} title={blogData?.title}>
+                            <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
+                    
+                            <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
+                            {blogData?.title}
+                            </H3>
+                    
+                            <ArticleText>
+                            {filterComment(blogData?.description)}
+                            </ArticleText>
+
+                            <ArticleContent>
+                            Jan 18 &#183; 6 min read
+                            </ArticleContent>
+                        </MainArticle>)
+                        })};
+                </SubArticles>
+                </BlogsSection>
+
+          </BlogsWrapper>
+          </PageWrapper>
   )
 }
+}
+
+const ResponsiveSection = styled(HybridSection)`
+  min-height: ${(props) => props.minHeight || '0px'};
+  @media ${device.tablet} {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+`;
+
+const AnimationSection = styled(ResponsiveSection)`
+//   min-height: 60vh !important;
+  padding-bottom: 50px;
+//   @media ${device.tablet} {
+    background: #121315;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+    padding-bottom: 0px;
+//   }
+`;
+
+const BlogsWrapper = styled.main`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  & #hero .contentBox {
+    row-gap: 18px;
+  }
+  @media ${device.tablet} {
+    width: 100%;
+  }
+`;
+
+const MainArticle = styled(ItemV)`
+//   padding: 30px;
+width: 100%;
+//   box-sizing: border-box;
+
+   &:hover {
+    cursor: pointer;
+   }
+
+   @media ${device.tablet} {
+    display: none;
+   }
+`;
+
+const ArticleBanner = styled.img`
+    // width: 544px;
+    // height: 284px;
+    width: 100%;
+    background: #D9D9D9;
+    border-radius: 32px;
+`;
+
+const ArticleText = styled.div`
+    width: 100%;
+    color: #575D73;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 28px;
+    font-family: Lora;
+    margin-top: 10px;
+    
+    // text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    // white-space: normal;
+`;
+
+const ArticleContent = styled.div`
+    width: 100%;
+    color: #575D73;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 28px;
+    
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+`;
+
+const SubArticles = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 32px;
+    margin-top: 100px;
+
+`;
+
+const SubArticle = styled.div`
+    
+    // flex-direction: row;    
+    // column-gap: 30px;
+    // padding-bottom: 24px;
+    // border-bottom: 1px solid #000000;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.loader {
+        padding-bottom: 20px;
+    }
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    @media ${device.tablet} {
+        align-items: center;
+    }
+`;
+
+const SubArticleBanner = styled.img`
+    width: 207px;
+    height: 108px;
+    background: #D9D9D9;
+    border-radius: 20px;
+
+    @media ${device.tablet} {
+        width: 118px;
+        height: 108px;
+    }
+`;
+
+const SubArticleHeader = styled.h4`
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+    color: #09090B;
+    flex: 1;
+    align-self: center;
+
+    @media ${device.tablet} {
+        font-size: 16px;
+    }
+`;
+
+const BlogsSection = styled(ResponsiveSection)`
+ padding: 0px 160px 80px 160px;
+  @media ${device.tablet} {
+    padding-bottom: 32px;
+  }
+`;
+
+const MainSection = styled.div`
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  margin: 10px 0px;
+  width: 100%;
+  gap: 40px;
+  @media ${device.tablet} {
+  flex-direction: column !important;
+}
+`;
+
+const BlogRow = styled(ItemH)`
+  margin: 70px 0 40px 0;
+  @media ${device.tablet} {
+    margin-top: 80px;
+  }
+`;
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
+`;
+
+const Wrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex: 1;
+    column-gap: 6px;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #d9d9d9;
+    padding: 16px;
+    justify-content: space-between;
+    @media ${device.tablet} {
+        column-gap: 3px;
+    }
+    & input[type="text"] {
+        all: unset;
+        box-sizing: border-box;
+        font-family: 'Strawford';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: normal;
+        letter-spacing: -0.03em; 
+        color: #121315;
+        width: 100%;
+        padding: 0px;
+        &::placeholder {
+            color: #121315;
+            opacity: 1;
+            font-size: 20px;
+        }
+        @media ${device.tablet} {
+            min-width: fit-content;
+        }
+    }
+`;
 
 export default Blogs

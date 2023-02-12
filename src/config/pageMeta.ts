@@ -14,5 +14,9 @@ export default {
   FAQS: {
     pageName: 'faqs',
     pageTitle: 'PUSH | FAQs'
+  },
+  BLOGS: {
+    pageName: 'blogs',
+    pageTitle: 'PUSH | Blogs'
   }
 };

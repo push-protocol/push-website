@@ -7,6 +7,7 @@ const awaitTimeout = delay =>
   new Promise(resolve => setTimeout(resolve, delay));
 
 const BACKEND_API_URL = 'https://api.analytics.epns.io/apis/analytics';
+const RSSConverter = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
 
 export async function loadKPIData() {
@@ -33,14 +34,26 @@ export async function loadKPIData() {
 }
 
 export async function getBlogData(limit = 4) {
-  const requrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/ethereum-push-notification-service/';
-
-  // await awaitTimeout(50000);
+  const requrl = `${RSSConverter}https://medium.com/feed/ethereum-push-notification-service/`;
 
   return axios.get(requrl)
     .then((apiResponse) => {
       const blogs = apiResponse?.data.items;
       return blogs.slice(0, limit);
+    }).catch(error => {
+      throw Error(error);
+    });
+}
+
+export async function getAllBlogData() {
+  const requrl = `${RSSConverter}https://medium.com/feed/ethereum-push-notification-service/`;
+
+  return axios.get(requrl)
+    .then((apiResponse) => {
+      const blogs = apiResponse?.data.items;
+      console.log(blogs);
+      return blogs;
+      // return blogs.slice(0, limit);
     }).catch(error => {
       throw Error(error);
     });

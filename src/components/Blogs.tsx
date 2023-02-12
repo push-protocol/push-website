@@ -9,7 +9,6 @@ import { getBlogData } from '../api';
 
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
-
 import {
   ItemH, ItemV, H3
 } from './SharedStyling';
