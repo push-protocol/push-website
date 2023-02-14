@@ -54,9 +54,9 @@ const General = [
     section: 'General',
     renderAnswer: () => (
       <Answer>
-        <Span>Connect to the <AMod href="https://app.push.org/#/channels">Push dApp</AMod> & opt-in to channels to get notifications for protocols that are relevant to you. Channels are protocols that activate themselves on Push protocol to send notification.</Span>
-        <Span>You can receive notifications from any crypto frontends that have already integrated Push. Alternatively, you can use via <AMod href="https://app.push.org/#/channels">Push dApp</AMod>, <AMod href="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg">browser extension</AMod>, and mobile app (<AMod href="https://play.google.com/store/apps/details?id=io.epns.epns&pli=1">Android</AMod> & <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910">iOS</AMod>) in case your favorite wallet or dApp doesn't have Push support yet.</Span>
-        <Span>Push recently launched a wallet-to-wallet communication product called Push Chat which is in alpha stage. Reach out to us on <AMod href="https://discord.com/invite/pushprotocol">Discord</AMod> to get exclusive Push Chat access.</Span>
+        <Span>Connect to the <AMod href="https://app.push.org/#/channels" target={"_blank"}>Push dApp</AMod> & opt-in to channels to get notifications for protocols that are relevant to you. Channels are protocols that activate themselves on Push protocol to send notification.</Span>
+        <Span>You can receive notifications from any crypto frontends that have already integrated Push. Alternatively, you can use via <AMod href="https://app.push.org/#/channels"  target={"_blank"}>Push dApp</AMod>, <AMod href="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg" target={"_blank"}>browser extension</AMod>, and mobile app (<AMod href="https://play.google.com/store/apps/details?id=io.epns.epns&pli=1" target={"_blank"}>Android</AMod> & <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910" target={"_blank"}>iOS</AMod>) in case your favorite wallet or dApp doesn't have Push support yet.</Span>
+        <Span>Push recently launched a wallet-to-wallet communication product called Push Chat which is in alpha stage. Reach out to us on <AMod href="https://discord.com/invite/pushprotocol" target={"_blank"}>Discord</AMod> to get exclusive Push Chat access.</Span>
       </Answer>
     )
   },
@@ -99,8 +99,8 @@ const Notifs = [
     renderAnswer: () => (
       <Answer>
         <Span>Yes, Push Protocol is an open yet secure network, and behaves similar to a blockchain network but for all things communication. This means that any frontend and / or wallet can integrate notifications or chat on their side and start making the web3 UX and re-engagement a reality.</Span>
-        <Span>Learn more about <AMod href="https://docs.push.org/developers/developer-guides/integrating-on-frontend">integrating Push Notification in your dApp</AMod> / <AMod href="https://docs.push.org/developers/developer-guides/receiving-notifications">Push Notification in your crypto wallet.</AMod></Span>
-        <Span>Additionally, wallets should check out <AMod href="https://docs.push.org/developers/developer-guides/integrating-on-frontend">fee pool of Push which re-imagines and incentivises their contribution</AMod> acknowledging them as an entry point for web3.</Span>
+        <Span>Learn more about <AMod href="https://docs.push.org/developers/developer-guides/integrating-on-frontend" target={"_blank"}>integrating Push Notification in your dApp</AMod> / <AMod href="https://docs.push.org/developers/developer-guides/receiving-notifications" target={"_blank"}>Push Notification in your crypto wallet.</AMod></Span>
+        <Span>Additionally, wallets should check out <AMod href="https://docs.push.org/developers/developer-guides/integrating-on-frontend" target={"_blank"}>fee pool of Push which re-imagines and incentivises their contribution</AMod> acknowledging them as an entry point for web3.</Span>
       </Answer>
     )
   },
@@ -112,7 +112,7 @@ const Notifs = [
         <Span>To enable an xyz protocol to send a notification, they need your consent before they can do so which is called opt-in which is gasless. They are also fondly called channels in Push protocol terminology</Span>
         <Span>Once you opt-in to any channel that you want to get notifications from, your job is done, the channels will send notifications based on their own logic to you. </Span>
         <Span>
-        You can receive notifications from any crypto frontends that have already integrated Push. Alternatively, you can use via <AMod href="https://app.push.org/#/channels">Push dApp</AMod>, <AMod href="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg">browser extension</AMod>, and mobile app (<AMod href="https://play.google.com/store/apps/details?id=io.epns.epns&pli=1">Android</AMod> & <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910">iOS</AMod>) in case your favorite wallet or dApp doesn't have Push support yet.
+        You can receive notifications from any crypto frontends that have already integrated Push. Alternatively, you can use via <AMod href="https://app.push.org/#/channels" target={"_blank"}>Push dApp</AMod>, <AMod href="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg" target={"_blank"}>browser extension</AMod>, and mobile app (<AMod href="https://play.google.com/store/apps/details?id=io.epns.epns&pli=1" target={"_blank"}>Android</AMod> & <AMod href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910" target={"_blank"}>iOS</AMod>) in case your favorite wallet or dApp doesn't have Push support yet.
         </Span>
       </Answer>
     )
@@ -131,7 +131,7 @@ const Notifs = [
     section: 'Notifs',
     renderAnswer: () => (
       <Answer>
-        <Span>Yes, any protocol that wants to send notifications will need to activate themselves on Push protocol, read <AMod href='https://docs.push.org/developers/developer-guides/create-your-notif-channel'>How to create channel</AMod> for more details. 
+        <Span>Yes, any protocol that wants to send notifications will need to activate themselves on Push protocol, read <AMod href='https://docs.push.org/developers/developer-guides/create-your-notif-channel' target={"_blank"}>How to create channel</AMod> for more details. 
         </Span>
       </Answer>
     )
@@ -176,7 +176,7 @@ const Chat = [
     section: 'Chat',
     renderAnswer: () => (
       <Answer>
-        <Span>Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP Keys. Read more about <AMod href='https://docs.push.org/developers/concepts/push-chat-for-web3'>how it works here.</AMod>
+        <Span>Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP Keys. Read more about <AMod href='https://docs.push.org/developers/concepts/push-chat-for-web3' target={"_blank"}>how it works here.</AMod>
         </Span>
       </Answer>
     )
@@ -221,14 +221,14 @@ const IntegratingPush = [
       <Answer>
         <Span>Push can be used as a utility for communication. A service/developer can integrate Push to communicate critical information to its users and to improve the user experience through notifications and chat (Push Chat)
         </Span>
-        <Span>The <AMod href='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details'>Push JS SDK</AMod> is a major component that makes the integration seamless. A few integration ideas using SDK include</Span>
+        <Span>The <AMod href='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details' target={"_blank"}>Push JS SDK</AMod> is a major component that makes the integration seamless. A few integration ideas using SDK include</Span>
         <UL>
           <LI>integrate <b>Opt-in</b> feature on your frontend so users wouldn't have to leave your website to enable notifications from your Channel</LI>
           <LI>show the notifications on your frontend</LI>
           <LI>send critical information as notifications</LI>
           <LI>integrate <b>Push Chat</b> on your frontend and enable 2-way communication between your users or use chat as a way to provide support to your users.</LI>
         </UL>
-        <Span>Other ways of integrating Push notifications are via <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-smart-contract'>smart contracts</AMod>, <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-subgraph-gasless'>subgraphs</AMod>, and <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless'>showrunners framework.</AMod></Span>
+        <Span>Other ways of integrating Push notifications are via <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-smart-contract' target={"_blank"}>smart contracts</AMod>, <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-subgraph-gasless' target={"_blank"}>subgraphs</AMod>, and <AMod href='https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless' target={"_blank"}>showrunners framework.</AMod></Span>
       </Answer>
     )
   },
@@ -237,7 +237,7 @@ const IntegratingPush = [
     section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
-        <Span>Push has a <AMod href='https://staging.push.org/#/channels'>Staging dApp</AMod> for developers that points to Ethereum Goerli testnet, Polygon Mumbai testnet and BNB testnet.
+        <Span>Push has a <AMod href='https://staging.push.org/#/channels' target={"_blank"}>Staging dApp</AMod> for developers that points to Ethereum Goerli testnet, Polygon Mumbai testnet and BNB testnet.
         </Span>
       </Answer>
     )
@@ -247,11 +247,11 @@ const IntegratingPush = [
     section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
-        <Span>Push Chat integration - <AMod href='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb/uiweb-0.2.3-push-support-chat'>Docs</AMod>,<AMod href='https://github.com/ethereum-push-notification-service/push-sdk-sandbox'>Github</AMod>
+        <Span>Push Chat integration - <AMod href='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb/uiweb-0.2.3-push-support-chat'  target={"_blank"}>Docs</AMod>,<AMod href='https://github.com/ethereum-push-notification-service/push-sdk-sandbox'  target={"_blank"}>Github</AMod>
         </Span>
-        <Span>Push Notifications  - <AMod href='https://docs.push.org/developers/'>Docs</AMod>,<AMod href='https://github.com/ethereum-push-notification-service/push-for-hackers'>Github</AMod>
+        <Span>Push Notifications  - <AMod href='https://docs.push.org/developers/'  target={"_blank"}>Docs</AMod>,<AMod href='https://github.com/ethereum-push-notification-service/push-for-hackers'  target={"_blank"}>Github</AMod>
         </Span>
-        <Span><AMod href='https://github.com/ethereum-push-notification-service/push-showrunners-framework'>Showrunners Framework</AMod>, a scaffold solution to integrate Push Notification can also used to get started.</Span>
+        <Span><AMod href='https://github.com/ethereum-push-notification-service/push-showrunners-framework'  target={"_blank"}>Showrunners Framework</AMod>, a scaffold solution to integrate Push Notification can also used to get started.</Span>
       </Answer>
     )
   },
@@ -273,7 +273,7 @@ const Governance = [
     section: 'Governance',
     renderAnswer: () => (
       <Answer>
-        <Span>Reach out to the Push team on <AMod href='https://discord.com/invite/pushprotocol'>Discord</AMod> or schedule a pitch in the office hours or directly dropping a proposal on the <AMod href='https://gov.push.org/c/grants/10'>Push Governance Forum.</AMod>
+        <Span>Reach out to the Push team on <AMod href='https://discord.com/invite/pushprotocol'  target={"_blank"}>Discord</AMod> or schedule a pitch in the office hours or directly dropping a proposal on the <AMod href='https://gov.push.org/c/grants/10'  target={"_blank"}>Push Governance Forum.</AMod>
         </Span>
       </Answer>
     )
@@ -283,7 +283,7 @@ const Governance = [
     section: 'Governance',
     renderAnswer: () => (
       <Answer>
-        <Span>The <AMod href='https://discord.com/invite/pushprotocol'>Push Discord</AMod> is really active when it comes to Push DAO related conversations, try redirecting your queries there and we will be there to help you out.
+        <Span>The <AMod href='https://discord.com/invite/pushprotocol'  target={"_blank"}>Push Discord</AMod> is really active when it comes to Push DAO related conversations, try redirecting your queries there and we will be there to help you out.
         </Span>
       </Answer>
     )
@@ -311,7 +311,7 @@ const Token = [
         <Span>
         $PUSH is the native token of Push Protocol. It achieves the circular economy today through four major use cases: securing the network, network utility, Push DAO and governance, and reward pool fee.
         </Span>
-        <Span>Read in detail 👉 <AMod href='https://docs.push.org/hub/pusheconomics'>Pusheconomics</AMod></Span>
+        <Span>Read in detail 👉 <AMod href='https://docs.push.org/hub/pusheconomics'  target={"_blank"}>Pusheconomics</AMod></Span>
       </Answer>
     )
   },
@@ -320,7 +320,7 @@ const Token = [
     section: 'Token',
     renderAnswer: () => (
       <Answer>
-        <Span>You can swap any token to $PUSH from <AMod href='https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee'>Uniswap</AMod> or from any of the <AMod href='https://coinmarketcap.com/currencies/epns/markets/'>listed exchanges.</AMod>
+        <Span>You can swap any token to $PUSH from <AMod href='https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee' target={"_blank"}>Uniswap</AMod> or from any of the <AMod href='https://coinmarketcap.com/currencies/epns/markets/' target={"_blank"}>listed exchanges.</AMod>
         </Span>
       </Answer>
     )
@@ -330,18 +330,10 @@ const Token = [
 
 function FAQ() {
 
-  const [showAnswers, setShowAnswers] = React.useState([
-    // {section: General},
-    // {section: Notifs},
-    // {section: Chat},
-    // {section: IntegratingPush},
-    // {section: Governance},
-    // {section: Token},
-  ]);
+  const [showAnswers, setShowAnswers] = React.useState([]);
   const [active, setActiveSection] = React.useState();
 
   const toggleShowAnswer = (id, section) => {
-    // console.log(body,id)
     setActiveSection(section);
     if(active === section){
     
@@ -357,14 +349,11 @@ function FAQ() {
     setShowAnswers([]);
     setShowAnswers((oldAnswers) => {
           return {
-            // ...oldAnswers,
             [id]: !oldAnswers[id]
           };
         });
   }
   };
-
-  console.log(showAnswers);
 
   const Items = ({body}) => {
     return(
