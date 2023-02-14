@@ -16,6 +16,15 @@ import { BiSearch } from 'react-icons/bi';
 import moment from "moment";
 import Moment from "react-moment";
 import { useNavigate } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 
 
@@ -119,14 +128,35 @@ const Blogs = () => {
             >
         <BlogsWrapper>
 
-        <AnimationSection minHeight="60vh" padding="80px 0px 20px 0px">
+        <ResponsiveSection curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
             <Content className="contentBox" flex="0">
-                <ItemH flexDirection="column" justifyContent="center">
-                <HeroHeader>Frens of Push</HeroHeader>
-                <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isMobile && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
-                </ItemH>
+                <Swiper
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={false}
+                  modules={[Autoplay, Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  {blogsData?.map((item) => (
+                  <SwiperSlide onClick={() => onArticleClick(item)}>
+                      <CarouselContainer>
+                          <CarouselImage src={item?.thumbnail} alt={item?.title} />
+                          <CarouselTitle>{item?.title}</CarouselTitle>
+                          <CarouselReadTime>{readingTime(item?.description)} mins read</CarouselReadTime>
+                      </CarouselContainer>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+
             </Content>
-            </AnimationSection>
+            </ResponsiveSection>
 
             <BlogsSection 
                 id="story"
@@ -221,22 +251,54 @@ const Blogs = () => {
 }
 
 const ResponsiveSection = styled(HybridSection)`
-  min-height: ${(props) => props.minHeight || '0px'};
   @media ${device.tablet} {
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
+
+  &[data-bkg="dark"] {
+    & h1 {
+        color: #FFF;
+    }
+
+    & h3 {
+        color: #FFF;
+    }
+
+    & span {
+        color: #FFF;
+    }
+
+    & p {
+        color: #FFF;
+    }
+}
+
+&[data-bkg="light"] {
+    & h1 {
+        color: #000;
+    }
+
+    & h3 {
+        color: #000;
+    }
+
+    & span {
+        color: #000;
+    }
+
+    & p {
+        color: #000;
+    }
+  }
 `;
 
 const AnimationSection = styled(ResponsiveSection)`
-//   min-height: 60vh !important;
-  padding-bottom: 50px;
-//   @media ${device.tablet} {
+    width: 100%;
     background: #121315;
     border-bottom-left-radius: 48px;
     border-bottom-right-radius: 48px;
     padding-bottom: 0px;
-//   }
 `;
 
 const BlogsWrapper = styled.main`
@@ -253,7 +315,7 @@ const BlogsWrapper = styled.main`
 
 const MainArticle = styled(ItemV)`
   width: 100%;
-  margin-top: 70px;
+  margin-top: 20px;
   justify-content: left !important;
 
    &:hover {
@@ -342,7 +404,7 @@ const MainSection = styled.div`
 `;
 
 const BlogRow = styled(ItemH)`
-  margin: 70px 0 40px 0;
+  margin: 120px 0 40px 0;
   @media ${device.tablet} {
     margin-top: 80px;
   }
@@ -393,6 +455,56 @@ const Wrapper = styled.div`
             min-width: fit-content;
         }
     }
+`;
+
+const CarouselContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+`;
+
+const CarouselImage = styled.img`
+    display: block;
+    object-fit: cover;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    border-radius: 62px;
+    @media ${device.tablet} {
+      border-radius: 15px;
+      width: 100%;
+  }
+
+`;
+
+const CarouselTitle = styled.div`
+    width: 80%;
+    margin: 0 auto 20px auto;
+    font-weight: 700;
+    font-size: 40px;
+    color: #FFFFFF;
+    text-align: left;
+    @media ${device.tablet} {
+      font-weight: 700;
+      font-size: 21.5385px;
+      width: 100%;
+  }
+`;
+
+const CarouselReadTime = styled.div`
+    width: 80%;
+    margin: 0 auto 0px auto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #575D73;
+    text-align: left;
+    @media ${device.tablet} {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 9px;
+      width: 100%;
+  }
 `;
 
 export default Blogs

@@ -578,6 +578,17 @@ button, a, a:before, a:after {
   border-radius: 0 !important;
 }
 
+/* for carousel on blogs */
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+}
+
 
 @-webkit-keyframes BGColorTransition {
   0% {
