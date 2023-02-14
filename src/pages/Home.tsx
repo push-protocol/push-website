@@ -41,6 +41,7 @@ import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg
 import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
+import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
 
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
@@ -282,7 +283,7 @@ function Home({isAlertVisible}) {
               margin="40px 0"
               gap="90px"
             >
-              <ItemV>
+              {/* <ItemV> */}
                 <Span
                   weight="400"
                   color="#303C5E"
@@ -293,9 +294,9 @@ function Home({isAlertVisible}) {
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
                   NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
                 </Span>
-              </ItemV>
+              {/* </ItemV> */}
 
-              <ItemV>
+              {/* <ItemV> */}
                 <LiveNetworks>
                   <ItemV className="network">
                     <EthLogoTextSVG alt='Logo for Ethereum' title='Ethereum Logo' />
@@ -304,10 +305,16 @@ function Home({isAlertVisible}) {
                   <ItemV className="divider" />
 
                   <ItemV className="network">
+                    <BNBChainSVG alt='Logo for BNB Chain' title='BNB Chain Logo' />
+                  </ItemV>
+
+                  <ItemV className="divider" />
+
+                  <ItemV className="network">
                     <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
                   </ItemV>
                 </LiveNetworks>
-              </ItemV>
+              {/* </ItemV> */}
             </Partners>
 
             {/* <FadeInAnimation wrapperElement="div" direction='up' delay={0}> */}
@@ -1194,6 +1201,7 @@ const LiveNetworks = styled(ItemH)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 
   & .divider {
     background: #bac4d6;
@@ -1235,7 +1243,19 @@ export const BodyContent = styled.div`
   }
 `;
 
-const Partners = styled(ItemH)``;
+const Partners = styled(ItemH)`
+  display: flex;
+  flex-direction: row;
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
+  Span {
+    width: 30%;
+    @media ${device.laptop} {
+      width: 100%;
+    }
+  }
+`;
 
 const SignupBox = styled(ItemH)`
   background: #B9ABEF;
