@@ -10,6 +10,7 @@ import { ItemHV2 } from '../components/SharedStylingV2';
 import { ReactComponent as AaveSVG }  from '../assets/partners/aave.svg';
 import { ReactComponent as AngleLabsSVG }  from '../assets/partners/anglelabs.svg';
 import { ReactComponent as AragonSVG }  from '../assets/partners/aragon.svg';
+import { ReactComponent as ApeswapSVG }  from '../assets/partners/apeswap.svg';
 import { ReactComponent as BancorSVG }  from '../assets/partners/bancor.svg';
 import { ReactComponent as CoindeskSVG }  from '../assets/partners/coindesk.svg';
 import { ReactComponent as CryptocurrencyjobsSVG }  from '../assets/partners/cryptocurrencyjobs.svg';
@@ -22,6 +23,7 @@ import { ReactComponent as FlipsideSVG }  from '../assets/partners/flipside.svg'
 import { ReactComponent as GoodGhostingSVG }  from '../assets/partners/goodghosting.svg';
 import { ReactComponent as GroSVG }  from '../assets/partners/gro.svg';
 import { ReactComponent as IdlefinanceSVG }  from '../assets/partners/idlefinance.svg';
+import { ReactComponent as InchSVG }  from '../assets/partners/inch.svg';
 import { ReactComponent as KybernetworkSVG }  from '../assets/partners/kybernetwork.svg';
 import { ReactComponent as LepasaMetaverseSVG }  from '../assets/partners/lepasametaverse.svg';
 import { ReactComponent as LensProtocolSVG }  from '../assets/partners/lensprotocol.svg';
@@ -32,17 +34,23 @@ import { ReactComponent as MeanFinanceSVG }  from '../assets/partners/meanfinanc
 import { ReactComponent as MetastableSVG }  from '../assets/partners/metastable.svg';
 import { ReactComponent as MoverSVG }  from '../assets/partners/mover.svg';
 import { ReactComponent as OasisSVG }  from '../assets/partners/oasis.svg';
+import { ReactComponent as OrionprotocolSVG }  from '../assets/partners/orionprotocol.svg';
 import { ReactComponent as PodsfinanceSVG }  from '../assets/partners/podsfinance.svg';
 import { ReactComponent as PooltogetherSVG }  from '../assets/partners/pooltogether.svg';
 import { ReactComponent as PolyChainMonstersSVG }  from '../assets/partners/polychainmonsters.svg';
 import { ReactComponent as ProofofhumanitySVG }  from '../assets/partners/proofofhumanity.svg';
 import { ReactComponent as QidaoSVG }  from '../assets/partners/qidao.svg';
 import { ReactComponent as RektSVG }  from '../assets/partners/rekt.svg';
+import { ReactComponent as SecondliveSVG }  from '../assets/partners/secondlive.svg';
 import { ReactComponent as ShapeshiftSVG }  from '../assets/partners/shapeshift.svg';
 import { ReactComponent as SnapshotSVG }  from '../assets/partners/snapshot.svg';
+import { ReactComponent as SushiSVG }  from '../assets/partners/sushi.svg';
 import { ReactComponent as SymphonyFinanceSVG }  from '../assets/partners/symphonyfinance.svg';
+import { ReactComponent as ThenaSVG }  from '../assets/partners/thena.svg';
 import { ReactComponent as UniswapSVG }  from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG }  from '../assets/partners/unstoppable.svg';
+import { ReactComponent as WormbatSVG }  from '../assets/partners/wormbat.svg';
+import { ReactComponent as ZeroswapSVG }  from '../assets/partners/zeroswap.svg';
 
 
 
@@ -63,7 +71,10 @@ const partnerSortedGroup = [
     DecentralandSVG,
     BancorSVG,
     UnstoppableSVG,
-    FlipsideSVG
+    FlipsideSVG,
+    InchSVG,
+    SushiSVG,
+    WormbatSVG,
   ],
   [
     OasisSVG,
@@ -77,7 +88,10 @@ const partnerSortedGroup = [
     RektSVG,
     CryptocurrencyjobsSVG,
     EarnfiSVG,
-    PodsfinanceSVG
+    PodsfinanceSVG,
+    ApeswapSVG,
+    ThenaSVG,
+    WormbatSVG,
   ],
   [
     LensProtocolSVG,
@@ -91,14 +105,17 @@ const partnerSortedGroup = [
     GoodGhostingSVG,
     MeanFinanceSVG,
     SymphonyFinanceSVG,
-    MoverSVG
+    MoverSVG,
+    OrionprotocolSVG,
+    SecondliveSVG,
+    ZeroswapSVG
   ]
 ];
 
 
 function PartnerChannels() {
 
-  const [firstRow, secondRow, thirdRow] = partnerSortedGroup;
+  const [firstRow, secondRow, thirdRow,fourthRow] = partnerSortedGroup;
 
   return (
     <>
@@ -145,6 +162,21 @@ function PartnerChannels() {
           {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
         </MarqueeAnimation> 
       </PartnerRow>
+
+      {/* <PartnerRow
+        margin="130px 0 130px 0"
+        justifyContent="flex-start"
+        gap="32px"
+      >
+        <MarqueeAnimation
+          speed={90}
+          gap={32}
+          gradientWidth={64}
+          direction="right"
+        >
+          {fourthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+        </MarqueeAnimation> 
+      </PartnerRow> */}
     </>
    
   );
