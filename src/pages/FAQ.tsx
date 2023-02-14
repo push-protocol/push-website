@@ -17,9 +17,10 @@ import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, OL, LI, A, B, Spa
 import ImageFAQ from "../assets/faq-projects.webp"
 
 // define the question and answers seperately in order to seperate data and render logic
-const FAQS = [
+const General = [
   {
     question: 'What is Push?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>Push is the world’s first blockchain-agnostic decentralised communication protocol for Web3. It is an open network for validating and indexing all sorts of communication (notifications, chats, etc) that can then be integrated by any crypto frontend (dApps, wallets, etc).</Span>
@@ -29,6 +30,7 @@ const FAQS = [
   },
   {
     question: 'What is Push trying to solve?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>Push is building the communication layer for Web3, using which any dApp, smart contracts or backend can send any real time communications (such as notifications, chats, video and more) that are tied directly to a user's wallet address (aka web3 usernames).</Span>
@@ -39,6 +41,7 @@ const FAQS = [
   },
   {
     question: 'What are the web3 communication products launched by Push?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span><b>⚬ Push Notifications:</b> Enables any smart contract, dApp, backend to deliver critical informations as notifications to web3 users directly to their wallet addresses.</Span>
@@ -48,6 +51,7 @@ const FAQS = [
   },
   {
     question: 'How can I use Push as an end-user?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>Connect to the <AMod href="https://app.push.org/#/channels">Push dApp</AMod> & opt-in to channels to get notifications for protocols that are relevant to you. Channels are protocols that activate themselves on Push protocol to send notification.</Span>
@@ -58,6 +62,7 @@ const FAQS = [
   },
   {
     question: 'Is Push a blockchain? Is Push decentralised?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>Push behaves similar to blockchain but is an open network. This means that data is validated and indexed but doesn't have to aligned into blocks as the proof of data validity is supplied with the communication payload itself.</Span>
@@ -68,6 +73,7 @@ const FAQS = [
   },
   {
     question: 'On which blockchain is Push deployed? Can I send notifications from non-EVM chains as well?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>Push is currently live on Ethereum, Polygon and BNB chain with other major EVM chains and non-EVM / non-Ethereum chains to be supported soon. Push Notifications via gasless sdk and Push Chat sdk supports all EVM chains as of now.
@@ -77,15 +83,19 @@ const FAQS = [
   },
   {
     question: 'How many projects have integrated with Push so far?',
+    section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span><Image src={ImageFAQ} alt="" /></Span>
         <Span>More than 400 projects have integrated with Push which includes our 150+ partners including Lens, Polygon, Gitcoin, Decentraland, etc.</Span>
       </Answer>
     )
-  },
+  }
+] 
+const Notifs = [
   {
     question: 'Can I integrate notifications on Frontend / Wallet?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>Yes, Push Protocol is an open yet secure network, and behaves similar to a blockchain network but for all things communication. This means that any frontend and / or wallet can integrate notifications or chat on their side and start making the web3 UX and re-engagement a reality.</Span>
@@ -96,6 +106,7 @@ const FAQS = [
   },
   {
     question: 'How can I start receiving notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>To enable an xyz protocol to send a notification, they need your consent before they can do so which is called opt-in which is gasless. They are also fondly called channels in Push protocol terminology</Span>
@@ -108,6 +119,7 @@ const FAQS = [
   },
   {
     question: 'Do I need a channel to receive notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>No, a channel is only required if you want to send a notification. In order to receive notifications, you just need to connect your wallet to the dapp/mobile app/browser extension and Opt-in to the already existing channels that you want to get notifications from. </Span>
@@ -116,6 +128,7 @@ const FAQS = [
   },
   {
     question: 'Do I need a channel to send notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>Yes, any protocol that wants to send notifications will need to activate themselves on Push protocol, read <AMod href='https://docs.push.org/developers/developer-guides/create-your-notif-channel'>How to create channel</AMod> for more details. 
@@ -125,6 +138,7 @@ const FAQS = [
   },
   {
     question: 'Does Push only handle on-chain notifications? Does Push only handles events based notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>No, Push is extremely versatile and can handle on-chain (coming from smart contracts) or off-chain (coming from backend) notifications apart from notifications generated via sub-graphs.</Span>
@@ -136,6 +150,7 @@ const FAQS = [
   },
   {
     question: 'Do I have to pay to send notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>No, Push doesn’t take any fees for you to send notification. Although, there is a nominal charge of 50 PUSH required during Channel creation, which is put in place to prevent spamming.
@@ -145,6 +160,7 @@ const FAQS = [
   },
   {
     question: 'What are some use case of notifications?',
+    section: 'Notifs',
     renderAnswer: () => (
       <Answer>
         <Span>The most popular ones are Governance, Loan Pool & Staking and Marketing related notifications though we have many other interesting use cases depending upon the protocols on the channel.
@@ -152,8 +168,12 @@ const FAQS = [
       </Answer>
     )
   },
+]
+
+const Chat = [
   {
     question: 'Is Push Chat end-to-end encrypted?',
+    section: 'Chat',
     renderAnswer: () => (
       <Answer>
         <Span>Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP Keys. Read more about <AMod href='https://docs.push.org/developers/concepts/push-chat-for-web3'>how it works here.</AMod>
@@ -163,6 +183,7 @@ const FAQS = [
   },
   {
     question: 'How are messages stored in Push Chat?',
+    section: 'Chat',
     renderAnswer: () => (
       <Answer>
         <Span>Messages are all stored on IPFS in an encrypted manner. So only the wallets that are part of the chat can decrypt the messages.
@@ -172,6 +193,7 @@ const FAQS = [
   },
   {
     question: 'Will Push charge messaging fees?',
+    section: 'Chat',
     renderAnswer: () => (
       <Answer>
         <Span>For now Push is not charging any fees for you to message anyone. There are plans to introduce a freemium model in future.
@@ -181,6 +203,7 @@ const FAQS = [
   },
   {
     question: 'Does Push Chat have notifications?',
+    section: 'Chat',
     renderAnswer: () => (
       <Answer>
         <Span>Yes. Push Chat has notifications built-in. So there is no need to create a channel or do any extra step to send Push Chat notifications.
@@ -188,8 +211,12 @@ const FAQS = [
       </Answer>
     )
   },
+]
+
+const IntegratingPush = [
   {
     question: 'How can I integrate Push as a service/developer?',
+    section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
         <Span>Push can be used as a utility for communication. A service/developer can integrate Push to communicate critical information to its users and to improve the user experience through notifications and chat (Push Chat)
@@ -207,6 +234,7 @@ const FAQS = [
   },
   {
     question: 'How can I test Push integration during the development?',
+    section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
         <Span>Push has a <AMod href='https://staging.push.org/#/channels'>Staging dApp</AMod> for developers that points to Ethereum Goerli testnet, Polygon Mumbai testnet and BNB testnet.
@@ -216,6 +244,7 @@ const FAQS = [
   },
   {
     question: 'Where can I find the code samples for integration?',
+    section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
         <Span>Push Chat integration - <AMod href='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb/uiweb-0.2.3-push-support-chat'>Docs</AMod>,<AMod href='https://github.com/ethereum-push-notification-service/push-sdk-sandbox'>Github</AMod>
@@ -228,6 +257,7 @@ const FAQS = [
   },
   {
     question: 'How I can be assisted in case of any blockers during integration?',
+    section: 'IntegratingPush',
     renderAnswer: () => (
       <Answer>
         <Span>You can just drop your queries on the <AMod href='https://discord.com/invite/pushprotocol'>Push Discord</AMod> and the community managers will be able to assist you.
@@ -235,8 +265,12 @@ const FAQS = [
       </Answer>
     )
   },
+]
+
+const Governance = [
   {
     question: 'I want to apply for a grant to build on Push Protocol, how can I do this?',
+    section: 'Governance',
     renderAnswer: () => (
       <Answer>
         <Span>Reach out to the Push team on <AMod href='https://discord.com/invite/pushprotocol'>Discord</AMod> or schedule a pitch in the office hours or directly dropping a proposal on the <AMod href='https://gov.push.org/c/grants/10'>Push Governance Forum.</AMod>
@@ -246,6 +280,7 @@ const FAQS = [
   },
   {
     question: 'If I have queries about grants where’s the best place to direct them?',
+    section: 'Governance',
     renderAnswer: () => (
       <Answer>
         <Span>The <AMod href='https://discord.com/invite/pushprotocol'>Push Discord</AMod> is really active when it comes to Push DAO related conversations, try redirecting your queries there and we will be there to help you out.
@@ -255,6 +290,7 @@ const FAQS = [
   },
   {
     question: 'How can I attend PushDAO Calls and Meetings?',
+    section: 'Governance',
     renderAnswer: () => (
       <Answer>
         <Span>Office Hours are hosted on the <AMod href='https://discord.com/invite/pushprotocol'>Push Discord</AMod> for DAO related meetings, try joining the discord for more information.
@@ -262,8 +298,12 @@ const FAQS = [
       </Answer>
     )
   },
+]
+
+const Token = [
   {
     question: 'What’s the utility of $PUSH token?',
+    section: 'Token',
     renderAnswer: () => (
       <Answer>
         <Span>Push Protocol aims to achieve a circular economy for its protocol by engendering a communication layer that is run by the community and for the community. The goal is for every participant to be rewarded for their participation while simultaneously discouraging behaviour that would be detrimental to the network.
@@ -277,6 +317,7 @@ const FAQS = [
   },
   {
     question: 'From where can I get $PUSH?',
+    section: 'Token',
     renderAnswer: () => (
       <Answer>
         <Span>You can swap any token to $PUSH from <AMod href='https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee'>Uniswap</AMod> or from any of the <AMod href='https://coinmarketcap.com/currencies/epns/markets/'>listed exchanges.</AMod>
@@ -290,8 +331,11 @@ const FAQS = [
 function FAQ() {
 
   const [showAnswers, setShowAnswers] = React.useState([]);
+  const [active, setActiveSection] = React.useState();
 
-  const toggleShowAnswer = (id) => {
+  const toggleShowAnswer = (id, section) => {
+    // console.log(body,id)
+    setActiveSection(section);
     setShowAnswers((oldAnswers) => {
       return {
         ...oldAnswers,
@@ -299,6 +343,35 @@ function FAQ() {
       };
     });
   };
+
+  console.log(showAnswers);
+
+  const Items = ({body}) => {
+    return(
+    <ItemH flexDirection="column">
+                {
+                  body?.map(({question, section ,renderAnswer}, index) => (
+                    <QnAItem key={index} justifyContent="flex-start">
+                      <Question
+                        onClick={() => {toggleShowAnswer(index,section);}}
+                        hover="#e20880"
+                        isOpen={showAnswers[index] && active === section }
+                      >
+                        <Span>
+                          {question}
+                        </Span>
+                        <BsChevronExpand size={20} color={'#ddd'}/>
+                      </Question>
+  
+                      {showAnswers[index] && active === section &&
+                        renderAnswer()
+                      }
+                    </QnAItem>
+                  ))
+                }
+    </ItemH>
+  )};
+  
 
   return (
     <PageWrapper
@@ -325,29 +398,24 @@ function FAQ() {
           <Content className="contentBox">
             
             {/* Questions and answers */}
-            <ItemH flexDirection="column">
-              {
-                FAQS.map(({question, renderAnswer}, index) => (
-                  <QnAItem key={index} justifyContent="flex-start">
-                    <Question
-                      onClick={() => {toggleShowAnswer(index);}}
-                      hover="#e20880"
-                      isOpen={showAnswers[index]}
-                    >
-                      <Span>
-                        {question}
-                      </Span>
-                      <BsChevronExpand size={20} color={'#ddd'}/>
-                    </Question>
+            <Title>General</Title>
+            <Items body={General} />
 
-                    {showAnswers[index] &&
-                      renderAnswer()
-                    }
-                  </QnAItem>
-                ))
-              }
-            </ItemH>
-            {/* Questions and answers */}
+            <Title>Push Notifications</Title>
+            <Items body={Notifs} />
+
+            <Title>Push Chat</Title>
+            <Items body={Chat} />
+
+            <Title>Integrating Push</Title>
+            <Items body={IntegratingPush} />
+
+            <Title>Push Governance</Title>
+            <Items body={Governance} />
+
+            <Title>$PUSH Token</Title>
+            <Items body={Token} />
+            
          
           </Content>
         </ResponsiveSection>
@@ -401,7 +469,7 @@ const ResponsiveSection = styled(HybridSection)`
 
 const FAQWrapper = styled.main`
   & .contentBox {
-    row-gap: 18px;
+    // row-gap: 18px;
   }
 
   @media ${device.tablet} {
@@ -499,7 +567,16 @@ const BoldText = styled.span`
 
 const Image = styled.img`
   width: 400px;
-`
+`;
+
+const Title = styled.div`
+  font-family: 'Strawford';
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  color: #000000;
+  margin-top: 50px;
+`;
 
 
 
