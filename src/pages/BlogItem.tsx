@@ -128,6 +128,15 @@ const BlogItem = () => {
                         {blogsData?.title}
                 </H3>
 
+                <ArticleContent>
+                      <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                          {blogsData?.pubDate}
+                      </Moment> &#183;
+                      <Div>
+                          {blogsData?.description && readingTime(blogsData?.description)} mins read
+                      </Div>
+                  </ArticleContent>
+
                 <BlogContent>
                     {blogsContent && parse(blogsContent)}
                 </BlogContent>
@@ -593,6 +602,7 @@ const ArticleContent = styled.div`
     flex-direction: row !important;
     margin-top: 15px;
 `;
+
 const Div = styled.div`
   margin-left: 5px;
 `;
