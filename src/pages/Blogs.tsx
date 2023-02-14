@@ -13,6 +13,9 @@ import pageMeta from 'config/pageMeta';
 import HybridSection from 'components/HybridSection';
 import Image from 'assets/bg-image.png'
 import { BiSearch } from 'react-icons/bi';
+import moment from "moment";
+import Moment from "react-moment";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -20,12 +23,12 @@ const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
   const [blogsData, setBlogsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
     const loadData = async() => {
         try {
           setIsLoading(true);
           const data = await getAllBlogData();
-          console.log(data);
           setBlogsData(data);
         } catch (e) {
           console.error('Blogs API data fetch error: ', e);
@@ -67,6 +70,46 @@ const Blogs = () => {
     useEffect(() => {
         loadData();
       }, []);
+
+      const wordsPerMinute = 225;
+
+    function readingTime(text) {
+        return Math.ceil(wordCounter(text) / wordsPerMinute);
+    }
+
+    function wordCounter(input) {
+        const text = input?.split(/\s+/);
+        let wordCount = 0;
+        for (let i = 0; i < text.length; i++) {
+          if (text[i] !== " " && isWord(text[i])) {
+            wordCount++;
+          }
+        }
+        return wordCount;
+      }
+
+      function isWord(str) {
+        let alphaNumericFound = false;
+        for (let i = 0; i < str.length; i++) {
+          const code = str.charCodeAt(i);
+          if (
+            (code > 47 && code < 58) || // numeric (0-9)
+            (code > 64 && code < 91) || // upper alpha (A-Z)
+            (code > 96 && code < 123)
+          ) {
+            // lower alpha (a-z)
+            alphaNumericFound = true;
+            return alphaNumericFound;
+          }
+        }
+        return alphaNumericFound;
+      }
+
+    const onArticleClick = (clickedBlog) => {
+        if(clickedBlog?.link){
+           navigate(`/blogs/${clickedBlog?.title}`);
+        };
+    };
 
   if (Array.isArray(blogsData) && blogsData.length > 0) {
   return (
@@ -121,7 +164,7 @@ const Blogs = () => {
                 <MainSection>
                     {blogsData?.slice(0,2).map((blogData, idx) => {
                     return (
-                    <MainArticle key={idx} title={blogData?.title}>
+                    <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
                         <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
                 
                         <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
@@ -133,31 +176,41 @@ const Blogs = () => {
                         </ArticleText>
 
                         <ArticleContent>
-                        Jan 18 &#183; 6 min read
+                            <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                                {blogData?.pubDate}
+                            </Moment> &#183;
+                            <Div>
+                                {readingTime(blogData?.description)} mins read
+                            </Div>
                         </ArticleContent>
                     </MainArticle>)
-                    })};
+                    })}
             </MainSection>
 
                 <SubArticles>
-                    {blogsData?.slice(2,blogsData.length++).map((blogData, idx) => {
+                    {blogsData?.slice(2, blogsData.length++).map((blogData, idx) => {
                         return (
-                        <MainArticle key={idx} title={blogData?.title}>
+                        <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
                             <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
                     
                             <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
                             {blogData?.title}
                             </H3>
                     
-                            <ArticleText>
+                            <ArticleTextB>
                             {filterComment(blogData?.description)}
-                            </ArticleText>
+                            </ArticleTextB>
 
                             <ArticleContent>
-                            Jan 18 &#183; 6 min read
-                            </ArticleContent>
+                            <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                                {blogData?.pubDate}
+                            </Moment> &#183;
+                            <Div>
+                                {readingTime(blogData?.description)} mins read
+                            </Div>
+                        </ArticleContent>
                         </MainArticle>)
-                        })};
+                        })}
                 </SubArticles>
                 </BlogsSection>
 
@@ -199,22 +252,20 @@ const BlogsWrapper = styled.main`
 `;
 
 const MainArticle = styled(ItemV)`
-//   padding: 30px;
-width: 100%;
-//   box-sizing: border-box;
+  width: 100%;
+  margin-top: 70px;
+  justify-content: left !important;
 
    &:hover {
     cursor: pointer;
    }
 
    @media ${device.tablet} {
-    display: none;
+    margin-top: 10px;
    }
 `;
 
 const ArticleBanner = styled.img`
-    // width: 544px;
-    // height: 284px;
     width: 100%;
     background: #D9D9D9;
     border-radius: 32px;
@@ -229,12 +280,25 @@ const ArticleText = styled.div`
     font-family: Lora;
     margin-top: 10px;
     
-    // text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    // white-space: normal;
+`;
+
+const ArticleTextB = styled.div`
+    width: 100%;
+    color: #575D73;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 28px;
+    font-family: Lora;
+    margin-top: 10px;
+    
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 `;
 
 const ArticleContent = styled.div`
@@ -243,70 +307,19 @@ const ArticleContent = styled.div`
     font-size: 15px;
     font-weight: 300;
     line-height: 28px;
-    
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    white-space: normal;
+    display: flex;
+    flex-direction: row !important;
+    margin-top: 15px;
 `;
 
 const SubArticles = styled.div`
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-gap: 32px;
-    margin-top: 100px;
-
-`;
-
-const SubArticle = styled.div`
-    
-    // flex-direction: row;    
-    // column-gap: 30px;
-    // padding-bottom: 24px;
-    // border-bottom: 1px solid #000000;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &.loader {
-        padding-bottom: 20px;
-    }
-
-    &:last-child {
-        border-bottom: 0;
-    }
-
+    grid-gap: 33px;
+    margin-top: 10px;
     @media ${device.tablet} {
-        align-items: center;
-    }
-`;
-
-const SubArticleBanner = styled.img`
-    width: 207px;
-    height: 108px;
-    background: #D9D9D9;
-    border-radius: 20px;
-
-    @media ${device.tablet} {
-        width: 118px;
-        height: 108px;
-    }
-`;
-
-const SubArticleHeader = styled.h4`
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142%;
-    color: #09090B;
-    flex: 1;
-    align-self: center;
-
-    @media ${device.tablet} {
-        font-size: 16px;
-    }
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+   }
 `;
 
 const BlogsSection = styled(ResponsiveSection)`
@@ -322,9 +335,9 @@ const MainSection = styled.div`
   justify-content: space-between;
   margin: 10px 0px;
   width: 100%;
-  gap: 40px;
+  gap: 33px;
   @media ${device.tablet} {
-  flex-direction: column !important;
+    flex-direction: column !important;
 }
 `;
 
@@ -339,6 +352,10 @@ const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
+`;
+
+const Div = styled.div`
+  margin-left: 5px;
 `;
 
 const Wrapper = styled.div`

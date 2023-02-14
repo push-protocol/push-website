@@ -33,6 +33,9 @@ function App() {
   const Blogs = React.lazy(
     () => import("./pages/Blogs")
   )
+  const BlogItem = React.lazy(
+    () => import("./pages/BlogItem")
+  )
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -67,6 +70,7 @@ function App() {
         <Route path="/privacymobile" element={<PrivacyMobile />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogItem />} />
       </Routes>
       <Footer />
     </AppWrapper>  

@@ -51,7 +51,7 @@ export async function getAllBlogData() {
   return axios.get(requrl)
     .then((apiResponse) => {
       const blogs = apiResponse?.data.items;
-      console.log(blogs);
+      // console.log(blogs);
       return blogs;
       // return blogs.slice(0, limit);
     }).catch(error => {

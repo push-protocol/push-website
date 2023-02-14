@@ -18,5 +18,9 @@ export default {
   BLOGS: {
     pageName: 'blogs',
     pageTitle: 'PUSH | Blogs'
+  },
+  BLOGITEM: {
+    pageName: 'blogItem',
+    pageTitle: 'PUSH | BlogItem'
   }
 };
