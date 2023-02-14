@@ -291,7 +291,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                 >
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
+                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
                 </Span>
               </ItemV>
 
