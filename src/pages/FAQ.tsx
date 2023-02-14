@@ -330,18 +330,38 @@ const Token = [
 
 function FAQ() {
 
-  const [showAnswers, setShowAnswers] = React.useState([]);
+  const [showAnswers, setShowAnswers] = React.useState([
+    // {section: General},
+    // {section: Notifs},
+    // {section: Chat},
+    // {section: IntegratingPush},
+    // {section: Governance},
+    // {section: Token},
+  ]);
   const [active, setActiveSection] = React.useState();
 
   const toggleShowAnswer = (id, section) => {
     // console.log(body,id)
     setActiveSection(section);
-    setShowAnswers((oldAnswers) => {
+    if(active === section){
+    
+      setShowAnswers((oldAnswers) => {
       return {
         ...oldAnswers,
         [id]: !oldAnswers[id]
       };
     });
+
+  }
+  else{
+    setShowAnswers([]);
+    setShowAnswers((oldAnswers) => {
+          return {
+            // ...oldAnswers,
+            [id]: !oldAnswers[id]
+          };
+        });
+  }
   };
 
   console.log(showAnswers);
