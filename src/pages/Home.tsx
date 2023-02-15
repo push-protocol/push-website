@@ -1200,22 +1200,24 @@ const LiveNetworks = styled(ItemH)`
   border-radius: 28px;
   display: flex;
   align-items: center;
+  align-self: flex-start;
   justify-content: space-between;
   box-sizing: border-box;
 
-  .network {
-    padding: 26px;
+  & .divider {
+    background: #bac4d6;
+    flex: 0 0 1px;
+  }
+
+  & .network {
+    padding: 26px 16px;
 
     & svg {
       width: 106px;
       height: 26px;
     }
   }
-
-  & .divider {
-    background: #bac4d6;
-    flex: 0 0 1px;
-  }
+}
 
   
 
@@ -1225,7 +1227,7 @@ const LiveNetworks = styled(ItemH)`
     border-radius: 18px;
 
     & .network {
-      padding: 16px;
+      padding: 26px 16px;
 
       & svg {
         width: 106px;
@@ -1275,11 +1277,6 @@ const Partners = styled(ItemV)`
   justify-content: space-between;
   @media (max-width: 1200px) {
     flex-direction: column;
-  }
-  Span {
-    // @media ${device.laptop} {
-    //   width: 200px !important;
-    // }
   }
 `;
 
