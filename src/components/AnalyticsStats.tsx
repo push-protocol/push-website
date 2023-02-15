@@ -77,8 +77,8 @@ function AnalyticsStats() {
   // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
 
   // for now hard coded, plug back the API when real APIs are there.
-  const totalNotifsSent = nFormatter(17737587, 1);
-  const totalSubscribersCount = '60k+';
+  const totalNotifsSent = nFormatter(25037587, 1);
+  const totalSubscribersCount = '70k+';
   const pushIntegrations = '450+';
   const pushChatSent = '>$1M';
 
