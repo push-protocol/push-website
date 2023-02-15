@@ -281,9 +281,9 @@ function Home({isAlertVisible}) {
 
             <Partners
               margin="40px 0"
-              gap="90px"
+              gap={isMobile ? "30px": "50px"}
             >
-              {/* <ItemV> */}
+              <ItemV>
                 <Span
                   weight="400"
                   color="#303C5E"
@@ -294,9 +294,9 @@ function Home({isAlertVisible}) {
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
                   NFTs, gaming, dev tools, and more. Push is currently live on Ethereum and Polygon.{' '}
                 </Span>
-              {/* </ItemV> */}
+              </ItemV>
 
-              {/* <ItemV> */}
+              <ItemV>
                 <LiveNetworks>
                   <ItemV className="network">
                     <EthLogoTextSVG alt='Logo for Ethereum' title='Ethereum Logo' />
@@ -314,7 +314,7 @@ function Home({isAlertVisible}) {
                     <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
                   </ItemV>
                 </LiveNetworks>
-              {/* </ItemV> */}
+              </ItemV>
             </Partners>
 
             {/* <FadeInAnimation wrapperElement="div" direction='up' delay={0}> */}
@@ -1203,12 +1203,23 @@ const LiveNetworks = styled(ItemH)`
   justify-content: space-between;
   box-sizing: border-box;
 
+  .network {
+    padding: 26px;
+
+    & svg {
+      width: 106px;
+      height: 26px;
+    }
+  }
+
   & .divider {
     background: #bac4d6;
     flex: 0 0 1px;
   }
 
-  @media ${device.tablet} {
+  
+
+  @media ${device.laptopL} {
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 18px;
@@ -1219,6 +1230,21 @@ const LiveNetworks = styled(ItemH)`
       & svg {
         width: 106px;
         height: 26px;
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 18px;
+
+    & .network {
+      padding: 15px 10px;
+
+      & svg {
+        width: 79.5px;
+        height: 19.5px;
       }
     }
   }
@@ -1243,17 +1269,17 @@ export const BodyContent = styled.div`
   }
 `;
 
-const Partners = styled(ItemH)`
+const Partners = styled(ItemV)`
   display: flex;
   flex-direction: row;
-  @media ${device.laptop} {
+  justify-content: space-between;
+  @media (max-width: 1200px) {
     flex-direction: column;
   }
   Span {
-    width: 30%;
-    @media ${device.laptop} {
-      width: 100%;
-    }
+    // @media ${device.laptop} {
+    //   width: 200px !important;
+    // }
   }
 `;
 
