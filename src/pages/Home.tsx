@@ -41,6 +41,7 @@ import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg
 import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
+import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
 
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
@@ -280,7 +281,7 @@ function Home({isAlertVisible}) {
 
             <Partners
               margin="40px 0"
-              gap="90px"
+              gap={isMobile ? "30px": "50px"}
             >
               <ItemV>
                 <Span
@@ -299,6 +300,12 @@ function Home({isAlertVisible}) {
                 <LiveNetworks>
                   <ItemV className="network">
                     <EthLogoTextSVG alt='Logo for Ethereum' title='Ethereum Logo' />
+                  </ItemV>
+
+                  <ItemV className="divider" />
+
+                  <ItemV className="network">
+                    <BNBChainSVG alt='Logo for BNB Chain' title='BNB Chain Logo' />
                   </ItemV>
 
                   <ItemV className="divider" />
@@ -1194,13 +1201,25 @@ const LiveNetworks = styled(ItemH)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
+
+  .network {
+    padding: 26px;
+
+    & svg {
+      width: 106px;
+      height: 26px;
+    }
+  }
 
   & .divider {
     background: #bac4d6;
     flex: 0 0 1px;
   }
 
-  @media ${device.tablet} {
+  
+
+  @media ${device.laptopL} {
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 18px;
@@ -1211,6 +1230,21 @@ const LiveNetworks = styled(ItemH)`
       & svg {
         width: 106px;
         height: 26px;
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 18px;
+
+    & .network {
+      padding: 15px 10px;
+
+      & svg {
+        width: 79.5px;
+        height: 19.5px;
       }
     }
   }
@@ -1235,7 +1269,19 @@ export const BodyContent = styled.div`
   }
 `;
 
-const Partners = styled(ItemH)``;
+const Partners = styled(ItemV)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+  Span {
+    // @media ${device.laptop} {
+    //   width: 200px !important;
+    // }
+  }
+`;
 
 const SignupBox = styled(ItemH)`
   background: #B9ABEF;
