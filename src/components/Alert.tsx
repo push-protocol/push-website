@@ -16,17 +16,21 @@ import { device } from '../config/globals';
 
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
-    const alertMessage = "Superfluid Taps Push to Update Users on Money Streaming,";
-    const alertLink = "https://app.push.org/#/channels?channel=0xa947E9cFc724f05D83b995e53572c4bcCB00D7Aa";
+    const alertMessage = "Push bringing web3 communication to the masses with BNB Chain launch,";
+    const alertLink = "https://app.push.org";
+
+    const openLink = () => {
+        window.open(alertLink,"_blank")
+    }
 
     return(
         <Section>
         {isAlertVisible && 
             (
             <AlertContainer>
-                <AlertText>
+                <AlertText onClick={openLink}>
                     {alertMessage} 
-                    <KnowMoreLink href={alertLink} target="_blank">Click to get notified</KnowMoreLink>
+                    <KnowMoreLink href={alertLink} target="_blank">Know More</KnowMoreLink>
                     <FiArrowUpRight className='icon' />
                 </AlertText>
 
@@ -58,6 +62,7 @@ const AlertText = styled.div`
     letter-spacing: -0.03em;
     color: #FFFFFF;
     margin: auto auto;
+    cursor: pointer;
     @media ${device.tablet}{
         font-size: 14px;
         width: 80%;
