@@ -16,6 +16,7 @@ import { BiSearch } from 'react-icons/bi';
 import moment from "moment";
 import Moment from "react-moment";
 import { useNavigate } from "react-router-dom";
+import SpinnerSVG from 'assets/Spinner.gif'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -130,12 +131,15 @@ const Blogs = () => {
       try {
           setIsLoading(true);
           const data = blogsData?.filter(x => x.title.toLowerCase().includes(query));
-          console.log(data);
-          setSearchItems(data);
+          setTimeout(() => {
+            setSearchItems(data);
+          }, 500);
       } catch (error) {
           console.error("Channels API data fetch error: ", error);
       } finally {
-          setIsLoading(false);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 500);
       }
     }
 
@@ -173,7 +177,7 @@ const Blogs = () => {
     {item?.map((blogData, idx) => {
           return (
           <SearchMainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-              <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} />
+              <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} loading="lazy" />
       
               <ArticleRow> 
               <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
@@ -289,6 +293,10 @@ const Blogs = () => {
                 <SearchArticles>
                   {search && (<SearchArticleItem item={searchItems} />)}
                 </SearchArticles>
+
+                {isLoading && (<ItemH>
+                        <img src={SpinnerSVG} alt='' width={140} />
+                    </ItemH>)}
                 </Content>
               </BlogsSection>
 
@@ -363,8 +371,9 @@ const BlogsWrapper = styled.main`
 
 const MainArticle = styled(ItemV)`
   width: 100%;
-  margin-top: 20px;
+  margin-top: 50px;
   justify-content: left !important;
+  align-items: flex-start;
 
    &:hover {
     cursor: pointer;
@@ -388,12 +397,19 @@ const ArticleText = styled.div`
     font-weight: 300;
     line-height: 28px;
     font-family: Lora;
-    margin-top: 10px;
+    margin-top: 5px;
     
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+`;
+
+const ArticleSlide = styled.div`
+    width: 100%;
+    height: 100%;
+    background: #D9D9D9;
+    border-radius: 32px;
 `;
 
 const ArticleTextB = styled.div`
@@ -414,8 +430,8 @@ const ArticleTextB = styled.div`
 const ArticleContent = styled.div`
     width: 100%;
     color: #575D73;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 28px;
     display: flex;
     flex-direction: row !important;
@@ -426,9 +442,11 @@ const SubArticles = styled.div`
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-gap: 33px;
-    margin-top: 10px;
+    margin-top: 50px;
+    align-items: flex-start;
     @media ${device.tablet} {
         grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin-top: 0px;
    }
 `;
 const SearchArticles = styled.div``
@@ -438,7 +456,7 @@ const SearchMainArticle = styled.div`
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  // margin-top: 70px;
+  margin-top: 50px;
 
    &:hover {
     cursor: pointer;
@@ -484,6 +502,11 @@ const BlogRow = styled(ItemH)`
   margin: 120px 0 40px 0;
   @media ${device.tablet} {
     margin-top: 80px;
+  }
+  
+  @media ${device.tablet} {
+    // margin-top: 80px;
+    flex-direction: column;
   }
 `;
 
