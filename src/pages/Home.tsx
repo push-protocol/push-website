@@ -305,13 +305,13 @@ function Home({isAlertVisible}) {
                   <ItemV className="divider" />
 
                   <ItemV className="network">
-                    <BNBChainSVG alt='Logo for BNB Chain' title='BNB Chain Logo' />
+                   <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
                   </ItemV>
 
                   <ItemV className="divider" />
 
                   <ItemV className="network">
-                    <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
+                    <BNBChainSVG alt='Logo for BNB Chain' title='BNB Chain Logo' />
                   </ItemV>
                 </LiveNetworks>
               </ItemV>
