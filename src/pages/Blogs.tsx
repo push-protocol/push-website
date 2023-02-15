@@ -32,6 +32,8 @@ const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
   const [blogsData, setBlogsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [search, setSearch] = React.useState('');
+  const [searchItems, setSearchItems] = React.useState(null);
   const navigate = useNavigate();
 
     const loadData = async() => {
@@ -120,7 +122,83 @@ const Blogs = () => {
         };
     };
 
-  if (Array.isArray(blogsData) && blogsData.length > 0) {
+    const channelSearch = async (e) => {
+      let query = e.target.value;
+      setSearch(e.target.value);
+      if (e.target.value?.length == 0) return
+
+      try {
+          setIsLoading(true);
+          const data = blogsData?.filter(x => x.title.toLowerCase().includes(query));
+          console.log(data);
+          setSearchItems(data);
+      } catch (error) {
+          console.error("Channels API data fetch error: ", error);
+      } finally {
+          setIsLoading(false);
+      }
+    }
+
+  const ArticleItem = ({item}) => {
+    return(
+    <>{item?.map((blogData, idx) => {
+      return (
+      <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
+          <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
+  
+          <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
+          {blogData?.title}
+          </H3>
+  
+          <ArticleText>
+          {filterComment(blogData?.description)}
+          </ArticleText>
+
+          <ArticleContent>
+              <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                  {blogData?.pubDate}
+              </Moment> &#183;
+              <Div>
+                  {readingTime(blogData?.description)} mins read
+              </Div>
+          </ArticleContent>
+      </MainArticle>)
+      })}
+      </>)
+  }
+
+  const SearchArticleItem = ({item }) => {
+    console.log(item)
+    return(<>
+    {item?.map((blogData, idx) => {
+          return (
+          <SearchMainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
+              <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} />
+      
+              <ArticleRow> 
+              <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
+              {blogData?.title}
+              </H3>
+      
+              <ArticleTextB>
+              {filterComment(blogData?.description)}
+              </ArticleTextB>
+
+              <ArticleContent>
+              <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                  {blogData?.pubDate}
+              </Moment> &#183;
+              <Div>
+                  {readingTime(blogData?.description)} mins read
+              </Div>
+          </ArticleContent>
+          </ArticleRow>
+          </SearchMainArticle>)
+          })}
+          </>)
+  }
+
+  if (Array.isArray(blogsData) && blogsData.length > 0 || search && searchItems) {
   return (
         <PageWrapper
             pageName={pageMeta.BLOGS.pageName}
@@ -163,6 +241,9 @@ const Blogs = () => {
                 data-bkg="light"
                 className="lightBackground"
                 curve="bottom">
+
+            <Content className="contentBox">
+              
                 
                 <BlogRow>
                     <ItemV justifyContent="flex-start">
@@ -184,6 +265,9 @@ const Blogs = () => {
                       <input 
                         type="text"
                         placeholder='Search articles'
+                        value={search}
+                        onChange={channelSearch}
+
                         />
 
                     </Wrapper>
@@ -191,58 +275,22 @@ const Blogs = () => {
                     </ItemV>
                     </BlogRow>
 
+                {/* first two sections */}
                 <MainSection>
-                    {blogsData?.slice(0,2).map((blogData, idx) => {
-                    return (
-                    <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-                        <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
+                  {!search && (<ArticleItem item={blogsData?.slice(0, 2)} />)}
+                 </MainSection>
                 
-                        <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
-                        {blogData?.title}
-                        </H3>
-                
-                        <ArticleText>
-                        {filterComment(blogData?.description)}
-                        </ArticleText>
-
-                        <ArticleContent>
-                            <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
-                                {blogData?.pubDate}
-                            </Moment> &#183;
-                            <Div>
-                                {readingTime(blogData?.description)} mins read
-                            </Div>
-                        </ArticleContent>
-                    </MainArticle>)
-                    })}
-            </MainSection>
-
+                {/* other grid section */}
                 <SubArticles>
-                    {blogsData?.slice(2, blogsData.length++).map((blogData, idx) => {
-                        return (
-                        <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-                            <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
-                    
-                            <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
-                            {blogData?.title}
-                            </H3>
-                    
-                            <ArticleTextB>
-                            {filterComment(blogData?.description)}
-                            </ArticleTextB>
-
-                            <ArticleContent>
-                            <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
-                                {blogData?.pubDate}
-                            </Moment> &#183;
-                            <Div>
-                                {readingTime(blogData?.description)} mins read
-                            </Div>
-                        </ArticleContent>
-                        </MainArticle>)
-                        })}
+                  {!search && (<ArticleItem item={blogsData?.slice(2, blogsData.length++)} />)}
                 </SubArticles>
-                </BlogsSection>
+
+                {/* search grid section */}
+                <SearchArticles>
+                  {search && (<SearchArticleItem item={searchItems} />)}
+                </SearchArticles>
+                </Content>
+              </BlogsSection>
 
           </BlogsWrapper>
           </PageWrapper>
@@ -383,6 +431,35 @@ const SubArticles = styled.div`
         grid-template-columns: repeat(1, minmax(0, 1fr));
    }
 `;
+const SearchArticles = styled.div``
+
+const SearchMainArticle = styled.div`
+  width: 100%;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  // margin-top: 70px;
+
+   &:hover {
+    cursor: pointer;
+   }
+
+   @media ${device.tablet} {
+    margin-top: 10px;
+   }
+`;
+
+const ArticleImage = styled.img`
+    width: 400px;
+    background: #D9D9D9;
+    border-radius: 32px;
+`;
+
+const ArticleRow = styled.div`
+    margin-left: 70px;
+`
+
+
 
 const BlogsSection = styled(ResponsiveSection)`
  padding: 0px 160px 80px 160px;
