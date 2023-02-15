@@ -20,6 +20,9 @@ import parse from 'html-react-parser';
 import { BsLinkedin, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { FaDiscord } from 'react-icons/fa';
 import { FiChevronLeft } from 'react-icons/fi';
+import useReadingTime from 'hooks/useReadingTime';
+import SpinnerSVG from 'assets/Spinner.gif'
+
 
 const BlogItem = () => {
     const { id } = useParams();
@@ -56,52 +59,52 @@ const BlogItem = () => {
         loadData();
       }, []);
 
-      const wordsPerMinute = 225;
-
-      function readingTime(text) {
-          return Math.ceil(wordCounter(text) / wordsPerMinute);
+    function filterComment(hypertext) {
+        try {
+            var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '')
+            return newString;
+        } catch (e) {
+          return '';
+        }
       }
-  
-      function wordCounter(input) {
-          const text = input?.split(/\s+/);
-          let wordCount = 0;
-          for (let i = 0; i < text.length; i++) {
-            if (text[i] !== " " && isWord(text[i])) {
-              wordCount++;
-            }
-          }
-          return wordCount;
-        }
-  
-        function isWord(str) {
-          let alphaNumericFound = false;
-          for (let i = 0; i < str.length; i++) {
-            const code = str.charCodeAt(i);
-            if (
-              (code > 47 && code < 58) || // numeric (0-9)
-              (code > 64 && code < 91) || // upper alpha (A-Z)
-              (code > 96 && code < 123)
-            ) {
-              // lower alpha (a-z)
-              alphaNumericFound = true;
-              return alphaNumericFound;
-            }
-          }
-          return alphaNumericFound;
-        }
 
-        function filterComment(hypertext) {
-            try {
-                var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '')
-                return newString;
-            } catch (e) {
-              return '';
-            }
-          }
+      const ShowMore = () => {
+        navigate(`/blogs`);
+      }
 
-          const ShowMore = () => {
-           navigate(`/blogs`);
-          }
+      const OpenURL = (link) => {
+        window.open(link,'_blank')
+      }
+
+      const ArticleItem = ({ item }) => {
+        return(<>
+        {item?.map((blogData, idx) => {
+            return (
+            <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
+                <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} />
+        
+                <ArticleRow> 
+                <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
+                {blogData?.title}
+                </H3>
+        
+                <ArticleTextB>
+                {filterComment(blogData?.description)}
+                </ArticleTextB>
+
+                <ArticleContent marginTop='20px'>
+                <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
+                    {blogData?.pubDate}
+                </Moment> &#183;
+                <Div>
+                    {useReadingTime(blogData?.description)} mins read
+                </Div>
+            </ArticleContent>
+            </ArticleRow>
+            </MainArticle>)
+            })}
+        </>)
+      }
 
   return (
     <PageWrapper
@@ -121,10 +124,14 @@ const BlogItem = () => {
                 data-bkg="light"
                 className="lightBackground"
                 curve="bottom">
-                
+
                 <Content className='contentBox'>
 
-                <H3 textTransform="normal" color="#000000" size="45px" weight="700" spacing="-0.02em" lineHeight="55.5px" margin="24px 0 20px 0">
+                {isLoading && (<ItemH>
+                        <img src={SpinnerSVG} alt='' width={140} />
+                </ItemH>)}
+
+                <H3 textTransform="normal" color="#000000" size={isMobile ? "30px" : "40px"} weight="700" spacing="-0.02em" lineHeight="55.5px" margin="24px 0 20px 0">
                         {blogsData?.title}
                 </H3>
 
@@ -133,7 +140,7 @@ const BlogItem = () => {
                           {blogsData?.pubDate}
                       </Moment> &#183;
                       <Div>
-                          {blogsData?.description && readingTime(blogsData?.description)} mins read
+                          {blogsData?.description && useReadingTime(blogsData?.description)} mins read
                       </Div>
                   </ArticleContent>
 
@@ -159,99 +166,68 @@ const BlogItem = () => {
                 </AboutSection>
 
                 <KPIBanner>
-                <ItemV gap="18px" className='kpiItem'>
+                <ItemV onClick={()=>OpenURL("https://twitter.com/pushprotocol")} style={{cursor:'pointer'}} gap="18px" className='kpiItem'>
                     <KPIFigure>
-                        <BsTwitter size={35} />
+                        <BsTwitter size={32} />
                     </KPIFigure>
                     <KPIMetric>Twitter</KPIMetric>
                 </ItemV>
 
-                <ItemV gap="18px" className='kpiItem'>
+                <ItemV onClick={()=>OpenURL("https://twitter.com/pushprotocol")} style={{cursor:'pointer'}} gap="18px" className='kpiItem'>
                      <KPIFigure>
-                        <FaDiscord size={35} />
+                        <FaDiscord size={32} />
                     </KPIFigure>
                     <KPIMetric>Discord</KPIMetric>
                 </ItemV>
 
-                <ItemV gap="18px" className='kpiItem'>
+                <ItemV onClick={()=>OpenURL("https://twitter.com/pushprotocol")} style={{cursor:'pointer'}} gap="18px" className='kpiItem'>
                     <KPIFigure>
-                        <BsYoutube size={35} />
+                        <BsYoutube size={32} />
                     </KPIFigure>
                     <KPIMetric>YouTube</KPIMetric>
                 </ItemV>
 
                 
-                <ItemV gap="18px" className='kpiItem'>
+                <ItemV onClick={()=>OpenURL("https://twitter.com/pushprotocol")} style={{cursor:'pointer'}} gap="18px" className='kpiItem'>
                     <KPIFigure>
-                        <BsLinkedin size={35} />
+                        <BsLinkedin size={32} />
                     </KPIFigure>
                     <KPIMetric>Linkedin</KPIMetric>
                 </ItemV>
             </KPIBanner>
 
             <BlogRow>
-                    <ItemV justifyContent="flex-start">
                         <ResponsiveH2
-                        size="28px"
+                        size={isMobile ? "16px" : "28px"}
                         weight="700"
                         spacing="-0.02em"
                         lineHeight="110%"
                         >
                         More from Push Protocol                               </ResponsiveH2>
-                    </ItemV>
-                    <ItemV 
-                        maxWidth="350px"
-                        justifyContent="flex-end">
+                    
 
-                <Anchor
-                  href="https://twitter.com/pushprotocol"
-                  title="Developer Docs"
-                  target="_blank"
-                  bg="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="26px"
-                  self="center"
-                  margin={isMobile && "20px 0px 0px 0px"}
-                >
-                <BsTwitter size={23} color='#fff' style={{marginRight: '10px'}} />
-                  Follow
-                  {/* <BsArrowUpRight className="anchorSVGlink" /> */}
-                </Anchor>
-                    </ItemV>
+                        <Anchor
+                          href="https://twitter.com/pushprotocol"
+                          title="Developer Docs"
+                          target="_blank"
+                          bg="#DD44B9"
+                          radius="16px"
+                          padding="14px 32px"
+                          size="18px"
+                          weight="500"
+                          spacing="-0.03em"
+                          lineHeight="26px"
+                          self="center"
+                        >
+                        <BsTwitter size={23} color='#fff' style={{marginRight: '10px'}} />
+                          Follow
+                        </Anchor>
 
                     </BlogRow>
 
                     <SubArticles>
-                    {allBlogs?.slice(2, 6).map((blogData, idx) => {
-                        return (
-                        <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-                            <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} />
-                    
-                           <ArticleRow> 
-                            <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
-                            {blogData?.title}
-                            </H3>
-                    
-                            <ArticleTextB>
-                            {filterComment(blogData?.description)}
-                            </ArticleTextB>
-
-                            <ArticleContent>
-                            <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
-                                {blogData?.pubDate}
-                            </Moment> &#183;
-                            <Div>
-                                {readingTime(blogData?.description)} mins read
-                            </Div>
-                        </ArticleContent>
-                        </ArticleRow>
-                        </MainArticle>)
-                        })}
-                </SubArticles>
+                          <ArticleItem item={allBlogs?.slice(2, 6)} />
+                    </SubArticles>
 
                 <ShowMoreSection onClick={ShowMore}>
                         <FiChevronLeft size={23} />
@@ -260,7 +236,6 @@ const BlogItem = () => {
 
 
                 </Content>
-
             </BlogsSection>
 
         </BlogsWrapper>
@@ -333,7 +308,7 @@ const BlogContent = styled.div`
      font-family: Lora !important;
      color: #282A2D;
      font-weight: 400;
-     font-size: 18px;
+     font-size: 16px;
         a {
             color: #000000;
             cursor: pointer;
@@ -382,7 +357,7 @@ const BlogContent = styled.div`
                 height: fit-content;
             }
         }
-        &:nth-child(1) {
+        &:nth-of-type(1) {
             display: none;
         }
         @media ${device.laptop}{
@@ -405,7 +380,7 @@ const AboutSection = styled.div`
     span {
         font-family: 'Lora';
         font-weight: 300;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 37px;
         color: #282A2D;
         letter-spacing: -0.002em;
@@ -455,7 +430,6 @@ const ToggleButton = styled.div`
 
 const KPIBanner = styled.div`
     background: linear-gradient(89.78deg, #FEE8FF 5.59%, #F9EDFF 90.26%);
-    // backdrop-filter: blur(30px);
     border-radius: 23px;
     display: flex;
     align-items: center;
@@ -469,7 +443,7 @@ const KPIBanner = styled.div`
     & .kpiItem {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: center !important;
     }
 
     @media ${device.tablet} {
@@ -498,16 +472,9 @@ const KPIBanner = styled.div`
      }
 `;
 
-const KPIFigure = styled(Span)`
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 110%;
-    letter-spacing: -0.02em;
-    color: #1E1E1E;
-
-    @media ${device.tablet} {
-        font-size: 32px;
-    }
+const KPIFigure = styled.div`
+    height: fit-content;
+    width: fit-content;
 `;
 
 const KPIMetric = styled(Span)`
@@ -522,8 +489,12 @@ const KPIMetric = styled(Span)`
     }
 `;
 
-const BlogRow = styled(ItemH)`
-  margin: 70px 0 40px 0;
+// const BlogRow = styled(ItemH)`
+const BlogRow = styled.div`
+  margin: 150px 0 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   @media ${device.tablet} {
     margin-top: 80px;
   }
@@ -531,7 +502,7 @@ const BlogRow = styled(ItemH)`
 
 const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
-    font-size: 32px;
+    font-size: 16px;
   }
 `;
 
@@ -545,6 +516,10 @@ const ArticleBanner = styled.img`
     margin: 20px 0px 0px 0px;
     position: absolute;
     z-index: 2;
+    @media ${device.tablet} {
+      border-radius: 14px;
+    }
+
 `;
 
 const SubArticles = styled.div`
@@ -562,8 +537,9 @@ const MainArticle = styled.div`
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  margin-top: 70px;
-//   justify-content: left !important;
+  &:not(:first-of-type) {
+    margin-top: 50px;
+  }
 
    &:hover {
     cursor: pointer;
@@ -571,6 +547,7 @@ const MainArticle = styled.div`
 
    @media ${device.tablet} {
     margin-top: 10px;
+    flex-direction: column !important;
    }
 `;
 
@@ -588,19 +565,17 @@ const ArticleTextB = styled.div`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 `;
-const ArticleRow = styled.div`
-    margin-left: 70px;
-`
 
 const ArticleContent = styled.div`
     width: 100%;
     color: #575D73;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 28px;
     display: flex;
     flex-direction: row !important;
-    margin-top: 15px;
+    margin-top: ${(props) => props.marginTop || '0px'};
+
 `;
 
 const Div = styled.div`
@@ -611,7 +586,18 @@ const ArticleImage = styled.img`
     width: 400px;
     background: #D9D9D9;
     border-radius: 32px;
+    @media ${device.tablet} {
+        width: 100%;
+     }
 `;
+
+const ArticleRow = styled.div`
+    margin-left: 70px;
+    @media ${device.tablet} {
+      margin-left: 0px;
+      width: 100%;
+   }
+`
 
 const ShowMoreSection = styled.div`
     border: 1px solid #BAC4D6;
@@ -628,6 +614,11 @@ const ShowMoreSection = styled.div`
         line-height: 110%;
         letter-spacing: -0.03em;
         color: #1E1E1E;
+       
+        @media ${device.tablet} {
+          font-weight: 500;
+          font-size: 16px;
+       }
     }
 `;
 

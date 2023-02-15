@@ -26,6 +26,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
+import useReadingTime from 'hooks/useReadingTime';
 
 
 
@@ -49,16 +50,6 @@ const Blogs = () => {
         }
     }
 
-    function getDescription(hypertext) {
-        try {
-          const articleFragments = hypertext.split('\n');
-          const [, descriptionFrag = ''] = articleFragments;
-          return extractContent(descriptionFrag);
-        } catch (e) {
-          return '';
-        }
-      }
-
       function filterComment(hypertext) {
         try {
             var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '')
@@ -68,54 +59,10 @@ const Blogs = () => {
         }
       }
 
-      function getSubarticles(isMobile, blogs) {
-        const [, ...otherBlogs] = blogs || [];
-      
-        if (isMobile) {
-          return blogs;
-        }
-      
-        return otherBlogs;
-      
-      }
-
     useEffect(() => {
         loadData();
       }, []);
 
-      const wordsPerMinute = 225;
-
-    function readingTime(text) {
-        return Math.ceil(wordCounter(text) / wordsPerMinute);
-    }
-
-    function wordCounter(input) {
-        const text = input?.split(/\s+/);
-        let wordCount = 0;
-        for (let i = 0; i < text.length; i++) {
-          if (text[i] !== " " && isWord(text[i])) {
-            wordCount++;
-          }
-        }
-        return wordCount;
-      }
-
-      function isWord(str) {
-        let alphaNumericFound = false;
-        for (let i = 0; i < str.length; i++) {
-          const code = str.charCodeAt(i);
-          if (
-            (code > 47 && code < 58) || // numeric (0-9)
-            (code > 64 && code < 91) || // upper alpha (A-Z)
-            (code > 96 && code < 123)
-          ) {
-            // lower alpha (a-z)
-            alphaNumericFound = true;
-            return alphaNumericFound;
-          }
-        }
-        return alphaNumericFound;
-      }
 
     const onArticleClick = (clickedBlog) => {
         if(clickedBlog?.link){
@@ -163,7 +110,7 @@ const Blogs = () => {
                   {blogData?.pubDate}
               </Moment> &#183;
               <Div>
-                  {readingTime(blogData?.description)} mins read
+                  {useReadingTime(blogData?.description)} mins read
               </Div>
           </ArticleContent>
       </MainArticle>)
@@ -193,7 +140,7 @@ const Blogs = () => {
                   {blogData?.pubDate}
               </Moment> &#183;
               <Div>
-                  {readingTime(blogData?.description)} mins read
+                  {useReadingTime(blogData?.description)} mins read
               </Div>
           </ArticleContent>
           </ArticleRow>
@@ -231,7 +178,7 @@ const Blogs = () => {
                       <CarouselContainer>
                           <CarouselImage src={item?.thumbnail} alt={item?.title} />
                           <CarouselTitle>{item?.title}</CarouselTitle>
-                          <CarouselReadTime>{readingTime(item?.description)} mins read</CarouselReadTime>
+                          <CarouselReadTime>{useReadingTime(item?.description)} mins read</CarouselReadTime>
                       </CarouselContainer>
                     </SwiperSlide>
                   ))}
@@ -495,6 +442,7 @@ const SearchMainArticle = styled.div`
 
    @media ${device.tablet} {
     margin-top: 10px;
+    flex-direction: column !important;
    }
 `;
 
@@ -502,10 +450,17 @@ const ArticleImage = styled.img`
     width: 400px;
     background: #D9D9D9;
     border-radius: 32px;
+    @media ${device.tablet} {
+        width: 100%;
+     }
 `;
 
 const ArticleRow = styled.div`
     margin-left: 70px;
+    @media ${device.tablet} {
+      margin-left: 0px;
+      width: 100%;
+   }
 `
 
 
@@ -537,7 +492,6 @@ const BlogRow = styled(ItemH)`
   }
   
   @media ${device.tablet} {
-    // margin-top: 80px;
     flex-direction: column;
   }
 `;
