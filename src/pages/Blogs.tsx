@@ -297,6 +297,12 @@ const Blogs = () => {
                 {isLoading && (<ItemH>
                         <img src={SpinnerSVG} alt='' width={140} />
                     </ItemH>)}
+
+                  {search && !isLoading && searchItems.length === 0 &&(<CenteredContainerInfo>
+                      <DisplayNotice>
+                            No articles match your query.
+                      </DisplayNotice>
+                  </CenteredContainerInfo>)}
                 </Content>
               </BlogsSection>
 
@@ -306,7 +312,30 @@ const Blogs = () => {
 }
 }
 
+const CenteredContainerInfo = styled.div`
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DisplayNotice = styled.span`
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  background: rgb(244, 245, 250);
+`
+
 const ResponsiveSection = styled(HybridSection)`
+  min-height: ${(props) => props.minHeight || '0px'};
   @media ${device.tablet} {
     padding-left: 30px !important;
     padding-right: 30px !important;
@@ -456,7 +485,9 @@ const SearchMainArticle = styled.div`
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  margin-top: 50px;
+  &:not(:first-of-type) {
+    margin-top: 50px;
+  }
 
    &:hover {
     cursor: pointer;
@@ -481,6 +512,7 @@ const ArticleRow = styled.div`
 
 const BlogsSection = styled(ResponsiveSection)`
  padding: 0px 160px 80px 160px;
+ align-items: flex-start !important:
   @media ${device.tablet} {
     padding-bottom: 32px;
   }
@@ -499,7 +531,7 @@ const MainSection = styled.div`
 `;
 
 const BlogRow = styled(ItemH)`
-  margin: 120px 0 40px 0;
+  margin: 100px 0 20px 0;
   @media ${device.tablet} {
     margin-top: 80px;
   }
