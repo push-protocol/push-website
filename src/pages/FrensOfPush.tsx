@@ -36,7 +36,10 @@ const [search, setSearch] = React.useState('')
 const options = {
     scale: 1,
     speed: 1000,
-    max: 20
+    max: 20,
+    // glare: true,
+    // 'max-glare': 1,
+    // "glare-prerender": false,
   };
 
 
@@ -149,6 +152,8 @@ useEffect(() => {
       }, 500);
       }
     }
+
+    console.log(search);
 
 
   return (
@@ -348,7 +353,7 @@ const ChannelsSection = styled.div`
 `
 
 const ToggleButton = styled.div`
-    border: ${(props) => props.active ? 'none' : '1px solid #BAC4D6'};
+    border: ${(props) => props.active ? '1px solid transparent' : '1px solid #BAC4D6'};
     border-radius: 62px;
     display: flex;
     flex-direction: row;
@@ -364,7 +369,7 @@ const ToggleButton = styled.div`
     color: ${(props) => props.active ? '#fff' : '#000'};
     &:hover {
         background: ${(props) => props.active ? '#D53893' : '#FFDBF0'};
-        border: none;
+        border: 1px solid transparent;
         cursor: pointer;
     }
 
@@ -374,17 +379,6 @@ const ToggleButton = styled.div`
      border: none;
      color: ${(props) => props.active ? '#fff' : '#000'};
     }
-
-    // &:has(b) {
-    //     background: #D53893;
-    //     color: #fff;
-    //     border: none;
-    //     &:hover {
-    //         background: #D53893;
-    //         border: none;
-    //         cursor: pointer;
-    //     }
-    // }
 
     b {
         font-weight: 500;
