@@ -226,7 +226,7 @@ const BlogItem = () => {
                     </BlogRow>
 
                     <SubArticles>
-                          <ArticleItem item={allBlogs?.slice(2, 6)} />
+                          <ArticleItem item={allBlogs?.slice(5, 9)} />
                     </SubArticles>
 
                 <ShowMoreSection onClick={ShowMore}>
