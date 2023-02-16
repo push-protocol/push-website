@@ -278,7 +278,20 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       FAQ
                     </LinkTo>
-                    <Anchor
+                    <LinkTo
+                      to="/blogs"
+                      title="Frequently Asked Questions"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Blog
+                    </LinkTo>
+                    {/* <Anchor
                       href="https://push-protocol.medium.com/"
                       target="_blank"
                       title="Read our story"
@@ -291,7 +304,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       spacing="normal"
                     >
                       Blog
-                    </Anchor>
+                    </Anchor> */}
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
