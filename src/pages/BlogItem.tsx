@@ -97,7 +97,7 @@ const BlogItem = () => {
                     {blogData?.pubDate}
                 </Moment> &#183;
                 <Div>
-                    {useReadingTime(blogData?.description)} mins read
+                    {useReadingTime(blogData?.description)} min read
                 </Div>
             </ArticleContent>
             </ArticleRow>
@@ -140,7 +140,7 @@ const BlogItem = () => {
                           {blogsData?.pubDate}
                       </Moment> &#183;
                       <Div>
-                          {blogsData?.description && useReadingTime(blogsData?.description)} mins read
+                          {blogsData?.description && useReadingTime(blogsData?.description)} min read
                       </Div>
                   </ArticleContent>
 
@@ -203,7 +203,8 @@ const BlogItem = () => {
                         spacing="-0.02em"
                         lineHeight="110%"
                         >
-                        More from Push Protocol                               </ResponsiveH2>
+                          More from Push Protocol
+                        </ResponsiveH2>
                     
 
                         <Anchor

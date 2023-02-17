@@ -589,6 +589,16 @@ button, a, a:before, a:after {
   text-align: center;
 }
 
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #D53A94 !important;
+  width: 25px !important;
+  border-radius: 5px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #494D5F !important;
+}
+
 
 @-webkit-keyframes BGColorTransition {
   0% {

@@ -27,6 +27,8 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 import useReadingTime from 'hooks/useReadingTime';
+import { BodyContent } from './Home';
+import SignupInput from 'components/SignupInput';
 
 
 
@@ -110,7 +112,7 @@ const Blogs = () => {
                   {blogData?.pubDate}
               </Moment> &#183;
               <Div>
-                  {useReadingTime(blogData?.description)} mins read
+                  {useReadingTime(blogData?.description)} min read
               </Div>
           </ArticleContent>
       </MainArticle>)
@@ -140,7 +142,7 @@ const Blogs = () => {
                   {blogData?.pubDate}
               </Moment> &#183;
               <Div>
-                  {useReadingTime(blogData?.description)} mins read
+                  {useReadingTime(blogData?.description)} min read
               </Div>
           </ArticleContent>
           </ArticleRow>
@@ -178,7 +180,7 @@ const Blogs = () => {
                       <CarouselContainer>
                           <CarouselImage src={item?.thumbnail} alt={item?.title} />
                           <CarouselTitle>{item?.title}</CarouselTitle>
-                          <CarouselReadTime>{useReadingTime(item?.description)} mins read</CarouselReadTime>
+                          <CarouselReadTime>{useReadingTime(item?.description)} min read</CarouselReadTime>
                       </CarouselContainer>
                     </SwiperSlide>
                   ))}
@@ -251,6 +253,40 @@ const Blogs = () => {
                       </DisplayNotice>
                   </CenteredContainerInfo>)}
                 </Content>
+
+              <BodyContent className="contentBox">
+                    <SignupBox margin="0 0 0px 0">
+                        <ItemV
+                            justifyContent="flex-start"
+                            gap="12px"
+                        >
+                            <ResponsiveH2
+                            color="#09090B"
+                            size="40px"
+                            weight="700"
+                            spacing="-0.02em"
+                            lineHeight="110%"
+                            margin="0"
+                            >
+                            Never Miss an Update
+                            </ResponsiveH2>
+                            <Span
+                            color="#303C5E"
+                            size="20px"
+                            weight="400"
+                            spacing="-0.03em"
+                            lineHeight="138.5%"
+                            >
+                            Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                            </Span>
+                         </ItemV>    
+
+                        <ItemV>
+                            <SignupInput />
+                        </ItemV>
+                     </SignupBox>
+                 </BodyContent>
+
               </BlogsSection>
 
           </BlogsWrapper>
@@ -474,14 +510,15 @@ const BlogsSection = styled(ResponsiveSection)`
 `;
 
 const MainSection = styled.div`
-  display: flex;
-  flex-direction: row !important;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 32px;
   margin: 10px 0px;
   width: 100%;
   gap: 33px;
   @media ${device.tablet} {
-    flex-direction: column !important;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      margin-top: 0px;
 }
 `;
 
@@ -590,6 +627,20 @@ const CarouselReadTime = styled.div`
       font-size: 10px;
       line-height: 9px;
       width: 100%;
+  }
+`;
+
+const SignupBox = styled(ItemH)`
+  background: rgba(214, 177, 242, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 32px;
+  padding: 72px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  @media ${device.tablet} {
+    padding: 24px;
+    flex-direction: column;
   }
 `;
 
