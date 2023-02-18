@@ -76,6 +76,18 @@ const BlogItem = () => {
         window.open(link,'_blank')
       }
 
+      const onArticleClick = (clickedBlog) => {
+        if(clickedBlog?.link){
+           navigate(`/blogs/${clickedBlog?.title}`);
+        };
+    };
+
+    useEffect(()=> {
+          if(blogsContent){
+            console.log('true',blogsContent);
+          }
+    },[blogsContent])
+
       const ArticleItem = ({ item }) => {
         return(<>
         {item?.map((blogData, idx) => {
@@ -131,7 +143,7 @@ const BlogItem = () => {
                         <img src={SpinnerSVG} alt='' width={140} />
                 </ItemH>)}
 
-                <H3 textTransform="normal" color="#000000" size={isMobile ? "30px" : "40px"} weight="700" spacing="-0.02em" lineHeight="55.5px" margin="24px 0 20px 0">
+                <H3 textTransform="normal" color="#000000" size={isMobile ? "30px" : "40px"} weight="700" spacing="-0.02em" lineHeight="55.5px" margin="0px 0 20px 0">
                         {blogsData?.title}
                 </H3>
 
@@ -264,7 +276,7 @@ const AnimationSection = styled(ResponsiveSection)`
       }
     @media ${device.laptop} {
         min-height: 50vh;
-        padding: 80px 40px 20px 40px;
+        padding: 80px 40px 0px 40px;
       }
 
       @media ${device.tablet} {
@@ -292,14 +304,31 @@ const BlogsWrapper = styled.main`
 
 const BlogsSection = styled(ResponsiveSection)`
  padding: 80px 160px 80px 160px;
+ position: relative;
+ margin-top: 20px;
+
+   @media ${device.laptop} {
+    margin-top: 120px;
+  }
+  @media ${device.tablet} {
+    margin-top: 40px;
+  }
 
   @media ${device.mobileL} {
-    padding-top: 40px;
+    margin-top: 60px;
+    padding-top: 0px;
+    padding-bottom: 32px;
+  }
+
+  @media ${device.mobileM} {
+    margin-top: 40px;
+    padding-top: 0px;
     padding-bottom: 32px;
   }
 `;
 
 const BlogContent = styled.div`
+    width: 100%:
     font-family: Lora !important;
     font-weight: 400;
     font-size: 22px;
@@ -323,7 +352,19 @@ const BlogContent = styled.div`
         font-size: 24px;
         line-height: 38px;
         color: #575D73;
+    }
 
+    pre { 
+      font-family: 'Strawford' !important;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 38px;
+        color: #575D73;
+        background: #f9f9f9;
+        border: 2px solid #E5E5E5;
+        border-radius: 4px;
+        overflow-x: auto;
+        padding: 25px;
     }
 
     h1,h2,h3,h4 {
@@ -517,6 +558,9 @@ const ArticleBanner = styled.img`
     margin: 20px 0px 0px 0px;
     position: absolute;
     z-index: 2;
+    @media ${device.laptop} {
+      width: 100%;
+    }
     @media ${device.tablet} {
       border-radius: 14px;
     }
