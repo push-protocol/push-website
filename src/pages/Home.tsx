@@ -132,7 +132,9 @@ function Home({isAlertVisible}) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
+                <FadeInAnimation wrapperElement="div" delay={1.5}>
                   <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+                  </FadeInAnimation>
                 </HeroAnimation>
               )
             }
@@ -145,21 +147,26 @@ function Home({isAlertVisible}) {
                 alignItems="flex-start"
                 MarginTop={isAlertVisible ? '100px' : '0px'}
               >
-                <H1V2 zIndex="2">The Communication Protocol of Web3</H1V2>
+                <FadeInAnimation wrapperElement="div" delay={0.5}>
+                  <H1V2 zIndex="2"> The Communication Protocol of Web3</H1V2>
+                </FadeInAnimation>
 
                 <SpanV2
                   margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                  Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
-                  dapps, wallets, and services.
+                <FadeInAnimation wrapperElement="div" delay={1}>
+                    Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
+                    dapps, wallets, and services.
+                  </FadeInAnimation>
                 </SpanV2>
 
                 <HeroCTA
                   justifyContent="flex-start"
                   gap="18px"
                 >
+                <FadeInAnimation wrapperElement="div" delay={1}>
                   <Atag
                     href="https://docs.push.org/developers"
                     title="Developer Docs"
@@ -170,6 +177,8 @@ function Home({isAlertVisible}) {
                   >
                     Start Building
                   </Atag>
+                  </FadeInAnimation>
+                <FadeInAnimation wrapperElement="div" delay={1}>
                   <Atag
                     href="https://app.push.org/"
                     title="Push Dapp"
@@ -180,6 +189,7 @@ function Home({isAlertVisible}) {
                   >
                     Explore Push Protocol
                   </Atag>
+                  </FadeInAnimation>
                 </HeroCTA>
 
                 <ItemHV2
@@ -192,10 +202,12 @@ function Home({isAlertVisible}) {
                     target="_blank"
                     margin="0 0 0 -10px"
                   >
+                <FadeInAnimation wrapperElement="div" delay={1}>
                     <TwitterSVG
                       width={32}
                       height={32}
                     />
+                    </FadeInAnimation>
                   </Anchor>
 
                   <Anchor
@@ -203,10 +215,12 @@ function Home({isAlertVisible}) {
                     title="Push Github"
                     target="_blank"
                   >
+                 <FadeInAnimation wrapperElement="div" delay={1.5}>
                     <GithubSVG
                       width={32}
                       height={32}
                     />
+                  </FadeInAnimation>
                   </Anchor>
 
                   <Anchor
@@ -214,10 +228,12 @@ function Home({isAlertVisible}) {
                     title="Push Discord"
                     target="_blank"
                   >
+                 <FadeInAnimation wrapperElement="div" delay={2}>
                     <DiscordSVG
                       width={32}
                       height={32}
                     />
+                  </FadeInAnimation>
                   </Anchor>
                 </ItemHV2>
               </HeroItem>
@@ -230,7 +246,9 @@ function Home({isAlertVisible}) {
               right="0"
               bottom="10vh"
             >
-              <AnalyticsStats />
+              <FadeInAnimation wrapperElement="div" delay={2}>
+                <AnalyticsStats />
+              </FadeInAnimation>
             </AnalyticsStatsContainer>
           </ContentV2>
         </SectionV2>
@@ -291,8 +309,10 @@ function Home({isAlertVisible}) {
                   lineHeight="160%"
                   spacing="-0.03em"
                 >
+                  <FadeInAnimation wrapperElement="span" delay={1}>
                   Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
                   NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
+                  </FadeInAnimation>
                 </Span>
               </ItemV>
 
@@ -317,11 +337,11 @@ function Home({isAlertVisible}) {
               </ItemV>
             </Partners>
 
-            {/* <FadeInAnimation wrapperElement="div" direction='up' delay={0}> */}
             <PushWorksRow>
               <ItemImage
                 justifyContent="center"
               >
+            <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
                 <MemberImage
                   className="pushMissingSvg"
                   src={PushMissingPieceFigure}
@@ -332,9 +352,9 @@ function Home({isAlertVisible}) {
                   // width="100%"
                   // height="100%"
                 />
-
-               
+                </FadeInAnimation>
               </ItemImage>
+
 
               <ItemV
                 justifyContent={isMobile ? "center" : "flex-start"}
@@ -349,7 +369,9 @@ function Home({isAlertVisible}) {
                   spacing="-0.02em"
                   lineHeight="110%"
                 >
+                  <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
                   Push is the missing piece of Web3
+                  </FadeInAnimation>
                 </ResponsiveH2>
 
                 <Span
@@ -360,9 +382,11 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  Until Push, no solution existed to enable native communication between wallets in response to on- and
-                  off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
-                  communication platforms.
+                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.5}>
+                      Until Push, no solution existed to enable native communication between wallets in response to on- and
+                      off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
+                      communication platforms.
+                  </FadeInAnimation>
                 </Span>
 
                 <Span
@@ -373,33 +397,36 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  Push is building the communication network for Web3, addressing a gap in critical infrastructure and
-                  improving the everyday experience for blockchain users.
+                  <FadeInAnimation wrapperElement="span" direction='up' delay={1}>
+                    Push is building the communication network for Web3, addressing a gap in critical infrastructure and
+                    improving the everyday experience for blockchain users.
+                  </FadeInAnimation>
                 </Span>
 
                 
-
-                <Anchor
-                  href="https://docs.push.org/developers"
-                  title="Developer Docs"
-                  target="_blank"
-                  bg="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
-                  lineHeight="26px"
-                  self="center"
-                  margin={isMobile && "20px 0px 0px 0px"}
-                >
-                  {/* Learn about $PUSH */}
-                  How Push works
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
+                <FadeInAnimation wrapperElement="div" direction='up' delay={1}>
+                    <Anchor
+                      href="https://docs.push.org/developers"
+                      title="Developer Docs"
+                      target="_blank"
+                      bg="#DD44B9"
+                      radius="16px"
+                      padding="14px 32px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="26px"
+                      self="center"
+                      margin={isMobile && "20px 0px 0px 0px"}
+                    >
+                      {/* Learn about $PUSH */}
+                      How Push works
+                      <BsArrowUpRight className="anchorSVGlink" />
+                    </Anchor>
+                </FadeInAnimation>
               </ItemV>
+
             </PushWorksRow>
-            {/* </FadeInAnimation> */}
           </Content>
         </StorySection>
 

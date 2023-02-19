@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable react/prop-types */
+/* eslint-disable */
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -18,6 +19,7 @@ import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite
 import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 import Alert from 'components/Alert';
+import FadeInAnimation from 'components/FadeInAnimation';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -121,6 +123,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
+          <FadeInAnimation wrapperElement="div" delay={0}>
           <HeaderItemH
             alignSelf="stretch"
             padding={GLOBALS.ADJUSTMENTS.PADDING.SMALL}
@@ -412,6 +415,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
               </DappLauncher>
             </ItemVV2>
           </HeaderItemH>
+          </FadeInAnimation>
         </ContentV2>
       </SectionV2>
     </StyledHeader>
