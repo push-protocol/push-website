@@ -239,6 +239,7 @@ function Home({isAlertVisible}) {
               </HeroItem>
             </HeroPrimary>
 
+            {/* <FadeInAnimation wrapperElement="div" delay={2}> */}
             <AnalyticsStatsContainer
               position="absolute"
               zIndex="9"
@@ -246,10 +247,10 @@ function Home({isAlertVisible}) {
               right="0"
               bottom="10vh"
             >
-              <FadeInAnimation wrapperElement="div" delay={2}>
                 <AnalyticsStats />
-              </FadeInAnimation>
             </AnalyticsStatsContainer>
+            {/* </FadeInAnimation> */}
+
           </ContentV2>
         </SectionV2>
 
