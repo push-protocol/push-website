@@ -1,9 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+/* eslint-disable */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import MarqueeAnimation from './MarqueeAnimation';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { ItemHV2 } from '../components/SharedStylingV2';
 
@@ -51,6 +54,9 @@ import { ReactComponent as UniswapSVG }  from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG }  from '../assets/partners/unstoppable.svg';
 import { ReactComponent as WormbatSVG }  from '../assets/partners/wormbat.svg';
 import { ReactComponent as ZeroswapSVG }  from '../assets/partners/zeroswap.svg';
+import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
+import { device } from 'config/globals';
+import useMediaQuery from 'hooks/useMediaQuery';
 
 
 
@@ -60,107 +66,197 @@ import { ReactComponent as ZeroswapSVG }  from '../assets/partners/zeroswap.svg'
 
 const partnerSortedGroup = [
   [
-    EnsSVG,
-    UniswapSVG,
+    LepasaMetaverseSVG,
+    MaHadaoSVG,
+    IdlefinanceSVG,
+    PolyChainMonstersSVG
+  ],
+  [
+    UnstoppableSVG,
+    LensProtocolSVG,
+    MeanFinanceSVG,
+    LifiSVG,
+    AragonSVG,
+    MoverSVG,
+    AngleLabsSVG
+  ],
+  [
+    CoindeskSVG,
+    FlipsideSVG,
+    ProofofhumanitySVG,
+    SymphonyFinanceSVG
+  ],
+  [
+    PooltogetherSVG,
+    MakerdaoSVG,
+    MetastableSVG,
+    EthSVG
+  ],
+  [
+    BancorSVG,
     AaveSVG,
     SnapshotSVG,
-    MakerdaoSVG,
-    ShapeshiftSVG,
-    AragonSVG,
-    DydxSVG,
-    DecentralandSVG,
-    BancorSVG,
-    UnstoppableSVG,
-    FlipsideSVG,
-    InchSVG,
-    SushiSVG,
-    WormbatSVG,
-  ],
-  [
-    OasisSVG,
-    PooltogetherSVG,
-    CoindeskSVG,
-    ProofofhumanitySVG,
-    KybernetworkSVG,
-    IdlefinanceSVG,
-    MetastableSVG,
     QidaoSVG,
-    RektSVG,
-    CryptocurrencyjobsSVG,
-    EarnfiSVG,
-    PodsfinanceSVG,
-    ApeswapSVG,
-    ThenaSVG,
-    WormbatSVG,
+    DydxSVG,
+    UniswapSVG,
+    OasisSVG,
   ],
   [
-    LensProtocolSVG,
-    PolyChainMonstersSVG,
-    EthSVG,
-    MaHadaoSVG,
-    LifiSVG,
-    AngleLabsSVG,
-    LepasaMetaverseSVG,
-    GroSVG,
-    GoodGhostingSVG,
-    MeanFinanceSVG,
-    SymphonyFinanceSVG,
-    MoverSVG,
-    OrionprotocolSVG,
-    SecondliveSVG,
-    ZeroswapSVG
-  ]
+    DecentralandSVG,
+    CryptocurrencyjobsSVG,
+    ShapeshiftSVG,
+    KybernetworkSVG
+  ],
 ];
 
 
-function PartnerChannels() {
 
-  const [firstRow, secondRow, thirdRow,fourthRow] = partnerSortedGroup;
+  // const [firstRow, secondRow, thirdRow,fourthRow] = partnerSortedGroup;
+
+function PartnerChannels() {
+  const isLargeScreen = useMediaQuery('(max-width: 1200px)');
+  const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
+
+  useEffect(()=>{
+    // gsap.to('#0', {
+    //   scrollTrigger: {
+    //     trigger: '#0',
+    //     start: 'center center',
+    //     end: 'bottom top',
+    //     scrub: true,
+    //     markers:false
+    //   },
+    //   scale: 2,
+    // });
+  },[])
+
+  const onEnter = ({ currentTarget }) => {
+    // gsap.to('#item-0', { scale: 0 });
+    // gsap.to('#item-1', { scale: 1 });
+    // gsap.to('#item-2', { scale: 1 });
+    // gsap.to('#item-3', { scale: 0 });
+
+    // gsap.to('#secondItem-0', { scale: 1 });
+    // gsap.to('#secondItem-1', { scale: 2 });
+    // gsap.to('#secondItem-2', { scale: 1 });
+    // gsap.to('#secondItem-3', { scale: 1 });
+    // gsap.to('#secondItem-4', { scale: 2 });
+    // gsap.to('#secondItem-5', { scale: 1 });
+    // gsap.to('#secondItem-6', { scale: 0 });
+  };
+  
+  const onLeave = ({ currentTarget }) => {
+    // gsap.to(currentTarget, {scale: 1 });
+  };
 
   return (
     <>
-      <PartnerRow
+     <PartnerRow
         justifyContent="flex-start"
-        gap="32px"
+        padding="150px 0px 14px 0px"
       >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="left"
-        >
-          {firstRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
+          {isLargeScreen ? 
+          (firstRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (firstRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'  id={`item-${idx}`}  onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
 
       <PartnerRow
-        margin="130px 0 130px 0"
         justifyContent="flex-start"
-        gap="32px"
       >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="right"
-        >
-          {secondRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
+          {isLargeScreen ? 
+          (secondRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (secondRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`} onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
 
       <PartnerRow
-        margin="0px 0 240px 0"
         justifyContent="flex-start"
-        gap="32px"
       >
-        <MarqueeAnimation
-          speed={90}
-          gap={32}
-          gradientWidth={64}
-          direction="left"
-        >
+          {isLargeScreen && 
+          (secondRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
+      </PartnerRow>
+
+      <Body>
+
+      <GridRow>
           {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-        </MarqueeAnimation> 
+      </GridRow>
+
+      <GridItem
+          display="flex" 
+          flexDirection="column"
+      >
+            <ResponsiveH2
+                color="#121315"
+                size="40px"
+                weight="700"
+                spacing="-0.02em"
+                margin="0px 0px"
+                lineHeight="110%"
+              >
+                Powered by Push
+              </ResponsiveH2>
+
+              <Span
+                color="#303C5E"
+                size="19px"
+                weight="300"
+                spacing="-0.03em"
+                lineHeight="160%"
+                textAlign={isMobile ? "center" : "initial"}
+              >
+                Quis posuere aliquam est orci lectus. Lectus {!isMobile && (<br />)} amet amet enim non facilisi pretium tempus.
+              </Span>
+
+              <LinkTo
+                  to="/frens"
+                  title="Learn about $PUSH"
+                  bg="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  margin="15px 0px 0px 0px"
+                  self="center"
+                >
+                  Explore dApps
+                </LinkTo>
+      </GridItem>
+
+      <GridRow>
+          {fourthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+      </GridRow>
+
+      </Body>
+
+
+      <PartnerRow
+        justifyContent="flex-start"
+      >
+          {/* {fifthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
+          {isLargeScreen ? 
+          (fifthRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (fifthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
+      </PartnerRow>
+
+      <PartnerRow
+        justifyContent="flex-start"
+      >
+          {isLargeScreen && 
+          (fifthRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
+      </PartnerRow>
+
+      <PartnerRow
+        justifyContent="flex-start"
+        padding="0px 0px 150px 0px"
+      >
+          {/* {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
+          {isLargeScreen ? 
+          (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
+          (sixthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
       </PartnerRow>
 
       {/* <PartnerRow
@@ -182,12 +278,112 @@ function PartnerChannels() {
   );
 }
 
+
 const PartnerRow = styled(ItemHV2)`
+  margin: 14px auto 0px auto;
+  gap: 28px;
   & svg.marqueeItem {
-    width: 102px;
-    height: 102px;
+    width: 96px;
+    height: 96px;
+  }
+  @media ${device.laptop} {
+    gap: 14px;
+    margin: 7px auto;
+   }
+
+   @media ${device.mobileL} {
+    gap: 12px;
+    margin: 6px auto;
+   }
+
+   @media ${device.mobileM} {
+    gap: 6px;
+    margin: 3px auto;
+   }
+`;
+
+const GridRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 7px 0px;
+  & svg.marqueeItem {
+    width: 96px;
+    height: 96px;
+  }
+  @media (max-width: 1200px) {
+   display: none;
+  }
+`;
+const GridItem = styled(ItemH)`
+  @media (max-width: 1200px) {
+    padding: 30px 0px;
+   }
+`
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
   }
 `;
 
+const Body = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  margin: 0 auto;
+`
+
 
 export default React.memo(PartnerChannels);
+// [
+//   BancorSVG,
+//   AaveSVG,
+//   SnapshotSVG,
+//   MakerdaoSVG,
+//   ShapeshiftSVG,
+//   AragonSVG,
+//   DydxSVG,
+//   DecentralandSVG,
+//   BancorSVG,
+//   UnstoppableSVG,
+//   FlipsideSVG,
+//   InchSVG,
+//   SushiSVG,
+//   WormbatSVG,
+// ],
+// [
+//   OasisSVG,
+//   PooltogetherSVG,
+//   CoindeskSVG,
+//   ProofofhumanitySVG,
+//   KybernetworkSVG,
+//   IdlefinanceSVG,
+//   MetastableSVG,
+//   QidaoSVG,
+//   RektSVG,
+//   CryptocurrencyjobsSVG,
+//   EarnfiSVG,
+//   PodsfinanceSVG,
+//   ApeswapSVG,
+//   ThenaSVG,
+//   WormbatSVG,
+// ],
+// [
+//   LensProtocolSVG,
+//   PolyChainMonstersSVG,
+//   EthSVG,
+//   MaHadaoSVG,
+//   LifiSVG,
+//   AngleLabsSVG,
+//   LepasaMetaverseSVG,
+//   GroSVG,
+//   GoodGhostingSVG,
+//   MeanFinanceSVG,
+//   SymphonyFinanceSVG,
+//   MoverSVG,
+//   OrionprotocolSVG,
+//   SecondliveSVG,
+//   ZeroswapSVG
+// ]
