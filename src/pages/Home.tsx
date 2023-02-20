@@ -799,7 +799,7 @@ function Home({isAlertVisible}) {
               </ItemV>
             </BuiltByIntro>
 
-            <FadeInAnimation wrapperElement="div" direction={'right'}  delay={0.15}>
+            <FadeInAnimation wrapperElement="div" direction={'right'}  delay={0.35}>
             <BuiltByCards>
               {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
                 return (
