@@ -85,28 +85,28 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-        <FadeInAnimation wrapperElement="div" delay={0.5}>
+        <FadeInAnimation wrapperElement="div" delay={0.25}>
           <ItemV gap="18px" className='kpiItem'>
               <KPIFigure>{totalNotifsSent}</KPIFigure>
               <KPIMetric>Notifications<br />Sent</KPIMetric>
           </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={1}>
+      <FadeInAnimation wrapperElement="div" delay={0.5}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{totalSubscribersCount}</KPIFigure>
           <KPIMetric>Total<br />Subscribers</KPIMetric>
         </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={1.5}>
+      <FadeInAnimation wrapperElement="div" delay={0.75}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushIntegrations}</KPIFigure>
           <KPIMetric>Total Push<br />Integrations</KPIMetric>
         </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={2}>
+      <FadeInAnimation wrapperElement="div" delay={1}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushChatSent}</KPIFigure>
           <KPIMetric>In Grants <br />Given</KPIMetric>
