@@ -139,7 +139,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
               className={'headerblur'}
             />
             
-            <FadeInAnimation wrapperElement="div" delay={0}>
+            {/* <FadeInAnimation wrapperElement="div" delay={0}> */}
             <MenuTop flex="initial">
               <PushLogoBlackContainer
                 className="headerlogo"
@@ -168,7 +168,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 )}
               </MobileMenuToggleIcon>
             </MenuTop>
-            </FadeInAnimation>
+            {/* </FadeInAnimation> */}
 
             <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
               <NavigationMenu
@@ -188,16 +188,16 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="142%"
                       padding="16px"
                     >
-                      <FadeInAnimation wrapperElement="div" delay={0.25}>
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                           Docs
-                      </FadeInAnimation>
+                      {/* </FadeInAnimation> */}
                     </Span>
-                    <FadeInAnimation wrapperElement="div" delay={0.25}>
+                    {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                       <BsChevronDown
                         size={12}
                         className="chevronIcon"
                       />
-                      </FadeInAnimation>
+                      {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -261,17 +261,17 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                         lineHeight="142%"
                         padding="16px"
                       >
-                         <FadeInAnimation wrapperElement="div" delay={0.5}>
+                         {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
                             Learn More
-                        </FadeInAnimation>
+                        {/* </FadeInAnimation> */}
                       </Span>
 
-                      <FadeInAnimation wrapperElement="div" delay={0.5}>
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
                         <BsChevronDown
                           size={12}
                           className="chevronIcon"
                         />
-                      </FadeInAnimation>
+                      {/* </FadeInAnimation> */}
                     </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -334,17 +334,17 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                         lineHeight="142%"
                         padding="16px"
                       >
-                         <FadeInAnimation wrapperElement="div" delay={0.75}>
+                         {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                            Push DAO
-                        </FadeInAnimation>
+                        {/* </FadeInAnimation> */}
                       </Span>
 
-                      <FadeInAnimation wrapperElement="div" delay={0.75}>
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                         <BsChevronDown
                           size={12}
                           className="chevronIcon"
                         />
-                        </FadeInAnimation>
+                        {/* </FadeInAnimation> */}
                     </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -413,7 +413,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
             </HeaderNavItemV>
 
             <ItemVV2 flex="initial">
-            <FadeInAnimation wrapperElement="div" delay={1}>
+            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
@@ -429,7 +429,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
               >
                 Launch App
               </DappLauncher>
-            </FadeInAnimation>
+            {/* </FadeInAnimation> */}
             </ItemVV2>
 
           </HeaderItemH>
