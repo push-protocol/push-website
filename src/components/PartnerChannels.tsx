@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import MarqueeAnimation from './MarqueeAnimation';
 import { gsap } from 'gsap';
@@ -116,39 +116,81 @@ const partnerSortedGroup = [
 function PartnerChannels() {
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const [active, setActive] = useState(false);
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
 
-  useEffect(()=>{
-    // gsap.to('#0', {
-    //   scrollTrigger: {
-    //     trigger: '#0',
-    //     start: 'center center',
-    //     end: 'bottom top',
-    //     scrub: true,
-    //     markers:false
-    //   },
-    //   scale: 2,
-    // });
-  },[])
 
-  const onEnter = ({ currentTarget }) => {
-    // gsap.to('#item-0', { scale: 0 });
-    // gsap.to('#item-1', { scale: 1 });
-    // gsap.to('#item-2', { scale: 1 });
-    // gsap.to('#item-3', { scale: 0 });
+  const onEnter = () => {
+    gsap.to('#item-0', { width: '0px', height: '0px' });
+    gsap.to('#item-1', { width: '96px', height: '96px' });
+    gsap.to('#item-2', { width: '96px', height: '96px' });
+    gsap.to('#item-3', { width: '0px', height: '0px' });
 
-    // gsap.to('#secondItem-0', { scale: 1 });
-    // gsap.to('#secondItem-1', { scale: 2 });
-    // gsap.to('#secondItem-2', { scale: 1 });
-    // gsap.to('#secondItem-3', { scale: 1 });
-    // gsap.to('#secondItem-4', { scale: 2 });
-    // gsap.to('#secondItem-5', { scale: 1 });
-    // gsap.to('#secondItem-6', { scale: 0 });
+    gsap.to('#secondItem-0', { width: '96px', height: '96px' });
+    gsap.to('#secondItem-1', { width: '178px', height: '178px' });
+    gsap.to('#secondItem-2', { width: '96px', height: '96px' });
+    gsap.to('#secondItem-3', { width: '96px', height: '96px' });
+
+    gsap.to('#secondRowItem-0', { width: '178px', height: '178px' });
+    gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
+    gsap.to('#secondRowItem-2', { width: '0px', height: '0px' });
+
+    gsap.to('#thirdItem-0', { width: '178px', height: '178px' });
+    gsap.to('#thirdItem-1', { width: '0px', height: '0px' });
+    gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
+    gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
+    gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
+
+    gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
+    gsap.to('#fourRowItem-2', { width: '178px', height: '178px' });
+
+    gsap.to('#sixitem-0', { width: '0px', height: '0px' });
+    gsap.to('#sixitem-1', { width: '96px', height: '96px' });
+    gsap.to('#sixitem-2', { width: '96px', height: '96px' });
+    gsap.to('#sixitem-3', { width: '0px', height: '0px' });
   };
+
+  useEffect(()=>{
+      onEnter();
+      setTimeout(() => {
+        onLeave();
+        setActive(true);
+      }, 4000);
+  },[])
   
-  const onLeave = ({ currentTarget }) => {
-    // gsap.to(currentTarget, {scale: 1 });
+  const onLeave = () => {
+    gsap.to('#item-0', { width: '96px', height: '96px' });
+    gsap.to('#item-1', { width: '96px', height: '96px' });
+    gsap.to('#item-2', { width: '96px', height: '96px' });
+    gsap.to('#item-3', { width: '96px', height: '96px' });
+
+    gsap.to('#secondItem-0', { width: '96px', height: '96px' });
+    gsap.to('#secondItem-1', { width: '96px', height: '96px' });
+    gsap.to('#secondItem-2', { width: '96px', height: '96px' });
+    gsap.to('#secondItem-3', { width: '96px', height: '96px' });
+
+    gsap.to('#secondRowItem-0', { width: '96px', height: '96px' });
+    gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
+    gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
+
+    gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
+    gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
+    gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
+    gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
+    gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
+
+    gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
+    gsap.to('#fourRowItem-2', { width: '96px', height: '96px' });
+
+    gsap.to('sixitem-0', { width: '96px', height: '96px' });
+    gsap.to('sixitem-1', { width: '96px', height: '96px' });
+    gsap.to('sixitem-2', { width: '96px', height: '96px' });
+    gsap.to('sixitem-3', { width: '96px', height: '96px' });
   };
 
   return (
@@ -158,30 +200,47 @@ function PartnerChannels() {
         padding="150px 0px 14px 0px"
       >
           {isLargeScreen ? 
-          (firstRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
-          (firstRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'  id={`item-${idx}`}  onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
+          (firstRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'   />)) : 
+          (firstRow?.slice(0, !active ? 0 : firstRow.length).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'  id={`item-${idx}`}    />))} 
       </PartnerRow>
 
-      <PartnerRow
-        justifyContent="flex-start"
+      {!isLargeScreen && (<NewRow
       >
+          <PartnerRow>
+          {secondRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`}   />)} 
+          </PartnerRow>
+         
+          <GridRow>
+          {active ? thirdRow.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />) : thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          </GridRow>
+          {/* <PartnerRow>
           {isLargeScreen ? 
-          (secondRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
-          (secondRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`} onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
-      </PartnerRow>
+          (secondRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'   />)) : 
+          (secondRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`}   />))} 
+          </PartnerRow> */}
+
+          <PartnerRow>
+          {secondRow?.slice(4,7).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondRowItem-${idx}`}   />)} 
+          </PartnerRow>
+      </NewRow>)}
 
       <PartnerRow
         justifyContent="flex-start"
       >
           {isLargeScreen && 
-          (secondRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
+          (secondRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'   />))}
       </PartnerRow>
 
-      <Body>
+      <Body active={active}>
 
-      <GridRow>
-          {thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-      </GridRow>
+      <TriRow>
+          {active ? 
+          <div>{thirdRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</div>
+          : <>{thirdRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</>}
+          <div>
+          {thirdRow?.slice(2,4).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdRowItem-${idx}`} />)} 
+          </div>
+      </TriRow>
 
       <GridItem
           display="flex" 
@@ -226,37 +285,53 @@ function PartnerChannels() {
                 </LinkTo>
       </GridItem>
 
-      <GridRow>
+      {/* <GridRow>
           {fourthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
-      </GridRow>
+      </GridRow> */}
+      <TriRow>
+          <div>
+            {fourthRow?.slice(2,4).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdRowItem-${idx}`} />)} 
+          </div>
+            {active ? <div>{fourthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</div> : <>{fourthRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</>} 
+      </TriRow>
 
       </Body>
 
 
-      <PartnerRow
-        justifyContent="flex-start"
+      {!isLargeScreen && (<NewSecondRow
       >
-          {/* {fifthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
+          <NewPartnerRow>
+          {secondRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`}   />)} 
+          </NewPartnerRow>
+         
+          <GridRow>
+          {active ? thirdRow.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />) : thirdRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)} 
+          </GridRow>
+          {/* <PartnerRow>
           {isLargeScreen ? 
-          (fifthRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
-          (fifthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
-      </PartnerRow>
+          (secondRow?.slice(0,3).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'   />)) : 
+          (secondRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`}   />))} 
+          </PartnerRow> */}
+
+          <NewPartnerRow>
+          {secondRow?.slice(4,7).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondRowItem-${idx}`}   />)} 
+          </NewPartnerRow>
+      </NewSecondRow>)}
 
       <PartnerRow
         justifyContent="flex-start"
       >
           {isLargeScreen && 
-          (fifthRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))}
+          (fifthRow?.slice(3,6).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />))}
       </PartnerRow>
 
       <PartnerRow
         justifyContent="flex-start"
         padding="0px 0px 150px 0px"
       >
-          {/* {sixthRow.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)}  */}
           {isLargeScreen ? 
-          (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />)) : 
-          (sixthRow?.map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' onMouseEnter={onEnter} onMouseLeave={onLeave} />))} 
+          (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)) : 
+          (sixthRow?.slice(0, !active ? 0 : sixthRow.length).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'  id={`sixitem-${idx}`}  />))} 
       </PartnerRow>
 
       {/* <PartnerRow
@@ -282,10 +357,12 @@ function PartnerChannels() {
 const PartnerRow = styled(ItemHV2)`
   margin: 14px auto 0px auto;
   gap: 28px;
-  & svg.marqueeItem {
-    width: 96px;
-    height: 96px;
-  }
+  align-items: flex-end !important;
+  // height: fit-content !important;
+  // & svg.marqueeItem {
+  //   width: 96px;
+  //   height: 96px;
+  // }
   @media ${device.laptop} {
     gap: 14px;
     margin: 7px auto;
@@ -302,19 +379,85 @@ const PartnerRow = styled(ItemHV2)`
    }
 `;
 
+const NewPartnerRow = styled(ItemHV2)`
+  margin: 0px auto 0px auto;
+  gap: 28px;
+  align-items: flex-start !important;
+  // height: fit-content !important;
+  // & svg.marqueeItem {
+  //   width: 96px;
+  //   height: 96px;
+  // }
+  @media ${device.laptop} {
+    gap: 14px;
+    // margin: 7px auto;
+   }
+
+   @media ${device.mobileL} {
+    gap: 12px;
+    margin: 6px auto;
+   }
+
+   @media ${device.mobileM} {
+    gap: 6px;
+    margin: 3px auto;
+   }
+`;
+
+const NewRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto 0px auto;
+  align-items: flex-end !important;
+  height: 100%;
+  gap: 28px;
+`
+
+const NewSecondRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 14px auto 0px auto;
+  align-items: flex-start !important;
+  height: 100%;
+  gap: 28px;
+`
+
 const GridRow = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
-  margin: 7px 0px;
-  & svg.marqueeItem {
-    width: 96px;
-    height: 96px;
+  // margin: 7px 0px;
+  // & svg.marqueeItem {
+  //   width: 96px;
+  //   height: 96px;
+  // }
+  @media (max-width: 1200px) {
+   display: none;
+  }
+`;
+
+const TriRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  // margin: 7px 0px;
+  align-items: center !important;
+  // & svg.marqueeItem {
+  //   width: 96px;
+  //   height: 96px;
+  // }
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 28px;
+    width: 96px !important;
   }
   @media (max-width: 1200px) {
    display: none;
   }
 `;
+
 const GridItem = styled(ItemH)`
   @media (max-width: 1200px) {
     padding: 30px 0px;
@@ -331,7 +474,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 85%;
+  width: ${(props) => props.active ? '85%' : '100%'};
   margin: 0 auto;
 `
 

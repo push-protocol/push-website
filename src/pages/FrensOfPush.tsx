@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import PageWrapper from '../components/PageWrapper';
 import pageMeta from 'config/pageMeta'
 import { device } from 'config/globals';
-import { Anchor,B,Content, H2 , H3 , HeroHeader, Input ,ItemH, ItemV, Span } from 'components/SharedStyling';
+import { Anchor,B,Content, H2 , H3 , HeroHeaders, Input ,ItemH, ItemV, Span } from 'components/SharedStyling';
 import HybridSection from 'components/HybridSection';
 import SignupInput from 'components/SignupInput';
 import { BodyContent } from './Home';
@@ -20,6 +20,20 @@ import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png'
 import { objChannelList } from 'config/ChannelList';
+import { ReactComponent as AaveSVG }  from '../assets/float/aave.svg';
+import { ReactComponent as LensSVG }  from '../assets/float/Lens.svg';
+import { ReactComponent as LifiSVG }  from '../assets/float/Lifi.svg';
+import { ReactComponent as LifiMainSVG }  from '../assets/float/LifiMain.svg';
+import { ReactComponent as UnstoppableSVG }  from '../assets/float/Unstoppable.svg';
+import { ReactComponent as SnapshotSVG }  from '../assets/float/Snapshot.svg';
+import { ReactComponent as QidaoSVG }  from '../assets/float/Qidao.svg';
+import { ReactComponent as BancorSVG }  from '../assets/float/Bancor.svg';
+import { ReactComponent as CoinDeskSVG }  from '../assets/float/Coindesk.svg';
+import { ReactComponent as AragonSVG }  from '../assets/float/Aragon.svg';
+import { ReactComponent as MeanFinanceSVG }  from '../assets/float/MeanFinance.svg';
+import { ReactComponent as UniswapSVG }  from '../assets/float/Uniswap.svg';
+import FadeInAnimation from 'components/FadeInAnimation';
+import gsap from 'gsap';
 
 
 
@@ -27,6 +41,7 @@ import { objChannelList } from 'config/ChannelList';
 const FrensText = () => {
 
 const isMobile = useMediaQuery(device.mobileL)
+const isTablet = useMediaQuery(device.tablet)
 const [channels, setChannels] = useState([]); 
 const [page, setPage] = useState(0); 
 const [active, setActive] = useState('All'); 
@@ -121,7 +136,7 @@ useEffect(() => {
     }
 
     const channelSearch = async (e) => {
-      let query = e.target.value;
+      let query = e.target.value.toLowerCase();
       setSearch(e.target.value);
       if (e.target.value?.length == 0) return
 
@@ -153,8 +168,87 @@ useEffect(() => {
       }
     }
 
-    console.log(search);
+    useEffect(()=>{
+      floatAnimation('.aave');
+      floatAnimationSecond('.lens');
+      floatAnimationThird('.lifi');
+      floatAnimation('.stop');
+      floatAnimationSecond('.snapshot');
+      floatAnimationThird('.qidao');
+      floatAnimation('.bancor');
+      floatAnimationSecond('.coindesk');
+      floatAnimationThird('.lifi-main');
+      floatAnimation('.aragon');
+      floatAnimationSecond('.mean-finance');
+      floatAnimationThird('.uniswap');
+    },[])
 
+    const floatAnimation = (element) => {
+      var tl = gsap.timeline({repeat:-1})
+      /*Can Animation*/
+     tl.to(element, { duration: '3',y:'-=30', x:'+=20',  rotation:'-=5', ease:"Power1.easeInOut"})
+     
+     tl.to(element, { duration: '2',y:'+=30', x:'-=20', rotation:'-=5', ease:"Power1.easeInOut"})
+     
+     
+     tl.to(element, { duration: '3', y:'-=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+     
+     tl.to(element, { duration: '3',y:'+=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+     
+     
+     tl.to(element, { duration: '3',y:'-=50', ease:"Power1.easeInOut"})
+        
+     tl.to(element, { duration: '3',y:'+=50', ease:"Power1.easeInOut"})
+     
+     
+     tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
+        
+     tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
+     
+     
+     tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
+        
+     tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
+
+     gsap.to(tl, {duration: '27', ease:"Power1.easeInOut"})
+
+
+     
+
+ }
+
+ const floatAnimationSecond = (element) => {
+        var tl = gsap.timeline({repeat:-1})
+        /*Can Animation*/
+      tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'+=50', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'-=50', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'+=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+        tl.to(element, { duration: '3', y:'-=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+        tl.to(element, { duration: '2',y:'+=30', x:'-=20', rotation:'-=5', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3',y:'-=30', x:'+=20',  rotation:'-=5', ease:"Power1.easeInOut"})
+      gsap.to(tl, {duration: '27', ease:"Power1.easeInOut"})
+ }
+
+
+ const floatAnimationThird = (element) => {
+  var tl = gsap.timeline({repeat:-1})
+  /*Can Animation*/
+    tl.to(element, { duration: '2',y:'+=30', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '2',y:'-=30', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '2',y:'+=30', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '3',y:'+=50', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '3',y:'-=50', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '3',y:'+=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '3', y:'-=20',  rotation:'+=5', ease:"Power1.easeInOut"})
+      tl.to(element, { duration: '2',y:'+=30', x:'-=20', rotation:'-=5', ease:"Power1.easeInOut"})
+    tl.to(element, { duration: '3',y:'-=30', x:'+=20',  rotation:'-=5', ease:"Power1.easeInOut"})
+    gsap.to(tl, {duration: '27', ease:"Power1.easeInOut"})
+}
 
   return (
     <PageWrapper
@@ -163,9 +257,25 @@ useEffect(() => {
     >
         <FrensWrapper>
             <AnimationSection minHeight="60vh" padding="80px 0px 20px 0px">
+            
+            {!isTablet && (<>
+            <AaveSVG className='aave' />
+            <LensSVG className='lens' />
+            <LifiSVG className='lifi' />
+            <UnstoppableSVG className='stop' />
+            <SnapshotSVG className='snapshot' />
+            <QidaoSVG className='qidao' />
+            <BancorSVG className='bancor' />
+            <CoinDeskSVG className='coindesk' />
+            <LifiMainSVG className='lifi-main' />
+            <AragonSVG className='aragon' />
+            <MeanFinanceSVG className='mean-finance' />
+            <UniswapSVG className='uniswap' />
+            </>)}
+
             <Content className="contentBox" flex="0">
-                <ItemH flexDirection="column" justifyContent="center">
-                <HeroHeader>Frens of Push</HeroHeader>
+                <ItemH flexDirection="column" flex='0' margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'} justifyContent="center">
+                <HeroHeaders>Frens of Push</HeroHeaders>
                 <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isMobile && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
                 </ItemH>
             </Content>
@@ -226,13 +336,15 @@ useEffect(() => {
 
                     <ChannelsSection>
                         {channels?.map((item,i) => (
+                          // <FadeInAnimation wrapperElement="div" delay={0.25} >
                             <Channels key={item.ipfshash}>
                                 {isMobile ? 
                                 (<ChannelItem channelProp={item} />) :
                                 (<Tilt options={options} className='box'>
-                                     <ChannelItem channelProp={item} />
+                                     <ChannelItem channelProp={item} delay={0.25} />
                                 </Tilt>)}
                             </Channels>
+                            // </FadeInAnimation>
                         ))}
                     </ChannelsSection>
 
@@ -420,13 +532,118 @@ const ResponsiveSection = styled(HybridSection)`
 `;
 
 const AnimationSection = styled(ResponsiveSection)`
-  background-image: url(${Image});
-  background-repeat:no-repeat;
-  background-size: cover;
-//   min-height: 60vh !important;
-  background-position: center center;
-//   background-repeat: no-repeat; background-size: cover;
+  // background-image: url(${Image});
+  // background-repeat:no-repeat;
+  // background-size: cover;
+  // background-position: center center;
+    background: #121315;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
   padding-bottom: 50px;
+  .aave {
+    position: absolute;
+    top: 20%;
+    left: 65%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .lens {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .lifi {
+    position: absolute;
+    top: 30%;
+    left: 85%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .stop {
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .snapshot {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .qidao {
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
+  .bancor {
+    position: absolute;
+    top: 65%;
+    left: 35%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .coindesk {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
+  .lifi-main {
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .aragon {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .aragon {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+  }
+  .mean-finance {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+  }
+
+  .uniswap {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+  }
   @media ${device.tablet} {
     background: #121315;
     border-bottom-left-radius: 48px;
@@ -492,6 +709,8 @@ const Wrapper = styled.div`
 `;
 
 const Channels = styled.div`
+        flex: 1;
+        height: 100% !important;
     .box {
         flex: 1;
         height: 100% !important;

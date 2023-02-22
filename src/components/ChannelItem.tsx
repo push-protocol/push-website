@@ -8,6 +8,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { BsArrowUpRight } from 'react-icons/bs'
 import VanillaTilt from 'vanilla-tilt';
+import FadeInAnimation from './FadeInAnimation';
 
 export const Tilt = (props) => {
     const { options, ...rest } = props;
@@ -20,7 +21,7 @@ export const Tilt = (props) => {
     return <div ref={tilt} {...rest} />;
   }
 
-const ChannelItem = ({ channelProp }) => {
+const ChannelItem = ({ channelProp }, delay) => {
   const [channelObject, setChannelObject] = React.useState({});
   const [loading, setLoading] = React.useState(true);
  
@@ -55,7 +56,6 @@ const ChannelItem = ({ channelProp }) => {
         <ChannelDesc>{channelObject.info}</ChannelDesc>
 
         <ChannelType><b>{channelObject?.type}</b></ChannelType>
-        
     </Container>
   )
 }
@@ -103,7 +103,7 @@ const ChannelLogoImg = styled.img`
     object-fit: contain;
     width: 100%;
     border: 1px solid #BAC4D6;
-    border-radius: 20px;
+    border-radius: 30.25px;
     overflow: hidden;
 `;
 
@@ -120,6 +120,11 @@ const ChannelDesc = styled.p`
     font-size: 16px;
     line-height: 140%;
     color: #303C5E;
+
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 `;
 
 const ChannelType = styled.div`
