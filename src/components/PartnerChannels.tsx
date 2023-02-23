@@ -63,16 +63,25 @@ import useOnScreen from 'hooks/useOnScreen';
  * edit this to change the order
  */
 
-const partnerSortedGroup = [
-  [LepasaMetaverseSVG, MaHadaoSVG, IdlefinanceSVG, PolyChainMonstersSVG],
-  [UnstoppableSVG, LensProtocolSVG, MeanFinanceSVG, LifiSVG, AragonSVG, MoverSVG, AngleLabsSVG],
-  [CoindeskSVG, FlipsideSVG, ProofofhumanitySVG, SymphonyFinanceSVG],
-  [PooltogetherSVG, MakerdaoSVG, MetastableSVG, EthSVG],
-  [BancorSVG, AaveSVG, SnapshotSVG, QidaoSVG, DydxSVG, UniswapSVG, OasisSVG],
-  [DecentralandSVG, CryptocurrencyjobsSVG, ShapeshiftSVG, KybernetworkSVG],
-];
+// first array is first row in pattern
+// second array is first 2 icons and last 3 icons on second row in pattern
+// third array is grid icons to left of text - 3rd and 4th row(left of text and button)
+// fourth array is grid icons to left of text - 3rd and 4th row(right of text and button)
+// fifth array is first 2 icons and last 3 icons on 5th row in pattern
+// sixth array is 6th(last) row in pattern
 
-// const [firstRow, secondRow, thirdRow,fourthRow] = partnerSortedGroup;
+// last 2 arrays are designs after grid has formed
+
+const partnerSortedGroup = [
+  [DecentralandSVG, SnapshotSVG, SushiSVG, MakerdaoSVG],
+  [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
+  [EnsSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
+  [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
+  [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
+  [ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG],
+  [SnapshotSVG, SushiSVG, BancorSVG, AragonSVG],
+  [QidaoSVG, DydxSVG, LepasaMetaverseSVG, OrionprotocolSVG],
+];
 
 function PartnerChannels() {
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
@@ -81,7 +90,7 @@ function PartnerChannels() {
   const itemRef = useRef();
   const onScreen = useOnScreen(itemRef);
 
-  const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
+  const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = partnerSortedGroup;
 
   const onEnter = () => {
     gsap.to('#item-0', { width: '0px', height: '0px' });
@@ -164,6 +173,8 @@ function PartnerChannels() {
     gsap.to('sixitem-1', { width: '96px', height: '96px' });
     gsap.to('sixitem-2', { width: '96px', height: '96px' });
     gsap.to('sixitem-3', { width: '96px', height: '96px' });
+
+    gsap.to('plain-logo', { width: '96px', height: '96px' });
   };
 
   return (
@@ -176,7 +187,7 @@ function PartnerChannels() {
           ? firstRow?.slice(0, 2).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
-                className="marqueeItem"
+                className="marqueeItem plain-logo"
               />
             ))
           : firstRow?.map((SVGIcon, idx) => (
@@ -202,22 +213,22 @@ function PartnerChannels() {
 
           <GridRow>
             {active
-              ? thirdRow.slice(0, 2).map((SVGIcon, idx) => (
+              ? seventhRow.slice(2, 4).map((SVGIcon, idx) => (
                   <SVGIcon
                     key={idx}
-                    className="marqueeItem"
+                    className="marqueeItem plain-logo"
                   />
                 ))
-              : thirdRow.map((SVGIcon, idx) => (
+              : seventhRow.map((SVGIcon, idx) => (
                   <SVGIcon
                     key={idx}
-                    className="marqueeItem"
+                    className="marqueeItem plain-logo"
                   />
                 ))}
           </GridRow>
 
           <PartnerRow>
-            {secondRow?.slice(4, 7).map((SVGIcon, idx) => (
+            {secondRow?.slice(2, 5).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
                 className="marqueeItem"
@@ -228,29 +239,30 @@ function PartnerChannels() {
         </NewRow>
       )}
 
-      <PartnerRow justifyContent="flex-start">
-        {isLargeScreen &&
-          secondRow?.slice(3, 6).map((SVGIcon, idx) => (
+      {isLargeScreen && (
+        <PartnerRow justifyContent="flex-start">
+          {secondRow?.slice(0, 3).map((SVGIcon, idx) => (
             <SVGIcon
               key={idx}
-              className="marqueeItem"
+              className="marqueeItem plain-logo"
             />
           ))}
-      </PartnerRow>
+        </PartnerRow>
+      )}
+
+      {isLargeScreen && (
+        <PartnerRow justifyContent="flex-start">
+          {thirdRow?.slice(0, 3).map((SVGIcon, idx) => (
+            <SVGIcon
+              key={idx}
+              className="marqueeItem plain-logo"
+            />
+          ))}
+        </PartnerRow>
+      )}
 
       <Body active={active}>
         <TriRow>
-          {/* {active ? (
-            <div>
-              {thirdRow?.slice(0, 2).map((SVGIcon, idx) => (
-                <SVGIcon
-                  key={idx}
-                  className="marqueeItem"
-                  id={`thirdItem-${idx}`}
-                />
-              ))}
-            </div>
-          ) : ( */}
           <main className={active ? 'grid' : 'main'}>
             {thirdRow?.slice(0, 2).map((SVGIcon, idx) => (
               <SVGIcon
@@ -260,7 +272,6 @@ function PartnerChannels() {
               />
             ))}
           </main>
-          {/* )} */}
           <div className="grid">
             {thirdRow?.slice(2, 4).map((SVGIcon, idx) => (
               <SVGIcon
@@ -326,7 +337,6 @@ function PartnerChannels() {
             ))}
           </div>
 
-          {/* {active ? ( */}
           <div className={active ? 'grid' : 'main'}>
             {fourthRow?.slice(0, 2).map((SVGIcon, idx) => (
               <SVGIcon
@@ -336,24 +346,13 @@ function PartnerChannels() {
               />
             ))}
           </div>
-          {/* ) : (
-            <span>
-              {fourthRow?.slice(0, 1).map((SVGIcon, idx) => (
-                <SVGIcon
-                  key={idx}
-                  className="marqueeItem"
-                  id={`fourItem-${idx}`}
-                />
-              ))}
-            </span>
-          )} */}
         </TriRow>
       </Body>
 
       {!isLargeScreen && (
         <NewSecondRow>
           <NewPartnerRow>
-            {secondRow?.slice(0, 2).map((SVGIcon, idx) => (
+            {fifthRow?.slice(0, 2).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
                 className="marqueeItem"
@@ -364,13 +363,13 @@ function PartnerChannels() {
 
           <GridRow>
             {active
-              ? thirdRow.slice(0, 2).map((SVGIcon, idx) => (
+              ? eighthRow.slice(0, 2).map((SVGIcon, idx) => (
                   <SVGIcon
                     key={idx}
                     className="marqueeItem"
                   />
                 ))
-              : thirdRow.map((SVGIcon, idx) => (
+              : eighthRow.map((SVGIcon, idx) => (
                   <SVGIcon
                     key={idx}
                     className="marqueeItem"
@@ -379,7 +378,7 @@ function PartnerChannels() {
           </GridRow>
 
           <NewPartnerRow>
-            {secondRow?.slice(4, 7).map((SVGIcon, idx) => (
+            {fifthRow?.slice(2, 5).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
                 className="marqueeItem"
@@ -390,19 +389,32 @@ function PartnerChannels() {
         </NewSecondRow>
       )}
 
-      <PartnerRow justifyContent="flex-start">
-        {isLargeScreen &&
-          fifthRow?.slice(3, 6).map((SVGIcon, idx) => (
+      {isLargeScreen && (
+        <PartnerRow justifyContent="flex-start">
+          {fourthRow?.slice(0, 3).map((SVGIcon, idx) => (
             <SVGIcon
               key={idx}
-              className="marqueeItem"
+              className="marqueeItem plain-logo"
             />
           ))}
-      </PartnerRow>
+        </PartnerRow>
+      )}
+
+      {isLargeScreen && (
+        <PartnerRow justifyContent="flex-start">
+          {fifthRow?.slice(0, 3).map((SVGIcon, idx) => (
+            <SVGIcon
+              key={idx}
+              className="marqueeItem plain-logo"
+            />
+          ))}
+        </PartnerRow>
+      )}
 
       <PartnerRow
         justifyContent="flex-start"
         padding="0px 0px 150px 0px"
+        ref={itemRef}
       >
         {isLargeScreen
           ? sixthRow?.slice(0, 2).map((SVGIcon, idx) => (
@@ -418,7 +430,7 @@ function PartnerChannels() {
                 id={`item-${idx}`}
               />
             ))}
-        <Tag ref={itemRef}>new</Tag>
+        {/* <Tag ref={itemRef}>new</Tag> */}
       </PartnerRow>
     </>
   );
@@ -476,7 +488,7 @@ const NewRow = styled.div`
 const NewSecondRow = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 14px auto 0px auto;
+  margin: 0px auto 0px auto;
   align-items: flex-start !important;
   height: 100%;
   gap: 28px;
@@ -538,57 +550,7 @@ const Body = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: ${(props) => (props.active ? '85%' : '100%')};
-  margin: 0 auto;
+  margin: 14px auto;
 `;
 
 export default React.memo(PartnerChannels);
-// [
-//   BancorSVG,
-//   AaveSVG,
-//   SnapshotSVG,
-//   MakerdaoSVG,
-//   ShapeshiftSVG,
-//   AragonSVG,
-//   DydxSVG,
-//   DecentralandSVG,
-//   BancorSVG,
-//   UnstoppableSVG,
-//   FlipsideSVG,
-//   InchSVG,
-//   SushiSVG,
-//   WormbatSVG,
-// ],
-// [
-//   OasisSVG,
-//   PooltogetherSVG,
-//   CoindeskSVG,
-//   ProofofhumanitySVG,
-//   KybernetworkSVG,
-//   IdlefinanceSVG,
-//   MetastableSVG,
-//   QidaoSVG,
-//   RektSVG,
-//   CryptocurrencyjobsSVG,
-//   EarnfiSVG,
-//   PodsfinanceSVG,
-//   ApeswapSVG,
-//   ThenaSVG,
-//   WormbatSVG,
-// ],
-// [
-//   LensProtocolSVG,
-//   PolyChainMonstersSVG,
-//   EthSVG,
-//   MaHadaoSVG,
-//   LifiSVG,
-//   AngleLabsSVG,
-//   LepasaMetaverseSVG,
-//   GroSVG,
-//   GoodGhostingSVG,
-//   MeanFinanceSVG,
-//   SymphonyFinanceSVG,
-//   MoverSVG,
-//   OrionprotocolSVG,
-//   SecondliveSVG,
-//   ZeroswapSVG
-// ]

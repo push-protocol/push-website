@@ -4,7 +4,7 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { lazy ,useLayoutEffect, useState} from 'react';
+import React, { lazy, useLayoutEffect, useState } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -32,7 +32,17 @@ import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
 import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
-import { Atag, ButtonV2, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
+import {
+  Atag,
+  ButtonV2,
+  ContentV2,
+  H1V2,
+  H2V2,
+  ItemHV2,
+  ItemVV2,
+  SectionV2,
+  SpanV2,
+} from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
 import TeamMember from '../components/TeamMember';
 
@@ -61,7 +71,7 @@ import ImageHolder from 'components/ImageHolder';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
 
-function Home({isAlertVisible}) {
+function Home({ isAlertVisible }) {
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
 
@@ -73,7 +83,7 @@ function Home({isAlertVisible}) {
         start: 'center center',
         end: 'bottom top',
         scrub: true,
-        markers:false
+        markers: false,
       },
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
@@ -85,17 +95,15 @@ function Home({isAlertVisible}) {
         start: 'center top',
         end: '+=500',
         scrub: true,
-        markers:false
+        markers: false,
       },
       scale: 0.985,
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
-
   }, []);
 
-
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
-  
+
   const onClickViewMoreTeamMembers = (e) => {
     e.preventDefault();
     setShowMoreTeamMembers(!showMoreTeamMembers);
@@ -132,8 +140,11 @@ function Home({isAlertVisible}) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                <FadeInAnimation wrapperElement="div" delay={1}>
-                  <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={1}
+                  >
+                    <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
                   </FadeInAnimation>
                 </HeroAnimation>
               )
@@ -147,7 +158,10 @@ function Home({isAlertVisible}) {
                 alignItems="flex-start"
                 MarginTop={isAlertVisible ? '100px' : '0px'}
               >
-                <FadeInAnimation wrapperElement="div" delay={0.25}>
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.25}
+                >
                   <H1V2 zIndex="2"> The Communication Protocol of Web3</H1V2>
                 </FadeInAnimation>
 
@@ -156,40 +170,45 @@ function Home({isAlertVisible}) {
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                <FadeInAnimation wrapperElement="div" delay={0.45}>
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.45}
+                  >
                     Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
                     dapps, wallets, and services.
                   </FadeInAnimation>
                 </SpanV2>
 
-                <FadeInAnimation wrapperElement="div" delay={0.65}>
-                <HeroCTA
-                  justifyContent="flex-start"
-                  gap="18px"
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.65}
                 >
-                  <Atag
-                    href="https://docs.push.org/developers"
-                    title="Developer Docs"
-                    target="_blank"
-                    background={GLOBALS.COLORS.HIGHLIGHT}
-                    lineHeight="26px"
-                    zIndex="2"
+                  <HeroCTA
+                    justifyContent="flex-start"
+                    gap="18px"
                   >
-                    Start Building
-                  </Atag>
-                  <Atag
-                    href="https://app.push.org/"
-                    title="Push Dapp"
-                    target="_blank"
-                    background={GLOBALS.COLORS.BG_DARK_SECONDARY}
-                    lineHeight="26px"
-                    zIndex="2"
-                  >
-                    Explore Push Protocol
-                  </Atag>
-                </HeroCTA>
+                    <Atag
+                      href="https://docs.push.org/developers"
+                      title="Developer Docs"
+                      target="_blank"
+                      background={GLOBALS.COLORS.HIGHLIGHT}
+                      lineHeight="26px"
+                      zIndex="2"
+                    >
+                      Start Building
+                    </Atag>
+                    <Atag
+                      href="https://app.push.org/"
+                      title="Push Dapp"
+                      target="_blank"
+                      background={GLOBALS.COLORS.BG_DARK_SECONDARY}
+                      lineHeight="26px"
+                      zIndex="2"
+                    >
+                      Explore Push Protocol
+                    </Atag>
+                  </HeroCTA>
                 </FadeInAnimation>
-
 
                 <ItemHV2
                   justifyContent="flex-start"
@@ -201,11 +220,14 @@ function Home({isAlertVisible}) {
                     target="_blank"
                     margin="0 0 0 -10px"
                   >
-                <FadeInAnimation wrapperElement="div" delay={0.25}>
-                    <TwitterSVG
-                      width={32}
-                      height={32}
-                    />
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.25}
+                    >
+                      <TwitterSVG
+                        width={32}
+                        height={32}
+                      />
                     </FadeInAnimation>
                   </Anchor>
 
@@ -214,12 +236,15 @@ function Home({isAlertVisible}) {
                     title="Push Github"
                     target="_blank"
                   >
-                 <FadeInAnimation wrapperElement="div" delay={0.45}>
-                    <GithubSVG
-                      width={32}
-                      height={32}
-                    />
-                  </FadeInAnimation>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.45}
+                    >
+                      <GithubSVG
+                        width={32}
+                        height={32}
+                      />
+                    </FadeInAnimation>
                   </Anchor>
 
                   <Anchor
@@ -227,12 +252,15 @@ function Home({isAlertVisible}) {
                     title="Push Discord"
                     target="_blank"
                   >
-                 <FadeInAnimation wrapperElement="div" delay={0.65}>
-                    <DiscordSVG
-                      width={32}
-                      height={32}
-                    />
-                  </FadeInAnimation>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.65}
+                    >
+                      <DiscordSVG
+                        width={32}
+                        height={32}
+                      />
+                    </FadeInAnimation>
                   </Anchor>
                 </ItemHV2>
               </HeroItem>
@@ -245,9 +273,8 @@ function Home({isAlertVisible}) {
               right="0"
               bottom="10vh"
             >
-                <AnalyticsStats />
+              <AnalyticsStats />
             </AnalyticsStatsContainer>
-
           </ContentV2>
         </SectionV2>
 
@@ -262,7 +289,7 @@ function Home({isAlertVisible}) {
 
             <Partners
               margin="40px 0"
-              gap={isMobile ? "30px": "50px"}
+              gap={isMobile ? '30px' : '50px'}
             >
               <ItemV>
                 <Span
@@ -272,9 +299,12 @@ function Home({isAlertVisible}) {
                   lineHeight="160%"
                   spacing="-0.03em"
                 >
-                  <FadeInAnimation wrapperElement="span" delay={0}>
-                  Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi,
-                  NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
+                  <FadeInAnimation
+                    wrapperElement="span"
+                    delay={0}
+                  >
+                    Push powers communication for over 100 of the world’s leading dapps and service providers across
+                    DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
                   </FadeInAnimation>
                 </Span>
               </ItemV>
@@ -282,47 +312,57 @@ function Home({isAlertVisible}) {
               <ItemV>
                 <LiveNetworks>
                   <ItemV className="network">
-                    <EthLogoTextSVG alt='Logo for Ethereum' title='Ethereum Logo' />
+                    <EthLogoTextSVG
+                      alt="Logo for Ethereum"
+                      title="Ethereum Logo"
+                    />
                   </ItemV>
 
                   <ItemV className="divider" />
 
                   <ItemV className="network">
-                   <PolygonLogoTextSVG alt='Logo for Polygon' title='Polygon Logo' />
+                    <PolygonLogoTextSVG
+                      alt="Logo for Polygon"
+                      title="Polygon Logo"
+                    />
                   </ItemV>
 
                   <ItemV className="divider" />
 
                   <ItemV className="network">
-                    <BNBChainSVG alt='Logo for BNB Chain' title='BNB Chain Logo' />
+                    <BNBChainSVG
+                      alt="Logo for BNB Chain"
+                      title="BNB Chain Logo"
+                    />
                   </ItemV>
                 </LiveNetworks>
               </ItemV>
             </Partners>
 
             <PushWorksRow>
-              <ItemImage
-                justifyContent="center"
-              >
-            <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
-                <MemberImage
-                  className="pushMissingSvg"
-                  src={PushMissingPieceFigure}
-                  srcSet={PushMissingPieceFigure}
-                  alt={'Illustration showing Push as the missing piece of web3'}
-                  title='Push is the missing piece of web3'
-                  style={{margin: "0 auto"}}
-                  // width="100%"
-                  // height="100%"
-                />
+              <ItemImage justifyContent="center">
+                <FadeInAnimation
+                  wrapperElement="div"
+                  direction="up"
+                  delay={0}
+                >
+                  <MemberImage
+                    className="pushMissingSvg"
+                    src={PushMissingPieceFigure}
+                    srcSet={PushMissingPieceFigure}
+                    alt={'Illustration showing Push as the missing piece of web3'}
+                    title="Push is the missing piece of web3"
+                    style={{ margin: '0 auto' }}
+                    // width="100%"
+                    // height="100%"
+                  />
                 </FadeInAnimation>
               </ItemImage>
 
-
               <ItemV
-                justifyContent={isMobile ? "center" : "flex-start"}
+                justifyContent={isMobile ? 'center' : 'flex-start'}
                 // alignSelf='center'
-                alignItems='center'
+                alignItems="center"
                 // flex="2"
                 // gap="22px"
               >
@@ -332,8 +372,12 @@ function Home({isAlertVisible}) {
                   spacing="-0.02em"
                   lineHeight="110%"
                 >
-                  <FadeInAnimation wrapperElement="div" direction='up' delay={0}>
-                  Push is the missing piece of Web3
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0}
+                  >
+                    Push is the missing piece of Web3
                   </FadeInAnimation>
                 </ResponsiveH2>
 
@@ -343,12 +387,16 @@ function Home({isAlertVisible}) {
                   size="19px"
                   lineHeight="160%"
                   spacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin={isMobile && '10px 0px 0px 0px'}
                 >
-                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.1}>
-                      Until Push, no solution existed to enable native communication between wallets in response to on- and
-                      off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
-                      communication platforms.
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0.1}
+                  >
+                    Until Push, no solution existed to enable native communication between wallets in response to on-
+                    and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and
+                    centralized communication platforms.
                   </FadeInAnimation>
                 </Span>
 
@@ -358,37 +406,42 @@ function Home({isAlertVisible}) {
                   size="22px"
                   lineHeight="142%"
                   spacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin={isMobile && '10px 0px 0px 0px'}
                 >
-                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.2}>
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0.2}
+                  >
                     Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                     improving the everyday experience for blockchain users.
                   </FadeInAnimation>
                 </Span>
 
-                
-                <FadeInAnimation wrapperElement="div" delay={0.3}>
-                    <Anchor
-                      href="https://docs.push.org/developers"
-                      title="Developer Docs"
-                      target="_blank"
-                      bg="#DD44B9"
-                      radius="16px"
-                      padding="14px 32px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="26px"
-                      self="center"
-                      margin={isMobile && "20px 0px 0px 0px"}
-                    >
-                      {/* Learn about $PUSH */}
-                      How Push works
-                      <BsArrowUpRight className="anchorSVGlink" />
-                    </Anchor>
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.3}
+                >
+                  <Anchor
+                    href="https://docs.push.org/developers"
+                    title="Developer Docs"
+                    target="_blank"
+                    bg="#DD44B9"
+                    radius="16px"
+                    padding="14px 32px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="26px"
+                    self="center"
+                    margin={isMobile && '20px 0px 0px 0px'}
+                  >
+                    {/* Learn about $PUSH */}
+                    How Push works
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
                 </FadeInAnimation>
               </ItemV>
-
             </PushWorksRow>
           </Content>
         </StorySection>
@@ -400,41 +453,43 @@ function Home({isAlertVisible}) {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-          <FadeInAnimation wrapperElement="div" delay={0.2}>
-            <SignupBox margin="0 0 0px 0">
-              <ItemV
-                justifyContent="flex-start"
-                gap="12px"
-              >
-                <ResponsiveH2
-                  color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
+            <FadeInAnimation
+              wrapperElement="div"
+              delay={0.2}
+            >
+              <SignupBox margin="0 0 0px 0">
+                <ItemV
+                  justifyContent="flex-start"
+                  gap="12px"
                 >
-                  Never Miss an Update
-                </ResponsiveH2>
-                <Span
-                  color="#303C5E"
-                  size="20px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="138.5%"
-                >
-                  Sign up and stay up to date with ecosystem announcements, giveaways and more.
-                </Span>
-              </ItemV>
+                  <ResponsiveH2
+                    color="#09090B"
+                    size="40px"
+                    weight="700"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    Never Miss an Update
+                  </ResponsiveH2>
+                  <Span
+                    color="#303C5E"
+                    size="20px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="138.5%"
+                  >
+                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                  </Span>
+                </ItemV>
 
-              <ItemV>
-                <SignupInput />
-              </ItemV>
-            </SignupBox>
+                <ItemV>
+                  <SignupInput />
+                </ItemV>
+              </SignupBox>
             </FadeInAnimation>
 
             <HorizontalScroll />
-
           </BodyContent>
         </BuildWithPushSection>
 
@@ -456,16 +511,19 @@ function Home({isAlertVisible}) {
 
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
-            <FadeInAnimation wrapperElement="div"  delay={0.1}>
-              <MemberImage
-                className="figureSvg"
-                src={GrowWithPushFigure}
-                srcSet={GrowWithPushFigure}
-                alt={'Illustration showing $PUSH tokens'}
-                title='Use the Push token to grow'
-                width="100%"
-                height="100%"
-              />
+              <FadeInAnimation
+                wrapperElement="div"
+                delay={0.1}
+              >
+                <MemberImage
+                  className="figureSvg"
+                  src={GrowWithPushFigure}
+                  srcSet={GrowWithPushFigure}
+                  alt={'Illustration showing $PUSH tokens'}
+                  title="Use the Push token to grow"
+                  width="100%"
+                  height="100%"
+                />
               </FadeInAnimation>
 
               <ResponsiveH2
@@ -476,8 +534,11 @@ function Home({isAlertVisible}) {
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
-                <FadeInAnimation wrapperElement="div"  delay={0.2}>
-                   Grow with Push
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.2}
+                >
+                  Grow with Push
                 </FadeInAnimation>
               </ResponsiveH2>
 
@@ -489,7 +550,10 @@ function Home({isAlertVisible}) {
                 spacing="-0.03em"
                 lineHeight="160%"
               >
-                <FadeInAnimation wrapperElement="div"  delay={0.3}>
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.3}
+                >
                   The $PUSH token enables governance, modification of protocol fees and features, network security, and
                   fee management among all wallets that integrate Push, including Push governance participants.
                 </FadeInAnimation>
@@ -506,8 +570,11 @@ function Home({isAlertVisible}) {
                   lineHeight="110%"
                   margin="0"
                 >
-                <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                  Are you a crypto wallet? <br></br> Integrate and earn.
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.1}
+                  >
+                    Are you a crypto wallet? <br></br> Integrate and earn.
                   </FadeInAnimation>
                 </ResponsiveH2>
 
@@ -526,7 +593,6 @@ function Home({isAlertVisible}) {
                 >
                   Learn about $PUSH
                 </Anchor>
-
               </IntegrateAndEarn>
             </ItemH>
 
@@ -550,30 +616,16 @@ function Home({isAlertVisible}) {
 
             <ItemH padding="80px 0 0 0">
               <Matrix>
-                  <MatrixCell>
-                    <div className="matrixFigure">
-                      <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                        <ChainAgnosticFigure alt='Icon showing Push is chain agnostic' title='Chain Agnostic' />
-                      </FadeInAnimation>
-                    </div>
-
-                    <Span
-                      color="#09090B"
-                      size="24px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                    >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
-                      Chain Agnostic
-                      </FadeInAnimation>
-                    </Span>
-                  </MatrixCell>
-
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                    <ImmediatecommunicationFigure alt='Icon showing Immediate Communication' title='Immediate Communication' />
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ChainAgnosticFigure
+                        alt="Icon showing Push is chain agnostic"
+                        title="Chain Agnostic"
+                      />
                     </FadeInAnimation>
                   </div>
 
@@ -584,7 +636,39 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      Chain Agnostic
+                    </FadeInAnimation>
+                  </Span>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ImmediatecommunicationFigure
+                        alt="Icon showing Immediate Communication"
+                        title="Immediate Communication"
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <Span
+                    color="#09090B"
+                    size="24px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
                       Immediate Communication
                     </FadeInAnimation>
                   </Span>
@@ -592,8 +676,14 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                    <DecentralizedstackFigure alt='Icon showing decentralization' title='Decentralized Stack'/>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <DecentralizedstackFigure
+                        alt="Icon showing decentralization"
+                        title="Decentralized Stack"
+                      />
                     </FadeInAnimation>
                   </div>
 
@@ -604,7 +694,10 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
                       Decentralized Stack
                     </FadeInAnimation>
                   </Span>
@@ -612,8 +705,14 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                    <ImproveduxFigure alt='Icon showing User Experience' title='Improved UX'/>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ImproveduxFigure
+                        alt="Icon showing User Experience"
+                        title="Improved UX"
+                      />
                     </FadeInAnimation>
                   </div>
 
@@ -624,7 +723,10 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
                       Improved UX
                     </FadeInAnimation>
                   </Span>
@@ -632,8 +734,14 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                    <SecurityalertsFigure alt='Icon showing Security' title='Security Alerts' />
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <SecurityalertsFigure
+                        alt="Icon showing Security"
+                        title="Security Alerts"
+                      />
                     </FadeInAnimation>
                   </div>
 
@@ -644,7 +752,10 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
                       Security Alerts
                     </FadeInAnimation>
                   </Span>
@@ -652,8 +763,14 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div"  delay={0.1}>
-                      <CensorshipresistantFigure alt='Icon showing Censorship Resistance' title='Censorship Resistant' />
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <CensorshipresistantFigure
+                        alt="Icon showing Censorship Resistance"
+                        title="Censorship Resistant"
+                      />
                     </FadeInAnimation>
                   </div>
 
@@ -664,7 +781,10 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
                       Censorship Resistant
                     </FadeInAnimation>
                   </Span>
@@ -741,7 +861,10 @@ function Home({isAlertVisible}) {
                   lineHeight="110%"
                   margin="40px 0"
                 >
-                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.1}
+                  >
                     Built By
                   </FadeInAnimation>
                 </ResponsiveH2>
@@ -755,32 +878,38 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  <FadeInAnimation wrapperElement="div"  delay={0.2}>
-                      The most diverse personalities have found each other at Push. Unique people with special talents and
-                      extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries
-                      of everything web3 communication.
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.2}
+                  >
+                    The most diverse personalities have found each other at Push. Unique people with special talents and
+                    extraordinary stories. We are united by the joy we take in our tech and constantly push the
+                    boundaries of everything web3 communication.
                   </FadeInAnimation>
                 </Span>
               </ItemV>
             </BuiltByIntro>
 
-            <FadeInAnimation wrapperElement="div" direction={'right'}  delay={0.3}>
-            <BuiltByCards>
-              {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
-                return (
-                  <TeamMember
-                    key={memberIndex}
-                    name={teamMember.name}
-                    title={teamMember.title}
-                    img={teamMember.img}
-                    twitter={teamMember.twitter}
-                    linkedin={teamMember.linkedin}
-                  />
-                );
-              })}
-            </BuiltByCards>
+            <FadeInAnimation
+              wrapperElement="div"
+              direction={!isMobile && 'right'}
+              delay={0.3}
+            >
+              <BuiltByCards>
+                {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
+                  return (
+                    <TeamMember
+                      key={memberIndex}
+                      name={teamMember.name}
+                      title={teamMember.title}
+                      img={teamMember.img}
+                      twitter={teamMember.twitter}
+                      linkedin={teamMember.linkedin}
+                    />
+                  );
+                })}
+              </BuiltByCards>
             </FadeInAnimation>
-
 
             <TeamMemberButtons
               gap="22px"
@@ -1031,9 +1160,7 @@ const HeroPrimary = styled(ItemHV2)`
   }
 `;
 
-const MemberImage = styled(ImageHolder)`
-
-`;
+const MemberImage = styled(ImageHolder)``;
 
 const HeroAnimation = styled(ItemHV2)`
   position: absolute;
@@ -1101,11 +1228,11 @@ const HomeWrapper = styled.main`
   & #hero .contentBox {
     row-gap: 18px;
   }
-  
+
   & .pushMissingSvg {
     width: 500px;
     @media ${device.laptop} {
-    width: 400px;
+      width: 400px;
     }
     @media ${device.tablet} {
       width: 100%;
@@ -1113,7 +1240,6 @@ const HomeWrapper = styled.main`
   }
   @media ${device.tablet} {
     width: 100%;
-
 
     & svg.figureSvg {
       width: 100%;
@@ -1143,7 +1269,6 @@ const BuildWithPushSection = styled(ResponsiveSection)`
   @media ${device.tablet} {
     padding: 0px 0px 10px 0px;
   }
-
 `;
 
 const IntergrateWithPushSection = styled(ResponsiveSection)`
@@ -1151,16 +1276,16 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
 `;
 
 const ItemImage = styled(ItemV)`
-    width: 100%;
-    @media ${device.tablet} {
-     width: 400px;
-     margin: 0 auto;
-    }
+  width: 100%;
+  @media ${device.tablet} {
+    width: 400px;
+    margin: 0 auto;
+  }
 
-    @media ${device.mobileL} {
-      width: 100%;
-     }
-`
+  @media ${device.mobileL} {
+    width: 100%;
+  }
+`;
 
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
@@ -1175,9 +1300,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
   }
 `;
 
-const FeaturedInMarquee = styled(ItemH)`
-
-`;
+const FeaturedInMarquee = styled(ItemH)``;
 
 const ResponsiveHeroContent = styled(ItemH)`
   @media ${device.tablet} {
@@ -1317,7 +1440,7 @@ const Partners = styled(ItemV)`
 `;
 
 const SignupBox = styled(ItemH)`
-  background: #B9ABEF;
+  background: #b9abef;
   backdrop-filter: blur(10px);
   border-radius: 32px;
   padding: 72px;
@@ -1345,7 +1468,7 @@ const GrowPushCard = styled(ItemV)`
   & .figureSvg {
     width: 100%;
     height: 227px;
-  
+
     @media ${device.tablet} {
       width: 100%;
     }
@@ -1479,7 +1602,6 @@ const MatrixCell = styled.div`
     }
   }
 `;
-
 
 const WhyPushTextBox = styled(ItemH)`
   margin: 80px 160px;
