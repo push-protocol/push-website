@@ -187,34 +187,16 @@ useEffect(() => {
       var tl = gsap.timeline({repeat:-1})
       /*Can Animation*/
      tl.to(element, { duration: '3',y:'-=30', x:'+=20',  rotation:'-=5', ease:"Power1.easeInOut"})
-     
      tl.to(element, { duration: '2',y:'+=30', x:'-=20', rotation:'-=5', ease:"Power1.easeInOut"})
-     
-     
      tl.to(element, { duration: '3', y:'-=20',  rotation:'+=5', ease:"Power1.easeInOut"})
-     
      tl.to(element, { duration: '3',y:'+=20',  rotation:'+=5', ease:"Power1.easeInOut"})
-     
-     
      tl.to(element, { duration: '3',y:'-=50', ease:"Power1.easeInOut"})
-        
      tl.to(element, { duration: '3',y:'+=50', ease:"Power1.easeInOut"})
-     
-     
      tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
-        
      tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
-     
-     
      tl.to(element, { duration: '3',y:'-=30', ease:"Power1.easeInOut"})
-        
      tl.to(element, { duration: '3',y:'+=30', ease:"Power1.easeInOut"})
-
      gsap.to(tl, {duration: '27', ease:"Power1.easeInOut"})
-
-
-     
-
  }
 
  const floatAnimationSecond = (element) => {
@@ -256,9 +238,9 @@ useEffect(() => {
       pageTitle={pageMeta.FRENS.pageTitle}
     >
         <FrensWrapper>
+        <AnimationIcon>
             <AnimationSection minHeight="60vh" padding="80px 0px 20px 0px">
             
-            {!isTablet && (<>
             <AaveSVG className='aave' />
             <LensSVG className='lens' />
             <LifiSVG className='lifi' />
@@ -271,17 +253,15 @@ useEffect(() => {
             <AragonSVG className='aragon' />
             <MeanFinanceSVG className='mean-finance' />
             <UniswapSVG className='uniswap' />
-            </>)}
 
             <Content className="contentBox" flex="0">
                 <ItemH flexDirection="column" flex='0' margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'} justifyContent="center">
                 <HeroHeaders>Frens of Push</HeroHeaders>
-                <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isMobile && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
+                <Span textAlign="center" margin="20px 0 0 0" spacing="-0.03em" weight={isMobile ? "300" : "400"} size={isMobile ? "18px": "23px"}>Explore hundreds of applications building with Push {!isTablet && <br />} worldwide across DeFi, NFTs, Gaming, Dev tools, and more.</Span>
                 </ItemH>
             </Content>
             </AnimationSection>
-
-            {/* <ChannelList /> */}
+            </AnimationIcon>
 
             <PoweredSection 
                 id="story"
@@ -531,119 +511,162 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
+const AnimationIcon = styled.div`
+  background: #121315;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+`
+
 const AnimationSection = styled(ResponsiveSection)`
-  // background-image: url(${Image});
-  // background-repeat:no-repeat;
-  // background-size: cover;
-  // background-position: center center;
     background: #121315;
     border-bottom-left-radius: 48px;
     border-bottom-right-radius: 48px;
-  padding-bottom: 50px;
-  .aave {
-    position: absolute;
-    top: 20%;
-    left: 65%;
-    right: 0;
-    bottom: 0;
-  }
+    overflow-x: none;
+    @media(min-width: 1200px){
+      width: 85%;
+      margin: 0 auto;
+    }
+    padding-bottom: 50px;
+      .aave {
+        position: absolute;
+        top: 20%;
+        left: 65%;
+        right: 0;
+        bottom: 0;
+        
+        @media ${device.tablet} {
+          left: 50%;
+          opacity: .6;
+         }
+      }
 
-  .lens {
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    right: 0;
-    bottom: 0;
-  }
+      .lens {
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        right: 0;
+        bottom: 0;
 
-  .lifi {
-    position: absolute;
-    top: 30%;
-    left: 85%;
-    right: 0;
-    bottom: 0;
-  }
+        @media ${device.tablet} {
+          left: 50%;
+          opacity: .6;
+         }
+      }
 
-  .stop {
-    position: absolute;
-    top: 70%;
-    left: 70%;
-    right: 0;
-    bottom: 0;
-  }
+      .lifi {
+        position: absolute;
+        top: 30%;
+        left: 85%;
+        right: 0;
+        bottom: 0;
 
-  .snapshot {
-    position: absolute;
-    top: 20%;
-    left: 55%;
-    right: 0;
-    bottom: 0;
-  }
+        @media ${device.tablet} {
+         display: none;
+        }
 
-  .qidao {
-    position: absolute;
-    top: 75%;
-    left: 45%;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-  }
+      }
 
-  .bancor {
-    position: absolute;
-    top: 65%;
-    left: 35%;
-    right: 0;
-    bottom: 0;
-  }
+      .stop {
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        right: 0;
+        bottom: 0;
 
-  .coindesk {
-    position: absolute;
-    top: 75%;
-    left: 25%;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-  }
+        @media ${device.tablet} {
+          display: none;
+         }
+      }
 
-  .lifi-main {
-    position: absolute;
-    top: 60%;
-    left: 20%;
-    right: 0;
-    bottom: 0;
-  }
+      .snapshot {
+        position: absolute;
+        top: 20%;
+        left: 55%;
+        right: 0;
+        bottom: 0;
 
-  .aragon {
-    position: absolute;
-    top: 70%;
-    left: 10%;
-    right: 0;
-    bottom: 0;
-  }
+      }
 
-  .aragon {
-    position: absolute;
-    top: 70%;
-    left: 10%;
-    right: 0;
-    bottom: 0;
-  }
-  .mean-finance {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    right: 0;
-    bottom: 0;
-  }
+      .qidao {
+        position: absolute;
+        top: 75%;
+        left: 45%;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
 
-  .uniswap {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    right: 0;
-    bottom: 0;
-  }
+        @media ${device.tablet} {
+          display: none;
+         }
+      }
+
+      .bancor {
+        position: absolute;
+        top: 65%;
+        left: 35%;
+        right: 0;
+        bottom: 0;
+      }
+
+      .coindesk {
+        position: absolute;
+        top: 75%;
+        left: 25%;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+
+        @media ${device.tablet} {
+          display: none;
+         }
+      }
+
+      .lifi-main {
+        position: absolute;
+        top: 60%;
+        left: 20%;
+        right: 0;
+        bottom: 0;
+
+        @media ${device.tablet} {
+          display: none;
+         }
+      }
+
+      .aragon {
+        position: absolute;
+        top: 70%;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+        
+        @media ${device.mobileL} {
+         left: 5%;
+         }
+      }
+      .mean-finance {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        right: 0;
+        bottom: 0;
+        @media ${device.tablet} {
+          opacity: .6;
+          left: 5%;
+         }
+      }
+
+      .uniswap {
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        right: 0;
+        bottom: 0;
+
+        @media ${device.tablet} {
+          display: none;
+         }
+      }
   @media ${device.tablet} {
     background: #121315;
     border-bottom-left-radius: 48px;
@@ -658,6 +681,11 @@ const PushRow = styled(ItemH)`
   @media ${device.tablet} {
     margin-top: 80px;
   }
+
+  @media ${device.mobileL} {
+    margin-top: 80px;
+    flex-direction: column;
+  }
 `;
 
 const PoweredSection = styled(ResponsiveSection)`
@@ -665,6 +693,7 @@ const PoweredSection = styled(ResponsiveSection)`
   @media ${device.tablet} {
     padding-bottom: 32px;
   }
+  
 `;
 
 const Wrapper = styled.div`

@@ -156,13 +156,13 @@ function Home({isAlertVisible}) {
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                <FadeInAnimation wrapperElement="div" delay={0.5}>
+                <FadeInAnimation wrapperElement="div" delay={0.45}>
                     Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
                     dapps, wallets, and services.
                   </FadeInAnimation>
                 </SpanV2>
 
-                <FadeInAnimation wrapperElement="div" delay={0.75}>
+                <FadeInAnimation wrapperElement="div" delay={0.65}>
                 <HeroCTA
                   justifyContent="flex-start"
                   gap="18px"
@@ -201,7 +201,7 @@ function Home({isAlertVisible}) {
                     target="_blank"
                     margin="0 0 0 -10px"
                   >
-                <FadeInAnimation wrapperElement="div" delay={0.5}>
+                <FadeInAnimation wrapperElement="div" delay={0.25}>
                     <TwitterSVG
                       width={32}
                       height={32}
@@ -214,7 +214,7 @@ function Home({isAlertVisible}) {
                     title="Push Github"
                     target="_blank"
                   >
-                 <FadeInAnimation wrapperElement="div" delay={1}>
+                 <FadeInAnimation wrapperElement="div" delay={0.45}>
                     <GithubSVG
                       width={32}
                       height={32}
@@ -227,7 +227,7 @@ function Home({isAlertVisible}) {
                     title="Push Discord"
                     target="_blank"
                   >
-                 <FadeInAnimation wrapperElement="div" delay={1.5}>
+                 <FadeInAnimation wrapperElement="div" delay={0.65}>
                     <DiscordSVG
                       width={32}
                       height={32}
@@ -345,7 +345,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.25}>
+                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.1}>
                       Until Push, no solution existed to enable native communication between wallets in response to on- and
                       off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized
                       communication platforms.
@@ -360,14 +360,14 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.5}>
+                  <FadeInAnimation wrapperElement="span" direction='up' delay={0.2}>
                     Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                     improving the everyday experience for blockchain users.
                   </FadeInAnimation>
                 </Span>
 
                 
-                <FadeInAnimation wrapperElement="div" delay={0.6}>
+                <FadeInAnimation wrapperElement="div" delay={0.3}>
                     <Anchor
                       href="https://docs.push.org/developers"
                       title="Developer Docs"
@@ -400,7 +400,7 @@ function Home({isAlertVisible}) {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-          <FadeInAnimation wrapperElement="div" delay={0.5}>
+          <FadeInAnimation wrapperElement="div" delay={0.2}>
             <SignupBox margin="0 0 0px 0">
               <ItemV
                 justifyContent="flex-start"
@@ -456,7 +456,7 @@ function Home({isAlertVisible}) {
 
           <Content className="contentBox">
             <IntegrateGrowWithPushRow gap="18px">
-            <FadeInAnimation wrapperElement="div"  delay={0.15}>
+            <FadeInAnimation wrapperElement="div"  delay={0.1}>
               <MemberImage
                 className="figureSvg"
                 src={GrowWithPushFigure}
@@ -476,7 +476,7 @@ function Home({isAlertVisible}) {
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
-                <FadeInAnimation wrapperElement="div"  delay={0.25}>
+                <FadeInAnimation wrapperElement="div"  delay={0.2}>
                    Grow with Push
                 </FadeInAnimation>
               </ResponsiveH2>
@@ -489,7 +489,7 @@ function Home({isAlertVisible}) {
                 spacing="-0.03em"
                 lineHeight="160%"
               >
-                <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                <FadeInAnimation wrapperElement="div"  delay={0.3}>
                   The $PUSH token enables governance, modification of protocol fees and features, network security, and
                   fee management among all wallets that integrate Push, including Push governance participants.
                 </FadeInAnimation>
@@ -506,7 +506,7 @@ function Home({isAlertVisible}) {
                   lineHeight="110%"
                   margin="0"
                 >
-                <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                <FadeInAnimation wrapperElement="div"  delay={0.1}>
                   Are you a crypto wallet? <br></br> Integrate and earn.
                   </FadeInAnimation>
                 </ResponsiveH2>
@@ -552,7 +552,7 @@ function Home({isAlertVisible}) {
               <Matrix>
                   <MatrixCell>
                     <div className="matrixFigure">
-                      <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                      <FadeInAnimation wrapperElement="div"  delay={0.1}>
                         <ChainAgnosticFigure alt='Icon showing Push is chain agnostic' title='Chain Agnostic' />
                       </FadeInAnimation>
                     </div>
@@ -564,7 +564,7 @@ function Home({isAlertVisible}) {
                       spacing="-0.03em"
                       lineHeight="142%"
                     >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Chain Agnostic
                       </FadeInAnimation>
                     </Span>
@@ -572,7 +572,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
                     <ImmediatecommunicationFigure alt='Icon showing Immediate Communication' title='Immediate Communication' />
                     </FadeInAnimation>
                   </div>
@@ -584,7 +584,7 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Immediate Communication
                     </FadeInAnimation>
                   </Span>
@@ -592,7 +592,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
                     <DecentralizedstackFigure alt='Icon showing decentralization' title='Decentralized Stack'/>
                     </FadeInAnimation>
                   </div>
@@ -604,7 +604,7 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Decentralized Stack
                     </FadeInAnimation>
                   </Span>
@@ -612,7 +612,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
                     <ImproveduxFigure alt='Icon showing User Experience' title='Improved UX'/>
                     </FadeInAnimation>
                   </div>
@@ -624,7 +624,7 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Improved UX
                     </FadeInAnimation>
                   </Span>
@@ -632,7 +632,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                  <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
                     <SecurityalertsFigure alt='Icon showing Security' title='Security Alerts' />
                     </FadeInAnimation>
                   </div>
@@ -644,7 +644,7 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Security Alerts
                     </FadeInAnimation>
                   </Span>
@@ -652,7 +652,7 @@ function Home({isAlertVisible}) {
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.1}>
                       <CensorshipresistantFigure alt='Icon showing Censorship Resistance' title='Censorship Resistant' />
                     </FadeInAnimation>
                   </div>
@@ -664,7 +664,7 @@ function Home({isAlertVisible}) {
                     spacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                    <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       Censorship Resistant
                     </FadeInAnimation>
                   </Span>
@@ -741,7 +741,7 @@ function Home({isAlertVisible}) {
                   lineHeight="110%"
                   margin="40px 0"
                 >
-                  <FadeInAnimation wrapperElement="div"  delay={0.15}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.1}>
                     Built By
                   </FadeInAnimation>
                 </ResponsiveH2>
@@ -755,7 +755,7 @@ function Home({isAlertVisible}) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  <FadeInAnimation wrapperElement="div"  delay={0.35}>
+                  <FadeInAnimation wrapperElement="div"  delay={0.2}>
                       The most diverse personalities have found each other at Push. Unique people with special talents and
                       extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries
                       of everything web3 communication.
@@ -764,7 +764,7 @@ function Home({isAlertVisible}) {
               </ItemV>
             </BuiltByIntro>
 
-            <FadeInAnimation wrapperElement="div" direction={'right'}  delay={0.35}>
+            <FadeInAnimation wrapperElement="div" direction={'right'}  delay={0.3}>
             <BuiltByCards>
               {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
                 return (

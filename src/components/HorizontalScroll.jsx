@@ -42,12 +42,12 @@ const SlideElement = ({
         weight={isMobile ? "400" : "500"}
         lineHeight="146%"
       >
-      <FadeInAnimation wrapperElement="div" delay={0.15}>
+      <FadeInAnimation wrapperElement="div" delay={0.1}>
         <B color="#fff">{title}</B> {content}
       </FadeInAnimation>
       </Span>
 
-      <FadeInAnimation wrapperElement="div" delay={0.35}>
+      <FadeInAnimation wrapperElement="div" delay={0.2}>
         <Anchor
           href={link}
           title={title}
@@ -69,7 +69,7 @@ const SlideElement = ({
     </GrowPushCardDetails>
 
     <Div padding = {paddingMobile}>
-      <FadeInAnimation wrapperElement="div" delay={0.55}>
+      <FadeInAnimation wrapperElement="div" delay={0.3}>
         <MemberImage
               className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
               src={image}

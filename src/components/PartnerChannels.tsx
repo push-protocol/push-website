@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,useLayoutEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import MarqueeAnimation from './MarqueeAnimation';
 import { gsap } from 'gsap';
@@ -57,7 +57,7 @@ import { ReactComponent as ZeroswapSVG }  from '../assets/partners/zeroswap.svg'
 import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
 import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
-
+import useOnScreen from 'hooks/useOnScreen';
 
 
 /**
@@ -117,6 +117,8 @@ function PartnerChannels() {
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [active, setActive] = useState(false);
+  const itemRef = useRef();
+  const onScreen = useOnScreen(itemRef);
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow] = partnerSortedGroup;
 
@@ -142,7 +144,8 @@ function PartnerChannels() {
     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
 
-    gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    // gsap.to('#fourItem-0', { width: '178px', height: '178px' });
+    gsap.to('#fourItem-1', { width: '0px', height: '0px' });
     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
     gsap.to('#fourRowItem-2', { width: '178px', height: '178px' });
@@ -153,13 +156,23 @@ function PartnerChannels() {
     gsap.to('#sixitem-3', { width: '0px', height: '0px' });
   };
 
-  useEffect(()=>{
+  useLayoutEffect(()=>{
       onEnter();
-      setTimeout(() => {
-        onLeave();
-        setActive(true);
-      }, 4000);
   },[])
+
+  useEffect(() => {
+      console.log(onScreen);
+      if(onScreen){
+        onLeave();
+        setActive(true)
+      }
+
+      if(!onScreen){
+        onEnter();
+        setActive(false);
+      }
+  },[onScreen])
+
   
   const onLeave = () => {
     gsap.to('#item-0', { width: '96px', height: '96px' });
@@ -176,13 +189,14 @@ function PartnerChannels() {
     gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
 
-    gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
+    // gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
     gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
 
-    gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    // gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourItem-1', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-2', { width: '96px', height: '96px' });
@@ -207,7 +221,7 @@ function PartnerChannels() {
       {!isLargeScreen && (<NewRow
       >
           <PartnerRow>
-          {secondRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondItem-${idx}`}   />)} 
+          {secondRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`secondItem-${idx}`}   />)} 
           </PartnerRow>
          
           <GridRow>
@@ -220,7 +234,7 @@ function PartnerChannels() {
           </PartnerRow> */}
 
           <PartnerRow>
-          {secondRow?.slice(4,7).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'id={`secondRowItem-${idx}`}   />)} 
+          {secondRow?.slice(4,7).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`secondRowItem-${idx}`}   />)} 
           </PartnerRow>
       </NewRow>)}
 
@@ -236,7 +250,7 @@ function PartnerChannels() {
       <TriRow>
           {active ? 
           <div>{thirdRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</div>
-          : <>{thirdRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</>}
+          : <span>{thirdRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</span>}
           <div>
           {thirdRow?.slice(2,4).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdRowItem-${idx}`} />)} 
           </div>
@@ -292,7 +306,7 @@ function PartnerChannels() {
           <div>
             {fourthRow?.slice(2,4).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdRowItem-${idx}`} />)} 
           </div>
-            {active ? <div>{fourthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</div> : <>{fourthRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`thirdItem-${idx}`} />)}</>} 
+            {active ? <div>{fourthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`fourItem-${idx}`} />)}</div> : <span>{fourthRow?.slice(0,1).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' id={`fourItem-${idx}`} />)}</span>} 
       </TriRow>
 
       </Body>
@@ -328,11 +342,13 @@ function PartnerChannels() {
       <PartnerRow
         justifyContent="flex-start"
         padding="0px 0px 150px 0px"
+        ref={itemRef}
       >
           {isLargeScreen ? 
           (sixthRow?.slice(0,2).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem' />)) : 
           (sixthRow?.slice(0, !active ? 0 : sixthRow.length).map((SVGIcon, idx) => <SVGIcon key={idx} className='marqueeItem'  id={`sixitem-${idx}`}  />))} 
       </PartnerRow>
+      {/* <p style={{visibility:'hidden'}} >new</p> */}
 
       {/* <PartnerRow
         margin="130px 0 130px 0"
@@ -358,11 +374,6 @@ const PartnerRow = styled(ItemHV2)`
   margin: 14px auto 0px auto;
   gap: 28px;
   align-items: flex-end !important;
-  // height: fit-content !important;
-  // & svg.marqueeItem {
-  //   width: 96px;
-  //   height: 96px;
-  // }
   @media ${device.laptop} {
     gap: 14px;
     margin: 7px auto;
@@ -383,11 +394,6 @@ const NewPartnerRow = styled(ItemHV2)`
   margin: 0px auto 0px auto;
   gap: 28px;
   align-items: flex-start !important;
-  // height: fit-content !important;
-  // & svg.marqueeItem {
-  //   width: 96px;
-  //   height: 96px;
-  // }
   @media ${device.laptop} {
     gap: 14px;
     // margin: 7px auto;
@@ -427,10 +433,6 @@ const GridRow = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
   // margin: 7px 0px;
-  // & svg.marqueeItem {
-  //   width: 96px;
-  //   height: 96px;
-  // }
   @media (max-width: 1200px) {
    display: none;
   }
@@ -440,18 +442,23 @@ const TriRow = styled.div`
   display: flex;
   flex-direction: row;
   gap: 28px;
+  height: 100%;
   // margin: 7px 0px;
   align-items: center !important;
-  // & svg.marqueeItem {
-  //   width: 96px;
-  //   height: 96px;
-  // }
 
   div {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 28px;
     width: 96px !important;
+  }
+
+  span {
+    width: 178px !important;
+    & svg.marqueeItem {
+      width: 178px;
+      height: 178px;
+    }
   }
   @media (max-width: 1200px) {
    display: none;
