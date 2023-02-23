@@ -70,7 +70,7 @@ import useOnScreen from 'hooks/useOnScreen';
 // fifth array is first 2 icons and last 3 icons on 5th row in pattern
 // sixth array is 6th(last) row in pattern
 
-// last 2 arrays are designs after grid has formed
+// last 2 arrays are designs after grids in first and second row middle icons has formed
 
 const partnerSortedGroup = [
   [DecentralandSVG, SnapshotSVG, SushiSVG, MakerdaoSVG],
