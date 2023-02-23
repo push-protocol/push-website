@@ -104,7 +104,7 @@ function PartnerChannels() {
     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
 
-    // gsap.to('#fourItem-0', { width: '178px', height: '178px' });
+    gsap.to('#fourItem-0', { width: '178px', height: '178px' });
     gsap.to('#fourItem-1', { width: '0px', height: '0px' });
     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
@@ -148,13 +148,13 @@ function PartnerChannels() {
     gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
 
-    // gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
+    gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
     gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
 
-    // gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+    gsap.to('#fourItem-0', { width: '96px', height: '96px' });
     gsap.to('#fourItem-1', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
     gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
@@ -240,7 +240,7 @@ function PartnerChannels() {
 
       <Body active={active}>
         <TriRow>
-          {active ? (
+          {/* {active ? (
             <div>
               {thirdRow?.slice(0, 2).map((SVGIcon, idx) => (
                 <SVGIcon
@@ -250,18 +250,18 @@ function PartnerChannels() {
                 />
               ))}
             </div>
-          ) : (
-            <span>
-              {thirdRow?.slice(0, 1).map((SVGIcon, idx) => (
-                <SVGIcon
-                  key={idx}
-                  className="marqueeItem"
-                  id={`thirdItem-${idx}`}
-                />
-              ))}
-            </span>
-          )}
-          <div>
+          ) : ( */}
+          <main className={active ? 'grid' : 'main'}>
+            {thirdRow?.slice(0, 2).map((SVGIcon, idx) => (
+              <SVGIcon
+                key={idx}
+                className="marqueeItem"
+                id={`thirdItem-${idx}`}
+              />
+            ))}
+          </main>
+          {/* )} */}
+          <div className="grid">
             {thirdRow?.slice(2, 4).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
@@ -316,7 +316,7 @@ function PartnerChannels() {
           </LinkTo>
         </GridItem>
         <TriRow>
-          <div>
+          <div className="grid">
             {fourthRow?.slice(2, 4).map((SVGIcon, idx) => (
               <SVGIcon
                 key={idx}
@@ -325,17 +325,18 @@ function PartnerChannels() {
               />
             ))}
           </div>
-          {active ? (
-            <div>
-              {fourthRow?.slice(0, 2).map((SVGIcon, idx) => (
-                <SVGIcon
-                  key={idx}
-                  className="marqueeItem"
-                  id={`fourItem-${idx}`}
-                />
-              ))}
-            </div>
-          ) : (
+
+          {/* {active ? ( */}
+          <div className={active ? 'grid' : 'main'}>
+            {fourthRow?.slice(0, 2).map((SVGIcon, idx) => (
+              <SVGIcon
+                key={idx}
+                className="marqueeItem"
+                id={`fourItem-${idx}`}
+              />
+            ))}
+          </div>
+          {/* ) : (
             <span>
               {fourthRow?.slice(0, 1).map((SVGIcon, idx) => (
                 <SVGIcon
@@ -345,7 +346,7 @@ function PartnerChannels() {
                 />
               ))}
             </span>
-          )}
+          )} */}
         </TriRow>
       </Body>
 
@@ -499,17 +500,16 @@ const TriRow = styled.div`
   flex-direction: row;
   gap: 28px;
   height: 100%;
-  // margin: 7px 0px;
   align-items: center !important;
 
-  div {
+  .grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 28px;
     width: 96px !important;
   }
 
-  span {
+  .main {
     width: 178px !important;
     & svg.marqueeItem {
       width: 178px;
