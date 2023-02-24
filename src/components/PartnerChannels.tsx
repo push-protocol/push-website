@@ -306,8 +306,7 @@ function PartnerChannels() {
             lineHeight="160%"
             textAlign={isMobile ? 'center' : 'initial'}
           >
-            Quis posuere aliquam est orci lectus. Lectus {!isMobile && <br />} amet amet enim non facilisi pretium
-            tempus.
+            Discover an amazing community of developers integrating Push to build a powerful communication stack.
           </Span>
 
           <LinkTo
@@ -413,7 +412,7 @@ function PartnerChannels() {
 
       <PartnerRow
         justifyContent="flex-start"
-        padding="0px 0px 150px 0px"
+        padding="0px 0px 120px 0px"
         ref={itemRef}
       >
         {isLargeScreen
@@ -534,6 +533,14 @@ const TriRow = styled.div`
 `;
 
 const GridItem = styled(ItemH)`
+  span {
+    width: 80%;
+    text-align: center;
+
+    @media ${device.tablet} {
+      width: 100%;
+    }
+  }
   @media (max-width: 1200px) {
     padding: 30px 0px;
   }

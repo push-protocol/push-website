@@ -140,12 +140,7 @@ function Home({ isAlertVisible }) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    delay={1}
-                  >
-                    <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
-                  </FadeInAnimation>
+                  <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
                 </HeroAnimation>
               )
             }
@@ -1209,9 +1204,9 @@ const ResponsiveSection = styled(HybridSection)`
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
-  @media (max-width: 320px) {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+  @media (max-width: 380px) {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
   }
 `;
 
@@ -1325,7 +1320,7 @@ const HeroBox = styled(ItemV)`
 const PushWorksRow = styled(ItemH)`
   // column-gap: 105px;
   column-gap: 40px;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 200px;
   display: flex;
   flex-direction: row;
