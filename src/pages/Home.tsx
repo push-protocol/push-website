@@ -415,6 +415,7 @@ function Home({ isAlertVisible }) {
 
                 <FadeInAnimation
                   wrapperElement="div"
+                  direction="up"
                   delay={0.3}
                 >
                   <Anchor
