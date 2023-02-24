@@ -49,6 +49,25 @@ export const HeroHeader = styled.h1`
   }
 `;
 
+export const HeroHeaders = styled.h1`
+  font-family: 'Strawford';
+  font-size: 70px;
+  line-height: 110%;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-transform: none;
+  text-shadow: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+
+  @media ${device.tablet} {
+    font-size: 36px;
+  }
+`;
+
 export const PageHeader = styled.h1`
   font-family: 'Strawford';
   font-weight: 700;

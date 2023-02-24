@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable react/prop-types */
+/* eslint-disable */
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
@@ -18,6 +19,7 @@ import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite
 import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 import Alert from 'components/Alert';
+import FadeInAnimation from 'components/FadeInAnimation';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -117,7 +119,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
     >
       {/* ALERT SECTION */}
       {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
-
+   
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
@@ -136,7 +138,8 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
               borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
               className={'headerblur'}
             />
-
+            
+            {/* <FadeInAnimation wrapperElement="div" delay={0}> */}
             <MenuTop flex="initial">
               <PushLogoBlackContainer
                 className="headerlogo"
@@ -165,6 +168,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 )}
               </MobileMenuToggleIcon>
             </MenuTop>
+            {/* </FadeInAnimation> */}
 
             <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
               <NavigationMenu
@@ -184,12 +188,16 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="142%"
                       padding="16px"
                     >
-                      Docs
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
+                          Docs
+                      {/* </FadeInAnimation> */}
                     </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
+                    {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
+                      <BsChevronDown
+                        size={12}
+                        className="chevronIcon"
+                      />
+                      {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -242,24 +250,29 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 1)}
-                    expanded={mobileMenuMap[1]}
-                  >
-                    <Span
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 1)}
+                      expanded={mobileMenuMap[1]}
                     >
-                      Learn More
-                    </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                      >
+                         {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
+                            Learn More
+                        {/* </FadeInAnimation> */}
+                      </Span>
+
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                      {/* </FadeInAnimation> */}
+                    </NavigationMenuHeader>
 
                   <NavigationMenuContent
                     className="menuContent"
@@ -310,24 +323,29 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 2)}
-                    expanded={mobileMenuMap[2]}
-                  >
-                    <Span
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                      expanded={mobileMenuMap[2]}
                     >
-                      Push DAO
-                    </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                      >
+                         {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                           Push DAO
+                        {/* </FadeInAnimation> */}
+                      </Span>
+
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                        {/* </FadeInAnimation> */}
+                    </NavigationMenuHeader>
 
                   <NavigationMenuContent
                     className="menuContent"
@@ -395,6 +413,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
             </HeaderNavItemV>
 
             <ItemVV2 flex="initial">
+            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
@@ -410,7 +429,9 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
               >
                 Launch App
               </DappLauncher>
+            {/* </FadeInAnimation> */}
             </ItemVV2>
+
           </HeaderItemH>
         </ContentV2>
       </SectionV2>

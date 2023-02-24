@@ -75,3 +75,28 @@ export async function sendEmailToMailingList({ email }) {
       return response.text();
     });
 }
+
+export async function getChannels(page) {
+  const requrl = `https://backend.epns.io/apis/v1/channels?page=${page}&limit=9&sort=subscribers&order=desc`;
+
+
+  return axios.get(requrl)
+    .then((apiResponse) => {
+      const channels = apiResponse?.data?.channels;
+      return channels;
+    }).catch(error => {
+      throw Error(error);
+    });
+}
+
+export const getChannelsSearch = async (page, query) => {
+  const requrl = `https://backend.epns.io/apis/v1/channels/search?page=${page}&limit=9&order=desc&query=${query}`;
+
+  return axios.get(requrl)
+    .then((apiResponse) => {
+      const channels = apiResponse?.data?.channels;
+      return channels;
+    }).catch(error => {
+      throw Error(error);
+    });
+};

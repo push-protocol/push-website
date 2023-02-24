@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from "./pages/Home";
+import FrensText from 'pages/FrensOfPush';
 
 
 ReactGA.initialize('UA-165415629-2');
@@ -29,6 +30,9 @@ function App() {
   )
   const RedirectToPlatform = React.lazy(
     () => import("./components/RedirectToDiffUrl")
+  )
+  const FrensOfPush = React.lazy(
+    () => import("pages/FrensOfPush")
   )
   useEffect(() => {
     ReactGA.pageview('/entry');
@@ -63,6 +67,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/privacymobile" element={<PrivacyMobile />} />
         <Route path="/notify" element={<RedirectToPlatform />} />
+        <Route path="/frens" element={<FrensOfPush />} />
       </Routes>
       <Footer />
     </AppWrapper>  
