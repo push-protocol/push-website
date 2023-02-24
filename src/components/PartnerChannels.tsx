@@ -73,13 +73,13 @@ import useOnScreen from 'hooks/useOnScreen';
 // last 2 arrays are designs after grids in first and second row middle icons has formed
 
 const partnerSortedGroup = [
-  [DecentralandSVG, SnapshotSVG, SushiSVG, MakerdaoSVG],
+  [DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG],
   [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
-  [EnsSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
+  [SushiSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
   [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
   [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
   [ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG],
-  [SnapshotSVG, SushiSVG, BancorSVG, AragonSVG],
+  [SnapshotSVG, EnsSVG, BancorSVG, AragonSVG],
   [QidaoSVG, DydxSVG, LepasaMetaverseSVG, OrionprotocolSVG],
 ];
 
