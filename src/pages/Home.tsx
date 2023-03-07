@@ -801,7 +801,7 @@ function Home({ isAlertVisible }) {
               >
                 Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
                 with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
-                in a broken eco-system and problems in daily use.
+                in a broken ecosystem and problems in daily use.
               </Span>
             </WhyPushTextBox>
 
