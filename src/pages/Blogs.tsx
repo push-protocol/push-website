@@ -5,32 +5,32 @@
 import React, { useEffect, useState } from 'react';
 import { getAllBlogData } from '../api';
 import styled from 'styled-components';
-import { Anchor,B,Content, H2 , H3 , HeroHeader, Input ,ItemH, ItemV, Span } from 'components/SharedStyling';
+import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
 import pageMeta from 'config/pageMeta';
 import HybridSection from 'components/HybridSection';
-import Image from 'assets/bg-image.png'
+import Image from 'assets/bg-image.png';
 import { BiSearch } from 'react-icons/bi';
-import moment from "moment";
-import Moment from "react-moment";
-import { useNavigate } from "react-router-dom";
-import SpinnerSVG from 'assets/Spinner.gif'
+import moment from 'moment';
+import Moment from 'react-moment';
+import { useNavigate } from 'react-router-dom';
+import SpinnerSVG from 'assets/Spinner.gif';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation } from 'swiper';
 import useReadingTime from 'hooks/useReadingTime';
 import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 
-
+const BACKEND_API = 'http://localhost:1337';
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
@@ -40,260 +40,303 @@ const Blogs = () => {
   const [searchItems, setSearchItems] = React.useState(null);
   const navigate = useNavigate();
 
-    const loadData = async() => {
-        try {
-          setIsLoading(true);
-          const data = await getAllBlogData();
-          setBlogsData(data);
-        } catch (e) {
-          console.error('Blogs API data fetch error: ', e);
-        } finally {
-          setIsLoading(false);
-        }
+  const loadData = async () => {
+    try {
+      setIsLoading(true);
+      const data = await getAllBlogData();
+      setBlogsData(data?.data);
+    } catch (e) {
+      console.error('Blogs API data fetch error: ', e);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-      function filterComment(hypertext) {
-        try {
-            var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '')
-            return newString;
-        } catch (e) {
-          return '';
-        }
-      }
-
-    useEffect(() => {
-        loadData();
-      }, []);
-
-
-    const onArticleClick = (clickedBlog) => {
-        if(clickedBlog?.link){
-           navigate(`/blogs/${clickedBlog?.title}`);
-        };
-    };
-
-    const channelSearch = async (e) => {
-      let query = e.target.value;
-      setSearch(e.target.value);
-      if (e.target.value?.length == 0) return
-
-      try {
-          setIsLoading(true);
-          const data = blogsData?.filter(x => x.title.toLowerCase().includes(query));
-          setTimeout(() => {
-            setSearchItems(data);
-          }, 500);
-      } catch (error) {
-          console.error("Channels API data fetch error: ", error);
-      } finally {
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 500);
-      }
+  function filterComment(hypertext) {
+    try {
+      var newString = hypertext.replace(/<(?:.|\n)*?>/gm, '');
+      return newString;
+    } catch (e) {
+      return '';
     }
-
-  const ArticleItem = ({item}) => {
-    return(
-    <>{item?.map((blogData, idx) => {
-      return (
-      <MainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-          <ArticleBanner src={blogData?.thumbnail} alt={blogData?.title} />
-  
-          <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0">
-          {blogData?.title}
-          </H3>
-  
-          <ArticleText>
-          {filterComment(blogData?.description)}
-          </ArticleText>
-
-          <ArticleContent>
-              <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
-                  {blogData?.pubDate}
-              </Moment> &#183;
-              <Div>
-                  {useReadingTime(blogData?.description)} min read
-              </Div>
-          </ArticleContent>
-      </MainArticle>)
-      })}
-      </>)
   }
 
-  const SearchArticleItem = ({item }) => {
-    console.log(item)
-    return(<>
-    {item?.map((blogData, idx) => {
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const onArticleClick = (clickedBlog) => {
+    if (clickedBlog) {
+      navigate(`/blogs/${clickedBlog?.id}`);
+    }
+  };
+
+  const channelSearch = async (e) => {
+    let query = e.target.value;
+    setSearch(e.target.value);
+    if (e.target.value?.length == 0) return;
+
+    try {
+      setIsLoading(true);
+      const data = blogsData?.filter((x) => x?.attributes?.title.toLowerCase().includes(query));
+      setTimeout(() => {
+        setSearchItems(data);
+      }, 500);
+    } catch (error) {
+      console.error('Channels API data fetch error: ', error);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    }
+  };
+
+  const ArticleItem = ({ item }) => {
+    return (
+      <>
+        {item?.map((blogData, idx) => {
           return (
-          <SearchMainArticle onClick={() => onArticleClick(blogData)} key={idx} title={blogData?.title}>
-              <ArticleImage src={blogData?.thumbnail} alt={blogData?.title} loading="lazy" />
-      
-              <ArticleRow> 
-              <H3 textTransform="normal" color="#000000" size="24px" weight="700" spacing="-0.02em" lineHeight="142%" margin="24px 0 0 0" textAlign='left !important'>
-              {blogData?.title}
+            <MainArticle
+              onClick={() => onArticleClick(blogData)}
+              key={idx}
+              title={blogData?.attributes?.title}
+            >
+              <ArticleBanner
+                src={`${BACKEND_API}${blogData?.attributes?.image?.data?.attributes?.url}`}
+                alt={blogData?.attributes?.title}
+              />
+
+              <H3
+                textTransform="normal"
+                color="#000000"
+                size="24px"
+                weight="700"
+                spacing="-0.02em"
+                lineHeight="142%"
+                margin="24px 0 0 0"
+              >
+                {blogData?.attributes?.title}
               </H3>
-      
-              <ArticleTextB>
-              {filterComment(blogData?.description)}
-              </ArticleTextB>
+
+              <ArticleText>{filterComment(blogData?.attributes?.body)}</ArticleText>
 
               <ArticleContent>
-              <Moment format='D MMMM, YYYY' style={{marginRight:'5px'}}>
-                  {blogData?.pubDate}
-              </Moment> &#183;
-              <Div>
-                  {useReadingTime(blogData?.description)} min read
-              </Div>
-          </ArticleContent>
-          </ArticleRow>
-          </SearchMainArticle>)
-          })}
-          </>)
-  }
-
-  if (Array.isArray(blogsData) && blogsData.length > 0 || search && searchItems) {
-  return (
-        <PageWrapper
-            pageName={pageMeta.BLOGS.pageName}
-            pageTitle={pageMeta.BLOGS.pageTitle}
-            >
-        <BlogsWrapper>
-
-        <ResponsiveSection curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
-            <Content className="contentBox" flex="0">
-                <Swiper
-                  spaceBetween={30}
-                  centeredSlides={true}
-                  autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  }}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  navigation={false}
-                  modules={[Autoplay, Pagination, Navigation]}
-                  className="mySwiper"
+                <Moment
+                  format="D MMMM, YYYY"
+                  style={{ marginRight: '5px' }}
                 >
-                  {blogsData?.map((item) => (
-                  <SwiperSlide onClick={() => onArticleClick(item)}>
-                      <CarouselContainer>
-                          <CarouselImage src={item?.thumbnail} alt={item?.title} />
-                          <CarouselTitle>{item?.title}</CarouselTitle>
-                          <CarouselReadTime>{useReadingTime(item?.description)} min read</CarouselReadTime>
-                      </CarouselContainer>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
+                  {blogData?.attributes?.date}
+                </Moment>{' '}
+                &#183;
+                <Div>{useReadingTime(blogData?.attributes?.body)} min read</Div>
+              </ArticleContent>
+            </MainArticle>
+          );
+        })}
+      </>
+    );
+  };
 
+  const SearchArticleItem = ({ item }) => {
+    return (
+      <>
+        {item?.map((blogData, idx) => {
+          return (
+            <SearchMainArticle
+              onClick={() => onArticleClick(blogData)}
+              key={idx}
+              title={blogData?.title}
+            >
+              <ArticleImage
+                src={`${BACKEND_API}${blogData?.attributes?.image?.data?.attributes?.url}`}
+                alt={blogData?.attributes?.title}
+                loading="lazy"
+              />
+
+              <ArticleRow>
+                <H3
+                  textTransform="normal"
+                  color="#000000"
+                  size="24px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="142%"
+                  margin="24px 0 0 0"
+                  textAlign="left !important"
+                >
+                  {blogData?.attributes?.title}
+                </H3>
+
+                <ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>
+
+                <ArticleContent>
+                  <Moment
+                    format="D MMMM, YYYY"
+                    style={{ marginRight: '5px' }}
+                  >
+                    {blogData?.attributes?.date}
+                  </Moment>{' '}
+                  &#183;
+                  <Div>{useReadingTime(blogData?.attributes?.body)} min read</Div>
+                </ArticleContent>
+              </ArticleRow>
+            </SearchMainArticle>
+          );
+        })}
+      </>
+    );
+  };
+
+  if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems)) {
+    return (
+      <PageWrapper
+        pageName={pageMeta.BLOGS.pageName}
+        pageTitle={pageMeta.BLOGS.pageTitle}
+      >
+        <BlogsWrapper>
+          <ResponsiveSection
+            curve="bottom"
+            padding="80px 0px 20px 0px"
+            data-bkg="dark"
+          >
+            <Content
+              className="contentBox"
+              flex="0"
+            >
+              <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={false}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                {blogsData?.map((item, i) => (
+                  <SwiperSlide
+                    key={i}
+                    onClick={() => onArticleClick(item)}
+                  >
+                    <CarouselContainer>
+                      <CarouselImage
+                        src={`${BACKEND_API}${item?.attributes?.image?.data?.attributes?.url}`}
+                        alt={item?.title}
+                      />
+                      <CarouselTitle>{item?.attributes.title}</CarouselTitle>
+                      <CarouselReadTime>{useReadingTime(item?.attributes?.body)} min read</CarouselReadTime>
+                    </CarouselContainer>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </Content>
-            </ResponsiveSection>
+          </ResponsiveSection>
 
-            <BlogsSection 
-                id="story"
-                data-bkg="light"
-                className="lightBackground"
-                curve="bottom">
-
+          <BlogsSection
+            id="story"
+            data-bkg="light"
+            className="lightBackground"
+            curve="bottom"
+          >
             <Content className="contentBox">
-              
-                
-                <BlogRow>
-                    <ItemV justifyContent="flex-start">
-                        <ResponsiveH2
-                        size="40px"
-                        weight="500"
-                        spacing="-0.02em"
-                        lineHeight="110%"
-                        >
-                        Push Protocol Insights
-                        </ResponsiveH2>
-                    </ItemV>
-                    <ItemV 
-                        maxWidth="350px"
-                        justifyContent="flex-end">
+              <BlogRow>
+                <ItemV justifyContent="flex-start">
+                  <ResponsiveH2
+                    size="40px"
+                    weight="500"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                  >
+                    Push Protocol Insights
+                  </ResponsiveH2>
+                </ItemV>
+                <ItemV
+                  maxWidth="350px"
+                  justifyContent="flex-end"
+                >
+                  <Wrapper>
+                    <BiSearch
+                      size="23"
+                      color="#121315"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Search articles"
+                      value={search}
+                      onChange={channelSearch}
+                    />
+                  </Wrapper>
+                </ItemV>
+              </BlogRow>
 
-                    <Wrapper>
-                      <BiSearch size="23" color='#121315' />
-                      <input 
-                        type="text"
-                        placeholder='Search articles'
-                        value={search}
-                        onChange={channelSearch}
+              {/* first two sections */}
+              <MainSection>{!search && <ArticleItem item={blogsData?.slice(0, 2)} />}</MainSection>
 
-                        />
+              {/* other grid section */}
+              <SubArticles>{!search && <ArticleItem item={blogsData} />}</SubArticles>
 
-                    </Wrapper>
+              {/* search grid section */}
+              <SearchArticles>{search && <SearchArticleItem item={searchItems} />}</SearchArticles>
 
-                    </ItemV>
-                    </BlogRow>
+              {isLoading && (
+                <ItemH>
+                  <img
+                    src={SpinnerSVG}
+                    alt=""
+                    width={140}
+                  />
+                </ItemH>
+              )}
 
-                {/* first two sections */}
-                <MainSection>
-                  {!search && (<ArticleItem item={blogsData?.slice(0, 2)} />)}
-                 </MainSection>
-                
-                {/* other grid section */}
-                <SubArticles>
-                  {!search && (<ArticleItem item={blogsData?.slice(2, blogsData.length++)} />)}
-                </SubArticles>
+              {search && !isLoading && searchItems?.length === 0 && (
+                <CenteredContainerInfo>
+                  <DisplayNotice>No articles match your query.</DisplayNotice>
+                </CenteredContainerInfo>
+              )}
+            </Content>
 
-                {/* search grid section */}
-                <SearchArticles>
-                  {search && (<SearchArticleItem item={searchItems} />)}
-                </SearchArticles>
+            <BodyContent className="contentBox">
+              <SignupBox margin="0 0 0px 0">
+                <ItemV
+                  justifyContent="flex-start"
+                  gap="12px"
+                >
+                  <ResponsiveH2
+                    color="#09090B"
+                    size="40px"
+                    weight="700"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    Never Miss an Update
+                  </ResponsiveH2>
+                  <Span
+                    color="#303C5E"
+                    size="20px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="138.5%"
+                  >
+                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                  </Span>
+                </ItemV>
 
-                {isLoading && (<ItemH>
-                        <img src={SpinnerSVG} alt='' width={140} />
-                    </ItemH>)}
-
-                  {search && !isLoading && searchItems.length === 0 &&(<CenteredContainerInfo>
-                      <DisplayNotice>
-                            No articles match your query.
-                      </DisplayNotice>
-                  </CenteredContainerInfo>)}
-                </Content>
-
-              <BodyContent className="contentBox">
-                    <SignupBox margin="0 0 0px 0">
-                        <ItemV
-                            justifyContent="flex-start"
-                            gap="12px"
-                        >
-                            <ResponsiveH2
-                            color="#09090B"
-                            size="40px"
-                            weight="700"
-                            spacing="-0.02em"
-                            lineHeight="110%"
-                            margin="0"
-                            >
-                            Never Miss an Update
-                            </ResponsiveH2>
-                            <Span
-                            color="#303C5E"
-                            size="20px"
-                            weight="400"
-                            spacing="-0.03em"
-                            lineHeight="138.5%"
-                            >
-                            Sign up and stay up to date with ecosystem announcements, giveaways and more.
-                            </Span>
-                         </ItemV>    
-
-                        <ItemV>
-                            <SignupInput />
-                        </ItemV>
-                     </SignupBox>
-                 </BodyContent>
-
-              </BlogsSection>
-
-          </BlogsWrapper>
-          </PageWrapper>
-  )
-}
-}
+                <ItemV>
+                  <SignupInput />
+                </ItemV>
+              </SignupBox>
+            </BodyContent>
+          </BlogsSection>
+        </BlogsWrapper>
+      </PageWrapper>
+    );
+  }
+};
 
 const CenteredContainerInfo = styled.div`
   padding: 20px;
@@ -315,7 +358,7 @@ const DisplayNotice = styled.span`
   font-weight: 400;
   color: #000;
   background: rgb(244, 245, 250);
-`
+`;
 
 const ResponsiveSection = styled(HybridSection)`
   min-height: ${(props) => props.minHeight || '0px'};
@@ -324,49 +367,49 @@ const ResponsiveSection = styled(HybridSection)`
     padding-right: 30px !important;
   }
 
-  &[data-bkg="dark"] {
+  &[data-bkg='dark'] {
     & h1 {
-        color: #FFF;
+      color: #fff;
     }
 
     & h3 {
-        color: #FFF;
+      color: #fff;
     }
 
     & span {
-        color: #FFF;
+      color: #fff;
     }
 
     & p {
-        color: #FFF;
+      color: #fff;
     }
-}
+  }
 
-&[data-bkg="light"] {
+  &[data-bkg='light'] {
     & h1 {
-        color: #000;
+      color: #000;
     }
 
     & h3 {
-        color: #000;
+      color: #000;
     }
 
     & span {
-        color: #000;
+      color: #000;
     }
 
     & p {
-        color: #000;
+      color: #000;
     }
   }
 `;
 
 const AnimationSection = styled(ResponsiveSection)`
-    width: 100%;
-    background: #121315;
-    border-bottom-left-radius: 48px;
-    border-bottom-right-radius: 48px;
-    padding-bottom: 0px;
+  width: 100%;
+  background: #121315;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+  padding-bottom: 0px;
 `;
 
 const BlogsWrapper = styled.main`
@@ -387,81 +430,81 @@ const MainArticle = styled(ItemV)`
   justify-content: left !important;
   align-items: flex-start;
 
-   &:hover {
+  &:hover {
     cursor: pointer;
-   }
+  }
 
-   @media ${device.tablet} {
+  @media ${device.tablet} {
     margin-top: 10px;
-   }
+  }
 `;
 
 const ArticleBanner = styled.img`
-    width: 100%;
-    background: #D9D9D9;
-    border-radius: 32px;
+  width: 100%;
+  background: #d9d9d9;
+  border-radius: 32px;
 `;
 
 const ArticleText = styled.div`
-    width: 100%;
-    color: #575D73;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 28px;
-    font-family: Lora;
-    margin-top: 5px;
-    
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+  width: 100%;
+  color: #575d73;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 28px;
+  font-family: Lora;
+  margin-top: 5px;
+
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 const ArticleSlide = styled.div`
-    width: 100%;
-    height: 100%;
-    background: #D9D9D9;
-    border-radius: 32px;
+  width: 100%;
+  height: 100%;
+  background: #d9d9d9;
+  border-radius: 32px;
 `;
 
 const ArticleTextB = styled.div`
-    width: 100%;
-    color: #575D73;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 28px;
-    font-family: Lora;
-    margin-top: 10px;
-    
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  width: 100%;
+  color: #575d73;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 28px;
+  font-family: Lora;
+  margin-top: 10px;
+
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 const ArticleContent = styled.div`
-    width: 100%;
-    color: #575D73;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-    display: flex;
-    flex-direction: row !important;
-    margin-top: 15px;
+  width: 100%;
+  color: #575d73;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  display: flex;
+  flex-direction: row !important;
+  margin-top: 15px;
 `;
 
 const SubArticles = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-gap: 33px;
-    margin-top: 50px;
-    align-items: flex-start;
-    @media ${device.tablet} {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        margin-top: 0px;
-   }
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 33px;
+  margin-top: 50px;
+  align-items: flex-start;
+  @media ${device.tablet} {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-top: 0px;
+  }
 `;
-const SearchArticles = styled.div``
+const SearchArticles = styled.div``;
 
 const SearchMainArticle = styled.div`
   width: 100%;
@@ -472,34 +515,33 @@ const SearchMainArticle = styled.div`
     margin-top: 50px;
   }
 
-   &:hover {
+  &:hover {
     cursor: pointer;
-   }
+  }
 
-   @media ${device.tablet} {
+  @media ${device.tablet} {
     margin-top: 10px;
     flex-direction: column !important;
-   }
+  }
 `;
 
 const ArticleImage = styled.img`
-    width: 400px;
-    background: #D9D9D9;
-    border-radius: 32px;
-    @media ${device.tablet} {
-        width: 100%;
-     }
+  min-width: 400px;
+  max -width: 400px;
+  background: #d9d9d9;
+  border-radius: 32px;
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const ArticleRow = styled.div`
-    margin-left: 70px;
-    @media ${device.tablet} {
-      margin-left: 0px;
-      width: 100%;
-   }
-`
-
-
+  margin-left: 70px;
+  @media ${device.tablet} {
+    margin-left: 0px;
+    width: 100%;
+  }
+`;
 
 const BlogsSection = styled(ResponsiveSection)`
  padding: 0px 160px 80px 160px;
@@ -517,9 +559,9 @@ const MainSection = styled.div`
   width: 100%;
   gap: 33px;
   @media ${device.tablet} {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      margin-top: 0px;
-}
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-top: 0px;
+  }
 `;
 
 const BlogRow = styled(ItemH)`
@@ -527,7 +569,7 @@ const BlogRow = styled(ItemH)`
   @media ${device.tablet} {
     margin-top: 80px;
   }
-  
+
   @media ${device.tablet} {
     flex-direction: column;
   }
@@ -544,89 +586,88 @@ const Div = styled.div`
 `;
 
 const Wrapper = styled.div`
-    position: relative;
-    display: flex;
-    flex: 1;
-    column-gap: 6px;
-    align-items: center;
-    background: #FFFFFF;
-    border-radius: 20px;
-    border: 1px solid #d9d9d9;
-    padding: 16px;
-    justify-content: space-between;
+  position: relative;
+  display: flex;
+  flex: 1;
+  column-gap: 6px;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #d9d9d9;
+  padding: 16px;
+  justify-content: space-between;
+  @media ${device.tablet} {
+    column-gap: 3px;
+  }
+  & input[type='text'] {
+    all: unset;
+    box-sizing: border-box;
+    font-family: 'Strawford';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: -0.03em;
+    color: #121315;
+    width: 100%;
+    padding: 0px;
+    &::placeholder {
+      color: #121315;
+      opacity: 1;
+      font-size: 20px;
+    }
     @media ${device.tablet} {
-        column-gap: 3px;
+      min-width: fit-content;
     }
-    & input[type="text"] {
-        all: unset;
-        box-sizing: border-box;
-        font-family: 'Strawford';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 20px;
-        line-height: normal;
-        letter-spacing: -0.03em; 
-        color: #121315;
-        width: 100%;
-        padding: 0px;
-        &::placeholder {
-            color: #121315;
-            opacity: 1;
-            font-size: 20px;
-        }
-        @media ${device.tablet} {
-            min-width: fit-content;
-        }
-    }
+  }
 `;
 
 const CarouselContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 `;
 
 const CarouselImage = styled.img`
-    display: block;
-    object-fit: cover;
-    width: 80%;
-    margin: 0 auto 20px auto;
-    border-radius: 62px;
-    @media ${device.tablet} {
-      border-radius: 15px;
-      width: 100%;
+  display: block;
+  object-fit: cover;
+  width: 80%;
+  margin: 0 auto 20px auto;
+  border-radius: 62px;
+  @media ${device.tablet} {
+    border-radius: 15px;
+    width: 100%;
   }
-
 `;
 
 const CarouselTitle = styled.div`
-    width: 80%;
-    margin: 0 auto 20px auto;
+  width: 80%;
+  margin: 0 auto 20px auto;
+  font-weight: 700;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: left;
+  @media ${device.tablet} {
     font-weight: 700;
-    font-size: 40px;
-    color: #FFFFFF;
-    text-align: left;
-    @media ${device.tablet} {
-      font-weight: 700;
-      font-size: 21.5385px;
-      width: 100%;
+    font-size: 21.5385px;
+    width: 100%;
   }
 `;
 
 const CarouselReadTime = styled.div`
-    width: 80%;
-    margin: 0 auto 0px auto;
+  width: 80%;
+  margin: 0 auto 0px auto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #575d73;
+  text-align: left;
+  @media ${device.tablet} {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 20px;
-    color: #575D73;
-    text-align: left;
-    @media ${device.tablet} {
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 9px;
-      width: 100%;
+    font-size: 10px;
+    line-height: 9px;
+    width: 100%;
   }
 `;
 
@@ -644,4 +685,4 @@ const SignupBox = styled(ItemH)`
   }
 `;
 
-export default Blogs
+export default Blogs;
