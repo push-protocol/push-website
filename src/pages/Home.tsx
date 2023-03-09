@@ -925,7 +925,7 @@ function Home({ isAlertVisible }) {
                 {!showMoreTeamMembers ? 'View More' : 'View Less'}
               </ButtonV2>
               <Anchor
-                href="https://angel.co/company/ethereum-push-notification-service"
+                href="https://angel.co/company/push-protocol"
                 title="Jobs"
                 target="_blank"
                 bg="#DD44B9"
