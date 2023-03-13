@@ -46,8 +46,8 @@ export async function getBlogData(limit = 4) {
     });
 }
 
-export async function getAllBlogData() {
-  const requrl = `${BACKEND_API}api/blogs?populate=*&pagination[page]=1&pagination[pageSize]=5`;
+export async function getAllBlogData(page, size) {
+  const requrl = `${BACKEND_API}api/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=${size}`;
 
   return axios
     .get(requrl)
@@ -112,22 +112,22 @@ export async function sendEmailToMailingList({ email }) {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     },
-    body: formBody
-  })
-    .then(response => {
-      return response.text();
-    });
+    body: formBody,
+  }).then((response) => {
+    return response.text();
+  });
 }
 
 export async function getChannels(page) {
   const requrl = `https://backend.epns.io/apis/v1/channels?page=${page}&limit=9&sort=subscribers&order=desc`;
 
-
-  return axios.get(requrl)
+  return axios
+    .get(requrl)
     .then((apiResponse) => {
       const channels = apiResponse?.data?.channels;
       return channels;
-    }).catch(error => {
+    })
+    .catch((error) => {
       throw Error(error);
     });
 }
@@ -135,11 +135,13 @@ export async function getChannels(page) {
 export const getChannelsSearch = async (page, query) => {
   const requrl = `https://backend.epns.io/apis/v1/channels/search?page=${page}&limit=9&order=desc&query=${query}`;
 
-  return axios.get(requrl)
+  return axios
+    .get(requrl)
     .then((apiResponse) => {
       const channels = apiResponse?.data?.channels;
       return channels;
-    }).catch(error => {
+    })
+    .catch((error) => {
       throw Error(error);
     });
 };

@@ -29,8 +29,10 @@ import { Autoplay, Pagination, Navigation } from 'swiper';
 import useReadingTime from 'hooks/useReadingTime';
 import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
+import { FiChevronDown } from 'react-icons/fi';
 
 const BACKEND_API = 'http://localhost:1337';
+const PAGE_SIZE = 5;
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
@@ -38,12 +40,13 @@ const Blogs = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = React.useState('');
   const [searchItems, setSearchItems] = React.useState(null);
+  const [page, setPage] = useState(1);
   const navigate = useNavigate();
 
   const loadData = async () => {
     try {
       setIsLoading(true);
-      const data = await getAllBlogData();
+      const data = await getAllBlogData(page, PAGE_SIZE);
       setBlogsData(data?.data);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
@@ -82,6 +85,27 @@ const Blogs = () => {
       const data = await searchBlogData(query);
       setTimeout(() => {
         setSearchItems(data?.data);
+      }, 500);
+    } catch (error) {
+      console.error('Channels API data fetch error: ', error);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    }
+  };
+
+  const ShowMore = async () => {
+    //page
+    let newPage = page + 1;
+    setPage(newPage);
+
+    try {
+      setIsLoading(true);
+      const data = await getAllBlogData(newPage, PAGE_SIZE);
+      let newData = data?.data;
+      setTimeout(() => {
+        setBlogsData((current) => [...current, ...newData]);
       }, 500);
     } catch (error) {
       console.error('Channels API data fetch error: ', error);
@@ -298,6 +322,13 @@ const Blogs = () => {
                   <DisplayNotice>No articles match your query.</DisplayNotice>
                 </CenteredContainerInfo>
               )}
+
+              {!isLoading && search.length === 0 && (
+                <ShowMoreSection onClick={ShowMore}>
+                  <FiChevronDown size={23} />
+                  <b>Show More</b>
+                </ShowMoreSection>
+              )}
             </Content>
 
             <BodyContent className="contentBox">
@@ -438,6 +469,24 @@ const MainArticle = styled(ItemV)`
 
   @media ${device.tablet} {
     margin-top: 10px;
+  }
+`;
+
+const ShowMoreSection = styled.div`
+  border: 1px solid #bac4d6;
+  border-radius: 24px;
+  margin: 70px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 23px;
+  cursor: pointer;
+  b {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    color: #1e1e1e;
   }
 `;
 

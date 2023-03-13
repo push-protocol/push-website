@@ -1,29 +1,30 @@
 export default {
   HOME: {
     pageName: 'home',
-    pageTitle: 'PUSH | Previously EPNS'
+    pageTitle: 'PUSH | Previously EPNS',
   },
   TOS: {
     pageName: 'tos',
-    pageTitle: 'PUSH | Terms Of Service'
+    pageTitle: 'PUSH | Terms Of Service',
   },
   PRIVACY: {
     pageName: 'privacy',
-    pageTitle: 'PUSH | Privacy'
+    pageTitle: 'PUSH | Privacy',
   },
   FAQS: {
     pageName: 'faqs',
-    pageTitle: 'PUSH | FAQs'
+    pageTitle: 'PUSH | FAQs',
   },
   BLOGS: {
     pageName: 'blogs',
-    pageTitle: 'PUSH | Blogs'
+    pageTitle: 'PUSH | Blogs',
   },
   BLOGITEM: {
     pageName: 'blogItem',
-    pageTitle: 'PUSH | BlogItem'
+    pageTitle: 'PUSH | BlogItem',
+  },
   FRENS: {
     pageName: 'frens',
-    pageTitle: 'PUSH | FrensOfPush'
-  }
+    pageTitle: 'PUSH | FrensOfPush',
+  },
 };

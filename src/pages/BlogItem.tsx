@@ -24,6 +24,8 @@ import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
 
 const BACKEND_API = 'http://localhost:1337';
+const PAGE_SIZE = 200;
+const page = 1;
 
 const BlogItem = () => {
   const { id } = useParams();
@@ -39,7 +41,7 @@ const BlogItem = () => {
     try {
       setIsLoading(true);
       const data = await getSingleBlogData(id);
-      const allData = await getAllBlogData();
+      const allData = await getAllBlogData(page, PAGE_SIZE);
       setBlogsData(data?.data);
       setAllBlogs(allData?.data);
       // for (let i = 0; i < data.length; i++) {
@@ -101,7 +103,7 @@ const BlogItem = () => {
               title={blogData?.attributes?.title}
             >
               <ArticleImage
-                src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
+                src={`${BACKEND_API}${blogData?.attributes?.image?.data?.attributes?.url}`}
                 alt={blogData?.attributes?.title}
               />
 
@@ -138,8 +140,6 @@ const BlogItem = () => {
       </>
     );
   };
-
-  console.log(allBlogs);
 
   return (
     <PageWrapper
@@ -309,7 +309,7 @@ const BlogItem = () => {
             </BlogRow>
 
             <SubArticles>
-              <ArticleItem item={allBlogs} />
+              <ArticleItem item={allBlogs?.slice(0, 5)} />
               {/* <ArticleItem item={allBlogs?.slice(5, 9)} /> */}
             </SubArticles>
 
