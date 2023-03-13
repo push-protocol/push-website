@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
-import { getAllBlogData } from '../api';
+import { getAllBlogData, searchBlogData } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import { device } from '../config/globals';
@@ -78,9 +78,10 @@ const Blogs = () => {
 
     try {
       setIsLoading(true);
-      const data = blogsData?.filter((x) => x?.attributes?.title.toLowerCase().includes(query));
+      // const data = blogsData?.filter((x) => x?.attributes?.title.toLowerCase().includes(query));
+      const data = await searchBlogData(query);
       setTimeout(() => {
-        setSearchItems(data);
+        setSearchItems(data?.data);
       }, 500);
     } catch (error) {
       console.error('Channels API data fetch error: ', error);
@@ -277,7 +278,7 @@ const Blogs = () => {
               <MainSection>{!search && <ArticleItem item={blogsData?.slice(0, 2)} />}</MainSection>
 
               {/* other grid section */}
-              <SubArticles>{!search && <ArticleItem item={blogsData} />}</SubArticles>
+              <SubArticles>{!search && <ArticleItem item={blogsData?.slice(2, blogsData.length)} />}</SubArticles>
 
               {/* search grid section */}
               <SearchArticles>{search && <SearchArticleItem item={searchItems} />}</SearchArticles>
@@ -428,7 +429,8 @@ const MainArticle = styled(ItemV)`
   width: 100%;
   margin-top: 50px;
   justify-content: left !important;
-  align-items: flex-start;
+  align-items: flex-start !important;
+  align-self: flex-start !important;
 
   &:hover {
     cursor: pointer;
@@ -527,7 +529,7 @@ const SearchMainArticle = styled.div`
 
 const ArticleImage = styled.img`
   min-width: 400px;
-  max -width: 400px;
+  max-width: 400px;
   background: #d9d9d9;
   border-radius: 32px;
   @media ${device.tablet} {

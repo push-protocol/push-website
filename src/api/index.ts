@@ -47,14 +47,27 @@ export async function getBlogData(limit = 4) {
 }
 
 export async function getAllBlogData() {
-  const requrl = `${BACKEND_API}api/blogs?populate=*`;
+  const requrl = `${BACKEND_API}api/blogs?populate=*&pagination[page]=1&pagination[pageSize]=5`;
 
   return axios
     .get(requrl)
     .then((apiResponse) => {
       const blogs = apiResponse?.data;
       return blogs;
-      // return blogs.slice(0, limit);
+    })
+    .catch((error) => {
+      throw Error(error);
+    });
+}
+
+export async function searchBlogData(text) {
+  const requrl = `${BACKEND_API}api/blogs?populate=*&filters[title][$containsi]=${text}`;
+
+  return axios
+    .get(requrl)
+    .then((apiResponse) => {
+      const blogs = apiResponse?.data;
+      return blogs;
     })
     .catch((error) => {
       throw Error(error);
