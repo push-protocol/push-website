@@ -22,5 +22,8 @@ export default {
   BLOGITEM: {
     pageName: 'blogItem',
     pageTitle: 'PUSH | BlogItem'
+  FRENS: {
+    pageName: 'frens',
+    pageTitle: 'PUSH | FrensOfPush'
   }
 };

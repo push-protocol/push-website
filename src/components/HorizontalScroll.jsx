@@ -11,6 +11,7 @@ import Pushdao from '../assets/figures/pushdao.webp';
 import ImageHolder from './ImageHolder';
 import { FiArrowUpRight } from 'react-icons/fi';
 import useMediaQuery from 'hooks/useMediaQuery';
+import FadeInAnimation from './FadeInAnimation';
 
 
 
@@ -41,35 +42,43 @@ const SlideElement = ({
         weight={isMobile ? "400" : "500"}
         lineHeight="146%"
       >
+      <FadeInAnimation wrapperElement="div" delay={0.1}>
         <B color="#fff">{title}</B> {content}
+      </FadeInAnimation>
       </Span>
-      <Anchor
-        href={link}
-        title={title}
-        target="_blank"
-        padding="0px 0px"
-        size={isMobile ? "18px" : "20px"}
-        weight={isMobile ? "400" : "500"}
-        spacing="-0.03em"
-        lineHeight="26px"
-        className='button'
-        margin="10px 0px 0px 0px"
-        // hoverShade="none"
-      >
-      <SpanLink>{linkContent}</SpanLink>
-      <FiArrowUpRight className="anchorSVGlink" />
-      </Anchor>
+
+      <FadeInAnimation wrapperElement="div" delay={0.2}>
+        <Anchor
+          href={link}
+          title={title}
+          target="_blank"
+          padding="0px 0px"
+          size={isMobile ? "18px" : "20px"}
+          weight={isMobile ? "400" : "500"}
+          spacing="-0.03em"
+          lineHeight="26px"
+          className='button'
+          margin="10px 0px 0px 0px"
+          // hoverShade="none"
+        >
+          <SpanLink>{linkContent}</SpanLink>
+        <FiArrowUpRight className="anchorSVGlink" />
+        </Anchor>
+      </FadeInAnimation>
+
     </GrowPushCardDetails>
 
     <Div padding = {paddingMobile}>
-      <MemberImage
-            className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
-            src={image}
-            srcSet={image}
-            alt= {alt}
-            title = {title}
-            width="100%"
-          />
+      <FadeInAnimation wrapperElement="div" delay={0.3}>
+        <MemberImage
+              className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
+              src={image}
+              srcSet={image}
+              alt= {alt}
+              title = {title}
+              width="100%"
+            />
+        </FadeInAnimation>
     </Div>
   </GrowPushCard>
   )

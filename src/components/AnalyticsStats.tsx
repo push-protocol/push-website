@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { loadKPIData } from '../api';
 
 import { device } from '../config/globals';
+import FadeInAnimation from './FadeInAnimation';
 
 import {
   ItemV, Span
@@ -77,33 +78,40 @@ function AnalyticsStats() {
   // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
 
   // for now hard coded, plug back the API when real APIs are there.
-  const totalNotifsSent = nFormatter(17737587, 1);
-  const totalSubscribersCount = '60k+';
+  const totalNotifsSent = nFormatter(25037587, 1);
+  const totalSubscribersCount = '70k+';
   const pushIntegrations = '450+';
   const pushChatSent = '>$1M';
 
   return (
     <KPIBanner>
-      <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{totalNotifsSent}</KPIFigure>
-        <KPIMetric>Notifications<br />Sent</KPIMetric>
-      </ItemV>
+        <FadeInAnimation wrapperElement="div" delay={0.25}>
+          <ItemV gap="18px" className='kpiItem'>
+              <KPIFigure>{totalNotifsSent}</KPIFigure>
+              <KPIMetric>Notifications<br />Sent</KPIMetric>
+          </ItemV>
+      </FadeInAnimation>
 
-      <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{totalSubscribersCount}</KPIFigure>
-        <KPIMetric>Total<br />Subscribers</KPIMetric>
-      </ItemV>
+      <FadeInAnimation wrapperElement="div" delay={0.5}>
+        <ItemV gap="18px" className='kpiItem'>
+          <KPIFigure>{totalSubscribersCount}</KPIFigure>
+          <KPIMetric>Total<br />Subscribers</KPIMetric>
+        </ItemV>
+      </FadeInAnimation>
 
-      <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{pushIntegrations}</KPIFigure>
-        <KPIMetric>Total Push<br />Integrations</KPIMetric>
-      </ItemV>
+      <FadeInAnimation wrapperElement="div" delay={0.75}>
+        <ItemV gap="18px" className='kpiItem'>
+          <KPIFigure>{pushIntegrations}</KPIFigure>
+          <KPIMetric>Total Push<br />Integrations</KPIMetric>
+        </ItemV>
+      </FadeInAnimation>
 
-     
-      <ItemV gap="18px" className='kpiItem'>
-        <KPIFigure>{pushChatSent}</KPIFigure>
-        <KPIMetric>In Grants <br />Given</KPIMetric>
-      </ItemV>
+      <FadeInAnimation wrapperElement="div" delay={1}>
+        <ItemV gap="18px" className='kpiItem'>
+          <KPIFigure>{pushChatSent}</KPIFigure>
+          <KPIMetric>In Grants <br />Given</KPIMetric>
+        </ItemV>
+      </FadeInAnimation>
     </KPIBanner>
   );
 }
@@ -114,7 +122,8 @@ const KPIBanner = styled.div`
     border-radius: 63px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
+    justify-content: space-between;
     width: 100%;
     padding: 30px 50px;
     font-family: 'Strawford';
