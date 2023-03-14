@@ -57,7 +57,7 @@ function Footer() {
                     Join us and build the future of Web3 Communication.
                 </Span>
                 <FooterAnchorPrimary
-                  href="https://angel.co/company/ethereum-push-notification-service"
+                  href="https://angel.co/company/push-protocol"
                   title="See Open Positions"
                   target="_blank"
                 >
