@@ -307,7 +307,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     </Anchor>
                     <LinkTo
                       to="/frens"
-                      title="Frequently Asked Questions"
+                      title="Push Ecosystem"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
