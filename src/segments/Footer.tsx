@@ -118,6 +118,14 @@ function Footer() {
                   </Span>
 
                   <FooterAnchorSecondary
+                    as={LinkTo}
+                    to="/frens"
+                    title="Push Ecosystem"
+                    onClick={scrollToTop}
+                  >
+                    Push Ecosystem
+                  </FooterAnchorSecondary>
+                  <FooterAnchorSecondary
                     href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                     title="Guides"
                     target="_blank"
@@ -142,14 +150,7 @@ function Footer() {
                   >
                     Privacy
                   </FooterAnchorSecondary>
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/frens"
-                    title="Push Ecosystem"
-                    onClick={scrollToTop}
-                  >
-                    Push Ecosystem
-                  </FooterAnchorSecondary>
+                  
                 </FooterLinks>
               </FooterColumn>
 
