@@ -319,6 +319,19 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       Media  Kit
                     </Anchor>
+                    <LinkTo
+                      to="/frens"
+                      title="Frequently Asked Questions"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push Ecosystem
+                    </LinkTo>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
