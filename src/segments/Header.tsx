@@ -244,7 +244,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      WhitePaper
+                      Whitepaper
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
