@@ -141,6 +141,7 @@ function Home({ isAlertVisible }) {
               !isMobile && (
                 <HeroAnimation>
                   <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+                  {/* <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" /> */}
                 </HeroAnimation>
               )
             }
