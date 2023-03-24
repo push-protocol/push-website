@@ -16,7 +16,7 @@ import HybridSection from '../components/HybridSection';
 import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, OL, LI, A, B, Span, HeroHeader, Button } from '../components/SharedStyling';
 import ImageFAQ from "../assets/faq-projects.webp"
 
-// define the question and answers seperately in order to seperate data and render logic
+// define the question and answers separately in order to separate data and render logic
 const General = [
   {
     question: 'What is Push?',
@@ -65,7 +65,7 @@ const General = [
     section: 'General',
     renderAnswer: () => (
       <Answer>
-        <Span>Push behaves similar to blockchain but is an open network. This means that data is validated and indexed but doesn't have to aligned into blocks as the proof of data validity is supplied with the communication payload itself.</Span>
+        <Span>Push behaves similar to blockchain but is an open network. This means that data is validated and indexed but doesn't have to be aligned into blocks as the proof of data validity is supplied with the communication payload itself.</Span>
         <Span>Push operates on network of nodes called Push Nodes which are responsible for the validation, storage, and delivery of notifications & chats.</Span>
         <Span>Major efforts are put into decentralising Push Nodes which is in the final stages now. Any content or payloads getting delivered are already immutable and can't be changed as they are secured using crypto-graphical proofs. The other part which ensures that the content can't be censored is in final stages now of testing and public alpha push nodes are expected to be rolled out soon.</Span>
       </Answer>
@@ -143,7 +143,7 @@ const Notifs = [
       <Answer>
         <Span>No, Push is extremely versatile and can handle on-chain (coming from smart contracts) or off-chain (coming from backend) notifications apart from notifications generated via sub-graphs.</Span>
         <Span>
-        The logic of notification depends on what the xyz protocol wants to send to you which already ranges from a variety of use cases such as near loan liquidations, NFT rebids, on-chain or off chain governance, web3 news, airdrop alerts and so much more. If you imaging a use case that your users will benefit from, chances are Push will be able to enable dispatching those notifications to your users (wallet addresses).
+        The logic of notification depends on what the xyz protocol wants to send to you which already ranges from a variety of use cases such as near loan liquidations, NFT rebids, on-chain or off chain governance, web3 news, airdrop alerts and so much more. If you imagine a use case that your users will benefit from, chances are Push will be able to enable dispatching those notifications to your users (wallet addresses).
         </Span>
       </Answer>
     )
@@ -159,7 +159,7 @@ const Notifs = [
     )
   },
   {
-    question: 'What are some use case of notifications?',
+    question: 'What are some use cases of notifications?',
     section: 'Notifs',
     renderAnswer: () => (
       <Answer>
