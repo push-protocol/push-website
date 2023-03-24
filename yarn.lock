@@ -2005,19 +2005,21 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@splinetool/react-spline@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-2.2.3.tgz#f0c93fe1f539be95de4564c19440be1061d42ee0"
-  integrity sha512-KdvyP2cCLLG/PcHp0ObE147nhawY4R/iqI6733MSWBx4KSpeo4oD589rCPuXeGdgyr2lCtZqUQOkQj4QCnXxmw==
+"@splinetool/react-spline@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-2.2.6.tgz#c48f634f352311b9da210978f88bd195d605ee8a"
+  integrity sha512-y9L2VEbnC6FNZZu8XMmWM9YTTTWal6kJVfP05Amf0QqDNzCSumKsJxZyGUODvuCmiAvy0PfIfEsiVKnSxvhsDw==
   dependencies:
-    react-merge-refs "^1.1.0"
+    lodash.debounce "^4.0.8"
+    react-merge-refs "^2.0.1"
 
-"@splinetool/runtime@0.9.109":
-  version "0.9.109"
-  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.109.tgz#676fdc597ddec237963acbbe6e0baefdbdc21e33"
-  integrity sha512-TAUM285GWbEmNWo+ZknPLqt8ZMaYD6k2WKhukZZO9LrqmPrw/s7yO/SFnkQ8xh5JyLNb6z99V6TB7CEfUPge+g==
+"@splinetool/runtime@^0.9.270":
+  version "0.9.270"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.270.tgz#993947c543ba7e0aaed2284ab60549c6674f81fd"
+  integrity sha512-W6ZuotapSIZhh3EYYoEb/NuUC2xMwKS7h7B7MPqhGMF6i6e8BvYfegDKZgDyLWYdWIH00m2JWsLvj4FUJtGpGQ==
   dependencies:
     on-change "^4.0.0"
+    semver-compare "^1.0.0"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -8556,10 +8558,10 @@ react-loading-skeleton@^3.1.0:
   resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-3.1.0.tgz#ce22942f1af77bfd60854417075792367f54f41e"
   integrity sha512-j1U1CWWs68nBPOg7tkQqnlFcAMFF6oEK6MgqAo15f8A5p7mjH6xyKn2gHbkcimpwfO0VQXqxAswnSYVr8lWzjw==
 
-react-merge-refs@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
-  integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
+react-merge-refs@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-2.0.1.tgz#a1f8c2dadefa635333e9b91ec59f30b65228b006"
+  integrity sha512-pywF6oouJWuqL26xV3OruRSIqai31R9SdJX/I3gP2q8jLxUnA1IwXcLW8werUHLZOrp4N7YOeQNZrh/BKrHI4A==
 
 react-refresh@^0.11.0:
   version "0.11.0"
@@ -9008,6 +9010,11 @@ selfsigned@^2.1.1:
   integrity sha512-GSL3aowiF7wa/WtSFwnUrludWFoNhftq8bUkH9pkzjpN2XSPOAYEgg6e0sS9s0rZwgJzJiQRPU18A6clnoW5wQ==
   dependencies:
     node-forge "^1"
+
+semver-compare@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/semver-compare/-/semver-compare-1.0.0.tgz#0dee216a1c941ab37e9efb1788f6afc5ff5537fc"
+  integrity sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow==
 
 semver@^5.6.0:
   version "5.7.1"

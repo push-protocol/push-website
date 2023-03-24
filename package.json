@@ -4,8 +4,8 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
-    "@splinetool/react-spline": "2.2.3",
-    "@splinetool/runtime": "0.9.109",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.270",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.19",
