@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { getAllBlogData, searchBlogData } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
@@ -31,7 +31,8 @@ import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
 
-const BACKEND_API = 'http://localhost:1337';
+// const BACKEND_API = 'http://localhost:1337';
+const BACKEND_API = 'http://13.215.144.46:1337';
 const PAGE_SIZE = 5;
 
 const Blogs = () => {
@@ -40,6 +41,7 @@ const Blogs = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = React.useState('');
   const [searchItems, setSearchItems] = React.useState(null);
+  const [errorPage, setErrorPage] = React.useState(false);
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
 
@@ -50,6 +52,7 @@ const Blogs = () => {
       setBlogsData(data?.data);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
+      setErrorPage(true);
     } finally {
       setIsLoading(false);
     }
@@ -212,7 +215,67 @@ const Blogs = () => {
     );
   };
 
-  if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems)) {
+  if (errorPage === true) {
+    return(
+        <PageWrapper
+        pageName={pageMeta.BLOGS.pageName}
+        pageTitle={pageMeta.BLOGS.pageTitle}
+      >
+        <BlogsWrapper>
+
+        <BlogsSection
+            id="story"
+            data-bkg="light"
+            className="lightBackground"
+            curve="bottom"
+          >
+
+            <EmptyCenteredContainerInfo>
+                  <DisplayNotice>No Blogs Found.</DisplayNotice>
+            </EmptyCenteredContainerInfo>
+
+
+        <BodyContent className="contentBox">
+              <SignupBox margin="0 0 0px 0">
+                <ItemV
+                  justifyContent="flex-start"
+                  gap="12px"
+                >
+                  <ResponsiveH2
+                    color="#09090B"
+                    size="40px"
+                    weight="700"
+                    spacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    Never Miss an Update
+                  </ResponsiveH2>
+                  <Span
+                    color="#303C5E"
+                    size="20px"
+                    weight="400"
+                    spacing="-0.03em"
+                    lineHeight="138.5%"
+                  >
+                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                  </Span>
+                </ItemV>
+
+                <ItemV>
+                  <SignupInput />
+                </ItemV>
+              </SignupBox>
+            </BodyContent>
+        
+        </BlogsSection>
+
+        </BlogsWrapper>
+        </PageWrapper>
+    )
+  }
+
+  if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems) || errorPage !== true) {
     return (
       <PageWrapper
         pageName={pageMeta.BLOGS.pageName}
@@ -372,6 +435,14 @@ const Blogs = () => {
 
 const CenteredContainerInfo = styled.div`
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const EmptyCenteredContainerInfo = styled.div`
+  padding: 20px;
+  margin-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;

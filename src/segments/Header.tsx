@@ -244,7 +244,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      WhitePaper
+                      Whitepaper
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -304,7 +304,20 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       Blog
                     </LinkTo>
-                    {/* <Anchor
+                    <LinkTo
+                      to="/frens"
+                      title="Push Ecosystem"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push Ecosystem
+                    </LinkTo>
+                     {/* <Anchor
                       href="https://push-protocol.medium.com/"
                       target="_blank"
                       title="Read our story"

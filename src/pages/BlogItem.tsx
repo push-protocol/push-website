@@ -23,7 +23,8 @@ import { FiChevronLeft } from 'react-icons/fi';
 import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
 
-const BACKEND_API = 'http://localhost:1337';
+// const BACKEND_API = 'http://localhost:1337';
+const BACKEND_API = 'http://13.215.144.46:1337';
 const PAGE_SIZE = 200;
 const page = 1;
 
@@ -152,12 +153,14 @@ const BlogItem = () => {
             className="contentBox"
             flex="0"
           >
+
             <ArticleBanner
               src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
               alt={blogsData?.attributes.title}
             />
-          </Content>
-        </AnimationSection>
+
+           </Content>
+        </AnimationSection> 
 
         <BlogsSection
           id="story"
@@ -176,6 +179,11 @@ const BlogItem = () => {
               </ItemH>
             )}
 
+            {/* <ArticleBanner
+                src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
+                alt={blogsData?.attributes.title}
+              /> */}
+          
             <H3
               textTransform="normal"
               color="#000000"
@@ -337,14 +345,14 @@ const AnimationSection = styled(ResponsiveSection)`
   background: #121315;
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
-  min-height: 60vh;
-  padding: 80px 0px 20px 0px;
+  // min-height: 60vh;
+  padding: 0px 0px 20px 0px;
   & #hero .contentBox {
     row-gap: 18px;
   }
   @media ${device.laptop} {
     min-height: 50vh;
-    padding: 80px 40px 0px 40px;
+    padding: 0px 40px 0px 40px;
   }
 
   @media ${device.tablet} {
@@ -374,7 +382,6 @@ const BlogsSection = styled(ResponsiveSection)`
   padding: 80px 160px 80px 160px;
   position: relative;
   margin-top: 20px;
-  // transform: translateY(200px);
 
   @media ${device.laptop} {
     margin-top: 120px;
@@ -618,13 +625,14 @@ const ResponsiveH2 = styled(H2)`
 
 const ArticleBanner = styled.img`
   width: 100%;
-  background: #d9d9d9;
+  // background: #d9d9d9;
   border-radius: 32px;
   padding: 0;
   // transform: translateY(42.5%);
   height: auto;
-  margin: 20px 0px 0px 0px;
-  position: absolute;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  top: 150px;
   z-index: 2;
   @media ${device.laptop} {
     width: 100%;

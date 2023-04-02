@@ -24,7 +24,7 @@ function AboutUs() {
           <ItemH flex="1">
             <ItemV>
               <Anchor
-                href="https://angel.co/company/ethereum-push-notification-service"
+                href="https://angel.co/company/push-protocol"
                 title="Job Openings"
                 target="_blank"
                 bg="#DD44B9"

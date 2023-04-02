@@ -7,7 +7,8 @@ const awaitTimeout = (delay) => new Promise((resolve) => setTimeout(resolve, del
 
 const BACKEND_API_URL = 'https://api.analytics.epns.io/apis/analytics';
 const RSSConverter = 'https://api.rss2json.com/v1/api.json?rss_url=';
-const BACKEND_API = 'http://localhost:1337/';
+// const BACKEND_API = 'http://localhost:1337/';
+const BACKEND_API = 'http://13.215.144.46:1337/';
 
 export async function loadKPIData() {
   return axios
