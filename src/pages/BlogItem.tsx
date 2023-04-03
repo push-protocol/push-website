@@ -5,14 +5,14 @@
 import React, { useEffect, useState } from 'react';
 import { getAllBlogData, getSingleBlogData } from '../api';
 import styled from 'styled-components';
-import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
+import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P } from 'components/SharedStyling';
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
 import pageMeta from 'config/pageMeta';
 import HybridSection from 'components/HybridSection';
 import Image from 'assets/bg-image.png';
-import { BiSearch } from 'react-icons/bi';
+import { BiLink, BiShareAlt } from 'react-icons/bi';
 import moment from 'moment';
 import Moment from 'react-moment';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -22,6 +22,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { FiChevronLeft } from 'react-icons/fi';
 import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
+import {BsFillPlayCircleFill} from 'react-icons/bs'
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'http://13.215.144.46:1337';
@@ -36,6 +37,7 @@ const BlogItem = () => {
   const [blogsData, setBlogsData] = useState(null);
   const [allBlogs, setAllBlogs] = useState(null);
   const [blogsContent, setBlogsContent] = useState(null);
+  const [errorPage, setErrorPage] = React.useState(false);
 
   const loadData = async () => {
     if (!id) return;
@@ -55,6 +57,7 @@ const BlogItem = () => {
       // }
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
+      setErrorPage(true);
     } finally {
       setIsLoading(false);
     }
@@ -142,6 +145,76 @@ const BlogItem = () => {
     );
   };
 
+  const SpaceContent = () => {
+    return(
+    <div style={{visibility: 'hidden'}}> 
+    <TopicContent>
+       <Moment
+         format="D MMMM, YYYY"
+       >
+         {blogsData?.pubDate}
+       </Moment>{' '}
+       <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
+   </TopicContent>
+   </div>)
+  }
+
+
+  if (errorPage) {
+    return(
+        <PageWrapper
+        pageName={pageMeta.BLOGS.pageName}
+        pageTitle={pageMeta.BLOGS.pageTitle}
+      >
+        <BlogsWrapper>
+
+        <BlogsSection
+            id="story"
+            data-bkg="light"
+            className="lightBackground"
+            curve="bottom"
+          >
+
+            <EmptyCenteredContainerInfo>
+                  <DisplayNotice>404 Error - Not Found.</DisplayNotice>
+            </EmptyCenteredContainerInfo>
+
+        
+        </BlogsSection>
+
+        </BlogsWrapper>
+        </PageWrapper>
+    )
+  }
+
+if (isLoading && !errorPage) {
+return (
+  <PageWrapper
+        pageName={pageMeta.BLOGS.pageName}
+        pageTitle={pageMeta.BLOGS.pageTitle}
+      >
+      <BlogsWrapper>
+
+      <LoadingTopSection>
+          <Content
+            className="contentBox"
+          >
+
+           </Content>
+        </LoadingTopSection>
+
+
+      <ItemH margin='200px 0px 200px 0px'>
+        <img
+          src={SpinnerSVG}
+          alt=""
+          width={140}
+        />
+      </ItemH>
+    </BlogsWrapper>
+    </PageWrapper>
+)}
+if (!isLoading && !errorPage) {
   return (
     <PageWrapper
       pageName={pageMeta.BLOGS.pageName}
@@ -151,7 +224,6 @@ const BlogItem = () => {
         <AnimationSection>
           <Content
             className="contentBox"
-            flex="0"
           >
 
             <ArticleBanner
@@ -160,7 +232,33 @@ const BlogItem = () => {
             />
 
            </Content>
-        </AnimationSection> 
+        </AnimationSection>
+
+        <TopSection
+          id="story"
+          data-bkg="light"
+          className="lightBackground"
+          curve="bottom"
+        >
+        <SpaceContent />
+        <Content className="contentBox" padding='0px 0px'>
+
+        <TopBody>
+          <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
+            <BsFillPlayCircleFill color='#DD44B9' size={25} />
+            <Topdiv>Listen</Topdiv>
+          </ItemH>
+          
+          <ItemH justifyContent='flex-end' alignItems='center'>
+            <BiShareAlt size={25} color='#333333' />
+            <BiLink size={25} color='#333333' style={{marginLeft:'20px'}} />
+          </ItemH>
+        </TopBody>
+
+        </Content>
+        <SpaceContent />
+        </TopSection> 
+
 
         <BlogsSection
           id="story"
@@ -168,21 +266,18 @@ const BlogItem = () => {
           className="lightBackground"
           curve="bottom"
         >
-          <Content className="contentBox">
-            {isLoading && (
-              <ItemH>
-                <img
-                  src={SpinnerSVG}
-                  alt=""
-                  width={140}
-                />
-              </ItemH>
-            )}
-
-            {/* <ArticleBanner
-                src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
-                alt={blogsData?.attributes.title}
-              /> */}
+          
+          <TopicContent>
+              <Moment
+                format="D MMMM, YYYY"
+              >
+                {blogsData?.pubDate}
+              </Moment>{' '}
+              <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
+          </TopicContent>
+  
+          <Content className="contentBox" padding='20px 0px'>
+           
           
             <H3
               textTransform="normal"
@@ -191,12 +286,12 @@ const BlogItem = () => {
               weight="700"
               spacing="-0.02em"
               lineHeight="55.5px"
-              margin="0px 0 20px 0"
+              margin="0px 0 0px 0"
             >
               {blogsData?.attributes.title}
             </H3>
 
-            <ArticleContent>
+            {isMobile && (<ArticleContent>
               <Moment
                 format="D MMMM, YYYY"
                 style={{ marginRight: '5px' }}
@@ -205,7 +300,7 @@ const BlogItem = () => {
               </Moment>{' '}
               &#183;
               <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
-            </ArticleContent>
+            </ArticleContent>)}
 
             <BlogContent>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
 
@@ -216,6 +311,40 @@ const BlogItem = () => {
                 </ToggleButton>
               ))}
             </ToggleSection>
+
+
+            <ShareRow>
+              <ResponsiveH2
+                size={isMobile ? '16px' : '24px'}
+                weight="500"
+                spacing="-0.02em"
+                lineHeight="110%"
+                color='#00000'
+              >
+                Be a part of the conversation by sharing this article
+              </ResponsiveH2>
+
+              <Anchor
+                href="https://twitter.com/pushprotocol"
+                title="Developer Docs"
+                target="_blank"
+                bg="#DD44B9"
+                radius="12px"
+                padding="14px 20px"
+                size="16px"
+                weight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+                self="center"
+              >
+                <BiShareAlt
+                  size={23}
+                  color="#fff"
+                  style={{ marginRight: '10px' }}
+                />
+                Share
+              </Anchor>
+            </ShareRow>
 
             <AboutSection>
               <AboutTitle>About Push Protocol</AboutTitle>
@@ -325,12 +454,39 @@ const BlogItem = () => {
               <FiChevronLeft size={23} />
               <b>Read more articles from Push Protocol</b>
             </ShowMoreSection>
+
           </Content>
+
+          <SpaceContent />
         </BlogsSection>
       </BlogsWrapper>
     </PageWrapper>
   );
 };
+}
+
+const EmptyCenteredContainerInfo = styled.div`
+  padding: 20px;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DisplayNotice = styled.span`
+  border: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  background: rgb(244, 245, 250);
+`;
 
 const ResponsiveSection = styled(HybridSection)`
   min-height: ${(props) => props.minHeight || '0px'};
@@ -340,12 +496,37 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
+
+const LoadingTopSection = styled(ResponsiveSection)`
+  padding-bottom: 50px;
+  background: #121315;
+  border-bottom-left-radius: 48px;
+  border-bottom-right-radius: 48px;
+  padding: 0px 0px 20px 0px;
+  min-height: 20vh;
+  & #hero .contentBox {
+    row-gap: 18px;
+  }
+  @media ${device.laptop} {
+    min-height: 50vh;
+    padding: 0px 40px 0px 40px;
+  }
+
+  @media ${device.tablet} {
+    min-height: 35vh;
+  }
+
+  @media ${device.mobileL} {
+    min-height: 170px;
+    padding: 80px 40px 0px 40px;
+  }
+`;
+
 const AnimationSection = styled(ResponsiveSection)`
   padding-bottom: 50px;
   background: #121315;
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
-  // min-height: 60vh;
   padding: 0px 0px 20px 0px;
   & #hero .contentBox {
     row-gap: 18px;
@@ -378,13 +559,59 @@ const BlogsWrapper = styled.main`
   }
 `;
 
-const BlogsSection = styled(ResponsiveSection)`
-  padding: 80px 160px 80px 160px;
+const Topdiv = styled.div`
+  margin: 0 0 0 10px;
+`;
+
+const TopBody = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`
+
+const TopSection = styled(ResponsiveSection)`
+  padding: 80px 160px 0px 160px;
   position: relative;
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  &:after {
+    display: none !important;
+  }
 
   @media ${device.laptop} {
     margin-top: 120px;
+    padding: 80px 100px 0px 100px;
+  }
+  @media ${device.tablet} {
+    margin-top: 40px;
+  }
+
+  @media ${device.mobileL} {
+    margin-top: 60px;
+    padding-top: 0px;
+    padding-bottom: 32px;
+  }
+
+  @media ${device.mobileM} {
+    margin-top: 40px;
+    padding-top: 0px;
+    padding-bottom: 32px;
+  }
+`;
+
+const BlogsSection = styled(ResponsiveSection)`
+  padding: 0px 160px 80px 160px;
+  // padding: 80px 160px 80px 160px;
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  @media ${device.laptop} {
+    margin-top: 100px;
+    padding: 80px 100px 80px 100px;
   }
   @media ${device.tablet} {
     margin-top: 40px;
@@ -606,7 +833,6 @@ const KPIMetric = styled(Span)`
   }
 `;
 
-// const BlogRow = styled(ItemH)`
 const BlogRow = styled.div`
   margin: 150px 0 40px 0;
   display: flex;
@@ -639,6 +865,7 @@ const ArticleBanner = styled.img`
   }
   @media ${device.tablet} {
     border-radius: 14px;
+    top: 90px;
   }
 `;
 
@@ -686,6 +913,34 @@ const ArticleTextB = styled.div`
   -webkit-box-orient: vertical;
 `;
 
+const TopicContent = styled.div`
+  color: #575d73;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  display: flex;
+  flex-direction: column !important;
+  align-item: flex-start;
+  margin-top: ${(props) => props.marginTop || '0px'};
+  padding: 20px 40px;
+  @media ${device.laptop} {
+     padding: 20px 20px;
+  }
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+const ShareRow = styled.div`
+  margin: 50px 0 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ${device.tablet} {
+    margin-top: 80px;
+  }
+`;
+
 const ArticleContent = styled.div`
   width: 100%;
   color: #575d73;
@@ -699,6 +954,9 @@ const ArticleContent = styled.div`
 
 const Div = styled.div`
   margin-left: 5px;
+`;
+
+const DivTopic = styled.div`
 `;
 
 const ArticleImage = styled.img`

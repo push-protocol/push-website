@@ -215,7 +215,7 @@ const Blogs = () => {
     );
   };
 
-  if (errorPage === true) {
+  if (errorPage) {
     return(
         <PageWrapper
         pageName={pageMeta.BLOGS.pageName}
