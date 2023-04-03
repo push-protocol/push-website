@@ -377,7 +377,7 @@ if (!isLoading && !errorPage) {
               </ItemV>
 
               <ItemV
-                onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+                onClick={() => OpenURL('https://discord.gg/pushprotocol')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
                 className="kpiItem"
@@ -389,7 +389,7 @@ if (!isLoading && !errorPage) {
               </ItemV>
 
               <ItemV
-                onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+                onClick={() => OpenURL('https://www.youtube.com/@pushprotocol')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
                 className="kpiItem"
@@ -401,7 +401,7 @@ if (!isLoading && !errorPage) {
               </ItemV>
 
               <ItemV
-                onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+                onClick={() => OpenURL('https://www.linkedin.com/company/push-protocol/')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
                 className="kpiItem"
@@ -795,9 +795,8 @@ const KPIBanner = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
 
-    width: 80%;
+    width: 100%;
 
-    padding: 24px;
     row-gap: 32px;
     column-gap: 8px;
 
