@@ -25,7 +25,7 @@ import SpinnerSVG from 'assets/Spinner.gif';
 import {BsFillPlayCircleFill} from 'react-icons/bs'
 
 // const BACKEND_API = 'http://localhost:1337';
-const BACKEND_API = 'http://13.215.144.46:1337';
+const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 200;
 const page = 1;
 

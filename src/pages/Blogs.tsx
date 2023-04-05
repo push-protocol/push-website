@@ -32,7 +32,7 @@ import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
 
 // const BACKEND_API = 'http://localhost:1337';
-const BACKEND_API = 'http://13.215.144.46:1337';
+const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 5;
 
 const Blogs = () => {
