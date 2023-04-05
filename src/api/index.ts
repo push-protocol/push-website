@@ -48,7 +48,7 @@ export async function getBlogData(limit = 4) {
 }
 
 export async function getAllBlogData(page, size) {
-  const requrl = `${BACKEND_API}api/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=${size}`;
+  const requrl = `${BACKEND_API}api/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=${size}&sort=date:desc`;
 
   return axios
     .get(requrl)
