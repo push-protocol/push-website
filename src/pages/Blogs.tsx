@@ -30,13 +30,14 @@ import useReadingTime from 'hooks/useReadingTime';
 import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
+import BlogHorizontalScroll from 'components/BlogHorizontalScroll';
 
-// const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 5;
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
+  const isSwiper = useMediaQuery(`(max-width: 1299px)`);
   const [blogsData, setBlogsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = React.useState('');
@@ -287,11 +288,11 @@ const Blogs = () => {
             padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
-            <Content
+            <BodyContent
               className="contentBox"
-              flex="0"
             >
-              <Swiper
+              {!isSwiper ? (<BlogHorizontalScroll items={blogsData?.slice(0.2)} />) :
+              (<Swiper
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
@@ -320,8 +321,8 @@ const Blogs = () => {
                     </CarouselContainer>
                   </SwiperSlide>
                 ))}
-              </Swiper>
-            </Content>
+              </Swiper>)}
+            </BodyContent>
           </ResponsiveSection>
 
           <BlogsSection

@@ -1,0 +1,357 @@
+/* eslint-disable */
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import styled from 'styled-components'
+import { device } from '../config/globals';
+import { Anchor, AnchorLink, B, H2, ItemV, Span} from './SharedStyling';
+import PushNotifications from '../assets/figures/pushnotifications.webp';
+import PushChat from '../assets/figures/pushchat.webp';
+import Pushdao from '../assets/figures/pushdao.webp';
+import ImageHolder from './ImageHolder';
+import { FiArrowUpRight } from 'react-icons/fi';
+import useMediaQuery from 'hooks/useMediaQuery';
+import FadeInAnimation from './FadeInAnimation';
+import useReadingTime from 'hooks/useReadingTime';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+const BACKEND_API = 'https://blog.push.org';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
+const SlideElement = ({
+  linkContent,
+  image,
+  alt,
+  title,
+  sendRef,
+  addMargin,
+  id,
+  paddingBottom,
+  paddingMobile,
+  content
+}) => {
+  const isMobile = useMediaQuery(device.tablet);
+  console.log(id);
+    const navigate = useNavigate();
+
+  const OpenURL = (id) => {
+        navigate(`/blogs/${id}`);
+  };
+
+  return(
+    <GrowPushCard onClick={() => OpenURL(id)} ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom ={ paddingBottom} className="panel">
+    
+    <Div padding = {paddingMobile}>
+        <MemberImage
+              className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
+              src={image}
+              srcSet={image}
+              alt= {alt}
+              title = {title}
+              width="100%"
+            />
+    </Div>
+
+    <GrowPushCardDetails>
+      <Span
+        color="#fff"
+        size={isMobile ? "20px" : "31px"}
+        weight={isMobile ? "400" : "700"}
+        lineHeight="121%"
+        self="flex-start !important"
+      >
+         {title}
+      </Span>
+
+      <DivItem>
+      {useReadingTime(content)} min read
+      </DivItem>
+
+    </GrowPushCardDetails>
+
+   
+  </GrowPushCard>
+  )
+}
+
+const BlogHorizontalScroll = ({ items }) => {
+    if(!items) return;
+
+    console.log(items);
+    const panels = useRef([]);
+    const panelsContainer = useRef();
+    const isMobile = useMediaQuery(device.tablet)
+
+    const createPanelsRefs = (panel, index) => {
+      panels.current[index] = panel;
+    };
+  
+    useEffect(() => {
+      const totalPanels = panels.current.length;
+
+      ScrollTrigger.matchMedia({
+        "(min-width: 1299px)": function() {
+          gsap.to(panels.current, {
+            xPercent: -79 * (totalPanels - 1),
+            // xPercent: -100 * (totalPanels - 1),
+            ease: 'none',
+            scrollTrigger: {
+              trigger: panelsContainer.current,
+              pin: true,
+              scrub: true,
+              // snap: 1 / (totalPanels - 1),
+              // base vertical scrolling on how wide the container is so it feels more natural.
+              end: () => '+=' + panelsContainer.current.offsetWidth
+            }
+          });
+         },
+        "all": function() { }
+      });
+  
+    
+    }, []);
+
+
+  return (
+    <>
+
+          <SliderContainer
+              sizing='calc(100vh-0)'
+              ref={panelsContainer}
+            >
+
+              <SlideElement sendRef={(e) => createPanelsRefs(e,0)} 
+                linkContent = "Build Push Notifications"
+                image = {`${BACKEND_API}${items?.[0]?.attributes?.image?.data?.attributes?.url}`}
+                alt={'Illustration showing Push Notifications'}
+                title={items[0]?.attributes?.title}
+                addMargin={false}
+                link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
+                content={items[0]?.attributes?.body}
+                id={items[0]?.id}
+              />
+
+              <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
+                linkContent = "Build with Push Chat"
+                image = {`${BACKEND_API}${items?.[1]?.attributes?.image?.data?.attributes?.url}`}
+                alt={'Illustration showing Push Chat'}
+                title={items[1]?.attributes?.title}
+                addMargin={true}
+                link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
+                paddingMobile={"30px 0px"}
+                content={items[1]?.attributes?.body}
+                id={items[1]?.id}
+              />
+
+              <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
+                linkContent = "Explore Push DAO"
+                image = {`${BACKEND_API}${items?.[2]?.attributes?.image?.data?.attributes?.url}`}
+                alt={'Illustration showing Push DAO'}
+                title={items[2]?.attributes?.title}
+                addMargin={true}
+                link="https://gov.push.org/"
+                paddingBottom={"34px"}
+                paddingMobile={"30px 0px"}
+                content={items[2]?.attributes?.body}
+                id={items[2]?.id}
+              />
+            </SliderContainer>
+            </>
+  )
+}
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
+`;
+
+const SliderContainer = styled.div`
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  padding: calc(calc(100vh - 750px) / 2) 0px;
+  flex-wrap: nowrap;
+  margin: auto 0;
+  
+  @media (max-width: 1200px){
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0px 0px;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 1200px) and (max-height: 758px) {
+     margin-top: 40px;
+  }
+
+
+  `;
+
+ const MemberImage = styled(ImageHolder)`
+    margin: 0 auto;
+    border-radius: 62px;
+`;
+
+const GrowPushCard = styled(ItemV)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+//   padding-bottom: ${(props) => props.paddingBottom};
+//   min-width: 78%;
+  min-width: 52.5em;
+  max-width: 52.5em;
+  flex: 1;
+
+  margin: ${(props) => props.margin || ''};
+  border-radius: 48px;
+
+  & .figureSvg {
+    width: 52.5em;
+    height: 37.5em;
+    object-fit: cover;
+    display: block;
+    
+
+  
+    @media ${device.tablet} {
+      width: 100%;
+      height: 100%;
+    }
+
+//     @media ${device.mobileL} {
+//       width: 100%;
+//       height: 100%;
+//       display: block;
+//     }
+
+//     @media (min-width: 1025px) and (max-width: 1250px) {
+//       width: 100%;
+//        height: 100%;
+//     }
+
+//     @media (min-width: 1440px) and (max-width: 1800px) {
+//       width: 100%;
+//       height: 100%;
+//    }
+
+//    @media (min-width: 1200px) and (max-height: 758px) {
+//        width: 100%;
+//        height: 100%;
+//       }
+  }
+
+//   & .secondFigureSvg {
+//     width: 575px;
+//     height: 100%;
+//     display: block;
+
+  
+//     @media ${device.tablet} {
+//       width: 400px;
+//       height: 100%;
+//     }
+
+//     @media ${device.mobileL} {
+//       width: 100%;
+//       height: 100%;
+//       display: block;
+//     }
+
+//     @media (min-width: 1025px) and (max-width: 1250px) {
+//        width: 400px;
+//        height: 100%;
+//     }
+
+//     @media (min-width: 1440px) and (max-width: 1800px) {
+//       width: 575px;
+//       height: 100%;
+//    }
+
+//    @media (min-width: 1200px) and (max-height: 758px) {
+//        width: 400px;
+//        height: 100%;
+//       }
+//   }
+
+  @media ${device.tablet} {
+   padding: 30px 30px 0px 30px;
+   padding-bottom: ${(props) => props.paddingBottom ? "30px" : "0px"};
+   border-radius: 36px;
+  }
+
+  @media (max-width: 1200px){
+    margin: ${(props) => '10px 0px' || ''};
+    padding: 30px 30px 0px 30px;
+    padding-bottom: ${(props) => props.paddingBottom ? "30px" : "0px"};
+  }
+
+`;
+
+const DivItem = styled.div`
+  margin-top: 0px;
+  color: #575D73;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+`;
+
+const GrowPushCardDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-self: flex-start !important;
+
+  @media ${device.laptop}{
+   margin-bottom: 10px;
+  }
+`;
+
+const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
+
+const Div = styled.div`
+    background: #ccc;
+    padding: 0px 0px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 62px;
+    box-sizing: border-box;
+`;
+
+export default BlogHorizontalScroll
