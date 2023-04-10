@@ -588,6 +588,9 @@ button, a, a:before, a:after {
 .swiper-slide {
   text-align: center;
 }
+.swiper-pagination-bullets{
+  bottom: -5px !important;
+}
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #D53A94 !important;

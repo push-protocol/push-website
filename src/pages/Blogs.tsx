@@ -31,13 +31,15 @@ import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
 import BlogHorizontalScroll from 'components/BlogHorizontalScroll';
+import HorizontalScroll from 'components/HorizontalScroll';
+
 
 const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 5;
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
-  const isSwiper = useMediaQuery(`(max-width: 1299px)`);
+  const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   const [blogsData, setBlogsData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = React.useState('');
@@ -283,16 +285,18 @@ const Blogs = () => {
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-          <ResponsiveSection
-            curve="bottom"
+          <SpaceSection
+            curve="bottom" 
             padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
-            <BodyContent
+            <SpaceContent
               className="contentBox"
             >
-              {!isSwiper ? (<BlogHorizontalScroll items={blogsData?.slice(0.2)} />) :
-              (<Swiper
+               {!isSwiper && blogsData && (<BlogHorizontalScroll items={blogsData.slice(0.2)} />)} 
+              
+
+              {isSwiper && (<Swiper
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
@@ -322,8 +326,8 @@ const Blogs = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>)}
-            </BodyContent>
-          </ResponsiveSection>
+            </SpaceContent>
+          </SpaceSection>
 
           <BlogsSection
             id="story"
@@ -508,12 +512,11 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const AnimationSection = styled(ResponsiveSection)`
-  width: 100%;
-  background: #121315;
-  border-bottom-left-radius: 48px;
-  border-bottom-right-radius: 48px;
-  padding-bottom: 0px;
+const SpaceSection = styled(ResponsiveSection)`
+  @media ${device.tablet} {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 `;
 
 const BlogsWrapper = styled.main`
@@ -559,6 +562,30 @@ const ShowMoreSection = styled.div`
     line-height: 110%;
     letter-spacing: -0.03em;
     color: #1e1e1e;
+  }
+`;
+
+export const SpaceContent = styled.div`
+	padding: ${(props) => props.padding || '40px 0px'};
+
+	&.contentBox {
+    max-width: 1140px;
+	}
+
+  @media (max-width: 1200px) {
+  	padding: ${(props) => props.padding || '10px 0px'};
+
+    &.contentBox {
+        width: 100%;
+      }
+  }
+
+  @media ${device.tablet} {
+  	padding: ${(props) => props.padding || '10px 0px'};
+
+    &.contentBox {
+        width: 100%;
+      }
   }
 `;
 
@@ -750,14 +777,30 @@ const CarouselContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  padding: 0px;
+  @media (max-width: 1200px){
+    padding: 100px 20px 30px 20px;
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
+    padding: 50px 20px 0px 20px;
+    box-sizing: border-box;
+  }
 `;
 
 const CarouselImage = styled.img`
   display: block;
   object-fit: cover;
-  width: 80%;
+  height: 320px;
   margin: 0 auto 20px auto;
   border-radius: 62px;
+
+  @media (max-width: 1200px){
+    height: 550px;
+    width: 100%;
+  }
+
   @media ${device.tablet} {
     border-radius: 15px;
     width: 100%;
@@ -766,7 +809,7 @@ const CarouselImage = styled.img`
 
 const CarouselTitle = styled.div`
   width: 80%;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 0px auto;
   font-weight: 700;
   font-size: 40px;
   color: #ffffff;

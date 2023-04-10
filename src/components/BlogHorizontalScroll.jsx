@@ -1,7 +1,7 @@
 /* eslint-disable */
-import React, { useEffect, useRef } from 'react'
+import React, { Fragment, useLayoutEffect,useEffect, useRef } from 'react'
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import styled from 'styled-components'
 import { device } from '../config/globals';
 import { Anchor, AnchorLink, B, H2, ItemV, Span} from './SharedStyling';
@@ -16,12 +16,10 @@ import useReadingTime from 'hooks/useReadingTime';
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-const BACKEND_API = 'https://blog.push.org';
-
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
+
+const BACKEND_API = 'https://blog.push.org';
 
 const SlideElement = ({
   linkContent,
@@ -36,8 +34,7 @@ const SlideElement = ({
   content
 }) => {
   const isMobile = useMediaQuery(device.tablet);
-  console.log(id);
-    const navigate = useNavigate();
+ const navigate = useNavigate();
 
   const OpenURL = (id) => {
         navigate(`/blogs/${id}`);
@@ -79,23 +76,48 @@ const SlideElement = ({
   )
 }
 
-const BlogHorizontalScroll = ({ items }) => {
-    if(!items) return;
+    const BlogHorizontalScroll = ({ items }) => {
+    // console.log(items)
 
-    console.log(items);
+    // if(!items) return <></>;
+
     const panels = useRef([]);
     const panelsContainer = useRef();
     const isMobile = useMediaQuery(device.tablet)
 
+
     const createPanelsRefs = (panel, index) => {
       panels.current[index] = panel;
     };
+
+    // useEffect(() => {
+    //     const totalPanels = panels.current.length;
+    //     const mm = gsap.matchMedia();
+
+    //     mm.add('(min-width: 1199px)', () => {
+    //         gsap.to(panels.current, {
+    //             xPercent: -79 * (totalPanels - 1),
+    //             ease: 'none',
+    //             scrollTrigger: {
+    //               trigger: panelsContainer.current,
+    //               pin: true,
+    //               scrub: true,
+    //               // base vertical scrolling on how wide the container is so it feels more natural.
+    //               end: () => '+=' + panelsContainer.current.offsetWidth
+    //             },
+    //             "(max-width: 1023px)": function() { },
+    //             "all": function() { }
+    //           });
+    //       });
+    //       return () => mm.revert();
+    //   }, []);
   
-    useEffect(() => {
+    useLayoutEffect(() => {
+     
       const totalPanels = panels.current.length;
 
       ScrollTrigger.matchMedia({
-        "(min-width: 1299px)": function() {
+        "(min-width: 1199px)": function() {
           gsap.to(panels.current, {
             xPercent: -79 * (totalPanels - 1),
             // xPercent: -100 * (totalPanels - 1),
@@ -110,21 +132,20 @@ const BlogHorizontalScroll = ({ items }) => {
             }
           });
          },
+        "(max-width: 1023px)": function() { },
         "all": function() { }
       });
   
     
     }, []);
 
-
   return (
-    <>
+    <div>
 
           <SliderContainer
               sizing='calc(100vh-0)'
               ref={panelsContainer}
             >
-
               <SlideElement sendRef={(e) => createPanelsRefs(e,0)} 
                 linkContent = "Build Push Notifications"
                 image = {`${BACKEND_API}${items?.[0]?.attributes?.image?.data?.attributes?.url}`}
@@ -160,8 +181,9 @@ const BlogHorizontalScroll = ({ items }) => {
                 content={items[2]?.attributes?.body}
                 id={items[2]?.id}
               />
+              
             </SliderContainer>
-            </>
+            </div>
   )
 }
 
