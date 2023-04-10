@@ -593,6 +593,9 @@ const ArticleBanner = styled.img`
   width: 100%;
   background: #d9d9d9;
   border-radius: 32px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
 `;
 
 const ArticleText = styled.div`
@@ -678,6 +681,8 @@ const SearchMainArticle = styled.div`
 const ArticleImage = styled.img`
   min-width: 400px;
   max-width: 400px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   background: #d9d9d9;
   border-radius: 32px;
   @media ${device.tablet} {

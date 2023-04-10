@@ -961,6 +961,8 @@ const DivTopic = styled.div`
 const ArticleImage = styled.img`
   min-width: 400px;
   max-width: 400px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
   background: #d9d9d9;
   border-radius: 32px;
   @media ${device.tablet} {

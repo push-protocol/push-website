@@ -244,8 +244,9 @@ const GrowPushCard = styled(ItemV)`
 
   & .figureSvg {
     width: 52.5em;
-    height: 37.5em;
+    // height: 37.5em;
     object-fit: cover;
+    aspect-ratio: 16/9;
     display: block;
     
 
