@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { getAllBlogData, getSingleBlogData } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P } from 'components/SharedStyling';
@@ -33,11 +33,13 @@ const BlogItem = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const isMobile = useMediaQuery(device.tablet);
+  const bodyRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [blogsData, setBlogsData] = useState(null);
   const [allBlogs, setAllBlogs] = useState(null);
   const [blogsContent, setBlogsContent] = useState(null);
   const [errorPage, setErrorPage] = React.useState(false);
+  const [body, setBody] = React.useState(false);
 
   const loadData = async () => {
     if (!id) return;
@@ -47,14 +49,6 @@ const BlogItem = () => {
       const allData = await getAllBlogData(page, PAGE_SIZE);
       setBlogsData(data?.data);
       setAllBlogs(allData?.data);
-      // for (let i = 0; i < data.length; i++) {
-      //   let tag = data[i]?.title;
-      //   if (tag === id) {
-      //     setBlogsData(data[i]);
-      //     let body = data[i]?.content.replace('\n', '');
-      //     setBlogsContent(body);
-      //   }
-      // }
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
       setErrorPage(true);
@@ -66,6 +60,40 @@ const BlogItem = () => {
   useEffect(() => {
     loadData();
   }, []);
+
+  function getId(url) {
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }
+}
+
+    useEffect(()=>{
+        editMedia();
+    },[blogsData])
+
+  async function editMedia() {
+
+    let content = blogsData?.attributes?.body;
+    const tryThis = await content?.match('<oembed[^>]+url="([^">]+)"');
+    let updatedIframe = await getId(tryThis[1]);
+
+    var iframeMarkup = '<iframe src="//www.youtube.com/embed/' 
+    + updatedIframe + '" frameborder="0" allowfullscreen></iframe>';
+
+    try {
+      const fullBody = `${content} ${iframeMarkup}`;
+      console.log(fullBody)
+      setBody(fullBody)
+    } catch (e) {
+      return '';
+    }
+
+  }
 
   function filterComment(hypertext) {
     try {
@@ -89,6 +117,7 @@ const BlogItem = () => {
       navigate(`/blogs/${clickedBlog?.id}`);
     }
   };
+
 
   useEffect(() => {
     if (blogsContent) {
@@ -214,6 +243,7 @@ return (
     </BlogsWrapper>
     </PageWrapper>
 )}
+
 if (!isLoading && !errorPage) {
   return (
     <PageWrapper
@@ -302,7 +332,9 @@ if (!isLoading && !errorPage) {
               <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
             </ArticleContent>)}
 
-            <BlogContent>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
+            <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent>
+
+            {/* <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent> */}
 
             <ToggleSection>
               {blogsData?.attributes?.tags?.data?.map((item, i) => (
@@ -647,6 +679,12 @@ const BlogContent = styled.div`
             cursor: pointer;
             font-family: Lora !important;
         }
+        span{
+          font-family: Lora !important;
+          color: #282A2D;
+          font-weight: 400;
+          font-size: 16px;
+        }
     }
 
     blockquote {
@@ -657,17 +695,24 @@ const BlogContent = styled.div`
         color: #575D73;
     }
 
+    iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 32px;
+  }
+
     pre { 
       font-family: 'Strawford' !important;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 38px;
-        color: #575D73;
-        background: #f9f9f9;
-        border: 2px solid #E5E5E5;
-        border-radius: 4px;
-        overflow-x: auto;
-        padding: 25px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 38px;
+      color: #575D73;
+      background: #f9f9f9;
+      border: 2px solid #E5E5E5;
+      border-radius: 4px;
+      overflow-x: auto;
+      padding: 25px;
     }
 
     h1,h2,h3,h4 {
@@ -686,6 +731,14 @@ const BlogContent = styled.div`
         color: #000000;
         cursor: pointer;
         font-family: Lora !important;
+    }
+
+    img{
+      margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        aspect-ratio: 16/9;
     }
 
     figure {
@@ -850,6 +903,9 @@ const ResponsiveH2 = styled(H2)`
 
 const ArticleBanner = styled.img`
   width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+
   // background: #d9d9d9;
   border-radius: 32px;
   padding: 0;
