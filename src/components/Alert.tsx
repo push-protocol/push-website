@@ -16,7 +16,7 @@ import { device } from '../config/globals';
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
   const alertMessage = 'Push Video is now LIVE,';
-  const alertLink = 'https://app.push.org/#/chat';
+  const alertLink = 'https://app.push.org/chat';
 
   const openLink = () => {
     window.open(alertLink, '_blank');
