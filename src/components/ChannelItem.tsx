@@ -34,8 +34,6 @@ const ChannelItem = ({ channelProp }, delay) => {
         setLoading(false)
       }, [channelProp]);
 
-      console.log(channelObject.imageFile);
-
   return (
     <Container href={channelObject.url} target="_blank">
         <ChannelTop>
