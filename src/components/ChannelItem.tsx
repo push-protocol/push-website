@@ -9,6 +9,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { BsArrowUpRight } from 'react-icons/bs'
 import VanillaTilt from 'vanilla-tilt';
 import FadeInAnimation from './FadeInAnimation';
+import ImageHolder from './ImageHolder';
 
 export const Tilt = (props) => {
     const { options, ...rest } = props;
@@ -37,13 +38,15 @@ const ChannelItem = ({ channelProp }, delay) => {
     <Container href={channelObject.url} target="_blank">
         <ChannelTop>
             <ChannelLogo>
-                {loading ? (
-                    <Skeleton
-                        height={100} width={100} borderRadius={20}
-                    />
-                    ) : (
-                        <ChannelLogoImg src={`${channelObject.icon}`} />
-                    )}
+                {loading && (<Skeleton height={100} width={100} borderRadius={20} />)} 
+                {!loading && channelObject.icon && (<ChannelLogoImg src={`${channelObject.icon}`} />)} 
+                {!loading && channelObject.imageFile && (<MemberImage
+                    width={100}
+                    height={100}
+                    src={channelObject.imageFile}
+                    srcSet={channelObject.imageFile || ''}
+                    // alt={name}
+                  />)}
             </ChannelLogo>
 
             <div className='class'>
@@ -140,6 +143,14 @@ const ChannelType = styled.div`
     height: fit-content;
     padding: 7px 14px;
     margin-top: auto;
+`;
+
+const MemberImage = styled(ImageHolder)`
+   object-fit: contain;
+    width: 100%;
+    border: 1px solid #BAC4D6;
+    border-radius: 30.25px;
+    overflow: hidden;
 `;
 
 export default ChannelItem
