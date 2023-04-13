@@ -3910,6 +3910,14 @@ export const objChannelList = [
     itemcount: 163,
     subscriber_count: 2,
   },
+  {
+    id: 167,
+    name: 'Eco',
+    info: 'The Eco Association is a non-profit organization dedicated to supporting the growth of the Eco Currency protocol.',
+    url: 'https://eco.org/',
+    imageFile:'/channelList/eco-pfp.jpg',
+    type: 'DAO',
+  },
 ];
 
 // const ChannelList = () => {
