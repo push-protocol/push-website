@@ -15,7 +15,7 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 import { device } from '../config/globals';
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
-  const alertMessage = 'Web3 Messaging with Push Chat & Group Chat is here,';
+  const alertMessage = 'Push Video is now LIVE,';
   const alertLink = 'https://app.push.org/#/chat';
 
   const openLink = () => {
