@@ -55,7 +55,7 @@ const SlideElement = ({
     </Div>
 
     <GrowPushCardDetails>
-      <Span
+      <SpanTitle
         color="#fff"
         size={isMobile ? "20px" : "31px"}
         weight={isMobile ? "400" : "700"}
@@ -63,7 +63,7 @@ const SlideElement = ({
         self="flex-start !important"
       >
          {title}
-      </Span>
+      </SpanTitle>
 
       <DivItem>
       {useReadingTime(content)} min read
@@ -344,26 +344,13 @@ const GrowPushCardDetails = styled.div`
   }
 `;
 
-const SpanLink = styled(Span)`
-  position: relative;
-  text-decoration: none;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+const SpanTitle = styled(Span)`
+  display: -webkit-box !important;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
 `;
 
 const Div = styled.div`
