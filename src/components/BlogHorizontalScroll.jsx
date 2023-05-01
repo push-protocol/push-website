@@ -225,6 +225,7 @@ const SliderContainer = styled.div`
  const MemberImage = styled(ImageHolder)`
     margin: 0 auto;
     border-radius: 62px;
+    background: #d9d9d9;
 `;
 
 const GrowPushCard = styled(ItemV)`
@@ -346,7 +347,7 @@ const GrowPushCardDetails = styled.div`
 
 const SpanTitle = styled(Span)`
   display: -webkit-box !important;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;

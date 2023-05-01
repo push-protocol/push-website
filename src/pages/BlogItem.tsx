@@ -61,6 +61,10 @@ const BlogItem = () => {
     loadData();
   }, []);
 
+  useEffect(() => {
+    loadData();
+  }, [id]);
+
   function getId(url) {
     var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     var match = url.match(regExp);
@@ -80,6 +84,7 @@ const BlogItem = () => {
 
     let content = blogsData?.attributes?.body;
     const tryThis = await content?.match('<oembed[^>]+url="([^">]+)"');
+    if(tryThis?.[1] === null) return;
     let updatedIframe = await getId(tryThis[1]);
 
     var iframeMarkup = '<iframe src="//www.youtube.com/embed/' 
@@ -906,7 +911,7 @@ const ArticleBanner = styled.img`
   aspect-ratio: 16/9;
   object-fit: cover;
 
-  // background: #d9d9d9;
+  background: #d9d9d9;
   border-radius: 32px;
   padding: 0;
   // transform: translateY(42.5%);
