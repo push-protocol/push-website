@@ -847,7 +847,7 @@ function Home({ isAlertVisible }) {
 
             <Blogs count={4} />
 
-            <BuiltByIntro flexDirection="column">
+            {/* <BuiltByIntro flexDirection="column">
               <ItemV justifyContent="center">
                 <ResponsiveH2
                   color="#09090B"
@@ -884,9 +884,9 @@ function Home({ isAlertVisible }) {
                   </FadeInAnimation>
                 </Span>
               </ItemV>
-            </BuiltByIntro>
+            </BuiltByIntro> */}
 
-            <FadeInAnimation
+            {/* <FadeInAnimation
               wrapperElement="div"
               direction={!isMobile && 'right'}
               delay={0.3}
@@ -939,7 +939,7 @@ function Home({ isAlertVisible }) {
                 Now Hiring, Explore Careers
                 <BsArrowUpRight className="anchorSVGlink" />
               </Anchor>
-            </TeamMemberButtons>
+            </TeamMemberButtons> */}
 
             <ItemH margin="80px 0 80px 0">
               <ItemV
