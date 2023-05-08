@@ -420,6 +420,20 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       Delegate
                     </Anchor>
+                    <Anchor
+                      href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
+                      title="Push Mission"
+                      target="_blank"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push Mission
+                    </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenu>
