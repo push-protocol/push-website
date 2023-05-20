@@ -130,7 +130,6 @@ function PartnerChannels() {
   }, []);
 
   useEffect(() => {
-    console.log(onScreen);
     if (onScreen) {
       onLeave();
       setActive(true);
@@ -556,7 +555,7 @@ const Body = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: ${(props) => (props.active ? '85%' : '100%')};
+  width: 100%;
   margin: 14px auto;
 `;
 
