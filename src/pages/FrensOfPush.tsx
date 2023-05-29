@@ -86,6 +86,9 @@ const FrensText = () => {
     {
       name: 'Media',
     },
+    {
+      name: 'Hackathons',
+    },
   ];
 
   useEffect(() => {
@@ -370,7 +373,7 @@ const FrensText = () => {
               </ItemH>
             )}
 
-            {!loading && active === 'All' && search.length === 0 && (
+            {!loading && active === 'Hackathons' && search.length === 0 && (
               <ShowMoreSection onClick={ShowMore}>
                 <FiChevronDown size={23} />
                 <b>Show More</b>

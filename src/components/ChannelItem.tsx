@@ -11,6 +11,20 @@ import VanillaTilt from 'vanilla-tilt';
 import FadeInAnimation from './FadeInAnimation';
 import ImageHolder from './ImageHolder';
 
+const ItemDescription = ({ description }) => {
+    console.log(description);
+    
+    const croppedDescription = description.split(' ').slice(0, 30).join(' ');
+    const showEllipsis = description.split(' ').length > 30;
+
+    return (
+        <div className="description">
+            {croppedDescription}
+            {showEllipsis && '...'}
+        </div>
+    );
+};
+
 export const Tilt = (props) => {
     const { options, ...rest } = props;
     const tilt = useRef(null);
@@ -34,33 +48,40 @@ const ChannelItem = ({ channelProp }, delay) => {
         setLoading(false)
       }, [channelProp]);
 
-  return (
-    <Container href={channelObject.url} target="_blank">
-        <ChannelTop>
-            <ChannelLogo>
-                {loading && (<Skeleton height={100} width={100} borderRadius={20} />)} 
-                {!loading && channelObject.icon && (<ChannelLogoImg src={`${channelObject.icon}`} />)} 
-                {!loading && channelObject.imageFile && (<MemberImage
-                    width={100}
-                    height={100}
-                    src={channelObject.imageFile}
-                    srcSet={channelObject.imageFile || ''}
-                    // alt={name}
-                  />)}
-            </ChannelLogo>
+    return (
+        <Container href={channelObject.url} target="_blank">
+            {
+                channelObject.icon || channelObject.imageFile
+                ? <ChannelTop>
+                    <ChannelLogo>
+                        {loading && (<Skeleton height={100} width={100} borderRadius={20} />)} 
+                        {!loading && channelObject.icon && (<ChannelLogoImg src={`${channelObject.icon}`} />)} 
+                        {!loading && channelObject.imageFile && (<MemberImage
+                            width={100}
+                            height={100}
+                            src={channelObject.imageFile}
+                            srcSet={channelObject.imageFile || ''}
+                            // alt={name}
+                        />)}
+                    </ChannelLogo>
+                </ChannelTop>
+                : null
+            }
 
-            <div className='class'>
+            <ArrowCont className='arrow-body'>
                 <BsArrowUpRight size={25} color={'#000'} />
-            </div>
-        </ChannelTop>
-        
-        <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
+            </ArrowCont>
+            
+            <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
 
-        <ChannelDesc>{channelObject.info}</ChannelDesc>
+            <ChannelDesc>
+                {channelObject.info && <ItemDescription description={channelObject.info} />}
+            </ChannelDesc>
 
-        <ChannelType><b>{channelObject?.type}</b></ChannelType>
-    </Container>
-  )
+            {channelObject?.type === 'Hackathons' ? null : <ChannelType><b>{channelObject?.type}</b></ChannelType>}
+            {channelObject?.hackathon ? <ChannelType><b>{channelObject?.hackathon}</b></ChannelType> : null}
+        </Container>
+    )
 }
 
 const Container = styled.a`
@@ -73,22 +94,25 @@ const Container = styled.a`
     flex-direction: column;
     text-decoration: none;
     flex: 1;
+    position: relative;
     &:hover {
         cursor: pointer;
         background: rgba(255, 255, 255, 0.7);
         border: 1px solid #BAC4D6;
         backdrop-filter: blur(60px);
-        div:first-child {
-            .class{
+            .arrow-body{
                 display: block;
             }
-         }
-    } 
-    div:first-child {
-            .class{
-                display: none;
-            }
-    }
+        }
+        .arrow-body{
+            display: none;
+        }
+`;
+
+const ArrowCont = styled.div` // arrow container
+    position: absolute;
+    top: 15%;
+    right: 8%;
 `;
 
 const ChannelTop = styled.div`
