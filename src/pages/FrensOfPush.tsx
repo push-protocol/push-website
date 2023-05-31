@@ -373,7 +373,7 @@ const FrensText = () => {
               </ItemH>
             )}
 
-            {!loading && active === 'Hackathons' && search.length === 0 && (
+            {!loading && active === 'All' && search.length === 0 && (
               <ShowMoreSection onClick={ShowMore}>
                 <FiChevronDown size={23} />
                 <b>Show More</b>

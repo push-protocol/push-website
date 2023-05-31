@@ -11,6 +11,37 @@ import VanillaTilt from 'vanilla-tilt';
 import FadeInAnimation from './FadeInAnimation';
 import ImageHolder from './ImageHolder';
 
+import encode from '../assets/svgs/encode.svg'
+import ethglobal from '../assets/svgs/ethglobal.svg'
+import learnweb3dao from '../assets/svgs/learnweb3dao.svg'
+import fvm from '../assets/svgs/fvm.svg'
+
+const hackathonImage = (hackathon) => {
+    switch(hackathon) {
+        case 'Encode Next Video Build':
+            return encode;
+
+        case 'ETHIndia2022':
+        case 'ETHSF2022':
+        case 'ETHBogota2022':
+        case 'ETHOnline2022':
+        case 'ETHNYC2022':
+        case 'ETHAMS2022':
+        case 'ETHforAll':
+        case 'HackMoney2022':
+            return ethglobal;
+
+        case 'LearnWeb3 challenge':
+            return learnweb3dao;
+
+        case 'FVM2023':
+            return fvm;
+
+        default:
+            return null;
+    }
+}
+
 const ItemDescription = ({ description }) => {
     console.log(description);
     
@@ -79,7 +110,12 @@ const ChannelItem = ({ channelProp }, delay) => {
             </ChannelDesc>
 
             {channelObject?.type === 'Hackathons' ? null : <ChannelType><b>{channelObject?.type}</b></ChannelType>}
-            {channelObject?.hackathon ? <ChannelType><b>{channelObject?.hackathon}</b></ChannelType> : null}
+            {channelObject?.hackathon
+                ? <ChannelType>
+                    <HackathonLogo src={hackathonImage(channelObject?.hackathon)} />
+                    <b>{channelObject?.hackathon}</b>
+                </ChannelType>
+                : null}
         </Container>
     )
 }
@@ -167,14 +203,23 @@ const ChannelType = styled.div`
     height: fit-content;
     padding: 7px 14px;
     margin-top: auto;
+
+    display: flex;
+    align-items: center;
 `;
 
 const MemberImage = styled(ImageHolder)`
-   object-fit: contain;
+    object-fit: contain;
     width: 100%;
     border: 1px solid #BAC4D6;
     border-radius: 30.25px;
     overflow: hidden;
+`;
+
+const HackathonLogo = styled.img`
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
 `;
 
 export default ChannelItem

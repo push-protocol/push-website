@@ -4548,7 +4548,7 @@ export const objChannelList = [
     name: 'HexAds',
     url: 'https://devfolio.co/submissions/hexads-4de6',
     type: 'Hackathons',
-    hackathon: 'ETHIndia2096'
+    hackathon: 'ETHIndia2022'
   },
   {
     name: 'hideme.lol',
