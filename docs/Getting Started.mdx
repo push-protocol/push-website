@@ -1,0 +1,60 @@
+---
+sidebar_position: 1
+id: getting-started
+title: ⭐ Getting Started
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# ⭐ Getting Started
+
+### A quick introduction to Push Protocol
+
+Push Protocol (previously EPNS) is the world’s first decentralized communication & notification protocol for Web3.
+
+Using the protocol, any smart contract, dApp, or backend service can send on-chain or off-chain notifications tied to the wallet addresses of users in a gasless, multichain, open, and platform-agnostic way.
+
+Being an open communication middleware, notifications can be integrated and shown on any crypto wallet, mobile app, browser extension, or dApps enabling a native communication layer for Web3.0
+
+<details>
+
+<summary>Quick Guide to Getting Started with Push Protocol 🛣</summary>
+
+* Any user who activates themselves on the protocol to send a notification is called a [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels).
+* In other words, a [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels) is any service (protocol, dApp, or even web2 service) that wants to send notifications out to web3 usernames (wallet addresses).
+* A wallet address can create only one [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels) on the protocol.
+* A channel is free to delegate (or revoke delegates) sending notifications functionality to any other wallet addresses on their behalf.
+* Creating a channel requires 50 **PUSH**, Channel info (Channel name, Image, description, CTA), and some **ETH**.
+* Channels can send notifications to their users(wallet addresses) in a number of ways, including:
+  * [Javascript SDK](developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-notification/send-notifications.md) (**Gasless.** Best for automated logic from dApp / Backend)
+  * [**Showrunners Framework**](developer-tooling/showrunners-framework/) (**Scaffold/Gasless.** Best for automated logic via scaffold backend)
+  * Smart contract to Smart contract (**requires gas**, Best for instant on-chain events, piggybacks on an on-chain transaction via Interface ABI call)
+  * Manually from Push dApp (**Gasless**, Best for manual logic)
+  * Users can gaslessly opt-in to receive notifications from these Channels. See the [**entire walkthrough here**](https://app.epns.io/#/live\_walkthrough).
+* Opted-in users are called subscribers of the Channels. Subscribers of the Channel receive notifications from those Channels in their Inboxes.
+* Non-opted users or non-subscribers of the Channel aren't alerted when they receive a notif from a non-subscribed channel, instead, it lands in their spam folder.
+* Currently, we have [**Staging**](https://staging.push.org/#/channels) and [**Prod**](https://app.push.org/) dApp that interfaces with EPNS Protocol to enable communication & notifications.
+
+</details>
+
+### Developer Guides & Concepts
+
+<Tabs>
+  <TabItem value="Channels" label="Channels" default>
+    [create-your-notif-channel](concepts/create-your-notif-channel/)
+    [create-your-notif-channel](developer-guides/create-your-notif-channel/)
+  </TabItem>
+  <TabItem value="Notifications" label="Notifications">
+    
+  </TabItem>
+  <TabItem value="SDK" label="SDK">
+    This is a bna 🍌
+  </TabItem>
+  <TabItem value="Push Chat" label="Push Chat">
+    This is a banana 🍌
+  </TabItem>
+  <TabItem value="Showrunners" label="Showrunners">
+    This is a banana
+  </TabItem>
+</Tabs>
