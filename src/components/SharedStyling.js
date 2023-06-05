@@ -552,10 +552,10 @@ export const Anchor = styled.a`
   }
 
   &:hover:after {
-    opacity: ${(props) => (props.hoverShade ? '0.08' : '0')};
+    opacity: ${(props) => (props.hoverShade == undefined ? '0.08' : '0')};
   }
   &:active:after {
-    opacity: ${(props) => (props.hoverShade ? '0.15' : '0')};
+    opacity: ${(props) => (props.hoverShade == undefined ? '0.15' : '0')};
   }
 
   & .anchorSVGlink {
