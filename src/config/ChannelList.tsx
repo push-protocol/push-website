@@ -4060,234 +4060,273 @@ export const objChannelList = [
   },
   {
     name: 'BubbleStreamr',
+    info: "BubbleStreamr - A decentralized social, content live streaming platform. Engaging with your audience in real time. The platform allows you to host and stream your content, and a best way to monetization your brand. First and primarily, the platform has been created for social purposes, that is, to facilitate content producers and consumers or followers. Content creators will connect their wallets to access the entire DApp and create a stream using Livepeer a decentralized video infrastructure network.  fter the stream is created, the content creators can share the Playback id with the users by using Push Notifications, a decentralized protocol for transmitting notifications. The notifications are then sent to the Streamers channel, where all subscribers are aware of the stream. Anyone can subscribe to the Channel by heading to the Push Notifications Icon and clicking the Subscribe button.  When viewers are notified and ready to join the stream, users can pay for the subscription using",
     url: 'https://youtu.be/ELdf4c-cwEc',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'Createx',
+    info: 'Createx:-"What if you could invest in MrBeast(popular youtube creator) 10 years ago when he was nothing""My idea originates from this, Createx is a platform which allows people to \'invest\' in their favorite creators. The more you invest the more incentivized you get. Like if you have invested: 1 matic - watch live streams (livepeer) 10 matic - do live chat(Push chat) with the creator 100 matic - do live video calling(huddle01) There would be a nominal fees for registering yourself on the platform so that is not attacked by bots and generate revenue. Uploaded videos by creators can be watched by all registered consumers but latest notifications(Push protocol) will be sent only to the channel members. This idea struck my mind just 3 days ago(therefore not able to complete it) and have great plans on working even after the hackathon',
     url: 'https://drive.google.com/drive/folders/1FbG9prgNr-eFzUDLkM-M6XZ4Obg1tBVZ?usp=sharing',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'Coterie',
+    info: 'We built a decentralized social media app that connects creators with their subscribers. The dapp enables users login with their ens name, create posts, which can also serve as gatepass to gated livestreams.  The dapp also enables user chat with wallet address through the xmtp protocol, create gated livestreams with livepeer, mint posts as nfts with nftport, enable users notify their followers through the push protocol and saves pictures/videos on ipfs',
     url: 'https://youtu.be/a8ipZaSBcKo',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'Dehitas',
+    info: 'A decentralized hiring & talent assessment platform for you to create customized tests, assess the right candidate & experience life-like recruitment process on our HireVerse',
     url: 'https://drive.google.com/drive/folders/1wM2qGydVMk59h3YP5KgYHQ7bFlM36zs-?usp=sharing',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'DeUniversity',
+    info: 'DeUniversity is a decentralized university that allows you to create courses, recruit students, conduct live classes, Chat with students, Solve Doubts and much more. # We provide a user-friendly interface that allows you to create courses, enroll students, and use the content library. All your course materials are stored in the decentralized storage so there is no need to worry about hosting costs. # We provide a user-friendly interface that allows you to ask questions, Doubt solving in a decentralized university may be done in a variety of ways, depending on the specific resources and systems that are in place. # DeUniversitys key features include live classes, student-to-student interaction, and self-paced learning - giving you the chance to become anything you want! . Here i used 5 sponsors prizes like livepeer, Polygon,NFTPort,Push Challenge,ENS Challenge,The Graph,XMTP Challenge,Huddle Challenge,Filecoin/IPFS Challenge and Lens Challenge. Check the github readme file for codebase',
     url: 'https://vimeo.com/787437507',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'Finesse',
+    info: '"Finesse:- A DeFi-powered ecosystem for fans to get exclusive access to their favorite songs and music artists. The problem Finesse solves At the heart of the platform, are coins for different songs by various artists, in the form of ERC20 tokens on the Polygon blockchain. Fans can buy and sell these coins using MATIC on the Polygon testnet and enjoy special rewards as holders of these coins. The trading of these coins is based on AMM using liquidity pools on UniswapV3. The prices of the song coins change based on 1. user supply and demand 2. song popularity (the Genius API is used to add more liquidity to the pools for every 100K views the song gets, via a cron script that runs at fixed intervals), thus creating 2-factor price movement. Fans can swap the song coins for MATIC on the platform itself using embedded Uniswap widgets.  The problem Finesse solves .         technology:- Next.js, Biconomy, Uniswap, Livepeer, Polygon, NFTPort, web3.Storage, Huddle01, Push Chat, Ens."',
     url: 'https://vimeo.com/788738817',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: 'Security Peer',
+    info: '"Security Peer focuses on effective design, engineering and delivery of a decentralized solution for detecting & managing UAVs & Drones and setting up geo fences using predictive analytics and Web3 eco-system tools. Our platform solution offers an Artificial Intelligence-based object detection system that utilizes IPFS/Filecoin, Ethereum tools and libraries for sorting information obtained from a variety of cameras deployed at monitoring spots."',
     url: 'https://drive.google.com/drive/u/3/folders/1xYwivgACmcjNkhMEJA69DsKisXUIEIde',
     type: 'Hackathons',
     hackathon: 'Encode Next Video Build'
   },
   {
     name: '0xGlitch',
+    info: 'We implemented push protocol notif and chat.',
     url: 'https://devfolio.co/submissions/xglitch-8110',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: '3gram',
+    info: 'Using push notification to send a notification every time a post is created.',
     url: 'https://devfolio.co/submissions/gram-7669',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Ahoy',
+    info: 'chat mssage',
     url: 'https://devfolio.co/submissions/ahoy-42e2',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'AlkyneFi',
+    info: 'Push protocol notifications serve as an effective communication bridge between Managers and Investors. We use Push protocol to provide live updates to the Investors about their subscribed Managers and further future recommendations in a decentralized manner.',
     url: 'https://devfolio.co/submissions/alkynefi-f616',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'AnimeOrg',
+    info: 'To notify people whenever an event is emmited in smart contract relating to show and ticket status.',
     url: 'https://devfolio.co/submissions/animeorg-e0c5',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'ASAP Finance',
+    info: 'The project implements push notifications',
     url: 'https://devfolio.co/submissions/asap-finance-5b3c',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Asset Vault',
+    info: 'We implemented PUSH protocol in our dApp using SDKs. The user will receive the notification on release funds. We have used notification SDK to invoke sendNotification method and frontend integration to fetch the notification from use\'s inbox.',
     url: 'https://devfolio.co/submissions/asset-vault-8448',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Athena',
+    info: 'As our platform focusses on Peer-to-Peer negotitation for informal credit, Push Protocols chat implementation plays a major part in helping us make our application more secure and reliable.',
     url: 'https://devfolio.co/submissions/athena-fe0f',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Augmnt Freelance Platform',
+    info: 'freelancer and client have to chat with each other before moving forward',
     url: 'https://devfolio.co/submissions/augmnt-freelance-platform-8566',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Banana Smart Wallet',
+    info: 'Used to send notification if more than three wrong attempts are made by the user/ hacker.',
     url: 'https://devfolio.co/submissions/banana-smart-wallet-efca',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BankiFi',
+    info: '"1. Whenever a matching is found between borrower and lender, the order is executed and both the borrower and lender get a notification using the Push protocol notification service, that the order is booked',
     url: 'https://devfolio.co/submissions/bankifi-010d',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BeQuest Protocol',
+    info: 'Sending regular notifications and reminders to the beneficiarys address.',
     url: 'https://devfolio.co/submissions/bequest-protocol-166b',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Bermuda',
+    info: 'The PAAS not only gives the users the freedom to build dashboards but to generate and send reports periodically. We are utilising push notifications to notify users on reports.',
     url: 'https://devfolio.co/submissions/bermuda-a7dc',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BeyondClub',
+    info: '',
     url: 'https://devfolio.co/submissions/beyondclub-0ac2',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BlockTime Capsule',
+    info: 'Frontend of the project is deployed to Valist, which uses Polygon in the background',
     url: 'https://devfolio.co/submissions/blocktime-capsule-baa4',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BlockuSign',
+    info: 'We tried to implement the push notification when any of the user  sign the contract other party as well as notary will be notified.',
     url: 'https://devfolio.co/submissions/blockusign-e3de',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'BLOOMBOT',
+    info: 'n',
     url: 'https://devfolio.co/submissions/bloombot-f148',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Bowled',
+    info: '"We used push protocol to integrate notifications in our game. A user is notified when a player up-skills or a game is finished. We intend to use notification services for all in-game activities."',
     url: 'https://devfolio.co/submissions/bowled-1c4f',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Buidl11',
+    info: 'To show notifications after a user has won the game.',
     url: 'https://devfolio.co/submissions/buidl-da3c',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Cal3',
+    info: 'We send notifications whenever a new event is created or you are invited to an event.',
     url: 'https://devfolio.co/submissions/cal-026a',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Chain Aid',
+    info: '"We use push chat service and push notification service.  Push chat application to integrate with AI that can try clearing the doubts, if the doubts are still not cleared a mentor will be connected to the channel. The request of users will be notified to the mentors through push notification. The mentors can accept and answer the users queries."',
     url: 'https://devfolio.co/submissions/chain-aid-ffb4',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'ChainPe',
+    info: '"ChainPe is a non-custodial wallet which lets you pay to any UPI ID via your cryptocurrency balance. Our projects allows user to pay any retailer through crypto by simply scanning the UPI ID. Regarding using the Push Protocol, we are implementing Push Sdk to send the user a notification wether the transaction is successful or not. https://github.com/ChainPeNetwork/ChainPeBackend/blob/master/services/push.js"',
     url: 'https://devfolio.co/submissions/chainpe-f925',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'ChargeSwap',
+    info: '"We have used Push Notifications in our DApp for informing users when the transactions is confirmed as well as ensuring they know when to safely eject the battery from the station to prevent harm to the hardware as well as user. We are also using it to inform the user when he has successfully scanned into the station. Channel: ChargeSwap"',
     url: 'https://devfolio.co/submissions/chargeswap-3527',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'CodeCrunch',
+    info: 'We have used PUSH Chat as well as Notification in CodeCrunch forum',
     url: 'https://devfolio.co/submissions/codecrunch-24d8',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Confimo',
+    info: 'We implement push protocol to start chat room for NFT projects. NFT projects easily create/connect push wallet address from our connect page.',
     url: 'https://devfolio.co/submissions/confimo-5b26',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'CourtX',
+    info: 'Real time notifications is to be sent to all the stakeholders related to a particular case if any proposal gets accepted or if there is a new update in the case.',
     url: 'https://devfolio.co/submissions/courtx-8925',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'CreatorsLane.',
+    info: 'Push Protocol and Push notification service has been integrated into the application to keep users aware of developments on the platform. These include informing users about newer creators coming onto the platform, or newer brands investing in creators. Notifications let us keep the flow going and does not let the users feel like they are not thought about even though they are just hexadecimal numbers for us on the blockchain.',
     url: 'https://devfolio.co/submissions/creatorslane-43c1',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'CryptoCares',
+    info: 'We implemented the use of Push Chat so that Donators can securely and verifiably prove that they donated to the cause and are eligible to redeem the SERVICE. Without the use of Push Chat, Web2 communication mediums would be required to communicate with Service providers which also increases the burden for verification of donation. With Push CHat we are able to implement Wallet to Wallet communication.',
     url: 'https://devfolio.co/submissions/cryptocares-2375',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Cryptons',
+    info: 'With our projects, whenever a user generates a coupons, we give him an option to opt for push notifications, so if after the expiration period, if any coupons remains unclaimed, the issuer can reclaim his coupons from the contract.',
     url: 'https://devfolio.co/submissions/cryptons-037d',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'D-Tree',
+    info: 'We use push protocol in our DApp to Send and Get notifications',
     url: 'https://devfolio.co/submissions/dtree-ce64',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'Da CRJ',
+    info: 'We used Push notification to notify the users, who had won against their staking on a particular article and now had to withdraw their reward from their zkBOB wallet.',
     url: 'https://devfolio.co/submissions/da-crj-27a5',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
   },
   {
     name: 'dAd Space',
+    info: 'For each campaign, the advertiser will get a custom notification for all the data related to the ads, spends, clicks, and impressions. With the help of push notification advertiser will be notified of all the details and will be able to review and optimize the campaign.',
     url: 'https://devfolio.co/submissions/dad-space-e07d',
     type: 'Hackathons',
     hackathon: 'ETHIndia2022'
