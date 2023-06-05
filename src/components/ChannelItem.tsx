@@ -43,8 +43,6 @@ const hackathonImage = (hackathon) => {
 }
 
 const ItemDescription = ({ description }) => {
-    console.log(description);
-    
     const croppedDescription = description.split(' ').slice(0, 30).join(' ');
     const showEllipsis = description.split(' ').length > 30;
 

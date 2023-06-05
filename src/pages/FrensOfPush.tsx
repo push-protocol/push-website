@@ -122,13 +122,35 @@ const FrensText = () => {
       let data = objChannelList?.slice(newPage, newPage + 9);
       setTimeout(() => {
         setChannels((current) => [...current, ...data]);
-      }, 500);
+      }, 200);
     } catch (error) {
       console.error('Channels API data fetch error: ', error);
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 500);
+      }, 200);
+    }
+  };
+
+  // pagination function for Hackathons Tab
+  const showMoreHackathons = async () => {
+    let newPage = page + 9;
+    setPage(newPage);
+
+    let sortList = objChannelList.filter((x) => x.type === 'Hackathons');
+
+    try {
+      setLoading(true);
+      let data = sortList?.slice(newPage, newPage + 9);
+      setTimeout(() => {
+        setChannels((current) => [...current, ...data]);
+      }, 200);
+    } catch (error) {
+      console.error('Channels API data fetch error: ', error);
+    } finally {
+      setTimeout(() => {
+        setLoading(false);
+      }, 200);
     }
   };
 
@@ -151,17 +173,24 @@ const FrensText = () => {
   const handleSort = (name) => {
     setActive(name);
     setSearch('');
-    if (name == 'All') {
+    setPage(0); // resets the pagination count
+    if (name == 'All') { // filter for All category
       fetchChannels();
       setCount(objChannelList.length);
-    } else {
+    } else if (name === 'Hackathons') { // filter for Hackathons category
       setLoading(true);
       let sortList = objChannelList.filter((x) => x.type === name);
-      setTimeout(() => {
-        setChannels(sortList);
-        setLoading(false);
-        setCount(sortList.length);
-      }, 500);
+      setCount(sortList.length);
+      sortList = sortList?.slice(page, page + 9);
+
+      setChannels(sortList);
+      setLoading(false);
+    } else { // filter for rest of the categories
+      setLoading(true);
+      let sortList = objChannelList.filter((x) => x.type === name);
+      setChannels(sortList);
+      setLoading(false);
+      setCount(sortList.length);
     }
   };
 
@@ -375,6 +404,13 @@ const FrensText = () => {
 
             {!loading && active === 'All' && search.length === 0 && (
               <ShowMoreSection onClick={ShowMore}>
+                <FiChevronDown size={23} />
+                <b>Show More</b>
+              </ShowMoreSection>
+            )}
+
+            {!loading && active === 'Hackathons' && search.length === 0 && (
+              <ShowMoreSection onClick={showMoreHackathons}>
                 <FiChevronDown size={23} />
                 <b>Show More</b>
               </ShowMoreSection>
