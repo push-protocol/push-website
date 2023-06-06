@@ -365,6 +365,20 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     expanded={mobileMenuMap[2]}
                   >
                     <Anchor
+                      href="https://pushprotocol.notion.site/Welcome-to-Push-DAO-b1c1e1281ce64400adaaae59f98e4d4c"
+                      target="_blank"
+                      title="Push Governance Forum"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push DAO Notion
+                    </Anchor>
+                    <Anchor
                       href="https://gov.push.org"
                       target="_blank"
                       title="Push Governance Forum"
@@ -393,34 +407,6 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       Grants
                     </Anchor>
                     <Anchor
-                      href="https://snapshot.org/#/pushdao.eth"
-                      title="Push Snapshot"
-                      target="_blank"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Snapshot
-                    </Anchor>
-                    <Anchor
-                      href="https://app.push.org/#/yield"
-                      title="Delegate"
-                      target="_blank"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Delegate
-                    </Anchor>
-                    <Anchor
                       href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
                       title="Push Mission"
                       target="_blank"
@@ -432,7 +418,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Push Mission
+                      Missions
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
