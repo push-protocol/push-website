@@ -10,6 +10,35 @@
   overflow: hidden;
 }
 
+.heroTitle {
+  color: #fff !important;
+  font-size: 4rem;
+}
+
+.heroSubTitle {
+  color: #fff !important;
+  font-size: 1.5rem;
+}
+
+.ctaButton {
+  color: #fff;
+  background-color: #dd44b9;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+
+  font-size: 1.25rem;
+  text-decoration: none;
+  z-index: 1;
+  transition: 100ms ease-in-out;
+}
+
+.ctaButton:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.05);
+  transition: 200ms ease-in-out;
+}
+
 .ripple {
   position: absolute;
   bottom: 0;
@@ -21,6 +50,21 @@
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1rem;
+    border-radius: 0.74rem;
+  
+    font-size: 0.75rem;
   }
 }
 

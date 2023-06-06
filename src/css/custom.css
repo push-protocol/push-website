@@ -19,6 +19,7 @@
   --ifm-navbar-link-color: #fff;
   --ifm-button-background-color: #dd44b9;
   --ifm-custom-base: rgba(59, 59, 59, 0.75);
+  --ifm-navbar-sidebar-width: 90vw;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -32,6 +33,7 @@
   --ifm-color-primary-lightest: #ea8dd4
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-custom-base: rgba(255, 255, 255, 0.75);
+  --ifm-navbar-sidebar-width: 90vw;
 }
 
 /* Custom Fonts */
@@ -96,6 +98,16 @@
   margin: auto !important;
   width: 90% !important;
   height: 92px !important;
+}
+
+.navbar-sidebar__back {
+  display: none;
+}
+
+.navbar-sidebar {
+  height: 96vh;
+  width: 90vw;
+  border-radius: 0.5rem;
 }
 
 .navbar__logo {

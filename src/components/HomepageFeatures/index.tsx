@@ -2,55 +2,76 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+import notif from '@site/static/img/svgs/push-bell.svg';
+
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
-const FeatureList: FeatureItem[] = [
+const DeveloperGuides = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Notifications',
+    Svg: require('@site/static/img/svgs/push-bell.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Explore different ways of sending and receiving notifications and more.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Push Chat',
+    Svg: require('@site/static/img/svgs/push-chat.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Learn about the details of Push Chat and how to easily integrate it.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Push Video Calls',
+    Svg: require('@site/static/img/svgs/video.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Learn about the details of Push Video Calls and how to easily integrate it.
       </>
     ),
   },
-];
+  {
+    title: 'SDK Quick Start',
+    Svg: require('@site/static/img/svgs/lightning.svg').default,
+    description: (
+      <>
+        A super quick guide to get you started with Push SDK
+      </>
+    ),
+  },
+  {
+    title: 'Examples',
+    Svg: require('@site/static/img/svgs/sparkle.svg').default,
+    description: (
+      <>
+        Examples to showcase the power of Push Protocol's communication stack.
+      </>
+    ),
+  },
+  {
+    title: 'Showrunners',
+    Svg: require('@site/static/img/svgs/receive-notifs.svg').default,
+    description: (
+      <>
+        Showrunners Framework and how to boost your web3 communications
+      </>
+    ),
+  }
+]
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, Svg, description}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
+    <div className={styles.featureCard}>
         <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>{description}</p>
-      </div>
     </div>
   );
 }
@@ -59,8 +80,8 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
+        <div className={styles.row}>
+          {DeveloperGuides.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
