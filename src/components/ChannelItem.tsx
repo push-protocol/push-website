@@ -145,7 +145,7 @@ const Container = styled.a`
 
 const ArrowCont = styled.div` // arrow container
     position: absolute;
-    top: 15%;
+    top: 12%;
     right: 8%;
 `;
 

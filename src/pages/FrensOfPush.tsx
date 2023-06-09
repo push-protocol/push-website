@@ -134,14 +134,14 @@ const FrensText = () => {
 
   // pagination function for Hackathons Tab
   const showMoreHackathons = async () => {
-    let newPage = page + 9;
+    let newPage = page + 18;
     setPage(newPage);
 
     let sortList = objChannelList.filter((x) => x.type === 'Hackathons');
 
     try {
       setLoading(true);
-      let data = sortList?.slice(newPage, newPage + 9);
+      let data = sortList?.slice(newPage, newPage + 18);
       setTimeout(() => {
         setChannels((current) => [...current, ...data]);
       }, 200);
