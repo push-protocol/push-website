@@ -47,6 +47,10 @@ You shall now be able to access your channel profile page and be able to send no
 
 #### **Video Guide for Alias Verification on Polygon Chain**
 
+<!-- [![Enable Notification on other chains](../../../../static/img/assets/image-5.png)](https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041) -->
+
+![Notification](https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041)
+
 {% embed url="https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041" %}
 Demo Guide to Alias Verification
 {% endembed %}
