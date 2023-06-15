@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    'linebreak-style': 'off',
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
