@@ -264,6 +264,7 @@ if (!isLoading && !errorPage) {
             <ArticleBanner
               src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
               alt={blogsData?.attributes.title}
+              loading='lazy'
             />
 
            </Content>
@@ -337,9 +338,9 @@ if (!isLoading && !errorPage) {
               <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
             </ArticleContent>)}
 
-            <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent>
+            {/* <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent> */}
 
-            {/* <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent> */}
+            <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
 
             <ToggleSection>
               {blogsData?.attributes?.tags?.data?.map((item, i) => (
@@ -401,7 +402,7 @@ if (!isLoading && !errorPage) {
             </AboutSection>
 
             <KPIBanner>
-              <ItemV
+              <BannerItem
                 onClick={() => OpenURL('https://twitter.com/pushprotocol')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
@@ -411,9 +412,9 @@ if (!isLoading && !errorPage) {
                   <BsTwitter size={32} />
                 </KPIFigure>
                 <KPIMetric>Twitter</KPIMetric>
-              </ItemV>
+              </BannerItem>
 
-              <ItemV
+              <BannerItem
                 onClick={() => OpenURL('https://discord.gg/pushprotocol')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
@@ -423,9 +424,9 @@ if (!isLoading && !errorPage) {
                   <FaDiscord size={32} />
                 </KPIFigure>
                 <KPIMetric>Discord</KPIMetric>
-              </ItemV>
+              </BannerItem>
 
-              <ItemV
+              <BannerItem
                 onClick={() => OpenURL('https://www.youtube.com/@pushprotocol')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
@@ -435,9 +436,9 @@ if (!isLoading && !errorPage) {
                   <BsYoutube size={32} />
                 </KPIFigure>
                 <KPIMetric>YouTube</KPIMetric>
-              </ItemV>
+              </BannerItem>
 
-              <ItemV
+              <BannerItem
                 onClick={() => OpenURL('https://www.linkedin.com/company/push-protocol/')}
                 style={{ cursor: 'pointer' }}
                 gap="18px"
@@ -447,7 +448,7 @@ if (!isLoading && !errorPage) {
                   <BsLinkedin size={32} />
                 </KPIFigure>
                 <KPIMetric>Linkedin</KPIMetric>
-              </ItemV>
+              </BannerItem>
             </KPIBanner>
 
             <BlogRow>
@@ -636,6 +637,8 @@ const TopSection = styled(ResponsiveSection)`
     padding-bottom: 32px;
   }
 `;
+
+
 
 const BlogsSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
@@ -878,12 +881,18 @@ const KPIFigure = styled.div`
   width: fit-content;
 `;
 
-const KPIMetric = styled(Span)`
+const BannerItem = styled(ItemV)`
+  color: #000;
+  &:hover {
+   color: #D53893;
+  }
+`; 
+
+const KPIMetric = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 110%;
   letter-spacing: -0.03em;
-  color: #1e1e1e;
   @media ${device.tablet} {
     font-size: 16px;
     font-weight: 400;
@@ -911,7 +920,6 @@ const ArticleBanner = styled.img`
   aspect-ratio: 16/9;
   object-fit: cover;
 
-  background: #d9d9d9;
   border-radius: 32px;
   padding: 0;
   // transform: translateY(42.5%);
