@@ -11,6 +11,49 @@ import VanillaTilt from 'vanilla-tilt';
 import FadeInAnimation from './FadeInAnimation';
 import ImageHolder from './ImageHolder';
 
+import encode from '../assets/svgs/encode.svg'
+import ethglobal from '../assets/svgs/ethglobal.svg'
+import learnweb3dao from '../assets/svgs/learnweb3dao.svg'
+import fvm from '../assets/svgs/fvm.svg'
+
+const hackathonImage = (hackathon) => {
+    switch(hackathon) {
+        case 'Encode Next Video Build':
+            return encode;
+
+        case 'ETHIndia2022':
+        case 'ETHSF2022':
+        case 'ETHBogota2022':
+        case 'ETHOnline2022':
+        case 'ETHNYC2022':
+        case 'ETHAMS2022':
+        case 'ETHforAll':
+        case 'HackMoney2022':
+            return ethglobal;
+
+        case 'LearnWeb3 challenge':
+            return learnweb3dao;
+
+        case 'FVM2023':
+            return fvm;
+
+        default:
+            return null;
+    }
+}
+
+const ItemDescription = ({ description }) => {
+    const croppedDescription = description.split(' ').slice(0, 30).join(' ');
+    const showEllipsis = description.split(' ').length > 30;
+
+    return (
+        <div className="description">
+            {croppedDescription}
+            {showEllipsis && '...'}
+        </div>
+    );
+};
+
 export const Tilt = (props) => {
     const { options, ...rest } = props;
     const tilt = useRef(null);
@@ -34,33 +77,45 @@ const ChannelItem = ({ channelProp }, delay) => {
         setLoading(false)
       }, [channelProp]);
 
-  return (
-    <Container href={channelObject.url} target="_blank">
-        <ChannelTop>
-            <ChannelLogo>
-                {loading && (<Skeleton height={100} width={100} borderRadius={20} />)} 
-                {!loading && channelObject.icon && (<ChannelLogoImg src={`${channelObject.icon}`} />)} 
-                {!loading && channelObject.imageFile && (<MemberImage
-                    width={100}
-                    height={100}
-                    src={channelObject.imageFile}
-                    srcSet={channelObject.imageFile || ''}
-                    // alt={name}
-                  />)}
-            </ChannelLogo>
+    return (
+        <Container href={channelObject.url} target="_blank">
+            {
+                channelObject.icon || channelObject.imageFile
+                ? <ChannelTop>
+                    <ChannelLogo>
+                        {loading && (<Skeleton height={100} width={100} borderRadius={20} />)} 
+                        {!loading && channelObject.icon && (<ChannelLogoImg src={`${channelObject.icon}`} />)} 
+                        {!loading && channelObject.imageFile && (<MemberImage
+                            width={100}
+                            height={100}
+                            src={channelObject.imageFile}
+                            srcSet={channelObject.imageFile || ''}
+                            // alt={name}
+                        />)}
+                    </ChannelLogo>
+                </ChannelTop>
+                : null
+            }
 
-            <div className='class'>
+            <ArrowCont className='arrow-body'>
                 <BsArrowUpRight size={25} color={'#000'} />
-            </div>
-        </ChannelTop>
-        
-        <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
+            </ArrowCont>
+            
+            <ChannelTitle><b>{channelObject.name}</b></ChannelTitle>
 
-        <ChannelDesc>{channelObject.info}</ChannelDesc>
+            <ChannelDesc>
+                {channelObject.info && <ItemDescription description={channelObject.info} />}
+            </ChannelDesc>
 
-        <ChannelType><b>{channelObject?.type}</b></ChannelType>
-    </Container>
-  )
+            {channelObject?.type === 'Hackathons' ? null : <ChannelType><b>{channelObject?.type}</b></ChannelType>}
+            {channelObject?.hackathon
+                ? <ChannelType>
+                    <HackathonLogo src={hackathonImage(channelObject?.hackathon)} />
+                    <b>{channelObject?.hackathon}</b>
+                </ChannelType>
+                : null}
+        </Container>
+    )
 }
 
 const Container = styled.a`
@@ -73,22 +128,25 @@ const Container = styled.a`
     flex-direction: column;
     text-decoration: none;
     flex: 1;
+    position: relative;
     &:hover {
         cursor: pointer;
         background: rgba(255, 255, 255, 0.7);
         border: 1px solid #BAC4D6;
         backdrop-filter: blur(60px);
-        div:first-child {
-            .class{
+            .arrow-body{
                 display: block;
             }
-         }
-    } 
-    div:first-child {
-            .class{
-                display: none;
-            }
-    }
+        }
+        .arrow-body{
+            display: none;
+        }
+`;
+
+const ArrowCont = styled.div` // arrow container
+    position: absolute;
+    top: 12%;
+    right: 8%;
 `;
 
 const ChannelTop = styled.div`
@@ -143,14 +201,23 @@ const ChannelType = styled.div`
     height: fit-content;
     padding: 7px 14px;
     margin-top: auto;
+
+    display: flex;
+    align-items: center;
 `;
 
 const MemberImage = styled(ImageHolder)`
-   object-fit: contain;
+    object-fit: contain;
     width: 100%;
     border: 1px solid #BAC4D6;
     border-radius: 30.25px;
     overflow: hidden;
+`;
+
+const HackathonLogo = styled.img`
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
 `;
 
 export default ChannelItem
