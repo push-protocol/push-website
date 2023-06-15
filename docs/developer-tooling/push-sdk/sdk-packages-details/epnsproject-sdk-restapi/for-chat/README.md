@@ -5,7 +5,7 @@
 This section of SDK contains all things required for you to start implementing chat on your dApp or your wallet.
 
 :::info
-Do checkout socket SDK to enable active fetching of messages and more 👉 [pushprotocol-socket](../../pushprotocol-socket/ "mention")
+Do checkout socket SDK to enable active fetching of messages and more 👉 [@pushprotocol/socket](../../pushprotocol-socket/ "mention")
 :::
 
 {% embed url="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality" %}

@@ -2,6 +2,9 @@
 description: Send gasless notifications to wallet addresses
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Send Notifications
 
 :::danger
@@ -24,8 +27,16 @@ Once you have created a channel on Push, you can send notifications to your subs
 
 1. Requirements before using SDK calls, derive the `signer`
 
-{% tabs %}
-{% tab title="When using Frontend" %}
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Frontend', value: 'backend'},
+    ]}>
+<TabItem value="frontend">
+```
+
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -35,22 +46,37 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 2. Call the appropriate SDK function
 
-{% tabs %}
-{% tab title="Direct Payload" %}
+```mdx-code-block
+<Tabs
+    defaultValue="direct"
+    values={[
+        {label: 'Direct Payload', value: 'direct'},
+        {label: 'IPFS Payload', value: 'ipfs'},
+        {label: 'Minimal Payload', value: 'minimal'},
+        {label: 'Subgraph Payload', value: 'subgraph'},
+    ]}>
+<TabItem value="direct">
+
 ### Targeted Notification
 
 ```typescript
@@ -122,9 +148,9 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="ipfs">
 
-{% tab title="IPFS Payload" %}
 ### Targeted Notification
 
 ```typescript
@@ -169,9 +195,9 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="minimal">
 
-{% tab title="Minimal Payload" %}
 ### Targeted Notification
 
 ```typescript
@@ -243,11 +269,11 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="subgraph">
 
-{% tab title="Subgraph Payload" %}
 :::info
-Ensure that the channel has the `graphId` **** being provided
+Ensure that the channel has the `graphId` being provided
 :::
 
 ### Targeted Notification
@@ -303,8 +329,8 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 #### Allowed Options (params with \* are mandatory)
 

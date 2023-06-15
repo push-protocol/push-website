@@ -2,6 +2,10 @@
 description: This package gives access to Push Protocol backend APIs
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # @pushprotocol/restapi
 
 :::caution
@@ -10,19 +14,33 @@ All SDK functions require passing the parameter **env** which should either pass
 
 ## Installation <a href="#installation" id="installation"></a>
 
-{% tabs %}
-{% tab title="npm" %}
+```mdx-code-block
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+```
+
 ```bash
 npm install @pushprotocol/restapi@latest ethers
 ```
-{% endtab %}
 
-{% tab title="yarn" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
 ```bash
 yarn add @pushprotocol/restapi@latest ethers
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ### I**mport in your file**
 
@@ -84,7 +102,6 @@ For Goerli and Mumbai testnets, the namespace is `eip155` and the chain\_id is `
 
 `eip155:80001:0x20E0e045F1baB5CD9284602bdf24D050Dc8CB719`
 
-``
 
 In any of the `restapi` methods (unless explicitly stated otherwise) we accept either -
 
@@ -112,26 +129,14 @@ The `@pushprotocol/restapi` package provides us with the following features:
 
 Here below, you can find more information on the features described:
 
-{% content-ref url="for-notification/fetching-user-channel-details.md" %}
-[fetching-user-channel-details.md](for-notification/fetching-user-channel-details.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Fetching User and Channel Details" link="./for-notification/fetching-user-channel-details"/>
 
-{% content-ref url="for-notification/opt-in-and-opt-out.md" %}
-[opt-in-and-opt-out.md](for-notification/opt-in-and-opt-out.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Opt-In and Opt-Out" link="./for-notification/opt-in-and-opt-out"/>
 
-{% content-ref url="for-notification/send-notifications.md" %}
-[send-notifications.md](for-notification/send-notifications.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Send Notifications" link="./for-notification/send-notifications"/>
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+<CustomLinkCard text="Broken link" link="./broken-reference"/>
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+<CustomLinkCard text="Broken link" link="./broken-reference"/>
 
-{% content-ref url="for-notification/utils.md" %}
-[utils.md](for-notification/utils.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Notification Helper Utils" link="./for-notification/utils"/>

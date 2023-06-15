@@ -1,32 +1,23 @@
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # For Notification
 
-<!-- <figure><img src="../../../../../.gitbook/assets/pushnotifsend.png" alt=""><figcaption></figcaption></figure> -->
+![Notification Call](../../../../../../static/img/assets/pushnotifsend%20(1).png)
 
 This section of SDK contains all things required for you to start implementing notifications on your dApp or your wallet.
 
 :::info
-Do checkout socket SDK to enable active fetching of messages and more 👉 [pushprotocol-socket](../../pushprotocol-socket/ "mention")
+Do checkout socket SDK to enable active fetching of messages and more 👉 [@pushprotocol/socket](../../pushprotocol-socket/ "mention")
 :::
 
-{% embed url="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality" %}
-Push for Hackers repo containing code coverage for all sdk functionality with examples
-{% endembed %}
+<CustomLinkCard text="Push for Hackers repo containing code coverage for all sdk functionality with examples" link="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality"/>
 
 ## Notification SDK Features
 
-{% content-ref url="fetching-user-channel-details.md" %}
-[fetching-user-channel-details.md](fetching-user-channel-details.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Fetching User and Channel Details" link="./fetching-user-channel-details"/>
 
-{% content-ref url="opt-in-and-opt-out.md" %}
-[opt-in-and-opt-out.md](opt-in-and-opt-out.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Opt-In and Opt-Out" link="./opt-in-and-opt-out"/>
 
-{% content-ref url="send-notifications.md" %}
-[send-notifications.md](send-notifications.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Send Notifications" link="./send-notifications"/>
 
-{% content-ref url="utils.md" %}
-[utils.md](utils.md)
-{% endcontent-ref %}
-
+<CustomLinkCard text="Notification Helper Utils" link="./utils"/>
