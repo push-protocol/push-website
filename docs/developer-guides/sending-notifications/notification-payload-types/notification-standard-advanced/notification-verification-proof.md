@@ -2,6 +2,8 @@
 description: Imperative details about verification proof parameter in notification payload
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Notification Verification Proof
 
 Verification Proof is the outermost composable block that is sent along with the notification to help the network validate _the notification sender, the chain from which the notification is sent, and the content of the notification along with any other validation that might be required_.
@@ -37,9 +39,7 @@ _To overcome this limitation eip-712v2 is identity-independent._
 
 `4.`` `**`thegraph`** - Notification can be triggered through a subgraph as well as mentioned in the subgraph section. 👇
 
-{% content-ref url="../../using-subgraph-gasless.md" %}
-[using-subgraph-gasless.md](../../using-subgraph-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Using Subgraph (Gasless)" link="../../using-subgraph-gasless"/>
 
 &#x20;They need to call the `addSubgraph` function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
 

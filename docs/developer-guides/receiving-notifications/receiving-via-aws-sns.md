@@ -12,12 +12,14 @@ Integrating the SNS module into your code takes less than 10 mins and contains j
 
 **Step 1:** Implement a webhook to listen to [`AWS SNS`](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html). Here’s a boilerplate along with specs to get you npm installed and running: [https://github.com/ethereum-push-notification-service/push-sns-boilerplate](https://github.com/ethereum-push-notification-service/push-sns-boilerplate)
 
-**Step 2:** You will need to open an endpoint either at a dedicated IP that listens to SNS or, if you are testing locally, have to expose the public endpoint for which tons of software is available.\
-\
-_**Hint:**_** ** For testing locally, You can also use [ngrok](https://ngrok.com/download) to expose the public endpoint. If you use this with the boilerplate, the port needs to be 6000. The ngrok URL is now the SNS endpoint required in step 3.
+
+**Step 2:** You will need to open an endpoint either at a dedicated IP that listens to SNS or, if you are testing locally, have to expose the public endpoint for which tons of software is available.
+
+
+_**Hint:**_ For testing locally, You can also use [ngrok](https://ngrok.com/download) to expose the public endpoint. If you use this with the boilerplate, the port needs to be 6000. The ngrok URL is now the SNS endpoint required in step 3.
 
 :::info
-**Important:** Once you set up this, you need to contact us by either shouting / tagging us on [Discord](https://discord.com/invite/YVPB99F9W5) or reaching out via the [contact form](mailto:support@epns.io). We need this as the SNS module requires whitelisting of your webhook endpoint.
+**Important:** Once you set up this, you need to contact us by either shouting tagging us on [Discord](https://discord.com/invite/YVPB99F9W5) or reaching out via the [contact form](mailto:support@epns.io). We need this as the SNS module requires whitelisting of your webhook endpoint.
 :::
 
 ## Push SNS Boilerplate
@@ -30,7 +32,6 @@ Here’s a timelapse of how everything works… see you on the other side 😃
 
 <!-- ![](../../.gitbook/assets/1\_q0kbnXZqlt8a-Pfzi8uVIQ.gif) -->
 
-\
 
 
 ## SNS Sample Messages <a href="#4da3" id="4da3"></a>
@@ -64,8 +65,6 @@ Here’s a timelapse of how everything works… see you on the other side 😃
 **The Message** is the field in the above JSON is the actual notification sent from the Push in JSON stringified format.
 
 
-
-\
 **Message**
 
 When converted to JSON, a sample message looks like the one below.
@@ -102,7 +101,7 @@ When converted to JSON, a sample message looks like the one below.
 }
 ```
 
-\
+
 
 
 * **sid** - unique id from the push
@@ -111,7 +110,3 @@ When converted to JSON, a sample message looks like the one below.
 * **epoch** - timestamp when the payload is generated
 * **topic** - the type of payload, i.e. Notification, Chat etc
 * **subtopic** - mode of delivery, i.e. Channel or User level
-
-
-
-\

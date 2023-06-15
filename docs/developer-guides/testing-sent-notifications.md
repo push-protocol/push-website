@@ -1,3 +1,5 @@
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Testing Sent Notifications
 
 Push is an open network and supports all platforms. This means that notifications work just like how Ethereum functions. The communications are stored in an open, distributed (and soon to be decentralised) network (much like how the backend of Ethereum stores the data).&#x20;
@@ -16,13 +18,9 @@ Push protocol is made for users and all its functions including opting in to rec
 
 **Step 1:** Install Push Staging Chrome Extension.
 
-{% embed url="https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj" %}
-**Staging Environment**
-{% endembed %}
+<CustomLinkCard text="Staging Environment" link="https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj"/>
 
-{% embed url="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg" %}
-**Production Environment**
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg"/>
 
 :::tip
 **Next steps:** just sign in from the public wallet address with which you have opted in to receive notifications from your channel.
@@ -36,13 +34,9 @@ If you are installing the Chrome extension on **Brave** then you need to enable 
 
 ### dApp
 
-{% embed url="https://staging.push.org/" %}
-**Staging Environment**
-{% endembed %}
+<CustomLinkCard text="Staging Environment" link="https://staging.push.org/"/>
 
-{% embed url="https://app.push.org/" %}
-**Production Environment**
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://app.push.org/"/>
 
 :::tip
 **Next steps:** just sign in from the public wallet address with which you have opted in to receive notifications from your channel.
@@ -52,13 +46,9 @@ If you are installing the Chrome extension on **Brave** then you need to enable 
 
 #### Android
 
-{% embed url="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epnsstaging" %}
-**Staging Environment**
-{% endembed %}
+<CustomLinkCard text="Staging Environment" link="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epnsstaging"/>
 
-{% embed url="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epns" %}
-**Production Environment**
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epns"/>
 
 :::tip
 **Next steps:** just sign in from the public wallet address with which you have opted in to receive notifications from your channel.
@@ -67,15 +57,11 @@ If you are installing the Chrome extension on **Brave** then you need to enable 
 #### iOS
 
 :::caution
-iOS doesn't have a public staging app (only production app is available on the App Store). \
-\
-Best way to test staging on iOS would be to join :point\_right: [Push Discord Channel](https://discord.com/invite/YVPB99F9W5) :point\_left: and ask a team member to provide you with a testflight beta link.&#x20;
+iOS doesn't have a public staging app (only production app is available on the App Store).
+
+Best way to test staging on iOS would be to join :point_right: [Push Discord Channel](https://discord.com/invite/YVPB99F9W5) :point_left: and ask a team member to provide you with a testflight beta link.&#x20;
 :::
 
-{% embed url="https://discord.com/invite/pushprotocol" %}
-**For Requesting Staging Environment App**
-{% endembed %}
+<CustomLinkCard text="For Requesting Staging Environment App" link="https://discord.com/invite/pushprotocol"/>
 
-{% embed url="https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910" %}
-**Production Environment**
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910"/>

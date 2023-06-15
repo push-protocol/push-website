@@ -2,6 +2,8 @@
 description: Quick guide on how to create a channel using a gnosis safe
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Creating a Channel using Gnosis Safe
 
 While you can use an EOA for creating a channel, that's not the only option.&#x20;
@@ -24,7 +26,7 @@ Before we proceed with the actual steps of connecting the safe to the Push dapp 
 
 This is important to ensure that the EPNSCore contract is allowed to use 50 PUSH tokens from the safe for the successful creation of the channel.
 
-<!-- <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>A sample of how PUSH approval transaction looks like from SAFE</p></figcaption></figure> -->
+![A sample of how PUSH approval transaction looks like from SAFE](../../../../static/img/assets/gnosis-safe-1.png)
 
 :::info
 If you are setting up a Channel on Prod dApp (Ethereum Mainnet), you can request for **channel creation gas fee reimbursement** within 24 hrs by [filling out this form](https://docs.google.com/forms/d/e/1FAIpQLScNQ2\_mACRQgyIPsr47woE69\_FOds8aLIGupT20QIEUMfgnQw/viewform). See [this medium article for more information](https://medium.com/ethereum-push-notification-service/calling-all-hobbyist-devs-channel-creation-gas-fee-is-now-refundable-6631ccd01baf).
@@ -63,9 +65,7 @@ Now that you are connected to the dapp, creating a channel using a safe is an ex
 
 Follow the steps mentioned in the following section to create a channel 👇
 
-{% content-ref url="../../examples/deploying-your-first-channel.md" %}
-[deploying-your-first-channel.md](../../examples/deploying-your-first-channel.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Deploying your First Channel' link='./deploying-your-first-channel'/>
 
 **Step 3: Signing and Initiating channel creation transaction.**
 

@@ -2,16 +2,19 @@
 description: Overview about Push Chat SDK
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Integrating Push Chat
 
 Integrating Push Chat for any functionality is extremely easy. The Push Chat SDK is divided into the following functionalities:
 
 :::tip
-This guide provides high-level knowledge about function calls and what they do, to dive into code :point\_right: [epnsproject-sdk-restapi](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/ "mention")
+This guide provides high-level knowledge about function calls and what they do, to dive into code :point_right: [@pushprotocol/restapi](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/ "mention")
 :::
 
 :::tip
-Web sockets for Push Chat are live now :point\_right: [pushprotocol-socket](../developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket/ "mention")
+Web sockets for Push Chat are live now :point_right: [@pushprotocol/socket](../developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket/ "mention")
 :::
 
 :::info
@@ -24,19 +27,33 @@ For an overview of Push Chat, please go to [https://docs.push.org/developers/con
 
 ### Installation
 
-{% tabs %}
-{% tab title="npm" %}
+```mdx-code-block
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+```
+
 ```bash
 npm install @pushprotocol/restapi@latest ethers@^5.6
 ```
-{% endtab %}
 
-{% tab title="yarn" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
 ```bash
 yarn add @pushprotocol/restapi@latest ethers@^5.6
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ### Get User Information
 
@@ -48,9 +65,9 @@ You are required to get the PGP key and decrypt it locally, for which you can us
 
 <summary><strong>To create the User (</strong><code>sdk.user.create</code>)</summary>
 
-This function will create a new user and **** return the created user’s information, like the PGP keys. It takes as arguments the address of the wallet and the environment variable.
+This function will create a new user and return the created user’s information, like the PGP keys. It takes as arguments the address of the wallet and the environment variable.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [initializing-user.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/initializing-user.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Initializing User](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/initializing-user.md "mention")
 
 </details>
 
@@ -60,7 +77,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [in
 
 This function will return all the user information, like the PGP keys. It takes as arguments the address of the wallet and the environment variable.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [initializing-user.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/initializing-user.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Initializing User](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/initializing-user.md "mention")
 
 </details>
 
@@ -74,7 +91,7 @@ All chats for a user or all chats request for a user can be fetched in a paginat
 
 This function returns all the latest chats from each address the caller is talking to. It’s used to build the inbox on a chat application for an address.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fetching-chats.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Fetching Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
 
 </details>
 
@@ -84,7 +101,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fe
 
 This function returns all the requests that wallet addresses sent to a particular address. In Push Chat, the receiver of the messages must always approve the request to start the chat with the other address.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fetching-chats.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Fetching Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
 
 </details>
 
@@ -98,7 +115,7 @@ Each conversation between the users or group of users have a conversation hash w
 
 This function returns the conversation hash of the latest message exchanged between the user and the conversation.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fetching-chats.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Fetching Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
 
 </details>
 
@@ -108,7 +125,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fe
 
 This function takes as an argument the conversation hash from a message and then returns the message content decrypted.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fetching-chats.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Fetching Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
 
 </details>
 
@@ -118,7 +135,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fe
 
 This function takes in an argument as the conversation hash from a message and the pagination and then returns the message content decrypted.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [fetching-chats.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Fetching Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/fetching-chats.md "mention")
 
 </details>
 
@@ -132,7 +149,7 @@ The Replying chats require the user to approve the request if it's their first t
 
 Use this function to send messages to other addresses.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [sending-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/sending-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Sending Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/sending-chat.md "mention")
 
 </details>
 
@@ -142,7 +159,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [se
 
 When receiving a Request, call this function to approve the request so you can start talking back to the address.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [sending-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/sending-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Sending Chats](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/sending-chat.md "mention")
 
 </details>
 
@@ -160,7 +177,7 @@ Each group has a chat id associated with them. The chat id is used to do modific
 
 Use this function to create group chat between multiple wallets.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [group-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Group Chat](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
 
 </details>
 
@@ -170,7 +187,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [gr
 
 Use this function to modify a group name, description, members, etc.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [group-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Group Chat](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
 
 </details>
 
@@ -180,7 +197,7 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [gr
 
 To get info of the group including the chat id which is used to send messages in that group.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [group-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Group Chat](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
 
 </details>
 
@@ -190,31 +207,45 @@ Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [gr
 
 To get info of the group including by providing chat id of the group.
 
-Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [group-chat.md](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
+Read in detail [👉](https://emojipedia.org/backhand-index-pointing-right/) [Group Chat](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/for-chat/group-chat.md "mention")
 
 </details>
 
 :::tip
-To learn more about the API params and how to call the Restful API, please check :point\_right: [epnsproject-sdk-restapi](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/ "mention")and :point\_right: [pushprotocol-socket](../developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket/ "mention")
+To learn more about the API params and how to call the Restful API, please check :point_right: [@pushprotocol/restapi](../developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi/ "mention")and :point_right: [@pushprotocol/socket](../developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket/ "mention")
 :::
 
 ## Socket API Calls
 
 ### Installation
 
-{% tabs %}
-{% tab title="npm" %}
+```mdx-code-block
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+```
+
 ```bash
 npm install @pushprotocol/socket ethers
 ```
-{% endtab %}
 
-{% tab title="yarn" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
 ```bash
 yarn add @pushprotocol/socket ethers
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ### Import
 
@@ -310,25 +341,38 @@ npm install @pushprotocol/uiweb@latest
 
 Note: `styled-components` and `@pushprotocol/restapi@0.2.1` are peerDependencies. Please install them in your dApp if you don't have them already!
 
-{% tabs %}
-{% tab title="npm" %}
+```mdx-code-block
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+```
+
 ```bash
 npm install styled-components 
 npm install @pushprotocol/restapi@latest
 ```
-{% endtab %}
 
-{% tab title="yarn" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
 ```bash
 yarn add styled-components
 yarn add @pushprotocol/restapi@latest
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ## Support Chat component Usage
 
-{% code overflow="wrap" lineNumbers="true" %}
 ```typescript
 import { Chat } from "@pushprotocol/uiweb";
 
@@ -337,4 +381,3 @@ import { Chat } from "@pushprotocol/uiweb";
     supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address          
 />
 ```
-{% endcode %}

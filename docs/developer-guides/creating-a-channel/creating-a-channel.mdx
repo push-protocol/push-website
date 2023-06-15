@@ -1,3 +1,5 @@
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Creating A Channel
 
 ### A simple walkthrough guide to setup a Channel on Push protocol for sending Notifications to your Web3 subscribers
@@ -32,9 +34,7 @@ Ideally, there are six crucial requirements for creating a Channel. Make sure yo
 * The **Alias Address** field appears only when you select any chain other than Ethereum for your channel's notification. Alias address is basically the representation of your original Ethereum channel on the selected chain of your choice.
 * The alias address basically allows you to provide an address that will represent your channel on the other chain selected in the **Network** dropdown section. It is imperative to note that the address you pass as an alias, must be your own as it will be further verified as a part of the channel creation process. Read more about Alias Addresses👇.
 
-{% content-ref url="../../concepts/create-your-notif-channel/what-is-a-channel-alias.md" %}
-[what-is-a-channel-alias.md](../../concepts/create-your-notif-channel/what-is-a-channel-alias.md)
-{% endcontent-ref %}
+<CustomLinkCard text='What is a Channel Alias' link='../../CONCEPTS/what-are-channels/what-is-a-channel-alias' />
 
 :::tip
 **Note:** You can pass the same Ethereum (EVM-compatible) address, being used for channel creation, as an alias address for other EVM-compatible chains as well.
@@ -50,12 +50,12 @@ The Alias address is quite crucial to activate your channel on other chains. Rea
 
 1. Ensure that you have the above requirements ready.
 2. Head to the Push [Prod dapp ](https://app.push.org/#/channels)or [Staging dapp](https://staging.push.org/#/channels) based on your channel creation requirement. **Note:** Channel creation is a protocol-based event which means you can also create the channel by interacting with [EPNS Core Smart Contract](../../developer-tooling/push-smart-contracts/epns-core-contract/channel-creation-process-on-smart-contract.md).
-3. Visit Create Channel and follow the instructions to create your channel. _Optionally you can visit_  [deploying-your-first-channel.md](../examples/deploying-your-first-channel.md "mention") _guide for step-by-step tutorial._
-4. If you wish to create a channel using a Gnosis safe, please visit[creating-a-channel-using-gnosis-safe.md](channel-creation-guides/creating-a-channel-using-gnosis-safe.md "mention") and follow the guide to create one.
+3. Visit Create Channel and follow the instructions to create your channel. _Optionally you can visit_ [Deploying Your First Channel](./channel-creation-guides/deploying-your-first-channel.md "mention") _guide for step-by-step tutorial._
+4. If you wish to create a channel using a Gnosis safe, please visit [Creating a Channel Using Gnosis Safe](channel-creation-guides/creating-a-channel-using-gnosis-safe.md "mention") and follow the guide to create one.
 5. Ensure that you have the above requirements ready.
 6. Head to [the Push prod dapp](http://app.push.org/) or the staging dapp based on your channel creation requirement. **Note:** Channel creation is a protocol-based event which means you can also create the channel by interacting with [EPNS Core Smart Contract](../../developer-tooling/push-smart-contracts/epns-core-contract/channel-creation-process-on-smart-contract.md).
-7. Visit Create Channel and follow the instructions to create your channel. _Optionally you can visit_  [deploying-your-first-channel.md](../examples/deploying-your-first-channel.md "mention") _guide for step-by-step tutorials._
-8. If you wish to create a channel using a Gnosis safe, please visit[creating-a-channel-using-gnosis-safe.md](channel-creation-guides/creating-a-channel-using-gnosis-safe.md "mention") and follow the guide to create one.
+7. Visit Create Channel and follow the instructions to create your channel. _Optionally you can visit_  [Deploying Your First Channel](./channel-creation-guides/deploying-your-first-channel.md "mention") _guide for step-by-step tutorials._
+8. If you wish to create a channel using a Gnosis safe, please visit [Creating a Channel Using Gnosis Safe](channel-creation-guides/creating-a-channel-using-gnosis-safe.md "mention") and follow the guide to create one.
 
 :::caution
 **Need Goerli-PUSH tokens for staging dapp?**
