@@ -56,7 +56,6 @@ const SlideElement = ({
 
     <GrowPushCardDetails>
       <SpanTitle
-        color="#fff"
         size={isMobile ? "20px" : "31px"}
         weight={isMobile ? "400" : "700"}
         lineHeight="121%"
@@ -352,6 +351,7 @@ const SpanTitle = styled(Span)`
   white-space: normal;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
+  min-height: 2.5em;
 `;
 
 const Div = styled.div`
