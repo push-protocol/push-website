@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Push Notification for Web3
 
 ### Quick explainer of what web3 notifications are, who can trigger them, its different types etc
@@ -25,8 +27,7 @@ As per the current design of the protocol, there can be 3 main actors who can se
 
 _Sending notifications is a gasless transaction and therefore notification senders need not pay any gas fee while sending notifications via the Dapp._
 
-__\
-_**Gas** Fees **** are only applicable when **on-chain notifications** are triggered directly from smart contracts._
+_**Gas** Fees are only applicable when **on-chain notifications** are triggered directly from smart contracts._
 
 
 :::
@@ -35,34 +36,20 @@ Now that you have a brief overview of notifications in the protocol, let's under
 
 ### How to Send Notifications?
 
-{% content-ref url="../../developer-guides/sending-notifications/" %}
-[sending-notifications](../../developer-guides/sending-notifications/)
-{% endcontent-ref %}
+<CustomLinkCard text='Sending Notifications' link='../../developer-guides/sending-notifications/' />
 
-{% content-ref url="../../developer-guides/sending-notifications/using-epns-sdk-gasless.md" %}
-[using-epns-sdk-gasless.md](../../developer-guides/sending-notifications/using-epns-sdk-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Push SDK (Gasless)' link='../../developer-guides/sending-notifications/using-epns-sdk-gasless' />
 
-{% content-ref url="../../developer-guides/sending-notifications/using-subgraph-gasless.md" %}
-[using-subgraph-gasless.md](../../developer-guides/sending-notifications/using-subgraph-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Subgraph (Gasless)' link='../../developer-guides/sending-notifications/using-subgraph-gasless' />
 
 ### How to Receive Notifications?
 
-{% content-ref url="../../developer-guides/receiving-notifications/receiving-via-aws-sns.md" %}
-[receiving-via-aws-sns.md](../../developer-guides/receiving-notifications/receiving-via-aws-sns.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Receiving via AWS SNS' link='../../developer-guides/receiving-notifications/receiving-via-aws-sns' />
 
-{% content-ref url="../../developer-guides/receiving-notifications/" %}
-[receiving-notifications](../../developer-guides/receiving-notifications/)
-{% endcontent-ref %}
+<CustomLinkCard text='Receiving Notifications' link='../../developer-guides/receiving-notifications' />
 
 ### Learn more about Notification
 
-{% content-ref url="what-are-delegated-notifications.md" %}
-[what-are-delegated-notifications.md](what-are-delegated-notifications.md)
-{% endcontent-ref %}
+<CustomLinkCard text='What are Delegated Notifications' link='./what-are-delegated-notifications' />
 
-{% content-ref url="design-notification-content.md" %}
-[design-notification-content.md](design-notification-content.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Design Notification Content' link='./design-notification-content' />

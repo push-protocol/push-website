@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Push Documentation Hub',
   tagline: 'One place to learn about everything Push Protocol.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/Bell.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',

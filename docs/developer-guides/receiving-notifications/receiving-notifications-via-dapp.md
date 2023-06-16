@@ -42,8 +42,8 @@ Once the channel appears on top, you can easily subscribe to the channel by foll
 
 ## How to view Received Notifications
 
-The [**Inbox**](https://app.push.org/#/inbox) section on the Push dApp displays all the notifications you will receive from various channels you have Opted-In. \
-\
+The [**Inbox**](https://app.push.org/#/inbox) section on the Push dApp displays all the notifications you will receive from various channels you have Opted-In.<br/><br/>
+
 This section is distributed into two parts:&#x20;
 
 * Inbox

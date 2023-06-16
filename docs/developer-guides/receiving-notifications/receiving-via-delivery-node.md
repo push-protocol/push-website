@@ -1,10 +1,12 @@
+import ReactPlayer from 'react-player'
+
 # Receiving via Delivery Node
 
 In simpler terms, Push Delivery Nodes is a Whitelabel solution to enable any app, either mobile, desktop, or extension, to allow Web3 push notifications to their app.&#x20;
 
 These are decentralized solutions to enable web3 to web2 bridging. They allow any platform (whether centralized or decentralized) to receive communication from **Push storage nodes**, i.e., the nodes validating and indexing all communications and tying them to your wallet address (and multi-chain identity).&#x20;
 
-{% embed url="https://www.youtube.com/watch?v=OlRHL3qd4oY" %}
+<ReactPlayer controls width="100%" url='https://www.youtube.com/watch?v=OlRHL3qd4oY' /><br/>
 
 :::info
 The Whitelabel solution of Push delivery nodes can be found at GitHub [here](https://github.com/ethereum-push-notification-service/push-delivery-node)

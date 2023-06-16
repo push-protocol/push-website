@@ -4,6 +4,8 @@ description: >-
   Push Staging dApp
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Deploying your First Channel
 
 Any legitimate Ethereum Wallet address can activate itself in the protocol as a Channel, and start sending notifications. In order to set up a channel, a user can create one by using our Push [dapp ](https://app.push.org/)or directly interacting with our [EPNS Core Smart Contracts](../../developer-tooling/push-smart-contracts/epns-core-contract/channel-creation-process-on-smart-contract.md).
@@ -49,11 +51,9 @@ Currently, Channel Alias is the only way to enable multi-chain communication and
 Faucets giving you trouble? Head to our :point\_right: Push [Discord Channel](https://discord.com/invite/pushprotocol) and ask an admin to send you some.
 :::
 
-### in Step 4️⃣ - Understand and fill details (Especially Channel Alias) ****&#x20;
+### in Step 4️⃣ - Understand and fill details (Especially Channel Alias)
 
 ![Filling Channel Details](../../../../static/img/assets/channel-alias-immutable.png)
-
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2022-09-05 at 2.30.03 AM.png" alt=""><figcaption><p>Channel Alias is immutable in Push Protocol v1 and can't be changed later</p></figcaption></figure> -->
 
 #### What is Channel Alias Address?
 
@@ -69,9 +69,7 @@ Channel Alias is only shown if you switch to any other network than Ethereum. **
 
 Read the section attached below to learn more about channel alias addresses.
 
-{% content-ref url="../../concepts/create-your-notif-channel/what-is-a-channel-alias.md" %}
-[what-is-a-channel-alias.md](../../concepts/create-your-notif-channel/what-is-a-channel-alias.md)
-{% endcontent-ref %}
+<CustomLinkCard text="What is Channel Alias" link="../../../CONCEPTS/what-are-channels/what-is-a-channel-alias"/>
 
 ### **Step** 5️⃣ - Do Transactions
 
@@ -81,14 +79,12 @@ You will need to do two transactions (and optionally the third one if you are cr
 2. **Channel Creation on EPNSCore ->** Once approved, the 2nd transaction calls the channel creation function on EPNSCore smart contract to create the channel.
 
 ![Confirm Transaction](../../../../static/img/assets/confirm-transaction.png)
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2022-09-05 at 2.27.04 AM.png" alt=""><figcaption></figcaption></figure> -->
 
 ### **Step** 6️⃣ - Verify Channel on another Blockchain
 
 If you have created a multichain channel then you need to switch to that blockchain network and do another tx that verifies your channel on that network.
 
 ![Verify Channel](../../../../static/img/assets/verify-channel.png)
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2022-09-05 at 2.33.17 AM.png" alt=""><figcaption></figcaption></figure> -->
 
 :::tip
 Congratulations 🎉 Your channel should now be successfully created. YES, it's this much easy..!
@@ -97,7 +93,6 @@ Congratulations 🎉 Your channel should now be successfully created. YES, it's 
 ## Know your Channel
 
 ![Know the Channel](../../../../static/img/assets/know-your-channel.png)
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2022-09-05 at 2.44.05 AM.png" alt=""><figcaption><p>Channel Dashboard</p></figcaption></figure> -->
 
 After successful channel creation, the EPNS dApp will start showing the Channel's Profile Page. There are a few details about this page listed below for your reference;
 

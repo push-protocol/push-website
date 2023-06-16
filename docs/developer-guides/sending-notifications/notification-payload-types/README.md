@@ -4,25 +4,22 @@ description: >-
   carry
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Notification Standard
 
-Considering the fact that notifications have been so imperative as well as customizable in web2, we definitely need to ensure that the same experience carries forward in web3 and therefore we have divided notifications into two parts - _**Basic** and **Advanced**._ \
+Considering the fact that notifications have been so imperative as well as customizable in web2, we definitely need to ensure that the same experience carries forward in web3 and therefore we have divided notifications into two parts - _**Basic** and **Advanced**._
 
 
 :::info
-**The notification standard (Basic)** covers all the requirements you need to know to start sending notifications.\
-\
+**The notification standard (Basic)** covers all the requirements you need to know to start sending notifications.
+
 **Notification standard (Advanced)** covers topics related to the composability of the Push notification protocol, how it works, how it can be expanded, etc
 :::
 
-{% content-ref url="notification-standard-basics.md" %}
-[notification-standard-basics.md](notification-standard-basics.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Notification Standard Basics" link="./notification-standard-basics"/>
 
-{% content-ref url="notification-standard-advanced/" %}
-[notification-standard-advanced](notification-standard-advanced/)
-{% endcontent-ref %}
-
+<CustomLinkCard text="Notification Standard Advanced" link="./notification-standard-advanced"/>
 
 
 Every notification starts its journey as a payload. Internally, the notifications are divided into four composable blocks:
