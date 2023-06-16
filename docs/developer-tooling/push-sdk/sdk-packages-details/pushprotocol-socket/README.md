@@ -4,15 +4,16 @@ description: >-
   Socket.IO
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # @pushprotocol/socket
 
 :::info
 Push for hackers repo contains all code coverage and examples of @pushprotocol/restapi and @pushprotocol/socket [👇](https://emojipedia.org/emoji/%F0%9F%91%87/)
 :::
 
-{% embed url="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality" %}
-Push for Hackers repo containing code coverage for all sdk functionality with examples
-{% endembed %}
+<CustomLinkCard text="Push for Hackers repo containing code coverage for all sdk functionality with examples" link="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality"/>
 
 ## Introduction
 
@@ -67,28 +68,34 @@ For Goerli and Mumbai testnets, the namespace is `eip155` and the chain\_id is `
 :::
 
 :::info
-**Push Chat:**\
-****\
-****For Push Chat related APIs, the address is in the format:&#x20;
+**Push Chat:**
 
-**eip155:\< address >** instead of **eip155:\<chain\_id>:\< address >**
+For Push Chat related APIs, the address is in the format:&#x20;
+
+**eip155:< address >** instead of **eip155:<chain_id>:< address >**
 :::
 
 ### Installation
 
-{% tabs %}
-{% tab title="npm" %}
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+
 ```bash
 npm install @pushprotocol/socket ethers
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="yarn">
 
-{% tab title="yarn" %}
 ```bash
 yarn add @pushprotocol/socket ethers
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 Import in your file
 
@@ -132,7 +139,7 @@ const pushSDKSocket = createSocketConnection({
 :::caution
 **`autoConnect`**: Generally, if we don't pass `autoConnect: false`, then the socket connection is automatic once the object is created.
 
-Since we may or may not have the account address handy and wish to start the connection during instantiation, this option makes it easier for us to choose when we want to`connect` or not.
+Since we may or may not have the account address handy and wish to start the connection during instantiation, this option makes it easier for us to choose when we want to `connect` or not.
 :::
 
 ### Subscribing to Socket Events

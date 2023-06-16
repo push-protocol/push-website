@@ -4,6 +4,8 @@ description: >-
   rocket in your journey to create web3 communications!
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Showrunners Framework
 
 The showrunners framework is a scaffold that developers can use to build out notifications for their use cases.&#x20;
@@ -14,18 +16,11 @@ Out-of-the-box showrunners provide the developer with a scheduling engine and li
 
 ### Setting-up showrunners for your own Channel
 
-{% content-ref url="how-to-setup-showrunners.md" %}
-[how-to-setup-showrunners.md](how-to-setup-showrunners.md)
-{% endcontent-ref %}
+<CustomLinkCard text="How to Setup Showrunners" link="./how-to-setup-showrunners"/>
 
-{% content-ref url="hello-world-channel.md" %}
-[hello-world-channel.md](hello-world-channel.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Hello World Channel" link="./hello-world-channel"/>
 
-{% content-ref url="understanding-channel-structure-showrunners.md" %}
-[understanding-channel-structure-showrunners.md](understanding-channel-structure-showrunners.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Understanding Channel Structure - Showrunners" link="./understanding-channel-structure-showrunners"/>
 
-{% content-ref url="github-repositories.md" %}
-[github-repositories.md](github-repositories.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Github Repositories" link="./github-repositories"/>
+

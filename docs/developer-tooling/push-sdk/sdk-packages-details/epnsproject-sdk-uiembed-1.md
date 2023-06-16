@@ -2,20 +2,32 @@
 description: Package for React Native Views for React Native based mobile apps.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # @pushprotocol/reactnative
 
 ### Installation
 
-```
-  yarn add @pushprotocol/reactnative
-```
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
 
-or
-
+```bash
+npm install @pushprotocol/reactnative 
 ```
+</TabItem>
+<TabItem value="yarn">
 
-npm install @pushprotocol/reactnative  
+```bash
+ yarn add @pushprotocol/reactnative
 ```
+</TabItem>
+</Tabs>
 
 :::caution
 _**Important Note:**_

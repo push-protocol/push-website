@@ -32,7 +32,7 @@ Once you have created a channel on Push, you can send notifications to your subs
     defaultValue="frontend"
     values={[
         {label: 'When Using Frontend', value: 'frontend'},
-        {label: 'When Using Frontend', value: 'backend'},
+        {label: 'When Using Backend', value: 'backend'},
     ]}>
 <TabItem value="frontend">
 ```

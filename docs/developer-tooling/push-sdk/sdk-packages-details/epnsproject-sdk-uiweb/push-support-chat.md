@@ -2,45 +2,60 @@
 description: A React component for integrating Support Chat in DApps.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Push Support Chat
 
 ## Installation
 
-{% tabs %}
-{% tab title="npm" %}
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+
 ```bash
 npm install @pushprotocol/uiweb
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="yarn">
 
-{% tab title="yarn" %}
 ```bash
 yarn add @pushprotocol/uiweb
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 > _**Note:**_ `styled-components` is a `peerDependency`. Please install it in your dApp if you don't have it already!
 
 We'll need the `@pushprotocol/restapi` package as well.
 
-{% tabs %}
-{% tab title="npm" %}
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+
 ```bash
 npm install styled-components
 
 npm install @pushprotocol/restapi
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="yarn">
 
-{% tab title="yarn" %}
 ```bash
 yarn add styled-components
 
 yarn add @pushprotocol/restapi
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ## Support Chat component Usage
 

@@ -30,29 +30,29 @@ At the very least, two files are required to be inside your channel directory:
 * channel**Keys.json**
   * For example: **helloWorldKeys.json** | [demo file here](https://github.com/ethereum-push-notification-service/epns-showrunners-framework/blob/main/src/sample\_showrunners/helloWorld/helloWorldKeys.json)
   * This file contains all your private keys that you either belong to the channel you created or have authorized the wallets to send notification on your channel's behalf.
-  * This is a normal json file, sample below:\
-    \
-    `{` \
-    &#x20;   `"PRIVATE_KEY_NEW_STANDARD_1":` \
-    &#x20;   `{` \
-    &#x20;       `"PK": "YOUR_CHANNEL_PRIVATE_KEY_HERE",` \
-    &#x20;       `"CHAIN_ID": "CHAIN_ID_HERE"`\
-    &#x20;   `},` \
-    &#x20;   `"PRIVATE_KEY_NEW_STANDARD_2":` \
-    &#x20;   `{` \
-    &#x20;       `"PK": "YOUR_CHANNEL_DELEGATE_1_PRIVATE_KEY_HERE",` \
-    &#x20;       `"CHAIN_ID": "CHAIN_ID_HERE"`\
-    &#x20;   `},` \
-    &#x20;   `"PRIVATE_KEY_NEW_STANDARD_3":` \
-    &#x20;   `{` \
-    &#x20;       `"PK": "YOUR_CHANNEL_DELEGATE_2_PRIVATE_KEY_HERE",` \
-    &#x20;       `"CHAIN_ID": "CHAIN_ID_HERE"`\
-    &#x20;   `},` \
+  * This is a normal json file, sample below:  
+    
+    `{` <br/>
+    &#x20;   &emsp;&emsp;`"PRIVATE_KEY_NEW_STANDARD_1":` <br/>
+    &#x20;   &emsp;&emsp;`{` <br/>
+    &#x20;       &emsp;&emsp;&emsp;&emsp; `"PK": "YOUR_CHANNEL_PRIVATE_KEY_HERE",` <br/>
+    &#x20;       &emsp;&emsp;&emsp;&emsp;`"CHAIN_ID": "CHAIN_ID_HERE"`<br/>
+    &#x20;   &emsp;&emsp;`},` <br/>
+    &#x20;   &emsp;&emsp;`"PRIVATE_KEY_NEW_STANDARD_2":` <br/>
+    &#x20;   &emsp;&emsp;`{` <br/>
+    &#x20;       &emsp;&emsp;&emsp;&emsp;`"PK": "YOUR_CHANNEL_DELEGATE_1_PRIVATE_KEY_HERE",` <br/>
+    &#x20;       &emsp;&emsp;&emsp;&emsp;`"CHAIN_ID": "CHAIN_ID_HERE"`<br/>
+    &#x20;   &emsp;&emsp;`},` <br/>
+    &#x20;   &emsp;&emsp;`"PRIVATE_KEY_NEW_STANDARD_3":` <br/>
+    &#x20;   &emsp;&emsp;`{` <br/>
+    &#x20;       &emsp;&emsp;&emsp;&emsp;`"PK": "YOUR_CHANNEL_DELEGATE_2_PRIVATE_KEY_HERE",`<br/> 
+    &#x20;       &emsp;&emsp;&emsp;&emsp;`"CHAIN_ID": "CHAIN_ID_HERE"`<br/>
+    &#x20;   &emsp;&emsp;`},` <br/>
     `}`
 
 :::info
-Only one private key is required and your channel delegate key also works. Some devs prefer to not expose their channel creator key even when it's used on your server or local backend to sign the notification payload. \
-\
+Only one private key is required and your channel delegate key also works. Some devs prefer to not expose their channel creator key even when it's used on your server or local backend to sign the notification payload. 
+
 It's also useful when you create a channel from a smart contract or a multisig / multisafe.
 :::
 

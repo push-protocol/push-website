@@ -1,3 +1,7 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Group Chat
 
 ## **About Group Chat**
@@ -21,8 +25,16 @@ Each group has a chat id associated with them. The chat id is used to do modific
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
 
-{% tabs %}
-{% tab title="When using Frontend" %}
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Backend', value: 'backend'},
+    ]}>
+<TabItem value="frontend">
+```
+
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -32,17 +44,23 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ## **To create a group**
 
@@ -87,9 +105,7 @@ const response = await PushAPI.chat.createGroup({
 | pgpPrivateKey      | string  | null    | mandatory for users having pgp keys                            |
 | env                | string  | 'prod'  | API env - 'prod' or 'staging'                                  |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-create-a-group" %}
-To create a group
-{% endembed %}
+<CustomLinkCard text="To Create a Group" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-create-a-group"/>
 
 ## **To update group details**
 
@@ -135,9 +151,7 @@ const response = await PushAPI.chat.updateGroup({
 | pgpPrivateKey      | string | null    | mandatory for users having pgp keys                            |
 | env                | string | 'prod'  | API env - 'prod' or 'staging'                                  |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-update-group-details" %}
-To update the group
-{% endembed %}
+<CustomLinkCard text="To Update the Group" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-update-group-details"/>
 
 ## **To get group details by group name**
 
@@ -156,9 +170,7 @@ const response = await PushAPI.chat.getGroupByName({
 | groupName\* | string | -       | name of the group             |
 | env         | string | 'prod'  | API env - 'prod' or 'staging' |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-get-group-details-by-group-name" %}
-Get group details by group name
-{% endembed %}
+<CustomLinkCard text="Get Group Details by Group Name" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-get-group-details-by-group-name"/>
 
 ## **To get group details by chatId**
 
@@ -177,6 +189,4 @@ const response = await PushAPI.chat.getGroup({
 | chatId\* | string | -       | group chat id                 |
 | env      | string | 'prod'  | API env - 'prod' or 'staging' |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-get-group-details-by-chatid" %}
-Get group details by chat id
-{% endembed %}
+<CustomLinkCard text="Get Goup Details by Chat Id" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-get-group-details-by-chatid"/>

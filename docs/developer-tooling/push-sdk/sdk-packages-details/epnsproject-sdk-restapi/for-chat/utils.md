@@ -2,6 +2,8 @@
 description: Helper functions
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Chat Helper Utils
 
 ## **Decrypting messages**
@@ -55,6 +57,4 @@ const decryptedChat = await PushAPI.chat.decryptConversation({
 | connectedUser\* | IUser  | `false`  | user meta data object                                    |
 | pgpPrivateKey   | string | `null`   | mandatory for users having pgp keys                      |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#decrypting-messages" %}
-Decrypt chat messages
-{% endembed %}
+<CustomLinkCard text="Decrypt Chat Messages" link="https://www.npmjs.com/package/@pushprotocol/restapi#decrypting-messages"/>

@@ -2,39 +2,54 @@
 description: Package for React based UI web components to be used by dApp.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # @pushprotocol/uiweb
 
 ## Installation
 
-{% tabs %}
-{% tab title="npm" %}
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+
 ```bash
 npm install @pushprotocol/uiweb
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="yarn">
 
-{% tab title="yarn" %}
 ```bash
 yarn add @pushprotocol/uiweb
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 > _**Note:**_ `styled-components` is a `peerDependency`. Please install it in your dApp if you don't have it already!
 
-{% tabs %}
-{% tab title="npm" %}
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+
 ```bash
 npm install styled-components
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="yarn">
 
-{% tab title="yarn" %}
 ```bash
 yarn add styled-components
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
 ### Notification Item Component
 
@@ -143,7 +158,7 @@ const subscribeFn = async () => {
 }
 ```
 
-We can use this [epnsproject-sdk-restapi](../epnsproject-sdk-restapi/ "mention") method to do that - [subscribe](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-in-to-a-channel)
+We can use this [@pushprotocol/restapi](../epnsproject-sdk-restapi/ "mention") method to do that - [subscribe](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-in-to-a-channel)
 
 ```typescript
 const isSubscribedFn = async () => {
@@ -152,7 +167,7 @@ const isSubscribedFn = async () => {
 }
 ```
 
-We can use this [epnsproject-sdk-restapi](../epnsproject-sdk-restapi/ "mention") method to find out that - [getSubscriptions](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-subscriptions), where
+We can use this [@pushprotocol/restapi](../epnsproject-sdk-restapi/ "mention") method to find out that - [getSubscriptions](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-subscriptions), where
 
 | Prop              | Type    | Remarks                                                                                                                                                                                |
 | ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
