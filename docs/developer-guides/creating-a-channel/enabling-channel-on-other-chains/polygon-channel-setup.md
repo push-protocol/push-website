@@ -4,6 +4,8 @@ description: >-
   chain
 ---
 
+import ReactPlayer from 'react-player'
+
 # Polygon (Channel Setup)
 
 ## Setting Up Channel Alias for Polygon
@@ -11,7 +13,7 @@ description: >-
 :::info
 **Important Note:** This part of the guide assumes that you have successfully created a channel and passed the correct Polygon address as the alias address during the channel creation process.
 
-If you haven't set up your channel yet, please read the [..](../ "mention") section and create your channel with the right alias address.
+If you haven't set up your channel yet, please read the [Creating a Channel](../../creating-a-channel/ "mention") section and create your channel with the right alias address.
 :::
 
 Now that you have the channel created successfully on the Ethereum chain, and you have passed your preferred alias address for the Polygon chain, let's quickly understand how you can verify your alias address.&#x20;
@@ -47,10 +49,11 @@ You shall now be able to access your channel profile page and be able to send no
 
 #### **Video Guide for Alias Verification on Polygon Chain**
 
-<!-- [![Enable Notification on other chains](../../../../static/img/assets/image-5.png)](https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041) -->
-
-![Notification](https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041)
-
-{% embed url="https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041" %}
+<!-- {% embed url="https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041" %}
 Demo Guide to Alias Verification
-{% endembed %}
+{% endembed %} -->
+<!-- [![Enable Notification on other chains](../../../../static/img/assets/browser-extension.png)](https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041) -->
+
+<ReactPlayer controls width="100%" url='https://www.loom.com/share/43c6b7d000b64dbbba2cd7a0165c5041' />
+
+
