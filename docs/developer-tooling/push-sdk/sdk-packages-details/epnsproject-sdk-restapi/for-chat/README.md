@@ -1,35 +1,26 @@
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # For Chat
-<!-- 
-<figure><img src="../../../../../.gitbook/assets/pushchatsnippet.png" alt=""><figcaption></figcaption></figure> -->
+
+![Push Chat Snippet](../../../../../../static/img/assets/pushchatsnippet.png)
 
 This section of SDK contains all things required for you to start implementing chat on your dApp or your wallet.
 
 :::info
-Do checkout socket SDK to enable active fetching of messages and more 👉 [pushprotocol-socket](../../pushprotocol-socket/ "mention")
+Do checkout socket SDK to enable active fetching of messages and more 👉 [@pushprotocol/socket](../../pushprotocol-socket/ "mention")
 :::
 
-{% embed url="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality" %}
-Push for Hackers repo containing code coverage for all sdk functionality with examples
-{% endembed %}
+
+<CustomLinkCard text="Push for Hackers repo containing code coverage for all sdk functionality with examples" link="https://github.com/ethereum-push-notification-service/push-for-hackers/tree/main/sdk-functionality"/>
 
 ## Chat SDK Features
 
-{% content-ref url="initializing-user.md" %}
-[initializing-user.md](initializing-user.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Initializing User" link="./initializing-user"/>
 
-{% content-ref url="fetching-chats.md" %}
-[fetching-chats.md](fetching-chats.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Fetching Chats" link="./fetching-chats"/>
 
-{% content-ref url="sending-chat.md" %}
-[sending-chat.md](sending-chat.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Sending Chat" link="./sending-chat"/>
 
-{% content-ref url="group-chat.md" %}
-[group-chat.md](group-chat.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Group Chat" link="./group-chat"/>
 
-{% content-ref url="utils.md" %}
-[utils.md](utils.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Chat Helper Utils" link="./utils"/>

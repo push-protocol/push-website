@@ -2,6 +2,8 @@
 description: Imperative details about verification proof parameter in notification payload
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Notification Verification Proof
 
 Verification Proof is the outermost composable block that is sent along with the notification to help the network validate _the notification sender, the chain from which the notification is sent, and the content of the notification along with any other validation that might be required_.
@@ -27,19 +29,18 @@ Verification proofs differ based on the platform from which they are sent. For i
 2. **`eip712v1`** - This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature.&#x20;
 
 :::caution
-**Note**: _eip-712v1 has a limitation to support only completed old payloads which include all the parameters of the payload which are part of notification, data, and recipients._ \
-__\
-_As identity formats like 0,1 and 3 have single string payload, only identity 2 is compatible with eip-712v1._ \
+**Note**: _eip-712v1 has a limitation to support only completed old payloads which include all the parameters of the payload which are part of notification, data, and recipients._
+
+_As identity formats like 0,1 and 3 have single string payload, only identity 2 is compatible with eip-712v1._
+
 _To overcome this limitation eip-712v2 is identity-independent._
 :::
 
-`3.`` `**`eip712v2`** - eip712v2:\< Proof >, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
+3. **`eip712v2`** - eip712v2:\< Proof >, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
 
-`4.`` `**`thegraph`** - Notification can be triggered through a subgraph as well as mentioned in the subgraph section. 👇
+4. **`thegraph`** - Notification can be triggered through a subgraph as well as mentioned in the subgraph section. 👇
 
-{% content-ref url="../../using-subgraph-gasless.md" %}
-[using-subgraph-gasless.md](../../using-subgraph-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Using Subgraph (Gasless)" link="../../using-subgraph-gasless"/>
 
 &#x20;They need to call the `addSubgraph` function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
 

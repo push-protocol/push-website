@@ -2,24 +2,16 @@
 description: Brief glance at the Push Smart Contracts
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Push Smart Contracts
 
-{% content-ref url="../epns-smart-contracts/core-and-communicator-smart-contracts.md" %}
-[core-and-communicator-smart-contracts.md](../epns-smart-contracts/core-and-communicator-smart-contracts.md)
-{% endcontent-ref %}
+<!-- <CustomLinkCard text="Core and Communicator Smart Contracts" link="../push-smart-contracts/core-and-communicator-smart-contracts"/> -->
 
-{% content-ref url="../epns-smart-contracts/epns-core-contract/" %}
-[epns-core-contract](../epns-smart-contracts/epns-core-contract/)
-{% endcontent-ref %}
+<CustomLinkCard text="Push Core Contracts" link="./epns-core-contract"/>
 
-{% content-ref url="../epns-smart-contracts/epns-communicator-protocol/" %}
-[epns-communicator-protocol](../epns-smart-contracts/epns-communicator-protocol/)
-{% endcontent-ref %}
+<CustomLinkCard text="Push Communicator Protocol" link="./epns-communicator-protocol"/>
 
-{% content-ref url="epns-contract-addresses.md" %}
-[epns-contract-addresses.md](epns-contract-addresses.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Push Contract Addresses" link="./epns-contract-addresses"/>
 
-{% content-ref url="security-audits.md" %}
-[security-audits.md](security-audits.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Security Audits" link="./security-audits"/>

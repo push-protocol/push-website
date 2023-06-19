@@ -1,10 +1,11 @@
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Fetching Chats
 
 ## **Fetching list of user chats**
 
 A user generally will have multiple chats associated with them (ie: them talking to multiple wallets). Use the following function to get information about all the chats that they are a part of.
 
-{% code overflow="wrap" %}
 ```typescript
 // pre-requisite API calls that should be made before
 // need to get user and through it, the encryptedPvtKey of the user
@@ -27,7 +28,6 @@ const response = await PushAPI.chat.chats({
   env: ENV.STAGING,
 })
 ```
-{% endcode %}
 
 #### Allowed Options (params with \* are mandatory)
 
@@ -38,9 +38,7 @@ const response = await PushAPI.chat.chats({
 | pgpPrivateKey | string  | null    | mandatory for users having pgp keys                                    |
 | env           | string  | 'prod'  | API env - 'prod' or 'staging'                                          |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-list-of-user-chats" %}
-Fetching list of chats of a user
-{% endembed %}
+<CustomLinkCard text="Fetching List of Chats of a User" link="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-list-of-user-chats"/>
 
 ### Response
 
@@ -183,7 +181,6 @@ export interface GroupDTO {
 
 Until the user approves a chat, it shows up in their chat requests folder. Use this function to retrieve the list of user chat requests.
 
-{% code overflow="wrap" %}
 ```typescript
 // pre-requisite API calls that should be made before
 // need to get user and through it, the encryptedPvtKey of the user
@@ -206,7 +203,6 @@ const response = await PushAPI.chat.requests({
   env: ENV.STAGING,
 })
 ```
-{% endcode %}
 
 #### Allowed Options (params with \* are mandatory)
 
@@ -217,9 +213,7 @@ const response = await PushAPI.chat.requests({
 | pgpPrivateKey | string  | null    | mandatory for users having pgp keys                                    |
 | env           | string  | 'prod'  | API env - 'prod' or 'staging'                                          |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-list-of-user-chat-requests" %}
-To fetch chat requests of the user
-{% endembed %}
+<CustomLinkCard text="To Fetch Chat Requests of the User" link="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-list-of-user-chat-requests"/>
 
 ## **Fetching conversation hash between two users (or group)**
 
@@ -241,9 +235,7 @@ const conversationHash = await PushAPI.chat.conversationHash({
 | conversationId\* | string | -       | receiver's address (partial CAIP) or chatId of a group |
 | env              | string | 'prod'  | API env - 'prod' or 'staging'                          |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-conversation-hash-between-two-users" %}
-To fetch a conversation hash between two users / group
-{% endembed %}
+<CustomLinkCard text="To Fetch a Conversation Hash Between Two Users / Group" link="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-conversation-hash-between-two-users"/>
 
 ## **Fetching latest chat between two users (or group)**
 
@@ -287,9 +279,7 @@ const chatHistory = await PushAPI.chat.latest({
 | pgpPrivateKey | string  | null    | mandatory for users having pgp keys                                    |
 | env           | string  | 'prod'  | API env - 'prod' or 'staging'                                          |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-latest-chat-between-two-users" %}
-Fetching latest chat betweek users / group
-{% endembed %}
+<CustomLinkCard text="Fetching Latest Chat Between Users / Group" link="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-latest-chat-between-two-users"/>
 
 ## **Fetching chat history between two users (or group)**
 
@@ -337,6 +327,4 @@ const chatHistory = await PushAPI.chat.history({
 | pgpPrivateKey | string  | null    | mandatory for users having pgp keys                                    |
 | env           | string  | 'prod'  | API env - 'prod', 'staging', 'dev'                                     |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-chat-history-between-two-users" %}
-Fetching chat history between two users / group
-{% endembed %}
+<CustomLinkCard text="Fetching Chat History Between Two Users / Group" link="https://www.npmjs.com/package/@pushprotocol/restapi#fetching-chat-history-between-two-users"/>

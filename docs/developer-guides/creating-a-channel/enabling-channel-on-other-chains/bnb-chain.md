@@ -34,7 +34,7 @@ Verification of alias address must happen on the selected chain (_in this case,_
 
 Once you initiate the channel creation procedure for your channel on Ethereum with the right BNB alias address, you will arrive at the page as can be seen below.
 
-<!-- <figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Channel Creation at Alias Network Setup pending</p></figcaption></figure> -->
+![Channel Creation at Alias Network Setup pending](../../../../static//img//assets/image-4-1.png)
 
 As can be seen below the Channel's name, the **Alias Network Setup is Pending.**&#x20;
 
@@ -47,7 +47,7 @@ Once you have switched your network to BNB chain, follow the steps mentioned bel
 1. Log into the Dapp with the same address provided as the **Alias Address** during channel creation.
 2. Go to the **Create Channel** menu in the sidebar. As your channel is not yet verified on BNB chain, you might see a page like the one attached below 👇.
 
-<!-- <figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure> -->
+![Verify Alias Address](../../../../static//img//assets/image-3.png)
 
 3. Click the **Verify Alias Address** button.
 4. Approve the transaction required for Alias Verification, on the BNB chain.

@@ -6,6 +6,7 @@ title: ⭐ Getting Started
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
 # ⭐ Getting Started
 
@@ -42,19 +43,31 @@ Being an open communication middleware, notifications can be integrated and show
 
 <Tabs>
   <TabItem value="Channels" label="Channels" default>
-    [create-your-notif-channel](concepts/create-your-notif-channel/)
-    [create-your-notif-channel](developer-guides/create-your-notif-channel/)
+    🖥 Learn everything about channels, their working mechanisms, and how to create one
+    <CustomLinkCard text='What are Channels' link='./CONCEPTS/what-are-channels/' />
+    <CustomLinkCard text='Creating a Channel' link='./developer-guides/creating-a-channel/' />
   </TabItem>
   <TabItem value="Notifications" label="Notifications">
-    
+    🔔 Explore all about notifications, their types, the different ways of sending and receiving notifications as well as other imperative details.
+    <CustomLinkCard text='Push Notification for Web3' link='./CONCEPTS/push-notifications-for-web3/' />
+    <CustomLinkCard text='Sending Notifications' link='./developer-guides/sending-notifications/' />
+    <CustomLinkCard text='Receiving Notifications' link='./developer-guides/receiving-notifications/' />
+    <CustomLinkCard text='Notification Standard' link='./developer-guides/sending-notifications/notification-payload-types/' />
   </TabItem>
   <TabItem value="SDK" label="SDK">
-    This is a bna 🍌
+    ⚙ Understand the key features of EPNS SDK and how to use it in your own project easily.
+    <CustomLinkCard text='Push SDK' link='./developer-tooling/push-sdk/' />
+    <CustomLinkCard text='Push SDK Starter Kit' link='./developer-tooling/push-sdk/epns-sdk-starter-kit' />
   </TabItem>
   <TabItem value="Push Chat" label="Push Chat">
-    This is a banana 🍌
+    📝 Learn about the details of Push Chat and how to easily integrate it.
+    <CustomLinkCard text='Push Chat for Web3' link='./CONCEPTS/push-chat-for-web3/' />
+    <CustomLinkCard text='Integrating Push Chat' link='./developer-guides/integrating-push-chat/' />
+    <CustomLinkCard text='Push Support Chat' link='./developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb/push-support-chat/' />
   </TabItem>
   <TabItem value="Showrunners" label="Showrunners">
-    This is a banana
+    🛠 Learn about the showrunners framework and how to use it to build out notifications for your specific use cases.
+    <CustomLinkCard text='Showrunners Framework' link='./developer-tooling/showrunners-framework/' />
+    <CustomLinkCard text='Using Showrunners (Scaffold/Gasless)' link='./developer-guides/sending-notifications/using-showrunners-scaffold-gasless/' />
   </TabItem>
 </Tabs>

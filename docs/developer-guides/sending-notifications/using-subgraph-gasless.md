@@ -4,6 +4,9 @@ description: >-
   send notifications from a Subgraph using Push.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Using Subgraph (Gasless)
 
 ## Introduction: The Graph Protocol **&** Subgraphs
@@ -32,7 +35,7 @@ Push protocol has developed an in-house `Helper Function` specifically for The G
 
 Push Nodes can, later on, fetch the notifications defined on a Subgraph and push them accordingly to Subscribers of the Channel.
 
-<!-- <figure><img src="../../.gitbook/assets/graph_diagram.png" alt=""><figcaption><p>Flow diagram of how notifications are sent </p></figcaption></figure> -->
+![Flow diagram of how notifications are sent](../../../static/img/assets/graph_diagram.png)
 
 ## Push X Graph Integration through an Example
 
@@ -45,19 +48,33 @@ Integrate Push Protocol with an ERC-20 contract's subgraph **to send out notific
 1. Have a Push Notification Channel ready - see the docs [here](https://docs.epns.io/developers/developer-zone/create-your-notif-channel) to create a channel
 2. Install the **graph CLI**
 
-{% tabs %}
-{% tab title="npm" %}
+```mdx-code-block
+<Tabs
+    defaultValue="npm"
+    values={[
+        {label: 'npm', value: 'npm'},
+        {label: 'yarn', value: 'yarn'},
+    ]}>
+<TabItem value="npm">
+```
+
 ```bash
 npm install -g @graphprotocol/graph-cli
 ```
-{% endtab %}
 
-{% tab title="yarn" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
+
 ```bash
 yarn global add @graphprotocol/graph-cli
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 3\. Link your Github to The Graph's hosted service -[https://thegraph.com/hosted-service/](https://thegraph.com/hosted-service/)
 
@@ -175,39 +192,33 @@ _Note: Make sure the above step is complete, as Subgraph ID will be imported in 
 Follow steps 5, 6 and 7 within the respective handler functions from which the notification needs to be sent👇🏼
 :::
 
-5.  **Define Notification Payload Items:** In the event handler mapping from which you need to send the notification, define the notification payload items such as recipient of the notification, type, title, message, etc. These variables will be further used to define the notification variable.\
-    \
-    It’s highly recommended to take a look at [this documentation](https://docs.epns.io/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.\
+5.  **Define Notification Payload Items:** In the event handler mapping from which you need to send the notification, define the notification payload items such as recipient of the notification, type, title, message, etc. These variables will be further used to define the notification variable.
+    
+It’s highly recommended to take a look at [this documentation](https://docs.epns.io/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.
 
+For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.
 
-    For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.\
+```typescript
+    let recipient = event.params.to.toHexString(),
+    type = "3",
+    title = "PUSH Received",
+    body = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
+    subject = "PUSH Received",
+    message = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
+    image = "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
+    secret = "null",
+    cta = "https://epns.io/"
 
+```
+6.  **Define Notification:**
+    The `notification` variable is defined in the given below format 👇🏼
+    
+    **Format : `{"field1" : "value1", "field2" : "value2" }`**
 
-    ```typescript
-      let recipient = event.params.to.toHexString(),
-      type = "3",
-      title = "PUSH Received",
-      body = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
-      subject = "PUSH Received",
-      message = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
-      image = "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
-      secret = "null",
-      cta = "https://epns.io/"
-
-    ```
-6.  **Define Notification**\
-    ****The `notification` variable is defined in the given below format 👇🏼\
-    \
-    **Format : `{"field1" : "value1", "field2" : "value2" }`**\
-    **``**
-
-    {% code overflow="wrap" %}
     ```typescript
     let notification = `{\"type\": \"${type}\", \"title\": \"${title}\", \"body\": \"${body}\", \"subject\": \"${subject}\", \"message\": \"${message}\", \"image\": \"${image}\", \"secret\": \"${secret}\", \"cta\": \"${cta}\"}`
     ```
-    {% endcode %}
-7.  **Call the Push Helper Function:** Once the above steps are complete, we need to invoke the Push helper function and send the response. To call the Push Notification helper function, use the below script;\
-
+7.  **Call the Push Helper Function:** Once the above steps are complete, we need to invoke the Push helper  function and send the response. To call the Push Notification helper function, use the below script;
 
     ```typescript
     sendPushNotification (recipient, notification)
@@ -270,11 +281,10 @@ Poll Interval (in seconds) defines the time period at which Push Nodes shall pin
 
 <div>
 
-<!-- <figure><img src="../../.gitbook/assets/subgraph1.png" alt=""><figcaption><p>Select <code>Add SubGraph Details</code> from the Channel Owner dashboard</p></figcaption></figure>
+![Add SubGraph Details](../../../static/img/assets/subgraph1.png)
 
  
-
-<figure><img src="../../.gitbook/assets/subgraph2.png" alt=""><figcaption><p>Add Subgraph details page in Developers section on the Push DApp</p></figcaption></figure> -->
+![Add Subgraph details page in Developers section on the Push DApp](../../../static/img/assets/subgraph2.png)
 
 </div>
 

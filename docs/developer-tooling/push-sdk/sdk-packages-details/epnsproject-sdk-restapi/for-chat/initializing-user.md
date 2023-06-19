@@ -2,14 +2,25 @@
 description: Before sending messages, first you have to create a User
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Initializing User
 
 ## Pre-requisite: Deriving the signer
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Backend', value: 'backend'},
+    ]}>
+<TabItem value="frontend">
+```
 
-{% tabs %}
-{% tab title="When using Frontend" %}
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -19,17 +30,23 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ## Create User
 
@@ -55,9 +72,7 @@ const user = await PushAPI.user.create({
 | additionalMeta | Additional information in case when necessary when creating a user. For NFT Chat, this field is necessary         |
 | progressHook   | Inform the developer about the status of creating user                                                            |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#create-user-for-chat" %}
-Create User Example
-{% endembed %}
+<CustomLinkCard text="Create User Example" link="https://www.npmjs.com/package/@pushprotocol/restapi#create-user-for-chat"/>
 
 ### Response
 
@@ -158,9 +173,7 @@ const user = await PushAPI.user.get({
 | account\* | string | -       | user account in `eip155:walletAddress` format or `nft:eip155:nftChainId:nftContractAddress:nftTokenId:RandomHash` |
 | env       | string | 'prod'  | API env - 'prod' or 'staging'                                                                                     |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#get-user-data-for-chat" %}
-Get User Example
-{% endembed %}
+<CustomLinkCard text="Get User Example" link="https://www.npmjs.com/package/@pushprotocol/restapi#get-user-data-for-chat"/>
 
 ### Response
 
@@ -276,7 +289,4 @@ const response = await PushAPI.chat.decryptPGPKey({
 | toUpgrade              | Whether or not to to upgrade pgp encryption scheme                                                                |
 | progressHook           | notify developer about status of updating pgp encryption scheme                                                   |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#decrypting-encrypted-pgp-private-key-from-user-data" %}
-Decrypt PGP Keys
-{% endembed %}
-
+<CustomLinkCard text="Decrypt PGP Keys" link="https://www.npmjs.com/package/@pushprotocol/restapi#decrypting-encrypted-pgp-private-key-from-user-data"/>

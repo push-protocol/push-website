@@ -13,8 +13,8 @@ This [starter-kit](https://github.com/ethereum-push-notification-service/epns-sd
 
 
 :::info
-**CRA-Typescript**\
-****_This particular kit is built out using CRA, Typescript. The SDK packages should also work out for React using plain JS._
+**CRA-Typescript**
+_This particular kit is built out using CRA, Typescript. The SDK packages should also work out for React using plain JS._
 :::
 
 ### Getting started
@@ -105,7 +105,7 @@ import * as PushAPI from "@pushprotocol/restapi";
 import { NotificationItem, chainNameType, SubscribedModal } from '@pushprotocol/uiweb';
 ```
 
-#### ****[**Fetching Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-notifications)****
+[**Fetching Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-notifications)
 
 ```typescript
 const notifications = await PushAPI.user.getFeeds({
@@ -114,7 +114,7 @@ const notifications = await PushAPI.user.getFeeds({
 });
 ```
 
-#### ****[**Displaying Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/uiweb#notification-item-component)****
+[**Displaying Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/uiweb#notification-item-component)
 
 ```typescript
 {notifications.map((oneNotification, i) => {
@@ -148,7 +148,7 @@ const notifications = await PushAPI.user.getFeeds({
 })}
 ```
 
-#### ****[**Fetching Spams**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-spam-notifications)****
+[**Fetching Spams**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-spam-notifications)
 
 ```typescript
 const spams = await PushAPI.user.getFeeds({
@@ -158,7 +158,7 @@ const spams = await PushAPI.user.getFeeds({
 });
 ```
 
-****[**Displaying Spams**](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/uiweb#notification-item-component)****
+[**Displaying Spams**](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/uiweb#notification-item-component)
 
 ```typescript
 {spams ? (
@@ -272,7 +272,7 @@ CHANNELS PAGE (`src/pages/channels/index.tsx`)
 import * as PushAPI from '@pushprotocol/restapi';
 ```
 
-****[**Fetch Channel Data**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-channel-details)****
+[**Fetch Channel Data**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-channel-details)
 
 ```typescript
 const channelData = await PushAPI.channels.getChannel({
@@ -281,7 +281,7 @@ const channelData = await PushAPI.channels.getChannel({
 });
 ```
 
-****[**Searching for channel(s)**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#searching-for-channels)****
+[**Searching for channel(s)**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#searching-for-channels)
 
 ```typescript
 const channelsData = await PushAPI.channels.search({
@@ -292,7 +292,7 @@ const channelsData = await PushAPI.channels.search({
 });
 ```
 
-****[**DEPRECATED-Fetch Channel Subscribers**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#deprecated)****
+[**DEPRECATED-Fetch Channel Subscribers**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#deprecated)
 
 ```typescript
 const subscribers = await PushAPI.channels._getSubscribers({
@@ -301,7 +301,7 @@ const subscribers = await PushAPI.channels._getSubscribers({
 });
 ```
 
-****[**Fetch User subscriptions**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-subscriptions)****
+[**Fetch User subscriptions**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-user-subscriptions)
 
 ```typescript
 const subscriptions = await PushAPI.user.getSubscriptions({
@@ -310,7 +310,7 @@ const subscriptions = await PushAPI.user.getSubscriptions({
 });
 ```
 
-****[**Opt-In to a channel**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-in-to-a-channel)****
+[**Opt-In to a channel**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-in-to-a-channel)
 
 ```typescript
 const _signer = library.getSigner(account); // from useWeb3()
@@ -331,7 +331,7 @@ await PushAPI.channels.subscribe({
 })
 ```
 
-****[**Opt-Out of a channel**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-out-to-a-channel)****
+[**Opt-Out of a channel**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#opt-out-to-a-channel)
 
 ```typescript
 const _signer = library.getSigner(account); // from useWeb3()
@@ -354,7 +354,7 @@ await PushAPI.channels.unsubscribe({
 
 PAYLOADS PAGE (`src/pages/payloads/index.tsx`)
 
-****[**Send Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#sending-notification)****
+[**Send Notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#sending-notification)
 
 **direct payload for single recipient(target)**
 
@@ -603,7 +603,7 @@ const apiResponse = await PushAPI.payloads.sendNotification({
 
 EMBED PAGE (`src/pages/embed/index.tsx`)
 
-****[**Embed - Sidebaar notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/uiembed/README.md#uiembed)****
+[**Embed - Sidebaar notifications**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/uiembed/README.md#uiembed)
 
 ```typescript
 import { useEffect, useContext } from 'react';

@@ -4,28 +4,20 @@ description: >-
   or smart contract by interacting with Push smart contracts
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Sending Notifications
 
 ## Different Ways to Send Notifications
 
 We have fortified a robust set of tools to start sending notifications. Whether it's our Frontend dApp, our SDK, or The Graph Protocol, we power it all.
 
-{% content-ref url="dapp-serverless-workflow.md" %}
-[dapp-serverless-workflow.md](dapp-serverless-workflow.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Push Dapp (Gasless)' link='./dapp-serverless-workflow'/>
 
-{% content-ref url="using-epns-sdk-gasless.md" %}
-[using-epns-sdk-gasless.md](using-epns-sdk-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Push SDK (Gasless)' link='./using-epns-sdk-gasless'/>
 
-{% content-ref url="using-showrunners-scaffold-gasless.md" %}
-[using-showrunners-scaffold-gasless.md](using-showrunners-scaffold-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Showrunners (Scaffold/Gasless)' link='./using-showrunners-scaffold-gasless'/>
 
-{% content-ref url="using-subgraph-gasless.md" %}
-[using-subgraph-gasless.md](using-subgraph-gasless.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Subgraph (Gasless)' link='./using-subgraph-gasless'/>
 
-{% content-ref url="using-smart-contract.md" %}
-[using-smart-contract.md](using-smart-contract.md)
-{% endcontent-ref %}
+<CustomLinkCard text='Using Smart Contract' link='./using-smart-contract'/>

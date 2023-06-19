@@ -1,11 +1,23 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Sending Chat
 
 ## Pre-requisite: Deriving the signer
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
 
-{% tabs %}
-{% tab title="When using Frontend" %}
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Backend', value: 'backend'},
+    ]}>
+<TabItem value="frontend">
+```
+
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -15,23 +27,27 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 
 ## **To send a message**
 
 Enables sending messages to a user or a group (via chat id).
 
-{% code overflow="wrap" %}
 ```javascript
 // pre-requisite API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
@@ -54,7 +70,6 @@ const response = await PushAPI.chat.send({
   pgpPrivateKey: pgpDecrpyptedPvtKey
 });
 ```
-{% endcode %}
 
 #### Allowed Options (params with \* are mandatory)
 
@@ -67,15 +82,12 @@ const response = await PushAPI.chat.send({
 | pgpPrivateKey     | string                               | null    | mandatory for users having pgp keys          |
 | env               | string                               | 'prod'  | API env - 'prod' or 'staging'                |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-send-a-message" %}
-To send message
-{% endembed %}
+<CustomLinkCard text="To Send Message" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-send-a-message"/>
 
 ## **To approve a chat request**
 
 Approves a chat request from a user or group (one-time process). Enables native web3 push notifications as soon as approval is done.
 
-{% code overflow="wrap" %}
 ```javascript
 const response = await PushAPI.chat.approve({
   status: 'Approved',
@@ -83,7 +95,6 @@ const response = await PushAPI.chat.approve({
   senderAddress : '0x873a538254f8162377296326BB3eDDbA7d00F8E9' // receiver's address or chatId of a group
 });
 ```
-{% endcode %}
 
 #### Allowed Options (params with \* are mandatory)
 
@@ -95,6 +106,4 @@ const response = await PushAPI.chat.approve({
 | pgpPrivateKey   | string     | null       | mandatory for users having pgp keys                                            |
 | env             | string     | 'prod'     | API env - 'prod' or 'staging'                                                  |
 
-{% embed url="https://www.npmjs.com/package/@pushprotocol/restapi#to-approve-a-chat-request" %}
-To approve a chat request
-{% endembed %}
+<CustomLinkCard text="To Approve a Chat Request" link="https://www.npmjs.com/package/@pushprotocol/restapi#to-approve-a-chat-request"/>

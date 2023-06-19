@@ -29,11 +29,11 @@ Imagine if you are the owner of a dApp-based channel on Push , and you pushed ou
 
 In order to do that, select **Broadcast** from the dropdown list under **Send Notifications.** You will see new input fields, something like the below picture. For your reference, we have filled the input fields with some dummy messages. You can fill in details according to your needs.
 
-<!-- ![](<../../.gitbook/assets/Screenshot 2022-07-12 at 1.41.47 PM.png>) -->
+![BroadCast Notification](../../../static/img/assets/broadcast-notification.png)
 
 You can also see the real-time **Notification Preview** and check out how the Notification would appear once delivered to your subscribers.
 
-<!-- ![](<../../.gitbook/assets/Screenshot 2022-07-12 at 1.42.58 PM.png>) -->
+![Notification Preview](../../../static/img/assets/notification-preview.png)
 
 Hit the **Send Notification** button and it will initiate a gasless transaction on Goerli Network. Click on **Sign**, and the notification will be sent. Subscribers can see the notification appear in their Inboxes.
 
@@ -47,7 +47,7 @@ Select **Subset** from the dropdown list under **Send Notifications.** You will 
 
 For your reference, I have populated the fields with some data which you can see in the below image 👇🏼 (wallets can be added by pressing the enter key or comma-separated addresses)
 
-<!-- ![](<../../.gitbook/assets/Screenshot 2022-07-12 at 1.51.52 PM.png>) -->
+![Subset Notification](../../../static/img/assets/subset-notification.png)
 
 Click on the **Send Notification** button and it’ll initiate a gasless signing transaction. Upon successful delivery, your notification will be sent to your respective wallet addresses.
 
@@ -59,6 +59,6 @@ For many dapps and developers, this is **the most important type** which helps i
 
 To send **Targeted** notifications, simply click on the **Targeted** option under **Send Notification** panel. Fill in the contents and also **specify the wallet address** that you want to notify. Take a look at the below example;
 
-<!-- ![](<../../.gitbook/assets/Screenshot 2022-07-12 at 2.00.57 PM.png>) -->
+![Targeted Notification](../../../static/img/assets/targeted-notification.png)
 
 Hit on the **Send Notification** button, **Sign** the Payload, and your customized notification would be delivered to the specified wallet address.

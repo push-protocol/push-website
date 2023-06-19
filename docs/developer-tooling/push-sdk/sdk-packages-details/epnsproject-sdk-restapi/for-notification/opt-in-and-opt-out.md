@@ -2,6 +2,9 @@
 description: Opt-in to a channel to start receiving notifications
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Opt-In and Opt-Out
 
 :::danger
@@ -20,8 +23,16 @@ To see all the supported channels on Push, go to [Push Protocol dapp](https://ap
 
 ## Pre-requisite: Deriving the signer
 
-{% tabs %}
-{% tab title="When using Frontend" %}
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Backend', value:'backend'},
+    ]}>
+<TabItem value="frontend">
+```
+
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -31,17 +42,23 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 ## Opt-in to a Channel
 

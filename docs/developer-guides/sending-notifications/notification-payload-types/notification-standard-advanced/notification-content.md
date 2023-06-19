@@ -5,7 +5,7 @@
 Notification Feeds have the ability to display customized content. By adopting and standardizing the notification content markdown, it ensures that we can keep on advancing the ways notification are presented on the frontend / UI..
 
 :::info
-Notification Content Markdown only works for the payload that transforms inside the user feed. specifically for the title and body. If this sounds unfamiliar, please read [notification-standard-basics.md](../notification-standard-basics.md "mention")
+Notification Content Markdown only works for the payload that transforms inside the user feed. specifically for the title and body. If this sounds unfamiliar, please read [Notification Standard Basics](../notification-standard-basics.md "mention")
 :::
 
 ### Specifications
@@ -14,14 +14,14 @@ Notification Content Markdown only works for the payload that transforms inside 
 | ------------------ | -------------------------------------------------------------------------------------------------- | ---------------- | ----------------------------- |
 | \[b: textcontent]  | \*\***Bold**\*\*                                                                                   | For Emphasis     | For Bold                      |
 | \[i: textcontent]  | \*_Italic_\*                                                                                       | For Emphasis     | For Italics                   |
-| \[bi: textcontent] | \*\*\*Bold\&Italics\*\*\*                                                                          | For Emphasis     | For Bold and Italics          |
+| \[bi: textcontent] | \*\*\*Bold&Italics\*\*\*                                                                          | For Emphasis     | For Bold and Italics          |
 |                    |                                                                                                    | For Segregation  | For new line                  |
-| \[w: textcontent]  | \<PUSHText color="white">Hello World\</PUSHText>                                                   | For colored text | For white color               |
-|                    | \<PUSHText color="#ANYHEXCODE"> Hello world \</PUSHText>                                           | For colored text | Supports any color by hexcode |
-| \[d: textcontent]  | \<PUSHText color="primary">Hello World \</PUSHText>                                                | For colored text | Push Primary colored Text     |
-| \[s: textcontent]  | \<PUSHText color="secondary">Hello World \</PUSHText>                                              | For colored text | Push Secondary colored Text   |
-| \[t: textcontent]  | \<PUSHText color="tertiary">Hello World \</PUSHText>                                               | For colored text | Push Tetiary colored Text     |
-| \[u: textcontent]  | \<PUSHText color="green" link="[https://www.epns.io">](broken-reference) EPNS website \</PUSHText> | For URL’s        | Underlined, Red Colored Text  |
+| \[w: textcontent]  | `<PUSHText color="white">Hello World</PUSHText>`                                                  | For colored text | For white color               |
+|                    | `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                                           | For colored text | Supports any color by hexcode |
+| \[d: textcontent]  | `<PUSHText color="primary">Hello World </PUSHText>`                                                | For colored text | Push Primary colored Text     |
+| \[s: textcontent]  | `<PUSHText color="secondary">Hello World </PUSHText>`                                              | For colored text | Push Secondary colored Text   |
+| \[t: textcontent]  | `<PUSHText color="tertiary">Hello World </PUSHText>`                                               | For colored text | Push Tetiary colored Text     |
+| \[u: textcontent]  | `<PUSHText color="green" link="[https://www.epns.io">](broken-reference) EPNS website </PUSHText>` | For URL’s        | Underlined, Red Colored Text  |
 
 ### Reference Implementation -
 

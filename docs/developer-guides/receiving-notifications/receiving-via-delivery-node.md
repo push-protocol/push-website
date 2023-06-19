@@ -1,10 +1,12 @@
+import ReactPlayer from 'react-player'
+
 # Receiving via Delivery Node
 
 In simpler terms, Push Delivery Nodes is a Whitelabel solution to enable any app, either mobile, desktop, or extension, to allow Web3 push notifications to their app.&#x20;
 
 These are decentralized solutions to enable web3 to web2 bridging. They allow any platform (whether centralized or decentralized) to receive communication from **Push storage nodes**, i.e., the nodes validating and indexing all communications and tying them to your wallet address (and multi-chain identity).&#x20;
 
-{% embed url="https://www.youtube.com/watch?v=OlRHL3qd4oY" %}
+<ReactPlayer controls width="100%" url='https://www.youtube.com/watch?v=OlRHL3qd4oY' /><br/>
 
 :::info
 The Whitelabel solution of Push delivery nodes can be found at GitHub [here](https://github.com/ethereum-push-notification-service/push-delivery-node)
@@ -27,7 +29,6 @@ The Whitelabel solution of Push delivery nodes can be found at GitHub [here](htt
 
 ### Step 2: Environment Configuration
 
-\
 Refer env sample file. The MYSQL DB credentials and Redis URL needs to be updated. The remaining conf need not be edited as of now.&#x20;
 
 If you use docker-compose for the local setup MYSQL DB and Redis config can be left as it is.
@@ -48,7 +49,6 @@ DELIVERY_NODE_DB_PORT=3306
 
 ### Step-3.a Infra Setup: ( Local )
 
-\
 The docker-compose will bring up the MYSQL, Redis, and PHPMyAdmin containers for the Delivery Node.
 
 ```
@@ -76,7 +76,6 @@ npm install
 
 ### &#x20;Step-6 Start the Delivery node project
 
-\
 You should then be able to start the server using the following:
 
 ```
@@ -88,7 +87,7 @@ npm start
 
 * An endpoint is hosted as part of the Delivery Node Project, which can be used for Device Registration.
 * Below is the API to create a mapping between the wallet address and the device token for which the messages need to be delivered.
-* \<delivery\_node\_url> is the base URL of the Delivery node you have hosted.
+* <delivery\_node\_url> is the base URL of the Delivery node you have hosted.
 
 &#x20;  Below is the curl request of this endpoint
 

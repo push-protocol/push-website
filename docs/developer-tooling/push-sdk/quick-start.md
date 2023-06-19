@@ -26,7 +26,7 @@ npm install @pushprotocol/restapi ethers
 
 ## Fetch Notifications
 
-For this example, we will use the `getFeeds` function from the `restapi` **** package to fetch all the notifications from an address on a specific chain.
+For this example, we will use the `getFeeds` function from the `restapi` package to fetch all the notifications from an address on a specific chain.
 
 ```typescript
 import * as PushAPI from "@pushprotocol/restapi";
@@ -69,4 +69,4 @@ const fetchSpam = async() => {
 fetchSpam();
 ```
 
-Notice, how we simply need to add an additional argument, i.e., _**`spam: true`**_to get the spam notifications for the given address.
+Notice, how we simply need to add an additional argument, i.e., **_`spam: true`_**to get the spam notifications for the given address.

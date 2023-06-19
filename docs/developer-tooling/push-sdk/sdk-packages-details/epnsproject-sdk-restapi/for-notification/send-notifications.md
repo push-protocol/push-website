@@ -2,6 +2,9 @@
 description: Send gasless notifications to wallet addresses
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Send Notifications
 
 :::danger
@@ -22,10 +25,75 @@ Once you have created a channel on Push, you can send notifications to your subs
 
 ## **Sending Notification**
 
+```typescript
+async function sendNotification(options: {
+  senderType?: 0 | 1;
+  signer: any;
+  type: NOTIFICATION_TYPE;
+  identityType: IDENTITY_TYPE;
+  notification?: {
+    title: string;
+    body: string;
+  };
+  payload?: {
+    sectype?: string;
+    title: string;
+    body: string;
+    cta: string;
+    img: string;
+    metadata?: any;
+    additionalMeta?: any;
+  };
+  recipients?: string | string[]; // CAIP or plain ETH
+  channel: string; // CAIP or plain ETH
+  expiry?: number;
+  hidden?: boolean;
+  graph?: {
+    id: string;
+    counter: number;
+  };
+  ipfsHash?: string;
+  env?: ENV;
+  chatId?: string;
+  pgpPrivateKey?: string;
+})
+```
+
+#### Allowed Options (params with \* are mandatory)
+
+| Param                | Type                | Default | Remarks                                                                                                                                           |
+| -------------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| signer\*             | -                   | -       | Signer object                                                                                                                                     |
+| channel\*            | string              | -       | channel address (CAIP)                                                                                                                            |
+| type\*               | number              | -       | <p>Notification Type<br/>Target = 3 (send to 1 address),<br/>Subset = 4 (send to 1 or more addresses),<br/>Broadcast = 1 (send to all addresses)</p> |
+| identityType\*       | number              | -       | <p>Identity Type<br/>Minimal = 0,<br/>IPFS = 1,<br/>Direct Payload = 2,<br/>Subgraph = 3 }</p>                                                        |
+| recipients\*         | string or string\[] | -       | <p>for Notification Type = Target it is 1 address,<br/>for Notification Type = Subset, Broadcast it is an array of addresses (CAIP)</p>            |
+| notification.title\* | string              | -       | Push Notification Title (not required for identityType IPFS, Subgraph)                                                                            |
+| notification.body\*  | string              | -       | Push Notification Body(not required for identityType IPFS, Subgraph)                                                                              |
+| payload.title        | string              | -       | Notification Title(not required for identityType IPFS, Subgraph)                                                                                  |
+| payload.body         | string              | -       | Notification Body(not required for identityType IPFS, Subgraph)                                                                                   |
+| payload.cta          | string              | -       | Notification Call To Action url(not required for identityType IPFS, Subgraph)                                                                     |
+| payload.img          | string              | -       | Notification Media url(not required for identityType IPFS, Subgraph)                                                                              |
+| payload.sectype      | string              | -       | If Secret Notification then pass(not required for identityType IPFS, Subgraph)                                                                    |
+| graph.id             | string              | -       | graph id, required only if the identityType is 3                                                                                                  |
+| graph.counter        | string              | -       | graph counter, required only if the identityType is 3                                                                                             |
+| ipfsHash             | string              | -       | ipfsHash, required only if the identityType is 1                                                                                                  |
+| expiry               | number              | -       | (optional) epoch value if the notification has an expiry                                                                                          |
+| hidden               | boolean             | false   | (optional) true if we want to hide the notification                                                                                               |
+| env                  | string              | ‘prod’  | API env - ‘prod’, ‘staging’                                                                                                                       |
+
 1. Requirements before using SDK calls, derive the `signer`
 
-{% tabs %}
-{% tab title="When using Frontend" %}
+```mdx-code-block
+<Tabs
+    defaultValue="frontend"
+    values={[
+        {label: 'When Using Frontend', value: 'frontend'},
+        {label: 'When Using Backend', value: 'backend'},
+    ]}>
+<TabItem value="frontend">
+```
+
 ```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
@@ -35,22 +103,37 @@ import { useWeb3React } from "@web3-react/core";
 const { account, library, chainId } = useWeb3React();
 const signer = library.getSigner(account);
 ```
-{% endtab %}
 
-{% tab title="When using Backend" %}
+```mdx-code-block
+</TabItem>
+<TabItem value="backend">
+```
+
 ```typescript
 const ethers = require('ethers');
 const PK = 'your_channel_address_secret_key';
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
-{% endtab %}
-{% endtabs %}
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
 
 2. Call the appropriate SDK function
 
-{% tabs %}
-{% tab title="Direct Payload" %}
+```mdx-code-block
+<Tabs
+    defaultValue="direct"
+    values={[
+        {label: 'Direct Payload', value: 'direct'},
+        {label: 'IPFS Payload', value: 'ipfs'},
+        {label: 'Minimal Payload', value: 'minimal'},
+        {label: 'Subgraph Payload', value: 'subgraph'},
+    ]}>
+<TabItem value="direct">
+
 ### Targeted Notification
 
 ```typescript
@@ -122,9 +205,9 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="ipfs">
 
-{% tab title="IPFS Payload" %}
 ### Targeted Notification
 
 ```typescript
@@ -169,9 +252,9 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="minimal">
 
-{% tab title="Minimal Payload" %}
 ### Targeted Notification
 
 ```typescript
@@ -243,11 +326,11 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
+</TabItem>
+<TabItem value="subgraph">
 
-{% tab title="Subgraph Payload" %}
 :::info
-Ensure that the channel has the `graphId` **** being provided
+Ensure that the channel has the `graphId` being provided
 :::
 
 ### Targeted Notification
@@ -303,28 +386,7 @@ const apiResponse = await PushAPI.payloads.sendNotification({
   env: 'staging'
 });
 ```
-{% endtab %}
-{% endtabs %}
+</TabItem>
+</Tabs>
 
-#### Allowed Options (params with \* are mandatory)
 
-| Param                | Type                | Default | Remarks                                                                                                                                           |
-| -------------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| signer\*             | -                   | -       | Signer object                                                                                                                                     |
-| channel\*            | string              | -       | channel address (CAIP)                                                                                                                            |
-| type\*               | number              | -       | <p>Notification Type<br/>Target = 3 (send to 1 address),<br/>Subset = 4 (send to 1 or more addresses),<br/>Broadcast = 1 (send to all addresses)</p> |
-| identityType\*       | number              | -       | <p>Identity Type<br/>Minimal = 0,<br/>IPFS = 1,<br/>Direct Payload = 2,<br/>Subgraph = 3 }</p>                                                        |
-| recipients\*         | string or string\[] | -       | <p>for Notification Type = Target it is 1 address,<br/>for Notification Type = Subset, Broadcast it is an array of addresses (CAIP)</p>            |
-| notification.title\* | string              | -       | Push Notification Title (not required for identityType IPFS, Subgraph)                                                                            |
-| notification.body\*  | string              | -       | Push Notification Body(not required for identityType IPFS, Subgraph)                                                                              |
-| payload.title        | string              | -       | Notification Title(not required for identityType IPFS, Subgraph)                                                                                  |
-| payload.body         | string              | -       | Notification Body(not required for identityType IPFS, Subgraph)                                                                                   |
-| payload.cta          | string              | -       | Notification Call To Action url(not required for identityType IPFS, Subgraph)                                                                     |
-| payload.img          | string              | -       | Notification Media url(not required for identityType IPFS, Subgraph)                                                                              |
-| payload.sectype      | string              | -       | If Secret Notification then pass(not required for identityType IPFS, Subgraph)                                                                    |
-| graph.id             | string              | -       | graph id, required only if the identityType is 3                                                                                                  |
-| graph.counter        | string              | -       | graph counter, required only if the identityType is 3                                                                                             |
-| ipfsHash             | string              | -       | ipfsHash, required only if the identityType is 1                                                                                                  |
-| expiry               | number              | -       | (optional) epoch value if the notification has an expiry                                                                                          |
-| hidden               | boolean             | false   | (optional) true if we want to hide the notification                                                                                               |
-| env                  | string              | ‘prod’  | API env - ‘prod’, ‘staging’                                                                                                                       |

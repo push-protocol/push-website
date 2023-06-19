@@ -17,7 +17,7 @@ The whole process is aligned in this manner to maintain the flow of control from
 
 ## Fetching and Parsing Notifications from the API
 
-This is short summary on how to setup fetching and parsing notifications via Frontend SDK. A detailed demo guide can be found here at [`push-frontend-sdk/sample_code/loadNotifications`](https://github.com/ethereum-push-notification-service/push-frontend-sdk/tree/main/sample\_codes/loadNotifications)``
+This is short summary on how to setup fetching and parsing notifications via Frontend SDK. A detailed demo guide can be found here at [`push-frontend-sdk/sample_code/loadNotifications`](https://github.com/ethereum-push-notification-service/push-frontend-sdk/tree/main/sample\_codes/loadNotifications)
 
 ```cpp
 import { api, utils } from "@epnsproject/frontend-sdk";
@@ -176,6 +176,7 @@ After the wallet connect happens in your application, trigger the below code sni
 
 The UI should look somewhat like this screenshot below 👇
 
-<!-- ![Here, if the user is connected to their wallet and clicks on the bell icon, they will see the next screen](<../../../../.gitbook/assets/image (31).png>)
+![Here, if the user is connected to their wallet and clicks on the bell icon, they will see the next screen](../../../../../static/img/assets/frontend-sdk-1.png)
 
-![The Sidebar shows the Push notifications with a header which is a clickable link to the Push dApp.](<../../../../.gitbook/assets/image (30).png>) -->
+![The Sidebar shows the Push notifications with a header which is a clickable link to the Push dApp.](../../../../../static/img/assets/frontend-sdk-2.png)
+

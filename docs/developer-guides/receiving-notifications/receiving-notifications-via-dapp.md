@@ -4,29 +4,32 @@ description: >-
   notifications on Push dApp, extensions, and Mobile App
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard'
+
 # Receiving Notifications via dApp
 
 You can receive notifications on various platforms that include Push dApp, chrome extensions and Push Mobile App. But first, you need to Opt-In to a channel.
 
 ## Opt-In to a channel
 
-Opting-In means subscribing to a channel to receive notifications on dApp. For Opting-In simply go to [Push dApp](https://app.push.org/).\
-\
+Opting-In means subscribing to a channel to receive notifications on dApp. For Opting-In simply go to [Push dApp](https://app.push.org/).
+
+
 Once you are there, head over to [Channels](https://app.push.org/#/channels) section. In this section, you can see all the channels that are created on our dApp.
 
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 8.56.14 AM.png" alt=""><figcaption></figcaption></figure> -->
+![Opt-in for Channel](../../../static//img/assets/opt-in-channel.png)
 
 On the right-hand side of every channel, you can see an _**Opt-In**_ button.&#x20;
 
 * Click on Opt-In Button.
 * A metamask or your preferred crypto wallet shall pop up for you to confirm the action. Simply, Sign the transaction.
 
-<!-- <figure><img src="../../.gitbook/assets/metamask popup.png" alt=""><figcaption></figcaption></figure> -->
+![Sign Transaction](../../../static/img/assets/metamask-popup.png)
 
 Henceforth, You will receive all the notifications that this channel will send 🥳.
 
 :::info
-**Note: **_**Opting-In**_** ** to a channel is a completely off-chain process and it doesn't require any _**gas fees**_ from you. All you need to do is simply sign the opt-in transaction. ****&#x20;
+**Note: **_**Opting-In**_**  to a channel is a completely off-chain process and it doesn't require any _**gas fees**_ from you. All you need to do is simply sign the opt-in transaction. **&#x20;
 :::
 
 ### Find your Favorite Channels using Search Bar
@@ -39,8 +42,8 @@ Once the channel appears on top, you can easily subscribe to the channel by foll
 
 ## How to view Received Notifications
 
-The [**Inbox**](https://app.push.org/#/inbox) section on the Push dApp displays all the notifications you will receive from various channels you have Opted-In. \
-\
+The [**Inbox**](https://app.push.org/#/inbox) section on the Push dApp displays all the notifications you will receive from various channels you have Opted-In.<br/><br/>
+
 This section is distributed into two parts:&#x20;
 
 * Inbox
@@ -50,13 +53,13 @@ This section is distributed into two parts:&#x20;
 
 **The** Inbox option contains all the notifications sent to your wallet address by all the channels you have subscribed/opted-in to.&#x20;
 
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 9.36.50 AM.png" alt=""><figcaption></figcaption></figure> -->
+![Inbox](../../../static/img/assets/inbox.png)
 
 #### Spam Box
 
 The Spam box plays a very important and interesting role. Services to which you have not opted-in to receive notifications can still send notifications to your wallet address if at some point you have used their dapps.
 
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 1.21.32 AM.png" alt=""><figcaption></figcaption></figure> -->
+![SpamBox](../../../static/img/assets/spambox.png)
 
 If a user has **NOT opted-in** to receiving these notifications they will land in the SPAM box. Seeing these notifications will bring users the opportunity to decide if these notifications are meaningful for them, and from here opt-in to the channel to start receiving notifications
 
@@ -78,7 +81,7 @@ Push also supports notifications via browser extensions. The Chrome browser exte
 
 Now you can receive notifications via extension also.
 
-<!-- <figure><img src="../../.gitbook/assets/Screenshot 2023-02-09 at 9.32.49 AM.png" alt=""><figcaption></figcaption></figure> -->
+![Push Browser Extension](../../../static/img/assets/browser-extension.png)
 
 ### Useful Links
 
@@ -86,13 +89,9 @@ Now you can receive notifications via extension also.
 
 Android
 
-{% embed url="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epnsstaging&pli=1" %}
-Staging Environment
-{% endembed %}
+<CustomLinkCard text="Staging Environment" link="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epnsstaging&pli=1"/>
 
-{% embed url="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epns" %}
-Production Environment
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://play.google.com/store/apps/details?gl=US&hl=en&id=io.epns.epns"/>
 
 :::tip
 **Next steps:** just sign in from the public wallet address with which you have opted in to receive notifications from your channel.
@@ -101,12 +100,9 @@ Production Environment
 IOS
 
 :::caution
-iOS doesn't have a public staging app (only production app is available on the App Store). \
-\
-The best way to test staging on iOS would be to join :point\_right: [Push Discord Channel](https://discord.com/invite/YVPB99F9W5) :point\_left: and ask a team member to provide you with a testflight beta link
+iOS doesn't have a public staging app (only production app is available on the App Store). 
+The best way to test staging on iOS would be to join :point\_right: [Push Discord Channel](https://discord.com/invite/YVPB99F9W5) :point_left: and ask a team member to provide you with a testflight beta link
 :::
 
-{% embed url="https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910" %}
-Production Environment
-{% endembed %}
+<CustomLinkCard text="Production Environment" link="https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910"/>
 

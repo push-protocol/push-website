@@ -4,6 +4,8 @@ description: >-
   with your Frontend as well as Backend
 ---
 
+import CustomLinkCard from '@site/src/components/CustomLinkCard';
+
 # Push SDK
 
 Push SDK is a growing _**Monorepo**_ of packages that provide solutions for a wide range of development tasks one might come across while building on top of Push protocol. It is a Javascript-based group of packages that helps developers to:
@@ -39,33 +41,28 @@ A brief glance at the most imperative features of Push SDK along with the associ
 :::info
 **Note**_**:** It must be noted that the_ Push _SDK uses the_ [_CAIP format_](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md) _as of now, in order to provide a chain-agnostic protocol for communication between dapps or wallets._&#x20;
 
-Push SDK uses CAIP10 format but defaults to Ethereum address format, CAIP 10 format is a way to identify multichain addresses which is extended from CAIP 2. Any blockchain address becomes namespace + “:” + chain\_id + “:” + account\_address.\
-__\
-_However, as we expand our boundaries to multiple chains in the future, we shall define our own specifications, if need be._\
-__\
-_More details about this are in the_ [epnsproject-sdk-restapi](sdk-packages-details/epnsproject-sdk-restapi/ "mention")__
+Push SDK uses CAIP10 format but defaults to Ethereum address format, CAIP 10 format is a way to identify multichain addresses which is extended from CAIP 2. Any blockchain address becomes namespace + “:” + chain\_id + “:” + account\_address.
+
+
+_However, as we expand our boundaries to multiple chains in the future, we shall define our own specifications, if need be._
+
+
+_More details about this are in the_ [@pushprotocol/restapi](sdk-packages-details/epnsproject-sdk-restapi/ "mention")
 :::
 
 ### Build using Push SDK
 
-{% content-ref url="epns-sdk-starter-kit.md" %}
-[epns-sdk-starter-kit.md](epns-sdk-starter-kit.md)
-{% endcontent-ref %}
+<CustomLinkCard text="Push SDK Starter Kit" link="./epns-sdk-starter-kit"/>
 
 ### Learn more about the Push SDK Packages
 
-{% content-ref url="sdk-packages-details/epnsproject-sdk-restapi/" %}
-[epnsproject-sdk-restapi](sdk-packages-details/epnsproject-sdk-restapi/)
-{% endcontent-ref %}
+<CustomLinkCard text="@pushprotocol/restapi" link="./sdk-packages-details/epnsproject-sdk-restapi/"/>
 
-{% content-ref url="../epns-sdk/sdk-packages-details/epnsproject-sdk-uiembed.md" %}
-[epnsproject-sdk-uiembed.md](../epns-sdk/sdk-packages-details/epnsproject-sdk-uiembed.md)
-{% endcontent-ref %}
+<CustomLinkCard text="@pushprotocol/reactnative" link="../push-sdk/sdk-packages-details/epnsproject-sdk-react-native"/>
 
-{% content-ref url="sdk-packages-details/epnsproject-sdk-uiweb/" %}
-[epnsproject-sdk-uiweb](sdk-packages-details/epnsproject-sdk-uiweb/)
-{% endcontent-ref %}
+<CustomLinkCard text="@pushprotocol/uiembed" link="../push-sdk/sdk-packages-details/epnsproject-sdk-uiembed"/>
 
-{% content-ref url="sdk-packages-details/pushprotocol-socket/" %}
-[pushprotocol-socket](sdk-packages-details/pushprotocol-socket/)
-{% endcontent-ref %}
+<CustomLinkCard text="@pushprotocol/uiweb" link="./sdk-packages-details/epnsproject-sdk-uiweb/"/>
+
+<CustomLinkCard text="@pushprotocol/socket" link="./sdk-packages-details/pushprotocol-socket"/>
+
