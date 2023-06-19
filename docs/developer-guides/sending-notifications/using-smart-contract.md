@@ -21,12 +21,13 @@ Ensure your channel is up and running by following this guide [Creating a Channe
 
 Next call the function `sendNotification(address _channel, address _recipient, bytes calldata _identity)` and pass the address of the channel, recipient and the identity based on your needs.
 
-<pre class="language-solidity"><code class="lang-solidity"><strong>IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotification(
-</strong>    YOUR_CHANNEL_ADDRESS, // from channel - recommended to set channel via dApp and put it's value -> then once contract is deployed, go back and add the contract address as delegate for your channel
+```solidity
+IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotification(
+</strong>   YOUR_CHANNEL_ADDRESS, // from channel - recommended to set channel via dApp and put it's value -> then once contract is deployed, go back and add the contract address as delegate for your channel
     to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
     bytes(
         string(
-            // We are passing identity here: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
+            // We are passing identity here: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations 
             abi.encodePacked(
                 "0", // this is notification identity: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                 "+", // segregator
@@ -38,7 +39,8 @@ Next call the function `sendNotification(address _channel, address _recipient, b
             )
         )
     )
-);</code></pre>
+);
+```
 
 The last step is to go back to your channel and add the smart contract address as a delegate ensuring notifications sent by your smart contract are routed through your channel and presented to your users. Learn about [Adding Delegates For Channel](../create-your-notif-channel/adding-delegates-for-channel.md "mention").
 
