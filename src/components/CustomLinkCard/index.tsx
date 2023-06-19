@@ -14,7 +14,7 @@ const CustomLinkCard = (props) => {
         backgroundColor: "transparent",
         borderRadius: "0.5rem",
         border: '0.5px solid var(--ifm-custom-base)',
-        padding: "1.5rem",
+        padding: "0.8rem 1rem",
         fontSize: "1.25rem",
         width: "100%",
         display: "flex",
