@@ -58,7 +58,9 @@ _More details about this are in the_ [@pushprotocol/restapi](sdk-packages-detail
 
 <CustomLinkCard text="@pushprotocol/restapi" link="./sdk-packages-details/epnsproject-sdk-restapi/"/>
 
-<CustomLinkCard text="@pushprotocol/reactnative" link="../push-sdk/sdk-packages-details/epnsproject-sdk-uiembed-1"/>
+<CustomLinkCard text="@pushprotocol/reactnative" link="../push-sdk/sdk-packages-details/epnsproject-sdk-react-native"/>
+
+<CustomLinkCard text="@pushprotocol/uiembed" link="../push-sdk/sdk-packages-details/epnsproject-sdk-uiembed"/>
 
 <CustomLinkCard text="@pushprotocol/uiweb" link="./sdk-packages-details/epnsproject-sdk-uiweb/"/>
 
