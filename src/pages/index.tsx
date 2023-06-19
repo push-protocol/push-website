@@ -12,7 +12,7 @@ function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
+      <div className="section-container">
         <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
         <p className={styles.heroSubTitle}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
