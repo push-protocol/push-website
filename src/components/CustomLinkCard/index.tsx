@@ -26,8 +26,6 @@ const CustomLinkCard = (props) => {
         wordBreak: "break-word"
       }}
     >
-      }}
-    >
       {emoji ? emoji : "📄" }
       <a href={link} target={target} style={{marginLeft:'0.8rem', textDecoration:'none', color:`${isMouseHovered ? 'var(--ifm-color-primary)':'var(--ifm-custom-base)'}`}}>{text}</a>
     </div>
