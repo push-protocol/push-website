@@ -393,7 +393,7 @@ _**Description:**_
 * Calls unsubscribe with necessary channels.
 * Deletes the channel completely, making it possible to create a new channel with the same address.
 
-16. &#x20;**addSubGraph**
+**16. &#x20;addSubGraph**
 
 ```
 function addSubGraph(bytes calldata _subGraphData)

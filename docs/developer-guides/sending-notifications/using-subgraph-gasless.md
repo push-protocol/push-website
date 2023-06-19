@@ -194,24 +194,22 @@ Follow steps 5, 6 and 7 within the respective handler functions from which the n
 
 5.  **Define Notification Payload Items:** In the event handler mapping from which you need to send the notification, define the notification payload items such as recipient of the notification, type, title, message, etc. These variables will be further used to define the notification variable.
     
-    It’s highly recommended to take a look at [this documentation](https://docs.epns.io/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.
+It’s highly recommended to take a look at [this documentation](https://docs.epns.io/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.
 
+For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.
 
-    For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.
+```typescript
+    let recipient = event.params.to.toHexString(),
+    type = "3",
+    title = "PUSH Received",
+    body = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
+    subject = "PUSH Received",
+    message = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
+    image = "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
+    secret = "null",
+    cta = "https://epns.io/"
 
-
-    ```typescript
-      let recipient = event.params.to.toHexString(),
-      type = "3",
-      title = "PUSH Received",
-      body = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
-      subject = "PUSH Received",
-      message = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
-      image = "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
-      secret = "null",
-      cta = "https://epns.io/"
-
-    ```
+```
 6.  **Define Notification:**
     The `notification` variable is defined in the given below format 👇🏼
     
@@ -220,8 +218,7 @@ Follow steps 5, 6 and 7 within the respective handler functions from which the n
     ```typescript
     let notification = `{\"type\": \"${type}\", \"title\": \"${title}\", \"body\": \"${body}\", \"subject\": \"${subject}\", \"message\": \"${message}\", \"image\": \"${image}\", \"secret\": \"${secret}\", \"cta\": \"${cta}\"}`
     ```
-7.  **Call the Push Helper Function:** Once the above steps are complete, we need to invoke the Push helper function and send the response. To call the Push Notification helper function, use the below script;
-
+7.  **Call the Push Helper Function:** Once the above steps are complete, we need to invoke the Push helper  function and send the response. To call the Push Notification helper function, use the below script;
 
     ```typescript
     sendPushNotification (recipient, notification)

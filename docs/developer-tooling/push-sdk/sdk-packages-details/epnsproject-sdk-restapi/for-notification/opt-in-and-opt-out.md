@@ -28,7 +28,7 @@ To see all the supported channels on Push, go to [Push Protocol dapp](https://ap
     defaultValue="frontend"
     values={[
         {label: 'When Using Frontend', value: 'frontend'},
-        {label: 'When Using Frontend', value: 'backend'},
+        {label: 'When Using Backend', value:'backend'},
     ]}>
 <TabItem value="frontend">
 ```
