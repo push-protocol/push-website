@@ -16,6 +16,7 @@ const CustomLinkCard = (props) => {
         width: "100%",
         display: "flex",
         cursor:'pointer',
+        wordBreak: "break-word"
       }}
     >
       {emoji ? emoji : "📄" }
