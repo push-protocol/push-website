@@ -43,11 +43,6 @@ const sidebars = {
         },
         {
           type: "link",
-          label: "Facebook", // The link label
-          href: "https://facebook.com", // The external URL
-        },
-        {
-          type: "link",
           label: "Hack Ideas", // The link label
           href: "https://medium.com/push-protocol/buidl-w-epns-ideas-to-hack-the-future-of-web3comm-8b3dc80145b1", // The internal path
         },
@@ -59,12 +54,12 @@ const sidebars = {
         {
           type: "link",
           label: "Frequently Asked", // The link label
-          href: "https://docs.push.org/hub/frequently-asked/faq", // The internal path
+          href: "/#FAQ", // The internal path
         },
         {
           type: "link",
           label: "Join our Discord", // The link label
-          href: "https://docs.push.org/", // The internal path
+          href: "https://discord.gg/pushprotocol", // The internal path
         },
       ],
     },
