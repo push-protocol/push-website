@@ -6,9 +6,12 @@
 }
 
 .featureSvg {
+  height: 48px;
   width: 48px;
+  color: pink;
   margin: 0 0 1rem 0;
 }
+
 
 .featureCard {
   display: flex;
