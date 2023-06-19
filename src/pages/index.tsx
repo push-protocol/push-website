@@ -7,20 +7,23 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 import headerRipple from "@site/static/img/ripple.png";
+import { FiArrowUpRight } from 'react-icons/fi';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="section-container">
-        <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
-        <p className={styles.heroSubTitle}>{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <h1 className="hero__title">{siteConfig.title}</h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className='spacing-small'>
           <Link
-            className={styles.ctaButton}
+          className='hero__button'
             to="/docs/getting-started">
             Get Started
+            <FiArrowUpRight className='ml-4' />
           </Link>
+          
         </div>
       </div>
 

@@ -168,6 +168,28 @@ a:hover {
   color: #FFFFFF;
 }
 
+.ml-4{
+  margin-left: 20px;
+}
+
+.hero__button{
+  display: flex;
+  flex-direction: row;
+  width: 100;
+  align-items: center;
+  background-color: #dd44b9;
+  text-decoration: none;
+  z-index: 1;
+  transition: 100ms ease-in-out;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 142%;
+  color: #FFFFFF;
+  padding: 12px 30px;
+  border-radius: 16px;
+  margin-top: 38px;
+  letter-spacing: -0.03em;
+}
 
 .hero_home {
   font-family: var(--ifm-font-family-base);
