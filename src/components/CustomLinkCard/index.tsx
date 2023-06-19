@@ -3,7 +3,7 @@ import React from "react";
 import "../../css/custom.css";
 
 const CustomLinkCard = (props) => {
-  const { link, text } = props;
+  const { link, text, target, emoji } = props;
   return (
     <div
       style={{
@@ -18,8 +18,8 @@ const CustomLinkCard = (props) => {
         cursor:'pointer',
       }}
     >
-      📄
-      <a href={link} style={{marginLeft:'0.8rem'}}>{text}</a>
+      {emoji ? emoji : "📄" }
+      <a href={link} target={target} style={{marginLeft:'0.8rem'}}>{text}</a>
     </div>
   );
 };

@@ -91,6 +91,10 @@
   font-display: swap;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .navbar--fixed-top {
   background-color: rgba(18, 19, 21, 0.75) !important;
   border-radius: 12px !important;
