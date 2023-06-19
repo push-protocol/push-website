@@ -131,7 +131,7 @@ export default function HomepageFeatures(): JSX.Element {
             <SDKCard key={idx} {...props} />
           ))}
         </div>
-        <h1 className={styles.h1Custom}>Frequently Asked Questions</h1>
+        <h1 id='FAQ' className={styles.h1Custom}>Frequently Asked Questions</h1>
         <Accordion items={accordionItems}/>
       </div>
     </section>

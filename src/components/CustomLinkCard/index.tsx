@@ -3,8 +3,8 @@ import React from "react";
 import "../../css/custom.css";
 
 const CustomLinkCard = (props) => {
+  const { link, text, target, emoji } = props;
   const [isMouseHovered,setIsMouseHovered]=React.useState(false)
-  const { link, text } = props;
   return (
     <div
     onMouseEnter={()=>setIsMouseHovered(true)}
@@ -23,10 +23,11 @@ const CustomLinkCard = (props) => {
         transition: 'all .2s ease-in-out',
         boxShadow: `${isMouseHovered?'rgba(0, 0, 0, 0.05) 0px 19px 43px':'none'}`,
         transform: `${isMouseHovered?'translate3d(0px, -1px, 0px)':'none'}`,
+        wordBreak: "break-word"
       }}
     >
-      📄
-      <a href={link} style={{marginLeft:'0.8rem', textDecoration:'none', color:`${isMouseHovered ? 'var(--ifm-color-primary)':'var(--ifm-custom-base)'}`}}>{text}</a>
+      {emoji ? emoji : "📄" }
+      <a href={link} target={target} style={{marginLeft:'0.8rem', textDecoration:'none', color:`${isMouseHovered ? 'var(--ifm-color-primary)':'var(--ifm-custom-base)'}`}}>{text}</a>
     </div>
   );
 };
