@@ -234,17 +234,20 @@ a:hover {
   transform: scale(1.05);
 }
 
+.header-container{
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
 .hero_home {
   font-family: var(--ifm-font-family-base);
   font-weight: 600;
   font-size: 36px;
   align-items: start;
   /* margin-left: 115px; */
-  margin-top: 70px;
-  margin-bottom: 30px;
 }
 
-.hero_home_faq {
+.hero_home_explore {
   color: #DD44B9;
   display: flex;
   gap: 5px;
@@ -253,7 +256,7 @@ a:hover {
   justify-content: center;
 }
 
-.hero_home_faq_link {
+.hero_home_explore_link {
   margin-top: 15px;
 }
 
@@ -263,6 +266,7 @@ a:hover {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 4px;
 }
 
 .developer_guides_list {
@@ -447,9 +451,10 @@ a:hover {
   justify-content: center;
 }
 
-.Faqs-sub-container {
+.sub-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   /* max-width: 1150px; */
   margin: 70px auto 30px auto;
