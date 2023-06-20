@@ -29,37 +29,37 @@ const SdkList: SdkListItems[] = [
     title: 'SDK Starter Kit',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/epns-sdk-starter-kit',
   },
   {
     title: 'REST API',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi',
   },
   {
     title: 'React Native',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-react-native',
   },
   {
     title: 'Socket',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
   },
   {
     title: 'UIWeb',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb',
   },
   {
     title: 'UI Embed',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiembed',
   }
 ]
 
@@ -104,7 +104,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'SDK Quick Start',
     Svg: require('@site/static/img/lightning.svg').default,
     PinkSvg: require('@site/static/img/lightning-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/push-sdk/quick-start',
     description: (
       <>
         A super quick guide to get you started with Push SDK.
@@ -115,7 +115,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Examples',
     Svg: require('@site/static/img/star.svg').default,
     PinkSvg: require('@site/static/img/star-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-guides/examples',
     description: (
       <>
         Examples to showcase the power of Push Protocol’s communication stack.
@@ -126,7 +126,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Showrunners',
     Svg: require('@site/static/img/receive-notifs.svg').default,
     PinkSvg: require('@site/static/img/receive-notifs-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/docs/developer-tooling/showrunners-framework',
     description: (
       <>
         Showrunners Framework and how to boost your web3 communications.
@@ -283,7 +283,7 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
             <span className="hero_home_Faq_header">
               Frequently Asked Questions
             </span>
-            <Link to='/docs/FAQS/faq' target='_blank'>
+            <Link to='https://push.org/faq' target='_blank'>
               <div className='hero_home_explore'>
                 <p className='hero_home_explore_link'>
                   Explore FAQs

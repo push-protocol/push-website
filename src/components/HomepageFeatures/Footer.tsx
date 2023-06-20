@@ -157,12 +157,20 @@ export const FooterComponent = () => {
                   </Span>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/frens"
-                    title="Push Ecosystem"
+                    target="_blank"
+                    href="https://push.org/"
+                    title="About"
                     onClick={scrollToTop}
                   >
-                    Push Ecosystem
+                    About
+                  </FooterAnchorSecondary>
+                  <FooterAnchorSecondary
+                    target="_blank"
+                    href="https://angel.co/company/push-protocol"
+                    title="Careers"
+                    onClick={scrollToTop}
+                  >
+                    Careers
                   </FooterAnchorSecondary>
                   <FooterAnchorSecondary
                     href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
@@ -173,8 +181,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/tos"
+                    target="_blank"
+                    href="https://push.org/tos"
                     title="Terms"
                     onClick={scrollToTop}
                   >
@@ -182,8 +190,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/privacy"
+                    target="_blank"
+                    href="https://push.org/privacy"
                     title="Privacy"
                     onClick={scrollToTop}
                   >
@@ -313,8 +321,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/faq"
+                    href="https://push.org/faq"
+                    target="_blank"
                     title="FAQ"
                     onClick={scrollToTop}
                   >
