@@ -47,8 +47,9 @@ const BlogItem = () => {
       setIsLoading(true);
       const data = await getSingleBlogData(id);
       const allData = await getAllBlogData(page, PAGE_SIZE);
+      const filteredBlogs = allData.data.filter((obj) => obj.id !== parseInt(id));
       setBlogsData(data?.data);
-      setAllBlogs(allData?.data);
+      setAllBlogs(filteredBlogs);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
       setErrorPage(true);
