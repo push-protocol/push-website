@@ -244,7 +244,7 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
     <section className='main-section'>
       
         <div>
-          <div className="hero_home">
+          <div className="hero_home header-container">
             Developer Guides
           </div>
           <div>
@@ -257,8 +257,18 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
       </div>
       
       <div>
-          <div className="hero_home">
-            Push SDK
+          <div className='sub-container'>
+            <div className="hero_home">
+              Push SDK
+            </div>
+            <Link to='/docs/developer-tooling/push-sdk' target='_blank'>
+                <div className='hero_home_explore'>
+                  <p className='hero_home_explore_link'>
+                    Explore SDK
+                  </p>
+                  <ArrowUp className='arrowUp-icon' />
+                </div>
+            </Link>
           </div>
           <div>
             <div className="guide_list">
@@ -269,7 +279,7 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
         </div>
         
         <div className='Faqs-main-container'>
-          <div className='Faqs-sub-container'>
+          <div className='sub-container'>
             <span className="hero_home_Faq_header">
               Frequently Asked Questions
             </span>
