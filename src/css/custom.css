@@ -101,7 +101,7 @@ a:hover {
 
 .navbar--fixed-top {
   background-color: rgba(18, 19, 21, 0.75) !important;
-  border-radius: 12px !important;
+  border-radius: 32px !important;
   backdrop-filter: blur(10px);
   margin: auto !important;
   width: 90% !important;
@@ -124,9 +124,39 @@ a:hover {
 
 .navbar {
   position: fixed;
-  top: 15px;
+  top: 16px;
   left: 50%;
   transform: translate(-50%);
+}
+
+/* background image  */
+/* #__docusaurus {
+  background: linear-gradient(180deg, #FDE9FF 0%, #FFFFFF 57.57%);
+} */
+
+.DocSearch-Button{
+  min-width: 253px !important;
+  border-radius: 8px !important;
+  background-color: #FFFFFF;
+}
+
+.DocSearch-Button .DocSearch-Search-Icon {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.DocSearch-Button-Placeholder {
+  font-family: var(--ifm-font-family-base) !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  color: #3A3D47 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.DocSearch-Button-Key {
+  box-shadow: none !important;
+  background: #d1d5db !important;
+  color: #4b5563 !important;
 }
 
 .hero {
@@ -172,6 +202,13 @@ a:hover {
   margin-left: 20px;
 }
 
+.pointer{
+  cursor: pointer !important;
+  margin-top: 38px;
+  z-index: 1;
+}
+
+
 .hero__button{
   display: flex;
   flex-direction: row;
@@ -179,16 +216,19 @@ a:hover {
   align-items: center;
   background-color: #dd44b9;
   text-decoration: none;
-  z-index: 1;
-  transition: 100ms ease-in-out;
   font-weight: 500;
   font-size: 16px;
   line-height: 142%;
   color: #FFFFFF;
   padding: 12px 30px;
   border-radius: 16px;
-  margin-top: 38px;
   letter-spacing: -0.03em;
+}
+
+.hero__button:hover{
+  color: white;
+  transition: 100ms ease-in-out;
+  transform: scale(1.05);
 }
 
 .header-container{
@@ -262,7 +302,7 @@ a:hover {
   font-family: var(--ifm-font-family-base);
   font-size: 26px;
   color: #121315;
-  margin-top: 10px;
+  margin-top: 0px;
   font-weight: bold;
   letter-spacing: -0.03em;
 }
