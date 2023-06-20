@@ -95,10 +95,6 @@ a:hover {
   font-display: swap;
 }
 
-.main-body {
-  /* background-color: linear-gradient(180deg, #FDE9FF 0%, #FFFFFF 57.57%); */
-}
-
 .hidden {
   display: none !important;
 }
@@ -133,9 +129,10 @@ a:hover {
   transform: translate(-50%);
 }
 
-#__docusaurus {
+/* background image  */
+/* #__docusaurus {
   background: linear-gradient(180deg, #FDE9FF 0%, #FFFFFF 57.57%);
-}
+} */
 
 .DocSearch-Button{
   min-width: 253px !important;
