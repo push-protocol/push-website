@@ -457,6 +457,7 @@ const StyledFooter = styled.footer`
   font-family: 'Strawford';
   display: flex;
   position: relative;
+  margin-top: 70px;
 `;
 
 const ResponsiveSection = styled(Section)`

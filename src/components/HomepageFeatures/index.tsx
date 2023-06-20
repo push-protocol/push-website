@@ -295,17 +295,9 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
           <FAQ />
 
         </div>
-        {/* <h1 className={styles.h1Custom}>Push SDK</h1> */}
-        {/* <div className={styles.row}> */}
-        {/* {PushSDK.map((props, idx) => (
-            <SDKCard key={idx} {...props} />
-          ))} */}
-        {/* </div> */}
-        {/* <h1 className={styles.h1Custom}>Frequently Asked Questions</h1>
-        <Accordion items={accordionItems}/> */}
       </div>
     </section>
-    <FooterComponent />
+     <FooterComponent />
     </section>
   );
 }
