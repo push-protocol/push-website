@@ -104,7 +104,7 @@ a:hover {
   border-radius: 32px !important;
   backdrop-filter: blur(10px);
   margin: auto !important;
-  width: 90% !important;
+  width: 85% !important;
   height: 92px !important;
 }
 
@@ -168,7 +168,15 @@ a:hover {
 }
 
 .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  position:absolute;
   margin-top: 125px;
+  left:50%;
+  transform: translateX(-50%);
+  width:85% !important;
+}
+
+.menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module{
+  padding:0px !important;
 }
 
 .main-section{
@@ -177,6 +185,10 @@ a:hover {
   display: flex;
   flex-direction: column;
   margin: 0px auto;
+}
+
+.container{
+  padding:1rem 0rem 2rem 1rem !important;
 }
 
 .hero__title {
@@ -371,6 +383,9 @@ a:hover {
   }
   .hero__subtitle{
     font-size: 18px;
+  }
+  .container{
+    padding:1rem 0rem 2rem !important;
   }
 }
 
@@ -736,4 +751,3 @@ a:hover {
   width: 70%;
   margin: auto;
 }
-
