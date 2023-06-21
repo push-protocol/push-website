@@ -1,10 +1,12 @@
 import React from 'react';
-import "../../css/custom.css"
+import "../../css/custom.css";
 // import Cube from "@site/static/img/footer-cube.svg"
 // import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg"
 // import Link from '@docusaurus/Link';
 // import CubePlay from "@site/static/img/cube-footer-icon.svg"
 // import BellIcon from "@site/static/img/Push-Logo-Standard-White.svg";
+import PushLogo from "@site/static/img/push-logo.png";
+import JoinPush from "@site/static/img/join-push.png";
 import GithubSVG from "@site/static/img/github.svg";
 import TwitterSVG from "@site/static/img/twitter.svg";
 import TelegramSVG from "@site/static/img/telegram.svg";
@@ -12,9 +14,7 @@ import DiscordSVG from "@site/static/img/discord.svg";
 import AppleSVG from "@site/static/img/apple.svg";
 import Playstore from "@site/static/img/playstore.svg";
 import Notification from "@site/static/img/notification-icon-push.svg";
-import FooterJoinusFigure from "@site/static/img/footerjoinus.svg";
 import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
-import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
 import styled from 'styled-components';
 import { Section, H2, Content, ItemH, ItemV, Span, Anchor, LinkTo, BodyContent } from '../../utils/SharedStyling';
 import { device } from '@site/src/utils/globals';
@@ -86,11 +86,12 @@ export const FooterComponent = () => {
 
           <ItemH gap="32px">
             <InfoCard>
-              <FooterJoinusFigure
+            <img src={JoinPush} alt="Join Push" />
+              {/* <FooterJoinusFigure
                 className="figureSvg"
                 alt="Icon showing Open Positions"
                 title="Join Us"
-              />
+              /> */}
 
               <InfoDetails>
                 <Span
@@ -155,7 +156,6 @@ export const FooterComponent = () => {
                   >
                     Company
                   </Span>
-
                   <FooterAnchorSecondary
                     target="_blank"
                     href="https://push.org/"
@@ -361,7 +361,7 @@ export const FooterComponent = () => {
                 title="Push"
                 onClick={scrollToTop}
               >
-                <PushLogoTextWhite />
+                <img src={PushLogo} alt="Push Logo" />
               </LinkTo>
 
               <FooterAnchorIcon
@@ -434,7 +434,6 @@ export const FooterComponent = () => {
                   height={22}
                 />
               </FooterAnchorIcon>
-
               <FooterAnchorIcon
                 href="https://app.push.org"
                 title="Push Dapp"

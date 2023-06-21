@@ -26,7 +26,6 @@ function HomepageHeader() {
           
         </div>
       </div>
-
       <img src={headerRipple} className={styles.ripple} />
     </header>
   );
