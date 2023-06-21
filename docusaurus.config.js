@@ -41,6 +41,9 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          editUrl:
+            // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/ethereum-push-notification-service/push_documentation_hub/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +65,7 @@ const config = {
       navbar: {
         // title: 'Push',
         logo: {
-          alt: "My Site Logo",
+          alt: "Push Logo",
           src: "img/Push-Logo-Standard-White.svg",
         },
         items: [
@@ -70,12 +73,22 @@ const config = {
             type: "docSidebar",
             sidebarId: "tutorialSidebar",
             position: "right",
-            label: "Docs",
+            label: "Documentation Hub",
           },
-          { to: "/blog", label: "Blog", position: "right" },
+          // { to: "/blog", label: "Blog", position: "right" },
           {
-            href: "https://github.com/ethereum-push-notification-service/push_documentation_hub/",
+            to: "https://github.com/ethereum-push-notification-service/push_documentation_hub/",
             label: "GitHub",
+            position: "right",
+          },
+          {
+            to: "https://discord.com/invite/pushprotocol",
+            label: "Discord",
+            position: "right",
+          },
+          {
+            to: "https://app.push.org/",
+            label: "App",
             position: "right",
           },
         ],
