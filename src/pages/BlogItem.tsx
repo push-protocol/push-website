@@ -22,7 +22,8 @@ import { FaDiscord } from 'react-icons/fa';
 import { FiChevronLeft } from 'react-icons/fi';
 import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
-import {BsFillPlayCircleFill} from 'react-icons/bs'
+import { BsFillPlayCircleFill } from 'react-icons/bs'
+import Skeleton from 'react-loading-skeleton';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -47,8 +48,9 @@ const BlogItem = () => {
       setIsLoading(true);
       const data = await getSingleBlogData(id);
       const allData = await getAllBlogData(page, PAGE_SIZE);
+      const filteredBlogs = allData.data.filter((obj) => obj.id !== parseInt(id));
       setBlogsData(data?.data);
-      setAllBlogs(allData?.data);
+      setAllBlogs(filteredBlogs);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
       setErrorPage(true);
@@ -70,25 +72,25 @@ const BlogItem = () => {
     var match = url.match(regExp);
 
     if (match && match[2].length == 11) {
-        return match[2];
+      return match[2];
     } else {
-        return 'error';
+      return 'error';
     }
-}
+  }
 
-    useEffect(()=>{
-        editMedia();
-    },[blogsData])
+  useEffect(() => {
+    editMedia();
+  }, [blogsData])
 
   async function editMedia() {
 
     let content = blogsData?.attributes?.body;
     const tryThis = await content?.match('<oembed[^>]+url="([^">]+)"');
-    if(tryThis?.[1] === null) return;
+    if (tryThis?.[1] === null) return;
     let updatedIframe = await getId(tryThis[1]);
 
-    var iframeMarkup = '<iframe src="//www.youtube.com/embed/' 
-    + updatedIframe + '" frameborder="0" allowfullscreen></iframe>';
+    var iframeMarkup = '<iframe src="//www.youtube.com/embed/'
+      + updatedIframe + '" frameborder="0" allowfullscreen></iframe>';
 
     try {
       const fullBody = `${content} ${iframeMarkup}`;
@@ -180,29 +182,29 @@ const BlogItem = () => {
   };
 
   const SpaceContent = () => {
-    return(
-    <div style={{visibility: 'hidden'}}> 
-    <TopicContent>
-       <Moment
-         format="D MMMM, YYYY"
-       >
-         {blogsData?.pubDate}
-       </Moment>{' '}
-       <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
-   </TopicContent>
-   </div>)
+    return (
+      <div style={{ visibility: 'hidden' }}>
+        <TopicContent>
+          <Moment
+            format="D MMMM, YYYY"
+          >
+            {blogsData?.pubDate}
+          </Moment>{' '}
+          <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
+        </TopicContent>
+      </div>)
   }
 
 
   if (errorPage) {
-    return(
-        <PageWrapper
+    return (
+      <PageWrapper
         pageName={pageMeta.BLOGS.pageName}
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
 
-        <BlogsSection
+          <BlogsSection
             id="story"
             data-bkg="light"
             className="lightBackground"
@@ -210,297 +212,300 @@ const BlogItem = () => {
           >
 
             <EmptyCenteredContainerInfo>
-                  <DisplayNotice>404 Error - Not Found.</DisplayNotice>
+              <DisplayNotice>404 Error - Not Found.</DisplayNotice>
             </EmptyCenteredContainerInfo>
 
-        
-        </BlogsSection>
+
+          </BlogsSection>
 
         </BlogsWrapper>
-        </PageWrapper>
+      </PageWrapper>
     )
   }
 
-if (isLoading && !errorPage) {
-return (
-  <PageWrapper
+  if (isLoading && !errorPage) {
+    return (
+      <PageWrapper
         pageName={pageMeta.BLOGS.pageName}
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
-      <BlogsWrapper>
+        <BlogsWrapper>
 
-      <LoadingTopSection>
-          <Content
-            className="contentBox"
+          <LoadingTopSection>
+            <Content
+              className="contentBox"
+            >
+
+            </Content>
+          </LoadingTopSection>
+
+
+          <ItemH margin='200px 0px 200px 0px'>
+            <SkeletonContainer>
+              <SkeletonInnerContainer>
+                <Skeleton height={300} width={550} className='skeleton-image-container' />
+              </SkeletonInnerContainer>
+              <Skeleton className='skeleton-placeholder-lines' count={8}
+                height={10} />
+            </SkeletonContainer>
+          </ItemH>
+        </BlogsWrapper>
+      </PageWrapper>
+    )
+  }
+
+  if (!isLoading && !errorPage) {
+    return (
+      <PageWrapper
+        pageName={pageMeta.BLOGS.pageName}
+        pageTitle={pageMeta.BLOGS.pageTitle}
+      >
+        <BlogsWrapper>
+          <AnimationSection>
+            <Content
+              className="contentBox"
+            >
+
+              <ArticleBanner
+                src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
+                alt={blogsData?.attributes.title}
+                loading='lazy'
+              />
+
+            </Content>
+          </AnimationSection>
+
+          <TopSection
+            id="story"
+            data-bkg="light"
+            className="lightBackground"
+            curve="bottom"
+          >
+            <SpaceContent />
+            <Content className="contentBox" padding='0px 0px'>
+
+              <TopBody>
+                <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
+                  <BsFillPlayCircleFill color='#DD44B9' size={25} />
+                  <Topdiv>Listen</Topdiv>
+                </ItemH>
+
+                <ItemH justifyContent='flex-end' alignItems='center'>
+                  <BiShareAlt size={25} color='#333333' />
+                  <BiLink size={25} color='#333333' style={{ marginLeft: '20px' }} />
+                </ItemH>
+              </TopBody>
+
+            </Content>
+            <SpaceContent />
+          </TopSection>
+
+
+          <BlogsSection
+            id="story"
+            data-bkg="light"
+            className="lightBackground"
+            curve="bottom"
           >
 
-           </Content>
-        </LoadingTopSection>
-
-
-      <ItemH margin='200px 0px 200px 0px'>
-        <img
-          src={SpinnerSVG}
-          alt=""
-          width={140}
-        />
-      </ItemH>
-    </BlogsWrapper>
-    </PageWrapper>
-)}
-
-if (!isLoading && !errorPage) {
-  return (
-    <PageWrapper
-      pageName={pageMeta.BLOGS.pageName}
-      pageTitle={pageMeta.BLOGS.pageTitle}
-    >
-      <BlogsWrapper>
-        <AnimationSection>
-          <Content
-            className="contentBox"
-          >
-
-            <ArticleBanner
-              src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
-              alt={blogsData?.attributes.title}
-              loading='lazy'
-            />
-
-           </Content>
-        </AnimationSection>
-
-        <TopSection
-          id="story"
-          data-bkg="light"
-          className="lightBackground"
-          curve="bottom"
-        >
-        <SpaceContent />
-        <Content className="contentBox" padding='0px 0px'>
-
-        <TopBody>
-          <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
-            <BsFillPlayCircleFill color='#DD44B9' size={25} />
-            <Topdiv>Listen</Topdiv>
-          </ItemH>
-          
-          <ItemH justifyContent='flex-end' alignItems='center'>
-            <BiShareAlt size={25} color='#333333' />
-            <BiLink size={25} color='#333333' style={{marginLeft:'20px'}} />
-          </ItemH>
-        </TopBody>
-
-        </Content>
-        <SpaceContent />
-        </TopSection> 
-
-
-        <BlogsSection
-          id="story"
-          data-bkg="light"
-          className="lightBackground"
-          curve="bottom"
-        >
-          
-          <TopicContent>
+            <TopicContent>
               <Moment
                 format="D MMMM, YYYY"
               >
                 {blogsData?.pubDate}
               </Moment>{' '}
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
-          </TopicContent>
-  
-          <Content className="contentBox" padding='20px 0px'>
-           
-          
-            <H3
-              textTransform="normal"
-              color="#000000"
-              size={isMobile ? '30px' : '40px'}
-              weight="700"
-              spacing="-0.02em"
-              lineHeight="55.5px"
-              margin="0px 0 0px 0"
-            >
-              {blogsData?.attributes.title}
-            </H3>
+            </TopicContent>
 
-            {isMobile && (<ArticleContent>
-              <Moment
-                format="D MMMM, YYYY"
-                style={{ marginRight: '5px' }}
-              >
-                {blogsData?.attributes?.date}
-              </Moment>{' '}
-              &#183;
-              <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
-            </ArticleContent>)}
-
-            {/* <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent> */}
-
-            <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
-
-            <ToggleSection>
-              {blogsData?.attributes?.tags?.data?.map((item, i) => (
-                <ToggleButton key={i}>
-                  <Span>{item?.attributes?.name}</Span>
-                </ToggleButton>
-              ))}
-            </ToggleSection>
+            <Content className="contentBox" padding='20px 0px'>
 
 
-            <ShareRow>
-              <ResponsiveH2
-                size={isMobile ? '16px' : '24px'}
-                weight="500"
-                spacing="-0.02em"
-                lineHeight="110%"
-                color='#00000'
-              >
-                Be a part of the conversation by sharing this article
-              </ResponsiveH2>
-
-              <Anchor
-                href="https://twitter.com/pushprotocol"
-                title="Developer Docs"
-                target="_blank"
-                bg="#DD44B9"
-                radius="12px"
-                padding="14px 20px"
-                size="16px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-                self="center"
-              >
-                <BiShareAlt
-                  size={23}
-                  color="#fff"
-                  style={{ marginRight: '10px' }}
-                />
-                Share
-              </Anchor>
-            </ShareRow>
-
-            <AboutSection>
-              <AboutTitle>About Push Protocol</AboutTitle>
-
-              <Span
-                textAlign="center"
-                margin="20px 0 0 0"
-                spacing="-0.03em"
-                weight={'400'}
-                color="#000"
-              >
-                Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
-                messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
-                platform-agnostic fashion. The open communication layer allows any crypto wallet / frontend to tap into
-                the network and get the communication across.
-              </Span>
-            </AboutSection>
-
-            <KPIBanner>
-              <BannerItem
-                onClick={() => OpenURL('https://twitter.com/pushprotocol')}
-                style={{ cursor: 'pointer' }}
-                gap="18px"
-                className="kpiItem"
-              >
-                <KPIFigure>
-                  <BsTwitter size={32} />
-                </KPIFigure>
-                <KPIMetric>Twitter</KPIMetric>
-              </BannerItem>
-
-              <BannerItem
-                onClick={() => OpenURL('https://discord.gg/pushprotocol')}
-                style={{ cursor: 'pointer' }}
-                gap="18px"
-                className="kpiItem"
-              >
-                <KPIFigure>
-                  <FaDiscord size={32} />
-                </KPIFigure>
-                <KPIMetric>Discord</KPIMetric>
-              </BannerItem>
-
-              <BannerItem
-                onClick={() => OpenURL('https://www.youtube.com/@pushprotocol')}
-                style={{ cursor: 'pointer' }}
-                gap="18px"
-                className="kpiItem"
-              >
-                <KPIFigure>
-                  <BsYoutube size={32} />
-                </KPIFigure>
-                <KPIMetric>YouTube</KPIMetric>
-              </BannerItem>
-
-              <BannerItem
-                onClick={() => OpenURL('https://www.linkedin.com/company/push-protocol/')}
-                style={{ cursor: 'pointer' }}
-                gap="18px"
-                className="kpiItem"
-              >
-                <KPIFigure>
-                  <BsLinkedin size={32} />
-                </KPIFigure>
-                <KPIMetric>Linkedin</KPIMetric>
-              </BannerItem>
-            </KPIBanner>
-
-            <BlogRow>
-              <ResponsiveH2
-                size={isMobile ? '16px' : '28px'}
+              <H3
+                textTransform="normal"
+                color="#000000"
+                size={isMobile ? '30px' : '40px'}
                 weight="700"
                 spacing="-0.02em"
-                lineHeight="110%"
+                lineHeight="55.5px"
+                margin="0px 0 0px 0"
               >
-                More from Push Protocol
-              </ResponsiveH2>
+                {blogsData?.attributes.title}
+              </H3>
 
-              <Anchor
-                href="https://twitter.com/pushprotocol"
-                title="Developer Docs"
-                target="_blank"
-                bg="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-                self="center"
-              >
-                <BsTwitter
-                  size={23}
-                  color="#fff"
-                  style={{ marginRight: '10px' }}
-                />
-                Follow
-              </Anchor>
-            </BlogRow>
+              {isMobile && (<ArticleContent>
+                <Moment
+                  format="D MMMM, YYYY"
+                  style={{ marginRight: '5px' }}
+                >
+                  {blogsData?.attributes?.date}
+                </Moment>{' '}
+                &#183;
+                <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
+              </ArticleContent>)}
 
-            <SubArticles>
-              <ArticleItem item={allBlogs?.slice(0, 5)} />
-              {/* <ArticleItem item={allBlogs?.slice(5, 9)} /> */}
-            </SubArticles>
+              {/* <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent> */}
 
-            <ShowMoreSection onClick={ShowMore}>
-              <FiChevronLeft size={23} />
-              <b>Read more articles from Push Protocol</b>
-            </ShowMoreSection>
+              <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
 
-          </Content>
+              <ToggleSection>
+                {blogsData?.attributes?.tags?.data?.map((item, i) => (
+                  <ToggleButton key={i}>
+                    <Span>{item?.attributes?.name}</Span>
+                  </ToggleButton>
+                ))}
+              </ToggleSection>
 
-          <SpaceContent />
-        </BlogsSection>
-      </BlogsWrapper>
-    </PageWrapper>
-  );
-};
+
+              <ShareRow>
+                <ResponsiveH2
+                  size={isMobile ? '16px' : '24px'}
+                  weight="500"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  color='#00000'
+                >
+                  Be a part of the conversation by sharing this article
+                </ResponsiveH2>
+
+                <Anchor
+                  href="https://twitter.com/pushprotocol"
+                  title="Developer Docs"
+                  target="_blank"
+                  bg="#DD44B9"
+                  radius="12px"
+                  padding="14px 20px"
+                  size="16px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  self="center"
+                >
+                  <BiShareAlt
+                    size={23}
+                    color="#fff"
+                    style={{ marginRight: '10px' }}
+                  />
+                  Share
+                </Anchor>
+              </ShareRow>
+
+              <AboutSection>
+                <AboutTitle>About Push Protocol</AboutTitle>
+
+                <Span
+                  textAlign="center"
+                  margin="20px 0 0 0"
+                  spacing="-0.03em"
+                  weight={'400'}
+                  color="#000"
+                >
+                  Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
+                  messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
+                  platform-agnostic fashion. The open communication layer allows any crypto wallet / frontend to tap into
+                  the network and get the communication across.
+                </Span>
+              </AboutSection>
+
+              <KPIBanner>
+                <BannerItem
+                  onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+                  style={{ cursor: 'pointer' }}
+                  gap="18px"
+                  className="kpiItem"
+                >
+                  <KPIFigure>
+                    <BsTwitter size={32} />
+                  </KPIFigure>
+                  <KPIMetric>Twitter</KPIMetric>
+                </BannerItem>
+
+                <BannerItem
+                  onClick={() => OpenURL('https://discord.gg/pushprotocol')}
+                  style={{ cursor: 'pointer' }}
+                  gap="18px"
+                  className="kpiItem"
+                >
+                  <KPIFigure>
+                    <FaDiscord size={32} />
+                  </KPIFigure>
+                  <KPIMetric>Discord</KPIMetric>
+                </BannerItem>
+
+                <BannerItem
+                  onClick={() => OpenURL('https://www.youtube.com/@pushprotocol')}
+                  style={{ cursor: 'pointer' }}
+                  gap="18px"
+                  className="kpiItem"
+                >
+                  <KPIFigure>
+                    <BsYoutube size={32} />
+                  </KPIFigure>
+                  <KPIMetric>YouTube</KPIMetric>
+                </BannerItem>
+
+                <BannerItem
+                  onClick={() => OpenURL('https://www.linkedin.com/company/push-protocol/')}
+                  style={{ cursor: 'pointer' }}
+                  gap="18px"
+                  className="kpiItem"
+                >
+                  <KPIFigure>
+                    <BsLinkedin size={32} />
+                  </KPIFigure>
+                  <KPIMetric>Linkedin</KPIMetric>
+                </BannerItem>
+              </KPIBanner>
+
+              <BlogRow>
+                <ResponsiveH2
+                  size={isMobile ? '16px' : '28px'}
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                >
+                  More from Push Protocol
+                </ResponsiveH2>
+
+                <Anchor
+                  href="https://twitter.com/pushprotocol"
+                  title="Developer Docs"
+                  target="_blank"
+                  bg="#DD44B9"
+                  radius="16px"
+                  padding="14px 32px"
+                  size="18px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  self="center"
+                >
+                  <BsTwitter
+                    size={23}
+                    color="#fff"
+                    style={{ marginRight: '10px' }}
+                  />
+                  Follow
+                </Anchor>
+              </BlogRow>
+
+              <SubArticles>
+                <ArticleItem item={allBlogs?.slice(0, 5)} />
+                {/* <ArticleItem item={allBlogs?.slice(5, 9)} /> */}
+              </SubArticles>
+
+              <ShowMoreSection onClick={ShowMore}>
+                <FiChevronLeft size={23} />
+                <b>Read more articles from Push Protocol</b>
+              </ShowMoreSection>
+
+            </Content>
+
+            <SpaceContent />
+          </BlogsSection>
+        </BlogsWrapper>
+      </PageWrapper>
+    );
+  };
 }
 
 const EmptyCenteredContainerInfo = styled.div`
@@ -886,7 +891,7 @@ const BannerItem = styled(ItemV)`
   &:hover {
    color: #D53893;
   }
-`; 
+`;
 
 const KPIMetric = styled.div`
   font-weight: 500;
@@ -1069,5 +1074,25 @@ const ShowMoreSection = styled.div`
     }
   }
 `;
+
+const SkeletonContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  .skeleton-image-container {
+    margin-bottom: 50px;
+    border-radius: 30px;
+  }
+  .skeleton-placeholder-lines {
+    display: block;
+    line-height: 2;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+  }
+`
+const SkeletonInnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 export default BlogItem;
