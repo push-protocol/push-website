@@ -15,8 +15,8 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 import { device } from '../config/globals';
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
-  const alertMessage = 'Push Video is now LIVE,';
-  const alertLink = 'https://app.push.org/chat';
+  const alertMessage = '$100,000 of Push x ImmuneFi Bug Bounty goes LIVE, ';
+  const alertLink = 'https://immunefi.com/bounty/pushprotocol/';
 
   const openLink = () => {
     window.open(alertLink, '_blank');
