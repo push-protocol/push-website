@@ -4,7 +4,7 @@ description: >-
   notifications, easiest way to integrate Push with your dApp.
 ---
 
-# Embedding notifications in your dApp
+# Embedding Notifications in your dApp
 
 This feature allows you to inject Push Notifications inside your dApp without having to actually write lot of code. This App injector is more or less like a 1 time setup and after that your app has to basically never upgrade to get latest features from the Push Notifications.
 

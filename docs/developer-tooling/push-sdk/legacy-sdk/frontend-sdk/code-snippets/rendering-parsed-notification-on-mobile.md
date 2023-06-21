@@ -2,7 +2,7 @@
 description: React Native UI component to display a single notification.
 ---
 
-# Rendering parsed notification on mobile
+# Rendering Parsed Notification on Mobile
 
 We also provide a React Native component for displaying the **notification** in a React Native App.&#x20;
 

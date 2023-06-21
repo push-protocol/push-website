@@ -5,7 +5,7 @@ description: >-
   to get hang of service based channels!
 ---
 
-# Service based notification via Showrunner example
+# Service Based Notification via Showrunner Example
 
 **Greetings!!**<br/>
 If you are new to Push protocol and don't have a proper idea of how to create an service-based channel for notifications on top of [showrunners](https://docs.epns.io/developers/developer-tooling/showrunners-framework). This guide is for you ;)

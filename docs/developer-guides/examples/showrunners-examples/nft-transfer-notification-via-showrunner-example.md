@@ -2,7 +2,7 @@
 description: Understanding how to build a channel on top of Showrunners for your own use.
 ---
 
-# NFT transfer notification via Showrunner example
+# NFT Transfer Notification via Showrunner Example
 
 Alright, now that we understand the basics of showrunners and how to set it up. This guide will teach you how to get started with building one for your own use case.
 

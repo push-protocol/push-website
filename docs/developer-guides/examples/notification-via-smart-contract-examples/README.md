@@ -1,6 +1,6 @@
 import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
-# Notification Via Smart Contract examples
+# Notification Via Smart Contract Examples
 
 Channel and Notification both can be created or sent from your smart contract as well. Just select an example, pop open remix (or the equivalent editor) and let's gwei!
 

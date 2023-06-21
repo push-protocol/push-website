@@ -2,7 +2,7 @@
 description: React Web UI component to display a single notification.
 ---
 
-# Rendering parsed notification on the web
+# Rendering Parsed Notification on the Web
 
 This UI component will help you render an individual Notification **item** that you received earlier in the `fetchNotifications` API. you can display a list of these in your UI to show the Push Notifications in a group.
 

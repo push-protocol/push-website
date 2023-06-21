@@ -1,6 +1,6 @@
 # Interface
 
-### Interface contracts connected to Push Contract
+### Interface Contracts Connected to Push Contract
 
 Push contract interacts with PUSH token and communicator contract with the help of these interfaces
 
