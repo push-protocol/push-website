@@ -66,7 +66,7 @@ const config = {
         // title: 'Push',
         logo: {
           alt: "Push Logo",
-          src: "img/Push-Logo-Standard-White.svg",
+          src: "img/PushLogoTextWhite.svg",
         },
         items: [
           {

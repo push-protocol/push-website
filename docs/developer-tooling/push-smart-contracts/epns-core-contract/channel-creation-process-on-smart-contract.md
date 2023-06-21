@@ -1,4 +1,4 @@
-# Channel creation process on Smart Contract
+# Channel Creation Process on Smart Contract
 
 The creation of channels as well as storing all the imperative details about a channel is _**handled only by the Push Core protocol on the Ethereum blockchain.**_
 

@@ -1,4 +1,4 @@
-# Channel Creation and Notifications via smart contract example (Advance)
+# Channel Creation and Notifications via Smart Contract Example (Advance)
 
 Along with the UI one can also use contract to contract interaction to create channel as well as send notification.
 

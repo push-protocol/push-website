@@ -1,6 +1,6 @@
 import CustomLinkCard from '@site/src/components/CustomLinkCard'
 
-# Integrating Channel opt ins
+# Integrating Channel Opt-Ins
 
 :::info
 Users don't have to come to our dApp to opt in to your channel. In fact, it's recommended to have opt in from within your frontend to improve their experience.&#x20;

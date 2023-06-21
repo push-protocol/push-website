@@ -1,4 +1,4 @@
-# Token transfer notification via Smart Contract example
+# Token Transfer Notification via Smart Contract Example
 
 Here is an example of a contract that uses Push communicator to send notification whenever the contract receives fund.
 

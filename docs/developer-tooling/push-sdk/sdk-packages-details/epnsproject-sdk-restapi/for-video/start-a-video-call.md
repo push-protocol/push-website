@@ -4,7 +4,7 @@ description: All set with the video object, let's initiate the video call
 
 import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
-# Start a video call
+# Start a Video Call
 
 ## 1. Create a Local Media Stream
 

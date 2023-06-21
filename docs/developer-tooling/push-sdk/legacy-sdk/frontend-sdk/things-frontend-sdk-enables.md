@@ -4,7 +4,7 @@ description: >-
   to your UI
 ---
 
-# Things Frontend SDK enables
+# Things Frontend SDK Enables
 
 The Frontend SDK comprises of three major modules, which function as:
 

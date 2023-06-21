@@ -2,7 +2,7 @@
 description: Javascript API & util functions to fetch & parse notifications.
 ---
 
-# Fetching & Parsing notifications
+# Fetching & Parsing Notifications
 
 Use this snippet to fetch notifications from the Push backend and parse them to use them in your UI later.
 
