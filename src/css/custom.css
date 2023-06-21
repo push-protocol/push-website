@@ -133,6 +133,7 @@ a:hover {
 /* #__docusaurus {
   background: linear-gradient(180deg, #FDE9FF 0%, #FFFFFF 57.57%);
 } */
+@media (min-width: 1024px) {
 
 .DocSearch-Button{
   min-width: 253px !important;
@@ -157,6 +158,8 @@ a:hover {
   box-shadow: none !important;
   background: #d1d5db !important;
   color: #4b5563 !important;
+}
+
 }
 
 .hero {
