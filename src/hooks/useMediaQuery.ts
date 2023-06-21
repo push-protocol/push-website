@@ -24,7 +24,7 @@ function useMediaQuery(query: string): boolean {
     // Listen matchMedia
     if (matchMedia.addListener) {
       matchMedia.addListener(handleChange);
-    } else {
+    } else { 
       matchMedia.addEventListener('change', handleChange, {passive: true});
     }
 

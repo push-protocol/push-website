@@ -31,7 +31,6 @@ import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
 import BlogHorizontalScroll from 'components/BlogHorizontalScroll';
-import HorizontalScroll from 'components/HorizontalScroll';
 
 
 const BACKEND_API = 'https://blog.push.org';
@@ -399,38 +398,6 @@ const Blogs = () => {
               )}
             </Content>
 
-            <BodyContent className="contentBox">
-              <SignupBox margin="0 0 0px 0">
-                <ItemV
-                  justifyContent="flex-start"
-                  gap="12px"
-                >
-                  <ResponsiveH2
-                    color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    Never Miss an Update
-                  </ResponsiveH2>
-                  <Span
-                    color="#303C5E"
-                    size="20px"
-                    weight="400"
-                    spacing="-0.03em"
-                    lineHeight="138.5%"
-                  >
-                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
-                  </Span>
-                </ItemV>
-
-                <ItemV>
-                  <SignupInput />
-                </ItemV>
-              </SignupBox>
-            </BodyContent>
           </BlogsSection>
         </BlogsWrapper>
       </PageWrapper>
