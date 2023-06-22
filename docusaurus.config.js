@@ -42,8 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-            "https://github.com/ethereum-push-notification-service/push_documentation_hub/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/ethereum-push-notification-service/push_documentation_hub/blob/main/",
         },
         blog: {
           showReadingTime: true,
