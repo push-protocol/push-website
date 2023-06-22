@@ -160,7 +160,69 @@ a:hover {
   color: #4b5563 !important;
 }
 
+.menu__list-item >  .menu__link--active {
+  color: white !important;
+  background: #DD44B9 !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 142% !important;
 }
+
+.menu__link {
+  /* font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 142% !important;
+  letter-spacing: -0.03em !important;
+  color: #121315 !important; */
+  padding: 10px 15px !important;
+}
+
+.menu__list_item {
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 142% !important;
+  letter-spacing: -0.03em !important;
+  color: #3A3D47 !important;
+  padding: 10px 15px !important;
+}
+
+.menu__list_item  .menu__link {
+  border-left: 1px solid red !important;
+}
+
+.menu__list-item > .menu__list--sublist {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 142% !important;
+  letter-spacing: -0.03em !important;
+  color: #3A3D47 !important;
+  padding: 10px 15px !important;
+  letter-spacing: -0.03em !important;
+}
+
+.menu__list-item-collapsible,
+.menu__list-item-collapsible--active {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 142% !important;
+  letter-spacing: -0.03em !important;
+  color: #121315 !important;
+  background: transparent !important;
+  /* background: transparent !important; */
+}
+
+.menu__list-item-collapsible--active:hover {
+  color: #121315 !important;
+  /* background: transparent !important; */
+}
+
+/* .menu__list-item-collapsible--active > .clean-btn {
+ color: white !important;
+} */
+
+}
+
 
 .hero {
   padding: 10rem 0 6rem !important;
