@@ -57,7 +57,8 @@ import { ReactComponent as ZeroswapSVG } from '../assets/partners/zeroswap.svg';
 import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
 import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
-import useOnScreen from 'hooks/useOnScreen';
+import { useInView } from 'react-intersection-observer';
+
 
 /**
  * edit this to change the order
@@ -87,8 +88,10 @@ function PartnerChannels() {
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [active, setActive] = useState(false);
-  const itemRef = useRef();
-  const onScreen = useOnScreen(itemRef);
+  // const itemRef = useRef();
+  // const onScreen = useOnScreen(itemRef);
+  const { ref: itemRef, inView: myElementIsVisible } = useInView();
+
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = partnerSortedGroup;
 
@@ -129,17 +132,17 @@ function PartnerChannels() {
     onEnter();
   }, []);
 
-  useEffect(() => {
-    if (onScreen) {
+    useEffect(() => {
+    if (myElementIsVisible) {
       onLeave();
       setActive(true);
     }
 
-    if (!onScreen) {
+    if (!myElementIsVisible) {
       onEnter();
       setActive(false);
     }
-  }, [onScreen]);
+  }, [myElementIsVisible]);
 
   const onLeave = () => {
     gsap.to('#item-0', { width: '96px', height: '96px' });
@@ -560,3 +563,5 @@ const Body = styled.div`
 `;
 
 export default React.memo(PartnerChannels);
+
+
