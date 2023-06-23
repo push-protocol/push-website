@@ -23,8 +23,10 @@ const FadeInAnimation = ({ children, wrapperElement = 'div', direction = null, d
     default:
       fadeDirection = { x: 0 };
   }
+
   useEffect(() => {
-    gsap.from(compRef.current, 1, {
+    gsap.from(compRef.current, {
+      duration: 1,
       ...fadeDirection,
       opacity: 0,
       delay,
@@ -32,7 +34,7 @@ const FadeInAnimation = ({ children, wrapperElement = 'div', direction = null, d
         trigger: compRef.current,
       },
     });
-  }, [compRef, fadeDirection, delay]);
+  }, [compRef.current]);
   return (
     <Component
       ref={compRef}
