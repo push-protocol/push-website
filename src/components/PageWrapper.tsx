@@ -7,7 +7,6 @@ import React, { useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ReactGA from 'react-ga';
 
-
 type PageWrapperProps = {
   pageName: string;
   pageTitle: string;
@@ -18,7 +17,7 @@ type PageWrapperProps = {
  */
 
 function PageWrapper(props: PageWrapperProps) {
-  const { pageName, pageTitle } =  props;
+  const { pageName, pageTitle } = props;
 
   useEffect(() => {
     ReactGA.pageview(`/${pageName}`);

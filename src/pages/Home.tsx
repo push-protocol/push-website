@@ -125,7 +125,7 @@ function Home({ isAlertVisible }) {
           className="darkBackground"
         >
           <ItemVV2
-            id="herobg"
+            // id="herobg"
             position="absolute"
             top="0"
             right="0"
@@ -140,7 +140,7 @@ function Home({ isAlertVisible }) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                  <Spline scene="https://prod.spline.design/BCzLnLkXXcDtLpMt/scene.splinecode" />
+                   <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
                 </HeroAnimation>
               )
             }
@@ -847,7 +847,7 @@ function Home({ isAlertVisible }) {
 
             <Blogs count={4} />
 
-            <BuiltByIntro flexDirection="column">
+            {/* <BuiltByIntro flexDirection="column">
               <ItemV justifyContent="center">
                 <ResponsiveH2
                   color="#09090B"
@@ -884,9 +884,9 @@ function Home({ isAlertVisible }) {
                   </FadeInAnimation>
                 </Span>
               </ItemV>
-            </BuiltByIntro>
+            </BuiltByIntro> */}
 
-            <FadeInAnimation
+            {/* <FadeInAnimation
               wrapperElement="div"
               direction={!isMobile && 'right'}
               delay={0.3}
@@ -925,7 +925,7 @@ function Home({ isAlertVisible }) {
                 {!showMoreTeamMembers ? 'View More' : 'View Less'}
               </ButtonV2>
               <Anchor
-                href="https://angel.co/company/ethereum-push-notification-service"
+                href="https://angel.co/company/push-protocol"
                 title="Jobs"
                 target="_blank"
                 bg="#DD44B9"
@@ -939,7 +939,7 @@ function Home({ isAlertVisible }) {
                 Now Hiring, Explore Careers
                 <BsArrowUpRight className="anchorSVGlink" />
               </Anchor>
-            </TeamMemberButtons>
+            </TeamMemberButtons> */}
 
             <ItemH margin="80px 0 80px 0">
               <ItemV

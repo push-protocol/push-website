@@ -244,7 +244,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      WhitePaper
+                      Whitepaper
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -305,6 +305,19 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     >
                       Blog
                     </Anchor>
+                    <LinkTo
+                      to="/frens"
+                      title="Push Ecosystem"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push Ecosystem
+                    </LinkTo>
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
@@ -352,6 +365,20 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     expanded={mobileMenuMap[2]}
                   >
                     <Anchor
+                      href="https://pushprotocol.notion.site/Welcome-to-Push-DAO-b1c1e1281ce64400adaaae59f98e4d4c"
+                      target="_blank"
+                      title="Push Governance Forum"
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                    >
+                      Push DAO Notion
+                    </Anchor>
+                    <Anchor
                       href="https://gov.push.org"
                       target="_blank"
                       title="Push Governance Forum"
@@ -380,8 +407,8 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       Grants
                     </Anchor>
                     <Anchor
-                      href="https://snapshot.org/#/pushdao.eth"
-                      title="Push Snapshot"
+                      href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
+                      title="Push Mission"
                       target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
@@ -391,21 +418,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Snapshot
-                    </Anchor>
-                    <Anchor
-                      href="https://app.push.org/#/yield"
-                      title="Delegate"
-                      target="_blank"
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                    >
-                      Delegate
+                      Missions
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
