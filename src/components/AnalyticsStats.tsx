@@ -108,14 +108,14 @@ function AnalyticsStats() {
     <KPIBanner>
         <FadeInAnimation wrapperElement="div" delay={0.25}>
           <ItemV gap="18px" className='kpiItem'>
-              <KPIFigure>{kpiStats?.totalNotifsSent}</KPIFigure>
+              <KPIFigure>{totalNotifsSent}</KPIFigure>
               <KPIMetric>Notifications<br />Sent</KPIMetric>
           </ItemV>
       </FadeInAnimation>
 
       <FadeInAnimation wrapperElement="div" delay={0.5}>
         <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{kpiStats?.totalSubscribersCount}+</KPIFigure>
+          <KPIFigure>{totalSubscribersCount}+</KPIFigure>
           <KPIMetric>Total<br />Subscribers</KPIMetric>
         </ItemV>
       </FadeInAnimation>
