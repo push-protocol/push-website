@@ -6,10 +6,11 @@
 import React, { useEffect, useState } from 'react';
 import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { loadKPIData } from '../api';
+import { getNotifications, getSubscribers, loadKPIData } from '../api';
 
 import { device } from '../config/globals';
 import FadeInAnimation from './FadeInAnimation';
+import { getSubscribersCount, getNotificationsCount }  from '../config/AnalyticsStats';
 
 import {
   ItemV, Span
@@ -36,21 +37,26 @@ function nFormatter(num, digits) {
 }
 
 function AnalyticsStats() {
-  const [kpiStats, setKpiStats] = useState(null);
+  const [kpiStats, setKpiStats] = useState({
+    totalNotifsSent: '',
+    totalSubscribersCount: ''
+  });
   const [isLoading, setIsLoading] = useState(false);
 
-  const loadData = async() => {
-    try {
-      setIsLoading(true);
-      const data = await loadKPIData();
-      console.log('analytics data: ', data);
-      setKpiStats(data);
-    } catch (e) {
-      console.error('Analytics API data fetch error: ', e);
-    } finally {
-      setIsLoading(false);
-    }       
-  };
+
+
+  // const loadData = async() => {
+  //   try {
+  //     setIsLoading(true);
+  //     const data = await loadKPIData();
+  //     console.log('analytics data: ', data);
+  //     setKpiStats(data);
+  //   } catch (e) {
+  //     console.error('Analytics API data fetch error: ', e);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }       
+  // };
 
 
   useEffect(() => {
@@ -73,6 +79,21 @@ function AnalyticsStats() {
     />
   );
 
+
+  useEffect( async ()=>{
+    let result = await getSubscribersCount();
+    let notifsResult = await getNotificationsCount();
+
+    setKpiStats((current) => {
+      return({
+        ...current,
+        totalNotifsSent: nFormatter(notifsResult),
+        totalSubscribersCount: nFormatter(result)
+      })
+    })
+    console.log(result, notifsResult);
+  }, [])
+
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
   // const totalSubscribersCount = nFormatter(kpiStats?.totalSubscribersCount, 1) || '1.2K';
   // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
@@ -87,14 +108,14 @@ function AnalyticsStats() {
     <KPIBanner>
         <FadeInAnimation wrapperElement="div" delay={0.25}>
           <ItemV gap="18px" className='kpiItem'>
-              <KPIFigure>{totalNotifsSent}</KPIFigure>
+              <KPIFigure>{kpiStats?.totalNotifsSent}</KPIFigure>
               <KPIMetric>Notifications<br />Sent</KPIMetric>
           </ItemV>
       </FadeInAnimation>
 
       <FadeInAnimation wrapperElement="div" delay={0.5}>
         <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{totalSubscribersCount}</KPIFigure>
+          <KPIFigure>{kpiStats?.totalSubscribersCount}+</KPIFigure>
           <KPIMetric>Total<br />Subscribers</KPIMetric>
         </ItemV>
       </FadeInAnimation>

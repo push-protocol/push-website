@@ -7,6 +7,7 @@ const awaitTimeout = delay =>
   new Promise(resolve => setTimeout(resolve, delay));
 
 const BACKEND_API_URL = 'https://api.analytics.epns.io/apis/analytics';
+const ANALYTICS_API_BASE = 'https://backend.epns.io/apis/v1';
 
 
 export async function loadKPIData() {
@@ -99,4 +100,48 @@ export const getChannelsSearch = async (page, query) => {
     }).catch(error => {
       throw Error(error);
     });
+};
+
+export const getNotifications = async ({
+  startDate,
+  endDate,
+  channel,
+  chain,
+}) => {
+  try {
+    const res = await axios.get(`${ANALYTICS_API_BASE}/analytics/notification`, {
+      params: {
+        startDate,
+        endDate,
+        channel,
+        source: chain,
+      },
+    });
+    // console.log('notifications', res.data);
+    return res.data;
+  } catch (e) {
+    console.log('Error occured in notification', e);
+  }
+};
+
+export const getSubscribers = async ({
+  startDate,
+  endDate,
+  channel,
+  chain,
+}) => {
+  try {
+    const res = await axios.get(`${ANALYTICS_API_BASE}/analytics/subscriber`, {
+      params: {
+        startDate,
+        endDate,
+        channel,
+        source: chain,
+      },
+    });
+    //console.log('subscribers on chain', chain, res.data);
+    return res.data;
+  } catch (e) {
+    console.log('Error occured in subscribers', e);
+  }
 };
