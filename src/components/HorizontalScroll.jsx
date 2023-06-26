@@ -100,17 +100,17 @@ const HorizontalScroll = () => {
 
       ScrollTrigger.matchMedia({
         "(min-width: 1199px)": function() {
-          gsap.to(panels.current, {
+          gsap.to(panels?.current, {
             xPercent: -79 * (totalPanels - 1),
             // xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
-              trigger: panelsContainer.current,
+              trigger: panelsContainer?.current,
               pin: true,
               scrub: true,
               // snap: 1 / (totalPanels - 1),
               // base vertical scrolling on how wide the container is so it feels more natural.
-              end: () => '+=' + panelsContainer.current.offsetWidth
+              end: () => '+=' + panelsContainer?.current?.offsetWidth
             }
           });
          },
