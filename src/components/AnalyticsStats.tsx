@@ -91,7 +91,6 @@ function AnalyticsStats() {
         totalSubscribersCount: nFormatter(result)
       })
     })
-    console.log(result, notifsResult);
   }, [])
 
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
@@ -106,28 +105,28 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-        <FadeInAnimation wrapperElement="div" delay={0.25}>
+        <FadeInAnimation wrapperElement="div" delay={0.1}>
           <ItemV gap="18px" className='kpiItem'>
-              <KPIFigure>{kpiStats?.totalNotifsSent || 0}</KPIFigure>
+              <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
               <KPIMetric>Notifications<br />Sent</KPIMetric>
           </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={0.5}>
+      <FadeInAnimation wrapperElement="div" delay={0.2}>
         <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{kpiStats?.totalSubscribersCount || 0}+</KPIFigure>
+          <KPIFigure>{kpiStats?.totalSubscribersCount || '...'}{kpiStats?.totalSubscribersCount && '+'}</KPIFigure>
           <KPIMetric>Total<br />Subscribers</KPIMetric>
         </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={0.75}>
+      <FadeInAnimation wrapperElement="div" delay={0.3}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushIntegrations}</KPIFigure>
           <KPIMetric>Total Push<br />Integrations</KPIMetric>
         </ItemV>
       </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={1}>
+      <FadeInAnimation wrapperElement="div" delay={0.4}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushChatSent}</KPIFigure>
           <KPIMetric>In Grants <br />Given</KPIMetric>
