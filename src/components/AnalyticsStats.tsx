@@ -45,22 +45,29 @@ function AnalyticsStats() {
 
 
 
-  // const loadData = async() => {
-  //   try {
-  //     setIsLoading(true);
-  //     const data = await loadKPIData();
-  //     console.log('analytics data: ', data);
-  //     setKpiStats(data);
-  //   } catch (e) {
-  //     console.error('Analytics API data fetch error: ', e);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }       
-  // };
+  const loadData = async() => {
+    try {
+      setIsLoading(true);
+      let result = await getSubscribersCount();
+      let notifsResult = await getNotificationsCount();
+
+    setKpiStats((current) => {
+      return({
+        ...current,
+        totalNotifsSent: nFormatter(notifsResult),
+        totalSubscribersCount: nFormatter(result)
+      })
+    });
+    } catch (e) {
+      console.error('Analytics API data fetch error: ', e);
+    } finally {
+      setIsLoading(false);
+    }       
+  };
 
 
   useEffect(() => {
-    // loadData();
+    loadData();
   }, []);
 
   if (!kpiStats && isLoading) return (
@@ -80,19 +87,6 @@ function AnalyticsStats() {
   );
 
 
-  useEffect( async ()=>{
-    let result = await getSubscribersCount();
-    let notifsResult = await getNotificationsCount();
-
-    setKpiStats((current) => {
-      return({
-        ...current,
-        totalNotifsSent: nFormatter(notifsResult),
-        totalSubscribersCount: nFormatter(result)
-      })
-    })
-  }, [])
-
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
   // const totalSubscribersCount = nFormatter(kpiStats?.totalSubscribersCount, 1) || '1.2K';
   // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
@@ -105,33 +99,25 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-        {/* <FadeInAnimation wrapperElement="div" delay={0.1}> */}
           <ItemV gap="18px" className='kpiItem'>
               <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
               <KPIMetric>Notifications<br />Sent</KPIMetric>
           </ItemV>
-      {/* </FadeInAnimation> */}
 
-      {/* <FadeInAnimation wrapperElement="div" delay={0.2}> */}
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{kpiStats?.totalSubscribersCount || '...'}{kpiStats?.totalSubscribersCount && '+'}</KPIFigure>
           <KPIMetric>Total<br />Subscribers</KPIMetric>
         </ItemV>
-      {/* </FadeInAnimation> */}
 
-      {/* <FadeInAnimation wrapperElement="div" delay={0.3}> */}
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushIntegrations}</KPIFigure>
           <KPIMetric>Total Push<br />Integrations</KPIMetric>
         </ItemV>
-      {/* </FadeInAnimation> */}
 
-      {/* <FadeInAnimation wrapperElement="div" delay={0.4}> */}
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushChatSent}</KPIFigure>
           <KPIMetric>In Grants <br />Given</KPIMetric>
         </ItemV>
-      {/* </FadeInAnimation> */}
     </KPIBanner>
   );
 }
