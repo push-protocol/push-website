@@ -435,7 +435,7 @@ template {
       url('./assets/fonts/Strawford-ExtraLight.ttf') format('ttf');
   font-weight: 100 200;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -445,7 +445,7 @@ template {
       url('./assets/fonts/Strawford-Light.ttf') format('ttf');
   font-weight: 300;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -456,7 +456,7 @@ template {
       url('./assets/fonts/Strawford-Regular.ttf') format('ttf');
   font-weight: 400 500;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -466,7 +466,7 @@ template {
       url('./assets/fonts/Strawford-Medium.ttf') format('ttf');
   font-weight: 600 700;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 @font-face {
@@ -477,7 +477,7 @@ template {
         url('./assets/fonts/Strawford-Black.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 
 span, p, label, div {
