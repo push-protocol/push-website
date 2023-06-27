@@ -8,18 +8,12 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 dotenv.config();
 
-const root = createRoot(document.getElementById('root') as HTMLElement);
-root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
-  </BrowserRouter>
-);
-
 const rootElement = document.getElementById('root') as HTMLElement;
+const root = createRoot(rootElement);
 
 if (rootElement.hasChildNodes()) {
   hydrateRoot(
-    document.getElementById('root') as HTMLElement,
+    rootElement,
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
