@@ -93,5 +93,11 @@
     "react-snap": "^1.23.0",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0"
+  },
+    "reactSnap": {
+      "puppeteerArgs": [
+        "--no-sandbox",
+        "--disable-setuid-sandbox"
+      ]
   }
 }
