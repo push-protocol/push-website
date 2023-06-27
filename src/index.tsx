@@ -1,7 +1,6 @@
 import * as dotenv from 'dotenv';
 import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
-import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
@@ -17,11 +16,13 @@ root.render(
 );
 
 const rootElement = document.getElementById('root') as HTMLElement;
+
 if (rootElement.hasChildNodes()) {
-  hydrate(
-    (<BrowserRouter basename={process.env.PUBLIC_URL}>
+  hydrateRoot(
+    document.getElementById('root') as HTMLElement,
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
-    </BrowserRouter>), rootElement
+    </BrowserRouter>
   );
 } else {
   root.render(
