@@ -61,6 +61,7 @@ const Wrapper = styled.form`
     padding: 5px;
     justify-content: space-between;
 
+
     @media ${device.tablet} {
         column-gap: 3px;
     }
@@ -81,6 +82,10 @@ const Wrapper = styled.form`
         width: 100%;
         padding: 6px;
         padding-left: 8px;
+
+        @media ${device.mobileL} {
+          min-width: fit-content;
+      }
 
         &::placeholder {
             color: #A5A7B4;

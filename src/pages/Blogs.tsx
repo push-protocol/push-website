@@ -563,6 +563,9 @@ const ArticleBanner = styled.img`
   aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
+  @media ${device.tablet} {
+    border-radius: 21px;
+  }
 `;
 
 const ArticleText = styled.div`
@@ -653,7 +656,9 @@ const ArticleImage = styled.img`
   background: #d9d9d9;
   border-radius: 32px;
   @media ${device.tablet} {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 21px;
   }
 `;
 

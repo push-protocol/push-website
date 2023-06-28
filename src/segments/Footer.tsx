@@ -24,11 +24,12 @@ import { ReactComponent as PushBellSVG } from '../assets/pushBell.svg';
 
 import { BodyContent } from './../pages/Home';
 import SignupInput from 'components/SignupInput';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
 import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
 
 function Footer() {
-  const navigate = useNavigate();
+  const isMobile = useMediaQuery(device.tablet);
   const [showComponent, setShowComponent] = useState(false);
   useEffect(() => {
     if(window.location.pathname != '/'){
@@ -59,7 +60,7 @@ function Footer() {
             >
               <ResponsiveH2
                 color="#09090B"
-                size="40px"
+                size={isMobile ? '32px' : '40px'}
                 weight="700"
                 spacing="-0.02em"
                 lineHeight="110%"
