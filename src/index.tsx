@@ -9,7 +9,6 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 dotenv.config();
 
 const rootElement = document.getElementById('root') as HTMLElement;
-const root = createRoot(rootElement);
 
 if (rootElement.hasChildNodes()) {
   hydrateRoot(
@@ -19,6 +18,7 @@ if (rootElement.hasChildNodes()) {
     </BrowserRouter>
   );
 } else {
+  const root = createRoot(rootElement);
   root.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
