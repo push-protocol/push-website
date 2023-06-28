@@ -32,11 +32,11 @@ function Footer() {
   const isMobile = useMediaQuery(device.tablet);
   const [showComponent, setShowComponent] = useState(false);
   useEffect(() => {
-    if(window.location.pathname != '/'){
-      setShowComponent(true);
+    if(window.location.pathname === '/'){
+      setShowComponent(false);
     }
     else{
-      setShowComponent(false);
+      setShowComponent(true);
     }
   }, [window.location.pathname]);
 
