@@ -615,13 +615,25 @@ const TopBody = styled.div`
 `
 
 const TopSection = styled(ResponsiveSection)`
-  padding: 80px 160px 0px 160px;
+  padding: 80px 230px 0px 230px;
   position: relative;
   margin-top: 20px;
   display: flex;
   flex-direction: row;
   &:after {
     display: none !important;
+  }
+
+  @media ${device.desktopL} {
+    padding: 80px 300px 0px 300px;
+   }
+
+  @media ${device.desktop} {
+   padding: 80px 230px 0px 230px;
+  }
+
+  @media ${device.laptopL} {
+    padding: 80px 170px 0px 170px;
   }
 
   @media ${device.laptop} {
@@ -650,11 +662,22 @@ const TopSection = styled(ResponsiveSection)`
 
 
 const BlogsSection = styled(ResponsiveSection)`
-  padding: 0px 160px 80px 160px;
+  padding: 0px 230px 80px 230px;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  @media ${device.desktopL} {
+    padding: 0px 300px 80px 300px;
+   }
+
+  @media ${device.desktop} {
+   padding: 0px 230px 80px 230px;
+  }
+
+  @media ${device.laptopL} {
+    padding: 0px 170px 80px 170px;
+  }
 
   @media ${device.laptop} {
     margin-top: 20px;
@@ -673,7 +696,6 @@ const BlogsSection = styled(ResponsiveSection)`
   }
 
   @media ${device.mobileM} {
-    // margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 32px;
   }
@@ -938,7 +960,7 @@ const ResponsiveH2 = styled(H2)`
 `;
 
 const ArticleBanner = styled.img`
-  width: 100%;
+  width: 90%;
   aspect-ratio: 16/9;
   object-fit: cover;
 
@@ -946,7 +968,7 @@ const ArticleBanner = styled.img`
   padding: 0;
   // transform: translateY(42.5%);
   height: auto;
-  margin: 0px 0px 0px 0px;
+  margin: 0px auto;
   position: relative;
   top: 150px;
   z-index: 2;

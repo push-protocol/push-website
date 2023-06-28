@@ -34,6 +34,9 @@ function Footer() {
     if(window.location.pathname != '/'){
       setShowComponent(true);
     }
+    else{
+      setShowComponent(false);
+    }
   }, [window.location.pathname]);
 
   const scrollToTop = () => {
@@ -45,7 +48,7 @@ function Footer() {
       <ResponsiveSection
         id="footer"
         background="#121315"
-        padding="160px 0 0 0"
+        padding={showComponent ?  '180px 0 0 0' : '160px 0 0 0'}
       >
 
         {showComponent && ( <BodyContent className="contentBox">
@@ -80,6 +83,8 @@ function Footer() {
             </ItemV>
           </SignupBox>
         </BodyContent>)}
+
+
         <Content
           className="contentBox"
           padding="0"
