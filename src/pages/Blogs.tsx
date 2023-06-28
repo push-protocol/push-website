@@ -500,7 +500,7 @@ const BlogsWrapper = styled.main`
 
 const MainArticle = styled(ItemV)`
   width: 100%;
-  margin-top: 50px;
+  // margin-top: 50px;
   justify-content: left !important;
   align-items: flex-start !important;
   align-self: flex-start !important;
@@ -570,7 +570,7 @@ const ArticleText = styled.div`
   color: #575d73;
   font-size: 15px;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 27.5px;
   font-family: Lora;
   margin-top: 5px;
 
@@ -606,7 +606,7 @@ const ArticleContent = styled.div`
   width: 100%;
   color: #575d73;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 28px;
   display: flex;
   flex-direction: row !important;
@@ -617,7 +617,7 @@ const SubArticles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 33px;
-  margin-top: 50px;
+  margin-top: 92px;
   align-items: flex-start;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -677,9 +677,9 @@ const MainSection = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 32px;
-  margin: 10px 0px;
   width: 100%;
   gap: 33px;
+  margin-top: 50px;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 0px;

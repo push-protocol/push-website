@@ -155,15 +155,16 @@ const BlogItem = () => {
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
-                  margin="24px 0 0 0"
+                  margin="0px 0 0 0"
                   textAlign="left !important"
+                  className='clamp'
                 >
                   {blogData?.attributes.title}
                 </H3>
 
-                <ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>
+                {!isMobile && (<ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>)}
 
-                <ArticleContent marginTop="20px">
+                <ArticleContent style={{marginTop: isMobile ? '15px' : '20px'}}>
                   <Moment
                     format="D MMMM, YYYY"
                     style={{ marginRight: '5px' }}
@@ -317,14 +318,14 @@ const BlogItem = () => {
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
             </TopicContent>
 
-            <Content className="contentBox" padding='20px 0px'>
+            <Content className="contentBox" padding='10px 0px'>
 
 
               <H3
                 textTransform="normal"
                 color="#000000"
                 size={isMobile ? '30px' : '40px'}
-                weight="700"
+                weight={isMobile ? '600' : '700'}
                 spacing="-0.02em"
                 lineHeight="55.5px"
                 margin="0px 0 0px 0"
@@ -332,7 +333,7 @@ const BlogItem = () => {
                 {blogsData?.attributes.title}
               </H3>
 
-              {isMobile && (<ArticleContent>
+              {isMobile && (<ArticleContent marginTop='12px'>
                 <Moment
                   format="D MMMM, YYYY"
                   style={{ marginRight: '5px' }}
@@ -378,7 +379,7 @@ const BlogItem = () => {
                   weight="500"
                   spacing="-0.03em"
                   lineHeight="26px"
-                  self="center"
+                  self={isMobile ? 'stretch' : 'self'}
                 >
                   <BiShareAlt
                     size={23}
@@ -398,6 +399,7 @@ const BlogItem = () => {
                   spacing="-0.03em"
                   weight={'400'}
                   color="#000"
+                  size={isMobile ? '16px' : '16px'}
                 >
                   Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
                   messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
@@ -623,11 +625,13 @@ const TopSection = styled(ResponsiveSection)`
   }
 
   @media ${device.laptop} {
-    margin-top: 120px;
+    margin-top: 40px;
     padding: 80px 100px 0px 100px;
   }
   @media ${device.tablet} {
-    margin-top: 40px;
+    margin-top: 70px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   @media ${device.mobileL} {
@@ -637,7 +641,7 @@ const TopSection = styled(ResponsiveSection)`
   }
 
   @media ${device.mobileM} {
-    margin-top: 40px;
+    margin-top: 70px;
     padding-top: 0px;
     padding-bottom: 32px;
   }
@@ -647,29 +651,29 @@ const TopSection = styled(ResponsiveSection)`
 
 const BlogsSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
-  // padding: 80px 160px 80px 160px;
   position: relative;
-  margin-top: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 
   @media ${device.laptop} {
-    margin-top: 100px;
-    padding: 80px 100px 80px 100px;
+    margin-top: 20px;
+    padding: 0px 100px 80px 100px;
   }
   @media ${device.tablet} {
     margin-top: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   @media ${device.mobileL} {
-    margin-top: 60px;
+    margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 32px;
   }
 
   @media ${device.mobileM} {
-    margin-top: 40px;
+    // margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 32px;
   }
@@ -697,6 +701,9 @@ const BlogContent = styled.div`
           color: #282A2D;
           font-weight: 400;
           font-size: 16px;
+        }
+        img{
+          margin: 30px 0px;
         }
     }
 
@@ -728,6 +735,10 @@ const BlogContent = styled.div`
       padding: 25px;
     }
 
+    .raw-html-embed {
+      margin: 30px 0px;
+    }
+
     h1,h2,h3,h4 {
         font-family: 'Strawford' !important;
         font-weight: 600;
@@ -748,10 +759,10 @@ const BlogContent = styled.div`
 
     img{
       margin: 0 auto;
-        padding: 0;
-        width: 100%;
-        box-sizing: border-box;
-        aspect-ratio: 16/9;
+      padding: 0;
+      width: 100%;
+      box-sizing: border-box;
+      aspect-ratio: 16/9;
     }
 
     figure {
@@ -787,7 +798,7 @@ const ToggleSection = styled.div`
 `;
 
 const AboutSection = styled.div`
-  margin-top: 200px;
+  margin-top: 156px;
   span {
     font-family: 'Lora';
     font-weight: 300;
@@ -806,6 +817,11 @@ const AboutTitle = styled.div`
   color: #000000;
   margin-bottom: 10px;
   letter-spacing: -0.02em;
+  @media ${device.laptop}{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+}
 `;
 
 const ToggleButton = styled.div`
@@ -849,7 +865,7 @@ const KPIBanner = styled.div`
   padding: 20px 0px;
   font-family: 'Strawford';
   font-style: normal;
-  margin-top: 50px;
+  margin-top: 30px;
 
   & .kpiItem {
     display: flex;
@@ -865,9 +881,10 @@ const KPIBanner = styled.div`
 
     row-gap: 32px;
     column-gap: 8px;
+    margin-top: 30px;
 
     & .kpiItem {
-      flex-direction: column;
+      flex-direction: row;
       row-gap: 8px;
 
       // for 4 items
@@ -905,7 +922,7 @@ const KPIMetric = styled.div`
 `;
 
 const BlogRow = styled.div`
-  margin: 150px 0 40px 0;
+  margin: 177px 0 32.5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -957,17 +974,18 @@ const MainArticle = styled.div`
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  &:not(:first-of-type) {
-    margin-top: 50px;
-  }
+  grid-gap: 44px;
+  height: 100%;
+  margin-bottom: 62px;
 
   &:hover {
     cursor: pointer;
   }
 
   @media ${device.tablet} {
-    margin-top: 10px;
     flex-direction: column !important;
+    grid-gap: 15px;
+    margin-bottom: 32px;
   }
 `;
 
@@ -978,26 +996,26 @@ const ArticleTextB = styled.div`
   font-weight: 300;
   line-height: 28px;
   font-family: Lora;
-  margin-top: 10px;
+  margin-top: 5px;
 
   overflow: hidden;
   display: -webkit-box !important;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `;
 
 const TopicContent = styled.div`
   color: #575d73;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 28px;
   display: flex;
   flex-direction: column !important;
   align-item: flex-start;
   margin-top: ${(props) => props.marginTop || '0px'};
-  padding: 20px 40px;
+  padding: 10px 40px;
   @media ${device.laptop} {
-     padding: 20px 20px;
+     padding: 10px 20px;
   }
   @media ${device.tablet} {
     display: none;
@@ -1005,20 +1023,28 @@ const TopicContent = styled.div`
 `;
 
 const ShareRow = styled.div`
-  margin: 50px 0 40px 0;
+  margin: 50px 0 0px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media ${device.tablet} {
-    margin-top: 80px;
+    margin-top: 52px;
+    align-items: center;
+  }
+
+  @media ${device.mobileL} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 const ArticleContent = styled.div`
   width: 100%;
   color: #575d73;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 300;
   line-height: 28px;
   display: flex;
   flex-direction: row !important;
@@ -1033,19 +1059,31 @@ const DivTopic = styled.div`
 `;
 
 const ArticleImage = styled.img`
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 300px;
+  max-width: 300px;
   aspect-ratio: 16/9;
   object-fit: cover;
   background: #d9d9d9;
   border-radius: 32px;
   @media ${device.tablet} {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 21px;
   }
 `;
 
 const ArticleRow = styled.div`
-  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  flex: 1;
+  .clamp{
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
   @media ${device.tablet} {
     margin-left: 0px;
     width: 100%;
@@ -1055,7 +1093,7 @@ const ArticleRow = styled.div`
 const ShowMoreSection = styled.div`
   border: 1px solid #bac4d6;
   border-radius: 24px;
-  margin: 70px 0px 0px 0px;
+  margin: 11px 0px 0px 0px;
   display: flex;
   align-items: center;
   justify-content: center;

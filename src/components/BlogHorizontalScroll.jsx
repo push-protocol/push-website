@@ -117,17 +117,17 @@ const SlideElement = ({
 
       ScrollTrigger.matchMedia({
         "(min-width: 1199px)": function() {
-          gsap.to(panels.current, {
+          gsap.to(panels?.current, {
             xPercent: -79 * (totalPanels - 1),
             // xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
-              trigger: panelsContainer.current,
+              trigger: panelsContainer?.current,
               pin: true,
               scrub: true,
               // snap: 1 / (totalPanels - 1),
               // base vertical scrolling on how wide the container is so it feels more natural.
-              end: () => '+=' + panelsContainer.current.offsetWidth
+              end: () => '+=' + panelsContainer?.current?.offsetWidth
             }
           });
          },
@@ -233,8 +233,6 @@ const GrowPushCard = styled(ItemV)`
   justify-content: center;
   cursor: pointer;
   padding: 5px;
-//   padding-bottom: ${(props) => props.paddingBottom};
-//   min-width: 78%;
   min-width: 52.5em;
   max-width: 52.5em;
   flex: 1;
