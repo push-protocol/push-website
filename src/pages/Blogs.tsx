@@ -136,6 +136,7 @@ const Blogs = () => {
                 alt={blogData?.attributes?.title}
               />
 
+              <ArticleDiv>
               <H3
                 textTransform="normal"
                 color="#000000"
@@ -144,9 +145,11 @@ const Blogs = () => {
                 spacing="-0.02em"
                 lineHeight="142%"
                 margin="24px 0 0 0"
+                className='clamp'
               >
                 {blogData?.attributes?.title}
               </H3>
+              </ArticleDiv>
 
               <ArticleText>{filterComment(blogData?.attributes?.body)}</ArticleText>
 
@@ -192,6 +195,7 @@ const Blogs = () => {
                   spacing="-0.02em"
                   lineHeight="142%"
                   margin="24px 0 0 0"
+                  className='clamp'
                   textAlign="left !important"
                 >
                   {blogData?.attributes?.title}
@@ -664,9 +668,24 @@ const ArticleImage = styled.img`
 
 const ArticleRow = styled.div`
   margin-left: 70px;
+  .clamp{
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
   @media ${device.tablet} {
     margin-left: 0px;
     width: 100%;
+  }
+`;
+
+const ArticleDiv = styled.div`
+  .clamp{
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 `;
 
