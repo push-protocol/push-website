@@ -34,7 +34,7 @@ import BlogHorizontalScroll from 'components/BlogHorizontalScroll';
 
 
 const BACKEND_API = 'https://blog.push.org';
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 4;
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);

@@ -231,20 +231,20 @@ const BlogItem = () => {
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-
+{/* 
           <LoadingTopSection>
             <Content
               className="contentBox"
             >
 
             </Content>
-          </LoadingTopSection>
+          </LoadingTopSection> */}
 
 
           <ItemH margin='200px 0px 200px 0px'>
             <SkeletonContainer>
               <SkeletonInnerContainer>
-                <Skeleton height={300} width={550} className='skeleton-image-container' />
+                <Skeleton height={300} width={isMobile ? 300 : 550} className='skeleton-image-container' />
               </SkeletonInnerContainer>
               <Skeleton className='skeleton-placeholder-lines' count={8}
                 height={10} />
@@ -1148,6 +1148,7 @@ const SkeletonContainer = styled.div`
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 30px;
+    box-sizing: border-box;
   }
 `
 const SkeletonInnerContainer = styled.div`
