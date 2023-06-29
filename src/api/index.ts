@@ -61,8 +61,37 @@ export async function getAllBlogData(page, size) {
     });
 }
 
+export async function getAllTags(page, size) {
+  const requrl = `${BACKEND_API}api/tags?populate=*`;
+
+  return axios
+    .get(requrl)
+    .then((apiResponse) => {
+      const tags = apiResponse?.data;
+      return tags;
+    })
+    .catch((error) => {
+      throw Error(error);
+    });
+}
+
 export async function searchBlogData(text) {
   const requrl = `${BACKEND_API}api/blogs?populate=*&filters[title][$containsi]=${text}`;
+
+  return axios
+    .get(requrl)
+    .then((apiResponse) => {
+      const blogs = apiResponse?.data;
+      return blogs;
+    })
+    .catch((error) => {
+      throw Error(error);
+    });
+}
+
+
+export async function searchBlogDataByTags(text) {
+  const requrl = `${BACKEND_API}api/blogs?populate=*&filters[tags][name][$eqi]=${text}`;
 
   return axios
     .get(requrl)
@@ -83,7 +112,6 @@ export async function getSingleBlogData(id) {
     .then((apiResponse) => {
       const blogs = apiResponse?.data;
       return blogs;
-      // return blogs.slice(0, limit);
     })
     .catch((error) => {
       throw Error(error);

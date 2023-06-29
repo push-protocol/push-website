@@ -94,7 +94,6 @@ const BlogItem = () => {
 
     try {
       const fullBody = `${content} ${iframeMarkup}`;
-      console.log(fullBody)
       setBody(fullBody)
     } catch (e) {
       return '';
@@ -128,7 +127,6 @@ const BlogItem = () => {
 
   useEffect(() => {
     if (blogsContent) {
-      console.log('true', blogsContent);
     }
   }, [blogsContent]);
 
@@ -231,16 +229,6 @@ const BlogItem = () => {
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-{/* 
-          <LoadingTopSection>
-            <Content
-              className="contentBox"
-            >
-
-            </Content>
-          </LoadingTopSection> */}
-
-
           <ItemH margin='200px 0px 200px 0px'>
             <SkeletonContainer>
               <SkeletonInnerContainer>
@@ -283,21 +271,21 @@ const BlogItem = () => {
             curve="bottom"
           >
             <SpaceContent />
-            <Content className="contentBox" padding='0px 0px'>
+              <ContentBody>
 
-              <TopBody>
-                <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
-                  <BsFillPlayCircleFill color='#DD44B9' size={25} />
-                  <Topdiv>Listen</Topdiv>
-                </ItemH>
+                <TopBody>
+                  <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
+                    <BsFillPlayCircleFill color='#DD44B9' size={25} />
+                    <Topdiv>Listen</Topdiv>
+                  </ItemH>
 
-                <ItemH justifyContent='flex-end' alignItems='center'>
-                  <BiShareAlt size={25} color='#333333' />
-                  <BiLink size={25} color='#333333' style={{ marginLeft: '20px' }} />
-                </ItemH>
-              </TopBody>
+                  <ItemH justifyContent='flex-end' alignItems='center'>
+                    <BiShareAlt size={25} color='#333333' />
+                    <BiLink size={25} color='#333333' style={{ marginLeft: '20px' }} />
+                  </ItemH>
+                </TopBody>
 
-            </Content>
+              </ContentBody>
             <SpaceContent />
           </TopSection>
 
@@ -318,8 +306,8 @@ const BlogItem = () => {
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
             </TopicContent>
 
-            <Content className="contentBox" padding='10px 0px'>
-
+            <ContentBody>
+            {/* <ContentBody className="contentBox" padding='10px 0px'> */}
 
               <H3
                 textTransform="normal"
@@ -500,7 +488,7 @@ const BlogItem = () => {
                 <b>Read more articles from Push Protocol</b>
               </ShowMoreSection>
 
-            </Content>
+            </ContentBody>
 
             <SpaceContent />
           </BlogsSection>
@@ -516,6 +504,16 @@ const EmptyCenteredContainerInfo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const ContentBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 800px !important;
+  @media (max-width: 800px) {
+    width: 100% !important;
+  }
+
 `;
 
 const DisplayNotice = styled.span`
@@ -615,7 +613,7 @@ const TopBody = styled.div`
 `
 
 const TopSection = styled(ResponsiveSection)`
-  padding: 80px 230px 0px 230px;
+  padding: 80px 0px 0px;
   position: relative;
   margin-top: 20px;
   display: flex;
@@ -625,20 +623,20 @@ const TopSection = styled(ResponsiveSection)`
   }
 
   @media ${device.desktopL} {
-    padding: 80px 300px 0px 300px;
+    padding: 80px 0px 0px;
    }
 
   @media ${device.desktop} {
-   padding: 80px 230px 0px 230px;
+   padding: 80px 0px 0px;
   }
 
   @media ${device.laptopL} {
-    padding: 80px 170px 0px 170px;
+    padding: 80px 0px 0px;
   }
 
   @media ${device.laptop} {
     margin-top: 40px;
-    padding: 80px 100px 0px 100px;
+    padding: 80px 0px 0px;
   }
   @media ${device.tablet} {
     margin-top: 70px;
@@ -662,27 +660,27 @@ const TopSection = styled(ResponsiveSection)`
 
 
 const BlogsSection = styled(ResponsiveSection)`
-  padding: 0px 230px 80px 230px;
+  // padding: 0px 230px 80px 230px;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  @media ${device.desktopL} {
-    padding: 0px 300px 80px 300px;
-   }
+  // @media ${device.desktopL} {
+  //   padding: 0px 300px 80px 300px;
+  //  }
 
-  @media ${device.desktop} {
-   padding: 0px 230px 80px 230px;
-  }
+  // @media ${device.desktop} {
+  //  padding: 0px 230px 80px 230px;
+  // }
 
-  @media ${device.laptopL} {
-    padding: 0px 170px 80px 170px;
-  }
+  // @media ${device.laptopL} {
+  //   padding: 0px 170px 80px 170px;
+  // }
 
-  @media ${device.laptop} {
-    margin-top: 20px;
-    padding: 0px 100px 80px 100px;
-  }
+  // @media ${device.laptop} {
+  //   margin-top: 20px;
+  //   padding: 0px 100px 80px 100px;
+  // }
   @media ${device.tablet} {
     margin-top: 40px;
     padding-top: 0px;
@@ -749,12 +747,11 @@ const BlogContent = styled.div`
       font-weight: 400;
       font-size: 20px;
       line-height: 38px;
-      color: #575D73;
-      background: #f9f9f9;
-      border: 2px solid #E5E5E5;
-      border-radius: 4px;
+      color: #E4E9F0;
       overflow-x: auto;
       padding: 25px;
+      border-radius: 32px;
+      background: #121315;
     }
 
     .raw-html-embed {

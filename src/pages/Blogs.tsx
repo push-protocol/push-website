@@ -3,7 +3,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 import React, { Fragment, useEffect, useState } from 'react';
-import { getAllBlogData, searchBlogData } from '../api';
+import { getAllBlogData, getAllTags, searchBlogData, searchBlogDataByTags } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import { device } from '../config/globals';
@@ -40,11 +40,14 @@ const Blogs = () => {
   const isMobile = useMediaQuery(device.tablet);
   const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   const [blogsData, setBlogsData] = useState(null);
+  const [allBlogsData, setAllBlogsData] = useState(null);
+  const [tagsList, setTagsList] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = React.useState('');
   const [searchItems, setSearchItems] = React.useState(null);
   const [errorPage, setErrorPage] = React.useState(false);
   const [page, setPage] = useState(1);
+  const [active, setActive] = useState('All');
   const navigate = useNavigate();
 
   const loadData = async () => {
@@ -52,11 +55,25 @@ const Blogs = () => {
       setIsLoading(true);
       const data = await getAllBlogData(page, PAGE_SIZE);
       setBlogsData(data?.data);
+      setAllBlogsData(data?.data);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
       setErrorPage(true);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const loadTagsData = async () => {
+    try {
+      // setIsLoading(true);
+      const data = await getAllTags(1, 10);
+      setTagsList(data?.data);
+    } catch (e) {
+      console.error('Blogs API data fetch error: ', e);
+      setErrorPage(true);
+    } finally {
+      // setIsLoading(false);
     }
   };
 
@@ -71,6 +88,7 @@ const Blogs = () => {
 
   useEffect(() => {
     loadData();
+    loadTagsData();
   }, []);
 
   const onArticleClick = (clickedBlog) => {
@@ -120,6 +138,25 @@ const Blogs = () => {
       }, 500);
     }
   };
+
+  const handleSort = async (item) => {
+    setActive(item?.attributes?.name);
+    if(item !== 'All'){
+      try {
+        setIsLoading(true);
+        const data = await searchBlogDataByTags(item?.attributes?.name);
+        setBlogsData(data?.data);
+      } catch (e) {
+        console.error('Blogs API data fetch error: ', e);
+        setErrorPage(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    else{
+      loadData();
+    }
+  }
 
   const ArticleItem = ({ item }) => {
     return (
@@ -262,7 +299,7 @@ const Blogs = () => {
             <SpaceContent
               className="contentBox"
             >
-               {!isSwiper && blogsData && (<BlogHorizontalScroll items={blogsData.slice(0.2)} />)} 
+               {!isSwiper && blogsData && (<BlogHorizontalScroll items={allBlogsData?.slice(0.2)} />)} 
               
 
               {isSwiper && (<Swiper
@@ -279,7 +316,7 @@ const Blogs = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
               >
-                {blogsData?.map((item, i) => (
+                {allBlogsData?.map((item, i) => (
                   <SwiperSlide
                     key={i}
                     onClick={() => onArticleClick(item)}
@@ -335,6 +372,24 @@ const Blogs = () => {
                 </ItemV>
               </BlogRow>
 
+              {tagsList && (<ToggleSection>
+                <ToggleButton
+                  active={active === 'All' ? true : false}
+                  onClick={() => handleSort('All')}
+                >
+                  <Span>All</Span>
+                </ToggleButton>
+              {tagsList?.map((item, i) => (
+                <ToggleButton
+                  key={item?.attributes.name}
+                  active={active === item?.attributes?.name ? true : false}
+                  onClick={() => handleSort(item)}
+                >
+                  <Span>{item?.attributes.name}</Span>
+                </ToggleButton>
+              ))}
+            </ToggleSection>)}
+
               {/* first two sections */}
               {!search && <MainSection> <ArticleItem item={blogsData?.slice(0, 2)} /></MainSection>}
 
@@ -352,6 +407,12 @@ const Blogs = () => {
                     width={140}
                   />
                 </ItemH>
+              )}
+
+              {!isLoading && blogsData && blogsData.length === 0 && !search && (
+                <CenteredContainerInfo>
+                  <DisplayNotice>No blogs found.</DisplayNotice>
+                </CenteredContainerInfo>
               )}
 
               {search && !isLoading && searchItems?.length === 0 && (
@@ -446,6 +507,51 @@ const ResponsiveSection = styled(HybridSection)`
     & p {
       color: #000;
     }
+  }
+`;
+
+const ToggleSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+
+const ToggleButton = styled.div`
+  border: ${(props) => (props.active ? '1px solid transparent' : '1px solid #BAC4D6')};
+  border-radius: 62px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  left: 0;
+  margin: 5px 5px;
+  background: ${(props) => (props.active ? '#D53893' : 'transparent')};
+  color: ${(props) => (props.active ? '#fff' : '#000')};
+  &:hover {
+    background: ${(props) => (props.active ? '#D53893' : '#FFDBF0')};
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    color: ${(props) => (props.active ? '#fff !important' : '#000 !important')};
+  }
+
+  b {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.03em;
+    margin-left: 30px;
   }
 `;
 
