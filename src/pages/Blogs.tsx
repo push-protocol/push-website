@@ -201,7 +201,7 @@ const Blogs = () => {
                   {blogData?.attributes?.title}
                 </H3>
 
-                <ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>
+                {!isMobile && (<ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>)}
 
                 <ArticleContent>
                   <Moment
@@ -336,13 +336,13 @@ const Blogs = () => {
               </BlogRow>
 
               {/* first two sections */}
-              <MainSection>{!search && <ArticleItem item={blogsData?.slice(0, 2)} />}</MainSection>
+              {!search && <MainSection> <ArticleItem item={blogsData?.slice(0, 2)} /></MainSection>}
 
               {/* other grid section */}
-              <SubArticles>{!search && <ArticleItem item={blogsData?.slice(2, blogsData.length)} />}</SubArticles>
+              {!search && <SubArticles><ArticleItem item={blogsData?.slice(2, blogsData.length)} /></SubArticles>}
 
               {/* search grid section */}
-              <SearchArticles>{search && <SearchArticleItem item={searchItems} />}</SearchArticles>
+              {search && <SearchArticles><SearchArticleItem item={searchItems} /></SearchArticles>}
 
               {isLoading && (
                 <ItemH>
@@ -571,7 +571,7 @@ const ArticleTextB = styled.div`
 
   overflow: hidden;
   display: -webkit-box !important;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `;
 
@@ -619,8 +619,8 @@ const SearchMainArticle = styled.div`
 `;
 
 const ArticleImage = styled.img`
-  min-width: 400px;
-  max-width: 400px;
+  min-width: 321px;
+  max-width: 321px;
   aspect-ratio: 16/9;
   object-fit: cover;
   background: #d9d9d9;
@@ -633,8 +633,8 @@ const ArticleImage = styled.img`
 `;
 
 const ArticleRow = styled.div`
-  margin-left: 70px;
-  .clamp{
+  margin-left: 44px;
+  .clamp {
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
