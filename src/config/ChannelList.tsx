@@ -203,7 +203,7 @@ export const objChannelList = [
     ipfshash: 'bafkreiei7tpghd7fqdelshv4wyit5bpkhlm4ymnj3ffhniqhiuohorxrru',
     name: 'Bancor',
     info: 'Trade tokens and earn interest on your favorite tokens by staking them in Bancor’s decentralized exchange',
-    url: 'https://www.bancor.network/',
+    url: 'https://medium.com/push-protocol/epns-integrates-with-bancor-network-to-facilitate-decentralized-push-notifications-d35b5e27d4a9',
     icon: 'https://gateway.ipfs.io/ipfs/QmScxPLhouS2iAKgKz2nG6Houe1AdZ63FhD2kcNoRz8cAj',
     processed: 0,
     attempts: 3,
