@@ -324,7 +324,7 @@ function PartnerChannels() {
             margin="15px 0px 0px 0px"
             self="center"
           >
-            Explore dApps
+            Explore Integrations
           </LinkTo>
         </GridItem>
         <TriRow>
