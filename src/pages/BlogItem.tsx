@@ -817,7 +817,7 @@ const ToggleSection = styled.div`
 `;
 
 const AboutSection = styled.div`
-  margin-top: 156px;
+  margin-top: 99px;
   span {
     font-family: 'Lora';
     font-weight: 300;
@@ -924,6 +924,7 @@ const KPIFigure = styled.div`
 
 const BannerItem = styled(ItemV)`
   color: #000;
+  grid-gap: 8px;
   &:hover {
    color: #D53893;
   }
@@ -941,7 +942,7 @@ const KPIMetric = styled.div`
 `;
 
 const BlogRow = styled.div`
-  margin: 177px 0 32.5px 0;
+  margin: 104px 0 32.5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1026,11 +1027,12 @@ const ArticleTextB = styled.div`
 const TopicContent = styled.div`
   color: #575d73;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 28px;
   display: flex;
   flex-direction: column !important;
   align-item: flex-start;
+  letter-spacing: -0.35px;
   margin-top: ${(props) => props.marginTop || '0px'};
   padding: 10px 40px;
   @media ${device.laptop} {
@@ -1063,10 +1065,11 @@ const ArticleContent = styled.div`
   width: 100%;
   color: #575d73;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 28px;
   display: flex;
   flex-direction: row !important;
+  letter-spacing: -0.35px;
   margin-top: ${(props) => props.marginTop || '0px'};
 `;
 
@@ -1119,7 +1122,7 @@ const ShowMoreSection = styled.div`
   padding: 23px;
   cursor: pointer;
   b {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
     line-height: 110%;
     letter-spacing: -0.03em;
