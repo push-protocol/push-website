@@ -50,7 +50,7 @@ function BlogLoader(props: BlogLoaderProps) {
       };
 
   return (
-    <SubArticles justifyContent="space-between">
+    <SubArticles marginTop="34px">
       {[1, 2, 3].map((idx) => {
         return (
           <SubArticle key={`subarticle-${idx}`}>
@@ -62,19 +62,19 @@ function BlogLoader(props: BlogLoaderProps) {
             />
 
             <Skeleton
-              height={10}
+              height={12}
               width="100%"
               borderRadius={20}
               style={{ marginBottom: '5px' }}
             />
             <Skeleton
-              height={10}
+              height={12}
               width="75%"
               borderRadius={20}
               style={{ marginBottom: '13px' }}
             />
             <Skeleton
-              height={9}
+              height={10}
               width="50%"
               borderRadius={20}
             />
@@ -182,8 +182,6 @@ const Blogs = () => {
     }
   };
 
-  console.log(allBlogsData, blogsData);
-
   const ShowMore = async () => {
     //page
     let newPage = page + 1;
@@ -192,7 +190,6 @@ const Blogs = () => {
     try {
       setIsLoading(true);
       const data = await getAllBlogData(newPage, PAGE_SIZE);
-      console.log('newData for ', newPage, PAGE_SIZE, data?.data);
       let newData = data?.data;
       setTimeout(() => {
         setBlogsData((current) => [...current, ...newData]);
@@ -239,7 +236,6 @@ const Blogs = () => {
     }
   };
 
-  console.log('isfetching done', isFetchingDone);
   const ArticleItem = ({ item, main }) => {
     return (
       <>
@@ -491,7 +487,7 @@ const Blogs = () => {
                     item={blogsData?.slice(2, blogsData.length)}
                     main={false}
                   />
-                   {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
+                  {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
                 </SubArticles>
               )}
 
@@ -808,7 +804,7 @@ const SubArticles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 33px;
-  margin-top: 92px;
+  margin-top: ${(props) => props.marginTop || '92px'};
   align-items: flex-start;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
