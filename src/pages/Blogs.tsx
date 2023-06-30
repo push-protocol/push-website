@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { getAllBlogData, getAllTags, searchBlogData, searchBlogDataByTags } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
@@ -36,7 +36,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const BACKEND_API = 'https://blog.push.org';
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 5;
 
 function BlogLoader(props: BlogLoaderProps) {
   const figureDimensions = props.isMobile
@@ -58,20 +58,20 @@ function BlogLoader(props: BlogLoaderProps) {
               height={figureDimensions.height}
               width="100%"
               borderRadius={20}
-              style={{marginBottom:'13px'}}
+              style={{ marginBottom: '13px' }}
             />
 
             <Skeleton
               height={10}
               width="100%"
               borderRadius={20}
-              style={{marginBottom:'5px'}}
+              style={{ marginBottom: '5px' }}
             />
             <Skeleton
               height={10}
               width="75%"
               borderRadius={20}
-              style={{marginBottom:'13px'}}
+              style={{ marginBottom: '13px' }}
             />
             <Skeleton
               height={9}
@@ -192,11 +192,12 @@ const Blogs = () => {
     try {
       setIsLoading(true);
       const data = await getAllBlogData(newPage, PAGE_SIZE);
+      console.log('newData for ', newPage, PAGE_SIZE, data?.data);
       let newData = data?.data;
       setTimeout(() => {
         setBlogsData((current) => [...current, ...newData]);
       }, 500);
-      if (!newData?.length) {
+      if (newData?.length === 0) {
         setIsFetchingDone(true);
       }
     } catch (error) {
@@ -209,6 +210,8 @@ const Blogs = () => {
   };
 
   const handleSort = async (item) => {
+    setIsFetchingDone(false);
+    setPage(1);
     if (item !== 'All') {
       setActive(item?.attributes?.name);
       try {
@@ -236,7 +239,7 @@ const Blogs = () => {
     }
   };
 
-
+  console.log('isfetching done', isFetchingDone);
   const ArticleItem = ({ item, main }) => {
     return (
       <>
@@ -376,7 +379,7 @@ const Blogs = () => {
             data-bkg="dark"
           >
             <SpaceContent className="contentBox">
-              {!isSwiper && allBlogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0,3)} />}
+              {!isSwiper && allBlogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0, 3)} />}
 
               {isSwiper && (
                 <Swiper
@@ -488,6 +491,7 @@ const Blogs = () => {
                     item={blogsData?.slice(2, blogsData.length)}
                     main={false}
                   />
+                   {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
                 </SubArticles>
               )}
 
@@ -497,16 +501,6 @@ const Blogs = () => {
                   <SearchArticleItem item={searchItems} />
                 </SearchArticles>
               )}
-
-              {/* {isLoading && (
-                <ItemH>
-                  <img
-                    src={SpinnerSVG}
-                    alt=""
-                    width={140}
-                  />
-                </ItemH>
-              )} */}
 
               {!isLoading && blogsData && blogsData?.length == 0 && !search && (
                 <CenteredContainerInfo>
@@ -520,7 +514,6 @@ const Blogs = () => {
                 </CenteredContainerInfo>
               )}
               {isLoading && <BlogLoader isMobile={isMobile} />}
-              {!isLoading && search.length === 0 && !isFetchingDone && <Waypoint onEnter={ShowMore} />}
             </Content>
           </BlogsSection>
         </BlogsWrapper>
