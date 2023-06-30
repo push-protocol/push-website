@@ -5,7 +5,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getAllBlogData, getSingleBlogData } from '../api';
 import styled from 'styled-components';
-import { Anchor, B, Content, H1, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P } from 'components/SharedStyling';
+import { Anchor, B, Content, H1, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P, Button } from 'components/SharedStyling';
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
@@ -24,6 +24,16 @@ import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
 import { BsFillPlayCircleFill } from 'react-icons/bs'
 import Skeleton from 'react-loading-skeleton';
+import { AiOutlineClose } from 'react-icons/ai';
+import { ReactComponent as ModalTwitter } from 'assets/Modal-Twitter.svg';
+
+import { ReactComponent as ModalFacebook } from 'assets/Modal-Facebook.svg';
+
+import { ReactComponent as ModalLinkedIn } from 'assets/Modal-LinkedIn.svg';
+
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -42,6 +52,58 @@ const BlogItem = () => {
   const [blogsContent, setBlogsContent] = useState(null);
   const [errorPage, setErrorPage] = React.useState(false);
   const [body, setBody] = React.useState(false);
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 348,
+    bgcolor: 'white',
+    boxShadow: 24,
+    p: 3,
+    borderRadius: '16px'
+  };
+
+  const LinkModal = () => {
+    return(
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          
+          <ModalDiv>
+            <ModalTopic>Share</ModalTopic>
+
+            <ModalClose onClick={handleClose}>
+                <AiOutlineClose />
+            </ModalClose>
+          </ModalDiv>
+
+          <ModalIcons>
+            <ModalTwitter />
+            <ModalLinkedIn />
+            <ModalFacebook />
+          </ModalIcons>
+
+          <ModalLink>
+            <ModalInput>
+              https://youtu.be/wc4hBT_EbT4
+            </ModalInput>
+
+            <ModalCopy>Copy link</ModalCopy>
+          </ModalLink>
+        </Box>
+      </Modal>
+    )
+  }
 
   const loadData = async () => {
     if (!id) return;
@@ -350,8 +412,8 @@ const BlogItem = () => {
                   Be a part of the conversation by sharing this article
                 </ResponsiveH2>
 
-                <Anchor
-                  href="https://twitter.com/pushprotocol"
+                {/* <Anchor
+                  // href="https://twitter.com/pushprotocol"
                   title="Developer Docs"
                   target="_blank"
                   bg="#DD44B9"
@@ -362,6 +424,18 @@ const BlogItem = () => {
                   spacing="-0.03em"
                   lineHeight="26px"
                   self={isMobile ? 'stretch' : 'self'}
+                > */}
+                <Button
+                 title="Developer Docs"
+                 bg="#DD44B9"
+                 radius="12px"
+                 padding="14px 20px"
+                 size="16px"
+                 weight="500"
+                 spacing="-0.03em"
+                 lineHeight="26px"
+                 self={isMobile ? 'stretch' : 'self'}
+                 onClick={handleOpen}
                 >
                   <BiShareAlt
                     size={23}
@@ -369,8 +443,13 @@ const BlogItem = () => {
                     style={{ marginRight: '10px' }}
                   />
                   Share
-                </Anchor>
+                  </Button>
+                {/* </Anchor> */}
               </ShareRow>
+
+              <LinkModal />
+
+            
 
               <AboutSection>
                 <AboutTitle>About Push Protocol</AboutTitle>
@@ -620,7 +699,7 @@ const TopBody = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-`
+`;
 
 const TopSection = styled(ResponsiveSection)`
   padding: 80px 0px 0px;
@@ -1181,10 +1260,71 @@ const SkeletonContainer = styled.div`
     border-radius: 30px;
     box-sizing: border-box;
   }
-`
+`;
+
 const SkeletonInnerContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
+
+const ModalDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+`;
+
+const ModalTopic = styled.div`
+  color: #333;
+  font-size: 20px;
+  font-family: Strawford;
+  line-height: 142%;
+  letter-spacing: -0.6px;
+`;
+
+const ModalIcons = styled.div`
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 32px;
+`;
+
+const ModalLink = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 28px;
+  justify-content: center;
+`;
+
+const ModalCopy = styled.div`
+  color: #FFF;
+  font-size: 14px;
+  font-family: Strawford;
+  font-weight: 500;
+  line-height: 142%;
+  letter-spacing: -0.42px;
+  border-radius: 0px 8px 8px 0px;
+  background: #D53A94;
+  padding: 8px 12px;
+`;
+
+const ModalInput = styled.div`
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid rgba(186, 196, 214, 0.40);
+  background: #FFF;
+  padding: 8px 12px;
+  max-width: 212px;
+  min-width: 212px;
+`;
+
+const ModalClose = styled.div`
+  cursor: pointer;
+`;
+
 
 export default BlogItem;

@@ -298,13 +298,14 @@ const Blogs = () => {
         <BlogsWrapper>
           <SpaceSection
             curve="bottom" 
-            padding="80px 0px 20px 0px"
+            padding={isMobile ? "80px 0px 20px 0px" : "30px 0px 20px 0px"}
+            // padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
             <SpaceContent
               className="contentBox"
             >
-               {!isSwiper && blogsData && (<BlogHorizontalScroll items={allBlogsData?.slice(0.2)} />)} 
+               {!isSwiper && blogsData && (<BlogHorizontalScroll items={allBlogsData?.slice(0,3)} />)} 
               
 
               {isSwiper && (<Swiper
@@ -545,7 +546,6 @@ const ToggleButton = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 13px 32px;
-  // padding: 15px 30px;
   box-sizing: border-box;
   width: fit-content;
   height: fit-content;
@@ -633,7 +633,7 @@ const ShowMoreSection = styled.div`
 `;
 
 export const SpaceContent = styled.div`
-	padding: ${(props) => props.padding || '40px 0px'};
+	// padding: ${(props) => props.padding || '40px 0px'};
 
 	&.contentBox {
     max-width: 1140px;
