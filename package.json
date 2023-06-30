@@ -30,6 +30,7 @@
     "react-oembed-container": "^1.0.1",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
+    "react-waypoint": "^10.3.0",
     "source-map-explorer": "^2.5.3",
     "styled-components": "^5.3.5",
     "swiper": "^9.0.5",
