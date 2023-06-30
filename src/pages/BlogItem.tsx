@@ -5,7 +5,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getAllBlogData, getSingleBlogData } from '../api';
 import styled from 'styled-components';
-import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P } from 'components/SharedStyling';
+import { Anchor, B, Content, H1, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P } from 'components/SharedStyling';
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
@@ -33,7 +33,8 @@ const page = 1;
 const BlogItem = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const isMobile = useMediaQuery(device.tablet);
+  const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
   const bodyRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [blogsData, setBlogsData] = useState(null);
@@ -149,7 +150,7 @@ const BlogItem = () => {
                 <H3
                   textTransform="normal"
                   color="#000000"
-                  size="24px"
+                  size={isMobile ? "16px" : "24px"}
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
@@ -307,19 +308,12 @@ const BlogItem = () => {
             </TopicContent>
 
             <ContentBody>
-            {/* <ContentBody className="contentBox" padding='10px 0px'> */}
 
-              <H3
-                textTransform="normal"
-                color="#000000"
-                size={isMobile ? '30px' : '40px'}
-                weight={isMobile ? '600' : '700'}
-                spacing="-0.02em"
-                lineHeight="55.5px"
-                margin="0px 0 0px 0"
+              <TextH1
+               
               >
                 {blogsData?.attributes.title}
-              </H3>
+              </TextH1>
 
               {isMobile && (<ArticleContent marginTop='12px'>
                 <Moment
@@ -383,11 +377,6 @@ const BlogItem = () => {
 
                 <Span
                   textAlign="center"
-                  // margin="20px 0 0 0"
-                  // weight={'400'}
-                  // color="#000"
-                  // lineHeight='37px'
-                  // size={isMobile ? '16px' : '18px'}
                 >
                   Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
                   messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
@@ -514,6 +503,27 @@ const ContentBody = styled.div`
     width: 100% !important;
   }
 
+`;
+
+const TextH1 = styled.h1`
+  color: #000;
+  font-size: 46px;
+  font-family: Strawford;
+  font-weight: 700;
+  line-height: 55.5px;
+  text-transform: inherit;
+
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 55.5px;
+  margin: 0px 0px;
+
+  @media ${device.mobileL} {
+   font-size: 30px;
+   font-weight: 600;
+   line-height: 130%;
+  }
 `;
 
 const DisplayNotice = styled.span`
@@ -694,6 +704,10 @@ const BlogContent = styled.div`
      color: #282A2D;
      font-size: 18px;
      line-height: 37px;
+
+     @media ${device.mobileL} {
+      font-size: 16px;
+    }
         a {
             color: #000000;
             cursor: pointer;
@@ -760,6 +774,10 @@ const BlogContent = styled.div`
       line-height: 38px;
       font-weight: 700;
       color: #000 !important;
+
+      @media ${device.mobileL} {
+        font-size: 24px;
+      }
     }
 
     h3 {
@@ -772,6 +790,10 @@ const BlogContent = styled.div`
         font-size: 22px;
         line-height: 40px;
         color: #575D73 !important;
+      }
+
+      @media ${device.mobileL} {
+        font-size: 18px;
       }
     }
 
@@ -829,7 +851,13 @@ const AboutSection = styled.div`
     line-height: 37px;
     color: #282a2d;
     letter-spacing: -0.002em;
+
+    @media ${device.mobileL}{
+      font-size: 16px;
+      line-height: 36px;
+    }
   }
+  
 `;
 
 const AboutTitle = styled.div`
@@ -840,7 +868,7 @@ const AboutTitle = styled.div`
   color: #000000;
   margin-bottom: 10px;
   letter-spacing: -0.02em;
-  @media ${device.laptop}{
+  @media ${device.mobileL}{
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
@@ -854,7 +882,7 @@ const ToggleButton = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 13px 30px;
   box-sizing: border-box;
   width: fit-content;
   height: fit-content;
