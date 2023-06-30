@@ -383,11 +383,11 @@ const BlogItem = () => {
 
                 <Span
                   textAlign="center"
-                  margin="20px 0 0 0"
-                  spacing="-0.03em"
-                  weight={'400'}
-                  color="#000"
-                  size={isMobile ? '16px' : '16px'}
+                  // margin="20px 0 0 0"
+                  // weight={'400'}
+                  // color="#000"
+                  // lineHeight='37px'
+                  // size={isMobile ? '16px' : '18px'}
                 >
                   Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
                   messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
@@ -660,27 +660,10 @@ const TopSection = styled(ResponsiveSection)`
 
 
 const BlogsSection = styled(ResponsiveSection)`
-  // padding: 0px 230px 80px 230px;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  // @media ${device.desktopL} {
-  //   padding: 0px 300px 80px 300px;
-  //  }
-
-  // @media ${device.desktop} {
-  //  padding: 0px 230px 80px 230px;
-  // }
-
-  // @media ${device.laptopL} {
-  //   padding: 0px 170px 80px 170px;
-  // }
-
-  // @media ${device.laptop} {
-  //   margin-top: 20px;
-  //   padding: 0px 100px 80px 100px;
-  // }
   @media ${device.tablet} {
     margin-top: 40px;
     padding-top: 0px;
@@ -709,8 +692,8 @@ const BlogContent = styled.div`
     ul,p {
      font-family: Lora !important;
      color: #282A2D;
-     font-weight: 400;
-     font-size: 16px;
+     font-size: 18px;
+     line-height: 37px;
         a {
             color: #000000;
             cursor: pointer;
@@ -758,18 +741,40 @@ const BlogContent = styled.div`
       margin: 30px 0px;
     }
 
-    h1,h2,h3,h4 {
-        font-family: 'Strawford' !important;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 38px;
-        color: #000000;
-        a {
-            color: #000000;
-            cursor: pointer;
-            font-family: Lora !important;
-        }
+    // h1,h4 {
+    //     font-family: 'Strawford' !important;
+    //     font-weight: 600;
+    //     font-size: 24px;
+    //     line-height: 38px;
+    //     color: #000000;
+    //     a {
+    //         color: #000000;
+    //         cursor: pointer;
+    //         font-family: Lora !important;
+    //     }
+    // }
+
+    h2 {
+      font-family: 'Strawford' !important;
+      font-size: 28px;
+      line-height: 38px;
+      font-weight: 700;
+      color: #000 !important;
     }
+
+    h3 {
+      font-family: Lora !important;
+      font-size: 22px;
+      line-height: 40px;
+      color: #575D73 !important
+      span {
+        font-family: Lora !important;
+        font-size: 22px;
+        line-height: 40px;
+        color: #575D73 !important;
+      }
+    }
+
     a {
         color: #000000;
         cursor: pointer;
@@ -820,8 +825,7 @@ const AboutSection = styled.div`
   margin-top: 99px;
   span {
     font-family: 'Lora';
-    font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 37px;
     color: #282a2d;
     letter-spacing: -0.002em;
@@ -1012,8 +1016,7 @@ const MainArticle = styled.div`
 const ArticleTextB = styled.div`
   width: 100%;
   color: #575d73;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 16px;
   line-height: 28px;
   font-family: Lora;
   margin-top: 5px;

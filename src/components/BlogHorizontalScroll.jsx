@@ -56,7 +56,7 @@ const SlideElement = ({
 
     <GrowPushCardDetails>
       <SpanTitle
-        size={isMobile ? "20px" : "31px"}
+        size={isMobile ? "20px" : "35px"}
         weight={isMobile ? "400" : "700"}
         lineHeight="121%"
         self="flex-start !important"

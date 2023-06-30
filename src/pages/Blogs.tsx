@@ -37,7 +37,8 @@ const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 5;
 
 const Blogs = () => {
-  const isMobile = useMediaQuery(device.tablet);
+  const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
   const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   const [blogsData, setBlogsData] = useState(null);
   const [allBlogsData, setAllBlogsData] = useState(null);
@@ -140,8 +141,8 @@ const Blogs = () => {
   };
 
   const handleSort = async (item) => {
-    setActive(item?.attributes?.name);
     if(item !== 'All'){
+    setActive(item?.attributes?.name);
       try {
         setIsLoading(true);
         const data = await searchBlogDataByTags(item?.attributes?.name);
@@ -154,11 +155,12 @@ const Blogs = () => {
       }
     }
     else{
+      setActive(item);
       loadData();
     }
   }
 
-  const ArticleItem = ({ item }) => {
+  const ArticleItem = ({ item , main}) => {
     return (
       <>
         {item?.map((blogData, idx) => {
@@ -173,11 +175,11 @@ const Blogs = () => {
                 alt={blogData?.attributes?.title}
               />
 
-              <ArticleDiv>
+              <ArticleDiv main={main}>
               <H3
                 textTransform="normal"
                 color="#000000"
-                size="24px"
+                size={isMobile ? "18px" : "24px"}
                 weight="700"
                 spacing="-0.02em"
                 lineHeight="142%"
@@ -227,7 +229,7 @@ const Blogs = () => {
                 <H3
                   textTransform="normal"
                   color="#000000"
-                  size="24px"
+                  size={isMobile ? "16px" :"24px"}
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
@@ -241,6 +243,9 @@ const Blogs = () => {
                 {!isMobile && (<ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>)}
 
                 <ArticleContent>
+                  {!isMobile && blogData?.attributes?.tags?.data?.map((item, i) => 
+                    (<ToggleButton style={{marginRight:'15px'}}>{item?.attributes?.name}</ToggleButton>)
+                  )}
                   <Moment
                     format="D MMMM, YYYY"
                     style={{ marginRight: '5px' }}
@@ -344,14 +349,14 @@ const Blogs = () => {
             <Content className="contentBox">
               <BlogRow>
                 <ItemV justifyContent="flex-start">
-                  <ResponsiveH2
+                  <ResponsiveH2Text
                     size="40px"
                     weight="500"
-                    spacing="-0.02em"
+                    spacing="-1.2px !important"
                     lineHeight="110%"
                   >
                     Push Protocol Insights
-                  </ResponsiveH2>
+                  </ResponsiveH2Text>
                 </ItemV>
                 <ItemV
                   maxWidth="350px"
@@ -372,7 +377,7 @@ const Blogs = () => {
                 </ItemV>
               </BlogRow>
 
-              {tagsList && (<ToggleSection>
+              {!search && tagsList && (<ToggleSection>
                 <ToggleButton
                   active={active === 'All' ? true : false}
                   onClick={() => handleSort('All')}
@@ -391,10 +396,10 @@ const Blogs = () => {
             </ToggleSection>)}
 
               {/* first two sections */}
-              {!search && <MainSection> <ArticleItem item={blogsData?.slice(0, 2)} /></MainSection>}
+              {!search && <MainSection> <ArticleItem item={blogsData?.slice(0, 2)} main={true} /></MainSection>}
 
               {/* other grid section */}
-              {!search && <SubArticles><ArticleItem item={blogsData?.slice(2, blogsData.length)} /></SubArticles>}
+              {!search && <SubArticles><ArticleItem item={blogsData?.slice(2, blogsData.length)} main={false} /></SubArticles>}
 
               {/* search grid section */}
               {search && <SearchArticles><SearchArticleItem item={searchItems} /></SearchArticles>}
@@ -441,6 +446,20 @@ const CenteredContainerInfo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const ResponsiveH2Text = styled.div`
+  color: #121315;
+  font-size: 40px;
+  font-family: Strawford;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -1.2px;
+  @media ${device.mobileL} {
+      font-size: 32px;
+      letter-spacing: -0.96px;
+      margin: 0px 0px 20px;
+  }
 `;
 
 const EmptyCenteredContainerInfo = styled.div`
@@ -525,7 +544,8 @@ const ToggleButton = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 13px 32px;
+  // padding: 15px 30px;
   box-sizing: border-box;
   width: fit-content;
   height: fit-content;
@@ -544,6 +564,10 @@ const ToggleButton = styled.div`
     font-weight: 500;
     border: none;
     color: ${(props) => (props.active ? '#fff !important' : '#000 !important')};
+
+    @media ${device.tablet} {
+    font-size: 18px;
+    }
   }
 
   b {
@@ -647,8 +671,7 @@ const ArticleBanner = styled.img`
 const ArticleText = styled.div`
   width: 100%;
   color: #575d73;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 16px;
   line-height: 27.5px;
   font-family: Lora;
   margin-top: 5px;
@@ -657,6 +680,10 @@ const ArticleText = styled.div`
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  @media ${device.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 const ArticleSlide = styled.div`
@@ -669,8 +696,7 @@ const ArticleSlide = styled.div`
 const ArticleTextB = styled.div`
   width: 100%;
   color: #575d73;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 18px;
   line-height: 28px;
   font-family: Lora;
   margin-top: 10px;
@@ -684,12 +710,18 @@ const ArticleTextB = styled.div`
 const ArticleContent = styled.div`
   width: 100%;
   color: #575d73;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 28px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
   display: flex;
   flex-direction: row !important;
+  align-items: center;
   margin-top: 15px;
+  letter-spacing: -0.35px;
+
+  @media ${device.mobileL} {
+    font-size: 12px;
+  }
 `;
 
 const SubArticles = styled.div`
@@ -756,7 +788,7 @@ const ArticleDiv = styled.div`
   .clamp{
     overflow: hidden;
     display: -webkit-box !important;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: ${(props) => (props.main ? '2' : '3')};
     -webkit-box-orient: vertical;
   }
 `;
@@ -775,7 +807,7 @@ const MainSection = styled.div`
   grid-gap: 32px;
   width: 100%;
   gap: 33px;
-  margin-top: 50px;
+  margin-top: 91px;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 0px;
@@ -783,7 +815,7 @@ const MainSection = styled.div`
 `;
 
 const BlogRow = styled(ItemH)`
-  margin: 100px 0 20px 0;
+  margin: 100px 0 50px 0;
   @media ${device.tablet} {
     margin-top: 80px;
   }
