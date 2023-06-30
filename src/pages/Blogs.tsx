@@ -36,7 +36,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const BACKEND_API = 'https://blog.push.org';
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 2;
 
 function BlogLoader(props: BlogLoaderProps) {
   const figureDimensions = props.isMobile
@@ -106,6 +106,18 @@ const Blogs = () => {
       setIsLoading(true);
       const data = await getAllBlogData(page, PAGE_SIZE);
       setBlogsData(data?.data);
+    } catch (e) {
+      console.error('Blogs API data fetch error: ', e);
+      setErrorPage(true);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const loadAllData = async () => {
+    try {
+      setIsLoading(true);
+      const data = await getAllBlogData(1, 5);
       setAllBlogsData(data?.data);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
@@ -139,6 +151,7 @@ const Blogs = () => {
 
   useEffect(() => {
     loadData();
+    loadAllData();
     loadTagsData();
   }, []);
 
@@ -168,6 +181,8 @@ const Blogs = () => {
       }, 500);
     }
   };
+
+  console.log(allBlogsData, blogsData);
 
   const ShowMore = async () => {
     //page
@@ -207,10 +222,20 @@ const Blogs = () => {
         setIsLoading(false);
       }
     } else {
-      setActive(item);
-      loadData();
+      try {
+        setActive(item);
+        setIsLoading(true);
+        const data = await getAllBlogData(1, PAGE_SIZE);
+        setBlogsData(data?.data);
+      } catch (e) {
+        console.error('Blogs API data fetch error: ', e);
+        setErrorPage(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
+
 
   const ArticleItem = ({ item, main }) => {
     return (
@@ -351,7 +376,7 @@ const Blogs = () => {
             data-bkg="dark"
           >
             <SpaceContent className="contentBox">
-              {!isSwiper && blogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0.2)} />}
+              {!isSwiper && allBlogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0,3)} />}
 
               {isSwiper && (
                 <Swiper
@@ -483,7 +508,7 @@ const Blogs = () => {
                 </ItemH>
               )} */}
 
-              {!isLoading && blogsData && blogsData.length === 0 && !search && (
+              {!isLoading && blogsData && blogsData?.length == 0 && !search && (
                 <CenteredContainerInfo>
                   <DisplayNotice>No blogs found.</DisplayNotice>
                 </CenteredContainerInfo>
