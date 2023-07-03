@@ -31,9 +31,9 @@ import { ReactComponent as ModalFacebook } from 'assets/Modal-Facebook.svg';
 
 import { ReactComponent as ModalLinkedIn } from 'assets/Modal-LinkedIn.svg';
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+// import Box from '@mui/material/Box';
+// import Typography from '@mui/material/Typography';
+// import Modal from '@mui/material/Modal';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -69,41 +69,41 @@ const BlogItem = () => {
     borderRadius: '16px'
   };
 
-  const LinkModal = () => {
-    return(
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
+  // const LinkModal = () => {
+  //   return(
+  //     <Modal
+  //       open={open}
+  //       onClose={handleClose}
+  //       aria-labelledby="modal-modal-title"
+  //       aria-describedby="modal-modal-description"
+  //     >
+  //       <Box sx={style}>
           
-          <ModalDiv>
-            <ModalTopic>Share</ModalTopic>
+  //         <ModalDiv>
+  //           <ModalTopic>Share</ModalTopic>
 
-            <ModalClose onClick={handleClose}>
-                <AiOutlineClose />
-            </ModalClose>
-          </ModalDiv>
+  //           <ModalClose onClick={handleClose}>
+  //               <AiOutlineClose />
+  //           </ModalClose>
+  //         </ModalDiv>
 
-          <ModalIcons>
-            <ModalTwitter />
-            <ModalLinkedIn />
-            <ModalFacebook />
-          </ModalIcons>
+  //         <ModalIcons>
+  //           <ModalTwitter />
+  //           <ModalLinkedIn />
+  //           <ModalFacebook />
+  //         </ModalIcons>
 
-          <ModalLink>
-            <ModalInput>
-              https://youtu.be/wc4hBT_EbT4
-            </ModalInput>
+  //         <ModalLink>
+  //           <ModalInput>
+  //             https://youtu.be/wc4hBT_EbT4
+  //           </ModalInput>
 
-            <ModalCopy>Copy link</ModalCopy>
-          </ModalLink>
-        </Box>
-      </Modal>
-    )
-  }
+  //           <ModalCopy>Copy link</ModalCopy>
+  //         </ModalLink>
+  //       </Box>
+  //     </Modal>
+  //   )
+  // }
 
   const loadData = async () => {
     if (!id) return;
@@ -447,7 +447,7 @@ const BlogItem = () => {
                 {/* </Anchor> */}
               </ShareRow>
 
-              <LinkModal />
+              {/* <LinkModal /> */}
 
             
 
