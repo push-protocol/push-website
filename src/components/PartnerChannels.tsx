@@ -31,7 +31,7 @@ import { ReactComponent as KybernetworkSVG } from '../assets/partners/kybernetwo
 import { ReactComponent as LepasaMetaverseSVG } from '../assets/partners/lepasametaverse.svg';
 import { ReactComponent as LensProtocolSVG } from '../assets/partners/lensprotocol.svg';
 import { ReactComponent as LifiSVG } from '../assets/partners/lifi.svg';
-import { ReactComponent as MaHadaoSVG } from '../assets/partners/mahadao.svg';
+// import { ReactComponent as MaHadaoSVG } from '../assets/partners/mahadao.svg';
 import { ReactComponent as MakerdaoSVG } from '../assets/partners/makerdao.svg';
 import { ReactComponent as MeanFinanceSVG } from '../assets/partners/meanfinance.svg';
 import { ReactComponent as MetastableSVG } from '../assets/partners/metastable.svg';
@@ -75,7 +75,7 @@ import useOnScreen from 'hooks/useOnScreen';
 const partnerSortedGroup = [
   [DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG],
   [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
-  [SushiSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
+  [SushiSVG, UnstoppableSVG, ProofofhumanitySVG],
   [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
   [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
   [ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG],
