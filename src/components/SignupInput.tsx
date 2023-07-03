@@ -12,6 +12,8 @@ import {
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
 import useMediaQuery from 'hooks/useMediaQuery';
 
+import { useTranslation } from 'react-i18next';
+
 function SignupInput() {
   const [
     isLoading,
@@ -22,11 +24,14 @@ function SignupInput() {
 
   const isMobile = useMediaQuery(device.tablet);
 
+  // Internationalization
+  const { t } = useTranslation();
+
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input type="text" name="email" placeholder="Your Email" tabIndex={0} required/>
-        <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Sign Up'}</button>
+        <input type="text" name="email" placeholder={t('home.email-section.email-input')} tabIndex={0} required/>
+        <button tabIndex={0} type="submit">{isLoading ? t('home.email-section.loading-submit-button') : t('home.email-section.submit-button')}</button>
             
         {isLoading ? <MaskInput /> : null}
       </Wrapper>

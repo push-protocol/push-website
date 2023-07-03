@@ -1,0 +1,82 @@
+{
+  "header": {
+    "docs": {
+      "title": "Docs",
+      "developer-guides": "Developer guides",
+      "alt-developer-guides": "Read Developer guides",
+      "gobernance-guides": "Gobernance guides",
+      "alt-gobernance-guides": "Read Gobernance guides",
+      "whitepaper": "Whitepaper",
+      "alt-whitepaper": "Read Whitepaper"
+    },
+    "more": {
+      "title": "Learn More",
+      "faq": "FAQ",
+      "alt-faq": "Frequently Asked Questions",
+      "blog": "Blog",
+      "alt-blog": "Read Our Story",
+      "push-ecosystem": "Push Ecosystem",
+      "alt-push-ecosystem": "Push Ecosystem",
+      "media-kit": "Media Kit",
+      "alt-media-kit": "Push Media Kit"
+    },
+    "push-dao": {
+      "title": "Push DAO",
+      "notion": "Push DAO Notion",
+      "alt-notion": "Push DAO Notion",
+      "forum": "Forum",
+      "alt-forum": "Push Governance Forum",
+      "grants": "Grants",
+      "alt-grants": "Push Grants",
+      "missions": "Missions",
+      "alt-missions": "Push Missions"
+    },
+    "app-button": {
+      "title": "Launch App",
+      "alt-title": "Push Dapp"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "The Communication Protocol of Web3",
+      "description": "Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.",
+      "start-button": "Start Building",
+      "alt-start-button": "Developer Docs",
+      "explore-button": "Explore Push Protocol",
+      "alt-explore-button": "Push Dapp"
+    },
+    "stats": {
+      "notifications": {
+        "part1": "Notifications",
+        "part2": "sent"
+      },
+      "subscribers": {
+        "part1": "Total",
+        "part2": "Subscribers"
+      },
+      "integrations": {
+        "part1": "Total Push",
+        "part2": "Integrations"
+      },
+      "grants": {
+        "part1": "In Grants",
+        "part2": "Given"
+      }
+    },
+    "partners-section": {
+      "networks": "Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.",
+      "missing-web3-title": "Push is the missing piece of Web3",
+      "missing-web3-text": "Until Push, no solution existed to enable native communication between wallets in response to on- and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized communication platforms.",
+      "missing-web3-span": "Push is building the communication network for Web3, addressing a gap in critical infrastructure and improving the everyday experience for blockchain users.",
+      "missing-web3-alt-button": "Developer Docs",
+      "missing-web3-button": "How Push works"
+    },
+    "email-section": {
+      "title": "Never Miss an Update",
+      "text": "Sign up and stay up to date with ecosystem announcements, giveaways and more.",
+      "email-input": "Your Email",
+      "submit-button": "Sign Up",
+      "loading-submit-button": "Please Wait..."
+    }
+  }
+}

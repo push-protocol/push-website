@@ -71,9 +71,14 @@ import ImageHolder from 'components/ImageHolder';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
 
+import { useTranslation } from 'react-i18next';
+
 function Home({ isAlertVisible }) {
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
+
+  // Internationalization
+  const { t, i18n } = useTranslation();
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -157,7 +162,7 @@ function Home({ isAlertVisible }) {
                   wrapperElement="div"
                   delay={0.25}
                 >
-                  <H1V2 zIndex="2"> The Communication Protocol of Web3</H1V2>
+                  <H1V2 zIndex="2">{t('home.hero.title')}</H1V2>
                 </FadeInAnimation>
 
                 <SpanV2
@@ -169,8 +174,7 @@ function Home({ isAlertVisible }) {
                     wrapperElement="div"
                     delay={0.45}
                   >
-                    Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
-                    dapps, wallets, and services.
+                    {t('home.hero.description')}
                   </FadeInAnimation>
                 </SpanV2>
 
@@ -184,23 +188,23 @@ function Home({ isAlertVisible }) {
                   >
                     <Atag
                       href="https://docs.push.org/developers"
-                      title="Developer Docs"
+                      title={t('home.hero.alt-start-button')}
                       target="_blank"
                       background={GLOBALS.COLORS.HIGHLIGHT}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      Start Building
+                      {t('home.hero.start-button')}
                     </Atag>
                     <Atag
                       href="https://app.push.org/"
-                      title="Push Dapp"
+                      title={t('home.hero.alt-explore-button')}
                       target="_blank"
                       background={GLOBALS.COLORS.BG_DARK_SECONDARY}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      Explore Push Protocol
+                      {t('home.hero.explore-button')}
                     </Atag>
                   </HeroCTA>
                 </FadeInAnimation>
@@ -298,8 +302,7 @@ function Home({ isAlertVisible }) {
                     wrapperElement="span"
                     delay={0}
                   >
-                    Push powers communication for over 100 of the world’s leading dapps and service providers across
-                    DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
+                    {t('home.partners-section.networks')}{' '}
                   </FadeInAnimation>
                 </Span>
               </ItemV>
@@ -372,7 +375,7 @@ function Home({ isAlertVisible }) {
                     direction="up"
                     delay={0}
                   >
-                    Push is the missing piece of Web3
+                    {t('home.partners-section.missing-web3-title')}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
@@ -389,9 +392,7 @@ function Home({ isAlertVisible }) {
                     direction="up"
                     delay={0.1}
                   >
-                    Until Push, no solution existed to enable native communication between wallets in response to on-
-                    and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and
-                    centralized communication platforms.
+                    {t('home.partners-section.missing-web3-text')}
                   </FadeInAnimation>
                 </Span>
 
@@ -408,8 +409,7 @@ function Home({ isAlertVisible }) {
                     direction="up"
                     delay={0.2}
                   >
-                    Push is building the communication network for Web3, addressing a gap in critical infrastructure and
-                    improving the everyday experience for blockchain users.
+                    {t('home.partners-section.missing-web3-span')}
                   </FadeInAnimation>
                 </Span>
 
@@ -420,7 +420,7 @@ function Home({ isAlertVisible }) {
                 >
                   <Anchor
                     href="https://docs.push.org/developers"
-                    title="Developer Docs"
+                    title={t('home.partners-section.missing-web3-alt-button')}
                     target="_blank"
                     bg="#DD44B9"
                     radius="16px"
@@ -433,7 +433,7 @@ function Home({ isAlertVisible }) {
                     margin={isMobile && '20px 0px 0px 0px'}
                   >
                     {/* Learn about $PUSH */}
-                    How Push works
+                    {t('home.partners-section.missing-web3-button')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </FadeInAnimation>
@@ -466,7 +466,7 @@ function Home({ isAlertVisible }) {
                     lineHeight="110%"
                     margin="0"
                   >
-                    Never Miss an Update
+                    {t('home.email-section.title')}
                   </ResponsiveH2>
                   <Span
                     color="#303C5E"
@@ -475,7 +475,7 @@ function Home({ isAlertVisible }) {
                     spacing="-0.03em"
                     lineHeight="138.5%"
                   >
-                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                    {t('home.email-section.text')}
                   </Span>
                 </ItemV>
 
