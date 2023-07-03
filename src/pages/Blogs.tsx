@@ -488,6 +488,7 @@ const Blogs = () => {
                     main={false}
                   />
                   {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
+                  <Waypoint onLeave={()=>setIsFetchingDone(false)}/>
                 </SubArticles>
               )}
 
