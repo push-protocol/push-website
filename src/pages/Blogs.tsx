@@ -298,7 +298,7 @@ const Blogs = () => {
         <BlogsWrapper>
           <SpaceSection
             curve="bottom" 
-            padding={isMobile ? "80px 0px 20px 0px" : "30px 0px 20px 0px"}
+            padding={isMobile ? "80px 0px 20px 0px" : "20px 0px 20px 0px"}
             // padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
