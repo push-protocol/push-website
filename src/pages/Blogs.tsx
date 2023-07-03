@@ -384,6 +384,7 @@ const Blogs = () => {
                   onClick={() => handleSort('All')}
                 >
                   <Span>All</Span>
+                  
                 </ToggleButton>
               {tagsList?.map((item, i) => (
                 <ToggleButton
