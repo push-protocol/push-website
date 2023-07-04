@@ -371,7 +371,7 @@ const Blogs = () => {
         <BlogsWrapper>
           <SpaceSection
             curve="bottom" 
-            padding={isMobile ? "80px 0px 20px 0px" : "30px 0px 20px 0px"}
+            padding={isMobile ? "80px 0px 20px 0px" : "20px 0px 20px 0px"}
             // padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
@@ -453,24 +453,33 @@ const Blogs = () => {
                 </ItemV>
               </BlogRow>
 
-              {!search && tagsList && (
-                <ToggleSection>
-                  <ToggleButton
-                    active={active === 'All' ? true : false}
-                    onClick={() => handleSort('All')}
-                  >
-                    <Span>All</Span>
-                  </ToggleButton>
-                  {tagsList?.map((item, i) => (
-                    <ToggleButton
-                      key={item?.attributes.name}
-                      active={active === item?.attributes?.name ? true : false}
-                      onClick={() => handleSort(item)}
-                    >
-                      <Span>{item?.attributes.name}</Span>
-                    </ToggleButton>
-                  ))}
-                </ToggleSection>
+              {!search && tagsList && (<ToggleSection>
+                <ToggleButton
+                  active={active === 'All' ? true : false}
+                  onClick={() => handleSort('All')}
+                >
+                  <Span>All</Span>
+                  
+                </ToggleButton>
+              {tagsList?.map((item, i) => (
+                <ToggleButton
+                  key={item?.attributes.name}
+                  active={active === item?.attributes?.name ? true : false}
+                  onClick={() => handleSort(item)}
+                >
+                  <Span>{item?.attributes.name}</Span>
+                </ToggleButton>
+              ))}
+            </ToggleSection>)}
+            
+              {isLoading && (
+                <ItemH>
+                  <img
+                    src={SpinnerSVG}
+                    alt=""
+                    width={140}
+                  />
+                </ItemH>
               )}
 
               {/* first two sections */}

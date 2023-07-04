@@ -1,4 +1,5 @@
 {
   "presets": ["@babel/preset-react", "@babel/preset-env"],
-  "plugins": ["styled-components", "emotion"]
+  "plugins": ["styled-components", "emotion"],
+  "maxSize": 1000 // Set the desired file size limit in KB (e.g., 1000KB)
 }
