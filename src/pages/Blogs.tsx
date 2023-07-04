@@ -471,16 +471,6 @@ const Blogs = () => {
                 </ToggleButton>
               ))}
             </ToggleSection>)}
-            
-              {isLoading && (
-                <ItemH>
-                  <img
-                    src={SpinnerSVG}
-                    alt=""
-                    width={140}
-                  />
-                </ItemH>
-              )}
 
               {/* first two sections */}
               {!search && (
