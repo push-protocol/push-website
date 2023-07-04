@@ -31,9 +31,6 @@ import { ReactComponent as ModalFacebook } from 'assets/Modal-Facebook.svg';
 
 import { ReactComponent as ModalLinkedIn } from 'assets/Modal-LinkedIn.svg';
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -56,54 +53,6 @@ const BlogItem = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 348,
-    bgcolor: 'white',
-    boxShadow: 24,
-    p: 3,
-    borderRadius: '16px'
-  };
-
-  const LinkModal = () => {
-    return(
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          
-          <ModalDiv>
-            <ModalTopic>Share</ModalTopic>
-
-            <ModalClose onClick={handleClose}>
-                <AiOutlineClose />
-            </ModalClose>
-          </ModalDiv>
-
-          <ModalIcons>
-            <ModalTwitter />
-            <ModalLinkedIn />
-            <ModalFacebook />
-          </ModalIcons>
-
-          <ModalLink>
-            <ModalInput>
-              https://youtu.be/wc4hBT_EbT4
-            </ModalInput>
-
-            <ModalCopy>Copy link</ModalCopy>
-          </ModalLink>
-        </Box>
-      </Modal>
-    )
-  }
 
   const loadData = async () => {
     if (!id) return;
@@ -446,10 +395,6 @@ const BlogItem = () => {
                   </Button>
                 {/* </Anchor> */}
               </ShareRow>
-
-              <LinkModal />
-
-            
 
               <AboutSection>
                 <AboutTitle>About Push Protocol</AboutTitle>
