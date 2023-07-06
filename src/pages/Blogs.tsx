@@ -46,7 +46,7 @@ function BlogLoader(props: BlogLoaderProps) {
       }
     : {
         width: 251,
-        height: 141,
+        height: 160,
       };
 
   return (
@@ -55,10 +55,9 @@ function BlogLoader(props: BlogLoaderProps) {
         return (
           <SubArticle key={`subarticle-${idx}`}>
             <Skeleton
-              height={figureDimensions.height}
               width="100%"
               borderRadius={20}
-              style={{ marginBottom: '13px' }}
+              style={{ marginBottom: '13px', aspectRatio: '16/9' }}
             />
 
             <Skeleton
@@ -470,13 +469,13 @@ const Blogs = () => {
 
               {/* other grid section */}
               {!search && (
-                <SubArticles>
+                <SubArticles marginTop={isLoading ? '0px' : '92px'}>
                   <ArticleItem
                     item={blogsData?.slice(2, blogsData.length)}
                     main={false}
                   />{' '}
                   {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
-                  <Waypoint onLeave={() => setIsFetchingDone(false)} />
+                  {active === 'All' && <Waypoint onLeave={() => setIsFetchingDone(false)} />}
                 </SubArticles>
               )}
 
@@ -498,7 +497,7 @@ const Blogs = () => {
                   <DisplayNotice>No articles match your query.</DisplayNotice>
                 </CenteredContainerInfo>
               )}
-               {isLoading && <BlogLoader isMobile={isMobile} />}
+              {isLoading && <BlogLoader isMobile={isMobile} />}
             </Content>
           </BlogsSection>
         </BlogsWrapper>
@@ -792,7 +791,7 @@ const SubArticles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 33px;
-  margin-top: ${(props) => props.marginTop || '92px'};
+  margin-top: ${(props) => props.marginTop};
   align-items: flex-start;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
