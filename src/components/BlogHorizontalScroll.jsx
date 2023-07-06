@@ -215,7 +215,7 @@ const SliderContainer = styled.div`
   }
 
   @media (min-width: 1200px) and (max-height: 758px) {
-     margin-top: 40px;
+     margin-top: 150px;
   }
 
 
@@ -227,10 +227,10 @@ const SliderContainer = styled.div`
     background: #d9d9d9;
 `;
 
-const GrowPushCard = styled(ItemV)`
+const GrowPushCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   cursor: pointer;
   padding: 5px;
   min-width: 52.5em;
@@ -324,7 +324,8 @@ const GrowPushCard = styled(ItemV)`
 `;
 
 const DivItem = styled.div`
-  margin-top: 0px;
+  margin-top: -30px;
+  padding-top:0px;
   color: #575D73;
   font-weight: 400;
   font-size: 15px;
