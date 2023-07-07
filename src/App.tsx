@@ -24,12 +24,6 @@ function App() {
     ReactGA.pageview('/entry');
   }, []);
 
-  const [isAlertVisible, setIsAlertVisible] = useState(true);
-
-  const hideAlertHandler = () => {
-    setIsAlertVisible(false);
-  };
-
   const Wrapper = ({ children }) => {
     const location = useLocation();
     useLayoutEffect(() => {
@@ -42,16 +36,12 @@ function App() {
     <Suspense fallback={<h1>Loading</h1>}>
       <Wrapper id="wrapper">
         <AppWrapper id="content">
-          <Header
-            isAlertVisible={isAlertVisible}
-            setIsAlertVisible={setIsAlertVisible}
-            hideAlertHandler={hideAlertHandler}
-          />
+          <Header />
           <Routes>
             {/* add all the route paths here */}
             <Route
               path="/"
-              element={<Home isAlertVisible={isAlertVisible} />}
+              element={<Home />}
             />
             {/* <Route path="/about" element={<AboutUs />} /> */}
             <Route
