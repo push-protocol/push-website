@@ -12,8 +12,14 @@ import HybridSection from '../components/HybridSection';
 
 import { Content, ItemH, ItemV, H2, H3, Para, UL, LI, A, B, Span, HeroHeader } from '../components/SharedStyling';
 
+import { useTranslation } from 'react-i18next';
+
 
 function TermsOfService() {
+
+  // Internationalization
+  const { t } = useTranslation();
+
   return (
     <PageWrapper
       pageName={PageMeta.TOS.pageName}
@@ -23,11 +29,11 @@ function TermsOfService() {
         <ResponsiveSection curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
           <Content className="contentBox" flex="0">
             <ItemH flexDirection="column" justifyContent="flex-start">
-              <HeroHeader>Terms of Service</HeroHeader>
-              <Para margin="20px 0 0 0" size="1.5rem">Outlines the terms and conditions</Para>
+              <HeroHeader>{t('terms.hero.title')}</HeroHeader>
+              <Para margin="20px 0 0 0" size="1.5rem">{t('terms.hero.description')}</Para>
 
               <ItemV align="flex-start" margin="0">
-                <H3 maxWidth="400px">Last Updated: 2nd November 2020</H3>
+                <H3 maxWidth="400px">{t('terms.hero.update-text')}</H3>
               </ItemV>
 
               <ItemV align="flex-start" margin="0px">

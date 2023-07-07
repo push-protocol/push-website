@@ -154,7 +154,7 @@ function Home({ isAlertVisible }) {
               justifyContent="flex-start"
             >
               <HeroItem
-                maxWidth="60%"
+                maxWidth="50%"
                 alignItems="flex-start"
                 MarginTop={isAlertVisible ? '100px' : '0px'}
               >
@@ -348,8 +348,8 @@ function Home({ isAlertVisible }) {
                     className="pushMissingSvg"
                     src={PushMissingPieceFigure}
                     srcSet={PushMissingPieceFigure}
-                    alt={'Illustration showing Push as the missing piece of web3'}
-                    title="Push is the missing piece of web3"
+                    alt={t('home.partners-section.alt-missing-web3-image')}
+                    title={t('home.partners-section.title-missing-web3-image')}
                     style={{ margin: '0 auto' }}
                     // width="100%"
                     // height="100%"
@@ -515,8 +515,8 @@ function Home({ isAlertVisible }) {
                   className="figureSvg"
                   src={GrowWithPushFigure}
                   srcSet={GrowWithPushFigure}
-                  alt={'Illustration showing $PUSH tokens'}
-                  title="Use the Push token to grow"
+                  alt={t('home.grow-section.image-alt')}
+                  title={t('home.grow-section.image-title')}
                   width="100%"
                   height="100%"
                 />
@@ -534,7 +534,7 @@ function Home({ isAlertVisible }) {
                   wrapperElement="div"
                   delay={0.2}
                 >
-                  Grow with Push
+                  {t('home.grow-section.title')}
                 </FadeInAnimation>
               </ResponsiveH2>
 
@@ -550,8 +550,7 @@ function Home({ isAlertVisible }) {
                   wrapperElement="div"
                   delay={0.3}
                 >
-                  The $PUSH token enables governance, modification of protocol fees and features, network security, and
-                  fee management among all wallets that integrate Push, including Push governance participants.
+                  {t('home.grow-section.text')}
                 </FadeInAnimation>
               </Span>
             </IntegrateGrowWithPushRow>
@@ -570,13 +569,13 @@ function Home({ isAlertVisible }) {
                     wrapperElement="div"
                     delay={0.1}
                   >
-                    Are you a crypto wallet? <br></br> Integrate and earn.
+                    {t('home.grow-section.wallet-text.part1')} <br></br> {t('home.grow-section.wallet-text.part2')}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
                 <Anchor
                   href="https://docs.push.org/hub/"
-                  title="Learn about $PUSH"
+                  title={t('home.grow-section.button-alt')}
                   target="_blank"
                   bg="#DD44B9"
                   radius="16px"
@@ -587,7 +586,7 @@ function Home({ isAlertVisible }) {
                   lineHeight="26px"
                   self="center"
                 >
-                  Learn about $PUSH
+                  {t('home.grow-section.button')}
                 </Anchor>
               </IntegrateAndEarn>
             </ItemH>
@@ -605,7 +604,7 @@ function Home({ isAlertVisible }) {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Why do you need Push?
+                  {t('home.why-push-section.title')}
                 </ResponsiveH2>
               </ItemV>
             </ItemH>
@@ -620,7 +619,7 @@ function Home({ isAlertVisible }) {
                     >
                       <ChainAgnosticFigure
                         alt="Icon showing Push is chain agnostic"
-                        title="Chain Agnostic"
+                        title={t('home.why-push-section.chain-agnostic-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -636,7 +635,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Chain Agnostic
+                      {t('home.why-push-section.chain-agnostic-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -649,7 +648,7 @@ function Home({ isAlertVisible }) {
                     >
                       <ImmediatecommunicationFigure
                         alt="Icon showing Immediate Communication"
-                        title="Immediate Communication"
+                        title={t('home.why-push-section.immediate-communication-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -665,7 +664,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Immediate Communication
+                      {t('home.why-push-section.immediate-communication-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -678,7 +677,7 @@ function Home({ isAlertVisible }) {
                     >
                       <DecentralizedstackFigure
                         alt="Icon showing decentralization"
-                        title="Decentralized Stack"
+                        title={t('home.why-push-section.decentralized-stack-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -694,7 +693,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Decentralized Stack
+                      {t('home.why-push-section.decentralized-stack-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -707,7 +706,7 @@ function Home({ isAlertVisible }) {
                     >
                       <ImproveduxFigure
                         alt="Icon showing User Experience"
-                        title="Improved UX"
+                        title={t('home.why-push-section.improved-ux-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -723,7 +722,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Improved UX
+                      {t('home.why-push-section.improved-ux-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -736,7 +735,7 @@ function Home({ isAlertVisible }) {
                     >
                       <SecurityalertsFigure
                         alt="Icon showing Security"
-                        title="Security Alerts"
+                        title={t('home.why-push-section.security-alerts-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -752,7 +751,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Security Alerts
+                      {t('home.why-push-section.security-alerts-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -765,7 +764,7 @@ function Home({ isAlertVisible }) {
                     >
                       <CensorshipresistantFigure
                         alt="Icon showing Censorship Resistance"
-                        title="Censorship Resistant"
+                        title={t('home.why-push-section.censorship-resistant-text')}
                       />
                     </FadeInAnimation>
                   </div>
@@ -781,7 +780,7 @@ function Home({ isAlertVisible }) {
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Censorship Resistant
+                      {t('home.why-push-section.censorship-resistant-text')}
                     </FadeInAnimation>
                   </Span>
                 </MatrixCell>
@@ -799,9 +798,7 @@ function Home({ isAlertVisible }) {
                 spacing="-0.03em"
                 lineHeight="142%"
               >
-                Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
-                with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
-                in a broken ecosystem and problems in daily use.
+                {t('home.why-push-section.text')}
               </Span>
             </WhyPushTextBox>
 
@@ -819,7 +816,7 @@ function Home({ isAlertVisible }) {
                   margin="0"
                   width="50%"
                 >
-                  Push Insights & Updates
+                  {t('home.insights-section.title')}
                 </ResponsiveH2>
               </ItemV>
 
@@ -839,7 +836,7 @@ function Home({ isAlertVisible }) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Explore all Articles
+                  {t('home.insights-section.link-text')}
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Anchor>
               </ItemV>
@@ -954,7 +951,7 @@ function Home({ isAlertVisible }) {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Backed by successful entrepreneurs and venture capital funds.
+                  {t('home.investors-section.title')}
                 </InvestorHeader>
               </ItemV>
             </ItemH>
@@ -982,7 +979,7 @@ function Home({ isAlertVisible }) {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Featured in
+                  {t('home.featured-section.title')}
                 </ResponsiveH2>
               </ItemV>
             </ItemH>
@@ -1006,7 +1003,7 @@ function Home({ isAlertVisible }) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
+                  {t('home.featured-section.article1.text')}
                 </Span>
 
                 <ArticleSource>
@@ -1026,7 +1023,7 @@ function Home({ isAlertVisible }) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article1.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1040,7 +1037,7 @@ function Home({ isAlertVisible }) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
+                  {t('home.featured-section.article2.text')}
                 </Span>
 
                 <ArticleSource>
@@ -1060,7 +1057,7 @@ function Home({ isAlertVisible }) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article2.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1074,7 +1071,7 @@ function Home({ isAlertVisible }) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
+                  {t('home.featured-section.article3.text')}
                 </Span>
 
                 <ArticleSource>
@@ -1094,7 +1091,7 @@ function Home({ isAlertVisible }) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article3.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
@@ -1108,7 +1105,7 @@ function Home({ isAlertVisible }) {
                   spacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Decentralized push notifications may transform what dapps can do.
+                  {t('home.featured-section.article4.text')}
                 </Span>
 
                 <ArticleSource>
@@ -1128,7 +1125,7 @@ function Home({ isAlertVisible }) {
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article4.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>

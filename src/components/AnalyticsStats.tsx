@@ -41,7 +41,7 @@ function nFormatter(num, digits) {
 function AnalyticsStats() {
 
   // Internationalization
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   
   const [kpiStats, setKpiStats] = useState({
     totalNotifsSent: '',

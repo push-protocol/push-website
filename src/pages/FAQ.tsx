@@ -16,6 +16,8 @@ import HybridSection from '../components/HybridSection';
 import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, OL, LI, A, B, Span, HeroHeader, Button } from '../components/SharedStyling';
 import ImageFAQ from "../assets/faq-projects.webp"
 
+import { useTranslation } from 'react-i18next';
+
 // define the question and answers separately in order to separate data and render logic
 const General = [
   {
@@ -330,6 +332,8 @@ const Token = [
 
 function FAQ() {
 
+  const { t } = useTranslation();
+
   const [showAnswers, setShowAnswers] = React.useState([]);
   const [active, setActiveSection] = React.useState();
 
@@ -391,11 +395,11 @@ function FAQ() {
         <ResponsiveSection curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
           <Content className="contentBox" flex="0">
             <ItemH flexDirection="column" justifyContent="flex-start">
-              <HeroHeader>FREQUENTLY ASKED QUESTIONS</HeroHeader>
-              <Para margin="20px 0 0 0" size="1.5rem">Frequently asked Questions and their answers!</Para>
+              <HeroHeader>{t('faq.hero.title')}</HeroHeader>
+              <Para margin="20px 0 0 0" size="1.5rem">{t('faq.hero.description')}</Para>
 
               <ItemV align="flex-start" margin="0">
-                <H3 maxWidth="400px">GET ANSWERS FOR SOME OF THE POPULAR QUESTIONS ASKED BY PUSH COMMUNITY!</H3>
+                <H3 maxWidth="400px">{t('faq.hero.update-text')}</H3>
               </ItemV>
 
             </ItemH>
