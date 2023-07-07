@@ -28,10 +28,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
         <AlertContainer>
           <AlertText onClick={openLink}>
             {alertMessage}
-            <KnowMoreLink
-              href={alertLink}
-              target="_blank"
-            >
+            <KnowMoreLink>
               Know More
             </KnowMoreLink>
             <FiArrowUpRight className="icon" />
@@ -101,7 +98,7 @@ const CancelIcon = styled.div`
   }
 `;
 
-const KnowMoreLink = styled.a`
+const KnowMoreLink = styled.span`
   padding: 0;
   background: none;
   font-size: 1.125rem;
