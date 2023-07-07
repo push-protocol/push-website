@@ -59,6 +59,8 @@ import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { useInView } from 'react-intersection-observer';
 
+import { useTranslation } from 'react-i18next';
+
 
 /**
  * edit this to change the order
@@ -85,6 +87,10 @@ const partnerSortedGroup = [
 ];
 
 function PartnerChannels() {
+
+  // Internationalization
+  const { t } = useTranslation();
+
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [active, setActive] = useState(false);
@@ -297,7 +303,7 @@ function PartnerChannels() {
             margin="0px 0px"
             lineHeight="110%"
           >
-            Powered by Push
+            {t('home.partners-section.partner-channels-title')}
           </ResponsiveH2>
 
           <Span
@@ -308,12 +314,12 @@ function PartnerChannels() {
             lineHeight="160%"
             textAlign={isMobile ? 'center' : 'initial'}
           >
-            Discover an amazing community of developers integrating Push to build a powerful communication stack.
+            {t('home.partners-section.partner-channels-description')}
           </Span>
 
           <LinkTo
             to="/frens"
-            title="Learn about $PUSH"
+            title={t('home.partners-section.partner-channels-button-alt')}
             bg="#DD44B9"
             radius="16px"
             padding="14px 32px"
@@ -324,7 +330,7 @@ function PartnerChannels() {
             margin="15px 0px 0px 0px"
             self="center"
           >
-            Explore dApps
+            {t('home.partners-section.partner-channels-button')}
           </LinkTo>
         </GridItem>
         <TriRow>
