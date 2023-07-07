@@ -31,10 +31,58 @@ import { BodyContent } from './Home';
 import SignupInput from 'components/SignupInput';
 import { FiChevronDown } from 'react-icons/fi';
 import BlogHorizontalScroll from 'components/BlogHorizontalScroll';
-
+import { Waypoint } from 'react-waypoint';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const BACKEND_API = 'https://blog.push.org';
 const PAGE_SIZE = 5;
+
+function BlogLoader(props: BlogLoaderProps) {
+  const figureDimensions = props.isMobile
+    ? {
+        width: 118,
+        height: 108,
+      }
+    : {
+        width: 251,
+        height: 160,
+      };
+
+  return (
+    <SubArticles marginTop="34px">
+      {[1, 2, 3].map((idx) => {
+        return (
+          <SubArticle key={`subarticle-${idx}`}>
+            <Skeleton
+              width="100%"
+              borderRadius={20}
+              style={{ marginBottom: '13px', aspectRatio: '16/9' }}
+            />
+
+            <Skeleton
+              height={12}
+              width="100%"
+              borderRadius={20}
+              style={{ marginBottom: '5px' }}
+            />
+            <Skeleton
+              height={12}
+              width="75%"
+              borderRadius={20}
+              style={{ marginBottom: '13px' }}
+            />
+            <Skeleton
+              height={10}
+              width="50%"
+              borderRadius={20}
+            />
+          </SubArticle>
+        );
+      })}
+    </SubArticles>
+  );
+}
 
 const Blogs = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -49,6 +97,7 @@ const Blogs = () => {
   const [errorPage, setErrorPage] = React.useState(false);
   const [page, setPage] = useState(1);
   const [active, setActive] = useState('All');
+  const [isFetchingDone, setIsFetchingDone] = useState(false);
   const navigate = useNavigate();
 
   const loadData = async () => {
@@ -131,6 +180,9 @@ const Blogs = () => {
       setTimeout(() => {
         setBlogsData((current) => [...current, ...newData]);
       }, 500);
+      if (newData?.length === 0) {
+        setIsFetchingDone(true);
+      }
     } catch (error) {
       console.error('Channels API data fetch error: ', error);
     } finally {
@@ -141,8 +193,10 @@ const Blogs = () => {
   };
 
   const handleSort = async (item) => {
-    if(item !== 'All'){
-    setActive(item?.attributes?.name);
+    setIsFetchingDone(false);
+    setPage(1);
+    if (item !== 'All') {
+      setActive(item?.attributes?.name);
       try {
         setIsLoading(true);
         const data = await searchBlogDataByTags(item?.attributes?.name);
@@ -153,14 +207,22 @@ const Blogs = () => {
       } finally {
         setIsLoading(false);
       }
+    } else {
+      try {
+        setActive(item);
+        setIsLoading(true);
+        const data = await getAllBlogData(1, PAGE_SIZE);
+        setBlogsData(data?.data);
+      } catch (e) {
+        console.error('Blogs API data fetch error: ', e);
+        setErrorPage(true);
+      } finally {
+        setIsLoading(false);
+      }
     }
-    else{
-      setActive(item);
-      loadData();
-    }
-  }
+  };
 
-  const ArticleItem = ({ item , main}) => {
+  const ArticleItem = ({ item, main }) => {
     return (
       <>
         {item?.map((blogData, idx) => {
@@ -176,18 +238,18 @@ const Blogs = () => {
               />
 
               <ArticleDiv main={main}>
-              <H3
-                textTransform="normal"
-                color="#000000"
-                size={isMobile ? "18px" : "24px"}
-                weight="700"
-                spacing="-0.02em"
-                lineHeight="142%"
-                margin="24px 0 0 0"
-                className='clamp'
-              >
-                {blogData?.attributes?.title}
-              </H3>
+                <H3
+                  textTransform="normal"
+                  color="#000000"
+                  size={isMobile ? '18px' : '24px'}
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="142%"
+                  margin="24px 0 0 0"
+                  className="clamp"
+                >
+                  {blogData?.attributes?.title}
+                </H3>
               </ArticleDiv>
 
               <ArticleText>{filterComment(blogData?.attributes?.body)}</ArticleText>
@@ -229,23 +291,24 @@ const Blogs = () => {
                 <H3
                   textTransform="normal"
                   color="#000000"
-                  size={isMobile ? "16px" :"24px"}
+                  size={isMobile ? '16px' : '24px'}
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
                   margin="24px 0 0 0"
-                  className='clamp'
+                  className="clamp"
                   textAlign="left !important"
                 >
                   {blogData?.attributes?.title}
                 </H3>
 
-                {!isMobile && (<ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>)}
+                {!isMobile && <ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>}
 
                 <ArticleContent>
-                  {!isMobile && blogData?.attributes?.tags?.data?.map((item, i) => 
-                    (<ToggleButton style={{marginRight:'15px'}}>{item?.attributes?.name}</ToggleButton>)
-                  )}
+                  {!isMobile &&
+                    blogData?.attributes?.tags?.data?.map((item, i) => (
+                      <ToggleButton style={{ marginRight: '15px' }}>{item?.attributes?.name}</ToggleButton>
+                    ))}
                   <Moment
                     format="D MMMM, YYYY"
                     style={{ marginRight: '5px' }}
@@ -264,29 +327,25 @@ const Blogs = () => {
   };
 
   if (errorPage) {
-    return(
-        <PageWrapper
+    return (
+      <PageWrapper
         pageName={pageMeta.BLOGS.pageName}
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-
-        <BlogsSection
+          <BlogsSection
             id="story"
             data-bkg="light"
             className="lightBackground"
             curve="bottom"
           >
-
             <EmptyCenteredContainerInfo>
-                  <DisplayNotice>No Blogs Found.</DisplayNotice>
+              <DisplayNotice>No Blogs Found.</DisplayNotice>
             </EmptyCenteredContainerInfo>
-
-        </BlogsSection>
-
+          </BlogsSection>
         </BlogsWrapper>
-        </PageWrapper>
-    )
+      </PageWrapper>
+    );
   }
 
   if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems) || errorPage !== true) {
@@ -297,47 +356,46 @@ const Blogs = () => {
       >
         <BlogsWrapper>
           <SpaceSection
-            curve="bottom" 
-            padding={isMobile ? "80px 0px 20px 0px" : "20px 0px 20px 0px"}
+            curve="bottom"
+            padding={isMobile ? '80px 0px 20px 0px' : '20px 0px 20px 0px'}
             // padding="80px 0px 20px 0px"
             data-bkg="dark"
           >
-            <SpaceContent
-              className="contentBox"
-            >
-               {!isSwiper && blogsData && (<BlogHorizontalScroll items={allBlogsData?.slice(0,3)} />)} 
-              
+            <SpaceContent className="contentBox">
+              {!isSwiper && blogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0, 3)} />}
 
-              {isSwiper && (<Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                  delay: 4000,
-                  disableOnInteraction: false,
-                }}
-                pagination={{
-                  clickable: true,
-                }}
-                navigation={false}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-              >
-                {allBlogsData?.map((item, i) => (
-                  <SwiperSlide
-                    key={i}
-                    onClick={() => onArticleClick(item)}
-                  >
-                    <CarouselContainer>
-                      <CarouselImage
-                        src={`${BACKEND_API}${item?.attributes?.image?.data?.attributes?.url}`}
-                        alt={item?.title}
-                      />
-                      <CarouselTitle>{item?.attributes.title}</CarouselTitle>
-                      <CarouselReadTime>{useReadingTime(item?.attributes?.body)} min read</CarouselReadTime>
-                    </CarouselContainer>
-                  </SwiperSlide>
-                ))}
-              </Swiper>)}
+              {isSwiper && (
+                <Swiper
+                  spaceBetween={30}
+                  centeredSlides={true}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  navigation={false}
+                  modules={[Autoplay, Pagination, Navigation]}
+                  className="mySwiper"
+                >
+                  {allBlogsData?.map((item, i) => (
+                    <SwiperSlide
+                      key={i}
+                      onClick={() => onArticleClick(item)}
+                    >
+                      <CarouselContainer>
+                        <CarouselImage
+                          src={`${BACKEND_API}${item?.attributes?.image?.data?.attributes?.url}`}
+                          alt={item?.title}
+                        />
+                        <CarouselTitle>{item?.attributes.title}</CarouselTitle>
+                        <CarouselReadTime>{useReadingTime(item?.attributes?.body)} min read</CarouselReadTime>
+                      </CarouselContainer>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              )}
             </SpaceContent>
           </SpaceSection>
 
@@ -378,42 +436,54 @@ const Blogs = () => {
                 </ItemV>
               </BlogRow>
 
-              {!search && tagsList && (<ToggleSection>
-                <ToggleButton
-                  active={active === 'All' ? true : false}
-                  onClick={() => handleSort('All')}
-                >
-                  <Span>All</Span>
-                  
-                </ToggleButton>
-              {tagsList?.map((item, i) => (
-                <ToggleButton
-                  key={item?.attributes.name}
-                  active={active === item?.attributes?.name ? true : false}
-                  onClick={() => handleSort(item)}
-                >
-                  <Span>{item?.attributes.name}</Span>
-                </ToggleButton>
-              ))}
-            </ToggleSection>)}
+              {!search && tagsList && (
+                <ToggleSection>
+                  <ToggleButton
+                    active={active === 'All' ? true : false}
+                    onClick={() => handleSort('All')}
+                  >
+                    <Span>All</Span>
+                  </ToggleButton>
+                  {tagsList?.map((item, i) => (
+                    <ToggleButton
+                      key={item?.attributes.name}
+                      active={active === item?.attributes?.name ? true : false}
+                      onClick={() => handleSort(item)}
+                    >
+                      <Span>{item?.attributes.name}</Span>
+                    </ToggleButton>
+                  ))}
+                </ToggleSection>
+              )}
 
               {/* first two sections */}
-              {!search && <MainSection> <ArticleItem item={blogsData?.slice(0, 2)} main={true} /></MainSection>}
+              {!search && (
+                <MainSection>
+                  {' '}
+                  <ArticleItem
+                    item={blogsData?.slice(0, 2)}
+                    main={true}
+                  />
+                </MainSection>
+              )}
 
               {/* other grid section */}
-              {!search && <SubArticles><ArticleItem item={blogsData?.slice(2, blogsData.length)} main={false} /></SubArticles>}
+              {!search && (
+                <SubArticles marginTop={isLoading ? '0px' : '92px'}>
+                  <ArticleItem
+                    item={blogsData?.slice(2, blogsData.length)}
+                    main={false}
+                  />{' '}
+                  {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
+                  {active === 'All' && <Waypoint onLeave={() => setIsFetchingDone(false)} />}
+                </SubArticles>
+              )}
 
               {/* search grid section */}
-              {search && <SearchArticles><SearchArticleItem item={searchItems} /></SearchArticles>}
-
-              {isLoading && (
-                <ItemH>
-                  <img
-                    src={SpinnerSVG}
-                    alt=""
-                    width={140}
-                  />
-                </ItemH>
+              {search && (
+                <SearchArticles>
+                  <SearchArticleItem item={searchItems} />
+                </SearchArticles>
               )}
 
               {!isLoading && blogsData && blogsData.length === 0 && !search && (
@@ -427,15 +497,8 @@ const Blogs = () => {
                   <DisplayNotice>No articles match your query.</DisplayNotice>
                 </CenteredContainerInfo>
               )}
-
-              {!isLoading && search.length === 0 && (
-                <ShowMoreSection onClick={ShowMore}>
-                  <FiChevronDown size={23} />
-                  <b>Show More</b>
-                </ShowMoreSection>
-              )}
+              {isLoading && <BlogLoader isMobile={isMobile} />}
             </Content>
-
           </BlogsSection>
         </BlogsWrapper>
       </PageWrapper>
@@ -458,9 +521,9 @@ const ResponsiveH2Text = styled.div`
   line-height: 110%;
   letter-spacing: -1.2px;
   @media ${device.mobileL} {
-      font-size: 32px;
-      letter-spacing: -0.96px;
-      margin: 0px 0px 20px;
+    font-size: 32px;
+    letter-spacing: -0.96px;
+    margin: 0px 0px 20px;
   }
 `;
 
@@ -538,7 +601,6 @@ const ToggleSection = styled.div`
   align-items: center;
 `;
 
-
 const ToggleButton = styled.div`
   border: ${(props) => (props.active ? '1px solid transparent' : '1px solid #BAC4D6')};
   border-radius: 62px;
@@ -567,7 +629,7 @@ const ToggleButton = styled.div`
     color: ${(props) => (props.active ? '#fff !important' : '#000 !important')};
 
     @media ${device.tablet} {
-    font-size: 18px;
+      font-size: 18px;
     }
   }
 
@@ -634,26 +696,26 @@ const ShowMoreSection = styled.div`
 `;
 
 export const SpaceContent = styled.div`
-	// padding: ${(props) => props.padding || '40px 0px'};
+  // padding: ${(props) => props.padding || '40px 0px'};
 
-	&.contentBox {
+  &.contentBox {
     max-width: 1140px;
-	}
+  }
 
   @media (max-width: 1200px) {
-  	padding: ${(props) => props.padding || '10px 0px'};
+    padding: ${(props) => props.padding || '10px 0px'};
 
     &.contentBox {
-        width: 100%;
-      }
+      width: 100%;
+    }
   }
 
   @media ${device.tablet} {
-  	padding: ${(props) => props.padding || '10px 0px'};
+    padding: ${(props) => props.padding || '10px 0px'};
 
     &.contentBox {
-        width: 100%;
-      }
+      width: 100%;
+    }
   }
 `;
 
@@ -729,13 +791,30 @@ const SubArticles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-gap: 33px;
-  margin-top: 92px;
+  margin-top: ${(props) => props.marginTop};
   align-items: flex-start;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 0px;
   }
 `;
+
+const SubArticle = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 24px;
+  &:hover {
+    cursor: pointer;
+  }
+  &.loader {
+    padding-bottom: 20px;
+  }
+  @media ${device.tablet} {
+    align-items: center;
+  }
+`;
+
 const SearchArticles = styled.div``;
 
 const SearchMainArticle = styled.div`
@@ -786,7 +865,7 @@ const ArticleRow = styled.div`
 `;
 
 const ArticleDiv = styled.div`
-  .clamp{
+  .clamp {
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: ${(props) => (props.main ? '2' : '3')};
@@ -879,7 +958,7 @@ const CarouselContainer = styled.div`
   justify-content: space-between;
   cursor: pointer;
   padding: 0px;
-  @media (max-width: 1200px){
+  @media (max-width: 1200px) {
     padding: 100px 20px 30px 20px;
   }
 
@@ -897,7 +976,7 @@ const CarouselImage = styled.img`
   margin: 0 auto 20px auto;
   border-radius: 62px;
 
-  @media (max-width: 1200px){
+  @media (max-width: 1200px) {
     width: 80%;
     aspect-ratio: 16/9;
     object-fit: cover;
