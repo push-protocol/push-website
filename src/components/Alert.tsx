@@ -14,7 +14,13 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 // Internal Configs
 import { device } from '../config/globals';
 
-const Alert = ({ hideAlert, isAlertVisible }) => {
+const Alert = () => {
+  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+
+  const hideAlertHandler = () => {
+    setIsAlertVisible(false);
+  };
+
   const alertMessage = '$100,000 of Push x ImmuneFi Bug Bounty goes LIVE, ';
   const alertLink = 'https://immunefi.com/bounty/pushprotocol/';
 
@@ -39,7 +45,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
               size="1.25rem"
               color="#7f7b80"
               className="icon"
-              onClick={hideAlert}
+              onClick={hideAlertHandler}
             />
           </CancelIcon>
         </AlertContainer>

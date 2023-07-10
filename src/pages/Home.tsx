@@ -71,7 +71,7 @@ import ImageHolder from 'components/ImageHolder';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
 
-function Home({ isAlertVisible }) {
+function Home() {
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
 
@@ -151,7 +151,7 @@ function Home({ isAlertVisible }) {
               <HeroItem
                 maxWidth="60%"
                 alignItems="flex-start"
-                MarginTop={isAlertVisible ? '100px' : '0px'}
+                MarginTop={'100px'}
               >
                 <FadeInAnimation
                   wrapperElement="div"
