@@ -387,7 +387,7 @@ function Home() {
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.1}
+                    delay={0}
                   >
                     Until Push, no solution existed to enable native communication between wallets in response to on-
                     and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and
@@ -406,7 +406,7 @@ function Home() {
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.2}
+                    delay={0}
                   >
                     Push is building the communication network for Web3, addressing a gap in critical infrastructure and
                     improving the everyday experience for blockchain users.
@@ -416,7 +416,7 @@ function Home() {
                 <FadeInAnimation
                   wrapperElement="div"
                   direction="up"
-                  delay={0.3}
+                  delay={0}
                 >
                   <Anchor
                     href="https://docs.push.org/developers"
