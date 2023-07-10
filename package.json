@@ -4,7 +4,6 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.270",
     "@testing-library/jest-dom": "^5.16.5",
