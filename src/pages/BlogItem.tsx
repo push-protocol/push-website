@@ -25,15 +25,15 @@ import SpinnerSVG from 'assets/Spinner.gif';
 import { BsFillPlayCircleFill } from 'react-icons/bs'
 import Skeleton from 'react-loading-skeleton';
 import { AiOutlineClose } from 'react-icons/ai';
-import { ReactComponent as ModalTwitter } from 'assets/Modal-Twitter.svg';
+// import { ReactComponent as ModalTwitter } from 'assets/Modal-Twitter.svg';
 
-import { ReactComponent as ModalFacebook } from 'assets/Modal-Facebook.svg';
+// import { ReactComponent as ModalFacebook } from 'assets/Modal-Facebook.svg';
 
-import { ReactComponent as ModalLinkedIn } from 'assets/Modal-LinkedIn.svg';
+// import { ReactComponent as ModalLinkedIn } from 'assets/Modal-LinkedIn.svg';
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+// import Box from '@mui/material/Box';
+// import Typography from '@mui/material/Typography';
+// import Modal from '@mui/material/Modal';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -56,53 +56,53 @@ const BlogItem = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 348,
-    bgcolor: 'white',
-    boxShadow: 24,
-    p: 3,
-    borderRadius: '16px'
-  };
+  // const style = {
+  //   position: 'absolute' as 'absolute',
+  //   top: '50%',
+  //   left: '50%',
+  //   transform: 'translate(-50%, -50%)',
+  //   width: 348,
+  //   bgcolor: 'white',
+  //   boxShadow: 24,
+  //   p: 3,
+  //   borderRadius: '16px'
+  // };
 
-  const LinkModal = () => {
-    return(
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
+  // const LinkModal = () => {
+  //   return(
+  //     <Modal
+  //       open={open}
+  //       onClose={handleClose}
+  //       aria-labelledby="modal-modal-title"
+  //       aria-describedby="modal-modal-description"
+  //     >
+  //       <Box sx={style}>
           
-          <ModalDiv>
-            <ModalTopic>Share</ModalTopic>
+  //         <ModalDiv>
+  //           <ModalTopic>Share</ModalTopic>
 
-            <ModalClose onClick={handleClose}>
-                <AiOutlineClose />
-            </ModalClose>
-          </ModalDiv>
+  //           <ModalClose onClick={handleClose}>
+  //               <AiOutlineClose />
+  //           </ModalClose>
+  //         </ModalDiv>
 
-          <ModalIcons>
-            <ModalTwitter />
-            <ModalLinkedIn />
-            <ModalFacebook />
-          </ModalIcons>
+  //         <ModalIcons>
+  //           <ModalTwitter />
+  //           <ModalLinkedIn />
+  //           <ModalFacebook />
+  //         </ModalIcons>
 
-          <ModalLink>
-            <ModalInput>
-              https://youtu.be/wc4hBT_EbT4
-            </ModalInput>
+  //         <ModalLink>
+  //           <ModalInput>
+  //             https://youtu.be/wc4hBT_EbT4
+  //           </ModalInput>
 
-            <ModalCopy>Copy link</ModalCopy>
-          </ModalLink>
-        </Box>
-      </Modal>
-    )
-  }
+  //           <ModalCopy>Copy link</ModalCopy>
+  //         </ModalLink>
+  //       </Box>
+  //     </Modal>
+  //   )
+  // }
 
   const loadData = async () => {
     if (!id) return;
@@ -412,7 +412,12 @@ const BlogItem = () => {
                 {/* </Anchor> */}
               </ShareRow>
 
-              <LinkModal />
+              {/* <LinkModal /> */}
+
+          {/* "@emotion/react": "^11.11.1",
+          "@emotion/styled": "^11.11.0",
+          "@material-ui/core": "^4.12.4",
+          "@mui/material": "^5.13.6", */}
 
             
 
