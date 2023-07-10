@@ -19,6 +19,8 @@ function App() {
   const Privacy = React.lazy(() => import('pages/Privacy'));
   const TermsOfService = React.lazy(() => import('pages/TermsOfService'));
   const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
+  const Blogs = React.lazy(() => import('./pages/Blogs'));
+  const BlogItem = React.lazy(() => import('./pages/BlogItem'));
   const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
   useEffect(() => {
     ReactGA.pageview('/entry');
@@ -63,6 +65,14 @@ function App() {
             <Route
               path="/notify"
               element={<RedirectToPlatform />}
+            />
+            <Route
+              path="/blogs"
+              element={<Blogs />}
+            />
+            <Route
+              path="/blogs/:id"
+              element={<BlogItem />}
             />
             <Route
               path="/frens"

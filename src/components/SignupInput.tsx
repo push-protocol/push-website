@@ -82,6 +82,10 @@ const Wrapper = styled.form`
         padding: 6px;
         padding-left: 8px;
 
+        @media ${device.mobileL} {
+          min-width: fit-content;
+      }
+
         &::placeholder {
             color: #A5A7B4;
             opacity: 1;

@@ -15,6 +15,14 @@ export default {
     pageName: 'faqs',
     pageTitle: 'PUSH | FAQs'
   },
+  BLOGS: {
+    pageName: 'blogs',
+    pageTitle: 'PUSH | Blogs',
+  },
+  BLOGITEM: {
+    pageName: 'blogItem',
+    pageTitle: 'PUSH | BlogItem',
+  },
   FRENS: {
     pageName: 'frens',
     pageTitle: 'PUSH | FrensOfPush'

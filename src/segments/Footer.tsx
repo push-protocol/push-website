@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { device } from '../config/globals';
 
-import { Section, Content, ItemH, ItemV, Span, Anchor, LinkTo } from '../components/SharedStyling';
+import { Section, H2, Content, ItemH, ItemV, Span, Anchor, LinkTo } from '../components/SharedStyling';
 
 import EmailInputTextField from '../components/EmailInputTextField';
 
@@ -24,9 +24,23 @@ import { ReactComponent as PushBellSVG } from '../assets/pushBell.svg';
 
 import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
 import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
+import { BodyContent } from 'pages/Home';
+import SignupInput from 'components/SignupInput';
+import useMediaQuery from 'hooks/useMediaQuery';
+
+
 
 function Footer() {
-  const navigate = useNavigate();
+  const isMobile = useMediaQuery(device.tablet);
+  const [showComponent, setShowComponent] = useState(false);
+  useEffect(() => {
+    if(window.location.pathname === '/'){
+      setShowComponent(false);
+    }
+    else{
+      setShowComponent(true);
+    }
+  }, [window.location.pathname]);
 
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);
@@ -37,12 +51,46 @@ function Footer() {
       <ResponsiveSection
         id="footer"
         background="#121315"
-        padding="160px 0 0 0"
+        padding={showComponent ? '180px 0 0 0' : '160px 0 0 0'}
       >
         <Content
           className="contentBox"
           padding="0"
         >
+
+          {showComponent && ( <BodyContent className="contentBox">
+            <SignupBox margin="0 0 0px 0">
+              <ItemV
+                justifyContent="flex-start"
+                gap="12px"
+              >
+                <ResponsiveH2
+                  color="#09090B"
+                  size={isMobile ? '32px' : '40px'}
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                    Never Miss an Update
+                </ResponsiveH2>
+                <Span
+                  color="#303C5E"
+                  size="20px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="138.5%"
+                >
+                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                </Span>
+              </ItemV>
+
+              <ItemV>
+                <SignupInput />
+              </ItemV>
+            </SignupBox>
+          </BodyContent>)}
+        
           {/* Information Cards */}
 
           <ItemH gap="32px">
@@ -571,6 +619,27 @@ const FooterAnchorIcon = styled(Anchor)`
   border: 1px solid #2a2a39;
   border-radius: 12px;
   padding: 10px;
+`;
+
+
+const SignupBox = styled(ItemH)`
+  background: rgba(214, 177, 242, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 32px;
+  padding: 72px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  @media ${device.tablet} {
+    padding: 24px;
+    flex-direction: column;
+  }
+`;
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
 `;
 
 export default Footer;

@@ -291,10 +291,9 @@ function Header() {
                     >
                       FAQ
                     </LinkTo>
-                    <Anchor
-                      href="https://push-protocol.medium.com/"
-                      target="_blank"
-                      title="Read our story"
+                    <LinkTo
+                      to="/blogs"
+                      title="Frequently Asked Questions"
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -304,7 +303,7 @@ function Header() {
                       spacing="normal"
                     >
                       Blog
-                    </Anchor>
+                    </LinkTo>
                     <LinkTo
                       to="/frens"
                       title="Push Ecosystem"
