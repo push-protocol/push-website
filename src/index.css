@@ -603,6 +603,17 @@ button, a, a:before, a:after {
   background-color: #494D5F !important;
 }
 
+.custom-modal{
+  position: absolute;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 348;
+  background-color: white;
+  box-shadow: 24;
+  padding: 3;
+  border-radius: 16px;
+}
+
 @-webkit-keyframes BGColorTransition {
   0% {
     background-position: 0% 4%;

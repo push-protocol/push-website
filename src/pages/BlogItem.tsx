@@ -5,7 +5,21 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { getAllBlogData, getSingleBlogData } from '../api';
 import styled from 'styled-components';
-import { Anchor, B, Content, H1, H2, H3, HeroHeader, Input, ItemH, ItemV, Span, P, Button } from 'components/SharedStyling';
+import {
+  Anchor,
+  B,
+  Content,
+  H1,
+  H2,
+  H3,
+  HeroHeader,
+  Input,
+  ItemH,
+  ItemV,
+  Span,
+  P,
+  Button,
+} from 'components/SharedStyling';
 import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
@@ -22,7 +36,7 @@ import { FaDiscord } from 'react-icons/fa';
 import { FiChevronLeft } from 'react-icons/fi';
 import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
-import { BsFillPlayCircleFill } from 'react-icons/bs'
+import { BsFillPlayCircleFill } from 'react-icons/bs';
 import Skeleton from 'react-loading-skeleton';
 import { AiOutlineClose } from 'react-icons/ai';
 import { ReactComponent as ModalTwitter } from '../assets/Modal-Twitter.svg';
@@ -31,9 +45,9 @@ import { ReactComponent as ModalFacebook } from '../assets/Modal-Facebook.svg';
 
 import { ReactComponent as ModalLinkedIn } from '../assets/Modal-LinkedIn.svg';
 
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import "../index.css"
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -56,53 +70,47 @@ const BlogItem = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 348,
-    bgcolor: 'white',
-    boxShadow: 24,
-    p: 3,
-    borderRadius: '16px'
-  };
+  // const style = {
+  //   content:{
+  //   position: 'absolute' as 'absolute',
+  //   top: '50%',
+  //   left: '50%',
+  //   transform: 'translate(-50%, -50%)',
+  //   width: 348,
+  //   bgcolor: 'white',
+  //   boxShadow: 24,
+  //   p: 3,
+  //   borderRadius: '16px',
+  //   }
+  // };
 
   const LinkModal = () => {
-    return(
+    return (
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        classNames={{modal:'custom-modal'}}
       >
-        <Box sx={style}>
-          
-          <ModalDiv>
-            <ModalTopic>Share</ModalTopic>
+        <ModalDiv>
+          <ModalTopic>Share</ModalTopic>
+        </ModalDiv>
 
-            <ModalClose onClick={handleClose}>
-                <AiOutlineClose />
-            </ModalClose>
-          </ModalDiv>
+        <ModalIcons>
+          <ModalTwitter />
+          <ModalLinkedIn />
+          <ModalFacebook />
+        </ModalIcons>
 
-          <ModalIcons>
-            <ModalTwitter />
-            <ModalLinkedIn />
-            <ModalFacebook />
-          </ModalIcons>
+        <ModalLink>
+          <ModalInput>https://youtu.be/wc4hBT_EbT4</ModalInput>
 
-          <ModalLink>
-            <ModalInput>
-              https://youtu.be/wc4hBT_EbT4
-            </ModalInput>
-
-            <ModalCopy>Copy link</ModalCopy>
-          </ModalLink>
-        </Box>
+          <ModalCopy>Copy link</ModalCopy>
+        </ModalLink>
       </Modal>
-    )
-  }
+    );
+  };
 
   const loadData = async () => {
     if (!id) return;
@@ -152,7 +160,6 @@ const BlogItem = () => {
     }
   };
 
-
   useEffect(() => {
     if (blogsContent) {
     }
@@ -177,20 +184,20 @@ const BlogItem = () => {
                 <H3
                   textTransform="normal"
                   color="#000000"
-                  size={isMobile ? "16px" : "24px"}
+                  size={isMobile ? '16px' : '24px'}
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
                   margin="0px 0 0 0"
                   textAlign="left !important"
-                  className='clamp'
+                  className="clamp"
                 >
                   {blogData?.attributes.title}
                 </H3>
 
-                {!isMobile && (<ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>)}
+                {!isMobile && <ArticleTextB>{filterComment(blogData?.attributes?.body)}</ArticleTextB>}
 
-                <ArticleContent style={{marginTop: isMobile ? '15px' : '20px'}}>
+                <ArticleContent style={{ marginTop: isMobile ? '15px' : '20px' }}>
                   <Moment
                     format="D MMMM, YYYY"
                     style={{ marginRight: '5px' }}
@@ -212,16 +219,12 @@ const BlogItem = () => {
     return (
       <div style={{ visibility: 'hidden' }}>
         <TopicContent>
-          <Moment
-            format="D MMMM, YYYY"
-          >
-            {blogsData?.pubDate}
-          </Moment>{' '}
+          <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
           <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
         </TopicContent>
-      </div>)
-  }
-
+      </div>
+    );
+  };
 
   if (errorPage) {
     return (
@@ -230,24 +233,19 @@ const BlogItem = () => {
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-
           <BlogsSection
             id="story"
             data-bkg="light"
             className="lightBackground"
             curve="bottom"
           >
-
             <EmptyCenteredContainerInfo>
               <DisplayNotice>404 Error - Not Found.</DisplayNotice>
             </EmptyCenteredContainerInfo>
-
-
           </BlogsSection>
-
         </BlogsWrapper>
       </PageWrapper>
-    )
+    );
   }
 
   if (isLoading && !errorPage) {
@@ -257,18 +255,25 @@ const BlogItem = () => {
         pageTitle={pageMeta.BLOGS.pageTitle}
       >
         <BlogsWrapper>
-          <ItemH margin='200px 0px 200px 0px'>
+          <ItemH margin="200px 0px 200px 0px">
             <SkeletonContainer>
               <SkeletonInnerContainer>
-                <Skeleton height={300} width={isMobile ? 300 : 550} className='skeleton-image-container' />
+                <Skeleton
+                  height={300}
+                  width={isMobile ? 300 : 550}
+                  className="skeleton-image-container"
+                />
               </SkeletonInnerContainer>
-              <Skeleton className='skeleton-placeholder-lines' count={8}
-                height={10} />
+              <Skeleton
+                className="skeleton-placeholder-lines"
+                count={8}
+                height={10}
+              />
             </SkeletonContainer>
           </ItemH>
         </BlogsWrapper>
       </PageWrapper>
-    )
+    );
   }
 
   if (!isLoading && !errorPage) {
@@ -279,16 +284,12 @@ const BlogItem = () => {
       >
         <BlogsWrapper>
           <AnimationSection>
-            <Content
-              className="contentBox"
-            >
-
+            <Content className="contentBox">
               <ArticleBanner
                 src={`${BACKEND_API}${blogsData?.attributes?.image?.data?.attributes?.url}`}
                 alt={blogsData?.attributes.title}
-                loading='lazy'
+                loading="lazy"
               />
-
             </Content>
           </AnimationSection>
 
@@ -299,24 +300,38 @@ const BlogItem = () => {
             curve="bottom"
           >
             <SpaceContent />
-              <ContentBody>
+            <ContentBody>
+              <TopBody>
+                <ItemH
+                  justifyContent="flex-start"
+                  padding="0 0px"
+                  alignItems="center"
+                >
+                  <BsFillPlayCircleFill
+                    color="#DD44B9"
+                    size={25}
+                  />
+                  <Topdiv>Listen</Topdiv>
+                </ItemH>
 
-                <TopBody>
-                  <ItemH justifyContent='flex-start' padding='0 0px' alignItems='center'>
-                    <BsFillPlayCircleFill color='#DD44B9' size={25} />
-                    <Topdiv>Listen</Topdiv>
-                  </ItemH>
-
-                  <ItemH justifyContent='flex-end' alignItems='center'>
-                    <BiShareAlt size={25} color='#333333' />
-                    <BiLink size={25} color='#333333' style={{ marginLeft: '20px' }} />
-                  </ItemH>
-                </TopBody>
-
-              </ContentBody>
+                <ItemH
+                  justifyContent="flex-end"
+                  alignItems="center"
+                >
+                  <BiShareAlt
+                    size={25}
+                    color="#333333"
+                  />
+                  <BiLink
+                    size={25}
+                    color="#333333"
+                    style={{ marginLeft: '20px' }}
+                  />
+                </ItemH>
+              </TopBody>
+            </ContentBody>
             <SpaceContent />
           </TopSection>
-
 
           <BlogsSection
             id="story"
@@ -324,38 +339,32 @@ const BlogItem = () => {
             className="lightBackground"
             curve="bottom"
           >
-
             <TopicContent>
-              <Moment
-                format="D MMMM, YYYY"
-              >
-                {blogsData?.pubDate}
-              </Moment>{' '}
+              <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
             </TopicContent>
 
             <ContentBody>
+              <TextH1>{blogsData?.attributes.title}</TextH1>
 
-              <TextH1
-               
-              >
-                {blogsData?.attributes.title}
-              </TextH1>
-
-              {isMobile && (<ArticleContent marginTop='12px'>
-                <Moment
-                  format="D MMMM, YYYY"
-                  style={{ marginRight: '5px' }}
-                >
-                  {blogsData?.attributes?.date}
-                </Moment>{' '}
-                &#183;
-                <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
-              </ArticleContent>)}
+              {isMobile && (
+                <ArticleContent marginTop="12px">
+                  <Moment
+                    format="D MMMM, YYYY"
+                    style={{ marginRight: '5px' }}
+                  >
+                    {blogsData?.attributes?.date}
+                  </Moment>{' '}
+                  &#183;
+                  <Div>{blogsData?.attributes?.body && useReadingTime(blogsData?.attributes?.body)} min read</Div>
+                </ArticleContent>
+              )}
 
               {/* <BlogContent ref={bodyRef}>{body && parse(body)}</BlogContent> */}
 
-              <BlogContent ref={bodyRef}>{blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}</BlogContent>
+              <BlogContent ref={bodyRef}>
+                {blogsData?.attributes?.body && parse(blogsData?.attributes?.body)}
+              </BlogContent>
 
               <ToggleSection>
                 {blogsData?.attributes?.tags?.data?.map((item, i) => (
@@ -365,14 +374,13 @@ const BlogItem = () => {
                 ))}
               </ToggleSection>
 
-
               <ShareRow>
                 <ResponsiveH2
                   size={isMobile ? '16px' : '24px'}
                   weight="500"
                   spacing="-0.02em"
                   lineHeight="110%"
-                  color='#00000'
+                  color="#00000"
                 >
                   Be a part of the conversation by sharing this article
                 </ResponsiveH2>
@@ -391,16 +399,16 @@ const BlogItem = () => {
                   self={isMobile ? 'stretch' : 'self'}
                 > */}
                 <Button
-                 title="Developer Docs"
-                 bg="#DD44B9"
-                 radius="12px"
-                 padding="14px 20px"
-                 size="16px"
-                 weight="500"
-                 spacing="-0.03em"
-                 lineHeight="26px"
-                 self={isMobile ? 'stretch' : 'self'}
-                 onClick={handleOpen}
+                  title="Developer Docs"
+                  bg="#DD44B9"
+                  radius="12px"
+                  padding="14px 20px"
+                  size="16px"
+                  weight="500"
+                  spacing="-0.03em"
+                  lineHeight="26px"
+                  self={isMobile ? 'stretch' : 'self'}
+                  onClick={handleOpen}
                 >
                   <BiShareAlt
                     size={23}
@@ -408,29 +416,20 @@ const BlogItem = () => {
                     style={{ marginRight: '10px' }}
                   />
                   Share
-                  </Button>
+                </Button>
                 {/* </Anchor> */}
               </ShareRow>
 
               <LinkModal />
 
-          {/* "@emotion/react": "^11.11.1",
-          "@emotion/styled": "^11.11.0",
-          "@material-ui/core": "^4.12.4",
-          "@mui/material": "^5.13.6", */}
-
-            
-
               <AboutSection>
                 <AboutTitle>About Push Protocol</AboutTitle>
 
-                <Span
-                  textAlign="center"
-                >
+                <Span textAlign="center">
                   Push is the communication protocol of web3. Push protocol enables cross-chain notifications and
                   messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and
-                  platform-agnostic fashion. The open communication layer allows any crypto wallet / frontend to tap into
-                  the network and get the communication across.
+                  platform-agnostic fashion. The open communication layer allows any crypto wallet / frontend to tap
+                  into the network and get the communication across.
                 </Span>
               </AboutSection>
 
@@ -525,7 +524,6 @@ const BlogItem = () => {
                 <FiChevronLeft size={23} />
                 <b>Read more articles from Push Protocol</b>
               </ShowMoreSection>
-
             </ContentBody>
 
             <SpaceContent />
@@ -533,8 +531,8 @@ const BlogItem = () => {
         </BlogsWrapper>
       </PageWrapper>
     );
-  };
-}
+  }
+};
 
 const EmptyCenteredContainerInfo = styled.div`
   padding: 20px;
@@ -551,7 +549,6 @@ const ContentBody = styled.div`
   @media (max-width: 800px) {
     width: 100% !important;
   }
-
 `;
 
 const TextH1 = styled.h1`
@@ -569,9 +566,9 @@ const TextH1 = styled.h1`
   margin: 0px 0px;
 
   @media ${device.mobileL} {
-   font-size: 30px;
-   font-weight: 600;
-   line-height: 130%;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 130%;
   }
 `;
 
@@ -597,7 +594,6 @@ const ResponsiveSection = styled(HybridSection)`
     padding-right: 30px !important;
   }
 `;
-
 
 const LoadingTopSection = styled(ResponsiveSection)`
   padding-bottom: 50px;
@@ -666,9 +662,9 @@ const Topdiv = styled.div`
 `;
 
 const TopBody = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 const TopSection = styled(ResponsiveSection)`
@@ -683,10 +679,10 @@ const TopSection = styled(ResponsiveSection)`
 
   @media ${device.desktopL} {
     padding: 80px 0px 0px;
-   }
+  }
 
   @media ${device.desktop} {
-   padding: 80px 0px 0px;
+    padding: 80px 0px 0px;
   }
 
   @media ${device.laptopL} {
@@ -715,8 +711,6 @@ const TopSection = styled(ResponsiveSection)`
     padding-bottom: 32px;
   }
 `;
-
-
 
 const BlogsSection = styled(ResponsiveSection)`
   position: relative;
@@ -901,12 +895,11 @@ const AboutSection = styled.div`
     color: #282a2d;
     letter-spacing: -0.002em;
 
-    @media ${device.mobileL}{
+    @media ${device.mobileL} {
       font-size: 16px;
       line-height: 36px;
     }
   }
-  
 `;
 
 const AboutTitle = styled.div`
@@ -917,11 +910,11 @@ const AboutTitle = styled.div`
   color: #000000;
   margin-bottom: 10px;
   letter-spacing: -0.02em;
-  @media ${device.mobileL}{
+  @media ${device.mobileL} {
     font-weight: 700;
     font-size: 24px;
     line-height: 30px;
-}
+  }
 `;
 
 const ToggleButton = styled.div`
@@ -1007,7 +1000,7 @@ const BannerItem = styled(ItemV)`
   color: #000;
   grid-gap: 8px;
   &:hover {
-   color: #D53893;
+    color: #d53893;
   }
 `;
 
@@ -1116,7 +1109,7 @@ const TopicContent = styled.div`
   margin-top: ${(props) => props.marginTop || '0px'};
   padding: 10px 40px;
   @media ${device.laptop} {
-     padding: 10px 20px;
+    padding: 10px 20px;
   }
   @media ${device.tablet} {
     display: none;
@@ -1157,8 +1150,7 @@ const Div = styled.div`
   margin-left: 5px;
 `;
 
-const DivTopic = styled.div`
-`;
+const DivTopic = styled.div``;
 
 const ArticleImage = styled.img`
   min-width: 300px;
@@ -1180,7 +1172,7 @@ const ArticleRow = styled.div`
   justify-content: space-between;
   min-height: 100%;
   flex: 1;
-  .clamp{
+  .clamp {
     overflow: hidden;
     display: -webkit-box !important;
     -webkit-line-clamp: 2;
@@ -1272,21 +1264,21 @@ const ModalLink = styled.div`
 `;
 
 const ModalCopy = styled.div`
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
   font-family: Strawford;
   font-weight: 500;
   line-height: 142%;
   letter-spacing: -0.42px;
   border-radius: 0px 8px 8px 0px;
-  background: #D53A94;
+  background: #d53a94;
   padding: 8px 12px;
 `;
 
 const ModalInput = styled.div`
   border-radius: 8px 0px 0px 8px;
-  border: 1px solid rgba(186, 196, 214, 0.40);
-  background: #FFF;
+  border: 1px solid rgba(186, 196, 214, 0.4);
+  background: #fff;
   padding: 8px 12px;
   max-width: 212px;
   min-width: 212px;
@@ -1295,6 +1287,5 @@ const ModalInput = styled.div`
 const ModalClose = styled.div`
   cursor: pointer;
 `;
-
 
 export default BlogItem;
