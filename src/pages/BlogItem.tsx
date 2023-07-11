@@ -38,11 +38,9 @@ import useReadingTime from 'hooks/useReadingTime';
 import SpinnerSVG from 'assets/Spinner.gif';
 import { BsFillPlayCircleFill } from 'react-icons/bs';
 import Skeleton from 'react-loading-skeleton';
-import { AiOutlineClose } from 'react-icons/ai';
+
 import { ReactComponent as ModalTwitter } from '../assets/Modal-Twitter.svg';
-
 import { ReactComponent as ModalFacebook } from '../assets/Modal-Facebook.svg';
-
 import { ReactComponent as ModalLinkedIn } from '../assets/Modal-LinkedIn.svg';
 
 import 'react-responsive-modal/styles.css';
@@ -516,7 +514,7 @@ const BlogItem = () => {
               </BlogRow>
 
               <SubArticles>
-                <ArticleItem item={allBlogs?.slice(0, 5)} />
+                <ArticleItem item={allBlogs?.slice(0, 4)} />
                 {/* <ArticleItem item={allBlogs?.slice(5, 9)} /> */}
               </SubArticles>
 
