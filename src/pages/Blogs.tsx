@@ -474,7 +474,9 @@ const Blogs = () => {
                     item={blogsData?.slice(2, blogsData.length)}
                     main={false}
                   />{' '}
-                  {!isLoading && search.length == 0 && !isFetchingDone && <Waypoint onEnter={() => ShowMore()} />}
+                  {!isLoading && search.length == 0 && !isFetchingDone && active == 'All' && (
+                    <Waypoint onEnter={() => ShowMore()} />
+                  )}
                   {active === 'All' && <Waypoint onLeave={() => setIsFetchingDone(false)} />}
                 </SubArticles>
               )}
