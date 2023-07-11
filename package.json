@@ -4,8 +4,6 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.270",
     "@testing-library/jest-dom": "^5.16.5",
