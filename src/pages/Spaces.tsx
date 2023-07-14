@@ -121,8 +121,6 @@ const SpaceImageHolder = styled.div`
     @media ${device.tablet} {
          width: 100%;
         margin: 59px auto 0 auto;
-        // font-size: 18px;
-        // margin-top: 20px;
     }
 `;
 
@@ -174,7 +172,7 @@ const Wrapper = styled.form`
         letter-spacing: -0.03em; 
         color: #9C9CBE;
         background: #FFFFFF;
-        min-width: 220px;
+        // min-width: 220px;
         width: 100%;
         padding: 6px;
         padding-left: 8px;
