@@ -48,7 +48,7 @@ const Spaces = () => {
                 </Box>
 
 
-                <SpaceImageHolder>
+                <SpaceImageHolder isMobile={isMobile}>
                     <MemberImage
                     className="figureSvg"
                     src={isMobile ? MobileSpaceImage : SpaceImage}
@@ -70,9 +70,10 @@ const SpaceWrapper = styled.main`
     max-height: 100vh;
     min-height: 100vh;
     width: 100vw;
-    background-image: url(${SpaceBg});
+    background-image: url(${props => props.isMobile ? MobileSpaceBg : SpaceBg});
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     background-size: cover;
 `;
 
