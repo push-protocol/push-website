@@ -20,6 +20,8 @@ import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 import Alert from 'components/Alert';
 import FadeInAnimation from 'components/FadeInAnimation';
+import { ReactComponent as EnSVG } from '../assets/en.svg';
+import { ReactComponent as EsSVG } from '../assets/es.svg';
 
 import { useTranslation } from 'react-i18next';
 
@@ -426,6 +428,68 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                      expanded={mobileMenuMap[2]}
+                    >
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                      >
+                        {t('header.language.title')}
+                      </Span>
+
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                        {/* </FadeInAnimation> */}
+                    </NavigationMenuHeader>
+
+                  <NavigationMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[2]}
+                  >
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.push-dao.alt-notion')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      onClick={() => i18n.changeLanguage('en')}
+                    >
+                      <EnSVG className='flag-icon'/>
+                      {t('header.language.english')}
+                    </Anchor>
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.push-dao.alt-notion')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      onClick={() => i18n.changeLanguage('es')}
+                    >
+                      <EsSVG className='flag-icon'/>
+                      {t('header.language.spanish')}
+                    </Anchor>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -624,6 +688,12 @@ const NavigationMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
+  // Styles for the flags
+  .flag-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
 
   & span {
     font-family: 'Strawford';

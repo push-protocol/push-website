@@ -33,6 +33,11 @@
       "alt-missions": "Misiones De Push"
 
     },
+    "language": {
+      "title": "Idioma",
+      "english": "Inglés",
+      "spanish": "Español"
+    },
     "app-button": {
       "title": "Abrir App",
       "alt-title": "Dapp de Push"
