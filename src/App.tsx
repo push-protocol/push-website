@@ -20,6 +20,7 @@ function App() {
   const TermsOfService = React.lazy(() => import('pages/TermsOfService'));
   const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
   const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
+  const Spaces = React.lazy(() => import('pages/Spaces'));
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -67,6 +68,10 @@ function App() {
             <Route
               path="/frens"
               element={<FrensOfPush />}
+            />
+            <Route 
+             path='/spaces'
+             element={<Spaces />}
             />
           </Routes>
           <Footer />

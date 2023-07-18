@@ -18,5 +18,9 @@ export default {
   FRENS: {
     pageName: 'frens',
     pageTitle: 'PUSH | FrensOfPush'
+  },
+  SPACES: {
+    pageName: 'spaces',
+    pageTitle: 'PUSH | spaces'
   }
 };
