@@ -15,12 +15,64 @@ import MobileSpaceImage from '../assets/mobile-space-image.webp';
 import { device } from 'config/globals';
 import ImageHolder from 'components/ImageHolder';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { subscribeToSpace } from 'api';
+import { Span } from 'components/SharedStyling';
+
+const MESSAGES = {
+    SUCCESS: 'Thanks for subscribing!',
+    ERROR: 'Something went wrong!',
+    REPEAT: 'Already subscribed!',
+    INVALID: 'Invalid Email!'
+  };
 
 
+const validateEmail = (email) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
 
 const Spaces = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [emailSuccess, setEmailSuccess] = useState(false);
+    const [emailError, setEmailError] = useState('');
     const isMobile = useMediaQuery(device.tablet);
+
+    const joinWaitlist = async (e) => {
+        e.preventDefault();
+
+        const formData = Object.fromEntries(new FormData(e.target));
+
+        if (validateEmail(formData.email)) {
+        console.log(formData.email);
+            try {   
+              setIsLoading(true);
+              const getResponse = await subscribeToSpace({
+                email: formData.email,
+              });
+
+              console.log(getResponse);
+
+              if(getResponse?.status === 201){
+                console.log("Succesfully added to waitlist")
+                setEmailSuccess(MESSAGES.SUCCESS);
+                setEmailError('');
+              } else if (getResponse?.response?.status === 500 && getResponse?.response?.data?.error?.info?.includes('ER_DUP_ENTRY')){
+                setEmailSuccess('');
+                setEmailError(MESSAGES.REPEAT);
+              }
+            } catch (e) {
+              setEmailSuccess('');
+              setEmailError(MESSAGES.ERROR);
+              console.log('emailSent error: ', e);
+            } finally {
+              setIsLoading(false);
+            }
+               
+          } else {
+            setEmailSuccess('');
+            setEmailError(MESSAGES.INVALID);
+          }
+    }
 
   return (
     <PageWrapper
@@ -37,14 +89,15 @@ const Spaces = () => {
                 </SpaceSubText>
 
                 <Box>
-                    <Wrapper>
+                    <Wrapper onSubmit={joinWaitlist}>
                         <input type="text" name="email" placeholder="Your Email Address" tabIndex={0} required/>
                         <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Join the Waitlist'}</button>
                             
                         {isLoading ? <MaskInput /> : null}
                     </Wrapper>
-                    {/* {apiResponse && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color='#121315'>{apiResponse}</Span>} */}
-                    {/* {(!apiResponse && emailError) && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color="red">{emailError}</Span>} */}
+                    {emailSuccess && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color='green'>{emailSuccess}</Span>}
+
+                    {(!emailSuccess && emailError) && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color="red">{emailError}</Span>}
                 </Box>
 
 
