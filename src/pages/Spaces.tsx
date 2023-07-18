@@ -95,7 +95,7 @@ const Spaces = () => {
                             
                         {isLoading ? <MaskInput /> : null}
                     </Wrapper>
-                    {emailSuccess && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color='green'>{emailSuccess}</Span>}
+                    {emailSuccess && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color='white'>{emailSuccess}</Span>}
 
                     {(!emailSuccess && emailError) && <Span className="msg" size={isMobile ? '18px' : '20px'} margin={isMobile ? '10px auto 0px auto' :'10px 0px 0px 15px'} color="red">{emailError}</Span>}
                 </Box>
