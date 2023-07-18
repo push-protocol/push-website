@@ -93,20 +93,20 @@
     },
     "horizontal-scroll-section": {
       "slide1": {
-        "title": "Push Notifications",
-        "text": "conectan directamente las aplicaciones con los usuarios individuales, lo que permite una comunicación segura y personalizada en respuesta a la actividad on-chain y off-chain.",
+        "title": "Las Push Notifications",
+        "text": "conectan directamente a las aplicaciones con los usuarios, lo que permite una comunicación segura y personalizada respondiendo a actividad dentro y fuera de la cadena.",
         "link-text": "Crear con Push Notifications",
         "image-alt": "Ilustración mostrando Push Notifications"
       },
       "slide2": {
         "title": "Push Chat",
-        "text": "es la principal aplicación de chat nativa de web3 descentralizada con características fáciles de usar como 1-1, chat grupal, videos/imágenes y (próximamente) transmisión.",
+        "text": "es la principal aplicación de chat nativa de web3 descentralizada con características fáciles de usar como chat 1-1, chat grupal, videos/imágenes y (próximamente) transmisión.",
         "link-text": "Crear con Push Chat",
         "image-alt": "Ilustración mostrando Push Chat"
       },
       "slide3": {
         "title": "Push DAO",
-        "text": "es el hogar de la propiedad comunitaria de Push Protocol. Los titulares de tokenes Push pueden conocer, proponer y votar sobre desarrollos críticos para el protocolo.",
+        "text": "es el hogar de la propiedad comunitaria de Push Protocol. Los titulares de tokenes Push pueden conocer, proponer y votar sobre desarrollos cruciales para el protocolo.",
         "link-text": "Explorar Push DAO",
         "image-alt": "Ilustración mostrando Push DAO"
       }
@@ -115,10 +115,10 @@
       "image-alt": "Ilustración mostrando tokenes $PUSH",
       "image-title": "Utiliza el token de Push para crecer",
       "title": "Crece con Push",
-      "text": "El token $PUSH permite la gobernanza, la modificación de las tarifas y funciones del protocolo, la seguridad de la red y la gestión de tarifas entre todas las billeteras que integran Push, incluidos los participantes de la gobernanza Push.",
+      "text": "El token $PUSH permite la gobernanza, la modificación de las tarifas y funciones del protocolo, la seguridad de la red y la gestión de tarifas entre todas las billeteras que integran Push, incluyendo a los participantes de la gobernanza de Push.",
       "wallet-text": {
         "part1": "¿Eres una cripto wallet?",
-        "part2": "Integrate y gana."
+        "part2": "Intégrate y gana."
       },
       "button": "Aprende sobre $PUSH",
       "button-alt": "Aprende sobre $PUSH"
@@ -234,8 +234,8 @@
         "privacy-link": "Política de Privacidad"
       },
       "governance-column": {
-        "title": "Governanza",
-        "push-governance-link": "Governanza de Push",
+        "title": "Gobernanza",
+        "push-governance-link": "Gobernanza de Push",
         "guides-link": "Guías",
         "forum-link": "Foro",
         "grants-link": "Recompensas",
@@ -251,7 +251,7 @@
       },
       "subscribe-column": {
         "title": "Soporte",
-        "contact-us-link": "Contactanos",
+        "contact-us-link": "Contáctanos",
         "faq-link": "Preguntas Frecuentes"
       },
       "support-column": {
