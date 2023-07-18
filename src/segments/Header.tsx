@@ -431,8 +431,8 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
                 
                 <NavigationMenuItem>
                     <NavigationMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
-                      expanded={mobileMenuMap[2]}
+                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                      expanded={mobileMenuMap[3]}
                     >
                       <Span
                         size="18px"
@@ -454,7 +454,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
 
                   <NavigationMenuContent
                     className="menuContent"
-                    expanded={mobileMenuMap[2]}
+                    expanded={mobileMenuMap[3]}
                   >
                     <Anchor
                       href="/"
