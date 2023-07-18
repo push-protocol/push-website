@@ -13,10 +13,15 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
+import { useTranslation } from 'react-i18next';
 
 const Alert = ({ hideAlert, isAlertVisible }) => {
   const alertMessage = '$100,000 of Push x ImmuneFi Bug Bounty goes LIVE, ';
+  const alertMessageEs = 'El programa de descubrimiento de bugs de Push x ImmuneFi por $100,000 se pone en marcha,'
   const alertLink = 'https://immunefi.com/bounty/pushprotocol/';
+
+  // Internationalization
+  const { t, i18n } = useTranslation();
 
   const openLink = () => {
     window.open(alertLink, '_blank');
@@ -27,12 +32,12 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
-            {alertMessage}
+            {i18n.language === 'es' ? alertMessageEs : alertMessage}
             <KnowMoreLink
               href={alertLink}
               target="_blank"
             >
-              Know More
+              {t('alert.know-more')}
             </KnowMoreLink>
             <FiArrowUpRight className="icon" />
           </AlertText>

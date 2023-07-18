@@ -205,6 +205,9 @@
       }
     }
   },
+  "alert": {
+    "know-more": "Know More"
+  },
   "footer": {
     "info-section": {
       "positions-card":{

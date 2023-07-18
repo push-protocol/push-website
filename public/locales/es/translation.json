@@ -207,6 +207,9 @@
       }
     }
   },
+  "alert": {
+    "know-more": "Saber Más"
+  },
   "footer": {
     "info-section": {
       "positions-card":{
