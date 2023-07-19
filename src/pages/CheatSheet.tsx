@@ -13,7 +13,7 @@ import { Button } from 'components/SharedStyling';
 
 
 function CheatSheet() {
-  const url = 'https://drive.google.com/file/d/13Xbw-OLhMnutMxIXOZVV13jrha_oSPfd/view?usp=drive_link';
+  const url = 'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view?usp=sharing';
   const redirectURL = () => {
     window.location.replace(url);
   };
