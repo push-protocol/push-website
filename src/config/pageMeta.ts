@@ -22,5 +22,9 @@ export default {
   SPACES: {
     pageName: 'spaces',
     pageTitle: 'PUSH | spaces'
+  },
+  CHEAT: {
+    pageName: 'cheatsheet',
+    pageTitle: 'PUSH | cheatsheet'
   }
 };

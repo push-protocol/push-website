@@ -21,6 +21,7 @@ function App() {
   const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
   const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
   const Spaces = React.lazy(() => import('pages/Spaces'));
+  const Cheat = React.lazy(() => import('pages/CheatSheet'));
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -72,6 +73,10 @@ function App() {
             <Route 
              path='/spaces'
              element={<Spaces />}
+            />
+            <Route 
+             path='/cheatsheet'
+             element={<Cheat />}
             />
           </Routes>
           <Footer />
