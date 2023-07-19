@@ -13,9 +13,12 @@ import { RotatingLines } from 'react-loader-spinner';
 
 function CheatSheet() {
   const url = 'https://drive.google.com/file/d/1DUDz4VojmerLMM1G-xYqv6FCjXVXta1Z/view?ts=64b6603a';
+  const redirectURL = () => {
+    window.location.replace(url);
+  };
 
   useEffect(() => {
-    window.location.replace(url);
+    redirectURL();
   }, []);
   return (
     <PageWrapper
