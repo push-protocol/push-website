@@ -77,7 +77,7 @@ const Spaces = () => {
   };
 
   const shootUpHandler = () => {
-    window.open('https://app.push.org/space');
+    window.open('https://app.push.org/spaces');
   };
 
   return (
