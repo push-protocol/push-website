@@ -73,7 +73,7 @@ function App() {
               element={<FrensOfPush />}
             />
             <Route 
-             path='/spaces'
+             path='spaces'
              element={<Spaces />}
             />
             <Route 
