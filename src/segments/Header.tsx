@@ -85,7 +85,6 @@ function Header() {
 
   // Internationalization
   const { t, i18n } = useTranslation();
-  console.log(i18n?.language, 'language');
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -467,7 +466,7 @@ function Header() {
                         lineHeight="142%"
                         padding="16px 0px !important"
                       >
-                        {i18n?.language == 'en' ? <EnSVG className='flag-icon'/> : <EsSVG className='flag-icon'/>}
+                        {i18n && i18n.language == 'en' ? <EnSVG className='flag-icon'/> : <EsSVG className='flag-icon'/>}
                       </Span>
 
                         <BsChevronDown

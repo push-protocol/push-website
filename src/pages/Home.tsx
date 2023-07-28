@@ -44,7 +44,6 @@ import {
   SpanV2,
 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
-import TeamMember from '../components/TeamMember';
 
 import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
 import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
