@@ -34,7 +34,13 @@ import { ReactComponent as UniswapSVG } from '../assets/float/Uniswap.svg';
 import FadeInAnimation from 'components/FadeInAnimation';
 import gsap from 'gsap';
 
+import { useTranslation } from 'react-i18next';
+
 const FrensText = () => {
+
+  // Internationalization
+  const { t } = useTranslation();
+
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const [channels, setChannels] = useState([]);
@@ -291,7 +297,7 @@ const FrensText = () => {
                 margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
-                <HeroHeaders>Frens of Push</HeroHeaders>
+                <HeroHeaders>{t('frens.hero.title')}</HeroHeaders>
                 <Span
                   textAlign="center"
                   margin="20px 0 0 0"
@@ -299,8 +305,7 @@ const FrensText = () => {
                   weight={isMobile ? '300' : '400'}
                   size={isMobile ? '18px' : '23px'}
                 >
-                  Explore hundreds of applications building with Push {!isTablet && <br />} worldwide across DeFi, NFTs,
-                  Gaming, Dev tools, and more.
+                  {t('frens.hero.description.part1')} {!isTablet && <br />} {t('frens.hero.description.part2')}
                 </Span>
               </ItemH>
             </Content>
@@ -322,7 +327,7 @@ const FrensText = () => {
                   spacing="-0.02em"
                   lineHeight="110%"
                 >
-                  Powered by Push
+                  {t('frens.powered-section.title')}
                 </ResponsiveH2>
               </ItemV>
               <ItemV
@@ -337,7 +342,7 @@ const FrensText = () => {
                   <input
                     type="text"
                     value={search}
-                    placeholder="Search dapps"
+                    placeholder={t('frens.powered-section.search-placeholder')}
                     onChange={channelSearch}
                   />
                 </Wrapper>
@@ -382,13 +387,13 @@ const FrensText = () => {
 
             {search && !loading && channels.length === 0 && (
               <CenteredContainerInfo>
-                <DisplayNotice>No channels match your query, please search for another name/address</DisplayNotice>
+                <DisplayNotice>{t('frens.powered-section.no-channels-query')}</DisplayNotice>
               </CenteredContainerInfo>
             )}
 
             {active !== 'All' && !loading && count === 0 && (
               <CenteredContainerInfo>
-                <DisplayNotice>No channels under this type yet.</DisplayNotice>
+                <DisplayNotice>{t('frens.powered-section.no-channels-category')}</DisplayNotice>
               </CenteredContainerInfo>
             )}
 
@@ -405,14 +410,14 @@ const FrensText = () => {
             {!loading && active === 'All' && search.length === 0 && (
               <ShowMoreSection onClick={ShowMore}>
                 <FiChevronDown size={23} />
-                <b>Show More</b>
+                <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
 
             {!loading && active === 'Hackathons' && search.length === 0 && (
               <ShowMoreSection onClick={showMoreHackathons}>
                 <FiChevronDown size={23} />
-                <b>Show More</b>
+                <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
           </Content>
@@ -431,7 +436,7 @@ const FrensText = () => {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Never Miss an Update
+                  {t('frens.email-section.title')}
                 </ResponsiveH2>
                 <Span
                   color="#303C5E"
@@ -440,7 +445,7 @@ const FrensText = () => {
                   spacing="-0.03em"
                   lineHeight="138.5%"
                 >
-                  Sign up and stay up to date with ecosystem announcements, giveaways and more.
+                  {t('frens.email-section.text')}
                 </Span>
               </ItemV>
 

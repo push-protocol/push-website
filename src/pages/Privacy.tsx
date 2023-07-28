@@ -12,10 +12,16 @@ import PageMeta from '../config/pageMeta';
 import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
 
+import { useTranslation } from 'react-i18next';
+
 import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, LI, A, B, Span, HeroHeader } from '../components/SharedStyling';
 
 
 function Privacy() {
+
+  // Internationalization
+  const { t } = useTranslation();
+
   return (
     <PageWrapper
       pageName={PageMeta.PRIVACY.pageName}
@@ -25,11 +31,11 @@ function Privacy() {
         <ResponsiveSection curve="bottom" padding="80px 0px 20px 0px" data-bkg="dark">
           <Content className="contentBox" flex="0">
             <ItemH flexDirection="column" justifyContent="flex-start">
-              <HeroHeader>PRIVACY POLICY</HeroHeader>
-              <Para margin="20px 0 0 0" size="1.5rem">Defines how Push collects, handles and processes data.</Para>
+              <HeroHeader>{t('privacy.hero.title')}</HeroHeader>
+              <Para margin="20px 0 0 0" size="1.5rem">{t('privacy.hero.description')}</Para>
 
               <ItemV align="flex-start" margin="0">
-                <H3 maxWidth="400px">LAST UPDATED: 2ND NOVEMBER 2020</H3>
+                <H3 maxWidth="400px">{t('privacy.hero.update-text')}</H3>
               </ItemV>
          
             </ItemH>
