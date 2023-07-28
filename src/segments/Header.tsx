@@ -432,7 +432,7 @@ function Header() {
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemVV2 flex="initial">
+            <ItemVV2 flex="initial" flexDirection='row' >
             {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
               <DappLauncher
                 showMobileMenu={showMobileMenu}
@@ -446,16 +446,16 @@ function Header() {
                 weight="500"
                 spacing="-0.03em"
                 lineHeight="26px"
+                width='100%'
               >
                 {t('header.app-button.title')}
               </DappLauncher>
-            {/* </FadeInAnimation> */}
+              
             </ItemVV2>
           
-
           <LanguageItem showMobileMenu={showMobileMenu}>
              <NavigationMenuItem>
-                    <NavigationMenuHeader
+                    <LanguageMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 3)}
                       expanded={mobileMenuMap[3]}
                     >
@@ -473,7 +473,7 @@ function Header() {
                           size={12}
                           className="chevronIcon"
                         />
-                    </NavigationMenuHeader>
+                    </LanguageMenuHeader>
 
                   <LanguageMenuContent
                     className="menuContent"
@@ -530,7 +530,8 @@ const LanguageItem = styled.div`
   margin: 0px 0px 0px 16px;
 
   @media ${device.laptop} {
-    align-self: stretch;
+    // align-self: stretch;
+    margin-left: auto;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
@@ -762,6 +763,34 @@ const NavigationMenuHeader = styled.div`
   }
 `;
 
+const LanguageMenuHeader = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & .chevronIcon {
+    transition-duration: 0.4s;
+    transition-property: transform;
+  }
+
+  @media ${device.laptop} {
+    justify-content: flex-end;
+
+    & span {
+    }
+
+    & .chevronIcon {
+      width: 16px;
+      height: 16px;
+      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
+    }
+  }
+`;
+
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
@@ -827,7 +856,7 @@ const LanguageMenuContent = styled.div`
   }
 
   @media ${device.laptop} {
-    width: 100%;
+    min-width: 100%;
 
     position: relative;
     top: 0px;
@@ -842,7 +871,6 @@ const LanguageMenuContent = styled.div`
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 
     & a {
-      min-width: 100%;
       justify-content: flex-start;
     }
   }
