@@ -15,7 +15,13 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 import { device } from '../config/globals';
 import { useTranslation } from 'react-i18next';
 
-const Alert = ({ hideAlert, isAlertVisible }) => {
+const Alert = () => {
+  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+
+  const hideAlertHandler = () => {
+    setIsAlertVisible(false);
+  };
+
   const alertMessage = '$100,000 of Push x ImmuneFi Bug Bounty goes LIVE, ';
   const alertMessageEs = 'El programa de descubrimiento de bugs de Push x ImmuneFi por $100,000 se pone en marcha,'
   const alertLink = 'https://immunefi.com/bounty/pushprotocol/';
@@ -47,7 +53,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
               size="1.25rem"
               color="#7f7b80"
               className="icon"
-              onClick={hideAlert}
+              onClick={hideAlertHandler}
             />
           </CancelIcon>
         </AlertContainer>
@@ -106,7 +112,7 @@ const CancelIcon = styled.div`
   }
 `;
 
-const KnowMoreLink = styled.a`
+const KnowMoreLink = styled.span`
   padding: 0;
   background: none;
   font-size: 1.125rem;

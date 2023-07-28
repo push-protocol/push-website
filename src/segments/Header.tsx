@@ -75,7 +75,7 @@ const defaultMobileMenuState = {
   // add next [index]: false for new main Nav menu item
 };
 
-function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
+function Header() {
   const isMobile = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
@@ -124,7 +124,7 @@ function Header({isAlertVisible,setIsAlertVisible,hideAlertHandler}) {
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {isAlertVisible && location.pathname === '/'  && <Alert hideAlert={hideAlertHandler} isAlertVisible={isAlertVisible} />}
+      {location.pathname === '/'  && <Alert />}
    
       <SectionV2>
         <ContentV2 padding="0">

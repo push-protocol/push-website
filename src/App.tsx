@@ -10,6 +10,8 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
+import Spaces from './pages/Spaces';
+import Cheat from './pages/CheatSheet';
 
 ReactGA.initialize('UA-165415629-2');
 
@@ -20,15 +22,11 @@ function App() {
   const TermsOfService = React.lazy(() => import('pages/TermsOfService'));
   const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
   const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
+  // const Spaces = React.lazy(() => import('pages/Spaces'));
+  // const Cheat = React.lazy(() => import('pages/CheatSheet'));
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
-
-  const [isAlertVisible, setIsAlertVisible] = useState(true);
-
-  const hideAlertHandler = () => {
-    setIsAlertVisible(false);
-  };
 
   const Wrapper = ({ children }) => {
     const location = useLocation();
@@ -42,16 +40,12 @@ function App() {
     <Suspense fallback={<h1>Loading</h1>}>
       <Wrapper id="wrapper">
         <AppWrapper id="content">
-          <Header
-            isAlertVisible={isAlertVisible}
-            setIsAlertVisible={setIsAlertVisible}
-            hideAlertHandler={hideAlertHandler}
-          />
+          <Header />
           <Routes>
             {/* add all the route paths here */}
             <Route
               path="/"
-              element={<Home isAlertVisible={isAlertVisible} />}
+              element={<Home />}
             />
             {/* <Route path="/about" element={<AboutUs />} /> */}
             <Route
@@ -77,6 +71,14 @@ function App() {
             <Route
               path="/frens"
               element={<FrensOfPush />}
+            />
+            <Route 
+             path='/spaces'
+             element={<Spaces />}
+            />
+            <Route 
+             path='/cheatsheet'
+             element={<Cheat />}
             />
           </Routes>
           <Footer />

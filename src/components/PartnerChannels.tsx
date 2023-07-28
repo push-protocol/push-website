@@ -331,6 +331,7 @@ function PartnerChannels() {
             self="center"
           >
             {t('home.partners-section.partner-channels-button')}
+
           </LinkTo>
         </GridItem>
         <TriRow>

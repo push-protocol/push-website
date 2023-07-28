@@ -78,7 +78,7 @@ const ChannelItem = ({ channelProp }, delay) => {
       }, [channelProp]);
 
     return (
-        <Container href={channelObject.url} target="_blank">
+        <Container href={channelObject.channel ? `https://app.push.org/channels?search=${channelObject.channel}` : channelObject.url} target="_blank">
             {
                 channelObject.icon || channelObject.imageFile
                 ? <ChannelTop>

@@ -74,6 +74,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 function Home({ isAlertVisible }) {
+
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
 
@@ -156,7 +157,7 @@ function Home({ isAlertVisible }) {
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                MarginTop={isAlertVisible ? '100px' : '0px'}
+                MarginTop={'100px'}
               >
                 <FadeInAnimation
                   wrapperElement="div"
@@ -390,7 +391,7 @@ function Home({ isAlertVisible }) {
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.1}
+                    delay={0}
                   >
                     {t('home.partners-section.missing-web3-text')}
                   </FadeInAnimation>
@@ -407,7 +408,7 @@ function Home({ isAlertVisible }) {
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.2}
+                    delay={0}
                   >
                     {t('home.partners-section.missing-web3-span')}
                   </FadeInAnimation>
@@ -416,7 +417,7 @@ function Home({ isAlertVisible }) {
                 <FadeInAnimation
                   wrapperElement="div"
                   direction="up"
-                  delay={0.3}
+                  delay={0}
                 >
                   <Anchor
                     href="https://docs.push.org/developers"
