@@ -75,6 +75,7 @@ const defaultMobileMenuState = {
   // add next [index]: false for new main Nav menu item
 };
 
+
 function Header() {
   const isMobile = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -84,6 +85,7 @@ function Header() {
 
   // Internationalization
   const { t, i18n } = useTranslation();
+  console.log(i18n?.language, 'language');
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -428,68 +430,6 @@ function Header() {
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                    <NavigationMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
-                      expanded={mobileMenuMap[3]}
-                    >
-                      <Span
-                        size="18px"
-                        weight="500"
-                        spacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                      >
-                        {t('header.language.title')}
-                      </Span>
-
-                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                        <BsChevronDown
-                          size={12}
-                          className="chevronIcon"
-                        />
-                        {/* </FadeInAnimation> */}
-                    </NavigationMenuHeader>
-
-                  <NavigationMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[3]}
-                  >
-                    <Anchor
-                      href="/"
-                      target=""
-                      title={t('header.push-dao.alt-notion')}
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                      onClick={() => i18n.changeLanguage('en')}
-                    >
-                      <EnSVG className='flag-icon'/>
-                      {t('header.language.english')}
-                    </Anchor>
-                    <Anchor
-                      href="/"
-                      target=""
-                      title={t('header.push-dao.alt-notion')}
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 30px"
-                      size="16px"
-                      weight="400"
-                      lineHeight="230%"
-                      spacing="normal"
-                      onClick={() => i18n.changeLanguage('es')}
-                    >
-                      <EsSVG className='flag-icon'/>
-                      {t('header.language.spanish')}
-                    </Anchor>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -512,6 +452,71 @@ function Header() {
               </DappLauncher>
             {/* </FadeInAnimation> */}
             </ItemVV2>
+          
+
+          <LanguageItem showMobileMenu={showMobileMenu}>
+             <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                      // expanded={mobileMenuMap[3]}
+                    >
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px 0px !important"
+                      >
+                        {i18n?.language == 'en' ? <EnSVG className='flag-icon'/> : <EsSVG className='flag-icon'/>}
+                      </Span>
+
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                    </NavigationMenuHeader>
+
+                  <LanguageMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[3]}
+                  >
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.push-dao.alt-notion')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      justify='flex-start'
+                      onClick={() => i18n.changeLanguage('en')}
+                    >
+                      <EnSVG className='flag-icon'/>
+                      {t('header.language.english')}
+                    </Anchor>
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.push-dao.alt-notion')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 30px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      justify='flex-start'
+                      onClick={() => i18n.changeLanguage('es')}
+                    >
+                      <EsSVG className='flag-icon'/>
+                      {t('header.language.spanish')}
+                    </Anchor>
+                  </LanguageMenuContent>
+                </NavigationMenuItem>
+            </LanguageItem>
 
           </HeaderItemH>
         </ContentV2>
@@ -519,6 +524,17 @@ function Header() {
     </StyledHeader>
   );
 }
+
+
+const LanguageItem = styled.div`
+  list-style: none;
+  margin: 0px 0px 0px 16px;
+
+  @media ${device.laptop} {
+    align-self: stretch;
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  }
+`;
 
 // V2 Designs
 const HeaderItemH = styled(ItemHV2)`
@@ -784,6 +800,50 @@ const NavigationMenuContent = styled.ul`
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 
     & a {
+      justify-content: flex-start;
+    }
+  }
+`;
+
+
+const LanguageMenuContent = styled.div`
+  list-style: none;
+
+  font-family: 'Strawford', 'Manrope', sans-serif;
+  display: none;
+  position: absolute;
+
+  // logic - this should touch the parent li for enough hover surface area.
+  top: 64px;
+
+  left: 50%;
+  transform: translateX(-90%);
+  z-index: 1;
+  background: #2a2a39;
+  border-radius: 16px 4px 16px 16px;
+  padding: 10px 0px;
+
+  & a {
+    min-width: 162px;
+  }
+
+  @media ${device.laptop} {
+    width: 100%;
+
+    position: relative;
+    top: 0px;
+    left: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+
+    & a {
+      min-width: 100%;
       justify-content: flex-start;
     }
   }
