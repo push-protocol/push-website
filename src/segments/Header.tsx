@@ -457,7 +457,7 @@ function Header() {
              <NavigationMenuItem>
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 3)}
-                      // expanded={mobileMenuMap[3]}
+                      expanded={mobileMenuMap[3]}
                     >
                       <Span
                         size="18px"
