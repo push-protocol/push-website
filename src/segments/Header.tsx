@@ -536,7 +536,7 @@ const LanguageItem = styled.div`
   margin: 0px 16px 0px 0px;
 
   @media ${device.laptop} {
-    margin-left: auto;
+    margin: 0 0 16px auto;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
