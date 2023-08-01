@@ -116,7 +116,6 @@ function Header() {
     // }
   };
 
-  console.log(mobileMenuMap,'menu');
   
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
