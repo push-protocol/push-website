@@ -757,6 +757,8 @@ const LanguageMenuItem = styled.li`
     display: block;
   }
 
+  padding-left: 16px;
+
   & span {
     font-family: 'Strawford';
 
