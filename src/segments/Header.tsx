@@ -72,6 +72,7 @@ const defaultMobileMenuState = {
   0: false,
   1: false,
   2: false,
+  3: false
   // add next [index]: false for new main Nav menu item
 };
 
@@ -105,15 +106,17 @@ function Header() {
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
-    if (isMobile) {
+    // if (isMobile) {
       setMobileMenuMap((oldMap) => {
         return {
           ...defaultMobileMenuState,
           [menuIndex]: !oldMap[menuIndex],
         };
       });
-    }
+    // }
   };
+
+  console.log(mobileMenuMap,'menu');
   
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
@@ -432,29 +435,11 @@ function Header() {
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemVV2 flex="initial" flexDirection='row' >
-            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
-              <DappLauncher
-                showMobileMenu={showMobileMenu}
-                className="launchDappBtn"
-                href="https://app.push.org/"
-                target="_blank"
-                title={t('header.app-button.alt-title')}
-                bg="#DD44B9"
-                radius="16px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-                width='100%'
-              >
-                {t('header.app-button.title')}
-              </DappLauncher>
-              
-            </ItemVV2>
+       
           
           <LanguageItem showMobileMenu={showMobileMenu}>
-             <NavigationMenuItem>
+             <LanguageMenuItem>
+             {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
                     <LanguageMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 3)}
                       expanded={mobileMenuMap[3]}
@@ -482,7 +467,7 @@ function Header() {
                     <Anchor
                       href="/"
                       target=""
-                      title={t('header.push-dao.alt-notion')}
+                      title={t('header.language.english')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -499,7 +484,7 @@ function Header() {
                     <Anchor
                       href="/"
                       target=""
-                      title={t('header.push-dao.alt-notion')}
+                      title={t('header.language.spanish')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -514,8 +499,29 @@ function Header() {
                       {t('header.language.spanish')}
                     </Anchor>
                   </LanguageMenuContent>
-                </NavigationMenuItem>
+                </LanguageMenuItem>
             </LanguageItem>
+
+            <ItemVV2 flex="initial" flexDirection='row' >
+            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
+              <DappLauncher
+                showMobileMenu={showMobileMenu}
+                className="launchDappBtn"
+                href="https://app.push.org/"
+                target="_blank"
+                title={t('header.app-button.alt-title')}
+                bg="#DD44B9"
+                radius="16px"
+                size="18px"
+                weight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+                width='100%'
+              >
+                {t('header.app-button.title')}
+              </DappLauncher>
+              
+            </ItemVV2>
 
           </HeaderItemH>
         </ContentV2>
@@ -527,10 +533,9 @@ function Header() {
 
 const LanguageItem = styled.div`
   list-style: none;
-  margin: 0px 0px 0px 16px;
+  margin: 0px 16px 0px 0px;
 
   @media ${device.laptop} {
-    // align-self: stretch;
     margin-left: auto;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
@@ -735,6 +740,54 @@ const NavigationMenuItem = styled.li`
   }
 `;
 
+const LanguageMenuItem = styled.li`
+  position: relative;
+  // Styles for the flags
+  .flag-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    display: block;
+  }
+
+  & span {
+    font-family: 'Strawford';
+
+    padding: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+  }
+
+  // &:hover {
+    // & span {
+    //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
+    // }
+
+    // & .chevronIcon {
+    //      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : '')};
+    // }
+
+    // & .menuContent {
+    //   display: ${(props) => (props.expanded ? 'block' : 'none')};
+    // }
+  // }
+
+  &:hover {
+    & span {
+      color: #dd44b9;
+    }
+
+    & .chevronIcon {
+      transform: rotate(180deg);
+    }
+
+    & .menuContent {
+      display: block;
+    }
+  }
+`;
+
 const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
@@ -842,7 +895,7 @@ const LanguageMenuContent = styled.div`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
-  top: 64px;
+  top: 54px;
 
   left: 50%;
   transform: translateX(-90%);
