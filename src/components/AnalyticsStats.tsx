@@ -16,6 +16,8 @@ import {
   ItemV, Span
 } from './SharedStyling';
 
+import { useTranslation } from 'react-i18next';
+
 function nFormatter(num, digits) {
   const si = [
     { value: 1, symbol: '' },
@@ -37,6 +39,10 @@ function nFormatter(num, digits) {
 }
 
 function AnalyticsStats() {
+
+  // Internationalization
+  const { t } = useTranslation();
+  
   const [kpiStats, setKpiStats] = useState({
     totalNotifsSent: '',
     totalSubscribersCount: ''
@@ -101,22 +107,22 @@ function AnalyticsStats() {
     <KPIBanner>
           <ItemV gap="18px" className='kpiItem'>
               <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
-              <KPIMetric>Notifications<br />Sent</KPIMetric>
+              <KPIMetric>{t('home.stats.notifications.part1')}<br />{t('home.stats.notifications.part2')}</KPIMetric>
           </ItemV>
 
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{kpiStats?.totalSubscribersCount || '...'}{kpiStats?.totalSubscribersCount && '+'}</KPIFigure>
-          <KPIMetric>Total<br />Subscribers</KPIMetric>
+          <KPIMetric>{t('home.stats.subscribers.part1')}<br />{t('home.stats.subscribers.part2')}</KPIMetric>
         </ItemV>
 
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushIntegrations}</KPIFigure>
-          <KPIMetric>Total Push<br />Integrations</KPIMetric>
+          <KPIMetric>{t('home.stats.integrations.part1')}<br />{t('home.stats.integrations.part2')}</KPIMetric>
         </ItemV>
 
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushChatSent}</KPIFigure>
-          <KPIMetric>In Grants <br />Given</KPIMetric>
+          <KPIMetric>{t('home.stats.grants.part1')}<br />{t('home.stats.grants.part2')}</KPIMetric>
         </ItemV>
     </KPIBanner>
   );

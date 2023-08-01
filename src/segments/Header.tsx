@@ -20,6 +20,10 @@ import { Anchor, Span, LinkTo } from '../components/SharedStyling';
 import GLOBALS, { device } from '../config/globals';
 import Alert from 'components/Alert';
 import FadeInAnimation from 'components/FadeInAnimation';
+import { ReactComponent as EnSVG } from '../assets/en.svg';
+import { ReactComponent as EsSVG } from '../assets/es.svg';
+
+import { useTranslation } from 'react-i18next';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -68,8 +72,10 @@ const defaultMobileMenuState = {
   0: false,
   1: false,
   2: false,
+  3: false
   // add next [index]: false for new main Nav menu item
 };
+
 
 function Header() {
   const isMobile = useMediaQuery(device.laptop);
@@ -78,6 +84,8 @@ function Header() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
+  // Internationalization
+  const { t, i18n } = useTranslation();
   
   const navigate = useNavigate();
   const location = useLocation();
@@ -98,15 +106,16 @@ function Header() {
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
-    if (isMobile) {
+    // if (isMobile) {
       setMobileMenuMap((oldMap) => {
         return {
           ...defaultMobileMenuState,
           [menuIndex]: !oldMap[menuIndex],
         };
       });
-    }
+    // }
   };
+
   
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
@@ -189,7 +198,7 @@ function Header() {
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                          Docs
+                          {t('header.docs.title')}
                       {/* </FadeInAnimation> */}
                     </Span>
                     {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
@@ -207,7 +216,7 @@ function Header() {
                     <Anchor
                       href="https://docs.push.org/developers"
                       target="_blank"
-                      title="Read Developer Guide"
+                      title={t('header.docs.alt-developer-guides')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -216,12 +225,12 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Developer Guides
+                      {t('header.docs.developer-guides')}
                     </Anchor>
                     <Anchor
                       href="https://docs.push.org/governance"
                       target="_blank"
-                      title="Read Governance Guide"
+                      title={t('header.docs.alt-gobernance-guides')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -230,12 +239,12 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Governance Guides
+                      {t('header.docs.gobernance-guides')}
                     </Anchor>
                     <Anchor
                       href="https://whitepaper.push.org/"
                       target="_blank"
-                      title="Read Whitepaper"
+                      title={t('header.docs.alt-whitepaper')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -244,7 +253,7 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Whitepaper
+                      {t('header.docs.whitepaper')}
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -262,7 +271,7 @@ function Header() {
                         padding="16px"
                       >
                          {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
-                            Learn More
+                         {t('header.more.title')}
                         {/* </FadeInAnimation> */}
                       </Span>
 
@@ -280,7 +289,7 @@ function Header() {
                   >
                     <LinkTo
                       to="/faq"
-                      title="Frequently Asked Questions"
+                      title={t('header.more.alt-faq')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -289,12 +298,12 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      FAQ
+                      {t('header.more.faq')}
                     </LinkTo>
                     <Anchor
                       href="https://push-protocol.medium.com/"
                       target="_blank"
-                      title="Read our story"
+                      title={t('header.more.alt-blog')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -303,11 +312,11 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Blog
+                      {t('header.more.blog')}
                     </Anchor>
                     <LinkTo
                       to="/frens"
-                      title="Push Ecosystem"
+                      title={t('header.more.alt-push-ecosystem')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -316,12 +325,12 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Push Ecosystem
+                      {t('header.more.push-ecosystem')}
                     </LinkTo>
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
-                      title="Push Media Kit"
+                      title={t('header.more.alt-media-kit')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -330,7 +339,7 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Media  Kit
+                      {t('header.more.media-kit')}
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -348,7 +357,7 @@ function Header() {
                         padding="16px"
                       >
                          {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                           Push DAO
+                         {t('header.push-dao.title')}
                         {/* </FadeInAnimation> */}
                       </Span>
 
@@ -367,7 +376,7 @@ function Header() {
                     <Anchor
                       href="https://pushprotocol.notion.site/Welcome-to-Push-DAO-b1c1e1281ce64400adaaae59f98e4d4c"
                       target="_blank"
-                      title="Push Governance Forum"
+                      title={t('header.push-dao.alt-notion')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -376,12 +385,12 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Push DAO Notion
+                      {t('header.push-dao.notion')}
                     </Anchor>
                     <Anchor
                       href="https://gov.push.org"
                       target="_blank"
-                      title="Push Governance Forum"
+                      title={t('header.push-dao.alt-forum')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -390,11 +399,11 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Forum
+                      {t('header.push-dao.forum')}
                     </Anchor>
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                      title="Push Grants"
+                      title={t('header.push-dao.alt-grants')}
                       target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
@@ -404,11 +413,11 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Grants
+                      {t('header.push-dao.grants')}
                     </Anchor>
                     <Anchor
                       href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
-                      title="Push Mission"
+                      title={t('header.push-dao.alt-missions')}
                       target="_blank"
                       bg="transparent"
                       hoverBG="#fff"
@@ -418,31 +427,100 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      Missions
+                      {t('header.push-dao.missions')}
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemVV2 flex="initial">
-            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
+       
+        
+        <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isMobile ? 'wrap' : 'none'}>
+          <LanguageItem showMobileMenu={showMobileMenu}>
+             <LanguageMenuItem>
+             {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
+                    <LanguageMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                      expanded={mobileMenuMap[3]}
+                    >
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px 0px !important"
+                      >
+                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
+                      </Span>
+
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                    </LanguageMenuHeader>
+
+                  <LanguageMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[3]}
+                  >
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.language.english')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 16px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      justify='flex-start'
+                      onClick={() => i18n.changeLanguage('en')}
+                    >
+                      <EnSVG className='flag-icon-drop'/>
+                      {t('header.language.english')}
+                    </Anchor>
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.language.spanish')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 16px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      justify='flex-start'
+                      onClick={() => i18n.changeLanguage('es')}
+                    >
+                      <EsSVG className='flag-icon-drop'/>
+                      {t('header.language.spanish')}
+                    </Anchor>
+                  </LanguageMenuContent>
+                </LanguageMenuItem>
+            </LanguageItem>
+
+
+
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
                 href="https://app.push.org/"
                 target="_blank"
-                title="Push Dapp"
+                title={t('header.app-button.alt-title')}
                 bg="#DD44B9"
                 radius="16px"
                 size="18px"
                 weight="500"
                 spacing="-0.03em"
                 lineHeight="26px"
+                width='100%'
               >
-                Launch App
+                {t('header.app-button.title')}
               </DappLauncher>
-            {/* </FadeInAnimation> */}
+              
             </ItemVV2>
 
           </HeaderItemH>
@@ -451,6 +529,17 @@ function Header() {
     </StyledHeader>
   );
 }
+
+
+const LanguageItem = styled.div`
+  list-style: none;
+  margin: 0px 16px 0px 0px;
+
+  @media ${device.laptop} {
+    margin: 0 0 16px auto;
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  }
+`;
 
 // V2 Designs
 const HeaderItemH = styled(ItemHV2)`
@@ -620,6 +709,12 @@ const NavigationMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
+  // Styles for the flags
+  .flag-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
 
   & span {
     font-family: 'Strawford';
@@ -629,6 +724,63 @@ const NavigationMenuItem = styled.li`
     font-size: 18px;
     line-height: 142%;
   }
+
+  &:hover {
+    & span {
+      color: #dd44b9;
+    }
+
+    & .chevronIcon {
+      transform: rotate(180deg);
+    }
+
+    & .menuContent {
+      display: block;
+    }
+  }
+`;
+
+const LanguageMenuItem = styled.li`
+  position: relative;
+  // Styles for the flags
+  .flag-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    display: block;
+  }
+
+  .flag-icon-drop {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    display: block;
+  }
+
+  padding-left: 16px;
+
+  & span {
+    font-family: 'Strawford';
+
+    padding: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142%;
+  }
+
+  // &:hover {
+    // & span {
+    //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
+    // }
+
+    // & .chevronIcon {
+    //      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : '')};
+    // }
+
+    // & .menuContent {
+    //   display: ${(props) => (props.expanded ? 'block' : 'none')};
+    // }
+  // }
 
   &:hover {
     & span {
@@ -673,6 +825,34 @@ const NavigationMenuHeader = styled.div`
   }
 `;
 
+const LanguageMenuHeader = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & .chevronIcon {
+    transition-duration: 0.4s;
+    transition-property: transform;
+  }
+
+  @media ${device.laptop} {
+    justify-content: flex-end;
+
+    & span {
+    }
+
+    & .chevronIcon {
+      width: 16px;
+      height: 16px;
+      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
+    }
+  }
+`;
+
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
@@ -696,6 +876,49 @@ const NavigationMenuContent = styled.ul`
 
   @media ${device.laptop} {
     width: 100%;
+
+    position: relative;
+    top: 0px;
+    left: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+
+    & a {
+      justify-content: flex-start;
+    }
+  }
+`;
+
+
+const LanguageMenuContent = styled.div`
+  list-style: none;
+
+  font-family: 'Strawford', 'Manrope', sans-serif;
+  display: none;
+  position: absolute;
+
+  // logic - this should touch the parent li for enough hover surface area.
+  top: 54px;
+
+  left: 50%;
+  transform: translateX(-90%);
+  z-index: 1;
+  background: #2a2a39;
+  border-radius: 16px 4px 16px 16px;
+  padding: 10px 0px;
+
+  & a {
+    min-width: 162px;
+  }
+
+  @media ${device.laptop} {
+    min-width: 100%;
 
     position: relative;
     top: 0px;
