@@ -436,7 +436,8 @@ function Header() {
             </HeaderNavItemV>
 
        
-          
+        
+        <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isMobile ? 'wrap' : 'none'}>
           <LanguageItem showMobileMenu={showMobileMenu}>
              <LanguageMenuItem>
              {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
@@ -502,8 +503,8 @@ function Header() {
                 </LanguageMenuItem>
             </LanguageItem>
 
-            <ItemVV2 flex="initial" flexDirection='row' >
-            {/* <FadeInAnimation wrapperElement="div" delay={1}> */}
+
+
               <DappLauncher
                 showMobileMenu={showMobileMenu}
                 className="launchDappBtn"
