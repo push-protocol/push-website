@@ -471,7 +471,7 @@ function Header() {
                       title={t('header.language.english')}
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="7px 30px"
+                      padding="7px 16px"
                       size="16px"
                       weight="400"
                       lineHeight="230%"
@@ -479,7 +479,7 @@ function Header() {
                       justify='flex-start'
                       onClick={() => i18n.changeLanguage('en')}
                     >
-                      <EnSVG className='flag-icon'/>
+                      <EnSVG className='flag-icon-drop'/>
                       {t('header.language.english')}
                     </Anchor>
                     <Anchor
@@ -488,7 +488,7 @@ function Header() {
                       title={t('header.language.spanish')}
                       bg="transparent"
                       hoverBG="#fff"
-                      padding="7px 30px"
+                      padding="7px 16px"
                       size="16px"
                       weight="400"
                       lineHeight="230%"
@@ -496,7 +496,7 @@ function Header() {
                       justify='flex-start'
                       onClick={() => i18n.changeLanguage('es')}
                     >
-                      <EsSVG className='flag-icon'/>
+                      <EsSVG className='flag-icon-drop'/>
                       {t('header.language.spanish')}
                     </Anchor>
                   </LanguageMenuContent>
@@ -748,6 +748,13 @@ const LanguageMenuItem = styled.li`
     width: 24px;
     height: 24px;
     margin-right: 6px;
+    display: block;
+  }
+
+  .flag-icon-drop {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
     display: block;
   }
 
