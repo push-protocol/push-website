@@ -23,7 +23,7 @@ const Alert = () => {
   };
 
   const alertMessage = 'Push V2 Rewards program is now LIVE. Stake';
-  const alertMessageEs = 'El programa de descubrimiento de bugs de Push x ImmuneFi por $100,000 se pone en marcha,'
+  const alertMessageEs = 'El programa Push V2 Rewards ahora está EN VIVO. Apostar'
   const alertLink = 'https://app.push.org/yieldv2';
 
   // Internationalization
