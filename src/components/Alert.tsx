@@ -22,9 +22,9 @@ const Alert = () => {
     setIsAlertVisible(false);
   };
 
-  const alertMessage = '$100,000 of Push x ImmuneFi Bug Bounty goes LIVE, ';
-  const alertMessageEs = 'El programa de descubrimiento de bugs de Push x ImmuneFi por $100,000 se pone en marcha,'
-  const alertLink = 'https://immunefi.com/bounty/pushprotocol/';
+  const alertMessage = 'Push V2 Rewards program is now LIVE. ';
+  const alertMessageEs = 'El programa Push V2 Rewards ahora está EN VIVO. '
+  const alertLink = 'https://app.push.org/yieldv2';
 
   // Internationalization
   const { t, i18n } = useTranslation();
@@ -40,8 +40,6 @@ const Alert = () => {
           <AlertText onClick={openLink}>
             {i18n.language === 'es' ? alertMessageEs : alertMessage}
             <KnowMoreLink
-              href={alertLink}
-              target="_blank"
             >
               {t('alert.know-more')}
             </KnowMoreLink>
@@ -120,6 +118,7 @@ const KnowMoreLink = styled.span`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-weight:700;
   &:hover {
     opacity: 0.75;
   }
