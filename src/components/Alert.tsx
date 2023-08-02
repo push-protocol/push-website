@@ -22,8 +22,8 @@ const Alert = () => {
     setIsAlertVisible(false);
   };
 
-  const alertMessage = 'Push V2 Rewards program is now LIVE. Stake';
-  const alertMessageEs = 'El programa Push V2 Rewards ahora está EN VIVO. Apostar'
+  const alertMessage = 'Push V2 Rewards program is now LIVE. ';
+  const alertMessageEs = 'El programa Push V2 Rewards ahora está EN VIVO. '
   const alertLink = 'https://app.push.org/yieldv2';
 
   // Internationalization
@@ -40,11 +40,8 @@ const Alert = () => {
           <AlertText onClick={openLink}>
             {i18n.language === 'es' ? alertMessageEs : alertMessage}
             <KnowMoreLink
-              href={alertLink}
-              target="_blank"
             >
-              {/* {t('alert.know-more')} */}
-              HERE
+              {t('alert.know-more')}
             </KnowMoreLink>
             <FiArrowUpRight className="icon" />
           </AlertText>
