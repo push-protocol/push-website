@@ -46,6 +46,7 @@ import {
 import SignupInput from '../components/SignupInput';
 
 import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
+import { ReactComponent as BeInCryptoSVG } from '../assets/beincrypto.svg';
 import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
 import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
@@ -73,7 +74,6 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 function Home({ isAlertVisible }) {
-
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
 
@@ -145,7 +145,7 @@ function Home({ isAlertVisible }) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                   <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+                  <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
                 </HeroAnimation>
               )
             }
@@ -1126,6 +1126,39 @@ function Home({ isAlertVisible }) {
                     padding="0"
                   >
                     {t('home.featured-section.article4.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Anchor>
+                </ArticleSource>
+              </FeaturedCell>
+              <FeaturedCell className="marqueeItem">
+                <Span
+                  color="#FFFFFF"
+                  size="22px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article5.text')}
+                </Span>
+
+                <ArticleSource>
+                  <BeInCryptoSVG/>
+                  <Anchor
+                    href="https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn"
+                    title="Read Balaji's tweet about Push"
+                    target="_blank"
+                    hoverBG="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    radius="16px"
+                    size="18px"
+                    weight="500"
+                    spacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article5.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Anchor>
                 </ArticleSource>
