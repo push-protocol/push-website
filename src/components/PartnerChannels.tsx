@@ -20,7 +20,7 @@ import { ReactComponent as CryptocurrencyjobsSVG } from '../assets/partners/cryp
 import { ReactComponent as DecentralandSVG } from '../assets/partners/decentraland.svg';
 import { ReactComponent as DydxSVG } from '../assets/partners/dydx.svg';
 import { ReactComponent as EnsSVG } from '../assets/partners/ens.svg';
-import { ReactComponent as EarnfiSVG } from '../assets/partners/earnfi.svg';
+import { ReactComponent as EarnfiSVG } from '../assets/partners/earnifi.svg';
 import { ReactComponent as EthSVG } from '../assets/partners/ethsign.svg';
 import { ReactComponent as FlipsideSVG } from '../assets/partners/flipside.svg';
 import { ReactComponent as GoodGhostingSVG } from '../assets/partners/goodghosting.svg';
@@ -54,6 +54,9 @@ import { ReactComponent as UniswapSVG } from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG } from '../assets/partners/unstoppable.svg';
 import { ReactComponent as WormbatSVG } from '../assets/partners/wormbat.svg';
 import { ReactComponent as ZeroswapSVG } from '../assets/partners/zeroswap.svg';
+import { ReactComponent as BanklessSVG } from '../assets/partners/bankless.svg';
+import { ReactComponent as AtlendisSVG } from '../assets/partners/atlendis.svg';
+import { ReactComponent as DDSVG } from '../assets/partners/D_D.svg';
 import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
 import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
@@ -76,12 +79,12 @@ import { useTranslation } from 'react-i18next';
 // last 2 arrays are designs after grids in first and second row middle icons has formed
 
 const partnerSortedGroup = [
-  [DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG],
+  [BanklessSVG,DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG,EarnfiSVG],
   [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
   [SushiSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
   [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
   [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
-  [ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG],
+  [AtlendisSVG,ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG, DDSVG],
   [SnapshotSVG, EnsSVG, BancorSVG, AragonSVG],
   [QidaoSVG, DydxSVG, LepasaMetaverseSVG, OrionprotocolSVG],
 ];
@@ -106,6 +109,8 @@ function PartnerChannels() {
     gsap.to('#item-1', { width: '0px', height: '0px' });
     gsap.to('#item-2', { width: '0px', height: '0px' });
     gsap.to('#item-3', { width: '0px', height: '0px' });
+    gsap.to('#item-4', { width: '0px', height: '0px' });
+    gsap.to('#item-5', { width: '0px', height: '0px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '178px', height: '178px' });
@@ -155,6 +160,8 @@ function PartnerChannels() {
     gsap.to('#item-1', { width: '96px', height: '96px' });
     gsap.to('#item-2', { width: '96px', height: '96px' });
     gsap.to('#item-3', { width: '96px', height: '96px' });
+    gsap.to('#item-4', { width: '96px', height: '96px' });
+    gsap.to('#item-5', { width: '96px', height: '96px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '96px', height: '96px' });
