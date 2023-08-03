@@ -20,7 +20,7 @@ import { ReactComponent as CryptocurrencyjobsSVG } from '../assets/partners/cryp
 import { ReactComponent as DecentralandSVG } from '../assets/partners/decentraland.svg';
 import { ReactComponent as DydxSVG } from '../assets/partners/dydx.svg';
 import { ReactComponent as EnsSVG } from '../assets/partners/ens.svg';
-import { ReactComponent as EarnfiSVG } from '../assets/partners/earnfi.svg';
+import { ReactComponent as EarnfiSVG } from '../assets/partners/earnifi.svg';
 import { ReactComponent as EthSVG } from '../assets/partners/ethsign.svg';
 import { ReactComponent as FlipsideSVG } from '../assets/partners/flipside.svg';
 import { ReactComponent as GoodGhostingSVG } from '../assets/partners/goodghosting.svg';
@@ -109,6 +109,8 @@ function PartnerChannels() {
     gsap.to('#item-1', { width: '0px', height: '0px' });
     gsap.to('#item-2', { width: '0px', height: '0px' });
     gsap.to('#item-3', { width: '0px', height: '0px' });
+    gsap.to('#item-4', { width: '0px', height: '0px' });
+    gsap.to('#item-5', { width: '0px', height: '0px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '178px', height: '178px' });
@@ -158,6 +160,8 @@ function PartnerChannels() {
     gsap.to('#item-1', { width: '96px', height: '96px' });
     gsap.to('#item-2', { width: '96px', height: '96px' });
     gsap.to('#item-3', { width: '96px', height: '96px' });
+    gsap.to('#item-4', { width: '96px', height: '96px' });
+    gsap.to('#item-5', { width: '96px', height: '96px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '96px', height: '96px' });
