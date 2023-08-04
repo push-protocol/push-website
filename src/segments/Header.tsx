@@ -230,7 +230,7 @@ function Header() {
                     <Anchor
                       href="https://docs.push.org/governance"
                       target="_blank"
-                      title={t('header.docs.alt-gobernance-guides')}
+                      title={t('header.docs.alt-governance-guides')}
                       bg="transparent"
                       hoverBG="#fff"
                       padding="7px 30px"
@@ -239,7 +239,7 @@ function Header() {
                       lineHeight="230%"
                       spacing="normal"
                     >
-                      {t('header.docs.gobernance-guides')}
+                      {t('header.docs.governance-guides')}
                     </Anchor>
                     <Anchor
                       href="https://whitepaper.push.org/"
