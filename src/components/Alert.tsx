@@ -23,7 +23,7 @@ const Alert = () => {
   };
 
   const alertMessage = 'Push V2 Rewards program is now LIVE. ';
-  const alertMessageEs = 'El programa Push V2 Rewards ahora está EN VIVO. '
+  const alertMessageEs = 'El programa Push V2 Rewards ya ha sido LANZADO. '
   const alertLink = 'https://app.push.org/yieldv2';
 
   // Internationalization
