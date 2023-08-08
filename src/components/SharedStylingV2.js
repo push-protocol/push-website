@@ -240,6 +240,7 @@ export const ButtonV2 = styled.button`
   z-index: ${(props) => props.zIndex || '3'};
   pointer: ${(props) => props.pointer || 'hand'};
   cursor: ${(props) => props.cursor || 'pointer'};
+  font-family: ${(props) => props.fontFamily || 'Strawford, Helvetica, sans-serif'};
 
   @media ${device.laptop} {
     font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.TABLET};

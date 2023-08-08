@@ -10,8 +10,6 @@ import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
-import Spaces from './pages/Spaces';
-import Cheat from './pages/CheatSheet';
 
 ReactGA.initialize('UA-165415629-2');
 
@@ -22,8 +20,9 @@ function App() {
   const TermsOfService = React.lazy(() => import('pages/TermsOfService'));
   const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
   const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
-  // const Spaces = React.lazy(() => import('pages/Spaces'));
-  // const Cheat = React.lazy(() => import('pages/CheatSheet'));
+  const Spaces = React.lazy(() => import('pages/Spaces'));
+  const Cheat = React.lazy(() => import('pages/CheatSheet'));
+  const BRB = React.lazy(() => import('pages/BRB'));
   useEffect(() => {
     ReactGA.pageview('/entry');
   }, []);
@@ -40,7 +39,7 @@ function App() {
     <Suspense fallback={<h1>Loading</h1>}>
       <Wrapper id="wrapper">
         <AppWrapper id="content">
-          <Header />
+          {location.pathname !== '/brb' && <Header />}
           <Routes>
             {/* add all the route paths here */}
             <Route
@@ -80,8 +79,14 @@ function App() {
              path='/cheatsheet'
              element={<Cheat />}
             />
+             <Route 
+             path='/brb'
+             element={<BRB />}
+            />
           </Routes>
-          <Footer />
+
+          {location.pathname !== '/brb' && <Footer />}
+          
         </AppWrapper>
       </Wrapper>
     </Suspense>
