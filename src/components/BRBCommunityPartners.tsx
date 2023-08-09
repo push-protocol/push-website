@@ -42,6 +42,7 @@ export const CommunityPartners = () => {
           speed={ANIMATION_SPEED}
           gradientWidth={8}
           gap={18}
+          direction="right"
         >
           {partnerList?.map((partner) => {
             return (

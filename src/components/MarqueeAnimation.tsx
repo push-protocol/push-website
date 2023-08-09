@@ -11,6 +11,7 @@ type Props = {
   speed?: number;
   gap?: number;
   gradientWidth?: number;
+  children: React.ReactNode;
 };
 
 function MarqueeAnimation(props: Props) {
