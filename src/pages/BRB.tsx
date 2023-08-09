@@ -11,6 +11,7 @@ import { ReactComponent as PushLogo} from '../assets/pushIcon.svg';
 import { ReactComponent as Discord} from '../assets/Discord-BRB.svg';
 import { ReactComponent as X} from '../assets/X-BRB.svg';
 import ImageBRB from '../assets/Image-BRB.png';
+import MobileBRB from '../assets/Mobile-BRB.png';
 
 import { Anchor, LinkTo, Span } from 'components/SharedStyling';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -76,7 +77,8 @@ const defaultMobileMenuState = {
 };
 
 function BRB() {
-  const isMobile = useMediaQuery(device.laptop);
+  const isMobile = useMediaQuery(device.mobileL);
+  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
@@ -121,6 +123,7 @@ function BRB() {
               {isMobileMenuOpen ? (
                 <AiOutlineClose
                   size={28}
+                  color='#fff'
                   onClick={toggleMobileMenu}
                 />
               ) : (
@@ -204,7 +207,7 @@ function BRB() {
           </HeaderNavItemV>
 
 
-          <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isMobile ? 'wrap' : 'none'} >
+          <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isLaptop ? 'wrap' : 'none'} >
             <IconMenu
               role="menu"
               className="navigationMenu"
@@ -233,8 +236,8 @@ function BRB() {
           <ItemVV2 margin="131px 0 0 0">
             <MemberImage
               className="pushMissingSvg"
-              src={ImageBRB}
-              srcSet={ImageBRB}
+              src={isMobile ? MobileBRB : ImageBRB}
+              srcSet={isMobile ? MobileBRB : ImageBRB}
             />
           </ItemVV2>
 
@@ -274,11 +277,6 @@ const MemberImage = styled(ImageHolder)``;
 
 const ItemTop = styled.main`
     width: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // background: #121315;
 `;
 
 const BrbWrapper = styled.main`
@@ -298,6 +296,11 @@ const BrbWrapper = styled.main`
 `;
 
 const NavList = styled.div`
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    flex: initial;
     width: 1243px;
     display: flex;
     flex-direction: row;
@@ -310,6 +313,15 @@ const NavList = styled.div`
     backdrop-filter: blur(12px);
     padding: 7px 13px;
     margin-top: 51px;
+
+    @media ${device.tablet} {
+        flex-direction: column;
+        width: 100%;
+        padding: 4px 7px;
+        margin: 10px 10px 10px 10px;
+        box-sizing: border-box;
+        // border-radius: 55px;
+    }
 `;
 
 const NavText = styled.div`
@@ -368,6 +380,7 @@ const MobileMenuToggleIcon = styled.span`
   @media ${device.laptop} {
     display: flex;
     cursor: pointer;
+    margin-right: 20px;
   }
 `;
 
@@ -375,7 +388,7 @@ const HeaderNavItemV = styled(ItemVV2)`
   margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
-    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
+    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 20px' : '0')};
   }
 `;
 
@@ -402,15 +415,14 @@ const IconMenu = styled.ul`
   list-style: none;
   margin: 0 20px 0 0;
   padding: 0;
-
   display: flex;
   gap: 20px;
-
   z-index: 999;
 
   @media ${device.laptop} {
-    flex-direction: column;
-    flex: 0 0 75%;
+    flex-direction: row;
+    flex: 1;
+    margin: 0 20px 10px 20px;
     align-self: stretch;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
