@@ -469,8 +469,24 @@ template {
 
 @font-face {
   font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-ExtraLight.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-Light.otf') format('opentype');
+  font-weight: 200 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
   src: url('./assets/fonts/Glancyr-Regular.otf') format('opentype');
-  font-weight: 100 200 300 400 500;
+  font-weight: 400 500;
   font-style: normal;
   font-display: swap;
 }
