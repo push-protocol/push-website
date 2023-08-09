@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import BuildersTribeSVG from '../assets/brb/community/builders-tribe.svg';
+import BuildersTribeSVG from '../assets/brb/community/buidlers-tribe.svg';
 import DevfolioSVG from '../assets/brb/community/devfolio.svg';
 import ENSSVG from '../assets/brb/community/ens.svg';
 import GitcoinSVG from '../assets/brb/community/gitcoin.svg';
