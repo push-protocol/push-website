@@ -263,7 +263,6 @@ function BRB() {
             </ButtonV2>
           </NavButtons>
         </ItemTop>
-
         <Partners />
         <CommunityPartners />
       </BrbWrapper>

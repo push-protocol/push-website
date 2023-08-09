@@ -6,6 +6,7 @@ import DevfolioSVG from '../assets/brb/community/devfolio.svg';
 import ENSSVG from '../assets/brb/community/ens.svg';
 import GitcoinSVG from '../assets/brb/community/gitcoin.svg';
 import MarqueeAnimation from './MarqueeAnimation';
+import { ItemH } from './SharedStyling';
 
 export const CommunityPartners = () => {
   const partnerList = [
@@ -34,30 +35,39 @@ export const CommunityPartners = () => {
   const ANIMATION_SPEED = 60;
 
   return (
-    <CommunityContainer>
-      <MarqueeAnimation
-        speed={ANIMATION_SPEED}
-        gradientWidth={8}
-        gap={18}
-      >
-        {partnerList?.map((partner) => {
-          return (
-            <PartnerItem key={partner?.id}>
-              <PartnerIcon
-                src={partner?.svgIcon}
-                alt={partner?.alt}
-              />
-            </PartnerItem>
-          );
-        })}
-      </MarqueeAnimation>
-    </CommunityContainer>
+    <Container>
+      <Header>Community Partners</Header>
+      <CommunityContainer>
+        <MarqueeAnimation
+          speed={ANIMATION_SPEED}
+          gradientWidth={8}
+          gap={18}
+        >
+          {partnerList?.map((partner) => {
+            return (
+              <PartnerItem key={partner?.id}>
+                <PartnerIcon
+                  src={partner?.svgIcon}
+                  alt={partner?.alt}
+                />
+              </PartnerItem>
+            );
+          })}
+        </MarqueeAnimation>
+      </CommunityContainer>
+    </Container>
   );
 };
 
-const CommunityContainer = styled.div`
+const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const CommunityContainer = styled(ItemH)`
   column-gap: 18px;
+  
 `;
 
 const PartnerIcon = styled.img`
@@ -73,4 +83,15 @@ const PartnerItem = styled.div`
   max-height: 65px;
   display: flex;
   align-items: center;
+`;
+
+const Header = styled.h3`
+  font-size: 46px;
+  font-weight: 400;
+  font-family: Glancyr;
+  color: #fff;
+  margin: 60px 0px;
+  @media (max-width: 480px) {
+    margin: 49px 0px;
+  }
 `;
