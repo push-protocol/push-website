@@ -1,29 +1,28 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React,{ useEffect ,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
 
 import PageWrapper from '../components/PageWrapper';
-import { ReactComponent as PushLogo} from '../assets/pushIcon.svg';
-import { ReactComponent as Discord} from '../assets/Discord-BRB.svg';
-import { ReactComponent as X} from '../assets/X-BRB.svg';
+import { ReactComponent as PushLogo } from '../assets/pushIcon.svg';
+import { ReactComponent as Discord } from '../assets/Discord-BRB.svg';
+import { ReactComponent as X } from '../assets/X-BRB.svg';
 import ImageBRB from '../assets/Image-BRB.png';
 import MobileBRB from '../assets/Mobile-BRB.png';
+import Schedules from 'components/Schedules';
 
 import { Anchor, LinkTo, Span } from 'components/SharedStyling';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { ButtonV2,ContentV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import { ButtonV2, ContentV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
 import GLOBALS, { device } from 'config/globals';
 import { BsChevronDown } from 'react-icons/bs';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import ImageHolder from 'components/ImageHolder';
-
-
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -34,11 +33,13 @@ function useScrollDirection(mobileMenuActive) {
 
   useEffect(() => {
     const updateScrollDirection = () => {
-
       const scrollY = window.pageYOffset;
       let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
-      if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)
+      ) {
         // check if isMobileMenuOpen then override
         if (mobileMenuActive) {
           direction = 'scrollUp';
@@ -58,7 +59,7 @@ function useScrollDirection(mobileMenuActive) {
     };
 
     // add event listener
-    window.addEventListener('scroll', updateScrollDirection, {passive: true});
+    window.addEventListener('scroll', updateScrollDirection, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', updateScrollDirection); // clean up
@@ -72,7 +73,7 @@ const defaultMobileMenuState = {
   0: false,
   1: false,
   2: false,
-  3: false
+  3: false,
   // add next [index]: false for new main Nav menu item
 };
 
@@ -84,7 +85,6 @@ function BRB() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
 
   const { t, i18n } = useTranslation();
-
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -108,14 +108,18 @@ function BRB() {
       pageTitle={PageMeta.BRB.pageTitle}
     >
       <BrbWrapper>
-
         <NavList>
           <MenuTop flex="initial">
             <PushLogoBlackContainer
               className="headerlogo"
               flex="initial"
             >
-              <LinkTo to='/' aria-label='Push'><PushLogo /></LinkTo>
+              <LinkTo
+                to="/"
+                aria-label="Push"
+              >
+                <PushLogo />
+              </LinkTo>
               #BRB
             </PushLogoBlackContainer>
 
@@ -123,13 +127,13 @@ function BRB() {
               {isMobileMenuOpen ? (
                 <AiOutlineClose
                   size={28}
-                  color='#fff'
+                  color="#fff"
                   onClick={toggleMobileMenu}
                 />
               ) : (
                 <GiHamburgerMenu
                   size={28}
-                  color='#fff'
+                  color="#fff"
                   onClick={toggleMobileMenu}
                 />
               )}
@@ -143,14 +147,13 @@ function BRB() {
               showMobileMenu={isMobileMenuOpen}
             >
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <Span
                     size="18px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    family='Glancyr !important'
+                    family="Glancyr !important"
                   >
                     Partners
                   </Span>
@@ -158,14 +161,13 @@ function BRB() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <Span
                     size="18px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    family='Glancyr !important'
+                    family="Glancyr !important"
                   >
                     Schedule
                   </Span>
@@ -173,14 +175,13 @@ function BRB() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <Span
                     size="18px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    family='Glancyr !important'
+                    family="Glancyr !important"
                   >
                     Playground
                   </Span>
@@ -188,49 +189,45 @@ function BRB() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <Span
                     size="18px"
                     weight="500"
                     spacing="-0.03em"
                     lineHeight="142%"
-                    family='Glancyr !important'
+                    family="Glancyr !important"
                   >
                     Support
                   </Span>
                 </NavigationMenuHeader>
               </NavigationMenuItem>
-
-     
             </NavigationMenu>
           </HeaderNavItemV>
 
-
-          <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isLaptop ? 'wrap' : 'none'} >
+          <ItemVV2
+            flex="initial"
+            flexDirection="row !important"
+            flexWrap={isLaptop ? 'wrap' : 'none'}
+          >
             <IconMenu
               role="menu"
               className="navigationMenu"
               showMobileMenu={isMobileMenuOpen}
             >
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <Discord />
                 </NavigationMenuHeader>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuHeader
-                >
+                <NavigationMenuHeader>
                   <X />
                 </NavigationMenuHeader>
               </NavigationMenuItem>
             </IconMenu>
-            
           </ItemVV2>
         </NavList>
-
 
         <ItemTop>
           <ItemVV2 margin="131px 0 0 0">
@@ -241,110 +238,109 @@ function BRB() {
             />
           </ItemVV2>
 
-          <NavText
-          >
-             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve one big problem, with a chance to win $100,000 USD in prizes!
+          <NavText>
+            Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
+            one big problem, with a chance to win $100,000 USD in prizes!
           </NavText>
 
           <NavButtons>
             <ButtonV2
-              borderRadius = '24px'
-              background = '#E64DE9'
-              border = '1px solid #FC6DFF'
-              fontFamily='Glancyr !important'
+              borderRadius="24px"
+              background="#E64DE9"
+              border="1px solid #FC6DFF"
+              fontFamily="Glancyr !important"
             >
-                     Register Now
+              Register Now
             </ButtonV2>
             <ButtonV2
-              borderRadius = '24px'
-              background = 'transparent'
-              border = '1px solid #E64DE9'
-              fontFamily='Glancyr !important'
+              borderRadius="24px"
+              background="transparent"
+              border="1px solid #E64DE9"
+              fontFamily="Glancyr !important"
             >
-                     Join the conversation
+              Join the conversation
             </ButtonV2>
           </NavButtons>
         </ItemTop>
 
-
+        <Schedules />
       </BrbWrapper>
     </PageWrapper>
   );
 }
 
-
 const MemberImage = styled(ImageHolder)``;
 
 const ItemTop = styled.main`
-    width: 100%;
+  width: 100%;
 `;
 
 const BrbWrapper = styled.main`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #000;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
 
-    & .pushMissingSvg {
-        width: 900px;
-        @media ${device.tablet} {
-          width: 100%;
-        }
-      }
+  & .pushMissingSvg {
+    width: 900px;
+    @media ${device.tablet} {
+      width: 100%;
+    }
+  }
 `;
 
 const NavList = styled.div`
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    flex: initial;
-    width: 1243px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  flex: initial;
+  width: 1243px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 
-    border-radius: 55px;
-    border: 1px solid #2A2A39;
-    background: rgba(0, 0, 0, 0.50);
-    backdrop-filter: blur(12px);
-    padding: 7px 13px;
-    margin-top: 51px;
+  border-radius: 55px;
+  border: 1px solid #2a2a39;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  padding: 7px 13px;
+  margin-top: 51px;
 
-    @media ${device.tablet} {
-        flex-direction: column;
-        width: 100%;
-        padding: 4px 7px;
-        margin: 10px 10px 10px 10px;
-        box-sizing: border-box;
-        // border-radius: 55px;
-    }
+  @media ${device.tablet} {
+    flex-direction: column;
+    width: 100%;
+    padding: 4px 7px;
+    margin: 10px 10px 10px 10px;
+    box-sizing: border-box;
+    // border-radius: 55px;
+  }
 `;
 
 const NavText = styled.div`
-    color: #FFF;
-    text-align: center;
-    font-family: Glancyr;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #fff;
+  text-align: center;
+  font-family: Glancyr;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 
-    width: 844px;
-    text-align: center;
-    margin: 22px auto 0 auto;
+  width: 844px;
+  text-align: center;
+  margin: 22px auto 0 auto;
 `;
 
 const NavButtons = styled.div`
-    margin: 39px 0 0 0;
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
+  margin: 39px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MenuTop = styled(ItemVV2)`
@@ -363,15 +359,15 @@ const MenuTop = styled(ItemVV2)`
 `;
 
 const PushLogoBlackContainer = styled(ItemVV2)`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    color: #FFF;
-    font-family: Glancyr;
-    font-size: 24.207px;
-    font-style: normal;
-    font-weight: 700;
+  color: #fff;
+  font-family: Glancyr;
+  font-size: 24.207px;
+  font-style: normal;
+  font-weight: 700;
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -463,7 +459,6 @@ const NavigationMenuItem = styled.li`
   }
 `;
 
-
 const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
@@ -533,6 +528,5 @@ const NavigationMenuContent = styled.ul`
     }
   }
 `;
-
 
 export default BRB;
