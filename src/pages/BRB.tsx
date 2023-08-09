@@ -129,7 +129,9 @@ function BRB() {
                   className="headerlogo"
                   flex="initial"
                 >
-                  <LinkTo to='/' aria-label='Push'><PushLogo /></LinkTo>
+                  {/* <LinkTo to='/' aria-label='Push'> */}
+                  <PushLogo />
+                  {/* </LinkTo> */}
               #BRB
                 </PushLogoBlackContainer>
 
@@ -288,10 +290,9 @@ function BRB() {
           <FooterItem>
             <SpanContent
               family='Glancyr'
-              size={isMobile ? '89px' :'112px'}
+              size={isLaptop ? '89px' :'112px'}
               weight='500'
               color='#E64DE9'
-            //   textAlign='center'
             >
              Drop Us a GM!
             </SpanContent>
@@ -303,7 +304,7 @@ function BRB() {
 
               <Span
                 family='Glancyr'
-                size={isMobile ? '24px' :'36px'}
+                size={isLaptop ? '24px' :'36px'}
                 weight='200'
                 color='#6F8BEE'
               >24x7 Support on Discord</Span>
@@ -316,7 +317,7 @@ function BRB() {
 
               <Span
                 family='Glancyr'
-                size={isMobile ? '24px' :'36px'}
+                size={isLaptop ? '24px' :'36px'}
                 weight='200'
                 color='#6F8BEE'
               >Updates & Announcements</Span>
@@ -345,7 +346,11 @@ function BRB() {
 }
 
 
-const MemberImage = styled(ImageHolder)``;
+const MemberImage = styled(ImageHolder)`
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+`;
 
 const ItemTop = styled.main`
     width: 100%;
@@ -393,7 +398,7 @@ const BrbWrapper = styled.main`
     & .pushMissingSvg {
         width: 900px;
         @media ${device.tablet} {
-            width: 80%;
+            width: 50%;
           }
         @media ${device.mobileL} {
           width: 248px;
@@ -742,7 +747,6 @@ const ItemFooter = styled.div`
 
   @media ${device.mobileL} {
      height: 100%;
-     width: 95%;
      grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 `;
@@ -816,7 +820,7 @@ const SpanContent = styled(Span)`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: normal;
-    @media ${device.mobileL} {
+    @media ${device.laptop} {
         -webkit-line-clamp: 3;
     }
 `;
