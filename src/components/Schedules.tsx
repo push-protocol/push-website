@@ -154,7 +154,7 @@ const Schedules = () => {
               return (
                 <ScheduleCardContainer
                   key={index}
-                  backgroundColor={schedule?.backgroundColor}
+                  background={schedule?.backgroundColor}
                 >
                   <ImageContainer>
                     <Image
@@ -189,7 +189,7 @@ const Schedules = () => {
               return (
                 <ScheduleCardContainer
                   key={index}
-                  backgroundColor={schedule?.backgroundColor}
+                  background={schedule?.backgroundColor}
                 >
                   <ImageContainer>
                     <Image
@@ -216,19 +216,13 @@ const Schedules = () => {
       </SchedulesWrapper>
       <ActionContainer>
         <Button
-          borderRadius="16px"
           background={marqueeDirection === 'left' ? '#2A2A39' : '#E64DE9'}
-          height="64px"
-          width="64px"
           onClick={() => setMArqueeDirection('left')}
         >
           <Icon src={Left} />
         </Button>
         <Button
-          borderRadius="16px"
           background={marqueeDirection === 'right' ? '#2A2A39' : '#E64DE9'}
-          height="64px"
-          width="64px"
           onClick={() => setMArqueeDirection('right')}
         >
           <Icon src={Right} />
@@ -274,7 +268,7 @@ const Header = styled.span`
 const ScheduleCardContainer = styled.div`
   width: 413px;
   height: 344px;
-  background: ${(props) => props.backgroundColor};
+  background: ${(props) => props.background};
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -352,6 +346,9 @@ const Button = styled(ButtonV2)`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 16px;
+  height: 64px;
+  width: 64px;
 `;
 
 const ActionContainer = styled.div`
