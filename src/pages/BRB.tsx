@@ -9,6 +9,7 @@ import PageMeta from '../config/pageMeta';
 import PageWrapper from '../components/PageWrapper';
 import { ReactComponent as PushLogo } from '../assets/pushIcon.svg';
 import { ReactComponent as Discord } from '../assets/Discord-BRB.svg';
+import { ReactComponent as ArrowIcon } from '../assets/ArrowIcon.svg';
 import { ReactComponent as X } from '../assets/X-BRB.svg';
 import ImageBRB from '../assets/Image-BRB.png';
 import MobileBRB from '../assets/Mobile-BRB.png';
@@ -16,7 +17,7 @@ import MobileBRB from '../assets/Mobile-BRB.png';
 import { Anchor, LinkTo, Span } from 'components/SharedStyling';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { ButtonV2, ContentV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import { ButtonV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
 import GLOBALS, { device } from 'config/globals';
 import { BsChevronDown } from 'react-icons/bs';
 import useMediaQuery from 'hooks/useMediaQuery';
@@ -91,6 +92,9 @@ function BRB() {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
+  const showMobileMenu = isMobile && isMobileMenuOpen;
+  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
+
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
@@ -109,129 +113,134 @@ function BRB() {
       pageTitle={PageMeta.BRB.pageTitle}
     >
       <BrbWrapper>
-        <NavList>
-          <MenuTop flex="initial">
-            <PushLogoBlackContainer
-              className="headerlogo"
-              flex="initial"
-            >
-              <LinkTo
-                to="/"
-                aria-label="Push"
+        {/* header style */}
+        <StyledHeader
+          showMobileMenu={showMobileMenu}
+          className={`header ${headerClass}`}
+        >
+          <SectionV2 padding="0 0 0 0">
+            <NavList isMobileMenuOpen={isMobileMenuOpen}>
+              <MenuTop flex="initial">
+                <PushLogoBlackContainer
+                  className="headerlogo"
+                  flex="initial"
+                >
+                  {/* <LinkTo to='/' aria-label='Push'> */}
+                  <PushLogo />
+                  {/* </LinkTo> */}
+                  #BRB
+                </PushLogoBlackContainer>
+
+                <MobileMenuToggleIcon>
+                  {isMobileMenuOpen ? (
+                    <AiOutlineClose
+                      size={28}
+                      color="#fff"
+                      onClick={toggleMobileMenu}
+                    />
+                  ) : (
+                    <GiHamburgerMenu
+                      size={28}
+                      color="#fff"
+                      onClick={toggleMobileMenu}
+                    />
+                  )}
+                </MobileMenuToggleIcon>
+              </MenuTop>
+
+              <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
+                <NavigationMenu
+                  role="menu"
+                  className="navigationMenu"
+                  showMobileMenu={isMobileMenuOpen}
+                >
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        family="Glancyr !important"
+                      >
+                        Partners
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        family="Glancyr !important"
+                      >
+                        Schedule
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        family="Glancyr !important"
+                      >
+                        Playground
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        family="Glancyr !important"
+                      >
+                        Support
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+                </NavigationMenu>
+              </HeaderNavItemV>
+
+              <ItemVV2
+                flex="initial"
+                flexDirection="row !important"
+                flexWrap={isLaptop ? 'wrap' : 'none'}
               >
-                <PushLogo />
-              </LinkTo>
-              #BRB
-            </PushLogoBlackContainer>
+                <IconMenu
+                  role="menu"
+                  className="navigationMenu"
+                  showMobileMenu={isMobileMenuOpen}
+                >
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Discord />
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
 
-            <MobileMenuToggleIcon>
-              {isMobileMenuOpen ? (
-                <AiOutlineClose
-                  size={28}
-                  color="#fff"
-                  onClick={toggleMobileMenu}
-                />
-              ) : (
-                <GiHamburgerMenu
-                  size={28}
-                  color="#fff"
-                  onClick={toggleMobileMenu}
-                />
-              )}
-            </MobileMenuToggleIcon>
-          </MenuTop>
-
-          <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
-            <NavigationMenu
-              role="menu"
-              className="navigationMenu"
-              showMobileMenu={isMobileMenuOpen}
-            >
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <Span
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                    family="Glancyr !important"
-                  >
-                    Partners
-                  </Span>
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <Span
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                    family="Glancyr !important"
-                  >
-                    Schedule
-                  </Span>
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <Span
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                    family="Glancyr !important"
-                  >
-                    Playground
-                  </Span>
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <Span
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
-                    lineHeight="142%"
-                    family="Glancyr !important"
-                  >
-                    Support
-                  </Span>
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-            </NavigationMenu>
-          </HeaderNavItemV>
-
-          <ItemVV2
-            flex="initial"
-            flexDirection="row !important"
-            flexWrap={isLaptop ? 'wrap' : 'none'}
-          >
-            <IconMenu
-              role="menu"
-              className="navigationMenu"
-              showMobileMenu={isMobileMenuOpen}
-            >
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <Discord />
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuHeader>
-                  <X />
-                </NavigationMenuHeader>
-              </NavigationMenuItem>
-            </IconMenu>
-          </ItemVV2>
-        </NavList>
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <X />
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+                </IconMenu>
+              </ItemVV2>
+            </NavList>
+          </SectionV2>
+        </StyledHeader>
 
         <ItemTop>
-          <ItemVV2 margin="131px 0 0 0">
+          <ItemVV2>
             <MemberImage
               className="pushMissingSvg"
               src={isMobile ? MobileBRB : ImageBRB}
@@ -245,35 +254,130 @@ function BRB() {
           </NavText>
 
           <NavButtons>
-            <ButtonV2
+            <ButtonItem
               borderRadius="24px"
               background="#E64DE9"
               border="1px solid #FC6DFF"
               fontFamily="Glancyr !important"
+              padding="16px 32px"
             >
               Register Now
-            </ButtonV2>
-            <ButtonV2
+            </ButtonItem>
+            <ButtonBar
               borderRadius="24px"
               background="transparent"
               border="1px solid #E64DE9"
               fontFamily="Glancyr !important"
+              padding="16px 32px"
             >
               Join the conversation
-            </ButtonV2>
+            </ButtonBar>
           </NavButtons>
         </ItemTop>
         <Partners />
         <CommunityPartners />
+        <ItemFooter>
+          <FooterItem>
+            <SpanContent
+              family="Glancyr"
+              size={isLaptop ? '89px' : '112px'}
+              weight="500"
+              color="#E64DE9"
+            >
+              Drop Us a GM!
+            </SpanContent>
+          </FooterItem>
+
+          <FooterCol>
+            <FooterBar>
+              <i>
+                <Discord />
+              </i>
+
+              <Span
+                family="Glancyr"
+                size={isLaptop ? '24px' : '36px'}
+                weight="200"
+                color="#6F8BEE"
+              >
+                24x7 Support on Discord
+              </Span>
+
+              <ArrowIcon />
+            </FooterBar>
+
+            <FooterBar>
+              <i>
+                <X className="discord" />
+              </i>
+
+              <Span
+                family="Glancyr"
+                size={isLaptop ? '24px' : '36px'}
+                weight="200"
+                color="#6F8BEE"
+              >
+                Updates & Announcements
+              </Span>
+
+              <ArrowIcon />
+            </FooterBar>
+          </FooterCol>
+        </ItemFooter>
+
+        <BottomGrad>
+          <Span
+            family="Glancyr"
+            size={isMobile ? '17px' : '17px'}
+            weight="200"
+            color="#FFF"
+          >
+            © 2023 Push. All rights reserved.
+          </Span>
+        </BottomGrad>
       </BrbWrapper>
     </PageWrapper>
   );
 }
 
-const MemberImage = styled(ImageHolder)``;
+const MemberImage = styled(ImageHolder)`
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`;
 
 const ItemTop = styled.main`
   width: 100%;
+  margin: 261px 0 261px 0;
+
+  @media ${device.tablet} {
+    width: 100%;
+    margin: 125px 0 261px 0;
+  }
+`;
+
+const ButtonItem = styled(ButtonV2)`
+  vertical-align: middle;
+  font-size: 18px;
+  font-style: normal;
+  &:hover {
+    box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
+  }
+  &:hover:after {
+    opacity: 0;
+  }
+  &:active:after {
+    opacity: 0;
+  }
+  @media ${device.mobileL} {
+    width: 100%;
+  }
+`;
+
+const ButtonBar = styled(ButtonV2)`
+  @media ${device.mobileL} {
+    width: 100%;
+  }
 `;
 
 const BrbWrapper = styled.main`
@@ -287,17 +391,16 @@ const BrbWrapper = styled.main`
   & .pushMissingSvg {
     width: 900px;
     @media ${device.tablet} {
-      width: 100%;
+      width: 50%;
+    }
+    @media ${device.mobileL} {
+      width: 248px;
     }
   }
 `;
 
 const NavList = styled.div`
   position: relative;
-  top: auto;
-  left: auto;
-  right: auto;
-  flex: initial;
   width: 1243px;
   display: flex;
   flex-direction: row;
@@ -311,13 +414,81 @@ const NavList = styled.div`
   padding: 7px 13px;
   margin-top: 51px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     flex-direction: column;
-    width: 100%;
+    width: calc(100%);
     padding: 4px 7px;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px;
     box-sizing: border-box;
-    // border-radius: 55px;
+    border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
+  }
+`;
+
+// V1 Designs
+const HEADER_HEIGHT = 92;
+const HEADER_VERTICAL_GUTTER = 7;
+const BOX_MAX_WIDTH = 1140;
+
+const StyledHeader = styled.header`
+  font-family: 'Strawford';
+
+  /* padding: 0px 160px; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  /* color: #ffffff;
+  background: #121315; */
+  opacity: 1;
+
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+
+  transition: top 0.3s ease-in-out;
+
+  &.hide {
+    top: -100%;
+  }
+
+  &.light {
+    & span {
+      color: #121315;
+    }
+
+    & svg.chevronIcon {
+      fill: #121315;
+
+      & path {
+        stroke: #121315;
+      }
+    }
+  }
+
+  /* this is IMP for boxing the content at 1140px
+  @media (min-width: 1140px) {
+    padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
+    padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
+  } */
+
+  /* height: ${HEADER_HEIGHT}px; */
+
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media ${device.laptop} {
+    /* height: ${(props) => (props.showMobileMenu ? '100%' : '48px')}; */
+    flex-direction: column;
+
+    &.hide {
+      // top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
+      top: -100%;
+    }
   }
 `;
 
@@ -332,7 +503,19 @@ const NavText = styled.div`
 
   width: 844px;
   text-align: center;
-  margin: 22px auto 0 auto;
+  margin: 20px auto 0 auto;
+
+  @media ${device.laptop} {
+    width: 80%;
+  }
+
+  @media ${device.mobileL} {
+    width: 248px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+  }
 `;
 
 const NavButtons = styled.div`
@@ -342,6 +525,16 @@ const NavButtons = styled.div`
   gap: 16px;
   justify-content: center;
   align-items: center;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
+
+  @media ${device.mobileL} {
+    margin: 50px auto 0 auto;
+    flex-direction: column;
+    width: 252px;
+  }
 `;
 
 const MenuTop = styled(ItemVV2)`
@@ -419,7 +612,7 @@ const IconMenu = styled.ul`
   @media ${device.laptop} {
     flex-direction: row;
     flex: 1;
-    margin: 0 20px 10px 20px;
+    margin: 10px 20px 20px 20px;
     align-self: stretch;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
@@ -528,6 +721,114 @@ const NavigationMenuContent = styled.ul`
       justify-content: flex-start;
     }
   }
+`;
+
+const ItemFooter = styled.div`
+  position: relative;
+  top: 150px;
+  width: 1280px;
+  height: 418px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 20px;
+
+  @media ${device.laptop} {
+    width: 90%;
+  }
+
+  @media ${device.mobileL} {
+    height: 100%;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+`;
+
+const FooterItem = styled.div`
+  border-radius: 48px;
+  background: #2a2a39;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // text-align: center;
+  padding: 0px 50px;
+  box-sizing: border-box;
+
+  @media ${device.mobileL} {
+    border-radius: 32px;
+    padding: 40px 20px;
+  }
+`;
+
+const FooterBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px 48px;
+  box-sizing: border-box;
+  width: 100%;
+
+  border-radius: 48px;
+  background: #2a2a39;
+  flex: 1;
+  span {
+    width: 313px;
+  }
+  & i {
+    & svg {
+      transform: scale(1.8) !important;
+      margin-right: 24px;
+
+      @media ${device.mobileL} {
+        transform: scale(1.2) !important;
+      }
+    }
+  }
+  &. svg {
+    margin-left: auto;
+  }
+
+  @media ${device.mobileL} {
+    border-radius: 32px;
+    padding: 35px 20px;
+    box-sizing: border-box;
+  }
+`;
+
+const FooterCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+  width: 100%;
+`;
+
+const SpanContent = styled(Span)`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  @media ${device.laptop} {
+    -webkit-line-clamp: 3;
+  }
+`;
+
+const BottomGrad = styled.div`
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(70, 37, 244, 0.8) 75.63%,
+    rgba(251, 142, 255, 0.8) 100%
+  );
+  height: 340px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 57px;
+  box-sizing: border-box;
 `;
 
 export default BRB;
