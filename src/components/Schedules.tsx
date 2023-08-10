@@ -1,97 +1,208 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import MarqueeAnimation from './MarqueeAnimation';
 import Test from '../assets/brb/schedules/test.jpg';
-import { ItemV } from './SharedStyling';
+import { ItemV, ItemH } from './SharedStyling';
 import Agra from '../assets/brb/schedules/agra.svg';
 import { SpanV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
+import MarqueeAnimation from './MarqueeAnimation';
 
 const Schedules = () => {
   const scheduleList = [
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-    },
+    [
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+    ],
+    [
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+      },
+    ],
   ];
 
+  const [FirstRow, SecondRow] = scheduleList;
+
   return (
-    <div>
-      <MarqueeAnimation
-        speed={60}
-        gradientWidth={8}
-        gap={18}
-        direction="right"
-      >
-        {scheduleList?.map((schedule, index) => {
-          return (
-            <ScheduleCardContainer key={index}>
-              <ImageContainer>
-                <Image
-                  src={Agra}
-                  height="28px"
-                  width="28px"
-                />
-              </ImageContainer>
-              <ScheduleData>
-                <PlaceContainer>
-                  <PlaceName>Delhi</PlaceName>
-                  <Arrow />
-                </PlaceContainer>
-                <DateContainer>23-24 AUG 2023</DateContainer>
-              </ScheduleData>
-            </ScheduleCardContainer>
-          );
-        })}
-      </MarqueeAnimation>
-    </div>
+    <>
+      <Header>Schedule</Header>
+      <SchedulesWrapper>
+        <MarqueeContainer>
+          <MarqueeAnimation
+            speed={100}
+            gradientWidth={8}
+            direction="left"
+            // loop={0}
+          >
+            {FirstRow?.map((schedule, index) => {
+              return (
+                <ScheduleCardContainer key={index}>
+                  <ImageContainer>
+                    <Image
+                      src={Agra}
+                      height="28px"
+                      width="28px"
+                    />
+                  </ImageContainer>
+                  <ScheduleData>
+                    <PlaceContainer>
+                      <PlaceName>Delhi</PlaceName>
+                      <Arrow />
+                    </PlaceContainer>
+                    <DateContainer>23-24 AUG 2023</DateContainer>
+                  </ScheduleData>
+                </ScheduleCardContainer>
+              );
+            })}
+          </MarqueeAnimation>
+        </MarqueeContainer>
+        <MarqueeContainer>
+          <MarqueeAnimation
+            speed={100}
+            gradientWidth={8}
+            direction="left"
+            // loop={0}
+          >
+            {SecondRow?.map((schedule, index) => {
+              return (
+                <ScheduleCardContainer key={index}>
+                  <ImageContainer>
+                    <Image
+                      src={Agra}
+                      height="28px"
+                      width="28px"
+                    />
+                  </ImageContainer>
+                  <ScheduleData>
+                    <PlaceContainer>
+                      <PlaceName>Delhi</PlaceName>
+                      <Arrow />
+                    </PlaceContainer>
+                    <DateContainer>23-24 AUG 2023</DateContainer>
+                  </ScheduleData>
+                </ScheduleCardContainer>
+              );
+            })}
+          </MarqueeAnimation>
+        </MarqueeContainer>
+      </SchedulesWrapper>
+    </>
   );
 };
+
+const SchedulesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 21px;
+`;
+
+const MarqueeContainer = styled.div`
+  position: relative;
+  width:100vw;
+  height:344px;
+`;
+
+const Header = styled.span`
+  font-size: 46px;
+  font-weight: 400;
+  font-family: Glancyr;
+  color: #fff;
+  margin: 0px 0px 60px;
+  @media (max-width: 480px) {
+    margin: 0px 0px 49px;
+  }
+`;
 
 const ScheduleCardContainer = styled.div`
   width: 413px;
@@ -101,6 +212,7 @@ const ScheduleCardContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
+  margin-right: 21px;
 `;
 
 const ImageContainer = styled.div`
