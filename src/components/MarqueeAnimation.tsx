@@ -12,6 +12,7 @@ type Props = {
     gap?: number;
     gradientWidth?: number;
     children?:React.ReactNode;
+    pause?:boolean;
 };
 
 function MarqueeAnimation(props: Props) {
@@ -21,7 +22,8 @@ function MarqueeAnimation(props: Props) {
     gap = 0,
     gradient = false,
     gradientWidth = 64,
-    direction = 'left'
+    direction = 'left',
+    pause = false
   } = props;
   
   return (
@@ -31,6 +33,7 @@ function MarqueeAnimation(props: Props) {
       gradient={gradient}
       gradientWidth={gradientWidth}
       direction={direction}
+      pauseOnClick={pause}
     >
       {props.children}
     </AnimationWrapper>

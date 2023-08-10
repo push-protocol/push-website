@@ -18,56 +18,56 @@ const Schedules = () => {
         image: Agra,
         place: 'Bangalore',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#194395',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#7A3DA9',
       },
       {
         image: Test,
         place: 'Agra',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#16837C',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#DA786A',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#299EC2',
       },
       {
         image: Test,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#3F53AA',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#194395',
       },
       {
         image: Test,
         place: 'Delhi',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#7A3DA9',
       },
     ],
@@ -76,7 +76,7 @@ const Schedules = () => {
         image: Test,
         place: 'Pune',
         date: '23-24 AUG 2024',
-        link: 'push.org',
+        link: 'https://push.org',
         backgroundColor: '#16837C',
       },
       {
@@ -131,6 +131,10 @@ const Schedules = () => {
     ],
   ];
 
+  const openLink = (link: string) => {
+    window.open(link, '_blank');
+  };
+
   const [FirstRow, SecondRow] = scheduleList;
 
   return (
@@ -144,7 +148,7 @@ const Schedules = () => {
             speed={100}
             gradientWidth={8}
             direction={marqueeDirection}
-            // loop={0}
+            pause={true}
           >
             {FirstRow?.map((schedule, index) => {
               return (
@@ -162,7 +166,10 @@ const Schedules = () => {
                   <ScheduleData>
                     <PlaceContainer>
                       <PlaceName>{schedule?.place}</PlaceName>
-                      <Arrow />
+                      <Arrow
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => openLink(schedule?.link)}
+                      />
                     </PlaceContainer>
                     <DateContainer>{schedule?.date}</DateContainer>
                   </ScheduleData>
@@ -176,6 +183,7 @@ const Schedules = () => {
             speed={100}
             gradientWidth={8}
             direction={marqueeDirection}
+            pause={true}
           >
             {SecondRow?.map((schedule, index) => {
               return (
@@ -192,10 +200,13 @@ const Schedules = () => {
                   </ImageContainer>
                   <ScheduleData>
                     <PlaceContainer>
-                      <PlaceName>Delhi</PlaceName>
-                      <Arrow />
+                      <PlaceName>{schedule?.place}</PlaceName>
+                      <Arrow
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => openLink(schedule?.link)}
+                      />
                     </PlaceContainer>
-                    <DateContainer>23-24 AUG 2023</DateContainer>
+                    <DateContainer>{schedule?.date}</DateContainer>
                   </ScheduleData>
                 </ScheduleCardContainer>
               );
@@ -232,6 +243,9 @@ const Container = styled(ItemV)`
   justify-content: flex-start;
   margin-left: 80px;
   margin-bottom: 144px;
+  @media (max-width: 480px) {
+    margin-left: 0px;
+  }
 `;
 
 const SchedulesWrapper = styled.div`
@@ -266,6 +280,9 @@ const ScheduleCardContainer = styled.div`
   align-items: flex-end;
   border-radius: 25px;
   margin-right: 21px;
+  @media (max-width: 480px) {
+    width: 359px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -274,12 +291,18 @@ const ImageContainer = styled.div`
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 85%);
   border-radius: 0px 25px 0px;
+  @media (max-width: 480px) {
+    width: 334px;
+  }
 `;
 
 const Image = styled.img`
   width: 388px;
   height: 217px;
   overflow: hidden;
+  @media (max-width: 480px) {
+    width: 334px;
+  }
 `;
 const Icon = styled.img`
   width: 50px;
@@ -290,12 +313,13 @@ const ScheduleData = styled(ItemV)`
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 40px;
+  justify-content: center;
+  padding: 22px 40px 25px 37px;
   box-sizing: border-box;
 `;
 
 const PlaceContainer = styled.div`
-  width: 87%;
+  width: 100%;
   max-height: 48px;
   display: flex;
   justify-content: space-between;
@@ -311,11 +335,14 @@ const PlaceName = styled(SpanV2)`
 `;
 
 const DateContainer = styled(SpanV2)`
+  height: 32px;
   color: #fff;
   font-family: Glancyr;
   font-size: 20px;
   font-weight: 550;
   letter-spacing: 0.6px;
+  display: flex;
+  align-items: flex-end;
   text-transform: uppercase;
 `;
 
