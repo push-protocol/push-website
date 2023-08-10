@@ -13,6 +13,7 @@ import { ReactComponent as ArrowIcon } from '../assets/ArrowIcon.svg';
 import { ReactComponent as X } from '../assets/X-BRB.svg';
 import ImageBRB from '../assets/Image-BRB.png';
 import MobileBRB from '../assets/Mobile-BRB.png';
+import Schedules from 'components/Schedules';
 
 import { Anchor, LinkTo, Span } from 'components/SharedStyling';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -282,6 +283,7 @@ function BRB() {
 
         <CommunityPartners />
 
+        <Schedules />
         <ItemFooter>
           <FooterItem>
             <SpanContent
