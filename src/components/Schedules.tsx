@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
+import useMediaQuery from 'hooks/useMediaQuery';
 import Test from '../assets/brb/schedules/test.jpg';
 import { ItemH, ItemV } from './SharedStyling';
 import Agra from '../assets/brb/schedules/agra.svg';
@@ -15,6 +16,8 @@ import { device } from 'config/globals';
 
 const Schedules = () => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
+  const isMobile = useMediaQuery(device.mobileL);
+
   const scheduleList = [
     [
       {
@@ -45,34 +48,43 @@ const Schedules = () => {
         link: 'https://push.org',
         backgroundColor: '#DA786A',
       },
-      // {
-      //   image: Agra,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'https://push.org',
-      //   backgroundColor: '#299EC2',
-      // },
-      // {
-      //   image: Test,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'https://push.org',
-      //   backgroundColor: '#3F53AA',
-      // },
-      // {
-      //   image: Agra,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'https://push.org',
-      //   backgroundColor: '#194395',
-      // },
-      // {
-      //   image: Test,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'https://push.org',
-      //   backgroundColor: '#7A3DA9',
-      // },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'https://push.org',
+        backgroundColor: '#299EC2',
+      },
+    ],
+    [
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'https://push.org',
+        backgroundColor: '#3F53AA',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'https://push.org',
+        backgroundColor: '#194395',
+      },
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'https://push.org',
+        backgroundColor: '#7A3DA9',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'https://push.org',
+        backgroundColor: '#194395',
+      },
     ],
     [
       {
@@ -103,34 +115,43 @@ const Schedules = () => {
         link: 'push.org',
         backgroundColor: '#3F53AA',
       },
-      // {
-      //   image: Agra,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'push.org',
-      //   backgroundColor: '#194395',
-      // },
-      // {
-      //   image: Test,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'push.org',
-      //   backgroundColor: '#7A3DA9',
-      // },
-      // {
-      //   image: Agra,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'push.org',
-      //   backgroundColor: '#299EC2',
-      // },
-      // {
-      //   image: Test,
-      //   place: 'Delhi',
-      //   date: '23-24 AUG 2024',
-      //   link: 'push.org',
-      //   backgroundColor: '#DA786A',
-      // },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#194395',
+      },
+    ],
+    [
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#7A3DA9',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#299EC2',
+      },
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#DA786A',
+      },
+      {
+        image: Agra,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#299EC2',
+      },
     ],
   ];
 
@@ -138,7 +159,13 @@ const Schedules = () => {
     window.open(link, '_blank');
   };
 
-  const [FirstRow, SecondRow] = scheduleList;
+  const [First, Second, Third, Fourth] = scheduleList;
+  const desktopList = [
+    [...First, ...Second],
+    [...Third, ...Fourth],
+  ];
+  const mobileList = [[...First], [...Second], [...Third], [...Fourth]];
+  const renderList = isMobile ? mobileList : desktopList;
 
   return (
     <Container>
@@ -146,87 +173,57 @@ const Schedules = () => {
         <Header>Schedule</Header>
       </ItemH>
       <SchedulesWrapper>
-        <MarqueeContainer>
-          <MarqueeAnimation
-            speed={100}
-            gradientWidth={8}
-            direction={marqueeDirection}
-            pause={true}
-          >
-            {FirstRow?.map((schedule, index) => {
-              return (
-                <ScheduleCardContainer
-                  key={index}
-                  background={schedule?.backgroundColor}
-                >
-                  <ImageContainer>
-                    <Image
-                      src={schedule?.image}
-                      height="28px"
-                      width="28px"
-                    />
-                  </ImageContainer>
-                  <ScheduleData>
-                    <PlaceContainer>
-                      <PlaceName>{schedule?.place}</PlaceName>
-                      <Arrow
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => openLink(schedule?.link)}
-                      />
-                    </PlaceContainer>
-                    <DateContainer>{schedule?.date}</DateContainer>
-                  </ScheduleData>
-                </ScheduleCardContainer>
-              );
-            })}
-          </MarqueeAnimation>
-        </MarqueeContainer>
-        <MarqueeContainer>
-          <MarqueeAnimation
-            speed={100}
-            gradientWidth={8}
-            direction={marqueeDirection}
-            pause={true}
-          >
-            {SecondRow?.map((schedule, index) => {
-              return (
-                <ScheduleCardContainer
-                  key={index}
-                  background={schedule?.backgroundColor}
-                >
-                  <ImageContainer>
-                    <Image
-                      src={schedule?.image}
-                      height="28px"
-                      width="28px"
-                    />
-                  </ImageContainer>
-                  <ScheduleData>
-                    <PlaceContainer>
-                      <PlaceName>{schedule?.place}</PlaceName>
-                      <Arrow
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => openLink(schedule?.link)}
-                      />
-                    </PlaceContainer>
-                    <DateContainer>{schedule?.date}</DateContainer>
-                  </ScheduleData>
-                </ScheduleCardContainer>
-              );
-            })}
-          </MarqueeAnimation>
-        </MarqueeContainer>
+        {renderList?.map((item, index) => {
+          return (
+            <MarqueeContainer key={index}>
+              <MarqueeAnimation
+                speed={100}
+                gradientWidth={8}
+                direction={marqueeDirection}
+                pause={true}
+              >
+                {item?.map((schedule, index) => {
+                  return (
+                    <ScheduleCardContainer
+                      key={index}
+                      background={schedule?.backgroundColor}
+                    >
+                      <ImageContainer>
+                        <Image
+                          src={schedule?.image}
+                          height="28px"
+                          width="28px"
+                        />
+                      </ImageContainer>
+                      <ScheduleData>
+                        <PlaceContainer>
+                          <PlaceName>{schedule?.place}</PlaceName>
+                          <Arrow
+                            style={{ cursor: 'pointer' }}
+                            onClick={() => openLink(schedule?.link)}
+                          />
+                        </PlaceContainer>
+                        <DateContainer>{schedule?.date}</DateContainer>
+                      </ScheduleData>
+                    </ScheduleCardContainer>
+                  );
+                })}
+              </MarqueeAnimation>
+            </MarqueeContainer>
+          );
+        })}
+
       </SchedulesWrapper>
       <ActionContainer>
         <Button
           background={marqueeDirection === 'left' ? '#2A2A39' : '#E64DE9'}
-          onClick={() => setMArqueeDirection('left')}
+          onClick={() => setMarqueeDirection('left')}
         >
           <Icon src={Left} />
         </Button>
         <Button
           background={marqueeDirection === 'right' ? '#2A2A39' : '#E64DE9'}
-          onClick={() => setMArqueeDirection('right')}
+          onClick={() => setMarqueeDirection('right')}
         >
           <Icon src={Right} />
         </Button>
@@ -238,7 +235,7 @@ const Schedules = () => {
 const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
-  // margin-left: 80px;
+  margin-left: 80px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
