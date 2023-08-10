@@ -7,22 +7,16 @@ import styled from 'styled-components';
 import ReactMarquee from 'react-fast-marquee';
 
 type Props = {
-    direction: string;
-    speed?: number;
-    gap?: number;
-    gradientWidth?: number;
+  direction: string;
+  speed?: number;
+  gap?: number;
+  gradientWidth?: number;
+  children: React.ReactNode;
 };
 
 function MarqueeAnimation(props: Props) {
+  const { speed = 100, gap = 0, gradient = false, gradientWidth = 64, direction = 'left' } = props;
 
-  const {
-    speed = 100,
-    gap = 0,
-    gradient = false,
-    gradientWidth = 64,
-    direction = 'left'
-  } = props;
-  
   return (
     <AnimationWrapper
       speed={speed}
@@ -37,17 +31,16 @@ function MarqueeAnimation(props: Props) {
 }
 
 const AnimationWrapper = styled(ReactMarquee)`
-// this absolute positioning prevents 
-//  the animation container from creating horizontal scroll
+  // this absolute positioning prevents
+  //  the animation container from creating horizontal scroll
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
 
   & .marqueeItem {
-    margin-right: ${props => props.gap || 0}px;
+    margin-right: ${(props) => props.gap || 0}px;
   }
 `;
 
 export default MarqueeAnimation;
-
