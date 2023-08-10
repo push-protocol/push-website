@@ -67,8 +67,8 @@ const Container = styled.div`
 
 const CommunityContainer = styled(ItemH)`
   margin: 0px 0px 114px;
-  width:100vw;
-  height:65px;
+  width: 100vw;
+  height: 65px;
 `;
 
 const PartnerIcon = styled.img`
@@ -85,6 +85,9 @@ const PartnerItem = styled.div`
   display: flex;
   align-items: center;
   margin-right: 178px;
+  @media (max-width: 480px) {
+    margin-right: 52px;
+  }
 `;
 
 const Header = styled.span`
@@ -97,8 +100,8 @@ const Header = styled.span`
   @media (max-width: 480px) {
     margin: 0px 0px 49px;
     flex-wrap: wrap;
-    max-width:100vw;
-    text-align:center;
-    line-height:1.5;
+    max-width: 100vw;
+    text-align: center;
+    line-height: 1.5;
   }
 `;
