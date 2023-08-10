@@ -22,7 +22,7 @@ function BRBParallax() {
   ScrollTrigger.defaults({
     // Defaults are used by all ScrollTriggers
     toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
-    markers: false, // Easaly remove markers for production.
+    markers: true, // Easaly remove markers for production.
         
   });
       
@@ -40,11 +40,8 @@ function BRBParallax() {
   useEffect(() => {
     timelineHeader.
       to('.firstBackground', {
-        scale: 2 },
+        scale: 1.7 },
       'sameTime');
-    //   to('.secondBackground', {
-    //     scale: 1 },
-    //   'sameTime');
           
     ScrollTrigger.create({
       snap: 0.333
@@ -52,51 +49,85 @@ function BRBParallax() {
   }, [isMobile]);
       
   return (
-    <BRBWrapper>
-      <FirstBackground id='home'>
-        <MemberImage
+    <Container>
+      <BRBWrapper id='home'>
+        <FirstBackground className='firstBackground'>
+          {/* <MemberImage
           className="firstBackground"
           src={ParallaxBRB}
           srcSet={ParallaxBRB}
-        />
-      </FirstBackground>
-    </BRBWrapper>
+        /> */}
+        koko
+        </FirstBackground>
+
+        {/* <div style={{color:'#fff'}}>clea n clean clean</div> */}
+      </BRBWrapper>
+    </Container>
   );
 }
 
 const MemberImage = styled(ImageHolder)`
 `;
 
-
-const BRBWrapper = styled.div`
+const Container = styled.div`
     width: 100%;
     color: white;
-    margin-bottom: 400px;
-    height: 100%;
+    margin-top: -100px;
+    margin-bottom: 300px;
+    // height: 100%;
 
     position: relative;
     scroll-snap-align: center;
     padding: 0px;
 
-  @media ${device.mobileL} {
-    margin-bottom: 70px;
-    height: auto;
+      @media ${device.mobileL} {
+         margin-top: -100px;
+         margin-bottom: 70px;
+        //  height: auto;
    }
+`;
 
-    
+
+const BRBWrapper = styled.div`
+    // width: 100%;
+    // color: white;
+    // margin-bottom: 400px;
+    // height: 100%;
+
+    // position: relative;
+    // scroll-snap-align: center;
+    // padding: 0px;
+
+//   @media ${device.mobileL} {
+//     margin-bottom: 70px;
+//     height: auto;
+//    }
+
+width: 100%;
+height: 100vh;
 `;
 
 const FirstBackground = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: 0px auto;
+
+  background-image: url(${ParallaxBRB});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  display: flex; 
+  align-items: center;
+  justify-content: center;
    
-& img {
-        width: 70% !important;
-        height: 100%;
-        margin: 0px auto;
-        display: flex;
-        justify-content: center;
-    }
+// & img {
+//         width: 70% !important;
+//         height: 100%;
+//         margin: 0px auto;
+//         display: flex;
+//         justify-content: center;
+//     }
 `;
 
 
