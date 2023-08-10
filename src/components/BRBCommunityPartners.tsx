@@ -33,7 +33,7 @@ export const CommunityPartners = () => {
     },
   ];
 
-  const ANIMATION_SPEED = 60;
+  const ANIMATION_SPEED = 80;
 
   return (
     <Container>
@@ -67,7 +67,7 @@ const Container = styled.div`
 `;
 
 const CommunityContainer = styled(ItemH)`
-  column-gap: 18px;
+  margin: 0px 0px 114px;
 `;
 
 const PartnerIcon = styled.img`
@@ -86,13 +86,18 @@ const PartnerItem = styled.div`
   margin-right: 178px;
 `;
 
-const Header = styled.h3`
+const Header = styled.span`
   font-size: 46px;
   font-weight: 400;
   font-family: Glancyr;
   color: #fff;
-  margin: 60px 0px;
+  display: flex;
+  margin: 0px 0px 78px;
   @media (max-width: 480px) {
-    margin: 49px 0px;
+    margin: 0px 0px 49px;
+    flex-wrap: wrap;
+    max-width:100vw;
+    text-align:center;
+    line-height:1.5;
   }
 `;

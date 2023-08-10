@@ -53,6 +53,10 @@ const PartnersContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 0px 0px 191px;
+  @media(max-width:480px){
+    margin: 0px 0px 114px;
+  }
 `;
 
 const Header = styled.h3`
@@ -60,9 +64,9 @@ const Header = styled.h3`
   font-weight: 400;
   font-family: Glancyr;
   color: #fff;
-  margin: 60px 0px;
+  margin: 0px 0px 60px;
   @media (max-width: 480px) {
-    margin: 49px 0px;
+    margin: 0px 0px 49px;
   }
 `;
 
