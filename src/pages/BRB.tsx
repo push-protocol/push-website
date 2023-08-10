@@ -24,6 +24,8 @@ import { BsChevronDown } from 'react-icons/bs';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import ImageHolder from 'components/ImageHolder';
+import { Partners } from 'components/BRBPartners';
+import { CommunityPartners } from 'components/BRBCommunityPartners';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -273,6 +275,8 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
+        <Partners />
+        <CommunityPartners />
         <Schedules />
         <ItemFooter>
           <FooterItem>
