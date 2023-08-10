@@ -25,6 +25,7 @@ import { useTranslation } from 'react-i18next';
 import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
+import BRBParallax from 'components/BRBParallax';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -274,8 +275,13 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
+
+        <BRBParallax />
+
         <Partners />
+
         <CommunityPartners />
+
         <ItemFooter>
           <FooterItem>
             <SpanContent
