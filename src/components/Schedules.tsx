@@ -235,7 +235,7 @@ const Schedules = () => {
 const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 80px;
+  // margin-left: 80px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
