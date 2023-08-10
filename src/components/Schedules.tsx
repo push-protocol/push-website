@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
@@ -9,9 +11,10 @@ import Right from '../assets/brb/others/right.svg';
 import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import MarqueeAnimation from './MarqueeAnimation';
+import { device } from 'config/globals';
 
 const Schedules = () => {
-  const [marqueeDirection, setMArqueeDirection] = useState('left');
+  const [marqueeDirection, setMarqueeDirection] = useState('left');
   const scheduleList = [
     [
       {
@@ -42,34 +45,34 @@ const Schedules = () => {
         link: 'https://push.org',
         backgroundColor: '#DA786A',
       },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#299EC2',
-      },
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#3F53AA',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#194395',
-      },
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#7A3DA9',
-      },
+      // {
+      //   image: Agra,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'https://push.org',
+      //   backgroundColor: '#299EC2',
+      // },
+      // {
+      //   image: Test,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'https://push.org',
+      //   backgroundColor: '#3F53AA',
+      // },
+      // {
+      //   image: Agra,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'https://push.org',
+      //   backgroundColor: '#194395',
+      // },
+      // {
+      //   image: Test,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'https://push.org',
+      //   backgroundColor: '#7A3DA9',
+      // },
     ],
     [
       {
@@ -100,34 +103,34 @@ const Schedules = () => {
         link: 'push.org',
         backgroundColor: '#3F53AA',
       },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#194395',
-      },
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#7A3DA9',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#299EC2',
-      },
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#DA786A',
-      },
+      // {
+      //   image: Agra,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'push.org',
+      //   backgroundColor: '#194395',
+      // },
+      // {
+      //   image: Test,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'push.org',
+      //   backgroundColor: '#7A3DA9',
+      // },
+      // {
+      //   image: Agra,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'push.org',
+      //   backgroundColor: '#299EC2',
+      // },
+      // {
+      //   image: Test,
+      //   place: 'Delhi',
+      //   date: '23-24 AUG 2024',
+      //   link: 'push.org',
+      //   backgroundColor: '#DA786A',
+      // },
     ],
   ];
 
@@ -235,7 +238,7 @@ const Schedules = () => {
 const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 80px;
+  // margin-left: 80px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
@@ -352,11 +355,18 @@ const Button = styled(ButtonV2)`
 `;
 
 const ActionContainer = styled.div`
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   column-gap: 13px;
-  margin-top: 29px;
+  margin: 29px auto 0 auto;
+  width: 1280px;
+  @media ${device.laptop} {
+    width: 90%;
+  }
+
+  @media ${device.mobileL} {
+    width: 95%;
+  }
 `;
 
 export default Schedules;
