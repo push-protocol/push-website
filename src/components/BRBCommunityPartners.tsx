@@ -41,7 +41,7 @@ export const CommunityPartners = () => {
         <MarqueeAnimation
           speed={ANIMATION_SPEED}
           gradientWidth={8}
-          direction="right"
+          direction="left"
         >
           {partnerList?.map((partner) => {
             return (
