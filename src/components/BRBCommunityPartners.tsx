@@ -5,9 +5,8 @@ import BuildersTribeSVG from '../assets/brb/community/buidlers-tribe.svg';
 import DevfolioSVG from '../assets/brb/community/devfolio.svg';
 import ENSSVG from '../assets/brb/community/ens.svg';
 import GitcoinSVG from '../assets/brb/community/gitcoin.svg';
-// import MarqueeAnimation from './MarqueeAnimation';
+import MarqueeAnimation from './MarqueeAnimation';
 import { ItemH } from './SharedStyling';
-import Marquee from 'react-fast-marquee';
 
 export const CommunityPartners = () => {
   const partnerList = [
@@ -39,7 +38,7 @@ export const CommunityPartners = () => {
     <Container>
       <Header>Community Partners</Header>
       <CommunityContainer>
-        <Marquee
+        <MarqueeAnimation
           speed={ANIMATION_SPEED}
           gradientWidth={8}
           direction="right"
@@ -54,7 +53,7 @@ export const CommunityPartners = () => {
               </PartnerItem>
             );
           })}
-        </Marquee>
+        </MarqueeAnimation>
       </CommunityContainer>
     </Container>
   );
@@ -68,6 +67,8 @@ const Container = styled.div`
 
 const CommunityContainer = styled(ItemH)`
   margin: 0px 0px 114px;
+  width:100vw;
+  height:65px;
 `;
 
 const PartnerIcon = styled.img`
