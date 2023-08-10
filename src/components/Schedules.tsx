@@ -1,113 +1,132 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import Test from '../assets/brb/schedules/test.jpg';
-import { ItemV, ItemH } from './SharedStyling';
+import { ItemH, ItemV } from './SharedStyling';
 import Agra from '../assets/brb/schedules/agra.svg';
-import { SpanV2 } from './SharedStylingV2';
+import Left from '../assets/brb/others/left.svg';
+import Right from '../assets/brb/others/right.svg';
+import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import MarqueeAnimation from './MarqueeAnimation';
 
 const Schedules = () => {
+  const [marqueeDirection, setMArqueeDirection] = useState('left');
   const scheduleList = [
     [
       {
         image: Agra,
-        place: 'Delhi',
+        place: 'Bangalore',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#194395',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#7A3DA9',
+      },
+      {
+        image: Test,
+        place: 'Agra',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#16837C',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#DA786A',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#299EC2',
+      },
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#3F53AA',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#194395',
       },
       {
-        image: Agra,
+        image: Test,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
+        backgroundColor: '#7A3DA9',
       },
     ],
     [
       {
-        image: Agra,
-        place: 'Delhi',
+        image: Test,
+        place: 'Pune',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#16837C',
+      },
+      {
+        image: Agra,
+        place: 'Indore',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#DA786A',
+      },
+      {
+        image: Test,
+        place: 'Jaipur',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#299EC2',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#3F53AA',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#194395',
+      },
+      {
+        image: Test,
+        place: 'Delhi',
+        date: '23-24 AUG 2024',
+        link: 'push.org',
+        backgroundColor: '#7A3DA9',
       },
       {
         image: Agra,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
+        backgroundColor: '#299EC2',
       },
       {
-        image: Agra,
+        image: Test,
         place: 'Delhi',
         date: '23-24 AUG 2024',
         link: 'push.org',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
+        backgroundColor: '#DA786A',
       },
     ],
   ];
@@ -115,32 +134,37 @@ const Schedules = () => {
   const [FirstRow, SecondRow] = scheduleList;
 
   return (
-    <>
-      <Header>Schedule</Header>
+    <Container>
+      <ItemH>
+        <Header>Schedule</Header>
+      </ItemH>
       <SchedulesWrapper>
         <MarqueeContainer>
           <MarqueeAnimation
             speed={100}
             gradientWidth={8}
-            direction="left"
+            direction={marqueeDirection}
             // loop={0}
           >
             {FirstRow?.map((schedule, index) => {
               return (
-                <ScheduleCardContainer key={index}>
+                <ScheduleCardContainer
+                  key={index}
+                  backgroundColor={schedule?.backgroundColor}
+                >
                   <ImageContainer>
                     <Image
-                      src={Agra}
+                      src={schedule?.image}
                       height="28px"
                       width="28px"
                     />
                   </ImageContainer>
                   <ScheduleData>
                     <PlaceContainer>
-                      <PlaceName>Delhi</PlaceName>
+                      <PlaceName>{schedule?.place}</PlaceName>
                       <Arrow />
                     </PlaceContainer>
-                    <DateContainer>23-24 AUG 2023</DateContainer>
+                    <DateContainer>{schedule?.date}</DateContainer>
                   </ScheduleData>
                 </ScheduleCardContainer>
               );
@@ -151,15 +175,17 @@ const Schedules = () => {
           <MarqueeAnimation
             speed={100}
             gradientWidth={8}
-            direction="left"
-            // loop={0}
+            direction={marqueeDirection}
           >
             {SecondRow?.map((schedule, index) => {
               return (
-                <ScheduleCardContainer key={index}>
+                <ScheduleCardContainer
+                  key={index}
+                  backgroundColor={schedule?.backgroundColor}
+                >
                   <ImageContainer>
                     <Image
-                      src={Agra}
+                      src={schedule?.image}
                       height="28px"
                       width="28px"
                     />
@@ -177,9 +203,36 @@ const Schedules = () => {
           </MarqueeAnimation>
         </MarqueeContainer>
       </SchedulesWrapper>
-    </>
+      <ActionContainer>
+        <Button
+          borderRadius="16px"
+          background={marqueeDirection === 'left' ? '#2A2A39' : '#E64DE9'}
+          height="64px"
+          width="64px"
+          onClick={() => setMArqueeDirection('left')}
+        >
+          <Icon src={Left} />
+        </Button>
+        <Button
+          borderRadius="16px"
+          background={marqueeDirection === 'right' ? '#2A2A39' : '#E64DE9'}
+          height="64px"
+          width="64px"
+          onClick={() => setMArqueeDirection('right')}
+        >
+          <Icon src={Right} />
+        </Button>
+      </ActionContainer>
+    </Container>
   );
 };
+
+const Container = styled(ItemV)`
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 80px;
+  margin-bottom: 144px;
+`;
 
 const SchedulesWrapper = styled.div`
   display: flex;
@@ -189,8 +242,8 @@ const SchedulesWrapper = styled.div`
 
 const MarqueeContainer = styled.div`
   position: relative;
-  width:100vw;
-  height:344px;
+  width: 100vw;
+  height: 344px;
 `;
 
 const Header = styled.span`
@@ -207,7 +260,7 @@ const Header = styled.span`
 const ScheduleCardContainer = styled.div`
   width: 413px;
   height: 344px;
-  background: #7a3da9;
+  background: ${(props) => props.backgroundColor};
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -227,6 +280,10 @@ const Image = styled.img`
   width: 388px;
   height: 217px;
   overflow: hidden;
+`;
+const Icon = styled.img`
+  width: 50px;
+  height: 50px;
 `;
 
 const ScheduleData = styled(ItemV)`
@@ -260,6 +317,22 @@ const DateContainer = styled(SpanV2)`
   font-weight: 550;
   letter-spacing: 0.6px;
   text-transform: uppercase;
+`;
+
+const Button = styled(ButtonV2)`
+  height: 64px;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ActionContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 13px;
+  margin-top: 29px;
 `;
 
 export default Schedules;
