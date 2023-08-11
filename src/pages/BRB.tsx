@@ -20,12 +20,12 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { ButtonV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
 import GLOBALS, { device } from 'config/globals';
-import { BsChevronDown } from 'react-icons/bs';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
+import BRBParallax from 'components/BRBParallax';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -274,6 +274,7 @@ function BRB() {
               border="1px solid #FC6DFF"
               fontFamily="Glancyr !important"
               padding="16px 32px"
+              onClick={() => handleSectionNavigation(scheduleRef)}
             >
               Register Now
             </ButtonItem>
@@ -288,9 +289,15 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
+        
+        <BRBParallax />
+
         <Partners sectionRef={partnersRef} />
+
         <CommunityPartners />
+
         <Schedules sectionRef={scheduleRef} />
+
         <ItemFooter ref={supportRef}>
           <FooterItem>
             <SpanContent

@@ -149,7 +149,6 @@ const SpaceWrapper = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: cover;
 `;
 
 const SpaceText = styled.div`

@@ -235,7 +235,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
-  // margin-left: 80px;
+  margin-top: 50px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
