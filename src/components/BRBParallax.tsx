@@ -124,9 +124,9 @@ const Container = styled.div`
 
       @media ${device.mobileL} {
          margin-top: -30em;
-         margin-bottom: 100px;
+         margin-bottom: 50px;
          overflow: hidden;
-         padding-bottom: 20px;
+         padding-bottom: 7em;
    }
 `;
 
