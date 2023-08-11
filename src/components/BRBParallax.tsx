@@ -126,7 +126,7 @@ const Container = styled.div`
          margin-top: -30em;
          margin-bottom: 5em;
          overflow: hidden;
-         padding-bottom: 10em;
+         padding-bottom: 12em;
    }
 `;
 
