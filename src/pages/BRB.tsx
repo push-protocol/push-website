@@ -290,7 +290,7 @@ function BRB() {
           </NavButtons>
         </ItemTop>
         
-        <BRBParallax />
+        {/* <BRBParallax /> */}
 
         <Partners sectionRef={partnersRef} />
 

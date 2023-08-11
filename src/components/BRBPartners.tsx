@@ -9,6 +9,11 @@ import Graph from '../assets/brb/partners/graph.svg';
 import Polygon from '../assets/brb/partners/polygon.svg';
 import Shardeum from '../assets/brb/partners/sharedeum.svg';
 import Timeswap from '../assets/brb/partners/timeswap.svg';
+import Aragon from '../assets/brb/partners/aragon.svg';
+import Filecoin from '../assets/brb/partners/filecoin.svg';
+import Chainsafe from '../assets/brb/partners/chainsafe.svg';
+import Alchemy from '../assets/brb/partners/alchemy.svg';
+import { ItemH } from './SharedStyling';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   return (
@@ -21,6 +26,9 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
           </PartnerItem>
           <PartnerItem>
             <PartnerIcon src={Flipkart} />
+          </PartnerItem>
+          <PartnerItem>
+            <PartnerIcon src={Aragon} />
           </PartnerItem>
         </PartnerColumn>
         <PartnerColumn>
@@ -41,8 +49,19 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
           <PartnerItem>
             <PartnerIcon src={Shardeum} />
           </PartnerItem>
+          <PartnerItem>
+            <PartnerIcon src={Filecoin} />
+          </PartnerItem>
         </PartnerColumn>
       </PartnersLogoContainer>
+      <BottomRow>
+        <PartnerItem>
+          <PartnerIcon src={Chainsafe} />
+        </PartnerItem>
+        <PartnerItem>
+          <PartnerIcon src={Alchemy} />
+        </PartnerItem>
+      </BottomRow>
     </PartnersContainer>
   );
 };
@@ -54,7 +73,7 @@ const PartnersContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0px 0px 191px;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }
 `;
@@ -65,7 +84,7 @@ const Header = styled.h3`
   font-family: Glancyr;
   color: #fff;
   margin: 0px 0px 60px;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     margin: 0px 0px 49px;
   }
 `;
@@ -75,7 +94,7 @@ const PartnersLogoContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -105,4 +124,16 @@ const PartnerItem = styled.div`
   max-height: 65px;
   display: flex;
   align-items: center;
+`;
+
+const BottomRow = styled(ItemH)`
+  padding-top:56px;
+  max-width: 100vw;
+  justify-content: space-evenly;
+  padding: 56px 150px 0px;
+  @media(max-width:768px){
+    flex-direction:column;
+    align-items:center;
+    gap:56px;
+  }
 `;

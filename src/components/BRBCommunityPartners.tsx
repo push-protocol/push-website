@@ -1,14 +1,20 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import useMediaQuery from 'hooks/useMediaQuery';
+
 import BuildersTribeSVG from '../assets/brb/community/buidlers-tribe.svg';
 import DevfolioSVG from '../assets/brb/community/devfolio.svg';
 import ENSSVG from '../assets/brb/community/ens.svg';
 import GitcoinSVG from '../assets/brb/community/gitcoin.svg';
+import FrontierSVG from '../assets/brb/community/frontier.svg';
 import MarqueeAnimation from './MarqueeAnimation';
 import { ItemH } from './SharedStyling';
+import { device } from 'config/globals';
 
 export const CommunityPartners = () => {
+  const isMobile = useMediaQuery(device.mobileL);
+
   const partnerList = [
     {
       svgIcon: GitcoinSVG,
@@ -26,13 +32,18 @@ export const CommunityPartners = () => {
       alt: 'Devfolio',
     },
     {
+      svgIcon: FrontierSVG,
+      id: 'frontier',
+      alt: 'Frontier',
+    },
+    {
       svgIcon: BuildersTribeSVG,
-      id: 'builderstribe',
-      alt: 'BuildersTribe',
+      id: 'buidlerstribe',
+      alt: 'BuidlersTribe',
     },
   ];
 
-  const ANIMATION_SPEED = 80;
+  const ANIMATION_SPEED = isMobile ? 40 : 80;
 
   return (
     <Container>
@@ -47,6 +58,7 @@ export const CommunityPartners = () => {
             return (
               <PartnerItem key={partner?.id}>
                 <PartnerIcon
+                  // height={partner?.id == 'buidlerstribe' ? '151px' : 'auto'}
                   src={partner?.svgIcon}
                   alt={partner?.alt}
                 />
@@ -68,20 +80,20 @@ const Container = styled.div`
 const CommunityContainer = styled(ItemH)`
   margin: 0px 0px 114px;
   width: 100vw;
-  height: 65px;
+  height: 151px;
 `;
 
 const PartnerIcon = styled.img`
   width: auto;
   height: auto;
   max-width: 241px;
-  max-height: 65px;
+  max-height: 151px;
 `;
 
 const PartnerItem = styled.div`
   width: auto;
-  height: 65px;
-  max-height: 65px;
+  height: 151px;
+  max-height: 151px;
   display: flex;
   align-items: center;
   margin-right: 178px;
