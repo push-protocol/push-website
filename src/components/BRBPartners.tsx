@@ -10,9 +10,9 @@ import Polygon from '../assets/brb/partners/polygon.svg';
 import Shardeum from '../assets/brb/partners/sharedeum.svg';
 import Timeswap from '../assets/brb/partners/timeswap.svg';
 
-export const Partners = () => {
+export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   return (
-    <PartnersContainer>
+    <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
       <PartnersLogoContainer>
         <PartnerColumn>
@@ -54,7 +54,7 @@ const PartnersContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0px 0px 191px;
-  @media(max-width:480px){
+  @media (max-width: 480px) {
     margin: 0px 0px 114px;
   }
 `;

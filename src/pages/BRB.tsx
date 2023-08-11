@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
@@ -86,6 +86,10 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const partnersRef = useRef(null);
+  const scheduleRef = useRef(null);
+  const playgroundRef = useRef(null);
+  const supportRef = useRef(null);
 
   const { t, i18n } = useTranslation();
 
@@ -108,6 +112,11 @@ function BRB() {
     });
     // }
   };
+
+  const handleSectionNavigation = (ref) => {
+    window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
+  };
+
   return (
     <PageWrapper
       pageName={PageMeta.BRB.pageName}
@@ -163,6 +172,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(partnersRef)}
                       >
                         Partners
                       </Span>
@@ -177,6 +187,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(scheduleRef)}
                       >
                         Schedule
                       </Span>
@@ -191,6 +202,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(playgroundRef)}
                       >
                         Playground
                       </Span>
@@ -205,6 +217,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(supportRef)}
                       >
                         Support
                       </Span>
@@ -275,10 +288,10 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
-        <Partners />
+        <Partners sectionRef={partnersRef} />
         <CommunityPartners />
-        <Schedules />
-        <ItemFooter>
+        <Schedules sectionRef={scheduleRef} />
+        <ItemFooter ref={supportRef}>
           <FooterItem>
             <SpanContent
               family="Glancyr"

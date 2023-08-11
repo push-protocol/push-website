@@ -14,7 +14,7 @@ import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import MarqueeAnimation from './MarqueeAnimation';
 import { device } from 'config/globals';
 
-const Schedules = () => {
+const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
   const isMobile = useMediaQuery(device.mobileL);
 
@@ -168,7 +168,7 @@ const Schedules = () => {
   const renderList = isMobile ? mobileList : desktopList;
 
   return (
-    <Container>
+    <Container ref={sectionRef}>
       <ItemH>
         <Header>Schedule</Header>
       </ItemH>
