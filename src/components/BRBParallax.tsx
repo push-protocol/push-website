@@ -10,6 +10,7 @@ import ImageHolder from './ImageHolder';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GLOBALS, { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { Span } from 'components/SharedStyling';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +23,7 @@ function BRBParallax() {
   ScrollTrigger.defaults({
     // Defaults are used by all ScrollTriggers
     toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
-    markers: true, // Easaly remove markers for production.
+    markers: false, // Easaly remove markers for production.
         
   });
       
@@ -47,17 +48,58 @@ function BRBParallax() {
       snap: 0.333
     });
   }, [isMobile]);
+
+  const Stats = [
+    {
+      figure:'18',
+      body: 'CITIES'
+    },
+    {
+      figure:'1',
+      body: 'BIG PROBLEM'
+    },
+    {
+      figure:'$50k+',
+      body: 'AVAILABLE IN PRICES'
+    }
+  ];
       
   return (
     <Container>
       <BRBWrapper id='home'>
         <FirstBackground className='firstBackground'>
-          {/* <MemberImage
-          className="firstBackground"
-          src={ParallaxBRB}
-          srcSet={ParallaxBRB}
-        /> */}
-        koko
+          <Span 
+            size={isMobile ? '25px' : '40px'}
+            family='Glancyr !important'
+            color='#E64DE9'
+            margin={isMobile ? '260px 0 0 0' : '100px 0 0 0'}
+          >
+            #BRBIndia
+          </Span>
+
+          <ParallaxFlex>
+            {Stats.map((item,i)=>(
+              <FlexItem key={i}>
+                <Span 
+                  size={isMobile ? '45px' :'70px'}
+                  family='Glancyr !important'
+                  textAlign='center'
+                  weight='600'
+                  color='#fff'>
+                  {item.figure}
+                </Span>
+   
+                <Span 
+                  size={isMobile ? '10px' : '12px'}
+                  family='Glancyr !important'
+                  color='#fff'
+                  textAlign='center'
+                >
+                  {item.body}
+                </Span>
+              </FlexItem>
+            ))}
+          </ParallaxFlex>
         </FirstBackground>
 
         {/* <div style={{color:'#fff'}}>clea n clean clean</div> */}
@@ -72,7 +114,7 @@ const MemberImage = styled(ImageHolder)`
 const Container = styled.div`
     width: 100%;
     color: white;
-    margin-top: -100px;
+    margin-top: -15em;
     margin-bottom: 300px;
     // height: 100%;
 
@@ -81,30 +123,15 @@ const Container = styled.div`
     padding: 0px;
 
       @media ${device.mobileL} {
-         margin-top: -100px;
-         margin-bottom: 70px;
-        //  height: auto;
+         margin-top: -20em;
+         margin-bottom: 100px;
    }
 `;
 
 
 const BRBWrapper = styled.div`
-    // width: 100%;
-    // color: white;
-    // margin-bottom: 400px;
-    // height: 100%;
-
-    // position: relative;
-    // scroll-snap-align: center;
-    // padding: 0px;
-
-//   @media ${device.mobileL} {
-//     margin-bottom: 70px;
-//     height: auto;
-//    }
-
-width: 100%;
-height: 100vh;
+    width: 100%;
+    height: 100vh;
 `;
 
 const FirstBackground = styled.div`
@@ -118,17 +145,40 @@ const FirstBackground = styled.div`
   background-size: contain;
   
   display: flex; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-   
-// & img {
-//         width: 70% !important;
-//         height: 100%;
-//         margin: 0px auto;
-//         display: flex;
-//         justify-content: center;
-//     }
+
+  @media ${device.mobileL} {    
+    //   align-items: flex-end;
+//   justify-content: flex-end;
+}
 `;
+
+const ParallaxFlex = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    margin-top: 51px;
+
+    @media ${device.mobileL} {
+        flex-direction: column;
+        margin-top: 21px;
+        // column-gap: 20px;
+    }
+`;
+
+const FlexItem = styled.div`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   @media ${device.mobileL} {
+    margin: 10px 0;
+}
+   
+`;
+
 
 
 
