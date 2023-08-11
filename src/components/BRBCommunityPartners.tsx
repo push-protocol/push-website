@@ -58,7 +58,6 @@ export const CommunityPartners = () => {
             return (
               <PartnerItem key={partner?.id}>
                 <PartnerIcon
-                  // height={partner?.id == 'buidlerstribe' ? '151px' : 'auto'}
                   src={partner?.svgIcon}
                   alt={partner?.alt}
                 />

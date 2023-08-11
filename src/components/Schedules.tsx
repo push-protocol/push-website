@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
+
 import useMediaQuery from 'hooks/useMediaQuery';
 import Test from '../assets/brb/schedules/test.jpg';
 import { ItemH, ItemV } from './SharedStyling';
@@ -212,7 +213,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             </MarqueeContainer>
           );
         })}
-
       </SchedulesWrapper>
       <ActionContainer>
         <Button
