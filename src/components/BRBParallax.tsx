@@ -94,6 +94,7 @@ function BRBParallax() {
                   family='Glancyr !important'
                   color='#fff'
                   textAlign='center'
+                  spacing='0.03em'
                 >
                   {item.body}
                 </Span>

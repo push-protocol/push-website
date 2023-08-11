@@ -159,8 +159,7 @@ function BRB() {
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
-                        weight="500"
-                        spacing="-0.03em"
+                        weight="200"
                         lineHeight="142%"
                         family="Glancyr !important"
                       >
@@ -173,8 +172,7 @@ function BRB() {
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
-                        weight="500"
-                        spacing="-0.03em"
+                        weight="200"
                         lineHeight="142%"
                         family="Glancyr !important"
                       >
@@ -187,8 +185,7 @@ function BRB() {
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
-                        weight="500"
-                        spacing="-0.03em"
+                        weight="200"
                         lineHeight="142%"
                         family="Glancyr !important"
                       >
@@ -201,8 +198,7 @@ function BRB() {
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
-                        weight="500"
-                        spacing="-0.03em"
+                        weight="200"
                         lineHeight="142%"
                         family="Glancyr !important"
                       >
@@ -324,7 +320,7 @@ function BRB() {
                 family="Glancyr"
                 size={isLaptop ? '24px' : '36px'}
                 weight="200"
-                color="#6F8BEE"
+                color="#63BFF3"
               >
                 Updates & Announcements
               </Span>
@@ -369,6 +365,7 @@ const ButtonItem = styled(ButtonV2)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
+  letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
   }
@@ -384,6 +381,7 @@ const ButtonItem = styled(ButtonV2)`
 `;
 
 const ButtonBar = styled(ButtonV2)`
+letter-spacing: 0.03em;
   @media ${device.mobileL} {
     width: 100%;
   }
@@ -420,13 +418,13 @@ const NavList = styled.div`
   border: 1px solid #2a2a39;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
-  padding: 7px 13px;
+  padding: 14px 23px;
   margin-top: 51px;
 
   @media ${device.laptop} {
     flex-direction: column;
     width: calc(100%);
-    padding: 4px 7px;
+    padding: 14px 10px 14px 20px;
     margin: 10px 10px;
     box-sizing: border-box;
     border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
@@ -505,10 +503,11 @@ const NavText = styled.div`
   color: #fff;
   text-align: center;
   font-family: Glancyr;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   line-height: normal;
+  letter-spacing: 0.03em;
 
   width: 844px;
   text-align: center;
@@ -650,6 +649,7 @@ const NavigationMenuItem = styled.li`
   &:hover {
     & span {
       color: #dd44b9;
+      transition-duration: 0.7s;
     }
 
     & .chevronIcon {
