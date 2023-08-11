@@ -72,7 +72,7 @@ function BRBParallax() {
             size={isMobile ? '25px' : '40px'}
             family='Glancyr !important'
             color='#E64DE9'
-            margin={isMobile ? '15em 0 0 0' : '100px 0 0 0'}
+            margin={isMobile ? '14.5em 0 0 0' : '100px 0 0 0'}
           >
             #BRBIndia
           </Span>
@@ -126,7 +126,7 @@ const Container = styled.div`
          margin-top: -30em;
          margin-bottom: 50px;
          overflow: hidden;
-         padding-bottom: 7em;
+         padding-bottom: 8em;
    }
 `;
 
