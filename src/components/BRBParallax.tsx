@@ -33,7 +33,7 @@ function BRBParallax() {
       trigger: '#home', // What element triggers the scroll
       scrub: true, // Add a small delay of scrolling and animation. `true` is direct
       start: 'top top', // Start at top of Trigger and at the top of the viewport
-      end: `${isMobile ? 'bottom top' : '+=500% 0px'}`, // The element is 500px hight and end 50px from the top of the viewport
+      end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
       //   end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
       pin: true // Pin the element true or false
     } });
@@ -115,7 +115,7 @@ const Container = styled.div`
     width: 100%;
     color: white;
     margin-top: -15em;
-    margin-bottom: 300px;
+    margin-bottom: 200px;
     // height: 100%;
 
     position: relative;
@@ -123,7 +123,7 @@ const Container = styled.div`
     padding: 0px;
 
       @media ${device.mobileL} {
-         margin-top: -20em;
+         margin-top: -35em;
          margin-bottom: 100px;
    }
 `;
