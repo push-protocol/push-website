@@ -127,11 +127,11 @@ const PartnerItem = styled.div`
 `;
 
 const BottomRow = styled(ItemH)`
-  padding-top:56px;
   max-width: 100vw;
   justify-content: space-evenly;
   padding: 56px 150px 0px;
   @media(max-width:768px){
+    padding: 56px 0px 0px;
     flex-direction:column;
     align-items:center;
     gap:56px;
