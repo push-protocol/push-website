@@ -4,6 +4,9 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.270",
     "@testing-library/jest-dom": "^5.16.5",

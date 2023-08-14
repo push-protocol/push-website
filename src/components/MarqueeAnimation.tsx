@@ -7,12 +7,12 @@ import styled from 'styled-components';
 import ReactMarquee from 'react-fast-marquee';
 
 type Props = {
-    direction: string;
-    speed?: number;
-    gap?: number;
-    gradientWidth?: number;
-    children?:React.ReactNode;
-    pause?:boolean;
+  direction: string;
+  speed?: number;
+  gap?: number;
+  gradientWidth?: number;
+  children?: React.ReactNode;
+  pause?: boolean;
 };
 
 function MarqueeAnimation(props: Props) {
@@ -25,7 +25,7 @@ function MarqueeAnimation(props: Props) {
     direction = 'left',
     pause = false
   } = props;
-  
+
   return (
     <AnimationWrapper
       speed={speed}
@@ -47,6 +47,10 @@ const AnimationWrapper = styled(ReactMarquee)`
   top: 0;
   left: 0;
   right: 0;
+
+  & .marquee {
+    justify-content: space-around;
+  }
 
   & .marqueeItem {
     margin-right: ${(props) => props.gap || 0}px;
