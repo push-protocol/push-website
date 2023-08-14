@@ -22,7 +22,7 @@ function BRBParallax() {
 
   ScrollTrigger.defaults({
     // Defaults are used by all ScrollTriggers
-    toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
+    // toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
     markers: false, // Easaly remove markers for production.
         
   });
