@@ -161,7 +161,7 @@ const ParallaxFlex = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 38%;
+    // width: 38%;
     gap: 20px;
     margin-top: 51px;
 
