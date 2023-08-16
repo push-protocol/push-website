@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -15,10 +15,13 @@ import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import MarqueeAnimation from './MarqueeAnimation';
 import { device } from 'config/globals';
 
+import moment from 'moment';
+
 
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
+import { citiesList } from 'helpers/ScheduleLists';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
@@ -26,298 +29,52 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   const [direction, setDirection] = useState('right');
 
-  const scheduleList = [
-    [
-      {
-        image: Agra,
-        place: 'A',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#194395',
-      },
-      {
-        image: Agra,
-        place: 'B',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#7A3DA9',
-      },
-      {
-        image: Test,
-        place: 'CC',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#16837C',
-      },
-      {
-        image: Agra,
-        place: 'D',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#DA786A',
-      },
-      // {
-      //   image: Agra,
-      //   place: 'E',
-      //   date: '23-24 AUG 2024',
-      //   link: 'https://push.org',
-      //   backgroundColor: '#299EC2',
-      // },
-    ],
-
-
-
-
-    [
-      {
-        image: Test,
-        place: 'F',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#3F53AA',
-      },
-      {
-        image: Agra,
-        place: 'G',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#194395',
-      },
-      {
-        image: Test,
-        place: 'h',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#7A3DA9',
-      },
-      {
-        image: Agra,
-        place: 'I',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#194395',
-      },
-    ],
-
-
-
-
-
-    [
-      {
-        image: Test,
-        place: 'J',
-        date: '23-24 AUG 2024',
-        link: 'https://push.org',
-        backgroundColor: '#16837C',
-      },
-      {
-        image: Agra,
-        place: 'K',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#DA786A',
-      },
-      {
-        image: Test,
-        place: 'L',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#299EC2',
-      },
-      {
-        image: Agra,
-        place: 'M',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#3F53AA',
-      },
-      // {
-      //   image: Agra,
-      //   place: 'N',
-      //   date: '23-24 AUG 2024',
-      //   link: 'push.org',
-      //   backgroundColor: '#194395',
-      // },
-    ],
-
-
-
-
-
-
-    [
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#7A3DA9',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#299EC2',
-      },
-      {
-        image: Test,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#DA786A',
-      },
-      {
-        image: Agra,
-        place: 'Delhi',
-        date: '23-24 AUG 2024',
-        link: 'push.org',
-        backgroundColor: '#299EC2',
-      },
-    ],
-  ];
-
-  const citiesList = [
-    [{
-      image: Agra,
-      place: 'Agra',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#194395',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#7A3DA9',
-    }],
-    [{
-      image: Test,
-      place: 'Jaipur',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#16837C',
-    },
-    {
-      image: Agra,
-      place: 'Mumbai',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#DA786A',
-    }],
-    [{
-      image: Agra,
-      place: 'Bangalore',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#299EC2',
-    },
-    {
-      image: Test,
-      place: 'Pune',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#3F53AA',
-    }],
-    [{
-      image: Agra,
-      place: 'Lucknow',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#194395',
-    },
-    {
-      image: Test,
-      place: 'chandigarh',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#7A3DA9',
-    }],
-    [{
-      image: Agra,
-      place: 'Jalandhar',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#194395',
-    },
-    {
-      image: Test,
-      place: 'ahmedabad',
-      date: '23-24 AUG 2024',
-      link: 'https://push.org',
-      backgroundColor: '#16837C',
-    }],
-    [{
-      image: Agra,
-      place: 'Kerala',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#DA786A',
-    },
-    {
-      image: Test,
-      place: 'Orissa',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#299EC2',
-    }],
-    [{
-      image: Agra,
-      place: 'Agra',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#3F53AA',
-    },
-    {
-      image: Agra,
-      place: 'New Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#194395',
-    }],
-    [{
-      image: Test,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#7A3DA9',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#299EC2',
-    }],
-    [{
-      image: Test,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#DA786A',
-    },
-    {
-      image: Agra,
-      place: 'Delhi',
-      date: '23-24 AUG 2024',
-      link: 'push.org',
-      backgroundColor: '#299EC2',
-    }],
-  ];
-
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
 
-  const [First, Second, Third, Fourth] = scheduleList;
-  const desktopList = [
-    [...First, ...Second],
-    [...Third, ...Fourth],
-  ];
-  const mobileList = [[...First], [...Second], [...Third], [...Fourth]];
-  const renderList = isMobile ? mobileList : desktopList;
+  // const [First, Second, Third, Fourth] = scheduleList;
+  // const desktopList = [
+  //   [...First, ...Second],
+  //   [...Third, ...Fourth],
+  // ];
+  // const mobileList = [[...First], [...Second], [...Third], [...Fourth]];
+  // const renderList = isMobile ? mobileList : desktopList;
+
+  // const [eventHasEnded, setEventHasEnded] = useState(false);
+
+  const checkDateStatus = (fDate) => {
+    const currentDate = new Date();
+    const eventDate = new Date(fDate);
+    const eventGap = eventDate - currentDate;
+    console.log('Event gap', currentDate, eventDate, eventGap);
+
+    if (eventGap < 0) {
+      console.log('Event has ended');
+      //This means that the event has ended 
+      // setEventHasEnded(true);
+      return true;
+    } else {
+      console.log('Event is liveeee');
+      return false;
+    }
+  };
+
+  useEffect(() => {
+
+    citiesList.forEach(element => {
+      console.log('Element', element);
+      element.map((item) => {
+        item.hasEnded = checkDateStatus(item.date);
+        console.log('Item', item.place, 'event has ended ? ', item.hasEnded);
+
+      });
+    });
+
+  }, []);
+
+
+
 
   return (
     <Container ref={sectionRef}>
@@ -344,10 +101,11 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
               return (
                 <SplideContainer className='splide__slide is-visible' key={item}>
                   {item?.map((schedule, index) => {
+                    console.log('hasended', schedule.hasEnded);
                     return (
                       <ScheduleCardContainer
                         key={index}
-                        background={schedule?.backgroundColor}
+                        background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
                       >
                         <ImageContainer>
                           <Image
@@ -364,7 +122,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                               onClick={() => openLink(schedule?.link)}
                             />
                           </PlaceContainer>
-                          <DateContainer>{schedule?.date}</DateContainer>
+                          <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
                         </ScheduleData>
                       </ScheduleCardContainer>
                     );
@@ -387,52 +145,10 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             </ActionContainer>
 
           </div>
-
-
-
         </Splide>
-
-
-
-
-
-
-
-
-
-
-
-
 
       </SchedulesWrapper>
 
-
-
-
-
-
-
-
-
-      {/* <ActionContainer>
-
-
-
-
-
-        <Button
-          background={marqueeDirection === 'left' ? '#2A2A39' : '#E64DE9'}
-          onClick={() => setMarqueeDirection('left')}
-        >
-          <Icon src={Left} />
-        </Button>
-        <Button
-          background={marqueeDirection === 'right' ? '#2A2A39' : '#E64DE9'}
-          onClick={() => setMarqueeDirection('right')}
-        >
-          <Icon src={Right} />
-        </Button>
-      </ActionContainer> */}
     </Container >
   );
 };
@@ -482,7 +198,7 @@ const ScheduleCardContainer = styled.div`
   height: 344px;
   background: ${(props) => props.background};
   display: flex;
-  margin-top:10px;
+  margin-top:20px;
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
@@ -569,7 +285,8 @@ const ActionContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   column-gap: 13px;
-  margin: 29px auto 0 auto;
+  margin-top: 29px;
+  margin-left: 4rem;
   width: 1280px;
   @media ${device.laptop} {
     width: 90%;
