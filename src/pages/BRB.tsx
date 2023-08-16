@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
@@ -86,6 +86,10 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const partnersRef = useRef(null);
+  const scheduleRef = useRef(null);
+  const playgroundRef = useRef(null);
+  const supportRef = useRef(null);
 
   const { t, i18n } = useTranslation();
 
@@ -108,6 +112,15 @@ function BRB() {
     });
     // }
   };
+
+  const handleSectionNavigation = (ref) => {
+    window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
+  };
+
+  const openLink = (link: string) => {
+    window.open(link, '_blank');
+  };
+
   return (
     <PageWrapper
       pageName={PageMeta.BRB.pageName}
@@ -119,7 +132,7 @@ function BRB() {
           showMobileMenu={showMobileMenu}
           className={`header ${headerClass}`}
         >
-          <SectionV2 padding="0 0 0 0">
+          <SectionV2 padding="0 0 0 0" >
             <NavList isMobileMenuOpen={isMobileMenuOpen}>
               <MenuTop flex="initial">
                 <PushLogoBlackContainer
@@ -127,7 +140,7 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo />
+                  <PushLogo style={{margin:'0px 9px 0px 14px'}}/>
                   {/* </LinkTo> */}
                   #BRB
                 </PushLogoBlackContainer>
@@ -163,6 +176,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(partnersRef)}
                       >
                         Partners
                       </Span>
@@ -177,6 +191,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(scheduleRef)}
                       >
                         Schedule
                       </Span>
@@ -191,6 +206,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(playgroundRef)}
                       >
                         Playground
                       </Span>
@@ -205,6 +221,7 @@ function BRB() {
                         spacing="-0.03em"
                         lineHeight="142%"
                         family="Glancyr !important"
+                        onClick={() => handleSectionNavigation(supportRef)}
                       >
                         Support
                       </Span>
@@ -225,13 +242,13 @@ function BRB() {
                 >
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <Discord />
+                      <Discord onClick={()=>openLink('https://discord.gg/pushprotocol')}/>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <X />
+                      <X onClick={()=>openLink('https://twitter.com/pushprotocol')}/>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </IconMenu>
@@ -261,6 +278,7 @@ function BRB() {
               border="1px solid #FC6DFF"
               fontFamily="Glancyr !important"
               padding="16px 32px"
+              onClick={() => handleSectionNavigation(scheduleRef)}
             >
               Register Now
             </ButtonItem>
@@ -275,17 +293,16 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
-
+        
         <BRBParallax />
 
-        <Partners />
+        <Partners sectionRef={partnersRef} />
 
         <CommunityPartners />
 
-        <Schedules />
+        <Schedules sectionRef={scheduleRef} />
 
-        
-        <ItemFooter>
+        <ItemFooter ref={supportRef}>
           <FooterItem>
             <SpanContent
               family="Glancyr"
@@ -312,7 +329,7 @@ function BRB() {
                 24x7 Support on Discord
               </Span>
 
-              <ArrowIcon />
+              <ArrowIcon style={{cursor:'pointer'}} onClick={()=>openLink('https://discord.gg/pushprotocol')}/>
             </FooterBar>
 
             <FooterBar>
@@ -329,7 +346,7 @@ function BRB() {
                 Updates & Announcements
               </Span>
 
-              <ArrowIcon />
+              <ArrowIcon style={{cursor:'pointer'}} onClick={()=>openLink('https://twitter.com/pushprotocol')}/>
             </FooterBar>
           </FooterCol>
         </ItemFooter>
@@ -411,6 +428,7 @@ const BrbWrapper = styled.main`
 const NavList = styled.div`
   position: relative;
   width: 1243px;
+  height: 78px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -447,6 +465,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
+  height: 78px;
 
   /* color: #ffffff;
   background: #121315; */
@@ -565,7 +584,7 @@ const PushLogoBlackContainer = styled(ItemVV2)`
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  height:100%;
   color: #fff;
   font-family: Glancyr;
   font-size: 24.207px;
