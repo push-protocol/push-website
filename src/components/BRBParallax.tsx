@@ -44,9 +44,9 @@ function BRBParallax() {
         scale: 1.7 },
       'sameTime');
           
-    ScrollTrigger.create({
-      snap: 0.333
-    });
+    // ScrollTrigger.create({
+    //   snap: 0.333
+    // });
   }, [isMobile]);
 
   const Stats = [
