@@ -83,7 +83,7 @@ const PartnersContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 0px 0px 191px;
+  margin: 0px 0px 108px;
   @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }

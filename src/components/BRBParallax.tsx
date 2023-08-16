@@ -72,7 +72,7 @@ function BRBParallax() {
             size={isMobile ? '25px' : '40px'}
             family='Glancyr !important'
             color='#E64DE9'
-            margin={isMobile ? '14.5em 0 0 0' : '100px 0 0 0'}
+            margin={isMobile ? '15.5em 0 0 0' : '202px 0 0 0'}
           >
             #BRBIndia
           </Span>
@@ -160,8 +160,9 @@ const FirstBackground = styled.div`
 const ParallaxFlex = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 35%;
+    justify-content: flex-start;
+    width: 38%;
+    gap: 20px;
     margin-top: 51px;
 
     @media ${device.mobileL} {
@@ -175,6 +176,7 @@ const FlexItem = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
+   max-width: 135px;
    @media ${device.mobileL} {
     margin: 10px 0;
 }

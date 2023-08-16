@@ -77,7 +77,7 @@ const Container = styled.div`
 `;
 
 const CommunityContainer = styled(ItemH)`
-  margin: 0px 0px 114px;
+  margin: 0px 0px 74px;
   width: 100vw;
   height: 151px;
 `;
@@ -107,7 +107,7 @@ const Header = styled.span`
   font-family: Glancyr;
   color: #fff;
   display: flex;
-  margin: 0px 0px 78px;
+  margin: 0px 0px 36px;
   @media (max-width: 480px) {
     margin: 0px 0px 49px;
     flex-wrap: wrap;
