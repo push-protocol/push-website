@@ -13,6 +13,7 @@ import Aragon from '../assets/brb/partners/aragon.svg';
 import Filecoin from '../assets/brb/partners/filecoin.svg';
 import Chainsafe from '../assets/brb/partners/chainsafe.svg';
 import Alchemy from '../assets/brb/partners/alchemy.svg';
+import Ethereum from '../assets/brb/partners/ethereum-foundation.svg';
 import { ItemH } from './SharedStyling';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
@@ -22,7 +23,7 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
       <PartnersLogoContainer>
         <PartnerColumn>
           <PartnerItem>
-            <PartnerIcon src={Graph} />
+            <PartnerIcon src={Ethereum} />
           </PartnerItem>
           <PartnerItem>
             <PartnerIcon src={Flipkart} />
@@ -30,16 +31,22 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
           <PartnerItem>
             <PartnerIcon src={Aragon} />
           </PartnerItem>
+          <PartnerItem>
+            <PartnerIcon src={Chainsafe} />
+          </PartnerItem>
         </PartnerColumn>
         <PartnerColumn>
           <PartnerItem>
             <PartnerIcon src={Polygon} />
           </PartnerItem>
           <PartnerItem>
+            <PartnerIcon src={Graph} />
+          </PartnerItem>
+          <PartnerItem>
             <PartnerIcon src={Biconomy} />
           </PartnerItem>
           <PartnerItem>
-            <PartnerIcon src={Timeswap} />
+            <PartnerIcon src={Alchemy} />
           </PartnerItem>
         </PartnerColumn>
         <PartnerColumn>
@@ -52,16 +59,20 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
           <PartnerItem>
             <PartnerIcon src={Filecoin} />
           </PartnerItem>
+          <PartnerItem>
+            <PartnerIcon src={Timeswap} />
+          </PartnerItem>
         </PartnerColumn>
       </PartnersLogoContainer>
-      <BottomRow>
+
+      {/* <BottomRow>
         <PartnerItem>
           <PartnerIcon src={Chainsafe} />
         </PartnerItem>
         <PartnerItem>
           <PartnerIcon src={Alchemy} />
         </PartnerItem>
-      </BottomRow>
+      </BottomRow> */}
     </PartnersContainer>
   );
 };
