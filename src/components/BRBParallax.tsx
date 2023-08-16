@@ -45,7 +45,7 @@ function BRBParallax() {
       'sameTime');
           
     ScrollTrigger.create({
-      snap: 0.333
+      snap: 0
     });
   }, [isMobile]);
 
