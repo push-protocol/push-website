@@ -31,7 +31,7 @@ function BRBParallax() {
     scrollTrigger: {
       id: 'ZOOM', // Custom label to the marker
       trigger: '#home', // What element triggers the scroll
-      scrub: false, // Add a small delay of scrolling and animation. `true` is direct
+      scrub: true, // Add a small delay of scrolling and animation. `true` is direct
       start: 'top top', // Start at top of Trigger and at the top of the viewport
       end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
       //   end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
