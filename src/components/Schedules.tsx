@@ -160,6 +160,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
       </Splide>
 
 
+
     </Container >
   );
 };
@@ -168,7 +169,6 @@ const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction:column;
-  margin-top: 50px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
@@ -205,9 +205,9 @@ const Header = styled.span`
   font-weight: 400;
   font-family: Glancyr;
   color: #fff;
-  margin: 0px 0px 60px;
+  margin: 0px 0px 37px;
   @media (max-width: 480px) {
-    margin: 0px 0px 49px;
+    margin: 0px 0px 27px;
   }
 `;
 

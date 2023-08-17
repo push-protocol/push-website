@@ -66,35 +66,37 @@ function BRBParallax() {
       
   return (
     <Container>
-      <BRBWrapper id='home'>
-        <FirstBackground className='firstBackground'>
-          <Span 
+      <BRBWrapper id="home">
+        <FirstBackground className="firstBackground">
+          <Span
             size={isMobile ? '25px' : '40px'}
-            family='Glancyr !important'
-            color='#E64DE9'
-            margin={isMobile ? '15.5em 0 0 0' : '202px 0 0 0'}
+            family="Glancyr !important"
+            color="#E64DE9"
+            // margin={isMobile ? '15.5em 0 0 0' : '202px 0 0 0'}
+            margin={isMobile ? '25% 0 0 0' : '5% 0 0 0'}
           >
             #BRBIndia
           </Span>
 
           <ParallaxFlex>
-            {Stats.map((item,i)=>(
+            {Stats.map((item, i) => (
               <FlexItem key={i}>
-                <Span 
-                  size={isMobile ? '45px' :'70px'}
-                  family='Glancyr !important'
-                  textAlign='center'
-                  weight='600'
-                  color='#fff'>
+                <Span
+                  size={isMobile ? '45px' : '80px'}
+                  family="Glancyr !important"
+                  textAlign="center"
+                  weight="600"
+                  color="#fff"
+                >
                   {item.figure}
                 </Span>
-   
-                <Span 
-                  size={isMobile ? '10px' : '12px'}
-                  family='Glancyr !important'
-                  color='#fff'
-                  textAlign='center'
-                  spacing='0.03em'
+
+                <Span
+                  size={isMobile ? '10px' : '18px'}
+                  family="Glancyr !important"
+                  color="#fff"
+                  textAlign="center"
+                  spacing="0.03em"
                 >
                   {item.body}
                 </Span>
@@ -162,14 +164,22 @@ const ParallaxFlex = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30%;
-    // gap: 20px;
+    width: auto;
+    gap: 8px;
     margin-top: 51px;
+    position:absolute;
+    top: 54%;
+
+    @media(min-width:1550px){
+      top:58%;
+      gap:60px;
+    }
 
     @media ${device.mobileL} {
         flex-direction: column;
         margin-top: 21px;
         // column-gap: 20px;
+        top:55%;
     }
 `;
 
@@ -177,7 +187,8 @@ const FlexItem = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: center;
-   max-width: 135px;
+   min-width: 89px;
+   max-width: 264px;
    @media ${device.mobileL} {
     margin: 10px 0;
 }
