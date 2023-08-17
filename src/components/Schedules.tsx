@@ -22,10 +22,14 @@ import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
 import { citiesList } from 'helpers/ScheduleLists';
+import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
   const isMobile = useMediaQuery(device.mobileL);
+
+  console.log('IsMobile??????:', isMobile);
+
 
   const [direction, setDirection] = useState('right');
 
@@ -74,7 +78,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   }, []);
 
 
-
+  // const isMobile = useDeviceWidthCheck(600);
 
   return (
     <Container ref={sectionRef}>
@@ -87,8 +91,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             width: '100vw',
             type: 'slide',
             gap: '100px',
-            perPage: 3,
-            padding: { left: 10, right: 20 },
+            perPage: 1,
+            // padding: { left: 10, right: 20 },
             perMove: 1,
             pagination: false,
 
@@ -173,6 +177,13 @@ const SchedulesWrapper = styled.div`
 const SplideContainer = styled.div`
   width: auto !important;
   margin: 0px !important;
+ 
+
+  @media (max-width: 480px){
+    margin-right:20px !important;
+    margin-left:10px !important;
+  }
+
 `;
 
 
