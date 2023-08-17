@@ -87,7 +87,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             width: '100vw',
             type: 'slide',
             gap: '100px',
-            perPage: 4,
+            perPage: 3,
             padding: { left: 10, right: 20 },
             perMove: 1,
             pagination: false,
