@@ -117,8 +117,12 @@ function BRB() {
   const handleSectionNavigation = (ref) => {
     setShowParallax(false);
     window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
-    setTimeout(() => setShowParallax(true), 1000);
+    setTimeout(() => {
+      setShowParallax(true);
+    }, 1000);
   };
+
+  console.log('refs', partnersRef, scheduleRef, supportRef);
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
@@ -300,13 +304,13 @@ function BRB() {
           </NavButtons>
         </ItemTop>
 
-        {showParallax &&<BRBParallax sectionRef={partnersRef}/>}
+        {showParallax && <BRBParallax sectionRef={partnersRef} />}
 
         <Partners />
 
-        <CommunityPartners sectionRef={scheduleRef}/>
+        <CommunityPartners sectionRef={scheduleRef} />
 
-        <Schedules/>
+        <Schedules />
 
         <ItemFooter ref={supportRef}>
           <FooterItem>
