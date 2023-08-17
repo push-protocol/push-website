@@ -47,15 +47,15 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     const currentDate = new Date();
     const eventDate = new Date(fDate);
     const eventGap = eventDate - currentDate;
-    console.log('Event gap', currentDate, eventDate, eventGap);
+    // console.log('Event gap', currentDate, eventDate, eventGap);
 
     if (eventGap < 0) {
-      console.log('Event has ended');
+      // console.log('Event has ended');
       //This means that the event has ended 
       // setEventHasEnded(true);
       return true;
     } else {
-      console.log('Event is liveeee');
+      // console.log('Event is liveeee');
       return false;
     }
   };
@@ -63,10 +63,10 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   useEffect(() => {
 
     citiesList.forEach(element => {
-      console.log('Element', element);
+      // console.log('Element', element);
       element.map((item) => {
         item.hasEnded = checkDateStatus(item.date);
-        console.log('Item', item.place, 'event has ended ? ', item.hasEnded);
+        // console.log('Item', item.place, 'event has ended ? ', item.hasEnded);
 
       });
     });
@@ -96,12 +96,12 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           hasTrack={false} aria-label="...">
 
           <SplideTrack>
-            {citiesList.map((item) => {
-              console.log('Index', item);
+            {citiesList.map((item,index) => {
+              // console.log('Index', item);
               return (
-                <SplideContainer className='splide__slide is-visible' key={item}>
+                <SplideContainer className='splide__slide is-visible' key={index}>
                   {item?.map((schedule, index) => {
-                    console.log('hasended', schedule.hasEnded);
+                    // console.log('hasended', schedule.hasEnded);
                     return (
                       <ScheduleCardContainer
                         key={index}

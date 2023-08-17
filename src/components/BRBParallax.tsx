@@ -17,7 +17,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-function BRBParallax() {
+function BRBParallax({
+  sectionRef,
+}: {
+  sectionRef: React.MutableRefObject<null>;
+}) {
   const isMobile = useMediaQuery(device.mobileL);
 
   ScrollTrigger.defaults({
@@ -65,7 +69,7 @@ function BRBParallax() {
   ];
       
   return (
-    <Container>
+    <Container ref={sectionRef}>
       <BRBWrapper id='home'>
         <FirstBackground className='firstBackground'>
           <Span 

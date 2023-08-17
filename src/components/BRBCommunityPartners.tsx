@@ -12,7 +12,7 @@ import MarqueeAnimation from './MarqueeAnimation';
 import { ItemH } from './SharedStyling';
 import { device } from 'config/globals';
 
-export const CommunityPartners = () => {
+export const CommunityPartners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery(device.mobileL);
 
   const partnerList = [
@@ -46,7 +46,7 @@ export const CommunityPartners = () => {
   const ANIMATION_SPEED = isMobile ? 40 : 80;
 
   return (
-    <Container>
+    <Container ref={sectionRef}>
       <Header>Community Partners</Header>
       <CommunityContainer>
         <MarqueeAnimation

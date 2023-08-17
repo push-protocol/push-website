@@ -86,6 +86,7 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const [showParallax, setShowParallax] = useState(true);
   const partnersRef = useRef(null);
   const scheduleRef = useRef(null);
   const playgroundRef = useRef(null);
@@ -114,7 +115,9 @@ function BRB() {
   };
 
   const handleSectionNavigation = (ref) => {
+    setShowParallax(false);
     window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
+    setTimeout(() => setShowParallax(true), 1000);
   };
 
   const openLink = (link: string) => {
@@ -132,7 +135,7 @@ function BRB() {
           showMobileMenu={showMobileMenu}
           className={`header ${headerClass}`}
         >
-          <SectionV2 padding="0 0 0 0" >
+          <SectionV2 padding="0 0 0 0">
             <NavList isMobileMenuOpen={isMobileMenuOpen}>
               <MenuTop flex="initial">
                 <PushLogoBlackContainer
@@ -140,14 +143,15 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo style={{margin:'0px 9px 0px 14px'}}/>
+                  <PushLogo style={{ margin: '0px 9px 0px 14px' }} />
                   {/* </LinkTo> */}
-                  <Span 
+                  <Span
                     size="24px"
                     weight="700"
                     lineHeight="24px"
-                    family="Glancyr !important">
-                  #BRB
+                    family="Glancyr !important"
+                  >
+                    #BRB
                   </Span>
                 </PushLogoBlackContainer>
 
@@ -244,13 +248,13 @@ function BRB() {
                 >
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <Discord onClick={()=>openLink('https://discord.gg/pushprotocol')}/>
+                      <Discord onClick={() => openLink('https://discord.gg/pushprotocol')} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <X onClick={()=>openLink('https://twitter.com/pushprotocol')}/>
+                      <X onClick={() => openLink('https://twitter.com/pushprotocol')} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </IconMenu>
@@ -295,14 +299,14 @@ function BRB() {
             </ButtonBar>
           </NavButtons>
         </ItemTop>
-        
-        <BRBParallax />
 
-        <Partners sectionRef={partnersRef} />
+        {showParallax &&<BRBParallax sectionRef={partnersRef}/>}
 
-        <CommunityPartners />
+        <Partners />
 
-        <Schedules sectionRef={scheduleRef} />
+        <CommunityPartners sectionRef={scheduleRef}/>
+
+        <Schedules/>
 
         <ItemFooter ref={supportRef}>
           <FooterItem>
@@ -317,7 +321,10 @@ function BRB() {
           </FooterItem>
 
           <FooterCol>
-            <FooterBar style={{cursor:'pointer'}} onClick={()=>openLink('https://discord.gg/pushprotocol')}>
+            <FooterBar
+              style={{ cursor: 'pointer' }}
+              onClick={() => openLink('https://discord.gg/pushprotocol')}
+            >
               <i>
                 <Discord />
               </i>
@@ -331,10 +338,13 @@ function BRB() {
                 24x7 Support on Discord
               </Span>
 
-              <ArrowIcon/>
+              <ArrowIcon />
             </FooterBar>
 
-            <FooterBar style={{cursor:'pointer'}} onClick={()=>openLink('https://twitter.com/pushprotocol')}>
+            <FooterBar
+              style={{ cursor: 'pointer' }}
+              onClick={() => openLink('https://twitter.com/pushprotocol')}
+            >
               <i>
                 <X className="discord" />
               </i>
@@ -404,7 +414,7 @@ const ButtonItem = styled(ButtonV2)`
 `;
 
 const ButtonBar = styled(ButtonV2)`
-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
   @media ${device.mobileL} {
     width: 100%;
   }
@@ -591,7 +601,7 @@ const PushLogoBlackContainer = styled(ItemVV2)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  height:100%;
+  height: 100%;
   color: #fff;
   font-family: Glancyr;
   font-size: 24.207px;

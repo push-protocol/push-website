@@ -16,9 +16,10 @@ import Alchemy from '../assets/brb/partners/alchemy.svg';
 import Ethereum from '../assets/brb/partners/ethereum-foundation.svg';
 import { ItemH } from './SharedStyling';
 
-export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
+export const Partners = () => {
+
   return (
-    <PartnersContainer ref={sectionRef}>
+    <PartnersContainer >
       <Header>Partners</Header>
       <PartnersLogoContainer>
         <PartnerColumn>
@@ -141,10 +142,10 @@ const BottomRow = styled(ItemH)`
   max-width: 100vw;
   justify-content: space-evenly;
   padding: 56px 150px 0px;
-  @media(max-width:768px){
+  @media (max-width: 768px) {
     padding: 56px 0px 0px;
-    flex-direction:column;
-    align-items:center;
-    gap:56px;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
   }
 `;
