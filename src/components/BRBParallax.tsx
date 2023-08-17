@@ -168,7 +168,11 @@ const ParallaxFlex = styled.div`
     gap: 8px;
     margin-top: 51px;
     position:absolute;
-    bottom:18%;
+    top: 54%;
+
+    @media(min-width:1400px){
+      top:58%;
+    }
 
     @media ${device.mobileL} {
         flex-direction: column;
