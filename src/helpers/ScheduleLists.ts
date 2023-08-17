@@ -8,7 +8,7 @@ export const citiesList = [
     [{
         image: Agra,
         place: 'Dehradun',
-        date: '31 AUG 2023',
+        date: '31 AUG 2022',
         link: 'https://push.org',
         backgroundColor: '#194395',
         hasEnded: false,
@@ -20,7 +20,8 @@ export const citiesList = [
         link: 'https://push.org',
         backgroundColor: '#7A3DA9',
         hasEnded: false,
-    }],
+    },
+    ],
     [{
         image: Test,
         place: 'Kochi',
@@ -36,7 +37,8 @@ export const citiesList = [
         link: 'https://push.org',
         backgroundColor: '#DA786A',
         hasEnded: false,
-    }],
+    },
+    ],
     [{
         image: Agra,
         place: 'Indore',
@@ -52,7 +54,8 @@ export const citiesList = [
         link: 'https://push.org',
         backgroundColor: '#3F53AA',
         hasEnded: false,
-    }],
+    },
+    ],
     [{
         image: Agra,
         place: 'Ahmedabad',

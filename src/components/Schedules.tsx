@@ -21,11 +21,13 @@ import moment from 'moment';
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
+
 import { citiesList } from 'helpers/ScheduleLists';
+import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
-  const isMobile = useMediaQuery(device.mobileL);
+  const isMobile = useMediaQuery('(max-width: 480px)');
 
   const [direction, setDirection] = useState('right');
 
@@ -74,78 +76,90 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   }, []);
 
 
-
+  // const isMobile = useDeviceWidthCheck(600);
 
   return (
     <Container ref={sectionRef}>
       <ItemH>
         <Header>Schedule</Header>
       </ItemH>
-      <SchedulesWrapper>
-        <Splide
-          options={{
-            width: '100vw',
-            type: 'slide',
-            gap: '100px',
-            perPage: 4,
-            padding: { left: 10, right: 20 },
-            perMove: 1,
-            pagination: false,
+      <Splide
+        style={{ margin: 'auto' }}
+        options={{
+          width: isMobile ? '86vw' : '100vw',
+          type: 'slide',
+          gap: '100px',
+          perPage: 1,
+          padding: { left: isMobile ? 0 : 80, right: isMobile ? 0 : 80 },
+          perMove: 1,
+          pagination: false,
+          omitEnd: true,
+          slideFocus: true,
+          gap: isMobile ? '2em' : '1.5em',
+          fixedWidth: isMobile ? '344px' : '413px'
 
-          }}
-          hasTrack={false} aria-label="...">
+        }}
+        hasTrack={false} aria-label="...">
 
-          <SplideTrack>
-            {citiesList.map((item) => {
-              return (
-                <SplideContainer className='splide__slide is-visible' key={item}>
-                  {item?.map((schedule, index) => {
-                    return (
-                      <ScheduleCardContainer
-                        key={index}
-                        background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => openLink(schedule?.link)}
-                      >
-                        <ImageContainer>
-                          <Image
-                            src={schedule?.image}
-                            height="28px"
-                            width="28px"
-                          />
-                        </ImageContainer>
-                        <ScheduleData>
-                          <PlaceContainer>
-                            <PlaceName>{schedule?.place}</PlaceName>
-                            <Arrow
-                            />
-                          </PlaceContainer>
-                          <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
-                        </ScheduleData>
-                      </ScheduleCardContainer>
-                    );
-                  })}
+        <SplideTrack>
+          {citiesList.map((item) => {
+            console.log('Index', item);
+            return (
+              <SplideContainer className='splide__slide is-visible' key={item}>
+                {item?.map((schedule, index) => {
+                  console.log('hasended', schedule.hasEnded);
+                  return (
+                    <ScheduleCardContainer
+                      key={index}
+                      background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
+                      style={{ cursor: schedule.hasEnded ? 'not-allowed' : 'pointer' }}
+                      onClick={() => {
+                        if (!schedule.hasEnded) {
+                          openLink(schedule?.link);
+                        }
+                      }}
+                    >
+                      <ImageContainer>
+                        <Image
+                          src={schedule?.image}
+                          height="28px"
+                          width="28px"
+                        />
+                      </ImageContainer>
+                      <ScheduleData>
+                        <PlaceContainer>
+                          <PlaceName color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}>{schedule?.place}</PlaceName>
+                          {!schedule.hasEnded && <Arrow />}
+                        </PlaceContainer>
+                        <DateContainer color={schedule.hasEnded ? '#494968' : '#fff'} onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
+                      </ScheduleData>
+                    </ScheduleCardContainer>
+                  );
+                })}
 
-                </SplideContainer>
-              );
-            })}
-          </SplideTrack>
+              </SplideContainer>
+            );
+          })}
 
 
-          <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
-            <ActionContainer className="splide__arrows">
-              <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
-                <Icon src={Left} />
-              </Button>
-              <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
-                <Icon src={Right} />
-              </Button>
-            </ActionContainer>
+        </SplideTrack>
 
-          </div>
-        </Splide>
 
-      </SchedulesWrapper>
+
+        <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
+          <ActionContainer className="splide__arrows">
+            <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
+              <Icon src={Left} />
+            </Button>
+            <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
+              <Icon src={Right} />
+            </Button>
+          </ActionContainer>
+
+        </div>
+      </Splide>
+
+
 
     </Container >
   );
@@ -168,8 +182,15 @@ const SchedulesWrapper = styled.div`
 `;
 
 const SplideContainer = styled.div`
-  width: auto !important;
-  margin: 0px !important;
+  // width: auto !important;
+  // margin: 0px !important;
+ 
+
+  @media (max-width: 480px){
+    // margin-right:15px !important;
+    // margin-left:15px !important;
+  }
+
 `;
 
 
@@ -195,13 +216,16 @@ const ScheduleCardContainer = styled.div`
   height: 344px;
   background: ${(props) => props.background};
   display: flex;
-  margin-top:20px;
+  margin-top:1.5em;
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
-  margin-right: 21px;
+  // margin-right: 10px;
+  // margin-left: 10px;
   @media (max-width: 480px) {
     width: 100%;
+    // max-width:334px;
+    margin-left: 0px;
     // width: 359px;
   }
 `;
@@ -252,12 +276,14 @@ const PlaceName = styled(SpanV2)`
   font-family: Green Brooks;
   font-size: 42px;
   font-weight: 400;
-  color: #b0ffc3;
+  // color: #b0ffc3;
+  color: ${(props) => props.color};
 `;
 
 const DateContainer = styled(SpanV2)`
   height: 32px;
-  color: #fff;
+  // color: #fff;
+  color: ${(props) => props.color};
   font-family: Glancyr;
   font-size: 20px;
   font-weight: 550;
@@ -284,16 +310,18 @@ const ActionContainer = styled.div`
   justify-content: flex-start;
   column-gap: 13px;
   margin-top: 29px;
-  margin-left: 12px;
+  margin-left: 5.5rem;
   width: 1280px;
   @media ${device.laptop} {
     width: 90%;
   }
 
   @media ${device.mobileL} {
-    width: 95%;
-    margin-left: 12px;
-    margin-top: 37px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px;
   }
 `;
 
