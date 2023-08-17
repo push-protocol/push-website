@@ -87,7 +87,7 @@ const PartnersContainer = styled.div`
   @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }
-  @media (min-width:1200px){
+  @media (min-width:1400px){
     margin-top:110px;
   }
 `;
