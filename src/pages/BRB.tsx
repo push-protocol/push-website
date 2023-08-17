@@ -122,8 +122,6 @@ function BRB() {
     }, 1000);
   };
 
-  console.log('refs', partnersRef, scheduleRef, supportRef);
-
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
