@@ -82,7 +82,7 @@ function BRBParallax() {
             {Stats.map((item, i) => (
               <FlexItem key={i}>
                 <Span
-                  size={isMobile ? '45px' : '80px'}
+                  size={isMobile ? '45px' : '65px'}
                   family="Glancyr !important"
                   textAlign="center"
                   weight="600"
@@ -92,7 +92,7 @@ function BRBParallax() {
                 </Span>
 
                 <Span
-                  size={isMobile ? '10px' : '18px'}
+                  size={isMobile ? '10px' : '14px'}
                   family="Glancyr !important"
                   color="#fff"
                   textAlign="center"
@@ -171,15 +171,14 @@ const ParallaxFlex = styled.div`
     top: 54%;
 
     @media(min-width:1550px){
-      top:58%;
-      gap:60px;
+      top: 58%;
+      gap: 60px;
     }
 
     @media ${device.mobileL} {
         flex-direction: column;
         margin-top: 21px;
-        // column-gap: 20px;
-        top:55%;
+        top: 55%;
     }
 `;
 
@@ -188,7 +187,7 @@ const FlexItem = styled.div`
    flex-direction: column;
    justify-content: center;
    min-width: 89px;
-   max-width: 264px;
+   max-width: 204px;
    @media ${device.mobileL} {
     margin: 10px 0;
 }
