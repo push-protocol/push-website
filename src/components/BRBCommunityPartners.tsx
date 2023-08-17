@@ -74,10 +74,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0px 0px 74px;
+  @media (max-width:480px){
+    margin:0px 0px 107px;
+  }
 `;
 
 const CommunityContainer = styled(ItemH)`
-  margin: 0px 0px 74px;
   width: 100vw;
   height: 151px;
 `;

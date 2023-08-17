@@ -97,11 +97,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
           <SplideTrack>
             {citiesList.map((item) => {
-              console.log('Index', item);
               return (
                 <SplideContainer className='splide__slide is-visible' key={item}>
                   {item?.map((schedule, index) => {
-                    console.log('hasended', schedule.hasEnded);
                     return (
                       <ScheduleCardContainer
                         key={index}
@@ -157,7 +155,6 @@ const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction:column;
-  margin-top: 50px;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
@@ -187,9 +184,9 @@ const Header = styled.span`
   font-weight: 400;
   font-family: Glancyr;
   color: #fff;
-  margin: 0px 0px 60px;
+  margin: 0px 0px 37px;
   @media (max-width: 480px) {
-    margin: 0px 0px 49px;
+    margin: 0px 0px 27px;
   }
 `;
 
@@ -287,7 +284,7 @@ const ActionContainer = styled.div`
   justify-content: flex-start;
   column-gap: 13px;
   margin-top: 29px;
-  margin-left: 4rem;
+  margin-left: 12px;
   width: 1280px;
   @media ${device.laptop} {
     width: 90%;
@@ -295,6 +292,8 @@ const ActionContainer = styled.div`
 
   @media ${device.mobileL} {
     width: 95%;
+    margin-left: 12px;
+    margin-top: 37px;
   }
 `;
 
