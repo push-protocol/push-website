@@ -170,8 +170,9 @@ const ParallaxFlex = styled.div`
     position:absolute;
     top: 54%;
 
-    @media(min-width:1400px){
+    @media(min-width:1550px){
       top:58%;
+      gap:60px;
     }
 
     @media ${device.mobileL} {
