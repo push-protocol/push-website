@@ -85,7 +85,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
         <Splide
           options={{
             width: '100vw',
-            type: 'loop',
+            type: 'slide',
             gap: '100px',
             perPage: 4,
             padding: { left: 10, right: 20 },
@@ -106,6 +106,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                       <ScheduleCardContainer
                         key={index}
                         background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => openLink(schedule?.link)}
                       >
                         <ImageContainer>
                           <Image
@@ -118,8 +120,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           <PlaceContainer>
                             <PlaceName>{schedule?.place}</PlaceName>
                             <Arrow
-                              style={{ cursor: 'pointer' }}
-                              onClick={() => openLink(schedule?.link)}
                             />
                           </PlaceContainer>
                           <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
@@ -172,7 +172,7 @@ const SchedulesWrapper = styled.div`
 
 const SplideContainer = styled.div`
   width: auto !important;
-  margin:0px !important;
+  margin: 0px !important;
 `;
 
 
@@ -204,7 +204,8 @@ const ScheduleCardContainer = styled.div`
   border-radius: 25px;
   margin-right: 21px;
   @media (max-width: 480px) {
-    width: 359px;
+    width: 100%;
+    // width: 359px;
   }
 `;
 

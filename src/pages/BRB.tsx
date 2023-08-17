@@ -142,7 +142,13 @@ function BRB() {
                   {/* <LinkTo to='/' aria-label='Push'> */}
                   <PushLogo style={{margin:'0px 9px 0px 14px'}}/>
                   {/* </LinkTo> */}
+                  <Span 
+                    size="24px"
+                    weight="700"
+                    lineHeight="24px"
+                    family="Glancyr !important">
                   #BRB
+                  </Span>
                 </PushLogoBlackContainer>
 
                 <MobileMenuToggleIcon>
@@ -311,7 +317,7 @@ function BRB() {
           </FooterItem>
 
           <FooterCol>
-            <FooterBar>
+            <FooterBar style={{cursor:'pointer'}} onClick={()=>openLink('https://discord.gg/pushprotocol')}>
               <i>
                 <Discord />
               </i>
@@ -325,10 +331,10 @@ function BRB() {
                 24x7 Support on Discord
               </Span>
 
-              <ArrowIcon style={{cursor:'pointer'}} onClick={()=>openLink('https://discord.gg/pushprotocol')}/>
+              <ArrowIcon/>
             </FooterBar>
 
-            <FooterBar>
+            <FooterBar style={{cursor:'pointer'}} onClick={()=>openLink('https://twitter.com/pushprotocol')}>
               <i>
                 <X className="discord" />
               </i>
@@ -342,7 +348,7 @@ function BRB() {
                 Updates & Announcements
               </Span>
 
-              <ArrowIcon style={{cursor:'pointer'}} onClick={()=>openLink('https://twitter.com/pushprotocol')}/>
+              <ArrowIcon />
             </FooterBar>
           </FooterCol>
         </ItemFooter>
@@ -426,7 +432,8 @@ const BrbWrapper = styled.main`
 const NavList = styled.div`
   position: relative;
   width: 1243px;
-  height: 78px;
+  height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
+  max-height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -436,15 +443,16 @@ const NavList = styled.div`
   border: 1px solid #2a2a39;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
-  padding: 14px 23px;
+  padding: 0px 23px;
   margin-top: 51px;
 
   @media ${device.laptop} {
     flex-direction: column;
-    width: calc(100%);
+    width: 100%;
     padding: 14px 10px 14px 20px;
     margin: 10px 10px;
     box-sizing: border-box;
+    align-items: center;
     border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
   }
 `;
