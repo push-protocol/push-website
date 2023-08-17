@@ -26,10 +26,7 @@ import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
-  const isMobile = useMediaQuery(device.mobileL);
-
-  console.log('IsMobile??????:', isMobile);
-
+  const isMobile = useMediaQuery('(max-width: 600px)');
 
   const [direction, setDirection] = useState('right');
 
@@ -85,73 +82,72 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
       <ItemH>
         <Header>Schedule</Header>
       </ItemH>
-      <SchedulesWrapper>
-        <Splide
-          options={{
-            width: '100vw',
-            type: 'slide',
-            gap: '100px',
-            perPage: 1,
-            // padding: { left: 10, right: 20 },
-            perMove: 1,
-            pagination: false,
+      <Splide
+        style={{ margin: 'auto' }}
+        options={{
+          width: isMobile ? '86vw' : '100vw',
+          type: 'slide',
+          gap: '100px',
+          perPage: 1,
+          // padding: { left: 20, right: 20 },
+          perMove: 1,
+          pagination: false,
 
-          }}
-          hasTrack={false} aria-label="...">
+        }}
+        hasTrack={false} aria-label="...">
 
-          <SplideTrack>
-            {citiesList.map((item) => {
-              console.log('Index', item);
-              return (
-                <SplideContainer className='splide__slide is-visible' key={item}>
-                  {item?.map((schedule, index) => {
-                    console.log('hasended', schedule.hasEnded);
-                    return (
-                      <ScheduleCardContainer
-                        key={index}
-                        background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => openLink(schedule?.link)}
-                      >
-                        <ImageContainer>
-                          <Image
-                            src={schedule?.image}
-                            height="28px"
-                            width="28px"
+        <SplideTrack>
+          {citiesList.map((item) => {
+            console.log('Index', item);
+            return (
+              <SplideContainer className='splide__slide is-visible' key={item}>
+                {item?.map((schedule, index) => {
+                  console.log('hasended', schedule.hasEnded);
+                  return (
+                    <ScheduleCardContainer
+                      key={index}
+                      background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => openLink(schedule?.link)}
+                    >
+                      <ImageContainer>
+                        <Image
+                          src={schedule?.image}
+                          height="28px"
+                          width="28px"
+                        />
+                      </ImageContainer>
+                      <ScheduleData>
+                        <PlaceContainer>
+                          <PlaceName>{schedule?.place}</PlaceName>
+                          <Arrow
                           />
-                        </ImageContainer>
-                        <ScheduleData>
-                          <PlaceContainer>
-                            <PlaceName>{schedule?.place}</PlaceName>
-                            <Arrow
-                            />
-                          </PlaceContainer>
-                          <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
-                        </ScheduleData>
-                      </ScheduleCardContainer>
-                    );
-                  })}
+                        </PlaceContainer>
+                        <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
+                      </ScheduleData>
+                    </ScheduleCardContainer>
+                  );
+                })}
 
-                </SplideContainer>
-              );
-            })}
-          </SplideTrack>
+              </SplideContainer>
+            );
+          })}
+        </SplideTrack>
 
 
-          <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
-            <ActionContainer className="splide__arrows">
-              <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
-                <Icon src={Left} />
-              </Button>
-              <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
-                <Icon src={Right} />
-              </Button>
-            </ActionContainer>
+        <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
+          <ActionContainer className="splide__arrows">
+            <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
+              <Icon src={Left} />
+            </Button>
+            <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
+              <Icon src={Right} />
+            </Button>
+          </ActionContainer>
 
-          </div>
-        </Splide>
+        </div>
+      </Splide>
 
-      </SchedulesWrapper>
 
     </Container >
   );
@@ -180,8 +176,8 @@ const SplideContainer = styled.div`
  
 
   @media (max-width: 480px){
-    margin-right:20px !important;
-    margin-left:10px !important;
+    margin-right:15px !important;
+    margin-left:15px !important;
   }
 
 `;
@@ -213,9 +209,12 @@ const ScheduleCardContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
-  margin-right: 21px;
+  margin-right: 10px;
+  margin-left: 10px;
   @media (max-width: 480px) {
     width: 100%;
+    // max-width:334px;
+    margin-left: 0px;
     // width: 359px;
   }
 `;
