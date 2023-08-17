@@ -21,12 +21,13 @@ import moment from 'moment';
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
+
 import { citiesList } from 'helpers/ScheduleLists';
 import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const [marqueeDirection, setMarqueeDirection] = useState('left');
-  const isMobile = useMediaQuery('(max-width: 600px)');
+  const isMobile = useMediaQuery('(max-width: 480px)');
 
   const [direction, setDirection] = useState('right');
 
@@ -89,9 +90,13 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           type: 'slide',
           gap: '100px',
           perPage: 1,
-          // padding: { left: 20, right: 20 },
+          padding: { left: isMobile ? 0 : 80, right: isMobile ? 0 : 80 },
           perMove: 1,
           pagination: false,
+          omitEnd: true,
+          slideFocus: true,
+          gap: isMobile ? '2em' : '1.5em',
+          fixedWidth: isMobile ? '344px' : '413px'
 
         }}
         hasTrack={false} aria-label="...">
@@ -107,8 +112,12 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                     <ScheduleCardContainer
                       key={index}
                       background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => openLink(schedule?.link)}
+                      style={{ cursor: schedule.hasEnded ? 'not-allowed' : 'pointer' }}
+                      onClick={() => {
+                        if (!schedule.hasEnded) {
+                          openLink(schedule?.link);
+                        }
+                      }}
                     >
                       <ImageContainer>
                         <Image
@@ -119,11 +128,10 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                       </ImageContainer>
                       <ScheduleData>
                         <PlaceContainer>
-                          <PlaceName>{schedule?.place}</PlaceName>
-                          <Arrow
-                          />
+                          <PlaceName color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}>{schedule?.place}</PlaceName>
+                          {!schedule.hasEnded && <Arrow />}
                         </PlaceContainer>
-                        <DateContainer onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
+                        <DateContainer color={schedule.hasEnded ? '#494968' : '#fff'} onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
                       </ScheduleData>
                     </ScheduleCardContainer>
                   );
@@ -132,7 +140,10 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
               </SplideContainer>
             );
           })}
+
+
         </SplideTrack>
+
 
 
         <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
@@ -171,13 +182,13 @@ const SchedulesWrapper = styled.div`
 `;
 
 const SplideContainer = styled.div`
-  width: auto !important;
-  margin: 0px !important;
+  // width: auto !important;
+  // margin: 0px !important;
  
 
   @media (max-width: 480px){
-    margin-right:15px !important;
-    margin-left:15px !important;
+    // margin-right:15px !important;
+    // margin-left:15px !important;
   }
 
 `;
@@ -205,12 +216,12 @@ const ScheduleCardContainer = styled.div`
   height: 344px;
   background: ${(props) => props.background};
   display: flex;
-  margin-top:20px;
+  margin-top:1.5em;
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
-  margin-right: 10px;
-  margin-left: 10px;
+  // margin-right: 10px;
+  // margin-left: 10px;
   @media (max-width: 480px) {
     width: 100%;
     // max-width:334px;
@@ -265,12 +276,14 @@ const PlaceName = styled(SpanV2)`
   font-family: Green Brooks;
   font-size: 42px;
   font-weight: 400;
-  color: #b0ffc3;
+  // color: #b0ffc3;
+  color: ${(props) => props.color};
 `;
 
 const DateContainer = styled(SpanV2)`
   height: 32px;
-  color: #fff;
+  // color: #fff;
+  color: ${(props) => props.color};
   font-family: Glancyr;
   font-size: 20px;
   font-weight: 550;
@@ -297,14 +310,18 @@ const ActionContainer = styled.div`
   justify-content: flex-start;
   column-gap: 13px;
   margin-top: 29px;
-  margin-left: 4rem;
+  margin-left: 5.5rem;
   width: 1280px;
   @media ${device.laptop} {
     width: 90%;
   }
 
   @media ${device.mobileL} {
-    width: 95%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px;
   }
 `;
 

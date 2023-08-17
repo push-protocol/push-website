@@ -8,7 +8,7 @@ export const citiesList = [
     [{
         image: Agra,
         place: 'Dehradun',
-        date: '31 AUG 2023',
+        date: '31 AUG 2022',
         link: 'https://push.org',
         backgroundColor: '#194395',
         hasEnded: false,
