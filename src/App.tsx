@@ -48,13 +48,13 @@ function App() {
   //   ReactGA.pageview('/entry');
   // }, []);
 
-  // const Wrapper = ({ children }) => {
+  const Wrapper = ({ children }) => {
 
-  //   useLayoutEffect(() => {
-  //     document.documentElement.scrollTo(0, 0);
-  //   }, [location.pathname]);
-  //   return children;
-  // };
+    useLayoutEffect(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children;
+  };
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
@@ -103,7 +103,7 @@ function App() {
 
   return (
   <section>
-    <div style={{position: 'fixed', background: 'white', width:'700px', top: '0', right: '0', zIndex:'999999'}}>
+    <ConnectWrapper>
 
     <ConnectButton />
 
@@ -119,7 +119,7 @@ function App() {
       onChange={onChangeEnv}
     />
 
-    </div>
+    </ConnectWrapper>
 
 
    <EnvContext.Provider value={{ env, isCAIP }}>
@@ -128,8 +128,8 @@ function App() {
               <AccountContext.Provider value={{ pgpPrivateKey }}>
                 <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
-                  {/* <Wrapper id="wrapper"> */}
-                      {/* <AppWrapper id="content"> */}
+                  <Wrapper id="wrapper">
+                      <AppWrapper id="content">
 
                         {location.pathname !== '/brb' && <Header />}
                         <Routes>
@@ -179,8 +179,8 @@ function App() {
 
                         {location.pathname !== '/brb' && <Footer />}
                         
-                      {/* </AppWrapper> */}
-                    {/* </Wrapper> */}
+                      </AppWrapper>
+                    </Wrapper>
                   </Suspense>
                   </ChatUIProvider>
               </AccountContext.Provider>
@@ -196,6 +196,21 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+`;
+
+const ConnectWrapper = styled.div`
+    position: fixed; 
+    background: black;
+    min-width: 600px;
+    bottom: 20px;
+    left: 20px; 
+    z-index: 999999;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #000;
+    padding: 4px 7px;
 `;
 
 export default App;

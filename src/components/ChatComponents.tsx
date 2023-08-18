@@ -15,9 +15,6 @@ const ChatComponent = ({ chatId }: {chatId: string}) => {
   if((account || library) && chatId !== ''){
     return (
       <Fragment>
-       
-
-
         <ChatViewComponentCard>
           <ChatViewComponent chatId={chatId} />
         </ChatViewComponentCard>

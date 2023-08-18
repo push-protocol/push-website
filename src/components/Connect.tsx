@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { useWeb3React } from '@web3-react/core';
+import { Span } from './SharedStyling';
 
 interface NwMappingType {
   [key: number]: string;
@@ -32,7 +33,8 @@ const injected = new InjectedConnector({
 const ConnectWrapper = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+
 
   & .account {
     font-size: 1.2rem;
@@ -66,6 +68,11 @@ const Connect = styled(StyledButton)`
 const Disconnect = styled(StyledButton)`
   color: rgb(255, 255, 255);
   background: rgb(226, 8, 128);
+`;
+
+const AccountSpan = styled(Span)`
+  background: linear-gradient(87.17deg, #B6A0F5 0%, #F46EF7 57.29%, #FF95D5 100%);
+  border-radius: 16px;
 `;
 
 const ConnectButton = () => {
@@ -107,12 +114,11 @@ const ConnectButton = () => {
     <ConnectWrapper>
       {active ? (
         <>
-          <p>
-            Connected with <span className="account">{account}</span>
-          </p>
-          {chainId ? (
-            <p className="network">{NETWORK_MAPPING[chainId]}</p>
-          ) : null}
+          <AccountSpan
+          padding='10px'
+          >
+            {account}
+          </AccountSpan>
           <Disconnect onClick={disconnect}>Disconnect Metamask</Disconnect>
         </>
       ) : (

@@ -21,7 +21,7 @@ const Dropdown = ({
     onChange: (arg0: any) => void 
 }) => {
   return (
-    <label style={{ display: 'flex', gap: 8, ...style }}>
+    <label style={{ display: 'flex', gap: 8, margin:'0 0 0 auto', alignItems:'center',...style }}>
       {label}
       <select value={value} onChange={onChange} style={{ width: width }}>
         {options.map((option) => (
