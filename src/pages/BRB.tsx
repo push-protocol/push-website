@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
@@ -26,6 +26,14 @@ import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { kill } from 'process';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -86,10 +94,7 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const partnersRef = useRef(null);
-  const scheduleRef = useRef(null);
-  const playgroundRef = useRef(null);
-  const supportRef = useRef(null);
+  const plugins = [ScrollToPlugin];
 
   const { t, i18n } = useTranslation();
 
@@ -113,13 +118,55 @@ function BRB() {
     // }
   };
 
-  const handleSectionNavigation = (ref) => {
-    window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
+  const EnableScroll = () => {
+    ScrollTrigger.enable();
+  };
+
+  const handleSectionNavigation = (id) => {
+    console.log(id);
+    ScrollTrigger.disable();
+
+    gsap.to(window, {
+      duration: 0.3,
+      scrollTo: { y: `#${id}`}
+    });
+
+    setTimeout(() => {
+      EnableScroll();
+    }, 1000);
+
   };
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
+
+  
+
+  const elem0 = useRef(null);
+  const newRef = useRef(null);
+
+  const newTl =  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#new',
+      start: 'top top',
+      end:'+=100',
+      scrub: true,
+      pinSpacing: true,
+    }
+  });
+
+  useEffect(() => {
+    newTl.to(elems, {
+      opacity: 0,
+    });
+
+    newTl.to(elems0, {
+      opacity: 0,
+    });
+
+  },[]);
+
 
   return (
     <PageWrapper
@@ -184,7 +231,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(partnersRef)}
+                        onClick={() => handleSectionNavigation('partners')}
                       >
                         Partners
                       </Span>
@@ -197,7 +244,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(scheduleRef)}
+                        onClick={() => handleSectionNavigation('schedule')}
                       >
                         Schedule
                       </Span>
@@ -210,7 +257,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(playgroundRef)}
+                        onClick={() => handleSectionNavigation('playground')}
                       >
                         Playground
                       </Span>
@@ -223,7 +270,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(supportRef)}
+                        onClick={() => handleSectionNavigation('support')}
                       >
                         Support
                       </Span>
@@ -260,7 +307,7 @@ function BRB() {
         </StyledHeader>
 
         <ItemTop>
-          <ItemVV2>
+          <ItemVV2 id='new'>
             <MemberImage
               className="pushMissingSvg"
               src={isMobile ? MobileBRB : ImageBRB}
@@ -268,19 +315,19 @@ function BRB() {
             />
           </ItemVV2>
 
-          <NavText>
+          <NavText id='elems0'>
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
             one big problem, with a chance to win $100,000 USD in prizes!
           </NavText>
 
-          <NavButtons>
+          <NavButtons id='elems' ref={elem0}>
             <ButtonItem
               borderRadius="24px"
               background="#E64DE9"
               border="1px solid #FC6DFF"
               fontFamily="Glancyr !important"
               padding="16px 32px"
-              onClick={() => handleSectionNavigation(scheduleRef)}
+              onClick={() => handleSectionNavigation('schedule')}
             >
               Register Now
             </ButtonItem>
@@ -290,6 +337,7 @@ function BRB() {
               border="1px solid #E64DE9"
               fontFamily="Glancyr !important"
               padding="16px 32px"
+              onClick={() => handleSectionNavigation('playground')}
             >
               Join the conversation
             </ButtonBar>
@@ -298,13 +346,17 @@ function BRB() {
 
         <BRBParallax />
 
-        <Partners sectionRef={partnersRef} />
+        <div id='partners' style={{width: '100%'}}>
+          <Partners  />
+        </div>
 
         <CommunityPartners />
 
-        <Schedules sectionRef={scheduleRef} />
+        <div id='schedule'>
+          <Schedules />
+        </div>
 
-        <ItemFooter ref={supportRef}>
+        <ItemFooter id='support' >
           <FooterItem>
             <SpanContent
               family="Glancyr"
