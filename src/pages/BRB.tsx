@@ -18,7 +18,7 @@ import Schedules from 'components/Schedules';
 import { Anchor, LinkTo, Span } from 'components/SharedStyling';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { ButtonV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
+import { ButtonV2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
 import GLOBALS, { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { useTranslation } from 'react-i18next';
@@ -145,13 +145,13 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo style={{ margin: '0px 9px 0px 14px' }} />
+                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
                   {/* </LinkTo> */}
                   <Span
                     size="24px"
                     weight="700"
-                    lineHeight="24px"
                     family="Glancyr !important"
+                    style={{ maxHeight: '24px' }}
                   >
                     #BRB
                   </Span>
@@ -174,7 +174,10 @@ function BRB() {
                 </MobileMenuToggleIcon>
               </MenuTop>
 
-              <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
+              <HeaderNavItemV
+                showMobileMenu={isMobileMenuOpen}
+                margin
+              >
                 <NavigationMenu
                   role="menu"
                   className="navigationMenu"
@@ -185,7 +188,6 @@ function BRB() {
                       <Span
                         size="18px"
                         weight="200"
-                        lineHeight="142%"
                         family="Glancyr !important"
                         onClick={() => handleSectionNavigation(partnersRef)}
                       >
@@ -199,7 +201,6 @@ function BRB() {
                       <Span
                         size="18px"
                         weight="200"
-                        lineHeight="142%"
                         family="Glancyr !important"
                         onClick={() => handleSectionNavigation(scheduleRef)}
                       >
@@ -213,7 +214,6 @@ function BRB() {
                       <Span
                         size="18px"
                         weight="200"
-                        lineHeight="142%"
                         family="Glancyr !important"
                         onClick={() => handleSectionNavigation(playgroundRef)}
                       >
@@ -227,7 +227,6 @@ function BRB() {
                       <Span
                         size="18px"
                         weight="200"
-                        lineHeight="142%"
                         family="Glancyr !important"
                         onClick={() => handleSectionNavigation(supportRef)}
                       >
@@ -622,7 +621,7 @@ const MobileMenuToggleIcon = styled.span`
 `;
 
 const HeaderNavItemV = styled(ItemVV2)`
-  margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+  margin: 0px ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
     margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 20px' : '0')};
