@@ -10,7 +10,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GLOBALS, { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { Span } from 'components/SharedStyling';
-import { GiHidden, GiVhs } from 'react-icons/gi';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +22,7 @@ function BRBParallax() {
   ScrollTrigger.defaults({
     // Defaults are used by all ScrollTriggers
     // toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
-    markers: true, // Easaly remove markers for production.
+    markers: false, // Easaly remove markers for production.
         
   });
       

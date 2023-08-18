@@ -28,9 +28,12 @@ import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { kill } from 'process';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -91,10 +94,7 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const partnersRef = useRef(null);
-  const scheduleRef = useRef(null);
-  const playgroundRef = useRef(null);
-  const supportRef = useRef(null);
+  const plugins = [ScrollToPlugin];
 
   const { t, i18n } = useTranslation();
 
@@ -118,8 +118,23 @@ function BRB() {
     // }
   };
 
-  const handleSectionNavigation = (ref) => {
-    window.scrollTo({ top: ref?.current?.offsetTop, behavior: 'smooth' });
+  const EnableScroll = () => {
+    ScrollTrigger.enable();
+  };
+
+  const handleSectionNavigation = (id) => {
+    console.log(id);
+    ScrollTrigger.disable();
+
+    gsap.to(window, {
+      duration: 0.3,
+      scrollTo: { y: `#${id}`}
+    });
+
+    setTimeout(() => {
+      EnableScroll();
+    }, 1000);
+
   };
 
   const openLink = (link: string) => {
@@ -216,7 +231,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(partnersRef)}
+                        onClick={() => handleSectionNavigation('partners')}
                       >
                         Partners
                       </Span>
@@ -229,7 +244,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(scheduleRef)}
+                        onClick={() => handleSectionNavigation('schedule')}
                       >
                         Schedule
                       </Span>
@@ -242,7 +257,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(playgroundRef)}
+                        onClick={() => handleSectionNavigation('playground')}
                       >
                         Playground
                       </Span>
@@ -255,7 +270,7 @@ function BRB() {
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation(supportRef)}
+                        onClick={() => handleSectionNavigation('support')}
                       >
                         Support
                       </Span>
@@ -312,7 +327,7 @@ function BRB() {
               border="1px solid #FC6DFF"
               fontFamily="Glancyr !important"
               padding="16px 32px"
-              onClick={() => handleSectionNavigation(scheduleRef)}
+              onClick={() => handleSectionNavigation('schedule')}
             >
               Register Now
             </ButtonItem>
@@ -322,6 +337,7 @@ function BRB() {
               border="1px solid #E64DE9"
               fontFamily="Glancyr !important"
               padding="16px 32px"
+              onClick={() => handleSectionNavigation('playground')}
             >
               Join the conversation
             </ButtonBar>
@@ -330,13 +346,17 @@ function BRB() {
 
         <BRBParallax />
 
-        <Partners sectionRef={partnersRef} />
+        <div id='partners' style={{width: '100%'}}>
+          <Partners  />
+        </div>
 
         <CommunityPartners />
 
-        <Schedules sectionRef={scheduleRef} />
+        <div id='schedule'>
+          <Schedules />
+        </div>
 
-        <ItemFooter ref={supportRef}>
+        <ItemFooter id='support' >
           <FooterItem>
             <SpanContent
               family="Glancyr"
