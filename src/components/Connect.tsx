@@ -33,7 +33,6 @@ const ConnectWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 20;
 
   & .account {
     font-size: 1.2rem;

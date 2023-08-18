@@ -4,6 +4,7 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
+    "@babel/runtime": "^7.22.10",
     "@ethersproject/providers": "^5.7.2",
     "@pushprotocol/ledgerlive": "latest",
     "@pushprotocol/restapi": "0.0.1-alpha.31",
@@ -103,6 +104,7 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "babel-preset-react-app": "^10.0.1",
     "buffer": "^6.0.3",
     "eslint": "^8.23.1",
     "eslint-plugin-prettier": "^4.2.1",

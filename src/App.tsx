@@ -103,7 +103,7 @@ function App() {
 
   return (
   <section>
-    <div style={{position: 'fixed', background: 'gray', width:'600px', top: '0', right: '0', zIndex:'999999'}}>
+    <div style={{position: 'fixed', background: 'white', width:'700px', top: '0', right: '0', zIndex:'999999'}}>
 
     <ConnectButton />
 
