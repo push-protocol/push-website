@@ -45,11 +45,8 @@ export const ChatComponent = () => {
         </ButtonItem>
       </BottomBar>
       {showFaucet && (
-        <Modal open={showFaucet}>
-          <TokenFaucet
-            handleFaucet={setShowFaucet}
-            open={showFaucet}
-          />
+        <Modal>
+          <TokenFaucet handleFaucet={setShowFaucet} />
         </Modal>
       )}
     </Container>
