@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
@@ -26,6 +26,11 @@ import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -120,6 +125,33 @@ function BRB() {
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
+
+  
+
+  const elem0 = useRef(null);
+  const newRef = useRef(null);
+
+  const newTl =  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#new',
+      start: 'top top',
+      end:'+=100',
+      scrub: true,
+      pinSpacing: true,
+    }
+  });
+
+  useEffect(() => {
+    newTl.to(elems, {
+      opacity: 0,
+    });
+
+    newTl.to(elems0, {
+      opacity: 0,
+    });
+
+  },[]);
+
 
   return (
     <PageWrapper
@@ -260,7 +292,7 @@ function BRB() {
         </StyledHeader>
 
         <ItemTop>
-          <ItemVV2>
+          <ItemVV2 id='new'>
             <MemberImage
               className="pushMissingSvg"
               src={isMobile ? MobileBRB : ImageBRB}
@@ -268,12 +300,12 @@ function BRB() {
             />
           </ItemVV2>
 
-          <NavText>
+          <NavText id='elems0'>
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
             one big problem, with a chance to win $100,000 USD in prizes!
           </NavText>
 
-          <NavButtons>
+          <NavButtons id='elems' ref={elem0}>
             <ButtonItem
               borderRadius="24px"
               background="#E64DE9"

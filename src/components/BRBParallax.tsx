@@ -4,13 +4,13 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import styled from 'styled-components';
-import ParallaxBRB from '../assets/Parallax.png';
-import SecondParallaxBRB from '../assets/ParallaxBg2.png';
+import ParallaxBRB from '../assets/Grouped.svg';
 import ImageHolder from './ImageHolder';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GLOBALS, { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { Span } from 'components/SharedStyling';
+import { GiHidden, GiVhs } from 'react-icons/gi';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -23,17 +23,19 @@ function BRBParallax() {
   ScrollTrigger.defaults({
     // Defaults are used by all ScrollTriggers
     // toggleActions: 'restart pause resume pause', // Scoll effect Forward, Leave, Back, Back Leave
-    markers: false, // Easaly remove markers for production.
+    markers: true, // Easaly remove markers for production.
         
   });
       
   const timelineHeader = gsap.timeline({
+    defaults: {ease: 'none'},
     scrollTrigger: {
       id: 'ZOOM', // Custom label to the marker
+      animation: 'parallax', // Custom label to the marker
       trigger: '#home', // What element triggers the scroll
-      scrub: true, // Add a small delay of scrolling and animation. `true` is direct
+      scrub: 0.95, // Add a small delay of scrolling and animation. `true` is direct
       start: 'top top', // Start at top of Trigger and at the top of the viewport
-      end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
+      end: '+=100', // The element is 500px hight and end 50px from the top of the viewport
       //   end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
       pin: true // Pin the element true or false
     } });
@@ -43,11 +45,21 @@ function BRBParallax() {
       to('.firstBackground', {
         scale: 1.7 },
       'sameTime');
-          
+
+
     ScrollTrigger.create({
       snap: 0
     });
   }, [isMobile]);
+
+  // useEffect(()=>{
+  //   gsap.set('.firstBackground', {yPercent: 0});
+  //   gsap.to('.firstBackground', {scale: 1.7, scrollTrigger: {
+  //     trigger: '#home',
+  //     pin: '#home',
+  //     scrub: true
+  //   }});
+  // },[]);
 
   const Stats = [
     {
