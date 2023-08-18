@@ -36,7 +36,6 @@ import { kill } from 'process';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
 
@@ -99,7 +98,6 @@ function BRB() {
 
   const plugins = [ScrollToPlugin];
 
-
   const { t, i18n } = useTranslation();
 
   const toggleMobileMenu = () => {
@@ -132,32 +130,29 @@ function BRB() {
 
     gsap.to(window, {
       duration: 0.3,
-      scrollTo: { y: `#${id}`}
+      scrollTo: { y: `#${id}` },
     });
 
     setTimeout(() => {
       EnableScroll();
     }, 1000);
-
   };
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
 
-  
-
   const elem0 = useRef(null);
   const newRef = useRef(null);
 
-  const newTl =  gsap.timeline({
+  const newTl = gsap.timeline({
     scrollTrigger: {
       trigger: '#new',
       start: 'top top',
-      end:'+=100',
+      end: '+=100',
       scrub: true,
       pinSpacing: true,
-    }
+    },
   });
 
   useEffect(() => {
@@ -168,9 +163,7 @@ function BRB() {
     newTl.to(elems0, {
       opacity: 0,
     });
-
-  },[]);
-
+  }, []);
 
   return (
     <PageWrapper
@@ -311,7 +304,7 @@ function BRB() {
         </StyledHeader>
 
         <ItemTop>
-          <ItemVV2 id='new'>
+          <ItemVV2 id="new">
             <MemberImage
               className="pushMissingSvg"
               src={isMobile ? MobileBRB : ImageBRB}
@@ -319,12 +312,15 @@ function BRB() {
             />
           </ItemVV2>
 
-          <NavText id='elems0'>
+          <NavText id="elems0">
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
             one big problem, with a chance to win $100,000 USD in prizes!
           </NavText>
 
-          <NavButtons id='elems' ref={elem0}>
+          <NavButtons
+            id="elems"
+            ref={elem0}
+          >
             <ButtonItem
               borderRadius="24px"
               background="#E64DE9"
@@ -350,17 +346,20 @@ function BRB() {
 
         <BRBParallax />
 
-        <div id='partners' style={{width: '100%'}}>
-          <Partners  />
+        <div
+          id="partners"
+          style={{ width: '100%' }}
+        >
+          <Partners />
         </div>
 
         <CommunityPartners />
 
-        <div id='schedule'>
+        <div id="schedule">
           <Schedules />
         </div>
-  <ChatComponent />
-        <ItemFooter id='support' >
+        <ChatComponent />
+        <ItemFooter id="support">
           <FooterItem>
             <SpanContent
               family="Glancyr"
