@@ -28,8 +28,11 @@ export const ChatComponent = () => {
         <Span
           fontSize="16px"
           color="#fff"
+          fontWeight="550"
         >
-          This is a togen gated group. You need 1 Push Token to be able to send message.
+          This is a togen gated group. You need{' '}
+          <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 Push Token</span> to be
+          able to send message.
         </Span>
         <ButtonItem
           background="#E64DE9"
@@ -113,6 +116,6 @@ const Header = styled.h3`
 
 const BrandHeader = styled.div`
   position: absolute;
-  right:0px;
-  bottom:-33px;
+  right: 0px;
+  bottom: -33px;
 `;
