@@ -59,7 +59,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             border="1px solid #25AAF5"
             fontFamily="Glancyr !important"
             padding="6.5px 8.5px"
-            onClick={() => openLink('')}
+            onClick={() => openLink('https://twitter.com/pushprotocol')}
           >
             <Icon
               src={isFollowed ? XCompleted : X}
@@ -89,7 +89,11 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             border="1px solid #25AAF5"
             fontFamily="Glancyr !important"
             padding="6.5px 8.5px"
-            onClick={() => openLink('')}
+            onClick={() =>
+              openLink(
+                'https://twitter.com/intent/tweet?text=Getting some $PUSH Tokens at Billion Reasons to Build %23brbindia faucet for my [0x123...45678] wallet'
+              )
+            }
           >
             <Icon
               src={isPosted ? XCompleted : X}
@@ -123,7 +127,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
           border="1px solid #3C63C6"
           fontFamily="Glancyr !important"
           padding="6.5px 8.5px"
-          onClick={() => openLink('')}
+          onClick={() => openLink('https://discord.com/invite/pushprotocol')}
         >
           <Icon
             src={isJoined ? DiscordCompleted : Discord}
