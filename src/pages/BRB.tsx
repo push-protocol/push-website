@@ -26,6 +26,7 @@ import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
+import { ChatComponent } from 'components/ChatComponent';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
@@ -86,6 +87,7 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+
   const partnersRef = useRef(null);
   const scheduleRef = useRef(null);
   const playgroundRef = useRef(null);
@@ -146,7 +148,7 @@ function BRB() {
                     size="24px"
                     weight="700"
                     family="Glancyr !important"
-                    style={{maxHeight:'24px'}}
+                    style={{ maxHeight: '24px' }}
                   >
                     #BRB
                   </Span>
@@ -303,6 +305,7 @@ function BRB() {
         <CommunityPartners />
 
         <Schedules sectionRef={scheduleRef} />
+        <ChatComponent />
 
         <ItemFooter ref={supportRef}>
           <FooterItem>
