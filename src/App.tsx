@@ -4,14 +4,33 @@
 /* eslint-disable */
 
 import React, { useLayoutEffect, useEffect, useState, Suspense } from 'react';
+import { useWeb3React } from '@web3-react/core';
+import {
+  Web3Context,
+  EnvContext,
+  SocketContext,
+  AccountContext,
+} from './context';
 import ReactGA from 'react-ga';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
+import { ENV } from './helpers/web3helper'
+import { useSDKSocket } from './hooks/useSDKSocket'
+import * as PushAPI from '@pushprotocol/restapi';
+import ConnectButton from './components/Connect';
 
 ReactGA.initialize('UA-165415629-2');
+
+interface Web3ReactState {
+  chainId?: number;
+  account?: string | null | undefined;
+  active: boolean;
+  error?: Error;
+  library?: unknown;
+}
 
 function App() {
   const FAQ = React.lazy(() => import('pages/FAQ'));
@@ -28,68 +47,149 @@ function App() {
   }, []);
 
   const Wrapper = ({ children }) => {
-    const location = useLocation();
+
     useLayoutEffect(() => {
       document.documentElement.scrollTo(0, 0);
     }, [location.pathname]);
     return children;
   };
 
-  return (
-    <Suspense fallback={<h1>Loading</h1>}>
-      <Wrapper id="wrapper">
-        <AppWrapper id="content">
-          {location.pathname !== '/brb' && <Header />}
-          <Routes>
-            {/* add all the route paths here */}
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            {/* <Route path="/about" element={<AboutUs />} /> */}
-            <Route
-              path="/faq"
-              element={<FAQ />}
-            />
-            <Route
-              path="/tos"
-              element={<TermsOfService />}
-            />
-            <Route
-              path="/privacy"
-              element={<Privacy />}
-            />
-            <Route
-              path="/privacymobile"
-              element={<PrivacyMobile />}
-            />
-            <Route
-              path="/notify"
-              element={<RedirectToPlatform />}
-            />
-            <Route
-              path="/frens"
-              element={<FrensOfPush />}
-            />
-            <Route 
-             path='/spaces'
-             element={<Spaces />}
-            />
-            <Route 
-             path='/cheatsheet'
-             element={<Cheat />}
-            />
-             <Route 
-             path='/brb'
-             element={<BRB />}
-            />
-          </Routes>
+  const { account, library, active, chainId } = useWeb3React();
+  const location = useLocation();
+  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
+  const [isCAIP, setIsCAIP] = useState(false);
 
-          {location.pathname !== '/brb' && <Footer />}
-          
-        </AppWrapper>
-      </Wrapper>
-    </Suspense>
+  const socketData = useSDKSocket({
+    account: account,
+    chainId: chainId,
+    env,
+    isCAIP,
+  });
+
+
+  const onChangeEnv = (e: any) => {
+    setEnv(e.target.value);
+  };
+
+  // const onChangeCAIP = () => {
+  //   setIsCAIP(!isCAIP);
+  // };
+
+  
+  useEffect(() => {
+    (async () => {
+      if (!account || !env || !library) return;
+
+      const user = await PushAPI.user.get({ account: account, env });
+      let pgpPrivateKey;
+      const librarySigner = await library.getSigner(account);
+      if (user?.encryptedPrivateKey) {
+        pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
+          encryptedPGPPrivateKey: user.encryptedPrivateKey,
+          account: account,
+          signer: librarySigner,
+          env,
+        });
+      }
+
+      setPgpPrivateKey(pgpPrivateKey);
+    })();
+  }, [account, env, library]);
+
+  
+
+  return (
+  <section>
+    <div style={{margin: '400px 0px'}}>
+
+        <ConnectButton />
+
+        <select value={env} onChange={onChangeEnv}>
+          <option value={'prod'}>prod</option>
+          <option value={'staging'}>staging</option>
+          <option value={'dev'}>dev</option>
+        </select>
+
+    </div>
+
+    {/* <input type='dropdown'
+      label="ENV"
+      options={[
+        { label: 'prod', value: 'prod' },
+        { label: 'staging', value: 'staging' },
+        { label: 'dev', value: 'dev' },
+      ]}
+      value={env}
+      onChange={onChangeEnv}
+    /> */}
+
+   <EnvContext.Provider value={{ env, isCAIP }}>
+      <Web3Context.Provider value={{ account, active, library, chainId }}>
+          <SocketContext.Provider value = {{ socketData }}>
+              <AccountContext.Provider value={{ pgpPrivateKey }}>
+                <Suspense fallback={<h1>Loading</h1>}>
+                  <Wrapper id="wrapper">
+                      <AppWrapper id="content">
+
+                        {/* <ConnectButton /> */}
+
+                        {location.pathname !== '/brb' && <Header />}
+                        <Routes>
+                          {/* add all the route paths here */}
+                          <Route
+                            path="/"
+                            element={<Home />}
+                          />
+                          {/* <Route path="/about" element={<AboutUs />} /> */}
+                          <Route
+                            path="/faq"
+                            element={<FAQ />}
+                          />
+                          <Route
+                            path="/tos"
+                            element={<TermsOfService />}
+                          />
+                          <Route
+                            path="/privacy"
+                            element={<Privacy />}
+                          />
+                          <Route
+                            path="/privacymobile"
+                            element={<PrivacyMobile />}
+                          />
+                          <Route
+                            path="/notify"
+                            element={<RedirectToPlatform />}
+                          />
+                          <Route
+                            path="/frens"
+                            element={<FrensOfPush />}
+                          />
+                          <Route 
+                          path='/spaces'
+                          element={<Spaces />}
+                          />
+                          <Route 
+                          path='/cheatsheet'
+                          element={<Cheat />}
+                          />
+                          <Route 
+                          path='/brb'
+                          element={<BRB />}
+                          />
+                        </Routes>
+
+                        {location.pathname !== '/brb' && <Footer />}
+                        
+                      </AppWrapper>
+                    </Wrapper>
+                  </Suspense>
+              </AccountContext.Provider>
+          </SocketContext.Provider>
+      </Web3Context.Provider>
+    </EnvContext.Provider>
+    </section>
   );
 }
 
@@ -101,3 +201,5 @@ const AppWrapper = styled.div`
 `;
 
 export default App;
+
+
