@@ -29,7 +29,7 @@ import BRBParallax from 'components/BRBParallax';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import ChatComponents from 'components/ChatComponents';
+import ChatComponent from 'components/ChatComponents';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -352,7 +352,7 @@ function BRB() {
 
         <CommunityPartners />
 
-        <ChatComponents />
+        <ChatComponent />
 
         <div id='schedule'>
           <Schedules />

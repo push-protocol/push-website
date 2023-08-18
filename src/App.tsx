@@ -21,6 +21,8 @@ import { ENV } from './helpers/web3helper'
 import { useSDKSocket } from './hooks/useSDKSocket'
 import * as PushAPI from '@pushprotocol/restapi';
 import ConnectButton from './components/Connect';
+import Dropdown from 'components/Dropdown';
+import { ChatUIProvider, darkChatTheme } from '@pushprotocol/uiweb';
 
 ReactGA.initialize('UA-165415629-2');
 
@@ -42,21 +44,21 @@ function App() {
   const Spaces = React.lazy(() => import('pages/Spaces'));
   const Cheat = React.lazy(() => import('pages/CheatSheet'));
   const BRB = React.lazy(() => import('pages/BRB'));
-  useEffect(() => {
-    ReactGA.pageview('/entry');
-  }, []);
+  // useEffect(() => {
+  //   ReactGA.pageview('/entry');
+  // }, []);
 
-  const Wrapper = ({ children }) => {
+  // const Wrapper = ({ children }) => {
 
-    useLayoutEffect(() => {
-      document.documentElement.scrollTo(0, 0);
-    }, [location.pathname]);
-    return children;
-  };
+  //   useLayoutEffect(() => {
+  //     document.documentElement.scrollTo(0, 0);
+  //   }, [location.pathname]);
+  //   return children;
+  // };
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [env, setEnv] = useState<ENV>(ENV.STAGING);
   const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
   const [isCAIP, setIsCAIP] = useState(false);
 
@@ -101,19 +103,12 @@ function App() {
 
   return (
   <section>
-    <div style={{margin: '400px 0px'}}>
+    <div style={{position: 'fixed', background: 'gray', width:'600px', top: '0', right: '0', zIndex:'999999'}}>
 
-        <ConnectButton />
+    <ConnectButton />
 
-        <select value={env} onChange={onChangeEnv}>
-          <option value={'prod'}>prod</option>
-          <option value={'staging'}>staging</option>
-          <option value={'dev'}>dev</option>
-        </select>
 
-    </div>
-
-    {/* <input type='dropdown'
+    <Dropdown
       label="ENV"
       options={[
         { label: 'prod', value: 'prod' },
@@ -122,17 +117,19 @@ function App() {
       ]}
       value={env}
       onChange={onChangeEnv}
-    /> */}
+    />
+
+    </div>
+
 
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
           <SocketContext.Provider value = {{ socketData }}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
+                <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
-                  <Wrapper id="wrapper">
-                      <AppWrapper id="content">
-
-                        {/* <ConnectButton /> */}
+                  {/* <Wrapper id="wrapper"> */}
+                      {/* <AppWrapper id="content"> */}
 
                         {location.pathname !== '/brb' && <Header />}
                         <Routes>
@@ -182,9 +179,10 @@ function App() {
 
                         {location.pathname !== '/brb' && <Footer />}
                         
-                      </AppWrapper>
-                    </Wrapper>
+                      {/* </AppWrapper> */}
+                    {/* </Wrapper> */}
                   </Suspense>
+                  </ChatUIProvider>
               </AccountContext.Provider>
           </SocketContext.Provider>
       </Web3Context.Provider>

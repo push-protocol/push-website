@@ -26,6 +26,7 @@ root.render(
       <App />
     </BrowserRouter>
   </Web3ReactProvider>
+
 );
 
 
