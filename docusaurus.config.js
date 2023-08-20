@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/ethereum-push-notification-service/push_documentation_hub/blob/main/",
+            "https://github.com/ethereum-push-notification-service/push-documentation/",
         },
         blog: {
           showReadingTime: true,
@@ -61,11 +61,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
-      navbar: {
-        // title: 'Push',
+      navbar: {      
+        hideOnScroll: true,
+        // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
           src: "img/PushLogoTextWhite.svg",
+          srcDark: "img/PushLogoTextDark.svg",
         },
         items: [
           {
@@ -76,7 +78,7 @@ const config = {
           },
           // { to: "/blog", label: "Blog", position: "right" },
           {
-            href: "https://github.com/ethereum-push-notification-service/push-documentation",
+            href: "https://github.com/ethereum-push-notification-service/",
             label: "GitHub",
             position: "right",
           },
@@ -107,9 +109,17 @@ const config = {
       },
       colorMode: {
         defaultMode: "light",
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
+      // announcementBar: {
+      //   id: 'support_us',
+      //   content:
+      //     'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
+      //   backgroundColor: '#000000',
+      //   textColor: '#e03dc1',
+      //   isCloseable: true,
+      // },
     }),
 };
 

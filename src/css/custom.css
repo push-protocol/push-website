@@ -79,12 +79,16 @@ a:hover {
 }
 
 .navbar--fixed-top {
+  margin: auto !important;
+  width: 85% !important;
+  height: 92px;
+}
+
+.navbar__inner {
   background-color: rgba(18, 19, 21, 0.75) !important;
   border-radius: 32px !important;
   backdrop-filter: blur(10px);
-  margin: auto !important;
-  width: 85% !important;
-  height: 92px !important;
+  padding: 15px;
 }
 
 .navbar-sidebar__back {
@@ -98,14 +102,14 @@ a:hover {
 }
 
 .navbar__logo {
-  height: 3rem !important;
+  /* height: 3rem !important; */
 }
 
 .navbar {
-  position: fixed;
+  /* position: fixed;
   top: 16px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); */
 }
 
 /* background image  */
