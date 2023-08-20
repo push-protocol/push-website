@@ -10,12 +10,12 @@ import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
-import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
+// import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
 
-  useDisableBodyScroll({ open: showFaucet });
+  // useDisableBodyScroll({ open: showFaucet });
   return (
     <Container>
       <Header>

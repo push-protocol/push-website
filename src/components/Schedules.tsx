@@ -215,6 +215,7 @@ const ScheduleCardContainer = styled.div`
   border-radius: 25px;
   // margin-right: 10px;
   // margin-left: 10px;
+
   @media (max-width: 480px) {
     width: 100%;
     // max-width:334px;

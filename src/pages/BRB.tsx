@@ -355,10 +355,17 @@ function BRB() {
 
         <CommunityPartners />
 
-        <div id="schedule">
+        <ScheduleDiv id="schedule">
           <Schedules />
+        </ScheduleDiv>
+
+        <div
+          id="playground"
+          style={{ width: '100%' }}
+        >
+          <ChatComponent />
         </div>
-        <ChatComponent />
+        
         <ItemFooter id="support">
           <FooterItem>
             <SpanContent
@@ -516,6 +523,11 @@ const NavList = styled.div`
     align-items: center;
     border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
   }
+`;
+
+const ScheduleDiv = styled.div`
+  margin: 120px 0px 0px 0px;
+  width: 100%;
 `;
 
 // V1 Designs
