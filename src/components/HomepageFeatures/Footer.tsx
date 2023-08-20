@@ -1,26 +1,26 @@
 import React from 'react';
-import "../../css/custom.css"
+import "../../css/custom.css";
 // import Cube from "@site/static/img/footer-cube.svg"
 // import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg"
 // import Link from '@docusaurus/Link';
 // import CubePlay from "@site/static/img/cube-footer-icon.svg"
 // import BellIcon from "@site/static/img/Push-Logo-Standard-White.svg";
-import GithubSVG from "@site/static/img/github.svg";
-import TwitterSVG from "@site/static/img/twitter.svg";
-import TelegramSVG from "@site/static/img/telegram.svg";
-import DiscordSVG from "@site/static/img/discord.svg";
-import AppleSVG from "@site/static/img/apple.svg";
-import Playstore from "@site/static/img/playstore.svg";
-import Notification from "@site/static/img/notification-icon-push.svg";
-import FooterJoinusFigure from "@site/static/img/footerjoinus.svg";
-import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
-import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
-import styled from 'styled-components';
-import { Section, H2, Content, ItemH, ItemV, Span, Anchor, LinkTo, BodyContent } from '../../utils/SharedStyling';
 import { device } from '@site/src/utils/globals';
-import SignupInput from '../SignInInput';
+import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
+import AppleSVG from "@site/static/img/apple.svg";
+import DiscordSVG from "@site/static/img/discord.svg";
+import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
+import FooterJoinusFigure from "@site/static/img/footerjoinus.svg";
+import GithubSVG from "@site/static/img/github.svg";
+import Notification from "@site/static/img/notification-icon-push.svg";
+import Playstore from "@site/static/img/playstore.svg";
+import TelegramSVG from "@site/static/img/telegram.svg";
+import TwitterSVG from "@site/static/img/twitter.svg";
 import { BsArrowUpRight } from 'react-icons/bs';
+import styled from 'styled-components';
+import { Anchor, BodyContent, Content, H2, ItemH, ItemV, LinkTo, Section, Span } from '../../utils/SharedStyling';
 import EmailInputTextField from '../EmailInputTextField';
+import SignupInput from '../SignInInput';
 
 
 type FooterItems = {
@@ -446,7 +446,7 @@ export const FooterComponent = () => {
 }
 
 const StyledFooter = styled.footer`
-  font-family: 'Strawford';
+  font-family: 'FKGroteskNeue';
   display: flex;
   position: relative;
 `;

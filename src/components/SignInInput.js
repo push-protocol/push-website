@@ -6,9 +6,9 @@ import styled from "styled-components";
 
 import { Span } from "../utils/SharedStyling";
 
+import { device } from "../utils/globals";
 import useEmailValidationAndSend from "../utils/useEmailValidationAndSend";
 import useMediaQuery from "../utils/useMediaQuery";
-import { device } from "../utils/globals";
 
 function SignupInput() {
   const [isLoading, apiResponse, emailError, onEmailSubmit] =
@@ -92,7 +92,7 @@ const Wrapper = styled.form`
     all: unset;
 
     box-sizing: border-box;
-    font-family: "Strawford";
+    font-family: "FKGroteskNeue";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

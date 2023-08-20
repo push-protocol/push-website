@@ -62,7 +62,7 @@ const config = {
       navbar: {
         // title: 'Push',
         logo: {
-          alt: "My Site Logo",
+          alt: "Push Protocol Logo",
           src: "img/Push-Logo-Standard-White.svg",
         },
         items: [
@@ -74,7 +74,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "right" },
           {
-            href: "https://github.com/ethereum-push-notification-service/push_documentation_hub/",
+            href: "https://github.com/ethereum-push-notification-service/push-documentation",
             label: "GitHub",
             position: "right",
           },

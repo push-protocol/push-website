@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import Link from '@docusaurus/Link';
+import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg";
 import clsx from 'clsx';
-import "../../css/custom.css"
-import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg"
-import Styles from "./styles.module.css"
+import React, { useState } from 'react';
+import "../../css/custom.css";
 import FAQ from './Faq';
 import { FooterComponent } from './Footer';
-import Link from '@docusaurus/Link';
+import Styles from "./styles.module.css";
 // import styles from './styles.module.css';
 
 
@@ -245,7 +245,7 @@ export default function HomepageFeatures({ PinkSvg }): JSX.Element {
       
         <div>
           <div className="hero_home">
-            Developer Guides
+            Push Products
           </div>
           <div>
             <div className="guide_list">
