@@ -2,6 +2,7 @@ import Link from '@docusaurus/Link';
 import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg";
 import clsx from 'clsx';
 import React, { useState } from 'react';
+import styled, { css } from "styled-components";
 import "../../css/custom.css";
 import FAQ from './Faq';
 import { FooterComponent } from './Footer';
@@ -29,37 +30,37 @@ const SdkList: SdkListItems[] = [
     title: 'SDK Starter Kit',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/epns-sdk-starter-kit',
+    link: '/developer-tooling/push-sdk/epns-sdk-starter-kit',
   },
   {
     title: 'REST API',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi',
+    link: '/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-restapi',
   },
   {
     title: 'React Native',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-react-native',
+    link: '/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-react-native',
   },
   {
     title: 'Socket',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
+    link: '/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
   },
   {
     title: 'UIWeb',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb',
+    link: '/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb',
   },
   {
     title: 'UI Embed',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiembed',
+    link: '/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiembed',
   }
 ]
 
@@ -68,7 +69,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Notifications',
     Svg: require('@site/static/img/notification.svg').default,
     PinkSvg: require('@site/static/img/notification-pink.svg').default,
-    link: '/docs/CONCEPTS/push-notifications-for-web3/',
+    link: '/CONCEPTS/push-notifications-for-web3/',
     description: (
       <>
         Explore different ways of sending and receiving notifications and more.
@@ -80,7 +81,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Push Chat',
     Svg: require('@site/static/img/message.svg').default,
     PinkSvg: require('@site/static/img/message-pink.svg').default,
-    link: '/docs/chat',
+    link: '/chat',
     description: (
       <>
         Learn about the details of Push Chat and how to easily integrate it.
@@ -92,7 +93,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Push Video Calls',
     Svg: require('@site/static/img/video.svg').default,
     PinkSvg: require('@site/static/img/video-pink.svg').default,
-    link: '/docs/CONCEPTS/push-chat-for-web3',
+    link: '/CONCEPTS/push-chat-for-web3',
 
     description: (
       <>
@@ -104,7 +105,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'SDK Quick Start',
     Svg: require('@site/static/img/lightning.svg').default,
     PinkSvg: require('@site/static/img/lightning-pink.svg').default,
-    link: '/docs/developer-tooling/push-sdk/quick-start',
+    link: '/developer-tooling/push-sdk/quick-start',
     description: (
       <>
         A super quick guide to get you started with Push SDK.
@@ -115,7 +116,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Examples',
     Svg: require('@site/static/img/star.svg').default,
     PinkSvg: require('@site/static/img/star-pink.svg').default,
-    link: '/docs/developer-guides/examples',
+    link: '/developer-guides/examples',
     description: (
       <>
         Examples to showcase the power of Push Protocol’s communication stack.
@@ -126,7 +127,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Showrunners',
     Svg: require('@site/static/img/receive-notifs.svg').default,
     PinkSvg: require('@site/static/img/receive-notifs-pink.svg').default,
-    link: '/docs/developer-tooling/showrunners-framework',
+    link: '/developer-tooling/showrunners-framework',
     description: (
       <>
         Showrunners Framework and how to boost your web3 communications.
@@ -182,7 +183,7 @@ function GuideList({ title, Svg, description, PinkSvg, link }: DevGuideItems) {
 
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`developer_guides_list ${isHovered ? 'border-pink' : ''}`}>
-      <Link to={link} target='_blank'>
+      <Link to={link} target='_self'>
         <div className='inner-card'>
           <div className='card-details'>
             {isHovered ? (
@@ -241,63 +242,63 @@ function PushSdk({ title, Svg, PinkSvg, link }: SdkListItems) {
 export default function HomepageFeatures({ PinkSvg }): JSX.Element {
   return (
     <section>
-    <section className='main-section'>
-      
-        <div>
-          <div className="hero_home header-container">
-            Developer Guides
-          </div>
+      <section className='main-section'>
+        
           <div>
-            <div className="guide_list">
-              {DevGuide.map((props, idx) => (
-                <GuideList key={idx} {...props} />
-              ))}
+            <div className="hero_home header-container">
+              Developer Guides
             </div>
-          </div>
-      </div>
-      
-      <div>
-          <div className='sub-container'>
-            <div className="hero_home">
-              Push SDK
-            </div>
-            <Link to='/docs/developer-tooling/push-sdk' target='_blank'>
-                <div className='hero_home_explore'>
-                  <p className='hero_home_explore_link'>
-                    Explore SDK
-                  </p>
-                  <ArrowUp className='arrowUp-icon' />
-                </div>
-            </Link>
-          </div>
-          <div>
-            <div className="guide_list">
-              {SdkList.map((props, idx) => (
-                <PushSdk key={idx} {...props} />
-              ))}
+            <div>
+              <div className="guide_list">
+                {DevGuide.map((props, idx) => (
+                  <GuideList key={idx} {...props} />
+                ))}
+              </div>
             </div>
         </div>
         
-        <div className='Faqs-main-container'>
-          <div className='sub-container'>
-            <span className="hero_home_Faq_header">
-              Frequently Asked Questions
-            </span>
-            <Link to='https://push.org/faq' target='_blank'>
-              <div className='hero_home_explore'>
-                <p className='hero_home_explore_link'>
-                  Explore FAQs
-                </p>
-                <ArrowUp className='arrowUp-icon' />
+        <div>
+            <div className='sub-container'>
+              <div className="hero_home">
+                Push SDK
               </div>
-            </Link>
+              <Link to='/developer-tooling/push-sdk' target='_blank'>
+                  <div className='hero_home_explore'>
+                    <p className='hero_home_explore_link'>
+                      Explore SDK
+                    </p>
+                    <ArrowUp className='arrowUp-icon' />
+                  </div>
+              </Link>
+            </div>
+            <div>
+              <div className="guide_list">
+                {SdkList.map((props, idx) => (
+                  <PushSdk key={idx} {...props} />
+                ))}
+              </div>
           </div>
-          <FAQ />
+          
+          {/* <div className='Faqs-main-container'>
+            <div className='sub-container'>
+              <span className="hero_home_Faq_header">
+                Frequently Asked Questions
+              </span>
+              <Link to='https://push.org/faq' target='_blank'>
+                <div className='hero_home_explore'>
+                  <p className='hero_home_explore_link'>
+                    Explore FAQs
+                  </p>
+                  <ArrowUp className='arrowUp-icon' />
+                </div>
+              </Link>
+            </div>
+            <FAQ />
 
+          </div> */}
         </div>
-      </div>
-    </section>
-     <FooterComponent />
+      </section>
+      <FooterComponent />
     </section>
   );
 }

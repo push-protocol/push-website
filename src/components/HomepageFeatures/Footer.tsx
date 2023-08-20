@@ -446,9 +446,9 @@ export const FooterComponent = () => {
 }
 
 const StyledFooter = styled.footer`
-  font-family: 'Strawford';
   display: flex;
   position: relative;
+  margin-top: 100px;
 `;
 
 const ResponsiveSection = styled(Section)`

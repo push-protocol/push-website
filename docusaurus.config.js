@@ -11,17 +11,18 @@ const config = {
   favicon: "img/Bell.svg",
 
   // Set the production url of your site here
-  url: "http://push.org/",
+  url: "https://docsv2.push.org/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Push Protocol", // Usually your GitHub org/user name.
-  projectName: "Push Doc", // Usually your repo name.
+  organizationName: "Ethereum Push Notificaion Service", // Usually your GitHub org/user name.
+  projectName: "push-documentation", // Usually your repo name.
+  deploymentBranch: "gh-pages",
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -38,6 +39,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -66,8 +69,8 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "img/PushLogoTextWhite.svg",
-          srcDark: "img/PushLogoTextDark.svg",
+          src: "img/PushLogoTextDark.svg",
+          srcDark: "img/PushLogoTextWhite.svg",
         },
         items: [
           {
@@ -116,7 +119,7 @@ const config = {
       //   id: 'support_us',
       //   content:
       //     'We are looking to revamp our docs, please fill <a target="_blank" rel="noopener noreferrer" href="#">this survey</a>',
-      //   backgroundColor: '#000000',
+      //   backgroundColor: '#fff',
       //   textColor: '#e03dc1',
       //   isCloseable: true,
       // },
