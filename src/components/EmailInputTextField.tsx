@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from "react";
-import styled from "styled-components";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import styled from "styled-components";
 
 import { BiLoaderAlt } from "react-icons/bi";
 
@@ -85,7 +85,7 @@ const Wrapper = styled.form`
     width: 90%;
     box-sizing: border-box;
 
-    font-family: "Strawford";
+    font-family: "FKGroteskNeue";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

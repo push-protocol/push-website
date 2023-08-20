@@ -5,22 +5,22 @@ import "../../css/custom.css";
 // import Link from '@docusaurus/Link';
 // import CubePlay from "@site/static/img/cube-footer-icon.svg"
 // import BellIcon from "@site/static/img/Push-Logo-Standard-White.svg";
-import PushLogo from "@site/static/img/push-logo.png";
-import JoinPush from "@site/static/img/join-push.png";
-import GithubSVG from "@site/static/img/github.svg";
-import TwitterSVG from "@site/static/img/twitter.svg";
-import TelegramSVG from "@site/static/img/telegram.svg";
-import DiscordSVG from "@site/static/img/discord.svg";
-import AppleSVG from "@site/static/img/apple.svg";
-import Playstore from "@site/static/img/playstore.svg";
-import Notification from "@site/static/img/notification-icon-push.svg";
-import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
-import styled from 'styled-components';
-import { Section, H2, Content, ItemH, ItemV, Span, Anchor, LinkTo, BodyContent } from '../../utils/SharedStyling';
 import { device } from '@site/src/utils/globals';
-import SignupInput from '../SignInInput';
+import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
+import AppleSVG from "@site/static/img/apple.svg";
+import DiscordSVG from "@site/static/img/discord.svg";
+import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
+import FooterJoinusFigure from "@site/static/img/footerjoinus.svg";
+import GithubSVG from "@site/static/img/github.svg";
+import Notification from "@site/static/img/notification-icon-push.svg";
+import Playstore from "@site/static/img/playstore.svg";
+import TelegramSVG from "@site/static/img/telegram.svg";
+import TwitterSVG from "@site/static/img/twitter.svg";
 import { BsArrowUpRight } from 'react-icons/bs';
+import styled from 'styled-components';
+import { Anchor, BodyContent, Content, H2, ItemH, ItemV, LinkTo, Section, Span } from '../../utils/SharedStyling';
 import EmailInputTextField from '../EmailInputTextField';
+import SignupInput from '../SignInInput';
 
 
 type FooterItems = {
@@ -86,12 +86,11 @@ export const FooterComponent = () => {
 
           <ItemH gap="32px">
             <InfoCard>
-            <img src={JoinPush} alt="Join Push" />
-              {/* <FooterJoinusFigure
+              <FooterJoinusFigure
                 className="figureSvg"
                 alt="Icon showing Open Positions"
                 title="Join Us"
-              /> */}
+              />
 
               <InfoDetails>
                 <Span
@@ -156,21 +155,14 @@ export const FooterComponent = () => {
                   >
                     Company
                   </Span>
+
                   <FooterAnchorSecondary
-                    target="_blank"
-                    href="https://push.org/"
-                    title="About"
+                    as={LinkTo}
+                    to="/frens"
+                    title="Push Ecosystem"
                     onClick={scrollToTop}
                   >
-                    About
-                  </FooterAnchorSecondary>
-                  <FooterAnchorSecondary
-                    target="_blank"
-                    href="https://angel.co/company/push-protocol"
-                    title="Careers"
-                    onClick={scrollToTop}
-                  >
-                    Careers
+                    Push Ecosystem
                   </FooterAnchorSecondary>
                   <FooterAnchorSecondary
                     href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
@@ -181,8 +173,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    target="_blank"
-                    href="https://push.org/tos"
+                    as={LinkTo}
+                    to="/tos"
                     title="Terms"
                     onClick={scrollToTop}
                   >
@@ -190,8 +182,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    target="_blank"
-                    href="https://push.org/privacy"
+                    as={LinkTo}
+                    to="/privacy"
                     title="Privacy"
                     onClick={scrollToTop}
                   >
@@ -321,8 +313,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://push.org/faq"
-                    target="_blank"
+                    as={LinkTo}
+                    to="/faq"
                     title="FAQ"
                     onClick={scrollToTop}
                   >
@@ -361,7 +353,7 @@ export const FooterComponent = () => {
                 title="Push"
                 onClick={scrollToTop}
               >
-                <img src={PushLogo} alt="Push Logo" />
+                <PushLogoTextWhite />
               </LinkTo>
 
               <FooterAnchorIcon
@@ -434,6 +426,7 @@ export const FooterComponent = () => {
                   height={22}
                 />
               </FooterAnchorIcon>
+
               <FooterAnchorIcon
                 href="https://app.push.org"
                 title="Push Dapp"
@@ -456,7 +449,6 @@ const StyledFooter = styled.footer`
   font-family: 'Strawford';
   display: flex;
   position: relative;
-  margin-top: 70px;
 `;
 
 const ResponsiveSection = styled(Section)`

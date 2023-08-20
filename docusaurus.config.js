@@ -76,7 +76,7 @@ const config = {
           },
           // { to: "/blog", label: "Blog", position: "right" },
           {
-            to: "https://github.com/ethereum-push-notification-service/push_documentation_hub/",
+            href: "https://github.com/ethereum-push-notification-service/push-documentation",
             label: "GitHub",
             position: "right",
           },
