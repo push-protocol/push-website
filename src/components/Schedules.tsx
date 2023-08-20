@@ -73,6 +73,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   // const isMobile = useDeviceWidthCheck(600);
 
+  console.log('Direction', direction);
+
   return (
     <Container ref={sectionRef}>
       <ItemH>
@@ -96,7 +98,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
         }}
         hasTrack={false} aria-label="...">
 
-        <SplideTrack>
+        <SplideTrack style={{ paddingBottom: '40px' }}>
           {citiesList.map((item) => {
             return (
               <SplideContainer className='splide__slide is-visible' key={item}>
@@ -215,6 +217,12 @@ const ScheduleCardContainer = styled.div`
   border-radius: 25px;
   // margin-right: 10px;
   // margin-left: 10px;
+  transition: all 0.3s;
+  transform: scale(1);
+
+  &:hover{
+    transform: scale(1.05);
+  }
 
   @media (max-width: 480px) {
     width: 100%;
