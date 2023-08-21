@@ -15,7 +15,7 @@ import Lucknow from '../assets/brb/schedules/Lucknow.svg';
 import Mumbai from '../assets/brb/schedules/Mumbai.svg';
 import Pune from '../assets/brb/schedules/Pune.svg';
 import Trivandrum from '../assets/brb/schedules/Trivandrum.svg';
-import Agra from '../assets/brb/schedules/Agra.svg';
+import Agra from '../assets/brb/schedules/agra.svg';
 import Ahmedabad from '../assets/brb/schedules/Ahmedabad.svg';
 import Bengaluru from '../assets/brb/schedules/Bengaluru.svg';
 
@@ -125,7 +125,7 @@ export const citiesList = [
         },
         {
             image: Delhi_south,
-            place: 'South Delhi ',
+            place: 'Delhi South',
             date: '10 Nov 2023',
             link: 'https://push.org',
             backgroundColor: '#194395',
@@ -210,7 +210,7 @@ export const citiesList = [
             place: 'Bengaluru',
             date: 'TBA',
             link: 'https://push.org',
-            backgroundColor: '#194395',
+            backgroundColor: '#299EC2',
             hasEnded: false,
         }
     ]
