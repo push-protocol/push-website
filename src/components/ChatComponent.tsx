@@ -32,7 +32,7 @@ export const ChatComponent = () => {
         <Span
           fontSize={isMobile ? '14px' : '16px'}
           color="#fff"
-          fontWeight="550"
+          fontWeight="200"
         >
           This is a token gated group. You need{' '}
           <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 Push Token</span> to be
@@ -41,7 +41,7 @@ export const ChatComponent = () => {
         <ButtonItem
           background="#E64DE9"
           padding="8px"
-          fontWeight="550"
+          fontWeight="200"
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
