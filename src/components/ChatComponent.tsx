@@ -28,7 +28,7 @@ export const ChatComponent = () => {
         </BrandHeader>
       </Header>
 
-      <ChatBubbleComponent chatId='c581ae266d173f9f6a46b255453ce5f723d2cb0be709241a88ad710b4aca3a8f' />
+      <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' />
 
       <BottomBar>
         <TokenGated />

@@ -22,7 +22,7 @@ import { useSDKSocket } from './hooks/useSDKSocket'
 import * as PushAPI from '@pushprotocol/restapi';
 import ConnectButton from './components/Connect';
 import Dropdown from 'components/Dropdown';
-import { ChatUIProvider, darkChatTheme } from '@pushprotocol/uiweb';
+import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 ReactGA.initialize('UA-165415629-2');
 
