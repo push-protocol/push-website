@@ -27,80 +27,79 @@ export const citiesList = [
             image: Kolkata,
             place: 'Kolkata',
             date: '2 Sept 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-kolkata',
             backgroundColor: '#299EC2',
             hasEnded: false,
         },
         {
+            image: Indore,
+            place: 'Indore',
+            date: '4 Sept 2023',
+            link: 'https://www.lu.ma/brb-indore',
+            backgroundColor: '#16837C',
+            hasEnded: false,
+        },
+    ],
+    [ 
+        {
             image: Kochi,
             place: 'Kochi',
-            date: '8 Sept 2023',
-            link: 'https://push.org',
+            date: '9 Sept 2023',
+            link: 'https://www.lu.ma/brb-kochi',
             backgroundColor: '#194395',
+            hasEnded: false,
+        },
+        {
+            image: Coimbatore,
+            place: 'Coimbatore',
+            date: '11 Sept 2023',
+            link: 'https://www.lu.ma/brb-coimbatore',
+            backgroundColor: '#299EC2',
             hasEnded: false,
         }
     ],
-    [ {
-        image: Trivandrum,
-        place: 'Trivandrum',
-        date: '15 Sept 2023',
-        link: 'https://push.org',
-        backgroundColor: '#7A3DA9',
-        hasEnded: false,
-    },
-    {
-        image: Indore,
-        place: 'Indore',
-        date: '18 Sept 2023',
-        link: 'https://push.org',
-        backgroundColor: '#16837C',
-        hasEnded: false,
-    },
-    ],
     [
-        {
+         {
+            image: Trivandrum,
+            place: 'Trivandrum',
+            date: '15 Sept 2023',
+            link: 'https://www.lu.ma/brb-trivandrum',
+            backgroundColor: '#7A3DA9',
+            hasEnded: false,
+         },
+         {
             image: Pune,
             place: 'Pune',
             date: '23 Sept 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-pune',
             backgroundColor: '#E26059',
+            hasEnded: false,
+        }
+    ],
+    [
+        {
+            image: Hyderabad,
+            place: 'Hyderabad',
+            date: '25 Sept 2023',
+            link: 'https://www.lu.ma/brb-hyderabad',
+            backgroundColor: '#194395',
             hasEnded: false,
         },
         {
             image: Ahmedabad,
             place: 'Ahmedabad',
             date: '30 Sept 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-ahmedabad',
             backgroundColor: '#194395',
             hasEnded: false,
         },
     ],
-    // [
-
-    //     {
-    //         image: Hyderabad,
-    //         place: 'Hyderabad',
-    //         date: '26 Sept 2023',
-    //         link: 'https://push.org',
-    //         backgroundColor: '#299EC2',
-    //         hasEnded: false,
-    //     },
-    //     {
-    //         image: Ahmedabad,
-    //         place: 'Ahmedabad',
-    //         date: '30 Sept 2023',
-    //         link: 'https://push.org',
-    //         backgroundColor: '#194395',
-    //         hasEnded: false,
-    //     },
-    // ],
     [
-
         {
             image: Mumbai,
             place: 'Mumbai',
             date: '7 Oct 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-mumbai',
             backgroundColor: '#7A3DA9',
             hasEnded: false,
         },
@@ -108,111 +107,82 @@ export const citiesList = [
             image: Jaipur,
             place: 'Jaipur',
             date: '14 Oct 2023',
-            link: 'https://push.org',
-            backgroundColor: '#299EC2',
+            link: 'https://www.lu.ma/brb-jaipur',
+            backgroundColor: '#16837C',
             hasEnded: false,
         },
     ],
     [
-
         {
             image: Bhopal,
             place: 'Bhopal',
             date: '16 Oct 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-bhopal',
             backgroundColor: '#16837C',
             hasEnded: false,
         },
         {
-            image: Delhi_south,
-            place: 'Delhi South',
-            date: '10 Nov 2023',
-            link: 'https://push.org',
+            image: Delhi_north,
+            place: 'Delhi',
+            date: '4 Nov 2023',
+            link: 'https://www.lu.ma/brb-south-delhi',
             backgroundColor: '#194395',
             hasEnded: false,
         },
-
-
     ],
     [
-        {
-            image: Delhi_north,
-            place: 'Delhi North',
-            date: '11 Nov 2023',
-            link: 'https://push.org',
-            backgroundColor: '#7A3DA9',
-            hasEnded: false,
-        },
         {
             image: Kanpur,
             place: 'Kanpur',
             date: '15 Nov 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-kanpur',
             backgroundColor: '#E26059',
             hasEnded: false,
-        }],
-    [
+        },
         {
             image: Lucknow,
             place: 'Lucknow',
             date: '17 Nov 2023',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-lucknow',
             backgroundColor: '#2E7D5C',
-            hasEnded: false,
-        },
-        {
-            image: Agra,
-            place: 'Agra',
-            date: '25 Nov 2023',
-            link: 'https://push.org',
-            backgroundColor: '#194395',
             hasEnded: false,
         }
     ],
     [
+        {
+            image: Agra,
+            place: 'Agra',
+            date: '25 Nov 2023',
+            link: 'https://www.lu.ma/brb-agra',
+            backgroundColor: '#194395',
+            hasEnded: false,
+        },
         {
             image: Dehradun,
             place: 'Dehradun',
             date: 'TBA',
             // date: '31 AUG 2022',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-deharadun',
             backgroundColor: '#7A3DA9',
             hasEnded: false,
-        },
-        {
-            image: Coimbatore,
-            place: 'Coimbatore',
-            date: '11 Sept 2023',
-            link: 'https://push.org',
-            backgroundColor: '#299EC2',
-            hasEnded: false,
-        },
-    ], [
+        }
+    ],
+    [
         {
             image: Chennai,
             place: 'Chennai',
             date: 'TBA',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-chennai',
             backgroundColor: '#E26059',
             hasEnded: false,
         },
         {
-            image: Hyderabad,
-            place: 'Hyderabad',
-            date: 'TBA',
-            link: 'https://push.org',
-            backgroundColor: '#194395',
-            hasEnded: false,
-        },
-    ],[
-        {
             image: Bengaluru,
             place: 'Bengaluru',
             date: 'TBA',
-            link: 'https://push.org',
+            link: 'https://www.lu.ma/brb-benagaluru',
             backgroundColor: '#299EC2',
             hasEnded: false,
         }
     ]
-
 ];
