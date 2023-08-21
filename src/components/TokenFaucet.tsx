@@ -1,9 +1,9 @@
-
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import styled from 'styled-components';
+import { useClickAway } from 'react-use';
 import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 import Close from '../assets/brb/others/Close.svg';
 import XCompleted from '../assets/brb/others/X-Completed.svg';
@@ -19,13 +19,16 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
   const [isFollowed, setIsFollowed] = useState<boolean>(false);
   const [isPosted, setIsPosted] = useState<boolean>(false);
   const [isJoined, setIsJoined] = useState<boolean>(false);
+  const clickRef = useRef(null);
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
 
+  useClickAway(clickRef, () => handleFaucet(false));
+
   return (
-    <Container>
+    <Container ref={clickRef}>
       <HeaderContainer>
         <Icon
           src={PushLogo}
@@ -192,6 +195,9 @@ const Container = styled(ItemVV2)`
   z-index: 10;
   font-family: Glancyr;
   margin-top: 115px;
+  @media ${device.mobileL}{
+    margin: 115px 10px 0px 10px
+  }
 `;
 
 const HeaderContainer = styled(ItemHV2)`
@@ -214,6 +220,9 @@ const InputContainer = styled(ItemVV2)`
   width: 100%;
   max-height: 73px;
   margin-top: 31px;
+  @media ${device.mobileL}{
+    max-height:120px;
+  }
 `;
 
 const Label = styled.label`
@@ -256,7 +265,7 @@ const ButtonItem = styled(ButtonV2)`
     opacity: 0;
   }
   @media ${device.mobileL} {
-    width: 100%;
+    width: fit-content;
   }
 `;
 
