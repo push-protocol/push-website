@@ -125,7 +125,7 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    toggleMobileMenu();
+    if(showMobileMenu) toggleMobileMenu();
     ScrollTrigger.disable();
 
     gsap.to(window, {
@@ -157,13 +157,13 @@ function BRB() {
 
   useEffect(() => {
     newTl.to(elems0, {
-      opacity: 0,
+      opacity: isMobile ? 1 : 0,
     });
 
     newTl.to(elems, {
       opacity: 0,
     });
-  }, []);
+  }, [isMobile]);
 
   return (
     <PageWrapper
@@ -222,52 +222,48 @@ function BRB() {
                   className="navigationMenu"
                   showMobileMenu={isMobileMenuOpen}
                 >
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation('partners')}
                       >
                         Partners
                       </Span>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation('schedule')}
                       >
                         Schedule
                       </Span>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation('playground')}
                       >
                         Playground
                       </Span>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
-                        onClick={() => handleSectionNavigation('support')}
                       >
                         Support
                       </Span>
@@ -286,17 +282,15 @@ function BRB() {
                   className="navigationMenu"
                   showMobileMenu={isMobileMenuOpen}
                 >
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() => openLink('https://discord.gg/pushprotocol')}>
                     <NavigationMenuHeader>
-                      <Discord onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                        openLink('https://discord.gg/pushprotocol');}} />
+                      <Discord onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();}} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem>
+                  <NavigationMenuItem onClick={() =>  openLink('https://twitter.com/pushprotocol')}>
                     <NavigationMenuHeader>
-                      <X onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                        openLink('https://twitter.com/pushprotocol');}} />
+                      <X onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();}} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </IconMenu>
