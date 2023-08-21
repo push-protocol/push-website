@@ -125,7 +125,7 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    console.log(id);
+    toggleMobileMenu();
     ScrollTrigger.disable();
 
     gsap.to(window, {
@@ -156,16 +156,14 @@ function BRB() {
   });
 
   useEffect(() => {
-    if(!isMobile){
-      newTl.to(elems0, {
-        opacity: 0,
-      });
-    }
+    newTl.to(elems0, {
+      opacity: 0,
+    });
 
     newTl.to(elems, {
       opacity: 0,
     });
-  }, [isMobile]);
+  }, []);
 
   return (
     <PageWrapper
@@ -290,13 +288,15 @@ function BRB() {
                 >
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <Discord onClick={() => openLink('https://discord.gg/pushprotocol')} />
+                      <Discord onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
+                        openLink('https://discord.gg/pushprotocol');}} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
                     <NavigationMenuHeader>
-                      <X onClick={() => openLink('https://twitter.com/pushprotocol')} />
+                      <X onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
+                        openLink('https://twitter.com/pushprotocol');}} />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </IconMenu>

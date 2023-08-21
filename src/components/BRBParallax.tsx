@@ -53,7 +53,7 @@ function BRBParallax() {
       //   gsap.set('#home', { y: progress * 200 });
       // }
     });
-  }, [isMobile]);
+  }, []);
 
   // useEffect(()=>{
   //   gsap.set('.firstBackground', {yPercent: 0});
@@ -134,12 +134,10 @@ const Container = styled.div`
     color: white;
     margin-top: -15em;
     margin-bottom: 200px;
-    // height: 100%;
 
     position: relative;
     scroll-snap-align: center;
     padding: 0px;
-    // background: red;
 
       @media ${device.mobileL} {
          margin-top: -400px;
