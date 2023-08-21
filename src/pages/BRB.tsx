@@ -163,7 +163,7 @@ function BRB() {
     newTl.to(elems, {
       opacity: 0,
     });
-  }, [isMobile]);
+  }, []);
 
   return (
     <PageWrapper
