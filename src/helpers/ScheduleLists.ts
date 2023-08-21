@@ -1,23 +1,23 @@
 /* eslint-disable indent */
-import Bhopal from '../assets/brb/schedules/Bhopal.jpeg';
-import Chennai from '../assets/brb/schedules/chennai.jpeg';
-import Coimbatore from '../assets/brb/schedules/coimbatore.jpeg';
-import Dehradun from '../assets/brb/schedules/dehradun.jpeg';
-import Delhi_north from '../assets/brb/schedules/Delhi_North.jpeg';
-import Delhi_south from '../assets/brb/schedules/Delhi_south.jpeg';
-import Hyderabad from '../assets/brb/schedules/hyderabad.jpeg';
-import Indore from '../assets/brb/schedules/Indore.jpeg';
-import Jaipur from '../assets/brb/schedules/jaipur.jpeg';
-import Kanpur from '../assets/brb/schedules/Kanpur.jpeg';
-import Kochi from '../assets/brb/schedules/Kochi.jpeg';
-import Kolkata from '../assets/brb/schedules/Kolkata.jpeg';
-import Lucknow from '../assets/brb/schedules/Lucknow.jpeg';
-import Mumbai from '../assets/brb/schedules/Mumbai.jpeg';
-import Pune from '../assets/brb/schedules/Pune.jpeg';
-import Trivandrum from '../assets/brb/schedules/Trivandrum.jpeg';
-import Agra from '../assets/brb/schedules/Agra.jpeg';
-import Ahmedabad from '../assets/brb/schedules/Ahmedabad.jpeg';
-import Bengaluru from '../assets/brb/schedules/Bengaluru.jpeg';
+import Bhopal from '../assets/brb/schedules/Bhopal.svg';
+import Chennai from '../assets/brb/schedules/chennai.svg';
+import Coimbatore from '../assets/brb/schedules/coimbatore.svg';
+import Dehradun from '../assets/brb/schedules/dehradun.svg';
+import Delhi_north from '../assets/brb/schedules/Delhi_North.svg';
+import Delhi_south from '../assets/brb/schedules/Delhi_south.svg';
+import Hyderabad from '../assets/brb/schedules/hyderabad.svg';
+import Indore from '../assets/brb/schedules/Indore.svg';
+import Jaipur from '../assets/brb/schedules/jaipur.svg';
+import Kanpur from '../assets/brb/schedules/Kanpur.svg';
+import Kochi from '../assets/brb/schedules/Kochi.svg';
+import Kolkata from '../assets/brb/schedules/Kolkata.svg';
+import Lucknow from '../assets/brb/schedules/Lucknow.svg';
+import Mumbai from '../assets/brb/schedules/Mumbai.svg';
+import Pune from '../assets/brb/schedules/Pune.svg';
+import Trivandrum from '../assets/brb/schedules/Trivandrum.svg';
+import Agra from '../assets/brb/schedules/Agra.svg';
+import Ahmedabad from '../assets/brb/schedules/Ahmedabad.svg';
+import Bengaluru from '../assets/brb/schedules/Bengaluru.svg';
 
 
 
@@ -28,7 +28,7 @@ export const citiesList = [
             place: 'Kolkata',
             date: '2 Sept 2023',
             link: 'https://push.org',
-            backgroundColor: '#7A3DA9',
+            backgroundColor: '#299EC2',
             hasEnded: false,
         },
         {
@@ -36,7 +36,7 @@ export const citiesList = [
             place: 'Kochi',
             date: '8 Sept 2023',
             link: 'https://push.org',
-            backgroundColor: '#16837C',
+            backgroundColor: '#194395',
             hasEnded: false,
         }
     ],
@@ -45,7 +45,7 @@ export const citiesList = [
         place: 'Trivandrum',
         date: '15 Sept 2023',
         link: 'https://push.org',
-        backgroundColor: '#DA786A',
+        backgroundColor: '#7A3DA9',
         hasEnded: false,
     },
     {
@@ -53,7 +53,7 @@ export const citiesList = [
         place: 'Indore',
         date: '18 Sept 2023',
         link: 'https://push.org',
-        backgroundColor: '#299EC2',
+        backgroundColor: '#16837C',
         hasEnded: false,
     },
     ],
@@ -63,7 +63,7 @@ export const citiesList = [
             place: 'Pune',
             date: '23 Sept 2023',
             link: 'https://push.org',
-            backgroundColor: '#3F53AA',
+            backgroundColor: '#E26059',
             hasEnded: false,
         },
         {
@@ -109,7 +109,7 @@ export const citiesList = [
             place: 'Jaipur',
             date: '14 Oct 2023',
             link: 'https://push.org',
-            backgroundColor: '#194395',
+            backgroundColor: '#299EC2',
             hasEnded: false,
         },
     ],
@@ -128,7 +128,7 @@ export const citiesList = [
             place: 'South Delhi ',
             date: '10 Nov 2023',
             link: 'https://push.org',
-            backgroundColor: '#DA786A',
+            backgroundColor: '#194395',
             hasEnded: false,
         },
 
@@ -140,7 +140,7 @@ export const citiesList = [
             place: 'Delhi North',
             date: '11 Nov 2023',
             link: 'https://push.org',
-            backgroundColor: '#299EC2',
+            backgroundColor: '#7A3DA9',
             hasEnded: false,
         },
         {
@@ -148,7 +148,7 @@ export const citiesList = [
             place: 'Kanpur',
             date: '15 Nov 2023',
             link: 'https://push.org',
-            backgroundColor: '#3F53AA',
+            backgroundColor: '#E26059',
             hasEnded: false,
         }],
     [
@@ -157,7 +157,7 @@ export const citiesList = [
             place: 'Lucknow',
             date: '17 Nov 2023',
             link: 'https://push.org',
-            backgroundColor: '#194395',
+            backgroundColor: '#2E7D5C',
             hasEnded: false,
         },
         {
@@ -165,7 +165,7 @@ export const citiesList = [
             place: 'Agra',
             date: '25 Nov 2023',
             link: 'https://push.org',
-            backgroundColor: '#7A3DA9',
+            backgroundColor: '#194395',
             hasEnded: false,
         }
     ],
@@ -176,7 +176,7 @@ export const citiesList = [
             date: 'TBA',
             // date: '31 AUG 2022',
             link: 'https://push.org',
-            backgroundColor: '#194395',
+            backgroundColor: '#7A3DA9',
             hasEnded: false,
         },
         {
@@ -193,7 +193,7 @@ export const citiesList = [
             place: 'Chennai',
             date: 'TBA',
             link: 'https://push.org',
-            backgroundColor: '#DA786A',
+            backgroundColor: '#E26059',
             hasEnded: false,
         },
         {
@@ -201,16 +201,16 @@ export const citiesList = [
             place: 'Hyderabad',
             date: 'TBA',
             link: 'https://push.org',
-            backgroundColor: '#299EC2',
+            backgroundColor: '#194395',
             hasEnded: false,
         },
     ],[
         {
             image: Bengaluru,
-            place: 'Bengalore',
+            place: 'Bengaluru',
             date: 'TBA',
             link: 'https://push.org',
-            backgroundColor: '#299EC2',
+            backgroundColor: '#194395',
             hasEnded: false,
         }
     ]
