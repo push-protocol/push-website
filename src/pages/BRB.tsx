@@ -135,7 +135,7 @@ function BRB() {
       scrollTo: { y: `#${id}` },
     });
 
-    // enableScroll();
+    enableScroll();
   };
 
   const openLink = (link: string) => {
