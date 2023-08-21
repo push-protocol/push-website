@@ -120,8 +120,10 @@ function BRB() {
     // }
   };
 
-  const EnableScroll = () => {
-    ScrollTrigger.enable();
+  const enableScroll = () => {
+    setTimeout(() => {
+      ScrollTrigger.enable();
+    }, 500);
   };
 
   const handleSectionNavigation = (id) => {
@@ -129,13 +131,11 @@ function BRB() {
     ScrollTrigger.disable();
 
     gsap.to(window, {
-      duration: 0.3,
+      duration: 0.2,
       scrollTo: { y: `#${id}` },
     });
 
-    setTimeout(() => {
-      EnableScroll();
-    }, 1000);
+    // enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -282,15 +282,17 @@ function BRB() {
                   className="navigationMenu"
                   showMobileMenu={isMobileMenuOpen}
                 >
-                  <NavigationMenuItem onClick={() => openLink('https://discord.gg/pushprotocol')}>
+                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
+                    openLink('https://discord.gg/pushprotocol');}}>
                     <NavigationMenuHeader>
-                      <Discord onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();}} />
+                      <Discord   />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem onClick={() =>  openLink('https://twitter.com/pushprotocol')}>
+                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
+                    openLink('https://twitter.com/pushprotocol');}}>
                     <NavigationMenuHeader>
-                      <X onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();}} />
+                      <X />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </IconMenu>
