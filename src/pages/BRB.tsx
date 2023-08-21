@@ -156,14 +156,16 @@ function BRB() {
   });
 
   useEffect(() => {
+    if(!isMobile){
+      newTl.to(elems0, {
+        opacity: 0,
+      });
+    }
+
     newTl.to(elems, {
       opacity: 0,
     });
-
-    newTl.to(elems0, {
-      opacity: 0,
-    });
-  }, []);
+  }, [isMobile]);
 
   return (
     <PageWrapper

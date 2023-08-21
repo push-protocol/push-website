@@ -41,12 +41,17 @@ function BRBParallax() {
   useEffect(() => {
     timelineHeader.
       to('.firstBackground', {
-        scale: 1.7 },
+        scale: isMobile ? 1.8 : 1.7,
+      },
       'sameTime');
 
 
     ScrollTrigger.create({
-      snap: 0
+      snap: 0,
+      // onUpdate: (self) => {
+      //   const progress = self.progress.toFixed(2);
+      //   gsap.set('#home', { y: progress * 200 });
+      // }
     });
   }, [isMobile]);
 
@@ -134,10 +139,11 @@ const Container = styled.div`
     position: relative;
     scroll-snap-align: center;
     padding: 0px;
+    // background: red;
 
       @media ${device.mobileL} {
-         margin-top: -30em;
-         margin-bottom: 5em;
+         margin-top: -35em;
+         margin-bottom: 2em;
          overflow: hidden;
          padding-bottom: 12em;
    }
@@ -165,6 +171,7 @@ const FirstBackground = styled.div`
   justify-content: center;
 
   @media ${device.mobileL} {    
+    width: 90%;
     //   align-items: flex-end;
 //   justify-content: flex-end;
 }
