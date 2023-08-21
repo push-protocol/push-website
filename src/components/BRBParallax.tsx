@@ -70,7 +70,7 @@ function BRBParallax() {
     },
     {
       figure:'$50k+',
-      body: 'AVAILABLE IN PRICES'
+      body: 'AVAILABLE IN PRIZES'
     }
   ];
       

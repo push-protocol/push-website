@@ -8,7 +8,7 @@ import { useWeb3React } from '@web3-react/core';
 
 
 
-const ChatComponent = ({ chatId }: {chatId: string}) => {
+const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
   const { account, library } = useWeb3React();
   
    
@@ -26,11 +26,11 @@ const ChatComponent = ({ chatId }: {chatId: string}) => {
 const ChatViewComponentCard = styled(Section)`
   height: 60vh;
   width: 70%;
-  margin: 150px auto;
+  margin: 15px auto;
 
   @media ${device.laptop} {
     width: 100%;
   }
 `;
 
-export default ChatComponent;
+export default ChatBubbleComponent;

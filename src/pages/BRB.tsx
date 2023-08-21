@@ -26,10 +26,11 @@ import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
+// import ChatBubbleComponent from 'components/ChatBubbleComponent';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import ChatComponent from 'components/ChatComponents';
+import { ChatComponent } from 'components/ChatComponent';
 import { Button, Input, Section } from '../components/SharedStyling';
 
 
@@ -144,32 +145,29 @@ function BRB() {
 
     gsap.to(window, {
       duration: 0.3,
-      scrollTo: { y: `#${id}`}
+      scrollTo: { y: `#${id}` },
     });
 
     setTimeout(() => {
       EnableScroll();
     }, 1000);
-
   };
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
 
-  
-
   const elem0 = useRef(null);
   const newRef = useRef(null);
 
-  const newTl =  gsap.timeline({
+  const newTl = gsap.timeline({
     scrollTrigger: {
       trigger: '#new',
       start: 'top top',
-      end:'+=100',
+      end: '+=100',
       scrub: true,
       pinSpacing: true,
-    }
+    },
   });
 
   useEffect(() => {
@@ -180,9 +178,7 @@ function BRB() {
     newTl.to(elems0, {
       opacity: 0,
     });
-
-  },[]);
-
+  }, []);
 
   return (
     <PageWrapper
@@ -209,7 +205,7 @@ function BRB() {
                     size="24px"
                     weight="700"
                     family="Glancyr !important"
-                    style={{maxHeight:'24px'}}
+                    style={{ maxHeight: '24px' }}
                   >
                     #BRB
                   </Span>
@@ -323,7 +319,7 @@ function BRB() {
         </StyledHeader>
 
         <ItemTop>
-          <ItemVV2 id='new'>
+          <ItemVV2 id="new">
             <MemberImage
               className="pushMissingSvg"
               src={isMobile ? MobileBRB : ImageBRB}
@@ -331,12 +327,15 @@ function BRB() {
             />
           </ItemVV2>
 
-          <NavText id='elems0'>
+          <NavText id="elems0">
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
             one big problem, with a chance to win $100,000 USD in prizes!
           </NavText>
 
-          <NavButtons id='elems' ref={elem0}>
+          <NavButtons
+            id="elems"
+            ref={elem0}
+          >
             <ButtonItem
               borderRadius="24px"
               background="#E64DE9"
@@ -362,24 +361,34 @@ function BRB() {
 
         <BRBParallax />
 
-        <div id='partners' style={{width: '100%'}}>
-          <Partners  />
+        <div
+          id="partners"
+          style={{ width: '100%' }}
+        >
+          <Partners />
         </div>
 
         <CommunityPartners />
 
-        <Wrapper onClick={updateChat}>
+        {/* <Wrapper onClick={updateChat}>
           <input type='text' value={content}  onChange={(e)=>handleUpdate(e.target.value)} />
           <button type='submit'>Update Chat ID</button>
-        </Wrapper>
+        </Wrapper> */}
 
-        <ChatComponent chatId={chatId} />
+        {/* <ChatBubbleComponent chatId={chatId} /> */}
+        <ChatComponent />
 
-        <div id='schedule'>
+        <ScheduleDiv id="schedule">
           <Schedules />
-        </div>
+        </ScheduleDiv>
 
-        <ItemFooter id='support' >
+        <div
+          id="playground"
+          style={{ width: '100%' }}
+        >
+        </div>
+        
+        <ItemFooter id="support">
           <FooterItem>
             <SpanContent
               family="Glancyr"
@@ -536,6 +545,11 @@ const NavList = styled.div`
     align-items: center;
     border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
   }
+`;
+
+const ScheduleDiv = styled.div`
+  margin: 120px 0px 0px 0px;
+  width: 100%;
 `;
 
 // V1 Designs
