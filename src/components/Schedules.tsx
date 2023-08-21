@@ -127,6 +127,34 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           width="28px"
                         />
                       </ImageContainer>
+                      <svg
+                        style={{ visibility: 'hidden', position: 'absolute' }}
+                        width="0"
+                        height="0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                      >
+                        <defs>
+                          <filter id="goo">
+                            <feGaussianBlur
+                              in="SourceGraphic"
+                              stdDeviation="8"
+                              result="blur"
+                            />
+                            <feColorMatrix
+                              in="blur"
+                              mode="matrix"
+                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                              result="goo"
+                            />
+                            <feComposite
+                              in="SourceGraphic"
+                              in2="goo"
+                              operator="atop"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
                       <ScheduleData>
                         <PlaceContainer>
                           <PlaceName color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}>{schedule?.place}</PlaceName>
@@ -246,6 +274,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 85%);
   border-radius: 0px 25px 0px;
+  border-bottom-left-radius: 47px;
   @media (max-width: 480px) {
     width: 320px;
   }
