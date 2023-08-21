@@ -32,59 +32,38 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Indore,
-            place: 'Indore',
-            date: '4 Sept 2023',
+            image: Kochi,
+            place: 'Kochi',
+            date: '8 Sept 2023',
             link: 'https://push.org',
-            backgroundColor: '#299EC2',
+            backgroundColor: '#16837C',
             hasEnded: false,
         }
     ],
-    [{
-        image: Kochi,
-        place: 'Kochi',
-        date: '9 Sept 2023',
+    [ {
+        image: Trivandrum,
+        place: 'Trivandrum',
+        date: '15 Sept 2023',
         link: 'https://push.org',
-        backgroundColor: '#16837C',
+        backgroundColor: '#DA786A',
         hasEnded: false,
     },
     {
-        image: Coimbatore,
-        place: 'Coimbatore',
-        date: '11 Sept 2023',
+        image: Indore,
+        place: 'Indore',
+        date: '18 Sept 2023',
         link: 'https://push.org',
         backgroundColor: '#299EC2',
         hasEnded: false,
     },
-
     ],
     [
-        {
-            image: Trivandrum,
-            place: 'Trivandrum',
-            date: '15 Sept 2023',
-            link: 'https://push.org',
-            backgroundColor: '#DA786A',
-            hasEnded: false,
-        },
-
         {
             image: Pune,
             place: 'Pune',
             date: '23 Sept 2023',
             link: 'https://push.org',
             backgroundColor: '#3F53AA',
-            hasEnded: false,
-        },
-    ],
-    [
-
-        {
-            image: Hyderabad,
-            place: 'Hyderabad',
-            date: '26 Sept 2023',
-            link: 'https://push.org',
-            backgroundColor: '#299EC2',
             hasEnded: false,
         },
         {
@@ -96,6 +75,25 @@ export const citiesList = [
             hasEnded: false,
         },
     ],
+    // [
+
+    //     {
+    //         image: Hyderabad,
+    //         place: 'Hyderabad',
+    //         date: '26 Sept 2023',
+    //         link: 'https://push.org',
+    //         backgroundColor: '#299EC2',
+    //         hasEnded: false,
+    //     },
+    //     {
+    //         image: Ahmedabad,
+    //         place: 'Ahmedabad',
+    //         date: '30 Sept 2023',
+    //         link: 'https://push.org',
+    //         backgroundColor: '#194395',
+    //         hasEnded: false,
+    //     },
+    // ],
     [
 
         {
@@ -139,7 +137,7 @@ export const citiesList = [
     [
         {
             image: Delhi_north,
-            place: 'North Delhi',
+            place: 'Delhi North',
             date: '11 Nov 2023',
             link: 'https://push.org',
             backgroundColor: '#299EC2',
@@ -175,29 +173,46 @@ export const citiesList = [
         {
             image: Dehradun,
             place: 'Dehradun',
-            date: '31 AUG 2022',
+            date: 'TBA',
+            // date: '31 AUG 2022',
             link: 'https://push.org',
             backgroundColor: '#194395',
             hasEnded: false,
         },
         {
-            image: Chennai,
-            place: 'Chennai',
-            date: '5 Dec 2023',
-            link: 'https://push.org',
-            backgroundColor: '#DA786A',
-            hasEnded: false,
-        },
-
-    ], [
-        {
-            image: Bengaluru,
-            place: 'Bengalore',
-            date: '8 Dec 2023',
+            image: Coimbatore,
+            place: 'Coimbatore',
+            date: '11 Sept 2023',
             link: 'https://push.org',
             backgroundColor: '#299EC2',
             hasEnded: false,
         },
+    ], [
+        {
+            image: Chennai,
+            place: 'Chennai',
+            date: 'TBA',
+            link: 'https://push.org',
+            backgroundColor: '#DA786A',
+            hasEnded: false,
+        },
+        {
+            image: Hyderabad,
+            place: 'Hyderabad',
+            date: 'TBA',
+            link: 'https://push.org',
+            backgroundColor: '#299EC2',
+            hasEnded: false,
+        },
+    ],[
+        {
+            image: Bengaluru,
+            place: 'Bengalore',
+            date: 'TBA',
+            link: 'https://push.org',
+            backgroundColor: '#299EC2',
+            hasEnded: false,
+        }
     ]
 
 ];

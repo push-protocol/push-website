@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -30,6 +30,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   const isMobile = useMediaQuery('(max-width: 480px)');
 
   const [direction, setDirection] = useState('right');
+  const [index, setIndex] = useState(0);
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
@@ -70,6 +71,14 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   }, []);
 
+  const scrollRef = useRef();
+
+  useEffect(() => {
+    // if(scrollRef?.current?.children[0].focus()){
+    console.log('number one', scrollRef?.current);
+    // }
+  }, [scrollRef]);
+
 
   // const isMobile = useDeviceWidthCheck(600);
 
@@ -93,12 +102,11 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           omitEnd: true,
           slideFocus: true,
           gap: isMobile ? '2em' : '1.5em',
-          fixedWidth: isMobile ? '344px' : '413px'
-
+          fixedWidth: isMobile ? '344px' : '413px',
         }}
         hasTrack={false} aria-label="...">
 
-        <SplideTrack style={{ paddingBottom: '40px' }}>
+        <SplideTrack style={{ paddingBottom: '40px' }} ref={scrollRef}>
           {citiesList.map((item) => {
             return (
               <SplideContainer className='splide__slide is-visible' key={item}>
@@ -146,6 +154,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
               <Icon src={Left} />
             </Button>
+            {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
             <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
               <Icon src={Right} />
             </Button>
