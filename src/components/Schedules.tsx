@@ -5,16 +5,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import useMediaQuery from 'hooks/useMediaQuery';
-import Test from '../assets/brb/schedules/test.jpg';
 import { ItemH, ItemV } from './SharedStyling';
-import Agra from '../assets/brb/schedules/agra.svg';
 import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
-import MarqueeAnimation from './MarqueeAnimation';
 import { device } from 'config/globals';
-
 import moment from 'moment';
 
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
@@ -22,7 +18,6 @@ import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 
 import { citiesList } from 'helpers/ScheduleLists';
-import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery('(max-width: 480px)');
