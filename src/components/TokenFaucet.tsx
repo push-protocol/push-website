@@ -53,7 +53,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         />
       </HeaderContainer>
       <InputContainer>
-        <Label>1. Follow, Post on X and mention your wallet address</Label>
+        <Label>1. Follow, Post on X and mention your wallet address in the post</Label>
         <ItemHV2
           justifyContent="flex-start"
           alignItems="center"
@@ -112,7 +112,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
               fontWeight="400"
               color={isPosted ? '#25AAF5' : '#FFF'}
             >
-              {isPosted ? 'Posted' : 'Post'}
+              {isPosted ? 'Posted' : 'Post about BRB'}
             </Span>
             {isPosted && (
               <Icon
@@ -126,7 +126,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         </ItemHV2>
       </InputContainer>
       <InputContainer>
-        <Label>2. Join Discord and Post a screenshot of your post in #channel-name</Label>
+        <Label>2. Join Discord and Share a link of your post in #brb-faucet</Label>
         <ButtonItem
           borderRadius="12px"
           background={isJoined ? '#FFF' : '#3C63C6'}
@@ -146,7 +146,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             fontWeight="400"
             color={isJoined ? '#3C63C6' : '#FFF'}
           >
-            {isJoined ? 'Joined' : 'Join Discord'}
+            {isJoined ? 'Joined' : 'Join Discord and Share link'}
           </Span>
           {isJoined && (
             <Icon
@@ -159,9 +159,9 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         </ButtonItem>
       </InputContainer>
       <InputContainer>
-        <Label>3. Claim and receive PUSH Tokens in your wallet after 24 hours</Label>
+        <Label>3. You will receive 10 PUSH Tokens in your wallet after 24 hours</Label>
       </InputContainer>
-      <ButtonItem
+      {/* <ButtonItem
         borderRadius="16px"
         background="#E64DE9"
         border="1px solid #FC6DFF"
@@ -170,7 +170,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         style={{ width: '100%', fontSize: '18px', marginTop: '4px' }}
       >
         Claim 10 PUSH
-      </ButtonItem>
+      </ButtonItem> */}
       <ItemVV2
         justifyContent="flex-start"
         alignItems="flex-start"
