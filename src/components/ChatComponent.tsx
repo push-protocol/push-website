@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
+import useMediaQuery from 'hooks/useMediaQuery';
 import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
@@ -10,12 +11,13 @@ import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
-// import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
+import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
+  const isMobile = useMediaQuery(device.mobileL);
 
-  // useDisableBodyScroll({ open: showFaucet });
+  useDisableBodyScroll({ open: showFaucet });
   return (
     <Container>
       <Header>
@@ -28,9 +30,9 @@ export const ChatComponent = () => {
       <BottomBar>
         <TokenGated />
         <Span
-          fontSize="16px"
+          fontSize={isMobile ? '14px' : '16px'}
           color="#fff"
-          fontWeight="550"
+          fontWeight="200"
         >
           This is a token gated group. You need{' '}
           <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 Push Token</span> to be
@@ -39,7 +41,7 @@ export const ChatComponent = () => {
         <ButtonItem
           background="#E64DE9"
           padding="8px"
-          fontWeight="550"
+          fontWeight="200"
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
@@ -78,9 +80,6 @@ const ButtonItem = styled(ButtonV2)`
   letter-spacing: 0.03em;
   border-radius: 8px;
   font-family: Glancyr !important;
-  // &:hover {
-  //   box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
-  // }
   &:hover:after {
     opacity: 0;
   }
@@ -88,7 +87,8 @@ const ButtonItem = styled(ButtonV2)`
     opacity: 0;
   }
   @media ${device.mobileL} {
-    width: 100%;
+    width: 178px;
+    margin-top: 10px;
   }
 `;
 
@@ -99,6 +99,11 @@ const Span = styled.span`
   font-weight: ${(props) => props.fontWeight || '300'};
   letter-spacing: 0.01em;
   margin: 5px 16px 0px 4px;
+  @media ${device.mobileL} {
+    width: 80%;
+    margin: 0px 0px 0px 4px;
+    line-height:1.3;
+  }
 `;
 
 const Header = styled.h3`
@@ -111,10 +116,16 @@ const Header = styled.h3`
   @media (max-width: 768px) {
     margin: 0px 0px 49px;
   }
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `;
 
 const BrandHeader = styled.div`
   position: absolute;
   right: 0px;
   bottom: -33px;
+  @media ${device.mobileL} {
+    right: 45px;
+  }
 `;
