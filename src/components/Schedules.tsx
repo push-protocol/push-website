@@ -5,31 +5,23 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import useMediaQuery from 'hooks/useMediaQuery';
-import Test from '../assets/brb/schedules/test.jpg';
 import { ItemH, ItemV } from './SharedStyling';
-import Agra from '../assets/brb/schedules/agra.svg';
 import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
-import MarqueeAnimation from './MarqueeAnimation';
 import { device } from 'config/globals';
-
 import moment from 'moment';
-
 
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
 
 import { citiesList } from 'helpers/ScheduleLists';
-import { useDeviceWidthCheck } from 'hooks/useDeviceWidthCheck';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
-  const [marqueeDirection, setMarqueeDirection] = useState('left');
   const isMobile = useMediaQuery('(max-width: 480px)');
 
-  const [direction, setDirection] = useState('right');
   const [index, setIndex] = useState(0);
 
   const openLink = (link: string) => {
@@ -52,7 +44,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     const eventGap = eventDate - currentDate;
 
     if (eventGap < 0) {
-      //This means that the event has ended 
+      //This means that the event has ended
       // setEventHasEnded(true);
       return true;
     } else {
@@ -61,14 +53,11 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   };
 
   useEffect(() => {
-
-    citiesList.forEach(element => {
+    citiesList.forEach((element) => {
       element.map((item) => {
         item.hasEnded = checkDateStatus(item.date);
-
       });
     });
-
   }, []);
 
   const scrollRef = useRef();
@@ -79,11 +68,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     // }
   }, [scrollRef]);
 
-
   // const isMobile = useDeviceWidthCheck(600);
-
-  console.log('Direction', direction);
-
+  console.log('index', index);
   return (
     <Container ref={sectionRef}>
       <ItemH>
@@ -104,12 +90,19 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           gap: isMobile ? '2em' : '1.5em',
           fixedWidth: isMobile ? '344px' : '413px',
         }}
-        hasTrack={false} aria-label="...">
-
-        <SplideTrack style={{ paddingBottom: '40px' }} ref={scrollRef}>
+        hasTrack={false}
+        aria-label="..."
+      >
+        <SplideTrack
+          style={{ paddingBottom: '40px' }}
+          ref={scrollRef}
+        >
           {citiesList.map((item) => {
             return (
-              <SplideContainer className='splide__slide is-visible' key={item}>
+              <SplideContainer
+                className="splide__slide is-visible"
+                key={item}
+              >
                 {item?.map((schedule, index) => {
                   return (
                     <ScheduleCardContainer
@@ -129,50 +122,82 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           width="28px"
                         />
                       </ImageContainer>
+                      <svg
+                        style={{ visibility: 'hidden', position: 'absolute' }}
+                        width="0"
+                        height="0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                      >
+                        <defs>
+                          <filter id="goo">
+                            <feGaussianBlur
+                              in="SourceGraphic"
+                              stdDeviation="8"
+                              result="blur"
+                            />
+                            <feColorMatrix
+                              in="blur"
+                              mode="matrix"
+                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                              result="goo"
+                            />
+                            <feComposite
+                              in="SourceGraphic"
+                              in2="goo"
+                              operator="atop"
+                            />
+                          </filter>
+                        </defs>
+                      </svg>
                       <ScheduleData>
                         <PlaceContainer>
                           <PlaceName color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}>{schedule?.place}</PlaceName>
                           {!schedule.hasEnded && <Arrow />}
                         </PlaceContainer>
-                        <DateContainer color={schedule.hasEnded ? '#494968' : '#fff'} onClick={() => checkDateStatus(schedule?.date)}>{schedule?.date}</DateContainer>
+                        <DateContainer
+                          color={schedule.hasEnded ? '#494968' : '#fff'}
+                          onClick={() => checkDateStatus(schedule?.date)}
+                        >
+                          {schedule?.date}
+                        </DateContainer>
                       </ScheduleData>
                     </ScheduleCardContainer>
                   );
                 })}
-
               </SplideContainer>
             );
           })}
-
-
         </SplideTrack>
-
-
 
         <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
           <ActionContainer className="splide__arrows">
-            <Button background={direction === 'left' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('left')} className="splide__arrow splide__arrow--prev">
+            <Button
+              background={index > 0 ? '#E64DE9' : '#2A2A39'}
+              onClick={() => (index !== 0 ? setIndex((prev) => prev - 1) : null)}
+              className="splide__arrow splide__arrow--prev"
+            >
               <Icon src={Left} />
             </Button>
             {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
-            <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next">
+            <Button
+              background={index < citiesList?.length - 2 ? '#E64DE9' : '#2A2A39'}
+              onClick={() => (index !== citiesList?.length - 2 ? setIndex((prev) => prev + 1) : null)}
+              className="splide__arrow splide__arrow--next"
+            >
               <Icon src={Right} />
             </Button>
           </ActionContainer>
-
         </div>
       </Splide>
-
-
-
-    </Container >
+    </Container>
   );
 };
 
 const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction:column;
+  flex-direction: column;
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
@@ -188,15 +213,12 @@ const SchedulesWrapper = styled.div`
 const SplideContainer = styled.div`
   // width: auto !important;
   // margin: 0px !important;
- 
 
-  @media (max-width: 480px){
+  @media (max-width: 480px) {
     // margin-right:15px !important;
     // margin-left:15px !important;
   }
-
 `;
-
 
 const MarqueeContainer = styled.div`
   position: relative;
@@ -220,7 +242,7 @@ const ScheduleCardContainer = styled.div`
   height: 344px;
   background: ${(props) => props.background};
   display: flex;
-  margin-top:1.5em;
+  margin-top: 1.5em;
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
@@ -229,7 +251,7 @@ const ScheduleCardContainer = styled.div`
   transition: all 0.3s;
   transform: scale(1);
 
-  &:hover{
+  &:hover {
     transform: scale(1.05);
   }
 
@@ -247,18 +269,17 @@ const ImageContainer = styled.div`
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 85%);
   border-radius: 0px 25px 0px;
+  border-bottom-left-radius: 47px;
   @media (max-width: 480px) {
-    width: 334px;
+    width: 320px;
   }
 `;
 
 const Image = styled.img`
-  width: 388px;
-  height: 217px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   overflow: hidden;
-  @media (max-width: 480px) {
-    width: 334px;
-  }
 `;
 const Icon = styled.img`
   width: 50px;
@@ -332,7 +353,7 @@ const ActionContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin:0px;
+    margin: 0px;
   }
 `;
 
