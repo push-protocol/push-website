@@ -34,6 +34,49 @@ interface Web3ReactState {
   library?: unknown;
 }
 
+const darkChatTheme = {
+  chatBubblePrimaryBgColor: '#fff',
+  bgColorPrimary: 'rgb(47, 49, 55)',
+  bgColorSecondary: 'rgb(40, 42, 46)',
+  textColorPrimary: '#fff',
+  textColorSecondary: 'rgb(182, 188, 214)',
+  chatBubbleAccentBgColor: 'rgb(202, 89, 155)',
+  accentBgColor: 'rgb(202, 89, 155)',
+  accentTextColor: '#fff',
+  btnColorPrimary: 'rgb(202, 89, 155)',
+  border: 'none',
+  borderRadius: '24px',
+  iconColorPrimary:
+    'brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(1567%) hue-rotate(191deg) brightness(86%) contrast(93%)',
+    dropdownBorderColor: '1px solid rgb(74, 79, 103)',
+  fileIconColor: '#fff',
+  modalPrimaryTextColor: '#B6BCD6',
+  modalSearchBarBorderColor: '#4A4F67',
+  modalSearchBarBackground: '#282A2E',
+  snapFocusBg: '#404650',
+  groupButtonBackgroundColor: '#2F3137',
+  groupButtonTextColor: '#787E99',
+  modalConfirmButtonBorder: '1px solid #787E99',
+  groupSearchProfilBackground: '#404650',
+  modalInputBorderColor: '#4A4F67',
+  snackbarBorderText: '#B6BCD6',
+  snackbarBorderIcon:
+  'brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(1567%) hue-rotate(191deg) brightness(86%) contrast(93%)',
+  modalContentBackground: '#2F3137',
+  modalProfileTextColor: '#B6BCD6',
+  toastSuccessBackground: 'linear-gradient(90.15deg, #30CC8B -125.65%, #30CC8B -125.63%, #2F3137 42.81%)',
+  toastErrorBackground: 'linear-gradient(89.96deg, #FF2070 -101.85%, #2F3137 51.33%)',
+  toastShadowColor: '#00000010',
+  toastBorderColor: '#4A4F67',
+  mainBg: '#000',
+  modalBorderColor: '#4A4F67',
+  modalDescriptionTextColor: '#787E99',
+  modalIconColor: '#787E99',
+  pendingCardBackground: 'rgba(173, 176, 190, 0.08)',
+  modalHeadingColor: '#B6BCD6',
+  defaultBorder: '#4A4F67'
+};
+
 function App() {
   const FAQ = React.lazy(() => import('pages/FAQ'));
   const PrivacyMobile = React.lazy(() => import('pages/PrivacyMobile'));
