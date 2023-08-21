@@ -174,7 +174,6 @@ export const citiesList = [
             image: Dehradun,
             place: 'Dehradun',
             date: 'TBA',
-            // date: '31 AUG 2022',
             link: 'https://push.org',
             backgroundColor: '#7A3DA9',
             hasEnded: false,

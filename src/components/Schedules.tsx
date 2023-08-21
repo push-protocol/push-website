@@ -76,9 +76,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
         <Header>Schedule</Header>
       </ItemH>
       <Splide
-        style={{ margin: 'auto' }}
+        style={{ margin: isMobile ? '0 auto' : 'auto'  }}
         options={{
-          width: isMobile ? '86vw' : '100vw',
+          width: isMobile ? '100vw' : '100vw',
           type: 'slide',
           gap: '100px',
           perPage: 1,
@@ -88,7 +88,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           omitEnd: true,
           slideFocus: true,
           gap: isMobile ? '2em' : '1.5em',
-          fixedWidth: isMobile ? '344px' : '413px',
+          fixedWidth: isMobile ? '100vw' : '413px',
         }}
         hasTrack={false}
         aria-label="..."
@@ -118,8 +118,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                       <ImageContainer>
                         <Image
                           src={schedule?.image}
-                          height="28px"
-                          width="28px"
+                          // height="28px"
+                          // width="28px"
                         />
                       </ImageContainer>
                       <svg
@@ -246,8 +246,6 @@ const ScheduleCardContainer = styled.div`
   flex-direction: column;
   align-items: flex-end;
   border-radius: 25px;
-  // margin-right: 10px;
-  // margin-left: 10px;
   transition: all 0.3s;
   transform: scale(1);
 
@@ -256,10 +254,9 @@ const ScheduleCardContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    width: 100%;
-    // max-width:334px;
-    margin-left: 0px;
-    // width: 359px;
+    width: 90vw;
+    margin: 20px auto;
+    border-radius: 25px;
   }
 `;
 
@@ -271,7 +268,9 @@ const ImageContainer = styled.div`
   border-radius: 0px 25px 0px;
   border-bottom-left-radius: 47px;
   @media (max-width: 480px) {
-    width: 320px;
+    border-radius: 25px 25px 25px 25px;
+    // width: 320px;
+    width: 100%;
   }
 `;
 
