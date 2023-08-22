@@ -146,12 +146,11 @@ const Container = styled.div`
     padding: 0px;
 
       @media ${device.mobileL} {
-        //  margin-top: -400px;
-        //  margin-top: -30em;
+         margin-top: 0px;
          scroll-snap-align: none;
          margin-bottom: 2em;
          overflow: hidden;
-         padding-bottom: 12em;
+         padding-bottom: 20em;
    }
 `;
 
@@ -159,6 +158,9 @@ const Container = styled.div`
 const BRBWrapper = styled.div`
     width: 100%;
     height: 100vh;
+    @media ${device.mobileL} {
+      min-height: 100vh;
+    }
 `;
 
 const FirstBackground = styled.div`
@@ -199,8 +201,8 @@ const ParallaxFlex = styled.div`
     @media ${device.mobileL} {
         flex-direction: column;
         margin-top: 30px;
-        gap: 50px;
-        top: 55%;
+        // gap: 50px;
+        top: 45%;
     }
 `;
 
