@@ -72,6 +72,7 @@ const BottomBar = styled(ItemHV2)`
   background: transparent;
   align-items: center;
   color: #fff;
+  z-index: 0 !important;
 `;
 
 const ButtonItem = styled(ButtonV2)`

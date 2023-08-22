@@ -23,6 +23,29 @@ import * as PushAPI from '@pushprotocol/restapi';
 import ConnectButton from './components/Connect';
 import Dropdown from 'components/Dropdown';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from '@rainbow-me/rainbowkit';
+import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  zora,
+  goerli,
+  polygonMumbai,
+  optimismGoerli,
+  arbitrumGoerli,
+  zoraTestnet,
+} from 'wagmi/chains';
+import '@rainbow-me/rainbowkit/styles.css';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
+import { darkChatTheme } from 'helpers/theme';
+
 
 ReactGA.initialize('UA-165415629-2');
 
@@ -34,48 +57,7 @@ interface Web3ReactState {
   library?: unknown;
 }
 
-const darkChatTheme = {
-  chatBubblePrimaryBgColor: '#fff',
-  bgColorPrimary: 'rgb(47, 49, 55)',
-  bgColorSecondary: 'rgb(40, 42, 46)',
-  textColorPrimary: '#fff',
-  textColorSecondary: 'rgb(182, 188, 214)',
-  chatBubbleAccentBgColor: 'rgb(202, 89, 155)',
-  accentBgColor: 'rgb(202, 89, 155)',
-  accentTextColor: '#fff',
-  btnColorPrimary: 'rgb(202, 89, 155)',
-  border: 'none',
-  borderRadius: '24px',
-  iconColorPrimary:
-    'brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(1567%) hue-rotate(191deg) brightness(86%) contrast(93%)',
-    dropdownBorderColor: '1px solid rgb(74, 79, 103)',
-  fileIconColor: '#fff',
-  modalPrimaryTextColor: '#B6BCD6',
-  modalSearchBarBorderColor: '#4A4F67',
-  modalSearchBarBackground: '#282A2E',
-  snapFocusBg: '#404650',
-  groupButtonBackgroundColor: '#2F3137',
-  groupButtonTextColor: '#787E99',
-  modalConfirmButtonBorder: '1px solid #787E99',
-  groupSearchProfilBackground: '#404650',
-  modalInputBorderColor: '#4A4F67',
-  snackbarBorderText: '#B6BCD6',
-  snackbarBorderIcon:
-  'brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(1567%) hue-rotate(191deg) brightness(86%) contrast(93%)',
-  modalContentBackground: '#2F3137',
-  modalProfileTextColor: '#B6BCD6',
-  toastSuccessBackground: 'linear-gradient(90.15deg, #30CC8B -125.65%, #30CC8B -125.63%, #2F3137 42.81%)',
-  toastErrorBackground: 'linear-gradient(89.96deg, #FF2070 -101.85%, #2F3137 51.33%)',
-  toastShadowColor: '#00000010',
-  toastBorderColor: '#4A4F67',
-  mainBg: '#000',
-  modalBorderColor: '#4A4F67',
-  modalDescriptionTextColor: '#787E99',
-  modalIconColor: '#787E99',
-  pendingCardBackground: 'rgba(173, 176, 190, 0.08)',
-  modalHeadingColor: '#B6BCD6',
-  defaultBorder: '#4A4F67'
-};
+const API_KEY = 'rtkd-a4JWpnViQBZdNCiFBGTJdp5e0R2';
 
 function App() {
   const FAQ = React.lazy(() => import('pages/FAQ'));
@@ -102,8 +84,8 @@ function App() {
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
   const [env, setEnv] = useState<ENV>(ENV.STAGING);
-  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
   const [isCAIP, setIsCAIP] = useState(false);
+
 
   const socketData = useSDKSocket({
     account: account,
@@ -122,31 +104,79 @@ function App() {
   // };
 
   
+  // useEffect(() => {
+  //   (async () => {
+  //     if (!account || !env || !library) return;
+
+  //     const user = await PushAPI.user.get({ account: account, env });
+  //     let pgpPrivateKey;
+  //     const librarySigner = await library.getSigner(account);
+  //     if (user?.encryptedPrivateKey) {
+  //       pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
+  //         encryptedPGPPrivateKey: user.encryptedPrivateKey,
+  //         account: account,
+  //         signer: librarySigner,
+  //         env,
+  //       });
+  //     }
+
+  //     setPgpPrivateKey(pgpPrivateKey);
+  //   })();
+  // }, [account, env, library]);
+
+  const [loadWagmi, setLoadWagmi] = useState(false);
+  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
+
+  const { chains, publicClient } = configureChains(
+    [
+      mainnet,
+      polygon,
+      optimism,
+      arbitrum,
+      zora,
+      goerli,
+      polygonMumbai,
+      optimismGoerli,
+      arbitrumGoerli,
+      zoraTestnet,
+    ],
+    [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
+  );
+
+  // const { chains, provider } = configureChains([goerli], [publicProvider()]);
+
+  const { connectors } = getDefaultWallets({
+    appName: 'Push website',
+    projectId: 'd19bd9c98cc6455e637836fdc2202d42',
+    chains,
+  });
+
+  // const connectors = connectorsForWallets([
+  //   ...wallets,
+  //   // {
+  //   //   groupName: 'Other',
+  //   //   wallets: [
+  //   //     argentWallet({ projectId, chains }),
+  //   //     trustWallet({ projectId, chains }),
+  //   //     ledgerWallet({ projectId, chains }),
+  //   //   ],
+  //   // },
+  // ]);
+
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors,
+    publicClient,
+  });
+
+
   useEffect(() => {
-    (async () => {
-      if (!account || !env || !library) return;
-
-      const user = await PushAPI.user.get({ account: account, env });
-      let pgpPrivateKey;
-      const librarySigner = await library.getSigner(account);
-      if (user?.encryptedPrivateKey) {
-        pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
-          encryptedPGPPrivateKey: user.encryptedPrivateKey,
-          account: account,
-          signer: librarySigner,
-          env,
-        });
-      }
-
-      setPgpPrivateKey(pgpPrivateKey);
-    })();
-  }, [account, env, library]);
-
-  
+    setLoadWagmi(true);
+  }, []);
 
   return (
   <section>
-    <ConnectWrapper>
+    {/* <ConnectWrapper>
 
     <ConnectButton />
 
@@ -162,12 +192,14 @@ function App() {
       onChange={onChangeEnv}
     />
 
-    </ConnectWrapper>
+    </ConnectWrapper> */}
 
 
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
           <SocketContext.Provider value = {{ socketData }}>
+          {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
                 <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
@@ -227,6 +259,8 @@ function App() {
                   </Suspense>
                   </ChatUIProvider>
               </AccountContext.Provider>
+             </RainbowKitProvider>
+             </WagmiConfig>) : null}
           </SocketContext.Provider>
       </Web3Context.Provider>
     </EnvContext.Provider>
