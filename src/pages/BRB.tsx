@@ -127,7 +127,7 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    if(showMobileMenu) toggleMobileMenu();
+    if (showMobileMenu) toggleMobileMenu();
     ScrollTrigger.disable();
 
     gsap.to(window, {
@@ -282,15 +282,23 @@ function BRB() {
                   className="navigationMenu"
                   showMobileMenu={isMobileMenuOpen}
                 >
-                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                    openLink('https://discord.gg/pushprotocol');}}>
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://discord.gg/pushprotocol');
+                    }}
+                  >
                     <NavigationMenuHeader>
-                      <Discord   />
+                      <Discord />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                    openLink('https://twitter.com/pushprotocol');}}>
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://twitter.com/pushprotocol');
+                    }}
+                  >
                     <NavigationMenuHeader>
                       <X />
                     </NavigationMenuHeader>
@@ -312,7 +320,7 @@ function BRB() {
 
           <NavText id="elems0">
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
-            one big problem, with a chance to win $100,000 USD in prizes!
+            one big problem, with a chance to win over $50,000 USD in prizes!
           </NavText>
 
           <NavButtons
@@ -363,7 +371,7 @@ function BRB() {
         >
           <ChatComponent />
         </div>
-        
+
         <ItemFooter id="support">
           <FooterItem>
             <SpanContent
@@ -604,7 +612,7 @@ const NavText = styled.div`
   font-size: 18px;
   font-style: normal;
   font-weight: 200;
-  line-height: normal;
+  line-height: 1.5;
   letter-spacing: 0.03em;
 
   width: 844px;

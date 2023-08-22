@@ -32,7 +32,10 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
             <PartnerIcon src={Aragon} />
           </PartnerItem>
           <PartnerItem>
-            <PartnerIcon src={Chainsafe} />
+            <PartnerIcon
+              src={Chainsafe}
+              style={{ transform: 'scale(1.2)' }}
+            />
           </PartnerItem>
         </PartnerColumn>
         <PartnerColumn>
@@ -87,8 +90,8 @@ const PartnersContainer = styled.div`
   @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }
-  @media (min-width:1400px){
-    margin-top:110px;
+  @media (min-width: 1400px) {
+    margin-top: 110px;
   }
 `;
 
@@ -144,10 +147,10 @@ const BottomRow = styled(ItemH)`
   max-width: 100vw;
   justify-content: space-evenly;
   padding: 56px 150px 0px;
-  @media(max-width:768px){
+  @media (max-width: 768px) {
     padding: 56px 0px 0px;
-    flex-direction:column;
-    align-items:center;
-    gap:56px;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
   }
 `;
