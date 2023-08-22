@@ -135,7 +135,7 @@ function BRB() {
       scrollTo: { y: `#${id}` },
     });
 
-    enableScroll();
+    if(!isMobile) enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -156,12 +156,20 @@ function BRB() {
   });
 
   useEffect(() => {
-    newTl.to(elems0, {
-      opacity: isMobile ? 1 : 0,
-    });
+    ScrollTrigger.matchMedia({
+      '(min-width: 480px)': function() {
+        newTl.to(elems0, {
+          opacity: 0,
+        });
 
-    newTl.to(elems, {
-      opacity: 0,
+        newTl.to(elems, {
+          opacity: 0,
+        });
+      },
+      '(max-width: 479px)': function() { 
+        return;
+      },
+      'all': function() { return; }
     });
   }, []);
 
@@ -452,9 +460,9 @@ const ItemTop = styled.main`
   width: 100%;
   margin: 261px 0 261px 0;
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     width: 100%;
-    margin: 125px 0 261px 0;
+    margin: 125px 0 0px 0;
   }
 `;
 

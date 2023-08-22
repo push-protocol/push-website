@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import styled from 'styled-components';
 import ParallaxBRB from '../assets/Grouped.svg';
+import ParallaxBRBMobile from '../assets/GroupedMobile.svg';
 import ImageHolder from './ImageHolder';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import GLOBALS, { device } from 'config/globals';
@@ -37,22 +38,27 @@ function BRBParallax() {
       //   end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
       pin: true // Pin the element true or false
     } });
+
       
   useEffect(() => {
-    timelineHeader.
-      to('.firstBackground', {
-        scale: isMobile ? 1.8 : 1.7,
+    ScrollTrigger.matchMedia({
+      '(min-width: 480px)': function() {
+        timelineHeader.
+          to('.firstBackground', {
+            scale: 1.7,
+          },
+          'sameTime');
       },
-      'sameTime');
-
+      '(max-width: 479px)': function() { 
+        return;
+      },
+      // 'all': function() { return; }
+    });
 
     ScrollTrigger.create({
-      snap: 0,
-      // onUpdate: (self) => {
-      //   const progress = self.progress.toFixed(2);
-      //   gsap.set('#home', { y: progress * 200 });
-      // }
+      snap: 0
     });
+
   }, []);
 
   // useEffect(()=>{
@@ -81,10 +87,10 @@ function BRBParallax() {
       
   return (
     <Container>
-      <BRBWrapper id="home">
-        <FirstBackground className="firstBackground">
+      <BRBWrapper id={!isMobile && 'home'}>
+        <FirstBackground isMobile={isMobile} className="firstBackground">
           <Span
-            size={isMobile ? '25px' : '40px'}
+            size={isMobile ? '50px' : '40px'}
             family="Glancyr !important"
             color="#E64DE9"
             // margin={isMobile ? '15.5em 0 0 0' : '202px 0 0 0'}
@@ -97,7 +103,7 @@ function BRBParallax() {
             {Stats.map((item, i) => (
               <FlexItem key={i}>
                 <Span
-                  size={isMobile ? '45px' : '65px'}
+                  size={isMobile ? '80px' : '65px'}
                   family="Glancyr !important"
                   textAlign="center"
                   weight="600"
@@ -107,7 +113,7 @@ function BRBParallax() {
                 </Span>
 
                 <Span
-                  size={isMobile ? '10px' : '14px'}
+                  size={isMobile ? '18px' : '14px'}
                   family="Glancyr !important"
                   color="#fff"
                   textAlign="center"
@@ -140,8 +146,9 @@ const Container = styled.div`
     padding: 0px;
 
       @media ${device.mobileL} {
-         margin-top: -400px;
+        //  margin-top: -400px;
         //  margin-top: -30em;
+         scroll-snap-align: none;
          margin-bottom: 2em;
          overflow: hidden;
          padding-bottom: 12em;
@@ -159,7 +166,7 @@ const FirstBackground = styled.div`
   height: 100%;
   margin: 0px auto;
 
-  background-image: url(${ParallaxBRB});
+  background-image: ${(props) => props.isMobile ? `url(${ParallaxBRBMobile})` : `url(${ParallaxBRB})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -170,9 +177,7 @@ const FirstBackground = styled.div`
   justify-content: center;
 
   @media ${device.mobileL} {    
-    width: 90%;
-    //   align-items: flex-end;
-//   justify-content: flex-end;
+    width: 100%;
 }
 `;
 
@@ -193,7 +198,8 @@ const ParallaxFlex = styled.div`
 
     @media ${device.mobileL} {
         flex-direction: column;
-        margin-top: 21px;
+        margin-top: 30px;
+        gap: 50px;
         top: 55%;
     }
 `;
