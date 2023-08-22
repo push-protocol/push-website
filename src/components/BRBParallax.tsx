@@ -146,11 +146,11 @@ const Container = styled.div`
     padding: 0px;
 
       @media ${device.mobileL} {
-         margin-top: 0px;
+         margin-top: -10em;
          scroll-snap-align: none;
          margin-bottom: 2em;
          overflow: hidden;
-         padding-bottom: 20em;
+         padding-bottom: 18em;
    }
 `;
 
