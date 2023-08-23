@@ -12,6 +12,7 @@ import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import { device } from 'config/globals';
 import moment from 'moment';
+import useOnScreen from 'hooks/useOnScreen';
 
 import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
 
@@ -23,6 +24,11 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   const isMobile = useMediaQuery('(max-width: 480px)');
 
   const [index, setIndex] = useState(0);
+
+  const scrollRef = useRef(null);
+  const isEndRef = useRef(null);
+  const isLastSchedule = useOnScreen(isEndRef);
+
 
   const openLink = (link: string) => {
     window.open(link, '_blank');
@@ -60,8 +66,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     });
   }, []);
 
-  const scrollRef = useRef();
-
   useEffect(() => {
     // if(scrollRef?.current?.children[0].focus()){
     console.log('number one', scrollRef?.current);
@@ -69,14 +73,16 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   }, [scrollRef]);
 
   // const isMobile = useDeviceWidthCheck(600);
-  console.log('index', index);
+
+  console.log('isLast', isLastSchedule);
+
   return (
     <Container ref={sectionRef}>
       <ItemH>
         <Header>Schedule</Header>
       </ItemH>
       <Splide
-        style={{ margin: isMobile ? '0 auto' : 'auto'  }}
+        style={{ margin: isMobile ? '0 auto' : 'auto' }}
         options={{
           width: isMobile ? '100vw' : '100vw',
           type: 'slide',
@@ -94,10 +100,10 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
         aria-label="..."
       >
         <SplideTrack
-          style={{ paddingBottom: '40px' }}
+          style={{ paddingBottom: '29px' }}
           ref={scrollRef}
         >
-          {citiesList.map((item) => {
+          {citiesList.map((item, i) => {
             return (
               <SplideContainer
                 className="splide__slide is-visible"
@@ -162,6 +168,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           {schedule?.date}
                         </DateContainer>
                       </ScheduleData>
+                      {i === citiesList?.length - 1 && <span ref={isEndRef}></span>}
                     </ScheduleCardContainer>
                   );
                 })}
@@ -170,7 +177,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           })}
         </SplideTrack>
 
-        <div style={{ position: 'relative', margin: '40px 0 0 0' }}>
+        <div style={{ position: 'relative' }}>
           <ActionContainer className="splide__arrows">
             <Button
               background={index > 0 ? '#E64DE9' : '#2A2A39'}
@@ -181,8 +188,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             </Button>
             {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
             <Button
-              background={index < citiesList?.length - 2 ? '#E64DE9' : '#2A2A39'}
-              onClick={() => (index !== citiesList?.length - 2 ? setIndex((prev) => prev + 1) : null)}
+              background={!isLastSchedule ? '#E64DE9' : '#2A2A39'}
+              onClick={() => (!isLastSchedule ? setIndex((prev) => prev + 1) : null)}
               className="splide__arrow splide__arrow--next"
             >
               <Icon src={Right} />
@@ -239,7 +246,7 @@ const Header = styled.span`
 
 const ScheduleCardContainer = styled.div`
   width: 413px;
-  height: 344px;
+  height: 324px;
   background: ${(props) => props.background};
   display: flex;
   margin-top: 1.5em;
@@ -261,16 +268,15 @@ const ScheduleCardContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 388px;
+  width: 94%;
   height: 217px;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 85%);
   border-radius: 0px 25px 0px;
   border-bottom-left-radius: 47px;
   @media (max-width: 480px) {
-    border-radius: 25px 25px 25px 25px;
-    // width: 320px;
-    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0% 84%);
+    width: 94%;
   }
 `;
 
@@ -290,7 +296,8 @@ const ScheduleData = styled(ItemV)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 22px 40px 25px 37px;
+  // padding: 22px 40px 25px 37px;
+  padding: 0px 40px 0px 37px;
   box-sizing: border-box;
 `;
 
@@ -340,8 +347,7 @@ const ActionContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   column-gap: 13px;
-  margin-top: 29px;
-  margin-left: 5.5rem;
+  margin-left: 80px;
   width: 1280px;
   @media ${device.laptop} {
     width: 90%;

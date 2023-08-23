@@ -127,7 +127,7 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    if(showMobileMenu) toggleMobileMenu();
+    if (showMobileMenu) toggleMobileMenu();
     ScrollTrigger.disable();
 
     gsap.to(window, {
@@ -135,7 +135,7 @@ function BRB() {
       scrollTo: { y: `#${id}` },
     });
 
-    enableScroll();
+    if(!isMobile) enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -156,12 +156,20 @@ function BRB() {
   });
 
   useEffect(() => {
-    newTl.to(elems0, {
-      opacity: isMobile ? 1 : 0,
-    });
+    ScrollTrigger.matchMedia({
+      '(min-width: 480px)': function() {
+        newTl.to(elems0, {
+          opacity: 0,
+        });
 
-    newTl.to(elems, {
-      opacity: 0,
+        newTl.to(elems, {
+          opacity: 0,
+        });
+      },
+      '(max-width: 479px)': function() { 
+        return;
+      },
+      'all': function() { return; }
     });
   }, []);
 
@@ -282,15 +290,23 @@ function BRB() {
                   className="navigationMenu"
                   showMobileMenu={isMobileMenuOpen}
                 >
-                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                    openLink('https://discord.gg/pushprotocol');}}>
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://discord.gg/pushprotocol');
+                    }}
+                  >
                     <NavigationMenuHeader>
-                      <Discord   />
+                      <Discord />
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  <NavigationMenuItem onClick={() => {if(isMobileMenuOpen) toggleMobileMenu();
-                    openLink('https://twitter.com/pushprotocol');}}>
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://twitter.com/pushprotocol');
+                    }}
+                  >
                     <NavigationMenuHeader>
                       <X />
                     </NavigationMenuHeader>
@@ -312,7 +328,7 @@ function BRB() {
 
           <NavText id="elems0">
             Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
-            one big problem, with a chance to win $100,000 USD in prizes!
+            one big problem, with a chance to win over $50,000 USD in prizes!
           </NavText>
 
           <NavButtons
@@ -363,7 +379,7 @@ function BRB() {
         >
           <ChatComponent />
         </div>
-        
+
         <ItemFooter id="support">
           <FooterItem>
             <SpanContent
@@ -444,9 +460,9 @@ const ItemTop = styled.main`
   width: 100%;
   margin: 261px 0 261px 0;
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     width: 100%;
-    margin: 125px 0 261px 0;
+    margin: 125px 0 0px 0;
   }
 `;
 
@@ -604,7 +620,7 @@ const NavText = styled.div`
   font-size: 18px;
   font-style: normal;
   font-weight: 200;
-  line-height: normal;
+  line-height: 1.5;
   letter-spacing: 0.03em;
 
   width: 844px;
