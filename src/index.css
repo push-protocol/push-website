@@ -458,6 +458,56 @@ template {
   font-display: swap;
 }
 
+
+@font-face {
+  font-family: 'Green Brooks';
+  src: url('./assets/fonts/GreenBrooks.otf') format('opentype');
+  /* font-weight: 800; */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-ExtraLight.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-Light.otf') format('opentype');
+  font-weight: 200 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-Regular.otf') format('opentype');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-Medium.otf') format('opentype');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('./assets/fonts/Glancyr-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 span, p, label, div {
   font-family: "Strawford", Helvetica, sans-serif;
 }
