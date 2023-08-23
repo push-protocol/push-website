@@ -83,7 +83,7 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.STAGING);
+  const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
 
 

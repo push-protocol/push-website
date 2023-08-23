@@ -24,13 +24,18 @@ const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
 };
 
 const ChatViewComponentCard = styled(Section)`
-  height: 60vh;
-  width: 70%;
+  height: 660px;
+  width: 85%;
   margin: 15px auto;
-  z-index: 999999999 !important;
+  z-index: 9999 !important;
+  box-sizing: border-box;
 
-  @media ${device.laptop} {
-    width: 100%;
+
+  @media ${device.mobileL} {
+    width: 90%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
   }
 `;
 

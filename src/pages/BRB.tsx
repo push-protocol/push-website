@@ -384,12 +384,6 @@ function BRB() {
 
         <CommunityPartners />
 
-        {/* <Wrapper onClick={updateChat}>
-          <input type='text' value={content}  onChange={(e)=>handleUpdate(e.target.value)} />
-          <button type='submit'>Update Chat ID</button>
-        </Wrapper> */}
-
-        {/* <ChatBubbleComponent chatId={chatId} /> */}
         <ChatComponent />
 
         <ScheduleDiv id="schedule">
@@ -585,6 +579,7 @@ const StyledHeader = styled.header`
   /* color: #ffffff;
   background: #121315; */
   opacity: 1;
+  z-index: 99999 !important;
 
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;

@@ -8,11 +8,13 @@ import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
 import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
+import PlaygroundBg from '../assets/PlaygroundBg.png';
 import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
 import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 import ChatBubbleComponent from './ChatBubbleComponent';
+import { Section } from './SharedStyling';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -28,7 +30,10 @@ export const ChatComponent = () => {
         </BrandHeader>
       </Header>
 
-      <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' />
+      <PlayGround>
+        <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' />
+      </PlayGround>
+
 
       <BottomBar>
         <TokenGated />
@@ -132,4 +137,16 @@ const BrandHeader = styled.div`
   @media ${device.mobileL} {
     right: 45px;
   }
+`;
+
+const PlayGround = styled(Section)`
+    background-image: url(${PlaygroundBg});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80%;
+    margin: 0 auto;
+    @media ${device.mobileL} {
+      width: 100%;
+    }
 `;
