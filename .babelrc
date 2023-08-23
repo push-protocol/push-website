@@ -1,4 +1,4 @@
 {
-  "presets": ["@babel/preset-react", "@babel/preset-env","react-app", { "absoluteRuntime": false }],
-  "plugins": ["styled-components", "emotion"]
+  "presets": ["@babel/preset-react", "@babel/preset-env"],
+  "plugins": ["styled-components", "@emotion"]
 }

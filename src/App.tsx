@@ -20,8 +20,6 @@ import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
 import { useSDKSocket } from './hooks/useSDKSocket'
 import * as PushAPI from '@pushprotocol/restapi';
-import ConnectButton from './components/Connect';
-import Dropdown from 'components/Dropdown';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
@@ -30,7 +28,6 @@ import {
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
 import {
-  mainnet,
   polygon,
   optimism,
   arbitrum,
@@ -82,7 +79,7 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.STAGING);
+  const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
 
 
