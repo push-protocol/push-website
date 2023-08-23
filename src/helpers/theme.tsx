@@ -9,7 +9,6 @@ export const darkChatTheme = {
     chatViewComponentBackground:
         'rgba(18, 18, 24, 0.65)',
     chatProfileBackground: '#2A2A39',
-    // messageInputBackground: '#2A2A39',
     messageInputBackground: 'transparent',
     chatSentBubbleBackground: '#AF3FB1',
     chatReceivedBubbleBackground: '#424258',
@@ -25,6 +24,9 @@ export const darkChatTheme = {
     timestamp: '15px',
     chatBubblesSenderAddressText: '16px',
     encryptionMessageText: '13px',
+    chatReceivedBubbleAddressText: '12px',
+    chatReceivedBubbleTimestampText: '12px',
+    chatSentBubbleTimestampText: '12px',
   },
   
   fontWeight: {
@@ -35,6 +37,9 @@ export const darkChatTheme = {
     timestamp: '300',
     chatBubblesSenderAddressText: '300',
     encryptionMessageText: '400',
+    chatReceivedBubbleAddressText: '300',
+    chatReceivedBubbleTimestampText: '400',
+    chatSentBubbleTimestampText: '400',
   },
   
   fontFamily: 'inherit',
@@ -60,6 +65,9 @@ export const darkChatTheme = {
     chatBubblesSenderAddressText: 'rgb(182, 188, 214)',
     encryptionMessageText: 'rgb(182, 188, 214)',
     buttonText: '#fff',
+    chatReceivedBubbleAddressText: '#87879A',
+    chatReceivedBubbleTimestampText: 'red',
+    chatSentBubbleTimestampText: 'red',
   },
   backdropFilter: 'blur(6.5px)',
   spinnerColor:'rgb(202, 89, 155)',
