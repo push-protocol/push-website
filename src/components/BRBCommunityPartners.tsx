@@ -3,11 +3,31 @@ import React from 'react';
 import styled from 'styled-components';
 import useMediaQuery from 'hooks/useMediaQuery';
 
-import BuildersTribeSVG from '../assets/brb/community/buidlers-tribe.svg';
+import BuildersTribeSVG from '../assets/brb/community/buidlerstribe.svg';
 import DevfolioSVG from '../assets/brb/community/devfolio.svg';
-import ENSSVG from '../assets/brb/community/ens.svg';
+import ENSDaoSVG from '../assets/brb/community/ensdao.svg';
 import GitcoinSVG from '../assets/brb/community/gitcoin.svg';
 import FrontierSVG from '../assets/brb/community/frontier.svg';
+import LearnWeb3SVG from '../assets/brb/community/learnweb3.svg';
+import HydDaoSVG from '../assets/brb/community/hyd dao.svg';
+import IndiverseSVG from '../assets/brb/community/indiverse.svg';
+import GdscSVG from '../assets/brb/community/gdsc.svg';
+import TphSVG from '../assets/brb/community/tph.svg';
+import GpcSVG from '../assets/brb/community/gpc.svg';
+import WxSVG from '../assets/brb/community/wx.svg';
+import PhoenixSVG from '../assets/brb/community/phoenixguild.svg';
+import H4BengalSVG from '../assets/brb/community/h4bengal.svg';
+import TribeAcademySVG from '../assets/brb/community/tribeacademy.svg';
+import DiversionSVG from '../assets/brb/community/diversion.svg';
+import irlamigoSVG from '../assets/brb/community/irlamigo.svg';
+import w3cgSVG from '../assets/brb/community/w3cg.svg';
+import blockchainedSVG from '../assets/brb/community/blockchained.svg';
+import foundershipSVG from '../assets/brb/community/foundership.svg';
+import ogclubSVG from '../assets/brb/community/ogclub.svg';
+import PuneDaoSVG from '../assets/brb/community/punedao.svg';
+import KbaSVG from '../assets/brb/community/kba.svg';
+import updaoSVG from '../assets/brb/community/UPDao 1.svg';
+import w3jSVG from '../assets/brb/community/w3j 1.svg';
 import MarqueeAnimation from './MarqueeAnimation';
 import { ItemH } from './SharedStyling';
 import { device } from 'config/globals';
@@ -22,14 +42,14 @@ export const CommunityPartners = () => {
       alt: 'Gitcoin',
     },
     {
-      svgIcon: ENSSVG,
-      id: 'ens',
-      alt: 'ENS',
+      svgIcon: ENSDaoSVG,
+      id: 'ensdao',
+      alt: 'EnsDao',
     },
     {
-      svgIcon: DevfolioSVG,
-      id: 'devfolio',
-      alt: 'Devfolio',
+      svgIcon: LearnWeb3SVG,
+      id: 'learnweb3',
+      alt: 'LearnWeb3',
     },
     {
       svgIcon: FrontierSVG,
@@ -41,9 +61,109 @@ export const CommunityPartners = () => {
       id: 'buidlerstribe',
       alt: 'BuidlersTribe',
     },
+    {
+      svgIcon: DevfolioSVG,
+      id: 'devfolio',
+      alt: 'Devfolio',
+    },
+    {
+      svgIcon: HydDaoSVG,
+      id: 'hyddao',
+      alt: 'hyddao',
+    },
+    {
+      svgIcon: IndiverseSVG,
+      id: 'indiverse',
+      alt: 'indiverse',
+    },
+    {
+      svgIcon: GdscSVG,
+      id: 'gdsc',
+      alt: 'gdsc',
+    },
+    {
+      svgIcon: TphSVG,
+      id: 'tph',
+      alt: 'tph',
+    },
+    {
+      svgIcon: TribeAcademySVG,
+      id: 'tribeacademy',
+      alt: 'tribeacademy',
+    },
+    {
+      svgIcon: GpcSVG,
+      id: 'gpc',
+      alt: 'gpc',
+    },
+    {
+      svgIcon: H4BengalSVG,
+      id: 'h4bengal',
+      alt: 'h4bengal',
+    },
+    {
+      svgIcon: WxSVG,
+      id: 'wx',
+      alt: 'wx',
+    },
+    {
+      svgIcon: PhoenixSVG,
+      id: 'phoenix',
+      alt: 'phoenix',
+    },
+    {
+      svgIcon: DiversionSVG,
+      id: 'diversion',
+      alt: 'diversion',
+    },
+    {
+      svgIcon: irlamigoSVG,
+      id: 'irlamigo',
+      alt: 'irlamigo',
+    },
+    {
+      svgIcon: w3cgSVG,
+      id: 'w3cg',
+      alt: 'w3cg',
+    },
+    {
+      svgIcon: blockchainedSVG,
+      id: 'blockchained',
+      alt: 'blockchained',
+    },
+    {
+      svgIcon: foundershipSVG,
+      id: 'foundership',
+      alt: 'foundership',
+    },
+    {
+      svgIcon: ogclubSVG,
+      id: 'ogclub',
+      alt: 'ogclub',
+    },
+    {
+      svgIcon: PuneDaoSVG,
+      id: 'puneDao',
+      alt: 'puneDao',
+    },
+    {
+      svgIcon: KbaSVG,
+      id: 'kba',
+      alt: 'kba',
+    },
+    {
+      svgIcon: updaoSVG,
+      id: 'updao',
+      alt: 'updao',
+    },
+    {
+      svgIcon: w3jSVG,
+      id: 'w3j',
+      alt: 'w3j',
+    },
   ];
 
-  const ANIMATION_SPEED = isMobile ? 40 : 80;
+  const ANIMATION_SPEED = isMobile ? 40 : 50;
 
   return (
     <Container>
@@ -94,8 +214,8 @@ const PartnerIcon = styled.img`
 
 const PartnerItem = styled.div`
   width: auto;
-  height: 151px;
-  max-height: 151px;
+  height: 141px;
+  max-height: 141px;
   display: flex;
   align-items: center;
   margin-right: 178px;

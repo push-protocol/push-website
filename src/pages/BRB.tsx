@@ -302,7 +302,7 @@ function BRB() {
                   <NavigationMenuItem
                     onClick={() => {
                       if (isMobileMenuOpen) toggleMobileMenu();
-                      openLink('https://discord.gg/pushprotocol');
+                      openLink('https://discord.gg/cTRqvYzXpW');
                     }}
                   >
                     <NavigationMenuHeader>
@@ -373,7 +373,7 @@ function BRB() {
           <Partners />
         </PartnersDiv>
 
-        {/* <CommunityPartners /> */}
+        <CommunityPartners />
 
 
         <ScheduleDiv id="schedule">
@@ -400,7 +400,7 @@ function BRB() {
           <FooterCol>
             <FooterBar
               style={{ cursor: 'pointer' }}
-              onClick={() => openLink('https://discord.gg/pushprotocol')}
+              onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
             >
               <i>
                 <Discord />
