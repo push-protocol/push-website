@@ -133,7 +133,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
           border="1px solid #3C63C6"
           fontFamily="Glancyr !important"
           padding="6.5px 8.5px"
-          onClick={() => openLink('https://discord.com/invite/pushprotocol')}
+          onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
         >
           <Icon
             src={isJoined ? DiscordCompleted : Discord}

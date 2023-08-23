@@ -12,7 +12,6 @@ const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
   const { account, library } = useWeb3React();
   
    
-  // if((account || library) && chatId !== ''){
   return (
     <Fragment>
       <ChatViewComponentCard>
@@ -20,7 +19,6 @@ const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
       </ChatViewComponentCard>
     </Fragment>
   );
-  // } else return null;
 };
 
 const ChatViewComponentCard = styled(Section)`
@@ -32,7 +30,7 @@ const ChatViewComponentCard = styled(Section)`
 
 
   @media ${device.mobileL} {
-    width: 90%;
+    width: 95%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;

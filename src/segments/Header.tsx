@@ -431,6 +431,32 @@ function Header() {
                     </Anchor>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <MenuHeader>
+                    <LinkTo
+                      to="/brb"
+                      title={'BRB'}
+                      flex='1'
+                      padding="0px 0px"
+                      size="18px"
+                      weight="500"
+                      spacing="-0.03em"
+                      lineHeight="142%"
+                      hoverBG='none'
+                      align='center'
+                      margin="auto 0"
+                    >
+                      Billion Reasons to Build
+                    </LinkTo>
+                  </MenuHeader>
+                    {/* <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                      expanded={mobileMenuMap[2]}
+                    > */}
+                
+                    {/* </NavigationMenuHeader> */}
+                    </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -692,7 +718,7 @@ const NavigationMenu = styled.ul`
 
   display: flex;
 
-  column-gap: 64px;
+  column-gap: 54px;
 
   z-index: 999;
 
@@ -823,6 +849,15 @@ const NavigationMenuHeader = styled.div`
       transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
     }
   }
+`;
+
+const MenuHeader = styled.div`
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
 `;
 
 const LanguageMenuHeader = styled.div`

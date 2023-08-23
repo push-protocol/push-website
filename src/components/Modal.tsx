@@ -16,5 +16,5 @@ const ModalContainer = styled.div`
   align-items: flex-start;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
-  z-index: 1000;
+  z-index: 999999 !important;
 `;

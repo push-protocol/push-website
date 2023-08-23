@@ -70,7 +70,6 @@ import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
-
 import { useTranslation } from 'react-i18next';
 
 function Home({ isAlertVisible }) {

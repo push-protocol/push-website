@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 import styled from 'styled-components';
 import useMediaQuery from 'hooks/useMediaQuery';
@@ -44,7 +44,7 @@ export const ChatComponent = () => {
         >
           This is a token gated group. You need{' '}
           <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 Push Token</span> to be
-          able to send message.
+          able to send messages.
         </Span>
         <ButtonItem
           background="#E64DE9"

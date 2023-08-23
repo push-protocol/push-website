@@ -46,7 +46,6 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { darkChatTheme } from 'helpers/theme';
 
-
 ReactGA.initialize('UA-165415629-2');
 
 interface Web3ReactState {
@@ -83,7 +82,7 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [env, setEnv] = useState<ENV>(ENV.STAGING);
   const [isCAIP, setIsCAIP] = useState(false);
 
 
@@ -98,31 +97,6 @@ function App() {
   const onChangeEnv = (e: any) => {
     setEnv(e.target.value);
   };
-
-  // const onChangeCAIP = () => {
-  //   setIsCAIP(!isCAIP);
-  // };
-
-  
-  // useEffect(() => {
-  //   (async () => {
-  //     if (!account || !env || !library) return;
-
-  //     const user = await PushAPI.user.get({ account: account, env });
-  //     let pgpPrivateKey;
-  //     const librarySigner = await library.getSigner(account);
-  //     if (user?.encryptedPrivateKey) {
-  //       pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
-  //         encryptedPGPPrivateKey: user.encryptedPrivateKey,
-  //         account: account,
-  //         signer: librarySigner,
-  //         env,
-  //       });
-  //     }
-
-  //     setPgpPrivateKey(pgpPrivateKey);
-  //   })();
-  // }, [account, env, library]);
 
   const [loadWagmi, setLoadWagmi] = useState(false);
   const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
@@ -143,25 +117,11 @@ function App() {
     [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
   );
 
-  // const { chains, provider } = configureChains([goerli], [publicProvider()]);
-
   const { connectors } = getDefaultWallets({
-    appName: 'Push website',
+    appName: 'Push-website',
     projectId: 'd19bd9c98cc6455e637836fdc2202d42',
     chains,
   });
-
-  // const connectors = connectorsForWallets([
-  //   ...wallets,
-  //   // {
-  //   //   groupName: 'Other',
-  //   //   wallets: [
-  //   //     argentWallet({ projectId, chains }),
-  //   //     trustWallet({ projectId, chains }),
-  //   //     ledgerWallet({ projectId, chains }),
-  //   //   ],
-  //   // },
-  // ]);
 
   const wagmiConfig = createConfig({
     autoConnect: true,
@@ -176,25 +136,6 @@ function App() {
 
   return (
   <section>
-    {/* <ConnectWrapper>
-
-    <ConnectButton />
-
-
-    <Dropdown
-      label="ENV"
-      options={[
-        { label: 'prod', value: 'prod' },
-        { label: 'staging', value: 'staging' },
-        { label: 'dev', value: 'dev' },
-      ]}
-      value={env}
-      onChange={onChangeEnv}
-    />
-
-    </ConnectWrapper> */}
-
-
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
           <SocketContext.Provider value = {{ socketData }}>
@@ -203,10 +144,10 @@ function App() {
               <AccountContext.Provider value={{ pgpPrivateKey }}>
                 <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
-                  <Wrapper id="wrapper">
+                  <Wrapper id="wrapper" style={{backgroundColor:'red !important'}}>
                       <AppWrapper id="content">
 
-                        {location.pathname !== '/brb' && <Header />}
+                        {location.pathname.toUpperCase() !== '/BRB' && <Header />}
                         <Routes>
                           {/* add all the route paths here */}
                           <Route
@@ -248,11 +189,11 @@ function App() {
                           />
                           <Route 
                           path='/brb'
-                          element={<BRB />}
+                          element={<BRB/>}
                           />
                         </Routes>
 
-                        {location.pathname !== '/brb' && <Footer />}
+                        {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
                         
                       </AppWrapper>
                     </Wrapper>

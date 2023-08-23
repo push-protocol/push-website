@@ -32,6 +32,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { ChatComponent } from 'components/ChatComponent';
 import { Button, Input, Section } from '../components/SharedStyling';
+import { useNavigate } from 'react-router-dom';
 
 
 // Register GSAP plugins
@@ -97,19 +98,7 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [chatId, setChatId] = useState('');
-  const [content, setContent] = useState('');
-
-  const handleUpdate = (e: string) => {
-    console.log(e);
-    setContent(e);
-  };
-
-  const updateChat = (e: any) => {
-    e.preventDefault();
-    setChatId(content);
-    console.log(content);
-  };
+  const navigate = useNavigate();
 
   const plugins = [ScrollToPlugin];
 
@@ -137,8 +126,8 @@ function BRB() {
 
   const enableScroll = () => {
     setTimeout(() => {
-      ScrollTrigger.enable();
-    }, 500);
+      if(!isMobile) ScrollTrigger.enable();
+    }, 1000);
   };
 
   const handleSectionNavigation = (id) => {
@@ -150,7 +139,7 @@ function BRB() {
       scrollTo: { y: `#${id}` },
     });
 
-    if(!isMobile) enableScroll();
+    enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -188,6 +177,11 @@ function BRB() {
     });
   }, []);
 
+  const openHomePage = () => {
+    navigate('/');
+  };
+
+
   return (
     <PageWrapper
       pageName={PageMeta.BRB.pageName}
@@ -207,7 +201,7 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
+                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} onClick={openHomePage} />
                   {/* </LinkTo> */}
                   <Span
                     size="24px"
@@ -308,7 +302,7 @@ function BRB() {
                   <NavigationMenuItem
                     onClick={() => {
                       if (isMobileMenuOpen) toggleMobileMenu();
-                      openLink('https://discord.gg/pushprotocol');
+                      openLink('https://discord.gg/cTRqvYzXpW');
                     }}
                   >
                     <NavigationMenuHeader>
@@ -375,26 +369,21 @@ function BRB() {
 
         <BRBParallax />
 
-        <div
-          id="partners"
-          style={{ width: '100%' }}
-        >
+        <PartnersDiv id="partners">
           <Partners />
-        </div>
+        </PartnersDiv>
 
         <CommunityPartners />
 
-        <ChatComponent />
 
         <ScheduleDiv id="schedule">
           <Schedules />
         </ScheduleDiv>
 
-        <div
-          id="playground"
-          style={{ width: '100%' }}
-        >
-        </div>
+
+        <PlaygroundDiv id="playground">
+          <ChatComponent />
+        </PlaygroundDiv>
 
         <ItemFooter id="support">
           <FooterItem>
@@ -411,7 +400,7 @@ function BRB() {
           <FooterCol>
             <FooterBar
               style={{ cursor: 'pointer' }}
-              onClick={() => openLink('https://discord.gg/pushprotocol')}
+              onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
             >
               <i>
                 <Discord />
@@ -557,6 +546,14 @@ const NavList = styled.div`
 
 const ScheduleDiv = styled.div`
   margin: 120px 0px 0px 0px;
+  width: 100%;
+`;
+
+const PartnersDiv = styled.div`
+  width: 100%;
+`;
+
+const PlaygroundDiv = styled.div`
   width: 100%;
 `;
 
@@ -971,67 +968,5 @@ const BottomGrad = styled.div`
   box-sizing: border-box;
 `;
 
-
-const Wrapper = styled.form`
-    margin-bottom: 30px;
-    position: relative;
-    display: flex;
-    flex: 1;
-    column-gap: 6px;
-    align-items: center;
-    background: #FFFFFF;
-    border-radius: 21px;
-    border: 1px solid #FFFFFF;
-    padding: 5px;
-    justify-content: space-between;
-
-    @media ${device.tablet} {
-        column-gap: 3px;
-    }
-
-    & input[type="text"] {
-        all: unset;
-
-        box-sizing: border-box;
-        font-family: 'Strawford';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: normal;
-        letter-spacing: -0.03em; 
-        color: #9C9CBE;
-        background: #FFFFFF;
-        min-width: 620px !important;
-        width: 100%;
-        padding: 6px;
-        padding-left: 8px;
-        outline: none;
-
-        &::placeholder {
-            color: #A5A7B4;
-            opacity: 1;
-        }
-
-    }
-
-    & button {
-        cursor: pointer;
-        min-width: 160px;
-        color: #FFFFFF;
-        background: #DD44B9;
-        border-radius: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 14px 32px;
-        white-space: nowrap;
-
-        @media ${device.tablet} {
-          min-width: auto;
-          font-size: 12px;
-          padding: 14px 16px;
-        }  
-    }
-`;
 
 export default BRB;
