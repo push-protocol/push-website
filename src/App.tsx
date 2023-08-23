@@ -181,10 +181,10 @@ function App() {
                           path='/cheatsheet'
                           element={<Cheat />}
                           />
-                          <Route 
+                          {/* <Route 
                           path='/brb'
                           element={<BRB/>}
-                          />
+                          /> */}
                         </Routes>
 
                         {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
