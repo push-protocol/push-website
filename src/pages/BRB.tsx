@@ -373,7 +373,7 @@ function BRB() {
           <Partners />
         </PartnersDiv>
 
-        <CommunityPartners />
+        {/* <CommunityPartners /> */}
 
 
         <ScheduleDiv id="schedule">
