@@ -70,8 +70,8 @@ import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { FiArrowUpRight } from 'react-icons/fi';
-
 import { useTranslation } from 'react-i18next';
+import { ChatComponent } from 'components/ChatComponent';
 
 function Home({ isAlertVisible }) {
 
@@ -938,6 +938,9 @@ function Home({ isAlertVisible }) {
                 <BsArrowUpRight className="anchorSVGlink" />
               </Anchor>
             </TeamMemberButtons> */}
+
+           <ChatComponent />
+
 
             <ItemH margin="80px 0 80px 0">
               <ItemV

@@ -99,19 +99,6 @@ function BRB() {
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const navigate = useNavigate();
-  // const [chatId, setChatId] = useState('');
-  // const [content, setContent] = useState('');
-
-  // const handleUpdate = (e: string) => {
-  //   console.log(e);
-  //   setContent(e);
-  // };
-
-  // const updateChat = (e: any) => {
-  //   e.preventDefault();
-  //   setChatId(content);
-  //   console.log(content);
-  // };
 
   const plugins = [ScrollToPlugin];
 
@@ -192,8 +179,8 @@ function BRB() {
 
   const openHomePage = () => {
     navigate('/');
-    // window.open(link, '_blank');
   };
+
 
   return (
     <PageWrapper
@@ -981,67 +968,5 @@ const BottomGrad = styled.div`
   box-sizing: border-box;
 `;
 
-
-const Wrapper = styled.form`
-    margin-bottom: 30px;
-    position: relative;
-    display: flex;
-    flex: 1;
-    column-gap: 6px;
-    align-items: center;
-    background: #FFFFFF;
-    border-radius: 21px;
-    border: 1px solid #FFFFFF;
-    padding: 5px;
-    justify-content: space-between;
-
-    @media ${device.tablet} {
-        column-gap: 3px;
-    }
-
-    & input[type="text"] {
-        all: unset;
-
-        box-sizing: border-box;
-        font-family: 'Strawford';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: normal;
-        letter-spacing: -0.03em; 
-        color: #9C9CBE;
-        background: #FFFFFF;
-        min-width: 620px !important;
-        width: 100%;
-        padding: 6px;
-        padding-left: 8px;
-        outline: none;
-
-        &::placeholder {
-            color: #A5A7B4;
-            opacity: 1;
-        }
-
-    }
-
-    & button {
-        cursor: pointer;
-        min-width: 160px;
-        color: #FFFFFF;
-        background: #DD44B9;
-        border-radius: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 14px 32px;
-        white-space: nowrap;
-
-        @media ${device.tablet} {
-          min-width: auto;
-          font-size: 12px;
-          padding: 14px 16px;
-        }  
-    }
-`;
 
 export default BRB;

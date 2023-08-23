@@ -327,7 +327,7 @@ function Header() {
                     >
                       {t('header.more.push-ecosystem')}
                     </LinkTo>
-                    <LinkTo
+                    {/* <LinkTo
                       to="/brb"
                       title={t('header.more.alt-push-ecosystem')}
                       bg="transparent"
@@ -339,7 +339,7 @@ function Header() {
                       spacing="normal"
                     >
                       BRB
-                    </LinkTo>
+                    </LinkTo> */}
                     <Anchor
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"

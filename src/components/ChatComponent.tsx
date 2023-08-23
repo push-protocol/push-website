@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 import styled from 'styled-components';
 import useMediaQuery from 'hooks/useMediaQuery';
