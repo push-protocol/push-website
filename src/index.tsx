@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './i18n';
@@ -7,13 +7,26 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+import { Web3ReactProvider } from '@web3-react/core';
+import { ethers } from 'ethers';
+
 dotenv.config();
+
+function getLibrary(provider: any) {
+  // this will vary according to whether you use e.g. ethers or web3.js
+  const gottenProvider = new ethers.providers.Web3Provider(provider, 'any');
+  return gottenProvider;
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
-  </BrowserRouter>
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <App />
+    </BrowserRouter>
+  </Web3ReactProvider>
+
 );
 
 

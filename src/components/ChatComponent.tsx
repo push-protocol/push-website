@@ -12,6 +12,7 @@ import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
 import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
+import ChatBubbleComponent from './ChatBubbleComponent';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -26,6 +27,8 @@ export const ChatComponent = () => {
           <Brand />
         </BrandHeader>
       </Header>
+
+      <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' />
 
       <BottomBar>
         <TokenGated />
@@ -69,6 +72,7 @@ const BottomBar = styled(ItemHV2)`
   background: transparent;
   align-items: center;
   color: #fff;
+  z-index: 0 !important;
 `;
 
 const ButtonItem = styled(ButtonV2)`
