@@ -146,7 +146,7 @@ function App() {
   // const { chains, provider } = configureChains([goerli], [publicProvider()]);
 
   const { connectors } = getDefaultWallets({
-    appName: 'Push website',
+    appName: 'Push-website',
     projectId: 'd19bd9c98cc6455e637836fdc2202d42',
     chains,
   });

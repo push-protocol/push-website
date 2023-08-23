@@ -139,8 +139,8 @@ function BRB() {
 
   const enableScroll = () => {
     setTimeout(() => {
-      ScrollTrigger.enable();
-    }, 500);
+      if(!isMobile) ScrollTrigger.enable();
+    }, 1000);
   };
 
   const handleSectionNavigation = (id) => {
@@ -152,7 +152,7 @@ function BRB() {
       scrollTo: { y: `#${id}` },
     });
 
-    if(!isMobile) enableScroll();
+    enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -382,12 +382,9 @@ function BRB() {
 
         <BRBParallax />
 
-        <div
-          id="partners"
-          style={{ width: '100%' }}
-        >
+        <PartnersDiv id="partners">
           <Partners />
-        </div>
+        </PartnersDiv>
 
         <CommunityPartners />
 
@@ -396,13 +393,10 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
-        <ChatComponent />
 
-        <div
-          id="playground"
-          style={{ width: '100%' }}
-        >
-        </div>
+        <PlaygroundDiv id="playground">
+          <ChatComponent />
+        </PlaygroundDiv>
 
         <ItemFooter id="support">
           <FooterItem>
@@ -565,6 +559,14 @@ const NavList = styled.div`
 
 const ScheduleDiv = styled.div`
   margin: 120px 0px 0px 0px;
+  width: 100%;
+`;
+
+const PartnersDiv = styled.div`
+  width: 100%;
+`;
+
+const PlaygroundDiv = styled.div`
   width: 100%;
 `;
 
