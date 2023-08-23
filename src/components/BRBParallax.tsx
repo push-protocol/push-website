@@ -168,7 +168,7 @@ const FirstBackground = styled.div`
   height: 100%;
   margin: 0px auto;
 
-  background-image: ${(props) => props.isMobile ? `url(${ParallaxBRBMobile})` : `url(${ParallaxBRB})`};
+  // background-image: ${(props) => props.isMobile ? `url(${ParallaxBRBMobile})` : `url(${ParallaxBRB})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

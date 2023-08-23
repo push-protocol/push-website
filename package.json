@@ -27,6 +27,7 @@
     "assert": "^2.0.0",
     "axios": "^0.27.2",
     "babel-plugin-emotion": "^11.0.0",
+    "babel-plugin-styled-components": "1.10.7",
     "browserify-zlib": "^0.2.0",
     "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.2",
@@ -107,11 +108,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
-    "babel-preset-react-app": "^10.0.1",
     "buffer": "^6.0.3",
     "eslint": "^8.23.1",
     "eslint-plugin-prettier": "^4.2.1",
