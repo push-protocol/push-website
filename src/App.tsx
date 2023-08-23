@@ -141,7 +141,7 @@ function App() {
               <AccountContext.Provider value={{ pgpPrivateKey }}>
                 <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
-                  <Wrapper id="wrapper" style={{backgroundColor:'red !important'}}>
+                  <Wrapper id="wrapper">
                       <AppWrapper id="content">
 
                         {location.pathname.toUpperCase() !== '/BRB' && <Header />}
