@@ -366,7 +366,7 @@ function BRB() {
           </NavButtons>
         </ItemTop>
 
-        <BRBParallax />
+        {/* <BRBParallax />
 
         <PartnersDiv id="partners">
           <Partners />
@@ -382,7 +382,7 @@ function BRB() {
 
         <PlaygroundDiv id="playground">
           <ChatComponent />
-        </PlaygroundDiv>
+        </PlaygroundDiv> */}
 
         <ItemFooter id="support">
           <FooterItem>
