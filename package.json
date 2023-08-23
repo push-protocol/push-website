@@ -4,12 +4,10 @@
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
-    "babel-runtime": "6.26.0",
     "@ethersproject/providers": "^5.7.2",
     "@pushprotocol/ledgerlive": "latest",
     "@pushprotocol/restapi": "0.0.1-alpha.31",
     "@pushprotocol/socket": "latest",
-    "@pushprotocol/uiweb": "0.0.1-alpha.2",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",

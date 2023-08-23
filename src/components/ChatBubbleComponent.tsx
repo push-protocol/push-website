@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { ChatViewComponent } from '@pushprotocol/uiweb';
+// import { ChatViewComponent } from '@pushprotocol/uiweb';
 import styled from 'styled-components';
 import { Button, Input, Section } from './SharedStyling';
 import { device } from 'config/globals';
@@ -15,7 +15,7 @@ const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
   return (
     <Fragment>
       <ChatViewComponentCard>
-        <ChatViewComponent chatId={chatId} file={false} gif={false} />
+        {/* <ChatViewComponent chatId={chatId} file={false} gif={false} /> */}
       </ChatViewComponentCard>
     </Fragment>
   );
