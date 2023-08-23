@@ -8,7 +8,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-// import { Web3ReactProvider } from '@web3-react/core';
+import { Web3ReactProvider } from '@web3-react/core';
 import { ethers } from 'ethers';
 
 dotenv.config();
@@ -21,11 +21,11 @@ function getLibrary(provider: any) {
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  // <Web3ReactProvider getLibrary={getLibrary}>
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <App />
-  </BrowserRouter>
-  // </Web3ReactProvider>
+  <Web3ReactProvider getLibrary={getLibrary}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <App />
+    </BrowserRouter>
+  </Web3ReactProvider>
 
 );
 

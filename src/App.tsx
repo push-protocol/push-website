@@ -4,7 +4,7 @@
 /* eslint-disable */
 
 import React, { useLayoutEffect, useEffect, useState, Suspense } from 'react';
-// import { useWeb3React } from '@web3-react/core';
+import { useWeb3React } from '@web3-react/core';
 import {
   Web3Context,
   EnvContext,
@@ -20,28 +20,28 @@ import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
 // import { useSDKSocket } from './hooks/useSDKSocket'
 // import * as PushAPI from '@pushprotocol/restapi';
-// import { ChatUIProvider } from '@pushprotocol/uiweb';
-// import {
-//   getDefaultWallets,
-//   RainbowKitProvider,
-//   darkTheme,
-// } from '@rainbow-me/rainbowkit';
-// import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
-// import {
-//   mainnet,
-//   polygon,
-//   optimism,
-//   arbitrum,
-//   zora,
-//   goerli,
-//   polygonMumbai,
-//   optimismGoerli,
-//   arbitrumGoerli,
-//   zoraTestnet,
-// } from 'wagmi/chains';
-// import '@rainbow-me/rainbowkit/styles.css';
-// import { alchemyProvider } from 'wagmi/providers/alchemy';
-// import { publicProvider } from 'wagmi/providers/public';
+import { ChatUIProvider } from '@pushprotocol/uiweb';
+import {
+  getDefaultWallets,
+  RainbowKitProvider,
+  darkTheme,
+} from '@rainbow-me/rainbowkit';
+import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
+import {
+  mainnet,
+  polygon,
+  optimism,
+  arbitrum,
+  zora,
+  goerli,
+  polygonMumbai,
+  optimismGoerli,
+  arbitrumGoerli,
+  zoraTestnet,
+} from 'wagmi/chains';
+import '@rainbow-me/rainbowkit/styles.css';
+import { alchemyProvider } from 'wagmi/providers/alchemy';
+import { publicProvider } from 'wagmi/providers/public';
 import { darkChatTheme } from 'helpers/theme';
 
 ReactGA.initialize('UA-165415629-2');
@@ -78,7 +78,7 @@ function App() {
     return children;
   };
 
-  // const { account, library, active, chainId } = useWeb3React();
+  const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
   const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
@@ -92,51 +92,51 @@ function App() {
   // });
 
 
-  // const [loadWagmi, setLoadWagmi] = useState(false);
-  // const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
+  const [loadWagmi, setLoadWagmi] = useState(false);
+  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
 
-  // const { chains, publicClient } = configureChains(
-  //   [
-  //     mainnet,
-  //     polygon,
-  //     optimism,
-  //     arbitrum,
-  //     zora,
-  //     goerli,
-  //     polygonMumbai,
-  //     optimismGoerli,
-  //     arbitrumGoerli,
-  //     zoraTestnet,
-  //   ],
-  //   [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
-  // );
+  const { chains, publicClient } = configureChains(
+    [
+      mainnet,
+      polygon,
+      optimism,
+      arbitrum,
+      zora,
+      goerli,
+      polygonMumbai,
+      optimismGoerli,
+      arbitrumGoerli,
+      zoraTestnet,
+    ],
+    [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
+  );
 
-  // const { connectors } = getDefaultWallets({
-  //   appName: 'Push-website',
-  //   projectId: 'd19bd9c98cc6455e637836fdc2202d42',
-  //   chains,
-  // });
+  const { connectors } = getDefaultWallets({
+    appName: 'Push-website',
+    projectId: 'd19bd9c98cc6455e637836fdc2202d42',
+    chains,
+  });
 
-  // const wagmiConfig = createConfig({
-  //   autoConnect: true,
-  //   connectors,
-  //   publicClient,
-  // });
+  const wagmiConfig = createConfig({
+    autoConnect: true,
+    connectors,
+    publicClient,
+  });
 
 
-  // useEffect(() => {
-  //   setLoadWagmi(true);
-  // }, []);
+  useEffect(() => {
+    setLoadWagmi(true);
+  }, []);
 
   return (
   <section>
    <EnvContext.Provider value={{ env, isCAIP }}>
-      {/* <Web3Context.Provider value={{ account, active, library, chainId }}> */}
+      <Web3Context.Provider value={{ account, active, library, chainId }}>
           {/* <SocketContext.Provider value = {{ socketData }}> */}
-          {/* {loadWagmi ? (<WagmiConfig config={wagmiConfig}> */}
-          {/* <RainbowKitProvider theme={darkTheme()} chains={chains}> */}
-              {/* <AccountContext.Provider value={{ pgpPrivateKey }}> */}
-                {/* <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}> */}
+          {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
+          <RainbowKitProvider theme={darkTheme()} chains={chains}>
+              <AccountContext.Provider value={{ pgpPrivateKey }}>
+                <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
                   <Wrapper id="wrapper">
                       <AppWrapper id="content">
@@ -181,10 +181,10 @@ function App() {
                           path='/cheatsheet'
                           element={<Cheat />}
                           />
-                          {/* <Route 
+                          <Route 
                           path='/brb'
                           element={<BRB/>}
-                          /> */}
+                          />
                         </Routes>
 
                         {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
@@ -192,12 +192,12 @@ function App() {
                       </AppWrapper>
                     </Wrapper>
                   </Suspense>
-                  {/* </ChatUIProvider> */}
-              {/* </AccountContext.Provider> */}
-             {/* </RainbowKitProvider> */}
-             {/* </WagmiConfig>) : null} */}
+                  </ChatUIProvider>
+              </AccountContext.Provider>
+             </RainbowKitProvider>
+             </WagmiConfig>) : null}
           {/* </SocketContext.Provider> */}
-      {/* </Web3Context.Provider> */}
+      </Web3Context.Provider>
     </EnvContext.Provider>
     </section>
   );

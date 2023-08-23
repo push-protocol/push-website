@@ -13,7 +13,7 @@ import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
 import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
-// import ChatBubbleComponent from './ChatBubbleComponent';
+import ChatBubbleComponent from './ChatBubbleComponent';
 import { Section } from './SharedStyling';
 
 export const ChatComponent = () => {
@@ -31,7 +31,7 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        {/* <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' /> */}
+        <ChatBubbleComponent chatId='831b1d93f36fa2fce6c3d8c7c41c53335c82ad13cbe05478579af235f10716dc' />
       </PlayGround>
 
 
