@@ -83,7 +83,7 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [env, setEnv] = useState<ENV>(ENV.STAGING);
   const [isCAIP, setIsCAIP] = useState(false);
 
 
@@ -206,7 +206,7 @@ function App() {
                   <Wrapper id="wrapper">
                       <AppWrapper id="content">
 
-                        {location.pathname !== '/brb' && <Header />}
+                        {location.pathname.toUpperCase() !== '/BRB' && <Header />}
                         <Routes>
                           {/* add all the route paths here */}
                           <Route
@@ -252,7 +252,7 @@ function App() {
                           />
                         </Routes>
 
-                        {location.pathname !== '/brb' && <Footer />}
+                        {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
                         
                       </AppWrapper>
                     </Wrapper>

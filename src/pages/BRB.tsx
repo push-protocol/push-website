@@ -32,6 +32,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { ChatComponent } from 'components/ChatComponent';
 import { Button, Input, Section } from '../components/SharedStyling';
+import { useNavigate } from 'react-router-dom';
 
 
 // Register GSAP plugins
@@ -97,19 +98,20 @@ function BRB() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [chatId, setChatId] = useState('');
-  const [content, setContent] = useState('');
+  const navigate = useNavigate();
+  // const [chatId, setChatId] = useState('');
+  // const [content, setContent] = useState('');
 
-  const handleUpdate = (e: string) => {
-    console.log(e);
-    setContent(e);
-  };
+  // const handleUpdate = (e: string) => {
+  //   console.log(e);
+  //   setContent(e);
+  // };
 
-  const updateChat = (e: any) => {
-    e.preventDefault();
-    setChatId(content);
-    console.log(content);
-  };
+  // const updateChat = (e: any) => {
+  //   e.preventDefault();
+  //   setChatId(content);
+  //   console.log(content);
+  // };
 
   const plugins = [ScrollToPlugin];
 
@@ -188,6 +190,11 @@ function BRB() {
     });
   }, []);
 
+  const openHomePage = () => {
+    navigate('/');
+    // window.open(link, '_blank');
+  };
+
   return (
     <PageWrapper
       pageName={PageMeta.BRB.pageName}
@@ -207,7 +214,7 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
+                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} onClick={openHomePage} />
                   {/* </LinkTo> */}
                   <Span
                     size="24px"
@@ -384,11 +391,12 @@ function BRB() {
 
         <CommunityPartners />
 
-        <ChatComponent />
 
         <ScheduleDiv id="schedule">
           <Schedules />
         </ScheduleDiv>
+
+        <ChatComponent />
 
         <div
           id="playground"

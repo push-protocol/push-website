@@ -32,7 +32,7 @@ const ChatViewComponentCard = styled(Section)`
 
 
   @media ${device.mobileL} {
-    width: 90%;
+    width: 95%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
