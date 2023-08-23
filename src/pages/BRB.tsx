@@ -26,7 +26,6 @@ import ImageHolder from 'components/ImageHolder';
 import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
-// import ChatBubbleComponent from 'components/ChatBubbleComponent';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
