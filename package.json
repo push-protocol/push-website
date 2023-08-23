@@ -14,7 +14,6 @@
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^0.9.270",
-    "@studio-freight/lenis": "^1.0.19",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.19",
@@ -92,9 +91,11 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "chrome >= 67",
+      "edge >= 79",
+      "firefox >= 68",
+      "opera >= 54",
+      "safari >= 14"
     ],
     "development": [
       "last 1 chrome version",
