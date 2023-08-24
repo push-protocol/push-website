@@ -14,7 +14,7 @@ import { ButtonV2, ImageV2, ItemHV2 } from './SharedStylingV2';
 export const CommunityPartners = () => {
   const isMobile = useMediaQuery(device.mobileL);
 
-  const ANIMATION_SPEED = isMobile ? 42 : 70;
+  const ANIMATION_SPEED = isMobile ? 55 : 70;
 
   return (
     <Container>
