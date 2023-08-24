@@ -20,7 +20,7 @@ import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
 // import { useSDKSocket } from './hooks/useSDKSocket'
 // import * as PushAPI from '@pushprotocol/restapi';
-// import { ChatUIProvider } from '@pushprotocol/uiweb';
+import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -136,7 +136,7 @@ function App() {
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
-                {/* <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}> */}
+                <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
                   <Wrapper id="wrapper">
                       <AppWrapper id="content">
@@ -192,7 +192,7 @@ function App() {
                       </AppWrapper>
                     </Wrapper>
                   </Suspense>
-                  {/* </ChatUIProvider> */}
+                  </ChatUIProvider>
               </AccountContext.Provider>
              </RainbowKitProvider>
              </WagmiConfig>) : null}
