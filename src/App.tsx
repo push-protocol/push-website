@@ -18,8 +18,8 @@ import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
-// import { useSDKSocket } from './hooks/useSDKSocket'
-// import * as PushAPI from '@pushprotocol/restapi';
+import { useSDKSocket } from './hooks/useSDKSocket'
+import * as PushAPI from '@pushprotocol/restapi';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
@@ -84,12 +84,12 @@ function App() {
   const [isCAIP, setIsCAIP] = useState(false);
   const [signer, setSigner] = useState();
 
-  // const socketData = useSDKSocket({
-  //   account: account,
-  //   chainId: chainId,
-  //   env,
-  //   isCAIP,
-  // });
+  const socketData = useSDKSocket({
+    account: account,
+    chainId: chainId,
+    env,
+    isCAIP,
+  });
 
 
   const [loadWagmi, setLoadWagmi] = useState(false);
@@ -149,13 +149,11 @@ function App() {
     })();
   }, [account, env, library]);
 
-  // console.log(account, pgpPrivateKey, env, 'getStarted')
-
   return (
   <section>
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
-          {/* <SocketContext.Provider value = {{ socketData }}> */}
+          <SocketContext.Provider value = {{ socketData }}>
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
@@ -219,7 +217,7 @@ function App() {
               </AccountContext.Provider>
              </RainbowKitProvider>
              </WagmiConfig>) : null}
-          {/* </SocketContext.Provider> */}
+          </SocketContext.Provider>
       </Web3Context.Provider>
     </EnvContext.Provider>
     </section>
