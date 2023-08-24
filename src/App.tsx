@@ -18,11 +18,9 @@ import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
-import { useSDKSocket } from './hooks/useSDKSocket'
-import * as PushAPI from '@pushprotocol/restapi';
-import ConnectButton from './components/Connect';
-import Dropdown from 'components/Dropdown';
-import { ChatUIProvider } from '@pushprotocol/uiweb';
+// import { useSDKSocket } from './hooks/useSDKSocket'
+// import * as PushAPI from '@pushprotocol/restapi';
+// import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -82,21 +80,17 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.STAGING);
+  const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
 
 
-  const socketData = useSDKSocket({
-    account: account,
-    chainId: chainId,
-    env,
-    isCAIP,
-  });
+  // const socketData = useSDKSocket({
+  //   account: account,
+  //   chainId: chainId,
+  //   env,
+  //   isCAIP,
+  // });
 
-
-  const onChangeEnv = (e: any) => {
-    setEnv(e.target.value);
-  };
 
   const [loadWagmi, setLoadWagmi] = useState(false);
   const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
@@ -138,13 +132,13 @@ function App() {
   <section>
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
-          <SocketContext.Provider value = {{ socketData }}>
+          {/* <SocketContext.Provider value = {{ socketData }}> */}
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
-                <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
+                {/* <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}> */}
                 <Suspense fallback={<h1>Loading</h1>}>
-                  <Wrapper id="wrapper" style={{backgroundColor:'red !important'}}>
+                  <Wrapper id="wrapper">
                       <AppWrapper id="content">
 
                         {location.pathname.toUpperCase() !== '/BRB' && <Header />}
@@ -198,11 +192,11 @@ function App() {
                       </AppWrapper>
                     </Wrapper>
                   </Suspense>
-                  </ChatUIProvider>
+                  {/* </ChatUIProvider> */}
               </AccountContext.Provider>
              </RainbowKitProvider>
              </WagmiConfig>) : null}
-          </SocketContext.Provider>
+          {/* </SocketContext.Provider> */}
       </Web3Context.Provider>
     </EnvContext.Provider>
     </section>

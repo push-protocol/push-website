@@ -2,7 +2,6 @@ import React from 'react';
 
 import styled from 'styled-components';
 import useMediaQuery from 'hooks/useMediaQuery';
-
 import BuildersTribeSVG from '../assets/brb/community/buidlerstribe.svg';
 import DevfolioSVG from '../assets/brb/community/devfolio.svg';
 import ENSDaoSVG from '../assets/brb/community/ensdao.svg';
