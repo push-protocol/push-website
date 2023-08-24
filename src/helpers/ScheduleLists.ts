@@ -1,30 +1,10 @@
 /* eslint-disable indent */
-import Bhopal from '../assets/brb/schedules/Bhopal.svg';
-import Chennai from '../assets/brb/schedules/chennai.svg';
-import Coimbatore from '../assets/brb/schedules/coimbatore.svg';
-import Dehradun from '../assets/brb/schedules/dehradun.svg';
-import Delhi_north from '../assets/brb/schedules/Delhi_North.svg';
-import Delhi_south from '../assets/brb/schedules/Delhi_south.svg';
-import Hyderabad from '../assets/brb/schedules/hyderabad.svg';
-import Indore from '../assets/brb/schedules/Indore.svg';
-import Jaipur from '../assets/brb/schedules/jaipur.svg';
-import Kanpur from '../assets/brb/schedules/Kanpur.svg';
-import Kochi from '../assets/brb/schedules/Kochi.svg';
-import Kolkata from '../assets/brb/schedules/Kolkata.svg';
-import Lucknow from '../assets/brb/schedules/Lucknow.svg';
-import Mumbai from '../assets/brb/schedules/Mumbai.svg';
-import Pune from '../assets/brb/schedules/Pune.svg';
-import Trivandrum from '../assets/brb/schedules/Trivandrum.svg';
-import Agra from '../assets/brb/schedules/agra.svg';
-import Ahmedabad from '../assets/brb/schedules/Ahmedabad.svg';
-import Bengaluru from '../assets/brb/schedules/Bengaluru.svg';
-
 
 
 export const citiesList = [
     [
         {
-            image: Kolkata,
+            srcref: 'kolkata',
             place: 'Kolkata',
             date: '2 Sept 2023',
             link: 'https://www.lu.ma/brb-kolkata',
@@ -32,7 +12,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Indore,
+            srcref: 'indore',
             place: 'Indore',
             date: '4 Sept 2023',
             link: 'https://www.lu.ma/brb-indore',
@@ -42,7 +22,7 @@ export const citiesList = [
     ],
     [ 
         {
-            image: Kochi,
+            srcref: 'kochi',
             place: 'Kochi',
             date: '9 Sept 2023',
             link: 'https://www.lu.ma/brb-kochi',
@@ -50,7 +30,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Coimbatore,
+            srcref: 'coimbatore',
             place: 'Coimbatore',
             date: '11 Sept 2023',
             link: 'https://www.lu.ma/brb-coimbatore',
@@ -60,7 +40,7 @@ export const citiesList = [
     ],
     [
          {
-            image: Trivandrum,
+            srcref: 'trivandrum',
             place: 'Trivandrum',
             date: '15 Sept 2023',
             link: 'https://www.lu.ma/brb-trivandrum',
@@ -68,7 +48,7 @@ export const citiesList = [
             hasEnded: false,
          },
          {
-            image: Pune,
+            srcref: 'pune',
             place: 'Pune',
             date: '23 Sept 2023',
             link: 'https://www.lu.ma/brb-pune',
@@ -78,7 +58,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Hyderabad,
+            srcref: 'hyderabad',
             place: 'Hyderabad',
             date: '25 Sept 2023',
             link: 'https://www.lu.ma/brb-hyderabad',
@@ -86,7 +66,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Ahmedabad,
+            srcref: 'ahmedabad',
             place: 'Ahmedabad',
             date: '30 Sept 2023',
             link: 'https://www.lu.ma/brb-ahmedabad',
@@ -96,7 +76,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Mumbai,
+            srcref: 'mumbai',
             place: 'Mumbai',
             date: '7 Oct 2023',
             link: 'https://www.lu.ma/brb-mumbai',
@@ -104,7 +84,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Jaipur,
+            srcref: 'jaipur',
             place: 'Jaipur',
             date: '14 Oct 2023',
             link: 'https://www.lu.ma/brb-jaipur',
@@ -114,7 +94,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Bhopal,
+            srcref: 'bhopal',
             place: 'Bhopal',
             date: '16 Oct 2023',
             link: 'https://www.lu.ma/brb-bhopal',
@@ -122,7 +102,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Delhi_north,
+            srcref: 'delhi_north',
             place: 'Delhi',
             date: '4 Nov 2023',
             link: 'https://www.lu.ma/brb-south-delhi',
@@ -132,7 +112,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Kanpur,
+            srcref: 'kanpur',
             place: 'Kanpur',
             date: '15 Nov 2023',
             link: 'https://www.lu.ma/brb-kanpur',
@@ -140,7 +120,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Lucknow,
+            srcref: 'lucknow',
             place: 'Lucknow',
             date: '17 Nov 2023',
             link: 'https://www.lu.ma/brb-lucknow',
@@ -150,7 +130,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Agra,
+            srcref: 'agra',
             place: 'Agra',
             date: '25 Nov 2023',
             link: 'https://www.lu.ma/brb-agra',
@@ -158,7 +138,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Dehradun,
+            srcref: 'dehradun',
             place: 'Dehradun',
             date: 'TBA',
             link: 'https://www.lu.ma/brb-deharadun',
@@ -168,7 +148,7 @@ export const citiesList = [
     ],
     [
         {
-            image: Chennai,
+            srcref: 'chennai',
             place: 'Chennai',
             date: 'TBA',
             link: 'https://www.lu.ma/brb-chennai',
@@ -176,7 +156,7 @@ export const citiesList = [
             hasEnded: false,
         },
         {
-            image: Bengaluru,
+            srcref: 'bengaluru',
             place: 'Bengaluru',
             date: 'TBA',
             link: 'https://www.lu.ma/brb-benagaluru',
