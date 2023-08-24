@@ -84,13 +84,6 @@ function App() {
   const [isCAIP, setIsCAIP] = useState(false);
   const [signer, setSigner] = useState();
 
-  // const socketData = useSDKSocket({
-  //   account: account,
-  //   chainId: chainId,
-  //   env,
-  //   isCAIP,
-  // });
-
 
   const [loadWagmi, setLoadWagmi] = useState(false);
   const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
