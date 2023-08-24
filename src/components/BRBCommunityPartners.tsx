@@ -71,7 +71,7 @@ const CommunityContainer = styled(ItemHV2)`
 const PartnerIcon = styled(ImageV2)`
   width: auto;
   height: ${(props) => props.height || 'auto'};
-  max-width: 241px;
+  max-width: 310px;
   max-height:177px;
 `;
 
