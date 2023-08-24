@@ -437,7 +437,7 @@ function Header() {
                     <LinkTo
                       to="/brb"
                       title={'BRB'}
-                      flex='1'
+                      flex={isMobile ? 'initial' : '1'}
                       padding="0px 0px"
                       size="18px"
                       weight="500"
@@ -445,7 +445,7 @@ function Header() {
                       lineHeight="142%"
                       hoverBG='none'
                       align='center'
-                      margin="auto 0"
+                      margin={isMobile ? "16px 16px" : "auto 0"}
                     >
                       Billion Reasons to Build
                     </LinkTo>
@@ -858,6 +858,11 @@ const MenuHeader = styled.div`
   margin: auto 0;
   display: flex;
   align-items: center;
+
+  @media ${device.laptop} {
+    flex: initial;
+    margin: 0 0;
+  }
 `;
 
 const LanguageMenuHeader = styled.div`
