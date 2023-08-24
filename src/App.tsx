@@ -18,8 +18,8 @@ import Footer from './segments/Footer';
 import Header from './segments/Header';
 import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
-import { useSDKSocket } from './hooks/useSDKSocket'
-import * as PushAPI from '@pushprotocol/restapi';
+// import { useSDKSocket } from './hooks/useSDKSocket'
+// import * as PushAPI from '@pushprotocol/restapi';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
