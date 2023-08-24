@@ -130,16 +130,16 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    if (showMobileMenu) toggleMobileMenu();
-    ScrollTrigger.disable();
+    // if (showMobileMenu) toggleMobileMenu();
+    // ScrollTrigger.disable();
 
-    gsap.to(window, {
-      duration: 0.2,
-      scrollTo: { y: `#${id}` },
-      onComplete: enableScroll
-    });
+    // gsap.to(window, {
+    //   duration: 0.2,
+    //   scrollTo: { y: `#${id}` },
+    //   onComplete: enableScroll
+    // });
 
-    enableScroll();
+    // enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -160,21 +160,21 @@ function BRB() {
   });
 
   useEffect(() => {
-    ScrollTrigger.matchMedia({
-      '(min-width: 480px)': function() {
-        newTl.to(elems0, {
-          opacity: 0,
-        });
+    // ScrollTrigger.matchMedia({
+    //   '(min-width: 480px)': function() {
+    //     newTl.to(elems0, {
+    //       opacity: 0,
+    //     });
 
-        newTl.to(elems, {
-          opacity: 0,
-        });
-      },
-      '(max-width: 479px)': function() { 
-        return;
-      },
-      'all': function() { return; }
-    });
+    //     newTl.to(elems, {
+    //       opacity: 0,
+    //     });
+    //   },
+    //   '(max-width: 479px)': function() { 
+    //     return;
+    //   },
+    //   'all': function() { return; }
+    // });
   }, []);
 
   const openHomePage = () => {
