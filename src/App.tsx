@@ -84,12 +84,12 @@ function App() {
   const [isCAIP, setIsCAIP] = useState(false);
   const [signer, setSigner] = useState();
 
-  const socketData = useSDKSocket({
-    account: account,
-    chainId: chainId,
-    env,
-    isCAIP,
-  });
+  // const socketData = useSDKSocket({
+  //   account: account,
+  //   chainId: chainId,
+  //   env,
+  //   isCAIP,
+  // });
 
 
   const [loadWagmi, setLoadWagmi] = useState(false);
@@ -153,7 +153,7 @@ function App() {
   <section>
    <EnvContext.Provider value={{ env, isCAIP }}>
       <Web3Context.Provider value={{ account, active, library, chainId }}>
-          <SocketContext.Provider value = {{ socketData }}>
+          {/* <SocketContext.Provider value = {{ socketData }}> */}
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
@@ -217,7 +217,7 @@ function App() {
               </AccountContext.Provider>
              </RainbowKitProvider>
              </WagmiConfig>) : null}
-          </SocketContext.Provider>
+          {/* </SocketContext.Provider> */}
       </Web3Context.Provider>
     </EnvContext.Provider>
     </section>
