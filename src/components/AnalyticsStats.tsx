@@ -6,14 +6,17 @@
 import React, { useEffect, useState } from 'react';
 import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { loadKPIData } from '../api';
+import { getNotifications, getSubscribers, loadKPIData } from '../api';
 
 import { device } from '../config/globals';
 import FadeInAnimation from './FadeInAnimation';
+import { getSubscribersCount, getNotificationsCount }  from '../config/AnalyticsStats';
 
 import {
   ItemV, Span
 } from './SharedStyling';
+
+import { useTranslation } from 'react-i18next';
 
 function nFormatter(num, digits) {
   const si = [
@@ -36,15 +39,31 @@ function nFormatter(num, digits) {
 }
 
 function AnalyticsStats() {
-  const [kpiStats, setKpiStats] = useState(null);
+
+  // Internationalization
+  const { t } = useTranslation();
+  
+  const [kpiStats, setKpiStats] = useState({
+    totalNotifsSent: '',
+    totalSubscribersCount: ''
+  });
   const [isLoading, setIsLoading] = useState(false);
+
+
 
   const loadData = async() => {
     try {
       setIsLoading(true);
-      const data = await loadKPIData();
-      console.log('analytics data: ', data);
-      setKpiStats(data);
+      let result = await getSubscribersCount();
+      let notifsResult = await getNotificationsCount();
+
+    setKpiStats((current) => {
+      return({
+        ...current,
+        totalNotifsSent: nFormatter(notifsResult),
+        totalSubscribersCount: nFormatter(result)
+      })
+    });
     } catch (e) {
       console.error('Analytics API data fetch error: ', e);
     } finally {
@@ -54,7 +73,7 @@ function AnalyticsStats() {
 
 
   useEffect(() => {
-    // loadData();
+    loadData();
   }, []);
 
   if (!kpiStats && isLoading) return (
@@ -73,6 +92,7 @@ function AnalyticsStats() {
     />
   );
 
+
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
   // const totalSubscribersCount = nFormatter(kpiStats?.totalSubscribersCount, 1) || '1.2K';
   // const pushIntegrations = nFormatter(kpiStats?.pushIntegrations, 1) || '500+';
@@ -85,33 +105,25 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-        <FadeInAnimation wrapperElement="div" delay={0.25}>
           <ItemV gap="18px" className='kpiItem'>
-              <KPIFigure>{totalNotifsSent}</KPIFigure>
-              <KPIMetric>Notifications<br />Sent</KPIMetric>
+              <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
+              <KPIMetric>{t('home.stats.notifications.part1')}<br />{t('home.stats.notifications.part2')}</KPIMetric>
           </ItemV>
-      </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={0.5}>
         <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{totalSubscribersCount}</KPIFigure>
-          <KPIMetric>Total<br />Subscribers</KPIMetric>
+          <KPIFigure>{kpiStats?.totalSubscribersCount || '...'}{kpiStats?.totalSubscribersCount && '+'}</KPIFigure>
+          <KPIMetric>{t('home.stats.subscribers.part1')}<br />{t('home.stats.subscribers.part2')}</KPIMetric>
         </ItemV>
-      </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={0.75}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushIntegrations}</KPIFigure>
-          <KPIMetric>Total Push<br />Integrations</KPIMetric>
+          <KPIMetric>{t('home.stats.integrations.part1')}<br />{t('home.stats.integrations.part2')}</KPIMetric>
         </ItemV>
-      </FadeInAnimation>
 
-      <FadeInAnimation wrapperElement="div" delay={1}>
         <ItemV gap="18px" className='kpiItem'>
           <KPIFigure>{pushChatSent}</KPIFigure>
-          <KPIMetric>In Grants <br />Given</KPIMetric>
+          <KPIMetric>{t('home.stats.grants.part1')}<br />{t('home.stats.grants.part2')}</KPIMetric>
         </ItemV>
-      </FadeInAnimation>
     </KPIBanner>
   );
 }

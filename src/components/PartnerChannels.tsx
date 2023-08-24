@@ -20,7 +20,7 @@ import { ReactComponent as CryptocurrencyjobsSVG } from '../assets/partners/cryp
 import { ReactComponent as DecentralandSVG } from '../assets/partners/decentraland.svg';
 import { ReactComponent as DydxSVG } from '../assets/partners/dydx.svg';
 import { ReactComponent as EnsSVG } from '../assets/partners/ens.svg';
-import { ReactComponent as EarnfiSVG } from '../assets/partners/earnfi.svg';
+import { ReactComponent as EarnfiSVG } from '../assets/partners/earnifi.svg';
 import { ReactComponent as EthSVG } from '../assets/partners/ethsign.svg';
 import { ReactComponent as FlipsideSVG } from '../assets/partners/flipside.svg';
 import { ReactComponent as GoodGhostingSVG } from '../assets/partners/goodghosting.svg';
@@ -54,10 +54,16 @@ import { ReactComponent as UniswapSVG } from '../assets/partners/uniswap.svg';
 import { ReactComponent as UnstoppableSVG } from '../assets/partners/unstoppable.svg';
 import { ReactComponent as WormbatSVG } from '../assets/partners/wormbat.svg';
 import { ReactComponent as ZeroswapSVG } from '../assets/partners/zeroswap.svg';
+import { ReactComponent as BanklessSVG } from '../assets/partners/bankless.svg';
+import { ReactComponent as AtlendisSVG } from '../assets/partners/atlendis.svg';
+import { ReactComponent as DDSVG } from '../assets/partners/D_D.svg';
 import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
 import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
-import useOnScreen from 'hooks/useOnScreen';
+import { useInView } from 'react-intersection-observer';
+
+import { useTranslation } from 'react-i18next';
+
 
 /**
  * edit this to change the order
@@ -73,22 +79,28 @@ import useOnScreen from 'hooks/useOnScreen';
 // last 2 arrays are designs after grids in first and second row middle icons has formed
 
 const partnerSortedGroup = [
-  [DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG],
+  [BanklessSVG,DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG,EarnfiSVG],
   [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
   [SushiSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
   [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
   [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
-  [ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG],
+  [AtlendisSVG,ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG, DDSVG],
   [SnapshotSVG, EnsSVG, BancorSVG, AragonSVG],
   [QidaoSVG, DydxSVG, LepasaMetaverseSVG, OrionprotocolSVG],
 ];
 
 function PartnerChannels() {
+
+  // Internationalization
+  const { t } = useTranslation();
+
   const isLargeScreen = useMediaQuery('(max-width: 1200px)');
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [active, setActive] = useState(false);
-  const itemRef = useRef();
-  const onScreen = useOnScreen(itemRef);
+  // const itemRef = useRef();
+  // const onScreen = useOnScreen(itemRef);
+  const { ref: itemRef, inView: myElementIsVisible } = useInView();
+
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = partnerSortedGroup;
 
@@ -97,6 +109,8 @@ function PartnerChannels() {
     gsap.to('#item-1', { width: '0px', height: '0px' });
     gsap.to('#item-2', { width: '0px', height: '0px' });
     gsap.to('#item-3', { width: '0px', height: '0px' });
+    gsap.to('#item-4', { width: '0px', height: '0px' });
+    gsap.to('#item-5', { width: '0px', height: '0px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '178px', height: '178px' });
@@ -129,24 +143,25 @@ function PartnerChannels() {
     onEnter();
   }, []);
 
-  useEffect(() => {
-    console.log(onScreen);
-    if (onScreen) {
+    useEffect(() => {
+    if (myElementIsVisible) {
       onLeave();
       setActive(true);
     }
 
-    if (!onScreen) {
+    if (!myElementIsVisible) {
       onEnter();
       setActive(false);
     }
-  }, [onScreen]);
+  }, [myElementIsVisible]);
 
   const onLeave = () => {
     gsap.to('#item-0', { width: '96px', height: '96px' });
     gsap.to('#item-1', { width: '96px', height: '96px' });
     gsap.to('#item-2', { width: '96px', height: '96px' });
     gsap.to('#item-3', { width: '96px', height: '96px' });
+    gsap.to('#item-4', { width: '96px', height: '96px' });
+    gsap.to('#item-5', { width: '96px', height: '96px' });
 
     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
     gsap.to('#secondItem-1', { width: '96px', height: '96px' });
@@ -295,7 +310,7 @@ function PartnerChannels() {
             margin="0px 0px"
             lineHeight="110%"
           >
-            Powered by Push
+            {t('home.partners-section.partner-channels-title')}
           </ResponsiveH2>
 
           <Span
@@ -306,12 +321,12 @@ function PartnerChannels() {
             lineHeight="160%"
             textAlign={isMobile ? 'center' : 'initial'}
           >
-            Discover an amazing community of developers integrating Push to build a powerful communication stack.
+            {t('home.partners-section.partner-channels-description')}
           </Span>
 
           <LinkTo
             to="/frens"
-            title="Learn about $PUSH"
+            title={t('home.partners-section.partner-channels-button-alt')}
             bg="#DD44B9"
             radius="16px"
             padding="14px 32px"
@@ -322,7 +337,8 @@ function PartnerChannels() {
             margin="15px 0px 0px 0px"
             self="center"
           >
-            Explore dApps
+            {t('home.partners-section.partner-channels-button')}
+
           </LinkTo>
         </GridItem>
         <TriRow>
@@ -556,8 +572,10 @@ const Body = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: ${(props) => (props.active ? '85%' : '100%')};
+  width: 100%;
   margin: 14px auto;
 `;
 
 export default React.memo(PartnerChannels);
+
+

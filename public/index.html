@@ -16,7 +16,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
+    <link rel="canonical" href="https://push.org"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -63,10 +63,9 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      setTimeout(()=> {
-        (function(l) {
+      (function(l) {
         if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
           window.history.replaceState(null, null,
@@ -74,7 +73,6 @@
           );
         }
       }(window.location))
-      },10000)
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
     
@@ -100,6 +98,16 @@
       a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
       twq('config','oc3eg');
     },10000)
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9ZHXNRLYL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N9ZHXNRLYL');
     </script>
 
    	<!-- PWA Script -->
@@ -130,11 +138,9 @@
 
     <!-- Preloading font files -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="./assets/fonts/Strawford-Light.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/Strawford-ExtraLight.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Strawford-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Strawford-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/Strawford-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Strawford-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- End Twitter conversion tracking base code -->
   </head>

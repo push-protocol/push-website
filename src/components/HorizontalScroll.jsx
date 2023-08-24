@@ -12,6 +12,7 @@ import ImageHolder from './ImageHolder';
 import { FiArrowUpRight } from 'react-icons/fi';
 import useMediaQuery from 'hooks/useMediaQuery';
 import FadeInAnimation from './FadeInAnimation';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -30,6 +31,7 @@ const SlideElement = ({
   paddingBottom,
   paddingMobile
 }) => {
+
   const isMobile = useMediaQuery(device.tablet)
 
   return(
@@ -85,6 +87,10 @@ const SlideElement = ({
 }
 
 const HorizontalScroll = () => {
+
+      // Internationalization
+    const { t } = useTranslation();
+
     const panels = useRef([]);
     const panelsContainer = useRef();
     const isMobile = useMediaQuery(device.tablet)
@@ -100,17 +106,17 @@ const HorizontalScroll = () => {
 
       ScrollTrigger.matchMedia({
         "(min-width: 1199px)": function() {
-          gsap.to(panels.current, {
+          gsap.to(panels?.current, {
             xPercent: -79 * (totalPanels - 1),
             // xPercent: -100 * (totalPanels - 1),
             ease: 'none',
             scrollTrigger: {
-              trigger: panelsContainer.current,
+              trigger: panelsContainer?.current,
               pin: true,
               scrub: true,
               // snap: 1 / (totalPanels - 1),
               // base vertical scrolling on how wide the container is so it feels more natural.
-              end: () => '+=' + panelsContainer.current.offsetWidth
+              end: () => '+=' + panelsContainer?.current?.offsetWidth
             }
           });
          },
@@ -130,32 +136,32 @@ const HorizontalScroll = () => {
             >
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,0)} 
-                content = {`directly connect applications to individual users, enabling secure and personalized communication in response to customized on- and off-chain activity.`}
-                linkContent = "Build Push Notifications"
+                content = {t('home.horizontal-scroll-section.slide1.text')}
+                linkContent = {t('home.horizontal-scroll-section.slide1.link-text')}
                 image = {PushNotifications}
-                alt={'Illustration showing Push Notifications'}
-                title='Push Notifications'
+                alt={t('home.horizontal-scroll-section.slide1.image-alt')}
+                title={t('home.horizontal-scroll-section.slide1.title')}
                 addMargin={false}
                 link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
-                content = {`is the leading decentralized, web3 native chat application with user friendly features like 1-1, group chat, videos/images, and (soon) streaming.`}
-                linkContent = "Build with Push Chat"
+                content = {t('home.horizontal-scroll-section.slide2.text')}
+                linkContent = {t('home.horizontal-scroll-section.slide2.link-text')}
                 image = {PushChat}
-                alt={'Illustration showing Push Chat'}
-                title='Push Chat'
+                alt={t('home.horizontal-scroll-section.slide2.image-alt')}
+                title={t('home.horizontal-scroll-section.slide2.title')}
                 addMargin={true}
                 link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
                 paddingMobile={"30px 0px"}
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
-                content = {`is the home of community ownership of the Push Protocol. Push token holders can view, propose, and vote on critical developments to the protocol.`}
-                linkContent = "Explore Push DAO"
+                content = {t('home.horizontal-scroll-section.slide3.text')}
+                linkContent = {t('home.horizontal-scroll-section.slide3.link-text')}
                 image = {Pushdao}
-                alt={'Illustration showing Push DAO'}
-                title='Push DAO'
+                alt={t('home.horizontal-scroll-section.slide3.image-alt')}
+                title={t('home.horizontal-scroll-section.slide3.title')}
                 addMargin={true}
                 link="https://gov.push.org/"
                 paddingBottom={"34px"}

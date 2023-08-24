@@ -56,7 +56,8 @@ export const ContentV2 = styled.div`
 
   flex: ${(props) => props.flex || '1'};
   align-self: ${(props) => props.alignSelf || 'stretch'};
-  max-width: 1140px;
+  max-width: 1213px;
+  // max-width: 1140px;
   display: flex;
   justify-content: center;
   box-sizing: ${(props) => props.boxSizing || 'content-box'};
@@ -240,6 +241,7 @@ export const ButtonV2 = styled.button`
   z-index: ${(props) => props.zIndex || '3'};
   pointer: ${(props) => props.pointer || 'hand'};
   cursor: ${(props) => props.cursor || 'pointer'};
+  font-family: ${(props) => props.fontFamily || 'Strawford, Helvetica, sans-serif'};
 
   @media ${device.laptop} {
     font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.TABLET};

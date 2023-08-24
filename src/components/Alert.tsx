@@ -13,10 +13,21 @@ import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
+import { useTranslation } from 'react-i18next';
 
-const Alert = ({ hideAlert, isAlertVisible }) => {
-  const alertMessage = 'Push Video is now LIVE,';
-  const alertLink = 'https://app.push.org/chat';
+const Alert = () => {
+  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+
+  const hideAlertHandler = () => {
+    setIsAlertVisible(false);
+  };
+
+  const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
+  const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
+  const alertLink = 'https://push.org/brb';
+
+  // Internationalization
+  const { t, i18n } = useTranslation();
 
   const openLink = () => {
     window.open(alertLink, '_blank');
@@ -27,12 +38,10 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
-            {alertMessage}
+            {i18n.language === 'es' ? alertMessageEs : alertMessage}
             <KnowMoreLink
-              href={alertLink}
-              target="_blank"
             >
-              Know More
+              {t('alert.know-more')}
             </KnowMoreLink>
             <FiArrowUpRight className="icon" />
           </AlertText>
@@ -42,7 +51,7 @@ const Alert = ({ hideAlert, isAlertVisible }) => {
               size="1.25rem"
               color="#7f7b80"
               className="icon"
-              onClick={hideAlert}
+              onClick={hideAlertHandler}
             />
           </CancelIcon>
         </AlertContainer>
@@ -101,7 +110,7 @@ const CancelIcon = styled.div`
   }
 `;
 
-const KnowMoreLink = styled.a`
+const KnowMoreLink = styled.span`
   padding: 0;
   background: none;
   font-size: 1.125rem;
@@ -109,6 +118,7 @@ const KnowMoreLink = styled.a`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-weight:700;
   &:hover {
     opacity: 0.75;
   }
