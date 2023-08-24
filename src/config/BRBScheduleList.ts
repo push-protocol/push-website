@@ -91,6 +91,16 @@ export const citiesList = [
   ],
   [
     {
+      srcref: 'chennai',
+      place: 'Chennai',
+      date: '3 Oct 2023',
+      link: 'https://www.lu.ma/brb-chennai',
+      alt: 'Chennai, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Chennai, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#E26059',
+      hasEnded: false,
+    },
+    {
       srcref: 'mumbai',
       place: 'Mumbai',
       date: '7 Oct 2023',
@@ -100,6 +110,8 @@ export const citiesList = [
       backgroundColor: '#7A3DA9',
       hasEnded: false,
     },
+  ],
+  [
     {
       srcref: 'jaipur',
       place: 'Jaipur',
@@ -110,8 +122,6 @@ export const citiesList = [
       backgroundColor: '#16837C',
       hasEnded: false,
     },
-  ],
-  [
     {
       srcref: 'bhopal',
       place: 'Bhopal',
@@ -122,14 +132,26 @@ export const citiesList = [
       backgroundColor: '#16837C',
       hasEnded: false,
     },
+  ],
+  [
     {
       srcref: 'delhi_north',
       place: 'Delhi',
       date: '4 Nov 2023',
-      link: 'https://www.lu.ma/brb-south-delhi',
+      link: 'https://www.lu.ma/brb-delhi',
       alt: 'Delhi, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Delhi, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#194395',
+      hasEnded: false,
+    },
+    {
+      srcref: 'kanpur',
+      place: 'Kanpur',
+      date: '15 Nov 2023',
+      link: 'https://www.lu.ma/brb-kanpur',
+      alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#E26059',
       hasEnded: false,
     },
   ],
@@ -145,47 +167,25 @@ export const citiesList = [
       hasEnded: false,
     },
     {
-      srcref: 'kanpur',
-      place: 'Kanpur',
-      date: 'TBA',
-      link: 'https://www.lu.ma/brb-kanpur',
-      alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#E26059',
-      hasEnded: false,
-    },
-  ],
-  [
-    {
       srcref: 'agra',
       place: 'Agra',
-      date: 'TBA',
+      date: '25 Nov 2023',
       link: 'https://www.lu.ma/brb-agra',
       alt: 'Agra, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Agra, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#194395',
       hasEnded: false,
     },
+  ],
+  [
     {
       srcref: 'dehradun',
       place: 'Dehradun',
       date: 'TBA',
-      link: 'https://www.lu.ma/brb-deharadun',
+      link: 'https://lu.ma/brb-dehradun',
       alt: 'Dehradun, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Dehradun, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#7A3DA9',
-      hasEnded: false,
-    },
-  ],
-  [
-    {
-      srcref: 'chennai',
-      place: 'Chennai',
-      date: 'TBA',
-      link: 'https://www.lu.ma/brb-chennai',
-      alt: 'Chennai, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Chennai, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#E26059',
       hasEnded: false,
     },
     {
