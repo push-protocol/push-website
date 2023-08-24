@@ -15,10 +15,6 @@ export default function scroll() {
     smooth: true,
   });
 
-  lenis.on('scroll', (e) => {
-    console.log(e);
-  });
-
   lenis.on('scroll', ScrollTrigger.update);
 
   gsap.ticker.add((time)=>{
