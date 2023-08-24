@@ -20,7 +20,7 @@ import Home from './pages/Home';
 import { ENV } from './helpers/web3helper'
 // import { useSDKSocket } from './hooks/useSDKSocket'
 // import * as PushAPI from '@pushprotocol/restapi';
-// import { ChatUIProvider } from '@pushprotocol/uiweb';
+import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -80,16 +80,9 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [env, setEnv] = useState<ENV>(ENV.STAGING);
   const [isCAIP, setIsCAIP] = useState(false);
-
-
-  // const socketData = useSDKSocket({
-  //   account: account,
-  //   chainId: chainId,
-  //   env,
-  //   isCAIP,
-  // });
+  const [signer, setSigner] = useState();
 
 
   const [loadWagmi, setLoadWagmi] = useState(false);
@@ -128,6 +121,27 @@ function App() {
     setLoadWagmi(true);
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      if (!account || !env || !library) return;
+
+      const user = await PushAPI.user.get({ account: account, env });
+      let pgpPrivateKey;
+      const librarySigner = await library.getSigner(account);
+      setSigner(librarySigner);
+      if (user?.encryptedPrivateKey) {
+        pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
+          encryptedPGPPrivateKey: user.encryptedPrivateKey,
+          account: account,
+          signer: librarySigner,
+          env,
+        });
+      }
+
+      setPgpPrivateKey(pgpPrivateKey);
+    })();
+  }, [account, env, library]);
+
   return (
   <section>
    <EnvContext.Provider value={{ env, isCAIP }}>
@@ -136,7 +150,7 @@ function App() {
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
-                {/* <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}> */}
+                <ChatUIProvider env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
                   <Wrapper id="wrapper">
                       <AppWrapper id="content">
@@ -192,7 +206,7 @@ function App() {
                       </AppWrapper>
                     </Wrapper>
                   </Suspense>
-                  {/* </ChatUIProvider> */}
+                  </ChatUIProvider>
               </AccountContext.Provider>
              </RainbowKitProvider>
              </WagmiConfig>) : null}
