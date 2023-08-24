@@ -35,7 +35,7 @@ import { Button, Input, Section } from '../components/SharedStyling';
 
 
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger,);
 gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = window.pageYOffset;
@@ -134,7 +134,7 @@ function BRB() {
     // ScrollTrigger.disable();
 
     gsap.to(window, {
-      duration: 0.2,
+      duration: 1,
       scrollTo: { y: `#${id}` },
       // onComplete: enableScroll
     });
