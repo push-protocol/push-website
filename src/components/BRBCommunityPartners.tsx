@@ -14,7 +14,7 @@ import { ButtonV2, ImageV2, ItemHV2 } from './SharedStylingV2';
 export const CommunityPartners = () => {
   const isMobile = useMediaQuery(device.mobileL);
 
-  const ANIMATION_SPEED = isMobile ? 40 : 50;
+  const ANIMATION_SPEED = isMobile ? 55 : 70;
 
   return (
     <Container>
@@ -41,6 +41,7 @@ export const CommunityPartners = () => {
                     src={require(`../assets/brb/community/${item?.srcref}.png`)}
                     srcSet={`${require(`../assets/brb/community/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/community/${item?.srcref}@3x.png`)} 3x`}
                     alt={`${item?.alt}`}
+                    height={item?.height}
                   />
                 </PartnersButton>
               </PartnerItem>
@@ -57,27 +58,27 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 120px 0px 74px;
-  @media (max-width: 480px){
+  @media (max-width: 480px) {
     margin: 0px 0px 107px;
   }
 `;
 
 const CommunityContainer = styled(ItemHV2)`
   width: 100vw;
-  height: 151px;
+  height: 177px;
 `;
 
 const PartnerIcon = styled(ImageV2)`
   width: auto;
-  height: auto;
-  max-width: 241px;
-  max-height: 151px;
+  height: ${(props) => props.height || 'auto'};
+  max-width: 310px;
+  max-height:177px;
 `;
 
 const PartnerItem = styled.div`
   width: auto;
-  height: 141px;
-  max-height: 141px;
+  height: 177px;
+  max-height: 177px;
   display: flex;
   align-items: center;
   margin-right: 178px;
@@ -103,10 +104,10 @@ const Header = styled.span`
 `;
 
 const PartnersButton = styled(ButtonV2)`
-  &:before{
+  &:before {
     content: none;
   }
-  &:after{
+  &:after {
     content: none;
   }
 `;
