@@ -38,7 +38,7 @@ import { Button, Input, Section } from '../components/SharedStyling';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-let lastScrollY = window.pageYOffset;
+// let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
 
 function useScrollDirection(mobileMenuActive) {
