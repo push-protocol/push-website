@@ -270,7 +270,7 @@ function BRB() {
                         weight="200"
                         family="Glancyr !important"
                       >
-                        Playground
+                        #BRB_Chat
                       </Span>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
