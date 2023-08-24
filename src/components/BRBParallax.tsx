@@ -152,6 +152,7 @@ const Container = styled.div`
          margin-bottom: 2em;
          overflow: hidden;
          padding-bottom: 18em;
+         z-index: auto;
    }
 `;
 
