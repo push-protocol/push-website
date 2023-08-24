@@ -21,12 +21,12 @@ body {
   /* -webkit-overflow-scrolling: touch; */
   /* overflow-scrolling: touch; */
   font-family: "Signika Negative", sans-serif, Arial;
-  scroll-behavior:smooth;
+  /* scroll-behavior:smooth; */
 }
 
 body {
-    /* overflow-x: hidden; */
-    /* overflow-y: scroll; */
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
 
