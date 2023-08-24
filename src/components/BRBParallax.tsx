@@ -144,6 +144,7 @@ const Container = styled.div`
     position: relative;
     scroll-snap-align: center;
     padding: 0px;
+    z-index: 9;
 
       @media ${device.mobileL} {
          margin-top: -10em;

@@ -126,6 +126,8 @@ function App() {
 
   useEffect(() => {
     setLoadWagmi(true);
+
+    
   }, []);
 
   useEffect(() => {
