@@ -46,40 +46,40 @@ function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [bkg, setBkg] = useState('dark');
 
-  useEffect(() => {
-    const updateScrollDirection = () => {
-      const scrollY = window.pageYOffset;
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
+  // useEffect(() => {
+  //   const updateScrollDirection = () => {
+  //     const scrollY = window.pageYOffset;
+  //     let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)
-      ) {
-        // check if isMobileMenuOpen then override
-        if (mobileMenuActive) {
-          direction = 'scrollUp';
-        }
+  //     if (
+  //       direction !== scrollDirection &&
+  //       (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)
+  //     ) {
+  //       // check if isMobileMenuOpen then override
+  //       if (mobileMenuActive) {
+  //         direction = 'scrollUp';
+  //       }
 
-        setScrollDirection(direction);
-      }
+  //       setScrollDirection(direction);
+  //     }
 
-      // hacky way, optimize later when time
-      // if (scrollY > 970) {
-      //   setBkg('light');
-      // } else {
-      //   setBkg('dark');
-      // }
+  //     // hacky way, optimize later when time
+  //     // if (scrollY > 970) {
+  //     //   setBkg('light');
+  //     // } else {
+  //     //   setBkg('dark');
+  //     // }
 
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
+  //     lastScrollY = scrollY > 0 ? scrollY : 0;
+  //   };
 
-    // add event listener
-    window.addEventListener('scroll', updateScrollDirection, { passive: true });
+  //   // add event listener
+  //   window.addEventListener('scroll', updateScrollDirection, { passive: true });
 
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, [scrollDirection, mobileMenuActive]);
+  //   return () => {
+  //     window.removeEventListener('scroll', updateScrollDirection); // clean up
+  //   };
+  // }, [scrollDirection, mobileMenuActive]);
 
   return [scrollDirection, bkg];
 }
