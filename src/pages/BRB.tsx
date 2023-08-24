@@ -381,9 +381,9 @@ function BRB() {
         </ScheduleDiv>
 
 
-        <PlaygroundDiv id="playground">
+        {/* <PlaygroundDiv id="playground">
           <ChatComponent />
-        </PlaygroundDiv>
+        </PlaygroundDiv> */}
 
         <ItemFooter id="support">
           <FooterItem>
