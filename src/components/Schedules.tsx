@@ -18,7 +18,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
 
-import { citiesList } from 'config/ScheduleLists';
+import { citiesList } from 'config/BRBScheduleLists';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery('(max-width: 480px)');
