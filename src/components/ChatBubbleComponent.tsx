@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { Fragment, useState } from 'react';
 import { ChatViewComponent } from '@pushprotocol/uiweb';
 import styled from 'styled-components';

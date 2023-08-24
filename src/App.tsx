@@ -43,6 +43,8 @@ import '@rainbow-me/rainbowkit/styles.css';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { darkChatTheme } from 'helpers/theme';
+import scroll from './helpers/animations'
+scroll();
 
 ReactGA.initialize('UA-165415629-2');
 

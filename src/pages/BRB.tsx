@@ -35,7 +35,7 @@ import { Button, Input, Section } from '../components/SharedStyling';
 
 
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger,);
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = window.pageYOffset;
