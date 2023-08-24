@@ -66,7 +66,6 @@ const Container = styled.div`
 const CommunityContainer = styled(ItemHV2)`
   width: 100vw;
   height: 177px;
-  overflow-y:hidden;
 `;
 
 const PartnerIcon = styled(ImageV2)`
@@ -78,8 +77,8 @@ const PartnerIcon = styled(ImageV2)`
 
 const PartnerItem = styled.div`
   width: auto;
-  height: 141px;
-  max-height: 141px;
+  height: 177px;
+  max-height: 177px;
   display: flex;
   align-items: center;
   margin-right: 178px;
