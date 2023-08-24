@@ -12,7 +12,7 @@ import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import { ItemH, ItemV } from './SharedStyling';
-import { ButtonV2, LinkV2, SpanV2 } from './SharedStylingV2';
+import { ButtonV2, ItemHV2, ItemVV2, LinkV2, SpanV2 } from './SharedStylingV2';
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
@@ -183,6 +183,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             <Button
               background={index > 0 ? '#E64DE9' : '#2A2A39'}
               onClick={() => (index !== 0 ? setIndex((prev) => prev - 1) : null)}
+              title='Previous page'
               className="splide__arrow splide__arrow--prev"
             >
               <Icon src={Left} />
@@ -191,10 +192,24 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             <Button
               background={!isLastSchedule ? '#E64DE9' : '#2A2A39'}
               onClick={() => (!isLastSchedule ? setIndex((prev) => prev + 1) : null)}
+              title='Next page'
               className="splide__arrow splide__arrow--next"
             >
               <Icon src={Right} />
             </Button>
+            <ButtonV2
+              border='1px solid #E64DE9'
+
+              onClick={() => (window.open('https://discord.gg/cTRqvYzXpW', '_blank'))}
+              title='Participate Virtually'
+            >
+              <ItemHV2>
+                <ParticipateButtonInnerText>Participate Virtually</ParticipateButtonInnerText>
+                <ItemVV2 width="15px">
+                  <ArrowSmall />
+                </ItemVV2>
+              </ItemHV2>
+            </ButtonV2>
           </ActionContainer>
         </div>
       </Splide>
@@ -209,6 +224,17 @@ const Container = styled(ItemV)`
   margin-bottom: 144px;
   @media (max-width: 480px) {
     margin-left: 0px;
+  }
+`;
+
+const ArrowSmall = styled(Arrow)`
+  width: inherit;
+  margin-left: 10px;
+`;
+
+const ParticipateButtonInnerText = styled(SpanV2)`
+  @media ${device.mobileS} {
+    flex: 1;
   }
 `;
 

@@ -112,35 +112,32 @@
 
    	<!-- PWA Script -->
 		<script>
-			// if ('serviceWorker' in navigator) {
-			// 	window.addEventListener('load', () => {
-			// 		navigator.serviceWorker
-			// 			.register('./serviceWorker.js')
-			// 			.then((reg) => console.log('Success: ', reg.scope))
-			// 			.catch((err) => console.log('Failure: ', err));
-			// 	});
-			// }
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker
+						.register('./serviceWorker.js')
+						.then((reg) => console.log('Success: ', reg.scope))
+						.catch((err) => console.log('Failure: ', err));
+				});
+			}
 
-      // if ('serviceWorker' in navigator) {
-      //   window.addEventListener('load', function() {
-      //     navigator.serviceWorker.register('worker.js').then(function(registration) {
-      //       console.log('Worker registration successful', registration.scope);
-      //     }, function(err) {
-      //       console.log('Worker registration failed', err);
-      //     }).catch(function(err) {
-      //       console.log(err);
-      //     });
-      //   });
-      // } else {
-      //   console.log('Service Worker is not supported by browser.');
-      // }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
 		</script>
 
     <!-- Preloading font files -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="./assets/fonts/Strawford-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/Strawford-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/Strawford-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- End Twitter conversion tracking base code -->
   </head>

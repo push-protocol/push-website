@@ -428,10 +428,10 @@ template {
  */
 @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/Strawford-Regular.woff2') format('woff2'),
-      url('./assets/fonts/Strawford-Regular.woff') format('woff'),
-      url('./assets/fonts/Strawford-Regular.eot') format('eot'),
-      url('./assets/fonts/Strawford-Regular.ttf') format('ttf');
+  src: url('./assets/fonts/StrawfordRegular.woff2') format('woff2'),
+      url('./assets/fonts/StrawfordRegular.woff') format('woff'),
+      url('./assets/fonts/StrawfordRegular.eot') format('eot'),
+      url('./assets/fonts/StrawfordRegular.ttf') format('ttf');
   font-weight: 100 200 300 400 500;
   font-style: normal;
   font-display: swap;
@@ -439,9 +439,9 @@ template {
 
 @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/Strawford-Medium.woff2') format('woff2'),
-      url('./assets/fonts/Strawford-Medium.otf') format('otf'),
-      url('./assets/fonts/Strawford-Medium.ttf') format('ttf');
+  src: url('./assets/fonts/StrawfordMedium.woff2') format('woff2'),
+      url('./assets/fonts/StrawfordMedium.otf') format('otf'),
+      url('./assets/fonts/StrawfordMedium.ttf') format('ttf');
   font-weight: 600 700;
   font-style: normal;
   font-display: swap;
@@ -449,10 +449,10 @@ template {
 
 @font-face {
   font-family: 'Strawford';
-  src: url('./assets/fonts/Strawford-Bold.woff2') format('woff2'),
-        url('./assets/fonts/Strawford-Bold.woff') format('woff'),
-        url('./assets/fonts/Strawford-Bold.eot'),
-        url('./assets/fonts/Strawford-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/StrawfordBold.woff2') format('woff2'),
+        url('./assets/fonts/StrawfordBold.woff') format('woff'),
+        url('./assets/fonts/StrawfordBold.eot'),
+        url('./assets/fonts/StrawfordBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;

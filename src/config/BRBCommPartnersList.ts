@@ -7,10 +7,10 @@ export const brbCommPartnersList = [
     height:'88px'
   },
   {
-    srcref: 'ensdao',
-    link: 'https://twitter.com/ENS_DAO',
-    alt: 'ENS DAO, Community Partner of Push, #BRBIndia, pan-India dev tour',
-    title: 'Visit ENS DAO Twitter',
+    srcref: 'ens',
+    link: 'https://twitter.com/ENS',
+    alt: 'ENS, Community Partner of Push, #BRBIndia, pan-India dev tour',
+    title: 'Visit ENS Twitter',
     height:'65px'
   },
   {

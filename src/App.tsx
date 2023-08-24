@@ -57,15 +57,15 @@ interface Web3ReactState {
 const API_KEY = 'rtkd-a4JWpnViQBZdNCiFBGTJdp5e0R2';
 
 function App() {
-  const FAQ = React.lazy(() => import('pages/FAQ'));
-  const PrivacyMobile = React.lazy(() => import('pages/PrivacyMobile'));
-  const Privacy = React.lazy(() => import('pages/Privacy'));
-  const TermsOfService = React.lazy(() => import('pages/TermsOfService'));
-  const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl'));
-  const FrensOfPush = React.lazy(() => import('pages/FrensOfPush'));
-  const Spaces = React.lazy(() => import('pages/Spaces'));
-  const Cheat = React.lazy(() => import('pages/CheatSheet'));
-  const BRB = React.lazy(() => import('pages/BRB'));
+  const FAQ = React.lazy(() => import('pages/FAQ')); // import('pages/FAQ'); //React.lazy(() => import('pages/FAQ'));
+  const PrivacyMobile = React.lazy(() => import('pages/PrivacyMobile')); // import('pages/PrivacyMobile'); // React.lazy(() => import('pages/PrivacyMobile'));
+  const Privacy = React.lazy(() => import('pages/Privacy')); // import('pages/Privacy'); // React.lazy(() => import('pages/Privacy'));
+  const TermsOfService = React.lazy(() => import('pages/TermsOfService')); // import('pages/TermsOfService'); //React.lazy(() => import('pages/TermsOfService'));
+  const RedirectToPlatform = React.lazy(() => import('./components/RedirectToDiffUrl')); // import('./components/RedirectToDiffUrl'); //React.lazy(() => import('./components/RedirectToDiffUrl'));
+  const FrensOfPush = React.lazy(() => import('pages/FrensOfPush')); // import('pages/FrensOfPush'); // React.lazy(() => import('pages/FrensOfPush'));
+  const Spaces = React.lazy(() => import('pages/Spaces')); // import('pages/Spaces'); // React.lazy(() => import('pages/Spaces'));
+  const Cheat = React.lazy(() => import('pages/CheatSheet')); // import('pages/CheatSheet'); // React.lazy(() => import('pages/CheatSheet'));
+  const BRB = React.lazy(() => import('pages/BRB')); // import('pages/BRB'); // React.lazy(() => import('pages/BRB'));
 
   // useEffect(() => {
   //   ReactGA.pageview('/entry');
