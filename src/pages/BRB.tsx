@@ -130,14 +130,14 @@ function BRB() {
   };
 
   const handleSectionNavigation = (id) => {
-    // if (showMobileMenu) toggleMobileMenu();
+    if (showMobileMenu) toggleMobileMenu();
     // ScrollTrigger.disable();
 
-    // gsap.to(window, {
-    //   duration: 0.2,
-    //   scrollTo: { y: `#${id}` },
-    //   onComplete: enableScroll
-    // });
+    gsap.to(window, {
+      duration: 0.2,
+      scrollTo: { y: `#${id}` },
+      // onComplete: enableScroll
+    });
 
     // enableScroll();
   };
