@@ -182,7 +182,7 @@ export const citiesList = [
       srcref: 'dehradun',
       place: 'Dehradun',
       date: 'TBA',
-      link: 'https://www.lu.ma/brb-deharadun',
+      link: 'https://lu.ma/brb-dehradun',
       alt: 'Dehradun, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Dehradun, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#7A3DA9',
