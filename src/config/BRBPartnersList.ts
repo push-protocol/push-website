@@ -20,7 +20,7 @@ export const brbPartnersList = [
   {
     srcref: 'flipkart',
     link: 'https://firedrops.flipkart.com/',
-    alt: 'Firedrops by Flipkar, Partner of Push, #BRBIndia, pan-India dev tour',
+    alt: 'Firedrops by Flipkart, Partner of Push, #BRBIndia, pan-India dev tour',
     title: 'Visit Firedrops by Flipkart Website',
   },
   {

@@ -5,7 +5,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { brbPartnersList } from 'config/BRBPartnersLists';
+import { brbPartnersList } from 'config/BRBPartnersList';
 import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {

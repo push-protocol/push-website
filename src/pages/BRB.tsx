@@ -1,37 +1,37 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
-import { ReactComponent as PushLogo } from '../assets/pushIcon.svg';
-import { ReactComponent as Discord } from '../assets/Discord-BRB.svg';
+import Schedules from 'components/Schedules';
 import { ReactComponent as ArrowIcon } from '../assets/ArrowIcon.svg';
-import { ReactComponent as X } from '../assets/X-BRB.svg';
+import { ReactComponent as Discord } from '../assets/Discord-BRB.svg';
 import ImageBRB from '../assets/Image-BRB.png';
 import MobileBRB from '../assets/Mobile-BRB.png';
-import Schedules from 'components/Schedules';
+import { ReactComponent as X } from '../assets/X-BRB.svg';
+import { ReactComponent as PushLogo } from '../assets/pushIcon.svg';
+import PageWrapper from '../components/PageWrapper';
 
-import { Anchor, LinkTo, Span } from 'components/SharedStyling';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { ButtonV2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
-import GLOBALS, { device } from 'config/globals';
-import useMediaQuery from 'hooks/useMediaQuery';
-import { useTranslation } from 'react-i18next';
-import ImageHolder from 'components/ImageHolder';
-import { Partners } from 'components/BRBPartners';
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { Partners } from 'components/BRBPartners';
 import { ChatComponent } from 'components/ChatComponent';
-import { Button, Input, Section } from '../components/SharedStyling';
+import ImageHolder from 'components/ImageHolder';
+import { Anchor, LinkTo, Span } from 'components/SharedStyling';
+import { ButtonV2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
+import GLOBALS, { device } from 'config/globals';
+import { gsap } from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useMediaQuery from 'hooks/useMediaQuery';
+import { useTranslation } from 'react-i18next';
+import { AiOutlineClose } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
+import { Button, Input, Section } from '../components/SharedStyling';
 
 
 // Register GSAP plugins
@@ -136,6 +136,7 @@ function BRB() {
     gsap.to(window, {
       duration: 0.2,
       scrollTo: { y: `#${id}` },
+      onComplete: enableScroll
     });
 
     enableScroll();
