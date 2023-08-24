@@ -1,6 +1,6 @@
 {
   "name": "push-website",
-  "version": "0.1.0",
+  "version": "1.0",
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
@@ -77,7 +77,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --branch 'gh-pages-v2'",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build && gzipper compress ./build",
     "test": "react-app-rewired test",

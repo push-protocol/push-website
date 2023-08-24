@@ -35,7 +35,7 @@ module.exports = function override(config) {
       fullySpecified: false,
     },
   });
-
+  
   return config;
 };
 
