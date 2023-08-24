@@ -41,6 +41,7 @@ export const CommunityPartners = () => {
                     src={require(`../assets/brb/community/${item?.srcref}.png`)}
                     srcSet={`${require(`../assets/brb/community/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/community/${item?.srcref}@3x.png`)} 3x`}
                     alt={`${item?.alt}`}
+                    height={item?.height}
                   />
                 </PartnersButton>
               </PartnerItem>
@@ -57,21 +58,22 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 120px 0px 74px;
-  @media (max-width: 480px){
+  @media (max-width: 480px) {
     margin: 0px 0px 107px;
   }
 `;
 
 const CommunityContainer = styled(ItemHV2)`
   width: 100vw;
-  height: 151px;
+  height: 177px;
+  overflow-y:hidden;
 `;
 
 const PartnerIcon = styled(ImageV2)`
   width: auto;
-  height: auto;
+  height: ${(props) => props.height || 'auto'};
   max-width: 241px;
-  max-height: 151px;
+  max-height:177px;
 `;
 
 const PartnerItem = styled.div`
@@ -103,10 +105,10 @@ const Header = styled.span`
 `;
 
 const PartnersButton = styled(ButtonV2)`
-  &:before{
+  &:before {
     content: none;
   }
-  &:after{
+  &:after {
     content: none;
   }
 `;
