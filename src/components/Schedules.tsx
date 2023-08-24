@@ -12,13 +12,13 @@ import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import { ItemH, ItemV } from './SharedStyling';
-import { ButtonV2, SpanV2 } from './SharedStylingV2';
+import { ButtonV2, LinkV2, SpanV2 } from './SharedStylingV2';
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
 
-import { citiesList } from 'helpers/ScheduleLists';
+import { citiesList } from 'config/BRBScheduleList';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery('(max-width: 480px)');
@@ -115,6 +115,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                       key={index}
                       background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
                       style={{ cursor: schedule.hasEnded ? 'not-allowed' : 'pointer' }}
+                      title={`${schedule?.title}`}
                       onClick={() => {
                         if (!schedule.hasEnded) {
                           openLink(schedule?.link);
@@ -125,8 +126,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                         <Image
                           src={require(`../assets/brb/schedules/${schedule?.srcref}.png`)}
                           srcSet={`${require(`../assets/brb/schedules/${schedule?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/schedules/${schedule?.srcref}@3x.png`)} 3x`}
-                          // height="28px"
-                          // width="28px"
+                          alt={`${schedule?.alt}`}
                         />
                       </ImageContainer>
                       <svg
@@ -245,9 +245,11 @@ const Header = styled.span`
   }
 `;
 
-const ScheduleCardContainer = styled.div`
+const ScheduleCardContainer = styled.button`
   width: 413px;
   height: 324px;
+  padding: 0px;
+  overview: hidden;
   background: ${(props) => props.background};
   display: flex;
   margin-top: 1.5em;
