@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import React, { lazy, useLayoutEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 
 // External Components
 import { gsap } from 'gsap';
@@ -45,34 +46,36 @@ import {
 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
 
+import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
+import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg';
 import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
-import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg'
 import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
 import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
-import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
-import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
+import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
 
+import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
+import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
-import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
 
+import FadeInAnimation from 'components/FadeInAnimation';
+import HorizontalScroll from 'components/HorizontalScroll';
+import ImageHolder from 'components/ImageHolder';
+import { useTranslation } from 'react-i18next';
+import { FiArrowUpRight } from 'react-icons/fi';
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
 import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
 import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-import HorizontalScroll from 'components/HorizontalScroll';
-import ImageHolder from 'components/ImageHolder';
-import FadeInAnimation from 'components/FadeInAnimation';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { useTranslation } from 'react-i18next';
 
 function Home({ isAlertVisible }) {
+  // React GA Analytics
+  ReactGA.pageview('/home');
 
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');

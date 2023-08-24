@@ -3,20 +3,21 @@
 /* eslint-disable */
 
 import React, { useState } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import PageWrapper from 'components/PageWrapper';
 import pageMeta from 'config/pageMeta';
-import SpaceBg from '../assets/space-background.webp';
 import MobileSpaceBg from '../assets/mobile-space-background.webp';
+import SpaceBg from '../assets/space-background.webp';
 
-import SpaceImage from '../assets/space-image.webp';
-import MobileSpaceImage from '../assets/mobile-space-image.webp';
-import { device } from 'config/globals';
-import ImageHolder from 'components/ImageHolder';
-import useMediaQuery from 'hooks/useMediaQuery';
 import { subscribeToSpace } from 'api';
+import ImageHolder from 'components/ImageHolder';
 import { Span } from 'components/SharedStyling';
+import { device } from 'config/globals';
+import useMediaQuery from 'hooks/useMediaQuery';
+import MobileSpaceImage from '../assets/mobile-space-image.webp';
+import SpaceImage from '../assets/space-image.webp';
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
@@ -32,6 +33,9 @@ const validateEmail = (email) => {
 };
 
 const Spaces = () => {
+  // React GA Analytics
+  ReactGA.pageview('/spaces');
+
   const [isLoading, setIsLoading] = useState(false);
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [emailError, setEmailError] = useState('');

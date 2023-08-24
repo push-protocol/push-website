@@ -3,46 +3,46 @@
 // eslint-disable react/prop-types
 /* eslint-disable */
 
-import React, { useLayoutEffect, useEffect, useState, Suspense } from 'react';
-import { useWeb3React } from '@web3-react/core';
-import {
-  Web3Context,
-  EnvContext,
-  SocketContext,
-  AccountContext,
-} from './context';
-import ReactGA from 'react-ga';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import Footer from './segments/Footer';
-import Header from './segments/Header';
-import Home from './pages/Home';
-import { ENV } from './helpers/web3helper'
-import { useSDKSocket } from './hooks/useSDKSocket'
 import * as PushAPI from '@pushprotocol/restapi';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
 import {
-  getDefaultWallets,
   RainbowKitProvider,
   darkTheme,
+  getDefaultWallets,
 } from '@rainbow-me/rainbowkit';
-import { configureChains, createConfig, useAccount, WagmiConfig } from 'wagmi';
+import '@rainbow-me/rainbowkit/styles.css';
+import { useWeb3React } from '@web3-react/core';
+import { darkChatTheme } from 'helpers/theme';
+import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
+import { WagmiConfig, configureChains, createConfig, useAccount } from 'wagmi';
 import {
-  mainnet,
-  polygon,
-  optimism,
   arbitrum,
-  zora,
-  goerli,
-  polygonMumbai,
-  optimismGoerli,
   arbitrumGoerli,
+  goerli,
+  mainnet,
+  optimism,
+  optimismGoerli,
+  polygon,
+  polygonMumbai,
+  zora,
   zoraTestnet,
 } from 'wagmi/chains';
-import '@rainbow-me/rainbowkit/styles.css';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { darkChatTheme } from 'helpers/theme';
+import {
+  AccountContext,
+  EnvContext,
+  SocketContext,
+  Web3Context,
+} from './context';
+import { ENV } from './helpers/web3helper';
+import { useSDKSocket } from './hooks/useSDKSocket';
+import Home from './pages/Home';
+import Footer from './segments/Footer';
+import Header from './segments/Header';
 
 ReactGA.initialize('UA-165415629-2');
 
@@ -66,6 +66,7 @@ function App() {
   const Spaces = React.lazy(() => import('pages/Spaces'));
   const Cheat = React.lazy(() => import('pages/CheatSheet'));
   const BRB = React.lazy(() => import('pages/BRB'));
+
   // useEffect(() => {
   //   ReactGA.pageview('/entry');
   // }, []);

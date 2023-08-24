@@ -2,20 +2,23 @@
 // @ts-nocheck
 
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
+import PageWrapper from '../components/PageWrapper';
 
-import { Content, ItemH, ItemV, H2, H3, Para, UL, LI, A, B, Span, HeroHeader } from '../components/SharedStyling';
+import { A, B, Content, H2, H3, HeroHeader, ItemH, ItemV, LI, Para, Span, UL } from '../components/SharedStyling';
 
 import { useTranslation } from 'react-i18next';
 
 
 function TermsOfService() {
+  // React GA Analytics
+  ReactGA.pageview('/tos');
 
   // Internationalization
   const { t } = useTranslation();

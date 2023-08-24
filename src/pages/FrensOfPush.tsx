@@ -3,40 +3,43 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import PageWrapper from '../components/PageWrapper';
-import pageMeta from 'config/pageMeta';
-import { device } from 'config/globals';
-import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
-import HybridSection from 'components/HybridSection';
-import SignupInput from 'components/SignupInput';
-import { BodyContent } from './Home';
-import useMediaQuery from 'hooks/useMediaQuery';
-import { BiSearch } from 'react-icons/bi';
-import ChannelItem, { Tilt } from 'components/ChannelItem';
-import { FiChevronDown } from 'react-icons/fi';
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png';
+import ChannelItem, { Tilt } from 'components/ChannelItem';
+import FadeInAnimation from 'components/FadeInAnimation';
+import HybridSection from 'components/HybridSection';
+import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
+import SignupInput from 'components/SignupInput';
 import { objChannelList } from 'config/ChannelList';
-import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
+import { device } from 'config/globals';
+import pageMeta from 'config/pageMeta';
+import gsap from 'gsap';
+import useMediaQuery from 'hooks/useMediaQuery';
+import React, { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+import { BiSearch } from 'react-icons/bi';
+import { FiChevronDown } from 'react-icons/fi';
+import styled from 'styled-components';
+import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
+import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
+import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
 import { ReactComponent as LensSVG } from '../assets/float/Lens.svg';
 import { ReactComponent as LifiSVG } from '../assets/float/Lifi.svg';
 import { ReactComponent as LifiMainSVG } from '../assets/float/LifiMain.svg';
-import { ReactComponent as UnstoppableSVG } from '../assets/float/Unstoppable.svg';
-import { ReactComponent as SnapshotSVG } from '../assets/float/Snapshot.svg';
-import { ReactComponent as QidaoSVG } from '../assets/float/Qidao.svg';
-import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
-import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
-import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
 import { ReactComponent as MeanFinanceSVG } from '../assets/float/MeanFinance.svg';
+import { ReactComponent as QidaoSVG } from '../assets/float/Qidao.svg';
+import { ReactComponent as SnapshotSVG } from '../assets/float/Snapshot.svg';
 import { ReactComponent as UniswapSVG } from '../assets/float/Uniswap.svg';
-import FadeInAnimation from 'components/FadeInAnimation';
-import gsap from 'gsap';
+import { ReactComponent as UnstoppableSVG } from '../assets/float/Unstoppable.svg';
+import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
+import PageWrapper from '../components/PageWrapper';
+import { BodyContent } from './Home';
 
 import { useTranslation } from 'react-i18next';
 
 const FrensText = () => {
+  // React GA Analytics
+  ReactGA.pageview('/integrations');
 
   // Internationalization
   const { t } = useTranslation();

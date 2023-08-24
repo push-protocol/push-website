@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 import React from 'react';
+import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
@@ -9,15 +10,17 @@ import styled from 'styled-components';
 import GLOBALS, { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
+import PageWrapper from '../components/PageWrapper';
 
 import { useTranslation } from 'react-i18next';
 
-import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, LI, A, B, Span, HeroHeader } from '../components/SharedStyling';
+import { A, B, Content, H1, H2, H3, HeroHeader, ItemH, ItemV, LI, Para, Section, Span, UL } from '../components/SharedStyling';
 
 
 function Privacy() {
+  // React GA Analytics
+  ReactGA.pageview('/privacy');
 
   // Internationalization
   const { t } = useTranslation();

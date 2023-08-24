@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
@@ -92,6 +93,9 @@ const defaultMobileMenuState = {
 };
 
 function BRB() {
+  // React GA Analytics
+  ReactGA.pageview('/brb');
+
   const isMobile = useMediaQuery(device.mobileL);
   const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -180,7 +184,6 @@ function BRB() {
   const openHomePage = () => {
     navigate('/');
   };
-
 
   return (
     <PageWrapper

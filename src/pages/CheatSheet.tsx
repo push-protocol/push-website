@@ -1,18 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React,{ useEffect } from 'react';
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
-import { RotatingLines } from 'react-loader-spinner';
 import { Button } from 'components/SharedStyling';
-
+import { RotatingLines } from 'react-loader-spinner';
+import PageWrapper from '../components/PageWrapper';
 
 
 function CheatSheet() {
+  // React GA Analytics
+  ReactGA.pageview('/cheatsheet');
+
   const url = 'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view?usp=sharing';
   const redirectURL = () => {
     window.location.replace(url);

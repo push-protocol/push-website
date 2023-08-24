@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
+import ReactGA from 'react-ga';
 import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
@@ -9,6 +10,9 @@ import { Anchor, Content, H2, HeroHeader, ItemH, ItemV, Span } from '../componen
 import HybridSection from '../components/HybridSection';
 
 function AboutUs() {
+  // React GA Analytics
+  ReactGA.pageview('/aboutus');
+
   return (
     <AboutUsWrapper>
       <HybridSection curve='bottom' id="aboutus" padding="40px 160px 0px 160px">

@@ -4,17 +4,18 @@
 
 import React from 'react';
 
-import styled from 'styled-components';
+import ReactGA from 'react-ga';
 import { BsChevronExpand } from 'react-icons/bs';
+import styled from 'styled-components';
 
 import { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
+import PageWrapper from '../components/PageWrapper';
 
-import { Section, Content, ItemH, ItemV, H1, H2, H3, Para, UL, OL, LI, A, B, Span, HeroHeader, Button } from '../components/SharedStyling';
-import ImageFAQ from "../assets/faq-projects.webp"
+import ImageFAQ from "../assets/faq-projects.webp";
+import { A, B, Button, Content, H1, H2, H3, HeroHeader, ItemH, ItemV, LI, OL, Para, Section, Span, UL } from '../components/SharedStyling';
 
 import { useTranslation } from 'react-i18next';
 
@@ -331,6 +332,8 @@ const Token = [
 
 
 function FAQ() {
+  // React GA Analytics
+  ReactGA.pageview('/faq');
 
   const { t } = useTranslation();
 

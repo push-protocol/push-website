@@ -2,18 +2,22 @@
 // @ts-nocheck
 
 import React from 'react';
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 import { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
 
-import PageWrapper from '../components/PageWrapper';
 import HybridSection from '../components/HybridSection';
+import PageWrapper from '../components/PageWrapper';
 
-import {  Content, ItemH, ItemV, H3, Para, A, B, HeroHeader } from '../components/SharedStyling';
+import { A, B, Content, H3, HeroHeader, ItemH, ItemV, Para } from '../components/SharedStyling';
 
 
 function PrivacyMobile() {
+  // React GA Analytics
+  ReactGA.pageview('/privacy');
+  
   return (
     <PageWrapper
       pageName={PageMeta.PRIVACY.pageName}
