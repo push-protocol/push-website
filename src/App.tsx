@@ -80,7 +80,7 @@ function App() {
 
   const { account, library, active, chainId } = useWeb3React();
   const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
+  const [env, setEnv] = useState<ENV>(ENV.STAGING);
   const [isCAIP, setIsCAIP] = useState(false);
   const [signer, setSigner] = useState();
 
@@ -149,7 +149,7 @@ function App() {
     })();
   }, [account, env, library]);
 
-  console.log(account, pgpPrivateKey, env, 'getStarted')
+  // console.log(account, pgpPrivateKey, env, 'getStarted')
 
   return (
   <section>
@@ -159,7 +159,7 @@ function App() {
           {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider theme={darkTheme()} chains={chains}>
               <AccountContext.Provider value={{ pgpPrivateKey }}>
-                <ChatUIProvider account={account!} pgpPrivateKey={pgpPrivateKey} env={env} theme={darkChatTheme}>
+                <ChatUIProvider env={env} theme={darkChatTheme}>
                 <Suspense fallback={<h1>Loading</h1>}>
                   <Wrapper id="wrapper">
                       <AppWrapper id="content">
