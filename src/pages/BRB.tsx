@@ -39,6 +39,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = window.pageYOffset;
+lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;
 
 function useScrollDirection(mobileMenuActive) {
@@ -159,23 +160,25 @@ function BRB() {
     },
   });
 
-  useEffect(() => {
-    ScrollTrigger.matchMedia({
-      '(min-width: 480px)': function() {
-        newTl.to(elems0, {
-          opacity: 0,
-        });
+  // Removing this as z-index in BRBParallax does the job
+  // Improves efficiency
+  // useEffect(() => {
+  //   ScrollTrigger.matchMedia({
+  //     '(min-width: 480px)': function() {
+  //       newTl.to(elems0, {
+  //         opacity: 0,
+  //       });
 
-        newTl.to(elems, {
-          opacity: 0,
-        });
-      },
-      '(max-width: 479px)': function() { 
-        return;
-      },
-      'all': function() { return; }
-    });
-  }, []);
+  //       newTl.to(elems, {
+  //         opacity: 0,
+  //       });
+  //     },
+  //     '(max-width: 479px)': function() { 
+  //       return;
+  //     },
+  //     'all': function() { return; }
+  //   });
+  // }, []);
 
   const openHomePage = () => {
     navigate('/');
@@ -379,7 +382,6 @@ function BRB() {
         <ScheduleDiv id="schedule">
           <Schedules />
         </ScheduleDiv>
-
 
         <PlaygroundDiv id="playground">
           <ChatComponent />

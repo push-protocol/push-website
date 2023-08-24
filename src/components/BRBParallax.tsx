@@ -1,16 +1,16 @@
 /* eslint-disable no-useless-escape */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useEffect } from 'react';
+import { Span } from 'components/SharedStyling';
+import GLOBALS, { device } from 'config/globals';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useMediaQuery from 'hooks/useMediaQuery';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ParallaxBRB from '../assets/Grouped.svg';
 import ParallaxBRBMobile from '../assets/GroupedMobile.svg';
 import ImageHolder from './ImageHolder';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import GLOBALS, { device } from 'config/globals';
-import useMediaQuery from 'hooks/useMediaQuery';
-import { Span } from 'components/SharedStyling';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -145,6 +145,8 @@ const Container = styled.div`
     scroll-snap-align: center;
     padding: 0px;
 
+    z-index: 1000;
+    
       @media ${device.mobileL} {
          margin-top: -10em;
          scroll-snap-align: none;

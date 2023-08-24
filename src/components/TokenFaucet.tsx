@@ -2,18 +2,18 @@
 // @ts-nocheck
 import React, { useRef, useState } from 'react';
 
-import styled from 'styled-components';
+import { device } from 'config/globals';
 import { useClickAway } from 'react-use';
-import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
-import Close from '../assets/brb/others/Close.svg';
-import XCompleted from '../assets/brb/others/X-Completed.svg';
-import DiscordCompleted from '../assets/brb/others/Discord-Completed.svg';
-import XRight from '../assets/brb/others/right-1.svg';
-import DiscordRight from '../assets/brb/others/right-2.svg';
-import X from '../assets/X-BRB.svg';
+import styled from 'styled-components';
 import Discord from '../assets/Discord-BRB.svg';
 import PushLogo from '../assets/PushLogoTextWhite.svg';
-import { device } from 'config/globals';
+import X from '../assets/X-BRB.svg';
+import Close from '../assets/brb/others/Close.svg';
+import DiscordCompleted from '../assets/brb/others/Discord-Completed.svg';
+import XCompleted from '../assets/brb/others/X-Completed.svg';
+import XRight from '../assets/brb/others/right-1.svg';
+import DiscordRight from '../assets/brb/others/right-2.svg';
+import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) => void }) => {
   const [isFollowed, setIsFollowed] = useState<boolean>(false);
@@ -178,7 +178,8 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         gap="3px"
       >
         <Span>* Twitter account must be 30 days old with 50+ followers to claim.</Span>
-        <Span>* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
+        <Span>* PUSH will be distributed by the Push Team on a first come first serve basis to limited number of users daily, each faucet drop will atleast be delayed by 24 hours.</Span>
+        <Span>* PUSH team can pause / stop or re-define the rules of token faucet at their own discretion.</Span>
       </ItemVV2>
     </Container>
   );
