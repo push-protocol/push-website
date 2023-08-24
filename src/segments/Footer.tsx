@@ -35,7 +35,7 @@ function Footer() {
   const navigate = useNavigate();
 
   const scrollToTop = () => {
-    document.documentElement.scrollTo(0, 0);
+    // document.documentElement.scrollTo(0, 0);
   };
 
   return (

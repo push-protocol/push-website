@@ -73,7 +73,7 @@ function App() {
   const Wrapper = ({ children }) => {
 
     useLayoutEffect(() => {
-      document.documentElement.scrollTo(0, 0);
+      // document.documentElement.scrollTo(0, 0);
     }, [location.pathname]);
     return children;
   };
