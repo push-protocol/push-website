@@ -82,7 +82,7 @@ function App() {
   const location = useLocation();
   const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
-
+  const [signer, setSigner] = useState();
 
   // const socketData = useSDKSocket({
   //   account: account,
@@ -127,6 +127,29 @@ function App() {
   useEffect(() => {
     setLoadWagmi(true);
   }, []);
+
+  useEffect(() => {
+    (async () => {
+      if (!account || !env || !library) return;
+
+      const user = await PushAPI.user.get({ account: account, env });
+      let pgpPrivateKey;
+      const librarySigner = await library.getSigner(account);
+      setSigner(librarySigner);
+      if (user?.encryptedPrivateKey) {
+        pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
+          encryptedPGPPrivateKey: user.encryptedPrivateKey,
+          account: account,
+          signer: librarySigner,
+          env,
+        });
+      }
+
+      setPgpPrivateKey(pgpPrivateKey);
+    })();
+  }, [account, env, library]);
+
+  console.log(account, pgpPrivateKey, env, 'getStarted')
 
   return (
   <section>
