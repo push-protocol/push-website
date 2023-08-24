@@ -138,7 +138,7 @@ export const citiesList = [
         {
             srcref: 'kanpur',
             place: 'Kanpur',
-            date: '15 Nov 2023',
+            date: 'TBA',
             link: 'https://www.lu.ma/brb-kanpur',
             alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
             title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
@@ -160,7 +160,7 @@ export const citiesList = [
         {
             srcref: 'agra',
             place: 'Agra',
-            date: '25 Nov 2023',
+            date: 'TBA',
             link: 'https://www.lu.ma/brb-agra',
             alt: 'Agra, India illustration for #BRB #BRBIndia event link',
             title: 'Lu.ma event page for Agra, India for dev tour of Push. #BRBIndia campaign of Push',
