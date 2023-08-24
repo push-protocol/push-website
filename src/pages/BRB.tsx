@@ -160,21 +160,21 @@ function BRB() {
   });
 
   useEffect(() => {
-    ScrollTrigger.matchMedia({
-      '(min-width: 480px)': function() {
-        newTl.to(elems0, {
-          opacity: 0,
-        });
+    // ScrollTrigger.matchMedia({
+    //   '(min-width: 480px)': function() {
+    //     newTl.to(elems0, {
+    //       opacity: 0,
+    //     });
 
-        newTl.to(elems, {
-          opacity: 0,
-        });
-      },
-      '(max-width: 479px)': function() { 
-        return;
-      },
-      'all': function() { return; }
-    });
+    //     newTl.to(elems, {
+    //       opacity: 0,
+    //     });
+    //   },
+    //   '(max-width: 479px)': function() { 
+    //     return;
+    //   },
+    //   'all': function() { return; }
+    // });
   }, []);
 
   const openHomePage = () => {
@@ -636,6 +636,7 @@ const NavText = styled.div`
   font-weight: 200;
   line-height: 1.5;
   letter-spacing: 0.03em;
+  z-index: -1;
 
   width: 844px;
   text-align: center;
@@ -661,6 +662,7 @@ const NavButtons = styled.div`
   gap: 16px;
   justify-content: center;
   align-items: center;
+  z-index: -1;
 
   @media ${device.laptop} {
     flex-direction: column;
