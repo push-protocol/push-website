@@ -131,15 +131,15 @@ function BRB() {
 
   const handleSectionNavigation = (id) => {
     if (showMobileMenu) toggleMobileMenu();
-    ScrollTrigger.disable();
+    // ScrollTrigger.disable();
 
     gsap.to(window, {
-      duration: 0.2,
+      duration: 0.75,
       scrollTo: { y: `#${id}` },
-      onComplete: enableScroll
+      // onComplete: enableScroll
     });
 
-    enableScroll();
+    // enableScroll();
   };
 
   const openLink = (link: string) => {
