@@ -4,17 +4,17 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styled from 'styled-components';
 
+import { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
-import { ItemH, ItemV } from './SharedStyling';
+import useOnScreen from 'hooks/useOnScreen';
+import moment from 'moment';
 import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
-import { SpanV2, ButtonV2 } from './SharedStylingV2';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
-import { device } from 'config/globals';
-import moment from 'moment';
-import useOnScreen from 'hooks/useOnScreen';
+import { ItemH, ItemV } from './SharedStyling';
+import { ButtonV2, SpanV2 } from './SharedStylingV2';
 
-import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css/core';
 
@@ -123,7 +123,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                     >
                       <ImageContainer>
                         <Image
-                          src={schedule?.image}
+                          src={require(`../assets/brb/schedules/${schedule?.srcref}.png`)}
+                          srcSet={`${require(`../assets/brb/schedules/${schedule?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/schedules/${schedule?.srcref}@3x.png`)} 3x`}
                           // height="28px"
                           // width="28px"
                         />
