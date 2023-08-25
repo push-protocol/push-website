@@ -641,3 +641,8 @@ button, a, a:before, a:after {
     background-position: 0% 4%;
   }
 }
+
+/* Temporary till SDK is updated */
+.MessageInput__TokenStyledButton-sc-xbdscc-12 {
+  display: none !important;
+}

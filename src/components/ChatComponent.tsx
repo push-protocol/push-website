@@ -38,7 +38,9 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        <ChatBubbleComponent chatId='4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68' handleFaucet={setShowFaucet}/>
+        {/* a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6 */}
+        {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
+        <ChatBubbleComponent chatId='a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6' handleFaucet={setShowFaucet}/>
       </PlayGround>
 
 
@@ -50,7 +52,7 @@ export const ChatComponent = () => {
           fontWeight="200"
         >
           This is a token gated group. You can join but will need{' '}
-          <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be
+          <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be
           able to send messages.
         </Span>
         {/* <ButtonItem
