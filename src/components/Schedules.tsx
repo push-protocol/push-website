@@ -1,23 +1,25 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React, { useEffect, useRef, useState } from 'react';
 
+// External Components
 import styled from 'styled-components';
+import '@splidejs/react-splide/css/core';
+import { Splide, SplideTrack } from '@splidejs/react-splide';
 
-import { device } from 'config/globals';
+// Internal Components
 import useMediaQuery from 'hooks/useMediaQuery';
 import useOnScreen from 'hooks/useOnScreen';
-import moment from 'moment';
 import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
 import { ItemH, ItemV } from './SharedStyling';
-import { ButtonV2, ItemHV2, ItemVV2, LinkV2, SpanV2 } from './SharedStylingV2';
+import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-
-import '@splidejs/react-splide/css/core';
-
+// Internal Configs
+import { device } from 'config/globals';
 import { citiesList } from 'config/BRBScheduleList';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
@@ -238,12 +240,6 @@ const ParticipateButtonInnerText = styled(SpanV2)`
   }
 `;
 
-const SchedulesWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 21px;
-`;
-
 const SplideContainer = styled.div`
   // width: auto !important;
   // margin: 0px !important;
@@ -252,12 +248,6 @@ const SplideContainer = styled.div`
     // margin-right:15px !important;
     // margin-left:15px !important;
   }
-`;
-
-const MarqueeContainer = styled.div`
-  position: relative;
-  width: 100vw;
-  height: 344px;
 `;
 
 const Header = styled.span`

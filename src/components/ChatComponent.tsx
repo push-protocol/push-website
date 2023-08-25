@@ -1,20 +1,27 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useLayoutEffect, useState } from 'react';
 
+// React + Web3 Essentials
+import React, { useState } from 'react';
+
+// External Components
 import styled from 'styled-components';
+
+// Internal Components
 import useMediaQuery from 'hooks/useMediaQuery';
 import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
 import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import PlaygroundBg from '../assets/PlaygroundBg.png';
-import { device } from 'config/globals';
 import { TokenFaucet } from 'components/TokenFaucet';
 import { Modal } from 'components/Modal';
 import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 import ChatBubbleComponent from './ChatBubbleComponent';
 import { Section } from './SharedStyling';
+
+// Internal Configs
+import { device } from 'config/globals';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
