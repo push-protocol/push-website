@@ -266,7 +266,7 @@ function BRB() {
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
@@ -276,7 +276,7 @@ function BRB() {
                         #BRB_Chat
                       </Span>
                     </NavigationMenuHeader>
-                  </NavigationMenuItem> */}
+                  </NavigationMenuItem>
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                     <NavigationMenuHeader>
@@ -357,7 +357,7 @@ function BRB() {
             >
               Register Now
             </ButtonItem>
-            {/* <ButtonBar
+            <ButtonBar
               borderRadius="24px"
               background="transparent"
               border="1px solid #E64DE9"
@@ -366,7 +366,7 @@ function BRB() {
               onClick={() => handleSectionNavigation('playground')}
             >
               Join the conversation
-            </ButtonBar> */}
+            </ButtonBar>
           </NavButtons>
         </ItemTop>
 
@@ -384,9 +384,9 @@ function BRB() {
         </ScheduleDiv>
 
 
-        {/* <PlaygroundDiv id="playground">
+        <PlaygroundDiv id="playground">
           <ChatComponent />
-        </PlaygroundDiv> */}
+        </PlaygroundDiv>
 
         <ItemFooter id="support">
           <FooterItem>
