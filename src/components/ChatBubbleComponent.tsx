@@ -12,13 +12,18 @@ import { Section } from './SharedStyling';
 // Internal Configs
 import { device } from 'config/globals';
 
-const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
+const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleFaucet: (value: boolean) => void }) => {
   const { account, library } = useWeb3React();
-  
+
   return (
     <Fragment>
       <ChatViewComponentCard>
-        <ChatViewComponent chatId={chatId} file={false} gif={false} />
+        <ChatViewComponent
+          chatId={chatId}
+          file={false}
+          gif={false}
+          onClick={() => handleFaucet(true)}
+        />
       </ChatViewComponentCard>
     </Fragment>
   );
@@ -30,7 +35,6 @@ const ChatViewComponentCard = styled(Section)`
   margin: 15px auto;
   z-index: 9999 !important;
   box-sizing: border-box;
-
 
   @media ${device.mobileL} {
     width: 95%;

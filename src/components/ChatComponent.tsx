@@ -38,7 +38,7 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        <ChatBubbleComponent chatId='a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6' />
+        <ChatBubbleComponent chatId='a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6' handleFaucet={setShowFaucet}/>
       </PlayGround>
 
 
