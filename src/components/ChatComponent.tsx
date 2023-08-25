@@ -8,17 +8,17 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // Internal Components
+import { Modal } from 'components/Modal';
+import { TokenFaucet } from 'components/TokenFaucet';
+import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 import useMediaQuery from 'hooks/useMediaQuery';
-import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
+import PlaygroundBg from '../assets/PlaygroundBg.png';
+import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
-import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
-import PlaygroundBg from '../assets/PlaygroundBg.png';
-import { TokenFaucet } from 'components/TokenFaucet';
-import { Modal } from 'components/Modal';
-import { useDisableBodyScroll } from 'hooks/useDisabledBodyScroll';
 import ChatBubbleComponent from './ChatBubbleComponent';
 import { Section } from './SharedStyling';
+import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
@@ -38,7 +38,7 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        <ChatBubbleComponent chatId='a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6' handleFaucet={setShowFaucet}/>
+        <ChatBubbleComponent chatId='4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68' handleFaucet={setShowFaucet}/>
       </PlayGround>
 
 
@@ -49,11 +49,11 @@ export const ChatComponent = () => {
           color="#fff"
           fontWeight="200"
         >
-          This is a token gated group. You need{' '}
-          <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 Push Token</span> to be
+          This is a token gated group. You can join but will need{' '}
+          <span style={{ color: '#E64DE9', textDecoration: 'underline', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be
           able to send messages.
         </Span>
-        <ButtonItem
+        {/* <ButtonItem
           background="#E64DE9"
           padding="8px"
           fontWeight="200"
@@ -61,7 +61,7 @@ export const ChatComponent = () => {
         >
           Get Free Push Tokens
           <WhiteArrow />
-        </ButtonItem>
+        </ButtonItem> */}
       </BottomBar>
       {showFaucet && (
         <Modal>
