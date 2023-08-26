@@ -40,7 +40,7 @@ export const ChatComponent = () => {
       <PlayGround>
         {/* a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6 */}
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <ChatBubbleComponent chatId='a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6' handleFaucet={setShowFaucet}/>
+        <ChatBubbleComponent chatId='4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68' handleFaucet={setShowFaucet}/>
       </PlayGround>
 
 
