@@ -1,15 +1,20 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
 
-import { device } from 'config/globals';
-import useMediaQuery from 'hooks/useMediaQuery';
+// External Components
 import styled from 'styled-components';
 
-import { brbCommPartnersList } from 'config/BRBCommPartnersList';
+// Internal Components
+import useMediaQuery from 'hooks/useMediaQuery';
 import MarqueeAnimation from './MarqueeAnimation';
 import { ButtonV2, ImageV2, ItemHV2 } from './SharedStylingV2';
+
+// Internal Configs
+import { device } from 'config/globals';
+import { brbCommPartnersList } from 'config/BRBCommPartnersList';
 
 export const CommunityPartners = () => {
   const isMobile = useMediaQuery(device.mobileL);

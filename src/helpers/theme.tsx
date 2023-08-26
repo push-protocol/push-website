@@ -70,6 +70,7 @@ export const darkChatTheme = {
     chatSentBubbleTimestampText: 'red',
   },
   backdropFilter: 'blur(6.5px)',
+  modalBackgroundColor:'rgba(47, 49, 55, 1)',
   spinnerColor:'rgb(202, 89, 155)',
   scrollbarColor:'rgb(202, 89, 155)',
   //the rest param needs to be included in categories

@@ -1,12 +1,20 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+// React + Web3 Essentials
+import React, { useEffect, useRef, useState } from 'react';
 
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { AiOutlineClose } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { useNavigate } from 'react-router-dom';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
 
-import PageMeta from '../config/pageMeta';
-
+// Internal Components
 import Schedules from 'components/Schedules';
 import { ReactComponent as ArrowIcon } from '../assets/ArrowIcon.svg';
 import { ReactComponent as Discord } from '../assets/Discord-BRB.svg';
@@ -15,25 +23,18 @@ import MobileBRB from '../assets/Mobile-BRB.png';
 import { ReactComponent as X } from '../assets/X-BRB.svg';
 import { ReactComponent as PushLogo } from '../assets/pushIcon.svg';
 import PageWrapper from '../components/PageWrapper';
-
 import { CommunityPartners } from 'components/BRBCommunityPartners';
 import BRBParallax from 'components/BRBParallax';
 import { Partners } from 'components/BRBPartners';
 import { ChatComponent } from 'components/ChatComponent';
 import ImageHolder from 'components/ImageHolder';
-import { Anchor, LinkTo, Span } from 'components/SharedStyling';
-import { ButtonV2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
-import GLOBALS, { device } from 'config/globals';
-import { gsap } from 'gsap';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Span } from 'components/SharedStyling';
+import { ButtonV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
-import { useTranslation } from 'react-i18next';
-import { AiOutlineClose } from 'react-icons/ai';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { useNavigate } from 'react-router-dom';
-import { Button, Input, Section } from '../components/SharedStyling';
 
+// Internal Configs
+import PageMeta from '../config/pageMeta';
+import GLOBALS, { device } from 'config/globals';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -129,7 +130,7 @@ function BRB() {
 
   const enableScroll = () => {
     setTimeout(() => {
-      if(!isMobile) ScrollTrigger.enable();
+      if (!isMobile) ScrollTrigger.enable();
     }, 1000);
   };
 
@@ -169,12 +170,11 @@ function BRB() {
     //     newTl.to(elems0, {
     //       opacity: 0,
     //     });
-
     //     newTl.to(elems, {
     //       opacity: 0,
     //     });
     //   },
-    //   '(max-width: 479px)': function() { 
+    //   '(max-width: 479px)': function() {
     //     return;
     //   },
     //   'all': function() { return; }
@@ -204,7 +204,10 @@ function BRB() {
                   flex="initial"
                 >
                   {/* <LinkTo to='/' aria-label='Push'> */}
-                  <PushLogo style={{ margin: '0px 9px 0px 4px' }} onClick={openHomePage} />
+                  <PushLogo
+                    style={{ margin: '0px 9px 0px 4px' }}
+                    onClick={openHomePage}
+                  />
                   {/* </LinkTo> */}
                   <Span
                     size="24px"
@@ -266,17 +269,17 @@ function BRB() {
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
-                  {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
                       <Span
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
                       >
-                        #BRB_Chat
+                        BRB Chat
                       </Span>
                     </NavigationMenuHeader>
-                  </NavigationMenuItem> */}
+                  </NavigationMenuItem>
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                     <NavigationMenuHeader>
@@ -357,7 +360,7 @@ function BRB() {
             >
               Register Now
             </ButtonItem>
-            {/* <ButtonBar
+            <ButtonBar
               borderRadius="24px"
               background="transparent"
               border="1px solid #E64DE9"
@@ -366,7 +369,7 @@ function BRB() {
               onClick={() => handleSectionNavigation('playground')}
             >
               Join the conversation
-            </ButtonBar> */}
+            </ButtonBar>
           </NavButtons>
         </ItemTop>
 
@@ -378,15 +381,13 @@ function BRB() {
 
         <CommunityPartners />
 
-
         <ScheduleDiv id="schedule">
           <Schedules />
         </ScheduleDiv>
 
-
-        {/* <PlaygroundDiv id="playground">
+        <PlaygroundDiv id="playground">
           <ChatComponent />
-        </PlaygroundDiv> */}
+        </PlaygroundDiv>
 
         <ItemFooter id="support">
           <FooterItem>
@@ -972,6 +973,5 @@ const BottomGrad = styled.div`
   padding-bottom: 57px;
   box-sizing: border-box;
 `;
-
 
 export default BRB;

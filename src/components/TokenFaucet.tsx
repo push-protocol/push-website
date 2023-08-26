@@ -1,9 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React, { useRef, useState } from 'react';
 
+// External Components
 import styled from 'styled-components';
 import { useClickAway } from 'react-use';
+
+// Internal Components
 import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 import Close from '../assets/brb/others/Close.svg';
 import XCompleted from '../assets/brb/others/X-Completed.svg';
@@ -13,6 +18,8 @@ import DiscordRight from '../assets/brb/others/right-2.svg';
 import X from '../assets/X-BRB.svg';
 import Discord from '../assets/Discord-BRB.svg';
 import PushLogo from '../assets/PushLogoTextWhite.svg';
+
+// Internal Configs
 import { device } from 'config/globals';
 
 export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) => void }) => {

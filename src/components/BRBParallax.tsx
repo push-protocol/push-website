@@ -1,16 +1,23 @@
 /* eslint-disable no-useless-escape */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React, { useEffect } from 'react';
+
+// External Components
 import { gsap } from 'gsap';
 import styled from 'styled-components';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Internal Components
 import ParallaxBRB from '../assets/Grouped.svg';
 import ParallaxBRBMobile from '../assets/GroupedMobile.svg';
-import ImageHolder from './ImageHolder';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import GLOBALS, { device } from 'config/globals';
 import useMediaQuery from 'hooks/useMediaQuery';
 import { Span } from 'components/SharedStyling';
+
+// Internal Configs
+import { device } from 'config/globals';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -131,9 +138,6 @@ function BRBParallax() {
     </Container>
   );
 }
-
-const MemberImage = styled(ImageHolder)`
-`;
 
 const Container = styled.div`
     width: 100%;

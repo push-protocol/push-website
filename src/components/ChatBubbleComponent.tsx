@@ -1,20 +1,29 @@
-import React, { Fragment, useState } from 'react';
-import { ChatViewComponent } from '@pushprotocol/uiweb';
-import styled from 'styled-components';
-import { Button, Input, Section } from './SharedStyling';
-import { device } from 'config/globals';
+// React + Web3 Essentials
+import React, { Fragment } from 'react';
 import { useWeb3React } from '@web3-react/core';
 
+// External Components
+import { ChatViewComponent } from '@pushprotocol/uiweb';
+import styled from 'styled-components';
 
+// Internal Components
+import { Section } from './SharedStyling';
 
+// Internal Configs
+import { device } from 'config/globals';
 
-const ChatBubbleComponent = ({ chatId }: {chatId: string}) => {
+const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleFaucet: (value: boolean) => void }) => {
   const { account, library } = useWeb3React();
-  
+
   return (
     <Fragment>
       <ChatViewComponentCard>
-        <ChatViewComponent chatId={chatId} file={false} gif={false} />
+        <ChatViewComponent
+          chatId={chatId}
+          file={false}
+          gif={false}
+          onClick={() => handleFaucet(true)}
+        />
       </ChatViewComponentCard>
     </Fragment>
   );
@@ -26,7 +35,6 @@ const ChatViewComponentCard = styled(Section)`
   margin: 15px auto;
   z-index: 9999 !important;
   box-sizing: border-box;
-
 
   @media ${device.mobileL} {
     width: 95%;

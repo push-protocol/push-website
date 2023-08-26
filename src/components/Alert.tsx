@@ -24,7 +24,7 @@ const Alert = () => {
 
   const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
   const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
-  const alertLink = 'https://push.org/brb';
+  const alertLink = `${window?.location?.href}brb`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
