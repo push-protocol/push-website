@@ -1,20 +1,22 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
-
-import { device } from '../config/globals';
-import PageMeta from '../config/pageMeta';
-
-import HybridSection from '../components/HybridSection';
-import PageWrapper from '../components/PageWrapper';
-
-import { A, B, Content, H2, H3, HeroHeader, ItemH, ItemV, LI, Para, Span, UL } from '../components/SharedStyling';
-
 import { useTranslation } from 'react-i18next';
 
+// Internal Component
+import HybridSection from '../components/HybridSection';
+import PageWrapper from '../components/PageWrapper';
+import { A, B, Content, H2, H3, HeroHeader, ItemH, ItemV, LI, Para, Span, UL } from '../components/SharedStyling';
+
+// Internal Configs
+import { device } from '../config/globals';
+import PageMeta from '../config/pageMeta';
 
 function TermsOfService() {
   // React GA Analytics

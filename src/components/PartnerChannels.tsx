@@ -2,14 +2,18 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
+// React + Web3 Essentials
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+
+// External Components
 import styled from 'styled-components';
-import MarqueeAnimation from './MarqueeAnimation';
+import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Internal Components
+import useMediaQuery from 'hooks/useMediaQuery';
 import { ItemHV2 } from '../components/SharedStylingV2';
-
 import { ReactComponent as AaveSVG } from '../assets/partners/aave.svg';
 import { ReactComponent as AngleLabsSVG } from '../assets/partners/anglelabs.svg';
 import { ReactComponent as AragonSVG } from '../assets/partners/aragon.svg';
@@ -58,11 +62,9 @@ import { ReactComponent as BanklessSVG } from '../assets/partners/bankless.svg';
 import { ReactComponent as AtlendisSVG } from '../assets/partners/atlendis.svg';
 import { ReactComponent as DDSVG } from '../assets/partners/D_D.svg';
 import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
-import { device } from 'config/globals';
-import useMediaQuery from 'hooks/useMediaQuery';
-import { useInView } from 'react-intersection-observer';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import { device } from 'config/globals';
 
 
 /**

@@ -2,16 +2,21 @@
 // @ts-nocheck
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React, { useEffect, useState } from 'react';
+
+// External Components
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+
+// Internal Components
 import { getBlogData } from '../api';
-
-import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
-
 import { ItemH, ItemV, H3 } from './SharedStyling';
+
+// Internal Configs
+import { device } from '../config/globals';
 
 function extractContent(s) {
   const span = document.createElement('span');

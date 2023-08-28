@@ -1,7 +1,11 @@
+// React + Web3 Essentials
 import React from 'react';
-import styled from 'styled-components';
-import { Span, ItemV } from '../components/SharedStyling';
 
+// External Components
+import styled from 'styled-components';
+
+// Internal Components
+import { Span, ItemV } from '../components/SharedStyling';
 
 export const FAQS = [
   {

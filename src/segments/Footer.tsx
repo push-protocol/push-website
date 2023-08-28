@@ -1,31 +1,31 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
-
 import { useNavigate } from 'react-router-dom';
-
 import { BsArrowUpRight } from 'react-icons/bs';
-import { device } from '../config/globals';
+import { useTranslation } from 'react-i18next';
 
+// Internal Components
 import { Section, Content, ItemH, ItemV, Span, Anchor, LinkTo } from '../components/SharedStyling';
-
 import EmailInputTextField from '../components/EmailInputTextField';
-
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as TelegramSVG } from '../assets/telegram.svg';
-
 import { ReactComponent as AppleSVG } from '../assets/apple.svg';
 import { ReactComponent as AndroidSVG } from '../assets/android.svg';
 import { ReactComponent as PushBellSVG } from '../assets/pushBell.svg';
-
 import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
 import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import { device } from '../config/globals';
 
 function Footer() {
   

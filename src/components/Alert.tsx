@@ -1,19 +1,21 @@
 /* eslint-disable */
 // @ts-nocheck
 
-// External Components
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
-import { Section } from './SharedStyling';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
+import { ItemHV2 } from './SharedStylingV2';
+import { Section } from './SharedStyling';
 
 // Internal Configs
 import { device } from '../config/globals';
-import { useTranslation } from 'react-i18next';
 
 const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);

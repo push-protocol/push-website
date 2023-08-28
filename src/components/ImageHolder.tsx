@@ -2,6 +2,7 @@
 // @ts-nocheck
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React from 'react';
 
 function getPublicImagePath(relativePath) {

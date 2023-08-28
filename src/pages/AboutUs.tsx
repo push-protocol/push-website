@@ -1,12 +1,16 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
+// Internal Components
 import { Anchor, Content, H2, HeroHeader, ItemH, ItemV, Span } from '../components/SharedStyling';
-
 import HybridSection from '../components/HybridSection';
 
 function AboutUs() {

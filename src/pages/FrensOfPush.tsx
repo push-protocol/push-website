@@ -3,6 +3,18 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
+// React + Web3 Essentials
+import React, { useEffect, useState } from 'react';
+
+// External Components
+import gsap from 'gsap';
+import ReactGA from 'react-ga';
+import { BiSearch } from 'react-icons/bi';
+import { FiChevronDown } from 'react-icons/fi';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
+// Internal Components
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png';
 import ChannelItem, { Tilt } from 'components/ChannelItem';
@@ -10,16 +22,7 @@ import FadeInAnimation from 'components/FadeInAnimation';
 import HybridSection from 'components/HybridSection';
 import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import SignupInput from 'components/SignupInput';
-import { objChannelList } from 'config/ChannelList';
-import { device } from 'config/globals';
-import pageMeta from 'config/pageMeta';
-import gsap from 'gsap';
 import useMediaQuery from 'hooks/useMediaQuery';
-import React, { useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
-import { BiSearch } from 'react-icons/bi';
-import { FiChevronDown } from 'react-icons/fi';
-import styled from 'styled-components';
 import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
 import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
 import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
@@ -35,7 +38,10 @@ import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
 import PageWrapper from '../components/PageWrapper';
 import { BodyContent } from './Home';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import { device } from 'config/globals';
+import pageMeta from 'config/pageMeta';
+import { objChannelList } from 'config/ChannelList';
 
 const FrensText = () => {
   // React GA Analytics

@@ -11,20 +11,13 @@ import ReactGA from 'react-ga';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
-
-// Internal Components
+import { useTranslation } from 'react-i18next';
+import { FiArrowUpRight } from 'react-icons/fi';
 import Spline from '@splinetool/react-spline';
 import { BsArrowUpRight } from 'react-icons/bs';
+
+// Internal Components
 import useMediaQuery from '../hooks/useMediaQuery';
-
-// Internal Configs
-import GLOBALS, { device } from '../config/globals';
-import PageMeta from '../config/pageMeta';
-import TeamList from '../config/teamList';
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
-
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
 import HybridSection from '../components/HybridSection';
@@ -45,7 +38,6 @@ import {
   SpanV2,
 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
-
 import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
 import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg';
 import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
@@ -54,24 +46,28 @@ import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
 import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
-
 import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
 import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-
 import FadeInAnimation from 'components/FadeInAnimation';
 import HorizontalScroll from 'components/HorizontalScroll';
 import ImageHolder from 'components/ImageHolder';
-import { useTranslation } from 'react-i18next';
-import { FiArrowUpRight } from 'react-icons/fi';
 import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
 import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
 import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
 import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
 import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
 import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
+
+// Internal Configs
+import GLOBALS, { device } from '../config/globals';
+import PageMeta from '../config/pageMeta';
+import TeamList from '../config/teamList';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 function Home({ isAlertVisible }) {
   // React GA Analytics

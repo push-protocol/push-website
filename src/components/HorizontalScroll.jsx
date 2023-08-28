@@ -1,20 +1,26 @@
 /* eslint-disable */
+
+// React + Web3 Essentials
 import React, { useEffect, useRef } from 'react'
+
+// External Components
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
-import { device } from '../config/globals';
-import { Anchor, AnchorLink, B, H2, ItemV, Span} from './SharedStyling';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
+
+// Internal Components
+import { Anchor, B, H2, ItemV, Span} from './SharedStyling';
 import PushNotifications from '../assets/figures/pushnotifications.webp';
 import PushChat from '../assets/figures/pushchat.webp';
 import Pushdao from '../assets/figures/pushdao.webp';
 import ImageHolder from './ImageHolder';
-import { FiArrowUpRight } from 'react-icons/fi';
 import useMediaQuery from 'hooks/useMediaQuery';
 import FadeInAnimation from './FadeInAnimation';
-import { useTranslation } from 'react-i18next';
 
-
+// Internal Configs
+import { device } from '../config/globals';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);

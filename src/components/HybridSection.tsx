@@ -1,8 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled, { css } from 'styled-components';
+
+// Internal Components
 import { Section } from './SharedStyling';
 
 type HybridSectionProps = {

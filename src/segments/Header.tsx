@@ -3,27 +3,29 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
+// External Components
+import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useNavigate,useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
+// Internal Components
 import useMediaQuery from '../hooks/useMediaQuery';
-
 import { ContentV2, ItemHV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { Anchor, Span, LinkTo } from '../components/SharedStyling';
-import GLOBALS, { device } from '../config/globals';
 import Alert from 'components/Alert';
-import FadeInAnimation from 'components/FadeInAnimation';
 import { ReactComponent as EnSVG } from '../assets/en.svg';
 import { ReactComponent as EsSVG } from '../assets/es.svg';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import GLOBALS, { device } from '../config/globals';
 
 let lastScrollY = window.pageYOffset;
 const SCROLL_DELTA = 5;

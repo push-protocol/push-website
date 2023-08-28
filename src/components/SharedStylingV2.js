@@ -1,5 +1,7 @@
+// External Components
 import styled, { css } from 'styled-components';
 
+// Internal Configs
 import GLOBALS, { device } from '../config/globals';
 /**
  * Usage Hierarchy

@@ -2,10 +2,16 @@
 // @ts-nocheck
 // eslint-disable react/prop-types
 /* eslint-disable */
+
+// React + Web3 Essentials
 import { useEffect } from 'react';
-import styled from 'styled-components';
-import { InjectedConnector } from '@web3-react/injected-connector';
 import { useWeb3React } from '@web3-react/core';
+import { InjectedConnector } from '@web3-react/injected-connector';
+
+// External Components
+import styled from 'styled-components';
+
+// Internal Components
 import { Span } from './SharedStyling';
 
 interface NwMappingType {

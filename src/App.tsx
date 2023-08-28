@@ -3,19 +3,17 @@
 // eslint-disable react/prop-types
 /* eslint-disable */
 
+// React + Web3 Essentials
+import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react';
+import { useWeb3React } from '@web3-react/core';
+
+// External Components
+import { Route, Routes, useLocation } from 'react-router-dom';
 import * as PushAPI from '@pushprotocol/restapi';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
-import {
-  RainbowKitProvider,
-  darkTheme,
-  getDefaultWallets,
-} from '@rainbow-me/rainbowkit';
+import { RainbowKitProvider, darkTheme, getDefaultWallets } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
-import { useWeb3React } from '@web3-react/core';
-import { darkChatTheme } from 'helpers/theme';
-import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react';
 import ReactGA from 'react-ga';
-import { Route, Routes, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { WagmiConfig, configureChains, createConfig, useAccount } from 'wagmi';
 import {
@@ -32,12 +30,10 @@ import {
 } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import {
-  AccountContext,
-  EnvContext,
-  SocketContext,
-  Web3Context,
-} from './context';
+
+// Internal Components
+import { darkChatTheme } from 'helpers/theme';
+import { AccountContext, EnvContext, SocketContext, Web3Context } from './context';
 import { ENV } from './helpers/web3helper';
 import { useSDKSocket } from './hooks/useSDKSocket';
 import Home from './pages/Home';
@@ -72,7 +68,6 @@ function App() {
   // }, []);
 
   const Wrapper = ({ children }) => {
-
     useLayoutEffect(() => {
       document.documentElement.scrollTo(0, 0);
     }, [location.pathname]);
@@ -92,23 +87,11 @@ function App() {
     isCAIP,
   });
 
-
   const [loadWagmi, setLoadWagmi] = useState(false);
   const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
 
   const { chains, publicClient } = configureChains(
-    [
-      mainnet,
-      polygon,
-      optimism,
-      arbitrum,
-      zora,
-      goerli,
-      polygonMumbai,
-      optimismGoerli,
-      arbitrumGoerli,
-      zoraTestnet,
-    ],
+    [mainnet, polygon, optimism, arbitrum, zora, goerli, polygonMumbai, optimismGoerli, arbitrumGoerli, zoraTestnet],
     [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
   );
 
@@ -124,11 +107,8 @@ function App() {
     publicClient,
   });
 
-
   useEffect(() => {
     setLoadWagmi(true);
-
-    
   }, []);
 
   useEffect(() => {
@@ -153,76 +133,82 @@ function App() {
   }, [account, env, library]);
 
   return (
-  <section>
-   <EnvContext.Provider value={{ env, isCAIP }}>
-      <Web3Context.Provider value={{ account, active, library, chainId }}>
-          <SocketContext.Provider value = {{ socketData }}>
-          {loadWagmi ? (<WagmiConfig config={wagmiConfig}>
-          <RainbowKitProvider theme={darkTheme()} chains={chains}>
-              <AccountContext.Provider value={{ pgpPrivateKey }}>
-                <ChatUIProvider env={env} theme={darkChatTheme}>
-                <Suspense fallback={<h1>Loading</h1>}>
-                  <Wrapper id="wrapper">
-                      <AppWrapper id="content">
+    <section>
+      <EnvContext.Provider value={{ env, isCAIP }}>
+        <Web3Context.Provider value={{ account, active, library, chainId }}>
+          <SocketContext.Provider value={{ socketData }}>
+            {loadWagmi ? (
+              <WagmiConfig config={wagmiConfig}>
+                <RainbowKitProvider
+                  theme={darkTheme()}
+                  chains={chains}
+                >
+                  <AccountContext.Provider value={{ pgpPrivateKey }}>
+                    <ChatUIProvider
+                      env={env}
+                      theme={darkChatTheme}
+                    >
+                      <Suspense fallback={<h1>Loading</h1>}>
+                        <Wrapper id="wrapper">
+                          <AppWrapper id="content">
+                            {location.pathname.toUpperCase() !== '/BRB' && <Header />}
+                            <Routes>
+                              {/* add all the route paths here */}
+                              <Route
+                                path="/"
+                                element={<Home />}
+                              />
+                              {/* <Route path="/about" element={<AboutUs />} /> */}
+                              <Route
+                                path="/faq"
+                                element={<FAQ />}
+                              />
+                              <Route
+                                path="/tos"
+                                element={<TermsOfService />}
+                              />
+                              <Route
+                                path="/privacy"
+                                element={<Privacy />}
+                              />
+                              <Route
+                                path="/privacymobile"
+                                element={<PrivacyMobile />}
+                              />
+                              <Route
+                                path="/notify"
+                                element={<RedirectToPlatform />}
+                              />
+                              <Route
+                                path="/frens"
+                                element={<FrensOfPush />}
+                              />
+                              <Route
+                                path="/spaces"
+                                element={<Spaces />}
+                              />
+                              <Route
+                                path="/cheatsheet"
+                                element={<Cheat />}
+                              />
+                              <Route
+                                path="/brb"
+                                element={<BRB />}
+                              />
+                            </Routes>
 
-                        {location.pathname.toUpperCase() !== '/BRB' && <Header />}
-                        <Routes>
-                          {/* add all the route paths here */}
-                          <Route
-                            path="/"
-                            element={<Home />}
-                          />
-                          {/* <Route path="/about" element={<AboutUs />} /> */}
-                          <Route
-                            path="/faq"
-                            element={<FAQ />}
-                          />
-                          <Route
-                            path="/tos"
-                            element={<TermsOfService />}
-                          />
-                          <Route
-                            path="/privacy"
-                            element={<Privacy />}
-                          />
-                          <Route
-                            path="/privacymobile"
-                            element={<PrivacyMobile />}
-                          />
-                          <Route
-                            path="/notify"
-                            element={<RedirectToPlatform />}
-                          />
-                          <Route
-                            path="/frens"
-                            element={<FrensOfPush />}
-                          />
-                          <Route 
-                          path='/spaces'
-                          element={<Spaces />}
-                          />
-                          <Route 
-                          path='/cheatsheet'
-                          element={<Cheat />}
-                          />
-                          <Route 
-                          path='/brb'
-                          element={<BRB/>}
-                          />
-                        </Routes>
-
-                        {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
-                        
-                      </AppWrapper>
-                    </Wrapper>
-                  </Suspense>
-                  </ChatUIProvider>
-              </AccountContext.Provider>
-             </RainbowKitProvider>
-             </WagmiConfig>) : null}
+                            {location.pathname.toUpperCase() !== '/BRB' && <Footer />}
+                          </AppWrapper>
+                        </Wrapper>
+                      </Suspense>
+                    </ChatUIProvider>
+                  </AccountContext.Provider>
+                </RainbowKitProvider>
+              </WagmiConfig>
+            ) : null}
           </SocketContext.Provider>
-      </Web3Context.Provider>
-    </EnvContext.Provider>
+        </Web3Context.Provider>
+      </EnvContext.Provider>
     </section>
   );
 }
@@ -235,20 +221,18 @@ const AppWrapper = styled.div`
 `;
 
 const ConnectWrapper = styled.div`
-    position: fixed; 
-    background: black;
-    min-width: 600px;
-    bottom: 20px;
-    left: 20px; 
-    z-index: 999999;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    box-shadow: 2px 2px 2px 2px #000;
-    padding: 4px 7px;
+  position: fixed;
+  background: black;
+  min-width: 600px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999999;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px #000;
+  padding: 4px 7px;
 `;
 
 export default App;
-
-

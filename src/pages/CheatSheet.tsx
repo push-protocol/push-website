@@ -1,15 +1,19 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect } from 'react';
+// React + Web3 Essentials
+import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
-import PageMeta from '../config/pageMeta';
-
+// Internal Components
 import { Button } from 'components/SharedStyling';
-import { RotatingLines } from 'react-loader-spinner';
 import PageWrapper from '../components/PageWrapper';
+
+// Internal Configs
+import PageMeta from '../config/pageMeta';
 
 
 function CheatSheet() {

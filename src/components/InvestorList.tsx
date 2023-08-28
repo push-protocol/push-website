@@ -1,15 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
 
+// Internal Components
 import MarqueeAnimation from './MarqueeAnimation';
-
 import { ItemH, ItemV, Span } from './SharedStyling';
 
 import ImageHolder from './ImageHolder';
-
 import { ReactComponent as ACapitalSVG }  from '../assets/investors/a_capital.svg';
 import { ReactComponent as BinancelabsSVG }  from '../assets/investors/binancelabs.svg';
 import { ReactComponent as IosgSVG }  from '../assets/investors/iosg.svg';

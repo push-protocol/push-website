@@ -1,6 +1,10 @@
+// React + Web3 Essentials
 import { useEffect, useState } from 'react';
+
+// External Components
 import { createSocketConnection, EVENTS } from '@pushprotocol/socket';
 
+// Internal Components
 import { getCAIPAddress, ENV } from '../helpers/web3helper';
 
 export type SDKSocketHookOptions = {

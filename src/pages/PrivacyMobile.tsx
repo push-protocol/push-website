@@ -1,18 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
-import { device } from '../config/globals';
-import PageMeta from '../config/pageMeta';
-
+// Internal Components
 import HybridSection from '../components/HybridSection';
 import PageWrapper from '../components/PageWrapper';
-
 import { A, B, Content, H3, HeroHeader, ItemH, ItemV, Para } from '../components/SharedStyling';
 
+// Internal Configs
+import { device } from '../config/globals';
+import PageMeta from '../config/pageMeta';
 
 function PrivacyMobile() {
   // React GA Analytics
