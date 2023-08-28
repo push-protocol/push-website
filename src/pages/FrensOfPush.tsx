@@ -10,7 +10,7 @@ import FadeInAnimation from 'components/FadeInAnimation';
 import HybridSection from 'components/HybridSection';
 import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import SignupInput from 'components/SignupInput';
-import { objChannelList } from 'config/ChannelList';
+import { objChannelList } from 'utils/ChannelList';
 import { device } from 'config/globals';
 import pageMeta from 'config/pageMeta';
 import gsap from 'gsap';

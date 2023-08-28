@@ -12,7 +12,7 @@ import {
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import { useWeb3React } from '@web3-react/core';
-import { darkChatTheme } from 'helpers/theme';
+import { darkChatTheme } from 'utils/theme';
 import React, { Suspense, useEffect, useLayoutEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 import { Route, Routes, useLocation } from 'react-router-dom';

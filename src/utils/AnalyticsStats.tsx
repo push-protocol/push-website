@@ -1,4 +1,4 @@
-import { getSubscribers, getNotifications } from 'api';
+import { getSubscribers, getNotifications } from '../api';
 
 const startDate = new Date('2022-01-01');
 const endDate = new Date();

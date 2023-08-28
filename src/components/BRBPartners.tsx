@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 
 // Internal Configs
-import { brbPartnersList } from 'config/BRBPartnersList';
+import { brbPartnersList } from 'utils/BRBPartnersList';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   return (

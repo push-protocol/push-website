@@ -20,7 +20,7 @@ import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
-import { citiesList } from 'config/BRBScheduleList';
+import { citiesList } from 'utils/BRBScheduleList';
 
 const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery('(max-width: 480px)');
