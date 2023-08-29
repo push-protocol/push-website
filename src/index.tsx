@@ -1,15 +1,19 @@
+// React + Web3 Essentials
+import React from 'react';
+import { ethers } from 'ethers';
+import { Web3ReactProvider } from '@web3-react/core';
+
+// External Components
 import * as dotenv from 'dotenv';
-import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+
+// Internal Components
 import App from './App';
 import './i18n';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-
-import { Web3ReactProvider } from '@web3-react/core';
-import { ethers } from 'ethers';
 
 dotenv.config();
 
