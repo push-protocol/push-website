@@ -1,4 +1,7 @@
-/* eslint-disable no-restricted-globals */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+// eslint-disable react/prop-types
+/* eslint-disable */
 
 // This service worker can be customized!
 // See https://developers.google.com/web/tools/workbox/modules
