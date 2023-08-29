@@ -6,7 +6,6 @@ import React from 'react';
 
 // External Components
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 
@@ -31,8 +30,6 @@ import { device } from '../config/globals';
 function Footer() {
   // Internationalization
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
 
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);

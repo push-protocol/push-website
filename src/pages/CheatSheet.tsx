@@ -9,7 +9,7 @@ import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button } from 'components/SharedStyling';
+import { ButtonV2 } from 'components/SharedStylingV2';
 import PageWrapper from '../components/PageWrapper';
 
 // Internal Configs
@@ -36,19 +36,19 @@ function CheatSheet() {
       <CheatWrapper>
 
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
-        <Button 
+        <ButtonV2 
           target="_blank"
           title="Push Dapp"
-          bg="#DD44B9"
-          radius="16px"
-          size="18px"
-          weight="500"
-          spacing="-0.03em"
+          background="#DD44B9"
+          borderRadius="16px"
+          fontSize="18px"
+          fontWeight="500"
+          letterSpacing="-0.03em"
           lineHeight="26px"
           onClick={redirectURL}
         >
           View Cheatsheet
-        </Button>
+        </ButtonV2>
 
       </CheatWrapper>
     </PageWrapper>

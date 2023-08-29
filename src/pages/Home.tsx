@@ -25,7 +25,7 @@ import InvestorList from '../components/InvestorList';
 import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
-import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
+import { Anchor, Content } from '../components/SharedStyling';
 import {
   Atag,
   ButtonV2,
@@ -144,7 +144,7 @@ function Home({ isAlertVisible }) {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                   <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+                  <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
                 </HeroAnimation>
               )
             }
@@ -212,11 +212,13 @@ function Home({ isAlertVisible }) {
                   justifyContent="flex-start"
                   margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                 >
-                  <Anchor
+                  <Atag
                     href="https://twitter.com/pushprotocol"
                     title="Push Protocol Twitter"
                     target="_blank"
                     margin="0 0 0 -10px"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -227,12 +229,14 @@ function Home({ isAlertVisible }) {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
 
-                  <Anchor
+                  <Atag
                     href="https://github.com/ethereum-push-notification-service"
                     title="Push Github"
                     target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -243,12 +247,14 @@ function Home({ isAlertVisible }) {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
 
-                  <Anchor
+                  <Atag
                     href="https://discord.gg/pushprotocol"
                     title="Push Discord"
                     target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -259,7 +265,7 @@ function Home({ isAlertVisible }) {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
                 </ItemHV2>
               </HeroItem>
             </HeroPrimary>
@@ -289,13 +295,13 @@ function Home({ isAlertVisible }) {
               margin="40px 0"
               gap={isMobile ? '30px' : '50px'}
             >
-              <ItemV>
-                <Span
-                  weight="400"
+              <ItemVV2>
+                <SpanV2
+                  fontWeight="400"
                   color="#303C5E"
-                  size="19px"
+                  fontSize="19px"
                   lineHeight="160%"
-                  spacing="-0.03em"
+                  letterSpacing="-0.03em"
                 >
                   <FadeInAnimation
                     wrapperElement="span"
@@ -303,37 +309,37 @@ function Home({ isAlertVisible }) {
                   >
                     {t('home.partners-section.networks')}{' '}
                   </FadeInAnimation>
-                </Span>
-              </ItemV>
+                </SpanV2>
+              </ItemVV2>
 
-              <ItemV>
+              <ItemVV2>
                 <LiveNetworks>
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <EthLogoTextSVG
                       alt="Logo for Ethereum"
                       title="Ethereum Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
 
-                  <ItemV className="divider" />
+                  <ItemVV2 className="divider" />
 
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <PolygonLogoTextSVG
                       alt="Logo for Polygon"
                       title="Polygon Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
 
-                  <ItemV className="divider" />
+                  <ItemVV2 className="divider" />
 
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <BNBChainSVG
                       alt="Logo for BNB Chain"
                       title="BNB Chain Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
                 </LiveNetworks>
-              </ItemV>
+              </ItemVV2>
             </Partners>
 
             <PushWorksRow>
@@ -356,18 +362,19 @@ function Home({ isAlertVisible }) {
                 </FadeInAnimation>
               </ItemImage>
 
-              <ItemV
+              <ItemVV2
                 justifyContent={isMobile ? 'center' : 'flex-start'}
                 // alignSelf='center'
-                alignItems="center"
+                alignItems="flex-start"
                 // flex="2"
                 // gap="22px"
               >
                 <ResponsiveH2
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
+                  margin="40px 0px 50px"
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -378,13 +385,13 @@ function Home({ isAlertVisible }) {
                   </FadeInAnimation>
                 </ResponsiveH2>
 
-                <Span
-                  weight="400"
+                <SpanV2
+                  fontWeight="400"
                   color="#303C5E"
-                  size="19px"
+                  fontSize="19px"
                   lineHeight="160%"
-                  spacing="-0.03em"
-                  margin={isMobile && '10px 0px 0px 0px'}
+                  letterSpacing="-0.03em"
+                  margin={isMobile ? '10px 0px 0px 0px' : '0px 0px 30px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -393,15 +400,15 @@ function Home({ isAlertVisible }) {
                   >
                     {t('home.partners-section.missing-web3-text')}
                   </FadeInAnimation>
-                </Span>
+                </SpanV2>
 
-                <Span
-                  weight="500"
+                <SpanV2
+                  fontWeight="500"
                   color="#121315"
-                  size="22px"
+                  fontSize="22px"
                   lineHeight="142%"
-                  spacing="-0.03em"
-                  margin={isMobile && '10px 0px 0px 0px'}
+                  letterSpacing="-0.03em"
+                  margin={isMobile ? '10px 0px 0px 0px' : '0px 0px 60px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -410,33 +417,33 @@ function Home({ isAlertVisible }) {
                   >
                     {t('home.partners-section.missing-web3-span')}
                   </FadeInAnimation>
-                </Span>
+                </SpanV2>
 
                 <FadeInAnimation
                   wrapperElement="div"
                   direction="up"
                   delay={0}
                 >
-                  <Anchor
+                  <Atag
                     href="https://docs.push.org/developers"
                     title={t('home.partners-section.missing-web3-alt-button')}
                     target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
+                    background="#DD44B9"
+                    borderRadius="16px"
                     padding="14px 32px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="26px"
-                    self="center"
+                    alignSelf="center"
                     margin={isMobile && '20px 0px 0px 0px'}
                   >
                     {/* Learn about $PUSH */}
                     {t('home.partners-section.missing-web3-button')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </FadeInAnimation>
-              </ItemV>
+              </ItemVV2>
             </PushWorksRow>
           </Content>
         </StorySection>
@@ -453,34 +460,34 @@ function Home({ isAlertVisible }) {
               delay={0.2}
             >
               <SignupBox margin="0 0 0px 0">
-                <ItemV
+                <ItemVV2
                   justifyContent="flex-start"
                   gap="12px"
                 >
                   <ResponsiveH2
                     color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
+                    fontSize="40px"
+                    fontWeight="700"
+                    letterSpacing="-0.02em"
                     lineHeight="110%"
                     margin="0"
                   >
                     {t('home.email-section.title')}
                   </ResponsiveH2>
-                  <Span
+                  <SpanV2
                     color="#303C5E"
-                    size="20px"
-                    weight="400"
-                    spacing="-0.03em"
+                    fontSize="20px"
+                    fontWeight="400"
+                    letterSpacing="-0.03em"
                     lineHeight="138.5%"
                   >
                     {t('home.email-section.text')}
-                  </Span>
-                </ItemV>
+                  </SpanV2>
+                </ItemVV2>
 
-                <ItemV>
+                <ItemVV2>
                   <SignupInput />
-                </ItemV>
+                </ItemVV2>
               </SignupBox>
             </FadeInAnimation>
 
@@ -523,9 +530,9 @@ function Home({ isAlertVisible }) {
 
               <ResponsiveH2
                 color="#121315"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
+                fontSize="40px"
+                fontWeight="700"
+                letterSpacing="-0.02em"
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
@@ -537,12 +544,12 @@ function Home({ isAlertVisible }) {
                 </FadeInAnimation>
               </ResponsiveH2>
 
-              <Span
+              <SpanV2
                 className="growWithPushtext"
                 color="#303C5E"
-                size="19px"
-                weight="400"
-                spacing="-0.03em"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
                 lineHeight="160%"
               >
                 <FadeInAnimation
@@ -551,16 +558,16 @@ function Home({ isAlertVisible }) {
                 >
                   {t('home.grow-section.text')}
                 </FadeInAnimation>
-              </Span>
+              </SpanV2>
             </IntegrateGrowWithPushRow>
 
-            <ItemH margin="120px 0 0 0">
+            <ItemHV2 margin="120px 0 0 0">
               <IntegrateAndEarn>
                 <ResponsiveH2
                   color="#09090B"
-                  size="36px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="36px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
@@ -588,27 +595,27 @@ function Home({ isAlertVisible }) {
                   {t('home.grow-section.button')}
                 </Anchor>
               </IntegrateAndEarn>
-            </ItemH>
+            </ItemHV2>
 
-            <ItemH margin="80px 0 0 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
                   {t('home.why-push-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
 
-            <ItemH padding="80px 0 0 0">
+            <ItemHV2 padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
@@ -623,11 +630,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -636,7 +643,7 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.chain-agnostic-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -652,11 +659,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -665,7 +672,7 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.immediate-communication-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -681,11 +688,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -694,7 +701,7 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.decentralized-stack-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -710,11 +717,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -723,7 +730,7 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.improved-ux-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -739,11 +746,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -752,7 +759,7 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.security-alerts-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -768,11 +775,11 @@ function Home({ isAlertVisible }) {
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
@@ -781,45 +788,45 @@ function Home({ isAlertVisible }) {
                     >
                       {t('home.why-push-section.censorship-resistant-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
               </Matrix>
-            </ItemH>
+            </ItemHV2>
 
             <WhyPushTextBox
               textAlign="center"
               margin="80px 160px"
             >
-              <Span
+              <SpanV2
                 color="#303C5E"
-                size="19px"
-                weight="400"
-                spacing="-0.03em"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
                 lineHeight="142%"
               >
                 {t('home.why-push-section.text')}
-              </Span>
+              </SpanV2>
             </WhyPushTextBox>
 
-            <ItemH margin="80px 0 0 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                   width="50%"
                 >
                   {t('home.insights-section.title')}
                 </ResponsiveH2>
-              </ItemV>
+              </ItemVV2>
 
-              <ItemV justifyContent="flex-end">
+              <ItemVV2 justifyContent="flex-end">
                 <Anchor
                   href="https://push-protocol.medium.com/"
                   title="Exlore all articles"
@@ -838,8 +845,8 @@ function Home({ isAlertVisible }) {
                   {t('home.insights-section.link-text')}
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Anchor>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
 
             <Blogs count={4} />
 
@@ -937,23 +944,23 @@ function Home({ isAlertVisible }) {
               </Anchor>
             </TeamMemberButtons> */}
 
-            <ItemH margin="80px 0 80px 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 80px 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <InvestorHeader
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
                   {t('home.investors-section.title')}
                 </InvestorHeader>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
 
             <InvestorList />
           </Content>
@@ -965,23 +972,23 @@ function Home({ isAlertVisible }) {
           className="darkBackground"
         >
           <Content className="contentBox">
-            <ItemH justifyContent="flex-start">
-              <ItemV
+            <ItemHV2 justifyContent="flex-start">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#FFFFFF"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
                   {t('home.featured-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
           </Content>
 
           <FeaturedInMarquee
@@ -995,15 +1002,15 @@ function Home({ isAlertVisible }) {
               gradient={false}
             >
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.featured-section.article1.text')}
-                </Span>
+                </SpanV2>
 
                 <ArticleSource>
                   <EthFoundationBlackSVG />
@@ -1029,15 +1036,15 @@ function Home({ isAlertVisible }) {
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.featured-section.article2.text')}
-                </Span>
+                </SpanV2>
 
                 <ArticleSource>
                   <CoindeskBlackSVG />
@@ -1063,15 +1070,15 @@ function Home({ isAlertVisible }) {
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.featured-section.article3.text')}
-                </Span>
+                </SpanV2>
 
                 <ArticleSource>
                   <DefiPrimeBlackSVG />
@@ -1097,15 +1104,15 @@ function Home({ isAlertVisible }) {
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.featured-section.article4.text')}
-                </Span>
+                </SpanV2>
 
                 <ArticleSource>
                   <BalajiTweethandleBlackSVG />
@@ -1131,15 +1138,15 @@ function Home({ isAlertVisible }) {
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.featured-section.article5.text')}
-                </Span>
+                </SpanV2>
 
                 <ArticleSource>
                   <BeInCryptoSVG />
@@ -1163,8 +1170,6 @@ function Home({ isAlertVisible }) {
                   </Anchor>
                 </ArticleSource>
               </FeaturedCell>
-
-
             </MarqueeAnimation>
           </FeaturedInMarquee>
         </FeaturedInSection>
@@ -1243,7 +1248,7 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -1303,7 +1308,7 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
 `;
 
-const ItemImage = styled(ItemV)`
+const ItemImage = styled(ItemVV2)`
   width: 100%;
   @media ${device.tablet} {
     width: 400px;
@@ -1328,16 +1333,16 @@ const FeaturedInSection = styled(ResponsiveSection)`
   }
 `;
 
-const FeaturedInMarquee = styled(ItemH)``;
+const FeaturedInMarquee = styled(ItemHV2)``;
 
-const ResponsiveHeroContent = styled(ItemH)`
+const ResponsiveHeroContent = styled(ItemHV2)`
   @media ${device.tablet} {
     flex-direction: column;
     margin-top: 240px;
   }
 `;
 
-const HeroBox = styled(ItemV)`
+const HeroBox = styled(ItemVV2)`
   flex: 0 0 52%;
 
   @media ${device.tablet} {
@@ -1350,7 +1355,7 @@ const HeroBox = styled(ItemV)`
   }
 `;
 
-const PushWorksRow = styled(ItemH)`
+const PushWorksRow = styled(ItemHV2)`
   // column-gap: 105px;
   column-gap: 40px;
   margin-top: 150px;
@@ -1373,7 +1378,7 @@ const PushWorksRow = styled(ItemH)`
   }
 `;
 
-const PoweringCommunicationRow = styled(ItemH)`
+const PoweringCommunicationRow = styled(ItemHV2)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {
@@ -1381,7 +1386,7 @@ const PoweringCommunicationRow = styled(ItemH)`
   }
 `;
 
-const LiveNetworks = styled(ItemH)`
+const LiveNetworks = styled(ItemHV2)`
   background: #ffffff;
   border: 1px solid #bac4d6;
   border-radius: 28px;
@@ -1458,7 +1463,7 @@ export const BodyContent = styled.div`
   }
 `;
 
-const Partners = styled(ItemV)`
+const Partners = styled(ItemVV2)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1467,7 +1472,7 @@ const Partners = styled(ItemV)`
   }
 `;
 
-const SignupBox = styled(ItemH)`
+const SignupBox = styled(ItemHV2)`
   background: #b9abef;
   backdrop-filter: blur(10px);
   border-radius: 32px;
@@ -1482,7 +1487,7 @@ const SignupBox = styled(ItemH)`
   }
 `;
 
-const GrowPushCard = styled(ItemV)`
+const GrowPushCard = styled(ItemVV2)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1514,7 +1519,7 @@ const GrowPushCardDetails = styled.div`
   row-gap: 24px;
 `;
 
-const IntegrateGrowWithPushRow = styled(ItemH)`
+const IntegrateGrowWithPushRow = styled(ItemHV2)`
   margin: 40px 0 0 0;
   padding: 0 160px 0 160px;
 
@@ -1631,7 +1636,7 @@ const MatrixCell = styled.div`
   }
 `;
 
-const WhyPushTextBox = styled(ItemH)`
+const WhyPushTextBox = styled(ItemHV2)`
   margin: 80px 160px;
 
   @media ${device.tablet} {
@@ -1645,7 +1650,7 @@ const WhyPushTextBox = styled(ItemH)`
   }
 `;
 
-const BuiltByIntro = styled(ItemH)`
+const BuiltByIntro = styled(ItemHV2)`
   margin: 120px 160px;
 
   @media ${device.tablet} {
@@ -1703,7 +1708,7 @@ const ArticleSource = styled.div`
   justify-content: space-between;
 `;
 
-const BuiltByCards = styled(ItemH)`
+const BuiltByCards = styled(ItemHV2)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1713,7 +1718,7 @@ const BuiltByCards = styled(ItemH)`
   transition: all 350ms linear;
 `;
 
-const TeamMemberButtons = styled(ItemH)`
+const TeamMemberButtons = styled(ItemHV2)`
   @media ${device.tablet} {
     & a {
       width: 100%;
