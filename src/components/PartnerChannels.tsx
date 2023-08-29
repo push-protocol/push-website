@@ -13,7 +13,6 @@ import { gsap } from 'gsap';
 
 // Internal Components
 import useMediaQuery from 'hooks/useMediaQuery';
-import { ItemHV2 } from '../components/SharedStylingV2';
 import { ReactComponent as AaveSVG } from '../assets/partners/aave.svg';
 import { ReactComponent as AngleLabsSVG } from '../assets/partners/anglelabs.svg';
 import { ReactComponent as AragonSVG } from '../assets/partners/aragon.svg';
@@ -61,11 +60,11 @@ import { ReactComponent as ZeroswapSVG } from '../assets/partners/zeroswap.svg';
 import { ReactComponent as BanklessSVG } from '../assets/partners/bankless.svg';
 import { ReactComponent as AtlendisSVG } from '../assets/partners/atlendis.svg';
 import { ReactComponent as DDSVG } from '../assets/partners/D_D.svg';
-import { Anchor, H2, ItemH, LinkTo, Span } from './SharedStyling';
+import { LinkTo } from './SharedStyling';
+import { H2V2, ItemHV2, SpanV2 } from '../components/SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
-
 
 /**
  * edit this to change the order
@@ -81,18 +80,17 @@ import { device } from 'config/globals';
 // last 2 arrays are designs after grids in first and second row middle icons has formed
 
 const partnerSortedGroup = [
-  [BanklessSVG,DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG,EarnfiSVG],
+  [BanklessSVG, DecentralandSVG, SnapshotSVG, EnsSVG, MakerdaoSVG, EarnfiSVG],
   [ShapeshiftSVG, UniswapSVG, AaveSVG, RektSVG, CryptocurrencyjobsSVG],
   [SushiSVG, UnstoppableSVG, ProofofhumanitySVG, MaHadaoSVG],
   [LensProtocolSVG, EthSVG, PolyChainMonstersSVG, PooltogetherSVG],
   [MetastableSVG, InchSVG, CoindeskSVG, IdlefinanceSVG, KybernetworkSVG],
-  [AtlendisSVG,ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG, DDSVG],
+  [AtlendisSVG, ApeswapSVG, LepasaMetaverseSVG, OrionprotocolSVG, LifiSVG, DDSVG],
   [SnapshotSVG, EnsSVG, BancorSVG, AragonSVG],
   [QidaoSVG, DydxSVG, LepasaMetaverseSVG, OrionprotocolSVG],
 ];
 
 function PartnerChannels() {
-
   // Internationalization
   const { t } = useTranslation();
 
@@ -102,7 +100,6 @@ function PartnerChannels() {
   // const itemRef = useRef();
   // const onScreen = useOnScreen(itemRef);
   const { ref: itemRef, inView: myElementIsVisible } = useInView();
-
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = partnerSortedGroup;
 
@@ -145,7 +142,7 @@ function PartnerChannels() {
     onEnter();
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     if (myElementIsVisible) {
       onLeave();
       setActive(true);
@@ -306,16 +303,16 @@ function PartnerChannels() {
         >
           <ResponsiveH2
             color="#121315"
-            size="40px"
-            weight="700"
-            spacing="-0.02em"
+            fontSize="40px"
+            fontWeight="700"
+            letterSpacing="-0.02em"
             margin="0px 0px"
             lineHeight="110%"
           >
             {t('home.partners-section.partner-channels-title')}
           </ResponsiveH2>
 
-          <Span
+          <SpanV2
             color="#303C5E"
             size="19px"
             weight="300"
@@ -324,7 +321,7 @@ function PartnerChannels() {
             textAlign={isMobile ? 'center' : 'initial'}
           >
             {t('home.partners-section.partner-channels-description')}
-          </Span>
+          </SpanV2>
 
           <LinkTo
             to="/frens"
@@ -340,7 +337,6 @@ function PartnerChannels() {
             self="center"
           >
             {t('home.partners-section.partner-channels-button')}
-
           </LinkTo>
         </GridItem>
         <TriRow>
@@ -550,7 +546,7 @@ const TriRow = styled.div`
   }
 `;
 
-const GridItem = styled(ItemH)`
+const GridItem = styled(ItemHV2)`
   span {
     width: 80%;
     text-align: center;
@@ -564,7 +560,7 @@ const GridItem = styled(ItemH)`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -579,5 +575,3 @@ const Body = styled.div`
 `;
 
 export default React.memo(PartnerChannels);
-
-

@@ -10,7 +10,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BiLoaderAlt } from 'react-icons/bi';
 
 // Internal Components
-import { Span } from './SharedStyling';
+import { SpanV2 } from './SharedStylingV2';
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
 
 export type InputTextFieldProps = {
@@ -49,20 +49,22 @@ function EmailInputTextField(props: InputTextFieldProps) {
         ) : null}
       </Wrapper>
       {apiResponse && (
-        <Span
+        <SpanV2
           className="msg"
           color="#FFFFFF"
+          fontWeight={600}
         >
           {apiResponse}
-        </Span>
+        </SpanV2>
       )}
       {!apiResponse && emailError && (
-        <Span
+        <SpanV2
           className="msg"
           color="red"
+          fontWeight={600}
         >
           {emailError}
-        </Span>
+        </SpanV2>
       )}
     </Box>
   );

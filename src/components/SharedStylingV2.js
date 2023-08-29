@@ -212,6 +212,7 @@ export const SpanV2 = styled.span`
   bottom: ${(props) => props.bottom || 'auto'};
   top: ${(props) => props.top || 'auto'};
   z-index: ${(props) => props.zIndex || 'auto'};
+  font-family: ${(props) => props.fontFamily || 'Strawford, Helvetica, sans-serif'};
 
   @media ${device.laptop} {
     font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.TABLET};
@@ -360,5 +361,11 @@ export const Atag = styled.a`
 
   & > div {
     display: flex;
+  }
+
+  & .anchorSVGlink {
+    width: 1em;
+    height: 1em;
+    margin-left: 3px;
   }
 `;

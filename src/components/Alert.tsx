@@ -11,8 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { ItemHV2 } from './SharedStylingV2';
-import { Section } from './SharedStyling';
+import { ItemHV2, SectionV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
@@ -25,7 +24,8 @@ const Alert = () => {
   };
 
   const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
-  const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
+  const alertMessageEs =
+    '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  ';
   const alertLink = `${window?.location?.href}brb`;
 
   // Internationalization
@@ -36,15 +36,12 @@ const Alert = () => {
   };
 
   return (
-    <Section>
+    <SectionV2>
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
             {i18n.language === 'es' ? alertMessageEs : alertMessage}
-            <KnowMoreLink
-            >
-              {t('alert.know-more')}
-            </KnowMoreLink>
+            <KnowMoreLink>{t('alert.know-more')}</KnowMoreLink>
             <FiArrowUpRight className="icon" />
           </AlertText>
 
@@ -58,7 +55,7 @@ const Alert = () => {
           </CancelIcon>
         </AlertContainer>
       )}
-    </Section>
+    </SectionV2>
   );
 };
 
@@ -120,7 +117,7 @@ const KnowMoreLink = styled.span`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-  font-weight:700;
+  font-weight: 700;
   &:hover {
     opacity: 0.75;
   }

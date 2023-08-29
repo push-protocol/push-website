@@ -8,7 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ItemV, Span, Anchor } from './SharedStyling';
+import { ItemVV2, SpanV2, Atag } from './SharedStylingV2';
 import ImageHolder from './ImageHolder';
 import { ReactComponent as TwitterBlack } from '../assets/twitter_black.svg';
 import { ReactComponent as LinkedInBlack } from '../assets/linkedin_black.svg';
@@ -43,42 +43,44 @@ function TeamMember(props: TeamMemberProps) {
 
       <MemberSocial>
         {twitter ? (
-          <Anchor
+          <Atag
             href={twitter}
             title={`${name} twitter`}
             target="_blank"
             margin="0"
             padding="0"
             hoverBG="transparent"
+            background="transparent"
           >
             <TwitterBlack
               width={19}
               height={16}
             />
-          </Anchor>
+          </Atag>
         ) : null}
 
         {linkedin ? (
-          <Anchor
+          <Atag
             href={linkedin}
             title={`${name} LinkedIn`}
             target="_blank"
             margin="0"
             padding="0"
-            hoverBG="transparent"
+            hoverBackground="transparent"
+            background="transparent"
           >
             <LinkedInBlack
               width={16}
               height={16}
             />
-          </Anchor>
+          </Atag>
         ) : null}
       </MemberSocial>
     </BuiltByCard>
   );
 }
 
-const BuiltByCard = styled(ItemV)`
+const BuiltByCard = styled(ItemVV2)`
   background: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 55px;
@@ -111,7 +113,7 @@ const MemberImage = styled(ImageHolder)`
   border-radius: 50%;
 `;
 
-const MemberName = styled(Span)`
+const MemberName = styled(SpanV2)`
   display: block;
   font-weight: 500;
   font-size: 24px;
@@ -121,7 +123,7 @@ const MemberName = styled(Span)`
   margin-top: 24px;
 `;
 
-const MemberTitle = styled(Span)`
+const MemberTitle = styled(SpanV2)`
   display: block;
   font-weight: 500;
   font-size: 16px;

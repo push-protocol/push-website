@@ -18,7 +18,7 @@ import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.s
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
 import ChatBubbleComponent from './ChatBubbleComponent';
 import { Section } from './SharedStyling';
-import { ButtonV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
+import { ButtonV2, ItemHV2, ItemVV2, SectionV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
@@ -40,9 +40,11 @@ export const ChatComponent = () => {
       <PlayGround>
         {/* a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6 */}
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <ChatBubbleComponent chatId='4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68' handleFaucet={setShowFaucet}/>
+        <ChatBubbleComponent
+          chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
+          handleFaucet={setShowFaucet}
+        />
       </PlayGround>
-
 
       <BottomBar>
         <TokenGated />
@@ -52,8 +54,8 @@ export const ChatComponent = () => {
           fontWeight="200"
         >
           This is a token gated group. You can join but will need{' '}
-          <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be
-          able to send messages.
+          <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be able to send
+          messages.
         </Span>
         {/* <ButtonItem
           background="#E64DE9"
@@ -120,7 +122,7 @@ const Span = styled.span`
   @media ${device.mobileL} {
     width: 80%;
     margin: 0px 0px 0px 4px;
-    line-height:1.3;
+    line-height: 1.3;
   }
 `;
 
@@ -148,14 +150,15 @@ const BrandHeader = styled.div`
   }
 `;
 
-const PlayGround = styled(Section)`
-    background-image: url(${PlaygroundBg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 80%;
-    margin: 0 auto;
-    @media ${device.mobileL} {
-      width: 100%;
-    }
+const PlayGround = styled(SectionV2)`
+  flex-direction: column;
+  background-image: url(${PlaygroundBg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80%;
+  margin: 0 auto;
+  @media ${device.mobileL} {
+    width: 95%;
+  }
 `;

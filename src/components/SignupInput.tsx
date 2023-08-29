@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { Span } from './SharedStyling';
+import { SpanV2 } from './SharedStylingV2';
 
 import useEmailValidationAndSend from '../hooks/useEmailValidationAndSend';
 import useMediaQuery from 'hooks/useMediaQuery';
@@ -46,24 +46,26 @@ function SignupInput() {
         {isLoading ? <MaskInput /> : null}
       </Wrapper>
       {apiResponse && (
-        <Span
+        <SpanV2
           className="msg"
-          size={isMobile ? '18px' : '20px'}
+          fontSize={isMobile ? '18px' : '20px'}
+          fontWeight={300}
           margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
           color="#121315"
         >
           {apiResponse}
-        </Span>
+        </SpanV2>
       )}
       {!apiResponse && emailError && (
-        <Span
+        <SpanV2
           className="msg"
-          size={isMobile ? '18px' : '20px'}
+          fontSize={isMobile ? '18px' : '20px'}
+          fontWeight={300}
           margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
           color="red"
         >
           {emailError}
-        </Span>
+        </SpanV2>
       )}
     </Box>
   );

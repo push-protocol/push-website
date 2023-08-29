@@ -31,7 +31,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   const isEndRef = useRef(null);
   const isLastSchedule = useOnScreen(isEndRef);
 
-
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
@@ -80,9 +79,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   return (
     <Container ref={sectionRef}>
-      <ItemH>
+      <ItemHV2>
         <Header>Schedule</Header>
-      </ItemH>
+      </ItemHV2>
       <Splide
         style={{ margin: isMobile ? '0 auto' : 'auto' }}
         options={{
@@ -185,7 +184,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             <Button
               background={index > 0 ? '#E64DE9' : '#2A2A39'}
               onClick={() => (index !== 0 ? setIndex((prev) => prev - 1) : null)}
-              title='Previous page'
+              title="Previous page"
               className="splide__arrow splide__arrow--prev"
             >
               <Icon src={Left} />
@@ -194,16 +193,15 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             <Button
               background={!isLastSchedule ? '#E64DE9' : '#2A2A39'}
               onClick={() => (!isLastSchedule ? setIndex((prev) => prev + 1) : null)}
-              title='Next page'
+              title="Next page"
               className="splide__arrow splide__arrow--next"
             >
               <Icon src={Right} />
             </Button>
             <ButtonV2
-              border='1px solid #E64DE9'
-
-              onClick={() => (window.open('https://discord.gg/cTRqvYzXpW', '_blank'))}
-              title='Participate Virtually'
+              border="1px solid #E64DE9"
+              onClick={() => window.open('https://discord.gg/cTRqvYzXpW', '_blank')}
+              title="Participate Virtually"
             >
               <ItemHV2>
                 <ParticipateButtonInnerText>Participate Virtually</ParticipateButtonInnerText>
@@ -219,7 +217,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   );
 };
 
-const Container = styled(ItemV)`
+const Container = styled(ItemVV2)`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
@@ -310,7 +308,7 @@ const Icon = styled.img`
   height: 50px;
 `;
 
-const ScheduleData = styled(ItemV)`
+const ScheduleData = styled(ItemVV2)`
   width: 100%;
   flex-direction: column;
   align-items: flex-start;

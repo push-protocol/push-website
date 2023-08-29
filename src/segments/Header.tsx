@@ -11,15 +11,15 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 // Internal Components
 import useMediaQuery from '../hooks/useMediaQuery';
-import { ContentV2, ItemHV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
+import { ContentV2, ItemHV2, ItemVV2, SectionV2, Atag, SpanV2 } from 'components/SharedStylingV2';
 import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
-import { Anchor, Span, LinkTo } from '../components/SharedStyling';
+import { LinkTo } from '../components/SharedStyling';
 import Alert from 'components/Alert';
 import { ReactComponent as EnSVG } from '../assets/en.svg';
 import { ReactComponent as EsSVG } from '../assets/es.svg';
@@ -36,11 +36,13 @@ function useScrollDirection(mobileMenuActive) {
 
   useEffect(() => {
     const updateScrollDirection = () => {
-
       const scrollY = window.pageYOffset;
       let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
-      if (direction !== scrollDirection && (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)) {
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)
+      ) {
         // check if isMobileMenuOpen then override
         if (mobileMenuActive) {
           direction = 'scrollUp';
@@ -60,7 +62,7 @@ function useScrollDirection(mobileMenuActive) {
     };
 
     // add event listener
-    window.addEventListener('scroll', updateScrollDirection, {passive: true});
+    window.addEventListener('scroll', updateScrollDirection, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', updateScrollDirection); // clean up
@@ -74,10 +76,9 @@ const defaultMobileMenuState = {
   0: false,
   1: false,
   2: false,
-  3: false
+  3: false,
   // add next [index]: false for new main Nav menu item
 };
-
 
 function Header() {
   const isMobile = useMediaQuery(device.laptop);
@@ -88,37 +89,36 @@ function Header() {
 
   // Internationalization
   const { t, i18n } = useTranslation();
-  
+
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const showMobileMenu = isMobile && isMobileMenuOpen;
-  
+
   // if mobile view then show only DARK header.
   // console.log(bkg);
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
   const themeClass = `${bkg}`;
-  
+
   // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
-  
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
-  
+
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
     // if (isMobile) {
-      setMobileMenuMap((oldMap) => {
-        return {
-          ...defaultMobileMenuState,
-          [menuIndex]: !oldMap[menuIndex],
-        };
-      });
+    setMobileMenuMap((oldMap) => {
+      return {
+        ...defaultMobileMenuState,
+        [menuIndex]: !oldMap[menuIndex],
+      };
+    });
     // }
   };
 
-  
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
   // };
@@ -129,8 +129,8 @@ function Header() {
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {location.pathname === '/'  && <Alert />}
-   
+      {location.pathname === '/' && <Alert />}
+
       <SectionV2>
         <ContentV2 padding="0">
           {/* Header Content Begins */}
@@ -149,20 +149,30 @@ function Header() {
               borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
               className={'headerblur'}
             />
-            
+
             {/* <FadeInAnimation wrapperElement="div" delay={0}> */}
             <MenuTop flex="initial">
               <PushLogoBlackContainer
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo to='/' aria-label='Push'><PushLogoTextBlack /></LinkTo>
+                <LinkTo
+                  to="/"
+                  aria-label="Push"
+                >
+                  <PushLogoTextBlack />
+                </LinkTo>
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo to='/' aria-label='Push'><PushLogoTextWhite  /></LinkTo>
+                <LinkTo
+                  to="/"
+                  aria-label="Push"
+                >
+                  <PushLogoTextWhite />
+                </LinkTo>
               </PushLogoWhiteContainer>
 
               <MobileMenuToggleIcon>
@@ -192,98 +202,104 @@ function Header() {
                     onClick={(e) => onMobileHeaderMenuClick(e, 0)}
                     expanded={mobileMenuMap[0]}
                   >
-                    <Span
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
+                    <SpanV2
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                          {t('header.docs.title')}
+                      {t('header.docs.title')}
                       {/* </FadeInAnimation> */}
-                    </Span>
+                    </SpanV2>
                     {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                      <BsChevronDown
-                        size={12}
-                        className="chevronIcon"
-                      />
-                      {/* </FadeInAnimation> */}
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                    {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[0]}
                   >
-                    <Anchor
+                    <Atag
                       href="https://docs.push.org/developers"
                       target="_blank"
                       title={t('header.docs.alt-developer-guides')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      display="flex"
+                      hoverBackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      borderRadius="0px"
                     >
                       {t('header.docs.developer-guides')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="https://docs.push.org/governance"
                       target="_blank"
                       title={t('header.docs.alt-governance-guides')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.docs.governance-guides')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="https://whitepaper.push.org/"
                       target="_blank"
                       title={t('header.docs.alt-whitepaper')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.docs.whitepaper')}
-                    </Anchor>
+                    </Atag>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 1)}
-                      expanded={mobileMenuMap[1]}
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 1)}
+                    expanded={mobileMenuMap[1]}
+                  >
+                    <SpanV2
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
                     >
-                      <Span
-                        size="18px"
-                        weight="500"
-                        spacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                      >
-                         {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
-                         {t('header.more.title')}
-                        {/* </FadeInAnimation> */}
-                      </Span>
-
                       {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
-                        <BsChevronDown
-                          size={12}
-                          className="chevronIcon"
-                        />
+                      {t('header.more.title')}
                       {/* </FadeInAnimation> */}
-                    </NavigationMenuHeader>
+                    </SpanV2>
+
+                    {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                    {/* </FadeInAnimation> */}
+                  </NavigationMenuHeader>
 
                   <NavigationMenuContent
                     className="menuContent"
@@ -302,20 +318,22 @@ function Header() {
                     >
                       {t('header.more.faq')}
                     </LinkTo>
-                    <Anchor
+                    <Atag
                       href="https://push-protocol.medium.com/"
                       target="_blank"
                       title={t('header.more.alt-blog')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.more.blog')}
-                    </Anchor>
+                    </Atag>
                     <LinkTo
                       to="/frens"
                       title={t('header.more.alt-push-ecosystem')}
@@ -329,108 +347,118 @@ function Header() {
                     >
                       {t('header.more.push-ecosystem')}
                     </LinkTo>
-                    <Anchor
+                    <Atag
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
                       title={t('header.more.alt-media-kit')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.more.media-kit')}
-                    </Anchor>
+                    </Atag>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
-                      expanded={mobileMenuMap[2]}
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                    expanded={mobileMenuMap[2]}
+                  >
+                    <SpanV2
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
                     >
-                      <Span
-                        size="18px"
-                        weight="500"
-                        spacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                      >
-                         {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                         {t('header.push-dao.title')}
-                        {/* </FadeInAnimation> */}
-                      </Span>
-
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                        <BsChevronDown
-                          size={12}
-                          className="chevronIcon"
-                        />
-                        {/* </FadeInAnimation> */}
-                    </NavigationMenuHeader>
+                      {t('header.push-dao.title')}
+                      {/* </FadeInAnimation> */}
+                    </SpanV2>
+
+                    {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                    {/* </FadeInAnimation> */}
+                  </NavigationMenuHeader>
 
                   <NavigationMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[2]}
                   >
-                    <Anchor
+                    <Atag
                       href="https://pushprotocol.notion.site/Welcome-to-Push-DAO-b1c1e1281ce64400adaaae59f98e4d4c"
                       target="_blank"
                       title={t('header.push-dao.alt-notion')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.push-dao.notion')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="https://gov.push.org"
                       target="_blank"
                       title={t('header.push-dao.alt-forum')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.push-dao.forum')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="https://www.notion.so/pushprotocol/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
                       title={t('header.push-dao.alt-grants')}
                       target="_blank"
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.push-dao.grants')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
                       title={t('header.push-dao.alt-missions')}
                       target="_blank"
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverbackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
                     >
                       {t('header.push-dao.missions')}
-                    </Anchor>
+                    </Atag>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -445,92 +473,100 @@ function Header() {
                       weight="500"
                       spacing="-0.03em"
                       lineHeight="142%"
-                      hoverBG='none'
-                      align='center'
-                      margin={isMobile ? "16px 16px" : "auto 0"}
+                      hoverBG="none"
+                      align="center"
+                      margin={isMobile ? '16px 16px' : 'auto 0'}
                     >
                       Billion Reasons to Build
                     </LinkTo>
                   </MenuHeader>
-                    {/* <NavigationMenuHeader
+                  {/* <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 2)}
                       expanded={mobileMenuMap[2]}
                     > */}
-                
-                    {/* </NavigationMenuHeader> */}
-                    </NavigationMenuItem>
+
+                  {/* </NavigationMenuHeader> */}
+                </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
-       
-        
-        <ItemVV2 flex="initial" flexDirection='row !important' flexWrap={isMobile ? 'wrap' : 'none'}>
-          <LanguageItem showMobileMenu={showMobileMenu}>
-             <LanguageMenuItem>
-             {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
-                    <LanguageMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
-                      expanded={mobileMenuMap[3]}
+            <ItemVV2
+              flex="initial"
+              flexDirection="row !important"
+              flexWrap={isMobile ? 'wrap' : 'none'}
+            >
+              <LanguageItem showMobileMenu={showMobileMenu}>
+                <LanguageMenuItem>
+                  {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
+                  <LanguageMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                    expanded={mobileMenuMap[3]}
+                  >
+                    <SpanV2
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px 0px !important"
                     >
-                      <Span
-                        size="18px"
-                        weight="500"
-                        spacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px 0px !important"
-                      >
-                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
-                      </Span>
+                      {i18n && i18n.language == 'es' ? (
+                        <EsSVG className="flag-icon" />
+                      ) : (
+                        <EnSVG className="flag-icon" />
+                      )}
+                    </SpanV2>
 
-                        <BsChevronDown
-                          size={12}
-                          className="chevronIcon"
-                        />
-                    </LanguageMenuHeader>
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                  </LanguageMenuHeader>
 
                   <LanguageMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[3]}
                   >
-                    <Anchor
+                    <Atag
                       href="/"
                       target=""
                       title={t('header.language.english')}
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 16px"
-                      size="16px"
-                      weight="400"
+                      background="transparent"
+                      hoverbackground="#fff"
+                      padding="7px 30px"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
-                      justify='flex-start'
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
+                      justifyContent="flex-start"
                       onClick={() => i18n.changeLanguage('en')}
                     >
-                      <EnSVG className='flag-icon-drop'/>
+                      <EnSVG className="flag-icon-drop" />
                       {t('header.language.english')}
-                    </Anchor>
-                    <Anchor
+                    </Atag>
+                    <Atag
                       href="/"
                       target=""
                       title={t('header.language.spanish')}
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 16px"
-                      size="16px"
-                      weight="400"
+                      background="transparent"
+                      hoverbackground="#fff"
+                      padding="7px 30px"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
-                      justify='flex-start'
+                      letterSpacing="normal"
+                      display="flex"
+                      borderRadius="0px"
+                      justifyContent="flex-start"
                       onClick={() => i18n.changeLanguage('es')}
                     >
-                      <EsSVG className='flag-icon-drop'/>
+                      <EsSVG className="flag-icon-drop" />
                       {t('header.language.spanish')}
-                    </Anchor>
+                    </Atag>
                   </LanguageMenuContent>
                 </LanguageMenuItem>
-            </LanguageItem>
-
-
+              </LanguageItem>
 
               <DappLauncher
                 showMobileMenu={showMobileMenu}
@@ -538,26 +574,23 @@ function Header() {
                 href="https://app.push.org/"
                 target="_blank"
                 title={t('header.app-button.alt-title')}
-                bg="#DD44B9"
-                radius="16px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
+                background="#DD44B9"
+                borderRadius="16px"
+                fontSize="18px"
+                fontWeight="500"
+                letterSpacing="-0.03em"
                 lineHeight="26px"
-                width='100%'
+                width="100%"
               >
                 {t('header.app-button.title')}
               </DappLauncher>
-              
             </ItemVV2>
-
           </HeaderItemH>
         </ContentV2>
       </SectionV2>
     </StyledHeader>
   );
 }
-
 
 const LanguageItem = styled.div`
   list-style: none;
@@ -797,17 +830,17 @@ const LanguageMenuItem = styled.li`
   }
 
   // &:hover {
-    // & span {
-    //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
-    // }
+  // & span {
+  //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
+  // }
 
-    // & .chevronIcon {
-    //      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : '')};
-    // }
+  // & .chevronIcon {
+  //      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : '')};
+  // }
 
-    // & .menuContent {
-    //   display: ${(props) => (props.expanded ? 'block' : 'none')};
-    // }
+  // & .menuContent {
+  //   display: ${(props) => (props.expanded ? 'block' : 'none')};
+  // }
   // }
 
   &:hover {
@@ -937,7 +970,6 @@ const NavigationMenuContent = styled.ul`
   }
 `;
 
-
 const LanguageMenuContent = styled.div`
   list-style: none;
 
@@ -980,7 +1012,7 @@ const LanguageMenuContent = styled.div`
   }
 `;
 
-const DappLauncher = styled(Anchor)`
+const DappLauncher = styled(Atag)`
   padding: 14px 32px;
 
   @media ${device.laptop} {
