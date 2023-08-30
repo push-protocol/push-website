@@ -20,7 +20,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
 import PageMeta from '../config/pageMeta';
-import TeamList from '../config/teamList';
+import TeamList from '../utils/teamList';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);

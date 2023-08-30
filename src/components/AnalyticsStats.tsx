@@ -10,7 +10,7 @@ import { getNotifications, getSubscribers, loadKPIData } from '../api';
 
 import { device } from '../config/globals';
 import FadeInAnimation from './FadeInAnimation';
-import { getSubscribersCount, getNotificationsCount }  from '../config/AnalyticsStats';
+import { getSubscribersCount, getNotificationsCount }  from '../utils/AnalyticsStats';
 
 import {
   ItemV, Span

@@ -12,8 +12,8 @@ import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
 
 // Internal Configs
-import { brbPartnersList } from 'config/BRBPartnersList';
-import { device } from '@pushprotocol/uiweb';
+import { brbPartnersList } from 'utils/BRBPartnersList';
+import { device } from '../config/globals';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
   const isMobile = useMediaQuery(device.tablet);
