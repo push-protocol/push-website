@@ -31,6 +31,7 @@ import ImageHolder from 'components/ImageHolder';
 import { Span } from 'components/SharedStyling';
 import { ButtonV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { PartnerBounties } from 'components/PartnerBounties';
 
 // Internal Configs
 import PageMeta from '../config/pageMeta';
@@ -385,9 +386,12 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
+        <PartnerBounties />
+
         <PlaygroundDiv id="playground">
           <ChatComponent />
         </PlaygroundDiv>
+
 
         <ItemFooter id="support">
           <FooterItem>
