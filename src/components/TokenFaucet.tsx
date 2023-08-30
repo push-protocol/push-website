@@ -104,7 +104,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             padding="6.5px 8.5px"
             onClick={() =>
               openLink(
-                'https://twitter.com/intent/tweet?text=Getting some $PUSH Tokens at Billion Reasons to Build %23brbindia faucet for my [0x123...45678] wallet'
+                'https://twitter.com/intent/tweet?text=Getting some $PUSH Tokens at Billion Reasons to Build %23brbindia faucet for my <Your Wallet Address> wallet 🔔 %0A Visit : push.org/brb'
               )
             }
           >
@@ -202,8 +202,8 @@ const Container = styled(ItemVV2)`
   z-index: 10;
   font-family: Glancyr;
   margin-top: 115px;
-  @media ${device.mobileL}{
-    margin: 115px 10px 0px 10px
+  @media ${device.mobileL} {
+    margin: 115px 10px 0px 10px;
   }
 `;
 
@@ -227,8 +227,8 @@ const InputContainer = styled(ItemVV2)`
   width: 100%;
   max-height: 73px;
   margin-top: 31px;
-  @media ${device.mobileL}{
-    max-height:120px;
+  @media ${device.mobileL} {
+    max-height: 120px;
   }
 `;
 
