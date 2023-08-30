@@ -9,44 +9,60 @@ import styled from 'styled-components';
 
 // Internal Components
 import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from './SharedStylingV2';
+import useMediaQuery from 'hooks/useMediaQuery';
 
 // Internal Configs
 import { brbPartnersList } from 'config/BRBPartnersList';
+import { device } from '@pushprotocol/uiweb';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
+  const isMobile = useMediaQuery(device.tablet);
+
   return (
     <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
-      <ItemHV2>
-        {brbPartnersList.map((item, i) => {
+      <ItemVV2>
+        {brbPartnersList.map((partnerRow, i) => {
           return (
-            <PartnerItem key={i}>
-              <ItemVV2
-                maxHeight="65px"
-                height="65px"
-                margin="27px"
-              >
-                <PartnersButton
-                  padding="0px"
-                  borderRadius="0px"
-                  background="transparent"
-                  title={`${item?.title}`}
-                  onClick={() => {
-                    window.open(item?.link);
-                  }}
-                >
-                  <PartnersLogo
-                    src={require(`../assets/brb/partners/${item?.srcref}.png`)}
-                    srcSet={`${require(`../assets/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/partners/${item?.srcref}@3x.png`)} 3x`}
-                    alt={`${item?.alt}`}
-                    style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
-                  />
-                </PartnersButton>
-              </ItemVV2>
-            </PartnerItem>
+            <ItemHV2
+              key={i}
+              gap="0px 164px"
+              flexDirection={isMobile ? 'column' : 'row'}
+            >
+              {partnerRow?.map((item, index) => {
+                return (
+                  <PartnerItem key={index}>
+                    <ItemVV2
+                      maxHeight="65px"
+                      width={isMobile ? '100%' : '300px'}
+                      maxWidth={isMobile ? '100%' : '300px'}
+                      height="65px"
+                      margin="27px"
+                    >
+                      <PartnersButton
+                        padding="0px"
+                        borderRadius="0px"
+                        background="transparent"
+                        title={`${item?.title}`}
+                        onClick={() => {
+                          window.open(item?.link);
+                        }}
+                      >
+                        <PartnersLogo
+                          src={require(`../assets/brb/partners/${item?.srcref}.png`)}
+                          srcSet={`${require(`../assets/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/partners/${item?.srcref}@3x.png`)} 3x`}
+                          alt={`${item?.alt}`}
+                          style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
+                        />
+                      </PartnersButton>
+                    </ItemVV2>
+                  </PartnerItem>
+                );
+              })}
+            </ItemHV2>
           );
         })}
-      </ItemHV2>
+      </ItemVV2>
     </PartnersContainer>
   );
 };
@@ -85,13 +101,15 @@ const PartnersLogo = styled(ImageV2)`
 `;
 
 const PartnerItem = styled(ItemHV2)`
-  width: auto;
+  max-width: 300px;
   display: flex;
   align-items: center;
-  flex: 0 0 33.333333%;
+  // flex: 0 0 33.333333%;
 
   @media (max-width: 768px) {
-    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    // flex: 0 0 100%;
   }
 `;
 
