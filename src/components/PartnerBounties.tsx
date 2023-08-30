@@ -47,7 +47,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
               fontSize='32px'
               fontWeight="400"
             >
-              ${item.price}
+              ${item.price.toLocaleString()}
             </PriceSpan>
   
             <Button
@@ -100,7 +100,6 @@ const PartnerLine = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: space-between;
     border-radius: 32px;
     padding: 24px;
     box-sizing: border-box;
