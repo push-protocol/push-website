@@ -34,7 +34,8 @@
     "language": {
       "title": "Language",
       "english": "English",
-      "spanish": "Español"
+      "spanish": "Español",
+      "hindi":"हिंदी"
     },
     "app-button": {
       "title": "Launch App",

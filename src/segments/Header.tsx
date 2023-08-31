@@ -22,6 +22,7 @@ import Alert from 'components/Alert';
 import FadeInAnimation from 'components/FadeInAnimation';
 import { ReactComponent as EnSVG } from '../assets/en.svg';
 import { ReactComponent as EsSVG } from '../assets/es.svg';
+import { ReactComponent as HiSVG } from '../assets/hi.svg';
 
 import { useTranslation } from 'react-i18next';
 
@@ -477,7 +478,7 @@ function Header() {
                         lineHeight="142%"
                         padding="16px 0px !important"
                       >
-                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
+                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
                       </Span>
 
                         <BsChevronDown
@@ -523,6 +524,23 @@ function Header() {
                     >
                       <EsSVG className='flag-icon-drop'/>
                       {t('header.language.spanish')}
+                    </Anchor>
+                    <Anchor
+                      href="/"
+                      target=""
+                      title={t('header.language.hindi')}
+                      bg="transparent"
+                      hoverBG="#fff"
+                      padding="7px 16px"
+                      size="16px"
+                      weight="400"
+                      lineHeight="230%"
+                      spacing="normal"
+                      justify='flex-start'
+                      onClick={() => i18n.changeLanguage('hi')}
+                    >
+                      <HiSVG className='flag-icon-drop'/>
+                      {t('header.language.hindi')}
                     </Anchor>
                   </LanguageMenuContent>
                 </LanguageMenuItem>

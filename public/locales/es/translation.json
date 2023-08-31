@@ -36,7 +36,8 @@
     "language": {
       "title": "Idioma",
       "english": "English",
-      "spanish": "Español"
+      "spanish": "Español",
+      "hindi":"हिंदी"
     },
     "app-button": {
       "title": "Abrir App",

@@ -24,6 +24,7 @@ const Alert = () => {
 
   const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
   const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
+  const alertMessageHi= 'सीखें, बनाएं और Billion Reasons to Build में $55,000 से अधिक मूल्य के इनाम प्राप्त करें '
   const alertLink = `${window?.location?.href}brb`;
 
   // Internationalization
@@ -38,7 +39,7 @@ const Alert = () => {
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
-            {i18n.language === 'es' ? alertMessageEs : alertMessage}
+          {i18n.language === 'es' ? alertMessageEs :i18n.language === 'hi' ? alertMessageHi : alertMessage}
             <KnowMoreLink
             >
               {t('alert.know-more')}
