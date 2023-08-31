@@ -2,7 +2,6 @@
 /* eslint-disable no-undef */
 const webpack = require('webpack');
 const WorkBoxPlugin = require('workbox-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 // const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 module.exports = function override(config) {
@@ -44,14 +43,6 @@ module.exports = function override(config) {
       fullySpecified: false,
     },
   });
-
-  config.optimization.minimizer = [
-    new TerserPlugin({
-      exclude: /node_modules/,
-      parallel: true,
-      extractComments: true,
-    }),
-  ];
 
   return config;
 };
