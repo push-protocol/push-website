@@ -110,6 +110,10 @@
     gtag('config', 'G-N9ZHXNRLYL');
     </script>
 
+    <script>
+      if ('serviceWorker' in navigator) {     navigator.serviceWorker.getRegistrations()         .then(function(registrations) {             for(let registration of registrations) {                if(registration.active.scriptURL == 'http://push.org/service-worker.js'){ registration.unregister(); }             }         }); }
+    </script>
+
     <!-- Preloading font files -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
 
