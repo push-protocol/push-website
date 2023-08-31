@@ -1,6 +1,6 @@
 {
   "name": "push-website",
-  "version": "1.0",
+  "version": "0.1.0",
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
