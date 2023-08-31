@@ -1,6 +1,6 @@
 ---
-id: chat-concepts
-title: Concepts
+id: chat-message-types
+title: Message Types
 hide_title: true
 slug: ./
 displayed_sidebar: pushChatSidebar
@@ -8,5 +8,10 @@ sidebar_position: 3
 ---
 
 import DocCardList from "@theme/DocCardList";
+
+# Intro to Message Types
+Each message of Push Chat is a json payload that carries with it a message type. This message type helps in determining what content is getting sent (Text, Images, Replies, etc) and allows Push SDK to decrypt and display them accordingly.
+
+Push Chat supports an evergrowing list message types, all of which can be sent by `PushAPI.chat.send`, though some require passing few additional parameters.
 
 <DocCardList />

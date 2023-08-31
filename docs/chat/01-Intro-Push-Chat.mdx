@@ -1,18 +1,92 @@
 ---
 id: chat
 title: Intro to Push Chat
-hide_title: true
+hide_title: false
 slug: /chat
 displayed_sidebar: pushChatSidebar
 sidebar_position: 1
 ---
-## Intro to Push Chat
 
-Push Chat is a revolutionary web3 messaging protocol that allows wallet addresses to send and receive messages without the need for traditional personal identifiers like phone numbers, email addresses, etc. It offers an enhanced layer of security and privacy compared to conventional messaging apps and allows for experiences that can only be achieved by native web3 messaging including the ability to <b>send or request payments, create token gated groups and more!</b> 
+<head>
+  <title>Push Chat Introduction | Push Documentation</title>
+</head>
+
+import {ItemVV2, ItemHV2, SpanV2, ButtonV2, ImageV2} from '@site/src/components/SharedStylingV2';
+
+Push Chat is a web3 messaging protocol that allows wallet addresses to send and receive messages without the need for traditional personal identifiers like phone numbers, email addresses, etc. It offers an enhanced layer of security and privacy compared to conventional messaging apps and allows for experiences that can only be achieved by native web3 messaging including the ability to <b>send or request payments, create token gated experiences, chat anonymously</b> and more! 
 
 ## Why Push Chat?
 
-Push Chat, initially a product of the Push Protocol's decentralized notifications, ensures that every chat message is paired with an in-built notification, reminiscent of what's prevalent in web2 platforms. This ensures a seamless and familiar experience for users. 
+You should use Push Chat protocol if you want to create:
+- Web3 Native Chat Experience
 
-Push chat messages are securely stored on IPFS, encrypted, and signed, ensuring that only the conversing parties can decrypt them, and external parties can confirm the message's legitimacy and encryption. The process of message transmission is facilitated through Push Nodes - a network where each node plays a specific role in verifying and validating notifications and chat messages between addresses. They ascertain the payload's adherence to standards, validate the sender's authenticity, and upon finding the payload legitimate, they store it on IPFS. When a valid message is transmitted, and if the recipient has opted in, a notification is relayed. To retrieve these messages, the recipient's client would inquire with the Push Nodes.
+## SDKs
+<ItemHV2 alignItems="center" gap="26px" justifyContent="flex-start">
+  <ButtonV2 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
+    border="1px solid #d9d9d9" 
+    borderRadius="16px" 
+    padding="12px 16px"
+    background="transparent"
+    hoverBackground="transparent"
+    hoverBorder="1px solid #d53a94"
+    hoverSVGPathStroke="#d53a94"
+  >
+    <ItemHV2 alignSelf="center">
+      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/javascript.png').default} srcSet={`${require('/static/img/techstack/javascript@2x.png').default} 2x, ${require('/static/img/techstack/javascript@3x.png').default} 3x`} />
+      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">Javascript</SpanV2>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ItemHV2>
+  </ButtonV2>
 
+  <ButtonV2 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
+    border="1px solid #d9d9d9" 
+    borderRadius="16px" 
+    padding="12px 16px"
+    background="transparent"
+    hoverBackground="transparent"
+    hoverBorder="1px solid #d53a94"
+    hoverSVGPathStroke="#d53a94"
+  >
+    <ItemHV2 alignSelf="center">
+      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/react.png').default} srcSet={`${require('/static/img/techstack/react@2x.png').default} 2x, ${require('/static/img/techstack/react@3x.png').default} 3x`} />
+      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React</SpanV2>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ItemHV2>
+  </ButtonV2>
+
+  <ButtonV2 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
+    border="1px solid #d9d9d9" 
+    borderRadius="16px" 
+    padding="12px 16px"
+    background="transparent"
+    hoverBackground="transparent"
+    hoverBorder="1px solid #d53a94"
+    hoverSVGPathStroke="#d53a94"
+  >
+    <ItemHV2 alignSelf="center">
+      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/reactNative.png').default} srcSet={`${require('/static/img/techstack/reactNative@2x.png').default} 2x, ${require('/static/img/techstack/reactNative@3x.png').default} 3x`} />
+      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React Native</SpanV2>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ItemHV2>
+  </ButtonV2>
+
+  <ButtonV2 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+    border="1px solid #d9d9d9" 
+    borderRadius="16px" 
+    padding="12px 16px"
+    background="transparent"
+    hoverBackground="transparent"
+    hoverBorder="1px solid #d53a94"
+    hoverSVGPathStroke="#d53a94"
+  >
+    <ItemHV2 alignSelf="center">
+      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React Native</SpanV2>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ItemHV2>
+  </ButtonV2>
+</ItemHV2>

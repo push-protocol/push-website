@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
+const lightCodeTheme = require("prism-react-renderer/themes/dracula");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
@@ -22,7 +22,7 @@ const config = {
   projectName: "push-documentation", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
-  onBrokenLinks: "warn",
+  onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -32,6 +32,9 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+
+  // Static linking
+  staticDirectories: ['public', 'static'],
 
   presets: [
     [
@@ -75,16 +78,11 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "pushChatSidebar",
             position: "right",
             label: "Documentation Hub",
           },
           // { to: "/blog", label: "Blog", position: "right" },
-          {
-            href: "https://github.com/ethereum-push-notification-service/",
-            label: "GitHub",
-            position: "right",
-          },
           {
             to: "https://discord.com/invite/pushprotocol",
             label: "Discord",
@@ -95,21 +93,26 @@ const config = {
             label: "App",
             position: "right",
           },
+          {
+            href: "https://github.com/ethereum-push-notification-service/",
+            label: "GitHub",
+            position: "right",
+          },
         ],
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: "YOUR_APP_ID",
+      // algolia: {
+      //   // The application ID provided by Algolia
+      //   appId: "YOUR_APP_ID",
 
-        // Public API key: it is safe to commit it
-        apiKey: "YOUR_SEARCH_API_KEY",
+      //   // Public API key: it is safe to commit it
+      //   apiKey: "YOUR_SEARCH_API_KEY",
 
-        indexName: "YOUR_INDEX_NAME",
-      },
+      //   indexName: "YOUR_INDEX_NAME",
+      // },
       colorMode: {
         defaultMode: "light",
         disableSwitch: false,
