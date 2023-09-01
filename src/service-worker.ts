@@ -39,7 +39,7 @@ registerRoute(
 
     // If this is a URL that starts with /_ or is an auth url, skip.
     const lowerPath = url.pathname.toLowerCase().replace(/\/+$/, '');
-    if (url.pathname.startsWith('/_') || lowerPath.startsWith('/auth/') || lowerPath == "/login") {
+    if (url.pathname.startsWith('/_') || lowerPath.startsWith('/auth/') || lowerPath == '/login') {
       return false;
     }
 
