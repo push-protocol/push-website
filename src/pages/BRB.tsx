@@ -270,6 +270,18 @@ function BRB() {
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="200"
+                        family="Glancyr !important"
+                      >
+                        Bounties
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
                   <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
                       <Span
@@ -386,7 +398,9 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
-        <PartnerBounties />
+        <BountyDiv id='bounties'>
+          <PartnerBounties />
+        </BountyDiv>
 
         <PlaygroundDiv id="playground">
           <ChatComponent />
@@ -554,6 +568,10 @@ const NavList = styled.div`
 
 const ScheduleDiv = styled.div`
   margin: 120px 0px 0px 0px;
+  width: 100%;
+`;
+
+const BountyDiv = styled.div`
   width: 100%;
 `;
 
