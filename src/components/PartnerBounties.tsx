@@ -45,7 +45,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
   
           <TextSpan
             fontSize='15px'
-            fontWeight='200'
+            fontWeight='100'
           >
             {item.text}
           </TextSpan>
@@ -112,6 +112,7 @@ const PartnerLine = styled.div`
     box-sizing: border-box;
     border: 1px solid transparent;
     margin: 8px 0px;
+    position: relative;
 
     @media (max-width: 1281px) {
       width: 90%;
@@ -180,9 +181,25 @@ const ArrowSmall = styled(Arrow)`
 
 const TextSpan = styled(SpanV2)`
     font-family: Glancyr !important;
-    margin: 0 0 0 59px;
+    // margin: 0 0 0 59px;
+    position: absolute;
+    left: 200px;
+    right: 0;
+    width: 100%;
+    letter-spacing: 0.03em;
+
+    @media (max-width: 1291px) {
+      max-width: 400px;
+    }
+
+    @media (max-width: 1000px) {
+      max-width: 250px;
+    }
     @media ${device.tablet} {
         margin: 16px 0px;
+        position: relative;
+        width: 100%;
+        left: 0px;
     }
 `;
 

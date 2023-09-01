@@ -87,7 +87,7 @@ export const brbPartnersBountyList = [
     srcref: 'push',
     link: 'https://pushprotocol.notion.site/Push-Protocol-6fbc1817b8dc4ff5a6c3bbdec6012c0c?pvs=4',
     alt: 'Push Protocol',
-    text: 'Work on the current Push Protocol V2 contract to introduce different functionalities',
+    text: 'Build Push V3 by enhancing the fees pool logic of V2 to accept any tokens',
     price: 7500
   },
 ];
