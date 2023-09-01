@@ -40,6 +40,8 @@ function Privacy() {
             className="contentBox"
             flex="0"
             alignSelf="center"
+            padding="40px 0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               flexDirection="column"
@@ -81,6 +83,8 @@ function Privacy() {
             className="contentBox"
             alignSelf="center"
             psdding="0px"
+            padding="40px 0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               alignSelf="stretch"

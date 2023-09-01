@@ -302,6 +302,8 @@ const FrensText = () => {
             <ContentV2
               className="contentBox"
               flex="0"
+              padding="40px 0px"
+              maxWidth="1140px"
             >
               <ItemHV2
                 flexDirection="column"
@@ -330,7 +332,11 @@ const FrensText = () => {
           className="lightBackground"
           curve="bottom"
         >
-          <ContentV2 className="contentBox" padding="40px 0px">
+          <ContentV2
+            className="contentBox"
+            padding="40px 0px"
+            maxWidth="1140px"
+          >
             <PushRow>
               <ItemHV2 justifyContent="flex-start">
                 <ResponsiveH2

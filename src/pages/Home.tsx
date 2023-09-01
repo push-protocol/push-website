@@ -25,16 +25,7 @@ import InvestorList from '../components/InvestorList';
 import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
-import {
-  Atag,
-  ContentV2,
-  H1V2,
-  H2V2,
-  ItemHV2,
-  ItemVV2,
-  SectionV2,
-  SpanV2,
-} from '../components/SharedStylingV2';
+import { Atag, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
 import SignupInput from '../components/SignupInput';
 import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
 import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg';
@@ -137,7 +128,10 @@ function Home({ isAlertVisible }) {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2 alignSelf="center">
+          <ContentV2
+            alignSelf="center"
+            maxWidth="1140px"
+          >
             {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
@@ -273,7 +267,7 @@ function Home({ isAlertVisible }) {
               zIndex="9"
               left="0"
               right="0"
-              bottom="10vh"
+              bottom="7vh"
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
@@ -286,7 +280,12 @@ function Home({ isAlertVisible }) {
           data-bkg="light"
           className="lightBackground"
         >
-          <ContentV2 className="contentBox" alignSelf="center">
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+            maxWidth="1140px"
+          >
             <PartnerChannels />
 
             <Partners
@@ -310,7 +309,7 @@ function Home({ isAlertVisible }) {
                 </SpanV2>
               </ItemVV2>
 
-              <ItemHV2>
+              <ItemHV2 maxWidth="550px">
                 <LiveNetworks>
                   <ItemVV2 className="network">
                     <EthLogoTextSVG
@@ -361,18 +360,18 @@ function Home({ isAlertVisible }) {
               </ItemImage>
 
               <ItemVV2
-                justifyContent={isMobile ? 'center' : 'flex-start'}
+                justifyContent="space-around"
+                minHeight="530px"
                 // alignSelf='center'
-                alignItems="flex-start"
+                alignItems={isMobile ? 'center' : 'flex-start'}
                 // flex="2"
-                // gap="22px"
+                // gap='22px'
               >
                 <ResponsiveH2
                   fontSize="40px"
                   fontWeight="700"
                   letterSpacing="-0.02em"
                   lineHeight="110%"
-                  margin="40px 0px 50px"
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -389,7 +388,7 @@ function Home({ isAlertVisible }) {
                   fontSize="19px"
                   lineHeight="160%"
                   letterSpacing="-0.03em"
-                  margin={isMobile ? '10px 0px 0px 0px' : '0px 0px 30px'}
+                  margin={isMobile && '10px 0px 0px 0px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -406,7 +405,7 @@ function Home({ isAlertVisible }) {
                   fontSize="22px"
                   lineHeight="142%"
                   letterSpacing="-0.03em"
-                  margin={isMobile ? '10px 0px 0px 0px' : '0px 0px 60px'}
+                  margin={isMobile && '10px 0px 0px 0px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
@@ -434,7 +433,7 @@ function Home({ isAlertVisible }) {
                     letterSpacing="-0.03em"
                     lineHeight="26px"
                     alignSelf="center"
-                    margin={isMobile && '20px 0px 0px 0px'}
+                    margin={isMobile ? '50px 0px 0px 0px' : ''}
                   >
                     {/* Learn about $PUSH */}
                     {t('home.partners-section.missing-web3-button')}
@@ -509,7 +508,12 @@ function Home({ isAlertVisible }) {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2 className="contentBox" alignSelf="center" >
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+            maxWidth="1140px"
+          >
             <IntegrateGrowWithPushRow gap="18px">
               <FadeInAnimation
                 wrapperElement="div"
@@ -588,7 +592,7 @@ function Home({ isAlertVisible }) {
                   fontWeight="500"
                   letterSpacing="-0.03em"
                   lineHeight="26px"
-                  slignSelf="center"
+                  alignSelf="center"
                 >
                   {t('home.grow-section.button')}
                 </Atag>
@@ -970,7 +974,12 @@ function Home({ isAlertVisible }) {
           data-bkg="dark"
           className="darkBackground"
         >
-          <ContentV2 className="contentBox" padding="0px 40px 40px">
+          <ContentV2
+            className="contentBox"
+            padding="40px"
+            alignSelf="flex-start"
+            maxWidth="1140px"
+          >
             <ItemHV2 justifyContent="flex-start">
               <ItemHV2
                 justifyContent="flex-start"

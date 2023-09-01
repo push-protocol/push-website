@@ -36,6 +36,8 @@ function PrivacyMobile() {
             className="contentBox"
             flex="0"
             alignSelf="center"
+            padding="40px 0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               flexDirection="column"
@@ -77,6 +79,7 @@ function PrivacyMobile() {
             className="contentBox"
             alignSelf="center"
             padding="0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               alignSelf="stretch"

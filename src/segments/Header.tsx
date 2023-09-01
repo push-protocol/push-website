@@ -131,7 +131,10 @@ function Header() {
       {location.pathname === '/' && <Alert />}
 
       <SectionV2>
-        <ContentV2 padding="0">
+        <ContentV2
+          padding="0"
+          maxWidth="1140px"
+        >
           {/* Header Content Begins */}
           <HeaderItemH
             alignSelf="stretch"

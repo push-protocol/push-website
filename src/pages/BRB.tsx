@@ -395,6 +395,7 @@ function BRB() {
               fontSize={isLaptop ? '89px' : '112px'}
               fontWeight="500"
               color="#E64DE9"
+              letterSpacing="0.01"
             >
               Drop Us a GM!
             </SpanContent>

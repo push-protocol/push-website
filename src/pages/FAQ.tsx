@@ -752,6 +752,7 @@ function FAQ() {
             className="contentBox"
             flex="0"
             padding="40px 0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               flexDirection="column"
@@ -788,7 +789,11 @@ function FAQ() {
           padding="80px 0px 0px 0px"
           data-bkg="light"
         >
-          <ContentV2 className="contentBox">
+          <ContentV2
+            className="contentBox"
+            padding="40px 0px"
+            maxWidth="1140px"
+          >
             {/* Questions and answers */}
             <Title>General</Title>
             <Items body={General} />

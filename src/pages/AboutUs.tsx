@@ -24,7 +24,12 @@ function AboutUs() {
         id="aboutus"
         padding="40px 160px 0px 160px"
       >
-        <ContentV2 className="contentBox" alignSelf="center">
+        <ContentV2
+          className="contentBox"
+          alignSelf="center"
+          padding="40px 0px"
+          maxWidth="1140px"
+        >
           <ItemHV2
             margin="120px 0 0 0"
             flex="1"
@@ -123,7 +128,12 @@ function AboutUs() {
         background="#fff"
         padding="120px 160px 80px 160px"
       >
-        <ContentV2 className="contentBox" alignSelf="center">
+        <ContentV2
+          className="contentBox"
+          alignSelf="center"
+          padding="40px 0px"
+          maxWidth="1140px"
+        >
           <ItemHV2>
             <ItemVV2
               justifyContent="center"

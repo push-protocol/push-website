@@ -54,6 +54,7 @@ function TermsOfService() {
             padding="80px 0px 20px 0px"
             flex="0"
             alignSelf="center"
+            maxWidth="1140px"
           >
             <ItemVV2
               flexDirection="column"
@@ -107,6 +108,7 @@ function TermsOfService() {
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
+            maxWidth="1140px"
           >
             <ItemHV2
               alignSelf="stretch"

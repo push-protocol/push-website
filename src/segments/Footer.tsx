@@ -10,7 +10,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag,LinkToV2 } from 'components/SharedStylingV2';
+import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag, LinkToV2 } from 'components/SharedStylingV2';
 import EmailInputTextField from '../components/EmailInputTextField';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
@@ -44,6 +44,7 @@ function Footer() {
         <ContentV2
           className="contentBox"
           padding="40px 0px"
+          maxWidth="1140px"
           alignSelf="center"
         >
           {/* Information Cards */}
