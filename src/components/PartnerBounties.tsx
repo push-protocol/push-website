@@ -20,7 +20,12 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
   const isMobile = useMediaQuery(device.tablet);
 
   const openLink = (link: string) => {
-    window.open(link, '_blank');
+    if(link){
+      window.open(link, '_blank');
+    }
+    else{
+      return;
+    }
   };
 
   return (
@@ -28,7 +33,8 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
       <Header>Partners {isMobile && (<br />)} Bounties</Header>
       {brbPartnersBountyList?.map((item,i) => (
         <PartnerLine key={i} 
-          onClick={() => (openLink(item.link))}
+          onClick={() => (openLink(item?.link))}
+          disabled={item?.link ? false : true}
         >
           <PartnersLogo
             src={require(`../assets/brb/partners/${item?.srcref}.png`)}
@@ -112,11 +118,12 @@ const PartnerLine = styled.div`
     }
 
     &:hover {
-        border: 1px solid #E64DE9;
-        cursor: pointer;
+        border: ${(props) => (props.disabled ? '1px solid transparent' : '1px solid #E64DE9')};
+        cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+
 
         & .buttonId {
-          background-color: #E64DE9 !important;
+          background: ${(props) => (!props.disabled ? '#E64DE9 !important' : 'transparent')};
         }
     }
 

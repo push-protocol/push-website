@@ -71,14 +71,14 @@ export const brbPartnersBountyList = [
   },
   {
     srcref: 'chainsafe',
-    link: 'https://chainsafe.io/',
+    // link: 'https://chainsafe.io/',
     alt: 'Chainsafe, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'TBD',
     price: 5000
   },
   {
     srcref: 'alchemy',
-    link: 'https://www.alchemy.com/',
+    // link: 'https://www.alchemy.com/',
     alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'TBD',
     price: 5000
