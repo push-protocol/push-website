@@ -879,7 +879,7 @@ const ItemFooter = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 20px;
 
-  @media ${device.laptop} {
+  @media (max-width: 1281px) {
     width: 90%;
   }
 

@@ -27,7 +27,9 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
     <PartnerBountiesContainer ref={sectionRef}>
       <Header>Partners {isMobile && (<br />)} Bounties</Header>
       {brbPartnersBountyList?.map((item,i) => (
-        <PartnerLine key={i}>
+        <PartnerLine key={i} 
+          onClick={() => (openLink(item.link))}
+        >
           <PartnersLogo
             src={require(`../assets/brb/partners/${item?.srcref}.png`)}
             srcSet={`${require(`../assets/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/partners/${item?.srcref}@3x.png`)} 3x`}
@@ -51,8 +53,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
             </PriceSpan>
   
             <Button
-              onClick={() => (openLink(item.link))}
-              //   title='Participate Virtually'
+              className='buttonId'
             >
               <ViewBountyText>View Bounty</ViewBountyText>
               <ArrowSmall />
@@ -94,7 +95,7 @@ const Header = styled.h3`
 
 const PartnerLine = styled.div`
     background: #1B1B25;
-    width: 90%;
+    width: 1280px;
     height: 120px;
     margin: 0 auto;
     display: flex;
@@ -106,11 +107,22 @@ const PartnerLine = styled.div`
     border: 1px solid transparent;
     margin: 8px 0px;
 
-    &:hover {
-        border: 1px solid #E64DE9;
+    @media (max-width: 1281px) {
+      width: 90%;
     }
 
-    @media ${device.mobileL} {
+    &:hover {
+        border: 1px solid #E64DE9;
+        cursor: pointer;
+
+        & .buttonId {
+          background-color: #E64DE9 !important;
+        }
+    }
+
+  
+
+    @media ${device.tablet} {
         height: auto;
         flex-direction: column;
         align-items: flex-start;
@@ -150,12 +162,7 @@ const Button = styled.div`
   background: transparent;
   border-radius: 8px;
   cursor: pointer;
-//   margin-left: auto;
 
-  &: hover {
-    background: #E64DE9;
-    animation-duration: 2s;
-  }
 `;
 
 const ArrowSmall = styled(Arrow)`
@@ -167,7 +174,7 @@ const ArrowSmall = styled(Arrow)`
 const TextSpan = styled(SpanV2)`
     font-family: Glancyr !important;
     margin: 0 0 0 59px;
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
         margin: 16px 0px;
     }
 `;
@@ -184,7 +191,7 @@ const BountyItem = styled.div`
     justify-content: center;
     margin-left: auto;
     gap: 38px;
-    @media ${device.mobileL} {
+    @media ${device.tablet} {
        margin-left: 0px;
        width: 100%;
        justify-content: space-between;
