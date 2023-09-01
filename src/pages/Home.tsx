@@ -4,7 +4,7 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { lazy, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import ReactGA from 'react-ga';
 
 // External Components
@@ -25,10 +25,8 @@ import InvestorList from '../components/InvestorList';
 import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';
-import { Anchor, Content } from '../components/SharedStyling';
 import {
   Atag,
-  ButtonV2,
   ContentV2,
   H1V2,
   H2V2,
@@ -139,7 +137,7 @@ function Home({ isAlertVisible }) {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2>
+          <ContentV2 alignSelf="center">
             {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
@@ -288,7 +286,7 @@ function Home({ isAlertVisible }) {
           data-bkg="light"
           className="lightBackground"
         >
-          <Content className="contentBox">
+          <ContentV2 className="contentBox" alignSelf="center">
             <PartnerChannels />
 
             <Partners
@@ -312,7 +310,7 @@ function Home({ isAlertVisible }) {
                 </SpanV2>
               </ItemVV2>
 
-              <ItemVV2>
+              <ItemHV2>
                 <LiveNetworks>
                   <ItemVV2 className="network">
                     <EthLogoTextSVG
@@ -321,7 +319,7 @@ function Home({ isAlertVisible }) {
                     />
                   </ItemVV2>
 
-                  <ItemVV2 className="divider" />
+                  <ItemHV2 className="divider" />
 
                   <ItemVV2 className="network">
                     <PolygonLogoTextSVG
@@ -330,7 +328,7 @@ function Home({ isAlertVisible }) {
                     />
                   </ItemVV2>
 
-                  <ItemVV2 className="divider" />
+                  <ItemHV2 className="divider" />
 
                   <ItemVV2 className="network">
                     <BNBChainSVG
@@ -339,7 +337,7 @@ function Home({ isAlertVisible }) {
                     />
                   </ItemVV2>
                 </LiveNetworks>
-              </ItemVV2>
+              </ItemHV2>
             </Partners>
 
             <PushWorksRow>
@@ -445,7 +443,7 @@ function Home({ isAlertVisible }) {
                 </FadeInAnimation>
               </ItemVV2>
             </PushWorksRow>
-          </Content>
+          </ContentV2>
         </StorySection>
 
         <BuildWithPushSection
@@ -511,7 +509,7 @@ function Home({ isAlertVisible }) {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <Content className="contentBox">
+          <ContentV2 className="contentBox" alignSelf="center" >
             <IntegrateGrowWithPushRow gap="18px">
               <FadeInAnimation
                 wrapperElement="div"
@@ -579,21 +577,21 @@ function Home({ isAlertVisible }) {
                   </FadeInAnimation>
                 </ResponsiveH2>
 
-                <Anchor
+                <Atag
                   href="https://docs.push.org/hub/"
                   title={t('home.grow-section.button-alt')}
                   target="_blank"
-                  bg="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
+                  background="#DD44B9"
+                  borderRadius="16px"
+                  padding="10px 15px"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
                   lineHeight="26px"
-                  self="center"
+                  slignSelf="center"
                 >
                   {t('home.grow-section.button')}
-                </Anchor>
+                </Atag>
               </IntegrateAndEarn>
             </ItemHV2>
 
@@ -826,26 +824,27 @@ function Home({ isAlertVisible }) {
                 </ResponsiveH2>
               </ItemVV2>
 
-              <ItemVV2 justifyContent="flex-end">
-                <Anchor
+              <ItemHV2 justifyContent="flex-end">
+                <Atag
                   href="https://push-protocol.medium.com/"
                   title="Exlore all articles"
                   target="_blank"
-                  hoverBG="transparent"
+                  hoverBackground="transparent"
                   hover="transparent"
+                  background="transparent"
                   filter="none"
                   color="#DD44B9"
-                  radius="16px"
+                  borderRadius="16px"
                   padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
                   {t('home.insights-section.link-text')}
                   <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
-              </ItemVV2>
+                </Atag>
+              </ItemHV2>
             </ItemHV2>
 
             <Blogs count={4} />
@@ -963,7 +962,7 @@ function Home({ isAlertVisible }) {
             </ItemHV2>
 
             <InvestorList />
-          </Content>
+          </ContentV2>
         </IntergrateWithPushSection>
 
         <FeaturedInSection
@@ -971,9 +970,9 @@ function Home({ isAlertVisible }) {
           data-bkg="dark"
           className="darkBackground"
         >
-          <Content className="contentBox">
+          <ContentV2 className="contentBox" padding="0px 40px 40px">
             <ItemHV2 justifyContent="flex-start">
-              <ItemVV2
+              <ItemHV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
@@ -987,9 +986,9 @@ function Home({ isAlertVisible }) {
                 >
                   {t('home.featured-section.title')}
                 </ResponsiveH2>
-              </ItemVV2>
+              </ItemHV2>
             </ItemHV2>
-          </Content>
+          </ContentV2>
 
           <FeaturedInMarquee
             flexDirection="column"
@@ -1014,24 +1013,25 @@ function Home({ isAlertVisible }) {
 
                 <ArticleSource>
                   <EthFoundationBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
                     title="Read ETH Foundation article about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
                     {t('home.featured-section.article1.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
@@ -1048,24 +1048,25 @@ function Home({ isAlertVisible }) {
 
                 <ArticleSource>
                   <CoindeskBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
                     title="Read Coindesk article about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
                     {t('home.featured-section.article2.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
@@ -1082,24 +1083,25 @@ function Home({ isAlertVisible }) {
 
                 <ArticleSource>
                   <DefiPrimeBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://defiprime.com/ethereum-push-notification-service"
                     title="Read Defi Prime article on Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
                     {t('home.featured-section.article3.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
@@ -1116,24 +1118,25 @@ function Home({ isAlertVisible }) {
 
                 <ArticleSource>
                   <BalajiTweethandleBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://twitter.com/pushprotocol/status/1336359832081768448"
                     title="Read Balaji's tweet about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
                     {t('home.featured-section.article4.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
@@ -1150,24 +1153,25 @@ function Home({ isAlertVisible }) {
 
                 <ArticleSource>
                   <BeInCryptoSVG />
-                  <Anchor
+                  <Atag
                     href="https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn"
                     title="Read Balaji's tweet about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
                     {t('home.featured-section.article5.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
             </MarqueeAnimation>

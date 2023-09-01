@@ -60,8 +60,7 @@ import { ReactComponent as ZeroswapSVG } from '../assets/partners/zeroswap.svg';
 import { ReactComponent as BanklessSVG } from '../assets/partners/bankless.svg';
 import { ReactComponent as AtlendisSVG } from '../assets/partners/atlendis.svg';
 import { ReactComponent as DDSVG } from '../assets/partners/D_D.svg';
-import { LinkTo } from './SharedStyling';
-import { H2V2, ItemHV2, SpanV2 } from '../components/SharedStylingV2';
+import { H2V2, ItemHV2, SpanV2,LinkToV2 } from '../components/SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
@@ -323,21 +322,21 @@ function PartnerChannels() {
             {t('home.partners-section.partner-channels-description')}
           </SpanV2>
 
-          <LinkTo
+          <LinkToV2
             to="/frens"
             title={t('home.partners-section.partner-channels-button-alt')}
-            bg="#DD44B9"
-            radius="16px"
+            background="#DD44B9"
+            borderRadius="16px"
             padding="14px 32px"
-            size="18px"
-            weight="500"
-            spacing="-0.03em"
+            fontSize="18px"
+            fontWeight="500"
+            letterSpacing="-0.03em"
             lineHeight="26px"
             margin="15px 0px 0px 0px"
-            self="center"
+            alignSelf="center"
           >
             {t('home.partners-section.partner-channels-button')}
-          </LinkTo>
+          </LinkToV2>
         </GridItem>
         <TriRow>
           <div className="grid">

@@ -17,7 +17,6 @@ import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
 import ChatBubbleComponent from './ChatBubbleComponent';
-import { Section } from './SharedStyling';
 import { ButtonV2, ItemHV2, ItemVV2, SectionV2 } from './SharedStylingV2';
 
 // Internal Configs

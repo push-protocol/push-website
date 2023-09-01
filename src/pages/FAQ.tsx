@@ -15,8 +15,19 @@ import { useTranslation } from 'react-i18next';
 import HybridSection from '../components/HybridSection';
 import PageWrapper from '../components/PageWrapper';
 import ImageFAQ from '../assets/faq-projects.webp';
-import { LI, Para, UL } from '../components/SharedStyling';
-import { Atag, ButtonV2, ContentV2, H3V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import {
+  Atag,
+  ButtonV2,
+  ContentV2,
+  H3V2,
+  HeroHeaderV2,
+  ItemHV2,
+  ItemVV2,
+  SpanV2,
+  PV2,
+  LIV2,
+  ULV2,
+} from 'components/SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
@@ -439,18 +450,18 @@ const IntegratingPush = [
           </AMod>{' '}
           is a major component that makes the integration seamless. A few integration ideas using SDK include
         </SpanV2>
-        <UL>
-          <LI>
+        <ULV2>
+          <LIV2>
             integrate <b>Opt-in</b> feature on your frontend so users wouldn't have to leave your website to enable
             notifications from your Channel
-          </LI>
-          <LI>show the notifications on your frontend</LI>
-          <LI>send critical information as notifications</LI>
-          <LI>
+          </LIV2>
+          <LIV2>show the notifications on your frontend</LIV2>
+          <LIV2>send critical information as notifications</LIV2>
+          <LIV2>
             integrate <b>Push Chat</b> on your frontend and enable 2-way communication between your users or use chat as
             a way to provide support to your users.
-          </LI>
-        </UL>
+          </LIV2>
+        </ULV2>
         <SpanV2>
           Other ways of integrating Push notifications are via{' '}
           <AMod
@@ -936,7 +947,7 @@ const AMod = styled(Atag)`
   padding: 0px;
 `;
 
-const LIMod = styled(LI)`
+const LIMod = styled(LIV2)`
   color: white;
 `;
 
@@ -956,6 +967,13 @@ const Title = styled.div`
   line-height: 38px;
   color: #000000;
   margin-top: 50px;
+`;
+
+const Para = styled(PV2)`
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
+  color: #000000ee;
 `;
 
 export default FAQ;

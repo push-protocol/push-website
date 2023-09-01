@@ -15,7 +15,6 @@ import useOnScreen from 'hooks/useOnScreen';
 import Left from '../assets/brb/others/left.svg';
 import Right from '../assets/brb/others/right.svg';
 import { ReactComponent as Arrow } from '../assets/brb/schedules/arrow.svg';
-import { ItemH, ItemV } from './SharedStyling';
 import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 // Internal Configs

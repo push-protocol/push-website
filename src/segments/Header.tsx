@@ -16,10 +16,9 @@ import { useTranslation } from 'react-i18next';
 
 // Internal Components
 import useMediaQuery from '../hooks/useMediaQuery';
-import { ContentV2, ItemHV2, ItemVV2, SectionV2, Atag, SpanV2 } from 'components/SharedStylingV2';
+import { ContentV2, ItemHV2, ItemVV2, SectionV2, Atag, SpanV2, LinkToV2 } from 'components/SharedStylingV2';
 import { ReactComponent as PushLogoTextBlack } from '../assets/PushLogoTextBlack.svg';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
-import { LinkTo } from '../components/SharedStyling';
 import Alert from 'components/Alert';
 import { ReactComponent as EnSVG } from '../assets/en.svg';
 import { ReactComponent as EsSVG } from '../assets/es.svg';
@@ -156,23 +155,23 @@ function Header() {
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo
+                <LinkToV2
                   to="/"
                   aria-label="Push"
                 >
                   <PushLogoTextBlack />
-                </LinkTo>
+                </LinkToV2>
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer
                 className="headerlogo"
                 flex="initial"
               >
-                <LinkTo
+                <LinkToV2
                   to="/"
                   aria-label="Push"
                 >
                   <PushLogoTextWhite />
-                </LinkTo>
+                </LinkToV2>
               </PushLogoWhiteContainer>
 
               <MobileMenuToggleIcon>
@@ -305,19 +304,19 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[1]}
                   >
-                    <LinkTo
+                    <LinkToV2
                       to="/faq"
                       title={t('header.more.alt-faq')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverBackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
                     >
                       {t('header.more.faq')}
-                    </LinkTo>
+                    </LinkToV2>
                     <Atag
                       href="https://push-protocol.medium.com/"
                       target="_blank"
@@ -334,19 +333,19 @@ function Header() {
                     >
                       {t('header.more.blog')}
                     </Atag>
-                    <LinkTo
+                    <LinkToV2
                       to="/frens"
                       title={t('header.more.alt-push-ecosystem')}
-                      bg="transparent"
-                      hoverBG="#fff"
+                      background="transparent"
+                      hoverBackground="#fff"
                       padding="7px 30px"
-                      size="16px"
-                      weight="400"
+                      fontSize="16px"
+                      fontWeight="400"
                       lineHeight="230%"
-                      spacing="normal"
+                      letterSpacing="normal"
                     >
                       {t('header.more.push-ecosystem')}
-                    </LinkTo>
+                    </LinkToV2>
                     <Atag
                       href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
                       target="_blank"
@@ -464,21 +463,21 @@ function Header() {
 
                 <NavigationMenuItem>
                   <MenuHeader>
-                    <LinkTo
+                    <LinkToV2
                       to="/brb"
                       title={'BRB'}
                       flex={isMobile ? 'initial' : '1'}
                       padding="0px 0px"
-                      size="18px"
-                      weight="500"
-                      spacing="-0.03em"
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
                       lineHeight="142%"
-                      hoverBG="none"
-                      align="center"
+                      hoverBackground="none"
+                      alignItems="center"
                       margin={isMobile ? '16px 16px' : 'auto 0'}
                     >
                       Billion Reasons to Build
-                    </LinkTo>
+                    </LinkToV2>
                   </MenuHeader>
                   {/* <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 2)}

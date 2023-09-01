@@ -14,7 +14,7 @@ import MobileSpaceBg from '../assets/mobile-space-background.webp';
 import SpaceBg from '../assets/space-background.webp';
 import { subscribeToSpace } from 'api';
 import ImageHolder from 'components/ImageHolder';
-import { Span } from 'components/SharedStyling';
+import { SpanV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
 import MobileSpaceImage from '../assets/mobile-space-image.webp';
 import SpaceImage from '../assets/space-image.webp';
@@ -111,25 +111,25 @@ const Spaces = () => {
             {isLoading ? <MaskInput /> : null}
           </Wrapper> */}
           {emailSuccess && (
-            <Span
+            <SpanV2
               className="msg"
-              size={isMobile ? '18px' : '20px'}
+              fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="white"
             >
               {emailSuccess}
-            </Span>
+            </SpanV2>
           )}
 
           {!emailSuccess && emailError && (
-            <Span
+            <SpanV2
               className="msg"
-              size={isMobile ? '18px' : '20px'}
+              fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="red"
             >
               {emailError}
-            </Span>
+            </SpanV2>
           )}
         </Box>
 

@@ -1,5 +1,6 @@
 // External Components
-import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -368,4 +369,106 @@ export const Atag = styled.a`
     height: 1em;
     margin-left: 3px;
   }
+`;
+
+export const PV2 = styled.p`
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  color: ${(props) => props.color || '#000'};
+  background: ${(props) => props.background || 'transparent'};
+  font-weight: ${(props) => props.fontWeight || 300};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '20px 0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || 'inherit'};
+  text-align: ${(props) => props.textAlign || 'initial'};
+`;
+
+export const LinkToV2 = styled(Link)`
+  font-family: 'Strawford';
+  line-height: ${(props) => props.lineHeight || 'inherit'};
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection || 'row'};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  align-items: ${(props) => props.alignItems || 'center'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  font-weight: ${(props) => props.fontWeight || 400};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  color: ${(props) => props.color || '#fff'};
+  background: ${(props) => props.background || 'transparent'};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '10px 15px'};
+  letter-spacing: ${(props) => props.letterSpacing || '0.2em'};
+  border: ${(props) => props.border || 'none'};
+  border-radius: ${(props) => props.borderRadius || '0px'};
+  width: ${(props) => props.width || 'initial'};
+
+  position: relative;
+  text-decoration: none;
+  overflow: ${(props) => props.overflow || 'hidden'};
+  z-index: 3;
+
+  filter: ${(props) => props.filter || 'none'};
+
+  cursor: ${(props) => (props.disabled ? 'none' : 'pointer')};
+
+  &:hover & {
+    filter: ${(props) => (props.filterHover ? props.filterHover : props.hover ? props.hover : 'none') || 'none'};
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${(props) => props.hover || (props.background ? props.background : 'transparent')};
+    display: none;
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${(props) => props.hoverBackground || '#000'};
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover:before {
+    display: block;
+  }
+
+  &:hover:after {
+    opacity: 0.08;
+  }
+  &:active:after {
+    opacity: 0.15;
+  }
+
+  & .anchorSVGlink {
+    width: 1em;
+    height: 1em;
+    margin-left: 3px;
+  }
+`;
+
+export const BV2 = styled.span`
+  color: ${(props) => props.color || '#000'};
+  font-weight: ${(props) => props.fontWeight || 'bold'};
+`;
+
+export const ULV2 = styled.ul``;
+
+export const OLV2 = styled.ol``;
+
+export const LIV2 = styled.li`
+  margin: 10px 0px;
 `;

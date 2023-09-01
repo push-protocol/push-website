@@ -10,8 +10,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { LinkTo } from '../components/SharedStyling';
-import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag } from 'components/SharedStylingV2';
+import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag,LinkToV2 } from 'components/SharedStylingV2';
 import EmailInputTextField from '../components/EmailInputTextField';
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
@@ -122,7 +121,7 @@ function Footer() {
                   </SpanV2>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/frens"
                     title={t('footer.links-section.company-column.push-ecosystem-link')}
                     onClick={scrollToTop}
@@ -138,7 +137,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/tos"
                     title={t('footer.links-section.company-column.terms-link')}
                     onClick={scrollToTop}
@@ -147,7 +146,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/privacy"
                     title={t('footer.links-section.company-column.privacy-link')}
                     onClick={scrollToTop}
@@ -277,7 +276,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/faq"
                     title={t('footer.links-section.subscribe-column.faq-link')}
                     onClick={scrollToTop}
@@ -311,14 +310,14 @@ function Footer() {
               gap="12px"
               className="pushLinks"
             >
-              <LinkTo
+              <LinkToV2
                 className="pushLogo"
                 to="/"
                 title="Push"
                 onClick={scrollToTop}
               >
                 <PushLogoTextWhite />
-              </LinkTo>
+              </LinkToV2>
 
               <FooterAnchorIcon
                 href="https://github.com/ethereum-push-notification-service"

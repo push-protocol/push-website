@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 // Internal Components
 import HybridSection from '../components/HybridSection';
 import PageWrapper from '../components/PageWrapper';
-import { A, B, Content, H3, HeroHeader, ItemH, ItemV, Para } from '../components/SharedStyling';
+import { Atag, BV2, ContentV2, H3V2, HeroHeaderV2, ItemHV2, ItemVV2, PV2 } from 'components/SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
@@ -36,15 +36,16 @@ function Privacy() {
           padding="80px 0px 20px 0px"
           data-bkg="dark"
         >
-          <Content
+          <ContentV2
             className="contentBox"
             flex="0"
+            alignSelf="center"
           >
-            <ItemH
+            <ItemHV2
               flexDirection="column"
               justifyContent="flex-start"
             >
-              <HeroHeader>{t('privacy.hero.title')}</HeroHeader>
+              <HeroHeaderV2>{t('privacy.hero.title')}</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
@@ -52,14 +53,23 @@ function Privacy() {
                 {t('privacy.hero.description')}
               </Para>
 
-              <ItemV
+              <ItemVV2
                 align="flex-start"
                 margin="0"
               >
-                <H3 maxWidth="400px">{t('privacy.hero.update-text')}</H3>
-              </ItemV>
-            </ItemH>
-          </Content>
+                <H3V2
+                  maxWidth="400px"
+                  fontSize="1rem"
+                  lineHeight={8}
+                  margin="0px 0px 80px 0px"
+                  letterSpacing="0.1em"
+                  textTransform="uppercase"
+                >
+                  {t('privacy.hero.update-text')}
+                </H3V2>
+              </ItemVV2>
+            </ItemHV2>
+          </ContentV2>
         </ResponsiveSection>
 
         <ResponsiveSection
@@ -67,22 +77,26 @@ function Privacy() {
           padding="80px 0px 40px 0px"
           data-bkg="light"
         >
-          <Content className="contentBox">
-            <ItemH
-              align="stretch"
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            psdding="0px"
+          >
+            <ItemHV2
+              alignSelf="stretch"
               justifyContent="flex-start"
               margin="0px 20px 40px 20px"
               flexDirection="column"
             >
-              <ItemH
-                align="flex-start"
+              <ItemHV2
+                alignItems="flex-start"
                 margin="30px 0px 20px 0px"
                 justifyContent="flex-start"
               >
                 {/* SUMMARY */}
                 <Para
-                  weight="400"
-                  spacing="0.2em"
+                  fontWeight="400"
+                  letterSpacing="0.2em"
                   color="#000"
                   textTransform="uppercase"
                   size="1.2em"
@@ -95,48 +109,72 @@ function Privacy() {
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
-                  This policy (the <B>Policy</B>) outlines how we collect, use, store and disclose your personal data.
-                  Please take a moment to read about how we collect, use and/or disclose your personal data so that you
-                  know and understand the purposes for which we may collect, use and/or disclose your personal data. By
-                  accessing the website at{' '}
-                  <A
+                  This policy (the <BV2>Policy</BV2>) outlines how we collect, use, store and disclose your personal
+                  data. Please take a moment to read about how we collect, use and/or disclose your personal data so
+                  that you know and understand the purposes for which we may collect, use and/or disclose your personal
+                  data. By accessing the website at{' '}
+                  <Atag
                     href="https://push.org"
                     target="_blank"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
                   >
                     push.org
-                  </A>
+                  </Atag>
                   ,{' '}
-                  <A
+                  <Atag
                     href="https://app.push.org"
                     target="_blank"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
                   >
                     app.push.org
-                  </A>{' '}
+                  </Atag>{' '}
                   or{' '}
-                  <A
+                  <Atag
                     href="https://staging.push.org"
                     target="_blank"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
                   >
                     staging.push.org
-                  </A>{' '}
-                  or any other subdomains of <B>push.org</B> (the <B>Website(s)</B>), you agree and consent to Ethereum
-                  Push Notification Service Foundation (the <B>Company</B>), its related corporations, business units
-                  and affiliates, as well as their respective representatives and/or agents (collectively referred to
-                  herein as “Push”, “us”, “we” or “our”), collecting, using, disclosing and sharing amongst themselves
-                  the personal data, and to disclosing such personal data to relevant third party providers. This Policy
-                  supplements but does not supersede nor replace any other consent which you may have previously
-                  provided to us nor does it affect any rights that we may have at law in connection with the
+                  </Atag>{' '}
+                  or any other subdomains of <BV2>push.org</BV2> (the <BV2>Website(s)</BV2>), you agree and consent to
+                  Ethereum Push Notification Service Foundation (the <BV2>Company</BV2>), its related corporations,
+                  business units and affiliates, as well as their respective representatives and/or agents (collectively
+                  referred to herein as “Push”, “us”, “we” or “our”), collecting, using, disclosing and sharing amongst
+                  themselves the personal data, and to disclosing such personal data to relevant third party providers.
+                  This Policy supplements but does not supersede nor replace any other consent which you may have
+                  previously provided to us nor does it affect any rights that we may have at law in connection with the
                   collection, use and/or disclosure of your personal data. We may from time to time update this Policy
                   to ensure that this Policy is consistent with our future developments, industry trends and/or any
                   changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms of
                   this Policy shall apply. For the avoidance of doubt, this Policy forms part of the Terms of Service
                   governing your relationship with us and should be read in conjunction with such{' '}
-                  <A
+                  <Atag
                     href="./terms"
                     target="_blank"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
                   >
                     Terms of Service
-                  </A>
+                  </Atag>
                   . All capitalised terms used but not defined herein shall have the meaning ascribed to them in the
                   Terms of Service.
                 </Para>
@@ -173,55 +211,55 @@ function Privacy() {
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(a)</B> personal particulars (e.g. name, contact details, residential address, date of birth,
+                  <BV2>(a)</BV2> personal particulars (e.g. name, contact details, residential address, date of birth,
                   identity card/passport details, social media handles and other social media profile information,
                   and/or education details);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(b)</B> financial details (e.g. income, expenses, credit history and/or credit card and bank
+                  <BV2>(b)</BV2> financial details (e.g. income, expenses, credit history and/or credit card and bank
                   information);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(c)</B> images and voice recordings of our conversations with you, whether from our events or
+                  <BV2>(c)</BV2> images and voice recordings of our conversations with you, whether from our events or
                   office surveillances or otherwise;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(d)</B> work experience and employment details (e.g. occupation, directorships and other positions
-                  held, employment history, salary, and/or benefits);
+                  <BV2>(d)</BV2> work experience and employment details (e.g. occupation, directorships and other
+                  positions held, employment history, salary, and/or benefits);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(e)</B> tax and insurance information;
+                  <BV2>(e)</BV2> tax and insurance information;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(f)</B> information about your risk profile, investments, investment objectives, knowledge and
+                  <BV2>(f)</BV2> information about your risk profile, investments, investment objectives, knowledge and
                   experience and/or business interests and assets;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(g)</B> information about your use of our services and Website;
+                  <BV2>(g)</BV2> information about your use of our services and Website;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(h)</B> usernames and password, third party account credentials (such as your Facebook login
+                  <BV2>(h)</BV2> usernames and password, third party account credentials (such as your Facebook login
                   credentials, Google login credentials) and IP address;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(i)</B> banking information (e.g. account numbers and banking transactions);
+                  <BV2>(i)</BV2> banking information (e.g. account numbers and banking transactions);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(j)</B> private or public cryptographic key relating to addresses on distributed ledger networks
-                  and/or similar information; and/or
+                  <BV2>(j)</BV2> private or public cryptographic key relating to addresses on distributed ledger
+                  networks and/or similar information; and/or
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(k)</B> personal opinions made known to us (e.g. feedback or responses to surveys).
+                  <BV2>(k)</BV2> personal opinions made known to us (e.g. feedback or responses to surveys).
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
@@ -246,150 +284,150 @@ function Privacy() {
 
                 <ListGroup>
                   <Para margin="20px 0px 0px 20px">
-                    <B>(a)</B> developing and providing facilities, products or services (whether made available by us
-                    or through us), including but not limited to:
+                    <BV2>(a)</BV2> developing and providing facilities, products or services (whether made available by
+                    us or through us), including but not limited to:
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(i)</B> sale of digital tokens or virtual currencies;
+                    <BV2>(i)</BV2> sale of digital tokens or virtual currencies;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(ii)</B> acting as intermediaries through any blockchain, network or platform developed or
+                    <BV2>(ii)</BV2> acting as intermediaries through any blockchain, network or platform developed or
                     managed by us;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(iii)</B> recording and/or encryption on any blockchain, network or platform developed or managed
-                    by us;
+                    <BV2>(iii)</BV2> recording and/or encryption on any blockchain, network or platform developed or
+                    managed by us;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(iv)</B> promoting advertisements or marketing material, whether from us or third parties;
+                    <BV2>(iv)</BV2> promoting advertisements or marketing material, whether from us or third parties;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(v)</B> various products and/or services (whether digital or not, and whether provided through an
-                    external service provider or otherwise), including without limitation the Services as set out in the
-                    Terms of Service;
+                    <BV2>(v)</BV2> various products and/or services (whether digital or not, and whether provided
+                    through an external service provider or otherwise), including without limitation the Services as set
+                    out in the Terms of Service;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(vi)</B> providing, managing or accessing digital wallets for holding digital assets;
+                    <BV2>(vi)</BV2> providing, managing or accessing digital wallets for holding digital assets;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(vii)</B> access to smart contracts on and/or interacting with the Push Protocol, the Website or
-                    the App;
+                    <BV2>(vii)</BV2> access to smart contracts on and/or interacting with the Push Protocol, the Website
+                    or the App;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(viii)</B> sending and receiving notifications and Content from various channels on the Push
+                    <BV2>(viii)</BV2> sending and receiving notifications and Content from various channels on the Push
                     Protocol;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(ix)</B> making payments to you for participation in any blockchain, network or platform
+                    <BV2>(ix)</BV2> making payments to you for participation in any blockchain, network or platform
                     developed or managed by us (as applicable);
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(x)</B> various products and/or services related to digital assets;
+                    <BV2>(x)</BV2> various products and/or services related to digital assets;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(xi)</B> any escrow, courier, anti-counterfeiting or dispute resolution services;
+                    <BV2>(xi)</BV2> any escrow, courier, anti-counterfeiting or dispute resolution services;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(xii)</B> transactions and clearing or reporting on these transactions;
+                    <BV2>(xii)</BV2> transactions and clearing or reporting on these transactions;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(xiii)</B> carrying out research, planning and statistical analysis; and/or
+                    <BV2>(xiii)</BV2> carrying out research, planning and statistical analysis; and/or
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <B>(xiv)</B> analytics for the purposes of developing or improving our products, services, security,
-                    service quality, staff training, and advertising strategies;
+                    <BV2>(xiv)</BV2> analytics for the purposes of developing or improving our products, services,
+                    security, service quality, staff training, and advertising strategies;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(b)</B> assessing and processing applications, instructions, transactions, or requests from you
-                    or our customers;
+                    <BV2>(b)</BV2> assessing and processing applications, instructions, transactions, or requests from
+                    you or our customers;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(c)</B> communicating with you, including providing you with updates on changes to products,
+                    <BV2>(c)</BV2> communicating with you, including providing you with updates on changes to products,
                     services and banking facilities (whether made available by us or through us) including any
                     additions, expansions, suspensions and replacements of or to such products, services and banking
                     facilities and their terms and conditions;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(d)</B> managing our infrastructure and business operations and complying with internal policies
-                    and procedures;
+                    <BV2>(d)</BV2> managing our infrastructure and business operations and complying with internal
+                    policies and procedures;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(e)</B> responding to queries or feedback;
+                    <BV2>(e)</BV2> responding to queries or feedback;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(f)</B> addressing or investigating any complaints, claims or disputes;
+                    <BV2>(f)</BV2> addressing or investigating any complaints, claims or disputes;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(g)</B> verifying your identity for the purposes of providing facilities, products or services,
-                    which would require comparison of your personal information against third party databases and/or
-                    provision of such information to third party service providers;
+                    <BV2>(g)</BV2> verifying your identity for the purposes of providing facilities, products or
+                    services, which would require comparison of your personal information against third party databases
+                    and/or provision of such information to third party service providers;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(h)</B> conducting credit checks, screenings or due diligence checks as may be required under
+                    <BV2>(h)</BV2> conducting credit checks, screenings or due diligence checks as may be required under
                     applicable law, regulation or directive;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(i)</B> complying with all applicable laws, regulations, rules, directives, orders, instructions
-                    and requests from any local or foreign authorities, including regulatory, governmental, tax and law
-                    enforcement authorities or other authorities;
+                    <BV2>(i)</BV2> complying with all applicable laws, regulations, rules, directives, orders,
+                    instructions and requests from any local or foreign authorities, including regulatory, governmental,
+                    tax and law enforcement authorities or other authorities;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(j)</B> enforcing obligations owed to us;
+                    <BV2>(j)</BV2> enforcing obligations owed to us;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(k)</B> monitoring products and services provided by or made available through us;
+                    <BV2>(k)</BV2> monitoring products and services provided by or made available through us;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(l)</B> complying with obligations and requirements imposed by us from time to time by any credit
-                    bureau or credit information sharing services of which we are a member or subscriber;
+                    <BV2>(l)</BV2> complying with obligations and requirements imposed by us from time to time by any
+                    credit bureau or credit information sharing services of which we are a member or subscriber;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(m)</B> creating and maintaining credit and risk related models;
+                    <BV2>(m)</BV2> creating and maintaining credit and risk related models;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(n)</B> financial reporting, regulatory reporting, management reporting, risk management
+                    <BV2>(n)</BV2> financial reporting, regulatory reporting, management reporting, risk management
                     (including monitoring credit exposures, preventing, detecting and investigating crime, including
                     fraud and any form of financial crime), audit and record keeping purposes;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(o)</B> enabling any actual or proposed assignee or transferee, participant or sub-participant of
-                    Push&apos;s rights or obligations to evaluate any proposed transaction;
+                    <BV2>(o)</BV2> enabling any actual or proposed assignee or transferee, participant or
+                    sub-participant of Push&apos;s rights or obligations to evaluate any proposed transaction;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(p)</B> enforcing obligations owed to us; and/or
+                    <BV2>(p)</BV2> enforcing obligations owed to us; and/or
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <B>(q)</B> seeking professional advice, including legal or tax advice.
+                    <BV2>(q)</BV2> seeking professional advice, including legal or tax advice.
                   </Para>
 
                   <Para margin="20px 0px 20px 0px">
@@ -434,7 +472,19 @@ function Privacy() {
 
                 <Para margin="20px 0px 0px 0px">
                   To find out more on how you can change the way we use your personal data for marketing purposes,
-                  please contact us at <A href="mailto://support@epns.io">support@epns.io</A>.
+                  please contact us at{' '}
+                  <Atag
+                    href="mailto://support@epns.io"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
+                  >
+                    support@epns.io
+                  </Atag>
+                  .
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
@@ -565,26 +615,38 @@ function Privacy() {
                 <Para margin="-10px 0px 20px">If you:</Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(a)</B> have queries about our data protection processes and practices;
+                  <BV2>(a)</BV2> have queries about our data protection processes and practices;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(b)</B> wish to request access to and/or make corrections to your personal data in our possession
-                  or under our control; or
+                  <BV2>(b)</BV2> wish to request access to and/or make corrections to your personal data in our
+                  possession or under our control; or
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(c)</B> wish to withdraw your consent to our collection, use or disclosure of your personal data,
+                  <BV2>(c)</BV2> wish to withdraw your consent to our collection, use or disclosure of your personal
+                  data,
                 </Para>
 
                 <Para margin="20px 0px 0px">
                   please submit a written request (with supporting documents, (if any) to our Compliance Officer at:{' '}
-                  <A href="mailto://support@epns.io">support@epns.io</A>. Our Compliance Officer shall endeavour to
-                  respond to you within 30 days of your submission. Please note that if you withdraw your consent to any
-                  or all use or disclosure of your personal data, depending on the nature of your request, we may not be
-                  in a position to continue to provide our services or products to you or administer any contractual
-                  relationship in place. Such withdrawal may also result in the termination of any agreement you may
-                  have with us. Our legal rights and remedies are expressly reserved in such event.
+                  <Atag
+                    href="mailto://support@epns.io"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
+                  >
+                    support@epns.io
+                  </Atag>
+                  . Our Compliance Officer shall endeavour to respond to you within 30 days of your submission. Please
+                  note that if you withdraw your consent to any or all use or disclosure of your personal data,
+                  depending on the nature of your request, we may not be in a position to continue to provide our
+                  services or products to you or administer any contractual relationship in place. Such withdrawal may
+                  also result in the termination of any agreement you may have with us. Our legal rights and remedies
+                  are expressly reserved in such event.
                 </Para>
 
                 <Para margin="20px 0px 20px">
@@ -605,7 +667,18 @@ function Privacy() {
                 <Para margin="-10px 0px 20px">
                   To contact us on any aspect of this Policy or your personal data or to provide any feedback that you
                   may have, please contact our Compliance Officer at{' '}
-                  <A href="mailto://support@epns.io">support@epns.io</A>.
+                  <Atag
+                    href="mailto://support@epns.io"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
+                  >
+                    support@epns.io
+                  </Atag>
+                  .
                 </Para>
 
                 {/* Governing Law and Jurisdiction */}
@@ -658,43 +731,43 @@ function Privacy() {
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(a)</B> the right to access your personal data (if you ask us, we will confirm whether we are
+                  <BV2>(a)</BV2> the right to access your personal data (if you ask us, we will confirm whether we are
                   processing your personal data in a structured, commonly used and machine-readable format and, if so,
                   provide you with a copy of that personal data (along with certain other details). If you require
                   additional copies, we may need to charge a reasonable fee;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(b)</B> the right to ensure the accuracy of your personal data;
+                  <BV2>(b)</BV2> the right to ensure the accuracy of your personal data;
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(c)</B> the right to have us delete your personal data (we will do so in some circumstances, such
-                  as where we no longer need it, but do note that we may not delete your data when other interests
+                  <BV2>(c)</BV2> the right to have us delete your personal data (we will do so in some circumstances,
+                  such as where we no longer need it, but do note that we may not delete your data when other interests
                   outweigh your right to deletion);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(d)</B> the right to restrict further processing of your personal data (unless we demonstrate
+                  <BV2>(d)</BV2> the right to restrict further processing of your personal data (unless we demonstrate
                   compelling legitimate grounds for the processing);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(e)</B> rights in relation to automated decision-making and profiling (you have the right to be
+                  <BV2>(e)</BV2> rights in relation to automated decision-making and profiling (you have the right to be
                   free from decisions based solely on automated processing of your personal data, including profiling,
                   that affect you, unless such processing is necessary for entering into, or the performance of, a
                   contract between you and us or you provide your explicit consent to such processing);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(f)</B> the right to withdraw consent (if we rely on your consent to process your personal data,
-                  you have the right to withdraw that consent at any time, but provided always that this shall not
+                  <BV2>(f)</BV2> the right to withdraw consent (if we rely on your consent to process your personal
+                  data, you have the right to withdraw that consent at any time, but provided always that this shall not
                   affect the lawfulness of processing based on your prior consent); and
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <B>(g)</B> the right to complain to a supervisory authority in your country of residence in the event
-                  that data is misused.
+                  <BV2>(g)</BV2> the right to complain to a supervisory authority in your country of residence in the
+                  event that data is misused.
                 </Para>
 
                 <Para margin="20px 0px 20px">
@@ -702,7 +775,19 @@ function Privacy() {
                   have a legal right to lodge a complaint with a supervisory authority responsible for data protection.
                   You may do so in the EU member state of your residence, your place of work or the place of the alleged
                   infringement. You may exercise any of your rights in relation to your personal data by contacting our
-                  Compliance Officer at: <A href="mailto://support@epns.io">support@epns.io</A>.
+                  Compliance Officer at:{' '}
+                  <Atag
+                    href="mailto://support@epns.io"
+                    display=" inline"
+                    color="#e1087f"
+                    background="transparent"
+                    padding="0px"
+                    letterSpacing="inherit"
+                    textTransform="initial"
+                  >
+                    support@epns.io
+                  </Atag>
+                  .
                 </Para>
 
                 {/* Your acceptance of these terms */}
@@ -728,9 +813,9 @@ function Privacy() {
                   Website or any services provided by Push. Your continued use of the Website following the posting of
                   changes to this Policy will be deemed your acceptance of those changes.
                 </Para>
-              </ItemH>
-            </ItemH>
-          </Content>
+              </ItemHV2>
+            </ItemHV2>
+          </ContentV2>
         </ResponsiveSection>
       </PrivacyWrapper>
     </PageWrapper>
@@ -789,6 +874,13 @@ const PrivacyWrapper = styled.div`
 const ListGroup = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Para = styled(PV2)`
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
+  color: #000000ee;
 `;
 
 export default Privacy;

@@ -391,9 +391,9 @@ function BRB() {
         <ItemFooter id="support">
           <FooterItem>
             <SpanContent
-              family="Glancyr"
-              size={isLaptop ? '89px' : '112px'}
-              weight="500"
+              fontFamily="Glancyr"
+              fontSize={isLaptop ? '89px' : '112px'}
+              fontWeight="500"
               color="#E64DE9"
             >
               Drop Us a GM!
