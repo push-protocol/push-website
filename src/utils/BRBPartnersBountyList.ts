@@ -70,25 +70,18 @@ export const brbPartnersBountyList = [
     price: 5000
   },
   {
+    srcref: 'chainsafe',
+    link: 'https://pushprotocol.notion.site/ChainSafe-3e9e4eef06d94920b7b8fd6184ba333c?pvs=4',
+    alt: 'Chain safe, Partner of Push, #BRBIndia, pan-India dev tour',
+    text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
+    price: 5000
+  },
+  {
     srcref: 'push',
     link: 'https://pushprotocol.notion.site/Push-Protocol-6fbc1817b8dc4ff5a6c3bbdec6012c0c?pvs=4',
     alt: 'Push Protocol',
     text: 'Build Push V3 by enhancing the fees pool logic of V2 to accept any tokens',
     price: 7500
-  },
-  {
-    srcref: 'chainsafe',
-    // link: 'https://chainsafe.io/',
-    alt: 'Chainsafe, Partner of Push, #BRBIndia, pan-India dev tour',
-    text: 'TBD',
-    price: 5000
-  },
-  {
-    srcref: 'alchemy',
-    // link: 'https://www.alchemy.com/',
-    alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
-    text: 'TBD',
-    price: 5000
   }
 ];
   

@@ -66,12 +66,12 @@ export const brbPartnersList = [
       alt: 'Chainsafe, Partner of Push, #BRBIndia, pan-India dev tour',
       title: 'Visit Chainsafe Website',
     },
-    {
-      srcref: 'alchemy',
-      link: 'https://www.alchemy.com/',
-      alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
-      title: 'Visit Alchemy Website',
-    },
+    // {
+    //   srcref: 'alchemy',
+    //   link: 'https://www.alchemy.com/',
+    //   alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
+    //   title: 'Visit Alchemy Website',
+    // },
     {
       srcref: 'timeswap',
       link: 'https://timeswap.io/',
