@@ -31,6 +31,7 @@ import ImageHolder from 'components/ImageHolder';
 import { Span } from 'components/SharedStyling';
 import { ButtonV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { PartnerBounties } from 'components/PartnerBounties';
 
 // Internal Configs
 import PageMeta from '../config/pageMeta';
@@ -385,9 +386,12 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
+        <PartnerBounties />
+
         <PlaygroundDiv id="playground">
           <ChatComponent />
         </PlaygroundDiv>
+
 
         <ItemFooter id="support">
           <FooterItem>
@@ -875,7 +879,7 @@ const ItemFooter = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 20px;
 
-  @media ${device.laptop} {
+  @media (max-width: 1281px) {
     width: 90%;
   }
 

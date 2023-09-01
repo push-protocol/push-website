@@ -68,15 +68,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     });
   }, []);
 
-  useEffect(() => {
-    // if(scrollRef?.current?.children[0].focus()){
-    console.log('number one', scrollRef?.current);
-    // }
-  }, [scrollRef]);
-
   // const isMobile = useDeviceWidthCheck(600);
 
-  console.log('isLast', isLastSchedule);
 
   return (
     <Container ref={sectionRef}>
