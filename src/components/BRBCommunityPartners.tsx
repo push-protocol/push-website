@@ -14,7 +14,7 @@ import { ButtonV2, ImageV2, ItemHV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
-import { brbCommPartnersList } from 'config/BRBCommPartnersList';
+import { brbCommPartnersList } from 'utils/BRBCommPartnersList';
 
 export const CommunityPartners = () => {
   const isMobile = useMediaQuery(device.mobileL);

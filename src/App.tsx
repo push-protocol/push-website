@@ -32,7 +32,7 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 // Internal Components
-import { darkChatTheme } from 'helpers/theme';
+import { darkChatTheme } from 'utils/theme';
 import { AccountContext, EnvContext, SocketContext, Web3Context } from './context';
 import { ENV } from './helpers/web3helper';
 import { useSDKSocket } from './hooks/useSDKSocket';

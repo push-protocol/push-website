@@ -37,11 +37,12 @@ import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
 import PageWrapper from '../components/PageWrapper';
 import { BodyContent } from './Home';
 import { ContentV2, H2V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import { objChannelList } from 'utils/ChannelList';
 
 // Internal Configs
 import { device } from 'config/globals';
 import pageMeta from 'config/pageMeta';
-import { objChannelList } from 'config/ChannelList';
+
 
 const FrensText = () => {
   // React GA Analytics

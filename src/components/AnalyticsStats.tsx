@@ -13,10 +13,10 @@ import { useTranslation } from 'react-i18next';
 
 // Internal Components
 import { ItemHV2, SpanV2 } from './SharedStylingV2';
+import { getSubscribersCount,getNotificationsCount } from 'utils/AnalyticsStats';
 
 // Internal Configs
 import { device } from '../config/globals';
-import { getSubscribersCount, getNotificationsCount } from '../config/AnalyticsStats';
 
 function nFormatter(num, digits) {
   const si = [

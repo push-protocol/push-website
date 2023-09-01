@@ -17,7 +17,7 @@ import { ReactComponent as Brand } from '../assets/brb/others/brand-header.svg';
 import { ReactComponent as TokenGated } from '../assets/brb/others/token-gated.svg';
 import { ReactComponent as WhiteArrow } from '../assets/brb/others/white-arrow.svg';
 import ChatBubbleComponent from './ChatBubbleComponent';
-import { ButtonV2, ItemHV2, ItemVV2, SectionV2 } from './SharedStylingV2';
+import { Atag, ButtonV2, ItemHV2, ItemVV2, SectionV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
@@ -31,9 +31,12 @@ export const ChatComponent = () => {
     <Container>
       <Header>
         Join the conversation
-        <BrandHeader>
+        <BrandATag
+          href="https://docs.push.org/developers"
+          target="_blank"
+        >
           <Brand />
-        </BrandHeader>
+        </BrandATag>
       </Header>
 
       <PlayGround>
@@ -140,12 +143,17 @@ const Header = styled.h3`
   }
 `;
 
-const BrandHeader = styled.div`
+const BrandATag = styled(Atag)`
+  background: transparent;
   position: absolute;
   right: 0px;
   bottom: -33px;
+  padding: 10px 0px;
+
   @media ${device.mobileL} {
-    right: 45px;
+    padding: 10px;
+    bottom: -43px;
+    right: 25px;
   }
 `;
 
