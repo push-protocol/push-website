@@ -224,6 +224,7 @@ export const ButtonV2 = styled.button`
   display: ${(props) => props.display || 'initial'};
   line-height: ${(props) => props.lineHeight || '26px'};
   flex: ${(props) => props.flex || 'initial'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
   align-self: ${(props) => props.alignSelf || 'auto'};
   align-items: ${(props) => props.alignItems || 'center'};
   justify-content: ${(props) => props.justifyContent || 'center'};
@@ -367,4 +368,91 @@ export const Atag = styled.a`
   & > div {
     display: flex;
   }
+`;
+
+// Focus Anchor
+export const FocusA = styled.a`
+  color: #fff;
+  background: #dd44b9;
+  font-size: 15px;
+  padding: 6px 12px 6px 8px;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: nowrap;
+
+  &:before {
+    content: '💡 ';
+    position: relative;
+  }
+
+  &:hover {
+    color: #000;
+  }
+`
+
+// Modal Container and Item - Small
+export const ModalContainer = styled(ItemHV2)`
+  align-items: center;
+  gap: 26px;
+  justify-content: flex-start;
+  margin-bottom: var(--ifm-leading);
+`;
+
+export const ModalInner = styled(ButtonV2)`
+  border: 1px solid #d9d9d9;
+  border-radius: 16px;
+  padding: 12px 16px;
+  background: transparent;
+  align-self: center;
+  display: flex;
+  gap: 10px;
+
+  & img {
+    height: 32px;
+    width: auto;
+  }
+
+  & span {
+    font-weight: 500;
+    color: initial;
+    align-self: center;
+    text-align: center;
+  }
+
+  &:hover {
+    border: 1px solid #d53a94;
+    background: transparent;
+    
+    & svg > path {
+      stroke: #d53a94;
+    }
+  }
+
+  &:hover:after {
+    background: transparent;
+  }
+`;
+
+export const ModalSmall = styled(ModalInner)`
+`;
+
+export const ModalMid = styled(ModalInner)`
+  gap: 20px;
+  padding: 30px 10px;
+  justify-content: space-between;
+
+  & img {
+    height: 48px;
+  }
+`;
+
+export const ModalMidEqual = styled(ModalMid)`
+  max-width: 180px;
+  flex: 1;
+`
+
+export const ModalWrapper = styled(ItemHV2)`
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
 `;

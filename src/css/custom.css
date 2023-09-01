@@ -138,20 +138,50 @@ a:hover {
 }
 
 /* ----- */
+/* Article CSS Overrids */
+/* ----- */
+article ul > li {
+  list-style: initial;
+}
+
+article ol > li {
+  list-style: number;
+}
+
+article ul > li::marker {
+  color: #dd44b9;
+}
+
+article ol > li::marker {
+  font-weight: 500;
+}
+
+article ul > li strong {
+  font-weight: 500;
+}
+
+/* ----- */
+/* Tabs CodeBlock CSS Overrids */
+/* ----- */
+
+/* ----- */
 /* Markdown CSS Overrides */
-.markdown > p {
+/* ----- */
+article .markdown > p {
   font-size: 18px;
 }
 
-.markdown > p > code {
+article .markdown > p > code {
   font-size: 1em;
   color: var(--ifm-color-primary);
 }
 /* ----- */
 /* Markdown CSS Overrides Ends*/
+/* ----- */
 
 /* ----- */
 /* Tabs CodeBlock CSS Overrids */
+/* ----- */
 .codetabs {
 
 }
@@ -160,6 +190,7 @@ a:hover {
   padding: 10px 10px;
   display: flex;
   align-items: center;
+  font-size: 0;
 }
 
 .codetab:before {
@@ -167,6 +198,16 @@ a:hover {
   height: 100%;
   content: "";
   margin-right: 10px;
+  font-size: initial;
+}
+
+.codetab::after {
+  font-size: initial;
+}
+
+/* Code Block JS */
+.codetab.js:after {
+  content:"Javascript";
 }
 
 .codetab.js::before {
@@ -177,6 +218,16 @@ a:hover {
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2MzAgNjMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MzAgNjMwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0RENDRCOTt9Cgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU+CjxyZWN0IGNsYXNzPSJzdDAiIHdpZHRoPSI2MzAiIGhlaWdodD0iNjMwIi8+CjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik00MjMuMiw0OTIuMmMxMi43LDIwLjcsMjkuMiwzNiw1OC40LDM2YzI0LjUsMCw0MC4yLTEyLjMsNDAuMi0yOS4yYzAtMjAuMy0xNi4xLTI3LjUtNDMuMS0zOS4zbC0xNC44LTYuNAoJYy00Mi43LTE4LjItNzEuMS00MS03MS4xLTg5LjJjMC00NC40LDMzLjgtNzguMiw4Ni43LTc4LjJjMzcuNiwwLDY0LjcsMTMuMSw4NC4yLDQ3LjRsLTQ2LjEsMjkuNmMtMTAuMS0xOC4yLTIxLjEtMjUuNC0zOC4xLTI1LjQKCWMtMTcuMywwLTI4LjMsMTEtMjguMywyNS40YzAsMTcuOCwxMSwyNSwzNi40LDM2bDE0LjgsNi4zYzUwLjMsMjEuNiw3OC43LDQzLjYsNzguNyw5M2MwLDUzLjMtNDEuOSw4Mi41LTk4LjEsODIuNQoJYy01NSwwLTkwLjUtMjYuMi0xMDcuOS02MC41TDQyMy4yLDQ5Mi4yeiBNMjE0LjEsNDk3LjNjOS4zLDE2LjUsMTcuOCwzMC41LDM4LjEsMzAuNWMxOS41LDAsMzEuNy03LjYsMzEuNy0zNy4yVjI4OS4zaDU5LjJ2MjAyLjEKCWMwLDYxLjMtMzUuOSw4OS4yLTg4LjQsODkuMmMtNDcuNCwwLTc0LjktMjQuNS04OC44LTU0LjFMMjE0LjEsNDk3LjN6Ii8+Cjwvc3ZnPgo=') no-repeat 0/contain;
 }
 
+/* Code Block React */
+.codetab.react:after {
+  content:"React";
+}
+
+.codetab.reactnative:after {
+  content:"React Native";
+}
+
+
 .codetab.react::before, .codetab.reactnative::before {
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMyAyMC41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMyAyMC41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzUyNTg2MDt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6IzUyNTg2MDt9Cjwvc3R5bGU+CjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjExLjUiIGN5PSIxMC4yIiByPSIyIi8+CjxnPgoJPGVsbGlwc2UgY2xhc3M9InN0MSIgY3g9IjExLjUiIGN5PSIxMC4yIiByeD0iMTEiIHJ5PSI0LjIiLz4KCTxlbGxpcHNlIHRyYW5zZm9ybT0ibWF0cml4KDAuODY2IC0wLjUgMC41IDAuODY2IC0zLjU3NTIgNy4xMjA4KSIgY2xhc3M9InN0MSIgY3g9IjExLjUiIGN5PSIxMC4yIiByeD0iNC4yIiByeT0iMTEiLz4KCTxlbGxpcHNlIHRyYW5zZm9ybT0ibWF0cml4KDAuNSAtMC44NjYgMC44NjYgMC41IC0zLjExMDkgMTUuMDc1MikiIGNsYXNzPSJzdDEiIGN4PSIxMS41IiBjeT0iMTAuMiIgcng9IjExIiByeT0iNC4yIi8+CjwvZz4KPC9zdmc+Cg==') no-repeat 0/contain;
 }
@@ -184,6 +235,8 @@ a:hover {
 .codetab.react:hover::before, .codetab.react.tabs__item--active::before, .codetab.reactnative:hover::before, .codetab.reactnative.tabs__item--active::before {
   background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI2LjAuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMyAyMC41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMyAyMC41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0RENDRCOTt9Cgkuc3Qxe2ZpbGw6bm9uZTtzdHJva2U6I0RENDRCOTt9Cjwvc3R5bGU+CjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjExLjUiIGN5PSIxMC4yIiByPSIyIi8+CjxnPgoJPGVsbGlwc2UgY2xhc3M9InN0MSIgY3g9IjExLjUiIGN5PSIxMC4yIiByeD0iMTEiIHJ5PSI0LjIiLz4KCTxlbGxpcHNlIHRyYW5zZm9ybT0ibWF0cml4KDAuODY2IC0wLjUgMC41IDAuODY2IC0zLjU3NTIgNy4xMjA4KSIgY2xhc3M9InN0MSIgY3g9IjExLjUiIGN5PSIxMC4yIiByeD0iNC4yIiByeT0iMTEiLz4KCTxlbGxpcHNlIHRyYW5zZm9ybT0ibWF0cml4KDAuNSAtMC44NjYgMC44NjYgMC41IC0zLjExMDkgMTUuMDc1MikiIGNsYXNzPSJzdDEiIGN4PSIxMS41IiBjeT0iMTAuMiIgcng9IjExIiByeT0iNC4yIi8+CjwvZz4KPC9zdmc+Cg==') no-repeat 0/contain;
 }
+
+
 
 /* Tabs CodeBlock CSS Overrids Ends */
 /* ----- */

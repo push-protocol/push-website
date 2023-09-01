@@ -1,92 +1,291 @@
 ---
 id: chat
 title: Intro to Push Chat
-hide_title: false
+hide_title: true
 slug: /chat
 displayed_sidebar: pushChatSidebar
 sidebar_position: 1
 ---
 
+# Intro to Push Chat
+
+Push Chat is a web3 messaging protocol that allows wallet addresses to send and receive messages without the need for traditional personal identifiers like phone numbers, email addresses, etc. It offers an enhanced layer of security and privacy compared to conventional messaging apps and allows for experiences that can only be achieved by native web3 messaging including the ability to <b>create token gated experiences, chat anonymously, tie your communication to your keys</b> and more! 
+
 <head>
   <title>Push Chat Introduction | Push Documentation</title>
 </head>
 
-import {ItemVV2, ItemHV2, SpanV2, ButtonV2, ImageV2} from '@site/src/components/SharedStylingV2';
-
-Push Chat is a web3 messaging protocol that allows wallet addresses to send and receive messages without the need for traditional personal identifiers like phone numbers, email addresses, etc. It offers an enhanced layer of security and privacy compared to conventional messaging apps and allows for experiences that can only be achieved by native web3 messaging including the ability to <b>send or request payments, create token gated experiences, chat anonymously</b> and more! 
+import {ItemVV2, ItemHV2, SpanV2, ButtonV2, ImageV2, ModalContainer, ModalSmall, ModalMid, ModalWrapper, FocusA, ModalMidEqual } from '@site/src/components/SharedStylingV2';
 
 ## Why Push Chat?
 
-You should use Push Chat protocol if you want to create:
-- Web3 Native Chat Experience
+Push Chat protocol enables seamless experience in messaging among web3 wallets. It's secure, encrypted, stored on IPFS and enables a shared (interoperable) chat experience. It allows Wallet addresses (or other form of identities like NFTs) which are akin to web3 usernames to finally have communication capabilities. It also opens up some of the native Web3 experiences not possible before, such as —
+
+- **Sending dms** with different message types like **GIFs**, **Embeds**, **Payments**, etc
+- **Enabling web3 native chat on your frontend** without the user going to any other platform
+- **Creating groups** for communities
+- **Conditional/Gated access** for joining of the group or sending message
+- **Enabling re-engagement** via [push notifications](https://docsv1.push.org/developers) protocol and providing Web2 UI (Like Whatsapp or Telegram)
+- **Cross-chain compatibility** including EVMs, non-EVMS, Wallet addresses, NFT profiles, etc
+- **Video / Audio calls** in either dm or in group
+
+## How Push Chat works?
+All communication from [Push Chat](/chat) is signed and validated by a set of nodes, which are together called Push Network. Read <FocusA href="/chat/concepts/push-chat-for-web3">understanding Push Chat in detail</FocusA> for a detailed understanding of it's architecture, spam control, decentralization efforts and more!
 
 ## SDKs
-<ItemHV2 alignItems="center" gap="26px" justifyContent="flex-start">
-  <ButtonV2 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-    border="1px solid #d9d9d9" 
-    borderRadius="16px" 
-    padding="12px 16px"
-    background="transparent"
-    hoverBackground="transparent"
-    hoverBorder="1px solid #d53a94"
-    hoverSVGPathStroke="#d53a94"
-  >
-    <ItemHV2 alignSelf="center">
-      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/javascript.png').default} srcSet={`${require('/static/img/techstack/javascript@2x.png').default} 2x, ${require('/static/img/techstack/javascript@3x.png').default} 3x`} />
-      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">Javascript</SpanV2>
-      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </ItemHV2>
-  </ButtonV2>
+<ModalContainer>
 
-  <ButtonV2 
+  <ModalSmall 
     onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-    border="1px solid #d9d9d9" 
-    borderRadius="16px" 
-    padding="12px 16px"
-    background="transparent"
-    hoverBackground="transparent"
-    hoverBorder="1px solid #d53a94"
-    hoverSVGPathStroke="#d53a94"
   >
-    <ItemHV2 alignSelf="center">
-      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/react.png').default} srcSet={`${require('/static/img/techstack/react@2x.png').default} 2x, ${require('/static/img/techstack/react@3x.png').default} 3x`} />
-      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React</SpanV2>
+    <img 
+      src={require('/static/img/techstack/javascript.png').default} 
+      srcSet={`${require('/static/img/techstack/javascript@2x.png').default} 2x, ${require('/static/img/techstack/javascript@3x.png').default} 3x`} 
+    />
+    <ModalWrapper>
+      <span>Javascript</span>
       <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </ItemHV2>
-  </ButtonV2>
+    </ModalWrapper>
+  </ModalSmall>
 
-  <ButtonV2 
+  <ModalSmall 
     onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-    border="1px solid #d9d9d9" 
-    borderRadius="16px" 
-    padding="12px 16px"
-    background="transparent"
-    hoverBackground="transparent"
-    hoverBorder="1px solid #d53a94"
-    hoverSVGPathStroke="#d53a94"
   >
-    <ItemHV2 alignSelf="center">
-      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/reactNative.png').default} srcSet={`${require('/static/img/techstack/reactNative@2x.png').default} 2x, ${require('/static/img/techstack/reactNative@3x.png').default} 3x`} />
-      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React Native</SpanV2>
+    <img
+      src={require('/static/img/techstack/react.png').default} 
+      srcSet={`${require('/static/img/techstack/react@2x.png').default} 2x, ${require('/static/img/techstack/react@3x.png').default} 3x`} 
+    />
+    <ModalWrapper>
+      <span>React</span>
       <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </ItemHV2>
-  </ButtonV2>
+    </ModalWrapper>
+  </ModalSmall>
 
-  <ButtonV2 
+  <ModalSmall 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
+  >
+    <img 
+      src={require('/static/img/techstack/reactNative.png').default} 
+      srcSet={`${require('/static/img/techstack/reactNative@2x.png').default} 2x, ${require('/static/img/techstack/reactNative@3x.png').default} 3x`} 
+    />
+    <ModalWrapper>
+      <span>React Native</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalSmall>
+
+  <ModalSmall 
     onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
-    border="1px solid #d9d9d9" 
-    borderRadius="16px" 
-    padding="12px 16px"
-    background="transparent"
-    hoverBackground="transparent"
-    hoverBorder="1px solid #d53a94"
-    hoverSVGPathStroke="#d53a94"
   >
-    <ItemHV2 alignSelf="center">
-      <ImageV2 height="32px" width="auto" src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
-      <SpanV2 padding="0px 5px 0px 10px" fontWeight="500">React Native</SpanV2>
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Dart</span>
       <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-    </ItemHV2>
-  </ButtonV2>
-</ItemHV2>
+    </ModalWrapper>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Swift</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Kotlin</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalSmall>
+
+</ModalContainer>
+
+## Message Types
+<ModalContainer>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Text</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Image</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>File</span>
+  </ModalSmall>
+  
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Media Embed</span>
+  </ModalSmall>
+  
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Reaction</span>
+  </ModalSmall>
+
+</ModalContainer>
+
+
+## Use Cases
+<ModalContainer>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Messaging</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Web3 Social</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>DAO</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Gated Communities</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>NFT</span>
+  </ModalSmall>
+
+  <ModalSmall 
+    onClick={() => (window.open('/chat/message-types/text', '_self'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <span>Support Bot</span>
+  </ModalSmall>
+
+</ModalContainer>
+
+## Messaging with Push
+Best way to understand Push Chat is to interact with it directly. To get started —
+1. Head to [app.push.org/chat/pushai.eth](https://app.push.org/chat/pushai.eth)
+2. Login with your wallet, ENS, UD or NFT. Push supports **multiple identities** including —
+ - Wallet Addresses — [0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666](https://app.push.org/chat/0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666)
+ - [ENS Domains](ens.domains) — Like vitalik.eth or [harshr.eth](https://app.push.org/chat/harshr.eth)
+ - [UD Domains](https://unstoppabledomains.com/) — Like sandeep.polygon or [harsh.crypto](https://app.push.org/chat/harsh.crypto)
+ - Lens or any NFT Handle — Like stani.lens or any NFT handle. ** NFT Chat supported on SDK but not on [app.push.org](app.push.org) **
+3. Start chatting. 
+4. Alternatively, you can also use any of the list of growing partners to experience chat on —
+
+<ModalContainer>
+
+  <ModalMidEqual
+    flexDirection="column"
+    maxWidth="200px"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Orb</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+  <ModalMidEqual 
+    flexDirection="column"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Soclly</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+  <ModalMidEqual 
+    flexDirection="column"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Graviton</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+  <ModalMidEqual 
+    flexDirection="column"
+    maxWidth="200px"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Unstoppable</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+</ModalContainer>
+
+**Integrated Push Chat on mainnet?** [Write to us](mailto:support@push.org) to get included in the list
+
+## Partners
+
+As a grassroot project, Push believes that combined, collobrative effort will lead to innovations and will keep pushing the boundaries of Web3. We work with these partners constantly to try out new features, ease development efforts of developers and develop new standards and features!
+
+<ModalContainer>
+
+  <ModalMidEqual
+    flexDirection="column"
+    maxWidth="200px"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>Polygon</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+  <ModalMidEqual 
+    flexDirection="column"
+    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
+  >
+    <img src={require('/static/img/techstack/dart.png').default} srcSet={`${require('/static/img/techstack/dart@2x.png').default} 2x, ${require('/static/img/techstack/dart@3x.png').default} 3x`} />
+    <ModalWrapper>
+      <span>UD</span>
+      <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </ModalWrapper>
+  </ModalMidEqual>
+
+</ModalContainer>
+
+
