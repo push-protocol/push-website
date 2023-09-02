@@ -12,7 +12,7 @@ All SDK functions require passing the parameter **env** which should either pass
 :::
 
 :::caution
-Latest version of Ethers (v6) introduces some breaking changes, for best results use Ethers v5 (ethers@^5.6)
+Latest version of Ethers (v6) introduces some breaking changes, for best results use Ethers v5 (ethers@^5.7)
 :::
 
 ## Introduction

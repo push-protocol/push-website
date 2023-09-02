@@ -1,0 +1,56 @@
+---
+id: devs-chat-develop-send-message
+title: Send Message
+hide_title: true
+slug: ./send-message
+displayed_sidebar: pushChatSidebar
+sidebar_position: 3
+---
+
+
+# Sending Message
+Push Chat doesn't require a user to be on the network for you to send message 😀. Instead, it gives the you the freedom to send a nudge to an account or a message (or a meme). 
+
+Though, it does come with a trade off of chats not being encrypted if a non-onboarded user of Push is sent a message though everything becomes completely E2EE from the moment the particular user is onboarded into the network. 
+
+<head>
+  <title>Send Message | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/components/SharedStylingV2';
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+    
+
+  ```js
+    // To Initialize Push User, pass the wallet signer
+    const userAlice = await PushAPI.initialize(signer); 
+  ```
+
+  </TabItem>
+</Tabs>
+
+This instanciates and returns a **Push User Profile** object which is used to interact with all function calls moving forward.
+
+## Beyond wallet addresses of EVM
+Since Push Chat supports EVM wallets, NFT wallets and in the future will also support non-EVM wallets. It was important to come up with a compatible standard that is blockchain agnostic to ensure you can do cross-chain messaging or cross-nft messaging. This lead us to introduce support other wallet address formats as well  —
+
+- **Standard Wallet Address** - Standard wallet `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` supported
+- **Blockchain Agnostic Wallet Address** - {blockchain standard}:{account id} format `eip155:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` supported
+- **NFT Wallet Address** - nft:{blockchain standard}{chain id}:{contract address}:{token id} format `nft:eip155:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` supported
+`nft:eip155:${nftChainId}:${nftContractAddress}:${nftTokenId}`
+:::info
+Blockchain Agnostic Wallet Address has been inspired by CAIP-10 format, which is a great step in marking wallet address blockchain agnostic. https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-10.md
+:::
+
+```js
+  // Ethereum mainnet (canonicalized with [EIP-55][] checksum)
+  eip155:0xab16a96D359eC26a11e2C2b3d8f8B8942d5Bfcdb
+
+  // Heavily borrowed and inspired by CAIP-10 format
+  // https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-10.md
+```
+

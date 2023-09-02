@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div className='spacing-small pointer'>
           <Link
             className='hero__button'
-            to="/docs/getting-started">
+            to="/devs/chat">
             Get Started
             <FiArrowUpRight className='ml-4' />
           </Link>
@@ -40,7 +40,7 @@ export default function Home(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <HomepageFeatures PinkSvg={null} />
       </main>
     </Layout>
   );

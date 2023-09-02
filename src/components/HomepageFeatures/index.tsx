@@ -81,7 +81,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Push Chat',
     Svg: require('@site/static/img/message.svg').default,
     PinkSvg: require('@site/static/img/message-pink.svg').default,
-    link: '/chat',
+    link: '/devs/chat',
     description: (
       <>
         Learn about the details of Push Chat and how to easily integrate it.

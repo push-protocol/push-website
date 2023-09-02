@@ -371,7 +371,7 @@ export const Atag = styled.a`
 `;
 
 // Focus Anchor
-export const FocusA = styled.a`
+export const AFocus = styled.a`
   color: #fff;
   background: #dd44b9;
   font-size: 15px;
@@ -404,6 +404,7 @@ export const ModalInner = styled(ButtonV2)`
   padding: 12px 16px;
   background: transparent;
   align-self: center;
+  justify-content: center;
   display: flex;
   gap: 10px;
 
@@ -413,10 +414,18 @@ export const ModalInner = styled(ButtonV2)`
   }
 
   & span {
+    display: flex;
     font-weight: 500;
     color: initial;
     align-self: center;
+    align-items: center;
     text-align: center;
+    margin: 0px 4px 0px 4px;
+    justify-content: center;
+
+    & svg {
+      margin-left: 5px;
+    }
   }
 
   &:hover {
@@ -447,8 +456,10 @@ export const ModalMid = styled(ModalInner)`
 `;
 
 export const ModalMidEqual = styled(ModalMid)`
-  max-width: 180px;
+  max-width: 160px;
+  align-self: stretch;
   flex: 1;
+
 `
 
 export const ModalWrapper = styled(ItemHV2)`

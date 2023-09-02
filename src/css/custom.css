@@ -140,6 +140,18 @@ a:hover {
 /* ----- */
 /* Article CSS Overrids */
 /* ----- */
+article .markdown > p > code, article tr > td > code, article ul > li > code, article em > code {
+  font-size: 0.8em !important;
+  padding: 4px;
+}
+
+article em > code {
+  background: #dd44b9;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+}
+
 article ul > li {
   list-style: initial;
 }
