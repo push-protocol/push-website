@@ -39,6 +39,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           borderRadius="8px"
           padding="8px 16px 6px 16px"
           height="33px"
+          margin='auto 0 0 0'
           style={{ cursor: 'pointer' }}
           onClick={() =>
             openLink(
