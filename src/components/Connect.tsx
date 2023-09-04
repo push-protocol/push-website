@@ -2,11 +2,17 @@
 // @ts-nocheck
 // eslint-disable react/prop-types
 /* eslint-disable */
+
+// React + Web3 Essentials
 import { useEffect } from 'react';
-import styled from 'styled-components';
-import { InjectedConnector } from '@web3-react/injected-connector';
 import { useWeb3React } from '@web3-react/core';
-import { Span } from './SharedStyling';
+import { InjectedConnector } from '@web3-react/injected-connector';
+
+// External Components
+import styled from 'styled-components';
+
+// Internal Components
+import { SpanV2 } from './SharedStylingV2';
 
 interface NwMappingType {
   [key: number]: string;
@@ -34,7 +40,6 @@ const ConnectWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-
 
   & .account {
     font-size: 1.2rem;
@@ -70,8 +75,8 @@ const Disconnect = styled(StyledButton)`
   background: rgb(226, 8, 128);
 `;
 
-const AccountSpan = styled(Span)`
-  background: linear-gradient(87.17deg, #B6A0F5 0%, #F46EF7 57.29%, #FF95D5 100%);
+const AccountSpan = styled(SpanV2)`
+  background: linear-gradient(87.17deg, #b6a0f5 0%, #f46ef7 57.29%, #ff95d5 100%);
   border-radius: 16px;
 `;
 
@@ -114,11 +119,7 @@ const ConnectButton = () => {
     <ConnectWrapper>
       {active ? (
         <>
-          <AccountSpan
-          padding='10px'
-          >
-            {account}
-          </AccountSpan>
+          <AccountSpan padding="10px">{account}</AccountSpan>
           <Disconnect onClick={disconnect}>Disconnect Metamask</Disconnect>
         </>
       ) : (

@@ -1,7 +1,10 @@
 /* eslint-disable */
 
+// External Components
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+
+// Internal Configs
 import { device } from '../config/globals';
 /**
  * Usage Hierarchy
@@ -491,7 +494,7 @@ export const LinkTo = styled(Link)`
     margin-left: 3px;
   }
 `;
-export const Anchor = styled.a`
+export const Anchor = styled.a` 
   font-family: 'Strawford';
   line-height: ${(props) => props.lineHeight || 'inherit'};
   display: flex;

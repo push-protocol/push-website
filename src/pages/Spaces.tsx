@@ -1,23 +1,27 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable */
-
+// React + Web3 Essentials
 import React, { useState } from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
+// Internal Components
 import PageWrapper from 'components/PageWrapper';
-import pageMeta from 'config/pageMeta';
 import MobileSpaceBg from '../assets/mobile-space-background.webp';
 import SpaceBg from '../assets/space-background.webp';
-
 import { subscribeToSpace } from 'api';
 import ImageHolder from 'components/ImageHolder';
-import { Span } from 'components/SharedStyling';
-import { device } from 'config/globals';
+import { SpanV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
 import MobileSpaceImage from '../assets/mobile-space-image.webp';
 import SpaceImage from '../assets/space-image.webp';
+
+// Internal Configs
+import { device } from 'config/globals';
+import pageMeta from 'config/pageMeta';
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
@@ -107,25 +111,25 @@ const Spaces = () => {
             {isLoading ? <MaskInput /> : null}
           </Wrapper> */}
           {emailSuccess && (
-            <Span
+            <SpanV2
               className="msg"
-              size={isMobile ? '18px' : '20px'}
+              fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="white"
             >
               {emailSuccess}
-            </Span>
+            </SpanV2>
           )}
 
           {!emailSuccess && emailError && (
-            <Span
+            <SpanV2
               className="msg"
-              size={isMobile ? '18px' : '20px'}
+              fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="red"
             >
               {emailError}
-            </Span>
+            </SpanV2>
           )}
         </Box>
 

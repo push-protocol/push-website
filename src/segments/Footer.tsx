@@ -1,38 +1,34 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
-
-import { useNavigate } from 'react-router-dom';
-
 import { BsArrowUpRight } from 'react-icons/bs';
-import { device } from '../config/globals';
+import { useTranslation } from 'react-i18next';
 
-import { Section, Content, ItemH, ItemV, Span, Anchor, LinkTo } from '../components/SharedStyling';
-
+// Internal Components
+import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag, LinkToV2 } from 'components/SharedStylingV2';
 import EmailInputTextField from '../components/EmailInputTextField';
-
 import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
 import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import { ReactComponent as GithubSVG } from '../assets/github.svg';
 import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
 import { ReactComponent as TelegramSVG } from '../assets/telegram.svg';
-
 import { ReactComponent as AppleSVG } from '../assets/apple.svg';
 import { ReactComponent as AndroidSVG } from '../assets/android.svg';
 import { ReactComponent as PushBellSVG } from '../assets/pushBell.svg';
-
 import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
 import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import { device } from '../config/globals';
 
 function Footer() {
-  
   // Internationalization
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
 
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);
@@ -45,13 +41,15 @@ function Footer() {
         background="#121315"
         padding="160px 0 0 0"
       >
-        <Content
+        <ContentV2
           className="contentBox"
-          padding="0"
+          padding="40px 0px"
+          maxWidth="1140px"
+          alignSelf="center"
         >
           {/* Information Cards */}
 
-          <ItemH gap="32px">
+          <ItemHV2 gap="32px">
             <InfoCard>
               <FooterJoinusFigure
                 className="figureSvg"
@@ -60,14 +58,14 @@ function Footer() {
               />
 
               <InfoDetails>
-                <Span
+                <SpanV2
                   color="#FFF"
-                  weight="500"
-                  size="24px"
+                  fontWeight="500"
+                  fontSize="24px"
                   lineHeight="142%"
                 >
                   {t('footer.info-section.positions-card.text')}
-                </Span>
+                </SpanV2>
                 <FooterAnchorPrimary
                   href="https://angel.co/company/push-protocol"
                   title={t('footer.info-section.positions-card.link-text')}
@@ -87,14 +85,14 @@ function Footer() {
               />
 
               <InfoDetails>
-                <Span
+                <SpanV2
                   color="#FFF"
-                  weight="500"
-                  size="24px"
+                  fontWeight="500"
+                  fontSize="24px"
                   lineHeight="142%"
                 >
                   {t('footer.info-section.docs-card.text')}
-                </Span>
+                </SpanV2>
                 <FooterAnchorPrimary
                   href="https://docs.push.org/developers"
                   title={t('footer.info-section.docs-card.link-text')}
@@ -105,26 +103,26 @@ function Footer() {
                 </FooterAnchorPrimary>
               </InfoDetails>
             </InfoCard>
-          </ItemH>
+          </ItemHV2>
 
           {/* footer links */}
-          <ItemH
+          <ItemHV2
             gap="32px"
             margin="120px 0 0 0"
           >
             <FooterContainer>
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    weight="400"
-                    size="18px"
+                  <SpanV2
+                    fontWeight="400"
+                    fontSize="18px"
                     lineHeight="142%"
                   >
                     {t('footer.links-section.company-column.title')}
-                  </Span>
+                  </SpanV2>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/frens"
                     title={t('footer.links-section.company-column.push-ecosystem-link')}
                     onClick={scrollToTop}
@@ -140,7 +138,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/tos"
                     title={t('footer.links-section.company-column.terms-link')}
                     onClick={scrollToTop}
@@ -149,26 +147,25 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/privacy"
                     title={t('footer.links-section.company-column.privacy-link')}
                     onClick={scrollToTop}
                   >
                     {t('footer.links-section.company-column.privacy-link')}
                   </FooterAnchorSecondary>
-                  
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    weight="400"
-                    size="18px"
+                  <SpanV2
+                    fontWeight="400"
+                    fontSize="18px"
                     lineHeight="142%"
                   >
                     {t('footer.links-section.governance-column.title')}
-                  </Span>
+                  </SpanV2>
 
                   <FooterAnchorSecondary
                     href="https://gov.push.org"
@@ -214,13 +211,13 @@ function Footer() {
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    weight="400"
-                    size="18px"
+                  <SpanV2
+                    fontWeight="400"
+                    fontSize="18px"
                     lineHeight="142%"
                   >
                     {t('footer.links-section.resources-column.title')}
-                  </Span>
+                  </SpanV2>
                   <FooterAnchorSecondary
                     href="https://push-protocol.medium.com/"
                     title={t('footer.links-section.resources-column.blog-link')}
@@ -264,13 +261,13 @@ function Footer() {
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    weight="400"
-                    size="18px"
+                  <SpanV2
+                    fontWeight="400"
+                    fontSize="18px"
                     lineHeight="142%"
                   >
                     {t('footer.links-section.subscribe-column.title')}
-                  </Span>
+                  </SpanV2>
 
                   <FooterAnchorSecondary
                     href="mailto:support@epns.io"
@@ -280,7 +277,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    as={LinkTo}
+                    as={LinkToV2}
                     to="/faq"
                     title={t('footer.links-section.subscribe-column.faq-link')}
                     onClick={scrollToTop}
@@ -292,36 +289,36 @@ function Footer() {
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    weight="400"
-                    size="18px"
+                  <SpanV2
+                    fontWeight="400"
+                    fontSize="18px"
                     lineHeight="142%"
                   >
                     {t('footer.links-section.support-column.title')}
-                  </Span>
+                  </SpanV2>
 
                   <EmailInputTextField placeholder={t('footer.links-section.support-column.email-placeholder')} />
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>
-          </ItemH>
+          </ItemHV2>
 
           {/* Social Icon Links */}
           <SocialLinks gap="32px">
-            <ItemV
+            <ItemHV2
               justifyContent="flex-start"
               flex="1"
               gap="12px"
               className="pushLinks"
             >
-              <LinkTo
+              <LinkToV2
                 className="pushLogo"
                 to="/"
                 title="Push"
                 onClick={scrollToTop}
               >
                 <PushLogoTextWhite />
-              </LinkTo>
+              </LinkToV2>
 
               <FooterAnchorIcon
                 href="https://github.com/ethereum-push-notification-service"
@@ -364,9 +361,9 @@ function Footer() {
                   height={22}
                 />
               </FooterAnchorIcon>
-            </ItemV>
+            </ItemHV2>
 
-            <ItemV
+            <ItemHV2
               justifyContent="flex-end"
               flex="1"
               gap="12px"
@@ -404,9 +401,9 @@ function Footer() {
                   height={22}
                 />
               </FooterAnchorIcon>
-            </ItemV>
+            </ItemHV2>
           </SocialLinks>
-        </Content>
+        </ContentV2>
       </ResponsiveSection>
     </StyledFooter>
   );
@@ -418,14 +415,15 @@ const StyledFooter = styled.footer`
   position: relative;
 `;
 
-const ResponsiveSection = styled(Section)`
+const ResponsiveSection = styled(SectionV2)`
+  flex-direction: column;
   @media ${device.tablet} {
     padding-left: 30px !important;
     padding-right: 30px !important;
   }
 `;
 
-const InfoCard = styled(ItemV)`
+const InfoCard = styled(ItemVV2)`
   border-radius: 32px;
   background: #2a2a39;
   padding: 48px 30px 48px 40px;
@@ -505,7 +503,7 @@ const FooterLinks = styled.div`
   row-gap: 6px;
 `;
 
-const SocialLinks = styled(ItemH)`
+const SocialLinks = styled(ItemHV2)`
   margin: 80px 0 40px 0;
   position: relative;
 
@@ -537,7 +535,7 @@ const SocialLinks = styled(ItemH)`
   }
 `;
 
-const FooterAnchorPrimary = styled(Anchor)`
+const FooterAnchorPrimary = styled(Atag)`
   color: #dd44b9;
   border-radius: 16px;
   padding: 14px 0;
@@ -546,6 +544,7 @@ const FooterAnchorPrimary = styled(Anchor)`
   letter-spacing: -0.03em;
   line-height: 142%;
   justify-content: flex-start;
+  background: transparent;
 
   &:hover & {
     filter: transparent;
@@ -558,7 +557,7 @@ const FooterAnchorPrimary = styled(Anchor)`
   }
 `;
 
-const FooterAnchorSecondary = styled(Anchor)`
+const FooterAnchorSecondary = styled(Atag)`
   color: #9c9cbe;
   padding: 0;
   font-size: 16px;
@@ -573,7 +572,7 @@ const FooterAnchorSecondary = styled(Anchor)`
   }
 `;
 
-const FooterAnchorIcon = styled(Anchor)`
+const FooterAnchorIcon = styled(Atag)`
   border: 1px solid #2a2a39;
   border-radius: 12px;
   padding: 10px;

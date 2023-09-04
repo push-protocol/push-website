@@ -7,7 +7,7 @@ import { ChatViewComponent } from '@pushprotocol/uiweb';
 import styled from 'styled-components';
 
 // Internal Components
-import { Section } from './SharedStyling';
+import { SectionV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from 'config/globals';
@@ -29,7 +29,7 @@ const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleF
   );
 };
 
-const ChatViewComponentCard = styled(Section)`
+const ChatViewComponentCard = styled(SectionV2)`
   height: 660px;
   width: 85%;
   margin: 15px auto;

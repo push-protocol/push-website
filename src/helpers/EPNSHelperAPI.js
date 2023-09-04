@@ -1,3 +1,4 @@
+// React + Web3 Essentials
 import * as ethers from 'ethers';
 
 ethers.utils.Logger.setLogLevel('off');

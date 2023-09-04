@@ -3,23 +3,25 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
+// React + Web3 Essentials
+import React, { useEffect, useState } from 'react';
+
+// External Components
+import gsap from 'gsap';
+import ReactGA from 'react-ga';
+import { BiSearch } from 'react-icons/bi';
+import { FiChevronDown } from 'react-icons/fi';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
+// Internal Components
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png';
 import ChannelItem, { Tilt } from 'components/ChannelItem';
 import FadeInAnimation from 'components/FadeInAnimation';
 import HybridSection from 'components/HybridSection';
-import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
 import SignupInput from 'components/SignupInput';
-import { objChannelList } from 'utils/ChannelList';
-import { device } from 'config/globals';
-import pageMeta from 'config/pageMeta';
-import gsap from 'gsap';
 import useMediaQuery from 'hooks/useMediaQuery';
-import React, { useEffect, useState } from 'react';
-import ReactGA from 'react-ga';
-import { BiSearch } from 'react-icons/bi';
-import { FiChevronDown } from 'react-icons/fi';
-import styled from 'styled-components';
 import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
 import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
 import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
@@ -34,8 +36,13 @@ import { ReactComponent as UnstoppableSVG } from '../assets/float/Unstoppable.sv
 import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
 import PageWrapper from '../components/PageWrapper';
 import { BodyContent } from './Home';
+import { ContentV2, H2V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import { objChannelList } from 'utils/ChannelList';
 
-import { useTranslation } from 'react-i18next';
+// Internal Configs
+import { device } from 'config/globals';
+import pageMeta from 'config/pageMeta';
+
 
 const FrensText = () => {
   // React GA Analytics
@@ -183,10 +190,12 @@ const FrensText = () => {
     setActive(name);
     setSearch('');
     setPage(0); // resets the pagination count
-    if (name == 'All') { // filter for All category
+    if (name == 'All') {
+      // filter for All category
       fetchChannels();
       setCount(objChannelList.length);
-    } else if (name === 'Hackathons') { // filter for Hackathons category
+    } else if (name === 'Hackathons') {
+      // filter for Hackathons category
       setLoading(true);
       let sortList = objChannelList.filter((x) => x.type === name);
       setCount(sortList.length);
@@ -194,7 +203,8 @@ const FrensText = () => {
 
       setChannels(sortList);
       setLoading(false);
-    } else { // filter for rest of the categories
+    } else {
+      // filter for rest of the categories
       setLoading(true);
       let sortList = objChannelList.filter((x) => x.type === name);
       setChannels(sortList);
@@ -290,28 +300,30 @@ const FrensText = () => {
             <MeanFinanceSVG className="mean-finance" />
             <UniswapSVG className="uniswap" />
 
-            <Content
+            <ContentV2
               className="contentBox"
               flex="0"
+              padding="40px 0px"
+              maxWidth="1140px"
             >
-              <ItemH
+              <ItemHV2
                 flexDirection="column"
                 flex="0"
                 margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
-                <HeroHeaders>{t('frens.hero.title')}</HeroHeaders>
-                <Span
+                <HeroHeaderV2>{t('frens.hero.title')}</HeroHeaderV2>
+                <SpanV2
                   textAlign="center"
                   margin="20px 0 0 0"
-                  spacing="-0.03em"
-                  weight={isMobile ? '300' : '400'}
-                  size={isMobile ? '18px' : '23px'}
+                  letterSpacing="-0.03em"
+                  fontWeight={isMobile ? '300' : '400'}
+                  fontSize={isMobile ? '18px' : '23px'}
                 >
                   {t('frens.hero.description.part1')} {!isTablet && <br />} {t('frens.hero.description.part2')}
-                </Span>
-              </ItemH>
-            </Content>
+                </SpanV2>
+              </ItemHV2>
+            </ContentV2>
           </AnimationSection>
         </AnimationIcon>
 
@@ -321,19 +333,23 @@ const FrensText = () => {
           className="lightBackground"
           curve="bottom"
         >
-          <Content className="contentBox">
+          <ContentV2
+            className="contentBox"
+            padding="40px 0px"
+            maxWidth="1140px"
+          >
             <PushRow>
-              <ItemV justifyContent="flex-start">
+              <ItemHV2 justifyContent="flex-start">
                 <ResponsiveH2
-                  size="40px"
-                  weight="500"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="500"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                 >
                   {t('frens.powered-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-              <ItemV
+              </ItemHV2>
+              <ItemHV2
                 maxWidth="350px"
                 justifyContent="flex-end"
               >
@@ -349,7 +365,7 @@ const FrensText = () => {
                     onChange={channelSearch}
                   />
                 </Wrapper>
-              </ItemV>
+              </ItemHV2>
             </PushRow>
 
             <ToggleSection>
@@ -359,7 +375,7 @@ const FrensText = () => {
                   active={active === item?.name ? true : false}
                   onClick={() => handleSort(item?.name)}
                 >
-                  <Span>{item?.name}</Span>
+                  <SpanV2>{item?.name}</SpanV2>
 
                   {active === item?.name && <b>{count}</b>}
                 </ToggleButton>
@@ -401,13 +417,13 @@ const FrensText = () => {
             )}
 
             {loading && (
-              <ItemH>
+              <ItemHV2>
                 <img
                   src={SpinnerSVG}
                   alt=""
                   width={140}
                 />
-              </ItemH>
+              </ItemHV2>
             )}
 
             {!loading && active === 'All' && search.length === 0 && (
@@ -423,11 +439,11 @@ const FrensText = () => {
                 <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
-          </Content>
+          </ContentV2>
 
           <BodyContent className="contentBox">
             <SignupBox margin="0 0 0px 0">
-              <ItemV
+              <ItemVV2
                 justifyContent="flex-start"
                 gap="12px"
               >
@@ -441,20 +457,20 @@ const FrensText = () => {
                 >
                   {t('frens.email-section.title')}
                 </ResponsiveH2>
-                <Span
+                <SpanV2
                   color="#303C5E"
-                  size="20px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="20px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="138.5%"
                 >
                   {t('frens.email-section.text')}
-                </Span>
-              </ItemV>
+                </SpanV2>
+              </ItemVV2>
 
-              <ItemV>
+              <ItemVV2>
                 <SignupInput />
-              </ItemV>
+              </ItemVV2>
             </SignupBox>
           </BodyContent>
         </PoweredSection>
@@ -553,13 +569,13 @@ const ToggleButton = styled.div`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
 `;
 
-const SignupBox = styled(ItemH)`
+const SignupBox = styled(ItemHV2)`
   background: rgba(214, 177, 242, 0.8);
   backdrop-filter: blur(15px);
   border-radius: 32px;
@@ -744,7 +760,7 @@ const AnimationSection = styled(ResponsiveSection)`
   }
 `;
 
-const PushRow = styled(ItemH)`
+const PushRow = styled(ItemHV2)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {

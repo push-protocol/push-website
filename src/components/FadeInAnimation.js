@@ -1,5 +1,9 @@
 /* eslint-disable */
+
+// React + Web3 Essentials
 import React, { useRef, useEffect } from 'react';
+
+// External Components
 import { gsap } from 'gsap';
 
 const FadeInAnimation = ({ children, wrapperElement = 'div', direction = null, delay = 0, ...props }) => {
