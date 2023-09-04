@@ -78,5 +78,11 @@ export const brbPartnersList = [
       alt: 'Timeswap, Partner of Push, #BRBIndia, pan-India dev tour',
       title: 'Visit Timeswap Website',
     },
+    {
+      srcref: 'others',
+      link: '',
+      alt: 'Others, Partner of Push, #BRBIndia, pan-India dev tour',
+      title: 'Other Partners',
+    },
   ],
 ];
