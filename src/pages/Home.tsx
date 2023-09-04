@@ -130,7 +130,6 @@ function Home({ isAlertVisible }) {
 
           <ContentV2
             alignSelf="center"
-            maxWidth="1140px"
           >
             {
               // rendering the main animation only on large laptops and desktops
@@ -284,7 +283,6 @@ function Home({ isAlertVisible }) {
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
-            maxWidth="1140px"
           >
             <PartnerChannels />
 
@@ -512,7 +510,6 @@ function Home({ isAlertVisible }) {
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
-            maxWidth="1140px"
           >
             <IntegrateGrowWithPushRow gap="18px">
               <FadeInAnimation
@@ -978,7 +975,6 @@ function Home({ isAlertVisible }) {
             className="contentBox"
             padding="40px"
             alignSelf="flex-start"
-            maxWidth="1140px"
           >
             <ItemHV2 justifyContent="flex-start">
               <ItemHV2
@@ -1466,7 +1462,7 @@ export const BodyContent = styled.div`
 	&.contentBox {
 	// 	width: 100%;
   //   align-self: center;
-    max-width: 1140px;
+    // max-width: 1140px;
   //   flex: 1;
   //   display: flex;
 	// }

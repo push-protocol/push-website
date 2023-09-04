@@ -133,7 +133,6 @@ function Header() {
       <SectionV2>
         <ContentV2
           padding="0"
-          maxWidth="1140px"
         >
           {/* Header Content Begins */}
           <HeaderItemH
@@ -699,7 +698,7 @@ const StyledHeader = styled.header`
   }
 
   /* this is IMP for boxing the content at 1140px
-  @media (min-width: 1140px) {
+  @media (min-width: 1213px) {
     padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
     padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
   } */

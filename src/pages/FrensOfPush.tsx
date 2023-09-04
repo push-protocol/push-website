@@ -305,7 +305,6 @@ const FrensText = () => {
               flex="0"
               padding="30px 0px"
               alignSelf="center"
-              maxWidth="1140px"
             >
               <ItemHV2
                 flexDirection="column"
@@ -337,9 +336,9 @@ const FrensText = () => {
           <ContentV2
             className="contentBox"
             padding="40px 0px"
-            maxWidth="1140px"
             flex="0"
             alignSelf="center"
+            justifyContent='flex-start'
           >
             <PushRow>
               <ItemHV2 justifyContent="flex-start">

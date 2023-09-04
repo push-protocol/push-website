@@ -62,7 +62,7 @@ export const ContentV2 = styled.div`
   max-width: ${(props) => props.maxWidth || '1213px'};
   // max-width: 1140px;
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent || 'center'};
   box-sizing: ${(props) => props.boxSizing || 'content-box'};
   padding: ${(props) => props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
 

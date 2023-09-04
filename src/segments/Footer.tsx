@@ -44,7 +44,6 @@ function Footer() {
         <ContentV2
           className="contentBox"
           padding="40px 0px"
-          maxWidth="1140px"
           alignSelf="center"
         >
           {/* Information Cards */}
