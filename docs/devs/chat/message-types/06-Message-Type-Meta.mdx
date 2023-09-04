@@ -22,19 +22,19 @@ import TabItem from '@theme/TabItem';
     
 
   ```typescript
-    // userAlice.chat.send(recipient, message)
-    // This section focuses on customization parameters for 'message' object
-    const aliceMessagesBob = await userAlice.chat.send(recipient, {
-      type: 'Meta',
-      content: "Alice.eth create the grp 'xyz'", // content can be eliminated
-      action: "CreateGroup", // can be "AddMember", "RemoveMember", "PromoteAdmin", etc
-      info: { // any added info that is not visible but can be programmatically understood
-        affected: [], // recipients // this can be array
-        arbitary: { // optional, can have anything, never shown based on type
-          timestamp: // epoch one, include timestamp so session key becomes different
-        }
+  // userAlice.chat.send(recipient, message)
+  // This section focuses on customization parameters for 'message' object
+  const aliceMessagesBob = await userAlice.chat.send(recipient, {
+    type: 'Meta',
+    content: "Alice.eth create the grp 'xyz'", // content can be eliminated
+    action: "CreateGroup", // can be "AddMember", "RemoveMember", "PromoteAdmin", etc
+    info: { // any added info that is not visible but can be programmatically understood
+      affected: [], // recipients // this can be array
+      arbitary: { // optional, can have anything, never shown based on type
+        timestamp: // epoch one, include timestamp so session key becomes different
       }
-    });
+    }
+  });
   ```
 
   </TabItem>

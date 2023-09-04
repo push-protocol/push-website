@@ -22,14 +22,14 @@ import TabItem from '@theme/TabItem';
     
 
   ```typescript
-    // userAlice.chat.send(recipient, message)
-    // This section focuses on customization parameters for 'message' object
-    const aliceMessagesBob = await userAlice.chat.send(recipient, {
-      type: 'Reaction',
-      content: "👍", // content can be eliminated
-      action: "ThumbsUp", // can be "ThumbsUp", "ThumbsDown", "Heart", "Clap", "Laugh", "Sad", etc
-      reference: "bafyreia2okco5ocdxmoxon72erviypaht74u3dqunf3vydu237ybju4kw4" // pass in the reference to the message hash that this reaction is intended for 
-    });
+  // userAlice.chat.send(recipient, message)
+  // This section focuses on customization parameters for 'message' object
+  const aliceMessagesBob = await userAlice.chat.send(recipient, {
+    type: 'Reaction',
+    content: "👍", // content can be eliminated
+    action: "ThumbsUp", // can be "ThumbsUp", "ThumbsDown", "Heart", "Clap", "Laugh", "Sad", etc
+    reference: "bafyreia2okco5ocdxmoxon72erviypaht74u3dqunf3vydu237ybju4kw4" // pass in the reference to the message hash that this reaction is intended for 
+  });
   ```
 
   </TabItem>

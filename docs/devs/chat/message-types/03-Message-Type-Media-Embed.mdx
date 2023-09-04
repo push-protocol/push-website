@@ -1,6 +1,6 @@
 ---
 id: devs-chat-message-type-media-embed
-title: Media embed
+title: Media Embed
 hide_title: true
 slug: ./media-embed
 displayed_sidebar: pushChatSidebar
@@ -22,12 +22,12 @@ import TabItem from '@theme/TabItem';
     
 
   ```typescript
-    // userAlice.chat.send(recipient, message)
-    // This section focuses on customization parameters for 'message' object
-    const aliceMessagesBob = await userAlice.chat.send(recipient, {
-      type: 'MediaEmbed',
-      content: 'https://media1.giphy.com/media/FtlUfrq3pVZXVNjoxf/giphy360p.mp4?cid=ecf05e47jk317254v9hbdjrknemduocie4pf54wtsir98xsx&ep=v1_videos_search&rid=giphy360p.mp4&ct=v',
-    });
+  // userAlice.chat.send(recipient, message)
+  // This section focuses on customization parameters for 'message' object
+  const aliceMessagesBob = await userAlice.chat.send(recipient, {
+    type: 'MediaEmbed',
+    content: 'https://media1.giphy.com/media/FtlUfrq3pVZXVNjoxf/giphy360p.mp4?cid=ecf05e47jk317254v9hbdjrknemduocie4pf54wtsir98xsx&ep=v1_videos_search&rid=giphy360p.mp4&ct=v',
+  });
   ```
 
   </TabItem>

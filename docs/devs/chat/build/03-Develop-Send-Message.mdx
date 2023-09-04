@@ -1,6 +1,6 @@
 ---
 id: devs-chat-develop-send-message
-title: Send message
+title: Send Message
 hide_title: true
 slug: ./send-message
 displayed_sidebar: pushChatSidebar
@@ -26,14 +26,14 @@ import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/comp
   <TabItem value="js" attributes={{className: "codetab js"}} default>
     
 
-  ```js
-    // userAlice.chat.send(recipient, {message})
-    // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-    // message - Can be modified to send various types of messages like Images, Reactions, etc
-    const aliceMessagesBob = await userAlice.chat.send(bobAccount, {
-      type: 'Text',
-      content: 'Hello Bob!',
-    });
+  ```typescript
+  // userAlice.chat.send(recipient, {message})
+  // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+  // message - Can be modified to send various types of messages like Images, Reactions, etc
+  const aliceMessagesBob = await userAlice.chat.send(bobAccount, {
+    type: 'Text',
+    content: 'Hello Bob!',
+  });
   ```
 
   </TabItem>
@@ -41,7 +41,7 @@ import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/comp
 See <AFocus href='/devs/chat/message-types/'>Message Types</AFocus> to understand how `message` object can be customized to send variety of messages.
 
 ---
-### Customization parameters
+### Send message parameters
 When sending a message, you can customize the following params
 
 | Param                  | Type                   | Subtype                                         | Default | Remarks                                                                             |
@@ -53,10 +53,12 @@ When sending a message, you can customize the following params
 
 > Note: Parameters _`in this style`_ are mandatory.
 
+<details>
+<summary>Expected response</summary>
+200 OK
+</details>
 
----
-
-### Sending images, payments, reactions, etc
+## Sending images, payments, reactions, etc
 The second parameter of `chat.send` contains the `message` object that can be customized to send an evergrowing types of supported formats from the protocol. 
 
 See <AFocus href='/devs/chat/message-types/'>Message Types</AFocus> to understand how `message` object can be customized to send variety of messages.

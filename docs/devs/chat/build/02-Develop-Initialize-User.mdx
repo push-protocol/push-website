@@ -1,6 +1,6 @@
 ---
 id: devs-chat-develop-initialize-user
-title: Initialize user
+title: Initialize User
 hide_title: true
 slug: ./initialize-user
 displayed_sidebar: pushChatSidebar
@@ -24,13 +24,13 @@ import TabItem from '@theme/TabItem';
   <TabItem value="js" attributes={{className: "codetab js"}} default>
     
 
-  ```js
-    import * as PushAPI from '@pushprotocol/restapi';
+  ```typescript
+  import * as PushAPI from '@pushprotocol/restapi';
 
-    // PushAPI.initialize(signer, {options?});
-    // signer - pass the signer from your app and set env to 'prod' for mainnet app
-    // options? - optional, can pass initialization parameters for customization 
-    const userAlice = await PushAPI.initialize(signer, {env: 'prod'}); 
+  // PushAPI.initialize(signer, {options?});
+  // signer - pass the signer from your app and set env to 'prod' for mainnet app
+  // options? - optional, can pass initialization parameters for customization 
+  const userAlice = await PushAPI.initialize(signer, {env: 'prod'}); 
   ```
 
   </TabItem>
@@ -44,7 +44,7 @@ Push Network operates on the following environments —
 - **Staging** - Set by default, can omit `options` if testing your app on testnet.
 
 ---
-### Customization parameters
+### Initialize user parameters
 When initializing your user, you can customize the process using several parameters. Here's a breakdown:
 
 | Param          | Type                          | Sub-Type                               | Default       | Remarks                                                                                |
@@ -61,6 +61,11 @@ When initializing your user, you can customize the process using several paramet
 
 
 > Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+<summary>Expected response</summary>
+200 OK
+</details>
 
 ---
 
@@ -136,10 +141,7 @@ function initializePushAPI(signer: Signer, options?: PushAPIInitializeProps) {
     // Initialization logic here
 }
 
-
 ```
-
----
 
 ## Using for Lens / Cyberconnect / Any NFTs
 
