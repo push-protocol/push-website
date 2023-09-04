@@ -271,13 +271,13 @@ function BRB() {
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
                     <NavigationMenuHeader>
-                      <Span
+                      <SpanV2
                         size="18px"
                         weight="200"
                         family="Glancyr !important"
                       >
                         Bounties
-                      </Span>
+                      </SpanV2>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
