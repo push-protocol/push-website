@@ -1462,7 +1462,7 @@ export const BodyContent = styled.div`
 	&.contentBox {
 	// 	width: 100%;
   //   align-self: center;
-    // max-width: 1140px;
+    max-width: 1213px;
   //   flex: 1;
   //   display: flex;
 	// }

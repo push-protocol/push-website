@@ -475,7 +475,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       hoverBackground="none"
-                      alignItems="center"
+                      // alignItems="center"
                       margin={isMobile ? '16px 16px' : 'auto 0'}
                     >
                       Billion Reasons to Build
