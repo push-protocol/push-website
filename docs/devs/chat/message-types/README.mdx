@@ -8,9 +8,9 @@ sidebar_position: 3
 ---
 
 # Intro to Message Types
-Each message of Push Chat is a json payload that carries with it a message type. This message type helps in determining what content is getting sent (Text, Images, Replies, etc) and allows Push SDK to decrypt and display them accordingly.
+Each message of Push Chat is a json payload that carries with it a message type and some parameters that enables each frontend that integrates Push Chat to understand and display various message types. 
 
-Push Chat supports an evergrowing list message types, all of which can be sent by `PushAPI.chat.send`, though some require passing few additional parameters.
+Push Chat supports an evergrowing list message types, all of which can be sent by `chat.send`, though some require passing few additional parameters.
 
 <head>
   <title>Intro to Message Types | Push Chat | Push Documentation</title>
