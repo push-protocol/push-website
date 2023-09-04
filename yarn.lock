@@ -2418,10 +2418,10 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@0.0.1-alpha.7":
-  version "0.0.1-alpha.7"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-0.0.1-alpha.7.tgz#5633b89a6a7de5d1f82b7ca163fa0e640bff2e70"
-  integrity sha512-tL2tyNGLmNHnFeFJ+2ZB3hHl1IdIpbNJCL5PzjS5h8VYypVg4W/EIqb2YfMzw9Ew2LdhHvn3R9umK0OHesG1FQ==
+"@pushprotocol/uiweb@0.0.1-alpha.8":
+  version "0.0.1-alpha.8"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-0.0.1-alpha.8.tgz#77fe4a49bd07853b2e54d033eaaf6dc1b4f8bb2c"
+  integrity sha512-HbjcOK149NK3KAONg6ffOYTV6lbCR2zn8syeiMGcby5in+2FWp6FZscCyKgBIwWD8UX3qvRAQU/q0gbvgYgNww==
   dependencies:
     "@livepeer/react" "^2.6.0"
     "@pushprotocol/socket" "^0.5.0"
