@@ -723,7 +723,7 @@ function FAQ() {
               hover="#e20880"
               isOpen={showAnswers[index] && active === section}
             >
-              <SpanV2>{question}</SpanV2>
+              <SpanV2 fontSize="16px">{question}</SpanV2>
               <BsChevronExpand
                 size={20}
                 color={'#ddd'}
@@ -751,6 +751,7 @@ function FAQ() {
           <ContentV2
             className="contentBox"
             flex="0"
+            alignSelf="center"
             padding="40px 0px"
             maxWidth="1140px"
           >
@@ -791,7 +792,8 @@ function FAQ() {
         >
           <ContentV2
             className="contentBox"
-            padding="40px 0px"
+            alignSelf="center"
+            padding="0px 0px 40px"
             maxWidth="1140px"
           >
             {/* Questions and answers */}
