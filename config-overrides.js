@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 const webpack = require('webpack');
+const WorkBoxPlugin = require('workbox-webpack-plugin');
 // const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 module.exports = function override(config) {
@@ -22,6 +23,13 @@ module.exports = function override(config) {
     fs: false,
   });
   config.resolve.fallback = fallback;
+
+  config.plugins.forEach((plugin) => {
+    if (plugin instanceof WorkBoxPlugin.InjectManifest) {
+      plugin.config.maximumFileSizeToCacheInBytes = 50 * 1024 * 1024;
+    }
+  });
+
   config.plugins = (config.plugins || []).concat([
     new webpack.ProvidePlugin({
       process: 'process/browser',
@@ -35,7 +43,7 @@ module.exports = function override(config) {
       fullySpecified: false,
     },
   });
-  
+
   return config;
 };
 

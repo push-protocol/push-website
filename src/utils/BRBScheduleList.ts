@@ -49,13 +49,25 @@ export const citiesList = [
     {
       srcref: 'trivandrum',
       place: 'Trivandrum',
-      date: '15 Sept 2023',
+      date: '16 Sept 2023',
       link: 'https://www.lu.ma/brb-trivandrum',
       alt: 'Trivandrum, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Trivandrum, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#7A3DA9',
       hasEnded: false,
     },
+    {
+      srcref: 'chennai',
+      place: 'Chennai',
+      date: '19 Sep 2023',
+      link: 'https://www.lu.ma/brb-chennai',
+      alt: 'Chennai, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Chennai, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#E26059',
+      hasEnded: false,
+    }
+  ],
+  [
     {
       srcref: 'pune',
       place: 'Pune',
@@ -66,8 +78,6 @@ export const citiesList = [
       backgroundColor: '#E26059',
       hasEnded: false,
     },
-  ],
-  [
     {
       srcref: 'hyderabad',
       place: 'Hyderabad',
@@ -78,6 +88,8 @@ export const citiesList = [
       backgroundColor: '#194395',
       hasEnded: false,
     },
+  ],
+  [
     {
       srcref: 'ahmedabad',
       place: 'Ahmedabad',
@@ -86,18 +98,6 @@ export const citiesList = [
       alt: 'Ahmedabad, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Ahmedabad, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#194395',
-      hasEnded: false,
-    },
-  ],
-  [
-    {
-      srcref: 'chennai',
-      place: 'Chennai',
-      date: '4 Oct 2023',
-      link: 'https://www.lu.ma/brb-chennai',
-      alt: 'Chennai, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Chennai, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#E26059',
       hasEnded: false,
     },
     {

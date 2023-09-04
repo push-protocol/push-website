@@ -31,6 +31,7 @@ import ImageHolder from 'components/ImageHolder';
 import { Span } from 'components/SharedStyling';
 import { ButtonV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { PartnerBounties } from 'components/PartnerBounties';
 
 // Internal Configs
 import PageMeta from '../config/pageMeta';
@@ -269,6 +270,18 @@ function BRB() {
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
+                    <NavigationMenuHeader>
+                      <Span
+                        size="18px"
+                        weight="200"
+                        family="Glancyr !important"
+                      >
+                        Bounties
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
                   <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
                       <Span
@@ -385,9 +398,14 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
+        <BountyDiv id='bounties'>
+          <PartnerBounties />
+        </BountyDiv>
+
         <PlaygroundDiv id="playground">
           <ChatComponent />
         </PlaygroundDiv>
+
 
         <ItemFooter id="support">
           <FooterItem>
@@ -550,6 +568,10 @@ const NavList = styled.div`
 
 const ScheduleDiv = styled.div`
   margin: 120px 0px 0px 0px;
+  width: 100%;
+`;
+
+const BountyDiv = styled.div`
   width: 100%;
 `;
 
@@ -875,7 +897,7 @@ const ItemFooter = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 20px;
 
-  @media ${device.laptop} {
+  @media (max-width: 1281px) {
     width: 90%;
   }
 
