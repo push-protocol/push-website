@@ -1,7 +1,7 @@
 {
   "name": "push-doc-hub-v-2",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

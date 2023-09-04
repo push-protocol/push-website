@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/components/SharedStylingV2';
 
 ## Understanding the rules object
-The **rules** object is an optional parameter that you pass in [create group API call](chat.group.create) to conditional gate **joining** or **sending message** in group chat.
+The **rules** object is an optional parameter that you pass in [create group API call](./create-group) to conditional gate **joining** or **sending message** in group chat.
 
 ### Overview
 
@@ -188,7 +188,7 @@ any: [
 ```
 
 
-- Finally pass this rules object into the group that we are creating using the [create group API call](chat.group.create).
+- Finally pass this rules object into the group that we are creating using the [create group API call](./create-group).
 ```typescript
   // Creating your token gated community
   const createTokenGatedGroup = await userAlice.chat.group.create('Push Community', {
