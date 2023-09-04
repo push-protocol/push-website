@@ -40,7 +40,6 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        {/* a72832107b8ae7624c1ec997cee8e8b2bc21db708465555c20c4d5e029210cd6 */}
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
         <ChatBubbleComponent
           chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
@@ -59,7 +58,7 @@ export const ChatComponent = () => {
           <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be able to send
           messages.
         </Span>
-        {/* <ButtonItem
+        <ButtonItem
           background="#E64DE9"
           padding="8px"
           fontWeight="200"
@@ -67,8 +66,9 @@ export const ChatComponent = () => {
         >
           Get Free Push Tokens
           <WhiteArrow />
-        </ButtonItem> */}
+        </ButtonItem>
       </BottomBar>
+      
       {showFaucet && (
         <Modal>
           <TokenFaucet handleFaucet={setShowFaucet} />
