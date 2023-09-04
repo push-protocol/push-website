@@ -285,7 +285,7 @@ const FrensText = () => {
         <AnimationIcon>
           <AnimationSection
             minHeight="60vh"
-            padding="80px 0px 20px 0px"
+            padding="50px 0px 70px 0px"
           >
             <AaveSVG className="aave" />
             <LensSVG className="lens" />
@@ -303,13 +303,14 @@ const FrensText = () => {
             <ContentV2
               className="contentBox"
               flex="0"
-              padding="40px 0px"
+              padding="30px 0px"
+              alignSelf="center"
               maxWidth="1140px"
             >
               <ItemHV2
                 flexDirection="column"
                 flex="0"
-                margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
+                // margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
                 <HeroHeaderV2>{t('frens.hero.title')}</HeroHeaderV2>
@@ -337,6 +338,8 @@ const FrensText = () => {
             className="contentBox"
             padding="40px 0px"
             maxWidth="1140px"
+            flex="0"
+            alignSelf="center"
           >
             <PushRow>
               <ItemHV2 justifyContent="flex-start">
@@ -352,6 +355,7 @@ const FrensText = () => {
               <ItemHV2
                 maxWidth="350px"
                 justifyContent="flex-end"
+                margin={isMobile && '20px 0 0 0'}
               >
                 <Wrapper>
                   <BiSearch
