@@ -1,0 +1,108 @@
+---
+id: devs-chat-develop-conditional-group-gating
+title: Conditional group gating
+hide_title: true
+slug: ./conditional-group-gating
+displayed_sidebar: pushChatSidebar
+sidebar_position: 6
+---
+
+# What is conditional gating
+Conditonal gating allows you to define rules for the members of the group for different priveleges / permissions such as `entry` or `chat`. It is driven by Push Chat rules engine which is inpired by json rules engine and allows you to create powerful dynamics guiding communication for your community. Some examples of what you can achieve with it —
+- **Creating token gated group** - ie: user needs to hold XX token to join the group
+- **Creating nft gated group** - ie: user needs to hold XX NFT to join the gorup
+- **Defining multi-chain conditions** - ie: user can join the group if they have 5 tokens on Ethereum or 10 tokens on Polygon
+- **Defining sending message conditions** - ie: user needs 1 token to join the group but 100 to send message
+- **Defining non-web3 conditions using Guild** - ie: user needs to follow `@pushprotocol` on twitter to be able to join the group
+- **Creating game theories by combining one or multiple conditions** - ie: you need 1 token on any chain to join the group but sending messages require you to hold 1000 tokens or 1 NFT or 20 POAPs, etc
+
+<head>
+  <title>Create Group | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/components/SharedStylingV2';
+
+## Understanding the rules object
+The **rules** object is an optional parameter that you pass in [create group API call](chat.group.create) to conditional gate **joining** or **sending message** in group chat.
+
+### Overview
+
+`rules`<br/>
+├ `permission` - `entry` or `chat`<br/>
+&emsp;└ `conditions`<br/> 
+&emsp;&emsp;└`operator` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;└`criteria 1`<br/>
+&emsp;&emsp;&emsp;└`criteria 2`<br/>
+&emsp;&emsp;└`operator` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;└`criteria 3`<br/>
+
+_`rules`_ object is made up of individual **permissions** that define privilages of the group. 
+
+_`permission`_ object contains **conditions** that needs to be satisfied.
+
+_`conditions`_ object is an array of one or more **operator**, ALL of which needs to be fulfilled for permission to be granted.
+
+_`operator`_ contains array of **criteria**, the namespace of operator (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
+
+_`criteria`_ is the atomic condition that has **type**, **category**, **subcategory** and **data**, based on which a particular condition is deemed as completed or failed.
+
+To summarize, a list of **criteria** is created by you that is then defined inside **operator** to define their logical operation which is then passed in **conditions** of a particular **permission**. The list of individual **permission** is then attached to **rules** of the group to enable Push Chat rule engine to create dynamic communities with creative game theories.
+
+### Rules Object Parameters
+
+| Param                                                 | Type     | Subtype            | Default | Remarks                                                                                                                                                                                               |
+| ----------------------------------------------------- | -------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rules`                                               | `object` | -                  | -       | Rules object                                                                                                                                                                                          |
+| `rules.[permission]`                                  | `object` | -                  | -       | Permissions object for specific privilege of the group. Multiple permission object can reside within `rules` object                                                                                   |
+| -                                                     | `entry`  | `object`           | -       | Permissions object for specific privilege of the group. `entry` permission conditionalizes joining a group                                                                                            |
+| -                                                     | `chat`   | `object`           | -       | Permissions object for specific privilege of the group. `chat` permission conditionalizes sending a message in that group                                                                             |
+| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `operator` objects                                                                                                                                                              |
+| `rules.[permission].conditions.[operator]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `operator` key, Valid `operator` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
+| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[operator]` array                                                                                         |
+| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[operator]` array                                                                                         |
+| `rules.[permission].conditions.[operator].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[operator]` array                                                                                                                       |
+
+
+### Criteria Object Parameters 
+Criteria object supports multiple access control protocols which can have different conditions and rules, currently Push Chat supports `PUSH` and `GUILD` type in criteria, owing to the way each individual protocol handles their respective **type**, **category**, **subcategory** and **data**, we are segregating the options and what they do for clarity.
+
+#### Criteria Type - `PUSH`
+
+| Param                                                 | Type     | Subtype            | Default | Remarks |
+| ----------------------------------------------------- | -------- | ------------------ | ------- | ------- |
+| `[criteria]` | `object` | - | - | Criteria object |
+| - | `type` | `string` | - | Define the `type` of the criteria, needs to be `PUSH` for below category, subcategory to be applicable |
+| - | `category` | `string` - can be `ERC20`, `ERC721` or `CustomEndpoint` | - | Defines the category of the criteria, `ERC20` means ERC-20 or normal token, `ERC721` means ERC-721 or NFT tokens, `CustomEndpoint` means a URL will be provided that results in 200 OK |
+| - | `subcategory` | `string` | - | Further narrows down the condition that you want to run. For `ERC20` or `ERC721` - supported conditions are `holder` or `owner` which means that the criteria will check if a wallet is owner or holder. For `CustomEndpoint`, the subcategory is `GET` or `POST` depending upon what HTTP request you want to use |
+
+## How to create rules object
+The rules object created is what you pass in [create group API call](chat.group.create). It is a json object in which you define conditions that a user needs to fulfil to have access to that permission.
+
+### Define permissions to target
+
+Start by creating the rules object in which different permissions are added as object.
+
+| Param        | Type                             | Subtype    | Default | Remarks                                                                                                        |
+| ------------ | -------------------------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| _`rules`_    | `object`                         | -          | -       | Rules object                                                                                                   |
+| -            | `rules.entry`                    | `object`   | -       | Rules that govern permissions to grant entry to that group                                                     |
+| -            | `rules.chat`                     | `object`   | -       | Rules that govern permissions to grant sending message in that group                                           |
+
+
+```typescript
+// create rules object
+const rules = {
+  entry: {},
+  chat: {}
+}
+```
+
+### Define conditions for those permissions
+Each permission object has a conditions `array` which is made of `any` or `all` rules array, that themselves contain `condition object`. All subrules object defined inside this array needs to pass for the permission to be granted to the user. The conditions array follows _`AND`_ operator.
+
+| Param        | Type                             | Subtype    | Default | Remarks                                                                                                        |
+| ------------ | -------------------------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| _`rules.permission`_    | `object`                         | -          | -       | Rules object                                                                                                   |
+| -            | `rules.permission.conditions`                    | `array of object`   | -       | Rules that govern permissions to grant entry to that group                                                     |

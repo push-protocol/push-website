@@ -1,17 +1,17 @@
 ---
-id: devs-chat-message-type-text
-title: Text
+id: devs-chat-message-type-image
+title: Image
 hide_title: true
-slug: ./text
+slug: ./image
 displayed_sidebar: pushChatSidebar
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Message type - Text
-Enables sending simple text messages to the recipient.
+# Message type - Image
+Enables sending a single image as a messages to the recipient. You will need to pass the image as base64. [Base64](https://en.wikipedia.org/wiki/Base64) is a method for encoding binary data into ASCII text.
 
 <head>
-  <title>Message Type - Text | Push Chat | Push Documentation</title>
+  <title>Message Type - Image | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from '@theme/Tabs';
@@ -25,13 +25,15 @@ import TabItem from '@theme/TabItem';
     // userAlice.chat.send(recipient, message)
     // This section focuses on customization parameters for 'message' object
     const aliceMessagesBob = await userAlice.chat.send(recipient, {
-      type: 'Text',
-      content: 'Hello Bob!',
+      type: 'Image',
+      content: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAvklEQVR4AcXBsW2FMBiF0Y8r3GQb6jeBxRauYRpo4yGQkMd4gg==',
     });
   ```
 
   </TabItem>
 </Tabs>
+
+Push Chat also supports Image URLs (including GIFs), see [Media Embed](./media-embed) message type to learn more.
 
 ---
 
@@ -42,7 +44,7 @@ When sending a message, you can customize the following params
 | ---------------------- | ---------------------- |------------------------------------------------ | ------- | ----------------------------------------------------------------------------------- |
 | _`recipient`_             | `string`               | -                                               | -       | [Recipient supports a number of address format](./devs/chat/build/types-of-recipient) including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
 | _`message`_            | `object`               | -                                               | -       | Configuration for message to be sent                                                |
-| -                      | _`message.type`_       | `Text`                                          | `Text`  | Type of message content                                                             |
-| -                      | _`message.content`_    | `string`                                        | -       | Pass plain text in the message content                                              |
+| -                      | _`message.type`_       | `Image`                                         | `Text`  | Type of message Content                                                             |
+| -                      | _`message.content`_    | `string`                                        | -       | Message Content                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.

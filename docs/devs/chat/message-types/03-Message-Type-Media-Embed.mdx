@@ -1,17 +1,17 @@
 ---
-id: devs-chat-message-type-text
-title: Text
+id: devs-chat-message-type-media-embed
+title: Media embed
 hide_title: true
-slug: ./text
+slug: ./media-embed
 displayed_sidebar: pushChatSidebar
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# Message type - Text
-Enables sending simple text messages to the recipient.
+# Message type - Media embed
+Enables sending a image URLs or media URLs as a message. You can send GIFs, Tweets, Youtube links, etc. Simply pass in the URL of the media as content. 
 
 <head>
-  <title>Message Type - Text | Push Chat | Push Documentation</title>
+  <title>Message Type - Media Embed | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from '@theme/Tabs';
@@ -25,8 +25,8 @@ import TabItem from '@theme/TabItem';
     // userAlice.chat.send(recipient, message)
     // This section focuses on customization parameters for 'message' object
     const aliceMessagesBob = await userAlice.chat.send(recipient, {
-      type: 'Text',
-      content: 'Hello Bob!',
+      type: 'MediaEmbed',
+      content: 'https://media1.giphy.com/media/FtlUfrq3pVZXVNjoxf/giphy360p.mp4?cid=ecf05e47jk317254v9hbdjrknemduocie4pf54wtsir98xsx&ep=v1_videos_search&rid=giphy360p.mp4&ct=v',
     });
   ```
 
@@ -42,7 +42,7 @@ When sending a message, you can customize the following params
 | ---------------------- | ---------------------- |------------------------------------------------ | ------- | ----------------------------------------------------------------------------------- |
 | _`recipient`_             | `string`               | -                                               | -       | [Recipient supports a number of address format](./devs/chat/build/types-of-recipient) including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
 | _`message`_            | `object`               | -                                               | -       | Configuration for message to be sent                                                |
-| -                      | _`message.type`_       | `Text`                                          | `Text`  | Type of message content                                                             |
-| -                      | _`message.content`_    | `string`                                        | -       | Pass plain text in the message content                                              |
+| -                      | _`message.type`_       | `MediaEmbed`                                    | `Text`  | Type of message Content                                                             |
+| -                      | _`message.content`_    | `string`                                        | -       | Message Content                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.

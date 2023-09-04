@@ -1,0 +1,172 @@
+---
+id: devs-chat-develop-create-groups
+title: Create group
+hide_title: true
+slug: ./create-group
+displayed_sidebar: pushChatSidebar
+sidebar_position: 5
+---
+
+# About group chat
+Group chat is the latest exciting addition to Push Chat, for the first time ever, web3 users are finally able to talk to each other in web3 native groups and have fine-grained controls over them allowing new ways by which community can be engaged besides adding new utilities to your token. Group chat enables protocols or web3 projects to create —
+
+- DAO / NFT community
+- Private or public groups
+- Conditional / Gated group for joining or sending message
+- Gating based on tokens, NFTs, social following or custom endpoint
+- Ability to integrate in your UI (web / mobile) without users going to Discord, Telegram or breaking the UX
+
+
+<head>
+  <title>Create Group | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/components/SharedStylingV2';
+
+## Create group API
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+    
+
+  ```typescript
+  // userAlice.chat.group.create(name, {options?})
+  const createdGroup = await userAlice.chat.group.create(name);
+  ```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Customization parameters
+
+| Param        | Type                             | Subtype    | Default | Remarks                                                                                                        |
+| ------------ | -------------------------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| _`name`_     | `string`                         | -          | -       | The name of the group to be created.                                                                           |
+| `options`    | `object`                         | -          | -       | Optional Configuration for creating group.                                                                     |
+| -            | `options.description`            | `string`   | -       | A description of the group.                                                                                    |
+| -            | `options.image`                  | `string`   | -       | Image for the group in [Base64](https://en.wikipedia.org/wiki/Base64) format                                   |
+| -            | `options.members`                | `string[]` | `[]`    | An array of member recipients. [Recipient supports a number of address format](./types-of-recipient)           |
+| -            | `options.admins`                 | `string[]` | -       | An array of admin recipients. [Recipient supports a number of address format](./types-of-recipient)            |
+| -            | `options.private`                | `boolean`  | `false` | Indicates if the group is private.                                                                             |
+| -            | `options.rules`                  | `any[]`    | -       | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](./conditional-group-gating) to understand rule engine and how to fine tune conditional rules of your group |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+See <AFocus href='./conditional-group-gating'>conditional group gating</AFocus> to understand how groups permissions such as `joining group` or `sending messages` can be customized for your community or needs.
+
+---
+
+### Create group interface
+
+```typescript
+interface GroupRules {
+  entry?: { conditions?: any[] };
+  chat?: { conditions?: any[] };
+}
+
+interface GroupOptions {
+  description?: string;
+  image?: string; // base 64 encoded string
+  members?: string[];
+  admins?: string[];
+  private?: boolean;
+  rules?: GroupRules;
+}
+
+interface CreateGroupParams {
+  name: string;
+  options?: GroupOptions;
+}
+
+const createdGroup = async ({ name, options }: CreateGroupParams): Promise<any> => {
+  // Your implementation here
+};
+
+// Example
+const groupName = "Example Group";
+const groupDescription = "This is an example group.";
+const groupImage = "data:image/png;base64,iVBORw0K..."; // example base64 encoded image string
+const walletAddress1 = "0x123...";
+const walletAddress2 = "0x456...";
+const walletAddress3 = "0x789...";
+
+const newGroup = await userAlice.chat.group.create(groupName, 
+  {
+    description: groupDescription,
+    image: groupImage,
+    members: [walletAddress1, walletAddress2, walletAddress3],
+    admins: [],
+    private: false,
+    rules: {
+      entry: { conditions: [] },
+      chat: { conditions: [] },
+    },
+  },
+});
+
+```
+
+### Token gated group example
+
+```typescript
+  // We are going to create a group that is:
+  // Private - All conversations in this group is encrypted and visible only to members of the group
+  // Gated entry by either of two rules 
+  // Gated entry - Rule 1 - It takes 10 $XYZ token on Ethereum or on Polygon to join the group
+  // Gated chat by rule of having $1000 XYZ on Ethereum token to allow sending chat in the group
+  const myTokenGatedGroup = await userAlice.chat.group.create('BRB Chat', {
+    description: 'This is your DAO community native web3 chat', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
+    members: ['0x123...', '0xABC...', 'eip155:0x754...'], // see types of recipient to learn more
+    admins: ['nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
+    private: true, // ensures chat within group is encrypted and is only visible to members of the group
+    rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
+      entry: { // define condition for joining the group
+        conditions: [ // set of all conditions that should be fulfilled to join the group
+          any: [ // define rule 1, set condition to 'any', if 'and' then all rules need to be fulfilled
+            {
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 10 // amount that needs to passed
+              }
+            },
+            {
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 10 // amount that needs to passed
+              }
+            }
+          ]
+        ]
+      },
+      chat: {
+        conditions: [
+          any: [ // define rule 1, set condition to 'any', if 'and' then all rules need to be fulfilled
+            {
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 1000 // amount that needs to passed
+              }
+            }
+          ]
+        ]
+      }
+    }
+  });
+
+```
