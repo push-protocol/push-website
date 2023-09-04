@@ -25,7 +25,7 @@ Push Chat protocol enables seamless experience in messaging among web3 wallets. 
 - **Enabling web3 native chat on your frontend** without the user going to any other platform
 - **Creating groups** for communities
 - **Conditional/Gated access** for joining of the group or sending message
-- **Enabling re-engagement** via [push notifications](https://docs.push.org/developers) protocol and providing Web2 UI (Like Whatsapp or Telegram)
+- **Enabling re-engagement** via [push notifications](https://docs.push.org/developers/concepts/web3-notifications) protocol and providing Web2 UI (Like Whatsapp or Telegram)
 - **Cross-chain compatibility** including EVMs, non-EVMS, Wallet addresses, NFT profiles, etc
 - **Video / Audio calls** in either dm or in group
 
@@ -123,35 +123,35 @@ All communication from Push Chat is signed and validated by a set of nodes, whic
 <ModalContainer>
 
   <ModalSmall 
-    onClick={() => (window.open('developers/chat/message-types/text', '_self'))} 
+    onClick={() => (window.open('message-types/text', '_self'))} 
   >
     <img src={require('/static/img/msgtypes/text.png').default} srcSet={`${require('/static/img/msgtypes/text@2x.png').default} 2x, ${require('/static/img/msgtypes/text@3x.png').default} 3x`} />
     <span>Text</span>
   </ModalSmall>
 
   <ModalSmall 
-    onClick={() => (window.open('developers/chat/message-types/text', '_self'))} 
+    onClick={() => (window.open('message-types/image', '_self'))} 
   >
     <img src={require('/static/img/msgtypes/image.png').default} srcSet={`${require('/static/img/msgtypes/image@2x.png').default} 2x, ${require('/static/img/msgtypes/image@3x.png').default} 3x`} />
     <span>Image</span>
   </ModalSmall>
 
   <ModalSmall 
-    onClick={() => (window.open('developers/chat/message-types/text', '_self'))} 
+    onClick={() => (window.open('message-types/file', '_self'))} 
   >
     <img src={require('/static/img/msgtypes/file.png').default} srcSet={`${require('/static/img/msgtypes/file@2x.png').default} 2x, ${require('/static/img/msgtypes/file@3x.png').default} 3x`} />
     <span>File</span>
   </ModalSmall>
   
   <ModalSmall 
-    onClick={() => (window.open('developers/chat/message-types/text', '_self'))} 
+    onClick={() => (window.open('message-types/media-embed', '_self'))} 
   >
     <img src={require('/static/img/msgtypes/mediaembed.png').default} srcSet={`${require('/static/img/msgtypes/mediaembed@2x.png').default} 2x, ${require('/static/img/msgtypes/mediaembed@3x.png').default} 3x`} />
     <span>Media Embed</span>
   </ModalSmall>
   
   <ModalSmall 
-    onClick={() => (window.open('developers/chat/message-types/text', '_self'))} 
+    onClick={() => (window.open('message-types/reaction', '_self'))} 
   >
     <img src={require('/static/img/msgtypes/reaction.png').default} srcSet={`${require('/static/img/msgtypes/reaction@2x.png').default} 2x, ${require('/static/img/msgtypes/reaction@3x.png').default} 3x`} />
     <span>Reaction</span>
@@ -159,7 +159,7 @@ All communication from Push Chat is signed and validated by a set of nodes, whic
 
 </ModalContainer>
 
-
+<!---
 ## Use cases
 <ModalContainer>
 
@@ -206,6 +206,7 @@ All communication from Push Chat is signed and validated by a set of nodes, whic
   </ModalSmall>
 
 </ModalContainer>
+-->
 
 ## Messaging with Push
 Best way to understand Push Chat is to interact with it directly. To get started —

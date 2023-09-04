@@ -30,37 +30,37 @@ const SdkList: SdkListItems[] = [
     title: 'SDK Starter Kit',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk',
   },
   {
     title: 'REST API',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-restapi',
   },
   {
     title: 'React Native',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-reactnative',
   },
   {
     title: 'Socket',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
   },
   {
     title: 'UIWeb',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiweb',
   },
   {
     title: 'UI Embed',
     Svg: require('@site/static/img/arrowupright.svg').default,
     PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiembed',
   }
 ]
 
@@ -69,7 +69,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Notifications',
     Svg: require('@site/static/img/notification.svg').default,
     PinkSvg: require('@site/static/img/notification-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/concepts/web3-notifications',
     description: (
       <>
         Explore different ways of sending and receiving notifications and more.
@@ -84,8 +84,20 @@ const DevGuide: DevGuideItems[] = [
     link: '/devs/chat',
     description: (
       <>
-        Learn about the details of Push Chat and how to easily integrate it.
+        Learn about the details of Push Chat and how to do web3 native messaging.
 
+      </>
+    ),
+  },
+  {
+    title: 'Push Spaces',
+    Svg: require('@site/static/img/spaces.svg').default,
+    PinkSvg: require('@site/static/img/spaces-pink.svg').default,
+    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+
+    description: (
+      <>
+        Learn about Push Spaces, the web3 native, token gated way of conducting spaces.
       </>
     ),
   },
@@ -93,7 +105,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Push Video Calls',
     Svg: require('@site/static/img/video.svg').default,
     PinkSvg: require('@site/static/img/video-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
 
     description: (
       <>
@@ -102,21 +114,10 @@ const DevGuide: DevGuideItems[] = [
     ),
   },
   {
-    title: 'SDK Quick Start',
-    Svg: require('@site/static/img/lightning.svg').default,
-    PinkSvg: require('@site/static/img/lightning-pink.svg').default,
-    link: '/',
-    description: (
-      <>
-        A super quick guide to get you started with Push SDK.
-      </>
-    ),
-  },
-  {
     title: 'Examples',
     Svg: require('@site/static/img/star.svg').default,
     PinkSvg: require('@site/static/img/star-pink.svg').default,
-    link: '/',
+    link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
     description: (
       <>
         Examples to showcase the power of Push Protocol’s communication stack.
@@ -127,7 +128,7 @@ const DevGuide: DevGuideItems[] = [
     title: 'Showrunners',
     Svg: require('@site/static/img/receive-notifs.svg').default,
     PinkSvg: require('@site/static/img/receive-notifs-pink.svg').default,
-    link: '/',
+    link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
     description: (
       <>
         Showrunners Framework and how to boost your web3 communications.
