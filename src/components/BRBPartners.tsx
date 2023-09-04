@@ -44,8 +44,13 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                         borderRadius="0px"
                         background="transparent"
                         title={`${item?.title}`}
+                        disabled={item?.link ? false : true}
                         onClick={() => {
-                          window.open(item?.link);
+                          if (item?.link) {
+                            window.open(item?.link);
+                          } else {
+                            return;
+                          }
                         }}
                       >
                         <PartnersLogo
@@ -116,6 +121,7 @@ const PartnerItem = styled(ItemHV2)`
 `;
 
 const PartnersButton = styled(ButtonV2)`
+  cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;
   }
