@@ -133,7 +133,6 @@ function Header() {
       <SectionV2>
         <ContentV2
           padding="0"
-          maxWidth="1140px"
         >
           {/* Header Content Begins */}
           <HeaderItemH
@@ -476,7 +475,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       hoverBackground="none"
-                      alignItems="center"
+                      // alignItems="center"
                       margin={isMobile ? '16px 16px' : 'auto 0'}
                     >
                       Billion Reasons to Build
@@ -699,7 +698,7 @@ const StyledHeader = styled.header`
   }
 
   /* this is IMP for boxing the content at 1140px
-  @media (min-width: 1140px) {
+  @media (min-width: 1213px) {
     padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
     padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
   } */

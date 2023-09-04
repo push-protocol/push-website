@@ -494,7 +494,7 @@ export const LinkTo = styled(Link)`
     margin-left: 3px;
   }
 `;
-export const Anchor = styled.a` 
+export const Anchor = styled.a`
   font-family: 'Strawford';
   line-height: ${(props) => props.lineHeight || 'inherit'};
   display: flex;

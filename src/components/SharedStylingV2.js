@@ -59,10 +59,10 @@ export const ContentV2 = styled.div`
 
   flex: ${(props) => props.flex || '1'};
   align-self: ${(props) => props.alignSelf || 'stretch'};
-  max-width: ${props => props.maxWidth || '1213px'};
+  max-width: ${(props) => props.maxWidth || '1213px'};
   // max-width: 1140px;
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent || 'center'};
   box-sizing: ${(props) => props.boxSizing || 'content-box'};
   padding: ${(props) => props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
 

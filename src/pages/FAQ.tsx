@@ -723,7 +723,7 @@ function FAQ() {
               hover="#e20880"
               isOpen={showAnswers[index] && active === section}
             >
-              <SpanV2>{question}</SpanV2>
+              <SpanV2 fontSize="16px">{question}</SpanV2>
               <BsChevronExpand
                 size={20}
                 color={'#ddd'}
@@ -747,16 +747,16 @@ function FAQ() {
           curve="bottom"
           padding="80px 0px 20px 0px"
           data-bkg="dark"
+          justifyContent="flex-start"
         >
           <ContentV2
             className="contentBox"
-            flex="0"
+            flex="1"
+            alignSelf="center"
             padding="40px 0px"
-            maxWidth="1140px"
           >
             <ItemHV2
               flexDirection="column"
-              justifyContent="flex-start"
             >
               <HeroHeaderV2>{t('faq.hero.title')}</HeroHeaderV2>
               <Para
@@ -791,8 +791,8 @@ function FAQ() {
         >
           <ContentV2
             className="contentBox"
-            padding="40px 0px"
-            maxWidth="1140px"
+            alignSelf="center"
+            padding="0px 0px 40px"
           >
             {/* Questions and answers */}
             <Title>General</Title>
@@ -956,7 +956,7 @@ const LIMod = styled(LIV2)`
   color: white;
 `;
 
-const BoldText = styled.SpanV2`
+const BoldText = styled(SpanV2)`
   font-weight: bold;
   color: #fff !important;
 `;
@@ -977,7 +977,7 @@ const Title = styled.div`
 const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
-  font-size: 1.1em;
+  font-size: ${(props) => props.size || '1.1em'};
   color: #000000ee;
 `;
 

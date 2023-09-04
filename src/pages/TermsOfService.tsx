@@ -48,13 +48,13 @@ function TermsOfService() {
           curve="bottom"
           padding="80px 0px 20px 0px"
           data-bkg="dark"
+          justifyContent="flex-start"
         >
           <ContentV2
             className="contentBox"
             padding="80px 0px 20px 0px"
-            flex="0"
+            flex="1"
             alignSelf="center"
-            maxWidth="1140px"
           >
             <ItemVV2
               flexDirection="column"
@@ -108,7 +108,6 @@ function TermsOfService() {
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
-            maxWidth="1140px"
           >
             <ItemHV2
               alignSelf="stretch"
@@ -1423,7 +1422,7 @@ const TosWrapper = styled.div`
 const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
-  font-size: 1.1em;
+  font-size: ${(props) => props.size || '1.1em'};
   color: #000000ee;
 `;
 
