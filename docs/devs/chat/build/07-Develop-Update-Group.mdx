@@ -1,10 +1,10 @@
 ---
-id: devs-chat-develop-conditional-group-gating
-title: Conditional group gating
+id: devs-chat-develop-update-group
+title: Update Group
 hide_title: true
-slug: ./conditional-group-gating
+slug: ./update-group
 displayed_sidebar: pushChatSidebar
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # What is conditional gating
@@ -50,7 +50,7 @@ _`criteria`_ is the atomic condition that has **type**, **category**, **subcateg
 
 To summarize, a list of **criteria** is created by you that is then defined inside **operator** to define their logical operation which is then passed in **conditions** of a particular **permission**. The list of individual **permission** is then attached to **rules** of the group to enable Push Chat rule engine to create dynamic communities with creative game theories.
 
-### Rules object Parameters
+### Rules Object Parameters
 
 | Param                                                 | Type     | Subtype            | Default | Remarks                                                                                                                                                                                               |
 | ----------------------------------------------------- | -------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ To summarize, a list of **criteria** is created by you that is then defined insi
 | `rules.[permission].conditions.[operator].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[operator]` array                                                                                                                       |
 
 
-### Criteria object Parameters 
+### Criteria Object Parameters 
 Criteria object supports multiple access control protocols which can have different conditions and rules, currently Push Chat supports `PUSH` and `GUILD` type in criteria, owing to the way each individual protocol handles their respective **type**, **category**, **subcategory** and **data**, we are segregating the options and what they do for clarity.
 
 #### When using type - `PUSH`

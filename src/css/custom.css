@@ -844,6 +844,7 @@ li {
     line-height: 142% !important;
     letter-spacing: -0.03em !important;
     padding: 10px 15px !important;
+    margin: 0px 10px 0px 0px;
   }
 
   .menu__list_item {
