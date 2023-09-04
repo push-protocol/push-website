@@ -956,7 +956,7 @@ const LIMod = styled(LIV2)`
   color: white;
 `;
 
-const BoldText = styled.SpanV2`
+const BoldText = styled(SpanV2)`
   font-weight: bold;
   color: #fff !important;
 `;
