@@ -45,7 +45,7 @@ import { ReactComponent as ModalLinkedIn } from '../assets/Modal-LinkedIn.svg';
 
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import "../index.css"
+import '../index.css';
 
 // const BACKEND_API = 'http://localhost:1337';
 const BACKEND_API = 'https://blog.push.org';
@@ -67,7 +67,6 @@ const BlogItem = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   // const style = {
   //   content:{
   //   position: 'absolute' as 'absolute',
@@ -83,28 +82,35 @@ const BlogItem = () => {
   // };
 
   const LinkModal = () => {
+    const openLink = (link: string) => {
+      window.open(link, '_blank');
+    };
+    // 'https://www.facebook.com/sharer/sharer.php?u='+window.location.href
     return (
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        classNames={{modal:'custom-modal'}}
+        classNames={{ modal: 'custom-modal' }}
       >
         <ModalDiv>
           <ModalTopic>Share</ModalTopic>
         </ModalDiv>
 
         <ModalIcons>
-          <ModalTwitter />
-          <ModalLinkedIn />
-          <ModalFacebook />
+          <ModalTwitter onClick={() => openLink(`https://twitter.com/intent/tweet?text=${window.location.href}`)} />
+          <ModalLinkedIn
+            onClick={() => openLink(`https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`)}
+          />
+          <ModalFacebook
+            onClick={() => openLink(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`)}
+          />
         </ModalIcons>
 
         <ModalLink>
-          <ModalInput>https://youtu.be/wc4hBT_EbT4</ModalInput>
-
-          <ModalCopy>Copy link</ModalCopy>
+          <ModalInput>{window.location.href}</ModalInput>
+          <ModalCopy onClick={() => navigator.clipboard.writeText(window.location.href)}>Copy link</ModalCopy>
         </ModalLink>
       </Modal>
     );
@@ -319,11 +325,13 @@ const BlogItem = () => {
                   <BiShareAlt
                     size={25}
                     color="#333333"
+                    onClick={handleOpen}
                   />
                   <BiLink
                     size={25}
                     color="#333333"
                     style={{ marginLeft: '20px' }}
+                    onClick={() => navigator.clipboard.writeText(window.location.href)}
                   />
                 </ItemH>
               </TopBody>
@@ -554,11 +562,7 @@ const TextH1 = styled.h1`
   font-size: 46px;
   font-family: Strawford;
   font-weight: 700;
-  line-height: 55.5px;
   text-transform: inherit;
-
-  font-size: 40px;
-  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 55.5px;
   margin: 0px 0px;
@@ -774,7 +778,9 @@ const BlogContent = styled.div`
     }
 
     iframe {
-      width: 100%;
+      width: 800px;
+      height: 450px;
+      // width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       border-radius: 32px;
@@ -825,16 +831,17 @@ const BlogContent = styled.div`
       font-family: Lora !important;
       font-size: 22px;
       line-height: 40px;
-      color: #575D73 !important
+      color: #000 !important
       span {
         font-family: Lora !important;
         font-size: 22px;
         line-height: 40px;
-        color: #575D73 !important;
+        color: #000 !important;
       }
 
       @media ${device.mobileL} {
         font-size: 18px;
+        line-height: 31px;
       }
     }
 
@@ -847,7 +854,9 @@ const BlogContent = styled.div`
     img{
       margin: 0 auto;
       padding: 0;
-      width: 100%;
+      // width: 100%;
+      max-width: 800px;
+      height: auto;
       box-sizing: border-box;
       aspect-ratio: 16/9;
     }
@@ -1066,7 +1075,7 @@ const MainArticle = styled.div`
   display: flex !important;
   flex-direction: row !important;
   align-items: center;
-  grid-gap: 44px;
+  grid-gap: 32px;
   height: 100%;
   margin-bottom: 62px;
 
@@ -1280,6 +1289,14 @@ const ModalInput = styled.div`
   padding: 8px 12px;
   max-width: 212px;
   min-width: 212px;
+  @media ${device.mobileL} {
+    max-width: 200px;
+    min-width: 200px;
+  }
+  @media ${device.mobileM} {
+    max-width: 150px;
+    min-width: 150px;
+  }
 `;
 
 const ModalClose = styled.div`

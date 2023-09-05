@@ -201,10 +201,11 @@ const SliderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items:center;
+  align-items:flex-start;
   padding: calc(calc(100vh - 750px) / 2) 0px;
   flex-wrap: nowrap;
   margin: auto 0;
+  margin-top: 84px;
   
   @media (max-width: 1200px){
     flex-direction: column;
@@ -324,7 +325,7 @@ const GrowPushCard = styled.div`
 `;
 
 const DivItem = styled.div`
-  margin-top: -30px;
+  margin-top: 0px;
   padding-top:0px;
   color: #575D73;
   font-weight: 400;
@@ -350,7 +351,9 @@ const SpanTitle = styled(Span)`
   white-space: normal;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-  min-height: 2.5em;
+  // min-height: 2.5em;
+  height: auto;
+  margin-bottom: 16px;
 `;
 
 const Div = styled.div`
