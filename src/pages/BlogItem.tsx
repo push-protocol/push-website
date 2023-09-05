@@ -343,6 +343,7 @@ const BlogItem = () => {
                   <BsFillPlayCircleFill
                     color="#DD44B9"
                     size={25}
+                    style={{cursor:'pointer'}}
                     onClick={() =>
                       handleTextToSpeach({
                         blogObject: blogsData,
@@ -359,12 +360,13 @@ const BlogItem = () => {
                   <BiShareAlt
                     size={25}
                     color="#333333"
+                    style={{cursor:'pointer'}}
                     onClick={handleOpen}
                   />
                   <BiLink
                     size={25}
                     color="#333333"
-                    style={{ marginLeft: '20px' }}
+                    style={{ marginLeft: '20px',cursor:'pointer' }}
                     onClick={() => navigator.clipboard.writeText(window.location.href)}
                   />
                 </ItemH>
@@ -1323,6 +1325,9 @@ const ModalInput = styled.div`
   padding: 8px 12px;
   max-width: 212px;
   min-width: 212px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   @media ${device.mobileL} {
     max-width: 200px;
     min-width: 200px;
