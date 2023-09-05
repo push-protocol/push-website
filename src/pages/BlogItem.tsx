@@ -163,6 +163,9 @@ const BlogItem = () => {
     }
   }, [blogsContent]);
 
+  console.log(moment().year(), moment(blogsData?.attributes?.date).year());
+
+
   const ArticleItem = ({ item }) => {
     return (
       <>
@@ -197,10 +200,10 @@ const BlogItem = () => {
 
                 <ArticleContent style={{ marginTop: isMobile ? '15px' : '20px' }}>
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
-                    {blogData?.pubDate}
+                    {blogData?.attributes?.date}
                   </Moment>{' '}
                   &#183;
                   <Div>{useReadingTime(blogData?.attributes?.body)} min read</Div>
@@ -217,7 +220,7 @@ const BlogItem = () => {
     return (
       <div style={{ visibility: 'hidden' }}>
         <TopicContent>
-          <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
+          <Moment format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}>{blogsData?.attributes?.date}</Moment>{' '}
           <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
         </TopicContent>
       </div>
@@ -338,7 +341,7 @@ const BlogItem = () => {
             curve="bottom"
           >
             <TopicContent>
-              <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
+              <Moment format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}>{blogsData?.attributes?.date}</Moment>{' '}
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
             </TopicContent>
 
@@ -348,7 +351,7 @@ const BlogItem = () => {
               {isMobile && (
                 <ArticleContent marginTop="12px">
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
                     {blogsData?.attributes?.date}

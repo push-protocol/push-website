@@ -24,6 +24,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import useReadingTime from 'hooks/useReadingTime';
@@ -256,7 +257,7 @@ const Blogs = () => {
 
               <ArticleContent>
                 <Moment
-                  format="D MMMM, YYYY"
+                  format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                   style={{ marginRight: '5px' }}
                 >
                   {blogData?.attributes?.date}
@@ -310,7 +311,7 @@ const Blogs = () => {
                       <ToggleButton style={{ marginRight: '15px' }}>{item?.attributes?.name}</ToggleButton>
                     ))}
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
                     {blogData?.attributes?.date}
@@ -347,6 +348,7 @@ const Blogs = () => {
       </PageWrapper>
     );
   }
+
 
   if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems) || errorPage !== true) {
     return (
