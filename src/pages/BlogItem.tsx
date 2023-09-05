@@ -63,8 +63,10 @@ const BlogItem = () => {
   const [allBlogs, setAllBlogs] = useState(null);
   const [blogsContent, setBlogsContent] = useState(null);
   const [errorPage, setErrorPage] = React.useState(false);
-
   const [open, setOpen] = React.useState(false);
+  const [startedSpeaking, setStartedSpeaking] = React.useState(false);
+  const speakingRef = React.useRef(null);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   // const style = {
@@ -81,11 +83,38 @@ const BlogItem = () => {
   //   }
   // };
 
+  useEffect(() => {
+    speakingRef.current = window.speechSynthesis;
+
+    return () => {
+      console.log('unmount');
+      speakingRef?.current?.cancel();
+    };
+  }, []);
+
+  function extractContent(blogBody) {
+    return new DOMParser().parseFromString(blogBody, 'text/html').documentElement.textContent;
+  }
+
+  const handleTextToSpeach = ({ blogObject }: string) => {
+    if (!startedSpeaking) {
+      setStartedSpeaking(true);
+      const speakText = extractContent(blogObject?.attributes?.body);
+      const utterence = new SpeechSynthesisUtterance(
+        `${blogObject?.attributes?.title} written by ${blogObject?.attributes?.author}, ${speakText}`
+      );
+      speakingRef?.current?.speak(utterence);
+    } else {
+      speakingRef?.current?.cancel();
+      setStartedSpeaking(false);
+    }
+  };
+
   const LinkModal = () => {
     const openLink = (link: string) => {
       window.open(link, '_blank');
     };
-    // 'https://www.facebook.com/sharer/sharer.php?u='+window.location.href
+
     return (
       <Modal
         open={open}
@@ -314,6 +343,11 @@ const BlogItem = () => {
                   <BsFillPlayCircleFill
                     color="#DD44B9"
                     size={25}
+                    onClick={() =>
+                      handleTextToSpeach({
+                        blogObject: blogsData,
+                      })
+                    }
                   />
                   <Topdiv>Listen</Topdiv>
                 </ItemH>
