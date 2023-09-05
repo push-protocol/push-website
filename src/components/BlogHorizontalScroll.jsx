@@ -149,36 +149,36 @@ const SlideElement = ({
                 linkContent = "Build Push Notifications"
                 image = {`${BACKEND_API}${items?.[0]?.attributes?.image?.data?.attributes?.url}`}
                 alt={'Illustration showing Push Notifications'}
-                title={items[0]?.attributes?.title}
+                title={items?.[0]?.attributes?.title}
                 addMargin={false}
                 link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
-                content={items[0]?.attributes?.body}
-                id={items[0]?.id}
+                content={items?.[0]?.attributes?.body}
+                id={items?.[0]?.id}
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
                 linkContent = "Build with Push Chat"
                 image = {`${BACKEND_API}${items?.[1]?.attributes?.image?.data?.attributes?.url}`}
                 alt={'Illustration showing Push Chat'}
-                title={items[1]?.attributes?.title}
+                title={items?.[1]?.attributes?.title}
                 addMargin={true}
                 link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
                 paddingMobile={"30px 0px"}
-                content={items[1]?.attributes?.body}
-                id={items[1]?.id}
+                content={items?.[1]?.attributes?.body}
+                id={items?.[1]?.id}
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
                 linkContent = "Explore Push DAO"
                 image = {`${BACKEND_API}${items?.[2]?.attributes?.image?.data?.attributes?.url}`}
                 alt={'Illustration showing Push DAO'}
-                title={items[2]?.attributes?.title}
+                title={items?.[2]?.attributes?.title}
                 addMargin={true}
                 link="https://gov.push.org/"
                 paddingBottom={"34px"}
                 paddingMobile={"30px 0px"}
-                content={items[2]?.attributes?.body}
-                id={items[2]?.id}
+                content={items?.[2]?.attributes?.body}
+                id={items?.[2]?.id}
               />
               
             </SliderContainer>

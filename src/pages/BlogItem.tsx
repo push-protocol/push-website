@@ -163,8 +163,6 @@ const BlogItem = () => {
     }
   }, [blogsContent]);
 
-  console.log(moment().year(), moment(blogsData?.attributes?.date).year());
-
 
   const ArticleItem = ({ item }) => {
     return (
@@ -369,7 +367,10 @@ const BlogItem = () => {
 
               <ToggleSection>
                 {blogsData?.attributes?.tags?.data?.map((item, i) => (
-                  <ToggleButton key={i}>
+                  <ToggleButton key={i} onClick={
+                    () => {
+                      navigate(`/blogs`,{ state: { tag: item?.attributes?.name } });
+                    }}>
                     <Span>{item?.attributes?.name}</Span>
                   </ToggleButton>
                 ))}
@@ -825,15 +826,21 @@ const BlogContent = styled.div`
     }
 
     h3 {
-      font-family: Lora !important;
-      font-size: 22px;
-      line-height: 40px;
-      color: #575D73 !important
-      span {
-        font-family: Lora !important;
-        font-size: 22px;
-        line-height: 40px;
-        color: #575D73 !important;
+      // font-family: Lora !important;
+      // font-size: 22px;
+      // line-height: 40px;
+      color: black !important
+
+      font-family: Strawford;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+           span {
+              color: black !important;
+              font-family: Strawford;
+              font-size: 28px;
+              font-style: normal;
+              font-weight: 700;
       }
 
       @media ${device.mobileL} {
@@ -853,6 +860,7 @@ const BlogContent = styled.div`
       width: 100%;
       box-sizing: border-box;
       aspect-ratio: 16/9;
+      object-fit: contain;
     }
 
     figure {
@@ -933,6 +941,7 @@ const ToggleButton = styled.div`
   margin: 5px 5px;
   background: transparent;
   color: #000;
+  cursor: pointer;
   span {
     font-size: 20px;
     font-weight: 500;
