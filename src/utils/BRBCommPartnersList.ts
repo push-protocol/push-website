@@ -70,11 +70,25 @@ export const brbCommPartnersList = [
     height:'38px'
   },
   {
+    srcref: 'social3',
+    link: 'https://twitter.com/Social3Club',
+    alt: 'Social3, Community Partner of Push, #BRBIndia, pan-India dev tour',
+    title: 'Visit Social3 Twitter',
+    height: '48px'
+  },
+  {
     srcref: 'gpc',
     link: 'https://www.graphpapercapital.xyz/',
     alt: 'Graph Paper Capital, Community Partner of Push, #BRBIndia, pan-India dev tour',
     title: 'Visit Graph Paper Capital Website',
     height:'85px'
+  },
+  {
+    srcref: 'lumos',
+    link: 'https://twitter.com/lumoslabsHQ',
+    alt: 'Lumos, Community Partner of Push, #BRBIndia, pan-India dev tour',
+    title: 'Visit Lumos Twitter',
+    height: '95px'
   },
   {
     srcref: 'h4bengal',
@@ -98,11 +112,11 @@ export const brbCommPartnersList = [
     height:'79px'
   },
   {
-    srcref: 'diversion',
-    link: 'https://twitter.com/Diversion2k23',
-    alt: 'Diversion, Community Partner of Push, #BRBIndia, pan-India dev tour',
-    title: 'Visit Diversion Twitter',
-    height:'45px'
+    srcref: 'web3',
+    link: 'https://twitter.com/Web3_kerala',
+    alt: 'Web3, Community Partner of Push, #BRBIndia, pan-India dev tour',
+    title: 'Visit Web3 Twitter',
+    height: '120px'
   },
   {
     srcref: 'irlamigo',
