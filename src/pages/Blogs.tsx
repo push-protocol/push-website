@@ -107,7 +107,7 @@ const Blogs = () => {
     try {
       setIsLoading(true);
       const data = await getAllBlogData(page, PAGE_SIZE);
-      setBlogsData(data?.data);
+      if (!tag) setBlogsData(data?.data);
       setAllBlogsData(data?.data);
     } catch (e) {
       console.error('Blogs API data fetch error: ', e);
@@ -140,7 +140,7 @@ const Blogs = () => {
   }
 
   useEffect(() => {
-    if (!tag) loadData();
+    loadData();
     loadTagsData();
   }, []);
 
