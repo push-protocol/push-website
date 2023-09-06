@@ -271,7 +271,7 @@ const Blogs = () => {
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
-                  margin="24px 0 0 0"
+                  margin={isMobile? "15px 0px 0px":"24px 0 0 0"}
                   className="clamp"
                 >
                   {blogData?.attributes?.title}
@@ -418,7 +418,7 @@ const Blogs = () => {
                         />
                         <CarouselTitle>{item?.attributes.title}</CarouselTitle>
                         <CarouselReadTime>{useReadingTime(item?.attributes?.body)} min read</CarouselReadTime>
-                      </CarouselContainer>
+                      </CarouselContainer> 
                     </SwiperSlide>
                   ))}
                 </Swiper>
@@ -496,7 +496,7 @@ const Blogs = () => {
 
               {/* other grid section */}
               {!search && (
-                <SubArticles marginTop={isLoading ? '0px' : '92px'}>
+                <SubArticles marginTop={isLoading ? '0px' : '48px'}>
                   <ArticleItem
                     item={blogsData?.slice(2, blogsData.length)}
                     main={false}
@@ -642,7 +642,7 @@ const ToggleButton = styled.div`
   width: fit-content;
   height: fit-content;
   left: 0;
-  margin: 5px 5px;
+  margin: 5px 8px 5px 0px;
   background: ${(props) => (props.active ? '#D53893' : 'transparent')};
   color: ${(props) => (props.active ? '#fff' : '#000')};
   &:hover {
@@ -775,6 +775,7 @@ const ArticleText = styled.div`
 
   @media ${device.mobileL} {
     font-size: 12px;
+    line-height: 18px;
   }
 `;
 
@@ -819,7 +820,7 @@ const ArticleContent = styled.div`
 const SubArticles = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 33px;
+  grid-gap: 48px 33px;
   margin-top: ${(props) => props.marginTop};
   align-items: flex-start;
   @media ${device.tablet} {
@@ -880,7 +881,7 @@ const ArticleImage = styled.img`
 `;
 
 const ArticleRow = styled.div`
-  margin-left: 44px;
+  margin-left: 32px;
   .clamp {
     overflow: hidden;
     display: -webkit-box !important;
@@ -913,13 +914,14 @@ const BlogsSection = styled(ResponsiveSection)`
 const MainSection = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 32px;
+  grid-gap: 33px;
   width: 100%;
   gap: 33px;
-  margin-top: 91px;
+  margin-top: 48px;
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 0px;
+    margin-bottom: 48px;
   }
 `;
 
@@ -987,6 +989,7 @@ const CarouselContainer = styled.div`
   justify-content: space-between;
   cursor: pointer;
   padding: 0px;
+  margin-bottom: 27px;
   @media (max-width: 1200px) {
     padding: 100px 20px 30px 20px;
   }
@@ -1026,6 +1029,7 @@ const CarouselTitle = styled.div`
   font-size: 40px;
   color: #ffffff;
   text-align: left;
+  margin-bottom: 12px;
   @media ${device.tablet} {
     font-weight: 700;
     font-size: 21.5385px;
