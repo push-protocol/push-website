@@ -903,8 +903,8 @@ const BlogContent = styled.div`
     img{
       margin: 0 auto;
       padding: 0;
-      // width: 100%;
-      max-width: 800px;
+      width: 100%;
+      // max-width: 800px;
       height: auto;
       box-sizing: border-box;
       aspect-ratio: 16/9;
