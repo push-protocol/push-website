@@ -144,20 +144,14 @@ const Blogs = () => {
   useEffect(() => {
     loadData();
     loadTagsData();
-
-    // if(tag){
-    // console.log(tag, tag);
-    // setActive(tag);
-    // handleSort(tag);
-    // }
   }, []);
 
-  useEffect(() => {
-    // if(!tag) return;
+  // useEffect(() => {
+  //   // if(!tag) return;
 
-    // handleSort(tag);
-    // setActive(tag);
-  }, [tag])
+  //   // handleSort(tag);
+  //   // setActive(tag);
+  // }, [tag])
 
   const onArticleClick = (clickedBlog) => {
     if (clickedBlog) {
@@ -239,7 +233,6 @@ const Blogs = () => {
           setIsLoading(false);
         }
       }
-      setActive('All')
     },
     [active, tag]
   )
