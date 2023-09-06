@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useCallback ,useEffect, useState } from 'react';
 import { getAllBlogData, getAllTags, searchBlogData, searchBlogDataByTags } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
@@ -15,7 +15,7 @@ import Image from 'assets/bg-image.png';
 import { BiSearch } from 'react-icons/bi';
 import moment from 'moment';
 import Moment from 'react-moment';
-import { useNavigate } from 'react-router-dom';
+import { useLocation ,useNavigate } from 'react-router-dom';
 import SpinnerSVG from 'assets/Spinner.gif';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -24,6 +24,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import useReadingTime from 'hooks/useReadingTime';
@@ -99,6 +100,10 @@ const Blogs = () => {
   const [active, setActive] = useState('All');
   const [isFetchingDone, setIsFetchingDone] = useState(false);
   const navigate = useNavigate();
+  const { state } = useLocation();
+  const { tag } = state || {};
+
+
 
   const loadData = async () => {
     try {
@@ -139,7 +144,20 @@ const Blogs = () => {
   useEffect(() => {
     loadData();
     loadTagsData();
+
+    // if(tag){
+    // console.log(tag, tag);
+    // setActive(tag);
+    // handleSort(tag);
+    // }
   }, []);
+
+  useEffect(() => {
+    // if(!tag) return;
+
+    // handleSort(tag);
+    // setActive(tag);
+  }, [tag])
 
   const onArticleClick = (clickedBlog) => {
     if (clickedBlog) {
@@ -192,35 +210,43 @@ const Blogs = () => {
     }
   };
 
-  const handleSort = async (item) => {
-    setIsFetchingDone(false);
-    setPage(1);
-    if (item !== 'All') {
-      setActive(item?.attributes?.name);
-      try {
-        setIsLoading(true);
-        const data = await searchBlogDataByTags(item?.attributes?.name);
-        setBlogsData(data?.data);
-      } catch (e) {
-        console.error('Blogs API data fetch error: ', e);
-        setErrorPage(true);
-      } finally {
-        setIsLoading(false);
+  const handleSort = useCallback(
+    async (item) => {
+      setIsFetchingDone(false);
+      setPage(1);
+      if (item !== 'All') {
+        setActive(item?.attributes?.name);
+        try {
+          setIsLoading(true);
+          const data = await searchBlogDataByTags(item?.attributes?.name);
+          setBlogsData(data?.data);
+        } catch (e) {
+          console.error('Blogs API data fetch error: ', e);
+          setErrorPage(true);
+        } finally {
+          setIsLoading(false);
+        }
+      } else {
+        try {
+          setActive(item);
+          setIsLoading(true);
+          const data = await getAllBlogData(1, PAGE_SIZE);
+          setBlogsData(data?.data);
+        } catch (e) {
+          console.error('Blogs API data fetch error: ', e);
+          setErrorPage(true);
+        } finally {
+          setIsLoading(false);
+        }
       }
-    } else {
-      try {
-        setActive(item);
-        setIsLoading(true);
-        const data = await getAllBlogData(1, PAGE_SIZE);
-        setBlogsData(data?.data);
-      } catch (e) {
-        console.error('Blogs API data fetch error: ', e);
-        setErrorPage(true);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-  };
+      setActive('All')
+    },
+    [active, tag]
+  )
+
+  // async (item) => {
+    
+  // };
 
   const ArticleItem = ({ item, main }) => {
     return (
@@ -256,7 +282,7 @@ const Blogs = () => {
 
               <ArticleContent>
                 <Moment
-                  format="D MMMM, YYYY"
+                  format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                   style={{ marginRight: '5px' }}
                 >
                   {blogData?.attributes?.date}
@@ -310,7 +336,7 @@ const Blogs = () => {
                       <ToggleButton style={{ marginRight: '15px' }}>{item?.attributes?.name}</ToggleButton>
                     ))}
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
                     {blogData?.attributes?.date}
@@ -347,6 +373,7 @@ const Blogs = () => {
       </PageWrapper>
     );
   }
+
 
   if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems) || errorPage !== true) {
     return (

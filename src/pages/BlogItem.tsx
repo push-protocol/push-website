@@ -198,6 +198,7 @@ const BlogItem = () => {
     }
   }, [blogsContent]);
 
+
   const ArticleItem = ({ item }) => {
     return (
       <>
@@ -232,10 +233,10 @@ const BlogItem = () => {
 
                 <ArticleContent style={{ marginTop: isMobile ? '15px' : '20px' }}>
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
-                    {blogData?.pubDate}
+                    {blogData?.attributes?.date}
                   </Moment>{' '}
                   &#183;
                   <Div>{useReadingTime(blogData?.attributes?.body)} min read</Div>
@@ -252,7 +253,7 @@ const BlogItem = () => {
     return (
       <div style={{ visibility: 'hidden' }}>
         <TopicContent>
-          <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
+          <Moment format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}>{blogsData?.attributes?.date}</Moment>{' '}
           <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
         </TopicContent>
       </div>
@@ -382,7 +383,7 @@ const BlogItem = () => {
             curve="bottom"
           >
             <TopicContent>
-              <Moment format="D MMMM, YYYY">{blogsData?.pubDate}</Moment>{' '}
+              <Moment format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}>{blogsData?.attributes?.date}</Moment>{' '}
               <DivTopic>{useReadingTime(blogsData?.attributes?.body)} min read</DivTopic>
             </TopicContent>
 
@@ -392,7 +393,7 @@ const BlogItem = () => {
               {isMobile && (
                 <ArticleContent marginTop="12px">
                   <Moment
-                    format="D MMMM, YYYY"
+                    format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
                     {blogsData?.attributes?.date}
@@ -410,7 +411,10 @@ const BlogItem = () => {
 
               <ToggleSection>
                 {blogsData?.attributes?.tags?.data?.map((item, i) => (
-                  <ToggleButton key={i}>
+                  <ToggleButton key={i} onClick={
+                    () => {
+                      navigate(`/blogs`,{ state: { tag: item?.attributes?.name } });
+                    }}>
                     <Span>{item?.attributes?.name}</Span>
                   </ToggleButton>
                 ))}
@@ -867,15 +871,21 @@ const BlogContent = styled.div`
     }
 
     h3 {
-      font-family: Lora !important;
-      font-size: 22px;
-      line-height: 40px;
-      color: #000 !important
-      span {
-        font-family: Lora !important;
-        font-size: 22px;
-        line-height: 40px;
-        color: #000 !important;
+      // font-family: Lora !important;
+      // font-size: 22px;
+      // line-height: 40px;
+      color: black !important
+
+      font-family: Strawford;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 700;
+           span {
+              color: black !important;
+              font-family: Strawford;
+              font-size: 28px;
+              font-style: normal;
+              font-weight: 700;
       }
 
       @media ${device.mobileL} {
@@ -898,6 +908,7 @@ const BlogContent = styled.div`
       height: auto;
       box-sizing: border-box;
       aspect-ratio: 16/9;
+      object-fit: contain;
 
       @media (max-width: 801px ) {
         max-width: 100%;
@@ -982,6 +993,7 @@ const ToggleButton = styled.div`
   margin: 5px 5px;
   background: transparent;
   color: #000;
+  cursor: pointer;
   span {
     font-size: 20px;
     font-weight: 500;
