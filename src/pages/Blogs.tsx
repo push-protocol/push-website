@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
-import React, { Fragment, useCallback ,useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import { getAllBlogData, getAllTags, searchBlogData, searchBlogDataByTags } from '../api';
 import styled from 'styled-components';
 import { Anchor, B, Content, H2, H3, HeroHeader, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
@@ -15,7 +15,7 @@ import Image from 'assets/bg-image.png';
 import { BiSearch } from 'react-icons/bi';
 import moment from 'moment';
 import Moment from 'react-moment';
-import { useLocation ,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SpinnerSVG from 'assets/Spinner.gif';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -100,10 +100,8 @@ const Blogs = () => {
   const [active, setActive] = useState('All');
   const [isFetchingDone, setIsFetchingDone] = useState(false);
   const navigate = useNavigate();
-  const { state } = useLocation();
-  const { tag } = state || {};
-
-
+  let location = useLocation();
+  let { tag } = location?.state || {};
 
   const loadData = async () => {
     try {
@@ -142,16 +140,17 @@ const Blogs = () => {
   }
 
   useEffect(() => {
-    loadData();
+    if (!tag) loadData();
     loadTagsData();
   }, []);
 
-  // useEffect(() => {
-  //   // if(!tag) return;
-
-  //   // handleSort(tag);
-  //   // setActive(tag);
-  // }, [tag])
+  useEffect(() => {
+    if (!tag) return;
+    // filtering the blogs
+    handleSort(tag);
+    // resetting the navigate state
+    navigate(location.pathname, { replace: true });
+  }, [tag]);
 
   const onArticleClick = (clickedBlog) => {
     if (clickedBlog) {
@@ -235,10 +234,10 @@ const Blogs = () => {
       }
     },
     [active, tag]
-  )
+  );
 
   // async (item) => {
-    
+
   // };
 
   const ArticleItem = ({ item, main }) => {
@@ -264,7 +263,7 @@ const Blogs = () => {
                   weight="700"
                   spacing="-0.02em"
                   lineHeight="142%"
-                  margin={isMobile? "15px 0px 0px":"24px 0 0 0"}
+                  margin={isMobile ? '15px 0px 0px' : '24px 0 0 0'}
                   className="clamp"
                 >
                   {blogData?.attributes?.title}
@@ -275,7 +274,7 @@ const Blogs = () => {
 
               <ArticleContent>
                 <Moment
-                  format={moment().year() === moment(blogsData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
+                  format={moment().year() === moment(blogsData?.attributes?.date).year() ? 'D MMMM' : 'D MMMM, YYYY'}
                   style={{ marginRight: '5px' }}
                 >
                   {blogData?.attributes?.date}
@@ -329,7 +328,7 @@ const Blogs = () => {
                       <ToggleButton style={{ marginRight: '15px' }}>{item?.attributes?.name}</ToggleButton>
                     ))}
                   <Moment
-                    format={moment().year() === moment(blogData?.attributes?.date).year() ? "D MMMM" : 'D MMMM, YYYY'}
+                    format={moment().year() === moment(blogData?.attributes?.date).year() ? 'D MMMM' : 'D MMMM, YYYY'}
                     style={{ marginRight: '5px' }}
                   >
                     {blogData?.attributes?.date}
@@ -366,7 +365,6 @@ const Blogs = () => {
       </PageWrapper>
     );
   }
-
 
   if ((Array.isArray(blogsData) && blogsData?.length > 0) || (search && searchItems) || errorPage !== true) {
     return (
@@ -411,7 +409,7 @@ const Blogs = () => {
                         />
                         <CarouselTitle>{item?.attributes.title}</CarouselTitle>
                         <CarouselReadTime>{useReadingTime(item?.attributes?.body)} min read</CarouselReadTime>
-                      </CarouselContainer> 
+                      </CarouselContainer>
                     </SwiperSlide>
                   ))}
                 </Swiper>
