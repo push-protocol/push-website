@@ -816,10 +816,13 @@ const BlogContent = styled.div`
     iframe {
       width: 800px;
       height: 450px;
-      // width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       border-radius: 32px;
+
+      @media (max-width: 801px ) {
+          width: 100%;
+      }
   }
 
     pre { 
@@ -895,6 +898,10 @@ const BlogContent = styled.div`
       height: auto;
       box-sizing: border-box;
       aspect-ratio: 16/9;
+
+      @media (max-width: 801px ) {
+        max-width: 100%;
+      }
     }
 
     figure {
