@@ -4,17 +4,51 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { lazy, useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
+import ReactGA from 'react-ga';
 
 // External Components
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
-
-// Internal Components
+import { useTranslation } from 'react-i18next';
+import { FiArrowUpRight } from 'react-icons/fi';
 import Spline from '@splinetool/react-spline';
 import { BsArrowUpRight } from 'react-icons/bs';
+
+// Internal Components
 import useMediaQuery from '../hooks/useMediaQuery';
+import AnalyticsStats from '../components/AnalyticsStats';
+import Blogs from '../components/Blogs';
+import HybridSection from '../components/HybridSection';
+import InvestorList from '../components/InvestorList';
+import MarqueeAnimation from '../components/MarqueeAnimation';
+import PageWrapper from '../components/PageWrapper';
+import PartnerChannels from '../components/PartnerChannels';
+import { Atag, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
+import SignupInput from '../components/SignupInput';
+import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
+import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg';
+import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
+import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
+import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
+import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
+import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
+import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
+import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
+import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
+import { ReactComponent as GithubSVG } from '../assets/github.svg';
+import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
+import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
+import FadeInAnimation from 'components/FadeInAnimation';
+import HorizontalScroll from 'components/HorizontalScroll';
+import ImageHolder from 'components/ImageHolder';
+import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
+import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
+import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
+import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
+import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
+import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -24,56 +58,15 @@ import TeamList from '../config/teamList';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-import AnalyticsStats from '../components/AnalyticsStats';
-import Blogs from '../components/Blogs';
-import HybridSection from '../components/HybridSection';
-import InvestorList from '../components/InvestorList';
-import MarqueeAnimation from '../components/MarqueeAnimation';
-import PageWrapper from '../components/PageWrapper';
-import PartnerChannels from '../components/PartnerChannels';
-import { Anchor, Content, H2, HeroHeader, ItemBreak, ItemH, ItemV, Section, Span } from '../components/SharedStyling';
-import {
-  Atag,
-  ButtonV2,
-  ContentV2,
-  H1V2,
-  H2V2,
-  ItemHV2,
-  ItemVV2,
-  SectionV2,
-  SpanV2,
-} from '../components/SharedStylingV2';
-import SignupInput from '../components/SignupInput';
-import TeamMember from '../components/TeamMember';
+function Home({ isAlertVisible }) {
+  // React GA Analytics
+  ReactGA.pageview('/home');
 
-import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
-import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
-import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
-import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
-import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
-import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
-import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
-
-import { ReactComponent as GithubSVG } from '../assets/github.svg';
-import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
-import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
-import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
-
-import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
-import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
-import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
-import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
-import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
-import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-import HorizontalScroll from 'components/HorizontalScroll';
-import ImageHolder from 'components/ImageHolder';
-import FadeInAnimation from 'components/FadeInAnimation';
-import { FiArrowUpRight } from 'react-icons/fi';
-
-function Home() {
   const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery('(max-width: 1250px)');
+
+  // Internationalization
+  const { t, i18n } = useTranslation();
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -135,12 +128,14 @@ function Home() {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2>
+          <ContentV2
+            alignSelf="center"
+          >
             {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
                 <HeroAnimation>
-                   <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+                  <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
                 </HeroAnimation>
               )
             }
@@ -149,7 +144,7 @@ function Home() {
               justifyContent="flex-start"
             >
               <HeroItem
-                maxWidth="60%"
+                maxWidth="50%"
                 alignItems="flex-start"
                 MarginTop={'100px'}
               >
@@ -157,7 +152,7 @@ function Home() {
                   wrapperElement="div"
                   delay={0.25}
                 >
-                  <H1V2 zIndex="2"> The Communication Protocol of Web3</H1V2>
+                  <H1V2 zIndex="2">{t('home.hero.title')}</H1V2>
                 </FadeInAnimation>
 
                 <SpanV2
@@ -169,8 +164,7 @@ function Home() {
                     wrapperElement="div"
                     delay={0.45}
                   >
-                    Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for
-                    dapps, wallets, and services.
+                    {t('home.hero.description')}
                   </FadeInAnimation>
                 </SpanV2>
 
@@ -184,23 +178,23 @@ function Home() {
                   >
                     <Atag
                       href="https://docs.push.org/developers"
-                      title="Developer Docs"
+                      title={t('home.hero.alt-start-button')}
                       target="_blank"
                       background={GLOBALS.COLORS.HIGHLIGHT}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      Start Building
+                      {t('home.hero.start-button')}
                     </Atag>
                     <Atag
                       href="https://app.push.org/"
-                      title="Push Dapp"
+                      title={t('home.hero.alt-explore-button')}
                       target="_blank"
                       background={GLOBALS.COLORS.BG_DARK_SECONDARY}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      Explore Push Protocol
+                      {t('home.hero.explore-button')}
                     </Atag>
                   </HeroCTA>
                 </FadeInAnimation>
@@ -209,11 +203,13 @@ function Home() {
                   justifyContent="flex-start"
                   margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                 >
-                  <Anchor
+                  <Atag
                     href="https://twitter.com/pushprotocol"
                     title="Push Protocol Twitter"
                     target="_blank"
                     margin="0 0 0 -10px"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -224,12 +220,14 @@ function Home() {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
 
-                  <Anchor
+                  <Atag
                     href="https://github.com/ethereum-push-notification-service"
                     title="Push Github"
                     target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -240,12 +238,14 @@ function Home() {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
 
-                  <Anchor
+                  <Atag
                     href="https://discord.gg/pushprotocol"
                     title="Push Discord"
                     target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
@@ -256,7 +256,7 @@ function Home() {
                         height={32}
                       />
                     </FadeInAnimation>
-                  </Anchor>
+                  </Atag>
                 </ItemHV2>
               </HeroItem>
             </HeroPrimary>
@@ -266,7 +266,7 @@ function Home() {
               zIndex="9"
               left="0"
               right="0"
-              bottom="10vh"
+              bottom="7vh"
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
@@ -279,59 +279,62 @@ function Home() {
           data-bkg="light"
           className="lightBackground"
         >
-          <Content className="contentBox">
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+          >
             <PartnerChannels />
 
             <Partners
               margin="40px 0"
               gap={isMobile ? '30px' : '50px'}
             >
-              <ItemV>
-                <Span
-                  weight="400"
+              <ItemVV2>
+                <SpanV2
+                  fontWeight="400"
                   color="#303C5E"
-                  size="19px"
+                  fontSize="19px"
                   lineHeight="160%"
-                  spacing="-0.03em"
+                  letterSpacing="-0.03em"
                 >
                   <FadeInAnimation
                     wrapperElement="span"
                     delay={0}
                   >
-                    Push powers communication for over 100 of the world’s leading dapps and service providers across
-                    DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.{' '}
+                    {t('home.partners-section.networks')}{' '}
                   </FadeInAnimation>
-                </Span>
-              </ItemV>
+                </SpanV2>
+              </ItemVV2>
 
-              <ItemV>
+              <ItemHV2 maxWidth="550px">
                 <LiveNetworks>
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <EthLogoTextSVG
                       alt="Logo for Ethereum"
                       title="Ethereum Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
 
-                  <ItemV className="divider" />
+                  <ItemHV2 className="divider" />
 
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <PolygonLogoTextSVG
                       alt="Logo for Polygon"
                       title="Polygon Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
 
-                  <ItemV className="divider" />
+                  <ItemHV2 className="divider" />
 
-                  <ItemV className="network">
+                  <ItemVV2 className="network">
                     <BNBChainSVG
                       alt="Logo for BNB Chain"
                       title="BNB Chain Logo"
                     />
-                  </ItemV>
+                  </ItemVV2>
                 </LiveNetworks>
-              </ItemV>
+              </ItemHV2>
             </Partners>
 
             <PushWorksRow>
@@ -345,8 +348,8 @@ function Home() {
                     className="pushMissingSvg"
                     src={PushMissingPieceFigure}
                     srcSet={PushMissingPieceFigure}
-                    alt={'Illustration showing Push as the missing piece of web3'}
-                    title="Push is the missing piece of web3"
+                    alt={t('home.partners-section.alt-missing-web3-image')}
+                    title={t('home.partners-section.title-missing-web3-image')}
                     style={{ margin: '0 auto' }}
                     // width="100%"
                     // height="100%"
@@ -354,17 +357,18 @@ function Home() {
                 </FadeInAnimation>
               </ItemImage>
 
-              <ItemV
-                justifyContent={isMobile ? 'center' : 'flex-start'}
+              <ItemVV2
+                justifyContent="space-around"
+                minHeight="530px"
                 // alignSelf='center'
-                alignItems="center"
+                alignItems={isMobile ? 'center' : 'flex-start'}
                 // flex="2"
-                // gap="22px"
+                // gap='22px'
               >
                 <ResponsiveH2
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                 >
                   <FadeInAnimation
@@ -372,74 +376,71 @@ function Home() {
                     direction="up"
                     delay={0}
                   >
-                    Push is the missing piece of Web3
+                    {t('home.partners-section.missing-web3-title')}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
-                <Span
-                  weight="400"
+                <SpanV2
+                  fontWeight="400"
                   color="#303C5E"
-                  size="19px"
+                  fontSize="19px"
                   lineHeight="160%"
-                  spacing="-0.03em"
+                  letterSpacing="-0.03em"
                   margin={isMobile && '10px 0px 0px 0px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.1}
+                    delay={0}
                   >
-                    Until Push, no solution existed to enable native communication between wallets in response to on-
-                    and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and
-                    centralized communication platforms.
+                    {t('home.partners-section.missing-web3-text')}
                   </FadeInAnimation>
-                </Span>
+                </SpanV2>
 
-                <Span
-                  weight="500"
+                <SpanV2
+                  fontWeight="500"
                   color="#121315"
-                  size="22px"
+                  fontSize="22px"
                   lineHeight="142%"
-                  spacing="-0.03em"
+                  letterSpacing="-0.03em"
                   margin={isMobile && '10px 0px 0px 0px'}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
-                    delay={0.2}
+                    delay={0}
                   >
-                    Push is building the communication network for Web3, addressing a gap in critical infrastructure and
-                    improving the everyday experience for blockchain users.
+                    {t('home.partners-section.missing-web3-span')}
                   </FadeInAnimation>
-                </Span>
+                </SpanV2>
 
                 <FadeInAnimation
                   wrapperElement="div"
                   direction="up"
-                  delay={0.3}
+                  delay={0}
                 >
-                  <Anchor
+                  <Atag
                     href="https://docs.push.org/developers"
-                    title="Developer Docs"
+                    title={t('home.partners-section.missing-web3-alt-button')}
                     target="_blank"
-                    bg="#DD44B9"
-                    radius="16px"
+                    background="#DD44B9"
+                    borderRadius="16px"
                     padding="14px 32px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="26px"
-                    self="center"
-                    margin={isMobile && '20px 0px 0px 0px'}
+                    alignSelf="center"
+                    margin={isMobile ? '50px 0px 0px 0px' : ''}
                   >
                     {/* Learn about $PUSH */}
-                    How Push works
+                    {t('home.partners-section.missing-web3-button')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </FadeInAnimation>
-              </ItemV>
+              </ItemVV2>
             </PushWorksRow>
-          </Content>
+          </ContentV2>
         </StorySection>
 
         <BuildWithPushSection
@@ -454,34 +455,34 @@ function Home() {
               delay={0.2}
             >
               <SignupBox margin="0 0 0px 0">
-                <ItemV
+                <ItemVV2
                   justifyContent="flex-start"
                   gap="12px"
                 >
                   <ResponsiveH2
                     color="#09090B"
-                    size="40px"
-                    weight="700"
-                    spacing="-0.02em"
+                    fontSize="40px"
+                    fontWeight="700"
+                    letterSpacing="-0.02em"
                     lineHeight="110%"
                     margin="0"
                   >
-                    Never Miss an Update
+                    {t('home.email-section.title')}
                   </ResponsiveH2>
-                  <Span
+                  <SpanV2
                     color="#303C5E"
-                    size="20px"
-                    weight="400"
-                    spacing="-0.03em"
+                    fontSize="20px"
+                    fontWeight="400"
+                    letterSpacing="-0.03em"
                     lineHeight="138.5%"
                   >
-                    Sign up and stay up to date with ecosystem announcements, giveaways and more.
-                  </Span>
-                </ItemV>
+                    {t('home.email-section.text')}
+                  </SpanV2>
+                </ItemVV2>
 
-                <ItemV>
+                <ItemVV2>
                   <SignupInput />
-                </ItemV>
+                </ItemVV2>
               </SignupBox>
             </FadeInAnimation>
 
@@ -505,7 +506,11 @@ function Home() {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <Content className="contentBox">
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+          >
             <IntegrateGrowWithPushRow gap="18px">
               <FadeInAnimation
                 wrapperElement="div"
@@ -515,8 +520,8 @@ function Home() {
                   className="figureSvg"
                   src={GrowWithPushFigure}
                   srcSet={GrowWithPushFigure}
-                  alt={'Illustration showing $PUSH tokens'}
-                  title="Use the Push token to grow"
+                  alt={t('home.grow-section.image-alt')}
+                  title={t('home.grow-section.image-title')}
                   width="100%"
                   height="100%"
                 />
@@ -524,9 +529,9 @@ function Home() {
 
               <ResponsiveH2
                 color="#121315"
-                size="40px"
-                weight="700"
-                spacing="-0.02em"
+                fontSize="40px"
+                fontWeight="700"
+                letterSpacing="-0.02em"
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
@@ -534,35 +539,34 @@ function Home() {
                   wrapperElement="div"
                   delay={0.2}
                 >
-                  Grow with Push
+                  {t('home.grow-section.title')}
                 </FadeInAnimation>
               </ResponsiveH2>
 
-              <Span
+              <SpanV2
                 className="growWithPushtext"
                 color="#303C5E"
-                size="19px"
-                weight="400"
-                spacing="-0.03em"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
                 lineHeight="160%"
               >
                 <FadeInAnimation
                   wrapperElement="div"
                   delay={0.3}
                 >
-                  The $PUSH token enables governance, modification of protocol fees and features, network security, and
-                  fee management among all wallets that integrate Push, including Push governance participants.
+                  {t('home.grow-section.text')}
                 </FadeInAnimation>
-              </Span>
+              </SpanV2>
             </IntegrateGrowWithPushRow>
 
-            <ItemH margin="120px 0 0 0">
+            <ItemHV2 margin="120px 0 0 0">
               <IntegrateAndEarn>
                 <ResponsiveH2
                   color="#09090B"
-                  size="36px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="36px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
@@ -570,47 +574,47 @@ function Home() {
                     wrapperElement="div"
                     delay={0.1}
                   >
-                    Are you a crypto wallet? <br></br> Integrate and earn.
+                    {t('home.grow-section.wallet-text.part1')} <br></br> {t('home.grow-section.wallet-text.part2')}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
-                <Anchor
+                <Atag
                   href="https://docs.push.org/hub/"
-                  title="Learn about $PUSH"
+                  title={t('home.grow-section.button-alt')}
                   target="_blank"
-                  bg="#DD44B9"
-                  radius="16px"
-                  padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
+                  background="#DD44B9"
+                  borderRadius="16px"
+                  padding="10px 15px"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
                   lineHeight="26px"
-                  self="center"
+                  alignSelf="center"
                 >
-                  Learn about $PUSH
-                </Anchor>
+                  {t('home.grow-section.button')}
+                </Atag>
               </IntegrateAndEarn>
-            </ItemH>
+            </ItemHV2>
 
-            <ItemH margin="80px 0 0 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
-                  Why do you need Push?
+                  {t('home.why-push-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
 
-            <ItemH padding="80px 0 0 0">
+            <ItemHV2 padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
@@ -620,25 +624,25 @@ function Home() {
                     >
                       <ChainAgnosticFigure
                         alt="Icon showing Push is chain agnostic"
-                        title="Chain Agnostic"
+                        title={t('home.why-push-section.chain-agnostic-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Chain Agnostic
+                      {t('home.why-push-section.chain-agnostic-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -649,25 +653,25 @@ function Home() {
                     >
                       <ImmediatecommunicationFigure
                         alt="Icon showing Immediate Communication"
-                        title="Immediate Communication"
+                        title={t('home.why-push-section.immediate-communication-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Immediate Communication
+                      {t('home.why-push-section.immediate-communication-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -678,25 +682,25 @@ function Home() {
                     >
                       <DecentralizedstackFigure
                         alt="Icon showing decentralization"
-                        title="Decentralized Stack"
+                        title={t('home.why-push-section.decentralized-stack-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Decentralized Stack
+                      {t('home.why-push-section.decentralized-stack-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -707,25 +711,25 @@ function Home() {
                     >
                       <ImproveduxFigure
                         alt="Icon showing User Experience"
-                        title="Improved UX"
+                        title={t('home.why-push-section.improved-ux-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Improved UX
+                      {t('home.why-push-section.improved-ux-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -736,25 +740,25 @@ function Home() {
                     >
                       <SecurityalertsFigure
                         alt="Icon showing Security"
-                        title="Security Alerts"
+                        title={t('home.why-push-section.security-alerts-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Security Alerts
+                      {t('home.why-push-section.security-alerts-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -765,85 +769,84 @@ function Home() {
                     >
                       <CensorshipresistantFigure
                         alt="Icon showing Censorship Resistance"
-                        title="Censorship Resistant"
+                        title={t('home.why-push-section.censorship-resistant-text')}
                       />
                     </FadeInAnimation>
                   </div>
 
-                  <Span
+                  <SpanV2
                     color="#09090B"
-                    size="24px"
-                    weight="500"
-                    spacing="-0.03em"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
                     <FadeInAnimation
                       wrapperElement="div"
                       delay={0.2}
                     >
-                      Censorship Resistant
+                      {t('home.why-push-section.censorship-resistant-text')}
                     </FadeInAnimation>
-                  </Span>
+                  </SpanV2>
                 </MatrixCell>
               </Matrix>
-            </ItemH>
+            </ItemHV2>
 
             <WhyPushTextBox
               textAlign="center"
               margin="80px 160px"
             >
-              <Span
+              <SpanV2
                 color="#303C5E"
-                size="19px"
-                weight="400"
-                spacing="-0.03em"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
                 lineHeight="142%"
               >
-                Before Push, blockchain applications, service providers, and wallets had no way to natively communicate
-                with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting
-                in a broken ecosystem and problems in daily use.
-              </Span>
+                {t('home.why-push-section.text')}
+              </SpanV2>
             </WhyPushTextBox>
 
-            <ItemH margin="80px 0 0 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                   width="50%"
                 >
-                  Push Insights & Updates
+                  {t('home.insights-section.title')}
                 </ResponsiveH2>
-              </ItemV>
+              </ItemVV2>
 
-              <ItemV justifyContent="flex-end">
-                <Anchor
+              <ItemHV2 justifyContent="flex-end">
+                <Atag
                   href="https://push-protocol.medium.com/"
                   title="Exlore all articles"
                   target="_blank"
-                  hoverBG="transparent"
+                  hoverBackground="transparent"
                   hover="transparent"
+                  background="transparent"
                   filter="none"
                   color="#DD44B9"
-                  radius="16px"
+                  borderRadius="16px"
                   padding="14px 32px"
-                  size="18px"
-                  weight="500"
-                  spacing="-0.03em"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Explore all Articles
+                  {t('home.insights-section.link-text')}
                   <BsArrowUpRight className="anchorSVGlink" />
-                </Anchor>
-              </ItemV>
-            </ItemH>
+                </Atag>
+              </ItemHV2>
+            </ItemHV2>
 
             <Blogs count={4} />
 
@@ -941,26 +944,26 @@ function Home() {
               </Anchor>
             </TeamMemberButtons> */}
 
-            <ItemH margin="80px 0 80px 0">
-              <ItemV
+            <ItemHV2 margin="80px 0 80px 0">
+              <ItemVV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <InvestorHeader
                   color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
-                  Backed by successful entrepreneurs and venture capital funds.
+                  {t('home.investors-section.title')}
                 </InvestorHeader>
-              </ItemV>
-            </ItemH>
+              </ItemVV2>
+            </ItemHV2>
 
             <InvestorList />
-          </Content>
+          </ContentV2>
         </IntergrateWithPushSection>
 
         <FeaturedInSection
@@ -968,25 +971,29 @@ function Home() {
           data-bkg="dark"
           className="darkBackground"
         >
-          <Content className="contentBox">
-            <ItemH justifyContent="flex-start">
-              <ItemV
+          <ContentV2
+            className="contentBox"
+            padding="40px"
+            alignSelf="flex-start"
+          >
+            <ItemHV2 justifyContent="flex-start">
+              <ItemHV2
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
                 <ResponsiveH2
                   color="#FFFFFF"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                   margin="0"
                 >
-                  Featured in
+                  {t('home.featured-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-            </ItemH>
-          </Content>
+              </ItemHV2>
+            </ItemHV2>
+          </ContentV2>
 
           <FeaturedInMarquee
             flexDirection="column"
@@ -999,138 +1006,177 @@ function Home() {
               gradient={false}
             >
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  We saw a driven, innovative builder who was deeply committed to Ethereum&apos;s growth and success.
-                </Span>
+                  {t('home.featured-section.article1.text')}
+                </SpanV2>
 
                 <ArticleSource>
                   <EthFoundationBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
                     title="Read ETH Foundation article about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article1.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  The company hopes to address the lack of cross-blockchain communication with easy messaging tools.
-                </Span>
+                  {t('home.featured-section.article2.text')}
+                </SpanV2>
 
                 <ArticleSource>
                   <CoindeskBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
                     title="Read Coindesk article about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article2.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3
-                </Span>
+                  {t('home.featured-section.article3.text')}
+                </SpanV2>
 
                 <ArticleSource>
                   <DefiPrimeBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://defiprime.com/ethereum-push-notification-service"
                     title="Read Defi Prime article on Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article3.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
 
               <FeaturedCell className="marqueeItem">
-                <Span
+                <SpanV2
                   color="#FFFFFF"
-                  size="22px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  Decentralized push notifications may transform what dapps can do.
-                </Span>
+                  {t('home.featured-section.article4.text')}
+                </SpanV2>
 
                 <ArticleSource>
                   <BalajiTweethandleBlackSVG />
-                  <Anchor
+                  <Atag
                     href="https://twitter.com/pushprotocol/status/1336359832081768448"
                     title="Read Balaji's tweet about Push"
                     target="_blank"
-                    hoverBG="transparent"
+                    background="transparent"
+                    hoverBackground="transparent"
                     hover="transparent"
                     filter="none"
                     color="#DD44B9"
-                    radius="16px"
-                    size="18px"
-                    weight="500"
-                    spacing="-0.03em"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
                     lineHeight="142%"
                     padding="0"
                   >
-                    View Article
+                    {t('home.featured-section.article4.link-text')}
                     <BsArrowUpRight className="anchorSVGlink" />
-                  </Anchor>
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article5.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <BeInCryptoSVG />
+                  <Atag
+                    href="https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn"
+                    title="Read Balaji's tweet about Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article5.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
                 </ArticleSource>
               </FeaturedCell>
             </MarqueeAnimation>
@@ -1211,7 +1257,7 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -1271,7 +1317,7 @@ const IntergrateWithPushSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
 `;
 
-const ItemImage = styled(ItemV)`
+const ItemImage = styled(ItemVV2)`
   width: 100%;
   @media ${device.tablet} {
     width: 400px;
@@ -1296,16 +1342,16 @@ const FeaturedInSection = styled(ResponsiveSection)`
   }
 `;
 
-const FeaturedInMarquee = styled(ItemH)``;
+const FeaturedInMarquee = styled(ItemHV2)``;
 
-const ResponsiveHeroContent = styled(ItemH)`
+const ResponsiveHeroContent = styled(ItemHV2)`
   @media ${device.tablet} {
     flex-direction: column;
     margin-top: 240px;
   }
 `;
 
-const HeroBox = styled(ItemV)`
+const HeroBox = styled(ItemVV2)`
   flex: 0 0 52%;
 
   @media ${device.tablet} {
@@ -1318,7 +1364,7 @@ const HeroBox = styled(ItemV)`
   }
 `;
 
-const PushWorksRow = styled(ItemH)`
+const PushWorksRow = styled(ItemHV2)`
   // column-gap: 105px;
   column-gap: 40px;
   margin-top: 150px;
@@ -1341,7 +1387,7 @@ const PushWorksRow = styled(ItemH)`
   }
 `;
 
-const PoweringCommunicationRow = styled(ItemH)`
+const PoweringCommunicationRow = styled(ItemHV2)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {
@@ -1349,7 +1395,7 @@ const PoweringCommunicationRow = styled(ItemH)`
   }
 `;
 
-const LiveNetworks = styled(ItemH)`
+const LiveNetworks = styled(ItemHV2)`
   background: #ffffff;
   border: 1px solid #bac4d6;
   border-radius: 28px;
@@ -1416,7 +1462,7 @@ export const BodyContent = styled.div`
 	&.contentBox {
 	// 	width: 100%;
   //   align-self: center;
-    max-width: 1140px;
+    max-width: 1213px;
   //   flex: 1;
   //   display: flex;
 	// }
@@ -1426,7 +1472,7 @@ export const BodyContent = styled.div`
   }
 `;
 
-const Partners = styled(ItemV)`
+const Partners = styled(ItemVV2)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1435,7 +1481,7 @@ const Partners = styled(ItemV)`
   }
 `;
 
-const SignupBox = styled(ItemH)`
+const SignupBox = styled(ItemHV2)`
   background: #b9abef;
   backdrop-filter: blur(10px);
   border-radius: 32px;
@@ -1450,7 +1496,7 @@ const SignupBox = styled(ItemH)`
   }
 `;
 
-const GrowPushCard = styled(ItemV)`
+const GrowPushCard = styled(ItemVV2)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1482,7 +1528,7 @@ const GrowPushCardDetails = styled.div`
   row-gap: 24px;
 `;
 
-const IntegrateGrowWithPushRow = styled(ItemH)`
+const IntegrateGrowWithPushRow = styled(ItemHV2)`
   margin: 40px 0 0 0;
   padding: 0 160px 0 160px;
 
@@ -1599,7 +1645,7 @@ const MatrixCell = styled.div`
   }
 `;
 
-const WhyPushTextBox = styled(ItemH)`
+const WhyPushTextBox = styled(ItemHV2)`
   margin: 80px 160px;
 
   @media ${device.tablet} {
@@ -1613,7 +1659,7 @@ const WhyPushTextBox = styled(ItemH)`
   }
 `;
 
-const BuiltByIntro = styled(ItemH)`
+const BuiltByIntro = styled(ItemHV2)`
   margin: 120px 160px;
 
   @media ${device.tablet} {
@@ -1671,7 +1717,7 @@ const ArticleSource = styled.div`
   justify-content: space-between;
 `;
 
-const BuiltByCards = styled(ItemH)`
+const BuiltByCards = styled(ItemHV2)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1681,7 +1727,7 @@ const BuiltByCards = styled(ItemH)`
   transition: all 350ms linear;
 `;
 
-const TeamMemberButtons = styled(ItemH)`
+const TeamMemberButtons = styled(ItemHV2)`
   @media ${device.tablet} {
     & a {
       width: 100%;

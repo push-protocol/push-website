@@ -2,15 +2,19 @@
 // @ts-nocheck
 /* eslint-disable react/prop-types */
 /* eslint-disable */
+
+// React + Web3 Essentials
 import React, { useEffect ,useRef } from 'react'
+
+// External Components
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { BsArrowUpRight } from 'react-icons/bs'
 import VanillaTilt from 'vanilla-tilt';
-import FadeInAnimation from './FadeInAnimation';
-import ImageHolder from './ImageHolder';
 
+// Internal Components
+import ImageHolder from './ImageHolder';
 import encode from '../assets/svgs/encode.svg'
 import ethglobal from '../assets/svgs/ethglobal.svg'
 import learnweb3dao from '../assets/svgs/learnweb3dao.svg'

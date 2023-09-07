@@ -1,3 +1,4 @@
+// React + Web3 Essentials
 import { useEffect, useState } from 'react';
 
 function useMediaQuery(query: string): boolean {

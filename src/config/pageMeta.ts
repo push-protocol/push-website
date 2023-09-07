@@ -26,5 +26,17 @@ export default {
   FRENS: {
     pageName: 'frens',
     pageTitle: 'PUSH | FrensOfPush'
+  },
+  SPACES: {
+    pageName: 'spaces',
+    pageTitle: 'PUSH | spaces'
+  },
+  CHEAT: {
+    pageName: 'cheatsheet',
+    pageTitle: 'PUSH | cheatsheet'
+  },
+  BRB: {
+    pageName: 'brb',
+    pageTitle: 'PUSH | brb'
   }
 };

@@ -1,19 +1,26 @@
 /* eslint-disable */
+
+// React + Web3 Essentials
 import React, { useEffect, useRef } from 'react'
+
+// External Components
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components'
-import { device } from '../config/globals';
-import { Anchor, AnchorLink, B, H2, ItemV, Span} from './SharedStyling';
+import { FiArrowUpRight } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
+
+// Internal Components
+import { Atag, SpanV2, H2V2, ItemVV2 } from './SharedStylingV2';
 import PushNotifications from '../assets/figures/pushnotifications.webp';
 import PushChat from '../assets/figures/pushchat.webp';
 import Pushdao from '../assets/figures/pushdao.webp';
 import ImageHolder from './ImageHolder';
-import { FiArrowUpRight } from 'react-icons/fi';
 import useMediaQuery from 'hooks/useMediaQuery';
 import FadeInAnimation from './FadeInAnimation';
 
-
+// Internal Configs
+import { device } from '../config/globals';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -30,143 +37,150 @@ const SlideElement = ({
   paddingBottom,
   paddingMobile
 }) => {
+
   const isMobile = useMediaQuery(device.tablet)
 
-  return(
-    <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom ={ paddingBottom} className="panel">
+  return (
+    <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom={paddingBottom} className="panel">
 
-    <GrowPushCardDetails>
-      <Span
-        color="#ADB8D7"
-        size={isMobile ? "20px" : "22px"}
-        weight={isMobile ? "400" : "500"}
-        lineHeight="146%"
-      >
-      <FadeInAnimation wrapperElement="div" delay={0.1}>
-        <B color="#fff">{title}</B> {content}
-      </FadeInAnimation>
-      </Span>
-
-      <FadeInAnimation wrapperElement="div" delay={0.2}>
-        <Anchor
-          href={link}
-          title={title}
-          target="_blank"
-          padding="0px 0px"
-          size={isMobile ? "18px" : "20px"}
-          weight={isMobile ? "400" : "500"}
-          spacing="-0.03em"
-          lineHeight="26px"
-          className='button'
-          margin="10px 0px 0px 0px"
-          // hoverShade="none"
+      <GrowPushCardDetails>
+        <SpanV2
+          color="#ADB8D7"
+          fontSize={isMobile ? "20px" : "22px"}
+          fontWeight={isMobile ? "400" : "500"}
+          lineHeight="146%"
+          letterSpacing="inherit"
         >
-          <SpanLink>{linkContent}</SpanLink>
-        <FiArrowUpRight className="anchorSVGlink" />
-        </Anchor>
-      </FadeInAnimation>
+          <FadeInAnimation wrapperElement="div" delay={0.1}>
+            <SpanV2 color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</SpanV2> {content}
+          </FadeInAnimation>
+        </SpanV2>
 
-    </GrowPushCardDetails>
-
-    <Div padding = {paddingMobile}>
-      <FadeInAnimation wrapperElement="div" delay={0.3}>
-        <MemberImage
-              className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
-              src={image}
-              srcSet={image}
-              alt= {alt}
-              title = {title}
-              width="100%"
-            />
+        <FadeInAnimation wrapperElement="div" delay={0.2}>
+          <Atag
+            href={link}
+            title={title}
+            target="_blank"
+            padding="0px 0px"
+            fontSize={isMobile ? "18px" : "20px"}
+            fontWeight={isMobile ? "400" : "500"}
+            letterSpacing="-0.03em"
+            lineHeight="26px"
+            className='button'
+            margin="10px 0px 0px 0px"
+            background="transparent"
+          // hoverShade="none"
+          >
+            <SpanLink>{linkContent}</SpanLink>
+            <FiArrowUpRight className="anchorSVGlink" />
+          </Atag>
         </FadeInAnimation>
-    </Div>
-  </GrowPushCard>
+
+      </GrowPushCardDetails>
+
+      <Div padding={paddingMobile}>
+        <FadeInAnimation wrapperElement="div" delay={0.3}>
+          <MemberImage
+            className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
+            src={image}
+            srcSet={image}
+            alt={alt}
+            title={title}
+            width="100%"
+          />
+        </FadeInAnimation>
+      </Div>
+    </GrowPushCard>
   )
 }
 
 const HorizontalScroll = () => {
-    const panels = useRef([]);
-    const panelsContainer = useRef();
-    const isMobile = useMediaQuery(device.tablet)
 
-    // ScrollTrigger.saveStyles(".mobile, .desktop");
+  // Internationalization
+  const { t } = useTranslation();
 
-    const createPanelsRefs = (panel, index) => {
-      panels.current[index] = panel;
-    };
-  
-    useEffect(() => {
-      const totalPanels = panels.current.length;
+  const panels = useRef([]);
+  const panelsContainer = useRef();
+  const isMobile = useMediaQuery(device.tablet)
 
-      ScrollTrigger.matchMedia({
-        "(min-width: 1199px)": function() {
-          gsap.to(panels?.current, {
-            xPercent: -79 * (totalPanels - 1),
-            // xPercent: -100 * (totalPanels - 1),
-            ease: 'none',
-            scrollTrigger: {
-              trigger: panelsContainer?.current,
-              pin: true,
-              scrub: true,
-              // snap: 1 / (totalPanels - 1),
-              // base vertical scrolling on how wide the container is so it feels more natural.
-              end: () => '+=' + panelsContainer?.current?.offsetWidth
-            }
-          });
-         },
-        "(max-width: 1023px)": function() { },
-        "all": function() { }
-      });
-  
-    
-    }, []);
+  // ScrollTrigger.saveStyles(".mobile, .desktop");
+
+  const createPanelsRefs = (panel, index) => {
+    panels.current[index] = panel;
+  };
+
+  useEffect(() => {
+    const totalPanels = panels.current.length;
+
+    ScrollTrigger.matchMedia({
+      "(min-width: 1199px)": function () {
+        gsap.to(panels?.current, {
+          xPercent: -79 * (totalPanels - 1),
+          // xPercent: -100 * (totalPanels - 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: panelsContainer?.current,
+            pin: true,
+            scrub: true,
+            // snap: 1 / (totalPanels - 1),
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: () => '+=' + panelsContainer?.current?.offsetWidth
+          }
+        });
+      },
+      "(max-width: 1023px)": function () { },
+      "all": function () { }
+    });
+
+
+  }, []);
 
   return (
     <>
 
-          <SliderContainer
-              sizing='calc(100vh-0)'
-              ref={panelsContainer}
-            >
+      <SliderContainer
+        sizing='calc(100vh-0)'
+        ref={panelsContainer}
+      >
 
-              <SlideElement sendRef={(e) => createPanelsRefs(e,0)} 
-                content = {`directly connect applications to individual users, enabling secure and personalized communication in response to customized on- and off-chain activity.`}
-                linkContent = "Build Push Notifications"
-                image = {PushNotifications}
-                alt={'Illustration showing Push Notifications'}
-                title='Push Notifications'
-                addMargin={false}
-                link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
-              />
+        <SlideElement sendRef={(e) => createPanelsRefs(e, 0)}
+          content={t('home.horizontal-scroll-section.slide1.text')}
+          linkContent={t('home.horizontal-scroll-section.slide1.link-text')}
+          image={PushNotifications}
+          alt={t('home.horizontal-scroll-section.slide1.image-alt')}
+          title={t('home.horizontal-scroll-section.slide1.title')}
+          addMargin={false}
+          link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
+        />
 
-              <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
-                content = {`is the leading decentralized, web3 native chat application with user friendly features like 1-1, group chat, videos/images, and (soon) streaming.`}
-                linkContent = "Build with Push Chat"
-                image = {PushChat}
-                alt={'Illustration showing Push Chat'}
-                title='Push Chat'
-                addMargin={true}
-                link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
-                paddingMobile={"30px 0px"}
-              />
+        <SlideElement sendRef={(e) => createPanelsRefs(e, 1)}
+          content={t('home.horizontal-scroll-section.slide2.text')}
+          linkContent={t('home.horizontal-scroll-section.slide2.link-text')}
+          image={PushChat}
+          alt={t('home.horizontal-scroll-section.slide2.image-alt')}
+          title={t('home.horizontal-scroll-section.slide2.title')}
+          addMargin={true}
+          link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
+          paddingMobile={"30px 0px"}
+        />
 
-              <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
-                content = {`is the home of community ownership of the Push Protocol. Push token holders can view, propose, and vote on critical developments to the protocol.`}
-                linkContent = "Explore Push DAO"
-                image = {Pushdao}
-                alt={'Illustration showing Push DAO'}
-                title='Push DAO'
-                addMargin={true}
-                link="https://gov.push.org/"
-                paddingBottom={"34px"}
-                paddingMobile={"30px 0px"}
-              />
-            </SliderContainer>
-            </>
+        <SlideElement sendRef={(e) => createPanelsRefs(e, 2)}
+          content={t('home.horizontal-scroll-section.slide3.text')}
+          linkContent={t('home.horizontal-scroll-section.slide3.link-text')}
+          image={Pushdao}
+          alt={t('home.horizontal-scroll-section.slide3.image-alt')}
+          title={t('home.horizontal-scroll-section.slide3.title')}
+          addMargin={true}
+          link="https://gov.push.org/"
+          paddingBottom={"34px"}
+          paddingMobile={"30px 0px"}
+        />
+      </SliderContainer>
+    </>
   )
 }
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -201,10 +215,10 @@ const SliderContainer = styled.div`
 
   `;
 
- const MemberImage = styled(ImageHolder)`
+const MemberImage = styled(ImageHolder)`
 `;
 
-const GrowPushCard = styled(ItemV)`
+const GrowPushCard = styled(ItemVV2)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -309,7 +323,7 @@ const GrowPushCardDetails = styled.div`
   }
 `;
 
-const SpanLink = styled(Span)`
+const SpanLink = styled(SpanV2)`
   position: relative;
   text-decoration: none;
 

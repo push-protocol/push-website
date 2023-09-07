@@ -3,28 +3,30 @@
 // @ts-nocheck
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React, { useEffect, useState } from 'react';
+
+// External Components
 import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { getNotifications, getSubscribers, loadKPIData } from '../api';
+import { useTranslation } from 'react-i18next';
 
+// Internal Components
+import { ItemHV2, SpanV2 } from './SharedStylingV2';
+import { getSubscribersCount,getNotificationsCount } from 'utils/AnalyticsStats';
+
+// Internal Configs
 import { device } from '../config/globals';
-import FadeInAnimation from './FadeInAnimation';
-import { getSubscribersCount, getNotificationsCount }  from '../config/AnalyticsStats';
-
-import {
-  ItemV, Span
-} from './SharedStyling';
 
 function nFormatter(num, digits) {
   const si = [
     { value: 1, symbol: '' },
-    { value: 1E3, symbol: 'k' },
-    { value: 1E6, symbol: 'M' },
-    { value: 1E9, symbol: 'G' },
-    { value: 1E12, symbol: 'T' },
-    { value: 1E15, symbol: 'P' },
-    { value: 1E18, symbol: 'E' }
+    { value: 1e3, symbol: 'k' },
+    { value: 1e6, symbol: 'M' },
+    { value: 1e9, symbol: 'G' },
+    { value: 1e12, symbol: 'T' },
+    { value: 1e15, symbol: 'P' },
+    { value: 1e18, symbol: 'E' },
   ];
   const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
   let i;
@@ -37,55 +39,54 @@ function nFormatter(num, digits) {
 }
 
 function AnalyticsStats() {
+  // Internationalization
+  const { t } = useTranslation();
+
   const [kpiStats, setKpiStats] = useState({
     totalNotifsSent: '',
-    totalSubscribersCount: ''
+    totalSubscribersCount: '',
   });
   const [isLoading, setIsLoading] = useState(false);
 
-
-
-  const loadData = async() => {
+  const loadData = async () => {
     try {
       setIsLoading(true);
       let result = await getSubscribersCount();
       let notifsResult = await getNotificationsCount();
 
-    setKpiStats((current) => {
-      return({
-        ...current,
-        totalNotifsSent: nFormatter(notifsResult),
-        totalSubscribersCount: nFormatter(result)
-      })
-    });
+      setKpiStats((current) => {
+        return {
+          ...current,
+          totalNotifsSent: nFormatter(notifsResult),
+          totalSubscribersCount: nFormatter(result),
+        };
+      });
     } catch (e) {
       console.error('Analytics API data fetch error: ', e);
     } finally {
       setIsLoading(false);
-    }       
+    }
   };
-
 
   useEffect(() => {
     loadData();
   }, []);
 
-  if (!kpiStats && isLoading) return (
-    <Oval
-      height={80}
-      width={80}
-      color="#FFFFFF"
-      wrapperStyle={{}}
-      wrapperClass=""
-      visible={true}
-      ariaLabel='oval-loading'
-      secondaryColor="#8e317a80"
-      strokeWidth={2}
-      strokeWidthSecondary={2}
-
-    />
-  );
-
+  if (!kpiStats && isLoading)
+    return (
+      <Oval
+        height={80}
+        width={80}
+        color="#FFFFFF"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor="#8e317a80"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
+    );
 
   // const totalNotifsSent = nFormatter(kpiStats?.totalNotifsSent, 1) || '4.6M';
   // const totalSubscribersCount = nFormatter(kpiStats?.totalSubscribersCount, 1) || '1.2K';
@@ -99,95 +100,131 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-          <ItemV gap="18px" className='kpiItem'>
-              <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
-              <KPIMetric>Notifications<br />Sent</KPIMetric>
-          </ItemV>
+      <ItemHV2
+        gap="18px"
+        className="kpiItem"
+      >
+        <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
+        <KPIMetric>
+          {t('home.stats.notifications.part1')}
+          <br />
+          {t('home.stats.notifications.part2')}
+        </KPIMetric>
+      </ItemHV2>
 
-        <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{kpiStats?.totalSubscribersCount || '...'}{kpiStats?.totalSubscribersCount && '+'}</KPIFigure>
-          <KPIMetric>Total<br />Subscribers</KPIMetric>
-        </ItemV>
+      <ItemHV2
+        gap="18px"
+        className="kpiItem"
+      >
+        <KPIFigure>
+          {kpiStats?.totalSubscribersCount || '...'}
+          {kpiStats?.totalSubscribersCount && '+'}
+        </KPIFigure>
+        <KPIMetric>
+          {t('home.stats.subscribers.part1')}
+          <br />
+          {t('home.stats.subscribers.part2')}
+        </KPIMetric>
+      </ItemHV2>
 
-        <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{pushIntegrations}</KPIFigure>
-          <KPIMetric>Total Push<br />Integrations</KPIMetric>
-        </ItemV>
+      <ItemHV2
+        gap="18px"
+        className="kpiItem"
+      >
+        <KPIFigure>{pushIntegrations}</KPIFigure>
+        <KPIMetric>
+          {t('home.stats.integrations.part1')}
+          <br />
+          {t('home.stats.integrations.part2')}
+        </KPIMetric>
+      </ItemHV2>
 
-        <ItemV gap="18px" className='kpiItem'>
-          <KPIFigure>{pushChatSent}</KPIFigure>
-          <KPIMetric>In Grants <br />Given</KPIMetric>
-        </ItemV>
+      <ItemHV2
+        gap="18px"
+        className="kpiItem"
+      >
+        <KPIFigure>{pushChatSent}</KPIFigure>
+        <KPIMetric>
+          {t('home.stats.grants.part1')}
+          <br />
+          {t('home.stats.grants.part2')}
+        </KPIMetric>
+      </ItemHV2>
     </KPIBanner>
   );
 }
 
 const KPIBanner = styled.div`
-    background: linear-gradient(90deg, rgba(18, 19, 21, 0.5) -2.55%, rgba(42, 42, 57, 0.5) 32.62%, rgba(142, 49, 122, 0.5) 68.34%, rgba(18, 19, 21, 0.5) 102.97%);
-    backdrop-filter: blur(30px);
-    border-radius: 63px;
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 30px 50px;
-    font-family: 'Strawford';
-    font-style: normal;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 19, 21, 0.5) -2.55%,
+    rgba(42, 42, 57, 0.5) 32.62%,
+    rgba(142, 49, 122, 0.5) 68.34%,
+    rgba(18, 19, 21, 0.5) 102.97%
+  );
+  backdrop-filter: blur(30px);
+  border-radius: 63px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px 50px;
+  font-family: 'Strawford';
+  font-style: normal;
+
+  & .kpiItem {
+    flex-direction: row;
+  }
+
+  @media ${device.tablet} {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 80%;
+
+    padding: 24px;
+    row-gap: 32px;
+    column-gap: 8px;
 
     & .kpiItem {
-        flex-direction: row;
+      flex-direction: column;
+      row-gap: 8px;
+
+      // for 4 items
+      flex: 0 0 48%;
+      // align-items: flex-start;
+
+      // for 3 items
+      // flex: 0 0 100%;
+      // align-items: center;
     }
-
-    @media ${device.tablet} {
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        width: 80%;
-
-        padding: 24px;
-        row-gap: 32px;
-        column-gap: 8px;
-        
-
-        & .kpiItem {
-            flex-direction: column;
-            row-gap: 8px;
-
-            // for 4 items
-            flex: 0 0 48%;
-            // align-items: flex-start;           
-
-            // for 3 items
-            // flex: 0 0 100%;
-            // align-items: center;
-        }
-     }
+  }
 `;
 
-const KPIFigure = styled(Span)`
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 110%;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
+const KPIFigure = styled(SpanV2)`
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #ffffff;
 
-    @media ${device.tablet} {
-        font-size: 32px;
-    }
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
 `;
 
-const KPIMetric = styled(Span)`
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 121%;
-    letter-spacing: -0.03em;
-    color: #FFFFFF;
+const KPIMetric = styled(SpanV2)`
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 121%;
+  letter-spacing: -0.03em;
+  color: #ffffff;
 
-    @media ${device.tablet} {
-        font-size: 16px;
-        font-weight: 400;
-    }
+  @media ${device.tablet} {
+    font-size: 16px;
+    font-weight: 400;
+  }
 `;
 
-export default AnalyticsStats
+export default AnalyticsStats;

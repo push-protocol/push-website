@@ -1,7 +1,11 @@
 /* eslint-disable no-useless-escape */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React, { useState } from 'react';
+
+// Internal Components
 import { sendEmailToMailingList } from '../api';
 
 const MESSAGES = {

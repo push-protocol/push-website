@@ -1,7 +1,10 @@
 /* eslint-disable */
 
+// External Components
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+
+// Internal Configs
 import { device } from '../config/globals';
 /**
  * Usage Hierarchy
@@ -400,6 +403,7 @@ export const Span = styled.span`
   left: ${(props) => props.left || 'auto'};
   bottom: ${(props) => props.bottom || 'auto'};
   top: ${(props) => props.top || 'auto'};
+  font-family: ${(props) => props.family || 'Strawford'};
 
   z-index: ${(props) => props.z || 'auto'};
 `;

@@ -2,8 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React, { useEffect } from 'react';
 
+// External Components
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ReactGA from 'react-ga';
 

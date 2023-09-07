@@ -3,38 +3,54 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import PageWrapper from '../components/PageWrapper';
-import pageMeta from 'config/pageMeta';
-import { device } from 'config/globals';
-import { Anchor, B, Content, H2, H3, HeroHeaders, Input, ItemH, ItemV, Span } from 'components/SharedStyling';
-import HybridSection from 'components/HybridSection';
-import SignupInput from 'components/SignupInput';
-import { BodyContent } from './Home';
-import useMediaQuery from 'hooks/useMediaQuery';
+
+// External Components
+import gsap from 'gsap';
+import ReactGA from 'react-ga';
 import { BiSearch } from 'react-icons/bi';
-import ChannelItem, { Tilt } from 'components/ChannelItem';
 import { FiChevronDown } from 'react-icons/fi';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+
+// Internal Components
 import SpinnerSVG from 'assets/Spinner.gif';
 import Image from 'assets/bg-image.png';
-import { objChannelList } from 'config/ChannelList';
-import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
+import ChannelItem, { Tilt } from 'components/ChannelItem';
+import FadeInAnimation from 'components/FadeInAnimation';
+import HybridSection from 'components/HybridSection';
+import SignupInput from 'components/SignupInput';
+import useMediaQuery from 'hooks/useMediaQuery';
+import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
+import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
+import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
 import { ReactComponent as LensSVG } from '../assets/float/Lens.svg';
 import { ReactComponent as LifiSVG } from '../assets/float/Lifi.svg';
 import { ReactComponent as LifiMainSVG } from '../assets/float/LifiMain.svg';
-import { ReactComponent as UnstoppableSVG } from '../assets/float/Unstoppable.svg';
-import { ReactComponent as SnapshotSVG } from '../assets/float/Snapshot.svg';
-import { ReactComponent as QidaoSVG } from '../assets/float/Qidao.svg';
-import { ReactComponent as BancorSVG } from '../assets/float/Bancor.svg';
-import { ReactComponent as CoinDeskSVG } from '../assets/float/Coindesk.svg';
-import { ReactComponent as AragonSVG } from '../assets/float/Aragon.svg';
 import { ReactComponent as MeanFinanceSVG } from '../assets/float/MeanFinance.svg';
+import { ReactComponent as QidaoSVG } from '../assets/float/Qidao.svg';
+import { ReactComponent as SnapshotSVG } from '../assets/float/Snapshot.svg';
 import { ReactComponent as UniswapSVG } from '../assets/float/Uniswap.svg';
-import FadeInAnimation from 'components/FadeInAnimation';
-import gsap from 'gsap';
+import { ReactComponent as UnstoppableSVG } from '../assets/float/Unstoppable.svg';
+import { ReactComponent as AaveSVG } from '../assets/float/aave.svg';
+import PageWrapper from '../components/PageWrapper';
+import { BodyContent } from './Home';
+import { ContentV2, H2V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from 'components/SharedStylingV2';
+import { objChannelList } from 'utils/ChannelList';
+
+// Internal Configs
+import { device } from 'config/globals';
+import pageMeta from 'config/pageMeta';
+
 
 const FrensText = () => {
+  // React GA Analytics
+  ReactGA.pageview('/integrations');
+
+  // Internationalization
+  const { t } = useTranslation();
+
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const [channels, setChannels] = useState([]);
@@ -174,10 +190,12 @@ const FrensText = () => {
     setActive(name);
     setSearch('');
     setPage(0); // resets the pagination count
-    if (name == 'All') { // filter for All category
+    if (name == 'All') {
+      // filter for All category
       fetchChannels();
       setCount(objChannelList.length);
-    } else if (name === 'Hackathons') { // filter for Hackathons category
+    } else if (name === 'Hackathons') {
+      // filter for Hackathons category
       setLoading(true);
       let sortList = objChannelList.filter((x) => x.type === name);
       setCount(sortList.length);
@@ -185,7 +203,8 @@ const FrensText = () => {
 
       setChannels(sortList);
       setLoading(false);
-    } else { // filter for rest of the categories
+    } else {
+      // filter for rest of the categories
       setLoading(true);
       let sortList = objChannelList.filter((x) => x.type === name);
       setChannels(sortList);
@@ -266,7 +285,7 @@ const FrensText = () => {
         <AnimationIcon>
           <AnimationSection
             minHeight="60vh"
-            padding="80px 0px 20px 0px"
+            padding="50px 0px 70px 0px"
           >
             <AaveSVG className="aave" />
             <LensSVG className="lens" />
@@ -281,29 +300,30 @@ const FrensText = () => {
             <MeanFinanceSVG className="mean-finance" />
             <UniswapSVG className="uniswap" />
 
-            <Content
+            <ContentV2
               className="contentBox"
               flex="0"
+              padding="30px 0px"
+              alignSelf="center"
             >
-              <ItemH
+              <ItemHV2
                 flexDirection="column"
                 flex="0"
-                margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
+                // margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
-                <HeroHeaders>Frens of Push</HeroHeaders>
-                <Span
+                <HeroHeaderV2>{t('frens.hero.title')}</HeroHeaderV2>
+                <SpanV2
                   textAlign="center"
                   margin="20px 0 0 0"
-                  spacing="-0.03em"
-                  weight={isMobile ? '300' : '400'}
-                  size={isMobile ? '18px' : '23px'}
+                  letterSpacing="-0.03em"
+                  fontWeight={isMobile ? '300' : '400'}
+                  fontSize={isMobile ? '18px' : '23px'}
                 >
-                  Explore hundreds of applications building with Push {!isTablet && <br />} worldwide across DeFi, NFTs,
-                  Gaming, Dev tools, and more.
-                </Span>
-              </ItemH>
-            </Content>
+                  {t('frens.hero.description.part1')} {!isTablet && <br />} {t('frens.hero.description.part2')}
+                </SpanV2>
+              </ItemHV2>
+            </ContentV2>
           </AnimationSection>
         </AnimationIcon>
 
@@ -313,21 +333,28 @@ const FrensText = () => {
           className="lightBackground"
           curve="bottom"
         >
-          <Content className="contentBox">
+          <ContentV2
+            className="contentBox"
+            padding="40px 0px"
+            flex="0"
+            alignSelf="center"
+            justifyContent='flex-start'
+          >
             <PushRow>
-              <ItemV justifyContent="flex-start">
+              <ItemHV2 justifyContent="flex-start">
                 <ResponsiveH2
-                  size="40px"
-                  weight="500"
-                  spacing="-0.02em"
+                  fontSize="40px"
+                  fontWeight="500"
+                  letterSpacing="-0.02em"
                   lineHeight="110%"
                 >
-                  Powered by Push
+                  {t('frens.powered-section.title')}
                 </ResponsiveH2>
-              </ItemV>
-              <ItemV
+              </ItemHV2>
+              <ItemHV2
                 maxWidth="350px"
                 justifyContent="flex-end"
+                margin={isMobile && '20px 0 0 0'}
               >
                 <Wrapper>
                   <BiSearch
@@ -337,11 +364,11 @@ const FrensText = () => {
                   <input
                     type="text"
                     value={search}
-                    placeholder="Search dapps"
+                    placeholder={t('frens.powered-section.search-placeholder')}
                     onChange={channelSearch}
                   />
                 </Wrapper>
-              </ItemV>
+              </ItemHV2>
             </PushRow>
 
             <ToggleSection>
@@ -351,7 +378,7 @@ const FrensText = () => {
                   active={active === item?.name ? true : false}
                   onClick={() => handleSort(item?.name)}
                 >
-                  <Span>{item?.name}</Span>
+                  <SpanV2>{item?.name}</SpanV2>
 
                   {active === item?.name && <b>{count}</b>}
                 </ToggleButton>
@@ -382,44 +409,44 @@ const FrensText = () => {
 
             {search && !loading && channels.length === 0 && (
               <CenteredContainerInfo>
-                <DisplayNotice>No channels match your query, please search for another name/address</DisplayNotice>
+                <DisplayNotice>{t('frens.powered-section.no-channels-query')}</DisplayNotice>
               </CenteredContainerInfo>
             )}
 
             {active !== 'All' && !loading && count === 0 && (
               <CenteredContainerInfo>
-                <DisplayNotice>No channels under this type yet.</DisplayNotice>
+                <DisplayNotice>{t('frens.powered-section.no-channels-category')}</DisplayNotice>
               </CenteredContainerInfo>
             )}
 
             {loading && (
-              <ItemH>
+              <ItemHV2>
                 <img
                   src={SpinnerSVG}
                   alt=""
                   width={140}
                 />
-              </ItemH>
+              </ItemHV2>
             )}
 
             {!loading && active === 'All' && search.length === 0 && (
               <ShowMoreSection onClick={ShowMore}>
                 <FiChevronDown size={23} />
-                <b>Show More</b>
+                <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
 
             {!loading && active === 'Hackathons' && search.length === 0 && (
               <ShowMoreSection onClick={showMoreHackathons}>
                 <FiChevronDown size={23} />
-                <b>Show More</b>
+                <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
-          </Content>
+          </ContentV2>
 
           <BodyContent className="contentBox">
             <SignupBox margin="0 0 0px 0">
-              <ItemV
+              <ItemVV2
                 justifyContent="flex-start"
                 gap="12px"
               >
@@ -431,22 +458,22 @@ const FrensText = () => {
                   lineHeight="110%"
                   margin="0"
                 >
-                  Never Miss an Update
+                  {t('frens.email-section.title')}
                 </ResponsiveH2>
-                <Span
+                <SpanV2
                   color="#303C5E"
-                  size="20px"
-                  weight="400"
-                  spacing="-0.03em"
+                  fontSize="20px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
                   lineHeight="138.5%"
                 >
-                  Sign up and stay up to date with ecosystem announcements, giveaways and more.
-                </Span>
-              </ItemV>
+                  {t('frens.email-section.text')}
+                </SpanV2>
+              </ItemVV2>
 
-              <ItemV>
+              <ItemVV2>
                 <SignupInput />
-              </ItemV>
+              </ItemVV2>
             </SignupBox>
           </BodyContent>
         </PoweredSection>
@@ -545,13 +572,13 @@ const ToggleButton = styled.div`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
+const ResponsiveH2 = styled(H2V2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
 `;
 
-const SignupBox = styled(ItemH)`
+const SignupBox = styled(ItemHV2)`
   background: rgba(214, 177, 242, 0.8);
   backdrop-filter: blur(15px);
   border-radius: 32px;
@@ -736,7 +763,7 @@ const AnimationSection = styled(ResponsiveSection)`
   }
 `;
 
-const PushRow = styled(ItemH)`
+const PushRow = styled(ItemHV2)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {

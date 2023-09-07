@@ -2,16 +2,21 @@
 // @ts-nocheck
 /* eslint-disable */
 
+// React + Web3 Essentials
 import React, { useEffect, useState } from 'react';
+
+// External Components
 import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+
+// Internal Components
 import { getBlogData } from '../api';
-
-import { device } from '../config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { ItemHV2, ItemVV2, H3V2 } from './SharedStylingV2';
 
-import { ItemH, ItemV, H3 } from './SharedStyling';
+// Internal Configs
+import { device } from '../config/globals';
 
 function extractContent(s) {
   const span = document.createElement('span');
@@ -56,7 +61,7 @@ function BlogLoader(props: BlogLoaderProps) {
 
   return (
     <>
-      <ItemH
+      <ItemHV2
         margin="40px 0 0 0"
         gap="48px"
       >
@@ -115,9 +120,9 @@ function BlogLoader(props: BlogLoaderProps) {
             );
           })}
         </SubArticles>
-      </ItemH>
+      </ItemHV2>
 
-      <ItemH
+      <ItemHV2
         height="1px"
         background="#000"
         margin="15px 0 0 0"
@@ -163,7 +168,7 @@ function Blogs(props: BlogsProps) {
   if (Array.isArray(blogsData) && blogsData.length > 0) {
     return (
       <>
-        <ItemH
+        <ItemHV2
           margin="40px 0 0 0"
           gap="48px"
         >
@@ -176,17 +181,17 @@ function Blogs(props: BlogsProps) {
               alt={blogsData[0].title}
             />
 
-            <H3
-              textTransform="normal"
+            <H3V2
+              textTransform="capitalize"
               color="#09090B"
-              size="24px"
-              weight="500"
-              spacing="-0.02em"
+              fontSize="24px"
+              fontWeight="500"
+              letterSpacing="-0.02em"
               lineHeight="142%"
               margin="24px 0 0 0"
             >
               {blogsData[0].title}
-            </H3>
+            </H3V2>
 
             <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
           </MainArticle>
@@ -208,9 +213,9 @@ function Blogs(props: BlogsProps) {
               );
             })}
           </SubArticles>
-        </ItemH>
+        </ItemHV2>
 
-        <ItemH
+        <ItemHV2
           height="1px"
           background="#000"
           margin="15px 0 0 0"
@@ -220,7 +225,7 @@ function Blogs(props: BlogsProps) {
   }
 }
 
-const MainArticle = styled(ItemV)`
+const MainArticle = styled(ItemVV2)`
   row-gap: 8px;
 
   &:hover {
@@ -256,7 +261,7 @@ const ArticleText = styled.div`
   white-space: normal;
 `;
 
-const SubArticles = styled(ItemV)`
+const SubArticles = styled(ItemVV2)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

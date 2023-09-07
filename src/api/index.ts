@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// External Components
 import axios from 'axios';
 
 const awaitTimeout = delay =>
@@ -217,5 +218,17 @@ export const getSubscribers = async ({
     return res.data;
   } catch (e) {
     console.log('Error occured in subscribers', e);
+  }
+};
+
+export const subscribeToSpace = async (formData) => {
+  const requestOptions = { 'Content-Type': 'application/json'};
+  try {
+    const res = await axios.post(`${ANALYTICS_API_BASE}/w2w/waitlist`, formData, requestOptions);
+    return res;
+  } catch (e) {
+    // console.log('Error occured in subscribers', e);
+    // console.log(e?.response.data?.error.info);
+    return e;
   }
 };

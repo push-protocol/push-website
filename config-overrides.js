@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 const webpack = require('webpack');
-
+const WorkBoxPlugin = require('workbox-webpack-plugin');
+// const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 module.exports = function override(config) {
   const fallback = config.resolve.fallback || {};
@@ -14,9 +15,21 @@ module.exports = function override(config) {
     os: require.resolve('os-browserify'),
     url: require.resolve('url'),
     path: require.resolve('path-browserify'),
+    zlib: require.resolve('browserify-zlib'),
+    tls: require.resolve('tls-browserify'),
+    net: require.resolve('net-browserify'),
+    child_process: false,
+    util: require.resolve('util/'),
     fs: false,
   });
   config.resolve.fallback = fallback;
+
+  config.plugins.forEach((plugin) => {
+    if (plugin instanceof WorkBoxPlugin.InjectManifest) {
+      plugin.config.maximumFileSizeToCacheInBytes = 50 * 1024 * 1024;
+    }
+  });
+
   config.plugins = (config.plugins || []).concat([
     new webpack.ProvidePlugin({
       process: 'process/browser',
@@ -27,9 +40,14 @@ module.exports = function override(config) {
   config.module.rules.push({
     test: /\.m?js/,
     resolve: {
-      fullySpecified: false
-    }
+      fullySpecified: false,
+    },
   });
-  
+
   return config;
 };
+
+// module.exports = function override(config, env) {
+//   config.resolve.plugins = config.resolve.plugins.filter((plugin) => !(plugin instanceof ModuleScopePlugin));
+//   return config;
+// };

@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable */
+
+// React + Web3 Essentials
 import { useState, useEffect, useRef, MutableRefObject } from 'react';
 
 // Hook
