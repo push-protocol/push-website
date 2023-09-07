@@ -1,6 +1,6 @@
 {
   "name": "push-website",
-  "version": "1.0",
+  "version": "0.1.0",
   "homepage": "https://push.org",
   "private": true,
   "dependencies": {
@@ -8,7 +8,7 @@
     "@pushprotocol/ledgerlive": "latest",
     "@pushprotocol/restapi": "0.0.1-alpha.31",
     "@pushprotocol/socket": "latest",
-    "@pushprotocol/uiweb": "0.0.1-alpha.7",
+    "@pushprotocol/uiweb": "0.0.1-alpha.8",
     "@rainbow-me/rainbowkit": "^1.0.8",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
@@ -73,7 +73,8 @@
     "workbox-range-requests": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
-    "workbox-streams": "^6.5.4"
+    "workbox-streams": "^6.5.4",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",

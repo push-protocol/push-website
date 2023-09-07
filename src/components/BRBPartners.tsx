@@ -44,15 +44,22 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                         borderRadius="0px"
                         background="transparent"
                         title={`${item?.title}`}
+                        disabled={item?.link ? false : true}
                         onClick={() => {
-                          window.open(item?.link);
+                          if (item?.link) {
+                            window.open(item?.link);
+                          } else {
+                            return;
+                          }
                         }}
                       >
                         <PartnersLogo
                           src={require(`../assets/brb/partners/${item?.srcref}.png`)}
                           srcSet={`${require(`../assets/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`../assets/brb/partners/${item?.srcref}@3x.png`)} 3x`}
                           alt={`${item?.alt}`}
-                          style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
+                          style={{
+                            scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}`,
+                          }}
                         />
                       </PartnersButton>
                     </ItemVV2>
@@ -114,6 +121,7 @@ const PartnerItem = styled(ItemHV2)`
 `;
 
 const PartnersButton = styled(ButtonV2)`
+  cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;
   }

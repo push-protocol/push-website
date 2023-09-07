@@ -1,3 +1,4 @@
+// React + Web3 Essentials
 import React from 'react';
 
 const ImgNextGen = ({ srcWebp, srcJrx, srcJp2, fallback, png, alt, ...props }) => {

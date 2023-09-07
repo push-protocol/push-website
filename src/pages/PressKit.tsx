@@ -1,4 +1,7 @@
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import { Link } from 'react-router-dom';
 

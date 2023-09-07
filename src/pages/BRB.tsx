@@ -28,9 +28,9 @@ import BRBParallax from 'components/BRBParallax';
 import { Partners } from 'components/BRBPartners';
 import { ChatComponent } from 'components/ChatComponent';
 import ImageHolder from 'components/ImageHolder';
-import { Span } from 'components/SharedStyling';
-import { ButtonV2, ItemVV2, SectionV2 } from 'components/SharedStylingV2';
+import { ButtonV2, ItemVV2, SectionV2, SpanV2 } from 'components/SharedStylingV2';
 import useMediaQuery from 'hooks/useMediaQuery';
+import { PartnerBounties } from 'components/PartnerBounties';
 
 // Internal Configs
 import PageMeta from '../config/pageMeta';
@@ -209,14 +209,14 @@ function BRB() {
                     onClick={openHomePage}
                   />
                   {/* </LinkTo> */}
-                  <Span
-                    size="24px"
-                    weight="700"
-                    family="Glancyr !important"
+                  <SpanV2
+                    fontSize="24px"
+                    fontWeight="700"
+                    fontFamily="Glancyr !important"
                     style={{ maxHeight: '24px' }}
                   >
                     #BRB
-                  </Span>
+                  </SpanV2>
                 </PushLogoBlackContainer>
 
                 <MobileMenuToggleIcon>
@@ -247,49 +247,62 @@ function BRB() {
                 >
                   <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                     <NavigationMenuHeader>
-                      <Span
-                        size="18px"
-                        weight="200"
-                        family="Glancyr !important"
+                      <SpanV2
+                        fontSize="18px"
+                        fontWeight="200"
+                        fontFamily="Glancyr !important"
                       >
                         Partners
-                      </Span>
+                      </SpanV2>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                     <NavigationMenuHeader>
-                      <Span
-                        size="18px"
-                        weight="200"
-                        family="Glancyr !important"
+                      <SpanV2
+                        fontSize="18px"
+                        fontWeight="200"
+                        fontFamily="Glancyr !important"
                       >
                         Schedule
-                      </Span>
+                      </SpanV2>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
+                    <NavigationMenuHeader>
+
+                      <SpanV2
+                        fontSize="18px"
+                        fontWeight="200"
+                        fontFamily="Glancyr !important"
+                      >
+                        Bounties
+                      </SpanV2>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                     <NavigationMenuHeader>
-                      <Span
-                        size="18px"
-                        weight="200"
-                        family="Glancyr !important"
+                      <SpanV2
+                        fontSize="18px"
+                        fontWeight="200"
+                        fontFamily="Glancyr !important"
                       >
                         BRB Chat
-                      </Span>
+                      </SpanV2>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                     <NavigationMenuHeader>
-                      <Span
-                        size="18px"
-                        weight="200"
-                        family="Glancyr !important"
+                      <SpanV2
+                        fontSize="18px"
+                        fontWeight="200"
+                        fontFamily="Glancyr !important"
                       >
                         Support
-                      </Span>
+                      </SpanV2>
                     </NavigationMenuHeader>
                   </NavigationMenuItem>
                 </NavigationMenu>
@@ -385,17 +398,23 @@ function BRB() {
           <Schedules />
         </ScheduleDiv>
 
+        <BountyDiv id='bounties'>
+          <PartnerBounties />
+        </BountyDiv>
+
         <PlaygroundDiv id="playground">
           <ChatComponent />
         </PlaygroundDiv>
 
+
         <ItemFooter id="support">
           <FooterItem>
             <SpanContent
-              family="Glancyr"
-              size={isLaptop ? '89px' : '112px'}
-              weight="500"
+              fontFamily="Glancyr"
+              fontSize={isLaptop ? '89px' : '112px'}
+              fontWeight="500"
               color="#E64DE9"
+              letterSpacing="0.01"
             >
               Drop Us a GM!
             </SpanContent>
@@ -410,14 +429,14 @@ function BRB() {
                 <Discord />
               </i>
 
-              <Span
-                family="Glancyr"
-                size={isLaptop ? '24px' : '36px'}
-                weight="200"
+              <SpanV2
+                fontFamily="Glancyr"
+                fontSize={isLaptop ? '24px' : '36px'}
+                fontWeight="200"
                 color="#6F8BEE"
               >
                 24x7 Support on Discord
-              </Span>
+              </SpanV2>
 
               <ArrowIcon />
             </FooterBar>
@@ -430,14 +449,14 @@ function BRB() {
                 <X className="discord" />
               </i>
 
-              <Span
-                family="Glancyr"
-                size={isLaptop ? '24px' : '36px'}
-                weight="200"
+              <SpanV2
+                fontFamily="Glancyr"
+                fontSize={isLaptop ? '24px' : '36px'}
+                fontWeight="200"
                 color="#63BFF3"
               >
                 Updates & Announcements
-              </Span>
+              </SpanV2>
 
               <ArrowIcon />
             </FooterBar>
@@ -445,14 +464,14 @@ function BRB() {
         </ItemFooter>
 
         <BottomGrad>
-          <Span
-            family="Glancyr"
-            size={isMobile ? '17px' : '17px'}
-            weight="200"
+          <SpanV2
+            fontFamily="Glancyr"
+            fontSize={isMobile ? '17px' : '17px'}
+            fontWeight="200"
             color="#FFF"
           >
             © 2023 Push. All rights reserved.
-          </Span>
+          </SpanV2>
         </BottomGrad>
       </BrbWrapper>
     </PageWrapper>
@@ -553,6 +572,10 @@ const ScheduleDiv = styled.div`
   width: 100%;
 `;
 
+const BountyDiv = styled.div`
+  width: 100%;
+`;
+
 const PartnersDiv = styled.div`
   width: 100%;
 `;
@@ -606,7 +629,7 @@ const StyledHeader = styled.header`
   }
 
   /* this is IMP for boxing the content at 1140px
-  @media (min-width: 1140px) {
+  @media (min-width: 1213px) {
     padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
     padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
   } */
@@ -875,7 +898,7 @@ const ItemFooter = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 20px;
 
-  @media ${device.laptop} {
+  @media (max-width: 1281px) {
     width: 90%;
   }
 
@@ -946,7 +969,7 @@ const FooterCol = styled.div`
   width: 100%;
 `;
 
-const SpanContent = styled(Span)`
+const SpanContent = styled(SpanV2)`
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box !important;

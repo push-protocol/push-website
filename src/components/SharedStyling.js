@@ -1,7 +1,10 @@
 /* eslint-disable */
 
+// External Components
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+
+// Internal Configs
 import { device } from '../config/globals';
 /**
  * Usage Hierarchy

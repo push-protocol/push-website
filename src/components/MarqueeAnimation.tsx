@@ -2,7 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
 import ReactMarquee from 'react-fast-marquee';
 

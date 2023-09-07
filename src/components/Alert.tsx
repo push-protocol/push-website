@@ -1,19 +1,20 @@
 /* eslint-disable */
 // @ts-nocheck
 
-// External Components
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
-import { Section } from './SharedStyling';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useTranslation } from 'react-i18next';
 
 // Internal Components
-import { ItemHV2, SpanV2, Atag } from './SharedStylingV2';
+import { ItemHV2, SectionV2 } from './SharedStylingV2';
 
 // Internal Configs
 import { device } from '../config/globals';
-import { useTranslation } from 'react-i18next';
 
 const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);
@@ -23,8 +24,10 @@ const Alert = () => {
   };
 
   const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
+
   const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
   const alertMessageHi= 'सीखें, बनाएं और Billion Reasons to Build में $55,000 से अधिक मूल्य के इनाम प्राप्त करें '
+
   const alertLink = `${window?.location?.href}brb`;
 
   // Internationalization
@@ -35,17 +38,19 @@ const Alert = () => {
   };
 
   return (
-    <Section>
+    <SectionV2>
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
             {i18n.language === 'es' ? alertMessageEs : alertMessage}
+
             {i18n.language === 'hi' ? alertMessageHi : alertMessage}
 
             <KnowMoreLink
             >
               {t('alert.know-more')}
             </KnowMoreLink>
+
             <FiArrowUpRight className="icon" />
           </AlertText>
 
@@ -59,7 +64,7 @@ const Alert = () => {
           </CancelIcon>
         </AlertContainer>
       )}
-    </Section>
+    </SectionV2>
   );
 };
 
@@ -121,7 +126,7 @@ const KnowMoreLink = styled.span`
   color: #fff;
   text-decoration: none;
   cursor: pointer;
-  font-weight:700;
+  font-weight: 700;
   &:hover {
     opacity: 0.75;
   }

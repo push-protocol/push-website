@@ -8,6 +8,7 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
+// External Components
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching';
@@ -38,7 +39,7 @@ registerRoute(
 
     // If this is a URL that starts with /_ or is an auth url, skip.
     const lowerPath = url.pathname.toLowerCase().replace(/\/+$/, '');
-    if (url.pathname.startsWith('/_') || lowerPath.startsWith('/auth/') || lowerPath == "/login") {
+    if (url.pathname.startsWith('/_') || lowerPath.startsWith('/auth/') || lowerPath == '/login') {
       return false;
     }
 

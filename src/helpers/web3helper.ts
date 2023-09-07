@@ -1,4 +1,6 @@
+// React + Web3 Essentials
 import * as ethers from 'ethers';
+
 export enum ENV {
   PROD = 'prod',
   STAGING = 'staging',

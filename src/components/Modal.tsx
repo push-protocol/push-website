@@ -1,4 +1,7 @@
+// React + Web3 Essentials
 import React from 'react';
+
+// External Components
 import styled from 'styled-components';
 
 export const Modal = ({ children }: { children: React.ReactNode }) => {

@@ -1,15 +1,19 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
-import React, { useEffect } from 'react';
+// React + Web3 Essentials
+import React from 'react';
+
+// External Components
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
-import PageMeta from '../config/pageMeta';
-
-import { Button } from 'components/SharedStyling';
-import { RotatingLines } from 'react-loader-spinner';
+// Internal Components
+import { ButtonV2 } from 'components/SharedStylingV2';
 import PageWrapper from '../components/PageWrapper';
+
+// Internal Configs
+import PageMeta from '../config/pageMeta';
 
 
 function CheatSheet() {
@@ -32,19 +36,19 @@ function CheatSheet() {
       <CheatWrapper>
 
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
-        <Button 
+        <ButtonV2 
           target="_blank"
           title="Push Dapp"
-          bg="#DD44B9"
-          radius="16px"
-          size="18px"
-          weight="500"
-          spacing="-0.03em"
+          background="#DD44B9"
+          borderRadius="16px"
+          fontSize="18px"
+          fontWeight="500"
+          letterSpacing="-0.03em"
           lineHeight="26px"
           onClick={redirectURL}
         >
           View Cheatsheet
-        </Button>
+        </ButtonV2>
 
       </CheatWrapper>
     </PageWrapper>
