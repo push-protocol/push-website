@@ -413,7 +413,7 @@ const BlogItem = () => {
                 {blogsData?.attributes?.tags?.data?.map((item, i) => (
                   <ToggleButton key={i} onClick={
                     () => {
-                      navigate(`/blogs`,{ state: { tag: item?.attributes?.name } });
+                      navigate(`/blogs`,{ state: { tag: item } });
                     }}>
                     <Span>{item?.attributes?.name}</Span>
                   </ToggleButton>
