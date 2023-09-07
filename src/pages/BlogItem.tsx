@@ -786,23 +786,24 @@ const BlogContent = styled.div`
     color: #575D73;
     ul,p {
      font-family: Lora !important;
-     color: #282A2D;
+    //  color: #282A2D;
      font-size: 18px;
-     line-height: 37px;
+    //  line-height: 37px;
 
      @media ${device.mobileL} {
       font-size: 16px;
     }
+
         a {
             color: #000000;
             cursor: pointer;
             font-family: Lora !important;
         }
-        span{
+        span {
           font-family: Lora !important;
-          color: #282A2D;
-          font-weight: 400;
-          font-size: 16px;
+          // color: #282A2D;
+          // font-weight: 400;
+          font-size: 18px !important;
         }
         img{
           margin: 30px 0px;
@@ -814,7 +815,11 @@ const BlogContent = styled.div`
         font-weight: 400;
         font-size: 24px;
         line-height: 38px;
-        color: #575D73;
+        color: #282A2D !important;
+        border-left: 3px solid black;
+        padding: 0px 30px;
+        margin-right: -50px;
+        
     }
 
     iframe {
@@ -828,6 +833,21 @@ const BlogContent = styled.div`
           width: 100%;
       }
   }
+
+  li {
+    span {
+     font-family: Lora !important;
+     font-size: 18px !important;
+    }
+    p{
+     font-family: Lora !important;
+     font-size: 18px !important;
+    }
+}
+li::marker{
+  font-family: Lora !important;
+  font-size: 18px !important;
+}
 
     pre { 
       font-family: 'Strawford' !important;
@@ -860,10 +880,10 @@ const BlogContent = styled.div`
 
     h2 {
       font-family: 'Strawford' !important;
-      font-size: 28px;
-      line-height: 38px;
-      font-weight: 700;
-      color: #000 !important;
+      // font-size: 28px;
+      // line-height: 38px;
+      // font-weight: 700;
+      // color: #000 !important;
 
       @media ${device.mobileL} {
         font-size: 24px;
@@ -871,26 +891,44 @@ const BlogContent = styled.div`
     }
 
     h3 {
-      // font-family: Lora !important;
-      // font-size: 22px;
-      // line-height: 40px;
-      color: black !important
-
-      font-family: Strawford;
+      color: black !important;
+      font-family: Strawford !important;
       font-size: 28px;
       font-style: normal;
       font-weight: 700;
+      letter-spacing: -0.03em;
            span {
               color: black !important;
               font-family: Strawford;
               font-size: 28px;
               font-style: normal;
               font-weight: 700;
+              letter-spacing: -0.03em;
       }
 
       @media ${device.mobileL} {
         font-size: 18px;
         line-height: 31px;
+      }
+    }
+
+
+    h5 {
+      color: #575D73 !important;
+      font-family: Lora;
+      font-size: 20px !important;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px;
+      margin: 10px 0 0 0 !important;
+      span {
+        color: #575D73 !important;
+        font-family: Lora;
+        font-size: 20px !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px;
+        margin: 10px 0 0 0 !important;
       }
     }
 
