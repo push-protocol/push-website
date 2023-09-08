@@ -80,7 +80,7 @@ export const brbPartnersBountyList = [
     srcref: 'alchemy',
     link: 'https://pushprotocol.notion.site/Alchemy-ce28694148654a3ea9f2a337a204367c?pvs=4',
     alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
-    text: 'Use Account Abstraction or Alchemy SDK to built creative solution',
+    text: 'Implement creative user experience flows facilitated by Alchemy’s Account Abstraction SDK',
     price: 5000
   },
   {
