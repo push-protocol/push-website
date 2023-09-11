@@ -19,7 +19,6 @@
       "alt-push-ecosystem": "Ecosistema De Push",
       "media-kit": "Kit Audiovisual",
       "alt-media-kit": "Kit Audiovisual De Push"
-
     },
     "push-dao": {
       "title": "Push DAO",
@@ -31,12 +30,12 @@
       "alt-grants": "Recompensas De Push",
       "missions": "Misiones",
       "alt-missions": "Misiones De Push"
-
     },
     "language": {
       "title": "Idioma",
       "english": "English",
-      "spanish": "Español"
+      "spanish": "Español",
+      "hindi": "हिंदी"
     },
     "app-button": {
       "title": "Abrir App",
@@ -216,13 +215,13 @@
   },
   "footer": {
     "info-section": {
-      "positions-card":{
+      "positions-card": {
         "text": "Unete y construye el futuro de las Comunicaciones en Web3.",
         "link-text": "Revisar Vacantes Disponibles",
         "image-title": "Unetenos",
         "image-alt": "Icono que muestra las Vacantes Disponibles"
       },
-      "docs-card":{
+      "docs-card": {
         "text": "Sigue nuestras sencillas guías para comenzar en minutos.",
         "link-text": "Explorar Documentación",
         "image-title": "Comenzar",

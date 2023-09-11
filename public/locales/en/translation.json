@@ -34,7 +34,8 @@
     "language": {
       "title": "Language",
       "english": "English",
-      "spanish": "Español"
+      "spanish": "Español",
+      "hindi": "हिंदी"
     },
     "app-button": {
       "title": "Launch App",
@@ -214,13 +215,13 @@
   },
   "footer": {
     "info-section": {
-      "positions-card":{
+      "positions-card": {
         "text": "Join us and build the future of Web3 Communication.",
         "link-text": "See Open Positions",
         "image-title": "Join Us",
         "image-alt": "Icon showing Open Positions"
       },
-      "docs-card":{
+      "docs-card": {
         "text": "Follow our simple guides to get started in minutes.",
         "link-text": "Explore Docs",
         "image-title": "Get Started",

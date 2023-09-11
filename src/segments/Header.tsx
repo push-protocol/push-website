@@ -22,6 +22,7 @@ import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite
 import Alert from 'components/Alert';
 import { ReactComponent as EnSVG } from '../assets/en.svg';
 import { ReactComponent as EsSVG } from '../assets/es.svg';
+import { ReactComponent as HiSVG } from '../assets/hi.svg';
 
 // Internal Configs
 import GLOBALS, { device } from '../config/globals';
@@ -510,18 +511,24 @@ function Header() {
                       lineHeight="142%"
                       padding="16px 0px !important"
                     >
-                      {i18n && i18n.language == 'es' ? (
-                        <EsSVG className="flag-icon" />
-                      ) : (
-                        <EnSVG className="flag-icon" />
-                      )}
-                    </SpanV2>
+                      {/* <SpanV2
+                        size="18px"
+                        weight="500"
+                        spacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px 0px !important"
+                      > */}
+                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : (i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>)}
+                        {/* {i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>} */}
+                    
+   {/* </SpanV2> */}
+                        </SpanV2>
+                        <BsChevronDown
+                          size={12}
+                          className="chevronIcon"
+                        />
+                    </LanguageMenuHeader>
 
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </LanguageMenuHeader>
 
                   <LanguageMenuContent
                     className="menuContent"
@@ -564,6 +571,26 @@ function Header() {
                     >
                       <EsSVG className="flag-icon-drop" />
                       {t('header.language.spanish')}
+
+                    </Atag>
+                     <Atag
+                      href="/"
+                      target=""
+                      title={t('header.language.hindi')}
+                      background="transparent"
+                      hoverbackground="#fff"
+                      padding="7px 30px"
+                       fontSize="16px"
+                      fontWeight="400"
+                      letterSpacing="normal"
+                      lineHeight="230%"
+                      display="flex"
+                      borderRadius="0px"
+                      justifyContent="flex-start"
+                      onClick={() => i18n.changeLanguage('hi')}
+                    >
+                      <HiSVG className='flag-icon-drop'/>
+                      {t('header.language.hindi')}
                     </Atag>
                   </LanguageMenuContent>
                 </LanguageMenuItem>
