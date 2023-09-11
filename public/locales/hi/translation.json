@@ -33,9 +33,9 @@
         },
         "language": {
             "title": "भाषा",
-            "english": "अंग्रेज़ी",
-            "spanish": "स्पेनिश",
-            "hindi": "हिंदी"
+            "english": "English",
+            "spanish": "Español",
+            "hindi": "Hindi"
         },
         "app-button": {
             "title": "ऐप खोलें",
