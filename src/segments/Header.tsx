@@ -511,17 +511,18 @@ function Header() {
                       lineHeight="142%"
                       padding="16px 0px !important"
                     >
-                      <Span
+                      {/* <SpanV2
                         size="18px"
                         weight="500"
                         spacing="-0.03em"
                         lineHeight="142%"
                         padding="16px 0px !important"
-                      >
-                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
-                        {i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>}
-                      </Span>
-
+                      > */}
+                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : (i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>)}
+                        {/* {i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>} */}
+                    
+   {/* </SpanV2> */}
+                        </SpanV2>
                         <BsChevronDown
                           size={12}
                           className="chevronIcon"
@@ -571,24 +572,26 @@ function Header() {
                       <EsSVG className="flag-icon-drop" />
                       {t('header.language.spanish')}
 
-                    </Anchor>
-                     <Anchor
+                    </Atag>
+                     <Atag
                       href="/"
                       target=""
                       title={t('header.language.hindi')}
-                      bg="transparent"
-                      hoverBG="#fff"
-                      padding="7px 16px"
-                      size="16px"
-                      weight="400"
+                      background="transparent"
+                      hoverbackground="#fff"
+                      padding="7px 30px"
+                       fontSize="16px"
+                      fontWeight="400"
+                      letterSpacing="normal"
                       lineHeight="230%"
-                      spacing="normal"
-                      justify='flex-start'
+                      display="flex"
+                      borderRadius="0px"
+                      justifyContent="flex-start"
                       onClick={() => i18n.changeLanguage('hi')}
                     >
                       <HiSVG className='flag-icon-drop'/>
                       {t('header.language.hindi')}
-                    </Anchor>
+                    </Atag>
                   </LanguageMenuContent>
                 </LanguageMenuItem>
               </LanguageItem>

@@ -42,9 +42,8 @@ const Alert = () => {
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={openLink}>
-            {i18n.language === 'es' ? alertMessageEs : alertMessage}
+            {i18n.language === 'es' ? alertMessageEs : (i18n.language === 'hi' ? alertMessageHi : alertMessage)}
 
-            {i18n.language === 'hi' ? alertMessageHi : alertMessage}
 
             <KnowMoreLink
             >
