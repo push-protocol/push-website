@@ -266,6 +266,12 @@ article .markdown > p > code {
   left: 50%;
   transform: translateX(-50%);
   width: 85% !important;
+  align-self: center;
+}
+
+.docMainContainer_gTbr, .docPage__5DB {
+  width: 85%;
+  align-self: center;
 }
 
 .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
