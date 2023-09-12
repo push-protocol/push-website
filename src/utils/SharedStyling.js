@@ -31,7 +31,7 @@ import { device } from "./globals";
 // `;
 
 export const HeroHeader = styled.h1`
-  font-family: "FKGroteskNeue";
+  font-family: "Strawford";
   font-size: 68px;
   line-height: 110%;
   font-style: normal;
@@ -50,7 +50,7 @@ export const HeroHeader = styled.h1`
 `;
 
 export const HeroHeaders = styled.h1`
-  font-family: "FKGroteskNeue";
+  font-family: "Strawford";
   font-size: 70px;
   line-height: 110%;
   font-style: normal;
@@ -69,7 +69,7 @@ export const HeroHeaders = styled.h1`
 `;
 
 export const PageHeader = styled.h1`
-  font-family: "FKGroteskNeue";
+  font-family: "Strawford";
   font-weight: 700;
   line-height: 1.25em;
   color: #fff;
@@ -332,7 +332,7 @@ export const H2 = styled.h2`
   padding: ${(props) => props.padding || "0px"};
   letter-spacing: ${(props) => props.spacing || "inherit"};
   font-family: ${(props) =>
-    props.family || "'FKGroteskNeue', 'Manrope', sans-serif"};
+    props.family || "'Strawford', 'Manrope', sans-serif"};
   text-align: ${(props) => props.textAlign || "inherit"};
   line-height: ${(props) => props.lineHeight || "inherit"};
 `;
@@ -346,7 +346,7 @@ export const H3 = styled.h3`
   padding: ${(props) => props.padding || "0px"};
   letter-spacing: ${(props) => props.spacing || "0.1em"};
   font-family: ${(props) =>
-    props.family || "'FKGroteskNeue', 'Manrope', sans-serif"};
+    props.family || "'Strawford', 'Manrope', sans-serif"};
   text-align: ${(props) => props.textAlign || "inherit"};
   max-width: ${(props) => props.maxWidth || "initial"};
 `;
@@ -437,7 +437,7 @@ export const LI = styled.li`
   margin: 10px 0px;
 `;
 export const LinkTo = styled(Link)`
-  font-family: "FKGroteskNeue";
+  font-family: "Strawford";
   line-height: ${(props) => props.lineHeight || "inherit"};
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
@@ -517,7 +517,7 @@ export const LinkTo = styled(Link)`
   }
 `;
 export const Anchor = styled.a`
-  font-family: "FKGroteskNeue";
+  font-family: "Strawford";
   line-height: ${(props) => props.lineHeight || "inherit"};
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
