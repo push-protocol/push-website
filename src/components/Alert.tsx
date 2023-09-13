@@ -23,12 +23,12 @@ const Alert = () => {
     setIsAlertVisible(false);
   };
 
-  const alertMessage = 'Learn, Build and Grab Bounties worth over $55,000 at Billion Reasons to Build!';
+  const alertMessage = 'Push Metamask Snap is now live,';
 
-  const alertMessageEs = '¡Aprenda, cree y obtenga recompensas por valor de más de $55 000 en Billion Reasons to Build!  '
-  const alertMessageHi= 'सीखें, बनाएं और Billion Reasons to Build में $55,000 से अधिक मूल्य के इनाम प्राप्त करें '
+  const alertMessageEs = 'Push Metamask Snap ya está disponible, '
+  const alertMessageHi= 'पुश मेटामास्क स्नैप अब लाइव है, '
 
-  const alertLink = `${window?.location?.href}brb`;
+  const alertLink = `https://snaps.metamask.io/snap/npm/push-v1/`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
