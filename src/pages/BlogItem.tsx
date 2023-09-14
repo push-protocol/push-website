@@ -786,8 +786,9 @@ const BlogContent = styled.div`
     color: #575D73;
     ul,p {
      font-family: Lora !important;
-    //  color: #282A2D;
+     color: #282A2D;
      font-size: 18px;
+     font-weight: 100;
     //  line-height: 37px;
 
      @media ${device.mobileL} {
@@ -795,25 +796,27 @@ const BlogContent = styled.div`
     }
 
         a {
-            color: #000000;
+            // color: #000000;
+            color: #282A2D;
             cursor: pointer;
             font-family: Lora !important;
         }
         span {
           font-family: Lora !important;
-          // color: #282A2D;
-          // font-weight: 400;
+          color: #282A2D;
+          font-weight: 100;
           font-size: 18px !important;
         }
-        img{
+        img {
           margin: 30px 0px;
         }
     }
 
     blockquote {
-        font-family: 'Strawford' !important;
-        font-weight: 400;
+        font-family: 'Lora' !important;
+        font-weight: 200;
         font-size: 24px;
+        font-style: italic !important;
         line-height: 38px;
         color: #282A2D !important;
         border-left: 3px solid black;
