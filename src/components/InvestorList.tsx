@@ -9,19 +9,19 @@ import styled from 'styled-components';
 
 // Internal Components
 import MarqueeAnimation from './MarqueeAnimation';
-import { ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
+import { ImageV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 import ImageHolder from './ImageHolder';
-import { ReactComponent as ACapitalSVG } from '../assets/investors/a_capital.svg';
-import { ReactComponent as BinancelabsSVG } from '../assets/investors/binancelabs.svg';
-import { ReactComponent as IosgSVG } from '../assets/investors/iosg.svg';
-import { ReactComponent as JumpSVG } from '../assets/investors/jump.svg';
-import { ReactComponent as ParafiSVG } from '../assets/investors/parafi.svg';
-import { ReactComponent as PolygonStudiosSVG } from '../assets/investors/polygon_studios.svg';
-import { ReactComponent as SinoglobalSVG } from '../assets/investors/sinoglobal.svg';
-import { ReactComponent as TigerglobalSVG } from '../assets/investors/tigerglobal.svg';
-import { ReactComponent as TrueventuresSVG } from '../assets/investors/trueventures.svg';
-import { ReactComponent as FourRCSVG } from '../assets/investors/4rc.svg';
+// import { ReactComponent as ACapitalSVG } from '../assets/investors/a_capital.svg';
+// import { ReactComponent as BinancelabsSVG } from '../assets/investors/binancelabs.svg';
+// import { ReactComponent as IosgSVG } from '../assets/investors/iosg.svg';
+// import { ReactComponent as JumpSVG } from '../assets/investors/jump.svg';
+// import { ReactComponent as ParafiSVG } from '../assets/investors/parafi.svg';
+// import { ReactComponent as PolygonStudiosSVG } from '../assets/investors/polygon_studios.svg';
+// import { ReactComponent as SinoglobalSVG } from '../assets/investors/sinoglobal.svg';
+// import { ReactComponent as TigerglobalSVG } from '../assets/investors/tigerglobal.svg';
+// import { ReactComponent as TrueventuresSVG } from '../assets/investors/trueventures.svg';
+// import { ReactComponent as FourRCSVG } from '../assets/investors/4rc.svg';
 
 /**
  * edit this to change the order
@@ -30,52 +30,52 @@ import { ReactComponent as FourRCSVG } from '../assets/investors/4rc.svg';
 const investorsSortedGroup = [
   // 1st row
   [
-    {
-      svgIcon: JumpSVG,
-      id: 'jump',
-      alt: 'Jump',
-    },
-    {
-      svgIcon: TigerglobalSVG,
-      id: 'tiger',
-      alt: 'Tiger Global',
-    },
-    {
-      svgIcon: ParafiSVG,
-      id: 'parafi',
-      alt: 'Parafi',
-    },
-    {
-      svgIcon: SinoglobalSVG,
-      id: 'sinoglobal',
-      alt: 'Sino Global',
-    },
-    {
-      svgIcon: TrueventuresSVG,
-      id: 'trueventures',
-      alt: 'True Ventures',
-    },
-    {
-      svgIcon: BinancelabsSVG,
-      id: 'binancelabs',
-      alt: 'Binance Labs',
-    },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'jump',
+  //     alt: 'Jump',
+  //   },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'tiger',
+  //     alt: 'Tiger Global',
+  //   },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'parafi',
+  //     alt: 'Parafi',
+  //   },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'sinoglobal',
+  //     alt: 'Sino Global',
+  //   },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'trueventures',
+  //     alt: 'True Ventures',
+  //   },
+  //   {
+  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+  //     id: 'binancelabs',
+  //     alt: 'Binance Labs',
+  //   },
   ],
 
   // 2nd row
   [
     {
-      svgIcon: PolygonStudiosSVG,
+      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /mainnvestors/polygonstudios@3x.png 3x'],
       id: 'polygonstudios',
       alt: 'Polygon Studios',
     },
     {
-      svgIcon: IosgSVG,
+      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /maininvestors/polygonstudios@3x.png 3x'],
       id: 'iosg',
       alt: 'Iosg',
     },
     {
-      svgIcon: ACapitalSVG,
+      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /maininvestors/polygonstudios@3x.png 3x'],
       id: 'acapital',
       alt: 'A Capital',
     },
@@ -100,11 +100,11 @@ const investorsSortedGroup = [
       id: 'andrewkeys',
       alt: 'Andrew K.',
     },
-    {
-      svgIcon: FourRCSVG,
-      id: '4rc',
-      alt: 'Four RCSVG',
-    },
+    // {
+    //   svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
+    //   id: '4rc',
+    //   alt: 'Four RCSVG',
+    // },
   ],
 ];
 
@@ -130,7 +130,17 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  <SVGIcon
+                  {/* <SVGIcon
+                    alt={`Logo for ${investor.alt}`}
+                    title={`${investor.alt} (Investor of Push)`}
+                  /> */}
+                  {/* <div>koko</div> */}
+
+                  <ImageV2
+                    width={64}
+                    height={64}
+                    src={SVGIcon[0]}
+                    srcSet={SVGIcon[1]}
                     alt={`Logo for ${investor.alt}`}
                     title={`${investor.alt} (Investor of Push)`}
                   />
@@ -139,6 +149,7 @@ function InvestorList() {
             }
 
             const thumbnail = investor?.thumbnail;
+
 
             if (thumbnail && thumbnail[0]) {
               return (
@@ -183,10 +194,21 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  <SVGIcon
+                  {/* <SVGIcon
+                    alt={`Logo for ${investor.alt}`}
+                    title={`${investor.alt} (Investor of Push)`}
+                  /> */}
+                  {/* <div>koko</div> */}
+
+                  <ImageV2
+                    width={64}
+                    height={64}
+                    src={SVGIcon[0]}
+                    srcSet={SVGIcon[1]}
                     alt={`Logo for ${investor.alt}`}
                     title={`${investor.alt} (Investor of Push)`}
                   />
+
                 </InvestorCard>
               );
             }
