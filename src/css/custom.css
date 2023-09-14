@@ -313,9 +313,9 @@ article .markdown > p > code {
   align-self: center;
 }
 
-.docMainContainer_gTbr, .docPage__5DB {
-  width: 85%;
-  align-self: center;
+.docPage__5DB {
+  width: 85% !important;
+  align-self: center !important;
 }
 
 .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
