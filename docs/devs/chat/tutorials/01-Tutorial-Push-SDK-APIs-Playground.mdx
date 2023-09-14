@@ -8,11 +8,89 @@ sidebar_position: 1
 ---
 
 # Push SDK playground
+
 This tutorial is designed to get you up and going by providing playground containing all API calls coverage for Push SDK. Checkout [Push SDK example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-backend-node) that utlizes [@pushprotocol/restapi](https://www.npmjs.com/package/@pushprotocol/restapi) and [@pushprotocol/socket](https://www.npmjs.com/package/@pushprotocol/socket) for more info!
 
 <head>
-  <title>Push SDK APIs playground tutorial | Push Chat | Push Documentation</title>
+  <title>
+    Push SDK APIs playground tutorial | Push Chat | Push Documentation
+  </title>
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+## Step 1: Clone the Push SDK Repository
+
+Download the Push SDK repository to your local machine.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+git clone https://github.com/ethereum-push-notification-service/push-sdk.git
+```
+
+  </TabItem>
+</Tabs>
+
+## Step 2: Install Dependencies
+
+Navigate to the SDK directory and install required dependencies.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+cd push-sdk
+yarn install
+```
+
+  </TabItem>
+</Tabs>
+
+## Step 3: Setup Push SDK Playground
+
+Navigate to the directory and install required dependencies.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+cd packages/examples/sdk-backend-node
+yarn install
+```
+
+  </TabItem>
+</Tabs>
+
+## Step 4: Setup Environment Variables
+
+Create a `.env` file and add values to it according to the given `.env.sample` in the directory.
+
+**Note** - It is possible to run a bare minimum examples without `.env`. All other examples will be skipped.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+# Create .env file
+touch .env
+
+# Add different key values according to .env.sample
+```
+
+  </TabItem>
+</Tabs>
+
+## Step 5: Run Playground Examples
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+yarn start
+```
+
+  </TabItem>
+</Tabs>
