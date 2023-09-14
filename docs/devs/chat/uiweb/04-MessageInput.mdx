@@ -1,0 +1,24 @@
+- **MessageInput**
+    
+    ### Creating functions for image or file sharing can be a long process, import MessageInput, pass the chatId or address(if w2w) and get the entire functional typebar in just few lines of code!
+    
+    - Input
+        - chatId- required( recipient’ address if w2w , chatId if its group chat)
+        - emoji - optional (default value true)
+        - file - optional (default value true)
+        - gif - optional (default value true)
+        - isConnected?: boolean; (default value true)
+    - Example
+        
+        - ![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/cf85455e-0a5d-4fd3-9365-6d71cce197de)
+        
+        ```jsx
+        import {MessageInput} from "@pushprotocol/uiweb";
+        
+        export const MessageInputTest = () => {
+        	return (
+        {/* below component won't have gif, file, image option since they've been passed as false */}
+        		<MessageInput chatId={'330cae5f963f2df3d6d692a7075317c906468e3fe60bfb8280a7e125208939e1'} emoji={false} gif={false} file={false} />
+        	)
+        }
+        ```

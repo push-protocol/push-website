@@ -1,0 +1,33 @@
+## ChatUIProvider
+
+- Prop types
+    - Input
+        
+        ```tsx        
+         account?: string;
+         pgpPrivagekey?: string;
+         theme?: IChatTheme; 
+         children: React.ReactNode;
+         env?: Env;
+         signer?: Signer;
+        ```
+        
+    - Example
+        
+        ```jsx
+        // wrap the parent component with <ChatUIProvider>
+        
+        import { ChatUIProvider } from "@pushprotocol/uiweb";
+        import { darkChatTheme } from "@pushprotocol/uiweb";
+        
+        export function App({ Component }) {
+        // you can pass your own signer, if you don't pass a signer
+        // then it will automatically use the default onboarding kit i.e. blocknative 
+        // !pgpPrivatekey && !account && !isConnected => will give the note
+        	return (
+        			<ChatUIProvider theme={darkChatTheme}>
+        					<Component />
+        			</ChatUIProvider>
+        		)
+        }
+        ```
