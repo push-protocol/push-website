@@ -912,6 +912,29 @@ li::marker{
       }
     }
 
+    h4{
+      color: black !important;
+      font-family: Strawford !important;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      margin: 28px 0px 0px;
+      letter-spacing: -0.03em;
+           span {
+              color: black !important;
+              font-family: Strawford;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              letter-spacing: -0.03em;
+      }
+
+      @media ${device.mobileL} {
+        font-size: 12px;
+        line-height: 31px;
+      }
+    }
+
 
     h5 {
       color: #575D73 !important;
