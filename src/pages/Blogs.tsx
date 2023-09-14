@@ -37,7 +37,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const BACKEND_API = 'https://blog.push.org';
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 10;
 
 function BlogLoader(props: BlogLoaderProps) {
   const figureDimensions = props.isMobile
@@ -88,6 +88,7 @@ function BlogLoader(props: BlogLoaderProps) {
 const Blogs = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  const isLaptop = useMediaQuery(device.laptopL);
   const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   const [blogsData, setBlogsData] = useState(null);
   const [allBlogsData, setAllBlogsData] = useState(null);
@@ -382,6 +383,19 @@ const Blogs = () => {
             <SpaceContent className="contentBox">
               {!isSwiper && blogsData && <BlogHorizontalScroll items={allBlogsData?.slice(0, 3)} />}
 
+              {!isSwiper && !blogsData && 
+                (<SkeletonContainer>
+                    <SkeletonInnerContainer>
+                      <Skeleton
+                        height={isMobile ? 300 : isTablet ? 550 : isLaptop ? 750 : 500}
+                        width={isMobile ? 300 : isTablet ? 550 : isLaptop ? 750 : 900}
+                        highlightColor='#ccc'
+                        baseColor='#a9a9a9'
+                        className="skeleton-image-container"
+                      />
+                  </SkeletonInnerContainer>
+                </SkeletonContainer>)}
+
               {isSwiper && (
                 <Swiper
                   spaceBetween={30}
@@ -525,6 +539,29 @@ const Blogs = () => {
     );
   }
 };
+
+const SkeletonContainer = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10em;
+  .skeleton-image-container {
+    margin-bottom: 50px;
+    border-radius: 30px;
+  }
+  .skeleton-placeholder-lines {
+    display: block;
+    line-height: 2;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+`;
+
+const SkeletonInnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const CenteredContainerInfo = styled.div`
   padding: 20px;

@@ -25,7 +25,6 @@ import useMediaQuery from '../hooks/useMediaQuery';
 import PageWrapper from '../components/PageWrapper';
 import pageMeta from 'config/pageMeta';
 import HybridSection from 'components/HybridSection';
-import Image from 'assets/bg-image.png';
 import { BiLink, BiShareAlt } from 'react-icons/bi';
 import moment from 'moment';
 import Moment from 'react-moment';
@@ -57,6 +56,7 @@ const BlogItem = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  const isLaptop = useMediaQuery(device.laptopL);
   const bodyRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [blogsData, setBlogsData] = useState(null);
@@ -293,8 +293,8 @@ const BlogItem = () => {
             <SkeletonContainer>
               <SkeletonInnerContainer>
                 <Skeleton
-                  height={300}
-                  width={isMobile ? 300 : 550}
+                  height={isMobile ? 300 : isTablet ? 550 : isLaptop ? 750 : 500}
+                  width={isMobile ? 300 : isTablet ? 550 : isLaptop ? 750 : 900}
                   className="skeleton-image-container"
                 />
               </SkeletonInnerContainer>
