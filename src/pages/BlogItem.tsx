@@ -961,20 +961,20 @@ li::marker{
         font-family: Lora !important;
     }
 
-    img{
-      margin: 0 auto;
-      padding: 0;
-      width: 100%;
-      // max-width: 800px;
-      height: auto;
-      box-sizing: border-box;
-      aspect-ratio: 16/9;
-      object-fit: contain;
+    // img{
+    //   margin: 0 auto;
+    //   padding: 0;
+    //   width: 100%;
+    //   // max-width: 800px;
+    //   height: auto;
+    //   box-sizing: border-box;
+    //   aspect-ratio: 16/9;
+    //   object-fit: contain;
 
-      @media (max-width: 801px ) {
-        max-width: 100%;
-      }
-    }
+    //   @media (max-width: 801px ) {
+    //     max-width: 100%;
+    //   }
+    // }
 
     figure {
         margin: 0 auto;
@@ -985,14 +985,17 @@ li::marker{
         justify-content: center;
         img {
             border-radius: 32px;
+            width:100%;
+            height:auto;
+            object-fit:contain;
             @media ${device.laptop}{
                 width: 100%;
                 height: fit-content;
             }
         }
-        &:nth-of-type(1) {
-            display: none;
-        }
+        // &:nth-of-type(1) {
+        //     display: none;
+        // }
         @media ${device.laptop}{
             width: 100%;
             height: fit-content;
