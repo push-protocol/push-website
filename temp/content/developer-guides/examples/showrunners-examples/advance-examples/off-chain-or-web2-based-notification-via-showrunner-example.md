@@ -243,4 +243,4 @@ _In the channel file you can also track the last publication date for which last
 
 That's all for now :)
 
-If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other devs and builders.
+If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other dev and builders.

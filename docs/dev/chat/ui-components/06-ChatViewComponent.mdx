@@ -1,0 +1,43 @@
+- **ChatViewComponent**
+    
+    ### want to add the entire chat component in your website but don’t have the time to code the entire message body UI ? import ChatViewComponent, pass the chatId and there you have it !
+    
+    - Inputs
+        
+        ```
+          messageInput?: boolean; // default true
+          chatViewList?: boolean; // default true
+          chatProfile?: boolean; // default true
+          chatId: string;
+          limit?: number;
+          emoji?: boolean; // default true
+          gif?: boolean; // default true
+          file?: boolean;  // default true
+          isConnected?: boolean;  // default true
+          onClick?: (() => void()) // use this to pass a function when the user is not verified as per the rules of access control
+        ```
+        
+    - Example
+        
+        - ![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/385bbdb3-1536-4128-a773-ffae1d7ed1fe)
+        
+        ```tsx
+        
+        import { ChatViewComponent } from '@pushprotocol/uiweb';
+        
+        const ChatViewComponentTest = () => {
+        // you can add the amount of msgs that you want to fetch when the user first sees the component
+        // by default the message fetch limit is 10.
+        // by default image, file and gif option is there,
+        // if you don't want any of them then just pass it as false inside the component
+        // for example below commented code won't have the option for file, gif and emoji:
+        /// <ChatViewComponent chatId='89f7b382b9b1496dca2b9a94ef87c80dd102db05dcb40b165fabfab28770fd55' emoji={false} gif={false} file={false} limit={10}/>
+          return (
+            <div>
+              <ChatViewComponent chatId='89f7b382b9b1496dca2b9a94ef87c80dd102db05dcb40b165fabfab28770fd55' limit={10}/>
+            </div>
+          );
+        };
+        
+        export default ChatViewComponentTest;
+        ```

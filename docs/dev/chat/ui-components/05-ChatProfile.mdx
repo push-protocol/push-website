@@ -1,0 +1,20 @@
+- **ChatProfile**
+    
+    ### get the user profile or group profile (with group info and functional group edit options) by just importing ChatProfile and passing the chatId or wallet address(if w2w).
+    
+    - Inputs
+        - chatId- required( recipient’ address if w2w , chatId if its group chat)
+        - style - required (Info)
+    - Example
+        
+        - ![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/088f3d96-1bd2-4411-a88d-e992658808c7)
+        
+        ```jsx
+        import ChatProfile from "@pushprotocol/uiweb";
+        
+        export const ChatProfileTest () => { 
+        return (
+        		<ChatProfile chatId={'330cae5f963f2df3d6d692a7075317c906468e3fe60bfb8280a7e125208939e1'} style='Info' />
+        	)
+        }
+        ```
