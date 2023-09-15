@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://docs.push.org/',
+  url: 'https://push.org/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -72,8 +72,8 @@ const config = {
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            to: '/devs',
-            from: '/developers',
+            to: '/dev',
+            from: '/devs',
           },
           // // Redirect from multiple old paths to the new path
           // {
@@ -82,13 +82,12 @@ const config = {
           // },
         ],
         createRedirects(existingPath) {
-          // if (existingPath.includes('/community')) {
-          //   // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-          //   return [
-          //     existingPath.replace('/community', '/docs/team'),
-          //     existingPath.replace('/community', '/docs/support'),
-          //   ];
-          // }
+          if (existingPath.includes('/dev')) {
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [
+              existingPath.replace('/dev', '/devs')
+            ];
+          }
           return undefined; // Return a falsy value: no redirect created
         },
       },

@@ -10,6 +10,8 @@
 
 :root {
   --ifm-color-primary: #dd44b9;
+  --ifm-color-primary-text: #000;
+  --ifm-color-secondary-text: #575d73;
   --ifm-color-primary-inverse: #fff;
   --ifm-color-primary-dark: #b72194;
   --ifm-color-primary-darker: #ab1f8a;
@@ -29,6 +31,8 @@
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #dd44b9;
+  --ifm-color-primary-text: #fff;
+  --ifm-color-secondary-text: #8f99bd;
   --ifm-color-primary-inverse: #000;
   --ifm-color-primary-dark: #dd42b8;
   --ifm-color-primary-darker: #dc3fb7;
@@ -385,19 +389,6 @@ article .markdown > p > code {
   transform: scale(1.05);
 }
 
-.header-container {
-  margin-top: 70px;
-  margin-bottom: 30px;
-}
-
-.hero_home {
-  font-family: var(--ifm-font-family-base);
-  font-weight: 600;
-  font-size: 36px;
-  align-items: start;
-  /* margin-left: 115px; */
-}
-
 .hero_home_explore {
   color: #dd44b9;
   display: flex;
@@ -475,7 +466,7 @@ article .markdown > p > code {
 .sdk-title {
   font-size: 24px;
   font-weight: 500;
-  color: #000000;
+  color: var(--ifm-color-primary-text);
   font-weight: bold;
 }
 

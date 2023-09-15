@@ -244,4 +244,4 @@ You can now heat up the server by running `docker-compose up` and `npm run dev` 
 
 That's all for now :)
 
-If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other devs and builders.
+If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other dev and builders.
