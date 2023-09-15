@@ -15,21 +15,21 @@ import { RainbowKitProvider, darkTheme, getDefaultWallets } from '@rainbow-me/ra
 import '@rainbow-me/rainbowkit/styles.css';
 import ReactGA from 'react-ga';
 import styled from 'styled-components';
-import { WagmiConfig, configureChains, createConfig, useAccount } from 'wagmi';
-import {
-  arbitrum,
-  arbitrumGoerli,
-  goerli,
-  mainnet,
-  optimism,
-  optimismGoerli,
-  polygon,
-  polygonMumbai,
-  zora,
-  zoraTestnet,
-} from 'wagmi/chains';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+// import { WagmiConfig, configureChains, createConfig, useAccount } from 'wagmi';
+// import {
+//   arbitrum,
+//   arbitrumGoerli,
+//   goerli,
+//   mainnet,
+//   optimism,
+//   optimismGoerli,
+//   polygon,
+//   polygonMumbai,
+//   zora,
+//   zoraTestnet,
+// } from 'wagmi/chains';
+// import { alchemyProvider } from 'wagmi/providers/alchemy';
+// import { publicProvider } from 'wagmi/providers/public';
 
 // Internal Components
 import { darkChatTheme } from 'utils/theme';
@@ -79,6 +79,7 @@ function App() {
   const [env, setEnv] = useState<ENV>(ENV.PROD);
   const [isCAIP, setIsCAIP] = useState(false);
   const [signer, setSigner] = useState();
+  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
 
   const socketData = useSDKSocket({
     account: account,
@@ -87,29 +88,28 @@ function App() {
     isCAIP,
   });
 
-  const [loadWagmi, setLoadWagmi] = useState(false);
-  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
+  // const [loadWagmi, setLoadWagmi] = useState(false);
 
-  const { chains, publicClient } = configureChains(
-    [mainnet, polygon, optimism, arbitrum, zora, goerli, polygonMumbai, optimismGoerli, arbitrumGoerli, zoraTestnet],
-    [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
-  );
+  // const { chains, publicClient } = configureChains(
+  //   [mainnet, polygon, optimism, arbitrum, zora, goerli, polygonMumbai, optimismGoerli, arbitrumGoerli, zoraTestnet],
+  //   [alchemyProvider({ apiKey: API_KEY }), publicProvider()]
+  // );
 
-  const { connectors } = getDefaultWallets({
-    appName: 'Push-website',
-    projectId: 'd19bd9c98cc6455e637836fdc2202d42',
-    chains,
-  });
+  // const { connectors } = getDefaultWallets({
+  //   appName: 'Push-website',
+  //   projectId: 'd19bd9c98cc6455e637836fdc2202d42',
+  //   chains,
+  // });
 
-  const wagmiConfig = createConfig({
-    autoConnect: true,
-    connectors,
-    publicClient,
-  });
+  // const wagmiConfig = createConfig({
+  //   autoConnect: true,
+  //   connectors,
+  //   publicClient,
+  // });
 
-  useEffect(() => {
-    setLoadWagmi(true);
-  }, []);
+  // useEffect(() => {
+  //   setLoadWagmi(true);
+  // }, []);
 
   useEffect(() => {
     (async () => {
@@ -137,12 +137,12 @@ function App() {
       <EnvContext.Provider value={{ env, isCAIP }}>
         <Web3Context.Provider value={{ account, active, library, chainId }}>
           <SocketContext.Provider value={{ socketData }}>
-            {loadWagmi ? (
+            {/* {loadWagmi ? (
               <WagmiConfig config={wagmiConfig}>
                 <RainbowKitProvider
                   theme={darkTheme()}
                   chains={chains}
-                >
+                > */}
                   <AccountContext.Provider value={{ pgpPrivateKey }}>
                     <ChatUIProvider
                       env={env}
@@ -203,9 +203,9 @@ function App() {
                       </Suspense>
                     </ChatUIProvider>
                   </AccountContext.Provider>
-                </RainbowKitProvider>
+                {/* </RainbowKitProvider>
               </WagmiConfig>
-            ) : null}
+            ) : null} */}
           </SocketContext.Provider>
         </Web3Context.Provider>
       </EnvContext.Provider>
