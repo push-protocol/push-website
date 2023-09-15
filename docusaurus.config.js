@@ -45,7 +45,7 @@ const config = {
         },
         docs: {
           path: 'docs',
-          routeBasePath: '/',
+          routeBasePath: '/docs',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsed: false,
           // Please change this to your repo.
@@ -55,6 +55,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          routeBasePath: '/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
