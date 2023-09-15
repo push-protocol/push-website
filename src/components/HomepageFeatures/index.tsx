@@ -20,30 +20,30 @@ interface IQuickstartItem {
 }
 
 const QuickstartItems: IQuickstartItem[] = [
-  {
-    title: 'Push Notification Quickstart',
-    codeblock: `// Import Push SDK & Ethers
-import * as PushAPI from '@pushprotocol/restapi';
-import { ethers } from 'ethers';
+//   {
+//     title: 'Push Notification Quickstart',
+//     codeblock: `// Import Push SDK & Ethers
+// import { PushAPI } from '@pushprotocol/restapi';
+// import { ethers } from 'ethers';
 
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
+// // Creating a random signer from a wallet, ideally this is the wallet you will connect
+// const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+// // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+// const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
 
-// Send a notification to users of your protocol
-const apiResponse = await userAlice.channel.send(['*'], { 
-  notification: {
-    title: 'Hello World Notification',
-    body: 'Web3 native notifications are here!',
-  }
-});`
-  },
+// // Send a notification to users of your protocol
+// const apiResponse = await userAlice.channel.send(['*'], { 
+//   notification: {
+//     title: 'Hello World Notification',
+//     body: 'Web3 native notifications are here!',
+//   }
+// });`
+//   },
   {
     title: 'Push Chat Quickstart',
     codeblock: `// Import Push SDK & Ethers
-import * as PushAPI from '@pushprotocol/restapi';
+import { PushAPI } from '@pushprotocol/restapi';
 import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
@@ -425,6 +425,7 @@ const PopularQuickiesList = styled(ItemHV2)`
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
+  justify-content: flex-start;
 `;
 
 const PopularQuickiesCard = styled(ItemVV2)`
@@ -448,8 +449,8 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   justify-content: flex-start;
   padding: 10px 20px 14px 80px;
   margin-bottom: -6px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
   position: relative;
 
   &:before {
@@ -471,13 +472,6 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   }
 `;
 
-const PopularQuickiesIcon = styled(SpanV2)`
-  color: #dd44b9;
-  position: absolute;
-  right: 10px;
-  font-size: 14px;
-`;
-
 const PopularQuickiesTitle = styled(SpanV2)`
   color: #9aa3db;
   font-size: 16px;
@@ -491,6 +485,9 @@ const PopularQuickiesContent = styled(ItemVV2)`
 
 const PopularQuickiesCodeBlock = styled(CodeBlock)`
   margin: 0px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
 `;
 
 const TechDocCardList = styled(ItemHV2)`

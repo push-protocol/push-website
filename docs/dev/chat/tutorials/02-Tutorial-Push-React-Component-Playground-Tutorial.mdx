@@ -57,19 +57,15 @@ React-playground depends on restapi and uiweb packages whose dependencies also n
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
-# Navigate to restapi package
-cd packages/restapi
-# Install package dependencies
-yarn install
+# Navigate to restapi package and install package dependencies
+cd packages/restapi && yarn install
+
 # Nagivate back to root directory
 cd ../..
-```
 
-```bash
-# Navigate to uiweb package
-cd packages/uiweb
-# Install package dependencies
-yarn install
+# Navigate to uiweb package and install package dependencies
+cd packages/uiweb && yarn install
+
 # Nagivate back to root directory
 cd ../..
 ```
@@ -93,4 +89,4 @@ yarn nx run examples-sdk-frontend-react:serve:development
 
 The following React app should be running on `http://localhost:4200/`
 
-<img src={require('/static/img/assets/sdk-react-playground.png').default} />
+<img src={require('/docs/assets/sdk-react-playground.png').default} />
