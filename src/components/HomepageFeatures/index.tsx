@@ -83,7 +83,7 @@ const DevGuide: DevGuideItems[] = [
   {
     title: 'Push Chat',
     Svg: require('@site/static/img/message.svg').default,
-    link: '/devs/chat',
+    link: '/dev/chat',
     description: (
       <>
         Learn about the details of Push Chat and how to do web3 native messaging.

@@ -51,7 +51,7 @@ At the very least, two files are required to be inside your channel directory:
     `}`
 
 :::info
-Only one private key is required and your channel delegate key also works. Some devs prefer to not expose their channel creator key even when it's used on your server or local backend to sign the notification payload. 
+Only one private key is required and your channel delegate key also works. Some dev prefer to not expose their channel creator key even when it's used on your server or local backend to sign the notification payload. 
 
 It's also useful when you create a channel from a smart contract or a multisig / multisafe.
 :::
