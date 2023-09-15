@@ -49,7 +49,35 @@ yarn install
   </TabItem>
 </Tabs>
 
-## Step 3: Run Push SDK React playground
+## Step 3: Install playground dependencies
+
+React-playground depends on restapi and uiweb packages whose dependencies also need to be installed.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```bash
+# Navigate to restapi package
+cd packages/restapi
+# Install package dependencies
+yarn install
+# Nagivate back to root directory
+cd ../..
+```
+
+```bash
+# Navigate to uiweb package
+cd packages/uiweb
+# Install package dependencies
+yarn install
+# Nagivate back to root directory
+cd ../..
+```
+
+  </TabItem>
+</Tabs>
+
+## Step 4: Run Push SDK React playground
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -60,3 +88,9 @@ yarn nx run examples-sdk-frontend-react:serve:development
 
   </TabItem>
 </Tabs>
+
+### Expected Output
+
+The following React app should be running on `http://localhost:4200/`:
+
+<img src={require('/static/img/assets/sdk-react-playground.png').default} />
