@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
-import GLOBALS, { device } from '../config/globals';
+import GLOBALS, { device } from '@site/src/config/globals';
+
 /**
  * Usage Hierarchy
  *
@@ -456,8 +457,9 @@ export const ModalMid = styled(ModalInner)`
 `;
 
 export const ModalMidEqual = styled(ModalMid)`
-  max-width: 160px;
+  min-width: 140px;
   align-self: stretch;
+  justify-content: space-between;
   flex: 1;
 
 `

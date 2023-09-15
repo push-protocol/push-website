@@ -1,6 +1,7 @@
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
-import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import GLOBALS, { device } from '@site/src/config/globals';
 import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg";
 import CodeBlock from '@theme/CodeBlock';
 import clsx from 'clsx';
@@ -13,15 +14,134 @@ import Styles from "./styles.module.css";
 
 // import styles from './styles.module.css';
 
+interface IQuickstartItem {
+  title: string;
+  codeblock: string;
+}
+
+const QuickstartItems: IQuickstartItem[] = [
+  {
+    title: 'Push Notification Quickstart',
+    codeblock: `// Import Push SDK & Ethers
+import * as PushAPI from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+
+// Send a notification to users of your protocol
+const apiResponse = await userAlice.channel.send(['*'], { 
+  notification: {
+    title: 'Hello World Notification',
+    body: 'Web3 native notifications are here!',
+  }
+});`
+  },
+  {
+    title: 'Push Chat Quickstart',
+    codeblock: `// Import Push SDK & Ethers
+import * as PushAPI from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+
+// Send a message to Bob
+const aliceMessagesBob = await userAlice.chat.send(
+  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
+  {content: "Gm gm! It's a me... Mario"}
+);`
+  },
+]
 
 type DevGuideItems = {
   title: string;
   description: JSX.Element;
   codeblock?: string;
   Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
-  PinkSvg?: React.ComponentType<React.ComponentProps<'svg'>>;
   link?: string;
 };
+
+const DevGuide: DevGuideItems[] = [
+  {
+    title: 'Notifications',
+    Svg: require('@site/static/img/notification.svg').default,
+    link: 'https://docs.push.org/developers/concepts/web3-notifications',
+    description: (
+      <>
+        Explore different ways of sending and receiving notifications and more.
+
+      </>
+    ),
+  },
+  {
+    title: 'Push Chat',
+    Svg: require('@site/static/img/message.svg').default,
+    link: '/devs/chat',
+    description: (
+      <>
+        Learn about the details of Push Chat and how to do web3 native messaging.
+      </>
+    ),
+    codeblock: `// Initialize wallet user
+const userAlice = await PushAPI.initialize(signer);
+
+// Send message
+const aliceMessagesBob = await userAlice.chat.send(
+  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
+  {content: "Gm gm! It's a me... Mario"}
+);`
+  },
+  {
+    title: 'Push Spaces',
+    Svg: require('@site/static/img/spaces.svg').default,
+    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+
+    description: (
+      <>
+        Learn about Push Spaces, the web3 native, token gated way of conducting spaces.
+      </>
+    ),
+  },
+  {
+    title: 'Push Video Calls',
+    Svg: require('@site/static/img/video.svg').default,
+    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
+
+    description: (
+      <>
+        Learn about the details of Push Video Calls and how to easily integrate it.
+      </>
+    ),
+  },
+  {
+    title: 'Examples',
+    Svg: require('@site/static/img/star.svg').default,
+    link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
+    description: (
+      <>
+        Examples to showcase the power of Push Protocol’s communication stack.
+      </>
+    ),
+  },
+  {
+    title: 'Showrunners',
+    Svg: require('@site/static/img/receive-notifs.svg').default,
+    link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
+    description: (
+      <>
+        Showrunners Framework and how to boost your web3 communications.
+
+      </>
+    ),
+  }
+]
 
 type SdkListItems = {
   title: string;
@@ -69,107 +189,6 @@ const SdkList: SdkListItems[] = [
   }
 ]
 
-const DevGuide: DevGuideItems[] = [
-  {
-    title: 'Notifications',
-    Svg: require('@site/static/img/notification.svg').default,
-    PinkSvg: require('@site/static/img/notification-pink.svg').default,
-    link: 'https://docs.push.org/developers/concepts/web3-notifications',
-    description: (
-      <>
-        Explore different ways of sending and receiving notifications and more.
-
-      </>
-    ),
-  },
-  {
-    title: 'Push Chat',
-    Svg: require('@site/static/img/message.svg').default,
-    PinkSvg: require('@site/static/img/message-pink.svg').default,
-    link: '/devs/chat',
-    description: (
-      <>
-        Learn about the details of Push Chat and how to do web3 native messaging.
-      </>
-    ),
-    codeblock: `// Initialize wallet user
-const userAlice = await PushAPI.initialize(signer);
-
-// Send message
-const aliceMessagesBob = await userAlice.chat.send(
-  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
-  {content: "Gm gm! It's a me... Mario"}
-);`
-  },
-  {
-    title: 'Push Spaces',
-    Svg: require('@site/static/img/spaces.svg').default,
-    PinkSvg: require('@site/static/img/spaces-pink.svg').default,
-    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
-
-    description: (
-      <>
-        Learn about Push Spaces, the web3 native, token gated way of conducting spaces.
-      </>
-    ),
-  },
-  {
-    title: 'Push Video Calls',
-    Svg: require('@site/static/img/video.svg').default,
-    PinkSvg: require('@site/static/img/video-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
-
-    description: (
-      <>
-        Learn about the details of Push Video Calls and how to easily integrate it.
-      </>
-    ),
-  },
-  {
-    title: 'Examples',
-    Svg: require('@site/static/img/star.svg').default,
-    PinkSvg: require('@site/static/img/star-pink.svg').default,
-    link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
-    description: (
-      <>
-        Examples to showcase the power of Push Protocol’s communication stack.
-      </>
-    ),
-  },
-  {
-    title: 'Showrunners',
-    Svg: require('@site/static/img/receive-notifs.svg').default,
-    PinkSvg: require('@site/static/img/receive-notifs-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
-    description: (
-      <>
-        Showrunners Framework and how to boost your web3 communications.
-
-      </>
-    ),
-  }
-]
-
-const PushSDK = [
-  {
-    title: 'SDK Starter Kit',
-  },
-  {
-    title: 'REST API',
-  },
-  {
-    title: 'React Native',
-  },
-  {
-    title: 'Socket',
-  },
-  {
-    title: 'UIWeb',
-  },
-  {
-    title: 'UI Embed',
-  }
-]
 
 const accordionItems = [
   { title: 'What is Push?', content: 'Content for Section 1' },
@@ -180,20 +199,28 @@ const accordionItems = [
   { title: 'Do I have to pay to send notifications?', content: 'Content for Section 3' },
 ];
 
-function GuideList({ title, Svg, description, codeblock, PinkSvg, link }: DevGuideItems) {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-  const [content, setContent] = useState<number>(0);
+function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
+  
+  return (
+    <PopularQuickiesCard>
+      <PopularQuickiesHeader>
+        <PopularQuickiesTitle>{`${title}`}</PopularQuickiesTitle>
+      </PopularQuickiesHeader>
+      
+      <PopularQuickiesContent>
+        <PopularQuickiesCodeBlock
+          language="jsx"
+          showLineNumbers={true}
+        >
+          {codeblock}
+        </PopularQuickiesCodeBlock>
+      </PopularQuickiesContent>
+    </PopularQuickiesCard>
+  );
+}
 
-  const handleMouseEnter = () => {
-    if (!isHovered) {
-      setIsHovered(true);
-    }
-  }
-  const handleMouseLeave = () => {
-    if (isHovered) {
-      setIsHovered(false);
-    }
-  }
+function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) {
+  const [content, setContent] = useState<number>(0);
 
   return (
     <TechDocCard>
@@ -301,69 +328,170 @@ function PushSdk({ title, Svg, PinkSvg, link }: SdkListItems) {
     </Link>
   )
 }
+
 export default function HomepageFeatures({ PinkSvg }): JSX.Element {
   return (
     <section>
       <section className='main-section'>
-        
-          <div>
-            <div className="hero_home header-container">
-              Technical Documentation
-            </div>
-            <div>
-              <TechDocCardList>
-                {DevGuide.map((props, idx) => (
-                  <GuideList key={idx} {...props} />
+          <HomepageSection alignItems="flex-start">
+            <HomepageSubHeader>
+              Popular Quickies
+            </HomepageSubHeader>
+
+              <PopularQuickiesList>
+                {QuickstartItems.map((props, idx) => (
+                  <QuickstartList key={idx} {...props} />
                 ))}
-              </TechDocCardList>
-            </div>
-        </div>
+              </PopularQuickiesList>
+          </HomepageSection>
+
+          <HomepageSection>
+            <HomepageSubHeader>
+              Technical Documentation
+            </HomepageSubHeader>
+            <TechDocCardList>
+              {DevGuide.map((props, idx) => (
+                <GuideList key={idx} {...props} />
+              ))}
+            </TechDocCardList>
+        </HomepageSection>
         
-        <div>
-            <div className='sub-container'>
-              <div className="hero_home">
-                Push SDK
+        <HomepageSection>
+          <ItemHV2 justifyContent="flex-start">
+            <HomepageSubHeader>
+              Push SDK
+            </HomepageSubHeader>
+            <Link to='/' target='_blank'>
+              <div className='hero_home_explore'>
+                <p className='hero_home_explore_link'>
+                  Explore SDK
+                </p>
+                <ArrowUp className='arrowUp-icon' />
               </div>
-              <Link to='/' target='_blank'>
+            </Link>
+          </ItemHV2>
+            
+          
+          <div className="guide_list">
+            {SdkList.map((props, idx) => (
+              <PushSdk key={idx} {...props} />
+            ))}
+          </div>
+          
+            {/* <div className='Faqs-main-container'>
+              <div className='sub-container'>
+                <span className="hero_home_Faq_header">
+                  Frequently Asked Questions
+                </span>
+                <Link to='https://push.org/faq' target='_blank'>
                   <div className='hero_home_explore'>
                     <p className='hero_home_explore_link'>
-                      Explore SDK
+                      Explore FAQs
                     </p>
                     <ArrowUp className='arrowUp-icon' />
                   </div>
-              </Link>
-            </div>
-            <div>
-              <div className="guide_list">
-                {SdkList.map((props, idx) => (
-                  <PushSdk key={idx} {...props} />
-                ))}
+                </Link>
               </div>
-          </div>
-          
-          {/* <div className='Faqs-main-container'>
-            <div className='sub-container'>
-              <span className="hero_home_Faq_header">
-                Frequently Asked Questions
-              </span>
-              <Link to='https://push.org/faq' target='_blank'>
-                <div className='hero_home_explore'>
-                  <p className='hero_home_explore_link'>
-                    Explore FAQs
-                  </p>
-                  <ArrowUp className='arrowUp-icon' />
-                </div>
-              </Link>
-            </div>
-            <FAQ />
+              <FAQ />
 
-          </div> */}
-        </div>
+            </div> */}
+        </HomepageSection>
       </section>
       <FooterComponent />
     </section>
   );
 }
+
+const HomepageSection = styled(SectionV2)`
+  margin-top: 70px;
+  margin-bottom: 30px;
+  flex-direction: column;
+  align-items: stretch;
+`;
+
+const HomepageSubHeader = styled(H2V2)`
+  font-family: var(--ifm-font-family-base);
+  font-weight: 600;
+  font-size: 36px;
+  align-items: start;
+  margin-bottom: 30px;
+  flex: 1;
+
+  color: var(--ifm-color-primary-text);
+`;
+
+const PopularQuickiesList = styled(ItemHV2)`
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+`;
+
+const PopularQuickiesCard = styled(ItemVV2)`
+  margin: 0px;
+  align-self: flex-start; 
+  flex: 0 0 calc(50% - 21.33px);
+  min-width: 280px;
+  max-width: calc(50% - 21.33px);
+  box-sizing: border-box;
+
+  @media ${device.laptop} {
+    flex: 1;
+    max-width: initial;
+  }
+`;
+
+const PopularQuickiesHeader = styled(ItemHV2)`
+  align-items: center;
+  font-size: 20px;
+  background: #282a36;
+  justify-content: flex-start;
+  padding: 10px 20px 14px 80px;
+  margin-bottom: -6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 0.6em;
+    width: 0.6em;
+    margin: 0.3em;
+    left: 0.5em;
+    border-radius: 100%;
+    background: #4a4a4a;
+    box-shadow: 1em 0em #4a4a4a, 2em 0em #4a4a4a;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover:before {
+    background: rgba(255, 0, 0, 0.8);
+    box-shadow: 1em 0em rgba(255, 255, 0, 0.8), 2em 0em rgba(0, 255, 0, 0.8);
+  }
+`;
+
+const PopularQuickiesIcon = styled(SpanV2)`
+  color: #dd44b9;
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+`;
+
+const PopularQuickiesTitle = styled(SpanV2)`
+  color: #9aa3db;
+  font-size: 16px;
+  font-weight: bold;
+`;
+
+const PopularQuickiesContent = styled(ItemVV2)`
+  border-top: 1px solid #3d3d3d;
+  align-items: stretch;
+`;
+
+const PopularQuickiesCodeBlock = styled(CodeBlock)`
+  margin: 0px;
+`;
 
 const TechDocCardList = styled(ItemHV2)`
   gap: 32px;
@@ -378,6 +506,11 @@ const TechDocCard = styled(ItemVV2)`
   min-width: 280px;
   max-width: calc(33.33% - 21.33px);
   box-sizing: border-box;
+
+  @media ${device.laptop} {
+    flex: 1;
+    max-width: initial;
+  }
 `;
 
 const TechDocContent = styled(ButtonV2)`
@@ -391,6 +524,10 @@ const TechDocContent = styled(ButtonV2)`
   display: flex;
   flex-direction: column;
   max-width: 100%;
+
+  & svg path {
+    stroke: var(--ifm-color-primary-text);
+  }
   
   &:hover {
     border: 1px solid #d53a94;
@@ -404,7 +541,7 @@ const TechDocContent = styled(ButtonV2)`
 const TechDocTitle = styled(SpanV2)`
   font-family: var(--ifm-font-family-base);
   font-size: 26px;
-  color: #121315;
+  color: var(--ifm-color-primary-text);
   margin-top: 0px;
   font-weight: bold;
   letter-spacing: -0.03em;
@@ -426,7 +563,7 @@ const TechDocOverview = styled(SpanV2)`
   font-family: var(--ifm-font-family-base);
   font-weight: 400;
   font-size: 16px;
-  color: #575d73;
+  color: var(--ifm-color-secondary-text);
   margin-top: -10px;
   letter-spacing: -0.02em;
   line-height: 150%;
