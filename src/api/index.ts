@@ -64,7 +64,7 @@ export async function getAllBlogData(page, size) {
 }
 
 export async function getAllTags(page, size) {
-  const requrl = `${BACKEND_API}api/tags?populate=*`;
+  const requrl = `${BACKEND_API}api/tags?populate=*&pagination[page]=1&pagination[pageSize]=100`;
 
   return axios
     .get(requrl)
