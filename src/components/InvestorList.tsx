@@ -30,36 +30,36 @@ import ImageHolder from './ImageHolder';
 const investorsSortedGroup = [
   // 1st row
   [
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'jump',
-  //     alt: 'Jump',
-  //   },
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'tiger',
-  //     alt: 'Tiger Global',
-  //   },
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'parafi',
-  //     alt: 'Parafi',
-  //   },
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'sinoglobal',
-  //     alt: 'Sino Global',
-  //   },
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'trueventures',
-  //     alt: 'True Ventures',
-  //   },
-  //   {
-  //     svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-  //     id: 'binancelabs',
-  //     alt: 'Binance Labs',
-  //   },
+    {
+      svgIcon: ['/maininvestors/jump.png', '/maininvestors/jump@2x.png 2x, /mainnvestors/jump@3x.png 3x'],
+      id: 'jump',
+      alt: 'Jump',
+    },
+    {
+      svgIcon: ['/maininvestors/tigerglobal.png', '/maininvestors/tigerglobal@2x.png 2x, /mainnvestors/tigerglobal@3x.png 3x'],
+      id: 'tiger',
+      alt: 'Tiger Global',
+    },
+    {
+      svgIcon: ['/maininvestors/parafi.png', '/maininvestors/parafi@2x.png 2x, /mainnvestors/parafi@3x.png 3x'],
+      id: 'parafi',
+      alt: 'Parafi',
+    },
+    {
+      svgIcon: ['/maininvestors/sino.png', '/maininvestors/sino@2x.png 2x, /mainnvestors/sino@3x.png 3x'],
+      id: 'sinoglobal',
+      alt: 'Sino Global',
+    },
+    {
+      svgIcon: ['/maininvestors/trueventures.png', '/maininvestors/trueventures@2x.png 2x, /mainnvestors/trueventures@3x.png 3x'],
+      id: 'trueventures',
+      alt: 'True Ventures',
+    },
+    {
+      svgIcon: ['/maininvestors/binancelabs.png', '/maininvestors/binancelabs@2x.png 2x, /mainnvestors/binancelabs@3x.png 3x'],
+      id: 'binancelabs',
+      alt: 'Binance Labs',
+    },
   ],
 
   // 2nd row
@@ -70,12 +70,12 @@ const investorsSortedGroup = [
       alt: 'Polygon Studios',
     },
     {
-      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /maininvestors/polygonstudios@3x.png 3x'],
+      svgIcon: ['/maininvestors/iosg.png', '/maininvestors/iosg@2x.png 2x, /maininvestors/iosg@3x.png 3x'],
       id: 'iosg',
       alt: 'Iosg',
     },
     {
-      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /maininvestors/polygonstudios@3x.png 3x'],
+      svgIcon: ['/maininvestors/a_capital.png', '/maininvestors/a_capital@2x.png 2x, /maininvestors/a_capital@3x.png 3x'],
       id: 'acapital',
       alt: 'A Capital',
     },
@@ -100,11 +100,11 @@ const investorsSortedGroup = [
       id: 'andrewkeys',
       alt: 'Andrew K.',
     },
-    // {
-    //   svgIcon: ['../assets/investors/polygonstudios.png', '../assets/investors/polygonstudios@2x.png 2x, ../assets/investors/polygonstudios@3x.png 3x'],
-    //   id: '4rc',
-    //   alt: 'Four RCSVG',
-    // },
+    {
+      svgIcon: ['/maininvestors/4rc.png', '/maininvestors/4rc@2x.png 2x, /maininvestors/4rc@3x.png 3x'],
+      id: '4rc',
+      alt: 'Four RCSVG',
+    },
   ],
 ];
 
@@ -136,7 +136,7 @@ function InvestorList() {
                   /> */}
                   {/* <div>koko</div> */}
 
-                  <ImageV2
+                  <Image
                     width={64}
                     height={64}
                     src={SVGIcon[0]}
@@ -200,7 +200,7 @@ function InvestorList() {
                   /> */}
                   {/* <div>koko</div> */}
 
-                  <ImageV2
+                  <Image
                     width={64}
                     height={64}
                     src={SVGIcon[0]}
@@ -298,6 +298,12 @@ const InvestorTitle = styled(SpanV2)`
 
 const MemberImage = styled(ImageHolder)`
   border-radius: 50%;
+`;
+
+const Image = styled(ImageV2)`
+  max-width: 65%;
+  max-height: 46px;
+  object-fit: contain;
 `;
 
 export default React.memo(InvestorList);
