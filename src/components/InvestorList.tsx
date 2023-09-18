@@ -12,16 +12,6 @@ import MarqueeAnimation from './MarqueeAnimation';
 import { ImageV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 import ImageHolder from './ImageHolder';
-// import { ReactComponent as ACapitalSVG } from '../assets/investors/a_capital.svg';
-// import { ReactComponent as BinancelabsSVG } from '../assets/investors/binancelabs.svg';
-// import { ReactComponent as IosgSVG } from '../assets/investors/iosg.svg';
-// import { ReactComponent as JumpSVG } from '../assets/investors/jump.svg';
-// import { ReactComponent as ParafiSVG } from '../assets/investors/parafi.svg';
-// import { ReactComponent as PolygonStudiosSVG } from '../assets/investors/polygon_studios.svg';
-// import { ReactComponent as SinoglobalSVG } from '../assets/investors/sinoglobal.svg';
-// import { ReactComponent as TigerglobalSVG } from '../assets/investors/tigerglobal.svg';
-// import { ReactComponent as TrueventuresSVG } from '../assets/investors/trueventures.svg';
-// import { ReactComponent as FourRCSVG } from '../assets/investors/4rc.svg';
 
 /**
  * edit this to change the order
@@ -130,12 +120,6 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  {/* <SVGIcon
-                    alt={`Logo for ${investor.alt}`}
-                    title={`${investor.alt} (Investor of Push)`}
-                  /> */}
-                  {/* <div>koko</div> */}
-
                   <Image
                     width={64}
                     height={64}
@@ -194,12 +178,6 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  {/* <SVGIcon
-                    alt={`Logo for ${investor.alt}`}
-                    title={`${investor.alt} (Investor of Push)`}
-                  /> */}
-                  {/* <div>koko</div> */}
-
                   <Image
                     width={64}
                     height={64}
