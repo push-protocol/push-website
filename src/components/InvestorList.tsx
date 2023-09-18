@@ -9,19 +9,9 @@ import styled from 'styled-components';
 
 // Internal Components
 import MarqueeAnimation from './MarqueeAnimation';
-import { ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
+import { ImageV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
 
 import ImageHolder from './ImageHolder';
-import { ReactComponent as ACapitalSVG } from '../assets/investors/a_capital.svg';
-import { ReactComponent as BinancelabsSVG } from '../assets/investors/binancelabs.svg';
-import { ReactComponent as IosgSVG } from '../assets/investors/iosg.svg';
-import { ReactComponent as JumpSVG } from '../assets/investors/jump.svg';
-import { ReactComponent as ParafiSVG } from '../assets/investors/parafi.svg';
-import { ReactComponent as PolygonStudiosSVG } from '../assets/investors/polygon_studios.svg';
-import { ReactComponent as SinoglobalSVG } from '../assets/investors/sinoglobal.svg';
-import { ReactComponent as TigerglobalSVG } from '../assets/investors/tigerglobal.svg';
-import { ReactComponent as TrueventuresSVG } from '../assets/investors/trueventures.svg';
-import { ReactComponent as FourRCSVG } from '../assets/investors/4rc.svg';
 
 /**
  * edit this to change the order
@@ -31,32 +21,32 @@ const investorsSortedGroup = [
   // 1st row
   [
     {
-      svgIcon: JumpSVG,
+      svgIcon: ['/maininvestors/jump.png', '/maininvestors/jump@2x.png 2x, /mainnvestors/jump@3x.png 3x'],
       id: 'jump',
       alt: 'Jump',
     },
     {
-      svgIcon: TigerglobalSVG,
+      svgIcon: ['/maininvestors/tigerglobal.png', '/maininvestors/tigerglobal@2x.png 2x, /mainnvestors/tigerglobal@3x.png 3x'],
       id: 'tiger',
       alt: 'Tiger Global',
     },
     {
-      svgIcon: ParafiSVG,
+      svgIcon: ['/maininvestors/parafi.png', '/maininvestors/parafi@2x.png 2x, /mainnvestors/parafi@3x.png 3x'],
       id: 'parafi',
       alt: 'Parafi',
     },
     {
-      svgIcon: SinoglobalSVG,
+      svgIcon: ['/maininvestors/sino.png', '/maininvestors/sino@2x.png 2x, /mainnvestors/sino@3x.png 3x'],
       id: 'sinoglobal',
       alt: 'Sino Global',
     },
     {
-      svgIcon: TrueventuresSVG,
+      svgIcon: ['/maininvestors/trueventures.png', '/maininvestors/trueventures@2x.png 2x, /mainnvestors/trueventures@3x.png 3x'],
       id: 'trueventures',
       alt: 'True Ventures',
     },
     {
-      svgIcon: BinancelabsSVG,
+      svgIcon: ['/maininvestors/binancelabs.png', '/maininvestors/binancelabs@2x.png 2x, /mainnvestors/binancelabs@3x.png 3x'],
       id: 'binancelabs',
       alt: 'Binance Labs',
     },
@@ -65,17 +55,17 @@ const investorsSortedGroup = [
   // 2nd row
   [
     {
-      svgIcon: PolygonStudiosSVG,
+      svgIcon: ['/maininvestors/polygonstudios.png', '/maininvestors/polygonstudios@2x.png 2x, /mainnvestors/polygonstudios@3x.png 3x'],
       id: 'polygonstudios',
       alt: 'Polygon Studios',
     },
     {
-      svgIcon: IosgSVG,
+      svgIcon: ['/maininvestors/iosg.png', '/maininvestors/iosg@2x.png 2x, /maininvestors/iosg@3x.png 3x'],
       id: 'iosg',
       alt: 'Iosg',
     },
     {
-      svgIcon: ACapitalSVG,
+      svgIcon: ['/maininvestors/a_capital.png', '/maininvestors/a_capital@2x.png 2x, /maininvestors/a_capital@3x.png 3x'],
       id: 'acapital',
       alt: 'A Capital',
     },
@@ -101,7 +91,7 @@ const investorsSortedGroup = [
       alt: 'Andrew K.',
     },
     {
-      svgIcon: FourRCSVG,
+      svgIcon: ['/maininvestors/4rc.png', '/maininvestors/4rc@2x.png 2x, /maininvestors/4rc@3x.png 3x'],
       id: '4rc',
       alt: 'Four RCSVG',
     },
@@ -130,7 +120,11 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  <SVGIcon
+                  <Image
+                    width={64}
+                    height={64}
+                    src={SVGIcon[0]}
+                    srcSet={SVGIcon[1]}
                     alt={`Logo for ${investor.alt}`}
                     title={`${investor.alt} (Investor of Push)`}
                   />
@@ -139,6 +133,7 @@ function InvestorList() {
             }
 
             const thumbnail = investor?.thumbnail;
+
 
             if (thumbnail && thumbnail[0]) {
               return (
@@ -183,10 +178,15 @@ function InvestorList() {
                   key={id}
                   className="marqueeItem"
                 >
-                  <SVGIcon
+                  <Image
+                    width={64}
+                    height={64}
+                    src={SVGIcon[0]}
+                    srcSet={SVGIcon[1]}
                     alt={`Logo for ${investor.alt}`}
                     title={`${investor.alt} (Investor of Push)`}
                   />
+
                 </InvestorCard>
               );
             }
@@ -276,6 +276,12 @@ const InvestorTitle = styled(SpanV2)`
 
 const MemberImage = styled(ImageHolder)`
   border-radius: 50%;
+`;
+
+const Image = styled(ImageV2)`
+  max-width: 65%;
+  max-height: 46px;
+  object-fit: contain;
 `;
 
 export default React.memo(InvestorList);
