@@ -1,8 +1,8 @@
 /* eslint-disable */
 
+import { device } from '@site/src/config/globals';
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { device } from "./globals";
 /**
  * Usage Hierarchy
  *

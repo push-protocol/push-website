@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import { Span } from "../utils/SharedStyling";
 
-import { device } from "../utils/globals";
+import { device } from '@site/src/config/globals';
 import useEmailValidationAndSend from "../utils/useEmailValidationAndSend";
 import useMediaQuery from "../utils/useMediaQuery";
 

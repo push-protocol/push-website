@@ -5,7 +5,7 @@ import "../../css/custom.css";
 // import Link from '@docusaurus/Link';
 // import CubePlay from "@site/static/img/cube-footer-icon.svg"
 // import BellIcon from "@site/static/img/Push-Logo-Standard-White.svg";
-import { device } from '@site/src/utils/globals';
+import { device } from '@site/src/config/globals';
 import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
 import AppleSVG from "@site/static/img/apple.svg";
 import DiscordSVG from "@site/static/img/discord.svg";
