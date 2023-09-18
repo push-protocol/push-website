@@ -1,17 +1,19 @@
-        ### want to add the entire chat component in your website but don’t have the time to code the entire message body UI ? import ChatViewComponent, pass the chatId and there you have it !
+# ChatViewComponent
 
-```typescript
-  messageInput?: boolean; // default true
-  chatViewList?: boolean; // default true
-  chatProfile?: boolean; // default true
-  chatId: string;
-  limit?: number;
-  emoji?: boolean; // default true
-  gif?: boolean; // default true
-  file?: boolean;  // default true
-  isConnected?: boolean;  // default true
-  onClick?: (() => void()) // use this to pass a function when the user is not verified as per the rules of access control
-```
+Allows developers to add entire chat body component.
+
+<head>
+  <title>UiWeb - ChatViewComponent</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem  value="js" attributes={{className: "codetab js"}} default>
+
+Example:
+
 
 ![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/385bbdb3-1536-4128-a773-ffae1d7ed1fe)
 
@@ -37,6 +39,9 @@ const ChatViewComponentTest = () => {
 
 export default ChatViewComponentTest;
 ```
+
+</TabItem>
+</Tabs>
 
 ---
 

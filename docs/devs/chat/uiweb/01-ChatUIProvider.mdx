@@ -1,6 +1,6 @@
 # ChatUIProvider
 
-wrap the Children component with ChatUIProvider to have better state management.
+wrap the component with ChatUIProvider to have better state management.
 
 <head>
   <title>UiWeb - ChatUIProvider</title>
@@ -11,15 +11,6 @@ import TabItem from "@theme/TabItem";
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```typescript
-    account?: string;
-    pgpPrivagekey?: string;
-    theme?: IChatTheme;
-    children: React.ReactNode;
-    env?: Env;
-    signer?: Signer;
-```
 
 ```typescript
 import { ChatUIProvider } from "@pushprotocol/uiweb";
