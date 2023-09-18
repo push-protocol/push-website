@@ -85,7 +85,7 @@ const Wrapper = styled.form`
     width: 90%;
     box-sizing: border-box;
 
-    font-family: "FKGroteskNeue";
+    font-family: "Strawford";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

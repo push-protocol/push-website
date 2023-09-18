@@ -20,7 +20,7 @@ function HomepageHeader() {
         <div className='spacing-small pointer'>
           <Link
             className='hero__button'
-            to="/devs/chat">
+            to="/dev/chat">
             Get Started
             <FiArrowUpRight className='ml-4' />
           </Link>
