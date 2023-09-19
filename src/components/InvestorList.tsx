@@ -11,16 +11,16 @@ import styled from 'styled-components';
 import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
 import { ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 
-import { ReactComponent as FourRCSVG } from '@site/src/assets/investors/4rc.svg';
-import { ReactComponent as ACapitalSVG } from '@site/src/assets/investors/a_capital.svg';
-import { ReactComponent as BinancelabsSVG } from '@site/src/assets/investors/binancelabs.svg';
-import { ReactComponent as IosgSVG } from '@site/src/assets/investors/iosg.svg';
-import { ReactComponent as JumpSVG } from '@site/src/assets/investors/jump.svg';
-import { ReactComponent as ParafiSVG } from '@site/src/assets/investors/parafi.svg';
-import { ReactComponent as PolygonStudiosSVG } from '@site/src/assets/investors/polygon_studios.svg';
-import { ReactComponent as SinoglobalSVG } from '@site/src/assets/investors/sinoglobal.svg';
-import { ReactComponent as TigerglobalSVG } from '@site/src/assets/investors/tigerglobal.svg';
-import { ReactComponent as TrueventuresSVG } from '@site/src/assets/investors/trueventures.svg';
+import FourRCSVG from '@site/static/assets/investors/4rc.svg';
+import ACapitalSVG from '@site/static/assets/investors/a_capital.svg';
+import BinancelabsSVG from '@site/static/assets/investors/binancelabs.svg';
+import IosgSVG from '@site/static/assets/investors/iosg.svg';
+import JumpSVG from '@site/static/assets/investors/jump.svg';
+import ParafiSVG from '@site/static/assets/investors/parafi.svg';
+import PolygonStudiosSVG from '@site/static/assets/investors/polygon_studios.svg';
+import SinoglobalSVG from '@site/static/assets/investors/sinoglobal.svg';
+import TigerglobalSVG from '@site/static/assets/investors/tigerglobal.svg';
+import TrueventuresSVG from '@site/static/assets/investors/trueventures.svg';
 import ImageHolder from './ImageHolder';
 
 /**

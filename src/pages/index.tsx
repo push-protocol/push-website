@@ -441,6 +441,746 @@ export default function Home(): JSX.Element {
           </ContentV2>
         </StorySection>
         
+        <BuildWithPushSection
+          curve="both"
+          id="buildWithPush"
+          data-bkg="dark"
+          className="darkBackground"
+        >
+          <BodyContent className="contentBox">
+            <FadeInAnimation
+              wrapperElement="div"
+              delay={0.2}
+            >
+              <SignupBox margin="0 0 0px 0">
+                <ItemVV2
+                  justifyContent="flex-start"
+                  gap="12px"
+                >
+                  <ResponsiveH2
+                    color="#09090B"
+                    fontSize="40px"
+                    fontWeight="700"
+                    letterSpacing="-0.02em"
+                    lineHeight="110%"
+                    margin="0"
+                  >
+                    {t('home.email-section.title')}
+                  </ResponsiveH2>
+                  <SpanV2
+                    color="#303C5E"
+                    fontSize="20px"
+                    fontWeight="400"
+                    letterSpacing="-0.03em"
+                    lineHeight="138.5%"
+                  >
+                    {t('home.email-section.text')}
+                  </SpanV2>
+                </ItemVV2>
+
+                <ItemVV2>
+                  <SignupInput />
+                </ItemVV2>
+              </SignupBox>
+            </FadeInAnimation>
+
+            <HorizontalScroll />
+          </BodyContent>
+        </BuildWithPushSection>
+
+        <IntergrateWithPushSection
+          curve="bottom"
+          data-bkg="dark"
+          className="darkBackground"
+        >
+          <ItemVV2
+            id="integratePush"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+          />
+
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+          >
+            <IntegrateGrowWithPushRow gap="18px">
+              <FadeInAnimation
+                wrapperElement="div"
+                delay={0.1}
+              >
+                <MemberImage
+                  className="figureSvg"
+                  src={GrowWithPushFigure}
+                  srcSet={GrowWithPushFigure}
+                  alt={t('home.grow-section.image-alt')}
+                  title={t('home.grow-section.image-title')}
+                  width="100%"
+                  height="100%"
+                />
+              </FadeInAnimation>
+
+              <ResponsiveH2
+                color="#121315"
+                fontSize="40px"
+                fontWeight="700"
+                letterSpacing="-0.02em"
+                lineHeight="110%"
+                margin="-32px 0 0 0"
+              >
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.2}
+                >
+                  {t('home.grow-section.title')}
+                </FadeInAnimation>
+              </ResponsiveH2>
+
+              <SpanV2
+                className="growWithPushtext"
+                color="#303C5E"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
+                lineHeight="160%"
+              >
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.3}
+                >
+                  {t('home.grow-section.text')}
+                </FadeInAnimation>
+              </SpanV2>
+            </IntegrateGrowWithPushRow>
+
+            <ItemHV2 margin="120px 0 0 0">
+              <IntegrateAndEarn>
+                <ResponsiveH2
+                  color="#09090B"
+                  fontSize="36px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.1}
+                  >
+                    {t('home.grow-section.wallet-text.part1')} <br></br> {t('home.grow-section.wallet-text.part2')}
+                  </FadeInAnimation>
+                </ResponsiveH2>
+
+                <Atag
+                  href="https://docs.push.org/hub/"
+                  title={t('home.grow-section.button-alt')}
+                  target="_blank"
+                  background="#DD44B9"
+                  borderRadius="16px"
+                  padding="10px 15px"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
+                  lineHeight="26px"
+                  alignSelf="center"
+                >
+                  {t('home.grow-section.button')}
+                </Atag>
+              </IntegrateAndEarn>
+            </ItemHV2>
+
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <ResponsiveH2
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t('home.why-push-section.title')}
+                </ResponsiveH2>
+              </ItemVV2>
+            </ItemHV2>
+
+            <ItemHV2 padding="80px 0 0 0">
+              <Matrix>
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ChainAgnosticFigure
+                        alt="Icon showing Push is chain agnostic"
+                        title={t('home.why-push-section.chain-agnostic-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.chain-agnostic-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ImmediatecommunicationFigure
+                        alt="Icon showing Immediate Communication"
+                        title={t('home.why-push-section.immediate-communication-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.immediate-communication-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <DecentralizedstackFigure
+                        alt="Icon showing decentralization"
+                        title={t('home.why-push-section.decentralized-stack-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.decentralized-stack-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <ImproveduxFigure
+                        alt="Icon showing User Experience"
+                        title={t('home.why-push-section.improved-ux-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.improved-ux-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <SecurityalertsFigure
+                        alt="Icon showing Security"
+                        title={t('home.why-push-section.security-alerts-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.security-alerts-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+
+                <MatrixCell>
+                  <div className="matrixFigure">
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.1}
+                    >
+                      <CensorshipresistantFigure
+                        alt="Icon showing Censorship Resistance"
+                        title={t('home.why-push-section.censorship-resistant-text')}
+                      />
+                    </FadeInAnimation>
+                  </div>
+
+                  <SpanV2
+                    color="#09090B"
+                    fontSize="24px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.2}
+                    >
+                      {t('home.why-push-section.censorship-resistant-text')}
+                    </FadeInAnimation>
+                  </SpanV2>
+                </MatrixCell>
+              </Matrix>
+            </ItemHV2>
+
+            <WhyPushTextBox
+              textAlign="center"
+              margin="80px 160px"
+            >
+              <SpanV2
+                color="#303C5E"
+                fontSize="19px"
+                fontWeight="400"
+                letterSpacing="-0.03em"
+                lineHeight="142%"
+              >
+                {t('home.why-push-section.text')}
+              </SpanV2>
+            </WhyPushTextBox>
+
+            <ItemHV2 margin="80px 0 0 0">
+              <ItemVV2
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <ResponsiveH2
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                  width="50%"
+                >
+                  {t('home.insights-section.title')}
+                </ResponsiveH2>
+              </ItemVV2>
+
+              <ItemHV2 justifyContent="flex-end">
+                <Atag
+                  href="https://push-protocol.medium.com/"
+                  title="Exlore all articles"
+                  target="_blank"
+                  hoverBackground="transparent"
+                  hover="transparent"
+                  background="transparent"
+                  filter="none"
+                  color="#DD44B9"
+                  borderRadius="16px"
+                  padding="14px 32px"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.insights-section.link-text')}
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Atag>
+              </ItemHV2>
+            </ItemHV2>
+
+            {/* <Blogs count={4} /> */}
+
+            {/* <BuiltByIntro flexDirection="column">
+              <ItemV justifyContent="center">
+                <ResponsiveH2
+                  color="#09090B"
+                  size="40px"
+                  weight="700"
+                  spacing="-0.02em"
+                  lineHeight="110%"
+                  margin="40px 0"
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.1}
+                  >
+                    Built By
+                  </FadeInAnimation>
+                </ResponsiveH2>
+              </ItemV>
+
+              <ItemV>
+                <Span
+                  color="#303C5E"
+                  size="19px"
+                  weight="400"
+                  spacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    delay={0.2}
+                  >
+                    The most diverse personalities have found each other at Push. Unique people with special talents and
+                    extraordinary stories. We are united by the joy we take in our tech and constantly push the
+                    boundaries of everything web3 communication.
+                  </FadeInAnimation>
+                </Span>
+              </ItemV>
+            </BuiltByIntro> */}
+
+            {/* <FadeInAnimation
+              wrapperElement="div"
+              direction={!isMobile && 'right'}
+              delay={0.3}
+            >
+              <BuiltByCards>
+                {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
+                  return (
+                    <TeamMember
+                      key={memberIndex}
+                      name={teamMember.name}
+                      title={teamMember.title}
+                      img={teamMember.img}
+                      twitter={teamMember.twitter}
+                      linkedin={teamMember.linkedin}
+                    />
+                  );
+                })}
+              </BuiltByCards>
+            </FadeInAnimation>
+
+            <TeamMemberButtons
+              gap="22px"
+              margin="80px 0"
+            >
+              <ButtonV2
+                title={!showMoreTeamMembers ? 'View More' : 'View Less'}
+                background="#2A2A39"
+                radius="16px"
+                padding="14px 32px"
+                fontSize="18px"
+                fontWeight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+                onClick={onClickViewMoreTeamMembers}
+              >
+                {!showMoreTeamMembers ? 'View More' : 'View Less'}
+              </ButtonV2>
+              <Anchor
+                href="https://angel.co/company/push-protocol"
+                title="Jobs"
+                target="_blank"
+                bg="#DD44B9"
+                radius="16px"
+                padding="14px 32px"
+                size="18px"
+                weight="500"
+                spacing="-0.03em"
+                lineHeight="26px"
+              >
+                Now Hiring, Explore Careers
+                <BsArrowUpRight className="anchorSVGlink" />
+              </Anchor>
+            </TeamMemberButtons> */}
+
+            <ItemHV2 margin="80px 0 80px 0">
+              <ItemVV2
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <InvestorHeader
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t('home.investors-section.title')}
+                </InvestorHeader>
+              </ItemVV2>
+            </ItemHV2>
+
+            <InvestorList />
+          </ContentV2>
+        </IntergrateWithPushSection>
+
+        <FeaturedInSection
+          id="featuredIn"
+          data-bkg="dark"
+          className="darkBackground"
+        >
+          <ContentV2
+            className="contentBox"
+            padding="40px"
+            alignSelf="flex-start"
+          >
+            <ItemHV2 justifyContent="flex-start">
+              <ItemHV2
+                justifyContent="flex-start"
+                alignItems="flex-start"
+              >
+                <ResponsiveH2
+                  color="#FFFFFF"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t('home.featured-section.title')}
+                </ResponsiveH2>
+              </ItemHV2>
+            </ItemHV2>
+          </ContentV2>
+
+          <FeaturedInMarquee
+            flexDirection="column"
+            className="featuredInMarquee"
+            margin="0 0 270px 0"
+            id="newone"
+          >
+            <MarqueeAnimation
+              speed={70}
+              gradient={false}
+            >
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article1.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <EthFoundationBlackSVG />
+                  <Atag
+                    href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
+                    title="Read ETH Foundation article about Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article1.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article2.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <CoindeskBlackSVG />
+                  <Atag
+                    href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
+                    title="Read Coindesk article about Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article2.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article3.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <DefiPrimeBlackSVG />
+                  <Atag
+                    href="https://defiprime.com/ethereum-push-notification-service"
+                    title="Read Defi Prime article on Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article3.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article4.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <BalajiTweethandleBlackSVG />
+                  <Atag
+                    href="https://twitter.com/pushprotocol/status/1336359832081768448"
+                    title="Read Balaji's tweet about Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article4.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+
+              <FeaturedCell className="marqueeItem">
+                <SpanV2
+                  color="#FFFFFF"
+                  fontSize="22px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                >
+                  {t('home.featured-section.article5.text')}
+                </SpanV2>
+
+                <ArticleSource>
+                  <BeInCryptoSVG />
+                  <Atag
+                    href="https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn"
+                    title="Read Balaji's tweet about Push"
+                    target="_blank"
+                    background="transparent"
+                    hoverBackground="transparent"
+                    hover="transparent"
+                    filter="none"
+                    color="#DD44B9"
+                    borderRadius="16px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="142%"
+                    padding="0"
+                  >
+                    {t('home.featured-section.article5.link-text')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </ArticleSource>
+              </FeaturedCell>
+            </MarqueeAnimation>
+          </FeaturedInMarquee>
+        </FeaturedInSection>
+        
       </HomeWrapper>
     </PageWrapper>
   );

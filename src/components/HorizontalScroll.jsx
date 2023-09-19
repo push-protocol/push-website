@@ -11,13 +11,13 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 // Internal Components
-import PushChat from '@site/src/assets/figures/pushchat.webp';
-import Pushdao from '@site/src/assets/figures/pushdao.webp';
-import PushNotifications from '@site/src/assets/figures/pushnotifications.webp';
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
 import ImageHolder from '@site/src/components/ImageHolder';
 import { Atag, H2V2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import PushChat from '@site/static/assets/figures/pushchat.webp';
+import Pushdao from '@site/static/assets/figures/pushdao.webp';
+import PushNotifications from '@site/static/assets/figures/pushnotifications.webp';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
