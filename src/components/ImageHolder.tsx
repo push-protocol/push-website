@@ -6,7 +6,7 @@
 import React from 'react';
 
 function getPublicImagePath(relativePath) {
-  return process.env.PUBLIC_URL + relativePath;
+  return relativePath;
 }
 
 function getSrcSet(srcSet) {
@@ -30,11 +30,11 @@ function ImageHolder(props) {
         type="image/jpeg"
       />
        <img
-      src={getPublicImagePath(src)}
-      srcSet={getSrcSet(srcSet)}
-      alt={alt}
-      {...restProps}
-    />
+          src={getPublicImagePath(src)}
+          srcSet={getSrcSet(srcSet)}
+          alt={alt}
+          {...restProps}
+        />
      </picture> 
   );
 }

@@ -12,55 +12,55 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 // Internal Components
-import { ReactComponent as DDSVG } from '@site/src/assets/partners/D_D.svg';
-import { ReactComponent as AaveSVG } from '@site/src/assets/partners/aave.svg';
-import { ReactComponent as AngleLabsSVG } from '@site/src/assets/partners/anglelabs.svg';
-import { ReactComponent as ApeswapSVG } from '@site/src/assets/partners/apeswap.svg';
-import { ReactComponent as AragonSVG } from '@site/src/assets/partners/aragon.svg';
-import { ReactComponent as AtlendisSVG } from '@site/src/assets/partners/atlendis.svg';
-import { ReactComponent as BancorSVG } from '@site/src/assets/partners/bancor.svg';
-import { ReactComponent as BanklessSVG } from '@site/src/assets/partners/bankless.svg';
-import { ReactComponent as CoindeskSVG } from '@site/src/assets/partners/coindesk.svg';
-import { ReactComponent as CryptocurrencyjobsSVG } from '@site/src/assets/partners/cryptocurrencyjobs.svg';
-import { ReactComponent as DecentralandSVG } from '@site/src/assets/partners/decentraland.svg';
-import { ReactComponent as DydxSVG } from '@site/src/assets/partners/dydx.svg';
-import { ReactComponent as EarnfiSVG } from '@site/src/assets/partners/earnifi.svg';
-import { ReactComponent as EnsSVG } from '@site/src/assets/partners/ens.svg';
-import { ReactComponent as EthSVG } from '@site/src/assets/partners/ethsign.svg';
-import { ReactComponent as FlipsideSVG } from '@site/src/assets/partners/flipside.svg';
-import { ReactComponent as GoodGhostingSVG } from '@site/src/assets/partners/goodghosting.svg';
-import { ReactComponent as GroSVG } from '@site/src/assets/partners/gro.svg';
-import { ReactComponent as IdlefinanceSVG } from '@site/src/assets/partners/idlefinance.svg';
-import { ReactComponent as InchSVG } from '@site/src/assets/partners/inch.svg';
-import { ReactComponent as KybernetworkSVG } from '@site/src/assets/partners/kybernetwork.svg';
-import { ReactComponent as LensProtocolSVG } from '@site/src/assets/partners/lensprotocol.svg';
-import { ReactComponent as LepasaMetaverseSVG } from '@site/src/assets/partners/lepasametaverse.svg';
-import { ReactComponent as LifiSVG } from '@site/src/assets/partners/lifi.svg';
-import { ReactComponent as MaHadaoSVG } from '@site/src/assets/partners/mahadao.svg';
-import { ReactComponent as MakerdaoSVG } from '@site/src/assets/partners/makerdao.svg';
-import { ReactComponent as MeanFinanceSVG } from '@site/src/assets/partners/meanfinance.svg';
-import { ReactComponent as MetastableSVG } from '@site/src/assets/partners/metastable.svg';
-import { ReactComponent as MoverSVG } from '@site/src/assets/partners/mover.svg';
-import { ReactComponent as OasisSVG } from '@site/src/assets/partners/oasis.svg';
-import { ReactComponent as OrionprotocolSVG } from '@site/src/assets/partners/orionprotocol.svg';
-import { ReactComponent as PodsfinanceSVG } from '@site/src/assets/partners/podsfinance.svg';
-import { ReactComponent as PolyChainMonstersSVG } from '@site/src/assets/partners/polychainmonsters.svg';
-import { ReactComponent as PooltogetherSVG } from '@site/src/assets/partners/pooltogether.svg';
-import { ReactComponent as ProofofhumanitySVG } from '@site/src/assets/partners/proofofhumanity.svg';
-import { ReactComponent as QidaoSVG } from '@site/src/assets/partners/qidao.svg';
-import { ReactComponent as RektSVG } from '@site/src/assets/partners/rekt.svg';
-import { ReactComponent as SecondliveSVG } from '@site/src/assets/partners/secondlive.svg';
-import { ReactComponent as ShapeshiftSVG } from '@site/src/assets/partners/shapeshift.svg';
-import { ReactComponent as SnapshotSVG } from '@site/src/assets/partners/snapshot.svg';
-import { ReactComponent as SushiSVG } from '@site/src/assets/partners/sushi.svg';
-import { ReactComponent as SymphonyFinanceSVG } from '@site/src/assets/partners/symphonyfinance.svg';
-import { ReactComponent as ThenaSVG } from '@site/src/assets/partners/thena.svg';
-import { ReactComponent as UniswapSVG } from '@site/src/assets/partners/uniswap.svg';
-import { ReactComponent as UnstoppableSVG } from '@site/src/assets/partners/unstoppable.svg';
-import { ReactComponent as WormbatSVG } from '@site/src/assets/partners/wormbat.svg';
-import { ReactComponent as ZeroswapSVG } from '@site/src/assets/partners/zeroswap.svg';
 import { H2V2, ItemHV2, LinkToV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import AaveSVG from '@site/static/assets/partners/aave.svg';
+import AngleLabsSVG from '@site/static/assets/partners/anglelabs.svg';
+import ApeswapSVG from '@site/static/assets/partners/apeswap.svg';
+import AragonSVG from '@site/static/assets/partners/aragon.svg';
+import AtlendisSVG from '@site/static/assets/partners/atlendis.svg';
+import BancorSVG from '@site/static/assets/partners/bancor.svg';
+import BanklessSVG from '@site/static/assets/partners/bankless.svg';
+import CoindeskSVG from '@site/static/assets/partners/coindesk.svg';
+import CryptocurrencyjobsSVG from '@site/static/assets/partners/cryptocurrencyjobs.svg';
+import DDSVG from '@site/static/assets/partners/dd.svg';
+import DecentralandSVG from '@site/static/assets/partners/decentraland.svg';
+import DydxSVG from '@site/static/assets/partners/dydx.svg';
+import EarnfiSVG from '@site/static/assets/partners/earnifi.svg';
+import EnsSVG from '@site/static/assets/partners/ens.svg';
+import EthSVG from '@site/static/assets/partners/ethsign.svg';
+import FlipsideSVG from '@site/static/assets/partners/flipside.svg';
+import GoodGhostingSVG from '@site/static/assets/partners/goodghosting.svg';
+import GroSVG from '@site/static/assets/partners/gro.svg';
+import IdlefinanceSVG from '@site/static/assets/partners/idlefinance.svg';
+import InchSVG from '@site/static/assets/partners/inch.svg';
+import KybernetworkSVG from '@site/static/assets/partners/kybernetwork.svg';
+import LensProtocolSVG from '@site/static/assets/partners/lensprotocol.svg';
+import LepasaMetaverseSVG from '@site/static/assets/partners/lepasametaverse.svg';
+import LifiSVG from '@site/static/assets/partners/lifi.svg';
+import MaHadaoSVG from '@site/static/assets/partners/mahadao.svg';
+import MakerdaoSVG from '@site/static/assets/partners/makerdao.svg';
+import MeanFinanceSVG from '@site/static/assets/partners/meanfinance.svg';
+import MetastableSVG from '@site/static/assets/partners/metastable.svg';
+import MoverSVG from '@site/static/assets/partners/mover.svg';
+import OasisSVG from '@site/static/assets/partners/oasis.svg';
+import OrionprotocolSVG from '@site/static/assets/partners/orionprotocol.svg';
+import PodsfinanceSVG from '@site/static/assets/partners/podsfinance.svg';
+import PolyChainMonstersSVG from '@site/static/assets/partners/polychainmonsters.svg';
+import PooltogetherSVG from '@site/static/assets/partners/pooltogether.svg';
+import ProofofhumanitySVG from '@site/static/assets/partners/proofofhumanity.svg';
+import QidaoSVG from '@site/static/assets/partners/qidao.svg';
+import RektSVG from '@site/static/assets/partners/rekt.svg';
+import SecondliveSVG from '@site/static/assets/partners/secondlive.svg';
+import ShapeshiftSVG from '@site/static/assets/partners/shapeshift.svg';
+import SnapshotSVG from '@site/static/assets/partners/snapshot.svg';
+import SushiSVG from '@site/static/assets/partners/sushi.svg';
+import SymphonyFinanceSVG from '@site/static/assets/partners/symphonyfinance.svg';
+import ThenaSVG from '@site/static/assets/partners/thena.svg';
+import UniswapSVG from '@site/static/assets/partners/uniswap.svg';
+import UnstoppableSVG from '@site/static/assets/partners/unstoppable.svg';
+import WormbatSVG from '@site/static/assets/partners/wormbat.svg';
+import ZeroswapSVG from '@site/static/assets/partners/zeroswap.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -192,7 +192,8 @@ function PartnerChannels() {
 
   return (
     <>
-      <PartnerRow
+      <SpanV2>{`<<<<Will Implement>>>>`}</SpanV2>
+      {/* <PartnerRow
         justifyContent="flex-start"
         padding="150px 0px 14px 0px"
       >
@@ -442,8 +443,7 @@ function PartnerChannels() {
                 id={`item-${idx}`}
               />
             ))}
-        {/* <Tag ref={itemRef}>new</Tag> */}
-      </PartnerRow>
+      </PartnerRow> */}
     </>
   );
 }

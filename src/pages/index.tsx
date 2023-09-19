@@ -16,43 +16,43 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 // Internal Components
+import AnalyticsStats from '@site/src/components/AnalyticsStats';
+import Blogs from '@site/src/components/Blogs';
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
 import HorizontalScroll from '@site/src/components/HorizontalScroll';
+import HybridSection from '@site/src/components/HybridSection';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { ReactComponent as BNBChainSVG } from '../assets/BNBChain.svg';
-import { ReactComponent as BeInCryptoSVG } from '../assets/BeInCryptoLogo.svg';
-import { ReactComponent as BalajiTweethandleBlackSVG } from '../assets/balajitweethandle.svg';
-import { ReactComponent as CoindeskBlackSVG } from '../assets/coindesk_black.svg';
-import { ReactComponent as DefiPrimeBlackSVG } from '../assets/defiprime.svg';
-import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
-import { ReactComponent as EthFoundationBlackSVG } from '../assets/eth_foundation_black.svg';
-import { ReactComponent as EthLogoTextSVG } from '../assets/ethereum-logo-landscape.svg';
-import { ReactComponent as CensorshipresistantFigure } from '../assets/figures/censorshipresistant.svg';
-import { ReactComponent as ChainAgnosticFigure } from '../assets/figures/chainagnostic.svg';
-import { ReactComponent as DecentralizedstackFigure } from '../assets/figures/decentralizedstack.svg';
-import GrowWithPushFigure from '../assets/figures/growwithpush.webp';
-import { ReactComponent as ImmediatecommunicationFigure } from '../assets/figures/immediatecommunication.svg';
-import { ReactComponent as ImproveduxFigure } from '../assets/figures/improvedux.svg';
-import PushMissingPieceFigure from '../assets/figures/push-missingtest.webp';
-import { ReactComponent as SecurityalertsFigure } from '../assets/figures/securityalerts.svg';
-import { ReactComponent as GithubSVG } from '../assets/github.svg';
-import { ReactComponent as PolygonLogoTextSVG } from '../assets/polygon_logo_text_black.svg';
-import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-import AnalyticsStats from '../components/AnalyticsStats';
-import Blogs from '../components/Blogs';
-import HybridSection from '../components/HybridSection';
-import InvestorList from '../components/InvestorList';
-import MarqueeAnimation from '../components/MarqueeAnimation';
-import PageWrapper from '../components/PageWrapper';
-import PartnerChannels from '../components/PartnerChannels';
-import { Atag, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '../components/SharedStylingV2';
-import SignupInput from '../components/SignupInput';
-import useMediaQuery from '../hooks/useMediaQuery';
+import InvestorList from '@site/src/components/InvestorList';
+import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
+import PageWrapper from '@site/src/components/PageWrapper';
+import PartnerChannels from '@site/src/components/PartnerChannels';
+import { Atag, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import SignupInput from '@site/src/components/SignupInput';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import BNBChainSVG from '@site/static/assets/BNBChain.svg';
+import BeInCryptoSVG from '@site/static/assets/BeInCryptoLogo.svg';
+import BalajiTweethandleBlackSVG from '@site/static/assets/balajitweethandle.svg';
+import CoindeskBlackSVG from '@site/static/assets/coindesk_black.svg';
+import DefiPrimeBlackSVG from '@site/static/assets/defiprime.svg';
+import DiscordSVG from '@site/static/assets/discord.svg';
+import EthFoundationBlackSVG from '@site/static/assets/eth_foundation_black.svg';
+import EthLogoTextSVG from '@site/static/assets/ethereum-logo-landscape.svg';
+import CensorshipresistantFigure from '@site/static/assets/figures/censorshipresistant.svg';
+import ChainAgnosticFigure from '@site/static/assets/figures/chainagnostic.svg';
+import DecentralizedstackFigure from '@site/static/assets/figures/decentralizedstack.svg';
+import GrowWithPushFigure from '@site/static/assets/figures/growwithpush.webp';
+import ImmediatecommunicationFigure from '@site/static/assets/figures/immediatecommunication.svg';
+import ImproveduxFigure from '@site/static/assets/figures/improvedux.svg';
+import PushMissingPieceFigure from '@site/static/assets/figures/pushmissingtest.webp';
+import SecurityalertsFigure from '@site/static/assets/figures/securityalerts.svg';
+import GithubSVG from '@site/static/assets/github.svg';
+import PolygonLogoTextSVG from '@site/static/assets/polygon_logo_text_black.svg';
+import TwitterSVG from '@site/static/assets/twitter.svg';
 
 // Internal Configs
+import TeamList from '@site/src/components/config/teamList';
+import PageMeta from '@site/src/config/pageMeta';
 import GLOBALS, { device } from '../config/globals';
-import PageMeta from '../config/pageMeta';
-import TeamList from '../config/teamList';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -137,25 +137,309 @@ export default function Home(): JSX.Element {
               )
             }
             <HeroPrimary
-                flex="initial"
-                justifyContent="flex-start"
+              flex="initial"
+              justifyContent="flex-start"
+            >
+              <HeroItem
+                maxWidth="50%"
+                alignItems="flex-start"
+                MarginTop={'100px'}
               >
-                <HeroItem
-                  maxWidth="50%"
-                  alignItems="flex-start"
-                  MarginTop={'100px'}
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.25}
+                >
+                  <H1V2 zIndex="2">{t('home.hero.title')}</H1V2>
+                </FadeInAnimation>
+
+                <SpanV2
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                  color="rgba(255, 255, 255, 1)"
+                  zIndex="2"
                 >
                   <FadeInAnimation
                     wrapperElement="div"
-                    delay={0.25}
+                    delay={0.45}
                   >
-                    <H1V2 zIndex="2">{t('home.hero.title')}</H1V2>
+                    {t('home.hero.description')}
                   </FadeInAnimation>
-                </HeroItem>
+                </SpanV2>
+
+                <FadeInAnimation
+                  wrapperElement="div"
+                  delay={0.65}
+                >
+                  <HeroCTA
+                    justifyContent="flex-start"
+                    gap="18px"
+                  >
+                    <Atag
+                      href="https://docs.push.org/developers"
+                      title={t('home.hero.alt-start-button')}
+                      target="_blank"
+                      background={GLOBALS.COLORS.HIGHLIGHT}
+                      lineHeight="26px"
+                      zIndex="2"
+                    >
+                      {t('home.hero.start-button')}
+                    </Atag>
+                    <Atag
+                      href="https://app.push.org/"
+                      title={t('home.hero.alt-explore-button')}
+                      target="_blank"
+                      background={GLOBALS.COLORS.BG_DARK_SECONDARY}
+                      lineHeight="26px"
+                      zIndex="2"
+                    >
+                      {t('home.hero.explore-button')}
+                    </Atag>
+                  </HeroCTA>
+                </FadeInAnimation>
+
+                <ItemHV2
+                  justifyContent="flex-start"
+                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                >
+                  <Atag
+                    href="https://twitter.com/pushprotocol"
+                    title="Push Protocol Twitter"
+                    target="_blank"
+                    margin="0 0 0 -10px"
+                    background="transparent"
+                    padding="10px 15px"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.25}
+                    >
+                      <TwitterSVG
+                        width={32}
+                        height={32}
+                      />
+                    </FadeInAnimation>
+                  </Atag>
+
+                  <Atag
+                    href="https://github.com/ethereum-push-notification-service"
+                    title="Push Github"
+                    target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.45}
+                    >
+                      <GithubSVG
+                        width={32}
+                        height={32}
+                      />
+                    </FadeInAnimation>
+                  </Atag>
+
+                  <Atag
+                    href="https://discord.gg/pushprotocol"
+                    title="Push Discord"
+                    target="_blank"
+                    background="transparent"
+                    padding="10px 15px"
+                  >
+                    <FadeInAnimation
+                      wrapperElement="div"
+                      delay={0.65}
+                    >
+                      <DiscordSVG
+                        width={32}
+                        height={32}
+                      />
+                    </FadeInAnimation>
+                  </Atag>
+                </ItemHV2>
+              </HeroItem>
             </HeroPrimary>
+
+            <AnalyticsStatsContainer
+              position="absolute"
+              zIndex="9"
+              left="0"
+              right="0"
+              bottom="7vh"
+            >
+              <AnalyticsStats />
+            </AnalyticsStatsContainer>
+
           </ContentV2>
         </SectionV2>
 
+        {/* MISSING PIECE OF WEB3 */}
+        <StorySection
+          id="story"
+          data-bkg="light"
+          className="lightBackground"
+        >
+          <ContentV2
+            className="contentBox"
+            alignSelf="center"
+            padding="40px 0px"
+          >
+            <PartnerChannels />
+
+            <Partners
+              margin="40px 0"
+              gap={isMobile ? '30px' : '50px'}
+            >
+              <ItemVV2>
+                <SpanV2
+                  fontWeight="400"
+                  color="#303C5E"
+                  fontSize="19px"
+                  lineHeight="160%"
+                  letterSpacing="-0.03em"
+                >
+                  <FadeInAnimation
+                    wrapperElement="span"
+                    delay={0}
+                  >
+                    {t('home.partners-section.networks')}{' '}
+                  </FadeInAnimation>
+                </SpanV2>
+              </ItemVV2>
+
+              <ItemHV2 maxWidth="550px">
+                <LiveNetworks>
+                  <ItemVV2 className="network">
+                    <EthLogoTextSVG
+                      alt="Logo for Ethereum"
+                      title="Ethereum Logo"
+                    />
+                  </ItemVV2>
+
+                  <ItemHV2 className="divider" />
+
+                  <ItemVV2 className="network">
+                    <PolygonLogoTextSVG
+                      alt="Logo for Polygon"
+                      title="Polygon Logo"
+                    />
+                  </ItemVV2>
+
+                  <ItemHV2 className="divider" />
+
+                  <ItemVV2 className="network">
+                    <BNBChainSVG
+                      alt="Logo for BNB Chain"
+                      title="BNB Chain Logo"
+                    />
+                  </ItemVV2>
+                </LiveNetworks>
+              </ItemHV2>
+            </Partners>
+
+            <PushWorksRow>
+              <ItemImage justifyContent="center">
+                <FadeInAnimation
+                  wrapperElement="div"
+                  direction="up"
+                  delay={0}
+                >
+                  <MemberImage
+                    className="pushMissingSvg"
+                    src={PushMissingPieceFigure}
+                    srcSet={PushMissingPieceFigure}
+                    alt={t('home.partners-section.alt-missing-web3-image')}
+                    title={t('home.partners-section.title-missing-web3-image')}
+                    style={{ margin: '0 auto' }}
+                    // width="100%"
+                    // height="100%"
+                  />
+                </FadeInAnimation>
+              </ItemImage>
+
+              <ItemVV2
+                justifyContent="space-around"
+                minHeight="530px"
+                // alignSelf='center'
+                alignItems={isMobile ? 'center' : 'flex-start'}
+                // flex="2"
+                // gap='22px'
+              >
+                <ResponsiveH2
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0}
+                  >
+                    {t('home.partners-section.missing-web3-title')}
+                  </FadeInAnimation>
+                </ResponsiveH2>
+
+                <SpanV2
+                  fontWeight="400"
+                  color="#303C5E"
+                  fontSize="19px"
+                  lineHeight="160%"
+                  letterSpacing="-0.03em"
+                  margin={isMobile && '10px 0px 0px 0px'}
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0}
+                  >
+                    {t('home.partners-section.missing-web3-text')}
+                  </FadeInAnimation>
+                </SpanV2>
+
+                <SpanV2
+                  fontWeight="500"
+                  color="#121315"
+                  fontSize="22px"
+                  lineHeight="142%"
+                  letterSpacing="-0.03em"
+                  margin={isMobile && '10px 0px 0px 0px'}
+                >
+                  <FadeInAnimation
+                    wrapperElement="div"
+                    direction="up"
+                    delay={0}
+                  >
+                    {t('home.partners-section.missing-web3-span')}
+                  </FadeInAnimation>
+                </SpanV2>
+
+                <FadeInAnimation
+                  wrapperElement="div"
+                  direction="up"
+                  delay={0}
+                >
+                  <Atag
+                    href="https://docs.push.org/developers"
+                    title={t('home.partners-section.missing-web3-alt-button')}
+                    target="_blank"
+                    background="#DD44B9"
+                    borderRadius="16px"
+                    padding="14px 32px"
+                    fontSize="18px"
+                    fontWeight="500"
+                    letterSpacing="-0.03em"
+                    lineHeight="26px"
+                    alignSelf="center"
+                    margin={isMobile ? '50px 0px 0px 0px' : ''}
+                  >
+                    {/* Learn about $PUSH */}
+                    {t('home.partners-section.missing-web3-button')}
+                    <BsArrowUpRight className="anchorSVGlink" />
+                  </Atag>
+                </FadeInAnimation>
+              </ItemVV2>
+            </PushWorksRow>
+          </ContentV2>
+        </StorySection>
         
       </HomeWrapper>
     </PageWrapper>

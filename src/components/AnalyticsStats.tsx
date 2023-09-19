@@ -16,7 +16,7 @@ import { ItemHV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import { getNotificationsCount, getSubscribersCount } from '@site/src/utils/AnalyticsStats';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
 function nFormatter(num, digits) {
   const si = [
