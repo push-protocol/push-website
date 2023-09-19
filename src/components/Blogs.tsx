@@ -165,55 +165,56 @@ function Blogs(props: BlogsProps) {
 
   if (!blogsData && isLoading) return <BlogLoader isMobile={isMobile} />;
 
-  if (Array.isArray(blogsData) && blogsData.length > 0) {
     return (
       <>
-        <ItemHV2
-          margin="40px 0 0 0"
-          gap="48px"
-        >
-          <MainArticle
-            onClick={() => onArticleClick(blogsData[0])}
-            title={blogsData[0].title}
+        {(Array.isArray(blogsData) && blogsData.length > 0) &&
+          <ItemHV2
+            margin="40px 0 0 0"
+            gap="48px"
           >
-            <ArticleBanner
-              src={blogsData[0].thumbnail}
-              alt={blogsData[0].title}
-            />
-
-            <H3V2
-              textTransform="capitalize"
-              color="#09090B"
-              fontSize="24px"
-              fontWeight="500"
-              letterSpacing="-0.02em"
-              lineHeight="142%"
-              margin="24px 0 0 0"
+            <MainArticle
+              onClick={() => onArticleClick(blogsData[0])}
+              title={blogsData[0].title}
             >
-              {blogsData[0].title}
-            </H3V2>
+              <ArticleBanner
+                src={blogsData[0].thumbnail}
+                alt={blogsData[0].title}
+              />
 
-            <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
-          </MainArticle>
+              <H3V2
+                textTransform="capitalize"
+                color="#09090B"
+                fontSize="24px"
+                fontWeight="500"
+                letterSpacing="-0.02em"
+                lineHeight="142%"
+                margin="24px 0 0 0"
+              >
+                {blogsData[0].title}
+              </H3V2>
 
-          <SubArticles>
-            {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
-              return (
-                <SubArticle
-                  key={idx}
-                  onClick={() => onArticleClick(blogData)}
-                  title={blogData.title}
-                >
-                  <SubArticleBanner
-                    src={blogData.thumbnail}
-                    alt={blogsData[0].title}
-                  />
-                  <SubArticleHeader>{blogData.title}</SubArticleHeader>
-                </SubArticle>
-              );
-            })}
-          </SubArticles>
-        </ItemHV2>
+              <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
+            </MainArticle>
+
+            <SubArticles>
+              {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
+                return (
+                  <SubArticle
+                    key={idx}
+                    onClick={() => onArticleClick(blogData)}
+                    title={blogData.title}
+                  >
+                    <SubArticleBanner
+                      src={blogData.thumbnail}
+                      alt={blogsData[0].title}
+                    />
+                    <SubArticleHeader>{blogData.title}</SubArticleHeader>
+                  </SubArticle>
+                );
+              })}
+            </SubArticles>
+          </ItemHV2>
+        }
 
         <ItemHV2
           height="1px"
@@ -222,7 +223,6 @@ function Blogs(props: BlogsProps) {
         />
       </>
     );
-  }
 }
 
 const MainArticle = styled(ItemVV2)`

@@ -846,7 +846,7 @@ export default function Home(): JSX.Element {
               </ItemHV2>
             </ItemHV2>
 
-            {/* <Blogs count={4} /> */}
+            <Blogs count={4} />
 
             {/* <BuiltByIntro flexDirection="column">
               <ItemV justifyContent="center">
