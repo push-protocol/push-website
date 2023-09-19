@@ -82,10 +82,10 @@ const config = {
           // },
         ],
         createRedirects(existingPath) {
-          if (existingPath.includes('/dev')) {
+          if (existingPath.includes('/devs')) {
             // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
             return [
-              existingPath.replace('/dev', '/devs')
+              existingPath.replace('/devs', '/dev')
             ];
           }
           return undefined; // Return a falsy value: no redirect created
