@@ -5,8 +5,13 @@ authors: [push]
 tags: [Pushprotocol, Ambassador Program, Partnerships, Web3, Blockchain Technologies]
 
 ---
+import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.png)
+
+<SubHeader>
+We’re looking for new ambassadors in India to join us!
+</SubHeader>
 
 Following the recent success of our Push Ambassador Program in LATAM, we are thrilled to be expanding our Ambassador Program to India!
 

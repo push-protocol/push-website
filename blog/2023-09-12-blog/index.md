@@ -5,7 +5,11 @@ authors: [push]
 tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
+import { SubHeader } from '@site/src/components/SharedStylingV2';
+
 ![Docusaurus Image](./cover-image.webp)
+
+<SubHeader>Web3 Notifications directly in your MetaMask wallet.</SubHeader>
 
 Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for [MetaMask](https://metamask.io/)!
 

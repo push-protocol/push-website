@@ -6,7 +6,13 @@ tags: [Pushprotocol, Devops, Devtools, Web3, Blockchain Technologies]
 
 ---
 
+import { SubHeader } from '@site/src/components/SharedStylingV2';
+
 ![Docusaurus Image](./cover-image.png)
+
+<SubHeader>
+    $55,000+ prize pool for solving some of Web3’s hardest coding problems.
+</SubHeader>
 
 Today, we are excited to announce Billion Reasons to Build — Push’s tour across India to find the best developers in the subcontinent to solve some of the hardest problems of Web3 and win bounties! 🎉
 

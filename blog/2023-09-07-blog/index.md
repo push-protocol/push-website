@@ -4,8 +4,13 @@ title: "Breaking Down & Comparing Different Decentralized Communication Technolo
 authors: [push]
 tags: [Pushprotocol, Web3, Blockchain, Blockchain Technologies]
 ---
+import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
+
+<SubHeader>
+  Web3 Notifications directly in your MetaMask wallet.
+</SubHeader>
 
 As the world becomes more interconnected, the need for secure, private, and efficient communication channels becomes more crucial. Decentralized communication has emerged as a viable alternative to traditional centralized systems, offering numerous advantages such as censorship resistance, privacy, and enhanced security.
 

@@ -12,7 +12,11 @@ tags:
   ]
 ---
 
+import { SubHeader } from '@site/src/components/SharedStylingV2';
+
 ![Docusaurus Image](./cover-image.webp)
+
+<SubHeader>Welcoming B2U messaging partners Polygon, Blockchain.com and MetaRides</SubHeader>
 
 Push Protocol is thrilled to announce our groundbreaking partnership with [Unstoppable Domains](https://unstoppabledomains.com/) to enable business-to-user (B2U) messaging through [Unstoppable Messaging!](https://unstoppabledomains.com/blog/categories/announcements/article/unstoppable-messaging) For businesses, brands, and web3 projects interested in interacting with their community and delivering a better user experience, messaging just got a lot more accessible.
 
