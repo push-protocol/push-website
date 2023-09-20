@@ -22,7 +22,7 @@ const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleF
           chatId={chatId}
           file={false}
           gif={false}
-          onClick={() => handleFaucet(true)}
+          onGetTokenClick ={() => handleFaucet(true)}
         />
       </ChatViewComponentCard>
     </Fragment>
