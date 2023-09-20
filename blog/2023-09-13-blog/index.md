@@ -31,10 +31,12 @@ The main features of version 1 of the Push Snap include:
 - The Push Snap also includes features to toggle the pop-up notifications as per the user’s choice.
 
 <blockquote>
+<i>
   Note: Currently, the Push Snap checks if more than 25 notifications are
   received per minute. If that’s the case, the Push Snap automatically notifies
   the user and snoozes the popups, which can always be turned back on from the
   dApp.
+  </i>
 </blockquote>
 
 ## Snap installation and Set-Up guide
