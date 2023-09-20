@@ -8,13 +8,16 @@ Allows developers to add MessageInput with Image, File and Gif sharing feature.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 Example
 
-![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/cf85455e-0a5d-4fd3-9365-6d71cce197de)
+<ModalContainer>
+  <img src={require("/static/img/uiweb/messageInput.png").default} />
+</ModalContainer>
 
 ```typescript
 import {MessageInput} from "@pushprotocol/uiweb";

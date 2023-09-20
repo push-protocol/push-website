@@ -7,13 +7,17 @@ Allows developers to add message list in dapp in few lines of code.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 Example:
 
-  ![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/0b33006c-b931-453f-b7f1-c26894a82516)
+<ModalContainer>
+  <img src={require("/static/img/uiweb/messagelist.png").default} />
+</ModalContainer>
+
 
   ```typescript
   import { useContext } from 'react';

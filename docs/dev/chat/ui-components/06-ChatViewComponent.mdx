@@ -8,14 +8,17 @@ Allows developers to add entire chat body component.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
+
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem  value="js" attributes={{className: "codetab js"}} default>
 
 Example:
 
-
-![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/385bbdb3-1536-4128-a773-ffae1d7ed1fe)
+<ModalContainer>
+  <img src={require("/static/img/usecases/chat.png").default} />
+</ModalContainer>
 
 ```typescript
 import { ChatViewComponent } from "@pushprotocol/uiweb";

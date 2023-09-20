@@ -8,13 +8,16 @@ Allows developers to add message bubble Ui in their dapp
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
+
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 Example:
-
-![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/6bc0691c-3ef3-4b09-a9a1-04a036a47a50)
+<ModalContainer>
+  <img src={require("/static/img/uiweb/chatbubble.png").default} />
+</ModalContainer>
 
 ```typescript
 import { ChatViewBubble } from "@pushprotocol/uiweb";

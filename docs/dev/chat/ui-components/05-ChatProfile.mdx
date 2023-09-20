@@ -8,13 +8,17 @@ Allows developers to add ChatProfile of users or groups in their dapp.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
+
 
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 Example:
 
-![Example Image](https://github.com/KlausMikhaelson/KlausMikhaelson/assets/100528412/088f3d96-1bd2-4411-a88d-e992658808c7)
+<ModalContainer>
+  <img src={require("/static/img/uiweb/chatprofile.png").default} />
+</ModalContainer>
 
 ```typescript
 import ChatProfile from "@pushprotocol/uiweb";
