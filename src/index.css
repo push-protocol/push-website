@@ -22,12 +22,14 @@ body {
   overflow-scrolling: touch;
   font-family: "Signika Negative", sans-serif, Arial;
   scroll-behavior: auto;
+  /* overflow-x: hidden; */
+  /* overflow-y: scroll; */
 }
 
-body {
+/* body {
     overflow-x: hidden;
     overflow-y: scroll;
-  }
+  } */
 
 
 /* Sections
