@@ -2969,10 +2969,10 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@0.0.1-alpha.11":
-  version "0.0.1-alpha.11"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-0.0.1-alpha.11.tgz#793e70f5a7956b0909c9983d3fd325b310efaea6"
-  integrity sha512-kTGWUWCsJUyVxFLZyeUu5yCa4fd+c/V6+hZzFM/9j0BtUWde5TWkQvdi6F6jnmqPAJLZqD/1egqlBPOnfio62A==
+"@pushprotocol/uiweb@0.0.1-alpha.12":
+  version "0.0.1-alpha.12"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-0.0.1-alpha.12.tgz#65e8849cda26b95eb2dcb9c783d12d4fa802c535"
+  integrity sha512-npbJIzM52/0QaN9T5mLo2BFCFluhPmhAAE0NTfSFADdVvvLQQISHk3ZKyOQiY/wwPgwlxl3Ep+rXwFmOuMwoxg==
   dependencies:
     "@livepeer/react" "^2.6.0"
     "@pushprotocol/socket" "^0.5.0"
