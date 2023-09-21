@@ -1,8 +1,9 @@
 # ChatViewList
+
 Streamlined Chat List Integration: Easily Add a Message List to Your Dapp with Built-in Pagination
 
 <head>
-<title>UiWeb - ChatViewList</title>
+  <title>UiWeb - ChatViewList</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -12,29 +13,31 @@ import { ModalContainer } from "@site/src/components/SharedStylingV2";
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="react" attributes={{className: "codetab react"}} default>
 
+```typescript
+import { useContext } from "react";
+import styled from "styled-components";
+import { ChatViewList } from "@pushprotocol/uiweb";
 
-  ```typescript
-  import { useContext } from 'react';
-  import styled from 'styled-components';
-  import {  ChatViewList } from '@pushprotocol/uiweb';
+const ChatViewListTest = () => {
+  return (
+    <ChatViewListCard>
+      <ChatViewList
+        chatId="196f58cbe07c7eb5716d939e0a3be1f15b22b2334d5179c601566600016860ac"
+        limit={10}
+      />
+    </ChatViewListCard>
+  );
+};
 
-  const ChatViewListTest = () => {
+export default ChatViewListTest;
 
-    return (
-        <ChatViewListCard>
-          <ChatViewList chatId='196f58cbe07c7eb5716d939e0a3be1f15b22b2334d5179c601566600016860ac' limit={10} />
-        </ChatViewListCard>
-    );
-  };
-
-  export default ChatViewListTest;
-
-  const ChatViewListCard = styled.div`
-  height:40vh;
-  background:black;
+const ChatViewListCard = styled.div`
+  height: 40vh;
+  background: black;
   overflow: auto;
-  overflow-x: hidden;`
-  ```
+  overflow-x: hidden;
+`;
+```
 
 <ModalContainer>
   <img src={require("/static/img/uiweb/messagelist.png").default} />
@@ -44,11 +47,11 @@ import { ModalContainer } from "@site/src/components/SharedStylingV2";
 </Tabs>
 
 ---
-  
-  | Param      | Type   | Default |
-  | ---------- | ------ | ------- |
-  | _`chatId`_ | string | -       |
-  | limit      | number | 10      |
 
-  
-  > Note: Parameters _`in this style`_ are mandatory.
+| Param          | Type   | Default |
+| -------------- | ------ | ------- |
+| _`chatId`_     | string | -       |
+| limit          | number | 10      |
+| chatFilterList | Array  | -       |
+
+> Note: Parameters _`in this style`_ are mandatory.

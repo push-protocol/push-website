@@ -13,8 +13,6 @@ import { ModalContainer } from "@site/src/components/SharedStylingV2";
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-
-
 ```typescript
 import {MessageInput} from "@pushprotocol/uiweb";
 
@@ -35,12 +33,14 @@ export const MessageInputTest = () => {
 
 ---
 
-| Param       | Type    | Default |
-| ----------- | ------- | ------- |
-| _`chatId`_  | string  | -       |
-| emoji       | boolean | true    |
-| gif         | boolean | true    |
-| file        | boolean | true    |
-| isConnected | boolean | true    |
+| Param           | Type    | Default |
+| --------------- | ------- | ------- |
+| _`chatId`_      | string  | -       |
+| emoji           | boolean | true    |
+| gif             | boolean | true    |
+| file            | boolean | true    |
+| isConnected     | boolean | true    |
+| autoConnect     | boolean | false   |
+| onGetTokenClick | function | void   |
 
 > Note: Parameters _`in this style`_ are mandatory.
