@@ -18,7 +18,7 @@ By the end of this tutorial, you’ll have learned:
 - How to utilize Push Protocol for real-time communication and decentralized messaging.
 - Tips and best practices for creating a robust and fair reputation system in a decentralized ecosystem.
 
-<center><b>.   .   .</b></center>
+<center><b>.   .   .</b></center><br/>
 
 The evolution of decentralized applications (dApps) and blockchain technology has underscored the significance of decentralized reputation systems.
 
@@ -220,7 +220,9 @@ By integrating Push Protocol, you can enhance user experience and provide real-t
 
 Developers seeking more in-depth guidance can refer to the following resources:
 
-Alchemy documentation: https://docs.alchemy.com/Push Protocol documentation: https://docs.pushprotocol.io/Solidity documentation: https://soliditylang.org/
+- Alchemy documentation: https://docs.alchemy.com/Push 
+- Protocol documentation: https://docs.pushprotocol.io/Solidity 
+- documentation: https://soliditylang.org/
 
 ## Tips to Remember for Building a Successful Decentralized Reputation System
 
