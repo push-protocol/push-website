@@ -5,16 +5,15 @@ import { ModalContainer } from "@site/src/components/SharedStylingV2";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-We wanted it to be easier for developers to add push chat in their dapp without having to worry about the UI or calling apis, that's why we built these web components which developers can import directly from the `@pushprotocol/uiweb` package and add push chat in their dapp just with few lines of code!
+Streamline Chat Integration for Developers: Say goodbye to the hassles of UI design and API calls. With our web components available in the `@pushprotocol/uiweb` package, you can effortlessly integrate push chat functionality into your dapp using just a few lines of code.
 
-for example in the below image we have added the push chat view component in the [`push.org/brb`](https://push.org/brb) website
-
+As an example, take a look at how we seamlessly integrated the Push Chat View component into the [`push.org/brb`](https://push.org/brb) website in the image below.
 <ModalContainer>
   <img src={require("/static/img/usecases/chat.png").default} />
 </ModalContainer>
 in order to add the above chatview component the developer just need to write few lines of code
 <Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
 import { ChatViewComponent } from "@pushprotocol/uiweb";

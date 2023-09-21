@@ -1,6 +1,6 @@
 # ChatViewBubble
 
-Allows developers to add message bubble Ui in their dapp
+Simplify Development: Instantly Integrate Pre-built Chat Bubble UI for Your Dapp
 
 <head>
   <title>UiWeb - ChatViewBubble</title>
@@ -10,76 +10,50 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import { ModalContainer } from "@site/src/components/SharedStylingV2";
 
-
 <Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
 
-Example:
-<ModalContainer>
-  <img src={require("/static/img/uiweb/chatbubble.png").default} />
-</ModalContainer>
 
 ```typescript
 import { ChatViewBubble } from "@pushprotocol/uiweb";
-import { useEffect, useContext, useState } from "react";
-import { EnvContext, Web3Context } from "../context";
-import * as PUSHAPI from "@pushprotocol/restapi";
-import { ENV } from "@pushprotocol/uiweb";
-import { IMessagePayload } from "@pushprotocol/uiweb";
 
-export const ChatViewBubbles = () => {
-  const { env } = useContext<any>(EnvContext);
-
-  const { library, account } = useContext<any>(Web3Context);
-  const [message, setMessage] = useState<IMessagePayload[]>([]);
-  const [conversationHash, setConversationHash] = useState<string>("");
-
-  const librarySigner = library.getSigner();
-
-  const fetchMessage = async () => {
-    const user = await PUSHAPI.user.get({
-      account: account,
-    });
-    const pgpPrivateKey = await PUSHAPI.chat.decryptPGPKey({
-      encryptedPGPPrivateKey: user.encryptedPrivateKey,
-      signer: librarySigner,
-      env: env,
-    });
-
-    const ConversationHash = await PUSHAPI.chat.conversationHash({
-      account: `eip155:${account}`,
-      conversationId:
-        "196f58cbe07c7eb5716d939e0a3be1f15b22b2334d5179c601566600016860ac",
-      env: env,
-    });
-    setConversationHash(ConversationHash.threadHash);
-    if (ConversationHash?.threadHash) {
-      const chatHistory = await PUSHAPI.chat.history({
-        threadhash: conversationHash,
-        account: account,
-        limit: 10,
-        toDecrypt: true,
-        pgpPrivateKey: pgpPrivateKey ? pgpPrivateKey : undefined,
-        env: env,
-      });
-      setMessage(chatHistory);
-      console.log(chatHistory);
-    }
+const ChatViewBubbleTest = () => {
+  const msg = {
+    fromCAIP10: "eip155:0xAC5d2aE3b4307D8F4304C0292D11de8968eB9DFd",
+    toCAIP10:
+      "b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1",
+    fromDID: "eip155:0xAC5d2aE3b4307D8F4304C0292D11de8968eB9DFd",
+    toDID: "b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1",
+    messageObj: {
+      content: "heyyy",
+    },
+    messageContent: "heyyy",
+    messageType: "Text",
+    timestamp: 1695170770877,
+    encType: "PlainText",
+    encryptedSecret: "",
+    signature:
+      "-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlCkDSCRB79EVvuUuFJxYhBKgXzyQx/165mhxKK3v0RW+5\nS4UnAAD+pgf+PFVDOzs8dP5wrzVQZdNf8t/jXEMqqYF00VFzVwsirVJY8YEm\nN0eXNB5Ndk99g4+k1aPxR1ToKk67nJxnUvZi6lqFFcqaOfsIzgxPNO0dtkw/\nvDNaVJIAE2B6YqdLQmv7kjbPUXZD1vQjzxR/8qusQWqt0IeO8c2SXTciT6uI\ndsjiJgZctH6VINz8I6H9gf35aPrDf3f4VqhgHDgwhtjyfQXLBMPh1vZ78sAB\noOKVNQN464llAsCjK7Q8zTANgAwT/G14V7IiHdDX0ZRRqH38AKRstX1y44l8\nQYQRlQXqGGwz3n3upnT5ZXpPNkdO/btuoNj8W8npic8CIc9rBRoTXg==\n=Xmu2\n-----END PGP SIGNATURE-----\n",
+    sigType: "pgpv2",
+    verificationProof:
+      "pgpv2:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlCkDSCRB79EVvuUuFJxYhBKgXzyQx/165mhxKK3v0RW+5\nS4UnAAC1mwf/Ydi97nNrk7y58tO8Pmw6i7bGHbie7KNEEvH5aL3sMgzeOWTX\nAozDvWXuQI0/InVhqAe8l7VR6/mXEaWsewn1S/gcPkIxHSTaD0UIVbXHcoq3\nNcuCzZaXL6n1mhx+wJSKCsAaa7Z/L7+4Ru6yj9LGEAzRpDQrY7RfgQP6ezSz\nxNLz2XavBMmIEwMS/wuC5nvT4Xl8amQlmPkFxZK6+2sfDxxzKMPVVewlFIwh\n4yHd2EYpIlVfuhQh/2KidLg9LAlqHUUgmrE0GU1aCV8bwKl/4hyjzREPahGc\nJ0wB1059rCMaJBXI+YbE0Z1bhX/G+4nM095QBsWDajAWmwnDUQYmFA==\n=BiZz\n-----END PGP SIGNATURE-----\n",
+    link: "bafyreianm5wnvhdhm2dymbykleoi4w54z2et7q4gbkxogaax5life7btqi",
+    cid: "bafyreihzt35ubpsq2vsi4swfnuq4mjaiufpnwt6nx2ngthtu5wk5h2z6ca",
   };
-
-  useEffect(() => {
-    fetchMessage();
-  }, []);
 
   return (
     <div>
-      {message.map((msg) => (
-        <ChatViewBubble chat={msg} />
-      ))}
+      <ChatViewBubble chat={msg} />
     </div>
   );
 };
+
+export default ChatViewBubbleTest;
 ```
+
+<ModalContainer>
+  <img src={require("/static/img/uiweb/chatbubble.png").default} />
+</ModalContainer>
 
 </TabItem>
 </Tabs>

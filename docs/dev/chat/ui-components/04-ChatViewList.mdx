@@ -1,5 +1,5 @@
 # ChatViewList
-Allows developers to add message list in dapp in few lines of code.
+Streamlined Chat List Integration: Easily Add a Message List to Your Dapp with Built-in Pagination
 
 <head>
 <title>UiWeb - ChatViewList</title>
@@ -10,13 +10,7 @@ import TabItem from "@theme/TabItem";
 import { ModalContainer } from "@site/src/components/SharedStylingV2";
 
 <Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
-
-Example:
-
-<ModalContainer>
-  <img src={require("/static/img/uiweb/messagelist.png").default} />
-</ModalContainer>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
 
 
   ```typescript
@@ -39,8 +33,12 @@ Example:
   height:40vh;
   background:black;
   overflow: auto;
-  overflow-x: hidden;
+  overflow-x: hidden;`
   ```
+
+<ModalContainer>
+  <img src={require("/static/img/uiweb/messagelist.png").default} />
+</ModalContainer>
 
 </TabItem>
 </Tabs>
