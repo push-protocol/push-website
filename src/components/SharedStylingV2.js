@@ -627,4 +627,5 @@ export const SubHeader = styled.div`
   color: #6b6b6b;
   font-size: 27px;
   font-weight: bold;
+
 `;
