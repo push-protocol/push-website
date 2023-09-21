@@ -37,6 +37,6 @@ For instance:
 
 The infographics below will help understand the verification procedure in the core smart contract effectively:
 
-![Channel verification and Unverfication Process in Push CoreV1](../../../../static/img/assets/channel-verification.png)
+![Channel verification and Unverfication Process in Push CoreV1](../../../../static/assets/docs/articles/channel-verification.png)
 
 **b.Unverifying a Secondary verified channel:** A channel with a secondary verification tag can be unverified either by the actual verifier of the channel or by the **Push** channel admin itself. As channels with secondary verification tags cannot verify other channels, their revocation of the verification tag has no impact on any other Channel’s verification tag.

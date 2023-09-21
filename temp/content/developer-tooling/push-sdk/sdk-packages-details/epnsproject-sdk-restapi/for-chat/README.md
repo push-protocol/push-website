@@ -2,7 +2,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
 # For Chat
 
-![Push Chat Snippet](../../../../../../static/img/assets/pushchatsnippet.png)
+![Push Chat Snippet](../../../../../../static/assets/docs/articles/pushchatsnippet.png)
 
 This section of SDK contains all things required for you to start implementing chat on your dApp or your wallet.
 

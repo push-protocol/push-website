@@ -4,55 +4,64 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 // External Components
-import Spline from '@splinetool/react-spline';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useTranslation } from 'react-i18next';
-import { BsArrowUpRight } from 'react-icons/bs';
-import { FiArrowUpRight } from 'react-icons/fi';
-import styled from 'styled-components';
+import Spline from "@splinetool/react-spline";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
+import { BsArrowUpRight } from "react-icons/bs";
+import { FiArrowUpRight } from "react-icons/fi";
+import styled from "styled-components";
 
 // Internal Components
-import AnalyticsStats from '@site/src/components/AnalyticsStats';
-import Blogs from '@site/src/components/Blogs';
-import FadeInAnimation from '@site/src/components/FadeInAnimation';
-import HorizontalScroll from '@site/src/components/HorizontalScroll';
-import HybridSection from '@site/src/components/HybridSection';
-import ImageHolder from '@site/src/components/ImageHolder';
-import InvestorList from '@site/src/components/InvestorList';
-import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
-import PageWrapper from '@site/src/components/PageWrapper';
-import PartnerChannels from '@site/src/components/PartnerChannels';
-import { Atag, ContentV2, H1V2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
-import SignupInput from '@site/src/components/SignupInput';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import BNBChainSVG from '@site/static/assets/BNBChain.svg';
-import BeInCryptoSVG from '@site/static/assets/BeInCryptoLogo.svg';
-import BalajiTweethandleBlackSVG from '@site/static/assets/balajitweethandle.svg';
-import CoindeskBlackSVG from '@site/static/assets/coindesk_black.svg';
-import DefiPrimeBlackSVG from '@site/static/assets/defiprime.svg';
-import DiscordSVG from '@site/static/assets/discord.svg';
-import EthFoundationBlackSVG from '@site/static/assets/eth_foundation_black.svg';
-import EthLogoTextSVG from '@site/static/assets/ethereum-logo-landscape.svg';
-import CensorshipresistantFigure from '@site/static/assets/figures/censorshipresistant.svg';
-import ChainAgnosticFigure from '@site/static/assets/figures/chainagnostic.svg';
-import DecentralizedstackFigure from '@site/static/assets/figures/decentralizedstack.svg';
-import GrowWithPushFigure from '@site/static/assets/figures/growwithpush.webp';
-import ImmediatecommunicationFigure from '@site/static/assets/figures/immediatecommunication.svg';
-import ImproveduxFigure from '@site/static/assets/figures/improvedux.svg';
-import PushMissingPieceFigure from '@site/static/assets/figures/pushmissingtest.webp';
-import SecurityalertsFigure from '@site/static/assets/figures/securityalerts.svg';
-import GithubSVG from '@site/static/assets/github.svg';
-import PolygonLogoTextSVG from '@site/static/assets/polygon_logo_text_black.svg';
-import TwitterSVG from '@site/static/assets/twitter.svg';
+import AnalyticsStats from "@site/src/components/AnalyticsStats";
+import Blogs from "@site/src/components/Blogs";
+import FadeInAnimation from "@site/src/components/FadeInAnimation";
+import HorizontalScroll from "@site/src/components/HorizontalScroll";
+import HybridSection from "@site/src/components/HybridSection";
+import ImageHolder from "@site/src/components/ImageHolder";
+import InvestorList from "@site/src/components/InvestorList";
+import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+import PageWrapper from "@site/src/components/PageWrapper";
+import PartnerChannels from "@site/src/components/PartnerChannels";
+import {
+  Atag,
+  ContentV2,
+  H1V2,
+  H2V2,
+  ItemHV2,
+  ItemVV2,
+  SectionV2,
+  SpanV2,
+} from "@site/src/components/SharedStylingV2";
+import SignupInput from "@site/src/components/SignupInput";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import BNBChainSVG from "@site/static/assets/BNBChain.svg";
+import DiscordSVG from "@site/static/assets/discord.svg";
+import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
+import CensorshipresistantFigure from "@site/static/assets/figures/censorshipresistant.svg";
+import ChainAgnosticFigure from "@site/static/assets/figures/chainagnostic.svg";
+import DecentralizedstackFigure from "@site/static/assets/figures/decentralizedstack.svg";
+import GrowWithPushFigure from "@site/static/assets/figures/growwithpush.webp";
+import ImmediatecommunicationFigure from "@site/static/assets/figures/immediatecommunication.svg";
+import ImproveduxFigure from "@site/static/assets/figures/improvedux.svg";
+import PushMissingPieceFigure from "@site/static/assets/figures/pushmissingtest.webp";
+import SecurityalertsFigure from "@site/static/assets/figures/securityalerts.svg";
+import GithubSVG from "@site/static/assets/github.svg";
+import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
+import TwitterSVG from "@site/static/assets/twitter.svg";
+import BeInCryptoSVG from "@site/static/assets/website/coverage/raw/BeInCryptoLogo.svg";
+import BalajiTweethandleBlackSVG from "@site/static/assets/website/coverage/raw/balajitweethandle.svg";
+import CoindeskBlackSVG from "@site/static/assets/website/coverage/raw/coindesk_black.svg";
+import DefiPrimeBlackSVG from "@site/static/assets/website/coverage/raw/defiprime.svg";
+import EthFoundationBlackSVG from "@site/static/assets/website/coverage/raw/eth_foundation_black.svg";
 
 // Internal Configs
-import TeamList from '@site/src/components/config/teamList';
-import PageMeta from '@site/src/config/pageMeta';
-import GLOBALS, { device } from '../config/globals';
+import TeamList from "@site/src/components/config/teamList";
+import PageMeta from "@site/src/config/pageMeta";
+import GLOBALS, { device } from "../config/globals";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -62,16 +71,15 @@ export default function Home(): JSX.Element {
   const { t, i18n } = useTranslation();
 
   const isMobile = useMediaQuery(device.laptop);
-  const isLargeScreen = useMediaQuery('(max-width: 1250px)');
-
+  const isLargeScreen = useMediaQuery("(max-width: 1250px)");
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
-    gsap.to('#herobg', {
+    gsap.to("#herobg", {
       scrollTrigger: {
-        trigger: '#herobg',
-        start: 'center center',
-        end: 'bottom top',
+        trigger: "#herobg",
+        start: "center center",
+        end: "bottom top",
         scrub: true,
         markers: false,
       },
@@ -79,11 +87,11 @@ export default function Home(): JSX.Element {
       borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
     });
 
-    gsap.to('#integratePush', {
+    gsap.to("#integratePush", {
       scrollTrigger: {
-        trigger: '#newone',
-        start: 'center top',
-        end: '+=500',
+        trigger: "#newone",
+        start: "center top",
+        end: "+=500",
         scrub: true,
         markers: false,
       },
@@ -125,9 +133,7 @@ export default function Home(): JSX.Element {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2
-            alignSelf="center"
-          >
+          <ContentV2 alignSelf="center">
             {
               // rendering the main animation only on large laptops and desktops
               !isMobile && (
@@ -136,20 +142,14 @@ export default function Home(): JSX.Element {
                 </HeroAnimation>
               )
             }
-            <HeroPrimary
-              flex="initial"
-              justifyContent="flex-start"
-            >
+            <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                MarginTop={'100px'}
+                MarginTop={"100px"}
               >
-                <FadeInAnimation
-                  wrapperElement="div"
-                  delay={0.25}
-                >
-                  <H1V2 zIndex="2">{t('home.hero.title')}</H1V2>
+                <FadeInAnimation wrapperElement="div" delay={0.25}>
+                  <H1V2 zIndex="2">{t("home.hero.title")}</H1V2>
                 </FadeInAnimation>
 
                 <SpanV2
@@ -157,41 +157,33 @@ export default function Home(): JSX.Element {
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    delay={0.45}
-                  >
-                    {t('home.hero.description')}
+                  <FadeInAnimation wrapperElement="div" delay={0.45}>
+                    {t("home.hero.description")}
                   </FadeInAnimation>
                 </SpanV2>
 
-                <FadeInAnimation
-                  wrapperElement="div"
-                  delay={0.65}
-                >
-                  <HeroCTA
-                    justifyContent="flex-start"
-                    gap="18px"
-                  >
+                <FadeInAnimation wrapperElement="div" delay={0.65}>
+                  <HeroCTA justifyContent="flex-start" gap="18px">
                     <Atag
                       href="https://docs.push.org/developers"
-                      title={t('home.hero.alt-start-button')}
+                      title={t("home.hero.alt-start-button")}
                       target="_blank"
                       background={GLOBALS.COLORS.HIGHLIGHT}
+                      color={GLOBALS.COLORS.FONT_LIGHT}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      {t('home.hero.start-button')}
+                      {t("home.hero.start-button")}
                     </Atag>
                     <Atag
                       href="https://app.push.org/"
-                      title={t('home.hero.alt-explore-button')}
+                      title={t("home.hero.alt-explore-button")}
                       target="_blank"
                       background={GLOBALS.COLORS.BG_DARK_SECONDARY}
                       lineHeight="26px"
                       zIndex="2"
                     >
-                      {t('home.hero.explore-button')}
+                      {t("home.hero.explore-button")}
                     </Atag>
                   </HeroCTA>
                 </FadeInAnimation>
@@ -208,14 +200,8 @@ export default function Home(): JSX.Element {
                     background="transparent"
                     padding="10px 15px"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.25}
-                    >
-                      <TwitterSVG
-                        width={32}
-                        height={32}
-                      />
+                    <FadeInAnimation wrapperElement="div" delay={0.25}>
+                      <TwitterSVG width={32} height={32} />
                     </FadeInAnimation>
                   </Atag>
 
@@ -226,14 +212,8 @@ export default function Home(): JSX.Element {
                     background="transparent"
                     padding="10px 15px"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.45}
-                    >
-                      <GithubSVG
-                        width={32}
-                        height={32}
-                      />
+                    <FadeInAnimation wrapperElement="div" delay={0.45}>
+                      <GithubSVG width={32} height={32} />
                     </FadeInAnimation>
                   </Atag>
 
@@ -244,14 +224,8 @@ export default function Home(): JSX.Element {
                     background="transparent"
                     padding="10px 15px"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.65}
-                    >
-                      <DiscordSVG
-                        width={32}
-                        height={32}
-                      />
+                    <FadeInAnimation wrapperElement="div" delay={0.65}>
+                      <DiscordSVG width={32} height={32} />
                     </FadeInAnimation>
                   </Atag>
                 </ItemHV2>
@@ -267,16 +241,11 @@ export default function Home(): JSX.Element {
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
-
           </ContentV2>
         </SectionV2>
 
         {/* MISSING PIECE OF WEB3 */}
-        <StorySection
-          id="story"
-          data-bkg="light"
-          className="lightBackground"
-        >
+        <StorySection id="story" data-bkg="light" className="lightBackground">
           <ContentV2
             className="contentBox"
             alignSelf="center"
@@ -284,10 +253,7 @@ export default function Home(): JSX.Element {
           >
             <PartnerChannels />
 
-            <Partners
-              margin="40px 0"
-              gap={isMobile ? '30px' : '50px'}
-            >
+            <Partners margin="40px 0" gap={isMobile ? "30px" : "50px"}>
               <ItemVV2>
                 <SpanV2
                   fontWeight="400"
@@ -296,11 +262,8 @@ export default function Home(): JSX.Element {
                   lineHeight="160%"
                   letterSpacing="-0.03em"
                 >
-                  <FadeInAnimation
-                    wrapperElement="span"
-                    delay={0}
-                  >
-                    {t('home.partners-section.networks')}{' '}
+                  <FadeInAnimation wrapperElement="span" delay={0}>
+                    {t("home.partners-section.networks")}{" "}
                   </FadeInAnimation>
                 </SpanV2>
               </ItemVV2>
@@ -337,18 +300,14 @@ export default function Home(): JSX.Element {
 
             <PushWorksRow>
               <ItemImage justifyContent="center">
-                <FadeInAnimation
-                  wrapperElement="div"
-                  direction="up"
-                  delay={0}
-                >
+                <FadeInAnimation wrapperElement="div" direction="up" delay={0}>
                   <MemberImage
                     className="pushMissingSvg"
                     src={PushMissingPieceFigure}
                     srcSet={PushMissingPieceFigure}
-                    alt={t('home.partners-section.alt-missing-web3-image')}
-                    title={t('home.partners-section.title-missing-web3-image')}
-                    style={{ margin: '0 auto' }}
+                    alt={t("home.partners-section.alt-missing-web3-image")}
+                    title={t("home.partners-section.title-missing-web3-image")}
+                    style={{ margin: "0 auto" }}
                     // width="100%"
                     // height="100%"
                   />
@@ -359,7 +318,7 @@ export default function Home(): JSX.Element {
                 justifyContent="space-around"
                 minHeight="530px"
                 // alignSelf='center'
-                alignItems={isMobile ? 'center' : 'flex-start'}
+                alignItems={isMobile ? "center" : "flex-start"}
                 // flex="2"
                 // gap='22px'
               >
@@ -374,7 +333,7 @@ export default function Home(): JSX.Element {
                     direction="up"
                     delay={0}
                   >
-                    {t('home.partners-section.missing-web3-title')}
+                    {t("home.partners-section.missing-web3-title")}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
@@ -384,14 +343,14 @@ export default function Home(): JSX.Element {
                   fontSize="19px"
                   lineHeight="160%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && '10px 0px 0px 0px'}
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
                     delay={0}
                   >
-                    {t('home.partners-section.missing-web3-text')}
+                    {t("home.partners-section.missing-web3-text")}
                   </FadeInAnimation>
                 </SpanV2>
 
@@ -401,25 +360,21 @@ export default function Home(): JSX.Element {
                   fontSize="22px"
                   lineHeight="142%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && '10px 0px 0px 0px'}
+                  margin={isMobile && "10px 0px 0px 0px"}
                 >
                   <FadeInAnimation
                     wrapperElement="div"
                     direction="up"
                     delay={0}
                   >
-                    {t('home.partners-section.missing-web3-span')}
+                    {t("home.partners-section.missing-web3-span")}
                   </FadeInAnimation>
                 </SpanV2>
 
-                <FadeInAnimation
-                  wrapperElement="div"
-                  direction="up"
-                  delay={0}
-                >
+                <FadeInAnimation wrapperElement="div" direction="up" delay={0}>
                   <Atag
                     href="https://docs.push.org/developers"
-                    title={t('home.partners-section.missing-web3-alt-button')}
+                    title={t("home.partners-section.missing-web3-alt-button")}
                     target="_blank"
                     background="#DD44B9"
                     borderRadius="16px"
@@ -429,10 +384,10 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="26px"
                     alignSelf="center"
-                    margin={isMobile ? '50px 0px 0px 0px' : ''}
+                    margin={isMobile ? "50px 0px 0px 0px" : ""}
                   >
                     {/* Learn about $PUSH */}
-                    {t('home.partners-section.missing-web3-button')}
+                    {t("home.partners-section.missing-web3-button")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </FadeInAnimation>
@@ -440,7 +395,7 @@ export default function Home(): JSX.Element {
             </PushWorksRow>
           </ContentV2>
         </StorySection>
-        
+
         <BuildWithPushSection
           curve="both"
           id="buildWithPush"
@@ -448,15 +403,9 @@ export default function Home(): JSX.Element {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-            <FadeInAnimation
-              wrapperElement="div"
-              delay={0.2}
-            >
+            <FadeInAnimation wrapperElement="div" delay={0.2}>
               <SignupBox margin="0 0 0px 0">
-                <ItemVV2
-                  justifyContent="flex-start"
-                  gap="12px"
-                >
+                <ItemVV2 justifyContent="flex-start" gap="12px">
                   <ResponsiveH2
                     color="#09090B"
                     fontSize="40px"
@@ -465,7 +414,7 @@ export default function Home(): JSX.Element {
                     lineHeight="110%"
                     margin="0"
                   >
-                    {t('home.email-section.title')}
+                    {t("home.email-section.title")}
                   </ResponsiveH2>
                   <SpanV2
                     color="#303C5E"
@@ -474,7 +423,7 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="138.5%"
                   >
-                    {t('home.email-section.text')}
+                    {t("home.email-section.text")}
                   </SpanV2>
                 </ItemVV2>
 
@@ -510,16 +459,13 @@ export default function Home(): JSX.Element {
             padding="40px 0px"
           >
             <IntegrateGrowWithPushRow gap="18px">
-              <FadeInAnimation
-                wrapperElement="div"
-                delay={0.1}
-              >
+              <FadeInAnimation wrapperElement="div" delay={0.1}>
                 <MemberImage
                   className="figureSvg"
                   src={GrowWithPushFigure}
                   srcSet={GrowWithPushFigure}
-                  alt={t('home.grow-section.image-alt')}
-                  title={t('home.grow-section.image-title')}
+                  alt={t("home.grow-section.image-alt")}
+                  title={t("home.grow-section.image-title")}
                   width="100%"
                   height="100%"
                 />
@@ -533,11 +479,8 @@ export default function Home(): JSX.Element {
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
-                <FadeInAnimation
-                  wrapperElement="div"
-                  delay={0.2}
-                >
-                  {t('home.grow-section.title')}
+                <FadeInAnimation wrapperElement="div" delay={0.2}>
+                  {t("home.grow-section.title")}
                 </FadeInAnimation>
               </ResponsiveH2>
 
@@ -549,11 +492,8 @@ export default function Home(): JSX.Element {
                 letterSpacing="-0.03em"
                 lineHeight="160%"
               >
-                <FadeInAnimation
-                  wrapperElement="div"
-                  delay={0.3}
-                >
-                  {t('home.grow-section.text')}
+                <FadeInAnimation wrapperElement="div" delay={0.3}>
+                  {t("home.grow-section.text")}
                 </FadeInAnimation>
               </SpanV2>
             </IntegrateGrowWithPushRow>
@@ -568,17 +508,15 @@ export default function Home(): JSX.Element {
                   lineHeight="110%"
                   margin="0"
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    delay={0.1}
-                  >
-                    {t('home.grow-section.wallet-text.part1')} <br></br> {t('home.grow-section.wallet-text.part2')}
+                  <FadeInAnimation wrapperElement="div" delay={0.1}>
+                    {t("home.grow-section.wallet-text.part1")} <br></br>{" "}
+                    {t("home.grow-section.wallet-text.part2")}
                   </FadeInAnimation>
                 </ResponsiveH2>
 
                 <Atag
                   href="https://docs.push.org/hub/"
-                  title={t('home.grow-section.button-alt')}
+                  title={t("home.grow-section.button-alt")}
                   target="_blank"
                   background="#DD44B9"
                   borderRadius="16px"
@@ -589,16 +527,13 @@ export default function Home(): JSX.Element {
                   lineHeight="26px"
                   alignSelf="center"
                 >
-                  {t('home.grow-section.button')}
+                  {t("home.grow-section.button")}
                 </Atag>
               </IntegrateAndEarn>
             </ItemHV2>
 
             <ItemHV2 margin="80px 0 0 0">
-              <ItemVV2
-                justifyContent="flex-start"
-                alignItems="flex-start"
-              >
+              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"
@@ -607,7 +542,7 @@ export default function Home(): JSX.Element {
                   lineHeight="110%"
                   margin="0"
                 >
-                  {t('home.why-push-section.title')}
+                  {t("home.why-push-section.title")}
                 </ResponsiveH2>
               </ItemVV2>
             </ItemHV2>
@@ -616,13 +551,10 @@ export default function Home(): JSX.Element {
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <ChainAgnosticFigure
                         alt="Icon showing Push is chain agnostic"
-                        title={t('home.why-push-section.chain-agnostic-text')}
+                        title={t("home.why-push-section.chain-agnostic-text")}
                       />
                     </FadeInAnimation>
                   </div>
@@ -634,24 +566,20 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.chain-agnostic-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.chain-agnostic-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <ImmediatecommunicationFigure
                         alt="Icon showing Immediate Communication"
-                        title={t('home.why-push-section.immediate-communication-text')}
+                        title={t(
+                          "home.why-push-section.immediate-communication-text"
+                        )}
                       />
                     </FadeInAnimation>
                   </div>
@@ -663,24 +591,20 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.immediate-communication-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.immediate-communication-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <DecentralizedstackFigure
                         alt="Icon showing decentralization"
-                        title={t('home.why-push-section.decentralized-stack-text')}
+                        title={t(
+                          "home.why-push-section.decentralized-stack-text"
+                        )}
                       />
                     </FadeInAnimation>
                   </div>
@@ -692,24 +616,18 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.decentralized-stack-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.decentralized-stack-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <ImproveduxFigure
                         alt="Icon showing User Experience"
-                        title={t('home.why-push-section.improved-ux-text')}
+                        title={t("home.why-push-section.improved-ux-text")}
                       />
                     </FadeInAnimation>
                   </div>
@@ -721,24 +639,18 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.improved-ux-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.improved-ux-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <SecurityalertsFigure
                         alt="Icon showing Security"
-                        title={t('home.why-push-section.security-alerts-text')}
+                        title={t("home.why-push-section.security-alerts-text")}
                       />
                     </FadeInAnimation>
                   </div>
@@ -750,24 +662,20 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.security-alerts-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.security-alerts-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.1}
-                    >
+                    <FadeInAnimation wrapperElement="div" delay={0.1}>
                       <CensorshipresistantFigure
                         alt="Icon showing Censorship Resistance"
-                        title={t('home.why-push-section.censorship-resistant-text')}
+                        title={t(
+                          "home.why-push-section.censorship-resistant-text"
+                        )}
                       />
                     </FadeInAnimation>
                   </div>
@@ -779,21 +687,15 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation
-                      wrapperElement="div"
-                      delay={0.2}
-                    >
-                      {t('home.why-push-section.censorship-resistant-text')}
+                    <FadeInAnimation wrapperElement="div" delay={0.2}>
+                      {t("home.why-push-section.censorship-resistant-text")}
                     </FadeInAnimation>
                   </SpanV2>
                 </MatrixCell>
               </Matrix>
             </ItemHV2>
 
-            <WhyPushTextBox
-              textAlign="center"
-              margin="80px 160px"
-            >
+            <WhyPushTextBox textAlign="center" margin="80px 160px">
               <SpanV2
                 color="#303C5E"
                 fontSize="19px"
@@ -801,15 +703,12 @@ export default function Home(): JSX.Element {
                 letterSpacing="-0.03em"
                 lineHeight="142%"
               >
-                {t('home.why-push-section.text')}
+                {t("home.why-push-section.text")}
               </SpanV2>
             </WhyPushTextBox>
 
             <ItemHV2 margin="80px 0 0 0">
-              <ItemVV2
-                justifyContent="flex-start"
-                alignItems="flex-start"
-              >
+              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"
@@ -819,7 +718,7 @@ export default function Home(): JSX.Element {
                   margin="0"
                   width="50%"
                 >
-                  {t('home.insights-section.title')}
+                  {t("home.insights-section.title")}
                 </ResponsiveH2>
               </ItemVV2>
 
@@ -840,7 +739,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.insights-section.link-text')}
+                  {t("home.insights-section.link-text")}
                   <BsArrowUpRight className="anchorSVGlink" />
                 </Atag>
               </ItemHV2>
@@ -943,10 +842,7 @@ export default function Home(): JSX.Element {
             </TeamMemberButtons> */}
 
             <ItemHV2 margin="80px 0 80px 0">
-              <ItemVV2
-                justifyContent="flex-start"
-                alignItems="flex-start"
-              >
+              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
                 <InvestorHeader
                   color="#09090B"
                   fontSize="40px"
@@ -955,7 +851,7 @@ export default function Home(): JSX.Element {
                   lineHeight="110%"
                   margin="0"
                 >
-                  {t('home.investors-section.title')}
+                  {t("home.investors-section.title")}
                 </InvestorHeader>
               </ItemVV2>
             </ItemHV2>
@@ -975,10 +871,7 @@ export default function Home(): JSX.Element {
             alignSelf="flex-start"
           >
             <ItemHV2 justifyContent="flex-start">
-              <ItemHV2
-                justifyContent="flex-start"
-                alignItems="flex-start"
-              >
+              <ItemHV2 justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
                   color="#FFFFFF"
                   fontSize="40px"
@@ -987,7 +880,7 @@ export default function Home(): JSX.Element {
                   lineHeight="110%"
                   margin="0"
                 >
-                  {t('home.featured-section.title')}
+                  {t("home.featured-section.title")}
                 </ResponsiveH2>
               </ItemHV2>
             </ItemHV2>
@@ -999,10 +892,7 @@ export default function Home(): JSX.Element {
             margin="0 0 270px 0"
             id="newone"
           >
-            <MarqueeAnimation
-              speed={70}
-              gradient={false}
-            >
+            <MarqueeAnimation speed={70} gradient={false}>
               <FeaturedCell className="marqueeItem">
                 <SpanV2
                   color="#FFFFFF"
@@ -1011,7 +901,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.featured-section.article1.text')}
+                  {t("home.featured-section.article1.text")}
                 </SpanV2>
 
                 <ArticleSource>
@@ -1032,7 +922,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                     padding="0"
                   >
-                    {t('home.featured-section.article1.link-text')}
+                    {t("home.featured-section.article1.link-text")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </ArticleSource>
@@ -1046,7 +936,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.featured-section.article2.text')}
+                  {t("home.featured-section.article2.text")}
                 </SpanV2>
 
                 <ArticleSource>
@@ -1067,7 +957,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                     padding="0"
                   >
-                    {t('home.featured-section.article2.link-text')}
+                    {t("home.featured-section.article2.link-text")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </ArticleSource>
@@ -1081,7 +971,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.featured-section.article3.text')}
+                  {t("home.featured-section.article3.text")}
                 </SpanV2>
 
                 <ArticleSource>
@@ -1102,7 +992,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                     padding="0"
                   >
-                    {t('home.featured-section.article3.link-text')}
+                    {t("home.featured-section.article3.link-text")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </ArticleSource>
@@ -1116,7 +1006,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.featured-section.article4.text')}
+                  {t("home.featured-section.article4.text")}
                 </SpanV2>
 
                 <ArticleSource>
@@ -1137,7 +1027,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                     padding="0"
                   >
-                    {t('home.featured-section.article4.link-text')}
+                    {t("home.featured-section.article4.link-text")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </ArticleSource>
@@ -1151,7 +1041,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t('home.featured-section.article5.text')}
+                  {t("home.featured-section.article5.text")}
                 </SpanV2>
 
                 <ArticleSource>
@@ -1172,7 +1062,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                     padding="0"
                   >
-                    {t('home.featured-section.article5.link-text')}
+                    {t("home.featured-section.article5.link-text")}
                     <BsArrowUpRight className="anchorSVGlink" />
                   </Atag>
                 </ArticleSource>
@@ -1180,7 +1070,6 @@ export default function Home(): JSX.Element {
             </MarqueeAnimation>
           </FeaturedInMarquee>
         </FeaturedInSection>
-        
       </HomeWrapper>
     </PageWrapper>
   );
@@ -1216,7 +1105,7 @@ const HeroAnimation = styled(ItemHV2)`
 const HeroItem = styled(ItemVV2)`
   @media ${device.laptop} {
     max-width: initial;
-    margin-top: ${(props) => props.MarginTop || '0px'};
+    margin-top: ${(props) => props.MarginTop || "0px"};
   }
 
   @media ${device.mobileM} {
@@ -1419,8 +1308,6 @@ const LiveNetworks = styled(ItemHV2)`
   }
 }
 
-  
-
   @media ${device.laptopL} {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -1455,7 +1342,7 @@ const LiveNetworks = styled(ItemHV2)`
 export const BodyContent = styled.div`
 	// display: flex;
 	// flex-direction: column;
-	padding: ${(props) => props.padding || '40px 0px'};
+	padding: ${(props) => props.padding || "40px 0px"};
 	// position: relative;
 
 	&.contentBox {
@@ -1467,7 +1354,7 @@ export const BodyContent = styled.div`
 	// }
 
   @media ${device.tablet} {
-  	padding: ${(props) => props.padding || '10px 0px'};
+  	padding: ${(props) => props.padding || "10px 0px"};
   }
 `;
 
@@ -1503,7 +1390,7 @@ const GrowPushCard = styled(ItemVV2)`
   padding: 60px 80px;
   width: 45%;
 
-  background: ${(props) => props.background || '#FFFBFB'};
+  background: ${(props) => props.background || "#FFFBFB"};
   border-radius: 48px;
 
   & .figureSvg {
@@ -1605,7 +1492,7 @@ const MatrixCell = styled.div`
   &::before {
     position: absolute;
     z-index: 1;
-    content: '';
+    content: "";
     top: -1px;
     left: 0;
     height: 8px;
@@ -1683,12 +1570,12 @@ const FeaturedCell = styled.div`
 
   border: 1px solid #fff;
   border-left: 0;
-  color: '#FFF';
+  color: "#FFF";
 
   &::before {
     position: absolute;
     z-index: 1;
-    content: '';
+    content: "";
     top: -1px;
     left: 0;
     height: 8px;

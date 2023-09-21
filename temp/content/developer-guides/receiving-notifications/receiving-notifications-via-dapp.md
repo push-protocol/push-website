@@ -24,7 +24,7 @@ On the right-hand side of every channel, you can see an _**Opt-In**_ button.&#x2
 * Click on Opt-In Button.
 * A metamask or your preferred crypto wallet shall pop up for you to confirm the action. Simply, Sign the transaction.
 
-![Sign Transaction](../../../static/img/assets/metamask-popup.png)
+![Sign Transaction](../../../static/assets/docs/articles/metamask-popup.png)
 
 Henceforth, You will receive all the notifications that this channel will send 🥳.
 
@@ -53,13 +53,13 @@ This section is distributed into two parts:&#x20;
 
 **The** Inbox option contains all the notifications sent to your wallet address by all the channels you have subscribed/opted-in to.&#x20;
 
-![Inbox](../../../static/img/assets/inbox.png)
+![Inbox](../../../static/assets/docs/articles/inbox.png)
 
 #### Spam Box
 
 The Spam box plays a very important and interesting role. Services to which you have not opted-in to receive notifications can still send notifications to your wallet address if at some point you have used their dapps.
 
-![SpamBox](../../../static/img/assets/spambox.png)
+![SpamBox](../../../static/assets/docs/articles/spambox.png)
 
 If a user has **NOT opted-in** to receiving these notifications they will land in the SPAM box. Seeing these notifications will bring users the opportunity to decide if these notifications are meaningful for them, and from here opt-in to the channel to start receiving notifications
 
@@ -81,7 +81,7 @@ Push also supports notifications via browser extensions. The Chrome browser exte
 
 Now you can receive notifications via extension also.
 
-![Push Browser Extension](../../../static/img/assets/browser-extension.png)
+![Push Browser Extension](../../../static/assets/docs/articles/browser-extension.png)
 
 ### Useful Links
 

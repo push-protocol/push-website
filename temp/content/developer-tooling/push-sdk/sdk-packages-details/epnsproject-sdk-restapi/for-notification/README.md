@@ -2,7 +2,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
 # For Notification
 
-![Notification Call](../../../../../../static/img/assets/pushnotifsend%20(1).png)
+![Notification Call](../../../../../../static/assets/docs/articles/pushnotifsend%20(1).png)
 
 This section of SDK contains all things required for you to start implementing notifications on your dApp or your wallet.
 

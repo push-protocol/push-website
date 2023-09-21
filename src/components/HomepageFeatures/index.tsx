@@ -3,8 +3,8 @@ import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import GLOBALS, { device } from '@site/src/config/globals';
-import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg";
-import headerRipple from "@site/static/img/ripple.png";
+import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
+import headerRipple from "@site/static/assets/docs/ripple.png";
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
@@ -75,7 +75,7 @@ type DevGuideItems = {
 const DevGuide: DevGuideItems[] = [
   {
     title: 'Notifications',
-    Svg: require('@site/static/img/notification.svg').default,
+    Svg: require('@site/static/assets/docs/notification.svg').default,
     link: 'https://docs.push.org/developers/concepts/web3-notifications',
     description: (
       <>
@@ -86,7 +86,7 @@ const DevGuide: DevGuideItems[] = [
   },
   {
     title: 'Push Chat',
-    Svg: require('@site/static/img/message.svg').default,
+    Svg: require('@site/static/assets/docs/message.svg').default,
     link: './dev/chat',
     description: (
       <>
@@ -104,7 +104,7 @@ const aliceMessagesBob = await userAlice.chat.send(
   },
   {
     title: 'Push Spaces',
-    Svg: require('@site/static/img/spaces.svg').default,
+    Svg: require('@site/static/assets/docs/spaces.svg').default,
     link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
 
     description: (
@@ -115,7 +115,7 @@ const aliceMessagesBob = await userAlice.chat.send(
   },
   {
     title: 'Push Video Calls',
-    Svg: require('@site/static/img/video.svg').default,
+    Svg: require('@site/static/assets/docs/video.svg').default,
     link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
 
     description: (
@@ -126,7 +126,7 @@ const aliceMessagesBob = await userAlice.chat.send(
   },
   {
     title: 'Examples',
-    Svg: require('@site/static/img/star.svg').default,
+    Svg: require('@site/static/assets/docs/star.svg').default,
     link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
     description: (
       <>
@@ -136,7 +136,7 @@ const aliceMessagesBob = await userAlice.chat.send(
   },
   {
     title: 'Showrunners',
-    Svg: require('@site/static/img/receive-notifs.svg').default,
+    Svg: require('@site/static/assets/docs/receive-notifs.svg').default,
     link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
     description: (
       <>
@@ -157,38 +157,38 @@ type SdkListItems = {
 const SdkList: SdkListItems[] = [
   {
     title: 'SDK Starter Kit',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk',
   },
   {
     title: 'REST API',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-restapi',
   },
   {
     title: 'React Native',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-reactnative',
   },
   {
     title: 'Socket',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
   },
   {
     title: 'UIWeb',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiweb',
   },
   {
     title: 'UI Embed',
-    Svg: require('@site/static/img/arrowupright.svg').default,
-    PinkSvg: require('@site/static/img/ArrowUpRight-pink.svg').default,
+    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
+    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiembed',
   }
 ]

@@ -176,7 +176,7 @@ After the wallet connect happens in your application, trigger the below code sni
 
 The UI should look somewhat like this screenshot below 👇
 
-![Here, if the user is connected to their wallet and clicks on the bell icon, they will see the next screen](../../../../../static/img/assets/frontend-sdk-1.png)
+![Here, if the user is connected to their wallet and clicks on the bell icon, they will see the next screen](../../../../../static/assets/docs/articles/frontend-sdk-1.png)
 
-![The Sidebar shows the Push notifications with a header which is a clickable link to the Push dApp.](../../../../../static/img/assets/frontend-sdk-2.png)
+![The Sidebar shows the Push notifications with a header which is a clickable link to the Push dApp.](../../../../../static/assets/docs/articles/frontend-sdk-2.png)
 

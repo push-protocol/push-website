@@ -26,14 +26,14 @@ Head to [the Push prod dapp](http://app.push.org/) or the [staging dapp](https:/
 
 Connect your [Metamask Wallet](https://metamask.io/) or any other supported wallet!&#x20;
 
-![Connect Wallet](../../../../static/img/assets/connect-wallet.png)
+![Connect Wallet](../../../../static/assets/docs/articles/connect-wallet.png)
 <!-- ![Push dApp](<../../.gitbook/assets/Screenshot 2022-06-30 at 5.12.24 PM.png>) -->
 
 ### Step 3️⃣ - **Developer** > **Create Channel**
 
 Once Connected, go to the **Developer** > **Create Channel**
 
-![Create Channel](../../../../static/img/assets/create-channel.png)
+![Create Channel](../../../../static/assets/docs/articles/create-channel.png)
 <!-- <figure><img src="../../.gitbook/assets/Screenshot 2022-09-05 at 12.27.22 AM.png" alt=""><figcaption><p>Create Channel Page</p></figcaption></figure> -->
 
 :::caution
@@ -53,7 +53,7 @@ Faucets giving you trouble? Head to our :point\_right: Push [Discord Channel](ht
 
 ### in Step 4️⃣ - Understand and fill details (Especially Channel Alias)
 
-![Filling Channel Details](../../../../static/img/assets/channel-alias-immutable.png)
+![Filling Channel Details](../../../../static/assets/docs/articles/channel-alias-immutable.png)
 
 #### What is Channel Alias Address?
 
@@ -78,13 +78,13 @@ You will need to do two transactions (and optionally the third one if you are cr
 1. **Approval of PUSH tokens** -> This transaction ensures that your wallet address has successfully approved the EPNSCore contract to use 50 PUSH tokens on your behalf.
 2. **Channel Creation on EPNSCore ->** Once approved, the 2nd transaction calls the channel creation function on EPNSCore smart contract to create the channel.
 
-![Confirm Transaction](../../../../static/img/assets/confirm-transaction.png)
+![Confirm Transaction](../../../../static/assets/docs/articles/confirm-transaction.png)
 
 ### **Step** 6️⃣ - Verify Channel on another Blockchain
 
 If you have created a multichain channel then you need to switch to that blockchain network and do another tx that verifies your channel on that network.
 
-![Verify Channel](../../../../static/img/assets/verify-channel.png)
+![Verify Channel](../../../../static/assets/docs/articles/verify-channel.png)
 
 :::tip
 Congratulations 🎉 Your channel should now be successfully created. YES, it's this much easy..!
@@ -92,7 +92,7 @@ Congratulations 🎉 Your channel should now be successfully created. YES, it's 
 
 ## Know your Channel
 
-![Know the Channel](../../../../static/img/assets/know-your-channel.png)
+![Know the Channel](../../../../static/assets/docs/articles/know-your-channel.png)
 
 After successful channel creation, the EPNS dApp will start showing the Channel's Profile Page. There are a few details about this page listed below for your reference;
 

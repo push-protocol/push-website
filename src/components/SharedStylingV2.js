@@ -197,7 +197,7 @@ export const Image1V2 = styled.img`
 export const SpanV2 = styled.span`
   flex: ${(props) => props.flex || 'initial'};
   align-self: ${(props) => props.alignSelf || 'auto'};
-  color: ${(props) => props.color || 'initial'};
+  color: ${(props) => props.color || 'inherit'};
   background: ${(props) => props.background || 'transparent'};
   font-weight: ${(props) => props.fontWeight || 400};
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.DESKTOP};
@@ -312,7 +312,7 @@ export const Atag = styled.a`
   justify-content: ${(props) => props.justifyContent || 'center'};
   font-weight: ${(props) => props.fontWeight || 500};
   font-size: ${(props) => props.fontSize || 'inherit'};
-  color: ${(props) => props.color || '#fff'};
+  color: ${(props) => props.color || '#fff'} !important;
   background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
   margin: ${(props) => props.margin || '0'};
   padding: ${(props) => props.padding || '14px 32px'};
@@ -343,6 +343,7 @@ export const Atag = styled.a`
     right: 0;
     top: 0;
     z-index: -1;
+    border-radius: inherit;
   }
 
   &:after {
@@ -355,6 +356,7 @@ export const Atag = styled.a`
     right: 0;
     top: 0;
     z-index: -1;
+    border-radius: inherit;
   }
 
   &:hover:before {
