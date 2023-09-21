@@ -89,6 +89,6 @@ Will only work if .env also has SHOWRUNNERS\_ENV=prod
 </TabItem>
 </Tabs>
 
-![Showrunners](../../../static/img/assets/show-runners-1.png)
+![Showrunners](../../../static/assets/docs/articles/show-runners-1.png)
 
 Congrats, your channel is setup and good to go. Let's look at what components of your channel folders enable what functionality next!

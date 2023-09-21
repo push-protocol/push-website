@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Push Documentation Hub",
   tagline: "One place to learn about everything Push Protocol.",
-  favicon: "img/favicon.ico",
+  favicon: "/assets/docs/favicon.ico",
 
   // Set the production url of your site here
   url: "https://push.org/",
@@ -99,7 +99,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/social-card.jpg",
+      image: "/assets/docs/social-card.jpg",
       themeconfig: {
         sidebarCollapsible: false,
       },
@@ -108,8 +108,8 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "img/PushLogoTextDark.svg",
-          srcDark: "img/PushLogoTextWhite.svg",
+          src: "/assets/docs/PushLogoTextDark.svg",
+          srcDark: "/assets/docs/PushLogoTextWhite.svg",
         },
         items: [
           {

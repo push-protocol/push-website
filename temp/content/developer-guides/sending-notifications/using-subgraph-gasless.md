@@ -35,7 +35,7 @@ Push protocol has developed an in-house `Helper Function` specifically for The G
 
 Push Nodes can, later on, fetch the notifications defined on a Subgraph and push them accordingly to Subscribers of the Channel.
 
-![Flow diagram of how notifications are sent](../../../static/img/assets/graph_diagram.png)
+![Flow diagram of how notifications are sent](../../../static/assets/docs/articles/graph_diagram.png)
 
 ## Push X Graph Integration through an Example
 
@@ -281,10 +281,10 @@ Poll Interval (in seconds) defines the time period at which Push Nodes shall pin
 
 <div>
 
-![Add SubGraph Details](../../../static/img/assets/subgraph1.png)
+![Add SubGraph Details](../../../static/assets/docs/articles/subgraph1.png)
 
  
-![Add Subgraph details page in Developers section on the Push DApp](../../../static/img/assets/subgraph2.png)
+![Add Subgraph details page in Developers section on the Push DApp](../../../static/assets/docs/articles/subgraph2.png)
 
 </div>
 

@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../../css/custom.css"
 import { A, Span } from "@site/src/utils/SharedStyling";
+import React, { useEffect, useRef, useState } from "react";
 import styled from 'styled-components';
+import "../../css/custom.css";
 
 const AMod = styled(A)`
   color: #575D73;
@@ -19,8 +19,8 @@ type FaqItems = {
 const Faq: FaqItems[] = [
     {
         title: 'What is Push?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                 Push is the world’s first blockchain-agnostic decentralised communication protocol for Web3. It is an open network for validating and indexing all sorts of communication (notifications, chats, etc) that can then be integrated by any crypto frontend (dApps, wallets, etc).
@@ -30,8 +30,8 @@ const Faq: FaqItems[] = [
     },
     {
         title: 'How do I contact customer support?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                  Push is the world’s first blockchain-agnostic decentralised communication protocol for Web3. It is an open network for validating and indexing all sorts of communication (notifications, chats, etc) that can then be integrated by any crypto frontend (dApps, wallets, etc).
@@ -40,8 +40,8 @@ const Faq: FaqItems[] = [
     },
     {
         title: 'What is Push trying to solve?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                 Push is building the communication layer for Web3, using which any dApp, smart contracts or backend can send any real time communications (such as notifications, chats, video and more) that are tied directly to a user's wallet address (aka web3 usernames).
@@ -53,8 +53,8 @@ const Faq: FaqItems[] = [
     },
     {
         title: 'How can I use Push as an end-user?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                    Connect to the <AMod href="https://app.push.org/#/channels" target={"_blank"}>Push dApp</AMod> & opt-in to channels to get notifications for protocols that are relevant to you. Channels are protocols that activate themselves on Push protocol to send notification.
@@ -67,8 +67,8 @@ const Faq: FaqItems[] = [
     },
     {
         title: 'What are the web3 communication products launched by Push?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                 Push is a communication platform that helps businesses send and receive notifications. Push is a communication platform that helps businesses send and receive notifications.
@@ -77,8 +77,8 @@ const Faq: FaqItems[] = [
     },
     {
         title: 'Do I have to pay to send notifications?',
-        Svg: require('@site/static/img/addicon.svg').default,
-        OpenSvg: require('@site/static/img/minusicon.svg').default,
+        Svg: require('@site/static/assets/docs/addicon.svg').default,
+        OpenSvg: require('@site/static/assets/docs/minusicon.svg').default,
         description: (
             <>
                 No, Push doesn’t take any fees for you to send notification. Although, there is a nominal charge of 50 PUSH required during Channel creation, which is put in place to prevent spamming.

@@ -1,21 +1,21 @@
 import React from 'react';
 import "../../css/custom.css";
-// import Cube from "@site/static/img/footer-cube.svg"
-// import ArrowUp from "@site/static/img/ArrowUpRight-pink.svg"
+// import Cube from "@site/static/assets/docs/footer-cube.svg"
+// import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg"
 // import Link from '@docusaurus/Link';
-// import CubePlay from "@site/static/img/cube-footer-icon.svg"
-// import BellIcon from "@site/static/img/Push-Logo-Standard-White.svg";
+// import CubePlay from "@site/static/assets/docs/cube-footer-icon.svg"
+// import BellIcon from "@site/static/assets/docs/Push-Logo-Standard-White.svg";
 import { device } from '@site/src/config/globals';
-import PushLogoTextWhite from "@site/static/img/PushLogoTextWhite.svg";
-import AppleSVG from "@site/static/img/apple.svg";
-import DiscordSVG from "@site/static/img/discord.svg";
-import FooterFollowusFigure from "@site/static/img/footerfollowus.svg";
-import FooterJoinusFigure from "@site/static/img/footerjoinus.svg";
-import GithubSVG from "@site/static/img/github.svg";
-import Notification from "@site/static/img/notification-icon-push.svg";
-import Playstore from "@site/static/img/playstore.svg";
-import TelegramSVG from "@site/static/img/telegram.svg";
-import TwitterSVG from "@site/static/img/twitter.svg";
+import PushLogoTextWhite from "@site/static/assets/docs/PushLogoTextWhite.svg";
+import AppleSVG from "@site/static/assets/docs/apple.svg";
+import DiscordSVG from "@site/static/assets/docs/discord.svg";
+import FooterFollowusFigure from "@site/static/assets/docs/footerfollowus.svg";
+import FooterJoinusFigure from "@site/static/assets/docs/footerjoinus.svg";
+import GithubSVG from "@site/static/assets/docs/github.svg";
+import Notification from "@site/static/assets/docs/notification-icon-push.svg";
+import Playstore from "@site/static/assets/docs/playstore.svg";
+import TelegramSVG from "@site/static/assets/docs/telegram.svg";
+import TwitterSVG from "@site/static/assets/docs/twitter.svg";
 import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Anchor, BodyContent, Content, H2, ItemH, ItemV, LinkTo, Section, Span } from '../../utils/SharedStyling';
