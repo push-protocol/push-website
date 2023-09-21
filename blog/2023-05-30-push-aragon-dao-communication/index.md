@@ -7,7 +7,7 @@ tags: [ Web3, Partnerships, Pushprotocol, Blockchain Development, Aragon]
 
 ---
 
-![Push-Aragon](./Push-Aragon.gif)
+![Push-Aragon](./cover-image.gif)
 
 We are thrilled to announce that Aragon, the premier DAO creation and management platform, is joining forces with Push to provide users with enhanced functionalities and seamless communication🎉
 

@@ -6,7 +6,7 @@ tags: [ Pushprotocol, Web3, DAO]
 
 ---
 
-![Progressive DEcentralization](./progressice-decentralization.webp)
+![Progressive DEcentralization](./cover-image.webp)
 
 Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 

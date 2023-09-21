@@ -6,7 +6,7 @@ tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Develo
 
 ---
 
-![May Recap](./may.webp)
+![May Recap](./cover-image.webp)
 
 Welcome to another exciting month at Push!
 
@@ -41,7 +41,7 @@ May was ablaze with thrilling partnerships and collaborations. Here’s a glimps
 - We are thrilled to announce our partnership with [Alchemy](https://twitter.com/pushprotocol/status/1661046782422560771?s=20), unlocking a treasure trove of resources for building the next-gen web3 dApps.
 - Push Chat has now gone live on [Soclly Mainnet](https://twitter.com/pushprotocol/status/1661069485594345472?s=20), empowering users to connect and engage with ease.
 
-![Ecosystem](./may-ecosystem.webp)
+![Ecosystem](./image-1.webp)
 <center>Push Protocol Ecosystem as of May</center>
 
 ## In The Media

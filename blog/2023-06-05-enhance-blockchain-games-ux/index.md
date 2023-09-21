@@ -6,7 +6,7 @@ tags: [ Web3, Blockchain Technology, Blockchain Development, Web3 Game]
 
 ---
 
-![Docusaurus Image](./game.webp)
+![Docusaurus Image](./cover-image.webp)
 
 Blockchain gaming has emerged as a rapidly growing niche within the gaming industry, driven by the unique benefits it offers players, including true ownership of in-game assets, interoperability between games, and provable scarcity of digital items. Despite these advantages, the sector faces challenges in scalability and user interaction. Push Protocol, a real-time communication solution with low latency and scalability, offers a promising solution to these issues.
 
@@ -70,7 +70,7 @@ Push Protocol is a cutting-edge communication protocol designed to facilitate re
 
 <br/><br/><b>Enhancing security and trust in gaming ecosystems:</b> Leveraging blockchain technology, Push Protocol bolsters security and trust within in-game economies by providing a transparent, decentralized, and tamper-proof communication infrastructure. This fosters a fair gaming environment, where players can confidently engage in transactions, assured of the legitimacy and value of their digital assets.<br/><br/>
 
-![PlayerToPlayer](./player-to-player.webp)
+![PlayerToPlayer](./image-1.webp)
 <center>Visual representation of player-to-player channels.</center><br/>
 
 ## Example: A Blockchain Game Leveraging Push Protocol for Player-Driven Improvement
@@ -86,7 +86,7 @@ In this game, players can:
 3. Collaborate on strategies, in-game tactics, and best practices with other players in real-time, fostering a strong sense of community.
 4. Receive timely updates on game development progress, directly from the developers, fostering transparency and trust.
 
-![Governance](./player2.webp)
+![Governance](./image-2.webp)
 <center>Visual representation of decentralized governance.</center><br/>
 
 By leveraging Push Protocol, a potential game like the one mentioned here, can create a more dynamic, engaging, and player-centric gaming experience where players have a genuine say in the evolution of the game they love.

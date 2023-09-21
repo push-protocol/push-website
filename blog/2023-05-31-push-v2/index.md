@@ -6,7 +6,7 @@ tags: [ Pushprotocol, Liquidity Pool, Blockchain Technology, Blockchain Developm
 
 ---
 
-![PushV2](./pushv2.webp)
+![PushV2](./cover-image.webp)
 
 Push Protocol is thrilled to announce the successful completion of the security audit conducted by Chainsafe for our smart contracts version 2. This milestone signifies a significant step forward in ensuring the robustness and reliability of our platform.
 
