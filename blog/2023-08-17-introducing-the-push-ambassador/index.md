@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.png)
 
+<!--truncate-->
+
 <SubHeader>
 We’re looking for new ambassadors in India to join us!
 </SubHeader>

@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <SubHeader>
     Push Spaces is decentralized, incentivized, community-based streaming for the future of online communication.
 </SubHeader>

@@ -10,6 +10,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <SubHeader>
     Bringing conventional web2 interaction channels to web3.
 </SubHeader>

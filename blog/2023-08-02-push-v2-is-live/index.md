@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.gif)
 
+<!--truncate-->
+
 <SubHeader>
     We’re thrilled to announce the launch of Push V2!🎉
 </SubHeader>

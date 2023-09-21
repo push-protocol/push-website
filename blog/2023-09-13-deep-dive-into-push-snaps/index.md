@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <SubHeader>All the technical specifications and getting started tips you need.</SubHeader>
 
 As we outlined in our [announcement article](https://push-protocol.medium.com/bringing-push-to-metamask-snaps-fc780fec004b) — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet. With the Push Snap installed, you can now seamlessly receive notifications powered by [Push Protocol](https://push.org/) directly into your wallet, ensuring you never miss out on important updates from the channels you subscribe to.

@@ -8,6 +8,8 @@ tags: [Pushprotocol, Newsletter, Web3, Blockchain Technology]
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month.
 
 ## Development⚒️

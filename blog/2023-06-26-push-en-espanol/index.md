@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología.
 
 Estos últimos años, Latinoamérica ha demostrado ser una de las regiones con mayor adopción crypto. No es coincidencia que el año pasado hayamos tenido el evento más importante de Ethereum, Devcon VI, en Colombia y que la mirada de los proyectos y protocolos extranjeros hayan desarrollado un foco especial en el talento de la región.

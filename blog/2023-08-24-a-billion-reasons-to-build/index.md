@@ -10,6 +10,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.png)
 
+<!--truncate-->
+
 <SubHeader>
     $55,000+ prize pool for solving some of Web3’s hardest coding problems.
 </SubHeader>

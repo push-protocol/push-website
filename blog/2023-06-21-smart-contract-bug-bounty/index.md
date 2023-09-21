@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <Subheader>
     Push Smart Contract v2 Bug Bounty Program
 </Subheader>

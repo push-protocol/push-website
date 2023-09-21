@@ -8,6 +8,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <SubHeader>
   Web3 Notifications directly in your MetaMask wallet.
 </SubHeader>

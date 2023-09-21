@@ -8,6 +8,8 @@ tags: [Pushprotocol, Frensofpush]
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 Introducing this week’s ‘Frens of Push’: [QuickSwap](https://quickswap.exchange/), the next-gen layer-2 DEX and AMM on Polygon🎉
 
 QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book.

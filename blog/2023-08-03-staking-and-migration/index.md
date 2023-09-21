@@ -11,6 +11,8 @@ tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 We recently released an [article](https://push-protocol.medium.com/new-push-yield-farming-rewards-full-details-4a9ff473226d) extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…
 
 1. <b>UNI-V2 LP Token Staking</b>: Similar to v1 incentive program, this procedure allows users to stake their UNI-V2 LP tokens in our staking contract and earn $PUSH tokens as a reward.

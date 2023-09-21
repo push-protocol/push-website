@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 When it comes to project growth, seeking external assistance is crucial. In the web3 landscape, grants have emerged as a valuable form of funding, but navigating the intricacies of grant applications can be challenging.
 
 Fortunately, we’ve gathered expert insights from “The Art of Successful Grant Proposals” Twitter space from Push Protocol in which Azeem Khan, Carlos Melgar and Ben West shared these insights and offered valuable tips to enhance your grant proposal game and increase your chances of securing funding for your project.

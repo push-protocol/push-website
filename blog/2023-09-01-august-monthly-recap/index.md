@@ -8,6 +8,8 @@ tags: [Pushprotocol, Newsletter ,Web3, Blockchain Technologies]
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 Step into the newest chapter of our Push journey!
 
 August brought a wave of excitement and progress, full of achievements we can’t wait to share with you. Get ready to dive into the world of Push as we unwrap the highlights from this last month.

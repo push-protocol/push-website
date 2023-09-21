@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 Within web3, decentralized systems reign supreme and the concept of modularity is a key component of innovation. The essence of modularity lies in its ability to intricately craft decentralized applications (dApps) with a sophisticated and intellectually elevated approach.
 
 In this blog post, we embark on an exploration of modularity in web3, unearthing its profound implications and far-reaching influence. By effectively separating the communication and execution layers, modularity empowers developers to construct dApps that boast adaptability, scalability, and interconnectivity.

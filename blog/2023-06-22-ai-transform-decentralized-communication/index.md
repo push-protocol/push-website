@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 As the world of web3 continues to evolve, Push Protocol is playing a critical role in revolutionizing decentralized communication. Our web3-native chat and video chat capabilities, agnostic to any platform, have opened the door to seamless communication in the decentralized world. But what happens when we combine the power of Push Protocol with Artificial Intelligence (AI)?
 
 In this blog post, we will explore the limitless possibilities that arise when Push Protocol converges with AI. Whether you’re a user or developer, get ready to unlock a new realm of possibilities in decentralized communication.

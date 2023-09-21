@@ -10,6 +10,7 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
 
 In today’s fast-paced business environment, accessing and analyzing data in real-time is critical to making informed decisions. Push Protocol is a powerful tool that can help organizations achieve this goal by providing a way to receive real-time data updates as soon as they become available.
 
