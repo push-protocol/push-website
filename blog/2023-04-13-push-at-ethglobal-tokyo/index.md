@@ -8,6 +8,7 @@ tags: [ Ethglobal, Web3, Push Notification, Hackathons]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 ## Push Protocolとは？
 

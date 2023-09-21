@@ -8,6 +8,7 @@ tags: [ Polygon Network, Web3, Partnerships, Polygon]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!
 

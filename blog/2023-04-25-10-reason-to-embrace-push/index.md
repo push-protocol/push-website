@@ -8,6 +8,7 @@ tags: [ Web3, Blockchain, Blockchain Technology]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Push Protocol is an advanced communication layer built on distributed and peer-to-peer (P2P) principles.
 

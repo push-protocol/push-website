@@ -8,6 +8,7 @@ tags: [ Frensofpush, Web3, Push Protocol, Superfluid Protocol]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
 

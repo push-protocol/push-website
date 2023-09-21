@@ -8,6 +8,7 @@ tags: [ Web3, Pushprotocol, Delivery Nodes]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 To fully grasp the concept of push notifications and messages, it is essential to first understand the role of delivery nodes in a communication protocol.
 

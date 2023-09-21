@@ -10,6 +10,7 @@ tags: [ Web3, Push Notification, Chat, Video, Social]
 import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.gif)
+<!--truncate-->
 
 <SubHeader>Push Video is live, allowing web3 users to video chat without intermediaries.</SubHeader><br/>
 
@@ -37,15 +38,15 @@ The Push Developer Video SDK is launching soon! The SDK will give app developers
 ### How to Get Started with Push Video?
 Sending a video request and getting started with decentralized video chat is easy! Here’s a step by step guide.
 
-<b>Step 1:</b> Head to [app.push.org](https://app.push.org/) and connect your MetaMask (or your preferred wallet).<br/>
+<b>Step 1:</b> Head to <a href="https://app.push.org/">app.push.org</a> and connect your MetaMask (or your preferred wallet).<br/><br/>
 
-<b>Step 2:</b> Click on “Push Chat” on the left navigation bar. Search for the recipient you want to video call with their wallet address or their ENS name.*
+<b>Step 2:</b> Click on “Push Chat” on the left navigation bar. Search for the recipient you want to video call with their wallet address or their ENS name.*<br/><br/>
 
 ![Push Video 2](./image-2.png)
 
 ![Push Video 3](./image-3.png)
 
-<b>Step 3:</b> Start a video call using the camera/video icon on the right side of the screen.
+<b>Step 3:</b> Start a video call using the camera/video icon on the right side of the screen.<br/><br/>
 
 ![Push Video 4](./image-4.png)
 

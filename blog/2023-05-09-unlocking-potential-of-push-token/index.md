@@ -7,7 +7,8 @@ tags: [ Web3, Cryptocurrency, Tokenomics, Blockchain Technology]
 
 ---
 
-![Cover Image](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Token economics (or tokenomics) are a critical component of any blockchain or cryptocurrency project. It dictates how incentives are created, distributed, and managed within the network. Push Protocol is a decentralized communication layer for Web3 that uses a native token, $PUSH, to incentivize its network participants.
 

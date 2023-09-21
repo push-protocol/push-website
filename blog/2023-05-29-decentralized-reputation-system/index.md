@@ -7,7 +7,8 @@ tags: [ Devtools, Reputation System, Web3,  Blockchain Development, Blockchain T
 
 ---
 
-![Reputation System](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 <b>TL;DR:</b> This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging.
 

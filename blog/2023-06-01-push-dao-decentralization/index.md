@@ -6,7 +6,8 @@ tags: [ Pushprotocol, Web3, DAO]
 
 ---
 
-![Progressive DEcentralization](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 

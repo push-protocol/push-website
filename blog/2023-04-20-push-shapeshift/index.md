@@ -8,6 +8,7 @@ tags: [ Frensofpush, Web3, Partnerships, Shapeshift]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 This week, we’re thrilled to spotlight our latest fren [ShapeShift](https://shapeshift.com/) revolutionizing the way you trade, track, buy, and earn cryptocurrency.
 

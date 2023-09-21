@@ -8,6 +8,7 @@ tags: [ Web3, NewsLetter, Blockchain Development, Blockchain Technology]
 ---
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Welcome to another exciting month at Push Protocol!
 

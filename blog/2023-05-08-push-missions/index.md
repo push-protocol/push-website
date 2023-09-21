@@ -10,6 +10,7 @@ tags: [ Ethereum, Push Notification, Rewards, Community]
 import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 <SubHeader>Web3, we are ready for lift-off! Today, we are launching a new Program for our community to get more involved with Push Protocol.</SubHeader><br/>
 

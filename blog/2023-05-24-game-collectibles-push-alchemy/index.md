@@ -7,7 +7,8 @@ tags: [ Web3, Development, Gaming,  Blockchain Development, Blockchain Technolog
 
 ---
 
-[Cover Image](./cover-image.webp)
+[Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 <b>TL;DR:</b> This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem.
 

@@ -7,7 +7,8 @@ tags: [ Analytics Engineering, Web3, Web3 Development,  Blockchain Development, 
 
 ---
 
-![Cover Image](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 <b>TL;DR:</b> This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network.
 

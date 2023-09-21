@@ -7,7 +7,8 @@ tags: [ Frensofpush, Partnerships, Web3, Blockchain Technology]
 
 ---
 
-![Cover Image](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 This week we’re extremely excited to announce our latest Frens of Push, [Graviton](https://graviton.xyz/about)🧲🎉
 

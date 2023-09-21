@@ -6,7 +6,8 @@ tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Develo
 
 ---
 
-![May Recap](./cover-image.webp)
+![Docusaurus Image](./cover-image.webp)
+<!--truncate-->
 
 Welcome to another exciting month at Push!
 
