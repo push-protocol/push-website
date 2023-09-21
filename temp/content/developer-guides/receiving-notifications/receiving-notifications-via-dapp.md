@@ -17,7 +17,7 @@ Opting-In means subscribing to a channel to receive notifications on dApp. For O
 
 Once you are there, head over to [Channels](https://app.push.org/#/channels) section. In this section, you can see all the channels that are created on our dApp.
 
-![Opt-in for Channel](../../../static//img/assets/opt-in-channel.png)
+![Opt-in for Channel](../../../static///assets/assets/opt-in-channel.png)
 
 On the right-hand side of every channel, you can see an _**Opt-In**_ button.&#x20;
 

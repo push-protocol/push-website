@@ -6,7 +6,7 @@ Notifications follow composable blocks that helps achieve modular structure and 
 
 These notifications are tied to wallet address of the user and are indexed by push nodes allowing any crypto frontend such as wallet, dapp or mobile app to query and display these notifications for the wallet users along with sending them out as push notifications.
 
-![Notification Structure](../../../../../static//img/assets/notification.png)
+![Notification Structure](../../../../../static///assets/assets/notification.png)
 
 ### Specifications
 
