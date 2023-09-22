@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import GLOBALS, { device } from '@site/src/config/globals';
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
-import headerRipple from "@site/static/assets/docs/ripple.png";
+import HeaderRipple from "@site/static/assets/docs/ripple.svg";
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
@@ -352,7 +352,15 @@ export default function HomepageFeatures(): JSX.Element {
           
         </div>
       </div>
-      <Ripple src={headerRipple}/>
+      <ItemVV2
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        height="50%"
+      >
+        <HeaderRipple/>
+      </ItemVV2>
     </HeroHeader>
       <section className='main-section'>
           <HomepageSection alignItems="flex-start">

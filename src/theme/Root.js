@@ -11,14 +11,21 @@ import Header from '@site/src/segments/Header';
 // Initialize Internalization
 i18nInitialize();
 
+function customHeaderAt(pathname) {
+  pathname = pathname.toUpperCase();
+  const str = location.pathname.toUpperCase();
+  const modstr = (str != null && str.length >= pathname.length) ? str.substring(0, pathname.length) : null;
+  console.log(modstr + "|" + pathname);
+
+  return modstr === pathname ? false : true;
+}
+
 function Root({ children }) {  
   
   return (
     <>
       {
-        location.pathname.toUpperCase() !== '/BRB' &&
-        location.pathname.toUpperCase() !== '/BLOG' && 
-        location.pathname.toUpperCase() !== '/DOCS' && 
+        customHeaderAt('/BRB') && customHeaderAt('/DOCS') && customHeaderAt('/BLOG') &&
           
         <Header />
       }

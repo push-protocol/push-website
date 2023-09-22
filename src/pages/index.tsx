@@ -267,34 +267,28 @@ export default function Home(): JSX.Element {
                 </SpanV2>
               </ItemVV2>
 
-              <ItemHV2 maxWidth="550px">
-                <LiveNetworks>
-                  <ItemVV2 className="network">
-                    <EthLogoTextSVG
-                      alt="Logo for Ethereum"
-                      title="Ethereum Logo"
-                    />
-                  </ItemVV2>
+              <LiveNetworks>
+                <LiveNetworkCard className="network">
+                  <EthLogoTextSVG
+                    alt="Logo for Ethereum"
+                    title="Ethereum Logo"
+                  />
+                </LiveNetworkCard>
 
-                  <ItemHV2 className="divider" />
+                <LiveNetworkCard className="network">
+                  <PolygonLogoTextSVG
+                    alt="Logo for Polygon"
+                    title="Polygon Logo"
+                  />
+                </LiveNetworkCard>
 
-                  <ItemVV2 className="network">
-                    <PolygonLogoTextSVG
-                      alt="Logo for Polygon"
-                      title="Polygon Logo"
-                    />
-                  </ItemVV2>
-
-                  <ItemHV2 className="divider" />
-
-                  <ItemVV2 className="network">
-                    <BNBChainSVG
-                      alt="Logo for BNB Chain"
-                      title="BNB Chain Logo"
-                    />
-                  </ItemVV2>
-                </LiveNetworks>
-              </ItemHV2>
+                <LiveNetworkCard className="network">
+                  <BNBChainSVG
+                    alt="Logo for BNB Chain"
+                    title="BNB Chain Logo"
+                  />
+                </LiveNetworkCard>
+              </LiveNetworks>
             </Partners>
 
             <PushWorksRow>
@@ -1086,7 +1080,7 @@ const PoweringCommunicationRow = styled(ItemHV2)`
   }
 `;
 
-const LiveNetworks = styled(ItemHV2)`
+const LiveNetworks = styled(ItemHV2)` 
   background: #ffffff;
   border: 1px solid #bac4d6;
   border-radius: 28px;
@@ -1095,11 +1089,7 @@ const LiveNetworks = styled(ItemHV2)`
   align-self: flex-start;
   justify-content: space-between;
   box-sizing: border-box;
-
-  & .divider {
-    background: #bac4d6;
-    flex: 0 0 1px;
-  }
+  max-width: 550px;
 
   & .network {
     padding: 26px 16px;
@@ -1109,7 +1099,6 @@ const LiveNetworks = styled(ItemHV2)`
       height: 26px;
     }
   }
-}
 
   @media ${device.laptopL} {
     flex-direction: row;
@@ -1126,10 +1115,12 @@ const LiveNetworks = styled(ItemHV2)`
     }
   }
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 18px;
+    max-width: initial;
+    align-self: stretch;
 
     & .network {
       padding: 15px 10px;
@@ -1138,6 +1129,23 @@ const LiveNetworks = styled(ItemHV2)`
         width: 79.5px;
         height: 19.5px;
       }
+    }
+  }
+`;
+
+const LiveNetworkCard = styled(ItemVV2)`
+  flex: 1;
+  border-right: 1px solid #bac4d6;
+  
+  &:last-child {
+    border-right: 0px;
+  }
+
+  @media ${device.tablet} {
+    border-right: 1px solid #bac4d6;
+  
+    &:last-child {
+      border-right: 0px;
     }
   }
 `;

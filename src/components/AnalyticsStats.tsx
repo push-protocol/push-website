@@ -215,7 +215,7 @@ const KPIFigure = styled(SpanV2)`
 `;
 
 const KPIMetric = styled(SpanV2)`
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 121%;
   letter-spacing: -0.03em;
