@@ -11,7 +11,7 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight, BsFileX } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
@@ -821,25 +821,17 @@ export default function Home(): JSX.Element {
             </ItemHV2>
           </ContentV2>
 
-          <FeaturedC
+          <FeaturedCardList
             className="featuredInMarquee"
-            margin="0 0 270px 0"
-            border="1px solid #fff"
             id="newone"
           >
-            {/* <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}> */}
+            <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
               {MediaList.map((item) => {
                 return (
-                  <ItemVV2 key={item.srcref}>
-                    <SpanV2
-                      color="#FFFFFF"
-                      fontSize="22px"
-                      fontWeight="400"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                    >
+                  <FeaturedCard key={item.srcref}>
+                    <FeaturedCardTitle>
                       {t(item.translatedtitle)}
-                    </SpanV2>
+                    </FeaturedCardTitle>
                     <ArticleSource>
                       <ImageV2
                         width={item.title ? '64px' : 'auto'}
@@ -851,6 +843,8 @@ export default function Home(): JSX.Element {
                       <Atag
                         href={item.url}
                         title={t(item.urltranslatedtitle)}
+                        display="flex"
+                        alignItems="center"
                         target="_blank"
                         background="transparent"
                         hoverBackground="transparent"
@@ -868,11 +862,11 @@ export default function Home(): JSX.Element {
                         <BsArrowUpRight className="anchorSVGlink" />
                       </Atag>
                     </ArticleSource>
-                  </ItemVV2>
+                  </FeaturedCard>
                 );
               })}
-            {/* </MarqueeAnimation> */}
-          </ItemHV2>
+            </MarqueeAnimation>
+          </FeaturedCardList>
 
         </FeaturedInSection>
         
@@ -1405,13 +1399,6 @@ const FeaturedCell = styled.div`
   }
 `;
 
-const ArticleSource = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const BuiltByCards = styled(ItemHV2)`
   display: flex;
   flex-direction: row;
@@ -1475,3 +1462,80 @@ const InvestorSubtitle = styled(SpanV2)`
   color: #303c5e;
   text-transform: uppercase;
 `
+
+const FeaturedCardList = styled(ItemHV2)`
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin: 0 0 120px 0;
+  flex-flow: nowrap;
+`
+const FeaturedCard = styled(ItemVV2)`    
+  width: 554px;
+  padding: 48px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 30px;
+  border-right: 1px solid #fff;
+
+  & a {
+    border-radius: 0px;
+  }
+
+  &:before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: -1px;
+    left: 0px;
+    height: 8px;
+    width: 96px;
+    background: rgb(221, 68, 185);
+  }
+
+  &:hover {
+    background: linear-gradient(251.72deg, rgb(221, 68, 185) 14.29%, rgb(139, 111, 217) 86.35%);
+
+    &:before {
+      background: #fff;
+    }
+
+    & a {
+      color: #fff !important;
+      border-radius: 0px;
+    }
+  }
+`
+
+const FeaturedCardTitle = styled(SpanV2)`
+  flex: initial;
+  align-self: auto;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: inherit;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: -0.03em;
+  text-align: initial;
+  line-height: 142%;
+  position: initial;
+  inset: auto;
+  z-index: auto;
+  padding-bottom: 50px;
+`
+
+const ArticleSource = styled(ItemHV2)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex: 0;
+
+  & img {
+    height: 40px;
+  }
+`;
