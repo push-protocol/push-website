@@ -21,7 +21,6 @@ import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
-import InvestorList from "@site/src/components/InvestorList";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
 import PartnerChannels from "@site/src/components/PartnerChannels";
@@ -436,9 +435,10 @@ export default function Home(): JSX.Element {
           >
             {/* GROW WITH PUSH */}
             <IntegrateGrowWithPushRow gap="18px">
-              <MemberImage
+              <ImageV2
                 className="figureSvg"
-                src={GrowWithPushFigure}
+                src={require(`@site/static/assets/figures/growwithpush.webp`).default}
+                srcSet={`${require(`@site/static/assets/figures/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/figures/growwithpush.webp`).default} 3x`}
                 srcSet={GrowWithPushFigure}
                 alt={t("home.grow-section.image-alt")}
                 title={t("home.grow-section.image-title")}
@@ -1128,7 +1128,9 @@ const StorySection = styled(ResponsiveSection)`
 `;
 
 const BuildWithPushSection = styled(ResponsiveSection)`
+  overflow: hidden;
   padding: 0px 160px 80px 160px;
+  border-radius: 48px;
 
   @media ${device.tablet} {
     padding: 0px 0px 10px 0px;
