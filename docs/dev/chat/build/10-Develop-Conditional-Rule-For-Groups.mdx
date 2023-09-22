@@ -32,23 +32,23 @@ The **rules** object is an optional parameter that you pass in [create group API
 `rules`<br/>
 ├ `permission` - `entry` or `chat`<br/>
 &emsp;└ `conditions`<br/> 
-&emsp;&emsp;└`operator` - `any` or `all`<br/>
+&emsp;&emsp;└`decider` - `any` or `all`<br/>
 &emsp;&emsp;&emsp;└`criteria 1`<br/>
 &emsp;&emsp;&emsp;└`criteria 2`<br/>
-&emsp;&emsp;└`operator` - `any` or `all`<br/>
+&emsp;&emsp;└`decider` - `any` or `all`<br/>
 &emsp;&emsp;&emsp;└`criteria 3`<br/>
 
 _`rules`_ object is made up of individual **permissions** that define privilages of the group. 
 
 _`permission`_ object contains **conditions** that needs to be satisfied.
 
-_`conditions`_ object is an array of one or more **operator**, ALL of which needs to be fulfilled for permission to be granted.
+_`conditions`_ object is an array of one or more **decider**, ALL of which needs to be fulfilled for permission to be granted.
 
-_`operator`_ contains array of **criteria**, the namespace of operator (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
+_`decider`_ contains array of **criteria**, the namespace of decider (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
 
 _`criteria`_ is the atomic condition that has **type**, **category**, **subcategory** and **data**, based on which a particular condition is deemed as completed or failed.
 
-To summarize, a list of **criteria** is created by you that is then defined inside **operator** to define their logical operation which is then passed in **conditions** of a particular **permission**. The list of individual **permission** is then attached to **rules** of the group to enable Push Chat rule engine to create dynamic communities with creative game theories.
+To summarize, a list of **criteria** is created by you that is then defined inside **decider** to define their logical operation which is then passed in **conditions** of a particular **permission**. The list of individual **permission** is then attached to **rules** of the group to enable Push Chat rule engine to create dynamic communities with creative game theories.
 
 ### Rules object Parameters
 
@@ -58,11 +58,11 @@ To summarize, a list of **criteria** is created by you that is then defined insi
 | `rules.[permission]`                                  | `object` | -                  | -       | Permissions object for specific privilege of the group. Multiple permission object can reside within `rules` object                                                                                   |
 | -                                                     | `entry`  | `object`           | -       | Permissions object for specific privilege of the group. `entry` permission conditionalizes joining a group                                                                                            |
 | -                                                     | `chat`   | `object`           | -       | Permissions object for specific privilege of the group. `chat` permission conditionalizes sending a message in that group                                                                             |
-| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `operator` objects                                                                                                                                                              |
-| `rules.[permission].conditions.[operator]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `operator` key, Valid `operator` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
-| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[operator]` array                                                                                         |
-| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[operator]` array                                                                                         |
-| `rules.[permission].conditions.[operator].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[operator]` array                                                                                                                       |
+| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `decider` objects                                                                                                                                                              |
+| `rules.[permission].conditions.[decider]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `decider` key, Valid `decider` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
+| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
+| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
+| `rules.[permission].conditions.[decider].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[decider]` array                                                                                                                       |
 
 
 ### Criteria object Parameters 
@@ -124,10 +124,10 @@ Let's break down the problem statement into individual requirements
 }
 ```
 
-- Either of criteria should be able to allow user to join the group, this means that the **operator** to use to combine these criterias would be `any`
+- Either of criteria should be able to allow user to join the group, this means that the **decider** to use to combine these criterias would be `any`
 
 ```typescript
-// Operator object - 'any' since either condition should allow access
+// decider object - 'any' since either condition should allow access
 any: [
   {
     type: "PUSH", // define type that rules engine should go for
@@ -159,7 +159,7 @@ any: [
   rules: {
     entry: { // permission object
       conditions: [ // conditions object
-        any: [ // operator object
+        any: [ // decider object
           { // criteia object
             type: "PUSH", // define type that rules engine should go for
             category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
@@ -200,7 +200,7 @@ any: [
     rules: {
       entry: { // permission object
         conditions: [ // conditions object
-          any: [ // operator object
+          any: [ // decider object
             { // criteia object
               type: "PUSH", // define type that rules engine should go for
               category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
@@ -248,7 +248,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
     rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
       entry: { // define condition for joining the group
         conditions: [ // set of all conditions that should be fulfilled to join the group
-          any: [ // set operator to 'any', if 'and' then all rules need to be fulfilled
+          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
             { // define criteria 1
               type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
               category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
@@ -274,7 +274,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
       },
       chat: {
         conditions: [ // define condition for sending message in the group
-          any: [ // set operator to 'any', if 'and' then all rules need to be fulfilled
+          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
             { // define criteria 1
               type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
               category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well

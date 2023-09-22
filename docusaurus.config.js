@@ -45,7 +45,7 @@ const config = {
         },
         docs: {
           path: "docs",
-          routeBasePath: "/docs",
+          routeBasePath: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
           sidebarCollapsed: false,
           // Please change this to your repo.
@@ -55,7 +55,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          routeBasePath: "/blog",
+          routeBasePath: "blog",
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
         },

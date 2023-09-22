@@ -19,24 +19,26 @@ import styled from "styled-components";
 import AnalyticsStats from "@site/src/components/AnalyticsStats";
 import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
-import HorizontalScroll from "@site/src/components/HorizontalScroll";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import InvestorList from "@site/src/components/InvestorList";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
 import PartnerChannels from "@site/src/components/PartnerChannels";
+import PushProductsScroll from "@site/src/components/PushProductsScroll";
 import {
   Atag,
   ContentV2,
   H1V2,
   H2V2,
+  ImageV2,
   ItemHV2,
   ItemVV2,
   SectionV2,
-  SpanV2,
+  SpanV2
 } from "@site/src/components/SharedStylingV2";
 import SignupInput from "@site/src/components/SignupInput";
+import { InvList } from "@site/src/config/HomeInvestorList";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import DiscordSVG from "@site/static/assets/discord.svg";
@@ -65,6 +67,9 @@ import GLOBALS, { device } from "../config/globals";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
+
+// Setup some constants
+const MARQUEE_ANIMATION_SPEED = 60;
 
 export default function Home(): JSX.Element {
   // Internationalization
@@ -157,12 +162,12 @@ export default function Home(): JSX.Element {
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                  <FadeInAnimation wrapperElement="div" delay={0.45}>
+                  <FadeInAnimation wrapperElement="div" delay={0.35}>
                     {t("home.hero.description")}
                   </FadeInAnimation>
                 </SpanV2>
 
-                <FadeInAnimation wrapperElement="div" delay={0.65}>
+                <FadeInAnimation wrapperElement="div" delay={0.55}>
                   <HeroCTA justifyContent="flex-start" gap="18px">
                     <Atag
                       href="https://docs.push.org/developers"
@@ -188,47 +193,43 @@ export default function Home(): JSX.Element {
                   </HeroCTA>
                 </FadeInAnimation>
 
-                <ItemHV2
-                  justifyContent="flex-start"
-                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
-                >
-                  <Atag
-                    href="https://twitter.com/pushprotocol"
-                    title="Push Protocol Twitter"
-                    target="_blank"
-                    margin="0 0 0 -10px"
-                    background="transparent"
-                    padding="10px 15px"
+                <FadeInAnimation wrapperElement="div" delay={0.65}>
+                  <ItemHV2
+                    justifyContent="flex-start"
+                    margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.25}>
+                    <Atag
+                      href="https://twitter.com/pushprotocol"
+                      title="Push Protocol Twitter"
+                      target="_blank"
+                      margin="0 0 0 -10px"
+                      background="transparent"
+                      padding="10px 15px"
+                    >
                       <TwitterSVG width={32} height={32} />
-                    </FadeInAnimation>
-                  </Atag>
+                    </Atag>
 
-                  <Atag
-                    href="https://github.com/ethereum-push-notification-service"
-                    title="Push Github"
-                    target="_blank"
-                    background="transparent"
-                    padding="10px 15px"
-                  >
-                    <FadeInAnimation wrapperElement="div" delay={0.45}>
+                    <Atag
+                      href="https://github.com/ethereum-push-notification-service"
+                      title="Push Github"
+                      target="_blank"
+                      background="transparent"
+                      padding="10px 15px"
+                    >
                       <GithubSVG width={32} height={32} />
-                    </FadeInAnimation>
-                  </Atag>
+                    </Atag>
 
-                  <Atag
-                    href="https://discord.gg/pushprotocol"
-                    title="Push Discord"
-                    target="_blank"
-                    background="transparent"
-                    padding="10px 15px"
-                  >
-                    <FadeInAnimation wrapperElement="div" delay={0.65}>
+                    <Atag
+                      href="https://discord.gg/pushprotocol"
+                      title="Push Discord"
+                      target="_blank"
+                      background="transparent"
+                      padding="10px 15px"
+                    >
                       <DiscordSVG width={32} height={32} />
-                    </FadeInAnimation>
-                  </Atag>
-                </ItemHV2>
+                    </Atag>
+                  </ItemHV2>
+                </FadeInAnimation>  
               </HeroItem>
             </HeroPrimary>
 
@@ -262,9 +263,7 @@ export default function Home(): JSX.Element {
                   lineHeight="160%"
                   letterSpacing="-0.03em"
                 >
-                  <FadeInAnimation wrapperElement="span" delay={0}>
-                    {t("home.partners-section.networks")}{" "}
-                  </FadeInAnimation>
+                  {t("home.partners-section.networks")}{" "}
                 </SpanV2>
               </ItemVV2>
 
@@ -300,18 +299,16 @@ export default function Home(): JSX.Element {
 
             <PushWorksRow>
               <ItemImage justifyContent="center">
-                <FadeInAnimation wrapperElement="div" direction="up" delay={0}>
-                  <MemberImage
-                    className="pushMissingSvg"
-                    src={PushMissingPieceFigure}
-                    srcSet={PushMissingPieceFigure}
-                    alt={t("home.partners-section.alt-missing-web3-image")}
-                    title={t("home.partners-section.title-missing-web3-image")}
-                    style={{ margin: "0 auto" }}
-                    // width="100%"
-                    // height="100%"
-                  />
-                </FadeInAnimation>
+                <MemberImage
+                  className="pushMissingSvg"
+                  src={PushMissingPieceFigure}
+                  srcSet={PushMissingPieceFigure}
+                  alt={t("home.partners-section.alt-missing-web3-image")}
+                  title={t("home.partners-section.title-missing-web3-image")}
+                  style={{ margin: "0 auto" }}
+                  // width="100%"
+                  // height="100%"
+                />
               </ItemImage>
 
               <ItemVV2
@@ -328,13 +325,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.02em"
                   lineHeight="110%"
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    direction="up"
-                    delay={0}
-                  >
-                    {t("home.partners-section.missing-web3-title")}
-                  </FadeInAnimation>
+                  {t("home.partners-section.missing-web3-title")}
                 </ResponsiveH2>
 
                 <SpanV2
@@ -345,13 +336,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    direction="up"
-                    delay={0}
-                  >
-                    {t("home.partners-section.missing-web3-text")}
-                  </FadeInAnimation>
+                  {t("home.partners-section.missing-web3-text")}
                 </SpanV2>
 
                 <SpanV2
@@ -362,40 +347,33 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   margin={isMobile && "10px 0px 0px 0px"}
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    direction="up"
-                    delay={0}
-                  >
-                    {t("home.partners-section.missing-web3-span")}
-                  </FadeInAnimation>
+                  {t("home.partners-section.missing-web3-span")}
                 </SpanV2>
 
-                <FadeInAnimation wrapperElement="div" direction="up" delay={0}>
-                  <Atag
-                    href="https://docs.push.org/developers"
-                    title={t("home.partners-section.missing-web3-alt-button")}
-                    target="_blank"
-                    background="#DD44B9"
-                    borderRadius="16px"
-                    padding="14px 32px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="26px"
-                    alignSelf="center"
-                    margin={isMobile ? "50px 0px 0px 0px" : ""}
-                  >
-                    {/* Learn about $PUSH */}
-                    {t("home.partners-section.missing-web3-button")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </FadeInAnimation>
+                <Atag
+                  href="https://docs.push.org/developers"
+                  title={t("home.partners-section.missing-web3-alt-button")}
+                  target="_blank"
+                  background="#DD44B9"
+                  borderRadius="16px"
+                  padding="14px 32px"
+                  fontSize="18px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
+                  lineHeight="26px"
+                  alignSelf="center"
+                  margin={isMobile ? "50px 0px 0px 0px" : ""}
+                >
+                  {/* Learn about $PUSH */}
+                  {t("home.partners-section.missing-web3-button")}
+                  <BsArrowUpRight className="anchorSVGlink" />
+                </Atag>
               </ItemVV2>
             </PushWorksRow>
           </ContentV2>
         </StorySection>
-
+        
+        {/* BUILD WITH PUSH */}
         <BuildWithPushSection
           curve="both"
           id="buildWithPush"
@@ -403,7 +381,6 @@ export default function Home(): JSX.Element {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-            <FadeInAnimation wrapperElement="div" delay={0.2}>
               <SignupBox margin="0 0 0px 0">
                 <ItemVV2 justifyContent="flex-start" gap="12px">
                   <ResponsiveH2
@@ -431,13 +408,12 @@ export default function Home(): JSX.Element {
                   <SignupInput />
                 </ItemVV2>
               </SignupBox>
-            </FadeInAnimation>
-
-            <HorizontalScroll />
+            <PushProductsScroll />
           </BodyContent>
         </BuildWithPushSection>
-
-        <IntergrateWithPushSection
+        
+        {/* SECTION THAT SHRINKS WHEN REACHING END */}
+        <ShrinkingSection
           curve="bottom"
           data-bkg="dark"
           className="darkBackground"
@@ -458,18 +434,17 @@ export default function Home(): JSX.Element {
             alignSelf="center"
             padding="40px 0px"
           >
+            {/* GROW WITH PUSH */}
             <IntegrateGrowWithPushRow gap="18px">
-              <FadeInAnimation wrapperElement="div" delay={0.1}>
-                <MemberImage
-                  className="figureSvg"
-                  src={GrowWithPushFigure}
-                  srcSet={GrowWithPushFigure}
-                  alt={t("home.grow-section.image-alt")}
-                  title={t("home.grow-section.image-title")}
-                  width="100%"
-                  height="100%"
-                />
-              </FadeInAnimation>
+              <MemberImage
+                className="figureSvg"
+                src={GrowWithPushFigure}
+                srcSet={GrowWithPushFigure}
+                alt={t("home.grow-section.image-alt")}
+                title={t("home.grow-section.image-title")}
+                width="100%"
+                height="100%"
+              />
 
               <ResponsiveH2
                 color="#121315"
@@ -479,9 +454,7 @@ export default function Home(): JSX.Element {
                 lineHeight="110%"
                 margin="-32px 0 0 0"
               >
-                <FadeInAnimation wrapperElement="div" delay={0.2}>
-                  {t("home.grow-section.title")}
-                </FadeInAnimation>
+                {t("home.grow-section.title")}
               </ResponsiveH2>
 
               <SpanV2
@@ -492,12 +465,11 @@ export default function Home(): JSX.Element {
                 letterSpacing="-0.03em"
                 lineHeight="160%"
               >
-                <FadeInAnimation wrapperElement="div" delay={0.3}>
-                  {t("home.grow-section.text")}
-                </FadeInAnimation>
+                {t("home.grow-section.text")}
               </SpanV2>
             </IntegrateGrowWithPushRow>
-
+            
+            {/* INTEGRATE AND EARN */}
             <ItemHV2 margin="120px 0 0 0">
               <IntegrateAndEarn>
                 <ResponsiveH2
@@ -508,10 +480,8 @@ export default function Home(): JSX.Element {
                   lineHeight="110%"
                   margin="0"
                 >
-                  <FadeInAnimation wrapperElement="div" delay={0.1}>
-                    {t("home.grow-section.wallet-text.part1")} <br></br>{" "}
-                    {t("home.grow-section.wallet-text.part2")}
-                  </FadeInAnimation>
+                  {t("home.grow-section.wallet-text.part1")} <br></br>{" "}
+                  {t("home.grow-section.wallet-text.part2")}
                 </ResponsiveH2>
 
                 <Atag
@@ -532,6 +502,7 @@ export default function Home(): JSX.Element {
               </IntegrateAndEarn>
             </ItemHV2>
 
+            {/* WHY YOU NEED PUSH PUSH */}
             <ItemHV2 margin="80px 0 0 0">
               <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
@@ -547,16 +518,15 @@ export default function Home(): JSX.Element {
               </ItemVV2>
             </ItemHV2>
 
+            {/* WHY YOU NEED PUSH PUSH */}
             <ItemHV2 padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <ChainAgnosticFigure
-                        alt="Icon showing Push is chain agnostic"
-                        title={t("home.why-push-section.chain-agnostic-text")}
-                      />
-                    </FadeInAnimation>
+                    <ChainAgnosticFigure
+                      alt="Icon showing Push is chain agnostic"
+                      title={t("home.why-push-section.chain-agnostic-text")}
+                    />
                   </div>
 
                   <SpanV2
@@ -566,22 +536,18 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.chain-agnostic-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.chain-agnostic-text")}
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <ImmediatecommunicationFigure
-                        alt="Icon showing Immediate Communication"
-                        title={t(
-                          "home.why-push-section.immediate-communication-text"
-                        )}
-                      />
-                    </FadeInAnimation>
+                    <ImmediatecommunicationFigure
+                      alt="Icon showing Immediate Communication"
+                      title={t(
+                        "home.why-push-section.immediate-communication-text"
+                      )}
+                    />
                   </div>
 
                   <SpanV2
@@ -591,22 +557,18 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.immediate-communication-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.immediate-communication-text")}
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <DecentralizedstackFigure
-                        alt="Icon showing decentralization"
-                        title={t(
-                          "home.why-push-section.decentralized-stack-text"
-                        )}
-                      />
-                    </FadeInAnimation>
+                    <DecentralizedstackFigure
+                      alt="Icon showing decentralization"
+                      title={t(
+                        "home.why-push-section.decentralized-stack-text"
+                      )}
+                    />
                   </div>
 
                   <SpanV2
@@ -616,20 +578,16 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.decentralized-stack-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.decentralized-stack-text")}
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <ImproveduxFigure
-                        alt="Icon showing User Experience"
-                        title={t("home.why-push-section.improved-ux-text")}
-                      />
-                    </FadeInAnimation>
+                    <ImproveduxFigure
+                      alt="Icon showing User Experience"
+                      title={t("home.why-push-section.improved-ux-text")}
+                    />
                   </div>
 
                   <SpanV2
@@ -639,20 +597,16 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.improved-ux-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.improved-ux-text")}
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <SecurityalertsFigure
-                        alt="Icon showing Security"
-                        title={t("home.why-push-section.security-alerts-text")}
-                      />
-                    </FadeInAnimation>
+                    <SecurityalertsFigure
+                      alt="Icon showing Security"
+                      title={t("home.why-push-section.security-alerts-text")}
+                    />
                   </div>
 
                   <SpanV2
@@ -662,22 +616,18 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.security-alerts-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.security-alerts-text")}
                   </SpanV2>
                 </MatrixCell>
 
                 <MatrixCell>
                   <div className="matrixFigure">
-                    <FadeInAnimation wrapperElement="div" delay={0.1}>
-                      <CensorshipresistantFigure
-                        alt="Icon showing Censorship Resistance"
-                        title={t(
-                          "home.why-push-section.censorship-resistant-text"
-                        )}
-                      />
-                    </FadeInAnimation>
+                    <CensorshipresistantFigure
+                      alt="Icon showing Censorship Resistance"
+                      title={t(
+                        "home.why-push-section.censorship-resistant-text"
+                      )}
+                    />
                   </div>
 
                   <SpanV2
@@ -687,14 +637,13 @@ export default function Home(): JSX.Element {
                     letterSpacing="-0.03em"
                     lineHeight="142%"
                   >
-                    <FadeInAnimation wrapperElement="div" delay={0.2}>
-                      {t("home.why-push-section.censorship-resistant-text")}
-                    </FadeInAnimation>
+                    {t("home.why-push-section.censorship-resistant-text")}
                   </SpanV2>
                 </MatrixCell>
               </Matrix>
             </ItemHV2>
 
+            {/* WHY YOU NEED PUSH PUSH */}
             <WhyPushTextBox textAlign="center" margin="80px 160px">
               <SpanV2
                 color="#303C5E"
@@ -707,6 +656,7 @@ export default function Home(): JSX.Element {
               </SpanV2>
             </WhyPushTextBox>
 
+            {/* BLOG SECTION */}
             <ItemHV2 margin="80px 0 0 0">
               <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
@@ -747,119 +697,102 @@ export default function Home(): JSX.Element {
 
             <Blogs count={4} />
 
-            {/* <BuiltByIntro flexDirection="column">
-              <ItemV justifyContent="center">
-                <ResponsiveH2
-                  color="#09090B"
-                  size="40px"
-                  weight="700"
-                  spacing="-0.02em"
-                  lineHeight="110%"
-                  margin="40px 0"
+            {/* BACKED BY SECTION */}
+            <SectionV2 flexDirection="column" margin="80px 0 80px 0">
+              <ContentV2 padding="0px">
+
+                <ItemVV2
+                  alignItems="stretch"
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    delay={0.1}
+                  <InvestorHeader
+                      color="#09090B"
+                      fontSize="40px"
+                      fontWeight="700"
+                      letterSpacing="-0.02em"
+                      lineHeight="110%"
+                      margin="0"
+                    >
+                      {t("home.investors-section.title")}
+                  </InvestorHeader>
+                </ItemVV2>
+                <ItemVV2
+                  margin="80px 0 0 0"
+                  flex="1"
+                  alignItems="stretch"
+                >
+                  <MarqueeAnimation
+                    speed={MARQUEE_ANIMATION_SPEED}
+                    gradientWidth={8}
+                    gap={18}
                   >
-                    Built By
-                  </FadeInAnimation>
-                </ResponsiveH2>
-              </ItemV>
-
-              <ItemV>
-                <Span
-                  color="#303C5E"
-                  size="19px"
-                  weight="400"
-                  spacing="-0.03em"
-                  lineHeight="142%"
+                    {InvList.top.map((item) => {
+                      return (
+                        <InvestorCard 
+                          key={item.id}
+                        >
+                          <InvestorIcon
+                            width={item.title ? 64 : 'auto'}
+                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                            alt={`${item?.alt}`}
+                          />
+                          {item.title && 
+                            <InvestorDetails>
+                              <InvestorTitle>{item.title}</InvestorTitle>
+                              {item.subtitle && 
+                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                              }
+                            </InvestorDetails>
+                          }
+                        </InvestorCard>
+                      );
+                    })}
+                  </MarqueeAnimation>
+                </ItemVV2>
+                <ItemVV2
+                  margin="120px 0 0 0"
+                  flex="1"
+                  alignItems="stretch"
                 >
-                  <FadeInAnimation
-                    wrapperElement="div"
-                    delay={0.2}
+                  <MarqueeAnimation
+                    speed={MARQUEE_ANIMATION_SPEED}
+                    gradientWidth={8}
+                    gap={18}
+                    direction="right"
                   >
-                    The most diverse personalities have found each other at Push. Unique people with special talents and
-                    extraordinary stories. We are united by the joy we take in our tech and constantly push the
-                    boundaries of everything web3 communication.
-                  </FadeInAnimation>
-                </Span>
-              </ItemV>
-            </BuiltByIntro> */}
+                    {InvList.bottom.map((item) => {
+                      return (
+                        <InvestorCard 
+                          key={item.id}
+                          flexDirection={item.title ? 'row' : 'column'}
+                        >
+                          <InvestorIcon
+                            width={item.title ? '64px' : 'auto'}
+                            borderRadius={item.title ? '50%' : '0'}
+                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                            alt={`${item?.alt}`}
+                          />
+                          {item.title && 
+                            <InvestorDetails>
+                              <InvestorTitle>{item.title}</InvestorTitle>
+                              {item.subtitle && 
+                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                              }
+                            </InvestorDetails>
+                          }
+                        </InvestorCard>
+                      );
+                    })}
+                  </MarqueeAnimation>
+                </ItemVV2>
 
-            {/* <FadeInAnimation
-              wrapperElement="div"
-              direction={!isMobile && 'right'}
-              delay={0.3}
-            >
-              <BuiltByCards>
-                {TeamList.slice(0, showMoreTeamMembers ? TeamList.length : 4).map((teamMember, memberIndex) => {
-                  return (
-                    <TeamMember
-                      key={memberIndex}
-                      name={teamMember.name}
-                      title={teamMember.title}
-                      img={teamMember.img}
-                      twitter={teamMember.twitter}
-                      linkedin={teamMember.linkedin}
-                    />
-                  );
-                })}
-              </BuiltByCards>
-            </FadeInAnimation>
-
-            <TeamMemberButtons
-              gap="22px"
-              margin="80px 0"
-            >
-              <ButtonV2
-                title={!showMoreTeamMembers ? 'View More' : 'View Less'}
-                background="#2A2A39"
-                radius="16px"
-                padding="14px 32px"
-                fontSize="18px"
-                fontWeight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-                onClick={onClickViewMoreTeamMembers}
-              >
-                {!showMoreTeamMembers ? 'View More' : 'View Less'}
-              </ButtonV2>
-              <Anchor
-                href="https://angel.co/company/push-protocol"
-                title="Jobs"
-                target="_blank"
-                bg="#DD44B9"
-                radius="16px"
-                padding="14px 32px"
-                size="18px"
-                weight="500"
-                spacing="-0.03em"
-                lineHeight="26px"
-              >
-                Now Hiring, Explore Careers
-                <BsArrowUpRight className="anchorSVGlink" />
-              </Anchor>
-            </TeamMemberButtons> */}
-
-            <ItemHV2 margin="80px 0 80px 0">
-              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
-                <InvestorHeader
-                  color="#09090B"
-                  fontSize="40px"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
-                >
-                  {t("home.investors-section.title")}
-                </InvestorHeader>
-              </ItemVV2>
-            </ItemHV2>
-
-            <InvestorList />
+              </ContentV2>
+            </SectionV2>
           </ContentV2>
-        </IntergrateWithPushSection>
-
+        </ShrinkingSection>
+        
+        {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
           id="featuredIn"
           data-bkg="dark"
@@ -1103,6 +1036,7 @@ const HeroAnimation = styled(ItemHV2)`
 `;
 
 const HeroItem = styled(ItemVV2)`
+  z-index: 2;
   @media ${device.laptop} {
     max-width: initial;
     margin-top: ${(props) => props.MarginTop || "0px"};
@@ -1201,7 +1135,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
   }
 `;
 
-const IntergrateWithPushSection = styled(ResponsiveSection)`
+const ShrinkingSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
 `;
 
@@ -1624,9 +1558,45 @@ const TeamMemberButtons = styled(ItemHV2)`
 const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
+  align-self: flex-start;
 
   @media ${device.tablet} {
     width: 100%;
     text-align: center;
   }
 `;
+
+const InvestorCard = styled(ItemVV2)`
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 74px;
+    padding: 8px;
+    min-width: 242px;
+    min-height: 66px;
+    margin-right: 18px;
+    flex: 0;
+`
+
+const InvestorIcon = styled(ImageV2)`
+  
+`
+
+const InvestorDetails = styled(ItemVV2)`
+  align-self: stretch;
+  flex: 1;
+`
+
+const InvestorTitle = styled(SpanV2)`
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 142%;
+  color: #09090b;
+`
+
+const InvestorSubtitle = styled(SpanV2)`
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 160%;
+  letter-spacing: 0.11em;
+  color: #303c5e;
+  text-transform: uppercase;
+`

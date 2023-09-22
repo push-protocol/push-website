@@ -14,7 +14,7 @@ import styled, { css } from "styled-components";
 import "../../css/custom.css";
 import FAQ from './Faq';
 import { FooterComponent } from './Footer';
-import Styles from "./styles.module.css";
+import "./styles.css";
 
 // import styles from './styles.module.css';
 
@@ -241,7 +241,7 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
             padding="0px 0px 30px 0px"
             alignItems="flex-start"
           >
-            <Svg className={Styles.featureSvg} />
+            <TechDocIcon><Svg /></TechDocIcon>
             <TechDocTitle>{title}</TechDocTitle>
           </ItemVV2>
           
@@ -337,92 +337,117 @@ export default function HomepageFeatures(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   
   return (
-        <section>
-          <header className={clsx('hero hero--primary', Styles.heroBanner)}>
-          <div className="section-container" style={{zIndex: '1'}}>
-            <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle">{siteConfig.tagline}</p>
-            <div className='spacing-small pointer'>
-              <Link
-                className='hero__button'
-                to="./dev/chat">
-                Get Started
-                <FiArrowUpRight className='ml-4' />
-              </Link>
-              
-            </div>
-          </div>
-          <img src={headerRipple} className={Styles.ripple} />
-        </header>
-          <section className='main-section'>
-              <HomepageSection alignItems="flex-start">
-                <HomepageSubHeader>
-                  Popular Quickies
-                </HomepageSubHeader>
+    <section>
+      <HeroHeader className={clsx('hero hero--primary')}>
+      <div className="section-container" style={{zIndex: '1'}}>
+        <h1 className="hero__title">{siteConfig.title}</h1>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className='spacing-small pointer'>
+          <Link
+            className='hero__button'
+            to="./dev/chat">
+            Get Started
+            <FiArrowUpRight className='ml-4' />
+          </Link>
+          
+        </div>
+      </div>
+      <Ripple src={headerRipple}/>
+    </HeroHeader>
+      <section className='main-section'>
+          <HomepageSection alignItems="flex-start">
+            <HomepageSubHeader>
+              Popular Quickies
+            </HomepageSubHeader>
 
-                  <PopularQuickiesList>
-                    {QuickstartItems.map((props, idx) => (
-                      <QuickstartList key={idx} {...props} />
-                    ))}
-                  </PopularQuickiesList>
-              </HomepageSection>
+              <PopularQuickiesList>
+                {QuickstartItems.map((props, idx) => (
+                  <QuickstartList key={idx} {...props} />
+                ))}
+              </PopularQuickiesList>
+          </HomepageSection>
 
-              <HomepageSection>
-                <HomepageSubHeader>
-                  Technical Documentation
-                </HomepageSubHeader>
-                <TechDocCardList>
-                  {DevGuide.map((props, idx) => (
-                    <GuideList key={idx} {...props} />
-                  ))}
-                </TechDocCardList>
-            </HomepageSection>
+          <HomepageSection>
+            <HomepageSubHeader>
+              Technical Documentation
+            </HomepageSubHeader>
+            <TechDocCardList>
+              {DevGuide.map((props, idx) => (
+                <GuideList key={idx} {...props} />
+              ))}
+            </TechDocCardList>
+        </HomepageSection>
+        
+        <HomepageSection>
+          <ItemHV2 justifyContent="flex-start">
+            <HomepageSubHeader>
+              Push SDK
+            </HomepageSubHeader>
+            <Link to='/' target='_blank'>
+              <div className='hero_home_explore'>
+                <p className='hero_home_explore_link'>
+                  Explore SDK
+                </p>
+                <ArrowUp className='arrowUp-icon' />
+              </div>
+            </Link>
+          </ItemHV2>
             
-            <HomepageSection>
-              <ItemHV2 justifyContent="flex-start">
-                <HomepageSubHeader>
-                  Push SDK
-                </HomepageSubHeader>
-                <Link to='/' target='_blank'>
+          
+          <div className="guide_list">
+            {SdkList.map((props, idx) => (
+              <PushSdk key={idx} {...props} />
+            ))}
+          </div>
+          
+            {/* <div className='Faqs-main-container'>
+              <div className='sub-container'>
+                <span className="hero_home_Faq_header">
+                  Frequently Asked Questions
+                </span>
+                <Link to='https://push.org/faq' target='_blank'>
                   <div className='hero_home_explore'>
                     <p className='hero_home_explore_link'>
-                      Explore SDK
+                      Explore FAQs
                     </p>
                     <ArrowUp className='arrowUp-icon' />
                   </div>
                 </Link>
-              </ItemHV2>
-                
-              
-              <div className="guide_list">
-                {SdkList.map((props, idx) => (
-                  <PushSdk key={idx} {...props} />
-                ))}
               </div>
-              
-                {/* <div className='Faqs-main-container'>
-                  <div className='sub-container'>
-                    <span className="hero_home_Faq_header">
-                      Frequently Asked Questions
-                    </span>
-                    <Link to='https://push.org/faq' target='_blank'>
-                      <div className='hero_home_explore'>
-                        <p className='hero_home_explore_link'>
-                          Explore FAQs
-                        </p>
-                        <ArrowUp className='arrowUp-icon' />
-                      </div>
-                    </Link>
-                  </div>
-                  <FAQ />
+              <FAQ />
 
-                </div> */}
-            </HomepageSection>
-          </section>
-          <FooterComponent />
-        </section>
+            </div> */}
+        </HomepageSection>
+      </section>
+      <FooterComponent />
+    </section>
   );
 }
+
+const HeroHeader = styled.header`
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+`;
+
+const Ripple = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+`;
+
+const TechDocIcon = styled(ItemVV2)`
+  align-self: flex-start;
+  & svg {
+    height: 44px;
+    width: 44px;
+    color: pink;
+    margin: 0 0 1rem 0;
+  }
+`;
 
 const HomepageSection = styled(SectionV2)`
   margin-top: 70px;

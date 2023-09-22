@@ -21,7 +21,10 @@ import PolygonStudiosSVG from '@site/static/assets/website/investors/raw/polygon
 import SinoglobalSVG from '@site/static/assets/website/investors/raw/sinoglobal.svg';
 import TigerglobalSVG from '@site/static/assets/website/investors/raw/tigerglobal.svg';
 import TrueventuresSVG from '@site/static/assets/website/investors/raw/trueventures.svg';
-import ImageHolder from './ImageHolder';
+import ImageHolder from '../ImageHolder';
+
+// Internal Configs
+import { InvList } from '@site/src/config/HomeInvestorList';
 
 /**
  * edit this to change the order
@@ -111,7 +114,8 @@ const investorsSortedGroup = [
 const ANIMATION_SPEED = 60;
 
 function InvestorList() {
-  const [firstRow, secondRow] = investorsSortedGroup;
+  const firstRow = InvList.top;
+  const secondRow = InvList.bottom;
 
   return (
     <InvestorWrapper>

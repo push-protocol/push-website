@@ -41,7 +41,7 @@ import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
 import AnalyticsStats from '../components/AnalyticsStats';
 import Blogs from '../components/Blogs';
 import HybridSection from '../components/HybridSection';
-import InvestorList from '../components/InvestorList';
+import InvestorList from '../components/Investors/InvestorsList';
 import MarqueeAnimation from '../components/MarqueeAnimation';
 import PageWrapper from '../components/PageWrapper';
 import PartnerChannels from '../components/PartnerChannels';

@@ -51,44 +51,38 @@ const SlideElement = ({
           lineHeight="146%"
           letterSpacing="inherit"
         >
-          <FadeInAnimation wrapperElement="div" delay={0.1}>
-            <SpanV2 color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</SpanV2> {content}
-          </FadeInAnimation>
+          <SpanV2 color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</SpanV2> {content}
         </SpanV2>
 
-        <FadeInAnimation wrapperElement="div" delay={0.2}>
-          <Atag
-            href={link}
-            title={title}
-            target="_blank"
-            padding="0px 0px"
-            fontSize={isMobile ? "18px" : "20px"}
-            fontWeight={isMobile ? "400" : "500"}
-            letterSpacing="-0.03em"
-            lineHeight="26px"
-            className='button'
-            margin="10px 0px 0px 0px"
-            background="transparent"
-          // hoverShade="none"
-          >
-            <SpanLink>{linkContent}</SpanLink>
-            <FiArrowUpRight className="anchorSVGlink" />
-          </Atag>
-        </FadeInAnimation>
+        <Atag
+          href={link}
+          title={title}
+          target="_blank"
+          padding="0px 0px"
+          fontSize={isMobile ? "18px" : "20px"}
+          fontWeight={isMobile ? "400" : "500"}
+          letterSpacing="-0.03em"
+          lineHeight="26px"
+          className='button'
+          margin="10px 0px 0px 0px"
+          background="transparent"
+        // hoverShade="none"
+        >
+          <SpanLink>{linkContent}</SpanLink>
+          <FiArrowUpRight className="anchorSVGlink" />
+        </Atag>
 
       </GrowPushCardDetails>
 
       <Div padding={paddingMobile}>
-        <FadeInAnimation wrapperElement="div" delay={0.3}>
-          <MemberImage
-            className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
-            src={image}
-            srcSet={image}
-            alt={alt}
-            title={title}
-            width="100%"
-          />
-        </FadeInAnimation>
+        <MemberImage
+          className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
+          src={image}
+          srcSet={image}
+          alt={alt}
+          title={title}
+          width="100%"
+        />
       </Div>
     </GrowPushCard>
   )
@@ -137,12 +131,10 @@ const HorizontalScroll = () => {
 
   return (
     <>
-
       <SliderContainer
         sizing='calc(100vh-0)'
         ref={panelsContainer}
       >
-
         <SlideElement sendRef={(e) => createPanelsRefs(e, 0)}
           content={t('home.horizontal-scroll-section.slide1.text')}
           linkContent={t('home.horizontal-scroll-section.slide1.link-text')}

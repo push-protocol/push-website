@@ -210,6 +210,7 @@ export const ImageV2 = styled.img`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "auto"};
   display: ${(props) => props.display || "flex"};
+  border-radius: ${(props) => props.borderRadius || 'initial'};
 `;
 
 export const Image1V2 = styled.img`
