@@ -9,6 +9,9 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.gif)
 
+<!--truncate-->
+
+
 We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making.
 
 ElementFi (now expanded into [DELV](https://www.delv.tech/)), is a leading protocol that enables users to seek high fixed yield income in the DeFi market.

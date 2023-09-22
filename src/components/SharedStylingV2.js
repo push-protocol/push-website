@@ -220,10 +220,10 @@ export const Image1V2 = styled.img`
 `;
 
 export const SpanV2 = styled.span`
-  flex: ${(props) => props.flex || 'initial'};
-  align-self: ${(props) => props.alignSelf || 'auto'};
-  color: ${(props) => props.color || 'inherit'};
-  background: ${(props) => props.background || 'transparent'};
+  flex: ${(props) => props.flex || "initial"};
+  align-self: ${(props) => props.alignSelf || "auto"};
+  color: ${(props) => props.color || "inherit"};
+  background: ${(props) => props.background || "transparent"};
   font-weight: ${(props) => props.fontWeight || 400};
   font-size: ${(props) =>
     props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.DESKTOP};
@@ -344,8 +344,8 @@ export const Atag = styled.a`
   align-items: ${(props) => props.alignItems || "center"};
   justify-content: ${(props) => props.justifyContent || "center"};
   font-weight: ${(props) => props.fontWeight || 500};
-  font-size: ${(props) => props.fontSize || 'inherit'};
-  color: ${(props) => props.color || '#fff'} !important;
+  font-size: ${(props) => props.fontSize || "inherit"};
+  color: ${(props) => props.color || "#fff"} !important;
   background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
   margin: ${(props) => props.margin || "0"};
   padding: ${(props) => props.padding || "14px 32px"};
@@ -626,6 +626,15 @@ export const ModalWrapper = styled(ItemHV2)`
 
 export const SubHeader = styled.div`
   color: #6b6b6b;
-  font-size: 27px;
+  font-size: 25px;
   font-weight: bold;
+  line-height: 34px;
+  margin-bottom: 10px;
+`;
+
+export const ImageText = styled.div`
+  color: #6b6b6b;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
 `;

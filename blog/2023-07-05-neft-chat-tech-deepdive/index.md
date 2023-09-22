@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <SubHeader>Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations</SubHeader>
 
 

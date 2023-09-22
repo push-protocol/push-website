@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿.
 
 SOCLLY is revolutionizing the web3 social networking space by putting power in the hands of creators. With a strong emphasis on collaboration, freedom, and monetization, SOCLLY provides a dynamic platform where creators can thrive and connect with their audience on their own terms.

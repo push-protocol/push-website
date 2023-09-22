@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.png)
 
+<!--truncate-->
+
 
 In 2017, the ERC-721 standard revolutionized the tokenization of digital assets, defining the basic set of rules and functions for creating non-fungible tokens (NFTs). Since then, NFTs have gained significant popularity, transforming how we perceive and interact with digital art, collectibles, virtual real estate, and more.
 

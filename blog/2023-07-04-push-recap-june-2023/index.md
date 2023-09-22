@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 What a month it’s been at Push! From groundbreaking features to new partnerships, we’ve been on an exciting journey this June making major strides towards our mission of decentralizing communication in web3. We couldn’t be more thrilled to share the highlights with you.
 
 The spotlight of the month was undoubtedly the long-awaited [release of Push NFT Chat](https://twitter.com/pushprotocol/status/1666491248436297728?s=20). With this new feature, we’ve opened up a universe of possibilities for the 1.5 million+ NFT wallets and collections including Azuki, BAYC, and CryptoPunks. Instant, secure, and immersive chats tied to your unique NFT assets are here. With its triple encryption and intuitive UX, Push NFT Chat is set to empower web3 native NFT-to-NFT and dApp-to-NFT communication like never before. Read all about it [here](https://medium.com/push-protocol/introducing-push-nft-chat-chats-and-comms-tied-to-your-nfts-done-right-98717c04438d). Also don’t forget to check out the [demo](https://twitter.com/pushprotocol/status/1666859600161779733?s=20) and begin building!

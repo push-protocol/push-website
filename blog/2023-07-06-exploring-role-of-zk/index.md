@@ -9,6 +9,8 @@ import { SubHeader } from '@site/src/components/SharedStylingV2';
 
 ![Docusaurus Image](./cover-image.webp)
 
+<!--truncate-->
+
 <blockquote>
 <i>
 💡 TL;DR
