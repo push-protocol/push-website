@@ -41,7 +41,7 @@ const config = {
       "classic",
       {
         gtag: {
-          trackingID: "G-MSSDHX5TDN",
+          trackingID: "G-N9ZHXNRLYL",
         },
         docs: {
           path: "docs",

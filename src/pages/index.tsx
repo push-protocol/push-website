@@ -751,7 +751,7 @@ export default function Home(): JSX.Element {
                   </MarqueeAnimation>
                 </ItemVV2>
                 <ItemVV2
-                  margin="120px 0 0 0"
+                  margin="40px 0 0 0"
                   flex="1"
                   alignItems="stretch"
                 >
