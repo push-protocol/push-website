@@ -62,8 +62,8 @@ import EthFoundationBlackSVG from "@site/static/assets/website/coverage/raw/eth_
 import TeamList from "@site/src/components/config/teamList";
 import { InvList } from "@site/src/config/HomeInvestorList";
 import { MediaList } from "@site/src/config/HomeMediaList";
+import GLOBALS, { device } from '@site/src/config/globals';
 import PageMeta from "@site/src/config/pageMeta";
-import GLOBALS, { device } from "../config/globals";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -751,7 +751,7 @@ export default function Home(): JSX.Element {
                   </MarqueeAnimation>
                 </ItemVV2>
                 <ItemVV2
-                  margin="40px 0 0 0"
+                  margin="120px 0 0 0"
                   flex="1"
                   alignItems="stretch"
                 >
@@ -1464,9 +1464,7 @@ const InvestorSubtitle = styled(SpanV2)`
 `
 
 const FeaturedCardList = styled(ItemHV2)`
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  margin: 0 0 120px 0;
+  margin: 0 0 380px 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemVV2)`    
@@ -1478,6 +1476,8 @@ const FeaturedCard = styled(ItemVV2)`
   justify-content: space-between;
   row-gap: 30px;
   border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 
   & a {
     border-radius: 0px;

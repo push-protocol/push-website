@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Internal Configs
-import GLOBALS, { device } from "../config/globals";
+import GLOBALS, { device } from '@site/src/config/globals';
 /**
  * Usage Hierarchy
  *

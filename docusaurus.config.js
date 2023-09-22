@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Push Documentation Hub",
-  tagline: "One place to learn about everything Push Protocol.",
-  favicon: "/assets/docs/favicon.ico",
+  title: "Push | The Communication Protocol of Web3",
+  tagline: "One place to learn about everything Push Protocol!",
+  favicon: "/assets/website/favicon.ico",
 
   // Set the production url of your site here
   url: "https://push.org/",
