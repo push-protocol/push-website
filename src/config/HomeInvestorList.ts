@@ -1,5 +1,3 @@
-// External Components
-
 export const InvList = {
   top: [
     {

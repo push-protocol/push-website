@@ -37,7 +37,6 @@ import {
   SpanV2
 } from "@site/src/components/SharedStylingV2";
 import SignupInput from "@site/src/components/SignupInput";
-import { InvList } from "@site/src/config/HomeInvestorList";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import DiscordSVG from "@site/static/assets/discord.svg";
@@ -61,6 +60,8 @@ import EthFoundationBlackSVG from "@site/static/assets/website/coverage/raw/eth_
 
 // Internal Configs
 import TeamList from "@site/src/components/config/teamList";
+import { InvList } from "@site/src/config/HomeInvestorList";
+import { MediaList } from "@site/src/config/HomeMediaList";
 import PageMeta from "@site/src/config/pageMeta";
 import GLOBALS, { device } from "../config/globals";
 
@@ -803,9 +804,10 @@ export default function Home(): JSX.Element {
             padding="40px"
             alignSelf="flex-start"
           >
+
             <ItemHV2 justifyContent="flex-start">
               <ItemHV2 justifyContent="flex-start" alignItems="flex-start">
-                <ResponsiveH2
+                <H2V2
                   color="#FFFFFF"
                   fontSize="40px"
                   fontWeight="700"
@@ -814,195 +816,66 @@ export default function Home(): JSX.Element {
                   margin="0"
                 >
                   {t("home.featured-section.title")}
-                </ResponsiveH2>
+                </H2V2>
               </ItemHV2>
             </ItemHV2>
           </ContentV2>
 
-          <FeaturedInMarquee
-            flexDirection="column"
+          <FeaturedC
             className="featuredInMarquee"
             margin="0 0 270px 0"
+            border="1px solid #fff"
             id="newone"
           >
-            <MarqueeAnimation speed={70} gradient={false}>
-              <FeaturedCell className="marqueeItem">
-                <SpanV2
-                  color="#FFFFFF"
-                  fontSize="22px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  {t("home.featured-section.article1.text")}
-                </SpanV2>
+            {/* <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}> */}
+              {MediaList.map((item) => {
+                return (
+                  <ItemVV2 key={item.srcref}>
+                    <SpanV2
+                      color="#FFFFFF"
+                      fontSize="22px"
+                      fontWeight="400"
+                      letterSpacing="-0.03em"
+                      lineHeight="142%"
+                    >
+                      {t(item.translatedtitle)}
+                    </SpanV2>
+                    <ArticleSource>
+                      <ImageV2
+                        width={item.title ? '64px' : 'auto'}
+                        borderRadius={item.title ? '50%' : '0'}
+                        src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
+                        alt={`${item?.alt}`}
+                      />
+                      <Atag
+                        href={item.url}
+                        title={t(item.urltranslatedtitle)}
+                        target="_blank"
+                        background="transparent"
+                        hoverBackground="transparent"
+                        hover="transparent"
+                        filter="none"
+                        color="#DD44B9"
+                        borderRadius="16px"
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="0"
+                      >
+                        {t(item.urltranslatedtitle)}
+                        <BsArrowUpRight className="anchorSVGlink" />
+                      </Atag>
+                    </ArticleSource>
+                  </ItemVV2>
+                );
+              })}
+            {/* </MarqueeAnimation> */}
+          </ItemHV2>
 
-                <ArticleSource>
-                  <EthFoundationBlackSVG />
-                  <Atag
-                    href="https://blog.ethereum.org/2020/08/19/esp-beyond-grants"
-                    title="Read ETH Foundation article about Push"
-                    target="_blank"
-                    background="transparent"
-                    hoverBackground="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    borderRadius="16px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                    padding="0"
-                  >
-                    {t("home.featured-section.article1.link-text")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </ArticleSource>
-              </FeaturedCell>
-
-              <FeaturedCell className="marqueeItem">
-                <SpanV2
-                  color="#FFFFFF"
-                  fontSize="22px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  {t("home.featured-section.article2.text")}
-                </SpanV2>
-
-                <ArticleSource>
-                  <CoindeskBlackSVG />
-                  <Atag
-                    href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/"
-                    title="Read Coindesk article about Push"
-                    target="_blank"
-                    background="transparent"
-                    hoverBackground="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    borderRadius="16px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                    padding="0"
-                  >
-                    {t("home.featured-section.article2.link-text")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </ArticleSource>
-              </FeaturedCell>
-
-              <FeaturedCell className="marqueeItem">
-                <SpanV2
-                  color="#FFFFFF"
-                  fontSize="22px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  {t("home.featured-section.article3.text")}
-                </SpanV2>
-
-                <ArticleSource>
-                  <DefiPrimeBlackSVG />
-                  <Atag
-                    href="https://defiprime.com/ethereum-push-notification-service"
-                    title="Read Defi Prime article on Push"
-                    target="_blank"
-                    background="transparent"
-                    hoverBackground="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    borderRadius="16px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                    padding="0"
-                  >
-                    {t("home.featured-section.article3.link-text")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </ArticleSource>
-              </FeaturedCell>
-
-              <FeaturedCell className="marqueeItem">
-                <SpanV2
-                  color="#FFFFFF"
-                  fontSize="22px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  {t("home.featured-section.article4.text")}
-                </SpanV2>
-
-                <ArticleSource>
-                  <BalajiTweethandleBlackSVG />
-                  <Atag
-                    href="https://twitter.com/pushprotocol/status/1336359832081768448"
-                    title="Read Balaji's tweet about Push"
-                    target="_blank"
-                    background="transparent"
-                    hoverBackground="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    borderRadius="16px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                    padding="0"
-                  >
-                    {t("home.featured-section.article4.link-text")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </ArticleSource>
-              </FeaturedCell>
-
-              <FeaturedCell className="marqueeItem">
-                <SpanV2
-                  color="#FFFFFF"
-                  fontSize="22px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                >
-                  {t("home.featured-section.article5.text")}
-                </SpanV2>
-
-                <ArticleSource>
-                  <BeInCryptoSVG />
-                  <Atag
-                    href="https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn"
-                    title="Read Balaji's tweet about Push"
-                    target="_blank"
-                    background="transparent"
-                    hoverBackground="transparent"
-                    hover="transparent"
-                    filter="none"
-                    color="#DD44B9"
-                    borderRadius="16px"
-                    fontSize="18px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                    padding="0"
-                  >
-                    {t("home.featured-section.article5.link-text")}
-                    <BsArrowUpRight className="anchorSVGlink" />
-                  </Atag>
-                </ArticleSource>
-              </FeaturedCell>
-            </MarqueeAnimation>
-          </FeaturedInMarquee>
         </FeaturedInSection>
+        
       </HomeWrapper>
     </PageWrapper>
   );
