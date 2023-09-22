@@ -82,9 +82,9 @@ NFTマーケットプレイス上でPushChatを介してbuyerとsellerでメッ�
 
 NFTローンの清算やオークション情報に関する通知をPush Protocolを介して統合できます。
 
-### 🌿 Lnes × PushChat
+### 🌿 Lens × PushChat
 
-<!-- Lens x PushChatを使用して、.lensプロファイル<>プロファイル間のメッセージングを構築できます。 -->
+Lens x PushChatを使用して、.lensプロファイル&lt;&gt;プロファイル間のメッセージングを構築できます。
 
 ### 🌊💰Superfluid
 
