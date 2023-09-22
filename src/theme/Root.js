@@ -6,6 +6,7 @@ import React from 'react';
 import i18nInitialize from '@site/src/utils/i18n';
 
 // Internal Components
+import Footer from '@site/src/segments/Footer';
 import Header from '@site/src/segments/Header';
 
 // Initialize Internalization
@@ -30,6 +31,12 @@ function Root({ children }) {
         <Header />
       }
       {children}
+
+      {
+        customHeaderAt('/BRB') && customHeaderAt('/DOCS') && customHeaderAt('/BLOG') &&
+          
+        <Footer />
+      }
     </>
   );
 }

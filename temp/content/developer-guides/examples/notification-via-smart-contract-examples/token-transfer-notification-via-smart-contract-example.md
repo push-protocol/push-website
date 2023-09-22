@@ -36,7 +36,7 @@ interface IPUSHCommInterface {
 }
 
 contract Push is ERC20 {
-    // EPNS COMM ADDRESS ON ETHEREUM KOVAN, CHECK THIS: https://docs.epns.io/developers/developer-tooling/epns-smart-contracts/epns-contract-addresses
+    // EPNS COMM ADDRESS ON ETHEREUM KOVAN, CHECK THIS: https://docs.push.org/developers/developer-tooling/epns-smart-contracts/epns-contract-addresses
     address public EPNS_COMM_ADDRESS = 0x87da9Af1899ad477C67FeA31ce89c1d2435c77DC;
 
     constructor ()
@@ -55,11 +55,11 @@ contract Push is ERC20 {
             to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
             bytes(
                 string(
-                    // We are passing identity here: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
+                    // We are passing identity here: https://docs.push.org/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                     abi.encodePacked(
-                        "0", // this is notification identity: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
+                        "0", // this is notification identity: https://docs.push.org/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                         "+", // segregator
-                        "3", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targetted or subset)
+                        "3", // this is payload type: https://docs.push.org/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targetted or subset)
                         "+", // segregator
                         "Tranfer Alert", // this is notificaiton title
                         "+", // segregator

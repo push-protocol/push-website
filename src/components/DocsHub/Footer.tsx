@@ -306,7 +306,7 @@ export const FooterComponent = () => {
                   </Span>
 
                   <FooterAnchorSecondary
-                    href="mailto:support@epns.io"
+                    href="mailto:support@push.org"
                     target="_blank"
                   >
                     Contact Us

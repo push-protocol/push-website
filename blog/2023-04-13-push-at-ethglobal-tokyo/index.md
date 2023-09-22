@@ -124,7 +124,7 @@ Pushが<b>Polygon</b>でローンチされているため、Polygon Mumbaiテス
 
 ### 🦍 NFTローン清算bot
 
-Push [Showrunner framework](https://docs.epns.io/developers/developer-zone/sending-notifications/using-showrunners-scaffold-gasless) とPush [SNS webhook](https://docs.epns.io/developers/developer-zone/receiving-notifications/sns-notifications) およびNFT APIを使用して、NFTローンの清算が発生する前にメール、Twitter、Telegramでアラートを送信するボットを作成することができます。ユースケースとして[BAYCローン清算](https://cointelegraph.com/news/nearly-55m-worth-of-bored-ape-cryptopunks-nfts-risk-liquidation-amid-debt-crisis)をご参照ください。
+Push [Showrunner framework](https://docs.push.org/developers/developer-zone/sending-notifications/using-showrunners-scaffold-gasless) とPush [SNS webhook](https://docs.push.org/developers/developer-zone/receiving-notifications/sns-notifications) およびNFT APIを使用して、NFTローンの清算が発生する前にメール、Twitter、Telegramでアラートを送信するボットを作成することができます。ユースケースとして[BAYCローン清算](https://cointelegraph.com/news/nearly-55m-worth-of-bored-ape-cryptopunks-nfts-risk-liquidation-amid-debt-crisis)をご参照ください。
 
 ### 🌱 Grants
 

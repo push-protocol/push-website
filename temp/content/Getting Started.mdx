@@ -22,9 +22,9 @@ Being an open communication middleware, notifications can be integrated and show
 
 <summary>Quick Guide to Getting Started with Push Protocol 🛣</summary>
 
-- Any user who activates themselves on the protocol to send a notification is called a [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels).
-- In other words, a [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels) is any service (protocol, dApp, or even web2 service) that wants to send notifications out to web3 usernames (wallet addresses).
-- A wallet address can create only one [**Channel**](https://whitepaper.epns.io/protocol-specs-section/epns-protocol/channels) on the protocol.
+- Any user who activates themselves on the protocol to send a notification is called a [**Channel**](https://whitepaper.push.org/protocol-specs-section/epns-protocol/channels).
+- In other words, a [**Channel**](https://whitepaper.push.org/protocol-specs-section/epns-protocol/channels) is any service (protocol, dApp, or even web2 service) that wants to send notifications out to web3 usernames (wallet addresses).
+- A wallet address can create only one [**Channel**](https://whitepaper.push.org/protocol-specs-section/epns-protocol/channels) on the protocol.
 - A channel is free to delegate (or revoke delegates) sending notifications functionality to any other wallet addresses on their behalf.
 - Creating a channel requires 50 **PUSH**, Channel info (Channel name, Image, description, CTA), and some **ETH**.
 - Channels can send notifications to their users(wallet addresses) in a number of ways, including:
@@ -32,7 +32,7 @@ Being an open communication middleware, notifications can be integrated and show
   - [**Showrunners Framework**](developer-tooling/showrunners-framework/) (**Scaffold/Gasless.** Best for automated logic via scaffold backend)
   - Smart contract to Smart contract (**requires gas**, Best for instant on-chain events, piggybacks on an on-chain transaction via Interface ABI call)
   - Manually from Push dApp (**Gasless**, Best for manual logic)
-  - Users can gaslessly opt-in to receive notifications from these Channels. See the [**entire walkthrough here**](https://app.epns.io/#/live_walkthrough).
+  - Users can gaslessly opt-in to receive notifications from these Channels. See the [**entire walkthrough here**](https://app.push.org/#/live_walkthrough).
 - Opted-in users are called subscribers of the Channels. Subscribers of the Channel receive notifications from those Channels in their Inboxes.
 - Non-opted users or non-subscribers of the Channel aren't alerted when they receive a notif from a non-subscribed channel, instead, it lands in their spam folder.
 - Currently, we have [**Staging**](https://staging.push.org/#/channels) and [**Prod**](https://app.push.org/) dApp that interfaces with EPNS Protocol to enable communication & notifications.

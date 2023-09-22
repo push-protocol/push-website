@@ -9,7 +9,7 @@ description: >-
 
 One of the easiest ways to send decentralized notifications is by using the Push dApp itself. The only prerequisite is that you must create a Channel on Push to be able to send notifications. In case you missed out, please check [this tutorial to create a Channel.](../create-your-notif-channel/)
 
-Once you create a Channel, you have to navigate to the [Channel Dashboard](https://staging.epns.io/#/dashboard). There you will see the profile page for your newly created Channel along with some Utilities to play around with.
+Once you create a Channel, you have to navigate to the [Channel Dashboard](https://staging.push.org/#/dashboard). There you will see the profile page for your newly created Channel along with some Utilities to play around with.
 
 Towards the bottom of the Dashboard, you will find the Send Notification section. That's what we are going to utilize today for sending notifications. Clicking on the **Select Notification Type** dropdown, you will see various types of notifications that can be sent manually via dApp.
 

@@ -5,26 +5,26 @@
 import React from 'react';
 
 // External Components
-import styled from 'styled-components';
-import { BsArrowUpRight } from 'react-icons/bs';
 import { useTranslation } from 'react-i18next';
+import { BsArrowUpRight } from 'react-icons/bs';
+import styled from 'styled-components';
 
 // Internal Components
-import { SectionV2, ContentV2, ItemHV2, ItemVV2, SpanV2, Atag, LinkToV2 } from 'components/SharedStylingV2';
-import EmailInputTextField from '../components/EmailInputTextField';
-import { ReactComponent as PushLogoTextWhite } from '../assets/PushLogoTextWhite.svg';
-import { ReactComponent as TwitterSVG } from '../assets/twitter.svg';
-import { ReactComponent as GithubSVG } from '../assets/github.svg';
-import { ReactComponent as DiscordSVG } from '../assets/discord.svg';
-import { ReactComponent as TelegramSVG } from '../assets/telegram.svg';
-import { ReactComponent as AppleSVG } from '../assets/apple.svg';
-import { ReactComponent as AndroidSVG } from '../assets/android.svg';
-import { ReactComponent as PushBellSVG } from '../assets/pushBell.svg';
-import { ReactComponent as FooterJoinusFigure } from '../assets/figures/footerjoinus.svg';
-import { ReactComponent as FooterFollowusFigure } from '../assets/figures/footerfollowus.svg';
+import EmailInputTextField from '@site/src/components/EmailInputTextField';
+import { Atag, ContentV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import PushLogoTextWhite from '@site/static/assets/PushLogoTextWhite.svg';
+import AndroidSVG from '@site/static/assets/android.svg';
+import AppleSVG from '@site/static/assets/apple.svg';
+import DiscordSVG from '@site/static/assets/discord.svg';
+import FooterFollowusFigure from '@site/static/assets/figures/footerfollowus.svg';
+import FooterJoinusFigure from '@site/static/assets/figures/footerjoinus.svg';
+import GithubSVG from '@site/static/assets/github.svg';
+import PushBellSVG from '@site/static/assets/pushBell.svg';
+import TelegramSVG from '@site/static/assets/telegram.svg';
+import TwitterSVG from '@site/static/assets/twitter.svg';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
 function Footer() {
   // Internationalization
@@ -269,7 +269,7 @@ function Footer() {
                   </SpanV2>
 
                   <FooterAnchorSecondary
-                    href="mailto:support@epns.io"
+                    href="mailto:support@push.org"
                     target="_blank"
                   >
                     {t('footer.links-section.subscribe-column.contact-us-link')}
@@ -575,6 +575,8 @@ const FooterAnchorIcon = styled(Atag)`
   border: 1px solid #2a2a39;
   border-radius: 12px;
   padding: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 export default Footer;

@@ -21,7 +21,7 @@ Notification Content Markdown only works for the payload that transforms inside 
 | \[d: textcontent]  | `<PUSHText color="primary">Hello World </PUSHText>`                                                | For colored text | Push Primary colored Text     |
 | \[s: textcontent]  | `<PUSHText color="secondary">Hello World </PUSHText>`                                              | For colored text | Push Secondary colored Text   |
 | \[t: textcontent]  | `<PUSHText color="tertiary">Hello World </PUSHText>`                                               | For colored text | Push Tetiary colored Text     |
-| \[u: textcontent]  | `<PUSHText color="green" link="[https://www.epns.io">](broken-reference) EPNS website </PUSHText>` | For URL’s        | Underlined, Red Colored Text  |
+| \[u: textcontent]  | `<PUSHText color="green" link="[https://www.push.org">](broken-reference) EPNS website </PUSHText>` | For URL’s        | Underlined, Red Colored Text  |
 
 ### Reference Implementation -
 
@@ -113,7 +113,7 @@ Notification Content Markdown only works for the payload that transforms inside 
 
 ```
 > Use case - For URL’s
-> Current Markdown - <EPNSLink color="red">[EPNS Website](https://www.epns.io) </EPNSLink>
+> Current Markdown - <EPNSLink color="red">[EPNS Website](https://www.push.org) </EPNSLink>
 > Backward compatibility - [u: textcontent]
 > Implementation - <PUSHText color="green" link="https://www.google.com">Hello World </PUSHText>
 ```

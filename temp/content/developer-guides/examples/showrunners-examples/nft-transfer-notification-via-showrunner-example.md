@@ -50,7 +50,7 @@ export default class NFTTransferChannel extends EPNSChannel {
       networkToMonitor: config.web3MainnetNetwork,
       dirname: __dirname,
       name: 'NFT Trasfer',
-      url: 'https://epns.io',
+      url: 'https://push.org',
       useOffChain: true,
     });
   }

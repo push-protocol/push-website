@@ -45,7 +45,7 @@ Integrate Push Protocol with an ERC-20 contract's subgraph **to send out notific
 
 ### Pre-requisites
 
-1. Have a Push Notification Channel ready - see the docs [here](https://docs.epns.io/developers/developer-zone/create-your-notif-channel) to create a channel
+1. Have a Push Notification Channel ready - see the docs [here](https://docs.push.org/developers/developer-zone/create-your-notif-channel) to create a channel
 2. Install the **graph CLI**
 
 ```mdx-code-block
@@ -194,7 +194,7 @@ Follow steps 5, 6 and 7 within the respective handler functions from which the n
 
 5.  **Define Notification Payload Items:** In the event handler mapping from which you need to send the notification, define the notification payload items such as recipient of the notification, type, title, message, etc. These variables will be further used to define the notification variable.
     
-It’s highly recommended to take a look at [this documentation](https://docs.epns.io/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.
+It’s highly recommended to take a look at [this documentation](https://docs.push.org/developers/developer-zone/sending-notifications/advanced/notification-payload-types) to understand more about payload items and their definitions.
 
 For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.
 
@@ -207,7 +207,7 @@ For a quick reference, the `recipient` differs with the payload type. For exampl
     message = `Received ${event.params.tokens.div(power)} PUSH from ${event.params.from.toHexString()}`,
     image = "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
     secret = "null",
-    cta = "https://epns.io/"
+    cta = "https://push.org/"
 
 ```
 6.  **Define Notification:**
@@ -277,7 +277,7 @@ Poll Interval (in seconds) defines the time period at which Push Nodes shall pin
 
 **Note:** _This is an on-chain transaction that stores the above data to **Push Core Contract.** So it requires $ETH for gas fees._
 
-> _If you don’t have a channel yet, you can easily create one by following this guide_ [_here_](https://docs.epns.io/developers/developer-zone/create-your-notif-channel)_._
+> _If you don’t have a channel yet, you can easily create one by following this guide_ [_here_](https://docs.push.org/developers/developer-zone/create-your-notif-channel)_._
 
 <div>
 

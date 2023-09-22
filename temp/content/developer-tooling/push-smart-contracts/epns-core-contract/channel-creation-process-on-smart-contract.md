@@ -8,7 +8,7 @@ The creation of channels as well as storing all the imperative details about a c
 
 ### How does Channel Creation Work?
 
-In order to create a new channel using the Push CoreV1, the [**\_createChannel**](https://docs.epns.io/developers/developer-tooling/epns-smart-contracts/epns-core-protocol/methods#core-functionalities)**()** function of the smart contract is used. The function can be seen below:
+In order to create a new channel using the Push CoreV1, the [**\_createChannel**](https://docs.push.org/developers/developer-tooling/epns-smart-contracts/epns-core-protocol/methods#core-functionalities)**()** function of the smart contract is used. The function can be seen below:
 
 Channel Creation mainly requires 4 crucial actions:
 
@@ -26,4 +26,4 @@ Channel Creation mainly requires 4 crucial actions:
    **b. **_**Push Channel Admin**_<br/>
    _**c. Channel owners must subscribe to its own channel as well.**_
 
-Once all the above-mentioned steps are completed successfully, the channel’s state is activated and it's all set for you to start [sending notifications](https://docs.epns.io/developers/developer-zone/sending-notifications) 🔔.
+Once all the above-mentioned steps are completed successfully, the channel’s state is activated and it's all set for you to start [sending notifications](https://docs.push.org/developers/developer-zone/sending-notifications) 🔔.

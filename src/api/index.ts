@@ -7,8 +7,8 @@ import axios from 'axios';
 const awaitTimeout = delay =>
   new Promise(resolve => setTimeout(resolve, delay));
 
-const BACKEND_API_URL = 'https://api.analytics.epns.io/apis/analytics';
-const ANALYTICS_API_BASE = 'https://backend.epns.io/apis/v1';
+const BACKEND_API_URL = 'https://api.analytics.push.org/apis/analytics';
+const ANALYTICS_API_BASE = 'https://backend.push.org/apis/v1';
 
 
 export async function loadKPIData() {
@@ -79,7 +79,7 @@ export async function sendEmailToMailingList({ email }) {
 }
 
 export async function getChannels(page) {
-  const requrl = `https://backend.epns.io/apis/v1/channels?page=${page}&limit=9&sort=subscribers&order=desc`;
+  const requrl = `https://backend.push.org/apis/v1/channels?page=${page}&limit=9&sort=subscribers&order=desc`;
 
 
   return axios.get(requrl)
@@ -92,7 +92,7 @@ export async function getChannels(page) {
 }
 
 export const getChannelsSearch = async (page, query) => {
-  const requrl = `https://backend.epns.io/apis/v1/channels/search?page=${page}&limit=9&order=desc&query=${query}`;
+  const requrl = `https://backend.push.org/apis/v1/channels/search?page=${page}&limit=9&order=desc&query=${query}`;
 
   return axios.get(requrl)
     .then((apiResponse) => {
