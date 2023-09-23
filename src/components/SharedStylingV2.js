@@ -68,6 +68,7 @@ export const ContentV2 = styled.div`
   display: flex;
   justify-content: ${(props) => props.justifyContent || "center"};
   box-sizing: ${(props) => props.boxSizing || "content-box"};
+  margin: ${(props) => props.margin || "initial"};
   padding: ${(props) =>
     props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
 

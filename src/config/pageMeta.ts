@@ -1,4 +1,4 @@
-export default {
+export const PageMeta = {
   HOME: {
     pageTitle: 'Home',
     pageDescription: 'Homepage of Push Protocol - The communication protocol of Web3'
@@ -26,6 +26,10 @@ export default {
   CHEAT: {
     pageTitle: 'Cheat Sheet',
     pageDescription: 'Explore Push Cheat Sheet and how to get started with it'
+  },
+  ABOUTUS: {
+    pageTitle: 'About Us',
+    pageDescription: "Learn what makes Push Protocol tick... it's the team"
   },
   BRB: {
     pageTitle: 'Billion Reasons to Build (BRB)',

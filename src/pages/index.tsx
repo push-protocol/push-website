@@ -40,6 +40,8 @@ import {
 } from "@site/src/components/SharedStylingV2";
 import SignupInput from "@site/src/components/SignupInput";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+
+// Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import DiscordSVG from "@site/static/assets/discord.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
@@ -65,7 +67,7 @@ import TeamList from "@site/src/components/config/teamList";
 import { InvList } from "@site/src/config/HomeInvestorList";
 import { MediaList } from "@site/src/config/HomeMediaList";
 import GLOBALS, { device } from '@site/src/config/globals';
-import PageMeta from "@site/src/config/pageMeta";
+import { PageMeta } from "@site/src/config/pageMeta";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);

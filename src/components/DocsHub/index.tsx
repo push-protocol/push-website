@@ -16,7 +16,7 @@ import { Atag, ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site
 import Footer from '@site/src/segments/Footer';
 import FAQ from './Faq';
 
-// Assets Imports
+// Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
 import { FiArrowUpRight } from 'react-icons/fi';
 
