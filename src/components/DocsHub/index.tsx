@@ -465,7 +465,7 @@ const Pulse = styled.div`
 const pulsateAnim = keyframes`
   100% { 
     opacity: 0;
-    transform: scale(10);
+    transform: scale(12);
   }
 `
 

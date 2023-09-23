@@ -16,7 +16,8 @@ import GLOBALS, { device } from '@site/src/config/globals';
  */
 
 export const HeroHeaderV2 = styled.h1`
-  font-family: "Strawford";
+  font-family: ${(props) => props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
   line-height: 110%;
   font-style: normal;

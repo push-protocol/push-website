@@ -890,11 +890,11 @@ const HeroPrimary = styled(ItemHV2)`
   margin: 120px 0;
 
   @media ${device.laptop} {
-    margin: 80px 0;
+    margin: 80px 0 0 0;
   }
 
   @media ${device.mobileM} {
-    margin: 80px 0;
+    margin: 80px 0 0 0;
   }
 `;
 
@@ -931,11 +931,13 @@ const HeroCTA = styled(ItemHV2)`
 `;
 
 const AnalyticsStatsContainer = styled(ItemHV2)`
+  margin: 0px;
+  flex: 1;
+  
   @media ${device.laptop} {
     flex: initial;
     position: relative;
     bottom: auto;
-    margin: 30px;
   }
 `;
 
@@ -1165,7 +1167,7 @@ const LiveNetworkCard = styled(ItemVV2)`
   }
 `;
 
-export const BodyContent = styled.div`
+const BodyContent = styled.div`
 	// display: flex;
 	// flex-direction: column;
 	padding: ${(props) => props.padding || "40px 0px"};

@@ -5,11 +5,10 @@
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
-import React, { Suspense } from 'react';
+import React from 'react';
 
 // External Components
 import { useTranslation } from 'react-i18next';
-import { BsChevronExpand } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
@@ -32,6 +31,7 @@ import {
 
 // Import Assets
 import ImageFAQ from '@site/static/assets/faq-projects.webp';
+import { BsChevronExpand } from 'react-icons/bs';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -739,9 +739,7 @@ function FAQ() {
   };
 
   return (
-
-    <Suspense fallback={<></>}>  
-      <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription}>
+    <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -756,76 +754,75 @@ function FAQ() {
           })}
         </script>
       </Head> */}
-        <FAQWrapper>
-          <ResponsiveSection
-            curve="bottom"
-            padding="180px 0px 20px 0px"
-            data-bkg="dark"
-            justifyContent="flex-start"
-            minHeight="auto"
+      <FAQWrapper>
+        <ResponsiveSection
+          curve="bottom"
+          padding="180px 0px 20px 0px"
+          data-bkg="dark"
+          justifyContent="flex-start"
+          minHeight="auto"
+        >
+          <ContentV2
+            className="contentBox"
+            flex="1"
+            alignSelf="center"
+            padding="40px 0px"
+            margin="0 auto"
           >
-            <ContentV2
-              className="contentBox"
-              flex="1"
-              alignSelf="center"
-              padding="40px 0px"
-              margin="0 auto"
+            <ItemHV2
+              flexDirection="column"
             >
-              <ItemHV2
-                flexDirection="column"
-              >
-                <H2V2>{t('faq.hero.title')}</H2V2>
-                <H3V2
-                    fontSize="16px"
-                    fontWeight="300"
-                    margin="30px 0px 30px 0px"
-                    letterSpacing="0.1em"
-                    style={{ maxWidth: '400px' }}
-                  >
-                    {t('faq.hero.update-text')}
-                </H3V2>
-                
-              </ItemHV2>
-            </ContentV2>
-          </ResponsiveSection>
+              <H2V2>{t('faq.hero.title')}</H2V2>
+              <H3V2
+                  fontSize="16px"
+                  fontWeight="300"
+                  margin="30px 0px 30px 0px"
+                  letterSpacing="0.1em"
+                  style={{ maxWidth: '400px' }}
+                >
+                  {t('faq.hero.update-text')}
+              </H3V2>
+              
+            </ItemHV2>
+          </ContentV2>
+        </ResponsiveSection>
 
-          <ResponsiveSection
-            curve="bottom"
-            padding="80px 0px 0px 0px"
-            data-bkg="light"
+        <ResponsiveSection
+          curve="bottom"
+          padding="80px 0px 0px 0px"
+          data-bkg="light"
+        >
+          <ContentV2
+            className="contentBox"
+            alignSelf="stretch"
+            padding="0px 0px 40px"
           >
-            <ContentV2
-              className="contentBox"
-              alignSelf="stretch"
-              padding="0px 0px 40px"
+            <ItemVV2
+              alignItems="flex-start"
             >
-              <ItemVV2
-                alignItems="flex-start"
-              >
-                {/* Questions and answers */}
-                <Title>General</Title>
-                <Items body={General} />
+              {/* Questions and answers */}
+              <Title>General</Title>
+              <Items body={General} />
 
-                <Title>Push Notifications</Title>
-                <Items body={Notifs} />
+              <Title>Push Notifications</Title>
+              <Items body={Notifs} />
 
-                <Title>Push Chat</Title>
-                <Items body={Chat} />
+              <Title>Push Chat</Title>
+              <Items body={Chat} />
 
-                <Title>Integrating Push</Title>
-                <Items body={IntegratingPush} />
+              <Title>Integrating Push</Title>
+              <Items body={IntegratingPush} />
 
-                <Title>Push Governance</Title>
-                <Items body={Governance} />
+              <Title>Push Governance</Title>
+              <Items body={Governance} />
 
-                <Title>$PUSH Token</Title>
-                <Items body={Token} />
-              </ItemVV2>
-            </ContentV2>
-          </ResponsiveSection>
-        </FAQWrapper>
-      </Layout>
-    </Suspense>
+              <Title>$PUSH Token</Title>
+              <Items body={Token} />
+            </ItemVV2>
+          </ContentV2>
+        </ResponsiveSection>
+      </FAQWrapper>
+    </Layout>
   );
 }
 

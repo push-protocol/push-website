@@ -99,23 +99,17 @@ function AnalyticsStats() {
   const pushChatSent = '>$1M';
 
   return (
-    <KPIBanner>
-      <ItemHV2
-        gap="18px"
-        className="kpiItem"
-      >
+    <AnalyticsStatCardList>
+      <AnalyticsStatCard>
         <KPIFigure>{kpiStats?.totalNotifsSent || '...'}</KPIFigure>
         <KPIMetric>
           {t('home.stats.notifications.part1')}
           <br />
           {t('home.stats.notifications.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </AnalyticsStatCard>
 
-      <ItemHV2
-        gap="18px"
-        className="kpiItem"
-      >
+      <AnalyticsStatCard>
         <KPIFigure>
           {kpiStats?.totalSubscribersCount || '...'}
           {kpiStats?.totalSubscribersCount && '+'}
@@ -125,36 +119,32 @@ function AnalyticsStats() {
           <br />
           {t('home.stats.subscribers.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </AnalyticsStatCard>
 
-      <ItemHV2
-        gap="18px"
-        className="kpiItem"
-      >
+      <AnalyticsStatCard>
         <KPIFigure>{pushIntegrations}</KPIFigure>
         <KPIMetric>
           {t('home.stats.integrations.part1')}
           <br />
           {t('home.stats.integrations.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </AnalyticsStatCard>
 
-      <ItemHV2
-        gap="18px"
-        className="kpiItem"
-      >
+      <AnalyticsStatCard>
         <KPIFigure>{pushChatSent}</KPIFigure>
         <KPIMetric>
           {t('home.stats.grants.part1')}
           <br />
           {t('home.stats.grants.part2')}
         </KPIMetric>
-      </ItemHV2>
-    </KPIBanner>
+      </AnalyticsStatCard>
+    </AnalyticsStatCardList>
   );
 }
 
-const KPIBanner = styled.div`
+const AnalyticsStatCardList = styled.div`
+  flex: 1;
+
   background: linear-gradient(
     90deg,
     rgba(18, 19, 21, 0.5) -2.55%,
@@ -163,44 +153,48 @@ const KPIBanner = styled.div`
     rgba(18, 19, 21, 0.5) 102.97%
   );
   backdrop-filter: blur(30px);
-  border-radius: 63px;
+  border-radius: 62px;
   display: flex;
   align-items: center;
-  // justify-content: center;
+  gap: 18px;
+  
   justify-content: space-between;
   width: 100%;
   padding: 30px 50px;
   font-family: 'Strawford';
   font-style: normal;
 
-  & .kpiItem {
-    flex-direction: row;
-  }
+  @media ${device.laptop} {
+    background: rgba(42, 42, 57, 0.5);
 
-  @media ${device.tablet} {
     flex-direction: row;
     flex-wrap: wrap;
-
-    width: 80%;
 
     padding: 24px;
     row-gap: 32px;
     column-gap: 8px;
 
-    & .kpiItem {
-      flex-direction: column;
-      row-gap: 8px;
-
-      // for 4 items
-      flex: 0 0 48%;
-      // align-items: flex-start;
-
-      // for 3 items
-      // flex: 0 0 100%;
-      // align-items: center;
-    }
+    border-radius: 32px;
   }
 `;
+
+const AnalyticsStatCard = styled(ItemHV2)`
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  
+  @media ${device.laptop} {
+    row-gap: 16px;
+  }
+  
+  @media ${device.tablet} {
+    flex-direction: column;
+    row-gap: 8px;
+
+    // for 4 items
+    flex: 0 0 48%;
+  }
+`
 
 const KPIFigure = styled(SpanV2)`
   font-weight: 700;
@@ -222,6 +216,8 @@ const KPIMetric = styled(SpanV2)`
   color: #ffffff;
 
   @media ${device.tablet} {
+    align-self: center;
+    text-align: center;
     font-size: 16px;
     font-weight: 400;
   }

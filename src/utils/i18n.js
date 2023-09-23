@@ -18,5 +18,9 @@ export default function i18nInitialize() {
       interpolation: {
         escapeValue: false, // not needed for react as it escapes by default
       },
+      react: {
+        wait: true,
+        useSuspense: false,
+      },
     });
 }
