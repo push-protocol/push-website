@@ -129,9 +129,8 @@ export const FooterComponent = () => {
                   Follow our simple guides to get started in minutes.
                 </Span>
                 <FooterAnchorPrimary
-                  href="https://docs.push.org/developers"
+                  href="/docs"
                   title="Explore Docs"
-                  target="_blank"
                 >
                   Explore Docs&nbsp;
                   <BsArrowUpRight className="anchorSVGlink" />
@@ -286,9 +285,8 @@ export const FooterComponent = () => {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://docs.push.org/developers"
+                    href="/docs"
                     title="Dev Guides"
-                    target="_blank"
                   >
                     Dev Guides
                   </FooterAnchorSecondary>

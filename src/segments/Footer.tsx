@@ -93,9 +93,8 @@ function Footer() {
                   {t('footer.info-section.docs-card.text')}
                 </SpanV2>
                 <FooterAnchorPrimary
-                  href="https://docs.push.org/developers"
+                  href="/docs"
                   title={t('footer.info-section.docs-card.link-text')}
-                  target="_blank"
                 >
                   {t('footer.info-section.docs-card.link-text')}&nbsp;
                   <BsArrowUpRight className="anchorSVGlink" />
@@ -249,9 +248,8 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://docs.push.org/developers"
+                    href="/docs"
                     title={t('footer.links-section.resources-column.dev-guides-link')}
-                    target="_blank"
                   >
                     {t('footer.links-section.resources-column.dev-guides-link')}
                   </FooterAnchorSecondary>

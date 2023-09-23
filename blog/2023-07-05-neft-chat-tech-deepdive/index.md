@@ -80,7 +80,7 @@ npm install --save @types/node
 Inside index.ts add the following code to create a Push NFT chat profile.
 
 ```js
-import * as PushAPI from '@pushprotocol/restapi'
+import { PushAPI } from '@pushprotocol/restapi'
 import { ENV } from '@pushprotocol/restapi/src/lib/constants'
 import * as dotenv from 'dotenv'
 import { ethers } from 'ethers'
@@ -138,7 +138,7 @@ An NFT-Push Chat Profile can send messages to another NFT-Push Profile or a wall
 
 
 ```js
-import * as PushAPI from '@pushprotocol/restapi'
+import { PushAPI } from '@pushprotocol/restapi'
 import { ENV } from '@pushprotocol/restapi/src/lib/constants'
 import * as dotenv from 'dotenv'
 import { ethers } from 'ethers'

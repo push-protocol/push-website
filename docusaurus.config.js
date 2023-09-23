@@ -140,15 +140,16 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      // algolia: {
-      //   // The application ID provided by Algolia
-      //   appId: 'YOUR_APP_ID',
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'LHUKHXUHQP',
 
-      //   // Public API key: it is safe to commit it
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
+        // Public API key: it is safe to commit it
+        apiKey: '2fc69a715b81b57bcae4ad6edeb52abe',
 
-      //   indexName: 'YOUR_INDEX_NAME',
-      // },
+        indexName: 'v2-push',
+        insights: true,
+      },
       colorMode: {
         defaultMode: "light",
         disableSwitch: false,

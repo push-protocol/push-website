@@ -269,7 +269,7 @@ _We get the above `keys` after the parsing of the API repsonse._
 CHANNELS PAGE (`src/pages/channels/index.tsx`)
 
 ```
-import * as PushAPI from '@pushprotocol/restapi';
+import { PushAPI } from '@pushprotocol/restapi';
 ```
 
 [**Fetch Channel Data**](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/restapi/README.md#fetching-channel-details)

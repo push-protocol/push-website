@@ -1,19 +1,28 @@
+
+// React + Web3 Essentials
+import React, { Suspense, useState } from 'react';
+import styled, { keyframes } from "styled-components";
+
+// External Components
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
-import GLOBALS, { device } from '@site/src/config/globals';
-import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
-import HeaderRipple from "@site/static/assets/docs/ripple.svg";
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
-import React, { useState } from 'react';
-import { FiArrowUpRight } from 'react-icons/fi';
-import styled, { css } from "styled-components";
-import "../../css/custom.css";
+
+// Internal Components
+import { Atag, ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import Footer from '@site/src/segments/Footer';
 import FAQ from './Faq';
-import { FooterComponent } from './Footer';
+
+// Assets Imports
+import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
+import HeaderRipple from "@site/static/assets/docs/ripple.svg";
+import { FiArrowUpRight } from 'react-icons/fi';
+
+// Internal Configs
+import GLOBALS, { device } from '@site/src/config/globals';
 import "./styles.css";
 
 // import styles from './styles.module.css';
@@ -27,10 +36,10 @@ const QuickstartItems: IQuickstartItem[] = [
   {
     title: 'Push Notification Quickstart',
     codeblock: `// Import Push SDK & Ethers
-import * as PushAPI from '@pushprotocol/restapi';
+import { PushAPI } from '@pushprotocol/restapi';
 import { ethers } from 'ethers';
 
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
+// Using random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
@@ -47,10 +56,10 @@ const apiResponse = await userAlice.channel.send(['*'], {
   {
     title: 'Push Chat Quickstart',
     codeblock: `// Import Push SDK & Ethers
-import * as PushAPI from '@pushprotocol/restapi';
+import { PushAPI } from '@pushprotocol/restapi';
 import { ethers } from 'ethers';
 
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
+// Using random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
@@ -60,7 +69,10 @@ const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
 const aliceMessagesBob = await userAlice.chat.send(
   '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
   {content: "Gm gm! It's a me... Mario"}
-);`
+);
+
+
+`
   },
 ]
 
@@ -295,73 +307,44 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
   );
 }
 
-function PushSdk({ title, Svg, PinkSvg, link }: SdkListItems) {
-
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  const handleMouseEnter = () => {
-    if (!isHovered) {
-      setIsHovered(true);
-    }
-  }
-  const handleMouseLeave = () => {
-    if (isHovered) {
-      setIsHovered(false);
-    }
-  }
-
-  return (
-    <Link to={link} target='_blank'>
-      <div onMouseOver={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`sdk-container ${isHovered ? 'border-pink' : 'gray-border'}`}>
-
-        <div className='sdk-container-inner'>
-          <div className='sdk-title spacing-small'>
-            {title}
-          </div>
-          <div className='sdk-icon'>
-            {
-              isHovered ? (
-                <PinkSvg />
-              ) : (
-                <Svg />
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </Link>
-  )
-}
-
 export default function HomepageFeatures(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   
   return (
     <section>
       <HeroHeader className={clsx('hero hero--primary')}>
-      <div className="section-container" style={{zIndex: '1'}}>
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className='spacing-small pointer'>
-          <Link
-            className='hero__button'
-            to="./dev/chat">
-            Get Started
-            <FiArrowUpRight className='ml-4' />
-          </Link>
-          
+        <div className="section-container" style={{zIndex: '1'}}>
+          <h1 className="hero__title">Push Documentation Hub</h1>
+          <p className="hero__subtitle">Get started with building native web3 communition for your protocol!</p>
+          <div className='spacing-small pointer'>
+            <Link
+              className='hero__button'
+              to="./dev/chat">
+              <SpanV2 padding="0 10px 0 0" fontSize="18px">Get Started</SpanV2>
+              <FiArrowUpRight size={16} />
+            </Link>
+          </div>
         </div>
-      </div>
-      <ItemVV2
-        position="absolute"
-        bottom="0"
-        left="0"
-        right="0"
-        height="50%"
-      >
-        <HeaderRipple/>
-      </ItemVV2>
-    </HeroHeader>
+        <ItemVV2
+          position="absolute"
+          bottom="-25%"
+          left="0"
+          right="0"
+          height="50%"
+        >
+          <PulseStatic />
+          <Pulse>
+            <Pulsate stagger={0}></Pulsate>
+            <Pulsate stagger={1}></Pulsate>
+            <Pulsate stagger={2}></Pulsate>
+            <Pulsate stagger={3}></Pulsate>
+            <Pulsate stagger={4}></Pulsate>
+            <Pulsate stagger={5}></Pulsate>
+            <Pulsate stagger={6}></Pulsate>
+          </Pulse>
+        </ItemVV2>
+      </HeroHeader>
+      
       <section className='main-section'>
           <HomepageSection alignItems="flex-start">
             <HomepageSubHeader>
@@ -391,7 +374,7 @@ export default function HomepageFeatures(): JSX.Element {
             <HomepageSubHeader>
               Push SDK
             </HomepageSubHeader>
-            <Link to='/' target='_blank'>
+            <Link to='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details' target='_blank'>
               <div className='hero_home_explore'>
                 <p className='hero_home_explore_link'>
                   Explore SDK
@@ -402,11 +385,26 @@ export default function HomepageFeatures(): JSX.Element {
           </ItemHV2>
             
           
-          <div className="guide_list">
-            {SdkList.map((props, idx) => (
-              <PushSdk key={idx} {...props} />
+          <PushSdkCardList justifyContent="flex-start">
+            {SdkList.map((item, idx) => (
+              <PushSdkCard>
+                <PushSdkContent
+                  href={item.link}
+                  target="_blank"
+                >
+                  <div className='sdk-container-inner'>
+                    <div className='sdk-title spacing-small'>
+                      {item.title}
+                    </div>
+                    <div className='sdk-icon'>
+
+                     <FiArrowUpRight size={24} />
+                    </div>
+                  </div>
+                </PushSdkContent>
+              </PushSdkCard>
             ))}
-          </div>
+          </PushSdkCardList>
           
             {/* <div className='Faqs-main-container'>
               <div className='sub-container'>
@@ -427,7 +425,10 @@ export default function HomepageFeatures(): JSX.Element {
             </div> */}
         </HomepageSection>
       </section>
-      <FooterComponent />
+
+      <Suspense fallback={<></>}>      
+        <Footer />
+      </Suspense>
     </section>
   );
 }
@@ -439,13 +440,48 @@ const HeroHeader = styled.header`
   overflow: hidden;
 `;
 
-const Ripple = styled.img`
+const pulseStaticAnim = keyframes`
+  100% { 
+    opacity: 0.25;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  }
+`
+
+const PulseStatic = styled.div`
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-`;
+  animation: ${pulseStaticAnim} 5s ease-out forwards;
+  z-index: 2;
+`
+
+const Pulse = styled.div`
+  width: 40px;
+  height: 40px;
+  background: var(--ifm-color-primary-preferred);
+  border-radius: 50%;
+  position: relative;
+`
+
+const pulsateAnim = keyframes`
+  100% { 
+    opacity: 0;
+    transform: scale(10);
+  }
+`
+
+const Pulsate = styled.span`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0.8;
+  animation: ${pulsateAnim} 6s ease-out infinite;
+  animation-delay: calc(1s * ${props => (props.stagger ? props.stagger : 1)});
+`
 
 const TechDocIcon = styled(ItemVV2)`
   align-self: flex-start;
@@ -461,7 +497,8 @@ const HomepageSection = styled(SectionV2)`
   margin-top: 70px;
   margin-bottom: 30px;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const HomepageSubHeader = styled(H2V2)`
@@ -480,6 +517,7 @@ const PopularQuickiesList = styled(ItemHV2)`
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
+  position: relative;
 `;
 
 const PopularQuickiesCard = styled(ItemVV2)`
@@ -488,6 +526,8 @@ const PopularQuickiesCard = styled(ItemVV2)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
+  overflow: scroll;
+
   box-sizing: border-box;
 
   @media ${device.laptop} {
@@ -503,8 +543,8 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   justify-content: flex-start;
   padding: 10px 20px 14px 80px;
   margin-bottom: -6px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
   position: relative;
 
   &:before {
@@ -526,13 +566,6 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   }
 `;
 
-const PopularQuickiesIcon = styled(SpanV2)`
-  color: #dd44b9;
-  position: absolute;
-  right: 10px;
-  font-size: 14px;
-`;
-
 const PopularQuickiesTitle = styled(SpanV2)`
   color: #9aa3db;
   font-size: 16px;
@@ -546,6 +579,9 @@ const PopularQuickiesContent = styled(ItemVV2)`
 
 const PopularQuickiesCodeBlock = styled(CodeBlock)`
   margin: 0px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  overflow: hidden;
 `;
 
 const TechDocCardList = styled(ItemHV2)`
@@ -585,10 +621,10 @@ const TechDocContent = styled(ButtonV2)`
   }
   
   &:hover {
-    border: 1px solid #d53a94;
+    border: 1px solid var(--ifm-color-primary-preferred);;
 
     & svg path {
-      stroke: #d53a94;
+      stroke: var(--ifm-color-primary-preferred);;
     }
   }
 `;
@@ -632,3 +668,45 @@ const TechDocCodeBlock = styled(CodeBlock)`
   overflow: scroll;
   max-width: 100%;
 `;
+
+const PushSdkCardList = styled(ItemHV2)`
+  gap: 32px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  align-items: center;
+`
+
+const PushSdkCard = styled(ItemHV2)`
+  align-self: flex-start; 
+  flex: 0 0 calc(33.33% - 21.33px);
+  min-width: 280px;
+  max-width: calc(33.33% - 21.33px);
+`
+
+const PushSdkContent = styled(Atag)`
+  color: var(--ifm-color-primary-text);
+  background: var(--ifm-color-primary-inverse);
+  align-items: stretch;
+  display: flex;
+  justify-content: stretch;
+  align-self: stretch;
+  border: 1px solid #d9d9d9;
+  width: 100%;
+  padding: 24px;
+
+  & svg {
+    color: #d9d9d9;
+  }
+
+  &:after {
+    background: transparent;
+  }
+
+  &:hover {
+    border: 1px solid var(--ifm-color-primary-preferred);;
+
+    & svg {
+      color: var(--ifm-color-primary-preferred);;
+    }
+  }
+`

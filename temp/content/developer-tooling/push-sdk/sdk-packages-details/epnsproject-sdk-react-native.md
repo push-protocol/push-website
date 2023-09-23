@@ -198,7 +198,7 @@ After you get the Notification data from the API
 const [notifData, setNotifData] = React.useState([]);
 
 // fetch data, parse and set it in state
-import * as PushAPI from '@pushprotocol/restapi';
+import { PushAPI } from '@pushprotocol/restapi';
 
 
 const notifications = await PushAPI.user.getFeeds({

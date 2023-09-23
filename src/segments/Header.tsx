@@ -227,8 +227,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     <Atag
-                      href="https://docs.push.org/developers"
-                      target="_blank"
+                      href="/docs"
                       title={t('header.docs.alt-developer-guides')}
                       background="transparent"
                       display="flex"
@@ -243,8 +242,7 @@ function Header() {
                       {t('header.docs.developer-guides')}
                     </Atag>
                     <Atag
-                      href="https://docs.push.org/governance"
-                      target="_blank"
+                      href="/docs"
                       title={t('header.docs.alt-governance-guides')}
                       background="transparent"
                       hoverbackground="#fff"

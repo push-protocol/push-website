@@ -170,9 +170,8 @@ export default function Home(): JSX.Element {
                 <FadeInAnimation wrapperElement="div" delay={0.55}>
                   <HeroCTA justifyContent="flex-start" gap="18px">
                     <Atag
-                      href="https://docs.push.org/developers"
+                      href="/docs"
                       title={t("home.hero.alt-start-button")}
-                      target="_blank"
                       background={GLOBALS.COLORS.HIGHLIGHT}
                       color={GLOBALS.COLORS.FONT_LIGHT}
                       lineHeight="26px"
@@ -480,9 +479,8 @@ export default function Home(): JSX.Element {
                 </ResponsiveH2>
 
                 <Atag
-                  href="https://docs.push.org/hub/"
+                  href="/docs"
                   title={t("home.grow-section.button-alt")}
-                  target="_blank"
                   background="#DD44B9"
                   borderRadius="16px"
                   padding="10px 15px"
@@ -1472,7 +1470,7 @@ const InvestorSubtitle = styled(SpanV2)`
 `
 
 const FeaturedCardList = styled(ItemHV2)`
-  margin: 0 0 380px 0;
+  margin: 0 0 270px 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemVV2)`    

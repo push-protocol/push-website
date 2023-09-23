@@ -1,3 +1,29 @@
-.docPage_node_modules-@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
-  display: none !important;
+.DocsHub .theme-back-to-top-button {
+  margin-right: 10px;
+}
+
+.DocsHub .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+  width: 100% !important;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
+  max-width: initial;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container {
+  max-width: initial;
+  padding: 0px !important;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row {
+  display: flex;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col {
+  padding: 0;
+  max-width: initial !important;
+}
+
+.DocsHub .theme-doc-footer, .DocsHub .pagination-nav {
+  display: none;
 }
