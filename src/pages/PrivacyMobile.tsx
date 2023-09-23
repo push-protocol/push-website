@@ -7,7 +7,6 @@ import Layout from '@theme/Layout';
 import React from 'react';
 
 // External Components
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
@@ -19,12 +18,9 @@ import { Atag, BV2, ContentV2, H3V2, HeroHeaderV2, ItemHV2, ItemVV2, PV2 } from 
 import { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 
-function Privacy() {
-  // Internationalization
-  const { t } = useTranslation();
-
+function PrivacyMobile() {
   return (
-    <Layout title={PageMeta.PRIVACY.pageTitle} description={PageMeta.PRIVACY.pageDescription}>
+    <Layout title={PageMeta.PRIVACYFORMOBILE.pageTitle} description={PageMeta.PRIVACYFORMOBILE.pageDescription}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -39,13 +35,12 @@ function Privacy() {
           })}
         </script>
       </Head> */}
-      <PrivacyWrapper>
+      <PrivacyMobileWrapper>
         <ResponsiveSection
           curve="bottom"
           padding="180px 0px 20px 0px"
           data-bkg="dark"
-          justifyContent="flex-start"
-          flexDirection="column"
+          justifyContent="center"
         >
           <ContentV2
             className="contentBox"
@@ -57,29 +52,28 @@ function Privacy() {
               flexDirection="column"
               justifyContent="flex-start"
             >
-              <HeroHeaderV2 textAlign="center">{t('privacy.hero.title')}</HeroHeaderV2>
+              <HeroHeaderV2 textAlign="center">PRIVACY POLICY MOBILE APPS</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
                 textAlign="center"
               >
-                {t('privacy.hero.description')}
+                Defines how Push collects, handles and processes data.
               </Para>
 
               <ItemVV2
-                align="center"
+                align="flex-start"
                 margin="0"
               >
                 <H3V2
                   maxWidth="400px"
                   fontSize="1rem"
-                  margin="40px 0 0 0"
+                  margin="40px 0px 80px 0px"
                   letterSpacing="0.1em"
                   textTransform="uppercase"
-                  lineHeight="1.5em"
                   textAlign="center"
                 >
-                  {t('privacy.hero.update-text')}
+                  LAST UPDATED: 24TH SEPTEMBER 2022
                 </H3V2>
               </ItemVV2>
             </ItemHV2>
@@ -94,8 +88,7 @@ function Privacy() {
           <ContentV2
             className="contentBox"
             alignSelf="center"
-            psdding="0px"
-            padding="40px 0px"
+            padding="0px"
           >
             <ItemHV2
               alignSelf="stretch"
@@ -205,8 +198,22 @@ function Privacy() {
                 </Para>
 
                 <Para>
-                  This Policy describes how Push may collect, use, disclose, process and manage your personal data, and
-                  applies to any individual’s personal data which is in our possession or under our control.
+                  This policy (the Policy) outlines how we collect, use, store and disclose your personal data. Please
+                  take a moment to read about how we collect, use and/or disclose your personal data so that you know
+                  and understand the purposes for which we may collect, use and/or disclose your personal data. By
+                  accessing the &quot;Push&rdquo; application available on Google Play or Apple App Store (the App), you
+                  agree and consent to Ethereum Push Notification Service Foundation (the Company), its related
+                  corporations, business units and affiliates, as well as their respective representatives and/or agents
+                  (collectively referred to herein as Push, us, we or our), collecting, using, disclosing and sharing
+                  amongst themselves the personal data, and to disclosing such personal data to relevant third party
+                  providers. This Policy supplements but does not supersede nor replace any other consent which you may
+                  have previously provided to us nor does it affect any rights that we may have at law in connection
+                  with the collection, use and/or disclosure of your personal data. We may from time to time update this
+                  Policy to ensure that this Policy is consistent with our future developments, industry trends and/or
+                  any changes in legal or regulatory requirements. Subject to your rights at law, the prevailing terms
+                  of this Policy shall apply. For the avoidance of doubt, this Policy forms part of the terms and
+                  conditions governing your relationship with us and should be read in conjunction with such terms and
+                  conditions.
                 </Para>
 
                 {/* What personal data is collected by Push */}
@@ -217,72 +224,18 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.1 What personal data is collected by Push
+                  1 What personal data is collected by Push
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
                   &quot;Personal data&rdquo; means data, whether true or not, about an individual who can be identified
                   (i) from that data, or (ii) from that data and other information to which the organisation has or is
-                  likely to have access. Some examples of personal data that Push may collect are:
+                  likely to have access. Personal data may be collected when you interact with our services or use the
+                  App, or may be received by Push from third-party databases or service providers that provide business
+                  information. For example, Push may collect personal data such as particulars of digital wallet
+                  addresses, transactions performed by said digital wallet addresses, public cryptographic key relating
+                  to digital wallet addresses on distributed ledger networks and/or similar information.
                 </Para>
 
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(a)</BV2> personal particulars (e.g. name, contact details, residential address, date of birth,
-                  identity card/passport details, social media handles and other social media profile information,
-                  and/or education details);
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(b)</BV2> financial details (e.g. income, expenses, credit history and/or credit card and bank
-                  information);
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(c)</BV2> images and voice recordings of our conversations with you, whether from our events or
-                  office surveillances or otherwise;
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(d)</BV2> work experience and employment details (e.g. occupation, directorships and other
-                  positions held, employment history, salary, and/or benefits);
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(e)</BV2> tax and insurance information;
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(f)</BV2> information about your risk profile, investments, investment objectives, knowledge and
-                  experience and/or business interests and assets;
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(g)</BV2> information about your use of our services and Website;
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(h)</BV2> usernames and password, third party account credentials (such as your Facebook login
-                  credentials, Google login credentials) and IP address;
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(i)</BV2> banking information (e.g. account numbers and banking transactions);
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(j)</BV2> private or public cryptographic key relating to addresses on distributed ledger
-                  networks and/or similar information; and/or
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(k)</BV2> personal opinions made known to us (e.g. feedback or responses to surveys).
-                </Para>
-
-                <Para margin="20px 0px 20px 0px">
-                  Personal data may be collected when you interact with our services or use the Website, or may be
-                  received by Push from third-party databases or service providers that provide business information.
-                </Para>
-
-                {/* Changes to this Privacy Policy */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -290,11 +243,59 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.2 Purposes for collection, use and disclosure of your personal data
+                  2 PERSONAL DATA AND THE BLOCKCHAIN
                 </Para>
                 <Para margin="-10px 0px 0px 0px">
-                  Push may collect, use and/or disclose your personal data for its business purposes, including
-                  operations for these purposes. These may include, without limitation, the following:
+                  Blockchain technology, also known as distributed ledger technology (DLT), is at the core of our
+                  business. Blockchains are decentralized and made up of digitally recorded data in a chain of packages
+                  called &quot;blocks&rdquo;. The manner in which these blocks are linked is chronological, meaning that
+                  the data is very difficult to alter once recorded. Since the ledger may be distributed all over the
+                  world (across several &quot;nodes&rdquo; which usually replicate the ledger) this means there is no
+                  single person making decisions or otherwise administering the system (such as an operator of a cloud
+                  computing system), and that there is no centralized place where it is located either.
+                </Para>
+
+                <Para margin="20px 0px 0px 0px">
+                  Accordingly, by design, a blockchain’s data cannot be changed or deleted and is said to be
+                  &quot;immutable&rdquo;. This may affect your ability to exercise your rights such as your right to
+                  erasure (&quot;right to be forgotten&rdquo;), or your rights to object or restrict processing of your
+                  personal data. Data on the blockchain cannot be erased and cannot be changed. Although smart contracts
+                  may be used to revoke certain access rights, and some content may be made invisible to others, it is
+                  not deleted.
+                </Para>
+
+                <Para margin="20px 0px 0px 0px">
+                  In certain circumstances, in order to comply with our contractual obligations to you (such as delivery
+                  of tokens or provision of other services) it will be necessary to collect certain personal data, such
+                  as your wallet address, onto the blockchain; this is done through a smart contract and requires you to
+                  execute such transactions using your wallet’s private key.
+                </Para>
+
+                <Para margin="20px 0px 0px 0px">
+                  The ultimate decisions to (a) transact on the blockchain using your wallet address, as well as (b)
+                  share the public key relating to your wallet address with anyone (including us) rests with you.{' '}
+                  <BV2>
+                    IF YOU WANT TO ENSURE YOUR PRIVACY RIGHTS ARE NOT AFFECTED IN ANY WAY, YOU SHOULD NOT TRANSACT ON
+                    BLOCKCHAINS AS CERTAIN RIGHTS MAY NOT BE FULLY AVAILABLE OR EXERCISABLE BY YOU OR US DUE TO THE
+                    TECHNOLOGICAL INFRASTRUCTURE OF THE BLOCKCHAIN. IN PARTICULAR THE BLOCKCHAIN IS AVAILABLE TO THE
+                    PUBLIC AND ANY PERSONAL DATA SHARED ON THE BLOCKCHAIN WILL BECOME PUBLICLY AVAILABLE.
+                  </BV2>
+                </Para>
+
+                <Para
+                  weight="400"
+                  spacing="0.2em"
+                  color="#000"
+                  textTransform="uppercase"
+                  size="1.2em"
+                >
+                  3 PURPOSES FOR COLLECTION, USE AND DISCLOSURE OF YOUR PERSONAL DATA
+                </Para>
+
+                <Para margin="0px 0px 0px 0px">
+                  Push may collect, use and/or disclose your personal data for its legitimate interests or business
+                  purposes, including operations for these purposes. These may include, without limitation, the
+                  following:
                 </Para>
 
                 <ListGroup>
@@ -304,17 +305,16 @@ function Privacy() {
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(i)</BV2> sale of digital tokens or virtual currencies;
+                    <BV2>(i)</BV2> services for sending of push-notifications, information updates, notices or
+                    correspondence;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(ii)</BV2> acting as intermediaries through any blockchain, network or platform developed or
-                    managed by us;
+                    <BV2>(ii)</BV2> acting as intermediaries through any blockchain, network or platform;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(iii)</BV2> recording and/or encryption on any blockchain, network or platform developed or
-                    managed by us;
+                    <BV2>(iii)</BV2> recording and/or encryption on any blockchain, network or platform;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
@@ -323,135 +323,68 @@ function Privacy() {
 
                   <Para margin="20px 0px 0px 40px">
                     <BV2>(v)</BV2> various products and/or services (whether digital or not, and whether provided
-                    through an external service provider or otherwise), including without limitation the Services as set
-                    out in the Terms of Service;
+                    through an external service provider or otherwise);
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(vi)</BV2> providing, managing or accessing digital wallets for holding digital assets;
+                    <BV2>(vi)</BV2> making payments for participation in any blockchain, network or platform developed
+                    or managed by us (as applicable);
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(vii)</BV2> access to smart contracts on and/or interacting with the Push Protocol, the Website
-                    or the App;
+                    <BV2>(vii)</BV2> carrying out research, planning and statistical analysis;
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(viii)</BV2> sending and receiving notifications and Content from various channels on the Push
-                    Protocol;
+                    <BV2>(viii)</BV2> trouble-shooting, technical maintenance and bug fixes; and/or
                   </Para>
 
                   <Para margin="20px 0px 0px 40px">
-                    <BV2>(ix)</BV2> making payments to you for participation in any blockchain, network or platform
-                    developed or managed by us (as applicable);
-                  </Para>
-
-                  <Para margin="20px 0px 0px 40px">
-                    <BV2>(x)</BV2> various products and/or services related to digital assets;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 40px">
-                    <BV2>(xi)</BV2> any escrow, courier, anti-counterfeiting or dispute resolution services;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 40px">
-                    <BV2>(xii)</BV2> transactions and clearing or reporting on these transactions;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 40px">
-                    <BV2>(xiii)</BV2> carrying out research, planning and statistical analysis; and/or
-                  </Para>
-
-                  <Para margin="20px 0px 0px 40px">
-                    <BV2>(xiv)</BV2> analytics for the purposes of developing or improving our products, services,
+                    <BV2>(ix)</BV2> analytics for the purposes of developing or improving our products, services,
                     security, service quality, staff training, and advertising strategies;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(b)</BV2> assessing and processing applications, instructions, transactions, or requests from
-                    you or our customers;
+                    <BV2>(b)</BV2> communicating with you, including providing you with updates on changes to services
+                    or products (whether made available by us or through us) including any additions, expansions,
+                    suspensions and replacements of or to such services or products and their terms and conditions;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(c)</BV2> communicating with you, including providing you with updates on changes to products,
-                    services and banking facilities (whether made available by us or through us) including any
-                    additions, expansions, suspensions and replacements of or to such products, services and banking
-                    facilities and their terms and conditions;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(d)</BV2> managing our infrastructure and business operations and complying with internal
+                    <BV2>(c)</BV2> managing our infrastructure and business operations and complying with internal
                     policies and procedures;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(e)</BV2> responding to queries or feedback;
+                    <BV2>(d)</BV2> responding to queries, feedback or complaint;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(f)</BV2> addressing or investigating any complaints, claims or disputes;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(g)</BV2> verifying your identity for the purposes of providing facilities, products or
-                    services, which would require comparison of your personal information against third party databases
-                    and/or provision of such information to third party service providers;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(h)</BV2> conducting credit checks, screenings or due diligence checks as may be required under
-                    applicable law, regulation or directive;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(i)</BV2> complying with all applicable laws, regulations, rules, directives, orders,
+                    <BV2>(e)</BV2> complying with all applicable laws, regulations, rules, directives, orders,
                     instructions and requests from any local or foreign authorities, including regulatory, governmental,
                     tax and law enforcement authorities or other authorities;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(j)</BV2> enforcing obligations owed to us;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(k)</BV2> monitoring products and services provided by or made available through us;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(l)</BV2> complying with obligations and requirements imposed by us from time to time by any
-                    credit bureau or credit information sharing services of which we are a member or subscriber;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(m)</BV2> creating and maintaining credit and risk related models;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(n)</BV2> financial reporting, regulatory reporting, management reporting, risk management
-                    (including monitoring credit exposures, preventing, detecting and investigating crime, including
-                    fraud and any form of financial crime), audit and record keeping purposes;
-                  </Para>
-
-                  <Para margin="20px 0px 0px 20px">
-                    <BV2>(o)</BV2> enabling any actual or proposed assignee or transferee, participant or
+                    <BV2>(f)</BV2> enabling any actual or proposed assignee or transferee, participant or
                     sub-participant of Push&apos;s rights or obligations to evaluate any proposed transaction;
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(p)</BV2> enforcing obligations owed to us; and/or
+                    <BV2>(g)</BV2> enforcing obligations owed to us, protecting our rights or property, and protecting
+                    against legal liability; and/or
                   </Para>
 
                   <Para margin="20px 0px 0px 20px">
-                    <BV2>(q)</BV2> seeking professional advice, including legal or tax advice.
+                    <BV2>(h)</BV2> seeking professional advice, including legal or tax advice.
                   </Para>
 
-                  <Para margin="20px 0px 20px 0px">
-                    We may also use personal data for purposes set out in the Terms of Service that govern our
+                  <Para>
+                    We may also use personal data for purposes set out in the terms and conditions that govern our
                     relationship with you or our customer.
                   </Para>
                 </ListGroup>
 
-                {/* Use of personal data for marketing purposes */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -459,9 +392,10 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.3 Use of personal data for marketing purposes
+                  4 USE OF PERSONAL DATA FOR MARKETING PURPOSES
                 </Para>
-                <Para margin="-10px 0px 0px">
+
+                <Para margin="0px 0px 0px 0px">
                   We may use your personal data to offer you products or services, including special offers, promotions,
                   contests or entitlements that may be of interest to you or for which you may be eligible. Such
                   marketing messages may be sent to you in various modes including but not limited to electronic mail,
@@ -469,7 +403,7 @@ function Privacy() {
                   In doing so, we will comply with all applicable data protection and privacy laws.
                 </Para>
 
-                <Para margin="20px 0px 0px 0px">
+                <Para margin="0px 0px 0px 0px">
                   In respect of sending telemarketing messages to your telephone number via short message service,
                   telephone calls, facsimile and other mobile messaging services, please be assured that we shall only
                   do so if we have your clear and unambiguous consent in writing or other recorded form to do so or if
@@ -487,27 +421,14 @@ function Privacy() {
 
                 <Para margin="20px 0px 0px 0px">
                   To find out more on how you can change the way we use your personal data for marketing purposes,
-                  please contact us at{' '}
-                  <Atag
-                    href="mailto://support@epns.io"
-                    display=" inline"
-                    color="#e1087f"
-                    background="transparent"
-                    padding="0px"
-                    letterSpacing="inherit"
-                    textTransform="initial"
-                  >
-                    support@epns.io
-                  </Atag>
-                  .
+                  please contact us.
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
-                  Nothing in this section shall vary or supersede the Terms of Service that govern our relationship with
-                  you.
+                  Nothing in this Policy shall vary or supersede the terms and conditions that govern our relationship
+                  with you.
                 </Para>
 
-                {/* Disclosure and sharing of personal data */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -515,31 +436,34 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.4 Disclosure and sharing of personal data
+                  5 DISCLOSURE AND SHARING OF PERSONAL DATA
                 </Para>
-                <Para margin="-10px 0px 0px">
+
+                <Para margin="0px 0px 0px 0px">
                   We may from time to time and in compliance with all applicable laws on data privacy, disclose your
-                  personal data to any personnel of Push or to third parties (including without limitation banks,
-                  financial institutions, credit card companies, credit bureaus and their respective service providers,
-                  companies providing services relating to insurance and/or reinsurance to us, and associations of
-                  insurance companies, agents, contractors or third party service providers who provide services to us
-                  such as telecommunications, information technology, payment, data processing, storage and archival,
-                  and our professional advisers such as our auditors and lawyers, and regulators and authorities),
-                  whether located in Singapore or elsewhere, in order to carry out the purposes set out above. Please be
-                  assured that when we disclose your personal data to such parties, we require them to ensure that any
-                  personal data disclosed to them are kept confidential and secure.
+                  personal data to any personnel of Push, group entities, or to third parties (including without
+                  limitation banks, financial institutions, credit card companies, credit bureaus and their respective
+                  service providers, companies providing services relating to insurance and/or reinsurance to us, and
+                  associations of insurance companies, agents, contractors or third party service providers who provide
+                  services to us such as telecommunications, information technology, payment, data processing, storage
+                  and archival, and our professional advisers such as our auditors and lawyers, and regulators and
+                  authorities), located in any jurisdiction, in order to carry out the purposes set out above. Please be
+                  assured that when we disclose your personal data to such parties, we will disclose only the personal
+                  information that is necessary to deliver the service required, and will also require them to ensure
+                  that any personal data disclosed to them are kept confidential and secure.
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
                   For more information about the third parties with whom we share your personal data, you may, where
-                  appropriate, wish to refer to the agreement(s) and/or Terms of Service that govern our relationship
-                  with you or our customer. You may also contact us for more information (please see section 1.9 below).
+                  appropriate, wish to refer to the agreement(s) and/or terms and conditions that govern our
+                  relationship with you or our customer. You may also contact us for more information (please see
+                  section 11 below).
                 </Para>
 
                 <Para margin="20px 0px 0px 0px">
                   We wish to emphasise that Push does not sell personal data to any third parties and we shall remain
                   fully compliant of any duty or obligation of confidentiality imposed on us under the applicable
-                  agreement(s) and/or Terms of Service that govern our relationship with you or our customer or any
+                  agreement(s) and/or terms and conditions that govern our relationship with you or our customer or any
                   applicable law.
                 </Para>
 
@@ -547,18 +471,25 @@ function Privacy() {
                   You are responsible for ensuring that the personal data you provide to us is accurate, complete, and
                   not misleading and that such personal data is kept up to date. You acknowledge that failure on your
                   part to do so may result in our inability to provide you with the products and services you have
-                  requested. To update your personal data, please contact us (please see section 1.9 below for contact
+                  requested. To update your personal data, please contact us (please see section 11 below for contact
                   details). Where you provide us with personal data concerning individuals other than yourself, you are
                   responsible for obtaining all legally required consents from the concerned individuals and you shall
                   retain proof of such consent(s), such proof to be provided to us upon our request.
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
-                  We may transfer, store, process and/or deal with your personal data outside Singapore. In doing so, we
-                  will comply with all applicable data protection and privacy laws.
+                  We may transfer, store, process and/or deal with your personal data in any jurisdiction, and
+                  accordingly such personal data may be transferred to computers, servers or hardware located outside of
+                  your state, province, country or other governmental jurisdiction where the data protection laws may
+                  differ from those in your jurisdiction. Push will take all steps reasonably necessary to ensure that
+                  your data is treated securely and in accordance with this Policy and no transfer of your personal data
+                  will take place to an organisation or a country unless there are adequate controls in place including
+                  the security of your data and other personal information (including without limitation the Standard
+                  Contractual Clauses approved by the European Commission). Your consent to this Policy followed by your
+                  submission of such information represents your agreement to the transfer of personal data as described
+                  herein.
                 </Para>
 
-                {/* Cookies and related technologies */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -566,27 +497,30 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.5 Cookies and related technologies
+                  6 COOKIES/TOKENS AND RELATED TECHNOLOGIES
                 </Para>
-                <Para margin="-10px 0px 0px">
-                  The Website uses cookies. A cookie is a small text file placed on your computer or mobile device when
-                  you visit a Website or use an app. Cookies collect information about users and their visit to the
-                  Website or use of the app, such as their Internet protocol (IP) address, how they arrived at the
-                  Website (for example, through a search engine or a link from another Website), how they navigate
-                  within the Website or app, browser information, computer or device type, operating system, internet
-                  service provider, website usage, referring/exit pages, platform type, date/time stamp, number of
-                  clicks, and ads viewed. We use cookies and other technologies to facilitate your internet sessions and
-                  use of our apps, offer you products and/or services according to your preferred settings, track use of
-                  our websites and apps and to compile statistics about activities carried out on our websites.
+
+                <Para margin="0px 0px 0px 0px">
+                  The App uses tokens to store a user&apos;s credentials for interacting with the App. A token is a
+                  small encrypted file placed on your computer or mobile device which may include an anonymous unique
+                  identifier and certain information about your use of the App, such as their Internet protocol (IP)
+                  address, browser information, computer or device type, operating system, internet service provider,
+                  App usage, date/time stamp, and functions as your credentials for accessing the App. We use tokens,
+                  cookies and other technologies to facilitate your internet sessions and use of the App, offer you
+                  customised products and/or services according to your preferred settings, display features and
+                  services which might be of interest to you (including ads on our services), track usage of the App, to
+                  compile statistics about activities carried out on the App, and to hold certain information.
+                </Para>
+
+                <Para margin="20px 0px 0px 0px">
+                  You may set up your web browser to block or remove tokens stored from your computer or mobile device.
+                  However, if you do so, you may not be able to use certain features and functions of the App.
                 </Para>
 
                 <Para margin="20px 0px 20px 0px">
-                  You may set up your web browser to block cookies from monitoring your website visit. You may also
-                  remove cookies stored from your computer or mobile device. However, if you do block cookies you may
-                  not be able to use certain features and functions of our web sites.
+                  Tokens will also be deleted when you uninstall the App from your computer or mobile device.
                 </Para>
 
-                {/* Other web sites */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -594,30 +528,28 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.6 Other web sites
-                </Para>
-                <Para margin="-10px 0px 20px">
-                  Our websites may contain links to other websites which are not maintained by Push. This Policy only
-                  applies to the websites of Push. When visiting these third party websites, you should read their
-                  privacy policies which will apply to your use of such websites.
+                  7 RETENTION OF PERSONAL DATA
                 </Para>
 
-                {/* Retention of personal data */}
-                <Para
-                  weight="400"
-                  spacing="0.2em"
-                  color="#000"
-                  textTransform="uppercase"
-                  size="1.2em"
-                >
-                  1.7 Retention of personal data
-                </Para>
-                <Para margin="-10px 0px 20px">
+                <Para margin="0px 0px 0px 0px">
                   Your personal data is retained as long as the purpose for which it was collected remains and until it
-                  is no longer necessary for any legal or business purposes.
+                  is no longer necessary for any legal or business purposes. This enables us to comply with legal and
+                  regulatory requirements or use it where we need to for our legitimate purposes, such as transfers of
+                  digital assets, and dealing with any disputes or concerns that may arise.
                 </Para>
 
-                {/* Queries, Access/Correction Requests and Withdrawal of Consent */}
+                <Para margin="20px 0px 0px 0px">
+                  We may need to retain information for a longer period where we need the information to comply with
+                  regulatory or legal requirements or where we may need it for our legitimate purposes (e.g. to help us
+                  respond to queries or complaints, fighting fraud and financial crime, responding to requests from
+                  regulators etc).
+                </Para>
+
+                <Para margin="20px 0px 20px 0px">
+                  When we no longer need to use personal data, we will remove it from our systems and records and/or
+                  take steps to anonymise it so that you can no longer be identified from it.
+                </Para>
+
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -625,51 +557,53 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.8 Queries, Access/Correction Requests and Withdrawal of Consent
-                </Para>
-                <Para margin="-10px 0px 20px">If you:</Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(a)</BV2> have queries about our data protection processes and practices;
+                  8 QUERIES, ACCESS/CORRECTION REQUESTS AND WITHDRAWAL OF CONSENT
                 </Para>
 
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(b)</BV2> wish to request access to and/or make corrections to your personal data in our
-                  possession or under our control; or
-                </Para>
+                <ListGroup>
+                  <Para margin="0px 0px 0px 0px">If you:</Para>
 
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(c)</BV2> wish to withdraw your consent to our collection, use or disclosure of your personal
-                  data,
-                </Para>
+                  <Para margin="20px 0px 0px 20px">
+                    <BV2>(a)</BV2> have queries about our data protection processes and practices;
+                  </Para>
 
-                <Para margin="20px 0px 0px">
-                  please submit a written request (with supporting documents, (if any) to our Compliance Officer at:{' '}
-                  <Atag
-                    href="mailto://support@epns.io"
-                    display=" inline"
-                    color="#e1087f"
-                    background="transparent"
-                    padding="0px"
-                    letterSpacing="inherit"
-                    textTransform="initial"
-                  >
-                    support@epns.io
-                  </Atag>
-                  . Our Compliance Officer shall endeavour to respond to you within 30 days of your submission. Please
-                  note that if you withdraw your consent to any or all use or disclosure of your personal data,
-                  depending on the nature of your request, we may not be in a position to continue to provide our
-                  services or products to you or administer any contractual relationship in place. Such withdrawal may
-                  also result in the termination of any agreement you may have with us. Our legal rights and remedies
-                  are expressly reserved in such event.
-                </Para>
+                  <Para margin="20px 0px 0px 20px">
+                    <BV2>(b)</BV2> wish to request access to and/or make corrections to your personal data in our
+                    possession or under our control; or
+                  </Para>
 
-                <Para margin="20px 0px 20px">
-                  We may charge you a fee for processing your request for access. Such a fee depends on the nature and
-                  complexity of your access request. Information on the processing fee will be made available to you.
-                </Para>
+                  <Para margin="20px 0px 0px 20px">
+                    <BV2>(c)</BV2> wish to withdraw your consent to our collection, use or disclosure of your personal
+                    data,
+                  </Para>
 
-                {/* Contact information */}
+                  <Para margin="20px 0px 0px 0px">
+                    Please submit a written request (with supporting documents, (if any) to our Compliance Officer at:{' '}
+                    <Atag
+                      href="mailto://support@epns.io"
+                      display=" inline"
+                      color="#e1087f"
+                      background="transparent"
+                      padding="0px"
+                      letterSpacing="inherit"
+                      textTransform="initial"
+                    >
+                      support@epns.io
+                    </Atag>
+                    . Our Data Protection Officer shall respond to you within 30 days of your submission. Please note
+                    that if you withdraw your consent to any or all use or disclosure of your personal data, depending
+                    on the nature of your request, we may not be in a position to continue to provide our services or
+                    products to you or administer any contractual relationship in place. Such withdrawal may also result
+                    in the termination of any agreement you may have with us. Our legal rights and remedies are
+                    expressly reserved in such event.
+                  </Para>
+
+                  <Para margin="20px 0px 0px 0px">
+                    We may charge you a fee for processing your request for access. Such a fee depends on the nature and
+                    complexity of your access request. Information on the processing fee will be made available to you.
+                  </Para>
+                </ListGroup>
+
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -677,11 +611,12 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.9 Contact information
+                  9 CONTACT INFORMATION
                 </Para>
-                <Para margin="-10px 0px 20px">
+
+                <Para margin="0px 0px 0px 0px">
                   To contact us on any aspect of this Policy or your personal data or to provide any feedback that you
-                  may have, please contact our Compliance Officer at{' '}
+                  may have, please contact our Data Protection Officer at{' '}
                   <Atag
                     href="mailto://support@epns.io"
                     display=" inline"
@@ -696,7 +631,6 @@ function Privacy() {
                   .
                 </Para>
 
-                {/* Governing Law and Jurisdiction */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -704,14 +638,14 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.10 Governing Law and Jurisdiction
+                  10 GOVERNING LAW AND JURISDICTION
                 </Para>
-                <Para margin="-10px 0px 20px">
+
+                <Para margin="0px 0px 0px 0px">
                   This Policy and your use of the Website shall be governed and construed in accordance with the laws of
                   Singapore. You agree to submit to the exclusive jurisdiction of the Singapore courts.
                 </Para>
 
-                {/* Governing Law and Jurisdiction */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -719,18 +653,18 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.11 Amendments and updates to Push Privacy Policy
+                  11 AMENDMENTS AND UPDATES TO PUSH PRIVACY POLICY
                 </Para>
-                <Para margin="-10px 0px 20px">
+
+                <Para margin="0px 0px 0px 0px">
                   We reserve the right to amend this Policy from time to time to ensure that this Policy is consistent
                   with any developments to the way Push uses your personal data or any changes to the laws and
-                  regulations applicable to Push. We will make available the updated Policy on the Website. You are
-                  encouraged to visit the Website from time to time to ensure that you are well informed of our latest
+                  regulations applicable to Push. We will make available the updated Policy on the App. You are
+                  encouraged to visit the App from time to time to ensure that you are well informed of our latest
                   policies in relation to personal data protection. All communications, transactions and dealings with
                   us shall be subject to the latest version of this Policy in force at the time.
                 </Para>
 
-                {/* For European Union or European Economic Area Residents */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -738,11 +672,13 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.12 For European Union or European Economic Area Residents
+                  12 FOR EUROPEAN UNION OR EUROPEAN ECONOMIC AREA RESIDENTS
                 </Para>
-                <Para margin="-10px 0px 20px">
-                  This section applies if you are an individual located in the European Union or European Economic Area.
-                  Subject to applicable law, you have the following additional rights in relation to your personal data:
+
+                <Para margin="0px 0px 0px 0px">
+                  This section 12 applies if you are an individual located in the European Union or European Economic
+                  Area. Subject to applicable law, you have the following additional rights in relation to your personal
+                  data:
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
@@ -763,15 +699,15 @@ function Privacy() {
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
-                  <BV2>(d)</BV2> the right to restrict further processing of your personal data (unless we demonstrate
-                  compelling legitimate grounds for the processing);
-                </Para>
-
-                <Para margin="20px 0px 0px 20px">
-                  <BV2>(e)</BV2> rights in relation to automated decision-making and profiling (you have the right to be
+                  <BV2>(d)</BV2> rights in relation to automated decision-making and profiling (you have the right to be
                   free from decisions based solely on automated processing of your personal data, including profiling,
                   that affect you, unless such processing is necessary for entering into, or the performance of, a
                   contract between you and us or you provide your explicit consent to such processing);
+                </Para>
+
+                <Para margin="20px 0px 0px 20px">
+                  <BV2>(e)</BV2> the right to restrict further processing of your personal data (unless we demonstrate
+                  compelling legitimate grounds for the processing);
                 </Para>
 
                 <Para margin="20px 0px 0px 20px">
@@ -780,12 +716,12 @@ function Privacy() {
                   affect the lawfulness of processing based on your prior consent); and
                 </Para>
 
-                <Para margin="20px 0px 0px 20px">
+                <Para margin="20px 0px 20px 20px">
                   <BV2>(g)</BV2> the right to complain to a supervisory authority in your country of residence in the
                   event that data is misused.
                 </Para>
 
-                <Para margin="20px 0px 20px">
+                <Para margin="0px 0px 20px 0px">
                   If you believe that our processing of your personal information infringes data protection laws, you
                   have a legal right to lodge a complaint with a supervisory authority responsible for data protection.
                   You may do so in the EU member state of your residence, your place of work or the place of the alleged
@@ -805,7 +741,6 @@ function Privacy() {
                   .
                 </Para>
 
-                {/* Your acceptance of these terms */}
                 <Para
                   weight="400"
                   spacing="0.2em"
@@ -813,26 +748,27 @@ function Privacy() {
                   textTransform="uppercase"
                   size="1.2em"
                 >
-                  1.13 Contact information
+                  13 YOUR ACCEPTANCE OF THESE TERMS
                 </Para>
-                <Para margin="-10px 0px 0px">
+
+                <Para margin="0px 0px 0px 0px">
                   This Policy applies in conjunction with any other notices, contractual clauses and consent clauses
                   that apply in relation to the collection, use and disclosure of your personal data by us. We may
                   revise this Policy from time to time without any prior notice. You may determine if any such revision
                   has taken place by referring to the date on which this Policy was last updated.
                 </Para>
 
-                <Para margin="20px 0px 20px">
-                  By using the Website and/or any services provided by Push, you signify your acceptance of this Policy
-                  and terms of service. If you do not agree to this Policy or terms of service, please do not use the
-                  Website or any services provided by Push. Your continued use of the Website following the posting of
-                  changes to this Policy will be deemed your acceptance of those changes.
+                <Para margin="20px 0px 0px 0px">
+                  By using the App and/or any services provided by Push, you signify your acceptance of this Policy and
+                  terms of service. If you do not agree to this Policy or terms of service, please do not use the App or
+                  any services provided by Push. Your continued use of the App following the posting of changes to this
+                  Policy will be deemed your acceptance of those changes.
                 </Para>
               </ItemHV2>
             </ItemHV2>
           </ContentV2>
         </ResponsiveSection>
-      </PrivacyWrapper>
+      </PrivacyMobileWrapper>
     </Layout>
   );
 }
@@ -880,7 +816,7 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const PrivacyWrapper = styled.div`
+const PrivacyMobileWrapper = styled.div`
   @media ${device.tablet} {
     width: 100%;
   }
@@ -893,9 +829,9 @@ const ListGroup = styled.div`
 
 const Para = styled(PV2)`
   font-weight: 300;
-  font-size: ${(props) => props.size || '1.1em'};
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
   color: #000000ee;
-  text-align: ${(props) => props.textAlign || 'initial'};
 `;
 
-export default Privacy;
+export default PrivacyMobile;

@@ -11,6 +11,10 @@ export const PageMeta = {
     pageTitle: 'Privacy Policy',
     pageDescription: 'Privacy Policy of Push Protocol'
   },
+  PRIVACYFORMOBILE: {
+    pageTitle: 'Mobile Apps Privacy Policy',
+    pageDescription: 'Mobile Apps Privacy Policy of Push Protocol'
+  },
   FAQS: {
     pageTitle: 'FAQ',
     pageDescription: 'Frequently Asked Questions of Push Protocol'

@@ -55,7 +55,7 @@ function TermsOfService() {
       <TosWrapper>
         <ResponsiveSection
           curve="bottom"
-          padding="80px 0px 20px 0px"
+          padding="180px 0px 20px 0px"
           data-bkg="dark"
           justifyContent="center"
         >
@@ -98,7 +98,7 @@ function TermsOfService() {
                 align="flex-start"
                 margin="0px"
               >
-                <Para size="1.5rem">
+                <Para testAlign="center" size="1.3rem">
                   <BV2>IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
                   ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
                 </Para>
