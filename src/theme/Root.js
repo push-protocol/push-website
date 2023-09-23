@@ -1,6 +1,6 @@
 
 // React + Web3 Essentials
-import React from 'react';
+import React, { Suspense } from 'react';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
@@ -64,20 +64,34 @@ function Root({ children }) {
       classname: 'DocsHub',
       pathname: '/DOCS',
       condition: 'exact'
+    },
+    {
+      classname: 'IncludeDocuNavbar',
+      pathname: '/DOCS',
+      condition: 'subpaths'
+    },
+    {
+      classname: 'IncludeDocuNavbar',
+      pathname: '/BLOG',
+      condition: 'all'
     }
   ];
 
   return (
     <div class={returnAdditionalClasses(superimposedConditions)}>
       {excludeDefaultConfigAt('/BRB') && excludeDefaultConfigAt('/DOCS') && excludeDefaultConfigAt('/BLOG') &&
-        <Header />
+        <Suspense fallback={<></>}>      
+          <Header />
+        </Suspense>
       }
       
       {/* Main react children */}
       {children}
 
       {excludeDefaultConfigAt('/BRB') && excludeDefaultConfigAt('/DOCS') && excludeDefaultConfigAt('/BLOG') &&
-        <Footer />
+        <Suspense fallback={<></>}>      
+          <Footer />
+        </Suspense>
       }
     </div>
   );

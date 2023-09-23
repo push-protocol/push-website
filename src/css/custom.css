@@ -93,7 +93,7 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: "FKGroteskNeue";
   src: url("../../static/fonts/FKGroteskNeue-Regular.woff2") format("woff2"),
     url("../../static/fonts/FKGroteskNeue-Regular.woff") format("woff"),
@@ -124,10 +124,25 @@
   font-weight: 700 800 900;
   font-style: normal;
   font-display: swap;
-}
+} */
 /* ----- */
 /* Custom Font Ends */
 /* ----- */
+
+/* ----- */
+/* NAV BAR DISPLAY CUSTOM LOGIC */
+/* ----- */
+.navbar {
+  display: none;
+}
+
+.IncludeDocuNavbar > .navbar {
+  display: flex;
+}
+/* ----- */
+/* NAV BAR DISPLAY CUSTOM LOGIC */
+/* ----- */
+
 
 a:hover {
   text-decoration: none;
