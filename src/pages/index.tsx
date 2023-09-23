@@ -4,6 +4,8 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
+import Head from '@docusaurus/Head';
+import Layout from '@theme/Layout';
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
 // External Components
@@ -113,10 +115,22 @@ export default function Home(): JSX.Element {
   };
 
   return (
-    <PageWrapper
-      pageName={PageMeta.HOME.pageName}
-      pageTitle={PageMeta.HOME.pageTitle}
-    >
+    <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription}>
+      {/* <Head>
+        <meta property="og:image" content="image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://example.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Meta Open Source',
+            url: 'https://opensource.fb.com/',
+            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+          })}
+        </script>
+      </Head> */}
+      
       <HomeWrapper>
         {/* HERO SECTION */}
         <SectionV2
@@ -863,7 +877,7 @@ export default function Home(): JSX.Element {
         </FeaturedInSection>
         
       </HomeWrapper>
-    </PageWrapper>
+    </Layout>
   );
 }
 
@@ -1470,7 +1484,7 @@ const InvestorSubtitle = styled(SpanV2)`
 `
 
 const FeaturedCardList = styled(ItemHV2)`
-  margin: 0 0 270px 0;
+  margin: 0 0 320px 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemVV2)`    

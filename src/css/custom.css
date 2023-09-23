@@ -143,6 +143,33 @@
 /* NAV BAR DISPLAY CUSTOM LOGIC */
 /* ----- */
 
+/* ----- */
+/* MDX PAGE THEMING */
+/* ----- */
+.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
+  padding: 140px 0px 30px 0px;
+  max-width: 1213px;
+  display: flex;
+  margin: auto;
+  align-items: flex-start;
+}
+
+@media (max-width: 850px) {
+  .row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
+
+    padding: 140px 20px 30px 20px;
+  }
+}
+
+.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module .col {
+  flex: 1;
+  max-width: initial;
+  padding: 0px;
+}
+
+/* ----- */
+/* MDX PAGE THEMING ENDS HERE */
+/* ----- */
 
 a:hover {
   text-decoration: none;
@@ -349,10 +376,6 @@ article .markdown > p > code {
   display: flex;
   flex-direction: column;
   margin: 0px auto;
-}
-
-.container {
-  padding: 1rem 0rem 2rem 1rem !important;
 }
 
 .hero__title {

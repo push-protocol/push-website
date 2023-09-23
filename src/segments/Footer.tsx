@@ -39,7 +39,7 @@ function Footer() {
       <ResponsiveSection
         id="footer"
         background="#121315"
-        padding="160px 0 0 0"
+        padding="70px 0 0 0"
       >
         <ContentV2
           className="contentBox"

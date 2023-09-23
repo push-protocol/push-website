@@ -1,34 +1,34 @@
 export default {
   HOME: {
-    pageName: 'home',
-    pageTitle: 'PUSH | Previously EPNS'
+    pageTitle: 'Home',
+    pageDescription: 'Homepage of Push Protocol - The communication protocol of Web3'
   },
   TOS: {
-    pageName: 'tos',
-    pageTitle: 'PUSH | Terms Of Service'
+    pageTitle: 'Terms of Service',
+    pageDescription: 'Terms of Service of Push Protocol'
   },
   PRIVACY: {
-    pageName: 'privacy',
-    pageTitle: 'PUSH | Privacy'
+    pageTitle: 'Privacy Policy',
+    pageDescription: 'Privacy Policy of Push Protocol'
   },
   FAQS: {
-    pageName: 'faqs',
-    pageTitle: 'PUSH | FAQs'
+    pageTitle: 'FAQ',
+    pageDescription: 'Frequently Asked Questions of Push Protocol'
   },
   FRENS: {
-    pageName: 'frens',
-    pageTitle: 'PUSH | FrensOfPush'
+    pageTitle: 'Frens',
+    pageDescription: 'Explore integrations done by our frens'
   },
   SPACES: {
-    pageName: 'spaces',
-    pageTitle: 'PUSH | spaces'
+    pageTitle: 'Spaces',
+    pageDescription: "Explore Push Spaces and how to get started with it's integration"
   },
   CHEAT: {
-    pageName: 'cheatsheet',
-    pageTitle: 'PUSH | cheatsheet'
+    pageTitle: 'Cheat Sheet',
+    pageDescription: 'Explore Push Cheat Sheet and how to get started with it'
   },
   BRB: {
-    pageName: 'brb',
-    pageTitle: 'PUSH | brb'
+    pageTitle: 'Billion Reasons to Build (BRB)',
+    pageDescription: 'Solve a Hard Problem from top global web3 projects and earn prize and recognition'
   }
 };

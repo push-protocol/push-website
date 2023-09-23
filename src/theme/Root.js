@@ -43,14 +43,14 @@ function locationPathExists(pathname, condition, comingfrom = null) {
   if (condition === "exact" || condition === "subpaths") {
 
     // check if sub path exist in pathname and change result;
-    if (str.length > pathname.length) {
+    if (str.length > pathname.length && str.substring(0, pathname.length) === pathname) {
       // path has more 
       const remainingLength = str.substring(pathname.length, pathname.length + 1) === "/" ? str.length - pathname.length - 1 : str.length - pathname.length;
       
       if (condition === "exact") {
         result = remainingLength == 0 ? true : false;
       } else if (condition === "subpaths") {
-        result = remainingLength > 0 ? false : true;
+        result = remainingLength > 0 ? true : false;
       }
     }
   }
@@ -61,7 +61,7 @@ function locationPathExists(pathname, condition, comingfrom = null) {
 function Root({ children }) {  
   const superimposedConditions = [
     {
-      classname: 'DocsHub',
+      classname: 'DocsHub IncludeDocuNavbar NavBarDark',
       pathname: '/DOCS',
       condition: 'exact'
     },
