@@ -304,8 +304,8 @@ const FrensText = () => {
               return (
                 <ImageV2
                   width="auto"
-                  src={require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default}
-                  srcSet={`${require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default} 2x, ${require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default} 3x`}
+                  src={require(`@site/static/assets/website/float/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/float/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/float/${item.srcref}@3x.webp`).default} 3x`}
                   alt={`${item?.alt}`}
                   className={item.classname}
                 />
