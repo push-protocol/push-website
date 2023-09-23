@@ -2,53 +2,62 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
+import Head from '@docusaurus/Head';
+import Layout from '@theme/Layout';
 import React from 'react';
 
 // External Components
-import ReactGA from 'react-ga';
-import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 // Internal Component
-import HybridSection from '../components/HybridSection';
-import PageWrapper from '../components/PageWrapper';
+import HybridSection from '@site/src/components/HybridSection';
+import PageWrapper from '@site/src/components/PageWrapper';
 import {
   Atag,
+  BV2,
   ContentV2,
   H2V2,
   H3V2,
   HeroHeaderV2,
   ItemHV2,
   ItemVV2,
-  SpanV2,
-  PV2,
-  BV2,
   LIV2,
+  PV2,
+  SpanV2,
   ULV2,
-} from '../components/SharedStylingV2';
+} from '@site/src/components/SharedStylingV2';
 
 // Internal Configs
-import { device } from '../config/globals';
-import PageMeta from '../config/pageMeta';
+import { device } from '@site/src/config/globals';
+import { PageMeta } from '@site/src/config/pageMeta';
 
 function TermsOfService() {
-  // React GA Analytics
-  ReactGA.pageview('/tos');
-
   // Internationalization
   const { t } = useTranslation();
 
   return (
-    <PageWrapper
-      pageName={PageMeta.TOS.pageName}
-      pageTitle={PageMeta.TOS.pageTitle}
-    >
+    <Layout title={PageMeta.TOS.pageTitle} description={PageMeta.TOS.pageDescription}>
+      {/* <Head>
+        <meta property="og:image" content="image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://example.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Meta Open Source',
+            url: 'https://opensource.fb.com/',
+            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+          })}
+        </script>
+      </Head> */}
       <TosWrapper>
         <ResponsiveSection
           curve="bottom"
           padding="80px 0px 20px 0px"
           data-bkg="dark"
-          justifyContent="flex-start"
+          justifyContent="center"
         >
           <ContentV2
             className="contentBox"
@@ -1342,7 +1351,7 @@ function TermsOfService() {
           </ContentV2>
         </ResponsiveSection>
       </TosWrapper>
-    </PageWrapper>
+    </Layout>
   );
 }
 
