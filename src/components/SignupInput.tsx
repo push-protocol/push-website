@@ -29,7 +29,7 @@ function SignupInput() {
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input
+        <SignupInputField
           type="text"
           name="email"
           placeholder={t('home.email-section.email-input')}
@@ -99,29 +99,6 @@ const Wrapper = styled.form`
     column-gap: 3px;
   }
 
-  & input[type='text'] {
-    all: unset;
-
-    box-sizing: border-box;
-    font-family: 'Strawford';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: normal;
-    letter-spacing: -0.03em;
-    color: #9c9cbe;
-    background: #ffffff;
-    min-width: 220px;
-    width: 100%;
-    padding: 6px;
-    padding-left: 8px;
-
-    &::placeholder {
-      color: #a5a7b4;
-      opacity: 1;
-    }
-  }
-
   & button {
     cursor: pointer;
     min-width: 160px;
@@ -139,6 +116,33 @@ const Wrapper = styled.form`
       font-size: 12px;
       padding: 14px 16px;
     }
+  }
+`
+
+const SignupInputField = styled.input`
+  all: unset;
+
+  box-sizing: border-box;
+  font-family: 'Strawford';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: -0.03em;
+  color: #9c9cbe;
+  background: #ffffff;
+  min-width: 220px;
+  width: 100%;
+  padding: 6px;
+  padding-left: 8px;
+
+  @media ${device.laptop} {
+    min-width: auto;
+  }
+  
+  &:placeholder {
+    color: #a5a7b4;
+    opacity: 1;
   }
 `;
 

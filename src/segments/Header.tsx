@@ -20,9 +20,9 @@ import { Atag, ContentV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import PushLogoTextBlack from '@site/static/assets/PushLogoTextBlack.svg';
 import PushLogoTextWhite from '@site/static/assets/PushLogoTextWhite.svg';
-import EnSVG from '@site/static/assets/en.svg';
-import EsSVG from '@site/static/assets/es.svg';
-import HiSVG from '@site/static/assets/hi.svg';
+import EnSVG from '@site/static/assets/website/locales/en.svg';
+import EsSVG from '@site/static/assets/website/locales/es.svg';
+import HiSVG from '@site/static/assets/website/locales/hi.svg';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';

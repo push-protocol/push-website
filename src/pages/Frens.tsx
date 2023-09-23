@@ -25,23 +25,24 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import PageWrapper from '@site/src/components/PageWrapper';
 import SpinnerSVG from '@site/static/assets/Spinner.gif';
 import Image from '@site/static/assets/bg-image.png';
-import AragonSVG from '@site/static/assets/website/float/Aragon.svg';
-import BancorSVG from '@site/static/assets/website/float/Bancor.svg';
-import CoinDeskSVG from '@site/static/assets/website/float/Coindesk.svg';
-import LensSVG from '@site/static/assets/website/float/Lens.svg';
-import LifiSVG from '@site/static/assets/website/float/Lifi.svg';
-import LifiMainSVG from '@site/static/assets/website/float/LifiMain.svg';
-import MeanFinanceSVG from '@site/static/assets/website/float/MeanFinance.svg';
-import QidaoSVG from '@site/static/assets/website/float/Qidao.svg';
-import SnapshotSVG from '@site/static/assets/website/float/Snapshot.svg';
-import UniswapSVG from '@site/static/assets/website/float/Uniswap.svg';
-import UnstoppableSVG from '@site/static/assets/website/float/Unstoppable.svg';
-import AaveSVG from '@site/static/assets/website/float/aave.svg';
+import AaveSVG from '@site/static/assets/website/float/raw/aave.svg';
+import AragonSVG from '@site/static/assets/website/float/raw/aragon.svg';
+import BancorSVG from '@site/static/assets/website/float/raw/bancor.svg';
+import CoinDeskSVG from '@site/static/assets/website/float/raw/coindesk.svg';
+import LensSVG from '@site/static/assets/website/float/raw/lens.svg';
+import LifiSVG from '@site/static/assets/website/float/raw/lifi.svg';
+import MeanFinanceSVG from '@site/static/assets/website/float/raw/meanfinance.svg';
+import QidaoSVG from '@site/static/assets/website/float/raw/qidao.svg';
+import SafeSVG from '@site/static/assets/website/float/raw/safe.svg';
+import SnapshotSVG from '@site/static/assets/website/float/raw/snapshot.svg';
+import UniswapSVG from '@site/static/assets/website/float/raw/uniswap.svg';
+import UnstoppableSVG from '@site/static/assets/website/float/raw/unstoppable.svg';
 import { BiSearch } from 'react-icons/bi';
 import { FiChevronDown } from 'react-icons/fi';
 
 // Internal Configs
-import { ContentV2, H2V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ContentV2, H2V2, HeroHeaderV2, ImageV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
 import { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 
@@ -215,15 +216,15 @@ const FrensText = () => {
   useEffect(() => {
     floatAnimation('.aave');
     floatAnimationSecond('.lens');
-    floatAnimationThird('.lifi');
+    floatAnimationThird('.safe');
     floatAnimation('.stop');
     floatAnimationSecond('.snapshot');
     floatAnimationThird('.qidao');
     floatAnimation('.bancor');
     floatAnimationSecond('.coindesk');
-    floatAnimationThird('.lifi-main');
+    floatAnimationThird('.lifi');
     floatAnimation('.aragon');
-    floatAnimationSecond('.mean-finance');
+    floatAnimationSecond('.meanfinance');
     floatAnimationThird('.uniswap');
   }, []);
 
@@ -296,19 +297,20 @@ const FrensText = () => {
           <AnimationSection
             minHeight="60vh"
             padding="50px 0px 70px 0px"
+            overflow="hidden"
           >
-            <AaveSVG className="aave" />
-            <LensSVG className="lens" />
-            <LifiSVG className="lifi" />
-            <UnstoppableSVG className="stop" />
-            <SnapshotSVG className="snapshot" />
-            <QidaoSVG className="qidao" />
-            <BancorSVG className="bancor" />
-            <CoinDeskSVG className="coindesk" />
-            <LifiMainSVG className="lifi-main" />
-            <AragonSVG className="aragon" />
-            <MeanFinanceSVG className="mean-finance" />
-            <UniswapSVG className="uniswap" />
+            
+            {FrensHeaderList.map((item) => {
+              return (
+                <ImageV2
+                  width="auto"
+                  src={require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default}
+                  srcSet={`${require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default} 2x, ${require(`@site/static/assets/website/float/${item.srcref}@3x.png`).default} 3x`}
+                  alt={`${item?.alt}`}
+                  className={item.classname}
+                />
+              );
+            })}
 
             <ContentV2
               className="contentBox"
@@ -675,7 +677,7 @@ const AnimationSection = styled(ResponsiveSection)`
     }
   }
 
-  .lifi {
+  .safe {
     position: absolute;
     top: 30%;
     left: 85%;
@@ -741,7 +743,7 @@ const AnimationSection = styled(ResponsiveSection)`
     }
   }
 
-  .lifi-main {
+  .lifi {
     position: absolute;
     top: 60%;
     left: 20%;
@@ -764,7 +766,7 @@ const AnimationSection = styled(ResponsiveSection)`
       left: 5%;
     }
   }
-  .mean-finance {
+  .meanfinance {
     position: absolute;
     top: 30%;
     left: 10%;
