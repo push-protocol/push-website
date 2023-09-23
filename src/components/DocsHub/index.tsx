@@ -497,7 +497,7 @@ const HomepageSection = styled(SectionV2)`
   margin-top: 70px;
   margin-bottom: 30px;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 `;
 
@@ -679,8 +679,13 @@ const PushSdkCardList = styled(ItemHV2)`
 const PushSdkCard = styled(ItemHV2)`
   align-self: flex-start; 
   flex: 0 0 calc(33.33% - 21.33px);
-  min-width: 280px;
+  min-width: 250px;
   max-width: calc(33.33% - 21.33px);
+
+  @media ${device.laptop} {
+    flex: 1;
+    max-width: initial;
+  }
 `
 
 const PushSdkContent = styled(Atag)`
