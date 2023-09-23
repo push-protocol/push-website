@@ -23,7 +23,7 @@ export const HeroHeaderV2 = styled.h1`
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: ${(props) => props.textAlign || "initial"};
   text-transform: none;
   text-shadow: none;
   display: flex;
