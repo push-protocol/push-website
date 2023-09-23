@@ -1031,6 +1031,7 @@ const ItemImage = styled(ItemVV2)`
 const FeaturedInSection = styled(ResponsiveSection)`
   padding: 0;
   min-height: auto;
+  flex-direction: column;
 
   & .contentBox {
     gap: 80px;
