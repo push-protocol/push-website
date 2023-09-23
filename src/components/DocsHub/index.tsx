@@ -18,14 +18,11 @@ import FAQ from './Faq';
 
 // Assets Imports
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
-import HeaderRipple from "@site/static/assets/docs/ripple.svg";
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
-import GLOBALS, { device } from '@site/src/config/globals';
+import { device } from '@site/src/config/globals';
 import "./styles.css";
-
-// import styles from './styles.module.css';
 
 interface IQuickstartItem {
   title: string;
@@ -99,7 +96,7 @@ const DevGuide: DevGuideItems[] = [
   {
     title: 'Push Chat',
     Svg: require('@site/static/assets/docs/message.svg').default,
-    link: './dev/chat',
+    link: '/docs/chat',
     description: (
       <>
         Learn about the details of Push Chat and how to do web3 native messaging.
@@ -319,7 +316,7 @@ export default function HomepageFeatures(): JSX.Element {
           <div className='spacing-small pointer'>
             <Link
               className='hero__button'
-              to="./dev/chat">
+              to="/docs/chat">
               <SpanV2 padding="0 10px 0 0" fontSize="18px">Get Started</SpanV2>
               <FiArrowUpRight size={16} />
             </Link>
@@ -416,7 +413,7 @@ export default function HomepageFeatures(): JSX.Element {
                     <p className='hero_home_explore_link'>
                       Explore FAQs
                     </p>
-                    <ArrowUp className='arrowUp-icon' />
+                    <FiArrowUpRight className='arrowUp-icon' />
                   </div>
                 </Link>
               </div>

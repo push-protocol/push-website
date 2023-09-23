@@ -55,6 +55,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          path: "blog",
           routeBasePath: "blog",
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
@@ -113,10 +114,9 @@ const config = {
         },
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "pushChatSidebar",
+            to: "/docs/",
             position: "right",
-            label: "Documentation Hub",
+            label: "Docs Hub",
           },
           { to: "/blog", label: "Blog", position: "right" },
           {

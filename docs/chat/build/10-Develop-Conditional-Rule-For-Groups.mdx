@@ -1,0 +1,294 @@
+---
+id: docs-chat-develop-conditional-rules-for-group
+title: Conditional Rules for Group
+hide_title: true
+slug: ./conditional-rules-for-group
+displayed_sidebar: pushChatSidebar
+sidebar_position: 10
+---
+
+# What is conditional gating
+Conditonal gating allows you to define rules for the members of the group for different priveleges / permissions such as `entry` or `chat`. It is driven by Push Chat rules engine which is inpired by json rules engine and allows you to create powerful dynamics guiding communication for your community. Some examples of what you can achieve with it —
+- **Creating token gated group** - ie: user needs to hold XX token to join the group
+- **Creating nft gated group** - ie: user needs to hold XX NFT to join the gorup
+- **Defining multi-chain conditions** - ie: user can join the group if they have 5 tokens on Ethereum or 10 tokens on Polygon
+- **Defining sending message conditions** - ie: user needs 1 token to join the group but 100 to send message
+- **Defining non-web3 conditions using Guild** - ie: user needs to follow `@pushprotocol` on twitter to be able to join the group
+- **Creating game theories by combining one or multiple conditions** - ie: you need 1 token on any chain to join the group but sending messages require you to hold 1000 tokens or 1 NFT or 20 POAPs, etc
+
+<head>
+  <title>Conditional Gating of Group | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/components/SharedStylingV2';
+
+## Understanding the rules object
+The **rules** object is an optional parameter that you pass in [create group API call](./create-group) to conditional gate **joining** or **sending message** in group chat.
+
+### Overview
+
+`rules`<br/>
+├ `permission` - `entry` or `chat`<br/>
+&emsp;└ `conditions`<br/> 
+&emsp;&emsp;└`decider` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;└`criteria 1`<br/>
+&emsp;&emsp;&emsp;└`criteria 2`<br/>
+&emsp;&emsp;└`decider` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;└`criteria 3`<br/>
+
+_`rules`_ object is made up of individual **permissions** that define privilages of the group. 
+
+_`permission`_ object contains **conditions** that needs to be satisfied.
+
+_`conditions`_ object is an array of one or more **decider**, ALL of which needs to be fulfilled for permission to be granted.
+
+_`decider`_ contains array of **criteria**, the namespace of decider (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
+
+_`criteria`_ is the atomic condition that has **type**, **category**, **subcategory** and **data**, based on which a particular condition is deemed as completed or failed.
+
+To summarize, a list of **criteria** is created by you that is then defined inside **decider** to define their logical operation which is then passed in **conditions** of a particular **permission**. The list of individual **permission** is then attached to **rules** of the group to enable Push Chat rule engine to create dynamic communities with creative game theories.
+
+### Rules object Parameters
+
+| Param                                                 | Type     | Subtype            | Default | Remarks                                                                                                                                                                                               |
+| ----------------------------------------------------- | -------- | ------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `rules`                                               | `object` | -                  | -       | Rules object                                                                                                                                                                                          |
+| `rules.[permission]`                                  | `object` | -                  | -       | Permissions object for specific privilege of the group. Multiple permission object can reside within `rules` object                                                                                   |
+| -                                                     | `entry`  | `object`           | -       | Permissions object for specific privilege of the group. `entry` permission conditionalizes joining a group                                                                                            |
+| -                                                     | `chat`   | `object`           | -       | Permissions object for specific privilege of the group. `chat` permission conditionalizes sending a message in that group                                                                             |
+| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `decider` objects                                                                                                                                                              |
+| `rules.[permission].conditions.[decider]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `decider` key, Valid `decider` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
+| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
+| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
+| `rules.[permission].conditions.[decider].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[decider]` array                                                                                                                       |
+
+
+### Criteria object Parameters 
+Criteria object supports multiple access control protocols which can have different conditions and rules, currently Push Chat supports `PUSH` and `GUILD` type in criteria, owing to the way each individual protocol handles their respective **type**, **category**, **subcategory** and **data**, we are segregating the options and what they do for clarity.
+
+#### When using type - `PUSH`
+
+| Param                                                 | Type     | Subtype            | Default | Remarks |
+| ----------------------------------------------------- | -------- | ------------------ | ------- | ------- |
+| `[criteria]` | `object` | - | - | - | Criteria object |
+| `type` | `string` | - | - | Define the `type` of the criteria, needs to be `PUSH` for below category, subcategory to be applicable |
+| `category` | `string` - can be `ERC20`, `ERC721` or `CustomEndpoint` | - | - | Defines the category of the criteria, `ERC20` means ERC-20 or normal token, `ERC721` means ERC-721 or NFT tokens, `CustomEndpoint` means a URL will be provided that results in 200 OK |
+| `subcategory` | `string` | - | - | Further narrows down the condition that you want to run. For `ERC20` or `ERC721` - supported conditions are `holder` or `owner` which means that the criteria will check if a wallet is owner or holder. For `CustomEndpoint`, the subcategory is `GET` or `POST` depending upon what HTTP request you want to use |
+| `data` | `object` | - | - | define the data to be passed for checking conditions of criteria |
+| - | `contract` | `string` | - | Only used for `ERC20` or `ERC721` category. Remember to define the contract in chain agnostic fashion. **{chain_standard}:{chain_id}:{contract_address}**, for example: `eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE` points to $PUSH token on Ethereum mainnet while `eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1` points to $PUSH token on Polygon mainnet |
+| - | `comparision` | `string` - supports `<=`, `>=`, `==` | - | Only used for `ERC20` or `ERC721` category. Define what comparision to use while comparing the data |
+| - | `amount` | `number` | - | Only used for `ERC20` or `ERC721` category. Define the number to be passed in the amount |
+| - | `url` | `string` | - | Only used for `CustomEndpoint` category. Pass in the URL that when polled will return 200 OK for succes. API url are automatically appended with `{{user_address}}/checkAccess` while checking access |
+
+
+## Use Case Example - Token gated community
+### Problem Statement
+We want to create a group that whose content is not visible to anyone outside our community of $PUSH. Furthermore, we want to make sure that the group can be viewed by anyone who has atleast 1 $PUSH on Ethereum or on Polygon.
+
+### Solution 
+Let's break down the problem statement into individual requirements
+
+**Visibility:** Creating a group that is not visible to anyone outside it's member is simple, we need to set up `private` flag in [create group API](create-group#create-group-api).
+
+**Group Join Permission:** We have two criteria over here:
+- **Criteria 1**: User should have 1 $PUSH on Ethereum
+- **Criteria 2**: User should have 1 $PUSH on Polygon
+
+```typescript
+// Push token on Ethereum Criteria
+{
+  type: "PUSH", // define type that rules engine should go for
+  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+  data: { 
+    "contract": "eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE", // $PUSH address on ETH
+    "comparison": ">=", // what comparision needs to pass
+    "amount": 1 // amount that needs to passed
+  }
+}
+```
+
+```typescript
+// Push token on Polygon Criteria
+{
+  type: "PUSH", // define type that rules engine should go for
+  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+  data: { 
+    "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+    "comparison": ">=", // what comparision needs to pass
+    "amount": 1 // amount that needs to passed
+  }
+}
+```
+
+- Either of criteria should be able to allow user to join the group, this means that the **decider** to use to combine these criterias would be `any`
+
+```typescript
+// decider object - 'any' since either condition should allow access
+any: [
+  {
+    type: "PUSH", // define type that rules engine should go for
+    category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+    subcategory: "holder", // define if you are checking 'holder' or 'owner'
+    data: { 
+      "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+      "comparison": ">=", // what comparision needs to pass
+      "amount": 1 // amount that needs to passed
+    }
+  },
+  {
+    type: "PUSH", // define type that rules engine should go for
+    category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+    subcategory: "holder", // define if you are checking 'holder' or 'owner'
+    data: { 
+      "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+      "comparison": ">=", // what comparision needs to pass
+      "amount": 1 // amount that needs to passed
+    }
+  }
+]
+```
+
+- Since there are no other conditions that are required, create the entire rules object
+
+
+```typescript
+  rules: {
+    entry: { // permission object
+      conditions: [ // conditions object
+        any: [ // decider object
+          { // criteia object
+            type: "PUSH", // define type that rules engine should go for
+            category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+            subcategory: "holder", // define if you are checking 'holder' or 'owner'
+            data: { 
+              "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+              "comparison": ">=", // what comparision needs to pass
+              "amount": 1 // amount that needs to passed
+            }
+          },
+          { // criteia object
+            type: "PUSH", // define type that rules engine should go for
+            category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+            subcategory: "holder", // define if you are checking 'holder' or 'owner'
+            data: { 
+              "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+              "comparison": ">=", // what comparision needs to pass
+              "amount": 1 // amount that needs to passed
+            }
+          }
+        ]
+      ]
+    }
+    chat: {} // no permission condition is defined for chat access
+  }
+```
+
+
+- Finally pass this rules object into the group that we are creating using the [create group API call](./create-group).
+```typescript
+  // Creating your token gated community
+  const createTokenGatedGroup = await userAlice.chat.group.create('Push Community', {
+    description: 'Token gated web3 native chat example', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // not needed as per problem statement, can omit
+    private: true,
+    rules: {
+      entry: { // permission object
+        conditions: [ // conditions object
+          any: [ // decider object
+            { // criteia object
+              type: "PUSH", // define type that rules engine should go for
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { 
+                "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 1 // amount that needs to passed
+              }
+            },
+            { // criteia object
+              type: "PUSH", // define type that rules engine should go for
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { 
+                "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 1 // amount that needs to passed
+              }
+            }
+          ]
+        ]
+      }
+      chat: {} // no permission condition is defined for chat access
+    }
+  }
+```
+
+## Token gated group and send message example
+
+Below is an advance version of gated controls that are applied to both `entry` to the group as well as sending `chat` in the group.
+
+```typescript
+  // We are going to create a group that is:
+  // Private - All conversations in this group is encrypted and visible only to members of the group
+  // Gated entry by either of two rules 
+  // Gated entry - Rule 1 - It takes 10 $XYZ token on Ethereum or on Polygon to join the group
+  // Gated chat by rule of having $1000 XYZ on Ethereum token to allow sending chat in the group
+  const myTokenGatedGroup = await userAlice.chat.group.create('BRB Chat', {
+    description: 'This is your DAO community native web3 chat', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
+    members: ['0x123...', '0xABC...', 'eip155:0x754...'], // see types of recipient to learn more
+    admins: ['nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
+    private: true, // ensures chat within group is encrypted and is only visible to members of the group
+    rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
+      entry: { // define condition for joining the group
+        conditions: [ // set of all conditions that should be fulfilled to join the group
+          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+            { // define criteria 1
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 10 // amount that needs to passed
+              }
+            },
+            { // define criteria 2
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 10 // amount that needs to passed
+              }
+            }
+          ]
+        ]
+      },
+      chat: {
+        conditions: [ // define condition for sending message in the group
+          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+            { // define criteria 1
+              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+              subcategory: "holder", // define if you are checking 'holder' or 'owner'
+              data: { // define the data check
+                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                "comparison": ">=", // what comparision needs to pass
+                "amount": 1000 // amount that needs to passed
+              }
+            }
+          ]
+        ]
+      }
+    }
+  });
+
+```
