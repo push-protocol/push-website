@@ -6,8 +6,8 @@ import styled from "styled-components";
 
 import { BiLoaderAlt } from "react-icons/bi";
 
-import { Span } from "../utils/SharedStyling";
-import useEmailValidationAndSend from "../utils/useEmailValidationAndSend";
+import { SpanV2 } from "@site/src/components/SharedStylingV2";
+import useEmailValidationAndSend from "../../utils/useEmailValidationAndSend";
 
 export type InputTextFieldProps = {
   placeholder?: string,
@@ -41,14 +41,14 @@ function EmailInputTextField(props: InputTextFieldProps) {
         {isLoading ? <BiLoaderAlt size={24} className="loader" /> : null}
       </Wrapper>
       {apiResponse && (
-        <Span className="msg" color="#FFFFFF">
+        <SpanV2 className="msg" color="#FFFFFF">
           {apiResponse}
-        </Span>
+        </SpanV2>
       )}
       {!apiResponse && emailError && (
-        <Span className="msg" color="red">
+        <SpanV2 className="msg" color="red">
           {emailError}
-        </Span>
+        </SpanV2>
       )}
     </Box>
   );

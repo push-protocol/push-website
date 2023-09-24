@@ -2,10 +2,10 @@
   "header": {
     "docs": {
       "title": "Docs",
-      "developer-guides": "Developer guides",
-      "alt-developer-guides": "Read Developer guides",
-      "governance-guides": "Governance guides",
-      "alt-governance-guides": "Read Governance guides",
+      "developer-guides": "Developer Hub",
+      "alt-developer-guides": "Explore all things dev in the Developer Hub",
+      "governance-guides": "Governance Hub",
+      "alt-governance-guides": "Explore all Governance related things in Governance Hub",
       "whitepaper": "Whitepaper",
       "alt-whitepaper": "Read Whitepaper"
     },

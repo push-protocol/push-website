@@ -68,6 +68,7 @@ const config = {
   ],
 
   plugins: [
+    require.resolve('./plugins/custom-webpack-plugin'),
     [
       "@docusaurus/plugin-client-redirects",
       {
@@ -163,6 +164,7 @@ const config = {
       //   textColor: '#e03dc1',
       //   isCloseable: true,
       // },
+      
     }),
 };
 

@@ -17,7 +17,7 @@ import styled from 'styled-components';
 import ChannelItem, { Tilt } from '@site/src/components/ChannelItem';
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
 import HybridSection from '@site/src/components/HybridSection';
-import SignupInput from '@site/src/components/SignupInput';
+import SignupInput from '@site/src/components/SignUp/SignupInput';
 import { objChannelList } from '@site/src/config/ChannelList';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 

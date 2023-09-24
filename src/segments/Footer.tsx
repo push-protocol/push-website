@@ -10,8 +10,8 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
-import EmailInputTextField from '@site/src/components/EmailInputTextField';
 import { Atag, ContentV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import EmailInputTextField from '@site/src/components/SignUp/EmailInputTextField';
 import PushLogoTextWhite from '@site/static/assets/PushLogoTextWhite.svg';
 import AndroidSVG from '@site/static/assets/android.svg';
 import AppleSVG from '@site/static/assets/apple.svg';
@@ -223,14 +223,7 @@ function Footer() {
                   >
                     {t('footer.links-section.resources-column.blog-link')}
                   </FooterAnchorSecondary>
-                  <FooterAnchorSecondary
-                    href="https://whitepaper.push.org/"
-                    title={t('footer.links-section.resources-column.whitepaper-link')}
-                    target="_blank"
-                  >
-                    {t('footer.links-section.resources-column.whitepaper-link')}
-                  </FooterAnchorSecondary>
-
+                  
                   <FooterAnchorSecondary
                     href="https://github.com/ethereum-push-notification-service"
                     title={t('footer.links-section.resources-column.github-link')}
@@ -542,6 +535,7 @@ const FooterAnchorPrimary = styled(Atag)`
   line-height: 142%;
   justify-content: flex-start;
   background: transparent;
+  border-radius: 0;
 
   &:hover & {
     filter: transparent;
@@ -563,6 +557,7 @@ const FooterAnchorSecondary = styled(Atag)`
   line-height: 142%;
   justify-content: flex-start;
   background: transparent;
+  border-radius: 0;
 
   &:before {
     background: transparent;

@@ -18,15 +18,15 @@ import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
-import AnalyticsStats from "@site/src/components/AnalyticsStats";
 import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
+import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
+import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
 import PartnerChannels from "@site/src/components/PartnerChannels";
-import PushProductsScroll from "@site/src/components/PushProductsScroll";
 import {
   Atag,
   ContentV2,
@@ -38,7 +38,7 @@ import {
   SectionV2,
   SpanV2
 } from "@site/src/components/SharedStylingV2";
-import SignupInput from "@site/src/components/SignupInput";
+import SignupInput from "@site/src/components/SignUp/SignupInput";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Import Assets
@@ -56,14 +56,8 @@ import SecurityalertsFigure from "@site/static/assets/figures/securityalerts.svg
 import GithubSVG from "@site/static/assets/github.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
 import TwitterSVG from "@site/static/assets/twitter.svg";
-import BeInCryptoSVG from "@site/static/assets/website/coverage/raw/BeInCryptoLogo.svg";
-import BalajiTweethandleBlackSVG from "@site/static/assets/website/coverage/raw/balajitweethandle.svg";
-import CoindeskBlackSVG from "@site/static/assets/website/coverage/raw/coindesk_black.svg";
-import DefiPrimeBlackSVG from "@site/static/assets/website/coverage/raw/defiprime.svg";
-import EthFoundationBlackSVG from "@site/static/assets/website/coverage/raw/eth_foundation_black.svg";
 
 // Internal Configs
-import TeamList from "@site/src/components/config/teamList";
 import { InvList } from "@site/src/config/HomeInvestorList";
 import { MediaList } from "@site/src/config/HomeMediaList";
 import GLOBALS, { device } from '@site/src/config/globals';

@@ -2,10 +2,10 @@
   "header": {
     "docs": {
       "title": "Documentación",
-      "developer-guides": "Guías Para Desarrolladores",
-      "alt-developer-guides": "Lee las Guías Para Desarrolladores",
-      "governance-guides": "Guías De Gobernanza",
-      "alt-governance-guides": "Lee las Guías De Gobernanza",
+      "developer-guides": "Centro de documentación",
+      "alt-developer-guides": "Explora todo lo relacionado con el desarrollo en el Centro de desarrolladores",
+      "governance-guides": "Centro de gobernanza",
+      "alt-governance-guides": "Explore todo lo relacionado con la gobernanza en Governance Hub",
       "whitepaper": "Whitepaper",
       "alt-whitepaper": "Lee el Whitepaper"
     },

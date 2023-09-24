@@ -162,7 +162,6 @@ export const H1V2 = styled.h1`
     props.fontFamily || "Strawford, Helvetica, sans-serif"};
   text-align: ${(props) => props.textAlign || "inherit"};
   line-height: ${(props) => props.lineHeight || "110%"};
-  /* text-shadow: 0 0 20px rgb(255 255 255 / 60%); */
   text-shadow: none;
   z-index: ${(props) => props.zIndex || "auto"};
 
@@ -177,11 +176,21 @@ export const H1V2 = styled.h1`
   }
 `;
 
-export const H2V2 = styled(H1V2)`
+export const H2V2 = styled.h2`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
+  font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
+  text-transform: ${(props) => props.textTransform || "inherit"};
+  margin: ${(props) => props.margin || "0px"};
+  padding: ${(props) => props.padding || "0px"};
   letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  font-family: ${(props) =>
+    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  text-align: ${(props) => props.textAlign || "inherit"};
+  line-height: ${(props) => props.lineHeight || "110%"};
+  text-shadow: none;
+  z-index: ${(props) => props.zIndex || "auto"};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -194,8 +203,21 @@ export const H2V2 = styled(H1V2)`
   }
 `;
 
-export const H3V2 = styled(H1V2)`
+export const H3V2 = styled.h3`
+  color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
+  font-weight: ${(props) => props.fontWeight || 700};
+  text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
+  text-transform: ${(props) => props.textTransform || "inherit"};
+  margin: ${(props) => props.margin || "0px"};
+  padding: ${(props) => props.padding || "0px"};
+  letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  font-family: ${(props) =>
+    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  text-align: ${(props) => props.textAlign || "inherit"};
+  line-height: ${(props) => props.lineHeight || "110%"};
+  text-shadow: none;
+  z-index: ${(props) => props.zIndex || "auto"};
 
   @media ${device.laptop} {
     font-size: ${(props) =>

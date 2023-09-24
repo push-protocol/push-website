@@ -4,11 +4,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Span } from "../utils/SharedStyling";
+import { Span } from "../../utils/SharedStyling";
 
 import { device } from '@site/src/config/globals';
-import useEmailValidationAndSend from "../utils/useEmailValidationAndSend";
-import useMediaQuery from "../utils/useMediaQuery";
+import useEmailValidationAndSend from "../../utils/useEmailValidationAndSend";
+import useMediaQuery from "../../utils/useMediaQuery";
 
 function SignupInput() {
   const [isLoading, apiResponse, emailError, onEmailSubmit] =

@@ -9,9 +9,6 @@ import React, { useEffect, useState } from 'react';
 // External Components
 import { useLocation } from '@docusaurus/router';
 import { useTranslation } from 'react-i18next';
-import { AiOutlineClose } from 'react-icons/ai';
-import { BsChevronDown } from 'react-icons/bs';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import styled from 'styled-components';
 
 // Internal Components
@@ -23,6 +20,11 @@ import PushLogoTextWhite from '@site/static/assets/PushLogoTextWhite.svg';
 import EnSVG from '@site/static/assets/website/locales/en.svg';
 import EsSVG from '@site/static/assets/website/locales/es.svg';
 import HiSVG from '@site/static/assets/website/locales/hi.svg';
+
+// Import Assets
+import { AiOutlineClose } from 'react-icons/ai';
+import { BsChevronDown } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
@@ -256,22 +258,6 @@ function Header() {
                     >
                       {t('header.docs.governance-guides')}
                     </Atag>
-                    <Atag
-                      href="https://whitepaper.push.org/"
-                      target="_blank"
-                      title={t('header.docs.alt-whitepaper')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.docs.whitepaper')}
-                    </Atag>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -318,8 +304,7 @@ function Header() {
                       {t('header.more.faq')}
                     </LinkToV2>
                     <Atag
-                      href="https://push-protocol.medium.com/"
-                      target="_blank"
+                      href="/blog"
                       title={t('header.more.alt-blog')}
                       background="transparent"
                       hoverbackground="#fff"
