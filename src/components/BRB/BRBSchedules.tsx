@@ -108,8 +108,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                   return (
                     <ScheduleCardContainer
                       key={index}
+                      className={schedule.hasEnded ? 'disabled' : ''}
                       background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
-                      style={{ cursor: schedule.hasEnded ? 'not-allowed' : 'pointer' }}
                       title={`${schedule?.title}`}
                       onClick={() => {
                         if (!schedule.hasEnded) {
@@ -119,8 +119,8 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                     >
                       <ImageContainer>
                         <Image
-                          src={require(`@site/static/assets/website/brb/schedules/${schedule?.srcref}.png`)}
-                          srcSet={`${require(`@site/static/assets/website/brb/schedules/${schedule?.srcref}@2x.png`)} 2x, ${require(`@site/static/assets/website/brb/schedules/${schedule?.srcref}@3x.png`)} 3x`}
+                          src={require(`@site/static/assets/website/brb/schedules/${schedule.srcref}.webp`).default}
+                          srcSet={`${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@3x.webp`).default} 3x`}
                           alt={`${schedule?.alt}`}
                         />
                       </ImageContainer>
@@ -181,7 +181,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
               title="Previous page"
               className="splide__arrow splide__arrow--prev"
             >
-              <Icon src={Left} />
+              <Left />
             </Button>
             {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
             <Button
@@ -190,7 +190,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
               title="Next page"
               className="splide__arrow splide__arrow--next"
             >
-              <Icon src={Right} />
+              <Right />
             </Button>
             <ButtonV2
               border="1px solid #E64DE9"
@@ -254,6 +254,7 @@ const Header = styled.span`
 `;
 
 const ScheduleCardContainer = styled.button`
+  border: 0px;
   width: 413px;
   height: 324px;
   padding: 0px;
@@ -266,6 +267,14 @@ const ScheduleCardContainer = styled.button`
   border-radius: 25px;
   transition: all 0.3s;
   transform: scale(1);
+  cursor: pointer;
+
+  &.disabled {
+     /* Custom Styles */
+    cursor: not-allowed;
+    filter: saturate(0);
+  }
+
 
   &:hover {
     transform: scale(1.05);

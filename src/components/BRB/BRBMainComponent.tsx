@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // React + Web3 Essentials
-import Head from '@docusaurus/Head';
-import Layout from '@theme/Layout';
 import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
@@ -178,7 +176,7 @@ export const BRBMainComponent = () => {
   }, []);
 
   const openHomePage = () => {
-    window.open("/", '_blank');
+    window.open("/", '_self');
   };
 
   return (
@@ -195,12 +193,10 @@ export const BRBMainComponent = () => {
                 className="headerlogo"
                 flex="initial"
               >
-                {/* <LinkTo to='/' aria-label='Push'> */}
                 <PushLogo
                   style={{ margin: '0px 9px 0px 4px' }}
                   onClick={openHomePage}
                 />
-                {/* </LinkTo> */}
                 <SpanV2
                   fontSize="24px"
                   fontWeight="700"
@@ -787,11 +783,12 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {
-    font-family: 'Strawford';
+    font-family: 'Monaco';
 
-    font-weight: 500;
+    font-weight: 900;
     font-size: 18px;
     line-height: 142%;
+    color: var(--ifm-color-primary-inverse);
   }
 
   &:hover {

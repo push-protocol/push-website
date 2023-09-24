@@ -31,7 +31,7 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
               gap="0px 164px"
               flexDirection={isMobile ? 'column' : 'row'}
             >
-              {partnerRow?.map((item, index) => {
+              {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
                     <ItemVV2
@@ -56,8 +56,8 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                         }}
                       >
                         <PartnersLogo
-                          src={require(`@site/static/assets/website/brb/partners/${item?.srcref}.png`)}
-                          srcSet={`${require(`@site/static/assets/website/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`@site/static/assets/website/brb/partners/${item?.srcref}@3x.png`)} 3x`}
+                          src={require(`@site/static/assets/website/brb/partners/${item.srcref}.webp`).default}
+                          srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
                           alt={`${item?.alt}`}
                           style={{
                             scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}`,

@@ -43,8 +43,8 @@ export const CommunityPartners = () => {
                   }}
                 >
                   <PartnerIcon
-                    src={require(`@site/static/assets/website/brb/community/${item?.srcref}.png`)}
-                    srcSet={`${require(`@site/static/assets/website/brb/community/${item?.srcref}@2x.png`)} 2x, ${require(`@site/static/assets/website/brb/community/${item?.srcref}@3x.png`)} 3x`}
+                    src={require(`@site/static/assets/website/brb/community/${item?.srcref}.webp`).default}
+                    srcSet={`${require(`@site/static/assets/website/brb/community/${item?.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/community/${item?.srcref}@3x.webp`).default} 3x`}
                     alt={`${item?.alt}`}
                     height={item?.height}
                   />

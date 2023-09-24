@@ -60,6 +60,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           <ArrowSmall />
         </ItemHV2>
       </ItemHV2>
+      
       {brbPartnersBountyList?.map((item, i) => (
         <PartnerLine
           key={i}
@@ -67,16 +68,13 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           disabled={item?.link ? false : true}
         >
           <PartnersLogo
-            src={require(`@site/static/assets/website/brb/partners/${item?.srcref}.png`)}
-            srcSet={`${require(`@site/static/assets/website/brb/partners/${item?.srcref}@2x.png`)} 2x, ${require(`@site/static/assets/website/brb/partners/${item?.srcref}@3x.png`)} 3x`}
-            alt={'Content'}
+            src={require(`@site/static/assets/website/brb/partners/${item.srcref}.webp`).default}
+            srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
+            alt={item.alt}
             style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
           />
 
-          <TextSpan
-            fontSize="15px"
-            fontWeight="100"
-          >
+          <TextSpan>
             {item.text}
           </TextSpan>
 
@@ -162,14 +160,15 @@ const PartnersLogo = styled(ImageV2)`
   height: auto;
   max-width: 140px;
   max-height: 50px;
+  opacity: 0.5;
 `;
 
 const ViewBountyText = styled(SpanV2)`
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 12px;
-  font-family: Glancyr !important;
+  color: var(--ifm-color-primary-inverse);
 
   @media ${device.mobileS} {
     flex: 1;
@@ -198,13 +197,15 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const TextSpan = styled(SpanV2)`
-  font-family: Glancyr !important;
-  // margin: 0 0 0 59px;
-  position: absolute;
+  font-family: 'Lucida Console', monospace;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ifm-color-primary-inverse);
+
+  margin: 10px 20px;
   left: 200px;
   right: 0;
   width: 100%;
-  letter-spacing: 0.03em;
 
   @media (max-width: 1291px) {
     max-width: 400px;
@@ -222,7 +223,8 @@ const TextSpan = styled(SpanV2)`
 `;
 
 const PriceSpan = styled(SpanV2)`
-  font-family: Glancyr !important;
+  color: var(--ifm-color-primary-inverse);
+  font-weight: 700;
 `;
 
 const BountyItem = styled.div`
