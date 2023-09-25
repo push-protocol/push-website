@@ -33,7 +33,6 @@ const ChatViewComponentCard = styled(SectionV2)`
   height: 660px;
   width: 85%;
   margin: 15px auto;
-  z-index: 9999 !important;
   box-sizing: border-box;
 
   @media ${device.mobileL} {

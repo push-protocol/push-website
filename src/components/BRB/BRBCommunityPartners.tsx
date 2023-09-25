@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 // Internal Components
 import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
-import { ButtonV2, ImageV2, ItemHV2 } from '@site/src/components/SharedStylingV2';
+import { ButtonV2, ImageV2, ItemHV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
@@ -92,10 +92,9 @@ const PartnerItem = styled.div`
   }
 `;
 
-const Header = styled.span`
+const Header = styled(SpanV2)`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr;
   color: #fff;
   display: flex;
   margin: 0px 0px 36px;

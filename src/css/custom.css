@@ -949,3 +949,13 @@ li {
     gap: 32px;
   }
 }
+
+/* ------------------ */
+/* OVERRIDE HACK FOR CHAT BLOCKNATIVE MODAL */
+/* ------------------ */
+#shadow-root section.svelte-baitaa.fixed {
+  z-index: 999999999;
+}
+/* ------------------ */
+/* OVERRIDE HACK FOR CHAT BLOCKNATIVE MODAL */
+/* ------------------ */

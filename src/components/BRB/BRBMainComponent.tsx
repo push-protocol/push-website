@@ -18,7 +18,7 @@ import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
 import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
-import { ButtonV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ButtonV2, ImageV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -199,8 +199,7 @@ export const BRBMainComponent = () => {
                 />
                 <SpanV2
                   fontSize="24px"
-                  fontWeight="700"
-                  fontFamily="Glancyr !important"
+                  fontWeight="900"
                   style={{ maxHeight: '24px' }}
                 >
                   #BRB
@@ -237,8 +236,6 @@ export const BRBMainComponent = () => {
                   <NavigationMenuHeader>
                     <SpanV2
                       fontSize="18px"
-                      fontWeight="200"
-                      fontFamily="Glancyr !important"
                     >
                       Partners
                     </SpanV2>
@@ -249,8 +246,6 @@ export const BRBMainComponent = () => {
                   <NavigationMenuHeader>
                     <SpanV2
                       fontSize="18px"
-                      fontWeight="200"
-                      fontFamily="Glancyr !important"
                     >
                       Schedule
                     </SpanV2>
@@ -262,8 +257,6 @@ export const BRBMainComponent = () => {
 
                     <SpanV2
                       fontSize="18px"
-                      fontWeight="200"
-                      fontFamily="Glancyr !important"
                     >
                       Bounties
                     </SpanV2>
@@ -274,8 +267,6 @@ export const BRBMainComponent = () => {
                   <NavigationMenuHeader>
                     <SpanV2
                       fontSize="18px"
-                      fontWeight="200"
-                      fontFamily="Glancyr !important"
                     >
                       BRB Chat
                     </SpanV2>
@@ -286,8 +277,6 @@ export const BRBMainComponent = () => {
                   <NavigationMenuHeader>
                     <SpanV2
                       fontSize="18px"
-                      fontWeight="200"
-                      fontFamily="Glancyr !important"
                     >
                       Support
                     </SpanV2>
@@ -355,18 +344,20 @@ export const BRBMainComponent = () => {
             borderRadius="24px"
             background="#E64DE9"
             border="1px solid #FC6DFF"
-            fontFamily="Glancyr !important"
+            fontSize="18px"
             padding="16px 32px"
+            fontWeight="900"
             onClick={() => handleSectionNavigation('schedule')}
           >
             Register Now
           </ButtonItem>
           <ButtonBar
             borderRadius="24px"
-            background="transparent"
+            background="#000"
             border="1px solid #E64DE9"
-            fontFamily="Glancyr !important"
+            fontSize="18px"
             padding="16px 32px"
+            fontWeight="900"
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
@@ -398,9 +389,8 @@ export const BRBMainComponent = () => {
       <ItemFooter id="support">
         <FooterItem>
           <SpanContent
-            fontFamily="Glancyr"
             fontSize={isLaptop ? '89px' : '112px'}
-            fontWeight="500"
+            fontWeight="900"
             color="#E64DE9"
             letterSpacing="0.01"
           >
@@ -418,15 +408,19 @@ export const BRBMainComponent = () => {
             </i>
 
             <SpanV2
-              fontFamily="Glancyr"
               fontSize={isLaptop ? '24px' : '36px'}
-              fontWeight="200"
+              fontWeight="400"
               color="#6F8BEE"
             >
               24x7 Support on Discord
             </SpanV2>
 
-            <ArrowIcon />
+            <ImageV2
+              width={65}
+              src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
+              srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+              alt={`Image showing BRB Chat is powered by Push Chat`}
+            />
           </FooterBar>
 
           <FooterBar
@@ -438,24 +432,27 @@ export const BRBMainComponent = () => {
             </i>
 
             <SpanV2
-              fontFamily="Glancyr"
               fontSize={isLaptop ? '24px' : '36px'}
-              fontWeight="200"
+              fontWeight="400"
               color="#63BFF3"
             >
               Updates & Announcements
             </SpanV2>
 
-            <ArrowIcon />
+            <ImageV2
+              width={65}
+              src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
+              srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+              alt={`Image showing BRB Chat is powered by Push Chat`}
+            />
           </FooterBar>
         </FooterCol>
       </ItemFooter>
 
       <BottomGrad>
         <SpanV2
-          fontFamily="Glancyr"
           fontSize={isMobile ? '17px' : '17px'}
-          fontWeight="200"
+          fontWeight="400"
           color="#FFF"
         >
           © 2023 Push. All rights reserved.
@@ -508,6 +505,7 @@ const ButtonBar = styled(ButtonV2)`
 `;
 
 const BrbWrapper = styled.main`
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -644,12 +642,10 @@ const StyledHeader = styled.header`
 const NavText = styled.div`
   color: #fff;
   text-align: center;
-  font-family: Glancyr;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.5;
-  letter-spacing: 0.03em;
   z-index: -1;
 
   width: 844px;
@@ -664,7 +660,6 @@ const NavText = styled.div`
     width: 248px;
     font-size: 14px;
     font-style: normal;
-    font-weight: 200;
     line-height: normal;
   }
 `;
@@ -710,7 +705,6 @@ const PushLogoBlackContainer = styled(ItemVV2)`
   align-items: center;
   height: 100%;
   color: #fff;
-  font-family: Glancyr;
   font-size: 24.207px;
   font-style: normal;
   font-weight: 700;
@@ -782,9 +776,7 @@ const NavigationMenuItem = styled.li`
     margin-right: 8px;
   }
 
-  & span {
-    font-family: 'Monaco';
-
+  & span {    
     font-weight: 900;
     font-size: 18px;
     line-height: 142%;

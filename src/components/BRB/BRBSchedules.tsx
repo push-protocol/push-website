@@ -28,6 +28,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   const [index, setIndex] = useState(0);
 
+  const splideRef = useRef(null);
   const scrollRef = useRef(null);
   const isEndRef = useRef(null);
   const isLastSchedule = useOnScreen(isEndRef);
@@ -68,6 +69,14 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     });
   }, []);
 
+  useEffect(() => {
+    if (splideRef.current) {
+      const splide = splideRef.current.splide;
+      splide.Components.Controller.go(4);
+    }
+    
+  }, [splideRef]);
+
   // const isMobile = useDeviceWidthCheck(600);
 
 
@@ -78,6 +87,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
       </ItemHV2>
       <Splide
         style={{ margin: isMobile ? '0 auto' : 'auto' }}
+        ref={splideRef}
         options={{
           width: isMobile ? '100vw' : '100vw',
           type: 'slide',
@@ -175,23 +185,23 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
         <div style={{ position: 'relative' }}>
           <ActionContainer className="splide__arrows">
-            <Button
+            <SplideArrow
               background={index > 0 ? '#E64DE9' : '#2A2A39'}
               onClick={() => (index !== 0 ? setIndex((prev) => prev - 1) : null)}
               title="Previous page"
               className="splide__arrow splide__arrow--prev"
             >
               <Left />
-            </Button>
+            </SplideArrow>
             {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
-            <Button
+            <SplideArrow
               background={!isLastSchedule ? '#E64DE9' : '#2A2A39'}
               onClick={() => (!isLastSchedule ? setIndex((prev) => prev + 1) : null)}
               title="Next page"
               className="splide__arrow splide__arrow--next"
             >
               <Right />
-            </Button>
+            </SplideArrow>
             <ButtonV2
               border="1px solid #E64DE9"
               onClick={() => window.open('https://discord.gg/cTRqvYzXpW', '_blank')}
@@ -245,7 +255,6 @@ const SplideContainer = styled.div`
 const Header = styled.span`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr;
   color: #fff;
   margin: 0px 0px 37px;
   @media (max-width: 480px) {
@@ -342,7 +351,6 @@ const DateContainer = styled(SpanV2)`
   height: 32px;
   // color: #fff;
   color: ${(props) => props.color};
-  font-family: Glancyr;
   font-size: 20px;
   font-weight: 550;
   letter-spacing: 0.6px;
@@ -351,16 +359,17 @@ const DateContainer = styled(SpanV2)`
   text-transform: uppercase;
 `;
 
-const Button = styled(ButtonV2)`
+const SplideArrow = styled(ButtonV2)`
   height: 64px;
   width: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  height: 64px;
-  width: 64px;
-  // background:#E64DE9;
+
+  & svg {
+    position: absolute;
+  }
 `;
 
 const ActionContainer = styled.div`

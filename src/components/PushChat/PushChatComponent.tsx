@@ -10,7 +10,7 @@ import styled from 'styled-components';
 // Internal Components
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
-import { Atag, ButtonV2, ItemHV2, ItemVV2, SectionV2 } from '@site/src/components/SharedStylingV2';
+import { Atag, ButtonV2, ImageV2, ItemHV2, ItemVV2, SectionV2 } from '@site/src/components/SharedStylingV2';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -37,7 +37,11 @@ export const ChatComponent = () => {
           href="https://docs.push.org/developers"
           target="_blank"
         >
-          <Brand />
+          <ImageV2
+            src={require(`@site/static/assets/website/brb/others/brand-header.webp`).default}
+            srcSet={`${require(`@site/static/assets/website/brb/others/brand-header@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/brand-header@3x.webp`).default} 3x`}
+            alt={`Image showing BRB Chat is powered by Push Chat`}
+          />
         </BrandATag>
       </Header>
 
@@ -54,7 +58,7 @@ export const ChatComponent = () => {
         <Span
           fontSize={isMobile ? '14px' : '16px'}
           color="#fff"
-          fontWeight="200"
+          fontWeight="400"
         >
           This is a token gated group. You can join but will need{' '}
           <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be able to send
@@ -63,7 +67,8 @@ export const ChatComponent = () => {
         <ButtonItem
           background="#E64DE9"
           padding="8px"
-          fontWeight="200"
+          fontWeight="900"
+          fontSize="16px"
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
@@ -103,7 +108,6 @@ const ButtonItem = styled(ButtonV2)`
   gap: 8px;
   letter-spacing: 0.03em;
   border-radius: 8px;
-  font-family: Glancyr !important;
   &:hover:after {
     opacity: 0;
   }
@@ -119,7 +123,6 @@ const ButtonItem = styled(ButtonV2)`
 const Span = styled.span`
   font-size: ${(props) => props.fontSize || '8px'};
   color: ${(props) => props.color || '#b5bcd6'};
-  font-family: Glancyr !important;
   font-weight: ${(props) => props.fontWeight || '300'};
   letter-spacing: 0.01em;
   margin: 5px 16px 0px 4px;
@@ -133,7 +136,6 @@ const Span = styled.span`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr;
   color: #fff;
   margin: 0px 0px 60px;
   position: relative;

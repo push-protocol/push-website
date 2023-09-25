@@ -33,15 +33,15 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
     <PartnerBountiesContainer ref={sectionRef}>
       <ItemHV2 gap="24px" margin="0px 0px 60px">
         <Header>Partners {isMobile && <br />} Bounties</Header>
-        <ItemHV2
+        <ButtonV2
           background="#e64de9"
+          display="flex"
           maxWidth="187px"
-          gap="10px"
           alignItems="center"
           borderRadius="8px"
           padding="8px 16px 6px 16px"
           height="33px"
-          margin='auto 0 0 0'
+          margin='0 0 0 0'
           style={{ cursor: 'pointer' }}
           onClick={() =>
             openLink(
@@ -50,15 +50,15 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           }
         >
           <SpanV2
-            fontSize="14px"
+            fontSize="16px"
             fontWeight="400"
             letterSpacing="0.3"
-            style={{ fontFamily: 'Glancyr' }}
+            margin="0 5px 0 0"
           >
             Register to participate
           </SpanV2>
           <ArrowSmall />
-        </ItemHV2>
+        </ButtonV2>
       </ItemHV2>
       
       {brbPartnersBountyList?.map((item, i) => (
@@ -114,8 +114,7 @@ const PartnerBountiesContainer = styled.div`
 
 const Header = styled.h3`
   font-size: 46px;
-  font-weight: 300;
-  font-family: Glancyr;
+  font-weight: 400;
   color: #fff;
   margin:0px;
 `;
@@ -160,7 +159,7 @@ const PartnersLogo = styled(ImageV2)`
   height: auto;
   max-width: 140px;
   max-height: 50px;
-  opacity: 0.5;
+  opacity: 0.75;
 `;
 
 const ViewBountyText = styled(SpanV2)`
@@ -197,7 +196,6 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const TextSpan = styled(SpanV2)`
-  font-family: 'Lucida Console', monospace;
   font-weight: 600;
   font-size: 18px;
   color: var(--ifm-color-primary-inverse);

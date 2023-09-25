@@ -94,7 +94,6 @@ const PartnersContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr;
   color: #fff;
   margin: 0px 0px 60px;
   @media (max-width: 768px) {
