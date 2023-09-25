@@ -8,7 +8,7 @@ description: >-
 # Off-chain (or Web2) based notification via Showrunner example
 
 Greetings !<br/>
-If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](https://docs.epns.io/developers/developer-tooling/showrunners-framework). This guide is for you ;)
+If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](https://docs.push.org/developers/developer-tooling/showrunners-framework). This guide is for you ;)
 
 We will walk through coding and interacting with the [The Defiant](https://thedefiant.io/)  for fetching the articles. 
 

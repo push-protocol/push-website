@@ -2,7 +2,7 @@
 
 ## About
 
-This module is used to send notifications to [Push](http://www.epns.io/) channels easy. It Provides an abstraction layer above advanced internal Push notification functions.
+This module is used to send notifications to [Push](http://www.push.org/) channels easy. It Provides an abstraction layer above advanced internal Push notification functions.
 
 It is written in typescript and requires node v10.0.0 or higher. Most features will work with nodejs v6.0.0 and higher but using older versions than v10.0.0 is not recommended.
 
@@ -120,7 +120,7 @@ public  async  sendNotification(
 | { offChain = true }     | an optional parameter which is used to specify choosing to use off chain notifications            | defaults to use off chain notifications.                                                                                                                                                                                                                                                                     |
 
 :::info
-Learn more about the technical details of different Notification types [here](https://docs.epns.io/developer-zone/developer-guides/sending-notifications/notification-payload-types)&#x20;
+Learn more about the technical details of different Notification types [here](https://docs.push.org/developer-zone/developer-guides/sending-notifications/notification-payload-types)&#x20;
 :::
 
 ### Getting a deployed contract from the SDK

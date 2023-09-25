@@ -19,7 +19,7 @@ Integrating the SNS module into your code takes less than 10 mins and contains j
 _**Hint:**_ For testing locally, You can also use [ngrok](https://ngrok.com/download) to expose the public endpoint. If you use this with the boilerplate, the port needs to be 6000. The ngrok URL is now the SNS endpoint required in step 3.
 
 :::info
-**Important:** Once you set up this, you need to contact us by either shouting tagging us on [Discord](https://discord.com/invite/YVPB99F9W5) or reaching out via the [contact form](mailto:support@epns.io). We need this as the SNS module requires whitelisting of your webhook endpoint.
+**Important:** Once you set up this, you need to contact us by either shouting tagging us on [Discord](https://discord.com/invite/YVPB99F9W5) or reaching out via the [contact form](mailto:support@push.org). We need this as the SNS module requires whitelisting of your webhook endpoint.
 :::
 
 ## Push SNS Boilerplate
@@ -51,7 +51,7 @@ Here’s a timelapse of how everything works… see you on the other side 😃
     Type: 'Notification',
     MessageId: '62918f56-9bce-5497-a23e-d422c782a01d',
     TopicArn: 'arn:aws:sns:us-east-1:293359341249:dev-epns-notifications',
-    Message: '{"sid":121,"users":["0x35B84d6848D16415177c64D64504663b998A6ab4"],"payload":{"apns":{"payload":{"aps":{"category":"withappicon","mutable-content":1,"content-available":1}},"fcm_options":{"image":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx"}},"data":{"app":"Shunya","sid":"121","url":"https://shunya.fi/","acta":"https://shunya.fi","aimg":"https://shunya.fi/_nuxt/img/shunya.cfece51.png","amsg":"Your portfolio is up by 0.08% since yesterday.","asub":"Assets Daily","icon":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx","type":"3","epoch":"1660554419","appbot":"0","hidden":"0","secret":""},"android":{"notification":{"icon":"@drawable/ic_stat_name","color":"#e20880","image":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx","default_vibrate_timings":true}},"notification":{"body":"Your portfolio is up by 0.08% since yesterday.","title":"Shunya - Assets Daily"}},"epoch":"1660554419","topic":"Notification","subtopic":"Channel"}',
+    Message: '{"sid":121,"users":["0x35B84d6848D16415177c64D64504663b998A6ab4"],"payload":{"apns":{"payload":{"aps":{"category":"withappicon","mutable-content":1,"content-available":1}},"fcm_options":{"image":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx"}},"data":{"app":"Shunya","sid":"121","url":"https://shunya.fi/","acta":"https://shunya.fi","aimg":"https://shunya.fi/_nuxt//assets/shunya.cfece51.png","amsg":"Your portfolio is up by 0.08% since yesterday.","asub":"Assets Daily","icon":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx","type":"3","epoch":"1660554419","appbot":"0","hidden":"0","secret":""},"android":{"notification":{"icon":"@drawable/ic_stat_name","color":"#e20880","image":"https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx","default_vibrate_timings":true}},"notification":{"body":"Your portfolio is up by 0.08% since yesterday.","title":"Shunya - Assets Daily"}},"epoch":"1660554419","topic":"Notification","subtopic":"Channel"}',
     Timestamp: '2022-08-15T14:37:00.408Z',
     SignatureVersion: '1',
     Signature: 'iqnfhnF/SsQYaqVrhAjWlCFWYoeMSftRLRrkkxje3CppCNm/CATg13ljIz0tChVa7OJEoaVI/tpUERiuhZ9wxuGmDI6ReaGORam4Yda4CC0HqfitqYG8M0AamScXgiqN9hgcGHbbitYQWWIp2vmFKC+P1j9Hq9Lz19fBlHz1/9hJwHlRfKDADqh1I15wERZZGGUu//Z+S6bnJ9k2JrektKDNRukSihSU1u07563RirE+EJ6TCxQGUY4GzuuwlOu6vj9ESsVE4mBdfxnmNLsZoVBl87KHg7/z9Uh1IJTqkdRyN5+XXg4XDE1puYr9qypfhk8abmZQIrn5obrHDe+ZBQ==',
@@ -80,7 +80,7 @@ When converted to JSON, a sample message looks like the one below.
 			"sid": "121",
 			"url": "https://shunya.fi/",
 			"acta": "https://shunya.fi",
-			"aimg": "https://shunya.fi/_nuxt/img/shunya.cfece51.png",
+			"aimg": "https://shunya.fi/_nuxt//assets/shunya.cfece51.png",
 			"amsg": "Your portfolio is up by 0.08% since yesterday.",
 			"asub": "Assets Daily",
 			"icon": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx",

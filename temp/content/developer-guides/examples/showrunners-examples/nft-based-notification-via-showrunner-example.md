@@ -7,7 +7,7 @@ description: >-
 # NFT Based Notification via Showrunner Example
 
 **Greetings!!**<br/>
-If you are new to Push protocol and don't have a proper idea of how to create an NFT-based channel for notifications on top of [showrunners](https://docs.epns.io/developers/developer-tooling/showrunners-framework). This guide is for you ;)
+If you are new to Push protocol and don't have a proper idea of how to create an NFT-based channel for notifications on top of [showrunners](https://docs.push.org/developers/developer-tooling/showrunners-framework). This guide is for you ;)
 
 We will walk through coding and interacting with the [Digible ](https://www.digible.io/)to create the notification regarding the NFTs listed there.
 
