@@ -12,6 +12,30 @@ As an example, take a look at how we seamlessly integrated the Push Chat View co
   <img src={require("/static/img/usecases/chat.png").default} />
 </ModalContainer>
 in order to add the above chatview component the developer just need to write few lines of code
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+import { ChatUIProvider } from "@pushprotocol/uiweb";
+import { darkChatTheme } from "@pushprotocol/uiweb";
+import Chat from "./Chat";
+
+export function App() {
+  // you can pass your own signer, if you don't pass a signer
+  // then it will automatically use the default onboarding kit i.e. blocknative
+  // !pgpPrivatekey && !account && !isConnected => will give the note
+  return (
+    <ChatUIProvider theme={darkChatTheme}>
+      <Chat />
+    </ChatUIProvider>
+  );
+}
+```
+
+</TabItem>
+</Tabs>
+
 <Tabs className="codetabs" groupId="code-examples">
 <TabItem value="react" attributes={{className: "codetab react"}} default>
 
