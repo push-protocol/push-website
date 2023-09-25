@@ -14,6 +14,7 @@ import styled from 'styled-components';
 // Internal Components
 import { H2V2, ItemHV2, LinkToV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import InchSVG from '@site/static/assets/website/showcase/raw/1inch.svg';
 import AaveSVG from '@site/static/assets/website/showcase/raw/aave.svg';
 import AngleLabsSVG from '@site/static/assets/website/showcase/raw/anglelabs.svg';
 import ApeswapSVG from '@site/static/assets/website/showcase/raw/apeswap.svg';
@@ -23,7 +24,7 @@ import BancorSVG from '@site/static/assets/website/showcase/raw/bancor.svg';
 import BanklessSVG from '@site/static/assets/website/showcase/raw/bankless.svg';
 import CoindeskSVG from '@site/static/assets/website/showcase/raw/coindesk.svg';
 import CryptocurrencyjobsSVG from '@site/static/assets/website/showcase/raw/cryptocurrencyjobs.svg';
-import DDSVG from '@site/static/assets/website/showcase/raw/dd.svg';
+import DDSVG from '@site/static/assets/website/showcase/raw/d_d.svg';
 import DecentralandSVG from '@site/static/assets/website/showcase/raw/decentraland.svg';
 import DydxSVG from '@site/static/assets/website/showcase/raw/dydx.svg';
 import EarnfiSVG from '@site/static/assets/website/showcase/raw/earnifi.svg';
@@ -33,7 +34,6 @@ import FlipsideSVG from '@site/static/assets/website/showcase/raw/flipside.svg';
 import GoodGhostingSVG from '@site/static/assets/website/showcase/raw/goodghosting.svg';
 import GroSVG from '@site/static/assets/website/showcase/raw/gro.svg';
 import IdlefinanceSVG from '@site/static/assets/website/showcase/raw/idlefinance.svg';
-import InchSVG from '@site/static/assets/website/showcase/raw/inch.svg';
 import KybernetworkSVG from '@site/static/assets/website/showcase/raw/kybernetwork.svg';
 import LensProtocolSVG from '@site/static/assets/website/showcase/raw/lensprotocol.svg';
 import LepasaMetaverseSVG from '@site/static/assets/website/showcase/raw/lepasametaverse.svg';
@@ -192,8 +192,7 @@ function PartnerChannels() {
 
   return (
     <>
-      <SpanV2>{`<<<<Will Implement>>>>`}</SpanV2>
-      {/* <PartnerRow
+      <PartnerRow
         justifyContent="flex-start"
         padding="150px 0px 14px 0px"
       >
@@ -443,7 +442,7 @@ function PartnerChannels() {
                 id={`item-${idx}`}
               />
             ))}
-      </PartnerRow> */}
+      </PartnerRow>
     </>
   );
 }
