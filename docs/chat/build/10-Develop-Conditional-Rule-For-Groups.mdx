@@ -8,7 +8,7 @@ sidebar_position: 10
 ---
 
 # What is conditional gating
-Conditonal gating allows you to define rules for the members of the group for different priveleges / permissions such as `entry` or `chat`. It is driven by Push Chat rules engine which is inpired by json rules engine and allows you to create powerful dynamics guiding communication for your community. Some examples of what you can achieve with it —
+Conditional gating allows you to define rules for the members of the group for different privileges / permissions such as `entry` or `chat`. It is driven by Push Chat rules engine which is inspired by json rules engine and allows you to create powerful dynamics guiding communication for your community. Some examples of what you can achieve with it —
 - **Creating token gated group** - ie: user needs to hold XX token to join the group
 - **Creating nft gated group** - ie: user needs to hold XX NFT to join the gorup
 - **Defining multi-chain conditions** - ie: user can join the group if they have 5 tokens on Ethereum or 10 tokens on Polygon
@@ -78,14 +78,14 @@ Criteria object supports multiple access control protocols which can have differ
 | `subcategory` | `string` | - | - | Further narrows down the condition that you want to run. For `ERC20` or `ERC721` - supported conditions are `holder` or `owner` which means that the criteria will check if a wallet is owner or holder. For `CustomEndpoint`, the subcategory is `GET` or `POST` depending upon what HTTP request you want to use |
 | `data` | `object` | - | - | define the data to be passed for checking conditions of criteria |
 | - | `contract` | `string` | - | Only used for `ERC20` or `ERC721` category. Remember to define the contract in chain agnostic fashion. **{chain_standard}:{chain_id}:{contract_address}**, for example: `eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE` points to $PUSH token on Ethereum mainnet while `eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1` points to $PUSH token on Polygon mainnet |
-| - | `comparision` | `string` - supports `<=`, `>=`, `==` | - | Only used for `ERC20` or `ERC721` category. Define what comparision to use while comparing the data |
+| - | `comparison` | `string` - supports `<=`, `>=`, `==` | - | Only used for `ERC20` or `ERC721` category. Define what comparison to use while comparing the data |
 | - | `amount` | `number` | - | Only used for `ERC20` or `ERC721` category. Define the number to be passed in the amount |
-| - | `url` | `string` | - | Only used for `CustomEndpoint` category. Pass in the URL that when polled will return 200 OK for succes. API url are automatically appended with `{{user_address}}/checkAccess` while checking access |
+| - | `url` | `string` | - | Only used for `CustomEndpoint` category. Pass in the URL that when polled will return 200 OK for success. API url are automatically appended with `{{user_address}}/checkAccess` while checking access |
 
 
 ## Use Case Example - Token gated community
 ### Problem Statement
-We want to create a group that whose content is not visible to anyone outside our community of $PUSH. Furthermore, we want to make sure that the group can be viewed by anyone who has atleast 1 $PUSH on Ethereum or on Polygon.
+We want to create a group that whose content is not visible to anyone outside our community of $PUSH. Furthermore, we want to make sure that the group can be viewed by anyone who has at least 1 $PUSH on Ethereum or on Polygon.
 
 ### Solution 
 Let's break down the problem statement into individual requirements
@@ -104,7 +104,7 @@ Let's break down the problem statement into individual requirements
   subcategory: "holder", // define if you are checking 'holder' or 'owner'
   data: { 
     "contract": "eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE", // $PUSH address on ETH
-    "comparison": ">=", // what comparision needs to pass
+    "comparison": ">=", // what comparison needs to pass
     "amount": 1 // amount that needs to passed
   }
 }
@@ -118,7 +118,7 @@ Let's break down the problem statement into individual requirements
   subcategory: "holder", // define if you are checking 'holder' or 'owner'
   data: { 
     "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-    "comparison": ">=", // what comparision needs to pass
+    "comparison": ">=", // what comparison needs to pass
     "amount": 1 // amount that needs to passed
   }
 }
@@ -135,7 +135,7 @@ any: [
     subcategory: "holder", // define if you are checking 'holder' or 'owner'
     data: { 
       "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-      "comparison": ">=", // what comparision needs to pass
+      "comparison": ">=", // what comparison needs to pass
       "amount": 1 // amount that needs to passed
     }
   },
@@ -145,7 +145,7 @@ any: [
     subcategory: "holder", // define if you are checking 'holder' or 'owner'
     data: { 
       "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-      "comparison": ">=", // what comparision needs to pass
+      "comparison": ">=", // what comparison needs to pass
       "amount": 1 // amount that needs to passed
     }
   }
@@ -160,23 +160,23 @@ any: [
     entry: { // permission object
       conditions: [ // conditions object
         any: [ // decider object
-          { // criteia object
+          { // criteria object
             type: "PUSH", // define type that rules engine should go for
             category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
             subcategory: "holder", // define if you are checking 'holder' or 'owner'
             data: { 
               "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-              "comparison": ">=", // what comparision needs to pass
+              "comparison": ">=", // what comparison needs to pass
               "amount": 1 // amount that needs to passed
             }
           },
-          { // criteia object
+          { // criteria object
             type: "PUSH", // define type that rules engine should go for
             category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
             subcategory: "holder", // define if you are checking 'holder' or 'owner'
             data: { 
               "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-              "comparison": ">=", // what comparision needs to pass
+              "comparison": ">=", // what comparison needs to pass
               "amount": 1 // amount that needs to passed
             }
           }
@@ -201,23 +201,23 @@ any: [
       entry: { // permission object
         conditions: [ // conditions object
           any: [ // decider object
-            { // criteia object
+            { // criteria object
               type: "PUSH", // define type that rules engine should go for
               category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
               subcategory: "holder", // define if you are checking 'holder' or 'owner'
               data: { 
                 "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                "comparison": ">=", // what comparision needs to pass
+                "comparison": ">=", // what comparison needs to pass
                 "amount": 1 // amount that needs to passed
               }
             },
-            { // criteia object
+            { // criteria object
               type: "PUSH", // define type that rules engine should go for
               category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
               subcategory: "holder", // define if you are checking 'holder' or 'owner'
               data: { 
                 "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                "comparison": ">=", // what comparision needs to pass
+                "comparison": ">=", // what comparison needs to pass
                 "amount": 1 // amount that needs to passed
               }
             }
@@ -255,7 +255,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
               subcategory: "holder", // define if you are checking 'holder' or 'owner'
               data: { // define the data check
                 "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                "comparison": ">=", // what comparision needs to pass
+                "comparison": ">=", // what comparison needs to pass
                 "amount": 10 // amount that needs to passed
               }
             },
@@ -265,7 +265,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
               subcategory: "holder", // define if you are checking 'holder' or 'owner'
               data: { // define the data check
                 "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
-                "comparison": ">=", // what comparision needs to pass
+                "comparison": ">=", // what comparison needs to pass
                 "amount": 10 // amount that needs to passed
               }
             }
@@ -281,7 +281,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
               subcategory: "holder", // define if you are checking 'holder' or 'owner'
               data: { // define the data check
                 "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                "comparison": ">=", // what comparision needs to pass
+                "comparison": ">=", // what comparison needs to pass
                 "amount": 1000 // amount that needs to passed
               }
             }

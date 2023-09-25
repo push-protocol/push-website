@@ -45,12 +45,12 @@ import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/comp
     console.log('Socket connected... queue in confetti!');
   });
 
-  // React to message payload getting recieved
+  // React to message payload getting received
   pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
     console.log(message);
   });
 
-  // React to message payload getting recieved
+  // React to message payload getting received
   pushSDKSocket.on(EVENT.CHAT_GROUPS, (object) => {
     console.log('A chat group is created or updated');
   });
