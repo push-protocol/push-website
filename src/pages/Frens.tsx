@@ -22,21 +22,7 @@ import { objChannelList } from '@site/src/config/ChannelList';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import PageWrapper from '@site/src/components/PageWrapper';
 import SpinnerSVG from '@site/static/assets/Spinner.gif';
-import Image from '@site/static/assets/bg-image.png';
-import AaveSVG from '@site/static/assets/website/float/raw/aave.svg';
-import AragonSVG from '@site/static/assets/website/float/raw/aragon.svg';
-import BancorSVG from '@site/static/assets/website/float/raw/bancor.svg';
-import CoinDeskSVG from '@site/static/assets/website/float/raw/coindesk.svg';
-import LensSVG from '@site/static/assets/website/float/raw/lens.svg';
-import LifiSVG from '@site/static/assets/website/float/raw/lifi.svg';
-import MeanFinanceSVG from '@site/static/assets/website/float/raw/meanfinance.svg';
-import QidaoSVG from '@site/static/assets/website/float/raw/qidao.svg';
-import SafeSVG from '@site/static/assets/website/float/raw/safe.svg';
-import SnapshotSVG from '@site/static/assets/website/float/raw/snapshot.svg';
-import UniswapSVG from '@site/static/assets/website/float/raw/uniswap.svg';
-import UnstoppableSVG from '@site/static/assets/website/float/raw/unstoppable.svg';
 import { BiSearch } from 'react-icons/bi';
 import { FiChevronDown } from 'react-icons/fi';
 
@@ -297,7 +283,6 @@ const FrensText = () => {
           <AnimationSection
             minHeight="60vh"
             padding="50px 0px 70px 0px"
-            overflow="hidden"
           >
             
             {FrensHeaderList.map((item) => {
@@ -650,6 +635,12 @@ const AnimationSection = styled(ResponsiveSection)`
     width: 85%;
     margin: 0 auto;
   }
+
+
+  @media ${device.mobileL} {
+    overflow: hidden;
+  }
+
   padding-bottom: 50px;
   .aave {
     position: absolute;
