@@ -11,12 +11,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
 
 // Internal Components
-import { ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ImageV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import ParallaxBRB from '@site/static/assets/Grouped.svg';
-import ParallaxBRBMobile from '@site/static/assets/GroupedMobile.svg';
+import ParallaxBRB from '@site/static/assets/website/brb/mainbg.svg';
+import ParallaxBRBMobile from '@site/static/assets/website/brb/mainbgmobile.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -101,7 +101,11 @@ function BRBParallax() {
         >
           <ParallaxBRBBG>
             {isMobile && 
-              <ParallaxBRBMobile />
+              <ImageV2
+                src={require(`@site/static/assets/website/brb/mainbgmobile.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/brb/mainbgmobile@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/mainbgmobile@3x.webp`).default} 3x`}
+                alt="Mobile main background image for Billion Reasons to Build website (#BRBIndia)"
+              />
             }
             {!isMobile &&
               <ParallaxBRB />
