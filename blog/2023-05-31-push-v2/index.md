@@ -148,7 +148,7 @@ The Incentivized Push Chat feature offers several potential use cases that can b
 
 <blockquote><b>Note:</b> Version 2 of the Push Core and Communicator smart contracts will be deployed in the next few weeks. All the above-mentioned new features will come into effect post the deployment.</blockquote>
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -74,7 +74,7 @@ Remember to review the specific application guidelines to ensure you meet all re
 
 Good luck with your application!
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -40,7 +40,7 @@ Bankless is an education platform dedicated to bringing insights around crypto a
 
 Become a citizen of the Bankless Nation: [Website](https://www.bankless.com/), [Twitter](https://twitter.com/BanklessHQ), [Youtube](https://www.youtube.com/@Bankless), [Instagram](https://www.instagram.com/bankless/), [Podcast](https://www.bankless.com/listen)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

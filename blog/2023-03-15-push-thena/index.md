@@ -42,7 +42,7 @@ Thena.fi is the native liquidity layer on BNB that emphasizes community-driven d
 
 Find out more about THENA: [Website](https://thena.fi/), [Twitter](https://twitter.com/ThenaFi_), [Telegram](https://t.me/+Lr-8OJpzxBo4Yjg0), [Discord](https://discord.com/invite/thena), [Medium](https://medium.com/@ThenaFi), [Docs](https://thena.gitbook.io/thena/)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -78,7 +78,7 @@ The synergy of zero-knowledge tech and Push Protocol can design secure, transpar
 ## Conclusion
 Integrating zero-knowledge tech into Push Protocol equips developers with a robust toolkit for designing privacy-centric, scalable, and efficient messaging solutions. By comprehending the technical dimensions and carefully evaluating challenges and trade-offs, they can harness the power of these pioneering technologies, heralding a new era in decentralized communication and collaboration.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

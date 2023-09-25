@@ -52,7 +52,7 @@ You can learn more about the Billion Reasons to Build program and sign up for a 
 As we bid farewell to August, we’re excited by the progress we’ve collectively achieved. Your presence fuels our journey, and we’re eager to share more updates in the days ahead. Stay tuned!
 
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

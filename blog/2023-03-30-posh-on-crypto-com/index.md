@@ -29,7 +29,7 @@ Crypto.com is one of the biggest exchanges in the world. Crypto.com is trusted b
 Connect with Crypto.com:
 [Website](https://crypto.com/), [Twitter](https://twitter.com/cryptocom), [Telegram](https://crypto.com/product-news/official-crypto-com-communities/), and [Reddit](https://www.reddit.com/r/Crypto_com/)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

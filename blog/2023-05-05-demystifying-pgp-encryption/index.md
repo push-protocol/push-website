@@ -99,7 +99,7 @@ As new security threats and vulnerabilities emerge, Push Protocol can upgrade it
 
 In conclusion, by integrating PGP encryption into Push Protocol, Push’s messaging system provides a secure and private messaging solution for blockchain-based applications. The decentralized nature of Push Protocol, combined with the reliability and adaptability of PGP encryption, ensures users can communicate and transact with confidence. This is thanks to the fact messages and transactions are protected against interception and tampering. Additionally, Push Protocol’s ability to easily upgrade its encryption methods in response to new security threats and vulnerabilities further enhances its ability to provide secure and private messaging services.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

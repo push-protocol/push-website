@@ -76,7 +76,7 @@ Superfluid is the leading asset streaming protocol that enables Web3 native subs
 
 [Website](https://www.superfluid.finance/home) | [App](https://app.superfluid.finance/) | [Docs](http://docs.superfluid.finance/) | [Twitter](https://twitter.com/intent/follow?screen_name=Superfluid_HQ) | [Discord](http://discord.superfluid.finance/)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -52,7 +52,7 @@ Sending a video request and getting started with decentralized video chat is eas
 
 *Note: You need to be friends prior to making a call. You can do this by starting a text conversation first. Once the other person accepts your message request, you’re all set to have a safe & secure video call.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

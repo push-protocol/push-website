@@ -59,7 +59,7 @@ Seleccionaremos más embajadores para otras comunidades durante el año y anunci
 
 🔴<b>ES </b>| El programa de Embajadores es una excelente manera de construir una comunidad de personas apasionadas que pueden promocionar Push a un público específico. Este programa ayuda a aumentar el conocimiento de la marca, impulsar collaboraciones y construir una base de usuarios leales. Si eres apasionado por Push y tienes las habilidades necesarias para comunicar su mensaje de manera efectiva, convertirse en Embajador podría ser una excelente oportunidad para ti.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

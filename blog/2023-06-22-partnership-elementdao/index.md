@@ -40,7 +40,7 @@ ElementDAO is a decentralized autonomous organization tasked with the responsibi
 
 To keep up to date with Element: [Element.fi](https://www.element.fi/) [Twitter](https://twitter.com/element_dao) [Discord](https://discord.gg/pvnUHuAsQ2)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

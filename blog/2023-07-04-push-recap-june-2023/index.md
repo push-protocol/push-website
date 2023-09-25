@@ -54,7 +54,7 @@ Lastly, the ETH Global HackFS was a huge success with 55 awesome teams developin
 As we bid farewell to another eventful month at Push, we want to thank you all for being a part of our journey. Stay tuned for more exciting developments on the horizon as we continue in our mission to revolutionize decentralized communication. See you next time!
 
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

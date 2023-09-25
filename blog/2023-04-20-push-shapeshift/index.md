@@ -77,7 +77,7 @@ ShapeShift is a non-custodial crypto exchange that offers a secure and simple wa
 
 Find out more about ShapeShift: [Website](https://shapeshift.com/), [Twitter](https://twitter.com/ShapeShift), [Telegram](https://t.me/shapeshiftofficial), [Discord](https://discord.com/invite/shapeshift), [Facebook](https://www.facebook.com/ShapeShiftPlatform/), [Instagram](https://www.instagram.com/shapeshift_io/), [Medium](https://medium.com/@ShapeShift.com), [YouTube](https://www.youtube.com/channel/UCrZ2Ml63kLwZJ6amqoGaZeQ)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

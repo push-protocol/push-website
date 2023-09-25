@@ -93,7 +93,7 @@ As the Push Protocol community continues to grow and evolve, the team is constan
 
 Incentives and token economics are essential components of any successful blockchain or cryptocurrency project. Push Protocol’s token economics exemplify a system that incentivizes participants to secure the network, pay for message broadcasting, and participate in network governance. As Push Protocol expands to more chains and adds new forms of communication, it will be exciting to see how its token economics evolve to create even more incentives for network participants. We invite you to join the Push Protocol community and discover the power of its token economics for yourself.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

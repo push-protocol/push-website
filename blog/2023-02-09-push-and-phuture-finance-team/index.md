@@ -56,7 +56,7 @@ Phuture (PHTR) is a decentralized crypto index platform that simplifies investme
 
 Find more about Phuture: [Website](https://www.phuture.finance/), [Twitter](https://twitter.com/phuture_finance), [Discord](https://discord.com/invite/frRD3Ck), [Telegram](https://t.me/phuture_group),[Docs](https://docs.phuture.finance/introduction/master)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

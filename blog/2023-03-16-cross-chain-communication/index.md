@@ -52,7 +52,7 @@ In conclusion, cross-chain communication is a critical component of the Web3 eco
 
 If you’re curious to learn more about how Push Protocol’s interoperability works and how you can enable cross-chain communication, come read more in our documentation👉 [right here](https://docs.push.org/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains).
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

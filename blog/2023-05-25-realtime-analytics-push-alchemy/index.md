@@ -195,7 +195,7 @@ We encourage you to experiment with the technology and share your experiences wi
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

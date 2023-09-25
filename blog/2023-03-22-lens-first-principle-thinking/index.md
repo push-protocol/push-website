@@ -68,7 +68,7 @@ Push has empowered the web3 space by delivering 25 million+ notifications, 70k+ 
 ![Ecosystem](./image-3.png)
 <center>The Push Ecosystem</center>
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

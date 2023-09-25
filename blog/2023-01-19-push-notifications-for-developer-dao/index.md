@@ -59,7 +59,7 @@ DevDAO is a community of web3 builders working towards creating a better interne
 
 Find more about D_D: [Website](https://www.developerdao.com/), [Twitter](https://twitter.com/developer_dao/), [YouTube](https://www.youtube.com/c/DeveloperDAO), [GitHub](https://github.com/Developer-DAO), [Discord](https://discord.com/invite/devdao)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

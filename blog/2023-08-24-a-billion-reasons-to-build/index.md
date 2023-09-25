@@ -133,7 +133,7 @@ Join us on discord to chat https://discord.com/invite/pushprotocol
 <iframe width="100%" height="382" src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

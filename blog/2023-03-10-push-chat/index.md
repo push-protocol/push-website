@@ -60,7 +60,7 @@ Push Chat can even broadcast user transactions to a network of sequencers, where
 
 Whether you’re building a social network, a platform for collaborating on the artwork, open-source software, or any other type of dApp, Push Chat can provide a decentralized, private, censorship-resistant, and user-friendly experience for communication and collaboration. And with its ability to save gas fees through transaction aggregation, Push Chat can enhance the decentralization and ease of running your dApp or protocol, allowing users to submit their own transactions or creating a decentralized architecture that handles this for them.
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -60,7 +60,7 @@ QiDao is Polygon’s first native stablecoin protocol (and is now supported by m
 
 Find out more about QiDao: [Website](https://app.mai.finance/), [Twitter](https://twitter.com/QiDaoProtocol?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [Discord](https://discord.com/invite/mQq55j65xJ), [Docs](https://docs.mai.finance/introduction-1)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

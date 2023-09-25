@@ -103,7 +103,7 @@ SOCLLY is a decentralized social network with a creator-centric apporach. With a
 
 Find more about SOCLLY: [Website](https://www.soclly.com/), [Twitter](https://twitter.com/socllyhq), [Discord](https://discord.com/invite/eUM646fTua), [LinkedIn](https://www.linkedin.com/in/soclly-hq-264304215/), [Facebook](https://www.facebook.com/SocllyHQ)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

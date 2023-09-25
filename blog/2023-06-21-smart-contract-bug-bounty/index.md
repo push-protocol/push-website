@@ -85,7 +85,7 @@ All other impacts are not considered as in-scope, even if they affect something 
 Hackers and devs, it’s your time to shine! Join us in securing the Push ecosystem and earn big for your valuable contributions. We look forward to seeing what you uncover.
 
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

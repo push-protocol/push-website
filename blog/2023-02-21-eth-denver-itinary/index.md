@@ -71,7 +71,7 @@ We look forward to having an amazing week at ETHDenver and we can’t wait to me
 ![Push Crew](./image-2.webp)
 <center>Hello from the Push Crew!</center>
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

@@ -63,7 +63,7 @@ Metaverse and NFT gaming have been all the rage recently. But while the Metavers
 While a lot of interesting use cases have already been established with our new frens, this is only the start of an exciting journey on BNB Chain. There are a ton of applications for communication tools yet to be explored and we cannot wait to get started.
 
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

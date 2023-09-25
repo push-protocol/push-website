@@ -43,7 +43,7 @@ ApeSwap is a DeFi platform on BNB Chain, Polygon, Telos, and Ethereum. It offers
 
 Find out more about ApeSwap: [Website](https://apeswap.finance/), [Twitter](https://twitter.com/ape_swap), [Discord](https://discord.com/invite/ApeSwap), [Telegram](https://t.me/ape_swap), [Instagram](https://www.instagram.com/apeswap.finance/), [Docs](https://apeswap.gitbook.io/apeswap-finance/welcome/master), [Github](https://github.com/ApeSwapFinance/)
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 

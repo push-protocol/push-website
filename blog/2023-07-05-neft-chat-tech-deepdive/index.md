@@ -334,7 +334,7 @@ By giving control over the password transfer to the previous NFT owner, Push NFT
 - [Listening to Chat Socket Events for NFT Chat Profiles](https://github.com/ethereum-push-notification-service/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1546)
 
 
-## About Push Protocol
+### About Push Protocol
 
 Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
 
