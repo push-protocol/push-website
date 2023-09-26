@@ -38,7 +38,6 @@ import { ModalContainer, ModalSmall, ModalWrapper, AFocus } from '@site/src/comp
 
   </TabItem>
 </Tabs>
-See <AFocus href='/dev/chat/message-types/'>Message Types</AFocus> to understand how `message` object can be customized to send variety of messages.
 
 ---
 ### Send message parameters
@@ -48,7 +47,6 @@ When sending a message, you can customize the following params
 | ---------------------- | ---------------------- |------------------------------------------------ | ------- | ----------------------------------------------------------------------------------- |
 | _`recipient`_             | `string`            | -                                               | -       | [Recipient supports a number of address format](./types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 | _`message`_            | `object`               | -                                               | -       | Configuration for message to be sent                                                |
-| -                      | _`message.type`_       | `Text`, `Image`, `File`, `MediaEmbed`, etc      | `Text`  | Type of message, see [Message Types](/dev/chat/message-types) for passing specific parameters based on message type |
 | -                      | _`message.content`_    | `string`                                        | -       | Message Content                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.

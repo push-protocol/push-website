@@ -19,8 +19,8 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
-  projectName: "push-documentation", // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  projectName: "push-website", // Usually your repo name.
+  deploymentBranch: "gh-pages-d1",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -67,32 +67,32 @@ const config = {
   ],
 
   plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-        // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-        redirects: [
-          // /docs/oldDoc -> /docs/newDoc
-          {
-            to: "/dev",
-            from: "/devs",
-          },
-          // // Redirect from multiple old paths to the new path
-          // {
-          //   to: '/docs/newDoc2',
-          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-          // },
-        ],
-        createRedirects(existingPath) {
-          if (existingPath.includes("/dev")) {
-            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-            return [existingPath.replace("/dev", "/devs")];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-client-redirects",
+    //   {
+    //     // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+    //     // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+    //     redirects: [
+    //       // /docs/oldDoc -> /docs/newDoc
+    //       {
+    //         to: "/dev",
+    //         from: "/devs",
+    //       },
+    //       // // Redirect from multiple old paths to the new path
+    //       // {
+    //       //   to: '/docs/newDoc2',
+    //       //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+    //       // },
+    //     ],
+    //     createRedirects(existingPath) {
+    //       if (existingPath.includes("/dev")) {
+    //         // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+    //         return [existingPath.replace("/dev", "/devs")];
+    //       }
+    //       return undefined; // Return a falsy value: no redirect created
+    //     },
+    //   },
+    // ],
   ],
 
   themeConfig:
