@@ -153,12 +153,6 @@ function Blogs(props: BlogsProps) {
     }
   };
 
-  const onArticleClick = (clickedBlog) => {
-    if (clickedBlog?.link) {
-      window.open(clickedBlog?.link, '_blank');
-    }
-  };
-
   useEffect(() => {
     loadData();
   }, []);
@@ -173,7 +167,7 @@ function Blogs(props: BlogsProps) {
             gap="48px"
           >
             <MainArticle
-              onClick={() => onArticleClick(blogsData[0])}
+              onClick={() => {if (clickedBlog?.link) onArticleClick(blogsData[0])}}
               title={blogsData[0].title}
             >
               <ArticleBanner
@@ -201,7 +195,7 @@ function Blogs(props: BlogsProps) {
                 return (
                   <SubArticle
                     key={idx}
-                    onClick={() => onArticleClick(blogData)}
+                    onClick={() => {if (clickedBlog?.link) onArticleClick(blogData)}}
                     title={blogData.title}
                   >
                     <SubArticleBanner
@@ -210,7 +204,7 @@ function Blogs(props: BlogsProps) {
                     />
                     <SubArticleHeader>{blogData.title}</SubArticleHeader>
                   </SubArticle>
-                );
+              );
               })}
             </SubArticles>
           </ItemHV2>
