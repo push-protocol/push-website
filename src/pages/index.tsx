@@ -277,7 +277,7 @@ export default function Home(): JSX.Element {
               </ItemVV2>
 
               {/* <LiveNetworks> */}
-              <div style={StyleSheet.livenetwork} className='livenetworks'>
+              <div className='livenetworks'>
                 <LiveNetworkCard className="network">
                   <EthLogoTextSVG
                     alt="Logo for Ethereum"
