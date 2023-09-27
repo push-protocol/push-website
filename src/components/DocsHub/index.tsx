@@ -1,6 +1,6 @@
 
 // React + Web3 Essentials
-import React, { Suspense, useState } from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from "styled-components";
 
 // External Components
@@ -14,6 +14,7 @@ import clsx from 'clsx';
 // Internal Components
 import { Atag, ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import Footer from '@site/src/segments/Footer';
+import FAQ from './Faq';
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
@@ -315,7 +316,7 @@ export default function HomepageFeatures(): JSX.Element {
           <div className='spacing-small pointer'>
             <Link
               className='hero__button'
-              to="/docs/dev/chat">
+              to="/docs/chat">
               <SpanV2 padding="0 10px 0 0" fontSize="18px">Get Started</SpanV2>
               <FiArrowUpRight size={16} />
             </Link>

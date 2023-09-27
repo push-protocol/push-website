@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Internal Configs
-import GLOBALS, { device } from "../config/globals";
+import GLOBALS, { device } from '@site/src/config/globals';
 /**
  * Usage Hierarchy
  *
@@ -16,13 +16,14 @@ import GLOBALS, { device } from "../config/globals";
  */
 
 export const HeroHeaderV2 = styled.h1`
-  font-family: "Strawford";
+  font-family: ${(props) => props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
   line-height: 110%;
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.03em;
-  text-align: left;
+  text-align: ${(props) => props.textAlign || "initial"};
   text-transform: none;
   text-shadow: none;
   display: flex;
@@ -68,6 +69,7 @@ export const ContentV2 = styled.div`
   display: flex;
   justify-content: ${(props) => props.justifyContent || "center"};
   box-sizing: ${(props) => props.boxSizing || "content-box"};
+  margin: ${(props) => props.margin || "initial"};
   padding: ${(props) =>
     props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
 
@@ -160,7 +162,6 @@ export const H1V2 = styled.h1`
     props.fontFamily || "Strawford, Helvetica, sans-serif"};
   text-align: ${(props) => props.textAlign || "inherit"};
   line-height: ${(props) => props.lineHeight || "110%"};
-  /* text-shadow: 0 0 20px rgb(255 255 255 / 60%); */
   text-shadow: none;
   z-index: ${(props) => props.zIndex || "auto"};
 
@@ -175,11 +176,21 @@ export const H1V2 = styled.h1`
   }
 `;
 
-export const H2V2 = styled(H1V2)`
+export const H2V2 = styled.h2`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
+  font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
+  text-transform: ${(props) => props.textTransform || "inherit"};
+  margin: ${(props) => props.margin || "0px"};
+  padding: ${(props) => props.padding || "0px"};
   letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  font-family: ${(props) =>
+    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  text-align: ${(props) => props.textAlign || "inherit"};
+  line-height: ${(props) => props.lineHeight || "110%"};
+  text-shadow: none;
+  z-index: ${(props) => props.zIndex || "auto"};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -192,8 +203,21 @@ export const H2V2 = styled(H1V2)`
   }
 `;
 
-export const H3V2 = styled(H1V2)`
+export const H3V2 = styled.h3`
+  color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
+  font-weight: ${(props) => props.fontWeight || 700};
+  text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
+  text-transform: ${(props) => props.textTransform || "inherit"};
+  margin: ${(props) => props.margin || "0px"};
+  padding: ${(props) => props.padding || "0px"};
+  letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  font-family: ${(props) =>
+    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  text-align: ${(props) => props.textAlign || "inherit"};
+  line-height: ${(props) => props.lineHeight || "110%"};
+  text-shadow: none;
+  z-index: ${(props) => props.zIndex || "auto"};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -220,10 +244,10 @@ export const Image1V2 = styled.img`
 `;
 
 export const SpanV2 = styled.span`
-  flex: ${(props) => props.flex || 'initial'};
-  align-self: ${(props) => props.alignSelf || 'auto'};
-  color: ${(props) => props.color || 'inherit'};
-  background: ${(props) => props.background || 'transparent'};
+  flex: ${(props) => props.flex || "initial"};
+  align-self: ${(props) => props.alignSelf || "auto"};
+  color: ${(props) => props.color || "inherit"};
+  background: ${(props) => props.background || "transparent"};
   font-weight: ${(props) => props.fontWeight || 400};
   font-size: ${(props) =>
     props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.DESKTOP};
@@ -344,8 +368,8 @@ export const Atag = styled.a`
   align-items: ${(props) => props.alignItems || "center"};
   justify-content: ${(props) => props.justifyContent || "center"};
   font-weight: ${(props) => props.fontWeight || 500};
-  font-size: ${(props) => props.fontSize || 'inherit'};
-  color: ${(props) => props.color || '#fff'} !important;
+  font-size: ${(props) => props.fontSize || "inherit"};
+  color: ${(props) => props.color || "#fff"} !important;
   background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
   margin: ${(props) => props.margin || "0"};
   padding: ${(props) => props.padding || "14px 32px"};
@@ -626,6 +650,15 @@ export const ModalWrapper = styled(ItemHV2)`
 
 export const SubHeader = styled.div`
   color: #6b6b6b;
-  font-size: 27px;
+  font-size: 25px;
   font-weight: bold;
+  line-height: 34px;
+  margin-bottom: 10px;
+`;
+
+export const ImageText = styled.div`
+  color: #6b6b6b;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
 `;

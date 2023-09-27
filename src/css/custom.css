@@ -19,6 +19,7 @@
   --ifm-color-primary-light: #c4249e;
   --ifm-color-primary-lighter: #c924a2;
   --ifm-color-primary-lightest: #d026a8;
+  --ifm-color-primary-preferred: #d53a94;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: "Strawford", sans-serif;
@@ -40,6 +41,7 @@
   --ifm-color-primary-light: #e15cc2;
   --ifm-color-primary-lighter: #e469c7;
   --ifm-color-primary-lightest: #ea8dd4;
+  --ifm-color-primary-preferred: #d53a94;
   --ifm-navbar-link-color: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-custom-base: rgba(255, 255, 255, 0.75);
@@ -91,7 +93,7 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: "FKGroteskNeue";
   src: url("../../static/fonts/FKGroteskNeue-Regular.woff2") format("woff2"),
     url("../../static/fonts/FKGroteskNeue-Regular.woff") format("woff"),
@@ -122,9 +124,51 @@
   font-weight: 700 800 900;
   font-style: normal;
   font-display: swap;
-}
+} */
 /* ----- */
 /* Custom Font Ends */
+/* ----- */
+
+/* ----- */
+/* NAV BAR DISPLAY CUSTOM LOGIC */
+/* ----- */
+.navbar {
+  display: none;
+}
+
+.IncludeDocuNavbar > .navbar {
+  display: flex;
+}
+/* ----- */
+/* NAV BAR DISPLAY CUSTOM LOGIC */
+/* ----- */
+
+/* ----- */
+/* MDX PAGE THEMING */
+/* ----- */
+.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
+  padding: 140px 0px 30px 0px;
+  max-width: 1213px;
+  display: flex;
+  margin: auto;
+  align-items: flex-start;
+}
+
+@media (max-width: 850px) {
+  .row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
+
+    padding: 140px 20px 30px 20px;
+  }
+}
+
+.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module .col {
+  flex: 1;
+  max-width: initial;
+  padding: 0px;
+}
+
+/* ----- */
+/* MDX PAGE THEMING ENDS HERE */
 /* ----- */
 
 a:hover {
@@ -334,10 +378,6 @@ article .markdown > p > code {
   margin: 0px auto;
 }
 
-.container {
-  padding: 1rem 0rem 2rem 1rem !important;
-}
-
 .hero__title {
   font-style: normal;
   font-weight: 500;
@@ -355,10 +395,6 @@ article .markdown > p > code {
   line-height: 140%;
   letter-spacing: -0.03em;
   color: #ffffff;
-}
-
-.ml-4 {
-  margin-left: 20px;
 }
 
 .pointer {
@@ -427,13 +463,6 @@ article .markdown > p > code {
   justify-content: center;
 }
 
-.guide_list {
-  justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-}
-
 .sdk-container {
   height: 76px;
   /* width: 350px; */
@@ -444,10 +473,6 @@ article .markdown > p > code {
   cursor: pointer;
   padding: 24px 25px 24px 25px;
   box-sizing: border-box;
-}
-
-.gray-border {
-  border: 1px solid #d9d9d9;
 }
 
 .sdk-container-inner {
@@ -924,3 +949,13 @@ li {
     gap: 32px;
   }
 }
+
+/* ------------------ */
+/* OVERRIDE HACK FOR CHAT BLOCKNATIVE MODAL */
+/* ------------------ */
+#shadow-root section.svelte-baitaa.fixed {
+  z-index: 999999999;
+}
+/* ------------------ */
+/* OVERRIDE HACK FOR CHAT BLOCKNATIVE MODAL */
+/* ------------------ */
