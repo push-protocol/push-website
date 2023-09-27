@@ -1,5 +1,3 @@
-import StyledComponentsProvider from './src/StyledComponentsProvider';
-
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
@@ -73,7 +71,10 @@ const config = {
   plugins: [
     require.resolve("./plugins/custom-webpack-plugin"),
     [
-      'babel-plugin-styled-components', { ssr: true } 
+      'babel-plugin-styled-components', 
+      { 
+        ssr: true 
+      } 
     ],
     //   [
     //     "@docusaurus/plugin-client-redirects",
@@ -171,9 +172,6 @@ const config = {
       //   isCloseable: true,
       // },
     }),
-
-  // Add the following line
-  wrapRootComponent: StyledComponentsProvider,
 };
 
 module.exports = config;
