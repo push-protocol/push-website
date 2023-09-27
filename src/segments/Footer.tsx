@@ -12,7 +12,6 @@ import styled from 'styled-components';
 // Internal Components
 import { Atag, ContentV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import EmailInputTextField from '@site/src/components/SignUp/EmailInputTextField';
-import PushLogoTextWhite from '@site/static/assets/PushLogoTextWhite.svg';
 import AndroidSVG from '@site/static/assets/android.svg';
 import AppleSVG from '@site/static/assets/apple.svg';
 import DiscordSVG from '@site/static/assets/discord.svg';
@@ -22,6 +21,7 @@ import GithubSVG from '@site/static/assets/github.svg';
 import PushBellSVG from '@site/static/assets/pushBell.svg';
 import TelegramSVG from '@site/static/assets/telegram.svg';
 import TwitterSVG from '@site/static/assets/twitter.svg';
+import PushLogoTextWhite from '@site/static/assets/website/PushLogoTextWhite.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
