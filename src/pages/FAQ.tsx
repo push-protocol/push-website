@@ -616,7 +616,7 @@ const Governance = [
         </SpanV2>
       </Answer>
     ),
-  },
+  },s
   {
     question: 'How can I attend PushDAO Calls and Meetings?',
     section: 'Governance',
