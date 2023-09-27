@@ -16,12 +16,12 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
   trailingSlash: false,
-  
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
   projectName: "push-website", // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  deploymentBranch: "gh-pages-d1",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -68,39 +68,36 @@ const config = {
     ],
   ],
 
-  scripts: [
-    './src/customscripts.js'
-  ],
+  scripts: ["./src/customscripts.js"],
 
   plugins: [
-    require.resolve('./plugins/custom-webpack-plugin'),
-    "babel-plugin-styled-components"
-  //   [
-  //     "@docusaurus/plugin-client-redirects",
-  //     {
-  //       // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-  //       // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-  //       redirects: [
-  //         // /docs/oldDoc -> /docs/newDoc
-  //         {
-  //           to: "/dev",
-  //           from: "/devs",
-  //         },
-  //         // // Redirect from multiple old paths to the new path
-  //         // {
-  //         //   to: '/docs/newDoc2',
-  //         //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-  //         // },
-  //       ],
-  //       createRedirects(existingPath) {
-  //         if (existingPath.includes("/dev")) {
-  //           // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-  //           return [existingPath.replace("/dev", "/devs")];
-  //         }
-  //         return undefined; // Return a falsy value: no redirect created
-  //       },
-  //     },
-  //   ],
+    require.resolve("./plugins/custom-webpack-plugin"),
+    //   [
+    //     "@docusaurus/plugin-client-redirects",
+    //     {
+    //       // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+    //       // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+    //       redirects: [
+    //         // /docs/oldDoc -> /docs/newDoc
+    //         {
+    //           to: "/dev",
+    //           from: "/devs",
+    //         },
+    //         // // Redirect from multiple old paths to the new path
+    //         // {
+    //         //   to: '/docs/newDoc2',
+    //         //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+    //         // },
+    //       ],
+    //       createRedirects(existingPath) {
+    //         if (existingPath.includes("/dev")) {
+    //           // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+    //           return [existingPath.replace("/dev", "/devs")];
+    //         }
+    //         return undefined; // Return a falsy value: no redirect created
+    //       },
+    //     },
+    //   ],
   ],
 
   themeConfig:
@@ -149,12 +146,12 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: 'LHUKHXUHQP',
+        appId: "LHUKHXUHQP",
 
         // Public API key: it is safe to commit it
-        apiKey: '2fc69a715b81b57bcae4ad6edeb52abe',
+        apiKey: "2fc69a715b81b57bcae4ad6edeb52abe",
 
-        indexName: 'v2-push',
+        indexName: "v2-push",
         insights: true,
       },
       colorMode: {
@@ -170,7 +167,6 @@ const config = {
       //   textColor: '#e03dc1',
       //   isCloseable: true,
       // },
-      
     }),
 };
 
