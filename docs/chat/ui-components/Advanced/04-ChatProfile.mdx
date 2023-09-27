@@ -1,0 +1,42 @@
+# ChatProfile
+
+Empower User Interaction: Showcase Wallet Addresses, Group Names, and Member Management with ChatProfile in Your Dapp.
+
+<head>
+  <title>UiWeb - ChatProfile</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/components/SharedStylingV2";
+
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+
+
+```typescript
+import ChatProfile from "@pushprotocol/uiweb";
+
+export const ChatProfileTest () => { 
+return (
+		<ChatProfile chatId={'330cae5f963f2df3d6d692a7075317c906468e3fe60bfb8280a7e125208939e1'} style='Info' />
+	)
+}
+```
+
+<ModalContainer>
+  <img src={require("/static/assets/docs/articles/uiweb/chatprofile.png").default} />
+</ModalContainer>
+
+</TabItem>
+</Tabs>
+
+---
+  
+  | Param      | Type   | Default |
+  | ---------- | ------ | ------- |
+  | _`chatId`_ | string | -       |
+
+  
+  > Note: Parameters _`in this style`_ are mandatory.
