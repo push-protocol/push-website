@@ -24,7 +24,7 @@ import BancorSVG from '@site/static/assets/website/showcase/raw/bancor.svg';
 import BanklessSVG from '@site/static/assets/website/showcase/raw/bankless.svg';
 import CoindeskSVG from '@site/static/assets/website/showcase/raw/coindesk.svg';
 import CryptocurrencyjobsSVG from '@site/static/assets/website/showcase/raw/cryptocurrencyjobs.svg';
-import DDSVG from '@site/static/assets/website/showcase/raw/dd.svg';
+import DDSVG from '@site/static/assets/website/showcase/raw/d_d.svg';
 import DecentralandSVG from '@site/static/assets/website/showcase/raw/decentraland.svg';
 import DydxSVG from '@site/static/assets/website/showcase/raw/dydx.svg';
 import EarnfiSVG from '@site/static/assets/website/showcase/raw/earnifi.svg';
@@ -192,8 +192,7 @@ function PartnerChannels() {
 
   return (
     <>
-      <SpanV2>{`<<<<Will Implement>>>>`}</SpanV2>
-      {/* <PartnerRow
+      <PartnerRow
         justifyContent="flex-start"
         padding="150px 0px 14px 0px"
       >
@@ -443,7 +442,7 @@ function PartnerChannels() {
                 id={`item-${idx}`}
               />
             ))}
-      </PartnerRow> */}
+      </PartnerRow>
     </>
   );
 }
