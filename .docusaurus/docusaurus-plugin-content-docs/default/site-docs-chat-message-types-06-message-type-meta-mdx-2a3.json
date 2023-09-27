@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/message-types/docs-chat-message-type-meta",
+  "id": "chat/message-types/docs-chat-message-type-meta",
+  "title": "Meta",
+  "description": "Enables sending arbitary meta actions in a group. This message type has some rules and it's recommeneded to not interact directly with this message type as Push SDK will handle it for you. It's documentated just for the curious minds.",
+  "source": "@site/docs/chat/message-types/06-Message-Type-Meta.mdx",
+  "sourceDirName": "chat/message-types",
+  "slug": "/chat/message-types/meta",
+  "permalink": "/docs/chat/message-types/meta",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/message-types/06-Message-Type-Meta.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "id": "docs-chat-message-type-meta",
+    "title": "Meta",
+    "hide_title": true,
+    "slug": "./meta",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 6
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Reaction",
+    "permalink": "/docs/chat/message-types/reaction"
+  },
+  "next": {
+    "title": "UI Components",
+    "permalink": "/docs/chat/ui-components"
+  }
+}

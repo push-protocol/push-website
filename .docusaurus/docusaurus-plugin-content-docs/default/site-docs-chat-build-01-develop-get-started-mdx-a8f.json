@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-get-started",
+  "id": "chat/build/docs-chat-develop-get-started",
+  "title": "Get Started",
+  "description": "Push Chat enables web3 native messaging between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of messages.",
+  "source": "@site/docs/chat/build/01-Develop-Get-Started.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/get-started",
+  "permalink": "/docs/chat/build/get-started",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/01-Develop-Get-Started.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "docs-chat-develop-get-started",
+    "title": "Get Started",
+    "hide_title": true,
+    "slug": "./get-started",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 1
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Build",
+    "permalink": "/docs/chat/build"
+  },
+  "next": {
+    "title": "Initialize User",
+    "permalink": "/docs/chat/build/initialize-user"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-and-tollan-worlds-partner-to-level-up-communication-with-gamers",
+  "source": "@site/blog/2022-12-15-tollan-worlds-push/index.md",
+  "title": "Push and Tollan Worlds Partner to Level Up Communication With Gamers",
+  "description": "Docusaurus Image",
+  "date": "2022-12-15T00:00:00.000Z",
+  "formattedDate": "December 15, 2022",
+  "tags": [
+    {
+      "label": "Frensofpush",
+      "permalink": "/blog/tags/frensofpush"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Gaming",
+      "permalink": "/blog/tags/gaming"
+    },
+    {
+      "label": "Web3 Game",
+      "permalink": "/blog/tags/web-3-game"
+    },
+    {
+      "label": "Mmorpg",
+      "permalink": "/blog/tags/mmorpg"
+    }
+  ],
+  "readingTime": 5.465,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-and-tollan-worlds-partner-to-level-up-communication-with-gamers",
+    "title": "Push and Tollan Worlds Partner to Level Up Communication With Gamers",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Frensofpush",
+      "Push Notification",
+      "Gaming",
+      "Web3 Game",
+      "Mmorpg"
+    ]
+  },
+  "prevItem": {
+    "title": "We’re Still Pushing: A Deeper Look Into Push Chat",
+    "permalink": "/blog/were-still-pushing-a-deeper-look-into-push-chat"
+  },
+  "nextItem": {
+    "title": "Introducing Push Protocol v1.5 🎊",
+    "permalink": "/blog/introducing-push-protocol-v1-5"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-collaborates-with-d-xdao-to-enable-notifications-for-swapr-campaign-updates",
+  "source": "@site/blog/2022-07-26-epns-collaborates-with-d-xdao/index.md",
+  "title": "EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates",
+  "description": "Docusaurus Image",
+  "date": "2022-07-26T00:00:00.000Z",
+  "formattedDate": "July 26, 2022",
+  "tags": [
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Dao",
+      "permalink": "/blog/tags/dao"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 2.805,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-collaborates-with-d-xdao-to-enable-notifications-for-swapr-campaign-updates",
+    "title": "EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Newsletter",
+      "Ethereum",
+      "Epnsproject",
+      "Dao",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "ICYMI — EPNS at EthCC 2022 Paris 🇫🇷",
+    "permalink": "/blog/icymi-epns-at-eth-cc-2022-paris"
+  },
+  "nextItem": {
+    "title": "Roadmap 2022 — Q2 Wrap Up",
+    "permalink": "/blog/roadmap-2022-q2-wrap-up"
+  }
+}

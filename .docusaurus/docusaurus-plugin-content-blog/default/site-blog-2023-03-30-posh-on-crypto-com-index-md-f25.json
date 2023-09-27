@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/push-protocol-push-is-now-listed-on-crypto-com",
+  "source": "@site/blog/2023-03-30-posh-on-crypto-com/index.md",
+  "title": "Push Protocol ($PUSH) is Now Listed On Crypto.com!",
+  "description": "Docusaurus Image",
+  "date": "2023-03-30T00:00:00.000Z",
+  "formattedDate": "March 30, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "New Listings",
+      "permalink": "/blog/tags/new-listings"
+    },
+    {
+      "label": "Cryptocom",
+      "permalink": "/blog/tags/cryptocom"
+    }
+  ],
+  "readingTime": 1.065,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-push-is-now-listed-on-crypto-com",
+    "title": "Push Protocol ($PUSH) is Now Listed On Crypto.com!",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "New Listings",
+      "Cryptocom"
+    ]
+  },
+  "prevItem": {
+    "title": "Enhancing Governance Through Web3 Communication Tools 🏛️",
+    "permalink": "/blog/enhancing-governance-through-web3-communication-tools"
+  },
+  "nextItem": {
+    "title": "Launch of The Push Ambassadors Program 💜 (English + Español)",
+    "permalink": "/blog/launch-of-the-push-ambassadors-program-english-espanol"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-allies-with-commonwealth-to-bring-governance-notifications-to-users",
+  "source": "@site/blog/2022-09-20-epns-allies-with-commonwealth/index.md",
+  "title": "EPNS Allies With Commonwealth to Bring Governance Notifications to Users",
+  "description": "Docusaurus Image",
+  "date": "2022-09-20T00:00:00.000Z",
+  "formattedDate": "September 20, 2022",
+  "tags": [
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Commonwealth",
+      "permalink": "/blog/tags/commonwealth"
+    },
+    {
+      "label": "Defi",
+      "permalink": "/blog/tags/defi"
+    }
+  ],
+  "readingTime": 2.28,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-allies-with-commonwealth-to-bring-governance-notifications-to-users",
+    "title": "EPNS Allies With Commonwealth to Bring Governance Notifications to Users",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Push Notification",
+      "Web3",
+      "Ethereum",
+      "Commonwealth",
+      "Defi"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS Rebrands into Push Protocol, the Communication Protocol for Web3",
+    "permalink": "/blog/epns-rebrands-into-push-protocol-the-communication-protocol-for-web3"
+  },
+  "nextItem": {
+    "title": "An Introduction to Push Notification (Part 2.2): Governance Use Cases",
+    "permalink": "/blog/an-introduction-to-push-notification-part-2-2-governance-use-cases"
+  }
+}

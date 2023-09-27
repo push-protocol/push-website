@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/developer-dao-x-push-enhancing-ux-through-web3-communication-tools",
+  "source": "@site/blog/2022-12-08-developer-dao-push/index.md",
+  "title": "Developer DAO x Push — Enhancing UX Through Web3 Communication Tools",
+  "description": "Docusaurus Image",
+  "date": "2022-12-08T00:00:00.000Z",
+  "formattedDate": "December 8, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Giveaway",
+      "permalink": "/blog/tags/giveaway"
+    },
+    {
+      "label": "Workshop",
+      "permalink": "/blog/tags/workshop"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    }
+  ],
+  "readingTime": 3.23,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "developer-dao-x-push-enhancing-ux-through-web3-communication-tools",
+    "title": "Developer DAO x Push — Enhancing UX Through Web3 Communication Tools",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Push Notification",
+      "Giveaway",
+      "Workshop",
+      "Developer"
+    ]
+  },
+  "prevItem": {
+    "title": "Introducing Push Protocol v1.5 🎊",
+    "permalink": "/blog/introducing-push-protocol-v1-5"
+  },
+  "nextItem": {
+    "title": "Index Coop — Stay Updated About the Latest DeFi Products With Push",
+    "permalink": "/blog/index-coop-stay-updated-about-the-latest-defi-products-with-push"
+  }
+}

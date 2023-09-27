@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-and-pine-form-an-alliance-to-enable-seamless-communication-for-users",
+  "source": "@site/blog/2022-06-30-epns-and-pine-form-an-alliance/index.md",
+  "title": "EPNS and Pine Form An Alliance to Enable Seamless Communication for Users",
+  "description": "Docusaurus Image",
+  "date": "2022-06-30T00:00:00.000Z",
+  "formattedDate": "June 30, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Crypto",
+      "permalink": "/blog/tags/crypto"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Cryptocurrency",
+      "permalink": "/blog/tags/cryptocurrency"
+    }
+  ],
+  "readingTime": 2.755,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-and-pine-form-an-alliance-to-enable-seamless-communication-for-users",
+    "title": "EPNS and Pine Form An Alliance to Enable Seamless Communication for Users",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain",
+      "Crypto",
+      "Ethereum",
+      "Cryptocurrency"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS Monthly Blocks",
+    "permalink": "/blog/epns-monthly-blocks"
+  },
+  "nextItem": {
+    "title": "Announcing Volume 2 of Push #ROCKSTARS",
+    "permalink": "/blog/announcing-volume-2-of-push-rockstars"
+  }
+}

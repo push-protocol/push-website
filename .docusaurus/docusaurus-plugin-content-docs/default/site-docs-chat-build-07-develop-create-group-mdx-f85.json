@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-create-groups",
+  "id": "chat/build/docs-chat-develop-create-groups",
+  "title": "Create Group",
+  "description": "Group chat is the latest exciting addition to Push Chat, for the first time ever, web3 users are finally able to talk to each other in web3 native groups and have fine-grained controls over them allowing new ways by which community can be engaged besides adding new utilities to your token. Group chat enables protocols or web3 projects to create —",
+  "source": "@site/docs/chat/build/07-Develop-Create-Group.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/create-group",
+  "permalink": "/docs/chat/build/create-group",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/07-Develop-Create-Group.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "id": "docs-chat-develop-create-groups",
+    "title": "Create Group",
+    "hide_title": true,
+    "slug": "./create-group",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 7
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Types of Recipient",
+    "permalink": "/docs/chat/build/types-of-recipient"
+  },
+  "next": {
+    "title": "Group Requests",
+    "permalink": "/docs/chat/build/group-requests"
+  }
+}

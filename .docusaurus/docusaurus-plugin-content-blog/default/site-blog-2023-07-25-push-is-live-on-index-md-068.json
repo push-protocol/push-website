@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-is-live-on-polygon-and-quickswap",
+  "source": "@site/blog/2023-07-25-push-is-live-on/index.md",
+  "title": "$PUSH is Live on Polygon & Quickswap!💜",
+  "description": "Docusaurus Image",
+  "date": "2023-07-25T00:00:00.000Z",
+  "formattedDate": "July 25, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Yield Farming",
+      "permalink": "/blog/tags/yield-farming"
+    },
+    {
+      "label": "Liquidity Mining",
+      "permalink": "/blog/tags/liquidity-mining"
+    },
+    {
+      "label": "Polygon Network",
+      "permalink": "/blog/tags/polygon-network"
+    }
+  ],
+  "readingTime": 2.59,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-is-live-on-polygon-and-quickswap",
+    "title": "$PUSH is Live on Polygon & Quickswap!💜",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Web3",
+      "Yield Farming",
+      "Liquidity Mining",
+      "Polygon Network"
+    ]
+  },
+  "prevItem": {
+    "title": "Pushing Ahead in Time: $PUSH x Timeswap ⏳",
+    "permalink": "/blog/pushing-ahead-in-time-push-and-timeswap"
+  },
+  "nextItem": {
+    "title": "Push Spaces is Live! Decentralized Audio and Video Streaming is Here",
+    "permalink": "/blog/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here"
+  }
+}

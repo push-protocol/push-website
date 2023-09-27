@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/tutorials/docs-chat-push-sdk-playground",
+  "id": "chat/tutorials/docs-chat-push-sdk-playground",
+  "title": "Push SDK Playground",
+  "description": "This tutorial is designed to get you up and going by providing playground containing all API calls coverage for Push SDK. Checkout Push SDK example that utlizes @pushprotocol/restapi and @pushprotocol/socket for more info!",
+  "source": "@site/docs/chat/tutorials/01-Tutorial-Push-SDK-APIs-Playground.mdx",
+  "sourceDirName": "chat/tutorials",
+  "slug": "/chat/tutorials/push-sdk-playground",
+  "permalink": "/docs/chat/tutorials/push-sdk-playground",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/tutorials/01-Tutorial-Push-SDK-APIs-Playground.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "docs-chat-push-sdk-playground",
+    "title": "Push SDK Playground",
+    "hide_title": true,
+    "slug": "./push-sdk-playground",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 1
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Tutorials",
+    "permalink": "/docs/chat/tutorials"
+  },
+  "next": {
+    "title": "Push SDK React Playground",
+    "permalink": "/docs/chat/tutorials/push-react-component-playground-example"
+  }
+}

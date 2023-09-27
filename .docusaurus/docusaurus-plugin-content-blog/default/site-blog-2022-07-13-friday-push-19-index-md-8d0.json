@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/friday-push-19",
+  "source": "@site/blog/2022-07-13-friday-push-19/index.md",
+  "title": "Friday PUSH #19",
+  "description": "Docusaurus Image",
+  "date": "2022-07-13T00:00:00.000Z",
+  "formattedDate": "July 13, 2022",
+  "tags": [
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Hackathons",
+      "permalink": "/blog/tags/hackathons"
+    },
+    {
+      "label": "Twitter",
+      "permalink": "/blog/tags/twitter"
+    },
+    {
+      "label": "Crypto",
+      "permalink": "/blog/tags/crypto"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 3.985,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "friday-push-19",
+    "title": "Friday PUSH #19",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethereum",
+      "Hackathons",
+      "Twitter",
+      "Crypto",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem",
+    "permalink": "/blog/epns-x-polychain-monsters-decentralized-communication-for-the-digital-collectible-ecosystem"
+  },
+  "nextItem": {
+    "title": "EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager",
+    "permalink": "/blog/epns-x-wonderverse-decentralized-communication-for-web3-s-project-manager"
+  }
+}

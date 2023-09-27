@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/bankless-nation-and-push-partner-to-enable-news-notifications",
+  "source": "@site/blog/2023-03-20-push-bankless-news/index.md",
+  "title": "Bankless Nation and Push Partner to Enable News Notifications 🔔",
+  "description": "Docusaurus Image",
+  "date": "2023-03-20T00:00:00.000Z",
+  "formattedDate": "March 20, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Bankless",
+      "permalink": "/blog/tags/bankless"
+    }
+  ],
+  "readingTime": 2.83,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "bankless-nation-and-push-partner-to-enable-news-notifications",
+    "title": "Bankless Nation and Push Partner to Enable News Notifications 🔔",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Pushprotocol",
+      "Bankless"
+    ]
+  },
+  "prevItem": {
+    "title": "HaloFi Teams Up with Push to Enable Effortless Savings with Real-Time Notifications😇",
+    "permalink": "/blog/halo-fi-teams-up-with-push-to-enable-effortless-savings-with-real-time-notifications"
+  },
+  "nextItem": {
+    "title": "How Push & Cross-Chain Communication Will Change Web3🌐",
+    "permalink": "/blog/how-push-and-cross-chain-communication-will-change-web3"
+  }
+}

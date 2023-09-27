@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/announcing-volume-2-of-push-rockstars",
+  "source": "@site/blog/2022-06-27-announcing-volume-2-of-push/index.md",
+  "title": "Announcing Volume 2 of Push #ROCKSTARS",
+  "description": "Docusaurus Image",
+  "date": "2022-06-27T00:00:00.000Z",
+  "formattedDate": "June 27, 2022",
+  "tags": [
+    {
+      "label": "Nft",
+      "permalink": "/blog/tags/nft"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Crypto",
+      "permalink": "/blog/tags/crypto"
+    },
+    {
+      "label": "Opensea",
+      "permalink": "/blog/tags/opensea"
+    },
+    {
+      "label": "Technology",
+      "permalink": "/blog/tags/technology"
+    }
+  ],
+  "readingTime": 2.34,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "announcing-volume-2-of-push-rockstars",
+    "title": "Announcing Volume 2 of Push #ROCKSTARS",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Nft",
+      "Blockchain",
+      "Crypto",
+      "Opensea",
+      "Technology"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS and Pine Form An Alliance to Enable Seamless Communication for Users",
+    "permalink": "/blog/epns-and-pine-form-an-alliance-to-enable-seamless-communication-for-users"
+  },
+  "nextItem": {
+    "title": "ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔",
+    "permalink": "/blog/eth-new-york-buidl-the-future-of-web3-comm-with-epns"
+  }
+}

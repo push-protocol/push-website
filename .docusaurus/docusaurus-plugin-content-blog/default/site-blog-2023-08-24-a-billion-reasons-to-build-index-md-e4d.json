@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/a-billion-reasons-to-build-finding-india-s-best-web3-developers",
+  "source": "@site/blog/2023-08-24-a-billion-reasons-to-build/index.md",
+  "title": "A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳",
+  "description": "Docusaurus Image",
+  "date": "2023-08-24T00:00:00.000Z",
+  "formattedDate": "August 24, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Devops",
+      "permalink": "/blog/tags/devops"
+    },
+    {
+      "label": "Devtools",
+      "permalink": "/blog/tags/devtools"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Technologies",
+      "permalink": "/blog/tags/blockchain-technologies"
+    }
+  ],
+  "readingTime": 5.735,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "a-billion-reasons-to-build-finding-india-s-best-web3-developers",
+    "title": "A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Devops",
+      "Devtools",
+      "Web3",
+      "Blockchain Technologies"
+    ]
+  },
+  "prevItem": {
+    "title": "Revolutionizing Virtual Events and Social Interactions with Decentralized Video Chat📹",
+    "permalink": "/blog/revolutionizing-virtual-events-and-social-interactions-with-decentralized-video-chat"
+  },
+  "nextItem": {
+    "title": "Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲",
+    "permalink": "/blog/enhancing-the-de-fi-ux-on-polygon-push-x-quick-swap"
+  }
+}

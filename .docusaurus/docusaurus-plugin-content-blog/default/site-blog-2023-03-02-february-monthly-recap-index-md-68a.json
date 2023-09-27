@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/february-monthly-recap",
+  "source": "@site/blog/2023-03-02-february-monthly-recap/index.md",
+  "title": "February Monthly Recap 🚀",
+  "description": "Docusaurus Image",
+  "date": "2023-03-02T00:00:00.000Z",
+  "formattedDate": "March 2, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    }
+  ],
+  "readingTime": 4.615,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "february-monthly-recap",
+    "title": "February Monthly Recap 🚀",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain Technology",
+      "Newsletter"
+    ]
+  },
+  "prevItem": {
+    "title": "Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵",
+    "permalink": "/blog/going-bananas-push-protocol-partners-with-ape-swap-for-seamless-web3-communication"
+  },
+  "nextItem": {
+    "title": "Getting Started with Push SDK: Socket API🔔",
+    "permalink": "/blog/geting-started-with-push-sdk-socket-api"
+  }
+}

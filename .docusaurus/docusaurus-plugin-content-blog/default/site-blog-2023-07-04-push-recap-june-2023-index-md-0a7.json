@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/june-monthly-recap",
+  "source": "@site/blog/2023-07-04-push-recap-june-2023/index.md",
+  "title": "June Monthly Recap 🌅",
+  "description": "Docusaurus Image",
+  "date": "2023-07-04T00:00:00.000Z",
+  "formattedDate": "July 4, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Web3 Tools",
+      "permalink": "/blog/tags/web-3-tools"
+    }
+  ],
+  "readingTime": 4.205,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "june-monthly-recap",
+    "title": "June Monthly Recap 🌅",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Newsletter",
+      "Web3",
+      "Blockchain",
+      "Web3 Tools"
+    ]
+  },
+  "prevItem": {
+    "title": "A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat",
+    "permalink": "/blog/a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat"
+  },
+  "nextItem": {
+    "title": "dYdX x Push: Empowering Traders with Transparent Governance🤝",
+    "permalink": "/blog/d-yd-x-x-push-empowering-traders-with-transparent-governance"
+  }
+}

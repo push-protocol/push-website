@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/monthly-blocks",
+  "source": "@site/blog/2022-08-05-monthly-blocks/index.md",
+  "title": "Monthly Blocks",
+  "description": "Docusaurus Image",
+  "date": "2022-08-05T00:00:00.000Z",
+  "formattedDate": "August 5, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 5.84,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "monthly-blocks",
+    "title": "Monthly Blocks",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ethereum",
+      "Epnsproject",
+      "Newsletter",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "Vamos Latam Fam 🧉",
+    "permalink": "/blog/vamos-latam-fam"
+  },
+  "nextItem": {
+    "title": "EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users",
+    "permalink": "/blog/epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/understanding-delivery-nodes",
+  "source": "@site/blog/2023-04-19-understanding-delivery-nodes/index.md",
+  "title": "Understanding Delivery Nodes🚂",
+  "description": "Docusaurus Image",
+  "date": "2023-04-19T00:00:00.000Z",
+  "formattedDate": "April 19, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Delivery Nodes",
+      "permalink": "/blog/tags/delivery-nodes"
+    }
+  ],
+  "readingTime": 7.465,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "understanding-delivery-nodes",
+    "title": "Understanding Delivery Nodes🚂",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Pushprotocol",
+      "Delivery Nodes"
+    ]
+  },
+  "prevItem": {
+    "title": "Shaping The Future of The DEX User Experience | Push x ShapeShift🦊",
+    "permalink": "/blog/shaping-the-future-of-the-dex-user-experience-push-x-shape-shift"
+  },
+  "nextItem": {
+    "title": "Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜",
+    "permalink": "/blog/push-protocol-selected-as-communication-partner-for-d-app-store-kit"
+  }
+}

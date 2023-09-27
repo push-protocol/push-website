@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/launch-of-the-push-ambassadors-program-english-espanol",
+  "source": "@site/blog/2023-03-30-push-ambassadors-program/index.md",
+  "title": "Launch of The Push Ambassadors Program 💜 (English + Español)",
+  "description": "Docusaurus Image",
+  "date": "2023-03-30T00:00:00.000Z",
+  "formattedDate": "March 30, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ambassador Program",
+      "permalink": "/blog/tags/ambassador-program"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    }
+  ],
+  "readingTime": 4.495,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "launch-of-the-push-ambassadors-program-english-espanol",
+    "title": "Launch of The Push Ambassadors Program 💜 (English + Español)",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ambassador Program",
+      "Blockchain Technology"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Protocol ($PUSH) is Now Listed On Crypto.com!",
+    "permalink": "/blog/push-protocol-push-is-now-listed-on-crypto-com"
+  },
+  "nextItem": {
+    "title": "Push Protocol’s Bug Bounty Program Goes Live!",
+    "permalink": "/blog/push-protocol-s-bug-bounty-program-goes-live"
+  }
+}

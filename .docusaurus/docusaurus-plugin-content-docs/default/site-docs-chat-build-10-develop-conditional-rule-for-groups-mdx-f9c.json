@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-conditional-rules-for-group",
+  "id": "chat/build/docs-chat-develop-conditional-rules-for-group",
+  "title": "Conditional Rules for Group",
+  "description": "Conditional gating allows you to define rules for the members of the group for different privileges / permissions such as entry or chat. It is driven by Push Chat rules engine which is inspired by json rules engine and allows you to create powerful dynamics guiding communication for your community. Some examples of what you can achieve with it —",
+  "source": "@site/docs/chat/build/10-Develop-Conditional-Rule-For-Groups.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/conditional-rules-for-group",
+  "permalink": "/docs/chat/build/conditional-rules-for-group",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/10-Develop-Conditional-Rule-For-Groups.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "id": "docs-chat-develop-conditional-rules-for-group",
+    "title": "Conditional Rules for Group",
+    "hide_title": true,
+    "slug": "./conditional-rules-for-group",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 10
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Group Permissions",
+    "permalink": "/docs/chat/build/group-permissions"
+  },
+  "next": {
+    "title": "Manage Group",
+    "permalink": "/docs/chat/build/manage-group"
+  }
+}

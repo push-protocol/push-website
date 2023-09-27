@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-protocol-and-phuture-finance-partner-to-bring-decentralized-notifications-to-the-platform",
+  "source": "@site/blog/2022-10-25-phuture-finance-push/index.md",
+  "title": "Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform",
+  "description": "Docusaurus Image",
+  "date": "2022-10-25T00:00:00.000Z",
+  "formattedDate": "October 25, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    },
+    {
+      "label": "Defi",
+      "permalink": "/blog/tags/defi"
+    }
+  ],
+  "readingTime": 2.955,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-and-phuture-finance-partner-to-bring-decentralized-notifications-to-the-platform",
+    "title": "Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain",
+      "Push Notification",
+      "Announcements",
+      "Defi"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Monthly Blocks",
+    "permalink": "/blog/push-monthly-blocks-september"
+  },
+  "nextItem": {
+    "title": "‘Enjoy Your NFT, Stay Tuned for Next Steps!’",
+    "permalink": "/blog/enjoy-your-nft-stay-tuned-for-next-steps"
+  }
+}

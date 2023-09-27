@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-x-stox-enabling-communication-for-the-global-portfolio-tracker",
+  "source": "@site/blog/2022-06-14-epns-x-stox-enabling-communication/index.md",
+  "title": "EPNS x Stox: Enabling Communication for the Global Portfolio Tracker",
+  "description": "Docusaurus Image",
+  "date": "2022-06-14T00:00:00.000Z",
+  "formattedDate": "June 14, 2022",
+  "tags": [
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Stox",
+      "permalink": "/blog/tags/stox"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Portfolio",
+      "permalink": "/blog/tags/portfolio"
+    }
+  ],
+  "readingTime": 2.105,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-x-stox-enabling-communication-for-the-global-portfolio-tracker",
+    "title": "EPNS x Stox: Enabling Communication for the Global Portfolio Tracker",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethereum",
+      "Epnsproject",
+      "Stox",
+      "Blockchain",
+      "Portfolio"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS + Graph Hackathon 2022 Winners Announced!",
+    "permalink": "/blog/epns-graph-hackathon-2022-winners-announced"
+  },
+  "nextItem": {
+    "title": "Why Engaging with Users Within the NFTVerse Matters",
+    "permalink": "/blog/why-engaging-with-users-within-the-nft-verse-matters"
+  }
+}

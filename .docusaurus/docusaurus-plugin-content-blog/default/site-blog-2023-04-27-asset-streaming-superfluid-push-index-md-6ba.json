@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/superfluid-enhancing-web3-asset-streaming-with-push",
+  "source": "@site/blog/2023-04-27-asset-streaming-superfluid-push/index.md",
+  "title": "Superfluid Enhancing Web3 Asset-Streaming With Push💜💚",
+  "description": "Docusaurus Image",
+  "date": "2023-04-27T00:00:00.000Z",
+  "formattedDate": "April 27, 2023",
+  "tags": [
+    {
+      "label": "Frensofpush",
+      "permalink": "/blog/tags/frensofpush"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Push Protocol",
+      "permalink": "/blog/tags/push-protocol"
+    },
+    {
+      "label": "Superfluid Protocol",
+      "permalink": "/blog/tags/superfluid-protocol"
+    }
+  ],
+  "readingTime": 4.615,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "superfluid-enhancing-web3-asset-streaming-with-push",
+    "title": "Superfluid Enhancing Web3 Asset-Streaming With Push💜💚",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Frensofpush",
+      "Web3",
+      "Push Protocol",
+      "Superfluid Protocol"
+    ]
+  },
+  "prevItem": {
+    "title": "April Monthly Recap✨",
+    "permalink": "/blog/april-monthly-recap"
+  },
+  "nextItem": {
+    "title": "10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆",
+    "permalink": "/blog/10-reasons-why-your-web3-project-should-embrace-push-protocol"
+  }
+}

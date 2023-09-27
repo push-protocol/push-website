@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/message-types/docs-chat-message-type-reaction",
+  "id": "chat/message-types/docs-chat-message-type-reaction",
+  "title": "Reaction",
+  "description": "Enables reacting by using emoji to a message.",
+  "source": "@site/docs/chat/message-types/05-Message-Type-Reaction.mdx",
+  "sourceDirName": "chat/message-types",
+  "slug": "/chat/message-types/reaction",
+  "permalink": "/docs/chat/message-types/reaction",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/message-types/05-Message-Type-Reaction.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "id": "docs-chat-message-type-reaction",
+    "title": "Reaction",
+    "hide_title": true,
+    "slug": "./reaction",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 5
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Media Embed",
+    "permalink": "/docs/chat/message-types/media-embed"
+  },
+  "next": {
+    "title": "Meta",
+    "permalink": "/docs/chat/message-types/meta"
+  }
+}

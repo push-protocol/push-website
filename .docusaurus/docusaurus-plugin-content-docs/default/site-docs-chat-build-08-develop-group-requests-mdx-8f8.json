@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-group-requests",
+  "id": "chat/build/docs-chat-develop-group-requests",
+  "title": "Group Requests",
+  "description": "This section deals with API calls related to joining or leaving a group.",
+  "source": "@site/docs/chat/build/08-Develop-Group-Requests.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/group-requests",
+  "permalink": "/docs/chat/build/group-requests",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/08-Develop-Group-Requests.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "id": "docs-chat-develop-group-requests",
+    "title": "Group Requests",
+    "hide_title": true,
+    "slug": "./group-requests",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 8
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Create Group",
+    "permalink": "/docs/chat/build/create-group"
+  },
+  "next": {
+    "title": "Group Permissions",
+    "permalink": "/docs/chat/build/group-permissions"
+  }
+}

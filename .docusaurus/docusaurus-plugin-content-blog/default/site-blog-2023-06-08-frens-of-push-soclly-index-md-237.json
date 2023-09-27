@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/unleashing-a-new-era-of-social-networking-push-x-soclly",
+  "source": "@site/blog/2023-06-08-frens-of-push-soclly/index.md",
+  "title": "Unleashing a New Era of Social Networking | Push x SOCLLY🌿",
+  "description": "Docusaurus Image",
+  "date": "2023-06-08T00:00:00.000Z",
+  "formattedDate": "June 8, 2023",
+  "tags": [
+    {
+      "label": "Frensofpush",
+      "permalink": "/blog/tags/frensofpush"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Partnership",
+      "permalink": "/blog/tags/partnership"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    }
+  ],
+  "readingTime": 10.91,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "unleashing-a-new-era-of-social-networking-push-x-soclly",
+    "title": "Unleashing a New Era of Social Networking | Push x SOCLLY🌿",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Frensofpush",
+      "Web3",
+      "Partnership",
+      "Blockchain Development"
+    ]
+  },
+  "prevItem": {
+    "title": "What is ERC-6551 and How’s It Better than ERC-721?",
+    "permalink": "/blog/what-is-erc-6551-and-how-s-it-better-than-erc-721"
+  },
+  "nextItem": {
+    "title": "Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅",
+    "permalink": "/blog/introducing-push-nft-chat-chats-and-comms-tied-to-your-nf-ts-done-right"
+  }
+}

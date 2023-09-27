@@ -1,0 +1,28 @@
+{
+  "unversionedId": "chat/chat",
+  "id": "chat/chat",
+  "title": "Intro to Push Chat",
+  "description": "Push Chat is a web3 messaging protocol that allows wallet addresses to send and receive messages without the need for traditional personal identifiers like phone numbers, email addresses, etc. It offers an enhanced layer of security and privacy compared to conventional messaging apps and allows for experiences that can only be achieved by native web3 messaging including the ability to create token gated experiences, chat anonymously, tie your communication to your keys and more!",
+  "source": "@site/docs/chat/01-Intro-Push-Chat.mdx",
+  "sourceDirName": "chat",
+  "slug": "/chat/",
+  "permalink": "/docs/chat/",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/01-Intro-Push-Chat.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "chat",
+    "title": "Intro to Push Chat",
+    "hide_title": true,
+    "slug": "./",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 1
+  },
+  "sidebar": "pushChatSidebar",
+  "next": {
+    "title": "Quickstart",
+    "permalink": "/docs/chat/quickstart"
+  }
+}

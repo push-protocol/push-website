@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/my-dapp-would-like-to-send-you-push-notifications",
+  "source": "@site/blog/2022-09-05-dapp-would-like-to-send-notification/index.md",
+  "title": "‘My Dapp’ Would Like to Send You Push Notifications",
+  "description": "Docusaurus Image",
+  "date": "2022-09-05T00:00:00.000Z",
+  "formattedDate": "September 5, 2022",
+  "tags": [
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Pn101",
+      "permalink": "/blog/tags/pn-101"
+    }
+  ],
+  "readingTime": 4.165,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "my-dapp-would-like-to-send-you-push-notifications",
+    "title": "‘My Dapp’ Would Like to Send You Push Notifications",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Push Notification",
+      "Web3",
+      "Blockchain",
+      "Blockchain Development",
+      "Pn101"
+    ]
+  },
+  "prevItem": {
+    "title": "Reef Chain Integrates EPNS to Enable Seamless Communication With Users",
+    "permalink": "/blog/reef-chain-integrates-epns-to-enable-seamless-communication-with-users"
+  },
+  "nextItem": {
+    "title": "EPNS Monthly Blocks",
+    "permalink": "/blog/epns-monthly-blocks-august"
+  }
+}

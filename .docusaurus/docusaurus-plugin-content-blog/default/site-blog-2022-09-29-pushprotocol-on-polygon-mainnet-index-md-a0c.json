@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-dapps",
+  "source": "@site/blog/2022-09-29-pushprotocol-on-polygon-mainnet/index.md",
+  "title": "Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps",
+  "description": "Docusaurus Image",
+  "date": "2022-09-29T00:00:00.000Z",
+  "formattedDate": "September 29, 2022",
+  "tags": [
+    {
+      "label": "Polygon",
+      "permalink": "/blog/tags/polygon"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Communication",
+      "permalink": "/blog/tags/communication"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 3.945,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-dapps",
+    "title": "Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Polygon",
+      "Web3",
+      "Communication",
+      "Ethereum",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Push and Lens: Powering UX with Notifications and Aave’s Lens",
+    "permalink": "/blog/push-and-lens-powering-ux-with-notifications-and-aaves-lens"
+  },
+  "nextItem": {
+    "title": "EPNS Rebrands into Push Protocol, the Communication Protocol for Web3",
+    "permalink": "/blog/epns-rebrands-into-push-protocol-the-communication-protocol-for-web3"
+  }
+}

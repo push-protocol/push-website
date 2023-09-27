@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/recreating-web2-communication-channels-in-web3-using-push",
+  "source": "@site/blog/2023-03-24-recreating-web2-communication-in-in-web3/index.md",
+  "title": "Recreating Web2 Communication Channels in Web3 Using Push👥",
+  "description": "Docusaurus Image",
+  "date": "2023-03-24T00:00:00.000Z",
+  "formattedDate": "March 24, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    }
+  ],
+  "readingTime": 5.67,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "recreating-web2-communication-channels-in-web3-using-push",
+    "title": "Recreating Web2 Communication Channels in Web3 Using Push👥",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain",
+      "Blockchain Technology"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Protocol’s Bug Bounty Program Goes Live!",
+    "permalink": "/blog/push-protocol-s-bug-bounty-program-goes-live"
+  },
+  "nextItem": {
+    "title": "Web3 & Push Protocol through the Lens of First Principle Thinking🔍",
+    "permalink": "/blog/web3-and-push-protocol-through-the-lens-of-first-principle-thinking"
+  }
+}

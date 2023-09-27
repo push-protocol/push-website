@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/building-a-leading-web3-communication-layer-what-s-it-take",
+  "source": "@site/blog/2023-01-20-building-a-leading-web3-communication/index.md",
+  "title": "Building a Leading Web3 Communication Layer: What’s it take?🛠️",
+  "description": "Docusaurus Image",
+  "date": "2023-01-20T00:00:00.000Z",
+  "formattedDate": "January 20, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Buidl",
+      "permalink": "/blog/tags/buidl"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    }
+  ],
+  "readingTime": 3.57,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "building-a-leading-web3-communication-layer-what-s-it-take",
+    "title": "Building a Leading Web3 Communication Layer: What’s it take?🛠️",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Buidl",
+      "Blockchain Technology",
+      "Blockchain Development",
+      "Developer"
+    ]
+  },
+  "prevItem": {
+    "title": "QiDAO Taps Push to Update Users on their Debt Positions🪙",
+    "permalink": "/blog/qi-dao-taps-push-to-update-users-on-their-debt-positions"
+  },
+  "nextItem": {
+    "title": "Push Notifications for Developer DAO to Boost Community Participation🚀",
+    "permalink": "/blog/push-notifications-for-developer-dao-to-boost-community-participation"
+  }
+}

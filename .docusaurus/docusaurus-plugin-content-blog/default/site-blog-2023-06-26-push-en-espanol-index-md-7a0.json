@@ -1,0 +1,47 @@
+{
+  "permalink": "/blog/oportunidades-de-desarrollo-profesional-con-push-protocol-en-latinoamerica",
+  "source": "@site/blog/2023-06-26-push-en-espanol/index.md",
+  "title": "Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜",
+  "description": "Docusaurus Image",
+  "date": "2023-06-26T00:00:00.000Z",
+  "formattedDate": "June 26, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Latam",
+      "permalink": "/blog/tags/latam"
+    }
+  ],
+  "readingTime": 2.945,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "oportunidades-de-desarrollo-profesional-con-push-protocol-en-latinoamerica",
+    "title": "Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Latam"
+    ]
+  },
+  "prevItem": {
+    "title": "How Push Protocol Can Revolutionize Data-Driven Decision Making📊",
+    "permalink": "/blog/how-push-protocol-can-revolutionize-data-driven-decision-making"
+  },
+  "nextItem": {
+    "title": "Transforming Decentralized Communication With Push & AI🤖",
+    "permalink": "/blog/transforming-decentralized-communication-with-push-and-ai"
+  }
+}

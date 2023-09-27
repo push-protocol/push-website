@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/how-push-and-cross-chain-communication-will-change-web3",
+  "source": "@site/blog/2023-03-16-cross-chain-communication/index.md",
+  "title": "How Push & Cross-Chain Communication Will Change Web3🌐",
+  "description": "Docusaurus Image",
+  "date": "2023-03-16T00:00:00.000Z",
+  "formattedDate": "March 16, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Interoperability",
+      "permalink": "/blog/tags/interoperability"
+    },
+    {
+      "label": "Crosschain",
+      "permalink": "/blog/tags/crosschain"
+    },
+    {
+      "label": "Web3 Communication",
+      "permalink": "/blog/tags/web-3-communication"
+    }
+  ],
+  "readingTime": 4.15,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "how-push-and-cross-chain-communication-will-change-web3",
+    "title": "How Push & Cross-Chain Communication Will Change Web3🌐",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Interoperability",
+      "Crosschain",
+      "Web3 Communication"
+    ]
+  },
+  "prevItem": {
+    "title": "Bankless Nation and Push Partner to Enable News Notifications 🔔",
+    "permalink": "/blog/bankless-nation-and-push-partner-to-enable-news-notifications"
+  },
+  "nextItem": {
+    "title": "Birth of a New Pantheon: THENA and Push Protocol Unite💜",
+    "permalink": "/blog/birth-of-a-new-pantheon-thena-and-push-protocol-unite"
+  }
+}

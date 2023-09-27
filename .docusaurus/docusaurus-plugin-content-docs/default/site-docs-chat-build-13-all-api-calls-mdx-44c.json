@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/dev-chat-all-api-calls",
+  "id": "chat/build/dev-chat-all-api-calls",
+  "title": "All API Calls",
+  "description": "This tutorial is designed to get you up and going by providing a step wise guide to use and explore the Push SDK.",
+  "source": "@site/docs/chat/build/13-All-API-Calls.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/all-api-calls",
+  "permalink": "/docs/chat/build/all-api-calls",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/13-All-API-Calls.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 13,
+  "frontMatter": {
+    "id": "dev-chat-all-api-calls",
+    "title": "All API Calls",
+    "hide_title": true,
+    "slug": "./all-api-calls",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 13
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Stream Chats",
+    "permalink": "/docs/chat/build/stream-chats"
+  },
+  "next": {
+    "title": "Message Types",
+    "permalink": "/docs/chat/message-types"
+  }
+}

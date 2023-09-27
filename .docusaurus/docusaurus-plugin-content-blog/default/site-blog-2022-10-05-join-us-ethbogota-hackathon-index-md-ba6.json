@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/join-us-for-the-ethbogotá-2022-hackathon",
+  "source": "@site/blog/2022-10-05-join-us-ethbogota-hackathon/index.md",
+  "title": "Join Us for the ETHBogotá 2022 Hackathon",
+  "description": "Docusaurus Image",
+  "date": "2022-10-05T00:00:00.000Z",
+  "formattedDate": "October 5, 2022",
+  "tags": [
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    },
+    {
+      "label": "Hackathons",
+      "permalink": "/blog/tags/hackathons"
+    },
+    {
+      "label": "Ethglobal",
+      "permalink": "/blog/tags/ethglobal"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    }
+  ],
+  "readingTime": 3.565,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "join-us-for-the-ethbogotá-2022-hackathon",
+    "title": "Join Us for the ETHBogotá 2022 Hackathon",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Developer",
+      "Hackathons",
+      "Ethglobal",
+      "Web3",
+      "Push Notification"
+    ]
+  },
+  "prevItem": {
+    "title": "Announcing the Push Chat Alpha Launch",
+    "permalink": "/blog/announcing-the-push-chat-alpha-launch"
+  },
+  "nextItem": {
+    "title": "Push Going Big on Polygon with Frens",
+    "permalink": "/blog/push-going-big-on-polygon-with-frens"
+  }
+}

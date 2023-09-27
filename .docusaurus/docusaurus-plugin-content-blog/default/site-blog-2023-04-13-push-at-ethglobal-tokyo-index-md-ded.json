@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/push-protocol-1",
+  "source": "@site/blog/2023-04-13-push-at-ethglobal-tokyo/index.md",
+  "title": "Push Protocolについて知っておくべきこと🔔",
+  "description": "Docusaurus Image",
+  "date": "2023-04-13T00:00:00.000Z",
+  "formattedDate": "April 13, 2023",
+  "tags": [
+    {
+      "label": "Ethglobal",
+      "permalink": "/blog/tags/ethglobal"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Hackathons",
+      "permalink": "/blog/tags/hackathons"
+    }
+  ],
+  "readingTime": 9.05,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-1",
+    "title": "Push Protocolについて知っておくべきこと🔔",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethglobal",
+      "Web3",
+      "Push Notification",
+      "Hackathons"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜",
+    "permalink": "/blog/push-protocol-selected-as-communication-partner-for-d-app-store-kit"
+  },
+  "nextItem": {
+    "title": "Push Launches Wallet-to-Wallet Video Chat📹",
+    "permalink": "/blog/push-launches-wallet-to-wallet-video-chat"
+  }
+}

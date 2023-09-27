@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users",
+  "source": "@site/blog/2022-07-28-epns-and-cryptocurrency-jobs-join-forces/index.md",
+  "title": "EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users",
+  "description": "Docusaurus Image",
+  "date": "2022-07-28T00:00:00.000Z",
+  "formattedDate": "July 28, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Jobs",
+      "permalink": "/blog/tags/jobs"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 2.565,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users",
+    "title": "EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ethereum",
+      "Epnsproject",
+      "Jobs",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "Monthly Blocks",
+    "permalink": "/blog/monthly-blocks"
+  },
+  "nextItem": {
+    "title": "ICYMI — EPNS at EthCC 2022 Paris 🇫🇷",
+    "permalink": "/blog/icymi-epns-at-eth-cc-2022-paris"
+  }
+}

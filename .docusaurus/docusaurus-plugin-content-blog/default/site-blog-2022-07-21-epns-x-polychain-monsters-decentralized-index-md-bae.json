@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-x-polychain-monsters-decentralized-communication-for-the-digital-collectible-ecosystem",
+  "source": "@site/blog/2022-07-21-epns-x-polychain-monsters-decentralized/index.md",
+  "title": "EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem",
+  "description": "Docusaurus Image",
+  "date": "2022-07-21T00:00:00.000Z",
+  "formattedDate": "July 21, 2022",
+  "tags": [
+    {
+      "label": "Nft",
+      "permalink": "/blog/tags/nft"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Nft Collectibles",
+      "permalink": "/blog/tags/nft-collectibles"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 2.74,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-x-polychain-monsters-decentralized-communication-for-the-digital-collectible-ecosystem",
+    "title": "EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Nft",
+      "Ethereum",
+      "Epnsproject",
+      "Nft Collectibles",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "Roadmap 2022 — Q2 Wrap Up",
+    "permalink": "/blog/roadmap-2022-q2-wrap-up"
+  },
+  "nextItem": {
+    "title": "Friday PUSH #19",
+    "permalink": "/blog/friday-push-19"
+  }
+}

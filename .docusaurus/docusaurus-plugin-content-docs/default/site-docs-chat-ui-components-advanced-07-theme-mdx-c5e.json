@@ -1,0 +1,25 @@
+{
+  "unversionedId": "chat/ui-components/Advanced/Theme",
+  "id": "chat/ui-components/Advanced/Theme",
+  "title": "Theme",
+  "description": "",
+  "source": "@site/docs/chat/ui-components/Advanced/07-Theme.mdx",
+  "sourceDirName": "chat/ui-components/Advanced",
+  "slug": "/chat/ui-components/Advanced/Theme",
+  "permalink": "/docs/chat/ui-components/Advanced/Theme",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/ui-components/Advanced/07-Theme.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {},
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "ChatViewComponent",
+    "permalink": "/docs/chat/ui-components/Advanced/ChatViewComponent"
+  },
+  "next": {
+    "title": "Tutorials",
+    "permalink": "/docs/chat/tutorials"
+  }
+}

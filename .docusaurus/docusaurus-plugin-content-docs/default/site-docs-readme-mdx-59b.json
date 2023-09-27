@@ -1,0 +1,20 @@
+{
+  "unversionedId": "documentation-hub",
+  "id": "documentation-hub",
+  "title": "Documentation Hub",
+  "description": "",
+  "source": "@site/docs/README.mdx",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docs/",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/README.mdx",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "documentation-hub",
+    "title": "Documentation Hub",
+    "hide_title": true,
+    "slug": "./"
+  }
+}

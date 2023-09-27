@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/shaping-the-future-of-the-dex-user-experience-push-x-shape-shift",
+  "source": "@site/blog/2023-04-20-push-shapeshift/index.md",
+  "title": "Shaping The Future of The DEX User Experience | Push x ShapeShift🦊",
+  "description": "Docusaurus Image",
+  "date": "2023-04-20T00:00:00.000Z",
+  "formattedDate": "April 20, 2023",
+  "tags": [
+    {
+      "label": "Frensofpush",
+      "permalink": "/blog/tags/frensofpush"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Partnerships",
+      "permalink": "/blog/tags/partnerships"
+    },
+    {
+      "label": "Shapeshift",
+      "permalink": "/blog/tags/shapeshift"
+    }
+  ],
+  "readingTime": 4.45,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "shaping-the-future-of-the-dex-user-experience-push-x-shape-shift",
+    "title": "Shaping The Future of The DEX User Experience | Push x ShapeShift🦊",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Frensofpush",
+      "Web3",
+      "Partnerships",
+      "Shapeshift"
+    ]
+  },
+  "prevItem": {
+    "title": "10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆",
+    "permalink": "/blog/10-reasons-why-your-web3-project-should-embrace-push-protocol"
+  },
+  "nextItem": {
+    "title": "Understanding Delivery Nodes🚂",
+    "permalink": "/blog/understanding-delivery-nodes"
+  }
+}

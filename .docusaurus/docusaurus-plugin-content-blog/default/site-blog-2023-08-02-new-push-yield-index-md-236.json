@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/new-push-yield-farming-rewards-full-details",
+  "source": "@site/blog/2023-08-02-new-push-yield/index.md",
+  "title": "New Push Yield Farming Rewards: Full Details🪙",
+  "description": "Docusaurus Image",
+  "date": "2023-08-02T00:00:00.000Z",
+  "formattedDate": "August 2, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Yield Farming",
+      "permalink": "/blog/tags/yield-farming"
+    },
+    {
+      "label": "Liquidity Mining",
+      "permalink": "/blog/tags/liquidity-mining"
+    }
+  ],
+  "readingTime": 6.215,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "new-push-yield-farming-rewards-full-details",
+    "title": "New Push Yield Farming Rewards: Full Details🪙",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Web3",
+      "Yield Farming",
+      "Liquidity Mining"
+    ]
+  },
+  "prevItem": {
+    "title": "Push V2 is LIVE — New Rewards, Utility & Functionality 🚀",
+    "permalink": "/blog/push-v2-is-live-new-rewards-utility-and-functionality"
+  },
+  "nextItem": {
+    "title": "Pushing Ahead in Time: $PUSH x Timeswap ⏳",
+    "permalink": "/blog/pushing-ahead-in-time-push-and-timeswap"
+  }
+}
