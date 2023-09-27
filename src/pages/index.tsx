@@ -276,7 +276,8 @@ export default function Home(): JSX.Element {
                 </SpanV2>
               </ItemVV2>
 
-              <LiveNetworks>
+              {/* <LiveNetworks> */}
+              <div style={StyleSheet.livenetwork} className='livenetworks'>
                 <LiveNetworkCard className="network">
                   <EthLogoTextSVG
                     alt="Logo for Ethereum"
@@ -297,7 +298,8 @@ export default function Home(): JSX.Element {
                     title="BNB Chain Logo"
                   />
                 </LiveNetworkCard>
-              </LiveNetworks>
+                </div>
+              {/* </LiveNetworks> */}
             </Partners>
 
             <PushWorksRow>
