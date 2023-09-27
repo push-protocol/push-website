@@ -648,14 +648,6 @@ export const ModalWrapper = styled(ItemHV2)`
   justify-content: center;
 `;
 
-export const SubHeader = styled.div`
-  color: #6b6b6b;
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 34px;
-  margin-bottom: 10px;
-`;
-
 export const ImageText = styled.div`
   color: #6b6b6b;
   text-align: center;

@@ -8,6 +8,7 @@ tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
 
 <!--truncate-->
 
+<!--customheaderpoint-->
 # Frens of Push #6 | This week, our featured Fren is one of the biggest developer communities in web3, Developer DAO🎉
 
 <i>
