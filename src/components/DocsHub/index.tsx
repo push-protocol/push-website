@@ -522,6 +522,7 @@ const PopularQuickiesCard = styled(ItemVV2)`
   min-width: 280px;
   max-width: calc(50% - 21.33px);
   overflow: scroll;
+  width: 100%;
 
   box-sizing: border-box;
 
@@ -541,6 +542,7 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   position: relative;
+  width: 100%;
 
   &:before {
     content: "";
@@ -570,6 +572,7 @@ const PopularQuickiesTitle = styled(SpanV2)`
 const PopularQuickiesContent = styled(ItemVV2)`
   border-top: 1px solid #3d3d3d;
   align-items: stretch;
+  width: 100%;
 `;
 
 const PopularQuickiesCodeBlock = styled(CodeBlock)`
@@ -577,6 +580,7 @@ const PopularQuickiesCodeBlock = styled(CodeBlock)`
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
   overflow: hidden;
+  width: inherit;
 `;
 
 const TechDocCardList = styled(ItemHV2)`
