@@ -13,10 +13,8 @@ import styled from 'styled-components';
 
 // Internal Components
 import Alert from '@site/src/components/Alert';
-import { Atag, ContentV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Atag, ContentV2, ImageV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import PushLogoTextBlack from '@site/static/assets/website/PushLogoTextBlack.svg';
-import PushLogoTextWhite from '@site/static/assets/website/PushLogoTextWhite.svg';
 import EnSVG from '@site/static/assets/website/locales/en.svg';
 import EsSVG from '@site/static/assets/website/locales/es.svg';
 import HiSVG from '@site/static/assets/website/locales/hi.svg';
@@ -111,8 +109,6 @@ function Header() {
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
   const themeClass = `${bkg}`;
 
-  // const PushLogo = bkg === 'dark' ? PushLogoTextWhite : PushLogoTextBlack;
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
@@ -173,7 +169,13 @@ function Header() {
                   to="/"
                   aria-label="Push"
                 >
-                  <PushLogoTextBlack />
+                  <ImageV2
+                    src={require(`@site/static/assets/website/segments/PushLogoTextBlack.webp`).default}
+                    srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextBlack@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextBlack@3x.webp`).default} 3x`}
+                    alt={`Push Logo`}
+                    width="auto"
+                    height="auto"
+                  />
                 </LinkToV2>
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer
@@ -184,7 +186,13 @@ function Header() {
                   to="/"
                   aria-label="Push"
                 >
-                  <PushLogoTextWhite />
+                  <ImageV2
+                    src={require(`@site/static/assets/website/segments/PushLogoTextWhite.webp`).default}
+                    srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextWhite@3x.webp`).default} 3x`}
+                    alt={`Push Logo`}
+                    width="auto"
+                    height="auto"
+                  />
                 </LinkToV2>
               </PushLogoWhiteContainer>
 
