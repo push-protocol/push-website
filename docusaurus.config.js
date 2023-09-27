@@ -113,12 +113,7 @@ const config = {
           srcDark: "/assets/docs/PushLogoTextWhite.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "pushChatSidebar",
-            position: "right",
-            label: "Documentation Hub",
-          },
+          { to: "/docs", label: "Docs Hub", position: "right" },
           { to: "/blog", label: "Blog", position: "right" },
           {
             to: "https://discord.com/invite/pushprotocol",
