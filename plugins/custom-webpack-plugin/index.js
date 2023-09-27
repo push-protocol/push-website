@@ -15,7 +15,8 @@ module.exports = function (context, options) {
             util: require.resolve('util/'),
             url: require.resolve('url/'),
             stream: require.resolve('stream-browserify'),
-            assert: require.resolve('assert/')
+            assert: require.resolve('assert/'),
+            crypto: require.resolve('crypto-browserify'),
           },
         },
       };

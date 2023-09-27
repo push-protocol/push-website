@@ -89,7 +89,7 @@ const Spaces = () => {
   };
 
   return (
-    <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription}>
+    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
