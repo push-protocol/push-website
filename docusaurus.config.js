@@ -74,6 +74,7 @@ const config = {
 
   plugins: [
     require.resolve('./plugins/custom-webpack-plugin'),
+    "babel-plugin-styled-components"
   //   [
   //     "@docusaurus/plugin-client-redirects",
   //     {

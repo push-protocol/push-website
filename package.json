@@ -29,6 +29,7 @@
     "@splinetool/runtime": "^0.9.270",
     "@web3-react/core": "6.1.9",
     "assert": "2.1.0",
+    "babel-plugin-styled-components": "2.1.4",
     "browserify-zlib": "0.2.0",
     "clsx": "^1.2.1",
     "core-js": "3.32.2",
