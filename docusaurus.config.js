@@ -70,12 +70,6 @@ const config = {
 
   plugins: [
     require.resolve("./plugins/custom-webpack-plugin"),
-    [
-      'babel-plugin-styled-components', 
-      { 
-        ssr: true 
-      } 
-    ],
     //   [
     //     "@docusaurus/plugin-client-redirects",
     //     {
