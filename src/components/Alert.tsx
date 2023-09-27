@@ -28,7 +28,7 @@ const Alert = () => {
   const alertMessageEs = 'Push Metamask Snap ya está disponible, '
   const alertMessageHi= 'पुश मेटामास्क स्नैप अब लाइव है, '
 
-  const alertLink = `https://snaps.metamask.io/snap/npm/push-v1/`;
+  const alertLink = `https://app.push.org/snap`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
