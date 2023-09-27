@@ -205,7 +205,7 @@ const ParallaxBRBBG = styled(ItemVV2)`
 `
 
 const ParallaxHeader = styled(SpanV2)`
-  font-size: ${(props) => (props.isMobile ? '50px' : '40px')};
+  font-size: ${(props) => (props.isMobile ? '50px' : '70px')};
   font-weight: 900;
   letter-spacing: inherit;
   color: #E64DE9;
