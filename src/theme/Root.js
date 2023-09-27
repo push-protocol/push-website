@@ -4,16 +4,14 @@ import { useLocation } from '@docusaurus/router';
 import React from 'react';
 
 // External Components
-// import i18nInitialize from '@site/src/utils/i18n';
+import i18nInitialize from '@site/src/utils/i18n';
 
 // Internal Components
 import Footer from '@site/src/segments/Footer';
 import Header from '@site/src/segments/Header';
 
 // Initialize Internalization
-// i18nInitialize();
-
-// Define location
+i18nInitialize();
 
 // return superimposed class names if conditions are met
 function returnAdditionalClasses(conditions) {
@@ -41,7 +39,9 @@ function locationPathExists(pathname, condition, comingfrom = null) {
   let result = false;
   pathname = pathname.toUpperCase();
 
+  // Define location
   const location = useLocation();
+  
   const str = location.pathname.toUpperCase();
   const modstr = (str != null && str.length >= pathname.length) ? str.substring(0, pathname.length) : null;
 

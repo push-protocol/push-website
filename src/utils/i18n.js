@@ -12,11 +12,16 @@ export default function i18nInitialize() {
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
+      lng: 'en', // language to use
       fallbackLng: 'en',
-      debug: true,
+      debug: false,
 
       interpolation: {
         escapeValue: false, // not needed for react as it escapes by default
+      },
+
+      react: {
+        useSuspense: false, // Set to false to disable suspense
       },
     });
 }
