@@ -38,8 +38,12 @@ import GLOBALS, { device } from '@site/src/config/globals';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-let lastScrollY = window.pageYOffset;
+let lastScrollY = 0;
 const SCROLL_DELTA = 5;
+
+if (typeof window !== 'undefined') {
+  lastScrollY = window.scrollY;
+}
 
 function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
@@ -47,7 +51,11 @@ function useScrollDirection(mobileMenuActive) {
 
   useEffect(() => {
     const updateScrollDirection = () => {
-      const scrollY = window.pageYOffset;
+      let scrollY = 0;
+
+      if (typeof window !== 'undefined') {
+        scrollY = window.scrollY;
+      }
       let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
       if (
@@ -263,7 +271,7 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
+                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                   <NavigationMenuHeader>
                     <SpanV2
                       fontSize="18px"
@@ -271,7 +279,7 @@ export const BRBMainComponent = () => {
                       BRB Chat
                     </SpanV2>
                   </NavigationMenuHeader>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                   <NavigationMenuHeader>
@@ -382,7 +390,7 @@ export const BRBMainComponent = () => {
       </BountyDiv>
 
       <PlaygroundDiv id="playground">
-        <ChatComponent />
+        {/* <ChatComponent /> */}
       </PlaygroundDiv>
 
 

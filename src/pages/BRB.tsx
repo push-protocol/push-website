@@ -6,8 +6,8 @@ import Layout from '@theme/Layout';
 import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
-import { Web3ReactProvider } from '@web3-react/core';
-import { ethers } from 'ethers';
+// import { Web3ReactProvider } from '@web3-react/core';
+// import { ethers } from 'ethers';
 
 // Internal Components
 import { BRBWeb3Component } from '@site/src/components/BRB/BRBWeb3Component';
@@ -45,10 +45,9 @@ function BRB() {
           })}
         </script>
       </Head> */}
-      <Web3ReactProvider getLibrary={getLibrary}>
-        {/* Load Web3 BRB Component that will load BRB Main Component */}
+      {/* <Web3ReactProvider getLibrary={getLibrary}> */}
         <BRBWeb3Component />
-      </Web3ReactProvider>
+      {/* </Web3ReactProvider> */}
     </Layout>
   );
 }

@@ -68,6 +68,10 @@ const config = {
     ],
   ],
 
+  scripts: [
+    './src/customscripts.js'
+  ],
+
   plugins: [
     require.resolve('./plugins/custom-webpack-plugin'),
   //   [

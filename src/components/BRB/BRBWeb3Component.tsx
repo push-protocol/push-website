@@ -22,65 +22,64 @@ import { AccountContext, EnvContext, SocketContext, Web3Context } from '@site/sr
 import { ENV } from '@site/src/helpers/web3helper';
 import { useSDKSocket } from '@site/src/hooks/useSDKSocket';
 
-function getLibrary(provider: any) {
-  // this will vary according to whether you use e.g. ethers or web3.js
-  const gottenProvider = new ethers.providers.Web3Provider(provider, 'any');
-  return gottenProvider;
-}
+// function getLibrary(provider: any) {
+//   // this will vary according to whether you use e.g. ethers or web3.js
+//   const gottenProvider = new ethers.providers.Web3Provider(provider, 'any');
+//   return gottenProvider;
+// }
 
 export const BRBWeb3Component = () => {
-  const { account, library, active, chainId } = useWeb3React();
-  const location = useLocation();
-  const [env, setEnv] = useState<ENV>(ENV.PROD);
-  const [isCAIP, setIsCAIP] = useState(false);
-  const [signer, setSigner] = useState();
-  const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
+  // const { account, library, active, chainId } = useWeb3React();
+  // const location = useLocation();
+  // const [env, setEnv] = useState<ENV>(ENV.PROD);
+  // const [isCAIP, setIsCAIP] = useState(false);
+  // const [signer, setSigner] = useState();
+  // const [pgpPrivateKey, setPgpPrivateKey] = useState<string>('');
 
-  const socketData = useSDKSocket({
-    account: account,
-    chainId: chainId,
-    env,
-    isCAIP,
-  });
+  // const socketData = useSDKSocket({
+  //   account: account,
+  //   chainId: chainId,
+  //   env,
+  //   isCAIP,
+  // });
 
-  useEffect(() => {
-    (async () => {
-      if (!account || !env || !library) return;
+  // useEffect(() => {
+  //   (async () => {
+  //     if (!account || !env || !library) return;
 
-      const user = await PushAPI.user.get({ account: account, env });
-      let pgpPrivateKey;
-      const librarySigner = await library.getSigner(account);
-      setSigner(librarySigner);
-      if (user?.encryptedPrivateKey) {
-        pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
-          encryptedPGPPrivateKey: user.encryptedPrivateKey,
-          account: account,
-          signer: librarySigner,
-          env,
-        });
-      }
+  //     const user = await PushAPI.user.get({ account: account, env });
+  //     let pgpPrivateKey;
+  //     const librarySigner = await library.getSigner(account);
+  //     setSigner(librarySigner);
+  //     if (user?.encryptedPrivateKey) {
+  //       pgpPrivateKey = await PushAPI.chat.decryptPGPKey({
+  //         encryptedPGPPrivateKey: user.encryptedPrivateKey,
+  //         account: account,
+  //         signer: librarySigner,
+  //         env,
+  //       });
+  //     }
 
-      setPgpPrivateKey(pgpPrivateKey);
-    })();
-  }, [account, env, library]);
+  //     setPgpPrivateKey(pgpPrivateKey);
+  //   })();
+  // }, [account, env, library]);
   
   return (
-    <EnvContext.Provider value={{ env, isCAIP }}>
-      <Web3Context.Provider value={{ account, active, library, chainId }}>
-        <SocketContext.Provider value={{ socketData }}>
-          <AccountContext.Provider value={{ pgpPrivateKey }}>
-            <ChatUIProvider
-              env={env}
-              theme={PushChatTheme}
-            >
+    // <EnvContext.Provider value={{ env, isCAIP }}>
+    //   <Web3Context.Provider value={{ account, active, library, chainId }}>
+    //     <SocketContext.Provider value={{ socketData }}>
+    //       <AccountContext.Provider value={{ pgpPrivateKey }}>
+    //         <ChatUIProvider
+    //           env={env}
+    //           theme={PushChatTheme}
+    //         >
               
-              {/* Load main BRB Component */}
               <BRBMainComponent />
             
-            </ChatUIProvider>
-          </AccountContext.Provider>
-        </SocketContext.Provider>
-      </Web3Context.Provider>
-    </EnvContext.Provider>
+    //         </ChatUIProvider>
+    //       </AccountContext.Provider>
+    //     </SocketContext.Provider>
+    //   </Web3Context.Provider>
+    // </EnvContext.Provider>
   );
 }
