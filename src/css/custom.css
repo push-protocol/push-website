@@ -136,7 +136,7 @@
   display: none;
 }
 
-.IncludeDocuNavbar > .navbar {
+.DocusaurusNavbar > .navbar {
   display: flex;
 }
 /* ----- */
@@ -959,3 +959,50 @@ li {
 /* ------------------ */
 /* OVERRIDE HACK FOR CHAT BLOCKNATIVE MODAL */
 /* ------------------ */
+
+/* ------------------ */
+/* DOCUSAURUS BLOG OVERRIDE */
+/* ------------------ */
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85% !important;
+  align-self: center;
+}
+
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container {
+  max-width: initial;
+}
+
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container aside.col.col--3 {
+  display: block;
+  width: var(--doc-sidebar-width);
+  max-width: var(--doc-sidebar-width);
+  margin-top: calc(-1 * var(--ifm-navbar-height));
+  border-right: 1px solid var(--ifm-toc-border-color);
+  will-change: width;
+  transition: width var(--ifm-transition-fast) ease;
+  clip-path: inset(0);
+}
+
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container  article {
+  
+  max-width: 958px !important;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 1920px)  {
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--7 {
+      max-width: var(--ifm-container-width-xl);
+  }
+  
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--2 {
+      margin-right: auto;
+  }
+  
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container  article {
+      
+      margin-left: auto;
+  }
+}

@@ -67,19 +67,24 @@ function locationPathExists(pathname, condition, comingfrom = null) {
 export default function Root({children}) {
   const superimposedConditions = [
     {
-      classname: 'DocsHub IncludeDocuNavbar NavBarDark',
+      classname: 'DocsHub PushDocs DocusaurusNavbar NavBarDark',
       pathname: '/DOCS',
       condition: 'exact'
     },
     {
-      classname: 'IncludeDocuNavbar',
+      classname: 'PushDocs DocusaurusNavbar',
       pathname: '/DOCS',
       condition: 'subpaths'
     },
     {
-      classname: 'IncludeDocuNavbar',
+      classname: 'BlogHub PushBlog DocusaurusNavbar',
       pathname: '/BLOG',
-      condition: 'all'
+      condition: 'exact'
+    },
+    {
+      classname: 'PushBlog DocusaurusNavbar',
+      pathname: '/BLOG',
+      condition: 'subpaths'
     }
   ];
 
