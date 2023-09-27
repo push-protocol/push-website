@@ -6,16 +6,17 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Push Documentation Hub",
-  tagline: "One place to learn about everything Push Protocol.",
-  favicon: "/assets/docs/favicon.ico",
+  title: "Push | The Communication Protocol of Web3",
+  tagline: "One place to learn about everything Push Protocol!",
+  favicon: "/assets/website/favicon.ico",
 
   // Set the production url of your site here
   url: "https://push.org/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
-
+  trailingSlash: false,
+  
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
@@ -41,7 +42,7 @@ const config = {
       "classic",
       {
         gtag: {
-          trackingID: "G-MSSDHX5TDN",
+          trackingID: "G-N9ZHXNRLYL",
         },
         docs: {
           path: "docs",
@@ -55,6 +56,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          path: "blog",
           routeBasePath: "blog",
           blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
@@ -68,32 +70,32 @@ const config = {
 
   plugins: [
     require.resolve('./plugins/custom-webpack-plugin'),
-    // [
-    //   "@docusaurus/plugin-client-redirects",
-    //   {
-    //     // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-    //     // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-    //     redirects: [
-    //       // /docs/oldDoc -> /docs/newDoc
-    //       {
-    //         to: "/dev",
-    //         from: "/devs",
-    //       },
-    //       // // Redirect from multiple old paths to the new path
-    //       // {
-    //       //   to: '/docs/newDoc2',
-    //       //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-    //       // },
-    //     ],
-    //     createRedirects(existingPath) {
-    //       if (existingPath.includes("/dev")) {
-    //         // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-    //         return [existingPath.replace("/dev", "/devs")];
-    //       }
-    //       return undefined; // Return a falsy value: no redirect created
-    //     },
-    //   },
-    // ],
+  //   [
+  //     "@docusaurus/plugin-client-redirects",
+  //     {
+  //       // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+  //       // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+  //       redirects: [
+  //         // /docs/oldDoc -> /docs/newDoc
+  //         {
+  //           to: "/dev",
+  //           from: "/devs",
+  //         },
+  //         // // Redirect from multiple old paths to the new path
+  //         // {
+  //         //   to: '/docs/newDoc2',
+  //         //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+  //         // },
+  //       ],
+  //       createRedirects(existingPath) {
+  //         if (existingPath.includes("/dev")) {
+  //           // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+  //           return [existingPath.replace("/dev", "/devs")];
+  //         }
+  //         return undefined; // Return a falsy value: no redirect created
+  //       },
+  //     },
+  //   ],
   ],
 
   themeConfig:
@@ -113,7 +115,11 @@ const config = {
           srcDark: "/assets/docs/PushLogoTextWhite.svg",
         },
         items: [
-          { to: "/docs", label: "Docs Hub", position: "right" },
+          {
+            to: "/docs/",
+            position: "right",
+            label: "Docs Hub",
+          },
           { to: "/blog", label: "Blog", position: "right" },
           {
             to: "https://discord.com/invite/pushprotocol",
@@ -136,15 +142,16 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      // algolia: {
-      //   // The application ID provided by Algolia
-      //   appId: 'YOUR_APP_ID',
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'LHUKHXUHQP',
 
-      //   // Public API key: it is safe to commit it
-      //   apiKey: 'YOUR_SEARCH_API_KEY',
+        // Public API key: it is safe to commit it
+        apiKey: '2fc69a715b81b57bcae4ad6edeb52abe',
 
-      //   indexName: 'YOUR_INDEX_NAME',
-      // },
+        indexName: 'v2-push',
+        insights: true,
+      },
       colorMode: {
         defaultMode: "light",
         disableSwitch: false,
@@ -158,6 +165,7 @@ const config = {
       //   textColor: '#e03dc1',
       //   isCloseable: true,
       // },
+      
     }),
 };
 
