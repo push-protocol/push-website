@@ -26,8 +26,6 @@ const HybridSection = (props: HybridSectionProps) => {
 };
 
 const StyledSection = styled(SectionV2)`
-  min-height: 100vh;
-  flex-direction: column;
 
   &[data-bkg='dark'] {
     background: #121315;
