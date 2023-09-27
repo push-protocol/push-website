@@ -803,11 +803,6 @@ li {
   margin: auto;
 }
 
-.livenetworks {
-  background-color: red !important;
-}
-
-
 @media (max-width: 1440px) {
   .main-section {
     width: 80%;
@@ -1007,5 +1002,93 @@ li {
   .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container  article {
       
       margin-left: auto;
+  }
+}
+
+.HomeWrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#hero .contentBox {
+  row-gap: 18px;
+}
+
+.pushMissingSvg {
+  width: 500px;
+}
+
+.livenetworks {
+  background: #ffffff;
+  border: 1px solid #bac4d6;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 550px;
+}
+
+.livenetworks .network {
+  padding: 26px 16px;
+}
+
+.livenetworks .network svg {
+  width: 106px;
+  height: 26px;
+}
+
+/*custom laptop */
+@media only screen and (max-width: 1440px)  {
+  .pushMissingSvg {
+    width: 400px;
+  }
+
+  .livenetworks {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 18px;
+  }
+  
+  .livenetworks .network {
+    padding: 26px 16px;
+  }
+  
+  .livenetworks .network svg {
+    width: 106px;
+    height: 26px;
+  }
+}
+
+/* custom tablet */
+@media only screen and (max-width: 768px)  {
+  .pushMissingSvg {
+    width: 100%;
+  }
+
+  .livenetworks {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 18px;
+    max-width: initial;
+    align-self: stretch;
+  }
+  
+  .livenetworks .network {
+    padding: 15px 10px;
+  }
+  
+  .livenetworks .network svg {
+    width: 79.5px;
+    height: 19.5px;
+  }
+}
+
+/*custom mobile */
+@media only screen and (max-width: 425px)  {
+  svg.figureSvg {
+    width: 100%;
   }
 }

@@ -127,7 +127,7 @@ export default function Home(): JSX.Element {
         </script>
       </Head> */}
       
-      <HomeWrapper>
+      <main className='homewrapper'>
         {/* HERO SECTION */}
         <SectionV2
           id="hero"
@@ -276,14 +276,13 @@ export default function Home(): JSX.Element {
                 </SpanV2>
               </ItemVV2>
 
-              {/* <LiveNetworks> */}
               <div className='livenetworks'>
-                <LiveNetworkCard className="network">
+                <div className="network livenetworkcard">
                   <EthLogoTextSVG
                     alt="Logo for Ethereum"
                     title="Ethereum Logo"
                   />
-                </LiveNetworkCard>
+                </div>
 
                 <LiveNetworkCard className="network">
                   <PolygonLogoTextSVG
@@ -299,7 +298,7 @@ export default function Home(): JSX.Element {
                   />
                 </LiveNetworkCard>
                 </div>
-              {/* </LiveNetworks> */}
+
             </Partners>
 
             <PushWorksRow>
@@ -874,7 +873,7 @@ export default function Home(): JSX.Element {
 
         </FeaturedInSection>
         
-      </HomeWrapper>
+      </main>
     </Layout>
   );
 }
@@ -958,31 +957,31 @@ const ResponsiveH2 = styled(H2V2)`
   }
 `;
 
-const HomeWrapper = styled.main`
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  & #hero .contentBox {
-    row-gap: 18px;
-  }
+// const HomeWrapper = styled.main`
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   & #hero .contentBox {
+//     row-gap: 18px;
+//   }
 
-  & .pushMissingSvg {
-    width: 500px;
-    @media ${device.laptop} {
-      width: 400px;
-    }
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-  @media ${device.tablet} {
-    width: 100%;
+//   & .pushMissingSvg {
+//     width: 500px;
+//     @media ${device.laptop} {
+//       width: 400px;
+//     }
+//     @media ${device.tablet} {
+//       width: 100%;
+//     }
+//   }
+//   @media ${device.tablet} {
+//     width: 100%;
 
-    & svg.figureSvg {
-      width: 100%;
-    }
-  }
-`;
+//     & svg.figureSvg {
+//       width: 100%;
+//     }
+//   }
+// `;
 
 /**
  * Home Page Sections
@@ -1093,58 +1092,58 @@ const PoweringCommunicationRow = styled(ItemHV2)`
   }
 `;
 
-const LiveNetworks = styled(ItemHV2)` 
-  background: #ffffff;
-  border: 1px solid #bac4d6;
-  border-radius: 28px;
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 550px;
+// const LiveNetworks = styled(ItemHV2)` 
+//   background: #ffffff;
+//   border: 1px solid #bac4d6;
+//   border-radius: 28px;
+//   display: flex;
+//   align-items: center;
+//   align-self: flex-start;
+//   justify-content: space-between;
+//   box-sizing: border-box;
+//   max-width: 550px;
 
-  & .network {
-    padding: 26px 16px;
+//   & .network {
+//     padding: 26px 16px;
 
-    & svg {
-      width: 106px;
-      height: 26px;
-    }
-  }
+//     & svg {
+//       width: 106px;
+//       height: 26px;
+//     }
+//   }
 
-  @media ${device.laptopL} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
+//   @media ${device.laptopL} {
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     border-radius: 18px;
 
-    & .network {
-      padding: 26px 16px;
+//     & .network {
+//       padding: 26px 16px;
 
-      & svg {
-        width: 106px;
-        height: 26px;
-      }
-    }
-  }
+//       & svg {
+//         width: 106px;
+//         height: 26px;
+//       }
+//     }
+//   }
 
-  @media ${device.tablet} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
-    max-width: initial;
-    align-self: stretch;
+//   @media ${device.tablet} {
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     border-radius: 18px;
+//     max-width: initial;
+//     align-self: stretch;
 
-    & .network {
-      padding: 15px 10px;
+//     & .network {
+//       padding: 15px 10px;
 
-      & svg {
-        width: 79.5px;
-        height: 19.5px;
-      }
-    }
-  }
-`;
+//       & svg {
+//         width: 79.5px;
+//         height: 19.5px;
+//       }
+//     }
+//   }
+// `;
 
 const LiveNetworkCard = styled(ItemVV2)`
   flex: 1;
