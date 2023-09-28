@@ -956,7 +956,7 @@ const ResponsiveH2 = styled(H2V2)`
   }
 `;
 
-const HomeWrapper = styled.main`
+const HomeWrapper = styled(ItemVV2)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
