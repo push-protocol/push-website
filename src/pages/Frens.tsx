@@ -622,6 +622,7 @@ const AnimationIcon = styled.div`
   background: #121315;
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
+  width: 100%;
 `;
 
 const AnimationSection = styled(ResponsiveSection)`
