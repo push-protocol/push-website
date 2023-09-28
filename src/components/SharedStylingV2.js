@@ -482,11 +482,10 @@ export const LinkToV2 = styled(Link)`
 
   &:hover & {
     filter: ${(props) =>
-      (props.filterHover
-        ? props.filterHover
-        : props.hover
-        ? props.hover
-        : "none") || "none"};
+      (props.filterHover ? props.filterHover : (props.hover ? props.hover : "none")) || "none"};
+
+    color: ${(props) =>
+      (props.hoverColor ? props.hoverColor : (props.color ? props.color : "#fff")) || "#fff"};
   }
 
   &:before {

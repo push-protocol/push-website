@@ -22,11 +22,11 @@ import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
+import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
-import PartnerChannels from "@site/src/components/PartnerChannels";
 import {
   Atag,
   ContentV2,
@@ -259,9 +259,8 @@ export default function Home(): JSX.Element {
           <ContentV2
             className="contentBox"
             alignSelf="center"
-            padding="40px 0px"
           >
-            <PartnerChannels />
+            <ShowcasePartners />
 
             <Partners margin="40px 0" gap={isMobile ? "30px" : "50px"}>
               <ItemVV2>
@@ -384,33 +383,33 @@ export default function Home(): JSX.Element {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-              <SignupBox margin="0 0 0px 0">
-                <ItemVV2 justifyContent="flex-start" gap="12px">
-                  <ResponsiveH2
-                    color="#09090B"
-                    fontSize="40px"
-                    fontWeight="700"
-                    letterSpacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    {t("home.email-section.title")}
-                  </ResponsiveH2>
-                  <SpanV2
-                    color="#303C5E"
-                    fontSize="20px"
-                    fontWeight="400"
-                    letterSpacing="-0.03em"
-                    lineHeight="138.5%"
-                  >
-                    {t("home.email-section.text")}
-                  </SpanV2>
-                </ItemVV2>
+            <SignupBox margin="0 0 0px 0">
+              <ItemVV2 justifyContent="flex-start" gap="12px">
+                <ResponsiveH2
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t("home.email-section.title")}
+                </ResponsiveH2>
+                <SpanV2
+                  color="#303C5E"
+                  fontSize="20px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="138.5%"
+                >
+                  {t("home.email-section.text")}
+                </SpanV2>
+              </ItemVV2>
 
-                <ItemVV2>
-                  <SignupInput />
-                </ItemVV2>
-              </SignupBox>
+              <ItemVV2>
+                <SignupInput />
+              </ItemVV2>
+            </SignupBox>
             <PushProductsScroll />
           </BodyContent>
         </BuildWithPushSection>
@@ -993,7 +992,6 @@ const HeroSection = styled(ResponsiveSection)`
 `;
 
 const StorySection = styled(ResponsiveSection)`
-  padding: 0px 160px 80px 160px;
   width: 100%;
   overflow: hidden;
 
@@ -1004,18 +1002,13 @@ const StorySection = styled(ResponsiveSection)`
 
 const BuildWithPushSection = styled(ResponsiveSection)`
   overflow: hidden;
-  padding: 0px 160px 80px 160px;
   border-radius: 48px;
   width: 100%;
   overflow: hidden;
 
-  @media ${device.tablet} {
-    padding: 0px 0px 10px 0px;
-  }
 `;
 
 const ShrinkingSection = styled(ResponsiveSection)`
-  padding: 80px 160px 180px 160px;
   width: 100%;
   overflow: hidden;
 `;
@@ -1186,7 +1179,7 @@ const BodyContent = styled.div`
 	// }
 
   @media ${device.tablet} {
-  	padding: ${(props) => props.padding || "10px 0px"};
+  	padding: ${(props) => props.padding || "40px 0px"};
   }
 `;
 
