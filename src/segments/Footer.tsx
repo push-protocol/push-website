@@ -216,7 +216,7 @@ function Footer() {
                     {t('footer.links-section.resources-column.title')}
                   </SpanV2>
                   <FooterAnchorSecondary
-                    href="https://push-protocol.medium.com/"
+                    href="/blog"
                     title={t('footer.links-section.resources-column.blog-link')}
                     target="_blank"
                   >

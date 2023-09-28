@@ -677,7 +677,7 @@ export default function Home(): JSX.Element {
 
               <ItemHV2 justifyContent="flex-end">
                 <Atag
-                  href="https://push-protocol.medium.com/"
+                  href="/blog"
                   title="Exlore all articles"
                   target="_blank"
                   hoverBackground="transparent"
