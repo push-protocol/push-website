@@ -283,6 +283,7 @@ const FrensText = () => {
           <AnimationSection
             minHeight="60vh"
             padding="50px 0px 70px 0px"
+            margin="0 auto"
           >
             
             {FrensHeaderList.map((item) => {
