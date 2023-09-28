@@ -7,6 +7,7 @@ import Layout from '@theme/Layout';
 import React from 'react';
 
 // External Components
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
@@ -19,6 +20,9 @@ import { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 
 function PrivacyMobile() {
+  // Internationalization
+  const { t } = useTranslation();
+  
   return (
     <Layout title={PageMeta.PRIVACYFORMOBILE.pageTitle} description={PageMeta.PRIVACYFORMOBILE.pageDescription}>
       {/* <Head>
@@ -48,35 +52,28 @@ function PrivacyMobile() {
             alignSelf="center"
             padding="40px 0px"
           >
-            <ItemHV2
-              flexDirection="column"
-              justifyContent="flex-start"
-            >
+            <ItemVV2>
               <HeroHeaderV2 textAlign="center">PRIVACY POLICY MOBILE APPS</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
                 textAlign="center"
+                color='#fff'
               >
-                Defines how Push collects, handles and processes data.
+                {t('privacy.hero.update-text')}
               </Para>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0"
-              >
-                <H3V2
+              <H3V2
                   maxWidth="400px"
                   fontSize="1rem"
                   margin="40px 0px 80px 0px"
                   letterSpacing="0.1em"
                   textTransform="uppercase"
                   textAlign="center"
+                  color='#fff'
                 >
                   LAST UPDATED: 24TH SEPTEMBER 2022
-                </H3V2>
-              </ItemVV2>
-            </ItemHV2>
+              </H3V2>
+            </ItemVV2>
           </ContentV2>
         </ResponsiveSection>
 
@@ -831,7 +828,7 @@ const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
   font-size: 1.1em;
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
 `;
 
 export default PrivacyMobile;

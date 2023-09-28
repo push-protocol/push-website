@@ -16,7 +16,7 @@ import { ItemHV2, SectionV2 } from '@site/src/components/SharedStylingV2';
 // Internal Configs
 import { device } from '../config/globals';
 
-const Alert = () => {
+export const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);
 
   const hideAlertHandler = () => {
@@ -133,5 +133,3 @@ const KnowMoreLink = styled.span`
     padding-left: 0.5rem;
   }
 `;
-
-export default React.memo(Alert);

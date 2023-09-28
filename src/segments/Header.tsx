@@ -7,12 +7,11 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
-import { useLocation } from '@docusaurus/router';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import Alert from '@site/src/components/Alert';
+import { Alert } from '@site/src/components/Alert';
 import { Atag, ContentV2, ImageV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import EnSVG from '@site/static/assets/website/locales/en.svg';
@@ -100,8 +99,6 @@ function Header() {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const location = useLocation();
-
   const showMobileMenu = isMobile && isMobileMenuOpen;
 
   // if mobile view then show only DARK header.
@@ -136,7 +133,7 @@ function Header() {
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {location.pathname === '/' && <Alert />}
+      <Alert />
 
       <SectionV2>
         <ContentV2

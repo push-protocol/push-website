@@ -10,7 +10,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2 } from '@site/src/components/SharedStylingV2';
+import { ButtonV2, ItemVV2 } from '@site/src/components/SharedStylingV2';
 
 // Internal Configs
 import { PageMeta } from "@site/src/config/pageMeta";
@@ -63,7 +63,7 @@ function CheatSheet() {
   );
 }
 
-const CheatWrapper = styled.main`
+const CheatWrapper = styled(ItemVV2)`
     max-height: 100vh;
     min-height: 100vh;
     width: 100vw;

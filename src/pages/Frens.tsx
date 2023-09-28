@@ -283,6 +283,7 @@ const FrensText = () => {
           <AnimationSection
             minHeight="60vh"
             padding="50px 0px 70px 0px"
+            margin="0 auto"
           >
             
             {FrensHeaderList.map((item) => {
@@ -499,7 +500,7 @@ const BodyContent = styled.div`
   }
 `;
 
-const FrensWrapper = styled.main`
+const FrensWrapper = styled(ItemVV2)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -622,10 +623,12 @@ const AnimationIcon = styled.div`
   background: #121315;
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
+  width: 100%;
 `;
 
 const AnimationSection = styled(ResponsiveSection)`
 
+  display: flex;
   flex-direction: column;
   background: #121315;
   border-bottom-left-radius: 48px;

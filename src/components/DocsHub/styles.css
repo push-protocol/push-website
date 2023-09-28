@@ -2,24 +2,24 @@
   margin-right: 10px;
 }
 
-.DocsHub .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module {
+.DocsHub .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module, .DocsHub .docPage__5DB {
   width: 100% !important;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module, .DocsHub .docPage__5DB main {
   max-width: initial;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container, .DocsHub .docPage__5DB main .container {
   max-width: initial;
   padding: 0px !important;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row, .DocsHub .docPage__5DB main .container .row {
   display: flex;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col, .DocsHub .docPage__5DB main .container .row .col {
   padding: 0;
   max-width: initial !important;
 }

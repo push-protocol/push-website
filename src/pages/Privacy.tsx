@@ -53,36 +53,29 @@ function Privacy() {
             alignSelf="center"
             padding="40px 0px"
           >
-            <ItemHV2
-              flexDirection="column"
-              justifyContent="flex-start"
-            >
+            <ItemVV2>
               <HeroHeaderV2 textAlign="center">{t('privacy.hero.title')}</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
                 textAlign="center"
+                color='#fff'
               >
                 {t('privacy.hero.description')}
               </Para>
-
-              <ItemVV2
-                align="center"
-                margin="0"
+              <H3V2
+                maxWidth="400px"
+                fontSize="1rem"
+                margin="40px 0 0 0"
+                letterSpacing="0.1em"
+                textTransform="uppercase"
+                lineHeight="1.5em"
+                textAlign="center"
+                color='#fff'
               >
-                <H3V2
-                  maxWidth="400px"
-                  fontSize="1rem"
-                  margin="40px 0 0 0"
-                  letterSpacing="0.1em"
-                  textTransform="uppercase"
-                  lineHeight="1.5em"
-                  textAlign="center"
-                >
-                  {t('privacy.hero.update-text')}
-                </H3V2>
-              </ItemVV2>
-            </ItemHV2>
+                {t('privacy.hero.update-text')}
+              </H3V2>
+            </ItemVV2>
           </ContentV2>
         </ResponsiveSection>
 
@@ -894,7 +887,7 @@ const ListGroup = styled.div`
 const Para = styled(PV2)`
   font-weight: 300;
   font-size: ${(props) => props.size || '1.1em'};
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
   text-align: ${(props) => props.textAlign || 'initial'};
 `;
 

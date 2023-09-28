@@ -21,7 +21,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
   projectName: "push-website", // Usually your repo name.
-  deploymentBranch: "gh-pages-d1",
+  deploymentBranch: "gh-pages",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -67,8 +67,6 @@ const config = {
       },
     ],
   ],
-
-  scripts: ["./src/customscripts.js"],
 
   plugins: [
     require.resolve("./plugins/custom-webpack-plugin"),

@@ -188,7 +188,9 @@ export const BRBMainComponent = () => {
   };
 
   return (
-    <BrbWrapper>
+    <BrbWrapper
+      background="#000"
+    >
       {/* header style */}
       <StyledHeader
         showMobileMenu={showMobileMenu}
@@ -512,7 +514,7 @@ const ButtonBar = styled(ButtonV2)`
   }
 `;
 
-const BrbWrapper = styled.main`
+const BrbWrapper = styled(ItemVV2)`
   overflow: hidden;
   width: 100%;
   display: flex;

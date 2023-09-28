@@ -93,7 +93,7 @@ export const citiesList = [
     {
       srcref: 'ahmedabad',
       place: 'Ahmedabad',
-      date: '30 Sept 2023',
+      date: '1 Oct 2023',
       link: 'https://www.lu.ma/brb-ahmedabad',
       alt: 'Ahmedabad, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Ahmedabad, India for dev tour of Push. #BRBIndia campaign of Push',

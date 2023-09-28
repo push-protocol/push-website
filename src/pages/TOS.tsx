@@ -65,44 +65,30 @@ function TermsOfService() {
             flex="1"
             alignSelf="center"
           >
-            <ItemVV2
-              flexDirection="column"
-              justifyContent="flex-start"
-            >
+            <ItemVV2>
               <HeroHeaderV2>{t('terms.hero.title')}</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
+                color="#fff"
               >
                 {t('terms.hero.description')}
               </Para>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0"
-                height="50px"
+              <H3V2
+                maxWidth="400px"
+                fontSize="1rem"
+                lineHeight={8}
+                margin="0px 0px 80px 0px"
+                letterSpacing="0.1em"
+                textTransform="uppercase"
+                color="#fff"
               >
-                <H3V2
-                  maxWidth="400px"
-                  fontSize="1rem"
-                  lineHeight={8}
-                  margin="0px 0px 80px 0px"
-                  letterSpacing="0.1em"
-                  textTransform="uppercase"
-                >
-                  {t('terms.hero.update-text')}
-                </H3V2>
-              </ItemVV2>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0px"
-              >
-                <Para testAlign="center" size="1.3rem">
-                  <BV2>IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
-                  ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
-                </Para>
-              </ItemVV2>
+                {t('terms.hero.update-text')}
+              </H3V2>
+              <Para testAlign="center" size="1.3rem" color="#fff">
+                <BV2 color="#fff">IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
+                ACTION RIGHTS AS DETAILED IN <BV2 color="#fff">SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
+              </Para>
             </ItemVV2>
           </ContentV2>
         </ResponsiveSection>
@@ -1090,6 +1076,7 @@ function TermsOfService() {
                 >
                   <SpanV2
                     background="#000"
+                    color="#fff"
                     fontWeight="600"
                     padding="0px 8px"
                   >
@@ -1432,7 +1419,7 @@ const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
   font-size: ${(props) => props.size || '1.1em'};
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
 `;
 
 const TermsHeaderGroup = styled.div`
