@@ -13,7 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import { subscribeToSpace } from '@site/src/api';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -160,7 +160,7 @@ const Spaces = () => {
   );
 };
 
-const SpaceWrapper = styled.main`
+const SpaceWrapper = styled(ItemVV2)`
   max-height: 100vh;
   min-height: 100vh;
   width: 100vw;
