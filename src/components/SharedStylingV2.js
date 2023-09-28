@@ -91,12 +91,7 @@ export const ItemBreakV2 = styled.div`
 export const ItemHV2 = styled.div`
   align-items: ${(props) => props.alignItems || "center"};
   align-self: ${(props) => props.alignSelf || "stretch"};
-  background: ${(props) =>
-    props.gradient
-      ? props.gradient
-      : props.background
-      ? props.background
-      : "transparent" || "transparent"};
+  background: ${(props) => props.gradient ? props.gradient : (props.background ? props.background : "transparent") || "transparent"};
   border: ${(props) => props.border || "initial"};
   border-radius: ${(props) => props.borderRadius || "initial"};
   bottom: ${(props) => props.bottom || "auto"};

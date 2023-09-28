@@ -188,7 +188,9 @@ export const BRBMainComponent = () => {
   };
 
   return (
-    <BrbWrapper>
+    <BrbWrapper
+      background="#000"
+    >
       {/* header style */}
       <StyledHeader
         showMobileMenu={showMobileMenu}
