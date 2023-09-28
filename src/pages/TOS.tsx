@@ -67,7 +67,7 @@ function TermsOfService() {
           >
             <ItemVV2
               flexDirection="column"
-              justifyContent="flex-start"
+              justifyContent="center"
             >
               <HeroHeaderV2>{t('terms.hero.title')}</HeroHeaderV2>
               <Para
@@ -90,7 +90,7 @@ function TermsOfService() {
               </H3V2>
               <Para testAlign="center" size="1.3rem" color="#fff">
                 <BV2 color="#fff">IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
-                ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
+                ACTION RIGHTS AS DETAILED IN <BV2 color="#fff">SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
               </Para>
             </ItemVV2>
           </ContentV2>
