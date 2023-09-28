@@ -73,6 +73,7 @@ function TermsOfService() {
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
+                color="#fff"
               >
                 {t('terms.hero.description')}
               </Para>
@@ -89,6 +90,7 @@ function TermsOfService() {
                   margin="0px 0px 80px 0px"
                   letterSpacing="0.1em"
                   textTransform="uppercase"
+                  color="#fff"
                 >
                   {t('terms.hero.update-text')}
                 </H3V2>
@@ -99,7 +101,7 @@ function TermsOfService() {
                 margin="0px"
               >
                 <Para testAlign="center" size="1.3rem">
-                  <BV2>IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
+                  <BV2 color="#fff">IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
                   ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
                 </Para>
               </ItemVV2>
@@ -1432,7 +1434,7 @@ const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
   font-size: ${(props) => props.size || '1.1em'};
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
 `;
 
 const TermsHeaderGroup = styled.div`
