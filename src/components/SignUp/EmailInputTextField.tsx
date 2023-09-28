@@ -79,7 +79,7 @@ const Wrapper = styled.form`
   background: transparent;
   padding: 14px 16px;
 
-  & input[type="text"] {
+  & .input {
     all: unset;
 
     width: 90%;
@@ -92,6 +92,8 @@ const Wrapper = styled.form`
     line-height: normal;
     letter-spacing: -0.03em;
     color: #9c9cbe;
+    background: transparent;
+    border-bottom: 1px solid #9c9cbe;
   }
 
   input:-webkit-autofill {

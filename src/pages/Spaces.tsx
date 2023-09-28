@@ -255,67 +255,6 @@ const ShootUp = styled.button`
   cursor: pointer;
 `;
 
-// const Wrapper = styled.form`
-//     position: relative;
-//     display: flex;
-//     flex: 1;
-//     column-gap: 6px;
-//     align-items: center;
-//     // background: #FFFFFF;
-//     border-radius: 21px;
-//     // border: 1px solid #FFFFFF;
-//     padding: 5px;
-//     // justify-content: space-between;
-//     justify-content: center;
-
-//     @media ${device.tablet} {
-//         column-gap: 3px;
-//     }
-
-//     & input[type="text"] {
-//         all: unset;
-
-//         box-sizing: border-box;
-//         font-family: 'Strawford';
-//         font-style: normal;
-//         font-weight: 400;
-//         font-size: 16px;
-//         line-height: normal;
-//         letter-spacing: -0.03em;
-//         color: #9C9CBE;
-//         background: #FFFFFF;
-//         // min-width: 220px;
-//         width: 100%;
-//         padding: 6px;
-//         padding-left: 8px;
-
-//         &::placeholder {
-//             color: #A5A7B4;
-//             opacity: 1;
-//         }
-
-//     }
-
-//     & button {
-//         cursor: pointer;
-//         min-width: 160px;
-//         color: #FFFFFF;
-//         background: #DD44B9;
-//         border-radius: 16px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         padding: 14px 32px;
-//         white-space: nowrap;
-
-//         @media ${device.tablet} {
-//           min-width: auto;
-//           font-size: 12px;
-//           padding: 14px 16px;
-//         }
-//     }
-// `;
-
 const MaskInput = styled.div`
   position: absolute;
   background: #fff;

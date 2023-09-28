@@ -73,7 +73,6 @@ export default function Home(): JSX.Element {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery("(max-width: 1250px)");
 
   // Hero Shrink Animation
@@ -257,7 +256,7 @@ export default function Home(): JSX.Element {
           >
             <ShowcasePartners />
 
-            <Partners margin="40px 0" gap={isMobile ? "30px" : "50px"}>
+            <Partners margin="40px 0">
               <ItemV>
                 <Span
                   fontWeight="400"
@@ -311,10 +310,7 @@ export default function Home(): JSX.Element {
               <ItemV
                 justifyContent="space-around"
                 minHeight="530px"
-                // alignSelf='center'
-                alignItems={isMobile ? "center" : "flex-start"}
-                // flex="2"
-                // gap='22px'
+                alignItems="flex-start"
               >
                 <ResponsiveH2
                   fontSize="40px"
@@ -331,7 +327,7 @@ export default function Home(): JSX.Element {
                   fontSize="19px"
                   lineHeight="160%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin="10px 0px 0px 0px"
                 >
                   {t("home.partners-section.missing-web3-text")}
                 </Span>
@@ -342,7 +338,7 @@ export default function Home(): JSX.Element {
                   fontSize="22px"
                   lineHeight="142%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin="10px 0px 0px 0px"
                 >
                   {t("home.partners-section.missing-web3-span")}
                 </Span>
@@ -359,7 +355,7 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="26px"
                   alignSelf="center"
-                  margin={isMobile ? "50px 0px 0px 0px" : ""}
+                  margin="0px"
                 >
                   {/* Learn about $PUSH */}
                   {t("home.partners-section.missing-web3-button")}
@@ -1204,8 +1200,11 @@ const Partners = styled(ItemV)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 1200px) {
+  gap: 50px;
+
+  @media ${device.laptop} {
     flex-direction: column;
+    gap: 30px;
   }
 `;
 

@@ -286,7 +286,7 @@ function Footer() {
                     {t('footer.links-section.support-column.title')}
                   </Span>
 
-                  <EmailInputTextField placeholder={t('footer.links-section.support-column.email-placeholder')} />
+                  <EmailInputTextField placeholder="Email" />
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>

@@ -460,10 +460,9 @@ function Header() {
 
                 <NavigationMenuItem>
                   <MenuHeader>
-                    <LinkTo
+                    <NavMenuItemLink
                       to="/brb"
                       title={'BRB'}
-                      flex={isMobile ? 'initial' : '1'}
                       padding="0px 0px"
                       fontSize="18px"
                       fontWeight="500"
@@ -471,11 +470,9 @@ function Header() {
                       lineHeight="142%"
                       color="#fff"
                       hoverBackground="none"
-                      // alignItems="center"
-                      margin={isMobile ? '16px 16px' : 'auto 0'}
                     >
                       Billion Reasons to Build
-                    </LinkTo>
+                    </NavMenuItemLink>
                   </MenuHeader>
                   {/* <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 2)}
@@ -487,11 +484,8 @@ function Header() {
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemV
+            <HeaderFocusItems
               flex="initial"
-              flexDirection="row !important"
-              alignSelf={isMobile ? 'center' : 'flex-end'}
-              flexWrap={isMobile ? 'wrap' : 'none'}
             >
               <LanguageItem showMobileMenu={showMobileMenu}>
                 <LanguageMenuItem>
@@ -573,7 +567,6 @@ function Header() {
                                 letterSpacing="normal"
                                 alignSelf="flex-start"
                                 padding="8px 30px 8px 10px !important"
-                                margin="0px"
                                 color="#fff !important"
                               >
                                 {t(item.translatedtitle)}
@@ -604,7 +597,7 @@ function Header() {
               >
                 {t('header.app-button.title')}
               </DappLauncher>
-            </ItemV>
+            </HeaderFocusItems>
           </HeaderItemH>
         </Content>
       </Section>
@@ -820,6 +813,16 @@ const NavigationMenuItem = styled.li`
   }
 `;
 
+const NavMenuItemLink = styled(LinkTo)`
+  flex: 1;
+  margin: 0 auto;
+  
+  @media ${device.laptop} {
+    flex: initial;
+    margin: 16px;
+  }
+`
+
 const LanguageMenuItem = styled.li`
   position: relative;
   // Styles for the flags
@@ -988,6 +991,17 @@ const NavigationMenuContent = styled.ul`
     }
   }
 `;
+
+const HeaderFocusItems = styled(ItemH)`
+  align-self: flex-end;
+  flex-wrap: nowrap;
+
+  @media ${device.laptop} {
+    flex-direction: collumn;
+    align-self: center;
+    flex-wrap: wrap;
+  }
+`
 
 const LanguageMenuContent = styled.div`
   list-style: none;

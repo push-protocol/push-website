@@ -38,42 +38,39 @@ const SlideElement = ({
   paddingMobile
 }) => {
 
-  const isMobile = useMediaQuery(device.tablet)
-
   return (
     <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom={paddingBottom} className="panel">
 
-      <GrowPushCardDetails>
+      <GrowPushCardContent>
         <Span color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</Span>
-        <Span
+        <GrowPushCardDesc
           color="#ADB8D7"
-          fontSize={isMobile ? "20px" : "22px"}
-          fontWeight={isMobile ? "400" : "500"}
+          fontSize="22px"
+          fontWeight="500"
           lineHeight="146%"
           letterSpacing="inherit"
         >
            {content}
-        </Span>
+        </GrowPushCardDesc>
 
-        <A
+        <GrowPushCardLink
           href={link}
           title={title}
           target="_blank"
           padding="0px 0px"
-          fontSize={isMobile ? "18px" : "20px"}
-          fontWeight={isMobile ? "400" : "500"}
+          fontSize="20px"
+          fontWeight="500"
           letterSpacing="-0.03em"
           lineHeight="26px"
           className='button'
           margin="10px 0px 0px 0px"
           background="transparent"
-        // hoverShade="none"
         >
           <SpanLink>{linkContent}</SpanLink>
           <FiArrowUpRight className="anchorSVGlink" />
-        </A>
+        </GrowPushCardLink>
 
-      </GrowPushCardDetails>
+      </GrowPushCardContent>
 
       <Div padding={paddingMobile}>
         <MemberImage
@@ -96,7 +93,6 @@ const HorizontalScroll = () => {
 
   const panels = useRef([]);
   const panelsContainer = useRef();
-  const isMobile = useMediaQuery(device.tablet)
 
   // ScrollTrigger.saveStyles(".mobile, .desktop");
 
@@ -304,7 +300,7 @@ const GrowPushCard = styled(ItemV)`
 
 `;
 
-const GrowPushCardDetails = styled.div`
+const GrowPushCardContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -314,11 +310,21 @@ const GrowPushCardDetails = styled.div`
    row-gap: 10px;
    margin-bottom: 10px;
   }
-
-  & ${A} {
-    display: none;
-  }
 `;
+
+const GrowPushCardDesc = styled(Span)`
+  @media ${device.tablet} {
+    font-size: 20px;
+    font-weight: 400;
+  }
+`
+
+const GrowPushCardLink = styled(A)`
+  @media ${device.tablet} {
+    font-size: 18px;
+    font-weight: 400;
+  }
+`
 
 const SpanLink = styled(Span)`
   position: relative;

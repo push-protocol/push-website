@@ -13,7 +13,6 @@ import styled from 'styled-components';
 
 // Internal Components
 import { H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
 import { device, size } from '@site/src/config/globals';
@@ -36,8 +35,6 @@ function PartnerChannels() {
   // Internationalization
   const { t } = useTranslation();
 
-  const isLargeScreen = useMediaQuery('(max-width: 1200px)');
-  const isMobile = useMediaQuery('(max-width: 768px)');
   const [active, setActive] = useState(false);
   // const itemRef = useRef();
   // const onScreen = useOnScreen(itemRef);
@@ -288,7 +285,7 @@ function PartnerChannels() {
             weight="300"
             spacing="-0.03em"
             lineHeight="160%"
-            textAlign={isMobile ? 'center' : 'initial'}
+            textAlign='center'
           >
             {t('home.partners-section.partner-channels-description')}
           </Span>
