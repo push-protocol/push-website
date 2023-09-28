@@ -989,11 +989,13 @@ const HomeWrapper = styled(ItemVV2)`
 const HeroSection = styled(ResponsiveSection)`
   padding: 0px 160px 0px 160px;
   width: 100%;
+  overflow: hidden;
 `;
 
 const StorySection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
   width: 100%;
+  overflow: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 32px;
@@ -1005,6 +1007,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 80px 160px;
   border-radius: 48px;
   width: 100%;
+  overflow: hidden;
 
   @media ${device.tablet} {
     padding: 0px 0px 10px 0px;
@@ -1014,6 +1017,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
 const ShrinkingSection = styled(ResponsiveSection)`
   padding: 80px 160px 180px 160px;
   width: 100%;
+  overflow: hidden;
 `;
 
 const ItemImage = styled(ItemVV2)`
@@ -1033,6 +1037,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
   min-height: auto;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 
   & .contentBox {
     gap: 80px;
