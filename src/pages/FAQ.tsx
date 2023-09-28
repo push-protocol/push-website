@@ -870,7 +870,7 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const FAQWrapper = styled.main`
+const FAQWrapper = styled(ItemVV2)`
   & .contentBox {
     // row-gap: 18px;
   }
