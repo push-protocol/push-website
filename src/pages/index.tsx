@@ -148,36 +148,31 @@ export default function Home(): JSX.Element {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <Content alignSelf="center">
-            {
-              // rendering the main animation only on large laptops and desktops
-              !isMobile && (
-                <HeroAnimation>
-                  <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
-                </HeroAnimation>
-              )
-            }
+          <HeroContent alignSelf="center">
+            <HeroAnimation>
+              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+            </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                MarginTop={"100px"}
+                margin="100px 0 0 0"
               >
-                <FadeInAnimation wrapperElement="div" delay={0.25}>
+                {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                   <H1 zIndex="2">{t("home.hero.title")}</H1>
-                </FadeInAnimation>
+                {/* </FadeInAnimation> */}
 
                 <Span
-                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                  margin='20px 0px 40px 0'
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                  <FadeInAnimation wrapperElement="div" delay={0.35}>
+                  {/* <FadeInAnimation wrapperElement="div" delay={0.35}> */}
                     {t("home.hero.description")}
-                  </FadeInAnimation>
+                  {/* </FadeInAnimation> */}
                 </Span>
 
-                <FadeInAnimation wrapperElement="div" delay={0.55}>
+                {/* <FadeInAnimation wrapperElement="div" delay={0.55}> */}
                   <HeroCTA justifyContent="flex-start" gap="18px">
                     <A
                       href="/docs"
@@ -200,9 +195,9 @@ export default function Home(): JSX.Element {
                       {t("home.hero.explore-button")}
                     </A>
                   </HeroCTA>
-                </FadeInAnimation>
+                {/* </FadeInAnimation> */}
 
-                <FadeInAnimation wrapperElement="div" delay={0.65}>
+                {/* <FadeInAnimation wrapperElement="div" delay={0.65}> */}
                   <ItemH
                     justifyContent="flex-start"
                     margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
@@ -238,7 +233,7 @@ export default function Home(): JSX.Element {
                       <DiscordSVG width={32} height={32} />
                     </A>
                   </ItemH>
-                </FadeInAnimation>  
+                {/* </FadeInAnimation>   */}
               </HeroItem>
             </HeroPrimary>
 
@@ -251,7 +246,7 @@ export default function Home(): JSX.Element {
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
-          </Content>
+          </HeroContent>
         </Section>
 
         {/* MISSING PIECE OF WEB3 */}
@@ -901,13 +896,21 @@ const HeroAnimation = styled(ItemH)`
   bottom: 150px;
   width: 100%;
   z-index: 1;
+
+  @media ${device.laptop} {
+    display: none;
+  }
 `;
+
+const HeroContent = styled(Content)`
+
+`
 
 const HeroItem = styled(ItemV)`
   z-index: 2;
   @media ${device.laptop} {
     max-width: initial;
-    margin-top: ${(props) => props.MarginTop || "0px"};
+    margin: ${(props) => props.margin || "0px"};
   }
 
   @media ${device.mobileM} {
@@ -1071,6 +1074,20 @@ const PushWorksRow = styled(ItemH)`
   display: flex;
   flex-direction: row;
 
+  @media ${device.laptop} {
+    & ${ItemV} {
+      align-items: flex-start;
+
+      & ${Span} {
+        margin: 10px 0px 0px 0px;
+      }
+
+      & ${A} {
+        margin: 50px 0px 0px 0px;
+      }
+    }
+  }
+  
   @media ${device.tablet} {
     flex-direction: column;
     row-gap: 30px;

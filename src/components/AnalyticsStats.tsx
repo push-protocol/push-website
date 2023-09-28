@@ -154,7 +154,7 @@ function AnalyticsStats() {
   );
 }
 
-const KPIBanner = styled.div`
+const KPIBanner = styled(ItemH)`
   background: linear-gradient(
     90deg,
     rgba(18, 19, 21, 0.5) -2.55%,
@@ -162,15 +162,16 @@ const KPIBanner = styled.div`
     rgba(142, 49, 122, 0.5) 68.34%,
     rgba(18, 19, 21, 0.5) 102.97%
   );
+
   backdrop-filter: blur(30px);
-  border-radius: 63px;
+  border-radius: 64px;
+
   display: flex;
   align-items: center;
-  // justify-content: center;
   justify-content: space-between;
+
   width: 100%;
   padding: 30px 50px;
-  font-family: 'Strawford';
   font-style: normal;
 
   & .kpiItem {

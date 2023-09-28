@@ -44,6 +44,7 @@ const SlideElement = ({
     <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom={paddingBottom} className="panel">
 
       <GrowPushCardDetails>
+        <Span color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</Span>
         <Span
           color="#ADB8D7"
           fontSize={isMobile ? "20px" : "22px"}
@@ -51,7 +52,7 @@ const SlideElement = ({
           lineHeight="146%"
           letterSpacing="inherit"
         >
-          <Span color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</Span> {content}
+           {content}
         </Span>
 
         <A
@@ -312,6 +313,10 @@ const GrowPushCardDetails = styled.div`
   @media ${device.laptop}{
    row-gap: 10px;
    margin-bottom: 10px;
+  }
+
+  & ${A} {
+    display: none;
   }
 `;
 

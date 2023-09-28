@@ -573,6 +573,7 @@ function Header() {
                                 letterSpacing="normal"
                                 alignSelf="flex-start"
                                 padding="8px 30px 8px 10px !important"
+                                margin="0px"
                                 color="#fff !important"
                               >
                                 {t(item.translatedtitle)}
