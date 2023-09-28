@@ -12,11 +12,8 @@ import styled from 'styled-components';
 
 // Internal Components
 import { Alert } from '@site/src/components/Alert';
-import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
+import { A, Button, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import EnSVG from '@site/static/assets/website/locales/en.svg';
-import EsSVG from '@site/static/assets/website/locales/es.svg';
-import HiSVG from '@site/static/assets/website/locales/hi.svg';
 
 // Import Assets
 import { AiOutlineClose } from 'react-icons/ai';
@@ -25,6 +22,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
@@ -32,7 +30,6 @@ const SCROLL_DELTA = 5;
 if (typeof window !== 'undefined') {
   lastScrollY = window.scrollY;
 }
-
 
 function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
@@ -472,6 +469,7 @@ function Header() {
                       fontWeight="500"
                       letterSpacing="-0.03em"
                       lineHeight="142%"
+                      color="#fff"
                       hoverBackground="none"
                       // alignItems="center"
                       margin={isMobile ? '16px 16px' : 'auto 0'}
@@ -492,6 +490,7 @@ function Header() {
             <ItemV
               flex="initial"
               flexDirection="row !important"
+              alignSelf={isMobile ? 'center' : 'flex-end'}
               flexWrap={isMobile ? 'wrap' : 'none'}
             >
               <LanguageItem showMobileMenu={showMobileMenu}>
@@ -506,89 +505,83 @@ function Header() {
                       fontWeight="500"
                       letterSpacing="-0.03em"
                       lineHeight="142%"
-                      padding="16px 0px !important"
-                    >
-                      {/* <Span
-                        size="18px"
-                        weight="500"
-                        spacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px 0px !important"
-                      > */}
-                        {i18n && i18n.language == 'es' ? <EsSVG className='flag-icon'/> : (i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>)}
-                        {/* {i18n && i18n.language == 'hi' ? <HiSVG className='flag-icon'/> : <EnSVG className='flag-icon'/>} */}
-                    
-   {/* </Span> */}
-                        </Span>
-                        <BsChevronDown
-                          size={12}
-                          className="chevronIcon"
-                        />
-                    </LanguageMenuHeader>
+                      padding="16px 0px"
+                    > 
+                      {i18n &&
+                        SupportedLanguagesList
+                          .filter((item) => item.id === i18n.language)
+                          .map((item, index) => {
+                            return (
+                              <Image
+                                key={index}
+                                src={require(`@site/static/assets/website/languages/${item.srcref}.png`).default}
+                                srcSet={`${require(`@site/static/assets/website/languages/${item.srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/${item.srcref}@3x.png`).default} 3x`}
+                                alt={`${item?.alt}`}
+                                height={24}
+                                width={24}
+                                borderRadius="100%"
+                              />
+                            );
+                        })
+                      }
+                    </Span>
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                  </LanguageMenuHeader>
 
 
                   <LanguageMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[3]}
                   >
-                    <A
-                      href="/"
-                      target=""
-                      title={t('header.language.english')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                      justifyContent="flex-start"
-                      onClick={() => i18n.changeLanguage('en')}
-                    >
-                      <EnSVG className="flag-icon-drop" />
-                      {t('header.language.english')}
-                    </A>
-                    <A
-                      href="/"
-                      target=""
-                      title={t('header.language.spanish')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                      justifyContent="flex-start"
-                      onClick={() => i18n.changeLanguage('es')}
-                    >
-                      <EsSVG className="flag-icon-drop" />
-                      {t('header.language.spanish')}
-
-                    </A>
-                     <A
-                      href="/"
-                      target=""
-                      title={t('header.language.hindi')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                       fontSize="16px"
-                      fontWeight="400"
-                      letterSpacing="normal"
-                      lineHeight="230%"
-                      display="flex"
-                      borderRadius="0px"
-                      justifyContent="flex-start"
-                      onClick={() => i18n.changeLanguage('hi')}
-                    >
-                      <HiSVG className='flag-icon-drop'/>
-                      {t('header.language.hindi')}
-                    </A>
+                    {
+                      SupportedLanguagesList.map((item, index) => {
+                        return (
+                          <Button
+                            key={index}
+                            href="#"
+                            title={t(item.translatedtitle)}
+                            background="transparent"
+                            hoverbackground="#fff"
+                            color="#fff"
+                            padding="8px 30px"
+                            display="flex"
+                            borderRadius="0"
+                            justifyContent="flex-start"
+                            onClick={() => i18n.changeLanguage(item.id)}
+                          >
+                            <ItemH
+                              justifyContent="flex-start"
+                              flexWrap="nowrap"
+                              padding="0px"
+                            >
+                              <Image
+                                key={index}
+                                src={require(`@site/static/assets/website/languages/${item.srcref}.png`).default}
+                                srcSet={`${require(`@site/static/assets/website/languages/${item.srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/${item.srcref}@3x.png`).default} 3x`}
+                                alt={`${item?.alt}`}
+                                height={24}
+                                width={24}
+                                borderRadius="100%"
+                              />
+                              <Span
+                                fontSize="16px"
+                                fontWeight="400"
+                                lineHeight="230%"
+                                letterSpacing="normal"
+                                alignSelf="flex-start"
+                                padding="8px 30px 8px 10px !important"
+                                color="#fff !important"
+                              >
+                                {t(item.translatedtitle)}
+                              </Span>
+                            </ItemH>
+                          </Button>
+                        )
+                      })
+                    }
                   </LanguageMenuContent>
                 </LanguageMenuItem>
               </LanguageItem>
@@ -606,6 +599,7 @@ function Header() {
                 letterSpacing="-0.03em"
                 lineHeight="26px"
                 width="100%"
+                margin="0px 8px 0px 0px"
               >
                 {t('header.app-button.title')}
               </DappLauncher>
@@ -622,7 +616,6 @@ const LanguageItem = styled.div`
   margin: 0px 16px 0px 0px;
 
   @media ${device.laptop} {
-    margin: 0 0 16px auto;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
