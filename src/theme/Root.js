@@ -91,7 +91,7 @@ export default function Root({children}) {
   }
 
   return (
-    <div class={returnAdditionalClasses(superimposedConditions)}>
+    <div className={returnAdditionalClasses(superimposedConditions)}>
       <ServerStyle from={children} />
       
       {excludeDefaultConfigAt('/BRB') && excludeDefaultConfigAt('/DOCS') && excludeDefaultConfigAt('/BLOG') &&
