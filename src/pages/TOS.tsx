@@ -65,10 +65,7 @@ function TermsOfService() {
             flex="1"
             alignSelf="center"
           >
-            <ItemVV2
-              flexDirection="column"
-              justifyContent="center"
-            >
+            <ItemVV2>
               <HeroHeaderV2>{t('terms.hero.title')}</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"

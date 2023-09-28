@@ -7,6 +7,7 @@ import Layout from '@theme/Layout';
 import React from 'react';
 
 // External Components
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
@@ -19,6 +20,9 @@ import { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 
 function PrivacyMobile() {
+  // Internationalization
+  const { t } = useTranslation();
+  
   return (
     <Layout title={PageMeta.PRIVACYFORMOBILE.pageTitle} description={PageMeta.PRIVACYFORMOBILE.pageDescription}>
       {/* <Head>
