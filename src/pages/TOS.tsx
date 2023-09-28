@@ -1079,6 +1079,7 @@ function TermsOfService() {
                 >
                   <SpanV2
                     background="#000"
+                    color="#fff"
                     fontWeight="600"
                     padding="0px 8px"
                   >
