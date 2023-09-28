@@ -512,7 +512,7 @@ const ButtonBar = styled(ButtonV2)`
   }
 `;
 
-const BrbWrapper = styled.main`
+const BrbWrapper = styled(ItemVV2)`
   overflow: hidden;
   width: 100%;
   display: flex;
