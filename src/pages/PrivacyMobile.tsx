@@ -48,35 +48,28 @@ function PrivacyMobile() {
             alignSelf="center"
             padding="40px 0px"
           >
-            <ItemHV2
-              flexDirection="column"
-              justifyContent="flex-start"
-            >
+            <ItemVV2>
               <HeroHeaderV2 textAlign="center">PRIVACY POLICY MOBILE APPS</HeroHeaderV2>
               <Para
                 margin="20px 0 0 0"
                 size="1.5rem"
                 textAlign="center"
+                color='#fff'
               >
                 Defines how Push collects, handles and processes data.
               </Para>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0"
-              >
-                <H3V2
+              <H3V2
                   maxWidth="400px"
                   fontSize="1rem"
                   margin="40px 0px 80px 0px"
                   letterSpacing="0.1em"
                   textTransform="uppercase"
                   textAlign="center"
+                  color='#fff'
                 >
                   LAST UPDATED: 24TH SEPTEMBER 2022
-                </H3V2>
-              </ItemVV2>
-            </ItemHV2>
+              </H3V2>
+            </ItemVV2>
           </ContentV2>
         </ResponsiveSection>
 

@@ -77,34 +77,21 @@ function TermsOfService() {
               >
                 {t('terms.hero.description')}
               </Para>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0"
-                height="50px"
+              <H3V2
+                maxWidth="400px"
+                fontSize="1rem"
+                lineHeight={8}
+                margin="0px 0px 80px 0px"
+                letterSpacing="0.1em"
+                textTransform="uppercase"
+                color="#fff"
               >
-                <H3V2
-                  maxWidth="400px"
-                  fontSize="1rem"
-                  lineHeight={8}
-                  margin="0px 0px 80px 0px"
-                  letterSpacing="0.1em"
-                  textTransform="uppercase"
-                  color="#fff"
-                >
-                  {t('terms.hero.update-text')}
-                </H3V2>
-              </ItemVV2>
-
-              <ItemVV2
-                align="flex-start"
-                margin="0px"
-              >
-                <Para testAlign="center" size="1.3rem">
-                  <BV2 color="#fff">IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
-                  ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
-                </Para>
-              </ItemVV2>
+                {t('terms.hero.update-text')}
+              </H3V2>
+              <Para testAlign="center" size="1.3rem" color="#fff">
+                <BV2 color="#fff">IMPORTANT NOTICE: </BV2>THIS AGREEMENT IS SUBJECT TO BINDING ARBITRATION AND A WAIVER OF CLASS
+                ACTION RIGHTS AS DETAILED IN <BV2>SCHEDULE B</BV2>. PLEASE READ THE AGREEMENT CAREFULLY.
+              </Para>
             </ItemVV2>
           </ContentV2>
         </ResponsiveSection>
