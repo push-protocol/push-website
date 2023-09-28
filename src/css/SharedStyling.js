@@ -15,7 +15,7 @@ import GLOBALS, { device } from '@site/src/config/globals';
  * 				ItemV  ItemV ItemV  ItemV
  */
 
-export const HeroHeaderV2 = styled.h1`
+export const HeroHeader = styled.h1`
   font-family: ${(props) => props.fontFamily || "Strawford, Helvetica, sans-serif"};
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
@@ -36,7 +36,7 @@ export const HeroHeaderV2 = styled.h1`
 `;
 
 // Section covers the entire width and height
-export const SectionV2 = styled.section`
+export const Section = styled.section`
   align-items: ${(props) => props.alignItems || "center"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   background: ${(props) =>
@@ -57,7 +57,7 @@ export const SectionV2 = styled.section`
   position: ${(props) => props.position || "relative"};
 `;
 
-export const ContentV2 = styled.div`
+export const Content = styled.div`
   display: ${(props) => props.display || "flex"};
   flex-direction: ${(props) => props.flexDirection || "column"};
   position: ${(props) => props.position || "relative"};
@@ -84,11 +84,11 @@ export const ContentV2 = styled.div`
   }
 `;
 
-export const ItemBreakV2 = styled.div`
+export const ItemBreak = styled.div`
   flex-basis: 100%;
 `;
 
-export const ItemHV2 = styled.div`
+export const ItemH = styled.div`
   align-items: ${(props) => props.alignItems || "center"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   background: ${(props) => props.gradient ? props.gradient : (props.background ? props.background : "transparent") || "transparent"};
@@ -129,22 +129,22 @@ export const ItemHV2 = styled.div`
         : "none") || "none"};
   }
 
-  ${ItemBreakV2} {
+  ${ItemBreak} {
     width: 0;
   }
 `;
 
-export const ItemVV2 = styled(ItemHV2)`
+export const ItemV = styled(ItemH)`
   flex: ${(props) => props.flex || "1"};
   flex-direction: ${(props) => props.flexDirection || "column"};
 
-  ${ItemBreakV2} {
+  ${ItemBreak} {
     height: 0;
     width: auto;
   }
 `;
 
-export const H1V2 = styled.h1`
+export const H1 = styled.h1`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-weight: ${(props) => props.fontWeight || 700};
   font-size: ${(props) =>
@@ -171,7 +171,7 @@ export const H1V2 = styled.h1`
   }
 `;
 
-export const H2V2 = styled.h2`
+export const H2 = styled.h2`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
   font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
@@ -198,7 +198,7 @@ export const H2V2 = styled.h2`
   }
 `;
 
-export const H3V2 = styled.h3`
+export const H3 = styled.h3`
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_DARK};
   font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
@@ -225,20 +225,14 @@ export const H3V2 = styled.h3`
   }
 `;
 
-export const ImageV2 = styled.img`
+export const Image = styled.img`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "auto"};
   display: ${(props) => props.display || "flex"};
   border-radius: ${(props) => props.borderRadius || 'initial'};
 `;
 
-export const Image1V2 = styled.img`
-  width: 125%;
-  height: auto;
-  display: flex;
-`;
-
-export const SpanV2 = styled.span`
+export const Span = styled.span`
   flex: ${(props) => props.flex || "initial"};
   align-self: ${(props) => props.alignSelf || "auto"};
   color: ${(props) => props.color || "inherit"};
@@ -270,7 +264,7 @@ export const SpanV2 = styled.span`
   }
 `;
 
-export const ButtonV2 = styled.button`
+export const Button = styled.button`
   display: ${(props) => props.display || "initial"};
   line-height: ${(props) => props.lineHeight || "26px"};
   flex: ${(props) => props.flex || "initial"};
@@ -355,7 +349,7 @@ export const ButtonV2 = styled.button`
   }
 `;
 
-export const Atag = styled.a`
+export const A = styled.a`
   display: ${(props) => props.display || "initial"};
   line-height: ${(props) => props.lineHeight || "26px"};
   flex: ${(props) => props.flex || "initial"};
@@ -437,7 +431,7 @@ export const Atag = styled.a`
   }
 `;
 
-export const PV2 = styled.p`
+export const P = styled.p`
   flex: ${(props) => props.flex || "initial"};
   align-self: ${(props) => props.alignSelf || "auto"};
   color: ${(props) => props.color || "#000"};
@@ -451,7 +445,7 @@ export const PV2 = styled.p`
   text-align: ${(props) => props.textAlign || "initial"};
 `;
 
-export const LinkToV2 = styled(Link)`
+export const LinkTo = styled(Link)`
   font-family: ${(props) => props.fontFamily || "inherit"};
   line-height: ${(props) => props.lineHeight || "inherit"};
   display: flex;
@@ -531,22 +525,26 @@ export const LinkToV2 = styled(Link)`
   }
 `;
 
-export const BV2 = styled.span`
+export const B = styled.span`
   color: ${(props) => props.color || "#000"};
   font-weight: ${(props) => props.fontWeight || "bold"};
 `;
 
-export const ULV2 = styled.ul``;
+export const UL = styled.ul`
 
-export const OLV2 = styled.ol``;
+`;
 
-export const LIV2 = styled.li`
+export const OL = styled.ol`
+
+`;
+
+export const LI= styled.li`
   margin: 10px 0px;
 `;
 
 // Docusaurus Specific
 // Focus Anchor
-export const AFocus = styled.a`
+export const AImp = styled.a`
   color: #fff;
   background: #dd44b9;
   font-size: 15px;
@@ -566,14 +564,14 @@ export const AFocus = styled.a`
 `;
 
 // Modal Container and Item - Small
-export const ModalContainer = styled(ItemHV2)`
+export const ModalContainer = styled(ItemH)`
   align-items: center;
   gap: 26px;
   justify-content: flex-start;
   margin-bottom: var(--ifm-leading);
 `;
 
-export const ModalInner = styled(ButtonV2)`
+export const ModalInner = styled(Button)`
   border: 1px solid #d9d9d9;
   border-radius: 16px;
   padding: 12px 16px;
@@ -636,7 +634,7 @@ export const ModalMidEqual = styled(ModalMid)`
   flex: 1;
 `;
 
-export const ModalWrapper = styled(ItemHV2)`
+export const ModalWrapper = styled(ItemH)`
   gap: 5px;
   align-items: center;
   justify-content: center;

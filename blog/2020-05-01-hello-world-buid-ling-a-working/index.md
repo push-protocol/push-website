@@ -4,7 +4,7 @@ title: 'Hello World: BUIDLing a working EPNS Mobile app'
 authors: [push]
 tags: [Ethereum ,Solidity ,Ethglobal ,Notifications ,Developer]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

@@ -27,10 +27,10 @@ import { BiSearch } from 'react-icons/bi';
 import { FiChevronDown } from 'react-icons/fi';
 
 // Internal Configs
-import { ContentV2, H2V2, HeroHeaderV2, ImageV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
 import { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
+import { Content, H2, HeroHeader, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 
 
 const FrensText = () => {
@@ -288,7 +288,7 @@ const FrensText = () => {
             
             {FrensHeaderList.map((item) => {
               return (
-                <ImageV2
+                <Image
                   width="auto"
                   src={require(`@site/static/assets/website/float/${item.srcref}.webp`).default}
                   srcSet={`${require(`@site/static/assets/website/float/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/float/${item.srcref}@3x.webp`).default} 3x`}
@@ -298,20 +298,20 @@ const FrensText = () => {
               );
             })}
 
-            <ContentV2
+            <Content
               className="contentBox"
               flex="0"
               padding="30px 0px"
               alignSelf="center"
             >
-              <ItemHV2
+              <ItemH
                 flexDirection="column"
                 flex="0"
                 // margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
-                <HeroHeaderV2 color="#fff">{t('frens.hero.title')}</HeroHeaderV2>
-                <SpanV2
+                <HeroHeader color="#fff">{t('frens.hero.title')}</HeroHeader>
+                <Span
                   textAlign="center"
                   margin="20px 0 0 0"
                   letterSpacing="-0.03em"
@@ -320,9 +320,9 @@ const FrensText = () => {
                   fontSize={isMobile ? '18px' : '23px'}
                 >
                   {t('frens.hero.description.part1')} {!isTablet && <br />} {t('frens.hero.description.part2')}
-                </SpanV2>
-              </ItemHV2>
-            </ContentV2>
+                </Span>
+              </ItemH>
+            </Content>
           </AnimationSection>
         </AnimationIcon>
 
@@ -332,7 +332,7 @@ const FrensText = () => {
           className="lightBackground"
           curve="bottom"
         >
-          <ContentV2
+          <Content
             className="contentBox"
             padding="40px 0px"
             flex="0"
@@ -340,7 +340,7 @@ const FrensText = () => {
             justifyContent='flex-start'
           >
             <PushRow>
-              <ItemHV2 justifyContent="flex-start">
+              <ItemH justifyContent="flex-start">
                 <ResponsiveH2
                   fontSize="40px"
                   fontWeight="500"
@@ -349,8 +349,8 @@ const FrensText = () => {
                 >
                   {t('frens.powered-section.title')}
                 </ResponsiveH2>
-              </ItemHV2>
-              <ItemHV2
+              </ItemH>
+              <ItemH
                 maxWidth="350px"
                 justifyContent="flex-end"
                 margin={isMobile && '20px 0 0 0'}
@@ -367,7 +367,7 @@ const FrensText = () => {
                     onChange={channelSearch}
                   />
                 </Wrapper>
-              </ItemHV2>
+              </ItemH>
             </PushRow>
 
             <ToggleSection>
@@ -377,7 +377,7 @@ const FrensText = () => {
                   active={active === item?.name ? true : false}
                   onClick={() => handleSort(item?.name)}
                 >
-                  <SpanV2>{item?.name}</SpanV2>
+                  <Span>{item?.name}</Span>
 
                   {active === item?.name && <b>{count}</b>}
                 </ToggleButton>
@@ -419,13 +419,13 @@ const FrensText = () => {
             )}
 
             {loading && (
-              <ItemHV2>
+              <ItemH>
                 <img
                   src={SpinnerSVG}
                   alt=""
                   width={140}
                 />
-              </ItemHV2>
+              </ItemH>
             )}
 
             {!loading && active === 'All' && search.length === 0 && (
@@ -441,11 +441,11 @@ const FrensText = () => {
                 <b>{t('frens.powered-section.show-more-button')}</b>
               </ShowMoreSection>
             )}
-          </ContentV2>
+          </Content>
 
           <BodyContent className="contentBox">
             <SignupBox margin="0 0 0px 0">
-              <ItemVV2
+              <ItemV
                 justifyContent="flex-start"
                 gap="12px"
               >
@@ -459,7 +459,7 @@ const FrensText = () => {
                 >
                   {t('frens.email-section.title')}
                 </ResponsiveH2>
-                <SpanV2
+                <Span
                   color="#303C5E"
                   fontSize="20px"
                   fontWeight="400"
@@ -467,12 +467,12 @@ const FrensText = () => {
                   lineHeight="138.5%"
                 >
                   {t('frens.email-section.text')}
-                </SpanV2>
-              </ItemVV2>
+                </Span>
+              </ItemV>
 
-              <ItemVV2>
+              <ItemV>
                 <SignupInput />
-              </ItemVV2>
+              </ItemV>
             </SignupBox>
           </BodyContent>
         </PoweredSection>
@@ -500,7 +500,7 @@ const BodyContent = styled.div`
   }
 `;
 
-const FrensWrapper = styled(ItemVV2)`
+const FrensWrapper = styled(ItemV)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -590,13 +590,13 @@ const ToggleButton = styled.div`
   }
 `;
 
-const ResponsiveH2 = styled(H2V2)`
+const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
 `;
 
-const SignupBox = styled(ItemHV2)`
+const SignupBox = styled(ItemH)`
   background: rgba(214, 177, 242, 0.8);
   backdrop-filter: blur(15px);
   border-radius: 32px;
@@ -791,7 +791,7 @@ const AnimationSection = styled(ResponsiveSection)`
   }
 `;
 
-const PushRow = styled(ItemHV2)`
+const PushRow = styled(ItemH)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {

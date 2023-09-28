@@ -4,7 +4,7 @@ title: 'EPNS at NFT NYC 2022: All set for the NFTVerse'
 authors: [push]
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

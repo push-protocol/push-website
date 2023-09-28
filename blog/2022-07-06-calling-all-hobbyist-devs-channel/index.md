@@ -4,7 +4,7 @@ title: 'Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable'
 authors: [push]
 tags: [Epnsproject, Blockchain, Notifications, Governance, Gas Fees]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

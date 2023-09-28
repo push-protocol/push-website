@@ -4,7 +4,7 @@ title: 'EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign 
 authors: [push]
 tags: [Newsletter, Ethereum, Epnsproject, Dao, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 

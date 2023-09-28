@@ -12,7 +12,7 @@ import styled from 'styled-components';
 
 // Internal Components
 import { getBlogData } from '@site/src/api';
-import { H3V2, ItemHV2, ItemVV2 } from '@site/src/components/SharedStylingV2';
+import { H3, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
@@ -61,7 +61,7 @@ function BlogLoader(props: BlogLoaderProps) {
 
   return (
     <>
-      <ItemHV2
+      <ItemH
         margin="40px 0 0 0"
         gap="48px"
       >
@@ -120,9 +120,9 @@ function BlogLoader(props: BlogLoaderProps) {
             );
           })}
         </SubArticles>
-      </ItemHV2>
+      </ItemH>
 
-      <ItemHV2
+      <ItemH
         height="1px"
         background="#000"
         margin="15px 0 0 0"
@@ -162,7 +162,7 @@ function Blogs(props: BlogsProps) {
     return (
       <>
         {(Array.isArray(blogsData) && blogsData.length > 0) &&
-          <ItemHV2
+          <ItemH
             margin="40px 0 0 0"
             gap="48px"
           >
@@ -175,7 +175,7 @@ function Blogs(props: BlogsProps) {
                 alt={blogsData[0].title}
               />
 
-              <H3V2
+              <H3
                 textTransform="capitalize"
                 color="#09090B"
                 fontSize="24px"
@@ -185,7 +185,7 @@ function Blogs(props: BlogsProps) {
                 margin="24px 0 0 0"
               >
                 {blogsData[0].title}
-              </H3V2>
+              </H3>
 
               <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
             </MainArticle>
@@ -207,10 +207,10 @@ function Blogs(props: BlogsProps) {
               );
               })}
             </SubArticles>
-          </ItemHV2>
+          </ItemH>
         }
 
-        <ItemHV2
+        <ItemH
           height="1px"
           background="#000"
           margin="15px 0 0 0"
@@ -219,7 +219,7 @@ function Blogs(props: BlogsProps) {
     );
 }
 
-const MainArticle = styled(ItemVV2)`
+const MainArticle = styled(ItemV)`
   row-gap: 8px;
 
   &:hover {
@@ -255,7 +255,7 @@ const ArticleText = styled.div`
   white-space: normal;
 `;
 
-const SubArticles = styled(ItemVV2)`
+const SubArticles = styled(ItemV)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

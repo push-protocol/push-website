@@ -12,7 +12,7 @@ import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
 
 // Internal Components
-import { ItemHV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ItemH, Span } from '@site/src/css/SharedStyling';
 import { getNotificationsCount, getSubscribersCount } from '@site/src/utils/AnalyticsStats';
 
 // Internal Configs
@@ -100,7 +100,7 @@ function AnalyticsStats() {
 
   return (
     <KPIBanner>
-      <ItemHV2
+      <ItemH
         gap="18px"
         className="kpiItem"
       >
@@ -110,9 +110,9 @@ function AnalyticsStats() {
           <br />
           {t('home.stats.notifications.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </ItemH>
 
-      <ItemHV2
+      <ItemH
         gap="18px"
         className="kpiItem"
       >
@@ -125,9 +125,9 @@ function AnalyticsStats() {
           <br />
           {t('home.stats.subscribers.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </ItemH>
 
-      <ItemHV2
+      <ItemH
         gap="18px"
         className="kpiItem"
       >
@@ -137,9 +137,9 @@ function AnalyticsStats() {
           <br />
           {t('home.stats.integrations.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </ItemH>
 
-      <ItemHV2
+      <ItemH
         gap="18px"
         className="kpiItem"
       >
@@ -149,7 +149,7 @@ function AnalyticsStats() {
           <br />
           {t('home.stats.grants.part2')}
         </KPIMetric>
-      </ItemHV2>
+      </ItemH>
     </KPIBanner>
   );
 }
@@ -202,7 +202,7 @@ const KPIBanner = styled.div`
   }
 `;
 
-const KPIFigure = styled(SpanV2)`
+const KPIFigure = styled(Span)`
   font-weight: 700;
   font-size: 48px;
   line-height: 110%;
@@ -214,7 +214,7 @@ const KPIFigure = styled(SpanV2)`
   }
 `;
 
-const KPIMetric = styled(SpanV2)`
+const KPIMetric = styled(Span)`
   font-weight: 300;
   font-size: 18px;
   line-height: 121%;

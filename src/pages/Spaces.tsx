@@ -13,7 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import { subscribeToSpace } from '@site/src/api';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -122,25 +122,25 @@ const Spaces = () => {
             {isLoading ? <MaskInput /> : null}
           </Wrapper> */}
           {emailSuccess && (
-            <SpanV2
+            <Span
               className="msg"
               fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="white"
             >
               {emailSuccess}
-            </SpanV2>
+            </Span>
           )}
 
           {!emailSuccess && emailError && (
-            <SpanV2
+            <Span
               className="msg"
               fontSize={isMobile ? '18px' : '20px'}
               margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
               color="red"
             >
               {emailError}
-            </SpanV2>
+            </Span>
           )}
         </Box>
 
@@ -160,7 +160,7 @@ const Spaces = () => {
   );
 };
 
-const SpaceWrapper = styled(ItemVV2)`
+const SpaceWrapper = styled(ItemV)`
   max-height: 100vh;
   min-height: 100vh;
   width: 100vw;

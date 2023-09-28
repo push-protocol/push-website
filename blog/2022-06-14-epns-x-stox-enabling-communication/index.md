@@ -4,7 +4,7 @@ title: 'EPNS x Stox: Enabling Communication for the Global Portfolio Tracker'
 authors: [push]
 tags: [Ethereum ,Epnsproject ,Stox ,Blockchain ,Portfolio]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

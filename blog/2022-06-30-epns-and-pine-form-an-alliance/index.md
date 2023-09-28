@@ -4,7 +4,7 @@ title: 'EPNS and Pine Form An Alliance to Enable Seamless Communication for User
 authors: [push]
 tags: [Web3, Blockchain, Crypto, Ethereum, Cryptocurrency]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 

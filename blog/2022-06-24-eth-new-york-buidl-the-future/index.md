@@ -4,7 +4,7 @@ title: 'ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔'
 authors: [push]
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

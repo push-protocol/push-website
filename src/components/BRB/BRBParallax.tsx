@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styled from 'styled-components';
 
 // Internal Components
-import { ImageV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Image, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -101,7 +101,7 @@ function BRBParallax() {
         >
           <ParallaxBRBBG>
             {isMobile && 
-              <ImageV2
+              <Image
                 src={require(`@site/static/assets/website/brb/mainbgmobile.webp`).default}
                 srcSet={`${require(`@site/static/assets/website/brb/mainbgmobile@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/mainbgmobile@3x.webp`).default} 3x`}
                 alt="Mobile main background image for Billion Reasons to Build website (#BRBIndia)"
@@ -190,7 +190,7 @@ const FirstBackground = styled.div`
   }
 `;
 
-const ParallaxBRBBG = styled(ItemVV2)`
+const ParallaxBRBBG = styled(ItemV)`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -204,7 +204,7 @@ const ParallaxBRBBG = styled(ItemVV2)`
   }
 `
 
-const ParallaxHeader = styled(SpanV2)`
+const ParallaxHeader = styled(Span)`
   font-size: ${(props) => (props.isMobile ? '50px' : '70px')};
   font-weight: 900;
   letter-spacing: inherit;
@@ -247,7 +247,7 @@ const FlexItem = styled.div`
   }
 `;
 
-const ParallelFlexTitle = styled(SpanV2)`
+const ParallelFlexTitle = styled(Span)`
   font-size: ${(props) => (props.isMobile ? '80px' : '65px')};
   text-align: center;
   font-weight: 600;
@@ -255,7 +255,7 @@ const ParallelFlexTitle = styled(SpanV2)`
   line-height: inherit;
 `
 
-const ParallelFlexBody = styled(SpanV2)`
+const ParallelFlexBody = styled(Span)`
   
 `
 

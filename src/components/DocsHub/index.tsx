@@ -12,7 +12,7 @@ import Layout from '@theme/Layout';
 import clsx from 'clsx';
 
 // Internal Components
-import { Atag, ButtonV2, H2V2, ItemHV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { A, Button, H2, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import Footer from '@site/src/segments/Footer';
 import FAQ from './Faq';
 
@@ -242,23 +242,23 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
         onClick={(e) => {e.preventDefault(); window.location.href = link}}
         hoverBackground="transparent"
       >
-        <ItemVV2
+        <ItemV
           alignSelf="stretch"
           margin="0px 8%"
         >
-          <ItemVV2
+          <ItemV
             padding="0px 0px 30px 0px"
             alignItems="flex-start"
           >
             <TechDocIcon><Svg /></TechDocIcon>
             <TechDocTitle>{title}</TechDocTitle>
-          </ItemVV2>
+          </ItemV>
           
           {codeblock &&
             <TechDocSwitcher
               gap="10px"
             >
-              <ButtonV2 
+              <Button 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -268,8 +268,8 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
                 color={content == 0 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 Overview
-              </ButtonV2>
-              <ButtonV2 
+              </Button>
+              <Button 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -279,18 +279,18 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
                 color={content == 1 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 API
-              </ButtonV2>
+              </Button>
             </TechDocSwitcher>
           }
 
-          <ItemVV2
+          <ItemV
             alignItems="stretch"
           >
             {content == 0 &&
               <TechDocOverview>{description}</TechDocOverview>
             }
-          </ItemVV2>
-        </ItemVV2>
+          </ItemV>
+        </ItemV>
 
         {content == 1 && codeblock && 
           <TechDocCodeBlock
@@ -317,12 +317,12 @@ export default function HomepageFeatures(): JSX.Element {
             <Link
               className='hero__button'
               to="/docs/chat">
-              <SpanV2 padding="0 10px 0 0" fontSize="18px">Get Started</SpanV2>
+              <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
               <FiArrowUpRight size={16} />
             </Link>
           </div>
         </div>
-        <ItemVV2
+        <ItemV
           position="absolute"
           bottom="-25%"
           left="0"
@@ -339,7 +339,7 @@ export default function HomepageFeatures(): JSX.Element {
             <Pulsate stagger={5}></Pulsate>
             <Pulsate stagger={6}></Pulsate>
           </Pulse>
-        </ItemVV2>
+        </ItemV>
       </HeroHeader>
       
       <section className='main-section'>
@@ -367,7 +367,7 @@ export default function HomepageFeatures(): JSX.Element {
         </HomepageSection>
         
         <HomepageSection>
-          <ItemHV2 justifyContent="flex-start">
+          <ItemH justifyContent="flex-start">
             <HomepageSubHeader>
               Push SDK
             </HomepageSubHeader>
@@ -379,7 +379,7 @@ export default function HomepageFeatures(): JSX.Element {
                 <ArrowUp className='arrowUp-icon' />
               </div>
             </Link>
-          </ItemHV2>
+          </ItemH>
             
           
           <PushSdkCardList justifyContent="flex-start">
@@ -478,7 +478,7 @@ const Pulsate = styled.span`
   animation-delay: calc(1s * ${props => (props.stagger ? props.stagger : 1)});
 `
 
-const TechDocIcon = styled(ItemVV2)`
+const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
   & svg {
     height: 44px;
@@ -488,7 +488,7 @@ const TechDocIcon = styled(ItemVV2)`
   }
 `;
 
-const HomepageSection = styled(SectionV2)`
+const HomepageSection = styled(Section)`
   margin-top: 70px;
   margin-bottom: 30px;
   flex-direction: column;
@@ -496,7 +496,7 @@ const HomepageSection = styled(SectionV2)`
   justify-content: space-between;
 `;
 
-const HomepageSubHeader = styled(H2V2)`
+const HomepageSubHeader = styled(H2)`
   font-family: var(--ifm-font-family-base);
   font-weight: 600;
   font-size: 36px;
@@ -507,7 +507,7 @@ const HomepageSubHeader = styled(H2V2)`
   color: var(--ifm-color-primary-text);
 `;
 
-const PopularQuickiesList = styled(ItemHV2)`
+const PopularQuickiesList = styled(ItemH)`
   gap: 32px;
   display: flex;
   flex-wrap: wrap;
@@ -515,7 +515,7 @@ const PopularQuickiesList = styled(ItemHV2)`
   position: relative;
 `;
 
-const PopularQuickiesCard = styled(ItemVV2)`
+const PopularQuickiesCard = styled(ItemV)`
   margin: 0px;
   align-self: flex-start; 
   flex: 0 0 calc(50% - 21.33px);
@@ -532,7 +532,7 @@ const PopularQuickiesCard = styled(ItemVV2)`
   }
 `;
 
-const PopularQuickiesHeader = styled(ItemHV2)`
+const PopularQuickiesHeader = styled(ItemH)`
   align-items: center;
   font-size: 20px;
   background: #282a36;
@@ -563,13 +563,13 @@ const PopularQuickiesHeader = styled(ItemHV2)`
   }
 `;
 
-const PopularQuickiesTitle = styled(SpanV2)`
+const PopularQuickiesTitle = styled(Span)`
   color: #9aa3db;
   font-size: 16px;
   font-weight: bold;
 `;
 
-const PopularQuickiesContent = styled(ItemVV2)`
+const PopularQuickiesContent = styled(ItemV)`
   border-top: 1px solid #3d3d3d;
   align-items: stretch;
   width: 100%;
@@ -583,13 +583,13 @@ const PopularQuickiesCodeBlock = styled(CodeBlock)`
   width: inherit;
 `;
 
-const TechDocCardList = styled(ItemHV2)`
+const TechDocCardList = styled(ItemH)`
   gap: 32px;
   display: flex;
   flex-wrap: wrap;
 `
 
-const TechDocCard = styled(ItemVV2)`
+const TechDocCard = styled(ItemV)`
   margin: 0px;
   align-self: flex-start; 
   flex: 0 0 calc(33.33% - 21.33px);
@@ -603,7 +603,7 @@ const TechDocCard = styled(ItemVV2)`
   }
 `;
 
-const TechDocContent = styled(ButtonV2)`
+const TechDocContent = styled(Button)`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
@@ -628,7 +628,7 @@ const TechDocContent = styled(ButtonV2)`
   }
 `;
 
-const TechDocTitle = styled(SpanV2)`
+const TechDocTitle = styled(Span)`
   font-family: var(--ifm-font-family-base);
   font-size: 26px;
   color: var(--ifm-color-primary-text);
@@ -637,19 +637,19 @@ const TechDocTitle = styled(SpanV2)`
   letter-spacing: -0.03em;
 `;
 
-const TechDocSwitcher = styled(ItemHV2)`
+const TechDocSwitcher = styled(ItemH)`
   position: absolute;
   top: 0;
   right: 0;
   padding: inherit;
 
-  & ${ButtonV2} {
+  & ${Button} {
     padding: 4px 12px;
     font-size: 14px;
     font-weight: 600;
   }
 `;
-const TechDocOverview = styled(SpanV2)`
+const TechDocOverview = styled(Span)`
   font-family: var(--ifm-font-family-base);
   font-weight: 400;
   font-size: 16px;
@@ -668,14 +668,14 @@ const TechDocCodeBlock = styled(CodeBlock)`
   max-width: 100%;
 `;
 
-const PushSdkCardList = styled(ItemHV2)`
+const PushSdkCardList = styled(ItemH)`
   gap: 32px;
   margin-top: 30px;
   margin-bottom: 70px;
   align-items: center;
 `
 
-const PushSdkCard = styled(ItemHV2)`
+const PushSdkCard = styled(ItemH)`
   align-self: flex-start; 
   flex: 0 0 calc(33.33% - 21.33px);
   min-width: 250px;
@@ -687,7 +687,7 @@ const PushSdkCard = styled(ItemHV2)`
   }
 `
 
-const PushSdkContent = styled(Atag)`
+const PushSdkContent = styled(A)`
   color: var(--ifm-color-primary-text);
   background: var(--ifm-color-primary-inverse);
   align-items: stretch;

@@ -10,8 +10,8 @@ import styled from 'styled-components';
 // Internal Components
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
-import { Atag, ButtonV2, ImageV2, ItemHV2, ItemVV2, SectionV2 } from '@site/src/components/SharedStylingV2';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
+import { A, Button, Image, ItemH, ItemV, Section } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
@@ -33,16 +33,16 @@ export const ChatComponent = () => {
     <Container>
       <Header>
         Join the conversation
-        <BrandATag
+        <BrandA
           href="https://docs.push.org/developers"
           target="_blank"
         >
-          <ImageV2
+          <Image
             src={require(`@site/static/assets/website/brb/others/brand-header.webp`).default}
             srcSet={`${require(`@site/static/assets/website/brb/others/brand-header@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/brand-header@3x.webp`).default} 3x`}
             alt={`Image showing BRB Chat is powered by Push Chat`}
           />
-        </BrandATag>
+        </BrandA>
       </Header>
 
       <PlayGround>
@@ -85,14 +85,14 @@ export const ChatComponent = () => {
   );
 };
 
-const Container = styled(ItemVV2)`
+const Container = styled(ItemV)`
   width: 100%;
   height: auto;
   justify-content: flex-start;
   align-items: center;
 `;
 
-const BottomBar = styled(ItemHV2)`
+const BottomBar = styled(ItemH)`
   max-height: 33px;
   background: transparent;
   align-items: center;
@@ -100,7 +100,7 @@ const BottomBar = styled(ItemHV2)`
   z-index: 0 !important;
 `;
 
-const ButtonItem = styled(ButtonV2)`
+const ButtonItem = styled(Button)`
   font-size: 12px;
   font-style: normal;
   display: flex;
@@ -147,7 +147,7 @@ const Header = styled.h3`
   }
 `;
 
-const BrandATag = styled(Atag)`
+const BrandA = styled(A)`
   background: transparent;
   position: absolute;
   right: 0px;
@@ -161,7 +161,7 @@ const BrandATag = styled(Atag)`
   }
 `;
 
-const PlayGround = styled(SectionV2)`
+const PlayGround = styled(Section)`
   flex-direction: column;
   background-image: url(${PlaygroundBg});
   background-position: center;

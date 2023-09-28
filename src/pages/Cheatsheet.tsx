@@ -10,7 +10,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ItemVV2 } from '@site/src/components/SharedStylingV2';
+import { Button, ItemV } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { PageMeta } from "@site/src/config/pageMeta";
@@ -44,7 +44,7 @@ function CheatSheet() {
       <CheatWrapper>
 
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
-        <ButtonV2 
+        <Button 
           target="_blank"
           title="Push Dapp"
           background="#DD44B9"
@@ -56,14 +56,14 @@ function CheatSheet() {
           onClick={redirectURL}
         >
           View Cheatsheet
-        </ButtonV2>
+        </Button>
 
       </CheatWrapper>
     </Layout>
   );
 }
 
-const CheatWrapper = styled(ItemVV2)`
+const CheatWrapper = styled(ItemV)`
     max-height: 100vh;
     min-height: 100vh;
     width: 100vw;

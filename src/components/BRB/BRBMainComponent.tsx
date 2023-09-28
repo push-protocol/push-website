@@ -18,7 +18,7 @@ import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
 import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
-import { ButtonV2, ImageV2, ItemVV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Button, Image, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -196,7 +196,7 @@ export const BRBMainComponent = () => {
         showMobileMenu={showMobileMenu}
         className={`header ${headerClass}`}
       >
-        <SectionV2 padding="0 0 0 0">
+        <Section padding="0 0 0 0">
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
               <PushLogoBlackContainer
@@ -207,13 +207,13 @@ export const BRBMainComponent = () => {
                   style={{ margin: '0px 9px 0px 4px' }}
                   onClick={openHomePage}
                 />
-                <SpanV2
+                <Span
                   fontSize="24px"
                   fontWeight="900"
                   style={{ maxHeight: '24px' }}
                 >
                   #BRB
-                </SpanV2>
+                </Span>
               </PushLogoBlackContainer>
 
               <MobileMenuToggleIcon>
@@ -244,58 +244,58 @@ export const BRBMainComponent = () => {
               >
                 <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                   <NavigationMenuHeader>
-                    <SpanV2
+                    <Span
                       fontSize="18px"
                     >
                       Partners
-                    </SpanV2>
+                    </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                   <NavigationMenuHeader>
-                    <SpanV2
+                    <Span
                       fontSize="18px"
                     >
                       Schedule
-                    </SpanV2>
+                    </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
                   <NavigationMenuHeader>
 
-                    <SpanV2
+                    <Span
                       fontSize="18px"
                     >
                       Bounties
-                    </SpanV2>
+                    </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                   <NavigationMenuHeader>
-                    <SpanV2
+                    <Span
                       fontSize="18px"
                     >
                       BRB Chat
-                    </SpanV2>
+                    </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem> */}
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                   <NavigationMenuHeader>
-                    <SpanV2
+                    <Span
                       fontSize="18px"
                     >
                       Support
-                    </SpanV2>
+                    </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemVV2
+            <ItemV
               flex="initial"
               flexDirection="row !important"
               flexWrap={isLaptop ? 'wrap' : 'none'}
@@ -327,19 +327,19 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
               </IconMenu>
-            </ItemVV2>
+            </ItemV>
           </NavList>
-        </SectionV2>
+        </Section>
       </StyledHeader>
 
       <ItemTop>
-        <ItemVV2 id="new">
+        <ItemV id="new">
           <MemberImage
             className="pushMissingSvg"
             src={isMobile ? MobileBRB : ImageBRB}
             srcSet={isMobile ? MobileBRB : ImageBRB}
           />
-        </ItemVV2>
+        </ItemV>
 
         <NavText id="elems0">
           Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
@@ -417,15 +417,15 @@ export const BRBMainComponent = () => {
               <Discord />
             </i>
 
-            <SpanV2
+            <Span
               fontSize={isLaptop ? '24px' : '36px'}
               fontWeight="400"
               color="#6F8BEE"
             >
               24x7 Support on Discord
-            </SpanV2>
+            </Span>
 
-            <ImageV2
+            <Image
               width={65}
               src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
               srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
@@ -441,15 +441,15 @@ export const BRBMainComponent = () => {
               <X className="discord" />
             </i>
 
-            <SpanV2
+            <Span
               fontSize={isLaptop ? '24px' : '36px'}
               fontWeight="400"
               color="#63BFF3"
             >
               Updates & Announcements
-            </SpanV2>
+            </Span>
 
-            <ImageV2
+            <Image
               width={65}
               src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
               srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
@@ -460,13 +460,13 @@ export const BRBMainComponent = () => {
       </ItemFooter>
 
       <BottomGrad>
-        <SpanV2
+        <Span
           fontSize={isMobile ? '17px' : '17px'}
           fontWeight="400"
           color="#FFF"
         >
           © 2023 Push. All rights reserved.
-        </SpanV2>
+        </Span>
       </BottomGrad>
     </BrbWrapper>
   );
@@ -488,7 +488,7 @@ const ItemTop = styled.main`
   }
 `;
 
-const ButtonItem = styled(ButtonV2)`
+const ButtonItem = styled(Button)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
@@ -507,14 +507,14 @@ const ButtonItem = styled(ButtonV2)`
   }
 `;
 
-const ButtonBar = styled(ButtonV2)`
+const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
   @media ${device.mobileL} {
     width: 100%;
   }
 `;
 
-const BrbWrapper = styled(ItemVV2)`
+const BrbWrapper = styled(ItemV)`
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -694,7 +694,7 @@ const NavButtons = styled.div`
   }
 `;
 
-const MenuTop = styled(ItemVV2)`
+const MenuTop = styled(ItemV)`
   display: flex;
 
   & svg {
@@ -709,7 +709,7 @@ const MenuTop = styled(ItemVV2)`
   }
 `;
 
-const PushLogoBlackContainer = styled(ItemVV2)`
+const PushLogoBlackContainer = styled(ItemV)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -730,7 +730,7 @@ const MobileMenuToggleIcon = styled.span`
   }
 `;
 
-const HeaderNavItemV = styled(ItemVV2)`
+const HeaderNavItemV = styled(ItemV)`
   margin: 0px ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
@@ -959,7 +959,7 @@ const FooterCol = styled.div`
   width: 100%;
 `;
 
-const SpanContent = styled(SpanV2)`
+const SpanContent = styled(Span)`
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box !important;

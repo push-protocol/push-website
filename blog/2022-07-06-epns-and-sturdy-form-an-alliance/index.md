@@ -3,7 +3,7 @@ slug: epns-and-sturdy-form-an-alliance-to-enable-direct-communication-for-users
 title: 'EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users'
 authors: [push]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

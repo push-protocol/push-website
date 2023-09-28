@@ -4,7 +4,7 @@ title: 'EPNS x The Graph: Enabling a better way to access blockchain data ðŸ§‘â€
 authors: [push]
 tags: [Ethereum ,The Graph ,Blockchain ,Cryptocurrency ,Web3]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 <ImageText>EPNS X The Graph</ImageText>

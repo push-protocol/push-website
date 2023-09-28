@@ -13,7 +13,7 @@ import styled from 'styled-components';
 
 // Internal Components
 import HybridSection from "@site/src/components/HybridSection";
-import { Atag, ContentV2, H2V2, HeroHeaderV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { A, Content, H2, HeroHeader, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 import { PageMeta } from "@site/src/config/pageMeta";
 
 
@@ -41,24 +41,24 @@ function AboutUs() {
           id="aboutus"
           padding="40px 160px 0px 160px"
         >
-          <ContentV2
+          <Content
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
             maxWidth="1140px"
           >
-            <ItemHV2
+            <ItemH
               margin="120px 0 0 0"
               flex="1"
             >
-              <ItemVV2 justifyContent="center">
-                <HeroHeaderV2>About Push</HeroHeaderV2>
-              </ItemVV2>
-            </ItemHV2>
+              <ItemV justifyContent="center">
+                <HeroHeader>About Push</HeroHeader>
+              </ItemV>
+            </ItemH>
 
-            <ItemHV2 flex="1">
-              <ItemVV2>
-                <Atag
+            <ItemH flex="1">
+              <ItemV>
+                <A
                   href="https://angel.co/company/push-protocol"
                   title="Job Openings"
                   target="_blank"
@@ -72,19 +72,19 @@ function AboutUs() {
                 >
                   Now Hiring, Explore Careers&nbsp;&nbsp;
                   <BsArrowUpRight className="anchorSVGlink" />
-                </Atag>
-              </ItemVV2>
-            </ItemHV2>
+                </A>
+              </ItemV>
+            </ItemH>
 
-            <ItemHV2
+            <ItemH
               flex="2"
               gap="90px"
             >
-              <ItemVV2
+              <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
-                <SpanV2
+                <Span
                   color="rgba(255, 255, 255, 1)"
                   fontSize="26px"
                   fontWeight="400"
@@ -92,9 +92,9 @@ function AboutUs() {
                   lineHeight="142%"
                 >
                   Push is a decentralized middleware for all dapps, smart contracts, services, and users.
-                </SpanV2>
+                </Span>
 
-                <SpanV2
+                <Span
                   color="rgba(255, 255, 255, 1)"
                   fontSize="26px"
                   fontWeight="400"
@@ -103,14 +103,14 @@ function AboutUs() {
                 >
                   Hundreds of companies and individuals are using Push to power on-chain communication in response to both
                   on- and off-chain activity, enabling a dynamic and resilient communication infrastructure.
-                </SpanV2>
-              </ItemVV2>
+                </Span>
+              </ItemV>
 
-              <ItemVV2
+              <ItemV
                 justifyContent="flex-start"
                 alignItems="flex-start"
               >
-                <SpanV2
+                <Span
                   color="rgba(255, 255, 255, 1)"
                   fontSize="19px"
                   fontWeight="400"
@@ -121,9 +121,9 @@ function AboutUs() {
                   Sed rhoncus elit a rhoncus viverra. Vivamus faucibus nec ligula sed fringilla. Suspendisse feugiat magna
                   accumsan quam molestie, ac rhoncus purus cursus. Etiam et mauris sollicitudin, mattis odio eu, varius
                   elit. Aliquam sed sem convallis, posuere massa posuere, dictum magna.
-                </SpanV2>
+                </Span>
 
-                <SpanV2
+                <Span
                   color="rgba(255, 255, 255, 1)"
                   fontSize="19px"
                   fontWeight="400"
@@ -133,10 +133,10 @@ function AboutUs() {
                   Ut ac vulputate nulla, a facilisis ipsum. Fusce posuere diam tortor, a blandit ante commodo sit amet.
                   Phasellus eleifend dapibus rutrum. Aliquam dictum leo sed mi placerat, at consectetur eros facilisis.
                   Phasellus ut scelerisque erat, nec tincidunt enim. Ut lacinia justo in ligula tempus ultricies.
-                </SpanV2>
-              </ItemVV2>
-            </ItemHV2>
-          </ContentV2>
+                </Span>
+              </ItemV>
+            </ItemH>
+          </Content>
         </HybridSection>
 
         <HybridSection
@@ -145,27 +145,27 @@ function AboutUs() {
           background="#fff"
           padding="120px 160px 80px 160px"
         >
-          <ContentV2
+          <Content
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
             maxWidth="1140px"
           >
-            <ItemHV2>
-              <ItemVV2
+            <ItemH>
+              <ItemV
                 justifyContent="center"
                 gap="22px"
               >
-                <H2V2
+                <H2
                   fontSize="40px"
                   fontWeight="700"
                   letterSpacing="-0.02em"
                   lineHeight="110%"
                 >
                   Our Leadership
-                </H2V2>
+                </H2>
 
-                <SpanV2
+                <Span
                   fontWeight="400"
                   color="#303C5E"
                   fontSize="19px"
@@ -175,11 +175,11 @@ function AboutUs() {
                   The most diverse personalities have found each other at Push. Unique people with special talents and
                   extraordinary stories. We are united by the joy we take in our tech and constantly push the boundaries
                   of everything web3 communication.
-                </SpanV2>
-              </ItemVV2>
-            </ItemHV2>
+                </Span>
+              </ItemV>
+            </ItemH>
 
-            <ItemHV2
+            <ItemH
               gap="24px"
               margin="60px 0 0 0"
             >
@@ -189,14 +189,14 @@ function AboutUs() {
               <InvestorCards></InvestorCards>
               <InvestorCards></InvestorCards>
               <InvestorCards></InvestorCards>
-            </ItemHV2>
+            </ItemH>
 
-            <ItemHV2
+            <ItemH
               margin="120px 0 0 0"
               justifyContent="flex-start"
               width="640px"
             >
-              <SpanV2
+              <Span
                 color="#121315"
                 fontWeight="700"
                 fontSize="40px"
@@ -204,9 +204,9 @@ function AboutUs() {
                 letterSpacing="-0.02em"
               >
                 Backed by successful entrepreneurs and venture capital funds.
-              </SpanV2>
-            </ItemHV2>
-          </ContentV2>
+              </Span>
+            </ItemH>
+          </Content>
         </HybridSection>
       </AboutUsWrapper>
     </Layout>

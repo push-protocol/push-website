@@ -13,7 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { Atag, H2V2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { A, H2, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import PushChat from '@site/static/assets/figures/pushchat.webp';
 import Pushdao from '@site/static/assets/figures/pushdao.webp';
@@ -44,17 +44,17 @@ const SlideElement = ({
     <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom={paddingBottom} className="panel">
 
       <GrowPushCardDetails>
-        <SpanV2
+        <Span
           color="#ADB8D7"
           fontSize={isMobile ? "20px" : "22px"}
           fontWeight={isMobile ? "400" : "500"}
           lineHeight="146%"
           letterSpacing="inherit"
         >
-          <SpanV2 color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</SpanV2> {content}
-        </SpanV2>
+          <Span color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</Span> {content}
+        </Span>
 
-        <Atag
+        <A
           href={link}
           title={title}
           target="_blank"
@@ -70,7 +70,7 @@ const SlideElement = ({
         >
           <SpanLink>{linkContent}</SpanLink>
           <FiArrowUpRight className="anchorSVGlink" />
-        </Atag>
+        </A>
 
       </GrowPushCardDetails>
 
@@ -172,7 +172,7 @@ const HorizontalScroll = () => {
   )
 }
 
-const ResponsiveH2 = styled(H2V2)`
+const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -210,7 +210,7 @@ const SliderContainer = styled.div`
 const MemberImage = styled(ImageHolder)`
 `;
 
-const GrowPushCard = styled(ItemVV2)`
+const GrowPushCard = styled(ItemV)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -315,7 +315,7 @@ const GrowPushCardDetails = styled.div`
   }
 `;
 
-const SpanLink = styled(SpanV2)`
+const SpanLink = styled(Span)`
   position: relative;
   text-decoration: none;
 

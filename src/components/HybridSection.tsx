@@ -8,7 +8,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 // Internal Components
-import { SectionV2 } from '@site/src/components/SharedStylingV2';
+import { Section } from '@site/src/css/SharedStyling';
 
 type HybridSectionProps = {
   curve?: 'both' | 'bottom' | undefined;
@@ -25,7 +25,7 @@ const HybridSection = (props: HybridSectionProps) => {
   return <StyledSection {...props}>{props.children}</StyledSection>;
 };
 
-const StyledSection = styled(SectionV2)`
+const StyledSection = styled(Section)`
 
   &[data-bkg='dark'] {
     background: #121315;

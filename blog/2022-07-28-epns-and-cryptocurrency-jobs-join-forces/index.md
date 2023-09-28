@@ -4,7 +4,7 @@ title: 'EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notification
 authors: [push]
 tags: [Web3, Ethereum, Epnsproject, Jobs, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

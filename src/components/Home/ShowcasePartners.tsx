@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 // Internal Components
-import { H2V2, ImageV2, ItemHV2, ItemVV2, LinkToV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
@@ -282,7 +282,7 @@ function PartnerChannels() {
             {t('home.partners-section.partner-channels-title')}
           </ResponsiveH2>
 
-          <SpanV2
+          <Span
             color="#303C5E"
             size="19px"
             weight="300"
@@ -291,9 +291,9 @@ function PartnerChannels() {
             textAlign={isMobile ? 'center' : 'initial'}
           >
             {t('home.partners-section.partner-channels-description')}
-          </SpanV2>
+          </Span>
 
-          <LinkToV2
+          <LinkTo
             to="/frens"
             title={t('home.partners-section.partner-channels-button-alt')}
             background="#DD44B9"
@@ -308,7 +308,7 @@ function PartnerChannels() {
             alignSelf="center"
           >
             {t('home.partners-section.partner-channels-button')}
-          </LinkToV2>
+          </LinkTo>
         </GridItem>
 
         <PartnerContentSideRow>
@@ -442,13 +442,13 @@ function PartnerChannels() {
   );
 }
 
-const PartnerRow = styled(ItemHV2)`
+const PartnerRow = styled(ItemH)`
   margin: 14px auto 0px auto;
   gap: 28px;
   align-items: flex-end !important;
 `;
 
-const PartnerRowTopAligned = styled(ItemHV2)`
+const PartnerRowTopAligned = styled(ItemH)`
   margin: 0px auto 0px auto;
   gap: 28px;
   align-items: flex-start !important;
@@ -501,7 +501,7 @@ const PartnerContentSideRow = styled.div`
   }
 `;
 
-const GridItem = styled(ItemHV2)`
+const GridItem = styled(ItemH)`
   span {
     width: 80%;
     text-align: center;
@@ -515,7 +515,7 @@ const GridItem = styled(ItemHV2)`
   }
 `;
 
-const ResponsiveH2 = styled(H2V2)`
+const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
@@ -533,7 +533,7 @@ const PartnerContent = styled.div`
   }
 `;
 
-const ShowcaseLogo = styled(ImageV2)`
+const ShowcaseLogo = styled(Image)`
   @media ${device.laptopL} {
     display: none;
     width: 96px;
@@ -542,7 +542,7 @@ const ShowcaseLogo = styled(ImageV2)`
 `
 
 
-const PartnerResponsiveRow = styled(ItemVV2)`
+const PartnerResponsiveRow = styled(ItemV)`
   display: none;
   padding: 20px 0;
   

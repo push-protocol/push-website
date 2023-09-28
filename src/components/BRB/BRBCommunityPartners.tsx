@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 // Internal Components
 import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
-import { ButtonV2, ImageV2, ItemHV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Button, Image, ItemH, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
@@ -68,12 +68,12 @@ const Container = styled.div`
   }
 `;
 
-const CommunityContainer = styled(ItemHV2)`
+const CommunityContainer = styled(ItemH)`
   width: 100vw;
   height: 177px;
 `;
 
-const PartnerIcon = styled(ImageV2)`
+const PartnerIcon = styled(Image)`
   width: auto;
   height: ${(props) => props.height || 'auto'};
   max-width: 310px;
@@ -92,7 +92,7 @@ const PartnerItem = styled.div`
   }
 `;
 
-const Header = styled(SpanV2)`
+const Header = styled(Span)`
   font-size: 46px;
   font-weight: 400;
   color: #fff;
@@ -107,7 +107,7 @@ const Header = styled(SpanV2)`
   }
 `;
 
-const PartnersButton = styled(ButtonV2)`
+const PartnersButton = styled(Button)`
   &:before {
     content: none;
   }

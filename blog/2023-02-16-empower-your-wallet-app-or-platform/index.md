@@ -6,7 +6,7 @@ authors: [push]
 tags: [ Web3, Developer, Blockchain Development,  Blockchain Technology, Delivery Nodes]
 
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 

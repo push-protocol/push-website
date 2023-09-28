@@ -8,7 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from '@site/src/components/SharedStylingV2';
+import { Button, Image, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -23,10 +23,10 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
   return (
     <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
-      <ItemVV2>
+      <ItemV>
         {brbPartnersList.map((partnerRow, i) => {
           return (
-            <ItemHV2
+            <ItemH
               key={i}
               gap="0px 164px"
               flexDirection={isMobile ? 'column' : 'row'}
@@ -34,7 +34,7 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
               {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
-                    <ItemVV2
+                    <ItemV
                       maxHeight="65px"
                       width={isMobile ? '100%' : '300px'}
                       maxWidth={isMobile ? '100%' : '300px'}
@@ -64,14 +64,14 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                           }}
                         />
                       </PartnersButton>
-                    </ItemVV2>
+                    </ItemV>
                   </PartnerItem>
                 );
               })}
-            </ItemHV2>
+            </ItemH>
           );
         })}
-      </ItemVV2>
+      </ItemV>
     </PartnersContainer>
   );
 };
@@ -101,14 +101,14 @@ const Header = styled.h3`
   }
 `;
 
-const PartnersLogo = styled(ImageV2)`
+const PartnersLogo = styled(Image)`
   width: auto;
   height: auto;
   max-width: 241px;
   max-height: 65px;
 `;
 
-const PartnerItem = styled(ItemHV2)`
+const PartnerItem = styled(ItemH)`
   max-width: 300px;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ const PartnerItem = styled(ItemHV2)`
   }
 `;
 
-const PartnersButton = styled(ButtonV2)`
+const PartnersButton = styled(Button)`
   cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;

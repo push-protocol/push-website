@@ -4,7 +4,7 @@ title: 'EPNS x Polychain Monsters: Decentralized Communication for the Digital C
 authors: [push]
 tags: [Nft, Ethereum, Epnsproject, Nft Collectibles, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 
