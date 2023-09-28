@@ -521,7 +521,7 @@ const BrbWrapper = styled(ItemVV2)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #000 !important;
 
   & .pushMissingSvg {
     width: 900px;
