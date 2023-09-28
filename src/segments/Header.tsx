@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import Alert from '@site/src/components/Alert';
+import { Alert } from '@site/src/components/Alert';
 import { Atag, ContentV2, ImageV2, ItemHV2, ItemVV2, LinkToV2, SectionV2, SpanV2 } from '@site/src/components/SharedStylingV2';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import EnSVG from '@site/static/assets/website/locales/en.svg';
