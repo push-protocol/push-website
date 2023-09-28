@@ -27,3 +27,7 @@
 .DocsHub .theme-doc-footer, .DocsHub .pagination-nav {
   display: none;
 }
+
+.menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module{
+  padding:8px 0px 8px 8px !important;
+}
