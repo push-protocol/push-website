@@ -56,7 +56,7 @@ function PrivacyMobile() {
                 textAlign="center"
                 color='#fff'
               >
-                Defines how Push collects, handles and processes data.
+                {t('privacy.hero.update-text')}
               </Para>
               <H3V2
                   maxWidth="400px"
@@ -824,7 +824,7 @@ const Para = styled(PV2)`
   font-weight: 300;
   letter-spacing: 0.02em;
   font-size: 1.1em;
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
 `;
 
 export default PrivacyMobile;

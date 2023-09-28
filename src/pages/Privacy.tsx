@@ -887,7 +887,7 @@ const ListGroup = styled.div`
 const Para = styled(PV2)`
   font-weight: 300;
   font-size: ${(props) => props.size || '1.1em'};
-  color: #000000ee;
+  color: ${(props) => props.color || '#000000ee'};
   text-align: ${(props) => props.textAlign || 'initial'};
 `;
 
