@@ -499,7 +499,7 @@ const BodyContent = styled.div`
   }
 `;
 
-const FrensWrapper = styled.main`
+const FrensWrapper = styled(ItemVV2)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -626,6 +626,7 @@ const AnimationIcon = styled.div`
 
 const AnimationSection = styled(ResponsiveSection)`
 
+  display: flex;
   flex-direction: column;
   background: #121315;
   border-bottom-left-radius: 48px;
