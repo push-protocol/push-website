@@ -7,7 +7,6 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
-import { useLocation } from '@docusaurus/router';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
@@ -100,8 +99,6 @@ function Header() {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const location = useLocation();
-
   const showMobileMenu = isMobile && isMobileMenuOpen;
 
   // if mobile view then show only DARK header.
@@ -136,7 +133,7 @@ function Header() {
       className={`header ${headerClass}`}
     >
       {/* ALERT SECTION */}
-      {location.pathname === '/' && <Alert />}
+      <Alert />
 
       <SectionV2>
         <ContentV2
