@@ -963,7 +963,7 @@ li {
 /* ------------------ */
 /* DOCUSAURUS BLOG OVERRIDE */
 /* ------------------ */
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module {
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -971,11 +971,11 @@ li {
   align-self: center;
 }
 
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container {
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container, .PushBlog .main-wrapper .container {
   max-width: initial;
 }
 
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container aside.col.col--3 {
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container aside.col.col--3, .PushBlog .main-wrapper .container aside.col.col--3 {
   display: block;
   width: var(--doc-sidebar-width);
   max-width: var(--doc-sidebar-width);
@@ -986,22 +986,22 @@ li {
   clip-path: inset(0);
 }
 
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container  article {
+.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article, .PushBlog .main-wrapper .container article {
   
   max-width: 958px !important;
   margin-left: auto;
 }
 
 @media only screen and (min-width: 1920px)  {
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--7 {
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--7, .PushBlog .main-wrapper .container main.col.col--7 {
       max-width: var(--ifm-container-width-xl);
   }
   
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--2 {
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--2, .PushBlog .main-wrapper .container main.col.col--2 {
       margin-right: auto;
   }
   
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container  article {
+  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article, .PushBlog .main-wrapper .container article {
       
       margin-left: auto;
   }
