@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/push-monthly-blocks-september",
+  "source": "@site/blog/2022-10-27-push-monthly-blocks-september/index.md",
+  "title": "Push Monthly Blocks",
+  "description": "Docusaurus Image",
+  "date": "2022-10-27T00:00:00.000Z",
+  "formattedDate": "October 27, 2022",
+  "tags": [
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    }
+  ],
+  "readingTime": 3.135,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-monthly-blocks-september",
+    "title": "Push Monthly Blocks",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Newsletter",
+      "Blockchain",
+      "Pushprotocol",
+      "Ethereum"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Monthly Blocks",
+    "permalink": "/blog/push-monthly-blocks-october"
+  },
+  "nextItem": {
+    "title": "Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform",
+    "permalink": "/blog/push-protocol-and-phuture-finance-partner-to-bring-decentralized-notifications-to-the-platform"
+  }
+}

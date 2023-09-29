@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-manage-chat-requests",
+  "id": "chat/build/docs-chat-develop-manage-chat-requests",
+  "title": "Chat Requests",
+  "description": "You can send a message using chat.send API to either an existing chat connection or to initiate a new chat to a wallet you haven't chatted with before (which is called sending a chat request).",
+  "source": "@site/docs/chat/build/04-Develop-Chat-Requests.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/chat-requests",
+  "permalink": "/docs/chat/build/chat-requests",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/04-Develop-Chat-Requests.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "id": "docs-chat-develop-manage-chat-requests",
+    "title": "Chat Requests",
+    "hide_title": true,
+    "slug": "./chat-requests",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 4
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Fetch Chats",
+    "permalink": "/docs/chat/build/fetch-chats"
+  },
+  "next": {
+    "title": "Send Message",
+    "permalink": "/docs/chat/build/send-message"
+  }
+}

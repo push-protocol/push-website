@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/qi-dao-taps-push-to-update-users-on-their-debt-positions",
+  "source": "@site/blog/2023-01-26-qi-dao-taps-push-to-update/index.md",
+  "title": "QiDAO Taps Push to Update Users on their Debt Positions🪙",
+  "description": "Docusaurus Image",
+  "date": "2023-01-26T00:00:00.000Z",
+  "formattedDate": "January 26, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Web3 Communication",
+      "permalink": "/blog/tags/web-3-communication"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Frensofpush",
+      "permalink": "/blog/tags/frensofpush"
+    }
+  ],
+  "readingTime": 4.385,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "qi-dao-taps-push-to-update-users-on-their-debt-positions",
+    "title": "QiDAO Taps Push to Update Users on their Debt Positions🪙",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Web3 Communication",
+      "Blockchain Technology",
+      "Blockchain Development",
+      "Frensofpush"
+    ]
+  },
+  "prevItem": {
+    "title": "Getting Started With Push SDK REST API⚙️",
+    "permalink": "/blog/getting-started-with-push-sdk-rest-api"
+  },
+  "nextItem": {
+    "title": "Building a Leading Web3 Communication Layer: What’s it take?🛠️",
+    "permalink": "/blog/building-a-leading-web3-communication-layer-what-s-it-take"
+  }
+}

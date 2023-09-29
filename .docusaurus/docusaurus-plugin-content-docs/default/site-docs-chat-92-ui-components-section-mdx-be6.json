@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/docs-chat-ui-components-section",
+  "id": "chat/docs-chat-ui-components-section",
+  "title": "UI Components",
+  "description": "This Section will show you how you can easily integrate Push Chat, Group Chat and Token Gated Group Chat in your dapp with just few lines of code using our components from @pushprotocol/uiweb",
+  "source": "@site/docs/chat/92-UI-Components-Section.mdx",
+  "sourceDirName": "chat",
+  "slug": "/chat/ui-components",
+  "permalink": "/docs/chat/ui-components",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/92-UI-Components-Section.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 92,
+  "frontMatter": {
+    "id": "docs-chat-ui-components-section",
+    "title": "UI Components",
+    "hide_title": true,
+    "slug": "./ui-components",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 92
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Meta",
+    "permalink": "/docs/chat/message-types/meta"
+  },
+  "next": {
+    "title": "Usecases",
+    "permalink": "/docs/chat/ui-components/UseCase"
+  }
+}

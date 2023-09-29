@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need",
+  "source": "@site/blog/2023-09-13-deep-dive-into-push-snaps/index.md",
+  "title": "Deep-dive into Push Snaps Features & Getting Started 🛠️",
+  "description": "Docusaurus Image",
+  "date": "2023-09-13T00:00:00.000Z",
+  "formattedDate": "September 13, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Metamask",
+      "permalink": "/blog/tags/metamask"
+    },
+    {
+      "label": "Metamask Wallet",
+      "permalink": "/blog/tags/metamask-wallet"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 6.76,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need",
+    "title": "Deep-dive into Push Snaps Features & Getting Started 🛠️",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Metamask",
+      "Metamask Wallet",
+      "Web3",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "4 Reasons To Separate Your dApp’s Communication and Execution Layers",
+    "permalink": "/blog/4-reasons-to-seperate-your-dapp-communication-and-execution-layers"
+  },
+  "nextItem": {
+    "title": "Bringing Push to MetaMask Snaps",
+    "permalink": "/blog/bringing-push-to-meta-mask-snaps"
+  }
+}

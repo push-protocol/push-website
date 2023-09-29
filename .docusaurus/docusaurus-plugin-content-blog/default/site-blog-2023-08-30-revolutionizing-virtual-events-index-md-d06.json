@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/revolutionizing-virtual-events-and-social-interactions-with-decentralized-video-chat",
+  "source": "@site/blog/2023-08-30-revolutionizing-virtual-events/index.md",
+  "title": "Revolutionizing Virtual Events and Social Interactions with Decentralized Video Chat📹",
+  "description": "Docusaurus Image",
+  "date": "2023-08-30T00:00:00.000Z",
+  "formattedDate": "August 30, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Technologies",
+      "permalink": "/blog/tags/blockchain-technologies"
+    }
+  ],
+  "readingTime": 4.42,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "revolutionizing-virtual-events-and-social-interactions-with-decentralized-video-chat",
+    "title": "Revolutionizing Virtual Events and Social Interactions with Decentralized Video Chat📹",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Web3",
+      "Blockchain Technologies"
+    ]
+  },
+  "prevItem": {
+    "title": "August Monthly Recap",
+    "permalink": "/blog/august-monthly-recap"
+  },
+  "nextItem": {
+    "title": "A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳",
+    "permalink": "/blog/a-billion-reasons-to-build-finding-india-s-best-web3-developers"
+  }
+}

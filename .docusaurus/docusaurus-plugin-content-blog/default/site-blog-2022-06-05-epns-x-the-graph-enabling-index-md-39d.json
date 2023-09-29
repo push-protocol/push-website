@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-x-the-graph-enabling-a-better-way-to-access-blockchain-data",
+  "source": "@site/blog/2022-06-05-epns-x-the-graph-enabling/index.md",
+  "title": "EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔",
+  "description": "Docusaurus Image",
+  "date": "2022-06-05T00:00:00.000Z",
+  "formattedDate": "June 5, 2022",
+  "tags": [
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "The Graph",
+      "permalink": "/blog/tags/the-graph"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Cryptocurrency",
+      "permalink": "/blog/tags/cryptocurrency"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    }
+  ],
+  "readingTime": 4.975,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-x-the-graph-enabling-a-better-way-to-access-blockchain-data",
+    "title": "EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethereum",
+      "The Graph",
+      "Blockchain",
+      "Cryptocurrency",
+      "Web3"
+    ]
+  },
+  "prevItem": {
+    "title": "Why Engaging with Users Within the NFTVerse Matters",
+    "permalink": "/blog/why-engaging-with-users-within-the-nft-verse-matters"
+  },
+  "nextItem": {
+    "title": "Huobi ❤️ Supports Indian Artists!",
+    "permalink": "/blog/huobi-supports-indian-artists"
+  }
+}

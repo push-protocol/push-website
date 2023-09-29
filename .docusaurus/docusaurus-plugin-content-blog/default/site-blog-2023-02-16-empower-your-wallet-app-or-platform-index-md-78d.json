@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/empower-your-wallet-app-or-platform-with-push-delivery-nodes",
+  "source": "@site/blog/2023-02-16-empower-your-wallet-app-or-platform/index.md",
+  "title": "Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡",
+  "description": "Docusaurus Image",
+  "date": "2023-02-16T00:00:00.000Z",
+  "formattedDate": "February 16, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Delivery Nodes",
+      "permalink": "/blog/tags/delivery-nodes"
+    }
+  ],
+  "readingTime": 4.055,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "empower-your-wallet-app-or-platform-with-push-delivery-nodes",
+    "title": "Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Developer",
+      "Blockchain Development",
+      "Blockchain Technology",
+      "Delivery Nodes"
+    ]
+  },
+  "prevItem": {
+    "title": "Getting Started With Push SDK: uiweb API🛠️",
+    "permalink": "/blog/getting-started-with-push-sdk-uiweb-api"
+  },
+  "nextItem": {
+    "title": "Building a Better UX in BNB With Our 8 Launch Collaborators🚀",
+    "permalink": "/blog/building-a-better-ux-in-bnb-with-our-8-launch-collaborators"
+  }
+}

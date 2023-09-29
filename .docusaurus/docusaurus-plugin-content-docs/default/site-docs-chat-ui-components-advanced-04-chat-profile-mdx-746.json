@@ -1,0 +1,25 @@
+{
+  "unversionedId": "chat/ui-components/Advanced/ChatProfile",
+  "id": "chat/ui-components/Advanced/ChatProfile",
+  "title": "ChatProfile",
+  "description": "Empower User Interaction: Showcase Wallet Addresses, Group Names, and Member Management with ChatProfile in Your Dapp.",
+  "source": "@site/docs/chat/ui-components/Advanced/04-ChatProfile.mdx",
+  "sourceDirName": "chat/ui-components/Advanced",
+  "slug": "/chat/ui-components/Advanced/ChatProfile",
+  "permalink": "/docs/chat/ui-components/Advanced/ChatProfile",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/ui-components/Advanced/04-ChatProfile.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {},
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "ChatViewList",
+    "permalink": "/docs/chat/ui-components/Advanced/ChatViewList"
+  },
+  "next": {
+    "title": "MessageInput",
+    "permalink": "/docs/chat/ui-components/Advanced/MessageInput"
+  }
+}

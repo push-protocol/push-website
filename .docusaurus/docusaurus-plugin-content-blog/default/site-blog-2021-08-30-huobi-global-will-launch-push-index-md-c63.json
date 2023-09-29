@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/huobi-global-will-launch-push-ethereum-push-notification-service",
+  "source": "@site/blog/2021-08-30-huobi-global-will-launch-push/index.md",
+  "title": "Huobi Global will launch $PUSH (Ethereum Push Notification Service)",
+  "description": "Docusaurus Image",
+  "date": "2021-08-30T00:00:00.000Z",
+  "formattedDate": "August 30, 2021",
+  "tags": [
+    {
+      "label": "Annoucements",
+      "permalink": "/blog/tags/annoucements"
+    },
+    {
+      "label": "Huobiglobal",
+      "permalink": "/blog/tags/huobiglobal"
+    },
+    {
+      "label": "Listings",
+      "permalink": "/blog/tags/listings"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    }
+  ],
+  "readingTime": 0.76,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "huobi-global-will-launch-push-ethereum-push-notification-service",
+    "title": "Huobi Global will launch $PUSH (Ethereum Push Notification Service)",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Annoucements",
+      "Huobiglobal",
+      "Listings",
+      "Ethereum"
+    ]
+  },
+  "prevItem": {
+    "title": "Huobi ❤️ Supports Indian Artists!",
+    "permalink": "/blog/huobi-supports-indian-artists"
+  },
+  "nextItem": {
+    "title": "EPNS push notifications are never boring",
+    "permalink": "/blog/epns-push-notifications-are-never-boring"
+  }
+}

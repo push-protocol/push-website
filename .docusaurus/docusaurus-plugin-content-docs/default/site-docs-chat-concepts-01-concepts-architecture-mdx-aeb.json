@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/concepts/docs-chat-concepts-architecture-overview",
+  "id": "chat/concepts/docs-chat-concepts-architecture-overview",
+  "title": "Push Chat Architecture",
+  "description": "Push Chat is a web3 messaging protocol that enables wallet addresses to send and receive messages, offering a secure and privacy-focused alternative to traditional messaging apps. By leveraging blockchain technology, users can communicate directly via their wallet addresses without personal identifiers like phone numbers, email addresses, etc.",
+  "source": "@site/docs/chat/concepts/01-Concepts-Architecture.mdx",
+  "sourceDirName": "chat/concepts",
+  "slug": "/chat/concepts/push-chat-architecture",
+  "permalink": "/docs/chat/concepts/push-chat-architecture",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/concepts/01-Concepts-Architecture.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "docs-chat-concepts-architecture-overview",
+    "title": "Push Chat Architecture",
+    "hide_title": true,
+    "slug": "./push-chat-architecture",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 1
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Concepts",
+    "permalink": "/docs/chat/concepts"
+  },
+  "next": {
+    "title": "Encryption Version in Push Chat",
+    "permalink": "/docs/chat/concepts/encryption-version-in-push-chat"
+  }
+}

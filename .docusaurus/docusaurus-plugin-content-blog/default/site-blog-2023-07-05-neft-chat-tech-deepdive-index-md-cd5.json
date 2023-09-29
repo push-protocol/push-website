@@ -1,0 +1,52 @@
+{
+  "permalink": "/blog/a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat",
+  "source": "@site/blog/2023-07-05-neft-chat-tech-deepdive/index.md",
+  "title": "A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat",
+  "description": "Docusaurus Image",
+  "date": "2023-07-05T00:00:00.000Z",
+  "formattedDate": "July 5, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    },
+    {
+      "label": "NFT",
+      "permalink": "/blog/tags/nft"
+    }
+  ],
+  "readingTime": 10.38,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat",
+    "title": "A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Developer",
+      "NFT"
+    ]
+  },
+  "prevItem": {
+    "title": "Exploring the Role of ZK Knowledge in Decentralized Communication🌐",
+    "permalink": "/blog/exploring-the-role-of-zk-knowledge-in-decentralized-communication"
+  },
+  "nextItem": {
+    "title": "June Monthly Recap 🌅",
+    "permalink": "/blog/june-monthly-recap"
+  }
+}

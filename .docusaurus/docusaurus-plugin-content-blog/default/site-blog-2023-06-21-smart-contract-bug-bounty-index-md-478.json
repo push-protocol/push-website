@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/100-000-of-push-x-immune-fi-bug-bounty-program-goes-live",
+  "source": "@site/blog/2023-06-21-smart-contract-bug-bounty/index.md",
+  "title": "$100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲",
+  "description": "Docusaurus Image",
+  "date": "2023-06-21T00:00:00.000Z",
+  "formattedDate": "June 21, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Bounty Program",
+      "permalink": "/blog/tags/bounty-program"
+    },
+    {
+      "label": "Immuenfi",
+      "permalink": "/blog/tags/immuenfi"
+    },
+    {
+      "label": "Bug bounty",
+      "permalink": "/blog/tags/bug-bounty"
+    }
+  ],
+  "readingTime": 3.165,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "100-000-of-push-x-immune-fi-bug-bounty-program-goes-live",
+    "title": "$100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Web3",
+      "Bounty Program",
+      "Immuenfi",
+      "Bug bounty"
+    ]
+  },
+  "prevItem": {
+    "title": "Empowering Decentralized Decision-Making: Push x ElementDAO💙💜",
+    "permalink": "/blog/empowering-decentralized-decision-making-push-x-element-dao"
+  },
+  "nextItem": {
+    "title": "What is ERC-6551 and How’s It Better than ERC-721?",
+    "permalink": "/blog/what-is-erc-6551-and-how-s-it-better-than-erc-721"
+  }
+}

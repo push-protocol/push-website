@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/hello-world-buid-ling-a-working-epns-mobile-app",
+  "source": "@site/blog/2020-05-01-hello-world-buid-ling-a-working/index.md",
+  "title": "Hello World: BUIDLing a working EPNS Mobile app",
+  "description": "Docusaurus Image",
+  "date": "2020-05-01T00:00:00.000Z",
+  "formattedDate": "May 1, 2020",
+  "tags": [
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Solidity",
+      "permalink": "/blog/tags/solidity"
+    },
+    {
+      "label": "Ethglobal",
+      "permalink": "/blog/tags/ethglobal"
+    },
+    {
+      "label": "Notifications",
+      "permalink": "/blog/tags/notifications"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    }
+  ],
+  "readingTime": 3.86,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "hello-world-buid-ling-a-working-epns-mobile-app",
+    "title": "Hello World: BUIDLing a working EPNS Mobile app",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethereum",
+      "Solidity",
+      "Ethglobal",
+      "Notifications",
+      "Developer"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS push notifications are never boring",
+    "permalink": "/blog/epns-push-notifications-are-never-boring"
+  },
+  "nextItem": {
+    "title": "Push Game Theory Explained",
+    "permalink": "/blog/push-game-theory-explained"
+  }
+}

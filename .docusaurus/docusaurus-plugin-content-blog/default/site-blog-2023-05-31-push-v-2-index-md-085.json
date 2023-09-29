@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/push-protocol-v2-fee-pool-and-incentivized-chats-are-here",
+  "source": "@site/blog/2023-05-31-push-v2/index.md",
+  "title": "Push Protocol v2 — Fee Pool & Incentivized Chats are here!",
+  "description": "Docusaurus Image",
+  "date": "2023-05-31T00:00:00.000Z",
+  "formattedDate": "May 31, 2023",
+  "tags": [
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "Liquidity Pool",
+      "permalink": "/blog/tags/liquidity-pool"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    }
+  ],
+  "readingTime": 12.76,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-v2-fee-pool-and-incentivized-chats-are-here",
+    "title": "Push Protocol v2 — Fee Pool & Incentivized Chats are here!",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Pushprotocol",
+      "Liquidity Pool",
+      "Blockchain Technology",
+      "Blockchain Development"
+    ]
+  },
+  "prevItem": {
+    "title": "Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐",
+    "permalink": "/blog/push-dao-progressive-decentralization-the-next-phase-of-push-governance"
+  },
+  "nextItem": {
+    "title": "Taking DAO Communication to New Heights | Push x Aragon🦅",
+    "permalink": "/blog/taking-dao-communication-to-new-heights-push-x-aragon"
+  }
+}

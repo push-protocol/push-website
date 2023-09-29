@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet",
+  "source": "@site/blog/2023-04-12-push-for-safe-wallet/index.md",
+  "title": "Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚",
+  "description": "Docusaurus Image",
+  "date": "2023-04-12T00:00:00.000Z",
+  "formattedDate": "April 12, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 2.795,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet",
+    "title": "Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain Development",
+      "Blockchain Technology",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Launches Wallet-to-Wallet Video Chat📹",
+    "permalink": "/blog/push-launches-wallet-to-wallet-video-chat"
+  },
+  "nextItem": {
+    "title": "Join us for the ETHGlobal Tokyo Hackathon🗼",
+    "permalink": "/blog/join-us-for-the-eth-global-tokyo-hackathon"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/reef-chain-integrates-epns-to-enable-seamless-communication-with-users",
+  "source": "@site/blog/2022-09-06-reef-chain-integrates-epns/index.md",
+  "title": "Reef Chain Integrates EPNS to Enable Seamless Communication With Users",
+  "description": "Docusaurus Image",
+  "date": "2022-09-06T00:00:00.000Z",
+  "formattedDate": "September 6, 2022",
+  "tags": [
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 2.48,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "reef-chain-integrates-epns-to-enable-seamless-communication-with-users",
+    "title": "Reef Chain Integrates EPNS to Enable Seamless Communication With Users",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Push Notification",
+      "Blockchain",
+      "Web3",
+      "Ethereum",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Loan Update: High Utilization or Low Liquidity, Please Check Your Position",
+    "permalink": "/blog/loan-update-high-utilization-or-low-liquidity-please-check-your-position"
+  },
+  "nextItem": {
+    "title": "‘My Dapp’ Would Like to Send You Push Notifications",
+    "permalink": "/blog/my-dapp-would-like-to-send-you-push-notifications"
+  }
+}

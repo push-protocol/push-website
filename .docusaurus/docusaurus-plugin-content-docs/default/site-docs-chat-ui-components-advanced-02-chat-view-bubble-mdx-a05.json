@@ -1,0 +1,25 @@
+{
+  "unversionedId": "chat/ui-components/Advanced/ChatViewBubble",
+  "id": "chat/ui-components/Advanced/ChatViewBubble",
+  "title": "ChatViewBubble",
+  "description": "Simplify Development: Instantly Integrate Pre-built Chat Bubble UI for Your Dapp",
+  "source": "@site/docs/chat/ui-components/Advanced/02-ChatViewBubble.mdx",
+  "sourceDirName": "chat/ui-components/Advanced",
+  "slug": "/chat/ui-components/Advanced/ChatViewBubble",
+  "permalink": "/docs/chat/ui-components/Advanced/ChatViewBubble",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/ui-components/Advanced/02-ChatViewBubble.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {},
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "ChatUIProvider",
+    "permalink": "/docs/chat/ui-components/Advanced/ChatUIProvider"
+  },
+  "next": {
+    "title": "ChatViewList",
+    "permalink": "/docs/chat/ui-components/Advanced/ChatViewList"
+  }
+}

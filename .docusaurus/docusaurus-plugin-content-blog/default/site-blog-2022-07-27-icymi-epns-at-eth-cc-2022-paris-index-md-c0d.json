@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/icymi-epns-at-eth-cc-2022-paris",
+  "source": "@site/blog/2022-07-27-icymi-epns-at-eth-cc-2022-paris/index.md",
+  "title": "ICYMI — EPNS at EthCC 2022 Paris 🇫🇷",
+  "description": "Docusaurus Image",
+  "date": "2022-07-27T00:00:00.000Z",
+  "formattedDate": "July 27, 2022",
+  "tags": [
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Cryptocurrency",
+      "permalink": "/blog/tags/cryptocurrency"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 4.505,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "icymi-epns-at-eth-cc-2022-paris",
+    "title": "ICYMI — EPNS at EthCC 2022 Paris 🇫🇷",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Push Notification",
+      "Ethereum",
+      "Epnsproject",
+      "Cryptocurrency",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users",
+    "permalink": "/blog/epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users"
+  },
+  "nextItem": {
+    "title": "EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates",
+    "permalink": "/blog/epns-collaborates-with-d-xdao-to-enable-notifications-for-swapr-campaign-updates"
+  }
+}

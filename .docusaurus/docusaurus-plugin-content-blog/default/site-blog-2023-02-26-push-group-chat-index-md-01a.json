@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/launching-the-future-of-web3-messaging-with-push-chat-and-push-group-chat",
+  "source": "@site/blog/2023-02-26-push-group-chat/index.md",
+  "title": "Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀",
+  "description": "Docusaurus Image",
+  "date": "2023-02-26T00:00:00.000Z",
+  "formattedDate": "February 26, 2023",
+  "tags": [
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Web3 Development",
+      "permalink": "/blog/tags/web-3-development"
+    }
+  ],
+  "readingTime": 4.52,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "launching-the-future-of-web3-messaging-with-push-chat-and-push-group-chat",
+    "title": "Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Push Notification",
+      "Web3",
+      "Blockchain Technology",
+      "Web3 Development"
+    ]
+  },
+  "prevItem": {
+    "title": "Getting Started with Push SDK: Socket API🔔",
+    "permalink": "/blog/geting-started-with-push-sdk-socket-api"
+  },
+  "nextItem": {
+    "title": "Push @ETHDenver Full Itinerary 🌄",
+    "permalink": "/blog/push-eth-denver-full-itinerary"
+  }
+}

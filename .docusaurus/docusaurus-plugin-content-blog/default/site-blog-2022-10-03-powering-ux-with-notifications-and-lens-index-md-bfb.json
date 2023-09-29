@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-and-lens-powering-ux-with-notifications-and-aaves-lens",
+  "source": "@site/blog/2022-10-03-powering-ux-with-notifications-and-lens/index.md",
+  "title": "Push and Lens: Powering UX with Notifications and Aave’s Lens",
+  "description": "Docusaurus Image",
+  "date": "2022-10-03T00:00:00.000Z",
+  "formattedDate": "October 3, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Social Media",
+      "permalink": "/blog/tags/social-media"
+    },
+    {
+      "label": "Infrastructure",
+      "permalink": "/blog/tags/infrastructure"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 4.27,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-and-lens-powering-ux-with-notifications-and-aaves-lens",
+    "title": "Push and Lens: Powering UX with Notifications and Aave’s Lens",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ethereum",
+      "Social Media",
+      "Infrastructure",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Going Big on Polygon with Frens",
+    "permalink": "/blog/push-going-big-on-polygon-with-frens"
+  },
+  "nextItem": {
+    "title": "Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps",
+    "permalink": "/blog/push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-dapps"
+  }
+}

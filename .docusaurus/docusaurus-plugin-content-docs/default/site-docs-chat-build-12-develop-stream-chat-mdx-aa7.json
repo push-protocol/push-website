@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/build/docs-chat-develop-stream-chats",
+  "id": "chat/build/docs-chat-develop-stream-chats",
+  "title": "Stream Chats",
+  "description": "These APIs enable you to receive chat payloads or chat request / group invites in real time without polling the API. Push Chat achieves this by the use of sockets.",
+  "source": "@site/docs/chat/build/12-Develop-Stream-Chat.mdx",
+  "sourceDirName": "chat/build",
+  "slug": "/chat/build/stream-chats",
+  "permalink": "/docs/chat/build/stream-chats",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/build/12-Develop-Stream-Chat.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "id": "docs-chat-develop-stream-chats",
+    "title": "Stream Chats",
+    "hide_title": true,
+    "slug": "./stream-chats",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 12
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Manage Group",
+    "permalink": "/docs/chat/build/manage-group"
+  },
+  "next": {
+    "title": "All API Calls",
+    "permalink": "/docs/chat/build/all-api-calls"
+  }
+}

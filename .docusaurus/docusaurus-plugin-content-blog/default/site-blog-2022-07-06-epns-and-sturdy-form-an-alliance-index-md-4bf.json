@@ -1,0 +1,34 @@
+{
+  "permalink": "/blog/epns-and-sturdy-form-an-alliance-to-enable-direct-communication-for-users",
+  "source": "@site/blog/2022-07-06-epns-and-sturdy-form-an-alliance/index.md",
+  "title": "EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users",
+  "description": "Docusaurus Image",
+  "date": "2022-07-06T00:00:00.000Z",
+  "formattedDate": "July 6, 2022",
+  "tags": [],
+  "readingTime": 2.955,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-and-sturdy-form-an-alliance-to-enable-direct-communication-for-users",
+    "title": "EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users",
+    "authors": [
+      "push"
+    ]
+  },
+  "prevItem": {
+    "title": "Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable",
+    "permalink": "/blog/calling-all-hobbyist-devs-channel-creation-gas-fee-is-now-refundable"
+  },
+  "nextItem": {
+    "title": "EPNS Monthly Blocks",
+    "permalink": "/blog/epns-monthly-blocks"
+  }
+}

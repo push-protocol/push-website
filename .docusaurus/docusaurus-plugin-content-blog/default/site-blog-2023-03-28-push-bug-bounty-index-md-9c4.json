@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-protocol-s-bug-bounty-program-goes-live",
+  "source": "@site/blog/2023-03-28-push-bug-bounty/index.md",
+  "title": "Push Protocol’s Bug Bounty Program Goes Live!",
+  "description": "Docusaurus Image",
+  "date": "2023-03-28T00:00:00.000Z",
+  "formattedDate": "March 28, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Bug Bounty",
+      "permalink": "/blog/tags/bug-bounty"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Bounty Program",
+      "permalink": "/blog/tags/bounty-program"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 3.45,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-protocol-s-bug-bounty-program-goes-live",
+    "title": "Push Protocol’s Bug Bounty Program Goes Live!",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Bug Bounty",
+      "Blockchain Technology",
+      "Bounty Program",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Launch of The Push Ambassadors Program 💜 (English + Español)",
+    "permalink": "/blog/launch-of-the-push-ambassadors-program-english-espanol"
+  },
+  "nextItem": {
+    "title": "Recreating Web2 Communication Channels in Web3 Using Push👥",
+    "permalink": "/blog/recreating-web2-communication-channels-in-web3-using-push"
+  }
+}

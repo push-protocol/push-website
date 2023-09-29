@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/introducing-push-protocol-v1-5",
+  "source": "@site/blog/2022-12-13-push-protocol-v1-5/index.md",
+  "title": "Introducing Push Protocol v1.5 🎊",
+  "description": "Docusaurus Image",
+  "date": "2022-12-13T00:00:00.000Z",
+  "formattedDate": "December 13, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    },
+    {
+      "label": "Blockhain Development",
+      "permalink": "/blog/tags/blockhain-development"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "Communication Tools",
+      "permalink": "/blog/tags/communication-tools"
+    }
+  ],
+  "readingTime": 7.37,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "introducing-push-protocol-v1-5",
+    "title": "Introducing Push Protocol v1.5 🎊",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Blockchain Technology",
+      "Blockhain Development",
+      "Push Notification",
+      "Communication Tools"
+    ]
+  },
+  "prevItem": {
+    "title": "Push and Tollan Worlds Partner to Level Up Communication With Gamers",
+    "permalink": "/blog/push-and-tollan-worlds-partner-to-level-up-communication-with-gamers"
+  },
+  "nextItem": {
+    "title": "Developer DAO x Push — Enhancing UX Through Web3 Communication Tools",
+    "permalink": "/blog/developer-dao-x-push-enhancing-ux-through-web3-communication-tools"
+  }
+}

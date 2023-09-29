@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-rebrands-into-push-protocol-the-communication-protocol-for-web3",
+  "source": "@site/blog/2022-09-27-epns-rebrands-to-pushprotocol/index.md",
+  "title": "EPNS Rebrands into Push Protocol, the Communication Protocol for Web3",
+  "description": "Docusaurus Image",
+  "date": "2022-09-27T00:00:00.000Z",
+  "formattedDate": "September 27, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Multichain",
+      "permalink": "/blog/tags/multichain"
+    },
+    {
+      "label": "Messaging",
+      "permalink": "/blog/tags/messaging"
+    },
+    {
+      "label": "Announcements",
+      "permalink": "/blog/tags/announcements"
+    }
+  ],
+  "readingTime": 3.79,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-rebrands-into-push-protocol-the-communication-protocol-for-web3",
+    "title": "EPNS Rebrands into Push Protocol, the Communication Protocol for Web3",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ethereum",
+      "Multichain",
+      "Messaging",
+      "Announcements"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps",
+    "permalink": "/blog/push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-dapps"
+  },
+  "nextItem": {
+    "title": "EPNS Allies With Commonwealth to Bring Governance Notifications to Users",
+    "permalink": "/blog/epns-allies-with-commonwealth-to-bring-governance-notifications-to-users"
+  }
+}

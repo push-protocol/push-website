@@ -1,0 +1,28 @@
+{
+  "unversionedId": "chat/concepts/docs-chat-encryption-version-in-push-chat",
+  "id": "chat/concepts/docs-chat-encryption-version-in-push-chat",
+  "title": "Encryption Version in Push Chat",
+  "description": "Each Push profile or user of Push Chat has a PGP key that is created locally and stored encrypted on Push nodes. Push SDK during initialization automatically decrypts your key by asking you to sign a nonce which is used to derive the signature that is applied to encrypt or decrypt your PGP keys.",
+  "source": "@site/docs/chat/concepts/02-Concepts-Encryption-Version.mdx",
+  "sourceDirName": "chat/concepts",
+  "slug": "/chat/concepts/encryption-version-in-push-chat",
+  "permalink": "/docs/chat/concepts/encryption-version-in-push-chat",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/concepts/02-Concepts-Encryption-Version.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "id": "docs-chat-encryption-version-in-push-chat",
+    "title": "Encryption Version in Push Chat",
+    "hide_title": true,
+    "slug": "./encryption-version-in-push-chat",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 2
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Push Chat Architecture",
+    "permalink": "/docs/chat/concepts/push-chat-architecture"
+  }
+}

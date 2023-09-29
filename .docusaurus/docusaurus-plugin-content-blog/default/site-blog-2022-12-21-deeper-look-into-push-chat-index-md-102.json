@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/were-still-pushing-a-deeper-look-into-push-chat",
+  "source": "@site/blog/2022-12-21-deeper-look-into-push-chat/index.md",
+  "title": "We’re Still Pushing: A Deeper Look Into Push Chat",
+  "description": "Docusaurus Image",
+  "date": "2022-12-21T00:00:00.000Z",
+  "formattedDate": "December 21, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Developer",
+      "permalink": "/blog/tags/developer"
+    },
+    {
+      "label": "Push Notification",
+      "permalink": "/blog/tags/push-notification"
+    },
+    {
+      "label": "PushChat",
+      "permalink": "/blog/tags/push-chat"
+    },
+    {
+      "label": "Messaging",
+      "permalink": "/blog/tags/messaging"
+    }
+  ],
+  "readingTime": 9.18,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "were-still-pushing-a-deeper-look-into-push-chat",
+    "title": "We’re Still Pushing: A Deeper Look Into Push Chat",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Developer",
+      "Push Notification",
+      "PushChat",
+      "Messaging"
+    ]
+  },
+  "prevItem": {
+    "title": "Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform",
+    "permalink": "/blog/push-helps-mover-the-first-crypto-debit-card-to-power-communication-on-the-platform"
+  },
+  "nextItem": {
+    "title": "Push and Tollan Worlds Partner to Level Up Communication With Gamers",
+    "permalink": "/blog/push-and-tollan-worlds-partner-to-level-up-communication-with-gamers"
+  }
+}

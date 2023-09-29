@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/building-a-better-ux-in-bnb-with-our-8-launch-collaborators",
+  "source": "@site/blog/2023-02-15-building-a-better-ux-in-bnb/index.md",
+  "title": "Building a Better UX in BNB With Our 8 Launch Collaborators🚀",
+  "description": "Docusaurus Image",
+  "date": "2023-02-15T00:00:00.000Z",
+  "formattedDate": "February 15, 2023",
+  "tags": [
+    {
+      "label": "BNB",
+      "permalink": "/blog/tags/bnb"
+    },
+    {
+      "label": "BNBChain",
+      "permalink": "/blog/tags/bnb-chain"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Defi",
+      "permalink": "/blog/tags/defi"
+    }
+  ],
+  "readingTime": 4.82,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "building-a-better-ux-in-bnb-with-our-8-launch-collaborators",
+    "title": "Building a Better UX in BNB With Our 8 Launch Collaborators🚀",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "BNB",
+      "BNBChain",
+      "Blockchain",
+      "Defi"
+    ]
+  },
+  "prevItem": {
+    "title": "Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡",
+    "permalink": "/blog/empower-your-wallet-app-or-platform-with-push-delivery-nodes"
+  },
+  "nextItem": {
+    "title": "Push Protocol Launches on BNB Chain!💛",
+    "permalink": "/blog/push-protocol-launches-on-bnb-chain"
+  }
+}

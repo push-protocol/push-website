@@ -1,0 +1,32 @@
+{
+  "unversionedId": "chat/docs-chat-build-section",
+  "id": "chat/docs-chat-build-section",
+  "title": "Build",
+  "description": "This section covers everything you will require from Push SDK to create any functionality or features related to Push Chat.",
+  "source": "@site/docs/chat/90-Build-Section.mdx",
+  "sourceDirName": "chat",
+  "slug": "/chat/build",
+  "permalink": "/docs/chat/build",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/90-Build-Section.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 90,
+  "frontMatter": {
+    "id": "docs-chat-build-section",
+    "title": "Build",
+    "hide_title": true,
+    "slug": "./build",
+    "displayed_sidebar": "pushChatSidebar",
+    "sidebar_position": 90
+  },
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Quickstart",
+    "permalink": "/docs/chat/quickstart"
+  },
+  "next": {
+    "title": "Get Started",
+    "permalink": "/docs/chat/build/get-started"
+  }
+}

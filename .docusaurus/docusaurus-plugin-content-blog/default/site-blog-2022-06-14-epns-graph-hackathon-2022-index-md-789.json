@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/epns-graph-hackathon-2022-winners-announced",
+  "source": "@site/blog/2022-06-14-epns-graph-hackathon-2022-/index.md",
+  "title": "EPNS + Graph Hackathon 2022 Winners Announced!",
+  "description": "Docusaurus Image",
+  "date": "2022-06-14T00:00:00.000Z",
+  "formattedDate": "June 14, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Graph",
+      "permalink": "/blog/tags/graph"
+    },
+    {
+      "label": "Hackathons",
+      "permalink": "/blog/tags/hackathons"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 2.05,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "epns-graph-hackathon-2022-winners-announced",
+    "title": "EPNS + Graph Hackathon 2022 Winners Announced!",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Graph",
+      "Hackathons",
+      "Ethereum",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "EPNS at NFT NYC 2022: All set for the NFTVerse",
+    "permalink": "/blog/epns-at-nft-nyc-2022-all-set-for-the-nft-verse"
+  },
+  "nextItem": {
+    "title": "EPNS x Stox: Enabling Communication for the Global Portfolio Tracker",
+    "permalink": "/blog/epns-x-stox-enabling-communication-for-the-global-portfolio-tracker"
+  }
+}

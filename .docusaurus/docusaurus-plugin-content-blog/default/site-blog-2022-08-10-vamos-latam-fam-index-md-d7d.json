@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/vamos-latam-fam",
+  "source": "@site/blog/2022-08-10-vamos-latam-fam/index.md",
+  "title": "Vamos Latam Fam 🧉",
+  "description": "Docusaurus Image",
+  "date": "2022-08-10T00:00:00.000Z",
+  "formattedDate": "August 10, 2022",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Epnsproject",
+      "permalink": "/blog/tags/epnsproject"
+    },
+    {
+      "label": "Newsletter",
+      "permalink": "/blog/tags/newsletter"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    }
+  ],
+  "readingTime": 3.32,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "vamos-latam-fam",
+    "title": "Vamos Latam Fam 🧉",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "Ethereum",
+      "Epnsproject",
+      "Newsletter",
+      "Blockchain"
+    ]
+  },
+  "prevItem": {
+    "title": "Socket Integrates EPNS to Send Users Important Updates Through Push Notifications",
+    "permalink": "/blog/socket-integrates-epns-to-send-users-important-updates-through-push-notifications"
+  },
+  "nextItem": {
+    "title": "Monthly Blocks",
+    "permalink": "/blog/monthly-blocks"
+  }
+}

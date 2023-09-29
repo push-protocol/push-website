@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/join-us-for-the-eth-global-tokyo-hackathon",
+  "source": "@site/blog/2023-04-10-ethglobal-tokyo-hackathon/index.md",
+  "title": "Join us for the ETHGlobal Tokyo Hackathon🗼",
+  "description": "Docusaurus Image",
+  "date": "2023-04-10T00:00:00.000Z",
+  "formattedDate": "April 10, 2023",
+  "tags": [
+    {
+      "label": "Ethglobal",
+      "permalink": "/blog/tags/ethglobal"
+    },
+    {
+      "label": "Hackathons",
+      "permalink": "/blog/tags/hackathons"
+    },
+    {
+      "label": "Bounty Program",
+      "permalink": "/blog/tags/bounty-program"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    }
+  ],
+  "readingTime": 3.315,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "join-us-for-the-eth-global-tokyo-hackathon",
+    "title": "Join us for the ETHGlobal Tokyo Hackathon🗼",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethglobal",
+      "Hackathons",
+      "Bounty Program",
+      "Web3"
+    ]
+  },
+  "prevItem": {
+    "title": "Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚",
+    "permalink": "/blog/enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet"
+  },
+  "nextItem": {
+    "title": "March Monthly Recap🌄",
+    "permalink": "/blog/march-monthly-recap"
+  }
+}

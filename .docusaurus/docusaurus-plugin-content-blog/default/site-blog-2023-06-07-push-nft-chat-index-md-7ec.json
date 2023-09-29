@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/introducing-push-nft-chat-chats-and-comms-tied-to-your-nf-ts-done-right",
+  "source": "@site/blog/2023-06-07-push-nft-chat/index.md",
+  "title": "Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅",
+  "description": "Docusaurus Image",
+  "date": "2023-06-07T00:00:00.000Z",
+  "formattedDate": "June 7, 2023",
+  "tags": [
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "NFT",
+      "permalink": "/blog/tags/nft"
+    },
+    {
+      "label": "Pushprotocol",
+      "permalink": "/blog/tags/pushprotocol"
+    },
+    {
+      "label": "NFT Utility",
+      "permalink": "/blog/tags/nft-utility"
+    }
+  ],
+  "readingTime": 6.055,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "introducing-push-nft-chat-chats-and-comms-tied-to-your-nf-ts-done-right",
+    "title": "Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Web3",
+      "NFT",
+      "Pushprotocol",
+      "NFT Utility"
+    ]
+  },
+  "prevItem": {
+    "title": "Unleashing a New Era of Social Networking | Push x SOCLLY🌿",
+    "permalink": "/blog/unleashing-a-new-era-of-social-networking-push-x-soclly"
+  },
+  "nextItem": {
+    "title": "Enhancing Blockchain Based Games UX Through In-Game Chat + Notifications🎮",
+    "permalink": "/blog/enhancing-blockchain-based-games-ux-through-in-game-chat-notifications"
+  }
+}

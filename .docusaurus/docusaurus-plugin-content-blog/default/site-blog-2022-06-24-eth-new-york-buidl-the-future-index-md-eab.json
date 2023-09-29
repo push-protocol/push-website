@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/eth-new-york-buidl-the-future-of-web3-comm-with-epns",
+  "source": "@site/blog/2022-06-24-eth-new-york-buidl-the-future/index.md",
+  "title": "ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔",
+  "description": "Docusaurus Image",
+  "date": "2022-06-24T00:00:00.000Z",
+  "formattedDate": "June 24, 2022",
+  "tags": [
+    {
+      "label": "Ethereum",
+      "permalink": "/blog/tags/ethereum"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Hacking",
+      "permalink": "/blog/tags/hacking"
+    },
+    {
+      "label": "Cryptocurrency",
+      "permalink": "/blog/tags/cryptocurrency"
+    },
+    {
+      "label": "Software Development",
+      "permalink": "/blog/tags/software-development"
+    }
+  ],
+  "readingTime": 7.085,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "eth-new-york-buidl-the-future-of-web3-comm-with-epns",
+    "title": "ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Ethereum",
+      "Blockchain",
+      "Hacking",
+      "Cryptocurrency",
+      "Software Development"
+    ]
+  },
+  "prevItem": {
+    "title": "Announcing Volume 2 of Push #ROCKSTARS",
+    "permalink": "/blog/announcing-volume-2-of-push-rockstars"
+  },
+  "nextItem": {
+    "title": "EPNS at NFT NYC 2022: All set for the NFTVerse",
+    "permalink": "/blog/epns-at-nft-nyc-2022-all-set-for-the-nft-verse"
+  }
+}

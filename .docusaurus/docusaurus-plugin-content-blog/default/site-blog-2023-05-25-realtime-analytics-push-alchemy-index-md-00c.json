@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-with-alchemy-and-push",
+  "source": "@site/blog/2023-05-25-realtime-analytics-push-alchemy/index.md",
+  "title": "How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊",
+  "description": "Docusaurus Image",
+  "date": "2023-05-25T00:00:00.000Z",
+  "formattedDate": "May 25, 2023",
+  "tags": [
+    {
+      "label": "Analytics Engineering",
+      "permalink": "/blog/tags/analytics-engineering"
+    },
+    {
+      "label": "Web3",
+      "permalink": "/blog/tags/web-3"
+    },
+    {
+      "label": "Web3 Development",
+      "permalink": "/blog/tags/web-3-development"
+    },
+    {
+      "label": "Blockchain Development",
+      "permalink": "/blog/tags/blockchain-development"
+    },
+    {
+      "label": "Blockchain Technology",
+      "permalink": "/blog/tags/blockchain-technology"
+    }
+  ],
+  "readingTime": 7.61,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-with-alchemy-and-push",
+    "title": "How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Analytics Engineering",
+      "Web3",
+      "Web3 Development",
+      "Blockchain Development",
+      "Blockchain Technology"
+    ]
+  },
+  "prevItem": {
+    "title": "How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅",
+    "permalink": "/blog/how-to-create-a-decentralized-reputation-system-with-alchemy-and-push-protocol"
+  },
+  "nextItem": {
+    "title": "Enhancing Web3 Livestreaming | Push x Graviton🧲",
+    "permalink": "/blog/enhancing-web3-livestreaming-push-x-graviton"
+  }
+}

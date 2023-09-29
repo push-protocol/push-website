@@ -1,0 +1,25 @@
+{
+  "unversionedId": "chat/ui-components/Advanced/ChatUIProvider",
+  "id": "chat/ui-components/Advanced/ChatUIProvider",
+  "title": "ChatUIProvider",
+  "description": "Enhance State Management: Boost Your Component's Functionality by Wrapping it with ChatUIProvider.",
+  "source": "@site/docs/chat/ui-components/Advanced/01-ChatUIProvider.mdx",
+  "sourceDirName": "chat/ui-components/Advanced",
+  "slug": "/chat/ui-components/Advanced/ChatUIProvider",
+  "permalink": "/docs/chat/ui-components/Advanced/ChatUIProvider",
+  "draft": false,
+  "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/docs/chat/ui-components/Advanced/01-ChatUIProvider.mdx",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {},
+  "sidebar": "pushChatSidebar",
+  "previous": {
+    "title": "Usecases",
+    "permalink": "/docs/chat/ui-components/UseCase"
+  },
+  "next": {
+    "title": "ChatViewBubble",
+    "permalink": "/docs/chat/ui-components/Advanced/ChatViewBubble"
+  }
+}

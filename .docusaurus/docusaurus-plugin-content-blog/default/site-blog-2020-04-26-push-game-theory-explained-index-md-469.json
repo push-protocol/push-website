@@ -1,0 +1,62 @@
+{
+  "permalink": "/blog/push-game-theory-explained",
+  "source": "@site/blog/2020-04-26-push-game-theory-explained/index.md",
+  "title": "Push Game Theory Explained",
+  "description": "Docusaurus Image",
+  "date": "2020-04-26T00:00:00.000Z",
+  "formattedDate": "April 26, 2020",
+  "tags": [
+    {
+      "label": "Game Theory",
+      "permalink": "/blog/tags/game-theory"
+    },
+    {
+      "label": "Blockchain",
+      "permalink": "/blog/tags/blockchain"
+    },
+    {
+      "label": "Design",
+      "permalink": "/blog/tags/design"
+    },
+    {
+      "label": "Notifications",
+      "permalink": "/blog/tags/notifications"
+    },
+    {
+      "label": "Blog",
+      "permalink": "/blog/tags/blog"
+    }
+  ],
+  "readingTime": 3.19,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Push Protocol",
+      "url": "https://push.org",
+      "imageURL": "/assets/blog/authors/authorpush.png",
+      "key": "push"
+    }
+  ],
+  "frontMatter": {
+    "slug": "push-game-theory-explained",
+    "title": "Push Game Theory Explained",
+    "authors": [
+      "push"
+    ],
+    "tags": [
+      "Game Theory",
+      "Blockchain",
+      "Design",
+      "Notifications",
+      "Blog"
+    ]
+  },
+  "prevItem": {
+    "title": "Hello World: BUIDLing a working EPNS Mobile app",
+    "permalink": "/blog/hello-world-buid-ling-a-working-epns-mobile-app"
+  },
+  "nextItem": {
+    "title": "Building Ethereum Push Notification Service protocol",
+    "permalink": "/blog/building-ethereum-push-notification-service-protocol"
+  }
+}
