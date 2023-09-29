@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Internal Configs
-import GLOBALS, { device } from '@site/src/config/globals';
+import GLOBALS, { device } from "@site/src/config/globals";
 /**
  * Usage Hierarchy
  *
@@ -16,7 +16,8 @@ import GLOBALS, { device } from '@site/src/config/globals';
  */
 
 export const HeroHeader = styled.h1`
-  font-family: ${(props) => props.fontFamily || "Strawford, Helvetica, sans-serif"};
+  font-family: ${(props) =>
+    props.fontFamily || "Strawford, Helvetica, sans-serif"};
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
   line-height: 110%;
@@ -91,7 +92,10 @@ export const ItemBreak = styled.div`
 export const ItemH = styled.div`
   align-items: ${(props) => props.alignItems || "center"};
   align-self: ${(props) => props.alignSelf || "stretch"};
-  background: ${(props) => props.gradient ? props.gradient : (props.background ? props.background : "transparent") || "transparent"};
+  background: ${(props) =>
+    props.gradient
+      ? props.gradient
+      : (props.background ? props.background : "transparent") || "transparent"};
   border: ${(props) => props.border || "initial"};
   border-radius: ${(props) => props.borderRadius || "initial"};
   bottom: ${(props) => props.bottom || "auto"};
@@ -229,7 +233,7 @@ export const Image = styled.img`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "auto"};
   display: ${(props) => props.display || "flex"};
-  border-radius: ${(props) => props.borderRadius || 'initial'};
+  border-radius: ${(props) => props.borderRadius || "initial"};
 `;
 
 export const Span = styled.span`
@@ -428,6 +432,8 @@ export const A = styled.a`
     width: 1em;
     height: 1em;
     margin-left: 3px;
+    position: relative;
+    top: 5px;
   }
 `;
 
@@ -476,10 +482,18 @@ export const LinkTo = styled(Link)`
 
   &:hover & {
     filter: ${(props) =>
-      (props.filterHover ? props.filterHover : (props.hover ? props.hover : "none")) || "none"};
+      (props.filterHover
+        ? props.filterHover
+        : props.hover
+        ? props.hover
+        : "none") || "none"};
 
     color: ${(props) =>
-      (props.hoverColor ? props.hoverColor : (props.color ? props.color : "#fff")) || "#fff"};
+      (props.hoverColor
+        ? props.hoverColor
+        : props.color
+        ? props.color
+        : "#fff") || "#fff"};
   }
 
   &:before {
@@ -530,15 +544,11 @@ export const B = styled.span`
   font-weight: ${(props) => props.fontWeight || "bold"};
 `;
 
-export const UL = styled.ul`
+export const UL = styled.ul``;
 
-`;
+export const OL = styled.ol``;
 
-export const OL = styled.ol`
-
-`;
-
-export const LI= styled.li`
+export const LI = styled.li`
   margin: 10px 0px;
 `;
 

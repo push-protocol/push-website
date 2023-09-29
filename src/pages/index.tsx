@@ -370,7 +370,7 @@ export default function Home(): JSX.Element {
         >
           <BodyContent className="contentBox">
             <SignupBox margin="0 0 0px 0">
-              <ItemV justifyContent="flex-start" gap="12px">
+              <ItemV justifyContent="flex-start" alignItems='flex-start' gap="12px">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"
@@ -996,9 +996,18 @@ const StorySection = styled(ResponsiveSection)`
 
 const BuildWithPushSection = styled(ResponsiveSection)`
   overflow: hidden;
+  padding: 0px 160px 0px;
   border-radius: 48px;
   width: 100%;
   overflow: hidden;
+
+  @media ${device.tablet} {
+    padding: 0px 0px 10px 0px;
+  }
+
+  @media ${device.laptopL} {
+    padding: 0px 160px 40px;
+  }
 
 `;
 
@@ -1175,7 +1184,7 @@ const LiveNetworkCard = styled(ItemV)`
 const BodyContent = styled.div`
 	// display: flex;
 	// flex-direction: column;
-	padding: ${(props) => props.padding || "40px 0px"};
+	padding: ${(props) => props.padding || "40px 0px 0px"};
 	// position: relative;
 
 	&.contentBox {
