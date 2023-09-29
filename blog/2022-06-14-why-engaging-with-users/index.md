@@ -4,7 +4,7 @@ title: 'Why Engaging with Users Within the NFTVerse Matters'
 authors: [push]
 tags: [Nft ,Ethereum ,Metaverse ,Non Fungible Tokens ,Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

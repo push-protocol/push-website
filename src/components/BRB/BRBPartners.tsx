@@ -8,7 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ImageV2, ItemHV2, ItemVV2 } from '@site/src/components/SharedStylingV2';
+import { Button, Image, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -18,26 +18,22 @@ import { brbPartnersList } from '@site/src/config/BRBPartnersList';
 import { device } from '@site/src/config/globals';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
-  const isMobile = useMediaQuery(device.tablet);
 
   return (
     <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
-      <ItemVV2>
+      <PartnersList>
         {brbPartnersList.map((partnerRow, i) => {
           return (
-            <ItemHV2
+            <PartnerContent
               key={i}
               gap="0px 164px"
-              flexDirection={isMobile ? 'column' : 'row'}
             >
               {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
-                    <ItemVV2
+                    <PartnerItemContent
                       maxHeight="65px"
-                      width={isMobile ? '100%' : '300px'}
-                      maxWidth={isMobile ? '100%' : '300px'}
                       height="65px"
                       margin="27px"
                     >
@@ -64,17 +60,21 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                           }}
                         />
                       </PartnersButton>
-                    </ItemVV2>
+                    </PartnerItemContent>
                   </PartnerItem>
                 );
               })}
-            </ItemHV2>
+            </PartnerContent>
           );
         })}
-      </ItemVV2>
+      </PartnersList>
     </PartnersContainer>
   );
 };
+
+const PartnersList = styled(ItemV)`
+
+`
 
 const PartnersContainer = styled.div`
   width: 100%;
@@ -83,6 +83,7 @@ const PartnersContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0px 0px 108px;
+  z-index: 20;
   @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }
@@ -101,14 +102,21 @@ const Header = styled.h3`
   }
 `;
 
-const PartnersLogo = styled(ImageV2)`
+const PartnersLogo = styled(Image)`
   width: auto;
   height: auto;
   max-width: 241px;
   max-height: 65px;
 `;
 
-const PartnerItem = styled(ItemHV2)`
+const PartnerContent = styled(ItemH)`
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
+`;
+
+const PartnerItem = styled(ItemH)`
   max-width: 300px;
   display: flex;
   align-items: center;
@@ -121,7 +129,17 @@ const PartnerItem = styled(ItemHV2)`
   }
 `;
 
-const PartnersButton = styled(ButtonV2)`
+const PartnerItemContent = styled(ItemH)`
+  width: 100%;
+  max-width: 100%;
+
+  @media ${device.tablet} {
+    width: 300px;
+    max-widthw: 300px;
+  }
+`
+
+const PartnersButton = styled(Button)`
   cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;

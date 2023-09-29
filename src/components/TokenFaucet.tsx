@@ -9,7 +9,7 @@ import { useClickAway } from 'react-use';
 import styled from 'styled-components';
 
 // Internal Components
-import { Atag, ButtonV2, ImageV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { A, Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 
 // Import Assets
 import Discord from '@site/static/assets/Discord-BRB.svg';
@@ -38,13 +38,13 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
   return (
     <Container ref={clickRef}>
       <HeaderContainer>
-        <ImageV2
+        <Image
           width={65}
           src={require(`@site/static/assets/website/brb/others/PushLogoTextWhite.webp`).default}
           srcSet={`${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@3x.webp`).default} 3x`}
           alt={`Image showing BRB Chat is powered by Push Chat`}
         />
-        <SpanV2
+        <Span
           fontSize="13px"
           color="#F0A5FC"
           margin="5px 0px 0px 16px"
@@ -52,19 +52,19 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
           style={{ maxHeight: '20px' }}
         >
           TOKEN FAUCET
-        </SpanV2>
-        <ButtonV2
+        </Span>
+        <Button
           background="transparent"
           padding="0px"
           onClick={() => handleFaucet(false)}
           alignSelf="flex-end"
         >
           <Close />
-        </ButtonV2>
+        </Button>
       </HeaderContainer>
       <InputContainer>
         <Label>1. Follow, Post on X and mention your wallet address in the post</Label>
-        <ItemHV2
+        <ItemH
           justifyContent="flex-start"
           alignItems="center"
           gap="8px"
@@ -131,7 +131,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
               />
             )}
           </ButtonItem>
-        </ItemHV2>
+        </ItemH>
       </InputContainer>
       <InputContainer>
         <Label>2. Join Discord and Share a link of your post in #brb-faucet</Label>
@@ -177,7 +177,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
       >
         Claim 10 PUSH
       </ButtonItem> */}
-      <ItemVV2
+      <ItemV
         justifyContent="flex-start"
         alignItems="flex-start"
         margin="19px 0px 0px 10px"
@@ -185,12 +185,12 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
       >
         <Span>* Twitter account must be 30 days old with 50+ followers to claim.</Span>
         <Span>* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
-      </ItemVV2>
+      </ItemV>
     </Container>
   );
 };
 
-const Container = styled(ItemVV2)`
+const Container = styled(ItemV)`
   box-sizing: border-box;
   max-width: 509px;
   height: fit-content;
@@ -205,7 +205,7 @@ const Container = styled(ItemVV2)`
   }
 `;
 
-const HeaderContainer = styled(ItemHV2)`
+const HeaderContainer = styled(ItemH)`
   width: 100%;
   max-height: 41px;
   justify-content: flex-start;
@@ -219,7 +219,7 @@ const Icon = styled.img`
   cursor: pointer;
 `;
 
-const InputContainer = styled(ItemVV2)`
+const InputContainer = styled(ItemV)`
   justify-content: flex-start;
   align-items: flex-start;
 display: flex;
@@ -254,7 +254,7 @@ const Input = styled.input`
   color: #b6bcd6;
 `;
 
-const ButtonItem = styled(ButtonV2)`
+const ButtonItem = styled(Button)`
   font-size: 13px;
   font-style: normal;
   align-items: center;

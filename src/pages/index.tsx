@@ -22,40 +22,39 @@ import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
+import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
-import PartnerChannels from "@site/src/components/PartnerChannels";
-import {
-  Atag,
-  ContentV2,
-  H1V2,
-  H2V2,
-  ImageV2,
-  ItemHV2,
-  ItemVV2,
-  SectionV2,
-  SpanV2
-} from "@site/src/components/SharedStylingV2";
 import SignupInput from "@site/src/components/SignUp/SignupInput";
+import {
+  A,
+  Content,
+  H1,
+  H2,
+  Image,
+  ItemH,
+  ItemV,
+  Section,
+  Span
+} from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import DiscordSVG from "@site/static/assets/discord.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import CensorshipresistantFigure from "@site/static/assets/figures/censorshipresistant.svg";
-import ChainAgnosticFigure from "@site/static/assets/figures/chainagnostic.svg";
-import DecentralizedstackFigure from "@site/static/assets/figures/decentralizedstack.svg";
-import GrowWithPushFigure from "@site/static/assets/figures/growwithpush.webp";
-import ImmediatecommunicationFigure from "@site/static/assets/figures/immediatecommunication.svg";
-import ImproveduxFigure from "@site/static/assets/figures/improvedux.svg";
-import PushMissingPieceFigure from "@site/static/assets/figures/pushmissingtest.webp";
-import SecurityalertsFigure from "@site/static/assets/figures/securityalerts.svg";
 import GithubSVG from "@site/static/assets/github.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
 import TwitterSVG from "@site/static/assets/twitter.svg";
+import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
+import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
+import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
+import GrowWithPushFigure from "@site/static/assets/website/illustrations/growwithpush.webp";
+import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
+import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
@@ -73,7 +72,6 @@ export default function Home(): JSX.Element {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const isMobile = useMediaQuery(device.laptop);
   const isLargeScreen = useMediaQuery("(max-width: 1250px)");
 
   // Hero Shrink Animation
@@ -129,7 +127,7 @@ export default function Home(): JSX.Element {
       
       <HomeWrapper>
         {/* HERO SECTION */}
-        <SectionV2
+        <Section
           id="hero"
           minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
           background={GLOBALS.COLORS.BG_LIGHT}
@@ -137,7 +135,7 @@ export default function Home(): JSX.Element {
           overflow="hidden"
           className="darkBackground"
         >
-          <ItemVV2
+          <ItemV
             // id="herobg"
             position="absolute"
             top="0"
@@ -148,38 +146,33 @@ export default function Home(): JSX.Element {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2 alignSelf="center">
-            {
-              // rendering the main animation only on large laptops and desktops
-              !isMobile && (
-                <HeroAnimation>
-                  <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
-                </HeroAnimation>
-              )
-            }
+          <HeroContent alignSelf="center">
+            <HeroAnimation>
+              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+            </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                MarginTop={"100px"}
+                margin="100px 0 0 0"
               >
-                <FadeInAnimation wrapperElement="div" delay={0.25}>
-                  <H1V2 zIndex="2">{t("home.hero.title")}</H1V2>
-                </FadeInAnimation>
+                {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
+                  <H1 zIndex="2">{t("home.hero.title")}</H1>
+                {/* </FadeInAnimation> */}
 
-                <SpanV2
-                  margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
+                <Span
+                  margin='20px 0px 40px 0'
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
                 >
-                  <FadeInAnimation wrapperElement="div" delay={0.35}>
+                  {/* <FadeInAnimation wrapperElement="div" delay={0.35}> */}
                     {t("home.hero.description")}
-                  </FadeInAnimation>
-                </SpanV2>
+                  {/* </FadeInAnimation> */}
+                </Span>
 
-                <FadeInAnimation wrapperElement="div" delay={0.55}>
+                {/* <FadeInAnimation wrapperElement="div" delay={0.55}> */}
                   <HeroCTA justifyContent="flex-start" gap="18px">
-                    <Atag
+                    <A
                       href="/docs"
                       title={t("home.hero.alt-start-button")}
                       background={GLOBALS.COLORS.HIGHLIGHT}
@@ -188,8 +181,8 @@ export default function Home(): JSX.Element {
                       zIndex="2"
                     >
                       {t("home.hero.start-button")}
-                    </Atag>
-                    <Atag
+                    </A>
+                    <A
                       href="https://app.push.org/"
                       title={t("home.hero.alt-explore-button")}
                       target="_blank"
@@ -198,16 +191,16 @@ export default function Home(): JSX.Element {
                       zIndex="2"
                     >
                       {t("home.hero.explore-button")}
-                    </Atag>
+                    </A>
                   </HeroCTA>
-                </FadeInAnimation>
+                {/* </FadeInAnimation> */}
 
-                <FadeInAnimation wrapperElement="div" delay={0.65}>
-                  <ItemHV2
+                {/* <FadeInAnimation wrapperElement="div" delay={0.65}> */}
+                  <ItemH
                     justifyContent="flex-start"
                     margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                   >
-                    <Atag
+                    <A
                       href="https://twitter.com/pushprotocol"
                       title="Push Protocol Twitter"
                       target="_blank"
@@ -216,9 +209,9 @@ export default function Home(): JSX.Element {
                       padding="10px 15px"
                     >
                       <TwitterSVG width={32} height={32} />
-                    </Atag>
+                    </A>
 
-                    <Atag
+                    <A
                       href="https://github.com/ethereum-push-notification-service"
                       title="Push Github"
                       target="_blank"
@@ -226,9 +219,9 @@ export default function Home(): JSX.Element {
                       padding="10px 15px"
                     >
                       <GithubSVG width={32} height={32} />
-                    </Atag>
+                    </A>
 
-                    <Atag
+                    <A
                       href="https://discord.gg/pushprotocol"
                       title="Push Discord"
                       target="_blank"
@@ -236,9 +229,9 @@ export default function Home(): JSX.Element {
                       padding="10px 15px"
                     >
                       <DiscordSVG width={32} height={32} />
-                    </Atag>
-                  </ItemHV2>
-                </FadeInAnimation>  
+                    </A>
+                  </ItemH>
+                {/* </FadeInAnimation>   */}
               </HeroItem>
             </HeroPrimary>
 
@@ -251,21 +244,20 @@ export default function Home(): JSX.Element {
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
-          </ContentV2>
-        </SectionV2>
+          </HeroContent>
+        </Section>
 
         {/* MISSING PIECE OF WEB3 */}
         <StorySection id="story" data-bkg="light" className="lightBackground">
-          <ContentV2
+          <Content
             className="contentBox"
             alignSelf="center"
-            padding="40px 0px"
           >
-            <PartnerChannels />
+            <ShowcasePartners />
 
-            <Partners margin="40px 0" gap={isMobile ? "30px" : "50px"}>
-              <ItemVV2>
-                <SpanV2
+            <Partners margin="40px 0">
+              <ItemV>
+                <Span
                   fontWeight="400"
                   color="#303C5E"
                   fontSize="19px"
@@ -273,8 +265,8 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                 >
                   {t("home.partners-section.networks")}{" "}
-                </SpanV2>
-              </ItemVV2>
+                </Span>
+              </ItemV>
 
               <LiveNetworks>
                 <LiveNetworkCard className="network">
@@ -302,25 +294,18 @@ export default function Home(): JSX.Element {
 
             <PushWorksRow>
               <ItemImage justifyContent="center">
-                <MemberImage
-                  className="pushMissingSvg"
-                  src={PushMissingPieceFigure}
-                  srcSet={PushMissingPieceFigure}
+                <Image
+                  src={require(`@site/static/assets/website/illustrations/pushnotifandchat.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/illustrations/pushnotifandchat@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/pushnotifandchat@3x.webp`).default} 3x`}
                   alt={t("home.partners-section.alt-missing-web3-image")}
-                  title={t("home.partners-section.title-missing-web3-image")}
                   style={{ margin: "0 auto" }}
-                  // width="100%"
-                  // height="100%"
                 />
               </ItemImage>
 
-              <ItemVV2
+              <ItemV
                 justifyContent="space-around"
                 minHeight="530px"
-                // alignSelf='center'
-                alignItems={isMobile ? "center" : "flex-start"}
-                // flex="2"
-                // gap='22px'
+                alignItems="flex-start"
               >
                 <ResponsiveH2
                   fontSize="40px"
@@ -331,29 +316,29 @@ export default function Home(): JSX.Element {
                   {t("home.partners-section.missing-web3-title")}
                 </ResponsiveH2>
 
-                <SpanV2
+                <Span
                   fontWeight="400"
                   color="#303C5E"
                   fontSize="19px"
                   lineHeight="160%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin="10px 0px 0px 0px"
                 >
                   {t("home.partners-section.missing-web3-text")}
-                </SpanV2>
+                </Span>
 
-                <SpanV2
+                <Span
                   fontWeight="500"
                   color="#121315"
                   fontSize="22px"
                   lineHeight="142%"
                   letterSpacing="-0.03em"
-                  margin={isMobile && "10px 0px 0px 0px"}
+                  margin="10px 0px 0px 0px"
                 >
                   {t("home.partners-section.missing-web3-span")}
-                </SpanV2>
+                </Span>
 
-                <Atag
+                <A
                   href="https://docs.push.org/developers"
                   title={t("home.partners-section.missing-web3-alt-button")}
                   target="_blank"
@@ -365,15 +350,15 @@ export default function Home(): JSX.Element {
                   letterSpacing="-0.03em"
                   lineHeight="26px"
                   alignSelf="center"
-                  margin={isMobile ? "50px 0px 0px 0px" : ""}
+                  margin="0px"
                 >
                   {/* Learn about $PUSH */}
                   {t("home.partners-section.missing-web3-button")}
                   <BsArrowUpRight className="anchorSVGlink" />
-                </Atag>
-              </ItemVV2>
+                </A>
+              </ItemV>
             </PushWorksRow>
-          </ContentV2>
+          </Content>
         </StorySection>
         
         {/* BUILD WITH PUSH */}
@@ -384,33 +369,33 @@ export default function Home(): JSX.Element {
           className="darkBackground"
         >
           <BodyContent className="contentBox">
-              <SignupBox margin="0 0 0px 0">
-                <ItemVV2 justifyContent="flex-start" gap="12px">
-                  <ResponsiveH2
-                    color="#09090B"
-                    fontSize="40px"
-                    fontWeight="700"
-                    letterSpacing="-0.02em"
-                    lineHeight="110%"
-                    margin="0"
-                  >
-                    {t("home.email-section.title")}
-                  </ResponsiveH2>
-                  <SpanV2
-                    color="#303C5E"
-                    fontSize="20px"
-                    fontWeight="400"
-                    letterSpacing="-0.03em"
-                    lineHeight="138.5%"
-                  >
-                    {t("home.email-section.text")}
-                  </SpanV2>
-                </ItemVV2>
+            <SignupBox margin="0 0 0px 0">
+              <ItemV justifyContent="flex-start" gap="12px">
+                <ResponsiveH2
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t("home.email-section.title")}
+                </ResponsiveH2>
+                <Span
+                  color="#303C5E"
+                  fontSize="20px"
+                  fontWeight="400"
+                  letterSpacing="-0.03em"
+                  lineHeight="138.5%"
+                >
+                  {t("home.email-section.text")}
+                </Span>
+              </ItemV>
 
-                <ItemVV2>
-                  <SignupInput />
-                </ItemVV2>
-              </SignupBox>
+              <ItemV>
+                <SignupInput />
+              </ItemV>
+            </SignupBox>
             <PushProductsScroll />
           </BodyContent>
         </BuildWithPushSection>
@@ -421,7 +406,7 @@ export default function Home(): JSX.Element {
           data-bkg="dark"
           className="darkBackground"
         >
-          <ItemVV2
+          <ItemV
             id="integratePush"
             position="absolute"
             top="0"
@@ -432,17 +417,17 @@ export default function Home(): JSX.Element {
             borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
-          <ContentV2
+          <Content
             className="contentBox"
             alignSelf="center"
             padding="40px 0px"
           >
             {/* GROW WITH PUSH */}
             <IntegrateGrowWithPushRow gap="18px">
-              <ImageV2
+              <Image
                 className="figureSvg"
-                src={require(`@site/static/assets/figures/growwithpush.webp`).default}
-                srcSet={`${require(`@site/static/assets/figures/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/figures/growwithpush.webp`).default} 3x`}
+                src={require(`@site/static/assets/website/illustrations/growwithpush.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 3x`}
                 srcSet={GrowWithPushFigure}
                 alt={t("home.grow-section.image-alt")}
                 title={t("home.grow-section.image-title")}
@@ -461,7 +446,7 @@ export default function Home(): JSX.Element {
                 {t("home.grow-section.title")}
               </ResponsiveH2>
 
-              <SpanV2
+              <Span
                 className="growWithPushtext"
                 color="#303C5E"
                 fontSize="19px"
@@ -470,11 +455,11 @@ export default function Home(): JSX.Element {
                 lineHeight="160%"
               >
                 {t("home.grow-section.text")}
-              </SpanV2>
+              </Span>
             </IntegrateGrowWithPushRow>
             
             {/* INTEGRATE AND EARN */}
-            <ItemHV2 margin="120px 0 0 0">
+            <ItemH margin="120px 0 0 0">
               <IntegrateAndEarn>
                 <ResponsiveH2
                   color="#09090B"
@@ -488,7 +473,7 @@ export default function Home(): JSX.Element {
                   {t("home.grow-section.wallet-text.part2")}
                 </ResponsiveH2>
 
-                <Atag
+                <A
                   href="/docs"
                   title={t("home.grow-section.button-alt")}
                   background="#DD44B9"
@@ -501,13 +486,13 @@ export default function Home(): JSX.Element {
                   alignSelf="center"
                 >
                   {t("home.grow-section.button")}
-                </Atag>
+                </A>
               </IntegrateAndEarn>
-            </ItemHV2>
+            </ItemH>
 
             {/* WHY YOU NEED PUSH PUSH */}
-            <ItemHV2 margin="80px 0 0 0">
-              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
+            <ItemH margin="80px 0 0 0">
+              <ItemV justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"
@@ -518,11 +503,11 @@ export default function Home(): JSX.Element {
                 >
                   {t("home.why-push-section.title")}
                 </ResponsiveH2>
-              </ItemVV2>
-            </ItemHV2>
+              </ItemV>
+            </ItemH>
 
             {/* WHY YOU NEED PUSH PUSH */}
-            <ItemHV2 padding="80px 0 0 0">
+            <ItemH padding="80px 0 0 0">
               <Matrix>
                 <MatrixCell>
                   <div className="matrixFigure">
@@ -532,7 +517,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -540,7 +525,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.chain-agnostic-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -553,7 +538,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -561,7 +546,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.immediate-communication-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -574,7 +559,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -582,7 +567,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.decentralized-stack-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -593,7 +578,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -601,7 +586,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.improved-ux-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -612,7 +597,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -620,7 +605,7 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.security-alerts-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
 
                 <MatrixCell>
@@ -633,7 +618,7 @@ export default function Home(): JSX.Element {
                     />
                   </div>
 
-                  <SpanV2
+                  <Span
                     color="#09090B"
                     fontSize="24px"
                     fontWeight="500"
@@ -641,14 +626,14 @@ export default function Home(): JSX.Element {
                     lineHeight="142%"
                   >
                     {t("home.why-push-section.censorship-resistant-text")}
-                  </SpanV2>
+                  </Span>
                 </MatrixCell>
               </Matrix>
-            </ItemHV2>
+            </ItemH>
 
             {/* WHY YOU NEED PUSH PUSH */}
             <WhyPushTextBox textAlign="center" margin="80px 160px">
-              <SpanV2
+              <Span
                 color="#303C5E"
                 fontSize="19px"
                 fontWeight="400"
@@ -656,12 +641,12 @@ export default function Home(): JSX.Element {
                 lineHeight="142%"
               >
                 {t("home.why-push-section.text")}
-              </SpanV2>
+              </Span>
             </WhyPushTextBox>
 
             {/* BLOG SECTION */}
-            <ItemHV2 margin="80px 0 0 0">
-              <ItemVV2 justifyContent="flex-start" alignItems="flex-start">
+            <ItemH margin="80px 0 0 0">
+              <ItemV justifyContent="flex-start" alignItems="flex-start">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"
@@ -673,10 +658,10 @@ export default function Home(): JSX.Element {
                 >
                   {t("home.insights-section.title")}
                 </ResponsiveH2>
-              </ItemVV2>
+              </ItemV>
 
-              <ItemHV2 justifyContent="flex-end">
-                <Atag
+              <ItemH justifyContent="flex-end">
+                <A
                   href="/blog"
                   title="Exlore all articles"
                   target="_blank"
@@ -694,17 +679,17 @@ export default function Home(): JSX.Element {
                 >
                   {t("home.insights-section.link-text")}
                   <BsArrowUpRight className="anchorSVGlink" />
-                </Atag>
-              </ItemHV2>
-            </ItemHV2>
+                </A>
+              </ItemH>
+            </ItemH>
 
             <Blogs count={4} />
 
             {/* BACKED BY SECTION */}
-            <SectionV2 flexDirection="column" margin="80px 0 80px 0">
-              <ContentV2 padding="0px">
+            <Section flexDirection="column" margin="80px 0 80px 0">
+              <Content padding="0px">
 
-                <ItemVV2
+                <ItemV
                   alignItems="stretch"
                 >
                   <InvestorHeader
@@ -717,8 +702,8 @@ export default function Home(): JSX.Element {
                     >
                       {t("home.investors-section.title")}
                   </InvestorHeader>
-                </ItemVV2>
-                <ItemVV2
+                </ItemV>
+                <ItemV
                   margin="80px 0 0 0"
                   flex="1"
                   alignItems="stretch"
@@ -751,8 +736,8 @@ export default function Home(): JSX.Element {
                       );
                     })}
                   </MarqueeAnimation>
-                </ItemVV2>
-                <ItemVV2
+                </ItemV>
+                <ItemV
                   margin="120px 0 0 0"
                   flex="1"
                   alignItems="stretch"
@@ -788,11 +773,11 @@ export default function Home(): JSX.Element {
                       );
                     })}
                   </MarqueeAnimation>
-                </ItemVV2>
+                </ItemV>
 
-              </ContentV2>
-            </SectionV2>
-          </ContentV2>
+              </Content>
+            </Section>
+          </Content>
         </ShrinkingSection>
         
         {/* MEDIA COVERAGE SECTION */}
@@ -801,15 +786,15 @@ export default function Home(): JSX.Element {
           data-bkg="dark"
           className="darkBackground"
         >
-          <ContentV2
+          <Content
             className="contentBox"
             padding="40px"
             alignSelf="flex-start"
           >
 
-            <ItemHV2 justifyContent="flex-start">
-              <ItemHV2 justifyContent="flex-start" alignItems="flex-start">
-                <H2V2
+            <ItemH justifyContent="flex-start">
+              <ItemH justifyContent="flex-start" alignItems="flex-start">
+                <H2
                   color="#FFFFFF"
                   fontSize="40px"
                   fontWeight="700"
@@ -818,10 +803,10 @@ export default function Home(): JSX.Element {
                   margin="0"
                 >
                   {t("home.featured-section.title")}
-                </H2V2>
-              </ItemHV2>
-            </ItemHV2>
-          </ContentV2>
+                </H2>
+              </ItemH>
+            </ItemH>
+          </Content>
 
           <FeaturedCardList
             className="featuredInMarquee"
@@ -835,14 +820,14 @@ export default function Home(): JSX.Element {
                       {t(item.translatedtitle)}
                     </FeaturedCardTitle>
                     <ArticleSource>
-                      <ImageV2
+                      <Image
                         width={item.title ? '64px' : 'auto'}
                         borderRadius={item.title ? '50%' : '0'}
                         src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
                         srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
                         alt={`${item?.alt}`}
                       />
-                      <Atag
+                      <A
                         href={item.url}
                         title={t(item.urltranslatedtitle)}
                         display="flex"
@@ -862,7 +847,7 @@ export default function Home(): JSX.Element {
                       >
                         {t(item.urltranslatedtitle)}
                         <BsArrowUpRight className="anchorSVGlink" />
-                      </Atag>
+                      </A>
                     </ArticleSource>
                   </FeaturedCard>
                 );
@@ -880,7 +865,7 @@ export default function Home(): JSX.Element {
 /**
  * V2 Design
  */
-const HeroPrimary = styled(ItemHV2)`
+const HeroPrimary = styled(ItemH)`
   margin: 120px 0;
 
   @media ${device.laptop} {
@@ -894,7 +879,7 @@ const HeroPrimary = styled(ItemHV2)`
 
 const MemberImage = styled(ImageHolder)``;
 
-const HeroAnimation = styled(ItemHV2)`
+const HeroAnimation = styled(ItemH)`
   position: absolute;
   top: 0;
   left: 380px;
@@ -902,13 +887,21 @@ const HeroAnimation = styled(ItemHV2)`
   bottom: 150px;
   width: 100%;
   z-index: 1;
+
+  @media ${device.laptop} {
+    display: none;
+  }
 `;
 
-const HeroItem = styled(ItemVV2)`
+const HeroContent = styled(Content)`
+
+`
+
+const HeroItem = styled(ItemV)`
   z-index: 2;
   @media ${device.laptop} {
     max-width: initial;
-    margin-top: ${(props) => props.MarginTop || "0px"};
+    margin: ${(props) => props.margin || "0px"};
   }
 
   @media ${device.mobileM} {
@@ -916,7 +909,7 @@ const HeroItem = styled(ItemVV2)`
   }
 `;
 
-const HeroCTA = styled(ItemHV2)`
+const HeroCTA = styled(ItemH)`
   @media ${device.mobileM} {
     &.Button {
       display: none;
@@ -924,7 +917,7 @@ const HeroCTA = styled(ItemHV2)`
   }
 `;
 
-const AnalyticsStatsContainer = styled(ItemHV2)`
+const AnalyticsStatsContainer = styled(ItemH)`
   margin: 0px;
   flex: 1;
   
@@ -950,13 +943,13 @@ const ResponsiveSection = styled(HybridSection)`
   }
 `;
 
-const ResponsiveH2 = styled(H2V2)`
+const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
   }
 `;
 
-const HomeWrapper = styled(ItemVV2)`
+const HomeWrapper = styled(ItemV)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -989,11 +982,12 @@ const HomeWrapper = styled(ItemVV2)`
 const HeroSection = styled(ResponsiveSection)`
   padding: 0px 160px 0px 160px;
   width: 100%;
+  overflow: hidden;
 `;
 
 const StorySection = styled(ResponsiveSection)`
-  padding: 0px 160px 80px 160px;
   width: 100%;
+  overflow: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 32px;
@@ -1005,6 +999,7 @@ const BuildWithPushSection = styled(ResponsiveSection)`
   padding: 0px 160px 0px;
   border-radius: 48px;
   width: 100%;
+  overflow: hidden;
 
   @media ${device.tablet} {
     padding: 0px 0px 10px 0px;
@@ -1017,11 +1012,11 @@ const BuildWithPushSection = styled(ResponsiveSection)`
 `;
 
 const ShrinkingSection = styled(ResponsiveSection)`
-  padding: 80px 160px 180px 160px;
   width: 100%;
+  overflow: hidden;
 `;
 
-const ItemImage = styled(ItemVV2)`
+const ItemImage = styled(ItemV)`
   width: 100%;
   @media ${device.tablet} {
     width: 400px;
@@ -1038,6 +1033,7 @@ const FeaturedInSection = styled(ResponsiveSection)`
   min-height: auto;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 
   & .contentBox {
     gap: 80px;
@@ -1048,16 +1044,16 @@ const FeaturedInSection = styled(ResponsiveSection)`
   }
 `;
 
-const FeaturedInMarquee = styled(ItemHV2)``;
+const FeaturedInMarquee = styled(ItemH)``;
 
-const ResponsiveHeroContent = styled(ItemHV2)`
+const ResponsiveHeroContent = styled(ItemH)`
   @media ${device.tablet} {
     flex-direction: column;
     margin-top: 240px;
   }
 `;
 
-const HeroBox = styled(ItemVV2)`
+const HeroBox = styled(ItemV)`
   flex: 0 0 52%;
 
   @media ${device.tablet} {
@@ -1070,7 +1066,7 @@ const HeroBox = styled(ItemVV2)`
   }
 `;
 
-const PushWorksRow = styled(ItemHV2)`
+const PushWorksRow = styled(ItemH)`
   // column-gap: 105px;
   column-gap: 40px;
   margin-top: 150px;
@@ -1078,6 +1074,20 @@ const PushWorksRow = styled(ItemHV2)`
   display: flex;
   flex-direction: row;
 
+  @media ${device.laptop} {
+    & ${ItemV} {
+      align-items: flex-start;
+
+      & ${Span} {
+        margin: 10px 0px 0px 0px;
+      }
+
+      & ${A} {
+        margin: 50px 0px 0px 0px;
+      }
+    }
+  }
+  
   @media ${device.tablet} {
     flex-direction: column;
     row-gap: 30px;
@@ -1093,7 +1103,7 @@ const PushWorksRow = styled(ItemHV2)`
   }
 `;
 
-const PoweringCommunicationRow = styled(ItemHV2)`
+const PoweringCommunicationRow = styled(ItemH)`
   margin: 80px 0 50px 0;
 
   @media ${device.tablet} {
@@ -1101,7 +1111,7 @@ const PoweringCommunicationRow = styled(ItemHV2)`
   }
 `;
 
-const LiveNetworks = styled(ItemHV2)` 
+const LiveNetworks = styled(ItemH)` 
   background: #ffffff;
   border: 1px solid #bac4d6;
   border-radius: 28px;
@@ -1154,7 +1164,7 @@ const LiveNetworks = styled(ItemHV2)`
   }
 `;
 
-const LiveNetworkCard = styled(ItemVV2)`
+const LiveNetworkCard = styled(ItemV)`
   flex: 1;
   border-right: 1px solid #bac4d6;
   
@@ -1186,20 +1196,23 @@ const BodyContent = styled.div`
 	// }
 
   @media ${device.tablet} {
-  	padding: ${(props) => props.padding || "10px 0px"};
+  	padding: ${(props) => props.padding || "40px 0px"};
   }
 `;
 
-const Partners = styled(ItemVV2)`
+const Partners = styled(ItemV)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 1200px) {
+  gap: 50px;
+
+  @media ${device.laptop} {
     flex-direction: column;
+    gap: 30px;
   }
 `;
 
-const SignupBox = styled(ItemHV2)`
+const SignupBox = styled(ItemH)`
   background: #b9abef;
   backdrop-filter: blur(10px);
   border-radius: 32px;
@@ -1214,7 +1227,7 @@ const SignupBox = styled(ItemHV2)`
   }
 `;
 
-const GrowPushCard = styled(ItemVV2)`
+const GrowPushCard = styled(ItemV)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1246,7 +1259,7 @@ const GrowPushCardDetails = styled.div`
   row-gap: 24px;
 `;
 
-const IntegrateGrowWithPushRow = styled(ItemHV2)`
+const IntegrateGrowWithPushRow = styled(ItemH)`
   margin: 40px 0 0 0;
   padding: 0 160px 0 160px;
 
@@ -1363,7 +1376,7 @@ const MatrixCell = styled.div`
   }
 `;
 
-const WhyPushTextBox = styled(ItemHV2)`
+const WhyPushTextBox = styled(ItemH)`
   margin: 80px 160px;
 
   @media ${device.tablet} {
@@ -1377,7 +1390,7 @@ const WhyPushTextBox = styled(ItemHV2)`
   }
 `;
 
-const BuiltByIntro = styled(ItemHV2)`
+const BuiltByIntro = styled(ItemH)`
   margin: 120px 160px;
 
   @media ${device.tablet} {
@@ -1428,7 +1441,7 @@ const FeaturedCell = styled.div`
   }
 `;
 
-const BuiltByCards = styled(ItemHV2)`
+const BuiltByCards = styled(ItemH)`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1438,7 +1451,7 @@ const BuiltByCards = styled(ItemHV2)`
   transition: all 350ms linear;
 `;
 
-const TeamMemberButtons = styled(ItemHV2)`
+const TeamMemberButtons = styled(ItemH)`
   @media ${device.tablet} {
     & a {
       width: 100%;
@@ -1457,7 +1470,7 @@ const InvestorHeader = styled(ResponsiveH2)`
   }
 `;
 
-const InvestorCard = styled(ItemVV2)`
+const InvestorCard = styled(ItemV)`
     border: 1px solid rgb(204, 204, 204);
     border-radius: 74px;
     padding: 8px;
@@ -1467,23 +1480,23 @@ const InvestorCard = styled(ItemVV2)`
     flex: 0;
 `
 
-const InvestorIcon = styled(ImageV2)`
+const InvestorIcon = styled(Image)`
   
 `
 
-const InvestorDetails = styled(ItemVV2)`
+const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
 `
 
-const InvestorTitle = styled(SpanV2)`
+const InvestorTitle = styled(Span)`
   font-weight: 500;
   font-size: 22px;
   line-height: 142%;
   color: #09090b;
 `
 
-const InvestorSubtitle = styled(SpanV2)`
+const InvestorSubtitle = styled(Span)`
   font-weight: 500;
   font-size: 9px;
   line-height: 160%;
@@ -1492,11 +1505,11 @@ const InvestorSubtitle = styled(SpanV2)`
   text-transform: uppercase;
 `
 
-const FeaturedCardList = styled(ItemHV2)`
+const FeaturedCardList = styled(ItemH)`
   margin: 0 0 320px 0;
   flex-flow: nowrap;
 `
-const FeaturedCard = styled(ItemVV2)`    
+const FeaturedCard = styled(ItemV)`    
   width: 554px;
   padding: 48px;
   position: relative;
@@ -1537,7 +1550,7 @@ const FeaturedCard = styled(ItemVV2)`
   }
 `
 
-const FeaturedCardTitle = styled(SpanV2)`
+const FeaturedCardTitle = styled(Span)`
   flex: initial;
   align-self: auto;
   color: rgb(255, 255, 255);
@@ -1556,7 +1569,7 @@ const FeaturedCardTitle = styled(SpanV2)`
   padding-bottom: 50px;
 `
 
-const ArticleSource = styled(ItemHV2)`
+const ArticleSource = styled(ItemH)`
   display: flex;
   flex-direction: row;
   align-items: center;

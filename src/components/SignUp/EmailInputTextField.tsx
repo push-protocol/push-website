@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import { BiLoaderAlt } from "react-icons/bi";
 
-import { SpanV2 } from "@site/src/components/SharedStylingV2";
+import { Span } from "@site/src/css/SharedStyling";
 import useEmailValidationAndSend from "../../utils/useEmailValidationAndSend";
 
 export type InputTextFieldProps = {
@@ -21,7 +21,7 @@ function EmailInputTextField(props: InputTextFieldProps) {
   return (
     <Box>
       <Wrapper onSubmit={onEmailSubmit}>
-        <input
+        <EmailInput
           type="text"
           name="email"
           placeholder={props.placeholder}
@@ -34,21 +34,28 @@ function EmailInputTextField(props: InputTextFieldProps) {
           tabIndex={0}
           type="submit"
         >
-          {!isLoading ? <AiOutlineArrowRight /> : null}
-          {isLoading ? <MaskInput /> : null}
+          {!isLoading && 
+            <AiOutlineArrowRight />
+          }
+          {isLoading && 
+            <MaskInput />
+          }
         </Button>
 
-        {isLoading ? <BiLoaderAlt size={24} className="loader" /> : null}
+        {isLoading && 
+          <BiLoaderAlt size={24} className="loader" />
+        }
       </Wrapper>
+      
       {apiResponse && (
-        <SpanV2 className="msg" color="#FFFFFF">
+        <Span className="msg" color="#FFFFFF">
           {apiResponse}
-        </SpanV2>
+        </Span>
       )}
       {!apiResponse && emailError && (
-        <SpanV2 className="msg" color="red">
+        <Span className="msg" color="red">
           {emailError}
-        </SpanV2>
+        </Span>
       )}
     </Box>
   );
@@ -78,21 +85,6 @@ const Wrapper = styled.form`
   border: 1px solid #2a2a39;
   background: transparent;
   padding: 14px 16px;
-
-  & input[type="text"] {
-    all: unset;
-
-    width: 90%;
-    box-sizing: border-box;
-
-    font-family: "Strawford";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: normal;
-    letter-spacing: -0.03em;
-    color: #9c9cbe;
-  }
 
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #121315 inset !important;
@@ -128,6 +120,29 @@ const Wrapper = styled.form`
     animation-timing-function: linear;
   }
 `;
+
+const EmailInput = styled.input`
+    all: unset;
+
+    width: 90%;
+    box-sizing: border-box;
+
+    font-family: "Strawford";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: -0.03em;
+    color: #9c9cbe;
+    background: transparent;
+    border: 0px;
+    border-bottom: 1px solid #595978;
+
+    ::-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #121315 inset !important;
+      -webkit-text-fill-color: #9c9cbe !important;
+    }
+  `
 
 const MaskInput = styled.div`
   position: absolute;

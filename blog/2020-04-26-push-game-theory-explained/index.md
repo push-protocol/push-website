@@ -4,7 +4,7 @@ title: 'Push Game Theory Explained'
 authors: [push]
 tags: [Game Theory ,Blockchain ,Design ,Notifications ,Blog]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

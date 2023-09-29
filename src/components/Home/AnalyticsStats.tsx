@@ -12,7 +12,7 @@ import { Oval } from 'react-loader-spinner';
 import styled from 'styled-components';
 
 // Internal Components
-import { ItemHV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { ItemH, Span } from '@site/src/css/SharedStyling';
 import { getNotificationsCount, getSubscribersCount } from '@site/src/utils/AnalyticsStats';
 
 // Internal Configs
@@ -178,7 +178,7 @@ const AnalyticsStatCardList = styled.div`
   }
 `;
 
-const AnalyticsStatCard = styled(ItemHV2)`
+const AnalyticsStatCard = styled(ItemH)`
   gap: 18px;
   align-items: center;
   justify-content: center;
@@ -196,7 +196,7 @@ const AnalyticsStatCard = styled(ItemHV2)`
   }
 `
 
-const KPIFigure = styled(SpanV2)`
+const KPIFigure = styled(Span)`
   font-weight: 700;
   font-size: 48px;
   line-height: 110%;
@@ -208,7 +208,7 @@ const KPIFigure = styled(SpanV2)`
   }
 `;
 
-const KPIMetric = styled(SpanV2)`
+const KPIMetric = styled(Span)`
   font-weight: 400;
   font-size: 18px;
   line-height: 121%;

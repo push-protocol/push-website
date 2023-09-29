@@ -4,7 +4,7 @@ title: Fast-tracking Proposals, Approved!
 authors: [push]
 tags: [ Dao, Governance, Web3, Ethereum, Communication]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

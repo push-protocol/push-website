@@ -4,7 +4,7 @@ title: 'Building Ethereum Push Notification Service protocol'
 authors: [push]
 tags: [Blockchain ,Defi ,Notifications ,Blog ,Ethereum]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

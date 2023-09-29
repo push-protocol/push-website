@@ -4,7 +4,7 @@ title: 'EPNS + Graph Hackathon 2022 Winners Announced!'
 authors: [push]
 tags: [Web3 ,Graph ,Hackathons ,Ethereum ,Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

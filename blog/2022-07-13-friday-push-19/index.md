@@ -4,7 +4,7 @@ title: 'Friday PUSH #19'
 authors: [push]
 tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 <ImageText>#MeetTheBUIDLers (of ETHNewYork 2022) — PUSH Call #19</ImageText>

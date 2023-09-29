@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import { SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Span } from '@site/src/css/SharedStyling';
 
 import useEmailValidationAndSend from '@site/src/hooks/useEmailValidationAndSend';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -21,7 +21,6 @@ import { device } from '@site/src/config/globals';
 function SignupInput() {
   const [isLoading, apiResponse, emailError, onEmailSubmit] = useEmailValidationAndSend();
 
-  const isMobile = useMediaQuery(device.tablet);
 
   // Internationalization
   const { t } = useTranslation();
@@ -32,7 +31,7 @@ function SignupInput() {
         <SignupInputField
           type="text"
           name="email"
-          placeholder={t('home.email-section.email-input')}
+          placeholder="Email"
           tabIndex={0}
           required
         />
@@ -45,27 +44,22 @@ function SignupInput() {
 
         {isLoading ? <MaskInput /> : null}
       </Wrapper>
+      
       {apiResponse && (
-        <SpanV2
+        <Span
           className="msg"
-          fontSize={isMobile ? '18px' : '20px'}
-          fontWeight={300}
-          margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
           color="#121315"
         >
           {apiResponse}
-        </SpanV2>
+        </Span>
       )}
       {!apiResponse && emailError && (
-        <SpanV2
+        <Span
           className="msg"
-          fontSize={isMobile ? '18px' : '20px'}
-          fontWeight={300}
-          margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
           color="red"
         >
           {emailError}
-        </SpanV2>
+        </Span>
       )}
     </Box>
   );
@@ -75,11 +69,23 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
 
-  & span.msg {
+  & ${Span} {
+    font-size: 20px;
+    margin: 10px 0px 0px 15px;
     font-weight: 300;
-    line-height: 138.5%;
-    margin-top: 12px;
-    spacing: -0.03em;
+
+    &.msg {
+      line-height: 138.5%;
+      margin-top: 12px;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  @media ${device.tablet} {
+    & ${Span} {
+      font-size: 18px;
+      margin: 10px auto 0px auto;
+    }
   }
 `;
 
@@ -110,6 +116,7 @@ const Wrapper = styled.form`
     align-items: center;
     padding: 14px 32px;
     white-space: nowrap;
+    border: 0;
 
     @media ${device.tablet} {
       min-width: auto;

@@ -4,7 +4,7 @@ title: 'EPNS Monthly Blocks'
 authors: [push]
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

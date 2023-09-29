@@ -11,10 +11,10 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 // Internal Components
-import { ItemHV2, SectionV2 } from '@site/src/components/SharedStylingV2';
+import { ItemH, Section } from '@site/src/css/SharedStyling';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
 export const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);
@@ -38,7 +38,7 @@ export const Alert = () => {
   };
 
   return (
-    <SectionV2>
+    <Section>
       {isAlertVisible && (
         <AlertContainer>
           <AlertText onClick={() => {window.open(alertLink, '_blank');}}>
@@ -61,11 +61,11 @@ export const Alert = () => {
         </CancelIcon>
       </AlertContainer>
       )}
-    </SectionV2>
+    </Section>
   );
 };
 
-const AlertContainer = styled(ItemHV2)`
+const AlertContainer = styled(ItemH)`
   background: linear-gradient(
     90deg,
     rgba(18, 19, 21, 0.5) -2.55%,
@@ -94,6 +94,7 @@ const AlertText = styled.div`
   @media ${device.tablet} {
     font-size: 14px;
     width: 80%;
+    text-align: center;
     padding: 10px;
   }
 

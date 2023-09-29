@@ -4,7 +4,7 @@ title: 'EPNS push notifications are never boring'
 authors: [push]
 tags: [Ethereum ,Blockchain ,Ethglobal ,Blog ,Notifications]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

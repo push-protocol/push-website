@@ -5,7 +5,7 @@ authors: [push]
 tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 ---
 
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

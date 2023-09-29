@@ -10,7 +10,7 @@ import '@splidejs/react-splide/css/core';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Button, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import useOnScreen from '@site/src/hooks/useOnScreen';
 
@@ -36,16 +36,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
-
-  // const [First, Second, Third, Fourth] = scheduleList;
-  // const desktopList = [
-  //   [...First, ...Second],
-  //   [...Third, ...Fourth],
-  // ];
-  // const mobileList = [[...First], [...Second], [...Third], [...Fourth]];
-  // const renderList = isMobile ? mobileList : desktopList;
-
-  // const [eventHasEnded, setEventHasEnded] = useState(false);
 
   const checkDateStatus = (fDate) => {
     const currentDate = new Date();
@@ -82,9 +72,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
 
   return (
     <Container ref={sectionRef}>
-      <ItemHV2>
+      <ItemH>
         <Header>Schedule</Header>
-      </ItemHV2>
+      </ItemH>
       <Splide
         style={{ margin: isMobile ? '0 auto' : 'auto' }}
         ref={splideRef}
@@ -202,18 +192,18 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             >
               <Right />
             </SplideArrow>
-            <ButtonV2
+            <Button
               border="1px solid #E64DE9"
               onClick={() => window.open('https://discord.gg/cTRqvYzXpW', '_blank')}
               title="Participate Virtually"
             >
-              <ItemHV2>
+              <ItemH>
                 <ParticipateButtonInnerText>Participate Virtually</ParticipateButtonInnerText>
-                <ItemVV2 width="15px">
+                <ItemV width="15px">
                   <ArrowSmall />
-                </ItemVV2>
-              </ItemHV2>
-            </ButtonV2>
+                </ItemV>
+              </ItemH>
+            </Button>
           </ActionContainer>
         </div>
       </Splide>
@@ -221,7 +211,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
   );
 };
 
-const Container = styled(ItemVV2)`
+const Container = styled(ItemV)`
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
@@ -236,7 +226,7 @@ const ArrowSmall = styled(Arrow)`
   margin-left: 10px;
 `;
 
-const ParticipateButtonInnerText = styled(SpanV2)`
+const ParticipateButtonInnerText = styled(Span)`
   @media ${device.mobileS} {
     flex: 1;
   }
@@ -320,7 +310,7 @@ const Icon = styled.img`
   height: 50px;
 `;
 
-const ScheduleData = styled(ItemVV2)`
+const ScheduleData = styled(ItemV)`
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
@@ -339,7 +329,7 @@ const PlaceContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const PlaceName = styled(SpanV2)`
+const PlaceName = styled(Span)`
   font-family: Green Brooks;
   font-size: 42px;
   font-weight: 400;
@@ -347,7 +337,7 @@ const PlaceName = styled(SpanV2)`
   color: ${(props) => props.color};
 `;
 
-const DateContainer = styled(SpanV2)`
+const DateContainer = styled(Span)`
   height: 32px;
   // color: #fff;
   color: ${(props) => props.color};
@@ -359,7 +349,7 @@ const DateContainer = styled(SpanV2)`
   text-transform: uppercase;
 `;
 
-const SplideArrow = styled(ButtonV2)`
+const SplideArrow = styled(Button)`
   height: 64px;
   width: 64px;
   display: flex;

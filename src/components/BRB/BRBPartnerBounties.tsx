@@ -8,7 +8,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ImageV2, ItemHV2, ItemVV2, SpanV2 } from '@site/src/components/SharedStylingV2';
+import { Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -31,9 +31,9 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
 
   return (
     <PartnerBountiesContainer ref={sectionRef}>
-      <ItemHV2 gap="24px" margin="0px 0px 60px">
+      <ItemH gap="24px" margin="0px 0px 60px">
         <Header>Partners {isMobile && <br />} Bounties</Header>
-        <ButtonV2
+        <Button
           background="#e64de9"
           display="flex"
           maxWidth="187px"
@@ -49,17 +49,17 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
             )
           }
         >
-          <SpanV2
+          <Span
             fontSize="16px"
             fontWeight="400"
             letterSpacing="0.3"
             margin="0 5px 0 0"
           >
             Register to participate
-          </SpanV2>
+          </Span>
           <ArrowSmall />
-        </ButtonV2>
-      </ItemHV2>
+        </Button>
+      </ItemH>
       
       {brbPartnersBountyList?.map((item, i) => (
         <PartnerLine
@@ -86,10 +86,10 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
               ${item.price.toLocaleString()}
             </PriceSpan>
 
-            <Button className="buttonId">
+            <BountyButton className="buttonId">
               <ViewBountyText>View Bounty</ViewBountyText>
               <ArrowSmall />
-            </Button>
+            </BountyButton>
           </BountyItem>
         </PartnerLine>
       ))}
@@ -154,7 +154,7 @@ const PartnerLine = styled.div`
   }
 `;
 
-const PartnersLogo = styled(ImageV2)`
+const PartnersLogo = styled(Image)`
   width: auto;
   height: auto;
   max-width: 140px;
@@ -162,7 +162,7 @@ const PartnersLogo = styled(ImageV2)`
   opacity: 0.75;
 `;
 
-const ViewBountyText = styled(SpanV2)`
+const ViewBountyText = styled(Span)`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -174,7 +174,7 @@ const ViewBountyText = styled(SpanV2)`
   }
 `;
 
-const Button = styled.div`
+const BountyButton = styled.div`
   min-width: 114px;
   max-width: ${(props) => props.maxWidth || '114px'};
   display: flex;
@@ -195,7 +195,7 @@ const ArrowSmall = styled(Arrow)`
   top: 0.1em;
 `;
 
-const TextSpan = styled(SpanV2)`
+const TextSpan = styled(Span)`
   font-weight: 600;
   font-size: 18px;
   color: var(--ifm-color-primary-inverse);
@@ -220,7 +220,7 @@ const TextSpan = styled(SpanV2)`
   }
 `;
 
-const PriceSpan = styled(SpanV2)`
+const PriceSpan = styled(Span)`
   color: var(--ifm-color-primary-inverse);
   font-weight: 700;
 `;

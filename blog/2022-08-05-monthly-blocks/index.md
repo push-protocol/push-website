@@ -4,7 +4,7 @@ title: 'Monthly Blocks'
 authors: [push]
 tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

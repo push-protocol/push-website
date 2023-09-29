@@ -4,7 +4,7 @@ title: 'Huobi Global will launch $PUSH (Ethereum Push Notification Service)'
 authors: [push]
 tags: [Annoucements ,Huobiglobal ,Listings ,Ethereum]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

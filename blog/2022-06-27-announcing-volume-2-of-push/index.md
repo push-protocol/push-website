@@ -4,7 +4,7 @@ title: 'Announcing Volume 2 of Push #ROCKSTARS'
 authors: [push]
 tags: [Nft, Blockchain, Crypto, Opensea, Technology]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.webp)
 

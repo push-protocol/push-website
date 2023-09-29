@@ -4,7 +4,7 @@ title: 'EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for 
 authors: [push]
 tags: [Ethereum, Newsletter, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 

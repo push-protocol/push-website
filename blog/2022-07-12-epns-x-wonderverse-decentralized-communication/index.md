@@ -4,7 +4,7 @@ title: 'EPNS x Wonderverse: Decentralized Communication for Web3’s Project Man
 authors: [push]
 tags: [Ethereum, Epnsproject, Newsletter, Project Management, Blockchain]
 ---
-import { ImageText } from '@site/src/components/SharedStylingV2';
+import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Docusaurus Image](./cover-image.png)
 
