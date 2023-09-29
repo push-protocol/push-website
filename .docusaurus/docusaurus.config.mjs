@@ -12,7 +12,7 @@ export default {
   "trailingSlash": false,
   "organizationName": "ethereum-push-notification-service",
   "projectName": "push-website",
-  "deploymentBranch": "gh-pages-d1",
+  "deploymentBranch": "gh-pages",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -37,7 +37,7 @@ export default {
         "docs": {
           "path": "docs",
           "routeBasePath": "docs",
-          "sidebarPath": "D:\\Push_Protocol\\push-website\\sidebars.js",
+          "sidebarPath": "/Users/koladeoyewumi/Documents/Projects/push-website/sidebars.js",
           "sidebarCollapsed": false,
           "editUrl": "https://github.com/ethereum-push-notification-service/push-documentation/"
         },
@@ -49,16 +49,13 @@ export default {
           "blogSidebarCount": "ALL"
         },
         "theme": {
-          "customCss": "D:\\Push_Protocol\\push-website\\src\\css\\custom.css"
+          "customCss": "/Users/koladeoyewumi/Documents/Projects/push-website/src/css/custom.css"
         }
       }
     ]
   ],
-  "scripts": [
-    "./src/customscripts.js"
-  ],
   "plugins": [
-    "D:\\Push_Protocol\\push-website\\plugins\\custom-webpack-plugin\\index.js"
+    "/Users/koladeoyewumi/Documents/Projects/push-website/plugins/custom-webpack-plugin/index.js"
   ],
   "themeConfig": {
     "image": "/assets/docs/social-card.jpg",
@@ -322,6 +319,7 @@ export default {
   "onDuplicateRoutes": "warn",
   "customFields": {},
   "themes": [],
+  "scripts": [],
   "headTags": [],
   "stylesheets": [],
   "clientModules": [],

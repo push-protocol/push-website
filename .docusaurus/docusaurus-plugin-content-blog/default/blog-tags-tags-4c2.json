@@ -305,16 +305,6 @@
     "count": 4
   },
   {
-    "label": "Ethglobal",
-    "permalink": "/blog/tags/ethglobal",
-    "count": 5
-  },
-  {
-    "label": "Hackathons",
-    "permalink": "/blog/tags/hackathons",
-    "count": 6
-  },
-  {
     "label": "Chat",
     "permalink": "/blog/tags/chat",
     "count": 2
@@ -328,6 +318,16 @@
     "label": "Social",
     "permalink": "/blog/tags/social",
     "count": 1
+  },
+  {
+    "label": "Ethglobal",
+    "permalink": "/blog/tags/ethglobal",
+    "count": 5
+  },
+  {
+    "label": "Hackathons",
+    "permalink": "/blog/tags/hackathons",
+    "count": 6
   },
   {
     "label": "Announcements",
@@ -620,6 +620,11 @@
     "count": 1
   },
   {
+    "label": "Non Fungible Tokens",
+    "permalink": "/blog/tags/non-fungible-tokens",
+    "count": 1
+  },
+  {
     "label": "Stox",
     "permalink": "/blog/tags/stox",
     "count": 1
@@ -627,11 +632,6 @@
   {
     "label": "Portfolio",
     "permalink": "/blog/tags/portfolio",
-    "count": 1
-  },
-  {
-    "label": "Non Fungible Tokens",
-    "permalink": "/blog/tags/non-fungible-tokens",
     "count": 1
   },
   {
