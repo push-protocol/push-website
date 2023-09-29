@@ -2,21 +2,24 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import Head from '@docusaurus/Head';
-import Layout from '@theme/Layout';
 import React from 'react';
 
 // External Components
+import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button, ItemV } from '@site/src/css/SharedStyling';
+import { ButtonV2 } from 'components/SharedStylingV2';
+import PageWrapper from '../components/PageWrapper';
 
 // Internal Configs
-import { PageMeta } from "@site/src/config/pageMeta";
+import PageMeta from '../config/pageMeta';
 
 
 function CheatSheet() {
+  // React GA Analytics
+  ReactGA.pageview('/cheatsheet');
+
   const url = 'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view?usp=sharing';
   const redirectURL = () => {
     window.location.replace(url);
@@ -26,25 +29,14 @@ function CheatSheet() {
   //   redirectURL();
   // }, []);
   return (
-    <Layout title={PageMeta.ABOUTUS.pageTitle} description={PageMeta.ABOUTUS.pageDescription}>
-    {/* <Head>
-      <meta property="og:image" content="image.png" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <link rel="preconnect" href="https://example.com" />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org/',
-          '@type': 'Organization',
-          name: 'Meta Open Source',
-          url: 'https://opensource.fb.com/',
-          logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-        })}
-      </script>
-    </Head> */}
+    <PageWrapper
+      pageName={PageMeta.CHEAT.pageName}
+      pageTitle={PageMeta.CHEAT.pageTitle}
+    >
       <CheatWrapper>
 
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
-        <Button 
+        <ButtonV2 
           target="_blank"
           title="Push Dapp"
           background="#DD44B9"
@@ -56,14 +48,14 @@ function CheatSheet() {
           onClick={redirectURL}
         >
           View Cheatsheet
-        </Button>
+        </ButtonV2>
 
       </CheatWrapper>
-    </Layout>
+    </PageWrapper>
   );
 }
 
-const CheatWrapper = styled(ItemV)`
+const CheatWrapper = styled.main`
     max-height: 100vh;
     min-height: 100vh;
     width: 100vw;
