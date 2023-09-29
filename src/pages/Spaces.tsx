@@ -2,6 +2,8 @@
 // @ts-nocheck
 /* eslint-disable */
 // React + Web3 Essentials
+import Head from '@docusaurus/Head';
+import Layout from '@theme/Layout';
 import React, { useState } from 'react';
 
 // External Components
@@ -9,19 +11,20 @@ import ReactGA from 'react-ga';
 import styled from 'styled-components';
 
 // Internal Components
-import PageWrapper from 'components/PageWrapper';
-import MobileSpaceBg from '../assets/mobile-space-background.webp';
-import SpaceBg from '../assets/space-background.webp';
-import { subscribeToSpace } from 'api';
-import ImageHolder from 'components/ImageHolder';
-import { SpanV2 } from 'components/SharedStylingV2';
-import useMediaQuery from 'hooks/useMediaQuery';
-import MobileSpaceImage from '../assets/mobile-space-image.webp';
-import SpaceImage from '../assets/space-image.webp';
+import { subscribeToSpace } from '@site/src/api';
+import ImageHolder from '@site/src/components/ImageHolder';
+import { Content, ItemV, Span } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+
+// Import Assets
+import MobileSpaceBg from '@site/static/assets/mobile-space-background.webp';
+import MobileSpaceImage from '@site/static/assets/mobile-space-image.webp';
+import SpaceBg from '@site/static/assets/space-background.webp';
+import SpaceImage from '@site/static/assets/space-image.webp';
 
 // Internal Configs
-import { device } from 'config/globals';
-import pageMeta from 'config/pageMeta';
+import { device } from '@site/src/config/globals';
+import { PageMeta } from "@site/src/config/pageMeta";
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
@@ -37,9 +40,6 @@ const validateEmail = (email) => {
 };
 
 const Spaces = () => {
-  // React GA Analytics
-  ReactGA.pageview('/spaces');
-
   const [isLoading, setIsLoading] = useState(false);
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [emailError, setEmailError] = useState('');
@@ -89,68 +89,73 @@ const Spaces = () => {
   };
 
   return (
-    <PageWrapper
-      pageName={pageMeta.SPACES.pageName}
-      pageTitle={pageMeta.SPACES.pageTitle}
-    >
+    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription}>
+      {/* <Head>
+        <meta property="og:image" content="image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://example.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Meta Open Source',
+            url: 'https://opensource.fb.com/',
+            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+          })}
+        </script>
+      </Head> */}
       <SpaceWrapper>
-        <SpaceText>
-          Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3 journey.
-        </SpaceText>
+        <ItemV>
+          <SpaceText>
+            Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3 journey.
+          </SpaceText>
 
-        <SpaceSubText>Join the conversation on Push Spaces</SpaceSubText>
+          <SpaceSubText>Join the conversation on Push Spaces</SpaceSubText>
 
-        <Box>
-          <Wrapper>
-            <ShootUp onClick={shootUpHandler}>Shoot Up Now!</ShootUp>
-          </Wrapper>
-          {/* <Wrapper>
-            <input type="text" name="email" placeholder="Your Email Address" tabIndex={0} required/>
-            <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Join the Waitlist'}</button>
+          <Box>
+            <Wrapper>
+              <ShootUp onClick={shootUpHandler}>Shoot Up Now!</ShootUp>
+            </Wrapper>
+            {/* <Wrapper>
+              <input type="text" name="email" placeholder="Your Email Address" tabIndex={0} required/>
+              <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Join the Waitlist'}</button>
 
-            {isLoading ? <MaskInput /> : null}
-          </Wrapper> */}
-          {emailSuccess && (
-            <SpanV2
-              className="msg"
-              fontSize={isMobile ? '18px' : '20px'}
-              margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
-              color="white"
-            >
-              {emailSuccess}
-            </SpanV2>
-          )}
+              {isLoading ? <MaskInput /> : null}
+            </Wrapper> */}
+          </Box>
 
-          {!emailSuccess && emailError && (
-            <SpanV2
-              className="msg"
-              fontSize={isMobile ? '18px' : '20px'}
-              margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
-              color="red"
-            >
-              {emailError}
-            </SpanV2>
-          )}
-        </Box>
+          <SpaceImageHolder isMobile={isMobile}>
+            {!isMobile &&
+              <MemberImage
+                className="figureSvg"
+                src={SpaceImage}
+                srcSet={SpaceImage}
+                alt={'Space Image'}
+                title="Space Image"
+                width="100%"
+                height="100%"
+              />
+            }
 
-        <SpaceImageHolder isMobile={isMobile}>
-          <MemberImage
-            className="figureSvg"
-            src={isMobile ? MobileSpaceImage : SpaceImage}
-            srcSet={isMobile ? MobileSpaceImage : SpaceImage}
-            alt={'Space Image'}
-            title="Space Image"
-            width="100%"
-            height="100%"
-          />
-        </SpaceImageHolder>
+            {isMobile &&
+              <MemberImage
+                className="figureSvg"
+                src={MobileSpaceImage}
+                srcSet={MobileSpaceImage}
+                alt={'Space Image'}
+                title="Space Image"
+                width="100%"
+                height="100%"
+              />
+            }
+          </SpaceImageHolder>
+        </ItemV>
       </SpaceWrapper>
-    </PageWrapper>
+    </Layout>
   );
 };
 
-const SpaceWrapper = styled.main`
-  max-height: 100vh;
+const SpaceWrapper = styled(ItemV)`
   min-height: 100vh;
   width: 100vw;
   background-image: url(${(props) => (props.isMobile ? MobileSpaceBg : SpaceBg)});
@@ -160,6 +165,7 @@ const SpaceWrapper = styled.main`
 `;
 
 const SpaceText = styled.div`
+  margin: 280px 0 0 0;
   color: #fff;
   text-align: center;
   font-family: Strawford;
@@ -236,72 +242,13 @@ const Wrapper = styled.div`
 const ShootUp = styled.button`
   width: 177px;
   padding: 14px 32px;
+  border: 0;
+  font-size: 16px;
   border-radius: 16px;
   background: #dd44b9;
   color: #ffff;
   cursor: pointer;
 `;
-
-// const Wrapper = styled.form`
-//     position: relative;
-//     display: flex;
-//     flex: 1;
-//     column-gap: 6px;
-//     align-items: center;
-//     // background: #FFFFFF;
-//     border-radius: 21px;
-//     // border: 1px solid #FFFFFF;
-//     padding: 5px;
-//     // justify-content: space-between;
-//     justify-content: center;
-
-//     @media ${device.tablet} {
-//         column-gap: 3px;
-//     }
-
-//     & input[type="text"] {
-//         all: unset;
-
-//         box-sizing: border-box;
-//         font-family: 'Strawford';
-//         font-style: normal;
-//         font-weight: 400;
-//         font-size: 16px;
-//         line-height: normal;
-//         letter-spacing: -0.03em;
-//         color: #9C9CBE;
-//         background: #FFFFFF;
-//         // min-width: 220px;
-//         width: 100%;
-//         padding: 6px;
-//         padding-left: 8px;
-
-//         &::placeholder {
-//             color: #A5A7B4;
-//             opacity: 1;
-//         }
-
-//     }
-
-//     & button {
-//         cursor: pointer;
-//         min-width: 160px;
-//         color: #FFFFFF;
-//         background: #DD44B9;
-//         border-radius: 16px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         padding: 14px 32px;
-//         white-space: nowrap;
-
-//         @media ${device.tablet} {
-//           min-width: auto;
-//           font-size: 12px;
-//           padding: 14px 16px;
-//         }
-//     }
-// `;
 
 const MaskInput = styled.div`
   position: absolute;

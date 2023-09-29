@@ -5,18 +5,18 @@
 import React from 'react';
 
 // External Components
-import styled from 'styled-components';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { AiOutlineClose } from 'react-icons/ai';
 import { useTranslation } from 'react-i18next';
+import { AiOutlineClose } from 'react-icons/ai';
+import { FiArrowUpRight } from 'react-icons/fi';
+import styled from 'styled-components';
 
 // Internal Components
-import { ItemHV2, SectionV2 } from './SharedStylingV2';
+import { ItemH, Section } from '@site/src/css/SharedStyling';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
-const Alert = () => {
+export const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);
 
   const hideAlertHandler = () => {
@@ -28,46 +28,44 @@ const Alert = () => {
   const alertMessageEs = 'Push Metamask Snap ya está disponible, '
   const alertMessageHi= 'पुश मेटामास्क स्नैप अब लाइव है, '
 
-  const alertLink = `https://app.push.org/snap`;
+  const alertLink = `https://snaps.metamask.io/snap/npm/pushprotocol/snap/`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
 
   const openLink = () => {
-    window.open(alertLink, '_blank');
+    
   };
 
   return (
-    <SectionV2>
+    <Section>
       {isAlertVisible && (
         <AlertContainer>
-          <AlertText onClick={openLink}>
+          <AlertText onClick={() => {window.open(alertLink, '_blank');}}>
             {i18n.language === 'es' ? alertMessageEs : (i18n.language === 'hi' ? alertMessageHi : alertMessage)}
 
-
-            <KnowMoreLink
-            >
+            <KnowMoreLink>
               {t('alert.know-more')}
             </KnowMoreLink>
 
             <FiArrowUpRight className="icon" />
           </AlertText>
 
-          <CancelIcon>
-            <AiOutlineClose
-              size="1.25rem"
-              color="#7f7b80"
-              className="icon"
-              onClick={hideAlertHandler}
-            />
-          </CancelIcon>
-        </AlertContainer>
+        <CancelIcon>
+          <AiOutlineClose
+            size="1.25rem"
+            color="#7f7b80"
+            className="icon"
+            onClick={hideAlertHandler}
+          />
+        </CancelIcon>
+      </AlertContainer>
       )}
-    </SectionV2>
+    </Section>
   );
 };
 
-const AlertContainer = styled(ItemHV2)`
+const AlertContainer = styled(ItemH)`
   background: linear-gradient(
     90deg,
     rgba(18, 19, 21, 0.5) -2.55%,
@@ -96,6 +94,7 @@ const AlertText = styled.div`
   @media ${device.tablet} {
     font-size: 14px;
     width: 80%;
+    text-align: center;
     padding: 10px;
   }
 
@@ -135,5 +134,3 @@ const KnowMoreLink = styled.span`
     padding-left: 0.5rem;
   }
 `;
-
-export default React.memo(Alert);

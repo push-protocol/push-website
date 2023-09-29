@@ -1,0 +1,266 @@
+{
+  "header": {
+    "docs": {
+      "title": "Documentación",
+      "developer-guides": "Centro de documentación",
+      "alt-developer-guides": "Explora todo lo relacionado con el desarrollo en el Centro de desarrolladores",
+      "governance-guides": "Centro de gobernanza",
+      "alt-governance-guides": "Explore todo lo relacionado con la gobernanza en Governance Hub",
+      "whitepaper": "Whitepaper",
+      "alt-whitepaper": "Lee el Whitepaper"
+    },
+    "more": {
+      "title": "Aprende Más",
+      "faq": "FAQ",
+      "alt-faq": "Preguntas Frecuentes",
+      "blog": "Blog",
+      "alt-blog": "Lee Nuestra Historia",
+      "push-ecosystem": "Ecosistema De Push",
+      "alt-push-ecosystem": "Ecosistema De Push",
+      "media-kit": "Kit Audiovisual",
+      "alt-media-kit": "Kit Audiovisual De Push"
+    },
+    "push-dao": {
+      "title": "Push DAO",
+      "notion": "Notion De Push DAO",
+      "alt-notion": "Notion De Push DAO",
+      "forum": "Foro",
+      "alt-forum": "Foro De Gobernanza De Push",
+      "grants": "Recompensas",
+      "alt-grants": "Recompensas De Push",
+      "missions": "Misiones",
+      "alt-missions": "Misiones De Push"
+    },
+    "language": {
+      "title": "Idioma",
+      "english": "English",
+      "spanish": "Español",
+      "hindi": "हिंदी"
+    },
+    "app-button": {
+      "title": "Abrir App",
+      "alt-title": "Dapp de Push"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "El Protocolo de Comunicaciones de Web3",
+      "description": "Push Protocol es una red de comunicaciones web3, que permite las notificaciones y mensajes entre-cadenas para dapps, wallets y servicios.",
+      "start-button": "Comienza a construir",
+      "explore-button": "Explorar Push Protocol",
+      "alt-start-button": "Documentación Para Desarrolladores",
+      "alt-explore-button": "Dapp De Push"
+    },
+    "stats": {
+      "notifications": {
+        "part1": "Notificaciones",
+        "part2": "Enviadas"
+      },
+      "subscribers": {
+        "part1": "Suscriptores",
+        "part2": "Totales"
+      },
+      "integrations": {
+        "part1": "Integraciones",
+        "part2": " De Push Totales"
+      },
+      "grants": {
+        "part1": "En recompensas",
+        "part2": "Entregadas"
+      }
+    },
+    "partners-section": {
+      "partner-channels-title": "Impulsado por Push",
+      "partner-channels-description": "Descubre una increíble comunidad de desarrolladores que integran Push para construir un poderoso stack de comunicación.",
+      "partner-channels-button": "Explorar integraciones",
+      "partner-channels-button-alt": "Aprende sobre $PUSH",
+      "networks": "Push potencia la comunicación para más de 100 de los proveedores de servicios y dapps líderes en el mundo en DeFi, NFT, juegos, herramientas de desarrollo y más. Actualmente Push funciona en Ethereum, Polygon y BNB Chain.",
+      "alt-missing-web3-image": "Ilustración mostrando Push es la pieza que faltaba en Web3",
+      "title-missing-web3-image": "Push es la pieza faltante en Web3",
+      "missing-web3-title": "Push es la pieza faltante en Web3",
+      "missing-web3-text": "Antes de Push, no existía ninguna solución para permitir la comunicación nativa entre wallets en respuesta a datos dentro y fuera de la cadena. El resultado fue un ecosistema de dapps fracturado, mantenido por plataformas de comunicación anticuadas y centralizadas.",
+      "missing-web3-span": "Push está construyendo la red de comunicación para Web3, solucionando una brecha en infraestructura crítica y mejorando la experiencia diaria para los usuarios de blockchain.",
+      "missing-web3-alt-button": "Documentación Para Desarrolladores",
+      "missing-web3-button": "Cómo funciona Push"
+    },
+    "email-section": {
+      "title": "Conoce nuestras actualizaciones",
+      "text": "Registrate y permanece al día con los anuncios del ecosistema, regalos y más",
+      "email-input": "Correo Eléctronico",
+      "submit-button": "Registrarse",
+      "loading-submit-button": "Enviando..."
+    },
+    "horizontal-scroll-section": {
+      "slide1": {
+        "title": "Las Push Notifications",
+        "text": "conectan directamente a las aplicaciones con los usuarios, lo que permite una comunicación segura y personalizada respondiendo a actividad dentro y fuera de la cadena.",
+        "link-text": "Crear con Push Notifications",
+        "image-alt": "Ilustración mostrando Push Notifications"
+      },
+      "slide2": {
+        "title": "Push Chat",
+        "text": "es la principal aplicación de chat nativa de web3 descentralizada con características fáciles de usar como chat 1-1, chat grupal, videos/imágenes y (próximamente) transmisión.",
+        "link-text": "Crear con Push Chat",
+        "image-alt": "Ilustración mostrando Push Chat"
+      },
+      "slide3": {
+        "title": "Push DAO",
+        "text": "es el hogar de la propiedad comunitaria de Push Protocol. Los titulares de tokenes Push pueden conocer, proponer y votar sobre desarrollos cruciales para el protocolo.",
+        "link-text": "Explorar Push DAO",
+        "image-alt": "Ilustración mostrando Push DAO"
+      }
+    },
+    "grow-section": {
+      "image-alt": "Ilustración mostrando tokenes $PUSH",
+      "image-title": "Utiliza el token de Push para crecer",
+      "title": "Crece con Push",
+      "text": "El token $PUSH permite la gobernanza, la modificación de las tarifas y funciones del protocolo, la seguridad de la red y la gestión de tarifas entre todas las billeteras que integran Push, incluyendo a los participantes de la gobernanza de Push.",
+      "wallet-text": {
+        "part1": "¿Eres una cripto wallet?",
+        "part2": "Intégrate y gana."
+      },
+      "button": "Aprende sobre $PUSH",
+      "button-alt": "Aprende sobre $PUSH"
+    },
+    "why-push-section": {
+      "title": "¿Por qué usar Push?",
+      "text": "Antes de Push, las aplicaciones de blockchain, los proveedores de servicios y las billeteras no tenían forma de comunicarse de forma nativa entre sí. La mayor parte de la comunicación en el ecosistema actual se basa en soluciones web2 tradicionales, lo que da como resultado un ecosistema roto y problemas en el uso diario.",
+      "chain-agnostic-text": "Agnóstico de Cadena",
+      "immediate-communication-text": "Comunicación Inmediata",
+      "decentralized-stack-text": "Stack Descentralizado",
+      "improved-ux-text": "UX Mejorada",
+      "security-alerts-text": "Alertas de Seguridad",
+      "censorship-resistant-text": "Resistente a la Censura"
+    },
+    "insights-section": {
+      "title": "Información y actualizaciones de Push",
+      "link-text": "Explorar todos los Artículos"
+    },
+    "investors-section": {
+      "title": "Respaldado por empresarios exitosos y fondos de capital de riesgo."
+    },
+    "featured-section": {
+      "title": "Presentado en",
+      "article1": {
+        "text": "Vimos a un creador innovador y motivado que estaba profundamente comprometido con el crecimiento y el éxito de Ethereum.",
+        "link-text": "Leer Artículo"
+      },
+      "article2": {
+        "text": "La compañía espera abordar la falta de comunicación entre cadenas de bloques con herramientas de mensajería sencillas.",
+        "link-text": "Leer Artículo"
+      },
+      "article3": {
+        "text": "Push Protocol es la “Pieza faltante de Web3” que se requiere para llevar la UX de Web2 a Web3.",
+        "link-text": "Leer Artículo"
+      },
+      "article4": {
+        "text": "Las notificaciones push descentralizadas pueden transformar lo que pueden hacer las dapps.",
+        "link-text": "Leer Artículo"
+      },
+      "article5": {
+        "text": "Las redes de comunicación Web3 y los equipos descentralizados van de la mano como la mantequilla de maní y la mermelada.",
+        "link-text": "Leer Artículo"
+      }
+    }
+  },
+  "frens": {
+    "hero": {
+      "title": "Frens of Push",
+      "description": {
+        "part1": "Explora cientos de aplicaciones creadas con Push ",
+        "part2": "en todo el mundo a través de DeFi, NFT, juegos, herramientas de desarrollo y más."
+      }
+    },
+    "powered-section": {
+      "title": "Impulsado por Push",
+      "search-placeholder": "Buscar dapps",
+      "no-channels-query": "Ningún canal coincide con tu busqueda, por favor busca por otro nombre o dirección",
+      "no-channels-category": "No hay ningún canal en esta categoria todavía",
+      "show-more-button": "Ver Más"
+    },
+    "email-section": {
+      "title": "Conoce nuestras actualizaciones",
+      "text": "Registrate y permanece al día con los anuncios del ecosistema, regalos y más"
+    }
+  },
+  "terms": {
+    "hero": {
+      "title": "Términos de Servicio",
+      "description": "Líneas generales de los términos y condiciones",
+      "update-text": "Última actualización: 2 de Noviembre de 2020"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "POLÍTICA DE PRIVACIDAD",
+      "description": "Define cómo Push recopila, maneja y procesa los datos.",
+      "update-text": "Última actualización: 2 de Noviembre de 2020"
+    }
+  },
+  "faq": {
+    "hero": {
+      "title": "PREGUNTAS FRECUENTES",
+      "description": "¡Preguntas frecuentes y sus respuestas!",
+      "update-text": "¡OBTÉN LAS RESPUESTAS A LAS PREGUNTAS MÁS PEDIDAS POR LA COMUNIDAD DE PUSH!"
+    },
+    "questions": {
+      "question1": {
+        "title": "",
+        "answer": ""
+      }
+    }
+  },
+  "alert": {
+    "know-more": "¡Empezar!"
+  },
+  "footer": {
+    "info-section": {
+      "positions-card": {
+        "text": "Unete y construye el futuro de las Comunicaciones en Web3.",
+        "link-text": "Revisar Vacantes Disponibles",
+        "image-title": "Unetenos",
+        "image-alt": "Icono que muestra las Vacantes Disponibles"
+      },
+      "docs-card": {
+        "text": "Sigue nuestras sencillas guías para comenzar en minutos.",
+        "link-text": "Explorar Documentación",
+        "image-title": "Comenzar",
+        "image-alt": "Ícono que muestra la facilidad para comenzar"
+      }
+    },
+    "links-section": {
+      "company-column": {
+        "title": "Compañía",
+        "push-ecosystem-link": "Ecosistema Push",
+        "media-kit-link": "Kit Audiovisual",
+        "terms-link": "Términos de Servicio",
+        "privacy-link": "Política de Privacidad"
+      },
+      "governance-column": {
+        "title": "Gobernanza",
+        "push-governance-link": "Gobernanza de Push",
+        "guides-link": "Guías",
+        "forum-link": "Foro",
+        "grants-link": "Recompensas",
+        "snapshot-link": "Snapshot"
+      },
+      "resources-column": {
+        "title": "Recursos",
+        "blog-link": "Blog",
+        "whitepaper-link": "Whitepaper",
+        "github-link": "Github",
+        "discord-link": "Discord",
+        "dev-guides-link": "Guías para Desarrolladores"
+      },
+      "subscribe-column": {
+        "title": "Soporte",
+        "contact-us-link": "Contáctanos",
+        "faq-link": "Preguntas Frecuentes"
+      },
+      "support-column": {
+        "title": "Suscribirse",
+        "email-placeholder": "Correo Eléctronico"
+      }
+    }
+  }
+}

@@ -4,21 +4,23 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useEffect ,useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
 // External Components
-import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { BsArrowUpRight } from 'react-icons/bs'
+import styled from 'styled-components';
 import VanillaTilt from 'vanilla-tilt';
 
 // Internal Components
-import ImageHolder from './ImageHolder';
-import encode from '../assets/svgs/encode.svg'
-import ethglobal from '../assets/svgs/ethglobal.svg'
-import learnweb3dao from '../assets/svgs/learnweb3dao.svg'
-import fvm from '../assets/svgs/fvm.svg'
+
+// Import Assets
+import ImageHolder from '@site/src/components/ImageHolder';
+import encode from '@site/static/assets/svgs/encode.svg';
+import ethglobal from '@site/static/assets/svgs/ethglobal.svg';
+import fvm from '@site/static/assets/svgs/fvm.svg';
+import learnweb3dao from '@site/static/assets/svgs/learnweb3dao.svg';
+import { BsArrowUpRight } from 'react-icons/bs';
 
 const hackathonImage = (hackathon) => {
     switch(hackathon) {

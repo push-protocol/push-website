@@ -10,6 +10,7 @@ export enum ENV {
    */
   LOCAL = 'local',
 }
+
 const Constants = {
   ENV,
   PAGINATION: {

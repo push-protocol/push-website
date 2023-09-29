@@ -6,17 +6,17 @@
 import React, { useEffect, useState } from 'react';
 
 // External Components
-import styled from 'styled-components';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import styled from 'styled-components';
 
 // Internal Components
-import { getBlogData } from '../api';
-import useMediaQuery from '../hooks/useMediaQuery';
-import { ItemHV2, ItemVV2, H3V2 } from './SharedStylingV2';
+import { getBlogData } from '@site/src/api';
+import { H3, ItemH, ItemV } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
 function extractContent(s) {
   const span = document.createElement('span');
@@ -61,7 +61,7 @@ function BlogLoader(props: BlogLoaderProps) {
 
   return (
     <>
-      <ItemHV2
+      <ItemH
         margin="40px 0 0 0"
         gap="48px"
       >
@@ -120,9 +120,9 @@ function BlogLoader(props: BlogLoaderProps) {
             );
           })}
         </SubArticles>
-      </ItemHV2>
+      </ItemH>
 
-      <ItemHV2
+      <ItemH
         height="1px"
         background="#000"
         margin="15px 0 0 0"
@@ -153,79 +153,73 @@ function Blogs(props: BlogsProps) {
     }
   };
 
-  const onArticleClick = (clickedBlog) => {
-    if (clickedBlog?.link) {
-      window.open(clickedBlog?.link, '_blank');
-    }
-  };
-
   useEffect(() => {
     loadData();
   }, []);
 
   if (!blogsData && isLoading) return <BlogLoader isMobile={isMobile} />;
 
-  if (Array.isArray(blogsData) && blogsData.length > 0) {
     return (
       <>
-        <ItemHV2
-          margin="40px 0 0 0"
-          gap="48px"
-        >
-          <MainArticle
-            onClick={() => onArticleClick(blogsData[0])}
-            title={blogsData[0].title}
+        {(Array.isArray(blogsData) && blogsData.length > 0) &&
+          <ItemH
+            margin="40px 0 0 0"
+            gap="48px"
           >
-            <ArticleBanner
-              src={blogsData[0].thumbnail}
-              alt={blogsData[0].title}
-            />
-
-            <H3V2
-              textTransform="capitalize"
-              color="#09090B"
-              fontSize="24px"
-              fontWeight="500"
-              letterSpacing="-0.02em"
-              lineHeight="142%"
-              margin="24px 0 0 0"
+            <MainArticle
+              onClick={() => {if (clickedBlog?.link) onArticleClick(blogsData[0])}}
+              title={blogsData[0].title}
             >
-              {blogsData[0].title}
-            </H3V2>
+              <ArticleBanner
+                src={blogsData[0].thumbnail}
+                alt={blogsData[0].title}
+              />
 
-            <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
-          </MainArticle>
+              <H3
+                textTransform="capitalize"
+                color="#09090B"
+                fontSize="24px"
+                fontWeight="500"
+                letterSpacing="-0.02em"
+                lineHeight="142%"
+                margin="24px 0 0 0"
+              >
+                {blogsData[0].title}
+              </H3>
 
-          <SubArticles>
-            {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
-              return (
-                <SubArticle
-                  key={idx}
-                  onClick={() => onArticleClick(blogData)}
-                  title={blogData.title}
-                >
-                  <SubArticleBanner
-                    src={blogData.thumbnail}
-                    alt={blogsData[0].title}
-                  />
-                  <SubArticleHeader>{blogData.title}</SubArticleHeader>
-                </SubArticle>
+              <ArticleText>{getDescription(blogsData[0].description)}</ArticleText>
+            </MainArticle>
+
+            <SubArticles>
+              {getSubarticles(isMobile, blogsData)?.map((blogData, idx) => {
+                return (
+                  <SubArticle
+                    key={idx}
+                    onClick={() => {if (clickedBlog?.link) onArticleClick(blogData)}}
+                    title={blogData.title}
+                  >
+                    <SubArticleBanner
+                      src={blogData.thumbnail}
+                      alt={blogsData[0].title}
+                    />
+                    <SubArticleHeader>{blogData.title}</SubArticleHeader>
+                  </SubArticle>
               );
-            })}
-          </SubArticles>
-        </ItemHV2>
+              })}
+            </SubArticles>
+          </ItemH>
+        }
 
-        <ItemHV2
+        <ItemH
           height="1px"
           background="#000"
           margin="15px 0 0 0"
         />
       </>
     );
-  }
 }
 
-const MainArticle = styled(ItemVV2)`
+const MainArticle = styled(ItemV)`
   row-gap: 8px;
 
   &:hover {
@@ -261,7 +255,7 @@ const ArticleText = styled.div`
   white-space: normal;
 `;
 
-const SubArticles = styled(ItemVV2)`
+const SubArticles = styled(ItemV)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

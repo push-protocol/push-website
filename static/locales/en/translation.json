@@ -1,0 +1,266 @@
+{
+  "header": {
+    "docs": {
+      "title": "Docs",
+      "developer-guides": "Developer Hub",
+      "alt-developer-guides": "Explore all things dev in the Developer Hub",
+      "governance-guides": "Governance Hub",
+      "alt-governance-guides": "Explore all Governance related things in Governance Hub",
+      "whitepaper": "Whitepaper",
+      "alt-whitepaper": "Read Whitepaper"
+    },
+    "more": {
+      "title": "Learn More",
+      "faq": "FAQ",
+      "alt-faq": "Frequently Asked Questions",
+      "blog": "Blog",
+      "alt-blog": "Read Our Story",
+      "push-ecosystem": "Push Ecosystem",
+      "alt-push-ecosystem": "Push Ecosystem",
+      "media-kit": "Media Kit",
+      "alt-media-kit": "Push Media Kit"
+    },
+    "push-dao": {
+      "title": "Push DAO",
+      "notion": "Push DAO Notion",
+      "alt-notion": "Push DAO Notion",
+      "forum": "Forum",
+      "alt-forum": "Push Governance Forum",
+      "grants": "Grants",
+      "alt-grants": "Push Grants",
+      "missions": "Missions",
+      "alt-missions": "Push Missions"
+    },
+    "language": {
+      "title": "Language",
+      "english": "English",
+      "spanish": "Español",
+      "hindi": "हिंदी"
+    },
+    "app-button": {
+      "title": "Launch App",
+      "alt-title": "Push Dapp"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "The Communication Protocol of Web3",
+      "description": "Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.",
+      "start-button": "Start Building",
+      "alt-start-button": "Developer Docs",
+      "explore-button": "Explore Push Protocol",
+      "alt-explore-button": "Push Dapp"
+    },
+    "stats": {
+      "notifications": {
+        "part1": "Notifications",
+        "part2": "Sent"
+      },
+      "subscribers": {
+        "part1": "Total",
+        "part2": "Subscribers"
+      },
+      "integrations": {
+        "part1": "Total Push",
+        "part2": "Integrations"
+      },
+      "grants": {
+        "part1": "In Grants",
+        "part2": "Given"
+      }
+    },
+    "partners-section": {
+      "partner-channels-title": "Powered by Push",
+      "partner-channels-description": "Discover an amazing community of developers integrating Push to build a powerful communication stack.",
+      "partner-channels-button": "Explore Integrations",
+      "partner-channels-button-alt": "Learn about $PUSH",
+      "networks": "Push powers communication for over 100 of the world’s leading dapps and service providers across DeFi, NFTs, gaming, dev tools, and more. Push is currently live on Ethereum, Polygon and BNB Chain.",
+      "alt-missing-web3-image": "Illustration showing Push as the missing piece of web3",
+      "title-missing-web3-image": "Push is the missing piece of web3",
+      "missing-web3-title": "Push is the missing piece of Web3",
+      "missing-web3-text": "Until Push, no solution existed to enable native communication between wallets in response to on- and off-chain data. The result was a fractured dapp ecosystem, held together by antiquated and centralized communication platforms.",
+      "missing-web3-span": "Push is building the communication network for Web3, addressing a gap in critical infrastructure and improving the everyday experience for blockchain users.",
+      "missing-web3-alt-button": "Developer Docs",
+      "missing-web3-button": "How Push works"
+    },
+    "email-section": {
+      "title": "Never Miss an Update",
+      "text": "Sign up and stay up to date with ecosystem announcements, giveaways and more.",
+      "email-input": "Your Email",
+      "submit-button": "Sign Up",
+      "loading-submit-button": "Please Wait..."
+    },
+    "horizontal-scroll-section": {
+      "slide1": {
+        "title": "Push Notifications",
+        "text": "directly connect applications to individual users, enabling secure and personalized communication in response to customized on- and off-chain activity.",
+        "link-text": "Build Push Notifications",
+        "image-alt": "Illustration showing Push Notifications"
+      },
+      "slide2": {
+        "title": "Push Chat",
+        "text": "is the leading decentralized, web3 native chat application with user friendly features like 1-1, group chat, videos/images, and (soon) streaming.",
+        "link-text": "Build with Push Chat",
+        "image-alt": "Illustration showing Push Chat"
+      },
+      "slide3": {
+        "title": "Push DAO",
+        "text": "is the home of community ownership of the Push Protocol. Push token holders can view, propose, and vote on critical developments to the protocol.",
+        "link-text": "Explore Push DAO",
+        "image-alt": "Illustration showing Push DAO"
+      }
+    },
+    "grow-section": {
+      "image-alt": "Illustration showing $PUSH tokens",
+      "image-title": "Use the Push token to grow",
+      "title": "Grow with Push",
+      "text": "The $PUSH token enables governance, modification of protocol fees and features, network security, and fee management among all wallets that integrate Push, including Push governance participants.",
+      "wallet-text": {
+        "part1": "Are you a crypto wallet?",
+        "part2": "Integrate and earn."
+      },
+      "button": "Learn about $PUSH",
+      "button-alt": "Learn about $PUSH"
+    },
+    "why-push-section": {
+      "title": "Why do you need Push?",
+      "text": "Before Push, blockchain applications, service providers, and wallets had no way to natively communicate with each other. Most communication in today’s ecosystem relies on traditional web2 solutions, resulting in a broken ecosystem and problems in daily use.",
+      "chain-agnostic-text": "Chain Agnostic",
+      "immediate-communication-text": "Immediate Communication",
+      "decentralized-stack-text": "Decentralized Stack",
+      "improved-ux-text": "Improved UX",
+      "security-alerts-text": "Security Alerts",
+      "censorship-resistant-text": "Censorship Resistant"
+    },
+    "insights-section": {
+      "title": "Push Insights & Updates",
+      "link-text": "Explore all Articles"
+    },
+    "investors-section": {
+      "title": "Backed by successful entrepreneurs and venture capital funds."
+    },
+    "featured-section": {
+      "title": "Featured in",
+      "article1": {
+        "text": "We saw a driven, innovative builder who was deeply committed to Ethereum's growth and success.",
+        "link-text": "View Article"
+      },
+      "article2": {
+        "text": "The company hopes to address the lack of cross-blockchain communication with easy messaging tools.",
+        "link-text": "View Article"
+      },
+      "article3": {
+        "text": "Push Protocol is the “Missing piece of Web3” that is required to bring the UX of Web2 to Web3.",
+        "link-text": "View Article"
+      },
+      "article4": {
+        "text": "Decentralized push notifications may transform what dapps can do.",
+        "link-text": "View Article"
+      },
+      "article5": {
+        "text": "Web3 communication networks and decentralized teams go together like peanut butter and jelly.",
+        "link-text": "View Article"
+      }
+    }
+  },
+  "frens": {
+    "hero": {
+      "title": "Frens of Push",
+      "description": {
+        "part1": "Explore hundreds of applications building with Push ",
+        "part2": "worldwide across DeFi, NFTs, Gaming, Dev tools, and more."
+      }
+    },
+    "powered-section": {
+      "title": "Powered by Push",
+      "search-placeholder": "Search dapps",
+      "no-channels-query": "No channels match your query, please search for another name/address",
+      "no-channels-category": "No channels under this type yet.",
+      "show-more-button": "Show More"
+    },
+    "email-section": {
+      "title": "Never Miss an Update",
+      "text": "Sign up and stay up to date with ecosystem announcements, giveaways and more."
+    }
+  },
+  "terms": {
+    "hero": {
+      "title": "Terms of Service",
+      "description": "Outlines the terms and conditions",
+      "update-text": "Last Updated: 2nd November 2020"
+    }
+  },
+  "privacy": {
+    "hero": {
+      "title": "PRIVACY POLICY",
+      "description": "Defines how Push collects, handles and processes data.",
+      "update-text": "Last Updated: 2nd November 2020"
+    }
+  },
+  "faq": {
+    "hero": {
+      "title": "FREQUENTLY ASKED QUESTIONS",
+      "description": "Frequently asked Questions and their answers!",
+      "update-text": "GET ANSWERS FOR SOME OF THE POPULAR QUESTIONS ASKED BY PUSH COMMUNITY!"
+    },
+    "questions": {
+      "question1": {
+        "title": "",
+        "answer": ""
+      }
+    }
+  },
+  "alert": {
+    "know-more": "Get started!"
+  },
+  "footer": {
+    "info-section": {
+      "positions-card": {
+        "text": "Join us and build the future of Web3 Communication.",
+        "link-text": "See Open Positions",
+        "image-title": "Join Us",
+        "image-alt": "Icon showing Open Positions"
+      },
+      "docs-card": {
+        "text": "Follow our simple guides to get started in minutes.",
+        "link-text": "Explore Docs",
+        "image-title": "Get Started",
+        "image-alt": "Icon showing ease of getting started"
+      }
+    },
+    "links-section": {
+      "company-column": {
+        "title": "Company",
+        "push-ecosystem-link": "Push Ecosystem",
+        "media-kit-link": "Media Kit",
+        "terms-link": "Terms",
+        "privacy-link": "Privacy"
+      },
+      "governance-column": {
+        "title": "Governance",
+        "push-governance-link": "Push Governance",
+        "guides-link": "Guides",
+        "forum-link": "Forum",
+        "grants-link": "Grants",
+        "snapshot-link": "Snapshot"
+      },
+      "resources-column": {
+        "title": "Resources",
+        "blog-link": "Blog",
+        "whitepaper-link": "Whitepaper",
+        "github-link": "Github",
+        "discord-link": "Discord",
+        "dev-guides-link": "Dev Guides"
+      },
+      "subscribe-column": {
+        "title": "Support",
+        "contact-us-link": "Contact Us",
+        "faq-link": "FAQ"
+      },
+      "support-column": {
+        "title": "Subscribe",
+        "email-placeholder": "Your Email"
+      }
+    }
+  }
+}

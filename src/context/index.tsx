@@ -1,7 +1,7 @@
 // Internal Components
-import Web3Context from './web3context';
-import EnvContext from './envContext';
-import SocketContext from './socketContext';
-import AccountContext from './accountContext';
+import AccountContext from '@site/src/context/accountContext';
+import EnvContext from '@site/src/context/envContext';
+import SocketContext from '@site/src/context/socketContext';
+import Web3Context from '@site/src/context/web3context';
 
-export { Web3Context, EnvContext, SocketContext, AccountContext };
+export { AccountContext, EnvContext, SocketContext, Web3Context };

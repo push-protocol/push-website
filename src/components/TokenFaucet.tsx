@@ -5,22 +5,23 @@
 import React, { useRef, useState } from 'react';
 
 // External Components
-import styled from 'styled-components';
 import { useClickAway } from 'react-use';
+import styled from 'styled-components';
 
 // Internal Components
-import { ButtonV2, ItemHV2, ItemVV2, SpanV2 } from './SharedStylingV2';
-import Close from '../assets/brb/others/Close.svg';
-import XCompleted from '../assets/brb/others/X-Completed.svg';
-import DiscordCompleted from '../assets/brb/others/Discord-Completed.svg';
-import XRight from '../assets/brb/others/right-1.svg';
-import DiscordRight from '../assets/brb/others/right-2.svg';
-import X from '../assets/X-BRB.svg';
-import Discord from '../assets/Discord-BRB.svg';
-import PushLogo from '../assets/PushLogoTextWhite.svg';
+import { A, Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
+
+// Import Assets
+import Discord from '@site/static/assets/Discord-BRB.svg';
+import X from '@site/static/assets/X-BRB.svg';
+import Close from '@site/static/assets/website/brb/others/Close.svg';
+import DiscordCompleted from '@site/static/assets/website/brb/others/Discord-Completed.svg';
+import XCompleted from '@site/static/assets/website/brb/others/X-Completed.svg';
+import XRight from '@site/static/assets/website/brb/others/right-1.svg';
+import DiscordRight from '@site/static/assets/website/brb/others/right-2.svg';
 
 // Internal Configs
-import { device } from 'config/globals';
+import { device } from '@site/src/config/globals';
 
 export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) => void }) => {
   const [isFollowed, setIsFollowed] = useState<boolean>(false);
@@ -37,31 +38,33 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
   return (
     <Container ref={clickRef}>
       <HeaderContainer>
-        <Icon
-          src={PushLogo}
-          height="41px"
-          width="108px"
-          alt="Logo"
+        <Image
+          width={65}
+          src={require(`@site/static/assets/website/brb/others/PushLogoTextWhite.webp`).default}
+          srcSet={`${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@3x.webp`).default} 3x`}
+          alt={`Image showing BRB Chat is powered by Push Chat`}
         />
-        <SpanV2
+        <Span
           fontSize="13px"
-          fontFamily="Glancyr"
           color="#F0A5FC"
           margin="5px 0px 0px 16px"
+          flex="1"
           style={{ maxHeight: '20px' }}
         >
           TOKEN FAUCET
-        </SpanV2>
-        <Icon
-          src={Close}
-          alt="close"
-          style={{ position: 'absolute', right: '7px', top: '2px' }}
+        </Span>
+        <Button
+          background="transparent"
+          padding="0px"
           onClick={() => handleFaucet(false)}
-        />
+          alignSelf="flex-end"
+        >
+          <Close />
+        </Button>
       </HeaderContainer>
       <InputContainer>
         <Label>1. Follow, Post on X and mention your wallet address in the post</Label>
-        <ItemHV2
+        <ItemH
           justifyContent="flex-start"
           alignItems="center"
           gap="8px"
@@ -70,18 +73,17 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             borderRadius="12px"
             background={isFollowed ? '#FFF' : '#25AAF5'}
             border="1px solid #25AAF5"
-            fontFamily="Glancyr !important"
             padding="6.5px 8.5px"
             onClick={() => openLink('https://twitter.com/pushprotocol')}
           >
-            <Icon
-              src={isFollowed ? XCompleted : X}
-              height="17px"
-              width="17px"
-              alt="x"
-            />
+            {!isPosted && 
+              <X />
+            }
+            {isPosted && 
+              <XCompleted />
+            }
             <Span
-              fontSize="12px"
+              fontSize="16px"
               fontWeight="400"
               color={isFollowed ? '#25AAF5' : '#FFF'}
             >
@@ -100,7 +102,6 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
             borderRadius="12px"
             background={isPosted ? '#FFF' : '#25AAF5'}
             border="1px solid #25AAF5"
-            fontFamily="Glancyr !important"
             padding="6.5px 8.5px"
             onClick={() =>
               openLink(
@@ -108,14 +109,14 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
               )
             }
           >
-            <Icon
-              src={isPosted ? XCompleted : X}
-              height="17px"
-              width="17px"
-              alt="x"
-            />
+            {!isPosted && 
+              <X />
+            }
+            {isPosted && 
+              <XCompleted />
+            }
             <Span
-              fontSize="12px"
+              fontSize="16px"
               fontWeight="400"
               color={isPosted ? '#25AAF5' : '#FFF'}
             >
@@ -130,7 +131,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
               />
             )}
           </ButtonItem>
-        </ItemHV2>
+        </ItemH>
       </InputContainer>
       <InputContainer>
         <Label>2. Join Discord and Share a link of your post in #brb-faucet</Label>
@@ -138,18 +139,17 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
           borderRadius="12px"
           background={isJoined ? '#FFF' : '#3C63C6'}
           border="1px solid #3C63C6"
-          fontFamily="Glancyr !important"
           padding="6.5px 8.5px"
           onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
         >
-          <Icon
-            src={isJoined ? DiscordCompleted : Discord}
-            height="17px"
-            width="17px"
-            alt="x"
-          />
+          {!isJoined && 
+            <Discord />
+          }
+          {isJoined && 
+            <DiscordCompleted />
+          }
           <Span
-            fontSize="12px"
+            fontSize="16px"
             fontWeight="400"
             color={isJoined ? '#3C63C6' : '#FFF'}
           >
@@ -172,13 +172,12 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         borderRadius="16px"
         background="#E64DE9"
         border="1px solid #FC6DFF"
-        fontFamily="Glancyr !important"
         padding="16px 32px"
         style={{ width: '100%', fontSize: '18px', marginTop: '4px' }}
       >
         Claim 10 PUSH
       </ButtonItem> */}
-      <ItemVV2
+      <ItemV
         justifyContent="flex-start"
         alignItems="flex-start"
         margin="19px 0px 0px 10px"
@@ -186,12 +185,12 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
       >
         <Span>* Twitter account must be 30 days old with 50+ followers to claim.</Span>
         <Span>* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
-      </ItemVV2>
+      </ItemV>
     </Container>
   );
 };
 
-const Container = styled(ItemVV2)`
+const Container = styled(ItemV)`
   box-sizing: border-box;
   max-width: 509px;
   height: fit-content;
@@ -200,14 +199,13 @@ const Container = styled(ItemVV2)`
   background: #2a2a39;
   padding: 20px;
   z-index: 10;
-  font-family: Glancyr;
   margin-top: 115px;
   @media ${device.mobileL} {
     margin: 115px 10px 0px 10px;
   }
 `;
 
-const HeaderContainer = styled(ItemHV2)`
+const HeaderContainer = styled(ItemH)`
   width: 100%;
   max-height: 41px;
   justify-content: flex-start;
@@ -221,9 +219,12 @@ const Icon = styled.img`
   cursor: pointer;
 `;
 
-const InputContainer = styled(ItemVV2)`
+const InputContainer = styled(ItemV)`
   justify-content: flex-start;
   align-items: flex-start;
+display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   width: 100%;
   max-height: 73px;
   margin-top: 31px;
@@ -233,10 +234,9 @@ const InputContainer = styled(ItemVV2)`
 `;
 
 const Label = styled.label`
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   text-align: left;
-  font-family: Glancyr !important;
   color: #fff;
   // padding: 5px;
   margin-bottom: 8px;
@@ -254,14 +254,17 @@ const Input = styled.input`
   color: #b6bcd6;
 `;
 
-const ButtonItem = styled(ButtonV2)`
+const ButtonItem = styled(Button)`
   font-size: 13px;
   font-style: normal;
-  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   letter-spacing: 0.03em;
-  font-family: Glancyr !important;
+  display: flex;
+
+  & svg {
+    height: 20px;
+  }
   // &:hover {
   //   box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
   // }
@@ -271,15 +274,16 @@ const ButtonItem = styled(ButtonV2)`
   &:active:after {
     opacity: 0;
   }
+
+  
   @media ${device.mobileL} {
     width: fit-content;
   }
 `;
 
 const Span = styled.span`
-  font-size: ${(props) => props.fontSize || '8px'};
+  font-size: ${(props) => props.fontSize || '12px'};
   color: ${(props) => props.color || '#b5bcd6'};
-  font-family: Glancyr !important;
   font-weight: ${(props) => props.fontWeight || '300'};
   letter-spacing: 0.01em;
 `;

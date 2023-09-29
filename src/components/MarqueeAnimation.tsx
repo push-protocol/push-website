@@ -6,8 +6,8 @@
 import React from 'react';
 
 // External Components
-import styled from 'styled-components';
 import ReactMarquee from 'react-fast-marquee';
+import styled from 'styled-components';
 
 type Props = {
   direction: string;

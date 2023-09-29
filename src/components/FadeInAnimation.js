@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
