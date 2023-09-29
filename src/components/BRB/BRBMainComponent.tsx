@@ -18,7 +18,7 @@ import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
 import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
-import { Button, Image, ItemV, Section, Span } from '@site/src/css/SharedStyling';
+import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -101,7 +101,6 @@ const defaultMobileMenuState = {
 
 export const BRBMainComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
-  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
@@ -295,10 +294,8 @@ export const BRBMainComponent = () => {
               </NavigationMenu>
             </HeaderNavItemV>
 
-            <ItemV
+            <HeaderFocusItems
               flex="initial"
-              flexDirection="row !important"
-              flexWrap={isLaptop ? 'wrap' : 'none'}
             >
               <IconMenu
                 role="menu"
@@ -327,19 +324,12 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
               </IconMenu>
-            </ItemV>
+            </HeaderFocusItems>
           </NavList>
         </Section>
       </StyledHeader>
 
       <ItemTop>
-        <ItemV id="new">
-          <MemberImage
-            className="pushMissingSvg"
-            src={isMobile ? MobileBRB : ImageBRB}
-            srcSet={isMobile ? MobileBRB : ImageBRB}
-          />
-        </ItemV>
 
         <NavText id="elems0">
           Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
@@ -397,71 +387,86 @@ export const BRBMainComponent = () => {
 
 
       <ItemFooter id="support">
-        <FooterItem>
-          <SpanContent
-            fontSize={isLaptop ? '89px' : '112px'}
-            fontWeight="900"
-            color="#E64DE9"
-            letterSpacing="0.01"
+        <ItemH 
+          gap="28px"
+        >
+          <ItemV
+            minWidth="280px"
+            background="#000"
+            padding="20px 48px"
+            gap="14px"
+            borderRadius="48px"
+            background="#2a2a39"
           >
-            Drop Us a GM!
-          </SpanContent>
-        </FooterItem>
-
-        <FooterCol>
-          <FooterBar
-            style={{ cursor: 'pointer' }}
-            onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
-          >
-            <i>
-              <Discord />
-            </i>
-
-            <Span
-              fontSize={isLaptop ? '24px' : '36px'}
-              fontWeight="400"
-              color="#6F8BEE"
+            <SpanContent
+              fontSize="112px"
+              fontWeight="900"
+              color="#E64DE9"
+              letterSpacing="0.01"
             >
-              24x7 Support on Discord
-            </Span>
+              Drop Us a GM!
+            </SpanContent>
+          </ItemV>
 
-            <Image
-              width={65}
-              src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-              alt={`Image showing BRB Chat is powered by Push Chat`}
-            />
-          </FooterBar>
-
-          <FooterBar
-            style={{ cursor: 'pointer' }}
-            onClick={() => openLink('https://twitter.com/pushprotocol')}
+          <ItemV
+            gap="28px"
+            minWidth="280px"
+            alignItems="stretch"
           >
-            <i>
-              <X className="discord" />
-            </i>
-
-            <Span
-              fontSize={isLaptop ? '24px' : '36px'}
-              fontWeight="400"
-              color="#63BFF3"
+            <FooterBar
+              style={{ cursor: 'pointer' }}
+              onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
             >
-              Updates & Announcements
-            </Span>
+              <i>
+                <Discord />
+              </i>
 
-            <Image
-              width={65}
-              src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-              alt={`Image showing BRB Chat is powered by Push Chat`}
-            />
-          </FooterBar>
-        </FooterCol>
+              <Span
+                fontSize="36px"
+                fontWeight="400"
+                color="#6F8BEE"
+              >
+                24x7 Support on Discord
+              </Span>
+
+              <Image
+                width={65}
+                src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                alt={`Image showing BRB Chat is powered by Push Chat`}
+              />
+            </FooterBar>
+
+            <FooterBar
+              style={{ cursor: 'pointer' }}
+              onClick={() => openLink('https://twitter.com/pushprotocol')}
+            >
+              <i>
+                <X className="discord" />
+              </i>
+
+              <Span
+                fontSize="36px"
+                fontWeight="400"
+                color="#63BFF3"
+              >
+                Updates & Announcements
+              </Span>
+
+              <Image
+                width={65}
+                src={require(`@site/static/assets/website/brb/others/ArrowIcon.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                alt={`Image showing BRB Chat is powered by Push Chat`}
+              />
+            </FooterBar>
+          </ItemV>
+        </ItemH>
       </ItemFooter>
 
       <BottomGrad>
         <Span
-          fontSize={isMobile ? '17px' : '17px'}
+          fontSize="18px"
           fontWeight="400"
           color="#FFF"
         >
@@ -738,6 +743,17 @@ const HeaderNavItemV = styled(ItemV)`
   }
 `;
 
+const HeaderFocusItems = styled(ItemH)`
+  align-self: flex-end;
+  flex-wrap: nowrap;
+
+  @media ${device.laptop} {
+    flex-direction: collumn;
+    align-self: center;
+    flex-wrap: wrap;
+  }
+`
+
 const NavigationMenu = styled.ul`
   list-style: none;
   margin: 0;
@@ -837,81 +853,53 @@ const NavigationMenuHeader = styled.div`
   }
 `;
 
-const NavigationMenuContent = styled.ul`
-  list-style: none;
+const ItemFooter = styled(ItemV)`
+  position: relative;
+  top: 80px;
+  display: flex;
+  align-self: center;
 
-  font-family: 'Strawford', 'Manrope', sans-serif;
-  display: none;
-  position: absolute;
-
-  // logic - this should touch the parent li for enough hover surface area.
-  top: 54px;
-
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  background: #2a2a39;
-  border-radius: 18px;
-  padding: 10px 0;
-
-  & a {
-    min-width: 200px;
-  }
+  max-width: 1243px;
+  width: 100%;
 
   @media ${device.laptop} {
-    width: 100%;
-
-    position: relative;
-    top: 0px;
-    left: 0;
-    transform: none;
-    display: flex;
-    flex-direction: column;
-
-    margin: 0;
-    padding: 0;
-
-    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
-
-    & a {
-      justify-content: flex-start;
-    }
+    width: 90%;
   }
 `;
 
-const ItemFooter = styled.div`
-  position: relative;
-  top: 150px;
-  width: 1280px;
-  height: 418px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 20px;
+const SpanContent = styled(Span)`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 
-  @media (max-width: 1281px) {
-    width: 90%;
-  }
-
-  @media ${device.mobileL} {
-    height: 100%;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+  @media ${device.laptop} {
+    -webkit-line-clamp: 3;
   }
 `;
 
 const FooterItem = styled.div`
   border-radius: 48px;
   background: #2a2a39;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   // text-align: center;
   padding: 0px 50px;
   box-sizing: border-box;
+  min-width: 300px;
 
   @media ${device.mobileL} {
     border-radius: 32px;
     padding: 40px 20px;
+  }
+
+  & ${SpanContent} {
+    @media ${device.laptop} {
+      font-size: 90px;
+    }
   }
 `;
 
@@ -920,16 +908,34 @@ const FooterBar = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 30px 48px;
+  padding: 40px 48px;
   box-sizing: border-box;
-  width: 100%;
+  gap: 14px;
 
   border-radius: 48px;
   background: #2a2a39;
   flex: 1;
-  span {
-    width: 313px;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
+  
+  & ${Span} {
+    max-width: 312px;
+
+    @media ${device.laptop} {
+      font-size: 24px;
+    }
+
+    @media ${device.mobileL} {
+      font-size: 24px;
+      border-radius: 32px;
+      padding: 35px 20px;
+      box-sizing: border-box;
+    }
+  }
+
   & i {
     & svg {
       transform: scale(1.8) !important;
@@ -940,7 +946,7 @@ const FooterBar = styled.div`
       }
     }
   }
-  &. svg {
+  & svg {
     margin-left: auto;
   }
 
@@ -957,18 +963,6 @@ const FooterCol = styled.div`
   height: 100%;
   gap: 20px;
   width: 100%;
-`;
-
-const SpanContent = styled(Span)`
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
-  @media ${device.laptop} {
-    -webkit-line-clamp: 3;
-  }
 `;
 
 const BottomGrad = styled.div`

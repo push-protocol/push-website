@@ -125,14 +125,7 @@ function BRBParallax() {
                   {item.figure}
                 </ParallelFlexTitle>
 
-                <ParallelFlexBody
-                  fontSize={isMobile ? '18px' : '14px'}
-                  fontFamily="'Monaco', Tahoma, sans-serif"
-                  color="#fff"
-                  textAlign="center"
-                  letterSpacing="0.03em"
-                  lineHeight="inherit"
-                >
+                <ParallelFlexBody>
                   {item.body}
                 </ParallelFlexBody>
               </FlexItem>
@@ -157,7 +150,7 @@ const Container = styled.div`
   padding: 0px;
   z-index: 9;
 
-  @media ${device.mobileL} {
+  @media ${device.table} {
     margin-top: -10em;
     scroll-snap-align: none;
     margin-bottom: 2em;
@@ -205,12 +198,17 @@ const ParallaxBRBBG = styled(ItemV)`
 `
 
 const ParallaxHeader = styled(Span)`
-  font-size: ${(props) => (props.isMobile ? '50px' : '70px')};
+  font-size: 60px;
   font-weight: 900;
   letter-spacing: inherit;
   color: #E64DE9;
-  margin: ${(props) => (props.isMobile ? '25% 0 0 0' : '5% 0 0 0')};
+  margin: 5% 0 0 0;
   font-stretch: ultra-expanded;
+
+  @media ${device.laptop} {
+    font-size: 30px;
+    margin: 5% 0 0 0;
+  }
 `;
 
 const ParallaxFlex = styled.div`
@@ -219,7 +217,7 @@ const ParallaxFlex = styled.div`
   justify-content: space-between;
   width: auto;
   gap: 8px;
-  margin-top: 51px;
+  margin-top: 40px;
   position: absolute;
   top: 54%;
 
@@ -228,9 +226,9 @@ const ParallaxFlex = styled.div`
     gap: 60px;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 60px;
     // gap: 50px;
     top: 45%;
   }
@@ -248,15 +246,28 @@ const FlexItem = styled.div`
 `;
 
 const ParallelFlexTitle = styled(Span)`
-  font-size: ${(props) => (props.isMobile ? '80px' : '65px')};
+  font-size: 60px;
   text-align: center;
   font-weight: 600;
   color: #fff;
   line-height: inherit;
+  
+  @media ${device.tablet} {
+    font-size: 45px;
+  }
+
 `
 
 const ParallelFlexBody = styled(Span)`
-  
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.03em;
+  line-height: inherit;
+
+  @media ${device.mobileL} {
+    font-size: 14px;
+  }
 `
 
 export default BRBParallax;
