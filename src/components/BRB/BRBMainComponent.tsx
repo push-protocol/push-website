@@ -366,7 +366,7 @@ export const BRBMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="900"
-            onClick={() => handleSectionNavigation('playground')}
+            // onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
           </ButtonBar>
@@ -493,7 +493,7 @@ const MemberImage = styled(ImageHolder)`
 
 const ItemTop = styled.main`
   width: 100%;
-  margin: 261px 0 261px 0;
+  margin: 261px 0 291px 0;
 
   @media ${device.mobileL} {
     width: 100%;
