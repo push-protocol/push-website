@@ -14,7 +14,7 @@ import styled from 'styled-components';
 import { ItemH, Section } from '@site/src/css/SharedStyling';
 
 // Internal Configs
-import { device } from '../config/globals';
+import { device } from '@site/src/config/globals';
 
 export const Alert = () => {
   const [isAlertVisible, setIsAlertVisible] = React.useState(true);

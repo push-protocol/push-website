@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+import { sendEmailToMailingList } from '@site/src/api';
 import React, { useState } from 'react';
-import { sendEmailToMailingList } from './globals';
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
