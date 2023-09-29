@@ -370,7 +370,7 @@ export default function Home(): JSX.Element {
         >
           <BodyContent className="contentBox">
             <SignupBox margin="0 0 0px 0">
-              <ItemV justifyContent="flex-start" gap="12px">
+              <ItemV justifyContent="flex-start" alignItems='flex-start' gap="12px">
                 <ResponsiveH2
                   color="#09090B"
                   fontSize="40px"

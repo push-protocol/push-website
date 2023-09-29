@@ -38,7 +38,6 @@ const SlideElement = ({
     <GrowPushCard background="#2A2A39" ref={sendRef} margin={addMargin && "0 0 0 2%"} paddingBottom={paddingBottom} className="panel">
 
       <GrowPushCardContent>
-        <Span color="#fff" fontWeight="bold" letterSpacing="inherit">{title}</Span>
         <GrowPushCardDesc
           color="#ADB8D7"
           fontSize="22px"
@@ -46,6 +45,10 @@ const SlideElement = ({
           lineHeight="146%"
           letterSpacing="inherit"
         >
+        <Span color="#fff" fontSize='24px' fontWeight="bold" letterSpacing="inherit">
+          {title} {' '}
+        </Span>
+        
            {content}
         </GrowPushCardDesc>
 
@@ -61,6 +64,7 @@ const SlideElement = ({
           className='button'
           margin="10px 0px 0px 0px"
           background="transparent"
+          alignItems='center'
         >
           <SpanLink>{linkContent}</SpanLink>
           <FiArrowUpRight className="anchorSVGlink" />
