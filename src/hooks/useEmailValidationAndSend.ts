@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 
 // Internal Components
-import { sendEmailToMailingList } from '../api';
+import { sendEmailToMailingList } from '@site/src/api';
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',

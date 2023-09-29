@@ -1,0 +1,57 @@
+# Usecases
+
+import { ModalContainer } from "@site/src/css/SharedStyling";
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Streamline Chat Integration for Developers: Say goodbye to the hassles of UI design and API calls. With our web components available in the `@pushprotocol/uiweb` package, you can effortlessly integrate push chat functionality into your dapp using just a few lines of code.
+
+As an example, take a look at how we seamlessly integrated the Push Chat View component into the [`push.org/brb`](https://push.org/brb) website in the image below.
+<ModalContainer>
+  <img src={require("/static/assets/docs/articles/uiweb/chat.png").default} />
+</ModalContainer>
+in order to add the above chatview component the developer just need to write few lines of code
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+import { ChatUIProvider } from "@pushprotocol/uiweb";
+import { darkChatTheme } from "@pushprotocol/uiweb";
+import Chat from "./Chat";
+
+export function App() {
+  // you can pass your own signer, if you don't pass a signer
+  // then it will automatically use the default onboarding kit i.e. blocknative
+  // !pgpPrivatekey && !account && !isConnected => will give the note
+  return (
+    <ChatUIProvider theme={darkChatTheme}>
+      <Chat />
+    </ChatUIProvider>
+  );
+}
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+import { ChatViewComponent } from "@pushprotocol/uiweb";
+
+export function Chat() {
+  return (
+    <ChatViewComponent
+      chatId="b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1"
+      limit={10}
+      isConnected={true}
+    />
+  );
+}
+```
+
+</TabItem>
+</Tabs>

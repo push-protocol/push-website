@@ -1,22 +1,45 @@
-# PUSH Frontend
+# Website
 
-The website for PUSH
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-# Local Dev
+### Installation
 
-```bash
-git clone https://github.com/ethereum-push-notification-service/push-website.git
+```
+$ yarn install
 ```
 
-```bash
-cd push-website
-yarn install
+### Local Development
+
+```
+$ yarn start
 ```
 
-Open up localhost:3000 by
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-```bash
-yarn start
+### Build
+
+```
+$ yarn build
 ```
 
-Make sure to have the appropriate `.env` file.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
+### Useful references
+https://theochu.com/docusaurus/styling/
