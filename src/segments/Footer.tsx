@@ -15,12 +15,12 @@ import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/sr
 import AndroidSVG from '@site/static/assets/android.svg';
 import AppleSVG from '@site/static/assets/apple.svg';
 import DiscordSVG from '@site/static/assets/discord.svg';
-import FooterFollowusFigure from '@site/static/assets/figures/footerfollowus.svg';
-import FooterJoinusFigure from '@site/static/assets/figures/footerjoinus.svg';
 import GithubSVG from '@site/static/assets/github.svg';
 import PushBellSVG from '@site/static/assets/pushBell.svg';
 import TelegramSVG from '@site/static/assets/telegram.svg';
 import TwitterSVG from '@site/static/assets/twitter.svg';
+import FooterFollowusFigure from '@site/static/assets/website/illustrations/footerfollowus.svg';
+import FooterJoinusFigure from '@site/static/assets/website/illustrations/footerjoinus.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';

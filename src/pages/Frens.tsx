@@ -307,20 +307,19 @@ const FrensText = () => {
               <ItemH
                 flexDirection="column"
                 flex="0"
-                // margin={isMobile ? '50px 0px 0px' : '100px 0px 0px'}
                 justifyContent="center"
               >
                 <HeroHeader color="#fff">{t('frens.hero.title')}</HeroHeader>
-                <Span
+                <HeroDesc
                   textAlign="center"
                   margin="20px 0 0 0"
                   letterSpacing="-0.03em"
                   color="#fff"
-                  fontWeight={isMobile ? '300' : '400'}
-                  fontSize={isMobile ? '18px' : '23px'}
+                  fontWeight='400'
+                  fontSize='23px'
                 >
                   {t('frens.hero.description.part1')} {!isTablet && <br />} {t('frens.hero.description.part2')}
-                </Span>
+                </HeroDesc>
               </ItemH>
             </Content>
           </AnimationSection>
@@ -350,10 +349,9 @@ const FrensText = () => {
                   {t('frens.powered-section.title')}
                 </ResponsiveH2>
               </ItemH>
-              <ItemH
+              <SearchContainer
                 maxWidth="350px"
                 justifyContent="flex-end"
-                margin={isMobile && '20px 0 0 0'}
               >
                 <Wrapper>
                   <BiSearch
@@ -367,7 +365,7 @@ const FrensText = () => {
                     onChange={channelSearch}
                   />
                 </Wrapper>
-              </ItemH>
+              </SearchContainer>
             </PushRow>
 
             <ToggleSection>
@@ -498,12 +496,20 @@ const BodyContent = styled.div`
   @media ${device.tablet} {
   	padding: ${(props) => props.padding || "10px 0px"};
   }
+`
+
+const HeroDesc = styled(Span)`
+  @media ${device.mobileL} {
+    font-weight: 300;
+    font-size: 18px;
+  }
 `;
 
 const FrensWrapper = styled(ItemV)`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
   & #hero .contentBox {
     row-gap: 18px;
   }
@@ -626,6 +632,12 @@ const AnimationIcon = styled.div`
   width: 100%;
 `;
 
+const SearchContainer = styled(ItemH)`
+  @media ${device.mobileL} {
+    margin-top: 20px;
+  }
+`;
+
 const AnimationSection = styled(ResponsiveSection)`
 
   display: flex;
@@ -638,7 +650,6 @@ const AnimationSection = styled(ResponsiveSection)`
     width: 85%;
     margin: 0 auto;
   }
-
 
   @media ${device.mobileL} {
     overflow: hidden;

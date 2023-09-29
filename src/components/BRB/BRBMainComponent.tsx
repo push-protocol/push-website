@@ -296,6 +296,7 @@ export const BRBMainComponent = () => {
 
             <HeaderFocusItems
               flex="initial"
+              alignSelf="stretch"
             >
               <IconMenu
                 role="menu"
@@ -577,6 +578,7 @@ const BountyDiv = styled.div`
 `;
 
 const PartnersDiv = styled.div`
+  z-index: 20;
   width: 100%;
 `;
 
@@ -739,7 +741,7 @@ const HeaderNavItemV = styled(ItemV)`
   margin: 0px ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
-    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 20px' : '0')};
+    margin: ${(props) => (props.showMobileMenu ? '30px 20px 20px 20px' : '0')};
   }
 `;
 
@@ -776,6 +778,7 @@ const NavigationMenu = styled.ul`
 const IconMenu = styled.ul`
   list-style: none;
   margin: 0 20px 0 0;
+  justify-content: flex-start;
   padding: 0;
   display: flex;
   gap: 20px;

@@ -13,7 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import { subscribeToSpace } from '@site/src/api';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { ItemV, Span } from '@site/src/css/SharedStyling';
+import { Content, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -105,63 +105,57 @@ const Spaces = () => {
         </script>
       </Head> */}
       <SpaceWrapper>
-        <SpaceText>
-          Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3 journey.
-        </SpaceText>
+        <ItemV>
+          <SpaceText>
+            Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3 journey.
+          </SpaceText>
 
-        <SpaceSubText>Join the conversation on Push Spaces</SpaceSubText>
+          <SpaceSubText>Join the conversation on Push Spaces</SpaceSubText>
 
-        <Box>
-          <Wrapper>
-            <ShootUp onClick={shootUpHandler}>Shoot Up Now!</ShootUp>
-          </Wrapper>
-          {/* <Wrapper>
-            <input type="text" name="email" placeholder="Your Email Address" tabIndex={0} required/>
-            <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Join the Waitlist'}</button>
+          <Box>
+            <Wrapper>
+              <ShootUp onClick={shootUpHandler}>Shoot Up Now!</ShootUp>
+            </Wrapper>
+            {/* <Wrapper>
+              <input type="text" name="email" placeholder="Your Email Address" tabIndex={0} required/>
+              <button tabIndex={0} type="submit">{isLoading ? 'Please Wait...' : 'Join the Waitlist'}</button>
 
-            {isLoading ? <MaskInput /> : null}
-          </Wrapper> */}
-          {emailSuccess && (
-            <Span
-              className="msg"
-              fontSize={isMobile ? '18px' : '20px'}
-              margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
-              color="white"
-            >
-              {emailSuccess}
-            </Span>
-          )}
+              {isLoading ? <MaskInput /> : null}
+            </Wrapper> */}
+          </Box>
 
-          {!emailSuccess && emailError && (
-            <Span
-              className="msg"
-              fontSize={isMobile ? '18px' : '20px'}
-              margin={isMobile ? '10px auto 0px auto' : '10px 0px 0px 15px'}
-              color="red"
-            >
-              {emailError}
-            </Span>
-          )}
-        </Box>
+          <SpaceImageHolder isMobile={isMobile}>
+            {!isMobile &&
+              <MemberImage
+                className="figureSvg"
+                src={SpaceImage}
+                srcSet={SpaceImage}
+                alt={'Space Image'}
+                title="Space Image"
+                width="100%"
+                height="100%"
+              />
+            }
 
-        <SpaceImageHolder isMobile={isMobile}>
-          <MemberImage
-            className="figureSvg"
-            src={isMobile ? MobileSpaceImage : SpaceImage}
-            srcSet={isMobile ? MobileSpaceImage : SpaceImage}
-            alt={'Space Image'}
-            title="Space Image"
-            width="100%"
-            height="100%"
-          />
-        </SpaceImageHolder>
+            {isMobile &&
+              <MemberImage
+                className="figureSvg"
+                src={MobileSpaceImage}
+                srcSet={MobileSpaceImage}
+                alt={'Space Image'}
+                title="Space Image"
+                width="100%"
+                height="100%"
+              />
+            }
+          </SpaceImageHolder>
+        </ItemV>
       </SpaceWrapper>
     </Layout>
   );
 };
 
 const SpaceWrapper = styled(ItemV)`
-  max-height: 100vh;
   min-height: 100vh;
   width: 100vw;
   background-image: url(${(props) => (props.isMobile ? MobileSpaceBg : SpaceBg)});
@@ -171,6 +165,7 @@ const SpaceWrapper = styled(ItemV)`
 `;
 
 const SpaceText = styled.div`
+  margin: 280px 0 0 0;
   color: #fff;
   text-align: center;
   font-family: Strawford;

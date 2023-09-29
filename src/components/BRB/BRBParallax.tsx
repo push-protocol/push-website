@@ -96,7 +96,6 @@ function BRBParallax() {
     <Container>
       <BRBWrapper id={!isMobile && 'home'}>
         <FirstBackground
-          isMobile={isMobile}
           className="firstBackground"
         >
           <ParallaxBRBBG>
@@ -112,25 +111,25 @@ function BRBParallax() {
             }
           </ParallaxBRBBG>
           
-          <ParallaxHeader
-            isMobie={isMobile}
-          >
-            #BRBIndia
-          </ParallaxHeader>
+          <ParallaxContent>
+            <ParallaxHeader>
+              #BRBIndia
+            </ParallaxHeader>
 
-          <ParallaxFlex>
-            {Stats.map((item, i) => (
-              <FlexItem key={i}>
-                <ParallelFlexTitle>
-                  {item.figure}
-                </ParallelFlexTitle>
+            <ParallaxFlex>
+              {Stats.map((item, i) => (
+                <FlexItem key={i}>
+                  <ParallelFlexTitle>
+                    {item.figure}
+                  </ParallelFlexTitle>
 
-                <ParallelFlexBody>
-                  {item.body}
-                </ParallelFlexBody>
-              </FlexItem>
-            ))}
-          </ParallaxFlex>
+                  <ParallelFlexBody>
+                    {item.body}
+                  </ParallelFlexBody>
+                </FlexItem>
+              ))}
+            </ParallaxFlex>
+          </ParallaxContent>
         </FirstBackground>
 
         {/* <div style={{color:'#fff'}}>clea n clean clean</div> */}
@@ -150,12 +149,12 @@ const Container = styled.div`
   padding: 0px;
   z-index: 9;
 
-  @media ${device.table} {
+  @media ${device.tablet} {
     margin-top: -10em;
     scroll-snap-align: none;
     margin-bottom: 2em;
     overflow: hidden;
-    padding-bottom: 18em;
+    padding-bottom: 2em;
     z-index: auto;
   }
 `;
@@ -170,16 +169,26 @@ const BRBWrapper = styled.div`
 
 const FirstBackground = styled.div`
   width: 80%;
-  height: 100%;
   margin: 0px auto;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   @media ${device.mobileL} {
     width: 100%;
+  }
+
+  & svg {
+    width: 100%;
+    height: auto;
+  }
+
+  & > svg {
+    width: 100%;
+    height: auto;
   }
 `;
 
@@ -197,17 +206,19 @@ const ParallaxBRBBG = styled(ItemV)`
   }
 `
 
+const ParallaxContent = styled(ItemV)`
+  margin-top: -23%;
+`
+
 const ParallaxHeader = styled(Span)`
   font-size: 60px;
   font-weight: 900;
   letter-spacing: inherit;
   color: #E64DE9;
-  margin: 5% 0 0 0;
   font-stretch: ultra-expanded;
 
   @media ${device.laptop} {
     font-size: 30px;
-    margin: 5% 0 0 0;
   }
 `;
 
@@ -226,7 +237,7 @@ const ParallaxFlex = styled.div`
     gap: 60px;
   }
 
-  @media ${device.laptop} {
+  @media ${device.tablet} {
     flex-direction: column;
     margin-top: 60px;
     // gap: 50px;

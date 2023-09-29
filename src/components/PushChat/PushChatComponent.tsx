@@ -56,7 +56,7 @@ export const ChatComponent = () => {
       <BottomBar>
         <TokenGated />
         <Span
-          fontSize={isMobile ? '14px' : '16px'}
+          fontSize='16px'
           color="#fff"
           fontWeight="400"
         >
@@ -98,6 +98,12 @@ const BottomBar = styled(ItemH)`
   align-items: center;
   color: #fff;
   z-index: 0 !important;
+
+  & ${Span} {
+    @media ${device.mobileL} {
+      font-size: 14px;
+    }
+  }
 `;
 
 const ButtonItem = styled(Button)`

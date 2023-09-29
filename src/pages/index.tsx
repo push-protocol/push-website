@@ -45,17 +45,16 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import DiscordSVG from "@site/static/assets/discord.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import CensorshipresistantFigure from "@site/static/assets/figures/censorshipresistant.svg";
-import ChainAgnosticFigure from "@site/static/assets/figures/chainagnostic.svg";
-import DecentralizedstackFigure from "@site/static/assets/figures/decentralizedstack.svg";
-import GrowWithPushFigure from "@site/static/assets/figures/growwithpush.webp";
-import ImmediatecommunicationFigure from "@site/static/assets/figures/immediatecommunication.svg";
-import ImproveduxFigure from "@site/static/assets/figures/improvedux.svg";
-import PushMissingPieceFigure from "@site/static/assets/figures/pushmissingtest.webp";
-import SecurityalertsFigure from "@site/static/assets/figures/securityalerts.svg";
 import GithubSVG from "@site/static/assets/github.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
 import TwitterSVG from "@site/static/assets/twitter.svg";
+import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
+import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
+import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
+import GrowWithPushFigure from "@site/static/assets/website/illustrations/growwithpush.webp";
+import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
+import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
@@ -295,15 +294,11 @@ export default function Home(): JSX.Element {
 
             <PushWorksRow>
               <ItemImage justifyContent="center">
-                <MemberImage
-                  className="pushMissingSvg"
-                  src={PushMissingPieceFigure}
-                  srcSet={PushMissingPieceFigure}
+                <Image
+                  src={require(`@site/static/assets/website/illustrations/pushnotifandchat.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/illustrations/pushnotifandchat@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/pushnotifandchat@3x.webp`).default} 3x`}
                   alt={t("home.partners-section.alt-missing-web3-image")}
-                  title={t("home.partners-section.title-missing-web3-image")}
                   style={{ margin: "0 auto" }}
-                  // width="100%"
-                  // height="100%"
                 />
               </ItemImage>
 
@@ -431,8 +426,8 @@ export default function Home(): JSX.Element {
             <IntegrateGrowWithPushRow gap="18px">
               <Image
                 className="figureSvg"
-                src={require(`@site/static/assets/figures/growwithpush.webp`).default}
-                srcSet={`${require(`@site/static/assets/figures/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/figures/growwithpush.webp`).default} 3x`}
+                src={require(`@site/static/assets/website/illustrations/growwithpush.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 3x`}
                 srcSet={GrowWithPushFigure}
                 alt={t("home.grow-section.image-alt")}
                 title={t("home.grow-section.image-title")}

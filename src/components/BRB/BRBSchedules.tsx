@@ -37,16 +37,6 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
     window.open(link, '_blank');
   };
 
-  // const [First, Second, Third, Fourth] = scheduleList;
-  // const desktopList = [
-  //   [...First, ...Second],
-  //   [...Third, ...Fourth],
-  // ];
-  // const mobileList = [[...First], [...Second], [...Third], [...Fourth]];
-  // const renderList = isMobile ? mobileList : desktopList;
-
-  // const [eventHasEnded, setEventHasEnded] = useState(false);
-
   const checkDateStatus = (fDate) => {
     const currentDate = new Date();
     const eventDate = new Date(fDate);

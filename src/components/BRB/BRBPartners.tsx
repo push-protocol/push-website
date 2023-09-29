@@ -18,26 +18,22 @@ import { brbPartnersList } from '@site/src/config/BRBPartnersList';
 import { device } from '@site/src/config/globals';
 
 export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
-  const isMobile = useMediaQuery(device.tablet);
 
   return (
     <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
-      <ItemV>
+      <PartnersList>
         {brbPartnersList.map((partnerRow, i) => {
           return (
-            <ItemH
+            <PartnerContent
               key={i}
               gap="0px 164px"
-              flexDirection={isMobile ? 'column' : 'row'}
             >
               {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
-                    <ItemV
+                    <PartnerItemContent
                       maxHeight="65px"
-                      width={isMobile ? '100%' : '300px'}
-                      maxWidth={isMobile ? '100%' : '300px'}
                       height="65px"
                       margin="27px"
                     >
@@ -64,17 +60,21 @@ export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<nu
                           }}
                         />
                       </PartnersButton>
-                    </ItemV>
+                    </PartnerItemContent>
                   </PartnerItem>
                 );
               })}
-            </ItemH>
+            </PartnerContent>
           );
         })}
-      </ItemV>
+      </PartnersList>
     </PartnersContainer>
   );
 };
+
+const PartnersList = styled(ItemV)`
+
+`
 
 const PartnersContainer = styled.div`
   width: 100%;
@@ -83,6 +83,7 @@ const PartnersContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0px 0px 108px;
+  z-index: 20;
   @media (max-width: 768px) {
     margin: 0px 0px 114px;
   }
@@ -108,6 +109,13 @@ const PartnersLogo = styled(Image)`
   max-height: 65px;
 `;
 
+const PartnerContent = styled(ItemH)`
+
+  @media ${device.tablet} {
+    flex-direction: column;
+  }
+`;
+
 const PartnerItem = styled(ItemH)`
   max-width: 300px;
   display: flex;
@@ -120,6 +128,16 @@ const PartnerItem = styled(ItemH)`
     // flex: 0 0 100%;
   }
 `;
+
+const PartnerItemContent = styled(ItemH)`
+  width: 100%;
+  max-width: 100%;
+
+  @media ${device.tablet} {
+    width: 300px;
+    max-widthw: 300px;
+  }
+`
 
 const PartnersButton = styled(Button)`
   cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};

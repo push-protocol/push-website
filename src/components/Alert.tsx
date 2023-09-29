@@ -94,6 +94,7 @@ const AlertText = styled.div`
   @media ${device.tablet} {
     font-size: 14px;
     width: 80%;
+    text-align: center;
     padding: 10px;
   }
 

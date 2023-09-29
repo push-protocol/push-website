@@ -13,11 +13,7 @@ import styled from 'styled-components';
 // Internal Components
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { A, H2, ItemV, Span } from '@site/src/css/SharedStyling';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import PushChat from '@site/static/assets/figures/pushchat.webp';
-import Pushdao from '@site/static/assets/figures/pushdao.webp';
-import PushNotifications from '@site/static/assets/figures/pushnotifications.webp';
+import { A, H2, Image, ItemV, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -28,7 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 const SlideElement = ({
   content,
   linkContent,
-  image,
+  srcref,
   alt,
   title,
   sendRef,
@@ -73,13 +69,10 @@ const SlideElement = ({
       </GrowPushCardContent>
 
       <Div padding={paddingMobile}>
-        <MemberImage
-          className={title === "Push Chat" ? 'secondFigureSvg' : 'figureSvg'}
-          src={image}
-          srcSet={image}
+        <Image
+          src={require(`@site/static/assets/website/illustrations/${srcref}.webp`).default}
+          srcSet={`${require(`@site/static/assets/website/illustrations/${srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/${srcref}@3x.webp`).default} 3x`}
           alt={alt}
-          title={title}
-          width="100%"
         />
       </Div>
     </GrowPushCard>
@@ -135,7 +128,7 @@ const HorizontalScroll = () => {
         <SlideElement sendRef={(e) => createPanelsRefs(e, 0)}
           content={t('home.horizontal-scroll-section.slide1.text')}
           linkContent={t('home.horizontal-scroll-section.slide1.link-text')}
-          image={PushNotifications}
+          srcref="pushnotifications"
           alt={t('home.horizontal-scroll-section.slide1.image-alt')}
           title={t('home.horizontal-scroll-section.slide1.title')}
           addMargin={false}
@@ -145,7 +138,7 @@ const HorizontalScroll = () => {
         <SlideElement sendRef={(e) => createPanelsRefs(e, 1)}
           content={t('home.horizontal-scroll-section.slide2.text')}
           linkContent={t('home.horizontal-scroll-section.slide2.link-text')}
-          image={PushChat}
+          srcref="pushchat"
           alt={t('home.horizontal-scroll-section.slide2.image-alt')}
           title={t('home.horizontal-scroll-section.slide2.title')}
           addMargin={true}
@@ -156,7 +149,7 @@ const HorizontalScroll = () => {
         <SlideElement sendRef={(e) => createPanelsRefs(e, 2)}
           content={t('home.horizontal-scroll-section.slide3.text')}
           linkContent={t('home.horizontal-scroll-section.slide3.link-text')}
-          image={Pushdao}
+          srcref="pushdao"
           alt={t('home.horizontal-scroll-section.slide3.image-alt')}
           title={t('home.horizontal-scroll-section.slide3.title')}
           addMargin={true}
