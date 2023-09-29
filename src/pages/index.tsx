@@ -1002,13 +1002,18 @@ const StorySection = styled(ResponsiveSection)`
 
 const BuildWithPushSection = styled(ResponsiveSection)`
   overflow: hidden;
-  padding: 0px 160px 80px 160px;
+  padding: 0px 160px 0px;
   border-radius: 48px;
   width: 100%;
 
   @media ${device.tablet} {
     padding: 0px 0px 10px 0px;
   }
+
+  @media ${device.laptopL} {
+    padding: 0px 160px 40px;
+  }
+
 `;
 
 const ShrinkingSection = styled(ResponsiveSection)`
@@ -1169,7 +1174,7 @@ const LiveNetworkCard = styled(ItemVV2)`
 const BodyContent = styled.div`
 	// display: flex;
 	// flex-direction: column;
-	padding: ${(props) => props.padding || "40px 0px"};
+	padding: ${(props) => props.padding || "40px 0px 0px"};
 	// position: relative;
 
 	&.contentBox {

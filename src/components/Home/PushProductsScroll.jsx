@@ -191,7 +191,6 @@ const SliderContainer = styled.div`
   padding: calc(calc(100vh - 750px) / 2) 0px;
   flex-wrap: nowrap;
   margin: auto 0;
-  
   @media (max-width: 1200px){
     flex-direction: column;
     width: 100%;
