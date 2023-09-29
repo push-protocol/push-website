@@ -412,7 +412,7 @@ export const BRBMainComponent = () => {
               color="#E64DE9"
               letterSpacing="0.01"
             >
-              Drop Us a GM!
+              Drop us a GM!
             </SpanContent>
           </ItemV>
 
@@ -888,6 +888,11 @@ const SpanContent = styled(Span)`
   @media ${device.laptop} {
     -webkit-line-clamp: 3;
   }
+
+  @media ${device.mobileL}{
+    font-size: 89px;
+    line-height:110%;
+  }
 `;
 
 const FooterItem = styled.div`
@@ -941,7 +946,7 @@ const FooterBar = styled.div`
     @media ${device.mobileL} {
       font-size: 24px;
       border-radius: 32px;
-      padding: 35px 20px;
+      padding: 0px;
       box-sizing: border-box;
     }
   }
@@ -964,6 +969,8 @@ const FooterBar = styled.div`
     border-radius: 32px;
     padding: 35px 20px;
     box-sizing: border-box;
+    flex-direction:row;
+    flex-wrap:nowrap;
   }
 `;
 
