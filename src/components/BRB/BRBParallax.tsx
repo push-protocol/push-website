@@ -169,6 +169,7 @@ const BRBWrapper = styled.div`
 
 const FirstBackground = styled.div`
   width: 80%;
+  height: 100%;
   margin: 0px auto;
 
   display: flex;
@@ -207,7 +208,11 @@ const ParallaxBRBBG = styled(ItemV)`
 `
 
 const ParallaxContent = styled(ItemV)`
-  margin-top: -23%;
+  margin-top: -6%;
+
+  @media ${device.tablet} {
+    margin-top: 0%;
+  }
 `
 
 const ParallaxHeader = styled(Span)`

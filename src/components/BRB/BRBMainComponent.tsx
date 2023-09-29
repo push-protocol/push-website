@@ -331,6 +331,13 @@ export const BRBMainComponent = () => {
       </StyledHeader>
 
       <ItemTop>
+        <ItemV id="new">
+          <MemberImage
+            className="pushMissingSvg"
+            src={isMobile ? MobileBRB : ImageBRB}
+            srcSet={isMobile ? MobileBRB : ImageBRB}
+          />
+        </ItemV>
 
         <NavText id="elems0">
           Get ready for an epic tech showdown across 18 cities in India, where amazing minds come together to solve
@@ -746,12 +753,12 @@ const HeaderNavItemV = styled(ItemV)`
 `;
 
 const HeaderFocusItems = styled(ItemH)`
-  align-self: flex-end;
+  align-self: stretch;
   flex-wrap: nowrap;
 
   @media ${device.laptop} {
     flex-direction: collumn;
-    align-self: center;
+    align-self: flex-start;
     flex-wrap: wrap;
   }
 `
