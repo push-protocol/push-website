@@ -294,6 +294,7 @@ const FrensText = () => {
                   srcSet={`${require(`@site/static/assets/website/float/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/float/${item.srcref}@3x.webp`).default} 3x`}
                   alt={`${item?.alt}`}
                   className={item.classname}
+                  loading="lazy"
                 />
               );
             })}

@@ -202,7 +202,8 @@ const General = [
         <Span>
           <Image
             src={ImageFAQ}
-            alt=""
+            alt="Push Ecosystem"
+            loading="lazy"
           />
         </Span>
         <Span>

@@ -312,6 +312,7 @@ function Footer() {
                   alt={`Push Logo`}
                   width="auto"
                   height="auto"
+                  loading="lazy"
                 />
               </LinkTo>
 

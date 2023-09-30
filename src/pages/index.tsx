@@ -299,6 +299,7 @@ export default function Home(): JSX.Element {
                   srcSet={`${require(`@site/static/assets/website/illustrations/pushnotifandchat@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/pushnotifandchat@3x.webp`).default} 3x`}
                   alt={t("home.partners-section.alt-missing-web3-image")}
                   style={{ margin: "0 auto" }}
+                  loading="lazy"
                 />
               </ItemImage>
 
@@ -431,6 +432,7 @@ export default function Home(): JSX.Element {
                 srcSet={GrowWithPushFigure}
                 alt={t("home.grow-section.image-alt")}
                 title={t("home.grow-section.image-title")}
+                loading="lazy"
                 width="100%"
                 height="100%"
               />
@@ -826,6 +828,7 @@ export default function Home(): JSX.Element {
                         src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
                         srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
                         alt={`${item?.alt}`}
+                        loading="lazy"
                       />
                       <A
                         href={item.url}

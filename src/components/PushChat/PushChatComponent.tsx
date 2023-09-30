@@ -41,6 +41,7 @@ export const ChatComponent = () => {
             src={require(`@site/static/assets/website/brb/others/brand-header.webp`).default}
             srcSet={`${require(`@site/static/assets/website/brb/others/brand-header@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/brand-header@3x.webp`).default} 3x`}
             alt={`Image showing BRB Chat is powered by Push Chat`}
+            loading="lazy"
           />
         </BrandA>
       </Header>

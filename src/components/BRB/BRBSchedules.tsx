@@ -122,6 +122,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           src={require(`@site/static/assets/website/brb/schedules/${schedule.srcref}.webp`).default}
                           srcSet={`${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@3x.webp`).default} 3x`}
                           alt={`${schedule?.alt}`}
+                          loading="lazy"
                         />
                       </ImageContainer>
                       <svg
