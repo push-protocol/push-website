@@ -77,6 +77,7 @@ const SlideElement = ({
           src={require(`@site/static/assets/website/illustrations/${srcref}.webp`).default}
           srcSet={`${require(`@site/static/assets/website/illustrations/${srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/${srcref}@3x.webp`).default} 3x`}
           alt={alt}
+          loading="lazy"
         />
       </Div>
     </GrowPushCard>
