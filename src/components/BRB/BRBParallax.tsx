@@ -104,6 +104,7 @@ function BRBParallax() {
                 src={require(`@site/static/assets/website/brb/mainbgmobile.webp`).default}
                 srcSet={`${require(`@site/static/assets/website/brb/mainbgmobile@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/mainbgmobile@3x.webp`).default} 3x`}
                 alt="Mobile main background image for Billion Reasons to Build website (#BRBIndia)"
+                loading="lazy"
               />
             }
             {!isMobile &&

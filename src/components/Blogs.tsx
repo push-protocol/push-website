@@ -173,6 +173,7 @@ function Blogs(props: BlogsProps) {
               <ArticleBanner
                 src={blogsData[0].thumbnail}
                 alt={blogsData[0].title}
+                loading="lazy"
               />
 
               <H3
