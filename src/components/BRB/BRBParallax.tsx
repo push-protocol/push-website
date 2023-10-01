@@ -144,11 +144,11 @@ const Container = styled.div`
   color: white;
   margin-top: -15em;
   margin-bottom: 200px;
-
   position: relative;
   scroll-snap-align: center;
   padding: 0px;
   z-index: 9;
+  pointer-events: none;
 
   @media ${device.tablet} {
     margin-top: -10em;
