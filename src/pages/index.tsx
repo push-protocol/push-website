@@ -394,7 +394,7 @@ export default function Home(): JSX.Element {
               </ItemV>
 
               <ItemV>
-                <SignupInput />
+                <SignupInput showButton={true}/>
               </ItemV>
             </SignupBox>
             <PushProductsScroll />

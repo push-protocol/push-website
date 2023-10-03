@@ -3,61 +3,77 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from 'react';
+import React from "react";
 
 // External Components
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 // Internal Components
-import { Span } from '@site/src/css/SharedStyling';
+import { Span } from "@site/src/css/SharedStyling";
 
-import useEmailValidationAndSend from '@site/src/hooks/useEmailValidationAndSend';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import useEmailValidationAndSend from "@site/src/hooks/useEmailValidationAndSend";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import { device } from "@site/src/config/globals";
 
-function SignupInput() {
-  const [isLoading, apiResponse, emailError, onEmailSubmit] = useEmailValidationAndSend();
+export type signupType = {
+  showButton?: boolean;
+  showArrow?: boolean;
+  background?:string;
+  borderColor?:string;
+};
 
+function SignupInput(props: signupType) {
+  const [isLoading, apiResponse, emailError, onEmailSubmit] =
+    useEmailValidationAndSend();
 
   // Internationalization
   const { t } = useTranslation();
 
   return (
     <Box>
-      <Wrapper onSubmit={onEmailSubmit}>
+      <Wrapper background={props.background} border={props.borderColor} onSubmit={onEmailSubmit}>
         <SignupInputField
           type="text"
           name="email"
           placeholder="Email"
+          background={props.background}
           tabIndex={0}
           required
         />
-        <button
-          tabIndex={0}
-          type="submit"
-        >
-          {isLoading ? t('home.email-section.loading-submit-button') : t('home.email-section.submit-button')}
-        </button>
-
-        {isLoading ? <MaskInput /> : null}
+        {props.showButton && (
+          <>
+            <button tabIndex={0} type="submit">
+              {isLoading
+                ? t("home.email-section.loading-submit-button")
+                : t("home.email-section.submit-button")}
+            </button>
+            {isLoading ? <MaskInput /> : null}
+          </>
+        )}
+        {props.showArrow && (
+          <Button
+            aria-label="Subscribe"
+            className="icon"
+            tabIndex={0}
+            type="submit"
+          >
+            {!isLoading && <AiOutlineArrowRight />}
+            {isLoading && <MaskInput />}
+          </Button>
+        )}
       </Wrapper>
-      
+
       {apiResponse && (
-        <Span
-          className="msg"
-          color="#121315"
-        >
+        <Span className="msg" color="#121315">
           {apiResponse}
         </Span>
       )}
       {!apiResponse && emailError && (
-        <Span
-          className="msg"
-          color="red"
-        >
+        <Span className="msg" color="red">
           {emailError}
         </Span>
       )}
@@ -95,9 +111,9 @@ const Wrapper = styled.form`
   flex: 1;
   column-gap: 6px;
   align-items: center;
-  background: #ffffff;
+  background: ${props=> props.background || '#ffffff'};
   border-radius: 21px;
-  border: 1px solid #ffffff;
+  border: 1px solid ${props => props.border || '#ffffff'};
   padding: 5px;
   justify-content: space-between;
 
@@ -124,20 +140,20 @@ const Wrapper = styled.form`
       padding: 14px 16px;
     }
   }
-`
+`;
 
 const SignupInputField = styled.input`
   all: unset;
 
   box-sizing: border-box;
-  font-family: 'Strawford';
+  font-family: "Strawford";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
   letter-spacing: -0.03em;
   color: #9c9cbe;
-  background: #ffffff;
+  background: ${props=>props.background || '#ffffff'};
   min-width: 220px;
   width: 100%;
   padding: 6px;
@@ -146,7 +162,7 @@ const SignupInputField = styled.input`
   @media ${device.laptop} {
     min-width: auto;
   }
-  
+
   &:placeholder {
     color: #a5a7b4;
     opacity: 1;
@@ -163,6 +179,15 @@ const MaskInput = styled.div`
   border-radius: 21px;
   opacity: 0.4;
   z-index: 10;
+`;
+
+const Button = styled.span`
+  border: none;
+  position:absolute;
+  top:10px;
+  right:10px;
+  // bottom:50%;
+  // transform: translateY(-50%,-50%);
 `;
 
 export default SignupInput;
