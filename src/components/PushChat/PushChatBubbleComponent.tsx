@@ -21,12 +21,12 @@ const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleF
   return (
     <Fragment>
       <ChatViewComponentCard>
-        <ChatViewComponent
+        {/* <ChatViewComponent
           chatId={chatId}
           file={false}
           gif={false}
           onClick={() => handleFaucet(true)}
-        />
+        /> */}
       </ChatViewComponentCard>
     </Fragment>
   );
