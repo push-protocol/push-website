@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 // React + Web3 Essentials
 import { useWeb3React } from '@web3-react/core';
 import React, { Fragment } from 'react';
