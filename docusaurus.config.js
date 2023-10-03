@@ -151,6 +151,10 @@ const config = {
 
         indexName: "v2-push",
         insights: true,
+        replaceSearchResultPathname: {
+          from: "/dev/", // or as RegExp: /\/docs\//
+          to: "/docs/",
+        },
       },
       colorMode: {
         defaultMode: "light",
