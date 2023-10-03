@@ -20,6 +20,7 @@ import { PageMeta } from "@site/src/config/pageMeta";
 import { AccountContext, EnvContext, SocketContext, Web3Context } from '@site/src/context';
 import { ENV } from '@site/src/helpers/web3helper';
 import { useSDKSocket } from '@site/src/hooks/useSDKSocket';
+import ErrorBoundary from '@docusaurus/ErrorBoundary';
 
 function getLibrary(provider: any) {
   // this will vary according to whether you use e.g. ethers or web3.js
@@ -31,6 +32,13 @@ function BRB() {
 
   return (
     <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription}>
+       <ErrorBoundary
+        fallback={({error, tryAgain}) => (
+          <div>
+            <p>This component crashed because of error: {error.message}.</p>
+            <button onClick={tryAgain}>Try Again!</button>
+          </div>
+        )}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -48,6 +56,7 @@ function BRB() {
       {/* <Web3ReactProvider getLibrary={getLibrary}> */}
         <BRBWeb3Component />
       {/* </Web3ReactProvider> */}
+      </ErrorBoundary>
     </Layout>
   );
 }
