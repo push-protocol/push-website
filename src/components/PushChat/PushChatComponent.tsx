@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 
 // External Components
 import styled from 'styled-components';
-import { ChatUIProvider } from '@pushprotocol/uiweb';
+// import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
 import { Modal } from '@site/src/components/Modal';
@@ -51,21 +51,23 @@ export const ChatComponent = () => {
 
       <PlayGround>
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <BrowserOnly fallback={<div>Loading...</div>}>
+
+        {/* <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
             const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
 
             return (<ChatUIProvider
             env={'prod'}
             theme={darkChatTheme}
-          >
+          > */}
+          
           <ChatBubbleComponent
             chatId={"4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"}
             handleFaucet={setShowFaucet}
           />
-          </ChatUIProvider>);
+          {/* </ChatUIProvider>);
           }}
-        </BrowserOnly>
+        </BrowserOnly> */}
         
       </PlayGround>
 

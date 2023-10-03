@@ -2,11 +2,10 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import { useWeb3React } from '@web3-react/core';
 import React, { Fragment } from 'react';
 
 // External Components
-import { ChatViewComponent } from '@pushprotocol/uiweb';
+// import { ChatViewComponent } from '@pushprotocol/uiweb';
 import styled from 'styled-components';
 
 // Internal Components
@@ -15,24 +14,31 @@ import { Section } from '@site/src/css/SharedStyling';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { darkChatTheme } from '@site/src/theme/darkChatTheme';
 
 
 const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleFaucet: (value: boolean) => void }) => {
-  const { account, library } = useWeb3React();
 
   return (
     <Fragment>
       <ChatViewComponentCard>
       <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
+            const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
             const ChatViewComponent = require('@pushprotocol/uiweb').ChatViewComponent;
 
-             return (<ChatViewComponent
-                chatId={chatId}
-                file={false}
-                gif={false}
-                onClick={() => handleFaucet(true)}
-              />)
+             return (
+              <ChatUIProvider
+                env={'prod'}
+                theme={darkChatTheme}
+              >
+                <ChatViewComponent
+                  chatId={chatId}
+                  file={false}
+                  gif={false}
+                  onClick={() => handleFaucet(true)}
+                />
+            </ChatUIProvider>)
           }}
         </BrowserOnly>
        
