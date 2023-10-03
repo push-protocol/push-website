@@ -50,7 +50,7 @@ export const ChatComponent = () => {
 
       <PlayGround>
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <ChatUIProvider
+        {/* <ChatUIProvider
           env={'prod'}
           theme={darkChatTheme}
         >
@@ -58,7 +58,7 @@ export const ChatComponent = () => {
           chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
           handleFaucet={setShowFaucet}
         />
-        </ChatUIProvider>
+        </ChatUIProvider> */}
       </PlayGround>
 
       <BottomBar>
