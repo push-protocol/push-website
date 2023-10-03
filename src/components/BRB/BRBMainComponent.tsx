@@ -390,7 +390,7 @@ export const BRBMainComponent = () => {
       </BountyDiv>
 
       <PlaygroundDiv id="playground">
-        {/* <ChatComponent /> */}
+        <ChatComponent />
       </PlaygroundDiv>
 
 

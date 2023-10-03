@@ -6,14 +6,16 @@ import React, { useState } from 'react';
 
 // External Components
 import styled from 'styled-components';
+import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
-import { A, Button, Image, ItemH, ItemV, Section } from '@site/src/css/SharedStyling';
+import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { darkChatTheme } from '@site/src/theme/darkChatTheme';
 
 // Import Assets
 import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
@@ -48,10 +50,15 @@ export const ChatComponent = () => {
 
       <PlayGround>
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
+        <ChatUIProvider
+          env={'prod'}
+          theme={darkChatTheme}
+        >
         <ChatBubbleComponent
           chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
           handleFaucet={setShowFaucet}
         />
+        </ChatUIProvider>
       </PlayGround>
 
       <BottomBar>
@@ -127,18 +134,18 @@ const ButtonItem = styled(Button)`
   }
 `;
 
-const Span = styled.span`
-  font-size: ${(props) => props.fontSize || '8px'};
-  color: ${(props) => props.color || '#b5bcd6'};
-  font-weight: ${(props) => props.fontWeight || '300'};
-  letter-spacing: 0.01em;
-  margin: 5px 16px 0px 4px;
-  @media ${device.mobileL} {
-    width: 80%;
-    margin: 0px 0px 0px 4px;
-    line-height: 1.3;
-  }
-`;
+// const Span = styled(Span)`
+//   font-size: ${(props) => props.fontSize || '8px'};
+//   color: ${(props) => props.color || '#b5bcd6'};
+//   font-weight: ${(props) => props.fontWeight || '300'};
+//   letter-spacing: 0.01em;
+//   margin: 5px 16px 0px 4px;
+//   @media ${device.mobileL} {
+//     width: 80%;
+//     margin: 0px 0px 0px 4px;
+//     line-height: 1.3;
+//   }
+// `;
 
 const Header = styled.h3`
   font-size: 46px;
