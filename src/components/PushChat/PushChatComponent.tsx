@@ -25,6 +25,7 @@ import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -50,15 +51,22 @@ export const ChatComponent = () => {
 
       <PlayGround>
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <ChatUIProvider
-          env={'prod'}
-          theme={darkChatTheme}
-        >
-        <ChatBubbleComponent
-          chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
-          handleFaucet={setShowFaucet}
-        />
-        </ChatUIProvider>
+        <BrowserOnly fallback={<div>Loading...</div>}>
+          {() => {
+            const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
+
+            return (<ChatUIProvider
+            env={'prod'}
+            theme={darkChatTheme}
+          >
+          <ChatBubbleComponent
+            chatId={"4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"}
+            handleFaucet={setShowFaucet}
+          />
+          </ChatUIProvider>);
+          }}
+        </BrowserOnly>
+        
       </PlayGround>
 
       <BottomBar>

@@ -32,13 +32,6 @@ function BRB() {
 
   return (
     <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription}>
-       <ErrorBoundary
-        fallback={({error, tryAgain}) => (
-          <div>
-            <p>This component crashed because of error: {error.message}.</p>
-            <button onClick={tryAgain}>Try Again!</button>
-          </div>
-        )}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -56,7 +49,6 @@ function BRB() {
       {/* <Web3ReactProvider getLibrary={getLibrary}> */}
         <BRBWeb3Component />
       {/* </Web3ReactProvider> */}
-      </ErrorBoundary>
     </Layout>
   );
 }

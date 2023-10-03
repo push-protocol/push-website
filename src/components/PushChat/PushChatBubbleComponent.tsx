@@ -14,6 +14,8 @@ import { Section } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
 
 const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleFaucet: (value: boolean) => void }) => {
   const { account, library } = useWeb3React();
@@ -21,12 +23,19 @@ const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleF
   return (
     <Fragment>
       <ChatViewComponentCard>
-        <ChatViewComponent
-          chatId={chatId}
-          file={false}
-          gif={false}
-          onClick={() => handleFaucet(true)}
-        />
+      <BrowserOnly fallback={<div>Loading...</div>}>
+          {() => {
+            const ChatViewComponent = require('@pushprotocol/uiweb').ChatViewComponent;
+
+             return (<ChatViewComponent
+                chatId={chatId}
+                file={false}
+                gif={false}
+                onClick={() => handleFaucet(true)}
+              />)
+          }}
+        </BrowserOnly>
+       
       </ChatViewComponentCard>
     </Fragment>
   );
