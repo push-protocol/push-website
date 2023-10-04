@@ -93,6 +93,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-ExtraLight.otf') format('otf');
+  font-weight: 100 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-Light.otf') format('otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-Regular.otf') format('otf');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-Medium.otf') format('otf');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* @font-face {
   font-family: "FKGroteskNeue";
   src: url("../../static/fonts/FKGroteskNeue-Regular.woff2") format("woff2"),

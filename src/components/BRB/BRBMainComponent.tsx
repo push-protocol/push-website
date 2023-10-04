@@ -209,7 +209,7 @@ export const BRBMainComponent = () => {
                 <Span
                   fontSize="24px"
                   fontWeight="900"
-                  style={{ maxHeight: '24px' }}
+                  style={{ maxHeight: '24px', fontFamily:'Glancyr' }}
                 >
                   #BRB
                 </Span>
@@ -505,6 +505,7 @@ const ButtonItem = styled(Button)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
+  font-family: Glancyr;
   letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
@@ -522,6 +523,7 @@ const ButtonItem = styled(Button)`
 
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
+  font-family: Glancyr;
   @media ${device.mobileL} {
     width: 100%;
   }
@@ -535,6 +537,7 @@ const BrbWrapper = styled(ItemV)`
   justify-content: center;
   align-items: center;
   background: #000;
+  font-family: Glancyr;
 
   & .pushMissingSvg {
     width: 900px;
@@ -665,6 +668,7 @@ const StyledHeader = styled.header`
 
 const NavText = styled.div`
   color: #fff;
+  font-family: Glancyr;
   text-align: center;
   font-size: 20px;
   font-style: normal;
@@ -805,6 +809,7 @@ const IconMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
+  font-family: Glancyr !important;
   // Styles for the flags
   .flag-icon {
     width: 24px;

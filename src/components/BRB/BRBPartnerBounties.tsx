@@ -42,6 +42,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           padding="8px 16px 6px 16px"
           height="33px"
           margin='0 0 0 0'
+          fontFamily="Glancyr"
           style={{ cursor: 'pointer' }}
           onClick={() =>
             openLink(
@@ -115,6 +116,7 @@ const PartnerBountiesContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
+  font-family: Glancyr;
   color: #fff;
   margin:0px;
 `;

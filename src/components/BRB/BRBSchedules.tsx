@@ -228,6 +228,7 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const ParticipateButtonInnerText = styled(Span)`
+  font-family: Glancyr;
   @media ${device.mobileS} {
     flex: 1;
   }
@@ -344,6 +345,7 @@ const DateContainer = styled(Span)`
   color: ${(props) => props.color};
   font-size: 20px;
   font-weight: 550;
+  font-family: Glancyr;
   letter-spacing: 0.6px;
   display: flex;
   align-items: flex-end;

@@ -87,6 +87,7 @@ export const ChatComponent = () => {
           padding="8px"
           fontWeight="900"
           fontSize="16px"
+          fontFamily="Glancyr"
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
@@ -160,6 +161,7 @@ const ButtonItem = styled(Button)`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
+  font-family: Glancyr;
   color: #fff;
   margin: 0px 0px 60px;
   position: relative;
