@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
 
 ## Understanding the rules object
-The **rules** object is an optional parameter that you pass in [create group API call](./create-group) to conditional gate **joining** or **sending message** in group chat.
+The **rules** object is an optional parameter that you pass in [create group API call](/docs/chat/build/create-group) to conditional gate **joining** or **sending message** in group chat.
 
 ### Overview
 
@@ -90,7 +90,7 @@ We want to create a group that whose content is not visible to anyone outside ou
 ### Solution 
 Let's break down the problem statement into individual requirements
 
-**Visibility:** Creating a group that is not visible to anyone outside it's member is simple, we need to set up `private` flag in [create group API](create-group#create-group-api).
+**Visibility:** Creating a group that is not visible to anyone outside it's member is simple, we need to set up `private` flag in [create group API](/docs/chat/build/create-group#create-group-api).
 
 **Group Join Permission:** We have two criteria over here:
 - **Criteria 1**: User should have 1 $PUSH on Ethereum
@@ -188,7 +188,7 @@ any: [
 ```
 
 
-- Finally pass this rules object into the group that we are creating using the [create group API call](./create-group).
+- Finally pass this rules object into the group that we are creating using the [create group API call](/docs/chat/build/create-group).
 ```typescript
   // Creating your token gated community
   const createTokenGatedGroup = await userAlice.chat.group.create('Push Community', {
