@@ -42,106 +42,145 @@ function PartnerChannels() {
 
   const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = ShowcaseList;
 
-  const onEnter = () => {
-    var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
-
-    if (mediaQuery.matches) {
-      gsap.to('#item-0', { width: '0px', height: '0px' });
-      gsap.to('#item-1', { width: '0px', height: '0px' });
-      gsap.to('#item-2', { width: '0px', height: '0px' });
-      gsap.to('#item-3', { width: '0px', height: '0px' });
-      gsap.to('#item-4', { width: '0px', height: '0px' });
-      gsap.to('#item-5', { width: '0px', height: '0px' });
-      gsap.to('#item-6', { width: '0px', height: '0px' });
-  
-      gsap.to('#secondItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-1', { width: '178px', height: '178px' });
-      gsap.to('#secondItem-2', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-3', { width: '96px', height: '96px' });
-  
-      gsap.to('#secondRowItem-0', { width: '178px', height: '178px' });
-      gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-2', { width: '0px', height: '0px' });
-  
-      gsap.to('#thirdItem-0', { width: '178px', height: '178px' });
-      gsap.to('#thirdItem-1', { width: '0px', height: '0px' });
-      gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
-  
-      gsap.to('#fourItem-0', { width: '178px', height: '178px' });
-      gsap.to('#fourItem-1', { width: '0px', height: '0px' });
-      gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
-      gsap.to('#fourRowItem-2', { width: '178px', height: '178px' });
-  
-      gsap.to('#sixitem-0', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-1', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-2', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-3', { width: '0px', height: '0px' });
-    }
+  // GSAP scroll animation
+  useEffect(()=>{
+    gsap.defaults({ ease: "power3" });  
+    const blogListArray = gsap.utils.toArray(".showcaseItem");
     
-  };
+    blogListArray.forEach((item, index)=> { 
+      gsap.fromTo(item,
+        {
+          xPercent:-50*index,
+          opacity:0
+        }, 
+        {
+          xPercent:0,
+          opacity:1, 
+          duration:0.5, 
+          scrollTrigger: {
+            trigger: "#showcase-section", 
+            toggleActions: "play none none reverse", 
+            start: 'top center', // trigger element, viewport  
+            end: "center center",
+            scrub: true,
+            markers: true 
+          }
+        }
+      );
+    })
+      
 
-  useLayoutEffect(() => {
-    onEnter();
-  }, []);
+    // blogListArray.forEach((item, index)=> { 
+    //   gsap.fromTo(item, 
+    //     {
+    //       xPercent:-50*index,
+    //       opacity:0
+    //     }, 
+    //     {
+    //       xPercent:0,
+    //       opacity:1, 
+    //       duration:0.5, 
+    //       scrollTrigger: {
+    //         trigger: "#showcase-section", 
+    //         toggleActions: "play none none reverse", 
+    //         start: 'top center', // trigger element, viewport  
+    //         end: "center center",
+    //         scrub: true,
+    //         markers: true 
+    //       }
+    //     }
+    //   );
+    // })
+  },[])
 
-  useEffect(() => {
-    if (myElementIsVisible) {
-      onLeave();
-      setActive(true);
-    }
+  // const onEnter = () => {
+  //   var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
 
-    if (!myElementIsVisible) {
-      onEnter();
-      setActive(false);
-    }
-  }, [myElementIsVisible]);
+  //   if (mediaQuery.matches) {
+  //     gsap.to('#item-0', { width: '0px', height: '0px' });
+  //     gsap.to('#item-1', { width: '0px', height: '0px' });
+  //     gsap.to('#item-2', { width: '0px', height: '0px' });
+  //     gsap.to('#item-3', { width: '0px', height: '0px' });
+  //     gsap.to('#item-4', { width: '0px', height: '0px' });
+  //     gsap.to('#item-5', { width: '0px', height: '0px' });
+  //     gsap.to('#item-6', { width: '0px', height: '0px' });
+  
+  //     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-1', { width: '178px', height: '178px' });
+  //     gsap.to('#secondItem-2', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-3', { width: '96px', height: '96px' });
+  
+  //     gsap.to('#secondRowItem-0', { width: '178px', height: '178px' });
+  //     gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#secondRowItem-2', { width: '0px', height: '0px' });
+  
+  //     gsap.to('#thirdItem-0', { width: '178px', height: '178px' });
+  //     gsap.to('#thirdItem-1', { width: '0px', height: '0px' });
+  //     gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
+  
+  //     gsap.to('#fourItem-0', { width: '178px', height: '178px' });
+  //     gsap.to('#fourItem-1', { width: '0px', height: '0px' });
+  //     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
+  //     gsap.to('#fourRowItem-2', { width: '178px', height: '178px' });
+  
+  //     gsap.to('#sixitem-0', { width: '0px', height: '0px' });
+  //     gsap.to('#sixitem-1', { width: '0px', height: '0px' });
+  //     gsap.to('#sixitem-2', { width: '0px', height: '0px' });
+  //     gsap.to('#sixitem-3', { width: '0px', height: '0px' });
+  //   }
+    
+  // };
 
-  const onLeave = () => {
-    var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
+  // useLayoutEffect(() => {
+  //   onEnter();
+  // }, []);
 
-    if (mediaQuery.matches) {
-      gsap.to('#item-0', { width: '96px', height: '96px' });
-      gsap.to('#item-1', { width: '96px', height: '96px' });
-      gsap.to('#item-2', { width: '96px', height: '96px' });
-      gsap.to('#item-3', { width: '96px', height: '96px' });
-      gsap.to('#item-4', { width: '96px', height: '96px' });
-      gsap.to('#item-5', { width: '96px', height: '96px' });
+  // const onLeave = () => {
+  //   var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
 
-      gsap.to('#secondItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-2', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-3', { width: '96px', height: '96px' });
+  //   if (mediaQuery.matches) {
+  //     gsap.to('#item-0', { width: '96px', height: '96px' });
+  //     gsap.to('#item-1', { width: '96px', height: '96px' });
+  //     gsap.to('#item-2', { width: '96px', height: '96px' });
+  //     gsap.to('#item-3', { width: '96px', height: '96px' });
+  //     gsap.to('#item-4', { width: '96px', height: '96px' });
+  //     gsap.to('#item-5', { width: '96px', height: '96px' });
 
-      gsap.to('#secondRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-2', { width: '96px', height: '96px' });
+  //     gsap.to('#secondItem-3', { width: '96px', height: '96px' });
 
-      gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
+  //     gsap.to('#secondRowItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
 
-      gsap.to('#fourItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourItem-1', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-2', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
 
-      gsap.to('sixitem-0', { width: '96px', height: '96px' });
-      gsap.to('sixitem-1', { width: '96px', height: '96px' });
-      gsap.to('sixitem-2', { width: '96px', height: '96px' });
-      gsap.to('sixitem-3', { width: '96px', height: '96px' });
+  //     gsap.to('#fourItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#fourItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
+  //     gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
+  //     gsap.to('#fourRowItem-2', { width: '96px', height: '96px' });
 
-      gsap.to('plain-logo', { width: '96px', height: '96px' });
-    }
-  };
+  //     gsap.to('sixitem-0', { width: '96px', height: '96px' });
+  //     gsap.to('sixitem-1', { width: '96px', height: '96px' });
+  //     gsap.to('sixitem-2', { width: '96px', height: '96px' });
+  //     gsap.to('sixitem-3', { width: '96px', height: '96px' });
+
+  //     gsap.to('plain-logo', { width: '96px', height: '96px' });
+  //   }
+  // };
 
   return (
-    <>
+    <div className='ShowcasePartnersSection'>
       <PartnerRow>
         {
           firstRow?.map((item, idx) => (
@@ -184,7 +223,7 @@ function PartnerChannels() {
                   src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
                   srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
                   alt={`${item.alt}`}
-                  className="marqueeItem plain-logo"
+                  className={item.class}
                 />
               ))
             : seventhRow.map((item, idx) => (
@@ -195,7 +234,7 @@ function PartnerChannels() {
                   src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
                   srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
                   alt={`${item.alt}`}
-                  className="marqueeItem plain-logo"
+                  className={item.class}
                 />
               ))}
         </PartnerGridRow>
@@ -232,9 +271,9 @@ function PartnerChannels() {
       }
       </PartnerResponsiveRow>
 
-      <PartnerContent active={active}>
+      <PartnerContent>
         <PartnerContentSideRow>
-          <main className={active ? 'grid' : 'main'}>
+          <main className='grid'>
             {thirdRow?.slice(0, 2).map((item, idx) => (
               <ShowcaseLogo
                 key={idx}
@@ -324,7 +363,7 @@ function PartnerChannels() {
             ))}
           </div>
 
-          <div className={active ? 'grid' : 'main'}>
+          <div className='grid'>
             {fourthRow?.slice(0, 2).map((item, idx) => (
               <ShowcaseLogo
                 key={idx}
@@ -374,29 +413,17 @@ function PartnerChannels() {
         </PartnerRowTopAligned>
 
         <PartnerGridRow>
-          {active
-            ? eighthRow.slice(0, 2).map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className={item.class}
-                />
-              ))
-            : eighthRow.map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className={item.class}
-                />
-              ))}
+          {eighthRow.map((item, idx) => (
+            <ShowcaseLogo
+              key={idx}
+              width={item.width}
+              height={item.height}
+              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+              alt={`${item.alt}`}
+              className={item.class}
+            />
+          ))}
         </PartnerGridRow>
 
         <PartnerRowTopAligned>
@@ -435,7 +462,7 @@ function PartnerChannels() {
           ))
         }
       </PartnerRow>
-    </>
+    </div>
   );
 }
 

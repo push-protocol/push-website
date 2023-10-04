@@ -247,14 +247,22 @@ export default function Home(): JSX.Element {
           </HeroContent>
         </Section>
 
+        {/* SHOWCASE SECTION */}
+        <ShowcaseSection id="showcase-section" data-bkg="light" className="lightBackground">
+          <Content
+            className="contentBox"
+            alignSelf="center"
+          >
+            <ShowcasePartners />
+          </Content>
+        </ShowcaseSection>
+
         {/* MISSING PIECE OF WEB3 */}
         <StorySection id="story" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
           >
-            <ShowcasePartners />
-
             <Partners margin="40px 0">
               <ItemV>
                 <Span
@@ -986,6 +994,15 @@ const HeroSection = styled(ResponsiveSection)`
   padding: 0px 160px 0px 160px;
   width: 100%;
   overflow: hidden;
+`;
+
+const ShowcaseSection = styled(ResponsiveSection)`
+  width: 100%;
+  overflow: hidden;
+
+  @media ${device.tablet} {
+    padding-bottom: 32px;
+  }
 `;
 
 const StorySection = styled(ResponsiveSection)`
