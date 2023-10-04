@@ -258,6 +258,7 @@ function Header() {
                     <A
                       href="https://docs.push.org/governance/push-governance/push-governance-guide"
                       title={t('header.docs.alt-governance-guides')}
+                      target='_blank'
                       background="transparent"
                       hoverbackground="#fff"
                       padding="7px 30px"
