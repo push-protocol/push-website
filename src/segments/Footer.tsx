@@ -10,7 +10,6 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
-import EmailInputTextField from '@site/src/components/SignUp/EmailInputTextField';
 import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
 import AndroidSVG from '@site/static/assets/android.svg';
 import AppleSVG from '@site/static/assets/apple.svg';
@@ -21,6 +20,7 @@ import TelegramSVG from '@site/static/assets/telegram.svg';
 import TwitterSVG from '@site/static/assets/twitter.svg';
 import FooterFollowusFigure from '@site/static/assets/website/illustrations/footerfollowus.svg';
 import FooterJoinusFigure from '@site/static/assets/website/illustrations/footerjoinus.svg';
+import { MailingSignup } from '../components/MailingSignup/MailingSignup';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -286,7 +286,7 @@ function Footer() {
                     {t('footer.links-section.support-column.title')}
                   </Span>
 
-                  <EmailInputTextField placeholder="Email" />
+                  <MailingSignup showArrow={true} background='#0000' borderColor='#2a2a39' inputWidth='90%'/>
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>

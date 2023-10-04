@@ -25,9 +25,8 @@ import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
+import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
-import PageWrapper from "@site/src/components/PageWrapper";
-import SignupInput from "@site/src/components/SignUp/SignupInput";
 import {
   A,
   Content,
@@ -394,7 +393,7 @@ export default function Home(): JSX.Element {
               </ItemV>
 
               <ItemV>
-                <SignupInput />
+                <MailingSignup showButton={true}/>
               </ItemV>
             </SignupBox>
             <PushProductsScroll />
