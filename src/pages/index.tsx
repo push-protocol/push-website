@@ -27,7 +27,7 @@ import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import PageWrapper from "@site/src/components/PageWrapper";
-import SignupInput from "@site/src/components/SignUp/SignupInput";
+import SignupInput from "@site/src/components/SignUp";
 import {
   A,
   Content,

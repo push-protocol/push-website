@@ -9,12 +9,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { BiLoaderAlt } from "react-icons/bi";
 
 // Internal Components
 import { Span } from "@site/src/css/SharedStyling";
 
 import useEmailValidationAndSend from "@site/src/hooks/useEmailValidationAndSend";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -22,8 +22,9 @@ import { device } from "@site/src/config/globals";
 export type signupType = {
   showButton?: boolean;
   showArrow?: boolean;
-  background?:string;
-  borderColor?:string;
+  background?: string;
+  borderColor?: string;
+  inputWidth?: string;
 };
 
 function SignupInput(props: signupType) {
@@ -35,35 +36,43 @@ function SignupInput(props: signupType) {
 
   return (
     <Box>
-      <Wrapper background={props.background} border={props.borderColor} onSubmit={onEmailSubmit}>
+      <Wrapper
+        background={props.background}
+        border={props.borderColor}
+        onSubmit={onEmailSubmit}
+      >
         <SignupInputField
           type="text"
           name="email"
           placeholder="Email"
           background={props.background}
+          inputWidth={props.inputWidth}
           tabIndex={0}
           required
         />
         {props.showButton && (
           <>
-            <button tabIndex={0} type="submit">
+            <Button tabIndex={0} type="submit">
               {isLoading
                 ? t("home.email-section.loading-submit-button")
                 : t("home.email-section.submit-button")}
-            </button>
+            </Button>
             {isLoading ? <MaskInput /> : null}
           </>
         )}
         {props.showArrow && (
-          <Button
-            aria-label="Subscribe"
-            className="icon"
-            tabIndex={0}
-            type="submit"
-          >
-            {!isLoading && <AiOutlineArrowRight />}
-            {isLoading && <MaskInput />}
-          </Button>
+          <>
+            <IconButton
+              aria-label="Subscribe"
+              className="icon"
+              tabIndex={0}
+              type="submit"
+            >
+              {!isLoading && <AiOutlineArrowRight />}
+              {/* {isLoading && <MaskInput />} */}
+              {isLoading && <BiLoaderAlt size={24} className="loader" />}
+            </IconButton>
+          </>
         )}
       </Wrapper>
 
@@ -111,34 +120,34 @@ const Wrapper = styled.form`
   flex: 1;
   column-gap: 6px;
   align-items: center;
-  background: ${props=> props.background || '#ffffff'};
+  background: ${(props) => props.background || "#ffffff"};
   border-radius: 21px;
-  border: 1px solid ${props => props.border || '#ffffff'};
+  border: 1px solid ${(props) => props.border || "#ffffff"};
   padding: 5px;
   justify-content: space-between;
 
   @media ${device.tablet} {
     column-gap: 3px;
   }
+`;
 
-  & button {
-    cursor: pointer;
-    min-width: 160px;
-    color: #ffffff;
-    background: #dd44b9;
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 32px;
-    white-space: nowrap;
-    border: 0;
+const Button = styled.button`
+  cursor: pointer;
+  min-width: 160px;
+  color: #ffffff;
+  background: #dd44b9;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 32px;
+  white-space: nowrap;
+  border: 0;
 
-    @media ${device.tablet} {
-      min-width: auto;
-      font-size: 12px;
-      padding: 14px 16px;
-    }
+  @media ${device.tablet} {
+    min-width: auto;
+    font-size: 12px;
+    padding: 14px 16px;
   }
 `;
 
@@ -153,9 +162,9 @@ const SignupInputField = styled.input`
   line-height: normal;
   letter-spacing: -0.03em;
   color: #9c9cbe;
-  background: ${props=>props.background || '#ffffff'};
-  min-width: 220px;
-  width: 100%;
+  background: ${(props) => props.background || "#ffffff"};
+  // min-width: 220px;
+  width: ${(props) => props.inputWidth || "100%"};
   padding: 6px;
   padding-left: 8px;
 
@@ -181,13 +190,31 @@ const MaskInput = styled.div`
   z-index: 10;
 `;
 
-const Button = styled.span`
+const IconButton = styled.button`
   border: none;
-  position:absolute;
-  top:10px;
-  right:10px;
-  // bottom:50%;
-  // transform: translateY(-50%,-50%);
+  background: transparent;
+  cursor: pointer;
+  & svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: #dd44b9;
+  }
+
+  @keyframes loadingAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  & .loader {
+    animation-name: loadingAnimation;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
 `;
 
 export default SignupInput;

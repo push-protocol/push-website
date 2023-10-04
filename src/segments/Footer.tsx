@@ -10,8 +10,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
-import EmailInputTextField from '@site/src/components/SignUp/EmailInputTextField';
-import SignupInput from '../components/SignUp/SignupInput';
+import SignupInput from '../components/SignUp';
 import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
 import AndroidSVG from '@site/static/assets/android.svg';
 import AppleSVG from '@site/static/assets/apple.svg';
@@ -287,8 +286,7 @@ function Footer() {
                     {t('footer.links-section.support-column.title')}
                   </Span>
 
-                  {/* <EmailInputTextField placeholder="Email" /> */}
-                  <SignupInput showArrow={true} background='#0000' borderColor='#2a2a39'/>
+                  <SignupInput showArrow={true} background='#0000' borderColor='#2a2a39' inputWidth='90%'/>
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>
