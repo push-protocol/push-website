@@ -7,9 +7,9 @@ import React from "react";
 
 // External Components
 import { useTranslation } from "react-i18next";
-import styled from "styled-components";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { BiLoaderAlt } from "react-icons/bi";
+import styled from "styled-components";
 
 // Internal Components
 import { Span } from "@site/src/css/SharedStyling";
@@ -27,7 +27,7 @@ export type signupType = {
   inputWidth?: string;
 };
 
-function SignupInput(props: signupType) {
+export const MailingSignup = (props: signupType) => {
   const [isLoading, apiResponse, emailError, onEmailSubmit] =
     useEmailValidationAndSend();
 
@@ -216,5 +216,3 @@ const IconButton = styled.button`
     animation-timing-function: linear;
   }
 `;
-
-export default SignupInput;
