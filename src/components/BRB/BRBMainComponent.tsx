@@ -272,7 +272,7 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
-                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
+                <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                   <NavigationMenuHeader>
                     <Span
                       fontSize="18px"
@@ -280,7 +280,7 @@ export const BRBMainComponent = () => {
                       BRB Chat
                     </Span>
                   </NavigationMenuHeader>
-                </NavigationMenuItem> */}
+                </NavigationMenuItem>
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                   <NavigationMenuHeader>
