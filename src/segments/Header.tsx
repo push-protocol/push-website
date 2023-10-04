@@ -256,7 +256,7 @@ function Header() {
                       {t('header.docs.developer-guides')}
                     </A>
                     <A
-                      href="/docs"
+                      href="https://docs.push.org/governance/push-governance/push-governance-guide"
                       title={t('header.docs.alt-governance-guides')}
                       background="transparent"
                       hoverbackground="#fff"
