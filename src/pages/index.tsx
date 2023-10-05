@@ -387,10 +387,8 @@ export default function Home(): JSX.Element {
         </BuildWithPushSection>
         
         {/* SECTION THAT SHRINKS WHEN REACHING END */}
-        <ShrinkingSection
-          curve="bottom"
-          data-bkg="dark"
-          className="darkBackground"
+        <Section
+          background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
             id="integratePush"
@@ -400,13 +398,12 @@ export default function Home(): JSX.Element {
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_LIGHT}
-            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+            borderRadius="0px"
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="40px 0px"
           >
             
             {/* WHY YOU NEED PUSH PUSH */}
@@ -604,100 +601,116 @@ export default function Home(): JSX.Element {
 
             <Blogs count={4} />
 
-            {/* BACKED BY SECTION */}
-            <Section flexDirection="column" margin="80px 0 80px 0">
-              <Content padding="0px">
-
-                <ItemV
-                  alignItems="stretch"
-                >
-                  <InvestorHeader
-                      color="#09090B"
-                      fontSize="40px"
-                      fontWeight="700"
-                      letterSpacing="-0.02em"
-                      lineHeight="110%"
-                      margin="0"
-                    >
-                      {t("home.investors-section.title")}
-                  </InvestorHeader>
-                </ItemV>
-                <ItemV
-                  margin="80px 0 0 0"
-                  flex="1"
-                  alignItems="stretch"
-                >
-                  <MarqueeAnimation
-                    speed={MARQUEE_ANIMATION_SPEED}
-                    gradientWidth={8}
-                    gap={18}
-                  >
-                    {InvList.top.map((item) => {
-                      return (
-                        <InvestorCard 
-                          key={item.id}
-                        >
-                          <InvestorIcon
-                            width={item.title ? 64 : 'auto'}
-                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
-                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
-                            alt={`${item?.alt}`}
-                          />
-                          {item.title && 
-                            <InvestorDetails>
-                              <InvestorTitle>{item.title}</InvestorTitle>
-                              {item.subtitle && 
-                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
-                              }
-                            </InvestorDetails>
-                          }
-                        </InvestorCard>
-                      );
-                    })}
-                  </MarqueeAnimation>
-                </ItemV>
-                <ItemV
-                  margin="120px 0 0 0"
-                  flex="1"
-                  alignItems="stretch"
-                >
-                  <MarqueeAnimation
-                    speed={MARQUEE_ANIMATION_SPEED}
-                    gradientWidth={8}
-                    gap={18}
-                    direction="right"
-                  >
-                    {InvList.bottom.map((item) => {
-                      return (
-                        <InvestorCard 
-                          key={item.id}
-                          flexDirection={item.title ? 'row' : 'column'}
-                        >
-                          <InvestorIcon
-                            width={item.title ? '64px' : 'auto'}
-                            borderRadius={item.title ? '50%' : '0'}
-                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
-                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
-                            alt={`${item?.alt}`}
-                          />
-                          {item.title && 
-                            <InvestorDetails>
-                              <InvestorTitle>{item.title}</InvestorTitle>
-                              {item.subtitle && 
-                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
-                              }
-                            </InvestorDetails>
-                          }
-                        </InvestorCard>
-                      );
-                    })}
-                  </MarqueeAnimation>
-                </ItemV>
-
-              </Content>
-            </Section>
           </Content>
-        </ShrinkingSection>
+        </Section>
+
+        {/* BACKED BY SECTION */}
+        <Section
+          background={GLOBALS.COLORS.BG_DARK}
+        >
+          <ItemV
+            id="integratePush"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+          />
+
+          <Content
+            className="contentBox"
+            alignSelf="center"
+          >
+            <ItemV
+              alignItems="stretch"
+            >
+              <InvestorHeader
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                  margin="0"
+                >
+                  {t("home.investors-section.title")}
+              </InvestorHeader>
+            </ItemV>
+            <MarqueeAnimationContainer
+              margin="80px 0 40px 0"
+              flex="1"
+              alignItems="stretch"
+            >
+              <MarqueeAnimation
+                speed={MARQUEE_ANIMATION_SPEED}
+                gradientWidth={8}
+                gap={18}
+              >
+                {InvList.top.map((item) => {
+                  return (
+                    <InvestorCard 
+                      key={item.id}
+                    >
+                      <InvestorIcon
+                        width={item.title ? 64 : 'auto'}
+                        src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                        alt={`${item?.alt}`}
+                      />
+                      {item.title && 
+                        <InvestorDetails>
+                          <InvestorTitle>{item.title}</InvestorTitle>
+                          {item.subtitle && 
+                            <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                          }
+                        </InvestorDetails>
+                      }
+                    </InvestorCard>
+                  );
+                })}
+              </MarqueeAnimation>
+            </MarqueeAnimationContainer>
+            <MarqueeAnimationContainer
+              margin="80px 0 80px 0"
+              flex="1"
+              alignItems="stretch"
+            >
+              <MarqueeAnimation
+                speed={MARQUEE_ANIMATION_SPEED}
+                gradientWidth={8}
+                gap={18}
+                direction="right"
+              >
+                {InvList.bottom.map((item) => {
+                  return (
+                    <InvestorCard 
+                      key={item.id}
+                      flexDirection={item.title ? 'row' : 'column'}
+                    >
+                      <InvestorIcon
+                        width={item.title ? '64px' : 'auto'}
+                        borderRadius={item.title ? '50%' : '0'}
+                        src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                        alt={`${item?.alt}`}
+                      />
+                      {item.title && 
+                        <InvestorDetails>
+                          <InvestorTitle>{item.title}</InvestorTitle>
+                          {item.subtitle && 
+                            <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                          }
+                        </InvestorDetails>
+                      }
+                    </InvestorCard>
+                  );
+                })}
+              </MarqueeAnimation>
+            </MarqueeAnimationContainer>
+
+          </Content>
+        </Section>
         
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
@@ -937,11 +950,6 @@ const BuildWithPushSection = styled(Section)`
 
 `;
 
-const ShrinkingSection = styled(ResponsiveSection)`
-  width: 100%;
-  overflow: hidden;
-`;
-
 const ItemImage = styled(ItemV)`
   width: 100%;
   @media ${device.tablet} {
@@ -1108,18 +1116,11 @@ const LiveNetworkCard = styled(ItemV)`
 `;
 
 const PushProductContent = styled.div`
-	// display: flex;
-	// flex-direction: column;
 	padding: ${(props) => props.padding || "40px 0px 0px"};
-	// position: relative;
 
 	&.contentBox {
-	// 	width: 100%;
-  //   align-self: center;
     max-width: 1213px;
-  //   flex: 1;
-  //   display: flex;
-	// }
+	}
 
   @media ${device.tablet} {
   	padding: ${(props) => props.padding || "40px 0px"};
@@ -1135,91 +1136,6 @@ const Partners = styled(ItemV)`
   @media ${device.laptop} {
     flex-direction: column;
     gap: 30px;
-  }
-`;
-
-const SignupBox = styled(ItemH)`
-  background: #b9abef;
-  backdrop-filter: blur(10px);
-  border-radius: 32px;
-  padding: 72px;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-
-  @media ${device.tablet} {
-    padding: 24px;
-    flex-direction: column;
-  }
-`;
-
-const GrowPushCard = styled(ItemV)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 32px;
-  padding: 60px 80px;
-  width: 45%;
-
-  background: ${(props) => props.background || "#FFFBFB"};
-  border-radius: 48px;
-
-  & .figureSvg {
-    width: 100%;
-    height: 227px;
-
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-
-  @media ${device.tablet} {
-    padding: 28px;
-    border-radius: 36px;
-  }
-`;
-
-const GrowPushCardDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-`;
-
-const IntegrateGrowWithPushRow = styled(ItemH)`
-  margin: 40px 0 0 0;
-  padding: 0 160px 0 160px;
-
-  & svg.figureSvg {
-    width: 100%;
-  }
-
-  @media ${device.tablet} {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: 0;
-
-    & svg.figureSvg {
-      height: 180px;
-    }
-
-    & .growWithPushtext {
-      text-align: center;
-    }
-  }
-`;
-
-const IntegrateAndEarn = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 32px;
-  text-align: center;
-  background: rgba(235, 216, 249, 0.5);
-  backdrop-filter: blur(15px);
-  border-radius: 32px;
-  padding: 60px 300px;
-
-  @media ${device.tablet} {
-    padding: 32px 36px;
   }
 `;
 
@@ -1507,3 +1423,7 @@ const ArticleSource = styled(ItemH)`
     height: 40px;
   }
 `;
+
+const MarqueeAnimationContainer = styled(ItemV)`
+  
+`
