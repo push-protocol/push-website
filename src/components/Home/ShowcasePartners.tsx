@@ -188,7 +188,7 @@ function PartnerChannels() {
       }
       </PartnerResponsiveRow>
 
-      <PartnerContent>
+      <ShowcaseContent>
         <PartnerRowV2 itemPos="left">
           <ItemV>
             <ItemH>
@@ -376,7 +376,7 @@ function PartnerChannels() {
             </ItemH>
           </ItemV>
         </PartnerRowV2>
-      </PartnerContent>
+      </ShowcaseContent>
 
       <PartnerResponsiveRow>
       {
@@ -502,127 +502,11 @@ function PartnerChannels() {
   );
 }
 
-const PartnerRow = styled(ItemH)`
-  margin: 14px auto 0px auto;
-  gap: 28px;
-  align-items: flex-end !important;
-`;
-
-const PartnerRowTopAligned = styled(ItemH)`
-  margin: 0px auto 0px auto;
-  gap: 28px;
-  align-items: flex-start !important;
-`;
-
-const ParnterFloatRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0px auto 0px auto;
-  align-items: flex-end !important;
-  height: 100%;
-  gap: 28px;
-`;
-
-const NewSecondRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0px auto 0px auto;
-  align-items: flex-start !important;
-  height: 100%;
-  gap: 28px;
-`;
-
-const PartnerGridRow = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-`;
-
-const PartnerContentSideRow = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  align-items: center !important;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 28px;
-    width: 96px !important;
-  }
-
-  .main {
-    width: 178px !important;
-  }
-
-  @media ${device.laptopL} {
-    display: none;
-  }
-`;
-
-const ShowcaseMainContent = styled(ItemH)`
-  flex: 1;
-  min-width: 580px;
-  
-  span {
-    margin: 0px 30px;
-    text-align: center;
-
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-  @media (max-width: 1200px) {
-    padding: 30px 0px;
-  }
-`;
-
-const ResponsiveH2 = styled(H2)`
-  @media ${device.tablet} {
-    font-size: 32px;
-  }
-`;
-
-const PartnerContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  margin: 14px auto;
-
-  @media ${device.laptopL} {
-
-  }
-`;
-
-const ShowcaseLogo = styled(Image)`
-  margin: ${(props) => props.margin || "initial"};
-  opacity: ${(props) => props.opacity || "initial"};
-
-  @media ${device.laptopL} {
-    display: none;
-  }
-`
-
-
-const PartnerResponsiveRow = styled(ItemV)`
-  display: none;
-  padding: 20px 0;
-  
-  @media ${device.laptopL} {
-    display: flex;
-    flex-direction: row;
-    gap: 28px;
-  }
-`
-
-const ShowcaseLogoResponsive = styled(ShowcaseLogo)`
-  @media ${device.laptopL} {
-    display: block;
-  }
-`
-
 const PartnerRowV2 = styled(ItemH)`
+  @media ${device.laptopL} {
+    display: none;
+  }
+  
   flex-flow: nowrap;
   flex: 1;
 
@@ -682,6 +566,68 @@ const PartnerRowV2 = styled(ItemH)`
                             'flex-start' : 'initial'};
       }
     }
+  }
+`
+
+const ShowcaseLogo = styled(Image)`
+  margin: ${(props) => props.margin || "initial"};
+  opacity: ${(props) => props.opacity || "initial"};
+
+  @media ${device.laptopL} {
+    display: none;
+  }
+`
+
+const ShowcaseContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 14px auto;
+
+  @media ${device.laptopL} {
+
+  }
+`;
+
+const ShowcaseMainContent = styled(ItemH)`
+  flex: 1;
+  min-width: 580px;
+
+  @media ${device.laptopL} {
+    min-width: auto;
+  }
+  
+  span {
+    margin: 0px 30px;
+    text-align: center;
+  }
+  
+  @media (max-width: 1200px) {
+    padding: 30px 0px;
+  }
+`;
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
+`;
+
+const PartnerResponsiveRow = styled(ItemV)`
+  display: none;
+  padding: 20px 0;
+  
+  @media ${device.laptopL} {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+  }
+`
+
+const ShowcaseLogoResponsive = styled(ShowcaseLogo)`
+  @media ${device.laptopL} {
+    display: block;
   }
 `
 
