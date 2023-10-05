@@ -18,10 +18,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
-import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
+import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
@@ -50,7 +50,6 @@ import TwitterSVG from "@site/static/assets/twitter.svg";
 import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
 import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
-import GrowWithPushFigure from "@site/static/assets/website/illustrations/growwithpush.webp";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
@@ -67,11 +66,9 @@ gsap.registerPlugin(ScrollTrigger);
 // Setup some constants
 const MARQUEE_ANIMATION_SPEED = 60;
 
-export default function Home(): JSX.Element {
+export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
   const { t, i18n } = useTranslation();
-
-  const isLargeScreen = useMediaQuery("(max-width: 1250px)");
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -569,7 +566,7 @@ export default function Home(): JSX.Element {
                   fontWeight="700"
                   letterSpacing="-0.02em"
                   lineHeight="110%"
-                  margin="0"
+                  margin="0 0 40px 0"
                   width="50%"
                 >
                   {t("home.insights-section.title")}
@@ -580,7 +577,6 @@ export default function Home(): JSX.Element {
                 <A
                   href="/blog"
                   title="Exlore all articles"
-                  target="_blank"
                   hoverBackground="transparent"
                   hover="transparent"
                   background="transparent"
@@ -598,8 +594,8 @@ export default function Home(): JSX.Element {
                 </A>
               </ItemH>
             </ItemH>
-
-            <Blogs count={4} />
+            
+            <RecentBlogPosts recentPosts={recentPosts} />
 
           </Content>
         </WhyPushAndBlogSection>
@@ -639,7 +635,7 @@ export default function Home(): JSX.Element {
             </ItemV>
             
             <MarqueeAnimationContainer
-              padding="80px 0 0 0"
+              padding="120px 0 0 0"
               flex="1"
               alignItems="stretch"
             >
@@ -672,8 +668,9 @@ export default function Home(): JSX.Element {
                 })}
               </MarqueeAnimation>
             </MarqueeAnimationContainer>
+
             <MarqueeAnimationContainer
-              padding="40px 0 0 0"
+              padding="80px 0 0 0"
               flex="1"
               alignItems="stretch"
             >
@@ -1216,24 +1213,10 @@ const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
   align-self: flex-start;
-
-  padding-left: 40px;
-  padding-right: 40px;
-
-  @media ${device.laptop} {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
+  margin-bottom: 40px;
   @media ${device.tablet} {
     width: auto;
   }
-
-  @media ${device.mobileM} {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
 `;
 
 const InvestorCard = styled(ItemV)`
