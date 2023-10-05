@@ -379,6 +379,7 @@ export default function Home(): JSX.Element {
             bottom="0"
             right="0"
             left="0"
+            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
           />
           <PushProductContent className="contentBox">
             <PushProductsScroll />
@@ -923,7 +924,6 @@ const StorySection = styled(Section)`
 const BuildWithPushSection = styled(Section)`
   overflow: hidden;
   padding: 0px 160px 0px;
-  border-radius: 48px;
   width: 100%;
   overflow: hidden;
 
