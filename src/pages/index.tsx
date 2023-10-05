@@ -339,7 +339,7 @@ export default function Home(): JSX.Element {
                 <Span
                   fontWeight="500"
                   color="#121315"
-                  fontSize="22px"
+                  fontSize="19px"
                   lineHeight="142%"
                   letterSpacing="-0.03em"
                   margin="10px 0px 0px 0px"
@@ -358,7 +358,7 @@ export default function Home(): JSX.Element {
                   fontWeight="500"
                   letterSpacing="-0.03em"
                   lineHeight="26px"
-                  alignSelf="center"
+                  alignSelf="flex-start"
                   margin="0px"
                 >
                   {/* Learn about $PUSH */}
@@ -371,42 +371,18 @@ export default function Home(): JSX.Element {
         </StorySection>
         
         {/* BUILD WITH PUSH */}
-        <BuildWithPushSection
-          curve="both"
-          id="buildWithPush"
-          data-bkg="dark"
-          className="darkBackground"
-        >
-          <BodyContent className="contentBox">
-            <SignupBox margin="0 0 0px 0">
-              <ItemV justifyContent="flex-start" alignItems='flex-start' gap="12px">
-                <ResponsiveH2
-                  color="#09090B"
-                  fontSize="40px"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
-                >
-                  {t("home.email-section.title")}
-                </ResponsiveH2>
-                <Span
-                  color="#303C5E"
-                  fontSize="20px"
-                  fontWeight="400"
-                  letterSpacing="-0.03em"
-                  lineHeight="138.5%"
-                >
-                  {t("home.email-section.text")}
-                </Span>
-              </ItemV>
-
-              <ItemV>
-                <MailingSignup showButton={true}/>
-              </ItemV>
-            </SignupBox>
+        <BuildWithPushSection id="buildWithPush">
+          <ItemV
+            position="absolute"
+            background={GLOBALS.COLORS.BG_DARK}
+            top="0"
+            bottom="0"
+            right="0"
+            left="0"
+          />
+          <PushProductContent className="contentBox">
             <PushProductsScroll />
-          </BodyContent>
+          </PushProductContent>
         </BuildWithPushSection>
         
         {/* SECTION THAT SHRINKS WHEN REACHING END */}
@@ -431,75 +407,7 @@ export default function Home(): JSX.Element {
             alignSelf="center"
             padding="40px 0px"
           >
-            {/* GROW WITH PUSH */}
-            <IntegrateGrowWithPushRow gap="18px">
-              <Image
-                className="figureSvg"
-                src={require(`@site/static/assets/website/illustrations/growwithpush.webp`).default}
-                srcSet={`${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/growwithpush.webp`).default} 3x`}
-                srcSet={GrowWithPushFigure}
-                alt={t("home.grow-section.image-alt")}
-                title={t("home.grow-section.image-title")}
-                loading="lazy"
-                width="100%"
-                height="100%"
-              />
-
-              <ResponsiveH2
-                color="#121315"
-                fontSize="40px"
-                fontWeight="700"
-                letterSpacing="-0.02em"
-                lineHeight="110%"
-                margin="-32px 0 0 0"
-              >
-                {t("home.grow-section.title")}
-              </ResponsiveH2>
-
-              <Span
-                className="growWithPushtext"
-                color="#303C5E"
-                fontSize="19px"
-                fontWeight="400"
-                letterSpacing="-0.03em"
-                lineHeight="160%"
-              >
-                {t("home.grow-section.text")}
-              </Span>
-            </IntegrateGrowWithPushRow>
             
-            {/* INTEGRATE AND EARN */}
-            <ItemH margin="120px 0 0 0">
-              <IntegrateAndEarn>
-                <ResponsiveH2
-                  color="#09090B"
-                  fontSize="36px"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
-                >
-                  {t("home.grow-section.wallet-text.part1")} <br></br>{" "}
-                  {t("home.grow-section.wallet-text.part2")}
-                </ResponsiveH2>
-
-                <A
-                  href="/docs"
-                  title={t("home.grow-section.button-alt")}
-                  background="#DD44B9"
-                  borderRadius="16px"
-                  padding="10px 15px"
-                  fontSize="18px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="26px"
-                  alignSelf="center"
-                >
-                  {t("home.grow-section.button")}
-                </A>
-              </IntegrateAndEarn>
-            </ItemH>
-
             {/* WHY YOU NEED PUSH PUSH */}
             <ItemH margin="80px 0 0 0">
               <ItemV justifyContent="flex-start" alignItems="flex-start">
@@ -996,13 +904,13 @@ const HeroSection = styled(ResponsiveSection)`
   overflow: hidden;
 `;
 
-const ShowcaseSection = styled(ResponsiveSection)`
+const ShowcaseSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
 `;
 
-const StorySection = styled(ResponsiveSection)`
+const StorySection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-top: 0px;
@@ -1012,7 +920,7 @@ const StorySection = styled(ResponsiveSection)`
   }
 `;
 
-const BuildWithPushSection = styled(ResponsiveSection)`
+const BuildWithPushSection = styled(Section)`
   overflow: hidden;
   padding: 0px 160px 0px;
   border-radius: 48px;
@@ -1199,7 +1107,7 @@ const LiveNetworkCard = styled(ItemV)`
   }
 `;
 
-const BodyContent = styled.div`
+const PushProductContent = styled.div`
 	// display: flex;
 	// flex-direction: column;
 	padding: ${(props) => props.padding || "40px 0px 0px"};
