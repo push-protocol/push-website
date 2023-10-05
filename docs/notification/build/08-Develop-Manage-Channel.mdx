@@ -1,0 +1,197 @@
+---
+id: docs-notification-develop-manage-channel
+title: Manage Channel
+hide_title: true
+slug: ./manage-channel
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 8
+---
+
+# Manage channel overview
+
+This section covers all APIs related to managing channel including getting and updating channel info.
+
+<head>
+  <title>Manage Channel | Push Notification | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/components/SharedStylingV2'
+
+## Fetch channel info API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const channelInfo = await userAlice.channel.info()
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch channel info parameters
+
+| Param     | Type     | Subtype | Default             | Remarks                        |
+| --------- | -------- | ------- | ------------------- | ------------------------------ |
+| `channel` | `string` | -       | Derived from signer | Channel address in CAIP format |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+{
+  id: 23,
+  channel: '0xD8634C39BBFd4033c0d3289C4515275102423681',
+  ipfshash: 'QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
+  name: 'Updated Name',
+  info: 'Testing new description',
+  url: 'https://google.com',
+  icon: 'https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
+  processed: 1,
+  attempts: 0,
+  alias_address: 'NULL',
+  alias_blockchain_id: 'NULL',
+  is_alias_verified: 1,
+  blocked: 0,
+  alias_verification_event: '{"aliasAddress": "eip155:420:0xD8634C39BBFd4033c0d3289C4515275102423681", "aliasBlockchainId": "420"}',
+  activation_status: 1,
+  verified_status: 0,
+  subgraph_details: null,
+  counter: null,
+  timestamp: '2023-10-04T11:53:09.000Z',
+  subgraph_attempts: 0,
+  channel_settings: '[]',
+  subscriber_count: 0
+}
+```
+
+</details>
+
+## Search channel API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const searchedChannels = await userAlice.channel.search('push')
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Search channel parameters
+
+| Param     | Type          | Subtype  | Default | Remarks                                             |
+| --------- | ------------- | -------- | ------- | --------------------------------------------------- |
+| _`query`_ | `string`      | -        |         | The search query to find channels                   |
+| `options` | `object`      | -        |         | Configuration options for the search                |
+| -         | options.page  | `number` | `1`     | The page of results to retrieve                     |
+| -         | options.limit | `number` | `10`    | The maximum number of channels to retrieve per page |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+[
+  {
+    id: 2,
+    channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
+    ipfshash: 'QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
+    name: 'Ethereum Push Notification Service',
+    info: 'The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.',
+    url: 'https://epns.io/',
+    icon: 'https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
+    processed: 1,
+    attempts: 0,
+    alias_address: 'NULL',
+    alias_blockchain_id: 'NULL',
+    is_alias_verified: 0,
+    blocked: 0,
+    alias_verification_event: null,
+    activation_status: 1,
+    verified_status: 0,
+    subgraph_details: null,
+    counter: null,
+    timestamp: '2022-12-12T05:17:02.000Z',
+    subgraph_attempts: 0,
+    channel_settings: null,
+    subscriber_count: 11,
+  },
+  {
+    id: 96,
+    channel: '0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d',
+    ipfshash: 'QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
+    name: 'test with push',
+    info: 'test with push',
+    url: 'https://push.org',
+    icon: 'https://gateway.ipfs.io/ipfs/bafybeicsksoatvksk4xazftcehg6sodevkgzkzuuvoz3htzt7ejskbdu2y/QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
+    processed: 1,
+    attempts: 0,
+    alias_address: 'NULL',
+    alias_blockchain_id: 'NULL',
+    is_alias_verified: 0,
+    blocked: 0,
+    alias_verification_event: null,
+    activation_status: 1,
+    verified_status: 0,
+    subgraph_details: null,
+    counter: null,
+    timestamp: '2023-01-10T04:42:26.000Z',
+    subgraph_attempts: 0,
+    channel_settings: null,
+    subscriber_count: 0,
+  },
+]
+```
+
+</details>
+
+## Fetch channel subscribers API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const channelSubscribers = await userAlice.channel.subscribers()
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch channel subscribers parameters
+
+| Param     | Type            | Subtype  | Default             | Remarks                                           |
+| --------- | --------------- | -------- | ------------------- | ------------------------------------------------- |
+| `options` | `object`        | -        | -                   | Configuration options for retrieving subscribers. |
+| -         | options.channel | `atring` | Derived from signer | Channel address in CAIP                           |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+[
+  'eip155:0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
+  'eip155:0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d',
+]
+```
+
+</details>
