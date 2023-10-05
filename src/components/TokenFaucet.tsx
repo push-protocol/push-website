@@ -39,7 +39,8 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
     <Container ref={clickRef}>
       <HeaderContainer>
         <Image
-          width={65}
+          width={108}
+          height={41}
           src={require(`@site/static/assets/website/brb/others/PushLogoTextWhite.webp`).default}
           srcSet={`${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/PushLogoTextWhite@3x.webp`).default} 3x`}
           alt={`Image showing BRB Chat is powered by Push Chat`}
@@ -49,13 +50,16 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
           color="#F0A5FC"
           margin="5px 0px 0px 16px"
           flex="1"
+          letterSpacing="1.5px"
           style={{ maxHeight: '20px' }}
         >
           TOKEN FAUCET
         </Span>
         <Button
+          position="absolute"
           background="transparent"
           padding="0px"
+          style={{top:'5px', right:'5px'}}
           onClick={() => handleFaucet(false)}
           alignSelf="flex-end"
         >
@@ -134,7 +138,7 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
         </ItemH>
       </InputContainer>
       <InputContainer>
-        <Label>2. Join Discord and Share a link of your post in #brb-faucet</Label>
+        <Label>2. Join Discord and Share a link of your post in <span style={{color:'#F878DC'}}>#brb-faucet</span></Label>
         <ButtonItem
           borderRadius="12px"
           background={isJoined ? '#FFF' : '#3C63C6'}
@@ -180,11 +184,11 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
       <ItemV
         justifyContent="flex-start"
         alignItems="flex-start"
-        margin="19px 0px 0px 10px"
+        margin="12px 0px 0px 10px"
         gap="3px"
       >
-        <Span>* Twitter account must be 30 days old with 50+ followers to claim.</Span>
-        <Span>* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
+        <Span fontWeight='300' fontSize="10px" color="#B5BCD6">* Twitter account must be 30 days old with 50+ followers to claim.</Span>
+        <Span fontWeight='300' fontSize="10px" color="#B5BCD6">* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
       </ItemV>
     </Container>
   );

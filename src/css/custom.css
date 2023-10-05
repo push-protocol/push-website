@@ -94,24 +94,32 @@
 }
 
 @font-face {
-  font-family: 'Glancyr';
-  src: url('../../static/fonts/Glancyr-ExtraLight.otf') format('otf');
-  font-weight: 100 200;
+  font-family: 'Green Brooks';
+  src: url('../../static/fonts/GreenBrooks.otf') format('opentype');
+  /* font-weight: 800; */
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Glancyr';
-  src: url('../../static/fonts/Glancyr-Light.otf') format('otf');
-  font-weight: 300;
+  src: url('../../static/fonts/Glancyr-ExtraLight.otf') format('opentype');
+  font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Glancyr';
-  src: url('../../static/fonts/Glancyr-Regular.otf') format('otf');
+  src: url('../../static/fonts/Glancyr-Light.otf') format('opentype');
+  font-weight: 200 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-Regular.otf') format('opentype');
   font-weight: 400 500;
   font-style: normal;
   font-display: swap;
@@ -119,8 +127,16 @@
 
 @font-face {
   font-family: 'Glancyr';
-  src: url('../../static/fonts/Glancyr-Medium.otf') format('otf');
+  src: url('../../static/fonts/Glancyr-Medium.otf') format('opentype');
   font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glancyr';
+  src: url('../../static/fonts/Glancyr-Bold.otf') format('opentype');
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }

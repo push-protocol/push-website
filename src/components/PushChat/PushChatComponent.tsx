@@ -79,13 +79,14 @@ export const ChatComponent = () => {
           fontWeight="400"
         >
           This is a token gated group. You can join but will need{' '}
-          <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be able to send
+          <span style={{ color: '#E64DE9', fontWeight: '400' }}>1 $PUSH</span> in your wallet to be able to send
           messages.
         </Span>
         <ButtonItem
           background="#E64DE9"
           padding="8px"
-          fontWeight="900"
+          margin="0px 0px 0px 16px"
+          fontWeight="500"
           fontSize="16px"
           fontFamily="Glancyr"
           onClick={() => setShowFaucet(true)}

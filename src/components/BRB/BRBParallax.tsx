@@ -219,7 +219,7 @@ const ParallaxContent = styled(ItemV)`
 
 const ParallaxHeader = styled(Span)`
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: inherit;
   color: #E64DE9;
   font-stretch: ultra-expanded;

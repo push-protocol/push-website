@@ -82,7 +82,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           <BountyItem>
             <PriceSpan
               fontSize="32px"
-              fontWeight="400"
+              fontWeight="500"
             >
               ${item.price.toLocaleString()}
             </PriceSpan>
@@ -198,7 +198,7 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const TextSpan = styled(Span)`
-  font-weight: 600;
+  font-weight: 300;
   font-size: 18px;
   color: var(--ifm-color-primary-inverse);
 
