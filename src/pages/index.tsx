@@ -386,8 +386,8 @@ export default function Home(): JSX.Element {
           </PushProductContent>
         </BuildWithPushSection>
         
-        {/* SECTION THAT SHRINKS WHEN REACHING END */}
-        <Section
+        {/* WHY PUSH AND BLOG */}
+        <WhyPushAndBlogSection
           background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
@@ -602,10 +602,10 @@ export default function Home(): JSX.Element {
             <Blogs count={4} />
 
           </Content>
-        </Section>
+        </WhyPushAndBlogSection>
 
         {/* BACKED BY SECTION */}
-        <Section
+        <BackedBySection
           background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
@@ -622,10 +622,10 @@ export default function Home(): JSX.Element {
           <Content
             className="contentBox"
             alignSelf="center"
+            width="inherit"
           >
             <ItemV
               alignItems="stretch"
-              margin="0 0 80px 0"
             >
               <InvestorHeader
                   color="#09090B"
@@ -633,13 +633,13 @@ export default function Home(): JSX.Element {
                   fontWeight="700"
                   letterSpacing="-0.02em"
                   lineHeight="110%"
-                  margin="0"
                 >
                   {t("home.investors-section.title")}
               </InvestorHeader>
             </ItemV>
+            
             <MarqueeAnimationContainer
-              padding="80px 0 40px 0"
+              padding="80px 0 0 0"
               flex="1"
               alignItems="stretch"
             >
@@ -673,7 +673,7 @@ export default function Home(): JSX.Element {
               </MarqueeAnimation>
             </MarqueeAnimationContainer>
             <MarqueeAnimationContainer
-              padding="80px 0 40px 0"
+              padding="40px 0 0 0"
               flex="1"
               alignItems="stretch"
             >
@@ -711,7 +711,7 @@ export default function Home(): JSX.Element {
             </MarqueeAnimationContainer>
 
           </Content>
-        </Section>
+        </BackedBySection>
         
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
@@ -945,7 +945,7 @@ const BuildWithPushSection = styled(Section)`
   }
 
   @media ${device.laptopL} {
-    padding: 0px 160px 40px;
+    padding: 0px 20px 40px;
   }
 
 `;
@@ -975,28 +975,6 @@ const FeaturedInSection = styled(Section)`
     padding-top: 0;
     margin-top: 60px;
     // margin-top: 160px;
-  }
-`;
-
-const FeaturedInMarquee = styled(ItemH)``;
-
-const ResponsiveHeroContent = styled(ItemH)`
-  @media ${device.tablet} {
-    flex-direction: column;
-    margin-top: 240px;
-  }
-`;
-
-const HeroBox = styled(ItemV)`
-  flex: 0 0 52%;
-
-  @media ${device.tablet} {
-    flex: 1;
-
-    & span {
-      font-weight: 400;
-      font-size: 18px;
-    }
   }
 `;
 
@@ -1034,14 +1012,6 @@ const PushWorksRow = styled(ItemH)`
     flex-direction: column;
     margin-top: 80px;
     margin-bottom: 80px;
-  }
-`;
-
-const PoweringCommunicationRow = styled(ItemH)`
-  margin: 80px 0 50px 0;
-
-  @media ${device.tablet} {
-    margin-top: 80px;
   }
 `;
 
@@ -1232,73 +1202,14 @@ const WhyPushTextBox = styled(ItemH)`
   }
 `;
 
-const BuiltByIntro = styled(ItemH)`
-  margin: 120px 160px;
-
-  @media ${device.tablet} {
-    margin: 40px 0;
-  }
-`;
-
-const FeaturedCell = styled.div`
-  width: 568px;
-  height: 224px;
-
-  padding: 48px 32px;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 30px;
-
-  flex-basis: 100%;
-
-  border: 1px solid #fff;
-  border-left: 0;
-  color: "#FFF";
-
-  &::before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0;
-    height: 8px;
-    width: 96px;
-    background: #dd44b9;
-  }
-
-  &:hover {
-    background: linear-gradient(251.72deg, #dd44b9 14.29%, #8b6fd9 86.35%);
-
-    &::before {
-      background: #ffffff;
-    }
-
-    & a {
-      color: #fff;
-    }
-  }
-`;
-
-const BuiltByCards = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+const WhyPushAndBlogSection = styled(Section)`
   width: 100%;
-  gap: 26px;
-
-  transition: all 350ms linear;
+  overflow: hidden;
 `;
 
-const TeamMemberButtons = styled(ItemH)`
-  @media ${device.tablet} {
-    & a {
-      width: 100%;
-    }
-  }
+const BackedBySection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
 `;
 
 const InvestorHeader = styled(ResponsiveH2)`
@@ -1306,10 +1217,23 @@ const InvestorHeader = styled(ResponsiveH2)`
   width: 60%;
   align-self: flex-start;
 
-  @media ${device.tablet} {
-    width: 100%;
-    text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @media ${device.laptop} {
+    padding-left: 25px;
+    padding-right: 25px;
   }
+
+  @media ${device.tablet} {
+    width: auto;
+  }
+
+  @media ${device.mobileM} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
 `;
 
 const InvestorCard = styled(ItemV)`
@@ -1348,7 +1272,7 @@ const InvestorSubtitle = styled(Span)`
 `
 
 const FeaturedCardList = styled(ItemH)`
-  margin: 0 0 320px 0;
+  margin: 0 0 0 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemV)`    
