@@ -89,9 +89,9 @@ export default function Home(): JSX.Element {
 
     gsap.to("#integratePush", {
       scrollTrigger: {
-        trigger: "#newone",
-        start: "center top",
-        end: "+=500",
+        trigger: "#mediaFeaturedInSection",
+        start: "top top",
+        end: "bottom top",
         scrub: true,
         markers: false,
       },
@@ -625,6 +625,7 @@ export default function Home(): JSX.Element {
           >
             <ItemV
               alignItems="stretch"
+              margin="0 0 80px 0"
             >
               <InvestorHeader
                   color="#09090B"
@@ -638,7 +639,7 @@ export default function Home(): JSX.Element {
               </InvestorHeader>
             </ItemV>
             <MarqueeAnimationContainer
-              margin="80px 0 40px 0"
+              padding="80px 0 40px 0"
               flex="1"
               alignItems="stretch"
             >
@@ -672,7 +673,7 @@ export default function Home(): JSX.Element {
               </MarqueeAnimation>
             </MarqueeAnimationContainer>
             <MarqueeAnimationContainer
-              margin="80px 0 80px 0"
+              padding="80px 0 40px 0"
               flex="1"
               alignItems="stretch"
             >
@@ -714,14 +715,14 @@ export default function Home(): JSX.Element {
         
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
-          id="featuredIn"
-          data-bkg="dark"
-          className="darkBackground"
+          id="mediaFeaturedInSection"
+          background={GLOBALS.COLORS.BG_DARK}
         >
           <Content
             className="contentBox"
             padding="40px"
             alignSelf="flex-start"
+            id="MediaFeaturedIn"
           >
 
             <ItemH justifyContent="flex-start">
@@ -742,7 +743,6 @@ export default function Home(): JSX.Element {
 
           <FeaturedCardList
             className="featuredInMarquee"
-            id="newone"
           >
             <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
               {MediaList.map((item) => {
@@ -962,7 +962,7 @@ const ItemImage = styled(ItemV)`
   }
 `;
 
-const FeaturedInSection = styled(ResponsiveSection)`
+const FeaturedInSection = styled(Section)`
   padding: 0;
   min-height: auto;
   flex-direction: column;
