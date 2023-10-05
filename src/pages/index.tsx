@@ -252,6 +252,7 @@ export default function Home(): JSX.Element {
           <Content
             className="contentBox"
             alignSelf="center"
+            padding="120px 40px 0px 40px"
           >
             <ShowcasePartners />
           </Content>
@@ -999,15 +1000,13 @@ const HeroSection = styled(ResponsiveSection)`
 const ShowcaseSection = styled(ResponsiveSection)`
   width: 100%;
   overflow: hidden;
-
-  @media ${device.tablet} {
-    padding-bottom: 32px;
-  }
+  padding-bottom: 0px;
 `;
 
 const StorySection = styled(ResponsiveSection)`
   width: 100%;
   overflow: hidden;
+  padding-top: 0px;
 
   @media ${device.tablet} {
     padding-bottom: 32px;
