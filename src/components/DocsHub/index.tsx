@@ -85,7 +85,7 @@ const DevGuide: DevGuideItems[] = [
   {
     title: 'Notifications',
     Svg: require('@site/static/assets/docs/notification.svg').default,
-    link: 'https://docs.push.org/developers/concepts/web3-notifications',
+    link: '/docs/notification',
     description: (
       <>
         Explore different ways of sending and receiving notifications and more.
