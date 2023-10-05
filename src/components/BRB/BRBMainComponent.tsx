@@ -509,6 +509,7 @@ const ButtonItem = styled(Button)`
   letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
+    border: 1px solid transparent;
   }
   &:hover:after {
     opacity: 0;
@@ -524,6 +525,9 @@ const ButtonItem = styled(Button)`
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
   font-family: Glancyr;
+  &:hover{
+    border: 1px solid transparent;
+  }
   @media ${device.mobileL} {
     width: 100%;
   }
