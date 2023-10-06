@@ -42,7 +42,12 @@ const aliceSubscriptions = await userAlice.notification.subscriptions()
 
 ### Fetch Notification Subscriptions parameters
 
-TODO
+| Param     | Type              | SubType  | Default | Remarks                                                            |
+| --------- | ----------------- | -------- | ------- | ------------------------------------------------------------------ |
+| `options` | `object`          | -        | -       | An object containing additional options for subscriptions          |
+| -         | `options.account` | `string` | -       | Account in full CAIP                                               |
+| -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.             |
+| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -53,7 +58,7 @@ TODO
 </summary>
 
 ```typescript
-;[
+[
   { channel: '0xD8634C39BBFd4033c0d3289C4515275102423681' },
   { channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924' },
 ]

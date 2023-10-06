@@ -44,7 +44,12 @@ const subscribeResponse = await userAlice.notification.subscribe(
 
 ### Subscribe channel notification parameters
 
-TODO
+| Param       | Type                | SubType                | Default | Remarks                                                                 |
+| ----------- | ------------------- | ---------------------- | ------- | ----------------------------------------------------------------------- |
+| _`channel`_ | `string`            | -                      | -       | Channel/Alias address in CAIP format                                    |
+| `options`   | `object`            | -                      | -       | An object containing additional options for subscribing a channel       |
+| -           | `options.onSuccess` | `() => void`           | -       | A callback function to execute when the subscription is successful.     |
+| -           | `options.onError`   | `(err: Error) => void` | -       | A callback function to execute when an error occurs during subscription |
 
 > Note: Parameters _`in this style`_ are mandatory.
 

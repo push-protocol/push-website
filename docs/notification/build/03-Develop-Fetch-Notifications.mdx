@@ -43,7 +43,15 @@ const spamNotifications = await userAlice.notification.list('SPAM')
 
 ### Notification list parameters
 
-TODO
+| Param     | Type               | SubType    | Default | Remarks                                                                 |
+| --------- | ------------------ | ---------- | ------- | ----------------------------------------------------------------------- |
+| _`spam`_  | `INBOX` or `SPAM`  | -          | INBOX   | A string representing the type of feed to retrieve.                     |
+| `options` | `object`           | -          | -       | An object containing additional options for filtering and pagination.   |
+| -         | `options.account`  | `string`   | -       | Account in full CAIP                                                    |
+| -         | `options.channels` | `string[]` | -       | An array of channels to filter feeds by.                                |
+| -         | `options.page`     | `number`   | -       | A number representing the page of results to retrieve.                  |
+| -         | `options.limit`    | `number`   | -       | A number representing the maximum number of feeds to retrieve per page. |
+| -         | `options.raw`      | `boolean`  | -       | A boolean indicating whether to retrieve raw feed data.                 |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -54,7 +62,7 @@ TODO
 </summary>
 
 ```typescript
-;[
+[
   {
     cta: '',
     title: 'test',

@@ -188,10 +188,74 @@ const channelSubscribers = await userAlice.channel.subscribers()
   <summary><b>Expected response</b></summary>
 
 ```typescript
-;[
-  'eip155:0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
-  'eip155:0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d',
-]
+// PushAPI.channels.getSubscribers | Response - 200 OK
+{
+    "itemcount": 10,
+    "subscribers": [
+        "0x1d4f52775344f9a32093af0ccd03a4fb6dac8e30",
+        "0x28d615edd8404f8ca1e0271a0b5a48171589921a",
+        "0x4352639b99689069f9b0b847eee349c3c1b0706c",
+        "0x50029e62540537045bcfd3d320483865344edb33",
+        "0x5ac9e6205eaca2bbba6ef716fd9aabd76326eeee",
+        "0x778d3206374f8ac265728e18e3fe2ae6b93e4ce4",
+        "0xa44f2994750cf774eab05751d90ade4dedabe7fe",
+        "0xbcfb7da1dcf40e8cfb331683bb7d6f4eba091b08",
+        "0xcf5dbf241fc65a5af56c95101ac4e9ec2c57d941",
+        "0xd8634c39bbfd4033c0d3289c4515275102423681"
+    ]
+}
+```
+
+</details>
+
+## Update channel API
+
+:::note
+This function requires the wallet to have some Push Tokens and eth to pay for gas fees.
+
+_`No. of Push Token Required = 50 + (No. of Times Channel Has been updated) * 50`_
+:::
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// updates channel info
+const updateChannelRes = await userAlice.channel.update({
+  name: newChannelName,
+  description: newChannelDescription,
+  url: newChannelURL,
+  icon: newBase64FormatImage,
+  alias: newAliasAddressInCAIP,
+})
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Update channel parameters
+
+| Param       | Type                    | Subtype                   | Default | Remarks                                                            |
+| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------ |
+| _`options`_ | `object`                | -                         | -       | Configuration options for updating a channel                       |
+| -           | _`options.name`_        | `string`                  | -       | New name of the channel                                            |
+| -           | _`options.description`_ | `string`                  | -       | New description of the channel                                     |
+| -           | _`options.icon`_        | `string (base64 encoded)` | -       | New channel's icon in base64 encoded string format                 |
+| -           | _`options.url`_         | `string`                  | -       | New URL associated with the channel                                |
+| -           | `options.alias`         | `string`                  | -       | New alias address in CAIP                                          |
+| -           | `options.progresshook`  | `() => void`              | -       | A callback function to execute when the channel updaton progresses |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+{
+  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32'
+}
 ```
 
 </details>

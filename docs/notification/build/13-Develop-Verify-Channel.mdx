@@ -1,0 +1,77 @@
+---
+id: docs-notification-develop-verify-channel
+title: Verify Channel
+hide_title: true
+slug: ./verify-channel
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 13
+---
+
+# Verify channel overview
+
+This section covers APIs to verify a channel.
+
+<head>
+  <title>Verify Channel | Push Notification | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling'
+
+## What are verified channels?
+
+EPNS Core contract also includes a new Channel Verification feature which allows Channels to have a verification tag.
+
+The verification tag of a Channel has its own significance. While on one hand, a verified channel enhances the user’s reliability on the channel and its notifications, it also gets a comparatively better position on the User interface.
+
+## Understanding the Channel Verification procedure
+
+Channels in the EPNS Core protocol can have either a Primary or a Secondary verification tag.
+
+a. Primary Verification tag: Channels that have directly been verified by the Push Channel Admin are the ones that have a primary verification tag.
+All Primary Verified channels have the power to verify other unverified channels.
+
+b. Secondary Verification tag: Channels that have been verified by other Primary Verified channels and not directly by the Push Channel Admin, have a secondary verification tag.
+
+## Verify Channel API
+
+:::note
+The wallet must have a channel with verification tag to verify other channels.
+:::
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const verifyChannelRes = await userAlice.channel.verify(channelToBeVerified)
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Verify channel parameters
+
+| Param                   | Type     | Subtype | Default | Remarks                                |
+| ----------------------- | -------- | ------- | ------- | -------------------------------------- |
+| _`channelToBeVerified`_ | `string` | -       | -       | Channel address in CAIP to be verified |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+{
+  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32'
+}
+```
+
+</details>

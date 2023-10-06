@@ -9,7 +9,9 @@ sidebar_position: 1
 
 # Intro to Push Notifcation
 
-TODO
+Push Protocol provides a robust and decentralized push notification
+service. This product enables blockchain projects, decentralized applications (dApps), and
+service providers to send push notifications to their users in real time through an open network.
 
 <head>
   <title>Introduction | Push Notification | Push Documentation</title>
@@ -27,15 +29,19 @@ import {
   ModalWrapper,
   AFocus,
   ModalMidEqual,
+  AImp,
 } from '@site/src/css/SharedStyling'
 
 ## Why Push Notification?
 
-TODO
+Push is building the communication layer for Web3, using which any dApp, smart contract, or backend can send any real-time notifications that are tied directly to a user's wallet address (aka Web3 usernames).
+
+This addresses a major gap in the Web3 infrastructure and improves the everyday experience for blockchain users. The notifications (or any other communications) are off-chain and gasless for all scenarios except when a smart contract sends them (in which case the smart contract pays a slightly higher gas fee for the payload that is sent on the blockchain).
 
 ## How Push Notification works?
 
-TODO
+The very first step to send a notifciation is to create a channel on Push which activates themselves as a service on Push Protocol.
+All notifications from a channel is signed and validated by a set of nodes, which are together called Push Network. Read <AImp href="notification/concepts/push-notification-architecture">understanding Push Notification in detail</AImp> for a detailed explanation of its architecture, spam control, decentralization efforts and more!
 
 ## SDKs
 
@@ -262,14 +268,6 @@ TODO
 </ModalSmall>
 
 </ModalContainer>
-
-## Sending Notification with Push
-
-TODO
-
-## Receiving Notification with Push
-
-TODO
 
 ## Partners
 
