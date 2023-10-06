@@ -1,0 +1,83 @@
+---
+id: docs-notification-develop-stream-notifications
+title: Stream Notifications
+hide_title: true
+slug: ./stream-notifications
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 15
+---
+
+# Stream notifications overview
+
+These APIs enable you to receive notifications ( inbox or spam ) in real time without polling the API. Push notification achieves this by the use of sockets.
+
+<head>
+  <title>Stream Notifications | Push Notification | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from '@site/src/css/SharedStyling'
+
+## Stream Notification API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+userAlice.stream.on(STREAM.NOTIF, (data: any) => {
+  console.log(data)
+})
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Stream notification events
+
+| Param    | Type               | When is it triggered?                                 |
+| -------- | ------------------ | ----------------------------------------------------- |
+| `EVENTS` | -                  | -                                                     |
+| -        | `STREAM.NOTIF`     | Whenever a new notification is emitted for the wallet |
+| -        | `STREAM.NOTIF_OPS` | Other channel / notification events                   |
+
+<details>
+  <summary><b>Expected response</b></summary>
+
+```typescript
+{
+  payload_id: 1791,
+  sender: '0xD8634C39BBFd4033c0d3289C4515275102423681',
+  epoch: '2023-10-05T06:47:48.000Z',
+  payload: {
+    data: {
+      app: 'Updated Name',
+      url: 'https://google.com',
+      acta: '',
+      aimg: '',
+      amsg: 'test',
+      asub: 'test',
+      icon: 'https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
+      type: 3,
+      etime: null,
+      hidden: '0',
+      silent: '0',
+      sectype: null,
+      additionalMeta: null
+    },
+    recipients: { 'eip155:0xd8634c39bbfd4033c0d3289c4515275102423681': null },
+    notification: { body: 'test', title: 'Updated Name - test' },
+    verificationProof: 'eip712v2:0x572b50ebddcf39b1d0528ec16a5b9d4382ff26286da0d9400b1c21d1344a969068bafa3b877280c25d3755fb2484bf00774723714146e21f196c8e850193018b1c::uid::adefe207-b046-48d0-a39b-f919abd4b23a'
+  },
+  source: 'ETH_TEST_GOERLI'
+}
+```
+
+</details>
