@@ -84,7 +84,7 @@ export const Content = styled.div`
   @media ${device.mobileM} {
     padding: ${(props) =>
       props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
-    max-width: 100%;
+    max-width: ${(props) => props.maxWidth || "100%"};
   }
 `;
 
