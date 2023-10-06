@@ -38,20 +38,42 @@ function TermsOfService() {
 
   return (
     <Layout title={PageMeta.TOS.pageTitle} description={PageMeta.TOS.pageDescription}>
-      {/* <Head>
-        <meta property="og:image" content="image.png" />
+      <Head>
+        {/* <!-- HTML Meta Tags --> */}
+        <title>Push (Previously EPNS) Communication Protocol of Web3</title>
+        <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push (Previously EPNS)" />
+        <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
+        <meta property="og:image" content="https://push.org/previews/homepage.jpg" />
+
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href="https://example.com" />
+        <meta property="twitter:domain" content="push.org" />
+        <meta property="twitter:url" content="https://push.org" />
+        <meta name="twitter:title" content="Push (Previously EPNS)" />
+        <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
+        <meta name="twitter:image" content="https://push.org/previews/homepagetwitter.jpg" />
+
+        {/* <!-- fix index issues --> */}
+        <meta name="robots" content="noindex" />
+        <meta name="googlebot" content="noindex" />
+
+  
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org/',
             '@type': 'Organization',
-            name: 'Meta Open Source',
-            url: 'https://opensource.fb.com/',
-            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+            name: 'Push Protocol',
+            url: 'https://push.org/',
+            logo: '/assets/website/favicon.ico',
           })}
         </script>
-      </Head> */}
+        </Head>
+        
       <TosWrapper>
         <ResponsiveSection
           curve="bottom"
