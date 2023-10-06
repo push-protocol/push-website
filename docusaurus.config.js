@@ -15,7 +15,7 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
-  trailingSlash: false,
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -37,38 +37,32 @@ const config = {
   // Static linking
   staticDirectories: ["public", "static"],
 
-  presets: [
-    [
-      "classic",
-      {
-        gtag: {
-          trackingID: "G-N9ZHXNRLYL",
-        },
-        docs: {
-          path: "docs",
-          routeBasePath: "docs",
-          sidebarPath: require.resolve("./sidebars.js"),
-          sidebarCollapsed: false,
-          // Please change this to your repo.
-          // Remove this to remove the 'edit this page' links.
-          editUrl:
-            "https://github.com/ethereum-push-notification-service/push-documentation/",
-        },
-        blog: {
-          showReadingTime: true,
-          path: "blog",
-          routeBasePath: "blog",
-          blogSidebarTitle: "All posts",
-          blogSidebarCount: "ALL",
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      },
-    ],
-  ],
 
   plugins: [
+    [
+      "./plugins/blog-plugin",
+      {
+        id: "blog",
+        path: "./blog",
+        routeBasePath: "blog",
+        blogSidebarTitle: "All posts",
+        blogSidebarCount: "ALL",
+        showReadingTime: true,
+        readingTime: ({content, frontMatter, defaultReadingTime}) =>
+          defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        feedOptions: {
+          type: 'all',
+          createFeedItems: async (params) => {
+            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+            return defaultCreateFeedItems({
+              // keep only the 10 most recent blog posts in the feed
+              blogPosts: blogPosts.filter((item, index) => index < 10),
+              ...rest,
+            });
+          },
+        }
+      },
+    ],
     require.resolve("./plugins/custom-webpack-plugin"),
     //   [
     //     "@docusaurus/plugin-client-redirects",
@@ -96,6 +90,31 @@ const config = {
     //       },
     //     },
     //   ],
+  ],
+
+  presets: [
+    [
+      "classic",
+      {
+        gtag: {
+          trackingID: "G-N9ZHXNRLYL",
+        },
+        docs: {
+          path: "docs",
+          routeBasePath: "docs",
+          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarCollapsed: false,
+          // Please change this to your repo.
+          // Remove this to remove the 'edit this page' links.
+          editUrl:
+            "https://github.com/ethereum-push-notification-service/push-documentation/",
+        },
+        blog: false,
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
   ],
 
   themeConfig:
