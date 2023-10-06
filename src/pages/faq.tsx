@@ -951,3 +951,5 @@ const TopSection = styled(Section)`
 
 
 export default FAQ;
+
+

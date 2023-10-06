@@ -852,3 +852,5 @@ const TopSection = styled(Section)`
 `;
 
 export default Privacy;
+
+

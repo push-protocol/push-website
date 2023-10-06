@@ -887,3 +887,5 @@ const ShowMoreSection = styled.div`
 `;
 
 export default FrensText;
+
+
