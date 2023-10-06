@@ -1,0 +1,104 @@
+---
+id: docs-notification-develop-fetch-chats
+title: Create Channel
+hide_title: true
+slug: ./create-channel
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 7
+---
+
+# Create Channel overview
+
+This API is useful for creating a channel, which is the first step for sending a notification on Push Protocol.
+
+<head>
+  <title>Create Channel | Push Notifcation | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling'
+
+## What is a Channel
+
+Any user who activates themselves as a service on the protocol to send notifications for its users can be considered a Channel.
+
+In other words, any service, i.e., a dapp, protocol, or even a web2 service, that wants to send notifications out to its web3 users can choose to become a channel and establish an adequate communication bridge with its users.
+
+The creation of a channel is just a one-time simple procedure. It must be noted that channel creation only happens on the Ethereum blockchain and one wallet address can only create one channel only the protocol.
+:::note
+Although channel creation only happens on the Ethereum blockchain, the protocol is designed to be chain-agnostic, i.e., channel owners can choose to send notification on any chain of their choice and not just Ethereum network by specifying channel alias details.
+:::
+
+A successfully created channel is capable of sending notifications to its subscribers, directly tied to their wallet addresses. Any wallet address can become a subscriber of a particular channel by simply opting into that channel.
+
+Once opted in, the subscriber shall receive notifications from that channel directly in their inbox. Users who are not a subscriber of a particular channel, receive notifications from that channel in their spam box.
+
+:::note
+Opting In or Opting out of a Channel is a completely gasless transaction and requires no fees.
+:::
+
+Moreover, the owner of a channel can also choose to delegate his/her notification sending power to any other wallet address. This enables the selected wallet address to send notifications on behalf of the channel. The channel owner, however, can choose to remove the delegate at any given time.
+
+## Requirements for Setting Up a Channel
+
+Ideally, there are six crucial requirements for creating a Channel. Make sure you are ready with the below list (required for both Prod and Staging)👇🏼
+
+1. A Channel Name
+2. Channel Logo (an image of size 128px \* 128px)
+3. An amount of 50 $PUSH tokens in your Wallet (and some ETH for gas fee)
+4. A brief Channel Description (250 Characters)
+5. Channel CTA (Call To Action link).
+6. Network & Alias Address ( Optional )
+
+## Create channel API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const createdChannel = await userAlice.channel.create({
+  name: 'Test Channel',
+  description: 'Test Description',
+  icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAz0lEQVR4AcXBsU0EQQyG0e+saWJ7oACiKYDMEZVs6GgSpC2BIhzRwAS0sgk9HKn3gpFOAv3v3V4/3+4U4Z1q5KTy42Ql940qvFONnFSGmCFmiN2+fj7uCBlihpgh1ngwcvKfwjuVIWaIGWKNB+GdauSk8uNkJfeNKryzYogZYoZY40m5b/wlQ8wQM8TayMlKeKcaOVkJ71QjJyuGmCFmiDUe+HFy4VyEd57hx0mV+0ZliBlihlgL71w4FyMnVXhnZeSkiu93qheuDDFDzBD7BcCyMAOfy204AAAAAElFTkSuQmCC',
+  url: 'https://push.org',
+})
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Create channel parameters
+
+| Param       | Type                    | Subtype                   | Default | Remarks                                                             |
+| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------- |
+| _`options`_ | `object`                | -                         | -       | Configuration options for creating a channe                         |
+| -           | _`options.name`_        | `string`                  | -       | The name of the channel                                             |
+| -           | _`options.description`_ | `string`                  | -       | A description of the channel                                        |
+| -           | _`options.icon`_        | `string (base64 encoded)` | -       | The channel's icon in base64 encoded string format                  |
+| -           | _`options.url`_         | `string`                  | -       | The URL associated with the channel                                 |
+| -           | `options.alias`         | `string`                  | -       | alias address in CAIP                                               |
+| -           | `options.progresshook`  | `() => void`              | -       | A callback function to execute when the channel creation progresses |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+
+<summary>
+  <b>Expected response</b>
+</summary>
+
+```typescript
+{
+  transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677'
+}
+```
+
+</details>
