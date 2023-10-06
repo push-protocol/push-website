@@ -6,16 +6,14 @@ tags: [Pushprotocol, Devops, Devtools, Web3, Blockchain Technologies]
 
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳](./cover-image.png)
 
 <!--customheaderpoint-->
-# 
-    $55,000+ prize pool for solving some of Web3’s hardest coding problems.
-
+# $55,000+ prize pool for solving some of Web3’s hardest coding problems.
 
 Today, we are excited to announce Billion Reasons to Build — Push’s tour across India to find the best developers in the subcontinent to solve some of the hardest problems of Web3 and win bounties! 🎉
+
+<!--truncate-->
 
 Over the next 3 months, along with our awesome partners Push will be traveling to 18 cities across India to conduct workshops and present challenges which you can compete to solve and in turn win over $5,000+ prizes for each problem you solve. The total prize pool is $55,000 USD.
 
