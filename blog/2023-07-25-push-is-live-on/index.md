@@ -5,16 +5,15 @@ authors: [push]
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of $PUSH is Live on Polygon & Quickswap!💜](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    New composability, accessibility, and utility for the $PUSH token.
+# New composability, accessibility, and utility for the $PUSH token.
 
 
 Today we are excited to announce the launch of the $PUSH token on Polygon!
+
+<!--truncate-->
 
 Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token.
 

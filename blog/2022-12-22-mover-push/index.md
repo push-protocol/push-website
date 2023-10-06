@@ -5,7 +5,7 @@ authors: [push]
 tags: [ Web3, Frenspfpush, Push Notification, Pushprotocol, Defi, Debitcard]
 ---
 
-![Docusaurus Image](./cover-image.webp)
+![Cover image of Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform](./cover-image.webp)
 
 <!--truncate-->
 

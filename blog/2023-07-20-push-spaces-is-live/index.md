@@ -5,16 +5,15 @@ authors: [push]
 tags: [Pushprotocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push Spaces is Live! Decentralized Audio and Video Streaming is Here](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    Push Spaces is decentralized, incentivized, community-based streaming for the future of online communication.
+# Push Spaces is decentralized, incentivized, community-based streaming for the future of online communication.
 
 
 Today, Push is excited to announce the public launch of Push Spaces! Push Spaces is the first decentralized audio and video streaming application in web3, built on top of Push Protocol’s existing communication ecosystem of 95k subscribers across 700+ applications and 3 ecosystems.
+
+<!--truncate-->
 
 With Push Spaces, we’re continuing to build out the decentralized communication space by providing the internet with an alternative to today’s solutions. Specifically, our solutions have been built to provide a better UX, privacy, censorship-resistance, and community incentives.
 

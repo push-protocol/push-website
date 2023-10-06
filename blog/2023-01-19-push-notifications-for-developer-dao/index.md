@@ -4,9 +4,7 @@ title: 'Push Notifications for Developer DAO to Boost Community Participation�
 authors: [push]
 tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image Push Notifications for Developer DAO to Boost Community Participation🚀](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Frens of Push #6 | This week, our featured Fren is one of the biggest developer communities in web3, Developer DAO🎉
@@ -14,6 +12,8 @@ tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
 <i>
     <a href='https://medium.com/push-protocol/tagged/frensofpush'>"Frens of Push"</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.
 </i>
+
+<!--truncate-->
 
 Since its conception, the goal of [Developer DAO](https://www.developerdao.com/) has been to onboard, educate, and support web3 developers with all the tools they need to successfully build the next generation of web3 projects. With over 5,000+ members from around the world, it’s safe to say the Developer DAO mission to accelerate the education and impact of a new wave of web3 builders has been widely accepted.
 

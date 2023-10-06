@@ -6,11 +6,11 @@ tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of EPNS at NFT NYC 2022: All set for the NFTVerse](./cover-image.webp)
 
 We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!
+
+<!--truncate-->
 
 So excited to be part of this <b>4th Annual NFT Industry Event</b> in person and the EPNS Team is going to be doing some really exciting things while we’re at NFT NYC!
 
@@ -18,7 +18,7 @@ Here’s a little bit about what we’re up to at <b></b>
 
 <b>Catch up the EPNS Team over a coffee</b>
 
-![Docusaurus Image](./image-1.webp)
+![Push Team 1 Image](./image-1.webp)
 <ImageText>From L-R — Fabio, Richa & Jaf (EPNS Team at NFT NYC)</ImageText>
 
 As excited as we are about a ton of things we’re doing at NFT NYC, we’re truly excited to meet new frens, and the community at this amazing event!
@@ -31,15 +31,15 @@ Feel free to reach out to our team members [Richa](http://twitter.com/riijo/), [
 
 Oh and of course you’d also get to grab some of our cool EPNS Merch while you’re there!
 
-![Docusaurus Image](./image-2.webp)
+![Push Swags-1 Image](./image-2.webp)
 <ImageText>Come say hello when you’re at NFT NYC</ImageText>
 
-![Docusaurus Image](./image-3.jpeg)
+![Push swags-2 Image](./image-3.jpeg)
 <ImageText>A closer look at our EPNS Swag Tees!</ImageText>
 
 <b>Launch of Rockstars of EPNS V2</b>
 
-![Docusaurus Image](./image-4.png)
+![Rockstars of EPNS V2 Image](./image-4.png)
 Almost about a year ago, EPNS did a really awesome activity for our amazing community!
 
 We kicked off [The Rockstars of EPNS](https://medium.com/ethereum-push-notification-service/the-first-nft-collection-from-epns-677e23173c95), our first collection of [NFTS](https://opensea.io/collection/rockstars-of-epns) which we dropped to celebrate the launch of $PUSH!
@@ -57,7 +57,7 @@ And of course you’ll get to know how you could partake in collecting these NFT
 
 Stay tuned for more updates on our social media for that one!
 
-![Docusaurus Image](./image-5.webp)
+![NFT Communication Image](./image-5.webp)
 
 While we’re there, on the <b>22nd of June 2022</b>, our <b>Co-Founder Richa Joshi</b> will be doing an interesting talk about Building the communication layer for NFTs which would focus on:
 

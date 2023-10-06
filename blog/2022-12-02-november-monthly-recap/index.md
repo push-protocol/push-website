@@ -5,11 +5,11 @@ authors: [push]
 tags: [ Web3, Push Notification Service, Push Notification, Developer Tools, Newsletter]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of November Monthly Recap](./cover-image.webp)
 
 What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
+
+<!--truncate-->
 
 Let’s unpack everything that happened this month!
 

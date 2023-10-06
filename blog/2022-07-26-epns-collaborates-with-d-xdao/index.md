@@ -6,14 +6,14 @@ tags: [Newsletter, Ethereum, Epnsproject, Dao, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover Image of EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates](./cover-image.png)
 
 <!--customheaderpoint-->
 # EPNS and DXdao team up to create a communication channel for Swapr updates.
 
 The term blockchain technology is almost synonymous with decentralization these days. This technology made it possible for a network of participants from different parts of the world to collaborate and run the blockchain network on their terms. All without the need for centralized authorities.
+
+<!--truncate-->
 
 However, the degree of decentralization of blockchain-based protocols is determined not just by their architecture but also by the way in which they are governed and operated. In this regard, DXdao is DeFi’s super scalable collective that personifies decentralization. With an innovative suite of products, this protocol aims to provide decentralized governance solutions for DeFi protocols to help scale the DeFi industry as a whole. On this ambitious journey, we at EPNS are pleased to collaborate with DXdao to enable push notifications for Swapr Campaign updates and uphold the spirit of decentralization.
 

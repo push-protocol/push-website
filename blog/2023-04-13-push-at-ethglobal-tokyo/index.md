@@ -7,12 +7,13 @@ tags: [ Ethglobal, Web3, Push Notification, Hackathons]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Push Protocolについて知っておくべきこと🔔](./cover-image.webp)
 
 ## Push Protocolとは？
 
 Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。
+
+<!--truncate-->
 
 ## 提供するもの
 

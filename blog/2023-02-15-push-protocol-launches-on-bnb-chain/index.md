@@ -6,16 +6,15 @@ authors: [push]
 tags: [ BNB, BNBChain, Blockchain, Blockchain Technology]
 
 ---
-![Docusaurus Image](./cover-image.gif)
-
-<!--truncate-->
+![Cover image of Push Protocol Launches on BNB Chain!💛](./cover-image.gif)
 
 <!--customheaderpoint-->
-# 
-    We’re continuing to build out web3 communication for the entire blockchain ecosystem.
+# We’re continuing to build out web3 communication for the entire blockchain ecosystem.
 
 
 Today, we’re excited to announce that <b>Push Protocol is launching on the BNB Chain mainnet</b>! This means the largest web3 communication platform is now available to BNB’s ecosystem of thousands of dapps and hundreds of thousands of daily users.
+
+<!--truncate-->
 
 Back in September 2022, Push launched on Polygon’s mainnet, signaling our first step into becoming <i>the</i> multi-chain communication protocol for all of web3. Staying true to our commitment of an interoperable future, the next chain to support Push Protocol is BNB Chain.
 

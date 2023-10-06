@@ -7,11 +7,11 @@ tags: [ Web3, Blockchain, Push Notification, Pushprotocol, Frensofpush, Customer
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Earnifi — Never Miss an Airdrop With Push Notifications](./cover-image.webp)
 
 <i>This is our first week launching a brand new content series: Frens of Push. In this series, we highlight outstanding projects who are building using Push and give them the spotlight. If you’re interested in being featured, reach out to us!</i><br/><br/>
+
+<!--truncate-->
 
 Earnifi, an airdrop aggregator platform designed to find unclaimed airdrops, has integrated Push to make airdrops more accessible to everyone!
 

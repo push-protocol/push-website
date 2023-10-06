@@ -6,15 +6,15 @@ tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
+![Cover image of Friday PUSH #19](./cover-image.webp)
 <ImageText>#MeetTheBUIDLers (of ETHNewYork 2022) — PUSH Call #19</ImageText>
-
-<!--truncate-->
 
 <!--customheaderpoint-->
 # Meet the ETHNewYork BUIDLers 🏗️
 
 Last Friday we had a very special <b>Friday PUSH</b> with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month.
+
+<!--truncate-->
 
 <blockquote><i>
 This Friday PUSH was held on July 8th, 2022 at 2PM UTC
