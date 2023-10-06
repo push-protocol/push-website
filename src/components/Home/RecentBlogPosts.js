@@ -28,7 +28,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 onClick={() => {window.open(`/blog/${postItem.metadata.frontMatter.slug}`, '_self')}}
                 alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
               >
-                <postItem.Preview />
+                <postItem.Preview loading="lazy" />
                 <Span flex="1">{postItem.metadata.title}</Span>
               </BlogPostCardPrimary>
             );
@@ -44,7 +44,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 onClick={() => {window.open(`/blog/${postItem.metadata.frontMatter.slug}`, '_self')}}
                 alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
               >
-                <postItem.Preview />
+                <postItem.Preview loading="lazy" />
                 <Span flex="1">{postItem.metadata.title}</Span>
               </BlogPostCardSecondary>
             );
@@ -83,7 +83,7 @@ const BlogPostCardPrimary = styled(Button)`
   & img {
     width: auto;
     min-width: 200px;
-    height: 100%;
+    height: auto;
     border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
   }
 
@@ -144,7 +144,7 @@ const BlogPostCardSecondary = styled(Button)`
     & img {
       width: auto;
       min-width: 200px;
-      height: 100%;
+      height: auto;
       border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
     }
   }
