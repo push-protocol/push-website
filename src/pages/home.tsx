@@ -23,7 +23,6 @@ import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
-import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
@@ -862,17 +861,6 @@ const AnalyticsStatsContainer = styled(ItemH)`
  * Responsive Styled Components for Shared Styling
  */
 
-const ResponsiveSection = styled(HybridSection)`
-  @media ${device.tablet} {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-  @media (max-width: 380px) {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-  }
-`;
-
 const ResponsiveH2 = styled(H2)`
   @media ${device.tablet} {
     font-size: 32px;
@@ -908,12 +896,6 @@ const HomeWrapper = styled(ItemV)`
 /**
  * Home Page Sections
  */
-
-const HeroSection = styled(ResponsiveSection)`
-  padding: 0px 160px 0px 160px;
-  width: 100%;
-  overflow: hidden;
-`;
 
 const ShowcaseSection = styled(Section)`
   width: 100%;

@@ -26,10 +26,6 @@ const HybridSection = (props: HybridSectionProps) => {
 };
 
 const StyledSection = styled(Content)`
-  max-width: 100%;
-  min-width: 100%;
-  box-sizing: border-box;
-
   &[data-bkg='dark'] {
     background: #121315;
 

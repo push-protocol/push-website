@@ -16,7 +16,6 @@ import styled from 'styled-components';
 // Internal Components
 import ChannelItem, { Tilt } from '@site/src/components/ChannelItem';
 import FadeInAnimation from '@site/src/components/FadeInAnimation';
-import HybridSection from '@site/src/components/HybridSection';
 import { MailingSignup } from '@site/src/components/MailingSignup/MailingSignup';
 import { objChannelList } from '@site/src/config/ChannelList';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -30,7 +29,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
 import { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
-import { Content, H2, HeroHeader, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
+import { Content, H2, HeroHeader, Image, ItemH, ItemV, Section,Span } from '@site/src/css/SharedStyling';
 
 
 const FrensText = () => {
@@ -281,7 +280,7 @@ const FrensText = () => {
       <FrensWrapper>
         <AnimationIcon>
           <AnimationSection
-            minHeight="60vh"
+            minHeight="70vh"
             padding="50px 0px 70px 0px"
             margin="0 auto"
           >
@@ -446,6 +445,7 @@ const FrensText = () => {
             <SignupBox margin="0 0 0px 0">
               <ItemV
                 justifyContent="flex-start"
+                alignItems="flex-start"
                 gap="12px"
               >
                 <ResponsiveH2
@@ -618,14 +618,6 @@ const SignupBox = styled(ItemH)`
   }
 `;
 
-const ResponsiveSection = styled(HybridSection)`
-  min-height: ${(props) => props.minHeight || '0px'};
-  @media ${device.tablet} {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-`;
-
 const AnimationIcon = styled.div`
   background: #121315;
   border-bottom-left-radius: 48px;
@@ -639,8 +631,8 @@ const SearchContainer = styled(ItemH)`
   }
 `;
 
-const AnimationSection = styled(ResponsiveSection)`
-
+const AnimationSection = styled(Section)`
+  width: 100%;
   display: flex;
   flex-direction: column;
   background: #121315;
@@ -648,7 +640,7 @@ const AnimationSection = styled(ResponsiveSection)`
   border-bottom-right-radius: 48px;
   overflow-x: none;
   @media (min-width: 1200px) {
-    width: 85%;
+    // width: 85%;
     margin: 0 auto;
   }
 
@@ -816,12 +808,13 @@ const PushRow = styled(ItemH)`
   }
 `;
 
-const PoweredSection = styled(ResponsiveSection)`
+const PoweredSection = styled(Section)`
+  width: 100%;
   padding: 0px 160px 80px 160px;
   flex-direction: column;
 
   @media ${device.tablet} {
-    padding-bottom: 32px;
+    padding: 0px 20px 32px 20px;
   }
 `;
 

@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import HybridSection from '@site/src/components/HybridSection';
 import {
   A,
   Button,
@@ -755,13 +754,7 @@ function FAQ() {
         </script>
       </Head> */}
       <FAQWrapper>
-        <ResponsiveSection
-          curve="bottom"
-          padding="180px 0px 20px 0px"
-          data-bkg="dark"
-          justifyContent="flex-start"
-          minHeight="auto"
-        >
+        <TopSection>
           <Content
             className="contentBox"
             flex="1"
@@ -772,12 +765,18 @@ function FAQ() {
             <ItemH
               flexDirection="column"
             >
-              <H2>{t('faq.hero.title')}</H2>
+              <H2 
+                  color="#fff"
+                  textAlign="center" 
+                  fontSize="36px"
+                  >{t('faq.hero.title')}</H2>
               <H3
                   fontSize="16px"
                   fontWeight="300"
                   margin="30px 0px 30px 0px"
                   letterSpacing="0.1em"
+                  color='#fff'
+                  textAlign="center"
                   style={{ maxWidth: '400px' }}
                 >
                   {t('faq.hero.update-text')}
@@ -785,11 +784,10 @@ function FAQ() {
               
             </ItemH>
           </Content>
-        </ResponsiveSection>
+        </TopSection>
 
-        <ResponsiveSection
+        <FAQSection
           curve="bottom"
-          padding="80px 0px 0px 0px"
           data-bkg="light"
         >
           <Content
@@ -820,55 +818,11 @@ function FAQ() {
               <Items body={Token} />
             </ItemV>
           </Content>
-        </ResponsiveSection>
+        </FAQSection>
       </FAQWrapper>
     </Layout>
   );
 }
-
-const ResponsiveSection = styled(HybridSection)`
-
-  @media ${device.tablet} {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-
-  &[data-bkg='dark'] {
-    & h1 {
-      color: #fff;
-    }
-
-    & h3 {
-      color: #fff;
-    }
-
-    & span {
-      color: #fff;
-    }
-
-    & p {
-      color: #fff;
-    }
-  }
-
-  &[data-bkg='light'] {
-    & h1 {
-      color: #000;
-    }
-
-    & h3 {
-      color: #000;
-    }
-
-    & span {
-      color: #000;
-    }
-
-    & p {
-      color: #000;
-    }
-  }
-`;
 
 const FAQWrapper = styled(ItemV)`
   & .contentBox {
@@ -972,5 +926,28 @@ const Title = styled.div`
   color: #000000;
   margin-top: 50px;
 `;
+
+const FAQSection = styled(Section)`
+  width: 100%;
+  padding: 80px 0px 0px 0px;
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+  }
+`;
+
+const TopSection = styled(Section)`
+  width: 100%;
+  padding: 180px 0px 20px 0px;
+  min-height: 70vh;
+  background: #121315;
+  border-radius: 0 0 48px 48px;
+
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
 
 export default FAQ;
