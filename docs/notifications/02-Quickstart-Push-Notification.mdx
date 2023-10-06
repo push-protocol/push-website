@@ -1,0 +1,215 @@
+---
+id: docs-notifications-quickstart
+title: Quickstart
+hide_title: false
+slug: ./quickstart
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 2
+---
+
+# Quickstart
+
+Everything you will need to get up and running in 2 mins or less!
+
+<head>
+  <title>Quickstart | Push Notifcation | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+### Installation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers@^5.7
+```
+
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers@^5.7
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers@^5.7
+```
+
+  </TabItem>
+</Tabs>
+
+### Import libraries
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Import restapi for function calls
+import { PushAPI } from '@pushprotocol/restapi'
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from 'ethers'
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```js
+// Import restapi for function calls
+import { PushAPI } from '@pushprotocol/restapi'
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from 'ethers'
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```js
+// Import restapi for function calls
+import { PushAPI } from '@pushprotocol/restapi'
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from 'ethers'
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize User
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom()
+
+// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom()
+
+// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom()
+
+// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+```
+
+  </TabItem>
+</Tabs>
+
+### Send Notifcation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Requires user to have a channel, see Create Channel section for more info
+// ['*'] sends to all wallets who have opted in to your channel
+const response = await userAlice.channel.send(['*'], {
+  notification: { 
+    title: 'You awesome notification', 
+    body: 'from your amazing protocol' 
+  }
+}) 
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```js
+// Requires user to have a channel, see Create Channel section for more info
+// ['*'] sends to all wallets who have opted in to your channel
+const response = await userAlice.channel.send(['*'], {
+  notification: { 
+    title: 'You awesome notification', 
+    body: 'from your amazing protocol' 
+  }
+}) 
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```js
+// Requires user to have a channel, see Create Channel section for more info
+// ['*'] sends to all wallets who have opted in to your channel
+const response = await userAlice.channel.send(['*'], {
+  notification: { 
+    title: 'You awesome notification', 
+    body: 'from your amazing protocol' 
+  }
+}) 
+```
+
+  </TabItem>
+</Tabs>
+
+
+### Stream / Real time updates / Socket
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// To listen to real time notifications
+userAlice.stream.on('STREAM.NOTIF', (data) => {
+  console.log(data)
+})
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```js
+// To listen to real time notifications
+userAlice.stream.on('STREAM.NOTIF', (data) => {
+  console.log(data)
+})
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```js
+// To listen to real time notifications
+userAlice.stream.on('STREAM.NOTIF', (data) => {
+  console.log(data)
+})
+```
+
+  </TabItem>
+</Tabs>

@@ -1,0 +1,67 @@
+---
+id: docs-notifications-develop-fetch-notification-subscriptions
+title: Fetch Notification Subscriptions
+hide_title: true
+slug: ./fetch-notification-subscriptions
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 6
+---
+
+# Fetch notification subscriptions overview
+
+These APIs are useful for fetching list of all channels subscribed by a user.
+
+<head>
+  <title>
+    Fetch Notification Subscriptions | Push Notification | Push Documentation
+  </title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling'
+
+## Fetch notification subscriptions API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const aliceSubscriptions = await userAlice.notification.subscriptions()
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch Notification Subscriptions parameters
+
+| Param     | Type              | SubType  | Default | Remarks                                                            |
+| --------- | ----------------- | -------- | ------- | ------------------------------------------------------------------ |
+| `options` | `object`          | -        | -       | An object containing additional options for subscriptions          |
+| -         | `options.account` | `string` | -       | Account in full CAIP                                               |
+| -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.             |
+| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+
+<summary>
+  <b>Expected response</b>
+</summary>
+
+```typescript
+[
+  { channel: '0xD8634C39BBFd4033c0d3289C4515275102423681' },
+  { channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924' },
+]
+```
+
+</details>

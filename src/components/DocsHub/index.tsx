@@ -85,13 +85,23 @@ const DevGuide: DevGuideItems[] = [
   {
     title: 'Notifications',
     Svg: require('@site/static/assets/docs/notification.svg').default,
-    link: '/docs/notification',
+    link: '/docs/notifications',
     description: (
       <>
         Explore different ways of sending and receiving notifications and more.
 
       </>
     ),
+    codeblock: `// Initialize wallet user
+const userAlice = await PushAPI.initialize(signer);
+
+// Send a notification to users of your protocol
+const response = await userAlice.channel.send(['*'], { 
+  notification: {
+    title: 'Hello World Notification',
+    body: 'Web3 native notifications are here!',
+  }
+});`
   },
   {
     title: 'Push Chat',

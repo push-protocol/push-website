@@ -31,20 +31,23 @@ The **rules** object is an optional parameter that you pass in [create group API
 
 `rules`<br/>
 ├ `permission` - `entry` or `chat`<br/>
-&emsp;└ `conditions`<br/> 
-&emsp;&emsp;└`decider` - `any` or `all`<br/>
-&emsp;&emsp;&emsp;└`criteria 1`<br/>
-&emsp;&emsp;&emsp;└`criteria 2`<br/>
-&emsp;&emsp;└`decider` - `any` or `all`<br/>
-&emsp;&emsp;&emsp;└`criteria 3`<br/>
+&emsp;└ `conditions`<br/>
+&emsp;&emsp;└ `decider` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;└`condition a` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;&emsp;└`criteria 1`<br/>
+&emsp;&emsp;&emsp;&emsp;└`criteria 2`<br/>
+&emsp;&emsp;&emsp;└`condition b` - `any` or `all`<br/>
+&emsp;&emsp;&emsp;&emsp;└`criteria 3`<br/>
 
 _`rules`_ object is made up of individual **permissions** that define privilages of the group. 
 
 _`permission`_ object contains **conditions** that needs to be satisfied.
 
-_`conditions`_ object is an array of one or more **decider**, ALL of which needs to be fulfilled for permission to be granted.
+_`conditions`_ object is an array of one or more **condition**.
 
-_`decider`_ contains array of **criteria**, the namespace of decider (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
+_`decider`_ the namespace (`any` or `all`) decides if all of the conditions or anyone of the condition needs to be fulfilled.
+
+_`condition`_ contains array of **criteria**, the namespace (`any` or `all`) decides if all criterias or anyone of the criteria needs to be fulfilled.
 
 _`criteria`_ is the atomic condition that has **type**, **category**, **subcategory** and **data**, based on which a particular condition is deemed as completed or failed.
 
@@ -58,11 +61,12 @@ To summarize, a list of **criteria** is created by you that is then defined insi
 | `rules.[permission]`                                  | `object` | -                  | -       | Permissions object for specific privilege of the group. Multiple permission object can reside within `rules` object                                                                                   |
 | -                                                     | `entry`  | `object`           | -       | Permissions object for specific privilege of the group. `entry` permission conditionalizes joining a group                                                                                            |
 | -                                                     | `chat`   | `object`           | -       | Permissions object for specific privilege of the group. `chat` permission conditionalizes sending a message in that group                                                                             |
-| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `decider` objects                                                                                                                                                              |
-| `rules.[permission].conditions.[decider]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `decider` key, Valid `decider` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
-| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
-| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[decider]` array                                                                                         |
-| `rules.[permission].conditions.[decider].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[decider]` array                                                                                                                       |
+| `rules.[permission].conditions`                       | -        | `array of objects` | -       | Contains array of all `condition` objects                                                                                                                                                              |
+| `rules.[permission].conditions.[decider]`             | -        | `object`           | -       | Contains namespace `any` or `all` by which it's decided whether one condition or all condition needs to be fulfilled                                                                                                                                                             |
+| `rules.[permission].conditions.[decider].[condition]`            | -        | `array of objects` | -       | Contains lists of criteria objects defined by `decider` key, Valid `decider` keys are `any` or `all`. `any` will mean only one criteria needs to be fulfilled, `all` means all criteria should pass |
+| -                                                     | `any`    | `object`           | -       | `any` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[condition]` array                                                                                         |
+| -                                                     | `all`    | `object`           | -       | `all` will mean only one criteria needs to be fulfilled from `rules.[permission].conditions.[condition]` array                                                                                         |
+| `rules.[permission].conditions.[decider].[condition].[criteria]` | -        | `object`           | -       | Individual criteria inside the `rules.[permission].conditions.[condition]` array                                                                                                                       |
 
 
 ### Criteria object Parameters 
@@ -124,7 +128,7 @@ Let's break down the problem statement into individual requirements
 }
 ```
 
-- Either of criteria should be able to allow user to join the group, this means that the **decider** to use to combine these criterias would be `any`
+- Either of criteria should be able to allow user to join the group, this means that the condition's **namespace** to use to combine these criterias would be `any`
 
 ```typescript
 // decider object - 'any' since either condition should allow access
@@ -152,54 +156,14 @@ any: [
 ]
 ```
 
-- Since there are no other conditions that are required, create the entire rules object
+- Since there are no other conditions that are required, create the entire rules object, conditions only has one condition in entry so namespace for `conditions` doesn't matter but to keep things clear, we will mark it as `all`
 
 
 ```typescript
   rules: {
     entry: { // permission object
-      conditions: [ // conditions object
-        any: [ // decider object
-          { // criteria object
-            type: "PUSH", // define type that rules engine should go for
-            category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-            subcategory: "holder", // define if you are checking 'holder' or 'owner'
-            data: { 
-              "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-              "comparison": ">=", // what comparison needs to pass
-              "amount": 1 // amount that needs to passed
-            }
-          },
-          { // criteria object
-            type: "PUSH", // define type that rules engine should go for
-            category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-            subcategory: "holder", // define if you are checking 'holder' or 'owner'
-            data: { 
-              "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-              "comparison": ">=", // what comparison needs to pass
-              "amount": 1 // amount that needs to passed
-            }
-          }
-        ]
-      ]
-    }
-    chat: {} // no permission condition is defined for chat access
-  }
-```
-
-
-- Finally pass this rules object into the group that we are creating using the [create group API call](/docs/chat/build/create-group).
-```typescript
-  // Creating your token gated community
-  const createTokenGatedGroup = await userAlice.chat.group.create('Push Community', {
-    description: 'Token gated web3 native chat example', // provide short description of group
-    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
-    members: [], // not needed, rules define this, can omit
-    admins: [], // not needed as per problem statement, can omit
-    private: true,
-    rules: {
-      entry: { // permission object
-        conditions: [ // conditions object
+      conditions: { // conditions object
+        all: [ // conditions namespace decider
           any: [ // decider object
             { // criteria object
               type: "PUSH", // define type that rules engine should go for
@@ -224,6 +188,50 @@ any: [
           ]
         ]
       }
+    }
+    chat: {} // no permission condition is defined for chat access
+  }
+```
+
+
+- Finally pass this rules object into the group that we are creating using the [create group API call](/docs/chat/build/create-group).
+```typescript
+  // Creating your token gated community
+  const createTokenGatedGroup = await userAlice.chat.group.create('Push Community', {
+    description: 'Token gated web3 native chat example', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // not needed as per problem statement, can omit
+    private: true,
+    rules: {
+      entry: { // permission object
+        conditions: { // conditions object
+          all: [
+            any: [ // decider object
+              { // criteria object
+                type: "PUSH", // define type that rules engine should go for
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: { 
+                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 1 // amount that needs to passed
+                }
+              },
+              { // criteria object
+                type: "PUSH", // define type that rules engine should go for
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: { 
+                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 1 // amount that needs to passed
+                }
+              }
+            ]
+          ]
+        }
+      }
       chat: {} // no permission condition is defined for chat access
     }
   }
@@ -247,46 +255,50 @@ Below is an advance version of gated controls that are applied to both `entry` t
     private: true, // ensures chat within group is encrypted and is only visible to members of the group
     rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
       entry: { // define condition for joining the group
-        conditions: [ // set of all conditions that should be fulfilled to join the group
-          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-            { // define criteria 1
-              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-              subcategory: "holder", // define if you are checking 'holder' or 'owner'
-              data: { // define the data check
-                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                "comparison": ">=", // what comparison needs to pass
-                "amount": 10 // amount that needs to passed
+        conditions: { // set of all conditions that should be fulfilled to join the group
+          all: [ 
+            any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+              { // define criteria 1
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: { // define the data check
+                  "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 10 // amount that needs to passed
+                }
+              },
+              { // define criteria 2
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: { // define the data check
+                  "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 10 // amount that needs to passed
+                }
               }
-            },
-            { // define criteria 2
-              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-              subcategory: "holder", // define if you are checking 'holder' or 'owner'
-              data: { // define the data check
-                "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
-                "comparison": ">=", // what comparison needs to pass
-                "amount": 10 // amount that needs to passed
-              }
-            }
+            ]
           ]
-        ]
+        }
       },
       chat: {
-        conditions: [ // define condition for sending message in the group
-          any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-            { // define criteria 1
-              type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-              subcategory: "holder", // define if you are checking 'holder' or 'owner'
-              data: { // define the data check
-                "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                "comparison": ">=", // what comparison needs to pass
-                "amount": 1000 // amount that needs to passed
+        conditions: { // define condition for sending message in the group
+          all: [
+            any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+              { // define criteria 1
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: { // define the data check
+                  "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 1000 // amount that needs to passed
+                }
               }
-            }
+            ]
           ]
-        ]
+        }
       }
     }
   });
