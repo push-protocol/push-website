@@ -5,18 +5,17 @@ authors: [push]
 tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 ---
-![Docusaurus Image](./cover-image.gif)
-
-<!--truncate-->
+![Cover image of Push V2 is LIVE — New Rewards, Utility & Functionality 🚀](./cover-image.gif)
 
 <!--customheaderpoint-->
-# 
-    We’re thrilled to announce the launch of Push V2!🎉
+# We’re thrilled to announce the launch of Push V2!🎉
 
 
 2 new liquidity reward pools to earn $PUSH from.
 
 We’re thrilled to announce the launch of Push V2!🎉
+
+<!--truncate-->
 
 This new release is packed with exciting features that collectively delivers an unparalleled experience for our users, provides new tools for builders, and helps us take a huge leap forward in the way of democratizing web3 communication.
 

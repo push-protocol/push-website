@@ -4,11 +4,11 @@ title: 'Building a Leading Web3 Communication Layer: What’s it take?🛠️'
 authors: [push]
 tags: [ Web3, Buidl, Blockchain Technology, Blockchain Development, Developer]
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Building a Leading Web3 Communication Layer: What’s it take?🛠️](./cover-image.webp)
 
 Decentralized communication is a hot topic in the web3 space as more and more developers are looking to build dapps that can function independently of any single central authority.
+
+<!--truncate-->
 
 Though, a key component of building a successful dapp is providing a communication layer that is both decentralized and universal.
 

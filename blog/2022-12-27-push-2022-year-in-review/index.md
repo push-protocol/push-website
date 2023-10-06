@@ -7,13 +7,13 @@ tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push 2022 Year in Review🎉](./cover-image.webp)
 
 2022 was a marvelous year for Push thanks to our fantastic team and growing community of talented developers.
 
 To everyone who has helped support the Push project — devs, community members, partners, co-sponsors, we thank you!
+
+<!--truncate-->
 
 This year alone, Push achieved several major milestones including rebranding from EPNS to Push, raising our Series A, launching Push on Ethereum mainnet, pushing web3 communication beyond Ethereum, new product releases, several news features, and of course, collaborations with some of the best web3 projects out there.
 

@@ -6,14 +6,14 @@ tags: [ Web3, Ethereum, Social Media, Infrastructure, Announcements ]
 ---
 
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push and Lens: Powering UX with Notifications and Aave’s Lens](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Lens Protocol has joined the Push fam to bring web3 social media to the next level.<br/>
 
 We’re excited to announce the <b>first protocol to use Push on the Polygon mainnet: Lens Protocol!</b> Since its launch in January 2022, Push has powered over 17 million decentralized notifications to over 60,000 subscribers, becoming the de facto communication layer for web3. Our recent announcement of support for the Polygon network marks a new phase for Push and the world of multi-chain communication. We could not be more thrilled for the incredible team at Lens to be the first to integrate Push and power push notifications for their users.
+
+<!--truncate-->
 
 ## Lens and Push: Communication for Web3 Social Media
 Censorship-resistant dapps are steadily replacing centralized social platforms like Twitter, Instagram, and TikTok. Every day, we see an increased demand for social apps that allow content ownership and free speech.

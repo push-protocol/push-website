@@ -7,10 +7,11 @@ tags: [ Web3, Defi, Pushprotocol, UX ]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Birth of a New Pantheon: THENA and Push Protocol Unite💜](./cover-image.webp)
 
 We are thrilled to announce that Push Protocol is partnering with [THENA](https://thena.fi/), a leading liquidity layer and DEX AMM on the BNB Chain!
+
+<!--truncate-->
 
 As a liquidity layer for protocols and web3 users, THENA is a next-gen AMM (Automated Market Maker) with over $124m in TV on BNB Chain. THENA’s aim is to become the dominant automated market maker (AMM) and provide a collaborative strategy for establishing new liquidity management products.
 

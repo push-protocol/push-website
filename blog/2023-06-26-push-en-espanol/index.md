@@ -5,11 +5,11 @@ authors: [push]
 tags: [Pushprotocol, Latam]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜](./cover-image.webp)
 
 A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología.
+
+<!--truncate-->
 
 Estos últimos años, Latinoamérica ha demostrado ser una de las regiones con mayor adopción crypto. No es coincidencia que el año pasado hayamos tenido el evento más importante de Ethereum, Devcon VI, en Colombia y que la mirada de los proyectos y protocolos extranjeros hayan desarrollado un foco especial en el talento de la región.
 
@@ -18,12 +18,12 @@ El primer programa de embajadores de marca de Push Protocol se desarrolló a tra
 
 Así empezó a construirse el camino hacia una fuerte comunidad en español. Como parte de nuestros esfuerzos dedicados a esta comunidad, realizamos nuestro primer evento en este idioma y utilizamos redes sociales especializadas con contenido hecho por los mismos embajadores para toda la comunidad latina.
 
-![Docusaurus Image](./image-1.webp)
+![Embajadores de marca de Push Protocol se desarrolló a través de Diffie Image](./image-1.webp)
 
 ## Sobre la Community Call
 En la primera Community Call moderada por Ángela Ocando, Daniela Marotazo y José Piña, se unieron más de 50 cripto-entusiastas para conocer los incentivos de Push Earn como el programa de embajadores, Trivia Night, Push Missions, Push Rockstars y Push Grants.
 
-![Docusaurus Image](./image-2.webp)
+![Sobre la Community Call Image](./image-2.webp)
 
 1. <b>Programa Push Latam Ambassador:</b> La iniciativa que busca inspirar talentos para potenciar un producto en la comunidad y abrir oportunidades en Web3.
 2. <b>Trivia Night:</b> Un evento realizado todos los miércoles en Discord, en el que puedes poner a prueba tus conocimientos sobre cultura cripto o desarrollo web y ganar premios mientras amplías tus conocimientos.

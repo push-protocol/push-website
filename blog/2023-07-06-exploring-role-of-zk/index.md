@@ -5,9 +5,7 @@ authors: [push]
 tags: [Pushprotocol, Web3, Zkrollup, Blockchain Technology]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Exploring the Role of ZK Knowledge in Decentralized Communication🌐](./cover-image.webp)
 
 <blockquote>
 <i>
@@ -22,6 +20,8 @@ This article discusses the possible integration of Zero-Knowledge Rollups (ZKR) 
 <b>Real-World Impact:</b> ZKR-Push fusion improves DeFi transactions, IoT data sharing, and voting systems, thereby bolstering security and efficiency across the decentralized ecosystem.
 </i>
 </blockquote>
+
+<!--truncate-->
 
 The world of decentralized systems is undergoing a significant evolution, triggered by the imperative quest for privacy and scalability solutions. The technology under our microscope today is zero-knowledge technology, the inherent strengths of which, developers are tirelessly examining for possible integration into Push Protocol.
 

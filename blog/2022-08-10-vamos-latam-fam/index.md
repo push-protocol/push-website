@@ -6,14 +6,14 @@ tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.jpeg)
-
-<!--truncate-->
+![Cover Image of Vamos Latam Fam 🧉](./cover-image.jpeg)
 
 <!--customheaderpoint-->
 # Friday PUSH #21
 
 We had a blast with our invitees during Friday PUSH #21 in preparation for ETH Latam 🇦🇷 💃. Mariano, Juan David, and CryptoChica joined us to discuss about everything ETH Latam, and the challenges and opportunities for the Latam region.
+
+<!--truncate-->
 
 <blockquote>
 <i>

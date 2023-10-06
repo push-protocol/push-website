@@ -5,11 +5,11 @@ authors: [push]
 tags: [Frensofpush, Web3, Partnership, Blockchain Development]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Unleashing a New Era of Social Networking | Push x SOCLLY🌿](./cover-image.webp)
 
 This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿.
+
+<!--truncate-->
 
 SOCLLY is revolutionizing the web3 social networking space by putting power in the hands of creators. With a strong emphasis on collaboration, freedom, and monetization, SOCLLY provides a dynamic platform where creators can thrive and connect with their audience on their own terms.
 

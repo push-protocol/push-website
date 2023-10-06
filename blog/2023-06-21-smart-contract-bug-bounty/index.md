@@ -5,16 +5,15 @@ authors: [push]
 tags: [Pushprotocol, Web3, Bounty Program, Immuenfi, Bug bounty]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of $100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    Push Smart Contract v2 Bug Bounty Program
+# Push Smart Contract v2 Bug Bounty Program
 
 
 Are you a skilled security researchers looking for an exciting challenge and the opportunity to earn big? Look no further!
+
+<!--truncate-->
 
 We are thrilled to announce the launch of the Push’s collaborative Bug Bounty Program with [Immunefi](https://immunefi.com/) and calling all hackers to participate!
 

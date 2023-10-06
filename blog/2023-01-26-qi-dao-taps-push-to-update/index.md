@@ -4,9 +4,7 @@ title: 'QiDAO Taps Push to Update Users on their Debt Positions🪙'
 authors: [push]
 tags: [ Web3, Web3 Communication, Blockchain Technology, Blockchain Development, Frensofpush]
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of QiDAO Taps Push to Update Users on their Debt Positions🪙](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Frens of Push #7 | This week, our featured Fren is one of the leading stablecoin protocols, QiDAO🎉
@@ -14,6 +12,8 @@ tags: [ Web3, Web3 Communication, Blockchain Technology, Blockchain Development,
 <i>
     <a href='https://medium.com/push-protocol/tagged/frensofpush'>"Frens of Push"</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.
 </i>
+
+<!--truncate-->
 
 This week, we’re delighted to have on a leading decentralized stablecoin protocol and our fren, QiDao, to talk about their journey with Push.
 

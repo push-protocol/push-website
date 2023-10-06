@@ -6,11 +6,11 @@ tags: [Epnsproject, Blockchain, Notifications, Governance, Gas Fees]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable](./cover-image.webp)
 
 The main goal of EPNS is to be the gold standard of notifications in the web3 world. To receive a specific notification a user has to set up a channel by which they can send notifications. A full guide on setting up channels can be found [here](https://docs.epns.io/users/hello-world-channel/sending-notifications). More information on EPNS DAPP can be seen [here](https://app.epns.io/#/live_walkthrough).
+
+<!--truncate-->
 
 The community had recently voted on and passed<b> PIP-06: Reimburse channel-creation gas fees in $PUSH on developer request</b>. The results were immensely in favor of the proposal with 1.6M votes FOR and 2.6K votes AGAINST.
 
