@@ -65,6 +65,7 @@ export const Content = styled.div`
 
   flex: ${(props) => props.flex || "1"};
   align-self: ${(props) => props.alignSelf || "stretch"};
+  width: ${(props) => props.width || "auto"};
   max-width: ${(props) => props.maxWidth || "1213px"};
   // max-width: 1140px;
   display: flex;

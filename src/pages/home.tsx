@@ -18,10 +18,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
-import Blogs from "@site/src/components/Blogs";
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
+import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import HybridSection from "@site/src/components/HybridSection";
 import ImageHolder from "@site/src/components/ImageHolder";
@@ -50,7 +50,6 @@ import TwitterSVG from "@site/static/assets/twitter.svg";
 import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
 import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
-import GrowWithPushFigure from "@site/static/assets/website/illustrations/growwithpush.webp";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
@@ -67,11 +66,9 @@ gsap.registerPlugin(ScrollTrigger);
 // Setup some constants
 const MARQUEE_ANIMATION_SPEED = 60;
 
-export default function Home(): JSX.Element {
+export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
   const { t, i18n } = useTranslation();
-
-  const isLargeScreen = useMediaQuery("(max-width: 1250px)");
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
@@ -89,9 +86,9 @@ export default function Home(): JSX.Element {
 
     gsap.to("#integratePush", {
       scrollTrigger: {
-        trigger: "#newone",
-        start: "center top",
-        end: "+=500",
+        trigger: "#mediaFeaturedInSection",
+        start: "top top",
+        end: "bottom top",
         scrub: true,
         markers: false,
       },
@@ -386,11 +383,9 @@ export default function Home(): JSX.Element {
           </PushProductContent>
         </BuildWithPushSection>
         
-        {/* SECTION THAT SHRINKS WHEN REACHING END */}
-        <ShrinkingSection
-          curve="bottom"
-          data-bkg="dark"
-          className="darkBackground"
+        {/* WHY PUSH AND BLOG */}
+        <WhyPushAndBlogSection
+          background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
             id="integratePush"
@@ -400,13 +395,12 @@ export default function Home(): JSX.Element {
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_LIGHT}
-            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+            borderRadius="0px"
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="40px 0px"
           >
             
             {/* WHY YOU NEED PUSH PUSH */}
@@ -572,7 +566,7 @@ export default function Home(): JSX.Element {
                   fontWeight="700"
                   letterSpacing="-0.02em"
                   lineHeight="110%"
-                  margin="0"
+                  margin="0 0 40px 0"
                   width="50%"
                 >
                   {t("home.insights-section.title")}
@@ -583,7 +577,6 @@ export default function Home(): JSX.Element {
                 <A
                   href="/blog"
                   title="Exlore all articles"
-                  target="_blank"
                   hoverBackground="transparent"
                   hover="transparent"
                   background="transparent"
@@ -601,114 +594,132 @@ export default function Home(): JSX.Element {
                 </A>
               </ItemH>
             </ItemH>
+            
+            <RecentBlogPosts recentPosts={recentPosts} />
 
-            <Blogs count={4} />
-
-            {/* BACKED BY SECTION */}
-            <Section flexDirection="column" margin="80px 0 80px 0">
-              <Content padding="0px">
-
-                <ItemV
-                  alignItems="stretch"
-                >
-                  <InvestorHeader
-                      color="#09090B"
-                      fontSize="40px"
-                      fontWeight="700"
-                      letterSpacing="-0.02em"
-                      lineHeight="110%"
-                      margin="0"
-                    >
-                      {t("home.investors-section.title")}
-                  </InvestorHeader>
-                </ItemV>
-                <ItemV
-                  margin="80px 0 0 0"
-                  flex="1"
-                  alignItems="stretch"
-                >
-                  <MarqueeAnimation
-                    speed={MARQUEE_ANIMATION_SPEED}
-                    gradientWidth={8}
-                    gap={18}
-                  >
-                    {InvList.top.map((item) => {
-                      return (
-                        <InvestorCard 
-                          key={item.id}
-                        >
-                          <InvestorIcon
-                            width={item.title ? 64 : 'auto'}
-                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
-                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
-                            alt={`${item?.alt}`}
-                          />
-                          {item.title && 
-                            <InvestorDetails>
-                              <InvestorTitle>{item.title}</InvestorTitle>
-                              {item.subtitle && 
-                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
-                              }
-                            </InvestorDetails>
-                          }
-                        </InvestorCard>
-                      );
-                    })}
-                  </MarqueeAnimation>
-                </ItemV>
-                <ItemV
-                  margin="120px 0 0 0"
-                  flex="1"
-                  alignItems="stretch"
-                >
-                  <MarqueeAnimation
-                    speed={MARQUEE_ANIMATION_SPEED}
-                    gradientWidth={8}
-                    gap={18}
-                    direction="right"
-                  >
-                    {InvList.bottom.map((item) => {
-                      return (
-                        <InvestorCard 
-                          key={item.id}
-                          flexDirection={item.title ? 'row' : 'column'}
-                        >
-                          <InvestorIcon
-                            width={item.title ? '64px' : 'auto'}
-                            borderRadius={item.title ? '50%' : '0'}
-                            src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
-                            srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
-                            alt={`${item?.alt}`}
-                          />
-                          {item.title && 
-                            <InvestorDetails>
-                              <InvestorTitle>{item.title}</InvestorTitle>
-                              {item.subtitle && 
-                                <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
-                              }
-                            </InvestorDetails>
-                          }
-                        </InvestorCard>
-                      );
-                    })}
-                  </MarqueeAnimation>
-                </ItemV>
-
-              </Content>
-            </Section>
           </Content>
-        </ShrinkingSection>
+        </WhyPushAndBlogSection>
+
+        {/* BACKED BY SECTION */}
+        <BackedBySection
+          background={GLOBALS.COLORS.BG_DARK}
+        >
+          <ItemV
+            id="integratePush"
+            position="absolute"
+            top="0"
+            right="0"
+            bottom="0"
+            left="0"
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+          />
+
+          <Content
+            className="contentBox"
+            alignSelf="center"
+            width="inherit"
+          >
+            <ItemV
+              alignItems="stretch"
+            >
+              <InvestorHeader
+                  color="#09090B"
+                  fontSize="40px"
+                  fontWeight="700"
+                  letterSpacing="-0.02em"
+                  lineHeight="110%"
+                >
+                  {t("home.investors-section.title")}
+              </InvestorHeader>
+            </ItemV>
+            
+            <MarqueeAnimationContainer
+              padding="120px 0 0 0"
+              flex="1"
+              alignItems="stretch"
+            >
+              <MarqueeAnimation
+                speed={MARQUEE_ANIMATION_SPEED}
+                gradientWidth={8}
+                gap={18}
+              >
+                {InvList.top.map((item) => {
+                  return (
+                    <InvestorCard 
+                      key={item.id}
+                    >
+                      <InvestorIcon
+                        width={item.title ? 64 : 'auto'}
+                        src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                        alt={`${item?.alt}`}
+                      />
+                      {item.title && 
+                        <InvestorDetails>
+                          <InvestorTitle>{item.title}</InvestorTitle>
+                          {item.subtitle && 
+                            <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                          }
+                        </InvestorDetails>
+                      }
+                    </InvestorCard>
+                  );
+                })}
+              </MarqueeAnimation>
+            </MarqueeAnimationContainer>
+
+            <MarqueeAnimationContainer
+              padding="80px 0 0 0"
+              flex="1"
+              alignItems="stretch"
+            >
+              <MarqueeAnimation
+                speed={MARQUEE_ANIMATION_SPEED}
+                gradientWidth={8}
+                gap={18}
+                direction="right"
+              >
+                {InvList.bottom.map((item) => {
+                  return (
+                    <InvestorCard 
+                      key={item.id}
+                      flexDirection={item.title ? 'row' : 'column'}
+                    >
+                      <InvestorIcon
+                        width={item.title ? '64px' : 'auto'}
+                        borderRadius={item.title ? '50%' : '0'}
+                        src={require(`@site/static/assets/website/investors/${item.srcref}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/investors/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/investors/${item.srcref}@3x.webp`).default} 3x`}
+                        alt={`${item?.alt}`}
+                      />
+                      {item.title && 
+                        <InvestorDetails>
+                          <InvestorTitle>{item.title}</InvestorTitle>
+                          {item.subtitle && 
+                            <InvestorSubtitle>{item.subtitle}</InvestorSubtitle>
+                          }
+                        </InvestorDetails>
+                      }
+                    </InvestorCard>
+                  );
+                })}
+              </MarqueeAnimation>
+            </MarqueeAnimationContainer>
+
+          </Content>
+        </BackedBySection>
         
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
-          id="featuredIn"
-          data-bkg="dark"
-          className="darkBackground"
+          id="mediaFeaturedInSection"
+          background={GLOBALS.COLORS.BG_DARK}
         >
           <Content
             className="contentBox"
             padding="40px"
             alignSelf="flex-start"
+            id="MediaFeaturedIn"
           >
 
             <ItemH justifyContent="flex-start">
@@ -729,7 +740,6 @@ export default function Home(): JSX.Element {
 
           <FeaturedCardList
             className="featuredInMarquee"
-            id="newone"
           >
             <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
               {MediaList.map((item) => {
@@ -932,14 +942,9 @@ const BuildWithPushSection = styled(Section)`
   }
 
   @media ${device.laptopL} {
-    padding: 0px 160px 40px;
+    padding: 0px 20px 40px;
   }
 
-`;
-
-const ShrinkingSection = styled(ResponsiveSection)`
-  width: 100%;
-  overflow: hidden;
 `;
 
 const ItemImage = styled(ItemV)`
@@ -954,7 +959,7 @@ const ItemImage = styled(ItemV)`
   }
 `;
 
-const FeaturedInSection = styled(ResponsiveSection)`
+const FeaturedInSection = styled(Section)`
   padding: 0;
   min-height: auto;
   flex-direction: column;
@@ -967,28 +972,6 @@ const FeaturedInSection = styled(ResponsiveSection)`
     padding-top: 0;
     margin-top: 60px;
     // margin-top: 160px;
-  }
-`;
-
-const FeaturedInMarquee = styled(ItemH)``;
-
-const ResponsiveHeroContent = styled(ItemH)`
-  @media ${device.tablet} {
-    flex-direction: column;
-    margin-top: 240px;
-  }
-`;
-
-const HeroBox = styled(ItemV)`
-  flex: 0 0 52%;
-
-  @media ${device.tablet} {
-    flex: 1;
-
-    & span {
-      font-weight: 400;
-      font-size: 18px;
-    }
   }
 `;
 
@@ -1026,14 +1009,6 @@ const PushWorksRow = styled(ItemH)`
     flex-direction: column;
     margin-top: 80px;
     margin-bottom: 80px;
-  }
-`;
-
-const PoweringCommunicationRow = styled(ItemH)`
-  margin: 80px 0 50px 0;
-
-  @media ${device.tablet} {
-    margin-top: 80px;
   }
 `;
 
@@ -1108,18 +1083,11 @@ const LiveNetworkCard = styled(ItemV)`
 `;
 
 const PushProductContent = styled.div`
-	// display: flex;
-	// flex-direction: column;
 	padding: ${(props) => props.padding || "40px 0px 0px"};
-	// position: relative;
 
 	&.contentBox {
-	// 	width: 100%;
-  //   align-self: center;
     max-width: 1213px;
-  //   flex: 1;
-  //   display: flex;
-	// }
+	}
 
   @media ${device.tablet} {
   	padding: ${(props) => props.padding || "40px 0px"};
@@ -1135,91 +1103,6 @@ const Partners = styled(ItemV)`
   @media ${device.laptop} {
     flex-direction: column;
     gap: 30px;
-  }
-`;
-
-const SignupBox = styled(ItemH)`
-  background: #b9abef;
-  backdrop-filter: blur(10px);
-  border-radius: 32px;
-  padding: 72px;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-
-  @media ${device.tablet} {
-    padding: 24px;
-    flex-direction: column;
-  }
-`;
-
-const GrowPushCard = styled(ItemV)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 32px;
-  padding: 60px 80px;
-  width: 45%;
-
-  background: ${(props) => props.background || "#FFFBFB"};
-  border-radius: 48px;
-
-  & .figureSvg {
-    width: 100%;
-    height: 227px;
-
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-
-  @media ${device.tablet} {
-    padding: 28px;
-    border-radius: 36px;
-  }
-`;
-
-const GrowPushCardDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 24px;
-`;
-
-const IntegrateGrowWithPushRow = styled(ItemH)`
-  margin: 40px 0 0 0;
-  padding: 0 160px 0 160px;
-
-  & svg.figureSvg {
-    width: 100%;
-  }
-
-  @media ${device.tablet} {
-    padding-left: 30px;
-    padding-right: 30px;
-    margin: 0;
-
-    & svg.figureSvg {
-      height: 180px;
-    }
-
-    & .growWithPushtext {
-      text-align: center;
-    }
-  }
-`;
-
-const IntegrateAndEarn = styled.div`
-  display: flex;
-  flex-direction: column;
-  row-gap: 32px;
-  text-align: center;
-  background: rgba(235, 216, 249, 0.5);
-  backdrop-filter: blur(15px);
-  border-radius: 32px;
-  padding: 60px 300px;
-
-  @media ${device.tablet} {
-    padding: 32px 36px;
   }
 `;
 
@@ -1316,83 +1199,23 @@ const WhyPushTextBox = styled(ItemH)`
   }
 `;
 
-const BuiltByIntro = styled(ItemH)`
-  margin: 120px 160px;
-
-  @media ${device.tablet} {
-    margin: 40px 0;
-  }
-`;
-
-const FeaturedCell = styled.div`
-  width: 568px;
-  height: 224px;
-
-  padding: 48px 32px;
-
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 30px;
-
-  flex-basis: 100%;
-
-  border: 1px solid #fff;
-  border-left: 0;
-  color: "#FFF";
-
-  &::before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0;
-    height: 8px;
-    width: 96px;
-    background: #dd44b9;
-  }
-
-  &:hover {
-    background: linear-gradient(251.72deg, #dd44b9 14.29%, #8b6fd9 86.35%);
-
-    &::before {
-      background: #ffffff;
-    }
-
-    & a {
-      color: #fff;
-    }
-  }
-`;
-
-const BuiltByCards = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+const WhyPushAndBlogSection = styled(Section)`
   width: 100%;
-  gap: 26px;
-
-  transition: all 350ms linear;
+  overflow: hidden;
 `;
 
-const TeamMemberButtons = styled(ItemH)`
-  @media ${device.tablet} {
-    & a {
-      width: 100%;
-    }
-  }
+const BackedBySection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
 `;
 
 const InvestorHeader = styled(ResponsiveH2)`
   flex-direction: column;
   width: 60%;
   align-self: flex-start;
-
+  margin-bottom: 40px;
   @media ${device.tablet} {
-    width: 100%;
-    text-align: center;
+    width: auto;
   }
 `;
 
@@ -1432,7 +1255,7 @@ const InvestorSubtitle = styled(Span)`
 `
 
 const FeaturedCardList = styled(ItemH)`
-  margin: 0 0 320px 0;
+  margin: 0 0 0 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemV)`    
@@ -1507,3 +1330,7 @@ const ArticleSource = styled(ItemH)`
     height: 40px;
   }
 `;
+
+const MarqueeAnimationContainer = styled(ItemV)`
+  
+`
