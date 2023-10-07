@@ -42,7 +42,7 @@ function CheatSheet() {
       </script>
     </Head> */}
       <CheatWrapper>
-
+        
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
         <Button 
           target="_blank"
