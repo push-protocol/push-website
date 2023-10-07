@@ -14,7 +14,7 @@ import clsx from 'clsx';
 // Internal Components
 import { A, Button, H2, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import Footer from '@site/src/segments/Footer';
-import FAQ from './Faq';
+import FAQ from './faq';
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";

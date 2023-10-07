@@ -11,8 +11,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import HybridSection from '@site/src/components/HybridSection';
-import { A, B, Content, H3, HeroHeader, ItemH, ItemV, P } from '@site/src/css/SharedStyling';
+import { A, B, Content, H3, HeroHeader, ItemH, ItemV, P, Section } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -39,12 +38,7 @@ function PrivacyMobile() {
         </script>
       </Head> */}
       <PrivacyMobileWrapper>
-        <ResponsiveSection
-          curve="bottom"
-          padding="180px 0px 20px 0px"
-          data-bkg="dark"
-          justifyContent="center"
-        >
+        <TopSection>
           <Content
             className="contentBox"
             flex="1"
@@ -74,9 +68,9 @@ function PrivacyMobile() {
               </H3>
             </ItemV>
           </Content>
-        </ResponsiveSection>
+        </TopSection>
 
-        <ResponsiveSection
+        <PrivacySection
           curve="bottom"
           padding="80px 0px 40px 0px"
           data-bkg="light"
@@ -763,54 +757,12 @@ function PrivacyMobile() {
               </ItemH>
             </ItemH>
           </Content>
-        </ResponsiveSection>
+        </PrivacySection>
       </PrivacyMobileWrapper>
     </Layout>
   );
 }
 
-const ResponsiveSection = styled(HybridSection)`
-  @media ${device.tablet} {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-
-  &[data-bkg='dark'] {
-    & h1 {
-      color: #fff;
-    }
-
-    & h3 {
-      color: #fff;
-    }
-
-    & span {
-      color: #fff;
-    }
-
-    & p {
-      color: #fff;
-    }
-  }
-
-  &[data-bkg='light'] {
-    & h1 {
-      color: #000;
-    }
-
-    & h3 {
-      color: #000;
-    }
-
-    & span {
-      color: #000;
-    }
-
-    & p {
-      color: #000;
-    }
-  }
-`;
 
 const PrivacyMobileWrapper = styled.div`
   @media ${device.tablet} {
@@ -823,4 +775,28 @@ const ListGroup = styled.div`
   flex-direction: column;
 `;
 
+const PrivacySection = styled(Section)`
+  width: 100%;
+  padding: 80px 0px 0px 0px;
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+  }
+`;
+
+const TopSection = styled(Section)`
+  width: 100%;
+  padding: 180px 0px 20px 0px;
+  min-height: 70vh;
+  background: #121315;
+  border-radius: 0 0 48px 48px;
+
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
 export default PrivacyMobile;
+
+
