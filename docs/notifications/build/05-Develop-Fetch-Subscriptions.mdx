@@ -1,19 +1,19 @@
 ---
-id: docs-notifications-develop-fetch-notification-subscriptions
-title: Fetch Notification Subscriptions
+id: docs-notifications-develop-fetch-subscriptions
+title: Fetch Subscriptions
 hide_title: true
-slug: ./fetch-notification-subscriptions
+slug: ./fetch-subscriptions
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 6
+sidebar_position: 5
 ---
 
-# Fetch notification subscriptions overview
+# Fetch subscriptions overview
 
-These APIs are useful for fetching list of all channels subscribed by a user.
+These APIs are useful for fetching list of all channels subscribed by a user and their settings (if any).
 
 <head>
   <title>
-    Fetch Notification Subscriptions | Push Notification | Push Documentation
+    Fetch Subscriptions | Push Notification | Push Documentation
   </title>
 </head>
 
@@ -26,12 +26,13 @@ import {
   AFocus,
 } from '@site/src/css/SharedStyling'
 
-## Fetch notification subscriptions API
+## Fetch subscriptions API
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
+// userAlice.notification.subscriptions({options?})
 const aliceSubscriptions = await userAlice.notification.subscriptions()
 ```
 
@@ -40,12 +41,12 @@ const aliceSubscriptions = await userAlice.notification.subscriptions()
 
 ---
 
-### Fetch Notification Subscriptions parameters
+### Fetch subscriptions parameters
 
-| Param     | Type              | SubType  | Default | Remarks                                                            |
+| Param     | Type              | Subtype  | Default | Remarks                                                            |
 | --------- | ----------------- | -------- | ------- | ------------------------------------------------------------------ |
 | `options` | `object`          | -        | -       | An object containing additional options for subscriptions          |
-| -         | `options.account` | `string` | -       | Account in full CAIP                                               |
+| -         | `options.account` | `string` | -       | [Account supports a number of address format](/docs/notifications/build/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
 | -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.             |
 | -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag |
 
