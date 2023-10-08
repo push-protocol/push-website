@@ -4,7 +4,7 @@ title: Fetch Notifications
 hide_title: true
 slug: ./fetch-notifications
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Fetch notifications overview
@@ -41,11 +41,11 @@ const inboxNotifications = await userAlice.notification.list('INBOX')
 
 ### Notification list parameters
 
-| Param     | Type               | SubType    | Default | Remarks                                                                 |
+| Param     | Type               | Subtype    | Default | Remarks                                                                 |
 | --------- | ------------------ | ---------- | ------- | ----------------------------------------------------------------------- |
 | _`type`_  | `INBOX` or `SPAM`  | -          | INBOX   | A string representing the type of feed to retrieve.                     |
 | `options` | `object`           | -          | -       | An object containing additional options for filtering and pagination.   |
-| -         | `options.account`  | `string`   | -       | [Account supports a number of address format](/docs/notifications/build/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |                                                    |
+| -         | `options.account`  | `string`   | -       | [Account supports a number of address format](/docs/notifications/build/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
 | -         | `options.channels` | `string[]` | -       | An array of channels to filter feeds by.                                |
 | -         | `options.page`     | `number`   | 1       | A number representing the page of results to retrieve.                  |
 | -         | `options.limit`    | `number`   | 10      | A number representing the maximum number of feeds to retrieve per page. |
