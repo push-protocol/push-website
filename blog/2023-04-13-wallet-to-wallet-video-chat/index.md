@@ -7,13 +7,15 @@ tags: [ Web3, Push Notification, Chat, Video, Social]
 
 ---
 
-![Docusaurus Image](./cover-image.gif)
-<!--truncate-->
+![Cover image of Push Launches Wallet-to-Wallet Video Chat📹](./cover-image.gif)
+
 
 <!--customheaderpoint-->
 # Push Video is live, allowing web3 users to video chat without intermediaries.<br/>
 
 Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at [app.push.org](https://app.push.org/chat)!
+
+<!--truncate-->
 
 Push Protocol began with push notifications to web3 in January 2022 on Ethereum. Since then, Push has expanded to Polygon and BNB Chain. In October 2022 at Devcon in Bogota, we announced the launch of Push Chat, our wallet-to-wallet messaging protocol. Since launch, Push Protocol has powered over 30M messages to 85,000+ users across 500+ integrations.
 

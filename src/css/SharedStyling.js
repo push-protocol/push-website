@@ -78,11 +78,13 @@ export const Content = styled.div`
   @media ${device.laptop} {
     padding: ${(props) =>
       props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
+    // max-width: ${(props) => props.maxWidth || "1213px"};
   }
 
   @media ${device.mobileM} {
     padding: ${(props) =>
       props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
+    max-width: ${(props) => props.maxWidth || "100%"};
   }
 `;
 

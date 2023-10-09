@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Component
-import HybridSection from '@site/src/components/HybridSection';
 import PageWrapper from '@site/src/components/PageWrapper';
 import {
   A,
@@ -24,6 +23,7 @@ import {
   ItemV,
   LI,
   P,
+  Section,
   Span,
   UL,
 } from '@site/src/css/SharedStyling';
@@ -75,12 +75,7 @@ function TermsOfService() {
         </Head>
         
       <TosWrapper>
-        <ResponsiveSection
-          curve="bottom"
-          padding="180px 0px 20px 0px"
-          data-bkg="dark"
-          justifyContent="center"
-        >
+        <TopSection>
           <Content
             className="contentBox"
             padding="80px 0px 20px 0px"
@@ -113,10 +108,10 @@ function TermsOfService() {
               </P>
             </ItemV>
           </Content>
-        </ResponsiveSection>
+        </TopSection>
 
         {/* TOS SECTION */}
-        <ResponsiveSection
+        <TosSection
           curve="bottom"
           padding="80px 0px 40px 0px"
           data-bkg="light"
@@ -1358,78 +1353,12 @@ function TermsOfService() {
               </ItemH>
             </ItemH>
           </Content>
-        </ResponsiveSection>
+        </TosSection>
       </TosWrapper>
     </Layout>
   );
 }
 
-const ResponsiveSection = styled(HybridSection)`
-  @media ${device.tablet} {
-    padding-left: 30px !important;
-    padding-right: 30px !important;
-  }
-
-  &[data-bkg='dark'] {
-    & h1 {
-      color: #fff;
-    }
-
-    & h3 {
-      color: #fff;
-    }
-
-    & span {
-      color: #fff;
-    }
-
-    & p {
-      color: #fff;
-    }
-
-    & .scheduleHeader {
-      & span:nth-child(1) {
-        color: #fff;
-        background: #fff;
-      }
-
-      & span:nth-child(2) {
-        background: #e20880;
-        color: #fff;
-      }
-    }
-  }
-
-  &[data-bkg='light'] {
-    & h1 {
-      color: #000;
-    }
-
-    & h3 {
-      color: #000;
-    }
-
-    & span {
-      color: #000;
-    }
-
-    & p {
-      color: #000;
-    }
-
-    & .scheduleHeader {
-      & span:nth-child(1) {
-        color: #fff;
-        background: #000;
-      }
-
-      & span:nth-child(2) {
-        background: #e20880;
-        color: #fff;
-      }
-    }
-  }
-`;
 
 const TosWrapper = styled.div`
   @media ${device.tablet} {
@@ -1445,6 +1374,28 @@ const TermsHeaderGroup = styled.div`
 const ListGroup = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const TosSection = styled(Section)`
+  width: 100%
+  padding: 80px 0px 0px 0px;
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+  }
+`;
+
+const TopSection = styled(Section)`
+  width: 100%;
+  padding: 180px 0px 20px 0px;
+  min-height: 70vh;
+  background: #121315;
+  border-radius: 0 0 48px 48px;
+
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export default TermsOfService;

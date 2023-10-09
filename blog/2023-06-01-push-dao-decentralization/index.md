@@ -6,12 +6,13 @@ tags: [ Pushprotocol, Web3, DAO]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐](./cover-image.webp)
 
 Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 
 Today, we are launching the next phase of Push governance via the <b>Push Progressive Decentralization Roadmap</b>, opening opportunities for our community to get more involved with Push Protocol in our journey to become a community-owned project.
+
+<!--truncate-->
 
 ## The TL;DR of Push DAO Phase 0
 Before we get into the details of Phase 1, let’s look at the success of Phase 0.

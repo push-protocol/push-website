@@ -6,12 +6,13 @@ tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Develo
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of May Monthly Recap ☀️](./cover-image.webp)
 
 Welcome to another exciting month at Push!
 
 May flew by in the blink of an eye, and we have a whirlwind of exciting updates and achievements to share with you. From groundbreaking developments to valuable partnerships and community activities, the past month has been nothing short of extraordinary.
+
+<!--truncate-->
 
 Get ready to dive in!
 

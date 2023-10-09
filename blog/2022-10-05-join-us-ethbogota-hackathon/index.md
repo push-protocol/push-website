@@ -5,14 +5,14 @@ authors: [push]
 tags: [ Developer, Hackathons, Ethglobal, Web3, Push Notification]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Join Us for the ETHBogotá 2022 Hackathon](./cover-image.webp)
 
 <!--customheaderpoint-->
 # We’re partnering up with the wonderful ETHGlobal team (again!) to bring you a new hackathon — ETHBogotá, and let’s build something cool with Push over Devcon week!<br/>
 
 A few weeks ago, we teamed up with our frens at [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----96801a44ee64--------------------------------) for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive [work](https://twitter.com/pushprotocol/status/1575838134251626496).
+
+<!--truncate-->
 
 Now, it’s [ETHBogotá](https://ethglobal.com/events/ethbogota/prizes#push-protocol) time! This Friday, we’re challenging you to surprise and inspire the community with your projects — at the largest web3 hackathon in LATAM’s history and pushing new boundaries in web3 communication!
 

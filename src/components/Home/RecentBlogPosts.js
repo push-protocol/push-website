@@ -90,6 +90,14 @@ const BlogPostCardPrimary = styled(Button)`
   & p:nth-child(2) {
     display: none;
   }
+  
+  & p:nth-child(3) {
+    display: none;
+  }
+
+  & h1 {
+    display: none;
+  }
 
   & ${Span} {
     min-width: 200px;
@@ -126,6 +134,14 @@ const BlogPostCardSecondary = styled(Button)`
   }
 
   & p:nth-child(2) {
+    display: none;
+  }
+
+  & p:nth-child(3) {
+    display: none;
+  }
+
+  & h1 {
     display: none;
   }
 

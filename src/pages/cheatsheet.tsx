@@ -65,7 +65,7 @@ function CheatSheet() {
 
         
       <CheatWrapper>
-
+        
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
         <Button 
           target="_blank"

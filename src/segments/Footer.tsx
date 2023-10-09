@@ -35,7 +35,7 @@ function Footer() {
 
   return (
     <StyledFooter>
-      <ResponsiveSection
+      <FooterSection
         id="footer"
         background="#121315"
         padding="70px 0 0 0"
@@ -400,7 +400,7 @@ function Footer() {
             </ItemH>
           </SocialLinks>
         </Content>
-      </ResponsiveSection>
+      </FooterSection>
     </StyledFooter>
   );
 }
@@ -411,7 +411,7 @@ const StyledFooter = styled.footer`
   position: relative;
 `;
 
-const ResponsiveSection = styled(Section)`
+const FooterSection = styled(Section)`
   flex-direction: column;
   @media ${device.tablet} {
     padding-left: 30px !important;

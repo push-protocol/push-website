@@ -5,14 +5,14 @@ authors: [push]
 tags: [ Newsletter, Epnsproject, Blockchain, Ethereum]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of EPNS Monthly Blocks](./cover-image.webp)
 
 <!--customheaderpoint-->
 # August 2022<br/>
 
 This August was definitely a wild ride and we couldn’t have had more fun.🎢 Let’s take a look at all the happenings this month!
+
+<!--truncate-->
 
 ![What's New](./image-1.webp)
 

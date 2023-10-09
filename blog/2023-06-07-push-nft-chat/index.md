@@ -5,16 +5,14 @@ authors: [push]
 tags: [Web3, NFT, Pushprotocol, NFT Utility]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    Instantly integrate Push NFT Chat for pure NFT-to-NFT chat
-
+# Instantly integrate Push NFT Chat for pure NFT-to-NFT chat
 
 We are thrilled to announce the highly anticipated release of Push NFT Chat, the next leap in web3 messaging. For the 1.5 Million+ NFT wallets and NFT collections like Azuki, BAYC, CryptoPunks, a universe of new potential utility is now here for your collections 🌎
+
+<!--truncate-->
 
 As the team behind Push Protocol, we’ve been committed to pushing the boundaries of what is possible in web3 through decentralized communication. With our previous product, Push Chat, we successfully introduced native web3 instant chats using wallet addresses. Push Chat boasts a number of user-centric features like spam control, inbuilt notification modules, video and audio calls and [much more](https://push-protocol.medium.com/launching-the-future-of-web3-messaging-with-push-chat-push-group-chat-de4cb7a65231).
 
@@ -29,7 +27,7 @@ Push NFT Chat enables chats to be tied to a specific NFT owned by you, instead o
 - The address format for Push NFT Chat is <b>nft:eip155:${nftChainId}:${nftContractAddress}:${nftTokenId} instead of eip155:${walletaddress}</b> (used in wallet to wallet communication)
 - Your communication moves with your NFT but only if you want them to
 
-![Docusaurus Image](./image-1.webp)
+![Push NFT Chat Image](./image-1.webp)
 
 <blockquote>
 <i>Developer Hint</i>: Push NFT Chat is already out:

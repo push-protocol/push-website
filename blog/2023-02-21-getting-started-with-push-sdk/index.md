@@ -7,11 +7,11 @@ tags: [ Web3, Developer, Blockchain Development, Web3 Notifications]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Getting Started With Push SDK: uiweb API🛠️](./cover-image.webp)
 
 The <b>@pushprotocol/uiweb</b> package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels.
+
+<!--truncate-->
 
 In this blog post, we'll take a closer look at the components included in the <b>@pushprotocol/uiweb</b> package and how you can use them in your dApp.
 

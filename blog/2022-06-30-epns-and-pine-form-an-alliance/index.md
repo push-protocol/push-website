@@ -6,11 +6,11 @@ tags: [Web3, Blockchain, Crypto, Ethereum, Cryptocurrency]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of EPNS and Pine Form An Alliance to Enable Seamless Communication for Users](./cover-image.png)
 
 EPNS and Pine, the decentralized NFT loan platform, join hands in a pilot collaboration to bring push notifications to users. As such, Pine will now be able to seamlessly interact with its users and keep them updated about the status of their loans on the platform.
+
+<!--truncate-->
 
 ### NFT Backed Lending
 Pine is a decentralized lending and borrowing protocol in DeFi that allows users to borrow funds against their NFTs. Now, the NFT industry is one of the fastest-growing and most valuable in the world, with a market value of more than $40 billion. In the beginning, digital artists sold individual pieces of art as NFTs. And now, it’s a field with thousands of projects that could change the way the world’s biggest industries work. With an increase in utility, the net value of this asset class has increased exponentially with some NFTs going in the millions.

@@ -7,10 +7,11 @@ tags: [ Frensofpush, Web3, Partnerships, Shapeshift]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Shaping The Future of The DEX User Experience | Push x ShapeShift🦊](./cover-image.webp)
 
 This week, we’re thrilled to spotlight our latest fren [ShapeShift](https://shapeshift.com/) revolutionizing the way you trade, track, buy, and earn cryptocurrency.
+
+<!--truncate-->
 
 ShapeShift is a decentralized exchange that focuses on non-custodial and multi-chain trading. ShapeShift is community-owned, open-source, and completely decentralized. With a user-friendly interface and secure transactions, ShapeShift has become a top choice among web3 traders and investors alike.
 

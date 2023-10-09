@@ -7,10 +7,11 @@ tags: [ Web3, Blockchain Development, Blockchain Technology, Announcements]
 
 ---
 
-![Docusaurus Image](./cover-image.gif)
-<!--truncate-->
+![Cover image of Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚](./cover-image.gif)
 
 We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️
+
+<!--truncate-->
 
 This integration is designed to take the Safe user experience to the next level. Now with Push notifications, Safe users can rest easy knowing they are in complete control and up to date on the status of their assets with real-time notifications to keep them informed.
 

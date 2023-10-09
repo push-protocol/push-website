@@ -1,0 +1,85 @@
+---
+id: docs-notifications-develop-types-of-notification
+title: Types of Notification
+hide_title: true
+slug: ./types-of-notification
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 12
+---
+
+# Types of Notification
+
+Push Protocol allows a bunch of notifications to be sent to the user.
+
+<head>
+  <title>Types Of Notification | Push Notification | Push Documentation</title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling'
+
+## Broadcast Notification
+
+This type of notification is basically broadcasted or sent to all the subscribers of a channel at once
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// sends a broadcast notification
+const broadcastNotif = await userAlice.channel.send(['*'], {
+  notification: { title: 'test', body: 'test' },
+})
+```
+
+  </TabItem>
+</Tabs>
+
+## Targeted Notification
+
+As the name suggests, this type of notification allows channel owners to notify a specific wallet address.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// sends a targeted notification
+const targetedNotif = await userAlice.channel.send([signer.address], {
+  notification: {
+    title: 'test',
+    body: 'test',
+  },
+})
+```
+
+  </TabItem>
+</Tabs>
+
+## Subset Notification
+
+Subset notifications are quite helpful when a particular group of subscribers of a channel is supposed to be notified
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// sends a subset notification
+const subsetNotif = await userAlice.channel.send(
+  [randomWallet1, randomWallet2, signer.address],
+  {
+    notification: {
+      title: 'test',
+      body: 'test',
+    },
+  }
+)
+```
+
+  </TabItem>
+</Tabs>

@@ -7,10 +7,11 @@ tags: [ Web3, Bug Bounty, Blockchain Technology, Bounty Program, Announcements]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Push Protocol’s Bug Bounty Program Goes Live!](./cover-image.webp)
 
 Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉
+
+<!--truncate-->
 
 <b>And the program starts TODAY!</b>
 

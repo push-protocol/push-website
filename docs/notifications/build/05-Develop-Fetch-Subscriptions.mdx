@@ -1,0 +1,68 @@
+---
+id: docs-notifications-develop-fetch-subscriptions
+title: Fetch Subscriptions
+hide_title: true
+slug: ./fetch-subscriptions
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 5
+---
+
+# Fetch subscriptions overview
+
+These APIs are useful for fetching list of all channels subscribed by a user and their settings (if any).
+
+<head>
+  <title>
+    Fetch Subscriptions | Push Notification | Push Documentation
+  </title>
+</head>
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling'
+
+## Fetch subscriptions API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// userAlice.notification.subscriptions({options?})
+const aliceSubscriptions = await userAlice.notification.subscriptions()
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch subscriptions parameters
+
+| Param     | Type              | Subtype  | Default | Remarks                                                            |
+| --------- | ----------------- | -------- | ------- | ------------------------------------------------------------------ |
+| `options` | `object`          | -        | -       | An object containing additional options for subscriptions          |
+| -         | `options.account` | `string` | -       | [Account supports a number of address format](/docs/notifications/build/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
+| -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.             |
+| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<details>
+
+<summary>
+  <b>Expected response</b>
+</summary>
+
+```typescript
+[
+  { channel: '0xD8634C39BBFd4033c0d3289C4515275102423681' },
+  { channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924' },
+]
+```
+
+</details>

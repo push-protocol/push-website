@@ -2782,12 +2782,12 @@
   dependencies:
     "@lit-labs/ssr-dom-shim" "^1.0.0"
 
-"@livepeer/core-react@^1.8.6":
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/@livepeer/core-react/-/core-react-1.8.6.tgz#6b599edca41c03b56f14dc8f65b731d936b9acb3"
-  integrity sha512-zAvWmmcz5QUW2i4oswlrLaASypKsBm6kq8B+Dq8XSNqRrmfEao4zHOA4fERoln0gcT2wha5fDP+g4BcoSZoubQ==
+"@livepeer/core-react@^1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@livepeer/core-react/-/core-react-1.8.8.tgz#f41312e3de8474a46d2120819d14bcdb25fd87b0"
+  integrity sha512-Ujo7tUVbU4g5vuM0OiAflUxthddPOTTVjKND0luMWn1o1o+W9D+j6+kjzT7b81kik16DDxsWb9xcNnEtfaJyxQ==
   dependencies:
-    "@livepeer/core" "^1.8.6"
+    "@livepeer/core" "^1.8.8"
     "@tanstack/query-async-storage-persister" "4.29.23"
     "@tanstack/query-core" "4.29.23"
     "@tanstack/react-query" "4.29.23"
@@ -2795,10 +2795,10 @@
     use-sync-external-store "^1.2.0"
     zustand "^4.3.9"
 
-"@livepeer/core@^1.8.6":
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/@livepeer/core/-/core-1.8.6.tgz#15984565210b46fdea272a262a9ba786e152802f"
-  integrity sha512-VWMHaHMzNCr8YuC9hD87Ju+fwnpldEoe3y9CqOXrQPyyIgiAWfraZBA6Ard67f09X9UBGaaRcAMgMcCUs9HtKA==
+"@livepeer/core@^1.8.8":
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/@livepeer/core/-/core-1.8.8.tgz#562137256eb4e3bd7a1df52d4ad88c0e43bb0e60"
+  integrity sha512-Aqx+H5gqkKcXKHaCKR0BDAHYvKWCae2wSRZnWiI+/ZZOpswj1Dfhcw3w3c/IPv4nBo2czICZv2cdB/wC85fzLg==
   dependencies:
     cross-fetch "^4.0.0"
     ms "^3.0.0-canary.1"
@@ -2807,17 +2807,17 @@
     zustand "^4.3.9"
 
 "@livepeer/react@^2.6.0":
-  version "2.8.6"
-  resolved "https://registry.yarnpkg.com/@livepeer/react/-/react-2.8.6.tgz#672dc1c4a2db2ce6d168dc8bebb5b21a0cd0d08e"
-  integrity sha512-lnk8e4KfQFIH2zD3hmpHktfmou4G6YLdUc2MJ2Zs7DlkKZItygCruJugQz/wUx2fCUWXD1LaGLFOKU5WI5+UNA==
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/@livepeer/react/-/react-2.8.8.tgz#b789bd35f56b6c4d362aab54e373bc89d218aab7"
+  integrity sha512-3vnrBnJr0B0GF+T1iufyeaXYvoCbOQyrv95Amvfpv2QVXIwF+tgtozQkb8fpn9t6TCBJn9AX9tvIIDC+sZ9GmQ==
   dependencies:
-    "@livepeer/core-react" "^1.8.6"
+    "@livepeer/core-react" "^1.8.8"
     "@radix-ui/react-dialog" "^1.0.4"
     "@radix-ui/react-popover" "^1.0.6"
     "@radix-ui/react-select" "^1.2.2"
     "@stitches/react" "^1.2.8"
     core-js "^3.31.1"
-    livepeer "2.8.6"
+    livepeer "2.8.8"
     zustand "^4.3.9"
 
 "@livepeer/webrtmp-sdk@^0.2.3":
@@ -3476,9 +3476,9 @@
     buffer "~6.0.3"
 
 "@solana/web3.js@^1.70.1":
-  version "1.78.7"
-  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.78.7.tgz#a53dd3bbd604c13468555cb5eea1d39d69dd9e82"
-  integrity sha512-BiAuCaHnbxgHsjNt/4dfMYjvPDRw+tollg6uWdVZpPogQW2GJj51LQ2NeVhfIGlJIU75O03YZeIc0r0H6LH1vA==
+  version "1.86.0"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.86.0.tgz#2a8639db6e1bd0430645a26f0abe8c81b8f6eedc"
+  integrity sha512-MYr5D4/KgarCXs8XYHUSmIQ0gRJFRNRSVO2T1g1LXln5TWpeYHqWxnRoLmvIOOhML1YpNiFHvMVBgHk6ObjhVw==
   dependencies:
     "@babel/runtime" "^7.22.6"
     "@noble/curves" "^1.2.0"
@@ -3517,9 +3517,9 @@
     react-merge-refs "^2.0.1"
 
 "@splinetool/runtime@^0.9.270":
-  version "0.9.465"
-  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.465.tgz#16398febe2b01fd2c0b9928bc70d5001b43a24b1"
-  integrity sha512-kVGVVEmqmyssEzACyOYQ5HO/N/xyWkS7eZsPzK/FjLmdtbxIIwQsYhQ+Sg+E7oIcrlafhCN98EldCJ096Epvgg==
+  version "0.9.471"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-0.9.471.tgz#4aa571ee986950752d66837623750f0d7f446c9a"
+  integrity sha512-BxbNDQYShcjXcq6ILPoO+ydzbzQQmWgZiyWhBwrx7LO89v61LY5mk8o17E5woVxo17SG2OUEv7huFwZeigGQGQ==
   dependencies:
     on-change "^4.0.0"
     semver-compare "^1.0.0"
@@ -4050,9 +4050,9 @@
     "@types/react" "*"
 
 "@types/react@*":
-  version "18.2.24"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.24.tgz#3c7d68c02e0205a472f04abe4a0c1df35d995c05"
-  integrity sha512-Ee0Jt4sbJxMu1iDcetZEIKQr99J1Zfb6D4F3qfUWoR1JpInkY1Wdg4WwCyBjL257D0+jGqSl1twBjV8iCaC0Aw==
+  version "18.2.25"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.25.tgz#99fa44154132979e870ff409dc5b6e67f06f0199"
+  integrity sha512-24xqse6+VByVLIr+xWaQ9muX1B4bXJKXBbjszbld/UEDslGLY53+ZucF44HCmLbMPejTzGG9XgR+3m2/Wqu1kw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5612,9 +5612,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.30001541:
-  version "1.0.30001543"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001543.tgz#478a3e9dddbb353c5ab214b0ecb0dbed529ed1d8"
-  integrity sha512-qxdO8KPWPQ+Zk6bvNpPeQIOH47qZSYdFZd6dXQzb2KzhnSXju4Kd7H1PkSJx6NICSMgo/IhRZRhhfPTHYpJUCA==
+  version "1.0.30001546"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001546.tgz#10fdad03436cfe3cc632d3af7a99a0fb497407f0"
+  integrity sha512-zvtSJwuQFpewSyRrI3AsftF6rM0X80mZkChIt1spBGEvRglCrjTniXvinc8JKRoqTwXAgvqTImaN9igfSMtUBw==
 
 ccount@^1.0.0:
   version "1.1.0"
@@ -6695,9 +6695,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.535:
-  version "1.4.540"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.540.tgz#c685f2f035e93eb21dd6a9cfe2c735bad8f77401"
-  integrity sha512-aoCqgU6r9+o9/S7wkcSbmPRFi7OWZWiXS9rtjEd+Ouyu/Xyw5RSq2XN8s5Qp8IaFOLiRrhQCphCIjAxgG3eCAg==
+  version "1.4.543"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.543.tgz#51116ffc9fba1ee93514d6a40d34676aa6d7d1c4"
+  integrity sha512-t2ZP4AcGE0iKCCQCBx/K2426crYdxD3YU6l0uK2EO3FZH0pbC4pFz/sZm2ruZsND6hQBTcDWWlo/MLpiOdif5g==
 
 elliptic@6.5.4, elliptic@^6.5.3, elliptic@^6.5.4:
   version "6.5.4"
@@ -9090,12 +9090,12 @@ lit@2.8.0:
     lit-element "^3.3.0"
     lit-html "^2.8.0"
 
-livepeer@2.8.6, livepeer@^2.5.8:
-  version "2.8.6"
-  resolved "https://registry.yarnpkg.com/livepeer/-/livepeer-2.8.6.tgz#515a2cfddbc3d51951accc54c8f399529cb662f7"
-  integrity sha512-8K2lRtpgZKbv6l6cGYYMJW9qpdRKkGUuy7R7xTLkS6NaRQzaeW08vubftmbMHil8v8GX/nDmodcW2vA4oIkP0w==
+livepeer@2.8.8, livepeer@^2.5.8:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/livepeer/-/livepeer-2.8.8.tgz#688374db51896b6c5017b96d86e51fe4f6805ffa"
+  integrity sha512-NfQoqv0Zwr6uREdIy+BZ65AjddK7VkK4z8gFK3VOVHv3R3XgJDt/CsC/fiZQ/9Zhlgg6pKIu9nvPANgNPV4h0w==
   dependencies:
-    "@livepeer/core" "^1.8.6"
+    "@livepeer/core" "^1.8.8"
     "@stitches/core" "^1.2.8"
     core-js "^3.31.1"
     cross-fetch "^4.0.0"
@@ -11820,9 +11820,9 @@ sonic-boom@^2.2.1:
     atomic-sleep "^1.0.0"
 
 sonic-boom@^3.0.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/sonic-boom/-/sonic-boom-3.5.0.tgz#bf7e43aef0ee96ad2a904bcca4f593d6979e3f53"
-  integrity sha512-02A0wEmj4d3aEIW/Sp6LMP1dNcG5cYmQPjhgtytIXa9tNmFZx3ragUPFmyBdgdM0yJJVSWwlLLEVHgrYfA0wtQ==
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/sonic-boom/-/sonic-boom-3.6.1.tgz#ce1bc5d58e83d53e42a4b3a036050e463d95c9bb"
+  integrity sha512-QV+p5nXPiUiSMxn/k5bOL+hzCpafdj1voL+hywPZhheRSYyYp7CF15rNdz1evOXCUn/tFb7R62PDX1yJmtoTgg==
   dependencies:
     atomic-sleep "^1.0.0"
 
@@ -13411,9 +13411,9 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 zustand@^4.3.9:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.2.tgz#e26ad331d0a2e28a7d4aa126b00c7140b34904bb"
-  integrity sha512-qF3/vZHCrjPUX5DvPE3DPDZlh+FiAWRKlP9PI7SlW1MCk8q4vUCDqyWsbF8K41ne0Yx8eeeb0m1cypn1LqUMYQ==
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.4.3.tgz#1d54cf7fa4507ad8bf58e2f13e08ddc8a6730128"
+  integrity sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==
   dependencies:
     use-sync-external-store "1.2.0"
 
