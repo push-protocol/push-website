@@ -219,7 +219,7 @@ const ParallaxContent = styled(ItemV)`
 
 const ParallaxHeader = styled(Span)`
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: inherit;
   color: #E64DE9;
   font-stretch: ultra-expanded;
@@ -266,7 +266,7 @@ const FlexItem = styled.div`
 const ParallelFlexTitle = styled(Span)`
   font-size: 60px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   line-height: inherit;
   

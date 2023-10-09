@@ -208,7 +208,7 @@ export const BRBMainComponent = () => {
                 />
                 <Span
                   fontSize="24px"
-                  fontWeight="700"
+                  fontWeight="400"
                   style={{ maxHeight: '24px', fontFamily:'Glancyr' }}
                 >
                   #BRB
@@ -354,7 +354,7 @@ export const BRBMainComponent = () => {
             border="1px solid #FC6DFF"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="500"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('schedule')}
           >
             Register Now
@@ -365,7 +365,7 @@ export const BRBMainComponent = () => {
             border="1px solid #E64DE9"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="500"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
@@ -408,7 +408,7 @@ export const BRBMainComponent = () => {
           >
             <SpanContent
               fontSize="112px"
-              fontWeight="500"
+              fontWeight="400"
               color="#E64DE9"
               letterSpacing="0.01"
             >
@@ -475,7 +475,7 @@ export const BRBMainComponent = () => {
       <BottomGrad>
         <Span
           fontSize="18px"
-          fontWeight="500"
+          fontWeight="400"
           color="#FFF"
         >
           © 2023 Push. All rights reserved.
@@ -739,7 +739,7 @@ const PushLogoBlackContainer = styled(ItemV)`
   color: #fff;
   font-size: 24.207px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -822,7 +822,7 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {    
-    font-weight: 500;
+    font-weight: 400;
     font-size: 18px;
     line-height: 142%;
     color: var(--ifm-color-primary-inverse);

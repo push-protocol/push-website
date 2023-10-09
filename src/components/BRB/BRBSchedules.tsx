@@ -344,7 +344,7 @@ const DateContainer = styled(Span)`
   // color: #fff;
   color: ${(props) => props.color};
   font-size: 20px;
-  font-weight: 550;
+  font-weight: 400;
   font-family: Glancyr;
   letter-spacing: 0.6px;
   display: flex;

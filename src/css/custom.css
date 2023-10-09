@@ -98,6 +98,7 @@
 @font-face {
   font-family: 'Green Brooks';
   src: url('../../static/fonts/GreenBrooks.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -105,6 +106,7 @@
 @font-face {
   font-family: 'Glancyr';
   src: url('../../static/fonts/Glancyr-Regular.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
