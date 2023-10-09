@@ -14,7 +14,7 @@ import clsx from 'clsx';
 // Internal Components
 import { A, Button, H2, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import Footer from '@site/src/segments/Footer';
-import FAQ from './Faq';
+import FAQ from './faq';
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
@@ -85,13 +85,23 @@ const DevGuide: DevGuideItems[] = [
   {
     title: 'Notifications',
     Svg: require('@site/static/assets/docs/notification.svg').default,
-    link: 'https://docs.push.org/developers/concepts/web3-notifications',
+    link: '/docs/notifications',
     description: (
       <>
         Explore different ways of sending and receiving notifications and more.
 
       </>
     ),
+    codeblock: `// Initialize wallet user
+const userAlice = await PushAPI.initialize(signer);
+
+// Send a notification to users of your protocol
+const response = await userAlice.channel.send(['*'], { 
+  notification: {
+    title: 'Hello World Notification',
+    body: 'Web3 native notifications are here!',
+  }
+});`
   },
   {
     title: 'Push Chat',

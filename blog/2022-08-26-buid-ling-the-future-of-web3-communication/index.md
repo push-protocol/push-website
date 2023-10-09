@@ -6,15 +6,15 @@ tags: [ Web3, Hackathons, Developer, Push Notification, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022](./cover-image.png)
 
 <!--customheaderpoint-->
 # Get your creative juices flowing and create something new with EPNS at ETHGlobal’s ETHOnline 2022 hackathon.
 
 ## 🏗 BUILD with EPNS — Make Web3 Communication Seamless
 One of the best things about web3 and hackathons is how unique ideas transform into something tangible and solve web3 challenges and problems.
+
+<!--truncate-->
 
 We’ve had this experience in our previous hackathons, and we take pride in being involved with builders who take some time out and build and code with some intensity to make great products in the web3 ecosystem.
 

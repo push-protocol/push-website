@@ -7,10 +7,11 @@ tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of 10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆](./cover-image.webp)
 
 Push Protocol is an advanced communication layer built on distributed and peer-to-peer (P2P) principles.
+
+<!--truncate-->
 
 In this blog post, we will share ten reasons web3 enterprises should consider adopting Push Protocol for their web3 communication needs.
 

@@ -7,10 +7,11 @@ tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Recreating Web2 Communication Channels in Web3 Using Push👥](./cover-image.webp)
 
 The ability to communicate effectively with users is a crucial aspect of any decentralized application or service. This is where communication channels come in. Serving as a bridge between dapps and users, enabling notifications, chat messages and other forms of communication across various blockchain networks.
+
+<!--truncate-->
 
 In this article we will dive deeper into the concept of communication channels, their evolution in the current web, and how Push Protocol is being used to improve this communication process.
 

@@ -7,14 +7,14 @@ tags: [ Web3, Cryptocurrency, Jobs, Frensofpush, Push Notification]
 
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of Cryptocurrency Jobs — Stay Notified of the Best Web3 Opportunities Out There](./cover-image.png)
 
 <!--customheaderpoint-->
 # Frens of Push #2<br/>
 
 <i> “Frens of Push” is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.</i><br/><br/>
+
+<!--truncate-->
 
 <a href="https://cryptocurrencyjobs.co/"><b>Cryptocurrency Jobs</b></a>, the leading job board for blockchain jobs, has teamed up with Push to enhance how users are notified and alerted of exciting new Web3 job opportunities!
 

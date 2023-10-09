@@ -5,14 +5,14 @@ authors: [push]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users](./cover-image.webp)
 
 <!--customheaderpoint-->
 # EPNS and Sturdy collaborate to bring decentralized push notifications to the platform
 
 Sturdy, the DeFi lending platform for interest free loan and high yield lending, and EPNS team up in a pilot collaboration to bring push notifications to users. As such, Sturdy will now be able to seamlessly interact with its users and keep them updated about the status of their loans and high-yielding opportunities on the platform.
+
+<!--truncate-->
 
 ### Bringing Interest-Free Lending to DeFi
 DeFi’s lending and borrowing protocols played a pivotal role in the industry’s rise, bringing millions into the decentralized realm. However, in the present scenario, borrowers are required to pay heavy interests for their loans along with over-collateralizing for the same. In this regard, Sturdy is the one of the kind of DeFi protocol that facilitates interest free borrowing for users.

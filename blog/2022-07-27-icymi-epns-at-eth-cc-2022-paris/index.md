@@ -6,11 +6,11 @@ tags: [Push Notification, Ethereum, Epnsproject, Cryptocurrency, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover Image of ICYMI — EPNS at EthCC 2022 Paris 🇫🇷](./cover-image.png)
 
 While the sweltering heat was the talk of the town, we donned our cool collective hats and focused on being part of one of the largest Ethereum events focused on tech and community, with three intense days of conferences, networking and learning.
+
+<!--truncate-->
 
 And then of course, we had a few talks, panel discussions and media interactions ourselves.
 
@@ -70,7 +70,7 @@ And finally on the 25th, Harsh took the stage again with an encore of Why Web3 c
 And then of course, there was this interesting panel discussion, as part of the Dataverse Day, with the partners of that event, in which Harsh spoke at length about EPNS and how we’re trying to be the de facto, native Web3 comm protocol! He was joined by some really focused, and awesome Web3 founders and builders, such as Hongbo, Founder of Debank, Fabian Riewe, Founder of KYVE, Hadrien Charlanes, Founder of Sismo, Marijo Radman, Cofounder of Solity Network
 
 ### Meeting some Frens Old & New
-![Docusaurus Image](./image-1.png)
+![Meeting some Frens Old & New Image](./image-1.png)
 
 And last but not least, what’s the future of France without meeting a ton of frens from the web3 space, old and new!
 

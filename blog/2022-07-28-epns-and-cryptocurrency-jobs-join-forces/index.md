@@ -6,14 +6,14 @@ tags: [Web3, Ethereum, Epnsproject, Jobs, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users](./cover-image.webp)
 
 <!--customheaderpoint-->
 # EPNS collaborates with Cryptocurrency Jobs, the leading job board in the crypto space, to bring a decentralized communication medium to the platform.
 
 One of the fastest growing sectors in the world, cryptocurrency, and the broader blockchain-based industries are home to some of the most innovative companies in the world. These companies are in their initial stages and perpetually on the lookout for skilled professionals who can help realize their vision. As such, Cryptocurrency Jobs is the leading job board for the blockchain and crypto industries. The platform curates the best jobs at leading blockchain-based companies and startups to help professionals readily grab the opportunities at hand.
+
+<!--truncate-->
 
 Today, we at EPNS are proud to announce a strategic alliance with Cryptocurrency Jobs to enable direct communication between the platform and its users. By employing decentralized push notifications, this alliance will bring new job opportunities and updates to web3 professionals right on their devices.
 

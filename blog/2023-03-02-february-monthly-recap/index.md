@@ -7,12 +7,13 @@ tags: [ Web3, Blockchain Technology, Newsletter ]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of February Monthly Recap 🚀](./cover-image.webp)
 
 Welcome to our monthly update for February!
 
 What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy.
+
+<!--truncate-->
 
 Here’s a look at everything that went on🤩
 

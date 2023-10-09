@@ -16,7 +16,7 @@ import { H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyli
 
 // Internal Configs
 import { device, size } from '@site/src/config/globals';
-import { ShowcaseList, ShowcaseListResponsive } from "@site/src/config/HomeShowcaseList";
+import { ShowcaseList, ShowcaseResponsiveList } from "@site/src/config/HomeShowcaseList";
 
 /**
  * edit this to change the order
@@ -40,185 +40,141 @@ function PartnerChannels() {
   // const onScreen = useOnScreen(itemRef);
   const { ref: itemRef, inView: myElementIsVisible } = useInView();
 
-  const [firstRow, secondRow, thirdRow, fourthRow, fifthRow, sixthRow, seventhRow, eighthRow] = ShowcaseList;
-
-  const onEnter = () => {
-    var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
-
-    if (mediaQuery.matches) {
-      gsap.to('#item-0', { width: '0px', height: '0px' });
-      gsap.to('#item-1', { width: '0px', height: '0px' });
-      gsap.to('#item-2', { width: '0px', height: '0px' });
-      gsap.to('#item-3', { width: '0px', height: '0px' });
-      gsap.to('#item-4', { width: '0px', height: '0px' });
-      gsap.to('#item-5', { width: '0px', height: '0px' });
-      gsap.to('#item-6', { width: '0px', height: '0px' });
-  
-      gsap.to('#secondItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-1', { width: '178px', height: '178px' });
-      gsap.to('#secondItem-2', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-3', { width: '96px', height: '96px' });
-  
-      gsap.to('#secondRowItem-0', { width: '178px', height: '178px' });
-      gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-2', { width: '0px', height: '0px' });
-  
-      gsap.to('#thirdItem-0', { width: '178px', height: '178px' });
-      gsap.to('#thirdItem-1', { width: '0px', height: '0px' });
-      gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
-  
-      gsap.to('#fourItem-0', { width: '178px', height: '178px' });
-      gsap.to('#fourItem-1', { width: '0px', height: '0px' });
-      gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-1', { width: '178px', height: '178px' });
-      gsap.to('#fourRowItem-2', { width: '178px', height: '178px' });
-  
-      gsap.to('#sixitem-0', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-1', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-2', { width: '0px', height: '0px' });
-      gsap.to('#sixitem-3', { width: '0px', height: '0px' });
-    }
+  // GSAP scroll animation
+  useEffect(()=>{
+    gsap.defaults({ ease: "power3" });  
+    const blogListArray = gsap.utils.toArray(".showcaseItem");
     
-  };
-
-  useLayoutEffect(() => {
-    onEnter();
-  }, []);
-
-  useEffect(() => {
-    if (myElementIsVisible) {
-      onLeave();
-      setActive(true);
-    }
-
-    if (!myElementIsVisible) {
-      onEnter();
-      setActive(false);
-    }
-  }, [myElementIsVisible]);
-
-  const onLeave = () => {
-    var mediaQuery = window.matchMedia(`(min-width: ${size.laptopL})`);
-
-    if (mediaQuery.matches) {
-      gsap.to('#item-0', { width: '96px', height: '96px' });
-      gsap.to('#item-1', { width: '96px', height: '96px' });
-      gsap.to('#item-2', { width: '96px', height: '96px' });
-      gsap.to('#item-3', { width: '96px', height: '96px' });
-      gsap.to('#item-4', { width: '96px', height: '96px' });
-      gsap.to('#item-5', { width: '96px', height: '96px' });
-
-      gsap.to('#secondItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-2', { width: '96px', height: '96px' });
-      gsap.to('#secondItem-3', { width: '96px', height: '96px' });
-
-      gsap.to('#secondRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#secondRowItem-2', { width: '96px', height: '96px' });
-
-      gsap.to('#thirdItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#thirdRowItem-2', { width: '96px', height: '96px' });
-
-      gsap.to('#fourItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourItem-1', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-0', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-1', { width: '96px', height: '96px' });
-      gsap.to('#fourRowItem-2', { width: '96px', height: '96px' });
-
-      gsap.to('sixitem-0', { width: '96px', height: '96px' });
-      gsap.to('sixitem-1', { width: '96px', height: '96px' });
-      gsap.to('sixitem-2', { width: '96px', height: '96px' });
-      gsap.to('sixitem-3', { width: '96px', height: '96px' });
-
-      gsap.to('plain-logo', { width: '96px', height: '96px' });
-    }
-  };
+    blogListArray.forEach((item, index)=> { 
+      gsap.to(item,
+        {
+          width: 96,
+          height: 96, 
+          opacity: 1,
+          margin: '14px',
+          scrollTrigger: {
+            trigger: "#showcase-section", 
+            toggleActions: "play none none reverse", 
+            start: '25% center', // trigger element, viewport  
+            end: "75% center",
+            scrub: true,
+            markers: false 
+          }
+        }
+      );
+    })
+  },[])
 
   return (
-    <>
-      <PartnerRow>
-        {
-          firstRow?.map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`item-${idx}`}
-            />
-          ))}
-      </PartnerRow>
-      
-      <ParnterFloatRow>
-        <PartnerRow>
-          {secondRow?.slice(0, 2).map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`secondItem-${idx}`}
-            />
-          ))}
-        </PartnerRow>
-
-        <PartnerGridRow>
-          {active
-            ? seventhRow.slice(2, 4).map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className="marqueeItem plain-logo"
-                />
-              ))
-            : seventhRow.map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className="marqueeItem plain-logo"
-                />
-              ))}
-        </PartnerGridRow>
-
-        <PartnerRow>
-          {secondRow?.slice(2, 5).map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`secondRowItem-${idx}`}
-            />
-          ))}
-        </PartnerRow>
-      </ParnterFloatRow>
+    <div className='ShowcasePartnersSection'>
+      <PartnerRowV2 itemPos="top">
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.top.left.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.top.left.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.top.mid.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.top.mid.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.top.right.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.top.right.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+      </PartnerRowV2>
 
       <PartnerResponsiveRow>
       {
-        ShowcaseListResponsive.top.map((item, idx) => (
+        ShowcaseResponsiveList.top.map((item, idx) => (
           <ShowcaseLogoResponsive
             key={idx}
             width={item.width}
@@ -232,39 +188,80 @@ function PartnerChannels() {
       }
       </PartnerResponsiveRow>
 
-      <PartnerContent active={active}>
-        <PartnerContentSideRow>
-          <main className={active ? 'grid' : 'main'}>
-            {thirdRow?.slice(0, 2).map((item, idx) => (
-              <ShowcaseLogo
-                key={idx}
-                width={item.width}
-                height={item.height}
-                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                alt={`${item.alt}`}
-                className={item.class}
-                id={`thirdItem-${idx}`}
-              />
-            ))}
-          </main>
-          <div className="grid">
-            {thirdRow?.slice(2, 4).map((item, idx) => (
-              <ShowcaseLogo
-                key={idx}
-                width={item.width}
-                height={item.height}
-                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                alt={`${item.alt}`}
-                className={item.class}
-                id={`thirdRowItem-${idx}`}
-              />
-            ))}
-          </div>
-        </PartnerContentSideRow>
+      <ShowcaseContent>
+        <PartnerRowV2 itemPos="left">
+          <ItemV>
+            <ItemH>
+              {ShowcaseList.left.left.upper.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+            <ItemH>
+              {ShowcaseList.left.left.lower.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+          </ItemV>
+        
+          <ItemV>
+            <ItemH>
+              {ShowcaseList.left.right.upper.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+            <ItemH>
+              {ShowcaseList.left.right.lower.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+          </ItemV>
+        </PartnerRowV2>
 
-        <GridItem
+        <ShowcaseMainContent
           display="flex"
           flexDirection="column"
         >
@@ -306,44 +303,84 @@ function PartnerChannels() {
           >
             {t('home.partners-section.partner-channels-button')}
           </LinkTo>
-        </GridItem>
+        </ShowcaseMainContent>
 
-        <PartnerContentSideRow>
-          <div className="grid">
-            {fourthRow?.slice(2, 4).map((item, idx) => (
-              <ShowcaseLogo
-                key={idx}
-                width={item.width}
-                height={item.height}
-                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                alt={`${item.alt}`}
-                className={item.class}
-                id={`thirdRowItem-${idx}`}
-              />
-            ))}
-          </div>
-
-          <div className={active ? 'grid' : 'main'}>
-            {fourthRow?.slice(0, 2).map((item, idx) => (
-              <ShowcaseLogo
-                key={idx}
-                width={item.width}
-                height={item.height}
-                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                alt={`${item.alt}`}
-                className={item.class}
-                id={`fourItem-${idx}`}
-              />
-            ))}
-          </div>
-        </PartnerContentSideRow>
-      </PartnerContent>
+        <PartnerRowV2 itemPos="right">
+          <ItemV>
+            <ItemH>
+              {ShowcaseList.right.left.upper.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+            <ItemH>
+              {ShowcaseList.right.left.lower.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+          </ItemV>
+        
+          <ItemV>
+            <ItemH>
+              {ShowcaseList.right.right.upper.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+            <ItemH>
+              {ShowcaseList.right.right.lower.map((item, idx) => (
+                <ShowcaseLogo
+                  key={idx}
+                  width={item.width}
+                  height={item.height}
+                  margin={item.margin}
+                  opacity={item.opacity}
+                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item.alt}`}
+                  className={item.class}
+                  id={`secondItem-${idx}`}
+                />
+              ))}
+            </ItemH>
+          </ItemV>
+        </PartnerRowV2>
+      </ShowcaseContent>
 
       <PartnerResponsiveRow>
       {
-        ShowcaseListResponsive.bottom.map((item, idx) => (
+        ShowcaseResponsiveList.bottom.map((item, idx) => (
           <ShowcaseLogoResponsive
             key={idx}
             width={item.width}
@@ -357,168 +394,191 @@ function PartnerChannels() {
       }
       </PartnerResponsiveRow>
 
-      <ParnterFloatRow>
-        <PartnerRowTopAligned>
-          {fifthRow?.slice(0, 2).map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`secondItem-${idx}`}
-            />
-          ))}
-        </PartnerRowTopAligned>
-
-        <PartnerGridRow>
-          {active
-            ? eighthRow.slice(0, 2).map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className={item.class}
-                />
-              ))
-            : eighthRow.map((item, idx) => (
-                <ShowcaseLogo
-                  key={idx}
-                  width={item.width}
-                  height={item.height}
-                  src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-                  alt={`${item.alt}`}
-                  className={item.class}
-                />
-              ))}
-        </PartnerGridRow>
-
-        <PartnerRowTopAligned>
-          {fifthRow?.slice(2, 5).map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`secondRowItem-${idx}`}
-            />
-          ))}
-        </PartnerRowTopAligned>
-      </ParnterFloatRow>
-
-      <PartnerRow
-        justifyContent="flex-start"
-        padding="0px 0px 120px 0px"
-        ref={itemRef}
-      >
-        {
-          sixthRow?.map((item, idx) => (
-            <ShowcaseLogo
-              key={idx}
-              width={item.width}
-              height={item.height}
-              src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
-              srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item.alt}`}
-              className={item.class}
-              id={`item-${idx}`}
-            />
-          ))
-        }
-      </PartnerRow>
-    </>
+      <PartnerRowV2 itemPos="bottom">
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.bottom.left.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.bottom.left.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.bottom.mid.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.bottom.mid.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+        <ItemV>
+          <ItemH>
+            {ShowcaseList.bottom.right.upper.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+          <ItemH>
+            {ShowcaseList.bottom.right.lower.map((item, idx) => (
+              <ShowcaseLogo
+                key={idx}
+                width={item.width}
+                height={item.height}
+                margin={item.margin}
+                opacity={item.opacity}
+                src={require(`@site/static/assets/website/showcase/${item.srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/website/showcase/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/showcase/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item.alt}`}
+                className={item.class}
+                id={`secondItem-${idx}`}
+              />
+            ))}
+          </ItemH>
+        </ItemV>
+      </PartnerRowV2>
+    </div>
   );
 }
 
-const PartnerRow = styled(ItemH)`
-  margin: 14px auto 0px auto;
-  gap: 28px;
-  align-items: flex-end !important;
-`;
-
-const PartnerRowTopAligned = styled(ItemH)`
-  margin: 0px auto 0px auto;
-  gap: 28px;
-  align-items: flex-start !important;
-`;
-
-const ParnterFloatRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0px auto 0px auto;
-  align-items: flex-end !important;
-  height: 100%;
-  gap: 28px;
-`;
-
-const NewSecondRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0px auto 0px auto;
-  align-items: flex-start !important;
-  height: 100%;
-  gap: 28px;
-`;
-
-const PartnerGridRow = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-`;
-
-const PartnerContentSideRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 28px;
-  height: 100%;
-  align-items: center !important;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 28px;
-    width: 96px !important;
+const PartnerRowV2 = styled(ItemH)`
+  @media ${device.laptopL} {
+    display: none;
   }
+  
+  flex-flow: nowrap;
+  flex: 1;
 
-  .main {
-    width: 178px !important;
+  & > ${ItemV} {
+    flex: initial;
+    justify-content: ${(props) => props.itemPos == 'top' ? 
+                            'flex-end' : props.itemPos == 'bottom' ? 
+                            'flex-start' : props.itemPos == 'left' ? 
+                            'center' : props.itemPos == 'right' ? 
+                            'center' : 'initial'};
+
+    & > ${ItemH} {
+      flex: initial;
+    }
+
+    &:nth-child(1) {
+      & > ${ItemH} {
+        justify-content: ${(props) => props.itemPos == 'top' ? 
+                            'flex-end' : props.itemPos == 'bottom' ? 
+                            'flex-end' : props.itemPos == 'left' ? 
+                            'flex-end' : props.itemPos == 'right' ? 
+                            'flex-start' : 'initial'};
+        align-items: ${(props) => props.itemPos == 'top' ? 
+                            'flex-end' : props.itemPos == 'bottom' ? 
+                            'flex-start' : props.itemPos == 'left' ? 
+                            'flex-end' : props.itemPos == 'right' ? 
+                            'flex-start' : 'initial'};
+      }
+    }
+
+    &:nth-child(2) {
+      & > ${ItemH} {
+        justify-content: ${(props) => props.itemPos == 'top' ? 
+                            'center' : props.itemPos == 'bottom' ? 
+                            'center' : props.itemPos == 'left' ? 
+                            'center' : props.itemPos == 'right' ? 
+                            'center' : 'initial'};
+        align-items: ${(props) => props.itemPos == 'top' ? 
+                            'flex-end' : props.itemPos == 'bottom' ? 
+                            'flex-start' : props.itemPos == 'left' ? 
+                            'flex-end' : props.itemPos == 'right' ? 
+                            'flex-start' : 'initial'};
+      }
+    }
+
+    &:nth-child(3) {
+      & > ${ItemH} {
+        justify-content: ${(props) => props.itemPos == 'top' ? 
+                            'flex-start' : props.itemPos == 'bottom' ? 
+                            'flex-start' : props.itemPos == 'left' ? 
+                            'flex-start' : props.itemPos == 'right' ? 
+                            'flex-end' : 'initial'};
+        align-items: ${(props) => props.itemPos == 'top' ? 
+                            'flex-end' : props.itemPos == 'bottom' ? 
+                            'flex-start' : props.itemPos == 'left' ? 
+                            'flex-end' : props.itemPos == 'right' ? 
+                            'flex-start' : 'initial'};
+      }
+    }
   }
+`
+
+const ShowcaseLogo = styled(Image)`
+  margin: ${(props) => props.margin || "initial"};
+  opacity: ${(props) => props.opacity || "initial"};
 
   @media ${device.laptopL} {
     display: none;
   }
-`;
+`
 
-const GridItem = styled(ItemH)`
-  span {
-    width: 80%;
-    text-align: center;
-
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-  @media (max-width: 1200px) {
-    padding: 30px 0px;
-  }
-`;
-
-const ResponsiveH2 = styled(H2)`
-  @media ${device.tablet} {
-    font-size: 32px;
-  }
-`;
-
-const PartnerContent = styled.div`
+const ShowcaseContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -530,14 +590,29 @@ const PartnerContent = styled.div`
   }
 `;
 
-const ShowcaseLogo = styled(Image)`
-  @media ${device.laptopL} {
-    display: none;
-    width: 96px;
-    height: 96px;
-  }
-`
+const ShowcaseMainContent = styled(ItemH)`
+  flex: 1;
+  min-width: 580px;
 
+  @media ${device.laptopL} {
+    min-width: auto;
+  }
+  
+  span {
+    margin: 0px 30px;
+    text-align: center;
+  }
+  
+  @media (max-width: 1200px) {
+    padding: 30px 0px;
+  }
+`;
+
+const ResponsiveH2 = styled(H2)`
+  @media ${device.tablet} {
+    font-size: 32px;
+  }
+`;
 
 const PartnerResponsiveRow = styled(ItemV)`
   display: none;

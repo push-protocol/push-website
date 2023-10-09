@@ -5,14 +5,14 @@ authors: [push]
 tags: [Push Notification, Web3, Blockchain, Blockchain Development, Pn101]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of ‘My Dapp’ Would Like to Send You Push Notifications](./cover-image.webp)
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 1.2<br/>
 
 In [Part 1.1](https://medium.com/ethereum-push-notification-service/my-app-would-like-to-send-you-push-notifications-4b591a68f803), we introduced modern push technology, which consists of these primary components: an app publisher who publishes information by notifications, a client who is the receiver of notifications based on a subscription, and the push notification provider who acts as middleware between these two actors.
+
+<!--truncate-->
 
 Middleware is software that acts as an intermediary between two applications or services. Middleware also provides services that are not present in the operating system. The push notification service provider is an example of this, known as an operating system push notification service (OSPNS). For instance, the Apple Push Notification Service (APNS) lives on iPhone devices as an OSPNS middleware software.
 

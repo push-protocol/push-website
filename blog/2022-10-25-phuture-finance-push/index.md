@@ -5,11 +5,11 @@ authors: [push]
 tags: [ Web3, Blockchain, Push Notification, Announcements, Defi]
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform](./cover-image.png)
 
 In the past couple of years, the rise in popularity of cryptocurrencies and DeFi opened a multitude of new investment opportunities for people across the globe. When compared to traditional finance, these investment opportunities were not only easily accessible but also far more profitable. Yield farming on DEXs alone gave investors an average [APR of 20–50% with some even going as high as 250%](https://www.benzinga.com/money/best-yield-farms).
+
+<!--truncate-->
 
 However, there is a caveat here. These opportunities, though profitable, are highly risky. So, average investors looking for steady growth of income with minimum risks, are left out of the DeFi revolution. This is where financial products like index funds could make a huge difference. By bringing together a portfolio of top stocks or bonds in a market, index funds let users benefit from the growth of the market without risk exposure.
 

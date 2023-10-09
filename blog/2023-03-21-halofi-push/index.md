@@ -7,10 +7,11 @@ tags: [ Frensofpush, Web3, Blockchain Technology, Defi]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of HaloFi Teams Up with Push to Enable Effortless Savings with Real-Time Notifications😇](./cover-image.webp)
 
 This week, we’re delighted to showcase foremost DeFi savings platform and the newest addition to our ‘Frens of Push’, [HaloFi](https://halofi.me/)😇
+
+<!--truncate-->
 
 HaloFi (previously and popularly known as GoodGhosting) is a DeFi savings platform encouraging people to save in a fun, gamified manner. You can enter a challenge to increase your savings, and earn NFTs, badges, and a spot on the leaderboard. But that’s not all. You can create and vote on challenges of your choice as you watch your savings grow.
 

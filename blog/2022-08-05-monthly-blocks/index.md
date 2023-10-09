@@ -6,7 +6,7 @@ tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
+![Cover image of Monthly Blocks](./cover-image.webp)
 
 <!--truncate-->
 
@@ -63,7 +63,7 @@ Additionally, keep an eye on our communications as we will be sharing more infor
 ### Community 🎪
 - <b><a href='https://twitter.com/epnsproject/status/1541421138172977159?s=20&t=im07nJLlpEmhWljYo73dHA&utm_source=substack&utm_medium=email'>Rockstars of EPNS</a> is back</b> 🎸!! Volume 2 of our Rockstars of EPNS is ongoing, and we have our first three winners already. You know the rules! Don’t miss your opportunity to enter the EPNS Hall of Fame this time.
 
-![Docusaurus Image](./image-1.webp)
+![Rockstars of EPNS Image](./image-1.webp)
 
 - We had an awesome <b>Friday PUSH</b> with the Hackers from ETH NYC. They shared their experiences and funny stories that happens during these events. We are thrilled to know that many of them are continuing their projects and taking them to the next level. Congratz!
 - Our own Jaf joined the [AMA with the H2O community](https://twitter.com/epnsproject/status/1547196646122868737?s=20&t=bjnec1ShgYxUwKg9uy5oQQ&utm_source=substack&utm_medium=email), and the AMA with the [Fabwelt Community](https://twitter.com/epnsproject/status/1548668845417693184?s=20&t=C1Iy_jXu3Euw3_EjuEUQ1Q).

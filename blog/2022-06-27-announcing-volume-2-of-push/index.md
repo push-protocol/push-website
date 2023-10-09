@@ -6,16 +6,16 @@ tags: [Nft, Blockchain, Crypto, Opensea, Technology]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of Announcing Volume 2 of Push #ROCKSTARS](./cover-image.webp)
 
 The second year of Push Rockstar NFTs is about to begin. Dive into the details and buckle up!
+
+<!--truncate-->
 
 A year ago, we announced the [first volume](https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf) of Push (prev EPNS) #ROCKSTARS on the heels of our IDOs. Each week for the following 52 weeks, we asked our community to participate in a small challenge. Meme competitions, explainers, tutorials, guides, threads, and more. You name it — the community came together and created it. Each week, the winner of that competition was gifted 2,400 PUSH and one Rockstar NFT, each of which was designed by an Indian artist.
 
 #### Today, we’re excited to kick off the second volume of Push Rockstars!
-![Docusaurus Image](./image-1.webp)
+![Second volume of Push Rockstars Image](./image-1.webp)
 <ImageText>Contribute to WIN 900 PUSH & an NFT</ImageText>
 
 Following the drop rules of [Rockstars of Push (prev EPNS) Volume 1](https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf), We’ll be distributing one NFT a week (every Monday for the next 100 weeks 😱) to one community member who does something to help us push the envelope forward.

@@ -5,9 +5,7 @@ authors: [push]
 tags: [Pushprotocol, Developer, NFT]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
@@ -15,6 +13,8 @@ tags: [Pushprotocol, Developer, NFT]
 
 ## What is Push NFT Chat?
 Push NFT Chat is a seamless and secure communication platform that enables NFTs to chat directly with one another. Unlike traditional chat systems tied to wallet addresses, Push NFT Chat allows chats to be specifically associated with individual NFTs owned by users. This is a game changer for chat integrations.
+
+<!--truncate-->
 
 With Push NFT Chat, users now have the flexibility to choose whether their communications remain connected to their NFTs or their wallets.
 

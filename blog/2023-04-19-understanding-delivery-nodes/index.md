@@ -7,10 +7,11 @@ tags: [ Web3, Pushprotocol, Delivery Nodes]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Understanding Delivery Nodes🚂](./cover-image.webp)
 
 To fully grasp the concept of push notifications and messages, it is essential to first understand the role of delivery nodes in a communication protocol.
+
+<!--truncate-->
 
 Delivery nodes are endpoints where messages are sent and received. They can be physical devices, applications, or servers and are tasked with relaying messages from one point to another.
 
