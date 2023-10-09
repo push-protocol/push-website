@@ -4,7 +4,7 @@ title: Create Channel
 hide_title: true
 slug: ./create-channel
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 7
+sidebar_position: 4
 ---
 
 # Create channel overview
@@ -54,8 +54,8 @@ const response = await userAlice.channel.create({
 | -           | _`options.description`_ | `string`                  | -       | A description of the channel                                        |
 | -           | _`options.icon`_        | `string (base64 encoded)` | -       | The channel's icon in base64 encoded string format                  |
 | -           | _`options.url`_         | `string`                  | -       | The URL associated with the channel                                 |
-| -           | `options.alias`         | `string`                  | -       | alias address in in [chain specific wallet format](/docs/notifications/build/important-concepts/#chain-specific-wallet-address) |
-| -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/create-channel/#progress-object-parameters) |
+| -           | `options.alias`         | `string`                  | -       | alias address in in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address) |
+| -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/create-channel/#create-channel-progress-object-parameters) |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -75,7 +75,7 @@ const response = await userAlice.channel.create({
 
 ---
 
-### Progress object parameters
+### Create channel progress object parameters
 
 _Optional:_ Informs about individual progress stages during channel creation if progresshook is function is passed during channel creation API call.
 

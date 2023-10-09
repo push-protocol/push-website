@@ -30,7 +30,7 @@ import {
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// sends a notification
+// userAlice.channel.send([recipients], {options?})
 const sendNotifRes = await userAlice.channel.send(['*'], {
   notification: { title: 'test', body: 'test' },
 })
@@ -45,9 +45,11 @@ const sendNotifRes = await userAlice.channel.send(['*'], {
 
 | Param          | Type                             | Subtype                                           | Default | Remarks                                                                                                         |
 | -------------- | -------------------------------- | ------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------- |
-| _`recipients`_ | `string[]`                       | -                                                 | -       | An array of recipient addresses. Possible values are: Broadcast -> [*], Targeted -> [0xA], Subset -> [0xA, 0xB] |
+| _`recipients`_ | `string[]`                       | -                                                 | -       | An array of recipient addresses passed in [any supported wallet address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account). Possible values are: Broadcast -> [*], Targeted -> [0xA], Subset -> [0xA, 0xB], see [types of notifications](/docs/notifications/build/send-notification/#types-of-notification) for more info. |
 | _`options`_    | `NotificationOptions`            | -                                                 | -       | Configuration options for sending notifications.                                                                |
 | -              | _`options.notification`_         | `INotification`                                   | -       | An object containing the notification's title and body. (Mandatory)                                             |
+| -              | _`options.notification.title`_   | `string`                                          | -       | The title for the notification. If not provided, it is taken from notification.title.                           |
+| -              | _`options.notification.body`_    | `string`                                          | -       | The body of the notification. If not provided, it is taken from notification.body.                              |
 | -              | `options.payload`                | `IPayload`                                        | -       | An object containing additional payload information for the notification.                                       |
 | -              | `options.payload.title`          | `string`                                          | -       | The title for the notification. If not provided, it is taken from notification.title.                           |
 | -              | `options.payload.body`           | `string`                                          | -       | The body of the notification. If not provided, it is taken from notification.body.                              |
@@ -76,3 +78,105 @@ const sendNotifRes = await userAlice.channel.send(['*'], {
 ```
 
 </details>
+
+---
+
+### Send notification interface
+
+```ts
+interface INotification {
+  title: string;
+  body: string;
+}
+
+interface IPayload {
+  title?: string;
+  body?: string;
+  cta?: string;
+  embed?: string;
+  meta?: {
+    domain?: string;
+    type: string;
+    data: string;
+  };
+}
+
+interface IConfig {
+  expiry?: number;
+  silent?: boolean;
+  hidden?: boolean;
+}
+
+interface IAdvanced {
+  graph?: {
+    id: string;
+    counter: number;
+  };
+  ipfs?: string;
+  minimal?: string;
+  chatid?: string;
+  pgpPrivateKey?: string;
+}
+
+interface NotificationOptions = {
+  notification: INotification;
+  payload?: IPayload;
+  config?: IConfig;
+  advanced?: IAdvance;
+  channel?: string;
+};
+
+// Usage example:
+const apiResponse: ApiResponse = await userAlice.channel.send(recipients, { 
+  // NotificationOptions - as per your given object structure 
+});
+```
+
+## Types of Notification
+
+Push Protocol supports sending the following types of notifications to users of your protocol —
+
+### Broadcast Notification
+
+This type of notification is broadcasted or sent to all the subscribers of a channel at once
+
+```typescript
+// userAlice.channel.send([recipients], {options?})
+// to send a broadcast notification - pass '*' in recipients array
+const broadcastNotif = await userAlice.channel.send(['*'], {
+  notification: { title: 'test', body: 'test' },
+})
+```
+
+### Targeted Notification
+
+This type of notification is sent to a single wallet address.
+
+```typescript
+// userAlice.channel.send([recipients], {options?})
+// to send a targeted notification - pass that single wallet address in recipients array
+const targetedNotif = await userAlice.channel.send([signer.address], {
+  notification: {
+    title: 'test',
+    body: 'test',
+  },
+})
+```
+
+### Subset Notification
+
+This type of notification is sent to a a subset (or a group) of your channel subscribers.
+
+```typescript
+// userAlice.channel.send([recipients], {options?})
+// to send a subset notification - pass the list of wallet address in recipients array
+const subsetNotif = await userAlice.channel.send(
+  [randomWallet1, randomWallet2, signer.address],
+  {
+    notification: {
+      title: 'test',
+      body: 'test',
+    },
+  }
+)
+```

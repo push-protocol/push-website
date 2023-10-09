@@ -4,7 +4,7 @@ title: Important Concepts
 hide_title: true
 slug: ./important-concepts
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Important Concepts
@@ -31,7 +31,7 @@ The creation of a channel is a one-time process. Channel creation happens on the
 Push ties notifications (and all other forms of communication) to your wallet in an open yet secure way. This means that notifications can be received by any crypto wallets or crypto frontend that has integrated Push Protocol. [Here are some of our favorites!](/docs/notifications/build/get-started/#receiving-notifications)
 
 ## Types of supported wallet address (Account)
-Push Notification is chain agnostic and even supports messaging wallet addresses, NFT addresses, all evms (and even non-EVM in the future). Below is the list of evergrowing standards that Push Chat is compatible with, either of which you can use as per your requirements  —
+Push Notification is chain agnostic and even supports messaging wallet addresses, NFT addresses, all evms (and even non-EVM in the future). Below is the list of evergrowing standards that Push is compatible with, either of which you can use as per your requirements  —
 
 
 import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
@@ -76,6 +76,9 @@ import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/Sh
 ```typescript
   // Sending to nft format, any nfts supported including .lens, .crypto, .polygon or your crypto punks
   await userAlice.chat.send('nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528', { 
-    content: 'Hello harsh.lens' 
+    notification: {
+      title: 'Hello World',
+      body: 'Web3 native notification!',
+    }
   });
 ```

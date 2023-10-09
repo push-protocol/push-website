@@ -1,23 +1,26 @@
 ---
-id: docs-notifications-develop-create-channel-setting
-title: Create Channel Settings
+id: docs-notifications-develop-channel-settings
+title: Channel Settings
 hide_title: true
 slug: ./create-channel-settings
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 14
+sidebar_position: 5
 ---
 
-# Channel Setting overview
+# Channel settings overview
 
 This section covers APIs related to creation of channel setting.
 
 <head>
-  <title>Create Channel Setting | Push Notification | Push Documentation</title>
+  <title>Channel Settings | Push Notification | Push Documentation</title>
 </head>
 
-## What is channel setting?
+## What are channel settings?
 
-A channel may want to send notification for multiple categories. Ex: Coindesk may want to send notifications for tech, marketing, defi and so on. Similarly, Aave may want to send notifciation for certain loan liquidation value. So, this feature will allow any channel to define such settings. User can then show their interest for the specific category of notification they want to receive and thats it. When a channel triggers a notification for that specific setting, they will receive it on their end.
+A channel may want to send notification for multiple categories. Ex: Coindesk may want to send notifications for tech, marketing, defi and so on. Similarly, Aave may want to send notifciation for certain loan liquidation value. 
+
+Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it.
+
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -36,11 +39,15 @@ import {
 ```typescript
 // creates channel settings
 const createChannelSettingRes = userAlice.channel.settings([
-  { type: 0, default: 1, description: 'marketing' },
+  { 
+    type: 1, // Boolean type
+    default: 1, 
+    description: 'Receive marketing notifications' 
+  },
   {
-    type: 2,
+    type: 2, // Slider type
     default: 10,
-    description: 'loan liquidation threshold',
+    description: 'Notify when loan health breaches',
     data: { upper: 100, lower: 5 },
   },
 ])
@@ -73,3 +80,14 @@ const createChannelSettingRes = userAlice.channel.settings([
 ```
 
 </details>
+
+### Types of channel settings
+
+Push currently supports defining the following settings for your channel —
+- Boolean Setting - This setting allows users to set their preference as true / false. **For example:** *receive marketing notifications*
+- Slider Setting - This setting allows users to set their preference between a slider. **For example:** *alert when ENS domain expires (Between 1 - 7 days)*
+
+| Type            | ID    | Description                                                                           |
+| --------------- | ----- | ------------------------------------------------------------------------------------- |
+| `Boolean`       | `1`   | Set a setting to be yes or no, must have a **default**                                |
+| `Slider`        | `2`   | Set a setting to be slider, must have **upper** and **lower** range and a **default** |

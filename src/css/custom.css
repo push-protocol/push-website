@@ -261,7 +261,7 @@ article ol > li::marker {
 }
 
 article ul > li strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ----- */
