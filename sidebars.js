@@ -39,6 +39,10 @@ const sidebars = {
       id: 'notifications/docs-notifications-quickstart',
     },
     {
+      type: 'doc',
+      id: 'notifications/docs-notifications-important-concepts',
+    },
+    {
       type: 'category',
       label: 'Build',
       link: {
