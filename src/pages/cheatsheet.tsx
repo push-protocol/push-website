@@ -28,30 +28,22 @@ function CheatSheet() {
   return (
     <Layout title={PageMeta.ABOUTUS.pageTitle} description={PageMeta.ABOUTUS.pageDescription}>
     <Head>
-        {/* <!-- HTML Meta Tags --> */}
-        <title>Push (Previously EPNS) Communication Protocol of Web3</title>
-        <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
 
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://push.org" />
+        <meta property="og:url" content="https://push.org/cheatsheet" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push (Previously EPNS)" />
         <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
-        <meta property="og:image" content="https://push.org/previews/homepage.jpg" />
+        <meta property="og:image" content="/assets/previews/home-page.webp" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="push.org" />
-        <meta property="twitter:url" content="https://push.org" />
+        <meta property="twitter:domain" content="push.org/cheatsheet" />
+        <meta property="twitter:url" content="https://push.org/cheatsheet" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
-        <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
-        <meta name="twitter:image" content="https://push.org/previews/homepagetwitter.jpg" />
+        <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - CheatSheet Page" />
+        <meta name="twitter:image" content="/assets/previews/home-page.webp" />
 
-        {/* <!-- fix index issues --> */}
-        <meta name="robots" content="noindex" />
-        <meta name="googlebot" content="noindex" />
-
-  
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org/',

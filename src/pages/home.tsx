@@ -115,7 +115,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push (Previously EPNS)" />
         <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
-        <meta property="og:image" content="https://push.org/previews/homepage.jpg" />
+        <meta property="og:image" content="/assets/previews/home-page.webp" />
+
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -123,7 +124,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         <meta property="twitter:url" content="https://push.org" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
-        <meta name="twitter:image" content="https://push.org/previews/homepagetwitter.jpg" />
+        <meta name="twitter:image" content="/assets/previews/home-page.webp" />
+
 
         {/* <!-- fix index issues --> */}
         <meta name="robots" content="noindex" />
