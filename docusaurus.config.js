@@ -37,7 +37,6 @@ const config = {
   // Static linking
   staticDirectories: ["public", "static"],
 
-
   plugins: [
     [
       "./plugins/blog-plugin",
@@ -48,22 +47,22 @@ const config = {
         blogSidebarTitle: "All posts",
         blogSidebarCount: "ALL",
         showReadingTime: true,
-        readingTime: ({content, frontMatter, defaultReadingTime}) =>
-          defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         feedOptions: {
-          type: 'all',
+          type: "all",
           createFeedItems: async (params) => {
-            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+            const { blogPosts, defaultCreateFeedItems, ...rest } = params;
             return defaultCreateFeedItems({
               // keep only the 10 most recent blog posts in the feed
               blogPosts: blogPosts.filter((item, index) => index < 10),
               ...rest,
             });
           },
-        }
+        },
       },
     ],
-    require.resolve("./plugins/custom-webpack-plugin"),
+    // require.resolve("./plugins/custom-webpack-plugin"),
     //   [
     //     "@docusaurus/plugin-client-redirects",
     //     {
