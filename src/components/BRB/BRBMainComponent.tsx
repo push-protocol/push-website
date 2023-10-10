@@ -359,7 +359,7 @@ export const BRBMainComponent = () => {
           >
             Register Now
           </ButtonItem>
-          <ButtonBar
+          {/* <ButtonBar
             borderRadius="24px"
             background="#000"
             border="1px solid #E64DE9"
@@ -369,7 +369,7 @@ export const BRBMainComponent = () => {
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
-          </ButtonBar>
+          </ButtonBar> */}
         </NavButtons>
       </ItemTop>
 
