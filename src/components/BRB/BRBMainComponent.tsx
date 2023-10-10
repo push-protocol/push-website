@@ -505,7 +505,7 @@ const ButtonItem = styled(Button)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
@@ -524,7 +524,7 @@ const ButtonItem = styled(Button)`
 
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   &:hover{
     border: 1px solid transparent;
   }
@@ -541,7 +541,7 @@ const BrbWrapper = styled(ItemV)`
   justify-content: center;
   align-items: center;
   background: #000;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
 
   & .pushMissingSvg {
     width: 900px;
@@ -606,7 +606,7 @@ const HEADER_VERTICAL_GUTTER = 7;
 const BOX_MAX_WIDTH = 1140;
 
 const StyledHeader = styled.header`
-  font-family: 'Strawford';
+  font-family: 'Strawford', sans-serif;
 
   /* padding: 0px 160px; */
 
@@ -672,7 +672,7 @@ const StyledHeader = styled.header`
 
 const NavText = styled.div`
   color: #fff;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   text-align: center;
   font-size: 20px;
   font-style: normal;
@@ -813,7 +813,7 @@ const IconMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   // Styles for the flags
   .flag-icon {
     width: 24px;

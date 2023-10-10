@@ -42,7 +42,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           padding="8px 16px 6px 16px"
           height="33px"
           margin='0 0 0 0'
-          fontFamily="Glancyr"
+          fontFamily="Glancyr, sans-serif"
           style={{ cursor: 'pointer' }}
           onClick={() =>
             openLink(
@@ -75,9 +75,9 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
             style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
           />
 
-          <TextSpan>
+          <BountyDescription>
             {item.text}
-          </TextSpan>
+          </BountyDescription>
 
           <BountyItem>
             <PriceSpan
@@ -116,7 +116,7 @@ const PartnerBountiesContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   color: #fff;
   margin:0px;
 `;
@@ -197,7 +197,7 @@ const ArrowSmall = styled(Arrow)`
   top: 0.1em;
 `;
 
-const TextSpan = styled(Span)`
+const BountyDescription = styled(Span)`
   font-weight: 400;
   font-size: 18px;
   color: var(--ifm-color-primary-inverse);

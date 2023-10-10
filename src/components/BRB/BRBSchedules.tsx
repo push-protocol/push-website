@@ -228,7 +228,7 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const ParticipateButtonInnerText = styled(Span)`
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   @media ${device.mobileS} {
     flex: 1;
   }
@@ -332,7 +332,7 @@ const PlaceContainer = styled.div`
 `;
 
 const PlaceName = styled(Span)`
-  font-family: Green Brooks;
+  font-family: Green Brooks, sans-serif;
   font-size: 42px;
   font-weight: 400;
   // color: #b0ffc3;
@@ -345,7 +345,7 @@ const DateContainer = styled(Span)`
   color: ${(props) => props.color};
   font-size: 20px;
   font-weight: 400;
-  font-family: Glancyr;
+  font-family: Glancyr, sans-serif;
   letter-spacing: 0.6px;
   display: flex;
   align-items: flex-end;
