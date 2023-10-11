@@ -96,7 +96,7 @@ const Spaces = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push (Previously EPNS)" />
         <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Spaces Page" />
-        <meta property="og:image" content="/assets/previews/spaces-page.webp" />
+        <meta property="og:image" content="/assets/previews/spacesfbpreview.webp" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -104,7 +104,7 @@ const Spaces = () => {
         <meta property="twitter:url" content="https://push.org/spaces" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3  - Spaces Page" />
-        <meta property="twitter:image" content="/assets/previews/spaces-page.webp" />
+        <meta property="twitter:image" content="/assets/previews/spacestwtpreview.webp" />
 
 
         <script type="application/ld+json">

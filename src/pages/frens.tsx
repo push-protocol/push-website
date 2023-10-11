@@ -269,7 +269,7 @@ const FrensText = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push (Previously EPNS)" />
         <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Frens Page" />
-        <meta property="og:image" content="/assets/previews/frens-page.webp" />
+        <meta property="og:image" content="/assets/previews/frenspagefbpreview.webp" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -277,7 +277,7 @@ const FrensText = () => {
         <meta property="twitter:url" content="https://push.org/frens" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Frens Page" />
-        <meta property="twitter:image" content="/assets/previews/frens-page.webp" />
+        <meta property="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
 
         <script type="application/ld+json">
           {JSON.stringify({

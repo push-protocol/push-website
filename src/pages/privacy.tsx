@@ -29,7 +29,7 @@ function Privacy() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push (Previously EPNS)" />
         <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
-        <meta property="og:image" content="/assets/previews/home-page.webp" />
+        <meta property="og:image" content="/assets/previews/privacyfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +37,7 @@ function Privacy() {
         <meta property="twitter:url" content="https://push.org/privacy" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
-        <meta property="og:image" content="/assets/previews/home-page.webp" />
+        <meta property="og:image" content="/assets/previews/privacytwtpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

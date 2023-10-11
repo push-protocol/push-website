@@ -39,7 +39,7 @@ function BRB() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="BRB(Billions Reasons to Build)" />
         <meta property="og:description" content="BRB(Billions Reasons to Build) Push Page" />
-        <meta property="og:image" content="/assets/previews/brb-page.webp" />
+        <meta property="og:image" content="/assets/previews/brbfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -47,7 +47,7 @@ function BRB() {
         <meta property="twitter:url" content="https://push.org/brb" />
         <meta name="twitter:title" content="BRB(Billions Reasons to Build)" />
         <meta name="twitter:description" content="BRB(Billions Reasons to Build) Push Page" />
-        <meta name="twitter:image" content="/assets/previews/brb-page.webp" />
+        <meta name="twitter:image" content="/assets/previews/brbtwtpreview.png" />
 
   
         <script type="application/ld+json">
