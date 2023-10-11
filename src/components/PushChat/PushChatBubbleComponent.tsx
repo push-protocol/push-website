@@ -16,21 +16,22 @@ import { device } from '@site/src/config/globals';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { darkChatTheme } from '@site/src/theme/darkChatTheme';
 
-import { ChatViewComponent } from '@pushprotocol/uiweb';
-import { ChatUIProvider } from "@pushprotocol/uiweb";
+// import { ChatViewComponent } from '@pushprotocol/uiweb';
+// import { ChatUIProvider } from "@pushprotocol/uiweb";
 
 
 const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleFaucet: (value: boolean) => void }) => {
+  const newOne = false;
 
   return (
     <Fragment>
       <ChatViewComponentCard>
-      {/* <BrowserOnly fallback={<div>Loading...</div>}>
+      <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
             const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
             const ChatViewComponent = require('@pushprotocol/uiweb').ChatViewComponent;
 
-             return ( */}
+             return (
               <ChatUIProvider
                 env='prod'
                 theme={darkChatTheme}
@@ -42,9 +43,9 @@ const ChatBubbleComponent = ({ chatId, handleFaucet }: { chatId: string; handleF
                   onClick={() => handleFaucet(true)}
                 />
             </ChatUIProvider>
-            {/* )
+           )
           }}
-        </BrowserOnly> */}
+        </BrowserOnly>  
        
       </ChatViewComponentCard>
      </Fragment>

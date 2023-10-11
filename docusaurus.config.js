@@ -62,7 +62,7 @@ const config = {
         },
       },
     ],
-    // require.resolve("./plugins/custom-webpack-plugin"),
+    require.resolve("./plugins/custom-webpack-plugin"),
     //   [
     //     "@docusaurus/plugin-client-redirects",
     //     {
