@@ -37,7 +37,7 @@ function Privacy() {
         <meta property="twitter:url" content="https://push.org/privacy" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
-        <meta property="og:image" content="/assets/previews/privacytwtpreview.png" />
+        <meta name="twitter:image" content="/assets/previews/privacytwtpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

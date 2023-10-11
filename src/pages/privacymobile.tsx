@@ -37,7 +37,7 @@ function PrivacyMobile() {
         <meta property="twitter:url" content="https://push.org/privacymobile" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
-        <meta property="og:image" content="/assets/previews/privacyfbpreview.png" />
+        <meta property="twitter:image" content="/assets/previews/privacyfbpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

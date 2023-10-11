@@ -119,7 +119,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
 
         {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta property="twitter:domain" content="push.org" />
         <meta property="twitter:url" content="https://push.org" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
