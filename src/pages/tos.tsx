@@ -53,7 +53,7 @@ function TermsOfService() {
         <meta property="twitter:url" content="https://push.org/tos" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - TOS Page" />
-        <meta property="twitter:image" content="/assets/previews/tostwtpreview.png" />
+        <meta name="twitter:image" content="/assets/previews/tostwtpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({

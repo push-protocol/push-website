@@ -277,7 +277,7 @@ const FrensText = () => {
         <meta property="twitter:url" content="https://push.org/frens" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Frens Page" />
-        <meta property="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
+        <meta name="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
 
         <script type="application/ld+json">
           {JSON.stringify({

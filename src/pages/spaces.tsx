@@ -104,7 +104,7 @@ const Spaces = () => {
         <meta property="twitter:url" content="https://push.org/spaces" />
         <meta name="twitter:title" content="Push (Previously EPNS)" />
         <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3  - Spaces Page" />
-        <meta property="twitter:image" content="/assets/previews/spacestwtpreview.webp" />
+        <meta name="twitter:image" content="/assets/previews/spacestwtpreview.webp" />
 
 
         <script type="application/ld+json">
