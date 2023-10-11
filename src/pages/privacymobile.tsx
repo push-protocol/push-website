@@ -27,25 +27,29 @@ function PrivacyMobile() {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacymobile" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push (Previously EPNS)" />
-        <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
+        <meta property="og:title" content="Push Protocol | Privacy" />
+        <meta property="og:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
         <meta property="og:image" content="/assets/previews/privacyfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="push.org/privacymobile" />
-        <meta property="twitter:url" content="https://push.org/privacymobile" />
-        <meta name="twitter:title" content="Push (Previously EPNS)" />
-        <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - Privacy Page" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | Privacy" />
+        <meta name="twitter:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
         <meta property="twitter:image" content="/assets/previews/privacyfbpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Push Protocol',
-            url: 'https://push.org/',
-            logo: '/assets/website/favicon.ico',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
         </Head>

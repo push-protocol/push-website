@@ -37,26 +37,30 @@ function BRB() {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/brb" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="BRB(Billions Reasons to Build)" />
-        <meta property="og:description" content="BRB(Billions Reasons to Build) Push Page" />
+        <meta property="og:title" content="Push Protocol | BRB (Billions Reasons to Build)" />
+        <meta name="og:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
         <meta property="og:image" content="/assets/previews/brbfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="push.org/brb" />
-        <meta property="twitter:url" content="https://push.org/brb" />
-        <meta name="twitter:title" content="BRB(Billions Reasons to Build)" />
-        <meta name="twitter:description" content="BRB(Billions Reasons to Build) Push Page" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | BRB (Billions Reasons to Build)" />
+        <meta name="twitter:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
         <meta name="twitter:image" content="/assets/previews/brbtwtpreview.png" />
 
   
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Push Protocol',
-            url: 'https://push.org/',
-            logo: '/assets/website/favicon.ico',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
         </Head>

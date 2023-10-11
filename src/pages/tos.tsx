@@ -43,25 +43,29 @@ function TermsOfService() {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/tos" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push (Previously EPNS)" />
-        <meta property="og:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - TOS Page" />
+        <meta property="og:title" content="Push Protocol | Terms of Service" />
+        <meta property="og:description"  content="Explore our terms of service to understand the rules and guidelines governing your use of our platform. Learn about your rights, responsibilities, and our commitment to a fair and secure user experience." />
         <meta property="og:image" content="/assets/previews/tosfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="push.org/tos" />
-        <meta property="twitter:url" content="https://push.org/tos" />
-        <meta name="twitter:title" content="Push (Previously EPNS)" />
-        <meta name="twitter:description" content="Push (Previously EPNS) | Communication Protocol of Web3 - TOS Page" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | Terms of Service" />
+        <meta name="twitter:description" content="Explore our terms of service to understand the rules and guidelines governing your use of our platform. Learn about your rights, responsibilities, and our commitment to a fair and secure user experience."/>
         <meta name="twitter:image" content="/assets/previews/tostwtpreview.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Push Protocol',
-            url: 'https://push.org/',
-            logo: '/assets/website/favicon.ico',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
         </Head>
