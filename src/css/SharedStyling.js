@@ -565,6 +565,7 @@ export const AImp = styled.a`
   font-weight: 500;
   border-radius: 8px;
   white-space: nowrap;
+  text-decoration: none;
 
   &:before {
     content: "💡 ";

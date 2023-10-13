@@ -13,7 +13,7 @@ These APIs are useful for managing subscriptions for specific channels including
 
 <head>
   <title>
-    Managa Subscriptions | Push Notification | Push Documentation
+    Managa Subscriptions | Push Notifications | Push Documentation
   </title>
 </head>
 
@@ -41,9 +41,9 @@ const response = await userAlice.notification.subscribe(
 // Another example but with settings
 const response = await userAlice.notification.subscribe(`eip155:5:${channelAddress}`, {
   settings: [ // settings are dependent on channel
-    setting1: {enabled: true, value: '1'},
-    setting2: {enabled: false},
-    setting3: {enabled: true, value: '50'}
+    {enabled: true, value: '1'}, // setting 1
+    {enabled: false}, // setting 2
+    {enabled: true, value: '50'} // setting 3
   ]
 })
 ```

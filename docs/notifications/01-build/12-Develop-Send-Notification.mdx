@@ -4,15 +4,15 @@ title: Send Notification
 hide_title: true
 slug: ./send-notification
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 # Send notification overview
 
-This section covers all APIs related to sending notifications from the created channel.
+This section covers all APIs related to sending notifications from a created channel.
 
 <head>
-  <title>Send Notification | Push Notification | Push Documentation</title>
+  <title>Send Notification | Push Notifications | Push Documentation</title>
 </head>
 
 import Tabs from '@theme/Tabs'
@@ -45,7 +45,7 @@ const sendNotifRes = await userAlice.channel.send(['*'], {
 
 | Param          | Type                             | Subtype                                           | Default | Remarks                                                                                                         |
 | -------------- | -------------------------------- | ------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------- |
-| _`recipients`_ | `string[]`                       | -                                                 | -       | An array of recipient addresses passed in [any supported wallet address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account). Possible values are: Broadcast -> [*], Targeted -> [0xA], Subset -> [0xA, 0xB], see [types of notifications](/docs/notifications/build/send-notification/#types-of-notification) for more info. |
+| _`recipients`_ | `string[]`                       | -                                                 | -       | An array of recipient addresses passed in [any supported wallet address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account). Possible values are: Broadcast -> [*], Targeted -> [0xA], Subset -> [0xA, 0xB], see [types of notifications](/docs/notifications/build/types-of-notification) for more info. |
 | _`options`_    | `NotificationOptions`            | -                                                 | -       | Configuration options for sending notifications.                                                                |
 | -              | _`options.notification`_         | `INotification`                                   | -       | An object containing the notification's title and body. (Mandatory)                                             |
 | -              | _`options.notification.title`_   | `string`                                          | -       | The title for the notification. If not provided, it is taken from notification.title.                           |
@@ -130,53 +130,4 @@ interface NotificationOptions = {
 const apiResponse: ApiResponse = await userAlice.channel.send(recipients, { 
   // NotificationOptions - as per your given object structure 
 });
-```
-
-## Types of Notification
-
-Push Protocol supports sending the following types of notifications to users of your protocol —
-
-### Broadcast Notification
-
-This type of notification is broadcasted or sent to all the subscribers of a channel at once
-
-```typescript
-// userAlice.channel.send([recipients], {options?})
-// to send a broadcast notification - pass '*' in recipients array
-const broadcastNotif = await userAlice.channel.send(['*'], {
-  notification: { title: 'test', body: 'test' },
-})
-```
-
-### Targeted Notification
-
-This type of notification is sent to a single wallet address.
-
-```typescript
-// userAlice.channel.send([recipients], {options?})
-// to send a targeted notification - pass that single wallet address in recipients array
-const targetedNotif = await userAlice.channel.send([signer.address], {
-  notification: {
-    title: 'test',
-    body: 'test',
-  },
-})
-```
-
-### Subset Notification
-
-This type of notification is sent to a a subset (or a group) of your channel subscribers.
-
-```typescript
-// userAlice.channel.send([recipients], {options?})
-// to send a subset notification - pass the list of wallet address in recipients array
-const subsetNotif = await userAlice.channel.send(
-  [randomWallet1, randomWallet2, signer.address],
-  {
-    notification: {
-      title: 'test',
-      body: 'test',
-    },
-  }
-)
 ```

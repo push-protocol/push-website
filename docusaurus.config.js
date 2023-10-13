@@ -123,7 +123,7 @@ const config = {
       // Replace with your project's social card
       image: "/assets/docs/social-card.jpg",
       themeconfig: {
-        sidebarCollapsible: false,
+        sidebarCollapsible: true,
       },
       navbar: {
         hideOnScroll: true,
@@ -160,6 +160,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['solidity'],
       },
       algolia: {
         // The application ID provided by Algolia
