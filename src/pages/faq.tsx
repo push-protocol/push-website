@@ -739,20 +739,38 @@ function FAQ() {
 
   return (
     <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription}>
-      {/* <Head>
-        <meta property="og:image" content="image.png" />
+       <Head>
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org/faq" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push Protocol | FAQ" />
+        <meta property="og:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
+        <meta property="og:image" content="/assets/previews/faqfbpreview.png" />
+
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href="https://example.com" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | FAQ" />
+        <meta name="twitter:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
+        <meta name="twitter:image" content="/assets/previews/faqtwtpreview.png" />
+
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Meta Open Source',
-            url: 'https://opensource.fb.com/',
-            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
-      </Head> */}
+        </Head>
+
+        
       <FAQWrapper>
         <TopSection>
           <Content

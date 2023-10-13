@@ -263,20 +263,37 @@ const FrensText = () => {
 
   return (
     <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription}>
-      {/* <Head>
-        <meta property="og:image" content="image.png" />
+     <Head>
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org/frens" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push Protocol | Frens Of Push" />
+        <meta property="og:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
+        <meta property="og:image" content="/assets/previews/frenspagefbpreview.webp" />
+
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href="https://example.com" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | Frens Of Push" />
+        <meta name="twitter:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
+        <meta name="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
+
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Meta Open Source',
-            url: 'https://opensource.fb.com/',
-            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
-      </Head> */}
+        </Head>
+
       <FrensWrapper>
         <AnimationIcon>
           <AnimationSection

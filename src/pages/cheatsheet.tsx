@@ -27,20 +27,39 @@ function CheatSheet() {
   // }, []);
   return (
     <Layout title={PageMeta.ABOUTUS.pageTitle} description={PageMeta.ABOUTUS.pageDescription}>
-    {/* <Head>
-      <meta property="og:image" content="image.png" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <link rel="preconnect" href="https://example.com" />
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org/',
-          '@type': 'Organization',
-          name: 'Meta Open Source',
-          url: 'https://opensource.fb.com/',
-          logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-        })}
-      </script>
-    </Head> */}
+    <Head>
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org/cheatsheet" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push Protocol | Cheatsheet" />
+        <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
+        <meta property="og:image" content="/assets/previews/cheatsheetfbpreview.png" />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol | Cheatsheet" />
+        <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
+        <meta name="twitter:image" content="/assets/previews/cheatsheettwtpreview.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
+          })}
+        </script>
+        </Head>
+
+        
       <CheatWrapper>
         
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
