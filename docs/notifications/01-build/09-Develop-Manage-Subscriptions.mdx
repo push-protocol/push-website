@@ -76,7 +76,7 @@ const response = await userAlice.notification.subscribe(`eip155:5:${channelAddre
 </summary>
 
 ```typescript
-{ status: 'success', message: 'successfully opted into channel' }
+{ status: 204, message: 'successfully opted into channel' }
 ```
 
 </details>
@@ -113,7 +113,7 @@ const unsubscribeResponse = await userAlice.notification.unsubscribe(
 </summary>
 
 ```typescript
-{ status: 'success', message: 'successfully opted out channel' }
+{ status: 204, message: 'successfully opted out channel' }
 ```
 
 </details>
