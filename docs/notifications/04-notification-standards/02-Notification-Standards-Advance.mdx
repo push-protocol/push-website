@@ -7,7 +7,7 @@ displayed_sidebar: pushNotificationSidebar
 sidebar_position: 2
 ---
 
-# What is Notification?
+# What is a Notification in Push protocol?
 
 Notifications follow composable blocks that helps achieve modular structure and helps in building on top of them. Any developer can utilize the notification protocol to send out notifications (on-chain or off-chain) to their users from a variety of platforms including web3 protocols, smart contracts, dapps, backend, etc. 
 
@@ -52,7 +52,7 @@ Verification proofs differ based on the platform from which they are sent. For i
 ::uid:: is an optional delimiter which if present along with optionaluid allows the proof to be uniquely different.
 :::
 
-### Understanding Verification Proofs
+### Understanding Verification Proof
 
 1. `eip155:chainId:txHash::uid::optionaluid` - This signifies the on-chain verification. Currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block. 
 
@@ -64,7 +64,7 @@ Verification proofs differ based on the platform from which they are sent. For i
   As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is introduced which is identity-independent.
   :::
 
-3. `eip712v2` - eip712v2:<Proof\>, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
+3. `eip712v2` - eip712v2:&lt;Proof&gt;, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
 
 4. `thegraph` - Notification can be triggered through a subgraph as well
   They need to call the addSubgraph function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
@@ -72,7 +72,10 @@ Verification proofs differ based on the platform from which they are sent. For i
     - **`notification number[counter]`** - It will keep the count of Notifications and will process in a successive manner.
     - **`::uid::optionaluid`** - **::uid** is an optional delimiter which if present along with **optionaluid** allows the proof to be uniquely different.
 
-### Verification Proofs Example - Transaction Based (eip155:....)
+### Verification Proof Examples
+
+<details>
+<summary>Transaction Based (eip155:....)</summary>
 
 This signifies the verification from the on-chain, currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block.
 
@@ -119,15 +122,18 @@ This signifies the verification from the on-chain, currently, Ethereum and Polyg
   "identity": "3+graph:<subgraph-id>+<notification number>"
 }
 ```
+</details>
 
-### Verification Proofs Example - EIP-712
+<details>
+<summary>EIP-712v1</summary>
+
 This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature.
 
 :::caution
 EIP-712v1 - It contains a fully loaded old payload. This is deprecated but present to provide backward compatibility.
 :::
 
-**1. eip-712v1** has a limitation to support only the completed old payload which includes all the parameters of the payload which are part of notification, data, and recipients. As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is identity independent.
+This has a limitation to support only the completed old payload which includes all the parameters of the payload which are part of notification, data, and recipients. As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is identity independent.
 
 ```json
 {
@@ -150,5 +156,102 @@ EIP-712v1 - It contains a fully loaded old payload. This is deprecated but prese
     "op": "write"
 }
 ```
+</details>
 
-**2. EIP-712v2 - eip712v2:Proof** Contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
+
+<details>
+<summary>EIP-712v2 - eip712v2:&lt;Proof&gt;</summary>
+Contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
+
+```json
+{
+  "verificationProof": "eip712v2:<Proof>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
+  "identity": "0+1+Test Title+Test Body"
+}
+```
+
+```json
+{
+  "verificationProof": "eip712v2:<Proof>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
+  "identity": "1+bafkreicuttr5gpbyzyn6cyapxctlr7dk2g6fnydqxy6lps424mcjcn73we"
+}
+```
+
+```json
+{
+  "verificationProof":"eip712v2:<Proof>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "THE_GRAPH",
+  "identity": "3+graph:<subgraph-id>+<notification number>"
+}
+```
+
+```json
+{
+  "verificationProof": "eip712v1:<Proof>",
+  "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
+  "identity": "2+{'notification':{'title':'TEST Title','body':'Test Body'},'data':{'acta':'','aimg':'','amsg':'Test Message','asub':'','type':'3','etime':'','hidden':''}}",
+}
+```
+</details>
+
+<details>
+<summary>TheGraph</summary>
+
+```json
+{
+  "verificationProof":`graph:<subgraph-id>+<notification number>`,
+  "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "source":'THE_GRAPH',
+  "identity": `3+graph:<subgraph-id>+<notification number>`,
+}
+```
+</details>
+
+## Notification Identity
+Identity defines where the notification is coming from and the rules by which we can get the payload JSON of that specific notification. Currently, supported identities are Minimal, IPFS, Direct, and Subgraph.
+
+### Specifications
+Each notification identity carries at least two parameters which are joined by +  delimiter.
+
+- **`Storage Type`**: The first parameter represents **the identity type used** (Minimal, IPFS, Direct, etc). The type id represents where the payload is stored or coming from.
+- **`Payload storage info`**: Hash of the payload representing proof or pointer from which the payload can be retrieved. The second parameter represents either the **hash or identifying information** that can be used to fetch the necessary JSON which can also be made of composable information.
+
+**Storage Types**
+As of now, there are 4 types of storage that are supported:
+
+| Id  | Type                   | Defintion                                          |
+| --- | ---------------------- | -------------------------------------------------- |
+| 0   | Minimal                | Recommended for Smart Contract                     |
+| 1   | IPFS                   | Indicates storage on IPFS                          |
+| 2   | Direct Payload         | Indicates storage of direct payload                |
+| 3   | SubGraph               | Indicates storage on the subgraph                  |
+
+### Identity Examples
+<details>
+<summary>Identity Type 0</summary>
+
+**Format:** `0+<Notification Payload Type>+<Title>+<Body>`
+
+`<Notification Payload Type>`: Type of notification (Broadcast, Subset, Targetted, Secret, etc)
+
+`<Title>`: This will be the title of the Message. 
+
+`<Body>`: This will be the body/description of the Message.
+
+**Example:**
+```
+0+1+Hello+This is a broadacasted notification
+```
+
+</details>
