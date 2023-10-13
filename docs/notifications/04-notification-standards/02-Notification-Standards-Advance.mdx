@@ -1,0 +1,154 @@
+---
+id: docs-notifications-ns-notif-standards-advance
+title: Notification Standards (Advance)
+hide_title: true
+slug: ./notification-standards-advance
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 2
+---
+
+# What is Notification?
+
+Notifications follow composable blocks that helps achieve modular structure and helps in building on top of them. Any developer can utilize the notification protocol to send out notifications (on-chain or off-chain) to their users from a variety of platforms including web3 protocols, smart contracts, dapps, backend, etc. 
+
+These notifications are tied to wallet address of the user and are indexed by push nodes allowing any crypto frontend such as wallet, dapp or mobile app to query and display these notifications for the wallet users along with sending them out as push notifications.
+
+<head>
+  <title>Notification Standards (Advance) | Push Notifications | Push Documentation</title>
+</head>
+
+![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png "Representation of composable blocks of notification")
+
+## Composability Structure
+Each notification is made up of these composable blocks:
+
+```
+Verification - To verify the notification
+    Identity - To understand the storage format and rules to interpret the notification payload
+        Payload - To understand what is the type of notification, what data it contains and to whom it should be addresses to
+            Content - To interpret or extend format types for content inside the notification
+```
+
+- `Verification` - It defines the way to verify that the payload is valid by checking sender, source, and authenticitiy of the payload content.
+- `Identity` - Notification Identity Payload is the standard through which notification payload can be sent to Push Nodes for processing. There are multiple ways by which these payloads can be stored (storage-independent behavior) and identity ensures that the push node are able to understand and construct the notification payload from the data.
+- `Payload` - Each notification sent to the protocol is essentially a JSON payload which contains data about things a notification contains, notification recipients and even data to encrypt these notifications. This json payload is what makes Push Protocol payload content-independent and allows for expansion to several new types of notifications based on the community needs and as the communication protocol develops further.
+- `Content` - Notification Content Markdown standardize the content markdown and create a standard for styling and formatting.
+
+
+## Notification Verification Proof
+Verification Proof is the outermost composable block that is sent along with the notification to help the network validate the notification sender, the chain from which the notification is sent, and the content of the notification along with any other validation that might be required.
+
+Verification proofs differ based on the platform from which they are sent. For instance, **smart contracts verification proof can be validated on-chain** and smart contract-based notifications will usually carry transaction hash proofs, while **off-chain / gasless notifications usually carry eip712 proofs**, though they are capable of carrying smart contract verification proof as well which makes it composable.
+
+### Specifications
+| verificationProof                               | Definition                                                                                             | Proof of verification                                                                                                                                                                        |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| eip155:chainId:txHash::uid::optionaluid         | Verification proof generated from transaction hash of EPNSComm smart contracts on Ethereum or Polygon. | The type can be proven by on-chain activity                                                                                                                                                  |
+| eip712v1:signature::uid::optionaluid            | Verification proof generated from off-chain EIP-712 signing of payload                                 | The type is proven by verifying the signature of eip712.                                                                                                                                     |
+| eip712v2:signature::uid::optionaluid            | Verification proof generated from off-chain EIP-712 signing of payload                                 | The type is proven by verifying the signature of eip712                                                                                                                                      |
+| thegraph:graphid+notifcounter::uid::optionaluid | Verification proof generated from any subgraph                                                         | The type is proven by validating if the subgraph is attached to the channel and then the counter id is used to pick the message and compare the payload with the payload stored on the graph |
+
+:::note
+::uid:: is an optional delimiter which if present along with optionaluid allows the proof to be uniquely different.
+:::
+
+### Understanding Verification Proofs
+
+1. `eip155:chainId:txHash::uid::optionaluid` - This signifies the on-chain verification. Currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block. 
+
+2. `eip712v1` - This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature. 
+
+  :::caution
+  eip-712v1 has a limitation to support only completed old payloads which include all the parameters of the payload which are part of notification, data, and recipients. 
+
+  As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is introduced which is identity-independent.
+  :::
+
+3. `eip712v2` - eip712v2:<Proof\>, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
+
+4. `thegraph` - Notification can be triggered through a subgraph as well
+  They need to call the addSubgraph function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
+    - **`GraphId`**: This will be the id of subgraph. It is usually represented as `githubid/subgraph` name e.g - `push/pushsubgraph`.
+    - **`notification number[counter]`** - It will keep the count of Notifications and will process in a successive manner.
+    - **`::uid::optionaluid`** - **::uid** is an optional delimiter which if present along with **optionaluid** allows the proof to be uniquely different.
+
+### Verification Proofs Example - Transaction Based (eip155:....)
+
+This signifies the verification from the on-chain, currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block.
+
+**1. For Identity 0**
+```json
+{
+  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET"
+  "identity": "0+<Notification-Type>+<Title>+<body>"
+}
+```
+
+**2. For Identity 1**
+```json
+{
+  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET"
+  "identity": "1+<IPFS-HASH>"
+}
+```
+
+**3. For Identity 2**
+```json
+{
+  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
+  "identity": "2+<Payload-in-form-of-string>",
+}
+```
+
+**3. For Identity 3**
+```json
+{
+  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
+  "source": "THE_GRAPH",
+  "identity": "3+graph:<subgraph-id>+<notification number>"
+}
+```
+
+### Verification Proofs Example - EIP-712
+This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature.
+
+:::caution
+EIP-712v1 - It contains a fully loaded old payload. This is deprecated but present to provide backward compatibility.
+:::
+
+**1. eip-712v1** has a limitation to support only the completed old payload which includes all the parameters of the payload which are part of notification, data, and recipients. As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is identity independent.
+
+```json
+{
+    "channel": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
+    "recipient": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
+    "signature": "<Signature generated using eip712>",
+    "deployedContract": "0x99047d328496C14016222a998564B334A4A5723f",
+    "chainId": "42",
+    "payload": {
+        "data": {
+            "acta": "",
+            "aimg": "",
+            "amsg": "Current BTC price is - 47,785.10USD",
+            "asub": "",
+            "type": "1",
+            "secret": ""
+        }
+    },
+    "type": "1",
+    "op": "write"
+}
+```
+
+**2. EIP-712v2 - eip712v2:Proof** Contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
