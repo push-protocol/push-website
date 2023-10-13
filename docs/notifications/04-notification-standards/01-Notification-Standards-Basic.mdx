@@ -11,79 +11,166 @@ sidebar_position: 1
 
 All notifications passed to the network are eventually transformed to JSON payload. The following glossaries help cover some of the basics that can help in understanding what is happening and how to customize the behavior.
 
-- **Verification Proof**  - Each notification sent carries with itself a verification proof that allows the network to validate that the notification is coming from a channel or one of it's delegate. 
-
 <head>
   <title>Notification Standards (Basic) | Push Notifications | Push Documentation</title>
 </head>
 
-import CustomLinkCard from '@site/src/components/CustomLinkCard'
-import {
-  ItemV,
-  ItemH,
-  Span,
-  Button,
-  Image,
-  ModalContainer,
-  ModalItemSmall,
-  ModalItemSmallColumn,
-  AImp,
-} from '@site/src/css/SharedStyling'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-Since Push Protocol started with decentralized notifications, every chat message sent on the protocol has a notification built in. Whenever a message is sent to an address, the receiving address will receive a notification along with the message but only if they have accepted your chat request.
+## Important glossaries
 
-Unlike traditional notification / alert services that require users to provide their information to sign up, like their email, phone number, or any other personal data about the user, Push Notification requires no personal information whatsoever to start receiving / sending notifications on the protocol.&#x20;
+- **Verification Proof**  - Each notification sent carries with itself a verification proof that allows the network to validate that the notification is coming from a channel or one of it's delegate. 
 
-- All the user needs is a **wallet address.**
-- All the notifications are stored either on Push Nodes, IPFS or onchain depending on the storage choosed by the client and are signed.
-- When sending a notification to an address, it is sent through Push Nodes.&#x20;
+  :::note
+  Verification Proof is handled automatically by the SDK but you if you want to, you can read about it [over here](docs/notifications/notification-standards/notification-standards-advance/#notification-verification-proof "post explaining notification verification proof in Push protocol").
+  :::
 
-_**Push Nodes**_ are a network of nodes, where each node can have a different role in the network that is responsible for validating each notification and chat message between addresses.&#x20;
+- **Notification Identity** - Each notification passed to the network is actually an identity which defines how the notification is formatted, where it's stored, etc. 
 
-Their main task is to validate that:
+  :::note
+  Notification identity is abstracted away by the SDK except when invoking directly from your smart contracts. Advance section has detailed explaination about [Notification Identity](docs/notifications/notification-standards/notification-standards-advance/#notification-identity "post explaining notification identity in Push protocol").
 
-- &#x20;the notification payload is following the corresponding payload standard,
-- the sender is a valid channel or delegator and can actually send the notification, and signature validation,
-- if the payload is valid, the Push Nodes will process the notification and send it to the delivery nodes for pushing the alerts to the clients.
+- **Identity Type** - Defines the format in which the notification json payload is sent to the network. Common types you need to know about.
 
-## Spam prevention
+  | Identity Type | Remarks               | Description                                                     |
+  | ------------- | --------------------- | --------------------------------------------------------------- |
+  | 0             | Minimal               | Recommended for Smart Contract                                  |
+  | 2             | Direct Payload        | Recommended for PUSH SDK                                        |
 
-Spam prevention has always been one of our major priorities.&#x20;
+- **Notification Type** - Defines the type of notification that is sent:
+  - Broadcast (Type 1) - Is sent out to all the users who have opted in to your channel
+  - Targeted (Type 3) - Is sent out to an individual user
+  - Subset (Type 4) - Is sent out to a subset of users of your channel
 
-There are countless examples of users spamming others with fake giveaways, random messages, or unwanted notifications.
+- **Notification Content** - Defines the notification content which consists of:
+  - Notification JSON Object - What is shown on your home screen
+  - Payload JSON Object - What is shown and stored on your feed
+  - Recipients - 0x0 for type 1 (broadcast), 0xTarget for type 3 (Targetted) and [0x01, 0x02, 0x03, ..., 0xN] for type 4 (Subset) 
 
-For notifications, the core protocol itself adopts a user-centric approach. This means that all the notifications are opt-in or opt-out based.&#x20;
+  ```json
+    // Example Raw Content for targeted notifcation, abstracted away by SDK
+    {
+      "notification": {
+        "title": "The title of your message displayed on screen (50 Chars)",
+        "body": "The intended message displayed on screen (180 Chars)"
+      },
+      "data": { // Is defined as payload most of the time
+        "type": "3" // notification type
+        "sectype": null // enables encrypted notifications
+        "asub": "[Optional] The subject of the message displayed inside app (80 Chars)",
+        "amsg": "[Optional] The intended message displayed inside app (500 Chars)",
+        "acta": "[Optional] The cta link parsed inside the app",
+        "aimg": "[Optional] The image url which is shown inside the app",
+        "etime": "[Optional] if given, notif will be deleted after this in epoch"
+        "hidden" :"[Optional] if given, notif will not show in user feed"
+      },
+        "recipients": 0xtarget
+    }
+  ```
 
-This means that users shall only receive notifications from protocols they opt in to. Users can fine-tune which notifications they see the value of and only opt-in for them while every other notification shall land in the user's spam box.&#x20;
+  :::note
+  These concepts are for your understanding as most of them are abstracted away but if you wish to dive deeper then read more about [notification payload here](docs/notifications/notification-standards/notification-standards-advance/#notification-payload "post explaining notification payload in in Push protocol").
+  :::
 
-## Sending notifications
+  
+- **Content Markdown** - Defines how the content markdown should be passed to enable variety of notifications. Covered in detail in the advanced section - [Notification Content](docs/notifications/notification-standards/notification-standards-advance/#notification-content "post explaining notification content and how to customize it in in Push protocol").
 
-The core protocol allows to create channels which acts as services that can send notifications to any wallet address.
-The channels can also send notifications on alias chains using an alias address of the specific chain.
-If the wallet address is a subscriber, notifications lands in the inbox, otherwise in spam box.
+- **Sender** - Defines who is sending the message. The sender is the channel address or the alias address. The address should be represented in chain specific format as [depicted over here](/docs/notifications/important-concepts/#chain-specific-wallet-address "About chain specific wallet address")
 
-## Decentralization
+  Examples:
+  - Ethereum(Mainnet): `eip155:1:<Address>`
+  - Ethereum(Goerli): `eip155:42:<Address>`
+  - Polygon(Mumbai): `eip155:80001:<Address>`
 
-Push Notifications are sent between addresses via the Push Nodes. Push Nodes are the nodes responsible for validating notification and chat payload and for dispatching notifications to addresses. Push Nodes can have different roles in this Communication Network.
+  :::caution
+  One exception to chain specific format is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Send notification via smart contract")), For this specific feature, the native blockchain address is required and not chain specific format.
+  :::
 
-The vision for Push Protocol is for the Push Nodes to be run by the community and to get rewarded by contributing to the network's decentralization. As of today, Push Nodes are run by Push Protocol, but the team is working on decentralizing the nodes.
+- **Source** - The source from which the notification is coming from. Currently supports `ETH_MAINNET`, `POLYGON_MAINNET`, `BNB_MAINNET`, `ARB_MAINNET`, `THE_GRAPH`, `ETH_GOERLI`, `POLYGON_TESTNET`, `BNB_TESTNET`.
 
-Although the Push Nodes are run by Push Protocol, users can always verify that the chat messages and notifications haven’t been tampered with and that they have indeed been sent by the correct address. Users can always verify this by the Verification Proof.
+  Source is determined [by the chain at which the user is inititialized](http://localhost:3000/docs/notifications/build/initialize-user/ "Initialize User Push SDK") from Push SDK, by the network it is coming from in case of smart contracts.
 
-### Verification Proof
+- **Recipient(s)** - The address to the notification should reach. Push supports multiple address formats as [depicted over here](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account "learn about all supported wallet address account").
 
-Verification Proof is a property that is sent along with the notifications and chats messages to help the network validate the sender, the chain from which the notification (or message) is sent, and the content of the notification (or message) along with any other validation that might be required.
+  Few examples:
+  - Ethereum(Mainnet): `eip155:1:<Address>`
+  - Ethereum(Goerli): `eip155:42:<Address>`
+  - Polygon(Mumbai): `eip155:80001:<Address>`
 
-For notifications, the verification proofs differ based on the platform from which they are sent. i.e., Smart contracts verification proof can be validated on-chain, and smart contract-based notifications will usually carry transaction hash proofs while off-chain/gasless notifications usually carry EIP-712 proofs, though they are capable of carrying smart contract verification proof as well, which makes it composable.
+  :::caution
+  One exception to address format support is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Send notification via smart contract")), For this specific feature, the native blockchain address is required. for example: `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
+  :::
 
-## Push Notification SDK
+## Sending notification examples
 
-With the SDK, it will be easy for developers to integrate notifications into their dapps. The use cases are endless:
+<Tabs groupId="notification-examples">
+  <TabItem value="Push SDK" default>
 
-- Alerts for gas price changes.
-- Notifications for token price changes.
-- New Governance Proposals of DAO
-- Loan Liquidation Alert
-- Any other cool, crazy feature you can think of
+```typescript
+// userAlice.channel.send([recipients], {options?})
+// to send a broadcast notification - pass '*' in recipients array
+const broadcastNotif = await userAlice.channel.send(['*'], {
+  notification: { title: 'test', body: 'test' },
+})
 
-Alright. Now that you have a clear picture of the Push Notification and its SDK, let's dive in and try to integrate the push notification into your application.
+// userAlice.channel.send([recipients], {options?})
+// to send a targeted notification - pass that single wallet address in recipients array
+const targetedNotif = await userAlice.channel.send(['0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'], {
+  notification: {
+    title: 'test',
+    body: 'test',
+  },
+})
+
+// userAlice.channel.send([recipients], {options?})
+// to send a subset notification - pass the list of wallet address in recipients array
+const subsetNotif = await userAlice.channel.send(
+  [randomWallet1, randomWallet2, randomWallet3],
+  {
+    notification: {
+      title: 'test',
+      body: 'test',
+    },
+  }
+)
+```
+
+  </TabItem>
+
+  <TabItem value="Smart Contract" default>
+
+  While any Notification Identity can be passed in any of the interactions, It's recommended to start with Identity Type 0 (Minimal) for smart contracts.
+
+  **Format:** `0+<Notification Type>+<Title>+<Body>`
+
+  **What to call:** `sendNotification(address _channel, address _recipient, bytes calldata _identity)`
+
+  **Additional Rules: **
+  Notification Type 1 (Broadcast): Pass recipient as _channel
+  Notification Type 3 (Targeted): Pass recipient as intended recipient
+  Notification Type 4 (Subset): **Not supported yet**
+
+  **Example:**
+  ```solidity
+  IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotification(
+    YOUR_CHANNEL_ADDRESS, // from channel - recommended to set channel via dApp and put it's value -> then once contract is deployed, go back and add the contract address as delegate for your channel
+    to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+    bytes(
+        string(
+            // We are passing identity here: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
+            abi.encodePacked(
+                "0", // this represents minimal identity, learn more: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
+                "+", // segregator
+                "3", // define notification type:  https://push.org/docs/notifications/build/types-of-notification (1, 3 or 4) = (Broadcast, targetted or subset)
+                "+", // segregator
+                "Title", // this is notificaiton title
+                "+", // segregator
+                "Body" // notification body
+            )
+        )
+    )
+  );
+  ```
+  </TabItem>
+</Tabs>
