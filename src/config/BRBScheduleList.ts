@@ -134,16 +134,7 @@ export const citiesList = [
     },
   ],
   [
-    {
-      srcref: 'delhi_north',
-      place: 'Delhi',
-      date: '4 Nov 2023',
-      link: 'https://www.lu.ma/brb-delhi',
-      alt: 'Delhi, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Delhi, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#194395',
-      hasEnded: false,
-    },
+    
     {
       srcref: 'lucknow',
       place: 'Lucknow',
@@ -152,6 +143,16 @@ export const citiesList = [
       alt: 'Lucknow, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Lucknow, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#2E7D5C',
+      hasEnded: false,
+    },
+    {
+      srcref: 'delhi_north',
+      place: 'Delhi',
+      date: '28 Nov 2023',
+      link: 'https://www.lu.ma/brb-delhi',
+      alt: 'Delhi, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Delhi, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#194395',
       hasEnded: false,
     },
   ],
