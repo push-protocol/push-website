@@ -125,12 +125,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         <meta name="twitter:description" content="The Communication Protocol of Web3. Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
         <meta name="twitter:image" content="/assets/previews/hometwtpreview.webp" />
 
-
-        {/* <!-- fix index issues --> */}
-        <meta name="robots" content="noindex" />
-        <meta name="googlebot" content="noindex" />
-
-  
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",
