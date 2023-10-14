@@ -59,11 +59,7 @@ export default function NotFoundWrapper(props) {
         </Layout>
       )} */}
 
-      {/* <div>koko</div> */}
-
       <NotFound {...props} />
-
-      <div>koko</div>
       <Footer />
     </>
   );
