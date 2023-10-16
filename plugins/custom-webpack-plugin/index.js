@@ -20,6 +20,8 @@ module.exports = function (context, options) {
             stream: require.resolve("stream-browserify"),
             assert: require.resolve("assert/"),
             crypto: require.resolve("crypto-browserify"),
+            buffer: require.resolve("buffer/"),
+            util: require.resolve("util/"),
           },
         },
         plugins: [

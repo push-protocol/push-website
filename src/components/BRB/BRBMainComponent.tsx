@@ -4,6 +4,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { gsap } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,7 +18,7 @@ import { PartnerBounties } from '@site/src/components/BRB/BRBPartnerBounties';
 import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
+import ChatComponent from '@site/src/components/PushChat/PushChatComponent';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
@@ -390,7 +391,13 @@ export const BRBMainComponent = () => {
       </BountyDiv>
 
       <PlaygroundDiv id="playground">
-        <ChatComponent />
+        <BrowserOnly fallback={<div>Loading...</div>}>
+        {() => {
+            return (
+              <ChatComponent />
+            )
+        }}
+        </BrowserOnly>
       </PlaygroundDiv>
 
 

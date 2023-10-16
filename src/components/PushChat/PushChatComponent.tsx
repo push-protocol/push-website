@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 
 // External Components
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { ChatUIProvider } from '@pushprotocol/uiweb';
 import styled from 'styled-components';
 
@@ -24,10 +25,9 @@ import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import { device } from '@site/src/config/globals';
 
-export const ChatComponent = () => {
+const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
   const isMobile = useMediaQuery(device.mobileL);
 
@@ -195,8 +195,11 @@ const PlayGround = styled(Section)`
   background-repeat: no-repeat;
   background-size: contain;
   width: 80%;
+  height: 75vh;
   margin: 0 auto;
   @media ${device.mobileL} {
     width: 95%;
   }
 `;
+
+export default typeof window !== 'undefined' ? ChatComponent : () => null;
