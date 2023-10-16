@@ -37,7 +37,6 @@ const config = {
   // Static linking
   staticDirectories: ["public", "static"],
 
-
   plugins: [
     [
       "./plugins/blog-plugin",
@@ -48,48 +47,48 @@ const config = {
         blogSidebarTitle: "All posts",
         blogSidebarCount: "ALL",
         showReadingTime: true,
-        readingTime: ({content, frontMatter, defaultReadingTime}) =>
-          defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         feedOptions: {
-          type: 'all',
+          type: "all",
           createFeedItems: async (params) => {
-            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+            const { blogPosts, defaultCreateFeedItems, ...rest } = params;
             return defaultCreateFeedItems({
               // keep only the 10 most recent blog posts in the feed
               blogPosts: blogPosts.filter((item, index) => index < 10),
               ...rest,
             });
           },
-        }
+        },
       },
     ],
     require.resolve("./plugins/custom-webpack-plugin"),
-      [
-        "@docusaurus/plugin-client-redirects",
-        {
-          // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-          // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-          // redirects: [
-          //   // /docs/oldDoc -> /docs/newDoc
-          //   {
-          //     to: "/docs/dev",
-          //     from: "/docs/",
-          //   },
-          //   // // Redirect from multiple old paths to the new path
-          //   // {
-          //   //   to: '/docs/newDoc2',
-          //   //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-          //   // },
-          // ],
-          createRedirects(existingPath) {
-            if (existingPath.includes("/docs/dev")) {
-              // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-              return [existingPath.replace("/docs/dev", "/docs")];
-            }
-            return undefined; // Return a falsy value: no redirect created
-          },
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+        // redirects: [
+        //   // /docs/oldDoc -> /docs/newDoc
+        //   {
+        //     to: "/docs/dev",
+        //     from: "/docs/",
+        //   },
+        //   // // Redirect from multiple old paths to the new path
+        //   // {
+        //   //   to: '/docs/newDoc2',
+        //   //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+        //   // },
+        // ],
+        createRedirects(existingPath) {
+          if (existingPath.includes("/docs/dev")) {
+            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
+            return [existingPath.replace("/docs/dev", "/docs")];
+          }
+          return undefined; // Return a falsy value: no redirect created
         },
-      ],
+      },
+    ],
   ],
 
   presets: [
@@ -107,7 +106,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the 'edit this page' links.
           editUrl:
-            "https://github.com/ethereum-push-notification-service/push-documentation/",
+            "https://github.com/ethereum-push-notification-service/push-website/blob/main",
         },
         blog: false,
         theme: {
@@ -160,7 +159,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['solidity'],
+        additionalLanguages: ["solidity"],
       },
       algolia: {
         // The application ID provided by Algolia
