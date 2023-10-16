@@ -16,34 +16,28 @@ module.exports = function (context, options) {
             http: require.resolve("stream-http"),
             https: require.resolve("https-browserify"),
             zlib: require.resolve("browserify-zlib"),
-            util: require.resolve("util/"),
             url: require.resolve("url/"),
             stream: require.resolve("stream-browserify"),
             assert: require.resolve("assert/"),
             crypto: require.resolve("crypto-browserify"),
-            process: require.resolve("process/browser.js"),
-            os: require.resolve("os-browserify"),
-            path: require.resolve("path-browserify"),
-            tty: require.resolve("tty-browserify"),
-            fs: false,
           },
         },
         plugins: [
-          new webpack.ProvidePlugin({
-            process: "process/browser.js",
-            Buffer: ["buffer", "Buffer"],
-            "window.crypto": polyfillPath,
-          }),
+          // new webpack.ProvidePlugin({
+          //   process: "process/browser.js",
+          //   Buffer: ["buffer", "Buffer"],
+          //   "window.crypto": polyfillPath,
+          // }),
         ],
         module: {
-          rules: [
-            {
-              test: /\.m?js/,
-              resolve: {
-                fullySpecified: false,
-              },
-            },
-          ],
+          // rules: [
+          //   {
+          //     test: /\.m?js/,
+          //     resolve: {
+          //       fullySpecified: false,
+          //     },
+          //   },
+          // ],
         },
       };
     },

@@ -5,12 +5,12 @@
 import React, { useState } from 'react';
 
 // External Components
+import { ChatUIProvider } from '@pushprotocol/uiweb';
 import styled from 'styled-components';
-// import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
+import { ChatViewComponent } from "@pushprotocol/uiweb";
 import { Modal } from '@site/src/components/Modal';
-import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
 import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
@@ -24,8 +24,8 @@ import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import { device } from '@site/src/config/globals';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -52,22 +52,25 @@ export const ChatComponent = () => {
       <PlayGround>
         {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
 
-        {/* <BrowserOnly fallback={<div>Loading...</div>}>
+        <BrowserOnly fallback={<div>Loading...</div>}>
           {() => {
-            const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
-
-            return (<ChatUIProvider
-            env={'prod'}
-            theme={darkChatTheme}
-          > */}
-          
-          <ChatBubbleComponent
-            chatId={"4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"}
-            handleFaucet={setShowFaucet}
-          />
-          {/* </ChatUIProvider>);
+            return (
+              <ChatUIProvider
+                env={'prod'}
+                theme={darkChatTheme}
+              >
+                {/* <ChatBubbleComponent
+                  chatId={"4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"}
+                  handleFaucet={setShowFaucet}
+                /> */}
+                <ChatViewComponent
+                  chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
+                  limit={10}
+                  isConnected={true}
+                />
+              </ChatUIProvider>);
           }}
-        </BrowserOnly> */}
+        </BrowserOnly>
         
       </PlayGround>
 
