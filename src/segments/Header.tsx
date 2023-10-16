@@ -122,9 +122,18 @@ function Header() {
   const [showHeader, setShowHeader] = useState(true);
 
   useEffect(()=>{
-    console.log(window.location.pathname); 
-    const navbar = document.getElementsByClassName('navbar');
-    if(navbar.style) navbar.style.backgroundColor = 'red !important';
+
+    // function hideNavbarOnSpecificPage() {
+      // Define the path of the page where you want to hide the navbar
+    
+      // Check if the current URL matches the page path
+        console.log('red')
+        // Hide the navbar by applying a CSS class or inline style
+        document.querySelector('navbar').style.backgroundColor = 'red !important'; // Replace '.navbar' with the actual CSS selector for the navbar element
+    // }
+    
+    // Call the function when the page loads
+    // window.addEventListener('DOMContentLoaded', hideNavbarOnSpecificPage);
   },[])
 
   // const hideAlertHandler = ()=>{

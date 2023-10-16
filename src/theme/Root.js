@@ -103,10 +103,10 @@ export default function Root({ children }) {
     <div className={returnAdditionalClasses(superimposedConditions)}>
       <ServerStyle from={children} />
 
-      {/* {excludeDefaultConfigAt("/BRB") &&
+      {excludeDefaultConfigAt("/BRB") &&
         excludeDefaultConfigAt("/DOCS") &&
-        excludeDefaultConfigAt("/BLOG") && <Header />} */}
-      <Header />
+        excludeDefaultConfigAt("/BLOG") && <Header />}
+      {/* <Header /> */}
 
       {/* Main react children */}
       {children}
