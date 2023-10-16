@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
   lastScrollY = window.scrollY;
 }
 
-function useScrollDirection(mobileMenuActive) {
+function useScrollDirection(mobileMenuActive: unknown) {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [bkg, setBkg] = useState('dark');
 
@@ -107,7 +107,7 @@ function Header() {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
-  const onMobileHeaderMenuClick = (e, menuIndex) => {
+  const onMobileHeaderMenuClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, menuIndex: number) => {
     e.preventDefault();
 
     // if (isMobile) {
@@ -119,13 +119,24 @@ function Header() {
     });
     // }
   };
+  const [showHeader, setShowHeader] = useState(true);
+
+  useEffect(()=>{
+    console.log(window.location.pathname); 
+    const navbar = document.getElementsByClassName('navbar');
+    if(navbar.style) navbar.style.backgroundColor = 'red !important';
+  },[])
 
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
   // };
 
+  const isClean = true;
+
   return (
-    <StyledHeader
+    <>
+    {isClean ? (<>
+      <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
@@ -602,6 +613,9 @@ function Header() {
         </Content>
       </Section>
     </StyledHeader>
+    </>) : (<></>)}
+    
+    </>
   );
 }
 

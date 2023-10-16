@@ -132,9 +132,10 @@
 /* ----- */
 /* NAV BAR DISPLAY CUSTOM LOGIC */
 /* ----- */
-/* .navbar {
-  display: none;
-} */
+.navbar {
+  /* display: none; */
+  /* background-color: red !important; */
+}
 
 .DocusaurusNavbar > .navbar {
   display: flex;

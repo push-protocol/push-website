@@ -97,13 +97,16 @@ export default function Root({ children }) {
     return result;
   }
 
+  // document.getElementsByClassName("navbar").style.display = "none";
+
   return (
     <div className={returnAdditionalClasses(superimposedConditions)}>
       <ServerStyle from={children} />
 
-      {excludeDefaultConfigAt("/BRB") &&
+      {/* {excludeDefaultConfigAt("/BRB") &&
         excludeDefaultConfigAt("/DOCS") &&
-        excludeDefaultConfigAt("/BLOG") && <Header />}
+        excludeDefaultConfigAt("/BLOG") && <Header />} */}
+      <Header />
 
       {/* Main react children */}
       {children}
