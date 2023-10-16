@@ -12,6 +12,8 @@ Launched in early October, [Push Chat](https://app.push.org/#/chat) is providing
 
 <!--truncate-->
 
+import { ImageText } from '@site/src/css/SharedStyling';
+
 In this article, we deep dive into how Push Chat works and its use case.
 
 Push Chat is still in alpha and we’re gradually rolling out early access to all of you. If you want to skip the line and become one of the first builders to try out Push Chat — keep reading 👀
