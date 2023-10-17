@@ -119,22 +119,6 @@ function Header() {
     });
     // }
   };
-  const [showHeader, setShowHeader] = useState(true);
-
-  useEffect(()=>{
-
-    // function hideNavbarOnSpecificPage() {
-      // Define the path of the page where you want to hide the navbar
-    
-      // Check if the current URL matches the page path
-        console.log('red')
-        // Hide the navbar by applying a CSS class or inline style
-        document.querySelector('navbar').style.backgroundColor = 'red !important'; // Replace '.navbar' with the actual CSS selector for the navbar element
-    // }
-    
-    // Call the function when the page loads
-    // window.addEventListener('DOMContentLoaded', hideNavbarOnSpecificPage);
-  },[])
 
   // const hideAlertHandler = ()=>{
   //   setIsAlertVisible(false);
@@ -143,8 +127,6 @@ function Header() {
   const isClean = true;
 
   return (
-    <>
-    {isClean ? (<>
       <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
@@ -622,9 +604,6 @@ function Header() {
         </Content>
       </Section>
     </StyledHeader>
-    </>) : (<></>)}
-    
-    </>
   );
 }
 

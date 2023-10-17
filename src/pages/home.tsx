@@ -26,6 +26,7 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+import PageWrapper from '@site/src/components/PageWrapper';
 import {
   A,
   Content,
@@ -103,8 +104,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
     setShowMoreTeamMembers(!showMoreTeamMembers);
   };
 
+  const noNavbar = false;
+
   return (
-    <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription}>
+    <>
+     <PageWrapper pageName={PageMeta.HOME.pageTitle} pageTitle={PageMeta.HOME.pageDescription}>
       {/* <Head>
         <meta property="og:image" content="image.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -787,7 +791,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </FeaturedInSection>
         
       </HomeWrapper>
-    </Layout>
+      </PageWrapper>
+    </>
   );
 }
 
@@ -870,6 +875,7 @@ const ResponsiveH2 = styled(H2)`
 const HomeWrapper = styled(ItemV)`
   margin: 0;
   padding: 0;
+  
   box-sizing: border-box;
   & #hero .contentBox {
     row-gap: 18px;
