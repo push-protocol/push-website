@@ -26,20 +26,19 @@ function CheatSheet() {
   //   redirectURL();
   // }, []);
   return (
-    <Layout title={PageMeta.ABOUTUS.pageTitle} description={PageMeta.ABOUTUS.pageDescription}>
-    <Head>
-
+    <Layout title={PageMeta.CHEAT.pageTitle} description={PageMeta.CHEAT.pageDescription}>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/cheatsheet" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | Cheatsheet" />
+        <meta property="og:title" content="Push | Cheatsheet" />
         <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
         <meta property="og:image" content="/assets/previews/cheatsheetfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | Cheatsheet" />
+        <meta name="twitter:title" content="Push | Cheatsheet" />
         <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
         <meta name="twitter:image" content="/assets/previews/cheatsheettwtpreview.png" />
 
@@ -57,11 +56,9 @@ function CheatSheet() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
-        
       <CheatWrapper>
-        
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
         <Button 
           target="_blank"

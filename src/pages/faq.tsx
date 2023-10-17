@@ -743,14 +743,14 @@ function FAQ() {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/faq" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | FAQ" />
+        <meta property="og:title" content="Push | FAQ" />
         <meta property="og:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
         <meta property="og:image" content="/assets/previews/faqfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | FAQ" />
+        <meta name="twitter:title" content="Push | FAQ" />
         <meta name="twitter:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
         <meta name="twitter:image" content="/assets/previews/faqtwtpreview.png" />
 

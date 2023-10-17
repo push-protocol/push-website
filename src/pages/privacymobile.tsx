@@ -27,14 +27,14 @@ function PrivacyMobile() {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacymobile" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | Privacy" />
+        <meta property="og:title" content="Push | Privacy" />
         <meta property="og:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
         <meta property="og:image" content="/assets/previews/privacyfbpreview.png" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | Privacy" />
+        <meta name="twitter:title" content="Push | Privacy" />
         <meta name="twitter:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
         <meta property="twitter:image" content="/assets/previews/privacyfbpreview.png" />
 
