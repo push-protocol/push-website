@@ -135,7 +135,7 @@ export default function HomepageFeatures(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   
   return (
-    <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription}>
+    <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/docs" />

@@ -89,7 +89,7 @@ const Spaces = () => {
   };
 
   return (
-    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription}>
+    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription} showNavbar={false}>
        <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/spaces" />

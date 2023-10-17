@@ -107,7 +107,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   const noNavbar = false;
 
   return (
-     <PageWrapper pageName={PageMeta.HOME.pageTitle} pageTitle={PageMeta.HOME.pageDescription}>
+     <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar={false}>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) Communication Protocol of Web3</title>
@@ -811,8 +811,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </FeaturedInSection>
         
       </HomeWrapper>
-      </PageWrapper>
-    </>
+      </Layout>
   );
 }
 

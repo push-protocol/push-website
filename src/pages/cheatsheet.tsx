@@ -26,7 +26,7 @@ function CheatSheet() {
   //   redirectURL();
   // }, []);
   return (
-    <Layout title={PageMeta.CHEAT.pageTitle} description={PageMeta.CHEAT.pageDescription}>
+    <Layout title={PageMeta.CHEAT.pageTitle} description={PageMeta.CHEAT.pageDescription} showNavbar={false}>
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/cheatsheet" />
