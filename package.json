@@ -64,6 +64,10 @@
     "@docusaurus/module-type-aliases": "2.4.3",
     "@tsconfig/docusaurus": "^1.0.5",
     "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3",
     "typescript": "^4.7.4"
   },
   "browserslist": {
