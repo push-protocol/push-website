@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Component
-import PageWrapper from '@site/src/components/PageWrapper';
 import {
   A,
   B,

@@ -124,10 +124,8 @@ function Header() {
   //   setIsAlertVisible(false);
   // };
 
-  const isClean = true;
-
   return (
-      <StyledHeader
+    <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >

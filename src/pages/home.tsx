@@ -26,7 +26,6 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
-import PageWrapper from '@site/src/components/PageWrapper';
 import {
   A,
   Content,
