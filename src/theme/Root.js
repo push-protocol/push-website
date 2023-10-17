@@ -7,7 +7,6 @@ import i18nInitialize from "@site/src/utils/i18n";
 
 // Internal Components
 import Footer from "@site/src/segments/Footer";
-import Header from "@site/src/segments/Header";
 import ServerStyle from "@site/src/theme/ServerStyle";
 
 // Initialize Internalization
