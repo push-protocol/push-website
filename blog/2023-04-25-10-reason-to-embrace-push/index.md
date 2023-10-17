@@ -3,6 +3,7 @@
 slug: 10-reasons-why-your-web3-project-should-embrace-push-protocol
 title: 10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---

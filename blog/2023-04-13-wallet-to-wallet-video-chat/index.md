@@ -3,6 +3,7 @@
 slug: push-launches-wallet-to-wallet-video-chat
 title: Push Launches Wallet-to-Wallet Video Chat📹
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Push Notification, Chat, Video, Social]
 
 ---

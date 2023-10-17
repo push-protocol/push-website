@@ -2,6 +2,7 @@
 slug: calling-all-hobbyist-devs-channel-creation-gas-fee-is-now-refundable
 title: 'Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable'
 authors: [push]
+image: './cover-image.webp'
 tags: [Epnsproject, Blockchain, Notifications, Governance, Gas Fees]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

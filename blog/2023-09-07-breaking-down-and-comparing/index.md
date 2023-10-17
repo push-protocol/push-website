@@ -2,6 +2,7 @@
 slug: breaking-down-and-comparing-different-decentralized-communication-technologies
 title: "Breaking Down & Comparing Different Decentralized Communication Technologies🔔"
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Blockchain, Blockchain Technologies]
 ---
 ![Cover image of Breaking Down & Comparing Different Decentralized Communication Technologies🔔](./cover-image.webp)

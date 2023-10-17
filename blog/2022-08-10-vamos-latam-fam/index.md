@@ -2,6 +2,7 @@
 slug: vamos-latam-fam
 title: 'Vamos Latam Fam 🧉'
 authors: [push]
+image: './cover-image.jpeg'
 tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

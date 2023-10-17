@@ -3,6 +3,7 @@
 slug: taking-dao-communication-to-new-heights-push-x-aragon
 title: Taking DAO Communication to New Heights | Push x Aragon🦅
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Partnerships, Pushprotocol, Blockchain Development, Aragon]
 
 ---

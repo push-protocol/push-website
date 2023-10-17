@@ -3,6 +3,7 @@
 slug: push-protocol-push-is-now-listed-on-crypto-com
 title: Push Protocol ($PUSH) is Now Listed On Crypto.com!
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, New Listings, Cryptocom]
 
 ---

@@ -3,6 +3,7 @@
 slug: push-protocol-selected-as-communication-partner-for-d-app-store-kit
 title: Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜
 authors: [push]
+image: './cover-image.webp'
 tags: [ Polygon Network, Web3, Partnerships, Polygon]
 
 ---

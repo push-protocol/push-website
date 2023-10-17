@@ -2,6 +2,7 @@
 slug: socket-integrates-epns-to-send-users-important-updates-through-push-notifications
 title: 'Socket Integrates EPNS to Send Users Important Updates Through Push Notifications'
 authors: [push]
+image: './cover-image.png'
 tags: [ Announcements, Pushnotification, Web3, Ethereum, Epns]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

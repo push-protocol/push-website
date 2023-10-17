@@ -3,6 +3,7 @@
 slug: going-bananas-push-protocol-partners-with-ape-swap-for-seamless-web3-communication
 title: 'Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Announcements, Crypto, BNB ]
 
 ---

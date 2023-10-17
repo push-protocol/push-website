@@ -3,6 +3,7 @@
 slug: getting-started-with-push-sdk-uiweb-api
 title: 'Getting Started With Push SDK: uiweb API🛠️'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Developer, Blockchain Development, Web3 Notifications]
 
 ---

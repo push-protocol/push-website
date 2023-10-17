@@ -3,6 +3,7 @@
 slug: getting-started-with-push-sdk-rest-api
 title: 'Getting Started With Push SDK REST API⚙️'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, SDK, Push Notification Service, Developer]
 
 ---

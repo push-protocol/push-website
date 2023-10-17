@@ -2,6 +2,7 @@
 slug: push-protocol-v2-fee-pool-and-incentivized-chats-are-here
 title: Push Protocol v2 — Fee Pool & Incentivized Chats are here!
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pushprotocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
 
 ---

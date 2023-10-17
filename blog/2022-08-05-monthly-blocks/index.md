@@ -2,6 +2,7 @@
 slug: monthly-blocks
 title: 'Monthly Blocks'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

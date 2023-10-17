@@ -2,6 +2,8 @@
 slug: 4-reasons-to-seperate-your-dapp-communication-and-execution-layers
 title: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
 authors: [push]
+image: './cover-image.webp'
+description: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
 tags: [Pushprotocol, Web3, Blockchain Technology]
 ---
 

@@ -2,6 +2,7 @@
 slug: qi-dao-taps-push-to-update-users-on-their-debt-positions
 title: 'QiDAO Taps Push to Update Users on their Debt Positions🪙'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Web3 Communication, Blockchain Technology, Blockchain Development, Frensofpush]
 ---
 ![Cover image of QiDAO Taps Push to Update Users on their Debt Positions🪙](./cover-image.webp)

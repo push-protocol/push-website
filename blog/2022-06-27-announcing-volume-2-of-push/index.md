@@ -2,6 +2,7 @@
 slug: announcing-volume-2-of-push-rockstars
 title: 'Announcing Volume 2 of Push #ROCKSTARS'
 authors: [push]
+image: './cover-image.webp'
 tags: [Nft, Blockchain, Crypto, Opensea, Technology]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

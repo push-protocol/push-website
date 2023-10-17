@@ -2,6 +2,8 @@
 slug: deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need
 title: Deep-dive into Push Snaps Features & Getting Started 🛠️
 authors: [push]
+image: './cover-image.webp'
+description: Deep-dive into Push Snaps Features & Getting Started 🛠️
 tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 

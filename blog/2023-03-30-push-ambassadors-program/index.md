@@ -3,6 +3,7 @@
 slug: launch-of-the-push-ambassadors-program-english-espanol
 title: Launch of The Push Ambassadors Program 💜 (English + Español)
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Ambassador Program, Blockchain Technology]
 
 ---

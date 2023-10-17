@@ -3,6 +3,7 @@
 slug: birth-of-a-new-pantheon-thena-and-push-protocol-unite
 title: 'Birth of a New Pantheon: THENA and Push Protocol Unite💜'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Defi, Pushprotocol, UX ]
 
 ---

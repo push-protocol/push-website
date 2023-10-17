@@ -2,6 +2,7 @@
 slug: new-push-yield-farming-rewards-full-details
 title: 'New Push Yield Farming Rewards: Full Details🪙'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 
 ---

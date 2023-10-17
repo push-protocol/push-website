@@ -2,6 +2,7 @@
 slug: oportunidades-de-desarrollo-profesional-con-push-protocol-en-latinoamerica
 title: 'Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Latam]
 ---
 

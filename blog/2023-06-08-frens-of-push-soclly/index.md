@@ -2,6 +2,7 @@
 slug: unleashing-a-new-era-of-social-networking-push-x-soclly
 title: 'Unleashing a New Era of Social Networking | Push x SOCLLY🌿'
 authors: [push]
+image: './cover-image.webp'
 tags: [Frensofpush, Web3, Partnership, Blockchain Development]
 ---
 

@@ -2,6 +2,7 @@
 slug: push-monthly-blocks-september
 title: Push Monthly Blocks
 authors: [push]
+image: './cover-image.webp'
 tags: [ Newsletter, Blockchain, Pushprotocol, Ethereum]
 ---
 

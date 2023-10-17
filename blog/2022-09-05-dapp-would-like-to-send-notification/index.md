@@ -2,6 +2,7 @@
 slug: my-dapp-would-like-to-send-you-push-notifications
 title: ‘My Dapp’ Would Like to Send You Push Notifications
 authors: [push]
+image: './cover-image.webp'
 tags: [Push Notification, Web3, Blockchain, Blockchain Development, Pn101]
 ---
 

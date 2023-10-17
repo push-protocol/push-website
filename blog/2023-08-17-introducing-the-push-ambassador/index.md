@@ -2,6 +2,7 @@
 slug: introducing-the-push-ambassador-india-program
 title: 'Introducing the Push Ambassador India Program🌸'
 authors: [push]
+image: './cover-image.png'
 tags: [Pushprotocol, Ambassador Program, Partnerships, Web3, Blockchain Technologies]
 
 ---

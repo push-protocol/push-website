@@ -2,6 +2,7 @@
 slug: reef-chain-integrates-epns-to-enable-seamless-communication-with-users
 title: Reef Chain Integrates EPNS to Enable Seamless Communication With Users
 authors: [push]
+image: './cover-image.png'
 tags: [ Push Notification, Blockchain, Web3, Ethereum, Announcements]
 ---
 

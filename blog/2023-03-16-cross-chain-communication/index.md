@@ -3,6 +3,7 @@
 slug: how-push-and-cross-chain-communication-will-change-web3
 title: How Push & Cross-Chain Communication Will Change Web3🌐
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Interoperability, Crosschain, Web3 Communication ]
 
 ---

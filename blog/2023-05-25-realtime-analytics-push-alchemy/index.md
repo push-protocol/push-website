@@ -3,6 +3,7 @@
 slug: how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-with-alchemy-and-push
 title: How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊
 authors: [push]
+image: './cover-image.webp'
 tags: [ Analytics Engineering, Web3, Web3 Development,  Blockchain Development, Blockchain Technology]
 
 ---

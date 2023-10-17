@@ -3,6 +3,7 @@
 slug: enhancing-web3-livestreaming-push-x-graviton
 title: Enhancing Web3 Livestreaming | Push x Graviton🧲
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Partnerships, Web3, Blockchain Technology]
 
 ---

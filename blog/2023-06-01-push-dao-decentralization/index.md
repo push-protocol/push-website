@@ -2,6 +2,7 @@
 slug: push-dao-progressive-decentralization-the-next-phase-of-push-governance
 title: Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pushprotocol, Web3, DAO]
 
 ---

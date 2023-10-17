@@ -2,6 +2,7 @@
 slug: push-game-theory-explained
 title: 'Push Game Theory Explained'
 authors: [push]
+image: './cover-image.webp'
 tags: [Game Theory ,Blockchain ,Design ,Notifications ,Blog]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

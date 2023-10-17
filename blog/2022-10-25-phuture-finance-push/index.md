@@ -2,6 +2,7 @@
 slug: push-protocol-and-phuture-finance-partner-to-bring-decentralized-notifications-to-the-platform
 title: Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, Blockchain, Push Notification, Announcements, Defi]
 ---
 

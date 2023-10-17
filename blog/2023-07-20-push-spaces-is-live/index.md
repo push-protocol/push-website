@@ -2,6 +2,7 @@
 slug: push-spaces-is-live-decentralized-audio-and-video-streaming-is-here
 title: 'Push Spaces is Live! Decentralized Audio and Video Streaming is Here'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
 
 ---

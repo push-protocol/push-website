@@ -2,6 +2,7 @@
 slug: huobi-global-will-launch-push-ethereum-push-notification-service
 title: 'Huobi Global will launch $PUSH (Ethereum Push Notification Service)'
 authors: [push]
+image: './cover-image.webp'
 tags: [Annoucements ,Huobiglobal ,Listings ,Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

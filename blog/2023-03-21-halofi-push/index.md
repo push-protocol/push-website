@@ -3,6 +3,7 @@
 slug: halo-fi-teams-up-with-push-to-enable-effortless-savings-with-real-time-notifications
 title: HaloFi Teams Up with Push to Enable Effortless Savings with Real-Time Notifications😇
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Web3, Blockchain Technology, Defi]
 
 ---

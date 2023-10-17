@@ -2,6 +2,7 @@
 slug: were-still-pushing-a-deeper-look-into-push-chat
 title: 'We’re Still Pushing: A Deeper Look Into Push Chat'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Developer, Push Notification, PushChat, Messaging]
 ---
 
