@@ -2,6 +2,7 @@
 slug: push-2022-year-in-review
 title: Push 2022 Year in Review🎉
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 ---
 

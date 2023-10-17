@@ -3,6 +3,7 @@
 slug: april-monthly-recap
 title: April Monthly Recap✨
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, NewsLetter, Blockchain Development, Blockchain Technology]
 
 ---

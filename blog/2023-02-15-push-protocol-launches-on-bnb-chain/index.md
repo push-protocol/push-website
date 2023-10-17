@@ -3,6 +3,7 @@
 slug: push-protocol-launches-on-bnb-chain
 title: 'Push Protocol Launches on BNB Chain!💛'
 authors: [push]
+image: './cover-image.gif'
 tags: [ BNB, BNBChain, Blockchain, Blockchain Technology]
 
 ---

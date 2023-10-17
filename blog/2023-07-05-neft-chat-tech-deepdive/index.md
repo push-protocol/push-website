@@ -2,6 +2,7 @@
 slug: a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat
 title: 'A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Developer, NFT]
 
 ---

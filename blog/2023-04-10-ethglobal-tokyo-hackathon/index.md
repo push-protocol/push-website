@@ -3,6 +3,7 @@
 slug: join-us-for-the-eth-global-tokyo-hackathon
 title: Join us for the ETHGlobal Tokyo Hackathon🗼
 authors: [push]
+image: './cover-image.png'
 tags: [ Ethglobal, Hackathons, Bounty Program, Web3]
 
 ---

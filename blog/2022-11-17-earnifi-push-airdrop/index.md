@@ -3,6 +3,7 @@
 slug: earnifi-never-miss-an-airdrop-with-push-notifications
 title: Earnifi — Never Miss an Airdrop With Push Notifications
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Push Notification, Pushprotocol, Frensofpush, Customer Success]
 
 ---

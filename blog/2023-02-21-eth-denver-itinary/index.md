@@ -3,6 +3,7 @@
 slug: push-eth-denver-full-itinerary
 title: Push @ETHDenver Full Itinerary 🌄
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Announcements, Ethdenver, Ethdenver 2023 ]
 
 ---

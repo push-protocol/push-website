@@ -2,6 +2,7 @@
 slug: d-yd-x-x-push-empowering-traders-with-transparent-governance
 title: 'dYdX x Push: Empowering Traders with Transparent Governance🤝'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---

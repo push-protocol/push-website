@@ -2,6 +2,7 @@
 slug: push-v2-is-live-new-rewards-utility-and-functionality
 title: 'Push V2 is LIVE — New Rewards, Utility & Functionality 🚀'
 authors: [push]
+image: './cover-image.gif'
 tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 ---

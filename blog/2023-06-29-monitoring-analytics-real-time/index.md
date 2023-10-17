@@ -2,6 +2,7 @@
 slug: how-push-protocol-can-revolutionize-data-driven-decision-making
 title: 'How Push Protocol Can Revolutionize Data-Driven Decision Making📊'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Web3 Tools, Web3 Data Analytics, Data Analytics]
 
 ---

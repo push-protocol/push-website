@@ -2,6 +2,7 @@
 slug: business-to-user-messaging-push-protocol-x-unstoppable-domains
 title: "Business-to-User Messaging: Push Protocol x Unstoppable Domains"
 authors: [push]
+image: './cover-image.webp'
 tags:
   [
     Unstoppable Domains,

@@ -2,6 +2,7 @@
 slug: join-us-for-the-ethbogotá-2022-hackathon
 title: Join Us for the ETHBogotá 2022 Hackathon
 authors: [push]
+image: './cover-image.webp'
 tags: [ Developer, Hackathons, Ethglobal, Web3, Push Notification]
 ---
 

@@ -2,6 +2,7 @@
 slug: introducing-push-improvement-proposal-pip
 title: Introducing Push Improvement Proposal (PIP)
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Blockchain Technology, Push Notification, Pushprotocol]
 ---
 

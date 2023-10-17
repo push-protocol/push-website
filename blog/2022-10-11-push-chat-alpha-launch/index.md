@@ -2,6 +2,7 @@
 slug: announcing-the-push-chat-alpha-launch
 title: Announcing the Push Chat Alpha Launch
 authors: [push]
+image: './cover-image.webp'
 tags: [ Announcements, Web3, WebChat, Push Notification, Decentralization]
 ---
 

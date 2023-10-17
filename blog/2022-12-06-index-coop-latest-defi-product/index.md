@@ -2,6 +2,7 @@
 slug: index-coop-stay-updated-about-the-latest-defi-products-with-push
 title: Index Coop — Stay Updated About the Latest DeFi Products With Push
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Cryptocurrency,Frensofpush, Defi, Push Notification]
 ---
 

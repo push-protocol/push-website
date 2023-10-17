@@ -3,6 +3,7 @@
 slug: push-dao-extends-liquidity-rewards-program-in-v2-0
 title: Push DAO Extends Liquidity Rewards Program in v2.0
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Liquidity Pool, Liquidity Mining, Push Notification ]
 
 ---

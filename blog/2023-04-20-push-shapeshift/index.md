@@ -3,6 +3,7 @@
 slug: shaping-the-future-of-the-dex-user-experience-push-x-shape-shift
 title: Shaping The Future of The DEX User Experience | Push x ShapeShift🦊
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Web3, Partnerships, Shapeshift]
 
 ---

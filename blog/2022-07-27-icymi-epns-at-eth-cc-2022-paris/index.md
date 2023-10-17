@@ -2,6 +2,7 @@
 slug: icymi-epns-at-eth-cc-2022-paris
 title: 'ICYMI — EPNS at EthCC 2022 Paris 🇫🇷'
 authors: [push]
+image: './cover-image.png'
 tags: [Push Notification, Ethereum, Epnsproject, Cryptocurrency, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

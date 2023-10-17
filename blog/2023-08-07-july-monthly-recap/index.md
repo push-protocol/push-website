@@ -2,6 +2,7 @@
 slug: july-monthly-recap
 title: July Monthly Recap✨
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Newsletter, Web3, Blockchain Technology]
 
 ---

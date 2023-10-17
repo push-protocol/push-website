@@ -2,6 +2,7 @@
 slug: fast-tracking-proposals-approved
 title: Fast-tracking Proposals, Approved!
 authors: [push]
+image: './cover-image.webp'
 tags: [ Dao, Governance, Web3, Ethereum, Communication]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

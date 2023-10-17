@@ -2,6 +2,7 @@
 slug: enhancing-blockchain-based-games-ux-through-in-game-chat-notifications
 title: Enhancing Blockchain Based Games UX Through In-Game Chat + Notifications🎮
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Blockchain Development, Web3 Game]
 
 ---

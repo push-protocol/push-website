@@ -2,6 +2,7 @@
 slug: push-going-big-on-polygon-with-frens
 title: Push Going Big on Polygon with Frens
 authors: [push]
+image: './cover-image.webp'
 tags: [ Announcements, Web3, Push Notification, Polygon, Ethereum]
 ---
 

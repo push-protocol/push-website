@@ -3,6 +3,7 @@
 slug: january-monthly-recap
 title: 'January Monthly Recap❄️'
 authors: [push]
+image: './cover-image.png'
 tags: [ Devtools, Web3, Blockchain, Newsletter, Push Notification]
 
 ---

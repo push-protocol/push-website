@@ -2,6 +2,7 @@
 slug: epns-monthly-blocks
 title: 'EPNS Monthly Blocks'
 authors: [push]
+image: './cover-image.webp'
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

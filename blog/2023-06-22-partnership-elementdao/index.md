@@ -2,6 +2,7 @@
 slug: empowering-decentralized-decision-making-push-x-element-dao
 title: 'Empowering Decentralized Decision-Making: Push x ElementDAO💙💜'
 authors: [push]
+image: './cover-image.gif'
 tags: [Pushprotocol, Web3, Partnerships, Blockchain Technology]
 ---
 

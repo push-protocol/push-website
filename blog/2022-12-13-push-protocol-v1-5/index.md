@@ -2,6 +2,7 @@
 slug: introducing-push-protocol-v1-5
 title: Introducing Push Protocol v1.5 🎊
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Blockhain Development, Push Notification, Communication Tools]
 ---
 

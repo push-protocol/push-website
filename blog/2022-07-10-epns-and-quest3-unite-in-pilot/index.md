@@ -2,6 +2,7 @@
 slug: epns-and-quest3-unite-in-pilot-collaboration-to-bring-notifications-for-users
 title: 'EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for Users'
 authors: [push]
+image: './cover-image.png'
 tags: [Ethereum, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

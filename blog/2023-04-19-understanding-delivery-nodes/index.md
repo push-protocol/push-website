@@ -3,6 +3,7 @@
 slug: understanding-delivery-nodes
 title: Understanding Delivery Nodes🚂
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Pushprotocol, Delivery Nodes]
 
 ---

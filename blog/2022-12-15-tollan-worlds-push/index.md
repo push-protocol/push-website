@@ -2,6 +2,7 @@
 slug: push-and-tollan-worlds-partner-to-level-up-communication-with-gamers
 title: Push and Tollan Worlds Partner to Level Up Communication With Gamers
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Push Notification, Gaming, Web3 Game, Mmorpg]
 ---
 

@@ -2,6 +2,7 @@
 slug: push-notifications-for-developer-dao-to-boost-community-participation
 title: 'Push Notifications for Developer DAO to Boost Community Participation🚀'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
 ---
 ![Cover image Push Notifications for Developer DAO to Boost Community Participation🚀](./cover-image.webp)

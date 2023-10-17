@@ -2,6 +2,7 @@
 slug: what-is-erc-6551-and-how-s-it-better-than-erc-721
 title: 'What is ERC-6551 and How’s It Better than ERC-721?'
 authors: [push]
+image: './cover-image.png'
 tags: [Erc6551, Eip, Ethereum, Nft, Web Tools]
 ---
 

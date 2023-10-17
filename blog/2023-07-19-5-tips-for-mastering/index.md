@@ -2,6 +2,7 @@
 slug: 5-tips-for-mastering-the-art-of-successful-grant-proposals
 title: '5 Tips for Mastering The Art of Successful Grant Proposals📝'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Grant, Web Grant, Grant Writing]
 
 ---

@@ -2,6 +2,7 @@
 slug: enjoy-your-nft-stay-tuned-for-next-steps
 title: ‘Enjoy Your NFT, Stay Tuned for Next Steps!’
 authors: [push]
+image: './cover-image.webp'
 tags: [ NFT, Metaverse, Pn101, Web3, Push Notification]
 ---
 

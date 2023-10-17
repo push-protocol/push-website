@@ -2,6 +2,7 @@
 slug: november-monthly-recap
 title: November Monthly Recap
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Push Notification Service, Push Notification, Developer Tools, Newsletter]
 ---
 

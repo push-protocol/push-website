@@ -3,6 +3,7 @@
 slug: recreating-web2-communication-channels-in-web3-using-push
 title: Recreating Web2 Communication Channels in Web3 Using Push👥
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---

@@ -2,6 +2,7 @@
 slug: transforming-decentralized-communication-with-push-and-ai
 title: 'Transforming Decentralized Communication With Push & AI🤖'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, AI, Web Tools]
 ---
 

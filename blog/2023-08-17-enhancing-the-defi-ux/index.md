@@ -2,6 +2,7 @@
 slug: enhancing-the-de-fi-ux-on-polygon-push-x-quick-swap
 title: 'Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Frensofpush]
 
 ---

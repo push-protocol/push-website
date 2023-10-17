@@ -2,6 +2,7 @@
 slug: why-engaging-with-users-within-the-nft-verse-matters
 title: 'Why Engaging with Users Within the NFTVerse Matters'
 authors: [push]
+image: './cover-image.webp'
 tags: [Nft ,Ethereum ,Metaverse ,Non Fungible Tokens ,Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

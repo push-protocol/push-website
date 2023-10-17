@@ -3,6 +3,7 @@
 slug: march-monthly-recap
 title: March Monthly Recap🌄
 authors: [push]
+image: './cover-image.png'
 tags: [ Blockchain Technology, NewsLetter, Monthly Recap, Web3]
 
 ---

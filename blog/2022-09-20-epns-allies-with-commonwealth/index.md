@@ -2,6 +2,7 @@
 slug: epns-allies-with-commonwealth-to-bring-governance-notifications-to-users
 title: EPNS Allies With Commonwealth to Bring Governance Notifications to Users
 authors: [push]
+image: './cover-image.png'
 tags: [ Push Notification, Web3, Ethereum, Commonwealth, Defi]
 ---
 

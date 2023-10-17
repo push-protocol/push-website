@@ -2,6 +2,7 @@
 slug: epns-x-the-graph-enabling-a-better-way-to-access-blockchain-data
 title: 'EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,The Graph ,Blockchain ,Cryptocurrency ,Web3]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

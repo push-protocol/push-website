@@ -2,6 +2,7 @@
 slug: epns-x-wonderverse-decentralized-communication-for-web3-s-project-manager
 title: 'EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager'
 authors: [push]
+image: './cover-image.png'
 tags: [Ethereum, Epnsproject, Newsletter, Project Management, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

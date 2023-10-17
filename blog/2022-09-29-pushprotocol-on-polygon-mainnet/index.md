@@ -2,6 +2,7 @@
 slug: push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-dapps
 title: Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps
 authors: [push]
+image: './cover-image.webp'
 tags: [ Polygon, Web3, Communication, Ethereum, Announcements]
 ---
 

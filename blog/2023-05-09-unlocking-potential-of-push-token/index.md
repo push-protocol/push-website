@@ -3,6 +3,7 @@
 slug: unlocking-the-full-potential-of-push-a-look-at-push-token-utility
 title: 'Unlocking the Full Potential of Push: A Look at $PUSH Token Utility🪙'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Cryptocurrency, Tokenomics, Blockchain Technology]
 
 ---

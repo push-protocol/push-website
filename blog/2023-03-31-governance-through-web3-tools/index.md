@@ -3,6 +3,7 @@
 slug: enhancing-governance-through-web3-communication-tools
 title: Enhancing Governance Through Web3 Communication Tools 🏛️
 authors: [push]
+image: './cover-image.webp'
 tags: [ Blockchain Technology, Web3, Governance, Decentralization]
 
 ---

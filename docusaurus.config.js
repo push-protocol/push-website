@@ -106,7 +106,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the 'edit this page' links.
           editUrl:
-            "https://github.com/ethereum-push-notification-service/website/",
+            "https://github.com/ethereum-push-notification-service/push-website/blob/main",
         },
         blog: false,
         theme: {
@@ -122,7 +122,7 @@ const config = {
       // Replace with your project's social card
       image: "/assets/docs/social-card.jpg",
       themeconfig: {
-        sidebarCollapsible: false,
+        sidebarCollapsible: true,
       },
       navbar: {
         hideOnScroll: true,
@@ -159,6 +159,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ["solidity"],
       },
       algolia: {
         // The application ID provided by Algolia

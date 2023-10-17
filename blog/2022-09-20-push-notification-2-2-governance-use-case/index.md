@@ -2,6 +2,7 @@
 slug: an-introduction-to-push-notification-part-2-2-governance-use-cases
 title: 'An Introduction to Push Notification (Part 2.2): Governance Use Cases'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Web3, Dao, Governance]
 ---
 

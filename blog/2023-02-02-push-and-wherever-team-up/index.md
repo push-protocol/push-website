@@ -3,6 +3,7 @@
 slug: push-and-wherever-team-up-to-bring-web3-communication-tools-to-dapps
 title: 'Push and Wherever Team Up to Bring Web3 Communication Tools to Dapps🛠️'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology, Push Notification]
 
 ---

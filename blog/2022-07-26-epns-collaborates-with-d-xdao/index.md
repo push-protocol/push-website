@@ -2,6 +2,7 @@
 slug: epns-collaborates-with-d-xdao-to-enable-notifications-for-swapr-campaign-updates
 title: 'EPNS Collaborates With DXdao to Enable Notifications for Swapr Campaign Updates'
 authors: [push]
+image: './cover-image.png'
 tags: [Newsletter, Ethereum, Epnsproject, Dao, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

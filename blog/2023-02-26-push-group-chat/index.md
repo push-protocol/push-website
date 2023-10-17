@@ -3,6 +3,7 @@
 slug: launching-the-future-of-web3-messaging-with-push-chat-and-push-group-chat
 title: Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀
 authors: [push]
+image: './cover-image.gif'
 tags: [ Push Notification, Web3, Blockchain Technology, Web3 Development ]
 
 ---

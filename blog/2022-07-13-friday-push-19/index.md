@@ -2,6 +2,7 @@
 slug: friday-push-19
 title: 'Friday PUSH #19'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

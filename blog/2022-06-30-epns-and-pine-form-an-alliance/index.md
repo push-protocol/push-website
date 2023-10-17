@@ -2,6 +2,7 @@
 slug: epns-and-pine-form-an-alliance-to-enable-seamless-communication-for-users
 title: 'EPNS and Pine Form An Alliance to Enable Seamless Communication for Users'
 authors: [push]
+image: './cover-image.png'
 tags: [Web3, Blockchain, Crypto, Ethereum, Cryptocurrency]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

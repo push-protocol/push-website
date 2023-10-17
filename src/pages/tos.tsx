@@ -38,20 +38,38 @@ function TermsOfService() {
 
   return (
     <Layout title={PageMeta.TOS.pageTitle} description={PageMeta.TOS.pageDescription}>
-      {/* <Head>
-        <meta property="og:image" content="image.png" />
+       <Head>
+        
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org/tos" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push | Terms of Service" />
+        <meta property="og:description"  content="Explore our terms of service to understand the rules and guidelines governing your use of our platform. Learn about your rights, responsibilities, and our commitment to a fair and secure user experience." />
+        <meta property="og:image" content="/assets/previews/tosfbpreview.png" />
+
+        {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href="https://example.com" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push | Terms of Service" />
+        <meta name="twitter:description" content="Explore our terms of service to understand the rules and guidelines governing your use of our platform. Learn about your rights, responsibilities, and our commitment to a fair and secure user experience."/>
+        <meta name="twitter:image" content="/assets/previews/tostwtpreview.png" />
+
         <script type="application/ld+json">
           {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Meta Open Source',
-            url: 'https://opensource.fb.com/',
-            logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
           })}
         </script>
-      </Head> */}
+        </Head>
+        
       <TosWrapper>
         <TopSection>
           <Content

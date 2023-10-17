@@ -3,6 +3,7 @@
 slug: february-monthly-recap
 title: February Monthly Recap 🚀
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Newsletter ]
 
 ---

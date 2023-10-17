@@ -2,6 +2,7 @@
 slug: introducing-push-nft-chat-chats-and-comms-tied-to-your-nf-ts-done-right
 title: 'Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, NFT, Pushprotocol, NFT Utility]
 ---
 

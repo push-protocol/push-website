@@ -2,6 +2,7 @@
 slug: huobi-supports-indian-artists
 title: 'Huobi ❤️ Supports Indian Artists!'
 authors: [push]
+image: './cover-image.webp'
 tags: [Mème ,Huobi ,Ethereum ,Announcements ,Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

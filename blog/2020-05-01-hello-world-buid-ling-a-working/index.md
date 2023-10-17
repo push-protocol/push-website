@@ -2,6 +2,7 @@
 slug: hello-world-buid-ling-a-working-epns-mobile-app
 title: 'Hello World: BUIDLing a working EPNS Mobile app'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Solidity ,Ethglobal ,Notifications ,Developer]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
