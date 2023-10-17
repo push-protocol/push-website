@@ -29,7 +29,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
 import { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
-import { Content, H2, HeroHeader, Image, ItemH, ItemV, Section,Span } from '@site/src/css/SharedStyling';
+import { Content, H2, HeroHeader, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 
 
 const FrensText = () => {
@@ -267,14 +267,14 @@ const FrensText = () => {
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/frens" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | Frens Of Push" />
+        <meta property="og:title" content="Push | Frens Of Push" />
         <meta property="og:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
         <meta property="og:image" content="/assets/previews/frenspagefbpreview.webp" />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | Frens Of Push" />
+        <meta name="twitter:title" content="Push | Frens Of Push" />
         <meta name="twitter:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
         <meta name="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
 

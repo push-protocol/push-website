@@ -38,5 +38,13 @@ export const PageMeta = {
   BRB: {
     pageTitle: 'Billion Reasons to Build (BRB)',
     pageDescription: 'Solve a Hard Problem from top global web3 projects and earn prize and recognition'
+  },
+  DOCS: {
+    pageTitle: 'Documentation Hub',
+    pageDescription: 'One stop shop for all your Push Protocol documentation needs'
+  },
+  BLOG: {
+    pageTitle: 'Blog',
+    pageDescription: 'Learn about the latest updates and news from Push Protocol'
   }
 };

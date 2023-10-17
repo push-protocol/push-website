@@ -103,13 +103,14 @@ Let's break down the problem statement into individual requirements
 ```typescript
 // Push token on Ethereum Criteria
 {
-  type: "PUSH", // define type that rules engine should go for
-  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-  subcategory: "holder", // define if you are checking 'holder' or 'owner'
-  data: { 
+  "type": "PUSH", // define type that rules engine should go for
+  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+  "data": { 
     "contract": "eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE", // $PUSH address on ETH
     "comparison": ">=", // what comparison needs to pass
-    "amount": 1 // amount that needs to passed
+    "amount": 1, // amount that needs to passed
+    "decimals": 18, // the decimals for the token
   }
 }
 ```
@@ -117,13 +118,14 @@ Let's break down the problem statement into individual requirements
 ```typescript
 // Push token on Polygon Criteria
 {
-  type: "PUSH", // define type that rules engine should go for
-  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-  subcategory: "holder", // define if you are checking 'holder' or 'owner'
-  data: { 
+  "type": "PUSH", // define type that rules engine should go for
+  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+  'data': { 
     "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
     "comparison": ">=", // what comparison needs to pass
-    "amount": 1 // amount that needs to passed
+    "amount": 1, // amount that needs to passed
+    "decimals": 18, // the decimals for the token
   }
 }
 ```
@@ -132,25 +134,27 @@ Let's break down the problem statement into individual requirements
 
 ```typescript
 // decider object - 'any' since either condition should allow access
-any: [
+"any": [
   {
-    type: "PUSH", // define type that rules engine should go for
-    category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-    subcategory: "holder", // define if you are checking 'holder' or 'owner'
-    data: { 
+    "type": "PUSH", // define type that rules engine should go for
+    "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+    "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+    "data": { 
       "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
       "comparison": ">=", // what comparison needs to pass
-      "amount": 1 // amount that needs to passed
+      "amount": 1, // amount that needs to passed
+      "decimals": 18, // the decimals for the token
     }
   },
   {
-    type: "PUSH", // define type that rules engine should go for
-    category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-    subcategory: "holder", // define if you are checking 'holder' or 'owner'
-    data: { 
+    "type": "PUSH", // define type that rules engine should go for
+    "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+    "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+    "data": { 
       "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
       "comparison": ">=", // what comparison needs to pass
-      "amount": 1 // amount that needs to passed
+      "amount": 1, // amount that needs to passed
+      "decimals": 18, // the decimals for the token
     }
   }
 ]
@@ -160,36 +164,55 @@ any: [
 
 
 ```typescript
-  rules: {
-    entry: { // permission object
-      conditions: { // conditions object
-        all: [ // conditions namespace decider
-          any: [ // decider object
-            { // criteria object
-              type: "PUSH", // define type that rules engine should go for
-              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-              subcategory: "holder", // define if you are checking 'holder' or 'owner'
-              data: { 
-                "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                "comparison": ">=", // what comparison needs to pass
-                "amount": 1 // amount that needs to passed
+  "rules": {
+    "entry": { // permission object
+      "conditions": { // conditions object
+        "any": [ // conditions namespace decider - Either group owner / admin invites the user or the user has $PUSH on Ethereum or Polygon
+          { // decider 1 - If admin or owner invites someone
+            "any": [ 
+              { // criteria 1
+                "type": "PUSH",
+                "category": "INVITE",
+                "subcategory": "DEFAULT",
+                "data": {
+                    "inviterRoles": [
+                        "ADMIN",
+                        "OWNER"
+                    ]
+                }
               }
-            },
-            { // criteria object
-              type: "PUSH", // define type that rules engine should go for
-              category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-              subcategory: "holder", // define if you are checking 'holder' or 'owner'
-              data: { 
-                "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                "comparison": ">=", // what comparison needs to pass
-                "amount": 1 // amount that needs to passed
+            ]
+          },
+          {
+            "any": [ // decider 2 - If user has $PUSH on Ethereum or on Polygon
+              { // criteria object
+                "type": "PUSH", // define type that rules engine should go for
+                "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+                "data": { 
+                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 1, // amount that needs to passed
+                  "decimals": 18, // the decimals for the token
+                }
+              },
+              { // criteria object
+                "type": "PUSH", // define type that rules engine should go for
+                "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+                "data": { 
+                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                  "comparison": ">=", // what comparison needs to pass
+                  "amount": 1, // amount that needs to passed
+                  "decimals": 18, // the decimals for the token
+                }
               }
-            }
-          ]
+            ]
+          }
         ]
       }
     }
-    chat: {} // no permission condition is defined for chat access
+    // since we are not defining chat permissions, it means that any user who is part of the group can chat
   }
 ```
 
@@ -203,38 +226,57 @@ any: [
     members: [], // not needed, rules define this, can omit
     admins: [], // not needed as per problem statement, can omit
     private: true,
-    rules: {
-      entry: { // permission object
-        conditions: { // conditions object
-          all: [
-            any: [ // decider object
-              { // criteria object
-                type: "PUSH", // define type that rules engine should go for
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                data: { 
-                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                  "comparison": ">=", // what comparison needs to pass
-                  "amount": 1 // amount that needs to passed
+    "rules": {
+      "entry": { // permission object
+        "conditions": { // conditions object
+          "any": [ // conditions namespace decider - Either group owner / admin invites the user or the user has $PUSH on Ethereum or Polygon
+            { // decider 1 - If admin or owner invites someone
+              "any": [ 
+                { // criteria 1
+                  "type": "PUSH",
+                  "category": "INVITE",
+                  "subcategory": "DEFAULT",
+                  "data": {
+                      "inviterRoles": [
+                          "ADMIN",
+                          "OWNER"
+                      ]
+                  }
                 }
-              },
-              { // criteria object
-                type: "PUSH", // define type that rules engine should go for
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                data: { 
-                  "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                  "comparison": ">=", // what comparison needs to pass
-                  "amount": 1 // amount that needs to passed
+              ]
+            },
+            {
+              "any": [ // decider 2 - If user has $PUSH on Ethereum or on Polygon
+                { // criteria object
+                  "type": "PUSH", // define type that rules engine should go for
+                  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+                  "data": { 
+                    "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                    "comparison": ">=", // what comparison needs to pass
+                    "amount": 1, // amount that needs to passed
+                    "decimals": 18, // the decimals for the token
+                  }
+                },
+                { // criteria object
+                  "type": "PUSH", // define type that rules engine should go for
+                  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+                  "data": { 
+                    "contract": "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
+                    "comparison": ">=", // what comparison needs to pass
+                    "amount": 1, // amount that needs to passed
+                    "decimals": 18, // the decimals for the token
+                  }
                 }
-              }
-            ]
+              ]
+            }
           ]
         }
       }
-      chat: {} // no permission condition is defined for chat access
+      // since we are not defining chat permissions, it means that any user who is part of the group can chat
     }
-  }
+  });
 ```
 
 ## Token gated group and send message example
@@ -254,49 +296,67 @@ Below is an advance version of gated controls that are applied to both `entry` t
     admins: ['nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
     private: true, // ensures chat within group is encrypted and is only visible to members of the group
     rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
-      entry: { // define condition for joining the group
-        conditions: { // set of all conditions that should be fulfilled to join the group
-          all: [ 
-            any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-              { // define criteria 1
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                data: { // define the data check
-                  "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                  "comparison": ">=", // what comparison needs to pass
-                  "amount": 10 // amount that needs to passed
+      "entry": { // define condition for joining the group
+        "conditions": { // set of all conditions that should be fulfilled to join the group
+          "any": [ 
+            {
+              "any": [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+                { // define criteria 1
+                  "type": "PUSH",
+                  "category": "INVITE",
+                  "subcategory": "DEFAULT",
+                  "data": {
+                      "inviterRoles": [
+                          "ADMIN",
+                          "OWNER"
+                      ]
+                  }
                 }
-              },
-              { // define criteria 2
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                data: { // define the data check
-                  "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
-                  "comparison": ">=", // what comparison needs to pass
-                  "amount": 10 // amount that needs to passed
+                { // define criteria 2
+                  type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                  data: { // define the data check
+                    "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                    "comparison": ">=", // what comparison needs to pass
+                    "amount": 10 // amount that needs to passed
+                    "decimals": 18, // the decimals for the contract
+                  }
+                },
+                { // define criteria 3
+                  type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                  data: { // define the data check
+                    "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                    "comparison": ">=", // what comparison needs to pass
+                    "amount": 10 // amount that needs to passed
+                    "decimals": 18, // the decimals for the contract
+                  }
                 }
-              }
-            ]
+              ]
+            }
           ]
         }
       },
-      chat: {
-        conditions: { // define condition for sending message in the group
-          all: [
-            any: [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-              { // define criteria 1
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                data: { // define the data check
-                  "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                  "comparison": ">=", // what comparison needs to pass
-                  "amount": 1000 // amount that needs to passed
+      "chat": {
+        "conditions": { // define condition for sending message in the group
+          "all": [
+            {
+              "any": [ // set decider to 'any', if 'and' then all rules need to be fulfilled
+                { // define criteria 1
+                  "type": "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
+                  "data": { // define the data check
+                    "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                    "comparison": ">=", // what comparison needs to pass
+                    "amount": 1000, // amount that needs to passed
+                    "decimals": 18, // the decimals for the contract
+                  }
                 }
-              }
-            ]
+              ]
+            }
           ]
         }
       }
@@ -304,3 +364,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
   });
 
 ```
+
+## Token gated group github example repo
+
+[Follow this token gated example github](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/token-gated-chat "Token gated example using Push Chat") repo to see and play with the API.
