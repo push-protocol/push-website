@@ -103,8 +103,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
     setShowMoreTeamMembers(!showMoreTeamMembers);
   };
 
+  const noNavbar = false;
+
   return (
-    <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription}>
+     <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) Communication Protocol of Web3</title>
@@ -808,7 +810,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </FeaturedInSection>
         
       </HomeWrapper>
-    </Layout>
+      </Layout>
   );
 }
 
@@ -891,6 +893,7 @@ const ResponsiveH2 = styled(H2)`
 const HomeWrapper = styled(ItemV)`
   margin: 0;
   padding: 0;
+  
   box-sizing: border-box;
   & #hero .contentBox {
     row-gap: 18px;

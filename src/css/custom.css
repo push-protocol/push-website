@@ -142,9 +142,10 @@ article ul ul, article ul ol, article ol ol, article ol ul {
 /* ----- */
 /* NAV BAR DISPLAY CUSTOM LOGIC */
 /* ----- */
-.navbar {
+/* .navbar {
   display: none;
-}
+} */
+
 
 .DocusaurusNavbar > .navbar {
   display: flex;
@@ -393,7 +394,7 @@ article .markdown > p > code {
   line-height: 110%;
   font-weight: bold;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .hero__subtitle {
