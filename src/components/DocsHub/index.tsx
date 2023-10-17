@@ -31,28 +31,6 @@ import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 import "./styles.css";
 
-
-
-function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
-  
-  return (
-    <PopularQuickiesCard>
-      <PopularQuickiesHeader>
-        <PopularQuickiesTitle>{`${title}`}</PopularQuickiesTitle>
-      </PopularQuickiesHeader>
-      
-      <PopularQuickiesContent>
-        <PopularQuickiesCodeBlock
-          language="jsx"
-          showLineNumbers={true}
-        >
-          {codeblock}
-        </PopularQuickiesCodeBlock>
-      </PopularQuickiesContent>
-    </PopularQuickiesCard>
-  );
-}
-
 function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
@@ -229,7 +207,7 @@ export default function HomepageFeatures(): JSX.Element {
       <HomepageSection alignItems="flex-start">
         <FluidContent>
           <HomepageSubHeader>
-            Popular Quickies
+            Popular Quickstart
           </HomepageSubHeader>
 
           <PopularQuickiesList>
