@@ -31,7 +31,7 @@ function getLibrary(provider: any) {
 function BRB() {
 
   return (
-    <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription} showNavbar='custom'>
+    <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription} showNavbar={false}>
       <Head>
      
         {/* <!-- Facebook Meta Tags --> */}
