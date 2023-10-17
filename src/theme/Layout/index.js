@@ -5,8 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from "react";
-import clsx from "clsx";
 import ErrorBoundary from "@docusaurus/ErrorBoundary";
 import {
   PageMetadata,
@@ -14,12 +12,15 @@ import {
   ThemeClassNames,
 } from "@docusaurus/theme-common";
 import { useKeyboardNavigation } from "@docusaurus/theme-common/internal";
-import SkipToContent from "@theme/SkipToContent";
+import Header from "@site/src/segments/Header";
 import AnnouncementBar from "@theme/AnnouncementBar";
-import Navbar from "@theme/Navbar";
+import ErrorPageContent from "@theme/ErrorPageContent";
 import Footer from "@theme/Footer";
 import LayoutProvider from "@theme/Layout/Provider";
-import ErrorPageContent from "@theme/ErrorPageContent";
+import Navbar from "@theme/Navbar";
+import SkipToContent from "@theme/SkipToContent";
+import clsx from "clsx";
+import React from "react";
 import styles from "./styles.module.css";
 
 export default function Layout(props) {
@@ -43,7 +44,8 @@ export default function Layout(props) {
 
       <AnnouncementBar />
 
-      {showNavbar === undefined || showNavbar === true ? <Navbar /> : null}
+      {(showNavbar === undefined || showNavbar === 'docusaurus') && <Navbar />}
+      {showNavbar === 'website' && <Header />}
 
       <div
         id={SkipToContentFallbackId}

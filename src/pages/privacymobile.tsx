@@ -22,7 +22,7 @@ function PrivacyMobile() {
   const { t } = useTranslation();
   
   return (
-    <Layout title={PageMeta.PRIVACYFORMOBILE.pageTitle} description={PageMeta.PRIVACYFORMOBILE.pageDescription} showNavbar={false}>
+    <Layout title={PageMeta.PRIVACYFORMOBILE.pageTitle} description={PageMeta.PRIVACYFORMOBILE.pageDescription} showNavbar='website'>
      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacymobile" />

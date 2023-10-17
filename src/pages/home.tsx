@@ -106,7 +106,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   const noNavbar = false;
 
   return (
-     <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar={false}>
+     <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) Communication Protocol of Web3</title>

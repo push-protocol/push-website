@@ -22,7 +22,7 @@ function Privacy() {
   const { t } = useTranslation();
 
   return (
-    <Layout title={PageMeta.PRIVACY.pageTitle} description={PageMeta.PRIVACY.pageDescription} showNavbar={false}>
+    <Layout title={PageMeta.PRIVACY.pageTitle} description={PageMeta.PRIVACY.pageDescription} showNavbar='website'>
        <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacy" />

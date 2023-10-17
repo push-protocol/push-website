@@ -262,7 +262,7 @@ const FrensText = () => {
   };
 
   return (
-    <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription} showNavbar={false}>
+    <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription} showNavbar='website'>
      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/frens" />

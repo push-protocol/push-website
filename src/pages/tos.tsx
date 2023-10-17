@@ -36,7 +36,7 @@ function TermsOfService() {
   const { t } = useTranslation();
 
   return (
-    <Layout title={PageMeta.TOS.pageTitle} description={PageMeta.TOS.pageDescription} showNavbar={false}>
+    <Layout title={PageMeta.TOS.pageTitle} description={PageMeta.TOS.pageDescription} showNavbar='website'>
        <Head>
         
         {/* <!-- Facebook Meta Tags --> */}
