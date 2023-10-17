@@ -3,6 +3,7 @@
 slug: superfluid-enhancing-web3-asset-streaming-with-push
 title: Superfluid Enhancing Web3 Asset-Streaming With Push💜💚
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Web3, Push Protocol, Superfluid Protocol]
 
 ---

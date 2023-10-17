@@ -2,6 +2,7 @@
 slug: revolutionizing-virtual-events-and-social-interactions-with-decentralized-video-chat
 title: 'Revolutionizing Virtual Events and Social Interactions with Decentralized Video Chat📹'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Blockchain Technologies]
 
 ---

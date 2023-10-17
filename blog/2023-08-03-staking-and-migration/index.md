@@ -2,6 +2,7 @@
 slug: staking-and-migration-guide-for-push-v2-rewards-program
 title: 'Staking & Migration Guide for PushV2 Rewards Program📜'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
 
 ---

@@ -2,6 +2,7 @@
 slug: epns-x-stox-enabling-communication-for-the-global-portfolio-tracker
 title: 'EPNS x Stox: Enabling Communication for the Global Portfolio Tracker'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Epnsproject ,Stox ,Blockchain ,Portfolio]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

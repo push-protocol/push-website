@@ -2,6 +2,8 @@
 slug: maximize-network-resilience-the-advantage-of-push-protocol
 title: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
 authors: [push]
+image: './cover-image.webp'
+description: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
 tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
 ---
 

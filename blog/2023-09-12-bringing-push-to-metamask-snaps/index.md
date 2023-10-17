@@ -2,6 +2,7 @@
 slug: bringing-push-to-meta-mask-snaps
 title: Bringing Push to MetaMask Snaps
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 

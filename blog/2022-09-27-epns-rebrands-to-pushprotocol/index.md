@@ -2,6 +2,7 @@
 slug: epns-rebrands-into-push-protocol-the-communication-protocol-for-web3
 title: EPNS Rebrands into Push Protocol, the Communication Protocol for Web3
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Ethereum, Multichain, Messaging, Announcements]
 ---
 

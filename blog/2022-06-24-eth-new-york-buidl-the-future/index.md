@@ -2,6 +2,7 @@
 slug: eth-new-york-buidl-the-future-of-web3-comm-with-epns
 title: 'ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

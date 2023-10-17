@@ -2,6 +2,7 @@
 slug: beincrypto-collaborates-with-push-to-bring-industry-news-and-high-quality-content-directly-to
 title: BeInCrypto Collaborates With Push to Bring Industry News and High-Quality Content Directly to Readers’ Wallets
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Announcements, Push Notification, Ethereum, Polygon]
 ---
 

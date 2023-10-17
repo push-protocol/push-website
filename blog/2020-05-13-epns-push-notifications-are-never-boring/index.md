@@ -2,6 +2,7 @@
 slug: epns-push-notifications-are-never-boring
 title: 'EPNS push notifications are never boring'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Blockchain ,Ethglobal ,Blog ,Notifications]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

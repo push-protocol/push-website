@@ -3,6 +3,7 @@
 slug: push-chat-the-solution-to-centralized-messaging
 title: 'Push Chat: The Solution To Centralized Messaging ✅'
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Blockchain Technology, Chat ]
 
 ---

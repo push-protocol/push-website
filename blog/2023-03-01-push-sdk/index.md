@@ -3,6 +3,7 @@
 slug: geting-started-with-push-sdk-socket-api
 title: 'Getting Started with Push SDK: Socket API🔔'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Blockchain Development, Developer ]
 
 ---

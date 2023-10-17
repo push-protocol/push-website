@@ -3,6 +3,7 @@
 slug: push-protocol-1
 title: Push Protocolについて知っておくべきこと🔔
 authors: [push]
+image: './cover-image.webp'
 tags: [ Ethglobal, Web3, Push Notification, Hackathons]
 
 ---

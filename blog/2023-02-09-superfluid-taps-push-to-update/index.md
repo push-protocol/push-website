@@ -3,6 +3,7 @@
 slug: superfluid-taps-push-to-update-users-on-money-streaming
 title: 'Superfluid Taps Push to Update Users on Money Streaming⚡'
 authors: [push]
+image: './cover-image.gif'
 tags: [ Defi, Web3, Blockchain, Blockchain Technology, Announcements]
 
 ---

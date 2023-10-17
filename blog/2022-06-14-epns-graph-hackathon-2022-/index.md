@@ -2,6 +2,7 @@
 slug: epns-graph-hackathon-2022-winners-announced
 title: 'EPNS + Graph Hackathon 2022 Winners Announced!'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3 ,Graph ,Hackathons ,Ethereum ,Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

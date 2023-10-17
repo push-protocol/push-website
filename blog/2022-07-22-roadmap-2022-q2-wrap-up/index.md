@@ -2,6 +2,7 @@
 slug: roadmap-2022-q2-wrap-up
 title: 'Roadmap 2022 — Q2 Wrap Up'
 authors: [push]
+image: './cover-image.webp'
 tags: [Roadmaps, Ethereum, Epnsproject, Notifications, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

@@ -2,6 +2,7 @@
 slug: a-billion-reasons-to-build-finding-india-s-best-web3-developers
 title: 'A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳'
 authors: [push]
+image: './cover-image.png'
 tags: [Pushprotocol, Devops, Devtools, Web3, Blockchain Technologies]
 
 ---

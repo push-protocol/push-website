@@ -2,6 +2,7 @@
 slug: exploring-the-role-of-zk-knowledge-in-decentralized-communication
 title: Exploring the Role of ZK Knowledge in Decentralized Communication🌐
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Zkrollup, Blockchain Technology]
 
 ---

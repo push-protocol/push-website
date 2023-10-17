@@ -3,6 +3,7 @@
 slug: bankless-nation-and-push-partner-to-enable-news-notifications
 title: Bankless Nation and Push Partner to Enable News Notifications 🔔
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Pushprotocol, Bankless]
 
 ---

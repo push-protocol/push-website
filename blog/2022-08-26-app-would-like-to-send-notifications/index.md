@@ -2,6 +2,7 @@
 slug: my-app-would-like-to-send-you-push-notifications
 title: ‘My App’ Would Like to Send You Push Notifications
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Technology, Blockchain, Web3]
 ---
 

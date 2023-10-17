@@ -2,6 +2,7 @@
 slug: push-is-live-on-polygon-and-quickswap
 title: $PUSH is Live on Polygon & Quickswap!💜
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
 
 ---

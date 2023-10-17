@@ -2,6 +2,7 @@
 slug: building-a-leading-web3-communication-layer-what-s-it-take
 title: 'Building a Leading Web3 Communication Layer: What’s it take?🛠️'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Buidl, Blockchain Technology, Blockchain Development, Developer]
 ---
 ![Cover image of Building a Leading Web3 Communication Layer: What’s it take?🛠️](./cover-image.webp)

@@ -2,6 +2,7 @@
 slug: building-ethereum-push-notification-service-protocol
 title: 'Building Ethereum Push Notification Service protocol'
 authors: [push]
+image: './cover-image.webp'
 tags: [Blockchain ,Defi ,Notifications ,Blog ,Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

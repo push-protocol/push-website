@@ -2,6 +2,7 @@
 slug: back-2-school-grant-program
 title: 'Back 2 School Grant Program🎒💜'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Grant, Web Grant, Grant Writing]
 
 ---

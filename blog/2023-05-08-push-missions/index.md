@@ -3,6 +3,7 @@
 slug: let-s-embark-on-a-mission-w-push-protocol
 title: Let’s Embark on a Mission w. Push Protocol 🔔
 authors: [push]
+image: './cover-image.webp'
 tags: [ Ethereum, Push Notification, Rewards, Community]
 
 ---

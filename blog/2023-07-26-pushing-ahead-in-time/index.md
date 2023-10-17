@@ -2,6 +2,7 @@
 slug: pushing-ahead-in-time-push-and-timeswap
 title: 'Pushing Ahead in Time: $PUSH x Timeswap ⏳'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Timeswap]
 
 ---

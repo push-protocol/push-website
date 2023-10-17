@@ -3,6 +3,7 @@
 slug: enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet
 title: Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Blockchain Development, Blockchain Technology, Announcements]
 
 ---

@@ -2,6 +2,7 @@
 slug: epns-at-nft-nyc-2022-all-set-for-the-nft-verse
 title: 'EPNS at NFT NYC 2022: All set for the NFTVerse'
 authors: [push]
+image: './cover-image.webp'
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

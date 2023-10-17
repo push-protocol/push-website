@@ -2,6 +2,7 @@
 slug: epns-x-polychain-monsters-decentralized-communication-for-the-digital-collectible-ecosystem
 title: 'EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem'
 authors: [push]
+image: './cover-image.png'
 tags: [Nft, Ethereum, Epnsproject, Nft Collectibles, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

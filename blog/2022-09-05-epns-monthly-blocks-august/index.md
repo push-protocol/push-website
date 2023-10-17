@@ -2,6 +2,7 @@
 slug: epns-monthly-blocks-august
 title: EPNS Monthly Blocks
 authors: [push]
+image: './cover-image.webp'
 tags: [ Newsletter, Epnsproject, Blockchain, Ethereum]
 ---
 

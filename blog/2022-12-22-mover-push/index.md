@@ -2,6 +2,7 @@
 slug: push-helps-mover-the-first-crypto-debit-card-to-power-communication-on-the-platform
 title: Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Frenspfpush, Push Notification, Pushprotocol, Defi, Debitcard]
 ---
 

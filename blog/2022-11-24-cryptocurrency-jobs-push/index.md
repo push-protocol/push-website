@@ -3,6 +3,7 @@
 slug: cryptocurrency-jobs-stay-notified-of-the-best-web3-opportunities-out-there
 title: Cryptocurrency Jobs — Stay Notified of the Best Web3 Opportunities Out There
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, Cryptocurrency, Jobs, Frensofpush, Push Notification]
 
 ---

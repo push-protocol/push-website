@@ -3,6 +3,7 @@
 slug: push-and-phuture-finance-team-up-to-enhance-user-engagement
 title: 'Push and Phuture Finance Team Up to Enhance User Engagement🐋'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology]
 
 ---

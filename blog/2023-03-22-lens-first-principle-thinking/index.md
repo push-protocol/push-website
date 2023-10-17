@@ -3,6 +3,7 @@
 slug: web3-and-push-protocol-through-the-lens-of-first-principle-thinking
 title: Web3 & Push Protocol through the Lens of First Principle Thinking🔍
 authors: [push]
+image: './cover-image.gif'
 tags: [ Pn101, First Principles Thinking, Web3, Blockchain Technology]
 
 ---

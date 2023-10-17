@@ -2,6 +2,7 @@
 slug: may-monthly-recap
 title: May Monthly Recap ☀️
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Development]
 
 ---

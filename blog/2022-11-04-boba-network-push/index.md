@@ -3,6 +3,7 @@
 slug: push-protocol-allies-with-boba-network-to-enable-decentralized-communication
 title: Push Protocol Allies With Boba Network to Enable Decentralized Communication
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Announcements, Push Notification, Boba Network]
 
 ---

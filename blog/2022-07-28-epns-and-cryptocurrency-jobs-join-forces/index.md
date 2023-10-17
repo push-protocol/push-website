@@ -2,6 +2,7 @@
 slug: epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users
 title: 'EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Ethereum, Epnsproject, Jobs, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

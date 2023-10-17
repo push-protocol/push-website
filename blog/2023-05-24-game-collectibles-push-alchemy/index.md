@@ -3,6 +3,7 @@
 slug: how-to-build-a-game-collectibles-d-app-with-push-and-alchemy
 title: How to Build a Game Collectibles dApp with Push and Alchemy🎮
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Development, Gaming,  Blockchain Development, Blockchain Technology]
 
 ---

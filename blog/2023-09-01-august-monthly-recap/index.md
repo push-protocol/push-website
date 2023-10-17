@@ -2,6 +2,7 @@
 slug: august-monthly-recap
 title: 'August Monthly Recap'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Newsletter ,Web3, Blockchain Technologies]
 
 ---

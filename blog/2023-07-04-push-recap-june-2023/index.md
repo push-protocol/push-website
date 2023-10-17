@@ -2,6 +2,7 @@
 slug: june-monthly-recap
 title: 'June Monthly Recap 🌅'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---

@@ -2,6 +2,7 @@
 slug: push-and-lens-powering-ux-with-notifications-and-aaves-lens
 title: 'Push and Lens: Powering UX with Notifications and Aave’s Lens'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Ethereum, Social Media, Infrastructure, Announcements ]
 ---
 

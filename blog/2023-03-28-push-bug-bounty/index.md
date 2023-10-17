@@ -3,6 +3,7 @@
 slug: push-protocol-s-bug-bounty-program-goes-live
 title: Push Protocol’s Bug Bounty Program Goes Live!
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Bug Bounty, Blockchain Technology, Bounty Program, Announcements]
 
 ---

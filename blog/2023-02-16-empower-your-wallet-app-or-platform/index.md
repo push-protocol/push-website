@@ -3,6 +3,7 @@
 slug: empower-your-wallet-app-or-platform-with-push-delivery-nodes
 title: 'Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡'
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, Developer, Blockchain Development,  Blockchain Technology, Delivery Nodes]
 
 ---

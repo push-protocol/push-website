@@ -3,6 +3,7 @@
 slug: demystifying-pgp-encryption-in-push
 title: Demystifying PGP Encryption in Push🛡️
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Pgp, Cybersecurity, Blockchain Technology]
 
 ---

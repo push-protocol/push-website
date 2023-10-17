@@ -2,6 +2,7 @@
 slug: loan-update-high-utilization-or-low-liquidity-please-check-your-position
 title: 'Loan Update: High Utilization or Low Liquidity, Please Check Your Position'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Web3, Developer, Blockchain]
 ---
 

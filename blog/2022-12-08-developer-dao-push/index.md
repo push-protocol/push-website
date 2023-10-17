@@ -3,6 +3,7 @@
 slug: developer-dao-x-push-enhancing-ux-through-web3-communication-tools
 title: Developer DAO x Push — Enhancing UX Through Web3 Communication Tools
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Push Notification, Giveaway, Workshop, Developer]
 
 ---

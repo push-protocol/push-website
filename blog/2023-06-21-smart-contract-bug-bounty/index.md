@@ -2,6 +2,7 @@
 slug: 100-000-of-push-x-immune-fi-bug-bounty-program-goes-live
 title: '$100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Bounty Program, Immuenfi, Bug bounty]
 ---
 

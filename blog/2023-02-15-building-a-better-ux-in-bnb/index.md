@@ -3,6 +3,7 @@
 slug: building-a-better-ux-in-bnb-with-our-8-launch-collaborators
 title: 'Building a Better UX in BNB With Our 8 Launch Collaborators🚀'
 authors: [push]
+image: './cover-image.gif'
 tags: [ BNB, BNBChain, Blockchain, Defi]
 
 ---
