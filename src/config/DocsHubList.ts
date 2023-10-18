@@ -64,6 +64,45 @@ const aliceMessagesBob = await userAlice.chat.send(
 ]
 
 export const TechDocItems: ITechDocItem[] = [
+//   {
+//     title: 'Notifications',
+//     srcref: 'notification',
+//     alt: 'Logo representing Push Notifications - Push Protocol',
+//     link: '/docs/notifications',
+//     description: 'Explore different ways of sending and receiving notifications and more.',
+//     codeblock: `// Initialize wallet user
+// const userAlice = await PushAPI.initialize(signer);
+
+// // Send a notification to users of your protocol
+// const response = await userAlice.channel.send(['*'], { 
+//   notification: {
+//     title: 'Hello World Notification',
+//     body: 'Web3 native notifications are here!',
+//   }
+// });`
+//   },
+//   {
+//     title: 'Push Chat',
+//     srcref: 'message',
+//     alt: 'Logo representing Push Chat - Push Protocol',
+//     link: '/docs/chat',
+//     description: 'Learn about the details of Push Chat and how to do web3 native messaging.',
+//     codeblock: `// Initialize wallet user
+// const userAlice = await PushAPI.initialize(signer);
+
+// // Send message
+// const aliceMessagesBob = await userAlice.chat.send(
+//   '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
+//   {content: "Gm gm! It's a me... Mario"}
+// );`
+//   },
+//   {
+//     title: 'Push Spaces',
+//     srcref: 'spaces',
+//     alt: 'Logo representing Push Spaces - Push Protocol',
+//     link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+//     description: 'Learn about Push Spaces, the web3 native, token gated way of conducting spaces.',
+//   },
   {
     title: 'Notifications',
     srcref: 'notification',
