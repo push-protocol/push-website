@@ -61,7 +61,7 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITech
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
         onClick={(e) => {e.preventDefault(); window.location.href = link}}
-        hoverBackground="transparent"
+        hovTechDocContenterBackground="transparent"
       >
         <ItemV
           alignSelf="stretch"
@@ -554,9 +554,6 @@ const TechDocCard = styled(ItemV)`
   min-width: 280px;
   max-width: calc(33.33% - 21.33px);
   box-sizing: border-box;
-  // min-height: 300px;
-  // max-height: 300px;
-  // background: red;
 
   @media ${device.laptop} {
     flex: 1;
@@ -564,12 +561,11 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled(Button)`
-  // margin-top: 24px;
-  // position: relative;
+const TechDocContent = styled.div`
+  margin-top: 24px;
+  position: relative;
   border-radius: 24px;
   padding: 40px 20px;
-  // padding: 20px 20px;
   box-sizing: border-box;
   border: 1px solid #d9d9d9;
   background: transparent;
@@ -629,6 +625,24 @@ const TechDocCodeBlock = styled(CodeBlock)`
   text-align: initial;
   overflow: scroll;
   max-width: auto;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #CB3FAA; 
+    border-radius: 6px; 
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  
 `;
 
 const PushSdkCardList = styled(ItemH)`
