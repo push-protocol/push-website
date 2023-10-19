@@ -139,7 +139,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
       <Head>
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/docs" />
@@ -463,7 +463,7 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
 
   ::-webkit-scrollbar {
@@ -625,7 +625,7 @@ const TechDocCodeBlock = styled(CodeBlock)`
   margin: 0px 10px;
   align-self: stretch;
   text-align: initial;
-  overflow: scroll;
+  overflow: auto;
   max-width: auto;
 
   ::-webkit-scrollbar {
