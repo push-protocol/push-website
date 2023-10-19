@@ -139,6 +139,8 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
       <Head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/docs" />
         <meta property="og:type" content="website" />
