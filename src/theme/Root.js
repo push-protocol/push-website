@@ -1,6 +1,6 @@
 // React + Web3 Essentials
 import { useLocation } from "@docusaurus/router";
-import React, { useEffect } from "react";
+import React from "react";
 
 // External Components
 import i18nInitialize from "@site/src/utils/i18n";

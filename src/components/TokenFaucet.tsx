@@ -281,9 +281,9 @@ const ButtonItem = styled(Button)`
   }
 `;
 
-const Span = styled.span`
-  font-size: ${(props) => props.fontSize || '12px'};
-  color: ${(props) => props.color || '#b5bcd6'};
-  font-weight: ${(props) => props.fontWeight || '300'};
-  letter-spacing: 0.01em;
-`;
+// const Span = styled.span`
+//   font-size: ${(props) => props.fontSize || '12px'};
+//   color: ${(props) => props.color || '#b5bcd6'};
+//   font-weight: ${(props) => props.fontWeight || '300'};
+//   letter-spacing: 0.01em;
+// `;
