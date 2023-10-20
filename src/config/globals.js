@@ -112,6 +112,7 @@ const GLOBALS = {
   },
 
   COLORS: {
+    PRIMARY_COLOR: '#DD44B9',
     HIGHLIGHT: '#DD44B9',
     FONT_LIGHT: '#FFF',
     FONT_LIGHT_SECONDARY: 'FFF',

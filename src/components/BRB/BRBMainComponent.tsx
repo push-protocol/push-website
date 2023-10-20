@@ -18,7 +18,7 @@ import { PartnerBounties } from '@site/src/components/BRB/BRBPartnerBounties';
 import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
-import ChatComponent from '@site/src/components/PushChat/PushChatComponent';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
@@ -27,6 +27,7 @@ import ArrowIcon from '@site/static/assets/ArrowIcon.svg';
 import Discord from '@site/static/assets/Discord-BRB.svg';
 import ImageBRB from '@site/static/assets/Image-BRB.png';
 import MobileBRB from '@site/static/assets/Mobile-BRB.png';
+import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
 import X from '@site/static/assets/X-BRB.svg';
 import PushLogo from '@site/static/assets/pushIcon.svg';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -389,15 +390,37 @@ export const BRBMainComponent = () => {
       <BountyDiv id='bounties'>
         <PartnerBounties />
       </BountyDiv>
-
+      
       <PlaygroundDiv id="playground">
-        <BrowserOnly fallback={<div>Loading...</div>}>
-        {() => {
-            return (
-              <ChatComponent />
-            )
-        }}
-        </BrowserOnly>
+        <Playground>
+          {/* 
+          b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1 -> test group
+          4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
+          */}
+          
+          <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_PINK} type={SPINNER_TYPE.PROCESSING}/>}>
+            {() => {
+              const uiweb = require("@pushprotocol/uiweb");
+              
+              const ChatUIProvider = uiweb.ChatUIProvider;
+              const ChatViewComponent = uiweb.ChatViewComponent;
+              const darkChatTheme = uiweb.darkChatTheme;
+
+              return (
+                <>
+                  <ChatUIProvider theme={darkChatTheme}>
+                    <ChatViewComponent
+                      chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
+                      limit={10}
+                      isConnected={true}
+                    />
+                  </ChatUIProvider>
+                </>
+              )
+              
+            }}
+          </BrowserOnly>
+        </Playground>
       </PlaygroundDiv>
 
 
@@ -598,6 +621,20 @@ const PartnersDiv = styled.div`
 
 const PlaygroundDiv = styled.div`
   width: 100%;
+`;
+
+const Playground = styled(Section)`
+  flex-direction: column;
+  background-image: url(${PlaygroundBg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80%;
+  height: 75vh;
+  margin: 0 auto;
+  @media ${device.mobileL} {
+    width: 95%;
+  }
 `;
 
 // V1 Designs
