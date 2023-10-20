@@ -229,7 +229,7 @@ export default function HomepageFeatures(): JSX.Element {
       <HomepageSection alignItems="flex-start">
         <FluidContent>
           <HomepageSubHeader>
-            Popular Quickies
+            Populart Quickstart
           </HomepageSubHeader>
 
           <PopularQuickiesList>
