@@ -398,7 +398,7 @@ export const BRBMainComponent = () => {
           4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
           */}
           
-          <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_PINK} type={SPINNER_TYPE.PROCESSING}/>}>
+          <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>}>
             {() => {
               const uiweb = require("@pushprotocol/uiweb");
               
