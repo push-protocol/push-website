@@ -468,8 +468,7 @@ const PopularQuickiesCard = styled(ItemV)`
   }
   
   *::-webkit-scrollbar-thumb {
-      background: red;
-      // background: #CB3FAA;
+      background: #CB3FAA;
       border-radius: 6px;
   }
   
@@ -629,6 +628,30 @@ const TechDocCodeBlock = styled(CodeBlock)`
   text-align: initial;
   overflow: auto;
   max-width: 100%;
+
+  /* WebKit browsers (Chrome, Safari) */
+  *::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+      background: #CB3FAA;
+      border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  *::-webkit-scrollbar-button {
+      display: none !important;
+  }
+  
+  /* Firefox */
+  * {
+      scrollbar-color: #CB3FAA #f1f1f1;
+      scrollbar-width: thin;
+  }
 `;
 
 const PushSdkCardList = styled(ItemH)`
