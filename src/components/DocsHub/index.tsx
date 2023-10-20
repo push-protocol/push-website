@@ -61,12 +61,11 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITech
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
         onClick={(e) => {e.preventDefault(); window.location.href = link}}
-        hovTechDocContenterBackground="transparent"
+        hoverBackground="transparent"
       >
         <ItemV
           alignSelf="stretch"
-          padding="0px 2%"
-          justifyContent='flex-start'
+          margin="0px 8%"
         >
           <ItemV
             padding="0px 0px 30px 0px"
@@ -113,7 +112,6 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITech
 
           <ItemV
             alignItems="stretch"
-            justifyContent='flex-start'
           >
             {content == 0 &&
               <TechDocOverview>{description}</TechDocOverview>
@@ -139,8 +137,6 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
       <Head>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/docs" />
         <meta property="og:type" content="website" />
@@ -233,7 +229,7 @@ export default function HomepageFeatures(): JSX.Element {
       <HomepageSection alignItems="flex-start">
         <FluidContent>
           <HomepageSubHeader>
-            Quickstart
+            Populart Quickstart
           </HomepageSubHeader>
 
           <PopularQuickiesList>
@@ -463,26 +459,8 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
-  overflow: auto;
+  overflow: scroll;
   width: 100%;
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #CB3FAA; 
-    border-radius: 6px; 
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
-  
 
   box-sizing: border-box;
 
@@ -563,12 +541,11 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled.div`
+const TechDocContent = styled(Button)`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
   padding: 40px 20px;
-  box-sizing: border-box;
   border: 1px solid #d9d9d9;
   background: transparent;
   align-self: stretch;
@@ -625,26 +602,8 @@ const TechDocCodeBlock = styled(CodeBlock)`
   margin: 0px 10px;
   align-self: stretch;
   text-align: initial;
-  overflow: auto;
-  max-width: auto;
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #CB3FAA; 
-    border-radius: 6px; 
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-button {
-    display: none;
-  }
-  
+  overflow: scroll;
+  max-width: 100%;
 `;
 
 const PushSdkCardList = styled(ItemH)`
