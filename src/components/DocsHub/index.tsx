@@ -459,7 +459,7 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
 
   /* WebKit browsers (Chrome, Safari) */
@@ -627,7 +627,7 @@ const TechDocCodeBlock = styled(CodeBlock)`
   margin: 0px 10px;
   align-self: stretch;
   text-align: initial;
-  overflow: scroll;
+  overflow: auto;
   max-width: 100%;
 `;
 
