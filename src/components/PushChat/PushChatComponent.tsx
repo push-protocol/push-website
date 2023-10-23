@@ -209,10 +209,7 @@ const PlayGround = styled(Section)`
   background-repeat: no-repeat;
   background-size: contain;
   width: 80%;
-<<<<<<< HEAD
   height: 75vh;
-=======
->>>>>>> aab1d0a74a544b27c03c5be9640467218a8f468e
   margin: 0 auto;
   @media ${device.mobileL} {
     width: 95%;
