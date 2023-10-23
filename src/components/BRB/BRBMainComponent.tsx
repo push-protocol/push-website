@@ -21,6 +21,7 @@ import ImageHolder from '@site/src/components/ImageHolder';
 import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
 
 // Import Assets
 import ArrowIcon from '@site/static/assets/ArrowIcon.svg';
@@ -404,11 +405,11 @@ export const BRBMainComponent = () => {
               
               const ChatUIProvider = uiweb.ChatUIProvider;
               const ChatViewComponent = uiweb.ChatViewComponent;
-              const darkChatTheme = uiweb.darkChatTheme;
+              // const darkChatTheme = uiweb.darkChatTheme;
 
               return (
                 <>
-                  <ChatUIProvider theme={darkChatTheme}>
+                  <ChatUIProvider theme={PushChatTheme}>
                     <ChatViewComponent
                       chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
                       limit={10}
