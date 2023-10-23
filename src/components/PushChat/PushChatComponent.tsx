@@ -70,7 +70,7 @@ export const ChatComponent = () => {
                       chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
                       limit={10}
                       isConnected={true}
-                      onClick={()=>setShowFaucet(true)}
+                      onGetTokenClick={()=>setShowFaucet(true)}
                     />
                   </ChatUIProvider>
                 </>
@@ -128,6 +128,7 @@ const BottomBar = styled(ItemH)`
   align-items: center;
   color: #fff;
   z-index: 0 !important;
+  margin-top: 20px;
 
   & ${Span} {
     @media ${device.mobileL} {

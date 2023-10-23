@@ -180,11 +180,11 @@ export const TokenFaucet = ({ handleFaucet }: { handleFaucet: (value: boolean) =
       <ItemV
         justifyContent="flex-start"
         alignItems="flex-start"
-        margin="19px 0px 0px 10px"
+        margin="10px 0px 0px 10px"
         gap="3px"
       >
-        <Span>* Twitter account must be 30 days old with 50+ followers to claim.</Span>
-        <Span>* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
+        <Span fontSize="10px" fontWeight="300" color="#B5BCD6">* Twitter account must be 30 days old with 50+ followers to claim.</Span>
+        <Span fontSize="10px" fontWeight="300" color="#B5BCD6">* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
       </ItemV>
     </Container>
   );
