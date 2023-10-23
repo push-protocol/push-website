@@ -2,17 +2,18 @@
 slug: push-monthly-blocks-september
 title: Push Monthly Blocks
 authors: [push]
+image: './cover-image.webp'
 tags: [ Newsletter, Blockchain, Pushprotocol, Ethereum]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push Monthly Blocks](./cover-image.webp)
 
 <!--customheaderpoint-->
 # September 2022<br/>
 
 Hi <b>Push</b> frens!✨ This one is a very special Monthly Blocks edition as it is the first Push Protocol edition. Let’s take time to recap briefly all the happenings this month!
+
+<!--truncate-->
 
 ![What's New](./image-1.webp)
 

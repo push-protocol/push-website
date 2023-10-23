@@ -3,14 +3,16 @@
 slug: going-bananas-push-protocol-partners-with-ape-swap-for-seamless-web3-communication
 title: 'Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Announcements, Crypto, BNB ]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵](./cover-image.webp)
 
 Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos.
+
+<!--truncate-->
 
 ApeSwap is a rapidly growing DeFi platform that has gained a significant following on BNB Chain. With over $67 million in TVL, ApeSwap is redefining DeFi for a more sustainable future. To achieve this goal, the platform is focused on Sustainable Liquidity Mining through ApeSwap’s Treasury Bills, but also is well known for their DEX, liquidity pools, staking, and farming.
 

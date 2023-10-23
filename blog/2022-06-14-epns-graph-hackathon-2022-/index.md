@@ -2,17 +2,18 @@
 slug: epns-graph-hackathon-2022-winners-announced
 title: 'EPNS + Graph Hackathon 2022 Winners Announced!'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3 ,Graph ,Hackathons ,Ethereum ,Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of EPNS + Graph Hackathon 2022 Winners Announced!](./cover-image.webp)
 
 <blockquote>We’re stoked to announce winners for the GraphHack2022 that concluded on June 5th, 2022.</blockquote>
 
 We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it.
+
+<!--truncate-->
 
 <iframe width="100%" height="382" src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

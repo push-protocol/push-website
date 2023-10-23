@@ -2,18 +2,19 @@
 slug: push-and-tollan-worlds-partner-to-level-up-communication-with-gamers
 title: Push and Tollan Worlds Partner to Level Up Communication With Gamers
 authors: [push]
+image: './cover-image.webp'
 tags: [ Frensofpush, Push Notification, Gaming, Web3 Game, Mmorpg]
 ---
 
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push and Tollan Worlds Partner to Level Up Communication With Gamers](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Frens of Push #4 a little holiday giveaway brought to you by the Tollan Worlds team
 
 <i><a href="https://medium.com/push-protocol/tagged/frensofpush">“Frens of Push”</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.</i>
+
+<!--truncate-->
 
 [Tollan Worlds](https://medium.com/u/5afd7b03aba2?source=post_page-----ba3f9697523--------------------------------), a web3 gaming platform, has joined forces with Push to power communication on their platform.
 

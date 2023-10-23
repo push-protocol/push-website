@@ -3,18 +3,19 @@
 slug: getting-started-with-push-sdk-rest-api
 title: 'Getting Started With Push SDK REST API⚙️'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, SDK, Push Notification Service, Developer]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Getting Started With Push SDK REST API⚙️](./cover-image.webp)
 
 The [PUSH-SDK](https://github.com/ethereum-push-notification-service/push-sdk), is a growing JavaScript-based SDK that allows developers to add push notification functionality to their dapps. Using the SDK, developers can:
 
 - Build PUSH features into their dapps
 - Get access to Push Nodes APIs
 - Render Push Notifications UI
+
+<!--truncate-->
 
 It is written in Typescript and supports React, React Native, Plain JS, and Node JS-based platforms. (We are adding support for more!) It is also built on top of standard Web3 packages like <b>ethers, @web3-react</b>.
 

@@ -1,216 +1,37 @@
+/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+/* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useState } from 'react';
-import styled, { keyframes } from "styled-components";
-
-// External Components
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
+import React, { useState } from 'react';
+
+// External Components
 import clsx from 'clsx';
+import styled, { keyframes } from "styled-components";
 
 // Internal Components
-import { A, Button, H2, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
+import { A, Button, Content, H1, H2, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import Footer from '@site/src/segments/Footer';
-import FAQ from './Faq';
+import FAQ from './faq';
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
+import GLOBALS, { device } from '@site/src/config/globals';
+import { PageMeta } from "@site/src/config/pageMeta";
 import "./styles.css";
 
-interface IQuickstartItem {
-  title: string;
-  codeblock: string;
-}
 
-const QuickstartItems: IQuickstartItem[] = [
-  {
-    title: 'Push Notification Quickstart',
-    codeblock: `// Import Push SDK & Ethers
-import { PushAPI } from '@pushprotocol/restapi';
-import { ethers } from 'ethers';
-
-// Using random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
-
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
-
-// Send a notification to users of your protocol
-const apiResponse = await userAlice.channel.send(['*'], { 
-  notification: {
-    title: 'Hello World Notification',
-    body: 'Web3 native notifications are here!',
-  }
-});`
-  },
-  {
-    title: 'Push Chat Quickstart',
-    codeblock: `// Import Push SDK & Ethers
-import { PushAPI } from '@pushprotocol/restapi';
-import { ethers } from 'ethers';
-
-// Using random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
-
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
-
-// Send a message to Bob
-const aliceMessagesBob = await userAlice.chat.send(
-  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
-  {content: "Gm gm! It's a me... Mario"}
-);
-
-
-`
-  },
-]
-
-type DevGuideItems = {
-  title: string;
-  description: JSX.Element;
-  codeblock?: string;
-  Svg?: React.ComponentType<React.ComponentProps<'svg'>>;
-  link?: string;
-};
-
-const DevGuide: DevGuideItems[] = [
-  {
-    title: 'Notifications',
-    Svg: require('@site/static/assets/docs/notification.svg').default,
-    link: 'https://docs.push.org/developers/concepts/web3-notifications',
-    description: (
-      <>
-        Explore different ways of sending and receiving notifications and more.
-
-      </>
-    ),
-  },
-  {
-    title: 'Push Chat',
-    Svg: require('@site/static/assets/docs/message.svg').default,
-    link: '/docs/chat',
-    description: (
-      <>
-        Learn about the details of Push Chat and how to do web3 native messaging.
-      </>
-    ),
-    codeblock: `// Initialize wallet user
-const userAlice = await PushAPI.initialize(signer);
-
-// Send message
-const aliceMessagesBob = await userAlice.chat.send(
-  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
-  {content: "Gm gm! It's a me... Mario"}
-);`
-  },
-  {
-    title: 'Push Spaces',
-    Svg: require('@site/static/assets/docs/spaces.svg').default,
-    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
-
-    description: (
-      <>
-        Learn about Push Spaces, the web3 native, token gated way of conducting spaces.
-      </>
-    ),
-  },
-  {
-    title: 'Push Video Calls',
-    Svg: require('@site/static/assets/docs/video.svg').default,
-    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
-
-    description: (
-      <>
-        Learn about the details of Push Video Calls and how to easily integrate it.
-      </>
-    ),
-  },
-  {
-    title: 'Examples',
-    Svg: require('@site/static/assets/docs/star.svg').default,
-    link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
-    description: (
-      <>
-        Examples to showcase the power of Push Protocol’s communication stack.
-      </>
-    ),
-  },
-  {
-    title: 'Showrunners',
-    Svg: require('@site/static/assets/docs/receive-notifs.svg').default,
-    link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
-    description: (
-      <>
-        Showrunners Framework and how to boost your web3 communications.
-
-      </>
-    ),
-  }
-]
-
-type SdkListItems = {
-  title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  PinkSvg?: React.ComponentType<React.ComponentProps<'svg'>>;
-  link?: string;
-}
-
-const SdkList: SdkListItems[] = [
-  {
-    title: 'SDK Starter Kit',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk',
-  },
-  {
-    title: 'REST API',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-restapi',
-  },
-  {
-    title: 'React Native',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-reactnative',
-  },
-  {
-    title: 'Socket',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket',
-  },
-  {
-    title: 'UIWeb',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiweb',
-  },
-  {
-    title: 'UI Embed',
-    Svg: require('@site/static/assets/docs/arrowupright.svg').default,
-    PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-uiembed',
-  }
-]
-
-
-const accordionItems = [
-  { title: 'What is Push?', content: 'Content for Section 1' },
-  { title: 'How do I contact customer support?', content: 'You can try telekinesis, but we recommend using our contact form instead.' },
-  { title: 'What is Push trying to solve?', content: 'Content for Section 3' },
-  { title: 'How can I use Push as an end-user?', content: 'Content for Section 3' },
-  { title: 'What are the web3 communication products launched by Push?', content: 'Content for Section 3' },
-  { title: 'Do I have to pay to send notifications?', content: 'Content for Section 3' },
-];
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   
@@ -232,7 +53,7 @@ function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   );
 }
 
-function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) {
+function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
   return (
@@ -250,7 +71,13 @@ function GuideList({ title, Svg, description, codeblock, link }: DevGuideItems) 
             padding="0px 0px 30px 0px"
             alignItems="flex-start"
           >
-            <TechDocIcon><Svg /></TechDocIcon>
+            <TechDocIcon>
+              <Image
+                src={require(`@site/static/assets/docs/docshub/${srcref}.webp`).default}
+                srcSet={`${require(`@site/static/assets/docs/docshub/${srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/docs/docshub/${srcref}@3x.webp`).default} 3x`}
+                alt={`${alt}`}
+              />
+            </TechDocIcon>
             <TechDocTitle>{title}</TechDocTitle>
           </ItemV>
           
@@ -308,65 +135,144 @@ export default function HomepageFeatures(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   
   return (
-    <section>
-      <HeroHeader className={clsx('hero hero--primary')}>
-        <div className="section-container" style={{zIndex: '1'}}>
-          <h1 className="hero__title">Push Documentation Hub</h1>
-          <p className="hero__subtitle">Get started with building native web3 communition for your protocol!</p>
-          <div className='spacing-small pointer'>
-            <Link
-              className='hero__button'
-              to="/docs/chat">
-              <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
-              <FiArrowUpRight size={16} />
-            </Link>
-          </div>
-        </div>
+    <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
+      <Head>
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org/docs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push | Documentation Hub" />
+        <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
+        <meta property="og:image" content="/assets/previews/docsfbpreview.png" />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push | Documentation Hub" />
+        <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
+        <meta name="twitter:image" content="/assets/previews/docstwtpreview.png" />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            "name": "Push Protocol",
+            "description": "The Communication Protocol of Web3",
+            "url": "https://push.org",
+            "logo": "/assets/website/favicon.ico",
+            "sameAs": [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/"
+            ]
+          })}
+        </script>
+      </Head>
+
+      {/* DOCS HERO SECTION */}
+      <DocsHeroSection>
         <ItemV
           position="absolute"
-          bottom="-25%"
+          top="-100px"
           left="0"
           right="0"
-          height="50%"
+          height="100px"
+          background={GLOBALS.COLORS.BG_DARK}
         >
-          <PulseStatic />
-          <Pulse>
-            <Pulsate stagger={0}></Pulsate>
-            <Pulsate stagger={1}></Pulsate>
-            <Pulsate stagger={2}></Pulsate>
-            <Pulsate stagger={3}></Pulsate>
-            <Pulsate stagger={4}></Pulsate>
-            <Pulsate stagger={5}></Pulsate>
-            <Pulsate stagger={6}></Pulsate>
-          </Pulse>
         </ItemV>
-      </HeroHeader>
-      
-      <section className='main-section'>
-          <HomepageSection alignItems="flex-start">
-            <HomepageSubHeader>
-              Popular Quickies
-            </HomepageSubHeader>
-
-              <PopularQuickiesList>
-                {QuickstartItems.map((props, idx) => (
-                  <QuickstartList key={idx} {...props} />
-                ))}
-              </PopularQuickiesList>
-          </HomepageSection>
-
-          <HomepageSection>
-            <HomepageSubHeader>
-              Technical Documentation
-            </HomepageSubHeader>
-            <TechDocCardList>
-              {DevGuide.map((props, idx) => (
-                <GuideList key={idx} {...props} />
-              ))}
-            </TechDocCardList>
-        </HomepageSection>
+        <Content
+          padding="0px"
+        >
+          <HeroHeader>
+            <ItemV
+              zIndex="1"
+            >
+              <H1>Push Documentation Hub</H1>
+              <Span 
+                color={GLOBALS.COLORS.FONT_LIGHT}
+                padding="0 0 60px 0"
+                textAlign="center"
+              >
+                Get started with building native web3 communition for your protocol!
+              </Span>
+              <Link
+                className='hero__button'
+                to="/docs/chat">
+                <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
+                <FiArrowUpRight size={16} />
+              </Link>
+            </ItemV>
+            
+            <ItemV
+              position="absolute"
+              bottom="-25%"
+              left="0"
+              right="0"
+              height="50%"
+            >
+              <PulseStatic />
+              <Pulse>
+                <Pulsate stagger={0}></Pulsate>
+                <Pulsate stagger={1}></Pulsate>
+                <Pulsate stagger={2}></Pulsate>
+                <Pulsate stagger={3}></Pulsate>
+                <Pulsate stagger={4}></Pulsate>
+                <Pulsate stagger={5}></Pulsate>
+                <Pulsate stagger={6}></Pulsate>
+              </Pulse>
+            </ItemV>
+          </HeroHeader>
+        </Content>
         
-        <HomepageSection>
+      
+      </DocsHeroSection>
+
+      {/* QUICKSTART SECTION */}
+      <HomepageSection alignItems="flex-start">
+        <FluidContent>
+          <HomepageSubHeader>
+            Popular Quickstart
+          </HomepageSubHeader>
+
+          <PopularQuickiesList>
+            {QuickstartItems.map((item, idx) => {
+              return (
+                <PopularQuickiesCard key={idx}>
+                  <PopularQuickiesHeader>
+                    <PopularQuickiesTitle>{`${item.title}`}</PopularQuickiesTitle>
+                  </PopularQuickiesHeader>
+                  
+                  <PopularQuickiesContent>
+                    <PopularQuickiesCodeBlock
+                      language="jsx"
+                      showLineNumbers={true}
+                    >
+                      {item.codeblock}
+                    </PopularQuickiesCodeBlock>
+                  </PopularQuickiesContent>
+                </PopularQuickiesCard>
+              );
+            })}
+          </PopularQuickiesList>
+        </FluidContent>
+      </HomepageSection>
+
+
+      {/* TECH DOCS SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <HomepageSubHeader>
+            Technical Documentation
+          </HomepageSubHeader>
+          <TechDocCardList>
+            {TechDocItems.map((props, idx) => (
+              <TechDocItem key={idx} {...props} />
+            ))}
+          </TechDocCardList>
+        </FluidContent>
+      </HomepageSection>
+      
+      {/* SDK SECTION */}
+      <HomepageSection>
+        <FluidContent>
           <ItemH justifyContent="flex-start">
             <HomepageSubHeader>
               Push SDK
@@ -383,7 +289,7 @@ export default function HomepageFeatures(): JSX.Element {
             
           
           <PushSdkCardList justifyContent="flex-start">
-            {SdkList.map((item, idx) => (
+            {SdkItemsList.map((item, idx) => (
               <PushSdkCard>
                 <PushSdkContent
                   href={item.link}
@@ -394,8 +300,7 @@ export default function HomepageFeatures(): JSX.Element {
                       {item.title}
                     </div>
                     <div className='sdk-icon'>
-
-                     <FiArrowUpRight size={24} />
+                      <FiArrowUpRight size={24} />
                     </div>
                   </div>
                 </PushSdkContent>
@@ -403,36 +308,57 @@ export default function HomepageFeatures(): JSX.Element {
             ))}
           </PushSdkCardList>
           
-            {/* <div className='Faqs-main-container'>
-              <div className='sub-container'>
-                <span className="hero_home_Faq_header">
-                  Frequently Asked Questions
-                </span>
-                <Link to='https://push.org/faq' target='_blank'>
-                  <div className='hero_home_explore'>
-                    <p className='hero_home_explore_link'>
-                      Explore FAQs
-                    </p>
-                    <FiArrowUpRight className='arrowUp-icon' />
-                  </div>
-                </Link>
-              </div>
-              <FAQ />
+          {/* <div className='Faqs-main-container'>
+            <div className='sub-container'>
+              <span className="hero_home_Faq_header">
+                Frequently Asked Questions
+              </span>
+              <Link to='https://push.org/faq' target='_blank'>
+                <div className='hero_home_explore'>
+                  <p className='hero_home_explore_link'>
+                    Explore FAQs
+                  </p>
+                  <FiArrowUpRight className='arrowUp-icon' />
+                </div>
+              </Link>
+            </div>
+            <FAQ />
 
-            </div> */}
-        </HomepageSection>
-      </section>
+          </div> */}
+        </FluidContent>
+      </HomepageSection>
 
       <Footer />
-    </section>
+    </Layout>
   );
 }
 
-const HeroHeader = styled.header`
-  padding: 4rem 0;
+const DocsHeroSection = styled(Section)`
+  background: ${GLOBALS.COLORS.BG_DARK};
+
+  padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP}`};
+  padding-bottom: 0px;
+
+  @media ${device.laptop} {
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}`};
+    padding-bottom: 0px;
+  }
+
+  @media ${device.mobileM} {
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding-bottom: 0px;
+  }
+`;
+
+const HeroHeader = styled(ItemV)`
+  padding: 2rem 0 5.5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+
+  & ${H1} {
+    font-size: var(--ifm-h1-font-size);
+  }
 `;
 
 const pulseStaticAnim = keyframes`
@@ -478,12 +404,24 @@ const Pulsate = styled.span`
   animation-delay: calc(1s * ${props => (props.stagger ? props.stagger : 1)});
 `
 
+const FluidContent = styled(Content)`
+  align-self: center;
+  width: 68%;
+  max-width: initial;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
+  @media ${device.laptopL} {
+    width: 100%;
+    box-sizing: border-box;
+  }
+`
+
 const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
-  & svg {
+  & ${Image} {
     height: 44px;
     width: 44px;
-    color: pink;
     margin: 0 0 1rem 0;
   }
 `;
@@ -521,8 +459,32 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
+
+  /* WebKit browsers (Chrome, Safari) */
+  *::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+      background: #CB3FAA;
+      border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  *::-webkit-scrollbar-button {
+      display: none !important;
+  }
+  
+  /* Firefox */
+  * {
+      scrollbar-color: #CB3FAA #f1f1f1;
+      scrollbar-width: thin;
+  }
 
   box-sizing: border-box;
 
@@ -620,10 +582,10 @@ const TechDocContent = styled(Button)`
   }
   
   &:hover {
-    border: 1px solid var(--ifm-color-primary-preferred);;
+    border: 1px solid var(--ifm-color-primary-preferred);
 
-    & svg path {
-      stroke: var(--ifm-color-primary-preferred);;
+    & ${Image} {
+      filter: invert(36%) sepia(21%) saturate(4402%) hue-rotate(291deg) brightness(89%) contrast(94%);
     }
   }
 `;
@@ -664,8 +626,32 @@ const TechDocCodeBlock = styled(CodeBlock)`
   margin: 0px 10px;
   align-self: stretch;
   text-align: initial;
-  overflow: scroll;
+  overflow: auto;
   max-width: 100%;
+
+  /* WebKit browsers (Chrome, Safari) */
+  *::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+      background: #CB3FAA;
+      border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  *::-webkit-scrollbar-button {
+      display: none !important;
+  }
+  
+  /* Firefox */
+  * {
+      scrollbar-color: #CB3FAA #f1f1f1;
+      scrollbar-width: thin;
+  }
 `;
 
 const PushSdkCardList = styled(ItemH)`

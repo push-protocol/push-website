@@ -2,15 +2,16 @@
 slug: what-is-erc-6551-and-how-s-it-better-than-erc-721
 title: 'What is ERC-6551 and How’s It Better than ERC-721?'
 authors: [push]
+image: './cover-image.png'
 tags: [Erc6551, Eip, Ethereum, Nft, Web Tools]
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of What is ERC-6551 and How’s It Better than ERC-721?](./cover-image.png)
 
 
 In 2017, the ERC-721 standard revolutionized the tokenization of digital assets, defining the basic set of rules and functions for creating non-fungible tokens (NFTs). Since then, NFTs have gained significant popularity, transforming how we perceive and interact with digital art, collectibles, virtual real estate, and more.
+
+<!--truncate-->
 
 However, as the NFT space evolved, it became apparent that the ERC-721 standard had certain limitations. For one, the ERC-721 was not compatible with smart contracts and dApps across Ethereum. Additionally, due to static JSON metadata, ERC-721 tokens are inflexible when it comes to Uniform Resource Identifier (URI) codes, security, and efficiency.
 

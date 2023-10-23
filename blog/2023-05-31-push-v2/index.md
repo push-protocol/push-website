@@ -2,14 +2,16 @@
 slug: push-protocol-v2-fee-pool-and-incentivized-chats-are-here
 title: Push Protocol v2 — Fee Pool & Incentivized Chats are here!
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pushprotocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Push Protocol v2 — Fee Pool & Incentivized Chats are here!](./cover-image.webp)
 
 Push Protocol is thrilled to announce the successful completion of the security audit conducted by Chainsafe for our smart contracts version 2. This milestone signifies a significant step forward in ensuring the robustness and reliability of our platform.
+
+<!--truncate-->
 
 ## Key Takeaways
 1. The two main features introduced in version 2 of our smart contracts are:

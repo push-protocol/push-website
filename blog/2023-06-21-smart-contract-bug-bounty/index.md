@@ -2,19 +2,19 @@
 slug: 100-000-of-push-x-immune-fi-bug-bounty-program-goes-live
 title: '$100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Bounty Program, Immuenfi, Bug bounty]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of $100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    Push Smart Contract v2 Bug Bounty Program
+# Push Smart Contract v2 Bug Bounty Program
 
 
 Are you a skilled security researchers looking for an exciting challenge and the opportunity to earn big? Look no further!
+
+<!--truncate-->
 
 We are thrilled to announce the launch of the Push’s collaborative Bug Bounty Program with [Immunefi](https://immunefi.com/) and calling all hackers to participate!
 

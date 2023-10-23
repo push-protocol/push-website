@@ -2,15 +2,16 @@
 slug: epns-x-stox-enabling-communication-for-the-global-portfolio-tracker
 title: 'EPNS x Stox: Enabling Communication for the Global Portfolio Tracker'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Epnsproject ,Stox ,Blockchain ,Portfolio]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of EPNS x Stox: Enabling Communication for the Global Portfolio Tracker](./cover-image.webp)
 
 EPNS and Stox, the portfolio tracker platform for DeFi, team up in a pilot collaboration to bring push notifications to users. As such, Stox will now be able to seamlessly interact with its users and keep them updated about the status of their portfolio, mainly when their NFTs are sold.
+
+<!--truncate-->
 
 ### Stox: The Portfolio Tracker
 Stox is a global, all-asset portfolio tracker that allows users to track their investments in over 25 equity markets, metals, and mutual funds. However, the platform focuses on web3, allowing users to invest in and track their crypto and NFT portfolios. Investors can automatically import their Ethereum and Binance Smart Chain (BSC) trades onto the Stox platform. They can also record any transaction done on the platform.

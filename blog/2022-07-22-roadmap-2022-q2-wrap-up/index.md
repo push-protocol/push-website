@@ -2,19 +2,20 @@
 slug: roadmap-2022-q2-wrap-up
 title: 'Roadmap 2022 — Q2 Wrap Up'
 authors: [push]
+image: './cover-image.webp'
 tags: [Roadmaps, Ethereum, Epnsproject, Notifications, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of Roadmap 2022 — Q2 Wrap Up](./cover-image.webp)
 
 Wow! Half of 2022 is done!
 
 Can’t believe it’s been more than six months since our Mainnet launch!
 
 And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!
+
+<!--truncate-->
 
 At EPNS, we believe in the ‘build at speed’ philosophy and at the same time, support fellow builders in the community to help build and grow the ecosystem. To ensure that, as you might know, we had approved Grants for some amazing projects via our [Push Grants Program](https://gov.epns.io/c/grants/10).
 
@@ -84,7 +85,7 @@ Also, added the <b>Notification Preview</b> feature into the Frontend dApp. We a
 ### Collaborations
 We are building for the community, and bridging the communication gap between Web3 services and users is our mission. To enable this change, EPNS partnered with 21 amazing new dApps in Q2, a staggering 131% increase from the previous quarter. And when we call it amazing, we truly mean it
 
-![Docusaurus Image](./image-1.webp)
+![Collaborations Image](./image-1.webp)
 
 Check out the list below for yourself 👇🏼
 
@@ -99,7 +100,7 @@ Let’s work together! Drop us a line through any of [our channels](https://link
 ### Governance
 We have come a long way since launching our Governance portal back in Q1. Once again, we witnessed healthy participation from the community. We approved a bunch of Improvements and Grants proposals which we believe will be useful to the entire Web3 ecosystem and EPNS.
 
-![Docusaurus Image](./image-2.webp)
+![Launching of Governance portal Image](./image-2.webp)
 
 Special shoutout to mentor.eth for bringing a great proposal for hobbyist developers! ✨
 
@@ -117,7 +118,7 @@ Below you can find a list of all the key proposals that <b>were passed by EPNS G
 ## Hackathons
 Hackathons are an efficient way to bring BUIDLers together and fuel innovation. It also helps us receive genuine product feedback, as well as create brand exposure.
 
-![Docusaurus Image](./image-3.webp)
+![Hackathons Image](./image-3.webp)
 
 In the last three months, we have sponsored four major global hackathons at ETH Amsterdam, HackMoney’22, Graph Hack, and ETH New York, and supported 150+ hackers and builders. These events were some awe-inspiring moments where we met amazing teams building with EPNS. Across all these events, over 50 projects integrated EPNS for a combined prize pool worth $16,000.
 

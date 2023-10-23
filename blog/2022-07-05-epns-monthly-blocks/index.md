@@ -2,17 +2,18 @@
 slug: epns-monthly-blocks
 title: 'EPNS Monthly Blocks'
 authors: [push]
+image: './cover-image.webp'
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of EPNS Monthly Blocks](./cover-image.webp)
 
 We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month.
 
-![Docusaurus Image](./image-1.webp)
+<!--truncate-->
+
+![What's new Image](./image-1.webp)
 
 ### Development 🏗️
 The development shop have been working non-stop on several different items. Not only new feature development, but also fine turning and optimization to ensure we are ready to scale and fulfill the most demanding needs of the web3.
@@ -72,7 +73,7 @@ We also take the opportunity to thank builders and community members that keeps 
 - Check out our latest medium article EPNS at NFT NYC 2022
 - Our co-founder Richa gave a talk on ‘[Why NFT Communication matters](https://twitter.com/epnsproject/status/1539278966250668037?s=20&amp%3Bt=5sCBA1L66oeSknEf2daTsA&utm_source=substack&utm_medium=email)’ during NFT NYC
 
-![Docusaurus Image](./image-2.webp)
+![Before you go Image](./image-2.webp)
 
 The team is hyped and excited about everything to come in this second half of the year. Our always very engaged community together with all the EPNS builders is the perfect formula for success!
 

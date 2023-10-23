@@ -3,14 +3,16 @@
 slug: push-protocol-push-is-now-listed-on-crypto-com
 title: Push Protocol ($PUSH) is Now Listed On Crypto.com!
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, New Listings, Cryptocom]
 
 ---
 
-![Docusaurus Image](./cover-image.png)
-<!--truncate-->
+![Cover image of Push Protocol ($PUSH) is Now Listed On Crypto.com!](./cover-image.png)
 
 We’re glad to share that Push Protocol ($PUSH) is now listed in the Crypto.com App, one of the biggest exchanges in the US with over 80 million customers.
+
+<!--truncate-->
 
 Crypto.com App users can now purchase PUSH with USD, EUR, GBP, and 20+ fiat currencies, and spend it at over 80 million merchants globally using the Crypto.com Visa Card.
 

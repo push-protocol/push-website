@@ -2,15 +2,17 @@
 slug: enhancing-the-de-fi-ux-on-polygon-push-x-quick-swap
 title: 'Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Frensofpush]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲](./cover-image.webp)
 
 Introducing this week’s ‘Frens of Push’: [QuickSwap](https://quickswap.exchange/), the next-gen layer-2 DEX and AMM on Polygon🎉
+
+
+<!--truncate-->
 
 QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book.
 

@@ -3,17 +3,19 @@
 slug: launching-the-future-of-web3-messaging-with-push-chat-and-push-group-chat
 title: Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀
 authors: [push]
+image: './cover-image.gif'
 tags: [ Push Notification, Web3, Blockchain Technology, Web3 Development ]
 
 ---
 
-![Docusaurus Image](./cover-image.gif)
-<!--truncate-->
+![Cover image of Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀](./cover-image.gif)
 
 <!--customheaderpoint-->
 # These latest additions to our suite of web3-native communication products are set to revolutionize the world of web3 messaging.<br/>
 
 We’re thrilled to announce the public launch of Push Chat and Push Group Chat. These latest additions to our suite of web3-native communication products are set to revolutionize the world of web3 messaging offering secure and speedy wallet-to-wallet communication for all.
+
+<!--truncate-->
 
 Push Chat and Push Group Chat is now available to everyone!💪
 

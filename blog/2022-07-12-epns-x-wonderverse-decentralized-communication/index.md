@@ -2,18 +2,19 @@
 slug: epns-x-wonderverse-decentralized-communication-for-web3-s-project-manager
 title: 'EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager'
 authors: [push]
+image: './cover-image.png'
 tags: [Ethereum, Epnsproject, Newsletter, Project Management, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager](./cover-image.png)
 
 <!--customheaderpoint-->
 # EPNS and Wonderverse join forces to enable direct communication for users through decentralized push notifications.
 
 Wonderverse, web3’s project management platform and EPNS team up in a pilot collaboration to bring decentralized push notifications for users. As such, Wonderverse will now be able to seamlessly interact with its users and keep them updated about the status of their tasks and other activities.
+
+<!--truncate-->
 
 ### Bringing Project Management to Web3
 Businesses, no matter how small or big, deal with a myriad of tasks, projects, and plans. The smooth running of all these operations requires collaboration among all the people involved in the business. This is precisely why project management tools rose to fame in the last decade. They allow businesses to collaborate on project planning, resource allocation, and performance monitoring. The tools also provide the ability to establish a pyramid of tasks for effective completion.

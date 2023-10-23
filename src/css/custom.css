@@ -152,11 +152,22 @@
 /* ----- */
 
 /* ----- */
+/* OVERRIDES */
+/* ----- */
+article ul ul, article ul ol, article ol ol, article ol ul {
+  margin: var(--ifm-list-margin);
+}
+/* ----- */
+/* OVERRIDES */
+/* ----- */
+
+/* ----- */
 /* NAV BAR DISPLAY CUSTOM LOGIC */
 /* ----- */
-.navbar {
+/* .navbar {
   display: none;
-}
+} */
+
 
 .DocusaurusNavbar > .navbar {
   display: flex;
@@ -204,10 +215,14 @@ a:hover {
 .navbar--fixed-top {
   background-color: transparent;
   margin: auto !important;
-  width: 86% !important;
+  width: 86%;
   height: 92px;
   border: 0px;
   box-shadow: none;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .navbar__inner {
@@ -229,23 +244,17 @@ a:hover {
   height: 96vh;
   width: 90vw;
   border-radius: 0.5rem;
+  margin: 2vh 5vw;
 }
 
-.navbar__logo {
-  /* height: 3rem !important; */
+.navbar-sidebar .navbar__brand {
+  margin-left: 0;
+  margin-right: auto;
 }
 
-.navbar {
-  /* position: fixed;
-  top: 16px;
-  left: 50%;
-  transform: translate(-50%); */
+.navbar-sidebar .navbar-sidebar__close {
+  margin-left: 0;
 }
-
-/* background image  */
-/* #__docusaurus {
-  background: linear-gradient(180deg, #FDE9FF 0%, #FFFFFF 57.57%);
-} */
 
 .theme-doc-sidebar-container {
   border-right: 0px !important;
@@ -283,7 +292,7 @@ article ol > li::marker {
 }
 
 article ul > li strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ----- */
@@ -407,7 +416,7 @@ article .markdown > p > code {
   line-height: 110%;
   font-weight: bold;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .hero__subtitle {

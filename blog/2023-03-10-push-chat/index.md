@@ -3,14 +3,16 @@
 slug: push-chat-the-solution-to-centralized-messaging
 title: 'Push Chat: The Solution To Centralized Messaging ✅'
 authors: [push]
+image: './cover-image.gif'
 tags: [ Web3, Blockchain Technology, Chat ]
 
 ---
 
-![Docusaurus Image](./cover-image.gif)
-<!--truncate-->
+![Cover image of Push Chat: The Solution To Centralized Messaging ✅](./cover-image.gif)
 
 Developers and researchers in computer networks are constantly seeking ways to improve messaging systems’ security, reliability, and scalability. Why? Because traditional centralized messaging systems have their drawbacks, including vulnerabilities to hacks, censorship and the risk of downtime.
+
+<!--truncate-->
 
 That’s where decentralized messaging protocols come in. Decentralized protocols use blockchain technology and decentralized networks to create a more secure and resilient messaging infrastructure.
 

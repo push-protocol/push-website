@@ -2,17 +2,18 @@
 slug: push-going-big-on-polygon-with-frens
 title: Push Going Big on Polygon with Frens
 authors: [push]
+image: './cover-image.webp'
 tags: [ Announcements, Web3, Push Notification, Polygon, Ethereum]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Push Going Big on Polygon with Frens](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Seven protocols have joined Push to bring better UX to the Polygon Ecosystem.<br/>
 
 Push Protocol has recently launched on Polygon with [Lens](https://medium.com/push-protocol/push-and-lens-powering-ux-with-notifications-and-aaves-lens-85828638e691) being the official launch partner. Today, we are excited to announce, some old, and some new friends are combining forces with Push to grow and strengthen their presence in the Polygon ecosystem.
+
+<!--truncate-->
 
 In today’s post, we are going to explore some of the use cases of these frens supported by Push.
 

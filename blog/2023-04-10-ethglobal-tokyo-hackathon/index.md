@@ -3,17 +3,19 @@
 slug: join-us-for-the-eth-global-tokyo-hackathon
 title: Join us for the ETHGlobal Tokyo Hackathon🗼
 authors: [push]
+image: './cover-image.png'
 tags: [ Ethglobal, Hackathons, Bounty Program, Web3]
 
 ---
 
-![Docusaurus Image](./cover-image.png)
-<!--truncate-->
+![Cover image of Join us for the ETHGlobal Tokyo Hackathon🗼](./cover-image.png)
 
 <!--customheaderpoint-->
 # おはよう東京~🌸 Let’s push the boundaries of web3 communication by building something cool with Push at Japan’s largest web3 hackathon in history, ETHGlobal Tokyo!<br/>
 
 A few weeks ago, we partnered with our frens at ETHGlobal for the [Scaling Ethereum 2023 hackathon](https://twitter.com/pushprotocol/status/1642145186473017344), where thousands of builders from around the world showcased their impressive work.
+
+<!--truncate-->
 
 Now, we’re teaming up with ETHGlobal again for ETHGlobal Tokyo, and we’re challenging you to inspire and surprise the community with your projects using Push Protocol, the most widely used communication protocol in web3.
 

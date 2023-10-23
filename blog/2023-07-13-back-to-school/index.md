@@ -2,12 +2,11 @@
 slug: back-2-school-grant-program
 title: 'Back 2 School Grant Program🎒💜'
 authors: [push]
+image: './cover-image.webp'
 tags: [Web3, Grant, Web Grant, Grant Writing]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Back 2 School Grant Program🎒💜](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Push Grants for Collaborations with University Students
@@ -15,6 +14,8 @@ tags: [Web3, Grant, Web Grant, Grant Writing]
 <b>
     We’re extremely excited to announce a brand new initiative designed to enhance collaboration between Push Protocol and university students!
 </b>
+
+<!--truncate-->
 
 Universities are at the forefront of innovation, and we’re launching a grant program called <b><i>Back2School w/ Push</i></b> to empower students to build, learn, and educate others on cutting-edge web3 development.
 

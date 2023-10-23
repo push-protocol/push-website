@@ -31,7 +31,7 @@ if (typeof window !== 'undefined') {
   lastScrollY = window.scrollY;
 }
 
-function useScrollDirection(mobileMenuActive) {
+function useScrollDirection(mobileMenuActive: unknown) {
   const [scrollDirection, setScrollDirection] = useState(null);
   const [bkg, setBkg] = useState('dark');
 
@@ -107,7 +107,7 @@ function Header() {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
-  const onMobileHeaderMenuClick = (e, menuIndex) => {
+  const onMobileHeaderMenuClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, menuIndex: number) => {
     e.preventDefault();
 
     // if (isMobile) {

@@ -2,17 +2,18 @@
 slug: eth-new-york-buidl-the-future-of-web3-comm-with-epns
 title: 'ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔](./cover-image.webp)
 
 <b>Hello Hello Hello ETHNewYork!</b>
 
 It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
+
+<!--truncate-->
 
 And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!
 
@@ -40,7 +41,7 @@ This you’ll also be able to partake in and it’s running all the way up until
 
 Also, while you’re at the venue, come to our table & grab our Cheat Sheet! Will come in handy! And we’d get to meet you too irl… 🤝😊
 
-![Docusaurus Image](./image-1.jpeg)
+![EPNS Cheatsheet Image](./image-1.jpeg)
 <ImageText>Cheat Sheet for Devs and Hackers</ImageText>
 
 ### TL;DR — Quick Demo Video to get you started
@@ -64,11 +65,11 @@ Integrate EPNS to your dApp and improve UX for all Web3 users
 
 <b><i>Screen1- User is connected to their wallet and has loaded their dApp.</i></b>
 
-![Docusaurus Image](./image-2.png)
+![Screen1- User is connected to their wallet and has loaded their dApp Image](./image-2.png)
 
 <b><i>Screen2 — User sees the EPNS notifications if they are subscribed to any channels in a sidebar which comes on the click on the bell icon.</i></b>
 
-![Docusaurus Image](./image-3.png)
+![Screen2 — User sees the EPNS notifications if they are subscribed to any channels in a sidebar Image](./image-3.png)
 <b>Create your dApp / protocol channel and send notifs</b>
 
 - So, you already integrated EPNS but like to also improve the experience for your users. Well, this is where you can jump in and create your own channel (any service that sends notifications are called channels).
@@ -109,7 +110,7 @@ Hope these ideas are some that you find exciting to build, and if you do have an
 ### ☎️ Who do we reach out to for assistance?
 Feel free to reach out to us at <b>ETHNewYork</b>, our Co-Founder Richa and the EPNS team will be at the venue till the end of the hackathon. And of course on the <b>#sponsor-epns</b> channel on <b>ETHGlobal Discord</b>
 
-![Docusaurus Image](./image-4.jpeg)
+![Push Team Image](./image-4.jpeg)
 
 - [Fabio](http://twitter.com/learn4life6), Our Senior Developer Lead [Balkage#7666 on Discord]
 - [Richa](http://twitter.com/riijo/), Our Co-Founder [Richa | EPNS#321]1
@@ -118,12 +119,12 @@ Feel free to reach out to us at <b>ETHNewYork</b>, our Co-Founder Richa and the 
 ### 🎁EPNS Merch up for grabs!
 While of course we’ll get to know you when we meet up, interact with you guys, and will have some snacks for y’all awesome teams during the hackathon, we also got some goodies as giveaways for you to take back home as memories. So feel free to drop by at our table and grab some of our awesome merch!
 
-![Docusaurus Image](./image-5.webp)
+![EPNS Merch up for grabs Image](./image-5.webp)
 
 ### Throwback: ETHAmsterdam Hackathon
 As you get cracking on BUIDLing with us we thought we’ll sign off with some memorable moments from our last hackathon at [ETHAmsterdam](https://twitter.com/epnsproject/status/1518558686498594816) and you’d know, when we go all out with our hackathons, we go all out!
 
-![Docusaurus Image](./image-6.jpeg)
+![Push team at hackathon Image](./image-6.jpeg)
 All the best! 👍🤞👍🍀
 
 ### About Push Protocol

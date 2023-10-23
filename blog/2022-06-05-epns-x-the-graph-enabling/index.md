@@ -2,16 +2,17 @@
 slug: epns-x-the-graph-enabling-a-better-way-to-access-blockchain-data
 title: 'EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,The Graph ,Blockchain ,Cryptocurrency ,Web3]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
+![Cover Image of EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔](./cover-image.webp)
 <ImageText>EPNS X The Graph</ImageText>
 
-<!--truncate-->
-
 As the blockchain ecosystem has grown, so too has the challenge of accessing on-chain data across multiple blockchain networks. The Graph is an indexing protocol that indexes, organises and makes data accessible from networks like Ethereum and IPFS It is often referred to as “Google” for the blockchains. As more and more data finds its way on-chain, users and developers need to access organised data efficiently.
+
+<!--truncate-->
 
 Today, EPNS is excited to announce integration of The Graph to combine the power of subgraphs with notifications! The integration leverages a core EPNS feature that enables developers to establish customised notifications and “call to actions” so they can more easily access data.
 
@@ -40,7 +41,7 @@ However to do so, both methods required a decent amount of development work to c
 
 With The Graph integration, you’ll now be able to send EPNS notifications directly from your subgraph. With this new integration using the subgraph and EPNS, we are simplifying the process and minimising the need for extra development.
 
-![Docusaurus Image](./image-1.webp)
+![High level integration Image](./image-1.webp)
 <ImageText>High level integration diagram</ImageText>
 
 To expand on this, let’s take a look at how this feature and integration is enabling a better way to access indexed data from the blockchain to send notifications.

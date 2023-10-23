@@ -2,18 +2,19 @@
 slug: an-introduction-to-push-notification-part-2-2-governance-use-cases
 title: 'An Introduction to Push Notification (Part 2.2): Governance Use Cases'
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Web3, Dao, Governance]
 ---
 
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of An Introduction to Push Notification (Part 2.2): Governance Use Cases](./cover-image.webp)
 
 <!--customheaderpoint-->
 # “A proposal to decrease the unbounding period, is passing with 2% in favor with two days left to vote.”<br/>
 
 Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience.
+
+<!--truncate-->
 
 What if you’re a core contributor to the DAO, trusted by the DAO to uphold specific responsibilities and keep the community informed? Updates to the DAO can be transmitted over a communication channel to tell community members about the latest updates and what to look out for directly on their accounts.
 

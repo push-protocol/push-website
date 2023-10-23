@@ -2,19 +2,20 @@
 slug: new-push-yield-farming-rewards-full-details
 title: 'New Push Yield Farming Rewards: Full Details🪙'
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 
 ---
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of New Push Yield Farming Rewards: Full Details🪙](./cover-image.webp)
 
 <!--customheaderpoint-->
-# 
-    2 new liquidity reward pools to earn $PUSH from.
+# 2 new liquidity reward pools to earn $PUSH from.
 
 
 Push Liquidity Rewards Program v1 ended a few weeks ago and v2 is now HERE🎉
+
+
+<!--truncate-->
 
 With v2 comes a whole new set of liquidity rewards that provide robust incentives for all liquidity providers and token holders.
 
@@ -66,7 +67,7 @@ This basically means the longer a user stakes, the more rewards they should be a
 </i></b>
 - Mentioned below is the formula used to calculate the rewards of any staker in a given epoch (N) 👇
 
-![Docusaurus Image](./image-1.webp)
+![User rewards calculation Image](./image-1.webp)
 
 <blockquote>
     <i>

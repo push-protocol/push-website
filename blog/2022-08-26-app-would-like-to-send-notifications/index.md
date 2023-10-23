@@ -2,17 +2,18 @@
 slug: my-app-would-like-to-send-you-push-notifications
 title: ‘My App’ Would Like to Send You Push Notifications
 authors: [push]
+image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Technology, Blockchain, Web3]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of ‘My App’ Would Like to Send You Push Notifications](./cover-image.webp)
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 1.1<br/>
 
 It is hard to imagine modern mobile devices without push notifications. The first push service was launched by Apple in June 2009, the Apple Push Notification Service (APNs). After that, Google followed with a service of their own, Google Cloud to Device Messaging (C2DM). Both companies have led efforts to enhance the push notification technology to where it is today.
+
+<!--truncate-->
 
 Push notifications are a type of message that can be presented in an alert-based format, such as message alerts, pop-ups, and banners. They serve as a mechanism that informs users about all kinds of information. Today, push notifications have dynamic traits with app components directly built into the notification delivery scheme.
 

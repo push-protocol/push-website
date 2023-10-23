@@ -2,17 +2,18 @@
 slug: hello-world-buid-ling-a-working-epns-mobile-app
 title: 'Hello World: BUIDLing a working EPNS Mobile app'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Solidity ,Ethglobal ,Notifications ,Developer]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of Hello World: BUIDLing a working EPNS Mobile app](./cover-image.webp)
 
 It’s another day at [EthGlobal HackMoney hackathon](https://www.ethglobal.co/) and we are back with more detail and further progress.
 
 While most of the dev project cycles start at smart contract and end at dApp, we have taken a different approach and instead are focusing on getting the EPNS mobile app and push notification server built out first.
+
+<!--truncate-->
 
 The reasons? We are quite happy with the app specs and don’t think that will change anytime soon while we wanted to think and iterate a bit more on smart contract so we choose this route. Without further ado, Let’s dive into how we are going to create the magic in the mobile app.
 
@@ -25,7 +26,7 @@ The EPNS mobile app is built using react native and provides the following featu
 - App should be able to send this information to the epns server in a secure format.
 - App should be able to fetch user notifications (kind of like emails) that were already delivered to them.
 
-![Docusaurus Image](./image-1.webp)
+![Notification announcement Image](./image-1.webp)
 <ImageText>We all get a notification, woohoo !!</ImageText>
 
 ### Tech Specs

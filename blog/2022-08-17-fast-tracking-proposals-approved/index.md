@@ -2,15 +2,16 @@
 slug: fast-tracking-proposals-approved
 title: Fast-tracking Proposals, Approved!
 authors: [push]
+image: './cover-image.webp'
 tags: [ Dao, Governance, Web3, Ethereum, Communication]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Fast-tracking Proposals, Approved!](./cover-image.webp)
 
 We are excited to announce that governance proposal <b>PIP-08 — [Fast-tracking of PIPs that get Immediate traction into Snapshot](https://gov.epns.io/t/fast-tracking-of-pips-that-get-immediate-traction-into-snapshot/688)</b> — was [approved via governance voting](https://snapshot.org/#/epns.eth/proposal/0x957d3355d4f402bc6f509166726fd4f2823e04af915ee1f52a3d0eb16a22aead) by a vast majority of 1.2M PUSH in favor.
+
+<!--truncate-->
 
 Approval of PIPs can now take as low as five days depending on traction from the community and after meeting predefined criteria. Continue reading to learn how.
 

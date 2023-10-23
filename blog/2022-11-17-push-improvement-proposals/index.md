@@ -2,19 +2,20 @@
 slug: introducing-push-improvement-proposal-pip
 title: Introducing Push Improvement Proposal (PIP)
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain, Blockchain Technology, Push Notification, Pushprotocol]
 ---
 
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Introducing Push Improvement Proposal (PIP)](./cover-image.webp)
 
 TLDR;
 
 - The Push community can now submit proposals for standardized, community-driven improvements, specs, and standards or improvements to the Push ecosystem via Push Improvement Proposal (PIP).
 - There is now a standardized and transparent process that allows the community to review and contribute to every PIP to ensure each PIP is in the best interest of the Push ecosystem.
 - This will allow users to submit PIPs in a well-defined cycle, through which moderators and the community can take decisions on the proposal.
+
+<!--truncate-->
 
 <center><b>.  .  .</b></center>
 

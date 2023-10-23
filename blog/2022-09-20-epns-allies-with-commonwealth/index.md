@@ -2,17 +2,18 @@
 slug: epns-allies-with-commonwealth-to-bring-governance-notifications-to-users
 title: EPNS Allies With Commonwealth to Bring Governance Notifications to Users
 authors: [push]
+image: './cover-image.png'
 tags: [ Push Notification, Web3, Ethereum, Commonwealth, Defi]
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of EPNS Allies With Commonwealth to Bring Governance Notifications to Users](./cover-image.png)
 
 <!--customheaderpoint-->
 # EPNS and Commonwealth strike a strategic alliance to bring decentralized push notifications for users.<br/>
 
 Commonwealth, the all-in-one platform that lets projects simplify their community management and governance, joins forces with EPNS to enable direct communication with platform users. As such, users of Commonwealth are poised to receive decentralized push notifications pertaining to the governance process. These notifications increase user participation and keep users updated about every step in the governance lifecycle.
+
+<!--truncate-->
 
 ## Commonwealth: On-chain Governance Simplified
 Commonwealth is all-in-one governance and community management protocol. On this platform, anyone can create a community, link their governance contracts, and manage their communities with ease. The core functionalities of Discourse, Snapshot, on-chain voting, synchronous chat tools, and network analytics are all available on one platform for users

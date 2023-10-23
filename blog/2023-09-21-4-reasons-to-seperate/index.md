@@ -2,14 +2,16 @@
 slug: 4-reasons-to-seperate-your-dapp-communication-and-execution-layers
 title: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
 authors: [push]
+image: './cover-image.webp'
+description: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
 tags: [Pushprotocol, Web3, Blockchain Technology]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of 4 reasons to seperate your dApp's communication and execution layer](./cover-image.webp)
 
 Within web3, decentralized systems reign supreme and the concept of modularity is a key component of innovation. The essence of modularity lies in its ability to intricately craft decentralized applications (dApps) with a sophisticated and intellectually elevated approach.
+
+<!--truncate-->
 
 In this blog post, we embark on an exploration of modularity in web3, unearthing its profound implications and far-reaching influence. By effectively separating the communication and execution layers, modularity empowers developers to construct dApps that boast adaptability, scalability, and interconnectivity.
 

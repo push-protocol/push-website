@@ -3,22 +3,23 @@
 slug: empower-your-wallet-app-or-platform-with-push-delivery-nodes
 title: 'Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡'
 authors: [push]
+image: './cover-image.png'
 tags: [ Web3, Developer, Blockchain Development,  Blockchain Technology, Delivery Nodes]
 
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.png)
+![Cover image of Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡](./cover-image.png)
 
 <ImageText>Simplify Web3 Notifications for Your App with Push Delivery Nodes — A One-Stop Solution for Mobile, Desktop or Extension. These Decentralized Nodes Connect Web3 and Web2, Allowing Your Platform to Receive Notifications from Validating and Indexing Storage Nodes, Tied Directly to Your Wallet Address and Multi-Chain Identity</ImageText>
-
-<!--truncate-->
 
 <!--customheaderpoint-->
 # The Swiftest Route to Web3 Notifications, Chats, and More Across Mobile, Desktop, and Extensions.
 
 ## What are the Delivery Nodes?
 Push Delivery Nodes serve as a decentralized solution for connecting web3 and web2. They allow any centralized or decentralized platform to receive communications from Push Storage Nodes, which validate and index all communications and link them to a user’s wallet address and multi-chain identity.
+
+<!--truncate-->
 
 Developers can run these nodes on their backend to connect their web2 infrastructure to web3 communication, allowing for extended communication beyond web3 wallet addresses to web2 platform users. Push Delivery Nodes enable mapping any web2 device token or platform username to a specific web3 wallet address, which can then send alerts to web2 or web2.5 platforms.
 

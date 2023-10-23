@@ -2,17 +2,18 @@
 slug: reef-chain-integrates-epns-to-enable-seamless-communication-with-users
 title: Reef Chain Integrates EPNS to Enable Seamless Communication With Users
 authors: [push]
+image: './cover-image.png'
 tags: [ Push Notification, Blockchain, Web3, Ethereum, Announcements]
 ---
 
-![Docusaurus Image](./cover-image.png)
-
-<!--truncate-->
+![Cover image of Reef Chain Integrates EPNS to Enable Seamless Communication With Users](./cover-image.png)
 
 <!--customheaderpoint-->
 # The emergent blockchain network Reef Chain and EPNS collaborate to bring decentralized push notifications to the platform.<br/>
 
 Reef Chain is a fast, scalable, efficient, and affordable Layer-1 network that aims to integrate all the best aspects of popular blockchains into one platform to offer a world-class experience to users and developers. It is designed to power the next generation of DeFi, NFT, GameFi, and metaverse projects.
+
+<!--truncate-->
 
 The high scalability, instantaneous transactions, and low gas fees are enabled by the novel nominated proof-of-stake (NPoS) consensus that evades wasteful mining. Reef Chain is EVM-compatible and allows developers to easily integrate their existing dapps and protocols without changing the base code.
 

@@ -3,16 +3,18 @@
 slug: push-eth-denver-full-itinerary
 title: Push @ETHDenver Full Itinerary 🌄
 authors: [push]
+image: './cover-image.webp'
 tags: [ Web3, Blockchain Technology, Announcements, Ethdenver, Ethdenver 2023 ]
 
 ---
 
-![Docusaurus Image](./cover-image.webp)
-<!--truncate-->
+![Cover image of Push @ETHDenver Full Itinerary 🌄](./cover-image.webp)
 
 ETHDenver is just around the corner and the Push team is going to be there!
 
 We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person.
+
+<!--truncate-->
 
 We’ll be having a busy week attending several panel discussions and workshops, so if you’re going to be at ETHDenver this year and want to learn more about Push communication tools or meet the creators themselves — here’s where you can find us:
 

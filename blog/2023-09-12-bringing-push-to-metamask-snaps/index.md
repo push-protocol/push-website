@@ -2,17 +2,18 @@
 slug: bringing-push-to-meta-mask-snaps
 title: Bringing Push to MetaMask Snaps
 authors: [push]
+image: './cover-image.webp'
 tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Bringing Push to MetaMask Snaps](./cover-image.webp)
 
 <!--customheaderpoint-->
 # Web3 Notifications directly in your MetaMask wallet.
 
 Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for [MetaMask](https://metamask.io/)!
+
+<!--truncate-->
 
 To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask [Snaps](https://metamask.io/snaps/) — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet.
 

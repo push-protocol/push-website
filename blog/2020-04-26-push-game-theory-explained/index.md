@@ -2,17 +2,18 @@
 slug: push-game-theory-explained
 title: 'Push Game Theory Explained'
 authors: [push]
+image: './cover-image.webp'
 tags: [Game Theory ,Blockchain ,Design ,Notifications ,Blog]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image Push Game Theory Explained](./cover-image.webp)
 
 In this post, we cover Push in more detail and explain the game theory used in its design.
 
 Push provides a easy and simple way to send notifications to users by different Channel Owners (App Owners). Notifications can be sent via the web, mobile, and Web3.0 providers like Metamask. To ensure consistent messaging throughout the project we have created the following nomenclature of terms, roles that will be used in the rest of the project lifecycle.
+
+<!--truncate-->
 
 - Contract Owner — The owner of the contract, specifically the address by whom the contract is deployed.
 - App Owner — Referred to as <b>Channel Owners</b>. The third-party projects, dApps or smart contract, specifically the address which form their identity as well as the custom opt-in group that the subscribed users will receive message from.

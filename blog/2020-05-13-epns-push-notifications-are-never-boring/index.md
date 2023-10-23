@@ -2,15 +2,16 @@
 slug: epns-push-notifications-are-never-boring
 title: 'EPNS push notifications are never boring'
 authors: [push]
+image: './cover-image.webp'
 tags: [Ethereum ,Blockchain ,Ethglobal ,Blog ,Notifications]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover Image of EPNS push notifications are never boring](./cover-image.webp)
 
 We are back, sharing our [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----f5f5a1a2c477--------------------------------) Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the [ETHGlobal Team](https://medium.com/u/8687f4bcbbed?source=post_page-----f5f5a1a2c477--------------------------------) for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at [Aavesome](https://medium.com/u/13bfa9f22920?source=post_page-----f5f5a1a2c477--------------------------------), Compound, etc has made this learning process about DeFi landscape and tech amazingly fun.
+
+<!--truncate-->
 
 To begin with, we never wanted to deliver plain notifications to the users. We mean they are cool but there are so many things you can do when you make notifications behave like your twitter feed. This led us to think a lot about the payloads, analogies and the way we want to present notifications… and that’s how we came up with… drumbeats… notification feed and different formats of notifications.
 
@@ -56,30 +57,30 @@ For example, it would be awesome to get notified when Uniswap V2 platform is lau
 
 We took a stab at generating a few examples for the purpose of demonstrating how epns push notifications look in real life.
 
-![Docusaurus Image](./image-1.webp)
+![Uniswap V2 launch party Notification Image](./image-1.webp)
 <ImageText>Looks like we are invited to the party!!</ImageText>
 
-![Docusaurus Image](./image-2.webp)
+![ENS Notification Image](./image-2.webp)
 <ImageText>General Message Type</ImageText>
 
 Taking it further, epns messages lets the user tap on a link embedded in the notification. This type of message includes a Call to Action(CTA) wrapped in a group message explained above. This CTA+group message type is meant for a group of users to guide them to a dedicated web page of an event, news, sign-up form, etc.
 
 For example, the [ETHGlobal Team](https://medium.com/u/8687f4bcbbed?source=post_page-----f5f5a1a2c477--------------------------------) can send out a notification to all hackers for 2021 Virtual Hackathon registration, the user has to simply click on the link in the feed to find the registration form.
 
-![Docusaurus Image](./image-3.webp)
+![Ethglobal notification Image](./image-3.webp)
 
 Now, these messages get more interesting when integrated with secret messages (meant for a single user). These targeted or smart CTAs can help enhance user experience as they securely deliver the right message to the right user.
 
 For example, Binance DEX can send user notifications once their trade order is fulfilled.
 
-![Docusaurus Image](./image-4.webp)
-![Docusaurus Image](./image-5.webp)
+![EPNS Notification Image](./image-4.webp)
+![Binance Notification Image](./image-5.webp)
 
 But wait!! EPNS notifications can support images as well. A secret message with images can do so many cool things for a user.
 
 For example, if a user's ENS domain name is in grace period and about to expire, the ENS team can send out encrypted QR image-based notification to its users. The user can then simply scan the QR image on their ENS domain page to complete the renewal and payment process.
 
-![Docusaurus Image](./image-6.webp)
+![App Bot Notification Image](./image-6.webp)
 <ImageText>
 Encrypted Image Message
 </ImageText>

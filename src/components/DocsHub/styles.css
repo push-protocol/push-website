@@ -17,11 +17,16 @@
 
 .DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row, .DocsHub .docPage__5DB main .container .row {
   display: flex;
+  margin: 0px;
 }
 
 .DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col, .DocsHub .docPage__5DB main .container .row .col {
   padding: 0;
   max-width: initial !important;
+}
+
+.DocsHub .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module, .DocsHub .skipToContent_fXgn {
+  display: none;
 }
 
 .DocsHub .theme-doc-footer, .DocsHub .pagination-nav {

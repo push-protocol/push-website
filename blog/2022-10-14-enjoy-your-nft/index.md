@@ -2,18 +2,19 @@
 slug: enjoy-your-nft-stay-tuned-for-next-steps
 title: ‘Enjoy Your NFT, Stay Tuned for Next Steps!’
 authors: [push]
+image: './cover-image.webp'
 tags: [ NFT, Metaverse, Pn101, Web3, Push Notification]
 ---
 
 
-![Docusaurus Image](./cover-image.webp)
-
-<!--truncate-->
+![Cover image of Enjoy Your NFT, Stay Tuned for Next Steps!](./cover-image.webp)
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 2.3<br/>
 
 The metaverse without communication is counter-intuitive. Users are disconnected when connecting to digital assets and worlds; Push Protocol aims to change that. With the current web3 experience, it is not practical to expect meaningful and valuable interactions without a robust communication method.
+
+<!--truncate-->
 
 ## Recalling the Metaverse: A Participatory Digital Society
 The metaverse is an ambiguous idea and does not necessarily have to depend on a blockchain to exist. However, metaverse-based projects that use blockchain as their underlying infrastructure lack a means for communication. This necessary component is needed to deliver the intended socio-economic potential of the metaverse.
