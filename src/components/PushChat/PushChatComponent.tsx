@@ -128,10 +128,7 @@ const BottomBar = styled(ItemH)`
   align-items: center;
   color: #fff;
   z-index: 0 !important;
-<<<<<<< HEAD
   margin-top: 20px;
-=======
->>>>>>> aab1d0a74a544b27c03c5be9640467218a8f468e
 
   & ${Span} {
     @media ${device.mobileL} {
@@ -203,6 +200,7 @@ const BrandA = styled(A)`
 `;
 
 const PlayGround = styled(Section)`
+  font-family: 'Strawford', sans-serif;
   flex-direction: column;
   background-image: url(${PlaygroundBg});
   background-position: center;
