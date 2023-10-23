@@ -141,7 +141,7 @@ function BRBParallax() {
 
 const Container = styled.div`
   width: 100%;
-  font-family: Glancyr, sans-serif;
+  font-family: "Glancyr", sans-serif;
   color: white;
   margin-top: -15em;
   margin-bottom: 200px;

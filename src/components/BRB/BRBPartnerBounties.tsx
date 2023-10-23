@@ -116,7 +116,7 @@ const PartnerBountiesContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: Glancyr, sans-serif;
+  font-family: "Glancyr", sans-serif;
   color: #fff;
   margin:0px;
 `;
