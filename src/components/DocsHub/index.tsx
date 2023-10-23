@@ -458,8 +458,32 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
-  overflow: scroll;
+  overflow: auto;
   width: 100%;
+
+  /* WebKit browsers (Chrome, Safari) */
+  *::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+      background: #CB3FAA;
+      border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  *::-webkit-scrollbar-button {
+      display: none !important;
+  }
+  
+  /* Firefox */
+  * {
+      scrollbar-color: #CB3FAA #f1f1f1;
+      scrollbar-width: thin;
+  }
 
   box-sizing: border-box;
 
@@ -601,8 +625,32 @@ const TechDocCodeBlock = styled(CodeBlock)`
   margin: 0px 10px;
   align-self: stretch;
   text-align: initial;
-  overflow: scroll;
+  overflow: auto;
   max-width: 100%;
+
+  /* WebKit browsers (Chrome, Safari) */
+  *::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+      background: #CB3FAA;
+      border-radius: 6px;
+  }
+  
+  *::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  *::-webkit-scrollbar-button {
+      display: none !important;
+  }
+  
+  /* Firefox */
+  * {
+      scrollbar-color: #CB3FAA #f1f1f1;
+      scrollbar-width: thin;
+  }
 `;
 
 const PushSdkCardList = styled(ItemH)`

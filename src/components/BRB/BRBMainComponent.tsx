@@ -211,8 +211,8 @@ export const BRBMainComponent = () => {
                 />
                 <Span
                   fontSize="24px"
-                  fontWeight="900"
-                  style={{ maxHeight: '24px' }}
+                  fontWeight="400"
+                  style={{ maxHeight: '24px', fontFamily:'Glancyr' }}
                 >
                   #BRB
                 </Span>
@@ -357,7 +357,7 @@ export const BRBMainComponent = () => {
             border="1px solid #FC6DFF"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="900"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('schedule')}
           >
             Register Now
@@ -368,7 +368,7 @@ export const BRBMainComponent = () => {
             border="1px solid #E64DE9"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="900"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
@@ -439,7 +439,7 @@ export const BRBMainComponent = () => {
           >
             <SpanContent
               fontSize="112px"
-              fontWeight="900"
+              fontWeight="400"
               color="#E64DE9"
               letterSpacing="0.01"
             >
@@ -536,9 +536,11 @@ const ButtonItem = styled(Button)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
+  font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
+    border: 1px solid transparent;
   }
   &:hover:after {
     opacity: 0;
@@ -553,6 +555,10 @@ const ButtonItem = styled(Button)`
 
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
+  font-family: Glancyr, sans-serif;
+  &:hover{
+    border: 1px solid transparent;
+  }
   @media ${device.mobileL} {
     width: 100%;
   }
@@ -566,6 +572,7 @@ const BrbWrapper = styled(ItemV)`
   justify-content: center;
   align-items: center;
   background: #000;
+  font-family: Glancyr, sans-serif;
 
   & .pushMissingSvg {
     width: 900px;
@@ -630,6 +637,7 @@ const Playground = styled(Section)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  font-family: 'Strawford', sans-serif;
   width: 80%;
   height: 75vh;
   margin: 0 auto;
@@ -644,7 +652,7 @@ const HEADER_VERTICAL_GUTTER = 7;
 const BOX_MAX_WIDTH = 1140;
 
 const StyledHeader = styled.header`
-  font-family: 'Strawford';
+  font-family: 'Strawford', sans-serif;
 
   /* padding: 0px 160px; */
 
@@ -710,6 +718,7 @@ const StyledHeader = styled.header`
 
 const NavText = styled.div`
   color: #fff;
+  font-family: Glancyr, sans-serif;
   text-align: center;
   font-size: 20px;
   font-style: normal;
@@ -776,7 +785,7 @@ const PushLogoBlackContainer = styled(ItemV)`
   color: #fff;
   font-size: 24.207px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -850,6 +859,7 @@ const IconMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
+  font-family: Glancyr, sans-serif;
   // Styles for the flags
   .flag-icon {
     width: 24px;
@@ -858,7 +868,7 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {    
-    font-weight: 900;
+    font-weight: 400;
     font-size: 18px;
     line-height: 142%;
     color: var(--ifm-color-primary-inverse);
