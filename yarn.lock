@@ -5088,6 +5088,7 @@ babel-plugin-polyfill-corejs3@^0.8.5:
     "@babel/helper-define-polyfill-provider" "^0.4.3"
     core-js-compat "^3.32.2"
 
+
 babel-plugin-polyfill-regenerator@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-polyfill-regenerator/-/babel-plugin-polyfill-regenerator-0.5.3.tgz#d4c49e4b44614607c13fb769bcd85c72bb26a4a5"
@@ -5822,7 +5823,7 @@ copy-webpack-plugin@^11.0.0:
     schema-utils "^4.0.0"
     serialize-javascript "^6.0.0"
 
-core-js-compat@^3.31.0, core-js-compat@^3.32.2:
+core-js-compat@^3.31.0, core-js-compat@^3.33.1:
   version "3.33.1"
   resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.33.1.tgz#debe80464107d75419e00c2ee29f35982118ff84"
   integrity sha512-6pYKNOgD/j/bkC5xS5IIg6bncid3rfrI42oBH1SQJbsmYPKF7rhzcFzYCcxYMmNQQ0rCEB8WqpW7QHndOggaeQ==
@@ -6485,11 +6486,9 @@ email-regex@^5.0.0:
   integrity sha512-he76Cm8JFxb6OGQHabLBPdsiStgPmJeAEhctmw0uhonUh1pCBsHpI6/rB62s2GNzjBb0YlhIcF/1l9Lp5AfH0Q==
 
 emoji-picker-react@^4.4.9:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-4.5.3.tgz#e7f7290f169cc60d55f60beb8ae44f64d85a5f25"
-  integrity sha512-sF3ALUvfB2AjgxgYMK0c1CG3a6zDZV9EpwPWCJsu8+H6tO5XQW4Fbz2TqDKhu5Nk+/EiBg+g7ZuR41KYtIRnIA==
-  dependencies:
-    clsx "^1.2.1"
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/emoji-picker-react/-/emoji-picker-react-4.5.4.tgz#e71606a1429e19cbb15f26ab428a56ac5eebf444"
+  integrity sha512-18o+qVqI83ujBwYlwsF5t+1z+vDz1haP197R67foY2/0oCDqxkTS3FtA15K14TkbnDSXNsfbuCerIjTHF6OhFA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
