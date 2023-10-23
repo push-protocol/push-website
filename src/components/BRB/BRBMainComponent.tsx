@@ -636,6 +636,7 @@ const Playground = styled(Section)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  font-family: 'Strawford', sans-serif;
   width: 80%;
   height: 75vh;
   margin: 0 auto;
