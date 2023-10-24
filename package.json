@@ -22,6 +22,7 @@
     "@docusaurus/plugin-content-docs": "2.4.3",
     "@docusaurus/plugin-google-gtag": "2.4.3",
     "@docusaurus/preset-classic": "2.4.3",
+    "@docusaurus/theme-live-codeblock": "2.4.3",
     "@mdx-js/react": "^1.6.22",
     "@pushprotocol/restapi": "^1.4.28",
     "@pushprotocol/uiweb": "0.0.1-alpha.22",
@@ -52,7 +53,7 @@
     "react-use": "^17.4.0",
     "stream-browserify": "3.0.0",
     "stream-http": "^3.2.0",
-    "styled-components": "^5.3.5",
+    "styled-components": "^6.0.8",
     "url": "^0.11.3",
     "vanilla-tilt": "^1.8.0"
   },

@@ -1,0 +1,157 @@
+---
+id: docs-notifications-develop-styling-notificaiton-content
+title: Notification Styling
+hide_title: true
+slug: ./styling-notificaiton-content
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 14
+---
+
+# Styling notification content
+
+Push Protocol enables you to send rich-media-enabled notifications and add suitable details to make them as engaging and useful as possible. Here is a quick dive into all the interesting stuff that you can send in a notification.
+
+<head>
+  <title>Styling Notification Content | Push Notifications | Push Documentation</title>
+</head>
+
+
+## How to design content rich notifications?
+
+```jsx live 
+customPropMinimized="true"
+customPropHidden="true"
+
+function App(props) {
+  const [title, setTitle] = useState('Hello World!');
+  const [message, setMessage] = useState("Let's get started <b>Hey</b>");
+  const [mediaURL, setMediaURL] = useState('');
+  const [ctaLink, setCTALink] = useState('');
+
+  const titleRef = useRef();
+  const messageRef = useRef();
+  const mediaURLRef = useRef();
+  const ctaLinkRef = useRef();
+
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.value = title;
+    }
+
+    if (messageRef.current) {
+      messageRef.current.value = message;
+    }
+
+    if (mediaURLRef.current) {
+      mediaURLRef.current.value = mediaURL;
+    }
+
+    if (ctaLinkRef.current) {
+      ctaLinkRef.current.value = ctaLink;
+    }
+
+  }, [title, message, mediaURL, ctaLink]);
+
+  const generatePreview = () => {
+    const titleText = titleRef.current.value;
+    const messageText = messageRef.current.value;
+    const mediaURLText = mediaURLRef.current.value;
+    const CTAText = ctaLinkRef.current.value;
+
+    setTitle(titleText);
+    setMessage(messageText);
+    setMediaURL(mediaURLText);
+    setCTALink(CTAText);
+  };
+
+  function NotificationInterface() {
+    const inputStyle = {
+      padding: '10px',
+      margin: '10px 0',
+      width: '100%',
+      boxSizing: 'border-box',
+    };
+
+    const textareaStyle = {
+      ...inputStyle,
+      height: '100px',
+      resize: 'vertical',
+    };
+
+    const buttonStyle = {
+      padding: '10px 20px',
+      backgroundColor: '#dd44b9',
+      color: '#FFF',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      marginTop: '20px',
+    };
+
+    return (
+      <div style={{ width: 'auto', margin: '20px auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ flex: 1 }}>
+            <label>Notification Title</label>
+            <input 
+              type="text" 
+              placeholder="Notification Title" 
+              style={inputStyle}
+              ref={titleRef}
+              maxLength={80}
+            />
+          </div>
+        </div>
+        <label>Notification Message</label>
+        <textarea 
+          placeholder="Notification Message" 
+          style={textareaStyle}
+          maxLength={500}
+          ref={messageRef}
+        />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ flex: 1, marginRight: '10px' }}>
+            <label>Media URL (Optional)</label>
+            <input 
+              type="text" 
+              placeholder="Media URL" 
+              style={inputStyle}
+              ref={mediaURLRef}
+            />
+          </div>
+          <div style={{ flex: 1, marginLeft: '10px' }}>
+            <label>Call to Action URL (Optional)</label>
+            <input 
+              type="text" 
+              placeholder="Call to Action URL" 
+              style={inputStyle}
+              ref={ctaLinkRef}
+            />
+          </div>
+        </div>
+        <button style={buttonStyle} onClick={generatePreview}>Generate Preview</button>
+
+        <p /> 
+        <p />
+        <h2>Real time notification preview</h2>
+
+        {/* Ideally you will only import this in your code */}
+        <NotificationItem
+          key='unique_id' // any unique id
+          notificationTitle={title}
+          notificationBody={message}
+          cta={ctaLink}
+          image={mediaURL}
+        />
+       
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <NotificationInterface />
+    </>
+  );
+}
+```

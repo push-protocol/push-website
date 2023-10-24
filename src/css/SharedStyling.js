@@ -290,6 +290,7 @@ export const Button = styled.button`
     props.borderRadius || GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
   position: ${(props) => props.position || "relative"};
   text-decoration: ${(props) => props.textDecoration || "none"};
+  width: ${(props) => props.width || "initial"};
   overflow: ${(props) => props.overflow || "hidden"};
   z-index: ${(props) => props.zIndex || "3"};
   pointer: ${(props) => props.pointer || "hand"};

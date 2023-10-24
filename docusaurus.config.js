@@ -38,6 +38,7 @@ const config = {
   staticDirectories: ["public", "static"],
 
   plugins: [
+    '@docusaurus/theme-live-codeblock',
     [
       "./plugins/blog-plugin",
       {
@@ -179,6 +180,13 @@ const config = {
         defaultMode: "light",
         disableSwitch: false,
         respectPrefersColorScheme: false,
+      },
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: 'bottom',
       },
       // announcementBar: {
       //   id: 'support_us',

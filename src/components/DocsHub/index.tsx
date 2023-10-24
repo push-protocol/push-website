@@ -558,6 +558,7 @@ const TechDocCard = styled(ItemV)`
   min-width: 280px;
   max-width: calc(33.33% - 21.33px);
   box-sizing: border-box;
+  justify-content: flex-start;
 
   @media ${device.laptop} {
     flex: 1;
