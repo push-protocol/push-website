@@ -15,7 +15,8 @@ import { TokenFaucet } from '@site/src/components/TokenFaucet';
 import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import { darkChatTheme } from '@site/src/theme/darkChatTheme';
+import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 
 // Import Assets
 import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
@@ -24,7 +25,7 @@ import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import GLOBALS, { device } from '@site/src/config/globals';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export const ChatComponent = () => {
@@ -50,24 +51,33 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
+         {/* 
+          b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1 -> test group
+          4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
+          */}
+        <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>}>
+            {() => {
+              const uiweb = require("@pushprotocol/uiweb");
+              
+              const ChatUIProvider = uiweb.ChatUIProvider;
+              const ChatViewComponent = uiweb.ChatViewComponent;
+              // const darkChatTheme = uiweb.darkChatTheme;
 
-        {/* <BrowserOnly fallback={<div>Loading...</div>}>
-          {() => {
-            const ChatUIProvider = require('@pushprotocol/uiweb').ChatUIProvider;
-
-            return (<ChatUIProvider
-            env={'prod'}
-            theme={darkChatTheme}
-          > */}
-          
-          <ChatBubbleComponent
-            chatId={"4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"}
-            handleFaucet={setShowFaucet}
-          />
-          {/* </ChatUIProvider>);
-          }}
-        </BrowserOnly> */}
+              return (
+                <>
+                  <ChatUIProvider theme={PushChatTheme}>
+                    <ChatViewComponent
+                      chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
+                      limit={10}
+                      isConnected={true}
+                      onGetTokenClick={()=>setShowFaucet(true)}
+                    />
+                  </ChatUIProvider>
+                </>
+              )
+              
+            }}
+          </BrowserOnly>
         
       </PlayGround>
 
@@ -118,6 +128,7 @@ const BottomBar = styled(ItemH)`
   align-items: center;
   color: #fff;
   z-index: 0 !important;
+  margin-top: 20px;
 
   & ${Span} {
     @media ${device.mobileL} {
@@ -189,12 +200,14 @@ const BrandA = styled(A)`
 `;
 
 const PlayGround = styled(Section)`
+  font-family: 'Strawford', sans-serif;
   flex-direction: column;
   background-image: url(${PlaygroundBg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 80%;
+  height: 75vh;
   margin: 0 auto;
   @media ${device.mobileL} {
     width: 95%;
