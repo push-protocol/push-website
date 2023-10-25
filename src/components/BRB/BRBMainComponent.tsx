@@ -361,7 +361,7 @@ export const BRBMainComponent = () => {
           >
             Register Now
           </ButtonItem>
-          {/* <ButtonBar
+          <ButtonBar
             borderRadius="24px"
             background="#000"
             border="1px solid #E64DE9"
@@ -371,7 +371,7 @@ export const BRBMainComponent = () => {
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
-          </ButtonBar> */}
+          </ButtonBar>
         </NavButtons>
       </ItemTop>
 
@@ -527,8 +527,8 @@ const ButtonItem = styled(Button)`
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
   font-family: Glancyr, sans-serif;
-  &:hover{
-    border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #E64DE9;
   }
   @media ${device.mobileL} {
     width: 100%;
