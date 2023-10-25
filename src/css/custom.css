@@ -1015,3 +1015,17 @@ li {
       margin-left: auto;
   }
 }
+
+/* ------------------ */
+/* DOCUSAURUS SIDEBAR OVERRIDE */
+/* ------------------ */
+li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2.menu__list-item a svg {
+  margin-left: auto;
+}
+
+li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2.menu__list-item a {
+  margin-right: 0px;
+}
+/* ------------------ */
+/* DOCUSAURUS SIDEBAR OVERRIDE ENDS */
+/* ------------------ */
