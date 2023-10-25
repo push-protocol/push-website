@@ -9,12 +9,13 @@ module.exports = function (context, options) {
         resolve: {
           alias: {},
           fallback: {
-            assert: require.resolve('assert'),
+            assert: require.resolve("assert"),
             http: require.resolve("stream-http"),
             https: require.resolve("https-browserify"),
-            stream: require.resolve('stream-browserify'),
-            url: require.resolve('url'),
+            stream: require.resolve("stream-browserify"),
+            url: require.resolve("url"),
             zlib: require.resolve("browserify-zlib"),
+            crypto: require.resolve("crypto-browserify"),
           },
         },
         module: {

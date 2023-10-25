@@ -19,7 +19,6 @@ import styled, { keyframes } from "styled-components";
 // Internal Components
 import { A, Button, Content, H1, H2, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import Footer from '@site/src/segments/Footer';
-import FAQ from './faq';
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
