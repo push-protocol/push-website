@@ -140,10 +140,11 @@ if (idMatch) {
   // Construct image path
   const imageName = `${title.toLowerCase().split(' ').join('_')}.png`;
   const assetLocation = '/static/assets/docs/previews';
+  const assetDocLocation = '/assets/docs/previews';
 
   const previewDirectory = ogDirectory + assetLocation;
   const imagePath = path.join(previewDirectory, imageName);
-  const relativeImagePath = path.join(assetLocation, imageName);
+  const relativeImagePath = path.join(assetDocLocation, imageName);
 
   // Check if the image already exists
   if (!fs.existsSync(imagePath)) {
