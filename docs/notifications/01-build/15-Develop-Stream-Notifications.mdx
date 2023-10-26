@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem'
 const stream = userAlice.stream(account?, { 
   // stream supports other products as well, such as STREAM.CHAT, STREAM.CHAT_OPS 
   // more info can be found at push.org/docs/chat
-	listen: [STREAM.CONNECT, STREAM.NOTIF, STREAM.DISCONNECT], 
+	listen: [STREAM.DISCONNECT], 
 	filter?: {
 		channels?: ['*'], // pass in specific channels to only listen to those
 		chats?: ['*'], // pass in specific chat ids to only listen to those
@@ -45,16 +45,6 @@ const stream = userAlice.stream(account?, {
 // Listen for notifications
 userAlice.stream.on(STREAM.NOTIF, (data: any) => {
   console.log(data)
-})
-
-// Listen for stream connection 
-userAlice.stream.on(STREAM.CONNECT, (data: any) => {
-  console.log('stream is connected')
-})
-
-// Listen for stream disconnection 
-userAlice.stream.on(STREAM.DISCONNECT, (data: any) => {
-  console.log('stream is disconnected')
 })
 ```
 

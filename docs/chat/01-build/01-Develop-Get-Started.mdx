@@ -173,3 +173,26 @@ Alternatively, msg `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` or `pushai.eth` 
 Full API coverage with sample runable code can be found in the examples below:
 - [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/src/pushAPI/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/chat/tutorials/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
 - [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-frontend-react) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/chat/tutorials/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
+
+### Push Chat live playground
+```jsx live 
+// don't forget to import
+// import { ChatUIProvider, ChatViewComponent } from @pushprotocol/restapi;
+function App(props) {
+  return (
+    <>
+      <h2>Live chat with pushai.eth, connect your wallet and chat to get sassy response from PushAI.eth</h2>
+      <div style={{ height: '75vh', margin: '20px auto' }}>
+        <ChatUIProvider>
+          <ChatViewComponent
+            chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
+            limit={10}
+            isConnected={true}
+            onGetTokenClick={()=>setShowFaucet(true)}
+          />
+        </ChatUIProvider>
+      </div>
+    </>
+  );
+}
+```

@@ -58,6 +58,7 @@ const sendNotifRes = await userAlice.channel.send(['*'], {
 | -              | `options.payload.index.index`    | `number`                                          | -       | Index of notification setting for which the notificaiton needs to triggered                                     |
 | -              | `options.payload.index.value`    | `number`                                          | -       | For slider type only, pass the value                                                                            |           
 | -              | `options.payload.embed`          | `string`                                          | -       | Media information like image/video links                                                                        |
+| -              | `options.payload.category`       | `string`                                          | -       | Notification category setting index, if present, the user prefernce (if they have opted for that setting) will determine if notification is delivered to them or not    |
 | -              | `options.payload.meta`           | `{ domain?: string, type: string, data: string }` | -       | Metadata for the notification, including domain, type, and data.                                                |
 | -              | `options.config`                 | `IConfig`                                         | -       | An object containing configuration options for the notification.                                                |
 | -              | `options.config.expiry`          | `number`                                          | -       | Expiry time for the notification in seconds                                                                     |
@@ -97,6 +98,7 @@ interface IPayload {
   body?: string;
   cta?: string;
   embed?: string;
+  category?: number;
   meta?: {
     domain?: string;
     type: string;
