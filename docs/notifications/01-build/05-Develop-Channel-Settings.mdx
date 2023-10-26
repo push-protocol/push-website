@@ -20,8 +20,13 @@ This section covers APIs related to creation of channel setting.
 
 A channel may want to send notification for multiple categories. Ex: Coindesk may want to send notifications for tech, marketing, defi and so on. Similarly, Aave may want to send notifciation for certain loan liquidation value. 
 
-Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it.
+Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it. 
 
+Once you have enabled channel settings, you can access settings prefrence of each user via [Fetch Subscription API](/docs/notifications/build/fetch-subscriptions/ "Fetch subscription API for channel settings"). You can also trigger notifications which target particular settings category via [Send Notification API](/docs/notifications/build/send-notification/ "Send notification API for sending notification meant for vertain category").
+
+:::note
+If a user hasn't opted in for a particular setting and you trigger notification for that setting category then the notification will be filtered out by Push Node.
+:::
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'

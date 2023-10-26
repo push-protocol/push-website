@@ -20,5 +20,8 @@ const ReactLiveScope = {
   React,
   ...React,
   NotificationItem: createBrowserOnlyLibComponentUIWeb("NotificationItem"),
+  ChatUIProvider: createBrowserOnlyLibComponentUIWeb("ChatUIProvider"),
+  ChatViewComponent: createBrowserOnlyLibComponentUIWeb("ChatViewComponent"),
+  darkChatTheme: createBrowserOnlyLibComponentUIWeb("darkChatTheme"),
 };
 export default ReactLiveScope;
