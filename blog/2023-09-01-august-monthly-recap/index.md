@@ -9,11 +9,12 @@ tags: [Pushprotocol, Newsletter ,Web3, Blockchain Technologies]
 
 ![Cover image of August Monthly Recap](./cover-image.webp)
 
+<!--truncate-->
+
 Step into the newest chapter of our Push journey!
 
 August brought a wave of excitement and progress, full of achievements we can’t wait to share with you. Get ready to dive into the world of Push as we unwrap the highlights from this last month.
 
-<!--truncate-->
 
 ## Development⚒️
 We are beyond thrilled to have fully [released PushV2](https://twitter.com/pushprotocol/status/1686783974373216256), a huge leap forward in the way of democratizing web3 communication. With PushV2, we’re introducing a host of new features that will revolutionize interactions on the platform, such as incentivized chats, Push Spaces, customized profiles, and new PushV2 Rewards for token holders.

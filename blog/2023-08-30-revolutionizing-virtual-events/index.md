@@ -9,13 +9,13 @@ tags: [Pushprotocol, Web3, Blockchain Technologies]
 
 ![Cover image of Revolutionizing Virtual Events and Social Interactions with Decentralized Video Chat📹](./cover-image.webp)
 
+<!--truncate-->
+
 <!--customheaderpoint-->
 # Bringing conventional web2 interaction channels to web3.
 
 
 Virtual events have become a cornerstone of modern communication, enabling people from around the world to connect and engage in a wide range of activities. However, traditional virtual event technologies often come with limitations that hinder the full potential of these experiences. With the emergence of Web3 and the power of decentralized technologies, there’s an opportunity to transform virtual events into more immersive, secure, and interactive experiences.
-
-<!--truncate-->
 
 ## The Current Landscape of Virtual Events Technology
 Virtual events leverage various web technologies to enable remote participation and create interactive event experiences. These technologies typically include:

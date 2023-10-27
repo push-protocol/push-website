@@ -9,6 +9,8 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 import styles from "./styles.module.css";
+import styled from "styled-components";
+
 export default function BlogPostItemHeaderTitle({ className }) {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { permalink, title } = metadata;
@@ -18,10 +20,19 @@ export default function BlogPostItemHeaderTitle({ className }) {
       {isBlogPostPage ? (
         title
       ) : (
-        <Link itemProp="url" to={permalink}>
-          {title}
-        </Link>
+        <LinkText>
+          <Link itemProp="url" to={permalink}>
+            {title}
+          </Link>
+        </LinkText>
       )}
     </TitleHeading>
   );
 }
+
+const LinkText = styled.div`
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;

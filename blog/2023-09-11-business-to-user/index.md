@@ -15,12 +15,13 @@ tags:
 
 ![Cover image of Business-to-User Messaging: Push Protocol x Unstoppable Domains](./cover-image.webp)
 
+<!--truncate-->
+
 <!--customheaderpoint-->
 # Welcoming B2U messaging partners Polygon, Blockchain.com and MetaRides
 
 Push Protocol is thrilled to announce our groundbreaking partnership with [Unstoppable Domains](https://unstoppabledomains.com/) to enable business-to-user (B2U) messaging through [Unstoppable Messaging!](https://unstoppabledomains.com/blog/categories/announcements/article/unstoppable-messaging) For businesses, brands, and web3 projects interested in interacting with their community and delivering a better user experience, messaging just got a lot more accessible.
 
-<!--truncate-->
 
 Unstoppable Domains is the leading platform for acquiring, owning, and holding web3 domains. With more than 3.7 million domains registered, 1000 integrations, and 10 top-level domains, Unstoppable Domains is redefining new ways for brands to interact with their users.
 

@@ -18,6 +18,9 @@ import SearchMetadata from "@theme/SearchMetadata";
 import BlogPostItems from "@theme/BlogPostItems";
 import styled from "styled-components";
 
+// Internal Configs
+import { device } from "@site/src/config/globals";
+
 function BlogListPageMetadata(props) {
   const { metadata } = props;
   const {
@@ -52,6 +55,7 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
+      <div>Push Protocol Insights</div>
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
     </HtmlClassNameProvider>
@@ -59,10 +63,19 @@ export default function BlogListPage(props) {
 }
 
 const GridItem = styled.div`
+  width: 1121px !important;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  width: 100%;
+  gap: 33px;
   padding: 32px;
   box-sizing: border-box;
+  margin: 0 auto;
+
+  @media ${device.laptopL} {
+    width: 100% !important;
+  }
+
+  @media ${device.tablet} {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 `;

@@ -21,8 +21,11 @@ export default function BlogPostItem({ children, className }) {
   const { isBlogPostPage } = useBlogPost();
   return (
     <BlogPostItemContainer className={clsx(containerClassName, className)}>
-      <BlogPostItemHeader />
+      {isBlogPostPage && <BlogPostItemHeader />}
+
       <BlogPostItemContent>{children}</BlogPostItemContent>
+      {!isBlogPostPage && <BlogPostItemHeader />}
+
       {isBlogPostPage && <BlogPostItemFooter />}
     </BlogPostItemContainer>
   );
