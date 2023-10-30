@@ -35,6 +35,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import BRBOnline from './BRBOnline';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -263,6 +264,17 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
+                <NavigationMenuItem onClick={() => handleSectionNavigation('online')}>
+                  <NavigationMenuHeader>
+
+                    <Span
+                      fontSize="18px"
+                    >
+                      BRB Online
+                    </Span>
+                  </NavigationMenuHeader>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
                   <NavigationMenuHeader>
 
@@ -386,6 +398,10 @@ export const BRBMainComponent = () => {
       <ScheduleDiv id="schedule">
         <Schedules />
       </ScheduleDiv>
+
+      <BRBOnlineDiv id='online'>
+        <BRBOnline />
+      </BRBOnlineDiv>
 
       <BountyDiv id='bounties'>
         <PartnerBounties />
@@ -593,6 +609,10 @@ const BountyDiv = styled.div`
   width: 100%;
 `;
 
+const BRBOnlineDiv = styled.div`
+  width: 100%;
+`;
+
 const PartnersDiv = styled.div`
   z-index: 20;
   width: 100%;
@@ -600,6 +620,7 @@ const PartnersDiv = styled.div`
 
 const PlaygroundDiv = styled.div`
   width: 100%;
+  margin: 0 0px 120px 0px;
 `;
 
 const Playground = styled(Section)`
