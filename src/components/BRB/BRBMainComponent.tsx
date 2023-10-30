@@ -244,7 +244,7 @@ export const BRBMainComponent = () => {
                 className="navigationMenu"
                 showMobileMenu={isMobileMenuOpen}
               >
-                <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
+                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                   <NavigationMenuHeader>
                     <Span
                       fontSize="18px"
@@ -252,7 +252,7 @@ export const BRBMainComponent = () => {
                       Partners
                     </Span>
                   </NavigationMenuHeader>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                   <NavigationMenuHeader>
