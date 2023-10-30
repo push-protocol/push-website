@@ -17,6 +17,9 @@ import BlogListPaginator from "@theme/BlogListPaginator";
 import SearchMetadata from "@theme/SearchMetadata";
 import BlogPostItems from "@theme/BlogPostItems";
 import styled from "styled-components";
+import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
+import BlogHorizontalScroll from "./BlogHorizontalScroll";
+import { Section } from "@site/src/css/SharedStyling";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -40,10 +43,10 @@ function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
   return (
     <GridItem>
-      {/* // <BlogLayout sidebar={sidebar}> */}
+      {/* <BlogLayout sidebar={sidebar}> */}
       <BlogPostItems items={items} />
       <BlogListPaginator metadata={metadata} />
-      {/* // </BlogLayout> */}
+      {/* </BlogLayout> */}
     </GridItem>
   );
 }
@@ -55,12 +58,59 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
-      <div>Push Protocol Insights</div>
+      {/* <div>Push Protocol Insights</div> */}
+      <SpaceSection>
+        <SpaceContent className="contentBox">
+          {/* <PushProductsScroll /> */}
+          <BlogHorizontalScroll {...props} />
+        </SpaceContent>
+      </SpaceSection>
+
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
     </HtmlClassNameProvider>
   );
 }
+
+const SpaceSection = styled(Section)`
+  width: 100%;
+  padding: 30px 0px 20px 0px;
+  // padding: 180px 0px 20px 0px;
+  // min-height: 70vh;
+  // max-height: 70vh;
+  background: #121315;
+  border-radius: 0 0 48px 48px;
+
+  @media ${device.tablet} {
+    padding: 80px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const SpaceContent = styled.div`
+  // padding: ${(props) => props.padding || "40px 0px"};
+
+  &.contentBox {
+    max-width: 1140px;
+  }
+
+  @media (max-width: 1200px) {
+    padding: ${(props) => props.padding || "10px 0px"};
+
+    &.contentBox {
+      width: 100%;
+    }
+  }
+
+  @media ${device.tablet} {
+    padding: ${(props) => props.padding || "10px 0px"};
+
+    &.contentBox {
+      width: 100%;
+    }
+  }
+`;
 
 const GridItem = styled.div`
   width: 1121px !important;
@@ -69,7 +119,7 @@ const GridItem = styled.div`
   gap: 33px;
   padding: 32px;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
 
   @media ${device.laptopL} {
     width: 100% !important;
