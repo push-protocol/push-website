@@ -25,7 +25,6 @@ gsap.registerPlugin(ScrollTrigger);
 const BACKEND_API = 'https://push.org';
 
 const SlideElement = ({
-  linkContent,
   image,
   alt,
   title,
@@ -81,10 +80,6 @@ const SlideElement = ({
 
     const BlogHorizontalScroll = ( props ) => {
     const { metadata, items, sidebar } = props;
-    // console.log(items)
-    console.log(props, 'new')
-
-    // if(!items) return <></>;
 
     const panels = useRef([]);
     const panelsContainer = useRef();
@@ -94,28 +89,6 @@ const SlideElement = ({
     const createPanelsRefs = (panel, index) => {
       panels.current[index] = panel;
     };
-
-    // useEffect(() => {
-    //     const totalPanels = panels.current.length;
-    //     const mm = gsap.matchMedia();
-
-    //     mm.add('(min-width: 1199px)', () => {
-    //         gsap.to(panels.current, {
-    //             xPercent: -79 * (totalPanels - 1),
-    //             ease: 'none',
-    //             scrollTrigger: {
-    //               trigger: panelsContainer.current,
-    //               pin: true,
-    //               scrub: true,
-    //               // base vertical scrolling on how wide the container is so it feels more natural.
-    //               end: () => '+=' + panelsContainer.current.offsetWidth
-    //             },
-    //             "(max-width: 1023px)": function() { },
-    //             "all": function() { }
-    //           });
-    //       });
-    //       return () => mm.revert();
-    //   }, []);
   
     useLayoutEffect(() => {
      
@@ -152,10 +125,9 @@ const SlideElement = ({
               ref={panelsContainer}
             >
               <SlideElement sendRef={(e) => createPanelsRefs(e,0)} 
-                linkContent = "Build Push Notifications"
                 image = {`${BACKEND_API}${items?.[0]?.content?.assets?.image}`}
-                alt={'Illustration showing Push Notifications'}
                 title={items?.[0]?.content?.frontMatter?.title}
+                alt={items?.[0]?.content?.frontMatter?.title}
                 addMargin={false}
                 link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
                 content={items?.[0]?.attributes?.body}
@@ -164,9 +136,8 @@ const SlideElement = ({
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,1)} 
-                linkContent = "Build with Push Chat"
                 image = {`${BACKEND_API}${items?.[1]?.content?.assets?.image}`}
-                alt={'Illustration showing Push Chat'}
+                alt={items?.[1]?.content?.frontMatter?.title}
                 title={items?.[1]?.content?.frontMatter?.title}
                 addMargin={true}
                 link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
@@ -177,9 +148,8 @@ const SlideElement = ({
               />
 
               <SlideElement sendRef={(e) => createPanelsRefs(e,2)} 
-                linkContent = "Explore Push DAO"
                 image = {`${BACKEND_API}${items?.[2]?.content?.assets?.image}`}
-                alt={'Illustration showing Push DAO'}
+                alt={items?.[2]?.content?.frontMatter?.title}
                 title={items?.[2]?.content?.frontMatter?.title}
                 addMargin={true}
                 link="https://gov.push.org/"

@@ -19,7 +19,9 @@ import BlogPostItems from "@theme/BlogPostItems";
 import styled from "styled-components";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import BlogHorizontalScroll from "./BlogHorizontalScroll";
+import MobileBlogHorizontalScroll from "./MobileBlogHorizontalScroll";
 import { Section } from "@site/src/css/SharedStyling";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -42,15 +44,16 @@ function BlogListPageMetadata(props) {
 function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
   return (
-    <GridItem>
-      {/* <BlogLayout sidebar={sidebar}> */}
-      <BlogPostItems items={items} />
-      <BlogListPaginator metadata={metadata} />
-      {/* </BlogLayout> */}
-    </GridItem>
+    <>
+      <GridItem>
+        <BlogPostItems items={items} />
+        <BlogListPaginator metadata={metadata} />
+      </GridItem>
+    </>
   );
 }
 export default function BlogListPage(props) {
+  const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   return (
     <HtmlClassNameProvider
       className={clsx(
@@ -58,11 +61,17 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
+      <div style={{ backgroundColor: "#121315" }}>
+        <BlogLayout></BlogLayout>
+      </div>
       {/* <div>Push Protocol Insights</div> */}
       <SpaceSection>
         <SpaceContent className="contentBox">
-          {/* <PushProductsScroll /> */}
-          <BlogHorizontalScroll {...props} />
+          {!isSwiper ? (
+            <BlogHorizontalScroll {...props} />
+          ) : (
+            <MobileBlogHorizontalScroll {...props} />
+          )}
         </SpaceContent>
       </SpaceSection>
 
@@ -74,7 +83,7 @@ export default function BlogListPage(props) {
 
 const SpaceSection = styled(Section)`
   width: 100%;
-  padding: 30px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
   // padding: 180px 0px 20px 0px;
   // min-height: 70vh;
   // max-height: 70vh;

@@ -11,6 +11,7 @@ import BlogSidebar from "@theme/BlogSidebar";
 export default function BlogLayout(props) {
   const { sidebar, toc, children, ...layoutProps } = props;
   const hasSidebar = sidebar && sidebar.items.length > 0;
+  console.log(props, "layout");
   return (
     <Layout {...layoutProps}>
       <div className="container margin-vert--lg">
