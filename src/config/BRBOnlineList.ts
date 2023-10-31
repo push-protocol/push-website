@@ -8,6 +8,14 @@ export const brbOnlineList = [
         time: '7:30PM @ Push Protocol YouTube'
     },
     {
+        srcref: 'chainsafe',
+        link: 'https://pushprotocol.notion.site/ChainSafe-3e9e4eef06d94920b7b8fd6184ba333c?pvs=4',
+        alt: 'Chain safe, Partner of Push, #BRBIndia, pan-India dev tour',
+        text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
+        date: 'Sat, Nov 4, 2023',
+        time: '7:30PM @ Push Protocol YouTube'
+      },
+    {
         srcref: 'thegraph',
         link: 'https://pushprotocol.notion.site/The-Graph-0fafeb638dd24218b0fcb257ec9d22b7?pvs=4',
         alt: 'The Graph, Partner of Push, #BRBIndia, pan-India dev tour',

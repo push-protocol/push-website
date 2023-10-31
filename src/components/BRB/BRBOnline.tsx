@@ -135,7 +135,6 @@ const GridItem = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 33px;
-//   padding: 32px;
 
   @media ${device.tablet} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -170,6 +169,15 @@ const PartnerLine = styled.div`
     & .buttonId {
       background: ${(props) => (!props.disabled ? '#E64DE9 !important' : 'transparent')};
     }
+  }
+
+ 
+
+  @media (min-width: 1024px) {
+    &:last-child {
+        justify-self: center;
+        grid-column-start: 2;
+      }
   }
 
 
