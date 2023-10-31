@@ -129,6 +129,8 @@ function Header() {
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
+
+      
       {/* ALERT SECTION */}
       <Alert />
 

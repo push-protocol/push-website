@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 // Internal Components
 import { BRBMainComponent } from '@site/src/components/BRB/BRBMainComponent';
+import { BRBAlert } from '@site/src/components/BRB/BRBAlert';
 
 // Import Assets
 
@@ -49,7 +50,8 @@ function BRB() {
           })}
         </script>
       </Head>
-      <BRBMainComponent />
+
+        <BRBMainComponent />
     </Layout>
   );
 }

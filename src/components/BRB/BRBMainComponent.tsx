@@ -21,6 +21,7 @@ import ImageHolder from '@site/src/components/ImageHolder';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
+import { BRBAlert } from './BRBAlert';
 
 // Import Assets
 import ArrowIcon from '@site/static/assets/ArrowIcon.svg';
@@ -198,6 +199,9 @@ export const BRBMainComponent = () => {
         showMobileMenu={showMobileMenu}
         className={`header ${headerClass}`}
       >
+
+      <BRBAlert />
+
         <Section padding="0 0 0 0">
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
