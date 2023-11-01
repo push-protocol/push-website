@@ -1,0 +1,49 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+:root {
+  --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
+}
+
+.tagRegular {
+  border: 1px solid #BAC4D6;
+  transition: border var(--ifm-transition-fast);
+  border-radius: 62px;
+  padding: 16px 32px;
+  color: #1E1E1E;
+  /* padding: 0.2rem 0.5rem 0.3rem; */
+
+  font-family: Strawford;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 17.6px */
+  letter-spacing: -0.48px;
+}
+
+.tagRegular:hover{
+  text-decoration: none;
+  color: #D53A94;
+  border: 1px solid #D53A94;
+}
+
+.tagWithCount {
+  border-radius: 62px;
+  color: #1E1E1E;
+
+  font-family: Strawford;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 17.6px */
+  letter-spacing: -0.48px;
+}
+
+.tagWithCount:hover {
+  text-decoration: underline;
+  color: #D53A94;
+}

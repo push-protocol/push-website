@@ -14,13 +14,7 @@ export default function PaginatorNavLink(props) {
   const { permalink, title, subLabel, isNext } = props;
   const history = useHistory();
   return (
-    <NavLink
-      // className={clsx(
-      //   "pagination-nav__link",
-      //   isNext ? "pagination-nav__link--next" : "pagination-nav__link--prev",
-      // )}
-      onClick={() => history.push(permalink)}
-    >
+    <NavLink onClick={() => history.push(permalink)}>
       {subLabel && <div>{subLabel}</div>}
       <div>{title}</div>
     </NavLink>
