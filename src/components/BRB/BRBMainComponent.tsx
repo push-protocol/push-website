@@ -21,6 +21,7 @@ import ImageHolder from '@site/src/components/ImageHolder';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
+import { BRBAlert } from './BRBAlert';
 
 // Import Assets
 import ArrowIcon from '@site/static/assets/ArrowIcon.svg';
@@ -35,6 +36,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import BRBOnline from './BRBOnline';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -197,6 +199,9 @@ export const BRBMainComponent = () => {
         showMobileMenu={showMobileMenu}
         className={`header ${headerClass}`}
       >
+
+      <BRBAlert />
+
         <Section padding="0 0 0 0">
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
@@ -243,7 +248,7 @@ export const BRBMainComponent = () => {
                 className="navigationMenu"
                 showMobileMenu={isMobileMenuOpen}
               >
-                <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
+                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                   <NavigationMenuHeader>
                     <Span
                       fontSize="18px"
@@ -251,7 +256,7 @@ export const BRBMainComponent = () => {
                       Partners
                     </Span>
                   </NavigationMenuHeader>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                   <NavigationMenuHeader>
@@ -259,6 +264,17 @@ export const BRBMainComponent = () => {
                       fontSize="18px"
                     >
                       Schedule
+                    </Span>
+                  </NavigationMenuHeader>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem onClick={() => handleSectionNavigation('online')}>
+                  <NavigationMenuHeader>
+
+                    <Span
+                      fontSize="18px"
+                    >
+                      BRB Online
                     </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
@@ -386,6 +402,10 @@ export const BRBMainComponent = () => {
       <ScheduleDiv id="schedule">
         <Schedules />
       </ScheduleDiv>
+
+      <BRBOnlineDiv id='online'>
+        <BRBOnline />
+      </BRBOnlineDiv>
 
       <BountyDiv id='bounties'>
         <PartnerBounties />
@@ -593,6 +613,10 @@ const BountyDiv = styled.div`
   width: 100%;
 `;
 
+const BRBOnlineDiv = styled.div`
+  width: 100%;
+`;
+
 const PartnersDiv = styled.div`
   z-index: 20;
   width: 100%;
@@ -600,6 +624,7 @@ const PartnersDiv = styled.div`
 
 const PlaygroundDiv = styled.div`
   width: 100%;
+  margin: 0 0px 120px 0px;
 `;
 
 const Playground = styled(Section)`
