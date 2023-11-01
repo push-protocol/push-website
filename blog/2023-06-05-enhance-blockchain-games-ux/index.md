@@ -98,8 +98,3 @@ By leveraging Push Protocol, a potential game like the one mentioned here, can c
 
 Push Protocol holds immense potential for revolutionizing in-game economies and social interactions. By enabling real-time communication and transactions, Push Protocol can foster more engaging and dynamic gaming experiences. As the industry continues to evolve, broader adoption of Push Protocol in gaming may lead to lasting impacts on player experiences and the overall landscape of the gaming sector.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

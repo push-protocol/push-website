@@ -18,13 +18,11 @@ export default function BlogPostItemHeaderTitle({ className }) {
   return (
     <TitleHeading className={clsx(styles.title, className)} itemProp="headline">
       {isBlogPostPage ? (
-        title
+        <PostTitle>{title}</PostTitle>
       ) : (
-        <LinkText>
-          <Link itemProp="url" to={permalink}>
-            {title}
-          </Link>
-        </LinkText>
+        <Link itemProp="url" to={permalink}>
+          <LinkText>{title}</LinkText>
+        </Link>
       )}
     </TitleHeading>
   );
@@ -35,4 +33,26 @@ const LinkText = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
+  color: #121315 !important;
+
+  font-family: Strawford;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+
+  &:hover {
+    color: #dd44b9 !important;
+  }
+`;
+
+const PostTitle = styled.div`
+  color: #121315;
+
+  font-family: Strawford;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 55.5px;
 `;

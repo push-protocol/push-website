@@ -4,6 +4,8 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-/// <reference types="react" />
-import type { Props } from '@theme/BlogPostItem/Container';
-export default function BlogPostItemContainer({ children, className, }: Props): JSX.Element;
+import React from 'react';
+import Link from '@docusaurus/Link';
+export default function MDXA(props) {
+  return <Link {...props} />;
+}

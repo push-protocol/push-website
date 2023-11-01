@@ -10,6 +10,7 @@ import BlogPostItem from "@theme/BlogPostItem";
 export default function BlogPostItems({
   items,
   component: BlogPostItemComponent = BlogPostItem,
+  list,
 }) {
   return (
     <>
@@ -18,7 +19,7 @@ export default function BlogPostItems({
           key={BlogPostContent.metadata.permalink}
           content={BlogPostContent}
         >
-          <BlogPostItemComponent>
+          <BlogPostItemComponent list={list}>
             <BlogPostContent />
           </BlogPostItemComponent>
         </BlogPostProvider>

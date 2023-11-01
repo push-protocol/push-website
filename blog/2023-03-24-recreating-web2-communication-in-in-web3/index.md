@@ -72,8 +72,3 @@ To learn more about Channel Aliases and Delegates, you can refer to [Push docume
 ## Conclusion
 Communication channels play a crucial role in enabling decentralized applications and services to communicate with their users. Push Protocol offers a chain-agnostic solution that enables communication across ecosystems and networks. Following the straightforward steps outlined in this section, you can easily set up a communication channel on one of the compatible chains and communicate seamlessly.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -10,14 +10,23 @@ import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
 import BlogPostItemHeaderAuthors from "@theme/BlogPostItem/Header/Authors";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 
-export default function BlogPostItemHeader() {
+export default function BlogPostItemHeader({ list }) {
   const { isBlogPostPage } = useBlogPost();
-
-  return (
-    <header>
-      <BlogPostItemHeaderTitle />
-      <BlogPostItemHeaderInfo />
-      {isBlogPostPage && <BlogPostItemHeaderAuthors />}
-    </header>
-  );
+  if (list) {
+    return (
+      <header>
+        <BlogPostItemHeaderInfo />
+        <BlogPostItemHeaderTitle />
+        {isBlogPostPage && <BlogPostItemHeaderAuthors />}
+      </header>
+    );
+  } else {
+    return (
+      <header>
+        <BlogPostItemHeaderTitle />
+        <BlogPostItemHeaderInfo />
+        {isBlogPostPage && <BlogPostItemHeaderAuthors />}
+      </header>
+    );
+  }
 }

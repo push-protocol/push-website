@@ -22,33 +22,43 @@ export default function BlogPostItemFooter() {
     return null;
   }
   return (
-    <footer
-      className={clsx(
-        "row docusaurus-mt-lg",
-        isBlogPostPage && styles.blogPostFooterDetailsFull,
-      )}
-    >
-      {tagsExists && (
-        <div className={clsx("col", { "col--9": truncatedPost })}>
-          <TagsListInline tags={tags} />
-        </div>
-      )}
-
-      {isBlogPostPage && editUrl && (
-        <div className="col margin-top--sm">
-          <EditThisPage editUrl={editUrl} />
-        </div>
-      )}
-
-      {truncatedPost && (
-        <div
-          className={clsx("col text--right", {
-            "col--3": tagsExists,
-          })}
+    <>
+      {isBlogPostPage && (
+        <footer
+          className={clsx(
+            "row docusaurus-mt-lg",
+            isBlogPostPage && styles.blogPostFooterDetailsFull,
+          )}
         >
+          {tagsExists && (
+            <div className={clsx("col", { "col--9": truncatedPost })}>
+              <TagsListInline tags={tags} />
+            </div>
+          )}
+
+          {editUrl && (
+            <div className="col margin-top--sm">
+              <EditThisPage editUrl={editUrl} />
+            </div>
+          )}
+
+          {truncatedPost && (
+            <div
+              className={clsx("col text--right", {
+                "col--3": tagsExists,
+              })}
+            >
+              <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+            </div>
+          )}
+        </footer>
+      )}
+
+      {!isBlogPostPage && truncatedPost && (
+        <div>
           <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
         </div>
       )}
-    </footer>
+    </>
   );
 }

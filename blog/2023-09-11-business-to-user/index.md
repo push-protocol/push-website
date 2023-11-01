@@ -103,8 +103,4 @@ Stay tuned for more details on this opportunity.
 
 This partnership between Push Protocol and Unstoppable Domains isn’t just about communication, it’s about revolutionizing how businesses operate and making web3 more accessible and user-friendly. Join us on this unstoppable journey into the future of web3, where communication knows no bounds, and digital identity is truly in your hands.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

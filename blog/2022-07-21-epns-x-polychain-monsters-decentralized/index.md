@@ -37,8 +37,4 @@ Polychain Monsters are beautifully animated cross-chain NFTs with varying scarci
 Stay in touch! [Web](http://polychainmonsters.com/), [Discord](https://discord.gg/polychainmonsters), [Twitter](http://twitter.com/polychainmon), [Reddit](http://reddit.com/r/polychainmonsters), [Telegram](http://t.me/polychainmonsters), [OpenSea (ETH / Polygon)](https://opensea.io/assets/polychainmonsters), [tofuNFT (BNB Smart Chain / Polygon)](https://tofunft.com/collection/polychain-monsters/items), [Magic Eden (Solana)](https://magiceden.io/marketplace/exomon)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

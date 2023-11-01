@@ -46,9 +46,5 @@ QuickSwap stands as a next-generation layer-2 DEX and AMM operating on Polygon. 
 
 For more information about Quickswap, check out their: [Website](https://quickswap.exchange/#/), [Twitter](https://twitter.com/QuickswapDEX), [Telegram](https://t.me/QuickSwapDEX), [Discord](https://discord.com/invite/dSMd7AFH36), [Youtube](https://www.youtube.com/channel/UCrPlF-DBwD-UzLFDzJ4Z5Fw), [Medium](https://quickswap-layer2.medium.com/)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

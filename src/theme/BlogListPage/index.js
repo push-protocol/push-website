@@ -45,6 +45,9 @@ function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
   return (
     <>
+      <ListItem>
+        <BlogPostItems items={items.slice(0, 3)} list={true} />
+      </ListItem>
       <GridItem>
         <BlogPostItems items={items} />
         <BlogListPaginator metadata={metadata} />
@@ -61,11 +64,11 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
-      <div style={{ backgroundColor: "#121315" }}>
+      <div>
         <BlogLayout></BlogLayout>
       </div>
-      {/* <div>Push Protocol Insights</div> */}
-      <SpaceSection>
+
+      {/* <SpaceSection>
         <SpaceContent className="contentBox">
           {!isSwiper ? (
             <BlogHorizontalScroll {...props} />
@@ -73,7 +76,7 @@ export default function BlogListPage(props) {
             <MobileBlogHorizontalScroll {...props} />
           )}
         </SpaceContent>
-      </SpaceSection>
+      </SpaceSection> */}
 
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
@@ -122,11 +125,11 @@ export const SpaceContent = styled.div`
 `;
 
 const GridItem = styled.div`
-  width: 1121px !important;
+  width: 1120px !important;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 33px;
-  padding: 32px;
+  // padding: 32px;
   box-sizing: border-box;
   margin: 100px auto 0 auto;
 
@@ -137,4 +140,11 @@ const GridItem = styled.div`
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+`;
+
+const ListItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 1120px;
+  margin: auto;
 `;

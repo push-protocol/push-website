@@ -41,8 +41,4 @@ Step 4: Promote to Snapshot with immediate vote open for 3 days.
 2. Proposals that don’t meet the criteria on any steps will continue the standard flow.
 3. For the comments on the proposal to be considered, they must be made by users with at least a <b>Basic</b> trust level (Level 1). The questions asked by users with<b> Member</b> trust level (Level 2) and above must be answered to continue with the Fast-track process. More information on trust levels can be found [here](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
