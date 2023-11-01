@@ -322,7 +322,7 @@ const Notifs = [
         <Span>
           Yes, any protocol that wants to send notifications will need to activate themselves on Push protocol, read{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-guides/create-your-notif-channel"
+            href="https://push.org/docs/notifications/tutorials/create-your-channel/"
             target={'_blank'}
           >
             How to create channel
@@ -385,7 +385,7 @@ const Chat = [
         <Span>
           Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP Keys. Read more about{' '}
           <AMod
-            href="https://docs.push.org/developers/concepts/push-chat-for-web3"
+            href="https://push.org/docs/chat"
             target={'_blank'}
           >
             how it works here.
@@ -446,7 +446,7 @@ const IntegratingPush = [
         <Span>
           The{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details"
+            href="https://push.org/docs/notifications/quickstart/"
             target={'_blank'}
           >
             Push JS SDK
@@ -468,24 +468,24 @@ const IntegratingPush = [
         <Span>
           Other ways of integrating Push notifications are via{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-guides/sending-notifications/using-smart-contract"
+            href="https://push.org/docs/notifications/build/send-notification-via-smart-contract/"
             target={'_blank'}
           >
             smart contracts
           </AMod>
           ,{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-guides/sending-notifications/using-subgraph-gasless"
+            href="https://push.org/docs/notifications/tutorials/send-notification-via-subgraph"
             target={'_blank'}
           >
             subgraphs
           </AMod>
           , and{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless"
+            href="https://push.org/docs/notifications"
             target={'_blank'}
           >
-            showrunners framework.
+            more as outlined here!
           </AMod>
         </Span>
       </Answer>
@@ -517,14 +517,14 @@ const IntegratingPush = [
         <Span>
           Push Chat integration -{' '}
           <AMod
-            href="https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/epnsproject-sdk-uiweb/uiweb-0.2.3-push-support-chat"
+            href="https://push.org/docs/chat"
             target={'_blank'}
           >
             Docs
           </AMod>
           ,
           <AMod
-            href="https://github.com/ethereum-push-notification-service/push-sdk-sandbox"
+            href="https://github.com/ethereum-push-notification-service/push-sdk"
             target={'_blank'}
           >
             Github
@@ -533,7 +533,7 @@ const IntegratingPush = [
         <Span>
           Push Notifications -{' '}
           <AMod
-            href="https://docs.push.org/developers/"
+            href="https://push.org/docs/notifications"
             target={'_blank'}
           >
             Docs

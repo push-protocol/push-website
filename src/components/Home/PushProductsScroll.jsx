@@ -137,7 +137,7 @@ const HorizontalScroll = () => {
           alt={t('home.horizontal-scroll-section.slide1.image-alt')}
           title={t('home.horizontal-scroll-section.slide1.title')}
           addMargin={false}
-          link="https://docs.push.org/developers/developer-guides/integrating-on-frontend/integrating-notifications"
+          link="https://push.org/docs/notifications"
         />
 
         <SlideElement sendRef={(e) => createPanelsRefs(e, 1)}
@@ -147,7 +147,7 @@ const HorizontalScroll = () => {
           alt={t('home.horizontal-scroll-section.slide2.image-alt')}
           title={t('home.horizontal-scroll-section.slide2.title')}
           addMargin={true}
-          link="https://docs.push.org/developers/developer-guides/integrating-push-chat"
+          link="https://push.org/docs/chat"
           paddingMobile={"30px 0px"}
         />
 

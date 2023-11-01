@@ -276,7 +276,7 @@ export default function HomepageFeatures(): JSX.Element {
             <HomepageSubHeader>
               Push SDK
             </HomepageSubHeader>
-            <Link to='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details' target='_blank'>
+            <Link to='https://www.npmjs.com/package/@pushprotocol/restapi' target='_blank'>
               <div className='hero_home_explore'>
                 <p className='hero_home_explore_link'>
                   Explore SDK
