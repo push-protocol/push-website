@@ -11,7 +11,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 We are excited to announce that Ethereum Push Notification Service(EPNS) protocol has officially kicked off, yay !!
 
-EPNS protocol is a way to send notifications out to users of different dApps (or potentially all users of Ethereum itself) via Web, Mobile (push notifications) or Web3 Providers. EPNS App Owners called Channels Owners can send mass unencrypted notifications (all users in their specific app group), or encrypted targetted messages to specific users in their App Group called Channels.
+EPNS protocol is a way to send notifications out to users of different dApps (or potentially all users of Ethereum itself) via Web, Mobile (push notifications) or Web3 Providers. EPNS App Owners called Channels Owners can send mass unencrypted notifications (all users in their specific app group), or encrypted targeted messages to specific users in their App Group called Channels.
 
 <!--truncate-->
 

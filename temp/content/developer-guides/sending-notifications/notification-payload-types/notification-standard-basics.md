@@ -54,7 +54,7 @@ For most part except for Smart Contracts, [Push SDK](../../../developer-tooling/
 * **Notification Content** - Defines the notification content which consists of:
   * Notification JSON Object - What is shown on your home screen
   * Payload JSON Object - What is shown and stored on your feed
-  * Recipients - 0x0 for type 1 (broadcast), 0xTarget for type 3 (Targetted) and \[0x01, 0x02, 0x03, ..., 0xN] for type 4 (Subset)&#x20;
+  * Recipients - 0x0 for type 1 (broadcast), 0xTarget for type 3 (Targeted) and \[0x01, 0x02, 0x03, ..., 0xN] for type 4 (Subset)&#x20;
 
 ```json
 // Example Raw Content for targeted notifcation, abstracted away by SDK
@@ -139,14 +139,14 @@ While any Notification Identity can be passed in any of the interactions, It's r
 ```solidity
 IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotification(
     YOUR_CHANNEL_ADDRESS, // from channel - recommended to set channel via dApp and put it's value -> then once contract is deployed, go back and add the contract address as delegate for your channel
-    to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+    to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targeted put the address to which you want to send
     bytes(
         string(
             // We are passing identity here: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
             abi.encodePacked(
                 "0", // this represents minimal identity, learn more: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
                 "+", // segregator
-                "3", // define notification type:  https://push.org/docs/notifications/build/types-of-notification (1, 3 or 4) = (Broadcast, targetted or subset)
+                "3", // define notification type:  https://push.org/docs/notifications/build/types-of-notification (1, 3 or 4) = (Broadcast, targeted or subset)
                 "+", // segregator
                 "Title", // this is notificaiton title
                 "+", // segregator

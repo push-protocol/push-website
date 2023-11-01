@@ -52,14 +52,14 @@ contract Push is ERC20 {
         //"0+3+Hooray! ", msg.sender, " sent ", token amount, " PUSH to you!"
         IPUSHCommInterface(EPNS_COMM_ADDRESS).sendNotification(
             0x050Ca75E3957c37dDF26D58046d8F9967B88190c, // from channel
-            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targeted put the address to which you want to send
             bytes(
                 string(
                     // We are passing identity here: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
                     abi.encodePacked(
                         "0", // this represents minimal identity, learn more: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
                         "+", // segregator
-                        "3", // define notification type:  https://push.org/docs/notifications/build/types-of-notification (1, 3 or 4) = (Broadcast, targetted or subset)
+                        "3", // define notification type:  https://push.org/docs/notifications/build/types-of-notification (1, 3 or 4) = (Broadcast, targeted or subset)
                         "+", // segregator
                         "Tranfer Alert", // this is notificaiton title
                         "+", // segregator

@@ -1,18 +1,15 @@
 ---
-id: docs-notifications-tutorial-send-notification-via-subgraph
-title: Send notification via your subgraph
+id: docs-notifications-tutorial-token-transfer-notification-from-smart-contract
+title: Token transfer notification from smart contract
 hide_title: true
-slug: ./send-notification-via-subgraph
+slug: ./token-transfer-notification-from-smart-contract
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 4
+image: "/assets/docs/previews/docs_notifications_tutorial--token_transfer_notification_from_smart_contract.png"
 ---
 
 # Overview
-This is an introductory guide to take you through the entire process of how to send notifications from a Subgraph using Push.
-
-:::caution
-Subgraph notifications are currenly supported 
-:::
+This tutorial explains how you can integrate notifications directly in your smart contract by importing Push comm smart contract and using its interface. We will be creating a simple token transfer notification for this guide.
 
 <head>
   <title>Token Transfer Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation</title>
@@ -64,14 +61,14 @@ contract Push is ERC20 {
         //"0+3+Hooray! ", msg.sender, " sent ", token amount, " PUSH to you!"
         IPUSHCommInterface(EPNS_COMM_ADDRESS).sendNotification(
             0x050Ca75E3957c37dDF26D58046d8F9967B88190c, // from channel
-            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targeted put the address to which you want to send
             bytes(
                 string(
                     // We are passing identity here: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                     abi.encodePacked(
                         "0", // this is notification identity: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                         "+", // segregator
-                        "3", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targetted or subset)
+                        "3", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targeted or subset)
                         "+", // segregator
                         "Tranfer Alert", // this is notificaiton title
                         "+", // segregator
