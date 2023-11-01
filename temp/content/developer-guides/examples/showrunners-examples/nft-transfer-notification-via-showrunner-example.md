@@ -238,5 +238,5 @@ This is a very minimalistic example of how to get started with the showrunners f
 
 One can even go ahead and include an image in the notification using the `image` parameter in the `sendNotification` function.
 
-Can send targetted notifications, subset notifications to a set of addresses etc. The possibilities are unlimited!!
+Can send targeted notifications, subset notifications to a set of addresses etc. The possibilities are unlimited!!
 

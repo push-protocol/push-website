@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 const stream = userAlice.stream(account?, { 
   // stream supports other products as well, such as STREAM.NOTIF
   // more info can be found at push.org/docs/notifications
-	listen: [STREAM.CONNECT, STREAM.CHAT, STREAM.CHAT_OPS, STREAM.DISCONNECT], 
+	listen: [STREAM.CHAT, STREAM.CHAT_OPS], 
 	filter?: {
 		channels?: ['*'], // pass in specific channels to only listen to those
 		chats?: ['*'], // pass in specific chat ids to only listen to those
@@ -52,16 +52,6 @@ userAlice.stream.on(STREAM.CHAT, (data: any) => {
 userAlice.stream.on(STREAM.CHAT_OPS, (data: any) => {
   console.log(data)
 })
-
-// Listen for stream connection 
-userAlice.stream.on(STREAM.CONNECT, (data: any) => {
-  console.log('stream is connected')
-})
-
-// Listen for stream disconnection 
-userAlice.stream.on(STREAM.DISCONNECT, (data: any) => {
-  console.log('stream is disconnected')
-})
 ```
 
   </TabItem>
@@ -76,8 +66,9 @@ userAlice.stream.on(STREAM.DISCONNECT, (data: any) => {
 | `EVENTS` | -                    | -                                                     |
 | -        | `STREAM.CHAT`        | Whenever a chat is received                           |
 | -        | `STREAM.CHAT_OPS`    | Whenever a chat operation is received                 |
-| -        | `STREAM.CONNECT`     | Whenever the stream establishes connection            |
-| -        | `STREAM.DISCONNECT`  | Whenever the stream establishes connection            |
+
+<!-- | -        | `STREAM.CONNECT`     | Whenever the stream establishes connection            |
+| -        | `STREAM.DISCONNECT`  | Whenever the stream establishes connection            | -->
 
 <details>
   <summary><b>Expected response (STEAM.CHAT - Chat Request Stream)</b></summary>

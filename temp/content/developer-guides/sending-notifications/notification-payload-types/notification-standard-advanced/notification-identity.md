@@ -30,7 +30,7 @@ _As of now, there are 4 types of storage that are supported:_
 
 Format: `0+<Notification Type>+<Title>+<Body>`
 
-`<Notification Payload Type>`: Type of notification (Broadcast, Subset, Targetted, Secret, etc)
+`<Notification Payload Type>`: Type of notification (Broadcast, Subset, Targeted, Secret, etc)
 
 `<Title>`: This will be the title of the Message. `<Body>`: This will be the body/description of the Message.
 

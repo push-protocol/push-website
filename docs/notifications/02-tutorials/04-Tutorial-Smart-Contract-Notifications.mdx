@@ -61,14 +61,14 @@ contract Push is ERC20 {
         //"0+3+Hooray! ", msg.sender, " sent ", token amount, " PUSH to you!"
         IPUSHCommInterface(EPNS_COMM_ADDRESS).sendNotification(
             0x050Ca75E3957c37dDF26D58046d8F9967B88190c, // from channel
-            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+            to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targeted put the address to which you want to send
             bytes(
                 string(
                     // We are passing identity here: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                     abi.encodePacked(
                         "0", // this is notification identity: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/identity/payload-identity-implementations
                         "+", // segregator
-                        "3", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targetted or subset)
+                        "3", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targeted or subset)
                         "+", // segregator
                         "Tranfer Alert", // this is notificaiton title
                         "+", // segregator

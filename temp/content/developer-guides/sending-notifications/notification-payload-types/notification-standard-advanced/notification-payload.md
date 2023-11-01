@@ -21,7 +21,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 		"body": "The intended message displayed on the screen (180 Chars)"
 	},
 	"data": {
-		"type": "1" or "3" or "4", // 1 is broadcast, 3 is targetted, 4 is subset
+		"type": "1" or "3" or "4", // 1 is broadcast, 3 is targeted, 4 is subset
 		"sectype": null or [Encryption_Method], // for example: aes+eip85
 		"asub": "encrypted by secret using sectype | [Optional] The subject of the message displayed inside app (80 Chars)",
 		"amsg": "encrypted by secret using sectype | [Optional] The intended message displayed inside app (500 Chars)",
@@ -71,7 +71,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
     "body": "The intended message displayed on screen (180 Chars)"
   },
   "data": {
-    "type": "1" or "3" or "4", // 1 is broadcast, 3 is targetted, 4 is subset
+    "type": "1" or "3" or "4", // 1 is broadcast, 3 is targeted, 4 is subset
     "sectype": null or [Encryption_Method] // for example: aes+eip85
     "asub": "encrypted by secret using sectype | [Optional] The subject of the message displayed inside app (80 Chars)",
     "amsg": "encrypted by secret using sectype | [Optional] The intended message displayed inside app (500 Chars)",
