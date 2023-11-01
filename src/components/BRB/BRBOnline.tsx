@@ -254,5 +254,6 @@ const TimeSpan = styled(Span)`
 const BountyItem = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 5px;
   margin: 15px auto auto 0;
 `;

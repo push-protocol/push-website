@@ -195,7 +195,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             </SplideArrow>
             <Button
               border="1px solid #E64DE9"
-              onClick={() => window.open('https://discord.gg/cTRqvYzXpW', '_blank')}
+              onClick={() => window.open('https://lu.ma/on4kcvxu', '_blank')}
               title="Participate Virtually"
             >
               <ItemH>
