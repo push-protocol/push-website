@@ -1,166 +1,451 @@
 ---
-id: docs-notifications-develop-receiving-notifications
-title: Receiving Notifications
+id: docs-notifications-develop-integrating-notifications
+title: Integrating Notifications
 hide_title: true
-slug: ./receiving-notifications
+slug: ./integrating-notifications
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 16
 ---
 
-# Receiving notifications overview
+# Integrating notifications overview
 
-This section explores how to integrate notifications on your dApp, mobile app, crypto wallet or on any other platform.
+This section explores how to integrate notifications on your dApp, mobile app, crypto wallet or on any other frontend.
 
-Notifications can be received on your frontend using either active user interaction, also known as **pull based method** or showing notifications as soon as it's triggered requiring no user interaction, which is known as **push based method**.
+Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol. 
 
 <head>
-  <title>Receiving Notifications | Push Notifications | Push Documentation</title>
+  <title>Integrate Notifications | Push Notifications | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import ReactPlayer from 'react-player'
 
-## Notification 
+## Integration process
 
-## Stream Notification API
+Integrating notifications directly on your frontend is a critical component as it enables your users to have the best experience and massively improves re-engagement and Web3 UX for your protocol. 
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
+To get started, you will need to —
 
-```typescript
-// userAlice.stream(account?, {options?})
-// Initial setup
-const stream = userAlice.stream(account?, { 
-  // stream supports other products as well, such as STREAM.CHAT, STREAM.CHAT_OPS 
-  // more info can be found at push.org/docs/chat
-	listen: [STREAM.NOTIF], 
-	filter?: {
-		channels?: ['*'], // pass in specific channels to only listen to those
-		chats?: ['*'], // pass in specific chat ids to only listen to those
-	},
-	connection?: {
-		auto?: true, // should connection be automatic, else need to call stream.connect();
-		retries?: 3, // number of retries in case of error
-	},
-	raw?: false // enable true to show all data
-})
+- Ensure your frontend has a way for your users [to opt in to your channel](/docs/notifications/build/manage-subscriptions/#subscribe-channel-api "Subscribe (opt-in) API for Push protocol notifications") on your frontend.
+- Choose what notification fetching mechanism you want to integrate for notifications to your users (**Pull based**, **Push based** or **bridge based**) on your frontend.
 
-// Listen for notifications
-userAlice.stream.on(STREAM.NOTIF, (data: any) => {
-  console.log(data)
-})
-```
+## Receiving notifications
+Notifications can be received on your frontend using either active user interaction, also known as **pull based method** or showing notifications as soon as it's triggered requiring no user interaction, which is known as **push based method** or triggering additional logic when notification is sent to a user using **bridge based method**.
 
-  </TabItem>
-</Tabs>
+:::note
+You will need to pick the best method according to your needs. Most of the time, it will be a combination of **Pull** and **Push** or all three for a more polished and re-engaging experience for your user.
+:::
 
----
+### Pull based method
+This method enables users to see notifications when they actively interact with an object on your frontend and relies on fetching notifications using restful APIs. For example: when you click **bell icon** on youtube and it fetches your notifications.
 
-### Stream notification events
+### Push based method
+This method doesn't rely on user interaction, instead it shows users notifications as soon as the frontend receives it. This is useful particularly when a user is on your frontend and you show them notifications as they are received.
 
-| Param    | Type                 | When is it triggered?                                 |
-| -------- | -------------------- | ----------------------------------------------------- |
-| `EVENTS` | -                    | -                                                     |
-| -        | `STREAM.NOTIF`       | Whenever a new notification is emitted for the wallet |
-| -        | `STREAM.CONNECT`     | Whenever the stream establishes connection            |
-| -        | `STREAM.DISCONNECT`  | Whenever the stream establishes connection            |
+### Bridge based method
+This method is usually used when you want notifications to land on user's mobile home screen or through browser notification service. 
 
-<details>
-  <summary><b>Expected response (STEAM.NOTIF - Notification inbox stream)</b></summary>
+Bridge based method allows triggering additional logic and are more of an extension to **push based method** as they enable routing to other Web2 notification services such as [Firebase](https://firebase.google.com/ "Link to google firebase"), [Apple Push Notification Service](https://developer.apple.com/documentation/usernotifications "Link to APNS (Apple Push Notificaiton Service)") or to telegram / twitter / or other social bots.
 
-```typescript
-{
-  "event": "notification.inbox",
-  "origin": "other",
-  "timestamp": "2023-10-06T01:55:51.000Z",
-  "from": "0xfFA1aF9E558B68bBC09ad74058331c100C135280",
-  "to": [
-    "eip155:0xffa1af9e558b68bbc09ad74058331c100c135280"
-  ],
-  "notifID": "1676",
-  "channel": {
-    "name": "Testing Goerli",
-    "icon": "https://gateway.ipfs.io/ipfs/bafybeifu3tisz7cntfnoolwe6tthi554b2cdl46jzcr5amo6swucyautzq/QmYZZnnEuTnzjkhhnRZWaHgYTeHsohLZEme9LomWRYQAZ5",
-    "url": "https://dev.push.org/"
-  },
-  "meta": {
-    "type": "NOTIFICATION.BROADCAST"
-  },
-  "message": {
-    "notification": {
-      "title": "Testing Goerli - notification TITLE:",
-      "body": "notification BODY"
-    },
-    "payload": {
-      "title": "payload title",
-      "body": "sample msg body",
-      "cta": "",
-      "embed": "",
-      "meta": {
-          "domain": "push.org"
-      }
+:::note
+Bridge based delivery is especially useful if you want to deliver notifications to your mobile app or extension while pull based and push based mechanism works best inside your dapp or mobile app.
+:::
+
+## Pull method live implementation
+
+Implementing pull based mechanism requires inclusion of [fetch notifications API](/docs/notifications/build/fetch-notifications/ "API for fetching notificatons from Push protocol") and then using your custom frontend component or UIWeb component of Push to display them.
+
+```jsx live 
+customPropMinimized="true"
+
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+
+// import { ethers } from ethers;
+// import { PushAPI } from @pushprotocol/restapi;
+// import { NotificationItem } from @pushprotocol/uiweb;
+
+function App(props) {
+  const [wallet, setWallet] = useState('0xB59Cdc85Cacd15097ecE4C77ed9D225014b4D56D');
+  const [notifItems, setNotifItems] = useState([]);
+
+  const walletRef = useRef();
+
+  useEffect(() => {
+    if (walletRef.current) {
+      walletRef.current.value = wallet;
     }
-  },
-  "config": {
-    "expiry": null,
-    "silent": false,
-    "hidden": false
-  },
-  "source": "ETH_TEST_GOERLI",
-  "raw": {
-    "verificationProof": "eip712v2:0xf2b50f07c7cdae4a493860554301dc017dd6f819f92db3aba534dffde210bfaa0f545818e919c42c3bb51181339af33ad83e3bc691ada7fcccdcbc7fb3b3abd91b::uid::feaa2d31-85ec-47d2-b38c-6f797f637de7"
+  }, [wallet]);
+
+  const fetchNotification = async () => {
+    const walletText = walletRef.current.value;
+
+    // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+    // Get provider
+    await provider.send("eth_requestAccounts", []);
+
+    // Grabbing signer from provider
+    const signer = provider.getSigner()
+
+    // Initialize user for push
+    const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+
+    // retrieve notifications for users
+    const inboxNotifications = await userAlice.notification.list('INBOX', {limit: 5})
+
+    // set notifItems state so that react can render
+    setNotifItems(inboxNotifications);
+  };
+
+  function NotificationInterface() {
+    const inputStyle = {
+      padding: '10px',
+      margin: '10px 0',
+      width: '100%',
+      boxSizing: 'border-box',
+    };
+
+    const textareaStyle = {
+      ...inputStyle,
+      height: '100px',
+      resize: 'vertical',
+    };
+
+    const buttonStyle = {
+      padding: '10px 20px',
+      backgroundColor: '#dd44b9',
+      color: '#FFF',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      marginTop: '20px',
+    };
+
+    return (
+      <div style={{ width: 'auto', margin: '20px auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ flex: 1 }}>
+            <h2>Pull based mechanism for displaying notifcations on frontend</h2>
+            <p />
+            <label>Put any wallet address and click on fetch notifications to see the live results. Click to expand <b>Live Editor</b> tab to see the code and play with it. For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
+            <p />
+            <label>Wallet address</label>
+            <input 
+              type="text" 
+              placeholder="Enter wallet address" 
+              style={inputStyle}
+              ref={walletRef}
+              maxLength={80}
+            />
+          </div>
+        </div>
+        <button style={buttonStyle} onClick={fetchNotification}>Fetch Notifications</button>
+
+        <p /> 
+        <p />
+
+        {notifItems.length > 0 ? <h3>{`Notification Items for ${wallet}`}</h3> : <></>
+        }
+        
+        {notifItems.map((notifItemSingular, idx) => {
+          const { 
+            cta,
+            title,
+            message,
+            app,
+            icon,
+            image,
+            url,
+            blockchain,
+            notification
+          } = notifItemSingular;
+
+          return (
+            <NotificationItem
+              key={idx} // any unique id
+              notificationTitle={title}
+              notificationBody={message}
+              cta={cta}
+              app={app}
+              icon={icon}
+              image={image}
+              url={url}
+              theme={'light'} // or can be dark
+              chainName={blockchain}
+              // chainName={blockchain as chainNameType} // if using Typescript
+            />
+            );
+          })}
+      </div>
+    );
   }
+
+  return (
+    <>
+      <NotificationInterface />
+    </>
+  );
 }
 ```
 
-</details>
+## Push method live implementation
+Implementing push based mechanism requires connecting to Push nodes via [stream notifications API](/docs/notifications/build/stream-notifications/ "API for streaming notificatons from Push protocol") which will trigger notifications as they come. You can then use your custom frontend component or UIWeb component of Push to display them.
 
-<details>
-  <summary><b>Expected response (STEAM.NOTIF - Notification spam stream)</b></summary>
+```jsx live 
+customPropMinimized="true"
 
-```typescript
-{
-  "event": "notification.spam",
-  "origin": "other",
-  "timestamp": "2023-10-06T01:55:51.000Z",
-  "from": "0xfFA1aF9E558B68bBC09ad74058331c100C135280",
-  "to": [
-    "eip155:0x1f1a304af17f22cac91eeca5f31a0f814d752377"
-  ],
-  "notifID": "1677",
-  "channel": {
-    "name": "Testing Goerli",
-    "icon": "https://gateway.ipfs.io/ipfs/bafybeifu3tisz7cntfnoolwe6tthi554b2cdl46jzcr5amo6swucyautzq/QmYZZnnEuTnzjkhhnRZWaHgYTeHsohLZEme9LomWRYQAZ5",
-    "url": "https://dev.push.org/"
-  },
-  "meta": {
-    "type": "NOTIFICATION.TARGETED"
-  },
-  "message": {
-    "notification": {
-      "title": "Testing Goerli - notification TITLE:",
-      "body": "notification BODY"
-    },
-    "payload": {
-      "title": "payload title",
-      "body": "sample msg body",
-      "cta": "",
-      "embed": "",
-      "meta": {
-          "domain": "push.org"
-      }
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+
+// import { ethers } from ethers;
+// import { PushAPI } from @pushprotocol/restapi;
+// import { NotificationItem } from @pushprotocol/uiweb;
+
+function App(props) {
+  const [wallet, setWallet] = useState('0xB59Cdc85Cacd15097ecE4C77ed9D225014b4D56D');
+  const [notifItems, setNotifItems] = useState([]);
+
+  const walletRef = useRef();
+
+  useEffect(() => {
+    if (walletRef.current) {
+      walletRef.current.value = wallet;
     }
-  },
-  "config": {
-    "expiry": null,
-    "silent": false,
-    "hidden": false
-  },
-  "source": "ETH_TEST_GOERLI",
-  "raw": {
-    "verificationProof": "eip712v2:0x6b903f16d0ce87483643e1502e7416203cb7ecef0e947a497f0fb6fbe1c43c3511f2f602b757ab02c1be7daa07f3872ee14e4d05134f1ecb3d11fe58324422c01c::uid::6c0fad10-d1eb-4779-84d3-3a96bd96263f"
+  }, [wallet]);
+
+  const triggerNotification = async () => {
+    const walletText = walletRef.current.value;
+
+    // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+    // Get provider
+    await provider.send("eth_requestAccounts", []);
+
+    // Grabbing signer from provider
+    const signer = provider.getSigner()
+
+    // Initialize user for push
+    const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+
+    // establish connection to stream
+    const stream = userAlice.stream({ 
+      listen: [STREAM.NOTIF], 
+    })
+
+    // Listen for notifications
+    userAlice.stream.on(STREAM.NOTIF, (data) => {
+      console.log(data)
+    });
+  };
+
+  function NotificationInterface() {
+    const inputStyle = {
+      padding: '10px',
+      margin: '10px 0',
+      width: '100%',
+      boxSizing: 'border-box',
+    };
+
+    const textareaStyle = {
+      ...inputStyle,
+      height: '100px',
+      resize: 'vertical',
+    };
+
+    const buttonStyle = {
+      padding: '10px 20px',
+      backgroundColor: '#dd44b9',
+      color: '#FFF',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      marginTop: '20px',
+    };
+
+    return (
+      <div style={{ width: 'auto', margin: '20px auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div style={{ flex: 1 }}>
+            <h2>Push based mechanism for displaying notifcations on frontend</h2>
+            <p />
+            <label>Put any wallet address and click on fetch notifications to see the live results. Click to expand <b>Live Editor</b> tab to see the code and play with it. For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
+            <p />
+            <label>Wallet address</label>
+            <input 
+              type="text" 
+              placeholder="Enter wallet address" 
+              style={inputStyle}
+              ref={walletRef}
+              maxLength={80}
+            />
+          </div>
+        </div>
+        <button style={buttonStyle} onClick={triggerNotification}>Trigger Notification</button>
+
+        <p /> 
+        <p />
+
+        {notifItems.length > 0 ? <h3>{`Notification Items for ${wallet}`}</h3> : <></>
+        }
+        
+        {notifItems.map((notifItemSingular, idx) => {
+          const { 
+            cta,
+            title,
+            message,
+            app,
+            icon,
+            image,
+            url,
+            blockchain,
+            notification
+          } = notifItemSingular;
+
+          return (
+            <NotificationItem
+              key={idx} // any unique id
+              notificationTitle={title}
+              notificationBody={message}
+              cta={cta}
+              app={app}
+              icon={icon}
+              image={image}
+              url={url}
+              theme={'light'} // or can be dark
+              chainName={blockchain}
+              // chainName={blockchain as chainNameType} // if using Typescript
+            />
+            );
+          })}
+      </div>
+    );
   }
+
+  return (
+    <>
+      <NotificationInterface />
+    </>
+  );
 }
 ```
 
-</details>
+## Bridge method implementation - Push delivery node
+:::note
+Delivery node is the recomended way to setup your mobile home screen push notifications or to connect to Push protocol notification network via your OS!!
+:::
+
+Push delivery Nodes is a Whitelabel solution to enable any app, either mobile, desktop, or extension, to allow Web3 push notifications to their app. 
+
+It is a decentralized solutions to enable web3 to web2 bridging. It allows any platform (whether centralized or decentralized) to receive communication from **Push storage nodes**, i.e., the nodes validating and indexing all communications and tying them to your wallet address (and multi-chain identity). 
+
+<ReactPlayer controls width="100%" url='https://www.youtube.com/watch?v=OlRHL3qd4oY' /><br/>
+
+The whitelabel solution of Push delivery node [is located in this github repo](https://github.com/ethereum-push-notification-service/push-delivery-node "Repo of delivery node of Push protocol"). Below are the steps for getting started —
+
+### Step 1️⃣ - Prerequisites
+
+- `MYSQL (Version >= 5.7)`
+- `Redis (Version >= 6.0)`
+- `Docker (For local setup)`
+- `Google FCM Account Setup`
+
+### Step 2️⃣ - Clone Push delivery node repo
+
+```bash
+git clone https://github.com/ethereum-push-notification-service/push-delivery-node.git
+```
+
+### Step 3️⃣ - Environment configuration
+
+Refer env sample file. The MYSQL DB credentials and Redis URL needs to be updated. The remaining conf need not be edited as of now.
+
+If you use docker-compose for the local setup MYSQL DB and Redis config can be left as it is.
+
+```ts
+# REDIS
+
+REDIS_URL=redis://localhost:6379
+
+# DELIVERY NODE MYSQL DATABASE
+
+DELIVERY_NODE_DB_HOST=localhost
+DELIVERY_NODE_DB_NAME=dbname
+DELIVERY_NODE_DB_USER=user
+DELIVERY_NODE_DB_PASS=pass
+DELIVERY_NODE_DB_PORT=3306
+```
+
+### Step 4️⃣ - Infra Setup: Local
+The docker-compose will bring up the MYSQL, Redis, and PHPMyAdmin containers for the delivery node.
+
+```bash
+docker compose up
+```
+
+### Step 5️⃣ - (Optional) Infra Setup: Server (Production)
+
+- Host MYSQL and Redis Separately
+- Add MYSQL and Redis credentials in the .env file
+
+### Step 6️⃣ - FCM Project Setup
+
+- Refer [Firebase docs](https://firebase.google.com/docs/admin/setup "Article from google on how to setup Firebase") to setup FCM
+- Create the firebase-adminsdk.json file in the root folder and add the FCM JSON to this file
+
+### Step 7️⃣ - Build the delivery node project
+You should then be able to build the project using
+
+```bash
+cd push-delivery-node
+npm install
+```
+
+### Step 8️⃣ - Start the delivery node project
+You should then be able to start the server using the following
+
+```bash
+cd push-delivery-node
+npm start
+```
+
+### Step 9️⃣ - Device Registration
+- An endpoint is hosted as part of the delivery node project, which can be used for Device Registration.
+- Below is the API to create a mapping between the wallet address and the device token for which the messages need to be delivered.
+- <delivery_node_url> is the base URL of the delivery node you have hosted.
+
+Below is the curl request of this endpoint
+
+```bash
+
+curl --location --request POST 'https://<delivery_node_url>/apis/v1/pushtokens/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    
+    "wallet": "eip155:0x35B84d6848D16415177c64D64504663b998A6ab4",
+    "device_token": "device_token",
+    "platform": "android"
+}'
+```
+
+<!-- ## Bridge method implementation - AWS SNS
+:::caution
+Delivery node is a decentralized solution while AWS SNS route is centralized. It is recommended to use delivery node but you can use AWS SNS incase you prefer balanced or Web2.5 approach. 
+:::
+
+SNS module for Push delivery node allows any developer to receive notifications, chats, or any other form of web3 communication directly to the platform they are building with the help of webhooks.
+
+Hosted SNS Module is a mid-level solution that eliminates all the heavy load of running a node or syncing information and gives you webhooks that you implement to start receiving notifications, chats, or any other web3 communication in your software.
+
+Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
+
+### Step 1️⃣ - 
+
+### Step 2️⃣ - 
+
+### Step 3️⃣ - 
+
+### Push SNS Boilerplate
+
+### SNS Sample Messages -->
