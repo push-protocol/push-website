@@ -20,6 +20,8 @@ import BlogPostPaginator from "@theme/BlogPostPaginator";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import TOC from "@theme/TOC";
 import FooterItem from "./FooterItem";
+import styled from "styled-components";
+
 function BlogPostPageContent({ sidebar, children }) {
   const { metadata, toc } = useBlogPost();
   const { nextItem, prevItem, frontMatter } = metadata;
@@ -41,13 +43,15 @@ function BlogPostPageContent({ sidebar, children }) {
     //   ) : undefined
     // }
     >
-      <BlogPostItem>{children}</BlogPostItem>
+      <BlogItem>
+        <BlogPostItem>{children}</BlogPostItem>
 
-      {(nextItem || prevItem) && (
-        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-      )}
+        {(nextItem || prevItem) && (
+          <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
+        )}
 
-      <FooterItem />
+        <FooterItem />
+      </BlogItem>
     </BlogLayout>
   );
 }
@@ -69,3 +73,12 @@ export default function BlogPostPage(props) {
     </BlogPostProvider>
   );
 }
+
+const BlogItem = styled.div`
+  width: 800px !important;
+  margin: 0 auto;
+
+  @media (min-width: 810px) {
+    width: 100% !important;
+  }
+`;

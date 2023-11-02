@@ -10,6 +10,7 @@ import { translate } from "@docusaurus/Translate";
 import { usePluralForm } from "@docusaurus/theme-common";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 import styles from "./styles.module.css";
+import moment from "moment";
 // Very simple pluralization: probably good enough for now
 function useReadingTimePlural() {
   const { selectMessage } = usePluralForm();
@@ -34,9 +35,15 @@ function ReadingTime({ readingTime }) {
   return <>{readingTimePlural(readingTime)}</>;
 }
 function Date({ date, formattedDate }) {
+  var year = moment().year();
+  const isPresentYear = formattedDate.includes(year);
+  const newDate = moment(formattedDate).format(
+    !isPresentYear ? "MMM DD,  YYYY" : "MMM DD",
+  );
+
   return (
     <time dateTime={date} itemProp="datePublished">
-      {formattedDate}
+      {newDate}
     </time>
   );
 }

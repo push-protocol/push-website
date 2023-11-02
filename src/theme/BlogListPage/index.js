@@ -20,7 +20,7 @@ import styled from "styled-components";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import BlogHorizontalScroll from "./BlogHorizontalScroll";
 import MobileBlogHorizontalScroll from "./MobileBlogHorizontalScroll";
-import { Section } from "@site/src/css/SharedStyling";
+import { Section, Span } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Internal Configs
@@ -46,10 +46,11 @@ function BlogListPageContent(props) {
   return (
     <>
       <ListItem>
-        <BlogPostItems items={items.slice(0, 3)} list={true} />
+        <ListSpan>Recent Updates</ListSpan>
+        <BlogPostItems items={items.slice(0, 4)} list={true} />
       </ListItem>
       <GridItem>
-        <BlogPostItems items={items} />
+        <BlogPostItems items={items.slice(4, 11)} />
         <BlogListPaginator metadata={metadata} />
       </GridItem>
     </>
@@ -129,12 +130,11 @@ const GridItem = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 33px;
-  // padding: 32px;
   box-sizing: border-box;
   margin: 100px auto 0 auto;
 
   @media ${device.laptopL} {
-    width: 100% !important;
+    width: 90% !important;
   }
 
   @media ${device.tablet} {
@@ -146,5 +146,19 @@ const ListItem = styled.div`
   display: flex;
   flex-direction: column;
   width: 1120px;
-  margin: auto;
+  margin: 50px auto auto auto;
+
+  @media (max-width: 1200px) {
+    width: 90% !important;
+  }
+`;
+
+const ListSpan = styled(Span)`
+  color: #121315;
+  font-family: Strawford;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 44px */
+  letter-spacing: -1.2px;
 `;

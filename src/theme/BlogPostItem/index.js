@@ -55,11 +55,24 @@ const ListView = styled.div`
   margin: 32px 0;
   align-items: center;
   gap: 32px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div`
   min-width: 544px;
   max-width: 544px;
+
+  @media (max-width: 1200px) {
+    min-width: 100%;
+    max-width: 100%;
+  }
 `;
 
-const TextView = styled.div``;
+const TextView = styled.div`
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+`;
