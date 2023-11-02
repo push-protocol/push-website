@@ -161,15 +161,15 @@ if (idMatch) {
   
   // If image tag exists but doesn't match the expected name, replace it
   if (imageTagMatch && imageTagMatch[1] !== imageName) {
-      content = content.replace(imageTagRegex, `image: "${relativeImagePath}"`);
-      fs.writeFileSync(filePath, content);
+    content = content.replace(imageTagRegex, `image: "${relativeImagePath}"`);
+    fs.writeFileSync(filePath, content);
   }
   // If image tag doesn't exist, add it
   else if (!imageTagMatch) {
-      const position = frontMatterEndIndex; // End of the front matter block
-      const imageTag = `image: "${relativeImagePath}"\n`;
-      content = [content.slice(0, position), imageTag, content.slice(position)].join('');
-      fs.writeFileSync(filePath, content);
+    const position = frontMatterEndIndex; // End of the front matter block
+    const imageTag = `image: "${relativeImagePath}"\n`;
+    content = [content.slice(0, position), imageTag, content.slice(position)].join('');
+    fs.writeFileSync(filePath, content);
   }
 }
 
