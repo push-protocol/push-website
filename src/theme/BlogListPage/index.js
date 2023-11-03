@@ -52,8 +52,10 @@ function BlogListPageContent(props) {
       </ListItem>
       <GridItem>
         <BlogPostItems items={items.slice(4, 11)} />
-        <BlogListPaginator metadata={metadata} />
       </GridItem>
+      <PaginatorDiv>
+        <BlogListPaginator metadata={metadata} />
+      </PaginatorDiv>
     </>
   );
 }
@@ -141,6 +143,10 @@ const GridItem = styled.div`
   @media ${device.tablet} {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+`;
+
+const PaginatorDiv = styled.div`
+  width: 100% !important;
 `;
 
 const ListItem = styled.div`
