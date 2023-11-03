@@ -103,9 +103,13 @@ const TagsHeader = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 1120px !important;
+  margin: 20px auto 0 auto;
 
   @media ${device.tablet} {
     flex-direction: column;
+    width: 100% !important;
+    align-items: flex-start;
   }
 `;
 

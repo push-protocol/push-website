@@ -15,6 +15,12 @@ import {
 import BlogLayout from "@theme/BlogLayout";
 import TagsListByLetter from "@theme/TagsListByLetter";
 import SearchMetadata from "@theme/SearchMetadata";
+// import styles from "./styles.module.css";
+import styled from "styled-components";
+
+// Internal Configs
+import { device } from "@site/src/config/globals";
+
 export default function BlogTagsListPage({ tags, sidebar }) {
   const title = translateTagsPageTitle();
   return (
@@ -26,10 +32,20 @@ export default function BlogTagsListPage({ tags, sidebar }) {
     >
       <PageMetadata title={title} />
       <SearchMetadata tag="blog_tags_list" />
-      <BlogLayout>
+      <BlogLayout />
+      <TagSection>
         <h1>{title}</h1>
         <TagsListByLetter tags={tags} />
-      </BlogLayout>
+      </TagSection>
     </HtmlClassNameProvider>
   );
 }
+
+const TagSection = styled.div`
+  width: 1120px !important;
+  margin: 50px auto;
+
+  @media ${device.tablet} {
+    width: 90% !important;
+  }
+`;
