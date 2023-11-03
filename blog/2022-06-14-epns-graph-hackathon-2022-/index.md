@@ -11,7 +11,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 <blockquote>We’re stoked to announce winners for the GraphHack2022 that concluded on June 5th, 2022.</blockquote>
 
-We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it.
+We kick started the hackathon with an integration workshop for EPNS \<-\> The Graph. Here is the demo video, in case you missed it.
 
 <!--truncate-->
 
