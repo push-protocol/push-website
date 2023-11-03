@@ -33,14 +33,22 @@ export const MessageInputTest = () => {
 
 ---
 
-| Param           | Type    | Default |
-| --------------- | ------- | ------- |
-| _`chatId`_      | string  | -       |
-| emoji           | boolean | true    |
-| gif             | boolean | true    |
-| file            | boolean | true    |
-| isConnected     | boolean | true    |
-| autoConnect     | boolean | false   |
-| onGetTokenClick | function | void   |
+### MessageInput Parameters
 
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| emoji           | `boolean` | true    |Default value is true, decides if the input field will have emoji option|
+| gif             | `boolean` | true    |Default value is true,decides if the input field will have gif option|
+| file            | `boolean` | true    |Default value is true,decides if the input field will have file upload option|
+| isConnected     | `boolean` | true    |Default value is true,shows the connect button if signer, account and pgpPrivateKey is not passed|
+| autoConnect     | `boolean` | false   |Default value is false, decrypts pgpPrivateKey after reload if true, or else disconnects the existing wallet connection
+| onVerificationFail | `function` | -   |Function to perfom any task on gating access verification fail modal |
+
+### ChatUIProvider Parameters
+>Note: 
+- Providing only signer in ChatUIProvider automatically fetches account and pgpPrivatekey
+- Providing no signer, automatically uses the default onboarding kit i.e. blocknative
+- Providing account and pgpPrivateKey works as usual
+- Providing no account , signer, pgpPrivateKey or isConnected as false, prompts a warning
 > Note: Parameters _`in this style`_ are mandatory.

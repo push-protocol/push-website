@@ -17,9 +17,6 @@ import { ChatUIProvider } from "@pushprotocol/uiweb";
 import { darkChatTheme } from "@pushprotocol/uiweb";
 
 export function App({ Component }) {
-  // you can pass your own signer, if you don't pass a signer
-  // then it will automatically use the default onboarding kit i.e. blocknative
-  // !pgpPrivatekey && !account && !isConnected => will give the note
   return (
     <ChatUIProvider theme={darkChatTheme}>
       <Component />
@@ -33,13 +30,16 @@ export function App({ Component }) {
 
 ---
 
-| Param         | Type            | Default |
-| ------------- | --------------- | ------- |
-| account       | string          | -       |
-| pgpPrivagekey | string          | -       |
-| theme         | IChatTheme      | -       |
-| _`children`_  | React.ReactNode | -       |
-| env           | Env             | -       |
-| signer        | Signer          | -       |
+### Customization parameters
+Customize the parameters as per your need and the chat component being used.
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| account       | `string`         | -       | Supports wallet address or chain agnostic wallet address format|
+| pgpPrivatekey | `string`          | -       | Decrypted pgp private key of the user |
+| theme         | `IChatTheme`      | -       | [Theme object](/docs/chat/ui-components/Advanced/Theme/),it can be custom theme object, `lightChatTheme` `darkChatTheme` |
+| _`children`_  | `React.ReactNode` | -       ||
+| env           | `Env`             | -       |API env - 'prod' or 'staging'|
+| signer        | `SignerType`          | -       |EthersV5 or Viem Signer|
 
 > Note: Parameters _`in this style`_ are mandatory.

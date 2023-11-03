@@ -20,12 +20,6 @@ import { ModalContainer } from "@site/src/css/SharedStyling";
 import { ChatViewComponent } from "@pushprotocol/uiweb";
 
 const ChatViewComponentTest = () => {
-  // you can add the amount of msgs that you want to fetch when the user first sees the component
-  // by default the message fetch limit is 10.
-  // by default image, file and gif option is there,
-  // if you don't want any of them then just pass it as false inside the component
-  // for example below commented code won't have the option for file, gif and emoji:
-  /// <ChatViewComponent chatId='89f7b382b9b1496dca2b9a94ef87c80dd102db05dcb40b165fabfab28770fd55' emoji={false} gif={false} file={false} limit={10}/>
   return (
     <div>
       <ChatViewComponent
@@ -48,20 +42,30 @@ export default ChatViewComponentTest;
 
 ---
 
-| Param        | Type     | Default |
-| ------------ | -------- | ------- |
-| _`chatId`_   | string   | -       |
-| messageInput | boolean  | true    |
-| chatViewList | boolean  | true    |
-| chatProfile  | boolean  | true    |
-| limit        | number   | 10      |
-| emoji        | boolean  | true    |
-| gif          | boolean  | true    |
-| file         | boolean  | true    |
-| isConnected  | boolean  | true    |
-| onGetTokenClick | function | void    |
-| chatFilterList | Array | - |
-| autoConnect | boolean | false |
+### ChatViewComponent Parameters
 
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| emoji           | `boolean` | true    |Default value is true, decides if the input field will have emoji option|
+| gif             | `boolean` | true    |Default value is true,decides if the input field will have gif option|
+| file            | `boolean` | true    |Default value is true,decides if the input field will have file upload option|
+| isConnected     | `boolean` | true    |Default value is true,shows the connect button if signer, account and pgpPrivateKey is not passed|
+| autoConnect     | `boolean` | false   |Default value is false, decrypts pgpPrivateKey after reload if true, or else disconnects the existing wallet connection
+| onVerificationFail | `function` | -   |Function to perfom any task on gating access verification fail modal |
+| messageInput            | `boolean` | true    |Default value is true,decides whether to show the message input field|
+| chatProfile            | `boolean` | true    |Default value is true, decides whether to show the chat profile header |
+| chatViewList            | `boolean` | true    |Default value is true,decides whether to show the message list |
+| groupInfoModalBackground       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the group info modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+| _`chatFilterList`_        | `Array<string>`         | -       | Array of cid's of messages  that needs to be excluded from chatViewList|
+| limit      | `number`         | -       |Number of messages fetched in each paginated api call,default value is 10|
+
+
+### ChatUIProvider Parameters
+>Note: 
+- Providing only signer in ChatUIProvider automatically fetches account and pgpPrivatekey
+- Providing no signer, automatically uses the default onboarding kit i.e. blocknative
+- Providing account and pgpPrivateKey works as usual
+- Providing no account , signer, pgpPrivateKey or isConnected as false, prompts a warning
 
 > Note: Parameters _`in this style`_ are mandatory.

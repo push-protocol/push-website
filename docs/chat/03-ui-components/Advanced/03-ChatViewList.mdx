@@ -48,10 +48,24 @@ const ChatViewListCard = styled.div`
 
 ---
 
-| Param          | Type   | Default |
-| -------------- | ------ | ------- |
-| _`chatId`_     | string | -       |
-| limit          | number | 10      |
-| chatFilterList | Array  | -       |
+
+
+### ChatViewList Parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| limit      | `number`         | -       |Number of messages fetched in each paginated api call,default value is 10|
+| _`chatFilterList`_        | `Array<string>`         | -       | Array of cid's of messages  that needs to be excluded from chatViewList|
+
+### ChatUIProvider Parameters
+Pass the below parameters in the provider for better usage of the component
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| account      | `string`         | -       | Supports wallet address or chain agnostic wallet address format|
+| pgpPrivatekey | `string`          | -       | Decrypted pgp private key of the user, needed for w2w and private groups |
+
 
 > Note: Parameters _`in this style`_ are mandatory.
+

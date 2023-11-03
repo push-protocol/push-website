@@ -33,10 +33,21 @@ return (
 </Tabs>
 
 ---
-  
-  | Param      | Type   | Default |
-  | ---------- | ------ | ------- |
-  | _`chatId`_ | string | -       |
 
-  
-  > Note: Parameters _`in this style`_ are mandatory.
+### ChatProfile Parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| _`style`_        | `"Info"` &#124 `"Preview"`         | -       | Only have Info support as of now,`Info` is the header that’s visible in ChatViewComponent, `Preview` is the one that's visible in ChatListComponent|
+| groupInfoModalBackground       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the group info modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+
+
+### ChatUIProvider Parameters
+Pass the below parameters in the provider for better usage of the component
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| account     | `string`         | -       | Supports wallet address or chain agnostic wallet address format, needed for groups|
+
+> Note: Parameters _`in this style`_ are mandatory.

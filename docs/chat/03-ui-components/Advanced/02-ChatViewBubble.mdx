@@ -43,7 +43,7 @@ const ChatViewBubbleTest = () => {
 
   return (
     <div>
-      <ChatViewBubble chat={msg} />
+      <ChatViewBubble decryptedMessagePayload={msg} />
     </div>
   );
 };
@@ -60,8 +60,17 @@ export default ChatViewBubbleTest;
 
 ---
 
-| Param                       | Type            | Default |
-| --------------------------- | --------------- | ------- |
-| _`decryptedMessagePayload`_ | IMessagePayload | -       |
+### ChatViewBubble Parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`decryptedMessagePayload`_       | `IMessagePayload`         | -       | It is a decrypted message payload object|
+
+### ChatUIProvider Parameters
+Pass the below parameters in the provider for better usage of the component
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| account     | `string`         | -       | Supports wallet address or chain agnostic wallet address format|
 
 > Note: Parameters _`in this style`_ are mandatory.
