@@ -3,17 +3,19 @@ slug: pushing-ahead-in-time-push-and-timeswap
 title: 'Pushing Ahead in Time: $PUSH x Timeswap ⏳'
 authors: [push]
 image: './cover-image.webp'
+text: "Following the exciting launch of $PUSH onto Polygon, we’re thrilled to announce the launch of Push’s lending and borrowing pool on TimeSwap. This partnership opens up new opportunities for users to borrow and lend Push native tokens ($PUSH) while benefiting from the extensive functionalities and composability offered by TimeSwap and the Polygon network."
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Timeswap]
 
 ---
 ![Cover image of Pushing Ahead in Time: $PUSH x Timeswap ⏳](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 #  $PUSH lending/borrowing pool is now live on Timeswap.
 
 Following the exciting launch of $PUSH onto Polygon, we’re thrilled to announce the launch of Push’s lending and borrowing pool on [TimeSwap](https://timeswap.io/). This partnership opens up new opportunities for users to borrow and lend Push native tokens ($PUSH) while benefiting from the extensive functionalities and composability offered by TimeSwap and the Polygon network.
 
-<!--truncate-->
 
 Polygon, known for its high scalability and low transaction costs, provides the perfect environment to enhance the utility and functionalities of the $PUSH token. We couldn’t be more excited to start this journey!
 

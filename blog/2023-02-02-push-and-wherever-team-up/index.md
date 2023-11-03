@@ -4,16 +4,18 @@ slug: push-and-wherever-team-up-to-bring-web3-communication-tools-to-dapps
 title: 'Push and Wherever Team Up to Bring Web3 Communication Tools to Dapps🛠️'
 authors: [push]
 image: './cover-image.webp'
+text: "This week, our featured fren is a wallet-first customer communication platform, Wherever 😊
+Imagine wallet-to-wallet communication on dapps that protects users’ data and privacy, all the while ensuring they get the best possible experience. That’s Wherever for you. The platform enables web3 dapps to communicate with wallets directly, no matter where they are. Communication wherever, literally!"
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology, Push Notification]
 
 ---
 ![Cover image of Push and Wherever Team Up to Bring Web3 Communication Tools to Dapps🛠️](./cover-image.webp)
+<!--truncate-->
 
 This week, our featured fren is a wallet-first customer communication platform, Wherever 😊
 
 Imagine wallet-to-wallet communication on dapps that protects users’ data and privacy, all the while ensuring they get the best possible experience. That’s Wherever for you. The platform enables web3 dapps to communicate with wallets directly, no matter where they are. Communication wherever, literally!
 
-<!--truncate-->
 
 By way of this collaboration, Push provides Wherever the infrastructure to facilitate wallet communication with an emphasis on personalization, automation, and user experience. Wherever relies on Push’s communication layer to deliver in-app notifications while ensuring a decentralized relay and storage.
 

@@ -3,15 +3,17 @@ slug: d-yd-x-x-push-empowering-traders-with-transparent-governance
 title: 'dYdX x Push: Empowering Traders with Transparent Governance🤝'
 authors: [push]
 image: './cover-image.webp'
+text: "In the world of decentralized finance, dYdX is a prominent DEX that offers a unique trading experience. Built on the Ethereum layer 2 system StarkWare, dYdX leverages zero-knowledge proofs to provide enhanced security, decentralization, and privacy to its users."
 tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---
 
 ![Cover image of dYdX x Push: Empowering Traders with Transparent Governance🤝](./cover-image.webp)
+<!--truncate-->
+
 
 Introducing this week’s Frens of Push: [dYdX](https://dydx.exchange/), leading perpetuals decentralized exchange that’s revolutionizing the world of crypto trading.
 
-<!--truncate-->
 
 In the world of decentralized finance, dYdX is a prominent DEX that offers a unique trading experience. Built on the Ethereum layer 2 system StarkWare, dYdX leverages zero-knowledge proofs to provide enhanced security, decentralization, and privacy to its users.
 

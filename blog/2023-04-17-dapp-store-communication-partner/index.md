@@ -4,15 +4,16 @@ slug: push-protocol-selected-as-communication-partner-for-d-app-store-kit
 title: Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!"
 tags: [ Polygon Network, Web3, Partnerships, Polygon]
 
 ---
 
 ![Cover image of Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜](./cover-image.webp)
+<!--truncate-->
 
 Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!
 
-<!--truncate-->
 
 For Push, this means integrations from hundreds of potential new dApp store fronts that are planning to build with the dApp Store Kit and exposure to the millions of Polygon users who will interact with these dApps.
 

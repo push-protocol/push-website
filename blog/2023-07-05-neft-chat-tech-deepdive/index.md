@@ -3,10 +3,12 @@ slug: a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat
 title: 'A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat'
 authors: [push]
 image: './cover-image.webp'
+text: "Push NFT Chat is a seamless and secure communication platform that enables NFTs to chat directly with one another. Unlike traditional chat systems tied to wallet addresses, Push NFT Chat allows chats to be specifically associated with individual NFTs owned by users. This is a game changer for chat integrations."
 tags: [Pushprotocol, Developer, NFT]
 
 ---
 ![Cover image of A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
@@ -15,7 +17,6 @@ tags: [Pushprotocol, Developer, NFT]
 ## What is Push NFT Chat?
 Push NFT Chat is a seamless and secure communication platform that enables NFTs to chat directly with one another. Unlike traditional chat systems tied to wallet addresses, Push NFT Chat allows chats to be specifically associated with individual NFTs owned by users. This is a game changer for chat integrations.
 
-<!--truncate-->
 
 With Push NFT Chat, users now have the flexibility to choose whether their communications remain connected to their NFTs or their wallets.
 

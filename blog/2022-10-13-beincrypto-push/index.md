@@ -3,10 +3,12 @@ slug: beincrypto-collaborates-with-push-to-bring-industry-news-and-high-quality-
 title: BeInCrypto Collaborates With Push to Bring Industry News and High-Quality Content Directly to Readers’ Wallets
 authors: [push]
 image: './cover-image.webp'
+text: "BeInCrypto, one of the most popular cryptocurrency news websites, strikes a strategic alliance with Push to deliver the daily dose of news directly to readers’ wallets. This alliance will end the readers’ reliance on centralized platforms for information and enables decentralized communication between the platform and readers."
 tags: [ Web3, Announcements, Push Notification, Ethereum, Polygon]
 ---
 
 ![Cover image of BeInCrypto Collaborates With Push to Bring Industry News and High-Quality Content Directly to Readers’ Wallets](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Push and BeInCrypto join forces to bring decentralized communication to the platform.
@@ -14,7 +16,6 @@ tags: [ Web3, Announcements, Push Notification, Ethereum, Polygon]
 
 [BeInCrypto](https://beincrypto.com/), one of the most popular cryptocurrency news websites, strikes a strategic alliance with Push to deliver the daily dose of news directly to readers’ wallets. This alliance will end the readers’ reliance on centralized platforms for information and enables decentralized communication between the platform and readers.
 
-<!--truncate-->
 
 ## Bringing Transparency to the Information Industry
 Founded in 2018, BeInCrypto is a cryptocurrency and blockchain-focused news website that aims to spread awareness and education and bring transparency to the emerging industry. The website covers all related topics, from daily crypto updates to crypto technology and fintech.

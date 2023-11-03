@@ -3,18 +3,19 @@ slug: epns-and-quest3-unite-in-pilot-collaboration-to-bring-notifications-for-us
 title: 'EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for Users'
 authors: [push]
 image: './cover-image.png'
+text: "EPNS and Quest3, the quest and event platform for web3, join forces in a pilot collaboration to enable direct communication between users and the platform. As a result, users of the platform are poised to receive push notifications about various happenings. These notifications will allow users to grab opportunities on the platform and encourage participation."
 tags: [Ethereum, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for Users](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Quest3 and EPNS team up to bring decentralized push notifications for platform users.
 
 EPNS and Quest3, the quest and event platform for web3, join forces in a pilot collaboration to enable direct communication between users and the platform. As a result, users of the platform are poised to receive push notifications about various happenings. These notifications will allow users to grab opportunities on the platform and encourage participation.
 
-<!--truncate-->
 
 ### Quest3: Web3’s Event and Quest Platform
 Whether it is on YouTube, Twitter, or Instagram, users of web2 are bombarded with advertisements everywhere with no tangible rewards for viewing them. User data is exploited and used to serve personalized ads to people with all the financial rewards going only to the businesses. Now, Quest3 is a web3 platform that aims to solve this problem and ensures that users are rewarded for their time.

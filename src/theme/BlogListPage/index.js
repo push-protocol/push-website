@@ -43,6 +43,7 @@ function BlogListPageMetadata(props) {
 }
 function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
+  console.log(items, "items");
   return (
     <>
       <ListItem>

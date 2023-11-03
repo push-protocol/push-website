@@ -4,16 +4,18 @@ slug: january-monthly-recap
 title: 'January Monthly Recap❄️'
 authors: [push]
 image: './cover-image.png'
+text: "Welcome to our monthly update!
+We are thrilled to share with you the numerous achievements and milestones we accomplished in the month of January — spoiler, it's a lot."
 tags: [ Devtools, Web3, Blockchain, Newsletter, Push Notification]
 
 ---
 ![Cover image of January Monthly Recap❄️](./cover-image.png)
+<!--truncate-->
 
 Welcome to our monthly update!
 
 We are thrilled to share with you the numerous achievements and milestones we accomplished in the month of January — spoiler, it's a lot.
 
-<!--truncate-->
 
 From exciting new product developments to numerous giveaways, partnerships, and hackathons, January has been a whirlwind of activity for Push and the Push DAO.
 

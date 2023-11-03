@@ -3,14 +3,16 @@ slug: oportunidades-de-desarrollo-profesional-con-push-protocol-en-latinoamerica
 title: 'Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜'
 authors: [push]
 image: './cover-image.webp'
+text: "A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología."
 tags: [Pushprotocol, Latam]
 ---
 
 ![Cover image of Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜](./cover-image.webp)
+<!--truncate-->
+
 
 A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología.
 
-<!--truncate-->
 
 Estos últimos años, Latinoamérica ha demostrado ser una de las regiones con mayor adopción crypto. No es coincidencia que el año pasado hayamos tenido el evento más importante de Ethereum, Devcon VI, en Colombia y que la mirada de los proyectos y protocolos extranjeros hayan desarrollado un foco especial en el talento de la región.
 

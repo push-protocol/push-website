@@ -3,18 +3,19 @@ slug: epns-rebrands-into-push-protocol-the-communication-protocol-for-web3
 title: EPNS Rebrands into Push Protocol, the Communication Protocol for Web3
 authors: [push]
 image: './cover-image.webp'
+text: "Ethereum Push Notification Service (EPNS) is rebranding into Push Protocol. The rebrand signifies the network’s move beyond Ethereum to other blockchains and beyond push notifications to all forms of communication. The existing channels, notifications, $PUSH token, and app all remain unchanged. Learn more at push.org"
 tags: [ Web3, Ethereum, Multichain, Messaging, Announcements]
 ---
 
 
 ![Cover image of EPNS Rebrands into Push Protocol, the Communication Protocol for Web3](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Future of web3 communication
 
 TL;DR: Ethereum Push Notification Service (EPNS) is rebranding into Push Protocol. The rebrand signifies the network’s move beyond Ethereum to other blockchains and beyond push notifications to all forms of communication. The existing channels, notifications, $PUSH token, and app all remain unchanged. Learn more at [push.org](http://www.push.org/).
 
-<!--truncate-->
 
 Dear EPNS family,
 

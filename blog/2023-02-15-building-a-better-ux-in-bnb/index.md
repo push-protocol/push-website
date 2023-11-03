@@ -4,17 +4,18 @@ slug: building-a-better-ux-in-bnb-with-our-8-launch-collaborators
 title: 'Building a Better UX in BNB With Our 8 Launch Collaborators🚀'
 authors: [push]
 image: './cover-image.gif'
+text: "We’re extremely excited to announce Push has officially added BNB Chain to its list of supported chains!"
 tags: [ BNB, BNBChain, Blockchain, Defi]
 
 ---
 ![Cover image of Building a Better UX in BNB With Our 8 Launch Collaborators🚀](./cover-image.gif)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # 1inch Network, SushiSwap, SecondLive, and more protocols have joined Push to improve the UX in the BNB ecosystem.
 
 We’re extremely excited to announce Push has officially added BNB Chain to its list of supported chains!
 
-<!--truncate-->
 
 [BNB Chain](https://www.bnbchain.org/en), the world’s largest smart contract blockchain with [1 million daily active](https://bscscan.com/chart/active-address) users has thousands of dapps across DeFi, GameFi, and NFTs. With our new launch, the door is wide open for the Push ecosystem to grow dramatically and bring on new exciting use cases for our communication solutions.
 

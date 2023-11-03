@@ -3,15 +3,16 @@ slug: announcing-volume-2-of-push-rockstars
 title: 'Announcing Volume 2 of Push #ROCKSTARS'
 authors: [push]
 image: './cover-image.webp'
+text: 'The second year of Push Rockstar NFTs is about to begin. Dive into the details and buckle up!'
 tags: [Nft, Blockchain, Crypto, Opensea, Technology]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Announcing Volume 2 of Push #ROCKSTARS](./cover-image.webp)
+<!--truncate-->
 
 The second year of Push Rockstar NFTs is about to begin. Dive into the details and buckle up!
 
-<!--truncate-->
 
 A year ago, we announced the [first volume](https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf) of Push (prev EPNS) #ROCKSTARS on the heels of our IDOs. Each week for the following 52 weeks, we asked our community to participate in a small challenge. Meme competitions, explainers, tutorials, guides, threads, and more. You name it — the community came together and created it. Each week, the winner of that competition was gifted 2,400 PUSH and one Rockstar NFT, each of which was designed by an Indian artist.
 

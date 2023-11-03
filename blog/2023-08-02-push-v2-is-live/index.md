@@ -3,10 +3,16 @@ slug: push-v2-is-live-new-rewards-utility-and-functionality
 title: 'Push V2 is LIVE — New Rewards, Utility & Functionality 🚀'
 authors: [push]
 image: './cover-image.gif'
+text: "We’re thrilled to announce the launch of Push V2!🎉
+
+
+This new release is packed with exciting features that collectively delivers an unparalleled experience for our users, provides new tools for builders, and helps us take a huge leap forward in the way of democratizing web3 communication."
 tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 ---
 ![Cover image of Push V2 is LIVE — New Rewards, Utility & Functionality 🚀](./cover-image.gif)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # We’re thrilled to announce the launch of Push V2!🎉
@@ -16,7 +22,6 @@ tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 We’re thrilled to announce the launch of Push V2!🎉
 
-<!--truncate-->
 
 This new release is packed with exciting features that collectively delivers an unparalleled experience for our users, provides new tools for builders, and helps us take a huge leap forward in the way of democratizing web3 communication.
 

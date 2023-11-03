@@ -4,17 +4,19 @@ slug: superfluid-enhancing-web3-asset-streaming-with-push
 title: Superfluid Enhancing Web3 Asset-Streaming With Push💜💚
 authors: [push]
 image: './cover-image.webp'
+text: "This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
+The leading asset-streaming protocol revolutionizing the way web3-native organizations handle payments and subscriptions."
 tags: [ Frensofpush, Web3, Push Protocol, Superfluid Protocol]
 
 ---
 
 ![Cover image of Superfluid Enhancing Web3 Asset-Streaming With Push💜💚](./cover-image.webp)
+<!--truncate-->
 
 This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
 
 The leading asset-streaming protocol revolutionizing the way web3-native organizations handle payments and subscriptions.
 
-<!--truncate-->
 
 Superfluid is a decentralized payment protocol that enables DAOs and crypto-native organizations to stream assets in a non-custodial and permissionless manner. This is particularly useful for projects that demand frequent and recurring transactions. By enabling real-time payments, Superfluid allows for fast and frictionless value transfer without gas fees. The protocol’s commitment to trustlessness and decentralization makes it a popular choice among organizations that value security and transparency in their payment processing.
 

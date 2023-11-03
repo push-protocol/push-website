@@ -4,15 +4,16 @@ slug: how-push-and-cross-chain-communication-will-change-web3
 title: How Push & Cross-Chain Communication Will Change Web3🌐
 authors: [push]
 image: './cover-image.webp'
+text: "Blockchain technology has come a long way since the advent of Bitcoin in 2009. Today, there are multiple blockchain platforms with unique features, capabilities, and ecosystems."
 tags: [ Web3, Interoperability, Crosschain, Web3 Communication ]
 
 ---
 
 ![Cover image of How Push & Cross-Chain Communication Will Change Web3🌐](./cover-image.webp)
+<!--truncate-->
 
 Blockchain technology has come a long way since the advent of Bitcoin in 2009. Today, there are multiple blockchain platforms with unique features, capabilities, and ecosystems.
 
-<!--truncate-->
 
 With that, the need for interoperability between these different platforms has been a major challenge for blockchain technology’s growth and mass adoption. As such, cross-chain solutions have become essential to enable seamless interaction between different blockchain platforms though they still lack a critical component — communication.
 

@@ -3,17 +3,18 @@ slug: introducing-push-protocol-v1-5
 title: Introducing Push Protocol v1.5 🎊
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol is elated to announce the successful completion of the security audit of our smart contracts v1.5 with Chainsafe."
 tags: [ Web3, Blockchain Technology, Blockhain Development, Push Notification, Communication Tools]
 ---
 
 ![Cover image of Introducing Push Protocol v1.5 🎊](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # We’re proud to announce ChainSafe has successfully completed its audit of Push Smart Contracts v1.5! Here’s what to expect from the update.<br/>
 
 Push Protocol is elated to announce the successful completion of the [security audit of our smart contracts v1.5](https://github.com/ChainSafe/audits/blob/main/EPNS/epns-protocol-11-2022.pdf) with Chainsafe.
 
-<!--truncate-->
 
 The completion of this audit was one of the most significant roadmap items for this year. We couldn’t be happier to share with you all that our version 1.5 of Core and Communicator smart contracts have been successfully audited by Chainsafe.
 

@@ -4,14 +4,15 @@ slug: superfluid-taps-push-to-update-users-on-money-streaming
 title: 'Superfluid Taps Push to Update Users on Money Streaming⚡'
 authors: [push]
 image: './cover-image.gif'
+text: "Superfluid, the leading asset streaming protocol that enables web3 native subscriptions, salaries, and rewards for DAOs and crypto-native businesses, is partnering with Push to enable direct communication between users and their platform🎉"
 tags: [ Defi, Web3, Blockchain, Blockchain Technology, Announcements]
 
 ---
 ![Cover image of Superfluid Taps Push to Update Users on Money Streaming⚡](./cover-image.gif)
+<!--truncate-->
 
 superfluid, the leading asset streaming protocol that enables web3 native subscriptions, salaries, and rewards for DAOs and crypto-native businesses, is partnering with Push to enable direct communication between users and their platform🎉
 
-<!--truncate-->
 
 This collaboration will result in Superfluid users receiving decentralized notifications and alerts directly on their devices.
 

@@ -3,15 +3,16 @@ slug: epns-at-nft-nyc-2022-all-set-for-the-nft-verse
 title: 'EPNS at NFT NYC 2022: All set for the NFTVerse'
 authors: [push]
 image: './cover-image.webp'
+text: "We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!"
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS at NFT NYC 2022: All set for the NFTVerse](./cover-image.webp)
+<!--truncate-->
 
 We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!
 
-<!--truncate-->
 
 So excited to be part of this <b>4th Annual NFT Industry Event</b> in person and the EPNS Team is going to be doing some really exciting things while we’re at NFT NYC!
 

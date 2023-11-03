@@ -3,14 +3,16 @@ slug: november-monthly-recap
 title: November Monthly Recap
 authors: [push]
 image: './cover-image.webp'
+text: "What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
+"
 tags: [ Web3, Push Notification Service, Push Notification, Developer Tools, Newsletter]
 ---
 
 ![Cover image of November Monthly Recap](./cover-image.webp)
+<!--truncate-->
 
 What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
 
-<!--truncate-->
 
 Let’s unpack everything that happened this month!
 

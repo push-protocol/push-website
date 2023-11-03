@@ -4,18 +4,20 @@ slug: let-s-embark-on-a-mission-w-push-protocol
 title: Let’s Embark on a Mission w. Push Protocol 🔔
 authors: [push]
 image: './cover-image.webp'
+text: "The Web3 ecosystem is continuously evolving, and the Push Missions program is an innovative initiative designed to engage and empower our community to help shape its future."
 tags: [ Ethereum, Push Notification, Rewards, Community]
 
 ---
 
 ![Cover image of Let’s Embark on a Mission w. Push Protocol 🔔](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # Web3, we are ready for lift-off! Today, we are launching a new Program for our community to get more involved with Push Protocol.<br/>
 
 The Web3 ecosystem is continuously evolving, and the Push Missions program is an innovative initiative designed to engage and empower our community to help shape its future.
 
-<!--truncate-->
 
 Push Missions offer exciting challenges and rewards to participants who contribute to the growth of the [Push Protocol](https://push.org/) by solving technical or brand awareness missions.
 

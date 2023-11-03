@@ -3,15 +3,16 @@ slug: icymi-epns-at-eth-cc-2022-paris
 title: 'ICYMI — EPNS at EthCC 2022 Paris 🇫🇷'
 authors: [push]
 image: './cover-image.png'
+text: "While the sweltering heat was the talk of the town, we donned our cool collective hats and focused on being part of one of the largest Ethereum events focused on tech and community, with three intense days of conferences, networking and learning."
 tags: [Push Notification, Ethereum, Epnsproject, Cryptocurrency, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of ICYMI — EPNS at EthCC 2022 Paris 🇫🇷](./cover-image.png)
+<!--truncate-->
 
 While the sweltering heat was the talk of the town, we donned our cool collective hats and focused on being part of one of the largest Ethereum events focused on tech and community, with three intense days of conferences, networking and learning.
 
-<!--truncate-->
 
 And then of course, we had a few talks, panel discussions and media interactions ourselves.
 

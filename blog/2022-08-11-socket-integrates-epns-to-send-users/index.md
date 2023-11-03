@@ -3,18 +3,19 @@ slug: socket-integrates-epns-to-send-users-important-updates-through-push-notifi
 title: 'Socket Integrates EPNS to Send Users Important Updates Through Push Notifications'
 authors: [push]
 image: './cover-image.png'
+text: "There has been a growing number of blockchains, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The growing number of blockchains and their categorization isn’t particularly a bad thing."
 tags: [ Announcements, Pushnotification, Web3, Ethereum, Epns]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Socket Integrates EPNS to Send Users Important Updates Through Push Notifications](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Socket, the blockchain interoperability infrastructure platform, partners with EPNS to send decentralized push notifications to its users.
 
 There has been a <b>growing number of blockchains</b>, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The <b>growing number of blockchains</b> and their categorization isn’t particularly a bad thing.
 
-<!--truncate-->
 
 However, blockchains, by design, cannot communicate with or read data from sources outside their own ecosystem. This results in many high-potential but segregated blockchain ecosystems, each having its own isolated set of applications, platforms, and users.
 

@@ -3,10 +3,15 @@ slug: new-push-yield-farming-rewards-full-details
 title: 'New Push Yield Farming Rewards: Full Details🪙'
 authors: [push]
 image: './cover-image.webp'
+text: "Push Liquidity Rewards Program v1 ended a few weeks ago and v2 is now HERE🎉
+With v2 comes a whole new set of liquidity rewards that provide robust incentives for all liquidity providers and token holders."
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 
 ---
 ![Cover image of New Push Yield Farming Rewards: Full Details🪙](./cover-image.webp)
+
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # 2 new liquidity reward pools to earn $PUSH from.
@@ -15,7 +20,6 @@ tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 Push Liquidity Rewards Program v1 ended a few weeks ago and v2 is now HERE🎉
 
 
-<!--truncate-->
 
 With v2 comes a whole new set of liquidity rewards that provide robust incentives for all liquidity providers and token holders.
 

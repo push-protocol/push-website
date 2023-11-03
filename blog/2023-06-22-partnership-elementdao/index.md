@@ -3,14 +3,16 @@ slug: empowering-decentralized-decision-making-push-x-element-dao
 title: 'Empowering Decentralized Decision-Making: Push x ElementDAO💙💜'
 authors: [push]
 image: './cover-image.gif'
+text: "We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making."
 tags: [Pushprotocol, Web3, Partnerships, Blockchain Technology]
 ---
 
 ![Cover image of Empowering Decentralized Decision-Making: Push x ElementDAO💙💜](./cover-image.gif)
+<!--truncate-->
+
 
 We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making.
 
-<!--truncate-->
 
 ElementFi (now expanded into [DELV](https://www.delv.tech/)), is a leading protocol that enables users to seek high fixed yield income in the DeFi market.
 

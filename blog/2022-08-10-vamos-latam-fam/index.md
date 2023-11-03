@@ -3,18 +3,19 @@ slug: vamos-latam-fam
 title: 'Vamos Latam Fam 🧉'
 authors: [push]
 image: './cover-image.jpeg'
+text: "We had a blast with our invitees during Friday PUSH #21 in preparation for ETH Latam 🇦🇷 💃. Mariano, Juan David, and CryptoChica joined us to discuss about everything ETH Latam, and the challenges and opportunities for the Latam region."
 tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Vamos Latam Fam 🧉](./cover-image.jpeg)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Friday PUSH #21
 
 We had a blast with our invitees during Friday PUSH #21 in preparation for ETH Latam 🇦🇷 💃. Mariano, Juan David, and CryptoChica joined us to discuss about everything ETH Latam, and the challenges and opportunities for the Latam region.
 
-<!--truncate-->
 
 <blockquote>
 <i>

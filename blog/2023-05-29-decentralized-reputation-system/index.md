@@ -4,15 +4,17 @@ slug: how-to-create-a-decentralized-reputation-system-with-alchemy-and-push-prot
 title: How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅
 authors: [push]
 image: './cover-image.webp'
+text: "This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging."
 tags: [ Devtools, Reputation System, Web3,  Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅](./cover-image.webp)
+<!--truncate-->
+
 
 <b>TL;DR:</b> This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 

@@ -4,17 +4,19 @@ slug: push-protocol-1
 title: Push Protocolについて知っておくべきこと🔔
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。"
 tags: [ Ethglobal, Web3, Push Notification, Hackathons]
 
 ---
 
 ![Cover image of Push Protocolについて知っておくべきこと🔔](./cover-image.webp)
+<!--truncate-->
+
 
 ## Push Protocolとは？
 
 Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。
 
-<!--truncate-->
 
 ## 提供するもの
 

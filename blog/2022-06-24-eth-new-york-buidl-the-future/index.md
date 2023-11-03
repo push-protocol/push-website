@@ -3,17 +3,19 @@ slug: eth-new-york-buidl-the-future-of-web3-comm-with-epns
 title: 'ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔'
 authors: [push]
 image: './cover-image.webp'
+text: "It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
+And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!"
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔](./cover-image.webp)
+<!--truncate-->
 
 <b>Hello Hello Hello ETHNewYork!</b>
 
 It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
 
-<!--truncate-->
 
 And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!
 

@@ -4,15 +4,16 @@ slug: geting-started-with-push-sdk-socket-api
 title: 'Getting Started with Push SDK: Socket API🔔'
 authors: [push]
 image: './cover-image.webp'
+text: "The Socket API is a package that helps you connect to the Push backend using WebSockets, built on top of Socket.IO With this API, you can easily subscribe to real-time notifications and updates from the Push network."
 tags: [ Web3, Blockchain, Blockchain Development, Developer ]
 
 ---
 
 ![Cover image of Getting Started with Push SDK: Socket API🔔](./cover-image.webp)
+<!--truncate-->
 
 The Socket API is a package that helps you connect to the Push backend using WebSockets, built on top of <a href="https://socket.io/docs/v4/client-api/"><b>Socket.IO</b></a>. With this API, you can easily subscribe to real-time notifications and updates from the Push network.
 
-<!--truncate-->
 
 In this article, we’ll go over the PUSH-SDK Socket API and how to use it in your dApp.
 

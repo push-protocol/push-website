@@ -3,6 +3,7 @@ slug: monthly-blocks
 title: 'Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
+text: "July flew by in the blink of an eye, and as we go deeper into Q3 more things are coming together nicely. This second half of the year is looking to be loaded with many new features and so many great news."
 tags: [Web3, Ethereum, Epnsproject, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';

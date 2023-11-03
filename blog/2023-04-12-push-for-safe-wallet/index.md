@@ -4,15 +4,17 @@ slug: enhancing-security-and-ux-through-communication-push-notifications-for-saf
 title: Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚
 authors: [push]
 image: './cover-image.gif'
+text: "We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️"
 tags: [ Web3, Blockchain Development, Blockchain Technology, Announcements]
 
 ---
 
 ![Cover image of Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚](./cover-image.gif)
+<!--truncate-->
+
 
 We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️
 
-<!--truncate-->
 
 This integration is designed to take the Safe user experience to the next level. Now with Push notifications, Safe users can rest easy knowing they are in complete control and up to date on the status of their assets with real-time notifications to keep them informed.
 

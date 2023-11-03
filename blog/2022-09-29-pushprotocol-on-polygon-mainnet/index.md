@@ -3,14 +3,15 @@ slug: push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-
 title: Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps
 authors: [push]
 image: './cover-image.webp'
+text: "Today, we’re thrilled to announce that Push Protocol, previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users."
 tags: [ Polygon, Web3, Communication, Ethereum, Announcements]
 ---
 
 ![Cover image of Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps](./cover-image.webp)
+<!--truncate-->
 
 Today, we’re thrilled to announce that [Push Protocol](http://push.org/), previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users.
 
-<!--truncate-->
 
 The Push Protocol launch on Polygon’s mainnet means that Polygon app developers can immediately begin integrating Push into their apps, launching channels, and enabling notifications for users (start [here](https://docs.epns.io/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains/polygon-channel-setup)). Soon, Push Protocol will announce launch partners to allow users to begin subscribing to live channels, opting to receive notifications when certain on- or off-chain conditions are met.
 

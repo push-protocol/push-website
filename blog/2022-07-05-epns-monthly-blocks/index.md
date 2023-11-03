@@ -3,15 +3,16 @@ slug: epns-monthly-blocks
 title: 'EPNS Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
+text: "We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month."
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Monthly Blocks](./cover-image.webp)
+<!--truncate-->
 
 We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month.
 
-<!--truncate-->
 
 ![What's new Image](./image-1.webp)
 

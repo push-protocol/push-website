@@ -21,6 +21,7 @@ function useContainerClassName() {
 export default function BlogPostItem({ children, className, list }) {
   const containerClassName = useContainerClassName();
   const { isBlogPostPage } = useBlogPost();
+  console.log(children, "children");
 
   if (list) {
     return (
@@ -31,6 +32,7 @@ export default function BlogPostItem({ children, className, list }) {
 
         <TextView>
           {!isBlogPostPage && <BlogPostItemHeader list={list} />}
+          <TextSpan>{children?.type?.frontMatter?.text}</TextSpan>
           <BlogPostItemFooter />
         </TextView>
       </ListView>
@@ -42,6 +44,9 @@ export default function BlogPostItem({ children, className, list }) {
 
         <BlogPostItemContent>{children}</BlogPostItemContent>
         {!isBlogPostPage && <BlogPostItemHeader />}
+        {!isBlogPostPage && (
+          <TextSpan>{children?.type?.frontMatter?.text}</TextSpan>
+        )}
 
         <BlogPostItemFooter />
       </BlogPostItemContainer>
@@ -75,4 +80,19 @@ const TextView = styled.div`
   @media (max-width: 1200px) {
     width: 100%;
   }
+`;
+
+const TextSpan = styled.div`
+  color: #575d73;
+  font-family: Strawford;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  margin-bottom: 20px;
+
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;

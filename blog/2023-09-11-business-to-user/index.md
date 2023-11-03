@@ -3,6 +3,7 @@ slug: business-to-user-messaging-push-protocol-x-unstoppable-domains
 title: "Business-to-User Messaging: Push Protocol x Unstoppable Domains"
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol is thrilled to announce our groundbreaking partnership with Unstoppable Domains to enable business-to-user (B2U) messaging through Unstoppable Messaging!For businesses, brands, and web3 projects interested in interacting with their community and delivering a better user experience, messaging just got a lot more accessible."
 tags:
   [
     Unstoppable Domains,

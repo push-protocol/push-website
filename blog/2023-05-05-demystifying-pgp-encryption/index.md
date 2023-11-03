@@ -4,15 +4,17 @@ slug: demystifying-pgp-encryption-in-push
 title: Demystifying PGP Encryption in Push🛡️
 authors: [push]
 image: './cover-image.webp'
+text: "PGP Encryption, or Pretty Good Privacy as its also known, is a critical element of what makes Push messages so secure. It’s a security program that enables users to communicate securely by decrypting and encrypting messages — but how does it work?
+"
 tags: [ Web3, Pgp, Cybersecurity, Blockchain Technology]
 
 ---
 
 ![Cover image of Demystifying PGP Encryption in Push🛡️](./cover-image.webp)
+<!--truncate-->
 
 PGP Encryption, or Pretty Good Privacy as its also known, is a critical element of what makes Push messages so secure. It’s a security program that enables users to communicate securely by decrypting and encrypting messages — but how does it work?
 
-<!--truncate-->
 
 In this article we will explore how PGP encryption works and how it pertains to Push Protocol. Let’s dive in.
 

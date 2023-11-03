@@ -3,15 +3,16 @@ slug: why-engaging-with-users-within-the-nft-verse-matters
 title: 'Why Engaging with Users Within the NFTVerse Matters'
 authors: [push]
 image: './cover-image.webp'
+text: "With the recent launches of Coinbase NFT, a peer-to-peer NFT marketplace with a personalised social feed feature; and Lens Protocol 🌿 a social graph to build decentralized social media platforms NFTs and the dawn of decentralized censorship-free social media is eventually bound to happen soon."
 tags: [Nft ,Ethereum ,Metaverse ,Non Fungible Tokens ,Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Why Engaging with Users Within the NFTVerse Matters](./cover-image.webp)
+<!--truncate-->
 
 With the recent launches of Coinbase NFT, a peer-to-peer NFT marketplace with a personalised social feed feature; and Lens Protocol 🌿 a social graph to build decentralized social media platforms NFTs and the dawn of decentralized censorship-free social media is eventually bound to happen soon.
 
-<!--truncate-->
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/lensprotocol/status/1526918065409216512&amp;image=https%3A//i.embed.ly/1/image%3Furl%3Dhttps%253A%252F%252Fabs.twimg.com%252Ferrors%252Flogo46x38.png%26key%3Da19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0" height="576" width="680" title="LensProtocol.lens 🌿 on Twitter: &quot;Bloom into a new era of social 🌿 Lens Protocol is ready for you to build the next gen of social media apps. The garden is open... https://t.co/bhzgxs9JFt pic.twitter.com/m2IqtIfb7P / Twitter&quot;" class="ek n fc dx bg" scrolling="no"></iframe>
 

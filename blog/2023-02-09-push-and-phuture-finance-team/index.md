@@ -4,16 +4,19 @@ slug: push-and-phuture-finance-team-up-to-enhance-user-engagement
 title: 'Push and Phuture Finance Team Up to Enhance User Engagement🐋'
 authors: [push]
 image: './cover-image.webp'
+text: "This week, we are glad to feature our fren and the leading crypto index platform — Phuture Finance.
+Phuture Finance is an investment platform that combines passive exposure to crypto assets with transparency and lasting value. As such, the index platform is working towards making DeFi more accessible by bringing yield-generating index funds to risk-averse crypto investors.
+"
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology]
 
 ---
 ![Cover image of Push and Phuture Finance Team Up to Enhance User Engagement🐋](./cover-image.webp)
+<!--truncate-->
 
 This week, we are glad to feature our fren and the leading crypto index platform — Phuture Finance.
 
 Phuture Finance is an investment platform that combines passive exposure to crypto assets with transparency and lasting value. As such, the index platform is working towards making DeFi more accessible by bringing yield-generating index funds to risk-averse crypto investors.
 
-<!--truncate-->
 
 If you’re an investor who wants to bank upon the crypto revolution without dealing with complexity or extensive tracking, Phuture Finance is your solution.
 

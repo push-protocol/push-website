@@ -3,11 +3,15 @@ slug: roadmap-2022-q2-wrap-up
 title: 'Roadmap 2022 — Q2 Wrap Up'
 authors: [push]
 image: './cover-image.webp'
+text: "Wow! Half of 2022 is done!
+Can’t believe it’s been more than six months since our Mainnet launch!
+And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!"
 tags: [Roadmaps, Ethereum, Epnsproject, Notifications, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Roadmap 2022 — Q2 Wrap Up](./cover-image.webp)
+<!--truncate-->
 
 Wow! Half of 2022 is done!
 
@@ -15,7 +19,6 @@ Can’t believe it’s been more than six months since our Mainnet launch!
 
 And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!
 
-<!--truncate-->
 
 At EPNS, we believe in the ‘build at speed’ philosophy and at the same time, support fellow builders in the community to help build and grow the ecosystem. To ensure that, as you might know, we had approved Grants for some amazing projects via our [Push Grants Program](https://gov.epns.io/c/grants/10).
 

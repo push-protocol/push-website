@@ -3,18 +3,19 @@ slug: epns-x-polychain-monsters-decentralized-communication-for-the-digital-coll
 title: 'EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem'
 authors: [push]
 image: './cover-image.png'
+text: "Polychain Monsters, the cross-chain digital collectible and gaming ecosystem, and EPNS team up in a pilot collaboration to bring decentralized push notifications for users. As such, Polychain Monsters will now be able to seamlessly interact with its users and keep them updated about the status of their various activities in the rapidly expanding “Polyverse”."
 tags: [Nft, Ethereum, Epnsproject, Nft Collectibles, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS x Polychain Monsters: Decentralized Communication for the Digital Collectible Ecosystem](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # EPNS and Polychain Monsters join forces to enable direct communication for users through decentralized push notifications.
 
 Polychain Monsters, the cross-chain digital collectible and gaming ecosystem, and EPNS team up in a pilot collaboration to bring decentralized push notifications for users. As such, Polychain Monsters will now be able to seamlessly interact with its users and keep them updated about the status of their various activities in the rapidly expanding “Polyverse”.
 
-<!--truncate-->
 
 ## Polychain Monsters: The Cross-Chain Collectible Ecosystem
 Polychain Monsters is an NFT project that aims to build a cross-chain digital collectible and gaming experience. At the very core of this project are Polymon, intricately designed and animated NFTs which can be unpacked in digital booster packs using $PMON tokens. These booster packs are available on the Ethereum, Binance Smart Chain, and Polygon networks, in addition to a one-off 10k Solana drop featuring Polychain Monsters’ latest expansion — Exomon. Each booster pack includes three Polymon, which come in a variety of traits that define their rarity. Some combinations of traits are extremely rare and valuable, and have sold on secondaries for over $100,000.

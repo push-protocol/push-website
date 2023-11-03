@@ -4,15 +4,16 @@ slug: how-to-build-a-game-collectibles-d-app-with-push-and-alchemy
 title: How to Build a Game Collectibles dApp with Push and Alchemy🎮
 authors: [push]
 image: './cover-image.webp'
+text: "This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem."
 tags: [ Web3, Development, Gaming,  Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of How to Build a Game Collectibles dApp with Push and Alchemy🎮](./cover-image.webp)
+<!--truncate-->
 
 <b>TL;DR:</b> This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 

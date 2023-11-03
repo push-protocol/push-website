@@ -4,17 +4,19 @@ slug: april-monthly-recap
 title: April Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
+text: "Welcome to another exciting month at Push Protocol!
+While there’s a lot to get through, there is one announcement that stands out and we think is worthwhile giving extra attention."
 tags: [ Web3, NewsLetter, Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of April Monthly Recap✨](./cover-image.webp)
+<!--truncate-->
 
 Welcome to another exciting month at Push Protocol!
 
 While there’s a lot to get through, there is one announcement that stands out and we think is worthwhile giving extra attention.
 
-<!--truncate-->
 
 As we’ve been busy expanding our reach, adding to our suite of decentralized communication tools, and working to revolutionize web3 communication, April hosted the release of our latest development. Introducing [Push Video Chat](https://twitter.com/pushprotocol/status/1646483829287182339) — a groundbreaking wallet-to-wallet video chat that allows web3 users to connect in real time.
 

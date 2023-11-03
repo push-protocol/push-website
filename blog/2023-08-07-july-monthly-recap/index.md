@@ -3,15 +3,17 @@ slug: july-monthly-recap
 title: July Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
+text: "July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month."
 tags: [Pushprotocol, Newsletter, Web3, Blockchain Technology]
 
 ---
 
 ![Cover image of July Monthly Recap✨](./cover-image.webp)
+<!--truncate-->
+
 
 July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month.
 
-<!--truncate-->
 
 ## Development⚒️
 Most notably, we’re thrilled to [unveil Push V2!](https://medium.com/push-protocol/push-v2-is-live-new-rewards-utility-functionality-4d591284209d)

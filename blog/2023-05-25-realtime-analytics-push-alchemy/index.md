@@ -4,14 +4,16 @@ slug: how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-w
 title: How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊
 authors: [push]
 image: './cover-image.webp'
+text: "This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network."
 tags: [ Analytics Engineering, Web3, Web3 Development,  Blockchain Development, Blockchain Technology]
 
 ---
 ![Cover image of How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊](./cover-image.webp)
+<!--truncate-->
+
 
 <b>TL;DR:</b> This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 

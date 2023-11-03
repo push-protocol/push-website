@@ -3,15 +3,16 @@ slug: epns-push-notifications-are-never-boring
 title: 'EPNS push notifications are never boring'
 authors: [push]
 image: './cover-image.webp'
+text: "We are back, sharing our ETHGlobal Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the ETHGlobal Team for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at Aavesome Compound, etc has made this learning process about DeFi landscape and tech amazingly fun."
 tags: [Ethereum ,Blockchain ,Ethglobal ,Blog ,Notifications]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS push notifications are never boring](./cover-image.webp)
+<!--truncate-->
 
 We are back, sharing our [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----f5f5a1a2c477--------------------------------) Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the [ETHGlobal Team](https://medium.com/u/8687f4bcbbed?source=post_page-----f5f5a1a2c477--------------------------------) for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at [Aavesome](https://medium.com/u/13bfa9f22920?source=post_page-----f5f5a1a2c477--------------------------------), Compound, etc has made this learning process about DeFi landscape and tech amazingly fun.
 
-<!--truncate-->
 
 To begin with, we never wanted to deliver plain notifications to the users. We mean they are cool but there are so many things you can do when you make notifications behave like your twitter feed. This led us to think a lot about the payloads, analogies and the way we want to present notifications… and that’s how we came up with… drumbeats… notification feed and different formats of notifications.
 

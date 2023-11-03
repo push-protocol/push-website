@@ -3,10 +3,14 @@ slug: exploring-the-role-of-zk-knowledge-in-decentralized-communication
 title: Exploring the Role of ZK Knowledge in Decentralized Communication🌐
 authors: [push]
 image: './cover-image.webp'
+text: "The world of decentralized systems is undergoing a significant evolution, triggered by the imperative quest for privacy and scalability solutions. The technology under our microscope today is zero-knowledge technology, the inherent strengths of which, developers are tirelessly examining for possible integration into Push Protocol."
 tags: [Pushprotocol, Web3, Zkrollup, Blockchain Technology]
 
 ---
 ![Cover image of Exploring the Role of ZK Knowledge in Decentralized Communication🌐](./cover-image.webp)
+
+<!--truncate-->
+
 
 <blockquote>
 <i>
@@ -22,7 +26,6 @@ This article discusses the possible integration of Zero-Knowledge Rollups (ZKR) 
 </i>
 </blockquote>
 
-<!--truncate-->
 
 The world of decentralized systems is undergoing a significant evolution, triggered by the imperative quest for privacy and scalability solutions. The technology under our microscope today is zero-knowledge technology, the inherent strengths of which, developers are tirelessly examining for possible integration into Push Protocol.
 

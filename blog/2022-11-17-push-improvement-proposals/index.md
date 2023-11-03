@@ -3,11 +3,13 @@ slug: introducing-push-improvement-proposal-pip
 title: Introducing Push Improvement Proposal (PIP)
 authors: [push]
 image: './cover-image.webp'
+text: "Push (previously known as EPNS) has grown to become the leading communication layer for all Web3 actors including protocols, dapps, smart contracts, wallets, backend, and users. But, to service such a large ecosystem, there needs to be a streamlined process for improving and developing the ecosystem to meet every actor’s needs. Introducing — Push Improvement Proposals (PIP)."
 tags: [ Web3, Blockchain, Blockchain Technology, Push Notification, Pushprotocol]
 ---
 
 
 ![Cover image of Introducing Push Improvement Proposal (PIP)](./cover-image.webp)
+<!--truncate-->
 
 TLDR;
 
@@ -15,7 +17,6 @@ TLDR;
 - There is now a standardized and transparent process that allows the community to review and contribute to every PIP to ensure each PIP is in the best interest of the Push ecosystem.
 - This will allow users to submit PIPs in a well-defined cycle, through which moderators and the community can take decisions on the proposal.
 
-<!--truncate-->
 
 <center><b>.  .  .</b></center>
 

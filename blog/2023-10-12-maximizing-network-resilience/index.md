@@ -4,6 +4,7 @@ title: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
 authors: [push]
 image: './cover-image.webp'
 description: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
+text: 'In communication networks, liveness signifies the network’s ability to maintain operations and remain responsive to incoming traffic. Because traditional communication networks possess central points of failure, the entire network is at risk of collapse. This can lead to numerous issues, including disruptions to essential services and communication channels. For example, an outage by a primary IT provider could render an entire network unusable for an extended period.'
 tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
 ---
 

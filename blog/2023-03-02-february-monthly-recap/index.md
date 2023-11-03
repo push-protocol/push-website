@@ -4,17 +4,18 @@ slug: february-monthly-recap
 title: February Monthly Recap 🚀
 authors: [push]
 image: './cover-image.webp'
+text: "Welcome to our monthly update for February! What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy."
 tags: [ Web3, Blockchain Technology, Newsletter ]
 
 ---
 
 ![Cover image of February Monthly Recap 🚀](./cover-image.webp)
+<!--truncate-->
 
 Welcome to our monthly update for February!
 
 What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy.
 
-<!--truncate-->
 
 Here’s a look at everything that went on🤩
 

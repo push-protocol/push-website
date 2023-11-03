@@ -3,10 +3,13 @@ slug: announcing-the-push-chat-alpha-launch
 title: Announcing the Push Chat Alpha Launch
 authors: [push]
 image: './cover-image.webp'
+text: "Today, we’re excited to announce the next evolution in Push Protocol: Push Chat!
+Push Chat is a wallet-to-wallet communication protocol that will accelerate the growth and value of web3 applications and communities alike. We are launching the Push Chat alpha and opening up access to select users across the Push community. To learn how to get access to the alpha, see “Push Chat Alpha Access” below."
 tags: [ Announcements, Web3, WebChat, Push Notification, Decentralization]
 ---
 
 ![Cover image of Announcing the Push Chat Alpha Launch](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Decentralized, uncensorable, web3-native chat is here. Powered by Push Protocol.<br/>
@@ -15,7 +18,6 @@ Today, we’re excited to announce the next evolution in Push Protocol: Push Cha
 
 Push Chat is a wallet-to-wallet communication protocol that will accelerate the growth and value of web3 applications and communities alike. We are launching the Push Chat alpha and opening up access to select users across the Push community. To learn how to get access to the alpha, see “Push Chat Alpha Access” below.
 
-<!--truncate-->
 
 ## The TL;DR about Push Chat
 The Push Chat alpha allows anyone with a wallet or an ENS to chat with others directly through the Push Chat application ([app.push.org](http://app.push.org/)). Text, GIFs, and images are supported in the alpha. With a couple of web3 steps added in, Push Chat operates just like a typical messaging application — just web3-native. Features to be added down the road include video, group chat, payments, transfers, live chat, and more.

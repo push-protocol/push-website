@@ -4,18 +4,19 @@ slug: launch-of-the-push-ambassadors-program-english-espanol
 title: Launch of The Push Ambassadors Program 💜 (English + Español)
 authors: [push]
 image: './cover-image.webp'
+text: "After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community."
 tags: [ Web3, Ambassador Program, Blockchain Technology]
 
 ---
 
 ![Cover image of Launch of The Push Ambassadors Program 💜 (English + Español)](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Programa de Embajadores de Push protocol!<br/>
 
 🔵<b>EN |</b> After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community.
 
-<!--truncate-->
 
 Today, we are excited to announce the <b>Push Ambassadors Program💜</b>
 

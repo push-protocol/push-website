@@ -3,17 +3,18 @@ slug: push-monthly-blocks-october
 title: Push Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
+text: "Hello Push fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them."
 tags: [ Newsletter, Blockchain, Ethereum, Pushprotocol]
 ---
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # October 2022<br/>
 
 Hello <b>Push</b> fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them.
 
-<!--truncate-->
 
 ![What's New](./image-1.webp)
 

@@ -3,18 +3,20 @@ slug: huobi-supports-indian-artists
 title: 'Huobi ❤️ Supports Indian Artists!'
 authors: [push]
 image: './cover-image.webp'
+text: "Continuing the celebration of $PUSH listing on Huobi Global this weeks $ROCKSTAR #NFT is sponsored by awesome peeps at 
+Huobi Global to celebrate Indian art 🇮🇳. The winner gets the $ROCKSTAR NFT + 2400 $PUSH (~$12,000)+ Sweet surprise from Huobi 🎁"
 tags: [Mème ,Huobi ,Ethereum ,Announcements ,Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Huobi ❤️ Supports Indian Artists!](./cover-image.webp)
+<!--truncate-->
 
 Hey Awesome Community 👋!!
 
 Continuing the celebration of $PUSH listing on [Huobi Global](https://medium.com/u/65d3e2271234?source=post_page-----3478bcf2ca1f--------------------------------), this weeks $ROCKSTAR #NFT is sponsored by awesome peeps at 
 [Huobi Global](https://medium.com/u/65d3e2271234?source=post_page-----3478bcf2ca1f--------------------------------) to celebrate Indian art 🇮🇳. The winner gets the <b>$ROCKSTAR NFT + 2400 $PUSH </b>(~$12,000)+ <b>Sweet surprise from Huobi 🎁</b>
 
-<!--truncate-->
 
 Channelize your love and get creative in showcasing EPNS x Huobi Global to the world to be the winner 💖 🤗!
 

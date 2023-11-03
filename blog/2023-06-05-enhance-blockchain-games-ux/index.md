@@ -3,15 +3,17 @@ slug: enhancing-blockchain-based-games-ux-through-in-game-chat-notifications
 title: Enhancing Blockchain Based Games UX Through In-Game Chat + Notifications🎮
 authors: [push]
 image: './cover-image.webp'
+text: "Blockchain gaming has emerged as a rapidly growing niche within the gaming industry, driven by the unique benefits it offers players, including true ownership of in-game assets, interoperability between games, and provable scarcity of digital items. Despite these advantages, the sector faces challenges in scalability and user interaction. Push Protocol, a real-time communication solution with low latency and scalability, offers a promising solution to these issues."
 tags: [ Web3, Blockchain Technology, Blockchain Development, Web3 Game]
 
 ---
 
 ![Cover image of Enhancing Blockchain Based Games UX Through In-Game Chat + Notifications🎮](./cover-image.webp)
+<!--truncate-->
+
 
 Blockchain gaming has emerged as a rapidly growing niche within the gaming industry, driven by the unique benefits it offers players, including true ownership of in-game assets, interoperability between games, and provable scarcity of digital items. Despite these advantages, the sector faces challenges in scalability and user interaction. Push Protocol, a real-time communication solution with low latency and scalability, offers a promising solution to these issues.
 
-<!--truncate-->
 
 In this post, we dive into the technical aspects of integrating Push Protocol into blockchain gaming and examine its potential to transform in-game economies and social interactions.
 
