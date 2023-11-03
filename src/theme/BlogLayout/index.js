@@ -13,14 +13,14 @@ export default function BlogLayout(props) {
   const hasSidebar = sidebar && sidebar.items.length > 0;
   return (
     <Layout {...layoutProps}>
-      <div className="container margin-vert--lg">
-        <div className="row">
+      <div className="container">
+        <div className="">
           <BlogSidebar sidebar={sidebar} />
           <main
-            className={clsx("col", {
-              "col--7": hasSidebar,
-              "col--9 col--offset-1": !hasSidebar,
-            })}
+            // className={clsx("col", {
+            //   "col--7": hasSidebar,
+            //   "col--9 col--offset-1": !hasSidebar,
+            // })}
             itemScope
             itemType="http://schema.org/Blog"
           >

@@ -36,7 +36,7 @@ function ReadingTime({ readingTime }) {
 }
 function Date({ date, formattedDate }) {
   var year = moment().year();
-  const isPresentYear = formattedDate.includes(year);
+  const isPresentYear = formattedDate?.includes(year);
   const newDate = moment(formattedDate).format(
     !isPresentYear ? "MMM DD,  YYYY" : "MMM DD",
   );
@@ -51,10 +51,16 @@ function Spacer() {
   return <>{" · "}</>;
 }
 export default function BlogPostItemHeaderInfo({ className }) {
-  const { metadata } = useBlogPost();
+  const { metadata, isBlogPostPage } = useBlogPost();
   const { date, formattedDate, readingTime } = metadata;
   return (
-    <div className={clsx(styles.container, "margin-vert--md", className)}>
+    <div
+      className={clsx(
+        styles.container,
+        !isBlogPostPage ? "margin-vert--sm" : "",
+        className,
+      )}
+    >
       <Date date={date} formattedDate={formattedDate} />
       {typeof readingTime !== "undefined" && (
         <>

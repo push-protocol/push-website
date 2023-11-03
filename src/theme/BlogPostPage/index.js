@@ -31,24 +31,13 @@ function BlogPostPageContent({ sidebar, children }) {
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
   return (
-    <BlogLayout
-    // sidebar={sidebar}
-    // toc={
-    //   !hideTableOfContents && toc.length > 0 ? (
-    //     <TOC
-    //       toc={toc}
-    //       minHeadingLevel={tocMinHeadingLevel}
-    //       maxHeadingLevel={tocMaxHeadingLevel}
-    //     />
-    //   ) : undefined
-    // }
-    >
+    <BlogLayout>
       <BlogItem>
         <BlogPostItem>{children}</BlogPostItem>
 
-        {(nextItem || prevItem) && (
+        {/* {(nextItem || prevItem) && (
           <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-        )}
+        )} */}
 
         <FooterItem />
       </BlogItem>
@@ -78,7 +67,7 @@ const BlogItem = styled.div`
   width: 800px !important;
   margin: 0 auto;
 
-  @media (min-width: 810px) {
+  @media (max-width: 810px) {
     width: 100% !important;
   }
 `;

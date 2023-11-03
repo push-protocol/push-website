@@ -11,6 +11,9 @@ import { useBlogPost } from "@docusaurus/theme-common/internal";
 import styles from "./styles.module.css";
 import styled from "styled-components";
 
+// Internal Configs
+import { device } from "@site/src/config/globals";
+
 export default function BlogPostItemHeaderTitle({ className }) {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { permalink, title } = metadata;
@@ -55,4 +58,9 @@ const PostTitle = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: 55.5px;
+
+  @media ${device.tablet} {
+    font-size: 25px;
+    line-height: 30px;
+  }
 `;

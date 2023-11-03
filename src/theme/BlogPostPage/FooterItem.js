@@ -21,10 +21,10 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import { device } from "@site/src/config/globals";
 
 const FooterItem = () => {
-  const isMobile = useMediaQuery(device.mobileL);
+  const isMobile = useMediaQuery(device.tablet);
 
   return (
-    <Content>
+    <div>
       <ShareRow>
         <ResponsiveH2
           size={isMobile ? "16px" : "24px"}
@@ -49,7 +49,7 @@ const FooterItem = () => {
                   lineHeight="26px"
                   self={isMobile ? 'stretch' : 'self'}
                 > */}
-        <Button
+        <ShareButton
           title="Developer Docs"
           background="#D53A94"
           radius="12px"
@@ -66,7 +66,7 @@ const FooterItem = () => {
         >
           <BiShareAlt size={23} color="#fff" style={{ marginRight: "10px" }} />
           Share
-        </Button>
+        </ShareButton>
         {/* </Anchor> */}
       </ShareRow>
 
@@ -139,7 +139,7 @@ const FooterItem = () => {
           <KPIMetric>Linkedin</KPIMetric>
         </BannerItem>
       </KPIBanner>
-    </Content>
+    </div>
   );
 };
 
@@ -242,11 +242,7 @@ const KPIMetric = styled.div`
   }
 `;
 
-const ResponsiveH2 = styled(H2)`
-  @media ${device.tablet} {
-    font-size: 32px;
-  }
-`;
+const ResponsiveH2 = styled(H2)``;
 
 const ShareRow = styled.div`
   margin: 50px 0 0px 0;
@@ -254,6 +250,7 @@ const ShareRow = styled.div`
   justify-content: space-between;
   align-items: center;
   @media ${device.tablet} {
+    flex-direction: row;
     margin-top: 52px;
     align-items: center;
   }
@@ -263,5 +260,12 @@ const ShareRow = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+`;
+
+const ShareButton = styled(Button)`
+  @media ${device.mobileL} {
+    width: 100%;
+    margin: 20px;
   }
 `;

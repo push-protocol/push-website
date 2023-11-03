@@ -17,15 +17,16 @@ export default function BlogPostItemHeader({ list }) {
       <header>
         <BlogPostItemHeaderInfo />
         <BlogPostItemHeaderTitle />
-        {isBlogPostPage && <BlogPostItemHeaderAuthors />}
       </header>
     );
   } else {
     return (
       <header>
-        <BlogPostItemHeaderTitle />
-        <BlogPostItemHeaderInfo />
         {isBlogPostPage && <BlogPostItemHeaderAuthors />}
+        {/* {isBlogPostPage && <BlogPostItemHeaderInfo />} */}
+        <BlogPostItemHeaderTitle />
+
+        {!isBlogPostPage && <BlogPostItemHeaderInfo />}
       </header>
     );
   }
