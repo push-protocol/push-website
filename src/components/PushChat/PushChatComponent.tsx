@@ -38,7 +38,7 @@ export const ChatComponent = () => {
       <Header>
         Join the conversation
         <BrandA
-          href="https://push.org/docs/chat"
+          href="/docs/chat"
           target="_blank"
         >
           <Image

@@ -1,14 +1,21 @@
 ---
-description: >-
-  In this section, we will be looking into the more complex side of implementing
-  channels built on top of showrunners.
+id: docs-notifications-showrunners-examples-advance-protocol-based-trigger-oasis-protocol
+title: Advance - Protocol based trigger (Oasis protocol)
+hide_title: true
+slug: ./advance-protocol-based-trigger-oasis-protocol
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 6
 ---
 
-# Expert Level - Oasis
+# Advance - Protocol based trigger (Oasis protocol example) via showrunner scaffold
 
-HELLO!
+We will be looking into the more complex side of implementing channel notifications trigger built on top of showrunners scaffold. This is a step by step example that triggers notification for vaults of Oasis protocol that are at risk of liquidations
 
-Before going to the coding part directly, we used [MakerDAO ](https://docs.makerdao.com/)documentation for implementing [Oasis ](https://oasis.app/)channel.
+**GM!** Before going to the coding part directly, we used [MakerDAO ](https://docs.makerdao.com/)documentation for implementing [Oasis ](https://oasis.app/)channel.
+
+<head>
+  <title>Protocol based trigger (Oasis protocol liquidation example) | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+</head>
 
 ### Use case for Notification
 
@@ -24,17 +31,17 @@ We need to install [@makerdao/dai](https://www.npmjs.com/package/@makerdao/dai) 
 npm i @makerdao/dai-plugin-mcd @makerdao/dai
 ```
 
-### Step 2 . Create a  folder
+### Step 2. Setup channel folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
-First we need to create a folder in `src/showrunners/<`_`your_channel_name>`_
+First we need to create a folder in `src/showrunners/<`your_channel_name>`
 
-### Step 3 . Adding necessary files into the folder
+### Step 3. Adding necessary files into the folder
 
 #### Adding [contarctAddress.json](https://github.com/ethereum-push-notification-service/epns-showrunners-framework/blob/main/src/showrunners/oasis/contractAddress.json) file
 
-```
+```jsx
 // Contains every vault address
 {
   "CHANGELOG": "0xdA0Ab1e0017DEbCd72Be8599041a2aa3bA7e740F",
@@ -338,7 +345,7 @@ This file contains every vault address and by so, we will be fetching next price
 
 #### Adding [oasisChannel.ts](https://github.com/ethereum-push-notification-service/epns-showrunners-framework/blob/main/src/showrunners/oasis/oasisChannel.ts) file
 
-```
+```jsx
 import { Service, Inject, Container } from 'typedi';
 import config, { defaultSdkSettings, settings } from '../../config';
 
@@ -580,7 +587,7 @@ export default class oasisChannel extends EPNSChannel {
 
 Let's understand this code by sections -
 
-```
+```jsx
 import { Service, Inject, Container } from 'typedi';
 import config, { defaultSdkSettings, settings } from '../../config';
 
@@ -595,7 +602,7 @@ import mainnetAddress from './contractAddress.json';
 
 Here we are importing all the necessary files and packages for our channel file to gear up.
 
-```
+```jsx
 // fetching next price from contract storage
 async getOraclePrice(provider, pipAddress, slot) {
     const storageHexToBigNumber = (uint256: string) => {
@@ -621,7 +628,7 @@ async getOraclePrice(provider, pipAddress, slot) {
 
 This set of code is used to fetch the next price for every vault from their respective oracles.
 
-```
+```jsx
 // fetching next price for every vault and storing into a mapping.
 public async getLatestPrices() {
     this.logInfo(`getLatestPrices()`);
@@ -646,7 +653,7 @@ public async getLatestPrices() {
 
 Here we are mapping over every vault and fetching their next price using `getOraclePrice` method.
 
-```
+```jsx
 // details of every vault
 public async getVaultDetails(
     user: String,
@@ -712,7 +719,7 @@ public async getVaultDetails(
 
 As we are done with next price of every vault, it's time to look into the method for getting other details, so here we are using `manager` for getting `CdpIds` for a given user, for getting into more details, refer the docs [here](https://docs.makerdao.com/).
 
-```
+```jsx
 // util function for sending notification
 public async sendOasisNotification(
     user,
@@ -788,7 +795,7 @@ public async sendOasisNotification(
 
 As we have a complex use case for notifications, we are sending notifications over few condition with the help of `sendOasisNotification` util function.
 
-```
+```jsx
 // Final set of code to send notifications
 public async sendMessageToContract(simulate) {
     this.logInfo(`Looking at vaults for liquidation alert`);
@@ -829,7 +836,7 @@ After setting up all the methods, this function will be sending the notification
 
 #### Adding [oasisJobs.ts](https://github.com/ethereum-push-notification-service/epns-showrunners-framework/blob/main/src/showrunners/oasis/oasisJobs.ts) file
 
-```
+```jsx
 // Do Scheduling
 // https://github.com/node-schedule/node-schedule
 // *    *    *    *    *    *
@@ -878,7 +885,7 @@ After setting up the channel file, we are setting up a three hour rule for hitti
 
 #### Adding [oasisRoutes.ts](https://github.com/ethereum-push-notification-service/epns-showrunners-framework/blob/main/src/showrunners/oasis/oasisRoutes.ts) file
 
-```
+```jsx
 import { Router, Request, Response, NextFunction } from 'express';
 import { Container } from 'typedi';
 import { celebrate, Joi } from 'celebrate';
@@ -923,7 +930,7 @@ Now the last part of setting up the routes for manually triggering the notificat
 
 This file would be named oasisKeys.json, and it would contain the private keys of the channel
 
-```
+```jsx
 {
     "PRIVATE_KEY": "0x_PRIVATE_KEY"
 }

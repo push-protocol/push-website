@@ -11,7 +11,7 @@ Showrunners framework provides you with a scaffold that enables plug and play fo
 Let's understand the requirements for the folder structure inside the `src/showrunners` folder and how you can use them to quickly refine / debug / deploy your channels.
 
 :::info
-It is recommended to understand [Setup Showrunners](how-to-setup-showrunners.md) guide and [Hello World Channel](hello-world-channel.md) guide before diving in specifics of this guide as the guide relies on prior knowledge of the above two.
+It is recommended to understand [Setup Showrunners](how-to-setup-showrunner.md) guide and [Hello World Channel](hello-world-channel.md) guide before diving in specifics of this guide as the guide relies on prior knowledge of the above two.
 :::
 
 ## Channel Structure

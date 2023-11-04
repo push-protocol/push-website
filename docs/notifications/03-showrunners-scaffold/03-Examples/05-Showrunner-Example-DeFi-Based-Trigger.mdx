@@ -1,27 +1,35 @@
 ---
-description: >-
-  This is a step-by-step introductory tutorial that will teach you how to build
-  a channel based on DEFI protocols and their respective events in a contract.
+id: docs-notifications-showrunners-examples-defi-based-trigger
+title: DeFi based trigger
+hide_title: true
+slug: ./defi-based-trigger
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 5
 ---
 
-# Defi Based Notification via Showrunner Example
+# DeFi based trigger via showrunner scaffold
 
-HELLO!
+This is a step-by-step introductory tutorial that will teach you how to build a channel based on DEFI protocols and their respective events in a contract.
 
 If you are new to Push protocol and don't have a proper idea of how to create a DEFI-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
-We will walk through coding and interacting with the [aave ](https://aave.com/)smart contract for monitoring the events. 
+We will walk through coding and interacting with the [aave](https://aave.com/) smart contract for monitoring the events. 
 
 And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-You can access the [code ](https://github.com/ethereum-push-notification-service/epns-showrunners-framework-staging/tree/main/src/sample\_showrunners/aave)for the channel and get some vibe for how the code is looking !!
+You can access the [code](https://github.com/ethereum-push-notification-service/push-showrunners-framework-staging/tree/main/src/sample_showrunners/aave) for the channel and get some vibe for how the code is looking !!
 
-#### Here are the list of things you will require to make the channel up into the showrunners
+<head>
+  <title>DeFi based trigger | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+</head>
 
-* Contract Address for <span style={{color:'orange'}}>AAVE Lending Pool</span> on the ethereum main-network : _`0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9`_
-* ABI for <span style={{color:'orange'}}>AAVE Lending Pool</span> smart contract:
+### Pre-requisites
 
-```
+Here are the list of things you will require to make the channel up into the showrunners: 
+* Contract Address for **AAVE Lending Pool** on the ethereum main-network : _`0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9`_
+* ABI for **AAVE Lending Pool** smart contract:
+
+```jsx
 [
     {
         "anonymous": false,
@@ -1116,9 +1124,7 @@ Don't worry if that's a bit overwhelming at this point, you'll see how these thi
 
 Now buckle up, and let's get started.
 
-
-
-### Step 1 . Create a  folder
+### Step 1. Setup channel folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
@@ -1134,7 +1140,7 @@ In our case the name of the folder we are going to create is `AAVE` as that is t
 
 Now that we have created the folder, it's time for creating files in the folder. Start with creating `aaveSettings.json` and put the following contents in it, which are the addresses of the lending pool contract on different networks.
 
-```
+```jsx
 {
     "aaveLendingPoolDeployedContractPolygonMainnet": "0x8dFf5E27EA6b7AC08EbFdf9eB090F32ee9a30fcf",
     "aaveLendingPoolDeployedContractPolygonMumbai": "0x9198F13B08E299d85E096929fA9781A1E3d5d827",
@@ -1155,7 +1161,7 @@ Let's review it to understand a bit about what's going on in code!
 
 Here's the entire code:
 
-```
+```jsx
 // @name: Aave Channel
 // @version: 1.0
 
@@ -1324,7 +1330,7 @@ Let's break it down into sections so we can have better understanding of code.:t
 
 The constructor of the class is used to initialise a lot of key variables which are specific to this channel, the key things to note are `name` which represents the name of the channel, `url` which is essentially the home page(if any) of the channel, this would the where the users would be redirected to by default, if no CTA is provided for a notification.
 
-```
+```jsx
 // The constructor of the class
   constructor(@Inject('logger') public logger: Logger) {
     super(logger, {
@@ -1347,7 +1353,7 @@ The constructor of the class is used to initialise a lot of key variables which 
 This is a utility function responsible for checking, it essentially takes in a user address, and then fetches details about the position associated with the address.\
 Among the details fetched for the user is the variable `healthFactor` which tells us how close this user is to liquidation, where a value of `1` means the user is not close to liquidation and a value of `0`  means the user is liquidated.                                                                                                  We then compare the value gotten back to a cut-off value, and if it falls below the cut-off value, we trigger a notification to the user in question.
 
-```
+```jsx
   public async checkHealthFactor(aave, userAddress, sdk: epnsHelper, simulate) {
     this.logInfo(`Checking Health Factor`);
     try {
@@ -1432,7 +1438,7 @@ Among the details fetched for the user is the variable `healthFactor` which tell
 
 This is the `main` function which is ties everything together and is called by an external party in order to perform the duties of the channel, this function loops over the subscribers of the channel, and calls the `checkHealthFactor` method on them, which in turn then fetches
 
-```
+```jsx
   public async sendMessageToContract(simulate) {
     const sdk = await this.getSdk();
     this.logInfo('sendMessageToContract');
@@ -1485,7 +1491,7 @@ Now to trigger notification manually, we will be needing a `channelRoute.ts` fil
 
 Here is the code for our `aaveRoute.ts` file -
 
-```
+```jsx
 import { Router, Request, Response, NextFunction } from 'express';
 import { Container } from 'typedi';
 import middlewares from '../../api/middlewares';
@@ -1539,7 +1545,7 @@ _Setting up a jobs file for a channel is not necessary, it can be customized acc
 
 Code for the aave`Jobs.ts` -
 
-```
+```jsx
 // Do Scheduling
 // https://github.com/node-schedule/node-schedule
 // *    *    *    *    *    *
@@ -1596,7 +1602,7 @@ export default () => {
 
 This file would be named aaveKeys.json, and it would contain the private keys of the channel
 
-```
+```jsx
 {
     "PRIVATE_KEY": "0x_PRIVATE_KEY"
 }

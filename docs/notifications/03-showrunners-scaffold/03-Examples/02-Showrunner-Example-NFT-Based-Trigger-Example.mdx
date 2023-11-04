@@ -1,33 +1,39 @@
 ---
-description: >-
-  This is a step-by-step introductory tutorial that will teach you how to build
-  a channel based on NFTs and their respective events in a contract.
+id: docs-notifications-showrunners-examples-nft-based-trigger
+title: NFT based trigger
+hide_title: true
+slug: ./nft-based-trigger
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 2
 ---
 
-# NFT Based Notification via Showrunner Example
+# NFT based trigger via showrunner scaffold
 
-**Greetings!!**<br/>
-If you are new to Push protocol and don't have a proper idea of how to create an NFT-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
+This is a step-by-step introductory tutorial that will teach you how to build a channel based on NFTs and their respective events in a contract.
 
-We will walk through coding and interacting with the [Digible ](https://www.digible.io/)to create the notification regarding the NFTs listed there.
+**Greetings!!** If you are new to Push protocol and don't have a proper idea of how to create an NFT-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
-And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
+We will walk through coding and interacting with the [Digible ](https://www.digible.io/)to create the notification regarding the NFTs listed there. And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-You can access the [code ](https://github.com/ethereum-push-notification-service/epns-showrunners-framework-staging/tree/main/src/sample\_showrunners/digible)for the channel and get some vibe for how the code is looking !!
+You can access the [code](https://github.com/ethereum-push-notification-service/push-showrunners-framework-staging/tree/main/src/sample_showrunners/digible) for the channel and get some vibe for how the code is looking !!
 
-### Create a  folder
+<head>
+  <title>NFT based trigger | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+</head>
+
+### Setup channel folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
-First we need to create a folder in `src/showrunners/<`_`your_channel_name>`_
+First we need to create a folder in `src/showrunners/<your_channel_name>`
 
-### USE CASE:
+### Use case
 
 To Notify a User when the Phygital Status of a NFT has changed.
 
-### SAMPLE CODE STRUCTURE
+### Sample code structure
 
-#### Logic Overview
+#### Logic overview
 
 Digible has provided us with the Contract Addresses and ABIs for the concerned event. The most basic approach will be monitoring the function concerning the Phygital Status and triggering a notification whenever the concerned function is called.
 
@@ -168,17 +174,17 @@ After getting all the data from our side the notification is good-to-go, and the
 This notification is addressed only to the people who are involved in the specific event transaction.Hence the recipient addresses are also fetched from the Event arguments.
 
 ```jsx
-            await this.sendNotification({
-              recipient:e.args[3] ,
-              title,
-              message,
-              payloadMsg,
-              payloadTitle,
-              cta:`https://www.digible.io/`,
-              notificationType,
-              simulate,
-              image: null,
-            });
+await this.sendNotification({
+  recipient:e.args[3] ,
+  title,
+  message,
+  payloadMsg,
+  payloadTitle,
+  cta:`https://www.digible.io/`,
+  notificationType,
+  simulate,
+  image: null,
+});
 ```
 
 #### [Jobs File](https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample\_showrunners/digible/digibleJobs.ts)

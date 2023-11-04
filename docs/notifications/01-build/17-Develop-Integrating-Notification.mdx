@@ -4,7 +4,7 @@ title: Integrating Notifications
 hide_title: true
 slug: ./integrating-notifications
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 16
+sidebar_position: 17
 image: "/assets/docs/previews/docs_notifications_develop--integrating_notifications.png"
 ---
 
@@ -15,10 +15,11 @@ This section explores how to integrate notifications on your dApp, mobile app, c
 Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol. 
 
 <head>
-  <title>Integrate Notifications | Push Notifications | Push Documentation</title>
+  <title>Integrating Notifications | Push Notifications | Push Documentation</title>
 </head>
 
 import ReactPlayer from 'react-player'
+import { AImp, ABlock } from '@site/src/css/SharedStyling';
 
 ## Integration process
 
@@ -66,7 +67,7 @@ customPropMinimized="true"
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
-  const [wallet, setWallet] = useState('0xB59Cdc85Cacd15097ecE4C77ed9D225014b4D56D');
+  const [wallet, setWallet] = useState('0xD8634C39BBFd4033c0d3289C4515275102423681');
   const [notifItems, setNotifItems] = useState([]);
 
   const walletRef = useRef();
@@ -93,7 +94,7 @@ function App(props) {
     const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
 
     // retrieve notifications for users
-    const inboxNotifications = await userAlice.notification.list('INBOX', {limit: 5})
+    const inboxNotifications = await userAlice.notification.list('INBOX', {account: `eip155:5:${wallet}`, limit: 5})
 
     // set notifItems state so that react can render
     setNotifItems(inboxNotifications);
@@ -204,7 +205,7 @@ customPropMinimized="true"
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
-  const [wallet, setWallet] = useState('0xB59Cdc85Cacd15097ecE4C77ed9D225014b4D56D');
+  const [wallet, setWallet] = useState('0xD8634C39BBFd4033c0d3289C4515275102423681');
   const [notifItems, setNotifItems] = useState([]);
 
   const walletRef = useRef();
@@ -230,10 +231,17 @@ function App(props) {
     // Initialize user for push
     const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
 
-    // establish connection to stream
-    const stream = userAlice.stream({ 
-      listen: [STREAM.NOTIF], 
-    })
+    console.log(userAlice);
+
+    // // establish connection to stream
+    // const stream = userAlice.stream({ 
+    //   listen: [STREAM.NOTIF], 
+    // })
+
+    // stream connected
+    userAlice.stream.on(STREAM.CONNECT, (data) => {
+      console.log("STREAM CONNECTED");
+    });
 
     // Listen for notifications
     userAlice.stream.on(STREAM.NOTIF, (data) => {
@@ -332,121 +340,15 @@ function App(props) {
 }
 ```
 
-## Bridge method implementation - Push delivery node
-:::note
+## Bridge method implementation
+Bridge method is recommended when you want to do extra things when a notification is triggered to a wallet. 
+
+For example, you might want to route them to telegram bot or use Web2 notification services of Apple or Google to display it on mobile home screen (completely different process than displaying notifications inside your app) which requires following their rules. There are couple of options to implement them —
+
+### via Push delivery node
 Delivery node is the recomended way to setup your mobile home screen push notifications or to connect to Push protocol notification network via your OS!!
-:::
 
-Push delivery Nodes is a Whitelabel solution to enable any app, either mobile, desktop, or extension, to allow Web3 push notifications to their app. 
+<ABlock href="/docs/notifications/tutorials/integrate-notifications-via-delivery-node" title="Tutorial on how to implement bridge notification delivery mechanism for Push protocol using Push delivery node">Setup and bridge notifications via Push Delivery Node</ABlock>
 
-It is a decentralized solutions to enable web3 to web2 bridging. It allows any platform (whether centralized or decentralized) to receive communication from **Push storage nodes**, i.e., the nodes validating and indexing all communications and tying them to your wallet address (and multi-chain identity). 
-
-<ReactPlayer controls width="100%" url='https://www.youtube.com/watch?v=OlRHL3qd4oY' /><br/>
-
-The whitelabel solution of Push delivery node [is located in this github repo](https://github.com/ethereum-push-notification-service/push-delivery-node "Repo of delivery node of Push protocol"). Below are the steps for getting started —
-
-### Step 1️⃣ - Prerequisites
-
-- `MYSQL (Version >= 5.7)`
-- `Redis (Version >= 6.0)`
-- `Docker (For local setup)`
-- `Google FCM Account Setup`
-
-### Step 2️⃣ - Clone Push delivery node repo
-
-```bash
-git clone https://github.com/ethereum-push-notification-service/push-delivery-node.git
-```
-
-### Step 3️⃣ - Environment configuration
-
-Refer env sample file. The MYSQL DB credentials and Redis URL needs to be updated. The remaining conf need not be edited as of now.
-
-If you use docker-compose for the local setup MYSQL DB and Redis config can be left as it is.
-
-```ts
-# REDIS
-
-REDIS_URL=redis://localhost:6379
-
-# DELIVERY NODE MYSQL DATABASE
-
-DELIVERY_NODE_DB_HOST=localhost
-DELIVERY_NODE_DB_NAME=dbname
-DELIVERY_NODE_DB_USER=user
-DELIVERY_NODE_DB_PASS=pass
-DELIVERY_NODE_DB_PORT=3306
-```
-
-### Step 4️⃣ - Infra Setup: Local
-The docker-compose will bring up the MYSQL, Redis, and PHPMyAdmin containers for the delivery node.
-
-```bash
-docker compose up
-```
-
-### Step 5️⃣ - (Optional) Infra Setup: Server (Production)
-
-- Host MYSQL and Redis Separately
-- Add MYSQL and Redis credentials in the .env file
-
-### Step 6️⃣ - FCM Project Setup
-
-- Refer [Firebase docs](https://firebase.google.com/docs/admin/setup "Article from google on how to setup Firebase") to setup FCM
-- Create the firebase-adminsdk.json file in the root folder and add the FCM JSON to this file
-
-### Step 7️⃣ - Build the delivery node project
-You should then be able to build the project using
-
-```bash
-cd push-delivery-node
-npm install
-```
-
-### Step 8️⃣ - Start the delivery node project
-You should then be able to start the server using the following
-
-```bash
-cd push-delivery-node
-npm start
-```
-
-### Step 9️⃣ - Device Registration
-- An endpoint is hosted as part of the delivery node project, which can be used for Device Registration.
-- Below is the API to create a mapping between the wallet address and the device token for which the messages need to be delivered.
-- <delivery_node_url> is the base URL of the delivery node you have hosted.
-
-Below is the curl request of this endpoint
-
-```bash
-
-curl --location --request POST 'https://<delivery_node_url>/apis/v1/pushtokens/register' \
---header 'Content-Type: application/json' \
---data-raw '{
-    
-    "wallet": "eip155:0x35B84d6848D16415177c64D64504663b998A6ab4",
-    "device_token": "device_token",
-    "platform": "android"
-}'
-```
-
-<!-- ## Bridge method implementation - AWS SNS
-:::caution
-Delivery node is a decentralized solution while AWS SNS route is centralized. It is recommended to use delivery node but you can use AWS SNS incase you prefer balanced or Web2.5 approach. 
-:::
-
-SNS module for Push delivery node allows any developer to receive notifications, chats, or any other form of web3 communication directly to the platform they are building with the help of webhooks.
-
-Hosted SNS Module is a mid-level solution that eliminates all the heavy load of running a node or syncing information and gives you webhooks that you implement to start receiving notifications, chats, or any other web3 communication in your software.
-
-Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
-
-### Step 1️⃣ - 
-
-### Step 2️⃣ - 
-
-### Step 3️⃣ - 
-
-### Push SNS Boilerplate
-
-### SNS Sample Messages -->
+### via AWS SNS
+Delivery node is a decentralized solution while AWS SNS route is centralized. It is recommended to use delivery node but you can use AWS SNS incase you prefer Web2.5 approach — <ABlock href="/docs/notifications/tutorials/integrate-notifications-via-aws-sns" title="Tutorial on how to implement bridge notification delivery mechanism for Push protocol using AWS SNS">Setup and implement AWS SNS</ABlock>

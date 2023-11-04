@@ -16,6 +16,13 @@ function loadClientSideLibraryPushProtocolRestAPI(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibraryPushProtocolRestAPIStream(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushprotocol/restapi/src/lib/pushstream/pushStreamTypes')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+
 // For @pushprotocol/UIWeb components, we will dynamically load them in the BrowserOnly component.
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
@@ -36,6 +43,7 @@ const ReactLiveScope = {
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
+  STREAM: loadClientSideLibraryPushProtocolRestAPIStream('STREAM'),
   // Continue using the BrowserOnly component for UI components
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),

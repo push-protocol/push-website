@@ -1,11 +1,15 @@
 ---
-description: >-
-  This is a step-by-step introductory tutorial that will teach you how to build
-  a channel based on Off-chain News Broadcasting. Its a great way to get hang of
-  news-based channels!
+id: docs-notifications-showrunners-examples-offchain-based-trigger
+title: Offchain (Web2) based trigger
+hide_title: true
+slug: ./offchain-based-trigger
+displayed_sidebar: pushNotificationSidebar
+sidebar_position: 4
 ---
 
-# Off-chain (or Web2) based notification via Showrunner example
+# Offchain (Web2) based trigger via showrunner scaffold
+
+This is a step-by-step introductory tutorial that will teach you how to build a channel based on Off-chain News Broadcasting. Its a great way to get hang of news-based channels!
 
 **Greetings!** If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
@@ -13,11 +17,15 @@ We will walk through coding and interacting with the [The Defiant](https://thede
 
 And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-### Create a folder
+<head>
+  <title>Offchain (Web2) based trigger | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+</head>
+
+### Setup channel folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
-First we need to create a folder in `src/showrunners/<`_`your_channel_name>`_
+First we need to create a folder in `src/showrunners/<your_channel_name>`
 
 ### Use case
 
@@ -42,7 +50,7 @@ Every development procedure initiates with creating a channel specific class wit
 * The URL of channel owner
 * Whether channel uses off chain notification or not
 
-```
+```jsx
 import { Inject, Service } from 'typedi';
 import { Logger } from 'winston';
 import config, { defaultSdkSettings } from '../../config';
@@ -79,7 +87,7 @@ The main channel logic function follows to sequence of function calling and cond
 
 4.) Calling the send Notification function
 
-```
+```jsx
 async checkForNewArticles(simulate) {
     try {
       // Get the articles from the RSS Feed
@@ -144,7 +152,7 @@ async checkForNewArticles(simulate) {
 
 This function imports and reads the RSS Feed and tries to convert the code to JavaScript. These articles are then fetched and worked upon.
 
-```
+```jsx
   public async getArticles(simulate): Promise<any> {
     this.logInfo('getArticles called.. Checking For New Articles');
 
@@ -167,7 +175,7 @@ This function imports and reads the RSS Feed and tries to convert the code to Ja
 The function takes the data such as heading, preview message and CTA Link.Then sendNotification from our sdk is used.\
 Note: The notification are both Off Chain and Broadcast Type
 
-```
+```jsx
 async sendNewArticleNotification(info, simulate) {
     try {
       const title = `${info.title}`;

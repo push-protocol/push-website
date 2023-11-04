@@ -14,4 +14,4 @@ Showrunners Framework is a scaffold that allows for rapid deployment of your cha
 
 <CustomLinkCard text='Hello World Channel' link='/' />
 
-<CustomLinkCard text='Understanding Channel Structure-Showrunners' link='/' />
+<CustomLinkCard text='Understanding Channel Structure-showrunner' link='/' />
