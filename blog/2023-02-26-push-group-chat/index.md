@@ -60,7 +60,7 @@ What’s more? Each wallet can create up to 10 groups.
 
 With Push Group Chat, the possibilities are endless!
 
-Head over to our docs to learn how you can start creating web3 communities with the Group Chat feature 👉https://docs.push.org/developers
+Head over to our docs to learn how you can start creating web3 communities with the Group Chat feature 👉 [Push chat - Group chat](/docs/chat/build/create-group/ "Create groups for your community using Push group chat!")
 
 ## Pushing the Limits of Web3 Communication
 As we look to the future, the potential for web3-native communication solutions is limitless. We’re constantly striving to improve the user experience on web3 by creating solutions that prioritize privacy, security, and transparency. With the launch of Push Chat and the introduction of Push Group Chat, we’re at the forefront of an exciting new era in web3 communication and we’re glad to take this journey with you all.

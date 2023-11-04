@@ -578,6 +578,37 @@ export const AImp = styled.a`
   }
 `;
 
+// Block Anchor
+export const ABlock = styled.a`
+  color: #000;
+  border: 1px solid #d4d5d8;
+  font-size: 16px;
+  padding: 20px 15px 20px 15px;
+  margin-top: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: nowrap;
+  text-decoration: none;
+  display: flex;
+  background: #fdfdfe;
+  
+  &:after {
+    content: ">";
+    position: relative;
+    float: right;
+    margin-left: auto;
+  }
+
+  &:hover {
+    color: #000;
+    border: 1px solid #dd44b9;
+  }
+
+  &:hover:after {
+    color: #dd44b9;
+  }
+`
+
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`
   align-items: center;

@@ -124,7 +124,7 @@ If you’re interested in exploring how Push Chat can boost user engagement and 
 
 - Share this article
 - Join our Discord [#push-chat-alpha channel](https://discord.gg/pushprotocol), and tell us what you’re building, we’ve got devs who can help give consultation and we’ll be sharing exclusive Push Chat access to Discord members soon!
-- To get started building right away, head over to the [Push Chat developer docs](https://docs.push.org/developers/concepts/push-chat-for-web3).
+- To get started building right away, head over to the [Push Chat developer docs](/docs/chat).
 
 See you soon on Push Chat!
 
