@@ -37,6 +37,7 @@ const ReactLiveScope = {
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
   // Continue using the BrowserOnly component for UI components
+  Chat: createBrowserOnlyLibComponentUIWeb('Chat'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),
   ChatViewComponent: createBrowserOnlyLibComponentUIWeb('ChatViewComponent'),

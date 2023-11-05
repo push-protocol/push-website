@@ -11,7 +11,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 SDK functions provide params to automatically do this for you (via **toDecrypt** flag). However, you can use the following helper function to decrypt a chat message or array of messages if you wish to do so manually.
 
 ```typescript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
