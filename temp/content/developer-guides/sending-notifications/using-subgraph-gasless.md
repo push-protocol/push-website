@@ -43,7 +43,7 @@ Push Nodes can, later on, fetch the notifications defined on a Subgraph and push
 
 Integrate Push Protocol with an ERC-20 contract's subgraph **to send out notifications whenever a Transfer happens**.
 
-### Pre-requisites
+### Prerequisites
 
 1. Have a Push Notification Channel ready - see the docs [here](https://docs.epns.io/developers/developer-zone/create-your-notif-channel) to create a channel
 2. Install the **graph CLI**
