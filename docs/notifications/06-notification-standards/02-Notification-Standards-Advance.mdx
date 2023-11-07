@@ -510,19 +510,20 @@ Notification Feeds have the ability to display customized content. By adopting a
 
 ### Specifications
 
-| Markdown Format                                                                  | Use Case         | Styling effects              |
-| -------------------------------------------------------------------------------- | ---------------- | ---------------------------- |
-| **Bold**                                                                         | For Emphasis     | For Bold                     |
-| _Italic_                                                                         | For Emphasis     | For Italics                  |
-| **_Bold&Italics_**                                                               | For Emphasis     | For Bold and Italics         |
-|                                                                                  | For Segregation  | For new line                 |
-| `<PUSHText color="white">Hello World</PUSHText>`                                 | For colored text | For white color              |
-| `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                         | For colored text | Supports any color hexcode   |
-| `<PUSHText color="primary">Hello World </PUSHText>`                              | For colored text | Push Primary colored Text    |
-| `<PUSHText color="secondary">Hello World </PUSHText>`                            | For colored text | Push Secondary colored Text  |
-| `<PUSHText color="tertiary">Hello World </PUSHText>`                             | For colored text | Push Tertiary colored Text   |
-| `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>`   | For URL's        | Underlined, Red Colored Text |
 
+| Markdown Format                                                                | Use Case         | Styling effects                                       |
+| ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------- |
+| `**Bold**`                                                                       | For Emphasis     | For Bold                                              |
+| `*Italic*`                                                                       | For Emphasis     | For Italics                                           |
+| `***Bold&Italics***`                                                             | For Emphasis     | For Bold and Italics                                  |
+| `\n`                                                                             | For Segregation  | For new line                                          |
+| `<PUSHText color="white">Hello World</PUSHText>`                               | For colored text | For white color                                       |
+| `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                       | For colored text | Supports any color hexcode                            |
+| `<PUSHText color="primary">Hello World </PUSHText>`                            | For colored text | Push Primary colored Text                             |
+| `<PUSHText color="secondary">Hello World </PUSHText>`                          | For colored text | Push Secondary colored Text                           |
+| `<PUSHText color="tertiary">Hello World </PUSHText>`                           | For colored text | Push Tertiary colored Text                            |
+| `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>` | For URL's        | Underlined, Red Colored Text                          |
+| `[ts: 1699032018]`                                                               | For Timestamp    | converts Epoch timestamps to human readable timestamp |
 ### Push Notification markdown live playground
 ```jsx live 
 // DO NOT FORGET TO IMPORT LIBRARIES
@@ -546,6 +547,20 @@ function App(props) {
 ```
 
 ### Content Examples
+
+<details>
+<summary>For Timestamp</summary>
+
+```
+
+> Markdown - [ts: 1699032018]
+> Example - Friday, November 3, 2023 5:20:18 PM
+
+```
+
+</details>
+
+
 <details>
 <summary>For Bold</summary>
 
