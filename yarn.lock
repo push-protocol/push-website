@@ -3813,9 +3813,9 @@
     buffer "~6.0.3"
 
 "@solana/web3.js@^1.70.1":
-  version "1.87.4"
-  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.87.4.tgz#fd9ef20ff84d5e35306c4313a35a1b7ce6b39be2"
-  integrity sha512-YlC8kjY0LRmqR0cy5cjRI4tupk6k8284MesQWE8GWKNwFAAjzgXWeIodKo4ep5DH7hpRJ16nuuRziy54ImF5UA==
+  version "1.87.5"
+  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.87.5.tgz#74df3f19ef65e3a419bd1810f500f8e51f4ab63b"
+  integrity sha512-hy5RVGVw8eXq//g41mIFhk5Jx4QH1CwbkPiQn/3MmHp6VD2HBRVMMZUSGUhYZxbK7NoIjQUsiv4MOlnl3VaUag==
   dependencies:
     "@babel/runtime" "^7.23.2"
     "@noble/curves" "^1.2.0"
@@ -4380,9 +4380,9 @@
   integrity sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==
 
 "@types/react-router-config@*", "@types/react-router-config@^5.0.6":
-  version "5.0.9"
-  resolved "https://registry.yarnpkg.com/@types/react-router-config/-/react-router-config-5.0.9.tgz#8dad16c6b887d08efaa6d9da83e40db629ac21b6"
-  integrity sha512-a7zOj9yVUtM3Ns5stoseQAAsmppNxZpXDv6tZiFV5qlRmV4W96u53on1vApBX1eRSc8mrFOiB54Hc0Pk1J8GFg==
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/@types/react-router-config/-/react-router-config-5.0.10.tgz#1f7537b8d23ad6bb8e7609268fdd89b8b2de1eaf"
+  integrity sha512-Wn6c/tXdEgi9adCMtDwx8Q2vGty6TsPTc/wCQQ9kAlye8UqFxj0vGFWWuhywNfkwqth+SOgJxQTLTZukrqDQmQ==
   dependencies:
     "@types/history" "^4.7.11"
     "@types/react" "*"
