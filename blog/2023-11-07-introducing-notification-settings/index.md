@@ -76,6 +76,7 @@ Here are a few popular channels to get you started!
 - [Push Protocol](http://app.push.org/channels?channel=0xB88460Bb2696CAb9D66013A05dFF29a28330689D)
 - [BTC Price Tracker](http://app.push.org/channels?channel=0x03EAAAa48ea78d1E66eA3458364d553AD981871E)
 - [ETH Price Tracker](http://app.push.org/channels?channel=0xDBc5936E4daaE94F415C39D284f6a69c4d553F2F)
+
 Full list of Push channels 👉https://app.push.org/channels
 
 
