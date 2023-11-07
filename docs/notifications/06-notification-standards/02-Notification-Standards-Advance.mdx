@@ -523,6 +523,27 @@ Notification Feeds have the ability to display customized content. By adopting a
 | `<PUSHText color="tertiary">Hello World </PUSHText>`                             | For colored text | Push Tertiary colored Text   |
 | `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>`   | For URL's        | Underlined, Red Colored Text |
 
+### Push Notification markdown live playground
+```jsx live 
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+// import { NotificationItem } from @pushprotocol/restapi;
+function App(props) {
+  return (
+    <>
+      <h2>Markdown Notification to style your notification as per your need</h2>
+          <NotificationItem
+           notificationTitle={"Title"}
+           notificationBody={"***Bold&Italic*** \n **Bold** \n *Italic* \n <PUSHText color='green'>green text</PUSHText> \n <PUSHText color='#800080' link='https://push.org'>PUSH</PUSHText> \n [ts: 1699347011]"}
+           image={"https://push.org/assets/pushIcon.svg"}
+           chainName={5}
+           icon={"https://push.org/assets/pushIcon.svg"}
+           app={"PUSH"}
+          />
+    </>
+  );
+}
+```
 
 ### Content Examples
 <details>
