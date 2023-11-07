@@ -181,7 +181,7 @@ export const citiesList = [
       srcref: 'bengaluru',
       place: 'Bengaluru',
       date: 'TBA',
-      link: 'https://www.lu.ma/brb-benagaluru',
+      link: 'https://www.lu.ma/brb-bengaluru',
       alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#299EC2',
