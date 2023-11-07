@@ -158,15 +158,28 @@ export const citiesList = [
   ],
   [
     {
+      srcref: 'chandigarh',
+      place: 'Chandigarh',
+      date: '21 Nov 2023',
+      link: 'http://lu.ma/brb-chandigarh',
+      alt: 'Chandigarh, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Chandigarh, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#194395;',
+      hasEnded: false,
+    },
+    {
       srcref: 'dehradun',
       place: 'Dehradun',
-      date: '28 Nov 2023',
+      date: '30 Nov 2023',
       link: 'https://lu.ma/brb-dehradun',
       alt: 'Dehradun, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Dehradun, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#7A3DA9',
       hasEnded: false,
     },
+  ],
+  [
+    
     {
       srcref: 'kanpur',
       place: 'Kanpur',
@@ -175,6 +188,16 @@ export const citiesList = [
       alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
       backgroundColor: '#E26059',
+      hasEnded: false,
+    },
+    {
+      srcref: 'bengaluru',
+      place: 'Bengaluru',
+      date: 'TBA',
+      link: 'https://www.lu.ma/brb-benagaluru',
+      alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#299EC2',
       hasEnded: false,
     },
   ],
@@ -189,15 +212,6 @@ export const citiesList = [
   //   backgroundColor: '#194395',
   //   hasEnded: false,
   // },
-  {
-      srcref: 'bengaluru',
-      place: 'Bengaluru',
-      date: 'TBA',
-      link: 'https://www.lu.ma/brb-benagaluru',
-      alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#299EC2',
-      hasEnded: false,
-    },
+  
   ],
 ];
