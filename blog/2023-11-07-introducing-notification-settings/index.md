@@ -83,6 +83,10 @@ Here are a few popular channels to get you started!
 
 Full list of Push channels 👉https://app.push.org/channels
 
+Here’s a full demo on how to both setup and sign up for Notification Settings:
+
+<iframe width="100%" height="384" src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 ### Pushing Personalized Communication Experiences
 
