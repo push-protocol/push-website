@@ -7,7 +7,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 A user generally will have multiple chats associated with them (ie: them talking to multiple wallets). Use the following function to get information about all the chats that they are a part of.
 
 ```typescript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through it, the encryptedPvtKey of the user
 const user = await PushAPI.user.get({
   account: `eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7`,
@@ -182,7 +182,7 @@ export interface GroupDTO {
 Until the user approves a chat, it shows up in their chat requests folder. Use this function to retrieve the list of user chat requests.
 
 ```typescript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through it, the encryptedPvtKey of the user
 const user = await PushAPI.user.get({
   account: `eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7`,
@@ -242,7 +242,7 @@ const conversationHash = await PushAPI.chat.conversationHash({
 Enables fetching the latest chat message between two users (or user and group). Usually useful to display the latest message in the preview window of the chat sidebar of a dApp or crypto wallet.
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
@@ -286,7 +286,7 @@ const chatHistory = await PushAPI.chat.latest({
 Enables fetching chat history between two users (or group), useful in displaying the history of conversation between two users.
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'

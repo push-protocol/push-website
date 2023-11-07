@@ -8,7 +8,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
 # Initializing User
 
-## Pre-requisite: Deriving the signer
+## Prerequisites: Deriving the signer
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
 ```mdx-code-block
@@ -261,7 +261,7 @@ Example response
 Push chat is encrypted and only the users are able to decrypt chats, send messages, approve chat, etc. This means that you need to decrypt PGP keys after you have fetched user info for most of the features. Decrypting is easy and requires you to pass the user object and the signer.
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7', 
     env: 'staging'

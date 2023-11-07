@@ -4,7 +4,7 @@ import CustomLinkCard from '@site/src/components/CustomLinkCard';
 
 # Sending Chat
 
-## Pre-requisite: Deriving the signer
+## Prerequisites: Deriving the signer
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
 
@@ -49,7 +49,7 @@ const signer = new ethers.Wallet(Pkey);
 Enables sending messages to a user or a group (via chat id).
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'

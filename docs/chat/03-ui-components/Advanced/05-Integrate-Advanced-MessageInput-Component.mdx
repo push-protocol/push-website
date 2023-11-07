@@ -1,0 +1,59 @@
+---
+id: docs-chat-ui-components-advanced-messageinput-component
+title: MessageInput Component
+hide_title: true
+slug: ./messageinput-component
+displayed_sidebar: pushChatSidebar
+sidebar_position: 5
+image: "/assets/docs/previews/docs_chat_ui_components_advanced--messageinput_component.png"
+---
+
+# MessageInput
+Versatile Message Input Integration: Enable Text, Image, File, and Gif Sharing in Your Dapp with MessageInput.
+
+<head>
+  <title>MessageInput | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/css/SharedStyling";
+
+## Usage
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+  ```typescript
+  import {MessageInput} from "@pushprotocol/uiweb";
+
+  export const MessageInputTest = () => {
+    return (
+  {/* below component won't have gif, file, image option since they've been passed as false */}
+      <MessageInput chatId={'330cae5f963f2df3d6d692a7075317c906468e3fe60bfb8280a7e125208939e1'} emoji={false} gif={false} file={false} />
+    )
+  }
+  ```
+
+  <ModalContainer>
+    <img src={require("/static/assets/docs/articles/uiweb/messageInput.png").default} />
+  </ModalContainer>
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Customization parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| `emoji`           | `boolean` | true    |Default value is true, decides if the input field will have emoji option|
+| `gif`             | `boolean` | true    |Default value is true,decides if the input field will have gif option|
+| `file`            | `boolean` | true    |Default value is true,decides if the input field will have file upload option|
+| `isConnected`     | `boolean` | true    |Default value is true,shows the connect button if signer, account and pgpPrivateKey is not passed|
+| `autoConnect`     | `boolean` | false   |Default value is false, decrypts pgpPrivateKey after reload if true, or else disconnects the existing wallet connection
+| `onVerificationFail` | `function` | -   |Function to perfom any task on gating access verification fail modal |
+
+> Note: Parameters _`in this style`_ are mandatory.

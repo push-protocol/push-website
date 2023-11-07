@@ -1,0 +1,56 @@
+---
+id: docs-chat-ui-components-advanced-creategroupmodal-component
+title: CreateGroupModal Component
+hide_title: true
+slug: ./creategroupmodal-component
+displayed_sidebar: pushChatSidebar
+sidebar_position: 7
+image: "/assets/docs/previews/docs_chat_ui_components_advanced--creategroupmodal_component.png"
+---
+
+# CreateGroupModal
+Effortless Modal Integration: Add a modal to create group effortlessly with CreateGroupModal.
+
+<head>
+  <title>CreateGroupModal | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/css/SharedStyling";
+
+## Usage
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem  value="react" attributes={{className: "codetab react"}} default>
+
+  ```typescript
+  import { CreateGroupModal } from "@pushprotocol/uiweb";
+
+  const CreateGroupModalTest = () => {
+    return (
+      <div>
+      <CreateGroupModal onClose={()=>{console.log('closes the modal')}}/>
+      </div>
+    );
+  };
+
+  export default CreateGroupModalTest;
+  ```
+
+  <ModalContainer>
+    <img src={require("/static/assets/docs/articles/uiweb/createGroupModal.png").default} />
+  </ModalContainer>
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Customization parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`onClose`_        | `function`         | -       | Function to perfom any task on clicking the cancel or cross button on the modal|
+| `modalBackground`       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the create group modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+
+> Note: Parameters _`in this style`_ are mandatory.

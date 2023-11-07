@@ -32,3 +32,14 @@
 .DocsHub .theme-doc-footer, .DocsHub .pagination-nav {
   display: none;
 }
+
+.PushDocs .theme-doc-sidebar-container li li {
+  margin-right: 10px;
+}
+
+.PushDocs .theme-doc-sidebar-container li a svg {
+  margin-right: 0;
+  margin-left: 10px !important;
+  margin-bottom: 3px;
+  display: flex;
+}

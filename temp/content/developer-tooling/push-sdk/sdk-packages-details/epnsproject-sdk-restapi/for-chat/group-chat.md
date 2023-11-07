@@ -21,7 +21,7 @@ Group chat is the latest exciting addition to Push suite, for the first time eve
 Each group has a chat id associated with them. The chat id is used to do modifications to a group or send messages or approve a group chat request.
 :::
 
-## Pre-requisite: Deriving the signer
+## Prerequisites: Deriving the signer
 
 Some functions require passing the signer object with the API call. fetching signer for web3 wallets is quite easy.
 
@@ -67,7 +67,7 @@ const signer = new ethers.Wallet(Pkey);
 Enables creation of the group, group (and even DMs) have chat ids. For group controls, chat id of the group is required. There are a couple of ways by which they can be obtained (via group name or chat id).
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
@@ -112,7 +112,7 @@ const response = await PushAPI.chat.createGroup({
 Enables updating group details (is an idempotent operation). Idempotent means that most of the details even if unmodified are required to be passed as a way to protect the group's latest settings and have verification proof available for the modification of the group.
 
 ```javascript
-// pre-requisite API calls that should be made before
+// prerequisites API calls that should be made before
 // need to get user and through that encryptedPvtKey of the user
 const user = await PushAPI.user.get({
     account: 'eip155:0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'

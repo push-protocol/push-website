@@ -1,0 +1,53 @@
+---
+id: docs-chat-ui-components-advanced-chatprofile-component
+title: ChatProfile Component
+hide_title: true
+slug: ./chatprofile-component
+displayed_sidebar: pushChatSidebar
+sidebar_position: 3
+image: "/assets/docs/previews/docs_chat_ui_components_advanced--chatprofile_component.png"
+---
+
+# ChatProfile
+Empower User Interaction: Showcase Wallet Addresses, Group Names, and Member Management with ChatProfile in Your Dapp.
+
+<head>
+  <title>ChatProfile | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import { ModalContainer } from "@site/src/css/SharedStyling";
+
+## Usage
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+  ```typescript
+  import ChatProfile from "@pushprotocol/uiweb";
+
+  export const ChatProfileTest () => { 
+  return (
+      <ChatProfile chatId={'330cae5f963f2df3d6d692a7075317c906468e3fe60bfb8280a7e125208939e1'} style='Info' />
+    )
+  }
+  ```
+
+  <ModalContainer>
+    <img src={require("/static/assets/docs/articles/uiweb/chatprofile.png").default} />
+  </ModalContainer>
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Customization parameters
+
+| Param         | Type            | Default | Remarks |
+| ------------- | --------------- | ------- | -------- |
+| _`chatId`_        | `string`         | -       | Chat id for a particular chat|
+| _`style`_        | `"Info"` &#124 `"Preview"`         | -       | Only have Info support as of now,`Info` is the header that’s visible in ChatViewComponent, `Preview` is the one that's visible in ChatListComponent|
+| `groupInfoModalBackground`       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the group info modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+
+> Note: Parameters _`in this style`_ are mandatory.

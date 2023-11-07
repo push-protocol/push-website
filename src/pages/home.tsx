@@ -367,9 +367,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </Span>
 
                 <A
-                  href="https://push.org/docs"
+                  href="/docs"
                   title={t("home.partners-section.missing-web3-alt-button")}
-                  target="_blank"
+                  target="_self"
                   background="#DD44B9"
                   borderRadius="16px"
                   padding="14px 32px"
