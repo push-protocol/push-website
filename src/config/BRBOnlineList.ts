@@ -23,14 +23,7 @@ export const brbOnlineList = [
         date: 'Thu, Nov 9, 2023',
         time: '7:30PM @ Push Protocol YouTube'
       },
-      {
-        srcref: 'aragon',
-        link: 'https://pushprotocol.notion.site/Aragon-f5467edc3c2a4f8d9d5693a0a6e680de?pvs=4',
-        alt: 'Aragon, Partner of Push, #BRBIndia, pan-India dev tour',
-        text: 'Learn to build DAO solutions',
-        date: 'Fri, Nov 10, 2023',
-        time: '7:30PM @ Push Protocol YouTube'
-      },
+      
       {
         srcref: 'shardeum',
         link: 'https://pushprotocol.notion.site/Shardeum-5383f33a616b46ed810443f4d2e2e351?pvs=4',
@@ -45,6 +38,14 @@ export const brbOnlineList = [
         alt: 'Biconomy, Partner of Push, #BRBIndia, pan-India dev tour',
         text: 'Learn to build a new validation module to use with the Biconomy smart accounts',
         date: 'Fri, Nov 17, 2023',
+        time: '7:30PM @ Push Protocol YouTube'
+      },
+      {
+        srcref: 'aragon',
+        link: 'https://pushprotocol.notion.site/Aragon-f5467edc3c2a4f8d9d5693a0a6e680de?pvs=4',
+        alt: 'Aragon, Partner of Push, #BRBIndia, pan-India dev tour',
+        text: 'Learn to build DAO solutions',
+        date: 'Fri, Nov 24, 2023',
         time: '7:30PM @ Push Protocol YouTube'
       },
     {
