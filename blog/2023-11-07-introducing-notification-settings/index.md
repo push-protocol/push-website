@@ -56,6 +56,10 @@ Here’s how it looks.
 
 Note, each channel will also set a ‘default value’ setting. This ensures subscribers who opt-in without specifying their preferences will simply receive notifications based on the channel's default settings.
 
+For builders looking to integrate Notification Settings, you can find all the relevant and associated documentation here 
+
+👉 https://push.org/docs/notifications/build/create-channel-settings/
+
 ### Notification Settings for Channel Subscribers
 Empowering Channel Subscribers (end-users) to personalize their notifications is a massive step towards a more user-centric and user-friendly web3 experience. Channel Subscribers can filter out notifications they aren't interested in receiving to reduce notification clutter. This optimizes user inboxes, reduces spam, and helps personalize the user experience.
 
