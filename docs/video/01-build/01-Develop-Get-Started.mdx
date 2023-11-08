@@ -1,19 +1,19 @@
 ---
-id: docs-chat-develop-get-started
+id: docs-video-develop-get-started
 title: Get Started
 hide_title: true
 slug: ./get-started
-displayed_sidebar: pushChatSidebar
+displayed_sidebar: pushVideoSidebar
 sidebar_position: 1
 image: "/assets/docs/previews/docs_chat_develop--get_started.png"
 ---
 
 
 # Get started
-Push Chat enables web3 native messaging between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of messages. 
+Push Video enables web3 native real time communication between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of media stream and connection. 
 
 <head>
-  <title>Start Building | Push Chat | Push Documentation</title>
+  <title>Start Building | Push Video | Push Documentation</title>
 </head>
 
 import Tabs from '@theme/Tabs';
@@ -22,14 +22,15 @@ import ReactPlayer from 'react-player';
 import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
 
 ## Speed run
-The following speed run is designed to give you a quick overview of usage and demonstrates how Push Chat can be integrated successfully in minimal lines of code.
+The following speed run is designed to give you a quick overview of usage and demonstrates how Push Video can be integrated successfully in minimal lines of code.
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
     
 
   ```js
-    // Import Push SDK & Ethers
-    import { PushAPI } from '@pushprotocol/restapi';
+    // Import Push SDK & ethers
+    import { PushAPI, VideoCallStatus } from '@pushprotocol/restapi';
+    import { ADDITIONAL_META_TYPE } from '@pushprotocol/restapi/src/lib/payloads/constants';
     import { createSocketConnection, EVENTS } from '@pushprotocol/socket';
     import { ethers } from 'ethers';
 
@@ -39,12 +40,33 @@ The following speed run is designed to give you a quick overview of usage and de
     // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
     const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
     
+    // get PGP private key
+    const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
+    
     // This will be the wallet address of the recipient 
     const bobWalletAddress = "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
 
-    // Send a message to Bob
-    const aliceMessagesBob = await userAlice.chat.send(bobWalletAddress, {
-      content: "Gm gm! It's a me... Mario"
+    // Initialize video object
+    const aliceVideoCall = new PushAPI.video.Video({
+      signer: _signer;
+      chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
+      pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
+      env: 'staging'; // 'prod' or 'staging' environment
+      setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+    });
+
+    // Create media stream
+    await aliceVideoCall.create({
+      video: true; // to enable video on start
+      audio: true; // to enable audio on start
+    });
+    
+    // request a call to a recipient wallet address
+    // 
+    await aliceVideoCall.request({
+      senderAddress: signer.address;
+      recipientAddress: bobWalletAddress; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+      chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
     });
 
     // Create Socket to Listen to incoming messages
@@ -55,9 +77,64 @@ The following speed run is designed to give you a quick overview of usage and de
       env: 'staging',
     });
 
-    // React to message payload getting received
-    pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
-      console.log(message);
+    // To listen to real time video calls
+    pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+      // we are listening for video call related notifications
+      const { payload } = feedItem || {};
+
+      // we check if the additionalMeta property is present in payload.data
+      if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+        const additionalMeta = payload['data']['additionalMeta'];
+
+        // check for PUSH_VIDEO
+        if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`) {
+          const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+          // handle incoming call, ie: VideoCallStatus.INITIALIZED
+          if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
+            // save the videoCallMetaData to handle acceptRequest without 
+            // passing parameters
+            aliceVideoCall.setData((oldData) => {
+              return produce(oldData, (draft) => {
+                draft.local.address = VideoCallStatus.recipientAddress;
+                draft.incoming[0].address = VideoCallStatus.senderAddress;
+                draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED; // set status to RECEIVED
+                draft.meta.chatId = VideoCallStatus.chatId;
+                draft.meta.initiator.address = VideoCallStatus.senderAddress;
+                draft.meta.initiator.signal = VideoCallStatus.signalData;
+              });
+            });
+
+            // accept the call of any logic you want to follow
+            // notice we flipped recipient and sender as we are the one who is sending
+            // notification to senderAddress after VideoCallStatus.INITIALIZED
+            await aliceVideoCall.acceptRequest({
+              signalData: VideoCallStatus.signalData;
+              senderAddress: VideoCallStatus.recipientAddress;
+              recipientAddress: VideoCallStatus.senderAddress;
+              chatId: VideoCallStatus.chatId;
+            });
+          }
+
+          // handle final connection if VideoCallStatus.RECEIVED
+          // If the received status is RECEIVED that means we can connect the video call
+          if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
+            const {
+              signalData,
+            } = videoCallMetaData;
+            
+            // connecting the call using received signalData
+            aliceVideoCall.connect({
+              signalData,
+            })
+          }
+
+          // If the received status is DISCONNECTED that means the call has ended
+          if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
+              // here you can do a window reload or just clear out the video state
+          }
+        }
+      }
     });
   ```
 
@@ -166,39 +243,11 @@ The following speed run is designed to give you a quick overview of usage and de
 </ModalContainer>
 
 ## Workshop Video
+<ReactPlayer controls width="100%" url='https://youtu.be/R8nsAhyrvTI?si=fXQM14LCLgp50yqf&t=3110' /><br/>
 
-<ReactPlayer controls width="100%" url='https://youtu.be/R8nsAhyrvTI?si=9mWjoxGfOSf6k5-K&t=2621' /><br/>
 
 ## Testing
-### Sending message
-Head to our app and [talk to PushAI](https://app.push.org/chat/pushai.eth) which stands for **Prioritize Using Silly Humor And Irony**. It's addictive and you have been warned! 
-Alternatively, msg `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` or `pushai.eth` from any frontend or backend that supports Push Chat!
-
 ### Push SDK playground and full API coverage
 Full API coverage with sample runable code can be found in the examples below:
 - [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/src/pushAPI/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/chat/tutorials/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
 - [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-frontend-react) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/chat/tutorials/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
-
-### Push Chat live playground
-```jsx live 
-// DO NOT FORGET TO IMPORT LIBRARIES
-// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
-// import { ChatUIProvider, ChatViewComponent } from @pushprotocol/restapi;
-function App(props) {
-  return (
-    <>
-      <h2>Live chat with pushai.eth, connect your wallet and chat to get sassy response from PushAI.eth</h2>
-      <div style={{ height: '75vh', margin: '20px auto' }}>
-        <ChatUIProvider>
-          <ChatViewComponent
-            chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
-            limit={10}
-            isConnected={true}
-            onGetTokenClick={()=>setShowFaucet(true)}
-          />
-        </ChatUIProvider>
-      </div>
-    </>
-  );
-}
-```
