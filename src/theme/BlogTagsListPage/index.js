@@ -45,7 +45,7 @@ const TagSection = styled.div`
   width: 1120px !important;
   margin: 50px auto;
 
-  @media ${device.tablet} {
+  @media ${device.laptopL} {
     width: 90% !important;
   }
 `;

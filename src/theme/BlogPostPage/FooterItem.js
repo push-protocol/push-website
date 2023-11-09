@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Internal Components
@@ -12,16 +12,122 @@ import {
   ItemV,
   Span,
 } from "@site/src/css/SharedStyling";
-import { BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
+import { BsLinkedin, BsTwitter, BsYoutube, BsX } from "react-icons/bs";
 import { BiLink, BiShareAlt } from "react-icons/bi";
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+
+import Modal from "react-modal";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
 
 const FooterItem = () => {
   const isMobile = useMediaQuery(device.tablet);
+  const [open, setOpen] = React.useState(false);
+
+  const openModal = () => {
+    setOpen(true);
+    // document.body.style.overflow = "hidden";
+  };
+
+  function afterOpenModal() {
+    document.body.style.overflow = "hidden";
+    // references are now sync'd and can be accessed.
+  }
+
+  const closeModal = () => {
+    setOpen(false);
+    document.body.style.overflow = "auto"; // Enable scrollin
+  };
+
+  const customStyles = {
+    overlay: {
+      background: "rgba(0, 0, 0, 0.60)",
+      backdropFilter: "blur(10px)",
+    },
+    content: {
+      height: "230px",
+      width: "348px",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      borderRadius: "16px",
+    },
+  };
+
+  const LinkModal = () => {
+    const openLink = (link) => {
+      window.open(link, "_blank");
+    };
+
+    return (
+      <Modal
+        isOpen={open}
+        onRequestClose={closeModal}
+        style={customStyles}
+        onAfterOpen={afterOpenModal}
+      >
+        <ModalItem>
+          <ModalDiv>
+            <ModalTopic>Share</ModalTopic>
+            <BsX
+              color=""
+              size={28}
+              onClick={closeModal}
+              className="closeIcon"
+            />
+          </ModalDiv>
+
+          <ModalIcons>
+            <ModalFigure
+              color="#1DA1F2"
+              onClick={() =>
+                openLink(
+                  `https://twitter.com/intent/tweet?text=${window.location.href}`,
+                )
+              }
+            >
+              <BsTwitter size={32} color="#fff" />
+            </ModalFigure>
+
+            <ModalFigure
+              color="#0077B5"
+              onClick={() =>
+                openLink(
+                  `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,
+                )
+              }
+            >
+              <FaLinkedinIn size={32} color="#fff" />
+            </ModalFigure>
+
+            <ModalFigure
+              color="#4867AA"
+              onClick={() =>
+                openLink(
+                  `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`,
+                )
+              }
+            >
+              <FaFacebookF size={32} color="#fff" />
+            </ModalFigure>
+          </ModalIcons>
+
+          <ModalLink>
+            <ModalInput>{window.location.href}</ModalInput>
+            <ModalCopy
+              onClick={() =>
+                navigator.clipboard.writeText(window.location.href)
+              }
+            >
+              Copy link
+            </ModalCopy>
+          </ModalLink>
+        </ModalItem>
+      </Modal>
+    );
+  };
 
   return (
     <div>
@@ -62,13 +168,15 @@ const FooterItem = () => {
           flexDirection="row"
           alignItems="center"
           self={isMobile ? "stretch" : "self"}
-          //   onClick={handleOpen}
+          onClick={openModal}
         >
           <BiShareAlt size={23} color="#fff" style={{ marginRight: "10px" }} />
           Share
         </ShareButton>
         {/* </Anchor> */}
       </ShareRow>
+
+      {open && <LinkModal />}
 
       <AboutSection>
         <AboutTitle>About Push Protocol</AboutTitle>
@@ -186,6 +294,7 @@ const KPIBanner = styled.div`
   font-family: "Strawford";
   font-style: normal;
   margin-top: 30px;
+  margin-bottom: 100px;
 
   & .kpiItem {
     display: flex;
@@ -269,3 +378,96 @@ const ShareButton = styled(Button)`
     margin: 20px;
   }
 `;
+
+// modal url
+const ModalDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &.closeIcon {
+    cursor: pointer;
+  }
+`;
+
+const ModalTopic = styled.div`
+  color: #333;
+  font-size: 20px;
+  font-family: Strawford;
+  line-height: 142%;
+  letter-spacing: -0.6px;
+`;
+
+const ModalIcons = styled.div`
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  grid-gap: 32px;
+`;
+
+const ModalLink = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 28px;
+  justify-content: center;
+`;
+
+const ModalCopy = styled.div`
+  color: #fff;
+  font-size: 14px;
+  font-family: Strawford;
+  font-weight: 500;
+  line-height: 142%;
+  letter-spacing: -0.42px;
+  border-radius: 0px 8px 8px 0px;
+  background: #d53a94;
+  padding: 8px 12px;
+  height: 35.88px;
+  cursor: pointer;
+`;
+
+const ModalInput = styled.div`
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid rgba(186, 196, 214, 0.4);
+  background: #fff;
+  padding: 8px 12px;
+  max-width: 212px;
+  min-width: 212px;
+  height: 35.88px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  @media ${device.mobileL} {
+    max-width: 200px;
+    min-width: 200px;
+  }
+  @media ${device.mobileM} {
+    max-width: 150px;
+    min-width: 150px;
+  }
+`;
+
+const ModalClose = styled.div`
+  cursor: pointer;
+`;
+
+const ModalFigure = styled.div`
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: ${(props) => props.color};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const ModalItem = styled.div``;
