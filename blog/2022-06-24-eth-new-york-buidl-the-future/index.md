@@ -78,7 +78,7 @@ Integrate EPNS to your dApp and improve UX for all Web3 users
 - After which you can easily start sending important notifications about your project directly to the wallet address in a gasless way.
 - Whether you are creating DAO, DeFi, NFT, Metaverse or anything in between, having a direct form of communication tied to user’s wallet address massively improves the experience of your dApp (and goes extremely well with the bell icon you have integrated)
 
-<b>Check out our <a href='https://docs.epns.io/developers/developer-tooling/showrunners-framework'>Showrunners</a> and <a href='https://docs.epns.io/developers/developer-zone/examples/showrunners-example'>Tutorials</a> here for more details</b>
+<b>Check out our <a href='/docs/notifications/showrunners-scaffold/get-started'>Showrunners</a> and <a href='https://docs.epns.io/developers/developer-zone/examples/showrunners-example'>Tutorials</a> here for more details</b>
 
 <b>Create notifications channel for anything Web3</b>
 

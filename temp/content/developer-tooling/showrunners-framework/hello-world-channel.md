@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 # Hello World Channel
 
-Please ensure that you have correctly installed showrunners using the [**Setup Showrunners**](how-to-setup-showrunners.md) guide before proceeding forward.
+Please ensure that you have correctly installed showrunners using the [**Setup Showrunners**](how-to-setup-showrunner.md) guide before proceeding forward.
 
 ## Setting up Hello World Channel
 

@@ -77,3 +77,29 @@ const aliceSubscriptions = await userAlice.notification.subscriptions()
 ```
 
 </details>
+
+### User settings overview
+User settings are optional preferences set by the users when they are subscribing to a channel, provided the [channel has enabled settings](/docs/notifications/build/fetch-subscriptions). User settings are always returned as a response to the API call along with their subscription to the channel.
+
+This allows the channel to trigger notifications for certain categories (setting index) and enables users to choose what notifications they want to receive (for example: user might want to recieve loan liquidation alert when it reaches the threshold but not marketing notifications).
+
+:::note
+Notification settings are guidelines that a channel should follow, Push nodes will not check for validity of a particular setting though it will filter out setting index (category) that a user has explicitly turned off.
+:::
+
+```jsx
+// userAlice.notification.subscriptions({options?})
+const aliceSubscriptions = await userAlice.notification.subscriptions()
+
+// response
+[
+  {
+    channel: '0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25',
+    user_settings: '[{"type": 1, "user": false, "index": 1, "default": false, "description": "test1"}, {"type": 2, "user": 25, "index": 2, "default": 25, "enabled": 1, "lowerLimit": 23, "upperLimit": 35, "description": "test3"}, {"type": 2, "user": 64, "index": 3, "default": 56, "enabled": 1, "lowerLimit": 43, "upperLimit": 78, "description": "test5"}]'
+  },
+  { 
+    channel: '0xD8634C39BBFd4033c0d3289C4515275102423681',
+    user_settings: null 
+  },
+]
+```

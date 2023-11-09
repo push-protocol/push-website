@@ -52,14 +52,14 @@ function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   );
 }
 
-function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITechDocItem) {
+function TechDocItem({ title, srcref, alt, description, codeblock, link, target }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
   return (
     <TechDocCard>
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {e.preventDefault(); window.location.href = link}}
+        onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
         hoverBackground="transparent"
       >
         <ItemV
@@ -276,7 +276,7 @@ export default function HomepageFeatures(): JSX.Element {
             <HomepageSubHeader>
               Push SDK
             </HomepageSubHeader>
-            <Link to='https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details' target='_blank'>
+            <Link to='https://www.npmjs.com/package/@pushprotocol/restapi' target='_blank'>
               <div className='hero_home_explore'>
                 <p className='hero_home_explore_link'>
                   Explore SDK

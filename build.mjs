@@ -161,15 +161,15 @@ if (idMatch) {
   
   // If image tag exists but doesn't match the expected name, replace it
   if (imageTagMatch && imageTagMatch[1] !== imageName) {
-      content = content.replace(imageTagRegex, `image: "${relativeImagePath}"`);
-      fs.writeFileSync(filePath, content);
+    content = content.replace(imageTagRegex, `image: "${relativeImagePath}"`);
+    fs.writeFileSync(filePath, content);
   }
   // If image tag doesn't exist, add it
   else if (!imageTagMatch) {
-      const position = frontMatterEndIndex; // End of the front matter block
-      const imageTag = `image: "${relativeImagePath}"\n`;
-      content = [content.slice(0, position), imageTag, content.slice(position)].join('');
-      fs.writeFileSync(filePath, content);
+    const position = frontMatterEndIndex; // End of the front matter block
+    const imageTag = `image: "${relativeImagePath}"\n`;
+    content = [content.slice(0, position), imageTag, content.slice(position)].join('');
+    fs.writeFileSync(filePath, content);
   }
 }
 
@@ -198,11 +198,9 @@ async function generatePNGImage(imagePath, title) {
 
   const templatePreviewImagePath = ogDirectory + '/static/assets/docs/templatepreview/docsPreviewThumnail.png';
   const mainFont = Jimp.FONT_SANS_64_BLACK;
-  const subFont = Jimp.FONT_SANS_32_BLACK;
 
   const image = await Jimp.read(templatePreviewImagePath);
   const loadedMainFont = await Jimp.loadFont(mainFont);
-  const loadedSubFont = await Jimp.loadFont(subFont);
 
   const maxTextWidth = image.bitmap.width - 80; // 80px for padding on both sides
   let mainTitle = title;
@@ -216,9 +214,25 @@ async function generatePNGImage(imagePath, title) {
 
   if (subTitle && subTitle.includes('_')) {
       // Convert # to : for the top left title
-      const formattedSubTitle = subTitle.replace(/_/g, ':');
+      let formattedSubTitle = subTitle.replace(/_/g, ':');
+      formattedSubTitle = formattedSubTitle.replaceAll('::', ':');
+      formattedSubTitle = formattedSubTitle.replaceAll(':', '/');
+      formattedSubTitle = formattedSubTitle.replaceAll('/section', '');
+
+      // load font
+      const subFont = Jimp.FONT_SANS_32_BLACK;
+      const loadedSubFont = await Jimp.loadFont(subFont);
+      
+      // create transparent overlay
+      let overlayImage = new Jimp(1200, 630, 0x0, (err, textImage) => {  
+        //((0x0 = 0 = rgba(0, 0, 0, 0)) = transparent)
+        if (err) throw err;
+      });
+      overlayImage.print(loadedSubFont, 30, 30, formattedSubTitle);
+      overlayImage.color([{ apply: 'xor', params: ["#cf3fad"] }]); 
+
       // Print the subTitle (top left corner)
-      image.print(loadedSubFont, 10, 10, formattedSubTitle);
+      image.blit(overlayImage, 0, 0);
   }
 
   let lines = wrapText(loadedMainFont, mainTitle, maxTextWidth);
@@ -234,7 +248,7 @@ async function generatePNGImage(imagePath, title) {
     let textWidth = Jimp.measureText(loadedMainFont, line);
     const x = (image.bitmap.width - textWidth) / 2;
     image.print(loadedMainFont, x, yStart + yOffset, line, maxTextWidth);
-    yOffset += lineHeight;
+    yOffset += lineHeight * 0.5 + 20;
   }
 
   image.write(imagePath);

@@ -9,14 +9,14 @@ import styled from 'styled-components';
 // import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
+import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
-import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 
 // Import Assets
 import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
@@ -25,8 +25,8 @@ import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
-import GLOBALS, { device } from '@site/src/config/globals';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import GLOBALS, { device } from '@site/src/config/globals';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -38,7 +38,7 @@ export const ChatComponent = () => {
       <Header>
         Join the conversation
         <BrandA
-          href="https://docs.push.org/developers"
+          href="/docs/chat"
           target="_blank"
         >
           <Image

@@ -219,8 +219,10 @@ a:hover {
   height: 92px;
   border: 0px;
   box-shadow: none;
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
+  .navbar--fixed-top {
     width: 100%;
   }
 }

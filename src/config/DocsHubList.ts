@@ -10,6 +10,7 @@ export interface ITechDocItem {
   srcref?: string;
   alt?: string;
   link?: string;
+  target?: string;
 };
 
 interface ISdkListItem {
@@ -69,6 +70,7 @@ export const TechDocItems: ITechDocItem[] = [
     srcref: 'notification',
     alt: 'Logo representing Push Notifications - Push Protocol',
     link: '/docs/notifications',
+    target: '_self',
     description: 'Explore different ways of sending and receiving notifications and more.',
     codeblock: `// Initialize wallet user
 const userAlice = await PushAPI.initialize(signer);
@@ -86,6 +88,7 @@ const response = await userAlice.channel.send(['*'], {
     srcref: 'message',
     alt: 'Logo representing Push Chat - Push Protocol',
     link: '/docs/chat',
+    target: '_self',
     description: 'Learn about the details of Push Chat and how to do web3 native messaging.',
     codeblock: `// Initialize wallet user
 const userAlice = await PushAPI.initialize(signer);
@@ -101,13 +104,15 @@ const aliceMessagesBob = await userAlice.chat.send(
     srcref: 'spaces',
     alt: 'Logo representing Push Spaces - Push Protocol',
     link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+    target: '_blank',
     description: 'Learn about Push Spaces, the web3 native, token gated way of conducting spaces.',
   },
   {
     title: 'Push Video Calls',
     srcref: 'video',
     alt: 'Logo representing Push Video - Push Protocol',
-    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
+    link: '/docs/video',
+    target: '_self',
     description: 'Learn about the details of Push Video Calls and how to easily integrate it.',
   },
   {
@@ -115,13 +120,15 @@ const aliceMessagesBob = await userAlice.chat.send(
     srcref: 'star',
     alt: 'Logo representing examples repo - Push Protocol',
     link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
+    target: '_blank',
     description: 'Examples to showcase the power of Push Protocol’s communication stack.',
   },
   {
     title: 'Showrunners',
     srcref: 'showrunners',
     alt: 'Logo representing Showrunners scaffold - Push Protocol',
-    link: 'https://docs.push.org/developers/developer-guides/sending-notifications/using-showrunners-scaffold-gasless',
+    link: '/docs/notifications/showrunners-scaffold/',
+    target: '_self',
     description: 'Showrunners Framework and how to boost your web3 communications.',
   }
 ]

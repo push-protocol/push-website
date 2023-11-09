@@ -52,5 +52,5 @@ We are excited about this new integration and the potential it brings to the wor
 
 Learn more about dApp Store Kit using Push on our [Discord](https://discord.gg/pushprotocol)
 
-Learn how to integrate Push into your dApp: [docs.push.org](https://docs.push.org/hub/)
+Learn how to integrate Push into your dApp: [Push developer docs](/docs/)
 

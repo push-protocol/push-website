@@ -7,7 +7,7 @@ description: >-
 
 # Using Push dApp (Gasless)
 
-One of the easiest ways to send decentralized notifications is by using the Push dApp itself. The only prerequisite is that you must create a Channel on Push to be able to send notifications. In case you missed out, please check [this tutorial to create a Channel.](../create-your-notif-channel/)
+One of the easiest ways to send decentralized notifications is by using the Push dApp itself. The only prerequisites is that you must create a Channel on Push to be able to send notifications. In case you missed out, please check [this tutorial to create a Channel.](../create-your-notif-channel/)
 
 Once you create a Channel, you have to navigate to the [Channel Dashboard](https://staging.epns.io/#/dashboard). There you will see the profile page for your newly created Channel along with some Utilities to play around with.
 

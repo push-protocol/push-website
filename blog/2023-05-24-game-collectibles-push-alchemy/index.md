@@ -152,7 +152,7 @@ The benefits of using Alchemy include:
 
 ## Push Protocol
 
-Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](https://docs.push.org/developers) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](/docs/ "Push developer docs") for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
@@ -193,7 +193,7 @@ Developers seeking more in-depth guidance can refer to the following resources:
 
 - Alchemy documentation: [docs.alchemy.com](https://docs.alchemy.com/)
 - Alchemy University: [university.alchemy.com](https://university.alchemy.com/)
-- Push Protocol documentation: [docs.push.io](https://docs.push.org/hub/)
+- Push Protocol documentation: [push.org/docs](/docs/)
 - Solidity documentation: [docs.soliditylang.org](https://docs.soliditylang.org/en/latest/)
 - Foundry documentation: [book.getfoundry.sh](https://book.getfoundry.sh/)
 

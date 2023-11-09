@@ -20,7 +20,7 @@ The [PUSH-SDK](https://github.com/ethereum-push-notification-service/push-sdk), 
 
 It is written in Typescript and supports React, React Native, Plain JS, and Node JS-based platforms. (We are adding support for more!) It is also built on top of standard Web3 packages like <b>ethers, @web3-react</b>.
 
-If you’re looking for our full documentation on [Push-SDK REST API, you can find that here](https://docs.push.org/developers/developer-tooling/push-sdk).
+If you’re looking for our full documentation on [Push-SDK REST API, you can find that here](https://push.org/docs).
 
 But for now, let’s walk you through the main features of the Push-SDK REST API and how to use them in your code.
 
@@ -237,10 +237,10 @@ That’s it! You now know how to use the main features of the Push Protocol REST
 
 We’ll cover other parts of the Push SDK in coming posts so stay tuned!
 
-- [Push Protocol SDK documentation here](https://docs.push.org/developers/developer-tooling/push-sdk) — if you’d like more reference material to chew on.
+- [Push Protocol SDK documentation here](https://www.npmjs.com/package/@pushprotocol/restapi) — if you’d like more reference material to chew on.
 - [Push SDK on GitHub](https://github.com/ethereum-push-notification-service/push-sdk)
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
-- [Push developer docs](https://docs.push.org/developers/) to get started on building right away!
+- [Push developer docs](/docs/) to get started on building right away!
 
 #PoweredbyPush
 

@@ -129,6 +129,8 @@ function Header() {
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
+
+      
       {/* ALERT SECTION */}
       <Alert />
 
@@ -256,7 +258,7 @@ function Header() {
                       {t('header.docs.developer-guides')}
                     </A>
                     <A
-                      href="/docs"
+                      href="/docs/dao"
                       title={t('header.docs.alt-governance-guides')}
                       background="transparent"
                       hoverbackground="#fff"

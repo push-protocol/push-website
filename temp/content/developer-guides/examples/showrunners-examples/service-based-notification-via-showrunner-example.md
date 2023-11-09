@@ -8,7 +8,7 @@ description: >-
 # Service Based Notification via Showrunner Example
 
 **Greetings!!**<br/>
-If you are new to Push protocol and don't have a proper idea of how to create an service-based channel for notifications on top of [showrunners](https://docs.epns.io/developers/developer-tooling/showrunners-framework). This guide is for you ;)
+If you are new to Push protocol and don't have a proper idea of how to create an service-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
 We will walk through coding and interacting with the [ENS](https://ens.domains/) Domain service to create the notification if a user's domain is expiring. 
 
@@ -16,7 +16,7 @@ And don’t worry if you don’t understand what any these words mean yet, I'll 
 
 You can access the [code ](https://github.com/ethereum-push-notification-service/epns-showrunners-framework-staging/tree/main/src/sample\_showrunners/ens)for the channel and get some vibe for how the code is looking !!
 
-### Create a  folder
+### Create a folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
@@ -244,4 +244,4 @@ You can now heat up the server by running `docker-compose up` and `npm run dev` 
 
 That's all for now :)
 
-If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other dev and builders.
+If you enjoyed this tutorial, Do join our [discord server](https://discord.com/invite/pushprotocol) to meet other dev and builders.
