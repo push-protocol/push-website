@@ -8,7 +8,9 @@ sidebar_position: 2
 ---
 
 # ChatView
-Effortless Messaging Integration: Add a Complete Chat Interface to Your Dapp with ChatViewComponent.
+Effortless Messaging Integration: Add a Complete Chat Interface to Your Dapp with ChatView Component.
+
+This versatile component provides a seamless experience for utilizing the complete chat ecosystem, encompassing the chat profile, input box, and message list, all in one package. You can say goodbye to the complexities of integrating individual atomic components or making API calls to set up a chat view. With this component, the process is straightforward – just input the chatId and customize it to your specific requirements, effortlessly tailoring it to your needs.
 
 <head>
   <title>ChatView | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
@@ -23,24 +25,25 @@ import { ModalContainer } from "@site/src/css/SharedStyling";
 <TabItem  value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-import { ChatViewComponent } from "@pushprotocol/uiweb";
+import { ChatView } from "@pushprotocol/uiweb";
 
-const ChatViewComponentTest = () => {
+const ChatViewTest = () => {
   return (
     <div>
-      <ChatViewComponent
+      <ChatView
         chatId="89f7b382b9b1496dca2b9a94ef87c80dd102db05dcb40b165fabfab28770fd55"
         limit={10}
+        verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
       />
     </div>
   );
 };
 
-export default ChatViewComponentTest;
+export default ChatViewTest;
 ```
 
 <ModalContainer>
-  <img src={require("/static/assets/docs/articles/uiweb/chat.png").default} />
+  <img src={require("/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatview-component/chat-view.png").default} />
 </ModalContainer>
 
 </TabItem>
@@ -63,5 +66,36 @@ export default ChatViewComponentTest;
 | `chatProfile`            | `boolean` | true    |Default value is true, decides whether to show the chat profile header |
 | `chatViewList`            | `boolean` | true    |Default value is true,decides whether to show the message list |
 | `groupInfoModalBackground`       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the group info modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+| `groupInfoModalPosition`       | `ModalBackgroundType`         | -       |  Default value is `"GLOBAL"`, decides the group info modal position, it can be either relative to immediate parent(RELATIVE) or the entire screen(GLOBAL), possible values are `"RELATIVE"` &#124 `"GLOBAL"`|
+| `verificationFailModalBackground`       | `ModalBackgroundType`         | -       | Default value is `"OVERLAY"`, decides the access gating verification fail modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`|
+| `verificationFailModalPosition`       | `ModalBackgroundType`         | -       | Default value is `"GLOBAL"`, decides the access gating verification fail modal position, it can be either relative to immediate parent(RELATIVE) or the entire screen(GLOBAL), possible values are `"RELATIVE"` &#124 `"GLOBAL"`|
 | _`chatFilterList`_        | `Array<string>`         | -       | Array of cid's of messages  that needs to be excluded from chatViewList|
 | `limit`      | `number`         | -       |Number of messages fetched in each paginated api call,default value is 10|
+
+> Note: Refer [ChatUIProvider](/docs/chat/ui-components/Advanced/ChatUIProvider/) for details on its paramters.
+
+
+### Push ChatView Component live playground
+```jsx live 
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+// import { ChatUIProvider, ChatView } from @pushprotocol/uiweb;
+function App(props) {
+  return (
+    <>
+      <h2>Live chat with pushai.eth, connect your wallet and chat to get sassy response from PushAI.eth</h2>
+      <div style={{ height: '75vh', margin: '20px auto' }}>
+        <ChatUIProvider>
+          <ChatView
+            chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
+            limit={10}
+            isConnected={true}
+            autoConnect={false}
+            verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
+          />
+        </ChatUIProvider>
+      </div>
+    </>
+  );
+}
+```
