@@ -2,27 +2,38 @@
   margin-right: 10px;
 }
 
-.DocsHub .docPage_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-styles-module, .DocsHub .docPage__5DB {
-  width: 100% !important;
+.PushDocs .table-of-contents li {
+  margin: 0.4rem 0.8rem 0.4rem 1.8rem !important;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module, .DocsHub .docPage__5DB main {
-  max-width: initial;
+.PushDocs .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .PushDocs .docPage__5DB {
+  width: 85%;
+  align-self: center;
+  margin: 0 auto;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container, .DocsHub .docPage__5DB main .container {
+.DocsHub .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .DocsHub .docPage__5DB {
+  width: 100%;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module, .DocsHub .docPage__5DB main {
+  max-width: 100%;
+}
+
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module .container, .DocsHub .docPage__5DB main .container {
   max-width: initial;
   padding: 0px !important;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row, .DocsHub .docPage__5DB main .container .row {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module .container .row, .DocsHub .docPage__5DB main .container .row {
   display: flex;
   margin: 0px;
 }
 
-.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col, .DocsHub .docPage__5DB main .container .row .col {
+.DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module .container .row .col, .DocsHub .docPage__5DB main .container .row .col {
   padding: 0;
   max-width: initial !important;
+  width: 100%;
 }
 
 .DocsHub .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module, .DocsHub .skipToContent_fXgn {
@@ -32,3 +43,4 @@
 .DocsHub .theme-doc-footer, .DocsHub .pagination-nav {
   display: none;
 }
+
