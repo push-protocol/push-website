@@ -580,28 +580,32 @@ export const AImp = styled.a`
 
 // Block Anchor
 export const ABlock = styled.a`
-  color: #000;
-  border: 1px solid #d4d5d8;
-  font-size: 16px;
+  color: var(--ifm-custom-base);
+  border: 0.5px solid var(--ifm-custom-base);
+  font-size: 1.25rem;
   padding: 20px 15px 20px 15px;
   margin-top: 20px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
   display: flex;
-  background: #fdfdfe;
+  transition: all 0.2s ease-in-out 0s;
   
+
   &:after {
     content: ">";
     position: relative;
+    display: flex;
     float: right;
     margin-left: auto;
+    align-items: center;
   }
 
   &:hover {
-    color: #000;
-    border: 1px solid #dd44b9;
+    color: #dd44b9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
   }
 
   &:hover:after {
