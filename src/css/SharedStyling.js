@@ -692,3 +692,10 @@ export const ImageText = styled.div`
   font-size: 14px;
   margin-bottom: 20px;
 `;
+
+export const ModalLarge = styled(ModalMid)`
+  min-width: 220px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
