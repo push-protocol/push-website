@@ -3,14 +3,15 @@ slug: june-monthly-recap
 title: 'June Monthly Recap 🌅'
 authors: [push]
 image: './cover-image.webp'
+text: "What a month it’s been at Push! From groundbreaking features to new partnerships, we’ve been on an exciting journey this June making major strides towards our mission of decentralizing communication in web3. We couldn’t be more thrilled to share the highlights with you."
 tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---
 ![Cover image of June Monthly Recap 🌅](./cover-image.webp)
+<!--truncate-->
 
 What a month it’s been at Push! From groundbreaking features to new partnerships, we’ve been on an exciting journey this June making major strides towards our mission of decentralizing communication in web3. We couldn’t be more thrilled to share the highlights with you.
 
-<!--truncate-->
 
 The spotlight of the month was undoubtedly the long-awaited [release of Push NFT Chat](https://twitter.com/pushprotocol/status/1666491248436297728?s=20). With this new feature, we’ve opened up a universe of possibilities for the 1.5 million+ NFT wallets and collections including Azuki, BAYC, and CryptoPunks. Instant, secure, and immersive chats tied to your unique NFT assets are here. With its triple encryption and intuitive UX, Push NFT Chat is set to empower web3 native NFT-to-NFT and dApp-to-NFT communication like never before. Read all about it [here](https://medium.com/push-protocol/introducing-push-nft-chat-chats-and-comms-tied-to-your-nfts-done-right-98717c04438d). Also don’t forget to check out the [demo](https://twitter.com/pushprotocol/status/1666859600161779733?s=20) and begin building!
 
@@ -53,9 +54,5 @@ Lastly, the ETH Global HackFS was a huge success with 55 awesome teams developin
 As we bid farewell to another eventful month at Push, we want to thank you all for being a part of our journey. Stay tuned for more exciting developments on the horizon as we continue in our mission to revolutionize decentralized communication. See you next time!
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

@@ -3,10 +3,16 @@ slug: push-v2-is-live-new-rewards-utility-and-functionality
 title: 'Push V2 is LIVE — New Rewards, Utility & Functionality 🚀'
 authors: [push]
 image: './cover-image.gif'
+text: "We’re thrilled to announce the launch of Push V2!🎉
+
+
+This new release is packed with exciting features that collectively delivers an unparalleled experience for our users, provides new tools for builders, and helps us take a huge leap forward in the way of democratizing web3 communication."
 tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 ---
 ![Cover image of Push V2 is LIVE — New Rewards, Utility & Functionality 🚀](./cover-image.gif)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # We’re thrilled to announce the launch of Push V2!🎉
@@ -16,7 +22,6 @@ tags: [Pushprotocol, Web3, Yield Farming, Blockchain Technologies]
 
 We’re thrilled to announce the launch of Push V2!🎉
 
-<!--truncate-->
 
 This new release is packed with exciting features that collectively delivers an unparalleled experience for our users, provides new tools for builders, and helps us take a huge leap forward in the way of democratizing web3 communication.
 
@@ -47,8 +52,3 @@ Additionally, our new features and functionality are expanding the universe of d
 
 Stay tuned for more updates and announcements on each of these features! ✨
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

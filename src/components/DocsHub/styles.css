@@ -18,6 +18,7 @@
 .DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row, .DocsHub .docPage__5DB main .container .row {
   display: flex;
   margin: 0px;
+  flex-direction: column;
 }
 
 .DocsHub .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module .container .row .col, .DocsHub .docPage__5DB main .container .row .col {

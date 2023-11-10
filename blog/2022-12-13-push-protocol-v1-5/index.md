@@ -3,17 +3,18 @@ slug: introducing-push-protocol-v1-5
 title: Introducing Push Protocol v1.5 🎊
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol is elated to announce the successful completion of the security audit of our smart contracts v1.5 with Chainsafe."
 tags: [ Web3, Blockchain Technology, Blockhain Development, Push Notification, Communication Tools]
 ---
 
 ![Cover image of Introducing Push Protocol v1.5 🎊](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # We’re proud to announce ChainSafe has successfully completed its audit of Push Smart Contracts v1.5! Here’s what to expect from the update.<br/>
 
 Push Protocol is elated to announce the successful completion of the [security audit of our smart contracts v1.5](https://github.com/ChainSafe/audits/blob/main/EPNS/epns-protocol-11-2022.pdf) with Chainsafe.
 
-<!--truncate-->
 
 The completion of this audit was one of the most significant roadmap items for this year. We couldn’t be happier to share with you all that our version 1.5 of Core and Communicator smart contracts have been successfully audited by Chainsafe.
 
@@ -101,8 +102,4 @@ A lot of development has gone into reaching this moment with Push v1.5. We’re 
 
 The Push Core and Communicator smart contracts will be upgraded to version 1.5 by January 2023. All the above-mentioned modifications and new features will come into effect post the upgrade.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

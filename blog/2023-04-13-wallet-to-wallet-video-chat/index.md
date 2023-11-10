@@ -4,19 +4,19 @@ slug: push-launches-wallet-to-wallet-video-chat
 title: Push Launches Wallet-to-Wallet Video Chat📹
 authors: [push]
 image: './cover-image.gif'
+text: "Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at app.push.org"
 tags: [ Web3, Push Notification, Chat, Video, Social]
 
 ---
 
 ![Cover image of Push Launches Wallet-to-Wallet Video Chat📹](./cover-image.gif)
-
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Push Video is live, allowing web3 users to video chat without intermediaries.<br/>
 
 Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at [app.push.org](https://app.push.org/chat)!
 
-<!--truncate-->
 
 Push Protocol began with push notifications to web3 in January 2022 on Ethereum. Since then, Push has expanded to Polygon and BNB Chain. In October 2022 at Devcon in Bogota, we announced the launch of Push Chat, our wallet-to-wallet messaging protocol. Since launch, Push Protocol has powered over 30M messages to 85,000+ users across 500+ integrations.
 
@@ -54,8 +54,3 @@ Sending a video request and getting started with decentralized video chat is eas
 
 *Note: You need to be friends prior to making a call. You can do this by starting a text conversation first. Once the other person accepts your message request, you’re all set to have a safe & secure video call.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

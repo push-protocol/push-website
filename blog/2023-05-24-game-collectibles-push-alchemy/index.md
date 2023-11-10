@@ -4,15 +4,16 @@ slug: how-to-build-a-game-collectibles-d-app-with-push-and-alchemy
 title: How to Build a Game Collectibles dApp with Push and Alchemy🎮
 authors: [push]
 image: './cover-image.webp'
+text: "This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem."
 tags: [ Web3, Development, Gaming,  Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of How to Build a Game Collectibles dApp with Push and Alchemy🎮](./cover-image.webp)
+<!--truncate-->
 
 <b>TL;DR:</b> This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 
@@ -221,8 +222,3 @@ Building blockchain-based gaming collectibles dApps with Alchemy and Push Protoc
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

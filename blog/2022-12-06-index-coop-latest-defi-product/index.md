@@ -3,17 +3,18 @@ slug: index-coop-stay-updated-about-the-latest-defi-products-with-push
 title: Index Coop — Stay Updated About the Latest DeFi Products With Push
 authors: [push]
 image: './cover-image.webp'
+text: "In the third episode of “Frens of Push”, we sat down with Brad Morris to talk about the possibilities created by on-chain communication with token holders."
 tags: [Web3, Cryptocurrency,Frensofpush, Defi, Push Notification]
 ---
 
 ![Cover image of Index Coop — Stay Updated About the Latest DeFi Products With Push](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Frens of Push #3<br/>
 
 <i><a href="https://medium.com/push-protocol/cryptocurrency-jobs-stay-notified-of-the-best-web3-opportunities-out-there-342908de0797">“Frens of Push”</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.</i><br/><br/>
 
-<!--truncate-->
 
 <a href="https://indexcoop.com/"><b>Index Coop</b></a>, the leading on-chain index products provider, has integrated Push to enable a seamless communication channel with its community.
 
@@ -71,8 +72,4 @@ Index Coop is a collective that provides broad exposure to DeFi, making the purc
 
 Check out more about Index Coop: [Website](https://indexcoop.com/) and [Twitter](https://indexcoop.com/).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

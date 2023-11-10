@@ -3,19 +3,20 @@ slug: a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat
 title: 'A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat'
 authors: [push]
 image: './cover-image.webp'
+text: "Push NFT Chat is a seamless and secure communication platform that enables NFTs to chat directly with one another. Unlike traditional chat systems tied to wallet addresses, Push NFT Chat allows chats to be specifically associated with individual NFTs owned by users. This is a game changer for chat integrations."
 tags: [Pushprotocol, Developer, NFT]
 
 ---
 ![Cover image of A Technical Deep Dive + 5 Simple Steps to Get Started With Push NFT Chat](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
-# Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
+Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
 
 
 ## What is Push NFT Chat?
 Push NFT Chat is a seamless and secure communication platform that enables NFTs to chat directly with one another. Unlike traditional chat systems tied to wallet addresses, Push NFT Chat allows chats to be specifically associated with individual NFTs owned by users. This is a game changer for chat integrations.
 
-<!--truncate-->
 
 With Push NFT Chat, users now have the flexibility to choose whether their communications remain connected to their NFTs or their wallets.
 
@@ -334,8 +335,4 @@ By giving control over the password transfer to the previous NFT owner, Push NFT
 - [Listening to Chat Socket Events for NFT Chat Profiles](https://github.com/ethereum-push-notification-service/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1546)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

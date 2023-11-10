@@ -4,6 +4,8 @@ title: 'Introducing Notification Settings: Customize Your Web3 Notifications🔔
 authors: [push]
 image: './cover-image.webp'
 description: 'Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️'
+text: "We are extremely excited to be releasing a long-awaited feature - Notification Settings!
+This new feature enables both channels and users to customize the type of notifications they send and receive respectively."
 tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
@@ -82,6 +84,10 @@ Here are a few popular channels to get you started!
 - [ETH Price Tracker](http://app.push.org/channels?channel=0xDBc5936E4daaE94F415C39D284f6a69c4d553F2F)
 
 Full list of Push channels 👉https://app.push.org/channels
+
+Here’s a full demo on how to both setup and sign up for Notification Settings:
+
+<iframe width="100%" height="384" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ### Pushing Personalized Communication Experiences

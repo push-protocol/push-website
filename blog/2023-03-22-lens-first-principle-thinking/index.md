@@ -4,15 +4,16 @@ slug: web3-and-push-protocol-through-the-lens-of-first-principle-thinking
 title: Web3 & Push Protocol through the Lens of First Principle Thinking🔍
 authors: [push]
 image: './cover-image.gif'
+text: "First-principle thinking means breaking down a complex problem into its most basic, foundational elements."
 tags: [ Pn101, First Principles Thinking, Web3, Blockchain Technology]
 
 ---
 
 ![Cover image of Web3 & Push Protocol through the Lens of First Principle Thinking🔍](./cover-image.gif)
+<!--truncate-->
 
 First-principle thinking means breaking down a complex problem into its most basic, foundational elements.
 
-<!--truncate-->
 
 One example of applying First-principle thinking is Richard Feynman’s (an American theoretical physicist) famous essay that starts with basic algebra such as addition and subtraction and explains calculus in just [four pages](https://www.feynmanlectures.caltech.edu/I_22.html) through fully connected coherent reasoning.
 
@@ -70,8 +71,3 @@ Push has empowered the web3 space by delivering 25 million+ notifications, 70k+ 
 ![Ecosystem](./image-3.png)
 <center>The Push Ecosystem</center>
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

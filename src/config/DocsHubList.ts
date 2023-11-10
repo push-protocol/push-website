@@ -111,8 +111,8 @@ const aliceMessagesBob = await userAlice.chat.send(
     title: 'Push Video Calls',
     srcref: 'video',
     alt: 'Logo representing Push Video - Push Protocol',
-    link: 'https://docs.push.org/developers/developer-guides/integrating-push-video',
-    target: '_blank',
+    link: '/docs/video',
+    target: '_self',
     description: 'Learn about the details of Push Video Calls and how to easily integrate it.',
   },
   {

@@ -3,17 +3,20 @@ slug: may-monthly-recap
 title: May Monthly Recap ☀️
 authors: [push]
 image: './cover-image.webp'
+text: "Welcome to another exciting month at Push!
+May flew by in the blink of an eye, and we have a whirlwind of exciting updates and achievements to share with you. From groundbreaking developments to valuable partnerships and community activities, the past month has been nothing short of extraordinary."
 tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Development]
 
 ---
 
 ![Cover image of May Monthly Recap ☀️](./cover-image.webp)
+<!--truncate-->
+
 
 Welcome to another exciting month at Push!
 
 May flew by in the blink of an eye, and we have a whirlwind of exciting updates and achievements to share with you. From groundbreaking developments to valuable partnerships and community activities, the past month has been nothing short of extraordinary.
 
-<!--truncate-->
 
 Get ready to dive in!
 
@@ -77,8 +80,3 @@ As we move on to June, we are energized and inspired by all the amazing progress
 
 Thank you for being a part of the Push journey. Stay tuned for more updates!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
