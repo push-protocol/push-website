@@ -194,7 +194,7 @@ export default function HomepageFeatures(): JSX.Element {
               </Span>
               <Link
                 className='hero__button'
-                to="/docs/chat">
+                to="#techdocs">
                 <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
                 <FiArrowUpRight size={16} />
               </Link>
@@ -258,7 +258,7 @@ export default function HomepageFeatures(): JSX.Element {
       {/* TECH DOCS SECTION */}
       <HomepageSection>
         <FluidContent>
-          <HomepageSubHeader>
+          <HomepageSubHeader id="techdocs">
             Technical Documentation
           </HomepageSubHeader>
           <TechDocCardList>
