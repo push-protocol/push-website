@@ -3,9 +3,11 @@ slug: qi-dao-taps-push-to-update-users-on-their-debt-positions
 title: 'QiDAO Taps Push to Update Users on their Debt Positions🪙'
 authors: [push]
 image: './cover-image.webp'
+text: "Frens of Push is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series."
 tags: [ Web3, Web3 Communication, Blockchain Technology, Blockchain Development, Frensofpush]
 ---
 ![Cover image of QiDAO Taps Push to Update Users on their Debt Positions🪙](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Frens of Push #7 | This week, our featured Fren is one of the leading stablecoin protocols, QiDAO🎉
@@ -14,7 +16,6 @@ tags: [ Web3, Web3 Communication, Blockchain Technology, Blockchain Development,
     <a href='https://medium.com/push-protocol/tagged/frensofpush'>"Frens of Push"</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.
 </i>
 
-<!--truncate-->
 
 This week, we’re delighted to have on a leading decentralized stablecoin protocol and our fren, QiDao, to talk about their journey with Push.
 
@@ -60,11 +61,7 @@ QiDao is Polygon’s first native stablecoin protocol (and is now supported by m
 
 Find out more about QiDao: [Website](https://app.mai.finance/), [Twitter](https://twitter.com/QiDaoProtocol?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), [Discord](https://discord.com/invite/mQq55j65xJ), [Docs](https://docs.mai.finance/introduction-1)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 <i>
     “Push frens” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us, and you could be our next Fren in the series.

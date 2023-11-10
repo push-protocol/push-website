@@ -15,7 +15,7 @@ import VanillaTilt from 'vanilla-tilt';
 // Internal Components
 
 // Import Assets
-import ImageHolder from '@site/src/components/ImageHolder';
+import { Image } from '@site/src/css/SharedStyling';
 import encode from '@site/static/assets/svgs/encode.svg';
 import ethglobal from '@site/static/assets/svgs/ethglobal.svg';
 import fvm from '@site/static/assets/svgs/fvm.svg';
@@ -94,8 +94,8 @@ const ChannelItem = ({ channelProp }, delay) => {
                         {!loading && channelObject.imageFile && (<MemberImage
                             width={100}
                             height={100}
-                            src={channelObject.imageFile}
-                            srcSet={channelObject.imageFile || ''}
+                            src={require(`@site/static/assets/frens/${channelObject.imageFile}.png`).default}
+                            srcSet={`${require(`@site/static/assets/frens/${channelObject.imageFile}@2x.png`).default} 2x, ${require(`@site/static/assets/frens/${channelObject.imageFile}@3x.png`).default} 3x` || ''}
                             // alt={name}
                         />)}
                     </ChannelLogo>
@@ -212,7 +212,7 @@ const ChannelType = styled.div`
     align-items: center;
 `;
 
-const MemberImage = styled(ImageHolder)`
+const MemberImage = styled(Image)`
     object-fit: contain;
     width: 100%;
     border: 1px solid #BAC4D6;

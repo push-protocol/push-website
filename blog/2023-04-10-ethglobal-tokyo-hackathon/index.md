@@ -4,18 +4,20 @@ slug: join-us-for-the-eth-global-tokyo-hackathon
 title: Join us for the ETHGlobal Tokyo Hackathon🗼
 authors: [push]
 image: './cover-image.png'
+text: "A few weeks ago, we partnered with our frens at ETHGlobal for the Scaling Ethereum 2023 hackathon, where thousands of builders from around the world showcased their impressive work."
 tags: [ Ethglobal, Hackathons, Bounty Program, Web3]
 
 ---
 
 ![Cover image of Join us for the ETHGlobal Tokyo Hackathon🗼](./cover-image.png)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # おはよう東京~🌸 Let’s push the boundaries of web3 communication by building something cool with Push at Japan’s largest web3 hackathon in history, ETHGlobal Tokyo!<br/>
 
 A few weeks ago, we partnered with our frens at ETHGlobal for the [Scaling Ethereum 2023 hackathon](https://twitter.com/pushprotocol/status/1642145186473017344), where thousands of builders from around the world showcased their impressive work.
 
-<!--truncate-->
 
 Now, we’re teaming up with ETHGlobal again for ETHGlobal Tokyo, and we’re challenging you to inspire and surprise the community with your projects using Push Protocol, the most widely used communication protocol in web3.
 
@@ -66,8 +68,3 @@ We’re excited to see what you build at ETHTokyo, and the Push crew will be ava
 
 Join us for ETH Tokyo, and let’s push the boundaries of web3 communication together! We can’t wait to see what you build! 🔔
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

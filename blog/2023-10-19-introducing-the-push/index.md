@@ -4,6 +4,7 @@ title: 'Introducing the Push Ambassador Africa Program🌍'
 authors: [push]
 image: './cover-image.webp'
 description: 'Introducing the Push Ambassador Africa Program🌍'
+text: 'In light of the recent success of our Push Ambassador Program in India, we are thrilled to be extending our Ambassador Program to the continent of Africa.'
 tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
 ---
 
@@ -79,8 +80,3 @@ If everything you’ve read so far excites you –  apply [here](https://docs.go
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -347,7 +347,7 @@ const SpanLink = styled(Span)`
 
 const Div = styled.div`
     padding: 0px 0px;
-    max-height:63%;
+    max-height: 63%;
     @media ${device.laptop}{
       padding: ${(props) => props.padding ? "20px 0px" : "10px 0px 0px 0px"};
     }
