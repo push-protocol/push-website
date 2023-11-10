@@ -65,8 +65,8 @@
   --ifm-color-blog-footer: #404650;
   --ifm-color-footer: #B6BCD6;
   --ifm-modal-input: #575d73;
-  --ifm-modal-border-input: "none"
-  --ifm-blog-avatar-border: none;
+  --ifm-modal-border-input: "none";
+  --ifm-blog-avatar-border: "none";
 }
 
 
