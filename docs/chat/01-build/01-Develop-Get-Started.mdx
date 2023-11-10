@@ -183,18 +183,19 @@ Full API coverage with sample runable code can be found in the examples below:
 ```jsx live 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
-// import { ChatUIProvider, ChatViewComponent } from @pushprotocol/restapi;
+// import { ChatUIProvider, ChatView } from @pushprotocol/uiweb;
 function App(props) {
   return (
     <>
       <h2>Live chat with pushai.eth, connect your wallet and chat to get sassy response from PushAI.eth</h2>
       <div style={{ height: '75vh', margin: '20px auto' }}>
         <ChatUIProvider>
-          <ChatViewComponent
+          <ChatView
             chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
             limit={10}
             isConnected={true}
-            onGetTokenClick={()=>setShowFaucet(true)}
+            onVerificationFail={()=>setShowFaucet(true)}
+            verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
           />
         </ChatUIProvider>
       </div>

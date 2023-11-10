@@ -592,7 +592,6 @@ export const ABlock = styled.a`
   text-decoration: none;
   display: flex;
   transition: all 0.2s ease-in-out 0s;
-  
 
   &:after {
     content: ">";
@@ -612,7 +611,7 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
-`
+`;
 
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`
@@ -700,4 +699,11 @@ export const ImageText = styled.div`
   text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
+`;
+
+export const ModalLarge = styled(ModalMid)`
+  min-width: 220px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
 `;

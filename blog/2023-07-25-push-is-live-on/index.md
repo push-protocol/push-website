@@ -3,10 +3,12 @@ slug: push-is-live-on-polygon-and-quickswap
 title: $PUSH is Live on Polygon & Quickswap!💜
 authors: [push]
 image: './cover-image.webp'
+text: "Today we are excited to announce the launch of the $PUSH token on Polygon! Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token."
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
 
 ---
 ![Cover image of $PUSH is Live on Polygon & Quickswap!💜](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # New composability, accessibility, and utility for the $PUSH token.
@@ -14,7 +16,6 @@ tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
 
 Today we are excited to announce the launch of the $PUSH token on Polygon!
 
-<!--truncate-->
 
 Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token.
 
@@ -58,8 +59,3 @@ Thank you for your support and happy trading!
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

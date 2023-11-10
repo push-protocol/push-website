@@ -4,15 +4,16 @@ slug: push-protocol-s-bug-bounty-program-goes-live
 title: Push Protocol’s Bug Bounty Program Goes Live!
 authors: [push]
 image: './cover-image.webp'
+text: "Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉"
 tags: [ Web3, Bug Bounty, Blockchain Technology, Bounty Program, Announcements]
 
 ---
 
 ![Cover image of Push Protocol’s Bug Bounty Program Goes Live!](./cover-image.webp)
+<!--truncate-->
 
 Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉
 
-<!--truncate-->
 
 <b>And the program starts TODAY!</b>
 
@@ -66,8 +67,3 @@ You can find us on [Discord here](https://discord.com/invite/pushprotocol).
 
 Thanks again for being a part of what makes Push Protocol incredible!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

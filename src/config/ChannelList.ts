@@ -3915,8 +3915,16 @@ export const objChannelList = [
     name: 'Eco',
     info: 'The Eco Association is a non-profit organization dedicated to supporting the growth of the Eco Currency protocol.',
     url: 'https://eco.org/',
-    imageFile:'/channelList/eco-pfp.jpg',
+    // imageFile:'/channelList/eco-pfp.jpg',
     type: 'DAO',
+  },
+  {
+    id: 168,
+    name: 'Verso',
+    info: 'Multichain wallet for Crypto, NFTs, DeFi and cashback.',
+    url: 'https://www.get-verso.com/',
+    imageFile:'verso',
+    type: 'DeFi',
   },
   {
     name: 'LensTok',

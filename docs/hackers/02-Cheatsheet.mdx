@@ -1,0 +1,49 @@
+---
+id: docs-hackers-cheat-sheet
+title: Cheat Sheet
+hide_title: false
+slug: ./cheat-sheet
+displayed_sidebar: pushHackersSidebar
+sidebar_position: 2
+---
+
+# Click below to view CheatSheet 👇🏾
+
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+} from "@site/src/css/SharedStyling";
+
+<ModalContainer >
+<ModalSmall 
+  onClick={() =>
+    window.open(
+      'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view',
+      '_blank'
+    )
+  }
+>
+  <ModalWrapper>
+    <span>
+      View CheatSheet
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+</ModalContainer>

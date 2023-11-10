@@ -4,10 +4,13 @@ slug: push-protocol-launches-on-bnb-chain
 title: 'Push Protocol Launches on BNB Chain!💛'
 authors: [push]
 image: './cover-image.gif'
+text: "Today, we’re excited to announce that Push Protocol is launching on the BNB Chain mainnets! This means the largest web3 communication platform is now available to BNB’s ecosystem of thousands of dapps and hundreds of thousands of daily users.
+"
 tags: [ BNB, BNBChain, Blockchain, Blockchain Technology]
 
 ---
 ![Cover image of Push Protocol Launches on BNB Chain!💛](./cover-image.gif)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # We’re continuing to build out web3 communication for the entire blockchain ecosystem.
@@ -15,7 +18,6 @@ tags: [ BNB, BNBChain, Blockchain, Blockchain Technology]
 
 Today, we’re excited to announce that <b>Push Protocol is launching on the BNB Chain mainnet</b>! This means the largest web3 communication platform is now available to BNB’s ecosystem of thousands of dapps and hundreds of thousands of daily users.
 
-<!--truncate-->
 
 Back in September 2022, Push launched on Polygon’s mainnet, signaling our first step into becoming <i>the</i> multi-chain communication protocol for all of web3. Staying true to our commitment of an interoperable future, the next chain to support Push Protocol is BNB Chain.
 
@@ -43,9 +45,5 @@ Let’s #PUSH for web3 communication!
 
 #PoweredbyPush
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
