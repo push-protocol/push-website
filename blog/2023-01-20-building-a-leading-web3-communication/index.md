@@ -3,13 +3,14 @@ slug: building-a-leading-web3-communication-layer-what-s-it-take
 title: 'Building a Leading Web3 Communication Layer: What’s it take?🛠️'
 authors: [push]
 image: './cover-image.webp'
+text: "Decentralized communication is a hot topic in the web3 space as more and more developers are looking to build dapps that can function independently of any single central authority."
 tags: [ Web3, Buidl, Blockchain Technology, Blockchain Development, Developer]
 ---
 ![Cover image of Building a Leading Web3 Communication Layer: What’s it take?🛠️](./cover-image.webp)
+<!--truncate-->
 
 Decentralized communication is a hot topic in the web3 space as more and more developers are looking to build dapps that can function independently of any single central authority.
 
-<!--truncate-->
 
 Though, a key component of building a successful dapp is providing a communication layer that is both decentralized and universal.
 
@@ -47,8 +48,4 @@ If you’re interested in exploring how Push Notifications or Push Chat can boos
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
 - [Push developer docs](/docs/) to get started on building right away!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

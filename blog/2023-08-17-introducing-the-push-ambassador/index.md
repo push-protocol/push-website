@@ -3,17 +3,19 @@ slug: introducing-the-push-ambassador-india-program
 title: 'Introducing the Push Ambassador India Program🌸'
 authors: [push]
 image: './cover-image.png'
+text: "Following the recent success of our Push Ambassador Program in LATAM, we are thrilled to be expanding our Ambassador Program to India!"
 tags: [Pushprotocol, Ambassador Program, Partnerships, Web3, Blockchain Technologies]
 
 ---
 ![Cover image of Introducing the Push Ambassador India Program🌸](./cover-image.png)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # We’re looking for new ambassadors in India to join us!
 
 Following the recent success of our Push Ambassador Program in LATAM, we are thrilled to be expanding our Ambassador Program to India!
 
-<!--truncate-->
 
 The Push Ambassador India Program is an exciting expansion of our community initiative designed to grow our presence and foster a dynamic community of web3 enthusiasts across India. We couldn’t be more excited to be embarking on this new chapter and inviting new web3 ambassadors into the Push fam.
 
@@ -78,8 +80,3 @@ If you’re fueled by a passion for web3 and decentralized communication, apply 
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
