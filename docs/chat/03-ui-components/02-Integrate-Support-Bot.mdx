@@ -87,14 +87,13 @@ Import the SDK package in the component file where you want to render the suppor
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
   ```typescript
-  import { Chat } from "@pushprotocol/uiweb";
+  import { SupportChat } from "@pushprotocol/uiweb";
   import { ITheme } from '@pushprotocol/uiweb';
 
   // Push Chat is interoperable and you can receive it on any of the supported platforms
   // We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app 
   // https://app.push.org/#receive-notifications
-  <Chat
-    account="0x6430C47973FA053fc8F055e7935EC6C2271D5174" //user address - this belongs to the user
+  <SupportChat
     supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address, this belongs to you
     signer={signer}
     env="staging" // can be "prod" or "staging"
@@ -108,9 +107,9 @@ Import the SDK package in the component file where you want to render the suppor
 
 | Prop            | Type          | Default      | Remarks |
 |-----------------|---------------|--------------|---------|
-| `account*`      | `string`      | `-`          | user address(sender) |
+| `account`      | `string`      | `-`          | user address(sender) |
 | `supportAddress*` | `string`    | `-`          | support user's address(receiver) |
-| _`signer`_       | `ethers.js signer` | `-`    | signer (used for decrypting chats) |
+| _`signer*`_       | `ethers.js signer` | `-`    | signer (used for decrypting chats) |
 | `greetingMsg`   | `string`      | `'Hi there!'`| first message in chat screen |
 | `theme`         | `ITheme`      | `lightTheme` | theme for chat modal (only `lightTheme` available now) |
 | `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title |
@@ -126,7 +125,7 @@ You can also customize the chat according to your preference —
 
   ```typescript
   import React from 'react';
-  import { Chat, ITheme } from '@pushprotocol/uiweb';
+  import { SupportChat, ITheme } from '@pushprotocol/uiweb';
 
   export const ChatSupportTest = () => {
     const theme: ITheme = {
@@ -141,8 +140,7 @@ You can also customize the chat according to your preference —
       moduleColor: 'pink',
     };
     return (
-      <Chat
-        account='0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
+      <SupportChat
         supportAddress="0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7"
         env='staging'
         signer={signer}
@@ -216,13 +214,13 @@ customPropMinimized="true"
 // import { ChatUIProvider, ChatViewComponent } from @pushprotocol/restapi;
 function App(props) {
   const [signer, setSigner] = useState(null);
-  const [account, setAccount] = useState(null);
+ 
   const connectWallet = async () => {
     // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     // Get provider
-    const accounts = await provider.send("eth_requestAccounts", []);
+   await provider.send("eth_requestAccounts", []);
 
     // Grabbing signer from provider
     const signer = provider.getSigner()
@@ -230,8 +228,7 @@ function App(props) {
     // store signer
     setSigner(signer);
 
-    const address = accounts[0];
-    setAccount(address);
+   
   }
 
   const disconnectWallet = async () => {
@@ -260,8 +257,7 @@ function App(props) {
 
         {signer && 
           <>
-            <Chat
-            account={account}
+            <SupportChat
               supportAddress="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666" //support address, this belongs to you
               signer={signer}
               env="prod" // can be "prod" or "staging"

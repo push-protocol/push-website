@@ -3370,10 +3370,10 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@0.0.1-alpha.24":
-  version "0.0.1-alpha.24"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-0.0.1-alpha.24.tgz#a266c7751bbb7dfe07e1a045e5d1d47b57cea72d"
-  integrity sha512-mK7R9OY64iRijPulwCog0HSlnThK9gPs0P79qB8BChkSaX3UhIB130gfgc34V2mxPg9WfZuA5T4wiKUmw5B42w==
+"@pushprotocol/uiweb@^1.1.16":
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.1.16.tgz#43456a1a8d78bb3903feef66d9eec5cf723e76a0"
+  integrity sha512-sJzXwizN4ErhwiIw4qyBn6twjJaLkQXQc6VYBI9+20eipSlxO4fmQXR79FGAZUIZeSLnrlkaZLqjuzaXOwdulQ==
   dependencies:
     "@livekit/components-react" "^1.2.2"
     "@livekit/components-styles" "^1.0.6"
@@ -3389,7 +3389,6 @@
     date-fns "^2.28.0"
     emoji-picker-react "^4.4.9"
     ethers "^5.6.8"
-    font-awesome "^4.7.0"
     gif-picker-react "^1.1.0"
     html-react-parser "^1.4.13"
     livekit-client "^1.13.3"
@@ -7969,11 +7968,6 @@ follow-redirects@^1.0.0, follow-redirects@^1.14.7, follow-redirects@^1.14.9:
   version "1.15.3"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.3.tgz#fe2f3ef2690afce7e82ed0b44db08165b207123a"
   integrity sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==
-
-font-awesome@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-  integrity sha512-U6kGnykA/6bFmg1M/oT9EkFeIYv7JlX3bozwQJWiiLz6L0w3F5vBVPxHlwyX/vtNq1ckcpRKOB9f2Qal/VtFpg==
 
 for-each@^0.3.3:
   version "0.3.3"
