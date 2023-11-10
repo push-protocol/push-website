@@ -3,9 +3,11 @@ slug: push-notifications-for-developer-dao-to-boost-community-participation
 title: 'Push Notifications for Developer DAO to Boost Community Participation🚀'
 authors: [push]
 image: './cover-image.webp'
+text: "Frens of Push is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series."
 tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
 ---
 ![Cover image Push Notifications for Developer DAO to Boost Community Participation🚀](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Frens of Push #6 | This week, our featured Fren is one of the biggest developer communities in web3, Developer DAO🎉
@@ -14,7 +16,6 @@ tags: [ Frensofpush, Push Notification, Web3, Developerdao, Community]
     <a href='https://medium.com/push-protocol/tagged/frensofpush'>"Frens of Push"</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.
 </i>
 
-<!--truncate-->
 
 Since its conception, the goal of [Developer DAO](https://www.developerdao.com/) has been to onboard, educate, and support web3 developers with all the tools they need to successfully build the next generation of web3 projects. With over 5,000+ members from around the world, it’s safe to say the Developer DAO mission to accelerate the education and impact of a new wave of web3 builders has been widely accepted.
 
@@ -59,8 +60,3 @@ DevDAO is a community of web3 builders working towards creating a better interne
 
 Find more about D_D: [Website](https://www.developerdao.com/), [Twitter](https://twitter.com/developer_dao/), [YouTube](https://www.youtube.com/c/DeveloperDAO), [GitHub](https://github.com/Developer-DAO), [Discord](https://discord.com/invite/devdao)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

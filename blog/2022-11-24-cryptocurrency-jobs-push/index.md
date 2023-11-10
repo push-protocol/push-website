@@ -4,18 +4,20 @@ slug: cryptocurrency-jobs-stay-notified-of-the-best-web3-opportunities-out-there
 title: Cryptocurrency Jobs — Stay Notified of the Best Web3 Opportunities Out There
 authors: [push]
 image: './cover-image.png'
+text: "In the second episode of “Frens of Push”, we are in conversation with Daniel — the founder of Cryptocurrency Jobs, to talk about how Push is enabling a people-centric approach to hiring.
+"
 tags: [ Web3, Cryptocurrency, Jobs, Frensofpush, Push Notification]
 
 ---
 
 ![Cover image of Cryptocurrency Jobs — Stay Notified of the Best Web3 Opportunities Out There](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Frens of Push #2<br/>
 
 <i> “Frens of Push” is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.</i><br/><br/>
 
-<!--truncate-->
 
 <a href="https://cryptocurrencyjobs.co/"><b>Cryptocurrency Jobs</b></a>, the leading job board for blockchain jobs, has teamed up with Push to enhance how users are notified and alerted of exciting new Web3 job opportunities!
 
@@ -50,8 +52,4 @@ Cryptocurrency Jobs curates the best new blockchain jobs at leading companies an
 
 Check out more about Cryptocurrency Jobs: [Website](https://cryptocurrencyjobs.co/), [Twitter](https://twitter.com/jobsincrypto).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

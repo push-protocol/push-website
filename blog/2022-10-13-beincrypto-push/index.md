@@ -3,10 +3,12 @@ slug: beincrypto-collaborates-with-push-to-bring-industry-news-and-high-quality-
 title: BeInCrypto Collaborates With Push to Bring Industry News and High-Quality Content Directly to Readers’ Wallets
 authors: [push]
 image: './cover-image.webp'
+text: "BeInCrypto, one of the most popular cryptocurrency news websites, strikes a strategic alliance with Push to deliver the daily dose of news directly to readers’ wallets. This alliance will end the readers’ reliance on centralized platforms for information and enables decentralized communication between the platform and readers."
 tags: [ Web3, Announcements, Push Notification, Ethereum, Polygon]
 ---
 
 ![Cover image of BeInCrypto Collaborates With Push to Bring Industry News and High-Quality Content Directly to Readers’ Wallets](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Push and BeInCrypto join forces to bring decentralized communication to the platform.
@@ -14,7 +16,6 @@ tags: [ Web3, Announcements, Push Notification, Ethereum, Polygon]
 
 [BeInCrypto](https://beincrypto.com/), one of the most popular cryptocurrency news websites, strikes a strategic alliance with Push to deliver the daily dose of news directly to readers’ wallets. This alliance will end the readers’ reliance on centralized platforms for information and enables decentralized communication between the platform and readers.
 
-<!--truncate-->
 
 ## Bringing Transparency to the Information Industry
 Founded in 2018, BeInCrypto is a cryptocurrency and blockchain-focused news website that aims to spread awareness and education and bring transparency to the emerging industry. The website covers all related topics, from daily crypto updates to crypto technology and fintech.
@@ -39,8 +40,4 @@ Since founding the website, the team has grown significantly to incorporate some
 
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

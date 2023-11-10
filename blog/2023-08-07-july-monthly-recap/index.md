@@ -3,15 +3,17 @@ slug: july-monthly-recap
 title: July Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
+text: "July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month."
 tags: [Pushprotocol, Newsletter, Web3, Blockchain Technology]
 
 ---
 
 ![Cover image of July Monthly Recap✨](./cover-image.webp)
+<!--truncate-->
+
 
 July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month.
 
-<!--truncate-->
 
 ## Development⚒️
 Most notably, we’re thrilled to [unveil Push V2!](https://medium.com/push-protocol/push-v2-is-live-new-rewards-utility-functionality-4d591284209d)
@@ -66,8 +68,3 @@ Thank you for being a part of the Push journey. Stay tuned for more updates and 
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

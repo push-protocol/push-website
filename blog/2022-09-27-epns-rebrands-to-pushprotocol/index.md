@@ -3,18 +3,19 @@ slug: epns-rebrands-into-push-protocol-the-communication-protocol-for-web3
 title: EPNS Rebrands into Push Protocol, the Communication Protocol for Web3
 authors: [push]
 image: './cover-image.webp'
+text: "Ethereum Push Notification Service (EPNS) is rebranding into Push Protocol. The rebrand signifies the network’s move beyond Ethereum to other blockchains and beyond push notifications to all forms of communication. The existing channels, notifications, $PUSH token, and app all remain unchanged. Learn more at push.org"
 tags: [ Web3, Ethereum, Multichain, Messaging, Announcements]
 ---
 
 
 ![Cover image of EPNS Rebrands into Push Protocol, the Communication Protocol for Web3](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Future of web3 communication
 
 TL;DR: Ethereum Push Notification Service (EPNS) is rebranding into Push Protocol. The rebrand signifies the network’s move beyond Ethereum to other blockchains and beyond push notifications to all forms of communication. The existing channels, notifications, $PUSH token, and app all remain unchanged. Learn more at [push.org](http://www.push.org/).
 
-<!--truncate-->
 
 Dear EPNS family,
 
@@ -48,8 +49,4 @@ Push Protocol keeps web3 users and web3 developers engaged with each other, all 
 
 We are super excited to take on this journey with you and can’t wait for what the future holds! To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [Forum](/blog) and [YouTube](https://www.youtube.com/c/EthereumPushNotificationService)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
