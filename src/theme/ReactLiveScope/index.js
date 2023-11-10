@@ -23,6 +23,12 @@ function loadClientSideLibraryPushProtocolRestAPIStream(constantName) {
 }
 
 
+function loadClientSideLibraryPushProtocolUIWeb(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushprotocol/uiweb')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 // For @pushprotocol/UIWeb components, we will dynamically load them in the BrowserOnly component.
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
@@ -48,7 +54,13 @@ const ReactLiveScope = {
   Chat: createBrowserOnlyLibComponentUIWeb('Chat'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),
-  ChatViewComponent: createBrowserOnlyLibComponentUIWeb('ChatViewComponent'),
+  ChatView: createBrowserOnlyLibComponentUIWeb('ChatView'),
+  CreateGroupModal: createBrowserOnlyLibComponentUIWeb('CreateGroupModal'),
+  ChatProfile: createBrowserOnlyLibComponentUIWeb('ChatProfile'),
+  MessageInput: createBrowserOnlyLibComponentUIWeb('MessageInput'),
+  ChatViewBubble: createBrowserOnlyLibComponentUIWeb('ChatViewBubble'),
+  ChatViewList: createBrowserOnlyLibComponentUIWeb('ChatViewList'),
+  MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb('MODAL_POSITION_TYPE'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
 };
 
