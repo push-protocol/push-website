@@ -23,7 +23,7 @@ export default function PaginatorNavLink(props) {
 
 const NavLink = styled.div`
   text-decoration: none;
-  color: #121315;
+  color: var(--ifm-color-primary-blog);
   padding: 10px 20px;
   border-radius: 62px;
   font-size: 15px;

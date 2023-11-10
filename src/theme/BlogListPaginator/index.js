@@ -55,6 +55,8 @@ export default function BlogListPaginator(props) {
   );
 }
 
+const Div = styled.div``;
+
 const NavItem = styled.nav`
   margin: 0 auto 72px auto;
   display: flex;

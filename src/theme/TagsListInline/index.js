@@ -51,4 +51,7 @@ const Li = styled.li`
 const Ul = styled.ul`
   margin: 0 0;
   padding: 0 0;
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;

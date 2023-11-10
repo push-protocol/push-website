@@ -79,7 +79,7 @@ Speaking of NFTVerse, you might want to check out our latest blog we wrote on <b
 
 #### Lastly, What’s #MYNFTStory
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Since NFT NYC is also one of the biggest NFT Parties across the world, we were like, almost certain that a bunch of us frens would share a ton of #NFTStories as conversation starters, icebreakers and what not!
 

@@ -66,4 +66,8 @@ const Ul = styled.ul`
 
 const TagSection = styled.div`
   margin: 25px 0;
+
+  &.h2 {
+    color: var(--ifm-color-secondary-blog);
+  }
 `;

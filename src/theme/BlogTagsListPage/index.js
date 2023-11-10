@@ -44,6 +44,9 @@ export default function BlogTagsListPage({ tags, sidebar }) {
 const TagSection = styled.div`
   width: 1120px !important;
   margin: 50px auto;
+  &.h1 {
+    color: var(--ifm-color-secondary-blog);
+  }
 
   @media ${device.laptopL} {
     width: 90% !important;

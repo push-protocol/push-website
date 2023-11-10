@@ -11,7 +11,7 @@ tags: [Pushprotocol, Developer, NFT]
 <!--truncate-->
 
 <!--customheaderpoint-->
-# Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
+Exploring the Inner Workings and Implementation of Push NFT Chat for Enhanced NFT-Linked Conversations
 
 
 ## What is Push NFT Chat?

@@ -16,7 +16,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it.
 
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 EPNS posted the following bounties for the hackathon:
 

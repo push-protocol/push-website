@@ -43,7 +43,7 @@ The Push Spaces app is live for the earliest version of audio streaming. But tha
 
 Join the community of developers already building on Push Protocol, and get started with Push Spaces — [start here!](https://push.org/spaces)
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/QK6wx1wJ66A" title="Push Spaces is Live! ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/QK6wx1wJ66A" title="Push Spaces is Live! ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 

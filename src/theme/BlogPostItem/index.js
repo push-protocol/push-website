@@ -12,16 +12,24 @@ import BlogPostItemHeader from "@theme/BlogPostItem/Header";
 import BlogPostItemContent from "@theme/BlogPostItem/Content";
 import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
 import styled from "styled-components";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
+
+// Internal Configs
+import { device } from "@site/src/config/globals";
 
 // apply a bottom margin in list view
 function useContainerClassName() {
   const { isBlogPostPage } = useBlogPost();
-  return !isBlogPostPage ? "margin-bottom--xl" : undefined;
+  const isMobile = useMediaQuery(device.tablet);
+  return !isBlogPostPage && !isMobile
+    ? "margin-bottom--xl"
+    : !isBlogPostPage && isMobile
+    ? "margin-bottom--md"
+    : undefined;
 }
 export default function BlogPostItem({ children, className, list }) {
   const containerClassName = useContainerClassName();
   const { isBlogPostPage } = useBlogPost();
-  console.log(children, "children");
 
   if (list) {
     return (
@@ -83,7 +91,7 @@ const TextView = styled.div`
 `;
 
 const TextSpan = styled.div`
-  color: #575d73;
+  color: var(--ifm-color-secondary-blog);
   font-family: Strawford;
   font-size: 19px;
   font-style: normal;

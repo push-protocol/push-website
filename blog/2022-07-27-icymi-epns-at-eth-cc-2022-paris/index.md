@@ -20,7 +20,7 @@ It was an event we couldn’t miss —we had to be there.
 
 Before we dive into the blog, check out this awesome EthCC recap video :-)
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/VcA8ohIlzEU" title="EPNS at #EthCC2022 - Paris 🇫🇷" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/VcA8ohIlzEU" title="EPNS at #EthCC2022 - Paris 🇫🇷" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 This video is a testament to the awesome gathering EthCC was! And we’re certain those who were there and for those who couldn’t be there, let’s deep dive into what we did there.
 
@@ -43,7 +43,7 @@ How many of you agree? Ethereum is definitely the clubhouse of innovation.
 
 ### Harsh on Why Web3 Communication Matters
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/y2yT8Y2jTtU" title="Harsh Rajat: How to build Web3 communication in your protocol (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/y2yT8Y2jTtU" title="Harsh Rajat: How to build Web3 communication in your protocol (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 From meetings, to workshops, our calendar looked stacked each and every day.
@@ -61,13 +61,13 @@ One of the best things about EthCC was learning so many interesting things happe
 
 ### EthCC Dataverse Day with IOSG
 
-<iframe width="680" height="382" src="https://www.youtube.com/embed/z5WrzsiSAWs" title="EPNS: Why Web3 Communication Matters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/z5WrzsiSAWs" title="EPNS: Why Web3 Communication Matters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 And finally on the 25th, Harsh took the stage again with an encore of Why Web3 communication matters, only this time at EthCC Dataverse Day with our partners IOSG Ventures.
 
 ### Panel Discussion at Dataverse Day
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/Hu9E1h51ctA" title="Panel ( Debank &amp; KYVE &amp; Sismo &amp; Solity Network &amp; EPNS）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/Hu9E1h51ctA" title="Panel ( Debank &amp; KYVE &amp; Sismo &amp; Solity Network &amp; EPNS）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 And then of course, there was this interesting panel discussion, as part of the Dataverse Day, with the partners of that event, in which Harsh spoke at length about EPNS and how we’re trying to be the de facto, native Web3 comm protocol! He was joined by some really focused, and awesome Web3 founders and builders, such as Hongbo, Founder of Debank, Fabian Riewe, Founder of KYVE, Hadrien Charlanes, Founder of Sismo, Marijo Radman, Cofounder of Solity Network
 

@@ -23,12 +23,7 @@ export default function BlogPostItemHeaderAuthor({ author, className }) {
     <AvatarDiv>
       {imageURL && (
         <MaybeLink href={link} className="avatar__photo-link">
-          <Img
-            // className="avatar__photo"
-            src={imageURL}
-            alt={name}
-            itemProp="image"
-          />
+          <Img src={imageURL} alt={name} itemProp="image" />
         </MaybeLink>
       )}
 
@@ -67,8 +62,9 @@ const AvatarItem = styled.div`
 const Img = styled.img`
   width: 56px;
   height: 56px;
-  border: 1px solid #e6e7ec;
+  border: 1px solid var(--ifm-blog-avatar-border);
   border-radius: 100%;
+  background: white;
   padding: 10px;
 `;
 

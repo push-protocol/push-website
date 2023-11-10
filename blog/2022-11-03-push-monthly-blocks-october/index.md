@@ -29,7 +29,7 @@ You can [read more here](https://twitter.com/pushprotocol/status/157548556606538
 ### Push Chat (Alpha)
 A wallet-to-wallet communication protocol! We started development activities some time ago and Push Chat made it Live at the Polygon Connect event in Bogota. <b>Wanna give it a try?</b> Ping us on Discord!<br/><br/>
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/n-5wsuRIS3s" title="PushChat Product Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/><br/>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/n-5wsuRIS3s" title="PushChat Product Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/><br/>
 
 
 And it doesn’t end there. We are working to launch very soon the Push Chat SDK, which will enable hackers and development teams to implement wallet to wallet communication in your solutions!

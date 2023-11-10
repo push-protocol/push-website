@@ -29,6 +29,16 @@
   --ifm-button-background-color: #dd44b9;
   --ifm-custom-base: rgba(59, 59, 59, 0.75);
   --ifm-navbar-sidebar-width: 90vw;
+  --ifm-color-primary-blog: #121315;
+  --ifm-color-secondary-blog: #575d73;
+  --ifm-color-blog-date: #9B9FB1;
+  --ifm-color-blog-tag: #242424;
+  --ifm-color-blog-footer: #F1F2F4;
+  --ifm-color-footer: #1E1E1E;
+  --ifm-modal-input: #fff;
+  --ifm-modal-border-input: "1px solid rgba(186, 196, 214, 0.4)";
+  --ifm-blog-avatar-border: "1px solid #e6e7ec";
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -48,7 +58,17 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-custom-base: rgba(255, 255, 255, 0.75);
   --ifm-navbar-sidebar-width: 90vw;
+  --ifm-color-primary-blog: #fff;
+  --ifm-color-secondary-blog: #B6BCD6;
+  --ifm-color-blog-date: #787E99;
+  --ifm-color-blog-tag: #B6BCD6;
+  --ifm-color-blog-footer: #404650;
+  --ifm-color-footer: #B6BCD6;
+  --ifm-modal-input: #575d73;
+  --ifm-modal-border-input: "none"
+  --ifm-blog-avatar-border: none;
 }
+
 
 /* ----- */
 /* Custom Fonts */

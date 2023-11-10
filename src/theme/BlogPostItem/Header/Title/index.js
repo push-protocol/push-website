@@ -37,7 +37,7 @@ const LinkText = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 
-  color: #121315 !important;
+  color: var(--ifm-color-primary-blog) !important;
 
   font-family: Strawford;
   font-size: 25px;
@@ -51,7 +51,7 @@ const LinkText = styled.div`
 `;
 
 const PostTitle = styled.div`
-  color: #121315;
+  color: var(--ifm-color-primary-blog) !important;
 
   font-family: Strawford;
   font-size: 40px;

@@ -591,7 +591,6 @@ export const ABlock = styled.a`
   text-decoration: none;
   display: flex;
   transition: all 0.2s ease-in-out 0s;
-  
 
   &:after {
     content: ">";
@@ -611,7 +610,7 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
-`
+`;
 
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`

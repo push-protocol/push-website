@@ -53,7 +53,13 @@ const FooterItem = () => {
       left: "50%",
       transform: "translate(-50%, -50%)",
       borderRadius: "16px",
+      border: "none",
+      background: "var(--ifm-color-primary-inverse)",
     },
+  };
+
+  const OpenURL = (link) => {
+    window.open(link, "_blank");
   };
 
   const LinkModal = () => {
@@ -180,7 +186,7 @@ const FooterItem = () => {
 
       <AboutSection>
         <AboutTitle>About Push Protocol</AboutTitle>
-        <Span
+        <AboutSpan
           fontFamily="Strawford"
           textAlign="center"
           fontSize="19px"
@@ -193,13 +199,12 @@ const FooterItem = () => {
           platform-agnostic fashion. The open communication layer allows any
           crypto wallet / frontend to tap into the network and get the
           communication across.
-        </Span>
+        </AboutSpan>
       </AboutSection>
 
       <KPIBanner>
         <BannerItem
           onClick={() => OpenURL("https://twitter.com/pushprotocol")}
-          style={{ cursor: "pointer" }}
           gap="18px"
           className="kpiItem"
         >
@@ -211,7 +216,6 @@ const FooterItem = () => {
 
         <BannerItem
           onClick={() => OpenURL("https://discord.gg/pushprotocol")}
-          style={{ cursor: "pointer" }}
           gap="18px"
           className="kpiItem"
         >
@@ -223,7 +227,6 @@ const FooterItem = () => {
 
         <BannerItem
           onClick={() => OpenURL("https://www.youtube.com/@pushprotocol")}
-          style={{ cursor: "pointer" }}
           gap="18px"
           className="kpiItem"
         >
@@ -237,7 +240,6 @@ const FooterItem = () => {
           onClick={() =>
             OpenURL("https://www.linkedin.com/company/push-protocol/")
           }
-          style={{ cursor: "pointer" }}
           gap="18px"
           className="kpiItem"
         >
@@ -273,7 +275,7 @@ const AboutTitle = styled.div`
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
-  color: #000000;
+  color: var(--ifm-color-primary-blog);
   margin-bottom: 10px;
   letter-spacing: -0.02em;
   @media ${device.mobileL} {
@@ -283,8 +285,12 @@ const AboutTitle = styled.div`
   }
 `;
 
+const AboutSpan = styled(Span)`
+  color: var(--ifm-color-blog-tag) !important;
+`;
+
 const KPIBanner = styled.div`
-  background: #f1f2f4;
+  background: var(--ifm-color-blog-footer);
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -333,8 +339,10 @@ const KPIFigure = styled.div`
 `;
 
 const BannerItem = styled(ItemV)`
-  color: #000;
+  color: var(--ifm-color-footer);
   grid-gap: 8px;
+  cursor: pointer
+  align-items: center !important;
   &:hover {
     color: #d53893;
   }
@@ -394,7 +402,7 @@ const ModalDiv = styled.div`
 `;
 
 const ModalTopic = styled.div`
-  color: #333;
+  color: var(--ifm-color-primary-text);
   font-size: 20px;
   font-family: Strawford;
   line-height: 142%;
@@ -434,8 +442,9 @@ const ModalCopy = styled.div`
 
 const ModalInput = styled.div`
   border-radius: 8px 0px 0px 8px;
-  border: 1px solid rgba(186, 196, 214, 0.4);
-  background: #fff;
+  border: var(--ifm-modal-border-input);
+  background: var(--ifm-modal-input);
+  color: var(--ifm-color-primary-text);
   padding: 8px 12px;
   max-width: 212px;
   min-width: 212px;

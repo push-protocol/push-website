@@ -136,8 +136,10 @@ const GridItem = styled.div`
   box-sizing: border-box;
   margin: 100px auto 0 auto;
 
-  @media ${device.laptopL} {
+  @media (max-width: 1200px) {
     width: 90% !important;
+    margin: 10px auto 0 auto;
+    gap: 30px;
   }
 
   @media ${device.tablet} {
@@ -157,11 +159,12 @@ const ListItem = styled.div`
 
   @media (max-width: 1200px) {
     width: 90% !important;
+    margin: 10px auto 0 auto;
   }
 `;
 
 const ListSpan = styled(Span)`
-  color: #121315;
+  color: var(--ifm-color-primary-blog);
   font-family: Strawford;
   font-size: 37px;
   font-style: normal;
