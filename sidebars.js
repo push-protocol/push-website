@@ -192,6 +192,10 @@ const sidebars = {
     {
       type: "doc",
       id: "builder/builder",
+    },
+    {
+      type: "doc",
+      id: "builder/cheat-sheet",
     }
   ]
 }
