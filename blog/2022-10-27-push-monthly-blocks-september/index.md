@@ -3,17 +3,19 @@ slug: push-monthly-blocks-september
 title: Push Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
+text: "Hi Push frens!✨ This one is a very special Monthly Blocks edition as it is the first Push Protocol edition. Let’s take time to recap briefly all the happenings this month!
+"
 tags: [ Newsletter, Blockchain, Pushprotocol, Ethereum]
 ---
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # September 2022<br/>
 
 Hi <b>Push</b> frens!✨ This one is a very special Monthly Blocks edition as it is the first Push Protocol edition. Let’s take time to recap briefly all the happenings this month!
 
-<!--truncate-->
 
 ![What's New](./image-1.webp)
 
@@ -67,8 +69,4 @@ Keep <b>Pushing</b> 💪
 
 — The Push Team
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

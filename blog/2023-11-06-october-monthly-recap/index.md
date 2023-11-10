@@ -4,6 +4,7 @@ title: 'Monthly Recap October 🎃'
 authors: [push]
 image: './cover-image.webp'
 description: 'Monthly Recap October 🎃'
+text: "Welcome to another thrilling month at Push! October has been a month of incredible development, thought-provoking discussions, and community expansion. With so many exciting updates to get through, we're eager to share the highlights of this month in our recap. Let’s get to it."
 tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
 ---
 

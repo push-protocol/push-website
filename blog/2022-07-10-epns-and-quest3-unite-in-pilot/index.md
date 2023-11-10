@@ -3,18 +3,19 @@ slug: epns-and-quest3-unite-in-pilot-collaboration-to-bring-notifications-for-us
 title: 'EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for Users'
 authors: [push]
 image: './cover-image.png'
+text: "EPNS and Quest3, the quest and event platform for web3, join forces in a pilot collaboration to enable direct communication between users and the platform. As a result, users of the platform are poised to receive push notifications about various happenings. These notifications will allow users to grab opportunities on the platform and encourage participation."
 tags: [Ethereum, Newsletter, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Quest3 Unite in Pilot Collaboration to Bring Notifications for Users](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Quest3 and EPNS team up to bring decentralized push notifications for platform users.
 
 EPNS and Quest3, the quest and event platform for web3, join forces in a pilot collaboration to enable direct communication between users and the platform. As a result, users of the platform are poised to receive push notifications about various happenings. These notifications will allow users to grab opportunities on the platform and encourage participation.
 
-<!--truncate-->
 
 ### Quest3: Web3’s Event and Quest Platform
 Whether it is on YouTube, Twitter, or Instagram, users of web2 are bombarded with advertisements everywhere with no tangible rewards for viewing them. User data is exploited and used to serve personalized ads to people with all the financial rewards going only to the businesses. Now, Quest3 is a web3 platform that aims to solve this problem and ensures that users are rewarded for their time.
@@ -40,9 +41,5 @@ Quest3 is a Web3 quest and event platform incubated by [Hogwarts Labs](https://t
 Stay in touch! [Website](https://quest3.xyz/)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

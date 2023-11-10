@@ -4,17 +4,19 @@ slug: april-monthly-recap
 title: April Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
+text: "Welcome to another exciting month at Push Protocol!
+While there’s a lot to get through, there is one announcement that stands out and we think is worthwhile giving extra attention."
 tags: [ Web3, NewsLetter, Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of April Monthly Recap✨](./cover-image.webp)
+<!--truncate-->
 
 Welcome to another exciting month at Push Protocol!
 
 While there’s a lot to get through, there is one announcement that stands out and we think is worthwhile giving extra attention.
 
-<!--truncate-->
 
 As we’ve been busy expanding our reach, adding to our suite of decentralized communication tools, and working to revolutionize web3 communication, April hosted the release of our latest development. Introducing [Push Video Chat](https://twitter.com/pushprotocol/status/1646483829287182339) — a groundbreaking wallet-to-wallet video chat that allows web3 users to connect in real time.
 
@@ -92,8 +94,3 @@ As we wrap up another exciting month at Push, we are grateful for the tremendous
 
 We’re excited to see what the future holds for Push. Until next time!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
