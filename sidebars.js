@@ -227,7 +227,7 @@ const sidebars = {
   pushDaoSidebar: [
     {
       type: "doc",
-      id: "dao/docs-dao-start-here",
+      id: "dao/docs-dao-introduction-to-push-dao",
     },
     {
       type: "doc",
