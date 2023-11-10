@@ -46,7 +46,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           style={{ cursor: 'pointer' }}
           onClick={() =>
             openLink(
-              'https://pushprotocol.notion.site/Dev-Doc-Billion-Reasons-to-Buidl-One-place-to-start-b900d90937f440fcb737ffcd32078699?pvs=4'
+              "https://zv9atndluia.typeform.com/brb-interested"
             )
           }
         >

@@ -1,0 +1,56 @@
+---
+id: docs-video-develop-managing-media-stream
+title: Managing Media Stream
+hide_title: true
+slug: ./managing-media-stream
+displayed_sidebar: pushVideoSidebar
+sidebar_position: 4
+image: "/assets/docs/previews/docs_video_develop--managing_media_stream.png"
+---
+
+# Managing media stream overview 
+This section contains APIs that will help you manage your video and audio streams and how to turn them on or off.
+
+<head>
+  <title>Managing Media Stream | Push Video | Push Documentation</title>
+</head>
+
+import { ABlock } from '@site/src/css/SharedStyling';
+
+## Enable / Disable Local Video
+
+To enable/disable local video we'll call the `enableVideo()` method on the `videoObject`.
+
+```typescript
+videoObject.enableVideo({
+  state:boolean;
+});
+```
+
+| Property | Description                               |
+| -------- | ----------------------------------------- |
+| state    | `true` for enable and `false` for disable |
+
+## Enable / Disable Local Audio
+
+To enable/disable local audio we'll call the `enableAudio()` method on the `videoObject`.
+
+```typescript
+videoObject.enableAudio({
+  state:boolean;
+});
+```
+
+| Property | Description                               |
+| -------- | ----------------------------------------- |
+| state    | `true` for enable and `false` for disable |
+
+## How to know the current status of local audio/video?
+
+The current local video status can be accessed by `videoObject.data.local.video` similarly for audio -> `videoObject.data.local.audio`.&#x20;
+
+If `videoObject.data.local.video` is true, then that means your local video is enabled, and if it's false then that means the local video is disabled. Likewise for `videoObject.data.local.audio`.
+
+<ABlock href="https://www.npmjs.com/package/@pushprotocol/restapi#enablevideo" title="NPM example of Push Video Enable Video API" target="_blank">Enable Video API Example</ABlock>
+
+<ABlock href="https://www.npmjs.com/package/@pushprotocol/restapi#enableaudio" title="NPM example of Push Video Enable Audio API" target="_blank">Enable Audio API Example</ABlock>

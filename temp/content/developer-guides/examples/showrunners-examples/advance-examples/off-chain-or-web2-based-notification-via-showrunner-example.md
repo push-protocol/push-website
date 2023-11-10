@@ -7,20 +7,19 @@ description: >-
 
 # Off-chain (or Web2) based notification via Showrunner example
 
-Greetings !<br/>
-If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](https://docs.epns.io/developers/developer-tooling/showrunners-framework). This guide is for you ;)
+**Greetings!** If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
 We will walk through coding and interacting with the [The Defiant](https://thedefiant.io/)  for fetching the articles. 
 
 And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-### Create a  folder
+### Create a folder
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
 First we need to create a folder in `src/showrunners/<`_`your_channel_name>`_
 
-### USE CASE:
+### Use case
 
 The notifications for _`The Defiant`_ channel are mainly focused on informing the user about the latest article posted on their domain.
 
@@ -243,4 +242,4 @@ _In the channel file you can also track the last publication date for which last
 
 That's all for now :)
 
-If you enjoyed this tutorial, Do join our [Discord server](https://discord.gg/YVPB99F9W5) to meet other dev and builders.
+If you enjoyed this tutorial, Do join our [discord server](https://discord.com/invite/pushprotocol) to meet other dev and builders.

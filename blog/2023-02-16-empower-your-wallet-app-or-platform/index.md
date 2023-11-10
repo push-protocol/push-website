@@ -107,7 +107,7 @@ curl - location - request POST 'https://<delivery_node_url>/apis/v1/pushtokens/r
 
 <iframe width="100%" height="382" src="https://www.youtube.com/embed/OlRHL3qd4oY" title="Get started with Push Delivery Nodes | #web3 communication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<i>PUSH Documentation:</i>  <a href='https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node'>https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node</a>
+<i>PUSH Documentation:</i>  <a href='/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'>Integrating notifications via Push Delivery Nodes</a>
 
 ## Push Support
 If at any point you find yourself needing assistance and help with getting set up, Push has a team of helpful developers ready when you need it.

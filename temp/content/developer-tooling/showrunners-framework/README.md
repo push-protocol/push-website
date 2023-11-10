@@ -16,11 +16,11 @@ Out-of-the-box showrunners provide the developer with a scheduling engine and li
 
 ### Setting-up showrunners for your own Channel
 
-<CustomLinkCard text="How to Setup Showrunners" link="./how-to-setup-showrunners"/>
+<CustomLinkCard text="How to Setup Showrunners" link="./how-to-setup-showrunner"/>
 
 <CustomLinkCard text="Hello World Channel" link="./hello-world-channel"/>
 
-<CustomLinkCard text="Understanding Channel Structure - Showrunners" link="./understanding-channel-structure-showrunners"/>
+<CustomLinkCard text="Understanding Channel Structure - Showrunners" link="./understanding-channel-structure-showrunner"/>
 
 <CustomLinkCard text="Github Repositories" link="./github-repositories"/>
 

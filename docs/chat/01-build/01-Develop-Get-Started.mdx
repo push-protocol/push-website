@@ -18,6 +18,7 @@ Push Chat enables web3 native messaging between wallets, groups, NFTs or even co
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
 import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
 
 ## Speed run
@@ -164,9 +165,13 @@ The following speed run is designed to give you a quick overview of usage and de
 
 </ModalContainer>
 
+## Workshop Video
+
+<ReactPlayer controls width="100%" url='https://youtu.be/R8nsAhyrvTI?si=9mWjoxGfOSf6k5-K&t=2621' /><br/>
+
 ## Testing
 ### Sending message
-Head to our app and [talk to Push AI](https://app.push.org/chat/pushai.eth) which stands for Prioritize Using Silly Humor And Irony. It's addictive and you have been warned! 
+Head to our app and [talk to PushAI](https://app.push.org/chat/pushai.eth) which stands for **Prioritize Using Silly Humor And Irony**. It's addictive and you have been warned! 
 Alternatively, msg `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666` or `pushai.eth` from any frontend or backend that supports Push Chat!
 
 ### Push SDK playground and full API coverage
@@ -176,7 +181,8 @@ Full API coverage with sample runable code can be found in the examples below:
 
 ### Push Chat live playground
 ```jsx live 
-// don't forget to import
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 // import { ChatUIProvider, ChatViewComponent } from @pushprotocol/restapi;
 function App(props) {
   return (

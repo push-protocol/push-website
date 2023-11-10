@@ -579,6 +579,41 @@ export const AImp = styled.a`
   }
 `;
 
+// Block Anchor
+export const ABlock = styled.a`
+  color: var(--ifm-custom-base);
+  border: 0.5px solid var(--ifm-custom-base);
+  font-size: 1.25rem;
+  padding: 20px 15px 20px 15px;
+  margin-top: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  text-decoration: none;
+  display: flex;
+  transition: all 0.2s ease-in-out 0s;
+  
+
+  &:after {
+    content: ">";
+    position: relative;
+    display: flex;
+    float: right;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  &:hover {
+    color: #dd44b9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+  }
+
+  &:hover:after {
+    color: #dd44b9;
+  }
+`
+
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`
   align-items: center;

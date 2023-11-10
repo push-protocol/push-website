@@ -21,7 +21,7 @@ To receive notifications, the user must opt-in to the channel. This is done only
 
 To see all the supported channels on Push, go to [Push Protocol dapp](https://app.push.org/#/channels) and opt-in to your favorite protocol to receive notifications.
 
-## Pre-requisite: Deriving the signer
+## Prerequisites: Deriving the signer
 
 ```mdx-code-block
 <Tabs

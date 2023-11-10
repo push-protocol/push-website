@@ -52,14 +52,14 @@ function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   );
 }
 
-function TechDocItem({ title, srcref, alt, description, codeblock, link }: ITechDocItem) {
+function TechDocItem({ title, srcref, alt, description, codeblock, link, target }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
   return (
     <TechDocCard>
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {e.preventDefault(); window.location.href = link}}
+        onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
         hoverBackground="transparent"
       >
         <ItemV

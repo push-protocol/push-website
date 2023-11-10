@@ -45,7 +45,7 @@ We know getting started with building a new project can involve a lot of boilerp
 ### Useful links:
 - [Use case](https://www.notion.so/pushprotocol/Push-Protocol-Use-Cases-c0fe5e17bc634502817bdc60c29221e3)
 - [Monorepo SDK](https://medium.com/push-protocol/here-comes-the-all-new-epns-sdk-monorepo-framework-8447b486a801)
-- [Developer docs](https://docs.push.org/)
+- [Developer docs](/docs/ "Push Developer docs")
 
 ### Hackathon survival guide — if it’s your first hackathon:
 - Join ETHGlobal [Discord](https://ethglobal.com/discord) to find a team before the hackathon gets started, but it’s totally okay to hack alone.
