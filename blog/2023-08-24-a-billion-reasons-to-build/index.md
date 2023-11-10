@@ -130,6 +130,6 @@ Make sure to follow [@pushprotocol on Twitter](https://twitter.com/pushprotocol)
 
 Join us on discord to chat https://discord.com/invite/pushprotocol
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{borderRadius: "32px"}} src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
 

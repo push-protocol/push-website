@@ -38,7 +38,9 @@ export default function TagsListInline({ tags }) {
 
 const Li = styled.li`
   list-style: none;
-  display: inline-block !important;
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 0.4rem 0.5rem 0;
 
   @media ${device.laptopL} {
