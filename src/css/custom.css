@@ -36,8 +36,8 @@
   --ifm-color-blog-footer: #F1F2F4;
   --ifm-color-footer: #1E1E1E;
   --ifm-modal-input: #fff;
-  --ifm-modal-border-input: "1px solid rgba(186, 196, 214, 0.4)";
-  --ifm-blog-avatar-border: "1px solid #e6e7ec";
+  --ifm-modal-border-input: 1px solid rgba(186, 196, 214, 0.4);
+  --ifm-blog-avatar-border: 1px solid #e6e7ec;
 
 }
 
@@ -65,8 +65,8 @@
   --ifm-color-blog-footer: #404650;
   --ifm-color-footer: #B6BCD6;
   --ifm-modal-input: #575d73;
-  --ifm-modal-border-input: "none";
-  --ifm-blog-avatar-border: "none";
+  --ifm-modal-border-input: none;
+  --ifm-blog-avatar-border: none;
 }
 
 

@@ -62,7 +62,7 @@ const AvatarItem = styled.div`
 const Img = styled.img`
   width: 56px;
   height: 56px;
-  border: 1px solid var(--ifm-blog-avatar-border);
+  border: var(--ifm-blog-avatar-border);
   border-radius: 100%;
   background: white;
   padding: 10px;
