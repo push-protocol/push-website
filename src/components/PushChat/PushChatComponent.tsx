@@ -61,7 +61,7 @@ export const ChatComponent = () => {
               
               const ChatUIProvider = uiweb.ChatUIProvider;
               const ChatView = uiweb.ChatView;
-              // const darkChatTheme = uiweb.darkChatTheme;
+              const MODAL_POSITION_TYPE = uiweb.MODAL_POSITION_TYPE;
 
               return (
                 <>
