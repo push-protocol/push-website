@@ -13,7 +13,6 @@ import styled from "styled-components";
 export default function PaginatorNavLink(props) {
   const { permalink, title, subLabel, isNext } = props;
   const history = useHistory();
-  console.log((history?.location?.pathname).includes("blog"));
   if ((history?.location?.pathname).includes("blog")) {
     return (
       <NavLink onClick={() => history.push(permalink)}>
