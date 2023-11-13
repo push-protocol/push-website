@@ -12,18 +12,25 @@ image: "/assets/docs/previews/docs_notifications_develop_send_notification_via_s
 
 Push contracts are designed to act as a communication middleware for your smart contracts which ensures that even smart contracts can communicate with the wallet addresses (ie: web3 users).
 
-<head>
-  <title>Send Notification (via Smart Contract) | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`
+    Send Notification (via Smart Contract) | Push Notifications | Push
+    Documentation
+  `}</title>
+</Head>
 
 ## Sending notifications from smart contract
 
 ### Step 1️⃣ - Locate the contract address of Push
-Ensure that you know the contract address of Push Communication smart contract based on the blockchain and network from which you are sending the communication out. 
+
+Ensure that you know the contract address of Push Communication smart contract based on the blockchain and network from which you are sending the communication out.
 
 For example: Staging Ethereum contract address is `0xb3971BCef2D791bc4027BbfedFb47319A4AAaaAa`. List of all smart contract and their environment is available here 👉 [Push smart contract addresses](/docs/notifications/push-smart-contracts/contract-addresses/ "List of all relevant push protocol smart contract addresses").
 
 ### Step 2️⃣ - Import Push Comm interface
+
 Start by importing the Push comm contract interface in your smart contract 👇
 
 ```solidity
@@ -34,9 +41,11 @@ interface IPUSHCommInterface {
 ```
 
 ### Step 3️⃣ - Locate your channel address
+
 Ensure your channel is up and running by following this guide - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ "Guide explaining how to create your channel"). Note down your channel address which you need to put in the code below as **YOUR_CHANNEL_ADDRESS**.
 
 ### Step 4️⃣ - Call the contract function
+
 Next call the function `sendNotification(address _channel, address _recipient, bytes calldata _identity)` and pass the address of the channel, recipient and the identity based on your needs.
 
 ```solidity
@@ -61,6 +70,7 @@ IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotif
 ```
 
 ### Step 5️⃣ - Add your smart contract address as your channel delegate
+
 The last step is to go back to your channel and add the smart contract address as a delegate ensuring notifications sent by your smart contract are routed through your channel and presented to your users. Checkout [guide for adding delegates for channel](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel "Guide to adding delegates to your channel") to understand how to add delegates to your channel.
 
 :::tip

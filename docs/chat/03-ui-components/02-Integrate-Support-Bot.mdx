@@ -16,9 +16,13 @@ With our support chat component available in `@pushprotocol/uiweb` package, wall
 
 ![Support chat component using Push Chat protocol](/assets/docs/chat/ui-components/integrate-support-bot/support-chat-preview.png)
 
-<head>
-  <title>Integrate Support Bot | UI Components | Push Chat | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`
+    Integrate Support Bot | UI Components | Push Chat | Push Documentation
+  `}</title>
+</Head>
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -28,17 +32,17 @@ import TabItem from "@theme/TabItem";
 <Tabs className="installation" groupId="bot-installation">
   <TabItem value="npm" default>
 
-  ```bash
-  npm install @pushprotocol/uiweb
-  ```
+```bash
+npm install @pushprotocol/uiweb
+```
 
   </TabItem>
 
   <TabItem value="yarn" default>
 
-  ```bash
-  yarn add @pushprotocol/uiweb
-  ```
+```bash
+yarn add @pushprotocol/uiweb
+```
 
   </TabItem>
 </Tabs>
@@ -48,26 +52,27 @@ import TabItem from "@theme/TabItem";
 <Tabs className="installation" groupId="bot-installation">
   <TabItem value="npm" default>
 
-  ```bash
-  npm install styled-components
+```bash
+npm install styled-components
 
-  npm install @pushprotocol/restapi
-  ```
+npm install @pushprotocol/restapi
+```
 
   </TabItem>
 
   <TabItem value="yarn" default>
 
-  ```bash
-  yarn add styled-components
+```bash
+yarn add styled-components
 
-  yarn add @pushprotocol/restapi
-  ```
+yarn add @pushprotocol/restapi
+```
 
   </TabItem>
 </Tabs>
 
 ## Prerequisites
+
 Make sure you know how to derive the signer as you will need to pass it as a parameter in the component. For example —
 
 ```jsx
@@ -81,76 +86,78 @@ const signer = library.getSigner(account);
 ```
 
 ## Usage
+
 Import the SDK package in the component file where you want to render the support chat component.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-  ```typescript
-  import { Chat } from "@pushprotocol/uiweb";
-  import { ITheme } from '@pushprotocol/uiweb';
+```typescript
+import { Chat } from "@pushprotocol/uiweb";
+import { ITheme } from '@pushprotocol/uiweb';
 
-  // Push Chat is interoperable and you can receive it on any of the supported platforms
-  // We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app 
-  // https://app.push.org/#receive-notifications
-  <Chat
-    account="0x6430C47973FA053fc8F055e7935EC6C2271D5174" //user address - this belongs to the user
-    supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address, this belongs to you
-    signer={signer}
-    env="staging" // can be "prod" or "staging"
-  />
-  ```
+// Push Chat is interoperable and you can receive it on any of the supported platforms
+// We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app
+// https://app.push.org/#receive-notifications
+<Chat
+  account="0x6430C47973FA053fc8F055e7935EC6C2271D5174" //user address - this belongs to the user
+  supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address, this belongs to you
+  signer={signer}
+  env="staging" // can be "prod" or "staging"
+/>
+```
 
   </TabItem>
 </Tabs>
 
 ### Customization parameters
 
-| Prop            | Type          | Default      | Remarks |
-|-----------------|---------------|--------------|---------|
-| `account*`      | `string`      | `-`          | user address(sender) |
-| `supportAddress*` | `string`    | `-`          | support user's address(receiver) |
-| _`signer`_       | `ethers.js signer` | `-`    | signer (used for decrypting chats) |
-| `greetingMsg`   | `string`      | `'Hi there!'`| first message in chat screen |
-| `theme`         | `ITheme`      | `lightTheme` | theme for chat modal (only `lightTheme` available now) |
-| `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title |
-| `env`           | `string`      | `'prod'`     | API env: `'prod'`, `'staging'`, `'dev'` |
+| Prop              | Type               | Default           | Remarks                                                |
+| ----------------- | ------------------ | ----------------- | ------------------------------------------------------ |
+| `account*`        | `string`           | `-`               | user address(sender)                                   |
+| `supportAddress*` | `string`           | `-`               | support user's address(receiver)                       |
+| _`signer`_        | `ethers.js signer` | `-`               | signer (used for decrypting chats)                     |
+| `greetingMsg`     | `string`           | `'Hi there!'`     | first message in chat screen                           |
+| `theme`           | `ITheme`           | `lightTheme`      | theme for chat modal (only `lightTheme` available now) |
+| `modalTitle`      | `string`           | `'Chat with us!'` | Modal header title                                     |
+| `env`             | `string`           | `'prod'`          | API env: `'prod'`, `'staging'`, `'dev'`                |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
 ## Advance Usage
+
 You can also customize the chat according to your preference —
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-  ```typescript
-  import React from 'react';
-  import { Chat, ITheme } from '@pushprotocol/uiweb';
+```typescript
+import React from 'react';
+import { Chat, ITheme } from '@pushprotocol/uiweb';
 
-  export const ChatSupportTest = () => {
-    const theme: ITheme = {
-      bgColorPrimary: 'gray',
-      bgColorSecondary: 'purple',
-      textColorPrimary: 'white',
-      textColorSecondary: 'green',
-      btnColorPrimary: 'red',
-      btnColorSecondary: 'purple',
-      border: '1px solid black',
-      borderRadius: '40px',
-      moduleColor: 'pink',
-    };
-    return (
-      <Chat
-        account='0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
-        supportAddress="0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7"
-        env='staging'
-        signer={signer}
-        theme={theme}
-      />
-    );
+export const ChatSupportTest = () => {
+  const theme: ITheme = {
+    bgColorPrimary: 'gray',
+    bgColorSecondary: 'purple',
+    textColorPrimary: 'white',
+    textColorSecondary: 'green',
+    btnColorPrimary: 'red',
+    btnColorSecondary: 'purple',
+    border: '1px solid black',
+    borderRadius: '40px',
+    moduleColor: 'pink',
   };
-  ```
+  return (
+    <Chat
+      account='0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7'
+      supportAddress="0xFe6C8E9e25f7bcF374412c5C81B2578aC473C0F7"
+      env='staging'
+      signer={signer}
+      theme={theme}
+    />
+  );
+};
+```
 
   </TabItem>
 </Tabs>
@@ -159,6 +166,7 @@ Below is the reference sheet for what theme variables affect what portion of the
 ![Support chat component customization cheatsheet](/assets/docs/chat/ui-components/integrate-support-bot/support-chat-customize.png)
 
 ## Troubleshooting
+
 During the procedure, you might encounter an error, as can be seen in the image below.
 
 ![Support chat component installation might encounter these type of errors](/assets/docs/chat/ui-components/integrate-support-bot/support-bot-troubleshoot.png)
@@ -166,50 +174,51 @@ During the procedure, you might encounter an error, as can be seen in the image 
 These are caused because of `webpack 5` and `crypto` library issues and requires polyfilling. If you run into such an error, try to include the code below in config-overrides.js in the root folder and switching to `react-app-rewired` to solve the issue.
 
 ```jsx
-const webpack = require('webpack');
+const webpack = require("webpack");
 
 module.exports = function override(config, env) {
   // do stuff with the webpack config...
   config.resolve.fallback = {
-    assert: require.resolve('assert'),
-    buffer: require.resolve('buffer'),
+    assert: require.resolve("assert"),
+    buffer: require.resolve("buffer"),
     child_process: false,
-    constants: require.resolve('constants-browserify'),
-    crypto: require.resolve('crypto-browserify'),
+    constants: require.resolve("constants-browserify"),
+    crypto: require.resolve("crypto-browserify"),
     fs: false,
-    http: require.resolve('stream-http'),
-    https: require.resolve('https-browserify'),
-    os: require.resolve('os-browserify/browser'),
-    path: require.resolve('path-browserify'),
-    url: require.resolve('url'),
-    util: require.resolve('util/'),
-    stream: require.resolve('stream-browserify')
-  }
-  config.resolve.extensions = [...config.resolve.extensions, '.ts', '.js']
+    http: require.resolve("stream-http"),
+    https: require.resolve("https-browserify"),
+    os: require.resolve("os-browserify/browser"),
+    path: require.resolve("path-browserify"),
+    url: require.resolve("url"),
+    util: require.resolve("util/"),
+    stream: require.resolve("stream-browserify"),
+  };
+  config.resolve.extensions = [...config.resolve.extensions, ".ts", ".js"];
   config.plugins = [
     ...config.plugins,
     new webpack.ProvidePlugin({
-      process: 'process/browser',
-      Buffer: ['buffer', 'Buffer']
-    })
-  ]
-  config.module.rules = [...config.module.rules,
+      process: "process/browser",
+      Buffer: ["buffer", "Buffer"],
+    }),
+  ];
+  config.module.rules = [
+    ...config.module.rules,
     {
       test: /\.m?js/,
       resolve: {
-        fullySpecified: false
-      }
-    }
-  ]
+        fullySpecified: false,
+      },
+    },
+  ];
 
-  return config
-}
+  return config;
+};
 ```
 
 ## Live Playground
 
-```jsx live 
-customPropMinimized="true"
+```jsx live
+customPropMinimized = "true";
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -225,51 +234,65 @@ function App(props) {
     const accounts = await provider.send("eth_requestAccounts", []);
 
     // Grabbing signer from provider
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
 
     // store signer
     setSigner(signer);
 
     const address = accounts[0];
     setAccount(address);
-  }
+  };
 
   const disconnectWallet = async () => {
     setSigner(null);
-  }
+  };
 
   const buttonStyle = {
-    padding: '10px 20px',
-    backgroundColor: '#dd44b9',
-    color: '#FFF',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginTop: '20px',
+    padding: "10px 20px",
+    backgroundColor: "#dd44b9",
+    color: "#FFF",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    marginTop: "20px",
   };
 
   return (
     <>
-      <h2>Live chat with pushai.eth, connect your wallet and chat to get sassy response from PushAI.eth</h2>
-      <label>For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
-      
-      <p/>
-      <button style={buttonStyle} onClick={signer ? disconnectWallet : connectWallet}>{signer ? "Disconnect wallet" : "Connect Wallet"}</button>
+      <h2>
+        Live chat with pushai.eth, connect your wallet and chat to get sassy
+        response from PushAI.eth
+      </h2>
+      <label>
+        For this demo, You will need Metamask (or equivalent browser injected
+        wallet), you will also need to sign a transaction to see the
+        notifications.
+      </label>
 
-      <div style={{ margin: '20px auto' }}>
+      <p />
+      <button
+        style={buttonStyle}
+        onClick={signer ? disconnectWallet : connectWallet}
+      >
+        {signer ? "Disconnect wallet" : "Connect Wallet"}
+      </button>
 
-        {signer && 
+      <div style={{ margin: "20px auto" }}>
+        {signer && (
           <>
             <Chat
-            account={account}
+              account={account}
               supportAddress="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666" //support address, this belongs to you
               signer={signer}
               env="prod" // can be "prod" or "staging"
             />
 
-            <h2>Signer obtained, you will be seeing a pink colored Push Chat icon on the bottom right, click to interact.</h2>
+            <h2>
+              Signer obtained, you will be seeing a pink colored Push Chat icon
+              on the bottom right, click to interact.
+            </h2>
           </>
-        }
+        )}
       </div>
     </>
   );

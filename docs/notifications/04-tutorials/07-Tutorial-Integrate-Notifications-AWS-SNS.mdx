@@ -9,25 +9,34 @@ image: "/assets/docs/previews/docs_notifications_tutorial--integrate_notificatio
 ---
 
 # Integrate Notifications via AWS SNS
+
 :::caution
 Notifications via AWS SNS is more of a Web2.5 approach than Web3. Do check out [integrating notifications section](/docs/notifications/build/integrating-notifications "Learn how to integrate notifications from Push protocol to your frontend") for your frontend to see other recommended ways for integrating notifications on your frontend.
 :::
 
 SNS module for Push delivery node allows any developer to receive notifications, chats, or any other form of web3 communication directly to the platform they are building with the help of webhooks.
 
-<head>
-  <title>Integrate Notifications via AWS SNS | Tutorial | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`
+    Integrate Notifications via AWS SNS | Tutorial | Push Notifications | Push
+    Documentation
+  `}</title>
+</Head>
 
 Hosted SNS Module is a mid-level solution that eliminates all the heavy load of running a node or syncing information and gives you webhooks that you implement to start receiving notifications, chats, or any other web3 communication in your software.
 
 ## Integration process
+
 Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
 
 ### Step 1️⃣ - Implement webhook
+
 Implement a webhook to listen to [AWS SNS](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/sns-examples.html "Example of AWS SNS"). Here’s a [boilerplate](https://github.com/ethereum-push-notification-service/push-sns-boilerplate "Push SNS boilerplate repo") along with specs to get you npm installed and running.
 
 ### Step 2️⃣ - Test endpoint
+
 You will need to open an endpoint either at a dedicated IP that listens to SNS or, if you are testing locally, have to expose the public endpoint for which tons of software is available.
 
 :::tip
@@ -35,9 +44,11 @@ For testing locally, You can also use [ngrok](https://ngrok.com/download "ngrok 
 :::
 
 ### Step 3️⃣ - Get whitelisted
-Once you set up this, you need to contact us by either shouting / tagging us on [Push Discord server](https://discord.com/invite/pushprotocol "Invite link to Push Discord server").  We need this as the SNS module requires whitelisting of your webhook endpoint.
+
+Once you set up this, you need to contact us by either shouting / tagging us on [Push Discord server](https://discord.com/invite/pushprotocol "Invite link to Push Discord server"). We need this as the SNS module requires whitelisting of your webhook endpoint.
 
 ## Push SNS Boilerplate
+
 For your reference, here's [Push AWS SNS boilerplate](https://github.com/ethereum-push-notification-service/push-sns-boilerplate "Push AWS SNS boilerplate") which can be used as a starting point to consume the feeds from the Push SNS Topic.
 
 Here’s a timelapse of how everything works… see you on the other side 😃
@@ -47,9 +58,11 @@ Here’s a timelapse of how everything works… see you on the other side 😃
 ## SNS Sample Messages
 
 ### Subscription Confirmation
+
 This is a one-time message confirming if the SNS subscription is successful.
 
 ### Notification
+
 These are the actual notifications which need to be delivered to the end users.
 
 ```js
@@ -69,6 +82,7 @@ These are the actual notifications which need to be delivered to the end users.
 The **Message** is the field in the above JSON is the actual notification sent from the Push in JSON stringified format.
 
 #### Message
+
 When converted to JSON, a sample message looks like the one below.
 
 ```js

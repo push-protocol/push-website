@@ -71,7 +71,7 @@ export const ChatComponent = () => {
                       limit={10}
                       isConnected={true}
                       onVerificationFail={()=>setShowFaucet(true)}
-                      verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
+                      // verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
                     />
                   </ChatUIProvider>
                 </>

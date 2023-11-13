@@ -16,12 +16,16 @@ The Push core protocol, as the name might indicate, is the main smart contract a
 Push Core smart contract is only be deployed on the Ethereum blockchain and not on any other chain.
 :::
 
-<head>
-  <title>Push Core Smart Contracts | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
+<Head>
+  <title>{`
+    Push Core Smart Contracts | Push Notifications | Push Documentation
+  `}</title>
+</Head>
 
 ## Types & Modifiers
+
 Explains the different types of Data types and access controls used in the Push core smart contract
 
 ### Storage Variables
@@ -64,7 +68,6 @@ Explains the different types of Data types and access controls used in the Push 
 - The amount of PUSH token added to this variable is the remaining amount after deducting the **PROTOCOL_POOL_FEES** from the amount that a user sends while creating or reactivating a channel.
 - For example, you sent 50 tokens to create a channel, then 10 tokens will be added to **PROTOCOL_POOL_FEES**, and the remaining 40 is added to **CHANNEL_POOL_FUNDS**.
 
-
 **PROTOCOL_POOL_FEES**
 
 - A small fee amount is deducted by the core smart contract for any imperative transaction like channel creation, channel reactivation, channel detail modification, and others.
@@ -79,20 +82,24 @@ Explains the different types of Data types and access controls used in the Push 
 - Can never be below **50 PUSH.**
 
 **FEE_AMOUNT**
+
 - Represents the deactivation fee charged to a channel owner when the channel is Deactivated.
 - The current value of this state variable is **10 PUSH.**
 - Can be updated only via on-chain governance using the _setFeeAmount()_ function.
 
 **MIN_POOL_CONTRIBUTION**
+
 - Represents the constant value of 1 PUSH used for the calculation of a channel's weight in the protocol.
 - This amount is deducted from the channel pool contribution at the time of deactivating a channel and the remaining amount is refunded to the user.
 
 ### Storage variables for FSRatio Calculation
+
 - The concept of adjusting the fair share of channels is no longer being used by the protocol, That’s why these variables have no significance from version 1.5 onwards.
 - These variables are only present in the contract to avoid storage collisions, as our contracts are upgradeable.
 - Below are the uses of these variables in version 1. No longer needed in Version 1.5
 
 ## Structs
+
 ```solidity
 struct Channel {
   ChannelType channelType;
@@ -100,7 +107,7 @@ struct Channel {
 
   address verifiedBy;
 
-  uint256 poolContribution;  
+  uint256 poolContribution;
   uint256 channelHistoricalZ;
   uint256 channelFairShareCount;
 
@@ -116,6 +123,7 @@ struct Channel {
 The **Channel** struct in the Push Core smart contract stores every crucial data about the channels that are created on the core contract.
 
 ### ChannelType
+
 - Denotes the type of channel being created.
 - A Channel can be any of the 6 available types —
   1. ProtocolNonInterest
@@ -126,6 +134,7 @@ The **Channel** struct in the Push Core smart contract stores every crucial data
   6. TokenGaited
 
 ### channelState
+
 - Symbolizes the current state of a particular channel.
 - A channel can have any of the following states —
   1. INACTIVE - 0
@@ -134,42 +143,52 @@ The **Channel** struct in the Push Core smart contract stores every crucial data
   4. BLOCKED - 3
 
 ### verifiedBy
+
 - Denotes the address of the verifier of the Channel
 
 ### poolContribution
+
 - Denotes the total amount of PUSH deposited by the channel owner during Channel Creation.
 - Pool contribution is calculated by deducting the **FEE_AMOUNT** from the amount user sends at the time of channel creation or reactivation.
 
-
 ### channelLastUpdate
+
 - The last update block number. It was used to calculate the fair share ratio, but now it just stores the last update block number
 
 ### channelStartBlock
+
 - Represents the block number when a specific channel was created
 
 ### channelUpdateBlock
+
 - Represents the block number that depicts when a channel was updated
 
 ### channelWeight
+
 - Represents the individual weight to be applied as per pool contribution.
 
 ### expiryTime
+
 - The timestamp at which the channel gets expired and can be deleted by the owner
 
 ## Modifiers
 
 ### onlyPushChannelAdmin()
+
 - Only allows Push Channel Admin to access the function
 
 ### onlyGovernance()
+
 - Only allows Governance contract to access the function
 
 ### onlyInactiveChannels()
+
 - Only for channels that are currently in an INACTIVE state
 - Used in the following function:
 - **createChannelWithFees()**
 
 ### onlyActivatedChannels()
+
 - Only for channels that are currently in an ACTIVE state
 - Used in the following functions:
 - **createChannelSettings()**
@@ -177,21 +196,25 @@ The **Channel** struct in the Push Core smart contract stores every crucial data
 - **verifyChannel()**
 
 ### onlyDeactivatedChannels()
+
 - Only for channels that are neither in BLOCKED state nor INACTIVE
 - Used in the following function:
 - **reactivateChannel()**
 
 ### onlyUnblockedChannels()
+
 - Only for channels that are currently in a BLOCKED state
 - Used in the following function:
 - **blockChannel()**
 
 ### onlyChannelOwner()
+
 - Only for the owner of a particular channel
 - Used in the following function:
 - **updateChannelMeta()**
 
 ### onlyUserAllowedChannelType()
+
 - Ensures that the channel type passed as an argument while creating a channel is a valid channel type
 - Used in the following function:
 - **createChannelWithFees()**
@@ -199,48 +222,56 @@ The **Channel** struct in the Push Core smart contract stores every crucial data
 ## Mappings
 
 ### channels
+
 - `mapping(address => Channel) public channels;`
 - Maps a channel's address to its Struct
 
 ### channelById
+
 - `mapping(uint256 => address) public channelById;`
 - Maps the uint256 ID of a particular channel to its address.
-- Updated in the **_createChannel()** function.
+- Updated in the **\_createChannel()** function.
 
 ### channelNotifSettings
+
 - `mapping(address => string) public channelNotifSettings;`
 - Keeps track of the notification settings selected by a channel
 - Updated in the **createChannelSettings()** function.
 
 ### nonces
+
 - `mapping(address => uint256) public nonces;`
 - Used to keep track of how many times a user signed a message.
 - Used in off-chain signature verification.
 - increments every time a user signs a message
 
 ### channelUpdateCounter
+
 - `mapping(address => uint256) public channelUpdateCounter;`
 - Tracks the update count of a channel, i.e. how many times a channel is being updated.
 - Used to determine the price of updating a channel. More the update count more the price.
 
 ### usersRewardsClaimed
+
 - `mapping(address => uint256) public usersRewardsClaimed;`
 - tracks the rewards a user has claimed.
 - not implemented in V1.5 but will be implemented in V2
 
 ## Enums
+
 The EPNS Core smart contract includes 2 main ENUMS.
 
 ### ChannelType
+
 ```solidity
-enum ChannelType {    
-  ProtocolNonInterest,    
-  ProtocolPromotion,    
-  InterestBearingOpen,  
+enum ChannelType {
+  ProtocolNonInterest,
+  ProtocolPromotion,
+  InterestBearingOpen,
   InterestBearingMutual,
   Timebound,
   TokenGaited
-} 
+}
 ```
 
 - This represents the type of channel being created. It can be any one of the 6 types —
@@ -254,10 +285,10 @@ enum ChannelType {
 ### ChannelAction
 
 ```solidity
-enum ChannelAction {  
-   ChannelRemoved,   
-   ChannelAdded,   
-   ChannelUpdated 
+enum ChannelAction {
+   ChannelRemoved,
+   ChannelAdded,
+   ChannelUpdated
 }
 ```
 
@@ -269,6 +300,7 @@ enum ChannelAction {
 - ChannelUpdated: When a channel is either deactivated or reactivated
 
 ## Interface
+
 Push contract interacts with PUSH token and communicator contract with the help of these interfaces
 
 ```solidity
@@ -288,6 +320,7 @@ interface IEPNSCommV1 {
 ```
 
 ## Methods
+
 Brief overview of all the imperative functionalities of the Push Core smart contract version 1.5.
 
 ---
@@ -297,6 +330,7 @@ _`Only Admin Setter Functions`_
 ---
 
 ### 1. setEpnsCommunicatorAddress
+
 ```solidity
 function setEpnsCommunicatorAddress(address _commAddress) external onlyPushChannelAdmin() {};
 ```
@@ -306,13 +340,14 @@ Allows only the Push Channel Admin to set the Push Communicator smart contract's
 
 **Arguments:**
 
-| Argument      | Type     | Description                                |
-|---------------|----------|--------------------------------------------|
-| _commAddress  | address  | Address of the communicator protocol       |
+| Argument      | Type    | Description                          |
+| ------------- | ------- | ------------------------------------ |
+| \_commAddress | address | Address of the communicator protocol |
 
 ---
 
 ### 2. setGovernanceAddress
+
 ```solidity
 function setGovernanceAddress(address _governanceAddress) external onlyPushChannelAdmin() {};
 ```
@@ -322,13 +357,14 @@ Allows only the Push Channel Admin to set the Governance address.
 
 **Arguments:**
 
-| Argument             | Type     | Description                            |
-|----------------------|----------|----------------------------------------|
-| _governanceAddress   | address  | Address of the Governance protocol     |
+| Argument            | Type    | Description                        |
+| ------------------- | ------- | ---------------------------------- |
+| \_governanceAddress | address | Address of the Governance protocol |
 
 ---
 
 ### 3. setFeeAmount
+
 ```solidity
 function setFeeAmount(uint256 _newFees) external onlyGovernance() {};
 ```
@@ -338,13 +374,14 @@ Sets the FEE_AMOUNT to a new fee amount.
 
 **Arguments:**
 
-| Argument | Type   | Description                               |
-|----------|--------|-------------------------------------------|
-| _newFees | uint256| New Fee Amount in the protocol            |
+| Argument  | Type    | Description                    |
+| --------- | ------- | ------------------------------ |
+| \_newFees | uint256 | New Fee Amount in the protocol |
 
 ---
 
 ### 4. setMinChannelCreationFees
+
 ```solidity
 function setMinChannelCreationFees(uint256 _newFees) external onlyGovernance() {};
 ```
@@ -354,13 +391,14 @@ Sets the Channel Creation fees to a new fee amount.
 
 **Arguments:**
 
-| Argument | Type   | Description                                         |
-|----------|--------|-----------------------------------------------------|
-| _newFees | uint256| New Channel Creation fees in the protocol            |
+| Argument  | Type    | Description                               |
+| --------- | ------- | ----------------------------------------- |
+| \_newFees | uint256 | New Channel Creation fees in the protocol |
 
 ---
 
 ### 5. transferPushChannelAdminControl
+
 ```solidity
 function transferPushChannelAdminControl(address _newAdmin) external onlyPushChannelAdmin() {};
 ```
@@ -370,9 +408,9 @@ Changes the Push Channel admin's address to a new Address.
 
 **Arguments:**
 
-| Argument | Type    | Description                                |
-|----------|---------|--------------------------------------------|
-| _newAdmin| address | Address of the new Admin                   |
+| Argument   | Type    | Description              |
+| ---------- | ------- | ------------------------ |
+| \_newAdmin | address | Address of the new Admin |
 
 ---
 
@@ -381,6 +419,7 @@ _`Core Functionalities`_
 ---
 
 ### 6. createChannelWithPUSH
+
 ```solidity
 function createChannelWithPUSH(
     ChannelType _channelType,
@@ -391,91 +430,97 @@ function createChannelWithPUSH(
 ```
 
 **Description:**  
-Channel state changes from Inactive to Active. All imperative channel information (e.g., creation block number, total PUSH deposited, channel type) are stored. 
+Channel state changes from Inactive to Active. All imperative channel information (e.g., creation block number, total PUSH deposited, channel type) are stored.
 
 Channel expiry time is stored if it's timebound; otherwise, it remains 0. The total Channel count increases by 1. The method emits an AddChannel() event with the Channel's address, Channel's Type, and Identity.
 
 **Arguments:**
 
-| Argument            | Type       | Description                                              |
-|---------------------|------------|----------------------------------------------------------|
-| _channelType        | Enum       | Represents the type of Channel being created             |
-| _identity           | bytes      | Identity bytes of the Channel.                           |
-| _amount             | uint256    | Total amount of PUSH being deposited                     |
-| _channelExpiryTime  | uint256    | Time when the channel will expire and be ready for deletion |
+| Argument            | Type    | Description                                                 |
+| ------------------- | ------- | ----------------------------------------------------------- |
+| \_channelType       | Enum    | Represents the type of Channel being created                |
+| \_identity          | bytes   | Identity bytes of the Channel.                              |
+| \_amount            | uint256 | Total amount of PUSH being deposited                        |
+| \_channelExpiryTime | uint256 | Time when the channel will expire and be ready for deletion |
 
 ---
 
 ### 7. deactivateChannel
+
 ```solidity
 function deactivateChannel() external whenNotPaused onlyActivatedChannels(msg.sender) {};
 ```
 
 **Description:**
 
-Channel's state is changed from ACTIVE to DEACTIVATED. A minimum Pool Contribution of 1 PUSH token is deducted from the pool contribution of the channel. The remaining amount of PUSH after fee deduction is refunded back to the Channel Owner. The refunded amount is also subtracted from the Pool funds of the protocol. 
+Channel's state is changed from ACTIVE to DEACTIVATED. A minimum Pool Contribution of 1 PUSH token is deducted from the pool contribution of the channel. The remaining amount of PUSH after fee deduction is refunded back to the Channel Owner. The refunded amount is also subtracted from the Pool funds of the protocol.
 
 Imperative on-chain details about the channel like channel state, new Channel pool contribution, new Channel weight, etc., are updated in the contract. Emits a DeactivateChannel() event with the Channel's address and Total Refund amount value.
 
 ---
 
 ### 8. reactivateChannel
+
 ```solidity
 function reactivateChannel(uint256 _amount) external whenNotPaused onlyDeactivatedChannels(msg.sender) {};
 ```
 
 **Description:**  
-Channel's state is changed from DEACTIVATED to ACTIVE. The Fee amount is deducted from the received amount and added to Protocol Pool Fees. The remaining amount of PUSH after fee deduction is added to Protocol Pool fund. 
+Channel's state is changed from DEACTIVATED to ACTIVE. The Fee amount is deducted from the received amount and added to Protocol Pool Fees. The remaining amount of PUSH after fee deduction is added to Protocol Pool fund.
 
 Channel's new pool contribution and weight are updated. Imperative on-chain details about the channel like channel state, new Channel pool contribution, new Channel weight, etc., are updated in the contract. Emits a ReactivateChannel() event with the Channel's address and Total Deposited amount value.
 
 **Arguments:**
 
-| Argument | Type   | Description                                          |
-|----------|--------|------------------------------------------------------|
-| _amount  | uint256| PUSH amount to be deposited for the reactivation of the channel |
+| Argument | Type    | Description                                                     |
+| -------- | ------- | --------------------------------------------------------------- |
+| \_amount | uint256 | PUSH amount to be deposited for the reactivation of the channel |
 
 ---
 
 ### 9. blockChannel
+
 ```solidity
 function blockChannel(address _channelAddress) external whenNotPaused onlyPushChannelAdmin onlyUnblockedChannels(_channelAddress) {};
 ```
 
 **Description:**  
-Channel's state is changed to BLOCKED state. Once blocked, the channel address cannot be reactivated. The pool contribution of the respective channel is deducted from Pool funds and added to pool fees. 
+Channel's state is changed to BLOCKED state. Once blocked, the channel address cannot be reactivated. The pool contribution of the respective channel is deducted from Pool funds and added to pool fees.
 
 Channel's pool contribution & weight are updated to new values, and no refund shall be given to the Channel owner when blocked. Emits a ChannelBlocked() event with the Channel's address.
 
 **Arguments:**
 
-| Argument        | Type    | Description                                |
-|-----------------|---------|--------------------------------------------|
-| _channelAddress | address | Address of the target channel to be blocked|
+| Argument         | Type    | Description                                 |
+| ---------------- | ------- | ------------------------------------------- |
+| \_channelAddress | address | Address of the target channel to be blocked |
 
 ---
 
 ### 10. verifyChannel
+
 ```solidity
 function verifyChannel(address _channel) public onlyActivatedChannels(_channel) {};
 ```
+
 **Description:**  
 The target channel is marked as a verified channel. The Verifier's address of the target channel is stored in the channel's struct. This determines the type of verification tag the target channel has. For instance:
 
 - If the Channel was verified directly by Push Channel Admin, it will have a **Primary Verification Tag.**
-- If the Channel was verified by any other verified channel, it will have a Secondary Verification Tag. 
+- If the Channel was verified by any other verified channel, it will have a Secondary Verification Tag.
 
 Emits a ChannelVerified() event with the Channel's address and the Verifier's Address.
 
 **Arguments:**
 
-| Argument   | Type    | Description                                            |
-|------------|---------|--------------------------------------------------------|
-| _channel   | address | The address of the channel to be verified               |
+| Argument  | Type    | Description                               |
+| --------- | ------- | ----------------------------------------- |
+| \_channel | address | The address of the channel to be verified |
 
 ---
 
 ### 11. unverifyChannel
+
 ```solidity
 function unverifyChannel(address _channel) public {};
 ```
@@ -485,13 +530,14 @@ Marks the target channel as Unverified. Emits a ChannelVerificationRevoked() eve
 
 **Arguments:**
 
-| Argument  | Type    | Description                                                     |
-|-----------|---------|-----------------------------------------------------------------|
-| _channel  | address | The address of the channel whose verification shall be revoked  |
+| Argument  | Type    | Description                                                    |
+| --------- | ------- | -------------------------------------------------------------- |
+| \_channel | address | The address of the channel whose verification shall be revoked |
 
 ---
 
 ### 12. updateChannelMeta
+
 ```solidity
 function updateChannelMeta(
     address _channel,
@@ -501,18 +547,17 @@ function updateChannelMeta(
 ```
 
 **Description:**  
-Allows the Channel Owner to update their Channel Description or any imperative detail. The amount needed is the product of channel creation fees and the number of times this particular channel has been updated. 
+Allows the Channel Owner to update their Channel Description or any imperative detail. The amount needed is the product of channel creation fees and the number of times this particular channel has been updated.
 
 This approach makes it difficult to abuse the update channel feature. Adds the amount received to the Protocol Fees. Emits an UpdateChannel() event with the Channel's address and the New Identity bytes of the Channel.
 
-
 **Arguments:**
 
-| Argument      | Type       | Description                                         |
-|---------------|------------|-----------------------------------------------------|
-| _channel      | address    | Address of the channel                              |
-| _newIdentity  | bytes      | New Identity bytes of the Channel.                  |
-| _amount       | uint256    | Amount needed to upgrade the channel                |
+| Argument      | Type    | Description                          |
+| ------------- | ------- | ------------------------------------ |
+| \_channel     | address | Address of the channel               |
+| \_newIdentity | bytes   | New Identity bytes of the Channel.   |
+| \_amount      | uint256 | Amount needed to upgrade the channel |
 
 ---
 
@@ -521,12 +566,14 @@ _`Getter Functions`_
 ---
 
 ### 13. getChannelState
+
 ```solidity
 function getChannelState(address _channel) external view returns (uint256 state) {};
 ```
 
 **Description:**  
 Returns the current state of the Channel. The returned value can be interpreted as:
+
 - 0 -> INACTIVE
 - 1 -> ACTIVATED
 - 2 -> DeActivated By Channel Owner
@@ -534,13 +581,14 @@ Returns the current state of the Channel. The returned value can be interpreted 
 
 **Arguments:**
 
-| Argument  | Type    | Description                                                 |
-|-----------|---------|-------------------------------------------------------------|
-| _channel  | address | Address of the channel whose state is required              |
+| Argument  | Type    | Description                                    |
+| --------- | ------- | ---------------------------------------------- |
+| \_channel | address | Address of the channel whose state is required |
 
 ---
 
 ### 14. getChannelVerification
+
 ```solidity
 function getChannelVerification(address _channel) public view returns (uint8 verificationStatus) {};
 ```
@@ -550,32 +598,33 @@ Returns the verification tag of the channel's address passed in the argument. If
 
 **Arguments:**
 
-| Argument  | Type    | Description                                                  |
-|-----------|---------|--------------------------------------------------------------|
-| _channel  | address | Address of the channel whose verification tag is needed      |
+| Argument  | Type    | Description                                             |
+| --------- | ------- | ------------------------------------------------------- |
+| \_channel | address | Address of the channel whose verification tag is needed |
 
 ---
 
 ### 15. destroyTimeBoundChannel
+
 ```solidity
 function destroyTimeBoundChannel(address _channelAddress) external whenNotPaused onlyActivatedChannels(_channelAddress) {};
 ```
 
 **Description:**  
-If the channel's expiry date has been reached, the owner can proceed to delete it. The owner gets a refund of the channel’s amount in pool funds. However, the refund is only available for 14 days from the day the channel expires. 
+If the channel's expiry date has been reached, the owner can proceed to delete it. The owner gets a refund of the channel’s amount in pool funds. However, the refund is only available for 14 days from the day the channel expires.
 
 If the owner doesn’t delete the channel within this timeframe, the admin gains the power to delete the channel. When deleted by the admin, the refundable amount is not returned but is deducted from the pool fund and added to pool fees.
 
-
 **Arguments:**
 
-| Argument          | Type    | Description                                       |
-|-------------------|---------|---------------------------------------------------|
-| _channelAddress   | address | Address of the channel to be destroyed            |
+| Argument         | Type    | Description                            |
+| ---------------- | ------- | -------------------------------------- |
+| \_channelAddress | address | Address of the channel to be destroyed |
 
 ---
 
 ### 16. addSubGraph
+
 ```solidity
 function addSubGraph(bytes calldata _subGraphData) external onlyActivatedChannels(msg.sender) {};
 ```
@@ -583,16 +632,16 @@ function addSubGraph(bytes calldata _subGraphData) external onlyActivatedChannel
 **Description:**  
 This function allows users to pass subGraph data, in the form of bytes, which combines the Subgraph ID and Poll Interval. An event is emitted with the msg.sender and the bytes value.
 
-
 **Arguments:**
 
-| Argument       | Type   | Description                                                 |
-|----------------|--------|-------------------------------------------------------------|
-| _subGraphData  | bytes  | A combination of the Subgraph ID and Poll Interval          |
+| Argument       | Type  | Description                                        |
+| -------------- | ----- | -------------------------------------------------- |
+| \_subGraphData | bytes | A combination of the Subgraph ID and Poll Interval |
 
 ---
 
 ## Deprecated State Variables
+
 - groupNormalizedWeight
 - groupHistoricalZ
 - groupLastUpdate

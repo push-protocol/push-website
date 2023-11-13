@@ -12,18 +12,22 @@ image: "/assets/docs/previews/docs_notifications_develop--channel_delegates.png"
 
 This section covers all APIs related to managing channel delegate including add / remove and get list of all delegates.
 
-<head>
-  <title>Manage Channel Delegate | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+<Head>
+  <title>{`
+    Manage Channel Delegate | Push Notifications | Push Documentation
+  `}</title>
+</Head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## What is Channel Delegate
 
@@ -36,7 +40,7 @@ They are extremely useful to expand on sending notification capabilities and hel
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-const delegates = await userAlice.channel.delegate.get()
+const delegates = await userAlice.channel.delegate.get();
 ```
 
   </TabItem>
@@ -53,17 +57,18 @@ const delegates = await userAlice.channel.delegate.get()
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+import Details from "@theme/Details";
+
+<Details summary="Expected response">
 
 ```typescript
-;[
-  'eip155:5:0x35B84d6848D16415177c64D64504663b998A6ab4',
-  'eip155:80001:0xD8634C39BBFd4033c0d3289C4515275102423681',
-]
+[
+  "eip155:5:0x35B84d6848D16415177c64D64504663b998A6ab4",
+  "eip155:80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+];
 ```
 
-</details>
+</Details>
 
 ## Add delegate API
 
@@ -74,8 +79,8 @@ To add a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const addedDelegate = await userAlice.channel.delegate.add(
-  `eip155:5:${walletAddress}`
-)
+  `eip155:5:${walletAddress}`,
+);
 ```
 
   </TabItem>
@@ -91,19 +96,15 @@ const addedDelegate = await userAlice.channel.delegate.add(
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 {
-  transactionHash: '0xd4a65a474ea7bd12bae887df43ebe8531ab211e498925cfad6599c5758880c33'
+  transactionHash: "0xd4a65a474ea7bd12bae887df43ebe8531ab211e498925cfad6599c5758880c33";
 }
 ```
 
-</details>
+</Details>
 
 ## Remove delegate API
 
@@ -114,8 +115,8 @@ To remove a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const removeDelegate = await userAlice.channel.delegate.remove(
-  `eip155:5:${walletAddress}`
-)
+  `eip155:5:${walletAddress}`,
+);
 ```
 
   </TabItem>
@@ -131,16 +132,12 @@ const removeDelegate = await userAlice.channel.delegate.remove(
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 {
-  transactionHash: '0x85327b3d24772f4b424eb959fe01bf5ca5e6148bfde93cc1fa7cb7f4ebcf7c41'
+  transactionHash: "0x85327b3d24772f4b424eb959fe01bf5ca5e6148bfde93cc1fa7cb7f4ebcf7c41";
 }
 ```
 
-</details>
+</Details>

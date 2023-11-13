@@ -14,13 +14,18 @@ This is a step-by-step introductory tutorial that will teach you how to build a 
 
 **Greetings!** If you are new to Push protocol and don't have a proper idea of how to create an news-based channel for notifications on top of [showrunners](/docs/notifications/showrunners-scaffold/get-started). This guide is for you ;)
 
-We will walk through coding and interacting with the [The Defiant](https://thedefiant.io/)  for fetching the articles. 
+We will walk through coding and interacting with the [The Defiant](https://thedefiant.io/) for fetching the articles.
 
 And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-<head>
-  <title>Offchain (Web2) based trigger | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`
+    Offchain (Web2) based trigger | Example | Showrunners Scaffold | Push
+    Notifications | Push Documentation
+  `}</title>
+</Head>
 
 ### Setup channel folder
 
@@ -46,10 +51,10 @@ The channel file is the brain for every channel notification logic. The file fol
 
 Every development procedure initiates with creating a channel specific class with contains various information regarding the concerned channel, such as:
 
-* The network to monitor for the Channel
-* Name of the Channel
-* The URL of channel owner
-* Whether channel uses off chain notification or not
+- The network to monitor for the Channel
+- Name of the Channel
+- The URL of channel owner
+- Whether channel uses off chain notification or not
 
 ```jsx
 import { Inject, Service } from 'typedi';
@@ -74,7 +79,7 @@ export default class DefiantChannel extends EPNSChannel {
   }
 ```
 
-If you observe the variable "useOffChain" is assigned as True,  this enables the Off chain notification for the channel.
+If you observe the variable "useOffChain" is assigned as True, this enables the Off chain notification for the channel.
 
 **The channel logic function**
 
@@ -217,14 +222,14 @@ This folder is responsible to run the Cron Jobs. Expanding on the “Cron Jobs�
 This involves creating a type of countdown values for a specific job to run.This is customised on the basis of the requirement of a certain use case. For example in this case we create a Daily Rule which makes the channel logic run once in every 24 Hours interval.
 
 ```jsx
-  const startTime = new Date(new Date().setHours(0, 0, 0, 0));
+const startTime = new Date(new Date().setHours(0, 0, 0, 0));
 
-  const dailyRule = new schedule.RecurrenceRule();
-  dailyRule.hour = 0;
-  dailyRule.minute = 0;
-  dailyRule.second = 0;
-  dailyRule.dayOfWeek = new schedule.Range(0, 6);
-  const channel = Container.get(EnsExpirationChannel);
+const dailyRule = new schedule.RecurrenceRule();
+dailyRule.hour = 0;
+dailyRule.minute = 0;
+dailyRule.second = 0;
+dailyRule.dayOfWeek = new schedule.Range(0, 6);
+const channel = Container.get(EnsExpirationChannel);
 ```
 
 **Calling the Channel Function for a Job**
@@ -232,17 +237,19 @@ This involves creating a type of countdown values for a specific job to run.This
 Once the schedule job is set to run. The below stated function calls the Task Function from the Channel file to run and send the notification if need be.
 
 ```jsx
-schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function() {
-    const taskName = `${channel.cSettings.name} checkDomainExpiryTask`;
+schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
+  const taskName = `${channel.cSettings.name} checkDomainExpiryTask`;
 
-    try {
-      await channel.checkDomainExpiryTask(false);
-      channel.logInfo(`🐣 Cron Task Completed -- ${taskName}`);
-    } catch (err) {
-      logger.error(`[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`);
-      logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
-    }
-  });
+  try {
+    await channel.checkDomainExpiryTask(false);
+    channel.logInfo(`🐣 Cron Task Completed -- ${taskName}`);
+  } catch (err) {
+    logger.error(
+      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+    );
+    logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
+  }
+});
 ```
 
 You can now heat up the server by running `docker-compose up` and `npm run dev` and start sending notification.

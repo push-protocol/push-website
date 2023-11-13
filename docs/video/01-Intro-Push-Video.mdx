@@ -10,13 +10,27 @@ image: "/assets/docs/previews/video--intro_to_push_video.png"
 
 # Intro to Push Video
 
-Push Video protocol is a versatile tool that supports decentralized wallet-to-wallet video calls in a chain-agnostic way and offers diverse use cases for any dApp. It's compatible with both frontend and backend development, allowing easy integration with web applications using frameworks like React or vanilla JavaScript. 
+Push Video protocol is a versatile tool that supports decentralized wallet-to-wallet video calls in a chain-agnostic way and offers diverse use cases for any dApp. It's compatible with both frontend and backend development, allowing easy integration with web applications using frameworks like React or vanilla JavaScript.
 
-<head>
-  <title>Introduction | Push Video | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
-import {ItemV, ItemH, Span, Button, Image, ModalContainer, ModalSmall, ModalMid, ModalWrapper, AImp, ModalMidEqual } from '@site/src/css/SharedStyling';
+<Head>
+  <title>{`Introduction | Push Video | Push Documentation`}</title>
+</Head>
+
+import {
+  ItemV,
+  ItemH,
+  Span,
+  Button,
+  Image,
+  ModalContainer,
+  ModalSmall,
+  ModalMid,
+  ModalWrapper,
+  AImp,
+  ModalMidEqual,
+} from "@site/src/css/SharedStyling";
 
 ## Why Push Video?
 
@@ -26,139 +40,313 @@ Push Video brings native wallet to wallet (or multi-wallets) audio and video cal
 - **Web3 social real time calls**
 - **Web3 DAO community calls**
 - **Creator economy** via incentivized calls
-- **Seamless Web3 gaming** 
+- **Seamless Web3 gaming**
 - **Streaming**
 
 ## How Push Video works?
-Push Video utilizes [Push Notifications](/docs/notifications) to exchange peer info and intent for connection which is then fed into [WebRCT](https://webrtc.org/ "Learn about WebRCT") for peer to peer connection. 
 
-Three hidden notifications are fired to wallet (initialization, handshake, completion) to enable wallet to wallet calling. Mesh architecture is used to enable multiple wallets joining. All communication from Push Video is signed and validated by a set of nodes, which are together called Push Network. 
+Push Video utilizes [Push Notifications](/docs/notifications) to exchange peer info and intent for connection which is then fed into [WebRCT](https://webrtc.org/ "Learn about WebRCT") for peer to peer connection.
+
+Three hidden notifications are fired to wallet (initialization, handshake, completion) to enable wallet to wallet calling. Mesh architecture is used to enable multiple wallets joining. All communication from Push Video is signed and validated by a set of nodes, which are together called Push Network.
 
 ## SDKs
+
 <ModalContainer>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img 
-      src={require('/static/assets/docs/techstack/javascript.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/javascript@2x.png').default} 2x, ${require('/static/assets/docs/techstack/javascript@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        Javascript
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-      
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img
-      src={require('/static/assets/docs/techstack/react.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/react@2x.png').default} 2x, ${require('/static/assets/docs/techstack/react@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        React
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/javascript.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/javascript@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/javascript@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Javascript
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img 
-      src={require('/static/assets/docs/techstack/reactNative.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/reactNative@2x.png').default} 2x, ${require('/static/assets/docs/techstack/reactNative@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        React Native
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/dart.png').default} srcSet={`${require('/static/assets/docs/techstack/dart@2x.png').default} 2x, ${require('/static/assets/docs/techstack/dart@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Dart
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/react.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/react@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-kotlin-sdk', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/kotlin.png').default} srcSet={`${require('/static/assets/docs/techstack/kotlin@2x.png').default} 2x, ${require('/static/assets/docs/techstack/kotlin@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Kotlin
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-swift-sdk', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/swift.png').default} srcSet={`${require('/static/assets/docs/techstack/swift@2x.png').default} 2x, ${require('/static/assets/docs/techstack/swift@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Swift
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/reactNative@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/reactNative@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React Native
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-restapi-dart",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/dart.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/dart@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Dart
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-kotlin-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/kotlin@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Kotlin
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-swift-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/swift.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/swift@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Swift
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
 </ModalContainer>
 
 ## Message Types
+
 <ModalContainer>
 
-  <ModalSmall 
-    onClick={() => (window.open('message-types/text', '_self'))} 
-  >
-    <img src={require('/static/assets/docs/msgtypes/text.png').default} srcSet={`${require('/static/assets/docs/msgtypes/text@2x.png').default} 2x, ${require('/static/assets/docs/msgtypes/text@3x.png').default} 3x`} />
-    <span>Text</span>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('message-types/image', '_self'))} 
-  >
-    <img src={require('/static/assets/docs/msgtypes/image.png').default} srcSet={`${require('/static/assets/docs/msgtypes/image@2x.png').default} 2x, ${require('/static/assets/docs/msgtypes/image@3x.png').default} 3x`} />
-    <span>Image</span>
-  </ModalSmall>
+<ModalSmall onClick={() => window.open("message-types/text", "_self")}>
+  <img
+    src={require("/static/assets/docs/msgtypes/text.png").default}
+    srcSet={`${
+      require("/static/assets/docs/msgtypes/text@2x.png").default
+    } 2x, ${require("/static/assets/docs/msgtypes/text@3x.png").default} 3x`}
+  />
+  <span>Text</span>
+</ModalSmall>
 
-  <ModalSmall 
-    onClick={() => (window.open('message-types/file', '_self'))} 
-  >
-    <img src={require('/static/assets/docs/msgtypes/file.png').default} srcSet={`${require('/static/assets/docs/msgtypes/file@2x.png').default} 2x, ${require('/static/assets/docs/msgtypes/file@3x.png').default} 3x`} />
-    <span>File</span>
-  </ModalSmall>
-  
-  <ModalSmall 
-    onClick={() => (window.open('message-types/media-embed', '_self'))} 
-  >
-    <img src={require('/static/assets/docs/msgtypes/mediaembed.png').default} srcSet={`${require('/static/assets/docs/msgtypes/mediaembed@2x.png').default} 2x, ${require('/static/assets/docs/msgtypes/mediaembed@3x.png').default} 3x`} />
-    <span>Media Embed</span>
-  </ModalSmall>
-  
-  <ModalSmall 
-    onClick={() => (window.open('message-types/reaction', '_self'))} 
-  >
-    <img src={require('/static/assets/docs/msgtypes/reaction.png').default} srcSet={`${require('/static/assets/docs/msgtypes/reaction@2x.png').default} 2x, ${require('/static/assets/docs/msgtypes/reaction@3x.png').default} 3x`} />
-    <span>Reaction</span>
-  </ModalSmall>
+{" "}
+
+<ModalSmall onClick={() => window.open("message-types/image", "_self")}>
+  <img
+    src={require("/static/assets/docs/msgtypes/image.png").default}
+    srcSet={`${
+      require("/static/assets/docs/msgtypes/image@2x.png").default
+    } 2x, ${require("/static/assets/docs/msgtypes/image@3x.png").default} 3x`}
+  />
+  <span>Image</span>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall onClick={() => window.open("message-types/file", "_self")}>
+  <img
+    src={require("/static/assets/docs/msgtypes/file.png").default}
+    srcSet={`${
+      require("/static/assets/docs/msgtypes/file@2x.png").default
+    } 2x, ${require("/static/assets/docs/msgtypes/file@3x.png").default} 3x`}
+  />
+  <span>File</span>
+</ModalSmall>
+<ModalSmall onClick={() => window.open("message-types/media-embed", "_self")}>
+  <img
+    src={require("/static/assets/docs/msgtypes/mediaembed.png").default}
+    srcSet={`${
+      require("/static/assets/docs/msgtypes/mediaembed@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/msgtypes/mediaembed@3x.png").default
+    } 3x`}
+  />
+  <span>Media Embed</span>
+</ModalSmall>
+<ModalSmall onClick={() => window.open("message-types/reaction", "_self")}>
+  <img
+    src={require("/static/assets/docs/msgtypes/reaction.png").default}
+    srcSet={`${
+      require("/static/assets/docs/msgtypes/reaction@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/msgtypes/reaction@3x.png").default
+    } 3x`}
+  />
+  <span>Reaction</span>
+</ModalSmall>
 
 </ModalContainer>
-
-

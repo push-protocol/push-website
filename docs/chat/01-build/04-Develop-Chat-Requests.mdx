@@ -9,60 +9,68 @@ image: "/assets/docs/previews/docs_chat_develop_manage--chat_requests.png"
 ---
 
 # Chat requests overview
+
 You can send a message using [chat.send API](/docs/chat/build/send-message) to either an existing chat connection or to initiate a new chat to a wallet you haven't chatted with before (which is called sending a chat request).
 
-Any chat from a push user who is not your connection already to your wallet lands in your **chat requests** and you will need to **accept**, **reject** or **block** them accordingly. This enables a seamless UX and **eliminates spam** problems with chat. 
+Any chat from a push user who is not your connection already to your wallet lands in your **chat requests** and you will need to **accept**, **reject** or **block** them accordingly. This enables a seamless UX and **eliminates spam** problems with chat.
 
-<head>
-  <title>Manage Chat Requests | Push Chat | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
+<Head>
+  <title>{`Manage Chat Requests | Push Chat | Push Documentation`}</title>
+</Head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 ## Accept chat requests API
+
 To accept an incoming chat requests. Need to be done only once per chat request. Once chat request is accepted, the chat connection is marked as active and any chat you receive moving forward will also send push notifications driving re-engagement to your app.
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.accept(recipient)
-  // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-  const bobAcceptAliceRequest = await userBob.chat.accept(aliceAddress);
-  ```
+```typescript
+// userAlice.chat.accept(recipient)
+// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+const bobAcceptAliceRequest = await userBob.chat.accept(aliceAddress);
+```
 
   </TabItem>
 </Tabs>
 
---- 
+---
 
 ### Accept chat request parameters
 
-| Param    | Type     | Default | Remarks                                                                             |
-| -------- | -------- | ------- | ----------------------------------------------------------------------------------- |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
-  200 OK
-</details>
+import Details from "@theme/Details";
 
+<Details summary="Expected response">200 OK</Details>
 
 ## Reject chat request API
+
 To reject an incoming chat request. Once rejected, the user can still send you a message that will land in your chat request again.
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.reject(recipient)
-  // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-  const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
-  ```
+```typescript
+// userAlice.chat.reject(recipient)
+// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
+```
 
   </TabItem>
 </Tabs>
@@ -71,29 +79,26 @@ To reject an incoming chat request. Once rejected, the user can still send you a
 
 ### Reject chat request parameters
 
-| Param    | Type     | Default | Remarks                                                                             |
-| -------- | -------- | ------- | ----------------------------------------------------------------------------------- |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
-  200 OK
-</details>
-
+<Details summary="Expected response">200 OK</Details>
 
 ## Block chat request API
+
 To block an incoming chat requests. Once blocked, the user will not be able to send you DMs or invite you to a group.
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.block(recipient)
-  // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-  const bobAcceptAliceRequest = await userBob.chat.block(aliceAddress);
-  ```
+```typescript
+// userAlice.chat.block(recipient)
+// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+const bobAcceptAliceRequest = await userBob.chat.block(aliceAddress);
+```
 
   </TabItem>
 </Tabs>
@@ -102,13 +107,10 @@ To block an incoming chat requests. Once blocked, the user will not be able to s
 
 ### Block chat request parameters
 
-| Param    | Type     | Default | Remarks                                                                             |
-| -------- | -------- | ------- | ----------------------------------------------------------------------------------- |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
-  200 OK
-</details>
+<Details summary="Expected response">200 OK</Details>

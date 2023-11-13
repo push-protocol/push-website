@@ -12,18 +12,22 @@ image: "/assets/docs/previews/docs_notifications_develop--integrating_notificati
 
 This section explores how to integrate notifications on your dApp, mobile app, crypto wallet or on any other frontend.
 
-Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol. 
+Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol.
 
-<head>
-  <title>Integrating Notifications | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
-import ReactPlayer from 'react-player'
-import { AImp, ABlock } from '@site/src/css/SharedStyling';
+<Head>
+  <title>{`
+    Integrating Notifications | Push Notifications | Push Documentation
+  `}</title>
+</Head>
+
+import ReactPlayer from "react-player";
+import { AImp, ABlock } from "@site/src/css/SharedStyling";
 
 ## Integration process
 
-Integrating notifications directly on your frontend is a critical component as it enables your users to have the best experience and massively improves re-engagement and Web3 UX for your protocol. 
+Integrating notifications directly on your frontend is a critical component as it enables your users to have the best experience and massively improves re-engagement and Web3 UX for your protocol.
 
 To get started, you will need to —
 
@@ -31,6 +35,7 @@ To get started, you will need to —
 - Choose what notification fetching mechanism you want to integrate for notifications to your users (**Pull based**, **Push based** or **bridge based**) on your frontend.
 
 ## Receiving notifications
+
 Notifications can be received on your frontend using either active user interaction, also known as **pull based method** or showing notifications as soon as it's triggered requiring no user interaction, which is known as **push based method** or triggering additional logic when notification is sent to a user using **bridge based method**.
 
 :::note
@@ -38,13 +43,16 @@ You will need to pick the best method according to your needs. Most of the time,
 :::
 
 ### Pull based method
+
 This method enables users to see notifications when they actively interact with an object on your frontend and relies on fetching notifications using restful APIs. For example: when you click **bell icon** on youtube and it fetches your notifications.
 
 ### Push based method
+
 This method doesn't rely on user interaction, instead it shows users notifications as soon as the frontend receives it. This is useful particularly when a user is on your frontend and you show them notifications as they are received.
 
 ### Bridge based method
-This method is usually used when you want notifications to land on user's mobile home screen or through browser notification service. 
+
+This method is usually used when you want notifications to land on user's mobile home screen or through browser notification service.
 
 Bridge based method allows triggering additional logic and are more of an extension to **push based method** as they enable routing to other Web2 notification services such as [Firebase](https://firebase.google.com/ "Link to google firebase"), [Apple Push Notification Service](https://developer.apple.com/documentation/usernotifications "Link to APNS (Apple Push Notificaiton Service)") or to telegram / twitter / or other social bots.
 
@@ -56,8 +64,8 @@ Bridge based delivery is especially useful if you want to deliver notifications 
 
 Implementing pull based mechanism requires inclusion of [fetch notifications API](/docs/notifications/build/fetch-notifications/ "API for fetching notificatons from Push protocol") and then using your custom frontend component or UIWeb component of Push to display them.
 
-```jsx live 
-customPropMinimized="true"
+```jsx live
+customPropMinimized = "true";
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -67,7 +75,9 @@ customPropMinimized="true"
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
-  const [wallet, setWallet] = useState('0xD8634C39BBFd4033c0d3289C4515275102423681');
+  const [wallet, setWallet] = useState(
+    "0xD8634C39BBFd4033c0d3289C4515275102423681",
+  );
   const [notifItems, setNotifItems] = useState([]);
 
   const walletRef = useRef();
@@ -88,13 +98,16 @@ function App(props) {
     await provider.send("eth_requestAccounts", []);
 
     // Grabbing signer from provider
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
 
     // retrieve notifications for users
-    const inboxNotifications = await userAlice.notification.list('INBOX', {account: `eip155:5:${wallet}`, limit: 5})
+    const inboxNotifications = await userAlice.notification.list("INBOX", {
+      account: `eip155:5:${wallet}`,
+      limit: 5,
+    });
 
     // set notifItems state so that react can render
     setNotifItems(inboxNotifications);
@@ -102,56 +115,69 @@ function App(props) {
 
   function NotificationInterface() {
     const inputStyle = {
-      padding: '10px',
-      margin: '10px 0',
-      width: '100%',
-      boxSizing: 'border-box',
+      padding: "10px",
+      margin: "10px 0",
+      width: "100%",
+      boxSizing: "border-box",
     };
 
     const textareaStyle = {
       ...inputStyle,
-      height: '100px',
-      resize: 'vertical',
+      height: "100px",
+      resize: "vertical",
     };
 
     const buttonStyle = {
-      padding: '10px 20px',
-      backgroundColor: '#dd44b9',
-      color: '#FFF',
-      border: 'none',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      marginTop: '20px',
+      padding: "10px 20px",
+      backgroundColor: "#dd44b9",
+      color: "#FFF",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      marginTop: "20px",
     };
 
     return (
-      <div style={{ width: 'auto', margin: '20px auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ width: "auto", margin: "20px auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ flex: 1 }}>
-            <h2>Pull based mechanism for displaying notifcations on frontend</h2>
+            <h2>
+              Pull based mechanism for displaying notifcations on frontend
+            </h2>
             <p />
-            <label>Put any wallet address and click on fetch notifications to see the live results. Click to expand <b>Live Editor</b> tab to see the code and play with it. For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
+            <label>
+              Put any wallet address and click on fetch notifications to see the
+              live results. Click to expand <b>Live Editor</b> tab to see the
+              code and play with it. For this demo, You will need Metamask (or
+              equivalent browser injected wallet), you will also need to sign a
+              transaction to see the notifications.
+            </label>
             <p />
             <label>Wallet address</label>
-            <input 
-              type="text" 
-              placeholder="Enter wallet address" 
+            <input
+              type="text"
+              placeholder="Enter wallet address"
               style={inputStyle}
               ref={walletRef}
               maxLength={80}
             />
           </div>
         </div>
-        <button style={buttonStyle} onClick={fetchNotification}>Fetch Notifications</button>
+        <button style={buttonStyle} onClick={fetchNotification}>
+          Fetch Notifications
+        </button>
 
-        <p /> 
+        <p />
         <p />
 
-        {notifItems.length > 0 ? <h3>{`Notification Items for ${wallet}`}</h3> : <></>
-        }
-        
+        {notifItems.length > 0 ? (
+          <h3>{`Notification Items for ${wallet}`}</h3>
+        ) : (
+          <></>
+        )}
+
         {notifItems.map((notifItemSingular, idx) => {
-          const { 
+          const {
             cta,
             title,
             message,
@@ -160,7 +186,7 @@ function App(props) {
             image,
             url,
             blockchain,
-            notification
+            notification,
           } = notifItemSingular;
 
           return (
@@ -173,12 +199,12 @@ function App(props) {
               icon={icon}
               image={image}
               url={url}
-              theme={'light'} // or can be dark
+              theme={"light"} // or can be dark
               chainName={blockchain}
               // chainName={blockchain as chainNameType} // if using Typescript
             />
-            );
-          })}
+          );
+        })}
       </div>
     );
   }
@@ -192,10 +218,11 @@ function App(props) {
 ```
 
 ## Push method live implementation
+
 Implementing push based mechanism requires connecting to Push nodes via [stream notifications API](/docs/notifications/build/stream-notifications/ "API for streaming notificatons from Push protocol") which will trigger notifications as they come. You can then use your custom frontend component or UIWeb component of Push to display them.
 
-```jsx live 
-customPropMinimized="true"
+```jsx live
+customPropMinimized = "true";
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -205,7 +232,9 @@ customPropMinimized="true"
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
-  const [wallet, setWallet] = useState('0xD8634C39BBFd4033c0d3289C4515275102423681');
+  const [wallet, setWallet] = useState(
+    "0xD8634C39BBFd4033c0d3289C4515275102423681",
+  );
   const [notifItems, setNotifItems] = useState([]);
 
   const walletRef = useRef();
@@ -226,16 +255,16 @@ function App(props) {
     await provider.send("eth_requestAccounts", []);
 
     // Grabbing signer from provider
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
 
     console.log(userAlice);
 
     // // establish connection to stream
-    // const stream = userAlice.stream({ 
-    //   listen: [STREAM.NOTIF], 
+    // const stream = userAlice.stream({
+    //   listen: [STREAM.NOTIF],
     // })
 
     // stream connected
@@ -245,62 +274,75 @@ function App(props) {
 
     // Listen for notifications
     userAlice.stream.on(STREAM.NOTIF, (data) => {
-      console.log(data)
+      console.log(data);
     });
   };
 
   function NotificationInterface() {
     const inputStyle = {
-      padding: '10px',
-      margin: '10px 0',
-      width: '100%',
-      boxSizing: 'border-box',
+      padding: "10px",
+      margin: "10px 0",
+      width: "100%",
+      boxSizing: "border-box",
     };
 
     const textareaStyle = {
       ...inputStyle,
-      height: '100px',
-      resize: 'vertical',
+      height: "100px",
+      resize: "vertical",
     };
 
     const buttonStyle = {
-      padding: '10px 20px',
-      backgroundColor: '#dd44b9',
-      color: '#FFF',
-      border: 'none',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      marginTop: '20px',
+      padding: "10px 20px",
+      backgroundColor: "#dd44b9",
+      color: "#FFF",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      marginTop: "20px",
     };
 
     return (
-      <div style={{ width: 'auto', margin: '20px auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ width: "auto", margin: "20px auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ flex: 1 }}>
-            <h2>Push based mechanism for displaying notifcations on frontend</h2>
+            <h2>
+              Push based mechanism for displaying notifcations on frontend
+            </h2>
             <p />
-            <label>Put any wallet address and click on fetch notifications to see the live results. Click to expand <b>Live Editor</b> tab to see the code and play with it. For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
+            <label>
+              Put any wallet address and click on fetch notifications to see the
+              live results. Click to expand <b>Live Editor</b> tab to see the
+              code and play with it. For this demo, You will need Metamask (or
+              equivalent browser injected wallet), you will also need to sign a
+              transaction to see the notifications.
+            </label>
             <p />
             <label>Wallet address</label>
-            <input 
-              type="text" 
-              placeholder="Enter wallet address" 
+            <input
+              type="text"
+              placeholder="Enter wallet address"
               style={inputStyle}
               ref={walletRef}
               maxLength={80}
             />
           </div>
         </div>
-        <button style={buttonStyle} onClick={triggerNotification}>Trigger Notification</button>
+        <button style={buttonStyle} onClick={triggerNotification}>
+          Trigger Notification
+        </button>
 
-        <p /> 
+        <p />
         <p />
 
-        {notifItems.length > 0 ? <h3>{`Notification Items for ${wallet}`}</h3> : <></>
-        }
-        
+        {notifItems.length > 0 ? (
+          <h3>{`Notification Items for ${wallet}`}</h3>
+        ) : (
+          <></>
+        )}
+
         {notifItems.map((notifItemSingular, idx) => {
-          const { 
+          const {
             cta,
             title,
             message,
@@ -309,7 +351,7 @@ function App(props) {
             image,
             url,
             blockchain,
-            notification
+            notification,
           } = notifItemSingular;
 
           return (
@@ -322,12 +364,12 @@ function App(props) {
               icon={icon}
               image={image}
               url={url}
-              theme={'light'} // or can be dark
+              theme={"light"} // or can be dark
               chainName={blockchain}
               // chainName={blockchain as chainNameType} // if using Typescript
             />
-            );
-          })}
+          );
+        })}
       </div>
     );
   }
@@ -341,14 +383,22 @@ function App(props) {
 ```
 
 ## Bridge method implementation
-Bridge method is recommended when you want to do extra things when a notification is triggered to a wallet. 
+
+Bridge method is recommended when you want to do extra things when a notification is triggered to a wallet.
 
 For example, you might want to route them to telegram bot or use Web2 notification services of Apple or Google to display it on mobile home screen (completely different process than displaying notifications inside your app) which requires following their rules. There are couple of options to implement them —
 
 ### via Push delivery node
+
 Delivery node is the recomended way to setup your mobile home screen push notifications or to connect to Push protocol notification network via your OS!!
 
-<ABlock href="/docs/notifications/tutorials/integrate-notifications-via-delivery-node" title="Tutorial on how to implement bridge notification delivery mechanism for Push protocol using Push delivery node">Setup and bridge notifications via Push Delivery Node</ABlock>
+<ABlock
+  href="/docs/notifications/tutorials/integrate-notifications-via-delivery-node"
+  title="Tutorial on how to implement bridge notification delivery mechanism for Push protocol using Push delivery node"
+>
+  Setup and bridge notifications via Push Delivery Node
+</ABlock>
 
 ### via AWS SNS
+
 Delivery node is a decentralized solution while AWS SNS route is centralized. It is recommended to use delivery node but you can use AWS SNS incase you prefer Web2.5 approach — <ABlock href="/docs/notifications/tutorials/integrate-notifications-via-aws-sns" title="Tutorial on how to implement bridge notification delivery mechanism for Push protocol using AWS SNS">Setup and implement AWS SNS</ABlock>
