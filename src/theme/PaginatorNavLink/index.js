@@ -13,12 +13,26 @@ import styled from "styled-components";
 export default function PaginatorNavLink(props) {
   const { permalink, title, subLabel, isNext } = props;
   const history = useHistory();
-  return (
-    <NavLink onClick={() => history.push(permalink)}>
-      {subLabel && <div>{subLabel}</div>}
-      <div>{title}</div>
-    </NavLink>
-  );
+  if ((history?.location?.pathname).includes("blog")) {
+    return (
+      <NavLink onClick={() => history.push(permalink)}>
+        {subLabel && <div>{subLabel}</div>}
+        <div>{title}</div>
+      </NavLink>
+    );
+  } else
+    return (
+      <Link
+        className={clsx(
+          "pagination-nav__link",
+          isNext ? "pagination-nav__link--next" : "pagination-nav__link--prev",
+        )}
+        to={permalink}
+      >
+        {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
+        <div className="pagination-nav__label">{title}</div>
+      </Link>
+    );
 }
 
 const NavLink = styled.div`
