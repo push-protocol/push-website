@@ -517,13 +517,13 @@ Notification Feeds have the ability to display customized content. By adopting a
 | `*Italic*`                                                                       | For Emphasis     | For Italics                                           |
 | `***Bold&Italics***`                                                             | For Emphasis     | For Bold and Italics                                  |
 | `\n`                                                                             | For Segregation  | For new line                                          |
-| `<PUSHText color="white">Hello World</PUSHText>`                               | For colored text | For white color                                       |
-| `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                       | For colored text | Supports any color hexcode                            |
-| `<PUSHText color="primary">Hello World </PUSHText>`                            | For colored text | Push Primary colored Text                             |
-| `<PUSHText color="secondary">Hello World </PUSHText>`                          | For colored text | Push Secondary colored Text                           |
-| `<PUSHText color="tertiary">Hello World </PUSHText>`                           | For colored text | Push Tertiary colored Text                            |
-| `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>` | For URL's        | Underlined, Red Colored Text                          |
-| `[ts: 1699032018]`                                                               | For Timestamp    | converts Epoch timestamps to human readable timestamp |
+| `<span color="white">Hello World</span>`                               | For colored text | For white color                                       |
+| `<span color="#ANYHEXCODE"> Hello world </span>`                       | For colored text | Supports any color hexcode                            |
+| `<span color="primary">Hello World </span>`                            | For colored text | Push Primary colored Text                             |
+| `<span color="secondary">Hello World </span>`                          | For colored text | Push Secondary colored Text                           |
+| `<span color="tertiary">Hello World </span>`                           | For colored text | Push Tertiary colored Text                            |
+| `[PUSH website](https://push.org)` | For URL's        | Underlined, Red Colored Text                          |
+| `[timestamp: 1699032018]`                                                               | For Timestamp    | converts Epoch timestamps to human readable timestamp |
 ### Push Notification markdown live playground
 ```jsx live 
 // DO NOT FORGET TO IMPORT LIBRARIES
@@ -535,7 +535,7 @@ function App(props) {
       <h2>Markdown Notification to style your notification as per your need</h2>
           <NotificationItem
            notificationTitle={"Title"}
-           notificationBody={"***Bold&Italic*** \n **Bold** \n *Italic* \n <PUSHText color='green'>green text</PUSHText> \n <PUSHText color='#800080' link='https://push.org'>PUSH</PUSHText> \n [ts: 1699347011]"}
+           notificationBody={"***Bold&Italic*** \n **Bold** \n *Italic* \n <span color='green'>green text</span> \n [PUSH website](https://push.org) \n [timestamp: 1699347011]"}
            image={"https://push.org/assets/pushIcon.svg"}
            chainName={"ETH_TEST_GOERLI"}
            icon={"https://push.org/assets/pushIcon.svg"}
