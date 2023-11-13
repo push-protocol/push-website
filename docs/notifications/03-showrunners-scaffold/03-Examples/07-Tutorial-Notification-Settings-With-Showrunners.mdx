@@ -8,29 +8,27 @@ sidebar_position: 7
 image: "/assets/docs/previews/docs_notifications_tutorials_push_react_component_playground_example--push_sdk_react_playground.png"
 ---
 
-# Notification Settings with Showrunners
+# Trigger Notification Settings in Showrunners
 
 This tutorial is intended to get you up and going by providing a step-by-step tutorial in integrating notification settings in the showrunners framework. Checkout [Showrunners Docs](https://docs.push.org/developers/developer-tooling/showrunners-framework), [Showrunners Framework](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/) and [Channel Settings Demo](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/bank) for better understanding!
 
 <head>
   <title>
-    Notification Settings with Showrunners tutorial | Push Notifcation | Push Documentation
+    Notification Settings with Showrunners tutorial | Push Notification | Push Documentation
   </title>
 </head>
 
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-## Step 1: Setup the Showrunners in your local machine
+### Setup the Showrunners in your local machine
 
-For detailed, step-by-step guide visit the Showrunners [docs](https://docs.push.org/developers/developer-tooling/showrunners-framework).
+For detailed, step-by-step guide visit the Showrunners [docs](https://docs.push.org/developers/developer-tooling/showrunners-framework). First we need to create a folder in `src/showrunners/<your_channel_name>`
 
-## Step 2: Install Dependencies & start up
+### Install Dependencies & start up
 
 Navigate to the SDK directory and install required dependencies.
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
 cd push-showrunners-framework
@@ -39,33 +37,22 @@ docker-compose up
 yarn run dev
 ```
 
-  </TabItem>
-</Tabs>
 
-## Step 3: Import the Push SDK
+### Import the Push SDK
 
 After you have created a channel folder. Refer to Showrunners [docs](https://docs.push.org/developers/developer-tooling/showrunners-framework). Move to the [name]Channel.ts file and import the dependencies.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
 # Importing the Push SDK for notification settings
 import { PushAPI } from "@pushprotocol/restapi";
 ```
 
-  </TabItem>
-</Tabs>
 
-## Step 4: Initialize the user
+#### [Channel File](https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts)
 
 In order to send notification, we need to have the instance of the user channel. To get that, we need to add the below function in our 'Channel class'
 .
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```bash
-# Importing the Push SDK for notification settings
+```jsx
   async initializeUser() {
     const provider = new ethers.providers.WebSocketProvider(process.env.ALCHEMY_WEBSOCKET);
     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
@@ -82,14 +69,9 @@ In order to send notification, we need to have the instance of the user channel.
   }
 ```
 
-  </TabItem>
-</Tabs>
-
-## Step 5: Build the notification payload
+### Build the notification payload
 Design your own payload with custom values in the when you want to trigger notifications. To learn more about notification settings, refer to [docs](https://push.org/docs/notifications/build/create-channel-settings/)
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
  # Payload
@@ -109,15 +91,11 @@ Design your own payload with custom values in the when you want to trigger notif
     }
 ```
 
-  </TabItem>
-</Tabs>
 
-## Step 6: Setup Notification trigger
+### Setup Notification trigger
 
 We create a function that will send notifications depending upon the type. To get that, we need to add the below function in our 'Channel class'
 .
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
 # Importing the Push SDK for notification settings
@@ -132,9 +110,9 @@ We create a function that will send notifications depending upon the type. To ge
     }
 ```
 
-  </TabItem>
-</Tabs>
 
 You are all set to send notifications through the showrunners framework. Now, bundling up notification settings with web-sockets you can trigger custom notifications based on on-chain activities. Isn't this awesome?✨
 
 Explore more possibilities and ways to make it more useful for your users. Happy building🏆
+
+If you enjoyed this tutorial, Do join our [discord server](https://discord.com/invite/pushprotocol) to meet other dev and builders.
