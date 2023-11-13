@@ -8,4 +8,6 @@
 .img {
   height: auto;
   border-radius: 32px !important;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
