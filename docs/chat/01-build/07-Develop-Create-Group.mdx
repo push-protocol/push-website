@@ -24,6 +24,7 @@ Group chat is the latest exciting addition to Push Chat, for the first time ever
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -60,8 +61,6 @@ const createdGroup = await userAlice.chat.group.create(name);
 | -         | `options.rules`       | `any[]`    | -       | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](/docs/chat/build/conditional-rules-for-group) to understand rule engine and how to fine tune conditional rules of your group |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

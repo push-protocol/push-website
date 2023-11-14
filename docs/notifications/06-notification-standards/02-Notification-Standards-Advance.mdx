@@ -14,11 +14,13 @@ Notifications follow composable blocks that helps achieve modular structure and 
 
 These notifications are tied to wallet address of the user and are indexed by push nodes allowing any crypto frontend such as wallet, dapp or mobile app to query and display these notifications for the wallet users along with sending them out as push notifications.
 
+![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png "Representation of composable blocks of notification")
+
 <head>
   <title>Notification Standards (Advance) | Push Notifications | Push Documentation</title>
 </head>
 
-![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png "Representation of composable blocks of notification")
+import Details from "@theme/Details";
 
 ## Composability Structure
 
@@ -77,10 +79,7 @@ As identity formats like 0, 1 and 3 have single string payload, only identity 2 
 
 ### Verification Proof Examples
 
-import Details from "@theme/Details";
-
-<Details>
-<summary>Transaction Based (eip155:....)</summary>
+<Details summary="Transaction Based (eip155:....)">
 
 This signifies the verification from the on-chain, currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block.
 
@@ -366,8 +365,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 
 ### Payload Examples
 
-<Details>
-<summary>Standard Payload Structure</summary>
+<Details summary="Standard Payload Structure">
 
 ```json
 {
@@ -557,8 +555,7 @@ function App(props) {
 
 ### Content Examples
 
-<details>
-<summary>For Timestamp</summary>
+<Details summary="For Timestamp">
 
 ```
 
@@ -567,11 +564,10 @@ function App(props) {
 
 ```
 
-</details>
+</Details>
 
 
-<details>
-<summary>For Bold</summary>
+<Details summary="For Bold">
 
 ```
 

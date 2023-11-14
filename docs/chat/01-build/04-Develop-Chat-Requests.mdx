@@ -20,6 +20,7 @@ Any chat from a push user who is not your connection already to your wallet land
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -52,8 +53,6 @@ const bobAcceptAliceRequest = await userBob.chat.accept(aliceAddress);
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">200 OK</Details>
 

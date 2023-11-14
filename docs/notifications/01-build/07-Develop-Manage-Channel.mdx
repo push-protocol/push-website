@@ -18,6 +18,7 @@ This section covers all APIs related to managing channel including adding settin
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -47,8 +48,6 @@ const channelInfo = await userAlice.channel.info();
 | `channel` | `string` | -       | -       | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

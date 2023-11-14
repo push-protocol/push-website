@@ -18,6 +18,7 @@ This API is useful for creating a channel, which is the first step for sending a
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -60,8 +61,6 @@ const response = await userAlice.channel.create({
 | -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/create-channel/#create-channel-progress-object-parameters) |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

@@ -18,6 +18,7 @@ These APIs are useful for fetching list of all chats (or chat requests) that a u
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -52,8 +53,6 @@ const aliceChats = await userAlice.chat.list("CHATS");
 | -         | `options.limit`       | `number` | `10`                                               | The maximum number of items to retrieve per page |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

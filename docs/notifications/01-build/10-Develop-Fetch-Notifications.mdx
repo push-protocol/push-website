@@ -19,6 +19,7 @@ These APIs are useful for fetching list of all notification (inbox or spam) of a
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -54,8 +55,6 @@ const inboxNotifications = await userAlice.notification.list("INBOX");
 | -         | `options.raw`      | `boolean`  | False   | A boolean indicating whether to retrieve raw feed data.                                                                                                                                                          |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

@@ -19,6 +19,7 @@ These APIs enable you to receive notifications ( inbox or spam ) in real time wi
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 
 ## Stream Notification API
 
@@ -62,8 +63,6 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
 | -        | `STREAM.NOTIF`      | Whenever a new notification is emitted for the wallet |
 | -        | `STREAM.CONNECT`    | Whenever the stream establishes connection            |
 | -        | `STREAM.DISCONNECT` | Whenever the stream establishes connection            |
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response (STEAM.NOTIF - Notification inbox stream)">
 

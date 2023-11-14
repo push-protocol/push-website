@@ -19,6 +19,7 @@ These APIs are useful for fetching list of all channels subscribed by a user and
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
@@ -51,8 +52,6 @@ const aliceSubscriptions = await userAlice.notification.subscriptions();
 | -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag                                                                                                                                               |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">
 

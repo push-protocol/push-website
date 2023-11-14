@@ -18,6 +18,7 @@ Before you can start sending notifications, or receiving notifications from your
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 
 ## Initialize user API
 
@@ -65,8 +66,6 @@ When initializing your user, you can customize the process using several paramet
 | -          | `options.streamOptions`  | `{ listen?: STREAM[]; filter?: { channels?: string[]; chats?: string[]; }; connection?: { auto?: boolean; retries?: number; }; raw?: boolean; env?: ENV; enabled?: boolean;}` | -             | Specify steam options and filters while creating a Push Profile                                      |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-import Details from "@theme/Details";
 
 <Details summary="Expected response">200 OK</Details>
 
