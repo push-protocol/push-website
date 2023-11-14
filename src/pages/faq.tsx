@@ -28,7 +28,7 @@ import {
 } from '@site/src/css/SharedStyling';
 
 // Import Assets
-import ImageFAQ from '@site/static/assets/faq-projects.webp';
+import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
 import { BsChevronExpand } from 'react-icons/bs';
 
 // Internal Configs
@@ -739,7 +739,7 @@ function FAQ() {
 
   return (
     <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription} showNavbar='website'>
-       <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/faq" />
         <meta property="og:type" content="website" />
@@ -768,7 +768,7 @@ function FAQ() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
         
       <FAQWrapper>

@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_notifications_ns_notif_standards_advance--not
 
 # What is a Notification in Push protocol?
 
-Notifications follow composable blocks that helps achieve modular structure and helps in building on top of them. Any developer can utilize the notification protocol to send out notifications (on-chain or off-chain) to their users from a variety of platforms including web3 protocols, smart contracts, dapps, backend, etc. 
+Notifications follow composable blocks that helps achieve modular structure and helps in building on top of them. Any developer can utilize the notification protocol to send out notifications (on-chain or off-chain) to their users from a variety of platforms including web3 protocols, smart contracts, dapps, backend, etc.
 
 These notifications are tied to wallet address of the user and are indexed by push nodes allowing any crypto frontend such as wallet, dapp or mobile app to query and display these notifications for the wallet users along with sending them out as push notifications.
 
@@ -21,6 +21,7 @@ These notifications are tied to wallet address of the user and are indexed by pu
 ![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png "Representation of composable blocks of notification")
 
 ## Composability Structure
+
 Each notification is made up of these composable blocks:
 
 ```
@@ -35,15 +36,16 @@ Verification - To verify the notification
 - `Payload` - Each notification sent to the protocol is essentially a JSON payload which contains data about things a notification contains, notification recipients and even data to encrypt these notifications. This json payload is what makes Push Protocol payload content-independent and allows for expansion to several new types of notifications based on the community needs and as the communication protocol develops further.
 - `Content` - Notification Content Markdown standardize the content markdown and create a standard for styling and formatting.
 
-
 ## Notification Verification Proof
+
 Verification Proof is the outermost composable block that is sent along with the notification to help the network validate the notification sender, the chain from which the notification is sent, and the content of the notification along with any other validation that might be required.
 
 Verification proofs differ based on the platform from which they are sent. For instance, **smart contracts verification proof can be validated on-chain** and smart contract-based notifications will usually carry transaction hash proofs, while **off-chain / gasless notifications usually carry eip712 proofs**, though they are capable of carrying smart contract verification proof as well which makes it composable.
 
 ### Specifications
+
 | verificationProof                               | Definition                                                                                             | Proof of verification                                                                                                                                                                        |
-|-------------------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | eip155:chainId:txHash::uid::optionaluid         | Verification proof generated from transaction hash of EPNSComm smart contracts on Ethereum or Polygon. | The type can be proven by on-chain activity                                                                                                                                                  |
 | eip712v1:signature::uid::optionaluid            | Verification proof generated from off-chain EIP-712 signing of payload                                 | The type is proven by verifying the signature of eip712.                                                                                                                                     |
 | eip712v2:signature::uid::optionaluid            | Verification proof generated from off-chain EIP-712 signing of payload                                 | The type is proven by verifying the signature of eip712                                                                                                                                      |
@@ -55,32 +57,35 @@ Verification proofs differ based on the platform from which they are sent. For i
 
 ### Understanding Verification Proof
 
-1. `eip155:chainId:txHash::uid::optionaluid` - This signifies the on-chain verification. Currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block. 
+1. `eip155:chainId:txHash::uid::optionaluid` - This signifies the on-chain verification. Currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block.
 
-2. `eip712v1` - This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature. 
+2. `eip712v1` - This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature.
 
-  :::caution
-  eip-712v1 has a limitation to support only completed old payloads which include all the parameters of the payload which are part of notification, data, and recipients. 
+:::caution
+eip-712v1 has a limitation to support only completed old payloads which include all the parameters of the payload which are part of notification, data, and recipients.
 
-  As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is introduced which is identity-independent.
-  :::
+As identity formats like 0, 1 and 3 have single string payload, only identity 2 is compatible with eip-712v1. To overcome this limitation eip-712v2 is introduced which is identity-independent.
+:::
 
 3. `eip712v2` - eip712v2:&lt;Proof&gt;, it contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
 
 4. `thegraph` - Notification can be triggered through a subgraph as well
-  They need to call the addSubgraph function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
-    - **`GraphId`**: This will be the id of subgraph. It is usually represented as `githubid/subgraph` name e.g - `push/pushsubgraph`.
-    - **`notification number[counter]`** - It will keep the count of Notifications and will process in a successive manner.
-    - **`::uid::optionaluid`** - **::uid** is an optional delimiter which if present along with **optionaluid** allows the proof to be uniquely different.
+   They need to call the addSubgraph function from Push Core Contract to add the subgraph. The Push Node will pick up the same and verification proof for this consists of:
+   - **`GraphId`**: This will be the id of subgraph. It is usually represented as `githubid/subgraph` name e.g - `push/pushsubgraph`.
+   - **`notification number[counter]`** - It will keep the count of Notifications and will process in a successive manner.
+   - **`::uid::optionaluid`** - **::uid** is an optional delimiter which if present along with **optionaluid** allows the proof to be uniquely different.
 
 ### Verification Proof Examples
 
-<details>
+import Details from "@theme/Details";
+
+<Details>
 <summary>Transaction Based (eip155:....)</summary>
 
 This signifies the verification from the on-chain, currently, Ethereum and Polygon are supported networks and it can be verified by resolving the transaction hash from the respective chains and making sure that identity is present in the block.
 
 **1. For Identity 0**
+
 ```json
 {
   "verificationProof":"eip155:<chainId>:<TX-Hash>",
@@ -92,6 +97,7 @@ This signifies the verification from the on-chain, currently, Ethereum and Polyg
 ```
 
 **2. For Identity 1**
+
 ```json
 {
   "verificationProof":"eip155:<chainId>:<TX-Hash>",
@@ -103,30 +109,32 @@ This signifies the verification from the on-chain, currently, Ethereum and Polyg
 ```
 
 **3. For Identity 2**
+
 ```json
 {
-  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "verificationProof": "eip155:<chainId>:<TX-Hash>",
   "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
   "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
   "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
-  "identity": "2+<Payload-in-form-of-string>",
+  "identity": "2+<Payload-in-form-of-string>"
 }
 ```
 
 **3. For Identity 3**
+
 ```json
 {
-  "verificationProof":"eip155:<chainId>:<TX-Hash>",
+  "verificationProof": "eip155:<chainId>:<TX-Hash>",
   "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
   "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
   "source": "THE_GRAPH",
   "identity": "3+graph:<subgraph-id>+<notification number>"
 }
 ```
-</details>
 
-<details>
-<summary>EIP-712v1</summary>
+</Details>
+
+<Details summary="EIP-712v1">
 
 This signifies the verification from the off-chain, the verification is done through an EIP-712-based signature.
 
@@ -138,30 +146,30 @@ This has a limitation to support only the completed old payload which includes a
 
 ```json
 {
-    "channel": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
-    "recipient": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
-    "signature": "<Signature generated using eip712>",
-    "deployedContract": "0x99047d328496C14016222a998564B334A4A5723f",
-    "chainId": "42",
-    "payload": {
-        "data": {
-            "acta": "",
-            "aimg": "",
-            "amsg": "Current BTC price is - 47,785.10USD",
-            "asub": "",
-            "type": "1",
-            "secret": ""
-        }
-    },
-    "type": "1",
-    "op": "write"
+  "channel": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
+  "recipient": "0x69e666767Ba3a661369e1e2F572EdE7ADC926029",
+  "signature": "<Signature generated using eip712>",
+  "deployedContract": "0x99047d328496C14016222a998564B334A4A5723f",
+  "chainId": "42",
+  "payload": {
+    "data": {
+      "acta": "",
+      "aimg": "",
+      "amsg": "Current BTC price is - 47,785.10USD",
+      "asub": "",
+      "type": "1",
+      "secret": ""
+    }
+  },
+  "type": "1",
+  "op": "write"
 }
 ```
-</details>
 
+</Details>
 
-<details>
-<summary>EIP-712v2 - eip712v2:&lt;Proof&gt;</summary>
+<Details summary="EIP-712v2 - eip712v2:&lt;Proof&gt;">
+
 Contains a payload that is future compatible. It means the payload can be dynamic and can be extended for future reference.
 
 ```json
@@ -186,7 +194,7 @@ Contains a payload that is future compatible. It means the payload can be dynami
 
 ```json
 {
-  "verificationProof":"eip712v2:<Proof>",
+  "verificationProof": "eip712v2:<Proof>",
   "channel": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
   "recipient": "eip155:42 or 80001:0xd8634c39bbfd4033c0d3289c4515275102423681",
   "source": "THE_GRAPH",
@@ -200,30 +208,33 @@ Contains a payload that is future compatible. It means the payload can be dynami
   "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
   "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
   "source": "ETH_TEST_GOERLI or POLYGON_TEST_MUMBAI or ETH_MAINNET",
-  "identity": "2+{\\'notification\\':{\\'title\\':\\'TEST Title\\',\\'body\\':\\'Test Body\\'},\\'data\\':{\\'acta\\':\\'\\',\\'aimg\\':\\'\\',\\'amsg\\':\\'Test Message\\',\\'asub\\':\\'\\',\\'type\\':\\'3\\',\\'etime\\':\\'\\',\\'hidden\\':\\'\\'}}",
+  "identity": "2+{\\'notification\\':{\\'title\\':\\'TEST Title\\',\\'body\\':\\'Test Body\\'},\\'data\\':{\\'acta\\':\\'\\',\\'aimg\\':\\'\\',\\'amsg\\':\\'Test Message\\',\\'asub\\':\\'\\',\\'type\\':\\'3\\',\\'etime\\':\\'\\',\\'hidden\\':\\'\\'}}"
 }
 ```
-</details>
 
-<details>
-<summary>TheGraph</summary>
+</Details>
+
+<Details summary="TheGraph">
 
 ```json
 {
-  "verificationProof":`graph:<subgraph-id>+<notification number>`,
+  "verificationProof": `graph:<subgraph-id>+<notification number>`,
   "channel": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
   "recipient": "eip155:42 or 80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
-  "source":'THE_GRAPH',
-  "identity": `3+graph:<subgraph-id>+<notification number>`,
+  "source": "THE_GRAPH",
+  "identity": `3+graph:<subgraph-id>+<notification number>`
 }
 ```
-</details>
+
+</Details>
 
 ## Notification Identity
+
 Identity defines where the notification is coming from and the rules by which we can get the payload JSON of that specific notification. Currently, supported identities are Minimal, IPFS, Direct, and Subgraph.
 
 ### Specifications
-Each notification identity carries at least two parameters which are joined by +  delimiter.
+
+Each notification identity carries at least two parameters which are joined by + delimiter.
 
 - **`Storage Type`**: The first parameter represents **the identity type used** (Minimal, IPFS, Direct, etc). The type id represents where the payload is stored or coming from.
 - **`Payload storage info`**: Hash of the payload representing proof or pointer from which the payload can be retrieved. The second parameter represents either the **hash or identifying information** that can be used to fetch the necessary JSON which can also be made of composable information.
@@ -231,80 +242,82 @@ Each notification identity carries at least two parameters which are joined by +
 **Storage Types**
 As of now, there are 4 types of storage that are supported:
 
-| Id  | Type                   | Defintion                                          |
-| --- | ---------------------- | -------------------------------------------------- |
-| 0   | Minimal                | Recommended for Smart Contract                     |
-| 1   | IPFS                   | Indicates storage on IPFS                          |
-| 2   | Direct Payload         | Indicates storage of direct payload                |
-| 3   | SubGraph               | Indicates storage on the subgraph                  |
+| Id  | Type           | Defintion                           |
+| --- | -------------- | ----------------------------------- |
+| 0   | Minimal        | Recommended for Smart Contract      |
+| 1   | IPFS           | Indicates storage on IPFS           |
+| 2   | Direct Payload | Indicates storage of direct payload |
+| 3   | SubGraph       | Indicates storage on the subgraph   |
 
 ### Identity Examples
-<details>
-<summary>Identity Type 0</summary>
+
+<Details summary="Identity Type 0">
 
 **Format:** `0+<Notification Payload Type>+<Title>+<Body>`
 
 `<Notification Payload Type>`: Type of notification (Broadcast, Subset, Targeted, Secret, etc)
 
-`<Title>`: This will be the title of the Message. 
+`<Title>`: This will be the title of the Message.
 
 `<Body>`: This will be the body/description of the Message.
 
 **Example:**
+
 ```
 0+1+Hello+This is a broadacasted notification
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Identity Type 1</summary>
+<Details summary="Identity Type 1">
 
 **Format:** `1+<IPFS HASH (cid)>`
 
 `<IPFS HASH (cid)>`: The IPFS hash pointing to the payload. The payload should be as per Push protocol standard for Notification.
 
 **Example:**
+
 ```
 1+b45165ed3cd437b9ffad02a2aad22a4ddc69162470e2622982889ce5826f6e3d
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Identity Type 2</summary>
+<Details summary="Identity Type 2">
 
 **Format:** `2+<Payload in string format>`
 
 `<Payload in string format>`: The payload as per Push standard should be stringified and attested to the storage type.
 
 **Example:**
+
 ```
 2+{\\"notification\\":{\\"title\\":\\"TEST Title\\",\\"body\\":\\"Test Body\\"},\\"data\\":{\\"acta\\":\\"\\",\\"aimg\\":\\"\\",\\"amsg\\":\\"Test Message\\",\\"asub\\":\\"\\",\\"type\\":\\"3\\",\\"etime\\":\\"\\",\\"hidden\\":\\"\\"}}
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Identity Type 3</summary>
+<Details summary="Identity Type 3">
 
 **Format:** `3+<subgraphId>+<notification number[counter]>`
 
-`<subgraphId>`:  The subgraph id deployed in The Graph. It should be in the format of `<github id>/<subgraph name>`.
+`<subgraphId>`: The subgraph id deployed in The Graph. It should be in the format of `<github id>/<subgraph name>`.
 `notification number[counter]`: Every subgraph notification has a notification number attached. You will need to pass the subgraph number to identify which subgraph data should be sent as a notification.
 
-</details>
+</Details>
 
 ## Notification Payload
-Each notification sent to the protocol is essentially a JSON payload, bytes data, or hash/pointer of the JSON payload. 
+
+Each notification sent to the protocol is essentially a JSON payload, bytes data, or hash/pointer of the JSON payload.
 
 The protocol distinguishes payloads content which will contain the content which needs to be displayed, rules to display/morph the content, the recipients to which the content is meant to be delivered along with the encryption method used if the content is encrypted.
 
-The notification payload type for Push is infinitely extensible and opens a huge range of possibilities including multi-factor authentication, payments, blacklisting address (Multi-sig contract as a channel with exchanges as their subscribers), etc. 
+The notification payload type for Push is infinitely extensible and opens a huge range of possibilities including multi-factor authentication, payments, blacklisting address (Multi-sig contract as a channel with exchanges as their subscribers), etc.
 
 The data defined in the JSON payload they carry is used to interpret and extend that functionality.
 
 ### Specifications
+
 ```json
 {
 	"notification": {
@@ -325,35 +338,35 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 		0x1: null or [{
 			secret: [secret used to encrypt]
 		}],
-		0x2: null or [{ 
+		0x2: null or [{
 			secret: [secret used to encrypt]
 		}],
 		...
-		0xn: null or [{ 
+		0xn: null or [{
 			secret: [secret used to encrypt]
-		}] 
+		}]
 }
 ```
 
-| Payload variable | Description |
-|------------------|-------------|
-| notification (Required) | Represents the notification typically delivered on the home screen of the platform (mobile, tablet, web, extension, etc), the icon of the channel is automatically added to outline where the notification is coming from. |
-| title (Required) | The title of the message displayed on the screen differs from the data JSON because the title while transforming the payload can be different from the title presented. For example, secret notification title are always transformed to say Channel has sent you a secret notification. |
-| body (Required) | The body of the message displayed on the screen differs from the data JSON because the title while transforming the payload can be different from the title presented. For example, secret notification body are always transformed to say Please open the dApp / app to view your notification. |
-| data (Optional) | The data field present here forms the visual feedBox for the user. Indicates the data field the payload will carry. This allows the notification to transform according to the payload type and the content defined on the platform frontend (ie: app, dApp, wallet, etc). |
-| type (Required) | Each payload has a type that tells how the data should be interpreted, this type is mirrored on the protocol function call as well. |
-| sectype (Required) | is the encryption technique used for the secret/encrypted notification. In open notifs it can be entered null. |
-| asub (Optional) | is the subject shown in the feed item. |
-| amsg (Optional) | is the message shown in the feed item, has rich text formatting. |
-| acta (Optional) | is the call to action of that feed item. |
-| aimg (Optional) | is the image shown in the feed item, this field is also capable of carrying youtube links. |
-| etime (Optional) | if given, notif will be deleted after this in epoch |
-| recipients (Required) | Recipients address needs to be defined depending on the payload type, if 0x00 is provided it will represents all the subscribers of the channel and in the case of secret payload each subscriber address will be mapped with the secret. |
-| secret (Optional) | is required for encryption and decryption of payload data, this will be mapped with the user address as key-value pair. |
-
+| Payload variable        | Description                                                                                                                                                                                                                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| notification (Required) | Represents the notification typically delivered on the home screen of the platform (mobile, tablet, web, extension, etc), the icon of the channel is automatically added to outline where the notification is coming from.                                                                       |
+| title (Required)        | The title of the message displayed on the screen differs from the data JSON because the title while transforming the payload can be different from the title presented. For example, secret notification title are always transformed to say Channel has sent you a secret notification.         |
+| body (Required)         | The body of the message displayed on the screen differs from the data JSON because the title while transforming the payload can be different from the title presented. For example, secret notification body are always transformed to say Please open the dApp / app to view your notification. |
+| data (Optional)         | The data field present here forms the visual feedBox for the user. Indicates the data field the payload will carry. This allows the notification to transform according to the payload type and the content defined on the platform frontend (ie: app, dApp, wallet, etc).                       |
+| type (Required)         | Each payload has a type that tells how the data should be interpreted, this type is mirrored on the protocol function call as well.                                                                                                                                                              |
+| sectype (Required)      | is the encryption technique used for the secret/encrypted notification. In open notifs it can be entered null.                                                                                                                                                                                   |
+| asub (Optional)         | is the subject shown in the feed item.                                                                                                                                                                                                                                                           |
+| amsg (Optional)         | is the message shown in the feed item, has rich text formatting.                                                                                                                                                                                                                                 |
+| acta (Optional)         | is the call to action of that feed item.                                                                                                                                                                                                                                                         |
+| aimg (Optional)         | is the image shown in the feed item, this field is also capable of carrying youtube links.                                                                                                                                                                                                       |
+| etime (Optional)        | if given, notif will be deleted after this in epoch                                                                                                                                                                                                                                              |
+| recipients (Required)   | Recipients address needs to be defined depending on the payload type, if 0x00 is provided it will represents all the subscribers of the channel and in the case of secret payload each subscriber address will be mapped with the secret.                                                        |
+| secret (Optional)       | is required for encryption and decryption of payload data, this will be mapped with the user address as key-value pair.                                                                                                                                                                          |
 
 ### Payload Examples
-<details>
+
+<Details>
 <summary>Standard Payload Structure</summary>
 
 ```json
@@ -386,10 +399,9 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 }
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Broadcast Payload</summary>
+<Details summary="Broadcast Payload">
 
 ```json
 {
@@ -398,7 +410,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
     "body": "The intended message displayed on screen (180 Chars)"
   },
   "data": {
-    "type": "1" 
+    "type": "1"
     "sectype": null
     "asub": "[Optional] The subject of the message displayed inside app (80 Chars)",
     "amsg": "[Optional] The intended message displayed inside app (500 Chars)",
@@ -411,10 +423,9 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 }
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Targeted Payload</summary>
+<Details summary="Targeted Payload">
 
 ```json
 {
@@ -436,10 +447,9 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 }
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Subset Payload</summary>
+<Details summary="Subset Payload">
 
 ```json
 {
@@ -466,10 +476,9 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 }
 ```
 
-</details>
+</Details>
 
-<details>
-<summary>Encrypted Payload</summary>
+<Details summary="Encrypted Payload">
 
 ```json
 {
@@ -478,7 +487,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
     "body": "The intended message displayed on screen (180 Chars)"
   },
   "data": {
-    "type": "4" 
+    "type": "4"
     "sectype": "aes+eip85"
     "asub": "encrypted by secret using sectype | [Optional] The subject of the message displayed inside app (80 Chars)",
     "amsg": "encrypted by secret using sectype | [Optional] The intended message displayed inside app (500 Chars)",
@@ -502,7 +511,7 @@ The data defined in the JSON payload they carry is used to interpret and extend 
 }
 ```
 
-</details>
+</Details>
 
 ## Notification Content
 
@@ -510,23 +519,22 @@ Notification Feeds have the ability to display customized content. By adopting a
 
 ### Specifications
 
-| Markdown Format                                                                  | Use Case         | Styling effects              |
-| -------------------------------------------------------------------------------- | ---------------- | ---------------------------- |
-| **Bold**                                                                         | For Emphasis     | For Bold                     |
-| _Italic_                                                                         | For Emphasis     | For Italics                  |
-| **_Bold&Italics_**                                                               | For Emphasis     | For Bold and Italics         |
-|                                                                                  | For Segregation  | For new line                 |
-| `<PUSHText color="white">Hello World</PUSHText>`                                 | For colored text | For white color              |
-| `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                         | For colored text | Supports any color hexcode   |
-| `<PUSHText color="primary">Hello World </PUSHText>`                              | For colored text | Push Primary colored Text    |
-| `<PUSHText color="secondary">Hello World </PUSHText>`                            | For colored text | Push Secondary colored Text  |
-| `<PUSHText color="tertiary">Hello World </PUSHText>`                             | For colored text | Push Tertiary colored Text   |
-| `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>`   | For URL's        | Underlined, Red Colored Text |
-
+| Markdown Format                                                                | Use Case         | Styling effects              |
+| ------------------------------------------------------------------------------ | ---------------- | ---------------------------- |
+| **Bold**                                                                       | For Emphasis     | For Bold                     |
+| _Italic_                                                                       | For Emphasis     | For Italics                  |
+| **_Bold&Italics_**                                                             | For Emphasis     | For Bold and Italics         |
+|                                                                                | For Segregation  | For new line                 |
+| `<PUSHText color="white">Hello World</PUSHText>`                               | For colored text | For white color              |
+| `<PUSHText color="#ANYHEXCODE"> Hello world </PUSHText>`                       | For colored text | Supports any color hexcode   |
+| `<PUSHText color="primary">Hello World </PUSHText>`                            | For colored text | Push Primary colored Text    |
+| `<PUSHText color="secondary">Hello World </PUSHText>`                          | For colored text | Push Secondary colored Text  |
+| `<PUSHText color="tertiary">Hello World </PUSHText>`                           | For colored text | Push Tertiary colored Text   |
+| `<PUSHText color="green" link="https://www.epns.io"> EPNS website </PUSHText>` | For URL's        | Underlined, Red Colored Text |
 
 ### Content Examples
-<details>
-<summary>For Bold</summary>
+
+<Details summary="For Bold">
 
 ```
 
@@ -534,10 +542,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example -  **PUSH IMPROVEMENT PROPOSAL**
 
 ```
-</details>
 
-<details>
-<summary>For Italics</summary>
+</Details>
+
+<Details summary="For Italics">
 
 ```
 
@@ -545,10 +553,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example -  *Slant text*
 
 ```
-</details>
 
-<details>
-<summary>For Bold and Italics</summary>
+</Details>
+
+<Details summary="For Bold and Italics">
 
 ```
 
@@ -556,10 +564,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example -  ***Push guidelines***
 
 ```
-</details>
 
-<details>
-<summary>For new Line</summary>
+</Details>
+
+<Details summary="For new Line">
 
 ```
 
@@ -568,10 +576,10 @@ Notification Feeds have the ability to display customized content. By adopting a
                   * Content
 
 ```
-</details>
 
-<details>
-<summary>For white color</summary>
+</Details>
+
+<Details summary="For white color">
 
 ```
 
@@ -579,10 +587,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example -  <PUSHText color="white">w2w chat</PUSHText>
 
 ```
-</details>
 
-<details>
-<summary>For any color in hexcode</summary>
+</Details>
+
+<Details summary="For any color in hexcode">
 
 ```
 
@@ -590,10 +598,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example -  <PUSHText color=”#00FF00”> Push Nodes </PUSHText>
 
 ```
-</details>
 
-<details>
-<summary>For Push primary color</summary>
+</Details>
+
+<Details summary="For Push primary color">
 
 ```
 
@@ -601,10 +609,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example - <PUSHText color="primary"> Analytics dashboard </PUSHText>
 
 ```
-</details>
 
-<details>
-<summary>For Push secondary color</summary>
+</Details>
+
+<Details summary="For Push secondary color">
 
 ```
 
@@ -612,10 +620,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example - <PUSHText color="secondary">EPNS Dapp </PUSHText>
 
 ```
-</details>
 
-<details>
-<summary>For Push tetiary color</summary>
+</Details>
+
+<Details summary="For Push tetiary color">
 
 ```
 
@@ -623,10 +631,10 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example - <PUSHText color="tertiary">EPNS Browser extension</PUSHText>
 
 ```
-</details>
 
-<details>
-<summary>For Underlined, Red Colored</summary>
+</Details>
+
+<Details summary="For Underlined, Red Colored">
 
 ```
 
@@ -634,4 +642,5 @@ Notification Feeds have the ability to display customized content. By adopting a
 > Example - <PUSHText color="green" link="https://www.google.com">Hello World </PUSHText>
 
 ```
-</details>
+
+</Details>

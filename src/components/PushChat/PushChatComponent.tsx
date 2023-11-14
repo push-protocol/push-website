@@ -60,17 +60,18 @@ export const ChatComponent = () => {
               const uiweb = require("@pushprotocol/uiweb");
               
               const ChatUIProvider = uiweb.ChatUIProvider;
-              const ChatViewComponent = uiweb.ChatViewComponent;
-              // const darkChatTheme = uiweb.darkChatTheme;
+              const ChatView = uiweb.ChatView;
+              const MODAL_POSITION_TYPE = uiweb.MODAL_POSITION_TYPE;
 
               return (
                 <>
                   <ChatUIProvider theme={PushChatTheme}>
-                    <ChatViewComponent
+                    <ChatView
                       chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
                       limit={10}
                       isConnected={true}
-                      onGetTokenClick={()=>setShowFaucet(true)}
+                      onVerificationFail={()=>setShowFaucet(true)}
+                      verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
                     />
                   </ChatUIProvider>
                 </>

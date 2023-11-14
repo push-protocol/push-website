@@ -8,11 +8,13 @@ sidebar_position: 7
 image: "/assets/docs/previews/docs_chat_ui_components_advanced--themization.png"
 ---
 
- # Themization overview
-Customisable theme: Change the look of the components as per your need. 
-  
+# Themization overview
+
+Customisable theme: Change the look of the components as per your need.
+
 <head>
-  <title>Component Themization | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
+  <title>Component Themization | UI Components (@pushprotocol/uiweb) | Push Chat |
+    Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -20,116 +22,118 @@ import TabItem from "@theme/TabItem";
 import { ModalContainer } from "@site/src/css/SharedStyling";
 
 ## Usage
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem  value="js" attributes={{className: "codetab js"}} default>
 
-  ```typescript
-  interface IBorder {
-    chatViewComponent?: string;
-    chatProfile?: string;
-    messageInput?: string;
-    searchInput?:string;
-    modal?:string;
-    modalInnerComponents?:string;
-  }
-  interface IBorderRadius {
-    chatViewComponent?: string;
-    chatProfile?: string;
-    messageInput?: string;
-    searchInput?:string;
-    modal?:string;
-    modalInnerComponents?:string;
-  }
-  interface IBackgroundColor {
-    chatViewComponentBackground?: string;
-    chatProfileBackground?: string;
-    messageInputBackground?: string;
-    chatSentBubbleBackground?: string;
-    chatReceivedBubbleBackground?: string;
-    encryptionMessageBackground?: string;
-    buttonBackground?: string;
-    buttonDisableBackground?: string;
-    searchInputBackground?:string;
-    modalBackground?:string;
-    modalInputBackground?:string;
-    modalHoverBackground?:string;
-    toastSuccessBackground?: string;
-    toastErrorBackground?: string;
-    toastShadowBackground?: string;
-  }
+```typescript
+interface IBorder {
+  chatViewComponent?: string;
+  chatProfile?: string;
+  messageInput?: string;
+  searchInput?: string;
+  modal?: string;
+  modalInnerComponents?: string;
+}
+interface IBorderRadius {
+  chatViewComponent?: string;
+  chatProfile?: string;
+  messageInput?: string;
+  searchInput?: string;
+  modal?: string;
+  modalInnerComponents?: string;
+}
+interface IBackgroundColor {
+  chatViewComponentBackground?: string;
+  chatProfileBackground?: string;
+  messageInputBackground?: string;
+  chatSentBubbleBackground?: string;
+  chatReceivedBubbleBackground?: string;
+  encryptionMessageBackground?: string;
+  buttonBackground?: string;
+  buttonDisableBackground?: string;
+  searchInputBackground?: string;
+  modalBackground?: string;
+  modalInputBackground?: string;
+  modalHoverBackground?: string;
+  toastSuccessBackground?: string;
+  toastErrorBackground?: string;
+  toastShadowBackground?: string;
+}
 
-  interface ITextColor {
-    chatProfileText?: string;
-    messageInputText?: string;
-    chatSentBubbleText?: string;
-    chatReceivedBubbleText?: string;
-    timestamp?: string;
-    encryptionMessageText?: string;
-    buttonText?: string;
-    buttonDisableText?: string;
-    chatReceivedBubbleAddressText?: string;
-    chatReceivedBubbleTimestampText?: string;
-    chatSentBubbleTimestampText?: string;
-    searchInputText?:string;
-    searchPlaceholderText?:string;
-    modalHeadingText?:string;
-    modalSubHeadingText?:string;
-  }
-  interface IFont {
-    chatProfileText?: string;
-    messageInputText?: string;
-    chatSentBubbleText?: string;
-    chatReceivedBubbleText?: string;
-    timestamp?: string;
-    encryptionMessageText?: string;
-    chatReceivedBubbleAddressText?: string;
-    chatReceivedBubbleTimestampText?: string;
-    chatSentBubbleTimestampText?: string;
-    searchInputText?:string;
-    searchPlaceholderText?:string;
-  }
-  interface IFontWeight {
-    chatProfileText?: string;
-    messageInputText?: string;
-    chatSentBubbleText?: string;
-    chatReceivedBubbleText?: string;
-    timestamp?: string;
-    encryptionMessageText?: string;
-    chatReceivedBubbleAddressText?: string;
-    chatReceivedBubbleTimestampText?: string;
-    chatSentBubbleTimestampText?: string;
-    searchInputText?:string;
-    searchPlaceholderText?:string;
-  }
-  interface IIconColor {
-    emoji?: string;
-    attachment?: string;
-    sendButton?: string;
-    groupSettings?: string;
-  }
-  export interface IChatTheme {
-    borderRadius?: IBorderRadius;
+interface ITextColor {
+  chatProfileText?: string;
+  messageInputText?: string;
+  chatSentBubbleText?: string;
+  chatReceivedBubbleText?: string;
+  timestamp?: string;
+  encryptionMessageText?: string;
+  buttonText?: string;
+  buttonDisableText?: string;
+  chatReceivedBubbleAddressText?: string;
+  chatReceivedBubbleTimestampText?: string;
+  chatSentBubbleTimestampText?: string;
+  searchInputText?: string;
+  searchPlaceholderText?: string;
+  modalHeadingText?: string;
+  modalSubHeadingText?: string;
+}
+interface IFont {
+  chatProfileText?: string;
+  messageInputText?: string;
+  chatSentBubbleText?: string;
+  chatReceivedBubbleText?: string;
+  timestamp?: string;
+  encryptionMessageText?: string;
+  chatReceivedBubbleAddressText?: string;
+  chatReceivedBubbleTimestampText?: string;
+  chatSentBubbleTimestampText?: string;
+  searchInputText?: string;
+  searchPlaceholderText?: string;
+}
+interface IFontWeight {
+  chatProfileText?: string;
+  messageInputText?: string;
+  chatSentBubbleText?: string;
+  chatReceivedBubbleText?: string;
+  timestamp?: string;
+  encryptionMessageText?: string;
+  chatReceivedBubbleAddressText?: string;
+  chatReceivedBubbleTimestampText?: string;
+  chatSentBubbleTimestampText?: string;
+  searchInputText?: string;
+  searchPlaceholderText?: string;
+}
+interface IIconColor {
+  emoji?: string;
+  attachment?: string;
+  sendButton?: string;
+  groupSettings?: string;
+}
+export interface IChatTheme {
+  borderRadius?: IBorderRadius;
 
-    backgroundColor?: IBackgroundColor;
+  backgroundColor?: IBackgroundColor;
 
-    fontSize?: IFont;
+  fontSize?: IFont;
 
-    fontWeight?: IFontWeight;
+  fontWeight?: IFontWeight;
 
-    fontFamily?: string;
+  fontFamily?: string;
 
-    border?: IBorder;
-    iconColor?: IIconColor;
-    textColor?: ITextColor;
-    backdropFilter?: string;
-    scrollbarColor?: string;
+  border?: IBorder;
+  iconColor?: IIconColor;
+  textColor?: ITextColor;
+  backdropFilter?: string;
+  scrollbarColor?: string;
 
-    spinnerColor?: string;
-    
-  }
-  ```
-  ---
-  `lightChatTheme` and `darkChatTheme` are available as default but these can be customised as per need.
+  spinnerColor?: string;
+}
+```
+
+---
+
+`lightChatTheme` and `darkChatTheme` are available as default but these can be customised as per need.
 
   </TabItem>
 </Tabs>

@@ -88,7 +88,7 @@ npm start
 ### Step 7: Device registration
 - An endpoint is hosted as part of the delivery node project, which can be used for device registration.
 - Below is the API to create a mapping between the wallet address and the device token for which the messages need to be delivered.
-- <delivery_node_url> is the base URL of the Delivery node you have hosted.
+- `<delivery_node_url>` is the base URL of the Delivery node you have hosted.
 
 Below is the curl request of this endpoint
 

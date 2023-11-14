@@ -12,42 +12,47 @@ image: "/assets/docs/previews/docs_chat_develop--group_permissions.png"
 
 These APIs help in validating if you have permissions for a gated group.
 
-
 <head>
-  <title>Group Permissions | Push Chat | Push Documentation</title>
+  <title>Group Permissions | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
-
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 ## Get group permissions API
+
 To determine if the permissions are granted to a user in a particular group.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.group.permissions(chatid)
-  const groupPermissions = await userAlice.chat.group.permissions(chatid);
-  ```
+```typescript
+// userAlice.chat.group.permissions(chatid)
+const groupPermissions = await userAlice.chat.group.permissions(chatid);
+```
 
   </TabItem>
 </Tabs>
 
 ### Get group permissions parameters
 
-| Param    | Type     | Default | Remarks      |
-| -------- | -------- | ------- | ------------ |
+| Param      | Type     | Default | Remarks                                                                                       |
+| ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
 | _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+import Details from "@theme/Details";
 
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
+
+{" "}
 
 ```typescript
 {
@@ -63,5 +68,4 @@ To determine if the permissions are granted to a user in a particular group.
 | `chat`  | `boolean` | Refers if the Profile has access to chat in the group |
 | `rules` | `object`  | Moderation rules of the group                         |
 
-</details>
-
+</Details>

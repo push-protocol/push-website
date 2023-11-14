@@ -24,15 +24,13 @@ Now working together, Push is helping enhance the Aragon user experience by prov
 
 Partnering with Push Protocol will further enhance DAO management on Aragon, notifying subscribers any time the status of a proposal changes.
 
-<blockquote><i>“Effective decision-making requires context, but digital workers today often lack the bandwidth to stay on top of what’s happening in every community they participate in. Through this partnership with Push, we are bringing DAO activity closer to where DAO contributors are, making it more accessible for people to participate in the governance of the organizations they love most.” — <a href="https://twitter.com/_juliettech">Juliette Chevalier</a>, Leading devrel at Aragon</i>
-</blockquote>
+<blockquote>“Effective decision-making requires context, but digital workers today often lack the bandwidth to stay on top of what’s happening in every community they participate in. Through this partnership with Push, we are bringing DAO activity closer to where DAO contributors are, making it more accessible for people to participate in the governance of the organizations they love most.”</blockquote> — <a href="https://twitter.com/_juliettech">Juliette Chevalier</a>, Leading devrel at Aragon
 
 Aragon DAO members will receive notifications for status changes, namely, succeeded, executed, and defeated status.
 
 This will enable DAO participants to stay informed and be more actively involved in governance.
 
-<blockquote><i>“While we’re excited to be enhancing the UX of Aragon’s DAO communication, we’re also very excited   about the new standard we’ll be setting for affiliated DAOs created through Aragon and how we’ll be supporting a growing number of DAOs enhance their UX” — <a href="https://twitter.com/harshrajat">Harsh Rajat</a>, Co-founder of Push Protocol</i>
-</blockquote>
+<blockquote>“While we’re excited to be enhancing the UX of Aragon’s DAO communication, we’re also very excited   about the new standard we’ll be setting for affiliated DAOs created through Aragon and how we’ll be supporting a growing number of DAOs enhance their UX”</blockquote> — <a href="https://twitter.com/harshrajat">Harsh Rajat</a>, Co-founder of Push Protocol
 
 This partnership marks the beginning of our journey together to enhance governance and decision-making for digital organizations of the future.
 

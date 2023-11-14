@@ -10,27 +10,30 @@ image: "/assets/docs/previews/docs_chat_develop--manage_group.png"
 
 # Manage group overview
 
-This section covers all APIs related to managing groups including adding / removing members or admins, updating group info or fetching group info. 
-
+This section covers all APIs related to managing groups including adding / removing members or admins, updating group info or fetching group info.
 
 <head>
-  <title>Manage Group | Push Chat | Push Documentation</title>
+  <title>Manage Group | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
-
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 ## Get group info API
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.group.info(chatid)
-  const groupInfo = await userAlice.chat.group.info(chatid);
-  ```
+```typescript
+// userAlice.chat.group.info(chatid)
+const groupInfo = await userAlice.chat.group.info(chatid);
+```
 
   </TabItem>
 </Tabs>
@@ -39,14 +42,15 @@ import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/Sh
 
 ### Get group info parameters
 
-| Param    | Type     | Default | Remarks      |
-| -------- | -------- | ------- | ------------ |
+| Param      | Type     | Default | Remarks                                                                                       |
+| ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
 | _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+import Details from "@theme/Details";
+
+<Details summary="Expected response">
 
 ```typescript
 {
@@ -62,19 +66,19 @@ import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/Sh
 | `chat`  | `boolean` | Refers if the Profile has access to chat in the group |
 | `rules` | `object`  | Moderation rules of the group                         |
 
-</details>
+</Details>
 
 ## Update group API
+
 To update a group you created.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```typescript
-  // userAlice.chat.group.update(chatid, {options?})
-  const updatedGroup = await userAlice.chat.group.update(chatid, options);
-  ```
+```typescript
+// userAlice.chat.group.update(chatid, {options?})
+const updatedGroup = await userAlice.chat.group.update(chatid, options);
+```
 
   </TabItem>
 </Tabs>
@@ -83,22 +87,22 @@ To update a group you created.
 
 ### Update group parameters
 
-| Param        | Type                             | Subtype    | Default | Remarks                                                                                                        |
-| ------------ | -------------------------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------- |
-| _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group                                                         |
-| `options`    | `object`                         | -          | -       | Optional Configuration for creating group.                                                                     |
-| -            | `options.description`            | `string`   | -       | A description of the group.                                                                                    |
-| -            | `options.image`                  | `string`   | -       | Image for the group in [Base64](https://en.wikipedia.org/wiki/Base64) format                                   |
-| -            | `options.members`                | `string[]` | `[]`    | An array of member recipients. [Recipient supports a number of address format](/docs/chat/build/types-of-recipient)           |
-| -            | `options.admins`                 | `string[]` | -       | An array of admin recipients. [Recipient supports a number of address format](/docs/chat/build/types-of-recipient)            |
-| -            | `options.private`                | `boolean`  | `false` | Indicates if the group is private.                                                                             |
-| -            | `options.rules`                  | `any[]`    | -       | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](/docs/chat/build/conditional-rules-for-group) to understand rule engine and how to fine tune conditional rules of your group |
+| Param      | Type                  | Subtype    | Default                                                                                       | Remarks                                                                                                                                                                                                                                                                        |
+| ---------- | --------------------- | ---------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`chatId`_ | `string`              | -          | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
+| `options`  | `object`              | -          | -                                                                                             | Optional Configuration for creating group.                                                                                                                                                                                                                                     |
+| -          | `options.description` | `string`   | -                                                                                             | A description of the group.                                                                                                                                                                                                                                                    |
+| -          | `options.image`       | `string`   | -                                                                                             | Image for the group in [Base64](https://en.wikipedia.org/wiki/Base64) format                                                                                                                                                                                                   |
+| -          | `options.members`     | `string[]` | `[]`                                                                                          | An array of member recipients. [Recipient supports a number of address format](/docs/chat/build/types-of-recipient)                                                                                                                                                            |
+| -          | `options.admins`      | `string[]` | -                                                                                             | An array of admin recipients. [Recipient supports a number of address format](/docs/chat/build/types-of-recipient)                                                                                                                                                             |
+| -          | `options.private`     | `boolean`  | `false`                                                                                       | Indicates if the group is private.                                                                                                                                                                                                                                             |
+| -          | `options.rules`       | `any[]`    | -                                                                                             | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](/docs/chat/build/conditional-rules-for-group) to understand rule engine and how to fine tune conditional rules of your group |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+<Details summary="Expected response">
 
-  <summary><b>Expected response</b></summary>
+{" "}
 
 ```typescript
 {
@@ -220,34 +224,35 @@ To update a group you created.
   eventType: 'update'
 }
 ```
-</details>
 
+</Details>
 
 ## Add participants to group API
 
 ```typescript
 // await userAlice.chat.group.add(chatid, {options?})
 const addAdminToGroup = await userAlice.chat.group.add(groupChatId, {
-  role: 'ADMIN', // 'ADMIN' or 'MEMBER'
-  accounts: [account1, account2]
+  role: "ADMIN", // 'ADMIN' or 'MEMBER'
+  accounts: [account1, account2],
 });
 ```
 
 ---
 
 ### Add participants to group parameters
-| Param              | Type                | Subtype             | Default | Remarks                                         |
-| ------------------ | ------------------- | ------------------- | ------- | ----------------------------------------------- |
-| _`chatId`_         | `string`            | -                   | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
-| `options`          | `object`            | -                   | -       | Configuration for adding participants to group.                                               |
-| -                  | `role`              | `ADMIN` or `MEMBER` | -       | Role of added participant                       |
-| -                  | `accounts`          | `string[]`          | -       | Added participant addresses                     |
+
+| Param      | Type       | Subtype             | Default | Remarks                                                                                       |
+| ---------- | ---------- | ------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| _`chatId`_ | `string`   | -                   | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
+| `options`  | `object`   | -                   | -       | Configuration for adding participants to group.                                               |
+| -          | `role`     | `ADMIN` or `MEMBER` | -       | Role of added participant                                                                     |
+| -          | `accounts` | `string[]`          | -       | Added participant addresses                                                                   |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+<Details summary="Expected response">
 
-  <summary><b>Expected response</b></summary>
+{" "}
 
 ```typescript
 {
@@ -401,15 +406,15 @@ const addAdminToGroup = await userAlice.chat.group.add(groupChatId, {
 | `rules`                    | `Object`              | Group-specific moderation rules                                |
 | `eventType`                | `string`              | The type of event (create, update etc)                         |
 
-</details>
-
+</Details>
 
 ## Remove participants from group API
+
 ```typescript
 // await userAlice.chat.group.remove(chatid, {options?})
 const removeAdminFromGroup = await userAlice.chat.group.remove(groupChatId, {
-  role: 'ADMIN', // 'ADMIN' or 'MEMBER'
-  accounts: [account1, account2]
+  role: "ADMIN", // 'ADMIN' or 'MEMBER'
+  accounts: [account1, account2],
 });
 ```
 
@@ -417,18 +422,22 @@ const removeAdminFromGroup = await userAlice.chat.group.remove(groupChatId, {
 
 ### Remove participants from group parameters
 
-| Param              | Type                | Subtype             | Default | Remarks                                         |
-| ------------------ | ------------------- | ------------------- | ------- | ----------------------------------------------- |
-| _`chatId`_         | `string`            | -                   | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
-| `options`          | `object`            | -                   | -       | Configuration for adding participants to group.                                               |
-| -                  | `role`              | `ADMIN` or `MEMBER` | -       | Role of added participant                       |
-| -                  | `accounts`          | `string[]`          | -       | Added participant addresses                     |
+| Param      | Type       | Subtype             | Default | Remarks                                                                                       |
+| ---------- | ---------- | ------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| _`chatId`_ | `string`   | -                   | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
+| `options`  | `object`   | -                   | -       | Configuration for adding participants to group.                                               |
+| -          | `role`     | `ADMIN` or `MEMBER` | -       | Role of added participant                                                                     |
+| -          | `accounts` | `string[]`          | -       | Added participant addresses                                                                   |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+<Details summary="Expected response">
 
-  <summary><b>Expected response</b></summary>
+{" "}
+
+<summary>
+  <b>Expected response</b>
+</summary>
 
 ```typescript
 {
@@ -582,4 +591,4 @@ const removeAdminFromGroup = await userAlice.chat.group.remove(groupChatId, {
 | `rules`                    | `Object`              | Group-specific moderation rules                                |
 | `eventType`                | `string`              | The type of event (create, update etc)                         |
 
-</details>
+</Details>

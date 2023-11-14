@@ -565,8 +565,9 @@ export const AImp = styled.a`
   padding: 6px 12px 6px 8px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
+  line-height: 30px;
 
   &:before {
     content: "💡 ";
@@ -610,6 +611,10 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
+
+  & p {
+    margin: 0px;
+  }
 `;
 
 // Modal Container and Item - Small
@@ -630,6 +635,10 @@ export const ModalInner = styled(Button)`
   display: flex;
   gap: 10px;
 
+  & p {
+    margin: 0px;
+  }
+  
   & img {
     height: 32px;
     width: auto;

@@ -8,27 +8,29 @@ sidebar_position: 2
 image: "/assets/docs/previews/docs_video_develop--create_video_object.png"
 ---
 
-
 # Create video object overview
+
 Push Video API abstract away connection and encryption methods by exposing methods which lets you create video object that is used for video calls.
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 <head>
-  <title>Create Video Object | Push Video | Push Documentation</title>
+  <title>Create Video Object | Push Video | Push Documentation`}</title>
 </head>
 
-import { ABlock } from '@site/src/css/SharedStyling';
+import { ABlock } from "@site/src/css/SharedStyling";
 
 ## Prerequisites
 
 Some functions require passing the signer object with the function call. Fetching a signer for web3 wallets is quite easy.
-
 
 ```mdx-code-block
 <Tabs>
   <TabItem value="frontend" label="When using Frontend" default>
 ```
 
-  ```typescript
+```typescript
 // any other web3 ui lib is also acceptable
 import { useWeb3React } from "@web3-react/core";
 .
@@ -43,9 +45,9 @@ const signer = library.getSigner(account);
 <TabItem value="backend" label="When using Backend">
 ```
 
-  ```typescript
-const ethers = require('ethers');
-const PK = 'your_channel_address_secret_key';
+```typescript
+const ethers = require("ethers");
+const PK = "your_channel_address_secret_key";
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 ```
@@ -83,9 +85,9 @@ Now let's go over each property individually and understand how to set them.
 
 ### Understanding data variable
 
-* The `data` variable is an object that is used to store all of the video call-related data.
-* It is of type `PushAPI.VideoCallData` and should be initialized with `initVideoCallData`.
-* For React-based projects, this would basically be a React state, and for vanilla JS projects, it will be a simple JS variable.
+- The `data` variable is an object that is used to store all of the video call-related data.
+- It is of type `PushAPI.VideoCallData` and should be initialized with `initVideoCallData`.
+- For React-based projects, this would basically be a React state, and for vanilla JS projects, it will be a simple JS variable.
 
 The type `PushAPI.VideoCallData` is described below:
 
@@ -98,35 +100,37 @@ type IMediaStream = MediaStream | null;
 enum VideoCallStatus {
   // call hasn't been started yet
   UNINITIALIZED,
-  
+
   // call has been started by the initiator but not received by the receiver
   INITIALIZED,
-  
+
   // call has been received by the receiver but not connected yet
   RECEIVED,
-  
+
   // call has been connected, and both users can interact now
-  // MediaStream (includes both audio and video) exchange is now possible 
+  // MediaStream (includes both audio and video) exchange is now possible
   CONNECTED,
-  
+
   // call has been ended by one of the users
   DISCONNECTED,
-  
+
   // retrying to establish the call from the INITIALIZED state
   RETRY_INITIALIZED,
-  
+
   // retrying to establish the call from the RECEIVED state
   RETRY_RECEIVED,
 }
 
 type VideoCallData = {
-  meta: { // contains meta info of the video call
+  meta: {
+    // contains meta info of the video call
     chatId: string; // unique identifier for every push chat
     initiator: {
       address: string; // address of the initiator of the call
       signal: any; // signal data from the initiator
     };
-    broadcast?: { // will be used in Push Spaces
+    broadcast?: {
+      // will be used in Push Spaces
       livepeerInfo: any;
       hostAddress: string;
       coHostAddress: string;
@@ -140,15 +144,16 @@ type VideoCallData = {
     address: string; // address of the local peer/user
   };
   incoming: [
-  // This property is used to store the info of an incoming peer/user
-  {
-    stream: IMediaStream; // the stream object
-    audio: boolean | null; // whether incoming audio is on or not
-    video: boolean | null; // whether incoming video is on or not
-    address: string; // address of the incoming peer/user
-    status: VideoCallStatus; // video call status with a particular incoming peer
-    retryCount: number; // no. of retries required in establishing the call 
-  }];
+    // This property is used to store the info of an incoming peer/user
+    {
+      stream: IMediaStream; // the stream object
+      audio: boolean | null; // whether incoming audio is on or not
+      video: boolean | null; // whether incoming video is on or not
+      address: string; // address of the incoming peer/user
+      status: VideoCallStatus; // video call status with a particular incoming peer
+      retryCount: number; // no. of retries required in establishing the call
+    },
+  ];
 };
 ```
 
@@ -158,9 +163,9 @@ The `initVideoCallData` looks like the following:
 // As mentioned earlier, this should be used to initialize the data variable.
 const initVideoCallData: PushAPI.VideoCallData = {
   meta: {
-    chatId: '', 
+    chatId: "",
     initiator: {
-      address: '',
+      address: "",
       signal: null,
     },
   },
@@ -168,14 +173,14 @@ const initVideoCallData: PushAPI.VideoCallData = {
     stream: null,
     audio: null,
     video: null,
-    address: '',
+    address: "",
   },
   incoming: [
     {
       stream: null,
       audio: null,
       video: null,
-      address: '',
+      address: "",
       status: VideoCallStatus.UNINITIALIZED, // call is at the UNINITIALIZED status
       retryCount: 0,
     },
@@ -188,7 +193,7 @@ Creating and initializing the `data` variable is shown below:
 ```typescript
 // NOTE: You don't have to define initVideoCallData in your project.
 // Just import it using the following and use it:
-import { initVideoCallData } from '@pushprotocol/restapi/src/lib/video';
+import { initVideoCallData } from "@pushprotocol/restapi/src/lib/video";
 
 // 1. For a vanilla JS project
 let data: PushAPI.VideoCallData = initVideoCallData;
@@ -200,13 +205,13 @@ const [data, setData] = useState<PushAPI.VideoCallData>(initVideoCallData);
 
 ### setData function
 
-* `setData` is a function to update the video call data i.e., the `data` variable.
-* It is of type `(fn: (data: VideoCallData) => VideoCallData) => void` and is described below:
+- `setData` is a function to update the video call data i.e., the `data` variable.
+- It is of type `(fn: (data: VideoCallData) => VideoCallData) => void` and is described below:
 
 ```typescript
 /*
 - fn function is supplied by the caller of setData()
-- fn is a function that accepts current 'data' as input and returns updated 'data' 
+- fn is a function that accepts current 'data' as input and returns updated 'data'
 */
 const setData: : (fn: (data: VideoCallData) => VideoCallData) => void = (fn) => {
   /*
@@ -219,7 +224,7 @@ data = fn(data);
 
 ### Push Video Object API
 
-* Now we are ready to instantiate a new object of the Video class (can be accessed via PushAPI.video.Video) using the `signer`, `chainId`, `pgpPrivatekey`, `env` and the `setData` function.
+- Now we are ready to instantiate a new object of the Video class (can be accessed via PushAPI.video.Video) using the `signer`, `chainId`, `pgpPrivatekey`, `env` and the `setData` function.
 
 ```typescript
 const videoObject = new PushAPI.video.Video({
@@ -231,4 +236,10 @@ const videoObject = new PushAPI.video.Video({
 });
 ```
 
-<ABlock href="https://www.npmjs.com/package/@pushprotocol/restapi#constructor" title="NPM example of Push Video object contstructor" target="_blank">Video Object Constructor Example</ABlock>
+<ABlock
+  href="https://www.npmjs.com/package/@pushprotocol/restapi#constructor"
+  title="NPM example of Push Video object contstructor"
+  target="_blank"
+>
+  Video Object Constructor Example
+</ABlock>

@@ -89,7 +89,7 @@ const subscriptions = await PushAPI.user.getSubscriptions({
 });
 ```
 
-The <b>getSubscriptions</b> method returns a list of channels <b>[{ channel: '0xaddress', ... }]</b> subscribed by the user.
+The <b>getSubscriptions</b> method returns a list of channels <b>`[{ channel: '0xaddress', ... }]`</b> subscribed by the user.
 
 ## Fetching channel details
 You can use the <b>getChannel</b> method to fetch information about a specific channel. This method takes an options object as an argument, which allows you to specify the following parameters:
