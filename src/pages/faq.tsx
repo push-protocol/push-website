@@ -739,7 +739,7 @@ function FAQ() {
 
   return (
     <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription} showNavbar='website'>
-       <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/faq" />
         <meta property="og:type" content="website" />
@@ -768,7 +768,7 @@ function FAQ() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
         
       <FAQWrapper>
