@@ -64,6 +64,7 @@ const ReactLiveScope = {
   ChatViewList: createBrowserOnlyLibComponentUIWeb('ChatViewList'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb('MODAL_POSITION_TYPE'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
+  NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
 };
 
 export default ReactLiveScope;
