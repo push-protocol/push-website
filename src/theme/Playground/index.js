@@ -7,6 +7,8 @@ import {
 } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
+import GLOBALS from '@site/src/config/globals';
 import { Button, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import clsx from 'clsx';
 import React, { useState } from 'react';
@@ -19,7 +21,7 @@ function Header({children}) {
 function LivePreviewLoader() {
   // Is it worth improving/translating?
   // eslint-disable-next-line @docusaurus/no-untranslated-text
-  return <div>Loading...</div>;
+  return <Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>;
 }
 function Preview() {
   // No SSR for the live preview

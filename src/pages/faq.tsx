@@ -28,7 +28,7 @@ import {
 } from '@site/src/css/SharedStyling';
 
 // Import Assets
-import ImageFAQ from '@site/static/assets/faq-projects.webp';
+import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
 import { BsChevronExpand } from 'react-icons/bs';
 
 // Internal Configs

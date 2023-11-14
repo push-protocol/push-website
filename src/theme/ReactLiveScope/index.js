@@ -1,5 +1,7 @@
 
 import { default as BrowserOnly } from '@docusaurus/BrowserOnly';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
+import GLOBALS from '@site/src/config/globals';
 import React from 'react';
 
 // This function returns a promise that resolves to the library, 
@@ -33,7 +35,7 @@ function loadClientSideLibraryPushProtocolUIWeb(constantName) {
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
     return (
-      <BrowserOnly fallback={<div>Loading...</div>}>
+      <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>}>
         {() => {
           const Component = require('@pushprotocol/uiweb')[componentExportName];
           return <Component {...props} />;

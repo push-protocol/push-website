@@ -108,9 +108,12 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 - Once you are done with the article, raise a PR and a team member will review -> merge -> deploy the website with your newly added blogs.
 
-# Credits
-
-This website is built using [Docusaurus 2](https://docusaurus.io/). a modern static website generator.
+### Useful commands
+#### Convert all pngs to webp (Mac Terminal)
+- Browse to that folder and run ``for file in *; do cwebp -q 80 "$file" -o "${file%.*}.webp"; done``
 
 ### Useful references
 https://theochu.com/docusaurus/styling/
+
+# Credits
+This website is built using [Docusaurus 2](https://docusaurus.io/). a modern static website generator.
