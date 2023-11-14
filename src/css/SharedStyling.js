@@ -611,6 +611,10 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
+
+  & p {
+    margin: 0px;
+  }
 `;
 
 // Modal Container and Item - Small
