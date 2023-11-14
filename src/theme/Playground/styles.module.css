@@ -3,6 +3,7 @@
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);
   overflow: hidden;
+  padding: 0px;
 }
 
 .playgroundHeader {
@@ -28,6 +29,7 @@
 }
 
 .playgroundPreview {
+  font: var(--ifm-font-family-base) !important;
   padding: 1rem;
   background-color: var(--ifm-pre-background);
 }
