@@ -2,10 +2,6 @@
   margin-right: 10px;
 }
 
-.PushDocs .table-of-contents li {
-  margin: 0.4rem 0.8rem 0.4rem 1.8rem !important;
-}
-
 .PushDocs .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .PushDocs .docPage__5DB {
   width: 85%;
   align-self: center;
@@ -65,8 +61,16 @@
   margin-right: 10px;
 }
 
-.PushDocs .table-of-contents li {
+.PushDocs .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module .table-of-contents ul, .tocCollapsibleContent_vkbj .table-of-contents ul {
+  margin: 0px !important;
+}
+
+.PushDocs .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module ul li, .tocCollapsibleContent_vkbj ul li {
   margin: 0.4rem 0.8rem 0.4rem 1.8rem !important;
+}
+
+.PushDocs .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module ul li li, .tocCollapsibleContent_vkbj ul li li {
+  margin: 0px 10px 0px 10px !important;
 }
 
 .mainWrapper_eExm {
