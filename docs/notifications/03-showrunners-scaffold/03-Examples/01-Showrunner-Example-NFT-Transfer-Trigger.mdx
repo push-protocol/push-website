@@ -9,6 +9,7 @@ image: "/assets/docs/previews/docs_notifications_showrunners_examples--nft_trans
 ---
 
 # NFT transfer trigger via showrunner scaffold
+
 Alright, now that we understand the basics of showrunners and how to set it up. This guide will teach you how to get started with building one for your own use case.
 
 In order to get an adequate understanding of the Showrunners, let's get our hands dirty with it and build one.&#x20;
@@ -16,7 +17,8 @@ In order to get an adequate understanding of the Showrunners, let's get our hand
 A heads-up: :innocent: _We are going to build out simple showrunner that is going to monitor an event on some smart contract on the Ethereum blockchain. The event that we are going to pick is the `Transfer` event in an ERC721 contract. We will use the Crypto Coven contract for this purpose._
 
 <head>
-  <title>NFT transfer trigger | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+  <title>NFT transfer trigger | Example | Showrunners Scaffold | Push Notifications |
+    Push Documentation</title>
 </head>
 
 ### Creating the NFT Transfer Showrunner
@@ -68,9 +70,9 @@ export default class NFTTransferChannel extends EPNSChannel {
 
 **What's going on here?**
 
-* **W**e are creating a new class `NFTTransferChannel` which extends the Push Channel class.
-* In the `super() the` constructor we pass in certain arguments required for the channel like the `networkToMonitor` , name, and URL for the channel.
-* The `useOffChain the` parameter tells the showrunner to use the off-chain notification instead of an on-chain one.
+- **W**e are creating a new class `NFTTransferChannel` which extends the Push Channel class.
+- In the `super() the` constructor we pass in certain arguments required for the channel like the `networkToMonitor` , name, and URL for the channel.
+- The `useOffChain the` parameter tells the showrunner to use the off-chain notification instead of an on-chain one.
 
 **Getting the Contract address and ABI file**
 
@@ -86,17 +88,17 @@ You also will need to get the ABI file for the contract from [etherscan](https:/
 
 **What NEXT?**
 
-* Create a new file called `abi.json` containing the ABI obtained from [etherscan](https://etherscan.io/address/0x5180db8f5c931aae63c74266b211f580155ecac8)**.**
-* Then import the ABI at the top of the `nttTransferChannel.ts` file
+- Create a new file called `abi.json` containing the ABI obtained from [etherscan](https://etherscan.io/address/0x5180db8f5c931aae63c74266b211f580155ecac8)**.**
+- Then import the ABI at the top of the `nttTransferChannel.ts` file
 
 ```js
-import abi from './abi.json';
+import abi from "./abi.json";
 ```
 
 ### Developing the Channel Logic
 
-* Create a new variable in the class called `LAST_CHECKED_BLOCK` this is to store the last block number until which we checked for transfer events.
-* Inside the NFTTransferChannel class create a new method called `sendTransferEventNotif`
+- Create a new variable in the class called `LAST_CHECKED_BLOCK` this is to store the last block number until which we checked for transfer events.
+- Inside the NFTTransferChannel class create a new method called `sendTransferEventNotif`
 
 ```js
 async sendTransferEventNotif() {
@@ -143,58 +145,66 @@ Phewww! 🤯, that's a lot of CODE. We really need to break this down now, to ge
 
 ```js
 const sdk = await this.getSdk();
-const coven = await sdk.getContract('0x5180db8f5c931aae63c74266b211f580155ecac8', JSON.stringify(abi));
+const coven = await sdk.getContract(
+  "0x5180db8f5c931aae63c74266b211f580155ecac8",
+  JSON.stringify(abi),
+);
 const filter = await coven.contract.filters.Transfer();
 ```
 
-* In the above-mentioned lines, we are using the backend-SDK provided to us by the `EPNSChannel` class.
-* And using it to get the contract for the crypto coven. Then we are using the contract to create a filter for Transfer() event which we will use later to get events.
+- In the above-mentioned lines, we are using the backend-SDK provided to us by the `EPNSChannel` class.
+- And using it to get the contract for the crypto coven. Then we are using the contract to create a filter for Transfer() event which we will use later to get events.
 
 ```js
- if (!this.LAST_CHECKED_BLOCK) {
-      this.LAST_CHECKED_BLOCK = await coven.provider.getBlockNumber();
-  }
+if (!this.LAST_CHECKED_BLOCK) {
+  this.LAST_CHECKED_BLOCK = await coven.provider.getBlockNumber();
+}
 
-  const toBlock = await coven.provider.getBlockNumber();
-  this.logInfo(`No of events fetching events from  ${this.LAST_CHECKED_BLOCK} to ${toBlock}`);
-
+const toBlock = await coven.provider.getBlockNumber();
+this.logInfo(
+  `No of events fetching events from  ${this.LAST_CHECKED_BLOCK} to ${toBlock}`,
+);
 ```
 
-* Here, we are checking if the `LAST_CHECKED_BLOCK` is null and if it is not initialized we are initializing it with the current block number after fetching it.
-* The block is always the current block number.
+- Here, we are checking if the `LAST_CHECKED_BLOCK` is null and if it is not initialized we are initializing it with the current block number after fetching it.
+- The block is always the current block number.
 
 ```js
- const events = await coven.contract.queryFilter(filter, this.LAST_CHECKED_BLOCK, toBlock);
+const events = await coven.contract.queryFilter(
+  filter,
+  this.LAST_CHECKED_BLOCK,
+  toBlock,
+);
 
- this.logInfo(`No of events fetched ${events.length}`);
+this.logInfo(`No of events fetched ${events.length}`);
 ```
 
-* In the above-mentioned lines, we are fetching the `Transfer` events from the blockchain using the `filter` and from and **toBlock** up to which the events are to be fetched.
+- In the above-mentioned lines, we are fetching the `Transfer` events from the blockchain using the `filter` and from and **toBlock** up to which the events are to be fetched.
 
 ```js
-   for (const evt of events) {
-      const msg = `Coven #${evt.args.tokenId} transferred from ${evt.args.from} to ${evt.args.to}`;
-      const payloadMsg = `Coven [b:#${evt.args.tokenId}] transferred\nFrom :  [s:${evt.args.from}]\nTo : [t:${evt.args.to}]`;
-      const title = `Coven Transferred`;
-      const payloadTitle = `Coven Transferred`;
-      await this.sendNotification({
-        title: title,
-        payloadTitle: payloadTitle,
-        message: msg,
-        payloadMsg: payloadMsg,
-        notificationType: 1,
-        recipient: this.channelAddress,
-        cta: `https://opensea.io/assets/0x5180db8f5c931aae63c74266b211f580155ecac8/${evt.args.tokenId}`,
-        simulate: false,
-        image: null,
-      });
-    }
+for (const evt of events) {
+  const msg = `Coven #${evt.args.tokenId} transferred from ${evt.args.from} to ${evt.args.to}`;
+  const payloadMsg = `Coven [b:#${evt.args.tokenId}] transferred\nFrom :  [s:${evt.args.from}]\nTo : [t:${evt.args.to}]`;
+  const title = `Coven Transferred`;
+  const payloadTitle = `Coven Transferred`;
+  await this.sendNotification({
+    title: title,
+    payloadTitle: payloadTitle,
+    message: msg,
+    payloadMsg: payloadMsg,
+    notificationType: 1,
+    recipient: this.channelAddress,
+    cta: `https://opensea.io/assets/0x5180db8f5c931aae63c74266b211f580155ecac8/${evt.args.tokenId}`,
+    simulate: false,
+    image: null,
+  });
+}
 ```
 
-* Here we are looping through all the events obtained and sending a broadcast notification using the epns-backend-sdk
-* We are constructing a payload by creating a title, message, and cta for the notification.
-* A CTA is a call to action link which enables the notification to be clicked and redirected to the URL specified.
-* Here we are redirecting to the open sea page for the token
+- Here we are looping through all the events obtained and sending a broadcast notification using the epns-backend-sdk
+- We are constructing a payload by creating a title, message, and cta for the notification.
+- A CTA is a call to action link which enables the notification to be clicked and redirected to the URL specified.
+- Here we are redirecting to the open sea page for the token
 
 ### Finally! Setting up the CRON Tasks
 
@@ -202,22 +212,21 @@ Now that we have finished the actual logic for fetching the data and constructin
 
 For that, we use a jobs file for scheduling the method using the built-in scheduling engine that comes with the showrunners framework.
 
-* **Step 1**: Create a file called `nftTransferJobs.ts` inside the nftTransfer folder
-* **Step 2**: Import our channel class that we previously created and the necessary packages.
+- **Step 1**: Create a file called `nftTransferJobs.ts` inside the nftTransfer folder
+- **Step 2**: Import our channel class that we previously created and the necessary packages.
 
 ```js
-import { Container } from 'typedi';
-import schedule from 'node-schedule';
-import NFTTransferChannel from './nftTransferChannel';
+import { Container } from "typedi";
+import schedule from "node-schedule";
+import NFTTransferChannel from "./nftTransferChannel";
 ```
 
-* **Step 3**: Export a function containing the scheduling logic
+- **Step 3**: Export a function containing the scheduling logic
 
 ```js
-
-import { Container } from 'typedi';
-import schedule from 'node-schedule';
-import NFTTransferChannel from './nftTransferChannel';
+import { Container } from "typedi";
+import schedule from "node-schedule";
+import NFTTransferChannel from "./nftTransferChannel";
 
 export default () => {
   const startTime = new Date(new Date().setHours(0, 0, 0, 0));
@@ -225,17 +234,22 @@ export default () => {
   const tenMinuteRule = new schedule.RecurrenceRule();
   tenMinuteRule.minute = new schedule.Range(0, 59, 10);
 
-  channel.logInfo(`-- 🛵 Scheduling Showrunner ${channel.cSettings.name} -  Channel [on 5 mins ]`);
-  schedule.scheduleJob({ start: startTime, rule: tenMinuteRule }, async function () {
-    const taskName = `${channel.cSettings.name} snapShotProposalsTask(false)`;
-    try {
-      await channel.sendTransferEventNotif();
-      channel.logger.info(`🐣 Cron Task Completed -- ${taskName}`);
-    } catch (err) {
-      channel.logger.error(`❌ Cron Task Failed -- ${taskName}`);
-      channel.logger.error(`Error Object: %o`, err);
-    }
-  });
+  channel.logInfo(
+    `-- 🛵 Scheduling Showrunner ${channel.cSettings.name} -  Channel [on 5 mins ]`,
+  );
+  schedule.scheduleJob(
+    { start: startTime, rule: tenMinuteRule },
+    async function () {
+      const taskName = `${channel.cSettings.name} snapShotProposalsTask(false)`;
+      try {
+        await channel.sendTransferEventNotif();
+        channel.logger.info(`🐣 Cron Task Completed -- ${taskName}`);
+      } catch (err) {
+        channel.logger.error(`❌ Cron Task Failed -- ${taskName}`);
+        channel.logger.error(`Error Object: %o`, err);
+      }
+    },
+  );
 };
 ```
 
@@ -248,4 +262,3 @@ This is a very minimalistic example of how to get started with the showrunners f
 One can even go ahead and include an image in the notification using the `image` parameter in the `sendNotification` function.
 
 Can send targeted notifications, subset notifications to a set of addresses etc. The possibilities are unlimited!!
-

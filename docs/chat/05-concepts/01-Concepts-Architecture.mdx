@@ -10,18 +10,28 @@ image: "/assets/docs/previews/docs_chat_concepts_architecture_overview--push_cha
 
 # Architecture overview
 
-Push Chat is a web3 messaging protocol that enables wallet addresses to send and receive messages, offering a secure and privacy-focused alternative to traditional messaging apps. By leveraging blockchain technology, users can communicate directly via their wallet addresses without personal identifiers like phone numbers, email addresses, etc. 
+Push Chat is a web3 messaging protocol that enables wallet addresses to send and receive messages, offering a secure and privacy-focused alternative to traditional messaging apps. By leveraging blockchain technology, users can communicate directly via their wallet addresses without personal identifiers like phone numbers, email addresses, etc.
 
-Designed for mainstream adoption, Push Chat serves as a protocol that any dApp, web3 wallet, or backend can integrate to provide their users with messaging capabilities. 
+Designed for mainstream adoption, Push Chat serves as a protocol that any dApp, web3 wallet, or backend can integrate to provide their users with messaging capabilities.
 
 Additionally, chat messages in Push Chat come with built-in notifications, similar to what users are accustomed to in web2 messaging platforms, ensuring a familiar and convenient user experience. This combination of features makes Push Chat a vital tool for anyone seeking to harness Web3 communication's full potential.
 
 <head>
-  <title>Architecture Overview | Push Chat | Push Documentation</title>
+  <title>Architecture Overview | Push Chat | Push Documentation`}</title>
 </head>
 
-import CustomLinkCard from '@site/src/components/CustomLinkCard';
-import {ItemV, ItemH, Span, Button, Image, ModalContainer, ModalItemSmall, ModalItemSmallColumn, AImp } from '@site/src/css/SharedStyling';
+import CustomLinkCard from "@site/src/components/CustomLinkCard";
+import {
+  ItemV,
+  ItemH,
+  Span,
+  Button,
+  Image,
+  ModalContainer,
+  ModalItemSmall,
+  ModalItemSmallColumn,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 Since Push Protocol started with decentralized notifications, every chat message sent on the protocol has a notification built in. Whenever a message is sent to an address, the receiving address will receive a notification along with the message but only if they have accepted your chat request.
 
@@ -36,10 +46,10 @@ _**Push Nodes**_ are a network of nodes, where each node can have a different ro
 
 Their main task is to validate that:
 
-* &#x20;the payload is following the corresponding payload standard,
-* the sender can actually send the message, and signature validation,
-* if the payload is valid, the Push Nodes will store the message on IPFS and then send a notification (_considering that the address has opt-in_) to the receiver of the message.&#x20;
-* Additionally, to read the messages, the receiver client will query the Push Nodes for any new message that was sent to it.
+- &#x20;the payload is following the corresponding payload standard,
+- the sender can actually send the message, and signature validation,
+- if the payload is valid, the Push Nodes will store the message on IPFS and then send a notification (_considering that the address has opt-in_) to the receiver of the message.&#x20;
+- Additionally, to read the messages, the receiver client will query the Push Nodes for any new message that was sent to it.
 
 ## Spam prevention
 
@@ -61,8 +71,8 @@ The very first time an address wants to send a message to another peer, the addr
 
 When the user sees this message in its Request box, the user has 2 options:
 
-* It can accept it and start messaging back the address
-* It can ignore it (blocking users will be launched on the next version)
+- It can accept it and start messaging back the address
+- It can ignore it (blocking users will be launched on the next version)
 
 It must be noted that addresses don’t get notified about messages on the Request box. The notifications are only received if the address accepts the Request to talk to the other peer.&#x20;
 
@@ -108,10 +118,10 @@ The message payload content also contains the encrypted AES key in order to decr
 
 With the SDK, it will be easy for developers to integrate messaging into their dapps. The use cases are endless:
 
-* You can provide customer support to your users
-* Create groups to discuss governance proposals without relying on Discord
-* Chat with the community on a web3 game
-* DMs or DAO token gated conversation
-* Any other cool, crazy feature you can think of
+- You can provide customer support to your users
+- Create groups to discuss governance proposals without relying on Discord
+- Chat with the community on a web3 game
+- DMs or DAO token gated conversation
+- Any other cool, crazy feature you can think of
 
 Alright. Now that you have a clear picture of the Push Chat and its SDK, let's dive in and try to integrate the push chat into your application.

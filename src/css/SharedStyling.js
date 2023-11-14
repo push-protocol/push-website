@@ -565,8 +565,9 @@ export const AImp = styled.a`
   padding: 6px 12px 6px 8px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
+  line-height: 30px;
 
   &:before {
     content: "💡 ";
@@ -591,7 +592,6 @@ export const ABlock = styled.a`
   text-decoration: none;
   display: flex;
   transition: all 0.2s ease-in-out 0s;
-  
 
   &:after {
     content: ">";
@@ -611,7 +611,11 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
-`
+
+  & p {
+    margin: 0px;
+  }
+`;
 
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`
@@ -631,6 +635,10 @@ export const ModalInner = styled(Button)`
   display: flex;
   gap: 10px;
 
+  & p {
+    margin: 0px;
+  }
+  
   & img {
     height: 32px;
     width: auto;
@@ -695,4 +703,11 @@ export const ImageText = styled.div`
   text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
+`;
+
+export const ModalLarge = styled(ModalMid)`
+  min-width: 220px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
 `;

@@ -9,24 +9,29 @@ image: "/assets/docs/previews/docs_notifications_tutorial--token_transfer_notifi
 ---
 
 # Overview
+
 This tutorial explains how you can integrate notifications directly in your smart contract by importing Push comm smart contract and using its interface. We will be creating a simple token transfer notification for this guide.
 
 <head>
-  <title>Token Transfer Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation</title>
+  <title>Token Transfer Notification from Smart Contract | Tutorial | Push
+    Notifications | Push Documentation</title>
 </head>
 
 ## Prerequisites
+
 - Ensure you have created your channel - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ "Guide to create your channel for sending notifications from Push protocol")
 - Ensure you know what are channel delegates - [Adding channel delegates](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel "Guide to adding delegates for your channel")
 - Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ "Guide explaining the types of notificaitons")
 
 ## What's going to happen
+
 - We create a channel and copy it's address
 - We import interface and function call to trigger notification
 - We deploy the contract and add the contract address as delegate
 - Watch in 😲 as each transfer now notifies the wallet address about tokens received
 
 ## Tutorial time
+
 Push protocol also supports sending notifications to user wallets directly from your smart contract and that too by **only adding 2 lines of extra code to your smart contract** 🎉.
 
 The best way to do it is by creating your channel first > tweaking your smart contract with notification logic and finally adding the deployed contract address as delegate to your channel.
@@ -34,9 +39,10 @@ The best way to do it is by creating your channel first > tweaking your smart co
 To learn more about how to import interface and the function call of send notification, please see [send notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Smart contract intergace to send notification").
 
 ### Code
+
 ```solidity
 pragma solidity ^0.6.2;
- 
+
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/ERC20.sol";
 
 // PUSH Comm Contract Interface
@@ -81,7 +87,7 @@ contract Push is ERC20 {
                 )
             )
         );
-        
+
         return true;
     }
 
@@ -122,6 +128,7 @@ contract Push is ERC20 {
 ```
 
 ### Add delegate
+
 The only remaining step is to deploy your contract and then go to your channel and [add the smart contract address as delegate to your channel](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel "Add delegate to your channel") which will allow that smart contract address to send notification on behalf of your channel.
 
 That's it! Your channel should now send notification as soon as anyone transfer your tokens from one address to the other 🎉🎉🎉!

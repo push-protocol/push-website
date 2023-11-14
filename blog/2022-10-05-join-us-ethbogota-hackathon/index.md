@@ -3,17 +3,18 @@ slug: join-us-for-the-ethbogotá-2022-hackathon
 title: Join Us for the ETHBogotá 2022 Hackathon
 authors: [push]
 image: './cover-image.webp'
+text: "A few weeks ago, we teamed up with our frens at ETHGlobal for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive work."
 tags: [ Developer, Hackathons, Ethglobal, Web3, Push Notification]
 ---
 
 ![Cover image of Join Us for the ETHBogotá 2022 Hackathon](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # We’re partnering up with the wonderful ETHGlobal team (again!) to bring you a new hackathon — ETHBogotá, and let’s build something cool with Push over Devcon week!<br/>
 
 A few weeks ago, we teamed up with our frens at [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----96801a44ee64--------------------------------) for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive [work](https://twitter.com/pushprotocol/status/1575838134251626496).
 
-<!--truncate-->
 
 Now, it’s [ETHBogotá](https://ethglobal.com/events/ethbogota/prizes#push-protocol) time! This Friday, we’re challenging you to surprise and inspire the community with your projects — at the largest web3 hackathon in LATAM’s history and pushing new boundaries in web3 communication!
 
@@ -63,8 +64,4 @@ The Push crew will be around to answer questions and offer our support. If somet
 
 Good luck and have fun! We can’t wait to see what you build!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

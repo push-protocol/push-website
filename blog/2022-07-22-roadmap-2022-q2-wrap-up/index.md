@@ -3,11 +3,15 @@ slug: roadmap-2022-q2-wrap-up
 title: 'Roadmap 2022 — Q2 Wrap Up'
 authors: [push]
 image: './cover-image.webp'
+text: "Wow! Half of 2022 is done!
+Can’t believe it’s been more than six months since our Mainnet launch!
+And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!"
 tags: [Roadmaps, Ethereum, Epnsproject, Notifications, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Roadmap 2022 — Q2 Wrap Up](./cover-image.webp)
+<!--truncate-->
 
 Wow! Half of 2022 is done!
 
@@ -15,7 +19,6 @@ Can’t believe it’s been more than six months since our Mainnet launch!
 
 And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!
 
-<!--truncate-->
 
 At EPNS, we believe in the ‘build at speed’ philosophy and at the same time, support fellow builders in the community to help build and grow the ecosystem. To ensure that, as you might know, we had approved Grants for some amazing projects via our [Push Grants Program](https://gov.epns.io/c/grants/10).
 
@@ -36,7 +39,7 @@ Take a look at the latest <b>Development Updates for Q2!</b>
 ## Smart Contract V2 Development and Audit
 Smart Contracts V1.5 has now been developed completely. While we are working towards V2 of the contract, we decided to roll it out after V1.5 is launched. Some of the important features of EPNS Core V1.5 are:
 
-<b>Use of $PUSH token for Channel Creation:</b> EPNS Core Contract shall no longer require DAI tokens for channel creation. Instead, developers can now create Channels with a minimum deposit of 50 $PUSH tokens.
+**Use of $PUSH token for Channel Creation:** EPNS Core Contract shall no longer require DAI tokens for channel creation. Instead, developers can now create Channels with a minimum deposit of 50 $PUSH tokens.
 
 <b>Claim Reward Function:</b> V1.5 of the EPNS Core Contract will include a function that allows $PUSH Holders to claim rewards from the contract.
 
@@ -127,7 +130,7 @@ Apart from supporting the builders across multiple ecosystems, we also hosted an
 ### Featured
 Apart from achieving a majority of the roadmap goals, our team proudly represented EPNS on the Global stage at numerous events. And to reiterate our narrative of why Web3 communication matters, our co-founder Harsh Rajat delivered a special talk at Schelling Point.
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/h0drbcBMUUU" title="Why Web3 Communication Matters - Harsh Rajat at Schelling Point 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/h0drbcBMUUU" title="Why Web3 Communication Matters - Harsh Rajat at Schelling Point 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Not to mention the brilliant workshops hosted in Amsterdam, Graph Hack, and NYC. Here is one such workshop at ETH Amsterdam where Fabio Costa explains [building Web3 communications with EPNS](https://www.youtube.com/watch?v=AoIaB_lGayY). Must take a look at them if you missed out.
 
@@ -138,10 +141,6 @@ Let’s keep <b>PUSH</b>ing! 💪🏼
 <b>Remember:</b> The EPNS Team members will never DM you first, we never ask you to send money, crypto, private key, or any such thing. Stay safe out there, frens!
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 

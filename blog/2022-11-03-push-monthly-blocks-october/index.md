@@ -3,17 +3,18 @@ slug: push-monthly-blocks-october
 title: Push Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
+text: "Hello Push fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them."
 tags: [ Newsletter, Blockchain, Ethereum, Pushprotocol]
 ---
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # October 2022<br/>
 
 Hello <b>Push</b> fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them.
 
-<!--truncate-->
 
 ![What's New](./image-1.webp)
 
@@ -28,7 +29,7 @@ You can [read more here](https://twitter.com/pushprotocol/status/157548556606538
 ### Push Chat (Alpha)
 A wallet-to-wallet communication protocol! We started development activities some time ago and Push Chat made it Live at the Polygon Connect event in Bogota. <b>Wanna give it a try?</b> Ping us on Discord!<br/><br/>
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/n-5wsuRIS3s" title="PushChat Product Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/><br/>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/n-5wsuRIS3s" title="PushChat Product Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br/><br/>
 
 
 And it doesn’t end there. We are working to launch very soon the Push Chat SDK, which will enable hackers and development teams to implement wallet to wallet communication in your solutions!
@@ -97,8 +98,4 @@ Let’s keep <b>Pushing</b> 💪
 
 — The Push Team
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

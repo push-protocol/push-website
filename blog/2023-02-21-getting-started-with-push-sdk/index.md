@@ -4,15 +4,16 @@ slug: getting-started-with-push-sdk-uiweb-api
 title: 'Getting Started With Push SDK: uiweb API🛠️'
 authors: [push]
 image: './cover-image.webp'
+text: "The @pushprotocol/uiweb package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels."
 tags: [ Web3, Developer, Blockchain Development, Web3 Notifications]
 
 ---
 
 ![Cover image of Getting Started With Push SDK: uiweb API🛠️](./cover-image.webp)
+<!--truncate-->
 
 The <b>@pushprotocol/uiweb</b> package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels.
 
-<!--truncate-->
 
 In this blog post, we'll take a closer look at the components included in the <b>@pushprotocol/uiweb</b> package and how you can use them in your dApp.
 
@@ -294,8 +295,4 @@ In addition, try out the [Push SDK sandbox](https://github.com/ethereum-push-not
 
 Keep PUSHING! #PoweredbyPush
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

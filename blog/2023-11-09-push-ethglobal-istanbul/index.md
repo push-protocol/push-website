@@ -4,10 +4,15 @@ title: 'Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties ðŸ§
 authors: [push]
 image: './cover-image.webp'
 description: 'Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties'
+text: "Hackers of ETHGlobal Istanbul, get ready, weâ€™re coming!
+With Istanbul becoming the epicenter of web3 and blockchain innovation this November, we couldn't be more excited to be a part of it.
+"
 tags: [Pushprotocol, Web3, Blockchain Technology, EthGlobal]
 ---
 
 ![Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties](./cover-image.webp)
+
+<!--truncate-->
 
 
 TLDR;

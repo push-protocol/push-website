@@ -4,11 +4,13 @@ slug: developer-dao-x-push-enhancing-ux-through-web3-communication-tools
 title: Developer DAO x Push — Enhancing UX Through Web3 Communication Tools
 authors: [push]
 image: './cover-image.webp'
+text: "We are excited to have Developer DAO as a part of the Push ecosystem and look forward to enhancing the community experience via decentralized communication. This is only the start of an amazing journey with D_D!"
 tags: [ Web3, Push Notification, Giveaway, Workshop, Developer]
 
 ---
 
 ![Cover image of Developer DAO x Push — Enhancing UX Through Web3 Communication Tools](./cover-image.webp)
+<!--truncate-->
 
 TLDR;
 
@@ -16,7 +18,6 @@ TLDR;
 2. The [official push notifications channel](https://app.push.org/) for D_D will go live on Dec 13th.
 3. Push will be conducting [a workshop](https://lu.ma/d-d-push-protocol-workshop) on Dec 14th at 5:00 PM UTC to showcase how you can integrate notifications and chat functionality into your dapps
 4. There will be a surprise for all D_D members (if you join the workshop, you’ll be the first to know :)
-<!--truncate-->
 <center><b>.  .  .</b></center>
 
 If you’re a Web3 enthusiast who envisions an internet that is free and collectively owned, <a href="https://www.developerdao.com/"><b>Developer DAO</b></a> is the community for you. With over 5000 members from around the world, D_D continues to accelerate its mission of empowering a new wave of Web3 builders through constant innovations and educational efforts.
@@ -63,8 +64,4 @@ Be sure to join the workshop and drop any questions you might have in the #pushp
 See you at the workshop!
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

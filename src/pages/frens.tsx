@@ -21,13 +21,13 @@ import { objChannelList } from '@site/src/config/ChannelList';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import SpinnerSVG from '@site/static/assets/Spinner.gif';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { BiSearch } from 'react-icons/bi';
 import { FiChevronDown } from 'react-icons/fi';
 
 // Internal Configs
 import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
-import { device } from '@site/src/config/globals';
+import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 import { Content, H2, HeroHeader, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 
@@ -263,7 +263,7 @@ const FrensText = () => {
 
   return (
     <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription} showNavbar='website'>
-     <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/frens" />
         <meta property="og:type" content="website" />
@@ -292,7 +292,7 @@ const FrensText = () => {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
       <FrensWrapper>
         <AnimationIcon>
@@ -435,11 +435,7 @@ const FrensText = () => {
 
             {loading && (
               <ItemH>
-                <img
-                  src={SpinnerSVG}
-                  alt=""
-                  width={140}
-                />
+                <Spinner size={140} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
               </ItemH>
             )}
 

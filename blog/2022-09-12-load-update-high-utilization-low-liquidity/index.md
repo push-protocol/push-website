@@ -3,17 +3,18 @@ slug: loan-update-high-utilization-or-low-liquidity-please-check-your-position
 title: 'Loan Update: High Utilization or Low Liquidity, Please Check Your Position'
 authors: [push]
 image: './cover-image.webp'
+text: "Part 2 of the - An Introduction to Push Notification series will focus on use cases for push notifications in web3, and demonstrate how the web3 communication layer is the missing piece for the next iteration of the web. In this post, we will focus on decentralized finance (DeFi)."
 tags: [ Pn101, Push Notification, Web3, Developer, Blockchain]
 ---
 
 ![Cover image of 'Loan Update: High Utilization or Low Liquidity, Please Check Your Position'](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 2.1<br/>
 
 Part 2 of the <a href="https://medium.com/ethereum-push-notification-service/tagged/pn101"><i>An Introduction to Push Notification</i></a> series will focus on use cases for push notifications in web3, and demonstrate how the web3 communication layer is the missing piece for the next iteration of the web. In this post, we will focus on decentralized finance (DeFi).
 
-<!--truncate-->
 
 While there are trade-offs to be made, DeFi should not be a step back in financial processes or user experience. The web3 communication layer enables solutions to increase the DeFi experience significantly. Let’s take some time to consider some of the current pitfalls in DeFi.
 
@@ -55,8 +56,4 @@ Push services through push or alert nodes aren’t new, but a chain agnostic sol
 
 <i>By Danny Salman</i>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

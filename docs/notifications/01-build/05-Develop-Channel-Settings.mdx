@@ -13,14 +13,14 @@ image: "/assets/docs/previews/docs_notifications_develop--channel_settings.png"
 This section covers APIs related to creation of channel setting.
 
 <head>
-  <title>Channel Settings | Push Notifications | Push Documentation</title>
+  <title>Channel Settings | Push Notifications | Push Documentation`}</title>
 </head>
 
 ## What are channel settings?
 
-A channel may want to send notification for multiple categories. Ex: Coindesk may want to send notifications for tech, marketing, defi and so on. Similarly, Aave may want to send notifciation for certain loan liquidation value. 
+A channel may want to send notification for multiple categories. Ex: Coindesk may want to send notifications for tech, marketing, defi and so on. Similarly, Aave may want to send notifciation for certain loan liquidation value.
 
-Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it. 
+Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it.
 
 Once you have enabled channel settings, you can access settings prefrence of each user via [Fetch Subscription API](/docs/notifications/build/fetch-subscriptions/ "Fetch subscription API for channel settings"). You can also trigger notifications which target particular settings category via [Send Notification API](/docs/notifications/build/send-notification/ "Send notification API for sending notification meant for vertain category").
 
@@ -28,14 +28,15 @@ Once you have enabled channel settings, you can access settings prefrence of eac
 If a user hasn't opted in for a particular setting and you trigger notification for that setting category then the notification will be filtered out by Push Node.
 :::
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## Channel setting API
 
@@ -45,18 +46,18 @@ import {
 ```typescript
 // creates channel settings
 const createChannelSettingRes = userAlice.channel.settings([
-  { 
+  {
     type: 1, // Boolean type
-    default: 1, 
-    description: 'Receive marketing notifications' 
+    default: 1,
+    description: "Receive marketing notifications",
   },
   {
     type: 2, // Slider type
     default: 10,
-    description: 'Notify when loan health breaches',
+    description: "Notify when loan health breaches",
     data: { upper: 100, lower: 5, ticker: 1 },
   },
-])
+]);
 ```
 
   </TabItem>
@@ -77,24 +78,24 @@ const createChannelSettingRes = userAlice.channel.settings([
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 {
-  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32'
+  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
 }
 ```
 
-</details>
+</Details>
 
 ### Types of channel settings
 
 Push currently supports defining the following settings for your channel —
-- Boolean Setting - This setting allows users to set their preference as true / false. **For example:** *receive marketing notifications*
-- Slider Setting - This setting allows users to set their preference between a slider. **For example:** *alert when ENS domain expires (Between 1 - 7 days)*
 
-| Type            | ID    | Description                                                                           |
-| --------------- | ----- | ------------------------------------------------------------------------------------- |
-| `Boolean`       | `1`   | Set a setting to be yes or no, must have a **default**                                |
-| `Slider`        | `2`   | Set a setting to be slider, must have **upper** and **lower** range and a **default** |
+- Boolean Setting - This setting allows users to set their preference as true / false. **For example:** _receive marketing notifications_
+- Slider Setting - This setting allows users to set their preference between a slider. **For example:** _alert when ENS domain expires (Between 1 - 7 days)_
+
+| Type      | ID  | Description                                                                           |
+| --------- | --- | ------------------------------------------------------------------------------------- |
+| `Boolean` | `1` | Set a setting to be yes or no, must have a **default**                                |
+| `Slider`  | `2` | Set a setting to be slider, must have **upper** and **lower** range and a **default** |
