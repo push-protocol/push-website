@@ -4,24 +4,24 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {
-  PageMetadata,
   HtmlClassNameProvider,
+  PageMetadata,
   ThemeClassNames,
 } from "@docusaurus/theme-common";
-import BlogLayout from "@theme/BlogLayout";
-import BlogListPaginator from "@theme/BlogListPaginator";
-import SearchMetadata from "@theme/SearchMetadata";
-import BlogPostItems from "@theme/BlogPostItems";
-import styled from "styled-components";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
-import BlogHorizontalScroll from "./BlogHorizontalScroll";
-import MobileBlogHorizontalScroll from "./MobileBlogHorizontalScroll";
 import { Section, Span } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import BlogLayout from "@theme/BlogLayout";
+import BlogListPaginator from "@theme/BlogListPaginator";
+import BlogPostItems from "@theme/BlogPostItems";
+import SearchMetadata from "@theme/SearchMetadata";
+import clsx from "clsx";
+import React from "react";
+import styled from "styled-components";
+import BlogHorizontalScroll from "./BlogHorizontalScroll";
+import MobileBlogHorizontalScroll from "./MobileBlogHorizontalScroll";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -43,15 +43,16 @@ function BlogListPageMetadata(props) {
 }
 function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
-  console.log(items, "items");
   return (
     <>
-      <ListItem>
-        <ListSpan>Recent Updates</ListSpan>
-        <BlogPostItems items={items.slice(0, 4)} list={true} />
-      </ListItem>
+        <ListItem>
+          <ListSpan>{metadata.page == 1 ? 'Recent Updates' : `Page ${metadata.page}`}</ListSpan>
+          {metadata.page == 1 && 
+            <BlogPostItems items={items.slice(0, 4)} list={true} />
+          }
+        </ListItem>
       <GridItem>
-        <BlogPostItems items={items.slice(4, 11)} />
+        <BlogPostItems items={items.slice(metadata.page == 1 ? 4 : 0, 11)} />
       </GridItem>
       <PaginatorDiv>
         <BlogListPaginator metadata={metadata} />
