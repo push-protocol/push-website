@@ -52,7 +52,7 @@ function PrivacyMobile() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
         
       <PrivacyMobileWrapper>
         <TopSection>

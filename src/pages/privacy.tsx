@@ -23,7 +23,7 @@ function Privacy() {
 
   return (
     <Layout title={PageMeta.PRIVACY.pageTitle} description={PageMeta.PRIVACY.pageDescription} showNavbar='website'>
-       <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacy" />
         <meta property="og:type" content="website" />
@@ -52,7 +52,7 @@ function Privacy() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
         
       <PrivacyWrapper>
         <TopSection>
