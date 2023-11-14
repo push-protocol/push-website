@@ -12,17 +12,23 @@ image: "/assets/docs/previews/docs_chat_develop--group_requests.png"
 
 This section deals with API calls related to joining or leaving a group.
 
+import Head from "@docusaurus/Head";
 
-<head>
-  <title>Group Requests | Push Chat | Push Documentation</title>
-</head>
+<Head>
+  <title>{`Group Requests | Push Chat | Push Documentation`}</title>
+</Head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
-
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 ## Join group API
+
 ```typescript
 // await userAlice.chat.group.join(chatid)
 const joinGroup = await userAlice.chat.group.join(groupChatId);
@@ -31,13 +37,16 @@ const joinGroup = await userAlice.chat.group.join(groupChatId);
 ---
 
 ### Join group parameters
-| Param    | Type     | Default | Remarks                         |
-| -------- | -------- | ------- | ------------------------------- |
-| _`chatId`_         | `string`            | -                  | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
 
-<details>
+| Param      | Type     | Default | Remarks                                                                                       |
+| ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
 
-  <summary>Expected response</summary>
+import Details from "@theme/Details";
+
+<Details summary="Expected response">
+
+{" "}
 
 ```typescript
 {
@@ -191,26 +200,28 @@ const joinGroup = await userAlice.chat.group.join(groupChatId);
 | `rules`                    | `Object`              | Group-specific moderation rules                                |
 | `eventType`                | `string`              | The type of event (create, update etc)                         |
 
-</details>
+</Details>
 
 _`Important`_ Some groups might be gated and user might not be permitted to do certain actions, such as `sending message` or event `joining group`. You can find out if a group is gated by calling [chat.group.permissions API](/docs/chat/build/group-permissions)
 
 ## Leave group API
+
 ```typescript
 // await userAlice.chat.group.leave(chatid)
 const leaveGroup = await userAlice.chat.group.leave(groupChatId);
 ```
 
 ---
+
 ## Leave group parameters
 
-| Param    | Type     | Default | Remarks                         |
-| -------- | -------- | ------- | ------------------------------- |
+| Param      | Type     | Default | Remarks                                                                                       |
+| ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
 | _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
 
-<details>
+<Details summary="Expected response">
 
-  <summary><b>Expected response</b></summary>
+{" "}
 
 ```typescript
 {
@@ -364,4 +375,4 @@ const leaveGroup = await userAlice.chat.group.leave(groupChatId);
 | `rules`                    | `Object`              | Group-specific moderation rules                                |
 | `eventType`                | `string`              | The type of event (create, update etc)                         |
 
-</details>
+</Details>

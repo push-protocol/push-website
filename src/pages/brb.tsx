@@ -52,6 +52,7 @@ function BRB() {
       </Head>
 
         <BRBMainComponent />
+        
     </Layout>
   );
 }

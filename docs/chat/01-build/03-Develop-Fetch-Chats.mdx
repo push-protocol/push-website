@@ -12,9 +12,11 @@ image: "/assets/docs/previews/docs_chat_develop--fetch_chats.png"
 
 These APIs are useful for fetching list of all chats (or chat requests) that a user might have, along with providing calls to get latest message or historical messages between two users (or from a group).
 
-<head>
-  <title>Fetch Chats | Push Chat | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`Fetch Chats | Push Chat | Push Documentation`}</title>
+</Head>
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -53,13 +55,9 @@ const aliceChats = await userAlice.chat.list("CHATS");
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+import Details from "@theme/Details";
 
-
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 [
@@ -157,7 +155,7 @@ const aliceChats = await userAlice.chat.list("CHATS");
 | chatId           | `string`       | chat identifier                                                                                                                 |
 | groupInformation | `GroupDTO`     | if group chat, all group information                                                                                            |
 
-</details>
+</Details>
 
 ## Fetch latest chat API
 
@@ -178,19 +176,13 @@ const aliceChats = await userAlice.chat.latest(bobAddress);
 
 ### Fetch latest chat parameters
 
-| Param         | Type     | Default | Remarks                                                                                                                                                                                    |
-| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-
-
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 [
@@ -255,7 +247,7 @@ const aliceChats = await userAlice.chat.latest(bobAddress);
 | `encType`         | `string` | encryption type                             |
 | `encryptedSecret` | `string` | encrypted secret                            |
 
-</details>
+</Details>
 
 ---
 
@@ -281,18 +273,13 @@ const aliceChatHistoryWithBob = await userAlice.chat.history(bobAddress);
 | Param         | Type                | Subtype            | Default | Remarks                                                                                                                         |
 | ------------- | ------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string`            | -                  | -       | Target DID ( For Group Chats target is chatId, for 1 To 1 chat target is Push DID )                                             |
-| `options`     | `object`            | -                  | -       | Optional Configuration for fetching chat history                                                                                |
+| `options`     | `object` w          | -                  | -       | Optional Configuration for fetching chat history                                                                                |
 | -             | `options.reference` | `string` or `null` | -       | Refers to message refernce hash from where the previous messages are fetched. If null, messages are fetched from latest message |
 | -             | `options.limit`     | `number`           | 10      | No. of messages to be loaded                                                                                                    |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 [
@@ -371,4 +358,4 @@ const aliceChatHistoryWithBob = await userAlice.chat.history(bobAddress);
 | `encType`         | `string` | encryption type                             |
 | `encryptedSecret` | `string` | encrypted secret                            |
 
-</details>
+</Details>

@@ -109,7 +109,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
      <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
-        <title>Push (Previously EPNS) Communication Protocol of Web3</title>
+        <title>{`Push (Previously EPNS) Communication Protocol of Web3`}</title>
         <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
 
         {/* <!-- Facebook Meta Tags --> */}

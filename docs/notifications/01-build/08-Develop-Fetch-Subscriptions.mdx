@@ -12,20 +12,22 @@ image: "/assets/docs/previews/docs_notifications_develop--fetch_subscriptions.pn
 
 These APIs are useful for fetching list of all channels subscribed by a user and their settings (if any).
 
-<head>
-  <title>
-    Fetch Subscriptions | Push Notifications | Push Documentation
-  </title>
-</head>
+import Head from "@docusaurus/Head";
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+<Head>
+  <title>
+    {"Fetch Subscriptions | Push Notifications | Push Documentation"}
+  </title>
+</Head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## Fetch subscriptions API
 
@@ -34,7 +36,7 @@ import {
 
 ```typescript
 // userAlice.notification.subscriptions({options?})
-const aliceSubscriptions = await userAlice.notification.subscriptions()
+const aliceSubscriptions = await userAlice.notification.subscriptions();
 ```
 
   </TabItem>
@@ -44,41 +46,41 @@ const aliceSubscriptions = await userAlice.notification.subscriptions()
 
 ### Fetch subscriptions parameters
 
-| Param     | Type              | Subtype  | Default | Remarks                                                            |
-| --------- | ----------------- | -------- | ------- | ------------------------------------------------------------------ |
-| `options` | `object`          | -        | -       | An object containing additional options for subscriptions          |
+| Param     | Type              | Subtype  | Default | Remarks                                                                                                                                                                                                          |
+| --------- | ----------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options` | `object`          | -        | -       | An object containing additional options for subscriptions                                                                                                                                                        |
 | -         | `options.account` | `string` | -       | [Account supports a number of address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
-| -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.             |
-| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag |
+| -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.                                                                                                                                                           |
+| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per pag                                                                                                                                               |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
+import Details from "@theme/Details";
 
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 [
-  { 
-    channel: '0xD8634C39BBFd4033c0d3289C4515275102423681',
-    user_settings: null 
-  },
-  { 
-    channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
-    user_settings: null 
+  {
+    channel: "0xD8634C39BBFd4033c0d3289C4515275102423681",
+    user_settings: null,
   },
   {
-    channel: '0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25',
-    user_settings: '[{"type": 1, "user": false, "index": 1, "default": false, "description": "test1"}, {"type": 2, "user": 25, "index": 2, "default": 25, "enabled": 1, "lowerLimit": 23, "upperLimit": 35, "description": "test3"}, {"type": 2, "user": 64, "index": 3, "default": 56, "enabled": 1, "lowerLimit": 43, "upperLimit": 78, "description": "test5"}]'
-  }
-]
+    channel: "0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924",
+    user_settings: null,
+  },
+  {
+    channel: "0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25",
+    user_settings:
+      '[{"type": 1, "user": false, "index": 1, "default": false, "description": "test1"}, {"type": 2, "user": 25, "index": 2, "default": 25, "enabled": 1, "lowerLimit": 23, "upperLimit": 35, "description": "test3"}, {"type": 2, "user": 64, "index": 3, "default": 56, "enabled": 1, "lowerLimit": 43, "upperLimit": 78, "description": "test5"}]',
+  },
+];
 ```
 
-</details>
+</Details>
 
 ### User settings overview
+
 User settings are optional preferences set by the users when they are subscribing to a channel, provided the [channel has enabled settings](/docs/notifications/build/fetch-subscriptions). User settings are always returned as a response to the API call along with their subscription to the channel.
 
 This allows the channel to trigger notifications for certain categories (setting index) and enables users to choose what notifications they want to receive (for example: user might want to recieve loan liquidation alert when it reaches the threshold but not marketing notifications).
@@ -97,9 +99,9 @@ const aliceSubscriptions = await userAlice.notification.subscriptions()
     channel: '0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25',
     user_settings: '[{"type": 1, "user": false, "index": 1, "default": false, "description": "test1"}, {"type": 2, "user": 25, "index": 2, "default": 25, "enabled": 1, "lowerLimit": 23, "upperLimit": 35, "description": "test3"}, {"type": 2, "user": 64, "index": 3, "default": 56, "enabled": 1, "lowerLimit": 43, "upperLimit": 78, "description": "test5"}]'
   },
-  { 
+  {
     channel: '0xD8634C39BBFd4033c0d3289C4515275102423681',
-    user_settings: null 
+    user_settings: null
   },
 ]
 ```

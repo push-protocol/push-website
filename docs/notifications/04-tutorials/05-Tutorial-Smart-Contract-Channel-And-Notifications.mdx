@@ -9,24 +9,30 @@ image: "/assets/docs/previews/docs_notifications_tutorial_advance_create_channel
 ---
 
 # Overview
-This tutorial explains how you can create channel and trigger notifications directly from your smart contract by importing Push core and comm smart contract and using its interface. 
+
+This tutorial explains how you can create channel and trigger notifications directly from your smart contract by importing Push core and comm smart contract and using its interface.
 
 We will be creating a simple contract that allows owner to create a channel using `ipfshash` and send notification for this guide.
 
-<head>
-  <title>Channel Creation and Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
+
+<Head>
+  <title>{`Channel Creation and Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation`}</title>
+</Head>
 
 ## Prerequisites
+
 - Ensure you have know what is a channel (Don't need to create from dApp as we will be creating it from your smart contract) - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ "Guide to create your channel for sending notifications from Push protocol")
 - Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ "Guide explaining the types of notificaitons")
 
 ## What's going to happen
+
 - We import interface and function call to create channel function
 - We import interface and function call to trigger notification
 - Watch in 😲 as each payment in contract now notifies the wallet address about tokens received
 
 ## Tutorial time
+
 Along with the UI one can also use contract to contract interaction to create channel as well as send notification.
 
 Here is an example of an contract that uses Push Core to create channel and Push communicator to send notification whenever the contract receives fund.
@@ -34,6 +40,7 @@ Here is an example of an contract that uses Push Core to create channel and Push
 To learn more about how to import interface and the function call of send notification, please see [send notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Smart contract intergace to send notification").
 
 ### Code
+
 ```solidity
 //SPDX-License-Identifier: UNLICENSED
 pragma solidity >0.5.0 <0.9.0;
@@ -112,11 +119,11 @@ contract Fund  {
         )
     )));
   }
-  
+
   function transferFundToOwner() public payable onlyOwner{
     owner.transfer(address(this).balance);
   }
-  
+
   function checkAmount() public view returns(uint){
     return address(this).balance;
   }
@@ -133,8 +140,8 @@ Note: Make sure you have transferred some $PUSH to the contract address so that 
 
 The `createChannelWithEPNS` takes in IPFS hash which contains the channel details as per protocol standard. Then the function approves Push Core Contract to spend 50 PUSH. At last, it calls the `createChannelWithFees` of Push Core Contract to create the channel.
 
-After the channel is created, we want to notify all the subscribers whenever funds are sent to the contract. This is where we will use the Push Communicator contract to send notification. 
+After the channel is created, we want to notify all the subscribers whenever funds are sent to the contract. This is where we will use the Push Communicator contract to send notification.
 
-The `receive` function is a special function that gets executed whenever ether is sent to the contract. So, here we are calling the `sendNotification` of the communicator contract. The parameters include channel, recipient and the message body in the form of identity bytes. 
+The `receive` function is a special function that gets executed whenever ether is sent to the contract. So, here we are calling the `sendNotification` of the communicator contract. The parameters include channel, recipient and the message body in the form of identity bytes.
 
 That's it! Your channel should now send notification as soon as anyone transfer any ether to your contract 🎉🎉🎉!

@@ -66,9 +66,9 @@ While these are the high-level details related to Push Liquidity Rewards Program
 6. <b>Reward Harvesting</b>
 
 - The total rewards available and claimable in an epoch rely on the protocol’s fee pool, i.e. the amount of $PUSH earned by the protocol itself. The more $PUSH tokens accumulated by the protocol during an epoch, the more rewards for the stakers of that specific epoch.
-- When it comes to harvesting rewards from the contract, users harvest rewards for all the epochs in which they were staked. <b><i>
-This basically means the longer a user stakes, the more rewards they should be able to harvest.
-</i></b>
+- When it comes to harvesting rewards from the contract, users harvest rewards for all the epochs in which they were staked. 
+**This basically means the longer a user stakes, the more rewards they should be able to harvest.**
+
 - Mentioned below is the formula used to calculate the rewards of any staker in a given epoch (N) 👇
 
 ![User rewards calculation Image](./image-1.webp)

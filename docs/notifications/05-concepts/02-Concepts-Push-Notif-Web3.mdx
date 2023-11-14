@@ -10,20 +10,24 @@ image: "/assets/docs/previews/docs_notifications_push_notifs_for_web3--push_noti
 
 # Push Notifications For Web3
 
-Push Notifications are a crucial part of any dApp (or protocol) that wants to re-engage their users. It becomes more crucial for Web3 as users are anonymous wallet addresses (akin to web3 usernames) and you need a direct communication link between them and your protocol. 
+Push Notifications are a crucial part of any dApp (or protocol) that wants to re-engage their users. It becomes more crucial for Web3 as users are anonymous wallet addresses (akin to web3 usernames) and you need a direct communication link between them and your protocol.
 
 Push protocol solves this issue by providing the communication middleware that your dApp, smart contract, protocol or backend can use to seamlessly reach those users.
 
-<head>
-  <title>Push Notification for Web3 | Push Notifications | Push Documentation</title>
-</head>
+import Head from "@docusaurus/Head";
 
-import {
-  AImp,
-} from '@site/src/css/SharedStyling'
+<Head>
+  <title>{`
+    Push Notification for Web3 | Push Notifications | Push Documentation
+  `}</title>
+</Head>
+
+import { AImp } from "@site/src/css/SharedStyling";
 
 ## Who can Send Notifications?
+
 As per the current design of the protocol, these are the main actors who can send notifications:
+
 1. **Channel Owners:** The owners of a particular channel can send notifications to their subscribers.
 2. **Channel Delegates:** Channel owners can allow any particular wallet address to send notifications on behalf of their channel.
 
@@ -43,7 +47,7 @@ Note: One wallet address can only create one channel only the protocol.
 
 Although channel creation only happens on the Ethereum blockchain, the protocol is designed to be chain-agnostic, i.e., channel owners can choose to send notification on any chain of their choice and not just Ethereum network
 
-This is acheived by setting up a Channel alias 👇 
+This is acheived by setting up a Channel alias 👇
 
 :::
 
@@ -57,14 +61,16 @@ You can communicate with your subscribers on Polygon, BSC, Solana, etc. using an
 
 Channel Delegates are additional wallets that the channel creators have authorised to send notifications on the channels behalf. They are extremely useful to expand on sending notification capabilities and helps in ensuring an additional level of security besides enabling multiple wallets to send notifications on your behalf.
 
-
 ## Types of Notifications?
+
 Below listed are the different types of notifications you can send to the subscribers of your channel on Push protocol.
+
 - **Broadcast Notifications:** This type of notification is broadcasted or sent to all the subscribers of a channel at once.
 - **Targeted Notifications:** This type of notification is sent to a single wallet address.
 - **Subset Notifications:** This type of notification is sent to a a subset (or a group) of your channel subscribers.
 
 ### What are Delegated Notifications?
+
 Delegated notifications is a feature that allows channel owners to delegate their power of sending notifications to any other wallet address or multiple wallets of their choice.
 
 Once approved by the channel owner, a wallet address can send notifications on behalf of the channel to its subscribers. The channel owner can, however, revoke the approval at any given time.
