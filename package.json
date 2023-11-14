@@ -24,7 +24,7 @@
     "@docusaurus/preset-classic": "2.4.3",
     "@docusaurus/theme-live-codeblock": "2.4.3",
     "@mdx-js/react": "^1.6.22",
-    "@pushprotocol/restapi": "^1.4.31",
+    "@pushprotocol/restapi": "^1.4.35",
     "@pushprotocol/uiweb": "0.0.1-alpha.30",
     "@splidejs/react-splide": "^0.7.12",
     "@splinetool/react-spline": "2.2.6",
