@@ -54,6 +54,7 @@ const ReactLiveScope = {
   STREAM: loadClientSideLibraryPushProtocolRestAPIStream('STREAM'),
   // Continue using the BrowserOnly component for UI components
   Chat: createBrowserOnlyLibComponentUIWeb('Chat'),
+  SupportChat: createBrowserOnlyLibComponentUIWeb('SupportChat'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),
   ChatView: createBrowserOnlyLibComponentUIWeb('ChatView'),
