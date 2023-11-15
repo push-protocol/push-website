@@ -748,7 +748,7 @@ li {
 /* ------------------ */
 /* DOCUSAURUS BLOG OVERRIDE */
 /* ------------------ */
-.PushBlog .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module, .PushBlog .mainWrapper_eExm img {
+.PushBlog .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module, .PushBlog img {
  border-radius: 32px;
 }
 
