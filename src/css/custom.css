@@ -748,6 +748,10 @@ li {
 /* ------------------ */
 /* DOCUSAURUS BLOG OVERRIDE */
 /* ------------------ */
+.PushBlog .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module {
+ border-radius: 32px;
+}
+
 .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
   position: absolute;
   left: 50%;

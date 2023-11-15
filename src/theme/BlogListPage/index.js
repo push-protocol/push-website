@@ -20,8 +20,6 @@ import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
 import React from "react";
 import styled from "styled-components";
-import BlogHorizontalScroll from "./BlogHorizontalScroll";
-import MobileBlogHorizontalScroll from "./MobileBlogHorizontalScroll";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -45,13 +43,15 @@ function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
   return (
     <>
-        <ListItem>
-          <ListSpan>{metadata.page == 1 ? 'Recent Updates' : `Page ${metadata.page}`}</ListSpan>
-          {metadata.page == 1 && 
-            <BlogPostItems items={items.slice(0, 4)} list={true} />
-          }
-        </ListItem>
-      <GridItem>
+      <ListItem>
+        <ListSpan>
+          {metadata.page == 1 ? "Recent Updates" : `Page ${metadata.page}`}
+        </ListSpan>
+        {metadata.page == 1 && (
+          <BlogPostItems items={items.slice(0, 4)} list={true} />
+        )}
+      </ListItem>
+      <GridItem marginTop={metadata.page == 1 ? true : false}>
         <BlogPostItems items={items.slice(metadata.page == 1 ? 4 : 0, 11)} />
       </GridItem>
       <PaginatorDiv>
@@ -73,61 +73,11 @@ export default function BlogListPage(props) {
         <BlogLayout></BlogLayout>
       </div>
 
-      {/* <SpaceSection>
-        <SpaceContent className="contentBox">
-          {!isSwiper ? (
-            <BlogHorizontalScroll {...props} />
-          ) : (
-            <MobileBlogHorizontalScroll {...props} />
-          )}
-        </SpaceContent>
-      </SpaceSection> */}
-
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
     </HtmlClassNameProvider>
   );
 }
-
-const SpaceSection = styled(Section)`
-  width: 100%;
-  padding: 0px 0px 20px 0px;
-  // padding: 180px 0px 20px 0px;
-  // min-height: 70vh;
-  // max-height: 70vh;
-  background: #121315;
-  border-radius: 0 0 48px 48px;
-
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
-  }
-`;
-
-export const SpaceContent = styled.div`
-  // padding: ${(props) => props.padding || "40px 0px"};
-
-  &.contentBox {
-    max-width: 1140px;
-  }
-
-  @media (max-width: 1200px) {
-    padding: ${(props) => props.padding || "10px 0px"};
-
-    &.contentBox {
-      width: 100%;
-    }
-  }
-
-  @media ${device.tablet} {
-    padding: ${(props) => props.padding || "10px 0px"};
-
-    &.contentBox {
-      width: 100%;
-    }
-  }
-`;
 
 const GridItem = styled.div`
   width: 1120px !important;
@@ -135,7 +85,8 @@ const GridItem = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 33px;
   box-sizing: border-box;
-  margin: 100px auto 0 auto;
+  margin: ${(props) =>
+    props.marginTop ? "100px auto 0 auto" : "30px auto 0 auto"};
 
   @media (max-width: 1200px) {
     width: 90% !important;
