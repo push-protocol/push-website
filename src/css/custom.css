@@ -751,12 +751,17 @@ li {
 .PushBlog .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module, .PushBlog img {
  border-radius: 32px;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .PushBlog .BlogPostPage__BlogItem-sc-a3o68z-0{
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
   }
+
+  .PushBlog .main-wrapper .container article,.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article {
+    width: 90% !important;
+    margin: 0 auto !important;
 }
+} */
 
 
 .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
