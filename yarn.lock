@@ -3484,10 +3484,10 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@^1.1.17":
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.1.17.tgz#f2416edc1db59cf67b480c639687cc8e8ca18b5f"
-  integrity sha512-Ug6jKTPyOx4gjKv7MYZanJwygIVb7Wl59gEElxxmFPyFmqmRSt33d99yxMXnGZ2EQdiePDu+sHBritPXkVl4xg==
+"@pushprotocol/uiweb@^1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.1.18.tgz#d466fd6f78d7decf6aabb8e9a5d01ff1f08a97ab"
+  integrity sha512-iuvVFfkPpFsHUUaVNEiTGuZvkOLBbm9ihg2YYqPzVQkFDAbH87uLc9pjTXOQQDAILDBE7dXy95GJvXtaz4ljKQ==
   dependencies:
     "@livekit/components-react" "^1.2.2"
     "@livekit/components-styles" "^1.0.6"
