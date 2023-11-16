@@ -108,7 +108,7 @@ const TagsHeader = styled.header`
 
   @media ${device.tablet} {
     flex-direction: column;
-    width: 100% !important;
+    width: 90% !important;
     align-items: flex-start;
   }
 `;
@@ -122,7 +122,7 @@ const GridItem = styled.div`
   margin: 50px auto 0 auto;
 
   @media ${device.laptopL} {
-    width: 100% !important;
+    width: 90% !important;
   }
 
   @media ${device.tablet} {
