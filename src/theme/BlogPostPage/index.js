@@ -21,6 +21,7 @@ import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import TOC from "@theme/TOC";
 import FooterItem from "./FooterItem";
 import styled from "styled-components";
+import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogPostPageContent({ sidebar, children }) {
   const { metadata, toc } = useBlogPost();
@@ -68,6 +69,8 @@ const BlogItem = styled.div`
   margin: 0 auto;
 
   @media (max-width: 1024px) {
-    width: 90% !important;
+    width: 100% !important;
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    box-sizing: border-box;
   }
 `;

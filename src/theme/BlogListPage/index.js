@@ -22,7 +22,7 @@ import React from "react";
 import styled from "styled-components";
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogListPageMetadata(props) {
   const { metadata } = props;
@@ -89,7 +89,9 @@ const GridItem = styled.div`
     props.marginTop ? "100px auto 0 auto" : "30px auto 0 auto"};
 
   @media (max-width: 1200px) {
-    width: 90% !important;
+    width: 100% !important;
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    box-sizing: border-box;
     margin: 10px auto 0 auto;
     gap: 30px;
   }
@@ -110,7 +112,9 @@ const ListItem = styled.div`
   margin: 50px auto auto auto;
 
   @media (max-width: 1200px) {
-    width: 90% !important;
+    width: 100% !important;
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    box-sizing: border-box;
     margin: 10px auto 0 auto;
   }
 `;
