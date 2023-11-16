@@ -233,17 +233,8 @@ function App(props) {
   );
   const [progressTexts, setProgressTexts] = useState([]);
   const [notifItems, setNotifItems] = useState([]);
-  const walletRef = useRef();
-
-  useEffect(() => {
-    if (walletRef.current) {
-      walletRef.current.value = wallet;
-    }
-  }, [wallet]);
 
   const triggerNotification = async () => {
-    const walletText = walletRef.current.value;
-
     // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -347,14 +338,6 @@ function App(props) {
               transaction to see the notifications.
             </label>
             <p />
-            <label>Wallet address</label>
-            <input
-              type="text"
-              placeholder="Enter wallet address"
-              style={inputStyle}
-              ref={walletRef}
-              maxLength={80}
-            />
           </div>
         </div>
         <div>
