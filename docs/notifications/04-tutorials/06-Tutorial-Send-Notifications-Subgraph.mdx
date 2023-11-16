@@ -57,9 +57,9 @@ Integrate Push Protocol with an ERC-20 contract's subgraph to **send out notific
 1. Have a Push Notification Channel ready - see the docs [here](/docs/notifications/tutorials/create-your-channel/ "Tutorial on how to create your channel") to create a channel.
 2. Install the **graph CLI**.
 
-```bash
+```zsh
 npm install -g @graphprotocol/graph-cli
-// or
+# OR
 yarn global add @graphprotocol/graph-cli
 ```
 
@@ -315,19 +315,19 @@ Once you have made changes to your subgraph to include Push related logic, you n
 
 1. Generate code
 
-```bash
+```zsh
 graph codegen
 ```
 
 2. Get the access token from the Graph dashboard & authenticate
 
-```bash
+```zsh
 graph auth --product hosted-service <ACCESS_TOKEN>
 ```
 
 3. Deploy the subgraph
 
-```bash
+```zsh
 graph deploy --product hosted-service <GITHUB_USER>/<SUBGRAPH NAME>
 ```
 

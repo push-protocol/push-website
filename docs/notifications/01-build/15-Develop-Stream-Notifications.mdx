@@ -27,27 +27,29 @@ import Details from "@theme/Details";
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.stream(account?, {options?})
+// userAlice.stream(listen, {options?})
 // Initial setup
-const stream = userAlice.stream(account?, {
-  // stream supports other products as well, such as STREAM.CHAT, STREAM.CHAT_OPS
-  // more info can be found at push.org/docs/chat
-	listen: [STREAM.NOTIF],
-	filter?: {
-		channels?: ['*'], // pass in specific channels to only listen to those
-		chats?: ['*'], // pass in specific chat ids to only listen to those
-	},
-	connection?: {
-		auto?: true, // should connection be automatic, else need to call stream.connect();
-		retries?: 3, // number of retries in case of error
-	},
-	raw?: false // enable true to show all data
+const stream = userAlice.stream([CONSTANTS.STREAM.NOTIF], {
+  filter?: {
+    channels?: ['*'], // pass in specific channels to only listen to those
+    chats?: ['*'], // pass in specific chat ids to only listen to those
+  },
+  connection?: {
+    retries?: 3, // number of retries in case of error
+  },
+  raw?: false // enable true to show all data
 })
 
-// Listen for notifications
-userAlice.stream.on(STREAM.NOTIF, (data: any) => {
+// Listen for notifications events
+stream.on(CONSTANTS.STREAM.NOTIF, (data: any) => {
   console.log(data)
 })
+
+// Connect stream, Important to setup up listen events first
+stream.connect()
+
+// stream supports other products as well, such as STREAM.CHAT, STREAM.CHAT_OPS
+// more info can be found at push.org/docs/chat
 ```
 
   </TabItem>
@@ -55,16 +57,29 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
 
 ---
 
-### Stream notification events
+### Stream notification parameters
+| Param      | Type                         | Sub-Type                               | Default       | Remarks                                                                                 |
+| ---------- | ---------------------------- | -------------------------------------- | ------------- | --------------------------------------------------------------------------------------- |
+| _`listen`_ | `constant`                   | -                                      | -             | can be `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
+| `options`  | `PushStreamInitializeProps`  | -                                      | -             | Optional configuration properties for initializing the stream.                          |
+| -          | `options.filter`             | `object`                               | -             | Option to configure to enable listening to only certain chats or notifications.         |
+| -          | `options.filter.channels`    | `array of strings`                     | `['*']`       | pass list of **channels** over here to only listen to notifications coming from them.   |
+| -          | `options.filter.chats`       | `array of strings`                     | `['*']`       | pass list of **chatids** over here to only listen to chats coming from them.            |
+| -          | `options.connection`         | `object`                               | -             | Option to configure the connection settings of the stream                               |
+| -          | `options.connection.retries` | `number`                               | `3`           | Number of automatic retries incase of error                                             |
+| -          | `options.raw`                | `boolean`                              | `false`       | If enabled, will also respond with meta data useful in verifying the integrity of incoming chats or notifications among other things. |
 
-| Param    | Type                | When is it triggered?                                 |
-| -------- | ------------------- | ----------------------------------------------------- |
-| `EVENTS` | -                   | -                                                     |
-| -        | `STREAM.NOTIF`      | Whenever a new notification is emitted for the wallet |
-| -        | `STREAM.CONNECT`    | Whenever the stream establishes connection            |
-| -        | `STREAM.DISCONNECT` | Whenever the stream establishes connection            |
+> Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary="Expected response (STEAM.NOTIF - Notification inbox stream)">
+### Stream notifications listen events
+
+| Listen events                 | When is it triggered?                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------ |
+| `CONSTANTS.STREAM.NOTIF`      | Whenever a new notification is emitted for the wallet.                         |
+| `CONSTANTS.STREAM.CONNECT`    | Whenever the stream establishes connection.                                    |
+| `CONSTANTS.STREAM.DISCONNECT` | Whenever the stream gets disconnected.                                         |
+
+<Details summary="Expected response (CONSTANTS.STREAM.NOTIF - Notification inbox stream)">
 
 ```typescript
 {
@@ -77,7 +92,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
   ],
   "notifID": "1676",
   "channel": {
-    "name": "Testing Goerli",
+    "name": "Testing Sepolia",
     "icon": "https://gateway.ipfs.io/ipfs/bafybeifu3tisz7cntfnoolwe6tthi554b2cdl46jzcr5amo6swucyautzq/QmYZZnnEuTnzjkhhnRZWaHgYTeHsohLZEme9LomWRYQAZ5",
     "url": "https://dev.push.org/"
   },
@@ -86,7 +101,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
   },
   "message": {
     "notification": {
-      "title": "Testing Goerli - notification TITLE:",
+      "title": "Testing Sepolia - notification TITLE:",
       "body": "notification BODY"
     },
     "payload": {
@@ -104,7 +119,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
     "silent": false,
     "hidden": false
   },
-  "source": "ETH_TEST_GOERLI",
+  "source": "ETH_TEST_SEPOLIA",
   "raw": {
     "verificationProof": "eip712v2:0xf2b50f07c7cdae4a493860554301dc017dd6f819f92db3aba534dffde210bfaa0f545818e919c42c3bb51181339af33ad83e3bc691ada7fcccdcbc7fb3b3abd91b::uid::feaa2d31-85ec-47d2-b38c-6f797f637de7"
   }
@@ -113,7 +128,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
 
 </Details>
 
-<Details summary="Expected response (STEAM.NOTIF - Notification spam stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.NOTIF - Notification spam stream)">
 
 ```typescript
 {
@@ -126,7 +141,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
   ],
   "notifID": "1677",
   "channel": {
-    "name": "Testing Goerli",
+    "name": "Testing Sepolia",
     "icon": "https://gateway.ipfs.io/ipfs/bafybeifu3tisz7cntfnoolwe6tthi554b2cdl46jzcr5amo6swucyautzq/QmYZZnnEuTnzjkhhnRZWaHgYTeHsohLZEme9LomWRYQAZ5",
     "url": "https://dev.push.org/"
   },
@@ -135,7 +150,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
   },
   "message": {
     "notification": {
-      "title": "Testing Goerli - notification TITLE:",
+      "title": "Testing Sepolia - notification TITLE:",
       "body": "notification BODY"
     },
     "payload": {
@@ -153,7 +168,7 @@ userAlice.stream.on(STREAM.NOTIF, (data: any) => {
     "silent": false,
     "hidden": false
   },
-  "source": "ETH_TEST_GOERLI",
+  "source": "ETH_TEST_SEPOLIA",
   "raw": {
     "verificationProof": "eip712v2:0x6b903f16d0ce87483643e1502e7416203cb7ecef0e947a497f0fb6fbe1c43c3511f2f602b757ab02c1be7daa07f3872ee14e4d05134f1ecb3d11fe58324422c01c::uid::6c0fad10-d1eb-4779-84d3-3a96bd96263f"
   }

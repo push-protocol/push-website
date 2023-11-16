@@ -93,7 +93,7 @@ You can use the <b>PushAPI.user.getFeeds()</b> method with the <b>spam</b> param
 
 ```js
 const spams = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   spam: true,
   env: 'staging'
 });
@@ -151,13 +151,13 @@ Here’s an example of how you can implement these functions:
 ```js
 await PushAPI.channels.subscribe({
   signer: _signer,
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
 	env: 'staging'
 });
 
 const subscriptions = await PushAPI.user.getSubscriptions({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -175,7 +175,7 @@ function MydApp() {
     const fetchNotifications = async () => {
       // fetch user notifications using the PushAPI
       const notifications = await PushAPI.user.getFeeds({
-        user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // user address in CAIP
+        user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // user address in CAIP
         env: 'staging'
       });
       setNotifications(notifications);

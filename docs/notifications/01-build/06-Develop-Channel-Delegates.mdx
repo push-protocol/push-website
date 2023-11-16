@@ -58,7 +58,7 @@ const delegates = await userAlice.channel.delegate.get();
 
 ```typescript
 [
-  "eip155:5:0x35B84d6848D16415177c64D64504663b998A6ab4",
+  "eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4",
   "eip155:80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
 ];
 ```
@@ -74,7 +74,7 @@ To add a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const addedDelegate = await userAlice.channel.delegate.add(
-  `eip155:5:${walletAddress}`,
+  `eip155:11155111:${walletAddress}`,
 );
 ```
 
@@ -110,7 +110,7 @@ To remove a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const removeDelegate = await userAlice.channel.delegate.remove(
-  `eip155:5:${walletAddress}`,
+  `eip155:11155111:${walletAddress}`,
 );
 ```
 

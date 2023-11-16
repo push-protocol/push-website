@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_chat_develop--initialize_user.png"
 Before you can start sending messages, or create conditional access group for your community, or send those chat requests to `Vitalik.eth`. you will need to initialize a user or re-authenticate the user. To do so you will use `PushAPI.initialize` call from `@pushprotocol/restapi` package.
 
 <head>
-  <title>Initialize User | Push Chat | Push Documentation`}</title>
+  <title>Initialize User | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -26,7 +26,7 @@ import Details from "@theme/Details";
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // PushAPI.initialize(signer, {options?});
 // signer - pass the signer from your app and set env to 'prod' for mainnet app
@@ -171,4 +171,4 @@ Blockchain Agnostic Wallet Address has been inspired by [CAIP-10 standard](https
 ### Lens profile / Cyberconnect profile / NFT profile
 
 - **NFT profile** - Pass **`nft:{chain_standard}:{nftChainId}:{nftContractAddress}:{nftTokenId}`**
-- _`usage`_ - `nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
+- _`usage`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`

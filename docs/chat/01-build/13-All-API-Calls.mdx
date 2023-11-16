@@ -28,7 +28,7 @@ Start by setting up the project environment and installing the SDK and its requi
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 # Create Project Directory
 mkdir push-sdk-tutorial
 
@@ -59,7 +59,7 @@ Initialization is a crucial step before utilizing the SDK. It involves creating 
 ```js
 // index.mjs
 
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 import { ethers } from "ethers";
 
 /**

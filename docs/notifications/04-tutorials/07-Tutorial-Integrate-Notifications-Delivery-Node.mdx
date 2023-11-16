@@ -47,7 +47,7 @@ The whitelabel solution of Push delivery node [is located in this github repo](h
 
 ### Step 2️⃣ - Clone Push delivery node repo
 
-```bash
+```zsh
 git clone https://github.com/ethereum-push-notification-service/push-delivery-node.git
 ```
 
@@ -75,7 +75,7 @@ DELIVERY_NODE_DB_PORT=3306
 
 The docker-compose will bring up the MYSQL, Redis, and PHPMyAdmin containers for the delivery node.
 
-```bash
+```zsh
 docker compose up
 ```
 
@@ -93,7 +93,7 @@ docker compose up
 
 You should then be able to build the project using
 
-```bash
+```zsh
 cd push-delivery-node
 npm install
 ```
@@ -102,7 +102,7 @@ npm install
 
 You should then be able to start the server using the following
 
-```bash
+```zsh
 cd push-delivery-node
 npm start
 ```
@@ -115,7 +115,7 @@ npm start
 
 Below is the curl request of this endpoint
 
-```bash
+```zsh
 
 curl --location --request POST 'https://<delivery_node_url>/apis/v1/pushtokens/register' \
 --header 'Content-Type: application/json' \

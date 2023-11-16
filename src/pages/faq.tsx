@@ -504,7 +504,7 @@ const IntegratingPush = [
           >
             Staging dApp
           </AMod>{' '}
-          for developers that points to Ethereum Goerli testnet, Polygon Mumbai testnet and BNB testnet.
+          for developers that points to Ethereum Sepolia testnet, Polygon Mumbai testnet and BNB testnet.
         </Span>
       </Answer>
     ),
