@@ -20,10 +20,9 @@ import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
 import React from "react";
 import styled from "styled-components";
-import GLOBALS, { device } from "@site/src/config/globals";
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogListPageMetadata(props) {
   const { metadata } = props;
