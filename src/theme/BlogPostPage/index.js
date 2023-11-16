@@ -68,6 +68,6 @@ const BlogItem = styled.div`
   margin: 0 auto;
 
   @media (max-width: 1024px) {
-    width: 100% !important;
+    width: 90% !important;
   }
 `;

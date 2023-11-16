@@ -208,9 +208,9 @@ const FooterItem = () => {
           gap="18px"
           className="kpiItem"
         >
-          <KPIFigure>
-            <BsTwitter size={32} />
-          </KPIFigure>
+          {/* <KPIFigure> */}
+          <BsTwitter size={32} />
+          {/* </KPIFigure> */}
           <KPIMetric>Twitter</KPIMetric>
         </BannerItem>
 
@@ -219,9 +219,9 @@ const FooterItem = () => {
           gap="18px"
           className="kpiItem"
         >
-          <KPIFigure>
-            <FaDiscord size={32} />
-          </KPIFigure>
+          {/* <KPIFigure> */}
+          <FaDiscord size={32} />
+          {/* </KPIFigure> */}
           <KPIMetric>Discord</KPIMetric>
         </BannerItem>
 
@@ -230,9 +230,9 @@ const FooterItem = () => {
           gap="18px"
           className="kpiItem"
         >
-          <KPIFigure>
-            <BsYoutube size={32} />
-          </KPIFigure>
+          {/* <KPIFigure> */}
+          <BsYoutube size={32} />
+          {/* </KPIFigure> */}
           <KPIMetric>YouTube</KPIMetric>
         </BannerItem>
 
@@ -243,9 +243,9 @@ const FooterItem = () => {
           gap="18px"
           className="kpiItem"
         >
-          <KPIFigure>
-            <BsLinkedin size={32} />
-          </KPIFigure>
+          {/* <KPIFigure> */}
+          <BsLinkedin size={32} />
+          {/* </KPIFigure> */}
           <KPIMetric>Linkedin</KPIMetric>
         </BannerItem>
       </KPIBanner>
