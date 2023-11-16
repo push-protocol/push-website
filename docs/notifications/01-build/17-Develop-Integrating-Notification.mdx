@@ -67,7 +67,7 @@ customPropMinimized="true"
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 
 // import { ethers } from ethers;
-// import { PushAPI } from @pushprotocol/restapi;
+// import { PushAPI, CONSTANTS } from @pushprotocol/restapi;
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
@@ -97,11 +97,11 @@ function App(props) {
     const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
     // retrieve notifications for users
     const inboxNotifications = await userAlice.notification.list("INBOX", {
-      account: `eip155:5:${wallet}`,
+      account: `eip155:11155111:${wallet}`,
       limit: 5,
     });
 
@@ -224,26 +224,17 @@ customPropMinimized="true"
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 
 // import { ethers } from ethers;
-// import { PushAPI } from @pushprotocol/restapi;
+// import { PushAPI, CONSTANTS } from @pushprotocol/restapi;
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
   const [wallet, setWallet] = useState(
     "0xD8634C39BBFd4033c0d3289C4515275102423681",
   );
+  const [progressTexts, setProgressTexts] = useState([]);
   const [notifItems, setNotifItems] = useState([]);
 
-  const walletRef = useRef();
-
-  useEffect(() => {
-    if (walletRef.current) {
-      walletRef.current.value = wallet;
-    }
-  }, [wallet]);
-
   const triggerNotification = async () => {
-    const walletText = walletRef.current.value;
-
     // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -254,24 +245,57 @@ function App(props) {
     const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
-    console.log(userAlice);
+    // establish connection to stream
+    const stream = await userAlice.initStream([CONSTANTS.STREAM.CONNECT, CONSTANTS.STREAM.NOTIF])
 
-    // // establish connection to stream
-    // const stream = userAlice.stream({
-    //   listen: [STREAM.NOTIF],
-    // })
-
-    // stream connected
-    userAlice.stream.on(STREAM.CONNECT, (data) => {
+    // Listen for stream connection
+    stream.on(CONSTANTS.STREAM.CONNECT, async (data) => {
       console.log("STREAM CONNECTED");
+      let text = ['Stream Connected...', 'Sending Simulated Notification...', 'Wait for few moments for stream to capture notif and display...', 'Waiting for you to sign notificaiton payload...'];
+      setProgressTexts(text);
+      await userAlice.channel.send([userAlice.account], {
+        notification: { 
+          title: 'GM Builders!', 
+          body: `_Simulated notification_ listened by stream and rendered with **@UIWeb/NotificationItem** with latest timestamp - ${new Date().valueOf()} [timestamp: ${new Date().valueOf()}]` 
+        },
+        payload: {
+          title: 'GM Builders!', 
+          body: `_Simulated notification_ listened by stream and rendered with **@UIWeb/NotificationItem** with latest timestamp - ${new Date().valueOf()} [timestamp: ${new Date().valueOf()}]`,
+          cta: 'https://push.org',
+          embed: 'https://push.org/assets/images/cover-image-8485332aa8d3f031e142a1180c71b341.webp',
+        }
+      });
+      text.push('Message generated and sent. Waiting for stream to pick it up...');
+      setProgressTexts(text);
     });
 
     // Listen for notifications
-    userAlice.stream.on(STREAM.NOTIF, (data) => {
-      console.log(data);
+    stream.on(CONSTANTS.STREAM.NOTIF, (item) => {
+      let text = progressTexts;
+      console.log(item);
+      text.push('Notification Received...');
+      text.push(JSON.stringify(item));
+      setProgressTexts(text);
+      
+      // create notification item compatible with UIWeb/NotificationItem
+      const compatibleNotifItem = {
+        title: item.message.payload.title,
+        message: item.message.payload.body,
+        image: item.message.payload.embed,
+        cta: item.message.payload.cta,
+        icon: item.channel.icon,
+        app: item.channel.name,
+        url: item.channel.url,
+        blockchain: item.source,
+        notification: item.message.notification,
+      };
+      setNotifItems([compatibleNotifItem]);
     });
+
+    // connect stream
+    stream.connect();
   };
 
   function NotificationInterface() {
@@ -314,16 +338,22 @@ function App(props) {
               transaction to see the notifications.
             </label>
             <p />
-            <label>Wallet address</label>
-            <input
-              type="text"
-              placeholder="Enter wallet address"
-              style={inputStyle}
-              ref={walletRef}
-              maxLength={80}
-            />
           </div>
         </div>
+        <div>
+          <hr />
+          <h3>Progress (will show progress information once Trigger Notification is clicked)</h3>
+          
+           {progressTexts.map((text, idx) => {
+            return (
+              <>
+                <span>{text}</span>
+                <br />
+              </>
+            );
+          })}
+        </div>
+        <hr />
         <button style={buttonStyle} onClick={triggerNotification}>
           Trigger Notification
         </button>

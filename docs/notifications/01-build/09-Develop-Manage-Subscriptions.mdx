@@ -37,12 +37,12 @@ Channel is any protocol that has activated themselves to send notifications. Use
 ```typescript
 // userAlice.notification.subscribe(channel, {settings?})
 const response = await userAlice.notification.subscribe(
-  `eip155:5:${channelAddress}`,
+  `eip155:11155111:${channelAddress}`,
 );
 
 // Another example but with settings
 const response = await userAlice.notification.subscribe(
-  `eip155:5:${channelAddress}`,
+  `eip155:11155111:${channelAddress}`,
   {
     settings: [
       // settings are dependent on channel
@@ -92,7 +92,7 @@ const response = await userAlice.notification.subscribe(
 ```typescript
 // userAlice.notification.unsubscribe(channel)
 const unsubscribeResponse = await userAlice.notification.unsubscribe(
-  `eip155:5:${channelAddress}`, // channel to unsubscribe
+  `eip155:11155111:${channelAddress}`, // channel to unsubscribe
 );
 ```
 

@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_chat--quickstart.png"
 Everything you will need to get up and running in 2 mins or less!
 
 <head>
-  <title>Quickstart | Push Chat | Push Documentation`}</title>
+  <title>Quickstart | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -56,8 +56,7 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI } from "@pushprotocol/restapi";
-import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // Ethers v5 or Viem, both are supported
 import { ethers } from "ethers";
@@ -70,8 +69,7 @@ import { ethers } from "ethers";
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI } from "@pushprotocol/restapi";
-import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // Ethers v5 or Viem, both are supported
 import { ethers } from "ethers";
@@ -84,8 +82,7 @@ import { ethers } from "ethers";
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI } from "@pushprotocol/restapi";
-import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // Ethers v5 or Viem, both are supported
 import { ethers } from "ethers";
@@ -103,8 +100,9 @@ import { ethers } from "ethers";
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -115,8 +113,9 @@ const userAlice = await PushAPI.initialize(signer, { env: "staging" });
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -127,8 +126,9 @@ const userAlice = await PushAPI.initialize(signer, { env: "staging" });
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -189,18 +189,16 @@ const aliceMessagesBob = await userAlice.chat.send(bobWalletAddress, {
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```js
-// Create Socket Connection
-const pushSDKSocket = createSocketConnection({
-  user: signer.wallet,
-  socketType: "chat",
-  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: "staging",
-});
+// Initialize Stream
+const stream = await userAlice.initStream([CONSTANTS.STREAM.CHAT]);
 
-// To listen to real time message
-pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.CHAT, (message) => {
   console.log(message);
 });
+
+// Connect Stream
+stream.connect();
 ```
 
   </TabItem>
@@ -208,18 +206,16 @@ pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```js
-// Create Socket Connection
-const pushSDKSocket = createSocketConnection({
-  user: signer.wallet,
-  socketType: "chat",
-  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: "staging",
-});
+// Initialize Stream
+const stream = await userAlice.initStream([CONSTANTS.STREAM.CHAT]);
 
-// To listen to real time message
-pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.CHAT, (message) => {
   console.log(message);
 });
+
+// Connect Stream
+stream.connect();
 ```
 
   </TabItem>
@@ -227,18 +223,16 @@ pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```js
-// Create Stream / Real time / Socket Connection
-const pushSDKSocket = createSocketConnection({
-  user: signer.wallet,
-  socketType: "chat",
-  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: "staging",
-});
+// Initialize Stream
+const stream = await userAlice.initStream([CONSTANTS.STREAM.CHAT]);
 
-// To listen to real time message
-pushSDKSocket.on(EVENTS.CHAT_RECEIVED_MESSAGE, (message) => {
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.CHAT, (message) => {
   console.log(message);
 });
+
+// Connect Stream
+stream.connect();
 ```
 
   </TabItem>
