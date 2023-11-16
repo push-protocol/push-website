@@ -18,13 +18,6 @@ function loadClientSideLibraryPushProtocolRestAPI(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
-function loadClientSideLibraryPushProtocolRestAPIStream(constantName) {
-  return typeof window !== 'undefined'
-    ? require('@pushprotocol/restapi/src/lib/pushstream/pushStreamTypes')[constantName]
-    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
-}
-
-
 function loadClientSideLibraryPushProtocolUIWeb(constantName) {
   return typeof window !== 'undefined'
     ? require('@pushprotocol/uiweb')[constantName]
@@ -51,9 +44,9 @@ const ReactLiveScope = {
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
-  STREAM: loadClientSideLibraryPushProtocolRestAPIStream('STREAM'),
+  CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
+  MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb('MODAL_POSITION_TYPE'),
   // Continue using the BrowserOnly component for UI components
-  Chat: createBrowserOnlyLibComponentUIWeb('Chat'),
   SupportChat: createBrowserOnlyLibComponentUIWeb('SupportChat'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),
@@ -63,7 +56,6 @@ const ReactLiveScope = {
   MessageInput: createBrowserOnlyLibComponentUIWeb('MessageInput'),
   ChatViewBubble: createBrowserOnlyLibComponentUIWeb('ChatViewBubble'),
   ChatViewList: createBrowserOnlyLibComponentUIWeb('ChatViewList'),
-  MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb('MODAL_POSITION_TYPE'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
 };

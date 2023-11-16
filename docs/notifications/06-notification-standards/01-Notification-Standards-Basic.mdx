@@ -90,7 +90,7 @@ import TabItem from "@theme/TabItem";
   One exception to chain specific format is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Send notification via smart contract")), For this specific feature, the native blockchain address is required and not chain specific format.
   :::
 
-- **Source** - The source from which the notification is coming from. Currently supports `ETH_MAINNET`, `POLYGON_MAINNET`, `BNB_MAINNET`, `ARB_MAINNET`, `THE_GRAPH`, `ETH_GOERLI`, `POLYGON_TESTNET`, `BNB_TESTNET`.
+- **Source** - The source from which the notification is coming from. Currently supports `ETH_MAINNET`, `POLYGON_MAINNET`, `BNB_MAINNET`, `ARB_MAINNET`, `THE_GRAPH`, `ETH_TEST_SEPOLIA` `ETH_TEST_GOERLI`, `POLYGON_TESTNET`, `BNB_TESTNET`.
 
   Source is determined [by the chain at which the user is inititialized](http://localhost:3000/docs/notifications/build/initialize-user/ "Initialize User Push SDK") from Push SDK, by the network it is coming from in case of smart contracts.
 
@@ -99,7 +99,7 @@ import TabItem from "@theme/TabItem";
   Few examples:
 
   - Ethereum(Mainnet): `eip155:1:<Address>`
-  - Ethereum(Goerli): `eip155:42:<Address>`
+  - Ethereum(Sepolia): `eip155:11155111:<Address>`
   - Polygon(Mumbai): `eip155:80001:<Address>`
 
   :::caution

@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_chat_develop--types_of_recipient.png"
 Push Chat is chain agnostic and even supports messaging wallet addresses, NFT addresses, all evms (and even non-EVM in the future). Below is the list of evergrowing standards that Push Chat is compatible with, either of which you can use as per your requirements —
 
 <head>
-  <title>Types of Recipient | Push Chat | Push Documentation`}</title>
+  <title>Types of Recipient | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -54,12 +54,12 @@ await userAlice.chat.send("eip155:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666", {
 ### Lens profile / Cyberconnect profile / Any NFT profile
 
 - **NFT profile** - Pass **`nft:{chain_standard}:{nftChainId}:{nftContractAddress}:{nftTokenId}`**
-- _`usage`_ - `nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
+- _`usage`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
 
 ```typescript
 // Sending to nft format, any nfts supported including .lens, .crypto, .polygon or your crypto punks
 await userAlice.chat.send(
-  "nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528",
+  "nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528",
   {
     content: "Hello harsh.lens",
   },

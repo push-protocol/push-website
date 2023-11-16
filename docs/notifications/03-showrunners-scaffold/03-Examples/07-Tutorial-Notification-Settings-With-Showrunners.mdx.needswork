@@ -28,7 +28,7 @@ For a detailed, step-by-step guide visit the Showrunners [docs](https://push.org
 Navigate to the SDK directory and install the required dependencies.
 
 
-```bash
+```zsh
 cd push-showrunners-framework
 yarn install
 docker-compose up
@@ -40,9 +40,9 @@ yarn run dev
 
 After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/). Move to the [name]Channel.ts file and import the dependencies.
 
-```bash
+```zsh
 # Importing the Push SDK for notification settings
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 ```
 
 
@@ -60,8 +60,9 @@ In order to send a notification, we need to have the instance of the user channe
         provider
     );
 
-    // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+    // Initialize wallet user, pass 'CONSTANTS.ENV.PROD' instead 
+    // of 'CONSTANTS.ENV.STAGING' for mainnet apps
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
     return { contract, userAlice };
   }
@@ -71,7 +72,7 @@ In order to send a notification, we need to have the instance of the user channe
 Design your own payload with custom values in when you want to trigger notifications. To learn more about notification settings, refer to [docs](https://push.org/docs/notifications/build/create-channel-settings/)
 
 
-```bash
+```zsh
  # Payload
     const payload = {
       notification: {
@@ -95,7 +96,7 @@ Design your own payload with custom values in when you want to trigger notificat
 We create a function that will send notifications depending upon the type. To get that, we need to add the below function in our 'Channel class'
 .
 
-```bash
+```zsh
 # Importing the Push SDK for notification settings
     async sendThroughNotifSettings(userAlice, payload) {
         try {

@@ -315,7 +315,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
     description: 'This is your DAO community native web3 chat', // provide short description of group
     image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: ['0x123...', '0xABC...', 'eip155:0x754...'], // see types of recipient to learn more
-    admins: ['nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
+    admins: ['nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
     private: true, // ensures chat within group is encrypted and is only visible to members of the group
     rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
       "entry": { // define condition for joining the group
@@ -392,7 +392,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
 Below is an example of how to NFT gate `entry` to the group.
 
 ```js
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 import { ethers } from "ethers";
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
@@ -402,8 +402,9 @@ console.log(
   `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
 );
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
 // Creating your token gated community
 const createTokenGatedGroup = await userAlice.chat.group.create(

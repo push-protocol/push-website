@@ -288,7 +288,7 @@ customPropMinimized="true"
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 
 // import { ethers } from ethers;
-// import { PushAPI } from @pushprotocol/restapi;
+// import { PushAPI, CONSTANTS } from @pushprotocol/restapi;
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
@@ -318,11 +318,11 @@ function App(props) {
     const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
     // retrieve notifications for users
     const inboxNotifications = await userAlice.notification.list("INBOX", {
-      account: `eip155:5:${wallet}`,
+      account: `eip155:11155111:${wallet}`,
       limit: 5,
     });
 

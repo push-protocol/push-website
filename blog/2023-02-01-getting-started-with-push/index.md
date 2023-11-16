@@ -38,7 +38,7 @@ Here’s an example of how you might use the <b>getFeeds</b> method in your code
 
 ```js
 const notifications = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -50,13 +50,13 @@ It is important to note that CAIP is not a standardized way of identifying and e
 CAIP addresses are composed of three parts:
 
 - <b>The namespace:</b> This is a string designed to uniquely identify a blockchain ecosystem or set of ecosystems as a namespace.
-- <b>The network ID:</b> This is an integer that identifies the Ethereum network the asset belongs to. For example, 1 is the main network, 3 is the Ropsten test network, and 5 is the Goerli test network.
+- <b>The network ID:</b> This is an integer that identifies the Ethereum network the asset belongs to. For example, 1 is the main network, 3 is the Ropsten test network, 5 is the Goerli test network, and 11155111 is Sepolia test network.
 - <b>The address:</b> This is the actual address of the asset, encoded as a hexadecimal string.
 
 For instance:
 
 ```js
-eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681
+eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681
 ```
 
 In this example, the namespace is eip155 which identifies EVM chains, the network ID is 5 (Goerli test network) and the address is <b>0xD8634C39BBFd4033c0d3289C4515275102423681</b>.
@@ -67,7 +67,7 @@ Continuing with <b>getFeeds</b>, to fetch spam notifications, set the <b>spam</b
 
 ```js
 const spams = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   spam: true,
   env: 'staging'
 });
@@ -84,7 +84,7 @@ Here’s an example of how you might use the <b>getSubscriptions</b> method in y
 
 ```js
 const subscriptions = await PushAPI.user.getSubscriptions({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -100,7 +100,7 @@ Here’s an example of how you might use the getChannel method in your code:
 
 ```js
 const channelData = await PushAPI.channels.getChannel({
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -120,8 +120,8 @@ Here’s an example of how you might use the <b>search</b> method in your code:
 ```js
 await PushAPI.channels.subscribe({
   signer: _signer,
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
 	env: 'staging'
 	});
 ```
@@ -182,8 +182,8 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  recipients: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // recipient address
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  recipients: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // recipient address
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```
@@ -205,8 +205,8 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  recipients: ['eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', 'eip155:5:0xCdBE6D076e05c5875D90fa35cc85694E1EAFBBd1'], // recipients addresses
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  recipients: ['eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', 'eip155:11155111:0xCdBE6D076e05c5875D90fa35cc85694E1EAFBBd1'], // recipients addresses
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```
@@ -227,7 +227,7 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```

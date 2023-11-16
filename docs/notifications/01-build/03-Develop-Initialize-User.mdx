@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_notifications_develop--initialize_user.png"
 Before you can start sending notifications, or receiving notifications from your preferred protocol, you will need to initialize a user or re-authenticate the user. To do so you will use `PushAPI.initialize` call from `@pushprotocol/restapi` package.
 
 <head>
-  <title>Initialize User | Push Notifcation | Push Documentation`}</title>
+  <title>Initialize User | Push Notifcation | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -26,12 +26,12 @@ import Details from "@theme/Details";
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // PushAPI.initialize(signer, {options?});
-// signer - pass the signer from your app and set env to 'prod' for mainnet app
+// signer - pass the signer from your app and set env to 'CONSTANTS.ENV.PROD' for mainnet app
 // options? - optional, can pass initialization parameters for customization
-const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>

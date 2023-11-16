@@ -42,7 +42,7 @@ const wallet = "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
 
 - **Chain Agnostic Wallet Address** - Pass ** \{chain_standard}:\{chainId}:\{account_id} ** format to use this instead of standard wallet address. SDK converts all normal wallet address to chain agnostic ones by default.
 - _`usage`_ - `eip155:1:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
-- _`usage`_ - `eip155:5:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
+- _`usage`_ - `eip155:11155111:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
 - _`usage`_ - `eip155:137:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
 
 ```typescript
@@ -53,10 +53,10 @@ const wallet = "eip155:1:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
 ### Lens profile / Cyberconnect profile / Any NFT profile
 
 - **NFT profile** - Pass **nft:\{chain_standard}:\{nftChainId}:\{nftContractAddress}:\{nftTokenId}**
-- _`usage`_ - `nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
+- _`usage`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
 
 ```typescript
 // Using nft format, any nfts supported including .lens, .crypto, .polygon or your crypto punks
 const wallet =
-  "nft:eip155:5:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528";
+  "nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528";
 ```

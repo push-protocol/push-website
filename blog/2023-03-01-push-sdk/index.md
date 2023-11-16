@@ -14,8 +14,16 @@ tags: [ Web3, Blockchain, Blockchain Development, Developer ]
 
 The Socket API is a package that helps you connect to the Push backend using WebSockets, built on top of <a href="https://socket.io/docs/v4/client-api/"><b>Socket.IO</b></a>. With this API, you can easily subscribe to real-time notifications and updates from the Push network.
 
-
 In this article, we’ll go over the PUSH-SDK Socket API and how to use it in your dApp.
+
+import { ABlock } from "@site/src/css/SharedStyling";
+
+:::caution
+Socket API is deprecated. Push has revamped it's socket API into stream API which is more versatile and developer friendly, click on the link below to learn more 👇.
+:::
+
+
+<ABlock href="/docs/chat/stream-chat">Learn about Push Stream API</ABlock>
 
 ## Note on Addresses
 In any of the specified methods (unless explicitly stated otherwise), you can use either CAIP format (specifically CAIP-10) or the ETH address format.
@@ -49,7 +57,7 @@ To create a socket connection for notifications, you’ll need to create a socke
 
 ```js
 const pushSDKSocket = createSocketConnection({
-user: 'eip155:5:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb', // CAIP-10 format
+user: 'eip155:11155111:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb', // CAIP-10 format
 env: 'staging',
 socketOptions: { autoConnect: false }
 });
@@ -115,7 +123,7 @@ Example:
 
 ```js
 const pushSDKSocket = createSocketConnection({
- user: 'eip155:5:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb',
+ user: 'eip155:11155111:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb',
  env: 'staging',
  socketOptions: { autoConnect: false }
 });
