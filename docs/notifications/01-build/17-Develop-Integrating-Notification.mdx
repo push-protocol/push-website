@@ -254,7 +254,7 @@ function App(props) {
     const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.PROD });
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
     // establish connection to stream
     const stream = await userAlice.initStream([CONSTANTS.STREAM.CONNECT, CONSTANTS.STREAM.NOTIF])
