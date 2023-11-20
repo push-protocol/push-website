@@ -50,7 +50,7 @@ This method doesn't rely on user interaction, instead it shows users notificatio
 
 This method is usually used when you want notifications to land on user's mobile home screen or through browser notification service.
 
-Bridge based method allows triggering additional logic and are more of an extension to **push based method** as they enable routing to other Web2 notification services such as [Firebase](https://firebase.google.com/ "Link to google firebase"), [Apple Push Notification Service](https://developer.apple.com/documentation/usernotifications "Link to APNS (Apple Push Notificaiton Service)") or to telegram / twitter / or other social bots.
+Bridge based method allows triggering additional logic and are more of an extension to **push based method** as they enable routing to other Web2 notification services such as [Firebase](https://firebase.google.com/ "Link to google firebase"), [Apple Push Notification Service](https://developer.apple.com/documentation/usernotifications "Link to APNS (Apple Push Notification Service)") or to telegram / twitter / or other social bots.
 
 :::note
 Bridge based delivery is especially useful if you want to deliver notifications to your mobile app or extension while pull based and push based mechanism works best inside your dapp or mobile app.
@@ -253,7 +253,7 @@ function App(props) {
     // Listen for stream connection
     stream.on(CONSTANTS.STREAM.CONNECT, async (data) => {
       console.log("STREAM CONNECTED");
-      let text = ['Stream Connected...', 'Sending Simulated Notification...', 'Wait for few moments for stream to capture notif and display...', 'Waiting for you to sign notificaiton payload...'];
+      let text = ['Stream Connected...', 'Sending Simulated Notification...', 'Wait for few moments for stream to capture notif and display...', 'Waiting for you to sign notification payload...'];
       setProgressTexts(text);
       await userAlice.channel.send([userAlice.account], {
         notification: { 

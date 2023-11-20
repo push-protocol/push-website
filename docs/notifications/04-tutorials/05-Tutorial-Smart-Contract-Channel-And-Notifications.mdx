@@ -21,7 +21,7 @@ We will be creating a simple contract that allows owner to create a channel usin
 ## Prerequisites
 
 - Ensure you have know what is a channel (Don't need to create from dApp as we will be creating it from your smart contract) - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ "Guide to create your channel for sending notifications from Push protocol")
-- Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ "Guide explaining the types of notificaitons")
+- Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ "Guide explaining the types of notifications")
 
 ## What's going to happen
 
@@ -111,7 +111,7 @@ contract Fund  {
           "+", // segregator
           "1", // this is payload type: https://docs.epns.io/developers/developer-guides/sending-notifications/advanced/notification-payload-types/payload (1, 3 or 4) = (Broadcast, targeted or subset)
           "+", // segregator
-          "Incoming Funds", // this is notificaiton title
+          "Incoming Funds", // this is notification title
           "+", // segregator
           "Hooray! Someone sent you some funds!", // notification body
         )
