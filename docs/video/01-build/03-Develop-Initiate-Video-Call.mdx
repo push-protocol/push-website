@@ -290,14 +290,14 @@ videoObject.connect({
   Connect API Example
 </ABlock>
 
-## 5. Disconnect a video call
+## Disconnect a video call
 
 To disconnect a call, we use the `disconnect()` method on the videoObject.
 
 ```typescript
 videoObject.disconnect({
-  peerAddress?: string
-});
+  peerAddress: string
+} | undefined);
 ```
 | Property   | Description                                                                                 |
 | ---------- | ------------------------------------------------------------------------------------------- |
