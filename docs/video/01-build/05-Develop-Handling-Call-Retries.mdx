@@ -30,17 +30,19 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
       if (videoCallMetaData.status === VideoCallStatus.RETRY_RECEIVED) {
         const {
           signalData,
+          senderAddress
         } = additionalMeta;
 
         videoObject.connect({
           signalData,
+          peerAddress: senderAddress
         });
       }
       else if (videoCallMetaData.status === VideoCallStatus.RETRY_INITIALIZED && videoObject.isInitiator()) {
         videoObject.request({
-          senderAddress: videoObject.data.local.address,
-          recipientAddress: videoObject.data.incoming[0].address,
-          chatId: videoObject.data.meta.chatId,
+          senderAddress: data.local.address,
+          recipientAddress: data.incoming[0].address,
+          chatId: data.meta.chatId,
           retry: true,
         });
       }
@@ -51,9 +53,9 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
 
         videoObject.acceptRequest({
           signalData,
-          senderAddress: videoObject.data.local.address,
-          recipientAddress: videoObject.data.incoming[0].address,
-          chatId: videoObject.data.meta.chatId,
+          senderAddress: data.local.address,
+          recipientAddress: data.incoming[0].address,
+          chatId: data.meta.chatId,
           retry: true,
         });
       }

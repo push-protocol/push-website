@@ -35,7 +35,7 @@ The following speed run is designed to give you a quick overview of usage and de
 
 ```js
   // Import Push SDK & ethers
-  import { PushAPI, VideoCallStatus } from '@pushprotocol/restapi';
+  import { PushAPI, VideoCallStatus, CONSTANTS } from '@pushprotocol/restapi';
   import { ADDITIONAL_META_TYPE } from '@pushprotocol/restapi/src/lib/payloads/constants';
   import { createSocketConnection, EVENTS } from '@pushprotocol/socket';
   import { ethers } from 'ethers';
@@ -43,8 +43,8 @@ The following speed run is designed to give you a quick overview of usage and de
   // Creating a random signer from a wallet, ideally this is the wallet you will connect
   const signer = ethers.Wallet.createRandom();
 
-  // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-  const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+  // Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+  const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
   // get PGP private key
   const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
@@ -54,25 +54,24 @@ The following speed run is designed to give you a quick overview of usage and de
 
   // Initialize video object
   const aliceVideoCall = new PushAPI.video.Video({
-    signer: _signer;
-    chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
-    pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
-    env: 'staging'; // 'prod' or 'staging' environment
-    setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+    signer: signer,
+    chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+    pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+    env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+    setData: (fn: (data: VideoCallData) => VideoCallData) => void, // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
   });
 
   // Create media stream
   await aliceVideoCall.create({
-    video: true; // to enable video on start
-    audio: true; // to enable audio on start
+    video: true, // to enable video on start
+    audio: true, // to enable audio on start
   });
 
   // request a call to a recipient wallet address
-  //
   await aliceVideoCall.request({
-    senderAddress: signer.address;
-    recipientAddress: bobWalletAddress; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-    chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+    senderAddress: signer.address,
+    recipientAddress: bobWalletAddress, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+    chatId: chatID, // pass in the chat id between sender and recipient, required
   });
 
   // Create Socket to Listen to incoming messages
@@ -80,10 +79,10 @@ The following speed run is designed to give you a quick overview of usage and de
     user: signer.wallet,
     socketType: 'chat',
     socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-    env: 'staging',
+    env: CONSTANTS.ENV.STAGING,
   });
 
-  // To listen to real time video calls
+  // To listen to real-time video calls
   pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
     // we are listening for video call related notifications
     const { payload } = feedItem || {};
@@ -102,23 +101,23 @@ The following speed run is designed to give you a quick overview of usage and de
           // passing parameters
           aliceVideoCall.setData((oldData) => {
             return produce(oldData, (draft) => {
-              draft.local.address = VideoCallStatus.recipientAddress;
-              draft.incoming[0].address = VideoCallStatus.senderAddress;
+              draft.local.address = videoCallMetaData.recipientAddress;
+              draft.incoming[0].address = videoCallMetaData.senderAddress;
               draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED; // set status to RECEIVED
-              draft.meta.chatId = VideoCallStatus.chatId;
-              draft.meta.initiator.address = VideoCallStatus.senderAddress;
-              draft.meta.initiator.signal = VideoCallStatus.signalData;
+              draft.meta.chatId = videoCallMetaData.chatId;
+              draft.meta.initiator.address = videoCallMetaData.senderAddress;
+              draft.meta.initiator.signal = videoCallMetaData.signalData;
             });
           });
 
-          // accept the call of any logic you want to follow
+          // accept the call or any logic you want to follow
           // notice we flipped recipient and sender as we are the one who is sending
           // notification to senderAddress after VideoCallStatus.INITIALIZED
           await aliceVideoCall.acceptRequest({
-            signalData: VideoCallStatus.signalData;
-            senderAddress: VideoCallStatus.recipientAddress;
-            recipientAddress: VideoCallStatus.senderAddress;
-            chatId: VideoCallStatus.chatId;
+            signalData: videoCallMetaData.signalData,
+            senderAddress: videoCallMetaData.recipientAddress,
+            recipientAddress: videoCallMetaData.senderAddress,
+            chatId: videoCallMetaData.chatId,
           });
         }
 
@@ -127,17 +126,19 @@ The following speed run is designed to give you a quick overview of usage and de
         if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
           const {
             signalData,
+            senderAddress
           } = videoCallMetaData;
 
-          // connecting the call using received signalData
+          // connecting the call using received signalData, senderAddress
           aliceVideoCall.connect({
             signalData,
-          })
+            peerAddress: senderAddress
+          });
         }
 
         // If the received status is DISCONNECTED that means the call has ended
         if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
-            // here you can do a window reload or just clear out the video state
+          // here you can do a window reload or just clear out the video state
         }
       }
     }

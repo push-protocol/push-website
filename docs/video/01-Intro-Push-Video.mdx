@@ -43,7 +43,7 @@ Push Video brings native wallet to wallet (or multi-wallets) audio and video cal
 
 ## How Push Video works?
 
-Push Video utilizes [Push Notifications](/docs/notifications) to exchange peer info and intent for connection which is then fed into [WebRCT](https://webrtc.org/ "Learn about WebRCT") for peer to peer connection.
+Push Video utilizes [Push Notifications](/docs/notifications) to exchange peer info and intent for connection which is then fed into [WebRTC](https://webrtc.org/ "Learn about WebRCT") for peer to peer connection.
 
 Three hidden notifications are fired to wallet (initialization, handshake, completion) to enable wallet to wallet calling. Mesh architecture is used to enable multiple wallets joining. All communication from Push Video is signed and validated by a set of nodes, which are together called Push Network.
 
@@ -281,70 +281,6 @@ Three hidden notifications are fired to wallet (initialization, handshake, compl
       </svg>
     </span>
   </ModalWrapper>
-</ModalSmall>
-
-</ModalContainer>
-
-## Message Types
-
-<ModalContainer>
-
-{" "}
-
-<ModalSmall onClick={() => window.open("message-types/text", "_self")}>
-  <img
-    src={require("/static/assets/docs/msgtypes/text.png").default}
-    srcSet={`${
-      require("/static/assets/docs/msgtypes/text@2x.png").default
-    } 2x, ${require("/static/assets/docs/msgtypes/text@3x.png").default} 3x`}
-  />
-  <span>Text</span>
-</ModalSmall>
-
-{" "}
-
-<ModalSmall onClick={() => window.open("message-types/image", "_self")}>
-  <img
-    src={require("/static/assets/docs/msgtypes/image.png").default}
-    srcSet={`${
-      require("/static/assets/docs/msgtypes/image@2x.png").default
-    } 2x, ${require("/static/assets/docs/msgtypes/image@3x.png").default} 3x`}
-  />
-  <span>Image</span>
-</ModalSmall>
-
-{" "}
-
-<ModalSmall onClick={() => window.open("message-types/file", "_self")}>
-  <img
-    src={require("/static/assets/docs/msgtypes/file.png").default}
-    srcSet={`${
-      require("/static/assets/docs/msgtypes/file@2x.png").default
-    } 2x, ${require("/static/assets/docs/msgtypes/file@3x.png").default} 3x`}
-  />
-  <span>File</span>
-</ModalSmall>
-<ModalSmall onClick={() => window.open("message-types/media-embed", "_self")}>
-  <img
-    src={require("/static/assets/docs/msgtypes/mediaembed.png").default}
-    srcSet={`${
-      require("/static/assets/docs/msgtypes/mediaembed@2x.png").default
-    } 2x, ${
-      require("/static/assets/docs/msgtypes/mediaembed@3x.png").default
-    } 3x`}
-  />
-  <span>Media Embed</span>
-</ModalSmall>
-<ModalSmall onClick={() => window.open("message-types/reaction", "_self")}>
-  <img
-    src={require("/static/assets/docs/msgtypes/reaction.png").default}
-    srcSet={`${
-      require("/static/assets/docs/msgtypes/reaction@2x.png").default
-    } 2x, ${
-      require("/static/assets/docs/msgtypes/reaction@3x.png").default
-    } 3x`}
-  />
-  <span>Reaction</span>
 </ModalSmall>
 
 </ModalContainer>

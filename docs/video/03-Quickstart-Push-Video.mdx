@@ -115,19 +115,19 @@ import { ethers } from "ethers";
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const _signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
 // get PGP private key
 const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
 
 // Initialize video object
 const aliceVideoCall = new PushAPI.video.Video({
-  signer: _signer;
-  chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
-  pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
-  env?: 'staging'; // 'prod' or 'staging' environment
-  setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
 });
 ```
 
@@ -139,19 +139,19 @@ const aliceVideoCall = new PushAPI.video.Video({
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const _signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
 // get PGP private key
 const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
 
 // Initialize video object
 const aliceVideoCall = new PushAPI.video.Video({
-  signer: _signer;
-  chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
-  pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
-  env?: 'staging'; // 'prod' or 'staging' environment
-  setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
 });
 ```
 
@@ -163,19 +163,19 @@ const aliceVideoCall = new PushAPI.video.Video({
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const _signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
 // get PGP private key
 const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
 
 // Initialize video object
 const aliceVideoCall = new PushAPI.video.Video({
-  signer: _signer;
-  chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
-  pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
-  env: 'staging'; // 'prod' or 'staging' environment
-  setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void, // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
 });
 ```
 
@@ -190,8 +190,8 @@ const aliceVideoCall = new PushAPI.video.Video({
 ```js
 // create or pass an existing media stream
 await aliceVideoCall.create({
-  video: true; // to enable video on start
-  audio: true; // to enable audio on start
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
 });
 ```
 
@@ -202,8 +202,8 @@ await aliceVideoCall.create({
 ```js
 // create or pass an existing media stream
 await aliceVideoCall.create({
-  video: true; // to enable video on start
-  audio: true; // to enable audio on start
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
 });
 ```
 
@@ -214,8 +214,8 @@ await aliceVideoCall.create({
 ```js
 // create or pass an existing media stream
 await aliceVideoCall.create({
-  video: true; // to enable video on start
-  audio: true; // to enable audio on start
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
 });
 ```
 
@@ -230,9 +230,9 @@ await aliceVideoCall.create({
 ```js
 // request a call to a recipient wallet address
 await aliceVideoCall.request({
-  senderAddress: signer.address;
-  recipientAddress: recipientWallet; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-  chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
 });
 ```
 
@@ -243,9 +243,9 @@ await aliceVideoCall.request({
 ```js
 // request a call to a recipient wallet address
 await aliceVideoCall.request({
-  senderAddress: signer.address;
-  recipientAddress: recipientWallet; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-  chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
 });
 ```
 
@@ -256,9 +256,9 @@ await aliceVideoCall.request({
 ```js
 // request a call to a recipient wallet address
 await aliceVideoCall.request({
-  senderAddress: signer.address;
-  recipientAddress: recipientWallet; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-  chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
 });
 ```
 
@@ -276,7 +276,7 @@ const pushSDKSocket = createSocketConnection({
   user: signer.wallet,
   socketType: 'chat',
   socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: 'staging',
+  env: CONSTANTS.ENV.STAGING
 });
 
 // To listen to real time video calls
@@ -298,7 +298,7 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         const {
           // your address, ie the recipient address of the video call notification
           recipientAddress,
-          // address of the other peer/user part of the video call, who sent you this notification
+          // address of the other user part of the video call, who sent you this notification
           senderAddress,
           // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
           chatId,
@@ -309,7 +309,7 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         } = videoCallMetaData;
 
         // Note - We'll need signalData while calling acceptRequest function
-        // You can save these properties in a state for furture use
+        // You can save these properties in a state for future use
 
         /*
         If you want you can also save these properties on the data state
@@ -343,7 +343,7 @@ const pushSDKSocket = createSocketConnection({
   user: signer.wallet,
   socketType: 'chat',
   socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: 'staging',
+  env: CONSTANTS.ENV.STAGING
 });
 
 // To listen to real time video calls
@@ -365,7 +365,7 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         const {
           // your address, ie the recipient address of the video call notification
           recipientAddress,
-          // address of the other peer/user part of the video call, who sent you this notification
+          // address of the other user part of the video call, who sent you this notification
           senderAddress,
           // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
           chatId,
@@ -376,7 +376,7 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         } = videoCallMetaData;
 
         // Note - We'll need signalData while calling acceptRequest function
-        // You can save these properties in a state for furture use
+        // You can save these properties in a state for future use
 
         /*
         If you want you can also save these properties on the data state
@@ -386,12 +386,12 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         */
         aliceVideoCall.setData((oldData) => {
           return produce(oldData, (draft) => {
-          draft.local.address = recipientAddress;
-          draft.incoming[0].address = senderAddress;
-          draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
-          draft.meta.chatId = chatId;
-          draft.meta.initiator.address = senderAddress;
-          draft.meta.initiator.signal = signalData;
+            draft.local.address = recipientAddress;
+            draft.incoming[0].address = senderAddress;
+            draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
+            draft.meta.chatId = chatId;
+            draft.meta.initiator.address = senderAddress;
+            draft.meta.initiator.signal = signalData;
           });
         });
       }
@@ -410,7 +410,7 @@ const pushSDKSocket = createSocketConnection({
   user: signer.wallet,
   socketType: 'chat',
   socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-  env: 'staging',
+  env: CONSTANTS.ENV.STAGING
 });
 
 // To listen to real time video calls
@@ -432,7 +432,7 @@ pushSDKSocket.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         const {
           // your address, ie the recipient address of the video call notification
           recipientAddress,
-          // address of the other peer/user part of the video call, who sent you this notification
+          // address of the other user part of the video call, who sent you this notification
           senderAddress,
           // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
           chatId,
@@ -443,7 +443,7 @@ pushSDKSocket.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         } = videoCallMetaData;
 
         // Note - We'll need signalData while calling acceptRequest function
-        // You can save these properties in a state for furture use
+        // You can save these properties in a state for future use
 
         /*
         If you want you can also save these properties on the data state
@@ -453,12 +453,12 @@ pushSDKSocket.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         */
         aliceVideoCall.setData((oldData) => {
           return produce(oldData, (draft) => {
-          draft.local.address = recipientAddress;
-          draft.incoming[0].address = senderAddress;
-          draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
-          draft.meta.chatId = chatId;
-          draft.meta.initiator.address = senderAddress;
-          draft.meta.initiator.signal = signalData;
+            draft.local.address = recipientAddress;
+            draft.incoming[0].address = senderAddress;
+            draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
+            draft.meta.chatId = chatId;
+            draft.meta.initiator.address = senderAddress;
+            draft.meta.initiator.signal = signalData;
           });
         });
       }
@@ -498,8 +498,8 @@ interface VideoCallMetaDataType {
 
 | Property           | Description                                                                                             |
 | ------------------ | ------------------------------------------------------------------------------------------------------- |
-| `recipientAddress` | Wallet address of remote peer/user ie the address which you want to call                                |
-| `senderAddress`    | Wallet address of the local peer/user                                                                   |
+| `recipientAddress` | Wallet address of remote user ie the address which you want to call                                |
+| `senderAddress`    | Wallet address of the local user                                                                   |
 | `chatId`           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
 | `signalingData`    | WebRTC signal data received from the peer which sent this notification                                  |
 | `status`           | Current status of the video call, can be found from VideoCallStatus enum                                |
@@ -517,8 +517,6 @@ await aliceVideoCall.acceptRequest({
   senderAddress: string;
   recipientAddress: string;
   chatId: string;
-  onReceiveMessage?: (message: string) => void;
-  retry?: boolean;
 });
 
 // Note: If you saved the properties from the additionalMeta received in the sockets
@@ -540,8 +538,6 @@ await aliceVideoCall.acceptRequest({
   senderAddress: string;
   recipientAddress: string;
   chatId: string;
-  onReceiveMessage?: (message: string) => void;
-  retry?: boolean;
 });
 
 // Note: If you saved the properties from the additionalMeta received in the sockets
@@ -563,8 +559,6 @@ await aliceVideoCall.acceptRequest({
   senderAddress: string;
   recipientAddress: string;
   chatId: string;
-  onReceiveMessage?: (message: string) => void;
-  retry?: boolean;
 });
 
 // Note: If you saved the properties from the additionalMeta received in the sockets
@@ -583,11 +577,9 @@ await aliceVideoCall.acceptRequest({
 | Property         | Description                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | signalData       | Signal data received from the initiator peer via push notification upon request() call                  |
-| senderAddress    | Wallet address of the local peer/user                                                                   |
-| recipientAddress | Wallet address of remote peer/user ie the address which you want to call                                |
-| chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
-| onReceiveMessage | Function which will be called when the sender receives a message via webRTC data channel                |
-| retry            | If we are retrying the call, only for internal use                                                      |
+| senderAddress    | Wallet address of the local user                                                                   |
+| recipientAddress | Wallet address of remote user ie the address which you want to call                                |
+| chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |                                                    |
 
 ### Connect Call
 
@@ -613,12 +605,14 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
       if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
         const {
           signalData,
+          senderAddress
         } = videoCallMetaData;
 
         // connecting the call using received signalData
         aliceVideoCall.connect({
           signalData,
-        })
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
       }
     }
   }
@@ -645,12 +639,14 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
       if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
         const {
           signalData,
+          senderAddress
         } = videoCallMetaData;
 
         // connecting the call using received signalData
         aliceVideoCall.connect({
           signalData,
-        })
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
       }
     }
   }
@@ -677,12 +673,14 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
       if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
         const {
           signalData,
+          senderAddress
         } = videoCallMetaData;
 
         // connecting the call using received signalData
         aliceVideoCall.connect({
           signalData,
-        })
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
       }
     }
   }
@@ -705,7 +703,13 @@ To disconnect a call, we use the `disconnect()` method on the videoObject (alice
 
 ```jsx
 // to disconnect the call
-aliceVideoCall.disconnect();
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address, 
+});
 
 pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
   // The event listner for the USER_FEEDS event
@@ -734,7 +738,13 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
 
 ```jsx
 // to disconnect the call
-aliceVideoCall.disconnect();
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address,
+});
 
 pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
   // The event listner for the USER_FEEDS event
@@ -763,7 +773,13 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
 
 ```jsx
 // to disconnect the call
-aliceVideoCall.disconnect();
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address,
+});
 
 pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
   // The event listner for the USER_FEEDS event

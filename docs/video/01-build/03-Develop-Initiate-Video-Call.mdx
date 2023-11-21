@@ -25,9 +25,9 @@ Before initiating the call, we need to create a local media stream, i.e., local 
 ```typescript
 await videoObject.create({
   video?: boolean; // for frontend use
-   audio?: boolean; // for frontend use
-   stream?: MediaStream; // for backend use
-  });
+  audio?: boolean; // for frontend use
+  stream?: MediaStream; // for backend use
+});
 ```
 
 - create() function generates a new MediaStream object using `navigator.mediaDevices.getUserMedia`
@@ -64,7 +64,7 @@ We are now ready to request/initiate a video call. As the name suggests, this wi
 ```typescript
 await videoObject.request({
   senderAddress: string;
-  recipientAddress: string;
+  recipientAddress: string | string[];
   chatId: string;
   onReceiveMessage?: (message: string) => void;
   retry?: boolean;
@@ -73,8 +73,8 @@ await videoObject.request({
 
 | Property         | Description                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
-| senderAddress    | Wallet address of the local peer/user                                                                   |
-| recipientAddress | Wallet address of remote peer/user ie the address which you want to call                                |
+| senderAddress    | Wallet address of the local user                                                                   |
+| recipientAddress | Wallet addresses of users you want to call, single address for wallet to wallet call and array of addresses for group call |
 | chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
 | onReceiveMessage | Function which will be called when the sender receives a message via webRTC data channel                |
 | retry            | If we are retrying the call then this param should be set to true, only for internal use                |
@@ -117,7 +117,7 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
           // your address, ie the recipient address of the video call notification
           recipientAddress,
 
-          // address of the other peer/user part of the video call, who sent you this notification
+          // address of the other user part of the video call, who sent you this notification
           senderAddress,
 
           // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
@@ -133,11 +133,11 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         // You can save these properties in a state for furture use
 
         /* 
-                    If you want you can also save these properties on the data state
-                    we created while initializing the video object.
-                    Later you can use it while calling acceptRequest()
-                    signalData will be available via data.meta.initiator.signal
-                */
+          If you want you can also save these properties on the data state
+          we created while initializing the video object.
+          Later you can use it while calling acceptRequest()
+          signalData will be available via data.meta.initiator.signal
+        */
         videoObject.setData((oldData) => {
           return produce(oldData, (draft) => {
             draft.local.address = recipientAddress;
@@ -183,8 +183,8 @@ interface VideoCallMetaDataType {
 
 | Property         | Description                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
-| recipientAddress | Wallet address of remote peer/user ie the address which you want to call                                |
-| senderAddress    | Wallet address of the local peer/user                                                                   |
+| recipientAddress | Wallet address of remote user ie the address which you want to call                                |
+| senderAddress    | Wallet address of the local user                                                                   |
 | chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
 | signalingData    | WebRTC signal data received from the peer which sent this notification                                  |
 | status           | Current status of the video call, can be found from VideoCallStatus enum                                |
@@ -216,8 +216,8 @@ await videoObject.acceptRequest({
 | Property         | Description                                                                                             |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | signalData       | Signal data received from the initiator peer via push notification upon request() call                  |
-| senderAddress    | Wallet address of the local peer/user                                                                   |
-| recipientAddress | Wallet address of remote peer/user ie the address which you want to call                                |
+| senderAddress    | Wallet address of the local user                                                                   |
+| recipientAddress | Wallet address of the remote user, i.e., the address whose call request you want to accept         |
 | chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
 | onReceiveMessage | Function which will be called when the sender receives a message via webRTC data channel                |
 | retry            | If we are retrying the call, only for internal use                                                      |
@@ -253,11 +253,15 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
 
       // If the received status is RECEIVED that means we can connect the video call
       if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
-        const { signalData } = videoCallMetaData;
+        const { 
+          signalData,
+          senderAddress
+        } = videoCallMetaData;
 
         // connecting the call using received signalData
         videoObject.connect({
           signalData,
+          peerAddress: senderAddress
         });
         // PS: Dont forget to import videoObject. :)
       }
@@ -269,12 +273,14 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
 ```typescript
 videoObject.connect({
   signalData: any;
+  peerAddress?: string;
 });
 ```
 
 | Property   | Description                                                                                 |
 | ---------- | ------------------------------------------------------------------------------------------- |
 | signalData | Signal data received from the receiver peer via push notification upon acceptRequest() call |
+| peerAddress | The address you want connect the call with, defaults to `data.incoming[0].address` |
 
 <ABlock
   href="https://www.npmjs.com/package/@pushprotocol/restapi#connect"
@@ -284,13 +290,18 @@ videoObject.connect({
   Connect API Example
 </ABlock>
 
-## 5. Disconnect a video call
+## Disconnect a video call
 
 To disconnect a call, we use the `disconnect()` method on the videoObject.
 
 ```typescript
-videoObject.disconnect();
+videoObject.disconnect({
+  peerAddress: string
+} | undefined);
 ```
+| Property   | Description                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| peerAddress | The address you want disconnect the call with, defaults to `data.incoming[0].address` |
 
 And add this to the event handler of the`USER_FEEDS` event from `@pushprotocol/socket`:
 
