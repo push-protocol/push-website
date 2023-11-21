@@ -117,9 +117,12 @@ const titleMatch = frontMatterMatch[0].match(titleRegex);
 if (!titleMatch) return;
 
 const rawTitle = titleMatch[1].trim().replace(/['"]/g, ''); // Remove any single or double quotes
+let rawTitleFormatted = rawTitle; 
+rawTitleFormatted = rawTitle.replaceAll('(', '');
+rawTitleFormatted = rawTitleFormatted.replaceAll(')', '');
 
 // Infer id from title
-const inferredId = rawTitle.toLowerCase().replace(/\s+/g, '-');
+const inferredId = rawTitleFormatted.toLowerCase().replace(/\s+/g, '-');
 
 // Extract id value from the front matter
 const idRegex = /id:\s*(.*?)(\n|$)/;
