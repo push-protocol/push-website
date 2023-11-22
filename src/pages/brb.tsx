@@ -2,6 +2,7 @@
 // @ts-nocheck
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -15,7 +16,6 @@ import { BRBMainComponent } from '@site/src/components/BRB/BRBMainComponent';
 import { PageMeta } from "@site/src/config/pageMeta";
 
 function BRB() {
-
   return (
     <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription} showNavbar={false}>
       <Head>
@@ -25,14 +25,14 @@ function BRB() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | BRB (Billions Reasons to Build)" />
         <meta name="og:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
-        <meta property="og:image" content={require("/static/assets/previews/brbpreview.png").default} />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/brbpreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | BRB (Billions Reasons to Build)" />
         <meta name="twitter:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
-        <meta name="twitter:image" content={require("/static/assets/previews/brbpreview.png").default} />
+        <meta name="twitter:image" content={useBaseUrl(require("/static/assets/previews/brbpreview.png").default, { absolute: true})} />
 
   
         <script type="application/ld+json">
@@ -51,7 +51,7 @@ function BRB() {
         </script>
       </Head>
 
-        <BRBMainComponent />
+      <BRBMainComponent />
         
     </Layout>
   );

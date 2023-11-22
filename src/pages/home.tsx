@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
@@ -117,7 +118,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push Protocol (Previously EPNS)" />
         <meta property="og:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta property="og:image" content="/assets/previews/homefbpreview.webp" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
 
         {/* <!-- Twitter Meta Tags --> */}
@@ -125,7 +126,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push Protocol (Previously EPNS)" />
         <meta name="twitter:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta name="twitter:image" content="/assets/previews/hometwtpreview.webp" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({

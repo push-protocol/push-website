@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useState } from 'react';
 
@@ -269,14 +270,14 @@ const FrensText = () => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | Frens Of Push" />
         <meta property="og:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
-        <meta property="og:image" content="/assets/previews/frenspagefbpreview.webp" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/frenspagepreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | Frens Of Push" />
         <meta name="twitter:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
-        <meta name="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/frenspagepreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({

@@ -3,6 +3,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -33,14 +34,14 @@ function CheatSheet() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | Cheatsheet" />
         <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta property="og:image" content="/assets/previews/cheatsheetfbpreview.png" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/cheatsheetpreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | Cheatsheet" />
         <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta name="twitter:image" content="/assets/previews/cheatsheettwtpreview.png" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/cheatsheetpreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
