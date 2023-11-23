@@ -2,8 +2,8 @@
     "header": {
         "docs": {
             "title": "दस्तावेज़",
-            "developer-guides": "डेवलपर हब",
-            "alt-developer-guides": "डेवलपर हब में सभी चीज़ों का अन्वेषण करें",
+            "developer-guides": "डॉक्स हब",
+            "alt-developer-guides": "डॉक्स हब में Push की सभी चीज़ों का अन्वेषण करें",
             "governance-guides": "गवर्नेंस हब",
             "alt-governance-guides": "गवर्नेंस हब में गवर्नेंस से संबंधित सभी चीजों का अन्वेषण करें",
             "whitepaper": "व्हाइटपेपर",

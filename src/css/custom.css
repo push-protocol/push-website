@@ -297,6 +297,19 @@ article em > code {
   font-weight: 500;
 }
 
+article em > strong > code {
+  color: #dd44b9;
+  font-style: normal;
+  font-weight: 600;
+  padding: 4px 8px;
+  font-size: 80%;
+}
+
+article em > strong > code:hover {
+  background: #dd44b9;
+  color: #fff;
+}
+
 article ul > li {
   list-style: initial;
 }

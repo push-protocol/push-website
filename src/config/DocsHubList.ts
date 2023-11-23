@@ -147,14 +147,14 @@ const aliceMessagesBob = await userAlice.chat.send(
     target: '_self',
     description: 'Showrunners Framework and how to boost your web3 communications.',
   },
-  // {
-  //   title: 'Tokenomics',
-  //   srcref: 'tokenomics',
-  //   alt: 'Logo representing tokenomics of $PUSH - Push Protocol',
-  //   link: '/docs/tokenomics',
-  //   target: '_self',
-  //   description: 'Learn about the tokenomics of $PUSH which powers the Push Protocol.',
-  // },
+  {
+    title: 'Tokenomics',
+    srcref: 'tokenomics',
+    alt: 'Logo representing tokenomics of $PUSH - Push Protocol',
+    link: '/docs/tokenomics',
+    target: '_self',
+    description: 'Learn about the tokenomics of $PUSH which powers the Push Protocol.',
+  },
   // {
   //   title: 'Roadmap',
   //   srcref: 'roadmap',
