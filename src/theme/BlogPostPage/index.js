@@ -22,15 +22,18 @@ import TOC from "@theme/TOC";
 import FooterItem from "./FooterItem";
 import styled from "styled-components";
 import GLOBALS, { device } from "@site/src/config/globals";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function BlogPostPageContent({ sidebar, children }) {
-  const { metadata, toc } = useBlogPost();
+  const { metadata, toc, content } = useBlogPost();
+  const { siteConfig } = useDocusaurusContext();
   const { nextItem, prevItem, frontMatter } = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
+
   return (
     <BlogLayout>
       <BlogItem>
@@ -39,8 +42,6 @@ function BlogPostPageContent({ sidebar, children }) {
         {/* {(nextItem || prevItem) && (
           <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
         )} */}
-
-        <FooterItem />
       </BlogItem>
     </BlogLayout>
   );

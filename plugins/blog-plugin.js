@@ -1,6 +1,6 @@
 // ./custom-blog-plugin.js
 
-const blogPluginExports = require('@docusaurus/plugin-content-blog');
+const blogPluginExports = require("@docusaurus/plugin-content-blog");
 
 const defaultBlogPlugin = blogPluginExports.default;
 
@@ -31,7 +31,7 @@ async function blogPluginExtended(...pluginArgs) {
               title: blogPost.metadata.title,
               description: blogPost.metadata.description,
               frontMatter: blogPost.metadata.frontMatter,
-            })
+            }),
           ),
 
           // Inject the MDX excerpt as a JSX component prop
@@ -49,25 +49,25 @@ async function blogPluginExtended(...pluginArgs) {
 
       actions.addRoute({
         // Add route for the home page
-        path: '/',
+        path: "/",
         exact: true,
 
         // The component to use for the "Home" page route
-        component: '@site/src/pages/home.tsx',
+        component: "@site/src/pages/home.tsx",
 
         // These are the props that will be passed to our "Home" page component
         modules: {
           homePageBlogMetadata: await actions.createData(
-            'home-page-blog-metadata.json',
+            "home-page-blog-metadata.json",
             JSON.stringify({
               blogTitle: pluginOptions.blogTitle,
               blogDescription: pluginOptions.blogDescription,
               totalPosts: content.blogPosts.length,
               totalRecentPosts: recentPosts.length,
-            })
+            }),
           ),
           recentPosts: await Promise.all(
-            recentPosts.map(createRecentPostModule)
+            recentPosts.map(createRecentPostModule),
           ),
         },
       });
