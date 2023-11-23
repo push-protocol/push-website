@@ -8,7 +8,6 @@ import i18nInitialize from "@site/src/utils/i18n";
 // Internal Components
 import Footer from "@site/src/segments/Footer";
 import ServerStyle from "@site/src/theme/ServerStyle";
-import BlogContextProvider from "./BlogListPage/BlogContext";
 
 // Initialize Internalization
 i18nInitialize();
@@ -99,16 +98,14 @@ export default function Root({ children }) {
 
   return (
     <div className={returnAdditionalClasses(superimposedConditions)}>
-      <BlogContextProvider>
-        <ServerStyle from={children} />
+      <ServerStyle from={children} />
 
-        {/* Main react children */}
-        {children}
+      {/* Main react children */}
+      {children}
 
-        {excludeDefaultConfigAt("/BRB") &&
-          excludeDefaultConfigAt("/DOCS") &&
-          excludeDefaultConfigAt("/BLOG") && <Footer />}
-      </BlogContextProvider>
+      {excludeDefaultConfigAt("/BRB") &&
+        excludeDefaultConfigAt("/DOCS") &&
+        excludeDefaultConfigAt("/BLOG") && <Footer />}
     </div>
   );
 }

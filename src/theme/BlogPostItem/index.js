@@ -15,7 +15,6 @@ import styled from "styled-components";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import BlogPostItems from "@theme/BlogPostItems";
 import FooterItem from "@theme/BlogPostPage/FooterItem";
-import { BlogContext } from "../BlogListPage/BlogContext";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
@@ -33,7 +32,6 @@ function useContainerClassName() {
 export default function BlogPostItem({ children, className, list }) {
   const containerClassName = useContainerClassName();
   const { isBlogPostPage } = useBlogPost();
-  const { allBlogFeeds, setAllBlogFeeds } = useContext(BlogContext);
 
   if (list) {
     return (
@@ -61,13 +59,6 @@ export default function BlogPostItem({ children, className, list }) {
         )}
 
         <BlogPostItemFooter />
-
-        {isBlogPostPage && <FooterItem />}
-        {isBlogPostPage && (
-          <GridItem>
-            <BlogPostItems items={allBlogFeeds?.slice(0, 4)} />
-          </GridItem>
-        )}
       </BlogPostItemContainer>
     );
   }

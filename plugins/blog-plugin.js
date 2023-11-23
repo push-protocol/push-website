@@ -22,6 +22,9 @@ async function blogPluginExtended(...pluginArgs) {
       const recentPostsLimit = 4;
       const recentPosts = [...content.blogPosts].splice(0, recentPostsLimit);
 
+      // Get all blog posts
+      const allPosts = [...content.blogPosts];
+
       async function createRecentPostModule(blogPost, index) {
         return {
           // Inject the metadata you need for each recent blog post
@@ -43,6 +46,32 @@ async function blogPluginExtended(...pluginArgs) {
             query: {
               truncated: true,
             },
+          },
+        };
+      }
+
+      async function createMorePostModule(blogPost, index) {
+        return {
+          // Inject the metadata you need for each recent blog post
+          metadata: await actions.createData(
+            `blog-page-more-post-metadata-${index}.json`,
+            JSON.stringify({
+              title: blogPost.metadata.title,
+              description: blogPost.metadata.description,
+              frontMatter: blogPost.metadata.frontMatter,
+              content: blogPost,
+            }),
+          ),
+
+          // Inject the MDX excerpt as a JSX component prop
+          // (what's above the <!-- truncate --> marker)
+          Preview: {
+            __import: true,
+            // The markdown file for the blog post will be loaded by webpack
+            path: blogPost.metadata.source,
+            // query: {
+            // truncated: false,
+            // },
           },
         };
       }
@@ -69,6 +98,29 @@ async function blogPluginExtended(...pluginArgs) {
           recentPosts: await Promise.all(
             recentPosts.map(createRecentPostModule),
           ),
+        },
+      });
+
+      actions.addRoute({
+        // Add route for the blog page
+        path: "/blog/:id",
+        exact: true,
+
+        // The component to use for the "blog" page route
+        component: "@site/src/theme/BlogPostPage/index.js",
+
+        // These are the props that will be passed to our "blog" page component
+        modules: {
+          blogPostPageMetadata: await actions.createData(
+            "blog-page-more-post-metadata.json",
+            JSON.stringify({
+              blogTitle: pluginOptions.blogTitle,
+              blogDescription: pluginOptions.blogDescription,
+              totalPosts: content.blogPosts.length,
+              totalRecentPosts: recentPosts.length,
+            }),
+          ),
+          allPosts: await Promise.all(allPosts.map(createMorePostModule)),
         },
       });
 

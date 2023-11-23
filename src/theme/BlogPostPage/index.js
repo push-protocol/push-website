@@ -20,13 +20,12 @@ import BlogPostPaginator from "@theme/BlogPostPaginator";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import TOC from "@theme/TOC";
 import FooterItem from "./FooterItem";
+import MorePosts from "./MorePosts";
 import styled from "styled-components";
 import GLOBALS, { device } from "@site/src/config/globals";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-function BlogPostPageContent({ sidebar, children }) {
+function BlogPostPageContent({ allPosts, children }) {
   const { metadata, toc, content } = useBlogPost();
-  const { siteConfig } = useDocusaurusContext();
   const { nextItem, prevItem, frontMatter } = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
@@ -42,14 +41,27 @@ function BlogPostPageContent({ sidebar, children }) {
         {/* {(nextItem || prevItem) && (
           <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
         )} */}
+
+        <FooterItem />
+        <MorePosts allPosts={allPosts} />
       </BlogItem>
     </BlogLayout>
   );
 }
 export default function BlogPostPage(props) {
-  const BlogPostContent = props.content;
+  const blogPath = props.location.pathname.substring(
+    0,
+    props.location.pathname.length - 1,
+  );
+  const allPosts = props.allPosts;
+  const contentName = allPosts?.filter((x) =>
+    x?.Preview?.metadata?.permalink.includes(blogPath),
+  )[0];
+  const BlogPostContent = contentName?.Preview;
+
+  // const BlogPostContent = props.content;
   return (
-    <BlogPostProvider content={props.content} isBlogPostPage>
+    <BlogPostProvider content={contentName?.Preview} isBlogPostPage>
       <HtmlClassNameProvider
         className={clsx(
           ThemeClassNames.wrapper.blogPages,
@@ -57,7 +69,7 @@ export default function BlogPostPage(props) {
         )}
       >
         <BlogPostPageMetadata />
-        <BlogPostPageContent sidebar={props.sidebar}>
+        <BlogPostPageContent allPosts={allPosts}>
           <BlogPostContent />
         </BlogPostPageContent>
       </HtmlClassNameProvider>

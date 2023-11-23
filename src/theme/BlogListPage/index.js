@@ -20,7 +20,6 @@ import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import { BlogContext } from "./BlogContext";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
@@ -42,13 +41,6 @@ function BlogListPageMetadata(props) {
 }
 function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
-  const { allBlogFeeds, setAllBlogFeeds } = useContext(BlogContext);
-
-  useEffect(() => {
-    setAllBlogFeeds(items);
-  }, [items]);
-
-  console.log(props, "kokokokoo");
 
   return (
     <>
