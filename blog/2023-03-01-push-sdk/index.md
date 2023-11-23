@@ -23,7 +23,7 @@ Socket API is deprecated. Push has revamped it's socket API into stream API whic
 :::
 
 
-<ABlock href="/docs/chat/stream-chat">Learn about Push Stream API</ABlock>
+<ABlock href="/docs/chat/stream-chat" title="Link to learn more about Push Stream API">Learn about Push Stream API</ABlock>
 
 ## Note on Addresses
 In any of the specified methods (unless explicitly stated otherwise), you can use either CAIP format (specifically CAIP-10) or the ETH address format.

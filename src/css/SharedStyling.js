@@ -675,6 +675,13 @@ export const ModalInner = styled(Button)`
 
 export const ModalSmall = styled(ModalInner)``;
 
+export const ModalSmallEqual = styled(ModalSmall)`
+  min-width: 140px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
 export const ModalMid = styled(ModalInner)`
   gap: 20px;
   padding: 30px 10px;
@@ -684,7 +691,6 @@ export const ModalMid = styled(ModalInner)`
     height: 48px;
   }
 `;
-
 export const ModalMidEqual = styled(ModalMid)`
   min-width: 140px;
   align-self: stretch;
@@ -710,4 +716,13 @@ export const ModalLarge = styled(ModalMid)`
   align-self: stretch;
   justify-content: space-between;
   flex: 1;
+`;
+
+export const MetricTitle = styled(Span)`
+  color: #dd44b9 !important;
+  font-weight: 600 !important;
+`;
+
+export const MetricSub = styled(Span)`
+  font-size: 14px;
 `;
