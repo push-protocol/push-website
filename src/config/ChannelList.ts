@@ -7615,6 +7615,41 @@ export const objChannelList = [
     type: 'Hackathons',
     hackathon: 'ETHforAll'
     },
+    {
+      name: 'Rely',
+      info: `A digital asset interface using Push Protocol to keep users informed with real-time updates and let them comnunicate with their friends.`,
+      url: 'https://ethglobal.com/showcase/rely-oygqg',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pixel',
+      info: `A game-changing digital asset trading platform using Push Protocol to integrate trading directly within chat.`,
+      url: 'https://ethglobal.com/showcase/pixel-rr36q',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'zkmap',
+      info: `A unique proof-of-location system allowing users to verify their presence in a given location using Push Protocol for location-gated chats`,
+      url: 'https://ethglobal.com/showcase/zkmap-n2z06',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'GenieAI',
+      info: ` An Ai marketplace providing users the access to many different AIs using Push Protocol for sending notifications to users.`,
+      url: 'https://ethglobal.com/showcase/genieai-feo3a',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pulse',
+      info: `A mobile-first social app that improves your feed based on your social graph and in-app interactions using Push Protocol to notify creators.`,
+      url: 'https://ethglobal.com/showcase/pulse-v4iir',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
 ];
 
 // const ChannelList = () => {
