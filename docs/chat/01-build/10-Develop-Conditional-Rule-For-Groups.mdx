@@ -333,7 +333,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
                           "OWNER"
                       ]
                   }
-                }
+                },
                 { // define criteria 2
                   type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
@@ -341,7 +341,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
                   data: { // define the data check
                     "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
                     "comparison": ">=", // what comparison needs to pass
-                    "amount": 10 // amount that needs to passed
+                    "amount": 10, // amount that needs to passed
                     "decimals": 18, // the decimals for the contract
                   }
                 },
@@ -352,7 +352,7 @@ Below is an advance version of gated controls that are applied to both `entry` t
                   data: { // define the data check
                     "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
                     "comparison": ">=", // what comparison needs to pass
-                    "amount": 10 // amount that needs to passed
+                    "amount": 10, // amount that needs to passed
                     "decimals": 18, // the decimals for the contract
                   }
                 }
