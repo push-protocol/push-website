@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "@docusaurus/Link";
 
@@ -25,9 +25,31 @@ import BlogPostItem from "@theme/BlogPostItem";
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
 
-const MorePosts = ({ allPosts }) => {
+const MorePosts = ({ allPosts, post }) => {
   const isMobile = useMediaQuery(device.tablet);
-  console.log(allPosts?.slice(0, 4), "allPosts");
+  const [filteredArray, setFilteredArray] = useState();
+
+  const filterPost = () => {
+    const tagList = post?.Preview?.metadata?.tags;
+    const allOtherPosts = allPosts.filter((item) => item !== post);
+
+    const sortArray = tagList?.map((item) => {
+      const matchingTags = allOtherPosts?.filter((obj) =>
+        obj?.Preview?.metadata?.tags?.some((tag) => tag?.label === item?.label),
+      );
+      const result = matchingTags?.find(
+        (tag) => tag?.Preview?.metadata?.tags[0]?.label === item?.label,
+      );
+      // return result !== undefined ? result : "check
+      return result;
+    });
+
+    setFilteredArray(sortArray);
+  };
+
+  useEffect(() => {
+    filterPost();
+  }, [allPosts, post]);
 
   return (
     <div>
@@ -66,7 +88,7 @@ const MorePosts = ({ allPosts }) => {
       </MoreRow>
 
       <GridItem marginTop={false}>
-        {allPosts?.slice(0, 4).map((item) => (
+        {filteredArray?.slice(0, 4).map((item) => (
           <div>
             <Image src={item?.Preview?.assets?.image} />
 

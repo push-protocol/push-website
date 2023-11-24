@@ -24,7 +24,7 @@ import MorePosts from "./MorePosts";
 import styled from "styled-components";
 import GLOBALS, { device } from "@site/src/config/globals";
 
-function BlogPostPageContent({ allPosts, children }) {
+function BlogPostPageContent({ allPosts, post, children }) {
   // const { metadata, toc, content } = useBlogPost();
   // const { nextItem, prevItem, frontMatter } = metadata;
   // const {
@@ -43,7 +43,7 @@ function BlogPostPageContent({ allPosts, children }) {
         )} */}
 
         <FooterItem />
-        <MorePosts allPosts={allPosts} />
+        <MorePosts allPosts={allPosts} post={post} />
       </BlogItem>
     </BlogLayout>
   );
@@ -69,7 +69,7 @@ export default function BlogPostPage(props) {
         )}
       >
         <BlogPostPageMetadata />
-        <BlogPostPageContent allPosts={allPosts}>
+        <BlogPostPageContent allPosts={allPosts} post={contentName}>
           <BlogPostContent />
         </BlogPostPageContent>
       </HtmlClassNameProvider>
