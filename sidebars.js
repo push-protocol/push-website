@@ -358,6 +358,11 @@ const sidebars = {
           type: "link",
           href: "https://push.org/docs/dao",
         },
+        {
+          label: "Push FAQs",
+          type: "link",
+          href: "https://push.org/faq",
+        },
       ],
     },
   ],
