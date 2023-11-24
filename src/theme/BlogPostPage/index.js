@@ -58,7 +58,6 @@ export default function BlogPostPage(props) {
     x?.Preview?.metadata?.permalink.includes(blogPath),
   )[0];
   const BlogPostContent = contentName?.Preview;
-  console.log(props, "fdsnfkdnfkdnfkd");
 
   // const BlogPostContent = props.content;
   return (

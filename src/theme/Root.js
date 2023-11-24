@@ -105,7 +105,7 @@ export default function Root({ children }) {
 
       {excludeDefaultConfigAt("/BRB") &&
         excludeDefaultConfigAt("/DOCS") &&
-        excludeDefaultConfigAt("/BLOG") && <Footer />}
+        excludeDefaultConfigAt("/DDD") && <Footer />}
     </div>
   );
 }

@@ -72,13 +72,13 @@ const MorePosts = ({ allPosts }) => {
 
             <TextView>
               <BlogPostItemHeaderInfo morePosts={item?.Preview?.metadata} />
-              <Link itemProp="url" to={item?.Preview?.frontMatter.permalink}>
+              <Link itemProp="url" to={item?.Preview?.metadata?.permalink}>
                 <LinkText>{item?.Preview?.frontMatter?.title}</LinkText>
               </Link>
               <TextSpan>{item?.Preview?.frontMatter?.text}</TextSpan>
             </TextView>
             <Link
-              to={item?.Preview?.frontMatter.permalink}
+              to={item?.Preview?.metadata?.permalink}
               style={{ color: "#dd44b9" }}
             >
               Read More
