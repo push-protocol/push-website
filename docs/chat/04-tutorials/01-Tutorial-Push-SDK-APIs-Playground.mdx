@@ -13,13 +13,11 @@ image: "/assets/docs/previews/docs_chat--push_sdk_playground.png"
 This tutorial is designed to get you up and going by providing playground containing all API calls coverage for Push SDK. Checkout [Push SDK example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-backend-node) that utlizes [@pushprotocol/restapi](https://www.npmjs.com/package/@pushprotocol/restapi) and [@pushprotocol/socket](https://www.npmjs.com/package/@pushprotocol/socket) for more info!
 
 <head>
-  <title>
-    Push SDK APIs playground tutorial | Push Chat | Push Documentation
-  </title>
+  <title>Push SDK APIs playground tutorial | Push Chat | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 ## Step 1: Clone the Push SDK Repository
 
@@ -28,7 +26,7 @@ Download the Push SDK repository to your local machine.
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 git clone https://github.com/ethereum-push-notification-service/push-sdk.git
 ```
 
@@ -42,7 +40,7 @@ Navigate to the SDK directory and install required dependencies.
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 cd push-sdk
 yarn install
 ```
@@ -57,7 +55,7 @@ Navigate to the directory and install required dependencies.
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 cd packages/examples/sdk-backend-node
 yarn install
 ```
@@ -71,7 +69,7 @@ Create a `.env` file and add values to it according to the given `.env.sample`.
 
 **Note** - It is possible to run a bare minimum examples without `.env`. All other examples will be skipped.
 
-```bash
+```zsh
 # WALLET PRIVATE KEY
 WALLET_PRIVATE_KEY=your_channel_private_key
 
@@ -127,7 +125,7 @@ VIDEO_CHAT_ID=your_video_chat_id
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 # Create .env file
 touch .env
 
@@ -142,7 +140,7 @@ touch .env
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```bash
+```zsh
 yarn start
 ```
 
@@ -151,4 +149,4 @@ yarn start
 
 ### Expected Output
 
-<img src={require('/docs/assets/sdk-playground.png').default} />
+!["Push SDK API Playground"](/assets/docs/shared/playground/sdk-playground.png "Example of how the playground will look like if setup properly")

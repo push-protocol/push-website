@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
@@ -41,17 +42,17 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
-import DiscordSVG from "@site/static/assets/discord.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import GithubSVG from "@site/static/assets/github.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
-import TwitterSVG from "@site/static/assets/twitter.svg";
 import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
 import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
+import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
+import GithubSVG from "@site/static/assets/website/shared/github.svg";
+import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
@@ -109,23 +110,23 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
      <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
-        <title>Push (Previously EPNS) Communication Protocol of Web3</title>
-        <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
+        <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
+        <meta name="description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push Protocol (Previously EPNS)" />
-        <meta property="og:description" content="The Communication Protocol of Web3. Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta property="og:image" content="/assets/previews/homefbpreview.webp" />
+        <meta property="og:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push Protocol (Previously EPNS)" />
-        <meta name="twitter:description" content="The Communication Protocol of Web3. Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta name="twitter:image" content="/assets/previews/hometwtpreview.webp" />
+        <meta name="twitter:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({

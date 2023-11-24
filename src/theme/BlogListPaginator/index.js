@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
 import Translate, { translate } from "@docusaurus/Translate";
 import PaginatorNavLink from "@theme/PaginatorNavLink";
+import React from "react";
 import styled from "styled-components";
 
 // Internal Configs
@@ -54,8 +54,6 @@ export default function BlogListPaginator(props) {
     </NavItem>
   );
 }
-
-const Div = styled.div``;
 
 const NavItem = styled.nav`
   margin: 0 auto 72px auto;

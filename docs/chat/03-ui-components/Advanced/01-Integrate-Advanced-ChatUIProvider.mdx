@@ -9,31 +9,36 @@ image: "/assets/docs/previews/docs_chat_ui_components_advanced--chatuiprovider.p
 ---
 
 # ChatUIProvider
+
 Enhance State Management: Boost Your Component's Functionality by Wrapping it with ChatUIProvider.
 
+You can seamlessly integrate your main root file with the ChatUIProvider, allowing you to effortlessly incorporate any component throughout your entire application. This simplifies the process of using components independently across the app, eliminating the need to manage common inputs such as account information and PGP private keys, among others.
+
 <head>
-  <title>ChatUIProvider | UI Components (@pushprotocol/uiweb) | Push Chat | Push Documentation</title>
+  <title>ChatUIProvider | UI Components (@pushprotocol/uiweb) | Push Chat | Push
+    Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ## Usage
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-  ```typescript
-  import { ChatUIProvider } from "@pushprotocol/uiweb";
-  import { darkChatTheme } from "@pushprotocol/uiweb";
+```typescript
+import { ChatUIProvider } from "@pushprotocol/uiweb";
+import { darkChatTheme } from "@pushprotocol/uiweb";
 
-  export function App({ Component }) {
-    return (
-      <ChatUIProvider theme={darkChatTheme}>
-        <Component />
-      </ChatUIProvider>
-    );
-  }
-  ```
+export function App({ Component }) {
+  return (
+    <ChatUIProvider theme={darkChatTheme}>
+      <Component />
+    </ChatUIProvider>
+  );
+}
+```
 
   </TabItem>
 </Tabs>
@@ -41,15 +46,16 @@ import TabItem from "@theme/TabItem";
 ---
 
 ### Customization parameters
+
 Customize the parameters as per your need and the chat component being used.
 
-| Param         | Type            | Default | Remarks |
-| ------------- | --------------- | ------- | -------- |
-| `account`       | `string`         | -       | Supports wallet address or chain agnostic wallet address format|
-| `pgpPrivatekey` | `string`          | -       | Decrypted pgp private key of the user |
-| `theme`         | `IChatTheme`      | -       | [Theme object](/docs/chat/ui-components/advanced/themization/), it can be custom theme object, `lightChatTheme` `darkChatTheme` |
-| _`children`_  | `React.ReactNode` | -       ||
-| `env`           | `Env`             | -       |API env - 'prod' or 'staging'|
-| `signer`        | `SignerType`          | -       |EthersV5 or Viem Signer|
+| Param           | Type              | Default | Remarks                                                                                                                         |
+| --------------- | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `account`       | `string`          | -       | Supports wallet address or chain agnostic wallet address format                                                                 |
+| `pgpPrivatekey` | `string`          | -       | Decrypted pgp private key of the user                                                                                           |
+| `theme`         | `IChatTheme`      | -       | [Theme object](/docs/chat/ui-components/Advanced/Themization/), it can be custom theme object, `lightChatTheme` `darkChatTheme` |
+| _`children`_    | `React.ReactNode` | -       |                                                                                                                                 |
+| `env`           | `Env`             | -       | API env - 'prod' or 'staging'                                                                                                   |
+| `signer`        | `SignerType`      | -       | EthersV5 or Viem Signer                                                                                                         |
 
 > Note: Parameters _`in this style`_ are mandatory.

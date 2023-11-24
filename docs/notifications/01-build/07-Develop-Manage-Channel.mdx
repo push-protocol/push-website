@@ -16,14 +16,15 @@ This section covers all APIs related to managing channel including adding settin
   <title>Manage Channel | Push Notification | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## Get channel info API
 
@@ -32,7 +33,7 @@ import {
 
 ```typescript
 // userAlice.channel.info(channel?)
-const channelInfo = await userAlice.channel.info()
+const channelInfo = await userAlice.channel.info();
 ```
 
   </TabItem>
@@ -42,14 +43,13 @@ const channelInfo = await userAlice.channel.info()
 
 ### Fetch channel info parameters
 
-| Param     | Type     | Subtype | Default             | Remarks                        |
-| --------- | -------- | ------- | ------------------- | ------------------------------ |
-| `channel` | `string` | -       | -                   | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel  |
+| Param     | Type     | Subtype | Default | Remarks                                                                                                                                                                                              |
+| --------- | -------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `channel` | `string` | -       | -       | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 {
@@ -78,8 +78,7 @@ const channelInfo = await userAlice.channel.info()
 }
 ```
 
-</details>
-
+</Details>
 
 ## Get channel alias info API
 
@@ -92,8 +91,8 @@ A channel alias address is a link to other EVM / non-EVM chain address that acts
 // await userAlice.channel.alias.info({options?})
 const aliasInfo = await userAlice.channel.alias.info({
   alias: aliasAddress,
-  aliasChain: 'POLYGON',
-})
+  aliasChain: "POLYGON",
+});
 ```
 
   </TabItem>
@@ -111,8 +110,7 @@ const aliasInfo = await userAlice.channel.alias.info({
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 {
@@ -124,8 +122,7 @@ const aliasInfo = await userAlice.channel.alias.info({
 }
 ```
 
-</details>
-
+</Details>
 
 ## Get channel subscribers API
 
@@ -134,7 +131,7 @@ const aliasInfo = await userAlice.channel.alias.info({
 
 ```typescript
 // userAlice.channel.subscribers({options?})
-const channelSubscribers = await userAlice.channel.subscribers()
+const channelSubscribers = await userAlice.channel.subscribers();
 ```
 
   </TabItem>
@@ -144,15 +141,14 @@ const channelSubscribers = await userAlice.channel.subscribers()
 
 ### Get channel subscribers parameters
 
-| Param     | Type              | Subtype  | Default             | Remarks                                           |
-| --------- | ----------------- | -------- | ------------------- | ------------------------------------------------- |
-| `options` | `object`          | -        | -                   | Configuration options for retrieving subscribers. |
+| Param     | Type              | Subtype  | Default             | Remarks                                                                                                                                                                                              |
+| --------- | ----------------- | -------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options` | `object`          | -        | -                   | Configuration options for retrieving subscribers.                                                                                                                                                    |
 | -         | `options.channel` | `string` | Derived from signer | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 // PushAPI.channels.getSubscribers | Response - 200 OK
@@ -173,7 +169,7 @@ const channelSubscribers = await userAlice.channel.subscribers()
 }
 ```
 
-</details>
+</Details>
 
 ## Search channel API
 
@@ -182,7 +178,7 @@ const channelSubscribers = await userAlice.channel.subscribers()
 
 ```typescript
 // userAlice.channel.search(query, {options?})
-const searchedChannels = await userAlice.channel.search('push')
+const searchedChannels = await userAlice.channel.search("push");
 ```
 
   </TabItem>
@@ -201,23 +197,22 @@ const searchedChannels = await userAlice.channel.search('push')
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
-;[
+[
   {
     id: 2,
-    channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
-    ipfshash: 'QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
-    name: 'Ethereum Push Notification Service',
-    info: 'The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.',
-    url: 'https://epns.io/',
-    icon: 'https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
+    channel: "0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924",
+    ipfshash: "QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74",
+    name: "Ethereum Push Notification Service",
+    info: "The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.",
+    url: "https://epns.io/",
+    icon: "https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74",
     processed: 1,
     attempts: 0,
-    alias_address: 'NULL',
-    alias_blockchain_id: 'NULL',
+    alias_address: "NULL",
+    alias_blockchain_id: "NULL",
     is_alias_verified: 0,
     blocked: 0,
     alias_verification_event: null,
@@ -225,23 +220,23 @@ const searchedChannels = await userAlice.channel.search('push')
     verified_status: 0,
     subgraph_details: null,
     counter: null,
-    timestamp: '2022-12-12T05:17:02.000Z',
+    timestamp: "2022-12-12T05:17:02.000Z",
     subgraph_attempts: 0,
     channel_settings: null,
     subscriber_count: 11,
   },
   {
     id: 96,
-    channel: '0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d',
-    ipfshash: 'QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
-    name: 'test with push',
-    info: 'test with push',
-    url: 'https://push.org',
-    icon: 'https://gateway.ipfs.io/ipfs/bafybeicsksoatvksk4xazftcehg6sodevkgzkzuuvoz3htzt7ejskbdu2y/QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
+    channel: "0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d",
+    ipfshash: "QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy",
+    name: "test with push",
+    info: "test with push",
+    url: "https://push.org",
+    icon: "https://gateway.ipfs.io/ipfs/bafybeicsksoatvksk4xazftcehg6sodevkgzkzuuvoz3htzt7ejskbdu2y/QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy",
     processed: 1,
     attempts: 0,
-    alias_address: 'NULL',
-    alias_blockchain_id: 'NULL',
+    alias_address: "NULL",
+    alias_blockchain_id: "NULL",
     is_alias_verified: 0,
     blocked: 0,
     alias_verification_event: null,
@@ -249,16 +244,15 @@ const searchedChannels = await userAlice.channel.search('push')
     verified_status: 0,
     subgraph_details: null,
     counter: null,
-    timestamp: '2023-01-10T04:42:26.000Z',
+    timestamp: "2023-01-10T04:42:26.000Z",
     subgraph_attempts: 0,
     channel_settings: null,
     subscriber_count: 0,
   },
-]
+];
 ```
 
-</details>
-
+</Details>
 
 ## Update channel API
 
@@ -279,7 +273,7 @@ const updateChannelRes = await userAlice.channel.update({
   url: newChannelURL,
   icon: newBase64FormatImage,
   alias: newAliasAddressInCAIP,
-})
+});
 ```
 
   </TabItem>
@@ -289,54 +283,53 @@ const updateChannelRes = await userAlice.channel.update({
 
 ### Update channel parameters
 
-| Param       | Type                    | Subtype                   | Default | Remarks                                                            |
-| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------ |
-| _`options`_ | `object`                | -                         | -       | Configuration options for updating a channel                       |
-| -           | _`options.name`_        | `string`                  | -       | New name of the channel                                            |
-| -           | _`options.description`_ | `string`                  | -       | New description of the channel                                     |
-| -           | _`options.icon`_        | `string (base64 encoded)` | -       | New channel's icon in base64 encoded string format                 |
-| -           | _`options.url`_         | `string`                  | -       | New URL associated with the channel                                |
-| -           | `options.alias`         | `string`                  | -       | New alias address in Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address) |
-| -           | `options.progresshook`  | `(progress) => void`              | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/manage-channel/#update-channel-progress-object-parameters) |
+| Param       | Type                    | Subtype                   | Default | Remarks                                                                                                                                                                        |
+| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`options`_ | `object`                | -                         | -       | Configuration options for updating a channel                                                                                                                                   |
+| -           | _`options.name`_        | `string`                  | -       | New name of the channel                                                                                                                                                        |
+| -           | _`options.description`_ | `string`                  | -       | New description of the channel                                                                                                                                                 |
+| -           | _`options.icon`_        | `string (base64 encoded)` | -       | New channel's icon in base64 encoded string format                                                                                                                             |
+| -           | _`options.url`_         | `string`                  | -       | New URL associated with the channel                                                                                                                                            |
+| -           | `options.alias`         | `string`                  | -       | New alias address in Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address)                                  |
+| -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/manage-channel/#update-channel-progress-object-parameters) |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 {
-  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32'
+  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
 }
 ```
 
-</details>
+</Details>
 
 ### Update channel progress object parameters
 
 _Optional:_ Informs about individual progress stages during channel creation if progresshook is function is passed during channel creation API call.
 
-| Param       | Type                    | Subtype                   | Default | Remarks                                                             |
-| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------- |
-| `progress` | `object`                 | -                         | -       | progress object that is passed in the callback                      |
-| -          | `Progress.id`            | `string`                  | -       | Predefined, ID associated with the progress objects                 |
-| -          | `Progress.level`         | `string`                  | -       | Predefined, Level associated with the progress objects              |
-| -          | `Progress.title`         | `string`                  | -       | Predefined, title associated with the progress objects              |
-| -          | `Progress.info`          | `string`                  | -       | Predefined, info associated with the progress objects               |
+| Param      | Type             | Subtype  | Default | Remarks                                                |
+| ---------- | ---------------- | -------- | ------- | ------------------------------------------------------ |
+| `progress` | `object`         | -        | -       | progress object that is passed in the callback         |
+| -          | `Progress.id`    | `string` | -       | Predefined, ID associated with the progress objects    |
+| -          | `Progress.level` | `string` | -       | Predefined, Level associated with the progress objects |
+| -          | `Progress.title` | `string` | -       | Predefined, title associated with the progress objects |
+| -          | `Progress.info`  | `string` | -       | Predefined, info associated with the progress objects  |
 
 _`Progress object details`_
 
-| Progress.id              | Progress.level   | Progress.title                                      | Progress.info                                           |
-|--------------------------|------------------|-----------------------------------------------------|---------------------------------------------------------|
-| `PUSH-CHANNEL-CREATE-01` | `INFO`           | Uploading data to IPFS                              | The channel’s data is getting uploaded to IPFS          |
-| `PUSH-CHANNEL-CREATE-02` | `INFO`           | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI    |
-| `PUSH-CHANNEL-CREATE-03` | `INFO`           | Channel is getting created                          | Calls Push Core contract to create your channel         |
-| `PUSH-CHANNEL-CREATE-04` | `SUCCESS`        | Channel creation is done, Welcome to Push Ecosystem | Channel creation is completed                           |
-| `PUSH-CHANNEL-UPDATE-01` | `INFO`           | Uploading new data to IPFS                          | The channel’s new data is getting uploaded to IPFS      |
-| `PUSH-CHANNEL-UPDATE-02` | `INFO`           | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI    |
-| `PUSH-CHANNEL-UPDATE-03` | `INFO`           | Channel is getting updated                          | Calls Push Core contract to update your channel details |
-| `PUSH-CHANNEL-UPDATE-04` | `SUCCESS`        | Channel is updated with new data                    | Channel is successfully updated                         |
-| `PUSH-ERROR-02`          | `ERROR`          | Transaction failed for a function call              | Transaction failed                                      |
+| Progress.id              | Progress.level | Progress.title                                      | Progress.info                                           |
+| ------------------------ | -------------- | --------------------------------------------------- | ------------------------------------------------------- |
+| `PUSH-CHANNEL-CREATE-01` | `INFO`         | Uploading data to IPFS                              | The channel’s data is getting uploaded to IPFS          |
+| `PUSH-CHANNEL-CREATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI    |
+| `PUSH-CHANNEL-CREATE-03` | `INFO`         | Channel is getting created                          | Calls Push Core contract to create your channel         |
+| `PUSH-CHANNEL-CREATE-04` | `SUCCESS`      | Channel creation is done, Welcome to Push Ecosystem | Channel creation is completed                           |
+| `PUSH-CHANNEL-UPDATE-01` | `INFO`         | Uploading new data to IPFS                          | The channel’s new data is getting uploaded to IPFS      |
+| `PUSH-CHANNEL-UPDATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI    |
+| `PUSH-CHANNEL-UPDATE-03` | `INFO`         | Channel is getting updated                          | Calls Push Core contract to update your channel details |
+| `PUSH-CHANNEL-UPDATE-04` | `SUCCESS`      | Channel is updated with new data                    | Channel is successfully updated                         |
+| `PUSH-ERROR-02`          | `ERROR`        | Transaction failed for a function call              | Transaction failed                                      |
 
 ## Verify channel API
 
@@ -355,7 +348,7 @@ Channel Verification feature enables a channel owner to verify other channels. A
 
 ```typescript
 // userAlice.channel.verify(channel)
-const verifyChannelRes = await userAlice.channel.verify(channel)
+const verifyChannelRes = await userAlice.channel.verify(channel);
 ```
 
   </TabItem>
@@ -365,21 +358,18 @@ const verifyChannelRes = await userAlice.channel.verify(channel)
 
 ### Verify channel parameters
 
-| Param                   | Type     | Subtype | Default | Remarks                                |
-| ----------------------- | -------- | ------- | ------- | -------------------------------------- |
+| Param       | Type     | Subtype | Default | Remarks                                |
+| ----------- | -------- | ------- | ------- | -------------------------------------- |
 | _`channel`_ | `string` | -       | -       | Channel address in CAIP to be verified |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary><b>Expected response</b></summary>
+<Details summary="Expected response">
 
 ```typescript
 {
-  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32'
+  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
 }
 ```
 
-</details>
-
-
+</Details>

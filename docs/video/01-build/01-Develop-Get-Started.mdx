@@ -8,135 +8,142 @@ sidebar_position: 1
 image: "/assets/docs/previews/docs_video_develop--get_started.png"
 ---
 
-
 # Get started
-Push Video enables web3 native real time communication between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of media stream and connection. 
+
+Push Video enables web3 native real time communication between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of media stream and connection.
 
 <head>
   <title>Start Building | Push Video | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import ReactPlayer from 'react-player';
-import { ModalContainer, ModalSmall, ModalWrapper, AImp } from '@site/src/css/SharedStyling';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ReactPlayer from "react-player";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
 
 ## Speed run
+
 The following speed run is designed to give you a quick overview of usage and demonstrates how Push Video can be integrated successfully in minimal lines of code.
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```js
-    // Import Push SDK & ethers
-    import { PushAPI, VideoCallStatus } from '@pushprotocol/restapi';
-    import { ADDITIONAL_META_TYPE } from '@pushprotocol/restapi/src/lib/payloads/constants';
-    import { createSocketConnection, EVENTS } from '@pushprotocol/socket';
-    import { ethers } from 'ethers';
+```js
+  // Import Push SDK & ethers
+  import { PushAPI, VideoCallStatus, CONSTANTS } from '@pushprotocol/restapi';
+  import { ADDITIONAL_META_TYPE } from '@pushprotocol/restapi/src/lib/payloads/constants';
+  import { createSocketConnection, EVENTS } from '@pushprotocol/socket';
+  import { ethers } from 'ethers';
 
-    // Creating a random signer from a wallet, ideally this is the wallet you will connect
-    const signer = ethers.Wallet.createRandom();
+  // Creating a random signer from a wallet, ideally this is the wallet you will connect
+  const signer = ethers.Wallet.createRandom();
 
-    // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-    const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
-    
-    // get PGP private key
-    const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
-    
-    // This will be the wallet address of the recipient 
-    const bobWalletAddress = "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
+  // Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+  const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
-    // Initialize video object
-    const aliceVideoCall = new PushAPI.video.Video({
-      signer: _signer;
-      chainId: 1; // Pass 1 for Ethereum, 137 for Polygon, etc
-      pgpPrivateKey: encryptedPrivateKey; // Used to authenticate if users are connected
-      env: 'staging'; // 'prod' or 'staging' environment
-      setData: (fn: (data: VideoCallData) => VideoCallData) => void; // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
-    });
+  // get PGP private key
+  const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
 
-    // Create media stream
-    await aliceVideoCall.create({
-      video: true; // to enable video on start
-      audio: true; // to enable audio on start
-    });
-    
-    // request a call to a recipient wallet address
-    // 
-    await aliceVideoCall.request({
-      senderAddress: signer.address;
-      recipientAddress: bobWalletAddress; // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-      chatId: chatID; // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
-    });
+  // This will be the wallet address of the recipient
+  const bobWalletAddress = "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
 
-    // Create Socket to Listen to incoming messages
-    const pushSDKSocket = createSocketConnection({
-      user: signer.wallet,
-      socketType: 'chat',
-      socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
-      env: 'staging',
-    });
+  // Initialize video object
+  const aliceVideoCall = new PushAPI.video.Video({
+    signer: signer,
+    chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+    pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+    env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+    setData: (fn: (data: VideoCallData) => VideoCallData) => void, // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+  });
 
-    // To listen to real time video calls
-    pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
-      // we are listening for video call related notifications
-      const { payload } = feedItem || {};
+  // Create media stream
+  await aliceVideoCall.create({
+    video: true, // to enable video on start
+    audio: true, // to enable audio on start
+  });
 
-      // we check if the additionalMeta property is present in payload.data
-      if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
-        const additionalMeta = payload['data']['additionalMeta'];
+  // request a call to a recipient wallet address
+  await aliceVideoCall.request({
+    senderAddress: signer.address,
+    recipientAddress: bobWalletAddress, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+    chatId: chatID, // pass in the chat id between sender and recipient, required
+  });
 
-        // check for PUSH_VIDEO
-        if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`) {
-          const videoCallMetaData = JSON.parse(additionalMeta.data);
+  // Create Socket to Listen to incoming messages
+  const pushSDKSocket = createSocketConnection({
+    user: signer.wallet,
+    socketType: 'chat',
+    socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
+    env: CONSTANTS.ENV.STAGING,
+  });
 
-          // handle incoming call, ie: VideoCallStatus.INITIALIZED
-          if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
-            // save the videoCallMetaData to handle acceptRequest without 
-            // passing parameters
-            aliceVideoCall.setData((oldData) => {
-              return produce(oldData, (draft) => {
-                draft.local.address = VideoCallStatus.recipientAddress;
-                draft.incoming[0].address = VideoCallStatus.senderAddress;
-                draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED; // set status to RECEIVED
-                draft.meta.chatId = VideoCallStatus.chatId;
-                draft.meta.initiator.address = VideoCallStatus.senderAddress;
-                draft.meta.initiator.signal = VideoCallStatus.signalData;
-              });
+  // To listen to real-time video calls
+  pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+    // we are listening for video call related notifications
+    const { payload } = feedItem || {};
+
+    // we check if the additionalMeta property is present in payload.data
+    if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+      const additionalMeta = payload['data']['additionalMeta'];
+
+      // check for PUSH_VIDEO
+      if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`) {
+        const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+        // handle incoming call, ie: VideoCallStatus.INITIALIZED
+        if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
+          // save the videoCallMetaData to handle acceptRequest without
+          // passing parameters
+          aliceVideoCall.setData((oldData) => {
+            return produce(oldData, (draft) => {
+              draft.local.address = videoCallMetaData.recipientAddress;
+              draft.incoming[0].address = videoCallMetaData.senderAddress;
+              draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED; // set status to RECEIVED
+              draft.meta.chatId = videoCallMetaData.chatId;
+              draft.meta.initiator.address = videoCallMetaData.senderAddress;
+              draft.meta.initiator.signal = videoCallMetaData.signalData;
             });
+          });
 
-            // accept the call of any logic you want to follow
-            // notice we flipped recipient and sender as we are the one who is sending
-            // notification to senderAddress after VideoCallStatus.INITIALIZED
-            await aliceVideoCall.acceptRequest({
-              signalData: VideoCallStatus.signalData;
-              senderAddress: VideoCallStatus.recipientAddress;
-              recipientAddress: VideoCallStatus.senderAddress;
-              chatId: VideoCallStatus.chatId;
-            });
-          }
+          // accept the call or any logic you want to follow
+          // notice we flipped recipient and sender as we are the one who is sending
+          // notification to senderAddress after VideoCallStatus.INITIALIZED
+          await aliceVideoCall.acceptRequest({
+            signalData: videoCallMetaData.signalData,
+            senderAddress: videoCallMetaData.recipientAddress,
+            recipientAddress: videoCallMetaData.senderAddress,
+            chatId: videoCallMetaData.chatId,
+          });
+        }
 
-          // handle final connection if VideoCallStatus.RECEIVED
-          // If the received status is RECEIVED that means we can connect the video call
-          if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
-            const {
-              signalData,
-            } = videoCallMetaData;
-            
-            // connecting the call using received signalData
-            aliceVideoCall.connect({
-              signalData,
-            })
-          }
+        // handle final connection if VideoCallStatus.RECEIVED
+        // If the received status is RECEIVED that means we can connect the video call
+        if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
+          const {
+            signalData,
+            senderAddress
+          } = videoCallMetaData;
 
-          // If the received status is DISCONNECTED that means the call has ended
-          if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
-              // here you can do a window reload or just clear out the video state
-          }
+          // connecting the call using received signalData, senderAddress
+          aliceVideoCall.connect({
+            signalData,
+            peerAddress: senderAddress
+          });
+        }
+
+        // If the received status is DISCONNECTED that means the call has ended
+        if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
+          // here you can do a window reload or just clear out the video state
         }
       }
-    });
-  ```
+    }
+  });
+```
 
   </TabItem>
 </Tabs>
@@ -145,109 +152,267 @@ The following speed run is designed to give you a quick overview of usage and de
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-    
 
-  ```js
-  // Install Libraries
-  npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
-  ```
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
+```
 
   </TabItem>
 </Tabs>
 
 ## Quickstart from SDK repos
+
 <ModalContainer>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img 
-      src={require('/static/assets/docs/techstack/javascript.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/javascript@2x.png').default} 2x, ${require('/static/assets/docs/techstack/javascript@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        Javascript
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-      
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img
-      src={require('/static/assets/docs/techstack/react.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/react@2x.png').default} 2x, ${require('/static/assets/docs/techstack/react@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        React
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/javascript.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/javascript@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/javascript@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Javascript
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-sdk', '_blank'))} 
-  >
-    <img 
-      src={require('/static/assets/docs/techstack/reactNative.png').default} 
-      srcSet={`${require('/static/assets/docs/techstack/reactNative@2x.png').default} 2x, ${require('/static/assets/docs/techstack/reactNative@3x.png').default} 3x`} 
-    />
-    <ModalWrapper>
-      <span>
-        React Native
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-restapi-dart', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/dart.png').default} srcSet={`${require('/static/assets/docs/techstack/dart@2x.png').default} 2x, ${require('/static/assets/docs/techstack/dart@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Dart
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/react.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/react@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-kotlin-sdk', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/kotlin.png').default} srcSet={`${require('/static/assets/docs/techstack/kotlin@2x.png').default} 2x, ${require('/static/assets/docs/techstack/kotlin@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Kotlin
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+{" "}
 
-  <ModalSmall 
-    onClick={() => (window.open('https://github.com/ethereum-push-notification-service/push-swift-sdk', '_blank'))} 
-  >
-    <img src={require('/static/assets/docs/techstack/swift.png').default} srcSet={`${require('/static/assets/docs/techstack/swift@2x.png').default} 2x, ${require('/static/assets/docs/techstack/swift@3x.png').default} 3x`} />
-    <ModalWrapper>
-      <span>
-        Swift
-        <svg width="20" height="28" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375" stroke="#A0A3B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      </span>
-    </ModalWrapper>
-  </ModalSmall>
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/reactNative@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/reactNative@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React Native
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-restapi-dart",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/dart.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/dart@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Dart
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-kotlin-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/kotlin@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Kotlin
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-swift-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/swift.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/swift@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Swift
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
 
 </ModalContainer>
 
 ## Workshop Video
-<ReactPlayer controls width="100%" url='https://youtu.be/R8nsAhyrvTI?si=fXQM14LCLgp50yqf&t=3110' /><br/>
 
+<ReactPlayer
+  controls
+  width="100%"
+  url="https://youtu.be/R8nsAhyrvTI?si=fXQM14LCLgp50yqf&t=3110"
+/>
+<br />
 
 ## Testing
+
 ### Push SDK playground and full API coverage
+
 Full API coverage with sample runable code can be found in the examples below:
+
 - [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/src/pushAPI/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/chat/tutorials/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
 - [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-frontend-react) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/chat/tutorials/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.

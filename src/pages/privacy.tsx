@@ -3,6 +3,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -23,20 +24,20 @@ function Privacy() {
 
   return (
     <Layout title={PageMeta.PRIVACY.pageTitle} description={PageMeta.PRIVACY.pageDescription} showNavbar='website'>
-       <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/privacy" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | Privacy" />
         <meta property="og:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
-        <meta property="og:image" content="/assets/previews/privacyfbpreview.png" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/privacypreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | Privacy" />
         <meta name="twitter:description" content="Our privacy policy page outlines how we protect your data and ensure your confidentiality. Learn about the measures we take to safeguard your information and maintain your trust." />
-        <meta name="twitter:image" content="/assets/previews/privacytwtpreview.png" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/privacypreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -52,7 +53,7 @@ function Privacy() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
         
       <PrivacyWrapper>
         <TopSection>

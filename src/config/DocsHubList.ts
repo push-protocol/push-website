@@ -124,13 +124,45 @@ const aliceMessagesBob = await userAlice.chat.send(
     description: 'Examples to showcase the power of Push Protocol’s communication stack.',
   },
   {
+    title: 'Hackers',
+    srcref: 'hackers',
+    alt: 'Logo representing hackers section - Push Protocol',
+    link: '/docs/hackers',
+    target: '_self',
+    description: 'Are you a hacker? Learn how to instantly get started with Push Protocol.',
+  },
+  {
+    title: 'DAO',
+    srcref: 'dao',
+    alt: 'Logo representing Push DAO - Push Protocol',
+    link: '/docs/dao',
+    target: '_self',
+    description: 'DAO of Push Protocol and how to get involved.',
+  },
+  {
     title: 'Showrunners',
     srcref: 'showrunners',
     alt: 'Logo representing Showrunners scaffold - Push Protocol',
     link: '/docs/notifications/showrunners-scaffold/',
     target: '_self',
     description: 'Showrunners Framework and how to boost your web3 communications.',
-  }
+  },
+  {
+    title: 'Tokenomics',
+    srcref: 'tokenomics',
+    alt: 'Logo representing tokenomics of $PUSH - Push Protocol',
+    link: '/docs/tokenomics',
+    target: '_self',
+    description: 'Learn about the tokenomics of $PUSH which powers the Push Protocol.',
+  },
+  // {
+  //   title: 'Roadmap',
+  //   srcref: 'roadmap',
+  //   alt: 'Logo representing roadmap of Push Protocol',
+  //   link: '/docs/roadmap',
+  //   target: '_self',
+  //   description: 'Roadmap of Push Protocol and all the exciting things to come.',
+  // }
 ]
 
 export const SdkItemsList: ISdkListItem[] = [

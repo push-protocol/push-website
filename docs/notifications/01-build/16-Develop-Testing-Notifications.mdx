@@ -12,10 +12,11 @@ image: "/assets/docs/previews/docs_notifications_develop--testing_notifications.
 
 This section explores various ways by which you can test your notifications.
 
-Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol. 
+Push is an interoperable network which already have live integrations from [Push Metamask snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/ "Push Metamask snap"), [Unstoppable web / mobile app](https://unstoppabledomains.com/ "Unstoppable integration with Push"), [Push dapp / mobile app / extension](https://app.push.org/channels#receive-notifications "Push dApp") among other dapps, extensions and mobile apps. This means notifs are already received by wallets that are on those platforms as they have integrated Push protocol.
 
 <head>
-  <title>Testing Notifications | Push Notifications | Push Documentation</title>
+  <title>{"Testing Notifications | Push Notifications | Push Documentation"}
+  </title>
 </head>
 
 import {
@@ -25,13 +26,14 @@ import {
   ModalMidEqual,
   AFocus,
   AImp,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ### Receiving notifications
 
 Best way to experience notification is with a frontend that already supports Push Protocol, here are few of our favorite crypto wallets —
 
 _`Prod Environment`_
+
 <ModalContainer>
 
 <ModalMidEqual
@@ -39,17 +41,24 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://snaps.metamask.io/snap/npm/pushprotocol/snap/',
-      '_blank'
+      "https://snaps.metamask.io/snap/npm/pushprotocol/snap/",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/metamask.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/metamask.png")
+        .default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/metamask@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/metamask@3x.png').default} 3x`}
-    alt='Image representation of Metamask x Push Snap'
+      require("/static/assets/docs/notifications/integrations/metamask@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/metamask@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Metamask x Push Snap"
   />
   <ModalWrapper>
     <span>
@@ -78,17 +87,23 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://apps.apple.com/us/app/push-epns/id1528614910',
-      '_blank'
+      "https://apps.apple.com/us/app/push-epns/id1528614910",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/push.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/push.png").default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/push@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/push@3x.png').default} 3x`}
-    alt='Image representation of Push iOS app'
+      require("/static/assets/docs/notifications/integrations/push@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/push@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Push iOS app"
   />
   <ModalWrapper>
     <span>
@@ -117,17 +132,23 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://play.google.com/store/apps/details?id=io.epns.epns',
-      '_blank'
+      "https://play.google.com/store/apps/details?id=io.epns.epns",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/push.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/push.png").default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/push@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/push@3x.png').default} 3x`}
-    alt='Image representation of Push Android app'
+      require("/static/assets/docs/notifications/integrations/push@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/push@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Push Android app"
   />
   <ModalWrapper>
     <span>
@@ -153,7 +174,6 @@ _`Prod Environment`_
 
 </ModalContainer>
 
-
 _`Staging Environment`_
 
 <ModalContainer>
@@ -161,12 +181,7 @@ _`Staging Environment`_
 <ModalSmall
   flexDirection="column"
   maxWidth="200px"
-  onClick={() =>
-    window.open(
-      'https://staging.push.org/inbox',
-      '_blank'
-    )
-  }
+  onClick={() => window.open("https://staging.push.org/inbox", "_blank")}
 >
   <ModalWrapper>
     <span>
@@ -195,8 +210,8 @@ _`Staging Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj',
-      '_blank'
+      "https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj",
+      "_blank",
     )
   }
 >
@@ -227,8 +242,8 @@ _`Staging Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US',
-      '_blank'
+      "https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US",
+      "_blank",
     )
   }
 >
@@ -258,26 +273,28 @@ _`Staging Environment`_
 
 :::note
 
-iOS doesn't have a public staging app (only production app is available on the App Store). 
+iOS doesn't have a public staging app (only production app is available on the App Store).
 
-Best way to test staging on iOS would be to join 👉 [Push Discord Channel](https://discord.com/invite/pushprotocol) 👈 and ask a team member to provide you with a testflight beta link. 
+Best way to test staging on iOS would be to join 👉 [Push Discord Channel](https://discord.com/invite/pushprotocol) 👈 and ask a team member to provide you with a testflight beta link.
 
 :::
 
 ## Live playground
 
-```jsx live 
+```jsx live
 customPropMinimized="true"
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 
 // import { ethers } from ethers;
-// import { PushAPI } from @pushprotocol/restapi;
+// import { PushAPI, CONSTANTS } from @pushprotocol/restapi;
 // import { NotificationItem } from @pushprotocol/uiweb;
 
 function App(props) {
-  const [wallet, setWallet] = useState('0xD8634C39BBFd4033c0d3289C4515275102423681');
+  const [wallet, setWallet] = useState(
+    "0xD8634C39BBFd4033c0d3289C4515275102423681",
+  );
   const [notifItems, setNotifItems] = useState([]);
 
   const walletRef = useRef();
@@ -298,13 +315,16 @@ function App(props) {
     await provider.send("eth_requestAccounts", []);
 
     // Grabbing signer from provider
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
 
     // Initialize user for push
-    const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+    const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
     // retrieve notifications for users
-    const inboxNotifications = await userAlice.notification.list('INBOX', {account: `eip155:5:${wallet}`, limit: 5})
+    const inboxNotifications = await userAlice.notification.list("INBOX", {
+      account: `eip155:11155111:${wallet}`,
+      limit: 5,
+    });
 
     // set notifItems state so that react can render
     setNotifItems(inboxNotifications);
@@ -312,56 +332,67 @@ function App(props) {
 
   function NotificationInterface() {
     const inputStyle = {
-      padding: '10px',
-      margin: '10px 0',
-      width: '100%',
-      boxSizing: 'border-box',
+      padding: "10px",
+      margin: "10px 0",
+      width: "100%",
+      boxSizing: "border-box",
     };
 
     const textareaStyle = {
       ...inputStyle,
-      height: '100px',
-      resize: 'vertical',
+      height: "100px",
+      resize: "vertical",
     };
 
     const buttonStyle = {
-      padding: '10px 20px',
-      backgroundColor: '#dd44b9',
-      color: '#FFF',
-      border: 'none',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      marginTop: '20px',
+      padding: "10px 20px",
+      backgroundColor: "#dd44b9",
+      color: "#FFF",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      marginTop: "20px",
     };
 
     return (
-      <div style={{ width: 'auto', margin: '20px auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ width: "auto", margin: "20px auto" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <div style={{ flex: 1 }}>
             <h2>Fetch notifcations on frontend</h2>
             <p />
-            <label>Put any wallet address and click on fetch notifications to see the live results. Click to expand <b>Live Editor</b> tab to see the code and play with it. For this demo, You will need Metamask (or equivalent browser injected wallet), you will also need to sign a transaction to see the notifications.</label>
+            <label>
+              Put any wallet address and click on fetch notifications to see the
+              live results. Click to expand <b>Live Editor</b> tab to see the
+              code and play with it. For this demo, You will need Metamask (or
+              equivalent browser injected wallet), you will also need to sign a
+              transaction to see the notifications.
+            </label>
             <p />
             <label>Wallet address</label>
-            <input 
-              type="text" 
-              placeholder="Enter wallet address" 
+            <input
+              type="text"
+              placeholder="Enter wallet address"
               style={inputStyle}
               ref={walletRef}
               maxLength={80}
             />
           </div>
         </div>
-        <button style={buttonStyle} onClick={fetchNotification}>Fetch Notifications</button>
+        <button style={buttonStyle} onClick={fetchNotification}>
+          Fetch Notifications
+        </button>
 
-        <p /> 
+        <p />
         <p />
 
-        {notifItems.length > 0 ? <h3>{`Notification Items for ${wallet}`}</h3> : <></>
-        }
-        
+        {notifItems.length > 0 ? (
+          <h3>{`Notification Items for ${wallet}`}</h3>
+        ) : (
+          <></>
+        )}
+
         {notifItems.map((notifItemSingular, idx) => {
-          const { 
+          const {
             cta,
             title,
             message,
@@ -370,7 +401,7 @@ function App(props) {
             image,
             url,
             blockchain,
-            notification
+            notification,
           } = notifItemSingular;
 
           return (
@@ -383,12 +414,12 @@ function App(props) {
               icon={icon}
               image={image}
               url={url}
-              theme={'light'} // or can be dark
+              theme={"light"} // or can be dark
               chainName={blockchain}
               // chainName={blockchain as chainNameType} // if using Typescript
             />
-            );
-          })}
+          );
+        })}
       </div>
     );
   }

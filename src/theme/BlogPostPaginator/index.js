@@ -11,7 +11,6 @@ import styled from "styled-components";
 
 export default function BlogPostPaginator(props) {
   const { nextItem, prevItem } = props;
-  console.log(nextItem, prevItem, "items");
   return (
     <Nav
       className="pagination-nav docusaurus-mt-lg"
@@ -52,6 +51,4 @@ export default function BlogPostPaginator(props) {
   );
 }
 
-export const Nav = styled.nav`
-  background-color: red !important;
-`;
+export const Nav = styled.nav``;

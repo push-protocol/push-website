@@ -970,7 +970,7 @@ const NavigationMenuContent = styled.ul`
   padding: 10px 0;
 
   & a {
-    min-width: 200px;
+    min-width: 220px;
   }
 
   @media ${device.laptop} {

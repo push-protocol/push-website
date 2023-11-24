@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/dracula");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require('prism-react-renderer').themes.dracula;
+const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -67,20 +67,20 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-        // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-        // redirects: [
-        //   // /docs/oldDoc -> /docs/newDoc
-        //   {
-        //     to: "/docs/dev",
-        //     from: "/docs/",
-        //   },
-        //   // // Redirect from multiple old paths to the new path
-        //   // {
-        //   //   to: '/docs/newDoc2',
-        //   //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-        //   // },
-        // ],
+        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            to: '/docs/chat/build/stream-chat/',
+            from: '/docs/chat/build/stream-chats/',
+          },
+          // // Redirect from multiple old paths to the new path
+          // {
+          //   to: '/docs/newDoc2',
+          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+          // },
+        ],
         createRedirects(existingPath) {
           if (existingPath.includes("/docs/dev")) {
             // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X

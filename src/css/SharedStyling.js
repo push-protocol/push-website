@@ -565,8 +565,9 @@ export const AImp = styled.a`
   padding: 6px 12px 6px 8px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
+  line-height: 30px;
 
   &:before {
     content: "💡 ";
@@ -610,6 +611,10 @@ export const ABlock = styled.a`
   &:hover:after {
     color: #dd44b9;
   }
+
+  & p {
+    margin: 0px;
+  }
 `;
 
 // Modal Container and Item - Small
@@ -630,6 +635,10 @@ export const ModalInner = styled(Button)`
   display: flex;
   gap: 10px;
 
+  & p {
+    margin: 0px;
+  }
+  
   & img {
     height: 32px;
     width: auto;
@@ -666,6 +675,13 @@ export const ModalInner = styled(Button)`
 
 export const ModalSmall = styled(ModalInner)``;
 
+export const ModalSmallEqual = styled(ModalSmall)`
+  min-width: 140px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
 export const ModalMid = styled(ModalInner)`
   gap: 20px;
   padding: 30px 10px;
@@ -675,7 +691,6 @@ export const ModalMid = styled(ModalInner)`
     height: 48px;
   }
 `;
-
 export const ModalMidEqual = styled(ModalMid)`
   min-width: 140px;
   align-self: stretch;
@@ -701,4 +716,13 @@ export const ModalLarge = styled(ModalMid)`
   align-self: stretch;
   justify-content: space-between;
   flex: 1;
+`;
+
+export const MetricTitle = styled(Span)`
+  color: #dd44b9 !important;
+  font-weight: 600 !important;
+`;
+
+export const MetricSub = styled(Span)`
+  font-size: 14px;
 `;

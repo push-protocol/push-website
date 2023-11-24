@@ -24,9 +24,9 @@ export default function BlogPostItemHeader({ list }) {
       <header>
         {isBlogPostPage && <BlogPostItemHeaderAuthors />}
         {/* {isBlogPostPage && <BlogPostItemHeaderInfo />} */}
-        <BlogPostItemHeaderTitle />
 
         {!isBlogPostPage && <BlogPostItemHeaderInfo />}
+        <BlogPostItemHeaderTitle />
       </header>
     );
   }

@@ -36,11 +36,9 @@ It’s Push’s goal that this collaboration with Safe will showcase a way in wh
 
 We’re excited to be working alongside the Safe team and paving the way for a safer and more decentralized future.
 
-<center><b>.   .   .</b></center>
-
 ## About Safe
 
-Safe (previously Gnosis Safe) is a on-chain asset custody protocol, securing ~$40 Billion in assets today. It is establishing a universal ‘smart account’ standard for secure custody of digital assets, data, and identity. With Safe{Wallet}, it’s flagship web and mobile wallet and Safe{Core} account abstraction infrastructure, it is on a mission to unlock digital ownership for everyone in web3 including DAOs, enterprises, retail and institutional users.
+Safe (previously Gnosis Safe) is a on-chain asset custody protocol, securing ~$40 Billion in assets today. It is establishing a universal ‘smart account’ standard for secure custody of digital assets, data, and identity. With `Safe{Wallet}`, it’s flagship web and mobile wallet and `Safe{Core}` account abstraction infrastructure, it is on a mission to unlock digital ownership for everyone in web3 including DAOs, enterprises, retail and institutional users.
 
 Find all about it: [Website](https://safe.global/), [Twitter](https://twitter.com/safe), [Discord](https://discord.com/invite/nrQVY2566v), [Blog](https://safe.mirror.xyz/), [GitHub](https://github.com/safe-global), [Docs](https://docs.safe.global/)
 

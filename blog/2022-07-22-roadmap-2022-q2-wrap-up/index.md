@@ -39,7 +39,7 @@ Take a look at the latest <b>Development Updates for Q2!</b>
 ## Smart Contract V2 Development and Audit
 Smart Contracts V1.5 has now been developed completely. While we are working towards V2 of the contract, we decided to roll it out after V1.5 is launched. Some of the important features of EPNS Core V1.5 are:
 
-<b>Use of $PUSH token for Channel Creation:</b> EPNS Core Contract shall no longer require DAI tokens for channel creation. Instead, developers can now create Channels with a minimum deposit of 50 $PUSH tokens.
+**Use of $PUSH token for Channel Creation:** EPNS Core Contract shall no longer require DAI tokens for channel creation. Instead, developers can now create Channels with a minimum deposit of 50 $PUSH tokens.
 
 <b>Claim Reward Function:</b> V1.5 of the EPNS Core Contract will include a function that allows $PUSH Holders to claim rewards from the contract.
 

@@ -16,8 +16,9 @@ Before you can start sending notifications, or receiving notifications from your
   <title>Initialize User | Push Notifcation | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 
 ## Initialize user API
 
@@ -25,12 +26,12 @@ import TabItem from '@theme/TabItem'
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-import { PushAPI } from '@pushprotocol/restapi'
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
 // PushAPI.initialize(signer, {options?});
-// signer - pass the signer from your app and set env to 'prod' for mainnet app
+// signer - pass the signer from your app and set env to 'CONSTANTS.ENV.PROD' for mainnet app
 // options? - optional, can pass initialization parameters for customization
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -66,10 +67,7 @@ When initializing your user, you can customize the process using several paramet
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-  <summary>Expected response</summary>
-  200 OK
-</details>
+<Details summary="Expected response">200 OK</Details>
 
 ---
 
@@ -84,7 +82,7 @@ When initializing your user, you can customize the process using several paramet
  * Specifies the type of signer.
  * Choose between EthersV5 or Viem Signer.
  */
-type Signer = SignerType
+type Signer = SignerType;
 
 interface PushAPIInitializeProps {
   /**
@@ -92,24 +90,24 @@ interface PushAPIInitializeProps {
    * Options: 'prod', 'staging', 'dev'
    * Default: 'staging'
    */
-  env?: ENV
+  env?: ENV;
 
   /**
    * A callback function to receive updates during the initialization process.
    */
-  progressHook?: (progress: ProgressHookType) => void
+  progressHook?: (progress: ProgressHookType) => void;
 
   /**
    * The account you want to link with the PushAPI.
    * If left empty, it'll use the account associated with your signer.
    */
-  account?: string
+  account?: string;
 
   /**
    * Specifies the encryption version for the PushAPI.
    * Default: 'ENC_TYPE_V3'
    */
-  version?: string
+  version?: string;
 
   /**
    * Provides additional data related to your chosen encryption version,
@@ -117,26 +115,26 @@ interface PushAPIInitializeProps {
    */
   versionMeta?: {
     NFTPGP_V1?: {
-      password: string
-    }
-  }
+      password: string;
+    };
+  };
 
   /**
    * When set to true, the system will automatically upgrade encryption keys
    * to the latest available encryption version.
    * Default: true
    */
-  autoUpgrade?: boolean
+  autoUpgrade?: boolean;
 
   /**
    * Defines the origin or source when setting up a Push Profile.
    */
-  origin?: string
+  origin?: string;
 
   /**
    * Defines stream options or filters when setting up a Push Profile.
    */
-  streamOptions?: PushStreamInitializeProps
+  streamOptions?: PushStreamInitializeProps;
 }
 
 /**

@@ -8,7 +8,8 @@ sidebar_position: 5
 image: "/assets/docs/previews/docs_video_develop--handling_call_retries.png"
 ---
 
-# Handling call retries overview 
+# Handling call retries overview
+
 Push video automatically handles the possibility of the call not connecting by retrying the connection. In order to make sure that call retrying works for your dapp, you just need to add the following to our good old event handler of the `USER_FEEDS` event from `@pushprotocol/socket`.
 
 <head>
@@ -21,25 +22,27 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
   // we check for the additionalMeta property in payload.data
   if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
     const additionalMeta = payload['data']['additionalMeta'];
-    
+
     // check for PUSH_VIDEO
     if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
       const videoCallMetaData = JSON.parse(additionalMeta.data);
-      
+
       if (videoCallMetaData.status === VideoCallStatus.RETRY_RECEIVED) {
         const {
           signalData,
+          senderAddress
         } = additionalMeta;
-        
+
         videoObject.connect({
           signalData,
+          peerAddress: senderAddress
         });
       }
       else if (videoCallMetaData.status === VideoCallStatus.RETRY_INITIALIZED && videoObject.isInitiator()) {
         videoObject.request({
-          senderAddress: videoObject.data.local.address,
-          recipientAddress: videoObject.data.incoming[0].address,
-          chatId: videoObject.data.meta.chatId,
+          senderAddress: data.local.address,
+          recipientAddress: data.incoming[0].address,
+          chatId: data.meta.chatId,
           retry: true,
         });
       }
@@ -47,12 +50,12 @@ pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
         const {
           signalData,
         } = additionalMeta;
-        
+
         videoObject.acceptRequest({
           signalData,
-          senderAddress: videoObject.data.local.address,
-          recipientAddress: videoObject.data.incoming[0].address,
-          chatId: videoObject.data.meta.chatId,
+          senderAddress: data.local.address,
+          recipientAddress: data.incoming[0].address,
+          chatId: data.meta.chatId,
           retry: true,
         });
       }

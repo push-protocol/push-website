@@ -116,7 +116,7 @@ const NFT_CHAT = async () => {
  const nftSigner1 = new ethers.Wallet(`0x${nftHolderWalletPrivatekey1}`)
  // nft:eip155:${nftChainId}:${nftContractAddress}:${nftTokenId}
  const nftAccount1 =
-   'nft:eip155:5:0x42af3147f17239341477113484752d5d3dda997b:2'
+   'nft:eip155:11155111:0x42af3147f17239341477113484752d5d3dda997b:2'
  // user preferred profile password
  const nftProfilePassword1 = '@PushNFTProfile#01'
  const pushProfile1 = await PushAPI_nft_user_create(
@@ -157,7 +157,7 @@ const NFT_CHAT = async () => {
    `0x${process.env.NFT_HOLDER_WALLET_PRIVATE_KEY_1}`
  )
  const nftAccount1 =
-   'nft:eip155:5:0x42af3147f17239341477113484752d5d3dda997b:2'
+   'nft:eip155:11155111:0x42af3147f17239341477113484752d5d3dda997b:2'
  const nftProfilePassword1 = '@PushNFTProfile#01'
  const pushProfile1 = await PushAPI.user.create({
    account: nftAccount1,
@@ -170,7 +170,7 @@ const NFT_CHAT = async () => {
    `0x${process.env.NFT_HOLDER_WALLET_PRIVATE_KEY_2}`
  )
  const nftAccount2 =
-   'nft:eip155:5:0x42af3147f17239341477113484752d5d3dda997b:3'
+   'nft:eip155:11155111:0x42af3147f17239341477113484752d5d3dda997b:3'
  const nftProfilePassword2 = '@PushNFTProfile#02'
  const pushProfile2 = await PushAPI.user.create({
    account: nftAccount2,

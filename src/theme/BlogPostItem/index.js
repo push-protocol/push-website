@@ -71,6 +71,7 @@ const ListView = styled.div`
 
   @media (max-width: 1200px) {
     flex-direction: column;
+    gap: 0px;
   }
 `;
 
