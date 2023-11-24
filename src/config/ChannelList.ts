@@ -7616,41 +7616,37 @@ export const objChannelList = [
     hackathon: 'ETHforAll'
     },
     {
-      name: 'Merhaba Push Protocol',
-      info: `We are applying for "Turkish Ice Cream - Creative Bounty" track as When verification is changed in the Merhaba wallet then all the guardians will get a notification via push protocol and that's the way guardians can act fast in recovery mechanism.`,
-      url: 'https://ethglobal.com/showcase/merhaba-wallet-5b2ke',
+      name: 'Rely',
+      info: `A digital asset interface using Push Protocol to keep users informed with real-time updates and let them comnunicate with their friends.`,
+      url: 'https://ethglobal.com/showcase/rely-oygqg',
       type: 'Hackathons',
       hackathon: 'ETHGlobal Istanbul'
     },
     {
-      name: 'Rely',
-      info: `We're excited to share that Rely Wallet has seamlessly integrated Push Protocol, enhancing our user experience in three key areas:
- 
-      1. **Notifications**: Push Protocol enables real-time notifications within Rely.
-      
-     
-      2. **Subscribing to Channels**: Our integration allows users to subscribe to channels of interest, providing personalized content and updates. This feature ensures users receive relevant information, tailored to their preferences.
-      
-     
-      3. **Chatting with Friends**: With Push Protocol, users can engage in secure and private chats with friends directly within Rely. This feature fosters communication and community-building, creating a more social and engaging crypto experience.
-      
-     
-      These integrations with Push Protocol reflect our dedication to providing a comprehensive and user-centric web3 wallet, offering timely notifications, tailored content, and social interaction to our users.`,
-      url: 'https://ethglobal.com/showcase/rely-oygqg',
-      type: 'Hackathons',
-      hackathon: 'ETHGlobal Istanbul'   
-    },
-    {
       name: 'Pixel',
-      info: `We used Push Protocol to implement messaging in our NFT-focused chat application.`,
+      info: `A game-changing digital asset trading platform using Push Protocol to integrate trading directly within chat.`,
       url: 'https://ethglobal.com/showcase/pixel-rr36q',
       type: 'Hackathons',
       hackathon: 'ETHGlobal Istanbul'
     },
     {
       name: 'zkmap',
-      info: `We have developed conditional gating feature to build a private group chat app using proof of location.`,
+      info: `A unique proof-of-location system allowing users to verify their presence in a given location using Push Protocol for location-gated chats`,
       url: 'https://ethglobal.com/showcase/zkmap-n2z06',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'GenieAI',
+      info: ` An Ai marketplace providing users the access to many different AIs using Push Protocol for sending notifications to users.`,
+      url: 'https://ethglobal.com/showcase/genieai-feo3a',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pulse',
+      info: `A mobile-first social app that improves your feed based on your social graph and in-app interactions using Push Protocol to notify creators.`,
+      url: 'https://ethglobal.com/showcase/pulse-v4iir',
       type: 'Hackathons',
       hackathon: 'ETHGlobal Istanbul'
     },
