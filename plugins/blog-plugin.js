@@ -101,28 +101,32 @@ async function blogPluginExtended(...pluginArgs) {
         },
       });
 
-      actions.addRoute({
-        // Add route for the blog page
-        path: "/blog/:id",
-        exact: true,
+      for (let i = 0; i < allPosts.length; i++) {
+        const blogPost = allPosts[i];
+        actions.addRoute({
+          // Add route for the blog page
+          // path: "/blog/:slug",
+          path: `${blogPost.metadata.permalink}`,
+          exact: true,
 
-        // The component to use for the "blog" page route
-        component: "@site/src/theme/BlogPostPage/index.js",
+          // The component to use for the "blog" page route
+          component: "@site/src/theme/BlogPostPage/index.js",
 
-        // These are the props that will be passed to our "blog" page component
-        modules: {
-          blogPostPageMetadata: await actions.createData(
-            "blog-page-more-post-metadata.json",
-            JSON.stringify({
-              blogTitle: pluginOptions.blogTitle,
-              blogDescription: pluginOptions.blogDescription,
-              totalPosts: content.blogPosts.length,
-              totalRecentPosts: recentPosts.length,
-            }),
-          ),
-          allPosts: await Promise.all(allPosts.map(createMorePostModule)),
-        },
-      });
+          // These are the props that will be passed to our "blog" page component
+          modules: {
+            blogPostPageMetadata: await actions.createData(
+              `blog-page-${i}-metadata.json`,
+              JSON.stringify({
+                blogTitle: pluginOptions.blogTitle,
+                blogDescription: pluginOptions.blogDescription,
+                totalPosts: content.blogPosts.length,
+                totalRecentPosts: recentPosts.length,
+              }),
+            ),
+            allPosts: await Promise.all(allPosts.map(createMorePostModule)),
+          },
+        });
+      }
 
       // Call the default overridden `contentLoaded` implementation
       return blogPluginInstance.contentLoaded(params);

@@ -16,7 +16,7 @@ export default function BlogPostItems({
     <>
       {items?.map(({ content: BlogPostContent }) => (
         <BlogPostProvider
-          key={BlogPostContent.metadata.permalink}
+          key={BlogPostContent?.metadata?.permalink}
           content={BlogPostContent}
         >
           <BlogPostItemComponent list={list}>

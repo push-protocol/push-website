@@ -25,13 +25,13 @@ import styled from "styled-components";
 import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogPostPageContent({ allPosts, children }) {
-  const { metadata, toc, content } = useBlogPost();
-  const { nextItem, prevItem, frontMatter } = metadata;
-  const {
-    hide_table_of_contents: hideTableOfContents,
-    toc_min_heading_level: tocMinHeadingLevel,
-    toc_max_heading_level: tocMaxHeadingLevel,
-  } = frontMatter;
+  // const { metadata, toc, content } = useBlogPost();
+  // const { nextItem, prevItem, frontMatter } = metadata;
+  // const {
+  //   hide_table_of_contents: hideTableOfContents,
+  //   toc_min_heading_level: tocMinHeadingLevel,
+  //   toc_max_heading_level: tocMaxHeadingLevel,
+  // } = frontMatter;
 
   return (
     <BlogLayout>
@@ -58,6 +58,7 @@ export default function BlogPostPage(props) {
     x?.Preview?.metadata?.permalink.includes(blogPath),
   )[0];
   const BlogPostContent = contentName?.Preview;
+  console.log(props, "fdsnfkdnfkdnfkd");
 
   // const BlogPostContent = props.content;
   return (
