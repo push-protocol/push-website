@@ -37,11 +37,17 @@ const MorePosts = ({ allPosts, post }) => {
       const matchingTags = allOtherPosts?.filter((obj) =>
         obj?.Preview?.metadata?.tags?.some((tag) => tag?.label === item?.label),
       );
-      const result = matchingTags?.find(
-        (tag) => tag?.Preview?.metadata?.tags[0]?.label === item?.label,
-      );
+      // const result = matchingTags?.find(
+      //   (tag) => tag?.Preview?.metadata?.tags[0]?.label === item?.label,
+      // );
+
+      if (matchingTags && matchingTags.length > 0) {
+        // Randomly select one from matchingTags
+        const randomIndex = Math.floor(Math.random() * matchingTags.length);
+        return matchingTags[randomIndex];
+      }
       // return result !== undefined ? result : "check
-      return result;
+      return null;
     });
 
     setFilteredArray(sortArray);
