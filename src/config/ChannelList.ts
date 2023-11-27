@@ -1499,7 +1499,7 @@ export const objChannelList = [
     is_alias_verified: 0,
     itemcount: 163,
     subscriber_count: 116,
-    type: 'Infrastructure',
+    type: 'Wallet',
   },
   {
     id: 47,
@@ -3924,7 +3924,7 @@ export const objChannelList = [
     info: 'Multichain wallet for Crypto, NFTs, DeFi and cashback.',
     url: 'https://www.get-verso.com/',
     imageFile:'verso',
-    type: 'DeFi',
+    type: 'Wallet',
   },
   {
     name: 'LensTok',
