@@ -3927,6 +3927,14 @@ export const objChannelList = [
     type: 'Wallet',
   },
   {
+    id: 168,
+    name: 'MetaMask Snaps',
+    info: 'MetaMask Snaps allows users to add features and functionality to their MetaMask wallet. Individual snaps are features created by third-party developers that MetaMask users can install directly into their wallet.',
+    url: 'https://metamask.io/snaps/',
+    imageFile:'metamask-snaps',
+    type: 'Wallet',
+  },
+  {
     name: 'LensTok',
     info: 'LensTok is a decentralized short-form video platform that gives users control over their social presence and empowers creators to publish content using decentralized technology like Livepeer, IPFS/Filecoin, and Huddle01. The platform offers features like social login, video uploading, timeline browsing, notifications, collecting posts as NFTs, profile pages, and private video calls with top fans, all powered by various protocols and APIs. LensTok is built using the composable and decentralized Lens Protocol, which powers a social graph that allows users to connect and interact with each other in a more transparent and equitable way. This sets it apart from traditional social media platforms that rely on closed-source algorithms and centralized servers to manage user relationships and content distribution. With LensTok, creators can reach a global audience without being limited by proprietary algorithms or censored by the platform.',
     url: 'https://vimeo.com/777731447',
