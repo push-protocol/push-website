@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer').themes.dracula;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+const lightCodeTheme = require("prism-react-renderer").themes.dracula;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -38,7 +38,7 @@ const config = {
   staticDirectories: ["public", "static"],
 
   plugins: [
-    '@docusaurus/theme-live-codeblock',
+    "@docusaurus/theme-live-codeblock",
     [
       "./plugins/blog-plugin",
       {
@@ -67,13 +67,13 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
+        fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
+        toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            to: '/docs/chat/build/stream-chat/',
-            from: '/docs/chat/build/stream-chats/',
+            to: "/docs/chat/build/stream-chat/",
+            from: "/docs/chat/build/stream-chats/",
           },
           // // Redirect from multiple old paths to the new path
           // {
@@ -167,14 +167,10 @@ const config = {
         appId: "LHUKHXUHQP",
 
         // Public API key: it is safe to commit it
-        apiKey: "2fc69a715b81b57bcae4ad6edeb52abe",
+        apiKey: "e3e91551c4e6a6ee03d90efaeec974f7",
 
-        indexName: "v2-push",
+        indexName: "push",
         insights: true,
-        replaceSearchResultPathname: {
-          from: "/dev/", // or as RegExp: /\/docs\//
-          to: "/docs/",
-        },
       },
       colorMode: {
         defaultMode: "light",
@@ -186,7 +182,7 @@ const config = {
          * The position of the live playground, above or under the editor
          * Possible values: "top" | "bottom"
          */
-        playgroundPosition: 'bottom',
+        playgroundPosition: "bottom",
       },
       // announcementBar: {
       //   id: 'support_us',
