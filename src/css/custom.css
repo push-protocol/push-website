@@ -777,13 +777,13 @@ li {
 } */
 
 
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
+/* .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 85% !important;
   align-self: center;
-}
+} */
 
 .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container, .PushBlog .main-wrapper .container {
   max-width: initial;
