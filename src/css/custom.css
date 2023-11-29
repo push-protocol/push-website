@@ -134,39 +134,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-/* @font-face {
-  font-family: "FKGroteskNeue";
-  src: url("../../static/fonts/FKGroteskNeue-Regular.woff2") format("woff2"),
-    url("../../static/fonts/FKGroteskNeue-Regular.woff") format("woff"),
-    url("../../static/fonts/FKGroteskNeue-Regular.otf") format("otf"),
-    url("../../static/fonts/FKGroteskNeue-Regular.ttf") format("ttf");
-  font-weight: 100 200 300 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "FKGroteskNeue";
-  src: url("../../static/fonts/FKGroteskNeue-Medium.woff2") format("woff2"),
-    url("../../static/fonts/FKGroteskNeue-Medium.woff") format("woff"),
-    url("../../static/fonts/FKGroteskNeue-Medium.otf") format("otf"),
-    url("../../static/fonts/FKGroteskNeue-Medium.ttf") format("ttf");
-  font-weight: 500 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "FKGroteskNeue";
-  src: url("../../static/fonts/FKGroteskNeue-Bold.woff2") format("woff2"),
-    url("../../static/fonts/FKGroteskNeue-Bold.woff") format("woff"),
-    url("../../static/fonts/FKGroteskNeue-Bold.otf") format("otf"),
-    url("../../static/fonts/FKGroteskNeue-Bold.ttf") format("ttf");
-  font-weight: 700 800 900;
-  font-style: normal;
-  font-display: swap;
-} */
 /* ----- */
 /* Custom Font Ends */
 /* ----- */
@@ -179,49 +146,6 @@ article ul ul, article ul ol, article ol ol, article ol ul {
 }
 /* ----- */
 /* OVERRIDES */
-/* ----- */
-
-/* ----- */
-/* NAV BAR DISPLAY CUSTOM LOGIC */
-/* ----- */
-/* .navbar {
-  display: none;
-} */
-
-
-.DocusaurusNavbar > .navbar {
-  display: flex;
-}
-/* ----- */
-/* NAV BAR DISPLAY CUSTOM LOGIC */
-/* ----- */
-
-/* ----- */
-/* MDX PAGE THEMING */
-/* ----- */
-.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
-  padding: 140px 0px 30px 0px;
-  max-width: 1213px;
-  display: flex;
-  margin: auto;
-  align-items: flex-start;
-}
-
-@media (max-width: 850px) {
-  .row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module {
-
-    padding: 140px 20px 30px 20px;
-  }
-}
-
-.row.mdxPageWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-MDXPage-styles-module .col {
-  flex: 1;
-  max-width: initial;
-  padding: 0px;
-}
-
-/* ----- */
-/* MDX PAGE THEMING ENDS HERE */
 /* ----- */
 
 a:hover {
@@ -693,16 +617,8 @@ li {
     line-height: 142% !important;
     letter-spacing: -0.03em !important;
     background: transparent !important;
-    /* background: transparent !important; */
   }
 
-  .menu__list-item-collapsible--active:hover {
-    /* background: transparent !important; */
-  }
-
-  /* .menu__list-item-collapsible--active > .clean-btn {
- color: white !important;
-} */
 }
 
 @media (max-width: 850px) {
@@ -763,62 +679,6 @@ li {
 /* ------------------ */
 .PushBlog .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module, .PushBlog img {
  border-radius: 32px;
-}
-/* @media (max-width: 768px) {
-  .PushBlog .BlogPostPage__BlogItem-sc-a3o68z-0{
-    width: 85%;
-    margin: 0 auto;
-  }
-
-  .PushBlog .main-wrapper .container article,.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article {
-    width: 90% !important;
-    margin: 0 auto !important;
-}
-} */
-
-
-/* .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module, .PushBlog .main-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 85% !important;
-  align-self: center;
-} */
-
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container, .PushBlog .main-wrapper .container {
-  max-width: initial;
-}
-
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container aside.col.col--3, .PushBlog .main-wrapper .container aside.col.col--3 {
-  display: block;
-  width: var(--doc-sidebar-width);
-  max-width: var(--doc-sidebar-width);
-  margin-top: calc(-1 * var(--ifm-navbar-height));
-  border-right: 1px solid var(--ifm-toc-border-color);
-  will-change: width;
-  transition: width var(--ifm-transition-fast) ease;
-  clip-path: inset(0);
-}
-
-.PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article, .PushBlog .main-wrapper .container article {
-  
-  max-width: 958px !important;
-  margin-left: auto;
-}
-
-@media only screen and (min-width: 1920px)  {
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--7, .PushBlog .main-wrapper .container main.col.col--7 {
-      max-width: var(--ifm-container-width-xl);
-  }
-  
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container main.col.col--2, .PushBlog .main-wrapper .container main.col.col--2 {
-      margin-right: auto;
-  }
-  
-  .PushBlog .mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module .container article, .PushBlog .main-wrapper .container article {
-      
-      margin-left: auto;
-  }
 }
 
 /* ------------------ */
