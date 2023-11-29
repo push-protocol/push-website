@@ -167,14 +167,10 @@ const config = {
         appId: "LHUKHXUHQP",
 
         // Public API key: it is safe to commit it
-        apiKey: "2fc69a715b81b57bcae4ad6edeb52abe",
+        apiKey: "e3e91551c4e6a6ee03d90efaeec974f7",
 
-        indexName: "v2-push",
+        indexName: "push",
         insights: true,
-        replaceSearchResultPathname: {
-          from: "/dev/", // or as RegExp: /\/docs\//
-          to: "/docs/",
-        },
       },
       colorMode: {
         defaultMode: "light",
