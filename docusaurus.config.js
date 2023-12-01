@@ -169,7 +169,7 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: "f41c253713d3cee20253bd3bfb166cac",
 
-        indexName: "push",
+        indexName: "v2-push",
         insights: true,
       },
       colorMode: {
