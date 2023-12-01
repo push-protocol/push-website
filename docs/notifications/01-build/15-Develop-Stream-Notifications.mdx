@@ -29,7 +29,7 @@ import Details from "@theme/Details";
 ```typescript
 // userAlice.stream(listen, {options?})
 // Initial setup
-const stream = userAlice.stream([CONSTANTS.STREAM.NOTIF], {
+const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF], {
   filter?: {
     channels?: ['*'], // pass in specific channels to only listen to those
     chats?: ['*'], // pass in specific chat ids to only listen to those
