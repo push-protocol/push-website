@@ -89,8 +89,12 @@ const FrensText = () => {
       name: 'Media',
     },
     {
+      name: 'Wallet'
+    },
+    {
       name: 'Hackathons',
     },
+  
   ];
 
   useEffect(() => {

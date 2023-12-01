@@ -16,16 +16,16 @@ import VanillaTilt from 'vanilla-tilt';
 
 // Import Assets
 import { Image } from '@site/src/css/SharedStyling';
-import encode from '@site/static/assets/svgs/encode.svg';
-import ethglobal from '@site/static/assets/svgs/ethglobal.svg';
-import fvm from '@site/static/assets/svgs/fvm.svg';
-import learnweb3dao from '@site/static/assets/svgs/learnweb3dao.svg';
+import Encode from '@site/static/assets/website/frens-list/encode.png';
+import Ethglobal from '@site/static/assets/website/frens-list/ethglobal.png';
+import Fvm from '@site/static/assets/website/frens-list/fvm.png';
+import Learnweb3dao from '@site/static/assets/website/frens-list/learnweb3.png';
 import { BsArrowUpRight } from 'react-icons/bs';
 
 const hackathonImage = (hackathon) => {
     switch(hackathon) {
         case 'Encode Next Video Build':
-            return encode;
+            return Encode;
 
         case 'ETHIndia2022':
         case 'ETHSF2022':
@@ -35,13 +35,14 @@ const hackathonImage = (hackathon) => {
         case 'ETHAMS2022':
         case 'ETHforAll':
         case 'HackMoney2022':
-            return ethglobal;
+        case 'ETHGlobal Istanbul':
+            return Ethglobal;
 
         case 'LearnWeb3 challenge':
-            return learnweb3dao;
+            return Learnweb3dao;
 
         case 'FVM2023':
-            return fvm;
+            return Fvm;
 
         default:
             return null;
@@ -94,9 +95,8 @@ const ChannelItem = ({ channelProp }, delay) => {
                         {!loading && channelObject.imageFile && (<MemberImage
                             width={100}
                             height={100}
-                            src={require(`@site/static/assets/frens/${channelObject.imageFile}.png`).default}
-                            srcSet={`${require(`@site/static/assets/frens/${channelObject.imageFile}@2x.png`).default} 2x, ${require(`@site/static/assets/frens/${channelObject.imageFile}@3x.png`).default} 3x` || ''}
-                            // alt={name}
+                            src={require(`@site/static/assets/website/frens-hackathon/${channelObject.imageFile}.png`).default}
+                            srcSet={`${require(`@site/static/assets/website/frens-hackathon/${channelObject.imageFile}@2x.png`).default} 2x, ${require(`@site/static/assets/website/frens-hackathon/${channelObject.imageFile}@3x.png`).default} 3x` || ''}
                         />)}
                     </ChannelLogo>
                 </ChannelTop>
@@ -116,6 +116,7 @@ const ChannelItem = ({ channelProp }, delay) => {
             {channelObject?.type === 'Hackathons' ? null : <ChannelType><b>{channelObject?.type}</b></ChannelType>}
             {channelObject?.hackathon
                 ? <ChannelType>
+                    {/* hackathonImage(channelObject?.hackathon) */}
                     <HackathonLogo src={hackathonImage(channelObject?.hackathon)} />
                     <b>{channelObject?.hackathon}</b>
                 </ChannelType>
