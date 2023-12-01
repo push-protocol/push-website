@@ -4,7 +4,7 @@ title: 'Our 2021 Year in Review 🎉🎉🎉'
 authors: [push]
 image: './cover-image.webp'
 text: "2021 was an epic year for EPNS. And not just us, for the entire crypto space. It was the year when the world finally opened up to crypto, blockchain, DeFi, and all their use cases. Along with the fundamental changes also arrived the age of L2 scaling and NFTs, pushing blockchain and crypto further into the mainstream."
-tags: [Year in Review , Ethereum ,Blockchain , 2021 ,Governance]
+tags: [Year in Review , Ethereum ,Blockchain ,Governance]
 ---
 
 ![Cover Image of Our 2021 Year in Review 🎉🎉🎉](./cover-image.webp)
