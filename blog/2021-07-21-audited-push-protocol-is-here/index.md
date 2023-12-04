@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 description: 'Roadmap Q3: Audited EPNS Push Protocol V1 is here!'
 text: "Since its inception, EPNS has been on its mission to build the most effective and reliable communication layer on Web3 to allow sending platform-agnostic and decentralized notifications."
-tags: [Blockchain, Epnsproject, Web3, Crypto]
+tags: [Ethereum ,Epnsproject ,Protocol ,Roadmaps]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
@@ -109,3 +109,125 @@ Alright, now it's time to understand the entire working mechanism of <b>channel 
 -> Your Channel’s Pool contribution in Core protocol now is 60 DAI
 (Reactivation Fee(50) + Previous Deactivation Fee(10))
 </blockquote>
+
+![First Image of Roadmap Q3: Audited EPNS Push Protocol V1 is here!](./image-1.webp)
+
+3. <b>Blocking a Channel</b>: As the name implies, blocking a channel changes the channel state from Active to Blocked state.
+
+Since blocking a channel is a permanent action, once blocked a channel can never go back to the activated state again. A channel can be blocked whenever the blockChannel() function in the protocol is triggered. This function can only be activated by the Push channel admin as of now and no other channel owners can trigger this function.
+
+Once a channel is blocked, it is no more a part of the protocol, and therefore, the total count of channels in the protocol decreases as well.
+
+Most importantly, unlike the channel deactivation process in the protocol, blocking a channel doesn’t refund any amount back to the owner of that channel.
+
+#### c. Channel Verification Feature
+EPNS Core contract also includes a new Channel Verification feature which allows Channels to have a verification tag.
+
+The verification tag of a Channel has its own significance. While on one hand, a verified channel enhances the user’s reliability on the channel and its notifications, it also gets a comparatively better position on the User interface.
+
+Understanding the Channel Verification procedure
+Channels in the EPNS Core protocol can have either a Primary or a Secondary verification tag.
+
+a. <b>Primary Verification tag</b>: Channels that have directly been verified by the Push Channel Admin are the ones that have a primary verification tag.
+All Primary Verified channels have the power to verify other unverified channels.
+
+b. <b>Secondary Verification tag</b>: Channels that have been verified by other Primary Verified channels and not directly by the Push Channel Admin, have a secondary verification tag.
+
+<b>Revocation of the Verification Tag</b>
+
+The protocol also allows revocation of the verification tag of any specific channel in specific circumstances. Any channel can be unverified either by the Channel’s actual verifier or Push Channel Admin.
+
+a. <b>Unverifying a Primary verified channel</b>: The verification tag of a primary verified channel can only be revoked by the Push channel admin.
+However, an imperative part to note here is the fact that once a specific target channel with a primary verification tag is unverified, the secondary verification tag of all those channels that were verified by this target channel will be revoked as well.
+For instance:
+
+<blockquote>
+1. Push Channel Admin verifies Channel A — Primary Verification
+
+2. Channel A verifies Channel B, C & D — Secondary Verification
+
+3. Push channel admin revokes the verification of Channel A
+
+4. Channel B, C, & D are unverfied as well
+</blockquote>
+
+A quick look at the infographics below will help understand the verification procedure in the core smart contract effectively.
+
+![Second Image of Roadmap Q3: Audited EPNS Push Protocol V1 is here!](./image-2.webp)
+
+b. <b>Unverifying a Secondary verified channel</b>: A channel with a secondary verification tag can be unverified either by the actual verifier of the channel or by the Push channel admin itself. As channels with secondary verification tags cannot verify other channels, their revocation of the verification tag has no impact on any other Channel’s verification tag.
+
+Now that we have quite a better understanding of the EPNS Core protocol, let’s start with EPNS Communicator
+
+### EPNS Communicator Protocol
+#### a. Sending notifications
+Well, it can undoubtedly be stated that sendNotification() is one of the most imperative functions of the EPNS Communicator protocol. While the older EPNS protocol had a simpler sendNotification function, EPNS Communicator has expanded the boundaries for this feature.
+
+Unlike the previous version of the protocol, sending the notification is now not just for the owner of the channels themselves, but there is more to it.
+Let’s understand this clearly.
+
+As per the current architecture of the Communicator protocol, there can be 4 main actors who can send notifications:
+
+1. <b>Channel Owners</b>: It goes without saying, that the owners of a particular channel can definitely send notifications to their subscribers.
+
+2. <b>EPNS Alerter</b>: These are the notifications that come from the Push channel admin and are mostly targeted at every user.
+
+3. <b>Delegatee Notification Senders</b>: This is a new feature that allows any address to send notifications on behalf of a channel, to its subscribers. However, the notification must be allowed by the channel to do so. More on this later.
+
+4. <b>Sending notification to yourself</b>: Yes, the EPNS Communicator allows any address to send notifications to themselves 😃. It’s important to note, however, that the address sends the notification to themselves only. In other words, any address can trigger a notification provided that the recipient of the notification is the caller himself/herself.
+
+#### Understanding Delegated Notifications
+In very simpler terms, delegated notifications is a feature that allows channel owners to delegate their power of sending notifications to any wallet address or multiple addresses of their choice.
+
+This mechanism of sending delegated notifications is quite effective in providing value-added services to the channels. It also ensures the availability of mechanisms that can be used by EPNS or any other third-party infrastructure to send on-chain notifications on the channel’s behalf.
+
+In order to enable the channel owner to validate a particular address to send notifications on the channel’s behalf, there are 2 specific functions called <i>addDelegate() & removeDelagate()</i> in the Communicator protocol itself.
+
+The channel owner can trigger the above-mentioned functions to either allow or remove an address as a valid notification sender. However, once allowed, the specific address can send a notification to the subscribers on behalf of the channel.
+
+#### b. Meta Transactions
+It can undeniably be stated that paying gas fees for every transaction on the Ethereum blockchain is still one of the most daunting tasks. If you don’t always have some ETH ready in your wallet, it might be comparatively difficult for you to interact with the protocols on the ethereum blockchain as you need to pay the gas fees.
+
+Well, interaction with the EPNS Communicator protocol requires gas as well but don’t worry, we have got you covered.
+
+EPNS Communicator protocol supports meta transactions or, in other words, gasless transactions. In simpler terms, the protocol allows you to interact with its functions without actually paying any gas fee.
+
+All you really need to do is simply sign the transaction that you want to put on the blockchain with your keys. This action doesn’t really require any gas fees as you aren’t actually interacting with the protocol on-chain but just signing a transaction.
+
+The signed transaction will then be submitted on the blockchain by the operator by paying some gas fees. Once the transaction is submitted on the blockchain, the communicator protocol verifies your signature to ensure it’s a valid signed transaction and executes the required function on your behalf.
+
+The protocol currently allows meta transactions for the following functions:
+
+- subscribe()
+- unsubscribe()
+- sendNotification()
+
+#### c. Subscribing to a Channel
+The subscribe() function in the protocol allows users to subscribe to any channel that is in an activated state.
+
+While the subscribe function can be called by any address, the caller must pass a valid channel address, that they want to subscribe to, as an input for this function.
+
+Once the subscribe() function is called it performs the following actions:
+
+1. <b>Checkpoints</b>:
+-> Once the function is called, the push nodes verify whether or not the channel address passed as an input is a valid channel in an active state.
+
+-> If the channel is a valid one, the communicator contract then ensures that the caller (subscriber) of the function must not already be subscribed to the channel. If the user is already a subscriber of the channel, the transaction gets reverted.
+
+2. <b>User Activation</b>: The subscribe() function also includes an imperative procedure wherein a completely new user that is trying to subscribe to any specific channel for the first time, gets activated and added to the protocol first. At this step, the total user count in that particular Communicator contract is increased as well.
+
+3. <b>Subscribed to the Channel</b>: Once the checkpoints are passed successfully, the user is added as a valid subscriber of the given channel address
+4. <b>User information storage</b>: As the final step of this function, all the relevant and crucial information about the user is stored in the protocol. At this step, the subscribed_Count of the user, i.e., the total number of channels a single user is subscribed to, is also increased.
+
+#### d. Unsubscribing a Channel
+The unsubscribe() function in the protocol is quite simple, as the name already suggests.
+
+It allows users to unsubscribe from a specific channel, provided that the caller of the function was already subscribed to that channel before. The unsubscribe() function updates the user’s state in the protocol by removing it as a subscriber for the given channel and decreasing the total subscribed_Count of the user.
+
+
+
+
+
+
+
+
