@@ -145,6 +145,10 @@ const channelSubscribers = await userAlice.channel.subscribers();
 | --------- | ----------------- | -------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options` | `object`          | -        | -                   | Configuration options for retrieving subscribers.                                                                                                                                                    |
 | -         | `options.channel` | `string` | Derived from signer | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
+| -         | `options.page`    | `number` | -                   | A number representing the page of results to retrieve.                                                                                                                                                           |
+| -         | `options.limit`   | `number` | -                   | Represents the maximum number of subscriptions to retrieve per page                                                                                                                                              |
+| -         | `options.setting` | `boolean`| false               | A boolean flag if when set to true, fetches user settings along with the subscriber                                                                                                                                               |
+| -         | `options.category`| `number` | -                   | Filters out subscribers that have enabled a specific category of notification settings                                                                                                                                              |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
