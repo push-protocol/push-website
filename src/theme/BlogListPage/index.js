@@ -18,7 +18,7 @@ import BlogListPaginator from "@theme/BlogListPaginator";
 import BlogPostItems from "@theme/BlogPostItems";
 import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 
 // Internal Configs
@@ -41,6 +41,7 @@ function BlogListPageMetadata(props) {
 }
 function BlogListPageContent(props) {
   const { metadata, items, sidebar } = props;
+
   return (
     <>
       <ListItem>

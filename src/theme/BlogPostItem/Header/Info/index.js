@@ -50,24 +50,49 @@ function Date({ date, formattedDate }) {
 function Spacer() {
   return <>{" · "}</>;
 }
-export default function BlogPostItemHeaderInfo({ className }) {
+export default function BlogPostItemHeaderInfo({ className, morePosts }) {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { date, formattedDate, readingTime } = metadata;
-  return (
-    <div
-      className={clsx(
-        styles.container,
-        !isBlogPostPage ? "margin-vert--sm" : "",
-        className,
-      )}
-    >
-      <Date date={date} formattedDate={formattedDate} />
-      {typeof readingTime !== "undefined" && (
-        <>
-          <Spacer />
-          <ReadingTime readingTime={readingTime} />
-        </>
-      )}
-    </div>
-  );
+  if (morePosts) {
+    const blogDate = morePosts.date;
+    const blogFormattedDate = morePosts.formattedDate;
+    const blogReadingTime = morePosts.readingTime;
+
+    // const { date, formattedDate, readingTime } = morePosts;
+    return (
+      <div
+        className={clsx(
+          styles.container,
+          !isBlogPostPage ? "margin-vert--sm" : "",
+          className,
+        )}
+      >
+        <Date date={blogDate} formattedDate={blogFormattedDate} />
+        {typeof blogReadingTime !== "undefined" && (
+          <>
+            <Spacer />
+            <ReadingTime readingTime={blogReadingTime} />
+          </>
+        )}
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className={clsx(
+          styles.container,
+          !isBlogPostPage ? "margin-vert--sm" : "",
+          className,
+        )}
+      >
+        <Date date={date} formattedDate={formattedDate} />
+        {typeof readingTime !== "undefined" && (
+          <>
+            <Spacer />
+            <ReadingTime readingTime={readingTime} />
+          </>
+        )}
+      </div>
+    );
+  }
 }
