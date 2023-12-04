@@ -26,8 +26,8 @@ function useContainerClassName() {
   return !isBlogPostPage && !isMobile
     ? "margin-bottom--xl"
     : !isBlogPostPage && isMobile
-    ? "margin-bottom--md"
-    : undefined;
+      ? "margin-bottom--md"
+      : undefined;
 }
 export default function BlogPostItem({ children, className, list }) {
   const containerClassName = useContainerClassName();

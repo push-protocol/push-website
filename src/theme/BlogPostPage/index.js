@@ -92,7 +92,7 @@ const BlogItem = styled.div`
   width: 800px !important;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 820px) {
     width: 100% !important;
     padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
     box-sizing: border-box;
