@@ -69,7 +69,7 @@ Unleash your innovation! We're seeking the all-around most ingenious solutions b
 
 #### 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500
 
-Number of winners: 1
+<b>Number of winners: 1</b>
 
 
 Showcase the potential of Push by integrating its Conditional Gating feature into your dApps. Conditional Gating is a feature that allows you to create dynamic and sophisticated permissions for your Group Chats. You can set unique conditions for both joining or messaging in the groups such as needing to hold a certain amount of token XYZ or be a holder of XYZ NFT.
@@ -79,7 +79,7 @@ For more information regarding Conditional Gating and Rules for Group Chats, che
 
 #### 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500
 
-Number of winners: 1
+<b>Number of winners: 1</b>
 
 
 Utilize the full potential of Push Notifications by incorporating the Channel/Notification Settings into your dApp. 
