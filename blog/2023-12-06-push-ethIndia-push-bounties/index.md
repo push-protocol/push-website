@@ -27,7 +27,7 @@ We’re going all-in with a whopping $10,000 in bounties for 13 prize winners sp
 
 Here’s the breakdown of all the prizes:
 
-#### 1. 🏆 Namaste Push Protocol ⸺ $2,000
+### 1. 🏆 Namaste Push Protocol ⸺ $2,000
 
 
 <b>Number of winners: 1</b>
@@ -50,7 +50,7 @@ The "Namaste Push Protocol" Prize is all about acknowledging the innovative spir
 
 👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/) ✨
 
-#### 2. 🏆 Creativity Prize ⸺ $2,500
+### 2. 🏆 Creativity Prize ⸺ $2,500
 
 <b>Number of winners: 1</b>
 
@@ -67,7 +67,7 @@ Unleash your innovation! We're seeking the all-around most ingenious solutions b
 
 👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/)✨
 
-#### 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500
+### 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500
 
 <b>Number of winners: 1</b>
 
@@ -77,7 +77,7 @@ Showcase the potential of Push by integrating its Conditional Gating feature int
 
 For more information regarding Conditional Gating and Rules for Group Chats, checkout our documentation here 👉https://push.org/docs/chat/build/conditional-rules-for-group/
 
-#### 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500
+### 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500
 
 <b>Number of winners: 1</b>
 
@@ -90,7 +90,7 @@ Channel/Notification Settings allow you to segment notifications into different 
 
 For more information regarding Channel/Notification Settings, checkout our documentation here 👉https://push.org/docs/notifications/build/create-channel-settings/
 
-#### 5. 🏆 Best Use of Push Protocol ⸺ $1,500
+### 5. 🏆 Best Use of Push Protocol ⸺ $1,500
 This bounty recognizes the most exceptional and impactful implementation of the Push Protocol, emphasizing applications that significantly enhance user interaction and experience through effective use of Push features.
 
 Go wild, get crazy, find new and exciting ways to integrate Push that significantly enhance your UX. Think customer support messaging, user-to-user-to-dApp social interactions, creative notification use cases. The list is endless.
