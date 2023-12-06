@@ -27,6 +27,7 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import {
   A,
   Content,
@@ -658,7 +659,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </ItemV>
             
             <MarqueeAnimationContainer
-              padding="120px 0 0 0"
+              // padding="120px 0 0 0"
+              margin="6.5em 0"
               flex="1"
               alignItems="stretch"
             >
@@ -693,7 +695,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </MarqueeAnimationContainer>
 
             <MarqueeAnimationContainer
-              padding="80px 0 0 0"
+              // padding="2em 0 0 0"
+              margin="0 0 5em 0"
               flex="1"
               alignItems="stretch"
             >

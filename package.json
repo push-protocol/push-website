@@ -53,6 +53,7 @@
     "react-intersection-observer": "^9.4.3",
     "react-loader-spinner": "5.3.4",
     "react-loading-skeleton": "^3.1.0",
+    "react-marquee-slider": "^1.1.5",
     "react-modal": "^3.16.1",
     "react-player": "^2.12.0",
     "react-responsive-modal": "^6.4.2",
