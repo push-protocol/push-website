@@ -27,7 +27,7 @@ We’re going all-in with a whopping $10,000 in bounties for 13 prize winners sp
 
 Here’s the breakdown of all the prizes:
 
-#### 1. 🏆 Namaste Push Protocol ⸺ $1,500
+#### 1. 🏆 Namaste Push Protocol ⸺ $2,000
 
 
 <b>Number of winners: 1</b>
@@ -50,7 +50,7 @@ The "Namaste Push Protocol" Prize is all about acknowledging the innovative spir
 
 👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/) ✨
 
-#### 2. 🏆 Creative Bounty ⸺ $2,000
+#### 2. 🏆 Creativity Prize ⸺ $2,500
 
 <b>Number of winners: 1</b>
 
@@ -67,7 +67,7 @@ Unleash your innovation! We're seeking the all-around most ingenious solutions b
 
 👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/)✨
 
-#### 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $1,500
+#### 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500
 
 <b>Number of winners: 1</b>
 
@@ -75,34 +75,28 @@ Unleash your innovation! We're seeking the all-around most ingenious solutions b
 Showcase the potential of Push by integrating its Conditional Gating feature into your dApps. Conditional Gating is a feature that allows you to create dynamic and sophisticated permissions for your Group Chats. You can set unique conditions for both joining or messaging in the groups such as needing to hold a certain amount of token XYZ or be a holder of XYZ NFT.
 
 
-Your task? Integrate the Push Chat Conditional Gating feature in your dApp, utilizing at least two of the following use cases: 
-
-
-- Token-gated groups
-- NFT-gated groups
-- Multi-chain conditions
-- Sending message conditions 
-- Non-web3 conditions using Guild 
-- Game theories by combining multiple conditions
-- Ensure smooth UX/UI and seamless user verification based on the set rules
-
-
 For more information regarding Conditional Gating and Rules for Group Chats, checkout our documentation here 👉https://push.org/docs/chat/build/conditional-rules-for-group/
 
-#### 4. 🏆 BUIDL Together (Pool Prize) ⸺ $5,000
+#### 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500
 
-<b>Number of winners: 10</b>
-
-
-This is a Pool Bounty prize that will be given to the top 10 implementations of Push communication tools (Notifications, Chat, Video, Group Chat, AI Chat). Priority will be given to those who integrate the following Push Notification/Chat features:
+<b>Number of winners: 1</b>
 
 
-- [Channel Settings](https://push.org/docs/notifications/build/create-channel-settings/)
-- [Conditional Gating](https://push.org/docs/chat/build/conditional-rules-for-group/)
-- [Stream Notifications](https://push.org/docs/notifications/build/stream-notifications/)
+Utilize the full potential of Push Notifications by incorporating the Channel/Notification Settings into your dApp. 
 
 
-👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/)✨
+Channel/Notification Settings allow you to segment notifications into different categories so that end-users can select only the kinds of notifications they want to receive. For example, a web3 news site could have Notification Settings for different news categories and let users select accordingly and hence customize their notifications. You can build as many notification categories as you’d like choosing between Boolean and Slider Settings types.
+
+
+For more information regarding Channel/Notification Settings, checkout our documentation here 👉https://push.org/docs/notifications/build/create-channel-settings/
+
+#### 5. 🏆 Best Use of Push Protocol ⸺ $1,500
+This bounty recognizes the most exceptional and impactful implementation of the Push Protocol, emphasizing applications that significantly enhance user interaction and experience through effective use of Push features.
+
+Go wild, get crazy, find new and exciting ways to integrate Push that significantly enhance your UX. Think customer support messaging, user-to-user-to-dApp social interactions, creative notification use cases. The list is endless.
+
+👉Our all-in-one✨ [Hacker Building Guide for Push Protocol](https://push.org/docs/hackers/) ✨
+
 
 ### Learn to build a Web3 Messaging and Notifications dApps IRL 🤝
 Not sure how to get started with building? We got you. We’ll be hosting an IRL workshop with our very own co-founder Harsh Rajat diving into everything you need for "How to Build Web3 Messaging and Notifications Apps."
