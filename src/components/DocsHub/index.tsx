@@ -6,6 +6,7 @@
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
+import "./styles.css";
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CodeBlock from '@theme/CodeBlock';
@@ -28,7 +29,8 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
-import "./styles.css";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 
 
 
@@ -164,6 +166,7 @@ export default function HomepageFeatures(): JSX.Element {
             ]
           })}
         </script>
+        
       </Head>
 
       {/* DOCS HERO SECTION */}
@@ -267,7 +270,8 @@ export default function HomepageFeatures(): JSX.Element {
           </TechDocCardList>
         </FluidContent>
       </HomepageSection>
-      
+
+    
       {/* SDK SECTION */}
       <HomepageSection>
         <FluidContent>
