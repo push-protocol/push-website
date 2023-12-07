@@ -311,6 +311,9 @@ function App(props) {
     // Demo only supports MetaMask (or other browser based wallets) and gets provider that injects as window.ethereum into each page
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
+    // Switch to sepolia
+    await provider.send("wallet_switchEthereumChain", [{ chainId: "0xAA36A7" }]);
+
     // Get provider
     await provider.send("eth_requestAccounts", []);
 
