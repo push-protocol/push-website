@@ -42,7 +42,7 @@ yarn run dev
 After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
-import { PushAPI } from "@pushprotocol/restapi";
+import { CONSTANTS, PushAPI } from "@pushprotocol/restapi";
 ```
 
 #### [Channel File](https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts)
@@ -60,8 +60,9 @@ async initializeUser() {
       provider
   );
 
-  // Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-  const userAlice = await PushAPI.initialize(signer, { env: "staging" });
+  // PushAPI.initialize(signer, {options?});
+  // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+  const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
   return { contract, userAlice };
 }
