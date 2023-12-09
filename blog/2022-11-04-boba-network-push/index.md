@@ -3,19 +3,21 @@
 slug: push-protocol-allies-with-boba-network-to-enable-decentralized-communication
 title: Push Protocol Allies With Boba Network to Enable Decentralized Communication
 authors: [push]
+image: './cover-image.webp'
+text: "Boba, the Ethereum Layer-2 network joins forces with Push Protocol to achieve direct communication with users of the platform. As such, users of Boba Network can receive decentralized push notifications pertaining to asset bridging."
 tags: [ Web3, Announcements, Push Notification, Boba Network]
 
 ---
 
 
 ![Cover image of Push Protocol Allies With Boba Network to Enable Decentralized Communication](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Push Protocol and Boba Network integrate to bring decentralized push notifications for users.<br/>
 
 Boba, the Ethereum Layer-2 network joins forces with Push Protocol to achieve direct communication with users of the platform. As such, users of Boba Network can receive decentralized push notifications pertaining to asset bridging.
 
-<!--truncate-->
 
 ## Boba Network: Ethereum Layer2 for the Masses
 Boba Network is touted to be the people’s layer-2 for Ethereum that prioritizes developers and users. At its core, it is an L2 Ethereum scaling and augmenting solution. It features extensible smart contracts that allow developers to build the next generation of DApps that invoke the web-scale infrastructure. Boba offers community-driven liquidity pools while facilitating fast exits and giving LPs incentivized yield farming opportunities.
@@ -40,8 +42,4 @@ Boba is a “Multichain “ L2 Ethereum scaling & augmenting solution built by t
 
 Stay in touch: [Website](https://boba.network/) and [docs](https://docs.boba.network/).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

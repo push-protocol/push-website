@@ -290,6 +290,7 @@ export const Button = styled.button`
     props.borderRadius || GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
   position: ${(props) => props.position || "relative"};
   text-decoration: ${(props) => props.textDecoration || "none"};
+  width: ${(props) => props.width || "initial"};
   overflow: ${(props) => props.overflow || "hidden"};
   z-index: ${(props) => props.zIndex || "3"};
   pointer: ${(props) => props.pointer || "hand"};
@@ -564,8 +565,9 @@ export const AImp = styled.a`
   padding: 6px 12px 6px 8px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
+  line-height: 30px;
 
   &:before {
     content: "💡 ";
@@ -574,6 +576,44 @@ export const AImp = styled.a`
 
   &:hover {
     color: #000;
+  }
+`;
+
+// Block Anchor
+export const ABlock = styled.a`
+  color: var(--ifm-custom-base);
+  border: 0.5px solid var(--ifm-custom-base);
+  font-size: 1.25rem;
+  padding: 20px 15px 20px 15px;
+  margin-top: 20px;
+  font-weight: 500;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  text-decoration: none;
+  display: flex;
+  transition: all 0.2s ease-in-out 0s;
+
+  &:after {
+    content: ">";
+    position: relative;
+    display: flex;
+    float: right;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  &:hover {
+    color: #dd44b9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
+  }
+
+  &:hover:after {
+    color: #dd44b9;
+  }
+
+  & p {
+    margin: 0px;
   }
 `;
 
@@ -595,6 +635,10 @@ export const ModalInner = styled(Button)`
   display: flex;
   gap: 10px;
 
+  & p {
+    margin: 0px;
+  }
+  
   & img {
     height: 32px;
     width: auto;
@@ -631,6 +675,13 @@ export const ModalInner = styled(Button)`
 
 export const ModalSmall = styled(ModalInner)``;
 
+export const ModalSmallEqual = styled(ModalSmall)`
+  min-width: 140px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
 export const ModalMid = styled(ModalInner)`
   gap: 20px;
   padding: 30px 10px;
@@ -640,7 +691,6 @@ export const ModalMid = styled(ModalInner)`
     height: 48px;
   }
 `;
-
 export const ModalMidEqual = styled(ModalMid)`
   min-width: 140px;
   align-self: stretch;
@@ -659,4 +709,20 @@ export const ImageText = styled.div`
   text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
+`;
+
+export const ModalLarge = styled(ModalMid)`
+  min-width: 220px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
+export const MetricTitle = styled(Span)`
+  color: #dd44b9 !important;
+  font-weight: 600 !important;
+`;
+
+export const MetricSub = styled(Span)`
+  font-size: 14px;
 `;

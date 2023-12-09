@@ -3,15 +3,18 @@
 slug: enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet
 title: Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚
 authors: [push]
+image: './cover-image.gif'
+text: "We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️"
 tags: [ Web3, Blockchain Development, Blockchain Technology, Announcements]
 
 ---
 
 ![Cover image of Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚](./cover-image.gif)
+<!--truncate-->
+
 
 We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️
 
-<!--truncate-->
 
 This integration is designed to take the Safe user experience to the next level. Now with Push notifications, Safe users can rest easy knowing they are in complete control and up to date on the status of their assets with real-time notifications to keep them informed.
 
@@ -33,16 +36,9 @@ It’s Push’s goal that this collaboration with Safe will showcase a way in wh
 
 We’re excited to be working alongside the Safe team and paving the way for a safer and more decentralized future.
 
-<center><b>.   .   .</b></center>
-
 ## About Safe
 
-Safe (previously Gnosis Safe) is a on-chain asset custody protocol, securing ~$40 Billion in assets today. It is establishing a universal ‘smart account’ standard for secure custody of digital assets, data, and identity. With Safe{Wallet}, it’s flagship web and mobile wallet and Safe{Core} account abstraction infrastructure, it is on a mission to unlock digital ownership for everyone in web3 including DAOs, enterprises, retail and institutional users.
+Safe (previously Gnosis Safe) is a on-chain asset custody protocol, securing ~$40 Billion in assets today. It is establishing a universal ‘smart account’ standard for secure custody of digital assets, data, and identity. With `Safe{Wallet}`, it’s flagship web and mobile wallet and `Safe{Core}` account abstraction infrastructure, it is on a mission to unlock digital ownership for everyone in web3 including DAOs, enterprises, retail and institutional users.
 
 Find all about it: [Website](https://safe.global/), [Twitter](https://twitter.com/safe), [Discord](https://discord.com/invite/nrQVY2566v), [Blog](https://safe.mirror.xyz/), [GitHub](https://github.com/safe-global), [Docs](https://docs.safe.global/)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -2,15 +2,17 @@
 slug: epns-x-stox-enabling-communication-for-the-global-portfolio-tracker
 title: 'EPNS x Stox: Enabling Communication for the Global Portfolio Tracker'
 authors: [push]
+image: './cover-image.webp'
+text: "EPNS and Stox, the portfolio tracker platform for DeFi, team up in a pilot collaboration to bring push notifications to users. As such, Stox will now be able to seamlessly interact with its users and keep them updated about the status of their portfolio, mainly when their NFTs are sold."
 tags: [Ethereum ,Epnsproject ,Stox ,Blockchain ,Portfolio]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS x Stox: Enabling Communication for the Global Portfolio Tracker](./cover-image.webp)
+<!--truncate-->
 
 EPNS and Stox, the portfolio tracker platform for DeFi, team up in a pilot collaboration to bring push notifications to users. As such, Stox will now be able to seamlessly interact with its users and keep them updated about the status of their portfolio, mainly when their NFTs are sold.
 
-<!--truncate-->
 
 ### Stox: The Portfolio Tracker
 Stox is a global, all-asset portfolio tracker that allows users to track their investments in over 25 equity markets, metals, and mutual funds. However, the platform focuses on web3, allowing users to invest in and track their crypto and NFT portfolios. Investors can automatically import their Ethereum and Binance Smart Chain (BSC) trades onto the Stox platform. They can also record any transaction done on the platform.
@@ -30,9 +32,5 @@ Stox is a global all asset investment tracker with a strong focus on web3 and so
 Stay in touch! [Website](https://www.stox.app/)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

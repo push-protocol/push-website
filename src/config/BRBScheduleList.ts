@@ -147,7 +147,7 @@ export const citiesList = [
     {
       srcref: 'lucknow',
       place: 'Lucknow',
-      date: '17 Nov 2023',
+      date: '26 Nov 2023',
       link: 'https://www.lu.ma/brb-lucknow',
       alt: 'Lucknow, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Lucknow, India for dev tour of Push. #BRBIndia campaign of Push',
@@ -157,10 +157,20 @@ export const citiesList = [
   
   ],
   [
+    // {
+    //   srcref: 'chandigarh',
+    //   place: 'Chandigarh',
+    //   date: '21 Nov 2023',
+    //   link: 'http://lu.ma/brb-chandigarh',
+    //   alt: 'Chandigarh, India illustration for #BRB #BRBIndia event link',
+    //   title: 'Lu.ma event page for Chandigarh, India for dev tour of Push. #BRBIndia campaign of Push',
+    //   backgroundColor: '#194395;',
+    //   hasEnded: false,
+    // },
     {
       srcref: 'dehradun',
       place: 'Dehradun',
-      date: '28 Nov 2023',
+      date: '30 Nov 2023',
       link: 'https://lu.ma/brb-dehradun',
       alt: 'Dehradun, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Dehradun, India for dev tour of Push. #BRBIndia campaign of Push',
@@ -168,17 +178,27 @@ export const citiesList = [
       hasEnded: false,
     },
     {
-      srcref: 'kanpur',
-      place: 'Kanpur',
+      srcref: 'bengaluru',
+      place: 'Bengaluru',
       date: 'TBA',
-      link: 'https://www.lu.ma/brb-kanpur',
-      alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#E26059',
+      link: 'https://www.lu.ma/brb-bengaluru',
+      alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
+      title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',
+      backgroundColor: '#299EC2',
       hasEnded: false,
-    },
+    }
   ],
   [ 
+    // {
+    //   srcref: 'kanpur',
+    //   place: 'Kanpur',
+    //   date: 'TBA',
+    //   link: 'https://www.lu.ma/brb-kanpur',
+    //   alt: 'Kanpur, India illustration for #BRB #BRBIndia event link',
+    //   title: 'Lu.ma event page for Kanpur, India for dev tour of Push. #BRBIndia campaign of Push',
+    //   backgroundColor: '#E26059',
+    //   hasEnded: false,
+    // },
   //   {
   //   srcref: 'agra',
   //   place: 'Agra',
@@ -189,15 +209,6 @@ export const citiesList = [
   //   backgroundColor: '#194395',
   //   hasEnded: false,
   // },
-  {
-      srcref: 'bengaluru',
-      place: 'Bengaluru',
-      date: 'TBA',
-      link: 'https://www.lu.ma/brb-benagaluru',
-      alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
-      title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',
-      backgroundColor: '#299EC2',
-      hasEnded: false,
-    },
+  
   ],
 ];

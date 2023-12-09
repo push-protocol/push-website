@@ -2,10 +2,14 @@
 slug: back-2-school-grant-program
 title: 'Back 2 School Grant Program🎒💜'
 authors: [push]
+image: './cover-image.webp'
+text: "We’re extremely excited to announce a brand new initiative designed to enhance collaboration between Push Protocol and university students!"
 tags: [Web3, Grant, Web Grant, Grant Writing]
 
 ---
 ![Cover image of Back 2 School Grant Program🎒💜](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # Push Grants for Collaborations with University Students
@@ -14,7 +18,6 @@ tags: [Web3, Grant, Web Grant, Grant Writing]
     We’re extremely excited to announce a brand new initiative designed to enhance collaboration between Push Protocol and university students!
 </b>
 
-<!--truncate-->
 
 Universities are at the forefront of innovation, and we’re launching a grant program called <b><i>Back2School w/ Push</i></b> to empower students to build, learn, and educate others on cutting-edge web3 development.
 
@@ -73,8 +76,3 @@ Remember to review the specific application guidelines to ensure you meet all re
 
 Good luck with your application!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

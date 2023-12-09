@@ -2,14 +2,17 @@
 slug: november-monthly-recap
 title: November Monthly Recap
 authors: [push]
+image: './cover-image.webp'
+text: "What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
+"
 tags: [ Web3, Push Notification Service, Push Notification, Developer Tools, Newsletter]
 ---
 
 ![Cover image of November Monthly Recap](./cover-image.webp)
+<!--truncate-->
 
 What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
 
-<!--truncate-->
 
 Let’s unpack everything that happened this month!
 
@@ -80,8 +83,4 @@ With such an exciting month behind us, we’re all geared up for December and ha
 
 — The Push Team
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

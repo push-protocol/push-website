@@ -2,18 +2,20 @@
 slug: enjoy-your-nft-stay-tuned-for-next-steps
 title: ‘Enjoy Your NFT, Stay Tuned for Next Steps!’
 authors: [push]
+image: './cover-image.webp'
+text: "The metaverse without communication is counter-intuitive. Users are disconnected when connecting to digital assets and worlds; Push Protocol aims to change that. With the current web3 experience, it is not practical to expect meaningful and valuable interactions without a robust communication method."
 tags: [ NFT, Metaverse, Pn101, Web3, Push Notification]
 ---
 
 
 ![Cover image of Enjoy Your NFT, Stay Tuned for Next Steps!](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 2.3<br/>
 
 The metaverse without communication is counter-intuitive. Users are disconnected when connecting to digital assets and worlds; Push Protocol aims to change that. With the current web3 experience, it is not practical to expect meaningful and valuable interactions without a robust communication method.
 
-<!--truncate-->
 
 ## Recalling the Metaverse: A Participatory Digital Society
 The metaverse is an ambiguous idea and does not necessarily have to depend on a blockchain to exist. However, metaverse-based projects that use blockchain as their underlying infrastructure lack a means for communication. This necessary component is needed to deliver the intended socio-economic potential of the metaverse.
@@ -50,8 +52,4 @@ While we named a few use cases in this article that relate to the metaverse and 
 
 <i>By Danny Salman</i>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -3,15 +3,17 @@
 slug: earnifi-never-miss-an-airdrop-with-push-notifications
 title: Earnifi — Never Miss an Airdrop With Push Notifications
 authors: [push]
+image: './cover-image.webp'
+text: "Earnifi, an airdrop aggregator platform designed to find unclaimed airdrops, has integrated Push to make airdrops more accessible to everyone!"
 tags: [ Web3, Blockchain, Push Notification, Pushprotocol, Frensofpush, Customer Success]
 
 ---
 
 ![Cover image of Earnifi — Never Miss an Airdrop With Push Notifications](./cover-image.webp)
+<!--truncate-->
 
 <i>This is our first week launching a brand new content series: Frens of Push. In this series, we highlight outstanding projects who are building using Push and give them the spotlight. If you’re interested in being featured, reach out to us!</i><br/><br/>
 
-<!--truncate-->
 
 Earnifi, an airdrop aggregator platform designed to find unclaimed airdrops, has integrated Push to make airdrops more accessible to everyone!
 
@@ -57,8 +59,4 @@ Earnifi is a solution for discovering and receiving notifications for unclaimed 
 
 Check out more about Earnifi: [Website](https://earni.fi/), [Twitter](https://twitter.com/Earni_fi).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

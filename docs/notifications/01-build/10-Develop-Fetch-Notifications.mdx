@@ -5,6 +5,7 @@ hide_title: true
 slug: ./fetch-notifications
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 10
+image: "/assets/docs/previews/docs_notifications_develop--fetch_notifications.png"
 ---
 
 # Fetch notifications overview
@@ -12,17 +13,19 @@ sidebar_position: 10
 These APIs are useful for fetching list of all notification (inbox or spam) of a user in a paginated manner.
 
 <head>
-  <title>Fetch Notifications | Push Notifications | Push Documentation</title>
+  <title>{"Fetch Notifications | Push Notifications | Push Documentation"}
+  </title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## Notification list API
 
@@ -31,7 +34,7 @@ import {
 
 ```typescript
 // userAlice.notification.list(type, {options?})
-const inboxNotifications = await userAlice.notification.list('INBOX')
+const inboxNotifications = await userAlice.notification.list("INBOX");
 ```
 
   </TabItem>
@@ -41,66 +44,62 @@ const inboxNotifications = await userAlice.notification.list('INBOX')
 
 ### Notification list parameters
 
-| Param     | Type               | Subtype    | Default | Remarks                                                                 |
-| --------- | ------------------ | ---------- | ------- | ----------------------------------------------------------------------- |
-| _`type`_  | `INBOX` or `SPAM`  | -          | INBOX   | A string representing the type of feed to retrieve.                     |
-| `options` | `object`           | -          | -       | An object containing additional options for filtering and pagination.   |
+| Param     | Type               | Subtype    | Default | Remarks                                                                                                                                                                                                          |
+| --------- | ------------------ | ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`type`_  | `INBOX` or `SPAM`  | -          | INBOX   | A string representing the type of feed to retrieve.                                                                                                                                                              |
+| `options` | `object`           | -          | -       | An object containing additional options for filtering and pagination.                                                                                                                                            |
 | -         | `options.account`  | `string`   | -       | [Account supports a number of address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
-| -         | `options.channels` | `string[]` | -       | An array of channels to filter feeds by.                                |
-| -         | `options.page`     | `number`   | 1       | A number representing the page of results to retrieve.                  |
-| -         | `options.limit`    | `number`   | 10      | A number representing the maximum number of feeds to retrieve per page. |
-| -         | `options.raw`      | `boolean`  | False   | A boolean indicating whether to retrieve raw feed data.                 |
+| -         | `options.channels` | `string[]` | -       | An array of channels to filter feeds by.                                                                                                                                                                         |
+| -         | `options.page`     | `number`   | 1       | A number representing the page of results to retrieve.                                                                                                                                                           |
+| -         | `options.limit`    | `number`   | 10      | A number representing the maximum number of feeds to retrieve per page.                                                                                                                                          |
+| -         | `options.raw`      | `boolean`  | False   | A boolean indicating whether to retrieve raw feed data.                                                                                                                                                          |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<details>
-
-<summary>
-  <b>Expected response</b>
-</summary>
+<Details summary="Expected response">
 
 ```typescript
 [
   {
-    cta: '',
-    title: 'test',
-    message: 'test',
-    icon: 'https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
-    url: 'https://google.com',
-    sid: '1922',
-    app: 'Updated Name',
-    image: '',
-    blockchain: 'ETH_TEST_GOERLI',
-    notification: { body: 'test', title: 'Updated Name - test' },
-    secret: '',
+    cta: "",
+    title: "test",
+    message: "test",
+    icon: "https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ",
+    url: "https://google.com",
+    sid: "1922",
+    app: "Updated Name",
+    image: "",
+    blockchain: "ETH_TEST_GOERLI",
+    notification: { body: "test", title: "Updated Name - test" },
+    secret: "",
   },
   {
-    cta: '',
-    title: 'test',
-    message: 'test',
-    icon: 'https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
-    url: 'https://google.com',
-    sid: '1435',
-    app: 'Updated Name',
-    image: '',
-    blockchain: 'ETH_TEST_GOERLI',
-    notification: { body: 'test', title: 'Updated Name - test' },
-    secret: '',
+    cta: "",
+    title: "test",
+    message: "test",
+    icon: "https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ",
+    url: "https://google.com",
+    sid: "1435",
+    app: "Updated Name",
+    image: "",
+    blockchain: "ETH_TEST_GOERLI",
+    notification: { body: "test", title: "Updated Name - test" },
+    secret: "",
   },
   {
-    cta: '',
-    title: 'test',
-    message: 'test',
-    icon: 'https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ',
-    url: 'https://google.com',
-    sid: '1432',
-    app: 'Updated Name',
-    image: '',
-    blockchain: 'ETH_TEST_GOERLI',
-    notification: { body: 'test', title: 'Updated Name - test' },
-    secret: '',
+    cta: "",
+    title: "test",
+    message: "test",
+    icon: "https://gateway.ipfs.io/ipfs/bafybeib76bmkscu6efwawi2tkltdgthwrpny2ok7lur7nltffgydiq7ruy/QmVaY4HQaorrMhKo1sHk7FM1B8Xi1JnT3DvJbG9Xv7VeLZ",
+    url: "https://google.com",
+    sid: "1432",
+    app: "Updated Name",
+    image: "",
+    blockchain: "ETH_TEST_GOERLI",
+    notification: { body: "test", title: "Updated Name - test" },
+    secret: "",
   },
-]
+];
 ```
 
-</details>
+</Details>

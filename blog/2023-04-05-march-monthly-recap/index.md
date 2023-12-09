@@ -3,17 +3,21 @@
 slug: march-monthly-recap
 title: March Monthly Recap🌄
 authors: [push]
+image: './cover-image.png'
+text: "Welcome to another exciting month at Push!
+As we reflect on the past few weeks, we are thrilled to share some of the major milestones we’ve achieved in the world of decentralized communication. From the introduction of exciting new Push Chat and Notification features to the highly anticipated launch of Push Chat Mobile, we’ve been working hard to enhance the Push Protocol.
+"
 tags: [ Blockchain Technology, NewsLetter, Monthly Recap, Web3]
 
 ---
 
 ![Cover image of March Monthly Recap🌄](./cover-image.png)
+<!--truncate-->
 
 Welcome to another exciting month at Push!
 
 As we reflect on the past few weeks, we are thrilled to share some of the major milestones we’ve achieved in the world of decentralized communication. From the introduction of exciting new Push Chat and Notification features to the highly anticipated launch of Push Chat Mobile, we’ve been working hard to enhance the Push Protocol.
 
-<!--truncate-->
 
 Let’s take a dive into everything that happened in March!
 
@@ -90,8 +94,3 @@ As we conclude an incredible month at Push, we are thrilled to witness the growt
 
 We are committed to continuing our efforts in building a strong, engaged community that shares our vision for the future of web3 and want to thank you all for joining this journey with us. Until next time!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

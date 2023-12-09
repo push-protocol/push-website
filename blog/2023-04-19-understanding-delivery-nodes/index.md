@@ -3,15 +3,19 @@
 slug: understanding-delivery-nodes
 title: Understanding Delivery Nodes🚂
 authors: [push]
+image: './cover-image.webp'
+text: "To fully grasp the concept of push notifications and messages, it is essential to first understand the role of delivery nodes in a communication protocol.
+Delivery nodes are endpoints where messages are sent and received. They can be physical devices, applications, or servers and are tasked with relaying messages from one point to another."
 tags: [ Web3, Pushprotocol, Delivery Nodes]
 
 ---
 
 ![Cover image of Understanding Delivery Nodes🚂](./cover-image.webp)
+<!--truncate-->
+
 
 To fully grasp the concept of push notifications and messages, it is essential to first understand the role of delivery nodes in a communication protocol.
 
-<!--truncate-->
 
 Delivery nodes are endpoints where messages are sent and received. They can be physical devices, applications, or servers and are tasked with relaying messages from one point to another.
 
@@ -98,8 +102,3 @@ To begin building with Push Delivery Nodes, read up on our documentation specifi
 
 👉👉👉https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -3,12 +3,16 @@
 slug: empower-your-wallet-app-or-platform-with-push-delivery-nodes
 title: 'Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡'
 authors: [push]
+image: './cover-image.png'
+text: "Push Delivery Nodes serve as a decentralized solution for connecting web3 and web2. They allow any centralized or decentralized platform to receive communications from Push Storage Nodes, which validate and index all communications and link them to a user’s wallet address and multi-chain identit"
 tags: [ Web3, Developer, Blockchain Development,  Blockchain Technology, Delivery Nodes]
 
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡](./cover-image.png)
+<!--truncate-->
+
 
 <ImageText>Simplify Web3 Notifications for Your App with Push Delivery Nodes — A One-Stop Solution for Mobile, Desktop or Extension. These Decentralized Nodes Connect Web3 and Web2, Allowing Your Platform to Receive Notifications from Validating and Indexing Storage Nodes, Tied Directly to Your Wallet Address and Multi-Chain Identity</ImageText>
 
@@ -18,7 +22,6 @@ import { ImageText } from '@site/src/css/SharedStyling';
 ## What are the Delivery Nodes?
 Push Delivery Nodes serve as a decentralized solution for connecting web3 and web2. They allow any centralized or decentralized platform to receive communications from Push Storage Nodes, which validate and index all communications and link them to a user’s wallet address and multi-chain identity.
 
-<!--truncate-->
 
 Developers can run these nodes on their backend to connect their web2 infrastructure to web3 communication, allowing for extended communication beyond web3 wallet addresses to web2 platform users. Push Delivery Nodes enable mapping any web2 device token or platform username to a specific web3 wallet address, which can then send alerts to web2 or web2.5 platforms.
 
@@ -85,7 +88,7 @@ npm start
 ### Step 7: Device registration
 - An endpoint is hosted as part of the delivery node project, which can be used for device registration.
 - Below is the API to create a mapping between the wallet address and the device token for which the messages need to be delivered.
-- <delivery_node_url> is the base URL of the Delivery node you have hosted.
+- `<delivery_node_url>` is the base URL of the Delivery node you have hosted.
 
 Below is the curl request of this endpoint
 
@@ -104,9 +107,9 @@ curl - location - request POST 'https://<delivery_node_url>/apis/v1/pushtokens/r
 - <i>Demo Mobile App Repo Link:</i> <a href='https://github.com/ethereum-push-notification-service/demo-push-mobile-app'>https://github.com/ethereum-push-notification-service/demo-push-mobile-app</a>
 - <i>Delivery Node Setup Video Tutorial:</i>
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/OlRHL3qd4oY" title="Get started with Push Delivery Nodes | #web3 communication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/OlRHL3qd4oY" title="Get started with Push Delivery Nodes | #web3 communication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<i>PUSH Documentation:</i>  <a href='https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node'>https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node</a>
+<i>PUSH Documentation:</i>  <a href='/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'>Integrating notifications via Push Delivery Nodes</a>
 
 ## Push Support
 If at any point you find yourself needing assistance and help with getting set up, Push has a team of helpful developers ready when you need it.
@@ -125,10 +128,6 @@ You can find more details here.
 - Support Push Chat
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 

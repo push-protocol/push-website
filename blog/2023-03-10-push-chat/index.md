@@ -3,15 +3,17 @@
 slug: push-chat-the-solution-to-centralized-messaging
 title: 'Push Chat: The Solution To Centralized Messaging ✅'
 authors: [push]
+image: './cover-image.gif'
+text: "Developers and researchers in computer networks are constantly seeking ways to improve messaging systems’ security, reliability, and scalability. Why? Because traditional centralized messaging systems have their drawbacks, including vulnerabilities to hacks, censorship and the risk of downtime."
 tags: [ Web3, Blockchain Technology, Chat ]
 
 ---
 
 ![Cover image of Push Chat: The Solution To Centralized Messaging ✅](./cover-image.gif)
+<!--truncate-->
 
 Developers and researchers in computer networks are constantly seeking ways to improve messaging systems’ security, reliability, and scalability. Why? Because traditional centralized messaging systems have their drawbacks, including vulnerabilities to hacks, censorship and the risk of downtime.
 
-<!--truncate-->
 
 That’s where decentralized messaging protocols come in. Decentralized protocols use blockchain technology and decentralized networks to create a more secure and resilient messaging infrastructure.
 
@@ -53,7 +55,7 @@ Centralized tools dominate the space, requiring users to give up some level of t
 
 Push Chat offers a solution to this problem, providing a decentralized communication layer for web3. With Push Chat, DAOs and their users can communicate with each other in a secure, anonymous, and censorship-resistant manner.
 
-Using the power of peer-to-peer networks, Push Chat allows users to send messages directly to each other without the need for a central server. This enhances privacy and security and makes the system more resistant to censorship. But Push Chat isn’t just a messaging platform — it also enables censorship-resistant, decentralized polling and voting on proposals submitted on the blockchain. [With our generalized SDK (docs)](https://docs.push.org/developers/concepts/push-chat-for-web3), you can use Push Chat for decentralization, security, and significantly lower costs in gas for you and your users.
+Using the power of peer-to-peer networks, Push Chat allows users to send messages directly to each other without the need for a central server. This enhances privacy and security and makes the system more resistant to censorship. But Push Chat isn’t just a messaging platform — it also enables censorship-resistant, decentralized polling and voting on proposals submitted on the blockchain. [With our generalized SDK (docs)](/docs/chat/concepts/push-chat-architecture/), you can use Push Chat for decentralization, security, and significantly lower costs in gas for you and your users.
 
 Whether voting on proposals, collaborating on projects, or just keeping in touch with fellow community members, Push Chat provides a powerful and easy-to-use solution for decentralized communication.
 
@@ -61,8 +63,3 @@ Push Chat can even broadcast user transactions to a network of sequencers, where
 
 Whether you’re building a social network, a platform for collaborating on the artwork, open-source software, or any other type of dApp, Push Chat can provide a decentralized, private, censorship-resistant, and user-friendly experience for communication and collaboration. And with its ability to save gas fees through transaction aggregation, Push Chat can enhance the decentralization and ease of running your dApp or protocol, allowing users to submit their own transactions or creating a decentralized architecture that handles this for them.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

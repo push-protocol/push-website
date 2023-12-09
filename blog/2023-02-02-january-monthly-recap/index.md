@@ -3,16 +3,19 @@
 slug: january-monthly-recap
 title: 'January Monthly Recap❄️'
 authors: [push]
+image: './cover-image.png'
+text: "Welcome to our monthly update!
+We are thrilled to share with you the numerous achievements and milestones we accomplished in the month of January — spoiler, it's a lot."
 tags: [ Devtools, Web3, Blockchain, Newsletter, Push Notification]
 
 ---
 ![Cover image of January Monthly Recap❄️](./cover-image.png)
+<!--truncate-->
 
 Welcome to our monthly update!
 
 We are thrilled to share with you the numerous achievements and milestones we accomplished in the month of January — spoiler, it's a lot.
 
-<!--truncate-->
 
 From exciting new product developments to numerous giveaways, partnerships, and hackathons, January has been a whirlwind of activity for Push and the Push DAO.
 
@@ -25,7 +28,7 @@ With the groundwork for Push Smart Contracts v2 in place, we’re already making
 
 Besides the upgrade to v1.5, we’ve also had a host of fantastic developments have taken place including:
 
-- New features to the [Push Chat SDK](https://docs.push.org/developers/concepts/push-chat-for-web3)
+- New features to the [Push Chat SDK](/docs/chat)
 - The analytical dashboard undergoing extensive quality assurance
 
 In addition to all our progress on the development front and the successful update to v1.5, we’ve got a loaded roadmap with more exciting new features to come. Stay updated with all the latest happenings on[ Push Discord](https://discord.com/invite/pushprotocol).
@@ -69,8 +72,4 @@ What’s more? [Woopay](https://twitter.com/developer_dao/status/161870599010245
 Overall, we are extremely proud of all that we have achieved in the month of January and are looking forward to the exciting opportunities and challenges that lie ahead. Thank you for your continued support and we look forward to updating you on our progress in the months to come.
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

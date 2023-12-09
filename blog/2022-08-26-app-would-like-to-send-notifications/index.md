@@ -2,17 +2,19 @@
 slug: my-app-would-like-to-send-you-push-notifications
 title: ‘My App’ Would Like to Send You Push Notifications
 authors: [push]
+image: './cover-image.webp'
+text: "It is hard to imagine modern mobile devices without push notifications. The first push service was launched by Apple in June 2009, the Apple Push Notification Service (APNs). After that, Google followed with a service of their own, Google Cloud to Device Messaging (C2DM). Both companies have led efforts to enhance the push notification technology to where it is today."
 tags: [ Pn101, Push Notification, Technology, Blockchain, Web3]
 ---
 
 ![Cover image of ‘My App’ Would Like to Send You Push Notifications](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 1.1<br/>
 
 It is hard to imagine modern mobile devices without push notifications. The first push service was launched by Apple in June 2009, the Apple Push Notification Service (APNs). After that, Google followed with a service of their own, Google Cloud to Device Messaging (C2DM). Both companies have led efforts to enhance the push notification technology to where it is today.
 
-<!--truncate-->
 
 Push notifications are a type of message that can be presented in an alert-based format, such as message alerts, pop-ups, and banners. They serve as a mechanism that informs users about all kinds of information. Today, push notifications have dynamic traits with app components directly built into the notification delivery scheme.
 
@@ -49,8 +51,4 @@ In the coming articles, we’ll explore how push notifications fit in web3 and d
 
 <i>By Danny Salman</i>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

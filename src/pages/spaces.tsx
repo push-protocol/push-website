@@ -3,6 +3,7 @@
 /* eslint-disable */
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useState } from 'react';
 
@@ -89,21 +90,21 @@ const Spaces = () => {
   };
 
   return (
-    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription}>
+    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription} showNavbar='website'>
        <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/spaces" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | Spaces" />
+        <meta property="og:title" content="Push | Spaces" />
         <meta property="og:description" content="Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces." />
-        <meta property="og:image" content="/assets/previews/spacesfbpreview.webp" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/spacespreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | Spaces" />
+        <meta name="twitter:title" content="Push | Spaces" />
         <meta name="twitter:description" content="Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces."  />
-        <meta name="twitter:image" content="/assets/previews/spacestwtpreview.webp" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/spacespreview.png").default, { absolute: true})} />
 
 
         <script type="application/ld+json">

@@ -2,18 +2,20 @@
 slug: epns-x-wonderverse-decentralized-communication-for-web3-s-project-manager
 title: 'EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager'
 authors: [push]
+image: './cover-image.png'
+text: "Wonderverse, web3’s project management platform and EPNS team up in a pilot collaboration to bring decentralized push notifications for users. As such, Wonderverse will now be able to seamlessly interact with its users and keep them updated about the status of their tasks and other activities."
 tags: [Ethereum, Epnsproject, Newsletter, Project Management, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS x Wonderverse: Decentralized Communication for Web3’s Project Manager](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # EPNS and Wonderverse join forces to enable direct communication for users through decentralized push notifications.
 
 Wonderverse, web3’s project management platform and EPNS team up in a pilot collaboration to bring decentralized push notifications for users. As such, Wonderverse will now be able to seamlessly interact with its users and keep them updated about the status of their tasks and other activities.
 
-<!--truncate-->
 
 ### Bringing Project Management to Web3
 Businesses, no matter how small or big, deal with a myriad of tasks, projects, and plans. The smooth running of all these operations requires collaboration among all the people involved in the business. This is precisely why project management tools rose to fame in the last decade. They allow businesses to collaborate on project planning, resource allocation, and performance monitoring. The tools also provide the ability to establish a pyramid of tasks for effective completion.
@@ -38,8 +40,3 @@ Wonderverse is a DAO native tool that combines critical pieces to manage partici
 Stay in touch! [Website](https://www.wonderverse.xyz/)
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

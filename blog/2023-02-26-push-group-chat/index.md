@@ -3,18 +3,20 @@
 slug: launching-the-future-of-web3-messaging-with-push-chat-and-push-group-chat
 title: Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀
 authors: [push]
+image: './cover-image.gif'
+text: "We’re thrilled to announce the public launch of Push Chat and Push Group Chat. These latest additions to our suite of web3-native communication products are set to revolutionize the world of web3 messaging offering secure and speedy wallet-to-wallet communication for all."
 tags: [ Push Notification, Web3, Blockchain Technology, Web3 Development ]
 
 ---
 
 ![Cover image of Launching The Future of Web3 Messaging with Push Chat & Push Group Chat🚀](./cover-image.gif)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # These latest additions to our suite of web3-native communication products are set to revolutionize the world of web3 messaging.<br/>
 
 We’re thrilled to announce the public launch of Push Chat and Push Group Chat. These latest additions to our suite of web3-native communication products are set to revolutionize the world of web3 messaging offering secure and speedy wallet-to-wallet communication for all.
 
-<!--truncate-->
 
 Push Chat and Push Group Chat is now available to everyone!💪
 
@@ -59,15 +61,10 @@ What’s more? Each wallet can create up to 10 groups.
 
 With Push Group Chat, the possibilities are endless!
 
-Head over to our docs to learn how you can start creating web3 communities with the Group Chat feature 👉https://docs.push.org/developers
+Head over to our docs to learn how you can start creating web3 communities with the Group Chat feature 👉 [Push chat - Group chat](/docs/chat/build/create-group/ "Create groups for your community using Push group chat!")
 
 ## Pushing the Limits of Web3 Communication
 As we look to the future, the potential for web3-native communication solutions is limitless. We’re constantly striving to improve the user experience on web3 by creating solutions that prioritize privacy, security, and transparency. With the launch of Push Chat and the introduction of Push Group Chat, we’re at the forefront of an exciting new era in web3 communication and we’re glad to take this journey with you all.
 
 Come check out Push Chat for yourself!👉 https://app.push.org/#/chat
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

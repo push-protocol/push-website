@@ -3,18 +3,21 @@
 slug: let-s-embark-on-a-mission-w-push-protocol
 title: Let’s Embark on a Mission w. Push Protocol 🔔
 authors: [push]
+image: './cover-image.webp'
+text: "The Web3 ecosystem is continuously evolving, and the Push Missions program is an innovative initiative designed to engage and empower our community to help shape its future."
 tags: [ Ethereum, Push Notification, Rewards, Community]
 
 ---
 
 ![Cover image of Let’s Embark on a Mission w. Push Protocol 🔔](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # Web3, we are ready for lift-off! Today, we are launching a new Program for our community to get more involved with Push Protocol.<br/>
 
 The Web3 ecosystem is continuously evolving, and the Push Missions program is an innovative initiative designed to engage and empower our community to help shape its future.
 
-<!--truncate-->
 
 Push Missions offer exciting challenges and rewards to participants who contribute to the growth of the [Push Protocol](https://push.org/) by solving technical or brand awareness missions.
 
@@ -48,8 +51,3 @@ This is your opportunity to contribute to the growth of the Push ecosystem and e
 
 <b>Join the Push Missions program</b> today and help shape the future of web3 communication!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

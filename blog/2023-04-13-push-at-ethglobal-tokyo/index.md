@@ -3,17 +3,20 @@
 slug: push-protocol-1
 title: Push Protocolについて知っておくべきこと🔔
 authors: [push]
+image: './cover-image.webp'
+text: "Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。"
 tags: [ Ethglobal, Web3, Push Notification, Hackathons]
 
 ---
 
 ![Cover image of Push Protocolについて知っておくべきこと🔔](./cover-image.webp)
+<!--truncate-->
+
 
 ## Push Protocolとは？
 
 Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。
 
-<!--truncate-->
 
 ## 提供するもの
 
@@ -71,7 +74,7 @@ Group Chatには、以下のようなユーザーエクスペリエンスを向�
 - アドミンコントロール：グループチャットの作成者は、ユーザーを管理者に昇格させたり、グループ情報の変更、チャットからウォレットを追加または削除することができます。
 - ファイル共有：ユーザーはGIF、画像を共有したり、ファイルをアップロードしてグループチャットのメンバーと共有することができます。
 
-👉 https://docs.push.org/developers/developer-guides/integrating-push-chat
+👉 [Integrating Push Chat](/docs/chat/ "Docs explaining how to integrate Push Chat")
 
 ## ユースケース
 
@@ -125,7 +128,7 @@ Pushが<b>Polygon</b>でローンチされているため、Polygon Mumbaiテス
 
 ### 🦍 NFTローン清算bot
 
-Push [Showrunner framework](https://docs.push.org/developers/developer-zone/sending-notifications/using-showrunners-scaffold-gasless) とPush [SNS webhook](https://docs.push.org/developers/developer-zone/receiving-notifications/sns-notifications) およびNFT APIを使用して、NFTローンの清算が発生する前にメール、Twitter、Telegramでアラートを送信するボットを作成することができます。ユースケースとして[BAYCローン清算](https://cointelegraph.com/news/nearly-55m-worth-of-bored-ape-cryptopunks-nfts-risk-liquidation-amid-debt-crisis)をご参照ください。
+Push [Showrunner Scaffold](/docs/notifications/showrunners-scaffold/) とPush [SNS webhook](/docs/notifications/tutorials/integrate-notifications-via-aws-sns/) およびNFT APIを使用して、NFTローンの清算が発生する前にメール、Twitter、Telegramでアラートを送信するボットを作成することができます。ユースケースとして[BAYCローン清算](https://cointelegraph.com/news/nearly-55m-worth-of-bored-ape-cryptopunks-nfts-risk-liquidation-amid-debt-crisis)をご参照ください。
 
 ### 🌱 Grants
 
