@@ -18,7 +18,7 @@ import { PageMeta } from "@site/src/config/pageMeta";
 
 
 function CheatSheet() {
-  const url = 'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view?pli=1';
+  const url = "https://drive.google.com/file/d/1orVVzeco8CVAWzN_RlQtkaMc18ysJSAG/view?usp=sharing"
   const redirectURL = () => {
     window.location.replace(url);
   };
