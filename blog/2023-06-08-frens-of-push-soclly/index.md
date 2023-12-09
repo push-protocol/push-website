@@ -2,14 +2,16 @@
 slug: unleashing-a-new-era-of-social-networking-push-x-soclly
 title: 'Unleashing a New Era of Social Networking | Push x SOCLLY🌿'
 authors: [push]
+image: './cover-image.webp'
+text: "This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿."
 tags: [Frensofpush, Web3, Partnership, Blockchain Development]
 ---
 
 ![Cover image of Unleashing a New Era of Social Networking | Push x SOCLLY🌿](./cover-image.webp)
+<!--truncate-->
 
 This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿.
 
-<!--truncate-->
 
 SOCLLY is revolutionizing the web3 social networking space by putting power in the hands of creators. With a strong emphasis on collaboration, freedom, and monetization, SOCLLY provides a dynamic platform where creators can thrive and connect with their audience on their own terms.
 
@@ -101,9 +103,5 @@ SOCLLY is a decentralized social network with a creator-centric apporach. With a
 
 Find more about SOCLLY: [Website](https://www.soclly.com/), [Twitter](https://twitter.com/socllyhq), [Discord](https://discord.com/invite/eUM646fTua), [LinkedIn](https://www.linkedin.com/in/soclly-hq-264304215/), [Facebook](https://www.facebook.com/SocllyHQ)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

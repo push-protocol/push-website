@@ -1,0 +1,807 @@
+---
+id: docs-video-quickstart
+title: Quickstart
+hide_title: false
+slug: ./quickstart
+displayed_sidebar: pushVideoSidebar
+sidebar_position: 3
+image: "/assets/docs/previews/docs_video--quickstart.png"
+---
+
+# Quickstart
+
+Everything you will need to get up and running in 5 mins or less!
+
+<head>
+  <title>Quickstart | Push Video | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+### Installation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
+```
+
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
+```
+
+  </TabItem>
+</Tabs>
+
+### Import libraries
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Import restapi for function calls
+// Import socket for listening for real time messages
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+
+// Required to listen for incoming calls
+import { VideoCallStatus } from "@pushprotocol/restapi";
+import { ADDITIONAL_META_TYPE } from "@pushprotocol/restapi/src/lib/payloads/constants";
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Import restapi for function calls
+// Import socket for listening for real time messages
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+
+// Required to listen for incoming calls
+import { VideoCallStatus } from "@pushprotocol/restapi";
+import { ADDITIONAL_META_TYPE } from "@pushprotocol/restapi/src/lib/payloads/constants";
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Import restapi for function calls
+// Import socket for listening for real time messages
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { createSocketConnection, EVENTS } from "@pushprotocol/socket";
+
+// Required to listen for incoming calls
+import { VideoCallStatus } from "@pushprotocol/restapi";
+import { ADDITIONAL_META_TYPE } from "@pushprotocol/restapi/src/lib/payloads/constants";
+
+// Ethers v5 or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize Video Instance
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const _signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+
+// get PGP private key
+const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
+
+// Initialize video object
+const aliceVideoCall = new PushAPI.video.Video({
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const _signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+
+// get PGP private key
+const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
+
+// Initialize video object
+const aliceVideoCall = new PushAPI.video.Video({
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const _signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+
+// get PGP private key
+const encryptedPrivateKey = await userAlice.info().encryptedPrivateKey;
+
+// Initialize video object
+const aliceVideoCall = new PushAPI.video.Video({
+  signer: _signer,
+  chainId: 1, // Pass 1 for Ethereum, 137 for Polygon, etc
+  pgpPrivateKey: encryptedPrivateKey, // Used to authenticate if users are connected
+  env: CONSTANTS.ENV.STAGING, // 'PROD' or 'STAGING' environment
+  setData: (fn: (data: VideoCallData) => VideoCallData) => void, // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize Media Stream
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// create or pass an existing media stream
+await aliceVideoCall.create({
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// create or pass an existing media stream
+await aliceVideoCall.create({
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// create or pass an existing media stream
+await aliceVideoCall.create({
+  video: true, // to enable video on start
+  audio: true, // to enable audio on start
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Request Video Call
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// request a call to a recipient wallet address
+await aliceVideoCall.request({
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// request a call to a recipient wallet address
+await aliceVideoCall.request({
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// request a call to a recipient wallet address
+await aliceVideoCall.request({
+  senderAddress: signer.address,
+  recipientAddress: recipientWallet, // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+  chatId: chatID, // pass in the chat id between sender and recipient, required, see - https://push.org/docs/chat to learn more
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Incoming Video Call
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```jsx
+// Create Socket Connection
+const pushSDKSocket = createSocketConnection({
+  user: signer.wallet,
+  socketType: 'chat',
+  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
+  env: CONSTANTS.ENV.STAGING
+});
+
+// To listen to real time video calls
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // we are listening for video call related notifications
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is INITIALIZED that means we have an incoming call
+      if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
+        const {
+          // your address, ie the recipient address of the video call notification
+          recipientAddress,
+          // address of the other user part of the video call, who sent you this notification
+          senderAddress,
+          // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
+          chatId,
+          // webRTC signal data received from the peer which sent this notification
+          signalData,
+          // current status of the video call, can be found from VideoCallStatus enum
+          status,
+        } = videoCallMetaData;
+
+        // Note - We'll need signalData while calling acceptRequest function
+        // You can save these properties in a state for future use
+
+        /*
+        If you want you can also save these properties on the data state
+        we created while initializing the video object.
+        Later you can use it while calling acceptRequest()
+        signalData will be available via data.meta.initiator.signal
+        */
+        aliceVideoCall.setData((oldData) => {
+          return produce(oldData, (draft) => {
+            draft.local.address = recipientAddress;
+            draft.incoming[0].address = senderAddress;
+            draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
+            draft.meta.chatId = chatId;
+            draft.meta.initiator.address = senderAddress;
+            draft.meta.initiator.signal = signalData;
+          });
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Create Socket Connection
+const pushSDKSocket = createSocketConnection({
+  user: signer.wallet,
+  socketType: 'chat',
+  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
+  env: CONSTANTS.ENV.STAGING
+});
+
+// To listen to real time video calls
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // we are listening for video call related notifications
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is INITIALIZED that means we have an incoming call
+      if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
+        const {
+          // your address, ie the recipient address of the video call notification
+          recipientAddress,
+          // address of the other user part of the video call, who sent you this notification
+          senderAddress,
+          // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
+          chatId,
+          // webRTC signal data received from the peer which sent this notification
+          signalData,
+          // current status of the video call, can be found from VideoCallStatus enum
+          status,
+        } = videoCallMetaData;
+
+        // Note - We'll need signalData while calling acceptRequest function
+        // You can save these properties in a state for future use
+
+        /*
+        If you want you can also save these properties on the data state
+        we created while initializing the video object.
+        Later you can use it while calling acceptRequest()
+        signalData will be available via data.meta.initiator.signal
+        */
+        aliceVideoCall.setData((oldData) => {
+          return produce(oldData, (draft) => {
+            draft.local.address = recipientAddress;
+            draft.incoming[0].address = senderAddress;
+            draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
+            draft.meta.chatId = chatId;
+            draft.meta.initiator.address = senderAddress;
+            draft.meta.initiator.signal = signalData;
+          });
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Create Socket Connection
+const pushSDKSocket = createSocketConnection({
+  user: signer.wallet,
+  socketType: 'chat',
+  socketOptions: { autoConnect: true, reconnectionAttempts: 3 },
+  env: CONSTANTS.ENV.STAGING
+});
+
+// To listen to real time video calls
+pushSDKSocket.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // we are listening for video call related notifications
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is INITIALIZED that means we have an incoming call
+      if (videoCallMetaData.status === VideoCallStatus.INITIALIZED) {
+        const {
+          // your address, ie the recipient address of the video call notification
+          recipientAddress,
+          // address of the other user part of the video call, who sent you this notification
+          senderAddress,
+          // the unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress
+          chatId,
+          // webRTC signal data received from the peer which sent this notification
+          signalData,
+          // current status of the video call, can be found from VideoCallStatus enum
+          status,
+        } = videoCallMetaData;
+
+        // Note - We'll need signalData while calling acceptRequest function
+        // You can save these properties in a state for future use
+
+        /*
+        If you want you can also save these properties on the data state
+        we created while initializing the video object.
+        Later you can use it while calling acceptRequest()
+        signalData will be available via data.meta.initiator.signal
+        */
+        aliceVideoCall.setData((oldData) => {
+          return produce(oldData, (draft) => {
+            draft.local.address = recipientAddress;
+            draft.incoming[0].address = senderAddress;
+            draft.incoming[0].status = PushAPI.VideoCallStatus.RECEIVED;
+            draft.meta.chatId = chatId;
+            draft.meta.initiator.address = senderAddress;
+            draft.meta.initiator.signal = signalData;
+          });
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+</Tabs>
+
+The `additionalMeta` property has the following type:
+
+```jsx
+additionalMeta?: {
+  /**
+   * type = ADDITIONAL_META_TYPE+VERSION
+   * VERSION > 0
+   */
+  type: `${ADDITIONAL_META_TYPE}+${number}`;
+  data: string;
+  domain?: string;
+};
+```
+
+When you parse the `data` property from the `additionalMeta` object, you'll receive the `videoCallMetaData`, which has the following type:
+
+```jsx
+interface VideoCallMetaDataType {
+  recipientAddress: string;
+  senderAddress: string;
+  chatId: string;
+  signalData?: any;
+  status: VideoCallStatus;
+}
+```
+
+| Property           | Description                                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------- |
+| `recipientAddress` | Wallet address of remote user ie the address which you want to call                                |
+| `senderAddress`    | Wallet address of the local user                                                                   |
+| `chatId`           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |
+| `signalingData`    | WebRTC signal data received from the peer which sent this notification                                  |
+| `status`           | Current status of the video call, can be found from VideoCallStatus enum                                |
+
+### Accepting the Request
+
+After receiving a request for a video call, you can show a sort of incoming call UI. Now it's time to accept the request for a video call on the receiver's end. For this, we'll need the signalData we received from the event handler of the USER_FEEDS event above.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```jsx
+await aliceVideoCall.acceptRequest({
+  signalData: any;
+  senderAddress: string;
+  recipientAddress: string;
+  chatId: string;
+});
+
+// Note: If you saved the properties from the additionalMeta received in the sockets
+// You can call acceptRequest() like below:
+await aliceVideoCall.acceptRequest({
+  signalData: data.meta.initiator.signal;
+  senderAddress: data.local.address;
+  recipientAddress: data.incoming[0].address;
+  chatId: data.meta.chatId;
+});
+```
+
+  </TabItem>
+    <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```jsx
+await aliceVideoCall.acceptRequest({
+  signalData: any;
+  senderAddress: string;
+  recipientAddress: string;
+  chatId: string;
+});
+
+// Note: If you saved the properties from the additionalMeta received in the sockets
+// You can call acceptRequest() like below:
+await aliceVideoCall.acceptRequest({
+  signalData: data.meta.initiator.signal;
+  senderAddress: data.local.address;
+  recipientAddress: data.incoming[0].address;
+  chatId: data.meta.chatId;
+});
+```
+
+  </TabItem>
+    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```jsx
+await aliceVideoCall.acceptRequest({
+  signalData: any;
+  senderAddress: string;
+  recipientAddress: string;
+  chatId: string;
+});
+
+// Note: If you saved the properties from the additionalMeta received in the sockets
+// You can call acceptRequest() like below:
+await aliceVideoCall.acceptRequest({
+  signalData: data.meta.initiator.signal;
+  senderAddress: data.local.address;
+  recipientAddress: data.incoming[0].address;
+  chatId: data.meta.chatId;
+});
+```
+
+  </TabItem>
+</Tabs>
+
+| Property         | Description                                                                                             |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| signalData       | Signal data received from the initiator peer via push notification upon request() call                  |
+| senderAddress    | Wallet address of the local user                                                                   |
+| recipientAddress | Wallet address of remote user ie the address which you want to call                                |
+| chatId           | Unique identifier for every push chat, here, the one between the senderAddress and the recipientAddress |                                                    |
+
+### Connect Call
+
+Now, to finally connect a video call on the initiator's end, we need to listen for the `USER_FEEDS` event from `@pushprotocol/socket` and use the following code inside of the event listener:
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```jsx
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+  //We check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is RECEIVED that means we can connect the video call
+      if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
+        const {
+          signalData,
+          senderAddress
+        } = videoCallMetaData;
+
+        // connecting the call using received signalData
+        aliceVideoCall.connect({
+          signalData,
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}} >
+
+```jsx
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+  //We check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is RECEIVED that means we can connect the video call
+      if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
+        const {
+          signalData,
+          senderAddress
+        } = videoCallMetaData;
+
+        // connecting the call using received signalData
+        aliceVideoCall.connect({
+          signalData,
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```jsx
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+  const { payload } = feedItem || {};
+  //We check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is RECEIVED that means we can connect the video call
+      if (videoCallMetaData.status === VideoCallStatus.RECEIVED) {
+        const {
+          signalData,
+          senderAddress
+        } = videoCallMetaData;
+
+        // connecting the call using received signalData
+        aliceVideoCall.connect({
+          signalData,
+          peerAddress: senderAddress, // address of the peer the local user wants to connect with
+        });
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+</Tabs>
+
+| Property     | Description                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------- |
+| `signalData` | Signal data received from the receiver peer via push notification upon acceptRequest() call |
+
+### Disconnect Call
+
+To disconnect a call, we use the `disconnect()` method on the videoObject (aliceVideoCall).
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```jsx
+// to disconnect the call
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address, 
+});
+
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+
+  const { payload } = feedItem || {};
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    // parsing additionalMeta
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is DISCONNECTED that means the call has ended
+      if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
+          // here you can do a window reload or just clear out the video state
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}} >
+
+```jsx
+// to disconnect the call
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address,
+});
+
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+
+  const { payload } = feedItem || {};
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    // parsing additionalMeta
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is DISCONNECTED that means the call has ended
+      if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
+          // here you can do a window reload or just clear out the video state
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```jsx
+// to disconnect the call
+aliceVideoCall.disconnect({
+  /*
+    - Address of the peer the local user wants to disconnect with
+    - For w2w video calls this will be data.incoming[0].address
+  */
+  peerAddress: data.incoming[0].address,
+});
+
+pushSDKSocket?.on(EVENTS.USER_FEEDS, (feedItem: any) => {
+  // The event listner for the USER_FEEDS event
+
+  const { payload } = feedItem || {};
+  // we check if the additionalMeta property is present in payload.data
+  if (payload.hasOwnProperty('data') && payload['data'].hasOwnProperty('additionalMeta')) {
+    // parsing additionalMeta
+    const additionalMeta = payload['data']['additionalMeta'];
+
+    // check for PUSH_VIDEO
+    if (additionalMeta.type === `${ADDITIONAL_META_TYPE.PUSH_VIDEO}+1`){
+      const videoCallMetaData = JSON.parse(additionalMeta.data);
+
+      // If the received status is DISCONNECTED that means the call has ended
+      if (videoCallMetaData.status === VideoCallStatus.DISCONNECTED) {
+          // here you can do a window reload or just clear out the video state
+      }
+    }
+  }
+});
+```
+
+  </TabItem>
+</Tabs>

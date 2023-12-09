@@ -2,16 +2,18 @@
 slug: epns-x-the-graph-enabling-a-better-way-to-access-blockchain-data
 title: 'EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔'
 authors: [push]
+image: './cover-image.webp'
+text: "As the blockchain ecosystem has grown, so too has the challenge of accessing on-chain data across multiple blockchain networks. The Graph is an indexing protocol that indexes, organises and makes data accessible from networks like Ethereum and IPFS It is often referred to as “Google” for the blockchains. As more and more data finds its way on-chain, users and developers need to access organised data efficiently."
 tags: [Ethereum ,The Graph ,Blockchain ,Cryptocurrency ,Web3]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS x The Graph: Enabling a better way to access blockchain data 🧑‍🚀 🔔](./cover-image.webp)
+<!--truncate-->
 <ImageText>EPNS X The Graph</ImageText>
 
 As the blockchain ecosystem has grown, so too has the challenge of accessing on-chain data across multiple blockchain networks. The Graph is an indexing protocol that indexes, organises and makes data accessible from networks like Ethereum and IPFS It is often referred to as “Google” for the blockchains. As more and more data finds its way on-chain, users and developers need to access organised data efficiently.
 
-<!--truncate-->
 
 Today, EPNS is excited to announce integration of The Graph to combine the power of subgraphs with notifications! The integration leverages a core EPNS feature that enables developers to establish customised notifications and “call to actions” so they can more easily access data.
 
@@ -71,9 +73,5 @@ With growing adoption of decentralised infrastructure, simplifying data and maki
 </i>
 </blockquote>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

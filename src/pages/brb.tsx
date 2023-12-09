@@ -2,51 +2,37 @@
 // @ts-nocheck
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useRef, useState } from 'react';
 
-// External Components
-// import { Web3ReactProvider } from '@web3-react/core';
-// import { ethers } from 'ethers';
-
 // Internal Components
-import { BRBWeb3Component } from '@site/src/components/BRB/BRBWeb3Component';
+import { BRBAlert } from '@site/src/components/BRB/BRBAlert';
+import { BRBMainComponent } from '@site/src/components/BRB/BRBMainComponent';
 
 // Import Assets
 
 // Internal Configs
-import { PushChatTheme } from '@site/src/components/BRB/PushChatTheme';
 import { PageMeta } from "@site/src/config/pageMeta";
-import { AccountContext, EnvContext, SocketContext, Web3Context } from '@site/src/context';
-import { ENV } from '@site/src/helpers/web3helper';
-import { useSDKSocket } from '@site/src/hooks/useSDKSocket';
-
-function getLibrary(provider: any) {
-  // this will vary according to whether you use e.g. ethers or web3.js
-  const gottenProvider = new ethers.providers.Web3Provider(provider, 'any');
-  return gottenProvider;
-}
-
 
 function BRB() {
-
   return (
-    <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription}>
+    <Layout title={PageMeta.BRB.pageTitle} description={PageMeta.BRB.pageDescription} showNavbar={false}>
       <Head>
      
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/brb" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | BRB (Billions Reasons to Build)" />
+        <meta property="og:title" content="Push | BRB (Billions Reasons to Build)" />
         <meta name="og:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
-        <meta property="og:image" content="/assets/previews/brbfbpreview.png" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/brbpreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | BRB (Billions Reasons to Build)" />
+        <meta name="twitter:title" content="Push | BRB (Billions Reasons to Build)" />
         <meta name="twitter:description" content="Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!" />
-        <meta name="twitter:image" content="/assets/previews/brbtwtpreview.png" />
+        <meta name="twitter:image" content={useBaseUrl(require("/static/assets/previews/brbpreview.png").default, { absolute: true})} />
 
   
         <script type="application/ld+json">
@@ -63,11 +49,10 @@ function BRB() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
+
+      <BRBMainComponent />
         
-      {/* <Web3ReactProvider getLibrary={getLibrary}> */}
-        <BRBWeb3Component />
-      {/* </Web3ReactProvider> */}
     </Layout>
   );
 }

@@ -2,15 +2,16 @@
 slug: what-is-erc-6551-and-how-s-it-better-than-erc-721
 title: 'What is ERC-6551 and How’s It Better than ERC-721?'
 authors: [push]
+image: './cover-image.png'
+text: "In 2017, the ERC-721 standard revolutionized the tokenization of digital assets, defining the basic set of rules and functions for creating non-fungible tokens (NFTs). Since then, NFTs have gained significant popularity, transforming how we perceive and interact with digital art, collectibles, virtual real estate, and more."
 tags: [Erc6551, Eip, Ethereum, Nft, Web Tools]
 ---
 
 ![Cover image of What is ERC-6551 and How’s It Better than ERC-721?](./cover-image.png)
-
+<!--truncate-->
 
 In 2017, the ERC-721 standard revolutionized the tokenization of digital assets, defining the basic set of rules and functions for creating non-fungible tokens (NFTs). Since then, NFTs have gained significant popularity, transforming how we perceive and interact with digital art, collectibles, virtual real estate, and more.
 
-<!--truncate-->
 
 However, as the NFT space evolved, it became apparent that the ERC-721 standard had certain limitations. For one, the ERC-721 was not compatible with smart contracts and dApps across Ethereum. Additionally, due to static JSON metadata, ERC-721 tokens are inflexible when it comes to Uniform Resource Identifier (URI) codes, security, and efficiency.
 
@@ -70,8 +71,3 @@ More info about Push NFT Chat 👉 https://push-protocol.medium.com/introducing-
 
 ERC-6551 might just be the dawn of a new era of NFTs. This game-changing standard is set to break free from the limitations of static assets, paving the way for dynamic, interconnected digital experiences. As we embrace this new paradigm, we embark on an exciting journey where NFTs shape the future of digital ownership. We’re yet to see the boundless possibilities!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

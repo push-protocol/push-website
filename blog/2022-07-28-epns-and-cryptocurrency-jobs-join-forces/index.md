@@ -2,18 +2,20 @@
 slug: epns-and-cryptocurrency-jobs-join-forces-to-facilitate-push-notifications-for-users
 title: 'EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users'
 authors: [push]
+image: './cover-image.webp'
+text: "One of the fastest growing sectors in the world, cryptocurrency, and the broader blockchain-based industries are home to some of the most innovative companies in the world."
 tags: [Web3, Ethereum, Epnsproject, Jobs, Blockchain]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Cryptocurrency Jobs Join Forces to Facilitate Push Notifications for Users](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # EPNS collaborates with Cryptocurrency Jobs, the leading job board in the crypto space, to bring a decentralized communication medium to the platform.
 
 One of the fastest growing sectors in the world, cryptocurrency, and the broader blockchain-based industries are home to some of the most innovative companies in the world. These companies are in their initial stages and perpetually on the lookout for skilled professionals who can help realize their vision. As such, Cryptocurrency Jobs is the leading job board for the blockchain and crypto industries. The platform curates the best jobs at leading blockchain-based companies and startups to help professionals readily grab the opportunities at hand.
 
-<!--truncate-->
 
 Today, we at EPNS are proud to announce a strategic alliance with Cryptocurrency Jobs to enable direct communication between the platform and its users. By employing decentralized push notifications, this alliance will bring new job opportunities and updates to web3 professionals right on their devices.
 
@@ -36,9 +38,5 @@ We help hundreds of companies grow their teams so they can create the best produ
 
 Stay in touch! [Website](https://cryptocurrencyjobs.co/), [Twitter](https://twitter.com/jobsincrypto), [Newsletter](https://cryptocurrencyjobs.co/newsletter)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

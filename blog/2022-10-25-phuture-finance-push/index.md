@@ -2,14 +2,16 @@
 slug: push-protocol-and-phuture-finance-partner-to-bring-decentralized-notifications-to-the-platform
 title: Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform
 authors: [push]
+image: './cover-image.png'
+text: "In the past couple of years, the rise in popularity of cryptocurrencies and DeFi opened a multitude of new investment opportunities for people across the globe."
 tags: [ Web3, Blockchain, Push Notification, Announcements, Defi]
 ---
 
 ![Cover image of Push Protocol and Phuture Finance Partner to Bring Decentralized Notifications to the Platform](./cover-image.png)
+<!--truncate-->
 
 In the past couple of years, the rise in popularity of cryptocurrencies and DeFi opened a multitude of new investment opportunities for people across the globe. When compared to traditional finance, these investment opportunities were not only easily accessible but also far more profitable. Yield farming on DEXs alone gave investors an average [APR of 20–50% with some even going as high as 250%](https://www.benzinga.com/money/best-yield-farms).
 
-<!--truncate-->
 
 However, there is a caveat here. These opportunities, though profitable, are highly risky. So, average investors looking for steady growth of income with minimum risks, are left out of the DeFi revolution. This is where financial products like index funds could make a huge difference. By bringing together a portfolio of top stocks or bonds in a market, index funds let users benefit from the growth of the market without risk exposure.
 
@@ -35,8 +37,4 @@ As Phuture works towards making DeFi more accessible with index funds, we’re e
 
 Follow Phuture on [Twitter](https://twitter.com/phuture_finance) and [subscribe to their announcements](http://phuture.finance/contact) to be the first to hear updates!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -2,11 +2,12 @@
 slug: push-helps-mover-the-first-crypto-debit-card-to-power-communication-on-the-platform
 title: Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform
 authors: [push]
-tags: [ Web3, Frenspfpush, Push Notification, Pushprotocol, Defi, Debitcard]
+image: './cover-image.webp'
+text: "In the fifth episode of “Frens of Push,” we are in conversation with Anton Mozgovoy, CEO and Co-Founder of Mover, to talk about how Push is fostering decentralized communication on the platform."
+tags: [ Web3, Frensofpush, Push Notification, Pushprotocol, Defi, Debitcard]
 ---
 
 ![Cover image of Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform](./cover-image.webp)
-
 <!--truncate-->
 
 <!--customheaderpoint-->
@@ -60,8 +61,3 @@ Mover is a DeFi savings account that allows users to trade, store, send, and ear
 To learn more about Mover: [Website](https://viamover.com/), [Twitter](https://twitter.com/viaMover), [Telegram](https://t.me/viaMover), [GitHub](https://github.com/viamover).
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -2,17 +2,19 @@
 slug: reef-chain-integrates-epns-to-enable-seamless-communication-with-users
 title: Reef Chain Integrates EPNS to Enable Seamless Communication With Users
 authors: [push]
+image: './cover-image.png'
+text: "Reef Chain is a fast, scalable, efficient, and affordable Layer-1 network that aims to integrate all the best aspects of popular blockchains into one platform to offer a world-class experience to users and developers. It is designed to power the next generation of DeFi, NFT, GameFi, and metaverse projects."
 tags: [ Push Notification, Blockchain, Web3, Ethereum, Announcements]
 ---
 
 ![Cover image of Reef Chain Integrates EPNS to Enable Seamless Communication With Users](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # The emergent blockchain network Reef Chain and EPNS collaborate to bring decentralized push notifications to the platform.<br/>
 
 Reef Chain is a fast, scalable, efficient, and affordable Layer-1 network that aims to integrate all the best aspects of popular blockchains into one platform to offer a world-class experience to users and developers. It is designed to power the next generation of DeFi, NFT, GameFi, and metaverse projects.
 
-<!--truncate-->
 
 The high scalability, instantaneous transactions, and low gas fees are enabled by the novel nominated proof-of-stake (NPoS) consensus that evades wasteful mining. Reef Chain is EVM-compatible and allows developers to easily integrate their existing dapps and protocols without changing the base code.
 
@@ -46,8 +48,4 @@ Reef is an EVM-first blockchain designed to make Web3 accessible for the next bi
 
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

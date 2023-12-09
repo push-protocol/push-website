@@ -2,18 +2,21 @@
 slug: a-billion-reasons-to-build-finding-india-s-best-web3-developers
 title: 'A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳'
 authors: [push]
+image: './cover-image.png'
+text: "Today, we are excited to announce Billion Reasons to Build — Push’s tour across India to find the best developers in the subcontinent to solve some of the hardest problems of Web3 and win bounties! 🎉"
 tags: [Pushprotocol, Devops, Devtools, Web3, Blockchain Technologies]
 
 ---
 
 ![Cover image of A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳](./cover-image.png)
 
+<!--truncate-->
+
 <!--customheaderpoint-->
 # $55,000+ prize pool for solving some of Web3’s hardest coding problems.
 
 Today, we are excited to announce Billion Reasons to Build — Push’s tour across India to find the best developers in the subcontinent to solve some of the hardest problems of Web3 and win bounties! 🎉
 
-<!--truncate-->
 
 Over the next 3 months, along with our awesome partners Push will be traveling to 18 cities across India to conduct workshops and present challenges which you can compete to solve and in turn win over $5,000+ prizes for each problem you solve. The total prize pool is $55,000 USD.
 
@@ -127,11 +130,6 @@ Make sure to follow [@pushprotocol on Twitter](https://twitter.com/pushprotocol)
 
 Join us on discord to chat https://discord.com/invite/pushprotocol
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="382" style={{borderRadius: "32px"}} src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

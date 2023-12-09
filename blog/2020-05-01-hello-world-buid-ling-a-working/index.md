@@ -2,17 +2,20 @@
 slug: hello-world-buid-ling-a-working-epns-mobile-app
 title: 'Hello World: BUIDLing a working EPNS Mobile app'
 authors: [push]
+image: './cover-image.webp'
+text: "It’s another day at EthGlobal HackMoney hackathon and we are back with more detail and further progress.
+While most of the dev project cycles start at smart contract and end at dApp, we have taken a different approach and instead are focusing on getting the EPNS mobile app and push notification server built out first."
 tags: [Ethereum ,Solidity ,Ethglobal ,Notifications ,Developer]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Hello World: BUIDLing a working EPNS Mobile app](./cover-image.webp)
+<!--truncate-->
 
 It’s another day at [EthGlobal HackMoney hackathon](https://www.ethglobal.co/) and we are back with more detail and further progress.
 
 While most of the dev project cycles start at smart contract and end at dApp, we have taken a different approach and instead are focusing on getting the EPNS mobile app and push notification server built out first.
 
-<!--truncate-->
 
 The reasons? We are quite happy with the app specs and don’t think that will change anytime soon while we wanted to think and iterate a bit more on smart contract so we choose this route. Without further ado, Let’s dive into how we are going to create the magic in the mobile app.
 
@@ -76,8 +79,4 @@ Please feel free to share your support and amazing feedback. If you liked this a
 Connect with us if you have any questions!
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

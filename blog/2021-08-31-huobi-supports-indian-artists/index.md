@@ -2,18 +2,21 @@
 slug: huobi-supports-indian-artists
 title: 'Huobi ❤️ Supports Indian Artists!'
 authors: [push]
+image: './cover-image.webp'
+text: "Continuing the celebration of $PUSH listing on Huobi Global this weeks $ROCKSTAR #NFT is sponsored by awesome peeps at 
+Huobi Global to celebrate Indian art 🇮🇳. The winner gets the $ROCKSTAR NFT + 2400 $PUSH (~$12,000)+ Sweet surprise from Huobi 🎁"
 tags: [Mème ,Huobi ,Ethereum ,Announcements ,Crypto]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Huobi ❤️ Supports Indian Artists!](./cover-image.webp)
+<!--truncate-->
 
 Hey Awesome Community 👋!!
 
 Continuing the celebration of $PUSH listing on [Huobi Global](https://medium.com/u/65d3e2271234?source=post_page-----3478bcf2ca1f--------------------------------), this weeks $ROCKSTAR #NFT is sponsored by awesome peeps at 
 [Huobi Global](https://medium.com/u/65d3e2271234?source=post_page-----3478bcf2ca1f--------------------------------) to celebrate Indian art 🇮🇳. The winner gets the <b>$ROCKSTAR NFT + 2400 $PUSH </b>(~$12,000)+ <b>Sweet surprise from Huobi 🎁</b>
 
-<!--truncate-->
 
 Channelize your love and get creative in showcasing EPNS x Huobi Global to the world to be the winner 💖 🤗!
 
@@ -30,9 +33,5 @@ So, put on your creative hats 🤠 and let’s all have some fun 🎉🎉🎉
 
 Good luck to everyone!🤞
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

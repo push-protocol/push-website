@@ -2,18 +2,23 @@
 slug: staking-and-migration-guide-for-push-v2-rewards-program
 title: 'Staking & Migration Guide for PushV2 Rewards Program📜'
 authors: [push]
+image: './cover-image.webp'
+text: "We recently released an article extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…"
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
 
 ---
+
+
+![Cover image of Staking & Migration Guide for PushV2 Rewards Program📜](./cover-image.webp)
+
+<!--truncate-->
+
 <i>
     A walkthrough on how to stake, harvest, and migrate your $PUSH tokens.
 </i>
 
-![Cover image of Staking & Migration Guide for PushV2 Rewards Program📜](./cover-image.webp)
-
 We recently released an [article](https://push-protocol.medium.com/new-push-yield-farming-rewards-full-details-4a9ff473226d) extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…
 
-<!--truncate-->
 
 1. <b>UNI-V2 LP Token Staking</b>: Similar to v1 incentive program, this procedure allows users to stake their UNI-V2 LP tokens in our staking contract and earn $PUSH tokens as a reward.
 2. <b>Push Fee Pool Staking</b>: The second procedure is the new staking feature of the Push Core V2 smart contract that allows users to directly stake in the core contract itself and earn rewards in $PUSH Tokens generated from the Fee Pool.
@@ -32,7 +37,7 @@ For each of these steps, we will first talk about the 🔴 <b>Push Fee Staking P
 ### Staking $PUSH Tokens
 Push Fee Staking Pool allows you to stake your PUSH tokens directly in the [Push Core contract](https://etherscan.io/address/0x66329Fdd4042928BfCAB60b179e1538D56eeeeeE) itself.
 
-<iframe width="100%" height="510" src="https://www.youtube.com/embed/eRm-tp6SLVg" title="Push V2 Fee Staking Pool Tutorial | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/eRm-tp6SLVg" title="Push V2 Fee Staking Pool Tutorial | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Follow the simple steps below to Stake to Push Fee Staking Pool:
 
@@ -69,7 +74,7 @@ The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields fo
 </i>
 </blockquote>
 
-<iframe width="100%" height="510" src="https://www.youtube.com/embed/lqMuOlOGP0s" title="Push Uniswap V2 LP Staking Pool | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/lqMuOlOGP0s" title="Push Uniswap V2 LP Staking Pool | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 1. Go to the [PUSH/ETH V2 pool on Uniswap](https://app.uniswap.org/#/add/v2/ETH/0xf418588522d5dd018b425E472991E52EBBeEEEEE)  (Remember to navigate to Uniswap V2 pool and not V3 pool).
 2. Add liquidity into the pool with both $PUSH and $ETH.
@@ -133,7 +138,7 @@ If you’re an early holder of $PUSH, chances are you’ve staked in the first r
 
 If that’s the case for you, the migration feature is specifically designed to provide you with a smooth and easy procedure to shift from the old staking pool to the new v2 staking pool.
 
-<iframe width="100%" height="510" src="https://www.youtube.com/embed/a3QDLsT0VRM" title="Push Migration Guide | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/a3QDLsT0VRM" title="Push Migration Guide | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Migration from old to new pools requires 3 simple transactions:
 
@@ -166,8 +171,3 @@ In order to claim any available pending reward from your previous pools, you can
 </blockquote>
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

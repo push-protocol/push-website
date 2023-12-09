@@ -3,15 +3,18 @@
 slug: how-to-create-a-decentralized-reputation-system-with-alchemy-and-push-protocol
 title: How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅
 authors: [push]
+image: './cover-image.webp'
+text: "This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging."
 tags: [ Devtools, Reputation System, Web3,  Blockchain Development, Blockchain Technology]
 
 ---
 
 ![Cover image of How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅](./cover-image.webp)
+<!--truncate-->
+
 
 <b>TL;DR:</b> This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 
@@ -169,7 +172,7 @@ const provider = new ethers.providers.AlchemyProvider("goerli", alchemyApiKey);
 
 ## Push Protocol
 
-[Push Protocol](https://push.org/) can be used to create a real-time messaging system for your decentralized reputation system, allowing users to receive updates about their reputation scores and feedback instantly. Follow the [official documentation](https://docs.push.org/developers) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+[Push Protocol](https://push.org/) can be used to create a real-time messaging system for your decentralized reputation system, allowing users to receive updates about their reputation scores and feedback instantly. Follow the [official documentation](/docs/ "Push developer docs") for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
@@ -249,8 +252,3 @@ We thank the Alchemy team for their support and collaboration. If you’d like t
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

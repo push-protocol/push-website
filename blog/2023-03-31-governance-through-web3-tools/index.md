@@ -3,18 +3,20 @@
 slug: enhancing-governance-through-web3-communication-tools
 title: Enhancing Governance Through Web3 Communication Tools 🏛️
 authors: [push]
+image: './cover-image.webp'
+text: "Push Protocol is ushering in a new era of sophisticated web3 middleware. We’re enabling a more efficient, effective, and democratic decentralized ecosystem."
 tags: [ Blockchain Technology, Web3, Governance, Decentralization]
 
 ---
 
 ![Cover image of Enhancing Governance Through Web3 Communication Tools 🏛️](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # How Push Protocol can be leveraged to maximize community participation and enhance organizations that rely on decentralized governance.<br/>
 
 Push Protocol is ushering in a new era of sophisticated web3 middleware. We’re enabling a more efficient, effective, and democratic decentralized ecosystem.
 
-<!--truncate-->
 
 As the backbone for communication and an essential layer of web3 infrastructure, Push Protocol streamlines decentralized coordination and elevates web3 governance structures. From seasoned web3 experts to those just beginning their journey into the decentralized world, Push Protocol is an indispensable tool for anyone looking to build and participate in the web3 ecosystem. Push is poised to be a driving force in the future of decentralized systems by enabling frictionless and permissionless collaboration, decision-making, and innovation.
 
@@ -48,8 +50,3 @@ Push Protocol’s Improvement Proposal program, PIP or Push Improvement Proposal
 
 However, most improvement proposal programs rely on a subset of web2-based technology and communication channels. By providing a decentralized communication layer for DAOs, Push Protocol is taking the next step in scaling improvement proposals, enabling stakeholders, whether they are users, developers, investors, etc., to coordinate robustly across different improvement proposals.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

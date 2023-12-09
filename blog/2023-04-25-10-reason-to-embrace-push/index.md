@@ -3,15 +3,19 @@
 slug: 10-reasons-why-your-web3-project-should-embrace-push-protocol
 title: 10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆
 authors: [push]
+image: './cover-image.webp'
+text: "Push Protocol is an advanced communication layer built on distributed and peer-to-peer (P2P) principles.
+In this blog post, we will share ten reasons web3 enterprises should consider adopting Push Protocol for their web3 communication needs."
 tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---
 
 ![Cover image of 10 Reasons Why Your Web3 Project Should Embrace Push Protocol🏆](./cover-image.webp)
+<!--truncate-->
+
 
 Push Protocol is an advanced communication layer built on distributed and peer-to-peer (P2P) principles.
 
-<!--truncate-->
 
 In this blog post, we will share ten reasons web3 enterprises should consider adopting Push Protocol for their web3 communication needs.
 
@@ -91,8 +95,3 @@ Contact our team on [Discord](https://discord.gg/pushprotocol)
 
 Send us a DM on [Twitter](https://twitter.com/pushprotocol)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

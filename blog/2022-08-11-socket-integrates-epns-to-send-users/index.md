@@ -2,18 +2,20 @@
 slug: socket-integrates-epns-to-send-users-important-updates-through-push-notifications
 title: 'Socket Integrates EPNS to Send Users Important Updates Through Push Notifications'
 authors: [push]
+image: './cover-image.png'
+text: "There has been a growing number of blockchains, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The growing number of blockchains and their categorization isn’t particularly a bad thing."
 tags: [ Announcements, Pushnotification, Web3, Ethereum, Epns]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Socket Integrates EPNS to Send Users Important Updates Through Push Notifications](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Socket, the blockchain interoperability infrastructure platform, partners with EPNS to send decentralized push notifications to its users.
 
 There has been a <b>growing number of blockchains</b>, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The <b>growing number of blockchains</b> and their categorization isn’t particularly a bad thing.
 
-<!--truncate-->
 
 However, blockchains, by design, cannot communicate with or read data from sources outside their own ecosystem. This results in many high-potential but segregated blockchain ecosystems, each having its own isolated set of applications, platforms, and users.
 
@@ -40,9 +42,5 @@ Stay tuned to keep updated on the most recent EPNS partnerships and developments
 [Website](http://socket.tech/) | [Bungee](http://bungee.exchange/) | [Twitter](https://twitter.com/SocketDotTech) | [Discord](https://t.co/Il4enrA7Lo)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

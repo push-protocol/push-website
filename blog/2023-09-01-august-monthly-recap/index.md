@@ -2,17 +2,22 @@
 slug: august-monthly-recap
 title: 'August Monthly Recap'
 authors: [push]
+image: './cover-image.webp'
+text: "Step into the newest chapter of our Push journey!
+
+August brought a wave of excitement and progress, full of achievements we can’t wait to share with you. Get ready to dive into the world of Push as we unwrap the highlights from this last month."
 tags: [Pushprotocol, Newsletter ,Web3, Blockchain Technologies]
 
 ---
 
 ![Cover image of August Monthly Recap](./cover-image.webp)
 
+<!--truncate-->
+
 Step into the newest chapter of our Push journey!
 
 August brought a wave of excitement and progress, full of achievements we can’t wait to share with you. Get ready to dive into the world of Push as we unwrap the highlights from this last month.
 
-<!--truncate-->
 
 ## Development⚒️
 We are beyond thrilled to have fully [released PushV2](https://twitter.com/pushprotocol/status/1686783974373216256), a huge leap forward in the way of democratizing web3 communication. With PushV2, we’re introducing a host of new features that will revolutionize interactions on the platform, such as incentivized chats, Push Spaces, customized profiles, and new PushV2 Rewards for token holders.
@@ -52,8 +57,3 @@ You can learn more about the Billion Reasons to Build program and sign up for a 
 As we bid farewell to August, we’re excited by the progress we’ve collectively achieved. Your presence fuels our journey, and we’re eager to share more updates in the days ahead. Stay tuned!
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

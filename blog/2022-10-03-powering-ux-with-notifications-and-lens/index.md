@@ -2,18 +2,20 @@
 slug: push-and-lens-powering-ux-with-notifications-and-aaves-lens
 title: 'Push and Lens: Powering UX with Notifications and Aave’s Lens'
 authors: [push]
+image: './cover-image.webp'
+text: "We’re excited to announce the first protocol to use Push on the Polygon mainnet: Lens Protocol! Since its launch in January 2022, Push has powered over 17 million decentralized notifications to over 60,000 subscribers, becoming the de facto communication layer for web3. "
 tags: [ Web3, Ethereum, Social Media, Infrastructure, Announcements ]
 ---
 
 
 ![Cover image of Push and Lens: Powering UX with Notifications and Aave’s Lens](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Lens Protocol has joined the Push fam to bring web3 social media to the next level.<br/>
 
 We’re excited to announce the <b>first protocol to use Push on the Polygon mainnet: Lens Protocol!</b> Since its launch in January 2022, Push has powered over 17 million decentralized notifications to over 60,000 subscribers, becoming the de facto communication layer for web3. Our recent announcement of support for the Polygon network marks a new phase for Push and the world of multi-chain communication. We could not be more thrilled for the incredible team at Lens to be the first to integrate Push and power push notifications for their users.
 
-<!--truncate-->
 
 ## Lens and Push: Communication for Web3 Social Media
 Censorship-resistant dapps are steadily replacing centralized social platforms like Twitter, Instagram, and TikTok. Every day, we see an increased demand for social apps that allow content ownership and free speech.
@@ -44,8 +46,4 @@ The Lens Protocol is a Web3 social graph on the Polygon Proof-of-Stake blockchai
 
 Learn more at https://lens.xyz, [Twitter](https://twitter.com/LensProtocol), [Discord](https://discord.com/invite/lensprotocol)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

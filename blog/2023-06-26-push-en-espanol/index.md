@@ -2,14 +2,17 @@
 slug: oportunidades-de-desarrollo-profesional-con-push-protocol-en-latinoamerica
 title: 'Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜'
 authors: [push]
+image: './cover-image.webp'
+text: "A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología."
 tags: [Pushprotocol, Latam]
 ---
 
 ![Cover image of Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜](./cover-image.webp)
+<!--truncate-->
+
 
 A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología.
 
-<!--truncate-->
 
 Estos últimos años, Latinoamérica ha demostrado ser una de las regiones con mayor adopción crypto. No es coincidencia que el año pasado hayamos tenido el evento más importante de Ethereum, Devcon VI, en Colombia y que la mirada de los proyectos y protocolos extranjeros hayan desarrollado un foco especial en el talento de la región.
 
@@ -36,8 +39,3 @@ Este es un gran año para Latam no solo con las oportunidades generales del ecos
 
 Para más contenido sobre Push en tu idioma no olvides seguir [@PushEnEspanol](https://linktr.ee/pushenespanol) en todas las redes.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

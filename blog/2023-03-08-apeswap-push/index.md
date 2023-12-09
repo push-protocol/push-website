@@ -3,15 +3,17 @@
 slug: going-bananas-push-protocol-partners-with-ape-swap-for-seamless-web3-communication
 title: 'Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵'
 authors: [push]
+image: './cover-image.webp'
+text: "Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos."
 tags: [ Web3, Blockchain Technology, Announcements, Crypto, BNB ]
 
 ---
 
 ![Cover image of Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵](./cover-image.webp)
+<!--truncate-->
 
 Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos.
 
-<!--truncate-->
 
 ApeSwap is a rapidly growing DeFi platform that has gained a significant following on BNB Chain. With over $67 million in TVL, ApeSwap is redefining DeFi for a more sustainable future. To achieve this goal, the platform is focused on Sustainable Liquidity Mining through ApeSwap’s Treasury Bills, but also is well known for their DEX, liquidity pools, staking, and farming.
 
@@ -44,8 +46,3 @@ ApeSwap is a DeFi platform on BNB Chain, Polygon, Telos, and Ethereum. It offers
 
 Find out more about ApeSwap: [Website](https://apeswap.finance/), [Twitter](https://twitter.com/ape_swap), [Discord](https://discord.com/invite/ApeSwap), [Telegram](https://t.me/ape_swap), [Instagram](https://www.instagram.com/apeswap.finance/), [Docs](https://apeswap.gitbook.io/apeswap-finance/welcome/master), [Github](https://github.com/ApeSwapFinance/)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

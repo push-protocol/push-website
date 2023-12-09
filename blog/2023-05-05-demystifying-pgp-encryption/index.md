@@ -3,15 +3,18 @@
 slug: demystifying-pgp-encryption-in-push
 title: Demystifying PGP Encryption in Push🛡️
 authors: [push]
+image: './cover-image.webp'
+text: "PGP Encryption, or Pretty Good Privacy as its also known, is a critical element of what makes Push messages so secure. It’s a security program that enables users to communicate securely by decrypting and encrypting messages — but how does it work?
+"
 tags: [ Web3, Pgp, Cybersecurity, Blockchain Technology]
 
 ---
 
 ![Cover image of Demystifying PGP Encryption in Push🛡️](./cover-image.webp)
+<!--truncate-->
 
 PGP Encryption, or Pretty Good Privacy as its also known, is a critical element of what makes Push messages so secure. It’s a security program that enables users to communicate securely by decrypting and encrypting messages — but how does it work?
 
-<!--truncate-->
 
 In this article we will explore how PGP encryption works and how it pertains to Push Protocol. Let’s dive in.
 
@@ -99,8 +102,3 @@ As new security threats and vulnerabilities emerge, Push Protocol can upgrade it
 
 In conclusion, by integrating PGP encryption into Push Protocol, Push’s messaging system provides a secure and private messaging solution for blockchain-based applications. The decentralized nature of Push Protocol, combined with the reliability and adaptability of PGP encryption, ensures users can communicate and transact with confidence. This is thanks to the fact messages and transactions are protected against interception and tampering. Additionally, Push Protocol’s ability to easily upgrade its encryption methods in response to new security threats and vulnerabilities further enhances its ability to provide secure and private messaging services.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
