@@ -45,8 +45,9 @@ import {
 
 ```typescript
 // creates channel settings
-const createChannelSettingRes = userAlice.channel.settings([
-  {
+const createChannelSettingRes = userAlice.channel.setting([
+  { 
+
     type: 1, // Boolean type
     default: 1,
     description: "Receive marketing notifications",
