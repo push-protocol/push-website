@@ -660,11 +660,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
-              margin="6.5em 0"
+              // margin="6.5em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
+              <NewMarqueeAnimation
                 speed={MARQUEE_ANIMATION_SPEED}
                 gradientWidth={8}
                 gap={18}
@@ -691,16 +691,16 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     </InvestorCard>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
             <MarqueeAnimationContainer
               // padding="2em 0 0 0"
-              margin="0 0 5em 0"
+              // margin="0 0 5em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
+              <NewMarqueeAnimation
                 speed={MARQUEE_ANIMATION_SPEED}
                 gradientWidth={8}
                 gap={18}
@@ -730,7 +730,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     </InvestorCard>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
           </Content>
