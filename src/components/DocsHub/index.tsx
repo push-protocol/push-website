@@ -61,10 +61,11 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
     <TechDocCard>
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
-        hoverBackground="transparent"
+      onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
+      hoverBackground="transparent"
       >
-        <ItemV
+      
+      <ItemV
           alignSelf="stretch"
           margin="0px 8%"
         >
@@ -81,12 +82,13 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
             </TechDocIcon>
             <TechDocTitle>{title}</TechDocTitle>
           </ItemV>
+
+         
           
           {codeblock &&
-            <TechDocSwitcher
-              gap="10px"
-            >
-              <Button 
+           <TechDocSwitcher
+           gap="10px">
+               <TechDocButton 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -96,8 +98,8 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
                 color={content == 0 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 Overview
-              </Button>
-              <Button 
+              </TechDocButton>
+              <TechDocButton 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -107,7 +109,7 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
                 color={content == 1 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 API
-              </Button>
+              </TechDocButton> 
             </TechDocSwitcher>
           }
 
@@ -118,7 +120,7 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
               <TechDocOverview>{description}</TechDocOverview>
             }
           </ItemV>
-        </ItemV>
+          </ItemV>
 
         {content == 1 && codeblock && 
           <TechDocCodeBlock
@@ -589,7 +591,7 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled(Button)`
+const TechDocContent = styled.div`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
@@ -600,7 +602,8 @@ const TechDocContent = styled(Button)`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-
+  cursor: pointer;
+  
   & svg path {
     stroke: var(--ifm-color-primary-text);
   }
@@ -628,13 +631,15 @@ const TechDocSwitcher = styled(ItemH)`
   top: 0;
   right: 0;
   padding: inherit;
+`;
 
-  & ${Button} {
+const TechDocButton = styled(Button)`
     padding: 4px 12px;
     font-size: 14px;
     font-weight: 600;
-  }
 `;
+
+
 const TechDocOverview = styled(Span)`
   font-family: var(--ifm-font-family-base);
   font-weight: 400;
