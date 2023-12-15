@@ -3,11 +3,17 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from 'react';
+import React,{ useRef } from 'react';
 
 // External Components
-import Marquee, { MarqueeDirection } from 'react-marquee-slider';
+// import Marquee, { MarqueeDirection } from 'react-marquee-slider';
 import styled from 'styled-components';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css/core';
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
 
 type Props = {
   direction: MarqueeDirection;
@@ -17,6 +23,7 @@ type Props = {
   children?: React.ReactNode;
   pause?: boolean;
 };
+
 
 function NewMarqueeAnimation(props: Props) {
   const {
@@ -28,41 +35,74 @@ function NewMarqueeAnimation(props: Props) {
     direction,
     pause = false,
   } = props;
+  
+  const isMobile = useMediaQuery('(max-width: 480px)');
+  const splideRef = useRef(null);
+  const scrollRef = useRef(null);
+
 
   return (
-    <AnimationWrapper
-    //   speed={speed}
-      velocity={50}
+    <div style={{maxHeight: '85px'}}>
+    {/* <Marquee */}
+    <Splide
+        ref={splideRef}
+        options={{
+          width: isMobile ? '100vw' : '80vw',
+          type: 'loop',
+          direction: direction,
+          arrows: false,
+          pagination: false,
+          drag: 'free',
+          gap: '18px',
+          fixedWidth: isMobile ? '200px' : '250px',
+          autoScroll: {
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            rewind: false,
+            speed: 3,
+          }
+          // padding: { left: isMobile ? 0 : 80, right: isMobile ? 0 : 80 },
+          // perMove: 1,
+          // pagination: false,
+          // omitEnd: true,
+          // slideFocus: true,
+          // gap: isMobile ? '2em' : '1.5em',
+          // fixedWidth: isMobile ? '100vw' : '413px',
+          
+        }}
+        extensions={ { AutoScroll } }
+      >
+          {props.children}
+    </Splide>
+    {/* //   speed={speed}
+      // velocity={50}
     //   gap={gap}
     //   gradient={gradient}
     //   gradientWidth={gradientWidth}
-      direction={direction}
+      // direction={direction}
     //   pauseOnClick={pause}
-    >
-      {props.children}
-    </AnimationWrapper>
+    > */}
+      
+    {/* </Marquee> */}
+    </div>
   );
 }
 
-const AnimationWrapper = styled(Marquee)`
-  // this absolute positioning prevents
-  //  the animation container from creating horizontal scroll
+// const AnimationWrapper = styled(Marquee)`
+  // min-height: 100px;
+  // max-height: 100px;
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  // background: green;
 
-  & .marquee {
-    justify-content: space-around;
-    align-items: center; 
-  }
+// `;
 
-  & .marqueeItem {
-    margin-right: ${(props) => props.gap || 0}px;
-    height: 100px; // Set a fixed height for each marquee item
-    display: flex;
-    align-items: center; 
+const SplideContainer = styled.div`
+  // width: auto !important;
+  // margin: 0px !important;
+
+  @media (max-width: 480px) {
+    // margin-right:15px !important;
+    // margin-left:15px !important;
   }
 `;
 

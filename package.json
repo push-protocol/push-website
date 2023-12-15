@@ -27,6 +27,7 @@
     "@pushprotocol/restapi": "^1.4.37",
     "@pushprotocol/uiweb": "^1.1.19",
     "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@splinetool/react-spline": "2.2.6",
     "@splinetool/runtime": "^0.9.270",
     "@web3-react/core": "6.1.9",

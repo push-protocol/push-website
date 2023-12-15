@@ -40,6 +40,7 @@ import {
   Span
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 // Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
@@ -660,7 +661,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
-              // margin="6.5em 0"
+              margin="3em 0"
               flex="1"
               alignItems="stretch"
             >
@@ -668,9 +669,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 speed={MARQUEE_ANIMATION_SPEED}
                 gradientWidth={8}
                 gap={18}
+                direction="ltr"
+
               >
                 {InvList.top.map((item) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
                     >
@@ -689,6 +693,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
               </NewMarqueeAnimation>
@@ -704,13 +709,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 speed={MARQUEE_ANIMATION_SPEED}
                 gradientWidth={8}
                 gap={18}
-                direction="right"
+                direction="ltr"
               >
-                {InvList.bottom.map((item) => {
+                {InvList.bottom.map((item, i) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
-                      flexDirection={item.title ? 'row' : 'column'}
+                      flexDirection={item.title ? 'true' : 'false'}
                     >
                       <InvestorIcon
                         width={item.title ? '64px' : 'auto'}
@@ -728,6 +734,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
               </NewMarqueeAnimation>
@@ -1234,18 +1241,52 @@ const InvestorCard = styled(ItemV)`
     border-radius: 74px;
     padding: 8px;
     min-width: 242px;
-    min-height: 66px;
+    min-height: 83px;
+    max-height: 83px;
     margin-right: 18px;
     flex: 0;
+
+    margin-bottom: auto;
+`
+
+const NewInvestorCard = styled.div`
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 74px;
+  padding: 8px;
+  min-width: 242px;
+  min-height: 83px;
+  max-height: 83px;
+  // margin-right: 18px;
+
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection ? "row" : 'column'};
+  align-items: center;
+  justify-content: flex-start;
+  background: red;
+  margin-bottom: auto
+`;
+
+const NewInvestorIcon = styled(Image)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto auto;
+  justify-content: flex-start;
+  
 `
 
 const InvestorIcon = styled(Image)`
+margin-bottom: auto;
   
 `
+
+
 
 const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
+  margin-bottom: auto;
+
 `
 
 const InvestorTitle = styled(Span)`
@@ -1342,5 +1383,15 @@ const ArticleSource = styled(ItemH)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-  
+// background: green;
+
+`
+
+const NewMarqueeAnimationContainer = styled.div`
+  background: green;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 `
