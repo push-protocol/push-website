@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 description: Deep-dive into Push Snaps Features & Getting Started 🛠️
 text: "As we outlined in our announcement article — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet."
-tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
+tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
 ![Cover image of Deep-dive into Push Snaps Features & Getting Started 🛠️](./cover-image.webp)

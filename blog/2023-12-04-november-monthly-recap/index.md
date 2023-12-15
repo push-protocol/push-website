@@ -6,7 +6,7 @@ image: './cover-image.webp'
 description: 'Monthly Recap November'
 text: "Welcome to last month’s developments and new product releases from the month of November! From groundbreaking developments to new frenships, making notable appearances, and celebrating our community – it's been a month of milestones. Read on to know all that we’ve been up to this month:
 "
-tags: [Pushprotocol, Web3, Blockchain Technology, EthGlobal]
+tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 ![Cover Image of Monthly Recap November](./cover-image.webp)
 

@@ -4,7 +4,7 @@ title: 'dYdX x Push: Empowering Traders with Transparent Governance🤝'
 authors: [push]
 image: './cover-image.webp'
 text: "In the world of decentralized finance, dYdX is a prominent DEX that offers a unique trading experience. Built on the Ethereum layer 2 system StarkWare, dYdX leverages zero-knowledge proofs to provide enhanced security, decentralization, and privacy to its users."
-tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
+tags: [Push Protocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---
 

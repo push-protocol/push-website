@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 text: "Welcome to another exciting month at Push!
 May flew by in the blink of an eye, and we have a whirlwind of exciting updates and achievements to share with you. From groundbreaking developments to valuable partnerships and community activities, the past month has been nothing short of extraordinary."
-tags: [ Pushprotocol, NewsLetter, Web3, Blockchain Technology, Blockchain Development]
+tags: [ Push Protocol, NewsLetter, Web3, Blockchain Technology, Blockchain Development]
 
 ---
 

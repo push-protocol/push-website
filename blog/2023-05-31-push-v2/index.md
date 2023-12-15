@@ -4,7 +4,7 @@ title: Push Protocol v2 — Fee Pool & Incentivized Chats are here!
 authors: [push]
 image: './cover-image.webp'
 text: "Push Protocol is thrilled to announce the successful completion of the security audit conducted by Chainsafe for our smart contracts version 2. This milestone signifies a significant step forward in ensuring the robustness and reliability of our platform."
-tags: [ Pushprotocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
+tags: [ Push Protocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
 
 ---
 

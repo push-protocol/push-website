@@ -4,7 +4,7 @@ title: 'Transforming Decentralized Communication With Push & AI🤖'
 authors: [push]
 image: './cover-image.webp'
 text: "As the world of web3 continues to evolve, Push Protocol is playing a critical role in revolutionizing decentralized communication. Our web3-native chat and video chat capabilities, agnostic to any platform, have opened the door to seamless communication in the decentralized world. But what happens when we combine the power of Push Protocol with Artificial Intelligence (AI)?"
-tags: [Pushprotocol, Web3, AI, Web Tools]
+tags: [Push Protocol, Web3, AI, Web Tools]
 ---
 
 ![Cover image of Transforming Decentralized Communication With Push & AI🤖](./cover-image.webp)

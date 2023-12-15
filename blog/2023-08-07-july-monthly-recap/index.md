@@ -4,7 +4,7 @@ title: July Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
 text: "July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month."
-tags: [Pushprotocol, Newsletter, Web3, Blockchain Technology]
+tags: [Push Protocol, Newsletter, Web3, Blockchain Technology]
 
 ---
 

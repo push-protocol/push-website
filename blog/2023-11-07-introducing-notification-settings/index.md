@@ -6,7 +6,7 @@ image: './cover-image.webp'
 description: 'Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️'
 text: "We are extremely excited to be releasing a long-awaited feature - Notification Settings!
 This new feature enables both channels and users to customize the type of notifications they send and receive respectively."
-tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
+tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 

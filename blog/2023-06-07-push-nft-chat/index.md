@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 text: "We are thrilled to announce the highly anticipated release of Push NFT Chat, the next leap in web3 messaging. For the 1.5 Million+ NFT wallets and NFT collections like Azuki, BAYC, CryptoPunks, a universe of new potential utility is now here for your collections 🌎
 "
-tags: [Web3, NFT, Pushprotocol, NFT Utility]
+tags: [Web3, NFT, Push Protocol, NFT Utility]
 ---
 
 ![Cover image of Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅](./cover-image.webp)

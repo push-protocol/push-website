@@ -4,7 +4,7 @@ title: 'Push Spaces is Live! Decentralized Audio and Video Streaming is Here'
 authors: [push]
 image: './cover-image.webp'
 text: "Today, Push is excited to announce the public launch of Push Spaces! Push Spaces is the first decentralized audio and video streaming application in web3, built on top of Push Protocol’s existing communication ecosystem of 95k subscribers across 700+ applications and 3 ecosystems."
-tags: [Pushprotocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
+tags: [Push Protocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
 
 ---
 ![Cover image of Push Spaces is Live! Decentralized Audio and Video Streaming is Here](./cover-image.webp)

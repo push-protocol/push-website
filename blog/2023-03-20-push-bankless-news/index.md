@@ -5,7 +5,7 @@ title: Bankless Nation and Push Partner to Enable News Notifications 🔔
 authors: [push]
 image: './cover-image.gif'
 text: "Bankless, the world’s most popular crypto email and global community, is partnering with Push to update its users with the latest crypto developments and analysis. Through this collaboration, Bankless users will be able to receive important notifications and alerts directly on their devices, ensuring they never miss an opportunity to take advantage of the latest DeFi trends."
-tags: [ Web3, Pushprotocol, Bankless]
+tags: [ Web3, Push Protocol, Bankless]
 
 ---
 

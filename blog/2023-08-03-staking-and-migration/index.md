@@ -4,7 +4,7 @@ title: 'Staking & Migration Guide for PushV2 Rewards Program📜'
 authors: [push]
 image: './cover-image.webp'
 text: "We recently released an article extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…"
-tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
+tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
 
 ---
 
