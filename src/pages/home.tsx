@@ -666,7 +666,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+                speed={3}
                 gradientWidth={8}
                 gap={18}
                 direction="ltr"
@@ -706,7 +706,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+                speed={-3}
                 gradientWidth={8}
                 gap={18}
                 direction="ltr"
@@ -1243,10 +1243,11 @@ const InvestorCard = styled(ItemV)`
     min-width: 242px;
     min-height: 83px;
     max-height: 83px;
-    margin-right: 18px;
+    // margin-right: 18px;
     flex: 0;
 
-    margin-bottom: auto;
+    // margin-bottom: auto;
+
 `
 
 const NewInvestorCard = styled.div`
@@ -1276,7 +1277,7 @@ const NewInvestorIcon = styled(Image)`
 `
 
 const InvestorIcon = styled(Image)`
-margin-bottom: auto;
+margin: auto auto;
   
 `
 

@@ -27,7 +27,8 @@ type Props = {
 
 function NewMarqueeAnimation(props: Props) {
   const {
-    speed = 100,
+    // speed = 100,
+    speed,
     gap = 0,
     gradient = false,
     gradientWidth = 64,
@@ -46,6 +47,7 @@ function NewMarqueeAnimation(props: Props) {
     {/* <Marquee */}
     <Splide
         ref={splideRef}
+        // style={{background: 'red', margin: 'auto 0'}}
         options={{
           width: isMobile ? '100vw' : '80vw',
           type: 'loop',
@@ -59,7 +61,7 @@ function NewMarqueeAnimation(props: Props) {
             pauseOnHover: false,
             pauseOnFocus: false,
             rewind: false,
-            speed: 3,
+            speed: speed,
           }
           // padding: { left: isMobile ? 0 : 80, right: isMobile ? 0 : 80 },
           // perMove: 1,
