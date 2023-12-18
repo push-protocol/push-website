@@ -34,6 +34,13 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  // Themes
+  themes: ['@docusaurus/theme-mermaid'],
+  
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -167,9 +174,9 @@ const config = {
         appId: "LHUKHXUHQP",
 
         // Public API key: it is safe to commit it
-        apiKey: "e3e91551c4e6a6ee03d90efaeec974f7",
+        apiKey: "f41c253713d3cee20253bd3bfb166cac",
 
-        indexName: "push",
+        indexName: "v2-push",
         insights: true,
       },
       colorMode: {

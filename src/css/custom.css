@@ -10,6 +10,7 @@
 
 :root {
   --ifm-color-primary: #dd44b9;
+  --ifm-color-primary-unified-text: #fff;
   --ifm-color-primary-text: #000;
   --ifm-color-secondary-text: #575d73;
   --ifm-color-primary-inverse: #fff;
@@ -38,12 +39,17 @@
   --ifm-modal-input: #fff;
   --ifm-modal-border-input: 1px solid rgba(186, 196, 214, 0.4);
   --ifm-blog-avatar-border: 1px solid #e6e7ec;
-
+  --ifm-color-in-progress: #e79cff;
+  --ifm-color-scheduled: #9B9FB1;
+  --ifm-color-moved-to: #575d73;
+  --ifm-color-new-indicator: #ff8282;
+  --ifm-color-update-indicator: #575d73;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #dd44b9;
+  --ifm-color-primary-unified-text: #fff;
   --ifm-color-primary-text: #fff;
   --ifm-color-secondary-text: #8f99bd;
   --ifm-color-primary-inverse: #000;
@@ -67,6 +73,11 @@
   --ifm-modal-input: #575d73;
   --ifm-modal-border-input: none;
   --ifm-blog-avatar-border: none;
+  --ifm-color-in-progress: #e79cff;
+  --ifm-color-scheduled: #9B9FB1;
+  --ifm-color-moved-to: #575d73;
+  --ifm-color-new-indicator: #ff8282;
+  --ifm-color-update-indicator: #575d73;
 }
 
 
@@ -693,4 +704,106 @@ li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-2.menu__list-it
 }
 /* ------------------ */
 /* DOCUSAURUS SIDEBAR OVERRIDE ENDS */
+/* ------------------ */
+
+/* ------------------ */
+/* DOCUSAURUS ROADMAP OVERRIDE */
+/* ------------------ */
+em sup {
+  font-style: normal;
+  font-size: small;
+  text-decoration: none;
+  border: 1px solid var(--docusaurus-highlighted-code-line-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+h6 em sup {
+  margin-top: -35px !important;
+}
+
+h6 a::before {
+  display: none;
+}
+
+h6 em sup:before {
+  content: 'Last Updated' !important;
+}
+
+em sup:before {
+  content: 'In Progress';
+  position: relative;
+  padding: 2px 10px;
+  background: var(--ifm-color-in-progress);
+  color: var(--ifm-color-primary-unified-text);
+  border-radius: 6px;
+  font-weight: bold;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+em strong sup:before {
+  content: 'Completed';
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-unified-text);
+}
+
+em del sup:before {
+  content: 'Scheduled';
+  background: var(--ifm-color-scheduled);
+  color: var(--ifm-color-primary-inverse);
+}
+
+em del strong sup:before {
+  content: 'Moved to';
+  background: var(--ifm-color-moved-to);
+  color: var(--ifm-color-primary-inverse);
+}
+
+em del {
+  text-decoration: none;
+}
+
+em sup sub {
+  font-style: normal;
+  font-size: small;
+  vertical-align: initial;
+  text-decoration: none;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+}
+
+em sup sub a {
+  padding: 0px 0px 0px 5px;
+}
+
+.table-of-contents em sup sub, .table-of-contents em sup sub a {
+  display: none;
+}
+
+.table-of-contents em sup:before {
+  font-size: smaller;
+  padding: 2px 6px;
+  opacity: 0.5;
+}
+
+sup em, sup strong {
+  background: var(--ifm-color-new-indicator);
+  color: #fff;
+  font-size: 0.6em;
+  padding: 2px 6px;
+  font-style: normal;
+  font-weight: inherit;
+  border-radius: 6px;
+}
+
+sup strong {
+  background: var(--ifm-color-update-indicator);
+}
+/* ------------------ */
+/* DOCUSAURUS ROADMAP OVERRIDE ENDS */
 /* ------------------ */
