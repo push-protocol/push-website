@@ -25,16 +25,27 @@ import styled from "styled-components";
 import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogPostPageContent({ allPosts, post, children }) {
-  // const { metadata, toc, content } = useBlogPost();
-  // const { nextItem, prevItem, frontMatter } = metadata;
-  // const {
-  //   hide_table_of_contents: hideTableOfContents,
-  //   toc_min_heading_level: tocMinHeadingLevel,
-  //   toc_max_heading_level: tocMaxHeadingLevel,
-  // } = frontMatter;
+  const { metadata, toc } = useBlogPost();
+
+  const { nextItem, prevItem, frontMatter, unlisted } = metadata;
+  const {
+    hide_table_of_contents: hideTableOfContents,
+    toc_min_heading_level: tocMinHeadingLevel,
+    toc_max_heading_level: tocMaxHeadingLevel,
+  } = frontMatter;
 
   return (
-    <BlogLayout>
+    <BlogLayout
+      toc={
+        !hideTableOfContents && toc.length > 0 ? (
+          <TOC
+            toc={toc}
+            minHeadingLevel={tocMinHeadingLevel}
+            maxHeadingLevel={tocMaxHeadingLevel}
+          />
+        ) : undefined
+      }
+    >
       <BlogItem>
         <BlogPostItem>{children}</BlogPostItem>
 
@@ -81,7 +92,7 @@ const BlogItem = styled.div`
   width: 800px !important;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 820px) {
     width: 100% !important;
     padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
     box-sizing: border-box;

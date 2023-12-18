@@ -28,10 +28,10 @@ import Details from "@theme/Details";
 ```typescript
 import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
+// Initialize wallet user
 // PushAPI.initialize(signer, {options?});
-// signer - pass the signer from your app and set env to 'prod' for mainnet app
-// options? - optional, can pass initialization parameters for customization
-const userAlice = await PushAPI.initialize(signer, { env: "prod" });
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>

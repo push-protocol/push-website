@@ -44,8 +44,8 @@ export const Section = styled.section`
     props.gradient
       ? props.gradient
       : props.background
-      ? props.background
-      : "transparent" || "transparent"};
+        ? props.background
+        : "transparent" || "transparent"};
   display: ${(props) => props.display || "flex"};
   flex: ${(props) => props.flex || "1"};
   flex-direction: ${(props) => props.flexDirection || "row"};
@@ -132,8 +132,8 @@ export const ItemH = styled.div`
       (props.filterHover
         ? props.filterHover
         : props.hover
-        ? props.hover
-        : "none") || "none"};
+          ? props.hover
+          : "none") || "none"};
   }
 
   ${ItemBreak} {
@@ -489,15 +489,15 @@ export const LinkTo = styled(Link)`
       (props.filterHover
         ? props.filterHover
         : props.hover
-        ? props.hover
-        : "none") || "none"};
+          ? props.hover
+          : "none") || "none"};
 
     color: ${(props) =>
       (props.hoverColor
         ? props.hoverColor
         : props.color
-        ? props.color
-        : "#fff") || "#fff"};
+          ? props.color
+          : "#fff") || "#fff"};
   }
 
   &:before {
@@ -638,7 +638,7 @@ export const ModalInner = styled(Button)`
   & p {
     margin: 0px;
   }
-  
+
   & img {
     height: 32px;
     width: auto;

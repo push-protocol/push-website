@@ -37,16 +37,12 @@ const MorePosts = ({ allPosts, post }) => {
       const matchingTags = allOtherPosts?.filter((obj) =>
         obj?.Preview?.metadata?.tags?.some((tag) => tag?.label === item?.label),
       );
-      // const result = matchingTags?.find(
-      //   (tag) => tag?.Preview?.metadata?.tags[0]?.label === item?.label,
-      // );
 
       if (matchingTags && matchingTags.length > 0) {
         // Randomly select one from matchingTags
         const randomIndex = Math.floor(Math.random() * matchingTags.length);
         return matchingTags[randomIndex];
       }
-      // return result !== undefined ? result : "check
       return null;
     });
 
@@ -95,23 +91,27 @@ const MorePosts = ({ allPosts, post }) => {
 
       <GridItem marginTop={false}>
         {filteredArray?.slice(0, 4).map((item) => (
-          <div>
-            <Image src={item?.Preview?.assets?.image} />
+          <>
+            {item !== null && (
+              <div>
+                <Image src={item?.Preview?.assets?.image} />
 
-            <TextView>
-              <BlogPostItemHeaderInfo morePosts={item?.Preview?.metadata} />
-              <Link itemProp="url" to={item?.Preview?.metadata?.permalink}>
-                <LinkText>{item?.Preview?.frontMatter?.title}</LinkText>
-              </Link>
-              <TextSpan>{item?.Preview?.frontMatter?.text}</TextSpan>
-            </TextView>
-            <Link
-              to={item?.Preview?.metadata?.permalink}
-              style={{ color: "#dd44b9" }}
-            >
-              Read More
-            </Link>
-          </div>
+                <TextView>
+                  <BlogPostItemHeaderInfo morePosts={item?.Preview?.metadata} />
+                  <Link itemProp="url" to={item?.Preview?.metadata?.permalink}>
+                    <LinkText>{item?.Preview?.frontMatter?.title}</LinkText>
+                  </Link>
+                  <TextSpan>{item?.Preview?.frontMatter?.text}</TextSpan>
+                </TextView>
+                <Link
+                  to={item?.Preview?.metadata?.permalink}
+                  style={{ color: "#dd44b9" }}
+                >
+                  Read More
+                </Link>
+              </div>
+            )}
+          </>
         ))}
       </GridItem>
     </div>

@@ -1499,7 +1499,7 @@ export const objChannelList = [
     is_alias_verified: 0,
     itemcount: 163,
     subscriber_count: 116,
-    type: 'Infrastructure',
+    type: 'Wallet',
   },
   {
     id: 47,
@@ -3924,7 +3924,15 @@ export const objChannelList = [
     info: 'Multichain wallet for Crypto, NFTs, DeFi and cashback.',
     url: 'https://www.get-verso.com/',
     imageFile:'verso',
-    type: 'DeFi',
+    type: 'Wallet',
+  },
+  {
+    id: 168,
+    name: 'MetaMask Snaps',
+    info: 'MetaMask Snaps allows users to add features and functionality to their MetaMask wallet. Individual snaps are features created by third-party developers that MetaMask users can install directly into their wallet.',
+    url: 'https://metamask.io/snaps/',
+    imageFile:'metamask-snaps',
+    type: 'Wallet',
   },
   {
     name: 'LensTok',

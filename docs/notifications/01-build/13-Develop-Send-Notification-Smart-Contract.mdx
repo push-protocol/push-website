@@ -23,7 +23,7 @@ Push contracts are designed to act as a communication middleware for your smart 
 
 Ensure that you know the contract address of Push Communication smart contract based on the blockchain and network from which you are sending the communication out.
 
-For example: Staging Ethereum contract address is `0xb3971BCef2D791bc4027BbfedFb47319A4AAaaAa`. List of all smart contract and their environment is available here 👉 [Push smart contract addresses](/docs/notifications/push-smart-contracts/contract-addresses/ "List of all relevant push protocol smart contract addresses").
+For example: Staging Ethereum contract (Sepolia) address for Push Communicator contract is `0x0C34d54a09CFe75BCcd878A469206Ae77E0fe6e7`. List of all smart contract and their environment is available here 👉 [Push smart contract addresses](/docs/notifications/push-smart-contracts/contract-addresses/ "List of all relevant push protocol smart contract addresses").
 
 ### Step 2️⃣ - Import Push Comm interface
 
@@ -47,7 +47,8 @@ Next call the function `sendNotification(address _channel, address _recipient, b
 ```solidity
 IPUSHCommInterface(EPNS_COMM_CONTRACT_ADDRESS_FOR_SPECIFIC_BLOCKCHAIN).sendNotification(
     YOUR_CHANNEL_ADDRESS, // from channel - recommended to set channel via dApp and put it's value -> then once contract is deployed, go back and add the contract address as delegate for your channel
-    to, // to recipient, put address(this) in case you want Broadcast or Subset. For targeted put the address to which you want to send
+    to, // to recipient, put YOUR_CHANNEL_ADDRESS in case you want Broadcast or Subset. For Targetted put the address to which you want to send
+
     bytes(
         string(
             // We are passing identity here: https://push.org/docs/notifications/notification-standards/notification-standards-advance/#notification-identity
