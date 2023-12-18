@@ -1,5 +1,5 @@
 ---
-slug: epns-monthly-blocks-2022-q2
+slug: epns-monthly-blocks-2022-may
 title: EPNS Monthly Blocks
 description: EPNS Monthly Blocks
 authors: [push]
