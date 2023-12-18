@@ -1384,15 +1384,5 @@ const ArticleSource = styled(ItemH)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-// background: green;
-
 `
 
-const NewMarqueeAnimationContainer = styled.div`
-  background: green;
-
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-`
