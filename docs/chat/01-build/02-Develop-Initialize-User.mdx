@@ -70,22 +70,54 @@ When initializing your user, you can customize the process using several paramet
 
 <Details summary="Expected response">
 ```typescript
-[
+{
   {
     account: "0xC785989454C958eF0fD343e3E6DcCDf9893a5b02",
-    channel: Channel {signer: JsonRpcSigner, env: 'prod', guestMode: true, account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', info: ƒ, …},
-    chat: Chat {account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', env: 'prod', signer: JsonRpcSigner, progressHook: undefined, …},
+    channel: Channel {
+        signer: JsonRpcSigner, 
+        env: 'prod', 
+        guestMode: true, 
+        account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', info: ƒ, 
+        …
+      },
+    chat: Chat {
+      account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', 
+      decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', 
+      env: 'prod', 
+      signer: JsonRpcSigner, 
+      progressHook: undefined, 
+      …
+      },
     decryptedPgpPvtKey: "-----BEGIN PGP PRIVATE KEY BLOCK-----\n\n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\nJPYaDBOrwODHzX8INjnYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n",
-    encryption: Encryption {account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', pgpPublicKey: '-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxsBNBGQRtHIB…HnWGw==\n=h2rm\n-----END PGP PUBLIC KEY BLOCK-----\n', env: 'prod', signer: JsonRpcSigner, …},
+    encryption: Encryption {
+      account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', 
+      decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', 
+      pgpPublicKey: '-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxsBNBGQRtHIB…HnWGw==\n=h2rm\n-----END PGP PUBLIC KEY BLOCK-----\n', 
+      env: 'prod', 
+      signer: JsonRpcSigner, 
+      …
+    },
     env: "prod",
     notification: Notification {signer: JsonRpcSigner, env: 'prod', guestMode: true, account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', list: ƒ, …},
     pgpPublicKey: "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxsBNBGQRtHIBCADWGXf/Ir844r6xG4FIoprXLv8LaekzuEDT1pYckE4TQSub\n6y1pCCF/eMWvUePvWBAgX8cNdBQ96gxnOB0Kxu2wQTWqLQ0PrL9ggF0dNQcQ\nPbPghOOTWwO2h/TKNa9KrhkCh9m9zjQU9o8w4HxOOJ74t8T9OXqYMOXBMSOr\nVw2bnGQfSodZV7PTJUqmA7ap5JwbGcNP9t1/XH87f6HFSgPwgN5u9rgKAwhJ\nFwujZxSJv2IPRNzpDAq/r/C+fgofkV9/kwU3odsKNMJ+REfNOhDVo+nBLHAu\nTloMkc2WSLJDSu9j8sNZPVrpUaa1c7bbxX5fVTXzW+n2/L2xBkWSfy11ABEB\nAAHNAMLAigQQAQgAPgWCZBG0cgQLCQcICZApG4QIthENGgMVCAoEFgACAQIZ\nAQKbAwIeARYhBGgybFDK2EulZ5avyikbhAi2EQ0aAAA/JQf7B6cVf1OHFncZ\nA/XprZxLLyLbRG3l8nHi8Ujd8IVWavecgYbn0zKuRbHvfkNKKXRKYQ3eMpP8\ns1XRofybhl3J6D5eSPMnw4sxysfteNBoPrBZKFCnY4JFzEDGX7XFIFnJ4ZTU\ncmCp3p0OO86ES3rSG2esmcF/uGUOSf71PspNPKWPfFT4EkpMzYsN8khJv6zA\nqmwYKfz7lCpcef/Wr20kRSN641Z2ZzpVhPQYsVpjcIboVZvb2b1lPUw6v6um\n+c6r4ONgC8HQD8vaC8aozYay9OOf5aDRT0CE8hivurA59TE1akvHDLly4F1H\nIBdShArEO0P7iM2UDZ8enNAloMOM687ATQRkEbRyAQgA3E9cwruXEXB7AwM1\nMzs9I8f2BI4xV+CddArdexeC1w/8zI3pJUYjZU3QlyAmZs9CYqjWil4CYBXy\nke+D4WVg7htEU2DykCrW1pqW+YFIXdN5p6MLOYfPKW7EU4lq1bRC3AnKHa0g\nz5XrmrU89Z8PmcLVtXeAwHM5M/cnCjHQD3a9W4WiglBgYJCqhMoxNK587WRw\n6kqzCp6OVBGozGrrmr+Cjy8fbpmHyjzss/8984RTS14TrCS33cTdTbd52R6p\nAFK3WEDyiJxBfjyZ5UTZlwcpNR84cAWheRUg9RNgnBuOwclsdZdMonfMXsUy\nYJaQKJ4vIbdme1kr31uxVdn/9QARAQABwsB2BBgBCAAqBYJkEbRyCZApG4QI\nthENGgKbDBYhBGgybFDK2EulZ5avyikbhAi2EQ0aAACoYAf/ZjF6FfGDdUZn\nshJPYVTIlhy7w+cImozxHDGZWZah2bjddnJ8a4jedSa6oSYBeBP5vnvw7Smf\n5+CvwCrIQdzBlM1VyRWRdlP9e3QixTCqDgfyUVKRavYYgH8l9MFAw57Bq8Y+\nsckgDkY7A04cYvd93SCclwGC4X9GshnBYgbjPbAqOSPBhq1i+i1R+zYGqy92\nPGxT83rgjJiXIjhiVxZCzZVy+X8KU58nQLIbWj2zR0xgO7oMnaZFOMYtHtoe\nmCIq58+IQt7ETENsqYKR5u+f6ep5+pF0vtvZBDp2DVVMvoabUW5AP31NsFdG\nwUJaHST2GgwTq8Dgx81/CDY52HnWGw==\n=h2rm\n-----END PGP PUBLIC KEY BLOCK-----\n",
-    profile: Profile {account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', env: 'prod', progressHook: undefined},
+    profile: Profile {
+      account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', 
+      decryptedPgpPvtKey: '-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nxcLYBGQRtHI…nYedYb\n=o4+2\n-----END PGP PRIVATE KEY BLOCK-----\n', 
+      env: 'prod', progressHook: undefined
+    },
     progressHook: undefined,
-    signer: JsonRpcSigner {_isSigner: true, provider: Web3Provider, _index: 0, _address: null},
-    user: User {account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', env: 'prod'},
+    signer: JsonRpcSigner {
+      _isSigner: true, 
+      provider: Web3Provider, 
+      _index: 0, 
+      _address: null
+    },
+    user: User {
+      account: '0xC785989454C958eF0fD343e3E6DcCDf9893a5b02', 
+      env: 'prod'
+    },
   }
-]
+}
 ```
 
 </Details>
