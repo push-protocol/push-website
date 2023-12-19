@@ -759,7 +759,7 @@ em del sup:before {
 }
 
 em del strong sup:before {
-  content: 'Moved to';
+  content: 'Moved';
   background: var(--ifm-color-moved-to);
   color: var(--ifm-color-primary-inverse);
 }
