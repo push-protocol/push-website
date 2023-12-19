@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = function (context, options) {
   // Read the file
-  const filePath = path.join(context.siteDir, '/docs/tokenomics/01-Push-Roadmap.mdx');
+  const filePath = path.join(context.siteDir, '/docs/roadmap/01-Push-Roadmap.mdx');
 
   // Get the last modified date of the file
   const stats = fs.statSync(filePath);
