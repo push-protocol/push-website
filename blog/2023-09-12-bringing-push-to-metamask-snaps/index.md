@@ -57,7 +57,7 @@ pop-ups. You can easily switch them back on from your dApp.
 <iframe
   width="100%"
   height="382"
-  src="https://www.youtube.com/embed/oxfuXjOCox0"
+  src="https://www.youtube.com/embed/LjPxKoYLiGs"
   title="How to Add Web3 Notifications in Your MetaMask Wallet | Installing the Push Snap"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
