@@ -1,10 +1,15 @@
 push:
   name: Push Protocol
   # title: Site Admin
-  url: https://push.org
+  url: https://twitter.com/pushprotocol
   image_url: /assets/blog/authors/authorpush.png
 harsh:
   name: Harsh Rajat
   # title: Site Admin
   url: https://twitter.com/harshrajat
   image_url: /assets/blog/authors/authorharsh.png
+richa: 
+  name: Richa Joshi
+  # title: Site Admin
+  url: https://twitter.com/Riijo
+  image_url: /assets/blog/authors/authorricha.png
