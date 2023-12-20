@@ -47,21 +47,18 @@ pop-ups. You can easily switch them back on from your dApp.
 ### Snap installation and Set-Up guide
 
 - If you don’t already have a MetaMask wallet, install and [set-up a wallet in MetaMask](https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask) here.
-- Next, go to [https://app.push.org/receive](https://app.push.org/receive)
+- Next, go to [https://app.push.org/snap](https://app.push.org/snap)
 - Click on <b>Install Snap</b> → <i>approve the required permissions to run the snap</i>
-- Once successfully installed the snap will redirect to Push Channels Dapp
-- Here you can opt-in to your favourite channels to receive notifications
-- Once done, you can go back to the Snap Settings Page.
-- With the connected wallet, click on <b>Add Address:</b>
-- This allows you to add an address for which you prefer to receive notifications
-- Once you click, simply sign the message to complete the process
+- Once successfully installed the snap will redirect to Push dApp and open up Channels page
+- **Channels** are protocols that you can subscribe to for notifications, for example: Subscribe to coindesk channel for news, ShapeShift for goverance updates, pick your favorites!
+- Subscribing to a channel is completely gassless, you will need to sign the opt-in though.
 - Once done, you are all set. The address will now start receiving notifications.
 
 <iframe
   width="100%"
   height="382"
+  src="https://www.youtube.com/embed/LjPxKoYLiGs"
   style={{ borderRadius: "32px" }}
-  src="https://www.youtube.com/embed/oxfuXjOCox0"
   title="How to Add Web3 Notifications in Your MetaMask Wallet | Installing the Push Snap"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
