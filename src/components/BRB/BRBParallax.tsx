@@ -42,7 +42,6 @@ function BRBParallax() {
       start: 'top top', // Start at top of Trigger and at the top of the viewport
       end: '+=100', // The element is 500px hight and end 50px from the top of the viewport
       //   end: '+=500% 0px', // The element is 500px hight and end 50px from the top of the viewport
-      pin: true, // Pin the element true or false
     },
   });
 
@@ -94,7 +93,7 @@ function BRBParallax() {
 
   return (
     <Container>
-      <BRBWrapper id={!isMobile && 'home'}>
+      <BRBWrapper id='home'>
         <FirstBackground
           className="firstBackground"
         >
@@ -141,6 +140,7 @@ function BRBParallax() {
 
 const Container = styled.div`
   width: 100%;
+  font-family: "Glancyr", sans-serif;
   color: white;
   margin-top: -15em;
   margin-bottom: 200px;
@@ -218,7 +218,7 @@ const ParallaxContent = styled(ItemV)`
 
 const ParallaxHeader = styled(Span)`
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 400;
   letter-spacing: inherit;
   color: #E64DE9;
   font-stretch: ultra-expanded;
@@ -265,7 +265,7 @@ const FlexItem = styled.div`
 const ParallelFlexTitle = styled(Span)`
   font-size: 60px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   line-height: inherit;
   

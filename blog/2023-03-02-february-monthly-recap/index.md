@@ -3,17 +3,19 @@
 slug: february-monthly-recap
 title: February Monthly Recap 🚀
 authors: [push]
+image: './cover-image.webp'
+text: "Welcome to our monthly update for February! What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy."
 tags: [ Web3, Blockchain Technology, Newsletter ]
 
 ---
 
 ![Cover image of February Monthly Recap 🚀](./cover-image.webp)
+<!--truncate-->
 
 Welcome to our monthly update for February!
 
 What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy.
 
-<!--truncate-->
 
 Here’s a look at everything that went on🤩
 
@@ -94,8 +96,3 @@ As we wrap up another month of innovation and progress at Push, we’re excited 
 
 Stay tuned for more updates and progress reports next month!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

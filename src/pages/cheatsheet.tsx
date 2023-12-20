@@ -3,6 +3,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -17,7 +18,7 @@ import { PageMeta } from "@site/src/config/pageMeta";
 
 
 function CheatSheet() {
-  const url = 'https://drive.google.com/file/d/1_7JDGxvG8mmrtwy5aqL3sLjo2B7YQpjt/view?usp=sharing';
+  const url = "https://drive.google.com/file/d/1orVVzeco8CVAWzN_RlQtkaMc18ysJSAG/view?usp=sharing"
   const redirectURL = () => {
     window.location.replace(url);
   };
@@ -26,22 +27,21 @@ function CheatSheet() {
   //   redirectURL();
   // }, []);
   return (
-    <Layout title={PageMeta.ABOUTUS.pageTitle} description={PageMeta.ABOUTUS.pageDescription}>
-    <Head>
-
+    <Layout title={PageMeta.CHEAT.pageTitle} description={PageMeta.CHEAT.pageDescription} showNavbar='website'>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/cheatsheet" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push Protocol | Cheatsheet" />
+        <meta property="og:title" content="Push | Cheatsheet" />
         <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta property="og:image" content="/assets/previews/cheatsheetfbpreview.png" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/cheatsheetpreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push Protocol | Cheatsheet" />
+        <meta name="twitter:title" content="Push | Cheatsheet" />
         <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta name="twitter:image" content="/assets/previews/cheatsheettwtpreview.png" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/cheatsheetpreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -57,11 +57,9 @@ function CheatSheet() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
-        
       <CheatWrapper>
-        
         <TextDiv>Click below to view CheatSheet 👇🏾 </TextDiv>
         <Button 
           target="_blank"

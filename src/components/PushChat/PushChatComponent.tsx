@@ -6,12 +6,15 @@ import React, { useState } from 'react';
 
 // External Components
 import styled from 'styled-components';
+// import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
+import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
-import { A, Button, Image, ItemH, ItemV, Section } from '@site/src/css/SharedStyling';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
+import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
@@ -22,7 +25,8 @@ import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import GLOBALS, { device } from '@site/src/config/globals';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
@@ -34,7 +38,7 @@ export const ChatComponent = () => {
       <Header>
         Join the conversation
         <BrandA
-          href="https://docs.push.org/developers"
+          href="/docs/chat"
           target="_blank"
         >
           <Image
@@ -47,11 +51,35 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        {/* 4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 */}
-        <ChatBubbleComponent
-          chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
-          handleFaucet={setShowFaucet}
-        />
+         {/* 
+          b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1 -> test group
+          4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
+          */}
+        <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>}>
+            {() => {
+              const uiweb = require("@pushprotocol/uiweb");
+              
+              const ChatUIProvider = uiweb.ChatUIProvider;
+              const ChatView = uiweb.ChatView;
+              const MODAL_POSITION_TYPE = uiweb.MODAL_POSITION_TYPE;
+
+              return (
+                <>
+                  <ChatUIProvider theme={PushChatTheme}>
+                    <ChatView
+                      chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
+                      limit={10}
+                      isConnected={true}
+                      onVerificationFail={()=>setShowFaucet(true)}
+                      verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
+                    />
+                  </ChatUIProvider>
+                </>
+              )
+              
+            }}
+          </BrowserOnly>
+        
       </PlayGround>
 
       <BottomBar>
@@ -62,14 +90,16 @@ export const ChatComponent = () => {
           fontWeight="400"
         >
           This is a token gated group. You can join but will need{' '}
-          <span style={{ color: '#E64DE9', fontWeight: '550' }}>1 $PUSH</span> in your wallet to be able to send
+          <span style={{ color: '#E64DE9', fontWeight: '400' }}>1 $PUSH</span> in your wallet to be able to send
           messages.
         </Span>
         <ButtonItem
           background="#E64DE9"
           padding="8px"
-          fontWeight="900"
+          margin="0px 0px 0px 16px"
+          fontWeight="500"
           fontSize="16px"
+          fontFamily="Glancyr, sans-serif"
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
@@ -99,6 +129,7 @@ const BottomBar = styled(ItemH)`
   align-items: center;
   color: #fff;
   z-index: 0 !important;
+  margin-top: 20px;
 
   & ${Span} {
     @media ${device.mobileL} {
@@ -127,22 +158,23 @@ const ButtonItem = styled(Button)`
   }
 `;
 
-const Span = styled.span`
-  font-size: ${(props) => props.fontSize || '8px'};
-  color: ${(props) => props.color || '#b5bcd6'};
-  font-weight: ${(props) => props.fontWeight || '300'};
-  letter-spacing: 0.01em;
-  margin: 5px 16px 0px 4px;
-  @media ${device.mobileL} {
-    width: 80%;
-    margin: 0px 0px 0px 4px;
-    line-height: 1.3;
-  }
-`;
+// const Span = styled(Span)`
+//   font-size: ${(props) => props.fontSize || '8px'};
+//   color: ${(props) => props.color || '#b5bcd6'};
+//   font-weight: ${(props) => props.fontWeight || '300'};
+//   letter-spacing: 0.01em;
+//   margin: 5px 16px 0px 4px;
+//   @media ${device.mobileL} {
+//     width: 80%;
+//     margin: 0px 0px 0px 4px;
+//     line-height: 1.3;
+//   }
+// `;
 
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
+  font-family: Glancyr, sans-serif;
   color: #fff;
   margin: 0px 0px 60px;
   position: relative;
@@ -169,12 +201,14 @@ const BrandA = styled(A)`
 `;
 
 const PlayGround = styled(Section)`
+  font-family: 'Strawford', sans-serif;
   flex-direction: column;
   background-image: url(${PlaygroundBg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 80%;
+  height: 75vh;
   margin: 0 auto;
   @media ${device.mobileL} {
     width: 95%;

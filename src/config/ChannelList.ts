@@ -1499,7 +1499,7 @@ export const objChannelList = [
     is_alias_verified: 0,
     itemcount: 163,
     subscriber_count: 116,
-    type: 'Infrastructure',
+    type: 'Wallet',
   },
   {
     id: 47,
@@ -3915,8 +3915,24 @@ export const objChannelList = [
     name: 'Eco',
     info: 'The Eco Association is a non-profit organization dedicated to supporting the growth of the Eco Currency protocol.',
     url: 'https://eco.org/',
-    imageFile:'/channelList/eco-pfp.jpg',
+    // imageFile:'/channelList/eco-pfp.jpg',
     type: 'DAO',
+  },
+  {
+    id: 168,
+    name: 'Verso',
+    info: 'Multichain wallet for Crypto, NFTs, DeFi and cashback.',
+    url: 'https://www.get-verso.com/',
+    imageFile:'verso',
+    type: 'Wallet',
+  },
+  {
+    id: 168,
+    name: 'MetaMask Snaps',
+    info: 'MetaMask Snaps allows users to add features and functionality to their MetaMask wallet. Individual snaps are features created by third-party developers that MetaMask users can install directly into their wallet.',
+    url: 'https://metamask.io/snaps/',
+    imageFile:'metamask-snaps',
+    type: 'Wallet',
   },
   {
     name: 'LensTok',
@@ -7606,6 +7622,41 @@ export const objChannelList = [
     url: 'https://devfolio.co/submissions/scholarswaprealm-62f7',
     type: 'Hackathons',
     hackathon: 'ETHforAll'
+    },
+    {
+      name: 'Rely',
+      info: `A digital asset interface using Push Protocol to keep users informed with real-time updates and let them comnunicate with their friends.`,
+      url: 'https://ethglobal.com/showcase/rely-oygqg',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pixel',
+      info: `A game-changing digital asset trading platform using Push Protocol to integrate trading directly within chat.`,
+      url: 'https://ethglobal.com/showcase/pixel-rr36q',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'zkmap',
+      info: `A unique proof-of-location system allowing users to verify their presence in a given location using Push Protocol for location-gated chats`,
+      url: 'https://ethglobal.com/showcase/zkmap-n2z06',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'GenieAI',
+      info: ` An Ai marketplace providing users the access to many different AIs using Push Protocol for sending notifications to users.`,
+      url: 'https://ethglobal.com/showcase/genieai-feo3a',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pulse',
+      info: `A mobile-first social app that improves your feed based on your social graph and in-app interactions using Push Protocol to notify creators.`,
+      url: 'https://ethglobal.com/showcase/pulse-v4iir',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
     },
 ];
 

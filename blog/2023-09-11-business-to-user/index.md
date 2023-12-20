@@ -2,6 +2,8 @@
 slug: business-to-user-messaging-push-protocol-x-unstoppable-domains
 title: "Business-to-User Messaging: Push Protocol x Unstoppable Domains"
 authors: [push]
+image: './cover-image.webp'
+text: "Push Protocol is thrilled to announce our groundbreaking partnership with Unstoppable Domains to enable business-to-user (B2U) messaging through Unstoppable Messaging!For businesses, brands, and web3 projects interested in interacting with their community and delivering a better user experience, messaging just got a lot more accessible."
 tags:
   [
     Unstoppable Domains,
@@ -14,12 +16,13 @@ tags:
 
 ![Cover image of Business-to-User Messaging: Push Protocol x Unstoppable Domains](./cover-image.webp)
 
+<!--truncate-->
+
 <!--customheaderpoint-->
 # Welcoming B2U messaging partners Polygon, Blockchain.com and MetaRides
 
 Push Protocol is thrilled to announce our groundbreaking partnership with [Unstoppable Domains](https://unstoppabledomains.com/) to enable business-to-user (B2U) messaging through [Unstoppable Messaging!](https://unstoppabledomains.com/blog/categories/announcements/article/unstoppable-messaging) For businesses, brands, and web3 projects interested in interacting with their community and delivering a better user experience, messaging just got a lot more accessible.
 
-<!--truncate-->
 
 Unstoppable Domains is the leading platform for acquiring, owning, and holding web3 domains. With more than 3.7 million domains registered, 1000 integrations, and 10 top-level domains, Unstoppable Domains is redefining new ways for brands to interact with their users.
 
@@ -101,8 +104,4 @@ Stay tuned for more details on this opportunity.
 
 This partnership between Push Protocol and Unstoppable Domains isn’t just about communication, it’s about revolutionizing how businesses operate and making web3 more accessible and user-friendly. Join us on this unstoppable journey into the future of web3, where communication knows no bounds, and digital identity is truly in your hands.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

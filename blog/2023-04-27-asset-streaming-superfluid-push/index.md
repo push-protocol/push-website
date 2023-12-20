@@ -3,17 +3,20 @@
 slug: superfluid-enhancing-web3-asset-streaming-with-push
 title: Superfluid Enhancing Web3 Asset-Streaming With Push💜💚
 authors: [push]
+image: './cover-image.webp'
+text: "This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
+The leading asset-streaming protocol revolutionizing the way web3-native organizations handle payments and subscriptions."
 tags: [ Frensofpush, Web3, Push Protocol, Superfluid Protocol]
 
 ---
 
 ![Cover image of Superfluid Enhancing Web3 Asset-Streaming With Push💜💚](./cover-image.webp)
+<!--truncate-->
 
 This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
 
 The leading asset-streaming protocol revolutionizing the way web3-native organizations handle payments and subscriptions.
 
-<!--truncate-->
 
 Superfluid is a decentralized payment protocol that enables DAOs and crypto-native organizations to stream assets in a non-custodial and permissionless manner. This is particularly useful for projects that demand frequent and recurring transactions. By enabling real-time payments, Superfluid allows for fast and frictionless value transfer without gas fees. The protocol’s commitment to trustlessness and decentralization makes it a popular choice among organizations that value security and transparency in their payment processing.
 
@@ -77,8 +80,3 @@ Superfluid is the leading asset streaming protocol that enables Web3 native subs
 
 [Website](https://www.superfluid.finance/home) | [App](https://app.superfluid.finance/) | [Docs](http://docs.superfluid.finance/) | [Twitter](https://twitter.com/intent/follow?screen_name=Superfluid_HQ) | [Discord](http://discord.superfluid.finance/)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

@@ -2,15 +2,17 @@
 slug: epns-and-pine-form-an-alliance-to-enable-seamless-communication-for-users
 title: 'EPNS and Pine Form An Alliance to Enable Seamless Communication for Users'
 authors: [push]
+image: './cover-image.png'
+text: 'EPNS and Pine, the decentralized NFT loan platform, join hands in a pilot collaboration to bring push notifications to users. As such, Pine will now be able to seamlessly interact with its users and keep them updated about the status of their loans on the platform.'
 tags: [Web3, Blockchain, Crypto, Ethereum, Cryptocurrency]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Pine Form An Alliance to Enable Seamless Communication for Users](./cover-image.png)
+<!--truncate-->
 
 EPNS and Pine, the decentralized NFT loan platform, join hands in a pilot collaboration to bring push notifications to users. As such, Pine will now be able to seamlessly interact with its users and keep them updated about the status of their loans on the platform.
 
-<!--truncate-->
 
 ### NFT Backed Lending
 Pine is a decentralized lending and borrowing protocol in DeFi that allows users to borrow funds against their NFTs. Now, the NFT industry is one of the fastest-growing and most valuable in the world, with a market value of more than $40 billion. In the beginning, digital artists sold individual pieces of art as NFTs. And now, it’s a field with thousands of projects that could change the way the world’s biggest industries work. With an increase in utility, the net value of this asset class has increased exponentially with some NFTs going in the millions.
@@ -36,9 +38,5 @@ Pine Protocol is a lending and borrowing protocol built on multiple blockchains 
 Stay in touch! [Website](https://pine.loans/), [Twitter](https://twitter.com/PineLoans), [Medium](https://medium.com/@PineLoans)
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

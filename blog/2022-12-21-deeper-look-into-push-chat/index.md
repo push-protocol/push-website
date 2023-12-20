@@ -2,15 +2,17 @@
 slug: were-still-pushing-a-deeper-look-into-push-chat
 title: 'We’re Still Pushing: A Deeper Look Into Push Chat'
 authors: [push]
+image: './cover-image.webp'
+text: "Launched in early October, Push Chat is providing secure and instant communication for all by connecting users and dapps across web3."
 tags: [ Web3, Developer, Push Notification, PushChat, Messaging]
 ---
 
 
 ![Cover image of We’re Still Pushing: A Deeper Look Into Push Chat](./cover-image.webp)
-
+<!--truncate-->
 Launched in early October, [Push Chat](https://app.push.org/#/chat) is providing secure and instant communication for all by connecting users and dapps across web3.
 
-<!--truncate-->
+import { ImageText } from '@site/src/css/SharedStyling';
 
 In this article, we deep dive into how Push Chat works and its use case.
 
@@ -121,12 +123,8 @@ If you’re interested in exploring how Push Chat can boost user engagement and 
 
 - Share this article
 - Join our Discord [#push-chat-alpha channel](https://discord.gg/pushprotocol), and tell us what you’re building, we’ve got devs who can help give consultation and we’ll be sharing exclusive Push Chat access to Discord members soon!
-- To get started building right away, head over to the [Push Chat developer docs](https://docs.push.org/developers/concepts/push-chat-for-web3).
+- To get started building right away, head over to the [Push Chat developer docs](/docs/chat).
 
 See you soon on Push Chat!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

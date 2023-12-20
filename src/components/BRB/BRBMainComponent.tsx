@@ -4,6 +4,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { gsap } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,15 +18,17 @@ import { PartnerBounties } from '@site/src/components/BRB/BRBPartnerBounties';
 import { Partners } from '@site/src/components/BRB/BRBPartners';
 import Schedules from '@site/src/components/BRB/BRBSchedules';
 import ImageHolder from '@site/src/components/ImageHolder';
-import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
 import { Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
+import { BRBAlert } from './BRBAlert';
 
 // Import Assets
 import ArrowIcon from '@site/static/assets/ArrowIcon.svg';
 import Discord from '@site/static/assets/Discord-BRB.svg';
 import ImageBRB from '@site/static/assets/Image-BRB.png';
 import MobileBRB from '@site/static/assets/Mobile-BRB.png';
+import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
 import X from '@site/static/assets/X-BRB.svg';
 import PushLogo from '@site/static/assets/pushIcon.svg';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -33,6 +36,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import BRBOnline from './BRBOnline';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -195,6 +199,9 @@ export const BRBMainComponent = () => {
         showMobileMenu={showMobileMenu}
         className={`header ${headerClass}`}
       >
+
+      <BRBAlert />
+
         <Section padding="0 0 0 0">
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
@@ -208,8 +215,8 @@ export const BRBMainComponent = () => {
                 />
                 <Span
                   fontSize="24px"
-                  fontWeight="900"
-                  style={{ maxHeight: '24px' }}
+                  fontWeight="400"
+                  style={{ maxHeight: '24px', fontFamily:'Glancyr' }}
                 >
                   #BRB
                 </Span>
@@ -241,7 +248,7 @@ export const BRBMainComponent = () => {
                 className="navigationMenu"
                 showMobileMenu={isMobileMenuOpen}
               >
-                <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
+                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                   <NavigationMenuHeader>
                     <Span
                       fontSize="18px"
@@ -249,7 +256,7 @@ export const BRBMainComponent = () => {
                       Partners
                     </Span>
                   </NavigationMenuHeader>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                   <NavigationMenuHeader>
@@ -257,6 +264,17 @@ export const BRBMainComponent = () => {
                       fontSize="18px"
                     >
                       Schedule
+                    </Span>
+                  </NavigationMenuHeader>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem onClick={() => handleSectionNavigation('online')}>
+                  <NavigationMenuHeader>
+
+                    <Span
+                      fontSize="18px"
+                    >
+                      BRB Online
                     </Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
@@ -272,7 +290,7 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
-                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
+                <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                   <NavigationMenuHeader>
                     <Span
                       fontSize="18px"
@@ -280,7 +298,7 @@ export const BRBMainComponent = () => {
                       BRB Chat
                     </Span>
                   </NavigationMenuHeader>
-                </NavigationMenuItem> */}
+                </NavigationMenuItem>
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('support')}>
                   <NavigationMenuHeader>
@@ -354,22 +372,22 @@ export const BRBMainComponent = () => {
             border="1px solid #FC6DFF"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="900"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('schedule')}
           >
             Register Now
           </ButtonItem>
-          {/* <ButtonBar
+          <ButtonBar
             borderRadius="24px"
             background="#000"
             border="1px solid #E64DE9"
             fontSize="18px"
             padding="16px 32px"
-            fontWeight="900"
+            fontWeight="400"
             onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
-          </ButtonBar> */}
+          </ButtonBar>
         </NavButtons>
       </ItemTop>
 
@@ -385,12 +403,16 @@ export const BRBMainComponent = () => {
         <Schedules />
       </ScheduleDiv>
 
+      <BRBOnlineDiv id='online'>
+        <BRBOnline />
+      </BRBOnlineDiv>
+
       <BountyDiv id='bounties'>
         <PartnerBounties />
       </BountyDiv>
-
+      
       <PlaygroundDiv id="playground">
-        {/* <ChatComponent /> */}
+        <ChatComponent />
       </PlaygroundDiv>
 
 
@@ -408,7 +430,7 @@ export const BRBMainComponent = () => {
           >
             <SpanContent
               fontSize="112px"
-              fontWeight="900"
+              fontWeight="400"
               color="#E64DE9"
               letterSpacing="0.01"
             >
@@ -505,9 +527,11 @@ const ButtonItem = styled(Button)`
   vertical-align: middle;
   font-size: 18px;
   font-style: normal;
+  font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
+    border: 1px solid transparent;
   }
   &:hover:after {
     opacity: 0;
@@ -522,6 +546,10 @@ const ButtonItem = styled(Button)`
 
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
+  font-family: Glancyr, sans-serif;
+  &:hover {
+    border: 1px solid #E64DE9;
+  }
   @media ${device.mobileL} {
     width: 100%;
   }
@@ -535,6 +563,7 @@ const BrbWrapper = styled(ItemV)`
   justify-content: center;
   align-items: center;
   background: #000;
+  font-family: Glancyr, sans-serif;
 
   & .pushMissingSvg {
     width: 900px;
@@ -584,6 +613,10 @@ const BountyDiv = styled.div`
   width: 100%;
 `;
 
+const BRBOnlineDiv = styled.div`
+  width: 100%;
+`;
+
 const PartnersDiv = styled.div`
   z-index: 20;
   width: 100%;
@@ -591,6 +624,22 @@ const PartnersDiv = styled.div`
 
 const PlaygroundDiv = styled.div`
   width: 100%;
+  margin: 0 0px 120px 0px;
+`;
+
+const Playground = styled(Section)`
+  flex-direction: column;
+  background-image: url(${PlaygroundBg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'Strawford', sans-serif;
+  width: 80%;
+  height: 75vh;
+  margin: 0 auto;
+  @media ${device.mobileL} {
+    width: 95%;
+  }
 `;
 
 // V1 Designs
@@ -599,7 +648,7 @@ const HEADER_VERTICAL_GUTTER = 7;
 const BOX_MAX_WIDTH = 1140;
 
 const StyledHeader = styled.header`
-  font-family: 'Strawford';
+  font-family: 'Strawford', sans-serif;
 
   /* padding: 0px 160px; */
 
@@ -665,6 +714,7 @@ const StyledHeader = styled.header`
 
 const NavText = styled.div`
   color: #fff;
+  font-family: Glancyr, sans-serif;
   text-align: center;
   font-size: 20px;
   font-style: normal;
@@ -731,7 +781,7 @@ const PushLogoBlackContainer = styled(ItemV)`
   color: #fff;
   font-size: 24.207px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -805,6 +855,7 @@ const IconMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
+  font-family: Glancyr, sans-serif;
   // Styles for the flags
   .flag-icon {
     width: 24px;
@@ -813,7 +864,7 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {    
-    font-weight: 900;
+    font-weight: 400;
     font-size: 18px;
     line-height: 142%;
     color: var(--ifm-color-primary-inverse);

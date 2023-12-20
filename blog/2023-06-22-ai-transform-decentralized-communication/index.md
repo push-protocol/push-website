@@ -2,14 +2,17 @@
 slug: transforming-decentralized-communication-with-push-and-ai
 title: 'Transforming Decentralized Communication With Push & AI🤖'
 authors: [push]
+image: './cover-image.webp'
+text: "As the world of web3 continues to evolve, Push Protocol is playing a critical role in revolutionizing decentralized communication. Our web3-native chat and video chat capabilities, agnostic to any platform, have opened the door to seamless communication in the decentralized world. But what happens when we combine the power of Push Protocol with Artificial Intelligence (AI)?"
 tags: [Pushprotocol, Web3, AI, Web Tools]
 ---
 
 ![Cover image of Transforming Decentralized Communication With Push & AI🤖](./cover-image.webp)
+<!--truncate-->
+
 
 As the world of web3 continues to evolve, Push Protocol is playing a critical role in revolutionizing decentralized communication. Our web3-native chat and video chat capabilities, agnostic to any platform, have opened the door to seamless communication in the decentralized world. But what happens when we combine the power of Push Protocol with Artificial Intelligence (AI)?
 
-<!--truncate-->
 
 In this blog post, we will explore the limitless possibilities that arise when Push Protocol converges with AI. Whether you’re a user or developer, get ready to unlock a new realm of possibilities in decentralized communication.
 
@@ -85,8 +88,3 @@ What do you think about the convergence of Push Protocol and AI? Are you excited
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

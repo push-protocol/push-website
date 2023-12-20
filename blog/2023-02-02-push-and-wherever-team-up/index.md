@@ -3,16 +3,19 @@
 slug: push-and-wherever-team-up-to-bring-web3-communication-tools-to-dapps
 title: 'Push and Wherever Team Up to Bring Web3 Communication Tools to Dapps🛠️'
 authors: [push]
+image: './cover-image.webp'
+text: "This week, our featured fren is a wallet-first customer communication platform, Wherever 😊
+Imagine wallet-to-wallet communication on dapps that protects users’ data and privacy, all the while ensuring they get the best possible experience. That’s Wherever for you. The platform enables web3 dapps to communicate with wallets directly, no matter where they are. Communication wherever, literally!"
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology, Push Notification]
 
 ---
 ![Cover image of Push and Wherever Team Up to Bring Web3 Communication Tools to Dapps🛠️](./cover-image.webp)
+<!--truncate-->
 
 This week, our featured fren is a wallet-first customer communication platform, Wherever 😊
 
 Imagine wallet-to-wallet communication on dapps that protects users’ data and privacy, all the while ensuring they get the best possible experience. That’s Wherever for you. The platform enables web3 dapps to communicate with wallets directly, no matter where they are. Communication wherever, literally!
 
-<!--truncate-->
 
 By way of this collaboration, Push provides Wherever the infrastructure to facilitate wallet communication with an emphasis on personalization, automation, and user experience. Wherever relies on Push’s communication layer to deliver in-app notifications while ensuring a decentralized relay and storage.
 
@@ -51,11 +54,7 @@ Wherever is a wallet-first customer communication platform, designed to help dap
 
 Find more about Wherever: [Website](https://wherever.to/), [Twitter](https://twitter.com/wherever_im), [Docs](https://docs.wherever.to/main/)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 <i>
 “Push frens” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us, and you could be our next Fren in the series.

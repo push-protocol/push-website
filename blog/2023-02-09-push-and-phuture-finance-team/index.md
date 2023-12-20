@@ -3,16 +3,20 @@
 slug: push-and-phuture-finance-team-up-to-enhance-user-engagement
 title: 'Push and Phuture Finance Team Up to Enhance User Engagement🐋'
 authors: [push]
+image: './cover-image.webp'
+text: "This week, we are glad to feature our fren and the leading crypto index platform — Phuture Finance.
+Phuture Finance is an investment platform that combines passive exposure to crypto assets with transparency and lasting value. As such, the index platform is working towards making DeFi more accessible by bringing yield-generating index funds to risk-averse crypto investors.
+"
 tags: [ Frensofpush, Web3, Blockchain, Blockchain Technology]
 
 ---
 ![Cover image of Push and Phuture Finance Team Up to Enhance User Engagement🐋](./cover-image.webp)
+<!--truncate-->
 
 This week, we are glad to feature our fren and the leading crypto index platform — Phuture Finance.
 
 Phuture Finance is an investment platform that combines passive exposure to crypto assets with transparency and lasting value. As such, the index platform is working towards making DeFi more accessible by bringing yield-generating index funds to risk-averse crypto investors.
 
-<!--truncate-->
 
 If you’re an investor who wants to bank upon the crypto revolution without dealing with complexity or extensive tracking, Phuture Finance is your solution.
 
@@ -54,11 +58,7 @@ Phuture (PHTR) is a decentralized crypto index platform that simplifies investme
 
 Find more about Phuture: [Website](https://www.phuture.finance/), [Twitter](https://twitter.com/phuture_finance), [Discord](https://discord.com/invite/frRD3Ck), [Telegram](https://t.me/phuture_group),[Docs](https://docs.phuture.finance/introduction/master)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 
 <i>“Push frens” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us, and you could be our next Fren in the series.</i>

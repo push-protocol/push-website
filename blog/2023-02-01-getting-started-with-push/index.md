@@ -3,10 +3,13 @@
 slug: getting-started-with-push-sdk-rest-api
 title: 'Getting Started With Push SDK REST API⚙️'
 authors: [push]
+image: './cover-image.webp'
+text: "The PUSH-SDK, is a growing JavaScript-based SDK that allows developers to add push notification functionality to their dapps."
 tags: [ Web3, Blockchain, SDK, Push Notification Service, Developer]
 
 ---
 ![Cover image of Getting Started With Push SDK REST API⚙️](./cover-image.webp)
+<!--truncate-->
 
 The [PUSH-SDK](https://github.com/ethereum-push-notification-service/push-sdk), is a growing JavaScript-based SDK that allows developers to add push notification functionality to their dapps. Using the SDK, developers can:
 
@@ -14,11 +17,10 @@ The [PUSH-SDK](https://github.com/ethereum-push-notification-service/push-sdk), 
 - Get access to Push Nodes APIs
 - Render Push Notifications UI
 
-<!--truncate-->
 
 It is written in Typescript and supports React, React Native, Plain JS, and Node JS-based platforms. (We are adding support for more!) It is also built on top of standard Web3 packages like <b>ethers, @web3-react</b>.
 
-If you’re looking for our full documentation on [Push-SDK REST API, you can find that here](https://docs.push.org/developers/developer-tooling/push-sdk).
+If you’re looking for our full documentation on [Push-SDK REST API, you can find that here](https://push.org/docs).
 
 But for now, let’s walk you through the main features of the Push-SDK REST API and how to use them in your code.
 
@@ -36,7 +38,7 @@ Here’s an example of how you might use the <b>getFeeds</b> method in your code
 
 ```js
 const notifications = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -48,13 +50,13 @@ It is important to note that CAIP is not a standardized way of identifying and e
 CAIP addresses are composed of three parts:
 
 - <b>The namespace:</b> This is a string designed to uniquely identify a blockchain ecosystem or set of ecosystems as a namespace.
-- <b>The network ID:</b> This is an integer that identifies the Ethereum network the asset belongs to. For example, 1 is the main network, 3 is the Ropsten test network, and 5 is the Goerli test network.
+- <b>The network ID:</b> This is an integer that identifies the Ethereum network the asset belongs to. For example, 1 is the main network, 3 is the Ropsten test network, 5 is the Goerli test network, and 11155111 is Sepolia test network.
 - <b>The address:</b> This is the actual address of the asset, encoded as a hexadecimal string.
 
 For instance:
 
 ```js
-eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681
+eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681
 ```
 
 In this example, the namespace is eip155 which identifies EVM chains, the network ID is 5 (Goerli test network) and the address is <b>0xD8634C39BBFd4033c0d3289C4515275102423681</b>.
@@ -65,7 +67,7 @@ Continuing with <b>getFeeds</b>, to fetch spam notifications, set the <b>spam</b
 
 ```js
 const spams = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   spam: true,
   env: 'staging'
 });
@@ -82,12 +84,12 @@ Here’s an example of how you might use the <b>getSubscriptions</b> method in y
 
 ```js
 const subscriptions = await PushAPI.user.getSubscriptions({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
 
-The <b>getSubscriptions</b> method returns a list of channels <b>[{ channel: '0xaddress', ... }]</b> subscribed by the user.
+The <b>getSubscriptions</b> method returns a list of channels <b>`[{ channel: '0xaddress', ... }]`</b> subscribed by the user.
 
 ## Fetching channel details
 You can use the <b>getChannel</b> method to fetch information about a specific channel. This method takes an options object as an argument, which allows you to specify the following parameters:
@@ -98,7 +100,7 @@ Here’s an example of how you might use the getChannel method in your code:
 
 ```js
 const channelData = await PushAPI.channels.getChannel({
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -118,8 +120,8 @@ Here’s an example of how you might use the <b>search</b> method in your code:
 ```js
 await PushAPI.channels.subscribe({
   signer: _signer,
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
 	env: 'staging'
 	});
 ```
@@ -180,8 +182,8 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  recipients: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // recipient address
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  recipients: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // recipient address
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```
@@ -203,8 +205,8 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  recipients: ['eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', 'eip155:5:0xCdBE6D076e05c5875D90fa35cc85694E1EAFBBd1'], // recipients addresses
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  recipients: ['eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', 'eip155:11155111:0xCdBE6D076e05c5875D90fa35cc85694E1EAFBBd1'], // recipients addresses
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```
@@ -225,7 +227,7 @@ const apiResponse = await PushAPI.payloads.sendNotification({
     cta: '',
     img: ''
   },
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // your channel address
   env: 'staging'
 });
 ```
@@ -235,15 +237,10 @@ That’s it! You now know how to use the main features of the Push Protocol REST
 
 We’ll cover other parts of the Push SDK in coming posts so stay tuned!
 
-- [Push Protocol SDK documentation here](https://docs.push.org/developers/developer-tooling/push-sdk) — if you’d like more reference material to chew on.
+- [Push Protocol SDK documentation here](https://www.npmjs.com/package/@pushprotocol/restapi) — if you’d like more reference material to chew on.
 - [Push SDK on GitHub](https://github.com/ethereum-push-notification-service/push-sdk)
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
-- [Push developer docs](https://docs.push.org/developers/) to get started on building right away!
+- [Push developer docs](/docs/) to get started on building right away!
 
 #PoweredbyPush
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

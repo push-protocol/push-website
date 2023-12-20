@@ -2,15 +2,17 @@
 slug: fast-tracking-proposals-approved
 title: Fast-tracking Proposals, Approved!
 authors: [push]
+image: './cover-image.webp'
+text: "We are excited to announce that governance proposal PIP-08 — Fast-tracking of PIPs that get Immediate traction into Snapshot — was approved via governance voting by a vast majority of 1.2M PUSH in favor."
 tags: [ Dao, Governance, Web3, Ethereum, Communication]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Fast-tracking Proposals, Approved!](./cover-image.webp)
+<!--truncate-->
 
 We are excited to announce that governance proposal <b>PIP-08 — [Fast-tracking of PIPs that get Immediate traction into Snapshot](https://gov.epns.io/t/fast-tracking-of-pips-that-get-immediate-traction-into-snapshot/688)</b> — was [approved via governance voting](https://snapshot.org/#/epns.eth/proposal/0x957d3355d4f402bc6f509166726fd4f2823e04af915ee1f52a3d0eb16a22aead) by a vast majority of 1.2M PUSH in favor.
 
-<!--truncate-->
 
 Approval of PIPs can now take as low as five days depending on traction from the community and after meeting predefined criteria. Continue reading to learn how.
 
@@ -40,8 +42,4 @@ Step 4: Promote to Snapshot with immediate vote open for 3 days.
 2. Proposals that don’t meet the criteria on any steps will continue the standard flow.
 3. For the comments on the proposal to be considered, they must be made by users with at least a <b>Basic</b> trust level (Level 1). The questions asked by users with<b> Member</b> trust level (Level 2) and above must be answered to continue with the Fast-track process. More information on trust levels can be found [here](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

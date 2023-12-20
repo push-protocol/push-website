@@ -2,18 +2,21 @@
 slug: push-2022-year-in-review
 title: Push 2022 Year in Review🎉
 authors: [push]
+image: './cover-image.webp'
+text: "2022 was a marvelous year for Push thanks to our fantastic team and growing community of talented developers.
+To everyone who has helped support the Push project — devs, community members, partners, co-sponsors, we thank you!"
 tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 ---
 
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push 2022 Year in Review🎉](./cover-image.webp)
+<!--truncate-->
 
 2022 was a marvelous year for Push thanks to our fantastic team and growing community of talented developers.
 
 To everyone who has helped support the Push project — devs, community members, partners, co-sponsors, we thank you!
 
-<!--truncate-->
 
 This year alone, Push achieved several major milestones including rebranding from EPNS to Push, raising our Series A, launching Push on Ethereum mainnet, pushing web3 communication beyond Ethereum, new product releases, several news features, and of course, collaborations with some of the best web3 projects out there.
 
@@ -124,8 +127,3 @@ Happy Holidays from the Push team, and we look forward to building with you in 2
 
 ![Offsite](./image-11.jpg)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

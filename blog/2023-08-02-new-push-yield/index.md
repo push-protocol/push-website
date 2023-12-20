@@ -2,10 +2,16 @@
 slug: new-push-yield-farming-rewards-full-details
 title: 'New Push Yield Farming Rewards: Full Details🪙'
 authors: [push]
+image: './cover-image.webp'
+text: "Push Liquidity Rewards Program v1 ended a few weeks ago and v2 is now HERE🎉
+With v2 comes a whole new set of liquidity rewards that provide robust incentives for all liquidity providers and token holders."
 tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 
 ---
 ![Cover image of New Push Yield Farming Rewards: Full Details🪙](./cover-image.webp)
+
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # 2 new liquidity reward pools to earn $PUSH from.
@@ -14,7 +20,6 @@ tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining]
 Push Liquidity Rewards Program v1 ended a few weeks ago and v2 is now HERE🎉
 
 
-<!--truncate-->
 
 With v2 comes a whole new set of liquidity rewards that provide robust incentives for all liquidity providers and token holders.
 
@@ -61,9 +66,9 @@ While these are the high-level details related to Push Liquidity Rewards Program
 6. <b>Reward Harvesting</b>
 
 - The total rewards available and claimable in an epoch rely on the protocol’s fee pool, i.e. the amount of $PUSH earned by the protocol itself. The more $PUSH tokens accumulated by the protocol during an epoch, the more rewards for the stakers of that specific epoch.
-- When it comes to harvesting rewards from the contract, users harvest rewards for all the epochs in which they were staked. <b><i>
-This basically means the longer a user stakes, the more rewards they should be able to harvest.
-</i></b>
+- When it comes to harvesting rewards from the contract, users harvest rewards for all the epochs in which they were staked. 
+**This basically means the longer a user stakes, the more rewards they should be able to harvest.**
+
 - Mentioned below is the formula used to calculate the rewards of any staker in a given epoch (N) 👇
 
 ![User rewards calculation Image](./image-1.webp)
@@ -110,8 +115,3 @@ We’ve made every effort to make this as simplified of a process as possible. T
 Happy staking 👉https://app.push.org/yieldv2
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
