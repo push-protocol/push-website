@@ -148,14 +148,6 @@ Push also launched NFT Chat, enabling for the first time to have chat and other 
 <ABlock href="/blog/a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat/" title="Article about Push NFT Chat">Technical deepdive on how to get started with Push NFT Chat</ABlock>
 
 
-### Push Nodes Alpha
-Push has been relentlessly working over the past 2 years on making Push Protocol completely decentralized and permissionless. We view decentralization in two parts -
-- Content can't be changed by anyone (Immutable)
-- Content can't be censored by anyone (Censorship resistant)
-
-Push has from day 1 been immutable, but we have been working on making it censorship resistant as well. Happy to share that the alpha version is almost ready to be shared with the community! We will be sharing more details during our upcoming community call.
-
-
 ### Push Delivery Nodes
 Push released delivery nodes, enabling crypto wallets to run and listen to communications (encrypted) coming from Push Network for wallet addresses.
 
