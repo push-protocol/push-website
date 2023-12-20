@@ -34,6 +34,13 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  // Themes
+  themes: ['@docusaurus/theme-mermaid'],
+  
   // Static linking
   staticDirectories: ["public", "static"],
 
