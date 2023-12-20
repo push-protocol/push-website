@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 text: "Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 Today, we are launching the next phase of Push governance via the Push Progressive Decentralization Roadmap, opening opportunities for our community to get more involved with Push Protocol in our journey to become a community-owned project."
-tags: [ Pushprotocol, Web3, DAO]
+tags: [ Push Protocol, Web3, DAO]
 
 ---
 

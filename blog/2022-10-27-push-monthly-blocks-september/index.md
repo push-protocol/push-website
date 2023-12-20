@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 text: "Hi Push frens!✨ This one is a very special Monthly Blocks edition as it is the first Push Protocol edition. Let’s take time to recap briefly all the happenings this month!
 "
-tags: [ Newsletter, Blockchain, Pushprotocol, Ethereum]
+tags: [ Newsletter, Blockchain, Push Protocol, Ethereum]
 ---
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)

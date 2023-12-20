@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 description: 'Introducing the Push Ambassador Africa Program🌍'
 text: 'In light of the recent success of our Push Ambassador Program in India, we are thrilled to be extending our Ambassador Program to the continent of Africa.'
-tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
+tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
 
 ![Cover Image of Introducing the Push Ambassador Africa Program🌍](./cover-image.webp)

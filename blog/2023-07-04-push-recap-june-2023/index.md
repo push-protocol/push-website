@@ -4,7 +4,7 @@ title: 'June Monthly Recap 🌅'
 authors: [push]
 image: './cover-image.webp'
 text: "What a month it’s been at Push! From groundbreaking features to new partnerships, we’ve been on an exciting journey this June making major strides towards our mission of decentralizing communication in web3. We couldn’t be more thrilled to share the highlights with you."
-tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
+tags: [Push Protocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---
 ![Cover image of June Monthly Recap 🌅](./cover-image.webp)

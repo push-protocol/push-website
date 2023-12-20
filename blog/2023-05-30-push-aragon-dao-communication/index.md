@@ -6,7 +6,7 @@ authors: [push]
 image: './cover-image.gif'
 text: "We are thrilled to announce that Aragon, the premier DAO creation and management platform, is joining forces with Push to provide users with enhanced functionalities and seamless communication🎉
 "
-tags: [ Web3, Partnerships, Pushprotocol, Blockchain Development, Aragon]
+tags: [ Web3, Partnerships, Push Protocol, Blockchain Development, Aragon]
 
 ---
 

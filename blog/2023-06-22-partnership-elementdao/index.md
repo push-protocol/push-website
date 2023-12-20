@@ -4,7 +4,7 @@ title: 'Empowering Decentralized Decision-Making: Push x ElementDAO💙💜'
 authors: [push]
 image: './cover-image.gif'
 text: "We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making."
-tags: [Pushprotocol, Web3, Partnerships, Blockchain Technology]
+tags: [Push Protocol, Web3, Partnerships, Blockchain Technology]
 ---
 
 ![Cover image of Empowering Decentralized Decision-Making: Push x ElementDAO💙💜](./cover-image.gif)

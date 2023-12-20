@@ -5,7 +5,7 @@ title: 'Birth of a New Pantheon: THENA and Push Protocol Unite💜'
 authors: [push]
 image: './cover-image.webp'
 text: "We are thrilled to announce that Push Protocol is partnering with THENA, a leading liquidity layer and DEX AMM on the BNB Chain!"
-tags: [ Web3, Defi, Pushprotocol, UX ]
+tags: [ Web3, Defi, Push Protocol, UX ]
 
 ---
 

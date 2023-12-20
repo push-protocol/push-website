@@ -5,7 +5,7 @@ title: Earnifi — Never Miss an Airdrop With Push Notifications
 authors: [push]
 image: './cover-image.webp'
 text: "Earnifi, an airdrop aggregator platform designed to find unclaimed airdrops, has integrated Push to make airdrops more accessible to everyone!"
-tags: [ Web3, Blockchain, Push Notification, Pushprotocol, Frensofpush, Customer Success]
+tags: [ Web3, Blockchain, Push Notification, Push Protocol, Frensofpush, Customer Success]
 
 ---
 
