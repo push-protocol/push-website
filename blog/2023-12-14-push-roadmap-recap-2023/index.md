@@ -1,27 +1,27 @@
 ---
 slug: push-roadmap-recap-2023
-title: 'Push Roadmap Recap 2023 🎯'
+title: 'Push 2023 Year In Review 🎯'
 authors: [harsh, richa]
 image: './cover-image.webp'
 description: 'Recap of 2023 for Push Protocol'
-text: "We had an exciting year at Push. It's time to share what all we achieved, what impact it makes and where we are headed next!"
-tags: [Push Protocol, Roadmap, Communication, Web3, Blockchain Technology]
+text: "We had an exciting year at Push. It's time to share what we achieved, impact it made and where we are headed next!"
+tags: [Push Protocol, Roadmap, Communication, Web3, Blockchain Technology, Year In Review]
 ---
 ![Cover Image of Push Roadmap Recap 2023 🎯](./cover-image.webp)
 
 <!--truncate-->
 
-We had an exciting year at Push. It's time to share what all we achieved, what impact it makes and where we are headed next! 
+We had an exciting year at Push! It's time to recap what we achieved, impact it made and where we are headed next! 
 
-2023 was amazing for Push as it launched all the web3 products it had been working on to provide a web3 communication stack for developers, businesses and users. Let's dive into the details of what all we achieved in 2023.
+2023 was amazing for Push as we launched the products and features we've been working on to provide a full web3 communication stack for developers, businesses and users. Let's dive into the details of what all we achieved in 2023.
 
 import ReactPlayer from "react-player";
 import { ABlock } from "@site/src/css/SharedStyling";
 
 ## Push by Numbers
-Push has grown tremendously in 2023, We saw notifications sent, channels and subscribers being doubled / tripled! Our ecosystem expanded as more protocols started using Push to send notifications / chat to their users.
+Push has grown tremendously in 2023, we saw an increase in notifications sent (+50 Million YTD) and subscribers (154k). Our ecosystem expanded as more protocols started using Push to send notifications / chat to their users across chains. Push is now live on 5 chains including Ethereum, Polygon zKEVM, PoS, Arbitrum and BNB.
 
-![Analytics data for Push Protocol growth](./subscount.png)
+![Notification data for Push Protocol growth](./subscribers2023.png)
 
 ## Highlights
 ### Unified Push SDK
@@ -33,11 +33,11 @@ This enabled Push API class that is common for all suite of products by Push ena
 <ABlock href="/docs/" title="Developer documentation hub">Learn all about the Unified Push SDK from Push Documentation Hub</ABlock>
 
 
-### Push x Metamask Snap
+### Push x MetaMask Snap
 
-Push started with the vision of enabling seamless communication for web3, Launching snap on Metamask was a big step towards that vision as it allows users to have their communication delivered to them right on their metamask wallet. 
+Push started with the vision of enabling seamless communication for web3, launching Snaps for 30 Million users of MetaMask was a big step towards that vision as it allows users to have their communication delivered to them right on their MetaMask wallet. 
 
-We are excited to share that web3 notifications sent by protocols using Push are now delivered to users on Metamask. If you are a web3 builder, then re-engagement is a big problem for you which get's solved by implementing [web3 notifications with Push now!](/docs "Explore Push Docs")
+We are excited to share that web3 notifications sent by protocols using Push are now delivered to users on MetaMask. If you are a web3 builder, then re-engagement is a big problem for you which get's solved by implementing [web3 notifications with Push now!](/docs "Explore Push Docs")
 
 <ReactPlayer
   controls
@@ -49,11 +49,11 @@ We are excited to share that web3 notifications sent by protocols using Push are
 
 
 ### Push x Unstoppable
-Our partner [Unstoppable Domains](https://unstoppabledomains.com/ "Push x Unstoppable") launched notifications and group chats for their users using Push making Push Unstoppable :). Their mobile app also uses Push to send notifications to their users.
+Our partner [Unstoppable Domains](https://unstoppabledomains.com/ "Push x Unstoppable") launched notifications and group chats for their 3.8 Million users using Push making Push Unstoppable :). Their mobile app also uses Push to send notifications to their users.
 
-![Preview of how Push is getting used by Unstoppable](./poweredbypush.png)
+![Preview of how Push is getting used by Unstoppable](./poweredbypush2.png)
 
-What's more, they have open sourced their code for the community to use and contribute to. Check the repo out [here](https://github.com/unstoppabledomains/domain-profiles/tree/main/packages/ui-components/src/components/Chat "Push x Unstoppable Repo") / [staging demo](https://staging.ud.me/examples/unstoppable-messaging).
+What's more, UD have open sourced their code for the community to use and contribute to. Check the repo out [here](https://github.com/unstoppabledomains/domain-profiles/tree/main/packages/ui-components/src/components/Chat "Push x Unstoppable Repo") / [staging demo](https://staging.ud.me/examples/unstoppable-messaging).
 
 <ABlock href="/blog/business-to-user-messaging-push-protocol-x-unstoppable-domains/" title="Business to User messaging via Unstoppable x Push">Business to User messaging via Unstoppable x Push</ABlock>
 
@@ -75,7 +75,7 @@ For the first time, Web3 messaging is coming at par with and beating most Web2 m
 
 
 ### Frontend Components
-Push launched frontend components for web3 developers to easily integrate Push products into their web3 dapps. Enough talk, let's see it in action -
+Push launched frontend components for web3 developers to easily integrate Push products into their web3 dapps. Enough talk, let's see it in action
 
 ```jsx live
 customPropMinimized="true"
@@ -123,13 +123,13 @@ Push Spaces enable several users to have audio call like experience with each ot
   url="https://www.youtube.com/watch?v=QK6wx1wJ66A"
 />
 
-<ABlock href="/blog/blog/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here/" title="Introduction to Push Spaces">Learn more about Push Spaces!</ABlock>
+<ABlock href="/blog/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here/" title="Introduction to Push Spaces">Learn more about Push Spaces!</ABlock>
 
 
 ### Push Video
-Push vision is to become the de-facto communication stack for web3. Real Time Communication like Video and Spaces was something we always planned as the next primitive to build on top of Push, as per the [whitepaper 1.0](https://whitepaper.push.org/protocol-specs-section/future-features-research "Whitepaper talking about Push Video"). 
+Push vision is to become the de-facto communication stack for web3. Real time communication like Video and Spaces was something we always planned as the next primitive to build on top of Push, as per the [whitepaper 1.0](https://whitepaper.push.org/protocol-specs-section/future-features-research "Whitepaper talking about Push Video"). 
 
-The team delivered on this promise as well but with some added benefites! Since it's built on top of the composable standard of Push Chat and Notification protocol. It benefits from their architecture as well, utilizing notifications for having a facetime call like interface and group chat for enabling gated calls.
+The team delivered on this promise as well but with some added benefites! Since it's built on top of the composable standard of Push Chat and Notification protocol, it benefits from their architecture, utilizing notifications for having a facetime call like interface and group chat for enabling gated calls.
 
 <ABlock href="/blog/push-launches-wallet-to-wallet-video-chat/" title="Introduction to Wallet to Wallet video calls">Dive into Push Video and what it enables for web3 communication!</ABlock>
 
@@ -143,17 +143,17 @@ Yield farming V2 is also enabled by Push Protocol V2, allowing users to earn rew
 
 
 ### Push NFT Chat
-Push also launched NFT Chat, enabling for the first time to have chat and other form of communication tied to NFTs. This unlocks a whole new world of possibilities for NFTs where Web3 Socials or any NFT can have communication tied to it which seamlessly can be moved from one wallet to another.
+Push also launched NFT Chat, enabling for the first time to have chat and other forms of communication tied to NFTs. This unlocks a whole new world of possibilities for NFTs where Web3 Socials or any NFT can have communication tied to it which seamlessly can be moved from one wallet to another.
 
 <ABlock href="/blog/a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat/" title="Article about Push NFT Chat">Technical deepdive on how to get started with Push NFT Chat</ABlock>
 
 
 ### Push Nodes Alpha
-Push has been relentlessly working over the past 2 years on making Push Protocol completely decentralized and permissionless. We have always seen decentralization as something that consists of two parts -
+Push has been relentlessly working over the past 2 years on making Push Protocol completely decentralized and permissionless. We view decentralization in two parts -
 - Content can't be changed by anyone (Immutable)
 - Content can't be censored by anyone (Censorship resistant)
 
-Push has from day 1 been immutable, but we have been working on making it censorship resistant as well. Happy to share that the alpha version is almost ready to be shared with the community! We will be sharing more details and live working of it during community calls soon.
+Push has from day 1 been immutable, but we have been working on making it censorship resistant as well. Happy to share that the alpha version is almost ready to be shared with the community! We will be sharing more details during our upcoming community call.
 
 
 ### Push Delivery Nodes
@@ -165,7 +165,7 @@ This enabled wallets to show notifications, chats, etc to their users apart from
 
 
 ### Live Roadmap
-Push launched a live roadmap for the community which is a massive step up from medium posts as it's a live roadmap which is updated in real time. This enables the community to see what all is being worked on and what all is coming up next.
+Push launched a live roadmap for the community which is a massive step up from medium posts as it's a live roadmap which is updated in real time. This enables the community to see what's being worked on and what's up next.
 
 _`Psst`_ - If you want a sneak peak in 2024 already, then check out the link below 👇
 
@@ -186,12 +186,13 @@ Push also saw wallets adoption with wallets like Metamask (via Push Snap), Unsto
 <ABlock href="/frens" title="Push Ecosystem aka Frens of Push">Checkout Push Ecosystem aka Frens of Push</ABlock>
 
 ### Honorable Mentions
-There are a number of other things that we did in 2023, some of the notable ones are -
+There are a number of other things that we did in 2023, some of the notable ones are
 
-- Pan India Dev Tour with 12 top global web3 protocols (Ethereum, Polygon, Filecoin, TheGraph, etc) to onboard 4500 developers to web3
+- Billion Reasons to Build [(BRB)](https://yourstory.com/the-decrypting-story/push-protocol-india-tour-polygon-ethereum-web3-bounties "Dev tour"), a pan India Dev Tour with 12 top global web3 protocols (Ethereum, Polygon, Filecoin, TheGraph, etc) to onboard +4,500 developers to web3
 - Launched Push Ambassador India, Africa and Latam
 - Launched several SDKs for different languages (Swift, Flutter, Android, etc)
-- Participated in several hackathons to get feedback from the community
+- Participated in major hackathons (+1,300 devs onboarded with +500 projects built) and conferences including ETHGlobal, Devcon, ETHCC, ETHDenver..
+- Media features including [Coindesk](https://www.coindesk.com/tech/2023/02/15/crypto-wallet-messaging-application-push-protocol-expands-to-bnb-chain/ "Web3 Messaging"), [The Defiant](https://www.youtube.com/watch?v=UItJz0mLfMA&t=25s "The Defiant Podcast"), [Bankless](https://youtu.be/MzZdSInJGzM?si=9nUEiGCTnlszcbOH "Bankless Podcast")
 - Launched Push DAO Phase 1
 
-2023 was an amazing year for Push and we are excited to share what all we have planned for 2024! Stay tuned for the next post where we will share what all we have planned for 2024. With loads of love :heart: from Push team!
+Before looking at what's ahead this coming year, we want to take a moment to thank the entire Push team, all our partners, investors and the builders. 2023 was an amazing year for Push and we are excited to share what we have planned for 2024! Stay tuned. With loads of love :heart: from Push team!
