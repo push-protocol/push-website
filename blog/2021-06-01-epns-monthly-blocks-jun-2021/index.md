@@ -5,7 +5,11 @@ description: 'EPNS Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
 text: "With our roadmap released to the public last month and all our ambitious goals for 2021, it’s no surprise this month comes packed with great news and lots of work!.Let’s look into everything EPNS that took place this month!"
-tags: [ 
+tags: [ Announcements
+,Monthly Report
+,Notifications
+,Ethereum
+,Blockchain
 ]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
