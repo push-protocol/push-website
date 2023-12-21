@@ -645,7 +645,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
             width="inherit"
           >
-            <ItemV
+            <InvestorItem
               alignItems="stretch"
             >
               <InvestorHeader
@@ -657,7 +657,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 >
                   {t("home.investors-section.title")}
               </InvestorHeader>
-            </ItemV>
+            </InvestorItem>
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
@@ -1235,6 +1235,17 @@ const InvestorHeader = styled(ResponsiveH2)`
     width: auto;
   }
 `;
+
+const InvestorItem = styled(ItemV)`
+  @media (max-width: 1300px) {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}
+  }
+
+  @media ${device.tablet} {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}
+  }`;
 
 const InvestorCard = styled(ItemV)`
     border: 1px solid rgb(204, 204, 204);
