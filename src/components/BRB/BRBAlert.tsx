@@ -16,8 +16,7 @@ import { ItemH, Section } from '@site/src/css/SharedStyling';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
-export const BRBAlert = () => {
-  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
 
   const hideAlertHandler = () => {
     setIsAlertVisible(false);
