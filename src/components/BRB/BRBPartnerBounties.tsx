@@ -160,10 +160,13 @@ const BountyPrice = styled.div`
 margin-left: auto;
 display: flex;
 justify-content: flex-end;
-  flex-direction: column;
-  gap: 8;
- 
-width:60%;
+flex-direction: column;
+gap: 8;
+width: 60%;
+
+@media ${device.tablet} {
+  width:100%;
+}
 
 @media ${device.mobileL} {
   margin-left: auto;
