@@ -35,7 +35,7 @@ export const brbPartnersBountyList = [
     alt: 'The Graph, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build the most creative subgraphs or utilize existing subgraphs for your application',
     price: 5000,
-    ended:false
+    ended:true
   },
   {
     srcref: 'shardeum',
