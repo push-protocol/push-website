@@ -165,6 +165,11 @@ justify-content: flex-end;
  
 width:60%;
 
+@media ${device.mobileL} {
+  margin-left: auto;
+  width: 100%;
+  justify-content: center;
+}
 `
 const PartnerBountiesContainer = styled.div`
   width: 100%;
@@ -307,4 +312,5 @@ const BountyItem = styled.div`
     width: 100%;
     justify-content: space-between;
   }
+ 
 `;
