@@ -27,6 +27,7 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import {
   A,
   Content,
@@ -39,6 +40,7 @@ import {
   Span
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 // Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
@@ -643,7 +645,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
             width="inherit"
           >
-            <ItemV
+            <InvestorItem
               alignItems="stretch"
             >
               <InvestorHeader
@@ -655,20 +657,24 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 >
                   {t("home.investors-section.title")}
               </InvestorHeader>
-            </ItemV>
+            </InvestorItem>
             
             <MarqueeAnimationContainer
-              padding="120px 0 0 0"
+              // padding="120px 0 0 0"
+              margin="3em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+              <NewMarqueeAnimation
+                speed={3}
                 gradientWidth={8}
                 gap={18}
+                direction="ltr"
+
               >
                 {InvList.top.map((item) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
                     >
@@ -687,27 +693,30 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
             <MarqueeAnimationContainer
-              padding="80px 0 0 0"
+              // padding="2em 0 0 0"
+              // margin="0 0 5em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+              <NewMarqueeAnimation
+                speed={-3}
                 gradientWidth={8}
                 gap={18}
-                direction="right"
+                direction="ltr"
               >
-                {InvList.bottom.map((item) => {
+                {InvList.bottom.map((item, i) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
-                      flexDirection={item.title ? 'row' : 'column'}
+                      flexDirection={item.title ? 'true' : 'false'}
                     >
                       <InvestorIcon
                         width={item.title ? '64px' : 'auto'}
@@ -725,9 +734,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
           </Content>
@@ -1226,23 +1236,69 @@ const InvestorHeader = styled(ResponsiveH2)`
   }
 `;
 
+const InvestorItem = styled(ItemV)`
+  @media (max-width: 1300px) {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}
+  }
+
+  @media ${device.tablet} {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}
+  }`;
+
 const InvestorCard = styled(ItemV)`
     border: 1px solid rgb(204, 204, 204);
     border-radius: 74px;
     padding: 8px;
     min-width: 242px;
-    min-height: 66px;
-    margin-right: 18px;
+    min-height: 83px;
+    max-height: 83px;
+    // margin-right: 18px;
     flex: 0;
+
+    // margin-bottom: auto;
+
+`
+
+const NewInvestorCard = styled.div`
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 74px;
+  padding: 8px;
+  min-width: 242px;
+  min-height: 83px;
+  max-height: 83px;
+  // margin-right: 18px;
+
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection ? "row" : 'column'};
+  align-items: center;
+  justify-content: flex-start;
+  background: red;
+  margin-bottom: auto
+`;
+
+const NewInvestorIcon = styled(Image)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto auto;
+  justify-content: flex-start;
+  
 `
 
 const InvestorIcon = styled(Image)`
+margin: auto auto;
   
 `
+
+
 
 const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
+  margin-bottom: auto;
+
 `
 
 const InvestorTitle = styled(Span)`
@@ -1339,5 +1395,5 @@ const ArticleSource = styled(ItemH)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-  
 `
+
