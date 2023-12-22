@@ -109,6 +109,8 @@ export const BRBMainComponent = () => {
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
 
+  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+
   const plugins = [ScrollToPlugin];
 
   const { t, i18n } = useTranslation();
@@ -200,7 +202,7 @@ export const BRBMainComponent = () => {
         className={`header ${headerClass}`}
       >
 
-      <BRBAlert />
+      <BRBAlert isAlertVisible={isAlertVisible} setIsAlertVisible={setIsAlertVisible} />
 
         <Section padding="0 0 0 0">
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
@@ -258,6 +260,18 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem> */}
 
+
+                <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
+                  <NavigationMenuHeader>
+
+                    <Span
+                      fontSize="18px"
+                    >
+                      Bounties
+                    </Span>
+                  </NavigationMenuHeader>
+                </NavigationMenuItem>
+
                 <NavigationMenuItem onClick={() => handleSectionNavigation('schedule')}>
                   <NavigationMenuHeader>
                     <Span
@@ -279,16 +293,7 @@ export const BRBMainComponent = () => {
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem onClick={() => handleSectionNavigation('bounties')}>
-                  <NavigationMenuHeader>
-
-                    <Span
-                      fontSize="18px"
-                    >
-                      Bounties
-                    </Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                
 
                 <NavigationMenuItem onClick={() => handleSectionNavigation('playground')}>
                   <NavigationMenuHeader>
@@ -349,7 +354,7 @@ export const BRBMainComponent = () => {
       </StyledHeader>
 
       <ItemTop>
-        <ItemV id="new">
+        <ItemV id="new" margin={isAlertVisible && isMobile ? '5em 0 0 0' : '0 0 0 0' }>
           <MemberImage
             className="pushMissingSvg"
             src={isMobile ? MobileBRB : ImageBRB}
@@ -373,7 +378,7 @@ export const BRBMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="400"
-            onClick={() => handleSectionNavigation('schedule')}
+            onClick={() => handleSectionNavigation('bounties')}
           >
             Register Now
           </ButtonItem>
@@ -399,6 +404,10 @@ export const BRBMainComponent = () => {
 
       <CommunityPartners />
 
+      <BountyDiv id='bounties'>
+        <PartnerBounties />
+      </BountyDiv>
+
       <ScheduleDiv id="schedule">
         <Schedules />
       </ScheduleDiv>
@@ -407,9 +416,7 @@ export const BRBMainComponent = () => {
         <BRBOnline />
       </BRBOnlineDiv>
 
-      <BountyDiv id='bounties'>
-        <PartnerBounties />
-      </BountyDiv>
+     
       
       <PlaygroundDiv id="playground">
         <ChatComponent />
