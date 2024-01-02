@@ -24,7 +24,7 @@ export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
 
   const alertMessage = 'Bounty winner surprise announcement for Round 1 @ X Spaces ';
 
-  const alertLink = `https://twitter.com/pushprotocol`;
+  const alertLink = `https://twitter.com/i/spaces/1lPKqbWRgvEGb`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
