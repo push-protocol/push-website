@@ -119,14 +119,14 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
              
               Winner TBA on Jan 16, 2024
             <TwitterLink>
-             <a href='https://twitter.com/pushprotocol' target='_blank'> @ X Spaces
+             <a href='https://twitter.com/i/spaces/1lPKqbWRgvEGb' target='_blank'> @ X Spaces
              
 
              </a>
             
              </TwitterLink> <Image
                     src={require(`@site/static/assets/website/brb/Vector.png`).default}
-                   link="https://twitter.com/pushprotocol"
+                   link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
                     alt={`Push Logo`}
                     width="8px"
                     height="8px"
