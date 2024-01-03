@@ -1,0 +1,49 @@
+---
+id: docs-video-develop-managing-media-stream
+title: Managing Media Stream
+hide_title: true
+slug: ./managing-media-stream
+displayed_sidebar: pushVideoSidebar
+sidebar_position: 4
+image: "/assets/docs/previews/docs_video_develop--managing_media_stream.png"
+---
+
+# Managing media stream overview
+
+This section contains APIs that will help you manage your video and audio streams and how to turn them on or off.
+
+<head>
+  <title>Managing Media Stream | Push Video | Push Documentation</title>
+</head>
+
+import { ABlock } from "@site/src/css/SharedStyling";
+
+## Enable / Disable Local Media
+
+To enable/disable local media, we'll call the `media()` method on the `aliceVideoCall`.
+
+```typescript
+  aliceVideoCall.media({
+    video?: Boolean,
+    audio?: Boolean
+  })
+```
+
+| Property | Description                                         |
+| -------- | --------------------------------------------------- |
+| video    | `true` to enable video and `false` to disable video |
+| audio    | `true` to enable audio and `false` to disable audio |
+
+## How to know the current status of local audio/video?
+
+The current local video status can be accessed by `aliceVideoCall.data.local.video` similarly for audio -> `aliceVideoCall.data.local.audio`.&#x20;
+
+If `aliceVideoCall.data.local.video` is true, then that means your local video is enabled, and if it's false then that means the local video is disabled. Likewise for `aliceVideoCall.data.local.audio`.
+
+<ABlock
+  href="https://www.npmjs.com/package/@pushprotocol/restapi#media"
+  title="NPM example of Push Video Enable Media API"
+  target="_blank"
+>
+  Enable Media API Example
+</ABlock>

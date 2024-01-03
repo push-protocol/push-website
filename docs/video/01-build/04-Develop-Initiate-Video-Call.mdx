@@ -23,13 +23,15 @@ import { ABlock } from "@site/src/css/SharedStyling";
 We are now ready to request/initiate a video call. As the name suggests, this will be done on the initiator's end.
 
 ```typescript
+import { VIDEO_NOTIFICATION_ACCESS_TYPE } from '@pushprotocol/restapi/src/lib/payloads/constants';
+
 // aliceVideoCall.request(recipients[], options?);
 await aliceVideoCall.request(
   recipients: string[],
   options?: {
     rules: {
       access: {
-        type: string;
+        type: VIDEO_NOTIFICATION_ACCESS_TYPE.PUSH_CHAT
         data: {
           chatId?: string;
         };
@@ -38,11 +40,11 @@ await aliceVideoCall.request(
   });
 ```
 
-| Property   | Description                                                                        |
-| ---------- | ---------------------------------------------------------------------------------- |
-| recipients | Wallet address or addresses of the recipient(s)                                    |
-| chatId     | Unique identifier for every push chat, here, the one between the alice and the bob |
-| type       | Identifier for Push Video or Space                                                 |
+| Property       | Type                                | Type     | Description                                                                                                                            |
+| -------------- | ----------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipients`_ | `string[]`                          | -        | Wallet address or addresses of the recipient(s)                                                                                        |
+| `options?`     | `options.rules.access.type`         | `string` | Identifier for Push Video or Space. We use `VIDEO_NOTIFICATION_ACCESS_TYPE.PUSH_CHAT` from `@pushprotocol/restapi` here for Push Video |
+|                | `options.rules.access.data.chatId?` | `string` | Unique identifier for every push chat, here, the one between the alice and the bob                                                     |
 
 <ABlock
   href="https://www.npmjs.com/package/@pushprotocol/restapi#request"
@@ -61,6 +63,7 @@ In order to receive a video call request, we need to listen for the `RequestVide
 ```typescript
   // Listen to incoming messages using the Stream API
   import { CONSTANTS, VideoEventType } from "@pushprotocol/restapi";
+  let peerInfo;
   const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO], {
     filter?: {
       channels?: ['*'], // pass in specific channels to only listen to those
@@ -76,7 +79,6 @@ In order to receive a video call request, we need to listen for the `RequestVide
  stream.on(CONSTANTS.STREAM.VIDEO, async (data: VideoEvent) => {
   // Handle incoming call, when the type is RequestVideo
   if (data.event === VideoEventType.RequestVideo) {
-    const { peerInfo } = data;
 
     // peerInfo = {
     //   address: string;
@@ -86,11 +88,13 @@ In order to receive a video call request, we need to listen for the `RequestVide
     //   };
     // };
 
-    aliceVideoCall.setData((oldData) => {
-      return produce(oldData, (draft) => {
-        draft.peerInfo = peerInfo;
-      });
-    });
+    // aliceVideoCall.setData((oldData) => {
+    //   return produce(oldData, (draft) => {
+    //     draft.peerInfo = peerInfo;
+    //   });
+    // });
+
+    peerInfo = data.peerInfo;
   }
  });
 
@@ -107,7 +111,7 @@ After receiving a request for a video call, you can show a sort of incoming call
 
 ```typescript
 // aliceVideoCall.approve(peerInfo: VideoPeerInfo);
-await aliceVideoCall.approve(data.peerInfo);
+await aliceVideoCall.approve(peerInfo);
 ```
 
 <ABlock
@@ -196,7 +200,12 @@ And add this to the event handler of the `DenyVideo` event from stream API:
   // To listen to real-time video calls
  stream.on(CONSTANTS.STREAM.VIDEO, async (data: VideoEvent) => {
 
- // If the received status is DisconnectVideo that means the call has ended
+ // If the received status is DenyVideo that means the peer has denied the call
+  if(data.event === VideoEventType.DenyVideo){
+    // here you can update the UI with a toast or something that the peer denied the call
+  }
+
+   // If the received status is DisconnectVideo that means the call has ended
   if(data.event === VideoEventType.DisconnectVideo){
     // here you can update the UI with a toast or something that the call is disconnected
   }
