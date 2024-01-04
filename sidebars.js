@@ -340,6 +340,11 @@ const sidebars = {
           href: "https://pushprotocol.notion.site/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a",
         },
         {
+          label: "Push Missions",
+          type: "link",
+          href: "https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731",
+        },
+        {
           label: "Push DAO",
           type: "link",
           href: "https://push.org/docs/dao",
