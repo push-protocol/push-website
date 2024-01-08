@@ -33,11 +33,19 @@ import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
 const userAlice = await PushAPI.initialize(signer, {
   env: CONSTANTS.ENV.STAGING,
-});
+})
+
+// Check for errors in userAlice's initialization and handle them if any
+if (userAlice.errors.length > 0) {
+  // Handle Errors Here
+}
 ```
 
   </TabItem>
 </Tabs>
+
+> Note: If a signer is not provided, or if an invalid signer is passed, or the SDK fails to generate or decrypt keys for the signer, the PushAPI will switch to Read mode.
+
 
 The function automatically initializes and returns the **Push user profile** object if one doesn't exist for the user or alternatively creates a new profile if the user has not been onboarded to Push network. This profile is used to interact with all function calls moving forward.
 
@@ -235,3 +243,31 @@ Blockchain Agnostic Wallet Address has been inspired by [CAIP-10 standard](https
 
 - **NFT profile** - Pass **`nft:{chain_standard}:{nftChainId}:{nftContractAddress}:{nftTokenId}`**
 - _`usage`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
+
+## Reinitialize user API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+
+// Reinitialize PushAPI for fresh start of NFT Account
+// Reinitialize only succeeds if the signer account is the owner of the NFT
+await userAlice.reinitialize({ versionMeta: { NFTPGP_V1: { password: 'NewPassword' } } });
+```
+
+  </TabItem>
+</Tabs>
+
+The function resets the **Push NFT user profile**. It's important to note that this method is not applicable to standard wallet addresses. Primarily, this function serves to refresh the PushAPI account, facilitating a fresh start for an NFT account. This is particularly useful for regaining access to the account during instances of NFT transfers and is not advised to be used otherwise.
+
+### Reinitialize user parameters
+
+When reinitializing your user, you can customize the process using several parameters. Here's a breakdown:
+
+| Param       | Type                      | Sub-Type                               | Default       | Remarks                                                                                               |
+| ----------- | ------------------------  | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------|
+| _`options`_ | `PushAPIReinitializeProps`| -                                      | -             | Optional configuration properties for reinitializing the PushAPI NFT account.                         |
+| -           | `options.versionMeta`     | `{ NFTPGP_V1 : password: string }`     | -             | Metadata related to the nft encryption version, including a password need for encrypting NFT account  |
+
+> Note: Parameters _`in this style`_ are mandatory.
