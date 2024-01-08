@@ -56,7 +56,7 @@ When initializing your user, you can customize the process using several paramet
 
 | Param      | Type                     | Sub-Type                                                                                                                                                                      | Default       | Remarks                                                                                              |
 | ---------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------- |
-| _`signer`_ | `SignerType`             | -                                                                                                                                                                             | -             | EthersV5 or Viem Signer                                                                              |
+| _`signer`_ | `SignerType`             | -                                                                                                                                                                             | -             | Ethers or Viem Signer                                                                              |
 | `options`  | `PushAPIInitializeProps` | -                                                                                                                                                                             | -             | Optional configuration properties for initializing the PushAPI.                                      |
 | -          | `options.env`            | `ENV`                                                                                                                                                                         | `staging`     | API env - 'prod' or 'staging'                                                                        |
 | -          | `options.progressHook`   | `(progress: ProgressHookType) => void`                                                                                                                                        | -             | A callback function to receive progress updates during initialization.                               |
@@ -142,7 +142,7 @@ When initializing your user, you can customize the process using several paramet
 
 /**
  * Specifies the type of signer.
- * Choose between EthersV5 or Viem Signer.
+ * Choose between Ethers or Viem Signer.
  */
 type Signer = SignerType;
 
@@ -202,7 +202,7 @@ interface PushAPIInitializeProps {
 /**
  * Initializes the PushAPI with given parameters.
  *
- * @param signer The type of signer (EthersV5 or Viem Signer).
+ * @param signer The type of signer (Ethers or Viem Signer).
  * @param options Optional configurations for initializing the PushAPI.
  */
 function initializePushAPI(signer: Signer, options?: PushAPIInitializeProps) {
