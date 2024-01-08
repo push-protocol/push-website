@@ -7,7 +7,7 @@ image: './cover-image.webp'
 text: "EPNS and NFT TiX strike a strategic alliance to bring decentralized push notifications for users."
 tags: [ Nft, Epnsproject ,Blockchain ,Newsletter ,Ethereum]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Hack the future of DeFi powered with Web3 communication aka EPNS](./cover-image.webp)
 
@@ -53,7 +53,9 @@ Speaker: [Harsh Rajat](http://twitter.com/harshrajat), Founder, EPNS
 
 Set your reminders! See you there 👋
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XsKGDVdKEFc" title="EPNS  Building Web3 Communication in your DeFi application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XsKGDVdKEFc" title="EPNS  Building Web3 Communication in your DeFi application" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 <ImageText>Harsh Rajat, Founder & Project Lead — EPNS</ImageText>
 

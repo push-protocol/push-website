@@ -6,7 +6,7 @@ image: './cover-image.webp'
 text: "Last Friday we had a very special Friday PUSH with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month."
 tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Friday PUSH #19](./cover-image.webp)
 <!--truncate-->
@@ -40,7 +40,9 @@ This Friday PUSH was held on July 8th, 2022 at 2PM UTC
 2:54:00 — 3:00:20 | He(Art)
 </i></blockquote>
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/B0-xoQutqwU" title="Friday PUSH Call 19 - #MeetTheBUIDLers | @ETHGlobal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/B0-xoQutqwU" title="Friday PUSH Call 19 - #MeetTheBUIDLers | @ETHGlobal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 <ImageText>PUSH CALL #19 Video/Audio — #MeetTheBUIDLers (of ETHNewYork 2022)</ImageText>
 

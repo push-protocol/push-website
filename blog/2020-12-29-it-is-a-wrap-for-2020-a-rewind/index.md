@@ -11,7 +11,7 @@ tags: [ Ethereum
 ,Roadmaps
 ]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./cover-image.webp)
 
@@ -32,7 +32,9 @@ Welcome to the EPNS 2020 Rewind! 🎉🎉🎉 where we summarize the major highl
 
 2020 marked the birth of EPNS. Since the ideation of EPNS back in January, it took us a couple of months to bring the idea to Ethereum Foundation who guided us to ETHGlobal HackMoney where we hacked and #buidl EPNS protocol and product MVP. With awesome guidance and mentorship from the folks at ETHGlobal team, AAVE, etc. the idea was refined, vetted, and validated thoroughly.
 
-<iframe width="100%" height="382" style={{borderRadius: '32px'}} src="https://www.youtube.com/embed/kwwnlmUpRsk" title="Ethereum Push Notification Service (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: '32px'}} src="https://www.youtube.com/embed/kwwnlmUpRsk" title="Ethereum Push Notification Service (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 <ImageText>How it started 💖</ImageText>
 

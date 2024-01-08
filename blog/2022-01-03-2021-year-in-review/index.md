@@ -6,6 +6,7 @@ image: './cover-image.webp'
 text: "2021 was an epic year for EPNS. And not just us, for the entire crypto space. It was the year when the world finally opened up to crypto, blockchain, DeFi, and all their use cases. Along with the fundamental changes also arrived the age of L2 scaling and NFTs, pushing blockchain and crypto further into the mainstream."
 tags: [Year in Review , Ethereum ,Blockchain ,Governance]
 ---
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Our 2021 Year in Review 🎉🎉🎉](./cover-image.webp)
 <!--truncate-->
@@ -50,7 +51,9 @@ Q2 also saw the release of the EPNS browser extension (allowing you to receive n
 
 Q3 saw MAJOR leaps and changes in how EPNS is designed and progressed as a protocol. It was time that EPNS looked to be future-proof and ready for a multi-chain world. The EPNS Protocol was now divided into EPNS Core Protocol and EPNS Communicator Protocol. The Core protocol is deployed only on Ethereum while the Communicator Protocol would be deployed on multiple chains, allowing for multi-chain functionality. Going multi-chain also meant that we needed to change how user incentives were designed, the details of which you can [read here](https://medium.com/ethereum-push-notification-service/roadmap-q3-audited-epns-push-protocol-v1-is-here-f4560dfe550c).
 
-<iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Breakpoint 2021: Surf's Up: Demos from the Solana Ecosystem (Day 2)" width="100%" height="382" style={{ borderRadius: "32px" }}  src="https://www.youtube.com/embed/eY9uxsJtfYQ?wmode=opaque&amp;start=9&amp;widget_referrer=https%3A%2F%2Fmedium.com%2Fpush-protocol%2Four-2021-year-in-review-8193ddbab4d8&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fcdn.embedly.com&amp;widgetid=1"></iframe>
+<VideoContainer>
+<iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="Breakpoint 2021: Surf's Up: Demos from the Solana Ecosystem (Day 2)" width="100%" height="100%" style={{ borderRadius: "32px" }}  src="https://www.youtube.com/embed/eY9uxsJtfYQ?wmode=opaque&amp;start=9&amp;widget_referrer=https%3A%2F%2Fmedium.com%2Fpush-protocol%2Four-2021-year-in-review-8193ddbab4d8&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fcdn.embedly.com&amp;widgetid=1"></iframe>
+</VideoContainer>
 
 
 Q3 also included the official [launch of EPNS Governance](https://medium.com/ethereum-push-notification-service/epns-governance-goes-live-lets-push-for-progressive-decentralized-governance-7448b58b89b4), marking the first step to progressively decentralizing the EPNS Protocol among $PUSH holders.

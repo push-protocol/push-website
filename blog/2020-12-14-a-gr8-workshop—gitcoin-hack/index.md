@@ -12,7 +12,7 @@ tags: [ Hacking
 ,Announcements
 ]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of A #GR8 Workshop — Gitcoin Hack](./cover-image.webp)
 
@@ -39,7 +39,9 @@ Our leads— Jaffet Sandi & Andrew Redden covered the following topics:
 
 You can watch the full session here:
 
-<iframe width="100%" style={{borderRadius: '32px'}} height="382" src="https://www.youtube.com/embed/vLbciMJZAlE" title="Leveraging your projects with EPNS - GR8 Workshops" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: '32px'}}  src="https://www.youtube.com/embed/vLbciMJZAlE" title="Leveraging your projects with EPNS - GR8 Workshops" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 EPNS Bounties
 =============

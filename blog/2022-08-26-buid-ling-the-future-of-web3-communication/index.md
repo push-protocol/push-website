@@ -6,7 +6,7 @@ image: './cover-image.png'
 text: "One of the best things about web3 and hackathons is how unique ideas transform into something tangible and solve web3 challenges and problems."
 tags: [ Web3, Hackathons, Developer, Push Notification, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022](./cover-image.png)
 <!--truncate-->
@@ -66,7 +66,9 @@ Harsh Rajat</i>
 
 - Saturday, September 2nd, at 5:30 PM ET / 9:30 PM UTC
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/OeZmrsF3tFQ" title="EPNS  How to add web3 push notifications to your app - Harsh Rajat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/OeZmrsF3tFQ" title="EPNS  How to add web3 push notifications to your app - Harsh Rajat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 3. <b>EPNS weekly workshop</b>
 

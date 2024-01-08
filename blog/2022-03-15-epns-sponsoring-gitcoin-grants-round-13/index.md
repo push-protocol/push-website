@@ -10,7 +10,7 @@ tags: [ Gitcoin
 ,Quadraticfunding
 ,Sponsorship]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS sponsoring Gitcoin Grants Round 13!](./cover-image.webp)
 
@@ -24,7 +24,9 @@ Gitcoin Grants is a community-funded quadratic funding grants program where peop
 
 _“It’s really powerful if you think about it, even a dollar donated by a community member can give a project 500 dollars or even more. So if you;re building your project right or your community right, you can receive so much value. And that’s the power of quadratic funding. ”_ [Harsh Rajat in Rockstars of Ethereum with Kevin Owocki](https://youtu.be/nClMGshU1nU?t=737)
 
-<iframe width="100%" style={{borderRadius: '32px'}} height="510" src="https://www.youtube.com/embed/nClMGshU1nU" title="Kevin Owocki of Ethereum - Season 1 Ep 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" style={{borderRadius: '32px'}} height="100%" src="https://www.youtube.com/embed/nClMGshU1nU" title="Kevin Owocki of Ethereum - Season 1 Ep 01" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Harsh Rajat w/ Kevin Owocki on how powerful the Gitcoin Grants is!
 

@@ -6,7 +6,7 @@ image: './cover-image.webp'
 text: "We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it."
 tags: [Web3 ,Graph ,Hackathons ,Ethereum ,Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS + Graph Hackathon 2022 Winners Announced!](./cover-image.webp)
 <!--truncate-->
@@ -16,7 +16,9 @@ import { ImageText } from '@site/src/css/SharedStyling';
 We kick started the hackathon with an integration workshop for EPNS \<-\> The Graph. Here is the demo video, in case you missed it.
 
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 EPNS posted the following bounties for the hackathon:
 

@@ -7,6 +7,8 @@ text: "Today we are excited to announce the launch of our brand new Push Snap â€
 tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
+
 ![Cover image of Bringing Push to MetaMask Snaps](./cover-image.webp)
 
 <!--truncate-->
@@ -54,16 +56,18 @@ pop-ups. You can easily switch them back on from your dApp.
 - Subscribing to a channel is completely gassless, you will need to sign the opt-in though.
 - Once done, you are all set. The address will now start receiving notifications.
 
+<VideoContainer>
 <iframe
-  width="100%"
-  height="382"
+  width= "100%"
+  height="100%"
   src="https://www.youtube.com/embed/LjPxKoYLiGs"
-  style={{ borderRadius: "32px" }}
+  style={{ borderRadius: "32px", aspectRatio: '56.25%' }}
   title="How to Add Web3 Notifications in Your MetaMask Wallet | Installing the Push Snap"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
 ></iframe>
+</VideoContainer>
 
 As such, your MetaMask wallet is your new notification hub, ensuring you never miss out on the latest updates and developments in web3. Get ready to embrace the future of web3 with ease and confidence.
 
