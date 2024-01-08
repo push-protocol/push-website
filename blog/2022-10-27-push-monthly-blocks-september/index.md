@@ -23,7 +23,7 @@ Hi <b>Push</b> frens!✨ This one is a very special Monthly Blocks edition as it
 Let’s jump into the good stuff immediately. The development team have been making strides in all areas in preparation for many good news to come very soon!
 
 - Wallet-to-Wallet integration tests & design in progress
-- Developer docs for mono-repo SDK and SNS have been added to [Push Documentation](https://docs.push.org/) hub along with a starter kit for Devs to build on top of Push SDK
+- Developer docs for mono-repo SDK and SNS have been added to [Push Documentation](https://push.org/docs) hub along with a starter kit for Devs to build on top of Push SDK
 - UI enhancements to the Push dApp is in progress and soon to be ready!
 - Configuration of push nodes to receive and process w2w based notifications in progress.
 - Optimization and standardization of Push Node is in the works as well.
