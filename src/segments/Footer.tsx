@@ -173,7 +173,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://docs.push.org/governance"
+                    href="https://push.org/docs/dao"
                     title={t('footer.links-section.governance-column.guides-link')}
                     target="_blank"
                   >

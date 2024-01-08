@@ -52,7 +52,7 @@ Once the network becomes fully decentralized, Push Nodes will be incentivized to
 
 <i>Read about Push Economics here:</i><br/><br/>
 
-[Push Token Economics](https://docs.push.org/hub/pusheconomics/push-token-economics?source=post_page-----90fdea8d9e8e--------------------------------)
+[Push Token Economics](https://push.org/docs/tokenomics/deepdive/$push/)
 
 
 ## How Does a User Send a Message Using Their Account Address?

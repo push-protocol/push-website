@@ -151,7 +151,7 @@ That’s it! You now know how to use the main features of the Push Protocol Sock
 
 We’ll cover other parts of the Push SDK in coming posts so stay tuned!
 
-- [Push Protocol SDK documentation here](https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket) — if you’d like more reference material to chew on.
+- [Push Protocol SDK documentation here](https://push.org/docs/) — if you’d like more reference material to chew on.
 - [Push SDK on GitHub](https://github.com/ethereum-push-notification-service/push-sdk)
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
 - [Push developer docs](/docs/ "Push developer docs") to get started on building right away!

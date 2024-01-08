@@ -22,9 +22,9 @@ We’re extremely excited to announce Push has officially added BNB Chain to its
 With this announcement, we’re excited to introduce our BNB launch Collaborators who are collaborating with Push on various use cases to bring web3 native notification and messaging to users across the BNB ecosystem.
 
 ### Push and BNB: Decentralized communication to power web3 UX
-Using Push, BNB dapp developers can begin adding notification services to their dapps, building custom communication channels, and enabling wallet-to-wallet communication for users (check out [this guide](https://docs.push.org/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains/bnb-chain-binance-channel-setup) for getting started). For end-users, this means enhanced capacity to stay updated on critical information relevant to their favorite dapps.
+Using Push, BNB dapp developers can begin adding notification services to their dapps, building custom communication channels, and enabling wallet-to-wallet communication for users (check out [this guide](https://push.org/docs/notifications/tutorials/enabling-channel-on-other-chains/) for getting started). For end-users, this means enhanced capacity to stay updated on critical information relevant to their favorite dapps.
 
-The BNB notification ecosystem will be available through the primary Push Protocol app: [app.push.org](http://app.push.org/). For users, you can follow this [user guide](https://docs.push.org/users/basics/how-to-start-using-push-notifications) to begin opting-in to channels.
+The BNB notification ecosystem will be available through the primary Push Protocol app: [app.push.org](http://app.push.org/). For users, you can follow this [user guide](https://push.org/docs/notifications/s) to begin opting-in to channels.
 
 This integration is a major step forward in Push’s mission to provide seamless and decentralized web3 communication and we are thrilled to have eight new frens from BNB joining our mission.
 
