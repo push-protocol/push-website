@@ -8,7 +8,7 @@ Can’t believe it’s been more than six months since our Mainnet launch!
 And not to mention that we’ve got some of the best collaborations in the Web3 space packed with some amazing feature upgrades to help build a truly decentralized communication layer across Web3!"
 tags: [Roadmaps, Ethereum, Epnsproject, Notifications, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText,VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Roadmap 2022 — Q2 Wrap Up](./cover-image.webp)
 <!--truncate-->
@@ -130,7 +130,9 @@ Apart from supporting the builders across multiple ecosystems, we also hosted an
 ### Featured
 Apart from achieving a majority of the roadmap goals, our team proudly represented EPNS on the Global stage at numerous events. And to reiterate our narrative of why Web3 communication matters, our co-founder Harsh Rajat delivered a special talk at Schelling Point.
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/h0drbcBMUUU" title="Why Web3 Communication Matters - Harsh Rajat at Schelling Point 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/h0drbcBMUUU" title="Why Web3 Communication Matters - Harsh Rajat at Schelling Point 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Not to mention the brilliant workshops hosted in Amsterdam, Graph Hack, and NYC. Here is one such workshop at ETH Amsterdam where Fabio Costa explains [building Web3 communications with EPNS](https://www.youtube.com/watch?v=AoIaB_lGayY). Must take a look at them if you missed out.
 

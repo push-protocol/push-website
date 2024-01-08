@@ -12,7 +12,7 @@ tags: [ Announcements
 ,Blockchain
 ]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Monthly Blocks](./cover-image.webp)
 
@@ -30,7 +30,9 @@ Our Liquidity Rewards Program has been a great success! It has consistently deli
 
 Make sure to take a look at this awesome explainer video from Defi Dad.
 
-<iframe width="100%" style={{borderRadius: '32px'}} height="382" src="https://www.youtube.com/embed/Maq-KxPv8W4" title="How to Earn 120-210% APR Yield Farming with The Ethereum Push Notification Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: '32px'}}  src="https://www.youtube.com/embed/Maq-KxPv8W4" title="How to Earn 120-210% APR Yield Farming with The Ethereum Push Notification Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Additionally, we recently updated the [Community Incentives website](http://incentives.epns.io/) to show more information about your position in a pool and enabled support for Wallet Connect and Ledger. Also, we are adding APR & APY percentages soon.
 

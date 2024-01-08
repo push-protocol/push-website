@@ -7,6 +7,7 @@ text: "Today, we are excited to announce Billion Reasons to Build — Push’s t
 tags: [Push Protocol, Devops, Devtools, Web3, Blockchain Technologies]
 
 ---
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of A Billion Reasons to Build: Finding India’s Best Web3 Developers 🇮🇳](./cover-image.png)
 
@@ -130,6 +131,8 @@ Make sure to follow [@pushprotocol on Twitter](https://twitter.com/pushprotocol)
 
 Join us on discord to chat https://discord.com/invite/pushprotocol
 
-<iframe width="100%" height="382" style={{borderRadius: "32px"}} src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: "32px"}} src="https://www.youtube.com/embed/wzAeKoZ5tGk" title="Announcing Billion Reasons to Build - India Dev Tour 🇮🇳" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
     
 

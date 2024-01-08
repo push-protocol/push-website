@@ -8,7 +8,7 @@ To everyone who has helped support the Push project — devs, community members,
 tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 ---
 
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push 2022 Year in Review🎉](./cover-image.webp)
 <!--truncate-->
@@ -29,7 +29,9 @@ To start with, we evolved from EPNS (Ethereum Push Notification Service) to [Pus
 
 And so far, people seem to love it.
 
-<iframe width="567" height="319" src="https://www.youtube.com/embed/ZiC-nbg9Iuk" title="EPNS Rebrands into Push Protocol — the Communication Protocol for Web3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px", aspectRatio: '56.25%' }} src="https://www.youtube.com/embed/ZiC-nbg9Iuk" title="EPNS Rebrands into Push Protocol — the Communication Protocol for Web3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 A fantastic rebrand however needs similarly fantastic project developments behind it. This started included:
 

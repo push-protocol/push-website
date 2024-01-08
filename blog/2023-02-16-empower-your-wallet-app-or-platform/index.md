@@ -8,7 +8,7 @@ text: "Push Delivery Nodes serve as a decentralized solution for connecting web3
 tags: [ Web3, Developer, Blockchain Development,  Blockchain Technology, Delivery Nodes]
 
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Empower Your Wallet, App, or Platform with Push Delivery Nodes⚡](./cover-image.png)
 <!--truncate-->
@@ -107,7 +107,9 @@ curl - location - request POST 'https://<delivery_node_url>/apis/v1/pushtokens/r
 - <i>Demo Mobile App Repo Link:</i> <a href='https://github.com/ethereum-push-notification-service/demo-push-mobile-app'>https://github.com/ethereum-push-notification-service/demo-push-mobile-app</a>
 - <i>Delivery Node Setup Video Tutorial:</i>
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/OlRHL3qd4oY" title="Get started with Push Delivery Nodes | #web3 communication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/OlRHL3qd4oY" title="Get started with Push Delivery Nodes | #web3 communication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 <i>PUSH Documentation:</i>  <a href='/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'>Integrating notifications via Push Delivery Nodes</a>
 

@@ -11,7 +11,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Governance ]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push GovEARNance Updates & Engagement Rewards Campaign](./cover-image.webp)
 
@@ -40,7 +40,9 @@ Check out the new resources in detail below, and to promote the Governance Upgra
 
 *   **Governance Channel:** We are launching a Governance Channel in the EPNS dapp where you will be notified whenever there is new information about EPNS governance. These notifications will include new proposals on the forum, upcoming votes on Snapshot, and announcements pertaining to our Push Governance initiatives. The goal is to keep the community up to date with all information related to EPNS governance. Check out the walk-through video below to subscribe on our dapp now!
 
-<iframe width="100%" style={{borderRadius: '32px'}} height="382" src="https://www.youtube.com/embed/vvDlJttgQgQ" title="How to subscribe to Push Governance channel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: '32px'}}  src="https://www.youtube.com/embed/vvDlJttgQgQ" title="How to subscribe to Push Governance channel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 *   **Brand new Governance Blog on** [**Mirror**](https://mirror.xyz/0xd0a99De1eD63d9F1Dd7F1a69787764E39e0F5baC)**:** All articles related to EPNS Governance will now be published on Mirror! Now, every article related to Governance will be released there, it will be the go-to destination for all articles related to EPNS Governance.
 

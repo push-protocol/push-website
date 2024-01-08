@@ -12,7 +12,7 @@ tags: [ Blockchain
 ,Blog
 ]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Update: Gitcoin Week 2](./cover-image.webp)
 
@@ -30,7 +30,9 @@ That is until all of us went into Miro at once and broke it! Yes, if you have be
 
 Our only sorrow is we weren’t able to interact with [Austin Thomas Griffith](https://medium.com/u/610daeab315b?source=post_page-----2c84b9cdbd0--------------------------------), we absolutely love his wacky videos… shoutout to Austin if you are reading this! Teach us how to make those [awesome awesome videos](https://www.youtube.com/watch?v=30pa790tIIA&list=PLJz1HruEnenCXH7KW7wBCEBnBLOVkiqIi).
 
-<iframe width="100%" style={{borderRadius: '32px'}} height="382" src="https://www.youtube.com/embed/neZeaXAnkAg" title="The Burner Wallet Challenge" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{borderRadius: '32px'}}  src="https://www.youtube.com/embed/neZeaXAnkAg" title="The Burner Wallet Challenge" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Awesome Austin!!
 
