@@ -13,7 +13,7 @@ tags: [ Newsletter
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
-![Cover image of EPNS and Li.Fi Team Up To Improve User Experience Through Push Notifications](./cover-image.webp)
+![Cover image of EPNS and LiFi Team Up To Improve User Experience Through Push Notifications](./cover-image.webp)
 
 <!--truncate-->
 
@@ -36,8 +36,7 @@ Through our pilot partnership with Li.Fi, we aim to provide a way for the protoc
 
 As Li.Fi strives to bridge the gaps between blockchain networks, we are pleased to have partnered with them on this journey and hope to be an integral part of their operations.
 
-**About Li.Fi**
-===============
+### About Li.Fi
 
 Li.Fi is a cross-chain bridge aggregation protocol that supports any-2-any cross-chain swaps by aggregating bridges and connecting them to DEXes and DEX aggregators.
 
