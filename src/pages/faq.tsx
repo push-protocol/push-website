@@ -244,7 +244,7 @@ const Notifs = [
         <Span>
           Additionally, wallets should check out{' '}
           <AMod
-            href="https://docs.push.org/hub/pusheconomics/push-token-economics"
+            href="https://push.org/docs/tokenomics/deepdive/$push/"
             target={'_blank'}
           >
             fee pool of Push which re-imagines and incentivises their contribution
@@ -649,7 +649,7 @@ const Token = [
         <Span>
           Read in detail 👉{' '}
           <AMod
-            href="https://docs.push.org/hub/pusheconomics"
+            href="https://push.org/docs/tokenomics/"
             target={'_blank'}
           >
             Pusheconomics

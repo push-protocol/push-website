@@ -289,7 +289,7 @@ function MydApp() {
 
 That’s it! You now know how to use the components of the <b>@pushprotocol/uiweb</b> API to add push notification functionality to your application.
 
-We’ll cover the other parts of the SDK in the coming posts. More reference material is available in the [Push Protocol SDK documentation](https://docs.push.org/developers/developer-tooling/push-sdk).
+We’ll cover the other parts of the SDK in the coming posts. More reference material is available in the [Push Protocol SDK documentation](https://push.org/docs/).
 
 In addition, try out the [Push SDK sandbox](https://github.com/ethereum-push-notification-service/push-sdk-sandbox).
 

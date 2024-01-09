@@ -8,7 +8,7 @@ text: "We are extremely excited to be releasing a long-awaited feature - Notific
 This new feature enables both channels and users to customize the type of notifications they send and receive respectively."
 tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️](./cover-image.webp)
 
@@ -87,7 +87,9 @@ Full list of Push channels 👉https://app.push.org/channels
 
 Here’s a full demo on how to both setup and sign up for Notification Settings:
 
-<iframe width="100%" height="384" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 
 ### Pushing Personalized Communication Experiences

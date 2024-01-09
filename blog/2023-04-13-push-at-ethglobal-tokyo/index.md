@@ -43,7 +43,7 @@ Push は、オープンなコミュニケーションのミドルウェアであ
 
 さらに、チャンネルのオーナーは、通知送信権限を他の任意のウォレットアドレスに委任することもできます。これにより、選択されたウォレットアドレスがチャンネルを代表して通知を送信できます。ただし、チャンネルのオーナーはいつでも委任を取り消すことができます。
 
-👉 https://docs.push.org/developers/developer-tooling/push-sdk
+👉 https://push.org/docs/
 
 ### Push Chat
 
@@ -58,7 +58,7 @@ Push Chat SDKの統合は非常に簡単で、以下の機能に分かれます�
 - 特定のチャットの個々のメッセージの取得
 - チャットへの返信
 
-👉 https://docs.push.org/developers/developer-guides/integrating-push-chat
+👉 https://push.org/docs/chat/ui-components/integrate-push-chat/
 
 ### Push Group Chat
 
@@ -166,4 +166,4 @@ IPFSに何かをアップロードしたとき、またはバリデーターが�
 
 Push ChatとPush Notificationsの仕組みに興味がある場合は、是非[discordチャンネル](https://discord.com/invite/pushprotocol)に参加し、あなたが何をビルドしているのかを教えてください。Pushチームは、あなたがそれを実現するために必要なすべての開発者リソースを提供できます。
 
-すぐにビルドを開始するには、<a href="https://docs.push.org/developers"><b>こちら</b></a>のPush開発者ドキュメントにアクセスしてください。
+すぐにビルドを開始するには、<a href="https://push.org/docs/"><b>こちら</b></a>のPush開発者ドキュメントにアクセスしてください。

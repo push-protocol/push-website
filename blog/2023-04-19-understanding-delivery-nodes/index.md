@@ -100,5 +100,5 @@ With all these services working together, messages can be sent from one wallet t
 
 To begin building with Push Delivery Nodes, read up on our documentation specifically for it here:
 
-👉👉👉https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node
+👉👉👉https://push.org/docs/notifications/tutorials/integrate-notifications-via-delivery-node/
 

@@ -6,7 +6,7 @@ image: './cover-image.webp'
 text: "In the fourth segment of ‘Frens of Push,’ we are in conversation with Michael Kuvshynov, co-founder and CEO of Tollan Worlds, to talk about how Push is enabling communication on the gaming platform."
 tags: [ Frensofpush, Push Notification, Gaming, Web3 Game, Mmorpg]
 ---
-
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push and Tollan Worlds Partner to Level Up Communication With Gamers](./cover-image.webp)
 <!--truncate-->
@@ -39,7 +39,9 @@ Our main goal is not only to create great gameplay with a deep story but also to
 
 Tollan Worlds “solves the problem” of both traditional and blockchain gaming worlds. Transparent monetization allows us to be closer to our player base and develop trust and long-term retention of our community. Focusing on the gameplay and story, and escaping Ponzi play2earn schemes allows us to create a game that doesn’t depend on market conditions and where money does not interfere with the core gameplay.
 
-<iframe width="567" height="319" src="https://www.youtube.com/embed/MOJ4hSdbiD0" title="Tollan Worlds: The First Adventure Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/MOJ4hSdbiD0" title="Tollan Worlds: The First Adventure Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 ## How do people play Tollan Worlds?
 <b>Michael:</b> Our pre-alpha is currently live for a limited amount of users, with only 6,000 spots available. Everyone who plays it can mint our Mark of Fate NFT in-game for FREE.
