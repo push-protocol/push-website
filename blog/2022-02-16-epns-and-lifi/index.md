@@ -1,19 +1,14 @@
 ---
 slug: epns-and-lifi-team-up
-title: 'EPNS and Li.Fi Team Up To Improve User Experience Through Push Notifications'
-description: 'EPNS and Li.Fi Team Up To Improve User Experience Through Push Notifications'
+title: 'EPNS and LiFi Team Up To Improve User Experience Through Push Notifications'
+description: 'EPNS and LiFi Team Up To Improve User Experience Through Push Notifications'
 authors: [push]
 image: './cover-image.webp'
-text: "Despite its monumental success over the past couple of years, the decentralized finance (DeFi) industry still largely remains to be fragmented. Every blockchain network within the industry seems to have created walled gardens for themselves that make it difficult for users to bypass. As a result, users are usually stuck with funds on a single blockchain network, preventing them from taking advantage of opportunities across different chains."
-tags: [ Newsletter
-,Epnsproject
-,Defi
-,Ethereum
-,Blockchain]
+text: "Despite its monumental success over the past couple of years, the decentralized finance (DeFi) industry still largely remains to be fragmented. Every blockchain network within the industry seems to have created walled gardens for themselves that make it difficult for users to bypass."
+tags: [ Newsletter,Epnsproject,Defi,Ethereum,Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
 
-![Cover image of EPNS and Li.Fi Team Up To Improve User Experience Through Push Notifications](./cover-image.webp)
+![Cover image of EPNS and LiFi Team Up To Improve User Experience Through Push Notifications](./cover-image.webp)
 
 <!--truncate-->
 
@@ -21,7 +16,7 @@ Despite its monumental success over the past couple of years, the decentralized 
 
 This creates a lackluster user experience, hindering the full potential of DeFi and thereby its mainstream adoption. Having recognized this problem, Li.Fi, an emergent DeFi protocol, created a robust way for users to experience interoperability within DeFi. As such, we’re pleased to announce our pilot collaboration with Li.Fi to provide a means of communication between the protocol and users.
 
-### How Li.Fi Can Benefit from EPNS
+### How LiFi Can Benefit from EPNS
 
 Li.Fi is a cross-chain bridge aggregator protocol that allows users to swap any token for another, irrespective of their native blockchain networks. The protocol chooses the best possible bridge to move funds from one chain to the other by connecting to DEXs on both sides. This means that by simply integrating the Li.Fi SDK and API, dApps and protocols in DeFi can allow users to bypass the walled gardens of blockchain networks to conduct transactions.
 
@@ -36,8 +31,7 @@ Through our pilot partnership with Li.Fi, we aim to provide a way for the protoc
 
 As Li.Fi strives to bridge the gaps between blockchain networks, we are pleased to have partnered with them on this journey and hope to be an integral part of their operations.
 
-**About Li.Fi**
-===============
+### About LiFi
 
 Li.Fi is a cross-chain bridge aggregation protocol that supports any-2-any cross-chain swaps by aggregating bridges and connecting them to DEXes and DEX aggregators.
 

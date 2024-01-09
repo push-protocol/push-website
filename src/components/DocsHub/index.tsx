@@ -123,11 +123,18 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
           </ItemV>
 
         {content == 1 && codeblock && 
+        <Div onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        }}>
           <TechDocCodeBlock
             language="jsx"
+          
+            
           >
             {codeblock}
           </TechDocCodeBlock>
+          </Div>
         }
       </TechDocContent>
     </TechDocCard>
@@ -744,3 +751,5 @@ const PushSdkContentArrow = styled(Span)`
   display: flex;
   align-items: center;
 `
+const Div = styled.div`
+`;
