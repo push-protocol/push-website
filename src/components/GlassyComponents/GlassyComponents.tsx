@@ -93,7 +93,7 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
             return (
             <BlockItem padding="0px" height={height}>
             <Playground bgImage={bgImage}>
-                <H2 fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="center">{title}</H2>
+                <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="center">{title}</H2Text>
             </Playground>
             </BlockItem>
             )} else { return(<div></div>)}
