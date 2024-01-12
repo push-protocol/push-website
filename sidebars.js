@@ -131,6 +131,10 @@ const sidebars = {
       id: "chat/docs-chat-quickstart",
     },
     {
+      type: "doc",
+      id: "chat/docs-chat-supported-wallet-standards",
+    },
+    {
       type: "category",
       label: "Build",
       link: {

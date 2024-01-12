@@ -77,10 +77,13 @@ const config = {
         fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
         toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
         redirects: [
-          // /docs/oldDoc -> /docs/newDoc
           {
-            to: "/docs/chat/build/stream-chat/",
             from: "/docs/chat/build/stream-chats/",
+            to: "/docs/chat/build/stream-chat/",
+          },
+          {
+            from: "/docs/chat/build/types-of-recipient/",
+            to: "/docs/chat/supported-wallet-standards/",
           },
           // // Redirect from multiple old paths to the new path
           // {

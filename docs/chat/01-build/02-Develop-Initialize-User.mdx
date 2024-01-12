@@ -58,23 +58,86 @@ Push Network operates on the following environments —
 
 ---
 
+### Using for Lens / Cyberconnect / Any NFTs
+Push Chat supports Lens, Cyberconnect, NFT wallets and any EVM or non-EVM wallets ensuring cross-chain messaging or cross-nft messaging can become a reality.
+
+To use Push Chat for Lens, Cyberconnect, NFT wallets or any EVM or non-EVM wallets, you will need to pass the `account` parameter in `options` object while initializing. This will ensure that the PushAPI is initialized for the right account. 
+
+**Example**
+- **NFT profile** - Pass **`nft:{chain_standard}:{nftChainId}:{nftContractAddress}:{nftTokenId}`**
+- _`account`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
+
+Read about [supported wallet standards](/docs/chat/supported-wallet-standards) to understand all supported formats for `account` parameter.
+
+---
+
 ### Initialize user parameters
 
 When initializing your user, you can customize the process using several parameters. Here's a breakdown:
 
 | Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                                              |
 | ---------- | ------------------------ | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| _`signer`_ | `SignerType`             | -                                      | -             | Ethers or Viem Signer                                                                                                                                                              |
+| _`signer`_ | `SignerType`             | -                                      | -             | Ethers or Viem Signer.                                                                                                                                                              |
 | `options`  | `PushAPIInitializeProps` | -                                      | -             | Optional configuration properties for initializing the PushAPI.                                                                                                                      |
-| -          | `options.env`            | `ENV`                                  | `staging`     | API env - 'prod' or 'staging'                                                                                                                                                        |
-| -          | `options.progressHook`   | `(progress: ProgressHookType) => void` | -             | A callback function to receive progress updates during initialization.                                                                                                               |
-| -          | `options.account`        | `string`                               | -             | The [account](/docs/chat/build/initialize-user#use-lens-profile--any-nfts--chain-agnostic-wallet-address) to associate with the PushAPI. If not provided, it is derived from signer. |
-| -          | `options.version`        | `string`                               | `ENC_TYPE_V3` | The [encryption version](/docs/chat/concepts/encryption-version-in-push-chat) to use for the PushAPI                                                                                 |
+| -          | `options.env`            | `ENV`                                  | `staging`     | API env - 'prod' or 'staging'.                                                                                                                                                        |
+| -          | `options.progressHook`   | `(progress: ProgressHookType) => void` | -             | A callback function to receive progress updates during initialization. Expand **Progress Hook Type and Response** dropdown below to learn more                                                                                                          |
+| -          | `options.account`        | `string`                               | -             | The [account](/docs/chat/supported-wallet-standards "Push Chat support wallet standards") to associate user with. If not provided, it is derived from signer. |
+| -          | `options.version`        | `string`                               | `ENC_TYPE_V3` | The [encryption version](/docs/chat/concepts/encryption-version-in-push-chat) to use for the PushAPI.                                                                                 |
 | -          | `options.versionMeta`    | `{ NFTPGP_V1 ?: password: string }`    | -             | Metadata related to the encryption version, including a password if needed.                                                                                                          |
-| -          | `options.autoUpgrade`    | `boolean`                              | `true`        | If `true`, upgrades encryption keys to latest encryption version                                                                                                                     |
-| -          | `options.origin`         | `string`                               | -             | Specify origin or source while creating a Push Profile                                                                                                                               |
+| -          | `options.autoUpgrade`    | `boolean`                              | `true`        | If `true`, upgrades encryption keys to latest encryption version.                                                                                                                     |
+| -          | `options.origin`         | `string`                               | -             | Specify origin or source while creating a Push Profile.                                                                                                                               |
 
 > Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="ProgressHook Type and Response">
+Informs about individual progress stages during user creation / updates if progresshook as a callback function is passed during API call.
+
+| Param      | Type             | Subtype  | Default | Remarks                                                |
+| ---------- | ---------------- | -------- | ------- | ------------------------------------------------------ |
+| `progress` | `object`         | -        | -       | progress object that is passed in the callback         |
+| -          | `Progress.progressId`    | `string` | -       | Predefined, ID associated with the progress objects    |
+| -          | `Progress.progressTitle` | `string` | -       | Predefined, title associated with the progress objects |
+| -          | `Progress.progressInfo`  | `string` | -       | Predefined, info associated with the progress objects  |
+| -          | `Progress.level` | `string` | -       | Predefined, Level associated with the progress objects |
+
+_`Progress object details`_
+
+| Progress.id              | Progress.level | Progress.title                                      | Progress.info                                           |
+| ------------------------ | -------------- | --------------------------------------------------- | ------------------------------------------------------- |
+| `PUSH-CREATE-01`         | `INFO`         | Generating Secure Profile Signature                 | This step is only done for first time users and might take a few seconds. PGP keys are getting generated to provide you with secure yet seamless chat |
+| `PUSH-CREATE-02`         | `INFO`         | Signing Generated Profile                           | This step is only done for first time users. Please sign the message to continue. |
+| `PUSH-CREATE-03`         | `INFO`         | Encrypting Generated Profile                        | Encrypting your keys. Please sign the message to continue. |
+| `PUSH-CREATE-04`         | `INFO`         | Syncing Generated Profile                           | Please sign the message to continue. Steady lads, chat is almost ready! |
+| `PUSH-CREATE-05`         | `SUCCESS`      | Setup Complete                                      | - |
+| `PUSH-UPGRADE-01`        | `INFO`         | `Deprecated` Generating New Profile Signature                    | Trying to Upgrade Push Chat Keys to latest version. Please sign the message to continue. |
+| `PUSH-UPGRADE-02`        | `INFO`         | Decrypting Old Profile                              | Trying to Upgrade Push Chat Keys to latest version. Please sign the message to continue. |
+| `PUSH-UPGRADE-03`        | `INFO`         | `Deprecated` Syncing New Profile                                 | Please sign the message to continue. Steady lads, chat is almost ready! |
+| `PUSH-UPGRADE-04`        | `INFO`         | `Deprecated` Decrypting Old Profile                              | Trying to Upgrade Push Chat Keys to latest version. Please sign the message to continue. |
+| `PUSH-UPGRADE-05`        | `SUCCESS`      | Upgrade Completed, Welcome to Push Chat             | - |
+| `PUSH-DECRYPT-01`        | `INFO`         | Decrypting Profile                                  | Please sign the transaction to decrypt profile |
+| `PUSH-DECRYPT-02`        | `SUCCESS`      | Push Profile Unlocked                               | Unlocking push profile |
+| `PUSH-AUTH-UPDATE-01`          | `INFO`        | Generating New Profile Signature                                  | Trying to Update Push Chat Keys to `VERSION_NUMBER` version. Please sign the message to continue. |
+| `PUSH-AUTH-UPDATE-02`          | `INFO`        | Generating New Encrypted Profile                                  | Encrypting Push Chat Keys with `VERSION_NUMBER` version. Please sign the message to continue. |
+| `PUSH-AUTH-UPDATE-03`          | `INFO`        | Syncing Updated Profile                                  | Please sign the message to continue. Steady lads, chat is almost ready! |
+| `PUSH-AUTH-UPDATE-04`          | `SUCCESS`        | Update Completed, Welcome to Push Chat                                 | - |
+| `PUSH-AUTH-UPDATE-05`          | `INFO`        | Generating New Profile Signature                                  | Trying to Update Push Profile creds. Please sign the message to continue. |
+| `PUSH-AUTH-UPDATE-06`          | `INFO`        | Generating New Profile Signature                                  | Encrypting Push Chat Keys with new creds. Please sign the message to continue. |
+| `PUSH-DECRYPT-AUTH-01`          | `INFO`        | Decrypting Profile Creds                                  | Please sign the transaction to decrypt profile creds. |
+| `PUSH-DECRYPT-AUTH-02`          | `INFO`        | Push Profile Creds Unlocked                                  | Unlocking push profile creds |
+| `PUSH-PROFILE-UPDATE-01`          | `ERROR`        | Syncing Updated Profile                                  | Steady lads, your profile is getting a new look! |
+| `PUSH-PROFILE-UPDATE-02`          | `SUCCESS`        | Profile Update Completed, Welcome to Push Chat                                 | - |
+| `PUSH-CHANNEL-CREATE-01` | `INFO`         | Uploading data to IPFS                              | The channel’s data is getting uploaded to IPFS |
+| `PUSH-CHANNEL-CREATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI |
+| `PUSH-CHANNEL-CREATE-03` | `INFO`         | Channel is getting created                          | Calls Push Core contract to create your channel |
+| `PUSH-CHANNEL-CREATE-04` | `SUCCESS`      | Channel creation is done, Welcome to Push Ecosystem | Channel creation is completed |
+| `PUSH-CHANNEL-UPDATE-01` | `INFO`         | Uploading new data to IPFS                          | The channel’s new data is getting uploaded to IPFS |
+| `PUSH-CHANNEL-UPDATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 DAI |
+| `PUSH-CHANNEL-UPDATE-03` | `INFO`         | Channel is getting updated                          | Calls Push Core contract to update your channel details |
+| `PUSH-CHANNEL-UPDATE-04` | `SUCCESS`      | Channel is updated with new data                    | Channel is successfully updated |
+| `PUSH-ERROR-00`          | `ERROR`        | Non Specific Error                                  | Dynamic error in the following format: `[Push SDK] - API  - Error - API [functionName()] -: [Dynamic Error Info]` |
+| `PUSH-ERROR-01`          | `WARN`        | Upgrade Profile Failed                                  | Dynamic warning in the following format: `[Push SDK] - API  - Error - API decryptPgpKey() -: [Dynamic Error Info]` |
+| `PUSH-ERROR-02`          | `ERROR`        | Transaction failed                                  | Dynamic warning in the following format: `[Push SDK] - Contract  - Error - [Name] -: [Dynamic Error Info]` |
+</Details>
 
 <Details summary="Expected response">
 ```typescript
@@ -213,57 +276,28 @@ function initializePushAPI(signer: Signer, options?: PushAPIInitializeProps) {
 }
 ```
 
-## Using for Lens / Cyberconnect / Any NFTs
-
-:::note
-Intermediate section, can be skipped unless you are planning to message NFT, .lens, .polygon or different blockchains.
-:::
-
-Push Chat supports Lens, Cyberconnect, NFT wallets and any EVM or non-EVM wallets. Since address standards for all of these are different, we came up with a compatible standard that is chain agnostic to ensure cross-chain messaging or cross-nft messaging can become a reality.
-
-This lead us to introduce support for multiple wallet address formats and coining the word _`account`_ instead of `address` to be used in parameters wherever necessary.
-
-### Standard Wallet Address
-
-- **Standard Wallet Address** - Standard wallet is supported and used by default
-- _`usage`_ - `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
-
-### Chain Agnostic Wallet Address
-
-- **Chain Agnostic Wallet Address** - Pass **`{chain_standard}:{account_id}`** format to use this instead of standard wallet address. SDK converts all normal wallet address to chain agnostic ones by default.
-- _`usage`_ - `eip155:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
-- _`usage`_ - `cosmos:cosmos1t2uflqwqe0fsj0shcfkrvpukewcw40yjj6hdc0`
-- _`usage`_ - `starknet:0x02dd1b492765c064eac4039e3841aa5f382773b598097a40073bd8b48170ab57`
-
-:::note
-Blockchain Agnostic Wallet Address has been inspired by [CAIP-10 standard](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-10.md), which is a great step in marking wallet address blockchain agnostic.
-:::
-
-### Lens profile / Cyberconnect profile / NFT profile
-
-- **NFT profile** - Pass **`nft:{chain_standard}:{nftChainId}:{nftContractAddress}:{nftTokenId}`**
-- _`usage`_ - `nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528`
-
 ## Reinitialize user API
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-
 // Reinitialize PushAPI for fresh start of NFT Account
 // Reinitialize only succeeds if the signer account is the owner of the NFT
+// PushAPI.reinitialize{options?});
 await userAlice.reinitialize({ versionMeta: { NFTPGP_V1: { password: 'NewPassword' } } });
 ```
 
   </TabItem>
 </Tabs>
 
-The function resets the **Push NFT user profile**. It's important to note that this method is not applicable to standard wallet addresses. Primarily, this function serves to refresh the PushAPI account, facilitating a fresh start for an NFT account. This is particularly useful for regaining access to the account during instances of NFT transfers and is not advised to be used otherwise.
+The function resets the **Push NFT user profile** including all connections and communication. It's important to note that this method is not applicable to standard wallet addresses.
+
+This is particularly useful during instances of NFT transfers where the NFT user password is not shared as it completely resets all communications, acting as a fresh start. 
+
+_`Important`_ - If the **NFT user password is shared**, then do not to use this method, instead you should look at [User encryption update API](/docs/chat/build/manage-user#user-encryption-update-api) for managing user migration.
 
 ### Reinitialize user parameters
-
-When reinitializing your user, you can customize the process using several parameters. Here's a breakdown:
 
 | Param       | Type                      | Sub-Type                               | Default       | Remarks                                                                                               |
 | ----------- | ------------------------  | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------|

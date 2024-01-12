@@ -30,7 +30,7 @@ import {
 
 ## Accept chat requests API
 
-To accept an incoming chat requests. Need to be done only once per chat request. Once chat request is accepted, the chat connection is marked as active and any chat you receive moving forward will also send push notifications driving re-engagement to your app.
+To accept an incoming chat requests. Only called once per chat request. Once chat request is accepted, the chat connection is marked as active and any chat you receive moving forward will also send push notifications driving re-engagement to your app.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -50,7 +50,7 @@ const bobAcceptAliceRequest = await userBob.chat.accept(aliceAddress);
 
 | Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
 | ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -78,7 +78,7 @@ const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
 
 | Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
 | ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -106,7 +106,7 @@ const bobAcceptAliceRequest = await userBob.chat.block(aliceAddress);
 
 | Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
 | ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/build/types-of-recipient) including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 

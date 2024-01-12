@@ -1,14 +1,14 @@
 ---
-id: docs-chat-develop-types-of-recipient
-title: Types of Recipient
+id: docs-chat-supported-wallet-standards
+title: Supported Wallet Standards
 hide_title: true
-slug: ./types-of-recipient
+slug: ./supported-wallet-standards
 displayed_sidebar: pushChatSidebar
 sidebar_position: 6
 image: "/assets/docs/previews/docs_chat_develop--types_of_recipient.png"
 ---
 
-# Types of Recipient overview
+# Supported Wallet Standards
 
 Push Chat is chain agnostic and even supports messaging wallet addresses, NFT addresses, all evms (and even non-EVM in the future). Below is the list of evergrowing standards that Push Chat is compatible with, either of which you can use as per your requirements —
 
@@ -43,6 +43,10 @@ await userAlice.chat.send("0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666", {
 - _`usage`_ - `eip155:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
 - _`usage`_ - `cosmos:cosmos1t2uflqwqe0fsj0shcfkrvpukewcw40yjj6hdc0`
 - _`usage`_ - `starknet:0x02dd1b492765c064eac4039e3841aa5f382773b598097a40073bd8b48170ab57`
+
+:::note
+Blockchain Agnostic Wallet Address has been inspired by [CAIP-10 standard](https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-10.md), which is a great step in marking wallet address blockchain agnostic.
+:::
 
 ```typescript
 // Sending to chain agnostic wallet address, support eip155 currently
