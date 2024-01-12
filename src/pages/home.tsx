@@ -28,6 +28,7 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
+import NotificationSection from "@site/src/components/GlassyComponents/NotificationSection.tsx"
 import {
   A,
   Content,
@@ -279,119 +280,18 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           </Content>
         </ShowcaseSection>
 
-        {/* MISSING PIECE OF WEB3 */}
-        <StorySection id="story" data-bkg="light" className="lightBackground">
+        {/* GRID SECTION */}
+        <GridsSection id="grids-section" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
+            padding="120px 40px 0px 40px"
           >
-            <Partners margin="40px 0">
-              <ItemV>
-                <Span
-                  fontWeight="400"
-                  color="#303C5E"
-                  fontSize="19px"
-                  lineHeight="160%"
-                  letterSpacing="-0.03em"
-                >
-                  {t("home.partners-section.networks")}{" "}
-                </Span>
-              </ItemV>
-
-              <LiveNetworks>
-                <LiveNetworkCard className="network">
-                  <EthLogoTextSVG
-                    alt="Logo for Ethereum"
-                    title="Ethereum Logo"
-                  />
-                </LiveNetworkCard>
-
-                <LiveNetworkCard className="network">
-                  <PolygonLogoTextSVG
-                    alt="Logo for Polygon"
-                    title="Polygon Logo"
-                  />
-                </LiveNetworkCard>
-
-                <LiveNetworkCard className="network">
-                  <BNBChainSVG
-                    alt="Logo for BNB Chain"
-                    title="BNB Chain Logo"
-                  />
-                </LiveNetworkCard>
-              </LiveNetworks>
-            </Partners>
-
-            <PushWorksRow>
-              <ItemImage justifyContent="center">
-                <Image
-                  src={require(`@site/static/assets/website/illustrations/pushnotifandchat.webp`).default}
-                  srcSet={`${require(`@site/static/assets/website/illustrations/pushnotifandchat@2x.webp`).default} 2x, ${require(`@site/static/assets/website/illustrations/pushnotifandchat@3x.webp`).default} 3x`}
-                  alt={t("home.partners-section.alt-missing-web3-image")}
-                  style={{ margin: "0 auto" }}
-                  loading="lazy"
-                />
-              </ItemImage>
-
-              <ItemV
-                justifyContent="space-around"
-                minHeight="530px"
-                alignItems="flex-start"
-              >
-                <ResponsiveH2
-                  fontSize="40px"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="110%"
-                >
-                  {t("home.partners-section.missing-web3-title")}
-                </ResponsiveH2>
-
-                <Span
-                  fontWeight="400"
-                  color="#303C5E"
-                  fontSize="19px"
-                  lineHeight="160%"
-                  letterSpacing="-0.03em"
-                  margin="10px 0px 0px 0px"
-                >
-                  {t("home.partners-section.missing-web3-text")}
-                </Span>
-
-                <Span
-                  fontWeight="500"
-                  color="#121315"
-                  fontSize="19px"
-                  lineHeight="142%"
-                  letterSpacing="-0.03em"
-                  margin="10px 0px 0px 0px"
-                >
-                  {t("home.partners-section.missing-web3-span")}
-                </Span>
-
-                <A
-                  href="/docs"
-                  title={t("home.partners-section.missing-web3-alt-button")}
-                  target="_self"
-                  background="#DD44B9"
-                  borderRadius="16px"
-                  padding="14px 32px"
-                  fontSize="18px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="26px"
-                  alignSelf="flex-start"
-                  margin="0px"
-                >
-                  {/* Learn about $PUSH */}
-                  {t("home.partners-section.missing-web3-button")}
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </A>
-              </ItemV>
-            </PushWorksRow>
+            <NotificationSection />
           </Content>
-        </StorySection>
-        
+        </GridsSection>
+
+
         {/* BUILD WITH PUSH */}
         <BuildWithPushSection id="buildWithPush">
           <ItemV
@@ -902,6 +802,7 @@ const ResponsiveH2 = styled(H2)`
 `;
 
 const HomeWrapper = styled(ItemV)`
+  background: #0D0D0F;
   margin: 0;
   padding: 0;
   
@@ -933,6 +834,12 @@ const HomeWrapper = styled(ItemV)`
  */
 
 const ShowcaseSection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0px;
+`;
+
+const GridsSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
