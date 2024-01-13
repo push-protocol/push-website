@@ -79,7 +79,7 @@ When initializing your user, you can customize the process using several paramet
 
 | Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                                              |
 | ---------- | ------------------------ | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| _`signer`_ | `SignerType`             | -                                      | -             | Ethers or Viem Signer. Pass **null** and provide `account` to enable **Read only mode** |
+| _`signer`_ | `SignerType`             | -                                      | -             | Ethers or Viem Signer. Pass **null** and provide `account` to enable **read only mode** |
 | `options`  | `PushAPIInitializeProps` | -                                      | -             | Optional configuration properties for initializing the PushAPI.                                                                                                                      |
 | -          | `options.env`            | `ENV`                                  | `staging`     | API env - 'prod' or 'staging'.                                                                                                                                                        |
 | -          | `options.progressHook`   | `(progress: ProgressHookType) => void` | -             | A callback function to receive progress updates during initialization. Expand **Progress Hook Type and Response** dropdown below to learn more                                                                                                          |
@@ -134,6 +134,7 @@ _`Progress object details`_
 </Details>
 
 <Details summary="Expected response">
+
 ```typescript
 {
   {
@@ -289,7 +290,7 @@ The function resets the **Push NFT user profile** including all connections and 
 
 This is particularly useful during instances of NFT transfers where the NFT user password is not shared as it completely resets all communications, acting as a fresh start. 
 
-_`Important`_ - If the **NFT user password is shared**, then do not to use this method, instead you should look at [User encryption update API](/docs/chat/build/manage-user#user-encryption-update-api) for managing user migration.
+_`Important`_ - If the **NFT user password is shared**, then do not to use this method, instead you should look at [User encryption update API](/docs/notifications/build/manage-user#user-encryption-update-api) for managing user migration.
 
 ### Reinitialize user parameters
 
