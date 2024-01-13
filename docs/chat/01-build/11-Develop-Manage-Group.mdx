@@ -53,9 +53,58 @@ const groupInfo = await userAlice.chat.group.info(chatid);
 
 ```typescript
 {
-  entry: true,
-  chat: true,
-  rules: { entry: { conditions: [] }, chat: { conditions: [] } }
+  members: [
+    {
+      wallet: 'eip155:0x34E8E400BE58476977EB37c18d3C005878AB6d0C',
+      publicKey: '-----BEGIN PGP PUBLIC KEY BLOCK-----\n...\n-----END PGP PUBLIC KEY BLOCK-----\n',
+      isAdmin: false,
+      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA3UlEQVR4AcXBwWnDMBiG4TdfPYEhHaUHQTcQ+OwptEQW0BDFZ4Nm0LlzJOAV0uufHASGwvc8l4/frydBaoWo50q0HCsj+7wRpVaIeq5EwkyYCbOJN9d0Z2SfN864pjsjwkyYCbPL9+3nyQk9V0ZSK5whzISZMJt6rkTLsRLt88YZPVei5ViJ9nkjEmbCTJhNqRWiB28yL1IrjPRciR79kyhRiISZMBNmU8+VkdQKUc+VEWEmzITZxEmpFf6TMBNmwmxajpWRB696roykVoiWY2VEmAkzYfYH3Hw19cO7Z2gAAAAASUVORK5CYII='
+    },
+    // ... other members
+  ],
+  pendingMembers: [
+    {
+      wallet: 'eip155:0xa708408C8a7329686D2fa3878d89c5506BCFc208',
+      publicKey: '-----BEGIN PGP PUBLIC KEY BLOCK-----\n...\n-----END PGP PUBLIC KEY BLOCK-----\n',
+      isAdmin: false,
+      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAv0lEQVR4AcXBsW3DMBCG0U8HbSBWqrRFuAOXUKU5bghV2YM7UIu4YmZQ2oMLBobh/O9N+7ndDHhqvMN7ZsQQM8QMsdlTI/r++iHymonWUhl51EK0lkp0XAuRIWaIGWIzT45rIXLec1wLI4aYIWaITfu53QSeGp/kPRMZYoaYITbzxHvmPxlihpghNq+lEj1q4ZPWUokMMUPMEJv2c7t5gafGiPfMKwwxQ8wQm/mDp0bkPTPiqRF5z4wYYoaYIfYLX7goJhSWdjIAAAAASUVORK5CYII='
+    },
+    {
+      wallet: 'eip155:0x057fcD7BD66e0b0e7CBF387D12b2A49A20d30922',
+      publicKey: '-----BEGIN PGP PUBLIC KEY BLOCK-----\n...\n-----END PGP PUBLIC KEY BLOCK-----\n',
+      isAdmin: false,
+      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA0UlEQVR4AcXBoXWEQBiF0Y93ONQSAxXQQRQWRQ+jUgQiHaDGRFBCDBVAN2sm9t+I2cNZ8e5tPn+/ChXLuRNtw0TNcu5E2zBRI8yEmTBrfr4/CkbCTJgJs5abcr9SM1+JO4SZMBNmLS/kfiWar0RN7lei+UrUCDNhJsza3K9Ej+YgWs7EHfOViLZhIurKSCTMhJkwa/mnKyPPdt7RlZEaYSbMhFk7X4loGyaibZiIujJS82gOnh1Ey7kTCTNhJsza3K9Ey5mo23lH7lciYSbMhNkfIf8uvOtcjvQAAAAASUVORK5CYII='
+    }
+  ],
+  contractAddressERC20: null,
+  numberOfERC20: 0,
+  contractAddressNFT: null,
+  numberOfNFTTokens: 0,
+  verificationProof: 'pgp:-----BEGIN PGP SIGNATURE-----\n' +
+    '\n' +
+    'wsBzBAEBCAAnBQJk6On3CRAtcVo/Zi9rvxYhBIrLzeZNLt+Uy3klWy1xWj9m\n' +
+    'L2u/AAAtBQgAku//IjUJkU1VTEJkW0t3U1yAgQNfTtkCrlIN9a627YI5f+yW\n' +
+    'tuv09s6WcJyiY1re05OiMMi/aRVs+zXSEwOJ2vb5q/DyEg/sSqMIxBo1YSAA\n' +
+    'LyH2BcvGiuHgaNoIVd37UQ5PcZPZ9NZBSDANwKS27+3Ze9fIcap/Fsdq1sRb\n' +
+    'CkE0U905jCAqJppRsY7sCcauf8dcDcL6CD5zsXCK6aRZtHVPMe4b4pq3+aCU\n' +
+    'inlMO2CN6gkB6sKDkJ/BoQspwEVvIsKzlgc40g3EFgpiw0PbcuGO78aNVzkJ\n' +
+    '2diQItfLLJr5Ptr9cgUJZYvI1edFytHUJMU3v+jCMMLTyuJxtEULEQ==\n' +
+    '=Ij/9\n' +
+    '-----END PGP SIGNATURE-----\n',
+  groupImage: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeAA'... 174406 more characters,
+  groupName: 'BRB Chat',
+  groupDescription: 'Learn, Build, Chat, and stay updated about everything BRB with this exclusive Token-gated group',
+  isPublic: true,
+  groupCreator: 'eip155:0x0d73BfA82E7C4f8997b989bB44C4566FA4553776',
+  chatId: '4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68',
+  meta: null,
+  scheduleAt: null,
+  scheduleEnd: null,
+  groupType: 'default',
+  status: null,
+  encryptedSecret: null,
+  sessionKey: null,
+  rules: { chat: { conditions: [Array] } }
 }
 ```
 
