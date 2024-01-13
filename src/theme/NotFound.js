@@ -60,7 +60,6 @@ export default function NotFoundWrapper(props) {
       )} */}
 
       <NotFound {...props} />
-      <Footer />
     </>
   );
 }
