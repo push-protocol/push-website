@@ -6,7 +6,7 @@ image: './cover-image.webp'
 description: 'PPushing Boundaries in Innovation at ETHGlobal Istanbul with Push Protocol"'
 text: "Unveiling the Champions of Innovation: Discover the brilliant minds who triumphed at ETHGlobal Istanbul, setting new benchmarks in web3 creativity!
 "
-tags: [Pushprotocol, Web3, Blockchain Technology, EthGlobal]
+tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 
 ![Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties](./cover-image.webp)

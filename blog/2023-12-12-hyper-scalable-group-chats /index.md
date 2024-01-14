@@ -6,7 +6,7 @@ image: './cover-image.webp'
 description: 'Hyper Scalable Group Chats 💬 ⚡'
 text: "Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is Push Group Chat, the ability to host conversations with multiple members. 
 "
-tags: [Pushprotocol, Web3, Blockchain Technology, EthGlobal]
+tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 ![Cover Image of Hyper Scalable Group Chats 💬 ⚡](./cover-image.webp)
 

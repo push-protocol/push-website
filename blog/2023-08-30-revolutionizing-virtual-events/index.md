@@ -4,7 +4,7 @@ title: 'Revolutionizing Virtual Events and Social Interactions with Decentralize
 authors: [push]
 image: './cover-image.webp'
 text: "Virtual events have become a cornerstone of modern communication, enabling people from around the world to connect and engage in a wide range of activities. However, traditional virtual event technologies often come with limitations that hinder the full potential of these experiences. With the emergence of Web3 and the power of decentralized technologies, there’s an opportunity to transform virtual events into more immersive, secure, and interactive experiences."
-tags: [Pushprotocol, Web3, Blockchain Technologies]
+tags: [Push Protocol, Web3, Blockchain Technologies]
 
 ---
 

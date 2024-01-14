@@ -30,47 +30,21 @@ const BRBOnline = ({sectionRef}) => {
   };
   return (
     <PartnerBountiesContainer ref={sectionRef}>
+    
+    <ItemH gap={!isMobile ? "24px" : "5px"} flexDirection={!isMobile ? 'row' : 'column'} margin="0px 0px 5px" >
+      <Header>BRB Online</Header>
+     
+    </ItemH>
     <ItemH>
-        <Span fontSize={isMobile ? "18px" : "23px"} fontWeight="200" color="#fff">
+        <Span fontSize={isMobile ? "18px" : "23px"} fontWeight="200" color="#fff" margin="0px 0px 40px">
         Join Virtually, Build and Win $50k+
         </Span>
     </ItemH>
-    <ItemH gap={!isMobile ? "24px" : "5px"} flexDirection={!isMobile ? 'row' : 'column'} margin="0px 0px 40px">
-      <Header>BRB Online</Header>
-      <Button
-        background="#e64de9"
-        display="flex"
-        maxWidth="187px"
-        alignItems="center"
-        borderRadius="8px"
-        padding="8px 16px 6px 16px"
-        height="33px"
-        margin='0 0 0 0'
-        fontFamily="Glancyr, sans-serif"
-        style={{ cursor: 'pointer' }}
-        onClick={() =>
-          openLink(
-            'https://lu.ma/on4kcvxu'
-          )
-        }
-      >
-        <Span
-          fontSize="16px"
-          fontWeight="400"
-          letterSpacing="0.3"
-          margin="0 5px 0 0"
-        >
-          Join BRB Online
-        </Span>
-        <ArrowSmall />
-      </Button>
-    </ItemH>
-    
     <GridItem>
     {brbOnlineList?.map((item, i) => (
       <PartnerLine
         key={i}
-        onClick={() => openLink('https://lu.ma/on4kcvxu')}
+        onClick={() => openLink(item.link)}
         disabled={item?.link ? false : true}
       >
         <PartnersLogo
@@ -89,9 +63,7 @@ const BRBOnline = ({sectionRef}) => {
             {item.date}
           </DateSpan>
 
-          <TimeSpan>
-            {item.time}
-          </TimeSpan>
+         
 
         </BountyItem>
       </PartnerLine>
@@ -233,7 +205,7 @@ const BountyDescription = styled(Span)`
 `;
 
 const DateSpan = styled(Span)`
-  color: #E64DE9;
+  color: #959CAA;
   font-size: 21px;
   font-style: normal;
   font-weight: 200;

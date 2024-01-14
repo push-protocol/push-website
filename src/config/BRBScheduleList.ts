@@ -180,7 +180,7 @@ export const citiesList = [
     {
       srcref: 'bengaluru',
       place: 'Bengaluru',
-      date: 'TBA',
+      date: '5 Dec 2023',
       link: 'https://www.lu.ma/brb-bengaluru',
       alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',

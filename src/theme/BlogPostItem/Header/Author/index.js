@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
+import clsx from "clsx";
+import React from "react";
 import styled from "styled-components";
 
 function MaybeLink(props) {
@@ -65,7 +65,6 @@ const Img = styled.img`
   border: var(--ifm-blog-avatar-border);
   border-radius: 100%;
   background: white;
-  padding: 10px;
 `;
 
 const AvatarDiv = styled.div`

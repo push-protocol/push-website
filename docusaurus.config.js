@@ -34,6 +34,13 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  // Themes
+  themes: ['@docusaurus/theme-mermaid'],
+  
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -70,10 +77,21 @@ const config = {
         fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
         toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
         redirects: [
-          // /docs/oldDoc -> /docs/newDoc
           {
-            to: "/docs/chat/build/stream-chat/",
             from: "/docs/chat/build/stream-chats/",
+            to: "/docs/chat/build/stream-chat/",
+          },
+          {
+            from: "/docs/chat/build/types-of-recipient/",
+            to: "/docs/chat/supported-wallet-standards/",
+          },
+          {
+            from: "/docs/chat/tutorials/push-sdk-playground/",
+            to: "/docs/chat/playground/push-sdk-playground/",
+          },
+          {
+            from: "/docs/chat/tutorials/push-react-component-playground-example/",
+            to: "/docs/chat/playground/push-react-component-playground-example/",
           },
           // // Redirect from multiple old paths to the new path
           // {

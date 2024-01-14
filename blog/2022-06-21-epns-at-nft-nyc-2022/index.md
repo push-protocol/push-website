@@ -6,7 +6,7 @@ image: './cover-image.webp'
 text: "We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!"
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS at NFT NYC 2022: All set for the NFTVerse](./cover-image.webp)
 <!--truncate-->
@@ -79,7 +79,9 @@ Speaking of NFTVerse, you might want to check out our latest blog we wrote on <b
 
 #### Lastly, What’s #MYNFTStory
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Since NFT NYC is also one of the biggest NFT Parties across the world, we were like, almost certain that a bunch of us frens would share a ton of #NFTStories as conversation starters, icebreakers and what not!
 

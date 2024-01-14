@@ -4,9 +4,12 @@ title: 'Push Spaces is Live! Decentralized Audio and Video Streaming is Here'
 authors: [push]
 image: './cover-image.webp'
 text: "Today, Push is excited to announce the public launch of Push Spaces! Push Spaces is the first decentralized audio and video streaming application in web3, built on top of Push Protocol’s existing communication ecosystem of 95k subscribers across 700+ applications and 3 ecosystems."
-tags: [Pushprotocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
+tags: [Push Protocol, Web3, Web3 Development ,Blockchain Technology ,Blockchain Development]
 
 ---
+
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
+
 ![Cover image of Push Spaces is Live! Decentralized Audio and Video Streaming is Here](./cover-image.webp)
 <!--truncate-->
 
@@ -43,7 +46,9 @@ The Push Spaces app is live for the earliest version of audio streaming. But tha
 
 Join the community of developers already building on Push Protocol, and get started with Push Spaces — [start here!](https://push.org/spaces)
 
-<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/QK6wx1wJ66A" title="Push Spaces is Live! ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/QK6wx1wJ66A" title="Push Spaces is Live! ✨" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 
 

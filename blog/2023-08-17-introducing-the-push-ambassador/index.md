@@ -4,7 +4,7 @@ title: 'Introducing the Push Ambassador India Program🌸'
 authors: [push]
 image: './cover-image.png'
 text: "Following the recent success of our Push Ambassador Program in LATAM, we are thrilled to be expanding our Ambassador Program to India!"
-tags: [Pushprotocol, Ambassador Program, Partnerships, Web3, Blockchain Technologies]
+tags: [Push Protocol, Ambassador Program, Partnerships, Web3, Blockchain Technologies]
 
 ---
 ![Cover image of Introducing the Push Ambassador India Program🌸](./cover-image.png)

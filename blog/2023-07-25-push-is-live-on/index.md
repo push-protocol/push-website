@@ -4,7 +4,7 @@ title: $PUSH is Live on Polygon & Quickswap!💜
 authors: [push]
 image: './cover-image.webp'
 text: "Today we are excited to announce the launch of the $PUSH token on Polygon! Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token."
-tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
+tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
 
 ---
 ![Cover image of $PUSH is Live on Polygon & Quickswap!💜](./cover-image.webp)

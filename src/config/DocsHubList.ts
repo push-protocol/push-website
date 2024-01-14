@@ -108,12 +108,12 @@ const aliceMessagesBob = await userAlice.chat.send(
     description: 'Learn about Push Spaces, the web3 native, token gated way of conducting spaces.',
   },
   {
-    title: 'Push Video Calls',
+    title: 'Push Video',
     srcref: 'video',
     alt: 'Logo representing Push Video - Push Protocol',
     link: '/docs/video',
     target: '_self',
-    description: 'Learn about the details of Push Video Calls and how to easily integrate it.',
+    description: 'Learn about the details of Push Video and how to easily integrate it.',
   },
   {
     title: 'Examples',
@@ -139,14 +139,14 @@ const aliceMessagesBob = await userAlice.chat.send(
     target: '_self',
     description: 'DAO of Push Protocol and how to get involved.',
   },
-  {
-    title: 'Showrunners',
-    srcref: 'showrunners',
-    alt: 'Logo representing Showrunners scaffold - Push Protocol',
-    link: '/docs/notifications/showrunners-scaffold/',
-    target: '_self',
-    description: 'Showrunners Framework and how to boost your web3 communications.',
-  },
+  // {
+  //   title: 'Showrunners',
+  //   srcref: 'showrunners',
+  //   alt: 'Logo representing Showrunners scaffold - Push Protocol',
+  //   link: '/docs/notifications/showrunners-scaffold/',
+  //   target: '_self',
+  //   description: 'Showrunners Framework and how to boost your web3 communications.',
+  // },
   {
     title: 'Tokenomics',
     srcref: 'tokenomics',
@@ -155,14 +155,14 @@ const aliceMessagesBob = await userAlice.chat.send(
     target: '_self',
     description: 'Learn about the tokenomics of $PUSH which powers the Push Protocol.',
   },
-  // {
-  //   title: 'Roadmap',
-  //   srcref: 'roadmap',
-  //   alt: 'Logo representing roadmap of Push Protocol',
-  //   link: '/docs/roadmap',
-  //   target: '_self',
-  //   description: 'Roadmap of Push Protocol and all the exciting things to come.',
-  // }
+  {
+    title: 'Roadmap',
+    srcref: 'roadmap',
+    alt: 'Logo representing roadmap of Push Protocol',
+    link: '/docs/roadmap',
+    target: '_self',
+    description: 'Roadmap of Push Protocol and all the exciting things to come.',
+  }
 ]
 
 export const SdkItemsList: ISdkListItem[] = [

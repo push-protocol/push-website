@@ -6,12 +6,12 @@
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import "./styles.css";
 import { useLocation } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
 import React, { useState } from 'react';
+import "./styles.css";
 
 // External Components
 import clsx from 'clsx';
@@ -26,11 +26,11 @@ import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 
 
 
@@ -86,14 +86,15 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
          
           
           {codeblock &&
-           <TechDocSwitcher
-           gap="10px">
-               <TechDocButton 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setContent(0);
-                }}
+            <TechDocSwitcher
+              gap="10px"
+            >
+              <TechDocButton 
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                setContent(0);
+              }}
                 background={content == 0 ? 'var(--ifm-color-primary)' : 'var(--ifm-color-background)'}
                 color={content == 0 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
@@ -123,11 +124,18 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
           </ItemV>
 
         {content == 1 && codeblock && 
+        <Div onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        }}>
           <TechDocCodeBlock
             language="jsx"
+          
+            
           >
             {codeblock}
           </TechDocCodeBlock>
+          </Div>
         }
       </TechDocContent>
     </TechDocCard>
@@ -634,9 +642,9 @@ const TechDocSwitcher = styled(ItemH)`
 `;
 
 const TechDocButton = styled(Button)`
-    padding: 4px 12px;
-    font-size: 14px;
-    font-weight: 600;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 600;
 `;
 
 
@@ -744,3 +752,5 @@ const PushSdkContentArrow = styled(Span)`
   display: flex;
   align-items: center;
 `
+const Div = styled.div`
+`;

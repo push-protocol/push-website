@@ -77,7 +77,7 @@ export const MailingSignup = (props: signupType) => {
       </Wrapper>
 
       {apiResponse && (
-        <Span className="msg" color="#121315">
+        <Span className="msg" color="green">
           {apiResponse}
         </Span>
       )}

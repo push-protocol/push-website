@@ -7,7 +7,7 @@ description: 'Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounti
 text: "Hackers of ETHGlobal Istanbul, get ready, we’re coming!
 With Istanbul becoming the epicenter of web3 and blockchain innovation this November, we couldn't be more excited to be a part of it.
 "
-tags: [Pushprotocol, Web3, Blockchain Technology, EthGlobal]
+tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 
 ![Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties](./cover-image.webp)

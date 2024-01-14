@@ -4,8 +4,10 @@ title: Bringing Push to MetaMask Snaps
 authors: [push]
 image: './cover-image.webp'
 text: "Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for MetaMask! To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask Snaps — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet."
-tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
+tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
+
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Bringing Push to MetaMask Snaps](./cover-image.webp)
 
@@ -47,26 +49,25 @@ pop-ups. You can easily switch them back on from your dApp.
 ### Snap installation and Set-Up guide
 
 - If you don’t already have a MetaMask wallet, install and [set-up a wallet in MetaMask](https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask) here.
-- Next, go to [https://app.push.org/receive](https://app.push.org/receive)
+- Next, go to [https://app.push.org/snap](https://app.push.org/snap)
 - Click on <b>Install Snap</b> → <i>approve the required permissions to run the snap</i>
-- Once successfully installed the snap will redirect to Push Channels Dapp
-- Here you can opt-in to your favourite channels to receive notifications
-- Once done, you can go back to the Snap Settings Page.
-- With the connected wallet, click on <b>Add Address:</b>
-- This allows you to add an address for which you prefer to receive notifications
-- Once you click, simply sign the message to complete the process
+- Once successfully installed the snap will redirect to Push dApp and open up Channels page
+- **Channels** are protocols that you can subscribe to for notifications, for example: Subscribe to coindesk channel for news, ShapeShift for goverance updates, pick your favorites!
+- Subscribing to a channel is completely gassless, you will need to sign the opt-in though.
 - Once done, you are all set. The address will now start receiving notifications.
 
+<VideoContainer>
 <iframe
-  width="100%"
-  height="382"
-  style={{ borderRadius: "32px" }}
-  src="https://www.youtube.com/embed/oxfuXjOCox0"
+  width= "100%"
+  height="100%"
+  src="https://www.youtube.com/embed/LjPxKoYLiGs"
+  style={{ borderRadius: "32px", aspectRatio: '56.25%' }}
   title="How to Add Web3 Notifications in Your MetaMask Wallet | Installing the Push Snap"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
 ></iframe>
+</VideoContainer>
 
 As such, your MetaMask wallet is your new notification hub, ensuring you never miss out on the latest updates and developments in web3. Get ready to embrace the future of web3 with ease and confidence.
 

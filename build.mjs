@@ -73,7 +73,9 @@ async function checkFileContent(filePath) {
 
   if (metadata && metadata.title && metadata.image) {
       // Transform title to expected image name format: lowercase with underscores
-      const expectedImageName = metadata.title.toLowerCase().split(' ').join('_') + '.webp'; // Assuming the extension is always .webp
+      const negatedTitle = metadata.id ? metadata.id.replace(metadata.title.toLowerCase().replace(/\s+/g, '-')) : '';
+      const negatedTitleFormatted = (negatedTitle.trim().replace(/-/g, '_')).replace('_undefined', '');
+      const expectedImageName = negatedTitleFormatted + "--" + metadata.title.toLowerCase().split(' ').join('_') + '.png'; // Assuming the extension is always .png
 
       // Extract the actual image file name from the path
       const actualImageName = metadata.image.split('/').pop().replace(/['"]+/g, '');
@@ -99,10 +101,10 @@ function clearDirectory(directoryPath) {
 }
 
 async function generateFilePreview(filePath) {
-  console.log(chalk.blue(`Generating file preview for: ${filePath}`));
+console.log(chalk.blue(`Generating file preview for: ${filePath}`));
 
-  // Read the MDX content
-  let content = fs.readFileSync(filePath, 'utf8');
+// Read the MDX content
+let content = fs.readFileSync(filePath, 'utf8');
 
 // Extract the front matter from the MDX content
 let title;
@@ -148,7 +150,7 @@ if (idMatch) {
   const previewDirectory = ogDirectory + assetLocation;
   const imagePath = path.join(previewDirectory, imageName);
   const relativeImagePath = path.join(assetDocLocation, imageName);
-
+  
   // Check if the image already exists
   if (!fs.existsSync(imagePath)) {
     await generatePNGImage(imagePath, title);

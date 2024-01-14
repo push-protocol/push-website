@@ -4,7 +4,7 @@ title: 'How Push Protocol Can Revolutionize Data-Driven Decision Making📊'
 authors: [push]
 image: './cover-image.webp'
 text: "In today’s fast-paced business environment, accessing and analyzing data in real-time is critical to making informed decisions. Push Protocol is a powerful tool that can help organizations achieve this goal by providing a way to receive real-time data updates as soon as they become available."
-tags: [Pushprotocol, Web3, Web3 Tools, Web3 Data Analytics, Data Analytics]
+tags: [Push Protocol, Web3, Web3 Tools, Web3 Data Analytics, Data Analytics]
 
 ---
 

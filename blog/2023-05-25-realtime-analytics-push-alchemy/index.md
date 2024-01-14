@@ -76,7 +76,7 @@ const alchemyApiKey = "your_alchemy_api_key";
 const provider = new ethers.providers.AlchemyProvider("mainnet", alchemyApiKey);
 ```
 
-Now, we can initialize Push Protocol. Follow the [official documentation](https://docs.push.org/developers) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+Now, we can initialize Push Protocol. Follow the [official documentation](https://push.org/docs/) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 

@@ -4,7 +4,7 @@ title: Push Helps Mover — the First Crypto Debit Card, to Power Communication 
 authors: [push]
 image: './cover-image.webp'
 text: "In the fifth episode of “Frens of Push,” we are in conversation with Anton Mozgovoy, CEO and Co-Founder of Mover, to talk about how Push is fostering decentralized communication on the platform."
-tags: [ Web3, Frensofpush, Push Notification, Pushprotocol, Defi, Debitcard]
+tags: [ Web3, Frensofpush, Push Notification, Push Protocol, Defi, Debitcard]
 ---
 
 ![Cover image of Push Helps Mover — the First Crypto Debit Card, to Power Communication on the Platform](./cover-image.webp)

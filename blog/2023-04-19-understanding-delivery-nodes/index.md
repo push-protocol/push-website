@@ -6,7 +6,7 @@ authors: [push]
 image: './cover-image.webp'
 text: "To fully grasp the concept of push notifications and messages, it is essential to first understand the role of delivery nodes in a communication protocol.
 Delivery nodes are endpoints where messages are sent and received. They can be physical devices, applications, or servers and are tasked with relaying messages from one point to another."
-tags: [ Web3, Pushprotocol, Delivery Nodes]
+tags: [ Web3, Push Protocol, Delivery Nodes]
 
 ---
 
@@ -100,5 +100,5 @@ With all these services working together, messages can be sent from one wallet t
 
 To begin building with Push Delivery Nodes, read up on our documentation specifically for it here:
 
-👉👉👉https://docs.push.org/developers/developer-guides/receiving-notifications/receiving-via-delivery-node
+👉👉👉https://push.org/docs/notifications/tutorials/integrate-notifications-via-delivery-node/
 

@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_chat_develop--stream_chat.png"
 
 # Stream chat overview
 
-These APIs enable you to receive chat payloads or chat request / group invites in real time without polling the API. Push Chat achieves this by the use of sockets.
+Stream Chat APIs enable you to receive chat messages, chat requests, group invites, and notifications instantly, without the need for constant polling. Push Chat achieves this by the use of sockets.
 
 <head>
   <title>Stream Chats | Push Chat | Push Documentation</title>
@@ -26,33 +26,75 @@ import Details from "@theme/Details";
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.stream(listen, {options?})
-// Initial setup
-const stream = await userAlice.initStream([CONSTANTS.STREAM.CHAT, CONSTANTS.STREAM.CHAT_OPS], {
-  filter?: {
-    channels?: ['*'], // pass in specific channels to only listen to those
-    chats?: ['*'], // pass in specific chat ids to only listen to those
-  },
-  connection?: {
-    retries?: 3, // number of retries in case of error
-  },
-  raw?: false // enable true to show all data
-})
+// Initialize stream to listen for events:
+const stream = await userAlice.initStream(
+  [
+    CONSTANTS.STREAM.CHAT, // Listen for chat messages
+    CONSTANTS.STREAM.NOTIF, // Listen for notifications
+    CONSTANTS.STREAM.CONNECT, // Listen for connection events
+    CONSTANTS.STREAM.DISCONNECT, // Listen for disconnection events
+  ],
+  {
+    // Filter options:
+    filter: {
+      // Listen to all channels and chats (default):
+      channels: ["*"],
+      chats: ["*"],
 
-// Listen for chat events
-stream.on(CONSTANTS.STREAM.CHAT, (data: any) => {
-  console.log(data)
-})
+      // Listen to specific channels and chats:
+      // channels: ['channel-id-1', 'channel-id-2'],
+      // chats: ['chat-id-1', 'chat-id-2'],
 
-stream.on(CONSTANTS.STREAM.CHAT_OPS, (data: any) => {
-  console.log(data)
-})
+      // Listen to events with a specific recipient:
+      // recipient: '0x...' (replace with recipient wallet address)
+    },
+    // Connection options:
+    connection: {
+      retries: 3, // Retry connection 3 times if it fails
+    },
+    raw: false, // Receive events in structured format
+  }
+);
 
-// Connect stream, Important to setup up listen first
-stream.connect()
+// Chat event listeners:
 
-// stream supports other products as well, such as CONSTANTS.STREAM.NOTIF
-// more info can be found at push.org/docs/notifications
+// Stream connection established:
+stream.on(CONSTANTS.STREAM.CONNECT, async (a) => {
+  console.log("Stream Connected");
+
+  // Send initial message to PushAI Bot:
+  console.log("Sending message to PushAI Bot");
+
+  await userAlice.chat.send(pushAIWalletAddress, {
+    content: "Hello, from Alice",
+    type: "Text",
+  });
+
+  console.log("Message sent to PushAI Bot");
+});
+
+// Chat message received:
+stream.on(CONSTANTS.STREAM.CHAT, (message) => {
+  console.log("Encrypted Message Received");
+  console.log(message); // Log the message payload
+});
+
+// Chat operation received:
+stream.on(CONSTANTS.STREAM.CHAT_OPS, (data) => {
+  console.log("Chat operation received.");
+  console.log(data); // Log the chat operation data
+});
+
+// Connect the stream:
+await stream.connect(); // Establish the connection after setting up listeners
+
+// Stream disconnection:
+stream.on(CONSTANTS.STREAM.DISCONNECT, () => {
+  console.log("Stream Disconnected");
+});
+
+// Stream Chat also supports other products like CONSTANTS.STREAM.NOTIF.
+// For more information, please refer to push.org/docs/notifications.
 ```
 
   </TabItem>
@@ -63,14 +105,14 @@ stream.connect()
 ### Stream chat parameters
 | Param      | Type                         | Sub-Type                               | Default       | Remarks                                                                                 |
 | ---------- | ---------------------------- | -------------------------------------- | ------------- | --------------------------------------------------------------------------------------- |
-| _`listen`_ | `constant`                   | -                                      | -             | can be `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
+| _`listen`_ | `constant`                   | -                                      | -             | Choose from various streams: `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
 | `options`  | `PushStreamInitializeProps`  | -                                      | -             | Optional configuration properties for initializing the stream.                          |
-| -          | `options.filter`             | `object`                               | -             | Option to configure to enable listening to only certain chats or notifications.         |
-| -          | `options.filter.channels`    | `array of strings`                     | `['*']`       | pass list of **channels** over here to only listen to notifications coming from them.   |
-| -          | `options.filter.chats`       | `array of strings`                     | `['*']`       | pass list of **chatids** over here to only listen to chats coming from them.            |
+| -          | `options.filter`             | `object`                               | -             | Configure to listen to specific chats or notifications.         |
+| -          | `options.filter.channels`    | `array of strings`                     | `['*']`       | Pass list of **channels** over here to only listen to notifications coming from them.   |
+| -          | `options.filter.chats`       | `array of strings`                     | `['*']`       | Pass list of **chatids** over here to only listen to chats coming from them.            |
 | -          | `options.connection`         | `object`                               | -             | Option to configure the connection settings of the stream                               |
 | -          | `options.connection.retries` | `number`                               | `3`           | Number of automatic retries incase of error                                             |
-| -          | `options.raw`                | `boolean`                              | `false`       | If enabled, will also respond with meta data useful in verifying the integrity of incoming chats or notifications among other things. |
+| -          | `options.raw`                | `boolean`                              | `false`       | If enabled, respond with metadata useful in verifying the integrity of incoming chats or notifications among other things. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -83,7 +125,7 @@ stream.connect()
 | `CONSTANTS.STREAM.CONNECT`    | Whenever the stream establishes connection.                                    |
 | `CONSTANTS.STREAM.DISCONNECT` | Whenever the stream gets disconnected.                                         |
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Chat Request Stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Chat Request Stream)">
 
 ```typescript
 {
@@ -120,7 +162,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Chat accept stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Chat accept stream)">
 
 ```typescript
 {
@@ -157,7 +199,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Chat message stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Chat message stream)">
 
 ```typescript
 {
@@ -194,7 +236,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Chat rejection stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Chat rejection stream)">
 
 ```typescript
 {
@@ -231,7 +273,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Group chat message stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Group chat message stream)">
 
 ```typescript
 {
@@ -268,7 +310,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Group chat request stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Group chat request stream)">
 
 ```typescript
 {
@@ -293,7 +335,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Group chat request accepted stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Group chat request accepted stream)">
 
 ```typescript
 {
@@ -328,7 +370,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Group chat request rejected stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Group chat request rejected stream)">
 
 ```typescript
 {
@@ -363,7 +405,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Participant removed from group stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Participant removed from group stream)">
 
 ```typescript
 {
@@ -383,7 +425,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Participant joins a group stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Participant joins a group stream)">
 
 ```typescript
 {
@@ -401,7 +443,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT - Participant leaves a group stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT - Participant leaves a group stream)">
 
 ```typescript
 {
@@ -419,7 +461,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT_OPS - Group created stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT_OPS - Group created stream)">
 
 ```typescript
 {
@@ -458,7 +500,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.CHAT_OPS - Group updated stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.CHAT_OPS - Group updated stream)">
 
 ```typescript
 {

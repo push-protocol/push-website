@@ -4,7 +4,7 @@ title: 'Oportunidades de desarrollo profesional con Push Protocol en Latinoamér
 authors: [push]
 image: './cover-image.webp'
 text: "A medida que el ecosistema avanza es importante democratizar los esfuerzos de los proyectos a nivel global para garantizar que todas las regiones tengan acceso y la oportunidad de desarrollar con la tecnología."
-tags: [Pushprotocol, Latam]
+tags: [Push Protocol, Latam]
 ---
 
 ![Cover image of Oportunidades de desarrollo profesional con Push Protocol en Latinoamérica🌎💜](./cover-image.webp)

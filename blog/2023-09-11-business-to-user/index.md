@@ -7,7 +7,7 @@ text: "Push Protocol is thrilled to announce our groundbreaking partnership with
 tags:
   [
     Unstoppable Domains,
-    Pushprotocol,
+    Push Protocol,
     Web3,
     Blockchain Technologies,
     Partnerships,

@@ -4,10 +4,11 @@ title: 'Staking & Migration Guide for PushV2 Rewards Program📜'
 authors: [push]
 image: './cover-image.webp'
 text: "We recently released an article extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…"
-tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
+tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
 
 ---
 
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Staking & Migration Guide for PushV2 Rewards Program📜](./cover-image.webp)
 
@@ -37,7 +38,9 @@ For each of these steps, we will first talk about the 🔴 <b>Push Fee Staking P
 ### Staking $PUSH Tokens
 Push Fee Staking Pool allows you to stake your PUSH tokens directly in the [Push Core contract](https://etherscan.io/address/0x66329Fdd4042928BfCAB60b179e1538D56eeeeeE) itself.
 
-<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/eRm-tp6SLVg" title="Push V2 Fee Staking Pool Tutorial | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/eRm-tp6SLVg" title="Push V2 Fee Staking Pool Tutorial | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Follow the simple steps below to Stake to Push Fee Staking Pool:
 
@@ -74,7 +77,9 @@ The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields fo
 </i>
 </blockquote>
 
-<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/lqMuOlOGP0s" title="Push Uniswap V2 LP Staking Pool | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/lqMuOlOGP0s" title="Push Uniswap V2 LP Staking Pool | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 1. Go to the [PUSH/ETH V2 pool on Uniswap](https://app.uniswap.org/#/add/v2/ETH/0xf418588522d5dd018b425E472991E52EBBeEEEEE)  (Remember to navigate to Uniswap V2 pool and not V3 pool).
 2. Add liquidity into the pool with both $PUSH and $ETH.
@@ -138,7 +143,9 @@ If you’re an early holder of $PUSH, chances are you’ve staked in the first r
 
 If that’s the case for you, the migration feature is specifically designed to provide you with a smooth and easy procedure to shift from the old staking pool to the new v2 staking pool.
 
-<iframe width="100%" height="510" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/a3QDLsT0VRM" title="Push Migration Guide | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/a3QDLsT0VRM" title="Push Migration Guide | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Migration from old to new pools requires 3 simple transactions:
 

@@ -5,8 +5,10 @@ authors: [push]
 image: './cover-image.webp'
 text: "We are thrilled to announce the highly anticipated release of Push NFT Chat, the next leap in web3 messaging. For the 1.5 Million+ NFT wallets and NFT collections like Azuki, BAYC, CryptoPunks, a universe of new potential utility is now here for your collections 🌎
 "
-tags: [Web3, NFT, Pushprotocol, NFT Utility]
+tags: [Web3, NFT, Push Protocol, NFT Utility]
 ---
+
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅](./cover-image.webp)
 <!--truncate-->
@@ -92,7 +94,9 @@ These two options enable pure, native NFT chat that is truly tied to a user NFT 
 ## Guide for Getting Started With Push NFT Chat
 To integrate with Push NFT Chat, you can start by watching the live demo below.
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/Im_5RRQyQP4" title="Introducing Push NFT Chat | Live Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px", aspectRatio: '56.25%' }} src="https://www.youtube.com/embed/Im_5RRQyQP4" title="Introducing Push NFT Chat | Live Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Begin Building 👉 https://www.npmjs.com/package/@pushpr...
 

@@ -4,7 +4,7 @@ title: 'Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲'
 authors: [push]
 image: './cover-image.webp'
 text: "QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book."
-tags: [Pushprotocol, Frensofpush]
+tags: [Push Protocol, Frensofpush]
 
 ---
 
