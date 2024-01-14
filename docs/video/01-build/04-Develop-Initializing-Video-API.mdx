@@ -1,88 +1,63 @@
 ---
-id: docs-video-develop-instantiate-video-class
-title: Instantiate Video Class
+id: docs-video-develop-initializing-video-api
+title: Initializing Video API
 hide_title: true
-slug: ./instantiate-video-class
+slug: ./initializing-video-api
 displayed_sidebar: pushVideoSidebar
-sidebar_position: 3
-image: "/assets/docs/previews/docs_video_develop--instantiate_video_class.png"
+sidebar_position: 4
+image: "/assets/docs/previews/docs_video_develop--initializing_video_api.png"
 ---
 
-# Instantiating Video Class Overview
+# Initialising Video API Overview
 
-Push Video API abstract away connection and encryption methods by exposing methods which lets you create video object that is used for video calls.
+Push Video API abstract away connection and encryption methods by exposing methods which lets you make and handle video calls.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <head>
-  <title>Instantiate Video Class | Push Video | Push Documentation</title>
+  <title>Initializing Video API | Push Video | Push Documentation</title>
 </head>
 
 import { ABlock } from "@site/src/css/SharedStyling";
 
 ## Prerequisites
 
-Some functions require passing the signer object with the function call. Fetching a signer for web3 wallets is quite easy.
+Before being able to Initialize Video API,
 
-```mdx-code-block
-<Tabs>
-  <TabItem value="frontend" label="When using Frontend" default>
-```
+- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](../initialize-user) to learn how to do that.
+- You need to initialize Push `Stream`. If you haven't done that yet, please refer to [Initializing Stream API](../stream-video) to learn how to do that.
 
-```typescript
-// any other web3 ui lib is also acceptable
-import { useWeb3React } from "@web3-react/core";
-.
-.
-.
-const { account, library, chainId } = useWeb3React();
-const signer = library.getSigner(account);
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="backend" label="When using Backend">
-```
-
-```typescript
-const ethers = require("ethers");
-const PK = "your_channel_address_secret_key";
-const Pkey = `0x${PK}`;
-const signer = new ethers.Wallet(Pkey);
-```
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
-
-## Instantiate Video Class
+## Initializing Video API
 
 To start video calling wallet addresses, first, you need to declare `data`, `setData` which are essentially a state/variable to hold video call-related data and a function to modify it respectively and we need to create a local media stream.&#x20;
 
-Here below is how to instantiate Video Class:
+Here below is how to initializing Video API:
 
 ```typescript
-  // Instantiate video object and creating media stream
-  const aliceVideoCall = await userAlice.video.initialize(
-    setData: (fn: (data: VideoCallData) => VideoCallData) => void, // Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data,
-    {
-      media: {
-        video: boolean, // to enable video on start
-        audio: boolean, // to enable audio on start
-      }
-      stream?: MediaStream; // to initialize with existing media stream (for backend use)
-    }
-  );
+  // Initialising the video API
+  // in react, you can use useState hook to declare data and setData like this: const [data, setData] = useState<VideoCallData>(initVideoCallData);
+  // in vanilla js, you can declare data and setData like this: let data = initVideoCallData; const setData = (fn: (data: VideoCallData) => VideoCallData) => {data = fn(data)}
+
+  // async initialize(onChange: (fn: (data: VideoCallData) => VideoCallData) => void, options: VideoInitializeOptions): Promise<VideoV2>;
+  const aliceVideoCall = await userAlice.video.initialize(setData, {
+    stream: Stream, // pass the stream object created using Stream API, please refer to [Initializing Stream API] to learn how to get this stream object.
+    config: {
+      video: true, // to enable video on start, for frontend use
+      audio: true, // to enable audio on start, for frontend use
+    },
+    media?: MediaStream, // to pass your existing media stream(for backend use)
+  });
 ```
 
-| Property | Description                                                                                                                                                                 |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| setData  | Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data |
-| video    | Whether the video should be enabled or not during the call. Defaults to `true`.                                                                                             |
-| audio    | Whether the audio should be enabled or not during the call. Defaults to `true`.                                                                                             |
-| stream   | Local stream. For backend use. Defaults to `null`.                                                                                                                          |
+| Param        | Type                     | Sub-Type      | Default | Remarks                                                                                                                                                                     |
+| ------------ | ------------------------ | ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`onChange`_ | `constant`               | -             | -       | Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data |
+| _`options`_  | `VideoInitializeOptions` | -             | -       | configuration properties for initializing the video.                                                                                                                        |
+| -            | `options.stream`         | `PushStream`  | -       | Option to configure to enable listening to only certain chats or notifications.                                                                                             |
+| -            | `options.config.video`   | `boolean`     | -       | pass `true`to enable video on start, else pass `false`.                                                                                                                     |
+| -            | `options.config.audio`   | `boolean`     | -       | pass `true`to enable audio on start, else pass `false`.                                                                                                                     |
+| -            | `options.media`          | `MediaStream` | -       | Local stream. For backend use. Defaults to `null`.                                                                                                                          |
 
 Now let's go over each property individually and understand how to set them.
 
@@ -228,26 +203,46 @@ data = fn(data);
 };
 ```
 
-### Media Stream
+### Stream Object
 
 ```typescript
-  // Instantiate video object and creating media stream
+  // Initialising the video API
   const aliceVideoCall = await userAlice.video.initialize(setData, {
-      media: {
-        video: Boolean, // to enable video on start
-        audio: Boolean, // to enable audio on start
-      }
-      stream?: MediaStream; // to initialize with existing media stream (for backend use)
+      stream: stream,
+      ...
   });
 ```
 
-- initialise() function generates a new MediaStream object using `navigator.mediaDevices.getUserMedia`
-- The `video` and `audio` boolean params are used to tell if you want to enable your audio/video during the video call or not. Example:
-  - If you pass the `video` as `false`, your video will be disabled during the entire call. If you pass it as `true`, then your video will be turned on initially during the call, and later, you will have the option to toggle it on or off.
-  - For `audio` the above logic is the same.
+- `stream` object is created using Push Stream API, which is basically to listen video call events and is used handle video call operations.
+- Please refer to [Initializing Stream API](../stream-video) to learn how to get this stream object.
+
+### Media Stream
+
+```typescript
+  // Initialising the video API
+  const aliceVideoCall = await userAlice.video.initialize(setData, {
+      ...
+      config: {
+        video: Boolean, // to enable video on start
+        audio: Boolean, // to enable audio on start
+      },
+      media?: MediaStream; // to initialize with existing media stream (for backend use)
+  });
+
+```
+
+- initialise() function generates a new MediaStream object using `navigator.mediaDevices.getUserMedia` from the available browser APIs.
+- The `video` and `audio` boolean params are used to tell if you want to enable your audio/video during the video call or not.
+
+Example:
+
+- If you pass the `video` as `false`, your video will be disabled during the entire call. If you pass it as `true`, then your video will be turned on initially during the call, and later, you will have the option to toggle it on or off.
+- For `audio` the above logic is the same.
+
+- media is used to pass your existing media stream. This is for backend use.
 
 :::info
-If `stream` object is passed as a param to `initialise()` function then `initialise` doesn't generate a new MediaStream rather, it would just assigns `data.local.stream` to the passed `stream` object param. This is for backend use.
+If `media` object is passed as a param to `initialise()` function then `initialise` doesn't generate a new MediaStream rather, it would just assigns `data.local.stream` to the passed `media` object param. This is for backend use.
 :::
 
 :::info
