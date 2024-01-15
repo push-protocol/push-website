@@ -3488,9 +3488,9 @@
   integrity sha512-2LuNTFBIO0m7kKIQvvPHN6UE63VjpmL9rnEEaOOaiSPbZK+zUOYIzBAWcED+3XYzhYsd/0mD57VdxAEqqV52CQ==
 
 "@pushprotocol/restapi@^1.4.37":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/restapi/-/restapi-1.6.0.tgz#363b695d8bde358bfa5d7ec33d6e3831a92553ff"
-  integrity sha512-0CPNAfuuMfg+9aUoHz4p+La9Pdv7EQnSb23u3BgwJqAquVFTSqRO+ajmMmuAjWcorQ10nM5dm//ziLTyHNtd+Q==
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/restapi/-/restapi-1.6.1.tgz#4e8054f17c5d5e8a90956b2d5c69ea20864cec15"
+  integrity sha512-j5pvT18YPmW8gL48bvz7IFDDNrhQxzxXH2M03djpn1p0QasGSJ0ITFx1hCuMOL1eTCWiY/hdJ4bF/30D++Kgkg==
   dependencies:
     "@ambire/signature-validator" "^1.3.1"
     "@metamask/eth-sig-util" "^5.0.2"
