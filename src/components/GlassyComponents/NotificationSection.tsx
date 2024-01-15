@@ -6,6 +6,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import GlassyComponents from './GlassyComponents'
+import { device } from '@site/src/config/globals';
  
 
 const NotificationSection = () => {
@@ -28,7 +29,7 @@ const NotificationSection = () => {
 
     
 
-        <GridItem maxWidth="588px">
+        <GridItem maxWidth="588px" main={true}>
             {GridComponentsList?.notification?.second?.map((item)=>(
                     <GlassyComponents 
                         title={item.title}
@@ -69,15 +70,24 @@ const GridItem = styled.div`
     // height: 705px;
     display: flex;
     flex-direction: column;
+
     max-width: ${(props) => props.maxWidth || "100%"};
     min-width: ${(props) => props.maxWidth || "100%"};
-    // justify-content: space-between;
-    // grid-template-areas:
-    // "one two two three"
-    // "four two two five"
-    // "six seven seven eight";
 
+    // justify-content: space-between;
     gap: 24px;
+
+    @media ${device.laptop} {
+        // max-width: 100%;
+        max-width: ${(props) => props.main && '100%'};
+        min-width: 0;
+        flex-grow: ${(props) => props.main ? "1" : '0'};
+    }
+
+    @media ${device.mobileL} {
+        max-width: 100%;
+        min-width: 100%;
+    }
 `;
 
 const GridSystem = styled.div`
@@ -86,6 +96,19 @@ const GridSystem = styled.div`
     display: flex;
     flex-direction: row;
     gap: 24px;
+    flex-wrap: wrap;
+
+    @media ${device.laptop} {
+        width: 100%;
+        // background: red;
+        // display: grid;
+        // grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+
+    @media ${device.mobileL} {
+        width: 100%;
+        flex-direction: column;
+    }
 `;
 
 export default NotificationSection;

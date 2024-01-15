@@ -87,6 +87,9 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
                     srcSet={`${require(`@site/static/assets/website/grids/notifications/${srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${srcref}@3x.png`).default} 3x`}
                     alt={'Push Snap'}
                     title="Push Snap"
+                    width="fit-content"
+                    height="auto"
+                    margin="0 auto"
                 />
         </BlockItem>)}
         else if (module === 'bg') {
@@ -108,6 +111,11 @@ const BlockItem = styled.div`
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.10);
     grid-area: ${(props) => props.position};
+
+    @media ${device.mobileL} {
+        max-height: 100%;
+        min-height: 100%;
+    }
 
 `;
 
@@ -149,11 +157,19 @@ const Playground = styled(Section)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 588px;
-  min-height: 202px;
+  width: auto;
+  height: 100%;
+//   min-width: 588px;
+//   min-height: 202px;
   padding: 24px;
   align-items: flex-start;
   justify-content: flex-start;
+  border-radius: 24px;
+
+  @media ${device.mobileL} {
+    max-width: 100%;
+    min-width: 100%;
+}
 `;
 
 const SubscribeText = styled.h2`
