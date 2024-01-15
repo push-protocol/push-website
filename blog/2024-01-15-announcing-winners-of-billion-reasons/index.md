@@ -48,10 +48,14 @@ DAOs and organizations rely on being able to give certain permissions, roles, an
 
 With that, we’d like to congratulate Samuel Mens who built two plugins and a UI that allow you to manage both subDAOs and NFT-based permissions using [@hatsprotocol](https://twitter.com/hatsprotocol) and Aragon OSx. For all DAOs that are built using Aragon, there is now a whole new level of on-chain governance management tools available. 
 
-<blockquote><i>
-“Building for Aragon OSx was both challenging and fulfilling.”, said Samuel. “I'm thrilled to contribute to Aragon's ecosystem, and I appreciate Push Protocol for providing this opportunity”
-
-</i></blockquote>
+<blockquote>
+    <i>
+    "I've been part of the Aragon community since their launch of OSx and have built several plugins. I had this idea for a pretty ambitious plugin, which alligned very well with the BRB Hackathon bounty. I am very grateful for Push Protocol for providing this opportunity, giving me the motivation to actually built it and go the extra mile."
+    </i>
+    <div>
+    – Samuel Mens
+    </div>
+ </blockquote>
 
 ### Meet the winners on Jan 16th
 
