@@ -17,7 +17,7 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
             <TagItem background={background} border={border} color={color}>{title}</TagItem>
         )
       }
-    
+
   return (
         <>
         {module == 'default' && 
@@ -113,11 +113,10 @@ const BlockItem = styled.div`
     padding: ${(props) => props.padding || "24px"};
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.10);
-    grid-area: ${(props) => props.position};
 
     @media ${device.mobileL} {
-        // display: ${(props) => props.mobile ? 'block' : 'none !important'}
-        max-height: 100%;
+        display: ${(props) => props.mobile ? 'block' : 'none !important'};
+        max-height: ${(props) => props.mobile ? '100%' : '0px'};
         min-height: 100%;
     }
 
