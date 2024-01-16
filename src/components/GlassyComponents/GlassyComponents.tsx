@@ -10,7 +10,7 @@ import InterOperation from "@site/static/assets/website/grids/notifications/inte
 import { device } from '@site/src/config/globals';
 import { URL } from 'url';
 
-const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop}) => {
+const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop, mobile}) => {
 
     const Tag = ({background ,border ,color, title}) => {
         return(
@@ -18,57 +18,59 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
         )
       }
     
-    if (module == 'default'){
-        return (
-        <BlockItem height={height} padding={imageTop && '0px'}>
-             
-             {!imageTop && <H2Text fontSize="19px" color="#FFF" lineHeight="130%">{title}</H2Text>}
-    
-            {srcref ? (
-            <GridImage
-                src={require(`@site/static/assets/website/grids/notifications/${srcref}.png`).default}
-                srcSet={`${require(`@site/static/assets/website/grids/notifications/${srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${srcref}@3x.png`).default} 3x`}
-                alt={'Push Snap'}
-                title="Push Snap"
-                margin={srcMargin}
-            />
-            ) : (
-            <TagItems flexDirection="row" alignItems='flex-start' justifyContent="flex-start" gap="12px" margin="14px 0 0 0">
-                {tags?.map((item)=>(
-                    <Tag 
-                        background={item.background}
-                        border={item.border}
-                        color={item.color}
-                        title={item.title} />
-                ))}
-            </TagItems>
-            )}
-    
-            {imageTop && <H2 fontSize="19px" color="#FFF" margin="0 0 24px 24px" lineHeight="130%">{title}</H2>}
-    
-        </BlockItem>
-    )} else if(module === 'row'){
-        return (<BlockItem padding="0px 24px" height={height}>
-        <ItemV flexDirection="row" justifyContent="space-between" alignItem="center" flex="1" margin="auto 0" height="100%">
-           <H2 fontSize="19px" color="#FFF">{title}</H2>
-    
+  return (
+        <>
+        {module == 'default' && 
+            (<BlockItem height={height} padding={imageTop && '0px'} mobile={mobile}>
+                
+                {!imageTop && <H2Text fontSize="19px" color="#FFF" lineHeight="130%">{title}</H2Text>}
+        
+                {srcref ? (
                 <GridImage
-                    src={require(`@site/static/assets/website/grids/notifications/${icon}.png`).default}
-                    srcSet={`${require(`@site/static/assets/website/grids/notifications/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${icon}@3x.png`).default} 3x`}
+                    src={require(`@site/static/assets/website/grids/notifications/${srcref}.png`).default}
+                    srcSet={`${require(`@site/static/assets/website/grids/notifications/${srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${srcref}@3x.png`).default} 3x`}
                     alt={'Push Snap'}
                     title="Push Snap"
-                    width="auto"
-                    height="100%"
-            />
-            </ItemV>
-        </BlockItem>)}
-        else if(module === 'main'){
-            return (
-            <BlockItem height={height}>
+                    margin={srcMargin}
+                />
+                ) : (
+                <TagItems flexDirection="row" alignItems='flex-start' justifyContent="flex-start" gap="12px" margin="14px 0 0 0">
+                    {tags?.map((item)=>(
+                        <Tag 
+                            background={item.background}
+                            border={item.border}
+                            color={item.color}
+                            title={item.title} />
+                    ))}
+                </TagItems>
+                )}
+        
+                {imageTop && <H2 fontSize="19px" color="#FFF" margin="0 0 24px 24px" lineHeight="130%">{title}</H2>}
+        
+            </BlockItem>)}
+
+        {module == 'row' && 
+            (<BlockItem padding="0px"  height={height} mobile={mobile}>
+                <ItemV flexDirection="row" justifyContent="space-between" alignItem="center" flex="1" margin="auto 0" height="100%">
+                <H2 fontSize="19px" color="#FFF" margin='0 0 0 24px'>{title}</H2>
+            
+                        <GridImage
+                            src={require(`@site/static/assets/website/grids/notifications/${icon}.png`).default}
+                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${icon}@3x.png`).default} 3x`}
+                            alt={'Push Snap'}
+                            title="Push Snap"
+                            width="auto"
+                            height="100%"
+                    />
+                    </ItemV>
+                </BlockItem>)}
+
+        {module == 'main' && 
+            (<BlockItem height={height} mobile={mobile}>
                 <H2 fontSize="19px" color="#FFF" margin="0 0 10px 0" lineHeight="130%" textAlign="center">{title}</H2>
     
                 <SubscribeText>
-                     {header}
+                        {header}
                 </SubscribeText>
     
                 <ButtonItem
@@ -92,15 +94,16 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
                     margin="0 auto"
                 />
         </BlockItem>)}
-        else if (module === 'bg') {
-            return (
-            <BlockItem padding="0px" height={height}>
+
+        {module == 'bg' && 
+            (<BlockItem padding="0px" height={height} mobile={mobile}>
             <Playground bgImage={bgImage}>
                 <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="center">{title}</H2Text>
             </Playground>
-            </BlockItem>
-            )} else { return(<div></div>)}
-}
+            </BlockItem>)}
+
+        </>
+)}
 
 const BlockItem = styled.div`
     width: 100%;
@@ -113,6 +116,7 @@ const BlockItem = styled.div`
     grid-area: ${(props) => props.position};
 
     @media ${device.mobileL} {
+        // display: ${(props) => props.mobile ? 'block' : 'none !important'}
         max-height: 100%;
         min-height: 100%;
     }
@@ -206,6 +210,8 @@ const ButtonItem = styled(Button)`
 
 const GridImage = styled(Image)`
   margin: ${(props) => props.margin || "initial"};
+  display: block;
+  vertical-align: middle;
 
 `;
 

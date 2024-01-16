@@ -19,21 +19,24 @@ export const GridComponentsList = {
               }
             ],
             height: '147px',
-            module: 'default'
+            module: 'default',
+            mobile: false
         },
         {
             title: 'Cross-chain \nNotifications',
             srcref: 'cross-chain',
             srcMargin:'24px 0 0 0',
             height: '169px',
-            module: 'default'
+            module: 'default',
+            mobile: true
         },
         {
             title: 'Customize Notification \nPreferences',
             srcref: 'notif',
             srcMargin: '48px auto 0 auto',
             height: '340px',
-            module: 'default'
+            module: 'default',
+            mobile: true
         },
        
     ],
@@ -44,14 +47,15 @@ export const GridComponentsList = {
             buttonText: 'Start building',
             srcref: 'subscribe',
             height: '478px',
-            module: 'main'
-
+            module: 'main',
+            mobile: true
         },
         {
             title: 'Interoperable \nNotifications',
             bgImage: require('@site/static/assets/website/grids/notifications/inter.png').default,
             height: '202px',
-            module: 'bg'
+            module: 'bg',
+            mobile: false
         },
     ],
     third:[
@@ -59,7 +63,8 @@ export const GridComponentsList = {
             title: 'Anti Spam',
             icon: 'spam',
             height: '76px',
-            module: 'row'
+            module: 'row',
+            mobile: true
         },
         {
             srcref: 'snap',
@@ -67,7 +72,8 @@ export const GridComponentsList = {
             height: '321px',
             srcMargin: '24px 0',
             imageTop: true,
-            module: 'default'
+            module: 'default',
+            mobile: false
         },
         
        
@@ -75,7 +81,8 @@ export const GridComponentsList = {
             title: 'Increase \nEngagement',
             srcref: 'engage',
             height: '260px',
-            module: 'default'
+            module: 'default',
+            mobile: false
         }
     ]  
    }

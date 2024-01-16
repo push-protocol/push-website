@@ -23,6 +23,7 @@ const NotificationSection = () => {
                     height={item.height}
                     tags={item.tags}
                     module={item.module}
+                    mobile={item.mobile}
                     />
             ))}
         </GridItem>
@@ -41,11 +42,12 @@ const NotificationSection = () => {
                         header={item.header}
                         buttonText={item.buttonText}
                         bgImage={item.bgImage}
+                        mobile={item.mobile}
                         />
                 ))}
         </GridItem>
 
-        <GridItem maxWidth="282px">
+        <GridItem maxWidth="282px" lastRow={true}>
             {GridComponentsList?.notification?.third?.map((item)=>(
                     <GlassyComponents 
                         title={item.title}
@@ -59,6 +61,7 @@ const NotificationSection = () => {
                         bgImage={item.bgImage}
                         imageTop={item.imageTop}
                         icon={item.icon}
+                        mobile={item.mobile}
                         />
                 ))}
         </GridItem>
@@ -77,16 +80,53 @@ const GridItem = styled.div`
     // justify-content: space-between;
     gap: 24px;
 
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
         // max-width: 100%;
         max-width: ${(props) => props.main && '100%'};
-        min-width: 0;
+        min-width: ${(props) => props.lastRow ? "100%" : '0'};
         flex-grow: ${(props) => props.main ? "1" : '0'};
+
+        flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
+
+        &:nth-child(1) {
+            max-width: 255px !important;
+        }
+
+        &:nth-child(2) {
+            flex: 1 1 10%;
+        }
+
+        &:nth-child(3) {
+             & div:nth-child(1) {
+                max-width: 255px !important;
+                min-width: 255px !important;
+                box-sizing: border-box !important
+            }
+
+            & div:nth-child(2) {
+                max-height: 321px !important;
+                min-height: 321px !important;
+            }
+
+            & div:nth-child(3) {
+                max-height: 321px !important;
+                min-height: 321px !important;
+            }
+        }
     }
 
     @media ${device.mobileL} {
-        max-width: 100%;
-        min-width: 100%;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        flex-direction: column;
+
+        &:nth-child(3) {
+            & div:nth-child(1) {
+               max-width: 100% !important;
+               min-width: 100% !important;
+               box-sizing: border-box !important
+           }
+        }
     }
 `;
 
@@ -98,140 +138,19 @@ const GridSystem = styled.div`
     gap: 24px;
     flex-wrap: wrap;
 
-    @media ${device.laptop} {
+    @media ${device.laptopL} {
         width: 100%;
         // background: red;
         // display: grid;
-        // grid-template-rows: repeat(2, minmax(0, 1fr));
+        // grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
 
     @media ${device.mobileL} {
         width: 100%;
+        display: flex;
         flex-direction: column;
     }
 `;
 
 export default NotificationSection;
-
-
-
-    {/* <BlockItem height="147px">
-            <H2 fontSize="19px" color="#FFF" margin="0 0 24px 0">Web3 Native</H2>
-
-            <ItemV flexDirection="column" alignItems='flex-start' justifyContent="flex-start" gap="12px">
-                <Tag background="#D98AEC" border="1px solid rgba(255, 255, 255, 0.05)" title="Smart Contract" color="#0D0D0F"  />
-
-                <ItemV flexDirection="row" alignSelf="flex-start" gap="8px">
-                    <Tag border="1px solid #343244" color="#635F7C" title="Gasless" />
-                        
-                    <Tag border="1px solid #343244"
-                        color="#635F7C" title="Off-Chain" />
-                        
-                </ItemV>
-            </ItemV>
-        </BlockItem>
-
-        <BlockItem height="169px">
-            <H2 fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%">Cross-chain <br /> Notifications</H2>
-
-            <GridImage
-                src={require(`@site/static/assets/website/grids/notifications/cross-chain.png`).default}
-                srcSet={`${require(`@site/static/assets/website/grids/notifications/cross-chain@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/cross-chain@3x.png`).default} 3x`}
-                alt={'Push Snap'}
-                title="Push Snap"
-              />
-        </BlockItem>
-
-        <BlockItem height="340px">
-                <H2 fontSize="19px" color="#FFF" lineHeight="130%">Customize Notification Preferences</H2>
-
-                <GridImage
-                src={require(`@site/static/assets/website/grids/notifications/notif.png`).default}
-                srcSet={`${require(`@site/static/assets/website/grids/notifications/notif@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/notif@3x.png`).default} 3x`}
-                alt={'Push Snap'}
-                title="Push Snap"
-                margin="48px auto 0 auto"
-                // width="100%"
-              />
-        </BlockItem> */}
-
-
-    //     <BlockItem position='two' height="478px">
-    //     <H2 fontSize="19px" color="#FFF" margin="0 0 10px 0" lineHeight="130%" textAlign="center">Lightweight Code with Rapid API Integration</H2>
-
-    //     <SubscribeText>
-    //         {'<4 mins'}
-    //     </SubscribeText>
-
-    //     <ButtonItem
-    //         background="#E64DE9"
-    //         padding="14px 22px"
-    //         margin="16px auto 32px auto"
-    //         fontWeight="500"
-    //         fontSize="16px"
-    //         >
-    //         Start Building
-    //         <WhiteArrow />
-    //      </ButtonItem>
-
-    //      <GridImage
-    //         src={require(`@site/static/assets/website/grids/notifications/subscribe.png`).default}
-    //         srcSet={`${require(`@site/static/assets/website/grids/notifications/subscribe@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/subscribe@3x.png`).default} 3x`}
-    //         alt={'Push Snap'}
-    //         title="Push Snap"
-    //         // width="100%"
-    //       />
-    // </BlockItem>
-
-    // <BlockItem position="seven" padding="0px" height="202px">
-    // <Playground bgImage>
-    //     <H2 fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="center">Interoperable <br /> Notifications</H2>
-    // </Playground>
-    // </BlockItem>
-
-
-//     <BlockItem position='three' padding="0px 24px" height="76px">
-//     <ItemV flexDirection="row" justifyContent="space-between" alignItem="center" flex="1" margin="auto 0" height="100%">
-//         <H2 fontSize="19px" color="#FFF">Anti Spam</H2>
-
-//         <GridImage
-//             src={require(`@site/static/assets/website/grids/notifications/spam.png`).default}
-//             srcSet={`${require(`@site/static/assets/website/grids/notifications/spam@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/spam@3x.png`).default} 3x`}
-//             alt={'Push Snap'}
-//             title="Push Snap"
-//             width="auto"
-//             height="100%"
-//       />
-//     </ItemV>
-// </BlockItem>
-
-
-// <BlockItem position="five" padding="0px" height="321px">
-//         <GridImage
-//             src={require(`@site/static/assets/website/grids/notifications/snap.png`).default}
-//             srcSet={`${require(`@site/static/assets/website/grids/notifications/snap@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/snap@3x.png`).default} 3x`}
-//             alt={'Push Snap'}
-//             title="Push Snap"
-//             width="100%"
-//             height="auto"
-//             margin="24px 0"
-//       />
-
-//     <H2 fontSize="19px" color="#FFF" margin="0 0 24px 24px" lineHeight="130%">Receive Notifications <br /> in MetaMask</H2>
-// </BlockItem>
-
-
-
-// <BlockItem position="eight" height="260px">
-//     <H2 fontSize="19px" color="#FFF" margin="0 0" lineHeight="130%">Increase <br /> Engagement</H2>
-
-//         <GridImage
-//             src={require(`@site/static/assets/website/grids/notifications/engage.png`).default}
-//             srcSet={`${require(`@site/static/assets/website/grids/notifications/engage@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/engage@3x.png`).default} 3x`}
-//             alt={'Push Snap'}
-//             title="Push Snap"
-//             width="auto"
-//             height="200px"
-//             margin="0 auto"
-//       />
-// </BlockItem>
