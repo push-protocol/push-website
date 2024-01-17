@@ -46,7 +46,7 @@ Every Group Chat is associated with a ‘[badge](https://support.unstoppabledoma
 At launch, every UD badge that exists will have its own Group Chat (currently 400+ Group Chats are live). If you’re a holder of those badges, you’ll be eligible to join those groups.
 
 - To join a Group Chat for a badge you own:
-1. Go to Unstoppable Messaging from your ud.me Profile (Learn More).
+1. Go to Unstoppable Messaging from your [ud.me](https://ud.me/) Profile ([Learn More](https://support.unstoppabledomains.com/support/solutions/articles/48001244742-unstoppable-messaging)).
 2. Select the <b>Groups</b> tab.
 ![Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains ](./image-1.webp)
 
