@@ -48,10 +48,10 @@ At launch, every UD badge that exists will have its own Group Chat (currently 40
 - To join a Group Chat for a badge you own:
 1. Go to Unstoppable Messaging from your ud.me Profile (Learn More).
 2. Select the <b>Groups</b> tab.
-![Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains ](./image-2.webp)
+![Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains ](./image-1.webp)
 
 3. Find the community you would like to begin chatting with and select <b>Join group chat</b>.
-![Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains ](./image-3.webp)
+![Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains ](./image-2.webp)
 4. You’re done! You will be able to join the text-based chat going forward.
 
 - To create a new Group Chat with Sponsored Badges:
@@ -61,7 +61,7 @@ At launch, every UD badge that exists will have its own Group Chat (currently 40
 
 <i>Unstoppable Group Chat is currently available on desktop, with mobile coming soon. </i>
 
-Join the Era of Unstoppable Communities and Team Groups!
+### Join the Era of Unstoppable Communities and Team Groups!
 
 Like all communication that’s powered by Push Protocol, Unstoppable Group Chat is censorship resistant and private. For friends, DAOs, companies, and organizations, that means secure and private team communication channels.
 
