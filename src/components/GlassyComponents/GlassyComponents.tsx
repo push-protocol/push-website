@@ -14,14 +14,14 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
 
     const Tag = ({background ,border ,color, title}) => {
         return(
-            <TagItem background={background} border={border} color={color}>{title}</TagItem>
+            <TagItem background={background} border={border} order= {tags?.length === 4 ? true : false} color={color}>{title}</TagItem>
         )
       }
 
   return (
         <>
         {module == 'default' && 
-            (<BlockItem height={height} padding={imageTop && '0px'} mobile={mobile}>
+            (<BlockItem height={height} padding={srcref == 'snap' && '0px'} mobile={mobile}>
                 
                 {!imageTop && <H2Text fontSize="19px" color="#FFF" lineHeight="130%">{title}</H2Text>}
         
@@ -45,7 +45,7 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
                 </TagItems>
                 )}
         
-                {imageTop && <H2 fontSize="19px" color="#FFF" margin="0 0 24px 24px" lineHeight="130%">{title}</H2>}
+                {imageTop && <H2 fontSize="19px" color="#FFF" margin={srcref == 'snap' && "0 0 24px 24px"} lineHeight="130%">{title}</H2>}
         
             </BlockItem>)}
 
@@ -60,7 +60,8 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
                             alt={'Push Snap'}
                             title="Push Snap"
                             width="auto"
-                            height="100%"
+                            margin="0 16px 0 0"
+                            height="55px"
                     />
                     </ItemV>
                 </BlockItem>)}
@@ -97,9 +98,20 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
 
         {module == 'bg' && 
             (<BlockItem padding="0px" height={height} mobile={mobile}>
-            <Playground bgImage={bgImage}>
-                <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="center">{title}</H2Text>
-            </Playground>
+                <Playground bgImage={bgImage}>
+                    <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
+                </Playground>
+            </BlockItem>)}
+
+        {module == 'bg-header' && 
+            (<BlockItem padding="0px" height={height} mobile={mobile}>
+                <RealBG>
+                <PlaygroundHeader bgImage={bgImage}>
+                    <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
+                </PlaygroundHeader>
+
+                <H2 fontSize="12px" color="#FFF" margin="8px 24px 8px auto" lineHeight="130%">*Other Chat Apps: 1024 Members</H2>
+                </RealBG>
             </BlockItem>)}
 
         </>
@@ -132,13 +144,13 @@ const TagItem = styled.div`
     text-align: center;
     font-size: 12px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     line-height: normal;
 
   
 
     &:nth-child(1) {
-        order: -1;
+        order: ${(props) => props.order ? 0 : -1};
     }
 `;
 
@@ -175,6 +187,38 @@ const Playground = styled(Section)`
 }
 `;
 
+const PlaygroundHeader = styled(Section)`
+  flex-direction: column;
+  background-image: url(${(props) => props.bgImage});
+  background-position: center;
+  background-clip: padding-box;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: auto;
+  height: 100%;
+  padding: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 24px;
+  z-index: 20;
+  height: 100%;
+  background-color: #0d0d10;
+
+  @media ${device.mobileL} {
+    max-width: 100%;
+    min-width: 100%;
+}
+`;
+
+const RealBG = styled(Section)`
+    background: #252527;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+`;
+
 const SubscribeText = styled.h2`
   font-size: 72px;
   background: linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%);
@@ -209,8 +253,8 @@ const ButtonItem = styled(Button)`
 
 const GridImage = styled(Image)`
   margin: ${(props) => props.margin || "initial"};
-  display: block;
-  vertical-align: middle;
+//   display: block;
+//   vertical-align: middle;
 
 `;
 

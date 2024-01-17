@@ -29,6 +29,7 @@ import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup"
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import NotificationSection from "@site/src/components/GlassyComponents/NotificationSection.tsx"
+import ChatSection from "@site/src/components/GlassyComponents/ChatSection.tsx"
 import {
   A,
   Content,
@@ -288,6 +289,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             padding="120px 40px 0px 40px"
           >
             <NotificationSection />
+            
+            <ChatSection />
           </Content>
         </GridsSection>
 
