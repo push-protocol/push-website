@@ -5,7 +5,9 @@ export const brbPartnersBountyList = [
     alt: 'Ethereum Foundation, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Use Account Abstraction to make Ethereum quantum proof',
     price: 5000,
-    ended:true
+    ended:true,
+    winner: 'Aditya Bisht',
+    github: 'https://github.com/Bisht13/post-quantum-eth-security'
   },
   {
     srcref: 'polygon',
@@ -51,7 +53,9 @@ export const brbPartnersBountyList = [
     alt: 'Aragon, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build on Aragon OSx: Address community issues via on-chain governance by creating plugins or dApps',
     price: 5000,
-    ended:true
+    ended:true,
+    winner: 'Samuel Mens',
+    github: 'https://github.com/Plopmenz/dao-organization'
   },
   {
     srcref: 'biconomy',
