@@ -1,0 +1,42 @@
+---
+id: docs-video-develop-request-a-video-call
+title: Request a Video Call
+hide_title: true
+slug: ./request-a-video-call
+displayed_sidebar: pushVideoSidebar
+sidebar_position: 5
+image: "/assets/docs/previews/docs_video_develop--request_a_video_call.png"
+---
+
+# Requesting a video call
+
+This section covers everything you need to do to request video calls.
+
+<head>
+  <title>Request a Video Call | Push Video | Push Documentation</title>
+</head>
+
+import { ABlock } from "@site/src/css/SharedStyling";
+
+## Prerequisites
+
+- Before we can make a video call request, we need to have initialized Push Video API. Please refer to the [Initializing Video API](../initialize-video-api) section for more details.
+
+## Fire a Request for a Video Call
+
+We are now ready to request/initiate a video call. As the name suggests, this will be done on the initiator's end.
+
+```typescript
+// aliceVideoCall.request(recipients[], options?);
+await aliceVideoCall.request([recipient]);
+```
+
+| Property       | Type                                | Type     | Description                                                                                                                            |
+| -------------- | ----------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipients`_ | `string[]`                          | -        | Wallet address or addresses of the recipient(s)                                                                                        |
+| `options?`     | `options.rules.access.type`         | `string` | Identifier for Push Video or Space. We use `VIDEO_NOTIFICATION_ACCESS_TYPE.PUSH_CHAT` from `@pushprotocol/restapi` here for Push Video |
+|                | `options.rules.access.data.chatId?` | `string` | Unique identifier for every push chat, here, the one between the alice and the bob                                                     |
+
+:::info
+On the recipient's end, the Push Stream will emit an `RequestVideo` event. This event can be used to show some UI modal on the recipient side to accept/deny the call and will contain the initiator's address, signal data and other details required to establish the call.
+:::
