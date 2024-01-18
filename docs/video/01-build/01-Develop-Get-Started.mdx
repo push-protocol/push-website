@@ -77,31 +77,31 @@ The following speed run is designed to give you a quick overview of usage and de
 
   // To listen to real-time video calls
   Stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
-    if (data.event === VideoEventType.RequestVideo) {
+    if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
       // RequestVideo Event is fired when there is an incoming video call request
       // you can show an UI modal to accept or reject the call
       // store this data.peerInfo which will be used to accept the call when calling approve() method
       peerInfo = data.peerInfo;
     }
 
-    if (data.event === VideoEventType.ApproveVideo) {
+    if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
       // ApproveVideo Event is fired when the user (your peer) approves your video call request
       // Once Approved, your video call is now connected successfully
       console.log("Video Call Approved");
     }
 
-    if (data.event === VideoEventType.DenyVideo) {
+    if (data.event === CONSTANTS.VIDEO.EVENT.DENY) {
       // DenyVideo Event is fired when the user (your peer) rejects your video call request
       // Here you can show an UI toast to inform the user that the video call was rejected by the user (your peer)
       console.log("User Denied the Call");
     }
 
-    if (data.event === VideoEventType.ConnectVideo) {
+    if (data.event === CONSTANTS.VIDEO.EVENT.CONNECT) {
       // ConnectVideo Event is fired when the video call is connected successfully
       console.log("Video Call Connected");
     }
 
-    if (data.event === VideoEventType.DisconnectVideo) {
+    if (data.event === CONSTANTS.VIDEO.EVENT.DISCONNECT) {
       // DisconnectVideo Event is fired when the video call is disconnected/Hung up by either party
       // Here you can simply reload the page or reinitialize the video call object
       console.log("Video Call ended!");

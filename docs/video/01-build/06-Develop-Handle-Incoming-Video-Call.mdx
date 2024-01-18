@@ -29,7 +29,7 @@ Earlier, we set up the Push Video Stream and event listeners in the [Stream API]
 
 ```typescript
 stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
-  if (data.event === VideoEventType.RequestVideo) {
+  if (data.event === CONSTANTS.VIDEO.EVENT.REQUEST) {
     // RequestVideo Event is fired when there is an incoming video call request
     // store this data.peerInfo which will be used to accept/reject the call
     peerInfo = data.peerInfo;
