@@ -78,7 +78,8 @@ export const GridComponentsList = {
             imageTop: true,
             module: 'default',
             mobile: false,
-            id: 'receive'
+            id: 'receive',
+            padding: '0px'
         },
         {
             title: 'Increase \nEngagement',
