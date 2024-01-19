@@ -62,6 +62,7 @@ const NotificationSection = () => {
                         imageTop={item.imageTop}
                         icon={item.icon}
                         mobile={item.mobile}
+                        id={item.id}
                         />
                 ))}
         </GridItem>
@@ -70,23 +71,29 @@ const NotificationSection = () => {
 }
 
 const GridItem = styled.div`
-    // height: 705px;
     display: flex;
     flex-direction: column;
 
     max-width: ${(props) => props.maxWidth || "100%"};
     min-width: ${(props) => props.maxWidth || "100%"};
-
-    // justify-content: space-between;
     gap: 24px;
 
     @media ${device.laptopL} {
-        // max-width: 100%;
         max-width: ${(props) => props.main && '100%'};
         min-width: ${(props) => props.lastRow ? "100%" : '0'};
         flex-grow: ${(props) => props.main ? "1" : '0'};
 
         flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
+
+        & #anti-spam {
+            max-width: 255px !important;
+            min-width: 255px !important;
+        }
+
+        & #receive, #increase {
+            flex: 1 0 calc((100% - 303px)/2) !important;
+            min-height: 321px;
+        }
 
         &:nth-child(1) {
             max-width: 255px !important;
@@ -96,37 +103,28 @@ const GridItem = styled.div`
             flex: 1 1 10%;
         }
 
-        &:nth-child(3) {
-             & div:nth-child(1) {
-                max-width: 255px !important;
-                min-width: 255px !important;
-                box-sizing: border-box !important
-            }
+    }
 
-            & div:nth-child(2) {
-                max-height: 321px !important;
-                min-height: 321px !important;
-            }
+    @media ${device.tablet} {
+        &:nth-child(1) {
+            max-width: 215px !important;
+        }
 
-            & div:nth-child(3) {
-                max-height: 321px !important;
-                min-height: 321px !important;
-            }
+        & #anti-spam {
+            max-width: 215px !important;
+            min-width: 215px !important;
         }
     }
 
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
-        flex-direction: column;
 
-        &:nth-child(3) {
-            & div:nth-child(1) {
-               max-width: 100% !important;
-               min-width: 100% !important;
-               box-sizing: border-box !important
-           }
+        & #anti-spam {
+            max-width: 100% !important;
+            min-width: 100% !important;
         }
+
     }
 `;
 
@@ -140,9 +138,6 @@ const GridSystem = styled.div`
 
     @media ${device.laptopL} {
         width: 100%;
-        // background: red;
-        // display: grid;
-        // grid-template-columns: repeat(2, minmax(0, 1fr));
 
     }
 

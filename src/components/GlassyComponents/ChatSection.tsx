@@ -29,6 +29,7 @@ const NotificationSection = () => {
                     imageTop={item.imageTop}
                     icon={item.icon}
                     mobile={item.mobile}
+                    subheader={item.subheader}
                     />
             ))}
         </GridItem>
@@ -50,6 +51,7 @@ const NotificationSection = () => {
                         imageTop={item.imageTop}
                         icon={item.icon}
                         mobile={item.mobile}
+                        subheader={item.subheader}
                         />
                 ))}
         </GridItem>
@@ -69,6 +71,8 @@ const NotificationSection = () => {
                         imageTop={item.imageTop}
                         icon={item.icon}
                         mobile={item.mobile}
+                        subheader={item.subheader}
+                        id={item.id}
                         />
                 ))}
         </GridItem>
@@ -117,37 +121,51 @@ const GridItem = styled.div`
         &:nth-child(2) {
             flex: 1 1 10%;
         }
-
+       
         &:nth-child(3) {
-             & div:nth-child(1) {
-                max-width: 255px !important;
-                min-width: 255px !important;
-                box-sizing: border-box !important
-            }
+            flex-wrap: wrap;
+        }
 
-            & div:nth-child(2) {
-                max-height: 321px !important;
-                min-height: 321px !important;
-            }
+        & #chain {
+            max-width: 255px !important;
+            min-width: 255px !important;
+        }
+        
 
-            & div:nth-child(3) {
-                max-height: 321px !important;
-                min-height: 321px !important;
-            }
+        & #token-gated {
+            flex: 1 0 calc((100% - 303px)/2) !important;
+        }
+
+        & #e2e {
+            // flex: 1 0 calc((100% - 303px)/2) !important;
+            display: none;
+        }
+
+        & #web3-standard {
+            flex: 1 0 calc((100% - 303px)/2) !important;
+        }
+        
+
+    }
+
+    @media ${device.tablet} {
+        &:nth-child(1) {
+            max-width: 215px !important;
+        }
+
+        & #chain {
+            max-width: 215px !important;
+            min-width: 215px !important;
         }
     }
 
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
-        flex-direction: column;
 
-        &:nth-child(3) {
-            & div:nth-child(1) {
-               max-width: 100% !important;
-               min-width: 100% !important;
-               box-sizing: border-box !important
-           }
+        & #chain {
+            max-width: 100% !important;
+            min-width: 100% !important;
         }
     }
 `;
@@ -163,9 +181,6 @@ const GridSystem = styled.div`
 
     @media ${device.laptopL} {
         width: 100%;
-        // background: red;
-        // display: grid;
-        // grid-template-columns: repeat(2, minmax(0, 1fr));
 
     }
 

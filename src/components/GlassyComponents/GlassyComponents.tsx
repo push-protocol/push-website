@@ -10,7 +10,7 @@ import InterOperation from "@site/static/assets/website/grids/notifications/inte
 import { device } from '@site/src/config/globals';
 import { URL } from 'url';
 
-const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop, mobile}) => {
+const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop, mobile, subheader, id }) => {
 
     const Tag = ({background ,border ,color, title}) => {
         return(
@@ -21,7 +21,7 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
   return (
         <>
         {module == 'default' && 
-            (<BlockItem height={height} padding={srcref == 'snap' && '0px'} mobile={mobile}>
+            (<BlockItem height={height} id={id} padding={srcref == 'snap' && '0px'} mobile={mobile}>
                 
                 {!imageTop && <H2Text fontSize="19px" color="#FFF" lineHeight="130%">{title}</H2Text>}
         
@@ -50,10 +50,16 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
             </BlockItem>)}
 
         {module == 'row' && 
-            (<BlockItem padding="0px"  height={height} mobile={mobile}>
-                <ItemV flexDirection="row" justifyContent="space-between" alignItem="center" flex="1" margin="auto 0" height="100%">
-                <H2 fontSize="19px" color="#FFF" margin='0 0 0 24px'>{title}</H2>
-            
+            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
+                <ItemV flexDirection="row" justifyContent="space-between" alignItems="center" flex="1" margin="auto 0" height="100% !important">
+                     <ItemV flexDirection='column' alignItems='flex-start' gap='8px'>
+                        {subheader && (<H2 fontSize="11px" color="#D98AEC" margin='0 0 0 24px' fontWeight="bold">{subheader}</H2>)} 
+
+                        <H2 fontSize="19px" color="#FFF" margin='0 0 0 24px'>{title}</H2>
+
+                        
+                    </ItemV>
+
                         <GridImage
                             src={require(`@site/static/assets/website/grids/notifications/${icon}.png`).default}
                             srcSet={`${require(`@site/static/assets/website/grids/notifications/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${icon}@3x.png`).default} 3x`}
@@ -67,7 +73,7 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
                 </BlockItem>)}
 
         {module == 'main' && 
-            (<BlockItem height={height} mobile={mobile}>
+            (<BlockItem height={height} id={id} mobile={mobile}>
                 <H2 fontSize="19px" color="#FFF" margin="0 0 10px 0" lineHeight="130%" textAlign="center">{title}</H2>
     
                 <SubscribeText>
@@ -97,14 +103,14 @@ const GlassyComponents = ({title, srcref, srcMargin, height, tags, module, heade
         </BlockItem>)}
 
         {module == 'bg' && 
-            (<BlockItem padding="0px" height={height} mobile={mobile}>
+            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
                 <Playground bgImage={bgImage}>
                     <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
                 </Playground>
             </BlockItem>)}
 
         {module == 'bg-header' && 
-            (<BlockItem padding="0px" height={height} mobile={mobile}>
+            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
                 <RealBG>
                 <PlaygroundHeader bgImage={bgImage}>
                     <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
@@ -125,11 +131,17 @@ const BlockItem = styled.div`
     padding: ${(props) => props.padding || "24px"};
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.10);
+    overflow: hidden !important;
+
+    @media ${device.laptopL} {
+        width: 100% !important;
+    }
 
     @media ${device.mobileL} {
-        display: ${(props) => props.mobile ? 'block' : 'none !important'};
+        display: ${(props) => props.mobile == false && 'none !important'};
         max-height: ${(props) => props.mobile ? '100%' : '0px'};
-        min-height: 100%;
+        min-height: ${(props) => props.height ? props.height : '100%'};
+        width: 100% !important;
     }
 
 `;
@@ -191,9 +203,8 @@ const PlaygroundHeader = styled(Section)`
   flex-direction: column;
   background-image: url(${(props) => props.bgImage});
   background-position: center;
-  background-clip: padding-box;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 85% 85%;
   width: auto;
   height: 100%;
   padding: 24px;
@@ -253,8 +264,7 @@ const ButtonItem = styled(Button)`
 
 const GridImage = styled(Image)`
   margin: ${(props) => props.margin || "initial"};
-//   display: block;
-//   vertical-align: middle;
+  object-fit: contain !important;
 
 `;
 

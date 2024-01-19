@@ -20,7 +20,8 @@ export const GridComponentsList = {
             ],
             height: '147px',
             module: 'default',
-            mobile: false
+            mobile: false,
+            id: 'native'
         },
         {
             title: 'Cross-chain \nNotifications',
@@ -64,7 +65,8 @@ export const GridComponentsList = {
             icon: 'spam',
             height: '76px',
             module: 'row',
-            mobile: true
+            mobile: true,
+            id: 'anti-spam'
         },
         {
             srcref: 'snap',
@@ -73,14 +75,16 @@ export const GridComponentsList = {
             srcMargin: '24px 0',
             imageTop: true,
             module: 'default',
-            mobile: false
+            mobile: false,
+            id: 'receive'
         },
         {
             title: 'Increase \nEngagement',
             srcref: 'engage',
             height: '260px',
             module: 'default',
-            mobile: false
+            mobile: false,
+            id: 'increase'
         }
     ]  
    },
@@ -93,14 +97,15 @@ export const GridComponentsList = {
             height: '439px',
             module: 'default',
             srcMargin: '18px 0 0 0',
-            mobile: false
+            mobile: true
         },
         {
             title: 'Chat Requests',
+            subheader:'PRIVATE AND ANTI SPAM',
             icon: 'requests',
             height: '88px',
             module: 'row',
-            mobile: true
+            mobile: false
         },
         {
             title: 'Secure, Instant, and \nVerifiable Payments',
@@ -113,7 +118,7 @@ export const GridComponentsList = {
             ],
             height: '132px',
             module: 'default',
-            mobile: false
+            mobile: true
         },
     ],
     second: [
@@ -137,17 +142,20 @@ export const GridComponentsList = {
             title: 'Plug and Play \nChat Components',
             srcref: 'plug',
             height: '237px',
+            srcMargin: '0 auto',
             module: 'default',
-            mobile: true
+            mobile: false
         },
     ],
     third: [
         {
             title: 'Chain Agnostic',
+            subheader: 'SUPPORTS ALL EVM CHAINS',
             icon: 'chain-agnostic',
             height: '76px',
             module: 'row',
-            mobile: true
+            mobile: true,
+            id: 'chain'
         },
         {
             srcref: 'token-gated',
@@ -156,14 +164,17 @@ export const GridComponentsList = {
             srcMargin: '0 auto 24px auto',
             imageTop: true,
             module: 'default',
-            mobile: false
+            mobile: false,
+            id: 'token-gated'
         },
         {
             title: 'E2E Encryption',
+            subheader: 'END-TO-END (E2EE)',
             icon: 'e2e',
             height: '76px',
             module: 'row',
-            mobile: true
+            mobile: true,
+            id: 'e2e'
         },
         {
             title: 'Supports any \nWeb3 Standard',
@@ -188,7 +199,8 @@ export const GridComponentsList = {
             ],
             height: '169px',
             module: 'default',
-            mobile: false
+            mobile: true,
+            id: 'web3-standard'
         },
     ]  
    }
