@@ -30,7 +30,7 @@ export const MediaList = [
     srcref: 'beincrypto'
   },
   {
-    url: 'https://cointelegraph.com/news/unstoppable-domains-launches-badge-gated-group-chat-feature-username-holder',
+    url: 'https://cointelegraph.com/news/unstoppable-domains-launches-badge-gated-group-chat-feature-username-holders',
     urltranslatedtitle: 'home.featured-section.article6.link-text',
     translatedtitle: 'home.featured-section.article6.text',
     srcref: 'cointelegraph'
