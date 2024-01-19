@@ -24,6 +24,7 @@ const NotificationSection = () => {
                     tags={item.tags}
                     module={item.module}
                     mobile={item.mobile}
+                    padding={item.padding}
                     />
             ))}
         </GridItem>
@@ -43,6 +44,7 @@ const NotificationSection = () => {
                         buttonText={item.buttonText}
                         bgImage={item.bgImage}
                         mobile={item.mobile}
+                        padding={item.padding}
                         />
                 ))}
         </GridItem>
@@ -63,6 +65,7 @@ const NotificationSection = () => {
                         icon={item.icon}
                         mobile={item.mobile}
                         id={item.id}
+                        padding={item.padding}
                         />
                 ))}
         </GridItem>

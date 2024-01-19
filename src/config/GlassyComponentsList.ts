@@ -56,7 +56,8 @@ export const GridComponentsList = {
             bgImage: require('@site/static/assets/website/grids/notifications/inter.png').default,
             height: '202px',
             module: 'bg',
-            mobile: false
+            mobile: false,
+            padding: '0px'
         },
     ],
     third: [
@@ -66,7 +67,8 @@ export const GridComponentsList = {
             height: '76px',
             module: 'row',
             mobile: true,
-            id: 'anti-spam'
+            id: 'anti-spam',
+            padding: '0px'
         },
         {
             srcref: 'snap',
@@ -105,7 +107,8 @@ export const GridComponentsList = {
             icon: 'requests',
             height: '88px',
             module: 'row',
-            mobile: false
+            mobile: false,
+            padding: '0px'
         },
         {
             title: 'Secure, Instant, and \nVerifiable Payments',
@@ -136,6 +139,7 @@ export const GridComponentsList = {
             bgImage: require('@site/static/assets/website/grids/notifications/hyper.png').default,
             height: '237px',
             module: 'bg-header',
+            padding: '0px',
             mobile: false
         },
         {
@@ -155,6 +159,7 @@ export const GridComponentsList = {
             height: '76px',
             module: 'row',
             mobile: true,
+            padding: '0px',
             id: 'chain'
         },
         {
@@ -174,7 +179,8 @@ export const GridComponentsList = {
             height: '76px',
             module: 'row',
             mobile: true,
-            id: 'e2e'
+            id: 'e2e',
+            padding: '0px'
         },
         {
             title: 'Supports any \nWeb3 Standard',

@@ -10,7 +10,7 @@ import InterOperation from "@site/static/assets/website/grids/notifications/inte
 import { device } from '@site/src/config/globals';
 import { URL } from 'url';
 
-const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop, mobile, subheader, id }) => {
+const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, header ,buttonText, bgImage, icon, imageTop, mobile, subheader, id, padding }) => {
 
     const Tag = ({background ,border ,color, title}) => {
         return(
@@ -20,8 +20,8 @@ const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, head
 
   return (
         <>
-        {module == 'default' && 
-            (<BlockItem height={height} id={id} padding={srcref == 'snap' && '0px'} mobile={mobile}>
+        <Container padding={padding} id={id} height={height} mobile={mobile}>
+        {module == 'default' && (<>
                 
                 {!imageTop && <H2Text fontSize="19px" color="#FFF" lineHeight="130%">{title}</H2Text>}
         
@@ -47,10 +47,9 @@ const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, head
         
                 {imageTop && <H2 fontSize="19px" color="#FFF" margin={srcref == 'snap' && "0 0 24px 24px"} lineHeight="130%">{title}</H2>}
         
-            </BlockItem>)}
+            </>)}
 
-        {module == 'row' && 
-            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
+        {module == 'row' && (<>
                 <ItemV flexDirection="row" justifyContent="space-between" alignItems="center" flex="1" margin="auto 0" height="100% !important">
                      <ItemV flexDirection='column' alignItems='flex-start' gap='8px'>
                         {subheader && (<H2 fontSize="11px" color="#D98AEC" margin='0 0 0 24px' fontWeight="bold">{subheader}</H2>)} 
@@ -70,10 +69,9 @@ const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, head
                             height="55px"
                     />
                     </ItemV>
-                </BlockItem>)}
+                </>)}
 
-        {module == 'main' && 
-            (<BlockItem height={height} id={id} mobile={mobile}>
+        {module == 'main' && (<>
                 <H2 fontSize="19px" color="#FFF" margin="0 0 10px 0" lineHeight="130%" textAlign="center">{title}</H2>
     
                 <SubscribeText>
@@ -100,17 +98,15 @@ const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, head
                     height="auto"
                     margin="0 auto"
                 />
-        </BlockItem>)}
+        </>)}
 
-        {module == 'bg' && 
-            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
+        {module == 'bg' && (<>
                 <Playground bgImage={bgImage}>
                     <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
                 </Playground>
-            </BlockItem>)}
+            </>)}
 
-        {module == 'bg-header' && 
-            (<BlockItem padding="0px" id={id} height={height} mobile={mobile}>
+        {module == 'bg-header' && (<>
                 <RealBG>
                 <PlaygroundHeader bgImage={bgImage}>
                     <H2Text fontSize="19px" color="#FFF" margin="0 0 24px 0" lineHeight="130%" textAlign="left">{title}</H2Text>
@@ -118,12 +114,12 @@ const GlassyComponents = ({ title, srcref, srcMargin, height, tags, module, head
 
                 <H2 fontSize="12px" color="#FFF" margin="8px 24px 8px auto" lineHeight="130%">*Other Chat Apps: 1024 Members</H2>
                 </RealBG>
-            </BlockItem>)}
-
+            </>)}
+            </Container>
         </>
 )}
 
-const BlockItem = styled.div`
+const Container = styled.div`
     width: 100%;
     max-height: ${(props) => props.height || "auto"};
     min-height: ${(props) => props.height || "auto"};

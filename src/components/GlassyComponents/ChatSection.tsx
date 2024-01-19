@@ -30,6 +30,7 @@ const NotificationSection = () => {
                     icon={item.icon}
                     mobile={item.mobile}
                     subheader={item.subheader}
+                    padding={item.padding}
                     />
             ))}
         </GridItem>
@@ -52,6 +53,8 @@ const NotificationSection = () => {
                         icon={item.icon}
                         mobile={item.mobile}
                         subheader={item.subheader}
+                        padding={item.padding}
+                        id={item.id}
                         />
                 ))}
         </GridItem>
@@ -73,6 +76,7 @@ const NotificationSection = () => {
                         mobile={item.mobile}
                         subheader={item.subheader}
                         id={item.id}
+                        padding={item.padding}
                         />
                 ))}
         </GridItem>
