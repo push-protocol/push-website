@@ -1,0 +1,250 @@
+---
+id: docs-video-develop-initializing-video-api
+title: Initializing Video API
+hide_title: true
+slug: ./initializing-video-api
+displayed_sidebar: pushVideoSidebar
+sidebar_position: 4
+image: "/assets/docs/previews/docs_video_develop--initializing_video_api.png"
+---
+
+# Initialising Video API Overview
+
+Push Video API abstract away connection and encryption methods by exposing methods which lets you make and handle video calls.
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<head>
+  <title>Initializing Video API | Push Video | Push Documentation</title>
+</head>
+
+import { ABlock } from "@site/src/css/SharedStyling";
+
+## Prerequisites
+
+Before being able to Initialize Video API,
+
+- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](../initialize-user) to learn how to do that.
+- You need to initialize Push `Stream`. If you haven't done that yet, please refer to [Initializing Stream API](../stream-video) to learn how to do that.
+
+## Initializing Video API
+
+To start video calling wallet addresses, first, you need to declare `data`, `setData` which are essentially a state/variable to hold video call-related data and a function to modify it respectively and we need to create a local media stream.&#x20;
+
+Here below is how to initializing Video API:
+
+```typescript
+  // Initialising the video API
+  // in react, you can use useState hook to declare data and setData like this: const [data, setData] = useState<VideoCallData>(initVideoCallData);
+  // in vanilla js, you can declare data and setData like this: let data = initVideoCallData; const setData = (fn: (data: VideoCallData) => VideoCallData) => {data = fn(data)}
+
+  // async initialize(onChange: (fn: (data: VideoCallData) => VideoCallData) => void, options: VideoInitializeOptions): Promise<VideoV2>;
+  const aliceVideoCall = await userAlice.video.initialize(setData, {
+    stream: Stream, // pass the stream object created using Stream API, please refer to [Initializing Stream API] to learn how to get this stream object.
+    config: {
+      video: true, // to enable video on start, for frontend use
+      audio: true, // to enable audio on start, for frontend use
+    },
+    media?: MediaStream, // to pass your existing media stream(for backend use)
+  });
+```
+
+| Param        | Type                     | Sub-Type      | Default | Remarks                                                                                                                                                                     |
+| ------------ | ------------------------ | ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`onChange`_ | `constant`               | -             | -       | Function to update the video call data, takes a function as an argument which receives the latest state of data as a param and should return the modified/new state of data |
+| _`options`_  | `VideoInitializeOptions` | -             | -       | configuration properties for initializing the video.                                                                                                                        |
+| -            | `options.stream`         | `PushStream`  | -       | Option to configure to enable listening to only certain chats or notifications.                                                                                             |
+| -            | `options.config.video`   | `boolean`     | -       | pass `true`to enable video on start, else pass `false`.                                                                                                                     |
+| -            | `options.config.audio`   | `boolean`     | -       | pass `true`to enable audio on start, else pass `false`.                                                                                                                     |
+| -            | `options.media`          | `MediaStream` | -       | Local stream. For backend use. Defaults to `null`.                                                                                                                          |
+
+Now let's go over each property individually and understand how to set them.
+
+### Understanding data variable
+
+- The `data` variable is an object that is used to store all of the video call-related data.
+- It is of type `PushAPI.VideoCallData` and should be initialized with `initVideoCallData`.
+- For React-based projects, this would basically be a React state, and for vanilla JS projects, it will be a simple JS variable.
+
+The type `PushAPI.VideoCallData` is described below:
+
+```typescript
+// IMediaStream is a custom type that represents a media stream object or null
+type IMediaStream = MediaStream | null;
+
+// VideoCallStatus is an enum that represents different statuses of a video call
+// These values are used to indicate the current status of a video call
+enum VideoCallStatus {
+  // call hasn't been started yet
+  UNINITIALIZED,
+
+  // call has been started by the initiator but not received by the receiver
+  INITIALIZED,
+
+  // call has been received by the receiver but not connected yet
+  RECEIVED,
+
+  // call has been connected, and both users can interact now
+  // MediaStream (includes both audio and video) exchange is now possible
+  CONNECTED,
+
+  // when the call request is denied by the peer (receiver)
+  DISCONNECTED,
+
+  // call has been ended by one of the users
+  ENDED
+
+  // retrying to establish the call from the INITIALIZED state
+  RETRY_INITIALIZED,
+
+  // retrying to establish the call from the RECEIVED state
+  RETRY_RECEIVED,
+}
+
+type VideoCallData = {
+  meta: {
+    // contains meta info of the video call
+    chatId: string; // unique identifier for every push chat
+    initiator: {
+      address: string; // address of the initiator of the call
+      signal: any; // signal data from the initiator
+    };
+    broadcast?: {
+      // will be used in Push Spaces
+      livepeerInfo: any;
+      hostAddress: string;
+      coHostAddress: string;
+    };
+  };
+  // This property is used to store the info of the local peer/user
+  local: {
+    stream: IMediaStream; // the stream object
+    audio: boolean | null; // whether local audio is on or not
+    video: boolean | null; // whether local video is on or not
+    address: string; // address of the local peer/user
+  };
+  incoming: [
+    // This property is used to store the info of an incoming peer/user
+    {
+      stream: IMediaStream; // the stream object
+      audio: boolean | null; // whether incoming audio is on or not
+      video: boolean | null; // whether incoming video is on or not
+      address: string; // address of the incoming peer/user
+      status: VideoCallStatus; // video call status with a particular incoming peer
+      retryCount: number; // no. of retries required in establishing the call
+    },
+  ];
+};
+```
+
+The `initVideoCallData` looks like the following:
+
+```typescript
+// As mentioned earlier, this should be used to initialize the data variable.
+const initVideoCallData: PushAPI.VideoCallData = {
+  meta: {
+    chatId: "",
+    initiator: {
+      address: "",
+      signal: null,
+    },
+  },
+  local: {
+    stream: null,
+    audio: null,
+    video: null,
+    address: "",
+  },
+  incoming: [
+    {
+      stream: null,
+      audio: null,
+      video: null,
+      address: "",
+      status: VideoCallStatus.UNINITIALIZED, // call is at the UNINITIALIZED status
+      retryCount: 0,
+    },
+  ],
+};
+```
+
+Creating and initializing the `data` variable is shown below:
+
+```typescript
+// NOTE: You don't have to define initVideoCallData in your project.
+// Just import it using the following and use it:
+import { initVideoCallData } from "@pushprotocol/restapi/src/lib/video";
+
+// 1. For a vanilla JS project
+let data: PushAPI.VideoCallData = initVideoCallData;
+
+// 2. For a React project
+import { useState } from "react";
+const [data, setData] = useState<PushAPI.VideoCallData>(initVideoCallData);
+```
+
+### setData function
+
+- `setData` is a function to update the video call data i.e., the `data` variable.
+- It is of type `(fn: (data: VideoCallData) => VideoCallData) => void` and is described below:
+
+```typescript
+/*
+- fn function is supplied by the caller of setData()
+- fn is a function that accepts current 'data' as input and returns updated 'data'
+*/
+const setData: : (fn: (data: VideoCallData) => VideoCallData) => void = (fn) => {
+  /*
+    - Here, we are passing the current value of 'data' to fn
+    - The return value of fn() i.e., the updated value of 'data' is assigned back to 'data'
+  */
+data = fn(data);
+};
+```
+
+### Stream Object
+
+```typescript
+  // Initialising the video API
+  const aliceVideoCall = await userAlice.video.initialize(setData, {
+      stream: stream,
+      ...
+  });
+```
+
+- `stream` object is created using Push Stream API, which is basically to listen video call events and is used handle video call operations.
+- Please refer to [Initializing Stream API](../stream-video) to learn how to get this stream object.
+
+### Media Stream
+
+```typescript
+  // Initialising the video API
+  const aliceVideoCall = await userAlice.video.initialize(setData, {
+      ...
+      config: {
+        video: Boolean, // to enable video on start
+        audio: Boolean, // to enable audio on start
+      },
+      media?: MediaStream; // to initialize with existing media stream (for backend use)
+  });
+
+```
+
+- initialise() function generates a new MediaStream object using `navigator.mediaDevices.getUserMedia` from the available browser APIs.
+- The `video` and `audio` boolean params are used to tell if you want to enable your audio/video during the video call or not.
+
+Example:
+
+- If you pass the `video` as `false`, your video will be disabled during the entire call. If you pass it as `true`, then your video will be turned on initially during the call, and later, you will have the option to toggle it on or off.
+- For `audio` the above logic is the same.
+
+- media is used to pass your existing media stream. This is for backend use.
+
+:::info
+If `media` object is passed as a param to `initialise()` function then `initialise` doesn't generate a new MediaStream rather, it would just assigns `data.local.stream` to the passed `media` object param. This is for backend use.
+:::
+
+:::info
+⚠ **Warning**: If `audio`, `video` aren't passed as true in `initialise()` then they won't be available during the entire video call respectively.
+:::
