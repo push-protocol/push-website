@@ -32,6 +32,7 @@ import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
 import {
   A,
+  B,
   Content,
   H1,
   H2,
@@ -102,6 +103,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
+  const isMobile = useMediaQuery(device.mobileL);
 
   const onClickViewMoreTeamMembers = (e) => {
     e.preventDefault();
@@ -288,19 +290,18 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
             padding="120px 40px 0px 40px"
           >
-              <>
                   <ItemV
-                      width = {'100%'}
+                      maxWidth = {'849px'}
                       // width = {isMobile ? '100%' : '849px'}
                       margin = '72px auto'>
-                      <H2 color='#fff' fontSize='30px' textAlign='center'>
-                          <b>Push provides a robust and decentralized push notification protocol. </b> 
+                      <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
+                          <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
                           Push enables web3 native notification alerts between wallets.
                       </H2>
                   </ItemV>
 
-                  <ChatGridSystem>
-                      <ChatGridSection maxWidth="282px">
+                  <NotificationGridSystem>
+                      <NotificationGridItem maxWidth="282px">
                           {GridComponentsList?.notification?.first?.map((item)=>(
                               <GlassyComponents 
                                   title={item.title}
@@ -313,11 +314,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                   padding={item.padding}
                                   />
                           ))}
-                      </ChatGridSection>
+                      </NotificationGridItem>
 
                   
 
-                      <ChatGridSection maxWidth="588px" main={true}>
+                      <NotificationGridItem maxWidth="588px" main={true}>
                           {GridComponentsList?.notification?.second?.map((item)=>(
                                   <GlassyComponents 
                                       title={item.title}
@@ -333,9 +334,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                       padding={item.padding}
                                       />
                               ))}
-                      </ChatGridSection>
+                      </NotificationGridItem>
 
-                      <ChatGridSection maxWidth="282px" lastRow={true}>
+                      <NotificationGridItem maxWidth="282px" lastRow={true}>
                           {GridComponentsList?.notification?.third?.map((item)=>(
                                   <GlassyComponents 
                                       title={item.title}
@@ -354,15 +355,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                       padding={item.padding}
                                       />
                               ))}
-                      </ChatGridSection>
-                  </ChatGridSystem>
-                  </>
+                      </NotificationGridItem>
+                  </NotificationGridSystem>
 
 
             {/* <NotificationSection /> */}
 
-                  <NotificationGridSystem>
-                        <NotificationGridItem maxWidth="282px">
+                  <ChatGridSystem>
+                        <ChatGridItem maxWidth="282px">
                             {GridComponentsList?.chat?.first?.map((item)=>(
                                 <GlassyComponents 
                                     title={item.title}
@@ -381,11 +381,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                     padding={item.padding}
                                     />
                             ))}
-                        </NotificationGridItem>
+                        </ChatGridItem>
 
                     
 
-                        <NotificationGridItem maxWidth="588px" main={true}>
+                        <ChatGridItem maxWidth="588px" main={true}>
                             {GridComponentsList?.chat?.second?.map((item)=>(
                                     <GlassyComponents 
                                         title={item.title}
@@ -405,9 +405,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                         id={item.id}
                                         />
                                 ))}
-                        </NotificationGridItem>
+                        </ChatGridItem>
 
-                        <NotificationGridItem maxWidth="282px" lastRow={true}>
+                        <ChatGridItem maxWidth="282px" lastRow={true}>
                             {GridComponentsList?.chat?.third?.map((item)=>(
                                     <GlassyComponents 
                                         title={item.title}
@@ -427,8 +427,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                         padding={item.padding}
                                         />
                                 ))}
-                        </NotificationGridItem>
-                    </NotificationGridSystem>
+                        </ChatGridItem>
+                    </ChatGridSystem>
             
           </Content>
         </GridsSection>
@@ -1443,7 +1443,7 @@ const ArticleSource = styled(ItemH)`
   }
 `;
 
-const ChatGridSection = styled.div`
+const NotificationGridItem = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -1501,7 +1501,7 @@ const ChatGridSection = styled.div`
     }
 `;
 
-const ChatGridSystem = styled.div`
+const NotificationGridSystem = styled.div`
     font-family: FK Grotesk Neue;
     width: 1200px;
     display: flex;
@@ -1521,7 +1521,7 @@ const ChatGridSystem = styled.div`
     }
 `;
 
-const NotificationGridItem = styled.div`
+const ChatGridItem = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -1625,7 +1625,7 @@ const NotificationGridItem = styled.div`
     }
 `;
 
-const NotificationGridSystem = styled.div`
+const ChatGridSystem = styled.div`
     font-family: FK Grotesk Neue;
     width: 1200px;
     display: flex;
