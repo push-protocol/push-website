@@ -358,8 +358,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       </NotificationGridItem>
                   </NotificationGridSystem>
 
-
-            {/* <NotificationSection /> */}
+                  <ItemV
+                      maxWidth = {'849px'}
+                      margin = '15em auto 72px auto'
+                      flexDirection = 'row'>
+                      <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
+                          <B color='#fff'>Push Chat is the leading decentralized, </B> 
+                           web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming <TagItem>COMING SOON</TagItem>
+                      </H2>
+                  </ItemV>
 
                   <ChatGridSystem>
                         <ChatGridItem maxWidth="282px">
@@ -1632,7 +1639,7 @@ const ChatGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
-    margin: 20em 0;
+    // margin: 20em 0;
 
     @media ${device.laptopL} {
         width: 100%;
@@ -1644,6 +1651,20 @@ const ChatGridSystem = styled.div`
         display: flex;
         flex-direction: column;
     }
+`;
+
+const TagItem = styled.b`
+    width: fit-content;
+    border-radius: 12px;
+    border: 1px solid #D98AEC;
+    background: transparent;
+    padding: 4px 12px;
+    color: #D98AEC;
+    // text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
 `;
 
 
