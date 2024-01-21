@@ -28,8 +28,8 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import NotificationSection from "@site/src/components/GlassyComponents/NotificationSection.tsx"
-import ChatSection from "@site/src/components/GlassyComponents/ChatSection.tsx"
+import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
+import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
 import {
   A,
   Content,
@@ -288,9 +288,148 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
             padding="120px 40px 0px 40px"
           >
-            <NotificationSection />
+              <>
+                  <ItemV
+                      width = {'100%'}
+                      // width = {isMobile ? '100%' : '849px'}
+                      margin = '72px auto'>
+                      <H2 color='#fff' fontSize='30px' textAlign='center'>
+                          <b>Push provides a robust and decentralized push notification protocol. </b> 
+                          Push enables web3 native notification alerts between wallets.
+                      </H2>
+                  </ItemV>
+
+                  <ChatGridSystem>
+                      <ChatGridSection maxWidth="282px">
+                          {GridComponentsList?.notification?.first?.map((item)=>(
+                              <GlassyComponents 
+                                  title={item.title}
+                                  srcref={item.srcref}
+                                  srcMargin={item.srcMargin}
+                                  height={item.height}
+                                  tags={item.tags}
+                                  module={item.module}
+                                  mobile={item.mobile}
+                                  padding={item.padding}
+                                  />
+                          ))}
+                      </ChatGridSection>
+
+                  
+
+                      <ChatGridSection maxWidth="588px" main={true}>
+                          {GridComponentsList?.notification?.second?.map((item)=>(
+                                  <GlassyComponents 
+                                      title={item.title}
+                                      srcref={item.srcref}
+                                      srcMargin={item.srcMargin}
+                                      height={item.height}
+                                      tags={item.tags}
+                                      module={item.module}
+                                      header={item.header}
+                                      buttonText={item.buttonText}
+                                      bgImage={item.bgImage}
+                                      mobile={item.mobile}
+                                      padding={item.padding}
+                                      />
+                              ))}
+                      </ChatGridSection>
+
+                      <ChatGridSection maxWidth="282px" lastRow={true}>
+                          {GridComponentsList?.notification?.third?.map((item)=>(
+                                  <GlassyComponents 
+                                      title={item.title}
+                                      srcref={item.srcref}
+                                      srcMargin={item.srcMargin}
+                                      height={item.height}
+                                      tags={item.tags}
+                                      module={item.module}
+                                      header={item.header}
+                                      buttonText={item.buttonText}
+                                      bgImage={item.bgImage}
+                                      imageTop={item.imageTop}
+                                      icon={item.icon}
+                                      mobile={item.mobile}
+                                      id={item.id}
+                                      padding={item.padding}
+                                      />
+                              ))}
+                      </ChatGridSection>
+                  </ChatGridSystem>
+                  </>
+
+
+            {/* <NotificationSection /> */}
+
+                  <NotificationGridSystem>
+                        <NotificationGridItem maxWidth="282px">
+                            {GridComponentsList?.chat?.first?.map((item)=>(
+                                <GlassyComponents 
+                                    title={item.title}
+                                    srcref={item.srcref}
+                                    srcMargin={item.srcMargin}
+                                    height={item.height}
+                                    tags={item.tags}
+                                    module={item.module}
+                                    header={item.header}
+                                    buttonText={item.buttonText}
+                                    bgImage={item.bgImage}
+                                    imageTop={item.imageTop}
+                                    icon={item.icon}
+                                    mobile={item.mobile}
+                                    subheader={item.subheader}
+                                    padding={item.padding}
+                                    />
+                            ))}
+                        </NotificationGridItem>
+
+                    
+
+                        <NotificationGridItem maxWidth="588px" main={true}>
+                            {GridComponentsList?.chat?.second?.map((item)=>(
+                                    <GlassyComponents 
+                                        title={item.title}
+                                        srcref={item.srcref}
+                                        srcMargin={item.srcMargin}
+                                        height={item.height}
+                                        tags={item.tags}
+                                        module={item.module}
+                                        header={item.header}
+                                        buttonText={item.buttonText}
+                                        bgImage={item.bgImage}
+                                        imageTop={item.imageTop}
+                                        icon={item.icon}
+                                        mobile={item.mobile}
+                                        subheader={item.subheader}
+                                        padding={item.padding}
+                                        id={item.id}
+                                        />
+                                ))}
+                        </NotificationGridItem>
+
+                        <NotificationGridItem maxWidth="282px" lastRow={true}>
+                            {GridComponentsList?.chat?.third?.map((item)=>(
+                                    <GlassyComponents 
+                                        title={item.title}
+                                        srcref={item.srcref}
+                                        srcMargin={item.srcMargin}
+                                        height={item.height}
+                                        tags={item.tags}
+                                        module={item.module}
+                                        header={item.header}
+                                        buttonText={item.buttonText}
+                                        bgImage={item.bgImage}
+                                        imageTop={item.imageTop}
+                                        icon={item.icon}
+                                        mobile={item.mobile}
+                                        subheader={item.subheader}
+                                        id={item.id}
+                                        padding={item.padding}
+                                        />
+                                ))}
+                        </NotificationGridItem>
+                    </NotificationGridSystem>
             
-            <ChatSection />
           </Content>
         </GridsSection>
 
@@ -1303,6 +1442,210 @@ const ArticleSource = styled(ItemH)`
     height: 40px;
   }
 `;
+
+const ChatGridSection = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    max-width: ${(props) => props.maxWidth || "100%"};
+    min-width: ${(props) => props.maxWidth || "100%"};
+    gap: 24px;
+
+    @media ${device.laptopL} {
+        max-width: ${(props) => props.main && '100%'};
+        min-width: ${(props) => props.lastRow ? "100%" : '0'};
+        flex-grow: ${(props) => props.main ? "1" : '0'};
+
+        flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
+
+        & #anti-spam {
+            max-width: 255px !important;
+            min-width: 255px !important;
+        }
+
+        & #receive, #increase {
+            flex: 1 0 calc((100% - 303px)/2) !important;
+            min-height: 321px;
+        }
+
+        &:nth-child(1) {
+            max-width: 255px !important;
+        }
+
+        &:nth-child(2) {
+            flex: 1 1 10%;
+        }
+
+    }
+
+    @media ${device.tablet} {
+        &:nth-child(1) {
+            max-width: 215px !important;
+        }
+
+        & #anti-spam {
+            max-width: 215px !important;
+            min-width: 215px !important;
+        }
+    }
+
+    @media ${device.mobileL} {
+        max-width: 100% !important;
+        min-width: 100% !important;
+
+        & #anti-spam {
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+
+    }
+`;
+
+const ChatGridSystem = styled.div`
+    font-family: FK Grotesk Neue;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    @media ${device.laptopL} {
+        width: 100%;
+
+    }
+
+    @media ${device.mobileL} {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
+const NotificationGridItem = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    max-width: ${(props) => props.maxWidth || "100%"};
+    min-width: ${(props) => props.maxWidth || "100%"};
+    gap: 24px;
+
+    &:nth-child(2) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-shrink: 1;
+        & div:nth-child(1) {
+            flex-basis: 100%;
+        }
+
+        & div:nth-child(2) {
+            flex-basis: calc(50% - 12px);
+        }
+
+        & div:nth-child(3) {
+            flex-basis: calc(50% - 12px);
+        }
+    }
+
+    @media ${device.laptopL} {
+        // max-width: 100%;
+        max-width: ${(props) => props.main && '100%'};
+        min-width: ${(props) => props.lastRow ? "100%" : '0'};
+        flex-grow: ${(props) => props.main ? "1" : '0'};
+
+        flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
+
+        &:nth-child(1) {
+            max-width: 255px !important;
+        }
+
+        &:nth-child(2) {
+            flex: 1 1 10%;
+        }
+       
+        &:nth-child(3) {
+            // flex-wrap: wrap;
+            display: grid;
+            // grid-template-rows: repeat(3, auto);
+            grid-template-columns: repeat(3, 1fr);
+            // grid-template-columns: 255px 300px 500px;
+            grid-auto-flow: column;
+            // grid-template-columns: repeat(3, 1fr);
+        }
+        
+        & #chain {
+            max-width: 255px !important;
+            min-width: 255px !important;
+        }
+        
+        
+        & #token-gated {
+            // min-width: calc((100% - 303px) / 2) !important;
+            
+            grid-row: span 3 / span 3;
+        }
+        
+        & #e2e {
+            // flex: 1 0 calc((100% - 303px)/2) !important;
+            // display: none;	
+            
+            grid-column: span 2 / span 2;
+        }
+        
+        & #web3-standard {
+            // flex: 0 0 calc((100% - 303px)/2) !important;
+            background: red !important;
+            
+            grid-column: span 2 / span 2;
+            grid-row: span 2 / span 2;
+        }
+        
+
+    }
+
+    @media ${device.tablet} {
+        &:nth-child(1) {
+            max-width: 215px !important;
+        }
+
+        & #chain {
+            max-width: 215px !important;
+            min-width: 215px !important;
+        }
+    }
+
+    @media ${device.mobileL} {
+        max-width: 100% !important;
+        min-width: 100% !important;
+
+        & #chain {
+            max-width: 100% !important;
+            min-width: 100% !important;
+        }
+    }
+`;
+
+const NotificationGridSystem = styled.div`
+    font-family: FK Grotesk Neue;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 20em 0;
+
+    @media ${device.laptopL} {
+        width: 100%;
+
+    }
+
+    @media ${device.mobileL} {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+`;
+
 
 const MarqueeAnimationContainer = styled(ItemV)`
 `
