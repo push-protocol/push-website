@@ -215,3 +215,9 @@ public async sendMessageToContract(simulate) {
     });
 }
 ```
+
+### How does it actually work?
+
+Summarizing what we implemented in the example, we use a concept of a global clock (say CYCLES) using a variable that is stored in our database and it gets updated after every iteration of the cron-job that runs for every 1 hour. We check if any new users have subscribed to the channel after the last iteration and store a mapping of the user address and the current CYCLES value. This mapping will allow us to calculate the correct dispatch time of notification as per user. 
+
+Well, that's it. You now have a clear understanding of how notification slider settings work and you can use it to build amazing use-cases. We'll see you in another one. Until then keep building🔥
