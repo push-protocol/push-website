@@ -30,6 +30,7 @@ import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
+import GlassComponents from '@site/src/components/GlassyComponents/GlassComponents'
 import {
   A,
   B,
@@ -303,16 +304,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <NotificationGridSystem>
                       <NotificationGridItem maxWidth="282px">
                           {GridComponentsList?.notification?.first?.map((item)=>(
-                              <GlassyComponents 
-                                  title={item.title}
-                                  srcref={item.srcref}
-                                  srcMargin={item.srcMargin}
-                                  height={item.height}
-                                  tags={item.tags}
-                                  module={item.module}
-                                  mobile={item.mobile}
-                                  padding={item.padding}
-                                  />
+                              <GlassComponents section = {item} />
                           ))}
                       </NotificationGridItem>
 
@@ -320,40 +312,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                       <NotificationGridItem maxWidth="588px" main={true}>
                           {GridComponentsList?.notification?.second?.map((item)=>(
-                                  <GlassyComponents 
-                                      title={item.title}
-                                      srcref={item.srcref}
-                                      srcMargin={item.srcMargin}
-                                      height={item.height}
-                                      tags={item.tags}
-                                      module={item.module}
-                                      header={item.header}
-                                      buttonText={item.buttonText}
-                                      bgImage={item.bgImage}
-                                      mobile={item.mobile}
-                                      padding={item.padding}
-                                      />
+                              <GlassComponents section = {item} />
                               ))}
                       </NotificationGridItem>
 
                       <NotificationGridItem maxWidth="282px" lastRow={true}>
                           {GridComponentsList?.notification?.third?.map((item)=>(
-                                  <GlassyComponents 
-                                      title={item.title}
-                                      srcref={item.srcref}
-                                      srcMargin={item.srcMargin}
-                                      height={item.height}
-                                      tags={item.tags}
-                                      module={item.module}
-                                      header={item.header}
-                                      buttonText={item.buttonText}
-                                      bgImage={item.bgImage}
-                                      imageTop={item.imageTop}
-                                      icon={item.icon}
-                                      mobile={item.mobile}
-                                      id={item.id}
-                                      padding={item.padding}
-                                      />
+                                  <GlassComponents section = {item} />
                               ))}
                       </NotificationGridItem>
                   </NotificationGridSystem>
@@ -371,22 +336,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ChatGridSystem>
                         <ChatGridItem maxWidth="282px">
                             {GridComponentsList?.chat?.first?.map((item)=>(
-                                <GlassyComponents 
-                                    title={item.title}
-                                    srcref={item.srcref}
-                                    srcMargin={item.srcMargin}
-                                    height={item.height}
-                                    tags={item.tags}
-                                    module={item.module}
-                                    header={item.header}
-                                    buttonText={item.buttonText}
-                                    bgImage={item.bgImage}
-                                    imageTop={item.imageTop}
-                                    icon={item.icon}
-                                    mobile={item.mobile}
-                                    subheader={item.subheader}
-                                    padding={item.padding}
-                                    />
+                                  <GlassComponents section = {item} />
                             ))}
                         </ChatGridItem>
 
@@ -394,45 +344,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                         <ChatGridItem maxWidth="588px" main={true}>
                             {GridComponentsList?.chat?.second?.map((item)=>(
-                                    <GlassyComponents 
-                                        title={item.title}
-                                        srcref={item.srcref}
-                                        srcMargin={item.srcMargin}
-                                        height={item.height}
-                                        tags={item.tags}
-                                        module={item.module}
-                                        header={item.header}
-                                        buttonText={item.buttonText}
-                                        bgImage={item.bgImage}
-                                        imageTop={item.imageTop}
-                                        icon={item.icon}
-                                        mobile={item.mobile}
-                                        subheader={item.subheader}
-                                        padding={item.padding}
-                                        id={item.id}
-                                        />
+                                  <GlassComponents section = {item} />
                                 ))}
                         </ChatGridItem>
 
                         <ChatGridItem maxWidth="282px" lastRow={true}>
                             {GridComponentsList?.chat?.third?.map((item)=>(
-                                    <GlassyComponents 
-                                        title={item.title}
-                                        srcref={item.srcref}
-                                        srcMargin={item.srcMargin}
-                                        height={item.height}
-                                        tags={item.tags}
-                                        module={item.module}
-                                        header={item.header}
-                                        buttonText={item.buttonText}
-                                        bgImage={item.bgImage}
-                                        imageTop={item.imageTop}
-                                        icon={item.icon}
-                                        mobile={item.mobile}
-                                        subheader={item.subheader}
-                                        id={item.id}
-                                        padding={item.padding}
-                                        />
+                                  <GlassComponents section = {item} />
                                 ))}
                         </ChatGridItem>
                     </ChatGridSystem>
