@@ -251,13 +251,16 @@ onst aliceMessagesBob = await userAlice.chat.send(
             config: {
                 id: 'hyperscalable',
                 height: '237px',
-                padding: '24px',
-                bg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
+                padding: '0',
+                sectionBg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
                 hideOnMobile: true
             },
             header: {
                 title: 'Hyperscalable \nGroups',
                 align: 'left',
+            },
+            footer: {
+                fieldText: '*Other Chat Apps: 1024 Members'
             }
         },
         // {

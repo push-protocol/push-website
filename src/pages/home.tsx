@@ -1380,7 +1380,6 @@ const NotificationGridItem = styled.div`
         max-width: ${(props) => props.main && '100%'};
         min-width: ${(props) => props.lastRow ? "100%" : '0'};
         flex-grow: ${(props) => props.main ? "1" : '0'};
-
         flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
 
         & #anti-spam {
@@ -1459,17 +1458,18 @@ const ChatGridItem = styled.div`
         flex-direction: row;
         flex-grow: 1;
         flex-shrink: 1;
-        & div:nth-child(1) {
-            flex-basis: 100%;
-        }
+    }
 
-        & div:nth-child(2) {
-            flex-basis: calc(50% - 12px);
-        }
+    & #lightweight-code {
+      flex-basis: 100%;
+    }
 
-        & div:nth-child(3) {
-            flex-basis: calc(50% - 12px);
-        }
+    & #hyperscalable {
+      flex-basis: calc(50% - 12px);
+    }
+
+    & #plug-play {
+      flex-basis: calc(50% - 12px);
     }
 
     @media ${device.laptopL} {

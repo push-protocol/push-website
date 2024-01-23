@@ -17,10 +17,10 @@ import TabItem from "@theme/TabItem";
 
 const GlassComponents = ({ section }) => {
     const { config, header, body, footer } = section;
-    const { id, height, padding, hideOnMobile, bg } = config || '';
+    const { id, height, padding, hideOnMobile, bg, sectionBg } = config || '';
     const { title, tags, illustration, align, icon, theme, highlight, subheader } = header || '';
     const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblock } = body || '';
-    const { text } = footer || '';
+    const { text, fieldText } = footer || '';
 
 
 
@@ -32,8 +32,9 @@ const GlassComponents = ({ section }) => {
 
   return (
         <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile}>
-            <Header justifyContent={highlight && 'flex-start'} flex={highlight || type === 'codeblock' ? '0' : '1'}>
-                <ItemH flex={highlight|| type === 'codeblock' ? '0' : '1'} alignItems={illustration && 'center'}>
+            <Background id={id} bg={sectionBg}>
+            <Header justifyContent={highlight && 'flex-start'} flex={highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'}>
+                <ItemH flex={highlight|| type === 'codeblock' || id === 'token-gated' ? '0' : '1'} alignItems={illustration && 'center'}>
 
                     <ItemH flex='1' alignSelf={illustration ? 'center' : 'flex-start'} gap={icon && '8px'}>
 
@@ -51,7 +52,7 @@ const GlassComponents = ({ section }) => {
                         <ItemV alignItems={align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'} gap={subheader && '8px'}>
                             <H2 fontSize="11px" color="#D98AEC"  fontWeight="bold">{subheader}</H2>
 
-                            <H2Text theme={theme}>{title}</H2Text>
+                            <H2Text theme={theme} type={type}>{title}</H2Text>
                         </ItemV>
 
                         {highlight && (
@@ -99,6 +100,7 @@ const GlassComponents = ({ section }) => {
                     srcSet={`${require(`@site/static/assets/website/grids/notifications/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${imagesrc}@3x.png`).default} 3x`}
                     alt={alt}
                     title={alt}
+                    type={type}
                     // width="auto"
                     // margin="0 16px 0 0"
                     // height="55px"
@@ -148,14 +150,22 @@ const GlassComponents = ({ section }) => {
                     </CodeDiv>
                 )}
             </Body>)}
+            </Background>
 
             {footer && (
-                <Footer>
-                    <H2Text>{text}</H2Text>
+                <Footer fieldText={fieldText}>
+                    {text && (<H2Text>{text}</H2Text>)}
+
+                    {fieldText && (
+                        <FooterField>
+                             <H2 fontSize="12px" textAlign='right' color="#FFF"  lineHeight="130%" margin="auto 24px auto auto">*Other Chat Apps: 1024 Members</H2>
+                        </FooterField>
+                    )}
                 </Footer>
             )}
             
 
+            {/* margin="8px 24px 8px auto" */}
             {/* <Header> // Item V
           <ItemH> // flex 1
             <ItemH> // alignment logic, flex to 1 and center or left or right | // theme logic for hue or not
@@ -182,23 +192,31 @@ const GlassComponents = ({ section }) => {
           }
           {
             <CodeBlock></CodeBlock>
+
+    // background-size: ${(props) => props.id === 'hyperscalable' ? '85% 85%' : props.id === 'interoperable'  ? 'cover' :  'contain'};
+
           }
         </Body>  */}
             </Container>
 )}
 
+
+
 const Container = styled.div`
+    position: relative;
     width: 100%;
     max-height: ${(props) => props.height || "auto"};
     min-height: ${(props) => props.height || "auto"};
     border-radius: 24px;
     padding: ${(props) => props.padding || "24px"};
     box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: ${(props) => props.id == 'hyperscalable' ? '1px solid rgba(255, 255, 255, 0.01)' : '1px solid rgba(255, 255, 255, 0.10)'};
     overflow: hidden !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: ${(props) => props.id == 'hyperscalable' && '#252527'};
+
 
     // background size
     background-image: url(${(props) => props.bg});
@@ -254,64 +272,12 @@ const H2Text = styled(H2)`
     white-space: pre;
 
     @media ${device.mobileL} {
-        white-space: normal;
+        white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
     }
 
     background: ${(props) => props.theme === 'hue' && "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
     -webkit-background-clip: ${(props) => props.theme === 'hue' && "text"};
     -webkit-text-fill-color: ${(props) => props.theme === 'hue' && "transparent"};
-`;
-
-const Playground = styled(Section)`
-  flex-direction: column;
-  background-image: url(${(props) => props.bgImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: auto;
-  height: 100%;
-//   min-width: 588px;
-//   min-height: 202px;
-  padding: 24px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border-radius: 24px;
-
-  @media ${device.mobileL} {
-    max-width: 100%;
-    min-width: 100%;
-}
-`;
-
-const PlaygroundHeader = styled(Section)`
-  flex-direction: column;
-  background-image: url(${(props) => props.bgImage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 85% 85%;
-  width: auto;
-  height: 100%;
-  padding: 24px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border-radius: 24px;
-  z-index: 20;
-  height: 100%;
-  background-color: #0d0d10;
-
-  @media ${device.mobileL} {
-    max-width: 100%;
-    min-width: 100%;
-}
-`;
-
-const RealBG = styled(Section)`
-    background: #252527;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 24px;
 `;
 
 const SubscribeText = styled.h2`
@@ -351,18 +317,49 @@ const GridImage = styled(Image)`
   margin: ${(props) => props.margin || "initial"};
   object-fit: contain !important;
 
+  @media ${device.mobileL} {
+    width: ${(props) => props.type == 'image' && "70%"};
+    margin: ${(props) => props.type == 'image' && "0 auto"};
+  }
+
 `;
 
 const Header = styled(ItemV)`
-
 `;
 
 const Body = styled.div`
   flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const Background = styled.div`
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: ${(props) => props.bg ? '#0D0D10' : 'transparent'};
+  flex: 1;
+  box-sizing: border-box;
+  padding: ${(props) => props.id == 'hyperscalable' &&  "24px"};
+  border-radius: ${(props) => props.id == 'hyperscalable' &&  "24px"};
+
+  background-image: url(${(props) => props.bg});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 85% 85%;
 `;
 
 const Footer = styled.div`
-
+    background-color: ${(props) => props.fieldText &&  "#252527"};
+    width: ${(props) => props.fieldText &&  "100%"};
+    max-height: ${(props) => props.fieldText &&  "29px !important"};
+    min-height: ${(props) => props.fieldText &&  "29px"}
+    position: ${(props) => props.fieldText &&  "absolute"};
+    bottom: ${(props) => props.fieldText &&  "0"};
+    left: ${(props) => props.fieldText &&  "0"};
+    right: ${(props) => props.fieldText &&  "0"};
 `;
 
 const CodeDiv = styled.div`
@@ -372,6 +369,13 @@ const CodeDiv = styled.div`
     // flex: 1;
     width: 100%;
     height: 100%;
+`;
+
+
+const FooterField = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
 `;
 
 const Div = styled.div`
@@ -464,8 +468,8 @@ const Div = styled.div`
 
     .clean-btn {
         position: relative;
-        top: 150px; 
-        left: -16px; 
+        top: 120px; 
+        left: -15px; 
     }
 
 `;
@@ -473,10 +477,16 @@ const Div = styled.div`
 const TechDocCodeBlock = styled(CodeBlock)`
     font-size: 14px;
     margin: 0px;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     width: 100%;
     // width: inherit;
     box-sizing: border-box !important;
+
+    @media ${device.mobileL} {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
 
   /* WebKit browsers (Chrome, Safari) */
   *::-webkit-scrollbar {
