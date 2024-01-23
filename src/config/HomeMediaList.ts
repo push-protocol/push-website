@@ -41,4 +41,10 @@ export const MediaList = [
     translatedtitle: 'home.featured-section.article7.text',
     srcref: 'defiant'
   },
+  {
+    url: 'https://erc4337.mirror.xyz/ghX6mENwSgsNqLz7Gqlt940akHzYWZH4LRaRAgx77VI',
+    urltranslatedtitle: 'home.featured-section.article8.link-text',
+    translatedtitle: 'home.featured-section.article8.text',
+    srcref: 'erc'
+  },
 ];
