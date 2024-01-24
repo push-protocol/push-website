@@ -30,7 +30,6 @@ import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
-import GlassComponents from '@site/src/components/GlassyComponents/GlassComponents'
 import {
   A,
   B,
@@ -284,8 +283,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           </Content>
         </ShowcaseSection>
 
-        {/* GRID SECTION */}
-        <GridsSection id="grids-section" data-bkg="light" className="lightBackground">
+        {/* NOTIF SECTION */}
+        <NotificationSection id="grids-section" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -304,7 +303,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <NotificationGridSystem>
                       <NotificationGridItem maxWidth="282px">
                           {GridComponentsList?.notification?.first?.map((item)=>(
-                              <GlassComponents section = {item} />
+                              <GlassyComponents section = {item} />
                           ))}
                       </NotificationGridItem>
 
@@ -312,18 +311,28 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                       <NotificationGridItem maxWidth="588px" main={true}>
                           {GridComponentsList?.notification?.second?.map((item)=>(
-                              <GlassComponents section = {item} />
+                              <GlassyComponents section = {item} />
                               ))}
                       </NotificationGridItem>
 
                       <NotificationGridItem maxWidth="282px" lastRow={true}>
                           {GridComponentsList?.notification?.third?.map((item)=>(
-                                  <GlassComponents section = {item} />
+                                  <GlassyComponents section = {item} />
                               ))}
                       </NotificationGridItem>
                   </NotificationGridSystem>
+          </Content>
+        </NotificationSection>
 
-                  <ItemV
+         {/* CHAT SECTION */}
+         <ChatSection id="grids-section" data-bkg="light" className="lightBackground">
+          <Content
+            className="contentBox"
+            alignSelf="center"
+            padding="120px 40px 0px 40px"
+          >
+
+        <ItemV
                       maxWidth = {'849px'}
                       margin = '15em auto 72px auto'
                       flexDirection = 'row'>
@@ -336,7 +345,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ChatGridSystem>
                         <ChatGridItem maxWidth="282px">
                             {GridComponentsList?.chat?.first?.map((item)=>(
-                                  <GlassComponents section = {item} />
+                                  <GlassyComponents section = {item} />
                             ))}
                         </ChatGridItem>
 
@@ -344,19 +353,20 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                         <ChatGridItem maxWidth="588px" main={true}>
                             {GridComponentsList?.chat?.second?.map((item)=>(
-                                  <GlassComponents section = {item} />
+                                  <GlassyComponents section = {item} />
                                 ))}
                         </ChatGridItem>
 
                         <ChatGridItem maxWidth="282px" lastRow={true}>
                             {GridComponentsList?.chat?.third?.map((item)=>(
-                                  <GlassComponents section = {item} />
+                                  <GlassyComponents section = {item} />
                                 ))}
                         </ChatGridItem>
                     </ChatGridSystem>
+
+                    </Content>
+        </ChatSection>
             
-          </Content>
-        </GridsSection>
 
 
         {/* BUILD WITH PUSH */}
@@ -906,7 +916,13 @@ const ShowcaseSection = styled(Section)`
   padding-bottom: 0px;
 `;
 
-const GridsSection = styled(Section)`
+const NotificationSection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0px;
+`;
+
+const ChatSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;

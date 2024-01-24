@@ -112,7 +112,7 @@ body: 'Web3 Native Notifications are Here!',
             config: {
                 id: 'anti-spam',
                 height: '76px',
-                padding: '0px 14px',
+                padding: '0 0 0 10px',
                 hideOnMobile: false 
             },
             header: {
@@ -263,14 +263,6 @@ onst aliceMessagesBob = await userAlice.chat.send(
                 fieldText: '*Other Chat Apps: 1024 Members'
             }
         },
-        // {
-        //     title: 'Hyperscalable \nGroups',
-        //     bgImage: require('@site/static/assets/website/grids/notifications/hyper.png').default,
-        //     height: '237px',
-        //     module: 'bg-header',
-        //     padding: '0px',
-        //     mobile: false
-        // },
         {
             config: {
                 id: 'plug-play',
