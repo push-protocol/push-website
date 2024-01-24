@@ -81,16 +81,7 @@ export const GridComponentsList = {
                 bodyText: '<4 mins',
                 buttonText: 'Start Building',
                 buttonLink: 'https://push.org',
-                codeblock: `// Initialize wallet user
- const userAlice = await PushAPI.initialize(signer);
-                 
-// Send a notification to users of your protocol
-const response = await userAlice.channel.send(['*'], { 
-notification: {
-title: 'Hello World!',
-body: 'Web3 Native Notifications are Here!',
-}
-});`,
+                codeblockImg: `subscribe`,
          }
         },
         {
@@ -112,7 +103,7 @@ body: 'Web3 Native Notifications are Here!',
             config: {
                 id: 'anti-spam',
                 height: '76px',
-                padding: '0 0 0 10px',
+                padding: '0px 24px',
                 hideOnMobile: false 
             },
             header: {
@@ -172,7 +163,7 @@ body: 'Web3 Native Notifications are Here!',
                 id: 'share',
                 height: '439px',
                 padding: '24px 24px 0px 24px ',
-                hideOnMobile: false
+                hideOnMobile: true
             },
             header: {
                 title: 'Share Images, Gifs, \nand Reactions',
@@ -188,7 +179,7 @@ body: 'Web3 Native Notifications are Here!',
             config: {
                 id: 'chat-requests',
                 height: '88px',
-                padding: '0px 14px',
+                padding: '0px 24px',
                 hideOnMobile: true 
             },
             header: {
@@ -236,15 +227,7 @@ body: 'Web3 Native Notifications are Here!',
                 bodyText: '<2 mins',
                 buttonText: 'Start Building',
                 buttonLink: 'https://push.org',
-                codeblock: `// Initialize wallet user
-const userAlice = await PushAPI.initialize(signer);
- 
-// Send a notification to users of your protocol
-onst aliceMessagesBob = await userAlice.chat.send(  
-'0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666',
-{content: "Gm gm! It's a me... Mario"}
-);
-`,
+                codeblockImg: `lightcode`,
          }
         },
         {
@@ -286,7 +269,7 @@ onst aliceMessagesBob = await userAlice.chat.send(
             config: {
                 id: 'chain-agnostic',
                 height: '76px',
-                padding: '0px 14px',
+                padding: '0px 24px',
                 hideOnMobile: false 
             },
             header: {
@@ -318,7 +301,7 @@ onst aliceMessagesBob = await userAlice.chat.send(
             config: {
                 id: 'e2e',
                 height: '76px',
-                padding: '0px 14px',
+                padding: '0px 24px',
                 hideOnMobile: false 
             },
             header: {

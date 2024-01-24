@@ -19,7 +19,7 @@ const GlassyComponents = ({ section }) => {
     const { config, header, body, footer } = section;
     const { id, height, padding, hideOnMobile, bg, sectionBg } = config || '';
     const { title, tags, illustration, align, icon, theme, highlight, subheader } = header || '';
-    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblock } = body || '';
+    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg } = body || '';
     const { text, fieldText } = footer || '';
 
 
@@ -33,8 +33,8 @@ const GlassyComponents = ({ section }) => {
   return (
         <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile}>
             <Background id={id} bg={sectionBg}>
-            <Header justifyContent={highlight && 'flex-start'} highlight={highlight} type={type} id={id} flex={highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'}>
-                <ItemH flex={highlight|| type === 'codeblock' || id === 'token-gated' ? '0' : '1'} alignItems={illustration && 'center'}>
+            <Header justifyContent={highlight ? 'flex-start' : tags ? 'center' : 'center'} highlight={highlight} type={type} id={id} flex={highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'}>
+                <ItemH flex={highlight|| type === 'codeblock' || id === 'token-gated' ? '0' : '1'} alignItems={illustration && 'center'}alignSelf={highlight && 'flex-start'}>
 
                     <ItemH flex='1' alignSelf={illustration ? 'center' : 'flex-start'} gap={icon && '8px'}>
 
@@ -49,7 +49,7 @@ const GlassyComponents = ({ section }) => {
                         />
                    )} 
                         
-                        <ItemV alignItems={align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'} gap={subheader && '8px'}>
+                        <ItemV alignItems={align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'} flex={highlight && '0'} gap={subheader && '8px'}>
                             <H2 fontSize="11px" color="#D98AEC"  fontWeight="bold">{subheader}</H2>
 
                             <H2Text theme={theme} type={type}>{title}</H2Text>
@@ -78,7 +78,7 @@ const GlassyComponents = ({ section }) => {
 
                 {/* tags */}
                 {tags && (
-                    <TagItems flexDirection="row" alignItems='flex-start' justifyContent="flex-start" gap="12px" margin="14px 0 0 0">
+                    <TagItems flexDirection="row" alignItems='flex-start' justifyContent="flex-start" gap="12px" margin="14px 0 0 0" >
                     {tags?.map((item)=>(
                         <Tag 
                             background={item.background}
@@ -92,7 +92,7 @@ const GlassyComponents = ({ section }) => {
 
 
             {body && 
-            (<Body flex={type === codeblock && '1'}>
+            (<Body>
                 {type === 'image' && (
                   <GridImage
                     src={require(`@site/static/assets/website/grids/notifications/${imagesrc}.png`).default}
@@ -119,30 +119,17 @@ const GlassyComponents = ({ section }) => {
                             {buttonText}
                             <WhiteArrow />
                         </ButtonItem> 
+
+                        <GridImage
+                            src={require(`@site/static/assets/website/grids/notifications/${codeblockImg}.png`).default}
+                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@3x.png`).default} 3x`}
+                            alt={alt}
+                            title={alt}
+                            type={type}
+                            />
                     
 
-                        <Div>
-                            <Tabs className="codetabs" showLineNumbers={true} groupId="code-examples">
-                                <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-                                <TechDocCodeBlock
-                                    language="jsx"
-                                     showLineNumbers={true}>
-                                    {codeblock}
-                                </TechDocCodeBlock> 
-
-                                </TabItem>
-                                <TabItem value="react" attributes={{className: "codetab react"}} default>
-
-                                    <TechDocCodeBlock
-                                            language="jsx"
-                                            showLineNumbers={true}>
-                                            {codeblock}
-                                        </TechDocCodeBlock> 
-
-                            </TabItem>
-                            </Tabs>
-                     </Div>
+                       
                     </CodeDiv>
                 )}
             </Body>)}
@@ -188,6 +175,9 @@ const Container = styled.div`
 
     @media ${device.laptopL} {
         width: 100% !important;
+
+        max-height: ${(props) => props.id == 'web3-standard' && "215px !important"};
+        min-height: ${(props) => props.id == 'web3-standard' && "215px !important"};
     }
 
     @media ${device.mobileL} {
@@ -328,7 +318,7 @@ const CodeDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // flex: 1;
+    flex: 1;
     width: 100%;
     height: 100%;
 `;
@@ -475,4 +465,28 @@ const TechDocCodeBlock = styled(CodeBlock)`
   }
 `;
 
-export default GlassyComponents
+export default GlassyComponents;
+
+
+ {/* <Div>
+                            <Tabs className="codetabs" showLineNumbers={true} groupId="code-examples">
+                                <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+                                <TechDocCodeBlock
+                                    language="jsx"
+                                     showLineNumbers={true}>
+                                    {codeblock}
+                                </TechDocCodeBlock> 
+
+                                </TabItem>
+                                <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+                                    <TechDocCodeBlock
+                                            language="jsx"
+                                            showLineNumbers={true}>
+                                            {codeblock}
+                                        </TechDocCodeBlock> 
+
+                            </TabItem>
+                            </Tabs>
+                     </Div> */}

@@ -1392,6 +1392,14 @@ const NotificationGridItem = styled.div`
     min-width: ${(props) => props.maxWidth || "100%"};
     gap: 24px;
 
+    &:nth-child(2) {
+      flex-wrap: wrap;
+      flex-direction: row;
+      flex-grow: 1;
+      flex-shrink: 1;
+  }
+
+
     @media ${device.laptopL} {
         max-width: ${(props) => props.main && '100%'};
         min-width: ${(props) => props.lastRow ? "100%" : '0'};
@@ -1400,7 +1408,6 @@ const NotificationGridItem = styled.div`
 
         & #anti-spam {
             max-width: 255px !important;
-            min-width: 255px !important;
         }
 
         & #receive, #increase {
@@ -1425,7 +1432,6 @@ const NotificationGridItem = styled.div`
 
         & #anti-spam {
             max-width: 215px !important;
-            min-width: 215px !important;
         }
     }
 
@@ -1476,9 +1482,6 @@ const ChatGridItem = styled.div`
         flex-shrink: 1;
     }
 
-    & #lightweight-code {
-      flex-basis: 100%;
-    }
 
     & #hyperscalable {
       flex-basis: calc(50% - 12px);
@@ -1505,40 +1508,29 @@ const ChatGridItem = styled.div`
         }
        
         &:nth-child(3) {
-            // flex-wrap: wrap;
             display: grid;
-            // grid-template-rows: repeat(3, auto);
-            grid-template-columns: repeat(3, 1fr);
-            // grid-template-columns: 255px 300px 500px;
+            grid-template-columns: 255px 1fr 1fr;
             grid-auto-flow: column;
-            // grid-template-columns: repeat(3, 1fr);
         }
         
-        & #chain {
-            max-width: 255px !important;
-            min-width: 255px !important;
+        & #chain-agnostic {
+            grid-column: 1;
         }
         
         
         & #token-gated {
-            // min-width: calc((100% - 303px) / 2) !important;
-            
+            grid-column: 2;
             grid-row: span 3 / span 3;
         }
         
         & #e2e {
-            // flex: 1 0 calc((100% - 303px)/2) !important;
-            // display: none;	
-            
-            grid-column: span 2 / span 2;
+            grid-column: 3;
+            grid-row: 1;
         }
         
         & #web3-standard {
-            // flex: 0 0 calc((100% - 303px)/2) !important;
-            background: red !important;
-            
-            grid-column: span 2 / span 2;
-            grid-row: span 2 / span 2;
+            grid-column: 3;
+            grid-row: 2;
         }
         
 
@@ -1549,20 +1541,41 @@ const ChatGridItem = styled.div`
             max-width: 215px !important;
         }
 
-        & #chain {
-            max-width: 215px !important;
-            min-width: 215px !important;
-        }
+        &:nth-child(3) {
+          display: grid;
+          grid-template-columns: 215px 1fr 1fr;
+          grid-auto-flow: column;
+      }
+
     }
 
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
 
-        & #chain {
-            max-width: 100% !important;
-            min-width: 100% !important;
-        }
+        &:nth-child(3) {
+          display: grid;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+
+      } 
+
+      & #chain-agnostic {
+          grid-column: 1;
+      }
+      
+      
+      & #token-gated {
+        grid-column: 1;
+      }
+      
+      & #e2e {
+        grid-column: 1;
+      }
+      
+      & #web3-standard {
+        grid-column: 1;
+      }
+    
     }
 `;
 
