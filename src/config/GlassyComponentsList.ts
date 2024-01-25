@@ -118,7 +118,7 @@ export const GridComponentsList = {
                 height: '321px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/grids/notifications/snap-bg.png').default,
-                hideOnMobile: true
+                hideOnMobile: false
             },
             header: {
                 title: 'Push Snap',
@@ -234,16 +234,17 @@ export const GridComponentsList = {
             config: {
                 id: 'hyperscalable',
                 height: '237px',
-                padding: '0',
-                sectionBg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
+                padding: '24px',
+                bg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
                 hideOnMobile: true
             },
             header: {
                 title: 'Hyperscalable \nGroups',
                 align: 'left',
             },
-            footer: {
-                fieldText: '*Other Chat Apps: 1024 Members'
+            after: {
+                message: '*Other Chat Apps: 1024 Members',
+                alignment: 'right'
             }
         },
         {

@@ -1400,7 +1400,7 @@ const NotificationGridItem = styled.div`
   }
 
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         max-width: ${(props) => props.main && '100%'};
         min-width: ${(props) => props.lastRow ? "100%" : '0'};
         flex-grow: ${(props) => props.main ? "1" : '0'};
@@ -1438,6 +1438,8 @@ const NotificationGridItem = styled.div`
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
+        flex-direction: column;
+
 
         & #anti-spam {
             max-width: 100% !important;
@@ -1455,7 +1457,7 @@ const NotificationGridSystem = styled.div`
     gap: 24px;
     flex-wrap: wrap;
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         width: 100%;
 
     }
@@ -1491,7 +1493,7 @@ const ChatGridItem = styled.div`
       flex-basis: calc(50% - 12px);
     }
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         // max-width: 100%;
         max-width: ${(props) => props.main && '100%'};
         min-width: ${(props) => props.lastRow ? "100%" : '0'};
@@ -1588,7 +1590,7 @@ const ChatGridSystem = styled.div`
     flex-wrap: wrap;
     // margin: 20em 0;
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         width: 100%;
 
     }

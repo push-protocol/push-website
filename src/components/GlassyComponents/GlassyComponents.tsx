@@ -6,36 +6,35 @@ import React from 'react'
 import styled from 'styled-components';
 import { Button, H2, Image ,ItemH, ItemV, Section } from '@site/src/css/SharedStyling';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
-import JsLogo from "@site/static/assets/website/grids/notifications/js.png";
-import ReactLogo from "@site/static/assets/website/grids/notifications/react.png";
 import { device } from '@site/src/config/globals';
-import { URL } from 'url';
-import CodeBlock from '@theme/CodeBlock';
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 
 const GlassyComponents = ({ section }) => {
-    const { config, header, body, footer } = section;
-    const { id, height, padding, hideOnMobile, bg, sectionBg } = config || '';
+  const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
+
+    const { config, header, body, footer, after } = section;
+    const { id, height, padding, hideOnMobile, bg } = config || '';
     const { title, tags, illustration, align, icon, theme, highlight, subheader } = header || '';
     const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg } = body || '';
-    const { text, fieldText } = footer || '';
+    const { text } = footer || '';
+    const { message, alignment } = after || '';
 
 
 
-    const Tag = ({background ,border ,color, title}) => {
+    const Tag = ({ item }) => {
+        const { background, border, color, title } = item || ''
         return(
             <TagItem background={background} border={border} order= {tags?.length === 4 ? true : false} color={color}>{title}</TagItem>
         )
       }
 
   return (
-        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile}>
-            <Background id={id} bg={sectionBg}>
-            <Header justifyContent={highlight ? 'flex-start' : tags ? 'center' : 'center'} highlight={highlight} type={type} id={id} flex={highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'}>
-                <ItemH flex={highlight|| type === 'codeblock' || id === 'token-gated' ? '0' : '1'} alignItems={illustration && 'center'}alignSelf={highlight && 'flex-start'}>
+        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile} type={type}>
 
+            <Header highlight={highlight} type={type} id={id}>
+                <Subheader highlight={highlight} type={type} id={id} illustration={illustration}>
                     <ItemH flex='1' alignSelf={illustration ? 'center' : 'flex-start'} gap={icon && '8px'}>
 
                     {icon && (
@@ -48,19 +47,14 @@ const GlassyComponents = ({ section }) => {
                             height="16px"
                         />
                    )} 
-                        
-                        <ItemV alignItems={align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'} flex={highlight && '0'} gap={subheader && '8px'}>
-                            <H2 fontSize="11px" color="#D98AEC"  fontWeight="bold">{subheader}</H2>
+                        <Title align={align} highlight={highlight} subheader={subheader}>
+                            <H2 fontSize={isTablet ? "9px" : "11px"} color="#D98AEC"  fontWeight="bold">{subheader}</H2>
 
                             <H2Text theme={theme} type={type}>{title}</H2Text>
-                        </ItemV>
+                        </Title>
 
                         {highlight && (
-                            <Tag 
-                            background={highlight.background}
-                            border={highlight.border}
-                            color={highlight.color}
-                            title={highlight.title} />
+                            <Tag item={highlight} />
                         )}
                     </ItemH>
 
@@ -70,21 +64,17 @@ const GlassyComponents = ({ section }) => {
                         srcSet={`${require(`@site/static/assets/website/grids/notifications/${illustration}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${illustration}@3x.png`).default} 3x`}
                         alt={'Push Snap'}
                         title="Push Snap"
-                        width="auto"
-                        height="55px"
+                        width={isTablet ? "41px" : "auto"}
+                        height={isTablet ? "auto" : "55px"}
                     />
                    )} 
-                </ItemH>
+                </Subheader>
 
                 {/* tags */}
                 {tags && (
                     <TagItems flexDirection="row" alignItems='flex-start' justifyContent="flex-start" gap="12px" margin="14px 0 0 0" >
                     {tags?.map((item)=>(
-                        <Tag 
-                            background={item.background}
-                            border={item.border}
-                            color={item.color}
-                            title={item.title} />
+                        <Tag item={item} />
                     ))}
                 </TagItems>
                 )}
@@ -100,6 +90,7 @@ const GlassyComponents = ({ section }) => {
                     alt={alt}
                     title={alt}
                     type={type}
+                    id={id}
                     />
                 )}
 
@@ -111,7 +102,7 @@ const GlassyComponents = ({ section }) => {
             
                         <ButtonItem
                             background="#E64DE9"
-                            padding="14px 22px"
+                            padding={!isTablet ? "14px 22px" : '10px 11px'}
                             margin="0px auto"
                             fontWeight="500"
                             fontSize="16px"
@@ -126,6 +117,7 @@ const GlassyComponents = ({ section }) => {
                             alt={alt}
                             title={alt}
                             type={type}
+                            margin={isMobile && '12px 0 0 0'}
                             />
                     
 
@@ -133,22 +125,60 @@ const GlassyComponents = ({ section }) => {
                     </CodeDiv>
                 )}
             </Body>)}
-            </Background>
 
             {footer && (
-                <Footer fieldText={fieldText}>
+                <Footer>
                     {text && (<H2Text>{text}</H2Text>)}
-
-                    {fieldText && (
-                        <FooterField>
-                             <H2 fontSize="12px" textAlign='right' color="#FFF"  lineHeight="130%" margin="auto 24px auto auto">*Other Chat Apps: 1024 Members</H2>
-                        </FooterField>
-                    )}
                 </Footer>
+            )}
+
+            {after && (
+                <AfterItem alignment={alignment}>
+                    <H2 fontSize="12px" color="#FFF"  lineHeight="130%">{message}</H2>
+                </AfterItem>
             )}
             </Container>
 )}
 
+
+const AfterItem = styled.div`
+    background-color: #252527;
+    width: calc(100% + 48px) !important;
+    // max-height: 29px !important;
+    // min-height: 29px;
+    position: relative;
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: -24px;
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    justify-content: ${(props) => props.alignment == 'left' ? 'flex-start' : props.alignment == 'right' ? 'flex-end' : 'center'};
+
+
+    ::after, ::before {
+        content: '';
+        position: absolute;
+        top: -29px;
+        width: 0;
+        height: 0;
+      }
+
+      ::before {
+        left: 0;
+        width: 29px;
+        height: 29px;
+        background: radial-gradient(circle at top right, transparent 70%, #252527 71%);
+      }
+      
+      ::after {
+        right: 0;
+        width: 29px;
+        height: 29px;
+        background: radial-gradient(circle at top left, transparent 70%, #252527 71%);
+
+      }
+`;
 
 
 const Container = styled.div`
@@ -159,31 +189,33 @@ const Container = styled.div`
     border-radius: 24px;
     padding: ${(props) => props.padding || "24px"};
     box-sizing: border-box;
-    border: ${(props) => props.id == 'hyperscalable' ? '1px solid rgba(255, 255, 255, 0.01)' : '1px solid rgba(255, 255, 255, 0.10)'};
+    border: 1px solid rgba(255, 255, 255, 0.10);
     overflow: hidden !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: ${(props) => props.id == 'hyperscalable' && '#252527'};
 
 
-    // background size
     background-image: url(${(props) => props.bg});
-    background-position: center;
+    background-position: ${(props) => props.id == 'hyperscalable' ? 'center 20px' : 'center'};
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 75%' : props.id == 'interoperable' ? 'cover' : 'contain'};
 
-    @media ${device.laptopL} {
+    @media ${device.laptopM} {
         width: 100% !important;
-
         max-height: ${(props) => props.id == 'web3-standard' && "215px !important"};
         min-height: ${(props) => props.id == 'web3-standard' && "215px !important"};
     }
 
+    @media ${device.tablet} {
+        background-size: ${(props) => props.id == 'hyperscalable' ? '75% auto' : 'contain'};
+    }
+
+    
     @media ${device.mobileL} {
         display: ${(props) => props.hideOnMobile && 'none !important'};
-        max-height: ${(props) => props.height ? props.height : 'auto'};
-        min-height: ${(props) => props.height ? props.height : 'auto'};
+        max-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        min-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
         width: 100% !important;
     }
 
@@ -222,6 +254,10 @@ const H2Text = styled(H2)`
     color: #FFF;
     line-height: 130%;
     white-space: pre;
+
+    @media ${device.tablet} {
+        font-size: 15px;
+    }
 
     @media ${device.mobileL} {
         white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
@@ -270,13 +306,27 @@ const GridImage = styled(Image)`
   object-fit: contain !important;
 
   @media ${device.mobileL} {
-    width: ${(props) => props.type == 'image' && "70%"};
+    width: ${({id, type}) => id == 'snap' && type === 'image' ? "100%" : type === 'image' ? '80%' : 'inherit' };
     margin: ${(props) => props.type == 'image' && "0 auto"};
   }
 
 `;
 
 const Header = styled(ItemV)`
+    justify-content: ${({highlight, tags}) => highlight ? 'flex-start' : tags ? 'center' : 'center' };
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+`;
+
+const Subheader = styled(ItemH)`
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+    align-items: ${(props) => props.illustration && 'center'};
+    align-self: ${(props) => props.highlight && 'flex-start'};
+`;
+
+const Title = styled(ItemV)`
+    align-items: ${({align}) => align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'};
+    flex: ${({highlight}) => highlight && '0'};
+    gap: ${({subheader}) => subheader && '0'};
 `;
 
 const Body = styled.div`
@@ -304,14 +354,6 @@ const Background = styled.div`
 `;
 
 const Footer = styled.div`
-    background-color: ${(props) => props.fieldText &&  "#252527"};
-    width: ${(props) => props.fieldText &&  "100%"};
-    max-height: ${(props) => props.fieldText &&  "29px !important"};
-    min-height: ${(props) => props.fieldText &&  "29px"};
-    // position: ${(props) => props.fieldText &&  "absolute"};
-    bottom: ${(props) => props.fieldText &&  "0"};
-    left: ${(props) => props.fieldText &&  "0"};
-    right: ${(props) => props.fieldText &&  "0"};
 `;
 
 const CodeDiv = styled.div`
@@ -324,169 +366,5 @@ const CodeDiv = styled.div`
 `;
 
 
-const FooterField = styled.div`
-    height: 100%;
-    display: flex;
-    align-items: center;
-`;
-
-const Div = styled.div`
-    width: 100% !important;
-    position: relative;
-
-
-    .tabs {
-        position: absolute;
-        right: 24px;
-        z-index: 20;
-        margin: 24px 0 0 0;
-        flex-direction: column;
-        gap: 12px;
-    }
-    .tabs-container {
-        margin-bottom: 0 !important;
-
-        @media ${device.mobileL} {
-            width: 300px !important;
-            margin: 0 auto;
-        }
-
-        @media ${device.mobileM} {
-            width: 100% !important;
-        }
-    }
-
-    .codetabs li {
-        height: 32px;
-        width: 32px;
-        padding: 0px;
-    }
-
-    .codetab.js::before {
-        background-image: url(${JsLogo});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 100%;
-        height: 100%;
-        margin: 0px;
-    }
-
-    .codetab.react::before {
-        background-image: url(${ReactLogo});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 100%;
-        height: 100%;
-        margin: 0px;
-    }
-
-    .codetab.js:after {
-        content: '';
-    }
-
-    .codetab.react:after {
-        content: '';
-    }
-
-    .tabs__item--active {
-        border: none;
-    }
-
-    pre {
-        background-color: #0D0D0F !important;
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        border-radius: 24px;
-    }
-
-    div {
-        border-radius: 24px;
-        background: transparent !important;
-    }
-
-    .margin-top--md {
-        margin: 0 auto !important;
-    }
-
- 
-
-    code {
-        span {
-            background-color: #0D0D0F !important;
-        }
-    }
-    
-
-    .clean-btn {
-        position: relative;
-        top: 120px; 
-        left: -15px; 
-    }
-
-`;
-
-const TechDocCodeBlock = styled(CodeBlock)`
-    font-size: 14px;
-    margin: 0px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    // width: inherit;
-    box-sizing: border-box !important;
-
-    @media ${device.mobileL} {
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-  /* WebKit browsers (Chrome, Safari) */
-  *::-webkit-scrollbar {
-      width: 3px !important;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-      background: #CB3FAA;
-      border-radius: 6px;
-  }
-  
-  *::-webkit-scrollbar-track {
-        background: transparent;
-  }
-  
-  *::-webkit-scrollbar-button {
-      display: none !important;
-  }
-  
-  /* Firefox */
-  * {
-      scrollbar-color: #CB3FAA #f1f1f1;
-      scrollbar-width: thin;
-  }
-`;
-
 export default GlassyComponents;
 
-
- {/* <Div>
-                            <Tabs className="codetabs" showLineNumbers={true} groupId="code-examples">
-                                <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-                                <TechDocCodeBlock
-                                    language="jsx"
-                                     showLineNumbers={true}>
-                                    {codeblock}
-                                </TechDocCodeBlock> 
-
-                                </TabItem>
-                                <TabItem value="react" attributes={{className: "codetab react"}} default>
-
-                                    <TechDocCodeBlock
-                                            language="jsx"
-                                            showLineNumbers={true}>
-                                            {codeblock}
-                                        </TechDocCodeBlock> 
-
-                            </TabItem>
-                            </Tabs>
-                     </Div> */}
