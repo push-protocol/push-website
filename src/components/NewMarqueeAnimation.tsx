@@ -27,13 +27,12 @@ type Props = {
 
 function NewMarqueeAnimation(props: Props) {
   const {
-    // speed = 100,
     speed,
     gap = 0,
     gradient = false,
     gradientWidth = 64,
-    // direction = 'left',
     direction,
+    fixedWidth,
     pause = false,
   } = props;
   
@@ -54,8 +53,8 @@ function NewMarqueeAnimation(props: Props) {
           arrows: false,
           pagination: false,
           drag: 'free',
-          gap: '18px',
-          fixedWidth: '250px',
+          gap: gap,
+          fixedWidth: fixedWidth ? fixedWidth : 'auto',
           autoScroll: {
             pauseOnHover: false,
             pauseOnFocus: false,

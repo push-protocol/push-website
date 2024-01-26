@@ -29,6 +29,7 @@ import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup"
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
+import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
 import {
   A,
@@ -54,6 +55,7 @@ import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chain
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
 import GithubSVG from "@site/static/assets/website/shared/github.svg";
@@ -284,11 +286,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ShowcaseSection>
 
         {/* NOTIF SECTION */}
-        <NotificationSection id="grids-section" data-bkg="light" className="lightBackground">
+        <NotificationSection id="notification-section" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="120px 40px 0px 40px"
+            // padding="120px 40px 0px 40px"
           >
                   <ItemV
                       maxWidth = {'849px'}
@@ -321,11 +323,33 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               ))}
                       </NotificationGridItem>
                   </NotificationGridSystem>
+
+                  <GridMarquee
+                        speed={2}
+                        gradientWidth={8}
+                        gap={18}
+                        // fixedWidth={'2'}
+                        direction="ltr">
+                      {GlassyComponentMarqueeList.map((item) => {
+                        return (
+                        <SplideSlide>
+                          <NotificationMarquee>
+                            
+                            <GridItem>
+                              <H2 fontSize={'30px'} color={'#707187'}>{item.title}</H2>
+                              <StarIcon />
+                            </GridItem>
+
+                          </NotificationMarquee>
+                          </SplideSlide>
+                        );
+                      })} 
+            </GridMarquee>
           </Content>
         </NotificationSection>
 
          {/* CHAT SECTION */}
-         <ChatSection id="grids-section" data-bkg="light" className="lightBackground">
+         <ChatSection id="chat-section" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -334,7 +358,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         <ItemV
                       maxWidth = {'849px'}
-                      margin = '15em auto 72px auto'
+                      margin = '0px auto 72px auto'
                       flexDirection = 'row'>
                       <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
                           <B color='#fff'>Push Chat is the leading decentralized, </B> 
@@ -646,6 +670,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 speed={3}
                 gradientWidth={8}
                 gap={18}
+                fixedWidth={'250px'}
                 direction="ltr"
 
               >
@@ -686,6 +711,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 speed={-3}
                 gradientWidth={8}
                 gap={18}
+                fixedWidth={'250px'}
                 direction="ltr"
               >
                 {InvList.bottom.map((item, i) => {
@@ -1614,6 +1640,32 @@ const TagItem = styled.b`
     font-style: normal;
     font-weight: bolder;
     line-height: normal;
+`;
+
+const NotificationMarquee = styled(ItemH)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 64px 0;
+`;
+
+const GridMarquee = styled(NewMarqueeAnimation)`
+  // margin: 0 0 0 0;
+  // flex-flow: nowrap;
+`;
+
+const GridItem = styled(ItemH)`
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  align-items: center;
+
+  svg {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 
