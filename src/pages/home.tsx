@@ -325,9 +325,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   </NotificationGridSystem>
 
                   <GridMarquee
-                        speed={2}
+                        speed={1}
                         gradientWidth={8}
                         gap={18}
+                        bg={'linear-gradient(90deg, #0D0D0F 0%, #0D0D0F 6%, rgba(13, 13, 15, 0.00) 32%, rgba(13, 13, 15, 0.00) 69%, #0D0D0F 94.5%, #0D0D0F 100%)'}
                         // fixedWidth={'2'}
                         direction="ltr">
                       {GlassyComponentMarqueeList.map((item) => {
@@ -336,7 +337,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <NotificationMarquee>
                             
                             <GridItem>
-                              <H2 fontSize={'30px'} color={'#707187'}>{item.title}</H2>
+                              <H2>{item.title}</H2>
                               <StarIcon />
                             </GridItem>
 
@@ -344,7 +345,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           </SplideSlide>
                         );
                       })} 
-            </GridMarquee>
+                  </GridMarquee>
           </Content>
         </NotificationSection>
 
@@ -353,7 +354,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="120px 40px 0px 40px"
+            // padding="120px 40px 0px 40px"
           >
 
         <ItemV
@@ -388,7 +389,31 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </ChatGridItem>
                     </ChatGridSystem>
 
-                    </Content>
+
+                    <GridMarquee
+                        speed={1}
+                        gradientWidth={8}
+                        gap={18}
+                        bg={'linear-gradient(90deg, #0D0D0F 0%, #0D0D0F 6%, rgba(13, 13, 15, 0.00) 32%, rgba(13, 13, 15, 0.00) 69%, #0D0D0F 94.5%, #0D0D0F 100%)'}
+                        // fixedWidth={'2'}
+                        direction="ltr">
+                      {GlassyComponentMarqueeList.map((item) => {
+                        return (
+                        <SplideSlide>
+                          <NotificationMarquee>
+                            
+                            <GridItem>
+                              <H2>{item.title}</H2>
+                              <StarIcon />
+                            </GridItem>
+
+                          </NotificationMarquee>
+                          </SplideSlide>
+                        );
+                      })} 
+                  </GridMarquee>
+
+                 </Content>
         </ChatSection>
             
 
@@ -1649,11 +1674,14 @@ const NotificationMarquee = styled(ItemH)`
   align-items: center;
 
   margin: 64px 0;
-`;
+  `;
 
 const GridMarquee = styled(NewMarqueeAnimation)`
   // margin: 0 0 0 0;
   // flex-flow: nowrap;
+
+  // background-color: red !important;
+  // background: linear-gradient(90deg, #0D0D0F 0%, #0D0D0F 6%, rgba(13, 13, 15, 0.00) 32%, rgba(13, 13, 15, 0.00) 69%, #0D0D0F 94.5%, #0D0D0F 100%) !important;
 `;
 
 const GridItem = styled(ItemH)`
@@ -1661,6 +1689,22 @@ const GridItem = styled(ItemH)`
   flex-direction: row;
   gap: 35px;
   align-items: center;
+
+  h2 { 
+    color: #707187;
+    font-size: 30px;
+  }
+
+  &:hover {
+    cursor: pointer;
+     h2 {
+        color: #fff;
+     }
+  }
+
+
+
+
 
   svg {
     height: 20px;

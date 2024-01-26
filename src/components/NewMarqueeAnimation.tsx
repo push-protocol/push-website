@@ -34,6 +34,7 @@ function NewMarqueeAnimation(props: Props) {
     direction,
     fixedWidth,
     pause = false,
+    bg
   } = props;
   
   const isMobile = useMediaQuery('(max-width: 480px)');
@@ -43,7 +44,7 @@ function NewMarqueeAnimation(props: Props) {
 
 
   return (
-    <div style={{maxHeight: '85px'}}>
+    <div style={{maxHeight: '85px', background: bg}}>
     <Splide 
         ref={splideRef}
         options={{
