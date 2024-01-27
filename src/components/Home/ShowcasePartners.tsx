@@ -266,7 +266,7 @@ function PartnerChannels() {
           flexDirection="column"
         >
           <ResponsiveH2
-            color="#121315"
+            color="#fff"
             fontSize="40px"
             fontWeight="700"
             letterSpacing="-0.02em"
@@ -277,7 +277,7 @@ function PartnerChannels() {
           </ResponsiveH2>
 
           <Span
-            color="#303C5E"
+            color="#fff"
             size="19px"
             weight="300"
             spacing="-0.03em"

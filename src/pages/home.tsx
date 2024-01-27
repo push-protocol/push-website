@@ -14,7 +14,7 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsFileX } from "react-icons/bs";
+import { BsArrowUpRight, BsArrowRight ,BsFileX } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
@@ -34,6 +34,7 @@ import GlassyComponents from '@site/src/components/GlassyComponents/GlassyCompon
 import {
   A,
   B,
+  Button,
   Content,
   H1,
   H2,
@@ -56,6 +57,7 @@ import DecentralizedstackFigure from "@site/static/assets/website/illustrations/
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
+import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
 import GithubSVG from "@site/static/assets/website/shared/github.svg";
@@ -170,7 +172,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             bottom="0"
             left="0"
             background={GLOBALS.COLORS.BG_DARK}
-            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <HeroContent alignSelf="center">
@@ -181,13 +183,19 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                margin="100px 0 0 0"
+                margin="10px 0 0 0"
               >
+                <HeroButton>
+                    <StarColoredIcon />
+                    <H2>Push Metamask Snap is now Live! Get Started</H2>
+                    <BsArrowRight />
+                </HeroButton>
+
                 {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                   <H1 zIndex="2">{t("home.hero.title")}</H1>
                 {/* </FadeInAnimation> */}
 
-                <Span
+                <TextSpan
                   margin='20px 0px 40px 0'
                   color="rgba(255, 255, 255, 1)"
                   zIndex="2"
@@ -195,7 +203,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   {/* <FadeInAnimation wrapperElement="div" delay={0.35}> */}
                     {t("home.hero.description")}
                   {/* </FadeInAnimation> */}
-                </Span>
+                </TextSpan>
 
                 {/* <FadeInAnimation wrapperElement="div" delay={0.55}> */}
                   <HeroCTA justifyContent="flex-start" gap="18px">
@@ -209,7 +217,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     >
                       {t("home.hero.start-button")}
                     </A>
-                    <A
+                    {/* <A
                       href="https://app.push.org/"
                       title={t("home.hero.alt-explore-button")}
                       target="_blank"
@@ -218,12 +226,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       zIndex="2"
                     >
                       {t("home.hero.explore-button")}
-                    </A>
+                    </A> */}
                   </HeroCTA>
                 {/* </FadeInAnimation> */}
 
                 {/* <FadeInAnimation wrapperElement="div" delay={0.65}> */}
-                  <ItemH
+
+                  {/* <ItemH
                     justifyContent="flex-start"
                     margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
                   >
@@ -257,7 +266,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     >
                       <DiscordSVG width={32} height={32} />
                     </A>
-                  </ItemH>
+                  </ItemH> */}
+
                 {/* </FadeInAnimation>   */}
               </HeroItem>
             </HeroPrimary>
@@ -267,7 +277,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               zIndex="9"
               left="0"
               right="0"
-              bottom="7vh"
+              bottom='0'
+              // bottom="7vh"
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
@@ -357,7 +368,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             // padding="120px 40px 0px 40px"
           >
 
-        <ItemV
+                  <ItemV
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'
                       flexDirection = 'row'>
@@ -389,6 +400,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </ChatGridItem>
                     </ChatGridSystem>
 
+                    {/* <GridAnimationContainer
+                        margin="3em 0"
+                        flex="1"
+                        alignItems="stretch"
+                        background='red'
+                      > */}
 
                     <GridMarquee
                         speed={1}
@@ -412,6 +429,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         );
                       })} 
                   </GridMarquee>
+
+                  {/* </GridAnimationContainer> */}
 
                  </Content>
         </ChatSection>
@@ -1702,17 +1721,48 @@ const GridItem = styled(ItemH)`
      }
   }
 
-
-
-
-
   svg {
     height: 20px;
     width: 20px;
   }
 `;
 
+const TextSpan = styled(Span)`
+  overflow: hidden;
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+`;
+
+const HeroButton = styled(Button)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+  margin: 24px 0px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+
+  &:hover {
+    border: 1px solid transparent;
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 13px;
+  }
+`;
+
 
 const MarqueeAnimationContainer = styled(ItemV)`
+`
+
+const GridAnimationContainer = styled(ItemV)`
 `
 
