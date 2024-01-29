@@ -35,16 +35,15 @@ The following speed run is designed to give you a quick overview of usage and de
 
 ```js
   // Import Push SDK & ethers
-  import { PushAPI, VideoEventType, CONSTANTS } from "@pushprotocol/restapi";
-  import { initVideoCallData } from "@pushprotocol/restapi/src/lib/video";
+  import { CONSTANTS, PushAPI, TYPES } from '@pushprotocol/restapi';
   import { ethers } from "ethers";
 
-  // store the peers info
-  let peerInfo;
+  // store the incoming peer address
+  let incomingCallerAddress: string;
 
   // data will store the video call state, we will only use this to read the video call state
   // and update the UI accordingly
-  let data = initVideoCallData;
+  let data: TYPES.VIDEO.DATA = CONSTANTS.VIDEO.INITIAL_DATA;
 
   // setData is a function that will update the video call state
   const setData = (fn) => {
@@ -69,19 +68,19 @@ The following speed run is designed to give you a quick overview of usage and de
       video: true, // to enable video on start
       audio: true, // to enable audio on start
     },
-    media?: MediaStream, // to pass your existing media stream(for backend use)
+    media?: MediaStream, // to pass your existing media stream(only for backend use)
   });
 
   // Firing a video call request to a recipient
   await aliceVideoCall.request([recipient]); // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
 
   // To listen to real-time video calls
-  Stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
+  stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
     if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
       // RequestVideo Event is fired when there is an incoming video call request
       // you can show an UI modal to accept or reject the call
-      // store this data.peerInfo which will be used to accept the call when calling approve() method
-      peerInfo = data.peerInfo;
+      // store the incoming peer address which will be used to accept the call when calling approve()/deny() method
+      incomingCallerAddress = data.peerInfo.address
     }
 
     if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {

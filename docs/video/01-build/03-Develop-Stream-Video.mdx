@@ -20,13 +20,21 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Details from "@theme/Details";
 
+## Prerequisites
+
+Before being able to Initialize Stream,
+
+- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](../initialize-user) to learn how to do that.
+
 ## Stream chat API
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.stream(listen, {options?})
+import { CONSTANTS, TYPES } from '@pushprotocol/restapi';
+
+// userAlice.initStream(listen, {options?})
 // Initial setup
 const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO], {
   filter?: {
@@ -40,7 +48,7 @@ const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO], {
 })
 
 // Listen for video events
-await stream.on(CONSTANTS.STREAM.VIDEO, (data: VideoEvent) => {
+await stream.on(CONSTANTS.STREAM.VIDEO, (data: TYPES.VIDEO.EVENT) => {
   console.log(data)
 })
 

@@ -16,8 +16,6 @@ This section covers everything you need to know about handling an incoming call.
   <title>Handle Incoming Video Call | Push Video | Push Documentation</title>
 </head>
 
-import { ABlock } from "@site/src/css/SharedStyling";
-
 ## Prerequisites
 
 - You have initialized Push Video API. Please refer to the [Initializing Video API](../initializing-video-api) section for more details.
@@ -28,11 +26,11 @@ import { ABlock } from "@site/src/css/SharedStyling";
 Earlier, we set up the Push Video Stream and event listeners in the [Stream API](../stream-video) section. Now, when there is an incoming video call request, the `stream` emits a `RequestVideo` event. This event can be used to display a UI modal to the user, allowing them to accept or deny the incoming call.
 
 ```typescript
-stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
+stream.on(CONSTANTS.STREAM.VIDEO, async (data: TYPES.VIDEO.EVENT) => {
   if (data.event === CONSTANTS.VIDEO.EVENT.REQUEST) {
     // RequestVideo Event is fired when there is an incoming video call request
-    // store this data.peerInfo which will be used to accept/reject the call
-    peerInfo = data.peerInfo;
+    // store the incoming peer address which will be used to accept/reject the call
+    let incomingCallerAddress = data.peerInfo.address;
   }
   // other events
 });
@@ -40,16 +38,18 @@ stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
 
 ### Accepting an Video Call
 
-When a user receives an incoming video call request, it needs to be approved by the user before the call can be established. To approve an incoming video call request, we call the `approve()` method and pass the received `peerInfo` data from the stream event.
+When a user receives an incoming video call request, it needs to be approved by the user before the call can be established. To approve an incoming video call request, we call the `approve()` method and pass the received `incomingCallerAddress` data from the stream event.
 
 ```typescript
-// aliceVideoCall.approve(peerInfo);
-await aliceVideoCall.approve(peerInfo);
+// aliceVideoCall.approve(address);
+await aliceVideoCall.approve(incomingCallerAddress);
 ```
 
-| Property     | Type     | Description                                                          |
-| ------------ | -------- | -------------------------------------------------------------------- |
-| _`peerInfo`_ | `object` | `PeerInfo` Object received from the stream event in the Push Stream. |
+| Property    | Type     | Description                                                                |
+| ----------- | -------- | -------------------------------------------------------------------------- |
+| _`address`_ | `string` | `address` of the caller received from the stream event in the Push Stream. |
+
+> Note: Parameters _`in this style`_ are mandatory.
 
 :::success
 Once the user approves the call, the video call is then established. 🎉
@@ -60,16 +60,18 @@ When a user approves an incoming video call request, on the call intiator's end,
 
 ### Rejecting an Video Call
 
-When a user receives an incoming video call request, it can be denied/rejected by the user. To deny/reject an incoming video call request, we call the `deny()` method and pass the received `peerInfo` data from the stream.
+When a user receives an incoming video call request, it can be denied/rejected by the user. To deny/reject an incoming video call request, we call the `deny()` method and pass the received `incomingCallerAddress` data from the stream.
 
 ```typescript
-// aliceVideoCall.deny(peerInfo);
-await aliceVideoCall.deny(peerInfo);
+// aliceVideoCall.deny(address);
+await aliceVideoCall.deny(incomingCallerAddress);
 ```
 
-| Property     | Type     | Description                                                        |
-| ------------ | -------- | ------------------------------------------------------------------ |
-| _`peerInfo`_ | `object` | PeerInfo Object received from the stream event in the Push Stream. |
+| Property    | Type     | Description                                                                |
+| ----------- | -------- | -------------------------------------------------------------------------- |
+| _`address`_ | `string` | `address` of the caller received from the stream event in the Push Stream. |
+
+> Note: Parameters _`in this style`_ are mandatory.
 
 :::info
 When a user denies/rejects an incoming video call request, on the call intiator's end, the stream emits `DenyVideo` event. We can use this event to intimate the initiator that the video call was rejected.
@@ -96,8 +98,4 @@ The `peerInfo` object received in the stream event basically contains the addres
     }
   }
 }
-```
-
-```
-
 ```

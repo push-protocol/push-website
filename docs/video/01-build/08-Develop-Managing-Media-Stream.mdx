@@ -20,10 +20,10 @@ import { ABlock } from "@site/src/css/SharedStyling";
 
 ## Enable / Disable Local Media
 
-To enable/disable local media, we'll call the `media()` method on the `aliceVideoCall`.
+To enable/disable local media, we'll call the `config()` method on the `aliceVideoCall`.
 
 ```typescript
-  aliceVideoCall.media({
+  aliceVideoCall.config({
     video?: Boolean,
     audio?: Boolean
   })
@@ -36,9 +36,11 @@ To enable/disable local media, we'll call the `media()` method on the `aliceVide
 
 ## How to know the current status of local audio/video?
 
-The current local video status can be accessed by `aliceVideoCall.data.local.video` similarly for audio -> `aliceVideoCall.data.local.audio`.&#x20;
+- The current local video status can be accessed by `data.local.video` similarly for audio -> `data.local.audio`.&#x20;
 
-If `aliceVideoCall.data.local.video` is true, then that means your local video is enabled, and if it's false then that means the local video is disabled. Likewise for `aliceVideoCall.data.local.audio`.
+- If `data.local.video` is true, then that means your local video is enabled, and if it's false then that means the local video is disabled. Likewise for `data.local.audio`.
+
+- Likewise for remote video and audio, you can access the status by `data.incoming[0].video` and `data.incoming[0].audio`.
 
 <ABlock
   href="https://www.npmjs.com/package/@pushprotocol/restapi#media"

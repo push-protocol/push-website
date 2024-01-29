@@ -16,11 +16,9 @@ This section covers everything you need to do to request video calls.
   <title>Request a Video Call | Push Video | Push Documentation</title>
 </head>
 
-import { ABlock } from "@site/src/css/SharedStyling";
-
 ## Prerequisites
 
-- Before we can make a video call request, we need to have initialized Push Video API. Please refer to the [Initializing Video API](docs/video/build/initialize-user) section for more details.
+- Before we can make a video call request, we need to have initialized Push Video API. Please refer to the [Initializing Video API](../initializing-video-api) section for more details.
 
 ## Fire a Request for a Video Call
 
@@ -36,6 +34,8 @@ await aliceVideoCall.request([recipient]);
 | _`recipients`_ | `string[]`                          | -        | Wallet address or addresses of the recipient(s)                                                                                        |
 | `options?`     | `options.rules.access.type`         | `string` | Identifier for Push Video or Space. We use `VIDEO_NOTIFICATION_ACCESS_TYPE.PUSH_CHAT` from `@pushprotocol/restapi` here for Push Video |
 |                | `options.rules.access.data.chatId?` | `string` | Unique identifier for every push chat, here, the one between the alice and the bob                                                     |
+
+> Note: Parameters _`in this style`_ are mandatory.
 
 :::info
 On the recipient's end, the Push Stream will emit an `RequestVideo` event. This event can be used to show some UI modal on the recipient side to accept/deny the call and will contain the initiator's address, signal data and other details required to establish the call.
