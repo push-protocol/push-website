@@ -45,7 +45,7 @@ The following speed run is designed to give you a quick overview of usage and de
   // and update the UI accordingly
   let data: TYPES.VIDEO.DATA = CONSTANTS.VIDEO.INITIAL_DATA;
 
-  // setData is a function that will update the video call state
+  // setData is a function that will update the video call state as and when it changes internally
   const setData = (fn) => {
     data = fn(data);
   };
@@ -68,7 +68,7 @@ The following speed run is designed to give you a quick overview of usage and de
       video: true, // to enable video on start
       audio: true, // to enable audio on start
     },
-    media?: MediaStream, // to pass your existing media stream(only for backend use)
+    media?: MediaStream, // to pass your existing media stream (for backend use)
   });
 
   // Firing a video call request to a recipient
@@ -79,7 +79,8 @@ The following speed run is designed to give you a quick overview of usage and de
     if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
       // RequestVideo Event is fired when there is an incoming video call request
       // you can show an UI modal to accept or reject the call
-      // store the incoming peer address which will be used to accept the call when calling approve()/deny() method
+      // optionally store the incoming peer address to handle multiple call requests 
+      // you will be passing the stored caller address in approve()/deny() method
       incomingCallerAddress = data.peerInfo.address
     }
 
