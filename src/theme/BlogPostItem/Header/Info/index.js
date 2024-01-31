@@ -47,7 +47,7 @@ function Date({ date, formattedDate }) {
     </time>
   );
 }
-function Spacer() {
+export function Spacer() {
   return <>{" · "}</>;
 }
 export default function BlogPostItemHeaderInfo({ className, morePosts }) {

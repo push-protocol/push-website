@@ -3,16 +3,61 @@ import React from "react";
 
 // External Components
 import styled from "styled-components";
+import moment from "moment";
 
 // Internal Components
-import { Button, ItemH, ItemV, Span } from "@site/src/css/SharedStyling";
+import { Button, H2, ItemH, ItemV, Span } from "@site/src/css/SharedStyling";
 
 // Import Assets
+import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
+import { usePluralForm } from "@docusaurus/theme-common";
+import { translate } from "@docusaurus/Translate";
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
+  function useReadingTimePlural() {
+    const { selectMessage } = usePluralForm();
+    return (readingTimeFloat) => {
+      const readingTime = Math.ceil(readingTimeFloat);
+      return selectMessage(
+        readingTime,
+        translate(
+          {
+            id: "theme.blog.post.readingTime.plurals",
+            description:
+              'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
+            message: "One min read|{readingTime} min read",
+          },
+          { readingTime },
+        ),
+      );
+    };
+  }
+
+  function Spacer() {
+    return <>{"  · "}</>;
+  }
+
+  function ReadingTime({ readingTime }) {
+    const readingTimePlural = useReadingTimePlural();
+    return <>{readingTimePlural(readingTime)}</>;
+  }
+  function Date({ date, formattedDate }) {
+    var year = moment().year();
+    const isPresentYear = formattedDate?.includes(year);
+    const newDate = moment(formattedDate).format(
+      !isPresentYear ? "MMM DD,  YYYY" : "MMM DD",
+    );
+
+    return (
+      <time dateTime={date} itemProp="datePublished">
+        {newDate}
+      </time>
+    );
+  }
+
   return (
     <BlogPostList>
       <BlogPostCardContainer>
@@ -32,7 +77,41 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
             >
               <postItem.Preview loading="lazy" />
-              <Span flex="1">{postItem.metadata.title}</Span>
+
+              <BodyItem>
+                <ItemH
+                  alignItems="flex-start"
+                  alignSelf="flex-start"
+                  color="#fff"
+                  className="date"
+                >
+                  <Date
+                    date={postItem.Preview.metadata.date}
+                    formattedDate={postItem.Preview.metadata.formattedDate}
+                  />
+                  {typeof postItem.Preview.metadata.readingTime !==
+                    "undefined" && (
+                    <>
+                      <Spacer />
+                      <ReadingTime
+                        readingTime={postItem.Preview.metadata.readingTime}
+                      />
+                    </>
+                  )}
+                </ItemH>
+
+                <H2
+                  margin="8px 0"
+                  textAlign="left"
+                  fontSize="30px"
+                  color="#fff"
+                  lineHeight="150%"
+                >
+                  {postItem.metadata.title}
+                </H2>
+
+                <TextSpan>{postItem.metadata.frontMatter.text}</TextSpan>
+              </BodyItem>
             </BlogPostCardPrimary>
           );
         })}
@@ -53,7 +132,17 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
             >
               <postItem.Preview loading="lazy" />
-              <Span flex="1">{postItem.metadata.title}</Span>
+              <TitleItem>
+                <H2
+                  margin="auto 0"
+                  textAlign="left"
+                  fontSize="20px"
+                  color="#fff"
+                  lineHeight="150%"
+                >
+                  {postItem.metadata.title}
+                </H2>
+              </TitleItem>
             </BlogPostCardSecondary>
           );
         })}
@@ -63,11 +152,13 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
 };
 
 const BlogPostList = styled(ItemH)`
-  gap: 30px;
+  gap: 25px;
+  margin: 75px 0 0 0;
 `;
 
 const BlogPostCardContainer = styled(ItemV)`
   justify-content: flex-start;
+  gap: 25px;
 
   @media ${device.laptop} {
     flex: initial;
@@ -79,10 +170,10 @@ const BlogPostCardPrimary = styled(Button)`
   flex-direction: column;
   justify-content: flex-start;
   align-self: stretch;
-  background: transparent;
+  // background: transparent;
   color: ${GLOBALS.COLORS.FONT_DARK};
-  padding: 20px;
-  gap: 30px;
+  padding: 0px 0px;
+  gap: 24px;
 
   & p {
     margin: 0;
@@ -92,7 +183,7 @@ const BlogPostCardPrimary = styled(Button)`
     width: auto;
     min-width: 200px;
     height: auto;
-    border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
+    border-radius: 24px;
   }
 
   & p:nth-child(2) {
@@ -125,20 +216,25 @@ const BlogPostCardSecondary = styled(Button)`
   display: flex;
   justify-content: flex-start;
   align-self: stretch;
-  background: transparent;
+  // background: transparent;
   color: ${GLOBALS.COLORS.FONT_DARK};
-  padding: 20px;
-  gap: 30px;
+  padding: 0px 0px;
+  gap: 24px;
+  height: 160px;
 
   & p {
-    margin: 0;
+    margin: 0 !important;
   }
 
   & img {
-    width: auto;
-    min-width: 200px;
-    height: 128px;
-    border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
+    min-width: 282px;
+    max-width: 282px;
+    object-fit: cover;
+    // min-width: 200px;
+    // max-width: 100%;
+    height: 160px;
+    border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
+    display: block;
   }
 
   & p:nth-child(2) {
@@ -155,6 +251,9 @@ const BlogPostCardSecondary = styled(Button)`
 
   & ${Span} {
     min-width: 200px;
+    align-self: center;
+    align-items: center;
+    color: #fff;
   }
 
   @media ${device.tablet} {
@@ -171,6 +270,63 @@ const BlogPostCardSecondary = styled(Button)`
       height: auto;
       border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
     }
+  }
+`;
+
+const BodyItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  width: 100%;
+
+  & .date {
+    color: #bbbcd0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    // letter-spacing: 0.03em;
+  }
+
+  h2 {
+    width: 100%;
+
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+`;
+
+const TextSpan = styled(Span)`
+  color: #bbbcd0;
+
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+`;
+
+const TitleItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  border-bottom: 1px solid #252527;
+  width: 100%;
+
+  h2 {
+    width: 100%;
+
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 `;
 

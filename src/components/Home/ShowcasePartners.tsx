@@ -616,7 +616,7 @@ const ResponsiveH2 = styled(H2)`
 
 const PartnerResponsiveRow = styled(ItemV)`
   display: none;
-  padding: 20px 0;
+  padding: 20px 0;  
   
   @media ${device.laptopL} {
     display: flex;

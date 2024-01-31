@@ -57,6 +57,7 @@ import DecentralizedstackFigure from "@site/static/assets/website/illustrations/
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
+import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
@@ -156,10 +157,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
       
       <HomeWrapper>
         {/* HERO SECTION */}
-        <Section
+        <HeroSection
           id="hero"
-          minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
-          background={GLOBALS.COLORS.BG_LIGHT}
+          // minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
+          // background={GLOBALS.COLORS.BG_LIGHT}
           width="100%"
           overflow="hidden"
           className="darkBackground"
@@ -171,19 +172,19 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            background={GLOBALS.COLORS.BG_DARK}
+            // background={GLOBALS.COLORS.BG_DARK}
             // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <HeroContent alignSelf="center">
             <HeroAnimation>
-              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
+              {/* <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" /> */}
             </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
                 maxWidth="50%"
                 alignItems="flex-start"
-                margin="10px 0 0 0"
+                // margin="10px 0 0 0"
               >
                 <HeroButton>
                     <StarColoredIcon />
@@ -191,122 +192,72 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     <BsArrowRight />
                 </HeroButton>
 
-                {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                  <H1 zIndex="2">{t("home.hero.title")}</H1>
-                {/* </FadeInAnimation> */}
+                <HeroText>
+                    <H1 zIndex="2">{t("home.hero.title")}</H1>
 
-                <TextSpan
-                  margin='20px 0px 40px 0'
-                  color="rgba(255, 255, 255, 1)"
-                  zIndex="2"
-                >
-                  {/* <FadeInAnimation wrapperElement="div" delay={0.35}> */}
-                    {t("home.hero.description")}
-                  {/* </FadeInAnimation> */}
-                </TextSpan>
+                    <TextSpan
+                      // margin='20px 0px 40px 0'
+                      color="rgba(255, 255, 255, 1)"
+                      zIndex="2"
+                    >
+                        {/* {t("home.hero.description")} */}
+                        Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
+                    </TextSpan>
+                </HeroText>
 
-                {/* <FadeInAnimation wrapperElement="div" delay={0.55}> */}
                   <HeroCTA justifyContent="flex-start" gap="18px">
                     <A
                       href="/docs"
                       title={t("home.hero.alt-start-button")}
                       background={GLOBALS.COLORS.HIGHLIGHT}
                       color={GLOBALS.COLORS.FONT_LIGHT}
-                      lineHeight="26px"
+                      lineHeight="142%"
+                      fontSize='16px'
                       zIndex="2"
                     >
                       {t("home.hero.start-button")}
                     </A>
-                    {/* <A
-                      href="https://app.push.org/"
-                      title={t("home.hero.alt-explore-button")}
-                      target="_blank"
-                      background={GLOBALS.COLORS.BG_DARK_SECONDARY}
-                      lineHeight="26px"
-                      zIndex="2"
-                    >
-                      {t("home.hero.explore-button")}
-                    </A> */}
                   </HeroCTA>
-                {/* </FadeInAnimation> */}
-
-                {/* <FadeInAnimation wrapperElement="div" delay={0.65}> */}
-
-                  {/* <ItemH
-                    justifyContent="flex-start"
-                    margin={`${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0px ${GLOBALS.ADJUSTMENTS.PADDING.BIG} 0`}
-                  >
-                    <A
-                      href="https://twitter.com/pushprotocol"
-                      title="Push Protocol Twitter"
-                      target="_blank"
-                      margin="0 0 0 -10px"
-                      background="transparent"
-                      padding="10px 15px"
-                    >
-                      <TwitterSVG width={32} height={32} />
-                    </A>
-
-                    <A
-                      href="https://github.com/ethereum-push-notification-service"
-                      title="Push Github"
-                      target="_blank"
-                      background="transparent"
-                      padding="10px 15px"
-                    >
-                      <GithubSVG width={32} height={32} />
-                    </A>
-
-                    <A
-                      href="https://discord.gg/pushprotocol"
-                      title="Push Discord"
-                      target="_blank"
-                      background="transparent"
-                      padding="10px 15px"
-                    >
-                      <DiscordSVG width={32} height={32} />
-                    </A>
-                  </ItemH> */}
-
-                {/* </FadeInAnimation>   */}
+              
               </HeroItem>
             </HeroPrimary>
 
             <AnalyticsStatsContainer
-              position="absolute"
-              zIndex="9"
-              left="0"
-              right="0"
-              bottom='0'
+              // position="absolute"
+              // zIndex="9"
+              // left="0"
+              // right="0"
+              // bottom='0'
               // bottom="7vh"
             >
               <AnalyticsStats />
             </AnalyticsStatsContainer>
+
+
           </HeroContent>
-        </Section>
+        </HeroSection>
 
         {/* SHOWCASE SECTION */}
-        <ShowcaseSection id="showcase-section" data-bkg="light" className="lightBackground">
+        <ShowcaseSection id="showcase-section">
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="120px 40px 0px 40px"
+            padding="200px 40px 0px 40px"
           >
             <ShowcasePartners />
           </Content>
         </ShowcaseSection>
 
         {/* NOTIF SECTION */}
-        <NotificationSection id="notification-section" data-bkg="light" className="lightBackground">
+        <NotificationSection id="notification-section">
           <Content
             className="contentBox"
             alignSelf="center"
-            // padding="120px 40px 0px 40px"
+            padding="200px 40px 0px 40px"
           >
                   <ItemV
                       maxWidth = {'849px'}
-                      // width = {isMobile ? '100%' : '849px'}
-                      margin = '72px auto'>
+                      margin = '0px auto 72px auto'>
                       <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
                           <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
                           Push enables web3 native notification alerts between wallets.
@@ -335,28 +286,31 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       </NotificationGridItem>
                   </NotificationGridSystem>
 
-                  <GridMarquee
-                        speed={1}
-                        gradientWidth={8}
-                        gap={18}
-                        bg={'linear-gradient(90deg, #0D0D0F 0%, #0D0D0F 6%, rgba(13, 13, 15, 0.00) 32%, rgba(13, 13, 15, 0.00) 69%, #0D0D0F 94.5%, #0D0D0F 100%)'}
-                        // fixedWidth={'2'}
-                        direction="ltr">
-                      {GlassyComponentMarqueeList.map((item) => {
-                        return (
-                        <SplideSlide>
-                          <NotificationMarquee>
-                            
-                            <GridItem>
-                              <H2>{item.title}</H2>
-                              <StarIcon />
-                            </GridItem>
+                  <ItemV padding='0 0 10px 0'>
+                    <GridMarquee
+                          speed={1}
+                          gradientWidth={8}
+                          gap={18}
+                          bg={'linear-gradient(90deg, #0D0D0F 0%, #0D0D0F 6%, rgba(13, 13, 15, 0.00) 32%, rgba(13, 13, 15, 0.00) 69%, #0D0D0F 94.5%, #0D0D0F 100%)'}
+                          // fixedWidth={'2'}
+                          direction="ltr">
+                        {GlassyComponentMarqueeList.map((item) => {
+                          return (
+                          <SplideSlide>
+                            <NotificationMarquee>
+                              
+                              <GridItem>
+                                <H2>{item.title}</H2>
+                                <StarIcon />
+                              </GridItem>
 
-                          </NotificationMarquee>
-                          </SplideSlide>
-                        );
-                      })} 
-                  </GridMarquee>
+                            </NotificationMarquee>
+                            </SplideSlide>
+                          );
+                        })} 
+                    </GridMarquee>
+                  </ItemV>
+
           </Content>
         </NotificationSection>
 
@@ -365,7 +319,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            // padding="120px 40px 0px 40px"
+            padding="200px 40px 0px 40px"
           >
 
                   <ItemV
@@ -400,13 +354,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </ChatGridItem>
                     </ChatGridSystem>
 
-                    {/* <GridAnimationContainer
-                        margin="3em 0"
-                        flex="1"
-                        alignItems="stretch"
-                        background='red'
-                      > */}
-
+                    <ItemV padding='0 0 10px 0'>
                     <GridMarquee
                         speed={1}
                         gradientWidth={8}
@@ -429,8 +377,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         );
                       })} 
                   </GridMarquee>
-
-                  {/* </GridAnimationContainer> */}
+                  </ItemV>
 
                  </Content>
         </ChatSection>
@@ -438,7 +385,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
 
         {/* BUILD WITH PUSH */}
-        <BuildWithPushSection id="buildWithPush">
+        {/* <BuildWithPushSection id="buildWithPush">
           <ItemV
             position="absolute"
             background={GLOBALS.COLORS.BG_DARK}
@@ -451,13 +398,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <PushProductContent className="contentBox">
             <PushProductsScroll />
           </PushProductContent>
-        </BuildWithPushSection>
+        </BuildWithPushSection> */}
         
         {/* WHY PUSH AND BLOG */}
-        <WhyPushAndBlogSection
-          background={GLOBALS.COLORS.BG_DARK}
-        >
-          <ItemV
+        <WhyPushAndBlogSection>
+          {/* <ItemV
             id="integratePush"
             position="absolute"
             top="0"
@@ -466,182 +411,30 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             left="0"
             background={GLOBALS.COLORS.BG_LIGHT}
             borderRadius="0px"
-          />
+          /> */}
 
           <Content
             className="contentBox"
             alignSelf="center"
+            padding="200px 40px 0px 40px"
           >
-            
-            {/* WHY YOU NEED PUSH PUSH */}
-            <ItemH margin="80px 0 0 0">
-              <ItemV justifyContent="flex-start" alignItems="flex-start">
-                <ResponsiveH2
-                  color="#09090B"
-                  fontSize="40px"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
-                >
-                  {t("home.why-push-section.title")}
-                </ResponsiveH2>
-              </ItemV>
-            </ItemH>
-
-            {/* WHY YOU NEED PUSH PUSH */}
-            <ItemH padding="80px 0 0 0">
-              <Matrix>
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <ChainAgnosticFigure
-                      alt="Icon showing Push is chain agnostic"
-                      title={t("home.why-push-section.chain-agnostic-text")}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.chain-agnostic-text")}
-                  </Span>
-                </MatrixCell>
-
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <ImmediatecommunicationFigure
-                      alt="Icon showing Immediate Communication"
-                      title={t(
-                        "home.why-push-section.immediate-communication-text"
-                      )}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.immediate-communication-text")}
-                  </Span>
-                </MatrixCell>
-
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <DecentralizedstackFigure
-                      alt="Icon showing decentralization"
-                      title={t(
-                        "home.why-push-section.decentralized-stack-text"
-                      )}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.decentralized-stack-text")}
-                  </Span>
-                </MatrixCell>
-
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <ImproveduxFigure
-                      alt="Icon showing User Experience"
-                      title={t("home.why-push-section.improved-ux-text")}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.improved-ux-text")}
-                  </Span>
-                </MatrixCell>
-
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <SecurityalertsFigure
-                      alt="Icon showing Security"
-                      title={t("home.why-push-section.security-alerts-text")}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.security-alerts-text")}
-                  </Span>
-                </MatrixCell>
-
-                <MatrixCell>
-                  <div className="matrixFigure">
-                    <CensorshipresistantFigure
-                      alt="Icon showing Censorship Resistance"
-                      title={t(
-                        "home.why-push-section.censorship-resistant-text"
-                      )}
-                    />
-                  </div>
-
-                  <Span
-                    color="#09090B"
-                    fontSize="24px"
-                    fontWeight="500"
-                    letterSpacing="-0.03em"
-                    lineHeight="142%"
-                  >
-                    {t("home.why-push-section.censorship-resistant-text")}
-                  </Span>
-                </MatrixCell>
-              </Matrix>
-            </ItemH>
-
-            {/* WHY YOU NEED PUSH PUSH */}
-            <WhyPushTextBox textAlign="center" margin="80px 160px">
-              <Span
-                color="#303C5E"
-                fontSize="19px"
-                fontWeight="400"
-                letterSpacing="-0.03em"
-                lineHeight="142%"
-              >
-                {t("home.why-push-section.text")}
-              </Span>
-            </WhyPushTextBox>
 
             {/* BLOG SECTION */}
-            <ItemH margin="80px 0 0 0">
-              <ItemV justifyContent="flex-start" alignItems="flex-start">
+            <ItemH>
+              <ItemH justifyContent="flex-start" alignItems="center" gap='6px'>
+                <StarSolidIcon />
                 <ResponsiveH2
-                  color="#09090B"
-                  fontSize="40px"
-                  fontWeight="700"
+                  color="#D98AEC"
+                  fontSize="21px"
+                  fontWeight="500"
                   letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0 0 40px 0"
-                  width="50%"
+                  lineHeight="130%"
+                  // margin="0 0 40px 0"
+                  // width="50%"
                 >
-                  {t("home.insights-section.title")}
+                  Push Blog
                 </ResponsiveH2>
-              </ItemV>
+              </ItemH>
 
               <ItemH justifyContent="flex-end">
                 <A
@@ -651,19 +444,25 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   hover="transparent"
                   background="transparent"
                   filter="none"
-                  color="#DD44B9"
-                  borderRadius="16px"
-                  padding="14px 32px"
-                  fontSize="18px"
+                  color="#fff"
+                  borderRadius="0"
+                  padding="0px 0px"
+                  fontSize="16px"
                   fontWeight="500"
                   letterSpacing="-0.03em"
                   lineHeight="142%"
                 >
-                  {t("home.insights-section.link-text")}
-                  <BsArrowUpRight className="anchorSVGlink" />
+                  Explore Blog
+                  <BsArrowRight className="anchorSVGlink" />
                 </A>
               </ItemH>
             </ItemH>
+
+            <H2
+                fontSize="30px"
+                color="#fff"
+                margin="4px 0 0 0"
+            >Your gateway to shiny updates and innovations at Push Protocol. </H2>
             
             <RecentBlogPosts recentPosts={recentPosts} />
 
@@ -672,7 +471,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* BACKED BY SECTION */}
         <BackedBySection
-          background={GLOBALS.COLORS.BG_DARK}
+          // background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
             id="integratePush"
@@ -681,14 +480,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            background={GLOBALS.COLORS.BG_LIGHT}
-            borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+            // background={GLOBALS.COLORS.BG_LIGHT}
+            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
             width="inherit"
+            
           >
             <InvestorItem
               alignItems="stretch"
@@ -876,14 +676,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
  * V2 Design
  */
 const HeroPrimary = styled(ItemH)`
-  margin: 120px 0;
+  // margin: 120px 0;
 
   @media ${device.laptop} {
-    margin: 80px 0 0 0;
+    // margin: 80px 0 0 0;
   }
 
   @media ${device.mobileM} {
-    margin: 80px 0 0 0;
+    // margin: 80px 0 0 0;
   }
 `;
 
@@ -904,14 +704,31 @@ const HeroAnimation = styled(ItemH)`
 `;
 
 const HeroContent = styled(Content)`
+  // background: red;
+  padding: 251px 40px 0px 40px;
+  // padding: 0px 0px;
 
-`
+`;
+
+const HeroText = styled.div`
+    margin: 32px 0px;
+    max-width: 547px;
+
+    @media ${device.laptop} {
+      max-width: auto;
+    }
+`;
+
+const HeroSection = styled(Section)`
+    max-height: 1200px;
+    // background-color: green;
+`;
 
 const HeroItem = styled(ItemV)`
   z-index: 2;
   @media ${device.laptop} {
     max-width: initial;
-    margin: ${(props) => props.margin || "0px"};
+    // margin: ${(props) => props.margin || "0px"};
   }
 
   @media ${device.mobileM} {
@@ -928,14 +745,34 @@ const HeroCTA = styled(ItemH)`
 `;
 
 const AnalyticsStatsContainer = styled(ItemH)`
-  margin: 0px;
+  // margin: 0px;
+  margin: 134px 0 0px 0;
   flex: 1;
+  position: relative;
+
+  // ::after {
+  //   content: "";
+  //   position: absolute;
+  //   // bottom: 0;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 200px; /* Adjust the height of the shadow effect */
+  //   background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
+  //   z-index: 1;
+  // }
   
   @media ${device.laptop} {
     flex: initial;
     position: relative;
     bottom: auto;
   }
+`;
+
+const Gradient = styled.div`
+    // background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
+    // width: 100%;
+    // height: 200px;
 `;
 
 /**
@@ -1693,6 +1530,7 @@ const NotificationMarquee = styled(ItemH)`
   align-items: center;
 
   margin: 64px 0;
+
   `;
 
 const GridMarquee = styled(NewMarqueeAnimation)`
@@ -1729,11 +1567,11 @@ const GridItem = styled(ItemH)`
 
 const TextSpan = styled(Span)`
   overflow: hidden;
-  display: -webkit-box;
+  // display: -webkit-box;
 
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
+  // -webkit-line-clamp: 3;
+  // line-clamp: 3;
+  // -webkit-box-orient: vertical;
 `;
 
 const HeroButton = styled(Button)`
@@ -1743,7 +1581,7 @@ const HeroButton = styled(Button)`
   justify-content: space-between;
   padding: 12px 16px;
   gap: 8px;
-  margin: 24px 0px;
+  // margin: 24px 0px;
 
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.10);
