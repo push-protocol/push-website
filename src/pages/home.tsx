@@ -38,6 +38,7 @@ import {
   Content,
   H1,
   H2,
+  H3,
   Image,
   ItemH,
   ItemV,
@@ -381,6 +382,65 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                  </Content>
         </ChatSection>
+
+        {/* <SlideSection id="slide-section">
+          <Content
+            className="contentBox"
+            alignSelf="center"
+            padding="200px 40px 0px 40px"
+          >
+
+            <ItemH flexDirection='row' flexWrap='nowrap' gap="29px">
+                <SlideItem>
+                      <Image
+                        width={'100%'}
+                        height={'auto'}
+                        // borderRadius={item.title ? '50%' : '0'}
+                        src={require(`@site/static/assets/website/slides/video-img.png`).default}
+                        srcSet={`${require(`@site/static/assets/website/slides/video-img@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/video-img@3x.png`).default} 3x`}
+                        // alt={`${item?.alt}`}
+                        loading="lazy"
+                      />
+
+
+                      <ItemV alignItems='flex-start' margin="64px 0 0 0">
+                          <H2 
+                             textAlign='left'
+                             color="#D98AEC"
+                             textTransform="uppercase"
+                             fontSize="14px"
+                             font-weight="700"
+                             line-height="130"
+                             letter-spacing="0.56px" 
+                             >Push Video</H2>
+                          
+                          <H2 color="#FFF"
+                              font-size="30px"
+                              font-style="normal"
+                              font-weight="500"
+                              line-height="normal"
+                              >Experience real time web3 communication with Push Video</H2>
+
+                          <H3>Push Video supports decentralized wallet-to-wallet video calls in a chain-agnostic environment.</H3>
+                      </ItemV>
+
+                </SlideItem>
+
+                <SlideItem>
+                      <Image
+                        width={'auto'}
+                        // borderRadius={item.title ? '50%' : '0'}
+                        src={require(`@site/static/assets/website/slides/video-img.png`).default}
+                        srcSet={`${require(`@site/static/assets/website/slides/video-img@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/video-img@3x.png`).default} 3x`}
+                        // alt={`${item?.alt}`}
+                        loading="lazy"
+                      />
+
+                </SlideItem>
+            </ItemH>
+
+            </Content>
+        </SlideSection> */}
             
 
 
@@ -835,14 +895,22 @@ const ChatSection = styled(Section)`
   padding-bottom: 0px;
 `;
 
-const StorySection = styled(Section)`
+const SlideSection = styled(Section)`
   width: 100%;
   overflow: hidden;
-  padding-top: 0px;
+  padding-bottom: 0px;
+`;
 
-  @media ${device.tablet} {
-    padding-bottom: 32px;
-  }
+const SlideItem = styled(ItemH)`
+   border: 1px solid red;
+   padding: 48px;
+   width: 100%;
+
+   img {
+    margin: 0;
+    padding: 0;
+    display: block;
+   }
 `;
 
 const BuildWithPushSection = styled(Section)`
