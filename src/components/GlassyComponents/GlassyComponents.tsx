@@ -209,6 +209,8 @@ const Container = styled.div`
 
     @media ${device.tablet} {
         background-size: ${(props) => props.id == 'hyperscalable' ? '75% auto' : props.id == 'interoperable' ? 'cover' : 'contain'};
+        max-height: ${(props) => props.height || "auto"};
+        min-height: ${(props) => props.height || "auto"};
     }
 
     
@@ -273,6 +275,16 @@ const SubscribeText = styled.h2`
   letter-spacing: -0.03em;
   font-weight: 700;
   margin: 0 auto;
+  
+  @media ${device.laptopM} {
+    line-height: 100%;
+  }
+
+  @media ${device.laptop} {
+    line-height: 64px;
+    font-size: 64px;
+  }
+
 
 `;
 
@@ -302,7 +314,7 @@ const GridImage = styled(Image)`
   object-fit: contain !important;
 
   @media ${device.mobileL} {
-    width: ${({id, type}) => id == 'snap' && type === 'image' ? "100%" : type === 'image' ? '80%' : 'inherit' };
+    width: ${({id, type}) => id == 'snap' && type == 'image' ? "100%" : type == 'image' ? '80%' : 'inherit' };
     margin: ${(props) => props.type == 'image' && "0 auto"};
   }
 

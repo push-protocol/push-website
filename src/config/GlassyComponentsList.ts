@@ -254,7 +254,7 @@ export const GridComponentsList = {
             config: {
                 id: 'plug-play',
                 height: '237px',
-                padding: '24px 24px 0px 24px ',
+                padding: '24px ',
                 hideOnMobile: false
             },
             header: {
