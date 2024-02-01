@@ -37,7 +37,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
   }
 
   function Spacer() {
-    return <>{"  · "}</>;
+    return <>{" · "}</>;
   }
 
   function ReadingTime({ readingTime }) {
@@ -52,7 +52,11 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
     );
 
     return (
-      <time dateTime={date} itemProp="datePublished">
+      <time
+        style={{ marginRight: "3px" }}
+        dateTime={date}
+        itemProp="datePublished"
+      >
         {newDate}
       </time>
     );
@@ -106,6 +110,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                   fontSize="30px"
                   color="#fff"
                   lineHeight="150%"
+                  fontFamily="FK Grotesk Neue"
                 >
                   {postItem.metadata.title}
                 </H2>
@@ -139,6 +144,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                   fontSize="20px"
                   color="#fff"
                   lineHeight="150%"
+                  fontFamily="FK Grotesk Neue"
                 >
                   {postItem.metadata.title}
                 </H2>
@@ -286,11 +292,13 @@ const BodyItem = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    // letter-spacing: 0.03em;
+    letter-spacing: -0.03em;
+    font-family: FK Grotesk Neue;
   }
 
   h2 {
     width: 100%;
+    font-family: FK Grotesk Neue;
 
     overflow: hidden;
     display: -webkit-box !important;
@@ -310,6 +318,7 @@ const TextSpan = styled(Span)`
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  font-family: FK Grotesk Neue;
 `;
 
 const TitleItem = styled.div`

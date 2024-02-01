@@ -48,9 +48,9 @@ const GlassyComponents = ({ section }) => {
                         />
                    )} 
                         <Title align={align} highlight={highlight} subheader={subheader}>
-                            <H2 fontSize={isTablet ? "9px" : "11px"} color="#D98AEC"  fontWeight="bold">{subheader}</H2>
+                            <H2 fontSize={isTablet ? "9px" : "11px"} color="#D98AEC"  fontWeight="bold" fontFamily="FK Grotesk Neue">{subheader}</H2>
 
-                            <H2Text theme={theme} type={type}>{title}</H2Text>
+                            <H2Text fontFamily="FK Grotesk Neue" theme={theme} type={type}>{title}</H2Text>
                         </Title>
 
                         {highlight && (
@@ -106,6 +106,7 @@ const GlassyComponents = ({ section }) => {
                             margin="0px auto"
                             fontWeight="500"
                             fontSize="16px"
+                            fontFamily="FK Grotesk Neue"
                             >
                             {buttonText}
                             <WhiteArrow />
@@ -128,13 +129,13 @@ const GlassyComponents = ({ section }) => {
 
             {footer && (
                 <Footer>
-                    {text && (<H2Text>{text}</H2Text>)}
+                    {text && (<H2Text fontFamily="FK Grotesk Neue">{text}</H2Text>)}
                 </Footer>
             )}
 
             {after && (
                 <AfterItem alignment={alignment}>
-                    <H2 fontSize="12px" color="#FFF"  lineHeight="130%">{message}</H2>
+                    <H2 fontSize="12px" color="#FFF" fontFamily="FK Grotesk Neue" lineHeight="130%">{message}</H2>
                 </AfterItem>
             )}
             </Container>
@@ -267,6 +268,7 @@ const H2Text = styled(H2)`
 `;
 
 const SubscribeText = styled.h2`
+  font-family: FK Grotesk Neue;
   font-size: 72px;
   background: linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%);
   -webkit-background-clip: text;
@@ -334,7 +336,7 @@ const Subheader = styled(ItemH)`
 const Title = styled(ItemV)`
     align-items: ${({align}) => align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'};
     flex: ${({highlight}) => highlight && '0'};
-    gap: ${({subheader}) => subheader && '0'};
+    gap: ${({subheader}) => subheader && '8px'};
 `;
 
 const Body = styled.div`

@@ -189,12 +189,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <HeroButton>
                     <StarColoredIcon />
-                    <H2>Push Metamask Snap is now Live! Get Started</H2>
+                    <H2 fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
                     <BsArrowRight />
                 </HeroButton>
 
                 <HeroText>
-                    <H1 zIndex="2">{t("home.hero.title")}</H1>
+                    <H1 zIndex="2" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
 
                     <TextSpan
                       // margin='20px 0px 40px 0'
@@ -258,7 +258,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ItemV
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'}>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontFamily="FK Grotesk Neue">
                           <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
                           Push enables web3 native notification alerts between wallets.
                       </H2>
@@ -300,7 +300,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             <NotificationMarquee>
                               
                               <GridItem>
-                                <H2>{item.title}</H2>
+                                <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
                                 <StarIcon />
                               </GridItem>
 
@@ -326,7 +326,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'}>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontFamily="FK Grotesk Neue">
                           <B color='#fff'>Push Chat is the leading decentralized, </B> 
                            web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming <TagItem>COMING SOON</TagItem>
                       </H2>
@@ -368,7 +368,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <NotificationMarquee>
                             
                             <GridItem>
-                              <H2>{item.title}</H2>
+                              <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
                               <StarIcon />
                             </GridItem>
 
@@ -488,6 +488,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   fontWeight="500"
                   letterSpacing="-0.02em"
                   lineHeight="130%"
+                  fontFamily="FK Grotesk Neue"
                   // margin="0 0 40px 0"
                   // width="50%"
                 >
@@ -510,6 +511,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   fontWeight="500"
                   letterSpacing="-0.03em"
                   lineHeight="142%"
+                  fontFamily="FK Grotesk Neue"
                 >
                   Explore Blog
                   <BsArrowRight className="anchorSVGlink" />
@@ -521,6 +523,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 fontSize="30px"
                 color="#fff"
                 margin="4px 0 0 0"
+                fontFamily="FK Grotesk Neue"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
             
             <RecentBlogPosts recentPosts={recentPosts} />
@@ -771,11 +774,6 @@ const HeroContent = styled(Content)`
 
 const HeroText = styled.div`
     margin: 32px 0px;
-    max-width: 547px;
-
-    @media ${device.laptop} {
-      max-width: auto;
-    }
 `;
 
 const HeroSection = styled(Section)`
@@ -796,6 +794,9 @@ const HeroItem = styled(ItemV)`
 `;
 
 const HeroCTA = styled(ItemH)`
+  font-family: FK Grotesk Neue !important;
+  letter-spacing: -0.03em
+
   @media ${device.mobileM} {
     &.Button {
       display: none;
@@ -848,6 +849,7 @@ const HomeWrapper = styled(ItemV)`
   background: #0D0D0F;
   margin: 0;
   padding: 0;
+  font-family: FK Grotesk Neue !important;
   
   box-sizing: border-box;
   & #hero .contentBox {
@@ -1674,14 +1676,10 @@ const GridItem = styled(ItemH)`
 
 const TextSpan = styled(Span)`
   overflow: hidden;
-  // display: -webkit-box;
-
-  // -webkit-line-clamp: 3;
-  // line-clamp: 3;
-  // -webkit-box-orient: vertical;
 `;
 
 const HeroButton = styled(Button)`
+  font-family: FK Grotesk Neue;
   display: flex;
   flex-direction: row;
   align-items: center;  

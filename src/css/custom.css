@@ -149,8 +149,7 @@
 @font-face {
   font-family: 'FK Grotesk Neue';
   src: url('../../static/fonts/FKGroteskNeue-Regular.woff2') format('woff2'),
-      url('../../static/fonts/FKGroteskNeue-Regular.woff') format('woff'),
-      url('../../static/fonts/FKGroteskNeue-Regular.otf') format('opentype');
+      url('../../static/fonts/FKGroteskNeue-Regular.woff') format('woff');
   font-weight: 400 500;
   font-style: normal;
   font-display: swap;
@@ -159,9 +158,17 @@
 @font-face {
   font-family: 'FK Grotesk Neue';
   src: url('../../static/fonts/FKGroteskNeue-Medium.woff2') format('woff2'),
-      url('../../static/fonts/FKGroteskNeue-Medium.woff') format('woff'),
-      url('../../static/fonts/FKGroteskNeue-Medium.otf') format('opentype');
+      url('../../static/fonts/FKGroteskNeue-Medium.woff') format('woff');
   font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FK Grotesk Neue';
+  src: url('../../static/fonts/FKGroteskNeue-Bold.woff2') format('woff2'),
+      url('../../static/fonts/FKGroteskNeue-Bold.woff') format('woff');
+  font-weight: 800 900;
   font-style: normal;
   font-display: swap;
 }
