@@ -4,7 +4,7 @@ title: End an Ongoing Video Call
 hide_title: true
 slug: ./end-an-ongoing-video-call
 displayed_sidebar: pushVideoSidebar
-sidebar_position: 7
+sidebar_position: 8
 image: "/assets/docs/previews/docs_video_develop--end_an_ongoing_video_call.png"
 ---
 
@@ -18,8 +18,8 @@ This section covers everything you need to know about ending an ongoing video ca
 
 ## Prerequisites
 
-- You have initialized Push Video API. Please refer to the [Initializing Video API](../initializing-video-api) section for more details.
-- You are listening to Video Stream events, Please refer to the [Stream API](../stream-video) section for more details.
+- You have initialized Push Video API. Please refer to the [Initializing Video API](/docs/video/build/initializing-video-api/) section for more details.
+- You are listening to Video Stream events, Please refer to the [Stream API](/docs/video/build/stream-video) section for more details.
 - There is an ongoing video call between the user and a peer.
 
 ## Ending an Ongoing Video Call
@@ -32,5 +32,5 @@ await aliceVideoCall.disconnect();
 ```
 
 :::info
-When the user ends the video call by calling `disconnect()` method, the stream will emit `DisconnectVideo` event on the other end. Please refer to the [Stream API](../stream-video) section for more details.
+When the user ends the video call by calling `disconnect()` method, the stream will emit `DisconnectVideo` event on the other end. Please refer to the [Stream API](/docs/video/build/stream-video) section for more details.
 :::

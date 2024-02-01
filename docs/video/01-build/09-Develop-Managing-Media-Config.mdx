@@ -1,19 +1,19 @@
 ---
-id: docs-video-develop-managing-media-stream
-title: Managing Media Stream
+id: docs-video-develop-managing-media-config
+title: Managing Media Config
 hide_title: true
-slug: ./managing-media-stream
+slug: ./managing-media-config
 displayed_sidebar: pushVideoSidebar
-sidebar_position: 8
-image: "/assets/docs/previews/docs_video_develop--managing_media_stream.png"
+sidebar_position: 9
+image: "/assets/docs/previews/docs_video_develop--managing_media_config.png"
 ---
 
-# Managing media stream overview
+# Managing Media Config overview
 
-This section contains APIs that will help you manage your video and audio streams and how to turn them on or off.
+This section contains APIs that will help you manage your video and audio config and how to turn them on or off.
 
 <head>
-  <title>Managing Media Stream | Push Video | Push Documentation</title>
+  <title>Managing Media Config | Push Video | Push Documentation</title>
 </head>
 
 import { ABlock } from "@site/src/css/SharedStyling";
@@ -29,10 +29,14 @@ To enable/disable local media, we'll call the `config()` method on the `aliceVid
   })
 ```
 
-| Property | Description                                         |
-| -------- | --------------------------------------------------- |
-| video    | `true` to enable video and `false` to disable video |
-| audio    | `true` to enable audio and `false` to disable audio |
+---
+
+### Parameters
+
+| Property | Type      | Description                                         |
+| -------- | --------- | --------------------------------------------------- |
+| `video`  | `Boolean` | `true` to enable video and `false` to disable video |
+| `audio`  | `Boolean` | `true` to enable audio and `false` to disable audio |
 
 ## How to know the current status of local audio/video?
 

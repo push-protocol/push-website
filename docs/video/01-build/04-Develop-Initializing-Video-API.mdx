@@ -20,10 +20,10 @@ Push Video API abstract away connection and encryption methods by exposing metho
 
 Before being able to Initialize Video API,
 
-- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](../initialize-user) to learn how to do that.
-- You need to initialize Push `Stream`. If you haven't done that yet, please refer to [Initializing Stream API](../stream-video) to learn how to do that.
+- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](/docs/video/build/initialize-user/) to learn how to do that.
+- You need to initialize Push `Stream`. If you haven't done that yet, please refer to [Initializing Stream API](/docs/video/build/stream-video) to learn how to do that.
 
-## Initializing Video API
+## Video API
 
 To start video calling wallet addresses, first, you need to declare `data`, `setData` which are essentially a state/variable to hold video call-related data and a function to modify it respectively and we need to create a local media stream.&#x20;
 
@@ -34,7 +34,7 @@ Here below is how to initializing Video API:
   // in react, you can use useState hook to declare data and setData like this: const [data, setData] = useState<TYPES.VIDEO.DATA>(CONSTANTS.VIDEO.INITIAL_DATA);
   // in vanilla js, you can declare data and setData like this: let data = CONSTANTS.VIDEO.INITIAL_DATA; const setData = (fn) => { data = fn(data) }
 
-  // async initialize(onChange: (fn: (data: TYPES.VIDEO.DATA) => TYPES.VIDEO.DATA) => void, options: VideoInitializeOptions): Promise<VideoV2>;
+  // async initialize(onChange, {options?});
   const aliceVideoCall = await userAlice.video.initialize(setData, {
     stream: stream, // pass the stream object created using Stream API, please refer to [Initializing Stream API] to learn how to get this stream object.
     config: {
@@ -44,6 +44,10 @@ Here below is how to initializing Video API:
     media?: MediaStream, // to pass your existing media stream(for backend use)
   });
 ```
+
+---
+
+### Parameters
 
 | Param        | Type                     | Sub-Type      | Default | Remarks                                                                                                                                                                     |
 | ------------ | ------------------------ | ------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +62,9 @@ Here below is how to initializing Video API:
 
 Now let's go over each property individually and understand how to set them.
 
-### Understanding data variable
+## Understanding Video Lifecycle
+
+### data variable
 
 - The `data` variable is an object that is used to store all of the video call-related data.
 - It is of type `TYPES.VIDEO.DATA` and should be initialized with `CONSTANTS.VIDEO.INITIAL_DATA`.
@@ -213,7 +219,7 @@ data = fn(data);
 - `stream` object is created using Push Stream API, which is basically to listen video call events and is used handle video call operations.
 - Please refer to [Initializing Stream API](../stream-video) to learn how to get this stream object.
 
-### Media Stream
+### Config
 
 ```typescript
   // Initialising the video API

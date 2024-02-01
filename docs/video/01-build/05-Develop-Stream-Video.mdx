@@ -4,11 +4,11 @@ title: Stream Video
 hide_title: true
 slug: ./stream-video
 displayed_sidebar: pushVideoSidebar
-sidebar_position: 3
+sidebar_position: 5
 image: "/assets/docs/previews/docs_video_develop--stream_video.png"
 ---
 
-# Stream chat overview
+# Stream API overview
 
 These APIs enable you to receive incoming video call request and other video events in real time without polling the API. Push Video achieves this by the use of sockets.
 
@@ -24,9 +24,9 @@ import Details from "@theme/Details";
 
 Before being able to Initialize Stream,
 
-- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](../initialize-user) to learn how to do that.
+- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](/docs/video/build/initialize-user) to learn how to do that.
 
-## Stream chat API
+## Stream API
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -64,7 +64,7 @@ stream.connect()
 
 ---
 
-### Stream chat parameters
+### Stream parameters
 
 | Param      | Type                         | Sub-Type           | Default | Remarks                                                                                                                                                                    |
 | ---------- | ---------------------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,7 +79,7 @@ stream.connect()
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-### Stream chat listen events
+### Stream listen events
 
 | Listen events                 | When is it triggered?                        |
 | ----------------------------- | -------------------------------------------- |
