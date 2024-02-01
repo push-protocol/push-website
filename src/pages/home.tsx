@@ -259,7 +259,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ItemV
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'}>
                           <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
                           Push enables web3 native notification alerts between wallets.
                       </H2>
@@ -327,7 +327,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize='30px' textAlign={isMobile ? 'left' : 'center'}>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'}>
                           <B color='#fff'>Push Chat is the leading decentralized, </B> 
                            web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming <TagItem>COMING SOON</TagItem>
                       </H2>
@@ -1536,6 +1536,14 @@ const ChatGridItem = styled.div`
 
       } 
 
+      & #hyperscalable {
+        flex-basis: 100%;
+      }
+  
+      & #plug-play {
+        flex-basis: 100%;
+      }
+
       & #chain-agnostic {
           grid-column: 1;
       }
@@ -1582,10 +1590,10 @@ const TagItem = styled.b`
     border-radius: 12px;
     border: 1px solid #D98AEC;
     background: transparent;
-    padding: 4px 12px;
+    padding: 4px 8px;
     color: #D98AEC;
     // text-align: center;
-    font-size: 12px;
+    font-size: 9px;
     font-style: normal;
     font-weight: bolder;
     line-height: normal;

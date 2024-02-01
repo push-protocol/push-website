@@ -24,9 +24,9 @@ const GlassyComponents = ({ section }) => {
 
 
     const Tag = ({ item }) => {
-        const { background, border, color, title } = item || ''
+        const { background, border, color, title, fontSize } = item || ''
         return(
-            <TagItem background={background} border={border} order= {tags?.length === 4 ? true : false} color={color}>{title}</TagItem>
+            <TagItem background={background} border={border} order= {tags?.length === 4 ? true : false} color={color} fontSize={fontSize}>{title}</TagItem>
         )
       }
 
@@ -208,7 +208,7 @@ const Container = styled.div`
     }
 
     @media ${device.tablet} {
-        background-size: ${(props) => props.id == 'hyperscalable' ? '75% auto' : 'contain'};
+        background-size: ${(props) => props.id == 'hyperscalable' ? '75% auto' : props.id == 'interoperable' ? 'cover' : 'contain'};
     }
 
     
@@ -226,10 +226,10 @@ const TagItem = styled.div`
     border-radius: 12px;
     border: ${(props) => props.border};
     background: ${(props) => props.background || "transparent"};
-    padding: ${(props) => props.padding || "4px 12px"};
+    padding: ${(props) => props.fontSize ? "4px 8px"  : "4px 12px"};
     color: ${(props) => props.color};
     text-align: center;
-    font-size: 12px;
+    font-size: ${(props) => props.fontSize || "12px"};
     font-style: normal;
     font-weight: bold;
     line-height: normal;
@@ -254,10 +254,6 @@ const H2Text = styled(H2)`
     color: #FFF;
     line-height: 130%;
     white-space: pre;
-
-    @media ${device.tablet} {
-        font-size: 15px;
-    }
 
     @media ${device.mobileL} {
         white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};

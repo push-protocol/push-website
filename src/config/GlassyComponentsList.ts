@@ -129,7 +129,9 @@ export const GridComponentsList = {
                 { 
                     title: 'NEW',
                     color: '#D98AEC',
-                    border: '1px solid #D98AEC'
+                    border: '1px solid #D98AEC',
+                    fontSize: '9px'
+
                 },
             }, 
             body: {
@@ -163,7 +165,7 @@ export const GridComponentsList = {
                 id: 'share',
                 height: '439px',
                 padding: '24px 24px 0px 24px ',
-                hideOnMobile: true
+                hideOnMobile: false
             },
             header: {
                 title: 'Share Images, Gifs, \nand Reactions',
@@ -194,7 +196,7 @@ export const GridComponentsList = {
                 id: 'secure',
                 height: '132px',
                 padding: '24px',
-                hideOnMobile: false 
+                hideOnMobile: true 
             },
             header: {
                 title: 'Secure, Instant, and \nVerifiable Payments',
@@ -203,7 +205,8 @@ export const GridComponentsList = {
                         title: 'COMING SOON',
                         background: 'transparent',
                         color: '#D98AEC',
-                        border: '1px solid #D98AEC'
+                        border: '1px solid #D98AEC',
+                        fontSize: '9px'
                     }, 
                   ],
                   align: 'left'
@@ -236,7 +239,7 @@ export const GridComponentsList = {
                 height: '237px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
-                hideOnMobile: true
+                hideOnMobile: false
             },
             header: {
                 title: 'Hyperscalable \nGroups',
@@ -252,7 +255,7 @@ export const GridComponentsList = {
                 id: 'plug-play',
                 height: '237px',
                 padding: '24px 24px 0px 24px ',
-                hideOnMobile: true
+                hideOnMobile: false
             },
             header: {
                 title: 'Plug and Play \nChat Components',
@@ -271,7 +274,7 @@ export const GridComponentsList = {
                 id: 'chain-agnostic',
                 height: '76px',
                 padding: '0px 24px',
-                hideOnMobile: false 
+                hideOnMobile: true 
             },
             header: {
                 title: 'Chain Agnostic',
@@ -285,7 +288,7 @@ export const GridComponentsList = {
                 id: 'token-gated',
                 height: '315px',
                 padding: '24px',
-                hideOnMobile: true
+                hideOnMobile: false
             },
             header: {
             }, 
@@ -317,7 +320,7 @@ export const GridComponentsList = {
                 id: 'web3-standard',
                 height: '169px',
                 padding: '24px',
-                hideOnMobile: false 
+                hideOnMobile: true 
             },
             header: {
                 title: 'Supports any \nWeb3 Standard',
