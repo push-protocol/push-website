@@ -37,7 +37,9 @@ export const brbPartnersBountyList = [
     alt: 'The Graph, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build the most creative subgraphs or utilize existing subgraphs for your application',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA on 15th Feb @ X Spaces",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'shardeum',
@@ -63,7 +65,7 @@ export const brbPartnersBountyList = [
     alt: 'Biconomy, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build a new validation module to use with the Biconomy smart accounts',
     price: 5000,
-    ended:false
+    ended:false,
   },
   {
     srcref: 'filecoin',
@@ -71,7 +73,9 @@ export const brbPartnersBountyList = [
     alt: 'Filecoin, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Develop DataDAOs on Filecoin: Incentivize data contributions and storage',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA on 15th Feb @ X Spaces",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'timeswap',
@@ -87,7 +91,9 @@ export const brbPartnersBountyList = [
     alt: 'Chain safe, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA on 15th Feb @ X Spaces",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'alchemy',
