@@ -82,6 +82,34 @@ const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
 
 > Note: Parameters _`in this style`_ are mandatory.
 
+<Details summary="Expected response">200 OK</Details>
+
+## Block chat request API
+
+To block an incoming chat requests. Once blocked, the user will not be able to send you DMs or invite you to a group.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// userAlice.chat.block([recipient])
+// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Block chat request parameters
+
+| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
+| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
 <Details summary="Expected response">
 
 ```typescript
@@ -117,34 +145,6 @@ const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
 ```
 
 </Details>
-
-## Block chat request API
-
-To block an incoming chat requests. Once blocked, the user will not be able to send you DMs or invite you to a group.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```typescript
-// userAlice.chat.block([recipient])
-// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
-```
-
-  </TabItem>
-</Tabs>
-
----
-
-### Block chat request parameters
-
-| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
-
-> Note: Parameters _`in this style`_ are mandatory.
-
-<Details summary="Expected response">200 OK</Details>
 
 ## Unblock a user API
 
