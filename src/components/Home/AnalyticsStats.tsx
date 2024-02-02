@@ -161,7 +161,7 @@ const AnalyticsStatCardList = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 30px 50px;
-  font-family: 'Strawford';
+  font-family: FK Grotesk Neue;
   font-style: normal;
 
   @media ${device.laptop} {

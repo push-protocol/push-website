@@ -3,7 +3,6 @@ import React from "react";
 
 // External Components
 import styled from "styled-components";
-import moment from "moment";
 
 // Internal Components
 import { Button, H2, ItemH, ItemV, Span } from "@site/src/css/SharedStyling";
@@ -13,55 +12,14 @@ import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
-import { usePluralForm } from "@docusaurus/theme-common";
-import { translate } from "@docusaurus/Translate";
+
+import {
+  Date,
+  ReadingTime,
+  Spacer,
+} from "@site/src/components/reusables/date.tsx";
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
-  function useReadingTimePlural() {
-    const { selectMessage } = usePluralForm();
-    return (readingTimeFloat) => {
-      const readingTime = Math.ceil(readingTimeFloat);
-      return selectMessage(
-        readingTime,
-        translate(
-          {
-            id: "theme.blog.post.readingTime.plurals",
-            description:
-              'Pluralized label for "{readingTime} min read". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-            message: "One min read|{readingTime} min read",
-          },
-          { readingTime },
-        ),
-      );
-    };
-  }
-
-  function Spacer() {
-    return <>{" · "}</>;
-  }
-
-  function ReadingTime({ readingTime }) {
-    const readingTimePlural = useReadingTimePlural();
-    return <>{readingTimePlural(readingTime)}</>;
-  }
-  function Date({ date, formattedDate }) {
-    var year = moment().year();
-    const isPresentYear = formattedDate?.includes(year);
-    const newDate = moment(formattedDate).format(
-      !isPresentYear ? "MMM DD,  YYYY" : "MMM DD",
-    );
-
-    return (
-      <time
-        style={{ marginRight: "3px" }}
-        dateTime={date}
-        itemProp="datePublished"
-      >
-        {newDate}
-      </time>
-    );
-  }
-
   return (
     <BlogPostList>
       <BlogPostCardContainer>
@@ -92,6 +50,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                   <Date
                     date={postItem.Preview.metadata.date}
                     formattedDate={postItem.Preview.metadata.formattedDate}
+                    mr={"3px"}
                   />
                   {typeof postItem.Preview.metadata.readingTime !==
                     "undefined" && (

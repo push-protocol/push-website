@@ -272,6 +272,7 @@ function PartnerChannels() {
             letterSpacing="-0.02em"
             margin="0px 0px"
             lineHeight="110%"
+            fontFamily="FK Grotesk Neue"
           >
             {t('home.partners-section.partner-channels-title')}
           </ResponsiveH2>
