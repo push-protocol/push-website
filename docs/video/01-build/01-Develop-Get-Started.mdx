@@ -38,9 +38,6 @@ The following speed run is designed to give you a quick overview of usage and de
   import { CONSTANTS, PushAPI, TYPES } from '@pushprotocol/restapi';
   import { ethers } from "ethers";
 
-  // store the incoming peer address
-  let incomingCallerAddress: string;
-
   // data will store the video call state, we will only use this to read the video call state
   // and update the UI accordingly
   let data: TYPES.VIDEO.DATA = CONSTANTS.VIDEO.INITIAL_DATA;
@@ -79,9 +76,8 @@ The following speed run is designed to give you a quick overview of usage and de
     if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
       // RequestVideo Event is fired when there is an incoming video call request
       // you can show an UI modal to accept or reject the call
-      // optionally store the incoming peer address to handle multiple call requests 
-      // you will be passing the stored caller address in approve()/deny() method
-      incomingCallerAddress = data.peerInfo.address
+      // it is recommended to store the incoming caller address in a state that is received
+      // let incomingCallerAddress = data.peerInfo.address;
     }
 
     if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
@@ -381,5 +377,6 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 Full API coverage with sample runable code can be found in the examples below:
 
-- [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/src/pushAPI/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/chat/tutorials/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
-- [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-frontend-react) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/chat/tutorials/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
+- [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/video/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/docs/video/playground/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
+- [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-frontend-react/src/app/Video/index.tsx) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/docs/video/playground/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
+- Push SDK React Playground is also hosted live at [https://react-playground.push.org/](https://react-playground.push.org/#/video)
