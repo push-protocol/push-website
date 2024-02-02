@@ -197,12 +197,12 @@ const [data, setData] = useState<TYPES.VIDEO.DATA>(
 - fn function is supplied by the caller of setData()
 - fn is a function that accepts current 'data' as input and returns updated 'data'
 */
-const setData: : (fn: (data: TYPES.VIDEO.DATA) => TYPES.VIDEO.DATA) => void = (fn) => {
+const setData = (fn: (data: TYPES.VIDEO.DATA) => TYPES.VIDEO.DATA): void => {
   /*
     - Here, we are passing the current value of 'data' to fn
     - The return value of fn() i.e., the updated value of 'data' is assigned back to 'data'
   */
-data = fn(data);
+  data = fn(data);
 };
 ```
 
