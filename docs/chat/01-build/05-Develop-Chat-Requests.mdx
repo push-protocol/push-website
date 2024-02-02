@@ -48,8 +48,8 @@ const bobAcceptAliceRequest = await userBob.chat.accept(aliceAddress);
 
 ### Accept chat request parameters
 
-| Param         | Type     | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
@@ -76,47 +76,13 @@ const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
 
 ### Reject chat request parameters
 
-| Param         | Type     | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary="Expected response">
-
-```typescript
-{
-  "did": "eip155:0xE95d1c080E72021d94Ef247d86897766C5807A98",
-  "wallets": "eip155:0xE95d1c080E72021d94Ef247d86897766C5807A98",
-  "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----...-----END PGP PUBLIC KEY BLOCK-----\n",
-  "encryptedPrivateKey": "{...}",
-  "verificationProof": "eip191v2:0x6f5fa197aaf6760ec7479b0512756224b57c7ff431c2f2c086e0730d30c4dec429615b619f4509cbcf36874ed507bc40161266eabe7d8516962199565309bc811b",
-  "msgSent": 0,
-  "maxMsgPersisted": 1000,
-  "profile": {
-    "name": null,
-    "desc": null,
-    "picture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1klEQVR4AcXBsWkDMRiG4TcfApVe4UDFDaAN3NwuHuh2SXNNag3gQuAVXAUVIWl/uxAYB77n+fj6/vklKG0Q7fcb77icFqJeM5EwE2bCTJgJM2EmzBJPes1EGyvR53FlZjuvRJ05YSbMhFniSWmDaL/fiC6nhZn9uBJdTgtRr5lImAkzYZZKG0S9Zh4cPOg1M3XwoNdMVNogEmbCTJilXjMz23klKm0ws51XZnrNRMJMmAmzVNrgP5U2eIUwE2bCLPWaiUobRL1m3lHaIOo1EwkzYSbM/gDz9DEdwejLXwAAAABJRU5ErkJggg==",
-    "blockedUsersList": [ "eip155:0x4Fc0F35B0ab1201ae9F8F8f589bea01f556022dF" ],
-    "profileVerificationProof": "pgpv2:-----BEGIN PGP SIGNATURE-----...-----END PGP SIGNATURE-----\n"
-  },
-  "origin": null,
-  "name": null,
-  "about": null,
-  "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1klEQVR4AcXBsWkDMRiG4TcfApVe4UDFDaAN3NwuHuh2SXNNag3gQuAVXAUVIWl/uxAYB77n+fj6/vklKG0Q7fcb77icFqJeM5EwE2bCTJgJM2EmzBJPes1EGyvR53FlZjuvRJ05YSbMhFniSWmDaL/fiC6nhZn9uBJdTgtRr5lImAkzYZZKG0S9Zh4cPOg1M3XwoNdMVNogEmbCTJilXjMz23klKm0ws51XZnrNRMJMmAmzVNrgP5U2eIUwE2bCLPWaiUobRL1m3lHaIOo1EwkzYSbM/gDz9DEdwejLXwAAAABJRU5ErkJggg==",
-  "numMsg": 0,
-  "allowedNumMsg": 1000,
-  "encryptionType": "eip191-aes256-gcm-hkdf-sha256",
-  "signature": "0x6f5fa197aaf6760ec7479b0512756224b57c7ff431c2f2c086e0730d30c4dec429615b619f4509cbcf36874ed507bc40161266eabe7d8516962199565309bc811b",
-  "sigType": "eip191v2",
-  "encryptedPassword": null,
-  "nftOwner": null,
-  "linkedListHash": null,
-  "nfts": null
-}
-```
-
-</Details>
+<Details summary="Expected response">200 OK</Details>
 
 ## Block chat request API
 
@@ -126,9 +92,9 @@ To block an incoming chat requests. Once blocked, the user will not be able to s
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.chat.block([recipient])
+// userAlice.chat.block(recipient)
 // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
+const bobAcceptAliceRequest = await userBob.chat.block(aliceAddress);
 ```
 
   </TabItem>
@@ -138,70 +104,10 @@ const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
 
 ### Block chat request parameters
 
-| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| Param         | Type     | Default | Remarks                                                                                                                                                                                                   |
+| ------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
 <Details summary="Expected response">200 OK</Details>
-
-## Unblock a user API
-
-To unblock an user.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```typescript
-// userAlice.chat.unblock([recipient])
-// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
-const bobUnblockAlice = await userBob.chat.unblock([aliceAddress]);
-```
-
-  </TabItem>
-</Tabs>
-
----
-
-### Unblock a user parameters
-
-| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
-
-> Note: Parameters _`in this style`_ are mandatory.
-
-<Details summary="Expected response">
-```typescript
-{
-  "did": "eip155:0xE95d1c080E72021d94Ef247d86897766C5807A98",
-  "wallets": "eip155:0xE95d1c080E72021d94Ef247d86897766C5807A98",
-  "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----...-----END PGP PUBLIC KEY BLOCK-----\n",
-  "encryptedPrivateKey": "{...}",
-  "verificationProof": "eip191v2:0x6f5fa197aaf6760ec7479b0512756224b57c7ff431c2f2c086e0730d30c4dec429615b619f4509cbcf36874ed507bc40161266eabe7d8516962199565309bc811b",
-  "msgSent": 0,
-  "maxMsgPersisted": 1000,
-  "profile": {
-    "name": null,
-    "desc": null,
-    "picture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1klEQVR4AcXBsWkDMRiG4TcfApVe4UDFDaAN3NwuHuh2SXNNag3gQuAVXAUVIWl/uxAYB77n+fj6/vklKG0Q7fcb77icFqJeM5EwE2bCTJgJM2EmzBJPes1EGyvR53FlZjuvRJ05YSbMhFniSWmDaL/fiC6nhZn9uBJdTgtRr5lImAkzYZZKG0S9Zh4cPOg1M3XwoNdMVNogEmbCTJilXjMz23klKm0ws51XZnrNRMJMmAmzVNrgP5U2eIUwE2bCLPWaiUobRL1m3lHaIOo1EwkzYSbM/gDz9DEdwejLXwAAAABJRU5ErkJggg==",
-    "blockedUsersList": [],
-    "profileVerificationProof": "pgpv2:-----BEGIN PGP SIGNATURE-----...-----END PGP SIGNATURE-----\n"
-  },
-  "origin": null,
-  "name": null,
-  "about": null,
-  "profilePicture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA1klEQVR4AcXBsWkDMRiG4TcfApVe4UDFDaAN3NwuHuh2SXNNag3gQuAVXAUVIWl/uxAYB77n+fj6/vklKG0Q7fcb77icFqJeM5EwE2bCTJgJM2EmzBJPes1EGyvR53FlZjuvRJ05YSbMhFniSWmDaL/fiC6nhZn9uBJdTgtRr5lImAkzYZZKG0S9Zh4cPOg1M3XwoNdMVNogEmbCTJilXjMz23klKm0ws51XZnrNRMJMmAmzVNrgP5U2eIUwE2bCLPWaiUobRL1m3lHaIOo1EwkzYSbM/gDz9DEdwejLXwAAAABJRU5ErkJggg==",
-  "numMsg": 0,
-  "allowedNumMsg": 1000,
-  "encryptionType": "eip191-aes256-gcm-hkdf-sha256",
-  "signature": "0x6f5fa197aaf6760ec7479b0512756224b57c7ff431c2f2c086e0730d30c4dec429615b619f4509cbcf36874ed507bc40161266eabe7d8516962199565309bc811b",
-  "sigType": "eip191v2",
-  "encryptedPassword": null,
-  "nftOwner": null,
-  "linkedListHash": null,
-  "nfts": null
-}
-```
-</Details>
