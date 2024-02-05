@@ -62,7 +62,40 @@ export const GridComponentsList = {
                 alt: 'Customize Notification Preferences'
             }
         },
-       
+        {
+            config: {
+                id: 'custom-notif',
+                height: '340px',
+                padding: '24px',
+                hideOnMobile: false 
+            },
+            header: {
+                title: 'Customize Notification \nPreferences',
+                align: 'left'
+            }, 
+            body: {
+                type: 'imageV2',
+                imagesrc: 'notifs/notif',
+                alt: 'Customize Notification Preferences'
+            }
+        },
+        {
+            config: {
+                id: 'custom-notif',
+                height: '340px',
+                padding: '24px',
+                hideOnMobile: false 
+            },
+            header: {
+                title: 'Customize Notification \nPreferences',
+                align: 'left'
+            }, 
+            body: {
+                type: 'imageWebp',
+                imagesrc: 'notifs/notif-lossless',
+                alt: 'Customize Notification Preferences'
+            }
+        },
     ],
     second:[
         {

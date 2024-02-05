@@ -17,7 +17,7 @@ const GlassyComponents = ({ section }) => {
     const { config, header, body, footer, after } = section;
     const { id, height, padding, hideOnMobile, bg } = config || '';
     const { title, tags, illustration, align, icon, theme, highlight, subheader } = header || '';
-    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg } = body || '';
+    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg, imageV2, imageWebp } = body || '';
     const { text } = footer || '';
     const { message, alignment } = after || '';
 
@@ -86,13 +86,35 @@ const GlassyComponents = ({ section }) => {
                 {type === 'image' && (
                   <GridImage
                     src={require(`@site/static/assets/website/home/${imagesrc}.png`).default}
-                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${imagesrc}@4x.png`).default} 4x`}
+                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x`}
                     alt={alt}
                     title={alt}
                     type={type}
                     id={id}
                     />
                 )}
+
+                 {type === 'imageV2' && (
+                    <GridImage
+                        src={require(`@site/static/assets/website/home/${imagesrc}.png`).default}
+                        srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x,, ${require(`@site/static/assets/website/home/${imagesrc}@4x.png`).default} 4x`}
+                        alt={alt}
+                        title={alt}
+                        type={type}
+                        id={id}
+                        />
+                    )}
+
+                    {type === 'imageWebp' && (
+                        <GridImage
+                            src={require(`@site/static/assets/website/home/${imagesrc}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
+                            alt={alt}
+                            title={alt}
+                            type={type}
+                            id={id}
+                            />
+                        )}
 
                 {type === 'codeblock' && (
                     <CodeDiv>
@@ -331,7 +353,6 @@ const Subheader = styled(ItemH)`
     flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id === 'plug-play' ? '0' : '1'};
     align-items: ${(props) => props.illustration && 'center'};
     align-self: ${(props) => props.highlight && 'flex-start'};
-    // background: ${({id}) =>  id === 'plug-play' ? 'red' : 'transparent'}
 `;
 
 const Title = styled(ItemV)`
