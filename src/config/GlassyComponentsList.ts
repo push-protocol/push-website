@@ -41,7 +41,7 @@ export const GridComponentsList = {
             }, 
             body: {
                 type: 'image',
-                imagesrc: 'cross-chain',
+                imagesrc: 'notifs/cross-chain',
                 alt: 'Cross-chain Notifications'
             }
         },
@@ -58,7 +58,7 @@ export const GridComponentsList = {
             }, 
             body: {
                 type: 'image',
-                imagesrc: 'notif',
+                imagesrc: 'notifs/notif',
                 alt: 'Customize Notification Preferences'
             }
         },
@@ -81,7 +81,7 @@ export const GridComponentsList = {
                 bodyText: '<4 mins',
                 buttonText: 'Start Building',
                 buttonLink: 'https://push.org',
-                codeblockImg: `subscribe`,
+                codeblockImg: `notifs/lightweight`,
          }
         },
         {
@@ -89,7 +89,7 @@ export const GridComponentsList = {
                 id: 'interoperable',
                 height: '202px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/grids/notifications/inter.png').default,
+                bg: require('@site/static/assets/website/home/notifs/inter.png').default,
                 hideOnMobile: true
             },
             header: {
@@ -109,7 +109,7 @@ export const GridComponentsList = {
             header: {
                 title: 'Anti-Spam',
                 align: 'left',
-                illustration: 'spam'
+                illustration: 'notifs/anti-spam'
             }, 
         },
         {
@@ -117,14 +117,14 @@ export const GridComponentsList = {
                 id: 'snap',
                 height: '321px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/grids/notifications/snap-bg.png').default,
+                bg: require('@site/static/assets/website/home/notifs/snap@4x.png').default,
                 hideOnMobile: false
             },
             header: {
                 title: 'Push Snap',
                 theme: 'hue',
                 align: 'left',
-                icon: 'starIcon',
+                icon: 'notifs/starIcon',
                 highlight: 
                 { 
                     title: 'NEW',
@@ -134,13 +134,14 @@ export const GridComponentsList = {
 
                 },
             }, 
-            body: {
-                type: 'image',
-                imagesrc: 'snap-img',
-                alt: 'Push Snap'
-            },
+            // body: {
+            //     type: 'image',
+            //     imagesrc: 'snap',
+            //     alt: 'Push Snap'
+            // },
             footer: {
                 text: 'Receive Notifications \nin MetaMask'
+                
             }
         },
         {
@@ -148,12 +149,17 @@ export const GridComponentsList = {
                 id: 'increase',
                 height: '260px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/grids/notifications/engage@3x.png').default,
+                // bg: require('@site/static/assets/website/home/notifs/engage@4x.png').default,
                 hideOnMobile: true
             },
             header: {
                 title: 'Increase \nEngagement',
                 align: 'left',
+            },
+            body: {
+                type: 'image',
+                imagesrc: 'notifs/engage',
+                alt: 'Increase  Engagement'
             }
         }
     ]  
@@ -173,7 +179,7 @@ export const GridComponentsList = {
             },
             body: {
                 type: 'image',
-                imagesrc: 'share',
+                imagesrc: 'chats/share',
                 alt: 'Share Images'
             },
         },
@@ -187,7 +193,7 @@ export const GridComponentsList = {
             header: {
                 title: 'Chat Requests',
                 align: 'left',
-                illustration: 'requests',
+                illustration: 'chats/requests',
                 subheader: 'PRIVATE AND ANTI SPAM'
             }, 
         },
@@ -230,7 +236,7 @@ export const GridComponentsList = {
                 bodyText: '<2 mins',
                 buttonText: 'Start Building',
                 buttonLink: 'https://push.org',
-                codeblockImg: `lightcode`,
+                codeblockImg: `chats/lightweight`,
          }
         },
         {
@@ -238,7 +244,7 @@ export const GridComponentsList = {
                 id: 'hyperscalable',
                 height: '237px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/grids/notifications/hyper.png').default,
+                bg: require('@site/static/assets/website/home/chats/hyper@4x.png').default,
                 hideOnMobile: false
             },
             header: {
@@ -263,7 +269,7 @@ export const GridComponentsList = {
             },
             body: {
                 type: 'image',
-                imagesrc: 'plug',
+                imagesrc: 'chats/plug-play',
                 alt: 'Plug and Play'
             },
         },
@@ -279,7 +285,7 @@ export const GridComponentsList = {
             header: {
                 title: 'Chain Agnostic',
                 align: 'left',
-                illustration: 'chain-agnostic',
+                illustration: 'chats/chain-agnostic',
                 subheader: 'SUPPORTS ALL EVM CHAINS'
             }, 
         },
@@ -294,7 +300,7 @@ export const GridComponentsList = {
             }, 
             body: {
                 type: 'image',
-                imagesrc: 'token-gated',
+                imagesrc: 'chats/token-gated',
                 alt: 'Create Token'
             },
             footer: {
@@ -311,7 +317,7 @@ export const GridComponentsList = {
             header: {
                 title: 'E2E Encryption',
                 align: 'left',
-                illustration: 'e2e',
+                illustration: 'chats/e2e',
                 subheader: 'END-TO-END (E2EE)'
             }, 
         },

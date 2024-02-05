@@ -39,8 +39,8 @@ const GlassyComponents = ({ section }) => {
 
                     {icon && (
                         <GridImage
-                            src={require(`@site/static/assets/website/grids/notifications/${icon}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${icon}@3x.png`).default} 3x`}
+                            src={require(`@site/static/assets/website/home/${icon}.png`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${icon}@4x.png`).default} 4x`}
                             alt={'Push Snap'}
                             title="Push Snap"
                             width="16px"
@@ -60,12 +60,12 @@ const GlassyComponents = ({ section }) => {
 
                    {illustration && (
                     <GridImage
-                        src={require(`@site/static/assets/website/grids/notifications/${illustration}.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/grids/notifications/${illustration}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${illustration}@3x.png`).default} 3x`}
+                        src={require(`@site/static/assets/website/home/${illustration}.png`).default}
+                        srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${illustration}@4x.png`).default} 4x`}
                         alt={'Push Snap'}
                         title="Push Snap"
-                        width={isTablet ? "41px" : "auto"}
-                        height={isTablet ? "auto" : "55px"}
+                        width={isTablet ? "27px" : "auto"}
+                        height={isTablet ? "auto" : "37px"}
                     />
                    )} 
                 </Subheader>
@@ -85,8 +85,8 @@ const GlassyComponents = ({ section }) => {
             (<Body>
                 {type === 'image' && (
                   <GridImage
-                    src={require(`@site/static/assets/website/grids/notifications/${imagesrc}.png`).default}
-                    srcSet={`${require(`@site/static/assets/website/grids/notifications/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${imagesrc}@3x.png`).default} 3x`}
+                    src={require(`@site/static/assets/website/home/${imagesrc}.png`).default}
+                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${imagesrc}@4x.png`).default} 4x`}
                     alt={alt}
                     title={alt}
                     type={type}
@@ -113,8 +113,8 @@ const GlassyComponents = ({ section }) => {
                         </ButtonItem> 
 
                         <GridImage
-                            src={require(`@site/static/assets/website/grids/notifications/${codeblockImg}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@3x.png`).default} 3x`}
+                            src={require(`@site/static/assets/website/home/${codeblockImg}.png`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${codeblockImg}@4x.png`).default} 4x`}
                             alt={alt}
                             title={alt}
                             type={type}
@@ -328,9 +328,10 @@ const Header = styled(ItemV)`
 `;
 
 const Subheader = styled(ItemH)`
-    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id === 'plug-play' ? '0' : '1'};
     align-items: ${(props) => props.illustration && 'center'};
     align-self: ${(props) => props.highlight && 'flex-start'};
+    // background: ${({id}) =>  id === 'plug-play' ? 'red' : 'transparent'}
 `;
 
 const Title = styled(ItemV)`
