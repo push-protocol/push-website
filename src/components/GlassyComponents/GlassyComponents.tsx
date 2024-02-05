@@ -101,6 +101,7 @@ const GlassyComponents = ({ section }) => {
                         alt={alt}
                         title={alt}
                         type={type}
+                        margin="0 auto"
                         id={id}
                         />
                     )}
@@ -112,6 +113,7 @@ const GlassyComponents = ({ section }) => {
                             alt={alt}
                             title={alt}
                             type={type}
+                            margin="0 auto"
                             id={id}
                             />
                         )}
