@@ -8,7 +8,7 @@ export const objChannelList = [
     id: 1,
     channel: '0xB88460Bb2696CAb9D66013A05dFF29a28330689D',
     ipfshash: 'QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
-    name: 'Ethereum Push Notification Service',
+    name: 'Push Protocol',
     info: 'The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.',
     url: 'https://epns.io/',
     icon: 'https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',

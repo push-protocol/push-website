@@ -441,7 +441,7 @@ const FrensText = () => {
 
             {loading && (
               <ItemH>
-                <Spinner size={140} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
+                <Spinner size={70} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
               </ItemH>
             )}
 
