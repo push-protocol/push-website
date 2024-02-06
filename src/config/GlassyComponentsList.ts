@@ -62,40 +62,6 @@ export const GridComponentsList = {
                 alt: 'Customize Notification Preferences'
             }
         },
-        {
-            config: {
-                id: 'custom-notif',
-                height: '340px',
-                padding: '24px',
-                hideOnMobile: false 
-            },
-            header: {
-                title: 'Customize Notification \nPreferences',
-                align: 'left'
-            }, 
-            body: {
-                type: 'imageV2',
-                imagesrc: 'notifs/notif',
-                alt: 'Customize Notification Preferences'
-            }
-        },
-        {
-            config: {
-                id: 'custom-notif',
-                height: '340px',
-                padding: '24px',
-                hideOnMobile: false 
-            },
-            header: {
-                title: 'Customize Notification \nPreferences',
-                align: 'left'
-            }, 
-            body: {
-                type: 'imageWebp',
-                imagesrc: 'notifs/notif-lossless',
-                alt: 'Customize Notification Preferences'
-            }
-        },
     ],
     second:[
         {
@@ -122,7 +88,7 @@ export const GridComponentsList = {
                 id: 'interoperable',
                 height: '202px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/home/notifs/inter.png').default,
+                bg: require('@site/static/assets/website/home/notifs/inter.webp').default,
                 hideOnMobile: true
             },
             header: {
@@ -150,7 +116,7 @@ export const GridComponentsList = {
                 id: 'snap',
                 height: '321px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/home/notifs/snap@4x.png').default,
+                bg: require('@site/static/assets/website/home/notifs/snap@3x.webp').default,
                 hideOnMobile: false
             },
             header: {
@@ -277,7 +243,7 @@ export const GridComponentsList = {
                 id: 'hyperscalable',
                 height: '237px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/home/chats/hyper@4x.png').default,
+                bg: require('@site/static/assets/website/home/chats/hyper@3x.webp').default,
                 hideOnMobile: false
             },
             header: {

@@ -17,7 +17,7 @@ const GlassyComponents = ({ section }) => {
     const { config, header, body, footer, after } = section;
     const { id, height, padding, hideOnMobile, bg } = config || '';
     const { title, tags, illustration, align, icon, theme, highlight, subheader } = header || '';
-    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg, imageV2, imageWebp } = body || '';
+    const { type, imagesrc, alt, bodyText, buttonText, buttonLink, codeblockImg } = body || '';
     const { text } = footer || '';
     const { message, alignment } = after || '';
 
@@ -39,8 +39,8 @@ const GlassyComponents = ({ section }) => {
 
                     {icon && (
                         <GridImage
-                            src={require(`@site/static/assets/website/home/${icon}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${icon}@4x.png`).default} 4x`}
+                            src={require(`@site/static/assets/website/home/${icon}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.webp`).default} 3x`}
                             alt={'Push Snap'}
                             title="Push Snap"
                             width="16px"
@@ -60,8 +60,8 @@ const GlassyComponents = ({ section }) => {
 
                    {illustration && (
                     <GridImage
-                        src={require(`@site/static/assets/website/home/${illustration}.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${illustration}@4x.png`).default} 4x`}
+                        src={require(`@site/static/assets/website/home/${illustration}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
                         alt={'Push Snap'}
                         title="Push Snap"
                         width={isTablet ? "27px" : "auto"}
@@ -85,38 +85,14 @@ const GlassyComponents = ({ section }) => {
             (<Body>
                 {type === 'image' && (
                   <GridImage
-                    src={require(`@site/static/assets/website/home/${imagesrc}.png`).default}
-                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x`}
+                    src={require(`@site/static/assets/website/home/${imagesrc}.webp`).default}
+                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                     alt={alt}
                     title={alt}
                     type={type}
                     id={id}
                     />
                 )}
-
-                 {type === 'imageV2' && (
-                    <GridImage
-                        src={require(`@site/static/assets/website/home/${imagesrc}.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.png`).default} 3x,, ${require(`@site/static/assets/website/home/${imagesrc}@4x.png`).default} 4x`}
-                        alt={alt}
-                        title={alt}
-                        type={type}
-                        margin="0 auto"
-                        id={id}
-                        />
-                    )}
-
-                    {type === 'imageWebp' && (
-                        <GridImage
-                            src={require(`@site/static/assets/website/home/${imagesrc}.webp`).default}
-                            srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
-                            alt={alt}
-                            title={alt}
-                            type={type}
-                            margin="0 auto"
-                            id={id}
-                            />
-                        )}
 
                 {type === 'codeblock' && (
                     <CodeDiv>
@@ -137,8 +113,8 @@ const GlassyComponents = ({ section }) => {
                         </ButtonItem> 
 
                         <GridImage
-                            src={require(`@site/static/assets/website/home/${codeblockImg}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.png`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.png`).default} 3x, ${require(`@site/static/assets/website/home/${codeblockImg}@4x.png`).default} 4x`}
+                            src={require(`@site/static/assets/website/home/${codeblockImg}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
                             alt={alt}
                             title={alt}
                             type={type}
