@@ -31,7 +31,7 @@ const GlassyComponents = ({ section }) => {
       }
 
   return (
-        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile} type={type}>
+        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile} type={type} className={id} >
 
             <Header highlight={highlight} type={type} id={id}>
                 <Subheader highlight={highlight} type={type} id={id} illustration={illustration}>
@@ -324,11 +324,11 @@ const GridImage = styled(Image)`
 
 const Header = styled(ItemV)`
     justify-content: ${({highlight, tags}) => highlight ? 'flex-start' : tags ? 'center' : 'center' };
-    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id == 'plug-play'  ? '0' : '1'};
 `;
 
 const Subheader = styled(ItemH)`
-    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id === 'plug-play' ? '0' : '1'};
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id == 'plug-play' ? '0' : '1'};
     align-items: ${(props) => props.illustration && 'center'};
     align-self: ${(props) => props.highlight && 'flex-start'};
 `;
