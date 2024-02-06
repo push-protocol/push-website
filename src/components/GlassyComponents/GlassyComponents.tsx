@@ -145,8 +145,6 @@ const GlassyComponents = ({ section }) => {
 const AfterItem = styled.div`
     background-color: #252527;
     width: calc(100% + 48px) !important;
-    // max-height: 29px !important;
-    // min-height: 29px;
     position: relative;
     margin-left: -24px;
     margin-right: -24px;
@@ -198,7 +196,7 @@ const Container = styled.div`
 
 
     background-image: url(${(props) => props.bg});
-    background-position: ${(props) => props.id == 'hyperscalable' ? 'center 20px' : 'center'};
+    background-position: ${(props) => props.id == 'snap' ? 'center 35%'  : props.id == 'hyperscalable' ? 'center 20px' : 'center'};
     background-repeat: no-repeat;
     background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 70%' : props.id == 'interoperable' ? 'cover' : 'contain'};
 
@@ -217,8 +215,8 @@ const Container = styled.div`
     
     @media ${device.mobileL} {
         display: ${(props) => props.hideOnMobile && 'none !important'};
-        max-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
-        min-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
         width: 100% !important;
     }
 
