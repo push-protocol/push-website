@@ -10,23 +10,28 @@ export const GridComponentsList = {
             },
             header: {
                 title: 'Web3 Native',
-                tags: [
-                    { title: 'Smart Contract',
-                      background: '#D98AEC',
-                      color: '#0D0D0F',
-                      border: '1px solid rgba(255, 255, 255, 0.05)'
-                    },
-                    { title: 'Gasless',
-                      color: '#635F7C',
-                      border: '1px solid #343244'
-                    },
-                    { title: 'Off-Chain',
-                      color: '#635F7C',
-                      border: '1px solid #343244'
-                    }
-                  ],
+            //     tags: [
+            //         { title: 'Smart Contract',
+            //           background: '#D98AEC',
+            //           color: '#0D0D0F',
+            //           border: '1px solid rgba(255, 255, 255, 0.05)'
+            //         },
+            //         { title: 'Gasless',
+            //           color: '#635F7C',
+            //           border: '1px solid #343244'
+            //         },
+            //         { title: 'Off-Chain',
+            //           color: '#635F7C',
+            //           border: '1px solid #343244'
+            //         }
+            //       ],
                   align: 'left'
             }, 
+            body: {
+                type: 'image',
+                imagesrc: 'notifs/web-native',
+                alt: 'Cross-chain Notifications'
+            }
         },
         {
             config: {
@@ -329,27 +334,32 @@ export const GridComponentsList = {
             },
             header: {
                 title: 'Supports any \nWeb3 Standard',
-                    tags: [
-                      { title: 'Wallet',
-                        background: '#D98AEC',
-                        color: '#0D0D0F',
-                        border: '1px solid #D98AEC'
-                      },
-                      { title: 'NFT',
-                        color: '#635F7C',
-                        border: '1px solid #343244'
-                      },
-                      { title: 'Cross-chain',
-                        color: '#635F7C',
-                        border: '1px solid #343244'
-                      },
-                      { title: 'Chain Specific Address',
-                        color: '#635F7C',
-                        border: '1px solid #343244'
-                      },
-                    ],
+                    // tags: [
+                    //   { title: 'Wallet',
+                    //     background: '#D98AEC',
+                    //     color: '#0D0D0F',
+                    //     border: '1px solid #D98AEC'
+                    //   },
+                    //   { title: 'NFT',
+                    //     color: '#635F7C',
+                    //     border: '1px solid #343244'
+                    //   },
+                    //   { title: 'Cross-chain',
+                    //     color: '#635F7C',
+                    //     border: '1px solid #343244'
+                    //   },
+                    //   { title: 'Chain Specific Address',
+                    //     color: '#635F7C',
+                    //     border: '1px solid #343244'
+                    //   },
+                    // ],
                   align: 'left'
             }, 
+            body: {
+                type: 'image',
+                imagesrc: 'chats/web-standard',
+                alt: 'Cross-chain Notifications'
+            }
         },
     ]  
    }
