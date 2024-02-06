@@ -1,7 +1,6 @@
 {
   "name": "push-website",
   "version": "1.0.0",
-  "private": false,
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

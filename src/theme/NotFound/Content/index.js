@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
@@ -9,9 +9,12 @@ import Link from '@docusaurus/Link';
 import styled from 'styled-components';
 import BlogSidebar from '@theme/BlogSidebar';
 import CaretDown from "../../../../static/assets/svgs/CaretDown.svg";
+import BlogListPage from '../../BlogListPage';
+import { BlogListPageContent } from '../../BlogListPage';
 
 export default function NotFoundContent({ className }) {
   const id = window.location.pathname;
+  const [activeSidebarID, setActiveSidebarID] = useState(0);
 
   const pushNotificationSidebarItems = sidebars.pushNotificationSidebar.map((item) => ({
     ...item,
@@ -19,7 +22,7 @@ export default function NotFoundContent({ className }) {
     active: item.id === id,
     title: item.label,
   }));
-  console.log(sidebars, "sidebarssss");
+  console.log(pushNotificationSidebarItems, "sidebarssss");
 
   console.log(id, "iddd");
   return (
@@ -61,83 +64,101 @@ export default function NotFoundContent({ className }) {
             },
             {
               title: (
-                <div>
-                  <SidebarLink>
+                <SidebarLinkContainer>
+                  <SidebarLink onClick={() => { activeSidebarID !== 1 ? setActiveSidebarID(1) : setActiveSidebarID(0) }}>
                     Build
-                    <CaretDown />
+                    <SidebarSvg style={{ transform: activeSidebarID === 1 ? "rotate(90deg)" : "rotate(0)" }} />
                   </SidebarLink>
-                </div>
+                  {activeSidebarID === 1 && (
+                    <SidebarLinkContainer>
+                      <SidebarInnerLink>
+                        Yooo
+                      </SidebarInnerLink>
+                      <SidebarInnerLink>
+                        Yooo
+                      </SidebarInnerLink>
+                      <SidebarInnerLink>
+                        Yooo
+                      </SidebarInnerLink>
+                      <SidebarInnerLink>
+                        Yooo
+                      </SidebarInnerLink>
+                      <SidebarInnerLink>
+                        Yooo
+                      </SidebarInnerLink>
+                    </SidebarLinkContainer>
+                  )}
+                </SidebarLinkContainer>
               ),
               collapsible: true,
-              permalink: "/docs/notifications/build/",
+              // permalink: "/docs/notifications/build/",
             },
             {
               title: (
-                <div>
+                <SidebarLinkContainer>
 
-                <SidebarLink>
-                  Playground
-                  <CaretDown />
-                </SidebarLink>
-                </div>
+                  <SidebarLink>
+                    Playground
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/playground",
+              permalink: "/docs/notifications/playground/",
             },
             {
               title: (
-                <div>
-                <SidebarLink>
-                  Showrunners Scaffold
-                <CaretDown />
-                </SidebarLink>
-                </div>
+                <SidebarLinkContainer>
+                  <SidebarLink>
+                    Showrunners Scaffold
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/showrunners-scaffold",
+              permalink: "/docs/notifications/showrunners-scaffold/",
             },
             {
               title: (
-                <div>
-
-                <SidebarLink>
-                  Tutorials
-                  <CaretDown />
-                </SidebarLink>
-                </div>
+                <SidebarLinkContainer>
+                  <SidebarLink>
+                    Tutorials
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/tutorials",
+              permalink: "/docs/notifications/tutorials/",
             },
             {
               title: (
-                <div>
-                <SidebarLink>
-                  Concepts
-                <CaretDown />
-                </SidebarLink>
-                </div>
+                <SidebarLinkContainer>
+                  <SidebarLink>
+                    Concepts
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/concepts",
+              permalink: "/docs/notifications/concepts/",
             },
             {
               title: (
-                <div>
-                <SidebarLink>
-                  Notification Standards
-                <CaretDown />
-                </SidebarLink>
-                </div>
+                <SidebarLinkContainer>
+                  <SidebarLink>
+                    Notification Standards
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/notification-standards",
+              permalink: "/docs/notifications/notification-standards/",
             },
             {
               title: (
-                <div>
-                <SidebarLink>
-                  Push Smart Contracts
-                <CaretDown />
-                </SidebarLink>
-                </div>
+                <SidebarLinkContainer>
+                  <SidebarLink>
+                    Push Smart Contracts
+                    <CaretDown />
+                  </SidebarLink>
+                </SidebarLinkContainer>
               ),
-              permalink: "/push-notifications/push-smart-contracts",
+              permalink: "/docs/notifications/push-smart-contracts/",
             }
           ]
         }}
@@ -145,6 +166,7 @@ export default function NotFoundContent({ className }) {
       <CenteredRow>
         <PageContainer>
           <PageNotFound title='Oops...' text="The page you're trying to reach doesn't exist." buttonText="Go to Docs Hub" buttonFunction={() => console.log("Yo boi")} />
+          {/* <BlogListPage {...props}/> */}
         </PageContainer>
       </CenteredRow>
     </StyledContainer>
@@ -221,4 +243,28 @@ const SidebarLink = styled(Link)`
   max-width: 270px;
   padding: 10px 8px 10px 16px;
   justify-content: space-between;
+  transition: transform 0.3s ease;  // Add smooth transition for transform property
+  #innerLink {
+    margin-left: 80px;
+  }
+`;
+
+const SidebarInnerLink = styled(SidebarLink)`
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  max-width: 250px;
+  width: 90%;
+`
+
+const SidebarLinkContainer = styled.div`
+cursor: pointer;
+`;
+
+const SidebarSvg = styled(CaretDown)`
+  transition: transform 0.3s ease;
+  transform: rotate(0);
+  margin-left: 80px;
+  #innerLink {
+    margin-left: 80px;
+  }
 `;

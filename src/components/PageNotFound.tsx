@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useThemeConfig } from "@docusaurus/theme-common"
 import ErrorGraphic from "../../static/assets/ErrorGraphic.svg"
 import BlogListPage from "@theme/BlogListPage";
-import { BlogListPageContent } from "../theme/BlogListPage";
 import { Span } from "../css/SharedStyling";
 import GLOBALS, { device } from "../config/globals";
 import BlogSidebar from '@theme/BlogSidebar';
+import { BlogListPageContent } from "../theme/BlogListPage";
 
 interface PageNotFoundProps {
     title: string;
@@ -15,10 +15,11 @@ interface PageNotFoundProps {
     buttonFunction: () => void;
     props: any;
 }
-const PageNotFound = ({ title, text, buttonFunction, buttonText }: PageNotFoundProps) => {
+const PageNotFound = ({ title, text, buttonFunction, buttonText, props }: PageNotFoundProps) => {
     const { docs } = useThemeConfig();
     // const { metadata, items, sidebar } = props;
     // console.log("metadata", metadata, items, sidebar);
+    console.log(props, "sidebarsss")
     return (
         <PageNotFoundWrapper>
             {docs.sidebar.autoCollapseCategories.valueOf()}
@@ -42,6 +43,7 @@ const PageNotFound = ({ title, text, buttonFunction, buttonText }: PageNotFoundP
                 
                 }}
              /> */}
+            {/* <BlogListPageContent {...props} /> */}
         </PageNotFoundWrapper>
     );
 };

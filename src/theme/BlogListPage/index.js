@@ -23,6 +23,7 @@ import styled from "styled-components";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
+import PageNotFound from "@site/src/components/PageNotFound";
 
 function BlogListPageMetadata(props) {
   const { metadata } = props;
@@ -39,8 +40,9 @@ function BlogListPageMetadata(props) {
     </>
   );
 }
-function BlogListPageContent(props) {
+export const BlogListPageContent = (props) => {
   const { metadata, items, sidebar } = props;
+  console.log("metadata", metadata, sidebar, items);
 
   return (
     <>
@@ -63,6 +65,7 @@ function BlogListPageContent(props) {
 }
 export default function BlogListPage(props) {
   const isSwiper = useMediaQuery(`(max-width: 1199px)`);
+  console.log("sidebarsss", props);
   return (
     <HtmlClassNameProvider
       className={clsx(
@@ -76,6 +79,9 @@ export default function BlogListPage(props) {
 
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
+      {/* <div style={{display: "none"}}> */}
+      {/* <PageNotFound {...props}/> */}
+      {/* </div> */}
     </HtmlClassNameProvider>
   );
 }
