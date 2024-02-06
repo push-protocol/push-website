@@ -1414,7 +1414,7 @@ const NotificationGridItem = styled.div`
         flex-grow: ${(props) => props.main ? "1" : '0'};
         flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
 
-        & #anti-spam {
+        & .anti-spam {
             max-width: 255px !important;
         }
 

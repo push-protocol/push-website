@@ -120,6 +120,7 @@ export const GridComponentsList = {
             config: {
                 id: 'snap',
                 height: '321px',
+                // padding: '24px 0px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/notifs/snap@3x.webp').default,
                 hideOnMobile: false
@@ -140,7 +141,7 @@ export const GridComponentsList = {
             }, 
             // body: {
             //     type: 'image',
-            //     imagesrc: 'snap',
+            //     imagesrc: 'notifs/snap',
             //     alt: 'Push Snap'
             // },
             footer: {

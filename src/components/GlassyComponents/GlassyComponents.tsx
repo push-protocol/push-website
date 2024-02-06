@@ -200,7 +200,7 @@ const Container = styled.div`
     background-image: url(${(props) => props.bg});
     background-position: ${(props) => props.id == 'hyperscalable' ? 'center 20px' : 'center'};
     background-repeat: no-repeat;
-    background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 75%' : props.id == 'interoperable' ? 'cover' : 'contain'};
+    background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 70%' : props.id == 'interoperable' ? 'cover' : 'contain'};
 
     @media ${device.laptopM} {
         width: 100% !important;
