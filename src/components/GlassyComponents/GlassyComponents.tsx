@@ -31,7 +31,7 @@ const GlassyComponents = ({ section }) => {
       }
 
   return (
-        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile} type={type}>
+        <Container id={id} height={height} padding={padding} bg={bg} hideOnMobile={hideOnMobile} type={type} className={id} >
 
             <Header highlight={highlight} type={type} id={id}>
                 <Subheader highlight={highlight} type={type} id={id} illustration={illustration}>
@@ -39,8 +39,8 @@ const GlassyComponents = ({ section }) => {
 
                     {icon && (
                         <GridImage
-                            src={require(`@site/static/assets/website/grids/notifications/${icon}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${icon}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${icon}@3x.png`).default} 3x`}
+                            src={require(`@site/static/assets/website/home/${icon}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.webp`).default} 3x`}
                             alt={'Push Snap'}
                             title="Push Snap"
                             width="16px"
@@ -60,12 +60,12 @@ const GlassyComponents = ({ section }) => {
 
                    {illustration && (
                     <GridImage
-                        src={require(`@site/static/assets/website/grids/notifications/${illustration}.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/grids/notifications/${illustration}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${illustration}@3x.png`).default} 3x`}
+                        src={require(`@site/static/assets/website/home/${illustration}.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
                         alt={'Push Snap'}
                         title="Push Snap"
-                        width={isTablet ? "41px" : "auto"}
-                        height={isTablet ? "auto" : "55px"}
+                        width={isTablet ? "27px" : "auto"}
+                        height={isTablet ? "auto" : "37px"}
                     />
                    )} 
                 </Subheader>
@@ -85,8 +85,8 @@ const GlassyComponents = ({ section }) => {
             (<Body>
                 {type === 'image' && (
                   <GridImage
-                    src={require(`@site/static/assets/website/grids/notifications/${imagesrc}.png`).default}
-                    srcSet={`${require(`@site/static/assets/website/grids/notifications/${imagesrc}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${imagesrc}@3x.png`).default} 3x`}
+                    src={require(`@site/static/assets/website/home/${imagesrc}.webp`).default}
+                    srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                     alt={alt}
                     title={alt}
                     type={type}
@@ -113,8 +113,8 @@ const GlassyComponents = ({ section }) => {
                         </ButtonItem> 
 
                         <GridImage
-                            src={require(`@site/static/assets/website/grids/notifications/${codeblockImg}.png`).default}
-                            srcSet={`${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@2x.png`).default} 2x, ${require(`@site/static/assets/website/grids/notifications/${codeblockImg}@3x.png`).default} 3x`}
+                            src={require(`@site/static/assets/website/home/${codeblockImg}.webp`).default}
+                            srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
                             alt={alt}
                             title={alt}
                             type={type}
@@ -145,8 +145,6 @@ const GlassyComponents = ({ section }) => {
 const AfterItem = styled.div`
     background-color: #252527;
     width: calc(100% + 48px) !important;
-    // max-height: 29px !important;
-    // min-height: 29px;
     position: relative;
     margin-left: -24px;
     margin-right: -24px;
@@ -198,9 +196,9 @@ const Container = styled.div`
 
 
     background-image: url(${(props) => props.bg});
-    background-position: ${(props) => props.id == 'hyperscalable' ? 'center 20px' : 'center'};
+    background-position: ${(props) => props.id == 'snap' ? 'center 35%'  : props.id == 'hyperscalable' ? 'center 20px' : 'center'};
     background-repeat: no-repeat;
-    background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 75%' : props.id == 'interoperable' ? 'cover' : 'contain'};
+    background-size: ${(props) => props.id == 'hyperscalable' ? 'auto 70%' : props.id == 'interoperable' ? 'cover' : 'contain'};
 
     @media ${device.laptopM} {
         width: 100% !important;
@@ -217,8 +215,8 @@ const Container = styled.div`
     
     @media ${device.mobileL} {
         display: ${(props) => props.hideOnMobile && 'none !important'};
-        max-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
-        min-height: ${({type ,height}) => type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
         width: 100% !important;
     }
 
@@ -324,11 +322,11 @@ const GridImage = styled(Image)`
 
 const Header = styled(ItemV)`
     justify-content: ${({highlight, tags}) => highlight ? 'flex-start' : tags ? 'center' : 'center' };
-    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id == 'plug-play'  ? '0' : '1'};
 `;
 
 const Subheader = styled(ItemH)`
-    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' ? '0' : '1'};
+    flex: ${({id, highlight, type}) =>  highlight || type === 'codeblock' || id === 'token-gated' || id == 'plug-play' ? '0' : '1'};
     align-items: ${(props) => props.illustration && 'center'};
     align-self: ${(props) => props.highlight && 'flex-start'};
 `;

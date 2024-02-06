@@ -1414,12 +1414,12 @@ const NotificationGridItem = styled.div`
         flex-grow: ${(props) => props.main ? "1" : '0'};
         flex-direction: ${(props) => props.lastRow ? "row" : 'column'};
 
-        & #anti-spam {
+        & .anti-spam {
             max-width: 255px !important;
         }
 
-        & #receive, #increase {
-            flex: 1 0 calc((100% - 303px)/2) !important;
+        .receive, .increase {
+            flex: 1 0 calc((100% - 303px)/2) !important; 
             min-height: 321px;
         }
 
@@ -1438,7 +1438,7 @@ const NotificationGridItem = styled.div`
             max-width: 215px !important;
         }
 
-        & #anti-spam {
+        .anti-spam {
             max-width: 215px !important;
         }
     }
@@ -1449,7 +1449,7 @@ const NotificationGridItem = styled.div`
         flex-direction: column;
 
 
-        & #anti-spam {
+        .anti-spam {
             max-width: 100% !important;
             min-width: 100% !important;
         }
@@ -1493,11 +1493,11 @@ const ChatGridItem = styled.div`
     }
 
 
-    & #hyperscalable {
+    .hyperscalable {
       flex: 1 0 calc(50% - 12px);
     }
 
-    & #plug-play {
+    .plug-play {
       flex: 1 0 calc(50% - 12px);
     }
 
@@ -1523,22 +1523,22 @@ const ChatGridItem = styled.div`
             grid-auto-flow: column;
         }
         
-        & #chain-agnostic {
+        .chain-agnostic {
             grid-column: 1;
         }
         
         
-        & #token-gated {
+        .token-gated {
             grid-column: 2;
             grid-row: span 3 / span 3;
         }
         
-        & #e2e {
+        .e2e {
             grid-column: 3;
             grid-row: 1;
         }
         
-        & #web3-standard {
+        .web3-standard {
             grid-column: 3;
             grid-row: 2;
         }
@@ -1569,28 +1569,28 @@ const ChatGridItem = styled.div`
 
       } 
 
-      & #hyperscalable {
+      .hyperscalable {
         flex: 1 0 100%;
       }
   
-      & #plug-play {
+      .plug-play {
         flex: 1 1 0;
       }
 
-      & #chain-agnostic {
+      .chain-agnostic {
           grid-column: 1;
       }
       
       
-      & #token-gated {
+      .token-gated {
         grid-column: 1;
       }
       
-      & #e2e {
+      .e2e {
         grid-column: 1;
       }
       
-      & #web3-standard {
+      .web3-standard {
         grid-column: 1;
       }
     
