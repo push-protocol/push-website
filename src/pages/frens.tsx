@@ -385,6 +385,7 @@ const FrensText = () => {
                     value={search}
                     placeholder={t('frens.powered-section.search-placeholder')}
                     onChange={channelSearch}
+                    className='input-text'
                   />
                 </Wrapper>
               </SearchContainer>
@@ -852,7 +853,7 @@ const Wrapper = styled.div`
     column-gap: 3px;
   }
 
-  & input[type='text'] {
+  input {
     all: unset;
     box-sizing: border-box;
     font-family: 'Strawford';
