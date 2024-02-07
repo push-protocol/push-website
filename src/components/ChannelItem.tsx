@@ -188,6 +188,7 @@ const ChannelDesc = styled.p`
     font-size: 16px;
     line-height: 140%;
     color: #303C5E;
+    margin: 5px 0 0 0;
 
     overflow: hidden;
     display: -webkit-box !important;
