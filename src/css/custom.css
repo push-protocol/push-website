@@ -807,3 +807,25 @@ sup strong {
 /* ------------------ */
 /* DOCUSAURUS ROADMAP OVERRIDE ENDS */
 /* ------------------ */
+
+
+
+
+
+
+
+/* .PushDocs .newDocs .theme-doc-sidebar-container li li {
+  margin-right: 10px;
+}
+
+.PushDocs .newDocs .theme-doc-sidebar-container li a svg {
+  margin-right: 0;
+  margin-left: 10px !important;
+  margin-bottom: 3px;
+  display: flex;
+}
+
+.PushDocs .newDocs  .theme-doc-sidebar-menu li{
+  display: flex;
+  flex-direction: row;
+} */

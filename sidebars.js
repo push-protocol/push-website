@@ -17,18 +17,22 @@ const sidebars = {
     {
       type: "doc",
       id: "notifications/notifications",
+      label: "Intro to Push Notification",
     },
     {
       type: "doc",
       id: "notifications/docs-notifications-quickstart",
+      label: "Quickstart",
     },
     {
       type: "doc",
       id: "notifications/docs-notifications-important-concepts",
+      label: "Important Concepts",
     },
     {
       type: "doc",
       id: "notifications/docs-notifications-supported-wallet-standards",
+      label: "Supported Wallet Standards",
     },
     {
       type: "category",
@@ -417,7 +421,7 @@ const sidebars = {
         },
       ],
     },
-  ]
-}
+  ],
+};
 
 module.exports = sidebars;

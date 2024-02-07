@@ -44,15 +44,15 @@ export default function Layout(props) {
 
       <AnnouncementBar />
 
-      {(showNavbar === undefined || showNavbar === 'docusaurus') && <Navbar />}
-      {showNavbar === 'website' && <Header />}
+      {(showNavbar === undefined || showNavbar === "docusaurus") && <Navbar />}
+      {showNavbar === "website" && <Header />}
 
       <div
         id={SkipToContentFallbackId}
         className={clsx(
           ThemeClassNames.wrapper.main,
           styles.mainWrapper,
-          wrapperClassName
+          wrapperClassName,
         )}
       >
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
