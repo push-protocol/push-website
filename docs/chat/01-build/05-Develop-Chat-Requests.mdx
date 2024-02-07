@@ -84,6 +84,68 @@ const bobAcceptAliceRequest = await userBob.chat.reject(aliceAddress);
 
 <Details summary="Expected response">200 OK</Details>
 
+## Chat Info API
+
+Chat Info API can be used to get the status of a chat between users, basically to check if a chat request is pending or if it has been accepted by the other user.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// To check the status of a chat between userAlice and userBob
+// userAlice.chat.info(chatId, bobAddress)
+const statusOfChatWithBob = await userAlice.chat.info(chatId, bobAddress);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Chat Info parameters
+
+| Param       | Type     | Default | Remarks                                                 |
+| ----------- | -------- | ------- | ------------------------------------------------------- |
+| _`chatId`_  | `string` | -       | The unique identifier of the chat between Alice and Bob |
+| _`address`_ | `string` | -       | The address of the user to check the status with.       |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response (When Alice's chat request has already been accepted by Bob)">
+```typescript
+{
+    "meta": {
+        "group": false
+    },
+    "list": "CHATS"
+}
+
+````
+
+| Param        | Type      | Remarks                                                                    |
+| ------------ | --------- | -------------------------------------------------------------------------- |
+| `meta.group` | `boolean` | returns `true` when the passed chatId is of a group chat and vice versa.   |
+| `list`       | `string`  | returns `CHATS` when the chat request has been accepted by the other user. |
+
+</Details>
+<Details summary="Expected response (When Alice's Chat request is pending or not yet accepted by Bob)">
+```typescript
+{
+    "meta": {
+        "group": false
+    },
+    "list": "REQUESTS"
+}
+
+````
+
+| Param        | Type      | Remarks                                                                       |
+| ------------ | --------- | ----------------------------------------------------------------------------- |
+| `meta.group` | `boolean` | returns `true` when the passed chatId is of a group chat and vice versa.      |
+| `list`       | `string`  | returns `REQUESTS` when the chat request has been accepted by the other user. |
+
+</Details>
+
 ## Block chat request API
 
 To block an incoming chat requests. Once blocked, the user will not be able to send you DMs or invite you to a group.
