@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-notifications/showrunners-scaffold/docs-notifications-showrunners-scaffold-deepdive" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.0.1">
+<title data-rh="true">Showrunners Scaffold Deepdive | Showrunners Scaffold | Push Notifications |
+Push Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://push.org/docs/notifications/showrunners-scaffold/scaffold-deepdive/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Scaffold Deepdive | Push | The Communication Protocol of Web3"><meta data-rh="true" name="description" content="Showrunners framework provides you with a scaffold that enables plug and play for your channel or even for multiple channels having their own logic triggers."><meta data-rh="true" property="og:description" content="Showrunners framework provides you with a scaffold that enables plug and play for your channel or even for multiple channels having their own logic triggers."><meta data-rh="true" property="og:image" content="https://push.org/assets/docs/previews/docs_notifications_showrunners--scaffold_deepdive.png"><meta data-rh="true" name="twitter:image" content="https://push.org/assets/docs/previews/docs_notifications_showrunners--scaffold_deepdive.png"><link data-rh="true" rel="icon" href="/assets/website/favicon.ico"><link data-rh="true" rel="canonical" href="https://push.org/docs/notifications/showrunners-scaffold/scaffold-deepdive/"><link data-rh="true" rel="alternate" href="https://push.org/docs/notifications/showrunners-scaffold/scaffold-deepdive/" hreflang="en"><link data-rh="true" rel="alternate" href="https://push.org/docs/notifications/showrunners-scaffold/scaffold-deepdive/" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://LHUKHXUHQP-dsn.algolia.net" crossorigin="anonymous"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9ZHXNRLYL"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-N9ZHXNRLYL",{})</script>
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="Push | The Communication Protocol of Web3" href="/opensearch.xml">
+
+<link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Push | The Communication Protocol of Web3 RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Push | The Communication Protocol of Web3 Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="Push | The Communication Protocol of Web3 JSON Feed"><link rel="stylesheet" href="/assets/css/styles.d477677e.css">
+<script src="/assets/js/runtime~main.2ebe0f54.js" defer="defer"></script>
+<script src="/assets/js/main.9872666f.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div class="PushDocs DocusaurusNavbar"><style data-styled="" data-styled-version="6.1.8">.dnWCZF{align-items:center;align-self:stretch;background:transparent;display:flex;flex:1;flex-direction:row;justify-content:center;width:auto;margin:0px;min-height:auto;overflow:initial;padding:0px;position:relative;}/*!sc*/
+.erFXFG{align-items:center;align-self:stretch;background:#121315;display:flex;flex:1;flex-direction:row;justify-content:center;width:auto;margin:0px;min-height:auto;overflow:initial;padding:70px 0 0 0;position:relative;}/*!sc*/
+data-styled.g2[id="SharedStyling__Section-sc-1enui31-1"]{content:"dnWCZF,erFXFG,"}/*!sc*/
+.juHVCs{display:flex;flex-direction:column;position:relative;flex:1;align-self:stretch;width:auto;max-width:1213px;display:flex;justify-content:center;box-sizing:content-box;margin:initial;padding:0;}/*!sc*/
+@media (max-width: 1024px){.juHVCs{padding:0;}}/*!sc*/
+@media (max-width: 375px){.juHVCs{padding:0;max-width:100%;}}/*!sc*/
+.koDnEk{display:flex;flex-direction:column;position:relative;flex:1;align-self:center;width:auto;max-width:1213px;display:flex;justify-content:center;box-sizing:content-box;margin:initial;padding:40px 0px;}/*!sc*/
+@media (max-width: 1024px){.koDnEk{padding:40px 0px;}}/*!sc*/
+@media (max-width: 375px){.koDnEk{padding:40px 0px;max-width:100%;}}/*!sc*/
+data-styled.g3[id="SharedStyling__Content-sc-1enui31-2"]{content:"juHVCs,koDnEk,"}/*!sc*/
+.lndxxo{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:normal;font-size:initial;height:auto;min-height:initial;justify-content:center;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.lndxxo .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.jIYuwx{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:32px;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:normal;font-size:initial;height:auto;min-height:initial;justify-content:center;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:20px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.jIYuwx .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.iZQsdU{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:32px;bottom:0;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:normal;font-size:initial;height:auto;min-height:initial;justify-content:center;left:0;margin:0px;max-width:initial;min-width:auto;overflow:hidden;padding:0px;position:absolute;right:0;text-align:initial;top:0;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.iZQsdU .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.AlVxP{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:initial;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:normal;font-size:initial;height:auto;min-height:initial;justify-content:center;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.AlVxP .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.gDqyMc{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:nowrap;gap:normal;font-size:initial;height:auto;min-height:initial;justify-content:flex-start;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.gDqyMc .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.ivubfC{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:32px;font-size:initial;height:auto;min-height:initial;justify-content:center;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.ivubfC .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.eElACt{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:32px;font-size:initial;height:auto;min-height:initial;justify-content:center;left:auto;margin:120px 0 0 0;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.eElACt .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.cRYSmZ{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:12px;font-size:initial;height:auto;min-height:initial;justify-content:flex-start;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.cRYSmZ .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+.goGdVW{align-items:center;align-self:stretch;background:transparent;border:initial;border-radius:initial;bottom:auto;box-shadow:initial;display:flex;filter:initial;flex:1;flex-basis:auto;flex-direction:row;flex-wrap:wrap;gap:12px;font-size:initial;height:auto;min-height:initial;justify-content:flex-end;left:auto;margin:0px;max-width:initial;min-width:auto;overflow:initial;padding:0px;position:relative;right:auto;text-align:initial;top:auto;width:auto;z-index:auto;}/*!sc*/
+.SharedStyling__ItemH-sc-1enui31-4:hover .SharedStyling__ItemH-sc-1enui31-4{filter:none;}/*!sc*/
+.goGdVW .SharedStyling__ItemBreak-sc-1enui31-3{width:0;}/*!sc*/
+data-styled.g5[id="SharedStyling__ItemH-sc-1enui31-4"]{content:"lndxxo,jIYuwx,iZQsdU,AlVxP,gDqyMc,ivubfC,eElACt,cRYSmZ,goGdVW,"}/*!sc*/
+.jVDIOl{flex:1;flex-direction:column;}/*!sc*/
+.jVDIOl .SharedStyling__ItemBreak-sc-1enui31-3{height:0;width:auto;}/*!sc*/
+.kEVcpy{flex:initial;flex-direction:column;}/*!sc*/
+.kEVcpy .SharedStyling__ItemBreak-sc-1enui31-3{height:0;width:auto;}/*!sc*/
+data-styled.g6[id="SharedStyling__ItemV-sc-1enui31-5"]{content:"jVDIOl,kEVcpy,"}/*!sc*/
+.exXNwh{width:auto;height:auto;display:flex;border-radius:initial;}/*!sc*/
+.ReTTr{width:24;height:24;display:flex;border-radius:100%;}/*!sc*/
+data-styled.g10[id="SharedStyling__Image-sc-1enui31-9"]{content:"exXNwh,ReTTr,"}/*!sc*/
+.emXeDZ{flex:initial;align-self:auto;color:inherit;background:transparent;font-weight:500;font-size:18px;text-transform:inherit;margin:0px;padding:16px;letter-spacing:-0.03em;text-align:initial;line-height:142%;position:initial;right:auto;left:auto;bottom:auto;top:auto;z-index:auto;}/*!sc*/
+@media (max-width: 1024px){.emXeDZ{font-size:18px;}}/*!sc*/
+@media (max-width: 375px){.emXeDZ{font-size:18px;}}/*!sc*/
+.fGzoeF{flex:initial;align-self:auto;color:inherit;background:transparent;font-weight:500;font-size:18px;text-transform:inherit;margin:0px;padding:16px 0px;letter-spacing:-0.03em;text-align:initial;line-height:142%;position:initial;right:auto;left:auto;bottom:auto;top:auto;z-index:auto;}/*!sc*/
+@media (max-width: 1024px){.fGzoeF{font-size:18px;}}/*!sc*/
+@media (max-width: 375px){.fGzoeF{font-size:18px;}}/*!sc*/
+.fHURSn{flex:initial;align-self:flex-start;color:#fff!important;background:transparent;font-weight:400;font-size:16px;text-transform:inherit;margin:0px;padding:8px 30px 8px 10px!important;letter-spacing:normal;text-align:initial;line-height:230%;position:initial;right:auto;left:auto;bottom:auto;top:auto;z-index:auto;}/*!sc*/
+@media (max-width: 1024px){.fHURSn{font-size:16px;}}/*!sc*/
+@media (max-width: 375px){.fHURSn{font-size:16px;}}/*!sc*/
+.bRzAJt{flex:initial;align-self:auto;color:#FFF;background:transparent;font-weight:500;font-size:24px;text-transform:inherit;margin:0px;padding:0px;letter-spacing:-0.03em;text-align:initial;line-height:142%;position:initial;right:auto;left:auto;bottom:auto;top:auto;z-index:auto;}/*!sc*/
+@media (max-width: 1024px){.bRzAJt{font-size:24px;}}/*!sc*/
+@media (max-width: 375px){.bRzAJt{font-size:24px;}}/*!sc*/
+.gfmzRv{flex:initial;align-self:auto;color:inherit;background:transparent;font-weight:400;font-size:18px;text-transform:inherit;margin:0px;padding:0px;letter-spacing:-0.03em;text-align:initial;line-height:142%;position:initial;right:auto;left:auto;bottom:auto;top:auto;z-index:auto;}/*!sc*/
+@media (max-width: 1024px){.gfmzRv{font-size:18px;}}/*!sc*/
+@media (max-width: 375px){.gfmzRv{font-size:18px;}}/*!sc*/
+data-styled.g11[id="SharedStyling__Span-sc-1enui31-10"]{content:"emXeDZ,fGzoeF,fHURSn,bRzAJt,gfmzRv,"}/*!sc*/
+.iINLXL{display:flex;line-height:26px;flex:initial;flex-direction:row;align-self:auto;align-items:center;justify-content:flex-start;font-weight:400;font-size:inherit;color:#fff;background:transparent;margin:0;padding:8px 30px;border:none;border-radius:0;position:relative;text-decoration:none;width:initial;overflow:hidden;z-index:3;pointer:hand;cursor:pointer;font-family:Strawford,Helvetica,sans-serif;}/*!sc*/
+@media (max-width: 1024px){.iINLXL{font-size:16px;}}/*!sc*/
+@media (max-width: 375px){.iINLXL{font-size:14px;}}/*!sc*/
+.iINLXL:before{background:transparent;bottom:0;content:"";display:none;left:0;position:absolute;right:0;top:0;z-index:-1;}/*!sc*/
+.iINLXL:after{background:#000;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;z-index:-1;}/*!sc*/
+.iINLXL:hover{border:inherit;}/*!sc*/
+.iINLXL:hover svg>path{stroke:auto;}/*!sc*/
+.iINLXL:hover:before{display:block;}/*!sc*/
+.iINLXL:hover:after{opacity:0.08;}/*!sc*/
+.iINLXL:active:after{opacity:0.15;}/*!sc*/
+.iINLXL>div{display:flex;}/*!sc*/
+data-styled.g12[id="SharedStyling__Button-sc-1enui31-11"]{content:"iINLXL,"}/*!sc*/
+.jkxBft{display:flex;line-height:230%;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:400;font-size:16px;color:#fff!important;background:transparent;margin:0;padding:7px 30px;border:none;border-radius:0px;position:relative;text-decoration:none;overflow:hidden;z-index:3;pointer:hand;cursor:pointer;}/*!sc*/
+@media (max-width: 1024px){.jkxBft{font-size:16px;}}/*!sc*/
+@media (max-width: 375px){.jkxBft{font-size:16px;}}/*!sc*/
+.jkxBft:before{background:transparent;bottom:0;content:"";display:none;left:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.jkxBft:after{background:#fff;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.jkxBft:hover:before{display:block;}/*!sc*/
+.jkxBft:hover:after{opacity:0.08;}/*!sc*/
+.jkxBft:active:after{opacity:0.15;}/*!sc*/
+.jkxBft>div{display:flex;}/*!sc*/
+.jkxBft .anchorSVGlink{width:1em;height:1em;margin-left:3px;position:relative;top:5px;}/*!sc*/
+.jklhJf{display:flex;line-height:230%;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:400;font-size:16px;color:#fff!important;background:transparent;margin:0;padding:7px 30px;border:none;border-radius:0px;position:relative;text-decoration:none;overflow:hidden;z-index:3;pointer:hand;cursor:pointer;}/*!sc*/
+@media (max-width: 1024px){.jklhJf{font-size:16px;}}/*!sc*/
+@media (max-width: 375px){.jklhJf{font-size:16px;}}/*!sc*/
+.jklhJf:before{background:transparent;bottom:0;content:"";display:none;left:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.jklhJf:after{background:#000;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.jklhJf:hover:before{display:block;}/*!sc*/
+.jklhJf:hover:after{opacity:0.08;}/*!sc*/
+.jklhJf:active:after{opacity:0.15;}/*!sc*/
+.jklhJf>div{display:flex;}/*!sc*/
+.jklhJf .anchorSVGlink{width:1em;height:1em;margin-left:3px;position:relative;top:5px;}/*!sc*/
+.eBKKxe{display:initial;line-height:26px;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:500;font-size:18px;color:#fff!important;background:#DD44B9;margin:0px 8px 0px 0px;padding:14px 32px;border:none;border-radius:16px;position:relative;text-decoration:none;overflow:hidden;z-index:3;pointer:hand;cursor:pointer;}/*!sc*/
+@media (max-width: 1024px){.eBKKxe{font-size:18px;}}/*!sc*/
+@media (max-width: 375px){.eBKKxe{font-size:18px;}}/*!sc*/
+.eBKKxe:before{background:#DD44B9;bottom:0;content:"";display:none;left:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.eBKKxe:after{background:#000;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.eBKKxe:hover:before{display:block;}/*!sc*/
+.eBKKxe:hover:after{opacity:0.08;}/*!sc*/
+.eBKKxe:active:after{opacity:0.15;}/*!sc*/
+.eBKKxe>div{display:flex;}/*!sc*/
+.eBKKxe .anchorSVGlink{width:1em;height:1em;margin-left:3px;position:relative;top:5px;}/*!sc*/
+.eWgTlc{display:initial;line-height:26px;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:500;font-size:inherit;color:#fff!important;background:#121315;margin:0;padding:14px 32px;border:none;border-radius:16px;position:relative;text-decoration:none;overflow:hidden;z-index:3;pointer:hand;cursor:pointer;}/*!sc*/
+@media (max-width: 1024px){.eWgTlc{font-size:16px;}}/*!sc*/
+@media (max-width: 375px){.eWgTlc{font-size:14px;}}/*!sc*/
+.eWgTlc:before{background:transparent;bottom:0;content:"";display:none;left:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.eWgTlc:after{background:#000;bottom:0;content:"";left:0;opacity:0;position:absolute;right:0;top:0;z-index:-1;border-radius:inherit;}/*!sc*/
+.eWgTlc:hover:before{display:block;}/*!sc*/
+.eWgTlc:hover:after{opacity:0.08;}/*!sc*/
+.eWgTlc:active:after{opacity:0.15;}/*!sc*/
+.eWgTlc>div{display:flex;}/*!sc*/
+.eWgTlc .anchorSVGlink{width:1em;height:1em;margin-left:3px;position:relative;top:5px;}/*!sc*/
+data-styled.g13[id="SharedStyling__A-sc-1enui31-12"]{content:"jkxBft,jklhJf,eBKKxe,eWgTlc,"}/*!sc*/
+.eumWhx{font-family:inherit;line-height:inherit;display:flex;flex-direction:row;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:400;font-size:inherit;color:#fff;background:transparent;margin:0;padding:10px 15px;letter-spacing:0.2em;border:none;border-radius:0px;width:initial;position:relative;text-decoration:none;overflow:hidden;z-index:3;filter:none;cursor:pointer;}/*!sc*/
+.SharedStyling__LinkTo-sc-1enui31-14:hover .SharedStyling__LinkTo-sc-1enui31-14{filter:none;color:#fff;}/*!sc*/
+.eumWhx:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:transparent;display:none;z-index:-1;}/*!sc*/
+.eumWhx:after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:#000;opacity:0;z-index:-1;}/*!sc*/
+.eumWhx:hover:before{display:block;}/*!sc*/
+.eumWhx:hover:after{opacity:0.08;}/*!sc*/
+.eumWhx:active:after{opacity:0.15;}/*!sc*/
+.eumWhx .anchorSVGlink{width:1em;height:1em;margin-left:3px;}/*!sc*/
+.lkjHay{font-family:inherit;line-height:230%;display:flex;flex-direction:row;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:400;font-size:16px;color:#fff;background:transparent;margin:0;padding:7px 30px;letter-spacing:normal;border:none;border-radius:0px;width:initial;position:relative;text-decoration:none;overflow:hidden;z-index:3;filter:none;cursor:pointer;}/*!sc*/
+.SharedStyling__LinkTo-sc-1enui31-14:hover .SharedStyling__LinkTo-sc-1enui31-14{filter:none;color:#fff;}/*!sc*/
+.lkjHay:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:transparent;display:none;z-index:-1;}/*!sc*/
+.lkjHay:after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:#fff;opacity:0;z-index:-1;}/*!sc*/
+.lkjHay:hover:before{display:block;}/*!sc*/
+.lkjHay:hover:after{opacity:0.08;}/*!sc*/
+.lkjHay:active:after{opacity:0.15;}/*!sc*/
+.lkjHay .anchorSVGlink{width:1em;height:1em;margin-left:3px;}/*!sc*/
+.fumqmH{font-family:inherit;line-height:142%;display:flex;flex-direction:row;flex:initial;align-self:auto;align-items:center;justify-content:center;font-weight:500;font-size:18px;color:#fff;background:transparent;margin:0;padding:0px 0px;letter-spacing:-0.03em;border:none;border-radius:0px;width:initial;position:relative;text-decoration:none;overflow:hidden;z-index:3;filter:none;cursor:pointer;}/*!sc*/
+.SharedStyling__LinkTo-sc-1enui31-14:hover .SharedStyling__LinkTo-sc-1enui31-14{filter:none;color:#fff;}/*!sc*/
+.fumqmH:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:transparent;display:none;z-index:-1;}/*!sc*/
+.fumqmH:after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:none;opacity:0;z-index:-1;}/*!sc*/
+.fumqmH:hover:before{display:block;}/*!sc*/
+.fumqmH:hover:after{opacity:0.08;}/*!sc*/
+.fumqmH:active:after{opacity:0.15;}/*!sc*/
+.fumqmH .anchorSVGlink{width:1em;height:1em;margin-left:3px;}/*!sc*/
+data-styled.g15[id="SharedStyling__LinkTo-sc-1enui31-14"]{content:"eumWhx,lkjHay,fumqmH,"}/*!sc*/
+.kFRoAj{display:flex;flex-direction:column;}/*!sc*/
+.kFRoAj .SharedStyling__Span-sc-1enui31-10{font-size:20px;margin:10px 0px 0px 15px;font-weight:300;}/*!sc*/
+.kFRoAj .SharedStyling__Span-sc-1enui31-10.msg{line-height:138.5%;margin-top:12px;letter-spacing:-0.03em;}/*!sc*/
+@media (max-width: 768px){.kFRoAj .SharedStyling__Span-sc-1enui31-10{font-size:18px;margin:10px auto 0px auto;}}/*!sc*/
+data-styled.g34[id="MailingSignup__Box-sc-n7e1rd-0"]{content:"kFRoAj,"}/*!sc*/
+.kXaqaj{position:relative;display:flex;flex:1;column-gap:6px;align-items:center;background:#0000;border-radius:21px;border:1px solid #2a2a39;padding:5px;justify-content:space-between;}/*!sc*/
+@media (max-width: 768px){.kXaqaj{column-gap:3px;}}/*!sc*/
+data-styled.g35[id="MailingSignup__Wrapper-sc-n7e1rd-1"]{content:"kXaqaj,"}/*!sc*/
+.dswGNZ{all:unset;box-sizing:border-box;font-family:"Strawford";font-style:normal;font-weight:400;font-size:16px;line-height:normal;letter-spacing:-0.03em;color:#9c9cbe;background:#0000;width:90%;padding:6px;padding-left:8px;}/*!sc*/
+@media (max-width: 1024px){.dswGNZ{min-width:auto;}}/*!sc*/
+.dswGNZ:placeholder{color:#a5a7b4;opacity:1;}/*!sc*/
+data-styled.g37[id="MailingSignup__SignupInputField-sc-n7e1rd-3"]{content:"dswGNZ,"}/*!sc*/
+.hXlcME{border:none;background:transparent;cursor:pointer;}/*!sc*/
+.hXlcME svg{height:1.5rem;width:1.5rem;fill:#dd44b9;}/*!sc*/
+@keyframes loadingAnimation{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}/*!sc*/
+.hXlcME .loader{animation-name:loadingAnimation;animation-duration:1500ms;animation-iteration-count:infinite;animation-timing-function:linear;}/*!sc*/
+data-styled.g39[id="MailingSignup__IconButton-sc-n7e1rd-5"]{content:"hXlcME,"}/*!sc*/
+.eWjpJX{font-family:'Strawford';display:flex;position:relative;}/*!sc*/
+data-styled.g40[id="Footer__StyledFooter-sc-12iidry-0"]{content:"eWjpJX,"}/*!sc*/
+.iJFZOd{flex-direction:column;}/*!sc*/
+@media (max-width: 768px){.iJFZOd{padding-left:30px!important;padding-right:30px!important;}}/*!sc*/
+data-styled.g41[id="Footer__FooterSection-sc-12iidry-1"]{content:"iJFZOd,"}/*!sc*/
+.bNIsaM{border-radius:32px;background:#2a2a39;padding:48px 30px 48px 40px;display:flex;justify-content:space-between;flex-direction:row;flex-wrap:nowrap;column-gap:32px;box-sizing:border-box;}/*!sc*/
+.bNIsaM svg.figureSvg{width:72px;height:72px;}/*!sc*/
+@media (max-width: 768px){.bNIsaM{flex-direction:column;row-gap:16px;}}/*!sc*/
+data-styled.g42[id="Footer__InfoCard-sc-12iidry-2"]{content:"bNIsaM,"}/*!sc*/
+.dPWUiO{display:flex;flex-direction:column;flex:0 0 calc(100% - 116px);}/*!sc*/
+@media (max-width: 768px){.dPWUiO{align-items:center;}.dPWUiO span{text-align:center;}}/*!sc*/
+data-styled.g43[id="Footer__InfoDetails-sc-12iidry-3"]{content:"dPWUiO,"}/*!sc*/
+.elKMFC{display:flex;flex-direction:row;flex-wrap:wrap;width:100%;}/*!sc*/
+data-styled.g44[id="Footer__FooterContainer-sc-12iidry-4"]{content:"elKMFC,"}/*!sc*/
+.kXeWEL{display:flex;flex-direction:column;flex-basis:20%;box-sizing:border-box;color:#ffffff;flex-direction:column;align-items:center;}/*!sc*/
+@media (max-width: 768px){.kXeWEL{flex-basis:50%;padding:12px;row-gap:16px;align-items:flex-start;}.kXeWEL span{font-size:20px;}.kXeWEL:last-child{flex-basis:100%;}}/*!sc*/
+data-styled.g45[id="Footer__FooterColumn-sc-12iidry-5"]{content:"kXeWEL,"}/*!sc*/
+.lirGvG{display:flex;flex-direction:column;row-gap:6px;}/*!sc*/
+data-styled.g46[id="Footer__FooterLinks-sc-12iidry-6"]{content:"lirGvG,"}/*!sc*/
+.eEwVgj{margin:80px 0 40px 0;position:relative;}/*!sc*/
+.eEwVgj:before{position:absolute;z-index:1;content:'';top:-24px;left:0;height:1px;width:100%;background:#2a2a39;}/*!sc*/
+@media (max-width: 768px){.eEwVgj{flex-direction:column;}.eEwVgj .pushLinks{justify-content:center;}.eEwVgj .pushLinks a.pushLogo{flex:0 0 100%;}.eEwVgj .pushPlatformLinks{justify-content:center;}}/*!sc*/
+data-styled.g47[id="Footer__SocialLinks-sc-12iidry-7"]{content:"eEwVgj,"}/*!sc*/
+.jBLAbs{color:#dd44b9;border-radius:16px;padding:14px 0;font-size:18px;font-weight:500;letter-spacing:-0.03em;line-height:142%;justify-content:flex-start;background:transparent;border-radius:0;}/*!sc*/
+.Footer__FooterAnchorPrimary-sc-12iidry-8:hover .Footer__FooterAnchorPrimary-sc-12iidry-8{filter:transparent;}/*!sc*/
+.jBLAbs:before{background:transparent;}/*!sc*/
+.jBLAbs:after{background:transparent;}/*!sc*/
+data-styled.g48[id="Footer__FooterAnchorPrimary-sc-12iidry-8"]{content:"jBLAbs,"}/*!sc*/
+.cLDtZL{color:#9c9cbe;padding:0;font-size:16px;font-weight:300;letter-spacing:normal;line-height:142%;justify-content:flex-start;background:transparent;border-radius:0;}/*!sc*/
+.cLDtZL:before{background:transparent;}/*!sc*/
+data-styled.g49[id="Footer__FooterAnchorSecondary-sc-12iidry-9"]{content:"cLDtZL,"}/*!sc*/
+.jScyEa{border:1px solid #2a2a39;border-radius:12px;padding:10px;display:flex;align-items:center;}/*!sc*/
+data-styled.g50[id="Footer__FooterAnchorIcon-sc-12iidry-10"]{content:"jScyEa,"}/*!sc*/
+.cNdLZC{background:linear-gradient( 90deg,rgba(18,19,21,0.5) -2.55%,rgba(42,42,57,0.5) 32.62%,rgba(142,49,122,0.5) 68.34%,rgba(18,19,21,0.5) 102.97% );background-color:black;padding:1rem 0;width:100%;display:flex;justify-content:center;}/*!sc*/
+@media (max-width: 768px){.cNdLZC{padding:0rem 0rem;}}/*!sc*/
+data-styled.g51[id="Alert__AlertContainer-sc-1b5ywvf-0"]{content:"cNdLZC,"}/*!sc*/
+.bCDKL{font-weight:500;font-size:18px;line-height:142%;letter-spacing:-0.03em;color:#ffffff;margin:auto auto;cursor:pointer;}/*!sc*/
+@media (max-width: 768px){.bCDKL{font-size:14px;width:80%;text-align:center;padding:10px;}}/*!sc*/
+.bCDKL .icon{position:relative;bottom:-3px;}/*!sc*/
+data-styled.g52[id="Alert__AlertText-sc-1b5ywvf-1"]{content:"bCDKL,"}/*!sc*/
+.kAqzXQ{margin-right:20px;}/*!sc*/
+.kAqzXQ .icon{cursor:pointer;}/*!sc*/
+@media (max-width: 768px){.kAqzXQ .icon{width:15px;}}/*!sc*/
+data-styled.g53[id="Alert__CancelIcon-sc-1b5ywvf-2"]{content:"kAqzXQ,"}/*!sc*/
+.jaOTnS{padding:0;background:none;font-size:1.125rem;padding-left:0.3rem;color:#fff;text-decoration:none;cursor:pointer;font-weight:700;}/*!sc*/
+.jaOTnS:hover{opacity:0.75;}/*!sc*/
+@media (max-width: 768px){.jaOTnS{font-size:14px;padding-left:0.5rem;}}/*!sc*/
+data-styled.g54[id="Alert__KnowMoreLink-sc-1b5ywvf-3"]{content:"jaOTnS,"}/*!sc*/
+.hHpEvv{list-style:none;margin:0px 16px 0px 0px;}/*!sc*/
+@media (max-width: 1024px){.hHpEvv{display:none;}}/*!sc*/
+data-styled.g55[id="Header__LanguageItem-sc-13ut7yb-0"]{content:"hHpEvv,"}/*!sc*/
+.jdZQlO{margin:20px 0 0 0;color:#FFF;}/*!sc*/
+@media (max-width: 1024px){.jdZQlO{margin:20px;flex-direction:column;}}/*!sc*/
+@media (max-width: 375px){.jdZQlO{margin:20px;flex-direction:column;}}/*!sc*/
+.jdZQlO.light{color:#121315;background:#FFFFFFCC;}/*!sc*/
+data-styled.g56[id="Header__HeaderItemH-sc-13ut7yb-1"]{content:"jdZQlO,"}/*!sc*/
+.dlBQPr{backdrop-filter:blur(10px);background:#121315CC;}/*!sc*/
+.dlBQPr.light{background:#FFFFFFCC;}/*!sc*/
+data-styled.g57[id="Header__HeaderBlurV-sc-13ut7yb-2"]{content:"dlBQPr,"}/*!sc*/
+.dATIZk{margin:0 20px 0 20px;}/*!sc*/
+@media (max-width: 1024px){.dATIZk{margin:0;}}/*!sc*/
+data-styled.g58[id="Header__HeaderNavItemV-sc-13ut7yb-3"]{content:"dATIZk,"}/*!sc*/
+.ixkHoU{display:flex;}/*!sc*/
+.ixkHoU.light{display:none;}/*!sc*/
+data-styled.g59[id="Header__PushLogoWhiteContainer-sc-13ut7yb-4"]{content:"ixkHoU,"}/*!sc*/
+.sEQlB{display:none;}/*!sc*/
+.sEQlB.light{display:flex;}/*!sc*/
+data-styled.g60[id="Header__PushLogoBlackContainer-sc-13ut7yb-5"]{content:"sEQlB,"}/*!sc*/
+.kDVJSP{font-family:'Strawford';position:fixed;top:0;left:0;right:0;opacity:1;border-bottom-left-radius:32px;border-bottom-right-radius:32px;transition:top 0.3s ease-in-out;z-index:999;display:flex;flex-direction:column;justify-content:space-between;align-items:center;}/*!sc*/
+.kDVJSP.hide{top:-100%;}/*!sc*/
+.kDVJSP.light span{color:#121315;}/*!sc*/
+.kDVJSP.light svg.chevronIcon{fill:#121315;}/*!sc*/
+.kDVJSP.light svg.chevronIcon path{stroke:#121315;}/*!sc*/
+@media (max-width: 1024px){.kDVJSP{flex-direction:column;}.kDVJSP.hide{top:-100%;}}/*!sc*/
+data-styled.g61[id="Header__StyledHeader-sc-13ut7yb-6"]{content:"kDVJSP,"}/*!sc*/
+.fpIwds{display:none;}/*!sc*/
+@media (max-width: 1024px){.fpIwds{display:flex;cursor:pointer;}}/*!sc*/
+data-styled.g62[id="Header__MobileMenuToggleIcon-sc-13ut7yb-7"]{content:"fpIwds,"}/*!sc*/
+.dDhzbZ{display:flex;}/*!sc*/
+.dDhzbZ svg{cursor:pointer;}/*!sc*/
+@media (max-width: 1024px){.dDhzbZ{flex-direction:row;width:100%;justify-content:space-between;align-items:center;}}/*!sc*/
+data-styled.g63[id="Header__MenuTop-sc-13ut7yb-8"]{content:"dDhzbZ,"}/*!sc*/
+.kEpJwg{list-style:none;margin:0;padding:0;display:flex;column-gap:54px;z-index:999;}/*!sc*/
+@media (max-width: 1024px){.kEpJwg{flex-direction:column;flex:0 0 75%;align-self:stretch;display:none;}}/*!sc*/
+data-styled.g64[id="Header__NavigationMenu-sc-13ut7yb-9"]{content:"kEpJwg,"}/*!sc*/
+.fJolCb{position:relative;}/*!sc*/
+.fJolCb .flag-icon{width:24px;height:24px;margin-right:8px;}/*!sc*/
+.fJolCb span{font-family:'Strawford';padding:16px;font-weight:500;font-size:18px;line-height:142%;}/*!sc*/
+.fJolCb:hover span{color:#dd44b9;}/*!sc*/
+.fJolCb:hover .chevronIcon{transform:rotate(180deg);}/*!sc*/
+.fJolCb:hover .menuContent{display:block;}/*!sc*/
+data-styled.g65[id="Header__NavigationMenuItem-sc-13ut7yb-10"]{content:"fJolCb,"}/*!sc*/
+.krdqEW{flex:1;margin:0 auto;}/*!sc*/
+@media (max-width: 1024px){.krdqEW{flex:initial;margin:16px;}}/*!sc*/
+data-styled.g66[id="Header__NavMenuItemLink-sc-13ut7yb-11"]{content:"krdqEW,"}/*!sc*/
+.dzXBkG{position:relative;padding-left:16px;}/*!sc*/
+.dzXBkG .flag-icon{width:24px;height:24px;margin-right:6px;display:block;}/*!sc*/
+.dzXBkG .flag-icon-drop{width:24px;height:24px;margin-right:10px;display:block;}/*!sc*/
+.dzXBkG span{font-family:'Strawford';padding:16px;font-weight:500;font-size:18px;line-height:142%;}/*!sc*/
+.dzXBkG:hover span{color:#dd44b9;}/*!sc*/
+.dzXBkG:hover .chevronIcon{transform:rotate(180deg);}/*!sc*/
+.dzXBkG:hover .menuContent{display:block;}/*!sc*/
+data-styled.g67[id="Header__LanguageMenuItem-sc-13ut7yb-12"]{content:"dzXBkG,"}/*!sc*/
+.bbwfVr{display:flex;align-items:center;cursor:pointer;}/*!sc*/
+.bbwfVr:hover{cursor:pointer;}/*!sc*/
+.bbwfVr .chevronIcon{transition-duration:0.4s;transition-property:transform;}/*!sc*/
+@media (max-width: 1024px){.bbwfVr{justify-content:space-between;}.bbwfVr .chevronIcon{width:16px;height:16px;transform:none!important;}}/*!sc*/
+data-styled.g68[id="Header__NavigationMenuHeader-sc-13ut7yb-13"]{content:"bbwfVr,"}/*!sc*/
+.cYExNI{width:100%;height:100%;flex:1;margin:auto 0;display:flex;align-items:center;}/*!sc*/
+@media (max-width: 1024px){.cYExNI{flex:initial;margin:0 0;}}/*!sc*/
+data-styled.g69[id="Header__MenuHeader-sc-13ut7yb-14"]{content:"cYExNI,"}/*!sc*/
+.jZkRwl{display:flex;align-items:center;cursor:pointer;}/*!sc*/
+.jZkRwl:hover{cursor:pointer;}/*!sc*/
+.jZkRwl .chevronIcon{transition-duration:0.4s;transition-property:transform;}/*!sc*/
+@media (max-width: 1024px){.jZkRwl{justify-content:flex-end;}.jZkRwl .chevronIcon{width:16px;height:16px;transform:none!important;}}/*!sc*/
+data-styled.g70[id="Header__LanguageMenuHeader-sc-13ut7yb-15"]{content:"jZkRwl,"}/*!sc*/
+.eWTeJc{list-style:none;font-family:'Strawford','Manrope',sans-serif;display:none;position:absolute;top:54px;left:50%;transform:translateX(-50%);z-index:1;background:#2a2a39;border-radius:18px;padding:10px 0;}/*!sc*/
+.eWTeJc a{min-width:220px;}/*!sc*/
+@media (max-width: 1024px){.eWTeJc{width:100%;position:relative;top:0px;left:0;transform:none;display:flex;flex-direction:column;margin:0;padding:0;display:none!important;}.eWTeJc a{justify-content:flex-start;}}/*!sc*/
+data-styled.g71[id="Header__NavigationMenuContent-sc-13ut7yb-16"]{content:"eWTeJc,"}/*!sc*/
+.edbOcC{align-self:flex-end;flex-wrap:nowrap;}/*!sc*/
+@media (max-width: 1024px){.edbOcC{flex-direction:collumn;align-self:center;flex-wrap:wrap;}}/*!sc*/
+data-styled.g72[id="Header__HeaderFocusItems-sc-13ut7yb-17"]{content:"edbOcC,"}/*!sc*/
+.mqpoa{list-style:none;font-family:'Strawford','Manrope',sans-serif;display:none;position:absolute;top:54px;left:50%;transform:translateX(-90%);z-index:1;background:#2a2a39;border-radius:16px 4px 16px 16px;padding:10px 0px;}/*!sc*/
+.mqpoa a{min-width:162px;}/*!sc*/
+@media (max-width: 1024px){.mqpoa{min-width:100%;position:relative;top:0px;left:0;transform:none;display:flex;flex-direction:column;margin:0;padding:0;display:none!important;}.mqpoa a{justify-content:flex-start;}}/*!sc*/
+data-styled.g73[id="Header__LanguageMenuContent-sc-13ut7yb-18"]{content:"mqpoa,"}/*!sc*/
+.hsoXQX{padding:14px 32px;}/*!sc*/
+@media (max-width: 1024px){.hsoXQX{align-self:stretch;display:none;}}/*!sc*/
+data-styled.g74[id="Header__DappLauncher-sc-13ut7yb-19"]{content:"hsoXQX,"}/*!sc*/
+</style><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top navbarHideable_m1mJ"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/assets/docs/PushLogoTextDark.svg" alt="Push Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/docs/PushLogoTextWhite.svg" alt="Push Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a></div><div class="navbar__items navbar__items--right"><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/">Docs Hub</a><a class="navbar__item navbar__link" href="/blog/">Blog</a><a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">Discord</a><a href="https://app.push.org/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">App</a><a href="https://github.com/ethereum-push-notification-service/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_eExm"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd sidebarWithHideableNavbar_wUlq"><a tabindex="-1" class="sidebarLogo_isFc" href="/"><img src="/assets/docs/PushLogoTextDark.svg" alt="Push Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/assets/docs/PushLogoTextWhite.svg" alt="Push Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></a><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/notifications/">Intro to Push Notification</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/notifications/quickstart/">Quickstart</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/notifications/important-concepts/">Important Concepts</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/notifications/supported-wallet-standards/">Supported Wallet Standards</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="true" href="/docs/notifications/build/">Build</a><button aria-label="Collapse sidebar category &#x27;Build&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/get-started/">Get Started</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/initialize-user/">Initialize User</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/manage-user/">Manage User</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/create-channel/">Create Channel</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/create-channel-settings/">Channel Settings</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/channel-delegates/">Channel Delegates</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/manage-channel/">Manage Channel</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/fetch-subscriptions/">Fetch Subscriptions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/manage-subscriptions/">Manage Subscriptions</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/fetch-notifications/">Fetch Notifications</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/types-of-notification/">Types of Notification</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/send-notification/">Send Notification</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/send-notification-via-smart-contract/">Send Notification (via Smart Contract)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/styling-notification-content/">Notification Styling</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/stream-notifications/">Stream Notifications</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/testing-notifications/">Testing Notifications</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/build/integrating-notifications/">Integrating Notifications</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a href="https://push.org/docs/chat" target="_blank" rel="noopener noreferrer" class="menu__link menuExternalLink_NmtK" tabindex="0">Build Push Chat<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/notifications/playground/">Playground</a><button aria-label="Expand sidebar category &#x27;Playground&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" aria-expanded="true" href="/docs/notifications/showrunners-scaffold/">Showrunners Scaffold</a><button aria-label="Collapse sidebar category &#x27;Showrunners Scaffold&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/get-started/">Get Started</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/notifications/showrunners-scaffold/scaffold-deepdive/">Scaffold Deepdive</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="true" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/nft-transfer-trigger/">Examples</a></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/nft-transfer-trigger/">NFT transfer trigger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/nft-based-trigger/">NFT based trigger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/service-based-trigger/">Service based trigger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/offchain-based-trigger/">Offchain (Web2) based trigger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/defi-based-trigger/">DeFi based trigger</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/advance-protocol-based-trigger-oasis-protocol/">Advance - Protocol based trigger (Oasis protocol)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/notifications/showrunners-scaffold/Examples/notification-settings-with-showrunners-example/">Showrunners X Notification Settings</a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/notifications/tutorials/">Tutorials</a><button aria-label="Expand sidebar category &#x27;Tutorials&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/notifications/concepts/">Concepts</a><button aria-label="Expand sidebar category &#x27;Concepts&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/notifications/notification-standards/">Notification Standards</a><button aria-label="Expand sidebar category &#x27;Notification Standards&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/notifications/push-smart-contracts/">Push Smart Contracts</a><button aria-label="Expand sidebar category &#x27;Push Smart Contracts&#x27;" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Alpn" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_xK9p"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/notifications/"><span itemprop="name">Notifications</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/notifications/showrunners-scaffold/"><span itemprop="name">Showrunners Scaffold</span></a><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Scaffold Deepdive</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Showrunners deepdive overview</h1>
+<p>Showrunners framework provides you with a scaffold that enables plug and play for your channel or even for multiple channels having their own logic triggers.</p>
+<p>Let&#x27;s understand the requirements for the folder structure inside the <code>src/showrunners</code> folder and how you can use them to quickly refine / debug / deploy your channels.</p>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Ensure you have read <a title="Guide for getting started with Showrunners scaffold for trigger notificatons via Push protocol" href="/docs/notifications/showrunners-scaffold/get-started/">get started guide</a> for Showrunners scaffold before diving in specifics of this guide as the guide relies on terminologies used over there.</p></div></div>
+<!-- -->
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="channel-structure">Channel Structure<a href="#channel-structure" class="hash-link" aria-label="Direct link to Channel Structure" title="Direct link to Channel Structure">​</a></h2>
+<p>Each folder inside <code>src/showrunners</code> is treated as their own channel and can have their own triggers for firing custom notifications.</p>
+<p>Showrunners is designed to be a plug and play solution for your channel which means that each of the folders designated filenames are used to add-on various functionalities. You can have a look at all the files that are required to be inside your channel folder and <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/helloWorld" target="_blank" rel="noopener noreferrer" title="Hello World channel with custom trigger using Showrunners scaffold">it&#x27;s structure here</a>.</p>
+<p>Note: For example, we will assume that your are creating a channel called <strong>helloWorld</strong>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="mandatory-files-required-inside-channel-directory">Mandatory files required inside Channel directory<a href="#mandatory-files-required-inside-channel-directory" class="hash-link" aria-label="Direct link to Mandatory files required inside Channel directory" title="Direct link to Mandatory files required inside Channel directory">​</a></h3>
+<p>At the very least, two files are required to be inside your channel directory:</p>
+<p><code>{channelname}</code><strong>Channel.js [.ts]</strong></p>
+<ul>
+<li>For example: <strong>helloWorldChannel.js</strong> | <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/helloWorld/helloWorldChannel.ts" target="_blank" rel="noopener noreferrer" title="Example file in repo for helloWorldChannel.js">demo file here</a></li>
+<li>This file contains all the logic functions of your channel, it can for instance have a way to poll all opted in users of your channel and based on certain conditions that are met, fire notifications out.</li>
+</ul>
+<p><code>{channelname}</code><strong>Keys.js[.ts]</strong></p>
+<ul>
+<li>For example: <strong>helloWorldKeys.json</strong> | <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/helloWorld/helloWorldKeys.json" target="_blank" rel="noopener noreferrer" title="Example file in repo for helloWorldKeys.js">demo file here</a></li>
+<li>This file contains all your private keys that you either belong to the channel you created or have authorized the wallets to send notification on your channel&#x27;s behalf.</li>
+<li>Sample json file should look like:<!-- -->
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#F8F8F2"><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token string-property property">&quot;PRIVATE_KEY_NEW_STANDARD_1&quot;</span><span class="token operator">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;PK&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;YOUR_CHANNEL_PRIVATE_KEY_HERE&quot;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;CHAIN_ID&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;CHAIN_ID_HERE&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token string-property property">&quot;PRIVATE_KEY_NEW_STANDARD_2&quot;</span><span class="token operator">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;PK&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;YOUR_CHANNEL_DELEGATE_1_PRIVATE_KEY_HERE&quot;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;CHAIN_ID&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;CHAIN_ID_HERE&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token string-property property">&quot;PRIVATE_KEY_NEW_STANDARD_3&quot;</span><span class="token operator">:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;PK&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;YOUR_CHANNEL_DELEGATE_2_PRIVATE_KEY_HERE&quot;</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">      </span><span class="token string-property property">&quot;CHAIN_ID&quot;</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(255, 121, 198)">&quot;CHAIN_ID_HERE&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><span class="token punctuation" style="color:rgb(248, 248, 242)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#F8F8F2"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(248, 248, 242)">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+</li>
+</ul>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Only one private key is required and your channel delegate key also works. Some devs prefer to not expose their channel creator key even when it&#x27;s used on your server or local backend to sign the notification payload.</p><p>It&#x27;s also useful when you create a channel from a smart contract or a multisig / multisafe.</p></div></div>
+<p>These two files inside your channel folder will ensure that your channel is correctly loaded in showrunners framework but it doesn&#x27;t do any magic by itself. Do ensure that your channel is triggering logic points either through cron job or through postman routes, you need ways to trigger that which leads us to the optional files that enables that.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="optional-files-inside-channel-directory">Optional files inside channel directory<a href="#optional-files-inside-channel-directory" class="hash-link" aria-label="Direct link to Optional files inside channel directory" title="Direct link to Optional files inside channel directory">​</a></h3>
+<p>These files while optional enables certain trigger points for your channel to operate on.</p>
+<p><code>{channelname}</code><strong>Routes.js [.ts]</strong></p>
+<ul>
+<li>For example: <strong>helloWorldRoutes.js</strong> | <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/helloWorld/helloWorldRoutes.ts" target="_blank" rel="noopener noreferrer" title="Example file in repo for helloWorldRoutes.js">demo file here</a></li>
+<li>This file contains the routes that you will enable to ensure you are able to manually trigger notification or any other logic points in your <code>{channelname}</code><strong>Channel.js [.ts]</strong>.</li>
+<li>You will ideally use the route of this files in postman to trigger logic functions / test them out.</li>
+</ul>
+<p><code>{channelname}</code><strong>Jobs.js [.ts]</strong></p>
+<ul>
+<li>For example: <strong>helloWorldJobs.js</strong> | <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/helloWorld/helloWorldJobs.ts" target="_blank" rel="noopener noreferrer" title="Example file in repo for helloWorldJobs.js">demo file here</a></li>
+<li>This file contains your cron jobs to trigger logic points in your <code>{channelname}</code><strong>Channel.js [.ts]</strong>.</li>
+<li>This file is based on <a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="noopener noreferrer" title="Repo of node-schedule, an advance cron job library for node">node-schdeule</a> and can handle a wide variety of automated cron jobs to enable sending wide array of notifications based on triggers.</li>
+</ul>
+<p><code>{channelname}</code><strong>AWSSNS.js [.ts]</strong></p>
+<ul>
+<li>For example: <strong>helloWorldAWSSNS.ts</strong> | <a href="https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/helloWorld/helloWorldAWSSNS.ts" target="_blank" rel="noopener noreferrer" title="Example file in repo for helloWorldAWSSNS.js">demo file here</a></li>
+<li>This file contains the webhook helpers and handle the logic points for consuming a webhook.</li>
+<li>This file is based on <a href="https://aws.amazon.com/sns/" target="_blank" rel="noopener noreferrer" title="Learn about AWS SNS">AWS-SNS</a> and can handle the variety of logics for consuming webhook to enable sending wide array of notifications based on webhook triggers.</li>
+</ul>
+<p>Congrats, that is all you need to know to start creating your channel and sending notifications. [Checkout examples of showrunners channel notification triggers] for different implementations of custom notification triggers that you can do to inform users of your protocol about various things.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/ethereum-push-notification-service/push-website/blob/main/docs/notifications/03-showrunners-scaffold/02-Showrunner-Scaffold-Scaffold-Deepdive.mdx" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/notifications/showrunners-scaffold/get-started"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Get Started</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/notifications/showrunners-scaffold/Examples/nft-transfer-trigger"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">NFT transfer trigger</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#channel-structure" class="table-of-contents__link toc-highlight">Channel Structure</a><ul><li><a href="#mandatory-files-required-inside-channel-directory" class="table-of-contents__link toc-highlight">Mandatory files required inside Channel directory</a></li><li><a href="#optional-files-inside-channel-directory" class="table-of-contents__link toc-highlight">Optional files inside channel directory</a></li></ul></li></ul></div></div></div></div></main></div></div></div></div></div>
+</body>
+</html>

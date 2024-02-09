@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[17242],{33254:s=>{s.exports=JSON.parse('{"label":"Buidl","permalink":"/blog/tags/buidl","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

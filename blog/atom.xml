@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://push.org/blog</id>
+    <title>Push | The Communication Protocol of Web3 Blog</title>
+    <updated>2024-02-08T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://push.org/blog"/>
+    <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
+    <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Monthly Recap January 🎉]]></title>
+        <id>https://push.org/blog/monthly-recap-january-2024</id>
+        <link href="https://push.org/blog/monthly-recap-january-2024"/>
+        <updated>2024-02-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Monthly Recap January 🎉]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Monthly Recap January 🎉" src="https://push.org/assets/images/cover-image-4c03e7ab6942589dfc80380d49e12388.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>Welcome to this last month's highlights and fresh product launches! From exciting new developments to all-new partnerships, making noteworthy debuts, and honoring our community – it has been a month filled with significant achievements. Here’s everything we got up to:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="development">Development<a href="https://push.org/blog/monthly-recap-january-2024#development" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development">​</a></h3>
+<p>Most notably we launched our <a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable/" target="_blank" rel="noopener noreferrer">Community Based Messaging</a> feature for Group Chats directly on Unstoppable Domains! With this collaboration, every ‘badge’ (NFTs assigned to wallets based on wallet holder status/activity history) will have its own Group Chat. Holding badges allow you to access the respective Group Chat. <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Try it out for yourself!</a></p>
+<p>We also launched our <a href="https://push.org/docs/roadmap/" target="_blank" rel="noopener noreferrer">Live Push Roadmap for 2024</a>. It’s an all-new way to track and follow along with all of our planned developments for the year. Spoiler, there is no shortage of exciting developments to come. We’ll be launching Push Nodes (our final hurdle to achieve full scale decentralization) as well as new MetaMask Snap enhancements.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="frens-of-push">Frens of Push<a href="https://push.org/blog/monthly-recap-january-2024#frens-of-push" class="hash-link" aria-label="Direct link to Frens of Push" title="Direct link to Frens of Push">​</a></h3>
+<p>Push added several new and exciting partners to its ecosystem in January.</p>
+<ol>
+<li><a href="https://twitter.com/cookie3_co" target="_blank" rel="noopener noreferrer">Cookie3</a>: We’re working towards offering targeted user notification segmentation like never before using on-chain data.</li>
+<li><a href="https://twitter.com/rivoxyz" target="_blank" rel="noopener noreferrer">Rivo.xyz</a>: Bringing real-time notifications to Rivo users to stay updated with new DeFi strategy listings and receive timely information on price changes, APY adjustments, Risk Score changes, TVL updates</li>
+<li><a href="https://twitter.com/flow_block" target="_blank" rel="noopener noreferrer">Blockflow</a>: Partnering together to create more seamless and accessible notification infrastructure for builders.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="featured-and-weekly-reads">Featured and Weekly Reads<a href="https://push.org/blog/monthly-recap-january-2024#featured-and-weekly-reads" class="hash-link" aria-label="Direct link to Featured and Weekly Reads" title="Direct link to Featured and Weekly Reads">​</a></h3>
+<p>January was one of our most publicized months to date!</p>
+<ol>
+<li>In response to our announcement of community based messaging now live on Unstoppable Domains, we received over 70+ pieces of organic coverage including: <a href="https://cryptonews.com/news/unstoppable-and-push-protocol-launch-token-gated-chat-more-crypto-news.htm" target="_blank" rel="noopener noreferrer">Cryptonews</a>, <a href="https://erc4337.mirror.xyz/ghX6mENwSgsNqLz7Gqlt940akHzYWZH4LRaRAgx77VI" target="_blank" rel="noopener noreferrer">ERC-4337 team</a>, <a href="https://cointelegraph.com/news/unstoppable-domains-launches-badge-gated-group-chat-feature-username-holders" target="_blank" rel="noopener noreferrer">CoinTelegraph</a>, <a href="https://www.coindesk.com/tech/2024/01/11/protocol-latest-tech-news-crypto-blockchain/" target="_blank" rel="noopener noreferrer">CoinDesk</a> and many more…</li>
+<li>We hosted an exciting Twitter Space along team members, from SOCLLY, Talent Protocol, and Mirror to discuss <a href="https://twitter.com/pushprotocol/status/1745080872737313067" target="_blank" rel="noopener noreferrer">decentralized social media</a></li>
+<li>We also hosted a Twitter Space on <a href="https://twitter.com/pushprotocol/status/1750199280667705389" target="_blank" rel="noopener noreferrer">ambassador programs in web3</a>sharing how your project can leverage them too</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-and-governance">Community and Governance<a href="https://push.org/blog/monthly-recap-january-2024#community-and-governance" class="hash-link" aria-label="Direct link to Community and Governance" title="Direct link to Community and Governance">​</a></h3>
+<p>We’re going to be expanding our <a href="https://twitter.com/pushprotocol/status/1742942832782983452" target="_blank" rel="noopener noreferrer">Push India Ambassador program</a> after receiving such great feedback and results from our initial launch in India. Applications are still open!</p>
+<p>We featured two exciting devs this last month in our Dev Spotlight series – <a href="https://twitter.com/pushprotocol/status/1747983834405093833" target="_blank" rel="noopener noreferrer">Avril Gupta</a> and <a href="https://twitter.com/pushprotocol/status/1754503913322000662" target="_blank" rel="noopener noreferrer">Satyam</a> from the Push team.</p>
+<p>All new <a href="https://twitter.com/pushprotocol/status/1752333849642652113" target="_blank" rel="noopener noreferrer">Push Missions are also available</a> for you to complete! Earn rewards for contributing to web3’s leading communication layer.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="brb-india">BRB India<a href="https://push.org/blog/monthly-recap-january-2024#brb-india" class="hash-link" aria-label="Direct link to BRB India" title="Direct link to BRB India">​</a></h3>
+<p>Both the Ethereum and the Aragon BRBIndia Coding Challenges have been solved and winners announced!</p>
+<p>For the Ethereum challenge of quantum proofing the network, we are extremely proud to share that <a href="https://twitter.com/bisht__13" target="_blank" rel="noopener noreferrer">@bisht__13</a> used account abstraction to solve it. For the Ethereum Network, it just got a major security upgrade.</p>
+<p>Similarly for the Aragon challenge of creating a permission management protocol for subDAOs. <a href="https://twitter.com/plopmenz" target="_blank" rel="noopener noreferrer">@plopmenz</a> built two plugins and a UI that now allow both subDAOs and NFT-based permissions using Hats Protocol and Aragon OSx.</p>
+<p>Both these winners are a huge testament to the value of the BRBIndia campaign and we couldn’t be more excited about the upcoming solutions for the remaining challenges we are going to discover.</p>
+<p>As we wrap up another amazing month at Push, we want to thank all of you for contributing to our success. We look forward to more collaborations, innovations, and shared successes in the month to come. Until next time!</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Announcing “Group Chat” from Push Protocol and Unstoppable Domains ]]></title>
+        <id>https://push.org/blog/announcing-group-chat-from-push-unstoppable</id>
+        <link href="https://push.org/blog/announcing-group-chat-from-push-unstoppable"/>
+        <updated>2024-01-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Announcing “Group Chat” from Push Protocol and Unstoppable Domains ]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains " src="https://push.org/assets/images/cover-image-795636df73199722574cdcb0931a4bf7.gif" width="800" height="450" class="img_ev3q"></p>
+<p>Today, we're thrilled to announce an exciting new chapter in our partnership with Unstoppable Domains (UD): the launch of 'Group Chat' on the UD messaging platform! 🎉</p>
+<p>Last year, UD and Push Protocol announced <a href="https://medium.com/push-protocol/business-to-user-messaging-push-protocol-x-unstoppable-domains-6bef7e262f7d#:~:text=Push%20Protocol%20is%20partnering%20with,and%20partners%20natively%20on%20web3." target="_blank" rel="noopener noreferrer">business-to-user messaging</a> on the UD messaging platform — the result of a longstanding product relationship between the two companies that began <a href="https://push.org/blog/epns-partners-with-unstoppable-domains/" target="_blank" rel="noopener noreferrer">back in 2021</a>. Today, the launch of the token-gated Group Chat on the UD messaging platform is another step towards decentralized, open, censorship-resistant communication for the future of the web. At launch, UD Group messaging will go live with <b>400+ Groups, for 3.8M+ UD users</b>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="group-chat-a-shift-in-decentralized-communication">Group Chat: A Shift in Decentralized Communication<a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable#group-chat-a-shift-in-decentralized-communication" class="hash-link" aria-label="Direct link to Group Chat: A Shift in Decentralized Communication" title="Direct link to Group Chat: A Shift in Decentralized Communication">​</a></h3>
+<p>Currently, UD’s messaging interface <a href="https://unstoppabledomains.com/blog/categories/announcements/article/messaging-launch" target="_blank" rel="noopener noreferrer">Unstoppable Messaging</a> allows any web3 user to message addresses belonging to a .eth, .x, .crypto domain, .polygon along with many other domains. However, Unstoppable Messaging has been limited to just one-to-one and one-to-many messaging. As such, we’ve been working with Unstoppable Domains to enable a robust, token-gated system through badges, allowing anyone with a <a href="https://support.unstoppabledomains.com/support/solutions/articles/48001215751-badges" target="_blank" rel="noopener noreferrer">badge</a> to join a Group Chat and start a conversation.</p>
+<p>By blending UD’s expertise in web3 domain services with Push Protocol’s market-leading decentralized messaging technology, we’re excited to release this all-new feature to the web3 community.</p>
+<blockquote><i><p>“Our partnership with Unstoppable is not merely about changing the way teams communicate; it's about revolutionizing it. 'Group Chat' embodies our dedication to empowering organizations with cutting-edge communication technology."</p></i><b>— Harsh Rajat, Founder at Push Protocol</b></blockquote>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-are-token-gated-group-chats">What Are Token Gated Group Chats<a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable#what-are-token-gated-group-chats" class="hash-link" aria-label="Direct link to What Are Token Gated Group Chats" title="Direct link to What Are Token Gated Group Chats">​</a></h3>
+<p>Token-gated Group Chats are exactly what their name implies, Group Chats that require you to hold a specific token (NFT or crypto-asset) to either access any given group, or message within it. Token-gating your Group Chats is a surefire way of controlling who can enter your chats and who can message within them. As the admin of your Group Chat, you can set and adjust permissions whenever you like.</p>
+<p>For businesses, organizations, and teams, it’s a fantastic way to ensure your communication channels remain private and secure by giving you total control over who enters and participates in the communication channel.</p>
+<p>You can learn more about <a href="https://push.org/docs/chat/build/conditional-rules-for-group/" target="_blank" rel="noopener noreferrer">Token-Gated/Conditional Group Chats here</a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="getting-started-with-ud-group-chat">Getting Started With UD Group Chat<a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable#getting-started-with-ud-group-chat" class="hash-link" aria-label="Direct link to Getting Started With UD Group Chat" title="Direct link to Getting Started With UD Group Chat">​</a></h3>
+<p>Getting started with Push Protocol x Unstoppable Domains Group Chat is simple — you either need to join an existing Group Chat or create your own.</p>
+<p>Every Group Chat is associated with a ‘<a href="https://support.unstoppabledomains.com/support/solutions/articles/48001215751-badges" target="_blank" rel="noopener noreferrer">badge</a>’ and hence token-gated based on badge ownership.</p>
+<p>At launch, every UD badge that exists will have its own Group Chat (currently 400+ Group Chats are live). If you’re a holder of those badges, you’ll be eligible to join those groups.</p>
+<ul>
+<li>To join a Group Chat for a badge you own:</li>
+</ul>
+<ol>
+<li>
+<p>Go to Unstoppable Messaging from your <a href="https://ud.me/" target="_blank" rel="noopener noreferrer">ud.me</a> Profile (<a href="https://support.unstoppabledomains.com/support/solutions/articles/48001244742-unstoppable-messaging" target="_blank" rel="noopener noreferrer">Learn More</a>).</p>
+</li>
+<li>
+<p>Select the <b>Groups</b> tab.
+<img loading="lazy" alt="Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains " src="https://push.org/assets/images/image-1-20e324e2c839dda1d56b0df3d5f85b1d.webp" width="1600" height="900" class="img_ev3q"></p>
+</li>
+<li>
+<p>Find the community you would like to begin chatting with and select <b>Join group chat</b>.
+<img loading="lazy" alt="Image of Announcing “Group Chat” from Push Protocol and Unstoppable Domains " src="https://push.org/assets/images/image-2-826dad22941d3f43c5701934c795e9f1.webp" width="1600" height="900" class="img_ev3q"></p>
+</li>
+<li>
+<p>You’re done! You will be able to join the text-based chat going forward.</p>
+</li>
+</ol>
+<ul>
+<li>To create a new Group Chat with Sponsored Badges:</li>
+</ul>
+<ol>
+<li><a href="https://unstoppabledomains.com/badge/activate" target="_blank" rel="noopener noreferrer">Create a Sponsored Badge</a> by entering the <b>URL to your NFT collection</b></li>
+<li>Distribute your NFT to your community or team members</li>
+<li>That’s it! Your group can now enter the chat via the <b>Groups</b> tab on their Unstoppable Messaging widget.</li>
+</ol>
+<i>Unstoppable Group Chat is currently available on desktop, with mobile coming soon. </i>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="join-the-era-of-unstoppable-communities-and-team-groups">Join the Era of Unstoppable Communities and Team Groups!<a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable#join-the-era-of-unstoppable-communities-and-team-groups" class="hash-link" aria-label="Direct link to Join the Era of Unstoppable Communities and Team Groups!" title="Direct link to Join the Era of Unstoppable Communities and Team Groups!">​</a></h3>
+<p>Like all communication that’s powered by Push Protocol, Unstoppable Group Chat is censorship resistant and private. For friends, DAOs, companies, and organizations, that means secure and private team communication channels.</p>
+<p>If you’re interested in boosting your community engagement with Group chat, get <a href="https://push.org/docs/chat/build/conditional-rules-for-group/" target="_blank" rel="noopener noreferrer">started here</a>.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="Unstoppable Domains" term="Unstoppable Domains"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔]]></title>
+        <id>https://push.org/blog/announcing-winners-of-billion-reasons</id>
+        <link href="https://push.org/blog/announcing-winners-of-billion-reasons"/>
+        <updated>2024-01-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔" src="https://push.org/assets/images/cover-image-821023ae379df1f3bcfe70b5277f820d.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>In August last year, we started an exciting journey with the <a href="https://push.org/blog/a-billion-reasons-to-build-finding-india-s-best-web3-developers/" target="_blank" rel="noopener noreferrer">launch</a> of our Billion Reasons to Build (BRB) developer tour across India. The mission of the campaign was simple – to provide developers the opportunity to create real-world impact by giving them a hard problem to solve from leading protocols. This of course included rewards.</p>
+<p>To create a variety of challenges, we teamed up with 12 of the most prominent protocols in web3 including Ethereum Foundation, ETHGlobal, Polygon, Filecoin, The Graph, Aragon, Timeswap, Alchemy, Shardeum, Flipkart, Biconomy, and Chainsafe to create a running hackathon.</p>
+<p>Each partner in the BRB hackathon presented their own unique Coding Challenge – a complex problem with a substantial bounty for the builder who could solve it.</p>
+<p>Today, we're thrilled to announce that 2 of these Coding Challenges have been solved!</p>
+<p>Here are the 2 challenges, the importance behind each of them, and the masterminds behind the game-changing solutions.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="quantum-proofing-ethereum-network--solved-by-aditya-bisht">Quantum-proofing Ethereum Network – solved by Aditya Bisht<a href="https://push.org/blog/announcing-winners-of-billion-reasons#quantum-proofing-ethereum-network--solved-by-aditya-bisht" class="hash-link" aria-label="Direct link to Quantum-proofing Ethereum Network – solved by Aditya Bisht" title="Direct link to Quantum-proofing Ethereum Network – solved by Aditya Bisht">​</a></h3>
+<p>Coding Challenge Owner: <a href="https://ethereum.foundation/" target="_blank" rel="noopener noreferrer">Ethereum Foundation</a></p>
+<p>Challenge: Figure out a way to quantum-proof the Ethereum Network, read more <a href="https://www.notion.so/pushprotocol/Ethereum-Foundation-07179dcf7f7e44efb7d2b2c9d2296264?pvs=4" target="_blank" rel="noopener noreferrer">here</a></p>
+<p>Winning Builder: <a href="https://twitter.com/bisht__13" target="_blank" rel="noopener noreferrer">Aditya Bisht</a></p>
+<p>Quantum computing is a looming threat to blockchain networks. Its powerful computing capabilities mean it can be used to reverse-engineer secret keys from public keys. To retain security and integrity in the Ethereum Network, the challenge was presented to find a way to quantum-proof the network using account abstraction.</p>
+<p>We’d like to congratulate <b>Aditya Bisht</b> for successfully solving the challenge and contributing to the security and robustness of the Ethereum Network.</p>
+<p>He shared his excitement with us – “Faced with intriguing complexities and the convergence of overlapping domains, the challenge not only pushed the boundaries but also contributed to advancing the ZK domain. Immense gratitude to the mentors from the Ethereum foundation and the unwavering support from Push. This victory is a testament to the collaborative spirit propelling the Ethereum project forward.” – Aditya</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="all-new-dao-permissions--solved-by-samuel-mens">All-new DAO Permissions – solved by Samuel Mens<a href="https://push.org/blog/announcing-winners-of-billion-reasons#all-new-dao-permissions--solved-by-samuel-mens" class="hash-link" aria-label="Direct link to All-new DAO Permissions – solved by Samuel Mens" title="Direct link to All-new DAO Permissions – solved by Samuel Mens">​</a></h3>
+<p>Coding Challenge Owner: <a href="https://aragon.org/" target="_blank" rel="noopener noreferrer">Aragon</a></p>
+<p>Challenge: Create a permission management protocol for allocating selective permissions to specific individuals and subDAOs, read more <a href="https://www.notion.so/pushprotocol/Aragon-f5467edc3c2a4f8d9d5693a0a6e680de?pvs=4" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>Winning Builder: <a href="http://plopmenz/" target="_blank" rel="noopener noreferrer">Samuel Mens</a></p>
+<p>DAOs and organizations rely on being able to give certain permissions, roles, and responsibilities to specific individuals and teams (subDAOs) in order to build more efficiently. But keeping track of which wallets have which permissions can be confusing, not to mention how easy it is to lose track of these permissions across a single DAO. As such, the problem statement required a builder to find a way that enables a DAO to efficiently manage permissions.</p>
+<p>With that, we’d like to congratulate Samuel Mens who built two plugins and a UI that allow you to manage both subDAOs and NFT-based permissions using <a href="https://twitter.com/hatsprotocol" target="_blank" rel="noopener noreferrer">@hatsprotocol</a> and Aragon OSx. For all DAOs that are built using Aragon, there is now a whole new level of on-chain governance management tools available.</p>
+<blockquote><i><p>"I've been part of the Aragon community since their launch of OSx and have built several plugins. I had this idea for a pretty ambitious plugin, which alligned very well with the BRB Hackathon bounty. I am very grateful for Push Protocol for providing this opportunity, giving me the motivation to actually built it and go the extra mile."</p></i><div><p>– Samuel Mens</p></div></blockquote>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="meet-the-winners-on-jan-16th">Meet the winners on Jan 16th<a href="https://push.org/blog/announcing-winners-of-billion-reasons#meet-the-winners-on-jan-16th" class="hash-link" aria-label="Direct link to Meet the winners on Jan 16th" title="Direct link to Meet the winners on Jan 16th">​</a></h3>
+<p>We’re excited to host a Twitter Space on Jan 16th, 3PM UTC to talk to our partners and winners of the phase-1 and learn more about their journey and experiences. Don’t forget to join us for the <a href="https://twitter.com/i/spaces/1lPKqbWRgvEGb" target="_blank" rel="noopener noreferrer">Twitter Space</a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="brb-goes-online-with-9-challenges-still-available-to-solve">BRB Goes Online With 9 Challenges Still Available To Solve<a href="https://push.org/blog/announcing-winners-of-billion-reasons#brb-goes-online-with-9-challenges-still-available-to-solve" class="hash-link" aria-label="Direct link to BRB Goes Online With 9 Challenges Still Available To Solve" title="Direct link to BRB Goes Online With 9 Challenges Still Available To Solve">​</a></h3>
+<p>Thanks to the incredible success of the BRB so far, we are excited to announce the extension of the initiative. We’re calling it <b>BRB Online</b>. This online campaign will mean the BRB Coding Challenges will continue to run indefinitely until solved, allowing more developers worldwide to build for and collaborate with leading web3 projects.</p>
+<p>Be sure to check out the remaining Coding Challenges here 👉<a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">https://push.org/brb/</a></p>
+<p>Richa Joshi, Co-founder at Push Protocol, shared her excitement:
+</p><blockquote><i>“The success of BRB has inspired us to take the initiative online. Developers worldwide can now continually access BRB challenges and collaborate directly with some of web3’s leading projects.”</i></blockquote><p></p>
+<p>We are extremely proud to support the BRB winners and look forward to announcing the winners of all the remaining partner challenges. The journey continues, and we are eager to witness the success and growth of the BRB initiative, shaping a future marked by collaboration, innovation, and possibilities.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="Billion Reasons to Build" term="Billion Reasons to Build"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Push 2023 Year In Review 🎯]]></title>
+        <id>https://push.org/blog/push-roadmap-recap-2023</id>
+        <link href="https://push.org/blog/push-roadmap-recap-2023"/>
+        <updated>2023-12-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Recap of 2023 for Push Protocol]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Roadmap Recap 2023 🎯" src="https://push.org/assets/images/cover-image-ee993fdfef6796b0fa1fa7c1b30f134e.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>We had an exciting year at Push! It's time to recap what we achieved, impact it made and where we are headed next!</p>
+<p>2023 was amazing for Push as we launched the products and features we've been working on to provide a full web3 communication stack for developers, businesses and users. Let's dive into the details of what all we achieved in 2023.</p>
+<!-- -->
+<!-- -->
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-by-numbers">Push by Numbers<a href="https://push.org/blog/push-roadmap-recap-2023#push-by-numbers" class="hash-link" aria-label="Direct link to Push by Numbers" title="Direct link to Push by Numbers">​</a></h2>
+<p>Push has grown tremendously in 2023, we saw an increase in notifications sent (+50 Million YTD) and subscribers (154k). Our ecosystem expanded as more protocols started using Push to send notifications / chat to their users across chains. Push is now live on 5 chains including Ethereum, Polygon zKEVM, PoS, Arbitrum and BNB.</p>
+<p><img loading="lazy" alt="Notification data for Push Protocol growth" src="https://push.org/assets/images/subscribers2023-74aa2b76587930e6025526f4701bc22a.png" width="1600" height="840" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="highlights">Highlights<a href="https://push.org/blog/push-roadmap-recap-2023#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="unified-push-sdk">Unified Push SDK<a href="https://push.org/blog/push-roadmap-recap-2023#unified-push-sdk" class="hash-link" aria-label="Direct link to Unified Push SDK" title="Direct link to Unified Push SDK">​</a></h3>
+<p>Push launched a unified SDK for web3 developers to send <a title="Explore Push Notifications Protocol" href="https://push.org/docs/notifications/"><strong>notifications</strong></a> or <a title="Explore Push Chat Protocol" href="https://push.org/docs/chat/"><strong>chats</strong></a> to their users with unification of the SDK, with <strong>video</strong> and <strong>spaces</strong> support coming soon!</p>
+<p>This enabled Push API class that is common for all suite of products by Push enabling developers to use Push products with ease. It also paved the way for Push to heavily abstract away the complexities of web3 communication and provide a seamless experience to developers.</p>
+<a href="https://push.org/docs/" title="Developer documentation hub" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Learn all about the Unified Push SDK from Push Documentation Hub</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-x-metamask-snap">Push x MetaMask Snap<a href="https://push.org/blog/push-roadmap-recap-2023#push-x-metamask-snap" class="hash-link" aria-label="Direct link to Push x MetaMask Snap" title="Direct link to Push x MetaMask Snap">​</a></h3>
+<p>Push started with the vision of enabling seamless communication for web3, launching Snaps for 30 Million users of MetaMask was a big step towards that vision as it allows users to have their communication delivered to them right on their MetaMask wallet.</p>
+<p>We are excited to share that web3 notifications sent by protocols using Push are now delivered to users on MetaMask. If you are a web3 builder, then re-engagement is a big problem for you which get's solved by implementing <a title="Explore Push Docs" href="https://push.org/docs/">web3 notifications with Push now!</a></p>
+<div style="width:100%;height:360px"></div>
+<a href="https://push.org/blog/bringing-push-to-meta-mask-snaps/" title="Tutorial on how to get started with Push x Metamask snap" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Get started with Push x Metamask snap</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-x-unstoppable">Push x Unstoppable<a href="https://push.org/blog/push-roadmap-recap-2023#push-x-unstoppable" class="hash-link" aria-label="Direct link to Push x Unstoppable" title="Direct link to Push x Unstoppable">​</a></h3>
+<p>Our partner <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer" title="Push x Unstoppable">Unstoppable Domains</a> launched notifications and group chats for their 3.8 Million users using Push making Push Unstoppable :). Their mobile app also uses Push to send notifications to their users.</p>
+<p><img loading="lazy" alt="Preview of how Push is getting used by Unstoppable" src="https://push.org/assets/images/poweredbypush2-d2ed6cc49cbf59f98bc8faa72c85175b.png" width="2826" height="1708" class="img_ev3q"></p>
+<p>What's more, UD have open sourced their code for the community to use and contribute to. Check the repo out <a href="https://github.com/unstoppabledomains/domain-profiles/tree/main/packages/ui-components/src/components/Chat" target="_blank" rel="noopener noreferrer" title="Push x Unstoppable Repo">here</a> / <a href="https://staging.ud.me/examples/unstoppable-messaging" target="_blank" rel="noopener noreferrer">staging demo</a>.</p>
+<a href="https://push.org/blog/business-to-user-messaging-push-protocol-x-unstoppable-domains/" title="Business to User messaging via Unstoppable x Push" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Business to User messaging via Unstoppable x Push</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="gated--group-chats">Gated + Group Chats<a href="https://push.org/blog/push-roadmap-recap-2023#gated--group-chats" class="hash-link" aria-label="Direct link to Gated + Group Chats" title="Direct link to Gated + Group Chats">​</a></h3>
+<p>Push launched gated chats for web3 protocols to enable them to create gated communities for their users. This enables protocols / DAOs / NFTs to create a community of their users and engage with them based on the gamification of their choice.</p>
+<p>For example: You can gate a group chat for users who hold a certain NFT or have a certain amount of tokens in their wallet or you can gate sending messages in a group chat based on the amount of tokens a user holds. Even custom logic of your choice or web2 logic can be used to gate a group chat paving new token utility use cases for your protocol.</p>
+<a href="https://push.org/docs/chat/build/conditional-rules-for-group/" title="Dev docs explaining how to condional gate a group" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Developer guide to conditional gating groups</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="hyper-scalable-groups">Hyper-scalable Groups<a href="https://push.org/blog/push-roadmap-recap-2023#hyper-scalable-groups" class="hash-link" aria-label="Direct link to Hyper-scalable Groups" title="Direct link to Hyper-scalable Groups">​</a></h3>
+<p>Push launched hyper-scalable groups allowing upto 5k users for private and 25k users for public groups. This enables protocols to create large communities of their users and engage with them in a seamless manner. This is a big deal! Web2 chat apps like Whatsapp or Signal are only able to support upto 1k users!</p>
+<p>For the first time, Web3 messaging is coming at par with and beating most Web2 messaging apps in terms of scalability but with the added benefit of being immutable, permissionless and containing web3 native functionalities.</p>
+<a href="https://push.org/blog/hyper-scalable-group-chats/" title="Article about hyper scalable group chat of Push" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Benchmark article on hyperscalable group chats</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="frontend-components">Frontend Components<a href="https://push.org/blog/push-roadmap-recap-2023#frontend-components" class="hash-link" aria-label="Direct link to Frontend Components" title="Direct link to Frontend Components">​</a></h3>
+<p>Push launched frontend components for web3 developers to easily integrate Push products into their web3 dapps. Enough talk, let's see it in action</p>
+<div class="playgroundContainer_TGbA"><div class="playgroundHeader_qwyd"><button texttransform="uppercase" background="transparent" padding="0px" width="100%" display="flex" hoverbackground="transparent" borderradius="0px" class="SharedStyling__Button-sc-1enui31-11 fnqqWS"><div class="SharedStyling__ItemH-sc-1enui31-4 lndxxo"><div flex="1" alignitems="flex-start" class="SharedStyling__ItemH-sc-1enui31-4 SharedStyling__ItemV-sc-1enui31-5 fwFZkd jVDIOl">LIVE EDITOR</div><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg></div></button></div><div class="playgroundHeader_qwyd">LIVE PREVIEW</div><div class="playgroundPreview_bb8I"><div flex="initial" alignself="center" color="#DD44B9" width="42px" class="SharedStyling__ItemH-sc-1enui31-4 SharedStyling__ItemV-sc-1enui31-5 SpinnerUnit__SpinLoader-sc-6wzamy-0 fFKxwy kEVcpy ejlgOw"><svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.759 5.19v5.19M31.77 9.747l-3.665 3.665M36.327 20.759h-5.19M31.77 31.77l-3.665-3.665M20.759 36.327v-5.19M9.747 31.77l3.665-3.665M5.19 20.759h5.19M9.747 9.747l3.665 3.665" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></div></div>
+<a href="https://push.org/docs/chat/ui-components/integrate-push-chat/" title="Developer docs on how to integrate Push Chat" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Developer docs showing how to integrate Push Chat in 2 LOCs</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="notification-settings">Notification Settings<a href="https://push.org/blog/push-roadmap-recap-2023#notification-settings" class="hash-link" aria-label="Direct link to Notification Settings" title="Direct link to Notification Settings">​</a></h3>
+<p>Notifications for web3 are synonymous with Push. Our partners wanted to have a way to enable their users to control their notification settings on what they exactly wanted. Notifications settings is the answer to that, allowing users to control their notification settings on a granular level.</p>
+<a href="https://push.org/blog/introducing-notification-settings/" title="Article explaining notification settings for Push Protocol and how to enable it" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Notification settings and why it's a game changer!</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-spaces">Push Spaces<a href="https://push.org/blog/push-roadmap-recap-2023#push-spaces" class="hash-link" aria-label="Direct link to Push Spaces" title="Direct link to Push Spaces">​</a></h3>
+<p>Push Spaces enable several users to have audio call like experience with each other, all from the comfort of your web3 wallet! It borrows scalability and gated functionality from Push Chat protol enabling new and creative ways by which all of Web3 can interact with each other.</p>
+<div style="width:100%;height:360px"></div>
+<a href="https://push.org/blog/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here/" title="Introduction to Push Spaces" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Learn more about Push Spaces!</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-video">Push Video<a href="https://push.org/blog/push-roadmap-recap-2023#push-video" class="hash-link" aria-label="Direct link to Push Video" title="Direct link to Push Video">​</a></h3>
+<p>Push vision is to become the de-facto communication stack for web3. Real time communication like Video and Spaces was something we always planned as the next primitive to build on top of Push, as per the <a href="https://whitepaper.push.org/protocol-specs-section/future-features-research" target="_blank" rel="noopener noreferrer" title="Whitepaper talking about Push Video">whitepaper 1.0</a>.</p>
+<p>The team delivered on this promise as well but with some added benefites! Since it's built on top of the composable standard of Push Chat and Notification protocol, it benefits from their architecture, utilizing notifications for having a facetime call like interface and group chat for enabling gated calls.</p>
+<a href="https://push.org/blog/push-launches-wallet-to-wallet-video-chat/" title="Introduction to Wallet to Wallet video calls" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Dive into Push Video and what it enables for web3 communication!</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-protocol-v2--push-fee-pool">Push Protocol V2 (&amp; Push Fee Pool!)<a href="https://push.org/blog/push-roadmap-recap-2023#push-protocol-v2--push-fee-pool" class="hash-link" aria-label="Direct link to Push Protocol V2 (&amp; Push Fee Pool!)" title="Direct link to Push Protocol V2 (&amp; Push Fee Pool!)">​</a></h3>
+<p>Push Protocol V2 introduced the ability to do incentivized chat along with establishing the fee pool for Push Protocol. Fee pool is a mechanism by which Push Protocol ensures that all players in the ecosystem are incentivized to grow the ecosystem and are rewarded for their efforts.</p>
+<p>Yield farming V2 is also enabled by Push Protocol V2, allowing users to earn rewards + fees earned by the network. V2 enables this fee pool to be split among all <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><em><strong><code>$PUSH</code></strong></em></a> based on the amount of token staked and the duration from which they have held onto the tokens.</p>
+<a href="https://push.org/blog/new-push-yield-farming-rewards-full-details/" title="Push Yield Farming V2" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Push Yield Farming V2 and how it's calculated</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-nft-chat">Push NFT Chat<a href="https://push.org/blog/push-roadmap-recap-2023#push-nft-chat" class="hash-link" aria-label="Direct link to Push NFT Chat" title="Direct link to Push NFT Chat">​</a></h3>
+<p>Push also launched NFT Chat, enabling for the first time to have chat and other forms of communication tied to NFTs. This unlocks a whole new world of possibilities for NFTs where Web3 Socials or any NFT can have communication tied to it which seamlessly can be moved from one wallet to another.</p>
+<a href="https://push.org/blog/a-technical-deep-dive-5-simple-steps-to-get-started-with-push-nft-chat/" title="Article about Push NFT Chat" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Technical deepdive on how to get started with Push NFT Chat</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-delivery-nodes">Push Delivery Nodes<a href="https://push.org/blog/push-roadmap-recap-2023#push-delivery-nodes" class="hash-link" aria-label="Direct link to Push Delivery Nodes" title="Direct link to Push Delivery Nodes">​</a></h3>
+<p>Push released delivery nodes, enabling crypto wallets to run and listen to communications (encrypted) coming from Push Network for wallet addresses.</p>
+<p>This enabled wallets to show notifications, chats, etc to their users apart from providing cool ways to bridge notifications from web3 wallets to mobile apps!</p>
+<a href="https://push.org/blog/understanding-delivery-nodes/" title="Article about Push Delivery Nodes" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Read about Push Delivery Nodes and how they work</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="live-roadmap">Live Roadmap<a href="https://push.org/blog/push-roadmap-recap-2023#live-roadmap" class="hash-link" aria-label="Direct link to Live Roadmap" title="Direct link to Live Roadmap">​</a></h3>
+<p>Push launched a live roadmap for the community which is a massive step up from medium posts as it's a live roadmap which is updated in real time. This enables the community to see what's being worked on and what's up next.</p>
+<p><em><code>Psst</code></em> - If you want a sneak peak in 2024 already, then check out the link below 👇</p>
+<a href="https://push.org/docs/roadmap" title="Push Protocol Live Roadmap" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Check out the live roadmap for Push Protocol</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="docs-20">Docs 2.0<a href="https://push.org/blog/push-roadmap-recap-2023#docs-20" class="hash-link" aria-label="Direct link to Docs 2.0" title="Direct link to Docs 2.0">​</a></h3>
+<p>Push launched docs 2.0, making it easier for developers to get started with Push Protocol. We also launched playground, live examples and several tutorials to enable frictionless integration of Push Protocol. Try it out, in 4 minutes or less is the our mantra for docs 2.0!</p>
+<a href="https://push.org/docs/" title="Push Protocol Documentation Hub 2.0" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Check out Push Documentation Hub 2.0</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="continued-adoption">Continued Adoption<a href="https://push.org/blog/push-roadmap-recap-2023#continued-adoption" class="hash-link" aria-label="Direct link to Continued Adoption" title="Direct link to Continued Adoption">​</a></h3>
+<p>Push continued it's journey of adoption with several protocols integrating and using Push Protocol for their communication needs. Some of the notable ones are Unstoppable, ShapeShift, Arbitrum, Bankless, Decentraland and more!</p>
+<p>We also launched on a number of chains including Arbitrum, Polygon zkEVM, BNB, Polygon PoS apart from Ethereum.</p>
+<p>Push also saw wallets adoption with wallets like Metamask (via Push Snap), Unstoppable, Verso, Liv3, Shapeshift started using Push Protocol enabling communication to be delivered to users right on their wallets!</p>
+<a href="https://push.org/frens" title="Push Ecosystem aka Frens of Push" class="SharedStyling__ABlock-sc-1enui31-20 klXhSd">Checkout Push Ecosystem aka Frens of Push</a>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="honorable-mentions">Honorable Mentions<a href="https://push.org/blog/push-roadmap-recap-2023#honorable-mentions" class="hash-link" aria-label="Direct link to Honorable Mentions" title="Direct link to Honorable Mentions">​</a></h3>
+<p>There are a number of other things that we did in 2023, some of the notable ones are</p>
+<ul>
+<li>Billion Reasons to Build <a href="https://yourstory.com/the-decrypting-story/push-protocol-india-tour-polygon-ethereum-web3-bounties" target="_blank" rel="noopener noreferrer" title="Dev tour">(BRB)</a>, a pan India Dev Tour with 12 top global web3 protocols (Ethereum, Polygon, Filecoin, TheGraph, etc) to onboard +4,500 developers to web3</li>
+<li>Launched Push Ambassador India, Africa and Latam</li>
+<li>Launched several SDKs for different languages (Swift, Flutter, Android, etc)</li>
+<li>Participated in major hackathons (+1,300 devs onboarded with +500 projects built) and conferences including ETHGlobal, Devcon, ETHCC, ETHDenver..</li>
+<li>Media features including <a href="https://www.coindesk.com/tech/2023/02/15/crypto-wallet-messaging-application-push-protocol-expands-to-bnb-chain/" target="_blank" rel="noopener noreferrer" title="Web3 Messaging">Coindesk</a>, <a href="https://www.youtube.com/watch?v=UItJz0mLfMA&amp;t=25s" target="_blank" rel="noopener noreferrer" title="The Defiant Podcast">The Defiant</a>, <a href="https://youtu.be/MzZdSInJGzM?si=9nUEiGCTnlszcbOH" target="_blank" rel="noopener noreferrer" title="Bankless Podcast">Bankless</a></li>
+<li>Launched Push DAO Phase 1</li>
+</ul>
+<p>Before looking at what's ahead this coming year, we want to take a moment to thank the entire Push team, all our partners, investors and the builders. 2023 was an amazing year for Push and we are excited to share what we have planned for 2024! Stay tuned. With loads of love <!-- -->❤️<!-- --> from Push team!</p>]]></content>
+        <author>
+            <name>Harsh Rajat</name>
+            <uri>https://twitter.com/harshrajat</uri>
+        </author>
+        <author>
+            <name>Richa Joshi</name>
+            <uri>https://twitter.com/Riijo</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Roadmap" term="Roadmap"/>
+        <category label="Communication" term="Communication"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="Year In Review" term="Year In Review"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hyper Scalable Group Chats 💬 ⚡]]></title>
+        <id>https://push.org/blog/hyper-scalable-group-chats</id>
+        <link href="https://push.org/blog/hyper-scalable-group-chats"/>
+        <updated>2023-12-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hyper Scalable Group Chats 💬 ⚡]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Hyper Scalable Group Chats 💬 ⚡" src="https://push.org/assets/images/cover-image-c6075cf62b4324358bc9b3f688f488f6.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is Push Group Chat, the ability to host conversations with multiple members.</p>
+<p>Whether you're chatting in public groups, enjoying more private discussions, or joining token-gated communities, Push Group Chat makes connecting with others simple and secure. But now, Push is levelling up its scalability and increasing group limits into the thousands. Let's dive into the enhanced possibilities and expanded horizons that await this enhanced Push Group Chat!</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="from-15k-to-25k-members-in-a-single-group-chat-">From 1.5k to 25k Members in a Single Group Chat! 🔥<a href="https://push.org/blog/hyper-scalable-group-chats#from-15k-to-25k-members-in-a-single-group-chat-" class="hash-link" aria-label="Direct link to From 1.5k to 25k Members in a Single Group Chat! 🔥" title="Direct link to From 1.5k to 25k Members in a Single Group Chat! 🔥">​</a></h3>
+<p>Group Chat platforms have always struggled with the number of participants a single group could accommodate. This limitation has hindered the potential for large-scale user interactions and hence restricted how Group Chats can be used to connect with a broader audience. Introducing our newly enhanced Push Group Chat. We’re calling it "hyper scalable" in reference to Push Group Chat’s newfound ability to handle significantly larger group sizes, transcending its prior  limitations. This enhancement signifies a major development for web3-native user interactions , empowering users to engage in more extensive and inclusive group conversations like never before.</p>
+<p>With hyper scalability, Push Group Chat has transformed the landscape of group conversations. Public group limits have skyrocketed from 1500 to an impressive 25,000 members. Similarly, private groups once capped at 50 members, now support up to 5,000 participants. These substantial increases are redefining the potential for group interactions in web3 and  reflect Push Group Chat's commitment to delivering a more dynamic and accommodating messaging experience.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chat-challenging-web2-incumbents">Push Chat Challenging Web2 Incumbents<a href="https://push.org/blog/hyper-scalable-group-chats#push-chat-challenging-web2-incumbents" class="hash-link" aria-label="Direct link to Push Chat Challenging Web2 Incumbents" title="Direct link to Push Chat Challenging Web2 Incumbents">​</a></h3>
+<p>Instant communication has long been dominated by traditional Web2 chat applications like WhatsApp and Signal, but Push Chat is here to challenge that. While the incumbents rely on centralised architectures that leave user data susceptible to potential vulnerabilities, Push Chat pioneers a decentralised approach, ensuring end-to-end encryption and placing control back into the hands of users.</p>
+<p>Moreover, the introduction of hyper scalability in Push Chat takes the competitive edge to new heights. In contrast to the confined group sizes enforced by WhatsApp and Signal, where limitations are approximately 1000 members, Push Chat shatters these constraints by accommodating a staggering 25k members for public groups and 5k for private groups.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chat-benchmarks-letting-the-numbers-speak-for-unprecedented-scale-and-security">Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security<a href="https://push.org/blog/hyper-scalable-group-chats#push-chat-benchmarks-letting-the-numbers-speak-for-unprecedented-scale-and-security" class="hash-link" aria-label="Direct link to Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security" title="Direct link to Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security">​</a></h3>
+<table><tbody><tr><th><p>Public Group Size</p></th><th><p>Time Taken for Sending Message ( ms )</p></th></tr><tr><td>10</td><td>192</td></tr><tr><td>50</td><td>170</td></tr><tr><td>100</td><td>110</td></tr><tr><td>250</td><td>103</td></tr><tr><td>500</td><td>104</td></tr><tr><td>1K</td><td>107</td></tr><tr><td>2.5K</td><td>117</td></tr><tr><td>5K</td><td>167</td></tr><tr><td>10K</td><td>156</td></tr><tr><td>15K</td><td>198</td></tr><tr><td>25K</td><td>343</td></tr></tbody></table>
+<table><tbody><tr><th><p>Public Group Size</p></th><th><p>Time Taken for Joining Grp ( ms )</p></th></tr><tr><td>10</td><td>101</td></tr><tr><td>50</td><td>111</td></tr><tr><td>100</td><td>128</td></tr><tr><td>250</td><td>125</td></tr><tr><td>500</td><td>199</td></tr><tr><td>1K</td><td>190</td></tr><tr><td>2.5K</td><td>328</td></tr><tr><td>5K</td><td>449</td></tr><tr><td>10K</td><td>609</td></tr><tr><td>15K</td><td>803</td></tr><tr><td>25K</td><td>1109</td></tr></tbody></table>
+<table><tbody><tr><th><p>Private Group Size</p></th><th><p>Time Taken for Sending Message ( ms )</p></th></tr><tr><td>10</td><td>300</td></tr><tr><td>50</td><td>170</td></tr><tr><td>100</td><td>169</td></tr><tr><td>250</td><td>193</td></tr><tr><td>500</td><td>231</td></tr><tr><td>1K</td><td>295</td></tr><tr><td>2.5K</td><td>539</td></tr><tr><td>5K</td><td>868</td></tr></tbody></table>
+<table><tbody><tr><th><p>Private Group Size</p></th><th><p>Time Taken for Joining Grp ( ms )</p></th></tr><tr><td>10</td><td>287</td></tr><tr><td>50</td><td>312</td></tr><tr><td>100</td><td>312</td></tr><tr><td>250</td><td>481</td></tr><tr><td>500</td><td>711</td></tr><tr><td>1K</td><td>1192</td></tr><tr><td>2.5K</td><td>5153</td></tr><tr><td>5K</td><td>12769</td></tr></tbody></table>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="whats-made-hyper-scalability-possible">What’s Made Hyper Scalability Possible?<a href="https://push.org/blog/hyper-scalable-group-chats#whats-made-hyper-scalability-possible" class="hash-link" aria-label="Direct link to What’s Made Hyper Scalability Possible?" title="Direct link to What’s Made Hyper Scalability Possible?">​</a></h3>
+<p>In the relentless pursuit of hyper scalability, Push Chat has had to undergo transformational advancements at both the architectural and encryption levels.</p>
+<p>Previously, each message within private groups underwent encryption using the private keys of all group members, resulting in encryption complexity directly proportional to the number of participants.</p>
+<p>Contrastingly, the platform has been upgraded to now dynamically generate session keys and encrypted secrets during every pivotal group state change, such as adding, removing, or joining members. Push Chat ensures that the time-consuming aspect of the encryption process is reserved for moments when the group dynamic undergoes significant transformations. This innovative approach ensures that the encryption process for private group messages remains constant, irrespective of the group's size. By dissociating encryption complexity from the number of participants, Push Chat has effectively eliminated the scalability concerns associated with larger private groups.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="but-waitmore-enhancements-are-on-the-way">But Wait…More Enhancements Are On The Way!<a href="https://push.org/blog/hyper-scalable-group-chats#but-waitmore-enhancements-are-on-the-way" class="hash-link" aria-label="Direct link to But Wait…More Enhancements Are On The Way!" title="Direct link to But Wait…More Enhancements Are On The Way!">​</a></h3>
+<p>We are not stopping at 5k members. We have already made the breakthrough to take this to <b>100,000</b> benchmarked members 😱 for both private and public group chats. The only caveat is that it breaks backward compatibility when messages using the newer architecture are read by older SDKs.</p>
+<p>To address this, we have decided to implement these changes in two phases:
+Incorporate all functionalities that understand the new architecture in Push SDK from 1.4.45 upwards. Devs just need to update to start supporting the reading of those formats.
+The use of the feature flags in the SDK (See below or ask on Discord as to how to enable that: <a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.gg/pushprotocol</a>) enables the new standard as the default allowing devs to tap into it and use that in case they want.</p>
+<p>So, what do you have to do to update this functionality?</p>
+<p>Only one thing: Update the SDK to the latest version (1.4.45 or upwards), that’s it! This will ensure that messages sent using the new message standards are understood and displayed correctly in your dApp / mobile app / etc.</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-enable-push-sdk-feature-flag">How to enable Push SDK Feature Flag<a href="https://push.org/blog/hyper-scalable-group-chats#how-to-enable-push-sdk-feature-flag" class="hash-link" aria-label="Direct link to How to enable Push SDK Feature Flag" title="Direct link to How to enable Push SDK Feature Flag">​</a></h4>
+<p>In-depth details for how to enable this can be found in the <a href="https://push.org/docs/chat/" target="_blank" rel="noopener noreferrer">Push Chat documentation</a> and <a href="https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/restapi" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-sdk-v2-is-coming">Push SDK V2 is Coming<a href="https://push.org/blog/hyper-scalable-group-chats#push-sdk-v2-is-coming" class="hash-link" aria-label="Direct link to Push SDK V2 is Coming" title="Direct link to Push SDK V2 is Coming">​</a></h3>
+<p>We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more!</p>
+<p>Apart from this, the V2 version will have more streamlined response objects and faster calls though it will break backward compatibility which is why we will transition slowly to the new SDK.</p>
+<p>We recommend joining our Discord server (<a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.gg/pushprotocol</a>) -&gt; #dev-announcements channel for information on how to upgrade / best practices / changelog.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔]]></title>
+        <id>https://push.org/blog/push-ethIndia-push-bounties</id>
+        <link href="https://push.org/blog/push-ethIndia-push-bounties"/>
+        <updated>2023-12-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔" src="https://push.org/assets/images/cover-image-ce09335d7d177d86ecfa599de999cce9.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Hackers, are you ready for Ethereum’s largest hackathon of the year?! We know we are.</p>
+<p>Bounties, exclusive merch, IRL team – we’ve brought it all this year to ETH India! 🔔</p>
+<p>We are honored to be sponsoring and partaking in Ethereum’s largest hackathon of the year and couldn’t be more excited to share with you the bounties and workshops we’ve prepared for enhancing your dApp with our web3 native communication tools.</p>
+<p>Here's everything you need to know.</p>
+<p>Quick redirect to our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a>✨</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ethindia-hackers---ready-set-code-️">ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️<a href="https://push.org/blog/push-ethIndia-push-bounties#ethindia-hackers---ready-set-code-%EF%B8%8F" class="hash-link" aria-label="Direct link to ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️" title="Direct link to ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️">​</a></h3>
+<p>We’re going all-in with a whopping $10,000 in bounties for 13 prize winners spread across 4 bounty categories. No matter what you plan on building, we have both a web3-native communication tool and bounty waiting for you.</p>
+<p>Here’s the breakdown of all the prizes:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1--namaste-push-protocol--2000">1. 🏆 Namaste Push Protocol ⸺ $2,000<a href="https://push.org/blog/push-ethIndia-push-bounties#1--namaste-push-protocol--2000" class="hash-link" aria-label="Direct link to 1. 🏆 Namaste Push Protocol ⸺ $2,000" title="Direct link to 1. 🏆 Namaste Push Protocol ⸺ $2,000">​</a></h3>
+<b>Number of winners: 1</b>
+<p>Before it was GM GM, this week it’s "Namaste!"</p>
+<p>This bounty celebrates the best use of Push Protocol in social-based DApps. From leveraging Push Notifications for vital alerts to exploring Notification settings for customization, and integrating chat functionality with the power of conditional gating – this is your chance to make a meaningful impact by merging social initiatives with technology.</p>
+<p>Here are a few ideas for inspiration:</p>
+<ul>
+<li><b>SocialImpactHub</b>: A DApp dedicated to social activists, where users can receive notifications about upcoming rallies or events. Consider using conditional gating to enable activists with specific badges or tokens to access private planning rooms.</li>
+<li><b>EcoAlert</b>: An environmental initiative platform where users can chat about sustainable practices and get notified about eco-friendly events or sudden environmental crises.</li>
+<li><b>CommunityCare</b>: A local community dApp where neighbors can communicate in real time, set up events, and receive notifications about local emergencies or activities. With conditional gating, special groups could be set up for neighborhood committees or watch groups.</li>
+<li><b>PushForChange</b>: A fundraising platform that sends out notifications about new charitable campaigns. Users can chat with charity organizers and use conditional gating to access exclusive fundraising events based on their donation history.</li>
+</ul>
+<p>The "Namaste Push Protocol" Prize is all about acknowledging the innovative spirit of developers who want to make a meaningful impact in the world using Push Protocol.</p>
+<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a> ✨</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2--creativity-prize--2500">2. 🏆 Creativity Prize ⸺ $2,500<a href="https://push.org/blog/push-ethIndia-push-bounties#2--creativity-prize--2500" class="hash-link" aria-label="Direct link to 2. 🏆 Creativity Prize ⸺ $2,500" title="Direct link to 2. 🏆 Creativity Prize ⸺ $2,500">​</a></h3>
+<b>Number of winners: 1</b>
+<p>Unleash your innovation! We're seeking the all-around most ingenious solutions built with Push Protocol. Challenge the norm, showcase your creativity, and build with any of Push's communication tools. The best and the most creative solution takes it all!</p>
+<p>🔔Push Notifications
+💬Push Chat + Group Chat
+📹Push Video
+🤖Push ChatAI
+🌌Push Spaces</p>
+<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a>✨</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3--push-chat-conditional-gating-integration-for-dapps--2500">3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500<a href="https://push.org/blog/push-ethIndia-push-bounties#3--push-chat-conditional-gating-integration-for-dapps--2500" class="hash-link" aria-label="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500" title="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500">​</a></h3>
+<b>Number of winners: 1</b>
+<p>Showcase the potential of Push by integrating its Conditional Gating feature into your dApps. Conditional Gating is a feature that allows you to create dynamic and sophisticated permissions for your Group Chats. You can set unique conditions for both joining or messaging in the groups such as needing to hold a certain amount of token XYZ or be a holder of XYZ NFT.</p>
+<p>For more information regarding Conditional Gating and Rules for Group Chats, checkout our documentation here 👉<a href="https://push.org/docs/chat/build/conditional-rules-for-group/" target="_blank" rel="noopener noreferrer">https://push.org/docs/chat/build/conditional-rules-for-group/</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4--notificationchannel-settings-implementation--1500">4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500<a href="https://push.org/blog/push-ethIndia-push-bounties#4--notificationchannel-settings-implementation--1500" class="hash-link" aria-label="Direct link to 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500" title="Direct link to 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500">​</a></h3>
+<b>Number of winners: 1</b>
+<p>Utilize the full potential of Push Notifications by incorporating the Channel/Notification Settings into your dApp.</p>
+<p>Channel/Notification Settings allow you to segment notifications into different categories so that end-users can select only the kinds of notifications they want to receive. For example, a web3 news site could have Notification Settings for different news categories and let users select accordingly and hence customize their notifications. You can build as many notification categories as you’d like choosing between Boolean and Slider Settings types.</p>
+<p>For more information regarding Channel/Notification Settings, checkout our documentation here 👉<a href="https://push.org/docs/notifications/build/create-channel-settings/" target="_blank" rel="noopener noreferrer">https://push.org/docs/notifications/build/create-channel-settings/</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5--best-use-of-push-protocol--1500">5. 🏆 Best Use of Push Protocol ⸺ $1,500<a href="https://push.org/blog/push-ethIndia-push-bounties#5--best-use-of-push-protocol--1500" class="hash-link" aria-label="Direct link to 5. 🏆 Best Use of Push Protocol ⸺ $1,500" title="Direct link to 5. 🏆 Best Use of Push Protocol ⸺ $1,500">​</a></h3>
+<p>This bounty recognizes the most exceptional and impactful implementation of the Push Protocol, emphasizing applications that significantly enhance user interaction and experience through effective use of Push features.</p>
+<p>Go wild, get crazy, find new and exciting ways to integrate Push that significantly enhance your UX. Think customer support messaging, user-to-user-to-dApp social interactions, creative notification use cases. The list is endless.</p>
+<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a> ✨</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="learn-to-build-a-web3-messaging-and-notifications-dapps-irl-">Learn to build a Web3 Messaging and Notifications dApps IRL 🤝<a href="https://push.org/blog/push-ethIndia-push-bounties#learn-to-build-a-web3-messaging-and-notifications-dapps-irl-" class="hash-link" aria-label="Direct link to Learn to build a Web3 Messaging and Notifications dApps IRL 🤝" title="Direct link to Learn to build a Web3 Messaging and Notifications dApps IRL 🤝">​</a></h3>
+<p>Not sure how to get started with building? We got you. We’ll be hosting an IRL workshop with our very own co-founder Harsh Rajat diving into everything you need for "How to Build Web3 Messaging and Notifications Apps."</p>
+<p>This is your chance to meet the Push team directly, network with us, ask your questions, and learn how to enhance the UX of your dApp.</p>
+<p>📅Friday, December 8 – 3:00 pm IST
+🗺️Workshop Room 2
+ETHIndia, we're not just attending; we're bringing the party. Let's code, create, and celebrate the magic of blockchain together.</p>
+<hr>
+<p>Find all the details about the ETHIndia event 👉<a href="https://ethindia.co/" target="_blank" rel="noopener noreferrer">https://ethindia.co/</a></p>
+<p>Your Push documentation hub for building is here 👉<a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">https://push.org/docs/hackers/</a></p>
+<p>And of course 24/7 dev support can always be found here 👉<a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.com/invite/pushprotocol</a></p>
+<p>Happy hacking! 🛠️</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Monthly Recap November ❄️]]></title>
+        <id>https://push.org/blog/monthly-recap-november</id>
+        <link href="https://push.org/blog/monthly-recap-november"/>
+        <updated>2023-12-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Monthly Recap November]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Monthly Recap November" src="https://push.org/assets/images/cover-image-f4a65322b7fdd8fe4004bad8785832f8.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>Welcome to last month’s developments and new product releases from the month of November! From groundbreaking developments to new frenships, making notable appearances, and celebrating our community – it's been a month of milestones. Read on to know all that we’ve been up to this month:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="development">Development<a href="https://push.org/blog/monthly-recap-november#development" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development">​</a></h3>
+<p>Our <a href="https://push.org/blog/introducing-notification-settings/" target="_blank" rel="noopener noreferrer">Notification Settings</a> feature has arrived, offering both channel owners and subscribers new customization options. Channel owners can now create unlimited notification categories to better segment notifications, while subscribers can select the kinds of notifications they want to opt-in for.</p>
+<p>We also rolled out the <a href="https://push.org/docs/chat/build/conditional-rules-for-group/" target="_blank" rel="noopener noreferrer">Conditional Gating feature for Group Chats</a>. Using predefined conditions such as holding a certain NFT, token, or activity history, you can enable and restrict which wallets can and can’t access a given activity/channel. Dive into our comprehensive <a href="https://twitter.com/pushprotocol/status/1724470355031429628" target="_blank" rel="noopener noreferrer">thread</a> to discover how this functionality works.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="frens-of-push">Frens of Push<a href="https://push.org/blog/monthly-recap-november#frens-of-push" class="hash-link" aria-label="Direct link to Frens of Push" title="Direct link to Frens of Push">​</a></h3>
+<p>In the spirit of collaboration, Push joined forces with some amazing partners in November:</p>
+<ol>
+<li><a href="https://twitter.com/pushprotocol/status/1722977421459083590" target="_blank" rel="noopener noreferrer">Verso Wallet</a>: Opt-in to any Push channel directly within your Verso Wallet, the all-in-one multi-chain mobile wallet.</li>
+<li><a href="https://twitter.com/pushprotocol/status/1725171889432113221" target="_blank" rel="noopener noreferrer">Percs</a>: We’re powering wallet-to-wallet messaging on Percs, fostering effective web3 campaigns, and building engaging communities for numerous brands.</li>
+<li><a href="https://twitter.com/pushprotocol/status/1729135038468612290" target="_blank" rel="noopener noreferrer">Hela Network</a>: We've joined forces with the pioneers of modularity, Hela Network – the first modular Layer 1 blockchain.</li>
+<li><a href="https://twitter.com/stationxnetwork/status/1729417323134566452" target="_blank" rel="noopener noreferrer">StationX</a>: StationX is bringing automated workflows to communities. With Push integrations, users can get notified instantly about transactions, new members, and more, enhancing the community experience.</li>
+<li>Lastly, we unveiled our <a href="https://twitter.com/pushprotocol/status/1725912714067816717" target="_blank" rel="noopener noreferrer">Social SWITCH</a> collaboration – the gateway to the realm of web3 social platforms within the Polygon ecosystem. In collaboration with Polygon, we are dedicated to recognizing and celebrating artists, creators, and developers in the web3 space.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="featured-and-weekly-reads">Featured and Weekly Reads<a href="https://push.org/blog/monthly-recap-november#featured-and-weekly-reads" class="hash-link" aria-label="Direct link to Featured and Weekly Reads" title="Direct link to Featured and Weekly Reads">​</a></h3>
+<p>November showcased Push in the spotlight:</p>
+<ol>
+<li>Dive into <a href="https://twitter.com/pushprotocol/status/1720113957950652739" target="_blank" rel="noopener noreferrer">EthGlobal Guides</a> for a quick crash course on mastering web3 communication. Elevate your dApp’s UX with Push communication tools effortlessly.</li>
+<li>We proudly stand among the leading web3 protocols for top crypto projects by the number of <a href="https://twitter.com/pushprotocol/status/1727353533991973059" target="_blank" rel="noopener noreferrer">GitHub</a> commits.</li>
+<li>Reflecting on our journey since the sold-out Push IDO on Polkastarter, encapsulated in a recent <a href="https://twitter.com/polkastarter/status/1729147857280667710" target="_blank" rel="noopener noreferrer">tweet</a> by them.</li>
+<li>Alongside the incredible <a href="https://twitter.com/pushprotocol/status/1721509677588967820" target="_blank" rel="noopener noreferrer">Google Cloud</a> team, we’re making it easier to supercharge your dapp’s UX using Push Notifications. Check out our all-new <a href="https://www.cloudskillsboost.google/focuses/68185?parent=catalog" target="_blank" rel="noopener noreferrer">Google Cloud Self-paced Labs</a>.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-and-governance">Community and Governance<a href="https://push.org/blog/monthly-recap-november#community-and-governance" class="hash-link" aria-label="Direct link to Community and Governance" title="Direct link to Community and Governance">​</a></h3>
+<p><a href="https://push.org/blog/push-ethglobal-istanbul/" target="_blank" rel="noopener noreferrer">ETH Global Istanbul</a> was incredible, with 45+ projects building using Push's communication tools. <a href="https://twitter.com/pushprotocol/status/1726638450668146688" target="_blank" rel="noopener noreferrer">Winners</a> took away big Push bounties. What’s more? We turned Istanbul a bit more pink with our Push merch!</p>
+<p>And that's not all. We've launched the <a href="https://twitter.com/pushprotocol/status/1729867047377711293" target="_blank" rel="noopener noreferrer">"Push Developer Spotlight"</a> series, chatting with awesome devs on Discord. <a href="https://discord.com/invite/pushprotocol?utm_source=Shivam&amp;utm_medium=Discord+Event&amp;utm_campaign=Developer+Spotlight" target="_blank" rel="noopener noreferrer">Join</a> the fun and get to know the minds shaping the future of web3.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="brb-india">BRB India<a href="https://push.org/blog/monthly-recap-november#brb-india" class="hash-link" aria-label="Direct link to BRB India" title="Direct link to BRB India">​</a></h3>
+<p>Our journey through BRB India has been nothing short of extraordinary. In November, we continued our BRB online workshops, delving into the learning behind the $50k+ BRB India bounty pool. Our frens <a href="https://twitter.com/pushprotocol/status/1719759737317630121" target="_blank" rel="noopener noreferrer">Chainsafe</a>, <a href="https://twitter.com/pushprotocol/status/1720423002070761500" target="_blank" rel="noopener noreferrer">Filecoin</a>, <a href="https://twitter.com/pushprotocol/status/1721906106686165010" target="_blank" rel="noopener noreferrer">The Graph</a>, <a href="https://twitter.com/pushprotocol/status/1724434230011129919" target="_blank" rel="noopener noreferrer">Shardeum</a>, <a href="https://twitter.com/pushprotocol/status/1724827096802025688" target="_blank" rel="noopener noreferrer">Biconomy</a>, <a href="https://twitter.com/pushprotocol/status/1727306607997124786" target="_blank" rel="noopener noreferrer">Aragon</a>, and <a href="https://twitter.com/pushprotocol/status/1727712899471208673" target="_blank" rel="noopener noreferrer">Polygon</a> joined us in delivering some amazing sessions.
+The magic of our dev tour continued with <a href="https://twitter.com/pushprotocol/status/1729541913651666980" target="_blank" rel="noopener noreferrer">Lucknow</a>. Thanks to the dedication of volunteers, attendees, and speakers, Lucknow became a hotspot of innovation and learning.</p>
+<p>Now, as we reach the climax of our dev tour, all roads lead to <a href="https://twitter.com/pushprotocol/status/1721903040062738875" target="_blank" rel="noopener noreferrer">Bangalore</a>. Brace yourselves for the grand finale – <a href="https://twitter.com/pushprotocol/status/1730583025715413470" target="_blank" rel="noopener noreferrer">Builders &amp; Founders Day</a>. Co-hosted with Filecoin, this promises to be an epic celebration, featuring an incredible lineup of speakers. <a href="https://lu.ma/brb-bengaluru" target="_blank" rel="noopener noreferrer">Join us</a> for an evening of networking, learning, and fun, uniting with some of web3’s brightest minds and founders.</p>
+<p>As we wrap up an amazing month, we want to thank all of you for being part of our journey. We look forward to more collaborations, innovations, and shared successes. Until next time!</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pushing Boundaries in Innovation at ETHGlobal Istanbul with Push Protocol 🔔]]></title>
+        <id>https://push.org/blog/push-ethglobal-istanbul-winner</id>
+        <link href="https://push.org/blog/push-ethglobal-istanbul-winner"/>
+        <updated>2023-11-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[PPushing Boundaries in Innovation at ETHGlobal Istanbul with Push Protocol"]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties" src="https://push.org/assets/images/cover-image-25b6be2e1a230b52dea056c83d866c92.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Hackers of ETHGlobal Istanbul, your creativity has shone brightly!</p>
+<p>As the echoes of November's web3 and blockchain innovation fade in Istanbul, we are thrilled to have witnessed such extraordinary talent. From innovative bounties to inspiring workshops, the ETHGlobal Istanbul Hackathon was a testament to the ingenuity of the web3 community.</p>
+<p>Brimming with groundbreaking ideas, our builders went above and beyond, making it a truly memorable event. Now, we proudly announce the winners who have set new standards in the Push Protocol challenge.</p>
+<p>Reflecting on the success of ETHGlobal Istanbul x Push, we're excited to share the remarkable achievements of our winners.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge">Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge<a href="https://push.org/blog/push-ethglobal-istanbul-winner#pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge" class="hash-link" aria-label="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge" title="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge">​</a></h3>
+<p>As the vibrant city of Istanbul buzzed with the energy of blockchain enthusiasts and innovators this November, ETHGlobal Istanbul emerged as a beacon of creativity in the web3 universe. This event was not just a hackathon; it was a celebration of groundbreaking ideas and pioneering spirits. With a mix of bounties, hands-on workshops, and invaluable networking opportunities, the stage was set for developers to showcase their prowess in leveraging the Push Protocol – a cornerstone in web3 communication.</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1--merhaba-push-protocol-2000-winner-rely">1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#1--merhaba-push-protocol-2000-winner-rely" class="hash-link" aria-label="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)" title="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)">​</a></h4>
+<p>Rely stands out in the decentralized application (dApp) landscape, particularly in the social media sector. The project focuses on enhancing user interactions within a secure, decentralized environment. By bridging social media functionalities with blockchain technology, Rely offers a platform for seamless and efficient user engagement.</p>
+<p>The use of the Push Protocol in Rely marks a significant advancement in user experience. It enables the delivery of real-time notifications, essential for keeping users informed and connected. Customizable notification settings and the introduction of a chat feature with conditional gating access demonstrate Rely's commitment to user-centric innovation. These features not only improve communication but also bring a new level of personalization and security to the platform.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/rely-oygqg" target="_blank" rel="noopener noreferrer">Rely on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2--turkish-ice-cream--creative-bounty-2500-winner-pixel">2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#2--turkish-ice-cream--creative-bounty-2500-winner-pixel" class="hash-link" aria-label="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)" title="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)">​</a></h4>
+<p>Pixel is redefining the NFT community experience with its innovative chat platform. Designed for secure and dynamic interactions, Pixel allows users to connect, converse, and engage in digital asset trading with ease. The platform's standout feature is its seamless integration of a trading mechanism within the chat interface, enabling a variety of asset swaps, from NFT-to-NFT to NFT-to-token exchanges. This integration not only simplifies the trading process but also enriches the community interaction by adding a layer of versatility and user engagement.</p>
+<p>Pixel's integration of the Push Protocol plays a pivotal role in enhancing off-chain messaging. This incorporation is meticulously designed with custom chat components, allowing for efficient handling of NFT token exchanges and orders. The use of Push Protocol contributes significantly to the user experience, providing reliable and instant communication within the community.</p>
+<p>This technical sophistication, combined with a suite of smart contracts for various functionalities, exemplifies Pixel’s commitment to security and trust in the NFT space. The project's innovative use of technology has rightly earned it the 'Creative Bounty' prize, showcasing its potential to revolutionize NFT community interactions.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/pixel-rr36q" target="_blank" rel="noopener noreferrer">Pixel on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap">3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap" class="hash-link" aria-label="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)" title="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)">​</a></h4>
+<p>zkMap offers a novel proof-of-location system that allows users to authenticate their presence in a specific area without revealing their exact location. This mobile application enables the creation of location proofs, viewable on a map, enhancing services requiring location authentication. Its versatility extends to various use cases, from event attendance verification to legal and security applications, demonstrating a wide-ranging impact.</p>
+<p>Integrating the Push Protocol, zkMap has developed a private group chat program, enhancing its proof-of-location infrastructure. This integration utilizes the Conditional Gateway functionality, allowing access to private chat rooms based on users' location proofs. The platform's innovative approach in using Push Protocol exemplifies its commitment to secure and contextual communication, aligning with its recognition for the 'Push Chat Conditional Gating Integration for DApps' prize.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/zkmap-n2z06" target="_blank" rel="noopener noreferrer">zkmap on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai">4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai" class="hash-link" aria-label="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)" title="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)">​</a></h4>
+<ul>
+<li>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--pulse">Project : Pulse<a href="https://push.org/blog/push-ethglobal-istanbul-winner#project--pulse" class="hash-link" aria-label="Direct link to Project : Pulse" title="Direct link to Project : Pulse">​</a></h4>
+<p>Pulse, a mobile-first social app, revolutionizes content engagement through a dynamic recommendation engine. It customizes your feed based on social interactions, offering a unique, swipe-based user experience that prioritizes quality content.</p>
+<p>Incorporating the Push Protocol, Pulse enhances user engagement by notifying content creators when their posts are liked or superliked. This integration plays a crucial role in enriching the social experience, ensuring creators are promptly informed about the reception of their content. Pulse's innovative use of the Push Protocol complements its user-centric design, contributing to a more connected and responsive social platform.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/pulse-v4iir" target="_blank" rel="noopener noreferrer">Pulse on ETHGlobal</a></p>
+</li>
+<li>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--genieai">Project : GenieAI<a href="https://push.org/blog/push-ethglobal-istanbul-winner#project--genieai" class="hash-link" aria-label="Direct link to Project : GenieAI" title="Direct link to Project : GenieAI">​</a></h4>
+<p>GenieAI emerges as a versatile AI marketplace, offering users access to a range of AI services from legal advice to health consultation, all within a private and anonymous environment. This innovative platform allows users to interact with AI experts without compromising their data, addressing the need for confidential and secure AI model utilization.</p>
+<p>The integration of the Push Protocol in GenieAI enhances user experience significantly. It notifies users via their ETH address when their AI requests are processed, maintaining anonymity and privacy. This seamless incorporation of Push notifications ensures timely updates, adding efficiency to the platform’s service delivery. GenieAI's smart use of Push Protocol exemplifies its commitment to user privacy and advanced technology application.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/genieai-feo3a" target="_blank" rel="noopener noreferrer">GenieAI on ETHGlobal</a></p>
+</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a href="https://push.org/blog/push-ethglobal-istanbul-winner#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h3>
+<p>ETHGlobal Istanbul has been a remarkable journey, where innovation met opportunity in the web3 space. This event wasn't just about competition; it was a canvas for the brightest minds to demonstrate the versatility of Push Protocol in transforming communication.</p>
+<p>The spectrum of projects, from social initiatives to creative marvels, truly elevated the standard. Showcasing diverse applications of Push Protocol, these developers proved that in the realm of web3, the only limit is imagination. Their achievements highlight the boundless potential of Push Protocol, shaping the future of decentralized communication.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties 🧿]]></title>
+        <id>https://push.org/blog/push-ethglobal-istanbul</id>
+        <link href="https://push.org/blog/push-ethglobal-istanbul"/>
+        <updated>2023-11-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties" src="https://push.org/assets/images/cover-image-25b6be2e1a230b52dea056c83d866c92.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Hackers of ETHGlobal Istanbul, your creativity has shone brightly!</p>
+<p>As the echoes of November's web3 and blockchain innovation fade in Istanbul, we are thrilled to have witnessed such extraordinary talent. From innovative bounties to inspiring workshops, the ETHGlobal Istanbul Hackathon was a testament to the ingenuity of the web3 community.</p>
+<p>Brimming with groundbreaking ideas, our builders went above and beyond, making it a truly memorable event. Now, we proudly announce the winners who have set new standards in the Push Protocol challenge.</p>
+<p>Reflecting on the success of ETHGlobal Istanbul x Push, we're excited to share the remarkable achievements of our winners.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge">Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge<a href="https://push.org/blog/push-ethglobal-istanbul#pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge" class="hash-link" aria-label="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge" title="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge">​</a></h3>
+<p>As the vibrant city of Istanbul buzzed with the energy of blockchain enthusiasts and innovators this November, ETHGlobal Istanbul emerged as a beacon of creativity in the web3 universe. This event was not just a hackathon; it was a celebration of groundbreaking ideas and pioneering spirits. With a mix of bounties, hands-on workshops, and invaluable networking opportunities, the stage was set for developers to showcase their prowess in leveraging the Push Protocol – a cornerstone in web3 communication.</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1--merhaba-push-protocol-2000-winner-rely">1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)<a href="https://push.org/blog/push-ethglobal-istanbul#1--merhaba-push-protocol-2000-winner-rely" class="hash-link" aria-label="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)" title="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)">​</a></h4>
+<p>Rely stands out in the decentralized application (dApp) landscape, particularly in the social media sector. The project focuses on enhancing user interactions within a secure, decentralized environment. By bridging social media functionalities with blockchain technology, Rely offers a platform for seamless and efficient user engagement.</p>
+<p>The use of the Push Protocol in Rely marks a significant advancement in user experience. It enables the delivery of real-time notifications, essential for keeping users informed and connected. Customizable notification settings and the introduction of a chat feature with conditional gating access demonstrate Rely's commitment to user-centric innovation. These features not only improve communication but also bring a new level of personalization and security to the platform.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/rely-oygqg" target="_blank" rel="noopener noreferrer">Rely on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2--turkish-ice-cream--creative-bounty-2500-winner-pixel">2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)<a href="https://push.org/blog/push-ethglobal-istanbul#2--turkish-ice-cream--creative-bounty-2500-winner-pixel" class="hash-link" aria-label="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)" title="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)">​</a></h4>
+<p>Pixel is redefining the NFT community experience with its innovative chat platform. Designed for secure and dynamic interactions, Pixel allows users to connect, converse, and engage in digital asset trading with ease. The platform's standout feature is its seamless integration of a trading mechanism within the chat interface, enabling a variety of asset swaps, from NFT-to-NFT to NFT-to-token exchanges. This integration not only simplifies the trading process but also enriches the community interaction by adding a layer of versatility and user engagement.</p>
+<p>Pixel's integration of the Push Protocol plays a pivotal role in enhancing off-chain messaging. This incorporation is meticulously designed with custom chat components, allowing for efficient handling of NFT token exchanges and orders. The use of Push Protocol contributes significantly to the user experience, providing reliable and instant communication within the community.</p>
+<p>This technical sophistication, combined with a suite of smart contracts for various functionalities, exemplifies Pixel’s commitment to security and trust in the NFT space. The project's innovative use of technology has rightly earned it the 'Creative Bounty' prize, showcasing its potential to revolutionize NFT community interactions.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/pixel-rr36q" target="_blank" rel="noopener noreferrer">Pixel on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap">3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)<a href="https://push.org/blog/push-ethglobal-istanbul#3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap" class="hash-link" aria-label="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)" title="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)">​</a></h4>
+<p>zkMap offers a novel proof-of-location system that allows users to authenticate their presence in a specific area without revealing their exact location. This mobile application enables the creation of location proofs, viewable on a map, enhancing services requiring location authentication. Its versatility extends to various use cases, from event attendance verification to legal and security applications, demonstrating a wide-ranging impact.</p>
+<p>Integrating the Push Protocol, zkMap has developed a private group chat program, enhancing its proof-of-location infrastructure. This integration utilizes the Conditional Gateway functionality, allowing access to private chat rooms based on users' location proofs. The platform's innovative approach in using Push Protocol exemplifies its commitment to secure and contextual communication, aligning with its recognition for the 'Push Chat Conditional Gating Integration for DApps' prize.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/zkmap-n2z06" target="_blank" rel="noopener noreferrer">zkmap on ETHGlobal</a></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai">4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)<a href="https://push.org/blog/push-ethglobal-istanbul#4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai" class="hash-link" aria-label="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)" title="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)">​</a></h4>
+<ul>
+<li>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--pulse">Project : Pulse<a href="https://push.org/blog/push-ethglobal-istanbul#project--pulse" class="hash-link" aria-label="Direct link to Project : Pulse" title="Direct link to Project : Pulse">​</a></h4>
+<p>Pulse, a mobile-first social app, revolutionizes content engagement through a dynamic recommendation engine. It customizes your feed based on social interactions, offering a unique, swipe-based user experience that prioritizes quality content.</p>
+<p>Incorporating the Push Protocol, Pulse enhances user engagement by notifying content creators when their posts are liked or superliked. This integration plays a crucial role in enriching the social experience, ensuring creators are promptly informed about the reception of their content. Pulse's innovative use of the Push Protocol complements its user-centric design, contributing to a more connected and responsive social platform.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/pulse-v4iir" target="_blank" rel="noopener noreferrer">Pulse on ETHGlobal</a></p>
+</li>
+<li>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--genieai">Project : GenieAI<a href="https://push.org/blog/push-ethglobal-istanbul#project--genieai" class="hash-link" aria-label="Direct link to Project : GenieAI" title="Direct link to Project : GenieAI">​</a></h4>
+<p>GenieAI emerges as a versatile AI marketplace, offering users access to a range of AI services from legal advice to health consultation, all within a private and anonymous environment. This innovative platform allows users to interact with AI experts without compromising their data, addressing the need for confidential and secure AI model utilization.</p>
+<p>The integration of the Push Protocol in GenieAI enhances user experience significantly. It notifies users via their ETH address when their AI requests are processed, maintaining anonymity and privacy. This seamless incorporation of Push notifications ensures timely updates, adding efficiency to the platform’s service delivery. GenieAI's smart use of Push Protocol exemplifies its commitment to user privacy and advanced technology application.</p>
+<p>Project Link: <a href="https://ethglobal.com/showcase/genieai-feo3a" target="_blank" rel="noopener noreferrer">GenieAI on ETHGlobal</a></p>
+</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a href="https://push.org/blog/push-ethglobal-istanbul#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h3>
+<p>ETHGlobal Istanbul has been a remarkable journey, where innovation met opportunity in the web3 space. This event wasn't just about competition; it was a canvas for the brightest minds to demonstrate the versatility of Push Protocol in transforming communication.</p>
+<p>The spectrum of projects, from social initiatives to creative marvels, truly elevated the standard. Showcasing diverse applications of Push Protocol, these developers proved that in the realm of web3, the only limit is imagination. Their achievements highlight the boundless potential of Push Protocol, shaping the future of decentralized communication.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️]]></title>
+        <id>https://push.org/blog/introducing-notification-settings</id>
+        <link href="https://push.org/blog/introducing-notification-settings"/>
+        <updated>2023-11-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" src="https://push.org/assets/images/cover-image-ba3a60ed8f33478a997fb953a23db538.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>We are extremely excited to be releasing a long-awaited feature - Notification Settings!</p>
+<p>This new feature enables both channels and users to customize the type of notifications they send and receive respectively.</p>
+<p>Whether it's specifying which categories of articles on Coindesk you want to receive notifications for or setting alerts for when the price of ETH passes $2,000 – a world of customization and personalization is now available for how you stay up-to-date in web3.</p>
+<p>You can browse available channels to opt-in to here in the Push dApp 👉<a href="https://app.push.org/channels" target="_blank" rel="noopener noreferrer">https://app.push.org/channels</a></p>
+<p>In this article we’ll explore:</p>
+<ul>
+<li>Why Notification Settings are important</li>
+<li>How Notification Settings work for Channel Owners</li>
+<li>What the UI/UX looks like for Channel Subscribers
+Let’s dive in.</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-notification-settings">Why Notification Settings?<a href="https://push.org/blog/introducing-notification-settings#why-notification-settings" class="hash-link" aria-label="Direct link to Why Notification Settings?" title="Direct link to Why Notification Settings?">​</a></h3>
+<p>Since the launch of v1 of Push smart contracts, we’ve strived to leverage communication tools to help dApps deliver the most user-friendly and sticky user experience possible.</p>
+<p>While we’ve always given dApps the ability to create ‘channels’ that users can subscribe to, segmenting different kinds of notifications for different users has always remained a challenge.</p>
+<p>With Notification Settings, we’re now solving this long standing pain point to create an unparalleled level of customization and control for users. Channel Owners now have the ability to segment and categorize different notifications and Channel Subscribers now have the ability to select notifications that match their preferences.</p>
+<p>Just as you might customize notifications through “Advanced Notifications Settings” on your favorite web2 mobile apps, Notification Settings through Push brings a similar level of personalization to web3-native subscribers.</p>
+<p>So, how do Notification Settings work for both Channel Owners and Channel Subscribers? We’ll walk you through everything there is to know.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="notification-settings-for-channel-owners">Notification Settings for Channel Owners<a href="https://push.org/blog/introducing-notification-settings#notification-settings-for-channel-owners" class="hash-link" aria-label="Direct link to Notification Settings for Channel Owners" title="Direct link to Notification Settings for Channel Owners">​</a></h3>
+<p>Push is a thriving community with hundreds of diverse channels spanning DeFi, gaming, web3 media, and beyond. These channels often have a wide range of content, notifications, and updates to share with their users.</p>
+<p>For example, a DeFi channel might want to send various notifications like loan liquidation alerts, price alerts, or governance proposal notifications. Just as a newsletter might want to send notifications for new articles in its blog, but wouldn’t want to send every article to every subscriber.</p>
+<p>With Notification Settings, Channel Owners can now define specific categories for their notifications. Consequently, when a channel triggers a notification for that specific category, only the users who've opted for that preference will receive a notification.</p>
+<p>There are two types of channel settings for Channel Owners:</p>
+<ol>
+<li>True/False Notification Settings: The first channel setting lets you set up a channel with a simple true/false trigger setting. For instance, say your channel covers web3 news. You can define settings for categories of articles like  "tech" and “partnership announcements” and give users the option to turn each On (true) or Off (false). Adding one of these Notification Settings for every content category gives end-users the option to opt-in for content categories that match their preferences and avoid ones that don’t.</li>
+<li>Range Value Notification Settings: The second channel setting lets you set up a range of values for a specific category that might trigger a notification. For instance, say you want to set up a Notification Setting that triggers when the price of ETH passes a given value. You can simply create a range, say from 0-10,000 and subscribers will be able to select any value within that range to set their custom ETH price notification.
+You can set as many or as few Notification Settings for your channel as you like.
+Here’s how it looks.</li>
+</ol>
+<p><img loading="lazy" alt="Introducing Notification Settings" src="https://push.org/assets/images/image-1-8ad26187a9265c58c87b6bc0fa7eda4c.webp" width="1600" height="900" class="img_ev3q">
+</p><div class="SharedStyling__ImageText-sc-1enui31-28 gxTkAS"><b>Caption:</b> This channel has 5 Notification Settings. 4 of which are True/False Notification Settings and 1 of which is a Range Value Notification Setting. As such, end-users will have the choice to toggle on/off preferences for each of these 5 notifications separately.</div><p></p>
+<p>Note, each channel will also set a ‘default value’ setting. This ensures subscribers who opt-in without specifying their preferences will simply receive notifications based on the channel's default settings.</p>
+<p>For builders looking to integrate Notification Settings, you can find all the relevant and associated documentation here</p>
+<p>👉 <a href="https://push.org/docs/notifications/build/create-channel-settings/" target="_blank" rel="noopener noreferrer">https://push.org/docs/notifications/build/create-channel-settings/</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="notification-settings-for-channel-subscribers">Notification Settings for Channel Subscribers<a href="https://push.org/blog/introducing-notification-settings#notification-settings-for-channel-subscribers" class="hash-link" aria-label="Direct link to Notification Settings for Channel Subscribers" title="Direct link to Notification Settings for Channel Subscribers">​</a></h3>
+<p>Empowering Channel Subscribers (end-users) to personalize their notifications is a massive step towards a more user-centric and user-friendly web3 experience. Channel Subscribers can filter out notifications they aren't interested in receiving to reduce notification clutter. This optimizes user inboxes, reduces spam, and helps personalize the user experience.</p>
+<p>Here’s how it works for Channel Subscribers:</p>
+<ol>
+<li>When you subscribe to a channel that has enabled Notification Settings, you’ll have the option to personalize your notification preferences based on the available settings the Channel Owner has preset.
+The choice to customize is optional. You can always opt-in for the ‘default values’ of a channel (these ‘default value’ notifications are determined by the Channel Owner).
+Once you’ve selected your preferences for all of the Notification Settings, you can click ‘opt-in’ to initiate the subscription and begin receiving notifications!
+This is how the UI will prompt you to select your choice of notification for the channel:</li>
+</ol>
+<p><img loading="lazy" alt="Introducing Notification Settings" src="https://push.org/assets/images/image-3-e4c5f8b2e778f80daf25fcab4f7e8436.webp" width="1600" height="900" class="img_ev3q">
+</p><div class="SharedStyling__ImageText-sc-1enui31-28 gxTkAS"><b>Caption:</b> For this channel, there are 4 available Notification Settings to pick from. 3 settings correspond to simple on-off toggles and 1 corresponds to a range value. For this range value setting, you can set any value (price) that you want to receive notifications for within that range.</div><p></p>
+<ol start="2">
+<li>You can review all the channels you are receiving notifications for and manage those settings directly within your “Notification Settings” tab. This dashboard gives you a complete birds-eye-view of all your notifications and lets you edit and change your settings any time at no cost.</li>
+</ol>
+<p><img loading="lazy" alt="Introducing Notification Settings" src="https://push.org/assets/images/image-2-f1ca5660f4cd782b09eb84cc5b3d7528.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Here are a few popular channels to get you started!</p>
+<ul>
+<li><a href="http://app.push.org/channels?channel=0xB88460Bb2696CAb9D66013A05dFF29a28330689D" target="_blank" rel="noopener noreferrer">Push Protocol</a></li>
+<li><a href="http://app.push.org/channels?channel=0x03EAAAa48ea78d1E66eA3458364d553AD981871E" target="_blank" rel="noopener noreferrer">BTC Price Tracker</a></li>
+<li><a href="http://app.push.org/channels?channel=0xDBc5936E4daaE94F415C39D284f6a69c4d553F2F" target="_blank" rel="noopener noreferrer">ETH Price Tracker</a></li>
+</ul>
+<p>Full list of Push channels 👉<a href="https://app.push.org/channels" target="_blank" rel="noopener noreferrer">https://app.push.org/channels</a></p>
+<p>Here’s a full demo on how to both setup and sign up for Notification Settings:</p>
+<div class="SharedStyling__VideoContainer-sc-1enui31-32 dNEmFy"><iframe width="100%" height="100%" style="border-radius:32px" src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></div>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="pushing-personalized-communication-experiences">Pushing Personalized Communication Experiences<a href="https://push.org/blog/introducing-notification-settings#pushing-personalized-communication-experiences" class="hash-link" aria-label="Direct link to Pushing Personalized Communication Experiences" title="Direct link to Pushing Personalized Communication Experiences">​</a></h3>
+<p>Notification Settings is a game-changer.</p>
+<p>For Channel Owners that want to provide the best level of control and personalization for their users, Notification Settings mean being able to now categorize notifications and updates to only give users information they want.</p>
+<p>For Channel Subscribers that want a personalized and engaging user experience, Notification Settings mean being able to accommodate their personal preferences.
+At Push, we’re constantly reaffirming our commitment to decentralizing communication and onboarding the next one billion users to web3. As such, we’re looking to build upon Notification Settings and release more communication personalization features soon.</p>
+<p>Stay tuned because the best is yet to come.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="Decentralization" term="Decentralization"/>
+    </entry>
+</feed>
