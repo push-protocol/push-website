@@ -32,6 +32,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
         return (
           <BlogPostCardPrimary
             key={index}
+            className="item-3"
             onClick={() => {
               window.open(
                 `/blog/${postItem.metadata.frontMatter.slug}`,
@@ -90,6 +91,8 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
         return (
           <BlogPostCardSecondary
             key={index}
+            c
+            className={`item-${index}`}
             onClick={() => {
               window.open(
                 `/blog/${postItem.metadata.frontMatter.slug}`,
@@ -122,20 +125,84 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
 const BlogPostList = styled(ItemH)`
   gap: 25px;
   margin: 75px 0 0 0;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: no-wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+
+  .item-3 {
+    grid-column: 1;
+    grid-row: span 3 / span 3;
+  }
+
+  .item-0 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .item-1 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .item-2 {
+    grid-column: 2;
+    grid-row: 3;
+  }
 
   @media ${device.laptop} {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
+
+    .item-3 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .item-0 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .item-1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .item-2 {
+      grid-column: 2;
+      grid-row: 2;
+    }
   }
 
   @media ${device.mobileL} {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
+    gap: 0px;
+
+    .item-3 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .item-0 {
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: 24px;
+    }
+
+    .item-1 {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 24px;
+    }
+
+    .item-2 {
+      grid-column: 1;
+      grid-row: 4;
+      margin-top: 24px;
+    }
   }
 `;
 
