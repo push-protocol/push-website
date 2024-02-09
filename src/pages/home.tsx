@@ -31,6 +31,7 @@ import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
+import { slideSection } from '@site/src/config/SlideSection'
 import {
   A,
   B,
@@ -382,21 +383,20 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                  </Content>
         </ChatSection>
 
-        {/* <SlideSection id="slide-section">
+        <SlideSection id="slide-section">
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="200px 40px 0px 40px"
           >
 
-            <ItemH flexDirection='row' flexWrap='nowrap' gap="29px">
-                <SlideItem>
+            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' gap="29px">
+                {slideSection.map((item) => (<SlideItem>
                       <Image
                         width={'100%'}
                         height={'auto'}
                         // borderRadius={item.title ? '50%' : '0'}
-                        src={require(`@site/static/assets/website/slides/video-img.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/slides/video-img@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/video-img@3x.png`).default} 3x`}
+                        src={require(`@site/static/assets/website/slides/${item.imageref}.png`).default}
+                        srcSet={`${require(`@site/static/assets/website/slides/${item.imageref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/${item.imageref}@3x.png`).default} 3x`}
                         // alt={`${item?.alt}`}
                         loading="lazy"
                       />
@@ -409,37 +409,52 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                              textTransform="uppercase"
                              fontSize="14px"
                              font-weight="700"
-                             line-height="130"
+                             line-height="130%"
                              letter-spacing="0.56px" 
-                             >Push Video</H2>
+                             fontFamily="FK Grotesk Neue"
+                             >{item.title}</H2>
                           
                           <H2 color="#FFF"
                               font-size="30px"
                               font-style="normal"
                               font-weight="500"
-                              line-height="normal"
-                              >Experience real time web3 communication with Push Video</H2>
+                              margin="8px 0px"
+                              fontFamily="FK Grotesk Neue"
+                              lineHeight="130%"
+                              >{item.subtitle}</H2>
 
-                          <H3>Push Video supports decentralized wallet-to-wallet video calls in a chain-agnostic environment.</H3>
+                          <H3 color="#FFF"
+                              fontSize="19px"
+                              fontWeight="400"
+                              fontFamily="FK Grotesk Neue"
+                              color="#BBBCD0"
+                              lineHeight="130%"
+                              margin="8px 0px">{item.content}</H3>
+
+                        <SlideLink
+                                  href={item.link}
+                                  title={'new'}
+                                  target="_self"
+                                  padding="0px 0px"
+                                  fontSize="16px"
+                                  fontWeight="400"
+                                  letterSpacing="-0.03em"
+                                  lineHeight="26px"
+                                  className='button'
+                                  margin="24px 0px 0px 0px"
+                                  background="transparent"
+                                  alignItems='center'
+                                >
+                                  <SpanLink>{item.itemLink}</SpanLink>
+                                  <BsArrowRight className="anchorSVGlink" />
+                                </SlideLink>
                       </ItemV>
 
-                </SlideItem>
-
-                <SlideItem>
-                      <Image
-                        width={'auto'}
-                        // borderRadius={item.title ? '50%' : '0'}
-                        src={require(`@site/static/assets/website/slides/video-img.png`).default}
-                        srcSet={`${require(`@site/static/assets/website/slides/video-img@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/video-img@3x.png`).default} 3x`}
-                        // alt={`${item?.alt}`}
-                        loading="lazy"
-                      />
-
-                </SlideItem>
+                </SlideItem>))}
             </ItemH>
 
             </Content>
-        </SlideSection> */}
+        </SlideSection>
             
 
 
@@ -931,18 +946,40 @@ const SlideSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
+
+  .contentBox {
+    padding: 200px 40px 0px 40px;
+
+    @media ${device.tablet} {
+      padding: 200px 32px 0px 32px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 24px 0px 24px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 16px 0px 16px;
+    }
+  }
 `;
 
 const SlideItem = styled(ItemH)`
-   border: 1px solid red;
    padding: 48px;
    width: 100%;
+   border-radius: 32px;
+   border: 1px solid rgba(255, 255, 255, 0.10);
+   backdrop-filter: blur(60px);
 
    img {
     margin: 0;
     padding: 0;
     display: block;
    }
+
+   @media ${device.tablet} {
+    padding: 32px;
+  }
 `;
 
 const BuildWithPushSection = styled(Section)`
@@ -1717,6 +1754,41 @@ const HeroButton = styled(Button)`
   }
 `;
 
+const SlideLink = styled(A)`
+.anchorSVGlink {
+  color: #fff;
+
+  &:hover {
+    color: D98AEC;
+  }
+}
+  @media ${device.tablet} {
+    font-size: 18px;
+    font-weight: 400;
+  }
+`;
+
+const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
 
 const MarqueeAnimationContainer = styled(ItemV)`
 `
