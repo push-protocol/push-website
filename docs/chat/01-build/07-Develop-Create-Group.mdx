@@ -55,8 +55,8 @@ const createdGroup = await userAlice.chat.group.create(name);
 | `options` | `object`              | -          | -       | Optional Configuration for creating group.                                                                                                                                                                                                                                     |
 | -         | `options.description` | `string`   | -       | A description of the group.                                                                                                                                                                                                                                                    |
 | -         | `options.image`       | `string`   | -       | Image for the group in [Base64](https://en.wikipedia.org/wiki/Base64) format                                                                                                                                                                                                   |
-| -         | `options.members`     | `string[]` | `[]`    | An array of member recipients. [Members supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                                                            |
-| -         | `options.admins`      | `string[]` | -       | An array of admin recipients. [Admins supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                                                             |
+| -         | `options.members`     | `string[]` | `[]`    | An array of member recipients. [Members supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                |
+| -         | `options.admins`      | `string[]` | -       | An array of admin recipients. [Admins supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                  |
 | -         | `options.private`     | `boolean`  | `false` | Indicates if the group is private.                                                                                                                                                                                                                                             |
 | -         | `options.rules`       | `any[]`    | -       | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](/docs/chat/build/conditional-rules-for-group) to understand rule engine and how to fine tune conditional rules of your group |
 
@@ -271,3 +271,11 @@ const newGroup = await userAlice.chat.group.create(groupName,
 });
 
 ```
+
+## Creating a gated group
+
+Groups can be gated based on a number of conditions such as token gating, NFT gating, or Guild gating. Learn more about [conditional rules for group](/docs/chat/build/conditional-rules-for-group) to understand how to fine tune conditional rules of your group.
+
+- Token Gated Group creation Example - [Token Gating](/docs/chat/build/conditional-rules-for-group/#token-gated-group-and-send-message-example)
+- NFT Gated Group creation Example - [NFT Gating](/docs/chat/build/conditional-rules-for-group/#nft-gated-group-example)
+- Guild Gated Group creation Example - [Guild Gating](/docs/chat/build/conditional-rules-for-group/#guild-gated-group-example)
