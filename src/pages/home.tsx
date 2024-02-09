@@ -475,7 +475,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="200px 40px 0px 40px"
           >
 
             {/* BLOG SECTION */}
@@ -1217,6 +1216,22 @@ const WhyPushTextBox = styled(ItemH)`
 const WhyPushAndBlogSection = styled(Section)`
   width: 100%;
   overflow: hidden;
+
+  .contentBox {
+    padding: 200px 40px 0px 40px;
+
+    @media ${device.tablet} {
+      padding: 200px 32px 0px 32px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 24px 0px 24px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 16px 0px 16px;
+    }
+  }
 `;
 
 const BackedBySection = styled(Section)`

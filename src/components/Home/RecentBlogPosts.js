@@ -18,100 +18,103 @@ import {
   ReadingTime,
   Spacer,
 } from "@site/src/components/reusables/date.tsx";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
+  const isTablet = useMediaQuery(device.laptop);
   return (
     <BlogPostList>
-      <BlogPostCardContainer>
-        {recentPosts.slice(0, 1).map((postItem, index) => {
-          console.log(postItem);
-          // Docusaurus loads the actual content lazily;
-          // hence the .default to get the actual component.
-          return (
-            <BlogPostCardPrimary
-              key={index}
-              onClick={() => {
-                window.open(
-                  `/blog/${postItem.metadata.frontMatter.slug}`,
-                  "_self",
-                );
-              }}
-              alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
-            >
-              <postItem.Preview loading="lazy" />
+      {/* <BlogPostCardContainer> */}
+      {recentPosts.slice(0, 1).map((postItem, index) => {
+        console.log(postItem);
+        // Docusaurus loads the actual content lazily;
+        // hence the .default to get the actual component.
+        return (
+          <BlogPostCardPrimary
+            key={index}
+            onClick={() => {
+              window.open(
+                `/blog/${postItem.metadata.frontMatter.slug}`,
+                "_self",
+              );
+            }}
+            alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
+          >
+            <postItem.Preview loading="lazy" />
 
-              <BodyItem>
-                <ItemH
-                  alignItems="flex-start"
-                  alignSelf="flex-start"
-                  color="#fff"
-                  className="date"
-                >
-                  <Date
-                    date={postItem.Preview.metadata.date}
-                    formattedDate={postItem.Preview.metadata.formattedDate}
-                    mr={"3px"}
-                  />
-                  {typeof postItem.Preview.metadata.readingTime !==
-                    "undefined" && (
-                    <>
-                      <Spacer />
-                      <ReadingTime
-                        readingTime={postItem.Preview.metadata.readingTime}
-                      />
-                    </>
-                  )}
-                </ItemH>
+            <BodyItem>
+              <ItemH
+                alignItems="flex-start"
+                alignSelf="flex-start"
+                color="#fff"
+                className="date"
+                display={isTablet && "none"}
+              >
+                <Date
+                  date={postItem.Preview.metadata.date}
+                  formattedDate={postItem.Preview.metadata.formattedDate}
+                  mr={"3px"}
+                />
+                {typeof postItem.Preview.metadata.readingTime !==
+                  "undefined" && (
+                  <>
+                    <Spacer />
+                    <ReadingTime
+                      readingTime={postItem.Preview.metadata.readingTime}
+                    />
+                  </>
+                )}
+              </ItemH>
 
-                <H2
-                  margin="8px 0"
-                  textAlign="left"
-                  fontSize="30px"
-                  color="#fff"
-                  lineHeight="150%"
-                  fontFamily="FK Grotesk Neue"
-                >
-                  {postItem.metadata.title}
-                </H2>
+              <H2
+                margin="8px 0"
+                textAlign="left"
+                fontSize={isTablet ? "20px" : "30px"}
+                color="#fff"
+                lineHeight="150%"
+                fontFamily="FK Grotesk Neue"
+              >
+                {postItem.metadata.title}
+              </H2>
 
-                <TextSpan>{postItem.metadata.frontMatter.text}</TextSpan>
-              </BodyItem>
-            </BlogPostCardPrimary>
-          );
-        })}
-      </BlogPostCardContainer>
-      <BlogPostCardContainer>
-        {recentPosts.slice(1, 4).map((postItem, index) => {
-          // Docusaurus loads the actual content lazily;
-          // hence the .default to get the actual component.
-          return (
-            <BlogPostCardSecondary
-              key={index}
-              onClick={() => {
-                window.open(
-                  `/blog/${postItem.metadata.frontMatter.slug}`,
-                  "_self",
-                );
-              }}
-              alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
-            >
-              <postItem.Preview loading="lazy" />
-              <TitleItem>
-                <H2
-                  margin="auto 0"
-                  textAlign="left"
-                  fontSize="20px"
-                  color="#fff"
-                  lineHeight="150%"
-                  fontFamily="FK Grotesk Neue"
-                >
-                  {postItem.metadata.title}
-                </H2>
-              </TitleItem>
-            </BlogPostCardSecondary>
-          );
-        })}
-      </BlogPostCardContainer>
+              <TextSpan>{postItem.metadata.frontMatter.text}</TextSpan>
+            </BodyItem>
+          </BlogPostCardPrimary>
+        );
+      })}
+      {/* </BlogPostCardContainer> */}
+      {/* <BlogPostCardContainer> */}
+      {recentPosts.slice(1, 4).map((postItem, index) => {
+        // Docusaurus loads the actual content lazily;
+        // hence the .default to get the actual component.
+        return (
+          <BlogPostCardSecondary
+            key={index}
+            onClick={() => {
+              window.open(
+                `/blog/${postItem.metadata.frontMatter.slug}`,
+                "_self",
+              );
+            }}
+            alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
+          >
+            <postItem.Preview loading="lazy" />
+            <TitleItem>
+              <H2
+                margin="auto 0"
+                textAlign="left"
+                fontSize="20px"
+                color="#fff"
+                lineHeight="150%"
+                fontFamily="FK Grotesk Neue"
+              >
+                {postItem.metadata.title}
+              </H2>
+            </TitleItem>
+          </BlogPostCardSecondary>
+        );
+      })}
+      {/* </BlogPostCardContainer> */}
     </BlogPostList>
   );
 };
@@ -119,15 +122,32 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
 const BlogPostList = styled(ItemH)`
   gap: 25px;
   margin: 75px 0 0 0;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: no-wrap;
+
+  @media ${device.laptop} {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  @media ${device.mobileL} {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+  }
 `;
 
 const BlogPostCardContainer = styled(ItemV)`
-  justify-content: flex-start;
-  gap: 25px;
+  // justify-content: flex-start;
+  // gap: 25px;
 
-  @media ${device.laptop} {
-    flex: initial;
-  }
+  // @media ${device.laptop} {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, minmax(0, 1fr));
+  //   width: 100%;
+  // }
 `;
 
 const BlogPostCardPrimary = styled(Button)`
@@ -135,7 +155,6 @@ const BlogPostCardPrimary = styled(Button)`
   flex-direction: column;
   justify-content: flex-start;
   align-self: stretch;
-  // background: transparent;
   color: ${GLOBALS.COLORS.FONT_DARK};
   padding: 0px 0px;
   gap: 24px;
@@ -166,6 +185,9 @@ const BlogPostCardPrimary = styled(Button)`
   & ${Span} {
     min-width: 200px;
   }
+  @media ${device.laptop} {
+    border-radius: 0px;
+  }
 
   @media ${device.tablet} {
     flex-direction: row;
@@ -181,7 +203,6 @@ const BlogPostCardSecondary = styled(Button)`
   display: flex;
   justify-content: flex-start;
   align-self: stretch;
-  // background: transparent;
   color: ${GLOBALS.COLORS.FONT_DARK};
   padding: 0px 0px;
   gap: 24px;
@@ -195,8 +216,6 @@ const BlogPostCardSecondary = styled(Button)`
     min-width: 282px;
     max-width: 282px;
     object-fit: cover;
-    // min-width: 200px;
-    // max-width: 100%;
     height: 160px;
     border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
     display: block;
@@ -221,10 +240,22 @@ const BlogPostCardSecondary = styled(Button)`
     color: #fff;
   }
 
-  @media ${device.tablet} {
-    flex-direction: row;
-    flex-wrap: wrap;
+  @media ${device.laptop} {
+    flex-direction: column;
+    height: auto;
+    border-radius: 0px;
 
+    & img {
+      min-width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      height: auto;
+      border-radius: 24px;
+      display: block;
+    }
+  }
+
+  @media ${device.tablet} {
     & ${Span} {
       font-size: 20px;
     }
@@ -233,7 +264,7 @@ const BlogPostCardSecondary = styled(Button)`
       width: auto;
       min-width: 200px;
       height: auto;
-      border-radius: ${GLOBALS.ADJUSTMENTS.RADIUS.MID};
+      border-radius: 24px;
     }
   }
 `;
@@ -264,6 +295,11 @@ const BodyItem = styled.div`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  @media ${device.laptop} {
+    border-bottom: 1px solid #252527;
+    height: auto;
+  }
 `;
 
 const TextSpan = styled(Span)`
@@ -278,6 +314,10 @@ const TextSpan = styled(Span)`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   font-family: FK Grotesk Neue;
+
+  @media ${device.laptop} {
+    display: none !important;
+  }
 `;
 
 const TitleItem = styled.div`
@@ -295,6 +335,10 @@ const TitleItem = styled.div`
     display: -webkit-box !important;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+  }
+
+  @media ${device.mobileL} {
+    padding: 0 0 24px 0;
   }
 `;
 
