@@ -68,15 +68,13 @@ The following speed run is designed to give you a quick overview of usage and de
     media?: MediaStream, // to pass your existing media stream (for backend use)
   });
 
-  // Firing a video call request to a recipient
-  await aliceVideoCall.request([recipient]); // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
-
-  // To listen to real-time video calls
+  // Setup listener for video call events
   stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
     if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
-      // RequestVideo Event is fired when there is an incoming video call request
-      // you can show an UI modal to accept or reject the call
-      // it is recommended to store the incoming caller address in a state that is received
+      // Request is coming, approve the call or show modal to accept/deny
+      aliceVideoCall.approve();
+
+      // Recommeded to store the incoming caller address in a state for future use
       // let incomingCallerAddress = data.peerInfo.address;
     }
 
@@ -104,8 +102,12 @@ The following speed run is designed to give you a quick overview of usage and de
     }
   });
 
-  // Finally connect the stream
+  // connect the stream
   await Stream.connect();
+
+  // Fire video call request
+  await aliceVideoCall.request([recipient]); // see supported wallet standards - https://push.org/docs/video/supported-wallet-standards
+
 ```
 
   </TabItem>

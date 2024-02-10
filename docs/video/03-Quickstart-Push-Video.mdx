@@ -88,43 +88,6 @@ import { ethers } from "ethers";
   </TabItem>
 </Tabs>
 
-### Defining Variables
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```js
-// data will store the video call state, we will only use this to read the video call state
-// and update the UI accordingly
-let data = CONSTANTS.VIDEO.INITIAL_DATA;
-
-// setData is a function that will update the video call state
-const setData = (fn) => {
-  data = fn(data);
-};
-```
-
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}}>
-
-```js
-// state to handle current video call data
-const [data, setData] = useState(CONSTANTS.VIDEO.INITIAL_DATA);
-```
-
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-
-```js
-// state to handle current video call data
-const [data, setData] = useState(CONSTANTS.VIDEO.INITIAL_DATA);
-```
-
-  </TabItem>
-</Tabs>
-
 ### Initialize User
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -170,7 +133,8 @@ const userAlice = await PushAPI.initialize(signer, {
 
   </TabItem>
 </Tabs>
-### Stream / Real time updates / Socket
+
+### Setup Video Stream
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -180,8 +144,26 @@ const userAlice = await PushAPI.initialize(signer, {
 const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]);
 
 // Configure stream listen events and what to do
-stream.on(CONSTANTS.STREAM.VIDEO, (message) => {
-  console.log(message);
+stream.on(CONSTANTS.STREAM.VIDEO, (data) => {
+  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+    // handle call request
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
+    // handle call approve
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DENY) {
+    // handle call denied
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.CONNECT) {
+    // handle call connected
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DISCONNECT) {
+    // handle call disconnected
+  }
 });
 
 // Connect Stream
@@ -197,8 +179,26 @@ stream.connect();
 const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]);
 
 // Configure stream listen events and what to do
-stream.on(CONSTANTS.STREAM.VIDEO, (message) => {
-  console.log(message);
+stream.on(CONSTANTS.STREAM.VIDEO, (data) => {
+  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+    // handle call request
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
+    // handle call approve
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DENY) {
+    // handle call denied
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.CONNECT) {
+    // handle call connected
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DISCONNECT) {
+    // handle call disconnected
+  }
 });
 
 // Connect Stream
@@ -214,12 +214,73 @@ stream.connect();
 const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]);
 
 // Configure stream listen events and what to do
-stream.on(CONSTANTS.STREAM.VIDEO, (message) => {
-  console.log(message);
+stream.on(CONSTANTS.STREAM.VIDEO, (data) => {
+  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+    // handle call request
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
+    // handle call approve
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DENY) {
+    // handle call denied
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.CONNECT) {
+    // handle call connected
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DISCONNECT) {
+    // handle call disconnected
+  }
 });
 
 // Connect Stream
 stream.connect();
+```
+
+  </TabItem>
+</Tabs>
+
+### Setup Video State
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// data will store the video call state, we will only use this to read the video call state
+// and update the UI accordingly
+let data = CONSTANTS.VIDEO.INITIAL_DATA;
+
+// setData is a function that will update the video call state
+const setData = (fn) => {
+  data = fn(data);
+};
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// state to handle current video call data
+const [data, setData] = useState(CONSTANTS.VIDEO.INITIAL_DATA);
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// data will store the video call state, we will only use this to read the video call state
+// and update the UI accordingly
+let data = CONSTANTS.VIDEO.INITIAL_DATA;
+
+// setData is a function that will update the video call state
+const setData = (fn) => {
+  data = fn(data);
+};
 ```
 
   </TabItem>
@@ -280,6 +341,8 @@ stream.connect();
   </TabItem>
 </Tabs>
 
+
+
 ### Request Video Call
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -311,204 +374,64 @@ await aliceVideoCall.request([recipientWallet]); // see supported wallet standar
   </TabItem>
 </Tabs>
 
-### Incoming Video Call
-
-The stream emits `RequestVideo` event when there is an incoming video call request. The stream data will have the `address` of the incoming caller which is recommended to be stored in a variable, which will be used to accept or deny the call. Stream also emits events for other video call operation, visit [Stream Section](/docs/video/build/stream-video/) for more details
+### Manage Video Call
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```jsx
-// Listen to the stream for incoming video call request
-stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
-  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
-    // RequestVideo Event is fired when there is an incoming video call request
-    // you can show an UI modal to accept or reject the call once this event is triggered
-    // it is recommended to store the incoming caller address in a state that is received
-    // let incomingCallerAddress = data.peerInfo.address;
-  }
-});
-```
-
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}}>
-```jsx
-// Listen to the stream for incoming video call request
-stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
-  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
-    // RequestVideo Event is fired when there is an incoming video call request
-    // you can show an UI modal to accept or reject the call once this event is triggered
-    // it is recommended to store the incoming caller address in a state that is received
-    // let incomingCallerAddress = data.peerInfo.address;  
-  }
-});
-```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-```jsx
-// Listen to the stream for incoming video call request
-stream.on(CONSTANTS.STREAM.VIDEO, async (data) => {
-  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
-    // RequestVideo Event is fired when there is an incoming video call request
-    // you can show an UI modal to accept or reject the call once this event is triggered
-    // it is recommended to store the incoming caller address in a state that is received
-    // let incomingCallerAddress = data.peerInfo.address;  
-  }
-});
-```
-
-  </TabItem>
-</Tabs>
-
-### Accepting an Incoming Request
-
-After receiving a video call request, you can show a sort of incoming call UI. Now it's time to accept the request for a video call on the receiver's end. The `approve()` optionally accepts the `address` of the incoming caller, which we received from the stream listener. If no address is passed to `approve()` method, it approves the first incoming request.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```jsx
-// Accepting the request, you can also pass the address that we received from the stream listener.
+// Approve the request, you can also pass the address that we received from the stream listener.
 // aliceVideoCall.approve(address?);
 await aliceVideoCall.approve();
-```
 
-  </TabItem>
-    <TabItem value="react" attributes={{className: "codetab react"}}>
-
-```jsx
-// Accepting the request, you can also pass the address that we received from the stream listener.
-// aliceVideoCall.approve(address?);
-await aliceVideoCall.approve();
-```
-
-  </TabItem>
-    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-
-```jsx
-// Accepting the request, you can also pass the address that we received from the stream listener.
-// aliceVideoCall.approve(address?);
-await aliceVideoCall.approve();
-```
-
-  </TabItem>
-</Tabs>
-
-### Denying an Incoming Request
-
-After receiving a video call request, you can show a sort of incoming call UI. Now to deny the request for a video call on the receiver's end, you can use `deny()` method which optionally accepts the `address` of the incoming caller, which we received from the stream listener. If no address is passed to `deny()` method, it denies the first incoming request.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```jsx
-// deny the request, you can also pass the address that we received from the stream listener.
+// or deny the request, you can also pass the address that we received from the stream listener.
 // aliceVideoCall.deny(address?);
 await aliceVideoCall.deny();
-```
 
-  </TabItem>
-    <TabItem value="react" attributes={{className: "codetab react"}}>
-
-```jsx
-// deny the request, you can also pass the address that we received from the stream listener.
-// aliceVideoCall.deny(address?);
-await aliceVideoCall.deny();
-```
-
-  </TabItem>
-    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-
-```jsx
-// deny the request, you can also pass the address that we received from the stream listener.
-// aliceVideoCall.deny(address?);
-await aliceVideoCall.deny();
-```
-
-  </TabItem>
-</Tabs>
-
-### Disconnect Call
-
-To disconnect an ongoing call, we use the `disconnect()` method.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```jsx
 // to disconnect the call
 await aliceVideoCall.disconnect();
+
+// to toggle local audio or video
+aliceVideoCall.config({ audio: true, video: false });
+
 ```
 
   </TabItem>
-  <TabItem value="react" attributes={{className: "codetab react"}} >
+    <TabItem value="react" attributes={{className: "codetab react"}}>
+
 ```jsx
+// Approve the request, you can also pass the address that we received from the stream listener.
+// aliceVideoCall.approve(address?);
+await aliceVideoCall.approve();
+
+// or deny the request, you can also pass the address that we received from the stream listener.
+// aliceVideoCall.deny(address?);
+await aliceVideoCall.deny();
+
 // to disconnect the call
 await aliceVideoCall.disconnect();
+
+// to toggle local audio or video
+aliceVideoCall.config({ audio: true, video: false });
 ```
 
   </TabItem>
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
 ```jsx
-// to disconnect the ongoing call
+// Approve the request, you can also pass the address that we received from the stream listener.
+// aliceVideoCall.approve(address?);
+await aliceVideoCall.approve();
+
+// or deny the request, you can also pass the address that we received from the stream listener.
+// aliceVideoCall.deny(address?);
+await aliceVideoCall.deny();
+
+// to disconnect the call
 await aliceVideoCall.disconnect();
-```
 
-  </TabItem>
-</Tabs>
-
-### Toggle Local Audio
-
-After a call is connected, you can toggle your local audio by using the `config()` method.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```jsx
-aliceVideoCall.config({ audio: !data.local.audio });
-```
-
-  </TabItem>
-    <TabItem value="react" attributes={{className: "codetab react"}}>
-
-```jsx
-aliceVideoCall.config({ audio: !data.local.audio });
-```
-
-  </TabItem>
-    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-
-```jsx
-aliceVideoCall.config({ audio: !data.local.audio });
-```
-
-  </TabItem>
-</Tabs>
-### Toggle Local Video
-
-After a call is connected, you can toggle your local Video by using the `config()` method.
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-
-```jsx
-aliceVideoCall.config({ video: !data.local.video });
-```
-
-  </TabItem>
-    <TabItem value="react" attributes={{className: "codetab react"}}>
-
-```jsx
-aliceVideoCall.config({ video: !data.local.video });
-```
-
-  </TabItem>
-    <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
-
-```jsx
-aliceVideoCall.config({ video: !data.local.video });
+// to toggle local audio or video
+aliceVideoCall.config({ audio: true, video: false });
 ```
 
   </TabItem>

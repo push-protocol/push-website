@@ -1,56 +1,57 @@
 ---
-id: docs-video-develop-stream-video
-title: Stream Video
+id: docs-video-develop-setup-video-stream
+title: Setup Video Stream
 hide_title: true
-slug: ./stream-video
+slug: ./setup-video-stream
 displayed_sidebar: pushVideoSidebar
 sidebar_position: 4
 image: "/assets/docs/previews/docs_video_develop--stream_video.png"
 ---
 
-# Stream API overview
+# Setup video stream overview
 
-These APIs enable you to receive incoming video call request and other video events in real time without polling the API. Push Video achieves this by the use of sockets.
+Video stream is a real-time communication protocol, setting up a video stream is the first step to manage video calls. This section covers everything you need to do to set up a video stream.
 
 <head>
-  <title>Stream Video | Push Video | Push Documentation</title>
+  <title>Setup Video Stream | Push Video | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Details from "@theme/Details";
 
-## Prerequisites
-
-Before being able to Initialize Stream,
-
-- You need to initialize `User`. If you haven't done that yet, please refer to [Initializing User](/docs/video/build/initialize-user) to learn how to do that.
-
-## Stream API
+## Video stream API
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-import { CONSTANTS, TYPES } from '@pushprotocol/restapi';
-
-// userAlice.initStream(listen, {options?})
-// Initial setup
-const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO], {
-  filter?: {
-    channels?: ['*'], // pass in specific channels to only listen to those
-    chats?: ['*'], // pass in specific chat ids to only listen to those
-  },
-  connection?: {
-    retries?: 3, // number of retries in case of error
-  },
-  raw?: false // enable true to show all data
-})
+// Initialize stream to listen for events:
+const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]})
 
 // Listen for video events
-await stream.on(CONSTANTS.STREAM.VIDEO, (data: TYPES.VIDEO.EVENT) => {
-  console.log(data)
-})
+// Import { TYPES, CONSTANTS } from @pushprotocol/restapi
+stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
+  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+    // handle call request
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.APPROVE) {
+    // handle call approve
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DENY) {
+    // handle call denied
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.CONNECT) {
+    // handle call connected
+  }
+
+  if (data.event === CONSTANTS.VIDEO.EVENT.DISCONNECT) {
+    // handle call disconnected
+  }
+});
 
 // Connect stream, Important to setup up listen first
 stream.connect()
@@ -64,7 +65,7 @@ stream.connect()
 
 ---
 
-### Stream parameters
+### Video stream parameters
 
 | Param      | Type                         | Sub-Type           | Default | Remarks                                                                                                                                                                    |
 | ---------- | ---------------------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,7 +80,7 @@ stream.connect()
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-### Stream listen events
+### Stream video listen events
 
 | Listen events                 | When is it triggered?                        |
 | ----------------------------- | -------------------------------------------- |
