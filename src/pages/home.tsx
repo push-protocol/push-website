@@ -190,17 +190,18 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <HeroButton>
                     <StarColoredIcon />
-                    <H2 fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
+                    <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
                     <BsArrowRight />
                 </HeroButton>
 
                 <HeroText>
-                    <H1 zIndex="2" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
+                    <H1 zIndex="2" fontSize='58px' fontWeight="700" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
 
                     <TextSpan
                       // margin='20px 0px 40px 0'
                       color="rgba(255, 255, 255, 1)"
                       zIndex="2"
+                      fontSize='21px'
                     >
                         {/* {t("home.hero.description")} */}
                         Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
@@ -259,7 +260,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ItemV
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
                           <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
                           Push enables web3 native notification alerts between wallets.
                       </H2>
@@ -327,7 +328,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
                           <B color='#fff'>Push Chat is the leading decentralized, </B> 
                            web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming <TagItem>COMING SOON</TagItem>
                       </H2>
@@ -408,19 +409,17 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                              color="#D98AEC"
                              textTransform="uppercase"
                              fontSize="14px"
-                             font-weight="700"
-                             line-height="130%"
-                             letter-spacing="0.56px" 
+                             fontWeight="700"
+                             lineHeight="130%"
+                             letterSpacing="0.56px" 
                              fontFamily="FK Grotesk Neue"
                              >{item.title}</H2>
                           
                           <H2 color="#FFF"
-                              font-size="30px"
-                              font-style="normal"
-                              font-weight="500"
+                              fontSize={isMobile ? '24px' : '30px'}
+                              fontWeight="500"
                               margin="8px 0px"
                               fontFamily="FK Grotesk Neue"
-                              lineHeight="130%"
                               >{item.subtitle}</H2>
 
                           <H3 color="#FFF"
@@ -431,13 +430,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               lineHeight="130%"
                               margin="8px 0px">{item.content}</H3>
 
-                        <SlideLink
+                              <SlideLink
                                   href={item.link}
                                   title={'new'}
                                   target="_self"
                                   padding="0px 0px"
                                   fontSize="16px"
-                                  fontWeight="400"
+                                  fontWeight="500"
                                   letterSpacing="-0.03em"
                                   lineHeight="26px"
                                   className='button'
@@ -496,9 +495,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <ItemH>
               <ItemH justifyContent="flex-start" alignItems="center" gap='6px'>
                 <StarSolidIcon />
-                <ResponsiveH2
+                <H2
                   color="#D98AEC"
-                  fontSize="21px"
+                  fontSize={"21px"}
                   fontWeight="500"
                   letterSpacing="-0.02em"
                   lineHeight="130%"
@@ -507,10 +506,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   // width="50%"
                 >
                   Push Blog
-                </ResponsiveH2>
+                </H2>
               </ItemH>
 
-              <ItemH justifyContent="flex-end">
+              {!isMobile && (<ItemH justifyContent="flex-end">
                 <A
                   href="/blog"
                   title="Exlore all articles"
@@ -530,15 +529,38 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   Explore Blog
                   <BsArrowRight className="anchorSVGlink" />
                 </A>
-              </ItemH>
+              </ItemH>)}
             </ItemH>
 
             <H2
-                fontSize="30px"
+                fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
                 margin="4px 0 0 0"
+                fontWeight="500"
                 fontFamily="FK Grotesk Neue"
+                lineHeight="120%"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
+
+             {isMobile && (<A
+                  href="/blog"
+                  title="Exlore all articles"
+                  hoverBackground="transparent"
+                  hover="transparent"
+                  background="transparent"
+                  filter="none"
+                  color="#fff"
+                  borderRadius="0"
+                  padding="0px 0px"
+                  fontSize="16px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
+                  lineHeight="142%"
+                  fontFamily="FK Grotesk Neue"
+                  margin={'24px 0 0 0'}
+                >
+                  Explore Blog
+                  <BsArrowRight className="anchorSVGlink" />
+                </A>)}
             
             <RecentBlogPosts recentPosts={recentPosts} />
 
@@ -1757,9 +1779,12 @@ const HeroButton = styled(Button)`
 const SlideLink = styled(A)`
 .anchorSVGlink {
   color: #fff;
+}
 
-  &:hover {
-    color: D98AEC;
+&:hover {
+
+  .anchorSVGlink {
+    color: #D98AEC;
   }
 }
   @media ${device.tablet} {
