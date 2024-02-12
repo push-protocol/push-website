@@ -215,8 +215,8 @@ const Container = styled.div`
     
     @media ${device.mobileL} {
         display: ${(props) => props.hideOnMobile && 'none !important'};
-        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
-        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? 'auto !important' : height ? height : 'auto'};
+        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
+        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
         width: 100% !important;
     }
 

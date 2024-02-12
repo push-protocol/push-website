@@ -196,7 +196,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </HeroButton>
 
                 <HeroText>
-                    <H1 zIndex="2" fontSize='58px' fontWeight="700" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
+                    <H1 zIndex="2" fontSize={isMobile ? '48px' : '58px'} fontWeight="700" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
 
                     <TextSpan
                       // margin='20px 0px 40px 0'
@@ -804,19 +804,33 @@ const HeroAnimation = styled(ItemH)`
 `;
 
 const HeroContent = styled(Content)`
-  // background: red;
   padding: 251px 40px 0px 40px;
-  // padding: 0px 0px;
+
+  media ${device.laptop} {
+    padding: 251px 32px 0px 32px;
+  }
+
+  @media ${device.tablet} {
+    padding: 251px 24px 0px 24px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 251px 16px 0px 16px;
+    box-sizing: border-box;
+  }
 
 `;
 
 const HeroText = styled.div`
     margin: 32px 0px;
+    @media ${device.mobileL} {
+      width: 100%;
+    }
+
 `;
 
 const HeroSection = styled(Section)`
     max-height: 1200px;
-    // background-color: green;
 `;
 
 const HeroItem = styled(ItemV)`
@@ -826,8 +840,9 @@ const HeroItem = styled(ItemV)`
     // margin: ${(props) => props.margin || "0px"};
   }
 
-  @media ${device.mobileM} {
-    max-width: initial;
+  @media ${device.mobileL} {
+    width: 100%;
+    // max-width: initial;
   }
 `;
 
@@ -930,7 +945,7 @@ const NotificationSection = styled(Section)`
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
       padding: 200px 32px 0px 32px;
     }
 
@@ -938,7 +953,7 @@ const NotificationSection = styled(Section)`
       padding: 200px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
+    @media ${device.mobileL} {
       padding: 200px 16px 0px 16px;
     }
   }
@@ -952,7 +967,7 @@ const ChatSection = styled(Section)`
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
       padding: 200px 32px 0px 32px;
     }
 
@@ -960,7 +975,7 @@ const ChatSection = styled(Section)`
       padding: 200px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
+    @media ${device.mobileL} {
       padding: 200px 16px 0px 16px;
     }
   }
@@ -974,7 +989,7 @@ const SlideSection = styled(Section)`
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
       padding: 200px 32px 0px 32px;
     }
 
@@ -982,7 +997,7 @@ const SlideSection = styled(Section)`
       padding: 200px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
+    @media ${device.mobileL} {
       padding: 200px 16px 0px 16px;
     }
   }
