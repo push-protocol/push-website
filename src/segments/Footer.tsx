@@ -37,7 +37,7 @@ function Footer() {
     <StyledFooter>
       <FooterSection
         id="footer"
-        background="#121315"
+        background="#0D0D0F"
         padding="70px 0 0 0"
       >
         <Content

@@ -255,6 +255,7 @@ const H2Text = styled(H2)`
     color: #FFF;
     line-height: 130%;
     white-space: pre;
+    font-weight: 400;
 
     @media ${device.mobileL} {
         white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};

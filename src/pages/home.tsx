@@ -111,6 +111,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
 
   const onClickViewMoreTeamMembers = (e) => {
     e.preventDefault();
@@ -403,7 +404,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       />
 
 
-                      <ItemV alignItems='flex-start' margin="64px 0 0 0">
+                      <ItemV alignItems='flex-start' margin="64px auto 0 0" maxWidth={isTablet ? "80%" : "70%"}>
                           <H2 
                              textAlign='left'
                              color="#D98AEC"
@@ -569,7 +570,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* BACKED BY SECTION */}
         <BackedBySection
-          // background={GLOBALS.COLORS.BG_DARK}
+          background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
             id="integratePush"
@@ -578,7 +579,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            // background={GLOBALS.COLORS.BG_LIGHT}
+            background={GLOBALS.COLORS.BG_LIGHT}
+            borderRadius={`${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
             // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
@@ -992,6 +994,13 @@ const SlideItem = styled(ItemH)`
    border-radius: 32px;
    border: 1px solid rgba(255, 255, 255, 0.10);
    backdrop-filter: blur(60px);
+   max-height: 750px;
+   min-height: 750px;
+
+   @media ${device.laptop} {
+     min-height: auto;
+     max-height: auto;
+   }
 
    img {
     margin: 0;
