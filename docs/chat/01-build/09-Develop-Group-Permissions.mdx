@@ -68,3 +68,56 @@ const groupPermissions = await userAlice.chat.group.permissions(chatid);
 | `rules` | `object`  | Moderation rules of the group                         |
 
 </Details>
+
+## Modify Roles of members in a Group
+
+This API can be used to change the roles of members within a group. By altering roles, you can adjust their permissions and access within the group.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// userAlice.chat.group.modify(chatid,{options})
+const makeAdmins = await userAlice.chat.group.modify(chatid, {
+  role: "MEMBER", // Specify the new role here: "ADMIN" or "MEMBER"
+  accounts: [bobAddress], // Array of wallet addresses for the members whose roles are being changed
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Get group permissions parameters
+
+| Param       | Type               | Subtype             | Default | Remarks                                                                                        |
+| ----------- | ------------------ | ------------------- | ------- | ---------------------------------------------------------------------------------------------- |
+| _`chatId`_  | `string`           | -                   | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group. |
+| _`options`_ | `Object`           | -                   | -       | Configuration object for specifying role changes.                                              |
+| -           | `options.role`     | `admin` or `member` | -       | The new role to assign. Valid options: `admin` or `member`.                                    |
+| -           | `options.accounts` | `string[]`          | -       | Array of wallet addresses representing the members whose roles you want to modify.             |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+    "groupName": "Testing",
+    "groupDescription": "test",
+    "groupImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAvklEQVR4AcXBsW2FMBiF0Y8r3GQb6jeBxRauYRpo4yGQkMd4A7kg7Z/GUfSKe8703fKDkTATZsJsrr0RlZSJ9r4RLayMvLmJjnQS1d6IhJkwE2bT13U/DBzp5BN73xgRZsJMmM1HOolqb/yWiWpvjJSUiRZWopIykTATZsJs5g+1N6KSMiO1N/5DmAkzYTa9Lh6MhJkwE2ZzSZlo7xvRwson3txERzqJhJkwE2bT6+JhoKTMJ2pvjAgzYSbMfgDlXixqjH6gRgAAAABJRU5ErkJggg==",
+    "meta": null,
+    "scheduleAt": null,
+    "scheduleEnd": null,
+    "rules": {},
+    "status": null,
+    "isPublic": true,
+    "groupType": "default",
+    "chatId": "b575dc063b8bcf88962c6b91b83caa4d0901146b600a6c770ec0d32c501bfdb1",
+    "groupCreator": "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    "encryptedSecret": null,
+    "sessionKey": null
+}
+
+```
+
+</Details>
