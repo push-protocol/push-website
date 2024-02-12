@@ -20,7 +20,8 @@ Conditional gating allows you to define rules for the members of the group for d
 - **Creating game theories by combining one or multiple conditions** - ie: you need 1 token on any chain to join the group but sending messages require you to hold 1000 tokens or 1 NFT or 20 POAPs, etc
 
 <head>
-  <title>{"Conditional Gating of Group | Push Chat | Push Documentation"}
+  <title>
+    {"Conditional Gating of Group | Push Chat | Push Documentation"}
   </title>
 </head>
 
@@ -84,17 +85,17 @@ Criteria object supports multiple access control protocols which can have differ
 
 #### When using type - `PUSH`
 
-| Param         | Type                                                    | Subtype                              | Default | Remarks                                                                                                                                                                                                                                                                                                                                                                          ||
+| Param         | Type                                                    | Subtype                              | Default | Remarks                                                                                                                                                                                                                                                                                                                                                                          |                 |
 | ------------- | ------------------------------------------------------- | ------------------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | `[criteria]`  | `object`                                                | -                                    | -       | -                                                                                                                                                                                                                                                                                                                                                                                | Criteria object |
-| `type`        | `string`                                                | -                                    | -       | Define the `type` of the criteria, needs to be `PUSH` for below category, subcategory to be applicable                                                                                                                                                                                                                                                                           | |
-| `category`    | `string` - can be `ERC20`, `ERC721` or `CustomEndpoint` | -                                    | -       | Defines the category of the criteria, `ERC20` means ERC-20 or normal token, `ERC721` means ERC-721 or NFT tokens, `CustomEndpoint` means a URL will be provided that results in 200 OK                                                                                                                                                                                           | |
-| `subcategory` | `string`                                                | -                                    | -       | Further narrows down the condition that you want to run. For `ERC20` or `ERC721` - supported conditions are `holder` or `owner` which means that the criteria will check if a wallet is owner or holder. For `CustomEndpoint`, the subcategory is `GET` or `POST` depending upon what HTTP request you want to use                                                               |  |  
-| `data`        | `object`                                                | -                                    | -       | define the data to be passed for checking conditions of criteria                                                                                                                                                                                                                                                                                                                 ||
-| -             | `contract`                                              | `string`                             | -       | Only used for `ERC20` or `ERC721` category. Remember to define the contract in chain agnostic fashion. **`{chain_standard}:{chain_id}:{contract_address}`**, for example: `eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE` points to $PUSH token on Ethereum mainnet while `eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1` points to $PUSH token on Polygon mainnet ||
-| -             | `comparison`                                            | `string` - supports `<=`, `>=`, `==` | -       | Only used for `ERC20` or `ERC721` category. Define what comparison to use while comparing the data                                                                                                                                                                                                                                                                               ||
-| -             | `amount`                                                | `number`                             | -       | Only used for `ERC20` or `ERC721` category. Define the number to be passed in the amount                                                                                                                                                                                                                                                                                         ||
-| -             | `url`                                                   | `string`                             | -       | Only used for `CustomEndpoint` category. Pass in the URL that when polled will return 200 OK for success. API url are automatically appended with `{{user_address}}/checkAccess` while checking access                                                                                                                                                                           ||
+| `type`        | `string`                                                | -                                    | -       | Define the `type` of the criteria, needs to be `PUSH` for below category, subcategory to be applicable                                                                                                                                                                                                                                                                           |                 |
+| `category`    | `string` - can be `ERC20`, `ERC721` or `CustomEndpoint` | -                                    | -       | Defines the category of the criteria, `ERC20` means ERC-20 or normal token, `ERC721` means ERC-721 or NFT tokens, `CustomEndpoint` means a URL will be provided that results in 200 OK                                                                                                                                                                                           |                 |
+| `subcategory` | `string`                                                | -                                    | -       | Further narrows down the condition that you want to run. For `ERC20` or `ERC721` - supported conditions are `holder` or `owner` which means that the criteria will check if a wallet is owner or holder. For `CustomEndpoint`, the subcategory is `GET` or `POST` depending upon what HTTP request you want to use                                                               |                 |
+| `data`        | `object`                                                | -                                    | -       | define the data to be passed for checking conditions of criteria                                                                                                                                                                                                                                                                                                                 |                 |
+| -             | `contract`                                              | `string`                             | -       | Only used for `ERC20` or `ERC721` category. Remember to define the contract in chain agnostic fashion. **`{chain_standard}:{chain_id}:{contract_address}`**, for example: `eip155:1:0xf418588522d5dd018b425E472991E52EBBeEEEEE` points to $PUSH token on Ethereum mainnet while `eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1` points to $PUSH token on Polygon mainnet |                 |
+| -             | `comparison`                                            | `string` - supports `<=`, `>=`, `==` | -       | Only used for `ERC20` or `ERC721` category. Define what comparison to use while comparing the data                                                                                                                                                                                                                                                                               |                 |
+| -             | `amount`                                                | `number`                             | -       | Only used for `ERC20` or `ERC721` category. Define the number to be passed in the amount                                                                                                                                                                                                                                                                                         |                 |
+| -             | `url`                                                   | `string`                             | -       | Only used for `CustomEndpoint` category. Pass in the URL that when polled will return 200 OK for success. API url are automatically appended with `{{user_address}}/checkAccess` while checking access                                                                                                                                                                           |                 |
 
 ## Use Case Example - Token gated community
 
@@ -306,85 +307,99 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
 Below is an advance version of gated controls that are applied to both `entry` to the group as well as sending `chat` in the group.
 
 ```typescript
-  // We are going to create a group that is:
-  // Private - All conversations in this group is encrypted and visible only to members of the group
-  // Gated entry by either of two rules
-  // Gated entry - Rule 1 - It takes 10 $XYZ token on Ethereum or on Polygon to join the group
-  // Gated chat by rule of having $1000 XYZ on Ethereum token to allow sending chat in the group
-  const myTokenGatedGroup = await userAlice.chat.group.create('BRB Chat', {
-    description: 'This is your DAO community native web3 chat', // provide short description of group
-    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
-    members: ['0x123...', '0xABC...', 'eip155:0x754...'], // see types of recipient to learn more
-    admins: ['nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528'], // NFT addresses are supported as well
-    private: true, // ensures chat within group is encrypted and is only visible to members of the group
-    rules: { // define rules to gate different permissions of the group, ie: joining group or sending messages
-      "entry": { // define condition for joining the group
-        "conditions": { // set of all conditions that should be fulfilled to join the group
-          "any": [
-            {
-              "any": [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-                { // define criteria 1
-                  "type": "PUSH",
-                  "category": "INVITE",
-                  "subcategory": "DEFAULT",
-                  "data": {
-                      "inviterRoles": [
-                          "ADMIN",
-                          "OWNER"
-                      ]
-                  }
+// We are going to create a group that is:
+// Private - All conversations in this group is encrypted and visible only to members of the group
+// Gated entry by either of two rules
+// Gated entry - Rule 1 - It takes 10 $XYZ token on Ethereum or on Polygon to join the group
+// Gated chat by rule of having $1000 XYZ on Ethereum token to allow sending chat in the group
+const myTokenGatedGroup = await userAlice.chat.group.create("BRB Chat", {
+  description: "This is your DAO community native web3 chat", // provide short description of group
+  image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+  members: ["0x123...", "0xABC...", "eip155:0x754..."], // see types of recipient to learn more
+  admins: [
+    "nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528",
+  ], // NFT addresses are supported as well
+  private: true, // ensures chat within group is encrypted and is only visible to members of the group
+  rules: {
+    // define rules to gate different permissions of the group, ie: joining group or sending messages
+    entry: {
+      // define condition for joining the group
+      conditions: {
+        // set of all conditions that should be fulfilled to join the group
+        any: [
+          {
+            any: [
+              // set decider to 'any', if 'and' then all rules need to be fulfilled
+              {
+                // define criteria 1
+                type: "PUSH",
+                category: "INVITE",
+                subcategory: "DEFAULT",
+                data: {
+                  inviterRoles: ["ADMIN", "OWNER"],
                 },
-                { // define criteria 2
-                  type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                  data: { // define the data check
-                    "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                    "comparison": ">=", // what comparison needs to pass
-                    "amount": 10, // amount that needs to passed
-                    "decimals": 18, // the decimals for the contract
-                  }
+              },
+              {
+                // define criteria 2
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: {
+                  // define the data check
+                  contract:
+                    "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  comparison: ">=", // what comparison needs to pass
+                  amount: 10, // amount that needs to passed
+                  decimals: 18, // the decimals for the contract
                 },
-                { // define criteria 3
-                  type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
-                  data: { // define the data check
-                    "contract": "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
-                    "comparison": ">=", // what comparison needs to pass
-                    "amount": 10, // amount that needs to passed
-                    "decimals": 18, // the decimals for the contract
-                  }
-                }
-              ]
-            }
-          ]
-        }
+              },
+              {
+                // define criteria 3
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: {
+                  // define the data check
+                  contract:
+                    "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                  comparison: ">=", // what comparison needs to pass
+                  amount: 10, // amount that needs to passed
+                  decimals: 18, // the decimals for the contract
+                },
+              },
+            ],
+          },
+        ],
       },
-      "chat": {
-        "conditions": { // define condition for sending message in the group
-          "all": [
-            {
-              "any": [ // set decider to 'any', if 'and' then all rules need to be fulfilled
-                { // define criteria 1
-                  "type": "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  "category": "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  "subcategory": "holder", // define if you are checking 'holder' or 'owner'
-                  "data": { // define the data check
-                    "contract": "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                    "comparison": ">=", // what comparison needs to pass
-                    "amount": 1000, // amount that needs to passed
-                    "decimals": 18, // the decimals for the contract
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      }
-    }
-  });
-
+    },
+    chat: {
+      conditions: {
+        // define condition for sending message in the group
+        all: [
+          {
+            any: [
+              // set decider to 'any', if 'and' then all rules need to be fulfilled
+              {
+                // define criteria 1
+                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                data: {
+                  // define the data check
+                  contract:
+                    "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  comparison: ">=", // what comparison needs to pass
+                  amount: 1000, // amount that needs to passed
+                  decimals: 18, // the decimals for the contract
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
+});
 ```
 
 ## NFT gated group example
@@ -404,7 +419,9 @@ console.log(
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 
 // Creating your token gated community
 const createTokenGatedGroup = await userAlice.chat.group.create(
@@ -463,6 +480,515 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
 console.log("Chat created successfully!", createTokenGatedGroup);
 ```
 
-## NFT gated group github example repo
+### NFT gated group github example repo
 
 [Follow this token gated example github](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/token-gated-chat "Token gated example using Push Chat") repo to see and play with the API.
+
+## Guild gated group example
+
+Below are the examples of how you can create gated group chats for guilds at `guild.xyz` using `GUILD` type in criteria.
+
+### Examples for gating entry to the group
+
+#### Example 1
+
+Allow a user to join the group if they have atleast one role in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group if they have any one of the guild roles (atleast one role).
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
+
+#### Example 2
+
+Allow a user to join the group only if they have all the roles in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group only if they have all the 3 of the guild roles.
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
+
+#### Example 3
+
+Say you want to allow entry only for users that have specific roles in the guild, you can do that by passing the role name in the `role` key of the `data` object.
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "111070", // id of the specific role in guild that you want to allow
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
+
+### Examples for gating entry and chat permissions to the group
+
+#### Example 1
+
+Allow a user to join and send messages in the group if they have atleast one role in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group if they have any one of the guild roles (atleast one role).
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+      chat: {
+        // chatting permission is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow user to send message in the group
+            {
+              any: [
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
+
+#### Example 2
+
+Allow a user to join and send messages in the group only if they have all the roles in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group only if they have all the 3 of the guild roles.
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+      chat: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
+
+#### Example 3
+
+Say you want to allow entry and messaging capability only for users that have specific roles in the guild, you can do that by passing the role name in the `role` key of the `data` object.
+
+```js
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
+
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+console.log(
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+);
+
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+
+// Creating your guild gated community
+const createGuildGatedGroup = await userAlice.chat.group.create(
+  "Guild Community",
+  {
+    description: "This is a community chat gated by guild roles", // provide short description of group
+    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    members: [], // not needed, rules define this, can omit
+    admins: [], // can  adds admins if needed
+    private: false, // in our case, we are making a public group
+    rules: {
+      entry: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // criteria 1
+                  // this criteria lets admins or owners invite anyone
+                  type: "PUSH",
+                  category: "INVITE",
+                  subcategory: "DEFAULT",
+                  data: {
+                    inviterRoles: ["ADMIN", "OWNER"],
+                  },
+                },
+
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "", // in our case, we are allowing if user has specific role so no comparison needed
+                    role: "111070", // id of the specific role in guild that you want to allow
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+      chat: {
+        // entry is based on conditions
+        conditions: {
+          any: [
+            // any of the decider should allow entry
+            {
+              any: [
+                {
+                  // define criteria 2
+                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: "ROLES", // define it's ROLES for GUILD groups
+                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  data: {
+                    id: "62154", // your guild id
+                    comparison: "", // in our case, we are allowing if user has specific role so no comparison needed
+                    role: "111070", // id of the specific role in guild that you want to allow
+                  },
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+);
+
+console.log("Chat created successfully!", createGuildGatedGroup);
+```
