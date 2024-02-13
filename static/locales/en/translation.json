@@ -110,6 +110,109 @@
         "image-alt": "Illustration showing Push DAO"
       }
     },
+    "notification-section": {
+      "header": {
+        "main-text": "Push provides a robust and decentralized push notification protocol.",
+        "other-text": "Push enables web3 native notification alerts between wallets."
+      },
+      "box1": {
+        "title": "Web3 Native",
+        "imagealt": "Powered by Push Protocol - Web Native Image",
+        "imagetitle": "Powered by Push Protocol - Web Native Image"
+      },
+      "box2": {
+        "title": "Cross-chain \nNotifications",
+        "imagealt": "Powered by Push Protocol - Cross-Chain Notifications Image",
+        "imagetitle": "Powered by Push Protocol - Cross-Chain Notifications Image"
+      },
+      "box3": {
+        "title": "Customize Notification \nPreferences",
+        "imagealt": "Powered by Push Protocol - Customize Notification Preferences Image",
+        "imagetitle": "Powered by Push Protocol - Customize Notification Preferences Image"
+      },
+      "box4": {
+        "title": "Lightweight Code with Rapid API Integration",
+        "imagealt": "Powered by Push Protocol - Lightweight Code with Rapid API Integration Image",
+        "imagetitle": "Powered by Push Protocol - Lightweight Code with Rapid API Integration Image",
+        "bodyText": "<4 mins",
+        "buttonText": "Start building"
+      },
+      "box5": {
+        "title": "Interoperable \nNotifications"
+      },
+      "box6": {
+        "title": "Anti-Spam",
+        "iconalt": "Powered by Push Protocol - Anti-Spam Image",
+        "icontitle": "Powered by Push Protocol - Anti-Spam Image"
+      },
+      "box7": {
+        "title": "Push Snap",
+        "footerText": "Receive Notifications \nin MetaMask"
+      },
+      "box8": {
+        "title": "Increase \nEngagement",
+        "imagealt": "Powered by Push Protocol - Increase Engagement Image",
+        "imagetitle": "Powered by Push Protocol - Increase Engagement Image"
+      }
+    },
+    "chat-section": {
+      "header": {
+        "main-text": "Push Chat is the leading decentralized,",
+        "other-text": "web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming "
+      },
+      "box1": {
+        "title": "Share Images, Gifs, \nand Reactions",
+        "imagealt": "Powered by Push Protocol - Share Images Image",
+        "imagetitle": "Powered by Push Protocol - Share Images Image"
+      },
+      "box2": {
+        "title": "Chat Requests",
+        "subheader": "PRIVATE AND ANTI SPAM",
+        "iconalt": "Powered by Push Protocol - Chat Requests Image",
+        "icontitle": "Powered by Push Protocol - Chat Requests Image"
+      },
+      "box3": {
+        "title": "Secure, Instant, and \nVerifiable Payments"
+      },
+      "box4": {
+        "title": "Lightweight Code with Rapid API Integration",
+        "imagealt": "Powered by Push Protocol - Lightweight Code Image",
+        "imagetitle": "Powered by Push Protocol - Lightweight Code Image",
+        "bodyText": "<2 mins",
+        "buttonText": "Start building"
+      },
+      "box5": {
+        "title": "Hyperscalable \nGroups",
+        "afterMessage": "*Other Chat Apps: 1024 Members"
+      },
+      "box6": {
+        "title": "Plug and Play \nChat Components",
+        "imagealt": "Powered by Push Protocol - Plug and Play Image",
+        "imagetitle": "Powered by Push Protocol - Plug and Play Image"
+      },
+      "box7": {
+        "title": "Chain Agnostic",
+        "subheader": "SUPPORTS ALL EVM CHAINS",
+        "iconalt": "Powered by Push Protocol - Chain Agnostic Image",
+        "icontitle": "Powered by Push Protocol - Chain Agnostic Image"
+      },
+      "box8": {
+        "imagealt": "Powered by Push Protocol - Create Token Image",
+        "imagetitle": "Powered by Push Protocol - Create Token Image",
+        "footerText": "Create Token, NFT, \nGeo Gated Groups"
+      },
+      "box9": {
+        "title": "E2E Encryption",
+        "subheader": "END-TO-END (E2EE)",
+        "iconalt": "Powered by Push Protocol - E2E Encryption Image",
+        "icontitle": "Powered by Push Protocol - E2E Encryption Image"
+      },
+      "box10": {
+        "title": "Supports any \nWeb3 Standard",
+        "imagealt": "Powered by Push Protocol - Web3 standard Image",
+        "imagetitle": "Powered by Push Protocol - Web3 standard Image"
+      }
+    },
     "grow-section": {
       "image-alt": "Illustration showing $PUSH tokens",
       "image-title": "Use the Push token to grow",

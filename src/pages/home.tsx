@@ -262,8 +262,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       maxWidth = {'849px'}
                       margin = '0px auto 72px auto'>
                       <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
-                          <B color='#fff'>Push provides a robust and decentralized push notification protocol. </B> 
-                          Push enables web3 native notification alerts between wallets.
+                          <B color='#fff'>{t("home.notification-section.header.main-text")} </B> 
+                          {t("home.notification-section.header.other-text")}
                       </H2>
                   </ItemV>
 
@@ -330,8 +330,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       margin = '0px auto 72px auto'
                       flexDirection = 'row'>
                       <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
-                          <B color='#fff'>Push Chat is the leading decentralized, </B> 
-                           web3 native chat protocol with user friendly features like group chat, video calls, spaces and streaming <TagItem>COMING SOON</TagItem>
+                          <B color='#fff'>{t("home.chat-section.header.main-text")} </B> 
+                          {t("home.chat-section.header.other-text")}
+                           <TagItem>COMING SOON</TagItem>
                       </H2>
                   </ItemV>
 

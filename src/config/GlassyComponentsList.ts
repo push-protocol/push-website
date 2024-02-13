@@ -1,3 +1,4 @@
+
 export const GridComponentsNotificationList = {
     first: [
         {
@@ -5,31 +6,17 @@ export const GridComponentsNotificationList = {
                 id: 'native',
                 height: '147px',
                 padding: '24px',
-                hideOnMobile: true 
+                hideonmobile: true 
             },
             header: {
-                title: 'Web3 Native',
-            //     tags: [
-            //         { title: 'Smart Contract',
-            //           background: '#D98AEC',
-            //           color: '#0D0D0F',
-            //           border: '1px solid rgba(255, 255, 255, 0.05)'
-            //         },
-            //         { title: 'Gasless',
-            //           color: '#635F7C',
-            //           border: '1px solid #343244'
-            //         },
-            //         { title: 'Off-Chain',
-            //           color: '#635F7C',
-            //           border: '1px solid #343244'
-            //         }
-            //       ],
-                  align: 'left'
+                title: 'home.notification-section.box1.title',
+                align: 'left'
             }, 
             body: {
                 type: 'image',
                 imagesrc: 'notifs/web-native',
-                alt: 'Cross-chain Notifications'
+                imagealt: 'home.notification-section.box1.imagealt',
+                imagetitle: 'home.notification-section.box1.imagetitle'
             }
         },
         {
@@ -37,16 +24,17 @@ export const GridComponentsNotificationList = {
                 id: 'cross-chain',
                 height: '169px',
                 padding: '24px',
-                hideOnMobile: false 
+                hideonmobile: false 
             },
             header: {
-                title: 'Cross-chain \nNotifications',
+                title: 'home.notification-section.box2.title',
                 align: 'left'
             }, 
             body: {
                 type: 'image',
                 imagesrc: 'notifs/cross-chain',
-                alt: 'Cross-chain Notifications'
+                imagealt: 'home.notification-section.box2.imagealt',
+                imagetitle: 'home.notification-section.box2.imagetitle'
             }
         },
         {
@@ -54,16 +42,17 @@ export const GridComponentsNotificationList = {
                 id: 'custom-notif',
                 height: '340px',
                 padding: '24px',
-                hideOnMobile: false 
+                hideonmobile: false 
             },
             header: {
-                title: 'Customize Notification \nPreferences',
+                title: 'home.notification-section.box3.title',
                 align: 'left'
             }, 
             body: {
                 type: 'image',
                 imagesrc: 'notifs/notif',
-                alt: 'Customize Notification Preferences'
+                imagealt: 'home.notification-section.box3.imagealt',
+                imagetitle: 'home.notification-section.box3.imagetitle'
             }
         },
     ],
@@ -73,18 +62,25 @@ export const GridComponentsNotificationList = {
                 id: 'lightweight',
                 height: '478px',
                 padding: '24px',
-                hideOnMobile: false
+                hideonmobile: false,
+                link: {
+                    url: 'https://push.org',
+                    linktitle: 'Lightweight Code with Rapid API Integration'
+                },
+
             },
             header: {
-                title: 'Lightweight Code with Rapid API Integration',
+                title: 'home.notification-section.box4.title',
                 align: 'center',
             },
-            body:{
+            body: {
                 type: 'codeblock',
-                bodyText: '<4 mins',
-                buttonText: 'Start Building',
+                bodyText: 'home.notification-section.box4.bodyText',
+                buttonText: 'home.notification-section.box4.buttonText',
                 buttonLink: 'https://push.org',
                 codeblockImg: `notifs/lightweight`,
+                imagealt: 'home.notification-section.box4.imagealt',
+                imagetitle: 'home.notification-section.box4.imagetitle'
          }
         },
         {
@@ -93,10 +89,10 @@ export const GridComponentsNotificationList = {
                 height: '202px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/notifs/inter.webp').default,
-                hideOnMobile: true
+                hideonmobile: true
             },
             header: {
-                title: 'Interoperable \nNotifications',
+                title: 'home.notification-section.box5.title',
                 align: 'left',
             }
         }
@@ -107,25 +103,26 @@ export const GridComponentsNotificationList = {
                 id: 'anti-spam',
                 height: '76px',
                 padding: '0px 24px',
-                hideOnMobile: false 
+                hideonmobile: false 
             },
             header: {
-                title: 'Anti-Spam',
+                title: 'home.notification-section.box6.title',
                 align: 'left',
-                illustration: 'notifs/anti-spam'
+                illustration: 'notifs/anti-spam',
+                imagealt: 'home.notification-section.box6.iconalt',
+                imagetitle: 'home.notification-section.box6.icontitle'
             }, 
         },
         {
             config: {
                 id: 'snap',
                 height: '321px',
-                // padding: '24px 0px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/notifs/snap@3x.webp').default,
-                hideOnMobile: false
+                hideonmobile: false
             },
             header: {
-                title: 'Push Snap',
+                title: 'home.notification-section.box7.title',
                 theme: 'hue',
                 align: 'left',
                 icon: 'notifs/starIcon',
@@ -144,7 +141,7 @@ export const GridComponentsNotificationList = {
             //     alt: 'Push Snap'
             // },
             footer: {
-                text: 'Receive Notifications \nin MetaMask'
+                text: 'home.notification-section.box7.footerText'
                 
             }
         },
@@ -154,16 +151,17 @@ export const GridComponentsNotificationList = {
                 height: '260px',
                 padding: '24px',
                 // bg: require('@site/static/assets/website/home/notifs/engage@4x.png').default,
-                hideOnMobile: true
+                hideonmobile: true
             },
             header: {
-                title: 'Increase \nEngagement',
+                title: 'home.notification-section.box8.title',
                 align: 'left',
             },
             body: {
                 type: 'image',
                 imagesrc: 'notifs/engage',
-                alt: 'Increase  Engagement'
+                imagealt: 'home.notification-section.box8.imagealt',
+                imagetitle: 'home.notification-section.box8.imagetitle'
             }
         }
     ]  
@@ -176,16 +174,17 @@ export const GridComponentsChatList = {
                 id: 'share',
                 height: '439px',
                 padding: '24px 24px 0px 24px ',
-                hideOnMobile: false
+                hideonmobile: false
             },
             header: {
-                title: 'Share Images, Gifs, \nand Reactions',
+                title: 'home.chat-section.box1.title',
                 align: 'left',
             },
             body: {
                 type: 'image',
                 imagesrc: 'chats/share',
-                alt: 'Share Images'
+                imagealt: 'home.chat-section.box1.imagealt',
+                imagetitle: 'home.chat-section.box1.imagetitle'
             },
         },
         {
@@ -193,13 +192,15 @@ export const GridComponentsChatList = {
                 id: 'chat-requests',
                 height: '88px',
                 padding: '0px 24px',
-                hideOnMobile: true 
+                hideonmobile: true 
             },
             header: {
-                title: 'Chat Requests',
+                title: 'home.chat-section.box2.title',
                 align: 'left',
                 illustration: 'chats/requests',
-                subheader: 'PRIVATE AND ANTI SPAM'
+                subheader: 'home.chat-section.box2.subheader',
+                iconalt: 'home.chat-section.box2.iconalt',
+                icontitle: 'home.chat-section.box2.icontitle'
             }, 
         },
         {
@@ -207,10 +208,10 @@ export const GridComponentsChatList = {
                 id: 'secure',
                 height: '132px',
                 padding: '24px',
-                hideOnMobile: true 
+                hideonmobile: true 
             },
             header: {
-                title: 'Secure, Instant, and \nVerifiable Payments',
+                title: 'home.chat-section.box3.title',
                 tags: [
                     {   
                         title: 'COMING SOON',
@@ -230,18 +231,24 @@ export const GridComponentsChatList = {
                 id: 'lightweight-code',
                 height: '446px',
                 padding: '24px',
-                hideOnMobile: false
+                hideonmobile: false,
+                link: {
+                    url: 'https://push.org',
+                    linktitle: 'Lightweight Code with Rapid API Integration'
+                },
             },
             header: {
-                title: 'Lightweight Code with Rapid API Integration',
+                title: 'home.chat-section.box4.title',
                 align: 'center',
             },
-            body:{
+            body: {
                 type: 'codeblock',
-                bodyText: '<2 mins',
-                buttonText: 'Start Building',
+                bodyText: 'home.chat-section.box4.bodyText',
+                buttonText: 'home.chat-section.box4.buttonText',
                 buttonLink: 'https://push.org',
                 codeblockImg: `chats/lightweight`,
+                imagealt: 'home.chat-section.box4.imagealt',
+                imagetitle: 'home.chat-section.box4.imagetitle'
          }
         },
         {
@@ -250,14 +257,14 @@ export const GridComponentsChatList = {
                 height: '237px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/chats/hyper@3x.webp').default,
-                hideOnMobile: false
+                hideonmobile: false
             },
             header: {
-                title: 'Hyperscalable \nGroups',
+                title: 'home.chat-section.box5.title',
                 align: 'left',
             },
             after: {
-                message: '*Other Chat Apps: 1024 Members',
+                message: 'home.chat-section.box5.afterMessage',
                 alignment: 'right'
             }
         },
@@ -266,16 +273,18 @@ export const GridComponentsChatList = {
                 id: 'plug-play',
                 height: '237px',
                 padding: '24px 24px 0px 24px',
-                hideOnMobile: false
+                hideonmobile: false
             },
             header: {
-                title: 'Plug and Play \nChat Components',
+                title: 'home.chat-section.box6.title',
                 align: 'left',
             },
             body: {
                 type: 'image',
                 imagesrc: 'chats/plug-play',
-                alt: 'Plug and Play'
+                imagealt: 'home.chat-section.box6.imagealt',
+                imagetitle: 'home.chat-section.box6.imagetitle'
+                
             },
         },
     ],
@@ -285,13 +294,15 @@ export const GridComponentsChatList = {
                 id: 'chain-agnostic',
                 height: '76px',
                 padding: '0px 24px',
-                hideOnMobile: true 
+                hideonmobile: true 
             },
             header: {
-                title: 'Chain Agnostic',
+                title: 'home.chat-section.box7.title',
                 align: 'left',
                 illustration: 'chats/chain-agnostic',
-                subheader: 'SUPPORTS ALL EVM CHAINS'
+                subheader: 'home.chat-section.box7.subheader',
+                iconalt: 'home.chat-section.box7.imagealt',
+                icontitle: 'home.chat-section.box7.imagetitle'
             }, 
         },
         {
@@ -299,17 +310,16 @@ export const GridComponentsChatList = {
                 id: 'token-gated',
                 height: '315px',
                 padding: '24px',
-                hideOnMobile: false
-            },
-            header: {
+                hideonmobile: false
             }, 
             body: {
                 type: 'image',
                 imagesrc: 'chats/token-gated',
-                alt: 'Create Token'
+                imagealt: 'home.chat-section.box8.imagealt',
+                imagetitle: 'home.chat-section.box8.imagetitle'
             },
             footer: {
-                text: 'Create Token, NFT, \nGeo Gated Groups'
+                text: 'home.chat-section.box8.footerText'
             }
         },
         {
@@ -317,13 +327,15 @@ export const GridComponentsChatList = {
                 id: 'e2e',
                 height: '76px',
                 padding: '0px 24px',
-                hideOnMobile: false 
+                hideonmobile: false 
             },
             header: {
-                title: 'E2E Encryption',
+                title: 'home.chat-section.box9.title',
                 align: 'left',
                 illustration: 'chats/e2e',
-                subheader: 'END-TO-END (E2EE)'
+                subheader: 'home.chat-section.box9.subheader',
+                iconalt: 'home.chat-section.box9.imagealt',
+                icontitle: 'home.chat-section.box9.imagetitle'
             }, 
         },
         {
@@ -331,35 +343,17 @@ export const GridComponentsChatList = {
                 id: 'web3-standard',
                 height: '169px',
                 padding: '24px',
-                hideOnMobile: true 
+                hideonmobile: true 
             },
             header: {
-                title: 'Supports any \nWeb3 Standard',
-                    // tags: [
-                    //   { title: 'Wallet',
-                    //     background: '#D98AEC',
-                    //     color: '#0D0D0F',
-                    //     border: '1px solid #D98AEC'
-                    //   },
-                    //   { title: 'NFT',
-                    //     color: '#635F7C',
-                    //     border: '1px solid #343244'
-                    //   },
-                    //   { title: 'Cross-chain',
-                    //     color: '#635F7C',
-                    //     border: '1px solid #343244'
-                    //   },
-                    //   { title: 'Chain Specific Address',
-                    //     color: '#635F7C',
-                    //     border: '1px solid #343244'
-                    //   },
-                    // ],
-                  align: 'left'
+                title: 'home.chat-section.box10.title',
+                align: 'left'
             }, 
             body: {
                 type: 'image',
                 imagesrc: 'chats/web-standard',
-                alt: 'Cross-chain Notifications'
+                imagealt: 'home.chat-section.box10.imagealt',
+                imagetitle: 'home.chat-section.box10.imagetitle'
             }
         },
     ]  

@@ -110,6 +110,109 @@
         "image-alt": "Ilustración mostrando Push DAO"
       }
     },
+      "notification-section": {
+        "header": {
+          "main-text": "Push proporciona un protocolo de notificación push sólido y descentralizado.",
+          "other-text": "Push habilita alertas de notificación nativas web3 entre billeteras."
+        },
+        "box1": {
+          "title": "Web3 Nativo",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Web Nativa",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Web Nativa"
+        },
+        "box2": {
+          "title": "Notificaciones Cruzadas",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Notificaciones Cruzadas",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Notificaciones Cruzadas"
+        },
+        "box3": {
+          "title": "Personalizar Preferencias \nde Notificación",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Personalizar Preferencias de Notificación",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Personalizar Preferencias de Notificación"
+        },
+        "box4": {
+          "title": "Código Ligero con Integración Rápida de API",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Código Ligero con Integración Rápida de API",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Código Ligero con Integración Rápida de API",
+          "bodyText": "<4 minutos",
+          "buttonText": "Comenzar a construir"
+        },
+        "box5": {
+          "title": "Notificaciones Interoperables"
+        },
+        "box6": {
+          "title": "Anti-Spam",
+          "iconalt": "Impulsado por Push Protocol - Imagen de Anti-Spam",
+          "icontitle": "Impulsado por Push Protocol - Imagen de Anti-Spam"
+        },
+        "box7": {
+          "title": "Push Snap",
+          "footerText": "Recibe Notificaciones \nen MetaMask"
+        },
+        "box8": {
+          "title": "Aumentar Participación",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Aumentar Participación",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Aumentar Participación"
+        }
+      },
+      "chat-section": {
+        "header": {
+          "main-text": "Push Chat es el líder descentralizado,",
+          "other-text": "protocolo de chat nativo web3 con funciones fáciles de usar como chat grupal, videollamadas, espacios y streaming"
+        },
+        "box1": {
+          "title": "Compartir Imágenes, Gifs \ny Reacciones",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Compartir Imágenes",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Compartir Imágenes"
+        },
+        "box2": {
+          "title": "Solicitudes de Chat",
+          "subheader": "PRIVADO Y ANTI SPAM",
+          "iconalt": "Impulsado por Push Protocol - Imagen de Solicitudes de Chat",
+          "icontitle": "Impulsado por Push Protocol - Imagen de Solicitudes de Chat"
+        },
+        "box3": {
+          "title": "Pagos Seguros, \nInstantáneos y Verificables"
+        },
+        "box4": {
+          "title": "Código Ligero con Integración Rápida de API",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Código Ligero",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Código Ligero",
+          "bodyText": "<2 minutos",
+          "buttonText": "Comenzar a construir"
+        },
+        "box5": {
+          "title": "Grupos Hiperescalables",
+          "afterMessage": "*Otras aplicaciones de chat: 1024 miembros"
+        },
+        "box6": {
+          "title": "Componentes de Chat \nPlug and Play",
+          "imagealt": "Impulsado por Push Protocol - Imagen de Plug and Play",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Plug and Play"
+        },
+        "box7": {
+          "title": "Agnóstico de Cadena",
+          "subheader": "SOPORTA \nCADENAS EVM",
+          "iconalt": "Impulsado por Push Protocol - Imagen de Agnóstico de Cadena",
+          "icontitle": "Impulsado por Push Protocol - Imagen de Agnóstico de Cadena"
+        },
+        "box8": {
+          "imagealt": "Impulsado por Push Protocol - Imagen de Crear Token",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Crear Token",
+          "footerText": "Crear Token, NFT,\nGrupos Geocerrados"
+        },
+        "box9": {
+          "title": "Cifrado E2E",
+          "subheader": "DE FINAL A FINAL (E2EE)",
+          "iconalt": "Desarrollado por protocolo Push - Imagen de cifrado E2E",
+          "icontitle": "Desarrollado por protocolo Push - Imagen de cifrado E2E"
+        },
+        "box10": {
+          "title": "Soporta cualquier \nEstándar Web3",    
+          "imagealt": "Impulsado por Push Protocol - Imagen de Estándar Web3",
+          "imagetitle": "Impulsado por Push Protocol - Imagen de Estándar Web3"
+        }
+    },
     "grow-section": {
       "image-alt": "Ilustración mostrando tokenes $PUSH",
       "image-title": "Utiliza el token de Push para crecer",
