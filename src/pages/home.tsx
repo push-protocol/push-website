@@ -14,12 +14,13 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsArrowRight ,BsFileX } from "react-icons/bs";
+import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
+import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents';
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
@@ -28,10 +29,9 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
-import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
-import { slideSection } from '@site/src/config/SlideSection'
+import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
+import { slideSection } from '@site/src/config/SlideSection';
 import {
   A,
   B,
@@ -58,10 +58,10 @@ import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chain
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
+import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
-import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
-import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
 import GithubSVG from "@site/static/assets/website/shared/github.svg";
 import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
@@ -162,26 +162,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
-          // minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
+          minHeight={`calc(100vh)`}
           // background={GLOBALS.COLORS.BG_LIGHT}
           width="100%"
           overflow="hidden"
           className="darkBackground"
         >
-          <ItemV
-            // id="herobg"
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            // background={GLOBALS.COLORS.BG_DARK}
-            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
-          />
-
           <HeroContent alignSelf="center">
             <HeroAnimation>
-              {/* <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" /> */}
+              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
             </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
