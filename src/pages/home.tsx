@@ -28,7 +28,7 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import { GridComponentsList } from '@site/src/config/GlassyComponentsList';
+import { GridComponentsNotificationList, GridComponentsChatList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
 import GlassyComponents from '@site/src/components/GlassyComponents/GlassyComponents'
 import { slideSection } from '@site/src/config/SlideSection'
@@ -269,7 +269,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                   <NotificationGridSystem>
                       <NotificationGridItem maxWidth="282px">
-                          {GridComponentsList?.notification?.first?.map((item)=>(
+                          {GridComponentsNotificationList?.first?.map((item)=>(
                               <GlassyComponents section = {item} />
                           ))}
                       </NotificationGridItem>
@@ -277,13 +277,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   
 
                       <NotificationGridItem maxWidth="588px" main={true}>
-                          {GridComponentsList?.notification?.second?.map((item)=>(
+                          {GridComponentsNotificationList?.second?.map((item)=>(
                               <GlassyComponents section = {item} />
                               ))}
                       </NotificationGridItem>
 
                       <NotificationGridItem maxWidth="282px" lastRow={true}>
-                          {GridComponentsList?.notification?.third?.map((item)=>(
+                          {GridComponentsNotificationList?.third?.map((item)=>(
                                   <GlassyComponents section = {item} />
                               ))}
                       </NotificationGridItem>
@@ -337,7 +337,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                   <ChatGridSystem>
                         <ChatGridItem maxWidth="282px">
-                            {GridComponentsList?.chat?.first?.map((item)=>(
+                            {GridComponentsChatList?.first?.map((item)=>(
                                   <GlassyComponents section = {item} />
                             ))}
                         </ChatGridItem>
@@ -345,13 +345,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     
 
                         <ChatGridItem maxWidth="588px" main={true}>
-                            {GridComponentsList?.chat?.second?.map((item)=>(
+                            {GridComponentsChatList?.second?.map((item)=>(
                                   <GlassyComponents section = {item} />
                                 ))}
                         </ChatGridItem>
 
                         <ChatGridItem maxWidth="282px" lastRow={true}>
-                            {GridComponentsList?.chat?.third?.map((item)=>(
+                            {GridComponentsChatList?.third?.map((item)=>(
                                   <GlassyComponents section = {item} />
                                 ))}
                         </ChatGridItem>

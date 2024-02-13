@@ -1,5 +1,4 @@
-export const GridComponentsList = {
-   notification: {
+export const GridComponentsNotificationList = {
     first: [
         {
             config: {
@@ -168,8 +167,9 @@ export const GridComponentsList = {
             }
         }
     ]  
-   },
-   chat:{
+}
+
+export const GridComponentsChatList = {
     first: [
         {
             config: {
@@ -364,5 +364,4 @@ export const GridComponentsList = {
         },
     ]  
    }
-  }
   
