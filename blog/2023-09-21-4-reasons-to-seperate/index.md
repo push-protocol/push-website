@@ -4,14 +4,16 @@ title: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
 authors: [push]
 image: './cover-image.webp'
 description: '4 Reasons To Separate Your dApp’s Communication and Execution Layers'
-tags: [Pushprotocol, Web3, Blockchain Technology]
+text: "Within web3, decentralized systems reign supreme and the concept of modularity is a key component of innovation. The essence of modularity lies in its ability to intricately craft decentralized applications (dApps) with a sophisticated and intellectually elevated approach."
+tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 
 ![Cover Image of 4 reasons to seperate your dApp's communication and execution layer](./cover-image.webp)
 
+<!--truncate-->
+
 Within web3, decentralized systems reign supreme and the concept of modularity is a key component of innovation. The essence of modularity lies in its ability to intricately craft decentralized applications (dApps) with a sophisticated and intellectually elevated approach.
 
-<!--truncate-->
 
 In this blog post, we embark on an exploration of modularity in web3, unearthing its profound implications and far-reaching influence. By effectively separating the communication and execution layers, modularity empowers developers to construct dApps that boast adaptability, scalability, and interconnectivity.
 
@@ -61,8 +63,3 @@ By leveraging modularity, projects can enhance functionality, scalability, and u
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

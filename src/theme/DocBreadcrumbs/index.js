@@ -73,7 +73,7 @@ export default function DocBreadcrumbs() {
   if (product.length > 0) {
     breadcrumbs = [
       {
-        label: product.charAt(0).toUpperCase() + product.slice(1),
+        label: product.toUpperCase() === 'DAO' ? product.toUpperCase() : product.charAt(0).toUpperCase() + product.slice(1),
         href: `/docs/${product}`,
       },
       ...breadcrumbs,

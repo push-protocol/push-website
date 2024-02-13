@@ -3,15 +3,17 @@ slug: d-yd-x-x-push-empowering-traders-with-transparent-governance
 title: 'dYdX x Push: Empowering Traders with Transparent Governance🤝'
 authors: [push]
 image: './cover-image.webp'
-tags: [Pushprotocol, Newsletter, Web3, Blockchain, Web3 Tools]
+text: "In the world of decentralized finance, dYdX is a prominent DEX that offers a unique trading experience. Built on the Ethereum layer 2 system StarkWare, dYdX leverages zero-knowledge proofs to provide enhanced security, decentralization, and privacy to its users."
+tags: [Push Protocol, Newsletter, Web3, Blockchain, Web3 Tools]
 
 ---
 
 ![Cover image of dYdX x Push: Empowering Traders with Transparent Governance🤝](./cover-image.webp)
+<!--truncate-->
+
 
 Introducing this week’s Frens of Push: [dYdX](https://dydx.exchange/), leading perpetuals decentralized exchange that’s revolutionizing the world of crypto trading.
 
-<!--truncate-->
 
 In the world of decentralized finance, dYdX is a prominent DEX that offers a unique trading experience. Built on the Ethereum layer 2 system StarkWare, dYdX leverages zero-knowledge proofs to provide enhanced security, decentralization, and privacy to its users.
 
@@ -66,8 +68,3 @@ Learn all about dYdX: [Website](https://dydx.exchange/), [Twitter](https://twitt
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

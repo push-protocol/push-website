@@ -4,15 +4,16 @@ slug: recreating-web2-communication-channels-in-web3-using-push
 title: Recreating Web2 Communication Channels in Web3 Using Push👥
 authors: [push]
 image: './cover-image.webp'
+text: "The ability to communicate effectively with users is a crucial aspect of any decentralized application or service. This is where communication channels come in. Serving as a bridge between dapps and users, enabling notifications, chat messages and other forms of communication across various blockchain networks."
 tags: [ Web3, Blockchain, Blockchain Technology]
 
 ---
 
 ![Cover image of Recreating Web2 Communication Channels in Web3 Using Push👥](./cover-image.webp)
+<!--truncate-->
 
 The ability to communicate effectively with users is a crucial aspect of any decentralized application or service. This is where communication channels come in. Serving as a bridge between dapps and users, enabling notifications, chat messages and other forms of communication across various blockchain networks.
 
-<!--truncate-->
 
 In this article we will dive deeper into the concept of communication channels, their evolution in the current web, and how Push Protocol is being used to improve this communication process.
 
@@ -67,13 +68,8 @@ Once the verification transaction is approved on the Binance Chain, the alias ad
 
 It’s worth noting that delegate addresses are also useful for ensuring notifications can be sent out from wallets other than the one that created the channel. The channel creator is the only person able to add or remove delegates at any time. The communication channels’ chat feature also allows users to whitelist addresses, block addresses, and prevent spam messages. These features help ensure that communication channels remain secure and relevant to their subscribers.
 
-To learn more about Channel Aliases and Delegates, you can refer to [Push documentation here](https://docs.push.org/developers/concepts/create-your-notif-channel/what-is-a-channel-alias).
+To learn more about Channel Aliases and Delegates, you can refer to [Push documentation here](https://push.org/docs/notifications/concepts/push-notifications-for-web3/#what-is-a-channel-alias).
 
 ## Conclusion
 Communication channels play a crucial role in enabling decentralized applications and services to communicate with their users. Push Protocol offers a chain-agnostic solution that enables communication across ecosystems and networks. Following the straightforward steps outlined in this section, you can easily set up a communication channel on one of the compatible chains and communicate seamlessly.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

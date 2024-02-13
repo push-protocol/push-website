@@ -4,6 +4,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -28,7 +29,7 @@ import {
 } from '@site/src/css/SharedStyling';
 
 // Import Assets
-import ImageFAQ from '@site/static/assets/faq-projects.webp';
+import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
 import { BsChevronExpand } from 'react-icons/bs';
 
 // Internal Configs
@@ -243,7 +244,7 @@ const Notifs = [
         <Span>
           Additionally, wallets should check out{' '}
           <AMod
-            href="https://docs.push.org/hub/pusheconomics/push-token-economics"
+            href="https://push.org/docs/tokenomics/deepdive/$push/"
             target={'_blank'}
           >
             fee pool of Push which re-imagines and incentivises their contribution
@@ -504,7 +505,7 @@ const IntegratingPush = [
           >
             Staging dApp
           </AMod>{' '}
-          for developers that points to Ethereum Goerli testnet, Polygon Mumbai testnet and BNB testnet.
+          for developers that points to Ethereum Sepolia testnet, Polygon Mumbai testnet and BNB testnet.
         </Span>
       </Answer>
     ),
@@ -648,7 +649,7 @@ const Token = [
         <Span>
           Read in detail 👉{' '}
           <AMod
-            href="https://docs.push.org/hub/pusheconomics"
+            href="https://push.org/docs/tokenomics/"
             target={'_blank'}
           >
             Pusheconomics
@@ -739,20 +740,20 @@ function FAQ() {
 
   return (
     <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription} showNavbar='website'>
-       <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/faq" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | FAQ" />
         <meta property="og:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
-        <meta property="og:image" content="/assets/previews/faqfbpreview.png" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/faqpreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | FAQ" />
         <meta name="twitter:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
-        <meta name="twitter:image" content="/assets/previews/faqtwtpreview.png" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/faqpreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -768,7 +769,7 @@ function FAQ() {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
         
       <FAQWrapper>

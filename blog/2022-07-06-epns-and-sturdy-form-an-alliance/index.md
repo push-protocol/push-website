@@ -3,17 +3,19 @@ slug: epns-and-sturdy-form-an-alliance-to-enable-direct-communication-for-users
 title: 'EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users'
 authors: [push]
 image: './cover-image.webp'
+text: "Sturdy, the DeFi lending platform for interest free loan and high yield lending, and EPNS team up in a pilot collaboration to bring push notifications to users. As such, Sturdy will now be able to seamlessly interact with its users and keep them updated about the status of their loans and high-yielding opportunities on the platform.
+"
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS and Sturdy Form An Alliance to Enable Direct Communication for Users](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # EPNS and Sturdy collaborate to bring decentralized push notifications to the platform
 
 Sturdy, the DeFi lending platform for interest free loan and high yield lending, and EPNS team up in a pilot collaboration to bring push notifications to users. As such, Sturdy will now be able to seamlessly interact with its users and keep them updated about the status of their loans and high-yielding opportunities on the platform.
 
-<!--truncate-->
 
 ### Bringing Interest-Free Lending to DeFi
 DeFi’s lending and borrowing protocols played a pivotal role in the industry’s rise, bringing millions into the decentralized realm. However, in the present scenario, borrowers are required to pay heavy interests for their loans along with over-collateralizing for the same. In this regard, Sturdy is the one of the kind of DeFi protocol that facilitates interest free borrowing for users.
@@ -39,8 +41,3 @@ Borrowers pay no interest, withdrawal fees, or deposit fees. Instead, their coll
 To ensure that you don’t miss out on the latest developments, stay connected with Sturdy on [Twitter](https://twitter.com/SturdyFinance), [Medium](https://sturdyfinance.medium.com/), and [Discord](https://discord.gg/tRVHp6Vx5N).
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

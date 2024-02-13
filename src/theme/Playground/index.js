@@ -1,8 +1,14 @@
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import Translate from '@docusaurus/Translate';
-import { usePrismTheme } from '@docusaurus/theme-common';
+import {
+  ErrorBoundaryErrorMessageFallback,
+  usePrismTheme,
+} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
+import GLOBALS from '@site/src/config/globals';
 import { Button, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import clsx from 'clsx';
 import React, { useState } from 'react';
@@ -15,7 +21,26 @@ function Header({children}) {
 function LivePreviewLoader() {
   // Is it worth improving/translating?
   // eslint-disable-next-line @docusaurus/no-untranslated-text
-  return <div>Loading...</div>;
+  return <Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>;
+}
+function Preview() {
+  // No SSR for the live preview
+  // See https://github.com/facebook/docusaurus/issues/5747
+  return (
+    <BrowserOnly fallback={<LivePreviewLoader />}>
+      {() => (
+        <>
+          <ErrorBoundary
+            fallback={(params) => (
+              <ErrorBoundaryErrorMessageFallback {...params} />
+            )}>
+            <LivePreview />
+          </ErrorBoundary>
+          <LiveError />
+        </>
+      )}
+    </BrowserOnly>
+  );
 }
 function ResultWithHeader() {
   return (
@@ -29,14 +54,7 @@ function ResultWithHeader() {
       </Header>
       {/* https://github.com/facebook/docusaurus/issues/5747 */}
       <div className={styles.playgroundPreview}>
-        <BrowserOnly fallback={<LivePreviewLoader />}>
-          {() => (
-            <>
-              <LivePreview />
-              <LiveError />
-            </>
-          )}
-        </BrowserOnly>
+        <Preview />
       </div>
     </>
   );
@@ -72,7 +90,8 @@ function EditorWithHeader({ minimized }) {
             <ItemV flex="1" alignItems="flex-start">
               <Translate
                 id="theme.Playground.liveEditor"
-                description="The live editor label of the live codeblocks">
+                description="The live editor label of the live codeblocks"
+              >
                 LIVE EDITOR
               </Translate>
             </ItemV>
@@ -95,13 +114,14 @@ export default function Playground({children, transformCode, ...props}) {
   } = themeConfig;
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
-
+  
   // Look for customPropMinimized, customPropHidden
   let minimized = false;
 
-  let pattern = /customPropMinimized="([^"]+)"\n/;
+  let pattern = /customPropMinimized="([^"]+)"/;
   let match = children.match(pattern);
-
+  console.log(match, pattern);
+  
   if (match) {
     const customProp = match[1];
     if (customProp === 'true') {
@@ -133,7 +153,6 @@ export default function Playground({children, transformCode, ...props}) {
 
   return (
     <div className={styles.playgroundContainer}>
-      {/* @ts-expect-error: type incompatibility with refs */}
       <LiveProvider
         code={children.replace(/\n$/, '')}
         noInline={noInline}

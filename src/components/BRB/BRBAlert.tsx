@@ -16,16 +16,15 @@ import { ItemH, Section } from '@site/src/css/SharedStyling';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
-export const BRBAlert = () => {
-  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
 
   const hideAlertHandler = () => {
     setIsAlertVisible(false);
   };
 
-  const alertMessage = 'Watch Workshops, Build and Win $50k. ';
+  const alertMessage = 'BRB Phase 1 Winners Announced  Learn More ';
 
-  const alertLink = `https://lu.ma/on4kcvxu`;
+  const alertLink = `https://push.org/blog/announcing-winners-of-billion-reasons/`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
@@ -40,7 +39,7 @@ export const BRBAlert = () => {
             {alertMessage}
 
             <KnowMoreLink>
-            Join BRB Online
+           
             </KnowMoreLink>
 
             <FiArrowUpRight className="icon" />

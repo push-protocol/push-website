@@ -195,7 +195,7 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
             </SplideArrow>
             <Button
               border="1px solid #E64DE9"
-              onClick={() => window.open('https://lu.ma/on4kcvxu', '_blank')}
+              onClick={() => window.open('https://pushprotocol.notion.site/Dev-Doc-Billion-Reasons-to-Buidl-One-place-to-start-b900d90937f440fcb737ffcd32078699?pvs=4', '_blank')}
               title="Participate Virtually"
             >
               <ItemH>

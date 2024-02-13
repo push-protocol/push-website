@@ -3,17 +3,18 @@ slug: push-game-theory-explained
 title: 'Push Game Theory Explained'
 authors: [push]
 image: './cover-image.webp'
+text: "In this post, we cover Push in more detail and explain the game theory used in its design."
 tags: [Game Theory ,Blockchain ,Design ,Notifications ,Blog]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image Push Game Theory Explained](./cover-image.webp)
+<!--truncate-->
 
 In this post, we cover Push in more detail and explain the game theory used in its design.
 
 Push provides a easy and simple way to send notifications to users by different Channel Owners (App Owners). Notifications can be sent via the web, mobile, and Web3.0 providers like Metamask. To ensure consistent messaging throughout the project we have created the following nomenclature of terms, roles that will be used in the rest of the project lifecycle.
 
-<!--truncate-->
 
 - Contract Owner — The owner of the contract, specifically the address by whom the contract is deployed.
 - App Owner — Referred to as <b>Channel Owners</b>. The third-party projects, dApps or smart contract, specifically the address which form their identity as well as the custom opt-in group that the subscribed users will receive message from.
@@ -47,8 +48,3 @@ In order to ensure the proper participation of all roles, following game theory 
 
 We would love to hear your feedback and ideas to better the overall experience. Stay tuned for more updates!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

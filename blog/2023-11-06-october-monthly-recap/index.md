@@ -4,7 +4,8 @@ title: 'Monthly Recap October 🎃'
 authors: [push]
 image: './cover-image.webp'
 description: 'Monthly Recap October 🎃'
-tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
+text: "Welcome to another thrilling month at Push! October has been a month of incredible development, thought-provoking discussions, and community expansion. With so many exciting updates to get through, we're eager to share the highlights of this month in our recap. Let’s get to it."
+tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
 
 ![Cover Image of Monthly Recap October 🎃](./cover-image.webp)
@@ -52,8 +53,3 @@ As we wrap up this month at Push, we're grateful for your support and enthusiasm
 
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

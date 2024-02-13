@@ -4,17 +4,26 @@ slug: geting-started-with-push-sdk-socket-api
 title: 'Getting Started with Push SDK: Socket API🔔'
 authors: [push]
 image: './cover-image.webp'
+text: "The Socket API is a package that helps you connect to the Push backend using WebSockets, built on top of Socket.IO With this API, you can easily subscribe to real-time notifications and updates from the Push network."
 tags: [ Web3, Blockchain, Blockchain Development, Developer ]
 
 ---
 
 ![Cover image of Getting Started with Push SDK: Socket API🔔](./cover-image.webp)
+<!--truncate-->
 
 The Socket API is a package that helps you connect to the Push backend using WebSockets, built on top of <a href="https://socket.io/docs/v4/client-api/"><b>Socket.IO</b></a>. With this API, you can easily subscribe to real-time notifications and updates from the Push network.
 
-<!--truncate-->
-
 In this article, we’ll go over the PUSH-SDK Socket API and how to use it in your dApp.
+
+import { ABlock } from "@site/src/css/SharedStyling";
+
+:::caution
+Socket API is deprecated. Push has revamped it's socket API into stream API which is more versatile and developer friendly, click on the link below to learn more 👇.
+:::
+
+
+<ABlock href="/docs/chat/stream-chat" title="Link to learn more about Push Stream API">Learn about Push Stream API</ABlock>
 
 ## Note on Addresses
 In any of the specified methods (unless explicitly stated otherwise), you can use either CAIP format (specifically CAIP-10) or the ETH address format.
@@ -48,7 +57,7 @@ To create a socket connection for notifications, you’ll need to create a socke
 
 ```js
 const pushSDKSocket = createSocketConnection({
-user: 'eip155:5:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb', // CAIP-10 format
+user: 'eip155:11155111:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb', // CAIP-10 format
 env: 'staging',
 socketOptions: { autoConnect: false }
 });
@@ -114,7 +123,7 @@ Example:
 
 ```js
 const pushSDKSocket = createSocketConnection({
- user: 'eip155:5:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb',
+ user: 'eip155:11155111:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb',
  env: 'staging',
  socketOptions: { autoConnect: false }
 });
@@ -142,15 +151,10 @@ That’s it! You now know how to use the main features of the Push Protocol Sock
 
 We’ll cover other parts of the Push SDK in coming posts so stay tuned!
 
-- [Push Protocol SDK documentation here](https://docs.push.org/developers/developer-tooling/push-sdk/sdk-packages-details/pushprotocol-socket) — if you’d like more reference material to chew on.
+- [Push Protocol SDK documentation here](https://push.org/docs/) — if you’d like more reference material to chew on.
 - [Push SDK on GitHub](https://github.com/ethereum-push-notification-service/push-sdk)
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
 - [Push developer docs](/docs/ "Push developer docs") to get started on building right away!
 
 #PoweredbyPush
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

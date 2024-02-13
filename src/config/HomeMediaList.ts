@@ -29,4 +29,22 @@ export const MediaList = [
     translatedtitle: 'home.featured-section.article5.text',
     srcref: 'beincrypto'
   },
+  {
+    url: 'https://cointelegraph.com/news/unstoppable-domains-launches-badge-gated-group-chat-feature-username-holders',
+    urltranslatedtitle: 'home.featured-section.article6.link-text',
+    translatedtitle: 'home.featured-section.article6.text',
+    srcref: 'cointelegraph'
+  },
+  {
+    url: 'https://thedefiant.io/unstoppable-domains-launches-token-gated-group-chats',
+    urltranslatedtitle: 'home.featured-section.article7.link-text',
+    translatedtitle: 'home.featured-section.article7.text',
+    srcref: 'defiant'
+  },
+  {
+    url: 'https://erc4337.mirror.xyz/ghX6mENwSgsNqLz7Gqlt940akHzYWZH4LRaRAgx77VI',
+    urltranslatedtitle: 'home.featured-section.article8.link-text',
+    translatedtitle: 'home.featured-section.article8.text',
+    srcref: 'erc'
+  },
 ];

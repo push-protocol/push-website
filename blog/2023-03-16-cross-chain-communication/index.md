@@ -4,15 +4,16 @@ slug: how-push-and-cross-chain-communication-will-change-web3
 title: How Push & Cross-Chain Communication Will Change Web3🌐
 authors: [push]
 image: './cover-image.webp'
+text: "Blockchain technology has come a long way since the advent of Bitcoin in 2009. Today, there are multiple blockchain platforms with unique features, capabilities, and ecosystems."
 tags: [ Web3, Interoperability, Crosschain, Web3 Communication ]
 
 ---
 
 ![Cover image of How Push & Cross-Chain Communication Will Change Web3🌐](./cover-image.webp)
+<!--truncate-->
 
 Blockchain technology has come a long way since the advent of Bitcoin in 2009. Today, there are multiple blockchain platforms with unique features, capabilities, and ecosystems.
 
-<!--truncate-->
 
 With that, the need for interoperability between these different platforms has been a major challenge for blockchain technology’s growth and mass adoption. As such, cross-chain solutions have become essential to enable seamless interaction between different blockchain platforms though they still lack a critical component — communication.
 
@@ -54,8 +55,3 @@ In conclusion, cross-chain communication is a critical component of the Web3 eco
 
 If you’re curious to learn more about how Push Protocol’s interoperability works and how you can enable cross-chain communication, come read more in our documentation👉 [right here](/docs/notifications/tutorials/create-your-channel/).
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

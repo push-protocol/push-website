@@ -11,6 +11,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
 import React, { useState } from 'react';
+import "./styles.css";
 
 // External Components
 import clsx from 'clsx';
@@ -25,10 +26,11 @@ import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
-import "./styles.css";
 
 
 
@@ -59,10 +61,11 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
     <TechDocCard>
     {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
-        hoverBackground="transparent"
+      onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
+      hoverBackground="transparent"
       >
-        <ItemV
+      
+      <ItemV
           alignSelf="stretch"
           margin="0px 8%"
         >
@@ -79,23 +82,25 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
             </TechDocIcon>
             <TechDocTitle>{title}</TechDocTitle>
           </ItemV>
+
+         
           
           {codeblock &&
             <TechDocSwitcher
               gap="10px"
             >
-              <Button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setContent(0);
-                }}
+              <TechDocButton 
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                setContent(0);
+              }}
                 background={content == 0 ? 'var(--ifm-color-primary)' : 'var(--ifm-color-background)'}
                 color={content == 0 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 Overview
-              </Button>
-              <Button 
+              </TechDocButton>
+              <TechDocButton 
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -105,7 +110,7 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
                 color={content == 1 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
               >
                 API
-              </Button>
+              </TechDocButton> 
             </TechDocSwitcher>
           }
 
@@ -116,14 +121,21 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
               <TechDocOverview>{description}</TechDocOverview>
             }
           </ItemV>
-        </ItemV>
+          </ItemV>
 
         {content == 1 && codeblock && 
+        <Div onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        }}>
           <TechDocCodeBlock
             language="jsx"
+          
+            
           >
             {codeblock}
           </TechDocCodeBlock>
+          </Div>
         }
       </TechDocContent>
     </TechDocCard>
@@ -164,6 +176,7 @@ export default function HomepageFeatures(): JSX.Element {
             ]
           })}
         </script>
+        
       </Head>
 
       {/* DOCS HERO SECTION */}
@@ -192,12 +205,11 @@ export default function HomepageFeatures(): JSX.Element {
               >
                 Get started with building native web3 communition for your protocol!
               </Span>
-              <Link
-                className='hero__button'
-                to="/docs/chat">
+              <HeroButton
+                to="#techdocs">
                 <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
                 <FiArrowUpRight size={16} />
-              </Link>
+              </HeroButton>
             </ItemV>
             
             <ItemV
@@ -258,7 +270,7 @@ export default function HomepageFeatures(): JSX.Element {
       {/* TECH DOCS SECTION */}
       <HomepageSection>
         <FluidContent>
-          <HomepageSubHeader>
+          <HomepageSubHeader id="techdocs">
             Technical Documentation
           </HomepageSubHeader>
           <TechDocCardList>
@@ -268,7 +280,8 @@ export default function HomepageFeatures(): JSX.Element {
           </TechDocCardList>
         </FluidContent>
       </HomepageSection>
-      
+
+    
       {/* SDK SECTION */}
       <HomepageSection>
         <FluidContent>
@@ -277,12 +290,15 @@ export default function HomepageFeatures(): JSX.Element {
               Push SDK
             </HomepageSubHeader>
             <Link to='https://www.npmjs.com/package/@pushprotocol/restapi' target='_blank'>
-              <div className='hero_home_explore'>
-                <p className='hero_home_explore_link'>
-                  Explore SDK
-                </p>
-                <ArrowUp className='arrowUp-icon' />
-              </div>
+              <Span
+                fontSize="18px"
+                margin="0 5px 0 10px"
+              >
+                Explore SDK
+              </Span>
+              <Span>
+                <FiArrowUpRight size={20} />
+              </Span>
             </Link>
           </ItemH>
             
@@ -294,14 +310,12 @@ export default function HomepageFeatures(): JSX.Element {
                   href={item.link}
                   target="_blank"
                 >
-                  <div className='sdk-container-inner'>
-                    <div className='sdk-title spacing-small'>
-                      {item.title}
-                    </div>
-                    <div className='sdk-icon'>
-                      <FiArrowUpRight size={24} />
-                    </div>
-                  </div>
+                  <PushSdkContentTitle>
+                    {item.title}
+                  </PushSdkContentTitle>
+                  <PushSdkContentArrow>
+                    <FiArrowUpRight size={24} />
+                  </PushSdkContentArrow>
                 </PushSdkContent>
               </PushSdkCard>
             ))}
@@ -357,6 +371,26 @@ const HeroHeader = styled(ItemV)`
 
   & ${H1} {
     font-size: var(--ifm-h1-font-size);
+  }
+`;
+
+const HeroButton = styled(Link)`
+  align-items: center;
+  background-color: #dd44b9;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 142%;
+  padding: 12px 30px;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #fff;
   }
 `;
 
@@ -565,7 +599,7 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled(Button)`
+const TechDocContent = styled.div`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
@@ -576,7 +610,8 @@ const TechDocContent = styled(Button)`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-
+  cursor: pointer;
+  
   & svg path {
     stroke: var(--ifm-color-primary-text);
   }
@@ -604,13 +639,15 @@ const TechDocSwitcher = styled(ItemH)`
   top: 0;
   right: 0;
   padding: inherit;
-
-  & ${Button} {
-    padding: 4px 12px;
-    font-size: 14px;
-    font-weight: 600;
-  }
 `;
+
+const TechDocButton = styled(Button)`
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 600;
+`;
+
+
 const TechDocOverview = styled(Span)`
   font-family: var(--ifm-font-family-base);
   font-weight: 400;
@@ -700,3 +737,20 @@ const PushSdkContent = styled(A)`
     }
   }
 `
+
+const PushSdkContentTitle = styled(Span)`
+  font-family: var(--ifm-font-family-base);
+  font-size: 26px;
+  color: var(--ifm-color-primary-text);
+  margin-top: 0px;
+  font-weight: bold;
+  letter-spacing: -0.03em;
+  flex: 1;
+`
+
+const PushSdkContentArrow = styled(Span)`
+  display: flex;
+  align-items: center;
+`
+const Div = styled.div`
+`;

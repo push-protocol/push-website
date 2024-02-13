@@ -3,19 +3,22 @@ slug: epns-graph-hackathon-2022-winners-announced
 title: 'EPNS + Graph Hackathon 2022 Winners Announced!'
 authors: [push]
 image: './cover-image.webp'
+text: "We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it."
 tags: [Web3 ,Graph ,Hackathons ,Ethereum ,Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS + Graph Hackathon 2022 Winners Announced!](./cover-image.webp)
+<!--truncate-->
 
 <blockquote>We’re stoked to announce winners for the GraphHack2022 that concluded on June 5th, 2022.</blockquote>
 
-We kick started the hackathon with an integration workshop for EPNS <-> The Graph. Here is the demo video, in case you missed it.
+We kick started the hackathon with an integration workshop for EPNS \<-\> The Graph. Here is the demo video, in case you missed it.
 
-<!--truncate-->
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/oy8hPhk55gU" title="How to enable a better way to access blockchain data (EPNS x The Graph)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 EPNS posted the following bounties for the hackathon:
 
@@ -49,9 +52,5 @@ We would like to thank the awesome Graph team (Big shout out to Simon, Kyle, Vis
 
 Web3 Infra FTW!!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

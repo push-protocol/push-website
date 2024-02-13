@@ -3,15 +3,16 @@ slug: icymi-epns-at-eth-cc-2022-paris
 title: 'ICYMI — EPNS at EthCC 2022 Paris 🇫🇷'
 authors: [push]
 image: './cover-image.png'
+text: "While the sweltering heat was the talk of the town, we donned our cool collective hats and focused on being part of one of the largest Ethereum events focused on tech and community, with three intense days of conferences, networking and learning."
 tags: [Push Notification, Ethereum, Epnsproject, Cryptocurrency, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of ICYMI — EPNS at EthCC 2022 Paris 🇫🇷](./cover-image.png)
+<!--truncate-->
 
 While the sweltering heat was the talk of the town, we donned our cool collective hats and focused on being part of one of the largest Ethereum events focused on tech and community, with three intense days of conferences, networking and learning.
 
-<!--truncate-->
 
 And then of course, we had a few talks, panel discussions and media interactions ourselves.
 
@@ -19,7 +20,9 @@ It was an event we couldn’t miss —we had to be there.
 
 Before we dive into the blog, check out this awesome EthCC recap video :-)
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/VcA8ohIlzEU" title="EPNS at #EthCC2022 - Paris 🇫🇷" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/VcA8ohIlzEU" title="EPNS at #EthCC2022 - Paris 🇫🇷" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 This video is a testament to the awesome gathering EthCC was! And we’re certain those who were there and for those who couldn’t be there, let’s deep dive into what we did there.
 
@@ -42,7 +45,9 @@ How many of you agree? Ethereum is definitely the clubhouse of innovation.
 
 ### Harsh on Why Web3 Communication Matters
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/y2yT8Y2jTtU" title="Harsh Rajat: How to build Web3 communication in your protocol (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/y2yT8Y2jTtU" title="Harsh Rajat: How to build Web3 communication in your protocol (EPNS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 
 From meetings, to workshops, our calendar looked stacked each and every day.
@@ -60,13 +65,17 @@ One of the best things about EthCC was learning so many interesting things happe
 
 ### EthCC Dataverse Day with IOSG
 
-<iframe width="680" height="382" src="https://www.youtube.com/embed/z5WrzsiSAWs" title="EPNS: Why Web3 Communication Matters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/z5WrzsiSAWs" title="EPNS: Why Web3 Communication Matters" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 And finally on the 25th, Harsh took the stage again with an encore of Why Web3 communication matters, only this time at EthCC Dataverse Day with our partners IOSG Ventures.
 
 ### Panel Discussion at Dataverse Day
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/Hu9E1h51ctA" title="Panel ( Debank &amp; KYVE &amp; Sismo &amp; Solity Network &amp; EPNS）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="382" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/Hu9E1h51ctA" title="Panel ( Debank &amp; KYVE &amp; Sismo &amp; Solity Network &amp; EPNS）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 And then of course, there was this interesting panel discussion, as part of the Dataverse Day, with the partners of that event, in which Harsh spoke at length about EPNS and how we’re trying to be the de facto, native Web3 comm protocol! He was joined by some really focused, and awesome Web3 founders and builders, such as Hongbo, Founder of Debank, Fabian Riewe, Founder of KYVE, Hadrien Charlanes, Founder of Sismo, Marijo Radman, Cofounder of Solity Network
 
@@ -75,10 +84,6 @@ And then of course, there was this interesting panel discussion, as part of the 
 
 And last but not least, what’s the future of France without meeting a ton of frens from the web3 space, old and new!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 

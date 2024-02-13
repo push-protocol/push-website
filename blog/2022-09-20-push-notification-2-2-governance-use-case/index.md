@@ -4,17 +4,18 @@ title: 'An Introduction to Push Notification (Part 2.2): Governance Use Cases'
 authors: [push]
 image: './cover-image.webp'
 tags: [ Pn101, Push Notification, Web3, Dao, Governance]
+text: "Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience."
 ---
 
 
 ![Cover image of An Introduction to Push Notification (Part 2.2): Governance Use Cases](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # “A proposal to decrease the unbounding period, is passing with 2% in favor with two days left to vote.”<br/>
 
 Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience.
 
-<!--truncate-->
 
 What if you’re a core contributor to the DAO, trusted by the DAO to uphold specific responsibilities and keep the community informed? Updates to the DAO can be transmitted over a communication channel to tell community members about the latest updates and what to look out for directly on their accounts.
 
@@ -55,8 +56,4 @@ And stay tuned for the subsequent use case article on NFTs and the Metaverse!
 
 <i>By Danny Salman</i>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
