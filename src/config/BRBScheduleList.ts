@@ -147,7 +147,7 @@ export const citiesList = [
     {
       srcref: 'lucknow',
       place: 'Lucknow',
-      date: '17 Nov 2023',
+      date: '26 Nov 2023',
       link: 'https://www.lu.ma/brb-lucknow',
       alt: 'Lucknow, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Lucknow, India for dev tour of Push. #BRBIndia campaign of Push',
@@ -180,7 +180,7 @@ export const citiesList = [
     {
       srcref: 'bengaluru',
       place: 'Bengaluru',
-      date: 'TBA',
+      date: '5 Dec 2023',
       link: 'https://www.lu.ma/brb-bengaluru',
       alt: 'Bengaluru, India illustration for #BRB #BRBIndia event link',
       title: 'Lu.ma event page for Bengaluru, India for dev tour of Push. #BRBIndia campaign of Push',

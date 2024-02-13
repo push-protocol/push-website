@@ -3,17 +3,19 @@ slug: pushing-ahead-in-time-push-and-timeswap
 title: 'Pushing Ahead in Time: $PUSH x Timeswap ⏳'
 authors: [push]
 image: './cover-image.webp'
-tags: [Pushprotocol, Web3, Yield Farming, Liquidity Mining, Timeswap]
+text: "Following the exciting launch of $PUSH onto Polygon, we’re thrilled to announce the launch of Push’s lending and borrowing pool on TimeSwap. This partnership opens up new opportunities for users to borrow and lend Push native tokens ($PUSH) while benefiting from the extensive functionalities and composability offered by TimeSwap and the Polygon network."
+tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Timeswap]
 
 ---
 ![Cover image of Pushing Ahead in Time: $PUSH x Timeswap ⏳](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 #  $PUSH lending/borrowing pool is now live on Timeswap.
 
 Following the exciting launch of $PUSH onto Polygon, we’re thrilled to announce the launch of Push’s lending and borrowing pool on [TimeSwap](https://timeswap.io/). This partnership opens up new opportunities for users to borrow and lend Push native tokens ($PUSH) while benefiting from the extensive functionalities and composability offered by TimeSwap and the Polygon network.
 
-<!--truncate-->
 
 Polygon, known for its high scalability and low transaction costs, provides the perfect environment to enhance the utility and functionalities of the $PUSH token. We couldn’t be more excited to start this journey!
 
@@ -63,8 +65,3 @@ The Push Fee Pool is designed to reward participants within the ecosystem, creat
 
 Additionally, we’re continuing to develop new token utilities to drive adoption and participation as we expand our capabilities and presence on multiple chains. Our next big utility development is our launch on TimeSwap!
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

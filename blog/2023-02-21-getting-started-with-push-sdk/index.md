@@ -4,15 +4,16 @@ slug: getting-started-with-push-sdk-uiweb-api
 title: 'Getting Started With Push SDK: uiweb API🛠️'
 authors: [push]
 image: './cover-image.webp'
+text: "The @pushprotocol/uiweb package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels."
 tags: [ Web3, Developer, Blockchain Development, Web3 Notifications]
 
 ---
 
 ![Cover image of Getting Started With Push SDK: uiweb API🛠️](./cover-image.webp)
+<!--truncate-->
 
 The <b>@pushprotocol/uiweb</b> package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels.
 
-<!--truncate-->
 
 In this blog post, we'll take a closer look at the components included in the <b>@pushprotocol/uiweb</b> package and how you can use them in your dApp.
 
@@ -92,7 +93,7 @@ You can use the <b>PushAPI.user.getFeeds()</b> method with the <b>spam</b> param
 
 ```js
 const spams = await PushAPI.user.getFeeds({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   spam: true,
   env: 'staging'
 });
@@ -150,13 +151,13 @@ Here’s an example of how you can implement these functions:
 ```js
 await PushAPI.channels.subscribe({
   signer: _signer,
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
-  channel: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
 	env: 'staging'
 });
 
 const subscriptions = await PushAPI.user.getSubscriptions({
-  user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681',
+  user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   env: 'staging'
 });
 ```
@@ -174,7 +175,7 @@ function MydApp() {
     const fetchNotifications = async () => {
       // fetch user notifications using the PushAPI
       const notifications = await PushAPI.user.getFeeds({
-        user: 'eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681', // user address in CAIP
+        user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681', // user address in CAIP
         env: 'staging'
       });
       setNotifications(notifications);
@@ -288,14 +289,10 @@ function MydApp() {
 
 That’s it! You now know how to use the components of the <b>@pushprotocol/uiweb</b> API to add push notification functionality to your application.
 
-We’ll cover the other parts of the SDK in the coming posts. More reference material is available in the [Push Protocol SDK documentation](https://docs.push.org/developers/developer-tooling/push-sdk).
+We’ll cover the other parts of the SDK in the coming posts. More reference material is available in the [Push Protocol SDK documentation](https://push.org/docs/).
 
 In addition, try out the [Push SDK sandbox](https://github.com/ethereum-push-notification-service/push-sdk-sandbox).
 
 Keep PUSHING! #PoweredbyPush
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

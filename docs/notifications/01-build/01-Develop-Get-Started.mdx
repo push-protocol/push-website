@@ -16,9 +16,9 @@ Push Notification enables web3 native notification alerts between wallets. To do
   <title>Start Building | Push Notifications | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
-import ReactPlayer from 'react-player'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ReactPlayer from "react-player";
 import {
   ModalContainer,
   ModalSmall,
@@ -26,7 +26,7 @@ import {
   ModalMidEqual,
   AFocus,
   AImp,
-} from '@site/src/css/SharedStyling'
+} from "@site/src/css/SharedStyling";
 
 ## Speed run
 
@@ -37,41 +37,48 @@ The following speed run is designed to give you a quick overview of usage and de
 
 ```js
 // Import Push SDK & Ethers
-import { PushAPI } from '@pushprotocol/restapi'
-import { ethers } from 'ethers'
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { ethers } from "ethers";
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom()
+const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 
 // List inbox notifications
-const inboxNotifications = await userAlice.notification.list('INBOX')
+const inboxNotifications = await userAlice.notification.list("INBOX");
 
 // List spam notifications
-const spamNotifications = await userAlice.notification.list('SPAM')
+const spamNotifications = await userAlice.notification.list("SPAM");
 
 // Push channel address
-const pushChannelAdress = '0xB88460Bb2696CAb9D66013A05dFF29a28330689D'
+const pushChannelAdress = "0xB88460Bb2696CAb9D66013A05dFF29a28330689D";
 
 // Subscribe to push channel
 await userAlice.notification.subscribe(
-  `eip155:5:${pushChannelAdress}` // channel address in CAIP format
-)
+  `eip155:11155111:${pushChannelAdress}`, // channel address in CAIP format
+);
 
 // Send notification, provided userAlice has a channel
-const response = await userAlice.channel.send(['*'], {
-  notification: { 
-    title: 'You awesome notification', 
-    body: 'from your amazing protocol' 
-  }
-}) 
+const response = await userAlice.channel.send(["*"], {
+  notification: {
+    title: "You awesome notification",
+    body: "from your amazing protocol",
+  },
+});
 
 // To listen to real time notifications
-userAlice.stream.on('STREAM.NOTIF', (data) => {
-  console.log(data)
-})
+const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
+
+// Set stream event handling
+stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
+  console.log(data);
+});
+
+// Connect to stream
+stream.connect();
 ```
 
   </TabItem>
@@ -82,8 +89,8 @@ userAlice.stream.on('STREAM.NOTIF', (data) => {
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```js
-// Install Libraries
+```zsh
+# Install Libraries
 npm install @pushprotocol/restapi@latest ethers@^5.7
 ```
 
@@ -97,19 +104,19 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-sdk',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/javascript.png').default}
+    src={require("/static/assets/docs/techstack/javascript.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/javascript@2x.png').default
+      require("/static/assets/docs/techstack/javascript@2x.png").default
     } 2x, ${
-      require('/static/assets/docs/techstack/javascript@3x.png').default
+      require("/static/assets/docs/techstack/javascript@3x.png").default
     } 3x`}
-    alt='Image representation of Javascript SDK of Push Protocol'
+    alt="Image representation of Javascript SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -136,17 +143,17 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-sdk',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/react.png').default}
+    src={require("/static/assets/docs/techstack/react.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/react@2x.png').default
-    } 2x, ${require('/static/assets/docs/techstack/react@3x.png').default} 3x`}
-    alt='Image representation of React SDK of Push Protocol'
+      require("/static/assets/docs/techstack/react@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+    alt="Image representation of React SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -173,19 +180,19 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-sdk',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/reactNative.png').default}
+    src={require("/static/assets/docs/techstack/reactNative.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/reactNative@2x.png').default
+      require("/static/assets/docs/techstack/reactNative@2x.png").default
     } 2x, ${
-      require('/static/assets/docs/techstack/reactNative@3x.png').default
+      require("/static/assets/docs/techstack/reactNative@3x.png").default
     } 3x`}
-    alt='Image representation of React Native SDK of Push Protocol'
+    alt="Image representation of React Native SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -212,17 +219,17 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-restapi-dart',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-restapi-dart",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/dart.png').default}
+    src={require("/static/assets/docs/techstack/dart.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/dart@2x.png').default
-    } 2x, ${require('/static/assets/docs/techstack/dart@3x.png').default} 3x`}
-    alt='Image representation of Dart SDK of Push Protocol'
+      require("/static/assets/docs/techstack/dart@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+    alt="Image representation of Dart SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -249,17 +256,17 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-kotlin-sdk',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-kotlin-sdk",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/kotlin.png').default}
+    src={require("/static/assets/docs/techstack/kotlin.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/kotlin@2x.png').default
-    } 2x, ${require('/static/assets/docs/techstack/kotlin@3x.png').default} 3x`}
-    alt='Image representation of Kotlin SDK of Push Protocol'
+      require("/static/assets/docs/techstack/kotlin@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+    alt="Image representation of Kotlin SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -286,17 +293,17 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 <ModalSmall
   onClick={() =>
     window.open(
-      'https://github.com/ethereum-push-notification-service/push-swift-sdk',
-      '_blank'
+      "https://github.com/ethereum-push-notification-service/push-swift-sdk",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/techstack/swift.png').default}
+    src={require("/static/assets/docs/techstack/swift.png").default}
     srcSet={`${
-      require('/static/assets/docs/techstack/swift@2x.png').default
-    } 2x, ${require('/static/assets/docs/techstack/swift@3x.png').default} 3x`}
-    alt='Image representation of Swift SDK of Push Protocol'
+      require("/static/assets/docs/techstack/swift@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+    alt="Image representation of Swift SDK of Push Protocol"
   />
   <ModalWrapper>
     <span>
@@ -324,7 +331,12 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 ## Workshop Video
 
-<ReactPlayer controls width="100%" url='https://www.youtube.com/watch?v=R8nsAhyrvTI' /><br/>
+<ReactPlayer
+  controls
+  width="100%"
+  url="https://www.youtube.com/watch?v=R8nsAhyrvTI"
+/>
+<br />
 
 ## Testing
 
@@ -333,6 +345,7 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 Best way to experience notification is with a frontend that already supports Push Protocol, here are few of our favorite crypto wallets —
 
 _`Prod Environment`_
+
 <ModalContainer>
 
 <ModalMidEqual
@@ -340,17 +353,24 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://snaps.metamask.io/snap/npm/pushprotocol/snap/',
-      '_blank'
+      "https://snaps.metamask.io/snap/npm/pushprotocol/snap/",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/metamask.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/metamask.png")
+        .default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/metamask@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/metamask@3x.png').default} 3x`}
-    alt='Image representation of Metamask x Push Snap'
+      require("/static/assets/docs/notifications/integrations/metamask@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/metamask@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Metamask x Push Snap"
   />
   <ModalWrapper>
     <span>
@@ -379,17 +399,23 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://apps.apple.com/us/app/push-epns/id1528614910',
-      '_blank'
+      "https://apps.apple.com/us/app/push-epns/id1528614910",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/push.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/push.png").default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/push@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/push@3x.png').default} 3x`}
-    alt='Image representation of Push iOS app'
+      require("/static/assets/docs/notifications/integrations/push@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/push@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Push iOS app"
   />
   <ModalWrapper>
     <span>
@@ -418,17 +444,23 @@ _`Prod Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://play.google.com/store/apps/details?id=io.epns.epns',
-      '_blank'
+      "https://play.google.com/store/apps/details?id=io.epns.epns",
+      "_blank",
     )
   }
 >
   <img
-    src={require('/static/assets/docs/notifications/integrations/push.png').default}
+    src={
+      require("/static/assets/docs/notifications/integrations/push.png").default
+    }
     srcSet={`${
-      require('/static/assets/docs/notifications/integrations/push@2x.png').default
-    } 2x, ${require('/static/assets/docs/notifications/integrations/push@3x.png').default} 3x`}
-    alt='Image representation of Push Android app'
+      require("/static/assets/docs/notifications/integrations/push@2x.png")
+        .default
+    } 2x, ${
+      require("/static/assets/docs/notifications/integrations/push@3x.png")
+        .default
+    } 3x`}
+    alt="Image representation of Push Android app"
   />
   <ModalWrapper>
     <span>
@@ -454,7 +486,6 @@ _`Prod Environment`_
 
 </ModalContainer>
 
-
 _`Staging Environment`_
 
 <ModalContainer>
@@ -462,12 +493,7 @@ _`Staging Environment`_
 <ModalSmall
   flexDirection="column"
   maxWidth="200px"
-  onClick={() =>
-    window.open(
-      'https://staging.push.org/inbox',
-      '_blank'
-    )
-  }
+  onClick={() => window.open("https://staging.push.org/inbox", "_blank")}
 >
   <ModalWrapper>
     <span>
@@ -496,8 +522,8 @@ _`Staging Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj',
-      '_blank'
+      "https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj",
+      "_blank",
     )
   }
 >
@@ -528,8 +554,8 @@ _`Staging Environment`_
   maxWidth="200px"
   onClick={() =>
     window.open(
-      'https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US',
-      '_blank'
+      "https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US",
+      "_blank",
     )
   }
 >
@@ -559,9 +585,9 @@ _`Staging Environment`_
 
 :::note
 
-iOS doesn't have a public staging app (only production app is available on the App Store). 
+iOS doesn't have a public staging app (only production app is available on the App Store).
 
-Best way to test staging on iOS would be to join 👉 [Push Discord Channel](https://discord.com/invite/pushprotocol) 👈 and ask a team member to provide you with a testflight beta link. 
+Best way to test staging on iOS would be to join 👉 [Push Discord Channel](https://discord.com/invite/pushprotocol) 👈 and ask a team member to provide you with a testflight beta link.
 
 :::
 
@@ -571,4 +597,3 @@ Full API coverage with sample runable code can be found in the examples below:
 
 - [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node) to checkout abstracted API calls in action. Follow <AImp href={'/notification/tutorials/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
 - [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-frontend-react) to checkout frontend components of Push Notifications for easy integration in any React app. Follow <AImp href={'/notification/tutorials/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
-

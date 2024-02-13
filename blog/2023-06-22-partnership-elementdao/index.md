@@ -3,14 +3,16 @@ slug: empowering-decentralized-decision-making-push-x-element-dao
 title: 'Empowering Decentralized Decision-Making: Push x ElementDAO💙💜'
 authors: [push]
 image: './cover-image.gif'
-tags: [Pushprotocol, Web3, Partnerships, Blockchain Technology]
+text: "We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making."
+tags: [Push Protocol, Web3, Partnerships, Blockchain Technology]
 ---
 
 ![Cover image of Empowering Decentralized Decision-Making: Push x ElementDAO💙💜](./cover-image.gif)
+<!--truncate-->
+
 
 We’re thrilled to share that ElementDAO, the governance platform that empowers decision-making at ElementFi, is partnering up with Push to enhance community-driven decision-making.
 
-<!--truncate-->
 
 ElementFi (now expanded into [DELV](https://www.delv.tech/)), is a leading protocol that enables users to seek high fixed yield income in the DeFi market.
 
@@ -38,8 +40,3 @@ ElementDAO is a decentralized autonomous organization tasked with the responsibi
 
 To keep up to date with Element: [Element.fi](https://www.element.fi/) [Twitter](https://twitter.com/element_dao) [Discord](https://discord.gg/pvnUHuAsQ2)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

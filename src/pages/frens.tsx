@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useState } from 'react';
 
@@ -21,13 +22,13 @@ import { objChannelList } from '@site/src/config/ChannelList';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import SpinnerSVG from '@site/static/assets/Spinner.gif';
+import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { BiSearch } from 'react-icons/bi';
 import { FiChevronDown } from 'react-icons/fi';
 
 // Internal Configs
 import { FrensHeaderList } from "@site/src/config/FrensHeaderList";
-import { device } from '@site/src/config/globals';
+import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 import { Content, H2, HeroHeader, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
 
@@ -88,8 +89,12 @@ const FrensText = () => {
       name: 'Media',
     },
     {
+      name: 'Wallet'
+    },
+    {
       name: 'Hackathons',
     },
+  
   ];
 
   useEffect(() => {
@@ -263,20 +268,20 @@ const FrensText = () => {
 
   return (
     <Layout title={PageMeta.FRENS.pageTitle} description={PageMeta.FRENS.pageDescription} showNavbar='website'>
-     <Head>
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/frens" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | Frens Of Push" />
         <meta property="og:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
-        <meta property="og:image" content="/assets/previews/frenspagefbpreview.webp" />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/frenspagepreview.png").default, { absolute: true})} />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | Frens Of Push" />
         <meta name="twitter:description" content="Explore hundreds of applications building with Push worldwide across DeFi, NFTs, Gaming, Dev tools, and more." />
-        <meta name="twitter:image" content="/assets/previews/frenspagetwtpreview.webp" />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/frenspagepreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -292,7 +297,7 @@ const FrensText = () => {
             ]
           })}
         </script>
-        </Head>
+      </Head>
 
       <FrensWrapper>
         <AnimationIcon>
@@ -380,6 +385,7 @@ const FrensText = () => {
                     value={search}
                     placeholder={t('frens.powered-section.search-placeholder')}
                     onChange={channelSearch}
+                    className='input-text'
                   />
                 </Wrapper>
               </SearchContainer>
@@ -435,11 +441,7 @@ const FrensText = () => {
 
             {loading && (
               <ItemH>
-                <img
-                  src={SpinnerSVG}
-                  alt=""
-                  width={140}
-                />
+                <Spinner size={70} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
               </ItemH>
             )}
 
@@ -851,7 +853,7 @@ const Wrapper = styled.div`
     column-gap: 3px;
   }
 
-  & input[type='text'] {
+  input {
     all: unset;
     box-sizing: border-box;
     font-family: 'Strawford';

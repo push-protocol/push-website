@@ -3,14 +3,16 @@ slug: 5-tips-for-mastering-the-art-of-successful-grant-proposals
 title: '5 Tips for Mastering The Art of Successful Grant Proposals📝'
 authors: [push]
 image: './cover-image.webp'
+text: "When it comes to project growth, seeking external assistance is crucial. In the web3 landscape, grants have emerged as a valuable form of funding, but navigating the intricacies of grant applications can be challenging."
 tags: [Web3, Grant, Web Grant, Grant Writing]
 
 ---
 ![Cover image of 5 Tips for Mastering The Art of Successful Grant Proposals📝](./cover-image.webp)
+<!--truncate-->
+
 
 When it comes to project growth, seeking external assistance is crucial. In the web3 landscape, grants have emerged as a valuable form of funding, but navigating the intricacies of grant applications can be challenging.
 
-<!--truncate-->
 
 Fortunately, we’ve gathered expert insights from “The Art of Successful Grant Proposals” Twitter space from Push Protocol in which Azeem Khan, Carlos Melgar and Ben West shared these insights and offered valuable tips to enhance your grant proposal game and increase your chances of securing funding for your project.
 
@@ -34,8 +36,3 @@ To become proficient in creating grant proposals that succeed in the Web 3 era, 
 By following these best practices, you can significantly improve your chances of securing the funding your project deserves. Armed with these expert insights, you will be well-equipped to navigate the grant application process with confidence and propel your project toward success in the ecosystem.
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

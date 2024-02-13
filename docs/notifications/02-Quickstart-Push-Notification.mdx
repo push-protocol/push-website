@@ -16,32 +16,32 @@ Everything you will need to get up and running in 2 mins or less!
   <title>Quickstart | Push Notifcation | Push Documentation</title>
 </head>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 ### Installation
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
-```js
-// Install Libraries
+```zsh
+# Install Libraries
 npm install @pushprotocol/restapi@latest ethers@^5.7
 ```
 
   </TabItem>
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-```js
-// Install Libraries
+```zsh
+# Install Libraries
 npm install @pushprotocol/restapi@latest ethers@^5.7
 ```
 
   </TabItem>
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
-```js
-// Install Libraries
+```zsh
+# Install Libraries
 npm install @pushprotocol/restapi@latest ethers@^5.7
 ```
 
@@ -55,10 +55,10 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 ```js
 // Import restapi for function calls
-import { PushAPI } from '@pushprotocol/restapi'
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
-// Ethers v5 or Viem, both are supported
-import { ethers } from 'ethers'
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
 ```
 
   </TabItem>
@@ -67,10 +67,10 @@ import { ethers } from 'ethers'
 
 ```js
 // Import restapi for function calls
-import { PushAPI } from '@pushprotocol/restapi'
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
-// Ethers v5 or Viem, both are supported
-import { ethers } from 'ethers'
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
 ```
 
   </TabItem>
@@ -79,10 +79,10 @@ import { ethers } from 'ethers'
 
 ```js
 // Import restapi for function calls
-import { PushAPI } from '@pushprotocol/restapi'
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 
-// Ethers v5 or Viem, both are supported
-import { ethers } from 'ethers'
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
 ```
 
   </TabItem>
@@ -95,10 +95,11 @@ import { ethers } from 'ethers'
 
 ```js
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom()
+const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -107,10 +108,11 @@ const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
 
 ```js
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom()
+const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -119,10 +121,11 @@ const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
 
 ```js
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom()
+const signer = ethers.Wallet.createRandom();
 
-// Initialize wallet user, pass 'prod' instead of 'staging' for mainnet apps
-const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
+// Initialize wallet user
+// 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
+const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
 ```
 
   </TabItem>
@@ -136,12 +139,12 @@ const userAlice = await PushAPI.initialize(signer, { env: 'staging' })
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(['*'], {
-  notification: { 
-    title: 'You awesome notification', 
-    body: 'from your amazing protocol' 
-  }
-}) 
+const response = await userAlice.channel.send(["*"], {
+  notification: {
+    title: "You awesome notification",
+    body: "from your amazing protocol",
+  },
+});
 ```
 
   </TabItem>
@@ -151,12 +154,12 @@ const response = await userAlice.channel.send(['*'], {
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(['*'], {
-  notification: { 
-    title: 'You awesome notification', 
-    body: 'from your amazing protocol' 
-  }
-}) 
+const response = await userAlice.channel.send(["*"], {
+  notification: {
+    title: "You awesome notification",
+    body: "from your amazing protocol",
+  },
+});
 ```
 
   </TabItem>
@@ -166,17 +169,16 @@ const response = await userAlice.channel.send(['*'], {
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(['*'], {
-  notification: { 
-    title: 'You awesome notification', 
-    body: 'from your amazing protocol' 
-  }
-}) 
+const response = await userAlice.channel.send(["*"], {
+  notification: {
+    title: "You awesome notification",
+    body: "from your amazing protocol",
+  },
+});
 ```
 
   </TabItem>
 </Tabs>
-
 
 ### Stream / Real time updates / Socket
 
@@ -185,9 +187,15 @@ const response = await userAlice.channel.send(['*'], {
 
 ```js
 // To listen to real time notifications
-userAlice.stream.on('STREAM.NOTIF', (data) => {
-  console.log(data)
-})
+const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
+
+// Setup event handling
+stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
+  console.log(data);
+});
+
+// Connect stream but only after setting all event handling
+stream.connect();
 ```
 
   </TabItem>
@@ -196,9 +204,15 @@ userAlice.stream.on('STREAM.NOTIF', (data) => {
 
 ```js
 // To listen to real time notifications
-userAlice.stream.on('STREAM.NOTIF', (data) => {
-  console.log(data)
-})
+const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
+
+// Setup event handling
+stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
+  console.log(data);
+});
+
+// Connect stream but only after setting all event handling
+stream.connect();
 ```
 
   </TabItem>
@@ -207,9 +221,15 @@ userAlice.stream.on('STREAM.NOTIF', (data) => {
 
 ```js
 // To listen to real time notifications
-userAlice.stream.on('STREAM.NOTIF', (data) => {
-  console.log(data)
-})
+const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
+
+// Setup event handling
+stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
+  console.log(data);
+});
+
+// Connect stream but only after setting all event handling
+stream.connect();
 ```
 
   </TabItem>

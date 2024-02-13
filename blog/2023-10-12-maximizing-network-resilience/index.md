@@ -4,7 +4,8 @@ title: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
 authors: [push]
 image: './cover-image.webp'
 description: 'Maximizing Network Resilience: The Advantage of Push Protocol🔔'
-tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
+text: 'In communication networks, liveness signifies the network’s ability to maintain operations and remain responsive to incoming traffic. Because traditional communication networks possess central points of failure, the entire network is at risk of collapse. This can lead to numerous issues, including disruptions to essential services and communication channels. For example, an outage by a primary IT provider could render an entire network unusable for an extended period.'
+tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
 
 ![Cover Image of Maximizing Network Resilience](./cover-image.webp)
@@ -36,8 +37,3 @@ Push Protocol’s powerful communication function plays a pivotal role in ensuri
 As a specialized communication layer, Push Protocol excels in its core function, providing a dependable system for users and developers. Its emphasis on effective communication supports the liveness and resilience of networks within the web3 ecosystem. Seamlessly exchanging messages, notifications, and prompts enhances network stability and user engagement. Push Protocol propels the web3 ecosystem towards a decentralized future with unwavering innovation.
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

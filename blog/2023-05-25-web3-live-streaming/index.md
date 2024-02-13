@@ -4,15 +4,18 @@ slug: enhancing-web3-livestreaming-push-x-graviton
 title: Enhancing Web3 Livestreaming | Push x Graviton🧲
 authors: [push]
 image: './cover-image.webp'
+text: "Graviton provides pathways and tools for creators to grow without limitations imposed by centralized platforms.
+With a commitment to empowering artists and creators, Graviton provides web3 tools and infrastructure for creators to leverage to better reach their audience, promote their work, and monetize their creative projects."
 tags: [ Frensofpush, Partnerships, Web3, Blockchain Technology]
 
 ---
 
 ![Cover image of Enhancing Web3 Livestreaming | Push x Graviton🧲](./cover-image.webp)
+<!--truncate-->
+
 
 This week we’re extremely excited to announce our latest Frens of Push, [Graviton](https://graviton.xyz/about)🧲🎉
 
-<!--truncate-->
 
 Graviton provides pathways and tools for creators to grow without limitations imposed by centralized platforms.
 
@@ -66,8 +69,3 @@ Graviton is on a mission to build a decentralized and empowering creator economy
 
 Find more about Graviton: [Twitter](https://twitter.com/Graviton_XYZ), [Discord](https://discord.com/invite/nfu), [Github](https://github.com/GravitonINC), [Medium](https://medium.com/graviton-xyz)
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

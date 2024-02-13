@@ -3,10 +3,14 @@ slug: 100-000-of-push-x-immune-fi-bug-bounty-program-goes-live
 title: '$100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲'
 authors: [push]
 image: './cover-image.webp'
-tags: [Pushprotocol, Web3, Bounty Program, Immuenfi, Bug bounty]
+text: "Are you a skilled security researchers looking for an exciting challenge and the opportunity to earn big? Look no further!
+We are thrilled to announce the launch of the Push’s collaborative Bug Bounty Program with Immunefi and calling all hackers to participate!"
+tags: [Push Protocol, Web3, Bounty Program, Immuenfi, Bug bounty]
 ---
 
 ![Cover image of $100,000 of Push x ImmuneFi Bug Bounty Program goes Live 🪲](./cover-image.webp)
+<!--truncate-->
+
 
 <!--customheaderpoint-->
 # Push Smart Contract v2 Bug Bounty Program
@@ -14,7 +18,6 @@ tags: [Pushprotocol, Web3, Bounty Program, Immuenfi, Bug bounty]
 
 Are you a skilled security researchers looking for an exciting challenge and the opportunity to earn big? Look no further!
 
-<!--truncate-->
 
 We are thrilled to announce the launch of the Push’s collaborative Bug Bounty Program with [Immunefi](https://immunefi.com/) and calling all hackers to participate!
 
@@ -84,11 +87,7 @@ All other impacts are not considered as in-scope, even if they affect something 
 Hackers and devs, it’s your time to shine! Join us in securing the Push ecosystem and earn big for your valuable contributions. We look forward to seeing what you uncover.
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 
 

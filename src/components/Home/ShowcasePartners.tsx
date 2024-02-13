@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 // Internal Components
-import { H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
+import { A,H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device, size } from '@site/src/config/globals';
@@ -287,22 +287,22 @@ function PartnerChannels() {
             {t('home.partners-section.partner-channels-description')}
           </Span>
 
-          <LinkTo
-            to="/frens"
+          <A
+            href="/frens"
             title={t('home.partners-section.partner-channels-button-alt')}
             background="#DD44B9"
-            hoverColor="#fff"
+            // hoverColor="#fff"
             borderRadius="16px"
             padding="14px 32px"
             fontSize="18px"
             fontWeight="500"
-            letterSpacing="-0.03em"
+            letterSpacing="-0.06em"
             lineHeight="26px"
             margin="15px 0px 0px 0px"
             alignSelf="center"
           >
             {t('home.partners-section.partner-channels-button')}
-          </LinkTo>
+          </A>
         </ShowcaseMainContent>
 
         <PartnerRowV2 itemPos="right">

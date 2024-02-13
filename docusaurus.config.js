@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/dracula");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer").themes.dracula;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -34,11 +34,18 @@ const config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  // Themes
+  themes: ['@docusaurus/theme-mermaid'],
+  
   // Static linking
   staticDirectories: ["public", "static"],
 
   plugins: [
-    '@docusaurus/theme-live-codeblock',
+    "@docusaurus/theme-live-codeblock",
     [
       "./plugins/blog-plugin",
       {
@@ -67,20 +74,31 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
-        // fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-        // toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-        // redirects: [
-        //   // /docs/oldDoc -> /docs/newDoc
-        //   {
-        //     to: "/docs/dev",
-        //     from: "/docs/",
-        //   },
-        //   // // Redirect from multiple old paths to the new path
-        //   // {
-        //   //   to: '/docs/newDoc2',
-        //   //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-        //   // },
-        // ],
+        fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
+        toExtensions: ["exe", "zip"], // /myAsset -> /myAsset.zip (if latter exists)
+        redirects: [
+          {
+            from: "/docs/chat/build/stream-chats/",
+            to: "/docs/chat/build/stream-chat/",
+          },
+          {
+            from: "/docs/chat/build/types-of-recipient/",
+            to: "/docs/chat/supported-wallet-standards/",
+          },
+          {
+            from: "/docs/chat/tutorials/push-sdk-playground/",
+            to: "/docs/chat/playground/push-sdk-playground/",
+          },
+          {
+            from: "/docs/chat/tutorials/push-react-component-playground-example/",
+            to: "/docs/chat/playground/push-react-component-playground-example/",
+          },
+          // // Redirect from multiple old paths to the new path
+          // {
+          //   to: '/docs/newDoc2',
+          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+          // },
+        ],
         createRedirects(existingPath) {
           if (existingPath.includes("/docs/dev")) {
             // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
@@ -167,14 +185,10 @@ const config = {
         appId: "LHUKHXUHQP",
 
         // Public API key: it is safe to commit it
-        apiKey: "2fc69a715b81b57bcae4ad6edeb52abe",
+        apiKey: "f41c253713d3cee20253bd3bfb166cac",
 
         indexName: "v2-push",
         insights: true,
-        replaceSearchResultPathname: {
-          from: "/dev/", // or as RegExp: /\/docs\//
-          to: "/docs/",
-        },
       },
       colorMode: {
         defaultMode: "light",
@@ -186,7 +200,7 @@ const config = {
          * The position of the live playground, above or under the editor
          * Possible values: "top" | "bottom"
          */
-        playgroundPosition: 'bottom',
+        playgroundPosition: "bottom",
       },
       // announcementBar: {
       //   id: 'support_us',

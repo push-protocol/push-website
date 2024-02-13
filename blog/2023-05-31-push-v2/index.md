@@ -3,15 +3,17 @@ slug: push-protocol-v2-fee-pool-and-incentivized-chats-are-here
 title: Push Protocol v2 — Fee Pool & Incentivized Chats are here!
 authors: [push]
 image: './cover-image.webp'
-tags: [ Pushprotocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
+text: "Push Protocol is thrilled to announce the successful completion of the security audit conducted by Chainsafe for our smart contracts version 2. This milestone signifies a significant step forward in ensuring the robustness and reliability of our platform."
+tags: [ Push Protocol, Liquidity Pool, Blockchain Technology, Blockchain Development]
 
 ---
 
 ![Cover image of Push Protocol v2 — Fee Pool & Incentivized Chats are here!](./cover-image.webp)
+<!--truncate-->
+
 
 Push Protocol is thrilled to announce the successful completion of the security audit conducted by Chainsafe for our smart contracts version 2. This milestone signifies a significant step forward in ensuring the robustness and reliability of our platform.
 
-<!--truncate-->
 
 ## Key Takeaways
 1. The two main features introduced in version 2 of our smart contracts are:
@@ -28,7 +30,7 @@ Push Protocol is thrilled to announce the successful completion of the security 
 
 ## What’s next?
 - Push Protocol v2 tentative launch date is late June, 2023 along with [yield farming v2 for fee pool and Uniswap v2 LP pool](https://snapshot.org/?utm_source=Twitter&utm_medium=Post&utm_campaign=RockstarsOfPushWeek17%2618Post#/pushdao.eth/proposal/0x54092053eff30c3c304e45b575881945192e710bc9b3914bfe1d1eadcda3f114).
-- This marks the beginning of [protocol fees](https://docs.push.org/hub/pusheconomics/push-token-economics#push-fee-pool) incentivizing and rewarding token holders and crypto wallets.
+- This marks the beginning of [protocol fees](https://push.org/docs/tokenomics/deepdive/$push/#push-fee-pool) incentivizing and rewarding token holders and crypto wallets.
 - Push v2 has cleared Chainsafe audit. However, owing to the core and critical features of v2, the team has decided to launch it after 4 weeks.
 - This gives team enough time to run white hat contests among major platform(s) to ensure v2 is battle tested.
 - Prior to the tentative launch in late June, 2023, there will be an open, incentivized bug bounty program available to the community. More information coming soon.
@@ -45,7 +47,7 @@ In simple terms, this means PUSH holders can now stake and earn PUSH rewards dir
 ### What’s the Fee Pool?
 Before delving into how the Core v2 staking works, let’s take a step back to quickly recap the concept of the Protocol Fee Pool.
 
-Protocol Feel Pool was introduced in the Version 1.5 of Push smart contracts. Fee Pool is a term used to signify small fees charged by the protocol actions like channel creation, channel reactivation, channel detail modification. They don’t affect users and for users, everything is always feeless, with the exception of few features for super users as [outlined here](https://docs.push.org/hub/pusheconomics/push-token-economics#push-fee-pool).
+Protocol Feel Pool was introduced in the Version 1.5 of Push smart contracts. Fee Pool is a term used to signify small fees charged by the protocol actions like channel creation, channel reactivation, channel detail modification. They don’t affect users and for users, everything is always feeless, with the exception of few features for super users as [outlined here](https://push.org/docs/tokenomics/deepdive/$push/#push-fee-pool).
 
 In other words, for every crucial transaction on the Core contract, it takes a small fee amount and stores it in what we call a <b>Push Fee Pool</b>.
 
@@ -53,7 +55,7 @@ The protocol fee is currently set to be equal to <b>10 PUSH tokens</b>. This val
 
 <blockquote><i><b>Note:</b> This is not an additional fee that is charged on top of channel creation fees. Instead, the protocol fee is simply deducted from the same amount that a channel creator chooses to stake in the protocol.
 For example, if you chose to stake 50 PUSH during channel creation, 10 of those 50 PUSH tokens go into Protocol Fee Pool, while the remaining goes into Channel Pool Funds that are claimable by channel owners anytime they choose to deactivate their channel.*
-Read more about Fee Pool and how it operates over here: https://docs.push.org/hub/pusheconomics/push-token-economics#push-fee-pool.</i></blockquote>
+Read more about Fee Pool and how it operates over here: https://push.org/docs/tokenomics/deepdive/$push/#push-fee-pool.</i></blockquote>
 
 ## The Fee Pool Staking
 With the introduction of [version 1.5 of the core contract](https://medium.com/push-protocol/introducing-push-protocol-v1-5-80eb39b55424), we laid the foundation for the fee pool and the vision of incentivizing PUSH holders. However, the current version represents a substantial leap towards realizing this vision.
@@ -150,8 +152,3 @@ The Incentivized Push Chat feature offers several potential use cases that can b
 
 <blockquote><b>Note:</b> Version 2 of the Push Core and Communicator smart contracts will be deployed in the next few weeks. All the above-mentioned new features will come into effect post the deployment.</blockquote>
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

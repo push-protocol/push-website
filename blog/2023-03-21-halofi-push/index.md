@@ -4,15 +4,16 @@ slug: halo-fi-teams-up-with-push-to-enable-effortless-savings-with-real-time-not
 title: HaloFi Teams Up with Push to Enable Effortless Savings with Real-Time Notifications😇
 authors: [push]
 image: './cover-image.webp'
+text: "This week, we’re delighted to showcase foremost DeFi savings platform and the newest addition to our ‘Frens of Push’, HaloFi"
 tags: [ Frensofpush, Web3, Blockchain Technology, Defi]
 
 ---
 
 ![Cover image of HaloFi Teams Up with Push to Enable Effortless Savings with Real-Time Notifications😇](./cover-image.webp)
+<!--truncate-->
 
 This week, we’re delighted to showcase foremost DeFi savings platform and the newest addition to our ‘Frens of Push’, [HaloFi](https://halofi.me/)😇
 
-<!--truncate-->
 
 HaloFi (previously and popularly known as GoodGhosting) is a DeFi savings platform encouraging people to save in a fun, gamified manner. You can enter a challenge to increase your savings, and earn NFTs, badges, and a spot on the leaderboard. But that’s not all. You can create and vote on challenges of your choice as you watch your savings grow.
 
@@ -69,8 +70,3 @@ HaloFi is a decentralized finance (DeFi) platform that aims to make personal fin
 Find out more about HaloFi: [Website](https://halofi.me/), [Twitter](https://twitter.com/halofi_me), [Discord](https://discord.com/invite/Y6bPpwbpK3), [Github](https://github.com/Good-Ghosting), [YouTube](https://www.youtube.com/channel/UC3f3s4Xv073AJQtYcmKoH7A)
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

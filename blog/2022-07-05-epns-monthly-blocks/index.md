@@ -3,15 +3,16 @@ slug: epns-monthly-blocks
 title: 'EPNS Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
+text: "We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month."
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Monthly Blocks](./cover-image.webp)
+<!--truncate-->
 
 We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month.
 
-<!--truncate-->
 
 ![What's new Image](./image-1.webp)
 
@@ -83,8 +84,4 @@ The EPNS team
 
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

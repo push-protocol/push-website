@@ -4,14 +4,16 @@ slug: how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-w
 title: How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊
 authors: [push]
 image: './cover-image.webp'
+text: "This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network."
 tags: [ Analytics Engineering, Web3, Web3 Development,  Blockchain Development, Blockchain Technology]
 
 ---
 ![Cover image of How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊](./cover-image.webp)
+<!--truncate-->
+
 
 <b>TL;DR:</b> This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network.
 
-<!--truncate-->
 
 By the end of this tutorial, you’ll have learned:
 
@@ -74,7 +76,7 @@ const alchemyApiKey = "your_alchemy_api_key";
 const provider = new ethers.providers.AlchemyProvider("mainnet", alchemyApiKey);
 ```
 
-Now, we can initialize Push Protocol. Follow the [official documentation](https://docs.push.org/developers) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+Now, we can initialize Push Protocol. Follow the [official documentation](https://push.org/docs/) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
@@ -196,8 +198,3 @@ We encourage you to experiment with the technology and share your experiences wi
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

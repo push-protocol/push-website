@@ -3,17 +3,19 @@ slug: eth-new-york-buidl-the-future-of-web3-comm-with-epns
 title: 'ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔'
 authors: [push]
 image: './cover-image.webp'
+text: "It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
+And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!"
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔](./cover-image.webp)
+<!--truncate-->
 
 <b>Hello Hello Hello ETHNewYork!</b>
 
 It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
 
-<!--truncate-->
 
 And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!
 
@@ -47,7 +49,9 @@ Also, while you’re at the venue, come to our table & grab our Cheat Sheet! Wil
 ### TL;DR — Quick Demo Video to get you started
 While you read through the blog for references, links and all the useful tips to BUIDL with us, if you prefer to, we have made a Workshop Video for you to view directly, which would also be provided to you by the ETHGlobal team and will show up on their channels.
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/cD5PSb97K5c" title="EPNS 🛠 Building Web3 Communication in your DeFi App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/cD5PSb97K5c" title="EPNS 🛠 Building Web3 Communication in your DeFi App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 ### Ideas to Buidl. Solve. Conquer.
 For those who’d prefer to go the reading way here’s how you can Buidl. Solve. Conquer this weekend!
@@ -127,9 +131,5 @@ As you get cracking on BUIDLing with us we thought we’ll sign off with some me
 ![Push team at hackathon Image](./image-6.jpeg)
 All the best! 👍🤞👍🍀
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 

@@ -258,7 +258,7 @@ function Header() {
                       {t('header.docs.developer-guides')}
                     </A>
                     <A
-                      href="/docs"
+                      href="/docs/dao"
                       title={t('header.docs.alt-governance-guides')}
                       background="transparent"
                       hoverbackground="#fff"
@@ -970,7 +970,7 @@ const NavigationMenuContent = styled.ul`
   padding: 10px 0;
 
   & a {
-    min-width: 200px;
+    min-width: 220px;
   }
 
   @media ${device.laptop} {

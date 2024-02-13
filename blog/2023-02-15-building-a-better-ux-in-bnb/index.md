@@ -4,26 +4,27 @@ slug: building-a-better-ux-in-bnb-with-our-8-launch-collaborators
 title: 'Building a Better UX in BNB With Our 8 Launch Collaborators🚀'
 authors: [push]
 image: './cover-image.gif'
+text: "We’re extremely excited to announce Push has officially added BNB Chain to its list of supported chains!"
 tags: [ BNB, BNBChain, Blockchain, Defi]
 
 ---
 ![Cover image of Building a Better UX in BNB With Our 8 Launch Collaborators🚀](./cover-image.gif)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # 1inch Network, SushiSwap, SecondLive, and more protocols have joined Push to improve the UX in the BNB ecosystem.
 
 We’re extremely excited to announce Push has officially added BNB Chain to its list of supported chains!
 
-<!--truncate-->
 
 [BNB Chain](https://www.bnbchain.org/en), the world’s largest smart contract blockchain with [1 million daily active](https://bscscan.com/chart/active-address) users has thousands of dapps across DeFi, GameFi, and NFTs. With our new launch, the door is wide open for the Push ecosystem to grow dramatically and bring on new exciting use cases for our communication solutions.
 
 With this announcement, we’re excited to introduce our BNB launch Collaborators who are collaborating with Push on various use cases to bring web3 native notification and messaging to users across the BNB ecosystem.
 
 ### Push and BNB: Decentralized communication to power web3 UX
-Using Push, BNB dapp developers can begin adding notification services to their dapps, building custom communication channels, and enabling wallet-to-wallet communication for users (check out [this guide](https://docs.push.org/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains/bnb-chain-binance-channel-setup) for getting started). For end-users, this means enhanced capacity to stay updated on critical information relevant to their favorite dapps.
+Using Push, BNB dapp developers can begin adding notification services to their dapps, building custom communication channels, and enabling wallet-to-wallet communication for users (check out [this guide](https://push.org/docs/notifications/tutorials/enabling-channel-on-other-chains/) for getting started). For end-users, this means enhanced capacity to stay updated on critical information relevant to their favorite dapps.
 
-The BNB notification ecosystem will be available through the primary Push Protocol app: [app.push.org](http://app.push.org/). For users, you can follow this [user guide](https://docs.push.org/users/basics/how-to-start-using-push-notifications) to begin opting-in to channels.
+The BNB notification ecosystem will be available through the primary Push Protocol app: [app.push.org](http://app.push.org/). For users, you can follow this [user guide](https://push.org/docs/notifications/s) to begin opting-in to channels.
 
 This integration is a major step forward in Push’s mission to provide seamless and decentralized web3 communication and we are thrilled to have eight new frens from BNB joining our mission.
 
@@ -61,11 +62,7 @@ Metaverse and NFT gaming have been all the rage recently. But while the Metavers
 While a lot of interesting use cases have already been established with our new frens, this is only the start of an exciting journey on BNB Chain. There are a ton of applications for communication tools yet to be explored and we cannot wait to get started.
 
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 Stay updated on BNB Chain: [Website](https://www.bnbchain.org/en), [Twitter](https://twitter.com/BNBCHAIN), [Telegram](https://t.me/bnbchain), [YouTube](https://www.youtube.com/@BNBChainOfficial), [Discord](https://discord.gg/bnbchain), [LinkedIn](https://www.linkedin.com/company/bnbchaininnovation/), [Build N’ Build Forum](https://www.buildnbuild.dev/), [Dev Community](https://bnbdev.community/)
 

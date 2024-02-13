@@ -5,6 +5,7 @@
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
@@ -26,6 +27,7 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import {
   A,
   Content,
@@ -38,20 +40,21 @@ import {
   Span
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 // Import Assets
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
-import DiscordSVG from "@site/static/assets/discord.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import GithubSVG from "@site/static/assets/github.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
-import TwitterSVG from "@site/static/assets/twitter.svg";
 import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
 import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
 import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
+import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
+import GithubSVG from "@site/static/assets/website/shared/github.svg";
+import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
@@ -109,23 +112,23 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
      <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
       <Head>
         {/* <!-- HTML Meta Tags --> */}
-        <title>Push (Previously EPNS) Communication Protocol of Web3</title>
-        <meta name="description" content="Push (Previously EPNS) | Communication Protocol of Web3" />
+        <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
+        <meta name="description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push Protocol (Previously EPNS)" />
-        <meta property="og:description" content="The Communication Protocol of Web3. Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta property="og:image" content="/assets/previews/homefbpreview.webp" />
+        <meta property="og:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push Protocol (Previously EPNS)" />
-        <meta name="twitter:description" content="The Communication Protocol of Web3. Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
-        <meta name="twitter:image" content="/assets/previews/hometwtpreview.webp" />
+        <meta name="twitter:description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/homepreview.png").default, { absolute: true})} />
 
         <script type="application/ld+json">
           {JSON.stringify({
@@ -642,7 +645,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
             width="inherit"
           >
-            <ItemV
+            <InvestorItem
               alignItems="stretch"
             >
               <InvestorHeader
@@ -654,20 +657,24 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 >
                   {t("home.investors-section.title")}
               </InvestorHeader>
-            </ItemV>
+            </InvestorItem>
             
             <MarqueeAnimationContainer
-              padding="120px 0 0 0"
+              // padding="120px 0 0 0"
+              margin="3em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+              <NewMarqueeAnimation
+                speed={3}
                 gradientWidth={8}
                 gap={18}
+                direction="ltr"
+
               >
                 {InvList.top.map((item) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
                     >
@@ -686,27 +693,30 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
             <MarqueeAnimationContainer
-              padding="80px 0 0 0"
+              // padding="2em 0 0 0"
+              // margin="0 0 5em 0"
               flex="1"
               alignItems="stretch"
             >
-              <MarqueeAnimation
-                speed={MARQUEE_ANIMATION_SPEED}
+              <NewMarqueeAnimation
+                speed={-3}
                 gradientWidth={8}
                 gap={18}
-                direction="right"
+                direction="ltr"
               >
-                {InvList.bottom.map((item) => {
+                {InvList.bottom.map((item, i) => {
                   return (
+                    <SplideSlide>
                     <InvestorCard 
                       key={item.id}
-                      flexDirection={item.title ? 'row' : 'column'}
+                      flexDirection={item.title ? 'true' : 'false'}
                     >
                       <InvestorIcon
                         width={item.title ? '64px' : 'auto'}
@@ -724,9 +734,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </InvestorDetails>
                       }
                     </InvestorCard>
+                    </SplideSlide>
                   );
                 })}
-              </MarqueeAnimation>
+              </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
           </Content>
@@ -1225,23 +1236,69 @@ const InvestorHeader = styled(ResponsiveH2)`
   }
 `;
 
+const InvestorItem = styled(ItemV)`
+  @media (max-width: 1300px) {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}
+  }
+
+  @media ${device.tablet} {
+    padding: ${(props) =>
+      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}
+  }`;
+
 const InvestorCard = styled(ItemV)`
     border: 1px solid rgb(204, 204, 204);
     border-radius: 74px;
     padding: 8px;
     min-width: 242px;
-    min-height: 66px;
-    margin-right: 18px;
+    min-height: 83px;
+    max-height: 83px;
+    // margin-right: 18px;
     flex: 0;
+
+    // margin-bottom: auto;
+
+`
+
+const NewInvestorCard = styled.div`
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 74px;
+  padding: 8px;
+  min-width: 242px;
+  min-height: 83px;
+  max-height: 83px;
+  // margin-right: 18px;
+
+  display: flex;
+  flex-direction: ${(props) => props.flexDirection ? "row" : 'column'};
+  align-items: center;
+  justify-content: flex-start;
+  background: red;
+  margin-bottom: auto
+`;
+
+const NewInvestorIcon = styled(Image)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto auto;
+  justify-content: flex-start;
+  
 `
 
 const InvestorIcon = styled(Image)`
+margin: auto auto;
   
 `
+
+
 
 const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
+  margin-bottom: auto;
+
 `
 
 const InvestorTitle = styled(Span)`
@@ -1338,5 +1395,5 @@ const ArticleSource = styled(ItemH)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-  
 `
+

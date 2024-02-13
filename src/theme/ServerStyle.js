@@ -31,8 +31,8 @@ function ServerStyle({ from: children }) {
               <Footer />
             </DocusaurusContext.Provider>
           </StaticRouter>
-        </HelmetProvider>
-      )
+        </HelmetProvider>,
+      ),
     );
     style = sheet.getStyleElement();
   } catch (error) {

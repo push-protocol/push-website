@@ -3,10 +3,9 @@
 
 // React + Web3 Essentials
 import React from 'react';
-
 // External Components
 import styled from 'styled-components';
-
+import medal from "../../../static/assets/website/brb/win.svg"
 // Internal Components
 import { Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -65,8 +64,8 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
       {brbPartnersBountyList?.map((item, i) => (
         <PartnerLine
           key={i}
-          onClick={() => openLink(item?.link)}
-          disabled={item?.link ? false : true}
+          onClick={() => openLink(!item.ended && item?.link)}
+          disabled={!item?.ended ? false : true}
         >
           <PartnersLogo
             src={require(`@site/static/assets/website/brb/partners/${item.srcref}.webp`).default}
@@ -78,8 +77,10 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           <BountyDescription>
             {item.text}
           </BountyDescription>
+          <BountyPrice>
 
           <BountyItem>
+           
             <PriceSpan
               fontSize="32px"
               fontWeight="400"
@@ -87,17 +88,92 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
               ${item.price.toLocaleString()}
             </PriceSpan>
 
-            <BountyButton className="buttonId">
-              <ViewBountyText>View Bounty</ViewBountyText>
-              <ArrowSmall />
-            </BountyButton>
+            
+              
+                 {item.ended ?
+                
+                 <BountyButton disabled borderColor={"#53536C"} className="buttonId">
+                 <ViewBountyText  >CLOSED</ViewBountyText> 
+                  </BountyButton>
+              
+                 : 
+                 
+                 
+                 <BountyButton className="buttonId">
+                 <ViewBountyText>OPEN</ViewBountyText> 
+              
+              </BountyButton>
+          }
+       
+          
           </BountyItem>
+          {
+            item.ended ? <WinnerItem>
+           <Image
+                    src={require(`@site/static/assets/website/brb/Medal.png`).default}
+                   
+                    alt={`Push Logo`}
+                    width="25px"
+                    height="24px"
+                  />
+             
+              Winner: 
+            <TwitterLink>
+             <a href={item.github} target='_blank'> {item.winner} 
+             
+
+             </a>
+            
+             </TwitterLink> <Image
+                    src={require(`@site/static/assets/website/brb/Vector.png`).default}
+                   link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
+                    alt={`Push Logo`}
+                    width="8px"
+                    height="8px"
+                  />
+            </WinnerItem> : null
+           }
+          </BountyPrice>
         </PartnerLine>
       ))}
     </PartnerBountiesContainer>
   );
 };
 
+const TwitterLink = styled.div`
+color: #E64DE9;
+
+
+`
+const WinnerItem = styled.div`
+
+font-size: 16px;
+  font-weight: 400;
+  font-family: "Glancyr", sans-serif;
+  display: flex;
+  gap:8px;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+`
+const BountyPrice = styled.div`
+margin-left: auto;
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+gap: 8;
+width: 60%;
+
+@media ${device.tablet} {
+  width:100%;
+}
+
+@media ${device.mobileL} {
+  margin-left: auto;
+  width: 100%;
+  justify-content: center;
+}
+`
 const PartnerBountiesContainer = styled.div`
   width: 100%;
   display: flex;
@@ -145,7 +221,7 @@ const PartnerLine = styled.div`
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 
     & .buttonId {
-      background: ${(props) => (!props.disabled ? '#E64DE9 !important' : 'transparent')};
+      background: ${(props) => (!props.disabled ? '#E64DE9 !important' : '')};
     }
   }
 
@@ -177,19 +253,19 @@ const ViewBountyText = styled(Span)`
 `;
 
 const BountyButton = styled.div`
-  min-width: 114px;
-  max-width: ${(props) => props.maxWidth || '114px'};
+  
   display: flex;
-  flex-direction: row;
+ 
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 0px 0px;
+  justify-content: flex-end;
+  padding: 12px;
   border: 1px solid ${(props) => props.borderColor || '#e64de9'};
-  background: ${(props) => props.background || 'transparent'};
+  background: ${(props) => (props.disabled ? "#53536C"  : "#E64DE9" )};
   border-radius: 8px;
   cursor: pointer;
 `;
+
+
 
 const ArrowSmall = styled(Arrow)`
   width: 8px;
@@ -231,12 +307,13 @@ const BountyItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
+  justify-content: flex-end;
+  
   gap: 38px;
   @media ${device.tablet} {
     margin-left: 0px;
     width: 100%;
     justify-content: space-between;
   }
+ 
 `;
