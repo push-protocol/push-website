@@ -156,7 +156,7 @@ export const objChannelList = [
     name: 'Bankless Claimables - Crypto Airdrops',
     info: 'Bankless Claimables is an airdrop checker. Search for unclaimed airdrops and get notifications for new crypto. Enter your address to see tokens, NFTs, and POAPs today!',
     url: 'https://www.bankless.com/claimables?utm_source=earnifi&utm_medium=announcement&utm_campaign=merge',
-    imageFile: 'earnifi-logo',
+    imageFile: 'earnifi',
     // icon: 'https://gateway.ipfs.io/ipfs/QmNPjqA2qSQ7eir8UyfW5ecfWmsfWdB8LdRNVsojkAZwqK',
     processed: 1,
     attempts: 0,
