@@ -124,7 +124,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
 
 const BlogPostList = styled(ItemH)`
   gap: 25px;
-  margin: 75px 0 0 0;
+  margin: 72px 0 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: column;
@@ -179,6 +179,7 @@ const BlogPostList = styled(ItemH)`
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
+    margin: 41px 0 0 0;
     gap: 0px;
 
     .item-3 {

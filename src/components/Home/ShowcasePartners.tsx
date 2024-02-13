@@ -267,20 +267,22 @@ function PartnerChannels() {
         >
           <ResponsiveH2
             color="#fff"
-            fontSize="40px"
-            fontWeight="700"
+            fontSize="36px"
+            fontWeight="500"
             letterSpacing="-0.02em"
             margin="0px 0px"
             lineHeight="110%"
             fontFamily="FK Grotesk Neue"
           >
+            <b>
             {t('home.partners-section.partner-channels-title')}
+            </b>
           </ResponsiveH2>
 
           <Span
             color="#fff"
-            size="19px"
-            weight="300"
+            size="18px"
+            weight="400"
             spacing="-0.03em"
             lineHeight="160%"
             textAlign='center'
@@ -295,7 +297,7 @@ function PartnerChannels() {
             // hoverColor="#fff"
             borderRadius="16px"
             padding="14px 32px"
-            fontSize="18px"
+            fontSize="16px"
             fontWeight="500"
             letterSpacing="-0.06em"
             lineHeight="26px"

@@ -337,27 +337,14 @@ const Container = styled.div`
     min-height: ${(props) => props.height || "auto"};
   }
 
-  @media ${device.mobileL} {
-    display: ${(props) => props.hideOnMobile && "none !important"};
-    max-height: ${({ id, type, height }) =>
-      id == "snap"
-        ? "380px"
-        : type == "codeblock" && height
-          ? "auto !important"
-          : height
-            ? height
-            : "auto"};
-    min-height: ${({ id, type, height }) =>
-      id == "snap"
-        ? "380px"
-        : type == "codeblock" && height
-          ? "auto !important"
-          : height
-            ? height
-            : "auto"};
-    width: 100% !important;
-  }
-`;
+
+    
+    @media ${device.mobileL} {
+        display: ${(props) => props.hideOnMobile && 'none !important'};
+        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
+        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
+        width: 100% !important;
+    }
 
 const GlowwyBorder = styled.div`
   width: 0px;
@@ -439,20 +426,20 @@ const TagItems = styled(ItemV)`
 `;
 
 const H2Text = styled(H2)`
-  font-size: 19px;
-  color: #fff;
-  line-height: 130%;
-  white-space: pre;
 
-  @media ${device.mobileL} {
-    white-space: ${(props) => (props.type === "codeblock" ? "normal" : "pre")};
-  }
+    font-size: 19px;
+    color: #FFF;
+    line-height: 130%;
+    white-space: pre;
+    font-weight: 400;
 
-  background: ${(props) =>
-    props.theme === "hue" &&
-    "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
-  -webkit-background-clip: ${(props) => props.theme === "hue" && "text"};
-  -webkit-text-fill-color: ${(props) => props.theme === "hue" && "transparent"};
+    @media ${device.mobileL} {
+        white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
+    }
+
+    background: ${(props) => props.theme === 'hue' && "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
+    -webkit-background-clip: ${(props) => props.theme === 'hue' && "text"};
+    -webkit-text-fill-color: ${(props) => props.theme === 'hue' && "transparent"};
 `;
 
 const SubscribeText = styled.h2`
