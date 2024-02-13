@@ -345,6 +345,7 @@ const Container = styled.div`
         min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
         width: 100% !important;
     }
+`;
 
 const GlowwyBorder = styled.div`
   width: 0px;
@@ -366,7 +367,7 @@ const GlowwyBorder = styled.div`
 const Glowwy = styled(GlowwyBorder)`
   box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.2);
   z-index: 1;
-`
+`;
 
 const Subcontainer = styled.div`
   display: flex;
@@ -397,7 +398,7 @@ const Subcontainer = styled.div`
           ? "cover"
           : "contain"};
   }
-`
+`;
 
 const TagItem = styled.div`
   width: fit-content;
