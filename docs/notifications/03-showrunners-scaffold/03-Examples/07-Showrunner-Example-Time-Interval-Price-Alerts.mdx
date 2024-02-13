@@ -1,8 +1,8 @@
 ---
 id: docs-slider-settings-with-showrunners-example
-title: Time Interval Price Alerts
+title: Notification Settings in Eth Tracker
 hide_title: true
-slug: ./price-alerts-with-showrunners-example
+slug: ./eth-tracker-with-showrunners-example
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 7
 image: "/assets/docs/previews/docs_notifications_tutorials_push_react_component_playground_example--push_sdk_react_playground.png"
@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_notifications_tutorials_push_react_component_
 
 # Slider Notification Settings in Showrunners
 
-This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/), [Showrunners Framework](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/) and [Channel Settings Demo](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/bank) for better understanding!
+This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
 
 <head>
   <title>
@@ -25,13 +25,15 @@ import TabItem from '@theme/TabItem'
 
 Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a slider type notification settings implementation where you as a user can specify the time interval after which you would like to get notified.
 
-We will choose the [Eth Tracker](https://github.com/ethereum-push-notification-service/push-showrunners-channels/tree/wallet-tracker/Staging_channels/ethTicker) channel to demonstrate this example.
+We will choose the [Eth Tracker](https://github.com/ethereum-push-notification-service/push-showrunners-channels/tree/wallet-tracker/Staging_channels/ethTicker "Push Channel Eth Tracker") channel to demonstrate this example.
 
-### Setup the Showrunners in your local machine
+## Creating Eth Tracker in Showrunners
+ 
+### Step 1: Setup the Showrunners in your local machine
 
-For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/). First we need to create a folder in `src/showrunners/<your_channel_name>`
+For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). First we need to create a folder in `src/showrunners/<your_channel_name>`
 
-### Install Dependencies & start up
+### Step 2: Install Dependencies & start up
 
 Navigate to the SDK directory and install required dependencies.
 
@@ -44,16 +46,16 @@ yarn run dev
 ```
 
 
-### Import the Push SDK
+### Step 3: Import the Push SDK
 
-After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/). Move to the [name]Channel.ts file and import the dependencies.
+After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
 import { PushAPI } from "@pushprotocol/restapi";
 ```
 
 
-#### [Channel File](https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts)
+#### [Channel File](https://github.com/ethereum-push-notification-service/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts "Eth Tracker Channel Github")
 
 In order to send notification, we need to have the instance of the user channel. To get that, we need to add the below function in our 'Channel class'
 .
@@ -68,7 +70,7 @@ Here, you can use any provider of your choice and fetch the signer using the pri
 Let's get to building it.
 
 ### Fetch subscribers data
-To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-subscriptions/).
+To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-subscriptions/ "Channel Settings Docs").
 
 ```jsx
 // userAlice.notification.subscriptions({options?})
