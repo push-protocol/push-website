@@ -4,6 +4,7 @@
 
 import { device } from "@site/src/config/globals";
 import {
+  A,
   Button,
   H2,
   Image,
@@ -14,16 +15,19 @@ import {
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 const GlassyComponents = ({ section }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  // Internationalization
+  const { t, i18n } = useTranslation();
 
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideOnMobile, bg } = config || "";
+  const { id, height, padding, hideOnMobile, bg, bgtitle, link } = config || "";
   const {
     title,
     tags,
@@ -33,14 +37,18 @@ const GlassyComponents = ({ section }) => {
     theme,
     highlight,
     subheader,
+    iconalt,
+    icontitle,
   } = header || "";
   const {
     type,
     imagesrc,
-    alt,
-    bodyText,
-    buttonText,
-    buttonLink,
+    imagealt,
+    imagetitle,
+    bodytext,
+    buttontext,
+    buttonlink,
+    buttontitle,
     codeblockImg,
   } = body || "";
   const { text } = footer || "";
@@ -139,6 +147,7 @@ const GlassyComponents = ({ section }) => {
         id={id}
         padding={padding}
         bg={bg}
+        title={t(bgtitle)}
       >
         <Header highlight={highlight} type={type} id={id}>
           <Subheader
@@ -159,8 +168,8 @@ const GlassyComponents = ({ section }) => {
                       .default
                   }
                   srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.webp`).default} 3x`}
-                  alt={"Push Snap"}
-                  title="Push Snap"
+                  alt={t(iconalt)}
+                  title={t(icontitle)}
                   width="16px"
                   height="16px"
                 />
@@ -172,11 +181,11 @@ const GlassyComponents = ({ section }) => {
                   fontWeight="bold"
                   fontFamily="FK Grotesk Neue"
                 >
-                  {subheader}
+                  {t(subheader)}
                 </H2>
 
                 <H2Text fontFamily="FK Grotesk Neue" theme={theme} type={type}>
-                  {title}
+                  {t(title)}
                 </H2Text>
               </Title>
 
@@ -190,8 +199,8 @@ const GlassyComponents = ({ section }) => {
                     .default
                 }
                 srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
-                alt={"Push Snap"}
-                title="Push Snap"
+                alt={t(iconalt)}
+                title={t(icontitle)}
                 width={isTablet ? "27px" : "auto"}
                 height={isTablet ? "auto" : "37px"}
               />
@@ -221,8 +230,8 @@ const GlassyComponents = ({ section }) => {
                     .default
                 }
                 srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
-                alt={alt}
-                title={alt}
+                alt={t(imagealt)}
+                title={t(imagetitle)}
                 type={type}
                 id={id}
               />
@@ -230,7 +239,7 @@ const GlassyComponents = ({ section }) => {
 
             {type === "codeblock" && (
               <CodeDiv>
-                <SubscribeText>{bodyText}</SubscribeText>
+                <SubscribeText>{t(bodytext)}</SubscribeText>
 
                 <ButtonItem
                   background="#E64DE9"
@@ -239,8 +248,10 @@ const GlassyComponents = ({ section }) => {
                   fontWeight="500"
                   fontSize="16px"
                   fontFamily="FK Grotesk Neue"
+                  href={buttonlink}
+                  title={t(buttontitle)}
                 >
-                  {buttonText}
+                  {t(buttontext)}
                   <WhiteArrow />
                 </ButtonItem>
 
@@ -251,8 +262,8 @@ const GlassyComponents = ({ section }) => {
                     ).default
                   }
                   srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
-                  alt={alt}
-                  title={alt}
+                  alt={t(imagealt)}
+                  title={t(imagetitle)}
                   type={type}
                   margin={isMobile && "12px 0 0 0"}
                 />
@@ -263,7 +274,7 @@ const GlassyComponents = ({ section }) => {
 
         {footer && (
           <Footer>
-            {text && <H2Text fontFamily="FK Grotesk Neue">{text}</H2Text>}
+            {text && <H2Text fontFamily="FK Grotesk Neue">{t(text)}</H2Text>}
           </Footer>
         )}
 
@@ -275,7 +286,7 @@ const GlassyComponents = ({ section }) => {
               fontFamily="FK Grotesk Neue"
               lineHeight="130%"
             >
-              {message}
+              {t(message)}
             </H2>
           </AfterItem>
         )}
@@ -469,7 +480,7 @@ const SubscribeText = styled.h2`
   }
 `;
 
-const ButtonItem = styled(Button)`
+const ButtonItem = styled(A)`
   display: flex;
   font-size: 16px;
   font-style: normal;
