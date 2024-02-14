@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 
-const GlassyComponents = ({ section }) => {
+const Glassy = ({ section }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   // Internationalization
@@ -707,4 +707,4 @@ const AfterItem = styled.div`
   }
 `;
 
-export default GlassyComponents;
+export default Glassy;

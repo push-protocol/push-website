@@ -1,5 +1,5 @@
 
-export const GridComponentsNotificationList = {
+export const HomeGlassyNotifsList = {
     first: [
         {
             config: {
@@ -172,7 +172,7 @@ export const GridComponentsNotificationList = {
     ]  
 }
 
-export const GridComponentsChatList = {
+export const HomeGlassyChatList = {
     first: [
         {
             config: {
