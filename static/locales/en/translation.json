@@ -117,42 +117,46 @@
       },
       "box1": {
         "title": "Web3 Native",
-        "imagealt": "Powered by Push Protocol - Web Native Image",
-        "imagetitle": "Powered by Push Protocol - Web Native Image"
+        "imagealt": "Illustration showing native web3 notification support for smart contracts, gasless and even off-chain notifications",
+        "imagetitle": "Supports any type of web3 native notification capabilities"
       },
       "box2": {
         "title": "Cross-chain \nNotifications",
-        "imagealt": "Powered by Push Protocol - Cross-Chain Notifications Image",
-        "imagetitle": "Powered by Push Protocol - Cross-Chain Notifications Image"
+        "imagealt": "Illustration showing cross-chain support for Push Protocol",
+        "imagetitle": "Supports cross-chain notifications including EVM and non-EVM chains (Like Polygon, BNB, etc)"
       },
       "box3": {
         "title": "Customize Notification \nPreferences",
-        "imagealt": "Powered by Push Protocol - Customize Notification Preferences Image",
-        "imagetitle": "Powered by Push Protocol - Customize Notification Preferences Image"
+        "imagealt": "Illustration showing various types of notification categories that can be customized by the developer for enchaned UX",
+        "imagetitle": "Supports customizable notification categories for enhanced user experience"
       },
       "box4": {
         "title": "Lightweight Code with Rapid API Integration",
-        "imagealt": "Powered by Push Protocol - Lightweight Code with Rapid API Integration Image",
-        "imagetitle": "Powered by Push Protocol - Lightweight Code with Rapid API Integration Image",
-        "bodyText": "<4 mins",
-        "buttonText": "Start building"
+        "imagealt": "Illustration showing lines of code required for Push Protocol integration",
+        "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
+        "bodytext": "<4 mins",
+        "buttontext": "Start building",
+        "buttonlink": "/docs/notifications/quickstart",
+        "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."
       },
       "box5": {
-        "title": "Interoperable \nNotifications"
+        "title": "Interoperable \nNotifications",
+        "bgtitle": "Interoperable notifications across all web3 wallets and dapps (Like Unstoppable, MetaMask Push Snap, Shapeshift, Push, etc)"
       },
       "box6": {
         "title": "Anti-Spam",
-        "iconalt": "Powered by Push Protocol - Anti-Spam Image",
-        "icontitle": "Powered by Push Protocol - Anti-Spam Image"
+        "iconalt": "Illustration showing anti-spam capabilities of Push Protocol",
+        "icontitle": "User centric, anti-spam capabilities to thwart spam and unwanted notifications."
       },
       "box7": {
         "title": "Push Snap",
-        "footerText": "Receive Notifications \nin MetaMask"
+        "bgtitle": "Push Snap to ensure users of MetaMask can get notifications without any additional setup.",
+        "footertext": "Receive Notifications \nin MetaMask"
       },
       "box8": {
         "title": "Increase \nEngagement",
-        "imagealt": "Powered by Push Protocol - Increase Engagement Image",
-        "imagetitle": "Powered by Push Protocol - Increase Engagement Image"
+        "imagealt": "Illustration showing graph indicating increased user engagement (by 8x) with Push Protocol",
+        "imagetitle": "Notifications increase user engagement by 8x"
       }
     },
     "chat-section": {
@@ -162,55 +166,58 @@
       },
       "box1": {
         "title": "Share Images, Gifs, \nand Reactions",
-        "imagealt": "Powered by Push Protocol - Share Images Image",
-        "imagetitle": "Powered by Push Protocol - Share Images Image"
+        "imagealt": "Illustration showing messages sent in a group chat along with a meme",
+        "imagetitle": "Send emojis, gifs, and images in group chat, gated by web3 native preferences"
       },
       "box2": {
         "title": "Chat Requests",
         "subheader": "PRIVATE AND ANTI SPAM",
-        "iconalt": "Powered by Push Protocol - Chat Requests Image",
-        "icontitle": "Powered by Push Protocol - Chat Requests Image"
+        "iconalt": "Illustration showing 5 chat requests in Push Chat",
+        "icontitle": "User centric, anti-spam capabilities to thwart spam and unwanted chat / scam chats."
       },
       "box3": {
         "title": "Secure, Instant, and \nVerifiable Payments"
       },
       "box4": {
         "title": "Lightweight Code with Rapid API Integration",
-        "imagealt": "Powered by Push Protocol - Lightweight Code Image",
-        "imagetitle": "Powered by Push Protocol - Lightweight Code Image",
-        "bodyText": "<2 mins",
-        "buttonText": "Start building"
+        "imagealt": "Illustration showing 2 lines of code required for Push Protocol integration",
+        "imagetitle": "Integrate Push Chat in 2 mins and with 2 lines of code",
+        "bodytext": "<2 mins",
+        "buttontext": "Start building",
+        "buttonlink": "/docs/chat/quickstart",
+        "buttontitle": "Explore the documentation for instant integration of chat via Push Protocol in your dapp"
       },
       "box5": {
         "title": "Hyperscalable \nGroups",
+        "bgtitle": "Push Chat supports groups that can have 100k+ members, a feat that is not possible with any other chat app in the web3 ecosystem.",
         "afterMessage": "*Other Chat Apps: 1024 Members"
       },
       "box6": {
         "title": "Plug and Play \nChat Components",
-        "imagealt": "Powered by Push Protocol - Plug and Play Image",
-        "imagetitle": "Powered by Push Protocol - Plug and Play Image"
+        "imagealt": "Illustration showing how different components of Push Chat can be seamlessly integrated into any dapp",
+        "imagetitle": "Seamlessly integrate Push Chat or any of the modular components into your dapp in minutes"
       },
       "box7": {
         "title": "Chain Agnostic",
         "subheader": "SUPPORTS ALL EVM CHAINS",
-        "iconalt": "Powered by Push Protocol - Chain Agnostic Image",
-        "icontitle": "Powered by Push Protocol - Chain Agnostic Image"
+        "iconalt": "Illustration showing Push Chat supporting all EVM and even non-EVM chains",
+        "icontitle": "Push Chat is chain agnostic and simply works on any EVM (with non-EVM support coming soon)"
       },
       "box8": {
-        "imagealt": "Powered by Push Protocol - Create Token Image",
-        "imagetitle": "Powered by Push Protocol - Create Token Image",
-        "footerText": "Create Token, NFT, \nGeo Gated Groups"
+        "imagealt": "Illustration showing a bored ape nft and how it or any other NFT, tokens or any conditional logic can be used to create gated groups",
+        "imagetitle": "Create gated groups based on NFTs, tokens or any conditional logic!",
+        "footertext": "Create Token, NFT, \nGeo Gated Groups"
       },
       "box9": {
         "title": "E2E Encryption",
         "subheader": "END-TO-END (E2EE)",
-        "iconalt": "Powered by Push Protocol - E2E Encryption Image",
-        "icontitle": "Powered by Push Protocol - E2E Encryption Image"
+        "iconalt": "Illustration showing E2E encryption in Push Chat",
+        "icontitle": "End to end encryption (E2EE) for all messages and calls between users of Push"
       },
       "box10": {
         "title": "Supports any \nWeb3 Standard",
-        "imagealt": "Powered by Push Protocol - Web3 standard Image",
-        "imagetitle": "Powered by Push Protocol - Web3 standard Image"
+        "imagealt": "Illustration showing how all web3 standards can be used in Push Chat including chatting with wallet, NFTs, cross chain messaging, etc",
+        "imagetitle": "Chat from a wallet or an NFT or even between different chains, Push Chat supports all web3 standards"
       }
     },
     "grow-section": {

@@ -75,9 +75,10 @@ export const GridComponentsNotificationList = {
             },
             body: {
                 type: 'codeblock',
-                bodyText: 'home.notification-section.box4.bodyText',
-                buttonText: 'home.notification-section.box4.buttonText',
-                buttonLink: 'https://push.org',
+                bodytext: 'home.notification-section.box4.bodytext',
+                buttontext: 'home.notification-section.box4.buttontext',
+                buttonlink: '/docs/notifications/quickstart',
+                buttontitle: 'home.notification-section.box4.buttontitle',
                 codeblockImg: `notifs/lightweight`,
                 imagealt: 'home.notification-section.box4.imagealt',
                 imagetitle: 'home.notification-section.box4.imagetitle'
@@ -89,6 +90,7 @@ export const GridComponentsNotificationList = {
                 height: '202px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/notifs/inter.webp').default,
+                bgtitle: 'home.notification-section.box5.bgtitle',
                 hideonmobile: true
             },
             header: {
@@ -119,6 +121,7 @@ export const GridComponentsNotificationList = {
                 height: '321px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/notifs/snap@3x.webp').default,
+                bgtitle: 'home.notification-section.box7.bgtitle',
                 hideonmobile: false
             },
             header: {
@@ -141,7 +144,7 @@ export const GridComponentsNotificationList = {
             //     alt: 'Push Snap'
             // },
             footer: {
-                text: 'home.notification-section.box7.footerText'
+                text: 'home.notification-section.box7.footertext'
                 
             }
         },
@@ -243,9 +246,10 @@ export const GridComponentsChatList = {
             },
             body: {
                 type: 'codeblock',
-                bodyText: 'home.chat-section.box4.bodyText',
-                buttonText: 'home.chat-section.box4.buttonText',
-                buttonLink: 'https://push.org',
+                bodytext: 'home.chat-section.box4.bodytext',
+                buttontext: 'home.chat-section.box4.buttontext',
+                buttonlink: 'https://push.org',
+                buttontitle: 'home.chat-section.box4.buttontitle',
                 codeblockImg: `chats/lightweight`,
                 imagealt: 'home.chat-section.box4.imagealt',
                 imagetitle: 'home.chat-section.box4.imagetitle'
@@ -257,6 +261,7 @@ export const GridComponentsChatList = {
                 height: '237px',
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/chats/hyper@3x.webp').default,
+                bgtitle: 'home.chat-section.box5.bgtitle',
                 hideonmobile: false
             },
             header: {
@@ -319,7 +324,7 @@ export const GridComponentsChatList = {
                 imagetitle: 'home.chat-section.box8.imagetitle'
             },
             footer: {
-                text: 'home.chat-section.box8.footerText'
+                text: 'home.chat-section.box8.footertext'
             }
         },
         {

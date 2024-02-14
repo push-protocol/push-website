@@ -4,6 +4,7 @@
 
 import { device } from "@site/src/config/globals";
 import {
+  A,
   Button,
   H2,
   Image,
@@ -14,8 +15,8 @@ import {
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
 const GlassyComponents = ({ section }) => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -26,7 +27,7 @@ const GlassyComponents = ({ section }) => {
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideOnMobile, bg, link } = config || "";
+  const { id, height, padding, hideOnMobile, bg, bgtitle, link } = config || "";
   const {
     title,
     tags,
@@ -44,8 +45,10 @@ const GlassyComponents = ({ section }) => {
     imagesrc,
     imagealt,
     imagetitle,
-    bodyText,
-    buttonText,
+    bodytext,
+    buttontext,
+    buttonlink,
+    buttontitle,
     codeblockImg,
   } = body || "";
   const { text } = footer || "";
@@ -144,6 +147,7 @@ const GlassyComponents = ({ section }) => {
         id={id}
         padding={padding}
         bg={bg}
+        title={t(bgtitle)}
       >
         <Header highlight={highlight} type={type} id={id}>
           <Subheader
@@ -235,7 +239,7 @@ const GlassyComponents = ({ section }) => {
 
             {type === "codeblock" && (
               <CodeDiv>
-                <SubscribeText>{t(bodyText)}</SubscribeText>
+                <SubscribeText>{t(bodytext)}</SubscribeText>
 
                 <ButtonItem
                   background="#E64DE9"
@@ -244,8 +248,10 @@ const GlassyComponents = ({ section }) => {
                   fontWeight="500"
                   fontSize="16px"
                   fontFamily="FK Grotesk Neue"
+                  href={buttonlink}
+                  title={t(buttontitle)}
                 >
-                  {t(buttonText)}
+                  {t(buttontext)}
                   <WhiteArrow />
                 </ButtonItem>
 
@@ -474,7 +480,7 @@ const SubscribeText = styled.h2`
   }
 `;
 
-const ButtonItem = styled(Button)`
+const ButtonItem = styled(A)`
   display: flex;
   font-size: 16px;
   font-style: normal;
