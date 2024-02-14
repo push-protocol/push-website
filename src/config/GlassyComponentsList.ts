@@ -33,8 +33,9 @@ export const GridComponentsNotificationList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/cross-chain',
+                videosrc: 'notifs/cross-chain-video',
                 imagealt: 'home.notification-section.box2.imagealt',
-                imagetitle: 'home.notification-section.box2.imagetitle'
+                imagetitle: 'home.notification-section.box2.imagetitle',
             }
         },
         {
@@ -80,6 +81,7 @@ export const GridComponentsNotificationList = {
                 buttonlink: '/docs/notifications/quickstart',
                 buttontitle: 'home.notification-section.box4.buttontitle',
                 codeblockImg: `notifs/lightweight`,
+                videosrc: 'notifs/lightweight-video',
                 imagealt: 'home.notification-section.box4.imagealt',
                 imagetitle: 'home.notification-section.box4.imagetitle'
          }
@@ -120,8 +122,6 @@ export const GridComponentsNotificationList = {
                 id: 'snap',
                 height: '321px',
                 padding: '24px',
-                bg: require('@site/static/assets/website/home/notifs/snap@3x.webp').default,
-                bgtitle: 'home.notification-section.box7.bgtitle',
                 hideonmobile: false
             },
             header: {
@@ -138,11 +138,13 @@ export const GridComponentsNotificationList = {
 
                 },
             }, 
-            // body: {
-            //     type: 'image',
-            //     imagesrc: 'notifs/snap',
-            //     alt: 'Push Snap'
-            // },
+            body: {
+                type: 'image',
+                imagesrc: 'notifs/snap',
+                videosrc: 'notifs/snap-video',
+                imagealt: 'home.notification-section.box7.imagealt',
+                imagetitle: 'home.notification-section.box7.imagetitle'
+            },
             footer: {
                 text: 'home.notification-section.box7.footertext'
                 
@@ -153,7 +155,6 @@ export const GridComponentsNotificationList = {
                 id: 'increase',
                 height: '260px',
                 padding: '24px',
-                // bg: require('@site/static/assets/website/home/notifs/engage@4x.png').default,
                 hideonmobile: true
             },
             header: {
@@ -163,6 +164,7 @@ export const GridComponentsNotificationList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/engage',
+                videosrc: 'notifs/engage-video',
                 imagealt: 'home.notification-section.box8.imagealt',
                 imagetitle: 'home.notification-section.box8.imagetitle'
             }
@@ -186,6 +188,7 @@ export const GridComponentsChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/share',
+                videosrc: 'chats/share-video',
                 imagealt: 'home.chat-section.box1.imagealt',
                 imagetitle: 'home.chat-section.box1.imagetitle'
             },
@@ -262,6 +265,7 @@ export const GridComponentsChatList = {
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/chats/hyper@3x.webp').default,
                 bgtitle: 'home.chat-section.box5.bgtitle',
+                bgvideosrc: 'chats/hyper-video',
                 hideonmobile: false
             },
             header: {
@@ -357,6 +361,7 @@ export const GridComponentsChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/web-standard',
+                videosrc: 'chats/web-standard-video',
                 imagealt: 'home.chat-section.box10.imagealt',
                 imagetitle: 'home.chat-section.box10.imagetitle'
             }

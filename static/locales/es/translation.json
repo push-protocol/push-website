@@ -150,7 +150,8 @@
         },
         "box7": {
           "title": "Push Snap",
-          "bgtitle": "Push Snap para asegurar que los usuarios de MetaMask puedan recibir notificaciones sin ninguna configuración adicional.",
+          "imagetitle": "Ilustración mostrando Push Snap para usuarios de MetaMask",
+          "imagealt": "Push Snap para asegurar que los usuarios de MetaMask reciban notificaciones sin ninguna configuración adicional.",
           "footerText": "Recibe Notificaciones \nen MetaMask"
         },
         "box8": {

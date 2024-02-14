@@ -16,6 +16,7 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 const GlassyComponents = ({ section }) => {
@@ -27,7 +28,7 @@ const GlassyComponents = ({ section }) => {
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideOnMobile, bg, bgtitle, link } = config || "";
+  const { id, height, padding, hideOnMobile, bg, bgvideosrc, bgtitle, link } = config || "";
   const {
     title,
     tags,
@@ -43,6 +44,7 @@ const GlassyComponents = ({ section }) => {
   const {
     type,
     imagesrc,
+    videosrc,
     imagealt,
     imagetitle,
     bodytext,
@@ -149,6 +151,19 @@ const GlassyComponents = ({ section }) => {
         bg={bg}
         title={t(bgtitle)}
       >
+        {/* If bgvideosrc is present, then play video on hover */}
+        {bgvideosrc &&
+          <ReactPlayer
+            url={require(`@site/static/assets/website/home/${bgvideosrc}.mp4`).default}
+            playing={hovered ? true : false}
+            loop={false}
+            muted={true}
+            width="100%"
+            height="100%"
+            style={{ position: "absolute", top: 0, bottom:0, right: 0, left: 0, visibility: hovered && bgvideosrc ? 'visible' : 'hidden' }}
+          />
+        }
+
         <Header highlight={highlight} type={type} id={id}>
           <Subheader
             highlight={highlight}
@@ -223,8 +238,22 @@ const GlassyComponents = ({ section }) => {
 
         {body && (
           <Body>
-            {type === "image" && (
-              <GridImage
+            {/* If Image, check if videosrc is present, if yes, load video */}
+            {type === "image" && videosrc &&
+              <ReactPlayer
+                url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
+                playing={hovered ? true : false}
+                loop={false}
+                muted={true}
+                width="100%"
+                height="100%"
+                style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
+              />
+            }
+
+            {/* If Image, check if videosrc is present, if yes, play video on hover */}
+            {type === "image" &&
+              <BodyImage
                 src={
                   require(`@site/static/assets/website/home/${imagesrc}.webp`)
                     .default
@@ -232,41 +261,66 @@ const GlassyComponents = ({ section }) => {
                 srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                 alt={t(imagealt)}
                 title={t(imagetitle)}
+                style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                 type={type}
                 id={id}
               />
-            )}
+            }
 
             {type === "codeblock" && (
               <CodeDiv>
-                <SubscribeText>{t(bodytext)}</SubscribeText>
-
-                <ButtonItem
-                  background="#E64DE9"
-                  padding={!isTablet ? "14px 22px" : "10px 11px"}
-                  margin="0px auto"
-                  fontWeight="500"
-                  fontSize="16px"
-                  fontFamily="FK Grotesk Neue"
-                  href={buttonlink}
-                  title={t(buttontitle)}
+                {/* Hack since codeblock is different currently */}
+                <ItemV
+                  padding="0px 0px 0px 0px"
+                  flex="1"
                 >
-                  {t(buttontext)}
-                  <WhiteArrow />
-                </ButtonItem>
+                  <SubscribeText>{t(bodytext)}</SubscribeText>
 
-                <GridImage
-                  src={
-                    require(
-                      `@site/static/assets/website/home/${codeblockImg}.webp`,
-                    ).default
+                  <ButtonItem
+                    background="#E64DE9"
+                    padding={!isTablet ? "14px 22px" : "10px 11px"}
+                    margin="0px auto"
+                    fontWeight="500"
+                    fontSize="16px"
+                    fontFamily="FK Grotesk Neue"
+                    href={buttonlink}
+                    title={t(buttontitle)}
+                  >
+                    {t(buttontext)}
+                    <WhiteArrow />
+                  </ButtonItem>
+                </ItemV>
+
+                {/* Hack since codeblock is different currently */}
+                <ItemV
+                  padding="0px 0px 0px 0px"
+                >
+                  {videosrc &&
+                    <ReactPlayer
+                      url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
+                      playing={hovered ? true : false}
+                      loop={false}
+                      muted={true}
+                      width="100%"
+                      height="100%"
+                      style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
+                    />
                   }
-                  srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
-                  alt={t(imagealt)}
-                  title={t(imagetitle)}
-                  type={type}
-                  margin={isMobile && "12px 0 0 0"}
-                />
+
+                  <BodyImage
+                    src={
+                      require(
+                        `@site/static/assets/website/home/${codeblockImg}.webp`,
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
+                    alt={t(imagealt)}
+                    title={t(imagetitle)}
+                    style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                    type={type}
+                    margin={isMobile && "12px 0 0 0"}
+                  />
+                </ItemV>
               </CodeDiv>
             )}
           </Body>
@@ -333,7 +387,8 @@ const Container = styled.div`
     bottom: 1px;
     right: 1px;
     border-radius: inherit;
-    background: #000000;
+    /* background: #000000; */
+    background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 
@@ -363,9 +418,9 @@ const GlowwyBorder = styled.div`
   height: 0px;
   border-radius: 50%;
   box-shadow:
-    0 0 59px 29px #fff,
-    0 0 100px 60px #f0f,
-    0 0 140px 90px #E64DE9;
+    0 0 59px 29px rgb(202, 55, 237),
+    0 0 100px 60px #CA37ED,
+    0 0 140px 90px rgb(202, 55, 237);
   position: absolute;
   z-index: -9;
   display: none;
@@ -376,7 +431,7 @@ const GlowwyBorder = styled.div`
 `;
 
 const Glowwy = styled(GlowwyBorder)`
-  box-shadow: 0 0 100px 100px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 100px 100px rgba(135, 34, 158, 0.25);
   z-index: 1;
 `;
 
@@ -516,6 +571,21 @@ const GridImage = styled(Image)`
   }
 `;
 
+const BodyImage = styled(Image)`
+  margin: ${(props) => props.margin || "initial"};
+  object-fit: contain !important;
+
+  @media ${device.mobileL} {
+    width: ${({ id, type }) =>
+      id == "snap" && type == "image"
+        ? "100%"
+        : type == "image"
+          ? "80%"
+          : "inherit"};
+    margin: ${(props) => props.type == "image" && "0 auto"};
+  }
+`;
+
 const Header = styled(ItemV)`
   justify-content: ${({ highlight, tags }) =>
     highlight ? "flex-start" : tags ? "center" : "center"};
@@ -556,6 +626,7 @@ const Body = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const Background = styled.div`
