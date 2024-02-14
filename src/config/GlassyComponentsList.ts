@@ -360,7 +360,7 @@ export const HomeGlassyChatList = {
             }, 
             body: {
                 type: 'image',
-                imagesrc: 'chats/web-standard',
+                // imagesrc: 'chats/web-standard',
                 videosrc: 'chats/web-standard-video',
                 imagealt: 'home.chat-section.box10.imagealt',
                 imagetitle: 'home.chat-section.box10.imagetitle'

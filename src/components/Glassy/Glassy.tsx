@@ -247,12 +247,13 @@ const Glassy = ({ section }) => {
                 muted={true}
                 width="100%"
                 height="100%"
-                style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
+                style={{ position: "absolute", top: 0, left: 0 }}
+                // style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
               />
             }
 
             {/* If Image, check if videosrc is present, if yes, play video on hover */}
-            {type === "image" &&
+            {type === "image" && imagesrc &&
               <BodyImage
                 src={
                   require(`@site/static/assets/website/home/${imagesrc}.webp`)
@@ -418,9 +419,13 @@ const GlowwyBorder = styled.div`
   height: 0px;
   border-radius: 50%;
   box-shadow:
-    0 0 59px 29px rgb(202, 55, 237),
-    0 0 100px 60px #CA37ED,
-    0 0 140px 90px rgb(202, 55, 237);
+    0 0 49px 19px rgb(202, 55, 237),
+    0 0 80px 40px #CA37ED,
+    0 0 100px 50px rgb(202, 55, 237);
+    // box-shadow:
+    // 0 0 59px 29px rgb(202, 55, 237),
+    // 0 0 100px 60px #CA37ED,
+    // 0 0 140px 90px rgb(202, 55, 237);
   position: absolute;
   z-index: -9;
   display: none;
@@ -431,7 +436,7 @@ const GlowwyBorder = styled.div`
 `;
 
 const Glowwy = styled(GlowwyBorder)`
-  box-shadow: 0 0 100px 100px rgba(135, 34, 158, 0.25);
+  box-shadow: 0 0 100px 100px rgba(135, 34, 158, 0.15);
   z-index: 1;
 `;
 
