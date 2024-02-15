@@ -38,7 +38,7 @@ export const brbPartnersBountyList = [
     text: 'Build the most creative subgraphs or utilize existing subgraphs for your application',
     price: 5000,
     ended:true,
-    winner: "TBA on 15th Feb @ X Spaces",
+    winner: "TBA",
     github: "https://twitter.com/pushprotocol"
   },
   {
@@ -74,7 +74,7 @@ export const brbPartnersBountyList = [
     text: 'Develop DataDAOs on Filecoin: Incentivize data contributions and storage',
     price: 5000,
     ended:true,
-    winner: "TBA on 15th Feb @ X Spaces",
+    winner: "TBA",
     github: "https://twitter.com/pushprotocol"
   },
   {
@@ -92,7 +92,7 @@ export const brbPartnersBountyList = [
     text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
     price: 5000,
     ended:true,
-    winner: "TBA on 15th Feb @ X Spaces",
+    winner: "TBA",
     github: "https://twitter.com/pushprotocol"
   },
   {
