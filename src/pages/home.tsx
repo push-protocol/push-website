@@ -1035,6 +1035,21 @@ const FeaturedInSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 200px 40px 0px 40px;
+
+  @media ${device.laptop} {
+    padding: 200px 32px 0px 32px;
+  }
+
+  @media ${device.tablet} {
+    padding: 200px 24px 0px 24px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 200px 16px 0px 16px;
+  }
+
+
   // overflow: hidden;
 
   // & .contentBox {
@@ -1042,26 +1057,14 @@ const FeaturedInSection = styled.div`
   //   flex: 0;
   //   padding-top: 0;
   //   margin-top: 60px;
-  }
+  // }
 
   // width: 100%;
   // overflow: hidden;
   // padding-bottom: 0px;
 
   // .contentBox {
-  //   padding: 200px 40px 0px 40px;
-
-  //   @media ${device.laptop} {
-  //     padding: 200px 32px 0px 32px;
-  //   }
-
-  //   @media ${device.tablet} {
-  //     padding: 200px 24px 0px 24px;
-  //   }
-
-  //   @media ${device.mobileL} {
-  //     padding: 200px 16px 0px 16px;
-  //   }
+   
   // }
 `;
 
@@ -1315,18 +1318,18 @@ const BackedBySection = styled(Section)`
   overflow: hidden;
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
+    padding: 200px 40px 20px 40px;
 
     @media ${device.tablet} {
-      padding: 200px 32px 0px 32px;
+      padding: 200px 32px 20px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 200px 24px 20px 24px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 16px 0px 16px;
+      padding: 200px 16px 20px 16px;
     }
   }
 `;
@@ -1421,7 +1424,7 @@ const InvestorSubtitle = styled(Span)`
 `
 
 const FeaturedCardList = styled(ItemH)`
-  margin: 0 0 0 0;
+  margin: 72px 0 0 0;
   flex-flow: nowrap;
 `
 const FeaturedCard = styled(ItemV)`    
