@@ -145,7 +145,7 @@ const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]);
 
 // Configure stream listen events and what to do
 stream.on(CONSTANTS.STREAM.VIDEO, (data) => {
-  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+  if (data.event === CONSTANTS.VIDEO.EVENT.REQUEST) {
     // handle call request
   }
 
@@ -341,8 +341,6 @@ const setData = (fn) => {
   </TabItem>
 </Tabs>
 
-
-
 ### Request Video Call
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -393,7 +391,6 @@ await aliceVideoCall.disconnect();
 
 // to toggle local audio or video
 aliceVideoCall.config({ audio: true, video: false });
-
 ```
 
   </TabItem>
