@@ -32,7 +32,7 @@ const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]})
 // Listen for video events
 // Import { TYPES, CONSTANTS } from @pushprotocol/restapi
 stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
-  if (data.event === CONSTANTS.STREAM.VIDEO.REQUEST) {
+  if (data.event === CONSTANTS.VIDEO.EVENT.REQUEST) {
     // handle call request
   }
 
