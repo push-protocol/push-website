@@ -16,8 +16,9 @@ import { ItemH, Section } from '@site/src/css/SharedStyling';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
+// turn alert to false to disable this
 export const Alert = () => {
-  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
+  const [isAlertVisible, setIsAlertVisible] = React.useState(false);
 
   const hideAlertHandler = () => {
     setIsAlertVisible(false);

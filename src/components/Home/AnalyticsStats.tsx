@@ -143,6 +143,8 @@ function AnalyticsStats() {
 }
 
 const AnalyticsStatCardList = styled.div`
+  background: #0D0D0F;
+
   flex: 1;
   // background: linear-gradient(
   //   90deg,
