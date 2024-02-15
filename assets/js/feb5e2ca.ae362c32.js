@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[61680],{27941:s=>{s.exports=JSON.parse('{"label":"Uniswap","permalink":"/blog/tags/uniswap","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);
