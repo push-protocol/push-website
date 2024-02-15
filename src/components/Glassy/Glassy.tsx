@@ -247,13 +247,12 @@ const Glassy = ({ section }) => {
                 muted={true}
                 width="100%"
                 height="100%"
-                style={{ position: "absolute", top: 0, left: 0 }}
-                // style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
+                style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
               />
             }
 
             {/* If Image, check if videosrc is present, if yes, play video on hover */}
-            {type === "image" && imagesrc &&
+            {type === "image" &&
               <BodyImage
                 src={
                   require(`@site/static/assets/website/home/${imagesrc}.webp`)

@@ -22,7 +22,7 @@ export const InvList = {
       alt: 'Push Investor - True',
     },
     {
-      srcref: 'IOSG',
+      srcref: 'iosg',
       id: 'iosg',
       title: null,
       subtitle: null,

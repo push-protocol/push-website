@@ -26,11 +26,11 @@ import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
-import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { HomeGlassyNotifsList, HomeGlassyChatList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
 import Glassy from '@site/src/components/Glassy/Glassy'
+import FeaturedList from '@site/src/components/Featured/FeaturedList'
 import { slideSection } from '@site/src/config/SlideSection'
 import {
   A,
@@ -75,8 +75,6 @@ import { PageMeta } from "@site/src/config/pageMeta";
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-// Setup some constants
-const MARQUEE_ANIMATION_SPEED = 60;
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
@@ -509,7 +507,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <H2
                 fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
-                margin="4px 0 0 0"
+                margin={isMobile ? "12px 0 0 0" : "4px 0 0 0"}
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
@@ -691,52 +689,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </ItemH>
           {/* </Content> */}
 
-          <FeaturedCardList
-            className="featuredInMarquee"
-          >
-            <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
-              {MediaList.map((item) => {
-                return (
-                  <FeaturedCard key={item.srcref}>
-                    <FeaturedCardTitle>
-                      {t(item.translatedtitle)}
-                    </FeaturedCardTitle>
-                    <ArticleSource>
-                      <Image
-                        width={item.title ? '64px' : 'auto'}
-                        borderRadius={item.title ? '50%' : '0'}
-                        src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
-                        srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
-                        alt={`${item?.alt}`}
-                        loading="lazy"
-                      />
-                      <A
-                        href={item.url}
-                        title={t(item.urltranslatedtitle)}
-                        display="flex"
-                        alignItems="center"
-                        target="_blank"
-                        background="transparent"
-                        hoverBackground="transparent"
-                        hover="transparent"
-                        filter="none"
-                        color="#DD44B9"
-                        borderRadius="16px"
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="0"
-                      >
-                        {t(item.urltranslatedtitle)}
-                        <BsArrowUpRight className="anchorSVGlink" />
-                      </A>
-                    </ArticleSource>
-                  </FeaturedCard>
-                );
-              })}
-            </MarqueeAnimation>
-          </FeaturedCardList>
+         <FeaturedList />
 
         </FeaturedInSection>
         
@@ -1035,18 +988,18 @@ const FeaturedInSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 200px 40px 0px 40px;
+  padding: 200px 0px 0px 0px;
 
   @media ${device.laptop} {
-    padding: 200px 32px 0px 32px;
+    padding: 200px 0px 0px 0px;
   }
 
   @media ${device.tablet} {
-    padding: 200px 24px 0px 24px;
+    padding: 200px 0px 0px 0px;
   }
 
   @media ${device.mobileL} {
-    padding: 200px 16px 0px 16px;
+    padding: 200px 0px 0px 0px;
   }
 
 
@@ -1334,7 +1287,7 @@ const BackedBySection = styled(Section)`
   }
 `;
 
-const InvestorHeader = styled(ResponsiveH2)`
+const InvestorHeader = styled(H2)`
   width: 720px;
   margin: 0 auto 40px auto;
   @media ${device.tablet} {
@@ -1423,82 +1376,6 @@ const InvestorSubtitle = styled(Span)`
   text-transform: uppercase;
 `
 
-const FeaturedCardList = styled(ItemH)`
-  margin: 72px 0 0 0;
-  flex-flow: nowrap;
-`
-const FeaturedCard = styled(ItemV)`    
-  width: 554px;
-  padding: 48px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 30px;
-  border-right: 1px solid #fff;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-
-  & a {
-    border-radius: 0px;
-  }
-
-  &:before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0px;
-    height: 8px;
-    width: 96px;
-    background: rgb(221, 68, 185);
-  }
-
-  &:hover {
-    background: linear-gradient(251.72deg, rgb(221, 68, 185) 14.29%, rgb(139, 111, 217) 86.35%);
-
-    &:before {
-      background: #fff;
-    }
-
-    & a {
-      color: #fff !important;
-      border-radius: 0px;
-    }
-  }
-`
-
-const FeaturedCardTitle = styled(Span)`
-  flex: initial;
-  align-self: auto;
-  color: rgb(255, 255, 255);
-  background: transparent;
-  font-weight: 400;
-  font-size: 22px;
-  text-transform: inherit;
-  margin: 0px;
-  padding: 0px;
-  letter-spacing: -0.03em;
-  text-align: initial;
-  line-height: 142%;
-  position: initial;
-  inset: auto;
-  z-index: auto;
-  padding-bottom: 50px;
-`
-
-const ArticleSource = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex: 0;
-
-  & img {
-    height: 40px;
-  }
-`;
 
 const NotificationGridItem = styled.div`
     display: flex;
