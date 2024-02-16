@@ -455,6 +455,73 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
             </Content>
         </SlideSection> */}
+
+        <TokenomicsSection>
+          <Content
+            className="contentBox"
+            alignSelf="center"
+          >
+            
+            <ItemH flexDirection={isMobile && 'column'} gap={isMobile ? '8px' : isTablet ? '16px' : '74px'}>
+              <ItemV alignItems="flex-start" justifyContent={!isMobile && 'stretch'}>
+                <ItemV alignItems="flex-start" justifyContent={'flex-start'}>
+                  <H2 
+                      textAlign='left'
+                      color="#D98AEC"
+                      textTransform="uppercase"
+                      fontSize="14px"
+                      fontWeight="700"
+                      lineHeight="130%"
+                      letterSpacing="0.56px" 
+                      fontFamily="FK Grotesk Neue"
+                      >Tokenomics</H2>
+
+                  <H2 color="#FFF"
+                      fontSize={isMobile ? '28px' : '30px'}
+                      fontWeight="500"
+                      margin="8px 0px"
+                      fontFamily="FK Grotesk Neue"
+                      >Unlocking Token Value: Exploring Our Tokenomics</H2>
+
+                </ItemV>
+
+                  {/* in place of the image for now */}
+                  <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div>
+              </ItemV>
+
+              <ItemV>
+                  <TokenItem>Stake to Secure Network and Earn Rewards</TokenItem>
+                  <TokenItem>Circular Economy - Fee Pool Split</TokenItem>
+                  <TokenItem>Spam Protection - API Calls 
+                    <TagItem style={{marginLeft: "10px"}}>COMING SOON</TagItem>
+                  </TokenItem>
+                  <TokenItem>Push Network Utility</TokenItem>
+                  <TokenItem>Governance and Voting</TokenItem>
+
+                         
+              </ItemV>
+            </ItemH>
+             <SlideLink
+                            href={`https://push.org/docs/tokenomics/deepdive/$push/`}
+                            title={'new'}
+                            target="_self"
+                            padding="0px 0px"
+                            fontSize="16px"
+                            fontWeight="500"
+                            letterSpacing="-0.03em"
+                            lineHeight="26px"
+                            className='button'
+                            margin="24px 0px 0px auto"
+                            background="transparent"
+                            alignItems='center'
+                            justifyContent='flex-end'
+                          >
+                            <SpanLink>Explore Tokenomics</SpanLink>
+                            <BsArrowRight className="anchorSVGlink" />
+                          </SlideLink>
+
+            </Content>
+        </TokenomicsSection>
             
         {/* WHY PUSH AND BLOG */}
         <WhyPushAndBlogSection>
@@ -926,6 +993,47 @@ const SlideSection = styled(Section)`
     @media ${device.mobileL} {
       padding: 200px 16px 0px 16px;
     }
+  }
+`;
+
+const TokenomicsSection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0px;
+
+  .contentBox {
+    padding: 200px 40px 0px 40px;
+
+    @media ${device.laptop} {
+      padding: 200px 32px 0px 32px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 24px 0px 24px;
+    }
+
+    @media ${device.mobileL} {
+      padding: 200px 16px 0px 16px;
+    }
+  }
+`;
+
+const TokenItem = styled.div`
+  width: 100%;
+  padding: 24px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  color: #FFF;
+  font-family: "FK Grotesk Neue";
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 130%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media ${device.mobileL} {
+    font-size: 17px;
   }
 `;
 
