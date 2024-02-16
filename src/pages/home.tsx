@@ -26,11 +26,11 @@ import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
-import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import { HomeGlassyNotifsList, HomeGlassyChatList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
 import Glassy from '@site/src/components/Glassy/Glassy'
+import FeaturedList from '@site/src/components/Featured/FeaturedList'
 import { slideSection } from '@site/src/config/SlideSection'
 import {
   A,
@@ -75,8 +75,6 @@ import { PageMeta } from "@site/src/config/pageMeta";
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-// Setup some constants
-const MARQUEE_ANIMATION_SPEED = 60;
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
@@ -158,7 +156,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </script>
       </Head>
       
-      <HomeWrapper>
+      <HomeWrapper className="home-wrapper">
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
@@ -386,7 +384,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                  </Content>
         </ChatSection>
 
-        <SlideSection id="slide-section">
+          {/* PUSH SPACE AND VIDEO SECTION */}
+        {/* <SlideSection id="slide-section">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -455,39 +454,77 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </ItemH>
 
             </Content>
-        </SlideSection>
+        </SlideSection> */}
+
+        <TokenomicsSection>
+          <Content
+            className="contentBox"
+            alignSelf="center"
+          >
             
+            <ItemH flexDirection={isMobile && 'column'} gap={isMobile ? '8px' : isTablet ? '16px' : '74px'}>
+              <ItemV alignItems="flex-start" justifyContent={!isMobile && 'stretch'}>
+                <ItemV alignItems="flex-start" justifyContent={'flex-start'}>
+                  <H2 
+                      textAlign='left'
+                      color="#D98AEC"
+                      textTransform="uppercase"
+                      fontSize="14px"
+                      fontWeight="700"
+                      lineHeight="130%"
+                      letterSpacing="0.56px" 
+                      fontFamily="FK Grotesk Neue"
+                      >Tokenomics</H2>
 
+                  <H2 color="#FFF"
+                      fontSize={isMobile ? '28px' : '30px'}
+                      fontWeight="500"
+                      margin="8px 0px"
+                      fontFamily="FK Grotesk Neue"
+                      >Unlocking Token Value: Exploring Our Tokenomics</H2>
 
-        {/* BUILD WITH PUSH */}
-        {/* <BuildWithPushSection id="buildWithPush">
-          <ItemV
-            position="absolute"
-            background={GLOBALS.COLORS.BG_DARK}
-            top="0"
-            bottom="0"
-            right="0"
-            left="0"
-            borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.LARGE}
-          />
-          <PushProductContent className="contentBox">
-            <PushProductsScroll />
-          </PushProductContent>
-        </BuildWithPushSection> */}
-        
+                </ItemV>
+
+                  {/* in place of the image for now */}
+                  <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div>
+              </ItemV>
+
+              <ItemV>
+                  <TokenItem>Stake to Secure Network and Earn Rewards</TokenItem>
+                  <TokenItem>Circular Economy - Fee Pool Split</TokenItem>
+                  <TokenItem>Spam Protection - API Calls 
+                    <TagItem style={{marginLeft: "10px"}}>COMING SOON</TagItem>
+                  </TokenItem>
+                  <TokenItem>Push Network Utility</TokenItem>
+                  <TokenItem>Governance and Voting</TokenItem>
+
+                         
+              </ItemV>
+            </ItemH>
+             <SlideLink
+                            href={`https://push.org/docs/tokenomics/deepdive/$push/`}
+                            title={'new'}
+                            target="_self"
+                            padding="0px 0px"
+                            fontSize="16px"
+                            fontWeight="500"
+                            letterSpacing="-0.03em"
+                            lineHeight="26px"
+                            className='button'
+                            margin="24px 0px 0px auto"
+                            background="transparent"
+                            alignItems='center'
+                            justifyContent='flex-end'
+                          >
+                            <SpanLink>Explore Tokenomics</SpanLink>
+                            <BsArrowRight className="anchorSVGlink" />
+                          </SlideLink>
+
+            </Content>
+        </TokenomicsSection>
+            
         {/* WHY PUSH AND BLOG */}
         <WhyPushAndBlogSection>
-          {/* <ItemV
-            id="integratePush"
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            background={GLOBALS.COLORS.BG_LIGHT}
-            borderRadius="0px"
-          /> */}
-
           <Content
             className="contentBox"
             alignSelf="center"
@@ -537,7 +574,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <H2
                 fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
-                margin="4px 0 0 0"
+                margin={isMobile ? "12px 0 0 0" : "4px 0 0 0"}
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
@@ -571,7 +608,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* BACKED BY SECTION */}
         <BackedBySection
-          background={GLOBALS.COLORS.BG_DARK}
+          // background={GLOBALS.COLORS.BG_DARK}
         >
           <ItemV
             id="integratePush"
@@ -580,26 +617,28 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            background={GLOBALS.COLORS.BG_LIGHT}
-            borderRadius={`${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
-            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
+            // background={GLOBALS.COLORS.BG_LIGHT}
+            // borderRadius={`${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
-            width="inherit"
+            // width="inherit"
             
           >
             <InvestorItem
               alignItems="stretch"
             >
               <InvestorHeader
-                  color="#09090B"
-                  fontSize="40px"
+                  color="#FFFFFF"
                   fontWeight="700"
                   letterSpacing="-0.02em"
-                  lineHeight="110%"
+                  lineHeight="120%"
+                  fontSize={isMobile ? "24px" : "36px"}
+                  fontFamily="FK Grotesk Neue"
+                  lineHeight="130%"
+                  textAlign="center"
                 >
                   {t("home.investors-section.title")}
               </InvestorHeader>
@@ -694,77 +733,30 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
           id="mediaFeaturedInSection"
-          background={GLOBALS.COLORS.BG_DARK}
+          // background={GLOBALS.COLORS.BG_DARK}
         >
-          <Content
+          {/* <Content
             className="contentBox"
-            padding="40px"
-            alignSelf="flex-start"
-            id="MediaFeaturedIn"
-          >
+            alignSelf="center"
+          > */}
 
-            <ItemH justifyContent="flex-start">
-              <ItemH justifyContent="flex-start" alignItems="flex-start">
+              <ItemH justifyContent="center">
                 <H2
                   color="#FFFFFF"
-                  fontSize="40px"
                   fontWeight="700"
                   letterSpacing="-0.02em"
-                  lineHeight="110%"
-                  margin="0"
+                  lineHeight="120%"
+                  fontSize={isMobile ? "24px" : "36px"}
+                  fontFamily="FK Grotesk Neue"
+                  lineHeight="130%"
+                  textAlign="center"
                 >
                   {t("home.featured-section.title")}
                 </H2>
-              </ItemH>
             </ItemH>
-          </Content>
+          {/* </Content> */}
 
-          <FeaturedCardList
-            className="featuredInMarquee"
-          >
-            <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
-              {MediaList.map((item) => {
-                return (
-                  <FeaturedCard key={item.srcref}>
-                    <FeaturedCardTitle>
-                      {t(item.translatedtitle)}
-                    </FeaturedCardTitle>
-                    <ArticleSource>
-                      <Image
-                        width={item.title ? '64px' : 'auto'}
-                        borderRadius={item.title ? '50%' : '0'}
-                        src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
-                        srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
-                        alt={`${item?.alt}`}
-                        loading="lazy"
-                      />
-                      <A
-                        href={item.url}
-                        title={t(item.urltranslatedtitle)}
-                        display="flex"
-                        alignItems="center"
-                        target="_blank"
-                        background="transparent"
-                        hoverBackground="transparent"
-                        hover="transparent"
-                        filter="none"
-                        color="#DD44B9"
-                        borderRadius="16px"
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="0"
-                      >
-                        {t(item.urltranslatedtitle)}
-                        <BsArrowUpRight className="anchorSVGlink" />
-                      </A>
-                    </ArticleSource>
-                  </FeaturedCard>
-                );
-              })}
-            </MarqueeAnimation>
-          </FeaturedCardList>
+         <FeaturedList />
 
         </FeaturedInSection>
         
@@ -1004,6 +996,47 @@ const SlideSection = styled(Section)`
   }
 `;
 
+const TokenomicsSection = styled(Section)`
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0px;
+
+  .contentBox {
+    padding: 200px 40px 0px 40px;
+
+    @media ${device.laptop} {
+      padding: 200px 32px 0px 32px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 24px 0px 24px;
+    }
+
+    @media ${device.mobileL} {
+      padding: 200px 16px 0px 16px;
+    }
+  }
+`;
+
+const TokenItem = styled.div`
+  width: 100%;
+  padding: 24px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  color: #FFF;
+  font-family: "FK Grotesk Neue";
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 130%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media ${device.mobileL} {
+    font-size: 17px;
+  }
+`;
+
 const SlideItem = styled(ItemH)`
    padding: 48px;
    width: 100%;
@@ -1057,20 +1090,43 @@ const ItemImage = styled(ItemV)`
   }
 `;
 
-const FeaturedInSection = styled(Section)`
-  padding: 0;
-  min-height: auto;
+const FeaturedInSection = styled.div`
+  // padding: 0;
+  // min-height: auto;
+  display: flex;
   flex-direction: column;
   width: 100%;
-  overflow: hidden;
+  padding: 200px 0px 0px 0px;
 
-  & .contentBox {
-    gap: 80px;
-    flex: 0;
-    padding-top: 0;
-    margin-top: 60px;
-    // margin-top: 160px;
+  @media ${device.laptop} {
+    padding: 200px 0px 0px 0px;
   }
+
+  @media ${device.tablet} {
+    padding: 200px 0px 0px 0px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 200px 0px 0px 0px;
+  }
+
+
+  // overflow: hidden;
+
+  // & .contentBox {
+  //   gap: 80px;
+  //   flex: 0;
+  //   padding-top: 0;
+  //   margin-top: 60px;
+  // }
+
+  // width: 100%;
+  // overflow: hidden;
+  // padding-bottom: 0px;
+
+  // .contentBox {
+   
+  // }
 `;
 
 const PushWorksRow = styled(ItemH)`
@@ -1321,13 +1377,27 @@ const WhyPushAndBlogSection = styled(Section)`
 const BackedBySection = styled(Section)`
   width: 100%;
   overflow: hidden;
+
+  .contentBox {
+    padding: 200px 40px 20px 40px;
+
+    @media ${device.tablet} {
+      padding: 200px 32px 20px 32px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 24px 20px 24px;
+    }
+
+    @media ${device.tablet} {
+      padding: 200px 16px 20px 16px;
+    }
+  }
 `;
 
-const InvestorHeader = styled(ResponsiveH2)`
-  flex-direction: column;
-  width: 60%;
-  align-self: flex-start;
-  margin-bottom: 40px;
+const InvestorHeader = styled(H2)`
+  width: 720px;
+  margin: 0 auto 40px auto;
   @media ${device.tablet} {
     width: auto;
   }
@@ -1345,12 +1415,12 @@ const InvestorItem = styled(ItemV)`
   }`;
 
 const InvestorCard = styled(ItemV)`
-    border: 1px solid rgb(204, 204, 204);
+    border: 1px solid rgba(255, 255, 255, 0.10);;
     border-radius: 74px;
     padding: 8px;
     min-width: 242px;
-    min-height: 83px;
-    max-height: 83px;
+    min-height: 96px;
+    max-height: 96px;
     // margin-right: 18px;
     flex: 0;
 
@@ -1414,82 +1484,6 @@ const InvestorSubtitle = styled(Span)`
   text-transform: uppercase;
 `
 
-const FeaturedCardList = styled(ItemH)`
-  margin: 0 0 0 0;
-  flex-flow: nowrap;
-`
-const FeaturedCard = styled(ItemV)`    
-  width: 554px;
-  padding: 48px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 30px;
-  border-right: 1px solid #fff;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-
-  & a {
-    border-radius: 0px;
-  }
-
-  &:before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0px;
-    height: 8px;
-    width: 96px;
-    background: rgb(221, 68, 185);
-  }
-
-  &:hover {
-    background: linear-gradient(251.72deg, rgb(221, 68, 185) 14.29%, rgb(139, 111, 217) 86.35%);
-
-    &:before {
-      background: #fff;
-    }
-
-    & a {
-      color: #fff !important;
-      border-radius: 0px;
-    }
-  }
-`
-
-const FeaturedCardTitle = styled(Span)`
-  flex: initial;
-  align-self: auto;
-  color: rgb(255, 255, 255);
-  background: transparent;
-  font-weight: 400;
-  font-size: 22px;
-  text-transform: inherit;
-  margin: 0px;
-  padding: 0px;
-  letter-spacing: -0.03em;
-  text-align: initial;
-  line-height: 142%;
-  position: initial;
-  inset: auto;
-  z-index: auto;
-  padding-bottom: 50px;
-`
-
-const ArticleSource = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  align-self: stretch;
-  flex: 0;
-
-  & img {
-    height: 40px;
-  }
-`;
 
 const NotificationGridItem = styled.div`
     display: flex;
