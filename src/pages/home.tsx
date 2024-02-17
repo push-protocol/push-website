@@ -882,7 +882,7 @@ const HeroAnalytics = styled(ItemH)`
     width: 40%;
     border-radius: 0 0 150px 150px;
     background-color: #c336e4;
-    opacity: 1;
+    opacity: 0.35;
     filter: blur(80px);
     z-index: -1;
   }
