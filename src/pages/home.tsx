@@ -767,7 +767,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 }
 
 const HeroSection = styled(Section)`
-  overflow: visible;
+  overflow-y: visible;
+  overflow-x: clip;
 
   @media ${device.laptop} {
     min-height: initial;
@@ -881,7 +882,7 @@ const HeroAnalytics = styled(ItemH)`
     width: 40%;
     border-radius: 0 0 150px 150px;
     background-color: #c336e4;
-    opacity: 0.35;
+    opacity: 1;
     filter: blur(80px);
     z-index: -1;
   }
