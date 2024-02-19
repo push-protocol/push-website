@@ -14,12 +14,14 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsArrowRight ,BsFileX } from "react-icons/bs";
+import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
 import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
+import FeaturedList from '@site/src/components/Featured/FeaturedList';
+import Glassy from '@site/src/components/Glassy/Glassy';
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
 import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
@@ -27,11 +29,9 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import { HomeGlassyNotifsList, HomeGlassyChatList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
-import Glassy from '@site/src/components/Glassy/Glassy'
-import FeaturedList from '@site/src/components/Featured/FeaturedList'
-import { slideSection } from '@site/src/config/SlideSection'
+import { HomeGlassyChatList, HomeGlassyNotifsList } from '@site/src/config/GlassyComponentsList';
+import { slideSection } from '@site/src/config/SlideSection';
 import {
   A,
   B,
@@ -58,10 +58,10 @@ import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chain
 import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
 import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
 import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
+import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
-import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
-import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
 import GithubSVG from "@site/static/assets/website/shared/github.svg";
 import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
@@ -474,14 +474,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       lineHeight="130%"
                       letterSpacing="0.56px" 
                       fontFamily="FK Grotesk Neue"
-                      >Tokenomics</H2>
+                      >Push Network</H2>
 
                   <H2 color="#FFF"
                       fontSize={isMobile ? '28px' : '30px'}
                       fontWeight="500"
                       margin="8px 0px"
                       fontFamily="FK Grotesk Neue"
-                      >Unlocking Token Value: Exploring Our Tokenomics</H2>
+                      >Learn how Push Network becomes L2 for web3 communication!</H2>
 
                 </ItemV>
 
@@ -490,12 +490,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemV>
 
               <ItemV>
-                  <TokenItem>Stake to Secure Network and Earn Rewards</TokenItem>
-                  <TokenItem>Circular Economy - Fee Pool Split</TokenItem>
-                  <TokenItem>Spam Protection - API Calls 
-                    <TagItem style={{marginLeft: "10px"}}>COMING SOON</TagItem>
+                  <TokenItem>Proof of Stake Network</TokenItem>
+                  <TokenItem>Fee Pool and Circular Economy</TokenItem>
+                  <TokenItem>Stake Push for API Calls to the Network 
+                    <TagItem style={{marginLeft: "10px"}}>New</TagItem>
                   </TokenItem>
-                  <TokenItem>Push Network Utility</TokenItem>
+                  <TokenItem>Define Fee Pool Share</TokenItem>
                   <TokenItem>Governance and Voting</TokenItem>
 
                          
