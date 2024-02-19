@@ -12,6 +12,7 @@ import { ServerStyleSheet } from "styled-components";
 // Internal Components
 import Footer from "@site/src/segments/Footer";
 import Header from "@site/src/segments/Header";
+import { CookiesProvider } from "react-cookie";
 
 function ServerStyle({ from: children }) {
   let style = null;
@@ -25,11 +26,13 @@ function ServerStyle({ from: children }) {
       sheet.collectStyles(
         <HelmetProvider>
           <StaticRouter location={location}>
-            <DocusaurusContext.Provider value={context}>
-              <Header />
-              {children}
-              <Footer />
-            </DocusaurusContext.Provider>
+            <CookiesProvider>
+              <DocusaurusContext.Provider value={context}>
+                <Header />
+                {children}
+                <Footer />
+              </DocusaurusContext.Provider>
+            </CookiesProvider>
           </StaticRouter>
         </HelmetProvider>,
       ),
