@@ -24,20 +24,22 @@ const CookieComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
 
   const [cookies, setCookie] = useCookies(['myCookieConsent']);
-  const [isAccepted, setIsAccepted] = useState(cookies.myCookieConsent === 'true');
+  const [showModal, setShowModal] = useState(true);
 
   const handleAccept = () => {
-    setCookie('myCookieConsent', 'true', { path: '/' });
-    setIsAccepted(true);
+    setCookie('myCookieConsent', true, { path: '/' });
+    setShowModal(false);
   };
 
   const handleReject = () => {
     // Add your logic for rejecting cookies here
-    console.log('Cookies rejected');
+    // setCookie('myCookieConsent', false, { path: '/' });
+    setShowModal(false);
   };
+
   return (
     <>
-    {!isAccepted && (
+    {!cookies.myCookieConsent && showModal && (
     <CookieContainer>
       <H2 
         color="#000"
