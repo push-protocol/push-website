@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[26726],{295516:s=>{s.exports=JSON.parse('{"label":"Metamask","permalink":"/blog/tags/metamask","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);

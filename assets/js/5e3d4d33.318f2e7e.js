@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[22964],{743638:s=>{s.exports=JSON.parse('{"label":"Web Tools","permalink":"/blog/tags/web-tools","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);

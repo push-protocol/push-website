@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[74271],{299053:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/crypto/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":17,"previousPage":"/blog/tags/crypto","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

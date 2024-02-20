@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[53391],{301744:e=>{e.exports=JSON.parse('{"label":"M\xe8me","permalink":"/blog/tags/meme","allTagsPath":"/blog/tags","count":3,"unlisted":false}')}}]);
