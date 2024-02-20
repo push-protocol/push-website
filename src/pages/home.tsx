@@ -82,29 +82,29 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
-    gsap.to("#herobg", {
-      scrollTrigger: {
-        trigger: "#herobg",
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
+    // gsap.to("#herobg", {
+    //   scrollTrigger: {
+    //     trigger: "#herobg",
+    //     start: "center center",
+    //     end: "bottom top",
+    //     scrub: true,
+    //     markers: false,
+    //   },
+    //   scale: 0.985,
+    //   borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    // });
 
-    gsap.to("#integratePush", {
-      scrollTrigger: {
-        trigger: "#mediaFeaturedInSection",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
+    // gsap.to("#integratePush", {
+    //   scrollTrigger: {
+    //     trigger: "#mediaFeaturedInSection",
+    //     start: "top top",
+    //     end: "bottom top",
+    //     scrub: true,
+    //     markers: false,
+    //   },
+    //   scale: 0.985,
+    //   borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    // });
   }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
@@ -479,14 +479,23 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </ItemV>
 
                   {/* in place of the image for now */}
-                  <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div>
+                  {/* <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div> */}
+
+                  <Image
+                        width={'100%'}
+                        height={'180px'}
+                        src={require(`@site/static/assets/website/tokenomics/tokenomics.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/tokenomics/tokenomics@2x.webp`).default} 2x, ${require(`@site/static/assets/website/tokenomics/tokenomics@3x.webp`).default} 3x`}
+                        alt={'Tokenomics'}
+                        loading="lazy"
+                        />
               </ItemV>
 
               <ItemV>
                   <TokenItem>Proof of Stake Network</TokenItem>
                   <TokenItem>Fee Pool and Circular Economy</TokenItem>
                   <TokenItem>Stake Push for API Calls to the Network 
-                    <TagItem style={{marginLeft: "10px"}}>New</TagItem>
+                    <TagItem style={{marginLeft: "10px"}}>NEW</TagItem>
                   </TokenItem>
                   <TokenItem>Define Fee Pool Share</TokenItem>
                   <TokenItem>Governance and Voting</TokenItem>
@@ -919,6 +928,7 @@ const HomeWrapper = styled(ItemV)`
   background: #0D0D0F;
   margin: 0;
   padding: 0;
+  overflow-x: hidden !important;
   font-family: FK Grotesk Neue !important;
   
   box-sizing: border-box;

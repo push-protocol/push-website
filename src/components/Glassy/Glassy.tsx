@@ -461,6 +461,7 @@ const Subcontainer = styled.div`
         : "contain"};
 
   @media ${device.tablet} {
+    margin: ${(props) => props.id == "anti-spam" || props.id == "chat-requests" ? "auto 0" : ""};
     background-size: ${(props) =>
       props.id == "hyperscalable"
         ? "75% auto"
