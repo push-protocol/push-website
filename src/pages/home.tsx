@@ -160,26 +160,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
-          // minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
-          // background={GLOBALS.COLORS.BG_LIGHT}
+          minHeight="100vh"
           width="100%"
           overflow="hidden"
           className="darkBackground"
         >
-          <ItemV
-            // id="herobg"
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            // background={GLOBALS.COLORS.BG_DARK}
-            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
-          />
-
           <HeroContent alignSelf="center">
             <HeroAnimation>
-              {/* <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" /> */}
+              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
             </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
@@ -188,52 +176,57 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 // margin="10px 0 0 0"
               >
                 <HeroButton>
-                    <StarColoredIcon />
-                    <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
-                    <BsArrowRight />
+                  <StarColoredIcon />
+                  <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
+                  <BsArrowRight />
                 </HeroButton>
 
-                <HeroText>
-                    <H1 zIndex="2" fontSize={isMobile ? '48px' : '58px'} fontWeight="700" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
+                <HeroBody>
+                  <H1 
+                    zIndex="2" 
+                    fontSize={isMobile ? '32px' : '58px'} 
+                    margin="0 0 16px 0"
+                    fontWeight="700" 
+                    fontFamily="FK Grotesk Neue">{t("home.hero.title")}
+                  </H1>
 
-                    <TextSpan
-                      // margin='20px 0px 40px 0'
-                      color="rgba(255, 255, 255, 1)"
-                      zIndex="2"
-                      fontSize='21px'
-                    >
-                        {/* {t("home.hero.description")} */}
-                        Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
-                    </TextSpan>
-                </HeroText>
+                  <Span
+                    color="rgba(255, 255, 255, 1)"
+                    zIndex="2"
+                    fontSize='21px'
+                  >
+                      {/* {t("home.hero.description")} */}
+                      Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
+                  </Span>
+                </HeroBody>
 
-                  <HeroCTA justifyContent="flex-start" gap="18px">
-                    <A
-                      href="/docs"
-                      title={t("home.hero.alt-start-button")}
-                      background={GLOBALS.COLORS.HIGHLIGHT}
-                      color={GLOBALS.COLORS.FONT_LIGHT}
-                      lineHeight="142%"
-                      fontSize='16px'
-                      zIndex="2"
-                    >
-                      {t("home.hero.start-button")}
-                    </A>
-                  </HeroCTA>
+                <HeroCTA gap="18px">
+                  <A
+                    href="/docs"
+                    title={t("home.hero.alt-start-button")}
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    lineHeight="142%"
+                    fontSize='16px'
+                    zIndex="2"
+                  >
+                    {t("home.hero.start-button")}
+                  </A>
+                </HeroCTA>
               
               </HeroItem>
             </HeroPrimary>
 
-            <AnalyticsStatsContainer
-              // position="absolute"
-              // zIndex="9"
-              // left="0"
-              // right="0"
-              // bottom='0'
-              // bottom="7vh"
-            >
+            <HeroAnalytics
+              position="absolute"
+              zIndex="9"
+              left="0"
+              right="0"
+              bottom='0'
+              bottom="20px"
+          >
               <AnalyticsStats />
-            </AnalyticsStatsContainer>
+            </HeroAnalytics>
 
 
           </HeroContent>
@@ -765,22 +758,25 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   );
 }
 
-/**
- * V2 Design
- */
-const HeroPrimary = styled(ItemH)`
-  // margin: 120px 0;
+const HeroSection = styled(Section)`
+  overflow-y: visible;
+  overflow-x: clip;
 
   @media ${device.laptop} {
-    // margin: 80px 0 0 0;
-  }
-
-  @media ${device.mobileM} {
-    // margin: 80px 0 0 0;
+    min-height: initial;
   }
 `;
 
-const MemberImage = styled(ImageHolder)``;
+const HeroContent = styled(Content)`
+  align-self: stretch;
+  padding-top: 250px;
+  padding-bottom: 250px;
+
+  @media ${device.laptop} {
+    padding-top: 200px;
+    padding-bottom: 40px;
+  }
+`;
 
 const HeroAnimation = styled(ItemH)`
   position: absolute;
@@ -796,52 +792,69 @@ const HeroAnimation = styled(ItemH)`
   }
 `;
 
-const HeroContent = styled(Content)`
-  padding: 251px 40px 0px 40px;
-
-  media ${device.laptop} {
-    padding: 251px 32px 0px 32px;
-  }
-
-  @media ${device.tablet} {
-    padding: 251px 24px 0px 24px;
-  }
-
-  @media ${device.mobileL} {
-    padding: 251px 16px 0px 16px;
-    box-sizing: border-box;
-  }
-
-`;
-
-const HeroText = styled.div`
-    margin: 32px 0px;
-    @media ${device.mobileL} {
-      width: 100%;
-    }
-
-`;
-
-const HeroSection = styled(Section)`
-    max-height: 1200px;
+const HeroPrimary = styled(ItemH)`
+  
 `;
 
 const HeroItem = styled(ItemV)`
   z-index: 2;
+
   @media ${device.laptop} {
     max-width: initial;
-    // margin: ${(props) => props.margin || "0px"};
+    align-items: center;
+    margin: 0 15%;
   }
 
   @media ${device.mobileL} {
-    width: 100%;
-    // max-width: initial;
+    margin: 0 auto;
+  }
+`;
+
+const HeroButton = styled(Button)`
+  font-family: FK Grotesk Neue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+  // margin: 24px 0px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+
+  &:hover {
+    border: 1px solid transparent;
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 13px;
+  }
+`;
+
+const HeroBody = styled(ItemV)`
+  margin: 32px 0px;
+  text-align: left;
+
+  @media ${device.laptop} {
+    text-align: center;
+
+    & > Span {
+      text-align: center;
+    }
   }
 `;
 
 const HeroCTA = styled(ItemH)`
   font-family: FK Grotesk Neue !important;
-  letter-spacing: -0.03em
+  letter-spacing: -0.03em;
+  justify-content: flex-start;
+  
+  @media ${device.laptop} {
+    justify-content: center;
+  }
 
   @media ${device.mobileM} {
     &.Button {
@@ -850,30 +863,41 @@ const HeroCTA = styled(ItemH)`
   }
 `;
 
-const AnalyticsStatsContainer = styled(ItemH)`
-  // margin: 0px;
-  margin: 134px 0 0px 0;
-  flex: 1;
-  position: relative;
+const HeroAnalytics = styled(ItemH)`
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 50px;
+    width: 40%;
+    border-radius: 0 0 150px 150px;
+    background-color: #c336e4;
+    opacity: 0.35;
+    filter: blur(80px);
+    z-index: -1;
+  }
 
-  // ::after {
-  //   content: "";
-  //   position: absolute;
-  //   // bottom: 0;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 200px; /* Adjust the height of the shadow effect */
-  //   background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
-  //   z-index: 1;
-  // }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(202, 55, 237, 0) 18%, #CA37ED 50%, rgba(202, 55, 237, 0) 82%);
+  }
   
   @media ${device.laptop} {
+    margin: 40px 0 40px 0;
     flex: initial;
     position: relative;
     bottom: auto;
   }
 `;
+
+const MemberImage = styled(ImageHolder)``;
 
 const Gradient = styled.div`
     // background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
@@ -1771,29 +1795,6 @@ const TextSpan = styled(Span)`
   overflow: hidden;
 `;
 
-const HeroButton = styled(Button)`
-  font-family: FK Grotesk Neue;
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-  justify-content: space-between;
-  padding: 12px 16px;
-  gap: 8px;
-  // margin: 24px 0px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.05);
-
-  &:hover {
-    border: 1px solid transparent;
-  }
-  
-  h2 {
-    color: #fff;
-    font-size: 13px;
-  }
-`;
 
 const SlideLink = styled(A)`
 .anchorSVGlink {
