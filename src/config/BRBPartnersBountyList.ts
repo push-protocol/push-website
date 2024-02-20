@@ -5,7 +5,9 @@ export const brbPartnersBountyList = [
     alt: 'Ethereum Foundation, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Use Account Abstraction to make Ethereum quantum proof',
     price: 5000,
-    ended:true
+    ended:true,
+    winner: 'Aditya Bisht',
+    github: 'https://github.com/Bisht13/post-quantum-eth-security'
   },
   {
     srcref: 'polygon',
@@ -35,7 +37,9 @@ export const brbPartnersBountyList = [
     alt: 'The Graph, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build the most creative subgraphs or utilize existing subgraphs for your application',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'shardeum',
@@ -51,7 +55,9 @@ export const brbPartnersBountyList = [
     alt: 'Aragon, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build on Aragon OSx: Address community issues via on-chain governance by creating plugins or dApps',
     price: 5000,
-    ended:true
+    ended:true,
+    winner: 'Samuel Mens',
+    github: 'https://github.com/Plopmenz/dao-organization'
   },
   {
     srcref: 'biconomy',
@@ -59,7 +65,7 @@ export const brbPartnersBountyList = [
     alt: 'Biconomy, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build a new validation module to use with the Biconomy smart accounts',
     price: 5000,
-    ended:false
+    ended:false,
   },
   {
     srcref: 'filecoin',
@@ -67,7 +73,9 @@ export const brbPartnersBountyList = [
     alt: 'Filecoin, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Develop DataDAOs on Filecoin: Incentivize data contributions and storage',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'timeswap',
@@ -83,7 +91,9 @@ export const brbPartnersBountyList = [
     alt: 'Chain safe, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
     price: 5000,
-    ended:false
+    ended:true,
+    winner: "TBA",
+    github: "https://twitter.com/pushprotocol"
   },
   {
     srcref: 'alchemy',

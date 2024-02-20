@@ -385,6 +385,7 @@ const FrensText = () => {
                     value={search}
                     placeholder={t('frens.powered-section.search-placeholder')}
                     onChange={channelSearch}
+                    className='input-text'
                   />
                 </Wrapper>
               </SearchContainer>
@@ -440,7 +441,7 @@ const FrensText = () => {
 
             {loading && (
               <ItemH>
-                <Spinner size={140} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
+                <Spinner size={70} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>
               </ItemH>
             )}
 
@@ -852,7 +853,7 @@ const Wrapper = styled.div`
     column-gap: 3px;
   }
 
-  & input[type='text'] {
+  input {
     all: unset;
     box-sizing: border-box;
     font-family: 'Strawford';

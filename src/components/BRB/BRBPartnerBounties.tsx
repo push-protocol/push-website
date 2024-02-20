@@ -100,7 +100,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
                  
                  
                  <BountyButton className="buttonId">
-                 <ViewBountyText>OPENED</ViewBountyText> 
+                 <ViewBountyText>OPEN</ViewBountyText> 
               
               </BountyButton>
           }
@@ -117,9 +117,9 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
                     height="24px"
                   />
              
-              Winner TBA on Jan 16, 2024
+              Winner: 
             <TwitterLink>
-             <a href='https://twitter.com/i/spaces/1lPKqbWRgvEGb' target='_blank'> @ X Spaces
+             <a href={item.github} target='_blank'> {item.winner} 
              
 
              </a>

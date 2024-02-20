@@ -1197,9 +1197,9 @@ export default class AaveChannel extends EPNSChannel {
   }
 
   // To form and write to smart contract
-  public async sendMessageToContract(simulate) {
+  public async sendMessageToNode(simulate) {
     const sdk = await this.getSdk();
-    this.logInfo('sendMessageToContract');
+    this.logInfo('sendMessageToNode');
 
     //simulate object settings START
     const logicOverride =
@@ -1438,9 +1438,9 @@ Among the details fetched for the user is the variable `healthFactor` which tell
 This is the `main` function which is ties everything together and is called by an external party in order to perform the duties of the channel, this function loops over the subscribers of the channel, and calls the `checkHealthFactor` method on them, which in turn then fetches
 
 ```jsx
-  public async sendMessageToContract(simulate) {
+  public async sendMessageToNode(simulate) {
     const sdk = await this.getSdk();
-    this.logInfo('sendMessageToContract');
+    this.logInfo('sendMessageToNode');
 
     //simulate object settings START
     const logicOverride =
@@ -1522,7 +1522,7 @@ export default (app: Router) => {
       logger.debug('Calling /showrunners/aave/send_message endpoint with body: %o', req.body);
       try {
         const aave = Container.get(aaveChannel);
-        const data = await aave.sendMessageToContract(req.body.simulate);
+        const data = await aave.sendMessageToNode(req.body.simulate);
         return res.status(200).json({ success: true, data: data });
       } catch (e) {
         logger.error('🔥 error: %o', e);
@@ -1575,30 +1575,20 @@ export default () => {
   dailyRule.dayOfWeek = new schedule.Range(0, 6);
 
   // AAVE CHANNEL RUNS EVERY 24 Hours
-  logger.info(
-    `     🛵 Scheduling Showrunner - Aave Channel [on 6 Hours] [${new Date(
-      Date.now(),
-    )}]`,
-  );
-  schedule.scheduleJob(
-    { start: startTime, rule: dailyRule },
-    async function () {
-      const aaveChannel = Container.get(AaveChannel);
-      const taskName = "Aave users address checks and sendMessageToContract()";
+  logger.info(`     🛵 Scheduling Showrunner - Aave Channel [on 6 Hours] [${new Date(Date.now())}]`);
+  schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
+    const aaveChannel = Container.get(AaveChannel);
+    const taskName = 'Aave users address checks and sendMessageToNode()';
 
-      try {
-        await aaveChannel.sendMessageToContract(false);
-        logger.info(
-          `[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`,
-        );
-      } catch (err) {
-        logger.error(
-          `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
-        );
-        logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
-      }
-    },
-  );
+    try {
+      await aaveChannel.sendMessageToNode(false);
+      logger.info(`[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`);
+    }
+    catch (err) {
+      logger.error(`[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`);
+      logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
+    }
+  });
 };
 ```
 

@@ -210,7 +210,7 @@ const leaveGroup = await userAlice.chat.group.leave(groupChatId);
 
 ---
 
-## Leave group parameters
+### Leave group parameters
 
 | Param      | Type     | Default | Remarks                                                                                       |
 | ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
@@ -373,3 +373,20 @@ const leaveGroup = await userAlice.chat.group.leave(groupChatId);
 | `eventType`                | `string`              | The type of event (create, update etc)                         |
 
 </Details>
+
+## Reject Group Join Request API
+
+To Reject an group request, you can use the following API
+
+```typescript
+// await userAlice.chat.group.reject(chatid)
+await userAlice.chat.group.reject(chatId);
+```
+
+---
+
+### Reject Group Join Parameters
+
+| Param      | Type     | Default | Remarks                                                                                       |
+| ---------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| _`chatId`_ | `string` | -       | The **chatid** related to that specific group. **chatid** are unique identifiers of the group |
