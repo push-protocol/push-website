@@ -192,6 +192,13 @@ article ul ul, article ul ol, article ol ol, article ol ul {
 /* OVERRIDES */
 /* ----- */
 
+body {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  overflow-x: hidden;
+}
+
 .home-wrapper {
   font-style: var(--ifm-font-family-homepage) !important;
 }

@@ -124,6 +124,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
         <meta name="description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org" />
