@@ -28,7 +28,7 @@ const Glassy = ({ section }) => {
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideOnMobile, bg, bgvideosrc, bgtitle, link } = config || "";
+  const { id, height, padding, hideonmobile, bg, bgvideosrc, bgtitle, link } = config || "";
   const {
     title,
     tags,
@@ -133,7 +133,7 @@ const Glassy = ({ section }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       height={height}
-      hideOnMobile={hideOnMobile}
+      hideonmobile={hideonmobile}
       type={type}
       className={`${hovered ? "active" : ""} ${id}`}
     >
@@ -152,7 +152,7 @@ const Glassy = ({ section }) => {
         title={t(bgtitle)}
       >
         {/* If bgvideosrc is present, then play video on hover */}
-        {bgvideosrc &&
+        {/* {bgvideosrc &&
           <ReactPlayer
             url={require(`@site/static/assets/website/home/${bgvideosrc}.mp4`).default}
             playing={hovered ? true : false}
@@ -162,7 +162,7 @@ const Glassy = ({ section }) => {
             height="100%"
             style={{ position: "absolute", top: 0, bottom:0, right: 0, left: 0, visibility: hovered && bgvideosrc ? 'visible' : 'hidden' }}
           />
-        }
+        } */}
 
         <Header highlight={highlight} type={type} id={id}>
           <Subheader
@@ -239,7 +239,7 @@ const Glassy = ({ section }) => {
         {body && (
           <Body>
             {/* If Image, check if videosrc is present, if yes, load video */}
-            {type === "image" && videosrc &&
+            {/* {type === "image" && videosrc &&
               <ReactPlayer
                 url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                 playing={hovered ? true : false}
@@ -249,7 +249,7 @@ const Glassy = ({ section }) => {
                 height="100%"
                 style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
               />
-            }
+            } */}
 
             {/* If Image, check if videosrc is present, if yes, play video on hover */}
             {type === "image" &&
@@ -261,7 +261,7 @@ const Glassy = ({ section }) => {
                 srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                 alt={t(imagealt)}
                 title={t(imagetitle)}
-                style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                 type={type}
                 id={id}
               />
@@ -295,7 +295,7 @@ const Glassy = ({ section }) => {
                 <ItemV
                   padding="0px 0px 0px 0px"
                 >
-                  {videosrc &&
+                  {/* {videosrc &&
                     <ReactPlayer
                       url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                       playing={hovered ? true : false}
@@ -305,7 +305,7 @@ const Glassy = ({ section }) => {
                       height="100%"
                       style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
                     />
-                  }
+                  } */}
 
                   <BodyImage
                     src={
@@ -316,7 +316,7 @@ const Glassy = ({ section }) => {
                     srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
                     alt={t(imagealt)}
                     title={t(imagetitle)}
-                    style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                    // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                     type={type}
                     margin={isMobile && "12px 0 0 0"}
                   />
@@ -388,7 +388,8 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
+    background: #0D0D10;
+    // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 
@@ -406,7 +407,7 @@ const Container = styled.div`
 
     
     @media ${device.mobileL} {
-        display: ${(props) => props.hideOnMobile && 'none !important'};
+        display: ${(props) => props.hideonmobile && 'none !important'};
         max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
         min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
         width: 100% !important;
@@ -587,7 +588,7 @@ const BodyImage = styled(Image)`
         : type == "image"
           ? "80%"
           : "inherit"};
-    margin: ${(props) => props.type == "image" && "0 auto"};
+    margin: ${({id, type}) => type == "image"  && id !== 'token-gated' && " 24px auto 0 auto"};
   }
 `;
 

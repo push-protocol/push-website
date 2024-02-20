@@ -33,7 +33,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/cross-chain',
-                videosrc: 'notifs/cross-chain-video',
+                // videosrc: 'notifs/cross-chain-video',
                 imagealt: 'home.notification-section.box2.imagealt',
                 imagetitle: 'home.notification-section.box2.imagetitle',
             }
@@ -81,7 +81,7 @@ export const HomeGlassyNotifsList = {
                 buttonlink: '/docs/notifications/quickstart',
                 buttontitle: 'home.notification-section.box4.buttontitle',
                 codeblockImg: `notifs/lightweight`,
-                videosrc: 'notifs/lightweight-video',
+                // videosrc: 'notifs/lightweight-video',
                 imagealt: 'home.notification-section.box4.imagealt',
                 imagetitle: 'home.notification-section.box4.imagetitle'
          }
@@ -141,7 +141,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/snap',
-                videosrc: 'notifs/snap-video',
+                // videosrc: 'notifs/snap-video',
                 imagealt: 'home.notification-section.box7.imagealt',
                 imagetitle: 'home.notification-section.box7.imagetitle'
             },
@@ -188,7 +188,7 @@ export const HomeGlassyChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/share',
-                videosrc: 'chats/share-video',
+                // videosrc: 'chats/share-video',
                 imagealt: 'home.chat-section.box1.imagealt',
                 imagetitle: 'home.chat-section.box1.imagetitle'
             },
@@ -265,7 +265,7 @@ export const HomeGlassyChatList = {
                 padding: '24px',
                 bg: require('@site/static/assets/website/home/chats/hyper@3x.webp').default,
                 bgtitle: 'home.chat-section.box5.bgtitle',
-                bgvideosrc: 'chats/hyper-video',
+                // bgvideosrc: 'chats/hyper-video',
                 hideonmobile: false
             },
             header: {
@@ -361,7 +361,7 @@ export const HomeGlassyChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/web-standard',
-                videosrc: 'chats/web-standard-video',
+                // videosrc: 'chats/web-standard-video',
                 imagealt: 'home.chat-section.box10.imagealt',
                 imagetitle: 'home.chat-section.box10.imagetitle'
             }

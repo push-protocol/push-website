@@ -611,9 +611,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </WhyPushAndBlogSection>
 
         {/* BACKED BY SECTION */}
-        <BackedBySection
-          // background={GLOBALS.COLORS.BG_DARK}
-        >
+        <BackedBySection>
           <ItemV
             id="integratePush"
             position="absolute"
@@ -621,14 +619,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            // background={GLOBALS.COLORS.BG_LIGHT}
-            // borderRadius={`${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
-            // width="inherit"
             
           >
             <InvestorItem
@@ -655,7 +650,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={3}
+                speed={2}
                 gradientWidth={8}
                 gap={18}
                 fixedWidth={'250px'}
@@ -696,7 +691,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={-3}
+                speed={-2}
                 gradientWidth={8}
                 gap={18}
                 fixedWidth={'250px'}
