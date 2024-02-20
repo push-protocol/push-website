@@ -999,7 +999,7 @@ const HeaderFocusItems = styled(ItemH)`
   flex-wrap: nowrap;
 
   @media ${device.laptop} {
-    flex-direction: collumn;
+    flex-direction: column;
     align-self: center;
     flex-wrap: wrap;
   }

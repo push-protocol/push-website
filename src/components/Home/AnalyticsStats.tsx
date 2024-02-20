@@ -143,17 +143,19 @@ function AnalyticsStats() {
 }
 
 const AnalyticsStatCardList = styled.div`
-  flex: 1;
+  background: #0D0D0F;
 
-  background: linear-gradient(
-    90deg,
-    rgba(18, 19, 21, 0.5) -2.55%,
-    rgba(42, 42, 57, 0.5) 32.62%,
-    rgba(142, 49, 122, 0.5) 68.34%,
-    rgba(18, 19, 21, 0.5) 102.97%
-  );
-  backdrop-filter: blur(30px);
-  border-radius: 62px;
+  flex: 1;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(18, 19, 21, 0.5) -2.55%,
+  //   rgba(42, 42, 57, 0.5) 32.62%,
+  //   rgba(142, 49, 122, 0.5) 68.34%,
+  //   rgba(18, 19, 21, 0.5) 102.97%
+  // );
+  // backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 32px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -161,11 +163,11 @@ const AnalyticsStatCardList = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 30px 50px;
-  font-family: 'Strawford';
+  font-family: FK Grotesk Neue;
   font-style: normal;
 
   @media ${device.laptop} {
-    background: rgba(42, 42, 57, 0.5);
+    // background: rgba(42, 42, 57, 0.5);
 
     flex-direction: row;
     flex-wrap: wrap;

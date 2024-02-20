@@ -34,6 +34,7 @@ async function blogPluginExtended(...pluginArgs) {
               title: blogPost.metadata.title,
               description: blogPost.metadata.description,
               frontMatter: blogPost.metadata.frontMatter,
+              content: blogPost,
             }),
           ),
 
