@@ -328,7 +328,7 @@ const Glassy = ({ section }) => {
 
         {footer && (
           <Footer>
-            {text && <H2Text fontFamily="FK Grotesk Neue">{t(text)}</H2Text>}
+            {text && <H2Text fontFamily="FK Grotesk Neue" id={id}>{t(text)}</H2Text>}
           </Footer>
         )}
 
@@ -508,6 +508,7 @@ const H2Text = styled(H2)`
 
     @media ${device.mobileL} {
         white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
+        margin-top: ${({id}) => id == 'snap' ? '24px' : '0'};
     }
 
     background: ${(props) => props.theme === 'hue' && "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};

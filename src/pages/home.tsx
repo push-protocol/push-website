@@ -827,11 +827,21 @@ const HeroButton = styled(Button)`
   justify-content: space-between;
   padding: 12px 16px;
   gap: 8px;
-  // margin: 24px 0px;
 
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.05);
+
+  @media ${device.mobileM} {
+    gap: 4px;
+  }
+
+  @media ${device.mobileS} {
+    gap: 2px;
+    padding: 12px 6px;
+    width: calc(100vw - 32px);
+    box-sizing: border-box;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -842,6 +852,14 @@ const HeroButton = styled(Button)`
   h2 {
     color: #fff;
     font-size: 13px;
+
+    @media ${device.mobileM} {
+      font-size: 12px;
+    }
+
+    @media ${device.mobileM} {
+      font-size: 11px;
+    }
   }
 `;
 
