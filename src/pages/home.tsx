@@ -117,6 +117,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
+  const alertLink = `https://snaps.metamask.io/snap/npm/pushprotocol/snap/`;
+
+
 
   return (
      <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
@@ -177,7 +180,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 alignItems="flex-start"
                 // margin="10px 0 0 0"
               >
-                <HeroButton>
+                <HeroButton onClick={() => {window.open(alertLink, '_blank');}}>
                   <StarColoredIcon />
                   <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
                   <BsArrowRight />
@@ -831,7 +834,9 @@ const HeroButton = styled(Button)`
   background: rgba(255, 255, 255, 0.05);
 
   &:hover {
-    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
   }
   
   h2 {
