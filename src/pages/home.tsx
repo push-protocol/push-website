@@ -15,7 +15,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
-import { FiArrowUpRight } from "react-icons/fi";
 import styled from "styled-components";
 
 // Internal Components
@@ -23,7 +22,6 @@ import FadeInAnimation from "@site/src/components/FadeInAnimation";
 import FeaturedList from '@site/src/components/Featured/FeaturedList';
 import Glassy from '@site/src/components/Glassy/Glassy';
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
-import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
@@ -53,22 +51,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
-import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
-import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
-import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
-import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
-import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
-import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
-import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
-import GithubSVG from "@site/static/assets/website/shared/github.svg";
-import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
-import { MediaList } from "@site/src/config/HomeMediaList";
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 
@@ -82,29 +70,29 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
   // Hero Shrink Animation
   useLayoutEffect(() => {
-    // gsap.to("#herobg", {
-    //   scrollTrigger: {
-    //     trigger: "#herobg",
-    //     start: "center center",
-    //     end: "bottom top",
-    //     scrub: true,
-    //     markers: false,
-    //   },
-    //   scale: 0.985,
-    //   borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    // });
+    gsap.to("#herobg", {
+      scrollTrigger: {
+        trigger: "#herobg",
+        start: "center center",
+        end: "bottom top",
+        scrub: true,
+        markers: false,
+      },
+      scale: 0.985,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    });
 
-    // gsap.to("#integratePush", {
-    //   scrollTrigger: {
-    //     trigger: "#mediaFeaturedInSection",
-    //     start: "top top",
-    //     end: "bottom top",
-    //     scrub: true,
-    //     markers: false,
-    //   },
-    //   scale: 0.985,
-    //   borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    // });
+    gsap.to("#integratePush", {
+      scrollTrigger: {
+        trigger: "#mediaFeaturedInSection",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        markers: false,
+      },
+      scale: 0.985,
+      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
+    });
   }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
@@ -383,7 +371,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ChatSection>
 
           {/* PUSH SPACE AND VIDEO SECTION */}
-        {/* <SlideSection id="slide-section">
+        <SlideSection id="slide-section">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -394,15 +382,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       <Image
                         width={'100%'}
                         height={'auto'}
-                        // borderRadius={item.title ? '50%' : '0'}
                         src={require(`@site/static/assets/website/slides/${item.imageref}.png`).default}
                         srcSet={`${require(`@site/static/assets/website/slides/${item.imageref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/${item.imageref}@3x.png`).default} 3x`}
-                        // alt={`${item?.alt}`}
+                        alt={item?.alt}
+                        title={item?.title}
                         loading="lazy"
                       />
 
 
-                      <ItemV alignItems='flex-start' margin="64px auto 0 0" maxWidth={isTablet ? "80%" : "70%"}>
+                      <SlideContent alignItems='flex-start' margin="0 auto 0 0" justifyContent="flex-end">
                           <H2 
                              textAlign='left'
                              color="#D98AEC"
@@ -415,14 +403,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                              >{item.title}</H2>
                           
                           <H2 color="#FFF"
-                              fontSize={isMobile ? '24px' : '30px'}
+                              fontSize={isTablet ? '24px' : '30px'}
                               fontWeight="500"
                               margin="8px 0px"
                               fontFamily="FK Grotesk Neue"
                               >{item.subtitle}</H2>
 
                           <H3 color="#FFF"
-                              fontSize="19px"
+                              fontSize={isTablet ? '17px' : '19px'}
                               fontWeight="400"
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
@@ -432,9 +420,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               <SlideLink
                                   href={item.link}
                                   title={'new'}
-                                  target="_self"
+                                  target="_blank"
                                   padding="0px 0px"
-                                  fontSize="16px"
+                                  fontSize="15px"
                                   fontWeight="500"
                                   letterSpacing="-0.03em"
                                   lineHeight="26px"
@@ -446,13 +434,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                   <SpanLink>{item.itemLink}</SpanLink>
                                   <BsArrowRight className="anchorSVGlink" />
                                 </SlideLink>
-                      </ItemV>
+                      </SlideContent>
 
                 </SlideItem>))}
             </ItemH>
 
             </Content>
-        </SlideSection> */}
+        </SlideSection>
 
         <TokenomicsSection>
           <Content
@@ -483,9 +471,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                 </ItemV>
 
-                  {/* in place of the image for now */}
-                  {/* <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div> */}
-
                   <Image
                         width={'100%'}
                         height={'180px'}
@@ -511,7 +496,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
              <SlideLink
                             href={`https://push.org/docs/tokenomics/deepdive/$push/`}
                             title={'new'}
-                            target="_self"
+                            target="_blank"
                             padding="0px 0px"
                             fontSize="16px"
                             fontWeight="500"
@@ -531,7 +516,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </TokenomicsSection>
             
         {/* WHY PUSH AND BLOG */}
-        <WhyPushAndBlogSection>
+        <BlogSection>
           <Content
             className="contentBox"
             alignSelf="center"
@@ -611,7 +596,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <RecentBlogPosts recentPosts={recentPosts} />
 
           </Content>
-        </WhyPushAndBlogSection>
+        </BlogSection>
 
         {/* BACKED BY SECTION */}
         <BackedBySection>
@@ -1099,10 +1084,16 @@ const SlideItem = styled(ItemH)`
    backdrop-filter: blur(60px);
    max-height: 750px;
    min-height: 750px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
 
    @media ${device.laptop} {
      min-height: auto;
      max-height: auto;
+     padding: 32px;
+     gap: 32px;
    }
 
    img {
@@ -1116,37 +1107,7 @@ const SlideItem = styled(ItemH)`
   }
 `;
 
-const BuildWithPushSection = styled(Section)`
-  overflow: hidden;
-  padding: 0px 160px 0px;
-  width: 100%;
-  overflow: hidden;
-
-  @media ${device.tablet} {
-    padding: 0px 0px 10px 0px;
-  }
-
-  @media ${device.laptopL} {
-    padding: 0px 20px 40px;
-  }
-
-`;
-
-const ItemImage = styled(ItemV)`
-  width: 100%;
-  @media ${device.tablet} {
-    width: 400px;
-    margin: 0 auto;
-  }
-
-  @media ${device.mobileL} {
-    width: 100%;
-  }
-`;
-
 const FeaturedInSection = styled.div`
-  // padding: 0;
-  // min-height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -1163,251 +1124,29 @@ const FeaturedInSection = styled.div`
   @media ${device.mobileL} {
     padding: 200px 0px 0px 0px;
   }
-
-
-  // overflow: hidden;
-
-  // & .contentBox {
-  //   gap: 80px;
-  //   flex: 0;
-  //   padding-top: 0;
-  //   margin-top: 60px;
-  // }
-
-  // width: 100%;
-  // overflow: hidden;
-  // padding-bottom: 0px;
-
-  // .contentBox {
-   
-  // }
 `;
 
-const PushWorksRow = styled(ItemH)`
-  // column-gap: 105px;
-  column-gap: 40px;
-  margin-top: 150px;
-  margin-bottom: 200px;
-  display: flex;
-  flex-direction: row;
+const SlideContent = styled(ItemV)`
+  max-width: 70%;
 
   @media ${device.laptop} {
-    & ${ItemV} {
-      align-items: flex-start;
+    max-width: 80%;
 
-      & ${Span} {
-        margin: 10px 0px 0px 0px;
-      }
-
-      & ${A} {
-        margin: 50px 0px 0px 0px;
-      }
-    }
   }
-  
+
   @media ${device.tablet} {
-    flex-direction: column;
-    row-gap: 30px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    max-width: 85%;
+
   }
 
   @media ${device.mobileL} {
-    row-gap: 30px;
-    flex-direction: column;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    max-width: 90%;
+
   }
 `;
 
-const LiveNetworks = styled(ItemH)` 
-  background: #ffffff;
-  border: 1px solid #bac4d6;
-  border-radius: 28px;
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 550px;
 
-  & .network {
-    padding: 26px 16px;
-
-    & svg {
-      width: 106px;
-      height: 26px;
-    }
-  }
-
-  @media ${device.laptopL} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
-
-    & .network {
-      padding: 26px 16px;
-
-      & svg {
-        width: 106px;
-        height: 26px;
-      }
-    }
-  }
-
-  @media ${device.tablet} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
-    max-width: initial;
-    align-self: stretch;
-
-    & .network {
-      padding: 15px 10px;
-
-      & svg {
-        width: 79.5px;
-        height: 19.5px;
-      }
-    }
-  }
-`;
-
-const LiveNetworkCard = styled(ItemV)`
-  flex: 1;
-  border-right: 1px solid #bac4d6;
-  
-  &:last-child {
-    border-right: 0px;
-  }
-
-  @media ${device.tablet} {
-    border-right: 1px solid #bac4d6;
-  
-    &:last-child {
-      border-right: 0px;
-    }
-  }
-`;
-
-const PushProductContent = styled.div`
-	padding: ${(props) => props.padding || "40px 0px 0px"};
-
-	&.contentBox {
-    max-width: 1213px;
-	}
-
-  @media ${device.tablet} {
-  	padding: ${(props) => props.padding || "40px 0px"};
-  }
-`;
-
-const Partners = styled(ItemV)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 50px;
-
-  @media ${device.laptop} {
-    flex-direction: column;
-    gap: 30px;
-  }
-`;
-
-const Matrix = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  border-bottom: 1px solid #000;
-`;
-
-const MatrixCell = styled.div`
-  display: flex;
-  padding: 42px 0 32px 32px;
-  flex-direction: column;
-  flex-basis: 33.33%;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  box-sizing: border-box;
-  position: relative;
-  color: #000;
-  row-gap: 24px;
-
-  justify-content: space-between;
-  flex-direction: column;
-
-  & .matrixFigure {
-    display: flex;
-    height: 72px;
-    align-items: center;
-  }
-
-  &:nth-child(3) {
-    border-right: 0;
-  }
-
-  &:nth-child(6) {
-    border-right: 0;
-  }
-
-  &::before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0;
-    height: 8px;
-    width: 96px;
-    background: #dd44b9;
-  }
-
-  @media ${device.tablet} {
-    flex-basis: 50%;
-    padding: 16px 12px;
-    row-gap: 16px;
-
-    &:nth-child(2) {
-      border-right: 0;
-    }
-
-    &:nth-child(4) {
-      border-right: 0;
-    }
-
-    &:nth-child(3) {
-      border-right: 1px solid #000;
-    }
-
-    &:nth-child(6) {
-      border-right: 0;
-    }
-
-    & span {
-      font-size: 20px;
-    }
-
-    & .matrixFigure {
-      margin-top: 8px;
-    }
-  }
-`;
-
-const WhyPushTextBox = styled(ItemH)`
-  margin: 80px 160px;
-
-  @media ${device.tablet} {
-    margin: 50px 0;
-
-    & span {
-      text-align: center;
-      font-size: 16px;
-      line-height: 160%;
-    }
-  }
-`;
-
-const WhyPushAndBlogSection = styled(Section)`
+const BlogSection = styled(Section)`
   width: 100%;
   overflow: hidden;
 
@@ -1475,59 +1214,26 @@ const InvestorCard = styled(ItemV)`
     min-width: 242px;
     min-height: 96px;
     max-height: 96px;
-    // margin-right: 18px;
     flex: 0;
-
-    // margin-bottom: auto;
-
-`
-
-const NewInvestorCard = styled.div`
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 74px;
-  padding: 8px;
-  min-width: 242px;
-  min-height: 83px;
-  max-height: 83px;
-  // margin-right: 18px;
-
-  display: flex;
-  flex-direction: ${(props) => props.flexDirection ? "row" : 'column'};
-  align-items: center;
-  justify-content: flex-start;
-  background: red;
-  margin-bottom: auto
 `;
 
-const NewInvestorIcon = styled(Image)`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin: auto auto;
-  justify-content: flex-start;
-  
-`
-
 const InvestorIcon = styled(Image)`
-margin: auto auto;
-  
-`
-
+  margin: auto auto;
+`;
 
 
 const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
   margin-bottom: auto;
-
-`
+`;
 
 const InvestorTitle = styled(Span)`
   font-weight: 500;
   font-size: 22px;
   line-height: 142%;
   color: #09090b;
-`
+`;
 
 const InvestorSubtitle = styled(Span)`
   font-weight: 500;
@@ -1536,7 +1242,7 @@ const InvestorSubtitle = styled(Span)`
   letter-spacing: 0.11em;
   color: #303c5e;
   text-transform: uppercase;
-`
+`;
 
 
 const NotificationGridItem = styled.div`
@@ -1821,10 +1527,6 @@ const GridItem = styled(ItemH)`
   }
 `;
 
-const TextSpan = styled(Span)`
-  overflow: hidden;
-`;
-
 
 const SlideLink = styled(A)`
 .anchorSVGlink {
@@ -1866,8 +1568,5 @@ const SpanLink = styled(Span)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-`
-
-const GridAnimationContainer = styled(ItemV)`
-`
+`;
 
