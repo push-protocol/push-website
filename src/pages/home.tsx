@@ -378,14 +378,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           >
 
             <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' gap="29px">
-                {slideSection.map((item) => (<SlideItem>
+                {slideSection.map((item) => (
+                <SlideItem>
                       <Image
                         width={'100%'}
                         height={'auto'}
                         src={require(`@site/static/assets/website/slides/${item.imageref}.png`).default}
                         srcSet={`${require(`@site/static/assets/website/slides/${item.imageref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/${item.imageref}@3x.png`).default} 3x`}
-                        alt={item?.alt}
-                        title={item?.title}
+                        alt={t(item?.alt)}
+                        title={t(item?.title)}
                         loading="lazy"
                       />
 
@@ -400,14 +401,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                              lineHeight="130%"
                              letterSpacing="0.56px" 
                              fontFamily="FK Grotesk Neue"
-                             >{item.title}</H2>
+                             >{t(item.title)}</H2>
                           
                           <H2 color="#FFF"
                               fontSize={isTablet ? '24px' : '30px'}
                               fontWeight="500"
                               margin="8px 0px"
                               fontFamily="FK Grotesk Neue"
-                              >{item.subtitle}</H2>
+                              className="textTitle"
+                              >{t(item.subtitle)}</H2>
 
                           <H3 color="#FFF"
                               fontSize={isTablet ? '17px' : '19px'}
@@ -415,7 +417,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
                               lineHeight="130%"
-                              margin="8px 0px">{item.content}</H3>
+                              margin="8px 0px">{t(item.content)}</H3>
 
                               <SlideLink
                                   href={item.link}
@@ -431,7 +433,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                                   background="transparent"
                                   alignItems='center'
                                 >
-                                  <SpanLink>{item.itemLink}</SpanLink>
+                                  <SpanLink>{t(item.itemLink)}</SpanLink>
                                   <BsArrowRight className="anchorSVGlink" />
                                 </SlideLink>
                       </SlideContent>
@@ -1127,6 +1129,13 @@ const FeaturedInSection = styled.div`
 `;
 
 const SlideContent = styled(ItemV)`
+  .textTitle {
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
   max-width: 70%;
 
   @media ${device.laptop} {
