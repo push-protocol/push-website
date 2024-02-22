@@ -473,9 +473,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                 </ItemV>
 
-                  <Image
+                  <TokenImage
                         width={'100%'}
-                        height={'180px'}
+                        height={'auto'}
                         src={require(`@site/static/assets/website/tokenomics/tokenomics.webp`).default}
                         srcSet={`${require(`@site/static/assets/website/tokenomics/tokenomics@2x.webp`).default} 2x, ${require(`@site/static/assets/website/tokenomics/tokenomics@3x.webp`).default} 3x`}
                         alt={'Tokenomics'}
@@ -543,7 +543,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemH>
 
               {!isMobile && (<ItemH justifyContent="flex-end">
-                <A
+                <SlideLink
                   href="/blog"
                   title="Exlore all articles"
                   hoverBackground="transparent"
@@ -559,9 +559,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                 >
-                  Explore Blog
+                  <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </A>
+                </SlideLink>
               </ItemH>)}
             </ItemH>
 
@@ -574,7 +574,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 lineHeight="120%"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
 
-             {isMobile && (<A
+             {isMobile && (<SlideItem
                   href="/blog"
                   title="Exlore all articles"
                   hoverBackground="transparent"
@@ -591,9 +591,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   fontFamily="FK Grotesk Neue"
                   margin={'24px 0 0 0'}
                 >
-                  Explore Blog
+                  <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </A>)}
+                </SlideItem>)}
             
             <RecentBlogPosts recentPosts={recentPosts} />
 
@@ -1078,6 +1078,10 @@ const TokenItem = styled.div`
   }
 `;
 
+const TokenImage = styled(Image)`
+    object-fit: contain;
+`;
+
 const SlideItem = styled(ItemH)`
    padding: 48px;
    width: 100%;
@@ -1538,8 +1542,10 @@ const GridItem = styled(ItemH)`
 
 
 const SlideLink = styled(A)`
+overflow: inherit;
 .anchorSVGlink {
   color: #fff;
+  top: 3px;
 }
 
 &:hover {
