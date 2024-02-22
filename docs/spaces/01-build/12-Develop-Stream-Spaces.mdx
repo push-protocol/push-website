@@ -1,0 +1,342 @@
+---
+id: docs-spaces-develop-setup-spaces-stream
+title: Setup Spaces Stream
+hide_title: true
+slug: ./setup-spaces-stream
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 9
+image: "/assets/docs/previews/docs_spaces_develop--setup_spaces_stream.png"
+---
+
+# Setup Spaces stream overview
+
+Spaces stream is a real-time communication protocol, setting up a Spaces stream is the first step to manage Spaces. This section covers everything you need to do to set up a Spaces stream.
+
+<head>
+  <title>Setup Spaces Stream | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Spaces stream API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Initialize stream to listen for events:
+const stream = await userAlice.initStream([
+  CONSTANTS.STREAM.SPACE, // Listen for space events
+  CONSTANTS.STREAM.SPACE_OPS, // Listen for Space creation and updates
+  CONSTANTS.STREAM.CONNECT, // Listen for connection events
+  CONSTANTS.STREAM.DISCONNECT, // Listen for disconnection events
+]);
+
+// Stream connection established:
+stream.on(CONSTANTS.STREAM.CONNECT, async () => {
+  console.log("Stream Connected");
+});
+
+// Space event received:
+stream.on(CONSTANTS.STREAM.SPACE, (data) => {
+  console.log("Space event received.");
+  console.log(data); // Log the space event data
+});
+
+//
+stream.on(CONSTANTS.STREAM.SPACE_OPS, (data) => {
+  console.log("Space Operation Received.");
+  console.log(data); // Log the space operation data
+});
+
+// Connect the stream:
+await stream.connect(); // Establish the connection after setting up listeners
+
+// Stream disconnection:
+stream.on(CONSTANTS.STREAM.DISCONNECT, () => {
+  console.log("Stream Disconnected");
+});
+
+// Stream also supports other products like CONSTANTS.STREAM.NOTIF.
+// For more information, please refer to push.org/docs/notifications.
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Spaces stream parameters
+
+| Param      | Type                         | Sub-Type           | Default | Remarks                                                                                                                                                                    |
+| ---------- | ---------------------------- | ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`listen`_ | `constant`                   | -                  | -       | can be `CONSTANTS.STREAM.VIDEO`, `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
+| `options`  | `PushStreamInitializeProps`  | -                  | -       | Optional configuration properties for initializing the stream.                                                                                                             |
+| -          | `options.filter`             | `object`           | -       | Option to configure to enable listening to only certain chats or notifications.                                                                                            |
+| -          | `options.filter.channels`    | `array of strings` | `['*']` | pass list of **channels** over here to only listen to notifications coming from them.                                                                                      |
+| -          | `options.filter.chats`       | `array of strings` | `['*']` | pass list of **chatids** over here to only listen to chats coming from them.                                                                                               |
+| -          | `options.connection`         | `object`           | -       | Option to configure the connection settings of the stream                                                                                                                  |
+| -          | `options.connection.retries` | `number`           | `3`     | Number of automatic retries incase of error                                                                                                                                |
+| -          | `options.raw`                | `boolean`          | `false` | If enabled, will also respond with meta data useful in verifying the integrity of incoming chats or notifications among other things.                                      |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+### Stream Spaces listen events
+
+| Listen events                 | When is it triggered?                                                    |
+| ----------------------------- | ------------------------------------------------------------------------ |
+| `CONSTANTS.STREAM.SPACE`      | Whenever a space related action occurs.                                  |
+| `CONSTANTS.STREAM.SPACE_OPS`  | Whenever a space operation like space creation and updation is received. |
+| `CONSTANTS.STREAM.VIDEO`      | Whenever a video call operation is received.                             |
+| `CONSTANTS.STREAM.CHAT`       | Whenever a chat is received.                                             |
+| `CONSTANTS.STREAM.CHAT_OPS`   | Whenever a chat operation is received.                                   |
+| `CONSTANTS.STREAM.CONNECT`    | Whenever the stream establishes connection.                              |
+| `CONSTANTS.STREAM.DISCONNECT` | Whenever the stream gets disconnected.                                   |
+
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE_OPS - Space Created Stream)">
+
+```typescript
+{
+    "event": "space.create",
+    "origin": "self",
+    "timestamp": 1696576020848,
+    "spaceId": "3781b4193166ec8f0a1fabe162ef3f2458cac28516d4d20f8dd7faf446815900",
+    "from": "eip155:0x136E326b22ED48dbB665733eC024407d4fAA4F12",
+    "meta": {
+        "name": "test",
+        "description": "test",
+        "image": "test",
+        "owner": "eip155:0x136E326b22ED48dbB665733eC024407d4fAA4F12",
+        "listeners": [],
+        "private": false,
+        "rules": {}
+    },
+    "raw": {
+        "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7IUCRAxpSc3atCeoBYhBGHp9Ifk8vvLrMzkYTGlJzdq\n0J6gAADrLAgAgDSQ7CJ3ZVOPye++rkpyR4Q9XSGnV3Z0bqO+HCqFDW/hTmJ+\n12kjrAQV43Q1fQviIMqh+RTA9WJHPA14vu/ZYHjmCM/HfPSxbY4zV/7FJF9C\nCaEgq+wGs+2vhixHX4Zoo4qrxdXQ6q8Wl4XXW3SVaw1sGxfIh+uMje54Tsil\nnaLNK+lIPdSAJDw1hOHIM3iMWaSzZasLaXkJ6KY9KefW52mhg112BZI94FxJ\n/wFQtlIaXGZHhCbaqiigjRPKo17KyW7PX6I0rTAQJlwHyIKS/vIH8Uahi2x3\ndzjonpXjjtsgcP+VhzEP1jxQkpo4mG47Fxkxzp/Q7ztdSGHnJGlXkQ==\n=HydQ\n-----END PGP SIGNATURE-----\n"
+    }
+}
+```
+
+</Details>
+
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE_OPS - Space Updated Stream)">
+
+```typescript
+{
+    "event": "space.update",
+    "origin": "self",
+    "timestamp": 1696576020848,
+    "spaceId": "3781b4193166ec8f0a1fabe162ef3f2458cac28516d4d20f8dd7faf446815900",
+    "from": "eip155:0x136E326b22ED48dbB665733eC024407d4fAA4F12",
+    "meta": {
+        "name": "test",
+        "description": "test",
+        "image": "test",
+        "owner": "eip155:0x136E326b22ED48dbB665733eC024407d4fAA4F12",
+        "private": false,
+        "rules": {}
+    },
+    "raw": {
+        "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7IUCRAxpSc3atCeoBYhBGHp9Ifk8vvLrMzkYTGlJzdq\n0J6gAADrLAgAgDSQ7CJ3ZVOPye++rkpyR4Q9XSGnV3Z0bqO+HCqFDW/hTmJ+\n12kjrAQV43Q1fQviIMqh+RTA9WJHPA14vu/ZYHjmCM/HfPSxbY4zV/7FJF9C\nCaEgq+wGs+2vhixHX4Zoo4qrxdXQ6q8Wl4XXW3SVaw1sGxfIh+uMje54Tsil\nnaLNK+lIPdSAJDw1hOHIM3iMWaSzZasLaXkJ6KY9KefW52mhg112BZI94FxJ\n/wFQtlIaXGZHhCbaqiigjRPKo17KyW7PX6I0rTAQJlwHyIKS/vIH8Uahi2x3\ndzjonpXjjtsgcP+VhzEP1jxQkpo4mG47Fxkxzp/Q7ztdSGHnJGlXkQ==\n=HydQ\n-----END PGP SIGNATURE-----\n"
+    }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Message Stream)">
+
+```typescript
+{
+    "event": "space.message",
+    "origin": "other",
+    "timestamp": "1696576962232",
+    "spaceId": "b6f53ac38d0698ea64e6c4b0f024437ac2271ca869413d5f779d7cda75de1aaa",
+    "from": "eip155:0x0aF73cF3b072E39A46D78E6c4fbaA058A138Bc05",
+    "to": [
+        "eip155:0x52C6050536a77A405F03b6Da3F98Db9Ca69ad899"
+    ],
+    "message": {
+        "type": "Text",
+        "content": "Hey There!!!"
+    },
+    "meta": {
+
+    },
+    "reference": "bafyreich6wtnzojmgqft6eudx43y4xir2emfnhxqlvyy7rq6a73w7szywe",
+    "raw": {
+        "fromCAIP10": "eip155:0x0aF73cF3b072E39A46D78E6c4fbaA058A138Bc05",
+        "toCAIP10": "eip155:0x52C6050536a77A405F03b6Da3F98Db9Ca69ad899",
+        "fromDID": "eip155:0x0aF73cF3b072E39A46D78E6c4fbaA058A138Bc05",
+        "toDID": "eip155:0x52C6050536a77A405F03b6Da3F98Db9Ca69ad899",
+        "encType": "pgp",
+        "encryptedSecret": "-----BEGIN PGP MESSAGE-----\n\nwcBMAyaG8qwtJd4vAQf9Fg4udBKFN/Pqd9+bi5dqGnLr/PJbRHaIljRlzt5R\nm+6sPUeGyVkXcFdGbSnUKG0M7rtwKVOg0LiCX/oFx//k6ULJWJNVpuZsy4QT\nGYZevcU6dEPMMw4KSG/KJb+sdTAqlRPegibfrfg7YK/Mr9xd0DbN8K9CFsqC\nW/CYz0AkgZS/wN2099cy9WEgesv9yHMd1tU+59A/gAjmI5qk1ge3PvReKGP/\ncSWCX4wz0lioviib7g9zdw79ecpJThmWXKWaW/dPikcNYUTCbK31gY9TuRsy\nS+z+7AdddGj0hqgQvZIfj4XHgHbpQrRisddbgc1AE1xV7eiiT2jtNPswtsat\n48HATAOhR72eaWLr8wEIAJ06+SdpAuQT6mdlIAo/Kttiyd71UkxgMlappQKQ\nM5e2aei/H/C93EFYIitVHobeH/Q8Y89k4E+Plopo23OS6TGGbWIUl0PSJkyg\nxAIyC8J4RfqylCp+k/d9ZxZP/l0WrrXo9SqGOfXnAVm/IITLl8hlG7dvSztI\ng8ndUrk8Af3Jwq4vbrbUOMr2ophzV027HVWQl53Dez/e+DfpuyvT2uDAevTw\nf82H0+2DIz3jzj3rNfkvyA6C3InhW37K4JNh+T3XlL7qWV77XTWFN0yLzZwP\nrW0hLWV5YGAj0kqpup5oY4H1ANPknRiNxP6hUrQH5ZkHPahEUo78gpP70qgc\nZafSQAHfRbVWZC7J+0OF15W+dR3iM8Ngrz/PjYEchVo73a8uBtNk4mSai8o7\nv1A2hx74RVX6yN05D8Bxpf6u7wQMXB8=\n=T81R\n-----END PGP MESSAGE-----\n",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7XCCRCfItQMnVG/eBYhBKTq6JYHJG7fZv5Yop8i1Ayd\nUb94AAB/NQf/bwUkzVHV6/ODTtnjeA0y0kqEv3OAzbYoG60QdgNf3zAEmFbk\nf4ULNghzvl3Nt3S7TYsF06xu4gzzsjaOt8glPxJCiZUa3lXdJH53X5+VCbZV\nSWJuip9tdljAv4zg27+ZAGrwyC4NrTHE8t1b8mDHLTgJeqae6dJHjScmCXKZ\ngBZb2mNeVYWklg1mpCuXxB8YJpeFKDgSYeZ3C+YNSGAmoCyICRpYvxYo038P\nDehkFMS3HHvSGjFslcDN0D9l8gWY/4H520Rfer4GHJoFMSZeKlyWkQRCNPNz\nFY3fjmPLuimbEnnzd9Nxw1kbx4P9SBEEa4xhEjJnxx/sAnQxJX72RQ==\n=1zuZ\n-----END PGP SIGNATURE-----\n",
+        "sigType": "pgpv2",
+        "verificationProof": "pgpv2:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7XCCRCfItQMnVG/eBYhBKTq6JYHJG7fZv5Yop8i1Ayd\nUb94AACE2wf9GQq+/lkGQ7HVVmLF3SnSRI0IM9s4OvLckwjyd1i3D1lLnwu5\nVaPj+VxKZSBe+GHHukd/gQ+qYr9fhfHNMQ019AfHfz81kCCai6KhExH3YVbE\nsrL+j2bwttfcRjRWy/MoHo1T6M9F8PR4jm4aaktTSliApRE0k92Igm8Gw5it\nUaP1/qDIOQRjlofa7wAyDz7Kf83/WkbS78+MJZP0JWL9znhdFH5em8RvVYpS\nMa7/Skl8BnCr46BIfcd4Urd9q/RECKA4WJaxpOosH42MJQ4DLJ2iRnzZKkyr\nyZBfXXyiMA5goy+uzJzVhA5tlsHZp3jUFEZSvofaMX6a5UopweHMGw==\n=Wp+E\n-----END PGP SIGNATURE-----\n",
+        "previousReference": "bafyreid7b7m5ub3ouybgp2nzu733vle73bem5jcz5lg5u2epknncfhfeuy"
+    }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Request Stream)">
+
+```typescript
+{
+  "event": "space.request",
+  "origin": "self",
+  "timestamp": 1696576021653,
+  "spaceId": "3781b4193166ec8f0a1fabe162ef3f2458cac28516d4d20f8dd7faf446815900",
+  "from": "eip155:0x136E326b22ED48dbB665733eC024407d4fAA4F12",
+  "to": [
+      "eip155:0x3AD7cf4Ef82dd7f4f040c5eD7352f12C662F21db",
+      "eip155:0x1b77273e527Ec5948995f395e3ADa41E708d617e",
+      "eip155:0x7711FED1Bc6B1E461aE7869959bdBf529335db5A"
+  ],
+  "meta": {
+
+  },
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7IVCRAxpSc3atCeoBYhBGHp9Ifk8vvLrMzkYTGlJzdq\n0J6gAAD//wf/bTrC0LnwzcUIE10d3XQ2Y56jK6kRVGWKR/7i6CC+hGs5PGKu\nzefIGdtLVjAqTeKn6PbNnb1t2niLhmMeTbN+knGCzSqx/FN8OodLLmunLNAx\nWJ5thFyjZWNyIF7IoH2zUdc8zbsjXHzfd70yoxMZSwd5C7EPj/e17kyYHdj2\nzPQecbTsnCIjJKzi0PBa2YMNoF5fExP3hwTnP0k693r8oC5ivxj7Ht3Hwmu0\njsv+sGXk+XZPC/JQQfEEviEh3j9dEiNIeHutk/7cFdEnDfEy5dFMxubjf6oH\nY6vt0q2V2CZJHHw99JYeTHN/d3YDXc4RggoUINo1cysR904owgEsVw==\n=QTX8\n-----END PGP SIGNATURE-----\n:0x136E326b22ED48dbB665733eC024407d4fAA4F12"
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Request Accepted Stream)">
+
+```typescript
+{
+  "event": "space.accept",
+  "origin": "other",
+  "timestamp": "1696576021843",
+  "spaceId": "3781b4193166ec8f0a1fabe162ef3f2458cac28516d4d20f8dd7faf446815900",
+  "from": "eip155:0x3AD7cf4Ef82dd7f4f040c5eD7352f12C662F21db",
+  "to": null,
+  "message": {
+      "type": null,
+      "content": null
+  },
+  "meta": {
+  },
+  "reference": null,
+  "raw": {
+      "verificationProof": "pgp-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7IVCRA1c2iyC1q/7RYhBH5kgFyUQlfGEgbg0jVzaLIL\nWr/tAABinQf9E+7UUlPnAVu9VifNHS6GJuf/o1RJdE8gL4mi27+rdfr+Y2+Y\nzZaZbBEJK3BTJgT4op1yJKtg2GZDZUIMWSbkcouE+2YyyYsANS89z/blq/05\nYf6RFuUeHr3pGIyzkeb7Aj7VEHbUhrK5nHheTkO7K6Gpa9blNEYVrhsYrHbs\n7UhYKlq6tsoo1E8XXFWBhd+2rVPKF4zhIt9jPdqNPYTQSn7K7hjVvZueWd0Z\nD7Vr4RO4Af3a/5EiVAvOtxVGLpwhw+FKDOGJhRdNCNLqEc8gZ0q+l1cvglKp\nfAiqSZpnnTzIUloszJvNFAeQSR/nZQ9wjEihosDztVOOz5uyQ3XhZw==\n=kX/p\n-----END PGP SIGNATURE-----\n",
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Request Rejected Stream)">
+
+```typescript
+{
+  "event": "space.reject",
+  "origin": "other",
+  "timestamp": "1696576601599",
+  "spaceId": "7a200d55cc76428e9938e935b604e993c5f6cb2f3e9a1dd7108a07dd32de0791",
+  "from": "eip155:0x15d8a67c0B1eb61dA5901109DB4CA382E989aA13",
+  "to": null,
+  "message": {
+      "type": null,
+      "content": null
+  },
+  "meta": {
+  },
+  "reference": null,
+  "raw": {
+      "verificationProof": "pgp-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7RZCRA8vrXKPfPlwRYhBECQe8HJcpH3IRX27jy+tco9\n8+XBAADl0Af7BumEnrIcSj/1H3LvxaqG4wK/G6iTP3iTvXUca0n7UBplXS8P\nbKV7XFhjollN6jJVZ53mmUHgNDAbfaQTvutm3SRJlFVJxV4zV9uL7UMZW+k4\nYAJM5XNbqqyn7+KjcLIwBpJ3YLMmmLfdrO4+WJAYswAAJGiS+KPDsU+oOsfm\nHMWc5aRqis0Epf3FLWELO0uDyydm75575bBe60FxfPjnd5GhUgmMWydNCZH1\ngeGMLZbhuQ+bvnLjTuWSmnW64cl+jlRCzs2Mpgwvrh0ZQIcPWjVDjNevNohu\n3l9VXhHuYPUCyGGIyhcPG3tubRcudY+U/uavhQ6XXgWPVdKZ/qwfAw==\n=0jOy\n-----END PGP SIGNATURE-----\n",
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Participant Removed From a Space Stream)">
+
+```typescript
+{
+  "event": "space.participant.remove",
+  "origin": "other",
+  "timestamp": 1696576219688,
+  "space": "a64abd4256a607e7bd2ab4068d9024ddb0d355687267c0e39eb31a3a7d245ab0",
+  "from": "eip155:0x50bbFA4833e89389FE00a62D14E6eDDf1c155855",
+  "to": [
+      "eip155:0x50bbFA4833e89389FE00a62D14E6eDDf1c155855"
+  ],
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7LbCRByYd40HdgiDBYhBLSq7nZZRBYzsnezMXJh3jQd\n2CIMAADNoAf/UxniQM/ZtzDuSmhIuvWiuGzl8vkeFbN2dOLW1a2yJO2Z8jDa\nDDuxyTcSt9d9YyCO/NojhbxmScE73gBysVt9OLdUn9hXlAKclYjXu4r7KvLk\nmrQyMlN3akDjpzH1gGiiCSi18vll07KRGSgWt3P13cA9vGpT+YV3A6uiCGUS\nE3CV16wdYTd0FUPJHckTJVVu3se1K3NfzzELMwIeN9bPJLxaZD3u3t074dN/\nc+jwUS1OC0sUQ5ptHCgfNIMgtueutKSPPZO6MKVBE/qQauKh81PHgzrhW0OE\n6gMkSDPjVbncjBSumofTWga7udk65RhwysCxx9qa3O/u6skBH0N+bg==\n=oqeR\n-----END PGP SIGNATURE-----\n:0x50bbFA4833e89389FE00a62D14E6eDDf1c155855"
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Participant Joins a Space Stream)">
+
+```typescript
+{
+  "event": "space.participant.join",
+  "origin": "other",
+  "timestamp": 1696576531987,
+  "spaceId": "1032596dea9f24a7a0ee419668f7d39da32a2fb32003a27c6b293cc6668d2a82",
+  "from": "eip155:0x8c1EAB3227250526f133681630c2B191969f8581",
+  "to": null,
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7QTCRCI26TZ8c3OJBYhBNDtmDIWimjDn9MUIIjbpNnx\nzc4kAAAfFwgAgQkKBS/W7e53maVOne1lob2Qk14gWfUQm/LaRlP0iO5YwPlg\njckyQaX0Ient3PmLSqUoykuKWH2wR53YJ6Wgb//EkOxdywkrDbAZCGnQgxaO\nakTU30mDaV06HLQjDQmRTHdeozwV+6PF+i71vZPNmsCSI8x/VSex/gMrs2nk\nhSAHnuhUcuEWHshc+FXEO70acz8nkhH7Pw0icDwb50yFZNuekrK4rjUPmXb2\nwBzwFDjpfS6n8JMQz4//jYXyFuDfzYlr97ymWdltR5h8QKs1iZsN++X/5FsA\nO2EltMRqhxcpPApcHB9QQe6CAZFG+1fB8FKOXx6MZMwHqjyEtrL27Q==\n=bDP5\n-----END PGP SIGNATURE-----\n:0x8c1EAB3227250526f133681630c2B191969f8581"
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Participant Leaves a Space Stream)">
+
+```typescript
+{
+  "event": "space.participant.leave",
+  "origin": "other",
+  "timestamp": 1696576531987,
+  "spaceId": "1032596dea9f24a7a0ee419668f7d39da32a2fb32003a27c6b293cc6668d2a82",
+  "from": "eip155:0x8c1EAB3227250526f133681630c2B191969f8581",
+  "to": null,
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7QTCRCI26TZ8c3OJBYhBNDtmDIWimjDn9MUIIjbpNnx\nzc4kAAAfFwgAgQkKBS/W7e53maVOne1lob2Qk14gWfUQm/LaRlP0iO5YwPlg\njckyQaX0Ient3PmLSqUoykuKWH2wR53YJ6Wgb//EkOxdywkrDbAZCGnQgxaO\nakTU30mDaV06HLQjDQmRTHdeozwV+6PF+i71vZPNmsCSI8x/VSex/gMrs2nk\nhSAHnuhUcuEWHshc+FXEO70acz8nkhH7Pw0icDwb50yFZNuekrK4rjUPmXb2\nwBzwFDjpfS6n8JMQz4//jYXyFuDfzYlr97ymWdltR5h8QKs1iZsN++X/5FsA\nO2EltMRqhxcpPApcHB9QQe6CAZFG+1fB8FKOXx6MZMwHqjyEtrL27Q==\n=bDP5\n-----END PGP SIGNATURE-----\n:0x8c1EAB3227250526f133681630c2B191969f8581"
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Started Stream)">
+
+```typescript
+{
+  "event": "space.start",
+  "origin": "other",
+  "timestamp": 1696576531987,
+  "spaceId": "1032596dea9f24a7a0ee419668f7d39da32a2fb32003a27c6b293cc6668d2a82",
+  "from": "eip155:0x8c1EAB3227250526f133681630c2B191969f8581",
+  "to": null,
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7QTCRCI26TZ8c3OJBYhBNDtmDIWimjDn9MUIIjbpNnx\nzc4kAAAfFwgAgQkKBS/W7e53maVOne1lob2Qk14gWfUQm/LaRlP0iO5YwPlg\njckyQaX0Ient3PmLSqUoykuKWH2wR53YJ6Wgb//EkOxdywkrDbAZCGnQgxaO\nakTU30mDaV06HLQjDQmRTHdeozwV+6PF+i71vZPNmsCSI8x/VSex/gMrs2nk\nhSAHnuhUcuEWHshc+FXEO70acz8nkhH7Pw0icDwb50yFZNuekrK4rjUPmXb2\nwBzwFDjpfS6n8JMQz4//jYXyFuDfzYlr97ymWdltR5h8QKs1iZsN++X/5FsA\nO2EltMRqhxcpPApcHB9QQe6CAZFG+1fB8FKOXx6MZMwHqjyEtrL27Q==\n=bDP5\n-----END PGP SIGNATURE-----\n:0x8c1EAB3227250526f133681630c2B191969f8581"
+  }
+}
+```
+
+</Details>
+<Details summary="Expected response (CONSTANTS.STREAM.SPACE - Space Ended Stream)">
+
+```typescript
+{
+  "event": "space.stop",
+  "origin": "other",
+  "timestamp": 1696576531987,
+  "spaceId": "1032596dea9f24a7a0ee419668f7d39da32a2fb32003a27c6b293cc6668d2a82",
+  "from": "eip155:0x8c1EAB3227250526f133681630c2B191969f8581",
+  "to": null,
+  "raw": {
+      "verificationProof": "pgp:-----BEGIN PGP SIGNATURE-----\n\nwsBzBAEBCAAnBQJlH7QTCRCI26TZ8c3OJBYhBNDtmDIWimjDn9MUIIjbpNnx\nzc4kAAAfFwgAgQkKBS/W7e53maVOne1lob2Qk14gWfUQm/LaRlP0iO5YwPlg\njckyQaX0Ient3PmLSqUoykuKWH2wR53YJ6Wgb//EkOxdywkrDbAZCGnQgxaO\nakTU30mDaV06HLQjDQmRTHdeozwV+6PF+i71vZPNmsCSI8x/VSex/gMrs2nk\nhSAHnuhUcuEWHshc+FXEO70acz8nkhH7Pw0icDwb50yFZNuekrK4rjUPmXb2\nwBzwFDjpfS6n8JMQz4//jYXyFuDfzYlr97ymWdltR5h8QKs1iZsN++X/5FsA\nO2EltMRqhxcpPApcHB9QQe6CAZFG+1fB8FKOXx6MZMwHqjyEtrL27Q==\n=bDP5\n-----END PGP SIGNATURE-----\n:0x8c1EAB3227250526f133681630c2B191969f8581"
+  }
+}
+```
+
+</Details>

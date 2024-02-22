@@ -1,0 +1,461 @@
+---
+id: docs-spaces-develop-manage-space
+title: Manage Space
+hide_title: true
+slug: ./manage-space/
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 7
+image: "/assets/docs/previews/docs_spaces_develop--manage-space.png"
+---
+
+# Manage Space Overview
+
+This section covers all APIs related to managing a space including adding / removing members or admins, updating group info or fetching space info and participants.
+
+<head>
+  <title>Manage Space Overview | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Get Space Info API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// await userAlice.space.info(spaceId);
+const UpdateAliceSpace = await userAlice.space.info(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Get Space Info API parameters
+
+| Property    | Type     | Sub Type | Description                                    |
+| ----------- | -------- | -------- | ---------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the Space that you want to update. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  spaceName: 'making it even cooler',
+  spaceImage: 'data:image/png;base64,iVBORw0K..',
+  spaceDescription: 'new description',
+  isPublic: true,
+  spaceCreator: 'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4',
+  spaceId: 'spaces:5ea3688ef9ddce985d8e0a348b2a8ebb2c10ea24241337f67192318d69aabf15',
+  scheduleAt: '2024-02-20T00:00:00.000Z',
+  scheduleEnd: null,
+  status: 'PENDING',
+  rules: {},
+  meta: null,
+  sessionKey: null,
+  encryptedSecret: null
+}
+
+
+| Parameter                  | Type                  | Remarks                                                           |
+| -------------------------- | --------------------- | ----------------------------------------------------------------- |
+| `spaceName`                | `string`              | Name of the space created.                                        |
+| `spaceImage`               | `string`              | Space's image.                                                    |
+| `spaceDescription`         | `string`              | Description of the Space.                                         |
+| `isPublic`                 | `boolean`             | Indicates whether the space is public or private.                 |
+| `spaceCreator`             | `string`              | Push Profile DID of the space creator.                            |
+| `spaceId`                  | `string`              | Unique Space ID for the created Space.                            |
+| `scheduleAt`               | `timestamp` or `null` | Scheduled start time (if available).                              |
+| `scheduleEnd`              | `timestamp` or `null` | Scheduled end time (if available).                                |
+| `status`                   | `string` or `null`    | Status information of the space( 'ACTIVE' or 'PENDING' or 'ENDED')|
+| `rules`                    | `Object`              | Space-specific moderation rules
+| `meta`                     | `object` or `null`    | Additional metadata (if available).                               |
+
+```
+
+</Details>
+
+## Update Space Info API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// await userAlice.space.create(spaceId, {options?});
+const UpdateAliceSpace = await userAlice.space.update(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Update Space Info API parameters
+
+| Property    | Type                  | Sub Type  | Description                                                                                                                                                                                                                                              |
+| ----------- | --------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`spaceId`_ | `string`              | -         | Space ID of the Space that you want to update.                                                                                                                                                                                                           |
+| `options`   | `object`              | -         | options to update our space details.                                                                                                                                                                                                                     |
+| -           | `options.name`        | `string`  | New Name of your Space.                                                                                                                                                                                                                                  |
+| -           | `options.description` | `string`  | New description of your Space.                                                                                                                                                                                                                           |
+| -           | `options.image`       | `string`  | New Space Icon Image in base64 format.                                                                                                                                                                                                                   |
+| -           | `options.private`     | `boolean` | Whether the Space is private or not.                                                                                                                                                                                                                     |
+| -           | `options.scheduleAt`  | `Date`    | Start date and time of the Space.                                                                                                                                                                                                                        |
+| -           | `options.scheduleEnd` | `Date`    | End date and time of the Space.                                                                                                                                                                                                                          |
+| -           | `options.rules`       | `any[]`   | Define conditions such as token gating, nft gating, custom endpoint for joining a space. See [conditional group gating](docs/spaces/build/conditional-rules-for-spaces) to understand rules engine and how to fine tune conditional rules of your group. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  spaceName: 'making it even cooler',
+  spaceImage: 'data:image/png;base64,iVBORw0K..',
+  spaceDescription: 'new description',
+  isPublic: true,
+  spaceCreator: 'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4',
+  spaceId: 'spaces:5ea3688ef9ddce985d8e0a348b2a8ebb2c10ea24241337f67192318d69aabf15',
+  scheduleAt: '2024-02-20T00:00:00.000Z',
+  scheduleEnd: null,
+  status: 'PENDING',
+  rules: {},
+  meta: null,
+  sessionKey: null,
+  encryptedSecret: null
+}
+
+
+| Parameter                  | Type                  | Remarks                                                           |
+| -------------------------- | --------------------- | ----------------------------------------------------------------- |
+| `spaceName`                | `string`              | Name of the space created.                                        |
+| `spaceImage`               | `string`              | Space's image.                                                    |
+| `spaceDescription`         | `string`              | Description of the Space.                                         |
+| `isPublic`                 | `boolean`             | Indicates whether the space is public or private.                 |
+| `spaceCreator`             | `string`              | Push Profile DID of the space creator.                            |
+| `spaceId`                  | `string`              | Unique Space ID for the created Space.                            |
+| `scheduleAt`               | `timestamp` or `null` | Scheduled start time (if available).                              |
+| `scheduleEnd`              | `timestamp` or `null` | Scheduled end time (if available).                                |
+| `status`                   | `string` or `null`    | Status information of the space( 'ACTIVE' or 'PENDING' or 'ENDED')|
+| `rules`                    | `Object`              | Space-specific moderation rules                                   |
+| `meta`                     | `object` or `null`    | Additional metadata (if available).                               |
+
+```
+
+</Details>
+
+## Add participant to a space API
+
+This API is used to add participants to a space. You can add participants as `SPEAKER` or `LISTENER` based on your requirements. The Participant will then receive a request to join the space which can be accepted or rejected by the recipient.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// await userAlice.space.add(spaceId, {options?});
+  const response = await userAlice.space.add(
+    spaceId, // spaceId that you want to add these participants to  
+    {
+      role: 'LISTENER', // or "SPEAKER"
+      accounts: ['0xB2aA4Fd98fdd12E0143E4A1F89ea35b966eaCebD'], //  array of wallet addresses
+    }
+  );
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Add participant to a space API parameters
+
+| Property    | Type                 | Sub Type   | Description                                                             |
+| ----------- | -------------------- | ---------- | ----------------------------------------------------------------------- |
+| _`spaceId`_ | `string`             | -          | Space ID of the Space that you want to update.                          |
+| _`options`_ | `object`             | -          | Configurations to add participants.                                     |
+| -           | _`options.role`_     | `string`   | Role to be given for these participants. Either `SPEAKER` or `LISTENER` |
+| -           | _`options.accounts`_ | `string[]` | Wallet Addresses of the participants tht you want to invite.            |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  spaceName: 'My Cool Space',
+  spaceImage: 'data:image/png;base64,iVBORw0K..',
+  spaceDescription: 'This is a space description',
+  isPublic: true,
+  spaceCreator: 'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4',
+  spaceId: 'spaces:2df6f15d4a97dc62bd79a99965d5e85f4a2be9e34b7dede4adb447eb411ec942',
+  scheduleAt: '2024-02-24T00:00:00.000Z',
+  scheduleEnd: null,
+  status: 'PENDING',
+  rules: {},
+  meta: null,
+  sessionKey: null,
+  encryptedSecret: null
+}
+
+
+| Parameter                  | Type                  | Remarks                                                           |
+| -------------------------- | --------------------- | ----------------------------------------------------------------- |
+| `spaceName`                | `string`              | Name of the space created.                                        |
+| `spaceImage`               | `string`              | Space's image.                                                    |
+| `spaceDescription`         | `string`              | Description of the Space.                                         |
+| `isPublic`                 | `boolean`             | Indicates whether the space is public or private.                 |
+| `spaceCreator`             | `string`              | Push Profile DID of the space creator.                            |
+| `spaceId`                  | `string`              | Unique Space ID for the created Space.                            |
+| `scheduleAt`               | `timestamp` or `null` | Scheduled start time (if available).                              |
+| `scheduleEnd`              | `timestamp` or `null` | Scheduled end time (if available).                                |
+| `status`                   | `string` or `null`    | Status information of the space( 'ACTIVE' or 'PENDING' or 'ENDED')|
+| `rules`                    | `Object`              | Space-specific moderation rules                                   |
+| `meta`                     | `object` or `null`    | Additional metadata (if available).                               |
+
+```
+
+</Details>
+
+## Remove participant from a space API
+
+This API is used to remove participants from a space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// await userAlice.space.remove(spaceId, {options?});
+  const response = await userAlice.space.remove(
+    spaceId, // spaceId that you want to remove these participants from  
+    {
+      accounts: ['0xB2aA4Fd98fdd12E0143E4A1F89ea35b966eaCebD'], //  array of wallet addresses
+    }
+  );
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Remove participant from a space API parameters
+
+| Property    | Type                 | Sub Type   | Description                                                  |
+| ----------- | -------------------- | ---------- | ------------------------------------------------------------ |
+| _`spaceId`_ | `string`             | -          | Space ID of the Space that you want to update.               |
+| _`options`_ | `object`             | -          | Configurations to add participants.                          |
+| -           | _`options.accounts`_ | `string[]` | Wallet Addresses of the participants tht you want to remove. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  spaceName: 'My Cool Space',
+  spaceImage: 'data:image/png;base64,iVBORw0K..',
+  spaceDescription: 'This is a space description',
+  isPublic: true,
+  spaceCreator: 'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4',
+  spaceId: 'spaces:2df6f15d4a97dc62bd79a99965d5e85f4a2be9e34b7dede4adb447eb411ec942',
+  scheduleAt: '2024-02-24T00:00:00.000Z',
+  scheduleEnd: null,
+  status: 'PENDING',
+  rules: {},
+  meta: null,
+  sessionKey: null,
+  encryptedSecret: null
+}
+
+
+| Parameter                  | Type                  | Remarks                                                           |
+| -------------------------- | --------------------- | ----------------------------------------------------------------- |
+| `spaceName`                | `string`              | Name of the space created.                                        |
+| `spaceImage`               | `string`              | Space's image.                                                    |
+| `spaceDescription`         | `string`              | Description of the Space.                                         |
+| `isPublic`                 | `boolean`             | Indicates whether the space is public or private.                 |
+| `spaceCreator`             | `string`              | Push Profile DID of the space creator.                            |
+| `spaceId`                  | `string`              | Unique Space ID for the created Space.                            |
+| `scheduleAt`               | `timestamp` or `null` | Scheduled start time (if available).                              |
+| `scheduleEnd`              | `timestamp` or `null` | Scheduled end time (if available).                                |
+| `status`                   | `string` or `null`    | Status information of the space( 'ACTIVE' or 'PENDING' or 'ENDED')|
+| `rules`                    | `Object`              | Space-specific moderation rules                                   |
+| `meta`                     | `object` or `null`    | Additional metadata (if available).                               |
+
+```
+
+</Details>
+
+## Fetch Participants of a space
+
+This API is used to get the participants of a Push Space. You can use this API to get the details of the participants of a space, such as their wallet address and their role in the given space, etc.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.participants.list(spaceId);
+const ListAliceSpaceParticipants =
+  await userAlice.space.participants.list(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch Participants of a space API parameters
+
+| Property    | Type     | Sub Type | Description                                                |
+| ----------- | -------- | -------- | ---------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the Space that you want to fetch participants. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+    {
+  "members": [
+    {
+      "address": "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+      "intent": true,
+      "role": "SPEAKER",
+      "userInfo": {
+        "did": "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+        "wallets": "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+        "publicKey": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxsBNBGNwp6ABCAC7OVMgDVmEETjhSnJU5zSzC5/0pU/rDO2zY9kIKxvaeT0o\nMspIeQTg2t/eLXoyEzfE32xqODcLqjUWOmtyTIY+Ws9Ydd6iONWARXIXk1Rn\npUAE3SL6mj9MEMOt4sBS8vLg42YCDq1nSgVi9YtKW1hsvzjCHvbc437xaLVu\nyBBJOqTkU0XbmpPyFEw+laaEAGyIYSKp1XNgDxBY1tbWev17NTm8C9h1AV1E\nZjcb74NOxWL39gdrzoRNOoXg6SCMpCCPXCzbptR4YP13Dp3j1LbzFpWgIa/h\nuI3NiprgtpH4eB2a6eVlCmoWQMJJjYdbCcIxnAH5hOjY8lm/evUn7v+TABEB\nAAHNAMLAigQQAQgAPgUCY3CnoAQLCQcICRCAwIuuc6EJTAMVCAoEFgACAQIZ\nAQIbAwIeARYhBAoZA3x82Ra7dxN7EYDAi65zoQlMAADk1gf/bho+iCbLAV9m\nWevLuqCZEMwUiHV6Pbmpf6lXxm1pamL+SQ12WHWWbcyOc8ZLvhle9nDprXfm\nH1Hj1pOEiuqZ+g7fakKC4kSorpQ4vJE2b4m50Q/OTCZPEnOVIbnToTlbHnXh\n69hmjQWrvsZOiPz6AiJ0WIpSiUv8qL3H8kCR2eCBxLAUWj8o6ztj7/3tQKzu\nhr6oxMHrbFhzFyMUAcVP9Lz0EOMX2X9m3fagr7czsxGvcA2bd84W4lIXNk7N\ndaqaytRpIu/QhFjeAAKj7NoA1VvJBrJJkuOo+Xy3NeBNu6RCSXuuLbOWsq3h\nUjdM9Fa2OAUqtHU734Ax/u1PF1r3S87ATQRjcKegAQgAm7dyYoaKupPrD+gQ\nGpJaQb59yUBxCxssUnuaw5O9JrCSHF2cUv7JSWUg3HoEtFlpsnZswpac7+DO\nZNg1npjCj8/8SJVdOTlyh4iYizQmSqBFXfVZy1EvylL1KvR1fPu/zsz9cvcG\nBivIf21EbjpBcOB5tPR5yx+AbvlQ2LTeRB7pTwwEWZEuygNE2x6AKejwMUhg\ntHKItiesZx2UJ2rFFHzD93iCvcgK+HkLf4/uqul0QO/pEBNaWqG5+ZVAlfru\nkQdBw4QcNLRM4hHTM1wDdtv9D26AVC9HvLNbJR1uhyUz1IPz00+Cm2x3v+6C\nfN1UrjxClMuLtwBQ+qvD8c/gIQARAQABwsB2BBgBCAAqBQJjcKegCRCAwIuu\nc6EJTAIbDBYhBAoZA3x82Ra7dxN7EYDAi65zoQlMAAArPwf5AXV7mMWONhxc\nnNjqCghgUloEvx9KZO6miZnCDXw0RbMJkqQULPQVzoCcJy/6a4INhhQxlDbk\nTSfjbkuHeKjK7gSmRUl61aTuXbIW+xsiVVgf6/p+BnI5sZ8USVNt8LEDM2fj\nFAJc4o+R0BQSD38BZiicaVFKBws5cKzflbADVKzpzfBQkeXixkf9YQ8TTHC4\nS0t4ZAa3XHWltABmueXZRTBnkknILP409M1Rv6lXUtsmzWIq7yMRRNUWIilp\naGq4sMTwfzTCkNaSM9ad6UWTfxvAOXKfhHj653oo9s7cNclbuDqxqbd7VSg8\nlKUfE7o/BXhF/A+5lNE4JdZ0Oj8hbQ==\n=gYvk\n-----END PGP PUBLIC KEY BLOCK-----\n",
+        "encryptedPrivateKey": "{\"ciphertext\":\"0b12fc2a592a3ed8976b1ae28d3e5590c8022424256e13a59e3a3e9fa520b1d985946c3db8ad3bd21870b62bb0bc4760157f295eb5d51cd0cd979ee215b84e9e18d6088685ca1295e73441f6fe36011155851d920177e9d4841dffdc0b14418da26facbf349aefac446f421e77f98ffadf0987313082dcc5a3611f82b4e92661c5bd4ac71a8e4b039b90fcc28d821fbb62c0f8c7a2361e62dc68390f76a6d29fc56fe4773a5cef7ade5dd5ad91577a2aaed58d2e630fe6477bd87920f8914d9eaa851a3f83e6d062f9add7dfb2b8ed3ce6c10bd51e16197afb964d82b038a58840088c7c3fa35d462ad7b3e31525dced24ff217e6ab78cb525a073a8e731f421a340dfcca7256580bb45ae0ec08d82616c69e120298dea2eb009dafe2136258b1c10d2847045210749c6863aef1733ea5082f1839232d6e07f49886b5996397f4e6cca6525bd8c73e44fa245dac458f54fe075778697db07896563fefacee9852cecb5597fd8925329a023b366169d5aeadbeaa9d193820e26a2c0a8185f32beb3481521d9f34eaa64bdba39272dbcc27cb2bdd77d8cd35b512115107460311f0f363c25cd4693265541300d54924cf8127c473096ec5286eb578d26de52975b89ab1095059df0ec7b51a79a5aa560de583f26e0b65ac1384ee0744e2aa3fe99c9b6a74629f3e0b0ec7148ea0b8ef7e39ccbc1fb23f69cb47de4ee4e820eb7f59b6751f750794dea5093b2b10dea5d4f1c07c4877dd3afd7b65d74188b04af4c9083a755562ad076df2a63745cd480d8e2b1ac957a36750c5125ce8ca4f48265b47729f03456fe97171b2c931ecb1d9c05b75c90603bd0928121712c8828cf092c712f91b1202effb6b89c4b8bcd098e1f509174f7a3389360ed084b9a57accfa3970694c21ab6c777af7f71652e8150e07b3f22ce37535317ff35e1532efacea5e142b28378e2b0ce64979620751d3c59dab45f68321bfffb0f74ee16f7ebaea4bdb17f409e546e117542e0acbfb5bbf495b40fa5f8ab67f51c58c97f1c8627c46a2a612b1164dfb4092a1835785902683f4d13ffeec971f67eeb7511856b3f150504c347b3d899d23dadf9669b16d2998497648f7df4debec705c230138b73cb44212be8f8ffff8c2e180f46ae2623daf717d42ccc58cc3f1b0bba150276977156d611cafeb2a2d9224faae40148fea8ad9ace6fecabc9162e6007dfe04fb533f98b9ae20b9a60994aa60742a507bdc4c5e16ac5a4d5903f6804e421749e27e770643a057ff9a50c3bf97ff2aa8e2c0fbcf1c0b4f0a228e3a9e5d29673d66dcd7f74a8e0644a9f19b7eb0bca1597e40463120e2613e4a669ee166349e0cfb487e38c669c6fbe46f0703c64ee4296d4713ebe74a4657994eb670b04d632545923cdaf5a815c5ffcd8e960bd87992ea733053b684955519939263a7e27e8369c52a2c04704aa89f6bfde4384dc0e7eaf676adcef097f6c44648778d472b3ecc2c60258feaa121a37392bd796f1ebbc7f9209d07d729436646636928d273ee36f48dd629ee4a32db23c8912e7b5942fcc61db21e3e1772292c6a13fed33696f5a9265da99770ac695ce0f13292bff17acd5e73ddd9db86e624eac1b7513da5a13c15fab174de6996fb1eb08be9395953d77189d4488fb4f527e5e0716663c5fc4e13798b03665b3387ed4b2fad97f3f9606deae70e5c0543f69e06b245735c2afe1d5d49f8d15f538b8b823ea1149bd54710bdf3056b055812c48792125e06429b7506276d0b177d00091fa957c1a15427e012b2bd90257b447df670ede24d0c5790574f46dbfb710067c38e2aa7e8cceff7d35fbfeaa7ec262ae572a7b7a217ca413d3b2016c4a9be7332d2c7551c4b003cd45fbebe42468e407b5f7576783ac450f8a80f22ac1b092ce2c544746d6a6a2e209b013fdb682f3a4ffcd8f7c0c4d30f7ffcaeedb51a6588f4dd7b47025dbf62dc913a17c6db026f601d07739bf7f8f1932caa1dbefa875abc5d4d4e61cee7a8664be629efc447cbf42459005e463c30eeee89c6026ce49295507229e971f604e49c04458758646d561c1369006f9faadafc40c57b5d3f10791773e25abee328df1a9846fe70e1731d36172eab5709c76d45dd15c652c736039f87f53859137d7ea8431a4059bdd98cf351afc875000b860fe1f965e6eb04579a9fb38c4d50773df72d601dc2f0504d47d83e9afbe05e99a8cd4782c443026b55c7f07164e9cc0f5f85897e0629e12e4cedb23ebcc19555cd68b5928fadcbddfd9389dc5429d0f5a946f1d698453cec49b9bd587e8e4cc83413c33309c3952fc2b43bea28acccc4a653c4b7d3b910cdfc6e9ba09d38b936bbca8a260b0c43c47035b966e9c7014e8ce1c9f981dbc67e8ef9261532769464fe4979b3f38d9d253991ee023251e741019191740b3a289a25e999d9727e9ac26d9730863535bfba2635d29e60392f3f16fa7cd8899d5a2a29ef87dc09e9149b37c0a124cccdb829035200b58e3d78e96b4cf8de63b1c7a5807726ef21e3a43338c390e16e904f5c81660d247472e439a260a7032f972389a53906dca4a04c0eb2e9a671091a1d57bd669d4ce63ab79f87d989f7fc31e37e775935f8aae1a77b77268ce4db80d340a516f56509fb24718dd814fd799a112276bb6c1c3d14354bf27d98c0f4e2a86970d7062e51f87393139742b79849b4f50b58907e85712e0fbe959d7935420e9c460765a37bee651183ecb9de586ff9d44e086a4b49c379232790d2ac196d72590c06293f413fba0256256bc95b0861dfa9eaa7aa24647eecde7925c1df7ada695bccecc25b545c7f4b4296f12735794fa8bb74f356f88ceb8b676682cd532e3de66f3bc4408fa7c9472fab69305fbdd2e6bc50a0904a188669a26f00e108ec2407709e0eecc7684f8288e0e32b5c09a7c6e041bca3a652514c048234a6b617186fc3ec54d502975932f1f55aa644f852c3bd87c86fd447cc68ad84e43091890c563dce64933695b7790a4b8ae73396dd00a1f43daba6930f4b91ede4215b84b53821ba10c3cd88b75a6960934f2eb83bf2a9e5e854f5d9e806fa6d333913f6409143b2dd5b1491a7132c06939e97e43fdfb713ead8f917ba21e7847e27a2e9405fd3a44a76006683f716c58a08fd93748d5ec0de6b440a55d2403fbf658c64cee9482e557cd942d44d9f5f46fcf58c67200e85bc9404dfd882bc08575b0080c371da72714f5b7862d9139dea1092df186ca52348dcc39b70d5019fe64747c011a4e22e196ba8551b5ab2db35aeb39b297bd0f0180c1c3603734f82f591c20086d5ce198f40dcc8c9d9dd862198ca9e6526cc8ca4ad2ac86d1877acbb3e35476932108b24a9ecd372d3cc784ee638d5cfe2ba4299182ea1638ae2a999329cf8a0a99c16a0818f2061315d2be5eb7dc8df085acd158d3e2ea4f99f3bea247ce5e41f852335f2007b816efea04fe4a64f02360ccaac2970f953e108f16f4ba7baed85d6dff4b1724b5c406994860c84f720a25d1609dc52948ffd9b43f78f2c9719a9ea1b01149014615aff9e051ad6459b297901a424e7cf403cb56dc03b45a9941ee5c128897e6645967ac325cba31db9b304d9efdc72c45d8cd853c815153f8e1a655c1a84c409d6446b082cef744b4f0bb1c7a58159ed52fff2f97d36faa2a3cf9e5069330550d2a0b21fec1feb91609ea6e2fc4f31f210528099f6f7138d672df7e28ad6ac71454d52f5dfa46dd138a2083492c26c35536a8cefbe8cbd9a9c62b86aca626b81a3bf88d73d1a56bdcb0192c195ea5a2286d09709fa075d822d94b123c0dbce1e12de25ebc3d7ae97397776cd848a5b18851fa2f761e1eda4ce7c04b28a67d5e53711a0002de51f94ed9e4d1bfe7acb86d143fc7cc11727edf31c6161516f9c480fa1ce8cab5e6ba7174a6879f5ad27f9d3188e23327021698a2f26548143a56d95878762b921b16245ef0696515d0de2b733db9bda111ee9699a4297e65e5fb66f92ca6cc19906b8f2d15e29358cc9b9a74156ce87cfdd6d7e6ec70f3fd8bf9651c4258ddfd2c5713cc0f8f29b49494bbccf21829793e2fa06f3ab3e14666824e7c81c978f9496dfa1892b3c1ee837684fa1b9a435653ba41d86c4c097bcc3ea9c0c1ff9859e58fd42da2047d197240c602260ae031afc4a6b9decdb490fe4927f9b2eaf486c4df7b7c7213b92067ed846b271d7cc6809707197f0d65b94f804787137e42f67094a6b6e154c10d512fd7dd891b0a5856fca3ffcb19c0ecd5e527ce2e2363798b837b7b99dce8140d64369295e43e4071123873306410b2b2a7fad7116082cdfc91fbde2486965b823c1847863e40d0fe9878769c305e8184adecd99b7e02637fffb74f2b1556daebb975a2f9ecdb437f95566c7f4ad5c46ada9b51d80edbac34610f7ef6a9e1e9e16d0b75f23b95443f2783cfd2bd152269134f925c3eb45d6e4939ea00e4001ca9e95fec971c9f5a58c24bbf88690402fbaee6734113d19131057fe28a119fc9bea96753853606b1df348ab6406f2e4decc00e6d77e47dda343ac9a848a7a12a4f3d26aacf6a2a93dc198cdce20c8aca2113fb4e847717fa66e6be1a1e54bc2312b6f4e2391d6bf6220f1a9efba3f3bc42ee6f787411393bc6d914aaeef1698cfb76e2de814df970c6700aef8f6b13242185ecd757abd98a66eb9ff1bc79afbdeb8d766da21d3872c04a191e5c310f99b05ed60084c69ee805695a89f824d537e5f31cff4815619fb83a3042b818a986cf0e37e648c47eba667662a31496cb1edf6c23573c93e4038a6494f68c6c2c8808644b88d0763db1931066cbc206421a6450f21480b598a61d0b957b6d16393d84437735f988e9c2efa490f3bfa5cae5a2155075af710e50f0845f0cd91596d288ac764e0d701fd7578a\",\"salt\":\"4046572de6965a463141c70dfdafcb3b4a42ce423af38d1f4c40b1916c842a5c\",\"nonce\":\"7e802dd659e60bc0cf1a5ea0\",\"version\":\"eip191-aes256-gcm-hkdf-sha256\",\"preKey\":\"a71f77f19a6072aa60740fdd37b06ecebe7ff483f7aedfd22eb04b9f09f4e864\"}",
+        "verificationProof": "eip191v2:0x10470b1b2a461e40c8aa90a56550e8b5c40f9d5d37fd7f4a7147916df12dd89b04133737fac02f1af96a469543043871396bda2c8dd53f3becdc9bc5670d36021b",
+        "msgSent": 32,
+        "maxMsgPersisted": 100,
+        "profile": {
+          "name": "orange-interior-sailfish",
+          "desc": null,
+          "picture": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAy0lEQVR4AcXBoW0DQRCG0c+TJabu4soxWnrS8qAtY1sY6eigK8ctBJkaJnR8YKVTEv3vXT6/Pr5Jwgf/qbZOZogZYoZYCR9ktXWy8MFv1NbJwgeZIWaIGWKFg21fyNbWycIHM7V1sm1fyK68M8QMMUOscLDeH2Thg+x1c2bCB9naOlk4bwwxQ8wQK5y03h/MhHOKIWaIGWKFg/DBXwofzBhihpghVmrrnBE+mKmtc4YhZogZYmXbF7LrszFTW2cmfDDzujmZIWaIGWI/VjkwD8EMoAoAAAAASUVORK5CYII=",
+          "blockedUsersList": [],
+          "profileVerificationProof": null
+        },
+        "origin": null
+      }
+    },
+
+  ]
+}
+
+
+
+| Parameter                  | Type                  | Remarks                                                        |
+| -------------------------- | --------------------- | -------------------------------------------------------------- |
+| `members`                  | `Array<Object>`       | An array containing member objects.                            |
+| `members.address`           | `string`              | The wallet address of the member.                              |
+| `members.intent`           | `boolean`              | `true` if  the  invite/intent was accepte, otherwise `false` when the recipient hasn&apos;t accepted the space invite.                              |
+| `members.role`           | `string`              | The role of the member. 'SPEAKER' or 'LISTENER'                            |
+| `members.userInfo.did`           | `string`              | The address of the member in CAIP10.                            |
+| `members.publicKey`        | `string`              | The member's public PGP key (if available).                    |
+| `members.encryptedPrivateKey`| `string`              | The member's encrypted private key (if available).             |
+| `members.verificationProof` | `string`              | The member's verification proof (if available).                |
+| `members.msgSent`           | `number`              | The number of messages sent by the member.                     |
+| `members.maxMsgPersisted`   | `number`              | The maximum number of messages persisted by the member.        |
+| `members.profile`           | `object`              | The member's profile information.                               |
+| `members.profile.name`      | `string`              | The member's name.                                              |
+| `members.profile.desc`      | `string`              | The member's description.                                       |
+| `members.profile.picture`   | `string`              | The member's picture.                                           |
+| `members.profile.blockedUsersList` | `Array<string>` | An array containing the wallet addresses of the users blocked by the member. |
+| `members.profile.profileVerificationProof` | `string` | The member's profile verification proof (if available).        |
+
+
+
+```
+
+</Details>
+
+## Fetch Participants Count of a space
+
+This API is used to get the count of the participants of a given Push Space. You can use this API to get the count of the participants of a space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.participants.count(spaceId);
+const CountAliceSpaceParticipants =
+  await userAlice.space.participants.count(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch Participants Count of a space API parameters
+
+| Property    | Type     | Sub Type | Description                                                          |
+| ----------- | -------- | -------- | -------------------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the Space that you want to fetch the participants count. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{ participants: 1, pending: 1 }
+
+
+| Parameter                  | Type                  | Remarks                                                        |
+| -------------------------- | --------------------- | -------------------------------------------------------------- |
+| `participants`             | `number`              | The number of participants in the space.                       |
+| `pending`                  | `number`              | The number of pending participants in the space. Includes the users who has not yet accepted the space invite              |
+
+
+
+```
+
+</Details>
+
+## Fetch Participants Status in a space
+
+This API is used to get the status of a participant in a given Push Space. You can use this API to see if the user has accpeted the space invite or not.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.participants.status(spaceId, target);
+const StatusofBobInAliceSpace = await userAlice.space.participants.status(
+  spaceId,
+  target,
+);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch Participants Status in a space API parameters
+
+| Property    | Type     | Sub Type | Description                                                                       |
+| ----------- | -------- | -------- | --------------------------------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Unique Space ID for the given space where you want to check the account's status. |
+| _`target`_  | `string` | -        | The wallet address of the participant that you want to check for.                 |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{ pending: false, role: 'LISTENER', participant: false }
+
+
+| Parameter                  | Type                  | Remarks                                                                              |
+| -------------------------- | --------------------- | ------------------------------------------------------------------------------------ |
+| `pending`                  | `boolean`             | says if the request is pending or accepted                                           |
+| `role`                     | `string`              | The role of the participant. 'SPEAKER' or 'LISTENER'                                 |
+| `participant`              | `boolean`             | `true` if the participant has not  yet  accepted the space invite, otherwise `false`.|
+
+```
+
+</Details>

@@ -1,0 +1,464 @@
+---
+id: docs-spaces-quickstart
+title: Quickstart
+hide_title: false
+slug: ./quickstart
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 3
+image: "/assets/docs/previews/docs_spaces-quickstart.png"
+---
+
+# Quickstart
+
+Everything you will need to get up and running in 5 mins or less!
+
+<head>
+  <title>Quickstart | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+### Installation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers
+```
+
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers@^5.7
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers@^5.7
+```
+
+  </TabItem>
+</Tabs>
+
+### Import libraries
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Import restapi for function calls
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Import restapi for function calls
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Import restapi for function calls
+import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+
+// Ethers or Viem, both are supported
+import { ethers } from "ethers";
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize User
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Creating a random signer from a wallet, ideally this is the wallet you will connect
+const signer = ethers.Wallet.createRandom();
+
+// Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Creating a Space
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// await userAlice.space.create(name, {options});
+const AliceSpace = await userAlice.space.create("My Cool Space", {
+  description: "This is a space description", // description of the space
+  participants: {
+    listeners: [], // wallet addresses of the listeners, can be empty. You can also add listeners later after creating the space
+    speakers: [], // wallet addresses of the speakers, can be empty. You can also add speakers later after creating the space
+  },
+  image: "data:image/png;base64,iVBORw0K..", // space icon in base64 format
+  schedule: {
+    start: new Date("2024-04-24"),
+  },
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// await userAlice.space.create(name, {options});
+const AliceSpace = await userAlice.space.create("My Cool Space", {
+  description: "This is a space description", // description of the space
+  participants: {
+    listeners: [], // wallet addresses of the listeners, can be empty. You can also add listeners later after creating the space
+    speakers: [], // wallet addresses of the speakers, can be empty. You can also add speakers later after creating the space
+  },
+  image: "data:image/png;base64,iVBORw0K..", // space icon in base64 format
+  schedule: {
+    start: new Date("2024-04-24"),
+  },
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// await userAlice.space.create(name, {options});
+const AliceSpace = await userAlice.space.create("My Cool Space", {
+  description: "This is a space description", // description of the space
+  participants: {
+    listeners: [], // wallet addresses of the listeners, can be empty. You can also add listeners later after creating the space
+    speakers: [], // wallet addresses of the speakers, can be empty. You can also add speakers later after creating the space
+  },
+  image: "data:image/png;base64,iVBORw0K..", // space icon in base64 format
+  schedule: {
+    start: new Date("2024-04-24"),
+  },
+});
+```
+
+  </TabItem>
+</Tabs>
+
+## Joining a Space
+
+### Setup Video State
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// data will store the given Space's current state, we will only use this to read the latest state
+// and update the UI accordingly
+let data = CONSTANTS.SPACE.INITIAL_DATA;
+
+// setData is a function that will update the state (this is used internally by the space object to manage the space state)
+const setData = (fn) => {
+  data = fn(data);
+};
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// state to handle given space's current state
+const [data, setData] = useState(CONSTANTS.SPACE.INITIAL_DATA);
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// data will store the given Space's current state, we will only use this to read the latest state
+// and update the UI accordingly
+let data = CONSTANTS.SPACE.INITIAL_DATA;
+
+// setData is a function that will update the state (this is used internally by the space object to manage the space state)
+const setData = (fn) => {
+  data = fn(data);
+};
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize Space API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// await userAlice.space.initialize(onChange, spaceId);
+const userAliceSpace = await userAlice.space.initialize({
+  onChange: setData,
+  spaceId: spaceId, // spaceId of the space you want to join, spaces:3a202e32394d03ba925a8bef908b657deb3d734cb3e61fdff785740dba312da9
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// await userAlice.space.initialize(onChange, spaceId);
+const userAliceSpace = await userAlice.space.initialize({
+  onChange: setData,
+  spaceId: spaceId, // spaceId of the space you want to join, spaces:3a202e32394d03ba925a8bef908b657deb3d734cb3e61fdff785740dba312da9
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// await userAlice.space.initialize(onChange, spaceId);
+const userAliceSpace = await userAlice.space.initialize({
+  onChange: setData,
+  spaceId: spaceId, // spaceId of the space you want to join, spaces:3a202e32394d03ba925a8bef908b657deb3d734cb3e61fdff785740dba312da9
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Start the Space
+
+Space Creator can start the space by calling the `start` method on the space object. This will start the space and allow listeners to join the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// await userAliceSpace.start();
+await userAliceSpace.start();
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// await userAliceSpace.start();
+await userAliceSpace.start();
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// await userAliceSpace.start();
+await userAliceSpace.start();
+```
+
+  </TabItem>
+</Tabs>
+
+### Activate User Audio
+
+After starting/Joining a space, you have to enable your audio by calling `activateUserAudio` which allows you to speak and interact audibly within the Space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// await userAliceSpace.activateUserAudio();
+await userAliceSpace.activateUserAudio();
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// await userAliceSpace.activateUserAudio();
+await userAliceSpace.activateUserAudio();
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// await userAliceSpace.activateUserAudio();
+await userAliceSpace.activateUserAudio();
+```
+
+  </TabItem>
+</Tabs>
+
+### Toggle Mic Audio
+
+Space Creator can toggle his mic audio by calling the `toggleMic` method on the space object. This will allow him to mute or unmute his mic in the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// await userAliceSpace.current.config({ audio:!data.connectionData.local.audio });
+await userAliceSpace.current.config({
+  audio: !data.connectionData.local.audio,
+});
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// await userAliceSpace.current.config({ audio:!data.connectionData.local.audio });
+await userAliceSpace.current.config({
+  audio: !data.connectionData.local.audio,
+});
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// await userAliceSpace.current.config({ audio:!data.connectionData.local.audio });
+await userAliceSpace.current.config({
+  audio: !data.connectionData.local.audio,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize Spaces Stream
+
+Space Stream is used to listen to space events. It is used to listen to any events related to the spaces that the user is associated with.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Initialize Stream
+const stream = await userAlice.initStream([
+  CONSTANTS.STREAM.SPACE,
+  CONSTANTS.STREAM.SPACE_OPS,
+]);
+
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.SPACE, (data: any) => {
+  console.log('new space event', data);
+});
+
+stream.on(CONSTANTS.STREAM.SPACE_OPS, (data: any) => {
+  console.log('new space operation event', data);
+});
+
+// connect stream
+await stream.connect();
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}}>
+
+```js
+// Initialize Stream
+const stream = await userAlice.initStream([
+  CONSTANTS.STREAM.SPACE,
+  CONSTANTS.STREAM.SPACE_OPS,
+]);
+
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.SPACE, (data: any) => {
+  console.log('new space event', data);
+});
+
+stream.on(CONSTANTS.STREAM.SPACE_OPS, (data: any) => {
+  console.log('new space operation event', data);
+});
+
+// connect stream
+await stream.connect();
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}}>
+
+```js
+// Initialize Stream
+const stream = await userAlice.initStream([
+  CONSTANTS.STREAM.SPACE,
+  CONSTANTS.STREAM.SPACE_OPS,
+]);
+
+// Configure stream listen events and what to do
+stream.on(CONSTANTS.STREAM.SPACE, (data: any) => {
+  console.log('new space event', data);
+});
+
+stream.on(CONSTANTS.STREAM.SPACE_OPS, (data: any) => {
+  console.log('new space operation event', data);
+});
+
+// connect stream
+await stream.connect();
+```
+
+  </TabItem>
+</Tabs>

@@ -1,0 +1,320 @@
+---
+id: docs-spaces-develop-fetch-spaces
+title: Fetch Spaces
+hide_title: true
+slug: ./fetch-spaces
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 5
+image: "/assets/docs/previews/docs_spaces_develop--fetch_spaces.png"
+---
+
+# Fetch Spaces API Overview
+
+These APIs are useful for fetching list of all spaces (or space requests) that a user might have, along with providing calls to search spaces created in the network, trending spaces.
+
+<head>
+  <title>Fetch Spaces | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Space list API
+
+List all spaces associated with the user. **Space requests** refer to invitations to spaces that you have received but haven't yet accepted. For more information, see the section on space requests.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.list(type, {options?});
+const ListAliceSpaces = await userAlice.space.list("SPACES");
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Space list API parameters
+
+| Property  | Type                      | Sub Type | Description                                                                                                                                |
+| --------- | ------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`type`_  | `string`                  | -        | To retrieve all the Spaces Invites a user has received, pass `REQUESTS`. To get all the spaces the user is associated with, pass `SPACES`. |
+| `options` | `object`                  | -        | Additional options for the list.                                                                                                           |
+| -         | `options.page`            | `number` | The Page number. Default is 1.                                                                                                             |
+| -         | `options.limit`           | `number` | The number of spaces to be returned per page. Default is 10.                                                                               |
+| -         | `options.overrideAccount` | `string` | If you want the results for a wallet other than UserAlice, pass the wallet address for which you want to fetch results.                    |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+[
+  {
+    spaceId:
+      "spaces:85795d951d01a2e8b5eb8a00f27ad026bc1016deb827221b0bae53752d7e08a6",
+    about: null,
+    did: null,
+    intentSentBy: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    intentTimestamp: "2024-02-19T10:12:48.000Z",
+    publicKey: null,
+    profilePicture: null,
+    threadhash: null,
+    wallets: null,
+    name: null,
+    spaceInformation: {
+      members: [Array],
+      pendingMembers: [Array],
+      contractAddressERC20: null,
+      numberOfERC20: 0,
+      contractAddressNFT: null,
+      numberOfNFTTokens: 0,
+      verificationProof:
+        "pgpv2:-----BEGIN PGP SIGNATURE-----\n" +
+        "\n" +
+        "wsBzBAEBCAAnBYJl0ymgCZCAwIuuc6EJTBYhBAoZA3x82Ra7dxN7EYDAi65z\n" +
+        "oQlMAADrVgf9G992LcsjatGbpatszKTnknB6hbCRpjS3TZBh18mXgswmonDj\n" +
+        "iqARA+dNABEW1BscBn6K1NZNm+ixq11xgsnHtXqzkku5I7mSoyJPDNbDyCLb\n" +
+        "ui1RUTDl0Pg/9vLW0E8VmrCklb5Pmv2vWwHhXHERFrr0CifN2420tqfE18fx\n" +
+        "Cmt7mepI90AroHuRPSNkwWG8aw6h71/8MpMl8DIo/NvGqFK0EmAwv3I2n6jP\n" +
+        "sEKSH6jHEtUaRKgR6gzXq8iJ10okF1N4nQy36tkVCCYkxw91Ivkfam1d1tBx\n" +
+        "V44bZNuRVz0MZOJx75fZb01bZtKA+Q9X5I0lEclrVjRNF1aLyri8Jw==\n" +
+        "=m5E8\n" +
+        "-----END PGP SIGNATURE-----\n" +
+        ":eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+      spaceImage: "data:image/png;base64,iVBORw0K..",
+      spaceName: "My Cool Space",
+      isPublic: true,
+      spaceDescription: "This is a space description",
+      spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+      spaceId:
+        "spaces:85795d951d01a2e8b5eb8a00f27ad026bc1016deb827221b0bae53752d7e08a6",
+      meta: null,
+      scheduleAt: "2024-02-20T00:00:00.000Z",
+      scheduleEnd: null,
+      status: "PENDING",
+      rules: {},
+    },
+    msg: {
+      encType: "PlainText",
+      encryptedSecret: "",
+      fromCAIP10: "",
+      fromDID: "",
+      link: "",
+      messageContent: "",
+      messageType: "",
+      sigType: "",
+      signature: "",
+      toCAIP10: "",
+      toDID: "",
+    },
+  },
+];
+```
+
+</Details>
+
+## Fetch Trendng Spaces API
+
+This API is used to get the list of trending spaces. You can use this API to get the list of trending spaces, which are the most popular spaces.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.trending({options?});
+const ListTrendingSpaces = await userAlice.space.trending();
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch Trendng Spaces API parameters
+
+| Property  | Type            | Sub Type | Description                                                  |
+| --------- | --------------- | -------- | ------------------------------------------------------------ |
+| `options` | `object`        | -        | Additional options for the list.                             |
+| -         | `options.page`  | `number` | The Page number. Default is 1.                               |
+| -         | `options.limit` | `number` | The number of spaces to be returned per page. Default is 20. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+[
+  {
+    spaceId:
+      "spaces:62dada77ab5ef7ea8a0f28232bcda400a18d870596fbc08f751888da2ca1861a",
+    about: null,
+    did: null,
+    intent: "eip155:0xfFA1aF9E558B68bBC09ad74058331c100C135280",
+    intentSentBy: "eip155:0xfFA1aF9E558B68bBC09ad74058331c100C135280",
+    intentTimestamp: "2023-08-23T13:55:58.000Z",
+    publicKey: null,
+    profilePicture: null,
+    threadhash: null,
+    wallets: null,
+    combinedDID:
+      "eip155:0x9960D6B63B113303B9910A03ca5341B83CC52723_eip155:0xfFA1aF9E558B68bBC09ad74058331c100C135280_eip155:0xffa1af9e558b68bbc09ad74058331c100c135280",
+    name: null,
+    spaceInformation: {
+      members: [Array],
+      pendingMembers: [Array],
+      contractAddressERC20: null,
+      numberOfERC20: 0,
+      contractAddressNFT: null,
+      numberOfNFTTokens: 0,
+      verificationProof:
+        "pgp:-----BEGIN PGP SIGNATURE-----\n" +
+        "\n" +
+        "wsBzBAABCAAnBQJk5g/sCZA7/jxKMDdVgxYhBJco5U6B/S5LNkspyzv+PEowN1WD\n" +
+        "AADY+QgAnHYU16QjYWugTbU2zfFYP+DVvSDhW3FgWLxE/CzpR/RQ9ohmBx/I73C0\n" +
+        "frFFPJMmaLi+KEYiAFHgO3cq9nZzHpuUy7qccADxk9pnWA234V05i7oYVkXdLZTj\n" +
+        "NiuUYdHQ0RnHiWhuiPfaPzEm4M1YWd16d0eqZdl4cLCrL4UcCO1WzjckitEpHH2O\n" +
+        "9pQD7oOrXVcy7z9dJaZ5MI7r9GWbejbVbBhX9ioShaDoYNIrAE4SmNNo3mFUqgFh\n" +
+        "OVyIenboBO6V0nibvys6OhI2M9rmf4N423d/64iuV6+Qz/93z/cozR+ixK4ranwg\n" +
+        "sH3Jqt6tLoCiCxC22f7BrpsE2PtVJw==\n" +
+        "=0PcM\n" +
+        "-----END PGP SIGNATURE-----",
+      spaceImage: "asdads",
+      spaceName: "Testing dart - 123567810123",
+      isPublic: true,
+      spaceDescription: "Testing dart",
+      spaceCreator: "eip155:0xfFA1aF9E558B68bBC09ad74058331c100C135280",
+      spaceId:
+        "spaces:62dada77ab5ef7ea8a0f28232bcda400a18d870596fbc08f751888da2ca1861a",
+      meta: null,
+      scheduleAt: "2024-03-30T18:30:00.000Z",
+      scheduleEnd: null,
+      status: "PENDING",
+      rules: {},
+    },
+    msg: {
+      encType: "PlainText",
+      encryptedSecret: "",
+      fromCAIP10: "",
+      fromDID: "",
+      link: "",
+      messageContent: "",
+      messageType: "",
+      sigType: "",
+      signature: "",
+      toCAIP10: "",
+      toDID: "",
+    },
+  },
+];
+```
+
+</Details>
+
+## Search Spaces API
+
+This API is used to search for a Push Space created in Push Network. You can use this API to search for spaces based on the space name.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.search(searchTerm, {options?});
+const SearchCoolSpace = await userAlice.space.search("My cool space");
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Search Spaces API parameters
+
+| Property       | Type            | Sub Type | Description                                                  |
+| -------------- | --------------- | -------- | ------------------------------------------------------------ |
+| _`searchTerm`_ | `string`        | -        | The search term to search for spaces.                        |
+| `options`      | `object`        | -        | Additional options for the list.                             |
+| -              | `options.page`  | `number` | The Page number. Default is 1.                               |
+| -              | `options.limit` | `number` | The number of spaces to be returned per page. Default is 20. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+[
+  {
+    spaceName: "making it even cooler",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "new description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:5ea3688ef9ddce985d8e0a348b2a8ebb2c10ea24241337f67192318d69aabf15",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+    inviteeDetails: undefined,
+  },
+  {
+    spaceName: "My Cool Space",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "This is a space description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:ed3851e69dedce41469237dd3fb2d05964c8418767c22eb496d59f584e459928",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+    inviteeDetails: undefined,
+  },
+  {
+    spaceName: "My Cool Space",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "This is a space description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:85795d951d01a2e8b5eb8a00f27ad026bc1016deb827221b0bae53752d7e08a6",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+    inviteeDetails: undefined,
+  },
+  {
+    spaceName: "My Cool Space",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "This is a space description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:a551aeeb73922d7b86e0bd4874cd36c5e92c6687a6ac3ca75327c137fdb1cb80",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+    inviteeDetails: undefined,
+  },
+];
+```
+
+</Details>

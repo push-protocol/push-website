@@ -1,0 +1,371 @@
+---
+id: docs-video-develop-get-started
+title: Get Started
+hide_title: true
+slug: ./get-started
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 1
+image: "/assets/docs/previews/docs_spaces_develop--get_started.png"
+---
+
+# Get started
+
+Push Spaces provides a web3-native solution for creating and engaging in live audio environments, enabling direct communication between wallets, groups, NFT communities, or conditional (gated) audiences. Leveraging the Push SDK API, it simplifies the complexities involved in authentication, encryption, digital signature, and the streaming of live audio, ensuring a secure and seamless experience. It facilitates the establishment of decentralized audio spaces, empowering users to effortlessly host, join, and interact within the web3 ecosystem.
+
+<head>
+  <title>Start Building | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ReactPlayer from "react-player";
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AImp,
+} from "@site/src/css/SharedStyling";
+
+## Speed run
+
+The following speed run is designed to give you a quick overview of usage and demonstrates how Push Spaces can be integrated successfully in minimal lines of code.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+  // Import Push SDK & ethers
+  import { CONSTANTS, PushAPI, TYPES } from '@pushprotocol/restapi';
+  import { ethers } from "ethers";
+
+  // data is a variable that will store the space's latest state
+  let data: TYPES.SPACE.DATA = CONSTANTS.SPACE.INITIAL_DATA;
+
+  // Function to update the space's state (Internally used by the SDK)
+  const setData = (fn) => {
+    data = fn(data);
+  };
+
+  // Creating a random signer from a wallet, ideally this is the wallet you will connect
+  const signer = ethers.Wallet.createRandom();
+
+  // Initialize wallet user, use 'PROD' instead of 'STAGING' for mainnet apps
+  const userAlice = await PushAPI.initialize(signer, {
+    env: CONSTANTS.ENV.STAGING,
+  });
+
+  // Let's create a new space
+  const AliceSpace = await userAlice.space.create("My Cool Space", {
+    description: "This is a space description", // description of the space
+    participants: {
+      listeners: [], // wallet addresses of the listeners, can be empty. You can also add listeners later after creating the space
+      speakers: [], // wallet addresses of the speakers, can be empty. You can also add speakers later after creating the space
+    },
+    image: "data:image/png;base64,iVBORw0K..", // space icon in base64 format
+    schedule: {
+      start: new Date(new Date().getTime() + 5 * 60000); , // start date of the space
+    },
+  });
+
+  // Initialising the Push Space API
+  const userAliceSpace = await userAlice.space.initialize({
+    onChange: setData,
+    spaceId: spaceId, // Space ID that you want to join/start
+  });
+
+  // Join/Start the space
+  await userAliceSpace.start(); // Since we are the creator of the space, we will start the space
+
+  // Enable your audio
+  await userAliceSpace.activateUserAudio();
+
+  // Toggle your Microphone
+  await userAliceSpace.current.config({
+    audio: !data.connectionData.local.audio,
+  });
+
+  // We can use Stream to listen to any latest Space events for the given user (Alice)
+  const stream = await userAlice.initStream([CONSTANTS.STREAM.SPACE]);
+
+  // Setup listener for latest space events
+  stream.on(CONSTANTS.STREAM.SPACE, async (data) => {
+    console.log("Space Event", data);
+  });
+
+  // connect the stream
+  await Stream.connect();
+
+```
+
+  </TabItem>
+</Tabs>
+
+## Installation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```js
+// Install Libraries
+npm install @pushprotocol/restapi@latest ethers
+```
+
+  </TabItem>
+</Tabs>
+
+## Quickstart from SDK repos
+
+<ModalContainer>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/javascript.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/javascript@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/javascript@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Javascript
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/react.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/react@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/reactNative@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/reactNative@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React Native
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-restapi-dart",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/dart.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/dart@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Dart
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-kotlin-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/kotlin@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Kotlin
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-swift-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/swift.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/swift@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Swift
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+</ModalContainer>
+
+## Workshop Video
+
+<ReactPlayer
+  controls
+  width="100%"
+  url="https://youtu.be/R8nsAhyrvTI?si=fXQM14LCLgp50yqf&t=3110"
+/>
+<br />
+
+## Testing
+
+### Push SDK playground and full API coverage
+
+Full API coverage with sample runable code can be found in the examples below:
+
+- [Push SDK Playground](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-backend-node/video/index.ts) to checkout abstracted API calls in action. Follow <AImp href={'/docs/video/playground/push-sdk-playground'}>Push SDK playground tutorial</AImp> for step by step guide.
+- [React Components Example](https://github.com/ethereum-push-notification-service/push-sdk/blob/main/packages/examples/sdk-frontend-react/src/app/Video/index.tsx) to checkout frontend components of Push Chat for easy integration in any React app. Follow <AImp href={'/docs/video/playground/push-react-component-playground-example'}>Push SDK React playground</AImp> for step by step guide.
+- Push SDK React Playground is also hosted live at [https://react-playground.push.org/](https://react-playground.push.org/#/video)

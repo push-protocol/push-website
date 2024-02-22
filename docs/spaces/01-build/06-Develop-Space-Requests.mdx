@@ -1,0 +1,84 @@
+---
+id: docs-spaces-develop-space-requests
+title: Space Requests
+hide_title: true
+slug: ./space-requests
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 6
+image: "/assets/docs/previews/docs_spaces_develop--space_requests.png"
+---
+
+# Space Requests Overview
+
+Space Requests are the requests that are sent to the user to join a space by the space creator. The user can accept or reject the request. Until the user accepts the request, the space invite will remain in the Requests category.
+
+You can use the Space Requests API to accept or reject the space requests.
+
+<head>
+  <title>Space Requests | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Accept Space Invite API
+
+This API is used to accept the invite received for a given Push Space. You can use this API to accept the invite of a space, and become a participant of the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.accept(spaceId);
+const AcceptSpacesInvite = await userAlice.space.accept(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Accept Space Invite API parameters
+
+| Property    | Type     | Sub Type | Description                                                       |
+| ----------- | -------- | -------- | ----------------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the given Push Space whose invite you want to accept. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+## Reject Space Invite API
+
+This API is used to reject the invite received for a given Push Space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.reject(spaceId);
+const AcceptSpacesInvite = await userAlice.space.reject(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Accept Space Invite API parameters
+
+| Property    | Type     | Sub Type | Description                                                        |
+| ----------- | -------- | -------- | ------------------------------------------------------------------ |
+| _`spaceId`_ | `string` | -        | Space ID ofs the given Push Space whose invite you want to reject. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>

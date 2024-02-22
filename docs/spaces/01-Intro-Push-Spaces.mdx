@@ -1,0 +1,286 @@
+---
+id: spaces
+title: Intro to Push Spaces
+hide_title: true
+slug: ./
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 1
+image: "/assets/docs/previews/spaces--intro_to_push_spaces.png"
+---
+
+# Intro to Push Spaces
+
+Push Spaces Protocol is a versatile tool that supports decentralized Audio Spaces in a chain-agnostic way and offers diverse use cases for any dApp. It's compatible with both frontend and backend development, allowing easy integration with web applications using frameworks like React or vanilla JavaScript.
+
+<head>
+  <title>Introduction | Push Spaces | Push Documentation</title>
+</head>
+
+import {
+  ItemV,
+  ItemH,
+  Span,
+  Button,
+  Image,
+  ModalContainer,
+  ModalSmall,
+  ModalMid,
+  ModalWrapper,
+  AImp,
+  ModalMidEqual,
+} from "@site/src/css/SharedStyling";
+
+## Why Push Spaces?
+
+Push Spaces brings native multi-wallets audio calling functionality. As a standalone offering or as part of [Push Group Chat](/docs/chat "Techinal documentation on how to integrate Push Chat"). This enables a native, seamless web3 wallet first experience for real time communication and opens up the possibilites for —
+
+- **Group Audio Calls** without the user going to any other platform
+- **Web3 social real time audio group calls**
+- **Web3 DAO community calls**
+- **Creator economy** via incentivized calls
+- **Seamless Web3 gaming**
+- **Streaming**
+
+## How Push Spaces works?
+
+Push Spaces utilizes [Push Notifications](/docs/notifications) to exchange peer info and intent for connection which is then fed into [WebRTC](https://webrtc.org/ "Learn about WebRCT") for peer to peer connection between all the peers that are connected to each other forming a mesh conenction.
+
+Three hidden notifications are fired to wallet (initialization, handshake, completion) to enable wallet to wallet calling. Mesh architecture is used to enable multiple wallets joining. All communication from Push Video is signed and validated by a set of nodes, which are together called Push Network.
+
+## SDKs
+
+<ModalContainer>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/javascript.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/javascript@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/javascript@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Javascript
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/react.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/react@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/reactNative@2x.png").default
+    } 2x, ${
+      require("/static/assets/docs/techstack/reactNative@3x.png").default
+    } 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      React Native
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-restapi-dart",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/dart.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/dart@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Dart
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-kotlin-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/kotlin@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Kotlin
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+{" "}
+
+<ModalSmall
+  onClick={() =>
+    window.open(
+      "https://github.com/ethereum-push-notification-service/push-swift-sdk",
+      "_blank",
+    )
+  }
+>
+  <img
+    src={require("/static/assets/docs/techstack/swift.png").default}
+    srcSet={`${
+      require("/static/assets/docs/techstack/swift@2x.png").default
+    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+  />
+  <ModalWrapper>
+    <span>
+      Swift
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 29 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
+          stroke="#A0A3B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+
+</ModalContainer>

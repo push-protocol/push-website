@@ -1,0 +1,118 @@
+---
+id: docs-spaces-develop-optin-optout-upcoming-space
+title: Optin/Optout Upcoming Space
+hide_title: true
+slug: ./optin-optout-upcoming-space
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 78
+image: "/assets/docs/previews/docs_spaces_develop--optin_optout_upcoming_space.png"
+---
+
+# Spaces Optin/Optout Overview
+
+Users can browse all upcoming spaces created within the network and choose whether to opt in if they intend to join a particular space. The Opt-in/Opt-out APIs allow users to either optin or optout any of the upcoming spaces as desired.
+
+<head>
+  <title>Optin/Optout Upcoming Space | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Optin Upcoming Space API
+
+This API is used to opt in to any upcoming Push Space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.join(spaceId);
+const OptinAliceSpace = await userAlice.space.join(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Optin Upcoming Space API parameters
+
+| Property    | Type     | Sub Type | Description                                               |
+| ----------- | -------- | -------- | --------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the given Push Space that you want to opt in. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+  {
+    spaceName: "My Cool Space",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "This is a space description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:a551aeeb73922d7b86e0bd4874cd36c5e92c6687a6ac3ca75327c137fdb1cb80",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+
+  },
+```
+
+</Details>
+
+## Optout Upcoming Space API
+
+This API is used to opt out from an upcoming space that you had previously opted in.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// await userAlice.space.leave(spaceId);
+const OptfromAliceSpace = await userAlice.space.leave(spaceId);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Optout Upcoming Space API parameters
+
+| Property    | Type     | Sub Type | Description                                                |
+| ----------- | -------- | -------- | ---------------------------------------------------------- |
+| _`spaceId`_ | `string` | -        | Space ID of the given Push Space that you want to opt out. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+  {
+    spaceName: "My Cool Space",
+    spaceImage: "data:image/png;base64,iVBORw0K..",
+    spaceDescription: "This is a space description",
+    isPublic: true,
+    spaceCreator: "eip155:0xb44a29524433dBC639C35124459c741bC241d4f4",
+    spaceId:
+      "spaces:a551aeeb73922d7b86e0bd4874cd36c5e92c6687a6ac3ca75327c137fdb1cb80",
+    scheduleAt: "2024-02-20T00:00:00.000Z",
+    scheduleEnd: null,
+    status: "PENDING",
+    rules: {},
+    meta: null,
+    sessionKey: null,
+    encryptedSecret: null,
+
+  },
+```
+
+</Details>

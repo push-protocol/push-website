@@ -1,0 +1,100 @@
+---
+id: docs-spaces-develop-create-a-space
+title: Create a Space
+hide_title: true
+slug: ./creating-a-space
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 4
+image: "/assets/docs/previews/docs_spaces_develop--create_a_space.png"
+---
+
+# Create Space API Overview
+
+This guide will help you understand how to create a space using the Push API.
+
+<head>
+  <title>Create a Space API | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Create Space API
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAlice.space.create(name, {options});
+const AliceSpace = await userAlice.space.create(name, {
+  description, // description of the space
+  participants: {
+    listeners: listeners, // wallet addresses of the listeners, can be empty. You can also add listeners later after creating the space
+    speakers: speakers, // wallet addresses of the speakers, can be empty. You can also add speakers later after creating the space
+  },
+  image: image, // space icon in base64 format
+  schedule: {
+    start: startDate, // start date and time of the space
+  },
+});
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Create Space API parameters
+
+| Property    | Type                               | Sub Type   | Description                                                                                                                                                                                                                                              |
+| ----------- | ---------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`name`_    | `string`                           | -          | Name of your Space.                                                                                                                                                                                                                                      |
+| _`options`_ | _`options.description`_            | `string`   | Description of your Space.                                                                                                                                                                                                                               |
+| -           | _`options.image`_                  | `string`   | Image for your Space(Space Icon) in base64 format.                                                                                                                                                                                                       |
+| -           | _`options.participants.listeners`_ | `string[]` | Wallet addresses of listeners you want to invite to your Space. You can add the addresses here, or you can also invite listeners later after creating the space.                                                                                         |
+| -           | _`options.participants.speakers`_  | `string[]` | Wallet addresses of speakers you want to invite to your Space. You can add the addresses here, or you can also invite speakers later after creating the space.                                                                                           |
+| -           | _`options.private`_                | `boolean`  | Whether the Space is private or not.                                                                                                                                                                                                                     |
+| -           | _`options.schedule.start`_         | `Date`     | Start date and time of the Space.                                                                                                                                                                                                                        |
+| -           | `options.schedule.end`             | `Date`     | End date and time of the Space.                                                                                                                                                                                                                          |
+| -           | `options.rules`                    | `any[]`    | Define conditions such as token gating, nft gating, custom endpoint for joining a space. See [conditional group gating](docs/spaces/build/conditional-rules-for-spaces) to understand rules engine and how to fine tune conditional rules of your group. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  spaceName: 'My Cool Space',
+  spaceImage: 'data:image/png;base64,iVBORw0K..',
+  spaceDescription: 'This is a space description',
+  isPublic: true,
+  spaceCreator: 'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4',
+  spaceId: 'spaces:5ea3688ef9ddce985d8e0a348b2a8ebb2c10ea24241337f67192318d69aabf15',
+  scheduleAt: '2024-02-20T00:00:00.000Z',
+  scheduleEnd: null,
+  status: 'PENDING',
+  rules: {},
+  meta: null,
+  sessionKey: null,
+  encryptedSecret: null
+}
+
+
+| Parameter                  | Type                  | Remarks                                                           |
+| -------------------------- | --------------------- | ----------------------------------------------------------------- |
+| `spaceName`                | `string`              | Name of the space created.                                        |
+| `spaceImage`               | `string`              | Space's image.                                                    |
+| `spaceDescription`         | `string`              | Description of the Space.                                         |
+| `isPublic`                 | `boolean`             | Indicates whether the space is public or private.                 |
+| `spaceCreator`             | `string`              | Push Profile DID of the space creator.                            |
+| `spaceId`                  | `string`              | Unique Space ID for the created Space.                            |
+| `scheduleAt`               | `timestamp` or `null` | Scheduled start time (if available).                              |
+| `scheduleEnd`              | `timestamp` or `null` | Scheduled end time (if available).                                |
+| `status`                   | `string` or `null`    | Status information of the space( 'ACTIVE' or 'PENDING' or 'ENDED')|
+| `rules`                    | `Object`              | Space-specific moderation rules
+| `meta`                     | `object` or `null`    | Additional metadata (if available).                               |
+
+```
+
+</Details>
