@@ -4,7 +4,7 @@ title: 'Monthly Recap January 🎉'
 authors: [push]
 image: './cover-image.webp'
 description: 'Monthly Recap January 🎉'
-text: "Welcome to this last month's highlights and fresh product launches! From exciting new developments to all-new partnerships, making noteworthy debuts, and honoring our community – it has been a month filled with significant achievements. Here’s everything we got up to:"
+text: "Welcome to this last month's highlights and fresh product launches! From exciting new developments to all-new partnerships, making noteworthy debuts, and honoring our community – it has been a month filled with significant achievements."
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 ![Cover Image of Monthly Recap January 🎉](./cover-image.webp)
