@@ -1,0 +1,377 @@
+---
+id: docs-spaces-develop-join-space
+title:Join Space
+hide_title: true
+slug: ./join-space
+displayed_sidebar: pushSpacesSidebar
+sidebar_position: 9
+image: "/assets/docs/previews/docs_spaces_develop--join_space.png"
+---
+
+# Join Space Overview
+
+This section covers all the available methods for managing spaces, including joining, leaving, starting, stopping, requesting microphone access, toggling user audio in spaces, and other actions.
+
+<head>
+  <title>Join Space Overview | Push Spaces | Push Documentation</title>
+</head>
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Details from "@theme/Details";
+
+## Prerequisites
+
+- You need to [initialize user](/docs/spaces/build/initialize-user/ "Initialize User for Push Spaces") before initializing video.
+- You also need to declare `data`, `setData` which are essentially a state/variable to hold space-related data with a callback function to react to changes in space state.
+
+## Initialize Space API
+
+Push Space API abstracts away connection and encryption methods to enable seamless audio spaces between the connected users.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+  // await userAlice.space.initialize({ onChange: setData, spaceId: spaceId });
+  const userAliceSpace = await userAlice.space.initialize({
+    onChange: setData,
+    spaceId: spaceId, // Space ID that you want to join/start
+  });
+
+  </TabItem>
+</Tabs>
+```
+
+---
+
+### Initialize Space API parameters
+
+| Property     | Type       | Sub Type | Description                                                   |
+| ------------ | ---------- | -------- | ------------------------------------------------------------- |
+| _`onChange`_ | `function` | -        | Callback function to react to changes in space state.         |
+| _`spaceId`_  | `string`   | -        | Space ID of the given Push Space that you want to join/start. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected Response">
+200 OK
+
+</Details>
+
+## Start a Space
+
+This API is used to start a space. It can be utilized by the space creator to start their space. Once the space is started, listeners will be able to join.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.start();
+await userAliceSpace.start();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Stop/End a Space
+
+This API is used to stop/end a space. It can be utilized by the space creator to end their space. Once the space is ended, no listeners will be able to join there after.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.stop();
+await userAliceSpace.stop();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Join a Space
+
+This API is used to join a space. It can be utilized by the listeners to join the space. Once joined, listeners will be able to listen to the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.join();
+await userAliceSpace.join();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Leave a Space
+
+This API is used to leave a space. It can be utilized by the listeners to leave the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.leave();
+await userAliceSpace.leave();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Activate User Audio
+
+This API is used to activate user audio. User will need to call this method before being able to enable their microphone and start speaking in the space.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.activateUserAudio();
+await userAliceSpace.activateUserAudio();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Request For Mic
+
+This API is used to request for microphone access. Listeners can request to speak by calling this method which can be accepted by the space create or admin.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.requestForMic();
+await userAliceSpace.requestForMic();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+## Accept Mic Request
+
+This API is used to accept a mic request from a listener in the given space. Space creator or admin can accept the listener's request to speak by calling this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.acceptMicRequest({address, signal});
+await userAliceSpace.acceptMicRequest({
+  address: address,
+  signal: signal,
+});
+```
+
+  </TabItem>
+</Tabs>
+---
+
+### Accept Mic Request API parameters
+
+| Property    | Type     | Sub Type | Description                                                  |
+| ----------- | -------- | -------- | ------------------------------------------------------------ |
+| _`address`_ | `string` | -        | Address of the listener that you want to accept the request. |
+| _`signal`_  | `string` | -        | Signal data received in the stream.                          |
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Reject Mic Request
+
+This API is used to reject a mic request from a listener in the given space. Space creator or admin can reject the listener's request to speak by calling this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.rejectMicRequest({address});
+await userAliceSpace.rejectMicRequest({
+  address: address,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Reject Mic Request API parameters
+
+| Property    | Type     | Sub Type | Description                                                  |
+| ----------- | -------- | -------- | ------------------------------------------------------------ |
+| _`address`_ | `string` | -        | Address of the listener that you want to reject the request. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+## Invite as Speaker
+
+This API is used to invite a listener as a speaker in the given space. Only space creator or admin can invite the listener as a speaker by calling this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.inviteToPromote({address});
+await userAliceSpace.inviteToPromote({
+  address: address,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Invite as Speaker API parameters
+
+| Property    | Type     | Sub Type | Description                                                   |
+| ----------- | -------- | -------- | ------------------------------------------------------------- |
+| _`address`_ | `string` | -        | Address of the listener that you want to invite as a speaker. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+## Accept Speaker Invite
+
+This API is used to accept a speaker invite from the space creator or admin in a space. Listener can accept the invite by using this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.acceptPromotionInvite({address});
+await userAliceSpace.acceptPromotionInvite({
+  address: address,
+});
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Accept Speaker Invite API parameters
+
+| Property    | Type     | Sub Type | Description                                                 |
+| ----------- | -------- | -------- | ----------------------------------------------------------- |
+| _`address`_ | `string` | -        | Address of the listener that you want to accept the invite. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+## Reject Speaker Invite
+
+This API is used to reject a speaker invite from the space creator or admin in a space. Listener can reject the invite by using this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.inviteToPromote({address});
+await userAliceSpace.rejectPromotionInvite({
+  address: address,
+});
+```
+
+  </TabItem>
+</Tabs>
+---
+
+### Reject Speaker Invite API parameters
+
+| Property    | Type     | Sub Type | Description                                                     |
+| ----------- | -------- | -------- | --------------------------------------------------------------- |
+| _`address`_ | `string` | -        | Address of the listener that you want to reject the invitation. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
+
+## Toggle Audio
+
+This API is used to toggle local audio in the given space. Space creator or admin can toggle their by calling this method.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await userAliceSpace.config({audio: boolean})
+await userAliceSpace.config({
+  audio: boolean,
+});
+```
+
+  </TabItem>
+</Tabs>
+---
+
+### Toggle Audio parameters
+
+| Property  | Type      | Sub Type | Description                                                                                |
+| --------- | --------- | -------- | ------------------------------------------------------------------------------------------ |
+| _`audio`_ | `boolean` | -        | Boolean value to toggle the audio. `TRUE` to enable audio and `FALSE` to mute their audio. |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+200 OK
+
+</Details>
