@@ -15,6 +15,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/web-native',
+                videosrc: 'notifs/web3-native',
                 imagealt: 'home.notification-section.box1.imagealt',
                 imagetitle: 'home.notification-section.box1.imagetitle'
             }
@@ -33,7 +34,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/cross-chain',
-                // videosrc: 'notifs/cross-chain-video',
+                videosrc: 'notifs/Cross Chain Notifications',
                 imagealt: 'home.notification-section.box2.imagealt',
                 imagetitle: 'home.notification-section.box2.imagetitle',
             }
@@ -81,7 +82,7 @@ export const HomeGlassyNotifsList = {
                 buttonlink: '/docs/notifications/quickstart',
                 buttontitle: 'home.notification-section.box4.buttontitle',
                 codeblockImg: `notifs/lightweight`,
-                // videosrc: 'notifs/lightweight-video',
+                videosrc: 'notifs/Push Notifications Code Block',
                 imagealt: 'home.notification-section.box4.imagealt',
                 imagetitle: 'home.notification-section.box4.imagetitle'
          }
@@ -141,7 +142,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/snap',
-                // videosrc: 'notifs/snap-video',
+                videosrc: 'notifs/Push Snap',
                 imagealt: 'home.notification-section.box7.imagealt',
                 imagetitle: 'home.notification-section.box7.imagetitle'
             },
@@ -164,7 +165,7 @@ export const HomeGlassyNotifsList = {
             body: {
                 type: 'image',
                 imagesrc: 'notifs/engage',
-                videosrc: 'notifs/engage-video',
+                videosrc: 'notifs/Increase Engagement',
                 imagealt: 'home.notification-section.box8.imagealt',
                 imagetitle: 'home.notification-section.box8.imagetitle'
             }
@@ -188,7 +189,7 @@ export const HomeGlassyChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/share',
-                // videosrc: 'chats/share-video',
+                videosrc: 'chats/Share Images Gifs and Reactions',
                 imagealt: 'home.chat-section.box1.imagealt',
                 imagetitle: 'home.chat-section.box1.imagetitle'
             },
@@ -254,6 +255,7 @@ export const HomeGlassyChatList = {
                 buttonlink: 'https://push.org',
                 buttontitle: 'home.chat-section.box4.buttontitle',
                 codeblockImg: `chats/lightweight`,
+                videosrc: 'chats/Push Chat Code Box',
                 imagealt: 'home.chat-section.box4.imagealt',
                 imagetitle: 'home.chat-section.box4.imagetitle'
          }
@@ -292,7 +294,8 @@ export const HomeGlassyChatList = {
                 type: 'image',
                 imagesrc: 'chats/plug-play',
                 imagealt: 'home.chat-section.box6.imagealt',
-                imagetitle: 'home.chat-section.box6.imagetitle'
+                imagetitle: 'home.chat-section.box6.imagetitle',
+                videosrc: 'chats/Chat Components'
                 
             },
         },
@@ -325,7 +328,8 @@ export const HomeGlassyChatList = {
                 type: 'image',
                 imagesrc: 'chats/token-gated',
                 imagealt: 'home.chat-section.box8.imagealt',
-                imagetitle: 'home.chat-section.box8.imagetitle'
+                imagetitle: 'home.chat-section.box8.imagetitle',
+                videosrc: 'chats/Token Gated'
             },
             footer: {
                 text: 'home.chat-section.box8.footertext'
@@ -361,7 +365,7 @@ export const HomeGlassyChatList = {
             body: {
                 type: 'image',
                 imagesrc: 'chats/web-standard',
-                // videosrc: 'chats/web-standard-video',
+                videosrc: 'chats/Web3 Standard',
                 imagealt: 'home.chat-section.box10.imagealt',
                 imagetitle: 'home.chat-section.box10.imagetitle'
             }

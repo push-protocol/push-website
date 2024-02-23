@@ -137,13 +137,13 @@ const Glassy = ({ section }) => {
       type={type}
       className={`${hovered ? "active" : ""} ${id}`}
     >
-      <GlowwyBorder 
+      {/* <GlowwyBorder 
         className={`${hovered ? "active" : ""} glowwy`}
       />
 
       <Glowwy 
         className={`${hovered ? "active" : ""} glowwy`}
-      />
+      /> */}
       
       <Subcontainer
         id={id}
@@ -239,7 +239,7 @@ const Glassy = ({ section }) => {
         {body && (
           <Body>
             {/* If Image, check if videosrc is present, if yes, load video */}
-            {/* {type === "image" && videosrc &&
+            {type === "image" && videosrc &&
               <ReactPlayer
                 url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                 playing={hovered ? true : false}
@@ -249,7 +249,7 @@ const Glassy = ({ section }) => {
                 height="100%"
                 style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
               />
-            } */}
+            }
 
             {/* If Image, check if videosrc is present, if yes, play video on hover */}
             {type === "image" &&
@@ -261,7 +261,7 @@ const Glassy = ({ section }) => {
                 srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                 alt={t(imagealt)}
                 title={t(imagetitle)}
-                // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                 type={type}
                 id={id}
               />
@@ -295,7 +295,7 @@ const Glassy = ({ section }) => {
                 <ItemV
                   padding="0px 0px 0px 0px"
                 >
-                  {/* {videosrc &&
+                  {videosrc &&
                     <ReactPlayer
                       url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                       playing={hovered ? true : false}
@@ -305,7 +305,7 @@ const Glassy = ({ section }) => {
                       height="100%"
                       style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
                     />
-                  } */}
+                  }
 
                   <BodyImage
                     src={
@@ -316,7 +316,7 @@ const Glassy = ({ section }) => {
                     srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
                     alt={t(imagealt)}
                     title={t(imagetitle)}
-                    // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                    style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                     type={type}
                     margin={isMobile && "12px 0 0 0"}
                   />
@@ -388,6 +388,7 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
+    // background: #0D0D10;
     background: #0D0D10;
     // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
