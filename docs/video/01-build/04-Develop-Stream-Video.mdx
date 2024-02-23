@@ -228,3 +228,68 @@ stream.connect()
 ```
 
 </Details>
+
+## Reinstate Video stream
+
+To reinstate a Video stream. Useful when you want to listen to more events or change the filter options.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// say you created a stream like this, const stream = await userAlice.initStream( [ 'STREAM.NOTIF', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]);
+// now you want to listen to more events or change the filter options
+// then you can do that using this method
+
+// await stream.reinit(listen, {newOptions?})
+const newStream = await stream.reinit([
+  CONSTANTS.STREAM.VIDEO, // Listen for video events
+  CONSTANTS.STREAM.CONNECT, // Listen for connection events
+  CONSTANTS.STREAM.DISCONNECT, // Listen for disconnection events
+]);
+```
+
+  </TabItem>
+</Tabs>
+
+### Reinit Stream Video parameters
+
+| Param        | Type                            | Sub-Type           | Default | Remarks                                                                                                                                                                                                                                                 |
+| ------------ | ------------------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`listen`_   | `constant`                      | -                  | -       | Choose from various streams:`CONSTANTS.STREAM.VIDEO`, `CONSTANTS.STREAM.SPACE`, `CONSTANTS.STREAM.SPACE_OPS`, `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
+| `newOptions` | `PushStreamInitializeProps`     | -                  | -       | Optional configuration properties for initializing the stream.                                                                                                                                                                                          |
+| -            | `newOptions.filter`             | `object`           | -       | Configure to listen to specific chats or notifications.                                                                                                                                                                                                 |
+| -            | `newOptions.filter.channels`    | `array of strings` | `['*']` | Pass list of **channels** over here to only listen to notifications coming from them.                                                                                                                                                                   |
+| -            | `newOptions.filter.chats`       | `array of strings` | `['*']` | Pass list of **chatids** over here to only listen to chats coming from them.                                                                                                                                                                            |
+| -            | `newOptions.connection`         | `object`           | -       | Option to configure the connection settings of the stream                                                                                                                                                                                               |
+| -            | `newOptions.connection.retries` | `number`           | `3`     | Number of automatic retries incase of error                                                                                                                                                                                                             |
+| -            | `newOptions.raw`                | `boolean`          | `false` | If enabled, respond with metadata useful in verifying the integrity of incoming chats or notifications among other things.                                                                                                                              |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+## Stream Info API
+
+To get the info of the current stream.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// say you created a stream like above, const stream = await userAlice.initStream( [ 'STREAM.VIDEO', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]);
+// then you can get the info of the stream like this
+
+// stream.info()
+const streamInfo = await stream.info();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+  ```typescript
+  {
+    options: { raw: false, connection: { auto: true, retries: 3 }, env: 'prod' },
+    listen: [ 'STREAM.VIDEO', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]
+  }
+  ```
+</Details>
