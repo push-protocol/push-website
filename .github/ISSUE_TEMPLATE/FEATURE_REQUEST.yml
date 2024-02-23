@@ -1,0 +1,56 @@
+name: Feature Request
+description: Requesting a new feature or changes to an existing feature
+title: "[FEATURE REQUEST]: feature name"
+labels: [enhancement]
+
+body:
+  - type: markdown
+    attributes:
+      value: "## Before you continue, please search our open/closed issues to see if a similar issue has been addressed."
+
+  - type: checkboxes
+    attributes:
+      label: "I have searched through the issues and didn't find my problem."
+      options:
+        - label: Confirm
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature description
+      description: Briefly describe the feature you'd like to see implemented.
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use Case
+      description: Describe a scenario where this feature would be beneficial or necessary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: possiblesolution
+    attributes:
+      label: Possible Solution
+      description: If you have any initial thoughts on how this feature could be implemented, share them here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: currentlimitations
+    attributes:
+      label: Current Limitations
+      description: Are there any current limitations that you see with the current implementation that you'd like to see addressed?
+    validations:
+      required: false
+
+  - type: textarea
+    id: extrainformation
+    attributes:
+      label: Additional information
+      description: Is there anything else we should know about this feature request?
+    validations:
+      required: false
