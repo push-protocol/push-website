@@ -66,19 +66,6 @@ body:
       description: Is there anything else we should know about this bug?
 
   - type: dropdown
-    id: dapp-env
-    attributes:
-      label: "Dapp Env"
-      description: What is the impacted DApp environment ?
-      multiple: true
-      options:
-        - Prod (app.push.org)
-        - Staging (staging.push.org)
-        - Dev (dev.push.org)
-    validations:
-      required: true
-
-  - type: dropdown
     id: browsers
     attributes:
       label: "Browsers"
