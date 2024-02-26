@@ -388,8 +388,7 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    // background: #0D0D10;
-    background: #0D0D10;
+    background: #0D0D0F;
     // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
