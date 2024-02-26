@@ -483,7 +483,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         />
               </ItemV>
 
-              <ItemV>
+              <ItemV margin={isMobile && "32px  0 0 0"}>
                   <TokenItem>Proof of Stake Network</TokenItem>
                   <TokenItem>Fee Pool and Circular Economy</TokenItem>
                   <TokenItem>Stake Push for API Calls to the Network 
@@ -505,10 +505,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             letterSpacing="-0.03em"
                             lineHeight="26px"
                             className='button'
-                            margin="24px 0px 0px auto"
+                            margin={isMobile ? "24px auto 0px 0px" : "24px 0px 0px auto"}
                             background="transparent"
                             alignItems='center'
-                            justifyContent='flex-end'
+                            justifyContent={'flex-end'}
                           >
                             <SpanLink>Explore Tokenomics</SpanLink>
                             <BsArrowRight className="anchorSVGlink" />
@@ -555,7 +555,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   padding="0px 0px"
                   fontSize="16px"
                   fontWeight="500"
-                  letterSpacing="-0.03em"
+                  letterSpacing="-0.01em"
                   lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                 >
@@ -574,7 +574,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 lineHeight="120%"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
 
-             {isMobile && (<SlideItem
+             {isMobile && (<SlideLink
                   href="/blog"
                   title="Exlore all articles"
                   hoverBackground="transparent"
@@ -586,14 +586,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   padding="0px 0px"
                   fontSize="16px"
                   fontWeight="500"
-                  letterSpacing="-0.03em"
+                  letterSpacing="-0.01em"
                   lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                   margin={'24px 0 0 0'}
                 >
                   <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </SlideItem>)}
+                </SlideLink>)}
             
             <RecentBlogPosts recentPosts={recentPosts} />
 

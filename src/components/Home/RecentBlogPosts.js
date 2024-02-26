@@ -22,6 +22,7 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
+  const isMobile = useMediaQuery(device.mobileL);
   return (
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
@@ -68,7 +69,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               </ItemH>
 
               <H2
-                margin="8px 0"
+                margin={isMobile ? "0px 0 24px 0" : "8px 0"}
                 textAlign="left"
                 fontSize={isTablet ? "20px" : "30px"}
                 color="#fff"
@@ -190,19 +191,19 @@ const BlogPostList = styled(ItemH)`
     .item-0 {
       grid-column: 1;
       grid-row: 2;
-      margin-top: 24px;
+      margin-top: 32px;
     }
 
     .item-1 {
       grid-column: 1;
       grid-row: 3;
-      margin-top: 24px;
+      margin-top: 32px;
     }
 
     .item-2 {
       grid-column: 1;
       grid-row: 4;
-      margin-top: 24px;
+      margin-top: 32px;
     }
   }
 `;
@@ -228,7 +229,7 @@ const BlogPostCardPrimary = styled(Button)`
   gap: 24px;
 
   & p {
-    margin: 0;
+    margin: 0 !important;
   }
 
   & img {
