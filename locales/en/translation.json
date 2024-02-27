@@ -221,20 +221,6 @@
         "imagetitle": "Chat from a wallet or an NFT or even between different chains, Push Chat supports all web3 standards"
       }
     },
-    "video-section": {
-      "alt": "Illustration showing real-time Web3 communication with Push Video",
-      "title": "Push Video",
-      "subtitle": "Experience real time web3 communication with Push Video",
-      "content": "Push Video supports decentralized wallet-to-wallet video calls in a chain-agnostic environment.",
-      "itemLink": "Learn More"
-    },
-    "space-section": {
-      "alt": "Illustration showing real-time Web3 communication with Push Spaces",
-      "title": "Push Spaces",
-      "subtitle": "Revolutionize web3 communication with community streaming",
-      "content": "The first web3 decentralized audio streaming app, powered by Push Protocol.",
-      "itemLink": "Learn More"
-    },
     "grow-section": {
       "image-alt": "Illustration showing $PUSH tokens",
       "image-title": "Use the Push token to grow",

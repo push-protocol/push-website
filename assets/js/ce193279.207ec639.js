@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[20212],{100144:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/decentralization/page/2","page":2,"postsPerPage":10,"totalPages":3,"totalCount":21,"previousPage":"/blog/tags/decentralization","nextPage":"/blog/tags/decentralization/page/3","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

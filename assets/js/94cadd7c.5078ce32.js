@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[4552],{35406:e=>{e.exports=JSON.parse('{"label":"Defi","permalink":"/blog/tags/defi","allTagsPath":"/blog/tags","count":45,"unlisted":false}')}}]);

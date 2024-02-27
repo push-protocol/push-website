@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[69866],{422882:e=>{e.exports=JSON.parse('{"label":"Democracy","permalink":"/blog/tags/democracy","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

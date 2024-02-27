@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[72259],{886713:s=>{s.exports=JSON.parse('{"label":"Plotx","permalink":"/blog/tags/plotx","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
