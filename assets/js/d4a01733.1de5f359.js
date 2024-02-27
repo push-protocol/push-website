@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[1432],{470006:e=>{e.exports=JSON.parse('{"label":"Aave","permalink":"/blog/tags/aave","allTagsPath":"/blog/tags","count":2,"unlisted":false}')}}]);

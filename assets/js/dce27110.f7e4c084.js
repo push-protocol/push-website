@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[35952],{992392:s=>{s.exports=JSON.parse('{"label":"Flash Loan","permalink":"/blog/tags/flash-loan","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
