@@ -6,8 +6,13 @@ export const brbPartnersBountyList = [
     text: 'Use Account Abstraction to make Ethereum quantum proof',
     price: 5000,
     ended:true,
-    winner: 'Aditya Bisht',
+    winners: [
+      {
+         winner: 'Aditya Bisht',
     github: 'https://github.com/Bisht13/post-quantum-eth-security'
+      }
+    ]
+   
   },
   {
     srcref: 'polygon',
@@ -38,8 +43,32 @@ export const brbPartnersBountyList = [
     text: 'Build the most creative subgraphs or utilize existing subgraphs for your application',
     price: 5000,
     ended:true,
-    winner: "TBA",
-    github: "https://twitter.com/pushprotocol"
+    winners: [
+      {
+         winner: 'Viraj',
+    github: 'https://github.com/vkpatva/stream-earn-fe'
+      },
+      {
+        winner: 'Beast',
+   github: 'https://github.com/Omega12Pirme/Decentralize-OLX'
+     },
+     {
+      winner: 'Avinash',
+ github: 'https://github.com/AvinashNayak27/gitGift'
+   },
+   {
+    winner: "Siddhant",
+    github: "https://github.com/siddhant-k08/dex-app"
+   },
+   {
+    winner: "Shlok",
+    github: "https://github.com/shlok222/brb-whitelist-dapp"
+   },
+   {
+    winner: "Ayush",
+    github: "https://github.com/ayushsingh82/EnsScan"
+   }
+    ]
   },
   {
     srcref: 'shardeum',
@@ -56,8 +85,13 @@ export const brbPartnersBountyList = [
     text: 'Build on Aragon OSx: Address community issues via on-chain governance by creating plugins or dApps',
     price: 5000,
     ended:true,
-    winner: 'Samuel Mens',
-    github: 'https://github.com/Plopmenz/dao-organization'
+    winners: [
+      {
+        winner: 'Samuel Mens',
+        github: 'https://github.com/Plopmenz/dao-organization'
+      }
+    ]
+   
   },
   {
     srcref: 'biconomy',
@@ -73,9 +107,14 @@ export const brbPartnersBountyList = [
     alt: 'Filecoin, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Develop DataDAOs on Filecoin: Incentivize data contributions and storage',
     price: 5000,
-    ended:true,
-    winner: "TBA",
-    github: "https://twitter.com/pushprotocol"
+    winners: [
+      {
+        winner: 'Vikash',
+        github: 'https://github.com/Vikash-8090-Yadav/Dao-Club'
+      }
+    ],
+    ended:true
+
   },
   {
     srcref: 'timeswap',
@@ -92,8 +131,21 @@ export const brbPartnersBountyList = [
     text: 'Develop plugins for web3.js 4.x, enhancing Ethereum sectors like NFTs, DeFi, Gaming, etc',
     price: 5000,
     ended:true,
-    winner: "TBA",
-    github: "https://twitter.com/pushprotocol"
+    winners: [
+      {
+        winner: 'Salman',
+        github: 'https://github.com/web3/web3js-landing/pull/41'
+      },
+      {
+        winner: 'Sailesh',
+        github: 'https://github.com/saileshp56/web3.js-plugin-nft-master',
+      },
+      {
+        winner: 'Rudra',
+        github: 'https://github.com/web3/web3js-landing/pull/45'
+      },
+    ]
+
   },
   {
     srcref: 'alchemy',
