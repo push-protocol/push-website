@@ -199,8 +199,8 @@ const AnalyticsStatCard = styled(ItemH)`
 `
 
 const KPIFigure = styled(Span)`
-  font-weight: 700;
-  font-size: 48px;
+  font-weight: 500;
+  font-size: 44px;
   line-height: 110%;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -212,8 +212,8 @@ const KPIFigure = styled(Span)`
 
 const KPIMetric = styled(Span)`
   font-weight: 400;
-  font-size: 18px;
-  line-height: 121%;
+  font-size: 16px;
+  line-height: 130%;
   letter-spacing: -0.03em;
   color: #ffffff;
 

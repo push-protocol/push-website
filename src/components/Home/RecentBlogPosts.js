@@ -73,7 +73,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 textAlign="left"
                 fontSize={isTablet ? "20px" : "30px"}
                 color="#fff"
-                lineHeight="150%"
+                lineHeight="135%"
                 fontFamily="FK Grotesk Neue"
               >
                 {postItem.metadata.title}
@@ -108,6 +108,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 margin="auto 0"
                 textAlign="left"
                 fontSize="20px"
+                fontWeight="500"
                 color="#fff"
                 lineHeight="150%"
                 fontFamily="FK Grotesk Neue"

@@ -271,7 +271,7 @@ function PartnerChannels() {
             fontWeight="500"
             letterSpacing="-0.02em"
             margin="0px 0px"
-            lineHeight="110%"
+            lineHeight="135%"
             fontFamily="FK Grotesk Neue"
           >
             <b>
@@ -284,7 +284,7 @@ function PartnerChannels() {
             size="18px"
             weight="400"
             spacing="-0.03em"
-            lineHeight="160%"
+            lineHeight="140%"
             textAlign='center'
           >
             {t('home.partners-section.partner-channels-description')}
@@ -300,8 +300,8 @@ function PartnerChannels() {
             fontSize="16px"
             fontWeight="500"
             letterSpacing="-0.06em"
-            lineHeight="26px"
-            margin="15px 0px 0px 0px"
+            lineHeight="140%"
+            margin="25px 0px 0px 0px"
             alignSelf="center"
           >
             {t('home.partners-section.partner-channels-button')}
