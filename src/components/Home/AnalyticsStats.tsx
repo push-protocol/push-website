@@ -178,6 +178,12 @@ const AnalyticsStatCardList = styled.div`
 
     border-radius: 32px;
   }
+
+  @media ${device.mobileL} {
+    display: grid;
+    grid-template-columns: repeat(2, 113px);
+    justify-content: space-between;
+  }
 `;
 
 const AnalyticsStatCard = styled(ItemH)`
@@ -196,6 +202,12 @@ const AnalyticsStatCard = styled(ItemH)`
     // for 4 items
     flex: 0 0 48%;
   }
+
+  @media ${device.mobileL} {
+    // max-width: 113px;
+    // min-width: 113px;
+  }
+
 `
 
 const KPIFigure = styled(Span)`
@@ -205,8 +217,10 @@ const KPIFigure = styled(Span)`
   letter-spacing: -0.02em;
   color: #ffffff;
 
-  @media ${device.tablet} {
-    font-size: 32px;
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 
@@ -222,6 +236,11 @@ const KPIMetric = styled(Span)`
     text-align: center;
     font-size: 16px;
     font-weight: 400;
+  }
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 

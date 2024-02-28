@@ -170,7 +170,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <HeroButton onClick={() => {window.open(alertLink, '_blank');}}>
                   <StarColoredIcon />
-                  <H2 fontSize='14px' fontWeight="400" fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
+                  <H2 fontWeight="400" fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
                   <BsArrowRight />
                 </HeroButton>
 
@@ -179,14 +179,17 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     zIndex="2" 
                     fontSize={isMobile ? '32px' : '58px'} 
                     margin="0 0 16px 0"
-                    fontWeight="700" 
+                    fontWeight="500"
+                    lineHeight="116%" 
                     fontFamily="FK Grotesk Neue">{t("home.hero.title")}
                   </H1>
 
                   <Span
                     color="rgba(255, 255, 255, 1)"
                     zIndex="2"
-                    fontSize='21px'
+                    fontSize={isMobile ? '16px' : '21px'} 
+                    fontWeight="400"
+                    lineHeight="140%" 
                   >
                       {/* {t("home.hero.description")} */}
                       Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
@@ -230,7 +233,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="180px 40px 0px 40px"
+            // padding="180px 40px 0px 40px"
           >
             <ShowcasePartners />
           </Content>
@@ -244,8 +247,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           >
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile ? '30px' : 'normal'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      margin = '0px auto'>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.notification-section.header.main-text")} </B> 
                           {t("home.notification-section.header.other-text")}
                       </H2>
@@ -311,9 +314,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'
+                      margin = '0px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile ? '30px' : 'normal'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.chat-section.header.main-text")} </B> 
                           {t("home.chat-section.header.other-text")}
                            <TagItem>COMING SOON</TagItem>
@@ -377,7 +380,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
           >
 
-            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' gap="29px">
+            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' className='slideGap'>
                 {slideSection.map((item) => (
                 <SlideItem>
                       <Image
@@ -413,7 +416,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               >{t(item.subtitle)}</H2>
 
                           <H3 color="#FFF"
-                              fontSize={isTablet ? '17px' : '19px'}
+                              fontSize='19px'
                               fontWeight="400"
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
@@ -464,7 +467,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <H2 color="#FFF"
                       fontSize={isMobile ? '28px' : '30px'}
                       fontWeight="500"
-                      margin="8px 0px"
+                      margin="8px 0 0 0"
                       fontFamily="FK Grotesk Neue"
                       lineHeight="130%"
                       >Learn how Push Network becomes L2 for web3 communication!</H2>
@@ -562,7 +565,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <H2
                 fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
-                margin={isMobile ? "12px 0 0 0" : "8px 0 0 0"}
+                margin="8px 0 0 0"
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
@@ -570,7 +573,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
              {isMobile && (<SlideLink
                   href="/blog"
-                  title="Exlore all articles"
+                  title="Explore all articles"
                   hoverBackground="transparent"
                   hover="transparent"
                   background="transparent"
@@ -624,7 +627,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
-              margin="72px 0 3em 0"
+              margin={isMobile ? "24px 0 3em 0" : "72px 0 3em 0"}
               flex="1"
               alignItems="stretch"
             >
@@ -821,8 +824,9 @@ const HeroButton = styled(Button)`
   h2 {
     color: #fff;
     font-size: 14px;
+    line-height: 142%;
 
-    @media ${device.mobileM} {
+    @media ${device.mobileL} {
       font-size: 12px;
     }
 
@@ -888,7 +892,8 @@ const HeroAnalytics = styled(ItemH)`
   }
   
   @media ${device.laptop} {
-    margin: 40px 0 40px 0;
+    // margin: 40px 0 40px 0;
+    margin: 40px 0 0px 0;
     flex: initial;
     position: relative;
     bottom: auto;
@@ -951,6 +956,14 @@ const ShowcaseSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
+
+  .contentBox {
+    padding: 180px 40px 0px 40px;
+
+    @media ${device.laptop} {
+      padding: 140px 32px 0px 32px;
+    }
+  }
 `;
 
 const NotificationSection = styled(Section)`
@@ -962,15 +975,15 @@ const NotificationSection = styled(Section)`
     padding: 186px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 186px 32px 0px 32px;
+      padding: 160px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 186px 24px 0px 24px;
+      padding: 160px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 186px 16px 0px 16px;
+      padding: 160px 16px 0px 16px;
     }
   }
 `;
@@ -984,15 +997,15 @@ const ChatSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1002,19 +1015,29 @@ const SlideSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
 
+  .slideGap {
+    gap: 29px;
+  }
+
   .contentBox {
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
+      .slideGap {
+        gap: 23px;
+      }
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
+      .slideGap {
+        gap: 32px;
+      }
     }
   }
 `;
@@ -1028,15 +1051,15 @@ const TokenomicsSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1062,6 +1085,10 @@ const TokenItem = styled.div`
 
 const TokenImage = styled(Image)`
     object-fit: contain;
+
+    @media ${device.mobileL} {
+      margin-top: 32px;
+    }
 `;
 
 const SlideItem = styled(ItemH)`
@@ -1083,6 +1110,8 @@ const SlideItem = styled(ItemH)`
      max-height: auto;
      padding: 32px;
      gap: 32px;
+     padding: 48px 32px;
+
    }
 
    img {
@@ -1091,9 +1120,10 @@ const SlideItem = styled(ItemH)`
     display: block;
    }
 
-   @media ${device.tablet} {
-    padding: 32px;
+   @media ${device.mobileL} {
+      gap: 64px;
   }
+
 `;
 
 const FeaturedInSection = styled.div`
@@ -1103,15 +1133,15 @@ const FeaturedInSection = styled.div`
   padding: 200px 0px 0px 0px;
 
   @media ${device.laptop} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.tablet} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.mobileL} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 `;
 
@@ -1149,16 +1179,16 @@ const BlogSection = styled(Section)`
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 0px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 0px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1170,16 +1200,16 @@ const BackedBySection = styled(Section)`
   .contentBox {
     padding: 200px 40px 20px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 20px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 20px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 20px 24px;
+      padding: 180px 24px 20px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 20px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 20px 16px;
     }
   }
 `;
@@ -1296,6 +1326,7 @@ const NotificationGridItem = styled.div`
         max-width: 100% !important;
         min-width: 100% !important;
         flex-direction: column;
+        gap: 16px;
 
 
         .anti-spam {
@@ -1313,6 +1344,7 @@ const NotificationGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
+    margin-top: 72px;
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1323,6 +1355,8 @@ const NotificationGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 
@@ -1411,6 +1445,7 @@ const ChatGridItem = styled.div`
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
+        gap: 16px;
 
         &:nth-child(3) {
           display: grid;
@@ -1453,7 +1488,8 @@ const ChatGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
-    // margin: 20em 0;
+    margin-top: 72px;
+
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1464,6 +1500,8 @@ const ChatGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 

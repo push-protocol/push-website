@@ -69,9 +69,8 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               </ItemH>
 
               <H2
-                margin={isMobile ? "0px 0 24px 0" : "8px 0"}
+                margin={isTablet ? "0px 0 24px 0" : "8px 0"}
                 textAlign="left"
-                fontSize={isTablet ? "20px" : "30px"}
                 color="#fff"
                 lineHeight="135%"
                 fontFamily="FK Grotesk Neue"
@@ -92,7 +91,6 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
         return (
           <BlogPostCardSecondary
             key={index}
-            c
             className={`item-${index}`}
             onClick={() => {
               window.open(
@@ -107,7 +105,6 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               <H2
                 margin="auto 0"
                 textAlign="left"
-                fontSize="20px"
                 fontWeight="500"
                 color="#fff"
                 lineHeight="150%"
@@ -169,11 +166,13 @@ const BlogPostList = styled(ItemH)`
     .item-1 {
       grid-column: 1;
       grid-row: 2;
+      margin-top: 40px;
     }
 
     .item-2 {
       grid-column: 2;
       grid-row: 2;
+      margin-top: 40px;
     }
   }
 
@@ -209,17 +208,6 @@ const BlogPostList = styled(ItemH)`
   }
 `;
 
-const BlogPostCardContainer = styled(ItemV)`
-  // justify-content: flex-start;
-  // gap: 25px;
-
-  // @media ${device.laptop} {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, minmax(0, 1fr));
-  //   width: 100%;
-  // }
-`;
-
 const BlogPostCardPrimary = styled(Button)`
   display: flex;
   flex-direction: column;
@@ -252,11 +240,28 @@ const BlogPostCardPrimary = styled(Button)`
     display: none;
   }
 
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 135%;
+  }
+
   & ${Span} {
     min-width: 200px;
   }
   @media ${device.laptop} {
     border-radius: 0px;
+
+    h2 {
+      font-size: 22px;
+      line-height: 150%;
+    }
+
+    & img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
   }
 
   @media ${device.tablet} {
@@ -265,6 +270,13 @@ const BlogPostCardPrimary = styled(Button)`
 
     & ${Span} {
       font-size: 20px;
+    }
+  }
+
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 18px;
+      line-height: 135%;
     }
   }
 `;
@@ -303,6 +315,12 @@ const BlogPostCardSecondary = styled(Button)`
     display: none;
   }
 
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 135%;
+  }
+
   & ${Span} {
     min-width: 200px;
     align-self: center;
@@ -315,6 +333,11 @@ const BlogPostCardSecondary = styled(Button)`
     height: auto;
     border-radius: 0px;
 
+    h2 {
+      font-size: 22px;
+      line-height: 150%;
+    }
+
     & img {
       min-width: 100%;
       max-width: 100%;
@@ -322,6 +345,7 @@ const BlogPostCardSecondary = styled(Button)`
       height: auto;
       border-radius: 24px;
       display: block;
+      aspect-ratio: 16/9;
     }
   }
 
@@ -335,6 +359,13 @@ const BlogPostCardSecondary = styled(Button)`
       min-width: 200px;
       height: auto;
       border-radius: 24px;
+    }
+  }
+
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 18px;
+      line-height: 135%;
     }
   }
 `;
@@ -407,7 +438,7 @@ const TitleItem = styled.div`
     -webkit-box-orient: vertical;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     padding: 0 0 24px 0;
   }
 `;
