@@ -135,6 +135,7 @@ const Glassy = ({ section }) => {
       height={height}
       hideonmobile={hideonmobile}
       type={type}
+      illustration={illustration && true}
       className={`${hovered ? "active" : ""} ${id}`}
     >
       <GlowwyBorder 
@@ -403,13 +404,11 @@ const Container = styled.div`
     max-height: ${(props) => props.height || "auto"};
     min-height: ${(props) => props.height || "auto"};
   }
-
-
     
     @media ${device.mobileL} {
         display: ${(props) => props.hideonmobile && 'none !important'};
-        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
-        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
+        max-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
+        min-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
         width: 100% !important;
     }
 `;
@@ -445,7 +444,7 @@ const Subcontainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: ${(props) => props.padding || "24px"};
+  padding: ${({id, padding}) => id == 'plug-play' ? '24px 24px 0px 24px' : padding ? padding : "24px"};
   background-image: url(${(props) => props.bg});
     background-position: ${(props) =>
       props.id == "snap"
@@ -466,6 +465,17 @@ const Subcontainer = styled.div`
     background-size: ${(props) =>
       props.id == "hyperscalable"
         ? "75% auto"
+        : props.id == "interoperable"
+          ? "cover"
+          : "contain"};
+  }
+
+  @media ${device.mobileL} {
+    gap: ${(props) => props.id == "plug-play" && '24px'};
+    padding: ${({id, padding}) => id == 'plug-play' ? '24px' : padding || "24px"};
+    background-size: ${(props) =>
+      props.id == "hyperscalable"
+        ? "auto 73%"
         : props.id == "interoperable"
           ? "cover"
           : "contain"};
@@ -589,7 +599,7 @@ const BodyImage = styled(Image)`
         : type == "image"
           ? "80%"
           : "inherit"};
-    margin: ${({id, type}) => type == "image"  && id !== 'token-gated' && " 24px auto 0 auto"};
+    margin: ${({id, type}) => id == 'plug-play' ? '0 auto' : type == "image"  && id !== 'token-gated' && " 24px auto 0 auto"};
   }
 `;
 
