@@ -26,6 +26,7 @@
   --ifm-font-family-base: "Strawford", sans-serif;
   --ifm-font-family-brbprimary: "Glancyr", sans-serif;
   --ifm-font-family-brbsecondary: "Green Brooks", sans-serif;
+  --ifm-font-family-homepage: "FK Grotesk Neue";
   --ifm-navbar-link-color: #000;
   --ifm-button-background-color: #dd44b9;
   --ifm-custom-base: rgba(59, 59, 59, 0.75);
@@ -145,6 +146,38 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'FK Grotesk Neue';
+  src: url('../../static/fonts/FKGroteskNeue-Regular.woff2') format('woff2'),
+      url('../../static/fonts/FKGroteskNeue-Regular.woff') format('woff'),
+      url('../../static/fonts/FKGroteskNeue-Regular.otf') format('opentype');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FK Grotesk Neue';
+  src: url('../../static/fonts/FKGroteskNeue-Medium.woff2') format('woff2'),
+      url('../../static/fonts/FKGroteskNeue-Medium.woff') format('woff'),
+      url('../../static/fonts/FKGroteskNeue-Medium.otf') format('opentype');
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FK Grotesk Neue';
+  src: url('../../static/fonts/FKGroteskNeue-Bold.woff2') format('woff2'),
+      url('../../static/fonts/FKGroteskNeue-Bold.woff') format('woff'),
+      url('../../static/fonts/FKGroteskNeue-Bold.otf') format('opentype');
+  font-weight: 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* ----- */
 /* Custom Font Ends */
 /* ----- */
@@ -158,6 +191,17 @@ article ul ul, article ul ol, article ol ol, article ol ul {
 /* ----- */
 /* OVERRIDES */
 /* ----- */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+.home-wrapper {
+  font-style: var(--ifm-font-family-homepage) !important;
+}
 
 a:hover {
   text-decoration: none;

@@ -100,20 +100,35 @@ const aliceMessagesBob = await userAlice.chat.send(
 );`
   },
   {
-    title: 'Push Spaces',
-    srcref: 'spaces',
-    alt: 'Logo representing Push Spaces - Push Protocol',
-    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
-    target: '_blank',
-    description: 'Learn about Push Spaces, the web3 native, token gated way of conducting spaces.',
-  },
-  {
     title: 'Push Video',
     srcref: 'video',
     alt: 'Logo representing Push Video - Push Protocol',
     link: '/docs/video',
     target: '_self',
     description: 'Learn about the details of Push Video and how to easily integrate it.',
+    codeblock: `// Initialize wallet user
+const userAlice = await PushAPI.initialize(signer);
+
+// Setup video stream and video state
+const stream = await userAlice.initStream(
+  [CONSTANTS.STREAM.VIDEO]
+);
+const [data, setData] = useState(CONSTANTS.VIDEO.INITIAL_DATA);
+
+// Initialize video
+const aliceVideo = await userAlice.video.initialize(setData, {stream: stream});
+
+// Request video call
+await aliceVideoCall.request([recipient]);
+`
+  },
+  {
+    title: 'Push Spaces',
+    srcref: 'spaces',
+    alt: 'Logo representing Push Spaces - Push Protocol',
+    link: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+    target: '_blank',
+    description: 'Learn about Push Spaces, the web3 native, token gated way of conducting spaces.',
   },
   {
     title: 'Examples',

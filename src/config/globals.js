@@ -1,10 +1,11 @@
 // Define Size and Device
 export const size = {
   mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
+  mobileM: "395px",
+  mobileL: "470px",
   tablet: "768px",
   laptop: "1024px",
+  laptopM: "1260px",
   laptopL: "1440px",
   desktop: "2560px",
 };
@@ -15,6 +16,7 @@ export const device = {
   mobileL: `(max-width: ${size.mobileL})`,
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(max-width: ${size.laptop})`,
+  laptopM: `(max-width: ${size.laptopM})`,
   laptopL: `(max-width: ${size.laptopL})`,
   desktop: `(max-width: ${size.desktop})`,
   desktopL: `(max-width: ${size.desktop})`,
@@ -121,7 +123,8 @@ const GLOBALS = {
     FONT_DARK: "#121315",
     FONT_DARK_SECONDARY: "#303C5E",
     BG_LIGHT: "#FFF",
-    BG_DARK: "#121315",
+    // BG_DARK: "#121315",
+    BG_DARK: "#0D0D0F",
     BG_BLACK: "#000",
     HEADER_BG_LIGHT: "#FFFFFFCC",
     HEADER_BG_DARK: "#121315CC",

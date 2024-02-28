@@ -99,7 +99,7 @@ export const brbPartnersBountyList = [
     alt: 'Biconomy, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Build a new validation module to use with the Biconomy smart accounts',
     price: 5000,
-    ended:false
+    ended:false,
   },
   {
     srcref: 'filecoin',
@@ -114,6 +114,7 @@ export const brbPartnersBountyList = [
       }
     ],
     ended:true
+
   },
   {
     srcref: 'timeswap',
@@ -144,6 +145,7 @@ export const brbPartnersBountyList = [
         github: 'https://github.com/web3/web3js-landing/pull/45'
       },
     ]
+
   },
   {
     srcref: 'alchemy',

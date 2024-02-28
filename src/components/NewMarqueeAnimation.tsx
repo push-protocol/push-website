@@ -27,14 +27,14 @@ type Props = {
 
 function NewMarqueeAnimation(props: Props) {
   const {
-    // speed = 100,
     speed,
     gap = 0,
     gradient = false,
     gradientWidth = 64,
-    // direction = 'left',
     direction,
+    fixedWidth,
     pause = false,
+    bg
   } = props;
   
   const isMobile = useMediaQuery('(max-width: 480px)');
@@ -44,18 +44,18 @@ function NewMarqueeAnimation(props: Props) {
 
 
   return (
-    <div style={{maxHeight: '85px'}}>
+    <div style={{maxHeight: '85px', background: bg}}>
     <Splide 
         ref={splideRef}
         options={{
-          width: isTablet ? '100vw' : '1213px',
+          width: isMobile ? '90vw' : isTablet ? '95vw' : '1213px',
           type: 'loop',
           direction: direction,
           arrows: false,
           pagination: false,
           drag: 'free',
-          gap: '18px',
-          fixedWidth: '250px',
+          gap: gap,
+          fixedWidth: fixedWidth ? fixedWidth : 'auto',
           autoScroll: {
             pauseOnHover: false,
             pauseOnFocus: false,

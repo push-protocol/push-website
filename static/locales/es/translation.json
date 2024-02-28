@@ -71,8 +71,8 @@
     },
     "partners-section": {
       "partner-channels-title": "Impulsado por Push",
-      "partner-channels-description": "Descubre una increíble comunidad de desarrolladores que integran Push para construir un poderoso stack de comunicación.",
-      "partner-channels-button": "Explorar integraciones",
+      "partner-channels-description": "Descubra una increíble comunidad de desarrolladores que crean con Push para atraer a los usuarios y aumentar la adopción.",
+      "partner-channels-button": "Explorar el ecosistema",
       "partner-channels-button-alt": "Aprende sobre $PUSH",
       "networks": "Push potencia la comunicación para más de 100 de los proveedores de servicios y dapps líderes en el mundo en DeFi, NFT, juegos, herramientas de desarrollo y más. Actualmente Push funciona en Ethereum, Polygon y BNB Chain.",
       "alt-missing-web3-image": "Ilustración mostrando Push es la pieza que faltaba en Web3",
@@ -110,6 +110,131 @@
         "image-alt": "Ilustración mostrando Push DAO"
       }
     },
+      "notification-section": {
+        "header": {
+          "main-text": "Push proporciona un protocolo de notificación push sólido y descentralizado.",
+          "other-text": "Push habilita alertas de notificación nativas web3 entre billeteras."
+        },
+        "box1": {
+          "title": "Web3 Nativo",
+          "main-text": "Push proporciona un protocolo de notificación push sólido y descentralizado.",
+          "other-text": "Push habilita alertas de notificación nativas web3 entre billeteras."
+        },
+        "box2": {
+          "title": "Notificaciones Cruzadas",
+          "imagealt": "Ilustración mostrando soporte entre cadenas para el Protocolo Push",
+          "imagetitle": "Soporta notificaciones entre cadenas incluyendo cadenas EVM y no EVM (Como Polygon, BNB, etc)"
+        },
+        "box3": {
+          "title": "Personalizar Preferencias \nde Notificación",
+          "imagealt": "Ilustración mostrando varios tipos de categorías de notificación que pueden ser personalizadas por el desarrollador para una UX mejorada",
+          "imagetitle": "Soporta categorías de notificación personalizables para una experiencia de usuario mejorada"
+        },
+        "box4": {
+          "title": "Código Ligero con Integración Rápida de API",
+          "imagealt": "Illustration showing lines of code required for Push Protocol integration",
+          "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
+          "bodytext": "<4 minutos",
+          "buttontext": "Comenzar a construir",
+          "buttonlink": "/docs/notifications/quickstart",
+          "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."  
+        },
+        "box5": {
+          "title": "Notificaciones Interoperables",
+          "bgtitle": "Notificaciones interoperables en todas las billeteras y dapps web3 (Como Unstoppable, MetaMask Push Snap, Shapeshift, Push, etc)"
+        },
+        "box6": {
+          "title": "Anti-Spam",
+          "iconalt": "Ilustración mostrando las capacidades anti-spam del Protocolo Push",
+          "icontitle": "Centrado en el usuario, capacidades anti-spam para combatir el spam y notificaciones no deseadas."
+        },
+        "box7": {
+          "title": "Push Snap",
+          "imagetitle": "Ilustración mostrando Push Snap para usuarios de MetaMask",
+          "imagealt": "Push Snap para asegurar que los usuarios de MetaMask reciban notificaciones sin ninguna configuración adicional.",
+          "footerText": "Recibe Notificaciones \nen MetaMask"
+        },
+        "box8": {
+          "title": "Aumentar Participación",
+          "imagealt": "Ilustración mostrando gráfico que indica un aumento en la participación de los usuarios (por 8 veces) con el Protocolo Push",
+          "imagetitle": "Las notificaciones aumentan la participación del usuario por 8 veces"
+        }
+      },
+      "chat-section": {
+        "header": {
+          "main-text": "Push Chat es el líder descentralizado,",
+          "other-text": "protocolo de chat nativo web3 con funciones fáciles de usar como chat grupal, videollamadas, espacios y streaming"
+        },
+        "box1": {
+          "title": "Compartir Imágenes, Gifs \ny Reacciones",
+          "imagealt": "Ilustración mostrando mensajes enviados en un chat grupal junto con un meme",
+          "imagetitle": "Envía emojis, gifs e imágenes en el chat grupal, restringido por preferencias nativas de web3"
+        },
+        "box2": {
+          "title": "Solicitudes de Chat",
+          "subheader": "PRIVADO Y ANTI SPAM",
+          "iconalt": "Ilustración mostrando 5 solicitudes de chat en Push Chat",
+          "icontitle": "Centrado en el usuario, con capacidades anti-spam para combatir el spam y los chats no deseados / estafas."
+        },
+        "box3": {
+          "title": "Pagos Seguros, \nInstantáneos y Verificables"
+        },
+        "box4": {
+          "title": "Código Ligero con Integración Rápida de API",
+          "imagealt": "Ilustración mostrando 2 líneas de código requeridas para la integración del Protocolo Push",
+          "imagetitle": "Integra Push Chat en 2 minutos y con 2 líneas de código",
+          "bodytext": "<2 minutos",
+          "buttontext": "Comenzar a construir",
+          "buttonlink": "/docs/chat/quickstart",
+          "buttontitle": "Explora la documentación para la integración instantánea del chat mediante el Protocolo Push en tu dapp"
+        },
+        "box5": {
+          "title": "Grupos Hiperescalables",
+          "bgtitle": "Push Chat soporta grupos que pueden tener más de 100k miembros, una hazaña que no es posible con ninguna otra aplicación de chat en el ecosistema web3.",
+          "afterMessage": "*Otras aplicaciones de chat: 1024 miembros"
+        },
+        "box6": {
+          "title": "Componentes de Chat \nPlug and Play",
+          "imagealt": "Ilustración mostrando cómo diferentes componentes de Push Chat pueden ser integrados sin problemas en cualquier dapp",
+          "imagetitle": "Integra sin problemas Push Chat o cualquiera de los componentes modulares en tu dapp en minutos"
+        },
+        "box7": {
+          "title": "Agnóstico de Cadena",
+          "subheader": "SOPORTA \nCADENAS EVM",
+          "iconalt": "Ilustración mostrando que Push Chat soporta todas las cadenas EVM e incluso cadenas no EVM",
+          "icontitle": "Push Chat es agnóstico a la cadena y simplemente funciona en cualquier EVM (con soporte para cadenas no EVM próximamente)"
+        },
+        "box8": {
+          "imagealt": "Illustration showing a bored ape nft and how it or any other NFT, tokens or any conditional logic can be used to create gated groups",
+          "imagetitle": "Create gated groups based on NFTs, tokens or any conditional logic!",
+          "footertext": "Crear Token, NFT,\nGrupos Geocerrados"
+        },
+        "box9": {
+          "title": "Cifrado E2E",
+          "subheader": "DE FINAL A FINAL (E2EE)",
+          "iconalt": "Ilustración mostrando la encriptación de extremo a extremo en Push Chat",
+          "icontitle": "Encriptación de extremo a extremo (E2EE) para todos los mensajes y llamadas entre usuarios de Push"
+        },
+        "box10": {
+          "title": "Soporta cualquier \nEstándar Web3",    
+          "imagealt": "Ilustración mostrando cómo todos los estándares web3 pueden ser usados en Push Chat incluyendo chatear con billetera, NFTs, mensajería entre cadenas, etc.",
+          "imagetitle": "Chatea desde una billetera o un NFT o incluso entre diferentes cadenas, Push Chat soporta todos los estándares web3"
+        }
+    },
+    "video-section": {
+      "alt": "Ilustración que muestra comunicación Web3 en tiempo real con Push Video",
+      "title": "Push Video",
+      "subtitle": "Experimenta la comunicación web3 en tiempo real con Push Video",
+      "content": "Push Video admite llamadas de video entre carteras descentralizadas en un entorno agnóstico de cadena.",
+      "itemLink": "Más información"
+    },
+    "space-section": {
+      "alt": "Ilustración que muestra comunicación Web3 en tiempo real con Push Spaces",
+      "title": "Push Spaces",
+      "subtitle": "Revoluciona la comunicación web3 con streaming comunitario",
+      "content": "La primera aplicación de streaming de audio descentralizado web3, impulsada por el Protocolo Push.",
+      "itemLink": "Más información"
+    },    
     "grow-section": {
       "image-alt": "Ilustración mostrando tokenes $PUSH",
       "image-title": "Utiliza el token de Push para crecer",
@@ -140,7 +265,7 @@
       "title": "Respaldado por empresarios exitosos y fondos de capital de riesgo."
     },
     "featured-section": {
-      "title": "Presentado en",
+      "title": "Artículos destacados",
       "article1": {
         "text": "Vimos a un creador innovador y motivado que estaba profundamente comprometido con el crecimiento y el éxito de Ethereum.",
         "link-text": "Leer Artículo"

@@ -435,7 +435,7 @@ export const A = styled.a`
   & .anchorSVGlink {
     width: 1em;
     height: 1em;
-    margin-left: 3px;
+    margin-left: 5px;
     position: relative;
     top: 5px;
   }

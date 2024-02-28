@@ -10,7 +10,6 @@ import {
   ThemeClassNames,
 } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import { Section, Span } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import BlogLayout from "@theme/BlogLayout";
