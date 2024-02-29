@@ -214,7 +214,7 @@ const KPIFigure = styled(Span)`
   font-weight: 500;
   font-size: 44px;
   line-height: 110%;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   color: #ffffff;
 
 
@@ -228,7 +228,7 @@ const KPIMetric = styled(Span)`
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   color: #ffffff;
 
   @media ${device.tablet} {

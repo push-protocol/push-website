@@ -184,7 +184,7 @@ const FeaturedCardTitle = styled(Span)`
   text-transform: inherit;
   margin: 0px;
   padding: 0px;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   text-align: initial;
   line-height: 140%;
   position: initial;

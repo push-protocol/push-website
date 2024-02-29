@@ -196,11 +196,12 @@ const Glassy = ({ section }) => {
                   color="#D98AEC"
                   fontWeight="bold"
                   fontFamily="FK Grotesk Neue"
+                  letterSpacing='normal'
                 >
                   {t(subheader)}
                 </H2>
 
-                <H2Text fontFamily="FK Grotesk Neue" theme={theme} type={type}>
+                <H2Text fontFamily="FK Grotesk Neue" letterSpacing='normal' theme={theme} type={type}>
                   {t(title)}
                 </H2Text>
               </Title>

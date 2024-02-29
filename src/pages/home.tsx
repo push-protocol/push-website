@@ -181,6 +181,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     margin="0 0 16px 0"
                     fontWeight="500"
                     lineHeight="116%" 
+                    letterSpacing="normal"
                     fontFamily="FK Grotesk Neue">{t("home.hero.title")}
                   </H1>
 
@@ -190,6 +191,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     fontSize={isMobile ? '16px' : '21px'} 
                     fontWeight="400"
                     lineHeight="140%" 
+                    letterSpacing="normal"
                   >
                       {/* {t("home.hero.description")} */}
                       Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
@@ -248,7 +250,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <ItemV
                       maxWidth = {'849px'}
                       margin = '0px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.notification-section.header.main-text")} </B> 
                           {t("home.notification-section.header.other-text")}
                       </H2>
@@ -290,7 +292,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             <NotificationMarquee>
                               
                               <GridItem>
-                                <H2 fontWeight='400' fontFamily="FK Grotesk Neue">{item.title}</H2>
+                                <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                                 <StarIcon />
                               </GridItem>
 
@@ -316,7 +318,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       maxWidth = {'849px'}
                       margin = '0px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.chat-section.header.main-text")} </B> 
                           {t("home.chat-section.header.other-text")}
                            <TagItem>COMING SOON</TagItem>
@@ -359,7 +361,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <NotificationMarquee>
                             
                             <GridItem>
-                              <H2 fontWeight='400' fontFamily="FK Grotesk Neue">{item.title}</H2>
+                              <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                               <StarIcon />
                             </GridItem>
 
@@ -413,6 +415,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               fontFamily="FK Grotesk Neue"
                               className="textTitle"
                               lineHeight="normal"
+                              letterSpacing='normal'
                               >{t(item.subtitle)}</H2>
 
                           <H3 color="#FFF"
@@ -421,6 +424,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
                               lineHeight="130%"
+                              letterSpacing='normal'
                               margin="12px 0px 0px 0px">{t(item.content)}</H3>
 
                               <SlideLink
@@ -470,6 +474,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       margin="8px 0 0 0"
                       fontFamily="FK Grotesk Neue"
                       lineHeight="130%"
+                      letterSpacing='normal'
                       >Learn how Push Network becomes L2 for web3 communication!</H2>
 
                 </ItemV>
@@ -550,10 +555,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   color="#fff"
                   borderRadius="0"
                   padding="0px 0px"
-                  fontSize="16px"
-                  fontWeight="500"
-                  letterSpacing="-0.01em"
-                  lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                 >
                   <SpanLink>Explore Blog</SpanLink>
@@ -569,6 +570,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
+                letterSpacing="normal"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
 
              {isMobile && (<SlideLink
@@ -615,7 +617,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <InvestorHeader
                   color="#FFFFFF"
                   fontWeight="500"
-                  letterSpacing="-0.02em"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -719,7 +721,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <H2
                   color="#FFFFFF"
                   fontWeight="500"
-                  letterSpacing="-0.02em"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -825,6 +827,7 @@ const HeroButton = styled(Button)`
     color: #fff;
     font-size: 14px;
     line-height: 142%;
+    letter-spacing: normal;
 
     @media ${device.mobileL} {
       font-size: 12px;
@@ -851,7 +854,7 @@ const HeroBody = styled(ItemV)`
 
 const HeroCTA = styled(ItemH)`
   font-family: FK Grotesk Neue !important;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   justify-content: flex-start;
   
   @media ${device.laptop} {
@@ -1077,6 +1080,7 @@ const TokenItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  letter-spacing: normal;
 
   @media ${device.mobileL} {
     font-size: 17px;
@@ -1582,7 +1586,7 @@ const SpanLink = styled(Span)`
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   line-height: 142%;
 
 

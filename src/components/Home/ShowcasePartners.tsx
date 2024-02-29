@@ -269,7 +269,7 @@ function PartnerChannels() {
             color="#fff"
             fontSize="36px"
             fontWeight="500"
-            letterSpacing="-0.02em"
+            letterSpacing="normal"
             margin="0px 0px"
             lineHeight="135%"
             fontFamily="FK Grotesk Neue"
@@ -281,9 +281,9 @@ function PartnerChannels() {
 
           <Span
             color="#fff"
-            size="18px"
-            weight="400"
-            spacing="-0.03em"
+            fontSize="18px"
+            fontWeight="400"
+            letterSpacing="normal"
             lineHeight="140%"
             textAlign='center'
           >

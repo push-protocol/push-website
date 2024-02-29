@@ -74,6 +74,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 color="#fff"
                 lineHeight="135%"
                 fontFamily="FK Grotesk Neue"
+                letterSpacing="normal"
               >
                 {postItem.metadata.title}
               </H2>
@@ -109,6 +110,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 color="#fff"
                 lineHeight="150%"
                 fontFamily="FK Grotesk Neue"
+                letterSpacing="normal"
               >
                 {postItem.metadata.title}
               </H2>
@@ -383,13 +385,14 @@ const BodyItem = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    letter-spacing: -0.03em;
+    letter-spacing: normal;
     font-family: FK Grotesk Neue;
   }
 
   h2 {
     width: 100%;
     font-family: FK Grotesk Neue;
+    letter-spacing: normal;
 
     overflow: hidden;
     display: -webkit-box !important;
@@ -410,6 +413,7 @@ const TextSpan = styled(Span)`
   font-style: normal;
   font-weight: 400;
   line-height: 135%;
+  letter-spacing: normal;
   overflow: hidden;
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
