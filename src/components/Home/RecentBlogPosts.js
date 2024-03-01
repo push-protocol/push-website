@@ -22,6 +22,7 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
+  const isMobile = useMediaQuery(device.mobileL);
   return (
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
@@ -68,12 +69,12 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               </ItemH>
 
               <H2
-                margin="8px 0"
+                margin={isTablet ? "0px 0 24px 0" : "8px 0"}
                 textAlign="left"
-                fontSize={isTablet ? "20px" : "30px"}
                 color="#fff"
-                lineHeight="150%"
+                lineHeight="135%"
                 fontFamily="FK Grotesk Neue"
+                letterSpacing="normal"
               >
                 {postItem.metadata.title}
               </H2>
@@ -91,7 +92,6 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
         return (
           <BlogPostCardSecondary
             key={index}
-            c
             className={`item-${index}`}
             onClick={() => {
               window.open(
@@ -106,10 +106,11 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               <H2
                 margin="auto 0"
                 textAlign="left"
-                fontSize="20px"
+                fontWeight="500"
                 color="#fff"
                 lineHeight="150%"
                 fontFamily="FK Grotesk Neue"
+                letterSpacing="normal"
               >
                 {postItem.metadata.title}
               </H2>
@@ -167,11 +168,13 @@ const BlogPostList = styled(ItemH)`
     .item-1 {
       grid-column: 1;
       grid-row: 2;
+      margin-top: 40px;
     }
 
     .item-2 {
       grid-column: 2;
       grid-row: 2;
+      margin-top: 40px;
     }
   }
 
@@ -190,32 +193,21 @@ const BlogPostList = styled(ItemH)`
     .item-0 {
       grid-column: 1;
       grid-row: 2;
-      margin-top: 24px;
+      margin-top: 32px;
     }
 
     .item-1 {
       grid-column: 1;
       grid-row: 3;
-      margin-top: 24px;
+      margin-top: 32px;
     }
 
     .item-2 {
       grid-column: 1;
       grid-row: 4;
-      margin-top: 24px;
+      margin-top: 32px;
     }
   }
-`;
-
-const BlogPostCardContainer = styled(ItemV)`
-  // justify-content: flex-start;
-  // gap: 25px;
-
-  // @media ${device.laptop} {
-  //   display: grid;
-  //   grid-template-columns: repeat(2, minmax(0, 1fr));
-  //   width: 100%;
-  // }
 `;
 
 const BlogPostCardPrimary = styled(Button)`
@@ -228,7 +220,7 @@ const BlogPostCardPrimary = styled(Button)`
   gap: 24px;
 
   & p {
-    margin: 0;
+    margin: 0 !important;
   }
 
   & img {
@@ -250,11 +242,28 @@ const BlogPostCardPrimary = styled(Button)`
     display: none;
   }
 
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 135%;
+  }
+
   & ${Span} {
     min-width: 200px;
   }
   @media ${device.laptop} {
     border-radius: 0px;
+
+    h2 {
+      font-size: 22px;
+      line-height: 150%;
+    }
+
+    & img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
   }
 
   @media ${device.tablet} {
@@ -263,6 +272,13 @@ const BlogPostCardPrimary = styled(Button)`
 
     & ${Span} {
       font-size: 20px;
+    }
+  }
+
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 18px;
+      line-height: 135%;
     }
   }
 `;
@@ -301,6 +317,12 @@ const BlogPostCardSecondary = styled(Button)`
     display: none;
   }
 
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 135%;
+  }
+
   & ${Span} {
     min-width: 200px;
     align-self: center;
@@ -313,6 +335,11 @@ const BlogPostCardSecondary = styled(Button)`
     height: auto;
     border-radius: 0px;
 
+    h2 {
+      font-size: 22px;
+      line-height: 150%;
+    }
+
     & img {
       min-width: 100%;
       max-width: 100%;
@@ -320,6 +347,7 @@ const BlogPostCardSecondary = styled(Button)`
       height: auto;
       border-radius: 24px;
       display: block;
+      aspect-ratio: 16/9;
     }
   }
 
@@ -333,6 +361,13 @@ const BlogPostCardSecondary = styled(Button)`
       min-width: 200px;
       height: auto;
       border-radius: 24px;
+    }
+  }
+
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 18px;
+      line-height: 135%;
     }
   }
 `;
@@ -350,13 +385,14 @@ const BodyItem = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    letter-spacing: -0.03em;
+    letter-spacing: normal;
     font-family: FK Grotesk Neue;
   }
 
   h2 {
     width: 100%;
     font-family: FK Grotesk Neue;
+    letter-spacing: normal;
 
     overflow: hidden;
     display: -webkit-box !important;
@@ -377,6 +413,7 @@ const TextSpan = styled(Span)`
   font-style: normal;
   font-weight: 400;
   line-height: 135%;
+  letter-spacing: normal;
   overflow: hidden;
   display: -webkit-box !important;
   -webkit-line-clamp: 2;
@@ -405,7 +442,7 @@ const TitleItem = styled.div`
     -webkit-box-orient: vertical;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     padding: 0 0 24px 0;
   }
 `;
