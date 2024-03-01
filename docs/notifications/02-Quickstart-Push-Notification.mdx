@@ -94,12 +94,14 @@ import { ethers } from "ethers";
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```js
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
+// Creating a signer object with the wallet that has a channel created in the selected network
+const signer = new ethers.Wallet("YOUR_PRIVATE_KEY");
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>
@@ -107,12 +109,14 @@ const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```js
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
+// Creating a signer object with the wallet that has a channel created in the selected network
+const signer = new ethers.Wallet("YOUR_PRIVATE_KEY");
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>
@@ -120,12 +124,14 @@ const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```js
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
+// Creating a signer object with the wallet that has a channel created in the selected network
+const signer = new ethers.Wallet("YOUR_PRIVATE_KEY");
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>

@@ -40,12 +40,14 @@ The following speed run is designed to give you a quick overview of usage and de
 import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
 import { ethers } from "ethers";
 
-// Creating a random signer from a wallet, ideally this is the wallet you will connect
-const signer = ethers.Wallet.createRandom();
+// Creating a signer object with the wallet that has a channel created in the selected network
+const signer = new ethers.Wallet("YOUR_PRIVATE_KEY");
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 
 // List inbox notifications
 const inboxNotifications = await userAlice.notification.list("INBOX");
