@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[23212],{910448:s=>{s.exports=JSON.parse('{"label":"Ido","permalink":"/blog/tags/ido","allTagsPath":"/blog/tags","count":3,"unlisted":false}')}}]);

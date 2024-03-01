@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[19847],{310448:e=>{e.exports=JSON.parse('{"label":"BlockchainDefi","permalink":"/blog/tags/blockchain-defi","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

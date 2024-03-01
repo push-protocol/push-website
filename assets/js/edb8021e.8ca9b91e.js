@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[53382],{892705:s=>{s.exports=JSON.parse('{"label":"Collaboration","permalink":"/blog/tags/collaboration","allTagsPath":"/blog/tags","count":3,"unlisted":false}')}}]);

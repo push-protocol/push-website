@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[80899],{242520:e=>{e.exports=JSON.parse('{"label":"Prediction Markets","permalink":"/blog/tags/prediction-markets","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);
