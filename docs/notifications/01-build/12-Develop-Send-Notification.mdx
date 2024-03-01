@@ -52,6 +52,7 @@ const sendNotifRes = await userAlice.channel.send(["*"], {
 | -              | _`options.notification`_         | `INotification`                                   | -       | An object containing the notification's title and body. (Mandatory)                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | -              | _`options.notification.title`_   | `string`                                          | -       | The title for the notification. If not provided, it is taken from notification.title.                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -              | _`options.notification.body`_    | `string`                                          | -       | The body of the notification. If not provided, it is taken from notification.body.                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -              | `options.secret`                 | `string`                                          | -       | Type of encryption standard to use for sending encrypted notification. Accepts either`PGPV1` or `LITV1`.                                                                                                                                                                                                                                                                                                                                                                              |
 | -              | `options.payload`                | `IPayload`                                        | -       | An object containing additional payload information for the notification.                                                                                                                                                                                                                                                                                                                                                                                                             |
 | -              | `options.payload.title`          | `string`                                          | -       | The title for the notification. If not provided, it is taken from notification.title.                                                                                                                                                                                                                                                                                                                                                                                                 |
 | -              | `options.payload.body`           | `string`                                          | -       | The body of the notification. If not provided, it is taken from notification.body.                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -134,3 +135,21 @@ const apiResponse: ApiResponse = await userAlice.channel.send(recipients, {
   // NotificationOptions - as per your given object structure
 });
 ```
+
+## Encrypted notification example
+
+Push Protocol supports sending encrypted notifications, which can only be decrypted by the intended recipients. You can send encrypted notifications to targeted/subsets of users. Currently, Push Notification supports two encryption standards: `PGPV1` and `LITV1`. Use `LITV1` to use [Lit Protocol encryption](https://developer.litprotocol.com/v2/resources/glossary#encryption) and `PGPV1` to use [PGP_V1 encryption](https://push.org/docs/chat/concepts/encryption-version-in-push-chat/#pgp_v1).
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// userAlice.channel.send([recipients], {options?})
+const sendNotifRes = await userAlice.channel.send(["AliceWalletAddress"], {
+  notification: { title: "test", body: "test" },
+  secret: "PGPV1", // or "LITV1"
+});
+```
+
+  </TabItem>
+</Tabs>
