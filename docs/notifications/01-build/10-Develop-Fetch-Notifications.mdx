@@ -113,9 +113,8 @@ This API is useful for fetching the list of all notifications sent from a channe
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.channel.notifications({options?})
-// Default, it fetches all the notifications from userAlice's Channel
-const allNotifications = await userAlice.channel.notifications();
+// userAlice.channel.notifications(channelAddress, {options?})
+const allNotifications = await userAlice.channel.notifications(channelAddress);
 ```
 
   </TabItem>
@@ -125,14 +124,14 @@ const allNotifications = await userAlice.channel.notifications();
 
 ### Fetch Notifications by Channel API
 
-| Param     | Type              | Subtype   | Default | Remarks                                                                                                                                                                                                                                                                 |
-| --------- | ----------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `options` | `object`          | -         | -       | An object containing additional options for filtering and pagination.                                                                                                                                                                                                   |
-| -         | `options.account` | `string`  | -       | Channel address that you want fetch notifications for, [Account supports a number of address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
-| -         | `options.page`    | `number`  | 1       | A number representing the page of results to retrieve.                                                                                                                                                                                                                  |
-| -         | `options.limit`   | `number`  | 10      | A number representing the maximum number of feeds to retrieve per page.                                                                                                                                                                                                 |
-| -         | `options.raw`     | `boolean` | False   | A boolean indicating whether to retrieve raw feed data.                                                                                                                                                                                                                 |
-| -         | `options.filter`  | `string`  | -       | Filter the notifications by their type. `1` for broadcast notifcations and likewise, Refer [Notification Types Section](/docs/notifications/build/types-of-notification) to learn more.                                                                                 |
+| Param              | Type             | Subtype   | Default | Remarks                                                                                                                                                                                                                                                                 |
+| ------------------ | ---------------- | --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`channelAddress`_ | `string`         | -         | -       | Channel address that you want fetch notifications for, [Account supports a number of address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
+| `options`          | `object`         | -         | -       | An object containing additional options for filtering and pagination.                                                                                                                                                                                                   |
+| -                  | `options.page`   | `number`  | 1       | A number representing the page of results to retrieve.                                                                                                                                                                                                                  |
+| -                  | `options.limit`  | `number`  | 10      | A number representing the maximum number of feeds to retrieve per page.                                                                                                                                                                                                 |
+| -                  | `options.raw`    | `boolean` | False   | A boolean indicating whether to retrieve raw feed data.                                                                                                                                                                                                                 |
+| -                  | `options.filter` | `string`  | -       | Filter the notifications by their type. `1` for broadcast notifcations and likewise, Refer [Notification Types Section](/docs/notifications/build/types-of-notification) to learn more.                                                                                 |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
