@@ -8,7 +8,7 @@ text: "Push Chat has been a game-changer for  web3 messaging, offering a hassle-
 tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 
-![Cover Image of Push Chat Messages 💬 ⚡](./cover-image.webp)
+![Cover Image of Push Chat message benchmark 💬 ⚡](./cover-image.webp)
 
 <!--truncate-->
 
