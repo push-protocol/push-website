@@ -170,7 +170,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <HeroButton onClick={() => {window.open(alertLink, '_blank');}}>
                   <StarColoredIcon />
-                  <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
+                  <H2 fontWeight="400" fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
                   <BsArrowRight />
                 </HeroButton>
 
@@ -179,14 +179,19 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     zIndex="2" 
                     fontSize={isMobile ? '32px' : '58px'} 
                     margin="0 0 16px 0"
-                    fontWeight="700" 
+                    fontWeight="500"
+                    lineHeight="116%" 
+                    letterSpacing="normal"
                     fontFamily="FK Grotesk Neue">{t("home.hero.title")}
                   </H1>
 
                   <Span
                     color="rgba(255, 255, 255, 1)"
                     zIndex="2"
-                    fontSize='21px'
+                    fontSize={isMobile ? '16px' : '21px'} 
+                    fontWeight="400"
+                    lineHeight="140%" 
+                    letterSpacing="normal"
                   >
                       {/* {t("home.hero.description")} */}
                       Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
@@ -230,7 +235,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="200px 40px 0px 40px"
+            // padding="180px 40px 0px 40px"
           >
             <ShowcasePartners />
           </Content>
@@ -244,8 +249,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           >
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      margin = '0px auto'>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.notification-section.header.main-text")} </B> 
                           {t("home.notification-section.header.other-text")}
                       </H2>
@@ -273,7 +278,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       </NotificationGridItem>
                   </NotificationGridSystem>
 
-                  <ItemV padding='0 0 10px 0'>
+                  <ItemV padding='0 0 15px 0'>
                     <GridMarquee
                           speed={1}
                           gradientWidth={8}
@@ -287,7 +292,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             <NotificationMarquee>
                               
                               <GridItem>
-                                <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
+                                <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                                 <StarIcon />
                               </GridItem>
 
@@ -311,9 +316,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'
+                      margin = '0px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.chat-section.header.main-text")} </B> 
                           {t("home.chat-section.header.other-text")}
                            <TagItem>COMING SOON</TagItem>
@@ -342,7 +347,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </ChatGridItem>
                     </ChatGridSystem>
 
-                    <ItemV padding='0 0 10px 0'>
+                    <ItemV padding='0 0 15px 0'>
                     <GridMarquee
                         speed={1}
                         gradientWidth={8}
@@ -356,7 +361,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <NotificationMarquee>
                             
                             <GridItem>
-                              <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
+                              <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                               <StarIcon />
                             </GridItem>
 
@@ -377,7 +382,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             alignSelf="center"
           >
 
-            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' gap="29px">
+            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' className='slideGap'>
                 {slideSection.map((item) => (
                 <SlideItem>
                       <Image
@@ -406,28 +411,27 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <H2 color="#FFF"
                               fontSize={isTablet ? '24px' : '30px'}
                               fontWeight="500"
-                              margin="8px 0px"
+                              margin="8px 0 0 0"
                               fontFamily="FK Grotesk Neue"
                               className="textTitle"
+                              lineHeight="normal"
+                              letterSpacing='normal'
                               >{t(item.subtitle)}</H2>
 
                           <H3 color="#FFF"
-                              fontSize={isTablet ? '17px' : '19px'}
+                              fontSize='19px'
                               fontWeight="400"
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
                               lineHeight="130%"
-                              margin="8px 0px">{t(item.content)}</H3>
+                              letterSpacing='normal'
+                              margin="12px 0px 0px 0px">{t(item.content)}</H3>
 
                               <SlideLink
                                   href={item.link}
                                   title={'new'}
                                   target="_blank"
                                   padding="0px 0px"
-                                  fontSize="15px"
-                                  fontWeight="500"
-                                  letterSpacing="-0.03em"
-                                  lineHeight="26px"
                                   className='button'
                                   margin="24px 0px 0px 0px"
                                   background="transparent"
@@ -467,8 +471,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   <H2 color="#FFF"
                       fontSize={isMobile ? '28px' : '30px'}
                       fontWeight="500"
-                      margin="8px 0px"
+                      margin="8px 0 0 0"
                       fontFamily="FK Grotesk Neue"
+                      lineHeight="130%"
+                      letterSpacing='normal'
                       >Learn how Push Network becomes L2 for web3 communication!</H2>
 
                 </ItemV>
@@ -483,7 +489,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         />
               </ItemV>
 
-              <ItemV>
+              <ItemV margin={isMobile && "32px  0 0 0"}>
                   <TokenItem>Proof of Stake Network</TokenItem>
                   <TokenItem>Fee Pool and Circular Economy</TokenItem>
                   <TokenItem>Stake Push for API Calls to the Network 
@@ -500,15 +506,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             title={'new'}
                             target="_blank"
                             padding="0px 0px"
-                            fontSize="16px"
-                            fontWeight="500"
-                            letterSpacing="-0.03em"
-                            lineHeight="26px"
                             className='button'
-                            margin="24px 0px 0px auto"
+                            margin={isMobile ? "24px auto 0px 0px" : "24px 0px 0px auto"}
                             background="transparent"
                             alignItems='center'
-                            justifyContent='flex-end'
+                            justifyContent={'flex-end'}
                           >
                             <SpanLink>Explore Tokenomics</SpanLink>
                             <BsArrowRight className="anchorSVGlink" />
@@ -526,13 +528,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
             {/* BLOG SECTION */}
             <ItemH>
-              <ItemH justifyContent="flex-start" alignItems="center" gap='6px'>
+              <ItemH justifyContent="flex-start" alignItems="center" gap='8px'>
                 <StarSolidIcon />
                 <H2
                   color="#D98AEC"
                   fontSize={"21px"}
                   fontWeight="500"
-                  letterSpacing="-0.02em"
+                  letterSpacing="0.84px"
                   lineHeight="130%"
                   fontFamily="FK Grotesk Neue"
                   // margin="0 0 40px 0"
@@ -553,10 +555,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   color="#fff"
                   borderRadius="0"
                   padding="0px 0px"
-                  fontSize="16px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                 >
                   <SpanLink>Explore Blog</SpanLink>
@@ -568,15 +566,16 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <H2
                 fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
-                margin={isMobile ? "12px 0 0 0" : "4px 0 0 0"}
+                margin="8px 0 0 0"
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
+                letterSpacing="normal"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
 
-             {isMobile && (<SlideItem
+             {isMobile && (<SlideLink
                   href="/blog"
-                  title="Exlore all articles"
+                  title="Explore all articles"
                   hoverBackground="transparent"
                   hover="transparent"
                   background="transparent"
@@ -584,16 +583,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   color="#fff"
                   borderRadius="0"
                   padding="0px 0px"
-                  fontSize="16px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                   margin={'24px 0 0 0'}
                 >
                   <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </SlideItem>)}
+                </SlideLink>)}
             
             <RecentBlogPosts recentPosts={recentPosts} />
 
@@ -621,9 +616,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             >
               <InvestorHeader
                   color="#FFFFFF"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="120%"
+                  fontWeight="500"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -635,14 +629,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
-              margin="3em 0"
+              margin={isMobile ? "24px 0 3em 0" : "72px 0 3em 0"}
               flex="1"
               alignItems="stretch"
             >
               <NewMarqueeAnimation
                 speed={2}
                 gradientWidth={8}
-                gap={18}
+                gap={24}
                 fixedWidth={'250px'}
                 direction="ltr"
 
@@ -683,7 +677,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <NewMarqueeAnimation
                 speed={-2}
                 gradientWidth={8}
-                gap={18}
+                gap={24}
                 fixedWidth={'250px'}
                 direction="ltr"
               >
@@ -722,19 +716,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
           id="mediaFeaturedInSection"
-          // background={GLOBALS.COLORS.BG_DARK}
         >
-          {/* <Content
-            className="contentBox"
-            alignSelf="center"
-          > */}
-
               <ItemH justifyContent="center">
                 <H2
                   color="#FFFFFF"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="120%"
+                  fontWeight="500"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -743,7 +730,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   {t("home.featured-section.title")}
                 </H2>
             </ItemH>
-          {/* </Content> */}
 
          <FeaturedList />
 
@@ -819,6 +805,7 @@ const HeroButton = styled(Button)`
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: rgba(255, 255, 255, 0.05);
 
+
   @media ${device.mobileM} {
     gap: 4px;
   }
@@ -838,9 +825,11 @@ const HeroButton = styled(Button)`
   
   h2 {
     color: #fff;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 142%;
+    letter-spacing: normal;
 
-    @media ${device.mobileM} {
+    @media ${device.mobileL} {
       font-size: 12px;
     }
 
@@ -865,7 +854,7 @@ const HeroBody = styled(ItemV)`
 
 const HeroCTA = styled(ItemH)`
   font-family: FK Grotesk Neue !important;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   justify-content: flex-start;
   
   @media ${device.laptop} {
@@ -906,7 +895,8 @@ const HeroAnalytics = styled(ItemH)`
   }
   
   @media ${device.laptop} {
-    margin: 40px 0 40px 0;
+    // margin: 40px 0 40px 0;
+    margin: 40px 0 0px 0;
     flex: initial;
     position: relative;
     bottom: auto;
@@ -969,6 +959,14 @@ const ShowcaseSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
+
+  .contentBox {
+    padding: 180px 40px 0px 40px;
+
+    @media ${device.laptop} {
+      padding: 140px 32px 0px 32px;
+    }
+  }
 `;
 
 const NotificationSection = styled(Section)`
@@ -977,18 +975,18 @@ const NotificationSection = styled(Section)`
   padding-bottom: 0px;
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
+    padding: 186px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 160px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 160px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 160px 16px 0px 16px;
     }
   }
 `;
@@ -1002,15 +1000,15 @@ const ChatSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1020,19 +1018,29 @@ const SlideSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
 
+  .slideGap {
+    gap: 29px;
+  }
+
   .contentBox {
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
+      .slideGap {
+        gap: 23px;
+      }
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
+      .slideGap {
+        gap: 32px;
+      }
     }
   }
 `;
@@ -1046,15 +1054,15 @@ const TokenomicsSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1072,6 +1080,7 @@ const TokenItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  letter-spacing: normal;
 
   @media ${device.mobileL} {
     font-size: 17px;
@@ -1080,6 +1089,10 @@ const TokenItem = styled.div`
 
 const TokenImage = styled(Image)`
     object-fit: contain;
+
+    @media ${device.mobileL} {
+      margin-top: 32px;
+    }
 `;
 
 const SlideItem = styled(ItemH)`
@@ -1088,11 +1101,12 @@ const SlideItem = styled(ItemH)`
    border-radius: 32px;
    border: 1px solid rgba(255, 255, 255, 0.10);
    backdrop-filter: blur(60px);
-   max-height: 750px;
+  //  max-height: 750px;
    min-height: 750px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
+   gap: 32px;
 
 
    @media ${device.laptop} {
@@ -1100,6 +1114,8 @@ const SlideItem = styled(ItemH)`
      max-height: auto;
      padding: 32px;
      gap: 32px;
+     padding: 48px 32px;
+
    }
 
    img {
@@ -1108,9 +1124,10 @@ const SlideItem = styled(ItemH)`
     display: block;
    }
 
-   @media ${device.tablet} {
-    padding: 32px;
+   @media ${device.mobileL} {
+      gap: 64px;
   }
+
 `;
 
 const FeaturedInSection = styled.div`
@@ -1120,15 +1137,15 @@ const FeaturedInSection = styled.div`
   padding: 200px 0px 0px 0px;
 
   @media ${device.laptop} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.tablet} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.mobileL} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 `;
 
@@ -1166,16 +1183,16 @@ const BlogSection = styled(Section)`
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 0px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 0px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1187,23 +1204,23 @@ const BackedBySection = styled(Section)`
   .contentBox {
     padding: 200px 40px 20px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 20px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 20px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 20px 24px;
+      padding: 180px 24px 20px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 20px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 20px 16px;
     }
   }
 `;
 
 const InvestorHeader = styled(H2)`
   width: 720px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 0px auto;
   @media ${device.tablet} {
     width: auto;
   }
@@ -1313,6 +1330,7 @@ const NotificationGridItem = styled.div`
         max-width: 100% !important;
         min-width: 100% !important;
         flex-direction: column;
+        gap: 16px;
 
 
         .anti-spam {
@@ -1330,6 +1348,7 @@ const NotificationGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
+    margin-top: 72px;
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1340,6 +1359,8 @@ const NotificationGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 
@@ -1428,6 +1449,7 @@ const ChatGridItem = styled.div`
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
+        gap: 16px;
 
         &:nth-child(3) {
           display: grid;
@@ -1470,7 +1492,8 @@ const ChatGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
-    // margin: 20em 0;
+    margin-top: 72px;
+
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1481,6 +1504,8 @@ const ChatGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 
@@ -1489,7 +1514,7 @@ const TagItem = styled.b`
     border-radius: 12px;
     border: 1px solid #D98AEC;
     background: transparent;
-    padding: 4px 8px;
+    padding: 2px 5px;
     color: #D98AEC;
     // text-align: center;
     font-size: 9px;
@@ -1505,8 +1530,7 @@ const NotificationMarquee = styled(ItemH)`
   align-items: center;
 
   margin: 64px 0;
-
-  `;
+`;
 
 const GridMarquee = styled(NewMarqueeAnimation)`
   // margin: 0 0 0 0;
@@ -1524,7 +1548,8 @@ const GridItem = styled(ItemH)`
 
   h2 { 
     color: #707187;
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 150%;
   }
 
   &:hover {
@@ -1554,15 +1579,16 @@ overflow: inherit;
     color: #D98AEC;
   }
 }
-  @media ${device.tablet} {
-    font-size: 18px;
-    font-weight: 400;
-  }
 `;
 
 const SpanLink = styled(Span)`
   position: relative;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 142%;
+
 
   &:after {
     content: '';

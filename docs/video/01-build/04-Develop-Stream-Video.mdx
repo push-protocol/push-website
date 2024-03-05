@@ -27,11 +27,11 @@ import Details from "@theme/Details";
 
 ```typescript
 // Initialize stream to listen for events:
-const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]})
+const stream = await userAlice.initStream([CONSTANTS.STREAM.VIDEO]);
 
 // Listen for video events
 // Import { TYPES, CONSTANTS } from @pushprotocol/restapi
-stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
+stream.on(CONSTANTS.STREAM.VIDEO, async (data: TYPES.VIDEO.EVENT) => {
   if (data.event === CONSTANTS.VIDEO.EVENT.REQUEST) {
     // handle call request
   }
@@ -54,7 +54,7 @@ stream.on(CONSTANTS.STREAM.VIDEO, async (data : TYPES.VIDEO.EVENT) => {
 });
 
 // Connect stream, Important to setup up listen first
-stream.connect()
+stream.connect();
 
 // stream supports other products as well, such as CONSTANTS.STREAM.NOTIF, CONSTANTS.STREAM.CHAT
 // more info can be found at push.org/docs
@@ -90,7 +90,7 @@ stream.connect()
 | `CONSTANTS.STREAM.CONNECT`    | Whenever the stream establishes connection.  |
 | `CONSTANTS.STREAM.DISCONNECT` | Whenever the stream gets disconnected.       |
 
-<Details summary="Expected response (CONSTANTS.STEAM.VIDEO - Video Request Stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.VIDEO - Video Request Stream)">
 
 ```typescript
 {
@@ -119,7 +119,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.VIDEO - Video Approve stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.VIDEO - Video Approve stream)">
 
 ```typescript
 {
@@ -148,7 +148,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.VIDEO - Video Connect stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.VIDEO - Video Connect stream)">
 
 ```typescript
 {
@@ -177,7 +177,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.VIDEO - Video Disconnect stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.VIDEO - Video Disconnect stream)">
 
 ```typescript
 {
@@ -203,7 +203,7 @@ stream.connect()
 
 </Details>
 
-<Details summary="Expected response (CONSTANTS.STEAM.VIDEO - Video Deny stream)">
+<Details summary="Expected response (CONSTANTS.STREAM.VIDEO - Video Deny stream)">
 
 ```typescript
 {
