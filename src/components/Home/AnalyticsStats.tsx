@@ -143,6 +143,8 @@ function AnalyticsStats() {
 }
 
 const AnalyticsStatCardList = styled.div`
+  background: #0D0D0F;
+
   flex: 1;
   // background: linear-gradient(
   //   90deg,
@@ -176,6 +178,12 @@ const AnalyticsStatCardList = styled.div`
 
     border-radius: 32px;
   }
+
+  @media ${device.mobileL} {
+    display: grid;
+    grid-template-columns: repeat(2, 113px);
+    justify-content: space-between;
+  }
 `;
 
 const AnalyticsStatCard = styled(ItemH)`
@@ -194,25 +202,33 @@ const AnalyticsStatCard = styled(ItemH)`
     // for 4 items
     flex: 0 0 48%;
   }
+
+  @media ${device.mobileL} {
+    // max-width: 113px;
+    // min-width: 113px;
+  }
+
 `
 
 const KPIFigure = styled(Span)`
-  font-weight: 700;
-  font-size: 48px;
+  font-weight: 500;
+  font-size: 44px;
   line-height: 110%;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   color: #ffffff;
 
-  @media ${device.tablet} {
-    font-size: 32px;
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 
 const KPIMetric = styled(Span)`
   font-weight: 400;
-  font-size: 18px;
-  line-height: 121%;
-  letter-spacing: -0.03em;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: normal;
   color: #ffffff;
 
   @media ${device.tablet} {
@@ -220,6 +236,11 @@ const KPIMetric = styled(Span)`
     text-align: center;
     font-size: 16px;
     font-weight: 400;
+  }
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 

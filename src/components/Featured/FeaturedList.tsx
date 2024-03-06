@@ -184,14 +184,12 @@ const FeaturedCardTitle = styled(Span)`
   text-transform: inherit;
   margin: 0px;
   padding: 0px;
-  letter-spacing: -0.03em;
+  letter-spacing: normal;
   text-align: initial;
   line-height: 140%;
   position: initial;
   inset: auto;
-//   z-index: auto;
-//   padding-bottom: 50px;
-`
+`;
 
 const ArticleSource = styled(ItemH)`
   display: flex;
@@ -238,9 +236,9 @@ const SpanLink = styled(Span)`
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
   color: #FFF;
-  font-family: "FK Grotesk Neue";
+  font-family: FK Grotesk Neue;
   line-height: 142%; 
 
   &:after {

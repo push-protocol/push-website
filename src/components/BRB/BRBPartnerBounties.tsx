@@ -76,6 +76,42 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
 
           <BountyDescription>
             {item.text}
+            {
+            item.ended && item.winners.length > 0 ?
+            
+           
+            <WinnerItem>
+            <Image
+                     src={require(`@site/static/assets/website/brb/Medal.png`).default}
+                    
+                     alt={`Push Logo`}
+                     width="25px"
+                     height="24px"
+                   />
+                {  item.winners.length > 1 ?  "Winners :": "Winner :"}
+             { item.winners.map((winner, index) => (
+<>
+            
+              <a href={winner.github} target='_blank'>
+              <TwitterLink>
+                 {winner.winner} 
+              <Image
+                     src={require(`@site/static/assets/website/brb/Vector.png`).default}
+                    link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
+                     alt={`Push Logo`}
+                     width="8px"
+                     height="8px"
+                   />
+            </TwitterLink> 
+              </a>
+             
+
+                   </>
+                      ))}
+             </WinnerItem>
+
+            : null
+           }
           </BountyDescription>
           <BountyPrice>
 
@@ -100,39 +136,14 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
                  
                  
                  <BountyButton className="buttonId">
-                 <ViewBountyText>OPENED</ViewBountyText> 
+                 <ViewBountyText>OPEN</ViewBountyText> 
               
               </BountyButton>
           }
        
           
           </BountyItem>
-          {
-            item.ended ? <WinnerItem>
-           <Image
-                    src={require(`@site/static/assets/website/brb/Medal.png`).default}
-                   
-                    alt={`Push Logo`}
-                    width="25px"
-                    height="24px"
-                  />
-             
-              Winner TBA on Jan 16, 2024
-            <TwitterLink>
-             <a href='https://twitter.com/i/spaces/1lPKqbWRgvEGb' target='_blank'> @ X Spaces
-             
-
-             </a>
-            
-             </TwitterLink> <Image
-                    src={require(`@site/static/assets/website/brb/Vector.png`).default}
-                   link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
-                    alt={`Push Logo`}
-                    width="8px"
-                    height="8px"
-                  />
-            </WinnerItem> : null
-           }
+          
           </BountyPrice>
         </PartnerLine>
       ))}
@@ -142,8 +153,9 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
 
 const TwitterLink = styled.div`
 color: #E64DE9;
-
-
+display: flex;
+align-items: center;
+gap:6px;
 `
 const WinnerItem = styled.div`
 
@@ -151,9 +163,10 @@ font-size: 16px;
   font-weight: 400;
   font-family: "Glancyr", sans-serif;
   display: flex;
-  gap:8px;
+  flex-wrap: wrap;
+  gap:10px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   color: #fff;
 `
 const BountyPrice = styled.div`
@@ -277,7 +290,11 @@ const BountyDescription = styled(Span)`
   font-weight: 400;
   font-size: 18px;
   color: var(--ifm-color-primary-inverse);
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap:5px;
   margin: 10px 20px;
   left: 200px;
   right: 0;

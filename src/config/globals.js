@@ -1,8 +1,8 @@
 // Define Size and Device
 export const size = {
   mobileS: "320px",
-  mobileM: "375px",
-  mobileL: "425px",
+  mobileM: "395px",
+  mobileL: "470px",
   tablet: "768px",
   laptop: "1024px",
   laptopM: "1260px",

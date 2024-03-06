@@ -417,7 +417,7 @@ export default class oasisChannel extends EPNSChannel {
     return priceObject;
   }
 
-  public async sendMessageToContract(simulate) {
+  public async sendMessageToNode(simulate) {
     this.logInfo(`Looking at vaults for liquidation alert`);
     this.logInfo(`Initialising maker and mcd manager`);
     try {
@@ -799,7 +799,7 @@ As we have a complex use case for notifications, we are sending notifications ov
 
 ```jsx
 // Final set of code to send notifications
-public async sendMessageToContract(simulate) {
+public async sendMessageToNode(simulate) {
     this.logInfo(`Looking at vaults for liquidation alert`);
     this.logInfo(`Initialising maker and mcd manager`);
     try {
@@ -866,27 +866,19 @@ export default () => {
   threeHourRule.minute = 0;
 
   // OASIS CHANNEL
-  logger.info(
-    `     🛵 Scheduling Showrunner - Oasis Channel[3 Hours] [${new Date(
-      Date.now(),
-    )}]`,
-  );
-  schedule.scheduleJob(
-    { start: startTime, rule: threeHourRule },
-    async function () {
-      const oasis = Container.get(OasisChannel);
-      const taskName =
-        "Oasis check vault situation and sendMessageToContract()";
+  logger.info(`     🛵 Scheduling Showrunner - Oasis Channel[3 Hours] [${new Date(Date.now())}]`);
+  schedule.scheduleJob({ start: startTime, rule: threeHourRule }, async function() {
+    const oasis = Container.get(OasisChannel);
+    const taskName = 'Oasis check vault situation and sendMessageToNode()';
 
-      try {
-        await oasis.sendMessageToContract(false);
-        logger.info(`🐣 Cron Task Completed -- ${taskName}`);
-      } catch (err) {
-        logger.error(`❌ Cron Task Failed -- ${taskName}`);
-        logger.error(`Error Object: %o`, err);
-      }
-    },
-  );
+    try {
+      await oasis.sendMessageToNode(false);
+      logger.info(`🐣 Cron Task Completed -- ${taskName}`);
+    } catch (err) {
+      logger.error(`❌ Cron Task Failed -- ${taskName}`);
+      logger.error(`Error Object: %o`, err);
+    }
+  });
 };
 ```
 
@@ -921,7 +913,7 @@ export default (app: Router) => {
       logger.debug('Calling /showrunners/oasis/send_message ticker endpoint with body: %o', req.body);
       try {
         const channel = Container.get(OasisChannel);
-        const response = await channel.sendMessageToContract(req?.body.simulate);
+        const response = await channel.sendMessageToNode(req?.body.simulate);
         return res.status(201).json(response);
       } catch (e) {
         logger.error('🔥 error: %o', e);

@@ -28,7 +28,7 @@ const Glassy = ({ section }) => {
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideOnMobile, bg, bgvideosrc, bgtitle, link } = config || "";
+  const { id, height, padding, hideonmobile, bg, bgvideosrc, bgtitle, link } = config || "";
   const {
     title,
     tags,
@@ -133,8 +133,9 @@ const Glassy = ({ section }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       height={height}
-      hideOnMobile={hideOnMobile}
+      hideonmobile={hideonmobile}
       type={type}
+      illustration={illustration && true}
       className={`${hovered ? "active" : ""} ${id}`}
     >
       <GlowwyBorder 
@@ -152,7 +153,7 @@ const Glassy = ({ section }) => {
         title={t(bgtitle)}
       >
         {/* If bgvideosrc is present, then play video on hover */}
-        {bgvideosrc &&
+        {/* {bgvideosrc &&
           <ReactPlayer
             url={require(`@site/static/assets/website/home/${bgvideosrc}.mp4`).default}
             playing={hovered ? true : false}
@@ -162,7 +163,7 @@ const Glassy = ({ section }) => {
             height="100%"
             style={{ position: "absolute", top: 0, bottom:0, right: 0, left: 0, visibility: hovered && bgvideosrc ? 'visible' : 'hidden' }}
           />
-        }
+        } */}
 
         <Header highlight={highlight} type={type} id={id}>
           <Subheader
@@ -195,11 +196,12 @@ const Glassy = ({ section }) => {
                   color="#D98AEC"
                   fontWeight="bold"
                   fontFamily="FK Grotesk Neue"
+                  letterSpacing='normal'
                 >
                   {t(subheader)}
                 </H2>
 
-                <H2Text fontFamily="FK Grotesk Neue" theme={theme} type={type}>
+                <H2Text fontFamily="FK Grotesk Neue" letterSpacing='normal' theme={theme} type={type}>
                   {t(title)}
                 </H2Text>
               </Title>
@@ -239,7 +241,7 @@ const Glassy = ({ section }) => {
         {body && (
           <Body>
             {/* If Image, check if videosrc is present, if yes, load video */}
-            {type === "image" && videosrc &&
+            {/* {type === "image" && videosrc &&
               <ReactPlayer
                 url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                 playing={hovered ? true : false}
@@ -249,7 +251,7 @@ const Glassy = ({ section }) => {
                 height="100%"
                 style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
               />
-            }
+            } */}
 
             {/* If Image, check if videosrc is present, if yes, play video on hover */}
             {type === "image" &&
@@ -261,7 +263,7 @@ const Glassy = ({ section }) => {
                 srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
                 alt={t(imagealt)}
                 title={t(imagetitle)}
-                style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                 type={type}
                 id={id}
               />
@@ -295,7 +297,7 @@ const Glassy = ({ section }) => {
                 <ItemV
                   padding="0px 0px 0px 0px"
                 >
-                  {videosrc &&
+                  {/* {videosrc &&
                     <ReactPlayer
                       url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
                       playing={hovered ? true : false}
@@ -305,7 +307,7 @@ const Glassy = ({ section }) => {
                       height="100%"
                       style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
                     />
-                  }
+                  } */}
 
                   <BodyImage
                     src={
@@ -316,7 +318,7 @@ const Glassy = ({ section }) => {
                     srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
                     alt={t(imagealt)}
                     title={t(imagetitle)}
-                    style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
+                    // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
                     type={type}
                     margin={isMobile && "12px 0 0 0"}
                   />
@@ -328,7 +330,7 @@ const Glassy = ({ section }) => {
 
         {footer && (
           <Footer>
-            {text && <H2Text fontFamily="FK Grotesk Neue">{t(text)}</H2Text>}
+            {text && <H2Text fontFamily="FK Grotesk Neue" id={id}>{t(text)}</H2Text>}
           </Footer>
         )}
 
@@ -388,7 +390,8 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
+    background: #0D0D10;
+    // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 
@@ -402,13 +405,11 @@ const Container = styled.div`
     max-height: ${(props) => props.height || "auto"};
     min-height: ${(props) => props.height || "auto"};
   }
-
-
     
     @media ${device.mobileL} {
-        display: ${(props) => props.hideOnMobile && 'none !important'};
-        max-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
-        min-height: ${({id, type ,height}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : height ? height : 'auto'};
+        display: ${(props) => props.hideonmobile && 'none !important'};
+        max-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
+        min-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
         width: 100% !important;
     }
 `;
@@ -444,7 +445,7 @@ const Subcontainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: ${(props) => props.padding || "24px"};
+  padding: ${({id, padding}) => id == 'plug-play' ? '24px 24px 0px 24px' : padding ? padding : "24px"};
   background-image: url(${(props) => props.bg});
     background-position: ${(props) =>
       props.id == "snap"
@@ -461,9 +462,21 @@ const Subcontainer = styled.div`
         : "contain"};
 
   @media ${device.tablet} {
+    margin: ${(props) => props.id == "anti-spam" || props.id == "chat-requests" ? "auto 0" : ""};
     background-size: ${(props) =>
       props.id == "hyperscalable"
         ? "75% auto"
+        : props.id == "interoperable"
+          ? "cover"
+          : "contain"};
+  }
+
+  @media ${device.mobileL} {
+    gap: ${(props) => props.id == "plug-play" && '24px'};
+    padding: ${({id, padding}) => id == 'plug-play' ? '24px' : padding || "24px"};
+    background-size: ${(props) =>
+      props.id == "hyperscalable"
+        ? "auto 73%"
         : props.id == "interoperable"
           ? "cover"
           : "contain"};
@@ -506,6 +519,7 @@ const H2Text = styled(H2)`
 
     @media ${device.mobileL} {
         white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
+        margin-top: ${({id}) => id == 'snap' ? '24px' : '0'};
     }
 
     background: ${(props) => props.theme === 'hue' && "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
@@ -586,7 +600,7 @@ const BodyImage = styled(Image)`
         : type == "image"
           ? "80%"
           : "inherit"};
-    margin: ${(props) => props.type == "image" && "0 auto"};
+    margin: ${({id, type}) => id == 'plug-play' ? '0 auto' : type == "image"  && id !== 'token-gated' && " 24px auto 0 auto"};
   }
 `;
 

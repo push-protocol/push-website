@@ -14,24 +14,22 @@ import Spline from "@splinetool/react-spline";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsArrowRight ,BsFileX } from "react-icons/bs";
-import { FiArrowUpRight } from "react-icons/fi";
+import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
 import styled from "styled-components";
 
 // Internal Components
 import FadeInAnimation from "@site/src/components/FadeInAnimation";
+import FeaturedList from '@site/src/components/Featured/FeaturedList';
+import Glassy from '@site/src/components/Glassy/Glassy';
 import AnalyticsStats from "@site/src/components/Home/AnalyticsStats";
-import PushProductsScroll from "@site/src/components/Home/PushProductsScroll";
 import RecentBlogPosts from "@site/src/components/Home/RecentBlogPosts";
 import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import { HomeGlassyNotifsList, HomeGlassyChatList } from '@site/src/config/GlassyComponentsList';
 import { GlassyComponentMarqueeList } from '@site/src/config/GlassyComponentMarqueeList';
-import Glassy from '@site/src/components/Glassy/Glassy'
-import FeaturedList from '@site/src/components/Featured/FeaturedList'
-import { slideSection } from '@site/src/config/SlideSection'
+import { HomeGlassyChatList, HomeGlassyNotifsList } from '@site/src/config/GlassyComponentsList';
+import { slideSection } from '@site/src/config/SlideSection';
 import {
   A,
   B,
@@ -53,22 +51,12 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import BNBChainSVG from "@site/static/assets/BNBChain.svg";
 import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
 import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
-import CensorshipresistantFigure from "@site/static/assets/website/illustrations/censorshipresistant.svg";
-import ChainAgnosticFigure from "@site/static/assets/website/illustrations/chainagnostic.svg";
-import DecentralizedstackFigure from "@site/static/assets/website/illustrations/decentralizedstack.svg";
-import ImmediatecommunicationFigure from "@site/static/assets/website/illustrations/immediatecommunication.svg";
-import ImproveduxFigure from "@site/static/assets/website/illustrations/improvedux.svg";
+import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
-import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
-import SecurityalertsFigure from "@site/static/assets/website/illustrations/securityalerts.svg";
-import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
-import GithubSVG from "@site/static/assets/website/shared/github.svg";
-import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
 
 // Internal Configs
 import { InvList } from "@site/src/config/HomeInvestorList";
-import { MediaList } from "@site/src/config/HomeMediaList";
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 
@@ -117,6 +105,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
+  const alertLink = `https://snaps.metamask.io/snap/npm/pushprotocol/snap/`;
+
+
 
   return (
      <Layout title={PageMeta.HOME.pageTitle} description={PageMeta.HOME.pageDescription} showNavbar='website'>
@@ -124,6 +115,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
         <meta name="description" content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org" />
@@ -160,26 +153,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
-          // minHeight={`calc(100vh + ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE})`}
-          // background={GLOBALS.COLORS.BG_LIGHT}
+          minHeight="100vh"
           width="100%"
           overflow="hidden"
           className="darkBackground"
         >
-          <ItemV
-            // id="herobg"
-            position="absolute"
-            top="0"
-            right="0"
-            bottom="0"
-            left="0"
-            // background={GLOBALS.COLORS.BG_DARK}
-            // borderRadius={`0 0 ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE} ${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
-          />
-
           <HeroContent alignSelf="center">
             <HeroAnimation>
-              {/* <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" /> */}
+              <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
             </HeroAnimation>
             <HeroPrimary flex="initial" justifyContent="flex-start">
               <HeroItem
@@ -187,53 +168,63 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 alignItems="flex-start"
                 // margin="10px 0 0 0"
               >
-                <HeroButton>
-                    <StarColoredIcon />
-                    <H2 fontSize='14px' fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
-                    <BsArrowRight />
+                <HeroButton onClick={() => {window.open(alertLink, '_blank');}}>
+                  <StarColoredIcon />
+                  <H2 fontWeight="400" fontFamily="FK Grotesk Neue">Push Metamask Snap is now Live! Get Started</H2>
+                  <BsArrowRight />
                 </HeroButton>
 
-                <HeroText>
-                    <H1 zIndex="2" fontSize={isMobile ? '48px' : '58px'} fontWeight="700" fontFamily="FK Grotesk Neue">{t("home.hero.title")}</H1>
+                <HeroBody>
+                  <H1 
+                    zIndex="2" 
+                    fontSize={isMobile ? '32px' : '58px'} 
+                    margin="0 0 16px 0"
+                    fontWeight="500"
+                    lineHeight="116%" 
+                    letterSpacing="normal"
+                    fontFamily="FK Grotesk Neue">{t("home.hero.title")}
+                  </H1>
 
-                    <TextSpan
-                      // margin='20px 0px 40px 0'
-                      color="rgba(255, 255, 255, 1)"
-                      zIndex="2"
-                      fontSize='21px'
-                    >
-                        {/* {t("home.hero.description")} */}
-                        Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
-                    </TextSpan>
-                </HeroText>
+                  <Span
+                    color="rgba(255, 255, 255, 1)"
+                    zIndex="2"
+                    fontSize={isMobile ? '16px' : '21px'} 
+                    fontWeight="400"
+                    lineHeight="140%" 
+                    letterSpacing="normal"
+                  >
+                      {/* {t("home.hero.description")} */}
+                      Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.
+                  </Span>
+                </HeroBody>
 
-                  <HeroCTA justifyContent="flex-start" gap="18px">
-                    <A
-                      href="/docs"
-                      title={t("home.hero.alt-start-button")}
-                      background={GLOBALS.COLORS.HIGHLIGHT}
-                      color={GLOBALS.COLORS.FONT_LIGHT}
-                      lineHeight="142%"
-                      fontSize='16px'
-                      zIndex="2"
-                    >
-                      {t("home.hero.start-button")}
-                    </A>
-                  </HeroCTA>
+                <HeroCTA gap="18px">
+                  <A
+                    href="/docs"
+                    title={t("home.hero.alt-start-button")}
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    lineHeight="142%"
+                    fontSize='16px'
+                    zIndex="2"
+                  >
+                    {t("home.hero.start-button")}
+                  </A>
+                </HeroCTA>
               
               </HeroItem>
             </HeroPrimary>
 
-            <AnalyticsStatsContainer
-              // position="absolute"
-              // zIndex="9"
-              // left="0"
-              // right="0"
-              // bottom='0'
-              // bottom="7vh"
-            >
+            <HeroAnalytics
+              position="absolute"
+              zIndex="9"
+              left="0"
+              right="0"
+              bottom='0'
+              bottom="20px"
+          >
               <AnalyticsStats />
-            </AnalyticsStatsContainer>
+            </HeroAnalytics>
 
 
           </HeroContent>
@@ -244,7 +235,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="200px 40px 0px 40px"
+            // padding="180px 40px 0px 40px"
           >
             <ShowcasePartners />
           </Content>
@@ -258,8 +249,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           >
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      margin = '0px auto'>
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.notification-section.header.main-text")} </B> 
                           {t("home.notification-section.header.other-text")}
                       </H2>
@@ -287,7 +278,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       </NotificationGridItem>
                   </NotificationGridSystem>
 
-                  <ItemV padding='0 0 10px 0'>
+                  <ItemV padding='0 0 15px 0'>
                     <GridMarquee
                           speed={1}
                           gradientWidth={8}
@@ -301,7 +292,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                             <NotificationMarquee>
                               
                               <GridItem>
-                                <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
+                                <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                                 <StarIcon />
                               </GridItem>
 
@@ -325,9 +316,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                   <ItemV
                       maxWidth = {'849px'}
-                      margin = '0px auto 72px auto'
+                      margin = '0px auto'
                       flexDirection = 'row'>
-                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight={isMobile && '30px'} fontWeight="500" fontFamily="FK Grotesk Neue">
+                      <H2 color='#DDD8D8' fontSize={isMobile ? '24px' : '30px'} textAlign={isMobile ? 'left' : 'center'} lineHeight='normal' fontWeight="400" letterSpacing='normal' fontFamily="FK Grotesk Neue">
                           <B color='#fff'>{t("home.chat-section.header.main-text")} </B> 
                           {t("home.chat-section.header.other-text")}
                            <TagItem>COMING SOON</TagItem>
@@ -356,7 +347,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                         </ChatGridItem>
                     </ChatGridSystem>
 
-                    <ItemV padding='0 0 10px 0'>
+                    <ItemV padding='0 0 15px 0'>
                     <GridMarquee
                         speed={1}
                         gradientWidth={8}
@@ -370,7 +361,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                           <NotificationMarquee>
                             
                             <GridItem>
-                              <H2 fontFamily="FK Grotesk Neue">{item.title}</H2>
+                              <H2 fontWeight='400' letterSpacing='normal' fontFamily="FK Grotesk Neue">{item.title}</H2>
                               <StarIcon />
                             </GridItem>
 
@@ -385,26 +376,27 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ChatSection>
 
           {/* PUSH SPACE AND VIDEO SECTION */}
-        {/* <SlideSection id="slide-section">
+        <SlideSection id="slide-section">
           <Content
             className="contentBox"
             alignSelf="center"
           >
 
-            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' gap="29px">
-                {slideSection.map((item) => (<SlideItem>
+            <ItemH flexDirection={isMobile ? 'column' : 'row'} flexWrap='nowrap' className='slideGap'>
+                {slideSection.map((item) => (
+                <SlideItem>
                       <Image
                         width={'100%'}
                         height={'auto'}
-                        // borderRadius={item.title ? '50%' : '0'}
                         src={require(`@site/static/assets/website/slides/${item.imageref}.png`).default}
                         srcSet={`${require(`@site/static/assets/website/slides/${item.imageref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/${item.imageref}@3x.png`).default} 3x`}
-                        // alt={`${item?.alt}`}
+                        alt={t(item?.alt)}
+                        title={t(item?.title)}
                         loading="lazy"
                       />
 
 
-                      <ItemV alignItems='flex-start' margin="64px auto 0 0" maxWidth={isTablet ? "80%" : "70%"}>
+                      <SlideContent alignItems='flex-start' margin="0 auto 0 0" justifyContent="flex-end">
                           <H2 
                              textAlign='left'
                              color="#D98AEC"
@@ -414,47 +406,47 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                              lineHeight="130%"
                              letterSpacing="0.56px" 
                              fontFamily="FK Grotesk Neue"
-                             >{item.title}</H2>
+                             >{t(item.title)}</H2>
                           
                           <H2 color="#FFF"
-                              fontSize={isMobile ? '24px' : '30px'}
+                              fontSize={isTablet ? '24px' : '30px'}
                               fontWeight="500"
-                              margin="8px 0px"
+                              margin="8px 0 0 0"
                               fontFamily="FK Grotesk Neue"
-                              >{item.subtitle}</H2>
+                              className="textTitle"
+                              lineHeight="normal"
+                              letterSpacing='normal'
+                              >{t(item.subtitle)}</H2>
 
                           <H3 color="#FFF"
-                              fontSize="19px"
+                              fontSize='19px'
                               fontWeight="400"
                               fontFamily="FK Grotesk Neue"
                               color="#BBBCD0"
                               lineHeight="130%"
-                              margin="8px 0px">{item.content}</H3>
+                              letterSpacing='normal'
+                              margin="12px 0px 0px 0px">{t(item.content)}</H3>
 
                               <SlideLink
                                   href={item.link}
                                   title={'new'}
-                                  target="_self"
+                                  target="_blank"
                                   padding="0px 0px"
-                                  fontSize="16px"
-                                  fontWeight="500"
-                                  letterSpacing="-0.03em"
-                                  lineHeight="26px"
                                   className='button'
                                   margin="24px 0px 0px 0px"
                                   background="transparent"
                                   alignItems='center'
                                 >
-                                  <SpanLink>{item.itemLink}</SpanLink>
+                                  <SpanLink>{t(item.itemLink)}</SpanLink>
                                   <BsArrowRight className="anchorSVGlink" />
                                 </SlideLink>
-                      </ItemV>
+                      </SlideContent>
 
                 </SlideItem>))}
             </ItemH>
 
             </Content>
-        </SlideSection> */}
+        </SlideSection>
 
         <TokenomicsSection>
           <Content
@@ -474,28 +466,36 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                       lineHeight="130%"
                       letterSpacing="0.56px" 
                       fontFamily="FK Grotesk Neue"
-                      >Tokenomics</H2>
+                      >Push Network</H2>
 
                   <H2 color="#FFF"
                       fontSize={isMobile ? '28px' : '30px'}
                       fontWeight="500"
-                      margin="8px 0px"
+                      margin="8px 0 0 0"
                       fontFamily="FK Grotesk Neue"
-                      >Unlocking Token Value: Exploring Our Tokenomics</H2>
+                      lineHeight="130%"
+                      letterSpacing='normal'
+                      >Learn how Push Network becomes L2 for web3 communication!</H2>
 
                 </ItemV>
 
-                  {/* in place of the image for now */}
-                  <div style={{height:'180px', width: '100%', background: '#202024', borderRadius: '33px', margin: isMobile ? '32px 0 0 0' : '0 0 auto 0' }}></div>
+                  <TokenImage
+                        width={'100%'}
+                        height={'auto'}
+                        src={require(`@site/static/assets/website/tokenomics/tokenomics.webp`).default}
+                        srcSet={`${require(`@site/static/assets/website/tokenomics/tokenomics@2x.webp`).default} 2x, ${require(`@site/static/assets/website/tokenomics/tokenomics@3x.webp`).default} 3x`}
+                        alt={'Tokenomics'}
+                        loading="lazy"
+                        />
               </ItemV>
 
-              <ItemV>
-                  <TokenItem>Stake to Secure Network and Earn Rewards</TokenItem>
-                  <TokenItem>Circular Economy - Fee Pool Split</TokenItem>
-                  <TokenItem>Spam Protection - API Calls 
-                    <TagItem style={{marginLeft: "10px"}}>COMING SOON</TagItem>
+              <ItemV margin={isMobile && "32px  0 0 0"}>
+                  <TokenItem>Proof of Stake Network</TokenItem>
+                  <TokenItem>Fee Pool and Circular Economy</TokenItem>
+                  <TokenItem>Stake Push for API Calls to the Network 
+                    <TagItem style={{marginLeft: "10px"}}>NEW</TagItem>
                   </TokenItem>
-                  <TokenItem>Push Network Utility</TokenItem>
+                  <TokenItem>Define Fee Pool Share</TokenItem>
                   <TokenItem>Governance and Voting</TokenItem>
 
                          
@@ -504,17 +504,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
              <SlideLink
                             href={`https://push.org/docs/tokenomics/deepdive/$push/`}
                             title={'new'}
-                            target="_self"
+                            target="_blank"
                             padding="0px 0px"
-                            fontSize="16px"
-                            fontWeight="500"
-                            letterSpacing="-0.03em"
-                            lineHeight="26px"
                             className='button'
-                            margin="24px 0px 0px auto"
+                            margin={isMobile ? "24px auto 0px 0px" : "24px 0px 0px auto"}
                             background="transparent"
                             alignItems='center'
-                            justifyContent='flex-end'
+                            justifyContent={'flex-end'}
                           >
                             <SpanLink>Explore Tokenomics</SpanLink>
                             <BsArrowRight className="anchorSVGlink" />
@@ -524,7 +520,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </TokenomicsSection>
             
         {/* WHY PUSH AND BLOG */}
-        <WhyPushAndBlogSection>
+        <BlogSection>
           <Content
             className="contentBox"
             alignSelf="center"
@@ -532,13 +528,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
             {/* BLOG SECTION */}
             <ItemH>
-              <ItemH justifyContent="flex-start" alignItems="center" gap='6px'>
+              <ItemH justifyContent="flex-start" alignItems="center" gap='8px'>
                 <StarSolidIcon />
                 <H2
                   color="#D98AEC"
                   fontSize={"21px"}
                   fontWeight="500"
-                  letterSpacing="-0.02em"
+                  letterSpacing="0.84px"
                   lineHeight="130%"
                   fontFamily="FK Grotesk Neue"
                   // margin="0 0 40px 0"
@@ -549,7 +545,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemH>
 
               {!isMobile && (<ItemH justifyContent="flex-end">
-                <A
+                <SlideLink
                   href="/blog"
                   title="Exlore all articles"
                   hoverBackground="transparent"
@@ -559,30 +555,27 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   color="#fff"
                   borderRadius="0"
                   padding="0px 0px"
-                  fontSize="16px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                 >
-                  Explore Blog
+                  <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </A>
+                </SlideLink>
               </ItemH>)}
             </ItemH>
 
             <H2
                 fontSize={isMobile ? "24px" : "30px"}
                 color="#fff"
-                margin={isMobile ? "12px 0 0 0" : "4px 0 0 0"}
+                margin="8px 0 0 0"
                 fontWeight="500"
                 fontFamily="FK Grotesk Neue"
                 lineHeight="120%"
+                letterSpacing="normal"
             >Your gateway to shiny updates and innovations at Push Protocol. </H2>
 
-             {isMobile && (<A
+             {isMobile && (<SlideLink
                   href="/blog"
-                  title="Exlore all articles"
+                  title="Explore all articles"
                   hoverBackground="transparent"
                   hover="transparent"
                   background="transparent"
@@ -590,26 +583,20 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   color="#fff"
                   borderRadius="0"
                   padding="0px 0px"
-                  fontSize="16px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
                   fontFamily="FK Grotesk Neue"
                   margin={'24px 0 0 0'}
                 >
-                  Explore Blog
+                  <SpanLink>Explore Blog</SpanLink>
                   <BsArrowRight className="anchorSVGlink" />
-                </A>)}
+                </SlideLink>)}
             
             <RecentBlogPosts recentPosts={recentPosts} />
 
           </Content>
-        </WhyPushAndBlogSection>
+        </BlogSection>
 
         {/* BACKED BY SECTION */}
-        <BackedBySection
-          // background={GLOBALS.COLORS.BG_DARK}
-        >
+        <BackedBySection>
           <ItemV
             id="integratePush"
             position="absolute"
@@ -617,14 +604,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             right="0"
             bottom="0"
             left="0"
-            // background={GLOBALS.COLORS.BG_LIGHT}
-            // borderRadius={`${GLOBALS.ADJUSTMENTS.RADIUS.LARGE}`}
           />
 
           <Content
             className="contentBox"
             alignSelf="center"
-            // width="inherit"
             
           >
             <InvestorItem
@@ -632,9 +616,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             >
               <InvestorHeader
                   color="#FFFFFF"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="120%"
+                  fontWeight="500"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -646,14 +629,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             
             <MarqueeAnimationContainer
               // padding="120px 0 0 0"
-              margin="3em 0"
+              margin={isMobile ? "24px 0 3em 0" : "72px 0 3em 0"}
               flex="1"
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={3}
+                speed={2}
                 gradientWidth={8}
-                gap={18}
+                gap={24}
                 fixedWidth={'250px'}
                 direction="ltr"
 
@@ -692,9 +675,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               alignItems="stretch"
             >
               <NewMarqueeAnimation
-                speed={-3}
+                speed={-2}
                 gradientWidth={8}
-                gap={18}
+                gap={24}
                 fixedWidth={'250px'}
                 direction="ltr"
               >
@@ -733,19 +716,12 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection
           id="mediaFeaturedInSection"
-          // background={GLOBALS.COLORS.BG_DARK}
         >
-          {/* <Content
-            className="contentBox"
-            alignSelf="center"
-          > */}
-
               <ItemH justifyContent="center">
                 <H2
                   color="#FFFFFF"
-                  fontWeight="700"
-                  letterSpacing="-0.02em"
-                  lineHeight="120%"
+                  fontWeight="500"
+                  letterSpacing="normal"
                   fontSize={isMobile ? "24px" : "36px"}
                   fontFamily="FK Grotesk Neue"
                   lineHeight="130%"
@@ -754,7 +730,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   {t("home.featured-section.title")}
                 </H2>
             </ItemH>
-          {/* </Content> */}
 
          <FeaturedList />
 
@@ -765,22 +740,25 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   );
 }
 
-/**
- * V2 Design
- */
-const HeroPrimary = styled(ItemH)`
-  // margin: 120px 0;
+const HeroSection = styled(Section)`
+  overflow-y: visible;
+  overflow-x: clip;
 
   @media ${device.laptop} {
-    // margin: 80px 0 0 0;
-  }
-
-  @media ${device.mobileM} {
-    // margin: 80px 0 0 0;
+    min-height: initial;
   }
 `;
 
-const MemberImage = styled(ImageHolder)``;
+const HeroContent = styled(Content)`
+  align-self: stretch;
+  padding-top: 250px;
+  padding-bottom: 250px;
+
+  @media ${device.laptop} {
+    padding-top: 200px;
+    padding-bottom: 40px;
+  }
+`;
 
 const HeroAnimation = styled(ItemH)`
   position: absolute;
@@ -796,52 +774,92 @@ const HeroAnimation = styled(ItemH)`
   }
 `;
 
-const HeroContent = styled(Content)`
-  padding: 251px 40px 0px 40px;
-
-  media ${device.laptop} {
-    padding: 251px 32px 0px 32px;
-  }
-
-  @media ${device.tablet} {
-    padding: 251px 24px 0px 24px;
-  }
-
-  @media ${device.mobileL} {
-    padding: 251px 16px 0px 16px;
-    box-sizing: border-box;
-  }
-
-`;
-
-const HeroText = styled.div`
-    margin: 32px 0px;
-    @media ${device.mobileL} {
-      width: 100%;
-    }
-
-`;
-
-const HeroSection = styled(Section)`
-    max-height: 1200px;
+const HeroPrimary = styled(ItemH)`
+  
 `;
 
 const HeroItem = styled(ItemV)`
   z-index: 2;
+
   @media ${device.laptop} {
     max-width: initial;
-    // margin: ${(props) => props.margin || "0px"};
+    align-items: center;
+    margin: 0 15%;
   }
 
   @media ${device.mobileL} {
-    width: 100%;
-    // max-width: initial;
+    margin: 0 auto;
+  }
+`;
+
+const HeroButton = styled(Button)`
+  font-family: FK Grotesk Neue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 8px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+
+
+  @media ${device.mobileM} {
+    gap: 4px;
+  }
+
+  @media ${device.mobileS} {
+    gap: 2px;
+    padding: 12px 6px;
+    width: calc(100vw - 32px);
+    box-sizing: border-box;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+  }
+  
+  h2 {
+    color: #fff;
+    font-size: 14px;
+    line-height: 142%;
+    letter-spacing: normal;
+
+    @media ${device.mobileL} {
+      font-size: 12px;
+    }
+
+    @media ${device.mobileM} {
+      font-size: 11px;
+    }
+  }
+`;
+
+const HeroBody = styled(ItemV)`
+  margin: 32px 0px;
+  text-align: left;
+
+  @media ${device.laptop} {
+    text-align: center;
+
+    & > Span {
+      text-align: center;
+    }
   }
 `;
 
 const HeroCTA = styled(ItemH)`
   font-family: FK Grotesk Neue !important;
-  letter-spacing: -0.03em
+  letter-spacing: normal;
+  justify-content: flex-start;
+  
+  @media ${device.laptop} {
+    justify-content: center;
+  }
 
   @media ${device.mobileM} {
     &.Button {
@@ -850,30 +868,42 @@ const HeroCTA = styled(ItemH)`
   }
 `;
 
-const AnalyticsStatsContainer = styled(ItemH)`
-  // margin: 0px;
-  margin: 134px 0 0px 0;
-  flex: 1;
-  position: relative;
+const HeroAnalytics = styled(ItemH)`
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 50px;
+    width: 40%;
+    border-radius: 0 0 150px 150px;
+    background-color: #c336e4;
+    opacity: 0.35;
+    filter: blur(80px);
+    z-index: -1;
+  }
 
-  // ::after {
-  //   content: "";
-  //   position: absolute;
-  //   // bottom: 0;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 200px; /* Adjust the height of the shadow effect */
-  //   background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
-  //   z-index: 1;
-  // }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(202, 55, 237, 0) 18%, #CA37ED 50%, rgba(202, 55, 237, 0) 82%);
+  }
   
   @media ${device.laptop} {
+    // margin: 40px 0 40px 0;
+    margin: 40px 0 0px 0;
     flex: initial;
     position: relative;
     bottom: auto;
   }
 `;
+
+const MemberImage = styled(ImageHolder)``;
 
 const Gradient = styled.div`
     // background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
@@ -895,6 +925,7 @@ const HomeWrapper = styled(ItemV)`
   background: #0D0D0F;
   margin: 0;
   padding: 0;
+  overflow-x: hidden !important;
   font-family: FK Grotesk Neue !important;
   
   box-sizing: border-box;
@@ -928,6 +959,14 @@ const ShowcaseSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
+
+  .contentBox {
+    padding: 180px 40px 0px 40px;
+
+    @media ${device.laptop} {
+      padding: 140px 32px 0px 32px;
+    }
+  }
 `;
 
 const NotificationSection = styled(Section)`
@@ -936,18 +975,18 @@ const NotificationSection = styled(Section)`
   padding-bottom: 0px;
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
+    padding: 186px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 160px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 160px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 160px 16px 0px 16px;
     }
   }
 `;
@@ -961,15 +1000,15 @@ const ChatSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -979,19 +1018,29 @@ const SlideSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
 
+  .slideGap {
+    gap: 29px;
+  }
+
   .contentBox {
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
+      .slideGap {
+        gap: 23px;
+      }
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
+      .slideGap {
+        gap: 32px;
+      }
     }
   }
 `;
@@ -1005,15 +1054,15 @@ const TokenomicsSection = styled(Section)`
     padding: 200px 40px 0px 40px;
 
     @media ${device.laptop} {
-      padding: 200px 32px 0px 32px;
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
     @media ${device.mobileL} {
-      padding: 200px 16px 0px 16px;
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1031,10 +1080,19 @@ const TokenItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  letter-spacing: normal;
 
   @media ${device.mobileL} {
     font-size: 17px;
   }
+`;
+
+const TokenImage = styled(Image)`
+    object-fit: contain;
+
+    @media ${device.mobileL} {
+      margin-top: 32px;
+    }
 `;
 
 const SlideItem = styled(ItemH)`
@@ -1043,12 +1101,21 @@ const SlideItem = styled(ItemH)`
    border-radius: 32px;
    border: 1px solid rgba(255, 255, 255, 0.10);
    backdrop-filter: blur(60px);
-   max-height: 750px;
+  //  max-height: 750px;
    min-height: 750px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 32px;
+
 
    @media ${device.laptop} {
      min-height: auto;
      max-height: auto;
+     padding: 32px;
+     gap: 32px;
+     padding: 48px 32px;
+
    }
 
    img {
@@ -1057,319 +1124,75 @@ const SlideItem = styled(ItemH)`
     display: block;
    }
 
-   @media ${device.tablet} {
-    padding: 32px;
-  }
-`;
-
-const BuildWithPushSection = styled(Section)`
-  overflow: hidden;
-  padding: 0px 160px 0px;
-  width: 100%;
-  overflow: hidden;
-
-  @media ${device.tablet} {
-    padding: 0px 0px 10px 0px;
+   @media ${device.mobileL} {
+      gap: 64px;
   }
 
-  @media ${device.laptopL} {
-    padding: 0px 20px 40px;
-  }
-
-`;
-
-const ItemImage = styled(ItemV)`
-  width: 100%;
-  @media ${device.tablet} {
-    width: 400px;
-    margin: 0 auto;
-  }
-
-  @media ${device.mobileL} {
-    width: 100%;
-  }
 `;
 
 const FeaturedInSection = styled.div`
-  // padding: 0;
-  // min-height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 200px 0px 0px 0px;
 
   @media ${device.laptop} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.tablet} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
 
   @media ${device.mobileL} {
-    padding: 200px 0px 0px 0px;
+    padding: 180px 0px 0px 0px;
   }
-
-
-  // overflow: hidden;
-
-  // & .contentBox {
-  //   gap: 80px;
-  //   flex: 0;
-  //   padding-top: 0;
-  //   margin-top: 60px;
-  // }
-
-  // width: 100%;
-  // overflow: hidden;
-  // padding-bottom: 0px;
-
-  // .contentBox {
-   
-  // }
 `;
 
-const PushWorksRow = styled(ItemH)`
-  // column-gap: 105px;
-  column-gap: 40px;
-  margin-top: 150px;
-  margin-bottom: 200px;
-  display: flex;
-  flex-direction: row;
+const SlideContent = styled(ItemV)`
+  .textTitle {
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  max-width: 70%;
 
   @media ${device.laptop} {
-    & ${ItemV} {
-      align-items: flex-start;
+    max-width: 80%;
 
-      & ${Span} {
-        margin: 10px 0px 0px 0px;
-      }
-
-      & ${A} {
-        margin: 50px 0px 0px 0px;
-      }
-    }
   }
-  
+
   @media ${device.tablet} {
-    flex-direction: column;
-    row-gap: 30px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    max-width: 85%;
+
   }
 
   @media ${device.mobileL} {
-    row-gap: 30px;
-    flex-direction: column;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    max-width: 90%;
+
   }
 `;
 
-const LiveNetworks = styled(ItemH)` 
-  background: #ffffff;
-  border: 1px solid #bac4d6;
-  border-radius: 28px;
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 550px;
 
-  & .network {
-    padding: 26px 16px;
-
-    & svg {
-      width: 106px;
-      height: 26px;
-    }
-  }
-
-  @media ${device.laptopL} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
-
-    & .network {
-      padding: 26px 16px;
-
-      & svg {
-        width: 106px;
-        height: 26px;
-      }
-    }
-  }
-
-  @media ${device.tablet} {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: 18px;
-    max-width: initial;
-    align-self: stretch;
-
-    & .network {
-      padding: 15px 10px;
-
-      & svg {
-        width: 79.5px;
-        height: 19.5px;
-      }
-    }
-  }
-`;
-
-const LiveNetworkCard = styled(ItemV)`
-  flex: 1;
-  border-right: 1px solid #bac4d6;
-  
-  &:last-child {
-    border-right: 0px;
-  }
-
-  @media ${device.tablet} {
-    border-right: 1px solid #bac4d6;
-  
-    &:last-child {
-      border-right: 0px;
-    }
-  }
-`;
-
-const PushProductContent = styled.div`
-	padding: ${(props) => props.padding || "40px 0px 0px"};
-
-	&.contentBox {
-    max-width: 1213px;
-	}
-
-  @media ${device.tablet} {
-  	padding: ${(props) => props.padding || "40px 0px"};
-  }
-`;
-
-const Partners = styled(ItemV)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 50px;
-
-  @media ${device.laptop} {
-    flex-direction: column;
-    gap: 30px;
-  }
-`;
-
-const Matrix = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  border-bottom: 1px solid #000;
-`;
-
-const MatrixCell = styled.div`
-  display: flex;
-  padding: 42px 0 32px 32px;
-  flex-direction: column;
-  flex-basis: 33.33%;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  box-sizing: border-box;
-  position: relative;
-  color: #000;
-  row-gap: 24px;
-
-  justify-content: space-between;
-  flex-direction: column;
-
-  & .matrixFigure {
-    display: flex;
-    height: 72px;
-    align-items: center;
-  }
-
-  &:nth-child(3) {
-    border-right: 0;
-  }
-
-  &:nth-child(6) {
-    border-right: 0;
-  }
-
-  &::before {
-    position: absolute;
-    z-index: 1;
-    content: "";
-    top: -1px;
-    left: 0;
-    height: 8px;
-    width: 96px;
-    background: #dd44b9;
-  }
-
-  @media ${device.tablet} {
-    flex-basis: 50%;
-    padding: 16px 12px;
-    row-gap: 16px;
-
-    &:nth-child(2) {
-      border-right: 0;
-    }
-
-    &:nth-child(4) {
-      border-right: 0;
-    }
-
-    &:nth-child(3) {
-      border-right: 1px solid #000;
-    }
-
-    &:nth-child(6) {
-      border-right: 0;
-    }
-
-    & span {
-      font-size: 20px;
-    }
-
-    & .matrixFigure {
-      margin-top: 8px;
-    }
-  }
-`;
-
-const WhyPushTextBox = styled(ItemH)`
-  margin: 80px 160px;
-
-  @media ${device.tablet} {
-    margin: 50px 0;
-
-    & span {
-      text-align: center;
-      font-size: 16px;
-      line-height: 160%;
-    }
-  }
-`;
-
-const WhyPushAndBlogSection = styled(Section)`
+const BlogSection = styled(Section)`
   width: 100%;
   overflow: hidden;
 
   .contentBox {
     padding: 200px 40px 0px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 0px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 0px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 0px 24px;
+      padding: 180px 24px 0px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 0px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 0px 16px;
     }
   }
 `;
@@ -1381,23 +1204,23 @@ const BackedBySection = styled(Section)`
   .contentBox {
     padding: 200px 40px 20px 40px;
 
-    @media ${device.tablet} {
-      padding: 200px 32px 20px 32px;
+    @media ${device.laptop} {
+      padding: 180px 32px 20px 32px;
     }
 
     @media ${device.tablet} {
-      padding: 200px 24px 20px 24px;
+      padding: 180px 24px 20px 24px;
     }
 
-    @media ${device.tablet} {
-      padding: 200px 16px 20px 16px;
+    @media ${device.mobileL} {
+      padding: 180px 16px 20px 16px;
     }
   }
 `;
 
 const InvestorHeader = styled(H2)`
   width: 720px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 0px auto;
   @media ${device.tablet} {
     width: auto;
   }
@@ -1421,59 +1244,26 @@ const InvestorCard = styled(ItemV)`
     min-width: 242px;
     min-height: 96px;
     max-height: 96px;
-    // margin-right: 18px;
     flex: 0;
-
-    // margin-bottom: auto;
-
-`
-
-const NewInvestorCard = styled.div`
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 74px;
-  padding: 8px;
-  min-width: 242px;
-  min-height: 83px;
-  max-height: 83px;
-  // margin-right: 18px;
-
-  display: flex;
-  flex-direction: ${(props) => props.flexDirection ? "row" : 'column'};
-  align-items: center;
-  justify-content: flex-start;
-  background: red;
-  margin-bottom: auto
 `;
 
-const NewInvestorIcon = styled(Image)`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin: auto auto;
-  justify-content: flex-start;
-  
-`
-
 const InvestorIcon = styled(Image)`
-margin: auto auto;
-  
-`
-
+  margin: auto auto;
+`;
 
 
 const InvestorDetails = styled(ItemV)`
   align-self: stretch;
   flex: 1;
   margin-bottom: auto;
-
-`
+`;
 
 const InvestorTitle = styled(Span)`
   font-weight: 500;
   font-size: 22px;
   line-height: 142%;
   color: #09090b;
-`
+`;
 
 const InvestorSubtitle = styled(Span)`
   font-weight: 500;
@@ -1482,7 +1272,7 @@ const InvestorSubtitle = styled(Span)`
   letter-spacing: 0.11em;
   color: #303c5e;
   text-transform: uppercase;
-`
+`;
 
 
 const NotificationGridItem = styled.div`
@@ -1540,6 +1330,7 @@ const NotificationGridItem = styled.div`
         max-width: 100% !important;
         min-width: 100% !important;
         flex-direction: column;
+        gap: 16px;
 
 
         .anti-spam {
@@ -1557,6 +1348,7 @@ const NotificationGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
+    margin-top: 72px;
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1567,6 +1359,8 @@ const NotificationGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 
@@ -1655,6 +1449,7 @@ const ChatGridItem = styled.div`
     @media ${device.mobileL} {
         max-width: 100% !important;
         min-width: 100% !important;
+        gap: 16px;
 
         &:nth-child(3) {
           display: grid;
@@ -1697,7 +1492,8 @@ const ChatGridSystem = styled.div`
     flex-direction: row;
     gap: 24px;
     flex-wrap: wrap;
-    // margin: 20em 0;
+    margin-top: 72px;
+
 
     @media ${device.laptopM} {
         width: 100%;
@@ -1708,6 +1504,8 @@ const ChatGridSystem = styled.div`
         width: 100%;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
     }
 `;
 
@@ -1716,7 +1514,7 @@ const TagItem = styled.b`
     border-radius: 12px;
     border: 1px solid #D98AEC;
     background: transparent;
-    padding: 4px 8px;
+    padding: 2px 5px;
     color: #D98AEC;
     // text-align: center;
     font-size: 9px;
@@ -1732,8 +1530,7 @@ const NotificationMarquee = styled(ItemH)`
   align-items: center;
 
   margin: 64px 0;
-
-  `;
+`;
 
 const GridMarquee = styled(NewMarqueeAnimation)`
   // margin: 0 0 0 0;
@@ -1751,7 +1548,8 @@ const GridItem = styled(ItemH)`
 
   h2 { 
     color: #707187;
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 150%;
   }
 
   &:hover {
@@ -1767,37 +1565,12 @@ const GridItem = styled(ItemH)`
   }
 `;
 
-const TextSpan = styled(Span)`
-  overflow: hidden;
-`;
-
-const HeroButton = styled(Button)`
-  font-family: FK Grotesk Neue;
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-  justify-content: space-between;
-  padding: 12px 16px;
-  gap: 8px;
-  // margin: 24px 0px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.05);
-
-  &:hover {
-    border: 1px solid transparent;
-  }
-  
-  h2 {
-    color: #fff;
-    font-size: 13px;
-  }
-`;
 
 const SlideLink = styled(A)`
+overflow: inherit;
 .anchorSVGlink {
   color: #fff;
+  top: 3px;
 }
 
 &:hover {
@@ -1806,15 +1579,16 @@ const SlideLink = styled(A)`
     color: #D98AEC;
   }
 }
-  @media ${device.tablet} {
-    font-size: 18px;
-    font-weight: 400;
-  }
 `;
 
 const SpanLink = styled(Span)`
   position: relative;
   text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 142%;
+
 
   &:after {
     content: '';
@@ -1835,8 +1609,5 @@ const SpanLink = styled(Span)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)`
-`
-
-const GridAnimationContainer = styled(ItemV)`
-`
+`;
 

@@ -22,9 +22,9 @@ export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
     setIsAlertVisible(false);
   };
 
-  const alertMessage = 'Bounty winner surprise announcement for Round 1 @ X Spaces ';
+  const alertMessage = 'BRB Phase 1 Winners Announced  Learn More ';
 
-  const alertLink = `https://twitter.com/i/spaces/1lPKqbWRgvEGb`;
+  const alertLink = `https://push.org/blog/announcing-winners-of-billion-reasons/`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
