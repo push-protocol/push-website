@@ -23,35 +23,34 @@ import GLOBALS, { device } from '@site/src/config/globals';
 const CookieComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
 
-  const [cookies, setCookie] = useCookies(['myCookieConsent']);
+  const [cookies, setCookie] = useCookies(['pushCookies']);
   const [showModal, setShowModal] = useState(true);
 
   const handleAccept = () => {
-    setCookie('myCookieConsent', true, { path: '/' });
+    setCookie('pushCookies', true, { path: '/' });
     setShowModal(false);
   };
 
   const handleReject = () => {
     // Add your logic for rejecting cookies here
-    // setCookie('myCookieConsent', false, { path: '/' });
+    // setCookie('pushCookies', false, { path: '/' });
     setShowModal(false);
   };
 
   return (
     <>
-    {!cookies.myCookieConsent && showModal && (
+    {!cookies.pushCookies && showModal && (
     <CookieContainer>
       <H2 
         color="#000"
         fontWeight="400"
-        letterSpacing="0.02em"
-        lineHeight="120%"
-        fontSize={"13px"}
+        letterSpacing="normal"
+        fontSize={"14px"}
         fontFamily="FK Grotesk Neue"
         lineHeight="130%"
         textAlign="left">
           We use cookies to personalize your experience. 
-          Learn more in our <a href='https://push.org' target='_blank'>Privacy Policy</a>.
+          Learn more in our <a href='https://push.org/privacy' target='_blank' style={{textDecoration:'underline'}}>Privacy Policy</a>.
           </H2>
 
         <ButtonContainer>
@@ -72,7 +71,7 @@ const CookieContainer = styled.div`
   bottom: 16px;
   right: 16px;
   width: 344px;
-  height: 144px;
+  // height: 144px;
   z-index: 999999;
   border-radius: 12px;
   display: flex;
@@ -103,12 +102,15 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 32px;
 `;
 
 const AcceptButton = styled(Button)`
   color: #ffffff;
   border: none;
-  padding: 12px 28px;
+  height: 48px;
+  width: 104px;
+  padding: 0px;
   border-radius: 4px;
   cursor: pointer;
   border-radius: 8px;
@@ -122,7 +124,9 @@ const RejectButton = styled(Button)`
   background-color: transparent;
   color: #000;
   border: none;
-  padding: 12px 28px;
+  height: 48px;
+  width: 104px;
+  padding: 0px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
