@@ -136,7 +136,6 @@ const RejectButton = styled(Button)`
 
   &:hover {
     background-color: transparent !important;
-    text-decoration: underline;
   }
 `;
 export default CookieComponent;
