@@ -31,17 +31,21 @@ interface IBorder {
   chatViewComponent?: string;
   chatProfile?: string;
   messageInput?: string;
-  searchInput?: string;
-  modal?: string;
-  modalInnerComponents?: string;
+  searchInput?:string;
+  modal?:string;
+  modalInnerComponents?:string;
+  chatPreview?:string;
+  userProfile?:string;
 }
 interface IBorderRadius {
   chatViewComponent?: string;
   chatProfile?: string;
   messageInput?: string;
-  searchInput?: string;
-  modal?: string;
-  modalInnerComponents?: string;
+  searchInput?:string;
+  modal?:string;
+  modalInnerComponents?:string;
+  chatPreview?:string;
+  userProfile?:string;
 }
 interface IBackgroundColor {
   chatViewComponentBackground?: string;
@@ -52,13 +56,19 @@ interface IBackgroundColor {
   encryptionMessageBackground?: string;
   buttonBackground?: string;
   buttonDisableBackground?: string;
-  searchInputBackground?: string;
-  modalBackground?: string;
-  modalInputBackground?: string;
-  modalHoverBackground?: string;
+  searchInputBackground?:string;
+  modalBackground?:string;
+  modalInputBackground?:string;
+  modalHoverBackground?:string;
   toastSuccessBackground?: string;
   toastErrorBackground?: string;
   toastShadowBackground?: string;
+  criteriaLabelBackground?:string; 
+  chatPreviewBackground?:string;
+  chatPreviewSelectedBackground?:string;
+  chatPreviewBadgeBackground?:string;
+  chatPreviewHoverBackground?:string;
+  userProfileBackground?:string;
 }
 
 interface ITextColor {
@@ -73,10 +83,15 @@ interface ITextColor {
   chatReceivedBubbleAddressText?: string;
   chatReceivedBubbleTimestampText?: string;
   chatSentBubbleTimestampText?: string;
-  searchInputText?: string;
-  searchPlaceholderText?: string;
-  modalHeadingText?: string;
-  modalSubHeadingText?: string;
+  searchInputText?:string;
+  searchPlaceholderText?:string;
+  modalHeadingText?:string;
+  modalSubHeadingText?:string;
+  chatPreviewParticipantText?:string;
+  chatPreviewMessageText?:string;
+  chatPreviewDateText?:string;
+  chatPreviewBadgeText?:string;
+  userProfileText?:string;
 }
 interface IFont {
   chatProfileText?: string;
@@ -88,8 +103,13 @@ interface IFont {
   chatReceivedBubbleAddressText?: string;
   chatReceivedBubbleTimestampText?: string;
   chatSentBubbleTimestampText?: string;
-  searchInputText?: string;
-  searchPlaceholderText?: string;
+  searchInputText?:string;
+  searchPlaceholderText?:string;
+  chatPreviewParticipantText?:string;
+  chatPreviewMessageText?:string;
+  chatPreviewDateText?:string;
+  chatPreviewBadgeText?:string;
+  userProfileText?:string;
 }
 interface IFontWeight {
   chatProfileText?: string;
@@ -101,14 +121,20 @@ interface IFontWeight {
   chatReceivedBubbleAddressText?: string;
   chatReceivedBubbleTimestampText?: string;
   chatSentBubbleTimestampText?: string;
-  searchInputText?: string;
-  searchPlaceholderText?: string;
+  searchInputText?:string;
+  searchPlaceholderText?:string;
+  chatPreviewParticipantText?:string;
+  chatPreviewMessageText?:string;
+  chatPreviewDateText?:string;
+  chatPreviewBadgeText?:string;
+  userProfileText?:string;
 }
 interface IIconColor {
   emoji?: string;
   attachment?: string;
   sendButton?: string;
   groupSettings?: string;
+  userProfileSettings?:string;
 }
 export interface IChatTheme {
   borderRadius?: IBorderRadius;
@@ -128,6 +154,7 @@ export interface IChatTheme {
   scrollbarColor?: string;
 
   spinnerColor?: string;
+  
 }
 ```
 
