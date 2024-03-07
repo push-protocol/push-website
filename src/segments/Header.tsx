@@ -23,6 +23,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
+import { HeaderList } from '../config/HeaderList';
 
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
@@ -242,7 +243,24 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[0]}
                   >
-                    <A
+                    {HeaderList.products.map((item) => 
+                    <HeaderA
+                      href="/docs"
+                      title={t('header.docs.alt-developer-guides')}
+                      background="transparent"
+                      display="flex"
+                      hoverBackground="rgba(255, 255, 255, 0.05)"
+                      padding="7px 30px"
+                      fontSize="16px"
+                      fontWeight="400"
+                      lineHeight="230%"
+                      letterSpacing="normal"
+                      borderRadius="16px"
+                    >
+                      {/* {t('header.docs.developer-guides')} */}
+                      {item.title}
+                    </HeaderA>)}
+                    {/* <A
                       href="/docs"
                       title={t('header.docs.alt-developer-guides')}
                       background="transparent"
@@ -271,7 +289,7 @@ function Header() {
                       borderRadius="0px"
                     >
                       {t('header.docs.governance-guides')}
-                    </A>
+                    </A> */}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -639,7 +657,9 @@ const HeaderItemH = styled(ItemH)`
 
 const HeaderBlurV = styled(ItemV)`
   backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
-  background: ${GLOBALS.COLORS.HEADER_BG_DARK};
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  // background: ${GLOBALS.COLORS.HEADER_BG_DARK};
 
   &.light {
     background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
@@ -823,7 +843,17 @@ const NavMenuItemLink = styled(LinkTo)`
     flex: initial;
     margin: 16px;
   }
-`
+`;
+
+const HeaderA = styled(A)`
+&:hover:before {
+  display: block;
+}
+
+&:hover:after {
+  opacity: 1;
+}
+`;
 
 const LanguageMenuItem = styled.li`
   position: relative;
@@ -965,12 +995,14 @@ const NavigationMenuContent = styled.ul`
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  background: #2a2a39;
-  border-radius: 18px;
-  padding: 10px 0;
+  padding: 24px 14px;
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #19181B;
 
   & a {
-    min-width: 220px;
+    min-width: 470px;
   }
 
   @media ${device.laptop} {
