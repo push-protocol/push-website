@@ -10,22 +10,22 @@ export const HeaderList = {
         {
             title: "Push Chat",
             subtitle: "Web3 native chat protocol with groups",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "chat-icon-on",
+            srcrefoff: "chat-icon-off",
             href: ""
         },
         {
             title: "Push Video",
             subtitle: "Decentralized video calls",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "video-icon-on",
+            srcrefoff: "video-icon-off",
             href: ""
         },
         {
             title: "Push Spaces",
             subtitle: "Decentralized audio streaming",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "spaces-icon-on",
+            srcrefoff: "spaces-icon-off",
             href: ""
         }
     ],
@@ -33,14 +33,14 @@ export const HeaderList = {
         {
             title: "Documentation Hub",
             subtitle: "Curated wiki of Push Protocol",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "docs-icon-on",
+            srcrefoff: "docs-icon-off",
         },
         {
             title: "Examples",
             subtitle: "Gallery of collaborative experiences",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "examples-icon-on",
+            srcrefoff: "examples-icon-off",
         },
         {
             title: "Notification Quickstart",
@@ -51,14 +51,14 @@ export const HeaderList = {
         {
             title: "Chat Quickstart",
             subtitle: "Setup chat in 2 mins",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "chat-icon-on",
+            srcrefoff: "chat-icon-off",
         },
         {
             title: "Hackers",
             subtitle: "Are you a hacker? Get a head start here",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "hacker-icon-on",
+            srcrefoff: "hacker-icon-off",
         },
         {
             title: "React Playground",
@@ -66,48 +66,42 @@ export const HeaderList = {
             tagitem: {
                 text: "New"
             },
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "react-icon-on",
+            srcrefoff: "react-icon-off",
         },
         {
             title: "Developer Discord",
             subtitle: "Join our community of developers",
-            srcref: "inbox-icon-on",
-            srcrefoff: "inbox-icon-off",
+            srcref: "discord-icon-on",
+            srcrefoff: "discord-icon-off",
         }
     ],
     community: [
         {
             title: "Ecosystem",
             subtitle: "Amazing community of developers building with Push",
-            srcref: "inbox-icon-on"
         },
         {
             title: "Push DAO",
             subtitle: "Participate in governing Push Protocol",
-            srcref: "inbox-icon-on"
         },
         {
             title: "Grants",
             subtitle: "Get a kickstart with Push grants program",
-            srcref: "inbox-icon-on"
         },
         {
             title: "Billion Reasons to Build",
             subtitle: "Solve problems and win prizes over $50K",
-            srcref: "inbox-icon-on"
         }
     ],
     resources: [
         {
             title: "Blog",
             subtitle: "News, ideas and insights on Push and Web3",
-            srcref: "inbox-icon-on"
         },
         {
             title: "FAQ",
             subtitle: "Frequently asked questions about Push",
-            srcref: "inbox-icon-on"
         },
         {
             title: "Roadmap",
@@ -115,12 +109,10 @@ export const HeaderList = {
             tagitem: {
                 text: "New"
             },
-            srcref: "inbox-icon-on"
         },
         {
             title: "Tokenomics",
             subtitle: "Token utility and Push network",
-            srcref: "inbox-icon-on"
         }
     ],
 }

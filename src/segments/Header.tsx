@@ -130,6 +130,32 @@ function Header() {
   //   setIsAlertVisible(false);
   // };
 
+  const HeaderSpace = ({item, index}) => {
+    return(
+      <HeaderItem 
+        onMouseEnter={() => handleHover(index)}
+        onMouseLeave={() => handleHover(null)}>
+          {item.srcrefoff && (<HeaderImage
+            // key={index}
+            src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
+            srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
+            // alt={`${item?.alt}`}
+            height={24}
+            width={24}
+          />)}
+
+          <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+            <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
+              {item.title}
+            </H2>
+
+            <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" letterSpacing="normal" fontWeight="400">
+              {item.subtitle}
+            </H3>
+          </ItemH>
+          </HeaderItem>)
+          }
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
@@ -233,7 +259,8 @@ function Header() {
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                      {t('header.docs.title')}
+                      {/* {t('header.docs.title')} */}
+                      Products
                       {/* </FadeInAnimation> */}
                     </Span>
                     {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
@@ -249,28 +276,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                   >
                     {HeaderList.products.map((item, index) => 
-                    <HeaderItem 
-                        onMouseEnter={() => handleHover(index)}
-                        onMouseLeave={() => handleHover(null)}>
-                      <HeaderImage
-                          // key={index}
-                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
-                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
-                          // alt={`${item?.alt}`}
-                          height={24}
-                          width={24}
-                        />
-
-                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
-                        {item.title}
-                      </H2>
-
-                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
-                        {item.subtitle}
-                      </H3>
-                    </ItemH>
-                    </HeaderItem>)}
+                    <HeaderSpace item={item} index={index} />)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -287,7 +293,8 @@ function Header() {
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
-                      {t('header.more.title')}
+                      {/* {t('header.more.title')} */}
+                      Developers
                       {/* </FadeInAnimation> */}
                     </Span>
 
@@ -306,54 +313,12 @@ function Header() {
                     <HeaderDiv>
                       <HeaderSection>
                     {HeaderList.developers.slice(0,4).map((item, index) => 
-                    <HeaderItem 
-                        onMouseEnter={() => handleHover(index)}
-                        onMouseLeave={() => handleHover(null)}>
-                      <HeaderImage
-                          // key={index}
-                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
-                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
-                          // alt={`${item?.alt}`}
-                          height={24}
-                          width={24}
-                        />
-
-                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
-                        {item.title}
-                      </H2>
-
-                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
-                        {item.subtitle}
-                      </H3>
-                    </ItemH>
-                    </HeaderItem>)}
+                      <HeaderSpace item={item} index={index} />)}
                     </HeaderSection>
 
                     <HeaderSection>
                     {HeaderList.developers.slice(4,7).map((item, index) => 
-                    <HeaderItem 
-                        onMouseEnter={() => handleHover(index)}
-                        onMouseLeave={() => handleHover(null)}>
-                      <HeaderImage
-                          // key={index}
-                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
-                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
-                          // alt={`${item?.alt}`}
-                          height={24}
-                          width={24}
-                        />
-
-                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
-                        {item.title}
-                      </H2>
-
-                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
-                        {item.subtitle}
-                      </H3>
-                    </ItemH>
-                    </HeaderItem>)}
+                      <HeaderSpace item={item} index={index} />)}
                     </HeaderSection>
                     </HeaderDiv>
                   </NavigationMenuContent>
@@ -372,7 +337,8 @@ function Header() {
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                      {t('header.push-dao.title')}
+                      {/* {t('header.push-dao.title')} */}
+                      Community
                       {/* </FadeInAnimation> */}
                     </Span>
 
@@ -389,20 +355,7 @@ function Header() {
                     expanded={mobileMenuMap[2]}
                   >
                     {HeaderList.community.map((item, index) => 
-                    <HeaderItem 
-                        onMouseEnter={() => handleHover(index)}
-                        onMouseLeave={() => handleHover(null)}>
-                     
-                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
-                        {item.title}
-                      </H2>
-
-                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
-                        {item.subtitle}
-                      </H3>
-                    </ItemH>
-                    </HeaderItem>)}
+                    <HeaderSpace item={item} index={index} />)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -419,7 +372,8 @@ function Header() {
                       padding="16px"
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                      {t('header.push-dao.title')}
+                      {/* {t('header.push-dao.title')} */}
+                      Resources
                       {/* </FadeInAnimation> */}
                     </Span>
 
@@ -436,20 +390,7 @@ function Header() {
                     expanded={mobileMenuMap[2]}
                   >
                     {HeaderList.resources.map((item, index) => 
-                    <HeaderItem 
-                        onMouseEnter={() => handleHover(index)}
-                        onMouseLeave={() => handleHover(null)}>
-                     
-                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
-                        {item.title}
-                      </H2>
-
-                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
-                        {item.subtitle}
-                      </H3>
-                    </ItemH>
-                    </HeaderItem>)}
+                    <HeaderSpace item={item} index={index} />)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -577,13 +518,13 @@ function Header() {
                 target="_blank"
                 title={t('header.app-button.alt-title')}
                 background="#DD44B9"
-                borderRadius="16px"
-                fontSize="18px"
+                borderRadius="12px"
+                fontSize="15px"
                 fontWeight="500"
                 letterSpacing="-0.03em"
-                lineHeight="26px"
+                lineHeight="16px"
                 width="100%"
-                margin="0px 8px 0px 0px"
+                // margin="0px 8px 0px 0px"
               >
                 {t('header.app-button.title')}
               </DappLauncher>
@@ -606,17 +547,23 @@ const LanguageItem = styled.div`
 
 // V2 Designs
 const HeaderItemH = styled(ItemH)`
-  margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 0 0;
+  margin: 45px 0 0 0;
   color: ${GLOBALS.COLORS.FONT_LIGHT};
+  height: 77px;
+  padding: 0px 16px;
 
   @media ${device.laptop} {
-    margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+    margin: 25px;
     flex-direction: column;
+    padding: 16px;
+    height: fit-content;
   }
 
-  @media ${device.mobileM} {
-    margin: ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+  @media ${device.mobileL} {
+    margin: 8px;
     flex-direction: column;
+    height: fit-content;
+    padding: 16px;
   }
 
   &.light {
@@ -629,6 +576,7 @@ const HeaderBlurV = styled(ItemV)`
   backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 24px;
   // background: ${GLOBALS.COLORS.HEADER_BG_DARK};
 
   &.light {
@@ -757,7 +705,7 @@ const NavigationMenu = styled.ul`
 
   display: flex;
 
-  column-gap: 54px;
+  column-gap: 32px;
 
   z-index: 999;
 
@@ -782,21 +730,28 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {
-    font-family: 'Strawford';
+    font-family: "FK Grotesk Neue";
 
-    padding: 16px;
+    padding: 4px;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 142%;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: normal;
+    color: #6C6C6C;
+  }
+
+  & .chevronIcon {
+    color: #6C6C6C;
   }
 
   &:hover {
     & span {
-      color: #dd44b9;
+      color: #fff;
     }
 
     & .chevronIcon {
       transform: rotate(180deg);
+      color: #fff;
     }
 
     & .menuContent {
@@ -816,19 +771,20 @@ const NavMenuItemLink = styled(LinkTo)`
 `;
 
 const HeaderText = styled.div`
-padding: 0px;
-justify-content: flex-start;
-font-size: 16px;
-fontWeight: 400;
-line-height: 230%;
-letter-spacing: normal;
-&:hover:before {
-  display: block;
-}
+  padding: 0px;
+  justify-content: flex-start;
+  font-size: 16px;
+  fontWeight: 400;
+  line-height: 230%;
+  letter-spacing: normal;
 
-&:hover:after {
-  opacity: 1;
-}
+  &:hover:before {
+    display: block;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
 `;
 
 const LanguageMenuItem = styled.li`
@@ -852,7 +808,6 @@ const LanguageMenuItem = styled.li`
 
   & span {
     font-family: 'Strawford';
-
     padding: 16px;
     font-weight: 500;
     font-size: 18px;
@@ -1007,7 +962,7 @@ const NavigationMenuContent = styled.ul`
 `;
 
 const HeaderFocusItems = styled(ItemH)`
-  align-self: flex-end;
+  align-self: center;
   flex-wrap: nowrap;
 
   @media ${device.laptop} {
@@ -1079,6 +1034,10 @@ const HeaderItem = styled.div`
     }
   }
 
+  @media ${device.laptop} {
+    min-width: 100%;
+  }
+
 `;
 
 const HeaderImage = styled(Image)`
@@ -1097,6 +1056,8 @@ const HeaderSection = styled.div`
 
 const DappLauncher = styled(A)`
   padding: 14px 32px;
+  font-family: FK Grotesk Neue;
+  height: 48px;
 
   @media ${device.laptop} {
     align-self: stretch;
