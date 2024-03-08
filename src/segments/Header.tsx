@@ -12,7 +12,7 @@ import styled from 'styled-components';
 
 // Internal Components
 import { Alert } from '@site/src/components/Alert';
-import { A, Button, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
+import { A, Button, Content,H2 ,H3 ,Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
@@ -92,6 +92,11 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleHover = (index) => {
+    setHoveredIndex(index);
+  };
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // Internationalization
@@ -243,53 +248,29 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[0]}
                   >
-                    {HeaderList.products.map((item) => 
-                    <HeaderA
-                      href="/docs"
-                      title={t('header.docs.alt-developer-guides')}
-                      background="transparent"
-                      display="flex"
-                      hoverBackground="rgba(255, 255, 255, 0.05)"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      borderRadius="16px"
-                    >
-                      {/* {t('header.docs.developer-guides')} */}
-                      {item.title}
-                    </HeaderA>)}
-                    {/* <A
-                      href="/docs"
-                      title={t('header.docs.alt-developer-guides')}
-                      background="transparent"
-                      display="flex"
-                      hoverBackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      borderRadius="0px"
-                    >
-                      {t('header.docs.developer-guides')}
-                    </A>
-                    <A
-                      href="/docs/dao"
-                      title={t('header.docs.alt-governance-guides')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.docs.governance-guides')}
-                    </A> */}
+                    {HeaderList.products.map((item, index) => 
+                    <HeaderItem 
+                        onMouseEnter={() => handleHover(index)}
+                        onMouseLeave={() => handleHover(null)}>
+                      <HeaderImage
+                          // key={index}
+                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
+                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
+                          // alt={`${item?.alt}`}
+                          height={24}
+                          width={24}
+                        />
+
+                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
+                        {item.title}
+                      </H2>
+
+                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
+                        {item.subtitle}
+                      </H3>
+                    </ItemH>
+                    </HeaderItem>)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -322,63 +303,29 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[1]}
                   >
-                    <LinkTo
-                      to="/faq"
-                      title={t('header.more.alt-faq')}
-                      background="transparent"
-                      hoverBackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                    >
-                      {t('header.more.faq')}
-                    </LinkTo>
-                    <A
-                      href="/blog"
-                      title={t('header.more.alt-blog')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.more.blog')}
-                    </A>
-                    <LinkTo
-                      to="/frens"
-                      title={t('header.more.alt-push-ecosystem')}
-                      background="transparent"
-                      hoverBackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                    >
-                      {t('header.more.push-ecosystem')}
-                    </LinkTo>
-                    <A
-                      href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
-                      target="_blank"
-                      title={t('header.more.alt-media-kit')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.more.media-kit')}
-                    </A>
+                    {HeaderList.developers.map((item, index) => 
+                    <HeaderItem 
+                        onMouseEnter={() => handleHover(index)}
+                        onMouseLeave={() => handleHover(null)}>
+                      <HeaderImage
+                          // key={index}
+                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
+                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
+                          // alt={`${item?.alt}`}
+                          height={24}
+                          width={24}
+                        />
+
+                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
+                        {item.title}
+                      </H2>
+
+                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
+                        {item.subtitle}
+                      </H3>
+                    </ItemH>
+                    </HeaderItem>)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -411,74 +358,72 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[2]}
                   >
-                    <A
-                      href="https://pushprotocol.notion.site/Welcome-to-Push-DAO-b1c1e1281ce64400adaaae59f98e4d4c"
-                      target="_blank"
-                      title={t('header.push-dao.alt-notion')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.push-dao.notion')}
-                    </A>
-                    <A
-                      href="https://gov.push.org"
-                      target="_blank"
-                      title={t('header.push-dao.alt-forum')}
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.push-dao.forum')}
-                    </A>
-                    <A
-                      href="https://www.notion.so/pushprotocol/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                      title={t('header.push-dao.alt-grants')}
-                      target="_blank"
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.push-dao.grants')}
-                    </A>
-                    <A
-                      href="https://pushprotocol.notion.site/Push-Missions-b38048e307d949aeaf807f40396cc731"
-                      title={t('header.push-dao.alt-missions')}
-                      target="_blank"
-                      background="transparent"
-                      hoverbackground="#fff"
-                      padding="7px 30px"
-                      fontSize="16px"
-                      fontWeight="400"
-                      lineHeight="230%"
-                      letterSpacing="normal"
-                      display="flex"
-                      borderRadius="0px"
-                    >
-                      {t('header.push-dao.missions')}
-                    </A>
+                    {HeaderList.community.map((item, index) => 
+                    <HeaderItem 
+                        onMouseEnter={() => handleHover(index)}
+                        onMouseLeave={() => handleHover(null)}>
+                     
+                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
+                        {item.title}
+                      </H2>
+
+                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
+                        {item.subtitle}
+                      </H3>
+                    </ItemH>
+                    </HeaderItem>)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <NavigationMenuHeader
+                    onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                    expanded={mobileMenuMap[3]}
+                  >
+                    <Span
+                      fontSize="18px"
+                      fontWeight="500"
+                      letterSpacing="-0.03em"
+                      lineHeight="142%"
+                      padding="16px"
+                    >
+                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                      {t('header.push-dao.title')}
+                      {/* </FadeInAnimation> */}
+                    </Span>
+
+                    {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
+                    <BsChevronDown
+                      size={12}
+                      className="chevronIcon"
+                    />
+                    {/* </FadeInAnimation> */}
+                  </NavigationMenuHeader>
+
+                  <NavigationMenuContent
+                    className="menuContent"
+                    expanded={mobileMenuMap[2]}
+                  >
+                    {HeaderList.resources.map((item, index) => 
+                    <HeaderItem 
+                        onMouseEnter={() => handleHover(index)}
+                        onMouseLeave={() => handleHover(null)}>
+                     
+                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
+                        {item.title}
+                      </H2>
+
+                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
+                        {item.subtitle}
+                      </H3>
+                    </ItemH>
+                    </HeaderItem>)}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                {/* <NavigationMenuItem>
                   <MenuHeader>
                     <NavMenuItemLink
                       to="/brb"
@@ -494,13 +439,8 @@ function Header() {
                       Billion Reasons to Build
                     </NavMenuItemLink>
                   </MenuHeader>
-                  {/* <NavigationMenuHeader
-                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
-                      expanded={mobileMenuMap[2]}
-                    > */}
-
-                  {/* </NavigationMenuHeader> */}
-                </NavigationMenuItem>
+            
+                </NavigationMenuItem> */}
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -845,7 +785,13 @@ const NavMenuItemLink = styled(LinkTo)`
   }
 `;
 
-const HeaderA = styled(A)`
+const HeaderText = styled.div`
+padding: 0px;
+justify-content: flex-start;
+font-size: 16px;
+fontWeight: 400;
+line-height: 230%;
+letter-spacing: normal;
 &:hover:before {
   display: block;
 }
@@ -995,15 +941,19 @@ const NavigationMenuContent = styled.ul`
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  padding: 24px 14px;
+  padding: 10px 14px 24px 14px;
 
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #19181B;
 
-  & a {
-    min-width: 470px;
-  }
+  // display: flex;
+  // flex-wrap: wrap;
+  // max-height: 340px;
+
+  // & a {
+  //   min-width: 470px;
+  // }
 
   @media ${device.laptop} {
     width: 100%;
@@ -1077,6 +1027,33 @@ const LanguageMenuContent = styled.div`
       justify-content: flex-start;
     }
   }
+`;
+
+const HeaderItem = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-width: 470px;
+  padding: 10px;
+  gap: 6px;
+  margin: 14px 0 0 0;
+
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+
+
+    h2 {
+      color: #D98AEC;
+    }
+  }
+
+`;
+
+const HeaderImage = styled(Image)`
+  margin: 10px;
+
 `;
 
 const DappLauncher = styled(A)`
