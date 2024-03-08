@@ -303,7 +303,9 @@ function Header() {
                     className="menuContent"
                     expanded={mobileMenuMap[1]}
                   >
-                    {HeaderList.developers.map((item, index) => 
+                    <HeaderDiv>
+                      <HeaderSection>
+                    {HeaderList.developers.slice(0,4).map((item, index) => 
                     <HeaderItem 
                         onMouseEnter={() => handleHover(index)}
                         onMouseLeave={() => handleHover(null)}>
@@ -326,6 +328,34 @@ function Header() {
                       </H3>
                     </ItemH>
                     </HeaderItem>)}
+                    </HeaderSection>
+
+                    <HeaderSection>
+                    {HeaderList.developers.slice(4,7).map((item, index) => 
+                    <HeaderItem 
+                        onMouseEnter={() => handleHover(index)}
+                        onMouseLeave={() => handleHover(null)}>
+                      <HeaderImage
+                          // key={index}
+                          src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
+                          srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
+                          // alt={`${item?.alt}`}
+                          height={24}
+                          width={24}
+                        />
+
+                    <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+                      <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" fontWeight="500">
+                        {item.title}
+                      </H2>
+
+                      <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" fontWeight="400">
+                        {item.subtitle}
+                      </H3>
+                    </ItemH>
+                    </HeaderItem>)}
+                    </HeaderSection>
+                    </HeaderDiv>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
@@ -1053,7 +1083,16 @@ const HeaderItem = styled.div`
 
 const HeaderImage = styled(Image)`
   margin: 10px;
+`;
 
+const HeaderDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const HeaderSection = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const DappLauncher = styled(A)`
