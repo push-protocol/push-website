@@ -2,11 +2,92 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-03-04T00:00:00.000Z</updated>
+    <updated>2024-03-08T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Explaining Push Nodes: Everything You Need To Know]]></title>
+        <id>https://push.org/blog/explaining-push-nodes</id>
+        <link href="https://push.org/blog/explaining-push-nodes"/>
+        <updated>2024-03-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Explaining Push Nodes: Everything You Need To Know]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/cover-image-70a2b5762940f512c96706238fe985d2.webp" width="1280" height="720" class="img_ev3q"></p>
+<p>We’re extremely excited to announce that Push Nodes are here! An all-new decentralized infrastructure for web3’s leading communication layer, the Push Protocol Network.</p>
+<p>This new and improved decentralized infrastructure for Push is a long-awaited move that we’re only now executing thanks to extensive research and development.</p>
+<p>So what does this new decentralized infrastructure look like?</p>
+<p>In this article, we'll explore:</p>
+<ul>
+<li>What is decentralization in web3 and how will the new Push Network look</li>
+<li>Exploring types of nodes and explanation of Push Nodes</li>
+<li>Why is it necessary</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="understanding-different-types-of-decentralization---which-will-push-become">Understanding Different Types of Decentralization - Which Will Push Become<a href="https://push.org/blog/explaining-push-nodes#understanding-different-types-of-decentralization---which-will-push-become" class="hash-link" aria-label="Direct link to Understanding Different Types of Decentralization - Which Will Push Become" title="Direct link to Understanding Different Types of Decentralization - Which Will Push Become">​</a></h3>
+<p>Decentralization can mean different things depending who you ask because it is a very complex topic that can exist in many different forms and structures. This is why many modern blockchains and protocols have tight discussions on what it means to be fully decentralized.</p>
+<p>So to begin with, we’ll explore the different types of architecture at a high level as a way of best communicating what Push is working towards</p>
+<p>Client-Server – Linear system <br>
+Distributed – Different nodes hold different responsibilities and contribute to one another <br>
+Peer-toPeer – Data is passed directly from user to user with no intermediaries<br>
+Decentralized – Collective and shared control over data and decision making<br></p>
+<p><img loading="lazy" alt="First Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-1-cc99b36c89e8bfc06d5a59b599e5d50c.webp" width="1160" height="652" class="img_ev3q"></p>
+<p>As we’ve outlined in the image above, Push is moving towards the right. A fully decentralized network wherein no single node or entity has complete control of the network. Access is open and shared.</p>
+<p>Keep in mind, decentralization can also be applied at different layers of an organization. Just as you can decentralize software architecture, you too can decentralize teams and organizational structures (DAOs).</p>
+<p>While the Push Network already has a DAO and $PUSH token, we are now taking the final step towards decentralization by decentralizing our software architecture, completing what you might call ‘full stack decentralization’.</p>
+<p>Our goal is to build a permissionless, trustless, proof-of-stake protocol with different node types that provide a decentralized API for notifications processing, indexing, and delivery. Ultimately, we’re aiming to wrap the whole system in a developer-friendly SDK package and a dApp that can leverage the power of this network.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-nodes-as-the-key-how-do-they-work">Push Nodes As The Key: How Do They Work<a href="https://push.org/blog/explaining-push-nodes#push-nodes-as-the-key-how-do-they-work" class="hash-link" aria-label="Direct link to Push Nodes As The Key: How Do They Work" title="Direct link to Push Nodes As The Key: How Do They Work">​</a></h3>
+<p>The Push Network will comprise three different types of Nodes. This includes:</p>
+<ul>
+<li>Validator nodes - Batching notifications into blocks, validating them, and providing all the required APIs for SDK</li>
+<li>Storage nodes - Indexing notifications</li>
+<li>Delivery nodes - Sending notifications to the end-user device based on his/her 0xwallet, not his/her hardware credentials.</li>
+</ul>
+<p>The network is guarded by a smart contract to maintain node staking and slashing. This is where the PUSH token is used.</p>
+<p>In our proposed architecture, the storage network is sharded by a smart contract, which assigns specific shards to specific nodes to ensure a high amount of redundancy. This is done on top of storage nodes.</p>
+<p>We’re targeting fast delivery of ~15s on average for delivery of Notifications.</p>
+<p>Abstract architecture</p>
+<p><img loading="lazy" alt="Second Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-2-f582d599b661dca47be6741aee109046.webp" width="1160" height="652" class="img_ev3q"></p>
+<p>The basic use-case:</p>
+<p>A javascript SDK locates the right validator, posts a notification, and this notification will be included in the block. The block list of validator nodes for processing is determined by a combined network random number (randao).</p>
+<p>A more detailed version of the architecture looks like this:</p>
+<p><img loading="lazy" alt="Third Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-3-284130ae22160c8ce52d0c9e8af25261.webp" width="1160" height="647" class="img_ev3q"></p>
+<p>We’ll now explore each of the three Node types in more detail.</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="validator-nodes">Validator Nodes<a href="https://push.org/blog/explaining-push-nodes#validator-nodes" class="hash-link" aria-label="Direct link to Validator Nodes" title="Direct link to Validator Nodes">​</a></h4>
+<p>Every validator can be slashed, in case his vote on the new block differs from the majority of their validators, which voted for the block as valid.</p>
+<p><img loading="lazy" alt="Fourth Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-4-60068ed2b000a58006e79291b702234f.webp" width="1157" height="647" class="img_ev3q"></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="storage-nodes">Storage nodes<a href="https://push.org/blog/explaining-push-nodes#storage-nodes" class="hash-link" aria-label="Direct link to Storage nodes" title="Direct link to Storage nodes">​</a></h4>
+<p>Originally, Push Storage Nodes validate and index all communications and link them to a user’s wallet address and multi-chain identity.</p>
+<p>The new Push decentralized system maps every wallet notification data to a specific shard.</p>
+<p>This shard maintains X copies in the network. The smart contract dynamically computes x.
+Whenever new nodes join, the contract recomputes which storage nodes are assigned to which shards.</p>
+<p><img loading="lazy" alt="Fifth Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-5-e9c17651d17aaed45495849f08810ae5.webp" width="1157" height="650" class="img_ev3q"></p>
+<p><img loading="lazy" alt="Sixth Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-6-93f01239dd7b0141e5d17ab36d5b4ac2.webp" width="1157" height="647" class="img_ev3q"></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="delivery-nodes">Delivery Nodes<a href="https://push.org/blog/explaining-push-nodes#delivery-nodes" class="hash-link" aria-label="Direct link to Delivery Nodes" title="Direct link to Delivery Nodes">​</a></h4>
+<p>Delivery nodes are a pivotal component of the decentralized Push Notification infrastructure. They ensure notifications are securely and efficiently delivered to the end-user’s device while serving as a decentralized solution for connecting web3 and web2. These nodes can be hosted by trusted third parties, bringing reliability and professionalism to the system. Their operation hinges on a few key principles and functionalities:</p>
+<ul>
+<li><b>Integration with Established APIs</b>: To leverage robust, widely-accepted infrastructure for sending Push Notifications.</li>
+<li><b>Privacy-Centric Mapping</b>: To maintain the privacy and security of the users, delivery nodes store a mapping between a registered crypto wallet and the end-user device ID.</li>
+<li><b>Hosting by Trusted Entities</b>: Recognizing the importance of reliability and trust in the notification delivery process, delivery nodes can be hosted by trusted third parties.</li>
+<li><b>Collaboration with Wallet Providers</b>: In addition to being hosted by trusted third parties, delivery nodes can also be hosted by wallet providers themselves. This collaboration brings an added layer of integration and convenience, as wallet providers have a direct interest in ensuring that their users receive notifications promptly and securely.</li>
+</ul>
+<p><img loading="lazy" alt="Seventh Image of Explaining Push Nodes: Everything You Need To Know" src="https://push.org/assets/images/image-7-c0907aebeea7cce896713dc8030d04b8.webp" width="1400" height="1124" class="img_ev3q"></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-push-nodes-why-decentralization">Why Push Nodes? Why Decentralization?<a href="https://push.org/blog/explaining-push-nodes#why-push-nodes-why-decentralization" class="hash-link" aria-label="Direct link to Why Push Nodes? Why Decentralization?" title="Direct link to Why Push Nodes? Why Decentralization?">​</a></h4>
+<p>You can read more about Push Delivery Nodes <a href="https://push.org/blog/empower-your-wallet-app-or-platform-with-push-delivery-nodes/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>We believe that communication tools should be a public good. Builders should have open and free access to enhance their dApps with web3-native communication, without needing to rely on centralized providers.</p>
+<p>As an extension of this, those same builders should not just have access to these tools, but a say in how these tools get developed and improved over time.</p>
+<p>As the accessibility of these tools grows, so does the quality of dApps that build with them. When we achieve the goal of building better projects, we move closer towards a reality where we can onboard the next billion users to web3.</p>
+<p>We are excited for this new era for the Push Protocol Network and we are extremely excited to have you be a part of it.</p>
+<p>For more questions or queries, join us in Discord 👉<a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.com/invite/pushprotocol</a></p>
+<p>You can also get started building with Push tools 👉<a href="https://push.org/docs/" target="_blank" rel="noopener noreferrer">https://push.org/docs/</a></p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="EthGlobal" term="EthGlobal"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Benchmarking Push Chat Message Architecture: What Changed? 💬 ⚡]]></title>
         <id>https://push.org/blog/benchmarking-push-chat-message</id>
@@ -512,59 +593,6 @@ ETHIndia, we're not just attending; we're bringing the party. Let's code, create
 The magic of our dev tour continued with <a href="https://twitter.com/pushprotocol/status/1729541913651666980" target="_blank" rel="noopener noreferrer">Lucknow</a>. Thanks to the dedication of volunteers, attendees, and speakers, Lucknow became a hotspot of innovation and learning.</p>
 <p>Now, as we reach the climax of our dev tour, all roads lead to <a href="https://twitter.com/pushprotocol/status/1721903040062738875" target="_blank" rel="noopener noreferrer">Bangalore</a>. Brace yourselves for the grand finale – <a href="https://twitter.com/pushprotocol/status/1730583025715413470" target="_blank" rel="noopener noreferrer">Builders &amp; Founders Day</a>. Co-hosted with Filecoin, this promises to be an epic celebration, featuring an incredible lineup of speakers. <a href="https://lu.ma/brb-bengaluru" target="_blank" rel="noopener noreferrer">Join us</a> for an evening of networking, learning, and fun, uniting with some of web3’s brightest minds and founders.</p>
 <p>As we wrap up an amazing month, we want to thank all of you for being part of our journey. We look forward to more collaborations, innovations, and shared successes. Until next time!</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-        <category label="EthGlobal" term="EthGlobal"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pushing Boundaries in Innovation at ETHGlobal Istanbul with Push Protocol 🔔]]></title>
-        <id>https://push.org/blog/push-ethglobal-istanbul-winner</id>
-        <link href="https://push.org/blog/push-ethglobal-istanbul-winner"/>
-        <updated>2023-11-27T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[PPushing Boundaries in Innovation at ETHGlobal Istanbul with Push Protocol"]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push x ETHGlobal Istanbul - Enhance Your UX and Win $10k in Bounties" src="https://push.org/assets/images/cover-image-25b6be2e1a230b52dea056c83d866c92.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>Hackers of ETHGlobal Istanbul, your creativity has shone brightly!</p>
-<p>As the echoes of November's web3 and blockchain innovation fade in Istanbul, we are thrilled to have witnessed such extraordinary talent. From innovative bounties to inspiring workshops, the ETHGlobal Istanbul Hackathon was a testament to the ingenuity of the web3 community.</p>
-<p>Brimming with groundbreaking ideas, our builders went above and beyond, making it a truly memorable event. Now, we proudly announce the winners who have set new standards in the Push Protocol challenge.</p>
-<p>Reflecting on the success of ETHGlobal Istanbul x Push, we're excited to share the remarkable achievements of our winners.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge">Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge<a href="https://push.org/blog/push-ethglobal-istanbul-winner#pushing-boundaries-in-web3-innovation--meet-the-winners-of-ethglobal-istanbuls-push-protocol-challenge" class="hash-link" aria-label="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge" title="Direct link to Pushing Boundaries in Web3 Innovation — Meet the Winners of ETHGlobal Istanbul's Push Protocol Challenge">​</a></h3>
-<p>As the vibrant city of Istanbul buzzed with the energy of blockchain enthusiasts and innovators this November, ETHGlobal Istanbul emerged as a beacon of creativity in the web3 universe. This event was not just a hackathon; it was a celebration of groundbreaking ideas and pioneering spirits. With a mix of bounties, hands-on workshops, and invaluable networking opportunities, the stage was set for developers to showcase their prowess in leveraging the Push Protocol – a cornerstone in web3 communication.</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1--merhaba-push-protocol-2000-winner-rely">1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#1--merhaba-push-protocol-2000-winner-rely" class="hash-link" aria-label="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)" title="Direct link to 1. 🏆 Merhaba Push Protocol-$2,000 (Winner: Rely)">​</a></h4>
-<p>Rely stands out in the decentralized application (dApp) landscape, particularly in the social media sector. The project focuses on enhancing user interactions within a secure, decentralized environment. By bridging social media functionalities with blockchain technology, Rely offers a platform for seamless and efficient user engagement.</p>
-<p>The use of the Push Protocol in Rely marks a significant advancement in user experience. It enables the delivery of real-time notifications, essential for keeping users informed and connected. Customizable notification settings and the introduction of a chat feature with conditional gating access demonstrate Rely's commitment to user-centric innovation. These features not only improve communication but also bring a new level of personalization and security to the platform.</p>
-<p>Project Link: <a href="https://ethglobal.com/showcase/rely-oygqg" target="_blank" rel="noopener noreferrer">Rely on ETHGlobal</a></p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2--turkish-ice-cream--creative-bounty-2500-winner-pixel">2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#2--turkish-ice-cream--creative-bounty-2500-winner-pixel" class="hash-link" aria-label="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)" title="Direct link to 2. 🏆 Turkish Ice Cream — Creative Bounty-$2,500 (Winner: Pixel)">​</a></h4>
-<p>Pixel is redefining the NFT community experience with its innovative chat platform. Designed for secure and dynamic interactions, Pixel allows users to connect, converse, and engage in digital asset trading with ease. The platform's standout feature is its seamless integration of a trading mechanism within the chat interface, enabling a variety of asset swaps, from NFT-to-NFT to NFT-to-token exchanges. This integration not only simplifies the trading process but also enriches the community interaction by adding a layer of versatility and user engagement.</p>
-<p>Pixel's integration of the Push Protocol plays a pivotal role in enhancing off-chain messaging. This incorporation is meticulously designed with custom chat components, allowing for efficient handling of NFT token exchanges and orders. The use of Push Protocol contributes significantly to the user experience, providing reliable and instant communication within the community.</p>
-<p>This technical sophistication, combined with a suite of smart contracts for various functionalities, exemplifies Pixel’s commitment to security and trust in the NFT space. The project's innovative use of technology has rightly earned it the 'Creative Bounty' prize, showcasing its potential to revolutionize NFT community interactions.</p>
-<p>Project Link: <a href="https://ethglobal.com/showcase/pixel-rr36q" target="_blank" rel="noopener noreferrer">Pixel on ETHGlobal</a></p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap">3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#3--push-chat-conditional-gating-integration-for-dapps-2500-winner-zkmap" class="hash-link" aria-label="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)" title="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps-$2,500 (Winner: zkmap)">​</a></h4>
-<p>zkMap offers a novel proof-of-location system that allows users to authenticate their presence in a specific area without revealing their exact location. This mobile application enables the creation of location proofs, viewable on a map, enhancing services requiring location authentication. Its versatility extends to various use cases, from event attendance verification to legal and security applications, demonstrating a wide-ranging impact.</p>
-<p>Integrating the Push Protocol, zkMap has developed a private group chat program, enhancing its proof-of-location infrastructure. This integration utilizes the Conditional Gateway functionality, allowing access to private chat rooms based on users' location proofs. The platform's innovative approach in using Push Protocol exemplifies its commitment to secure and contextual communication, aligning with its recognition for the 'Push Chat Conditional Gating Integration for DApps' prize.</p>
-<p>Project Link: <a href="https://ethglobal.com/showcase/zkmap-n2z06" target="_blank" rel="noopener noreferrer">zkmap on ETHGlobal</a></p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai">4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)<a href="https://push.org/blog/push-ethglobal-istanbul-winner#4--cappadocia-hot-air-balloon-3000-winners-pulse-and-genieai" class="hash-link" aria-label="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)" title="Direct link to 4. 🏆 Cappadocia Hot air Balloon-$3,000 (Winners: Pulse and GenieAI)">​</a></h4>
-<ul>
-<li>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--pulse">Project : Pulse<a href="https://push.org/blog/push-ethglobal-istanbul-winner#project--pulse" class="hash-link" aria-label="Direct link to Project : Pulse" title="Direct link to Project : Pulse">​</a></h4>
-<p>Pulse, a mobile-first social app, revolutionizes content engagement through a dynamic recommendation engine. It customizes your feed based on social interactions, offering a unique, swipe-based user experience that prioritizes quality content.</p>
-<p>Incorporating the Push Protocol, Pulse enhances user engagement by notifying content creators when their posts are liked or superliked. This integration plays a crucial role in enriching the social experience, ensuring creators are promptly informed about the reception of their content. Pulse's innovative use of the Push Protocol complements its user-centric design, contributing to a more connected and responsive social platform.</p>
-<p>Project Link: <a href="https://ethglobal.com/showcase/pulse-v4iir" target="_blank" rel="noopener noreferrer">Pulse on ETHGlobal</a></p>
-</li>
-<li>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="project--genieai">Project : GenieAI<a href="https://push.org/blog/push-ethglobal-istanbul-winner#project--genieai" class="hash-link" aria-label="Direct link to Project : GenieAI" title="Direct link to Project : GenieAI">​</a></h4>
-<p>GenieAI emerges as a versatile AI marketplace, offering users access to a range of AI services from legal advice to health consultation, all within a private and anonymous environment. This innovative platform allows users to interact with AI experts without compromising their data, addressing the need for confidential and secure AI model utilization.</p>
-<p>The integration of the Push Protocol in GenieAI enhances user experience significantly. It notifies users via their ETH address when their AI requests are processed, maintaining anonymity and privacy. This seamless incorporation of Push notifications ensures timely updates, adding efficiency to the platform’s service delivery. GenieAI's smart use of Push Protocol exemplifies its commitment to user privacy and advanced technology application.</p>
-<p>Project Link: <a href="https://ethglobal.com/showcase/genieai-feo3a" target="_blank" rel="noopener noreferrer">GenieAI on ETHGlobal</a></p>
-</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a href="https://push.org/blog/push-ethglobal-istanbul-winner#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h3>
-<p>ETHGlobal Istanbul has been a remarkable journey, where innovation met opportunity in the web3 space. This event wasn't just about competition; it was a canvas for the brightest minds to demonstrate the versatility of Push Protocol in transforming communication.</p>
-<p>The spectrum of projects, from social initiatives to creative marvels, truly elevated the standard. Showcasing diverse applications of Push Protocol, these developers proved that in the realm of web3, the only limit is imagination. Their achievements highlight the boundless potential of Push Protocol, shaping the future of decentralized communication.</p>]]></content>
         <author>
             <name>Push Protocol</name>
             <uri>https://twitter.com/pushprotocol</uri>
