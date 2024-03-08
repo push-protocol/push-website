@@ -90,7 +90,7 @@ Use the below code for the settings file.
 
 ### Step 6: Create a `priceTrackerChannel.ts` file in the channel folder
 
-The `preiceTrackerChannel.ts` will be the file which will contain all the logic for the fetching the data and constructing the payload.
+The `priceTrackerChannel.ts` will be the file which will contain all the logic for the fetching the data and constructing the payload.
 
 There is some boilerplate code involved in creating a channel. The channel.ts file will contain the following boilerplate:
 
@@ -114,7 +114,7 @@ export default class PricetrackerChannel extends EPNSChannel {
       networkToMonitor: NETWORK_TO_MONITOR,
       dirname: __dirname,
       name: 'Price Tracker',
-      url: 'https://epns.io',
+      url: 'https://push.org/',
       useOffChain: true,
     });
   }
@@ -361,7 +361,7 @@ if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
 }
 ```
 
-🤯Those were a lots of code out there. Let's understand what is actually happening there and what coditions trigger the notifications in different cases.
+🤯Those were a lots of code out there. Let's understand what is actually happening there and what conditions trigger the notifications in different cases.
 
 - **Case 1: Both percent change and time interval is enabled** - When a user opts in to both these settings, what the user want is to receive a notification for their selected tokens when there is a particular change in price and it occured within the time interval.
   So, the basic logic here is:
@@ -376,7 +376,7 @@ if (
 ```
 
 We just fetched the prices from the CMC API and using the previous price stored in database, we can calculate the `changePercentage` value.
-For the `CYCLES` variable, everytime our showrunners framework is executed it is incremented by 3 as the lowest `ticker` value in the slider is 3. You can change it as per your channel and logic. This helps us to calculate when a new user will receive a notification based on on ehich cycle did he opted in.
+For the `CYCLES` variable, everytime our showrunners framework is executed it is incremented by 3 as the lowest `ticker` value in the slider is 3. You can change it as per your channel and logic. This helps us to calculate when a new user will receive a notification based on on which cycle did he opted in.
 
 - **Case 2: Only percent change is enabled** - Here, a user want to receive notification when there is a particular change in price. So, the basic logic here is:
 
@@ -454,7 +454,7 @@ const PriceTrackerTokenSchema = new Schema<PriceTrackerToken>({
 export const priceTrackerTokenModel = model<PriceTrackerToken>('priceTokenTracker', PriceTrackerTokenSchema);
 ```
 
-It is a good practise to write your `Interface` then `Schema` and then create your `Model`. Remember to keep different names of your database for each model.
+It is a good practice to write your `Interface` then `Schema` and then create your `Model`. Remember to keep different names of your database for each model.
 
 ### Step 9: Create a `priceTrackerJobs.ts` file in the folder.
 
