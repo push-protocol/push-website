@@ -45,7 +45,7 @@
   "home": {
     "hero": {
       "title": "The Communication Protocol of Web3",
-      "description": "Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.",
+      "description": "Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.",
       "start-button": "Start Building",
       "alt-start-button": "Developer Docs",
       "explore-button": "Explore Push Protocol",

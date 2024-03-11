@@ -91,8 +91,8 @@ export const NotifFeaturesList = {
         },
         {
           type: "image",
-          imagesrc: 'notifs/lightweight-notif',
-          videosrc: 'notifs/lightweight-notif-video',
+          imagesrc: "notifs/lightweight-notif",
+          videosrc: "notifs/lightweight-notif-video",
           imagealt: "home.notification-section.box4.imagealt",
           imagetitle: "home.notification-section.box4.imagetitle",
         },
@@ -155,7 +155,7 @@ export const NotifFeaturesList = {
         {
           type: "image",
           imagesrc: "notifs/snap",
-          videosrc: 'notifs/snap-video',
+          videosrc: "notifs/snap-video",
           imagealt: "home.notification-section.box7.imagealt",
           imagetitle: "home.notification-section.box7.imagetitle",
         },
@@ -190,27 +190,27 @@ export const NotifFeaturesList = {
 
 export const NotifUseCasesList = [
   {
-    url: 'https://blog.ethereum.org/2020/08/19/esp-beyond-grants',
-    title: 'Infrastructure',
+    url: "https://blog.ethereum.org/2020/08/19/esp-beyond-grants",
+    title: "Infrastructure",
   },
   {
-    url: 'https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/',
-    title: 'Social',
+    url: "https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/",
+    title: "Social",
   },
   {
-    url: 'https://defiprime.com/ethereum-push-notification-service',
-    title: 'Blockchain',
+    url: "https://defiprime.com/ethereum-push-notification-service",
+    title: "Blockchain",
   },
   {
-    url: 'https://twitter.com/pushprotocol/status/1336359832081768448',
-    title: 'Gaming',
+    url: "https://twitter.com/pushprotocol/status/1336359832081768448",
+    title: "Gaming",
   },
   {
-    url: 'https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn',
-    title: 'DAO',
+    url: "https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn",
+    title: "DAO",
   },
   {
-      url: 'https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn',
-      title: 'NFT',
-    },
+    url: "https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn",
+    title: "NFT",
+  },
 ];
