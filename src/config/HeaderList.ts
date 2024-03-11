@@ -35,6 +35,7 @@ export const HeaderList = {
             subtitle: "Curated wiki of Push Protocol",
             srcref: "docs-icon-on",
             srcrefoff: "docs-icon-off",
+            href: "https://push.org/docs"
         },
         {
             title: "Examples",
@@ -64,7 +65,7 @@ export const HeaderList = {
             title: "React Playground",
             subtitle: "Plug and play react components",
             tagitem: {
-                text: "New"
+                text: "NEW"
             },
             srcref: "react-icon-on",
             srcrefoff: "react-icon-off",
@@ -98,16 +99,18 @@ export const HeaderList = {
         {
             title: "Blog",
             subtitle: "News, ideas and insights on Push and Web3",
+            href: "https://push.org/blog"
         },
         {
             title: "FAQ",
             subtitle: "Frequently asked questions about Push",
+            href: "https://push.org/faq"
         },
         {
             title: "Roadmap",
             subtitle: "A living roadmap for the protocol",
             tagitem: {
-                text: "New"
+                text: "NEW"
             },
         },
         {

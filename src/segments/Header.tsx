@@ -131,8 +131,13 @@ function Header() {
   // };
 
   const HeaderSpace = ({item, index}) => {
+
+    const openLink = (link: string) => {
+      window.open(link, "_blank");
+    };
     return(
       <HeaderItem 
+        onClick={()=> openLink(item?.href)}
         onMouseEnter={() => handleHover(index)}
         onMouseLeave={() => handleHover(null)}>
           {item.srcrefoff && (<HeaderImage
@@ -147,6 +152,8 @@ function Header() {
           <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
             <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
               {item.title}
+
+              {item.tagitem && <TagItem style={{marginLeft: "10px"}}>{item.tagitem.text}</TagItem>}
             </H2>
 
             <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" letterSpacing="normal" fontWeight="400">
@@ -557,6 +564,7 @@ const LanguageItem = styled.div`
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
     margin: 0px;
     flex: 1;
+    width: 100%;
   }
 
 `;
@@ -862,7 +870,7 @@ const LanguageMenuItem = styled.li`
     }
   }
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     padding-left: 0px;
     flex: 1;
   }
@@ -885,6 +893,7 @@ const NavigationMenuHeader = styled.div`
 
   @media ${device.laptop} {
     justify-content: space-between;
+    margin: 24px 0 0px 0;
 
     & span {
     }
@@ -896,9 +905,6 @@ const NavigationMenuHeader = styled.div`
     }
   }
 
-  @media ${device.mobileL} {
-    margin: 24px 0 0px 0;
-  }
 `;
 
 const MenuHeader = styled.div`
@@ -1020,16 +1026,13 @@ const HeaderFocusItems = styled(ItemH)`
 
   @media ${device.laptop} {
     flex-direction: column;
-    align-self: center;
-    flex-wrap: wrap;
-  }
-
-  @media ${device.mobileL} {
-    flex-direction: row !important;
     width: 100%;
     flex: 1;
+    // align-self: center;
+    // flex-wrap: wrap;
   }
-`
+
+`;
 
 const LanguageMenuContent = styled.div`
   list-style: none;
@@ -1104,6 +1107,7 @@ const HeaderItem = styled.div`
   padding: 10px;
   gap: 6px;
   margin: 14px 0 0 0;
+  cursor: pointer;
 
 
   &:hover {
@@ -1125,7 +1129,7 @@ const HeaderItem = styled.div`
 const HeaderImage = styled(Image)`
   margin: 10px;
 
-  @media ${device.mobileL} {
+  @media ${device.laptop} {
     margin: 10px 10px 10px 0;
   }
 `;
@@ -1152,13 +1156,23 @@ const DappLauncher = styled(A)`
   @media ${device.laptop} {
     align-self: stretch;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
-  }
-
-  @media ${device.mobileL} {
     flex: 0 1 100%;
-    // min-width: 80% !important;
     margin-top: ${(props) => (props.showMobileMenu && '32px')};
   }
+`;
+
+const TagItem = styled.b`
+    width: fit-content;
+    border-radius: 12px;
+    border: 1px solid #D98AEC;
+    background: transparent;
+    padding: 2px 5px;
+    color: #D98AEC;
+    // text-align: center;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: bolder;
+    line-height: normal;
 `;
 
 export default Header;
