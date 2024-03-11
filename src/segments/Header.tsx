@@ -260,7 +260,7 @@ function Header() {
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                       {/* {t('header.docs.title')} */}
-                      Products
+                      Product
                       {/* </FadeInAnimation> */}
                     </Span>
                     {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
@@ -387,7 +387,7 @@ function Header() {
 
                   <NavigationMenuContent
                     className="menuContent"
-                    expanded={mobileMenuMap[2]}
+                    expanded={mobileMenuMap[3]}
                   >
                     {HeaderList.resources.map((item, index) => 
                     <HeaderSpace item={item} index={index} />)}
@@ -422,8 +422,8 @@ function Header() {
                 <LanguageMenuItem>
                   {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
                   <LanguageMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 3)}
-                    expanded={mobileMenuMap[3]}
+                    onClick={(e) => onMobileHeaderMenuClick(e, 4)}
+                    expanded={mobileMenuMap[4]}
                   >
                     <Span
                       fontSize="18px"
@@ -459,19 +459,19 @@ function Header() {
 
                   <LanguageMenuContent
                     className="menuContent"
-                    expanded={mobileMenuMap[3]}
+                    expanded={mobileMenuMap[4]}
                   >
                     {
                       SupportedLanguagesList.map((item, index) => {
                         return (
-                          <Button
+                          <LanguageButton
                             key={index}
                             href="#"
                             title={t(item.translatedtitle)}
                             background="transparent"
                             hoverbackground="#fff"
                             color="#fff"
-                            padding="8px 30px"
+                            padding="8px 24px"
                             display="flex"
                             borderRadius="0"
                             justifyContent="flex-start"
@@ -503,7 +503,7 @@ function Header() {
                                 {t(item.translatedtitle)}
                               </Span>
                             </ItemH>
-                          </Button>
+                          </LanguageButton>
                         )
                       })
                     }
@@ -538,7 +538,7 @@ function Header() {
 
 const LanguageItem = styled.div`
   list-style: none;
-  margin: 0px 16px 0px 0px;
+  margin: 0px 24px 0px 0px;
 
   @media ${device.laptop} {
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
@@ -563,7 +563,7 @@ const HeaderItemH = styled(ItemH)`
     margin: 8px;
     flex-direction: column;
     height: fit-content;
-    padding: 16px;
+    padding: 12px;
   }
 
   &.light {
@@ -574,10 +574,9 @@ const HeaderItemH = styled(ItemH)`
 
 const HeaderBlurV = styled(ItemV)`
   backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
-  background: transparent;
+  background: rgba(13, 13, 15, 1);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 24px;
-  // background: ${GLOBALS.COLORS.HEADER_BG_DARK};
 
   &.light {
     background: ${GLOBALS.COLORS.HEADER_BG_LIGHT};
@@ -589,6 +588,10 @@ const HeaderNavItemV = styled(ItemV)`
 
   @media ${device.laptop} {
     margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
+  }
+
+  @media ${device.laptop} {
+    margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
   }
 `;
 
@@ -808,7 +811,7 @@ const LanguageMenuItem = styled.li`
 
   & span {
     font-family: 'Strawford';
-    padding: 16px;
+    padding: 4px;
     font-weight: 500;
     font-size: 18px;
     line-height: 142%;
@@ -868,6 +871,10 @@ const NavigationMenuHeader = styled.div`
       height: 16px;
       transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
     }
+  }
+
+  @media ${device.mobileL} {
+    margin: 24px 0 0px 0;
   }
 `;
 
@@ -951,7 +958,9 @@ const NavigationMenuContent = styled.ul`
     flex-direction: column;
 
     margin: 0;
-    padding: 0;
+    // padding: 0;
+    padding: 10px 12px 24px 12px;
+
 
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 
@@ -970,6 +979,12 @@ const HeaderFocusItems = styled(ItemH)`
     align-self: center;
     flex-wrap: wrap;
   }
+
+  @media ${device.mobileL} {
+    flex-direction: row !important;
+    width: 100%;
+    flex: 1;
+  }
 `
 
 const LanguageMenuContent = styled.div`
@@ -980,14 +995,16 @@ const LanguageMenuContent = styled.div`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
-  top: 54px;
+  // top: 54px;
 
   left: 50%;
   transform: translateX(-90%);
   z-index: 1;
-  background: #2a2a39;
-  border-radius: 16px 4px 16px 16px;
-  padding: 10px 0px;
+  padding: 14px;
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #19181B;
 
   & a {
     min-width: 162px;
@@ -1012,6 +1029,20 @@ const LanguageMenuContent = styled.div`
       justify-content: flex-start;
     }
   }
+`;
+
+const LanguageButton = styled(Button)`
+&:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: none;
+
+
+  h2 {
+    color: #D98AEC;
+  }
+}
+
 `;
 
 const HeaderItem = styled.div`
@@ -1042,11 +1073,19 @@ const HeaderItem = styled.div`
 
 const HeaderImage = styled(Image)`
   margin: 10px;
+
+  @media ${device.mobileL} {
+    margin: 10px 10px 10px 0;
+  }
 `;
 
 const HeaderDiv = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media ${device.mobileL} {
+    flex-direction: column;
+  }
 `;
 
 const HeaderSection = styled.div`
@@ -1055,13 +1094,18 @@ const HeaderSection = styled.div`
 `;
 
 const DappLauncher = styled(A)`
-  padding: 14px 32px;
+  // padding: 14px 32px;
   font-family: FK Grotesk Neue;
   height: 48px;
 
   @media ${device.laptop} {
     align-self: stretch;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  }
+
+  @media ${device.mobileL} {
+    flex: 0 1 100%;
+    // min-width: 80% !important;
   }
 `;
 
