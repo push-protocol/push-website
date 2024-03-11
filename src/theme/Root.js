@@ -8,6 +8,7 @@ import i18nInitialize from "@site/src/utils/i18n";
 // Internal Components
 import Footer from "@site/src/segments/Footer";
 import ServerStyle from "@site/src/theme/ServerStyle";
+import CookieComponent from "../components/CookieComponent";
 
 // Initialize Internalization
 i18nInitialize();
@@ -103,8 +104,12 @@ export default function Root({ children }) {
       {/* Main react children */}
       {children}
 
-      {excludeDefaultConfigAt("/BRB") &&
-        excludeDefaultConfigAt("/DOCS") && <Footer />}
+      {excludeDefaultConfigAt("/BRB") && excludeDefaultConfigAt("/DOCS") && (
+        <>
+          <Footer />
+          <CookieComponent />
+        </>
+      )}
     </div>
   );
 }
