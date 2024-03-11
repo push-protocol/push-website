@@ -425,6 +425,18 @@ function Header() {
                     onClick={(e) => onMobileHeaderMenuClick(e, 4)}
                     expanded={mobileMenuMap[4]}
                   >
+                    <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
+                      {isMobile && i18n &&
+                        SupportedLanguagesList
+                          .filter((item) => item.id === i18n.language)
+                          .map((item, index) => 
+                              <div>
+                                  {item?.language}
+                              </div>
+                        )
+                      }
+                    </H2>
+                    
                     <Span
                       fontSize="18px"
                       fontWeight="500"
@@ -491,17 +503,18 @@ function Header() {
                                 width={24}
                                 borderRadius="100%"
                               />
-                              <Span
-                                fontSize="16px"
-                                fontWeight="400"
-                                lineHeight="230%"
+                              <H3
+                                fontSize="14px"
+                                fontWeight="500"
+                                lineHeight="130%"
                                 letterSpacing="normal"
                                 alignSelf="flex-start"
                                 padding="8px 30px 8px 10px !important"
-                                color="#fff !important"
+                                color="#FFF !important"
+                                fontFamily = "FK Grotesk Neue"
                               >
                                 {t(item.translatedtitle)}
-                              </Span>
+                              </H3>
                             </ItemH>
                           </LanguageButton>
                         )
@@ -522,7 +535,7 @@ function Header() {
                 fontSize="15px"
                 fontWeight="500"
                 letterSpacing="-0.03em"
-                lineHeight="16px"
+                lineHeight="normal"
                 width="100%"
                 // margin="0px 8px 0px 0px"
               >
@@ -542,7 +555,10 @@ const LanguageItem = styled.div`
 
   @media ${device.laptop} {
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+    margin: 0px;
+    flex: 1;
   }
+
 `;
 
 // V2 Designs
@@ -591,7 +607,7 @@ const HeaderNavItemV = styled(ItemV)`
   }
 
   @media ${device.laptop} {
-    margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
+    // margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
   }
 `;
 
@@ -822,9 +838,9 @@ const LanguageMenuItem = styled.li`
   //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
   // }
 
-  // & .chevronIcon {
-  //      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : '')};
-  // }
+  & .chevronIcon {
+    color: #6C6C6C;
+  }
 
   // & .menuContent {
   //   display: ${(props) => (props.expanded ? 'block' : 'none')};
@@ -838,12 +854,19 @@ const LanguageMenuItem = styled.li`
 
     & .chevronIcon {
       transform: rotate(180deg);
+      color: #FFF;
     }
 
     & .menuContent {
       display: block;
     }
   }
+
+  @media ${device.mobileL} {
+    padding-left: 0px;
+    flex: 1;
+  }
+
 `;
 
 const NavigationMenuHeader = styled.div`
@@ -897,8 +920,19 @@ const LanguageMenuHeader = styled.div`
   align-items: center;
   cursor: pointer;
 
+  h2 {
+    color: #6C6C6C;
+  }
+
   &:hover {
     cursor: pointer;
+
+    &:hover {
+  
+      h2 {
+        color: #FFF;
+      }
+    }
   }
 
   & .chevronIcon {
@@ -918,6 +952,15 @@ const LanguageMenuHeader = styled.div`
       transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
     }
   }
+
+  @media ${device.laptop} {
+     width: 100%;
+    
+     h2 {
+       margin: 0 auto 0 0;
+       padding: 4px;
+    }
+  }
 `;
 
 const NavigationMenuContent = styled.ul`
@@ -928,7 +971,8 @@ const NavigationMenuContent = styled.ul`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
-  top: 54px;
+  top: 34px;
+  // top: 54px;
 
   left: 50%;
   transform: translateX(-50%);
@@ -995,6 +1039,7 @@ const LanguageMenuContent = styled.div`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
+  top: 34px;
   // top: 54px;
 
   left: 50%;
@@ -1021,7 +1066,7 @@ const LanguageMenuContent = styled.div`
     flex-direction: column;
 
     margin: 0;
-    padding: 0;
+    padding: 14px;
 
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 
@@ -1032,16 +1077,22 @@ const LanguageMenuContent = styled.div`
 `;
 
 const LanguageButton = styled(Button)`
-&:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  border: none;
+    margin: 14px 0;
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: none;
 
 
-  h2 {
-    color: #D98AEC;
+    h2 {
+      color: #D98AEC;
+    }
   }
-}
+
+  @media ${device.laptop} {
+    width: 100%;
+    flex: 1;
+  }
 
 `;
 
@@ -1094,7 +1145,7 @@ const HeaderSection = styled.div`
 `;
 
 const DappLauncher = styled(A)`
-  // padding: 14px 32px;
+  padding: 14px 24px;
   font-family: FK Grotesk Neue;
   height: 48px;
 
@@ -1106,6 +1157,7 @@ const DappLauncher = styled(A)`
   @media ${device.mobileL} {
     flex: 0 1 100%;
     // min-width: 80% !important;
+    margin-top: ${(props) => (props.showMobileMenu && '32px')};
   }
 `;
 
