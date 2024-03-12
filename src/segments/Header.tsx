@@ -131,6 +131,22 @@ function Header() {
   //   setIsAlertVisible(false);
   // };
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      console.log('open open');
+      document.body.style.overflow = 'hidden';
+
+    } else {
+      document.body.style.overflow = ''; // Reset overflow when the menu is closed
+    }
+  
+    return () => {
+      // Cleanup: Reset overflow when the component unmounts
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+  
+
   const HeaderSpace = ({item, index}) => {
 
     const openLink = (link: string) => {
@@ -474,8 +490,11 @@ function Header() {
                   <LanguageMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 4)}
                     expanded={mobileMenuMap[4]}
+                    onMouseEnter={() => handleMouseEnter('text4')}
+                    onMouseLeave={() => handleMouseLeave()}
+                    id='text4'
                   >
-                    <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
+                    <H2 fontSize='16px' fontFamily='FK Grotesk Neue'lineHeight="130%" letterSpacing="normal" fontWeight="500">
                       {isMobile && i18n &&
                         SupportedLanguagesList
                           .filter((item) => item.id === i18n.language)
@@ -685,7 +704,6 @@ const StyledHeader = styled.header`
   font-family: 'Strawford';
 
   /* padding: 0px 160px; */
-
   position: fixed;
   top: 0;
   left: 0;
@@ -927,7 +945,6 @@ const NavigationMenuHeader = styled.div`
 
   & span {
     color: inherit !important;
-    // color: ${({ isHovered }) => (isHovered ? '#fff' : 'red')};
   }
 
   &:hover {
@@ -977,23 +994,18 @@ const LanguageMenuHeader = styled.div`
   cursor: pointer;
 
   h2 {
-    color: #6C6C6C;
+    color: inherit !important;
   }
 
   &:hover {
     cursor: pointer;
 
-    &:hover {
-  
-      h2 {
-        color: #FFF;
-      }
-    }
   }
 
   & .chevronIcon {
     transition-duration: 0.4s;
     transition-property: transform;
+    color: inherit !important;
   }
 
   @media ${device.laptop} {
@@ -1028,42 +1040,43 @@ const NavigationMenuContent = styled.ul`
 
   // logic - this should touch the parent li for enough hover surface area.
   top: 34px;
-  // top: 54px;
-
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   padding: 10px 14px 24px 14px;
-
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #19181B;
 
-  // display: flex;
-  // flex-wrap: wrap;
-  // max-height: 340px;
-
-  // & a {
-  //   min-width: 470px;
-  // }
-
   @media ${device.laptop} {
     width: 100%;
-
     position: relative;
     top: 0px;
     left: 0;
     transform: none;
     display: flex;
     flex-direction: column;
-
     margin: 0;
-    // padding: 0;
     padding: 10px 12px 24px 12px;
+    max-height: 370px;
 
+    overflow-y: auto;
+    position: relative;
+    clip-path: inset(0 round 24px);
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
 
+    &::-webkit-scrollbar-thumb {
+      background-color: #CD3FAC;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+    }
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
-
     & a {
       justify-content: flex-start;
     }
