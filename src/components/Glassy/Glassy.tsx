@@ -19,7 +19,9 @@ import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 
-const Glassy = ({ section }) => {
+const Glassy = ({ item }) => {
+  console.log("Item", item);
+  
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   // Internationalization
@@ -27,8 +29,10 @@ const Glassy = ({ section }) => {
 
   const [hovered, setHovered] = useState(false);
 
-  const { config, header, body, footer, after } = section;
-  const { id, height, padding, hideonmobile, bg, bgvideosrc, bgtitle, link } = config || "";
+  const { config, header, body, footer, after } = item;
+  const { id, height, padding, hideonmobile, bg, bgvideosrc, bgtitle, link } =
+    config || "";
+
   const {
     title,
     tags,
@@ -41,18 +45,7 @@ const Glassy = ({ section }) => {
     iconalt,
     icontitle,
   } = header || "";
-  const {
-    type,
-    imagesrc,
-    videosrc,
-    imagealt,
-    imagetitle,
-    bodytext,
-    buttontext,
-    buttonlink,
-    buttontitle,
-    codeblockImg,
-  } = body || "";
+  
   const { text } = footer || "";
   const { message, alignment } = after || "";
 
@@ -93,7 +86,6 @@ const Glassy = ({ section }) => {
     const offsetY = e.clientY - rect.top;
     const x = rect.width - offsetX;
     const y = offsetY;
-    
 
     // Calculate the center of the container
     const centerX = rect.width / 2;
@@ -120,7 +112,7 @@ const Glassy = ({ section }) => {
 
     // Apply glow
     const glowwys = document.querySelectorAll(`.${id} > .glowwy`);
-    glowwys.forEach(glowwy => {
+    glowwys.forEach((glowwy) => {
       glowwy.style.top = `${y}px`;
       glowwy.style.right = `${x}px`;
     });
@@ -133,42 +125,47 @@ const Glassy = ({ section }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       height={height}
+      fillheight={item.config.fillheight}
       hideonmobile={hideonmobile}
-      type={type}
-      illustration={illustration && true}
       className={`${hovered ? "active" : ""} ${id}`}
     >
-      <GlowwyBorder 
-        className={`${hovered ? "active" : ""} glowwy`}
-      />
+      <GlowwyBorder className={`${hovered ? "active" : ""} glowwy`} />
 
-      <Glowwy 
-        className={`${hovered ? "active" : ""} glowwy`}
-      />
-      
-      <Subcontainer
-        id={id}
-        padding={padding}
-        bg={bg}
+      <Glowwy className={`${hovered ? "active" : ""} glowwy`} />
+
+      <Subcontainer 
+        id={id} 
+        padding={padding} 
+        bg={hovered ? null : bg} 
         title={t(bgtitle)}
+        bgsize={item.config.bgsize}
       >
         {/* If bgvideosrc is present, then play video on hover */}
-        {/* {bgvideosrc &&
+        {bgvideosrc && (
           <ReactPlayer
-            url={require(`@site/static/assets/website/home/${bgvideosrc}.mp4`).default}
+            url={
+              require(`@site/static/assets/website/home/${bgvideosrc}.mp4`)
+                .default
+            }
             playing={hovered ? true : false}
             loop={false}
             muted={true}
             width="100%"
             height="100%"
-            style={{ position: "absolute", top: 0, bottom:0, right: 0, left: 0, visibility: hovered && bgvideosrc ? 'visible' : 'hidden' }}
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              right: 0,
+              left: 0,
+              visibility: hovered && bgvideosrc ? "visible" : "hidden",
+            }}
           />
-        } */}
+        )}
 
-        <Header highlight={highlight} type={type} id={id}>
+        <Header highlight={highlight} id={id}>
           <Subheader
             highlight={highlight}
-            type={type}
             id={id}
             illustration={illustration}
           >
@@ -196,12 +193,11 @@ const Glassy = ({ section }) => {
                   color="#D98AEC"
                   fontWeight="bold"
                   fontFamily="FK Grotesk Neue"
-                  letterSpacing='normal'
                 >
                   {t(subheader)}
                 </H2>
 
-                <H2Text fontFamily="FK Grotesk Neue" letterSpacing='normal' theme={theme} type={type}>
+                <H2Text fontFamily="FK Grotesk Neue" theme={theme}>
                   {t(title)}
                 </H2Text>
               </Title>
@@ -210,17 +206,44 @@ const Glassy = ({ section }) => {
             </ItemH>
 
             {illustration && (
-              <GridImage
-                src={
-                  require(`@site/static/assets/website/home/${illustration}.webp`)
-                    .default
+              <HeaderImageWrapper>
+                {item.header.illustrationvideo && 
+                  <ReactPlayer
+                    url={
+                      require(`@site/static/assets/website/home/${item.header.illustrationvideo}.mp4`)
+                        .default
+                    }
+                    playing={hovered ? true : false}
+                    loop={true}
+                    muted={true}
+                    width="100%"
+                    height="100%"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      visibility: hovered && item.header.illustrationvideo ? "visible" : "hidden",
+                    }}
+                  />
                 }
-                srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
-                alt={t(iconalt)}
-                title={t(icontitle)}
-                width={isTablet ? "27px" : "auto"}
-                height={isTablet ? "auto" : "37px"}
-              />
+                
+                <GridImage
+                  src={
+                    require(
+                      `@site/static/assets/website/home/${illustration}.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
+                  alt={t(iconalt)}
+                  title={t(icontitle)}
+                  width={isTablet ? "27px" : "auto"}
+                  height={isTablet ? "auto" : "37px"}
+                  style={{
+                    visibility: hovered && item.header.illustrationvideo ? "hidden" : "visible",
+                  }}
+                />
+              </HeaderImageWrapper>
+
             )}
           </Subheader>
 
@@ -238,124 +261,131 @@ const Glassy = ({ section }) => {
           )}
         </Header>
 
-        {body && (
+        {item.body && (
           <Body>
-            {/* If Image, check if videosrc is present, if yes, load video */}
-            {/* {type === "image" && videosrc &&
-              <ReactPlayer
-                url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
-                playing={hovered ? true : false}
-                loop={false}
-                muted={true}
-                width="100%"
-                height="100%"
-                style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
-              />
-            } */}
+            <BodyInner
+              bodyjustifycontent={item.config.bodyjustifycontent === "top" ? "flex-start" : item.config.bodyjustifycontent === "bottom" ? "flex-end" : "center"}
+            >
+              {/* Loop through and emit all body item based on types */}
 
-            {/* If Image, check if videosrc is present, if yes, play video on hover */}
-            {type === "image" &&
-              <BodyImage
-                src={
-                  require(`@site/static/assets/website/home/${imagesrc}.webp`)
-                    .default
+              {item.body.map((object) => {
+                // Render type "image"
+                if (object.type === "image") {
+                  return (
+                    <BodyImageWrapper>
+                      {object.videosrc && 
+                        <ReactPlayer
+                          url={
+                            require(`@site/static/assets/website/home/${object.videosrc}.mp4`)
+                              .default
+                          }
+                          playing={hovered ? true : false}
+                          loop={true}
+                          muted={true}
+                          width="100%"
+                          height="100%"
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            visibility: hovered && object.videosrc ? "visible" : "hidden",
+                          }}
+                        />
+                      }
+
+                      <BodyImage
+                        src={
+                          require(`@site/static/assets/website/home/${object.imagesrc}.webp`)
+                            .default
+                        }
+                        srcSet={`${require(`@site/static/assets/website/home/${object.imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${object.imagesrc}@3x.webp`).default} 3x`}
+                        alt={t(object.imagealt)}
+                        title={t(object.imagetitle)}
+                        style={{
+                          visibility: hovered && object.videosrc ? "hidden" : "visible",
+                        }}
+                        type={object.type}
+                      />
+                    </BodyImageWrapper>
+                  );
                 }
-                srcSet={`${require(`@site/static/assets/website/home/${imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${imagesrc}@3x.webp`).default} 3x`}
-                alt={t(imagealt)}
-                title={t(imagetitle)}
-                // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
-                type={type}
-                id={id}
-              />
-            }
+                
+                // Render type "title"
+                if (object.type === "title") {
+                  return (
+                    <ItemV padding="0px 0px 0px 0px" 
+                      flex="initial"
+                      alignSelf={object.align === "left" ? "flex-start" : object.align === "right" ? "flex-end" : "center"}
+                    >
+                      <SubscribeText>{t(object.titletext)}</SubscribeText>
+                    </ItemV>
+                  )
+                }
 
-            {type === "codeblock" && (
-              <CodeDiv>
-                {/* Hack since codeblock is different currently */}
-                <ItemV
-                  padding="0px 0px 0px 0px"
-                  flex="1"
-                >
-                  <SubscribeText>{t(bodytext)}</SubscribeText>
+                // Render type "button"
+                if (object.type === "button") {
+                  return (
+                    <ItemV 
+                      padding="0px 0px 0px 0px" 
+                      flex="initial"
+                    >
+                      <ButtonItem
+                        background="#E64DE9"
+                        padding={!isTablet ? "14px 22px" : "10px 11px"}
+                        margin="0px auto"
+                        fontWeight="500"
+                        fontSize="16px"
+                        fontFamily="FK Grotesk Neue"
+                        href={object.buttonlink}
+                        title={t(object.buttontitle)}
+                      >
+                        {t(object.buttontext)}
+                        <WhiteArrow />
+                      </ButtonItem>
+                    </ItemV>
+                  )
+                }
 
-                  <ButtonItem
-                    background="#E64DE9"
-                    padding={!isTablet ? "14px 22px" : "10px 11px"}
-                    margin="0px auto"
-                    fontWeight="500"
-                    fontSize="16px"
-                    fontFamily="FK Grotesk Neue"
-                    href={buttonlink}
-                    title={t(buttontitle)}
-                  >
-                    {t(buttontext)}
-                    <WhiteArrow />
-                  </ButtonItem>
-                </ItemV>
+                return null; // Explicitly return null if the condition is not met
+              })}
 
-                {/* Hack since codeblock is different currently */}
-                <ItemV
-                  padding="0px 0px 0px 0px"
-                >
-                  {/* {videosrc &&
-                    <ReactPlayer
-                      url={require(`@site/static/assets/website/home/${videosrc}.mp4`).default}
-                      playing={hovered ? true : false}
-                      loop={false}
-                      muted={true}
-                      width="100%"
-                      height="100%"
-                      style={{ position: "absolute", top: 0, left: 0, visibility: hovered && videosrc ? 'visible' : 'hidden' }}
-                    />
-                  } */}
 
-                  <BodyImage
-                    src={
-                      require(
-                        `@site/static/assets/website/home/${codeblockImg}.webp`,
-                      ).default
-                    }
-                    srcSet={`${require(`@site/static/assets/website/home/${codeblockImg}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${codeblockImg}@3x.webp`).default} 3x`}
-                    alt={t(imagealt)}
-                    title={t(imagetitle)}
-                    // style={{ visibility: hovered && videosrc ? 'hidden' : 'visible' }}
-                    type={type}
-                    margin={isMobile && "12px 0 0 0"}
-                  />
-                </ItemV>
-              </CodeDiv>
-            )}
+        
+            </BodyInner>
           </Body>
         )}
 
         {footer && (
           <Footer>
-            {text && <H2Text fontFamily="FK Grotesk Neue" id={id}>{t(text)}</H2Text>}
+            {text && (
+              <H2Text fontFamily="FK Grotesk Neue" id={id}>
+                {t(text)}
+              </H2Text>
+            )}
           </Footer>
         )}
-
-        {after && (
-          <AfterItem alignment={alignment}>
-            <H2
-              fontSize="12px"
-              color="#FFF"
-              fontFamily="FK Grotesk Neue"
-              lineHeight="130%"
-            >
-              {t(message)}
-            </H2>
-          </AfterItem>
-        )}
       </Subcontainer>
-      
+
+      {after && (
+        <AfterItem alignment={alignment}>
+          <H2
+            fontSize="12px"
+            color="#FFF"
+            fontFamily="FK Grotesk Neue"
+            lineHeight="130%"
+          >
+            {t(message)}
+          </H2>
+        </AfterItem>
+      )}
     </Container>
   );
 };
 
 const Container = styled.div`
+  flex: ${(props) => props.fillheight ? "1" : "initial"};
   position: relative;
   width: 100%;
-  max-height: ${(props) => props.height || "auto"};
   min-height: ${(props) => props.height || "auto"};
   border-radius: 24px;
   box-sizing: border-box;
@@ -382,7 +412,7 @@ const Container = styled.div`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 1px;
     left: 1px;
@@ -390,28 +420,21 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    background: #0D0D10;
+    background: #09090b;
+    // background: #0A0A0D;
     // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 
   @media ${device.laptopM} {
-    width: 100% !important;
-    max-height: ${(props) => props.id == "web3-standard" && "215px !important"};
-    min-height: ${(props) => props.id == "web3-standard" && "215px !important"};
   }
 
   @media ${device.tablet} {
-    max-height: ${(props) => props.height || "auto"};
-    min-height: ${(props) => props.height || "auto"};
   }
-    
-    @media ${device.mobileL} {
-        display: ${(props) => props.hideonmobile && 'none !important'};
-        max-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
-        min-height: ${({id, type ,height, illustration}) => id == 'snap' ? '380px' : type == 'codeblock' && height ? '420px' : illustration || id == 'hyperscalable' ? height : 'fit-content !important'};
-        width: 100% !important;
-    }
+
+  @media ${device.mobileL} {
+    display: ${(props) => props.hideonmobile && "none !important"};
+  }
 `;
 
 const GlowwyBorder = styled.div`
@@ -420,12 +443,8 @@ const GlowwyBorder = styled.div`
   border-radius: 50%;
   box-shadow:
     0 0 49px 19px rgb(202, 55, 237),
-    0 0 80px 40px #CA37ED,
+    0 0 80px 40px #ca37ed,
     0 0 100px 50px rgb(202, 55, 237);
-    // box-shadow:
-    // 0 0 59px 29px rgb(202, 55, 237),
-    // 0 0 100px 60px #CA37ED,
-    // 0 0 140px 90px rgb(202, 55, 237);
   position: absolute;
   z-index: -9;
   display: none;
@@ -445,42 +464,16 @@ const Subcontainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: ${({id, padding}) => id == 'plug-play' ? '24px 24px 0px 24px' : padding ? padding : "24px"};
+  gap: 16px;
+  padding: ${(props) => props.padding || "24px"};
   background-image: url(${(props) => props.bg});
-    background-position: ${(props) =>
-      props.id == "snap"
-        ? "center 35%"
-        : props.id == "hyperscalable"
-          ? "center 20px"
-          : "center"};
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: ${(props) =>
-    props.id == "hyperscalable"
-      ? "auto 70%"
-      : props.id == "interoperable"
-        ? "cover"
-        : "contain"};
-
-  @media ${device.tablet} {
-    margin: ${(props) => props.id == "anti-spam" || props.id == "chat-requests" ? "auto 0" : ""};
-    background-size: ${(props) =>
-      props.id == "hyperscalable"
-        ? "75% auto"
-        : props.id == "interoperable"
-          ? "cover"
-          : "contain"};
-  }
-
-  @media ${device.mobileL} {
-    gap: ${(props) => props.id == "plug-play" && '24px'};
-    padding: ${({id, padding}) => id == 'plug-play' ? '24px' : padding || "24px"};
-    background-size: ${(props) =>
-      props.id == "hyperscalable"
-        ? "auto 73%"
-        : props.id == "interoperable"
-          ? "cover"
-          : "contain"};
-  }
+  background-size: ${(props) => props.bgsize || "contain"};
+  overflow: hidden;
+  border-radius: inherit;
+  position: relative;
+  margin: 1px;
 `;
 
 const TagItem = styled.div`
@@ -510,21 +503,22 @@ const TagItems = styled(ItemV)`
 `;
 
 const H2Text = styled(H2)`
+  font-size: 19px;
+  color: #fff;
+  line-height: 130%;
+  white-space: pre;
+  font-weight: 400;
 
-    font-size: 19px;
-    color: #FFF;
-    line-height: 130%;
+  @media ${device.mobileL} {
     white-space: pre;
-    font-weight: 400;
+    margin-top: ${({ id }) => (id == "snap" ? "24px" : "0")};
+  }
 
-    @media ${device.mobileL} {
-        white-space: ${(props) => props.type === 'codeblock' ? 'normal' : 'pre'};
-        margin-top: ${({id}) => id == 'snap' ? '24px' : '0'};
-    }
-
-    background: ${(props) => props.theme === 'hue' && "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
-    -webkit-background-clip: ${(props) => props.theme === 'hue' && "text"};
-    -webkit-text-fill-color: ${(props) => props.theme === 'hue' && "transparent"};
+  background: ${(props) =>
+    props.theme === "hue" &&
+    "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
+  -webkit-background-clip: ${(props) => props.theme === "hue" && "text"};
+  -webkit-text-fill-color: ${(props) => props.theme === "hue" && "transparent"};
 `;
 
 const SubscribeText = styled.h2`
@@ -579,51 +573,19 @@ const GridImage = styled(Image)`
   object-fit: contain !important;
 
   @media ${device.mobileL} {
-    width: ${({ id, type }) =>
-      id == "snap" && type == "image"
-        ? "100%"
-        : type == "image"
-          ? "80%"
-          : "inherit"};
+    width: inherit;
     margin: ${(props) => props.type == "image" && "0 auto"};
-  }
-`;
-
-const BodyImage = styled(Image)`
-  margin: ${(props) => props.margin || "initial"};
-  object-fit: contain !important;
-
-  @media ${device.mobileL} {
-    width: ${({ id, type }) =>
-      id == "snap" && type == "image"
-        ? "100%"
-        : type == "image"
-          ? "80%"
-          : "inherit"};
-    margin: ${({id, type}) => id == 'plug-play' ? '0 auto' : type == "image"  && id !== 'token-gated' && " 24px auto 0 auto"};
   }
 `;
 
 const Header = styled(ItemV)`
   justify-content: ${({ highlight, tags }) =>
     highlight ? "flex-start" : tags ? "center" : "center"};
-  flex: ${({ id, highlight, type }) =>
-    highlight ||
-    type === "codeblock" ||
-    id === "token-gated" ||
-    id == "plug-play"
-      ? "0"
-      : "1"};
+  flex: initial;
 `;
 
 const Subheader = styled(ItemH)`
-  flex: ${({ id, highlight, type }) =>
-    highlight ||
-    type === "codeblock" ||
-    id === "token-gated" ||
-    id == "plug-play"
-      ? "0"
-      : "1"};
+  flex: 1;
   align-items: ${(props) => props.illustration && "center"};
   align-self: ${(props) => props.highlight && "flex-start"};
 `;
@@ -639,12 +601,38 @@ const Title = styled(ItemV)`
   gap: ${({ subheader }) => subheader && "8px"};
 `;
 
+const HeaderImageWrapper = styled.div`
+  display: block;
+  position: relative;
+`;
+
 const Body = styled.div`
   flex: 1;
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
+`;
+
+const BodyInner = styled(ItemV)`
+  gap: 20px;
+
+  justify-content: ${(props) => props.bodyjustifycontent ? props.bodyjustifycontent : "center"};
+`
+
+const BodyImageWrapper = styled.div`
+  display: block;
+  width: 100%;
+  position: relative;
+`
+
+const BodyImage = styled(Image)`
+  margin: ${(props) => props.margin || "initial"};
+  object-fit: contain !important;
+
+  @media ${device.mobileL} {
+
+  }
 `;
 
 const Background = styled.div`
@@ -675,14 +663,9 @@ const CodeDiv = styled.div`
   height: 100%;
 `;
 
-
 const AfterItem = styled.div`
   background-color: #252527;
-  width: calc(100% + 48px) !important;
   position: relative;
-  margin-left: -24px;
-  margin-right: -24px;
-  margin-bottom: -24px;
   display: flex;
   align-items: center;
   padding: 8px 24px;

@@ -3,28 +3,24 @@ export const HeaderList = {
         {
             title: "Push Notifications",
             subtitle: "Web3 native notification alerts",
-            srcref: "inbox-icon-on",
             srcrefoff: "inbox-icon-off",
             href: ""
         },
         {
             title: "Push Chat",
             subtitle: "Web3 native chat protocol with groups",
-            srcref: "chat-icon-on",
             srcrefoff: "chat-icon-off",
             href: ""
         },
         {
             title: "Push Video",
             subtitle: "Decentralized video calls",
-            srcref: "video-icon-on",
             srcrefoff: "video-icon-off",
             href: ""
         },
         {
             title: "Push Spaces",
             subtitle: "Decentralized audio streaming",
-            srcref: "spaces-icon-on",
             srcrefoff: "spaces-icon-off",
             href: ""
         }
@@ -33,32 +29,27 @@ export const HeaderList = {
         {
             title: "Documentation Hub",
             subtitle: "Curated wiki of Push Protocol",
-            srcref: "docs-icon-on",
             srcrefoff: "docs-icon-off",
             href: "https://push.org/docs"
         },
         {
             title: "Examples",
             subtitle: "Gallery of collaborative experiences",
-            srcref: "examples-icon-on",
             srcrefoff: "examples-icon-off",
         },
         {
             title: "Notification Quickstart",
             subtitle: "Setup notifications in 2 mins",
-            srcref: "inbox-icon-on",
             srcrefoff: "inbox-icon-off",
         },
         {
             title: "Chat Quickstart",
             subtitle: "Setup chat in 2 mins",
-            srcref: "chat-icon-on",
             srcrefoff: "chat-icon-off",
         },
         {
             title: "Hackers",
             subtitle: "Are you a hacker? Get a head start here",
-            srcref: "hacker-icon-on",
             srcrefoff: "hacker-icon-off",
         },
         {
@@ -67,13 +58,11 @@ export const HeaderList = {
             tagitem: {
                 text: "NEW"
             },
-            srcref: "react-icon-on",
             srcrefoff: "react-icon-off",
         },
         {
             title: "Developer Discord",
             subtitle: "Join our community of developers",
-            srcref: "discord-icon-on",
             srcrefoff: "discord-icon-off",
         }
     ],

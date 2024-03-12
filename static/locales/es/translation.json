@@ -134,7 +134,7 @@
           "title": "Código Ligero con Integración Rápida de API",
           "imagealt": "Illustration showing lines of code required for Push Protocol integration",
           "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
-          "bodytext": "<4 minutos",
+          "titletext": "<4 minutos",
           "buttontext": "Comenzar a construir",
           "buttonlink": "/docs/notifications/quickstart",
           "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."  
@@ -183,7 +183,7 @@
           "title": "Código Ligero con Integración Rápida de API",
           "imagealt": "Ilustración mostrando 2 líneas de código requeridas para la integración del Protocolo Push",
           "imagetitle": "Integra Push Chat en 2 minutos y con 2 líneas de código",
-          "bodytext": "<2 minutos",
+          "titletext": "<2 minutos",
           "buttontext": "Comenzar a construir",
           "buttonlink": "/docs/chat/quickstart",
           "buttontitle": "Explora la documentación para la integración instantánea del chat mediante el Protocolo Push en tu dapp"

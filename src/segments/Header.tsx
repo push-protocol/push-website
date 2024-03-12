@@ -127,9 +127,6 @@ function Header() {
     // }
   };
 
-  // const hideAlertHandler = ()=>{
-  //   setIsAlertVisible(false);
-  // };
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -137,7 +134,7 @@ function Header() {
       document.body.style.overflow = 'hidden';
 
     } else {
-      document.body.style.overflow = ''; // Reset overflow when the menu is closed
+      document.body.style.overflow = '';
     }
   
     return () => {
@@ -148,7 +145,6 @@ function Header() {
   
 
   const HeaderSpace = ({item, index}) => {
-
     const openLink = (link: string) => {
       window.open(link, "_blank");
     };
@@ -158,10 +154,10 @@ function Header() {
         onMouseEnter={() => handleHover(index)}
         onMouseLeave={() => handleHover(null)}>
           {item.srcrefoff && (<HeaderImage
-            // key={index}
-            src={require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}.png`).default}
-            srcSet={`${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${hoveredIndex == index ? item.srcref : item.srcrefoff}@3x.png`).default} 3x`}
-            // alt={`${item?.alt}`}
+            key={index}
+            src={require(`@site/static/assets/website/header/${item.srcrefoff}.png`).default}
+            srcSet={`${require(`@site/static/assets/website/header/${item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${item.srcrefoff}@3x.png`).default} 3x`}
+            alt={`${item?.title}`}
             height={24}
             width={24}
           />)}
@@ -369,14 +365,14 @@ function Header() {
                   >
                     <HeaderDiv>
                       <HeaderSection>
-                    {HeaderList.developers.slice(0,4).map((item, index) => 
-                      <HeaderSpace item={item} index={index} />)}
-                    </HeaderSection>
+                        {HeaderList.developers.slice(0,4).map((item, index) => 
+                          <HeaderSpace item={item} index={index} />)}
+                        </HeaderSection>
 
-                    <HeaderSection>
-                    {HeaderList.developers.slice(4,7).map((item, index) => 
-                      <HeaderSpace item={item} index={index} />)}
-                    </HeaderSection>
+                        <HeaderSection>
+                        {HeaderList.developers.slice(4,7).map((item, index) => 
+                          <HeaderSpace item={item} index={`divide-${index}`} />)}
+                        </HeaderSection>
                     </HeaderDiv>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -397,18 +393,12 @@ function Header() {
                       padding="16px"
                       color='inherit'
                     >
-                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                      {/* {t('header.push-dao.title')} */}
                       Community
-                      {/* </FadeInAnimation> */}
                     </Span>
-
-                    {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                     <BsChevronDown
                       size={12}
                       className="chevronIcon"
                     />
-                    {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -459,25 +449,6 @@ function Header() {
                     <HeaderSpace item={item} index={index} />)}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-
-                {/* <NavigationMenuItem>
-                  <MenuHeader>
-                    <NavMenuItemLink
-                      to="/brb"
-                      title={'BRB'}
-                      padding="0px 0px"
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      color="#fff"
-                      hoverBackground="none"
-                    >
-                      Billion Reasons to Build
-                    </NavMenuItemLink>
-                  </MenuHeader>
-            
-                </NavigationMenuItem> */}
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -486,7 +457,6 @@ function Header() {
             >
               <LanguageItem showMobileMenu={showMobileMenu}>
                 <LanguageMenuItem>
-                  {/* <LanguageMenuItem expanded={mobileMenuMap[3]}> */}
                   <LanguageMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 4)}
                     expanded={mobileMenuMap[4]}
@@ -513,23 +483,14 @@ function Header() {
                       lineHeight="142%"
                       padding="16px 0px"
                     > 
-                      {i18n &&
-                        SupportedLanguagesList
-                          .filter((item) => item.id === i18n.language)
-                          .map((item, index) => {
-                            return (
                               <Image
-                                key={index}
-                                src={require(`@site/static/assets/website/languages/${item.srcref}.png`).default}
-                                srcSet={`${require(`@site/static/assets/website/languages/${item.srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/${item.srcref}@3x.png`).default} 3x`}
-                                alt={`${item?.alt}`}
+                                src={require(`@site/static/assets/website/languages/eng.png`).default}
+                                srcSet={`${require(`@site/static/assets/website/languages/eng@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/eng@3x.png`).default} 3x`}
+                                alt={'Language Header Icon'}
                                 height={24}
                                 width={24}
                                 borderRadius="100%"
                               />
-                            );
-                        })
-                      }
                     </Span>
                     <BsChevronDown
                       size={12}
@@ -1185,6 +1146,11 @@ const HeaderItem = styled.div`
     h2 {
       color: #D98AEC;
     }
+    & ${Image} {
+      // filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(7002%) hue-rotate(234deg) brightness(82%) contrast(95%);
+      filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(5899%) hue-rotate(225deg) brightness(107%) contrast(85%);
+    }
+  }
   }
 
   @media ${device.laptop} {
@@ -1216,9 +1182,10 @@ const HeaderSection = styled.div`
 `;
 
 const DappLauncher = styled(A)`
-  padding: 14px 24px;
+  padding: 14px 38px;
   font-family: FK Grotesk Neue;
   height: 48px;
+  min-width: 140px;
 
   @media ${device.laptop} {
     align-self: stretch;

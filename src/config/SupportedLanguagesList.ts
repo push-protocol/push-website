@@ -1,7 +1,7 @@
 export const SupportedLanguagesList = [
   {
     language: 'English',
-    srcref: 'eng',
+    srcref: 'en',
     id: 'en',
     translatedtitle: 'header.language.english',
     urltranslatedtitle: 'header.language.english',
