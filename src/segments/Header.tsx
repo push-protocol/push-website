@@ -97,6 +97,7 @@ function Header() {
   const handleHover = (index) => {
     setHoveredIndex(index);
   };
+
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // Internationalization
@@ -162,6 +163,28 @@ function Header() {
           </ItemH>
           </HeaderItem>)
           }
+
+    const textIds = ['text0','text1', 'text2', 'text3', 'text4'];
+
+    const handleMouseEnter = (activeId) => {
+      textIds.forEach((id) => {
+        if (id !== activeId) {
+          const element = document.getElementById(id);
+          if (element) {
+            element.style.color = '#6C6C6C';
+          }
+        }
+      });
+    };
+
+    const handleMouseLeave = () => {
+      textIds.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.color = '#fff';
+        }
+      });
+    };
 
   return (
     <StyledHeader
@@ -257,6 +280,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 0)}
                     expanded={mobileMenuMap[0]}
+                    onMouseEnter={() => handleMouseEnter('text0')}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     <Span
                       fontSize="18px"
@@ -264,6 +289,8 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
+                      id='text0'
+
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                       {/* {t('header.docs.title')} */}
@@ -291,6 +318,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 1)}
                     expanded={mobileMenuMap[1]}
+                    onMouseEnter={() => handleMouseEnter('text1')}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     <Span
                       fontSize="18px"
@@ -298,6 +327,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
+                      id='text1'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
                       {/* {t('header.more.title')} */}
@@ -335,6 +365,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 2)}
                     expanded={mobileMenuMap[2]}
+                    onMouseEnter={() => handleMouseEnter('text2')}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     <Span
                       fontSize="18px"
@@ -342,6 +374,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
+                      id='text2'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                       {/* {t('header.push-dao.title')} */}
@@ -360,6 +393,8 @@ function Header() {
                   <NavigationMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[2]}
+                    onMouseEnter={() => handleMouseEnter('text1')}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     {HeaderList.community.map((item, index) => 
                     <HeaderSpace item={item} index={index} />)}
@@ -370,6 +405,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 3)}
                     expanded={mobileMenuMap[3]}
+                    onMouseEnter={() => handleMouseEnter('text3')}
+                    onMouseLeave={() => handleMouseLeave()}
                   >
                     <Span
                       fontSize="18px"
@@ -377,6 +414,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
+                      id='text3'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                       {/* {t('header.push-dao.title')} */}
@@ -490,7 +528,7 @@ function Header() {
                             background="transparent"
                             hoverbackground="#fff"
                             color="#fff"
-                            padding="8px 24px"
+                            padding="8px 14px"
                             display="flex"
                             borderRadius="0"
                             justifyContent="flex-start"
@@ -598,7 +636,7 @@ const HeaderItemH = styled(ItemH)`
 
 const HeaderBlurV = styled(ItemV)`
   backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
-  background: rgba(13, 13, 15, 1);
+  background: rgba(13, 13, 15, 0.50);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 24px;
 
@@ -767,9 +805,9 @@ const NavigationMenuItem = styled.li`
     color: #6C6C6C;
   }
 
-  & .chevronIcon {
-    color: #6C6C6C;
-  }
+  // & .chevronIcon {
+  //   color: #6C6C6C;
+  // }
 
   &:hover {
     & span {
@@ -778,7 +816,7 @@ const NavigationMenuItem = styled.li`
 
     & .chevronIcon {
       transform: rotate(180deg);
-      color: #fff;
+      // color: #fff;
     }
 
     & .menuContent {
@@ -882,13 +920,20 @@ const NavigationMenuHeader = styled.div`
   align-items: center;
   cursor: pointer;
 
+  & span {
+    color: #FFFF;
+    // color: ${({ isHovered }) => (isHovered ? '#fff' : 'red')};
+  }
+
   &:hover {
     cursor: pointer;
+
   }
 
   & .chevronIcon {
     transition-duration: 0.4s;
     transition-property: transform;
+    color: #FFFF;
   }
 
   @media ${device.laptop} {
@@ -1048,14 +1093,17 @@ const LanguageMenuContent = styled.div`
   left: 50%;
   transform: translateX(-90%);
   z-index: 1;
-  padding: 14px;
+  padding: 10px 12px;
+
 
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #19181B;
+  // min-width: 202px;
 
-  & a {
-    min-width: 162px;
+
+  & button {
+    min-width: 182px;
   }
 
   @media ${device.laptop} {
@@ -1080,7 +1128,7 @@ const LanguageMenuContent = styled.div`
 `;
 
 const LanguageButton = styled(Button)`
-    margin: 14px 0;
+  margin: 8px 0;
   &:hover {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
@@ -1095,6 +1143,7 @@ const LanguageButton = styled(Button)`
   @media ${device.laptop} {
     width: 100%;
     flex: 1;
+    margin: 8px 0;
   }
 
 `;
