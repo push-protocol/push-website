@@ -172,7 +172,9 @@ function Header() {
           const element = document.getElementById(id);
           if (element) {
             element.style.color = '#6C6C6C';
+            element.style.transitionDuration = '1s';
           }
+
         }
       });
     };
@@ -182,6 +184,7 @@ function Header() {
         const element = document.getElementById(id);
         if (element) {
           element.style.color = '#fff';
+          element.style.transitionDuration = '1s';
         }
       });
     };
@@ -282,6 +285,7 @@ function Header() {
                     expanded={mobileMenuMap[0]}
                     onMouseEnter={() => handleMouseEnter('text0')}
                     onMouseLeave={() => handleMouseLeave()}
+                    id='text0'
                   >
                     <Span
                       fontSize="18px"
@@ -289,8 +293,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
-                      id='text0'
-
+                      color='inherit'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                       {/* {t('header.docs.title')} */}
@@ -320,6 +323,7 @@ function Header() {
                     expanded={mobileMenuMap[1]}
                     onMouseEnter={() => handleMouseEnter('text1')}
                     onMouseLeave={() => handleMouseLeave()}
+                    id='text1'
                   >
                     <Span
                       fontSize="18px"
@@ -327,7 +331,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
-                      id='text1'
+                      color='inherit'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
                       {/* {t('header.more.title')} */}
@@ -367,6 +371,7 @@ function Header() {
                     expanded={mobileMenuMap[2]}
                     onMouseEnter={() => handleMouseEnter('text2')}
                     onMouseLeave={() => handleMouseLeave()}
+                    id='text2'
                   >
                     <Span
                       fontSize="18px"
@@ -374,7 +379,7 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
-                      id='text2'
+                      color='inherit'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                       {/* {t('header.push-dao.title')} */}
@@ -407,6 +412,7 @@ function Header() {
                     expanded={mobileMenuMap[3]}
                     onMouseEnter={() => handleMouseEnter('text3')}
                     onMouseLeave={() => handleMouseLeave()}
+                    id='text3'
                   >
                     <Span
                       fontSize="18px"
@@ -414,7 +420,6 @@ function Header() {
                       letterSpacing="-0.03em"
                       lineHeight="142%"
                       padding="16px"
-                      id='text3'
                     >
                       {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                       {/* {t('header.push-dao.title')} */}
@@ -921,7 +926,7 @@ const NavigationMenuHeader = styled.div`
   cursor: pointer;
 
   & span {
-    color: #FFFF;
+    color: inherit !important;
     // color: ${({ isHovered }) => (isHovered ? '#fff' : 'red')};
   }
 
@@ -933,7 +938,7 @@ const NavigationMenuHeader = styled.div`
   & .chevronIcon {
     transition-duration: 0.4s;
     transition-property: transform;
-    color: #FFFF;
+    color: inherit !important;
   }
 
   @media ${device.laptop} {
