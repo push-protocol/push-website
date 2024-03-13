@@ -152,7 +152,9 @@ function Header() {
 
   const HeaderSpace = ({item, index}) => {
     const openLink = (e, href, id) => {
-      e.stopPropagation();
+      e.preventDefault();
+      e.persist();
+
       if(href) {
         window.open(href, "_blank");
       }
