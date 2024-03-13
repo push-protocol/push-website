@@ -1,64 +1,64 @@
 export const HeaderList = {
     products: [
         {
-            title: "Push Notifications",
-            subtitle: "Web3 native notification alerts",
+            title: "header.products.link1.title",
+            subtitle: "header.products.link1.subtitle",
             srcrefoff: "inbox-icon-off",
             id: "notification-section"
         },
         {
-            title: "Push Chat",
-            subtitle: "Web3 native chat protocol with groups",
+            title: "header.products.link2.title",
+            subtitle: "header.products.link2.subtitle",
             srcrefoff: "chat-icon-off",
             id: "chat-section"
         },
         {
-            title: "Push Video",
-            subtitle: "Decentralized video calls",
+            title: "header.products.link3.title",
+            subtitle: "header.products.link3.subtitle",
             srcrefoff: "video-icon-off",
             id: "slide-section"
         },
         {
-            title: "Push Spaces",
-            subtitle: "Decentralized audio streaming",
+            title: "header.products.link4.title",
+            subtitle: "header.products.link4.subtitle",
             srcrefoff: "spaces-icon-off",
             id: "slide-section"
         }
     ],
     developers: [
         {
-            title: "Documentation Hub",
-            subtitle: "Curated wiki of Push Protocol",
+            title: "header.developers.link1.title",
+            subtitle: "header.developers.link1.subtitle",
             srcrefoff: "docs-icon-off",
             href: "https://push.org/docs"
         },
         {
-            title: "Examples",
-            subtitle: "Gallery of collaborative experiences",
+            title: "header.developers.link2.title",
+            subtitle: "header.developers.link2.subtitle",
             srcrefoff: "examples-icon-off",
             href: "https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples"
         },
         {
-            title: "Notification Quickstart",
-            subtitle: "Setup notifications in 2 mins",
+            title: "header.developers.link3.title",
+            subtitle: "header.developers.link3.subtitle",
             srcrefoff: "inbox-icon-off",
             href: "https://push.org/docs/notifications/"
         },
         {
-            title: "Chat Quickstart",
-            subtitle: "Setup chat in 2 mins",
+            title: "header.developers.link4.title",
+            subtitle: "header.developers.link4.subtitle",
             srcrefoff: "chat-icon-off",
             href: "https://push.org/docs/chat/"
         },
         {
-            title: "Hackers",
-            subtitle: "Are you a hacker? Get a head start here",
+            title: "header.developers.link5.title",
+            subtitle: "header.developers.link5.subtitle",
             srcrefoff: "hacker-icon-off",
             href: "https://push.org/docs/hackers/"
         },
         {
-            title: "React Playground",
-            subtitle: "Plug and play react components",
+            title: "header.developers.link6.title",
+            subtitle: "header.developers.link6.subtitle",
             tagitem: {
                 text: "NEW"
             },
@@ -66,56 +66,56 @@ export const HeaderList = {
             href: "https://push.org/docs/video/playground/push-react-component-playground-example/"
         },
         {
-            title: "Developer Discord",
-            subtitle: "Join our community of developers",
+            title: "header.developers.link7.title",
+            subtitle: "header.developers.link7.subtitle",
             srcrefoff: "discord-icon-off",
             href: "https://discord.gg/pushprotocol"
         }
     ],
     community: [
         {
-            title: "Ecosystem",
-            subtitle: "Amazing community of developers building with Push",
+            title: "header.community.link1.title",
+            subtitle: "header.community.link1.subtitle",
             href: "https://push.org/frens/"
         },
         {
-            title: "Push DAO",
-            subtitle: "Participate in governing Push Protocol",
+            title: "header.community.link2.title",
+            subtitle: "header.community.link2.subtitle",
             href: "https://push.org/docs/dao/"
         },
         {
-            title: "Grants",
-            subtitle: "Get a kickstart with Push grants program",
+            title: "header.community.link3.title",
+            subtitle: "header.community.link3.subtitle",
             href: "https://push.org/docs/dao/contribute-to-push-dao/contribute-push-grants/"
         },
         {
-            title: "Billion Reasons to Build",
-            subtitle: "Solve problems and win prizes over $50K",
+            title: "header.community.link4.title",
+            subtitle: "header.community.link4.subtitle",
             href: "https://push.org/brb/"
         }
     ],
     resources: [
         {
-            title: "Blog",
-            subtitle: "News, ideas and insights on Push and Web3",
+            title: "header.resources.link1.title",
+            subtitle: "header.resources.link1.subtitle",
             href: "https://push.org/blog"
         },
         {
-            title: "FAQ",
-            subtitle: "Frequently asked questions about Push",
+            title: "header.resources.link2.title",
+            subtitle: "header.resources.link2.subtitle",
             href: "https://push.org/faq"
         },
         {
-            title: "Roadmap",
-            subtitle: "A living roadmap for the protocol",
+            title: "header.resources.link3.title",
+            subtitle: "header.resources.link3.subtitle",
             tagitem: {
                 text: "NEW"
             },
             href: "https://push.org/docs/roadmap/"
         },
         {
-            title: "Tokenomics",
-            subtitle: "Token utility and Push network",
+            title: "header.resources.link4.title",
+            subtitle: "header.resources.link4.subtitle",
             id: "tokenomics-section"
         }
     ],

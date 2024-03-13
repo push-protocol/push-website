@@ -40,6 +40,94 @@
     "app-button": {
       "title": "Abrir App",
       "alt-title": "Dapp de Push"
+    },
+    "products": {
+      "title": "Productos",
+      "link1": {
+        "title": "Notificaciones Push",
+        "subtitle": "Alertas de notificaciones nativas de Web3"
+      },
+       "link2": {
+        "title": "Chat Push",
+        "subtitle": "Protocolo de chat nativo de Web3 con grupos"
+      },
+      "link3": {
+        "title": "Video Push",
+        "subtitle": "Llamadas de video descentralizadas"
+      },
+      "link4": {
+        "title": "Espacios Push",
+        "subtitle": "Streaming de audio descentralizado"
+      }
+    },
+    "developers": {
+      "title": "Desarrolladores",
+      "link1": {
+        "title": "Centro de Documentación",
+        "subtitle": "Wiki curada de Push Protocol"
+      },
+       "link2": {
+        "title": "Ejemplos",
+        "subtitle": "Galería de experiencias colaborativas"
+      },
+      "link3": {
+        "title": "Inicio Rápido de Notificaciones",
+        "subtitle": "Configura notificaciones en 2 minutos"
+      },
+      "link4": {
+        "title": "Inicio Rápido de Chat",
+        "subtitle": "Configura chat en 2 minutos"
+      },
+      "link5": {
+        "title": "Hackers",
+        "subtitle": "¿Eres un hacker? Comienza aquí"
+      },
+      "link6": {
+        "title": "Área de Juego de React",
+        "subtitle": "Componentes de React listos para usar"
+      },
+      "link7": {
+        "title": "Discord de Desarrolladores",
+        "subtitle": "Únete a nuestra comunidad de desarrolladores"
+      }
+    },
+     "community": {
+      "title": "Comunidad",
+      "link1": {
+        "title": "Ecosistema",
+        "subtitle": "Increíble comunidad de desarrolladores construyendo con Push"
+      },
+       "link2": {
+        "title": "DAO de Push",
+        "subtitle": "Participa en la gobernanza del Protocolo Push"
+      },
+      "link3": {
+        "title": "Subsidios",
+        "subtitle": "Obtén un impulso inicial con el programa de subsidios de Push"
+      },
+      "link4": {
+        "title": "Mil Razones para Construir",
+        "subtitle": "Resuelve problemas y gana premios de más de $50K"
+      }
+    },
+    "resources": {
+      "title": "Recursos",
+      "link1": {
+        "title": "Blog",
+        "subtitle": "Noticias, ideas e información sobre Push y Web3"
+      },
+       "link2": {
+        "title": "FAQ",
+        "subtitle": "Preguntas frecuentes sobre Push"
+      },
+      "link3": {
+        "title": "Hoja de Ruta",
+        "subtitle": "Una hoja de ruta viva para el protocolo"
+      },
+      "link4": {
+        "title": "Tokenómica",
+        "subtitle": "Utilidad del token y red de Push"
+      }
     }
   },
   "home": {

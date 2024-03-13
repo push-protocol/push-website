@@ -182,13 +182,13 @@ function Header() {
 
           <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
             <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
-              {item.title}
+              {t(item.title)}
 
               {item.tagitem && <TagItem style={{marginLeft: "10px"}}>{item.tagitem.text}</TagItem>}
             </H2>
 
             <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" letterSpacing="normal" fontWeight="400">
-              {item.subtitle}
+              {t(item.subtitle)}
             </H3>
           </ItemH>
           </HeaderItem>)
@@ -325,17 +325,12 @@ function Header() {
                       padding="16px"
                       color='inherit'
                     >
-                      {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
-                      {/* {t('header.docs.title')} */}
-                      Product
-                      {/* </FadeInAnimation> */}
+                      {t('header.products.title')}
                     </Span>
-                    {/* <FadeInAnimation wrapperElement="div" delay={0.25}> */}
                     <BsChevronDown
                       size={12}
                       className="chevronIcon"
                     />
-                    {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -363,10 +358,7 @@ function Header() {
                       padding="16px"
                       color='inherit'
                     >
-                      {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
-                      {/* {t('header.more.title')} */}
-                      Developers
-                      {/* </FadeInAnimation> */}
+                      {t('header.developers.title')}
                     </Span>
 
                     {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
@@ -411,7 +403,7 @@ function Header() {
                       padding="16px"
                       color='inherit'
                     >
-                      Community
+                      {t('header.community.title')}
                     </Span>
                     <BsChevronDown
                       size={12}
@@ -445,10 +437,7 @@ function Header() {
                       lineHeight="142%"
                       padding="16px"
                     >
-                      {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
-                      {/* {t('header.push-dao.title')} */}
-                      Resources
-                      {/* </FadeInAnimation> */}
+                      {t('header.resources.title')}
                     </Span>
 
                     {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
