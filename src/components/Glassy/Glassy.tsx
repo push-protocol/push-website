@@ -20,10 +20,9 @@ import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 const Glassy = ({ item }) => {
-  console.log("Item", item);
-
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+
   // Internationalization
   const { t, i18n } = useTranslation();
 
@@ -48,6 +47,11 @@ const Glassy = ({ item }) => {
 
   const { text } = footer || "";
   const { message, alignment } = after || "";
+
+  // decide video format for bg and header illustration
+  const bgVideoFormat = item.header && item.header.bgvideowebm ? "webm" : "mp4";
+  const headerIllustrationFormat =
+    item.header && item.header.illustrationvideowebm ? "webp" : "mp4";
 
   const Tag = ({ item }) => {
     const { background, border, color, title, fontSize } = item || "";
@@ -144,8 +148,9 @@ const Glassy = ({ item }) => {
         {bgvideosrc && (
           <ReactPlayer
             url={
-              require(`@site/static/assets/website/home/${bgvideosrc}.mp4`)
-                .default
+              require(
+                `@site/static/assets/website/home/${bgvideosrc}.${bgVideoFormat}`,
+              ).default
             }
             playing={hovered ? true : false}
             loop={false}
@@ -214,7 +219,7 @@ const Glassy = ({ item }) => {
                   <ReactPlayer
                     url={
                       require(
-                        `@site/static/assets/website/home/${item.header.illustrationvideo}.mp4`,
+                        `@site/static/assets/website/home/${item.header.illustrationvideo}.${headerIllustrationFormat}`,
                       ).default
                     }
                     config={{
@@ -293,13 +298,15 @@ const Glassy = ({ item }) => {
               {item.body.map((object) => {
                 // Render type "image"
                 if (object.type === "image") {
+                  const videoFormat = object.videowebm ? "webm" : "mp4";
+
                   return (
                     <BodyImageWrapper>
                       {object.videosrc && (
                         <ReactPlayer
                           url={
                             require(
-                              `@site/static/assets/website/home/${object.videosrc}.mp4`,
+                              `@site/static/assets/website/home/${object.videosrc}.${videoFormat}`,
                             ).default
                           }
                           config={{
@@ -454,8 +461,8 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    background: #09090b;
-    // background: #0A0A0D;
+    background: #0d0d0f;
+    // background: #0D0D0F;
     // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }

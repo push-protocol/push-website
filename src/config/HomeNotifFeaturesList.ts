@@ -106,6 +106,7 @@ export const NotifFeaturesList = {
         bg: require("@site/static/assets/website/home/notifs/interoperable.webp")
           .default,
         bgvideosrc: "notifs/interoperable-video",
+        bgvideowebm: true,
         bgtitle: "home.notification-section.box5.bgtitle",
         bgsize: "cover",
         hideonmobile: true,
@@ -128,6 +129,7 @@ export const NotifFeaturesList = {
         align: "left",
         illustration: "notifs/anti-spam",
         illustrationvideo: "notifs/anti-spam-video",
+        illustrationvideowebm: false,
         imagealt: "home.notification-section.box6.iconalt",
         imagetitle: "home.notification-section.box6.icontitle",
       },
@@ -180,6 +182,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/engage",
           videosrc: "notifs/engage-video",
+          videowebm: true,
           imagealt: "home.notification-section.box8.imagealt",
           imagetitle: "home.notification-section.box8.imagetitle",
         },
