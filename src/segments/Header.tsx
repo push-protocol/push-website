@@ -151,7 +151,8 @@ function Header() {
   
 
   const HeaderSpace = ({item, index}) => {
-    const openLink = (href, id) => {
+    const openLink = (e, href, id) => {
+      e.stopPropagation();
       if(href) {
         window.open(href, "_blank");
       }
@@ -167,7 +168,7 @@ function Header() {
     };
     return(
       <HeaderItem 
-        onClick={()=> openLink(item.href, item.id)}
+        onClick={(e)=> openLink(e, item.href, item.id)}
         onMouseEnter={() => handleHover(index)}
         onMouseLeave={() => handleHover(null)}>
           {item.srcrefoff && (<HeaderImage
@@ -1037,8 +1038,8 @@ const NavigationMenuContent = styled.ul`
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 10px 12px 24px 12px;
-    max-height: 250px;
+    padding: 0px 12px 14px 12px;
+    max-height: 200px;
 
     overflow-y: auto;
     position: relative;
@@ -1178,6 +1179,7 @@ const HeaderItem = styled.div`
 
   @media ${device.laptop} {
     max-width: fit-content;
+    margin: 6px 0 0 0;
   }
 
 `;
