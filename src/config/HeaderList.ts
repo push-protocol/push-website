@@ -42,13 +42,13 @@ export const HeaderList = {
             title: "header.developers.link3.title",
             subtitle: "header.developers.link3.subtitle",
             srcrefoff: "inbox-icon-off",
-            href: "https://push.org/docs/notifications/"
+            href: "https://push.org/docs/notifications/quickstart/"
         },
         {
             title: "header.developers.link4.title",
             subtitle: "header.developers.link4.subtitle",
             srcrefoff: "chat-icon-off",
-            href: "https://push.org/docs/chat/"
+            href: "https://push.org/docs/chat/quickstart/"
         },
         {
             title: "header.developers.link5.title",

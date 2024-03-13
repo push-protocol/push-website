@@ -137,7 +137,6 @@ function Header() {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      console.log('open open');
       document.body.style.overflow = 'hidden';
 
     } else {
@@ -250,7 +249,6 @@ function Header() {
               className={'headerblur'}
             />
 
-            {/* <FadeInAnimation wrapperElement="div" delay={0}> */}
             <MenuTop flex="initial">
               <PushLogoBlackContainer
                 className="headerlogo"
@@ -276,13 +274,15 @@ function Header() {
                 <LinkTo
                   to="/"
                   aria-label="Push"
+                  hoverBackground="transparent"
+                  padding="0"
                 >
                   <Image
-                    src={require(`@site/static/assets/website/segments/PushLogoTextWhite.webp`).default}
-                    srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextWhite@3x.webp`).default} 3x`}
+                    src={require(`@site/static/assets/website/header/Push-Logo.png`).default}
+                    srcSet={`${require(`@site/static/assets/website/header/Push-Logo@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/Push-Logo@3x.png`).default} 3x`}
                     alt={`Push Logo`}
                     width="auto"
-                    height="auto"
+                    height="44px"
                   />
                 </LinkTo>
               </PushLogoWhiteContainer>
@@ -294,14 +294,17 @@ function Header() {
                     onClick={toggleMobileMenu}
                   />
                 ) : (
-                  <GiHamburgerMenu
-                    size={28}
+                  <Image
+                    src={require(`@site/static/assets/website/header/bars.png`).default}
+                    srcSet={`${require(`@site/static/assets/website/header/bars@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/bars@3x.png`).default} 3x`}
+                    alt={`Bars Icon`}
+                    width="auto"
+                    height="28px"
                     onClick={toggleMobileMenu}
                   />
                 )}
               </MobileMenuToggleIcon>
             </MenuTop>
-            {/* </FadeInAnimation> */}
 
             <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
               <NavigationMenu
@@ -361,12 +364,10 @@ function Header() {
                       {t('header.developers.title')}
                     </Span>
 
-                    {/* <FadeInAnimation wrapperElement="div" delay={0.5}> */}
                     <BsChevronDown
                       size={12}
                       className="chevronIcon"
                     />
-                    {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -440,12 +441,10 @@ function Header() {
                       {t('header.resources.title')}
                     </Span>
 
-                    {/* <FadeInAnimation wrapperElement="div" delay={0.75}> */}
                     <BsChevronDown
                       size={12}
                       className="chevronIcon"
                     />
-                    {/* </FadeInAnimation> */}
                   </NavigationMenuHeader>
 
                   <NavigationMenuContent
@@ -627,7 +626,7 @@ const HeaderItemH = styled(ItemH)`
 `;
 
 const HeaderBlurV = styled(ItemV)`
-  backdrop-filter: blur(${GLOBALS.ADJUSTMENTS.BLUR.HEADER}px);
+  backdrop-filter: blur(32px);
   background: rgba(13, 13, 15, 0.50);
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 24px;
@@ -913,6 +912,7 @@ const NavigationMenuHeader = styled.div`
 
   & span {
     color: inherit !important;
+    padding: 12px 6px;
   }
 
   &:hover {
@@ -931,6 +931,7 @@ const NavigationMenuHeader = styled.div`
     margin: 24px 0 0px 0;
 
     & span {
+    padding: 0px;
     }
 
     & .chevronIcon {
@@ -965,6 +966,10 @@ const LanguageMenuHeader = styled.div`
     color: inherit !important;
   }
 
+  & span {
+    padding: 12px 6px;
+  }
+
   &:hover {
     cursor: pointer;
 
@@ -980,6 +985,7 @@ const LanguageMenuHeader = styled.div`
     justify-content: flex-end;
 
     & span {
+      padding: 0px;
     }
 
     & .chevronIcon {
@@ -1007,7 +1013,7 @@ const NavigationMenuContent = styled.ul`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
-  top: 34px;
+  top: 44px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -1015,6 +1021,11 @@ const NavigationMenuContent = styled.ul`
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.10);
   background: #19181B;
+
+  @media (min-width: 1025px) {
+    min-width: 470px;
+    max-width: auto;
+  }
 
   @media ${device.laptop} {
     width: 100%;
@@ -1026,7 +1037,7 @@ const NavigationMenuContent = styled.ul`
     flex-direction: column;
     margin: 0;
     padding: 10px 12px 24px 12px;
-    max-height: 370px;
+    max-height: 250px;
 
     overflow-y: auto;
     position: relative;
@@ -1073,7 +1084,7 @@ const LanguageMenuContent = styled.div`
   position: absolute;
 
   // logic - this should touch the parent li for enough hover surface area.
-  top: 34px;
+  top: 44px;
   // top: 54px;
 
   left: 50%;
@@ -1138,11 +1149,14 @@ const HeaderItem = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  min-width: 470px;
   padding: 10px;
   gap: 6px;
   margin: 14px 0 0 0;
   cursor: pointer;
+
+   @media (min-width: 1025px) {
+    min-width: 450px;
+  }
 
 
   &:hover {
@@ -1154,14 +1168,15 @@ const HeaderItem = styled.div`
       color: #D98AEC;
     }
     & ${Image} {
-      // filter: brightness(0) saturate(100%) invert(89%) sepia(8%) saturate(7002%) hue-rotate(234deg) brightness(82%) contrast(95%);
       filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(5899%) hue-rotate(225deg) brightness(107%) contrast(85%);
     }
   }
   }
 
+
+
   @media ${device.laptop} {
-    min-width: 100%;
+    max-width: fit-content;
   }
 
 `;
