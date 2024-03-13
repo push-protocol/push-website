@@ -249,7 +249,7 @@ function Header() {
               className={'headerblur'}
             />
 
-            <MenuTop flex="initial">
+            <MenuTop flex="initial" showMobileMenu={showMobileMenu}>
               <PushLogoBlackContainer
                 className="headerlogo"
                 flex="initial"
@@ -282,7 +282,7 @@ function Header() {
                     srcSet={`${require(`@site/static/assets/website/header/Push-Logo@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/Push-Logo@3x.png`).default} 3x`}
                     alt={`Push Logo`}
                     width="auto"
-                    height="44px"
+                    height="40px"
                   />
                 </LinkTo>
               </PushLogoWhiteContainer>
@@ -616,7 +616,7 @@ const HeaderItemH = styled(ItemH)`
     margin: 8px;
     flex-direction: column;
     height: fit-content;
-    padding: 12px;
+    padding: 12px 16px;
   }
 
   &.light {
@@ -750,6 +750,7 @@ const MenuTop = styled(ItemV)`
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    // padding: ${(props) => (props.showMobileMenu ? '0px' : '12px 16px')};
   }
 `;
 
