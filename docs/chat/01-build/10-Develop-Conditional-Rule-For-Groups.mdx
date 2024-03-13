@@ -522,15 +522,12 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
           any: [
-            // any of the decider should allow entry
             {
-              any: [
+              all: [
+                //  this criteria lets admins or owners invite anyone
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -538,14 +535,16 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
+                    id: "sniper-fam", // your guild id or guild URL name
                     comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
                     role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
                   },
@@ -594,15 +593,12 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
           any: [
-            // any of the decider should allow entry
             {
-              any: [
+              all: [
+                // this criteria lets admins or owners invite anyone
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -610,16 +606,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
                   },
                 },
               ],
@@ -666,15 +664,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
           any: [
-            // any of the decider should allow entry
             {
-              any: [
+              all: [
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -682,16 +676,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "111070", // id of the specific role in guild that you want to allow
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
+                    role: "discord fellow", // role name or role id that you want to target
                   },
                 },
               ],
@@ -740,15 +736,12 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow entry
+          all: [
             {
-              any: [
+              all: [
+                // this criteria lets admins or owners invite anyone
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -756,16 +749,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
+                    id: "sniper-fam", // your guild id or guild URL name
                     comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -774,21 +769,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
       chat: {
-        // chatting permission is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow user to send message in the group
+          all: [
             {
-              any: [
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
+                    id: "sniper-fam", // your guild id or guild URL name
                     comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -835,15 +827,12 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow entry
+          all: [
             {
-              any: [
+              all: [
+                // this criteria lets admins or owners invite anyone
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -851,15 +840,17 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
                     role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
@@ -869,21 +860,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
       chat: {
-        // entry is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow entry
+          all: [
             {
-              any: [
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "all", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
+                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -930,15 +918,12 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
     private: false, // in our case, we are making a public group
     rules: {
       entry: {
-        // entry is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow entry
+          all: [
             {
-              any: [
+              all: [
+                // this criteria lets admins or owners invite anyone
                 {
-                  // criteria 1
-                  // this criteria lets admins or owners invite anyone
                   type: "PUSH",
                   category: "INVITE",
                   subcategory: "DEFAULT",
@@ -946,16 +931,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
                     inviterRoles: ["ADMIN", "OWNER"],
                   },
                 },
-
+              ],
+            },
+            {
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "", // in our case, we are allowing if user has specific role so no comparison needed
-                    role: "111070", // id of the specific role in guild that you want to allow
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
+                    role: "discord fellow", // role name or role id that you want to target, not case sensitive
                   },
                 },
               ],
@@ -964,21 +951,18 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
       chat: {
-        // entry is based on conditions
         conditions: {
-          any: [
-            // any of the decider should allow entry
+          all: [
             {
-              any: [
+              all: [
                 {
-                  // define criteria 2
                   type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
                   category: "ROLES", // define it's ROLES for GUILD groups
                   subcategory: "DEFAULT", // its DEFAULT for GUILD groups
                   data: {
-                    id: "62154", // your guild id
-                    comparison: "", // in our case, we are allowing if user has specific role so no comparison needed
-                    role: "111070", // id of the specific role in guild that you want to allow
+                    id: "sniper-fam", // your guild id or guild URL name
+                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
+                    role: "discord fellow", // role name or role id that you want to target, not case sensitive
                   },
                 },
               ],
