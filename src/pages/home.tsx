@@ -503,7 +503,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           </Content>
         </SlideSection>
 
-        <TokenomicsSection>
+        <TokenomicsSection id="tokenomics-section">
           <Content className="contentBox" alignSelf="center">
             <ItemH
               flexDirection={isMobile && "column"}

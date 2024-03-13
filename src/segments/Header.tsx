@@ -9,6 +9,9 @@ import React, { useEffect, useState } from 'react';
 // External Components
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import { gsap } from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Internal Components
 import { Alert } from '@site/src/components/Alert';
@@ -24,6 +27,10 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 import { HeaderList } from '../config/HeaderList';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
@@ -145,12 +152,23 @@ function Header() {
   
 
   const HeaderSpace = ({item, index}) => {
-    const openLink = (link: string) => {
-      window.open(link, "_blank");
+    const openLink = (href, id) => {
+      if(href) {
+        window.open(href, "_blank");
+      }
+      else if(id) {
+        if (showMobileMenu) toggleMobileMenu();
+
+        gsap.to(window, {
+          duration: 0.75,
+          scrollTo: { y: `#${id}` },
+        });
+      }
+      else return;
     };
     return(
       <HeaderItem 
-        onClick={()=> openLink(item?.href)}
+        onClick={()=> openLink(item.href, item.id)}
         onMouseEnter={() => handleHover(index)}
         onMouseLeave={() => handleHover(null)}>
           {item.srcrefoff && (<HeaderImage
