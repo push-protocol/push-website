@@ -99,11 +99,7 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const handleHover = (index) => {
-    setHoveredIndex(index);
-  };
 
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
@@ -171,9 +167,7 @@ function Header() {
     };
     return(
       <HeaderItem 
-        onClick={(e)=> openLink(e, item.href, item.id)}
-        onMouseEnter={() => handleHover(index)}
-        onMouseLeave={() => handleHover(null)}>
+        onClick={(e)=> openLink(e, item.href, item.id)}>
           {item.srcrefoff && (<HeaderImage
             key={index}
             src={require(`@site/static/assets/website/header/${item.srcrefoff}.png`).default}
@@ -200,7 +194,6 @@ function Header() {
     const textIds = ['text0','text1', 'text2', 'text3', 'text4'];
 
     const handleMouseEnter = (e,activeId) => {
-      e.stopPropagation();
 
       textIds.forEach((id) => {
         if (id !== activeId) {
@@ -215,7 +208,6 @@ function Header() {
     };
 
     const handleMouseLeave = (e) => {
-      e.stopPropagation();
 
       textIds.forEach((id) => {
         const element = document.getElementById(id);
@@ -1182,10 +1174,9 @@ const HeaderItem = styled.div`
     }
   }
   
-// }
 
   @media ${device.laptop} {
-    max-width: fit-content;
+    max-width: 100%;
     margin: 6px 0 0 0;
   }
 
