@@ -136,24 +136,25 @@ function Header() {
 
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen && isMobile) {
       document.body.style.overflow = 'hidden';
 
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = 'auto';
     }
   
     return () => {
       // Cleanup: Reset overflow when the component unmounts
-      document.body.style.overflow = '';
+      document.body.style.overflow = 'auto';
     };
   }, [isMobileMenuOpen]);
   
 
   const HeaderSpace = ({item, index}) => {
     const openLink = (e, href, id) => {
-      e.preventDefault();
       e.persist();
+      e.stopPropagation();
+
 
       if(href) {
         window.open(href, "_blank");
@@ -198,7 +199,9 @@ function Header() {
 
     const textIds = ['text0','text1', 'text2', 'text3', 'text4'];
 
-    const handleMouseEnter = (activeId) => {
+    const handleMouseEnter = (e,activeId) => {
+      e.stopPropagation();
+
       textIds.forEach((id) => {
         if (id !== activeId) {
           const element = document.getElementById(id);
@@ -211,7 +214,9 @@ function Header() {
       });
     };
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (e) => {
+      e.stopPropagation();
+
       textIds.forEach((id) => {
         const element = document.getElementById(id);
         if (element) {
@@ -319,8 +324,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 0)}
                     expanded={mobileMenuMap[0]}
-                    onMouseEnter={() => handleMouseEnter('text0')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text0')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                     id='text0'
                   >
                     <Span
@@ -352,8 +357,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 1)}
                     expanded={mobileMenuMap[1]}
-                    onMouseEnter={() => handleMouseEnter('text1')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text1')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                     id='text1'
                   >
                     <Span
@@ -395,8 +400,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 2)}
                     expanded={mobileMenuMap[2]}
-                    onMouseEnter={() => handleMouseEnter('text2')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text2')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                     id='text2'
                   >
                     <Span
@@ -418,8 +423,8 @@ function Header() {
                   <NavigationMenuContent
                     className="menuContent"
                     expanded={mobileMenuMap[2]}
-                    onMouseEnter={() => handleMouseEnter('text1')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text1')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                   >
                     {HeaderList.community.map((item, index) => 
                     <HeaderSpace item={item} index={index} />)}
@@ -430,8 +435,8 @@ function Header() {
                   <NavigationMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 3)}
                     expanded={mobileMenuMap[3]}
-                    onMouseEnter={() => handleMouseEnter('text3')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text3')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                     id='text3'
                   >
                     <Span
@@ -469,8 +474,8 @@ function Header() {
                   <LanguageMenuHeader
                     onClick={(e) => onMobileHeaderMenuClick(e, 4)}
                     expanded={mobileMenuMap[4]}
-                    onMouseEnter={() => handleMouseEnter('text4')}
-                    onMouseLeave={() => handleMouseLeave()}
+                    onMouseEnter={(e) => handleMouseEnter(e,'text4')}
+                    onMouseLeave={(e) => handleMouseLeave(e)}
                     id='text4'
                   >
                     <H2 fontSize='16px' fontFamily='FK Grotesk Neue'lineHeight="130%" letterSpacing="normal" fontWeight="500">
@@ -1041,7 +1046,8 @@ const NavigationMenuContent = styled.ul`
     flex-direction: column;
     margin: 0;
     padding: 0px 12px 14px 12px;
-    max-height: 200px;
+    max-height: 244px;
+    min-height: 244px;
 
     overflow-y: auto;
     position: relative;
@@ -1175,9 +1181,8 @@ const HeaderItem = styled.div`
       filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(5899%) hue-rotate(225deg) brightness(107%) contrast(85%);
     }
   }
-  }
-
-
+  
+// }
 
   @media ${device.laptop} {
     max-width: fit-content;
