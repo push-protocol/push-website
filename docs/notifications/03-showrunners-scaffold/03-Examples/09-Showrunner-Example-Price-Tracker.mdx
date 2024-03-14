@@ -125,7 +125,7 @@ export default class PricetrackerChannel extends EPNSChannel {
 Our objective is to create a channel to send notifications about price movements depending upon users' settings (Time interval and Percentage change here).
 So, to achieve this we will follow the following logic:
 
-- Create a function "triggerUserNotification" which will be called every 3 hours by the Cron job we are setting in Jobs file.
+- Create a function `triggerUserNotification` which will be called every 3 hours by the Cron job we are setting in Jobs file.
 ```js
   public async triggerUserNotification(simulate) {
     const logger = this.logger;
@@ -294,31 +294,26 @@ const changePercentage = (
 /* Conditions go here */
 ```
 - This code block is responsible for handling price tracking notifications based on user settings.
-- Craft the 4 major conditions :<br/>
-<p> 
-i. User opted for both time interval and percentage change 
+- Craft the 4 major conditions :<br/> 
+
+i. **User opted for both time interval and percentage change** <br/>
   -  It checks if the price alert and time interval slider are enabled for a subscriber.
   -  If both are enabled, it fetches the user values for settings and the user's last cycle values from the database.
   -  It then compares the change percentage with the user-defined price value and checks if the last cycle value matches the current cycle.
   -  If the conditions are met, it updates the user's mapped value in the database and builds a payload for the notification.
   -  The payload includes the percentage change, description, and current price.
-  </p>
 
-<p>
-ii. Only percentage change<br/>
+ii. **Only percentage change** <br/>
   -  If only the price alert slider is enabled, it fetches the user value for the price setting and compares it with the change percentage.
-</p>
 
-<p>
-iii. Only Time interval<br/>
+iii. **Only Time interval** <br/>
   -  If only the time interval slider is enabled, it fetches the user value for the time setting and the user's last cycle values from the database.
   -  It then checks if the sum of the last cycle value and the user value matches the current cycle.
   -  If the condition is met, it updates the user's mapped value in the database and builds a payload for the notification. 
-</p>
-<p>
-iv. Receive general notifications<br/>
+
+iv. **Receive general notifications** <br/>
   -  If none of the sliders are enabled, it builds a payload for the notification without any conditions.
-</p>   
+
 ```js
 // The 4 conditions here
 // index - 9 ---> Time Interval
@@ -406,11 +401,12 @@ if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
     const payloadMsg = `${mapObj.description} at[d:$${currentPrice}]\n`;
 
     notifData2.push({ key: `${currentPrice}`, notif: `${payloadMsg}` });
-}```
+}
+```
 
 🤯Those were a lots of code out there. Let's understand what is actually happening there and what coditions trigger the notifications in different cases.
 
-- **Case 1: Both percent change and time interval is enabled**<br/> 
+**Case 1: Both percent change and time interval is enabled**<br/> 
 - When a user opts in to both these settings, what the user want is to receive a notification for their selected tokens when there is a particular change in price and it occured within the time interval.
   So, the basic logic here is:
 
@@ -431,7 +427,7 @@ We have already handled these edge cases in the code. Test yourself and see if y
 We just fetched the prices from the CMC API and using the previous price stored in database, we can calculate the `changePercentage` value.
 For the `CYCLES` variable, everytime our showrunners framework is executed it is incremented by 3 as the lowest `ticker` value in the slider is 3. You can change it as per your channel and logic. This helps us to calculate when a new user will receive a notification based on on ehich cycle did he opted in.
 
-- **Case 2: Only percent change is enabled** - Here, a user want to receive notification when there is a particular change in price. So, the basic logic here is:
+**Case 2: Only percent change is enabled** - Here, a user want to receive notification when there is a particular change in price. So, the basic logic here is:
 
 ```js
 // Condition to trigger notification
@@ -441,7 +437,7 @@ if (Number(changePercentage) >= userValue) {
 
 The calculation for the `changePercentage` is same like `Case 1`.
 
-- **Case 3: Only time interval is enabled** - Here, a user want to receive notification as per their chosen interval. So, the basic logic here is:
+**Case 3: Only time interval is enabled** - Here, a user want to receive notification as per their chosen interval. So, the basic logic here is:
 
 ```js
 // Condition to trigger notification
@@ -451,9 +447,7 @@ if (userDBValue.lastCycle + userValue == CYCLES) {
 
 The calculation and significance of the `CYCLES` variable is explained in `Case 1`.
 
-- **Case 4: Regular Notifications** - Here, a user want to receive notification containing the price of their chosen token at regular intervals. So, we simple resolve this in a `else` condition.
-
-This wraps up the channel logic. Now, let's move onto buidling the cron-jobs file and model file.
+**Case 4: Regular Notifications** - Here, a user want to receive notification containing the price of their chosen token at regular intervals. So, we simple resolve this in a `else` condition.
 
 ### Step 8: Create a `priceTrackerModel.ts` file in the folder.
 
