@@ -24,6 +24,6 @@ The Push Alpha AccessNFT is a special non-fungible token (NFT) that serves as yo
 ### How to Claim Your Push Alpha Access NFT
 
 Claiming your Push Alpha AccessNFT is a simple process. Here's what you need to do:
-1. Head over to the Push Protocol Galxe claim page: https://app.push.org/
+1. Head over to the Push Protocol Galxe claim page: https://app.push.org/claim/galxe
 2. Connect your crypto wallet associated with your Galxe account.
 3. Follow the on-screen instructions to complete the claim process.
