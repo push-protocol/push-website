@@ -1039,6 +1039,7 @@ const NotificationSection = styled(Section)`
 
   .contentBox {
     padding: 186px 40px 0px 40px;
+    box-sizing: border-box;
 
     @media ${device.laptop} {
       padding: 160px 32px 0px 32px;
@@ -1061,6 +1062,7 @@ const ChatSection = styled(Section)`
 
   .contentBox {
     padding: 200px 40px 0px 40px;
+    box-sizing: border-box;
 
     @media ${device.laptop} {
       padding: 180px 32px 0px 32px;

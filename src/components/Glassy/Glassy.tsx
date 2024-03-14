@@ -20,7 +20,6 @@ import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 const Glassy = ({ item }) => {
-  
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   // Internationalization
@@ -44,7 +43,7 @@ const Glassy = ({ item }) => {
     iconalt,
     icontitle,
   } = header || "";
-  
+
   const { text } = footer || "";
   const { message, alignment } = after || "";
 
@@ -132,10 +131,10 @@ const Glassy = ({ item }) => {
 
       <Glowwy className={`${hovered ? "active" : ""} glowwy`} />
 
-      <Subcontainer 
-        id={id} 
-        padding={padding} 
-        bg={hovered ? null : bg} 
+      <Subcontainer
+        id={id}
+        padding={padding}
+        bg={hovered ? null : bg}
         title={t(bgtitle)}
         bgsize={item.config.bgsize}
       >
@@ -151,6 +150,13 @@ const Glassy = ({ item }) => {
             muted={true}
             width="100%"
             height="100%"
+            config={{
+              file: {
+                attributes: {
+                  controlsList: "nofullscreen",
+                },
+              },
+            }}
             style={{
               position: "absolute",
               top: 0,
@@ -163,11 +169,7 @@ const Glassy = ({ item }) => {
         )}
 
         <Header highlight={highlight} id={id}>
-          <Subheader
-            highlight={highlight}
-            id={id}
-            illustration={illustration}
-          >
+          <Subheader highlight={highlight} id={id} illustration={illustration}>
             <ItemH
               flex="1"
               alignSelf={illustration ? "center" : "flex-start"}
@@ -206,12 +208,20 @@ const Glassy = ({ item }) => {
 
             {illustration && (
               <HeaderImageWrapper>
-                {item.header.illustrationvideo && 
+                {item.header.illustrationvideo && (
                   <ReactPlayer
                     url={
-                      require(`@site/static/assets/website/home/${item.header.illustrationvideo}.mp4`)
-                        .default
+                      require(
+                        `@site/static/assets/website/home/${item.header.illustrationvideo}.mp4`,
+                      ).default
                     }
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: "nofullscreen",
+                        },
+                      },
+                    }}
                     playing={hovered ? true : false}
                     loop={true}
                     muted={true}
@@ -221,11 +231,14 @@ const Glassy = ({ item }) => {
                       position: "absolute",
                       top: 0,
                       left: 0,
-                      visibility: hovered && item.header.illustrationvideo ? "visible" : "hidden",
+                      visibility:
+                        hovered && item.header.illustrationvideo
+                          ? "visible"
+                          : "hidden",
                     }}
                   />
-                }
-                
+                )}
+
                 <GridImage
                   src={
                     require(
@@ -238,11 +251,13 @@ const Glassy = ({ item }) => {
                   width={isTablet ? "27px" : "auto"}
                   height={isTablet ? "auto" : "37px"}
                   style={{
-                    visibility: hovered && item.header.illustrationvideo ? "hidden" : "visible",
+                    visibility:
+                      hovered && item.header.illustrationvideo
+                        ? "hidden"
+                        : "visible",
                   }}
                 />
               </HeaderImageWrapper>
-
             )}
           </Subheader>
 
@@ -263,7 +278,13 @@ const Glassy = ({ item }) => {
         {item.body && (
           <Body>
             <BodyInner
-              bodyjustifycontent={item.config.bodyjustifycontent === "top" ? "flex-start" : item.config.bodyjustifycontent === "bottom" ? "flex-end" : "center"}
+              bodyjustifycontent={
+                item.config.bodyjustifycontent === "top"
+                  ? "flex-start"
+                  : item.config.bodyjustifycontent === "bottom"
+                    ? "flex-end"
+                    : "center"
+              }
             >
               {/* Loop through and emit all body item based on types */}
 
@@ -272,12 +293,20 @@ const Glassy = ({ item }) => {
                 if (object.type === "image") {
                   return (
                     <BodyImageWrapper>
-                      {object.videosrc && 
+                      {object.videosrc && (
                         <ReactPlayer
                           url={
-                            require(`@site/static/assets/website/home/${object.videosrc}.mp4`)
-                              .default
+                            require(
+                              `@site/static/assets/website/home/${object.videosrc}.mp4`,
+                            ).default
                           }
+                          config={{
+                            file: {
+                              attributes: {
+                                controlsList: "nofullscreen",
+                              },
+                            },
+                          }}
                           playing={hovered ? true : false}
                           loop={true}
                           muted={true}
@@ -287,47 +316,54 @@ const Glassy = ({ item }) => {
                             position: "absolute",
                             top: 0,
                             left: 0,
-                            visibility: hovered && object.videosrc ? "visible" : "hidden",
+                            visibility:
+                              hovered && object.videosrc ? "visible" : "hidden",
                           }}
                         />
-                      }
+                      )}
 
                       <BodyImage
                         src={
-                          require(`@site/static/assets/website/home/${object.imagesrc}.webp`)
-                            .default
+                          require(
+                            `@site/static/assets/website/home/${object.imagesrc}.webp`,
+                          ).default
                         }
                         srcSet={`${require(`@site/static/assets/website/home/${object.imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${object.imagesrc}@3x.webp`).default} 3x`}
                         alt={t(object.imagealt)}
                         title={t(object.imagetitle)}
                         style={{
-                          visibility: hovered && object.videosrc ? "hidden" : "visible",
+                          visibility:
+                            hovered && object.videosrc ? "hidden" : "visible",
                         }}
                         type={object.type}
                       />
                     </BodyImageWrapper>
                   );
                 }
-                
+
                 // Render type "title"
                 if (object.type === "title") {
                   return (
-                    <ItemV padding="0px 0px 0px 0px" 
+                    <ItemV
+                      padding="0px 0px 0px 0px"
                       flex="initial"
-                      alignSelf={object.align === "left" ? "flex-start" : object.align === "right" ? "flex-end" : "center"}
+                      alignSelf={
+                        object.align === "left"
+                          ? "flex-start"
+                          : object.align === "right"
+                            ? "flex-end"
+                            : "center"
+                      }
                     >
                       <SubscribeText>{t(object.titletext)}</SubscribeText>
                     </ItemV>
-                  )
+                  );
                 }
 
                 // Render type "button"
                 if (object.type === "button") {
                   return (
-                    <ItemV 
-                      padding="0px 0px 0px 0px" 
-                      flex="initial"
-                    >
+                    <ItemV padding="0px 0px 0px 0px" flex="initial">
                       <ButtonItem
                         background="#E64DE9"
                         padding={!isTablet ? "14px 22px" : "10px 11px"}
@@ -342,14 +378,11 @@ const Glassy = ({ item }) => {
                         <WhiteArrow />
                       </ButtonItem>
                     </ItemV>
-                  )
+                  );
                 }
 
                 return null; // Explicitly return null if the condition is not met
               })}
-
-
-        
             </BodyInner>
           </Body>
         )}
@@ -382,7 +415,7 @@ const Glassy = ({ item }) => {
 };
 
 const Container = styled.div`
-  flex: ${(props) => props.fillheight ? "1" : "initial"};
+  flex: ${(props) => (props.fillheight ? "1" : "initial")};
   position: relative;
   width: 100%;
   min-height: ${(props) => props.height || "auto"};
@@ -616,21 +649,21 @@ const Body = styled.div`
 const BodyInner = styled(ItemV)`
   gap: 20px;
 
-  justify-content: ${(props) => props.bodyjustifycontent ? props.bodyjustifycontent : "center"};
-`
+  justify-content: ${(props) =>
+    props.bodyjustifycontent ? props.bodyjustifycontent : "center"};
+`;
 
 const BodyImageWrapper = styled.div`
   display: block;
   width: 100%;
   position: relative;
-`
+`;
 
 const BodyImage = styled(Image)`
   margin: ${(props) => props.margin || "initial"};
   object-fit: contain !important;
 
   @media ${device.mobileL} {
-
   }
 `;
 
