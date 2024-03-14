@@ -192,6 +192,13 @@ article ul ul, article ul ol, article ol ol, article ol ul {
 /* OVERRIDES */
 /* ----- */
 
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+
 body {
   margin: 0;
   padding: 0;

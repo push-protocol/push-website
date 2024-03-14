@@ -157,9 +157,12 @@ function Header() {
       else if(id) {
         if (showMobileMenu) toggleMobileMenu();
 
-        gsap.to(window, {
-          duration: 0.75,
-          scrollTo: { y: `#${id}` },
+        // gsap.to(window, {
+        //   duration: 0.75,
+        //   scrollTo: { y: `#${id}` },
+        // });
+        document.getElementById(id).scrollIntoView({
+          behavior: 'smooth'
         });
         console.log('here here')
       }
@@ -306,6 +309,7 @@ function Header() {
               </MobileMenuToggleIcon>
             </MenuTop>
 
+          <HeaderWrapper>
             <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
               <NavigationMenu
                 role="menu"
@@ -578,6 +582,7 @@ function Header() {
                 {t('header.app-button.title')}
               </DappLauncher>
             </HeaderFocusItems>
+            </HeaderWrapper>
           </HeaderItemH>
         </Content>
       </Section>
@@ -585,14 +590,15 @@ function Header() {
   );
 }
 
-const HeaderWrapper = styled(ItemV)`
-  overflow: hidden;
+const HeaderWrapper = styled.div`
   width: 100%;
-  display: none;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-direction: row;
+  @media ${device.laptop} {
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100% - 16px);
+  }
 `;
 
 const LanguageItem = styled.div`
@@ -614,6 +620,8 @@ const HeaderItemH = styled(ItemH)`
   color: ${GLOBALS.COLORS.FONT_LIGHT};
   height: 77px;
   padding: 0px 16px;
+  flex-direction: row;
+  flex-wrap: nowrap;
 
   @media ${device.laptop} {
     margin: 25px;
@@ -625,7 +633,6 @@ const HeaderItemH = styled(ItemH)`
   @media ${device.mobileL} {
     margin: 8px;
     flex-direction: column;
-    height: fit-content;
     padding: 12px 16px;
     box-sizing: border-box;
   }
@@ -997,7 +1004,7 @@ const LanguageMenuHeader = styled.div`
     justify-content: flex-end;
 
     & span {
-      padding: 0px;
+      padding: 0px 8px;
     }
 
     & .chevronIcon {
@@ -1047,8 +1054,8 @@ const NavigationMenuContent = styled.ul`
     transform: none;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0px 12px 14px 12px;
+    margin: 8px 0 0 0;
+    padding: 0px 12px 6px 12px;
     max-height: 244px;
     min-height: 244px;
 
@@ -1126,7 +1133,7 @@ const LanguageMenuContent = styled.div`
     display: flex;
     flex-direction: column;
 
-    margin: 0;
+    margin: 8px 0 0 0;
     padding: 2px 12px 2px 12px;
 
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};

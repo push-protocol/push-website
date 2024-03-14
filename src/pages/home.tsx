@@ -822,6 +822,11 @@ const HeroContent = styled(Content)`
     padding-top: 200px;
     padding-bottom: 40px;
   }
+
+  @media ${device.mobileL} {
+    padding-top: 112px;
+    padding-bottom: 40px;
+  }
 `;
 
 const HeroAnimation = styled(ItemH)`
