@@ -4,18 +4,19 @@ slug: launch-of-the-push-ambassadors-program-english-espanol
 title: Launch of The Push Ambassadors Program 💜 (English + Español)
 authors: [push]
 image: './cover-image.webp'
+text: "After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community."
 tags: [ Web3, Ambassador Program, Blockchain Technology]
 
 ---
 
 ![Cover image of Launch of The Push Ambassadors Program 💜 (English + Español)](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Programa de Embajadores de Push protocol!<br/>
 
 🔵<b>EN |</b> After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community.
 
-<!--truncate-->
 
 Today, we are excited to announce the <b>Push Ambassadors Program💜</b>
 
@@ -60,8 +61,3 @@ Seleccionaremos más embajadores para otras comunidades durante el año y anunci
 
 🔴<b>ES </b>| El programa de Embajadores es una excelente manera de construir una comunidad de personas apasionadas que pueden promocionar Push a un público específico. Este programa ayuda a aumentar el conocimiento de la marca, impulsar collaboraciones y construir una base de usuarios leales. Si eres apasionado por Push y tienes las habilidades necesarias para comunicar su mensaje de manera efectiva, convertirse en Embajador podría ser una excelente oportunidad para ti.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

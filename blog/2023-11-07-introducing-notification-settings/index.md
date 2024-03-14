@@ -4,9 +4,11 @@ title: 'Introducing Notification Settings: Customize Your Web3 Notifications🔔
 authors: [push]
 image: './cover-image.webp'
 description: 'Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️'
-tags: [Pushprotocol, Web3, Blockchain Technology, Decentralization]
+text: "We are extremely excited to be releasing a long-awaited feature - Notification Settings!
+This new feature enables both channels and users to customize the type of notifications they send and receive respectively."
+tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️](./cover-image.webp)
 
@@ -85,7 +87,9 @@ Full list of Push channels 👉https://app.push.org/channels
 
 Here’s a full demo on how to both setup and sign up for Notification Settings:
 
-<iframe width="100%" height="384" src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/XDJFnfzVxsQ" title="Introducing Notification Settings: Customize Your Web3 Notifications🔔⚙️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 
 ### Pushing Personalized Communication Experiences
@@ -99,11 +103,6 @@ At Push, we’re constantly reaffirming our commitment to decentralizing communi
 
 Stay tuned because the best is yet to come.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 
 

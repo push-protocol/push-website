@@ -3,11 +3,13 @@ slug: buid-ling-the-future-of-web3-communication-with-epns-at-eth-online-2022
 title: BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022
 authors: [push]
 image: './cover-image.png'
+text: "One of the best things about web3 and hackathons is how unique ideas transform into something tangible and solve web3 challenges and problems."
 tags: [ Web3, Hackathons, Developer, Push Notification, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of BUIDLing the Future of Web3 Communication With EPNS at ETHOnline 2022](./cover-image.png)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Get your creative juices flowing and create something new with EPNS at ETHGlobal’s ETHOnline 2022 hackathon.
@@ -15,7 +17,6 @@ import { ImageText } from '@site/src/css/SharedStyling';
 ## 🏗 BUILD with EPNS — Make Web3 Communication Seamless
 One of the best things about web3 and hackathons is how unique ideas transform into something tangible and solve web3 challenges and problems.
 
-<!--truncate-->
 
 We’ve had this experience in our previous hackathons, and we take pride in being involved with builders who take some time out and build and code with some intensity to make great products in the web3 ecosystem.
 
@@ -65,7 +66,9 @@ Harsh Rajat</i>
 
 - Saturday, September 2nd, at 5:30 PM ET / 9:30 PM UTC
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/OeZmrsF3tFQ" title="EPNS  How to add web3 push notifications to your app - Harsh Rajat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/OeZmrsF3tFQ" title="EPNS  How to add web3 push notifications to your app - Harsh Rajat" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 3. <b>EPNS weekly workshop</b>
 
@@ -83,8 +86,3 @@ We’ve created a space for all the builders to discuss their ideas, ask questio
 Happy building!
 
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

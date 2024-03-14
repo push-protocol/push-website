@@ -143,17 +143,19 @@ function AnalyticsStats() {
 }
 
 const AnalyticsStatCardList = styled.div`
-  flex: 1;
+  background: #0D0D0F;
 
-  background: linear-gradient(
-    90deg,
-    rgba(18, 19, 21, 0.5) -2.55%,
-    rgba(42, 42, 57, 0.5) 32.62%,
-    rgba(142, 49, 122, 0.5) 68.34%,
-    rgba(18, 19, 21, 0.5) 102.97%
-  );
-  backdrop-filter: blur(30px);
-  border-radius: 62px;
+  flex: 1;
+  // background: linear-gradient(
+  //   90deg,
+  //   rgba(18, 19, 21, 0.5) -2.55%,
+  //   rgba(42, 42, 57, 0.5) 32.62%,
+  //   rgba(142, 49, 122, 0.5) 68.34%,
+  //   rgba(18, 19, 21, 0.5) 102.97%
+  // );
+  // backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 32px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -161,11 +163,11 @@ const AnalyticsStatCardList = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 30px 50px;
-  font-family: 'Strawford';
+  font-family: FK Grotesk Neue;
   font-style: normal;
 
   @media ${device.laptop} {
-    background: rgba(42, 42, 57, 0.5);
+    // background: rgba(42, 42, 57, 0.5);
 
     flex-direction: row;
     flex-wrap: wrap;
@@ -175,6 +177,12 @@ const AnalyticsStatCardList = styled.div`
     column-gap: 8px;
 
     border-radius: 32px;
+  }
+
+  @media ${device.mobileL} {
+    display: grid;
+    grid-template-columns: repeat(2, 113px);
+    justify-content: space-between;
   }
 `;
 
@@ -194,25 +202,33 @@ const AnalyticsStatCard = styled(ItemH)`
     // for 4 items
     flex: 0 0 48%;
   }
+
+  @media ${device.mobileL} {
+    // max-width: 113px;
+    // min-width: 113px;
+  }
+
 `
 
 const KPIFigure = styled(Span)`
-  font-weight: 700;
-  font-size: 48px;
+  font-weight: 500;
+  font-size: 44px;
   line-height: 110%;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   color: #ffffff;
 
-  @media ${device.tablet} {
-    font-size: 32px;
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 
 const KPIMetric = styled(Span)`
   font-weight: 400;
-  font-size: 18px;
-  line-height: 121%;
-  letter-spacing: -0.03em;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: normal;
   color: #ffffff;
 
   @media ${device.tablet} {
@@ -220,6 +236,11 @@ const KPIMetric = styled(Span)`
     text-align: center;
     font-size: 16px;
     font-weight: 400;
+  }
+
+  @media ${device.mobileL} {
+    text-align: left;
+    align-self: flex-start;
   }
 `;
 

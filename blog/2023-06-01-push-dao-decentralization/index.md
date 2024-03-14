@@ -3,17 +3,20 @@ slug: push-dao-progressive-decentralization-the-next-phase-of-push-governance
 title: Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐
 authors: [push]
 image: './cover-image.webp'
-tags: [ Pushprotocol, Web3, DAO]
+text: "Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
+Today, we are launching the next phase of Push governance via the Push Progressive Decentralization Roadmap, opening opportunities for our community to get more involved with Push Protocol in our journey to become a community-owned project."
+tags: [ Push Protocol, Web3, DAO]
 
 ---
 
 ![Cover image of Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐](./cover-image.webp)
+<!--truncate-->
+
 
 Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 
 Today, we are launching the next phase of Push governance via the <b>Push Progressive Decentralization Roadmap</b>, opening opportunities for our community to get more involved with Push Protocol in our journey to become a community-owned project.
 
-<!--truncate-->
 
 ## The TL;DR of Push DAO Phase 0
 Before we get into the details of Phase 1, let’s look at the success of Phase 0.
@@ -85,8 +88,3 @@ As well as our Push DAO mission of revolutionizing the web3 UX by ensuring walle
 
 We are excited about all the opportunities ahead and we are happy to continue BUIDLing and PUSHing together.
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

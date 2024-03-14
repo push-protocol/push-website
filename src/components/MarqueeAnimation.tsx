@@ -30,6 +30,7 @@ function MarqueeAnimation(props: Props) {
   } = props;
 
   return (
+    <MarqueeContainer>
     <AnimationWrapper
       speed={speed}
       gap={gap}
@@ -40,13 +41,18 @@ function MarqueeAnimation(props: Props) {
     >
       {props.children}
     </AnimationWrapper>
+    </MarqueeContainer>
   );
 }
+
+const MarqueeContainer = styled.div`
+  overflow: hidden;
+`;
 
 const AnimationWrapper = styled(ReactMarquee)`
   // this absolute positioning prevents
   //  the animation container from creating horizontal scroll
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   right: 0;

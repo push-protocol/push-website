@@ -15,7 +15,8 @@ We will be looking into the more complex side of implementing channel notificati
 **GM!** Before going to the coding part directly, we used [MakerDAO ](https://docs.makerdao.com/)documentation for implementing [Oasis ](https://oasis.app/)channel.
 
 <head>
-  <title>Protocol based trigger (Oasis protocol liquidation example) | Example | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+  <title>Protocol based trigger (Oasis protocol liquidation example) | Example |
+    Showrunners Scaffold | Push Notifications | Push Documentation</title>
 </head>
 
 ### Use case for Notification
@@ -416,7 +417,7 @@ export default class oasisChannel extends EPNSChannel {
     return priceObject;
   }
 
-  public async sendMessageToContract(simulate) {
+  public async sendMessageToNode(simulate) {
     this.logInfo(`Looking at vaults for liquidation alert`);
     this.logInfo(`Initialising maker and mcd manager`);
     try {
@@ -589,16 +590,16 @@ export default class oasisChannel extends EPNSChannel {
 Let's understand this code by sections -
 
 ```jsx
-import { Service, Inject, Container } from 'typedi';
-import config, { defaultSdkSettings, settings } from '../../config';
+import { Service, Inject, Container } from "typedi";
+import config, { defaultSdkSettings, settings } from "../../config";
 
-import Maker from '@makerdao/dai';
-import McdPlugin from '@makerdao/dai-plugin-mcd';
-import { EPNSChannel } from '../../helpers/epnschannel';
-import { Logger } from 'winston';
-import { ethers } from 'ethers';
-import BigNumber from 'bignumber.js';
-import mainnetAddress from './contractAddress.json';
+import Maker from "@makerdao/dai";
+import McdPlugin from "@makerdao/dai-plugin-mcd";
+import { EPNSChannel } from "../../helpers/epnschannel";
+import { Logger } from "winston";
+import { ethers } from "ethers";
+import BigNumber from "bignumber.js";
+import mainnetAddress from "./contractAddress.json";
 ```
 
 Here we are importing all the necessary files and packages for our channel file to gear up.
@@ -798,7 +799,7 @@ As we have a complex use case for notifications, we are sending notifications ov
 
 ```jsx
 // Final set of code to send notifications
-public async sendMessageToContract(simulate) {
+public async sendMessageToNode(simulate) {
     this.logInfo(`Looking at vaults for liquidation alert`);
     this.logInfo(`Initialising maker and mcd manager`);
     try {
@@ -852,11 +853,11 @@ After setting up all the methods, this function will be sending the notification
 // Execute a cron job every 5 Minutes = */5 * * * *
 // Starts from seconds = * * * * * *
 
-import logger from '../../loaders/logger';
+import logger from "../../loaders/logger";
 
-import { Container } from 'typedi';
-import schedule from 'node-schedule';
-import OasisChannel from './oasisChannel';
+import { Container } from "typedi";
+import schedule from "node-schedule";
+import OasisChannel from "./oasisChannel";
 export default () => {
   const startTime = new Date(new Date().setHours(0, 0, 0, 0));
 
@@ -868,10 +869,10 @@ export default () => {
   logger.info(`     🛵 Scheduling Showrunner - Oasis Channel[3 Hours] [${new Date(Date.now())}]`);
   schedule.scheduleJob({ start: startTime, rule: threeHourRule }, async function() {
     const oasis = Container.get(OasisChannel);
-    const taskName = 'Oasis check vault situation and sendMessageToContract()';
+    const taskName = 'Oasis check vault situation and sendMessageToNode()';
 
     try {
-      await oasis.sendMessageToContract(false);
+      await oasis.sendMessageToNode(false);
       logger.info(`🐣 Cron Task Completed -- ${taskName}`);
     } catch (err) {
       logger.error(`❌ Cron Task Failed -- ${taskName}`);
@@ -879,7 +880,6 @@ export default () => {
     }
   });
 };
-
 ```
 
 After setting up the channel file, we are setting up a three hour rule for hitting the notification triggering method every 3 hours.
@@ -913,7 +913,7 @@ export default (app: Router) => {
       logger.debug('Calling /showrunners/oasis/send_message ticker endpoint with body: %o', req.body);
       try {
         const channel = Container.get(OasisChannel);
-        const response = await channel.sendMessageToContract(req?.body.simulate);
+        const response = await channel.sendMessageToNode(req?.body.simulate);
         return res.status(201).json(response);
       } catch (e) {
         logger.error('🔥 error: %o', e);

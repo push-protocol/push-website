@@ -3,15 +3,16 @@ slug: epns-at-nft-nyc-2022-all-set-for-the-nft-verse
 title: 'EPNS at NFT NYC 2022: All set for the NFTVerse'
 authors: [push]
 image: './cover-image.webp'
+text: "We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!"
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS at NFT NYC 2022: All set for the NFTVerse](./cover-image.webp)
+<!--truncate-->
 
 We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!
 
-<!--truncate-->
 
 So excited to be part of this <b>4th Annual NFT Industry Event</b> in person and the EPNS Team is going to be doing some really exciting things while we’re at NFT NYC!
 
@@ -78,7 +79,9 @@ Speaking of NFTVerse, you might want to check out our latest blog we wrote on <b
 
 #### Lastly, What’s #MYNFTStory
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/rPtUvV_1hW0" title="At @NFTNYC we ask you &quot;What&#39;s #MyNFTStory&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 Since NFT NYC is also one of the biggest NFT Parties across the world, we were like, almost certain that a bunch of us frens would share a ton of #NFTStories as conversation starters, icebreakers and what not!
 
@@ -106,8 +109,4 @@ With so many awesome happenings at this great event, we’re really looking forw
 
 Speaking of which, post NFT NYC, we’ll also be doing a Hackathon as part of ETHGLobal’s ETHNYC! So stay tuned for more details on that one soon.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

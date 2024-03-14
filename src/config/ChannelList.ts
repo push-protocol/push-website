@@ -8,7 +8,7 @@ export const objChannelList = [
     id: 1,
     channel: '0xB88460Bb2696CAb9D66013A05dFF29a28330689D',
     ipfshash: 'QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
-    name: 'Ethereum Push Notification Service',
+    name: 'Push Protocol',
     info: 'The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.',
     url: 'https://epns.io/',
     icon: 'https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
@@ -153,10 +153,11 @@ export const objChannelList = [
     id: 65,
     channel: '0xeEECa1449a75c96d2B34722AE7eE64121be42111',
     ipfshash: 'bafkreibjhyovarjv4auybbayndqix5x4o5ziwd35cp3cnaglkj4akojcsa',
-    name: 'Earnifi - Crypto Airdrops',
-    info: 'Earnifi is an airdrop checker. Search for unclaimed airdrops and get notifications for new crypto. Enter your address to see tokens, NFTs, and POAPs today!',
-    url: 'https://earni.fi',
-    icon: 'https://gateway.ipfs.io/ipfs/QmNPjqA2qSQ7eir8UyfW5ecfWmsfWdB8LdRNVsojkAZwqK',
+    name: 'Bankless Claimables - Crypto Airdrops',
+    info: 'Bankless Claimables is an airdrop checker. Search for unclaimed airdrops and get notifications for new crypto. Enter your address to see tokens, NFTs, and POAPs today!',
+    url: 'https://www.bankless.com/claimables?utm_source=earnifi&utm_medium=announcement&utm_campaign=merge',
+    imageFile: 'earnifi',
+    // icon: 'https://gateway.ipfs.io/ipfs/QmNPjqA2qSQ7eir8UyfW5ecfWmsfWdB8LdRNVsojkAZwqK',
     processed: 1,
     attempts: 0,
     verified_status: 1,
@@ -1499,7 +1500,7 @@ export const objChannelList = [
     is_alias_verified: 0,
     itemcount: 163,
     subscriber_count: 116,
-    type: 'Infrastructure',
+    type: 'Wallet',
   },
   {
     id: 47,
@@ -3915,8 +3916,24 @@ export const objChannelList = [
     name: 'Eco',
     info: 'The Eco Association is a non-profit organization dedicated to supporting the growth of the Eco Currency protocol.',
     url: 'https://eco.org/',
-    imageFile:'/channelList/eco-pfp.jpg',
+    // imageFile:'/channelList/eco-pfp.jpg',
     type: 'DAO',
+  },
+  {
+    id: 168,
+    name: 'Verso',
+    info: 'Multichain wallet for Crypto, NFTs, DeFi and cashback.',
+    url: 'https://www.get-verso.com/',
+    imageFile:'verso',
+    type: 'Wallet',
+  },
+  {
+    id: 168,
+    name: 'MetaMask Snaps',
+    info: 'MetaMask Snaps allows users to add features and functionality to their MetaMask wallet. Individual snaps are features created by third-party developers that MetaMask users can install directly into their wallet.',
+    url: 'https://metamask.io/snaps/',
+    imageFile:'metamask-snaps',
+    type: 'Wallet',
   },
   {
     name: 'LensTok',
@@ -7606,6 +7623,41 @@ export const objChannelList = [
     url: 'https://devfolio.co/submissions/scholarswaprealm-62f7',
     type: 'Hackathons',
     hackathon: 'ETHforAll'
+    },
+    {
+      name: 'Rely',
+      info: `A digital asset interface using Push Protocol to keep users informed with real-time updates and let them comnunicate with their friends.`,
+      url: 'https://ethglobal.com/showcase/rely-oygqg',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pixel',
+      info: `A game-changing digital asset trading platform using Push Protocol to integrate trading directly within chat.`,
+      url: 'https://ethglobal.com/showcase/pixel-rr36q',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'zkmap',
+      info: `A unique proof-of-location system allowing users to verify their presence in a given location using Push Protocol for location-gated chats`,
+      url: 'https://ethglobal.com/showcase/zkmap-n2z06',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'GenieAI',
+      info: ` An Ai marketplace providing users the access to many different AIs using Push Protocol for sending notifications to users.`,
+      url: 'https://ethglobal.com/showcase/genieai-feo3a',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
+    },
+    {
+      name: 'Pulse',
+      info: `A mobile-first social app that improves your feed based on your social graph and in-app interactions using Push Protocol to notify creators.`,
+      url: 'https://ethglobal.com/showcase/pulse-v4iir',
+      type: 'Hackathons',
+      hackathon: 'ETHGlobal Istanbul'
     },
 ];
 

@@ -3,11 +3,13 @@ slug: friday-push-19
 title: 'Friday PUSH #19'
 authors: [push]
 image: './cover-image.webp'
+text: "Last Friday we had a very special Friday PUSH with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month."
 tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
-import { ImageText } from '@site/src/css/SharedStyling';
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Friday PUSH #19](./cover-image.webp)
+<!--truncate-->
 <ImageText>#MeetTheBUIDLers (of ETHNewYork 2022) — PUSH Call #19</ImageText>
 
 <!--customheaderpoint-->
@@ -15,7 +17,6 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 Last Friday we had a very special <b>Friday PUSH</b> with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month.
 
-<!--truncate-->
 
 <blockquote><i>
 This Friday PUSH was held on July 8th, 2022 at 2PM UTC
@@ -39,7 +40,9 @@ This Friday PUSH was held on July 8th, 2022 at 2PM UTC
 2:54:00 — 3:00:20 | He(Art)
 </i></blockquote>
 
-<iframe width="100%" height="382" src="https://www.youtube.com/embed/B0-xoQutqwU" title="Friday PUSH Call 19 - #MeetTheBUIDLers | @ETHGlobal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/B0-xoQutqwU" title="Friday PUSH Call 19 - #MeetTheBUIDLers | @ETHGlobal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 <ImageText>PUSH CALL #19 Video/Audio — #MeetTheBUIDLers (of ETHNewYork 2022)</ImageText>
 
@@ -75,8 +78,3 @@ Till next Friday Push!
 
 The EPNS Team 💪
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

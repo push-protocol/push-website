@@ -4,17 +4,18 @@ slug: push-eth-denver-full-itinerary
 title: Push @ETHDenver Full Itinerary 🌄
 authors: [push]
 image: './cover-image.webp'
+text: "ETHDenver is just around the corner and the Push team is going to be there! We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person."
 tags: [ Web3, Blockchain Technology, Announcements, Ethdenver, Ethdenver 2023 ]
 
 ---
 
 ![Cover image of Push @ETHDenver Full Itinerary 🌄](./cover-image.webp)
+<!--truncate-->
 
 ETHDenver is just around the corner and the Push team is going to be there!
 
 We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person.
 
-<!--truncate-->
 
 We’ll be having a busy week attending several panel discussions and workshops, so if you’re going to be at ETHDenver this year and want to learn more about Push communication tools or meet the creators themselves — here’s where you can find us:
 
@@ -73,8 +74,3 @@ We look forward to having an amazing week at ETHDenver and we can’t wait to me
 ![Push Crew](./image-2.webp)
 <center>Hello from the Push Crew!</center>
 
-### About Push Protocol
-
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

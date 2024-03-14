@@ -258,7 +258,7 @@ function Header() {
                       {t('header.docs.developer-guides')}
                     </A>
                     <A
-                      href="/docs"
+                      href="/docs/dao"
                       title={t('header.docs.alt-governance-guides')}
                       background="transparent"
                       hoverbackground="#fff"
@@ -970,7 +970,7 @@ const NavigationMenuContent = styled.ul`
   padding: 10px 0;
 
   & a {
-    min-width: 200px;
+    min-width: 220px;
   }
 
   @media ${device.laptop} {
@@ -999,7 +999,7 @@ const HeaderFocusItems = styled(ItemH)`
   flex-wrap: nowrap;
 
   @media ${device.laptop} {
-    flex-direction: collumn;
+    flex-direction: column;
     align-self: center;
     flex-wrap: wrap;
   }

@@ -44,8 +44,8 @@ export const Section = styled.section`
     props.gradient
       ? props.gradient
       : props.background
-      ? props.background
-      : "transparent" || "transparent"};
+        ? props.background
+        : "transparent" || "transparent"};
   display: ${(props) => props.display || "flex"};
   flex: ${(props) => props.flex || "1"};
   flex-direction: ${(props) => props.flexDirection || "row"};
@@ -132,8 +132,8 @@ export const ItemH = styled.div`
       (props.filterHover
         ? props.filterHover
         : props.hover
-        ? props.hover
-        : "none") || "none"};
+          ? props.hover
+          : "none") || "none"};
   }
 
   ${ItemBreak} {
@@ -435,7 +435,7 @@ export const A = styled.a`
   & .anchorSVGlink {
     width: 1em;
     height: 1em;
-    margin-left: 3px;
+    margin-left: 5px;
     position: relative;
     top: 5px;
   }
@@ -489,15 +489,15 @@ export const LinkTo = styled(Link)`
       (props.filterHover
         ? props.filterHover
         : props.hover
-        ? props.hover
-        : "none") || "none"};
+          ? props.hover
+          : "none") || "none"};
 
     color: ${(props) =>
       (props.hoverColor
         ? props.hoverColor
         : props.color
-        ? props.color
-        : "#fff") || "#fff"};
+          ? props.color
+          : "#fff") || "#fff"};
   }
 
   &:before {
@@ -565,8 +565,9 @@ export const AImp = styled.a`
   padding: 6px 12px 6px 8px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
+  line-height: 30px;
 
   &:before {
     content: "💡 ";
@@ -580,34 +581,41 @@ export const AImp = styled.a`
 
 // Block Anchor
 export const ABlock = styled.a`
-  color: #000;
-  border: 1px solid #d4d5d8;
-  font-size: 16px;
+  color: var(--ifm-custom-base);
+  border: 0.5px solid var(--ifm-custom-base);
+  font-size: 1.25rem;
   padding: 20px 15px 20px 15px;
   margin-top: 20px;
   font-weight: 500;
   border-radius: 8px;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-decoration: none;
   display: flex;
-  background: #fdfdfe;
-  
+  transition: all 0.2s ease-in-out 0s;
+
   &:after {
     content: ">";
     position: relative;
+    display: flex;
     float: right;
     margin-left: auto;
+    align-items: center;
   }
 
   &:hover {
-    color: #000;
-    border: 1px solid #dd44b9;
+    color: #dd44b9;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
   }
 
   &:hover:after {
     color: #dd44b9;
   }
-`
+
+  & p {
+    margin: 0px;
+  }
+`;
 
 // Modal Container and Item - Small
 export const ModalContainer = styled(ItemH)`
@@ -626,6 +634,10 @@ export const ModalInner = styled(Button)`
   justify-content: center;
   display: flex;
   gap: 10px;
+
+  & p {
+    margin: 0px;
+  }
 
   & img {
     height: 32px;
@@ -663,6 +675,13 @@ export const ModalInner = styled(Button)`
 
 export const ModalSmall = styled(ModalInner)``;
 
+export const ModalSmallEqual = styled(ModalSmall)`
+  min-width: 140px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
 export const ModalMid = styled(ModalInner)`
   gap: 20px;
   padding: 30px 10px;
@@ -672,7 +691,6 @@ export const ModalMid = styled(ModalInner)`
     height: 48px;
   }
 `;
-
 export const ModalMidEqual = styled(ModalMid)`
   min-width: 140px;
   align-self: stretch;
@@ -691,4 +709,38 @@ export const ImageText = styled.div`
   text-align: center;
   font-size: 14px;
   margin-bottom: 20px;
+`;
+
+export const ModalLarge = styled(ModalMid)`
+  min-width: 220px;
+  align-self: stretch;
+  justify-content: space-between;
+  flex: 1;
+`;
+
+export const MetricTitle = styled(Span)`
+  color: #dd44b9 !important;
+  font-weight: 600 !important;
+`;
+
+export const MetricSub = styled(Span)`
+  font-size: 14px;
+`;
+
+export const VideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 `;

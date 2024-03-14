@@ -4,17 +4,19 @@ title: Deep-dive into Push Snaps Features & Getting Started 🛠️
 authors: [push]
 image: './cover-image.webp'
 description: Deep-dive into Push Snaps Features & Getting Started 🛠️
-tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
+text: "As we outlined in our announcement article — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet."
+tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
 ![Cover image of Deep-dive into Push Snaps Features & Getting Started 🛠️](./cover-image.webp)
+
+<!--truncate-->
 
 <!--customheaderpoint-->
 # All the technical specifications and getting started tips you need.
 
 As we outlined in our [announcement article](https://push-protocol.medium.com/bringing-push-to-metamask-snaps-fc780fec004b) — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet. With the Push Snap installed, you can now seamlessly receive notifications powered by [Push Protocol](https://push.org/) directly into your wallet, ensuring you never miss out on important updates from the channels you subscribe to.
 
-<!--truncate-->
 
 By delivering notifications directly to your wallet address, we’re eliminating the need to log in to any other front-end separately to get those same notifications and alerts. By bringing all your notifications into one place, we’re saving you time, effort, and allowing you to more easily stay connected and informed.
 
@@ -151,11 +153,7 @@ Yes, every wallet you add will receive a notification.
 
 Yes, the browser window needs to be active and MetaMask needs to be unlocked to start receiving notifications.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 <!-- [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
 

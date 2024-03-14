@@ -1,0 +1,24 @@
+name: Other Issue
+description: Report a general issue.
+title: "[Issue]: issue title"
+labels: [issue]
+
+body:
+  - type: markdown
+    attributes:
+      value: "## Before you continue, please search our open/closed issues to see if a similar issue has been reported."
+
+  - type: checkboxes
+    attributes:
+      label: I confirm that I searched through the issues and didn't find my problem.
+      options:
+        - label: Confirm
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Briefly describe the issue or request assistance.
+    validations:
+      required: true

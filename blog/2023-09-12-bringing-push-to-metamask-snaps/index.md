@@ -3,17 +3,21 @@ slug: bringing-push-to-meta-mask-snaps
 title: Bringing Push to MetaMask Snaps
 authors: [push]
 image: './cover-image.webp'
-tags: [Pushprotocol, Metamask, Metamask Wallet, Web3, Blockchain]
+text: "Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for MetaMask! To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask Snaps — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet."
+tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
+
 ![Cover image of Bringing Push to MetaMask Snaps](./cover-image.webp)
+
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Web3 Notifications directly in your MetaMask wallet.
 
 Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for [MetaMask](https://metamask.io/)!
 
-<!--truncate-->
 
 To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask [Snaps](https://metamask.io/snaps/) — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet.
 
@@ -45,25 +49,25 @@ pop-ups. You can easily switch them back on from your dApp.
 ### Snap installation and Set-Up guide
 
 - If you don’t already have a MetaMask wallet, install and [set-up a wallet in MetaMask](https://support.metamask.io/hc/en-us/articles/360015489531-Getting-started-with-MetaMask) here.
-- Next, go to [https://app.push.org/receive](https://app.push.org/receive)
+- Next, go to [https://app.push.org/snap](https://app.push.org/snap)
 - Click on <b>Install Snap</b> → <i>approve the required permissions to run the snap</i>
-- Once successfully installed the snap will redirect to Push Channels Dapp
-- Here you can opt-in to your favourite channels to receive notifications
-- Once done, you can go back to the Snap Settings Page.
-- With the connected wallet, click on <b>Add Address:</b>
-- This allows you to add an address for which you prefer to receive notifications
-- Once you click, simply sign the message to complete the process
+- Once successfully installed the snap will redirect to Push dApp and open up Channels page
+- **Channels** are protocols that you can subscribe to for notifications, for example: Subscribe to coindesk channel for news, ShapeShift for goverance updates, pick your favorites!
+- Subscribing to a channel is completely gassless, you will need to sign the opt-in though.
 - Once done, you are all set. The address will now start receiving notifications.
 
+<VideoContainer>
 <iframe
-  width="100%"
-  height="382"
-  src="https://www.youtube.com/embed/oxfuXjOCox0"
+  width= "100%"
+  height="100%"
+  src="https://www.youtube.com/embed/LjPxKoYLiGs"
+  style={{ borderRadius: "32px", aspectRatio: '56.25%' }}
   title="How to Add Web3 Notifications in Your MetaMask Wallet | Installing the Push Snap"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
 ></iframe>
+</VideoContainer>
 
 As such, your MetaMask wallet is your new notification hub, ensuring you never miss out on the latest updates and developments in web3. Get ready to embrace the future of web3 with ease and confidence.
 
@@ -71,11 +75,7 @@ The Push Protocol Snap V1 has successfully passed the Consensys audit which you 
 
 Have questions? Reach out to us on our [Discord](https://discord.gg/pushprotocol) — we’re always happy to help!
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
 
 <!-- [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
 

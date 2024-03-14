@@ -11,15 +11,15 @@ import styled from 'styled-components';
 
 // Internal Components
 import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
-import AndroidSVG from '@site/static/assets/android.svg';
-import AppleSVG from '@site/static/assets/apple.svg';
-import DiscordSVG from '@site/static/assets/discord.svg';
-import GithubSVG from '@site/static/assets/github.svg';
 import PushBellSVG from '@site/static/assets/pushBell.svg';
-import TelegramSVG from '@site/static/assets/telegram.svg';
-import TwitterSVG from '@site/static/assets/twitter.svg';
 import FooterFollowusFigure from '@site/static/assets/website/illustrations/footerfollowus.svg';
 import FooterJoinusFigure from '@site/static/assets/website/illustrations/footerjoinus.svg';
+import AndroidSVG from '@site/static/assets/website/shared/android.svg';
+import AppleSVG from '@site/static/assets/website/shared/apple.svg';
+import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
+import GithubSVG from '@site/static/assets/website/shared/github.svg';
+import TelegramSVG from '@site/static/assets/website/shared/telegram.svg';
+import TwitterSVG from '@site/static/assets/website/shared/twitter.svg';
 import { MailingSignup } from '../components/MailingSignup/MailingSignup';
 
 // Internal Configs
@@ -37,7 +37,7 @@ function Footer() {
     <StyledFooter>
       <FooterSection
         id="footer"
-        background="#121315"
+        background="#0D0D0F"
         padding="70px 0 0 0"
       >
         <Content
@@ -173,7 +173,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://docs.push.org/governance"
+                    href="https://push.org/docs/dao"
                     title={t('footer.links-section.governance-column.guides-link')}
                     target="_blank"
                   >

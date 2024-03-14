@@ -3,17 +3,18 @@ slug: push-going-big-on-polygon-with-frens
 title: Push Going Big on Polygon with Frens
 authors: [push]
 image: './cover-image.webp'
+text: "Push Protocol has recently launched on Polygon with Lens being the official launch partner. Today, we are excited to announce, some old, and some new friends are combining forces with Push to grow and strengthen their presence in the Polygon ecosystem."
 tags: [ Announcements, Web3, Push Notification, Polygon, Ethereum]
 ---
 
 ![Cover image of Push Going Big on Polygon with Frens](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Seven protocols have joined Push to bring better UX to the Polygon Ecosystem.<br/>
 
 Push Protocol has recently launched on Polygon with [Lens](https://medium.com/push-protocol/push-and-lens-powering-ux-with-notifications-and-aaves-lens-85828638e691) being the official launch partner. Today, we are excited to announce, some old, and some new friends are combining forces with Push to grow and strengthen their presence in the Polygon ecosystem.
 
-<!--truncate-->
 
 In today’s post, we are going to explore some of the use cases of these frens supported by Push.
 
@@ -36,8 +37,4 @@ While the use cases listed above provide a good first view of the extensive capa
 
 If you are a developer and want to quickly get your application integrated with Push, don’t hesitate to get in touch on [Discord](https://discord.gg/pushprotocol) or reach us via our social media channels below.
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

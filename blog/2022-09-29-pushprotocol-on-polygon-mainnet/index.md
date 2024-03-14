@@ -3,14 +3,15 @@ slug: push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-
 title: Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps
 authors: [push]
 image: './cover-image.webp'
+text: "Today, we’re thrilled to announce that Push Protocol, previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users."
 tags: [ Polygon, Web3, Communication, Ethereum, Announcements]
 ---
 
 ![Cover image of Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps](./cover-image.webp)
+<!--truncate-->
 
 Today, we’re thrilled to announce that [Push Protocol](http://push.org/), previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users.
 
-<!--truncate-->
 
 The Push Protocol launch on Polygon’s mainnet means that Polygon app developers can immediately begin integrating Push into their apps, launching channels, and enabling notifications for users (start [here](https://docs.epns.io/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains/polygon-channel-setup)). Soon, Push Protocol will announce launch partners to allow users to begin subscribing to live channels, opting to receive notifications when certain on- or off-chain conditions are met.
 
@@ -38,8 +39,4 @@ If you’re an Ethereum Developer, you’re already a Polygon developer! Leverag
 
 [Website](https://polygon.technology/) | [Twitter](https://twitter.com/intent/user?screen_name=0xPolygon) | [Ecosystem Twitter](https://twitter.com/intent/user?screen_name=0xPolygonNews) | [Developer Twitter](https://twitter.com/intent/user?screen_name=0xPolygonDevs) | [Studios Twitter](https://twitter.com/intent/user?screen_name=polygonstudios) | [Telegram](https://t.me/polygonofficial) | [LinkedIn](https://www.linkedin.com/company/13449964/admin/) | [Reddit](https://www.reddit.com/r/0xpolygon/) | [Discord](https://discord.gg/XvpHAxZ) | [Instagram](https://www.instagram.com/0xpolygon/) | [Facebook](https://www.facebook.com/0xPolygon.Technology)
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

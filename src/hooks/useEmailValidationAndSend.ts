@@ -41,6 +41,7 @@ function useEmailValidationAndSend() {
 
         // check https://sendy.co/api for details
         if (sendyAPIResponse.toString() === '1') {
+          setEmailError('');
           setEmailSuccess(MESSAGES.SUCCESS);
         } else {
           setEmailSuccess('');

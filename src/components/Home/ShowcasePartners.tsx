@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 // Internal Components
-import { H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
+import { A,H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device, size } from '@site/src/config/globals';
@@ -266,43 +266,46 @@ function PartnerChannels() {
           flexDirection="column"
         >
           <ResponsiveH2
-            color="#121315"
-            fontSize="40px"
-            fontWeight="700"
-            letterSpacing="-0.02em"
+            color="#fff"
+            fontSize="36px"
+            fontWeight="500"
+            letterSpacing="normal"
             margin="0px 0px"
-            lineHeight="110%"
+            lineHeight="135%"
+            fontFamily="FK Grotesk Neue"
           >
+            <b>
             {t('home.partners-section.partner-channels-title')}
+            </b>
           </ResponsiveH2>
 
           <Span
-            color="#303C5E"
-            size="19px"
-            weight="300"
-            spacing="-0.03em"
-            lineHeight="160%"
+            color="#fff"
+            fontSize="18px"
+            fontWeight="400"
+            letterSpacing="normal"
+            lineHeight="140%"
             textAlign='center'
           >
             {t('home.partners-section.partner-channels-description')}
           </Span>
 
-          <LinkTo
-            to="/frens"
+          <A
+            href="/frens"
             title={t('home.partners-section.partner-channels-button-alt')}
             background="#DD44B9"
-            hoverColor="#fff"
+            // hoverColor="#fff"
             borderRadius="16px"
             padding="14px 32px"
-            fontSize="18px"
+            fontSize="16px"
             fontWeight="500"
-            letterSpacing="-0.03em"
-            lineHeight="26px"
-            margin="15px 0px 0px 0px"
+            letterSpacing="-0.06em"
+            lineHeight="140%"
+            margin="25px 0px 0px 0px"
             alignSelf="center"
           >
             {t('home.partners-section.partner-channels-button')}
-          </LinkTo>
+          </A>
         </ShowcaseMainContent>
 
         <PartnerRowV2 itemPos="right">
@@ -616,7 +619,7 @@ const ResponsiveH2 = styled(H2)`
 
 const PartnerResponsiveRow = styled(ItemV)`
   display: none;
-  padding: 20px 0;
+  padding: 20px 0;  
   
   @media ${device.laptopL} {
     display: flex;

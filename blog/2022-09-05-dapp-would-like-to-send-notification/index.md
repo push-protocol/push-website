@@ -3,17 +3,19 @@ slug: my-dapp-would-like-to-send-you-push-notifications
 title: ‘My Dapp’ Would Like to Send You Push Notifications
 authors: [push]
 image: './cover-image.webp'
+text: "In Part 1.1, we introduced modern push technology, which consists of these primary components: an app publisher who publishes information by notifications, a client who is the receiver of notifications based on a subscription, and the push notification provider who acts as middleware between these two actors.
+"
 tags: [Push Notification, Web3, Blockchain, Blockchain Development, Pn101]
 ---
 
 ![Cover image of ‘My Dapp’ Would Like to Send You Push Notifications](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # An Introduction to Push Notification: Part 1.2<br/>
 
 In [Part 1.1](https://medium.com/ethereum-push-notification-service/my-app-would-like-to-send-you-push-notifications-4b591a68f803), we introduced modern push technology, which consists of these primary components: an app publisher who publishes information by notifications, a client who is the receiver of notifications based on a subscription, and the push notification provider who acts as middleware between these two actors.
 
-<!--truncate-->
 
 Middleware is software that acts as an intermediary between two applications or services. Middleware also provides services that are not present in the operating system. The push notification service provider is an example of this, known as an operating system push notification service (OSPNS). For instance, the Apple Push Notification Service (APNS) lives on iPhone devices as an OSPNS middleware software.
 
@@ -58,8 +60,4 @@ The information required to notify users about different web3 events is complex 
 
 <i>By Danny Salman</i>
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).

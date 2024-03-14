@@ -3,18 +3,19 @@ slug: push-and-tollan-worlds-partner-to-level-up-communication-with-gamers
 title: Push and Tollan Worlds Partner to Level Up Communication With Gamers
 authors: [push]
 image: './cover-image.webp'
+text: "In the fourth segment of ‘Frens of Push,’ we are in conversation with Michael Kuvshynov, co-founder and CEO of Tollan Worlds, to talk about how Push is enabling communication on the gaming platform."
 tags: [ Frensofpush, Push Notification, Gaming, Web3 Game, Mmorpg]
 ---
-
+import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push and Tollan Worlds Partner to Level Up Communication With Gamers](./cover-image.webp)
+<!--truncate-->
 
 <!--customheaderpoint-->
 # Frens of Push #4 a little holiday giveaway brought to you by the Tollan Worlds team
 
 <i><a href="https://medium.com/push-protocol/tagged/frensofpush">“Frens of Push”</a> is our weekly content series to spotlight outstanding projects that are building with Push. If you want to be featured, reach out to us and you could be our next Fren in the series.</i>
 
-<!--truncate-->
 
 [Tollan Worlds](https://medium.com/u/5afd7b03aba2?source=post_page-----ba3f9697523--------------------------------), a web3 gaming platform, has joined forces with Push to power communication on their platform.
 
@@ -38,7 +39,9 @@ Our main goal is not only to create great gameplay with a deep story but also to
 
 Tollan Worlds “solves the problem” of both traditional and blockchain gaming worlds. Transparent monetization allows us to be closer to our player base and develop trust and long-term retention of our community. Focusing on the gameplay and story, and escaping Ponzi play2earn schemes allows us to create a game that doesn’t depend on market conditions and where money does not interfere with the core gameplay.
 
-<iframe width="567" height="319" src="https://www.youtube.com/embed/MOJ4hSdbiD0" title="Tollan Worlds: The First Adventure Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<VideoContainer>
+<iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/MOJ4hSdbiD0" title="Tollan Worlds: The First Adventure Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</VideoContainer>
 
 ## How do people play Tollan Worlds?
 <b>Michael:</b> Our pre-alpha is currently live for a limited amount of users, with only 6,000 spots available. Everyone who plays it can mint our Mark of Fate NFT in-game for FREE.
@@ -80,8 +83,4 @@ We thank Michael for taking the time to speak with us. We’re excited to keep e
 ### About Tollan Worlds
 [Tollan Worlds](https://tollanworlds.com/) is a role-playing metaverse platform that aims at making the play-to-earn experience more accessible to the masses. Make friends, fight, build, and defend your home. Follow Tollan Worlds on [Twitter](https://twitter.com/TollanWorlds) and join [Discord](https://discord.com/invite/tollan).
 
-### About Push Protocol
 
-Push is the communication protocol of web3. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services tied to wallet addresses in an open, gasless, and platform-agnostic fashion. The open communication layer allows any crypto wallet /frontend to tap into the network and get the communication across.
-
-To keep up-to-date with Push Protocol: [Website](https://push.org/), [Twitter](https://twitter.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Discord](https://discord.gg/pushprotocol), [YouTube](https://www.youtube.com/c/EthereumPushNotificationService), and [Linktree](https://linktr.ee/pushprotocol).
