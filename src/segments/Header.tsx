@@ -148,7 +148,6 @@ function Header() {
 
   const HeaderSpace = ({item, index}) => {
     const openLink = (e, href, id) => {
-      e.persist();
       e.stopPropagation();
 
 
@@ -162,6 +161,7 @@ function Header() {
           duration: 0.75,
           scrollTo: { y: `#${id}` },
         });
+        console.log('here here')
       }
       else return;
     };
@@ -682,8 +682,6 @@ const StyledHeader = styled.header`
   font-family: 'Strawford';
 
   /* padding: 0px 160px; */
-  box-sizing: border-box;
-  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
