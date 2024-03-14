@@ -240,6 +240,7 @@ function Header() {
             alignSelf="stretch"
             padding={GLOBALS.ADJUSTMENTS.PADDING.SMALL}
             borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
+            showMobileMenu={showMobileMenu}
           >
             <HeaderBlurV
               position="absolute"
@@ -252,7 +253,7 @@ function Header() {
               className={'headerblur'}
             />
 
-            <MenuTop flex="initial" showMobileMenu={showMobileMenu}>
+            <MenuTop flex="initial" >
               <PushLogoBlackContainer
                 className="headerlogo"
                 flex="initial"
@@ -309,8 +310,8 @@ function Header() {
               </MobileMenuToggleIcon>
             </MenuTop>
 
-          <HeaderWrapper>
-            <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
+          <HeaderWrapper showMobileMenu={isMobileMenuOpen}>
+            <HeaderNavItemV >
               <NavigationMenu
                 role="menu"
                 className="navigationMenu"
@@ -594,10 +595,13 @@ const HeaderWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+
   @media ${device.laptop} {
     flex-direction: column;
     overflow-y: auto;
-    max-height: calc(100% - 16px);
+    justify-content: flex-start;
+    height: ${(props) => (props.showMobileMenu ? '100%' : '0px')};
+    // max-height: calc(100vh - 16px);
   }
 `;
 
@@ -627,7 +631,8 @@ const HeaderItemH = styled(ItemH)`
     margin: 25px;
     flex-direction: column;
     padding: 16px;
-    height: fit-content;
+    // height: fit-content;
+    min-height: ${(props) => (props.showMobileMenu ? 'calc(100vh - 50px)' : 'fit-content')};
   }
 
   @media ${device.mobileL} {
@@ -635,6 +640,8 @@ const HeaderItemH = styled(ItemH)`
     flex-direction: column;
     padding: 12px 16px;
     box-sizing: border-box;
+    min-height: ${(props) => (props.showMobileMenu ? 'calc(100vh - 16px)' : 'fit-content')};
+
   }
 
   &.light {
@@ -661,8 +668,11 @@ const HeaderNavItemV = styled(ItemV)`
     margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
   }
 
-  @media ${device.laptop} {
+  @media ${device.mobileL} {
     // margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
+    justify-content: flex-start;
+    background: red;
+    flex: 0;
   }
 `;
 
@@ -1056,25 +1066,25 @@ const NavigationMenuContent = styled.ul`
     flex-direction: column;
     margin: 8px 0 0 0;
     padding: 0px 12px 6px 12px;
-    max-height: 244px;
-    min-height: 244px;
+    // max-height: 244px;
+    // min-height: 244px;
 
-    overflow-y: auto;
-    position: relative;
-    clip-path: inset(0 round 24px);
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
+    // overflow-y: auto;
+    // position: relative;
+    // clip-path: inset(0 round 24px);
+    // &::-webkit-scrollbar {
+    //   width: 6px;
+    // }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: #CD3FAC;
-      border-radius: 10px;
-    }
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: #CD3FAC;
+    //   border-radius: 10px;
+    // }
 
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 10px;
-    }
+    // &::-webkit-scrollbar-track {
+    //   background-color: transparent;
+    //   border-radius: 10px;
+    // }
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
     & a {
       justify-content: flex-start;
@@ -1090,6 +1100,7 @@ const HeaderFocusItems = styled(ItemH)`
     flex-direction: column;
     width: 100%;
     flex: 1;
+    margin: 24px 0 0 0;
     // align-self: center;
     // flex-wrap: wrap;
   }
@@ -1233,6 +1244,7 @@ const DappLauncher = styled(A)`
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
     flex: 0 1 100%;
     margin-top: ${(props) => (props.showMobileMenu && '32px')};
+    max-height: 48px;
   }
 `;
 
