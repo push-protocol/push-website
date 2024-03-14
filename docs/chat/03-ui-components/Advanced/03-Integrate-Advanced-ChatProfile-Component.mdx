@@ -59,9 +59,10 @@ return (
 | Param                      | Type                       | Default | Remarks                                                                                                                                                                                                     |
 | -------------------------- | -------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`chatId`_                 | `string`                   | -       | Chat id for a particular chat                                                                                                                                                                               |
-| _`style`_                  | `"Info"` &#124 `"Preview"` | -       | Only have Info support as of now,`Info` is the header that’s visible in ChatView Component, `Preview` is the one that's visible in ChatListComponent                                                        |
 | `groupInfoModalBackground` | `ModalBackgroundType`      | -       | Default value is `"OVERLAY"`, decides the group info modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`                                                                 |
 | `groupInfoModalPosition`   | `ModalBackgroundType`      | -       | Default value is `"GLOBAL"`, decides the group info modal position, it can be either relative to immediate parent(RELATIVE) or the entire screen(GLOBAL), possible values are `"RELATIVE"` &#124 `"GLOBAL"` |
+| `chatProfileRightHelperComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed on the right side of chat profile header                                                                                                                                                     |
+| `chatProfileLeftHelperComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed on the left side of chat profile header                                                                                                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
