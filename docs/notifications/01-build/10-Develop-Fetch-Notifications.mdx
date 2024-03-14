@@ -105,7 +105,7 @@ const inboxNotifications = await userAlice.notification.list("INBOX");
 
 </Details>
 
-## Fetch Notifications by Channel API
+## Fetch channel specific notifications API
 
 This API is useful for fetching the list of all notifications sent from a channel. Useful for fetching notifications for a specific channel.
 
@@ -131,14 +131,98 @@ const allNotifications = await userAlice.channel.notifications(channelAddress);
 | -                  | `options.page`   | `number`  | 1       | A number representing the page of results to retrieve.                                                                                                                                                                                                                  |
 | -                  | `options.limit`  | `number`  | 10      | A number representing the maximum number of feeds to retrieve per page.                                                                                                                                                                                                 |
 | -                  | `options.raw`    | `boolean` | False   | A boolean indicating whether to retrieve raw feed data.                                                                                                                                                                                                                 |
-| -                  | `options.filter` | `string`  | -       | Filter the notifications by their type. `1` for broadcast notifcations and likewise, Refer [Notification Types Section](/docs/notifications/build/types-of-notification) to learn more.                                                                                 |
+| -                  | `options.filter` | `string`  | -       | Filter the notifications by their type. Accepts `CONSTANTS.NOTIFICATION.TYPE.BROADCAST`, `CONSTANTS.NOTIFICATION.TYPE.SUBSET`, `CONSTANTS.NOTIFICATION.TYPE.TARGETTED`                                                                             |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
 <Details summary="Expected response">
 
 ```typescript
-{ feeds: [], itemcount: 0 }
+{
+  feeds: [
+    {
+      payload_id: 4714471,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-12-11T16:33:16.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4714469,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-12-11T16:31:44.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4710921,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-12-08T18:03:16.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4710908,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-12-08T18:02:03.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4497176,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-08-11T18:30:08.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4487454,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-07-28T18:41:41.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4487453,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-07-28T18:40:04.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4459720,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-07-10T16:45:25.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4444690,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-06-30T17:19:05.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    },
+    {
+      payload_id: 4438184,
+      sender: '0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be',
+      epoch: '2023-06-26T19:03:49.000Z',
+      payload: [Object],
+      source: 'ETH_MAINNET',
+      etime: null
+    }
+  ],
+  itemcount: 85693
+}
 ```
 
 </Details>
