@@ -95,6 +95,8 @@ import { EPNSChannel } from '../../helpers/epnschannel';
 
 const NETWORK_TO_MONITOR = config.web3SepoliaTestnetNetwork;
 
+// Author : Shubham Patel(aeyshuhb)
+
 @Service()
 export default class PricetrackerChannel extends EPNSChannel {
   constructor(@Inject('logger') public logger: Logger, @Inject('cached') public cached) {
