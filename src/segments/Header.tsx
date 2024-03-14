@@ -143,7 +143,7 @@ function Header() {
       // Cleanup: Reset overflow when the component unmounts
       document.body.style.overflow = 'auto';
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isMobile]);
   
 
   const HeaderSpace = ({item, index}) => {
@@ -1116,7 +1116,7 @@ const LanguageMenuContent = styled.div`
     flex-direction: column;
 
     margin: 0;
-    padding: 14px;
+    padding: 2px 12px 2px 12px;
 
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 

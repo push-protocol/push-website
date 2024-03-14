@@ -637,7 +637,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </H2>
 
             {isMobile && (
-              <SlideItem
+              <SlideLink
                 href="/blog"
                 title="Explore all articles"
                 hoverBackground="transparent"
@@ -652,7 +652,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <SpanLink>Explore Blog</SpanLink>
                 <BsArrowRight className="anchorSVGlink" />
-              </SlideItem>
+              </SlideLink>
             )}
 
             <RecentBlogPosts recentPosts={recentPosts} />

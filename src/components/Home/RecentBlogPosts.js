@@ -27,7 +27,6 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
       {recentPosts.slice(0, 1).map((postItem, index) => {
-        console.log(postItem);
         // Docusaurus loads the actual content lazily;
         // hence the .default to get the actual component.
         return (
