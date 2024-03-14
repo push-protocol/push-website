@@ -636,7 +636,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               Your gateway to shiny updates and innovations at Push Protocol.{" "}
             </H2>
 
-            {isMobile && (
+            {/* {isMobile && (
               <SlideLink
                 href="/blog"
                 title="Explore all articles"
@@ -653,7 +653,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <SpanLink>Explore Blog</SpanLink>
                 <BsArrowRight className="anchorSVGlink" />
               </SlideLink>
-            )}
+            )} */}
 
             <RecentBlogPosts recentPosts={recentPosts} />
           </Content>

@@ -136,12 +136,12 @@ function Header() {
       document.body.style.overflow = 'hidden';
 
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   
     return () => {
       // Cleanup: Reset overflow when the component unmounts
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen, isMobile]);
   
@@ -585,6 +585,16 @@ function Header() {
   );
 }
 
+const HeaderWrapper = styled(ItemV)`
+  overflow: hidden;
+  width: 100%;
+  display: none;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+`;
+
 const LanguageItem = styled.div`
   list-style: none;
   margin: 0px 24px 0px 0px;
@@ -617,6 +627,7 @@ const HeaderItemH = styled(ItemH)`
     flex-direction: column;
     height: fit-content;
     padding: 12px 16px;
+    box-sizing: border-box;
   }
 
   &.light {
@@ -671,6 +682,8 @@ const StyledHeader = styled.header`
   font-family: 'Strawford';
 
   /* padding: 0px 160px; */
+  box-sizing: border-box;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
