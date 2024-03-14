@@ -228,3 +228,82 @@ stream.connect();
 ```
 
 </Details>
+
+## Re-initialize video stream
+
+To reinstate a video stream. Useful for updating an already initialized stream objects to add / remove listen events or filter options.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// await stream.reinit(listen, {newOptions?})
+const newStream = await stream.reinit([
+  CONSTANTS.STREAM.VIDEO, // Listen for video events
+  CONSTANTS.STREAM.CONNECT, // Listen for connection events
+  CONSTANTS.STREAM.DISCONNECT, // Listen for disconnection events
+]);
+```
+
+  </TabItem>
+</Tabs>
+
+### Reinit Stream Video parameters
+
+| Param        | Type                            | Sub-Type           | Default | Remarks                                                                                                                                                                                                                                                 |
+| ------------ | ------------------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`listen`_   | `constant`                      | -                  | -       | Choose from various streams:`CONSTANTS.STREAM.VIDEO`, `CONSTANTS.STREAM.SPACE`, `CONSTANTS.STREAM.SPACE_OPS`, `CONSTANTS.STREAM.CHAT`, `CONSTANTS.STREAM.CHAT_OPS`, `CONSTANTS.STREAM.NOTIF`, `CONSTANTS.STREAM.CONNECT`, `CONSTANTS.STREAM.DISCONNECT` |
+| `newOptions` | `PushStreamInitializeProps`     | -                  | -       | Optional configuration properties for initializing the stream.                                                                                                                                                                                          |
+| -            | `newOptions.filter`             | `object`           | -       | Configure to listen to specific chats or notifications.                                                                                                                                                                                                 |
+| -            | `newOptions.filter.channels`    | `array of strings` | `['*']` | Pass list of **channels** over here to only listen to notifications coming from them.                                                                                                                                                                   |
+| -            | `newOptions.filter.chats`       | `array of strings` | `['*']` | Pass list of **chatids** over here to only listen to chats coming from them.                                                                                                                                                                            |
+| -            | `newOptions.connection`         | `object`           | -       | Option to configure the connection settings of the stream                                                                                                                                                                                               |
+| -            | `newOptions.connection.retries` | `number`           | `3`     | Number of automatic retries incase of error                                                                                                                                                                                                             |
+| -            | `newOptions.raw`                | `boolean`          | `false` | If enabled, respond with metadata useful in verifying the integrity of incoming chats or notifications among other things.                                                                                                                              |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+## Stream info API
+
+To get the info of the current stream.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// stream.info()
+const streamInfo = await stream.info();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+  ```typescript
+  {
+    options: { raw: false, connection: { auto: true, retries: 3 }, env: 'prod' },
+    listen: [ 'STREAM.VIDEO', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]
+  }
+  ```
+</Details>
+
+## Stream status API
+
+To get the connection status of the current stream.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// stream.connected()
+const streamStatus = await stream.connected();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+  ```typescript
+  true // if connected, else false
+  ```
+</Details>

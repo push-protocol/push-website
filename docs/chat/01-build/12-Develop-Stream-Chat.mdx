@@ -540,18 +540,14 @@ stream.on(CONSTANTS.STREAM.DISCONNECT, () => {
 
 </Details>
 
-## Reinstate chat stream
+## Re-initialize chat stream
 
-To reinstate a chat stream. Useful when you want to listen to more events or change the filter options.
+To reinstate a chat stream. Useful for updating an already initialized stream objects to add / remove listen events or filter options.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// say you created a stream like this, const stream = await userAlice.initStream( [ 'STREAM.NOTIF', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]);
-// now you want to listen to more events or change the filter options
-// then you can do that using this method
-
 // await stream.reinit(listen, newOptions)
 const newStream = await stream.reinit(
   [
@@ -600,7 +596,7 @@ const newStream = await stream.reinit(
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-## Stream Info API
+## Stream info API
 
 To get the info of the current stream.
 
@@ -608,9 +604,6 @@ To get the info of the current stream.
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// say you created a stream like above, const stream = await userAlice.initStream( [ 'STREAM.CHAT', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]);
-// then you can get the info of the stream like this
-
 // stream.info()
 const streamInfo = await stream.info();
 ```
@@ -624,5 +617,26 @@ const streamInfo = await stream.info();
     options: { raw: false, connection: { auto: true, retries: 3 }, env: 'prod' },
     listen: [ 'STREAM.CHAT', 'STREAM.CONNECT', 'STREAM.DISCONNECT' ]
   }
+  ```
+</Details>
+
+## Stream status API
+
+To get the connection status of the current stream.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// stream.connected()
+const streamStatus = await stream.connected();
+```
+
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+  ```typescript
+  true // if connected, else false
   ```
 </Details>
