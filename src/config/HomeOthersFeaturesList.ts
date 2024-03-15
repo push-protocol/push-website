@@ -8,7 +8,6 @@ export const OthersFeaturesList = {
         fillheight: true,
         hideonmobile: false,
         bodyjustifycontent: "bottom",
-        bodyfullwidth: false,
         hidehovereffect: true
       },
       body: [
@@ -36,7 +35,9 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "24px",
           bodytextweight: "500",
           margin: "-12px 0 0 0",
-          align: 'left'
+          align: 'left',
+          bodytextwidth: "70%",
+          mobilebodytextwidth: "85%",
         },
         {
           type: "text",
@@ -46,7 +47,9 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "17px",
           bodytextweight: "400",
           margin: "-8px 0 0 0",
-          align: 'left'
+          align: 'left',
+          bodytextwidth: "70%",
+          mobilebodytextwidth: "85%",
         },
         {
           type: "styled-link",
@@ -93,7 +96,9 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "24px",
           bodytextweight: "500",
           margin: "-12px 0 0 0",
-          align: 'left'
+          align: 'left',
+          bodytextwidth: "70%",
+          mobilebodytextwidth: "85%",
         },
         {
           type: "text",
@@ -103,7 +108,9 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "17px",
           bodytextweight: "400",
           margin: "-8px 0 0 0",
-          align: 'left'
+          align: 'left',
+          bodytextwidth: "70%",
+          mobilebodytextwidth: "85%",
         },
         {
           type: "styled-link",

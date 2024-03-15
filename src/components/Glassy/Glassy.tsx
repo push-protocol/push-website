@@ -370,7 +370,8 @@ const Glassy = ({ item }) => {
                 if (object.type === "text") {
                   return (
                     <BodyTextItem
-                      bodyfullwidth={item.config.bodyfullwidth}
+                      bodytextwidth={object.bodytextwidth}
+                      mobilebodytextwidth={object.mobilebodytextwidth}
                       padding="0px 0px 0px 0px"
                       flex="initial"
                       alignSelf={
@@ -743,18 +744,10 @@ const BodyInner = styled(ItemV)`
 
 `;
 const BodyTextItem = styled(ItemV)`
-  max-width: ${(props) => props.bodyfullwidth ? "initial" : "70%" };
-
-  @media ${device.laptop} {
-        max-width: ${(props) => props.bodyfullwidth ? "initial" : "80%" };
-  }
+  max-width: ${(props) => props.bodytextwidth};
 
   @media ${device.tablet} {
-        max-width: ${(props) => props.bodyfullwidth ? "initial" : "85%" };
-  }
-
-  @media ${device.mobileL} {
-        max-width: ${(props) => props.bodyfullwidth ? "initial" : "90" };
+        max-width: ${(props) => props.mobilebodytextwidth};
   }
 `;
 
