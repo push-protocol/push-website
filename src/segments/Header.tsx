@@ -253,7 +253,7 @@ function Header() {
               className={'headerblur'}
             />
 
-            <MenuTop flex="initial" >
+            <MenuTop flex="initial" showMobileMenu={showMobileMenu}>
               <PushLogoBlackContainer
                 className="headerlogo"
                 flex="initial"
@@ -599,9 +599,24 @@ const HeaderWrapper = styled.div`
   @media ${device.laptop} {
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
     justify-content: flex-start;
     height: ${(props) => (props.showMobileMenu ? '100%' : '0px')};
-    // max-height: calc(100vh - 16px);
+
+    position: relative;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #CD3FAC;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+    }
   }
 `;
 
@@ -631,14 +646,14 @@ const HeaderItemH = styled(ItemH)`
     margin: 25px;
     flex-direction: column;
     padding: 16px;
-    // height: fit-content;
+    box-sizing: border-box;
     min-height: ${(props) => (props.showMobileMenu ? 'calc(100vh - 50px)' : 'fit-content')};
   }
 
   @media ${device.mobileL} {
     margin: 8px;
     flex-direction: column;
-    padding: 12px 16px;
+    padding: 12px;
     box-sizing: border-box;
     min-height: ${(props) => (props.showMobileMenu ? 'calc(100vh - 16px)' : 'fit-content')};
 
@@ -666,18 +681,19 @@ const HeaderNavItemV = styled(ItemV)`
 
   @media ${device.laptop} {
     margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
-  }
-
-  @media ${device.mobileL} {
-    // margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
     justify-content: flex-start;
-    background: red;
     flex: 0;
   }
+
 `;
 
 const PushLogoWhiteContainer = styled(ItemV)`
   display: flex;
+
+    img {
+      min-width: 110px;
+      height: 40px;
+    }
   &.light {
     display: none;
   }
@@ -778,7 +794,7 @@ const MenuTop = styled(ItemV)`
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    // padding: ${(props) => (props.showMobileMenu ? '0px' : '12px 16px')};
+    padding: ${(props) => (props.showMobileMenu ? '0px 0px 12px 0px' : '0px')};
   }
 `;
 
@@ -1029,7 +1045,7 @@ const LanguageMenuHeader = styled.div`
     
      h2 {
        margin: 0 auto 0 0;
-       padding: 4px;
+       padding: 0px;
     }
   }
 `;
@@ -1099,7 +1115,7 @@ const HeaderFocusItems = styled(ItemH)`
   @media ${device.laptop} {
     flex-direction: column;
     width: 100%;
-    flex: 1;
+    flex: 0;
     margin: 24px 0 0 0;
     // align-self: center;
     // flex-wrap: wrap;
