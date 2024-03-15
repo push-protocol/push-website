@@ -63,6 +63,7 @@ import {
   NotifFeaturesList,
   NotifUseCasesList,
 } from "@site/src/config/HomeNotifFeaturesList";
+import { OthersFeaturesList } from "@site/src/config/HomeOthersFeaturesList";
 import GLOBALS, { device } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
@@ -418,7 +419,19 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* PUSH SPACE AND VIDEO SECTION */}
         <SlideSection id="slide-section">
           <Content className="contentBox" alignSelf="center">
+
             <ItemH
+              flexDirection={isMobile ? "column" : "row"}
+              flexWrap="nowrap"
+              className="slideGap"
+            >
+
+              {OthersFeaturesList?.products.map((item) => (
+                  <Glassy item={item} />
+                ))}
+
+            </ItemH>
+            {/* <ItemH
               flexDirection={isMobile ? "column" : "row"}
               flexWrap="nowrap"
               className="slideGap"
@@ -499,7 +512,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   </SlideContent>
                 </SlideItem>
               ))}
-            </ItemH>
+            </ItemH> */}
           </Content>
         </SlideSection>
 

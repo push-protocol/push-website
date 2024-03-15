@@ -2,41 +2,117 @@ export const OthersFeaturesList = {
   products: [
     {
       config: {
-        id: "share",
-        padding: "24px 24px 0px 24px",
+        id: "video",
+        padding: "28px 48px 48px 48px",
+        mobilepadding: "28px 32px",
         fillheight: true,
         hideonmobile: false,
         bodyjustifycontent: "bottom",
-      },
-      header: {
-        title: "home.chat-section.box1.title",
-        align: "left",
+        bodyfullwidth: false,
+        hidehovereffect: true
       },
       body: [
         {
           type: "image",
-          imagesrc: "chats/share",
-          videosrc: "chats/share-video",
-          imagealt: "home.chat-section.box1.imagealt",
-          imagetitle: "home.chat-section.box1.imagetitle",
+          imagesrc: "slides/Push Video",
+          imagealt: "home.video-section.alt",
+          imagetitle: "home.video-section.title",
         },
+        {
+          type: "text",
+          bodytext: "home.video-section.title",
+          bodytextcolor: "#D98AEC",
+          bodytextsize: "14px",
+          bodytextweight: "700",
+          uppercase: true,
+          margin: "12px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "text",
+          bodytext: "home.video-section.subtitle",
+          bodytextcolor: "#FFF",
+          bodytextsize: "30px",
+          mobilebodytextsize: "24px",
+          bodytextweight: "500",
+          margin: "-12px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "text",
+          bodytext: "home.video-section.content",
+          bodytextcolor: "#BBBCD0",
+          bodytextsize: "19px",
+          mobilebodytextsize: "17px",
+          bodytextweight: "400",
+          margin: "-8px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "styled-link",
+          href: 'https://push.org/docs/video/',
+          hrefText: 'home.video-section.itemLink',
+          margin: "4px 0 0 0",
+          align: 'left'
+        }
       ],
     },
     {
       config: {
-        id: "chat-requests",
-        padding: "24px",
-        hideonmobile: true,
+        id: "spaces",
+        padding: "28px 48px 48px 48px",
+        mobilepadding: "28px 32px",
+        fillheight: true,
+        hideonmobile: false,
+        bodyjustifycontent: "bottom",
+        bodyfullwidth: false,
+        hidehovereffect: true
       },
-      header: {
-        title: "home.chat-section.box2.title",
-        align: "left",
-        illustration: "chats/requests",
-        illustrationvideo: "chats/requests-video",
-        subheader: "home.chat-section.box2.subheader",
-        iconalt: "home.chat-section.box2.iconalt",
-        icontitle: "home.chat-section.box2.icontitle",
-      },
+      body: [
+        {
+          type: "image",
+          imagesrc: "slides/Push Spaces",
+          imagealt: "home.space-section.alt",
+          imagetitle: "home.space-section.title",
+        },
+        {
+          type: "text",
+          bodytext: "home.space-section.title",
+          bodytextcolor: "#D98AEC",
+          bodytextsize: "14px",
+          bodytextweight: "700",
+          uppercase: true,
+          margin: "12px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "text",
+          bodytext: "home.space-section.subtitle",
+          bodytextcolor: "#FFF",
+          bodytextsize: "30px",
+          mobilebodytextsize: "24px",
+          bodytextweight: "500",
+          margin: "-12px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "text",
+          bodytext: "home.space-section.content",
+          bodytextcolor: "#BBBCD0",
+          bodytextsize: "19px",
+          mobilebodytextsize: "17px",
+          bodytextweight: "400",
+          margin: "-8px 0 0 0",
+          align: 'left'
+        },
+        {
+          type: "styled-link",
+          href: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+          hrefText: 'home.space-section.itemLink',
+          margin: "4px 0 0 0",
+          align: 'left'
+        }
+      ],
     },
   ],
 };

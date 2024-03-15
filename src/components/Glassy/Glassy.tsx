@@ -11,6 +11,7 @@ import {
   ItemH,
   ItemV,
   Section,
+  Span
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
@@ -18,6 +19,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
+import { BsArrowRight } from "react-icons/bs";
 
 const Glassy = ({ item }) => {
   console.log("Item", item);
@@ -30,7 +32,7 @@ const Glassy = ({ item }) => {
   const [hovered, setHovered] = useState(false);
 
   const { config, header, body, footer, after } = item;
-  const { id, height, padding, hideonmobile, bg, bgvideosrc, bgtitle, link } =
+  const { id, height, padding, mobilepadding, hideonmobile, bg, bgvideosrc, bgtitle, link, hidehovereffect } =
     config || "";
 
   const {
@@ -127,15 +129,17 @@ const Glassy = ({ item }) => {
       height={height}
       fillheight={item.config.fillheight}
       hideonmobile={hideonmobile}
+      hideEffect={hidehovereffect}  
       className={`${hovered ? "active" : ""} ${id}`}
     >
-      <GlowwyBorder className={`${hovered ? "active" : ""} glowwy`} />
+      <GlowwyBorder className={`${hovered ? "active" : ""} glowwy`} hideEffect={hidehovereffect}  />
 
-      <Glowwy className={`${hovered ? "active" : ""} glowwy`} />
+      <Glowwy className={`${hovered ? "active" : ""} glowwy`} hideEffect={hidehovereffect} />
 
       <Subcontainer
         id={id}
         padding={padding}
+        mobilepadding={mobilepadding}
         bg={hovered ? null : bg}
         title={t(bgtitle)}
         bgsize={item.config.bgsize}
@@ -362,6 +366,57 @@ const Glassy = ({ item }) => {
                   );
                 }
 
+                // Render type "regular text"
+                if (object.type === "text") {
+                  return (
+                    <BodyTextItem
+                      bodyfullwidth={item.config.bodyfullwidth}
+                      padding="0px 0px 0px 0px"
+                      flex="initial"
+                      alignSelf={
+                        object.align === "left"
+                          ? "flex-start"
+                          : object.align === "right"
+                            ? "flex-end"
+                            : "center"
+                      }
+                    >
+                      <BodyText 
+                          size={object.bodytextsize}
+                          mobilesize={object.mobilebodytextsize}
+                          color={object.bodytextcolor}
+                          weight={object.bodytextweight}
+                          uppercase={object.uppercase}
+                          margin={object.margin}
+                      >{t(object.bodytext)}</BodyText>
+                    </BodyTextItem>
+                  );
+                }
+
+                // Render type "styled link"
+                if (object.type === 'styled-link') {
+                  return(<SlideLink
+                      href={object.href}
+                      title={"new"}
+                      target="_blank"
+                      padding="0px 0px"
+                      className="button"
+                      background="transparent"
+                      alignItems="center"
+                      margin={object.margin}
+                      alignSelf={
+                        object.align === "left"
+                          ? "flex-start"
+                          : object.align === "right"
+                            ? "flex-end"
+                            : "center"
+                      }
+                    >
+                      <SpanLink>{t(object.hrefText)}</SpanLink>
+                      <BsArrowRight className="anchorSVGlink" />
+                    </SlideLink>)
+                }
+
                 // Render type "button"
                 if (object.type === "button") {
                   return (
@@ -454,7 +509,8 @@ const Container = styled.div`
     right: 1px;
     border-radius: inherit;
     /* background: #000000; */
-    background: #09090b;
+    // background: #09090b;
+    background: ${(props) => props.hideEffect ? "transparent" : "#09090b"};
     // background: #0A0A0D;
     // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
@@ -484,13 +540,16 @@ const GlowwyBorder = styled.div`
   display: none;
 
   &.active {
-    display: block;
+    // display: block;
+    display: ${(props) => props.hideEffect ? "none" : "block"};
   }
 `;
 
 const Glowwy = styled(GlowwyBorder)`
   box-shadow: 0 0 100px 100px rgba(135, 34, 158, 0.15);
   z-index: 1;
+
+  display: ${(props) => props.hideEffect && "none"};
 `;
 
 const Subcontainer = styled.div`
@@ -508,6 +567,16 @@ const Subcontainer = styled.div`
   border-radius: inherit;
   position: relative;
   margin: 1px;
+
+  @media ${device.laptopM} {
+  }
+
+  @media ${device.tablet} {
+  }
+
+  @media ${device.mobileL} {
+    padding: ${(props) => props.mobilepadding || "24px"};
+  }
 `;
 
 const TagItem = styled.div`
@@ -578,6 +647,23 @@ const SubscribeText = styled.h2`
   @media ${device.laptop} {
     line-height: 64px;
     font-size: 64px;
+  }
+`;
+
+const BodyText = styled.h2`
+  font-family: FK Grotesk Neue;
+  color: ${(props) => props.color};
+  font-size: ${(props) => props.size};
+  font-weight: ${(props) => props.weight};
+  text-transform: ${(props) => props.uppercase && 'uppercase'};
+  margin: ${(props) => props.margin};
+  // text-align: center;
+  letter-spacing: normal;
+  // margin: 0 auto;
+  line-height: 130%;
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.mobilesize};
   }
 `;
 
@@ -653,7 +739,25 @@ const BodyInner = styled(ItemV)`
 
   justify-content: ${(props) =>
     props.bodyjustifycontent ? props.bodyjustifycontent : "center"};
+
+
 `;
+const BodyTextItem = styled(ItemV)`
+  max-width: ${(props) => props.bodyfullwidth ? "initial" : "70%" };
+
+  @media ${device.laptop} {
+        max-width: ${(props) => props.bodyfullwidth ? "initial" : "80%" };
+  }
+
+  @media ${device.tablet} {
+        max-width: ${(props) => props.bodyfullwidth ? "initial" : "85%" };
+  }
+
+  @media ${device.mobileL} {
+        max-width: ${(props) => props.bodyfullwidth ? "initial" : "90" };
+  }
+`;
+
 
 const BodyImageWrapper = styled.div`
   display: block;
@@ -739,6 +843,46 @@ const AfterItem = styled.div`
       transparent 70%,
       #252527 71%
     );
+  }
+`;
+
+const SlideLink = styled(A)`
+  overflow: inherit;
+  .anchorSVGlink {
+    color: #fff;
+    top: 3px;
+  }
+
+  &:hover {
+    .anchorSVGlink {
+      color: #d98aec;
+    }
+  }
+`;
+
+const SpanLink = styled(Span)`
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 142%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 `;
 
