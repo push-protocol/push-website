@@ -4,29 +4,41 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 // External Components
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
-import { gsap } from 'gsap';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
 // Internal Components
-import { Alert } from '@site/src/components/Alert';
-import { A, Button, Content,H2 ,H3 ,Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { Alert } from "@site/src/components/Alert";
+import {
+  A,
+  Button,
+  Content,
+  H2,
+  H3,
+  Image,
+  ItemH,
+  ItemV,
+  LinkTo,
+  Section,
+  Span,
+} from "@site/src/css/SharedStyling";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Import Assets
-import { AiOutlineClose } from 'react-icons/ai';
-import { BsChevronDown } from 'react-icons/bs';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from "react-icons/ai";
+import { BsChevronDown } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 // Internal Configs
-import GLOBALS, { device } from '@site/src/config/globals';
-import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
-import { HeaderList } from '../config/HeaderList';
+import { SupportedLanguagesList } from "@site/src/config/SupportedLanguagesList";
+import GLOBALS, { device } from "@site/src/config/globals";
+import { HeaderList } from "../config/HeaderList";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -35,31 +47,32 @@ gsap.registerPlugin(ScrollToPlugin);
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
 
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
   lastScrollY = window.scrollY;
 }
 
 function useScrollDirection(mobileMenuActive: unknown) {
   const [scrollDirection, setScrollDirection] = useState(null);
-  const [bkg, setBkg] = useState('dark');
+  const [bkg, setBkg] = useState("dark");
 
   useEffect(() => {
     const updateScrollDirection = () => {
       let scrollY = 0;
 
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         scrollY = window.scrollY;
       }
 
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
+      let direction = scrollY > lastScrollY ? "scrollDown" : "scrollUp";
 
       if (
         direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA || scrollY - lastScrollY < -SCROLL_DELTA)
+        (scrollY - lastScrollY > SCROLL_DELTA ||
+          scrollY - lastScrollY < -SCROLL_DELTA)
       ) {
         // check if isMobileMenuOpen then override
         if (mobileMenuActive) {
-          direction = 'scrollUp';
+          direction = "scrollUp";
         }
 
         setScrollDirection(direction);
@@ -76,10 +89,10 @@ function useScrollDirection(mobileMenuActive: unknown) {
     };
 
     // add event listener
-    window.addEventListener('scroll', updateScrollDirection, { passive: true });
+    window.addEventListener("scroll", updateScrollDirection, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
     };
   }, [scrollDirection, mobileMenuActive]);
 
@@ -95,11 +108,10 @@ const defaultMobileMenuState = {
 };
 
 function Header() {
-  const isMobile = useMediaQuery(device.laptop);
+  const isMobile = useMediaQuery(device.laptopM);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-
 
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
@@ -110,14 +122,17 @@ function Header() {
 
   // if mobile view then show only DARK header.
   // console.log(bkg);
-  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
+  const headerClass = `${scrollDirection === "scrollDown" ? "hide" : "show"}`;
   const themeClass = `${bkg}`;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
-  const onMobileHeaderMenuClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, menuIndex: number) => {
+  const onMobileHeaderMenuClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    menuIndex: number,
+  ) => {
     e.preventDefault();
 
     // if (isMobile) {
@@ -130,31 +145,26 @@ function Header() {
     // }
   };
 
-
   useEffect(() => {
     if (isMobileMenuOpen && isMobile) {
-      document.body.style.overflow = 'hidden';
-
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
-  
+
     return () => {
       // Cleanup: Reset overflow when the component unmounts
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen, isMobile]);
-  
 
-  const HeaderSpace = ({item, index}) => {
+  const HeaderSpace = ({ item, index }) => {
     const openLink = (e, href, id) => {
       e.stopPropagation();
 
-
-      if(href) {
+      if (href) {
         window.open(href, "_blank");
-      }
-      else if(id) {
+      } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
         // gsap.to(window, {
@@ -162,79 +172,99 @@ function Header() {
         //   scrollTo: { y: `#${id}` },
         // });
         document.getElementById(id).scrollIntoView({
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        console.log('here here')
-      }
-      else return;
+        console.log("here here");
+      } else return;
     };
-    return(
-      <HeaderItem 
-        onClick={(e)=> openLink(e, item.href, item.id)}>
-          {item.srcrefoff && (<HeaderImage
+    return (
+      <HeaderItem onClick={(e) => openLink(e, item.href, item.id)}>
+        {item.srcrefoff && (
+          <HeaderImage
             key={index}
-            src={require(`@site/static/assets/website/header/${item.srcrefoff}.png`).default}
+            src={
+              require(
+                `@site/static/assets/website/header/${item.srcrefoff}.png`,
+              ).default
+            }
             srcSet={`${require(`@site/static/assets/website/header/${item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${item.srcrefoff}@3x.png`).default} 3x`}
             alt={`${item?.title}`}
             height={24}
             width={24}
-          />)}
+          />
+        )}
 
-          <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
-            <H2 fontSize='16px' fontFamily='FK Grotesk Neue' color="#FFF" lineHeight="130%" letterSpacing="normal" fontWeight="500">
-              {t(item.title)}
+        <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+          <H2
+            fontSize="16px"
+            fontFamily="FK Grotesk Neue"
+            color="#FFF"
+            lineHeight="130%"
+            letterSpacing="normal"
+            fontWeight="500"
+          >
+            {t(item.title)}
 
-              {item.tagitem && <TagItem style={{marginLeft: "10px"}}>{item.tagitem.text}</TagItem>}
-            </H2>
+            {item.tagitem && (
+              <TagItem style={{ marginLeft: "10px" }}>
+                {item.tagitem.text}
+              </TagItem>
+            )}
+          </H2>
 
-            <H3 fontSize='14px' fontFamily='FK Grotesk Neue' color="#BBBCD0" lineHeight="130%" letterSpacing="normal" fontWeight="400">
-              {t(item.subtitle)}
-            </H3>
-          </ItemH>
-          </HeaderItem>)
-          }
+          <H3
+            fontSize="14px"
+            fontFamily="FK Grotesk Neue"
+            color="#BBBCD0"
+            lineHeight="130%"
+            letterSpacing="normal"
+            fontWeight="400"
+          >
+            {t(item.subtitle)}
+          </H3>
+        </ItemH>
+      </HeaderItem>
+    );
+  };
 
-    const textIds = ['text0','text1', 'text2', 'text3', 'text4'];
+  const textIds = ["text0", "text1", "text2", "text3", "text4"];
 
-    const handleMouseEnter = (e,activeId) => {
-
-      textIds.forEach((id) => {
-        if (id !== activeId) {
-          const element = document.getElementById(id);
-          if (element) {
-            element.style.color = '#6C6C6C';
-            element.style.transitionDuration = '1s';
-          }
-
-        }
-      });
-    };
-
-    const handleMouseLeave = (e) => {
-
-      textIds.forEach((id) => {
+  const handleMouseEnter = (e, activeId) => {
+    textIds.forEach((id) => {
+      if (id !== activeId) {
         const element = document.getElementById(id);
         if (element) {
-          element.style.color = '#fff';
-          element.style.transitionDuration = '1s';
+          element.style.color = "#6C6C6C";
+          element.style.transitionDuration = "1s";
         }
-      });
-    };
+      }
+    });
+  };
+
+  const handleMouseLeave = (e) => {
+    textIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.color = "#fff";
+        element.style.transitionDuration = "1s";
+      }
+    });
+  };
 
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
       className={`header ${headerClass}`}
     >
-
-      
       {/* ALERT SECTION */}
       <Alert />
 
-      <Section>
-        <Content
-          padding="0"
-        >
+      {/* INVISIBLE WALL TO CLOSE */}
+      <InvisibleWall />
+
+      {/* HEADER SECTION */}
+      <Section onClick={(e) => e.stopPropagation()}>
+        <Content padding="0">
           {/* Header Content Begins */}
           <HeaderItemH
             alignSelf="stretch"
@@ -249,20 +279,18 @@ function Header() {
               left="0"
               overflow="hidden"
               borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
-              className={'headerblur'}
+              className={"headerblur"}
             />
 
             <MenuTop flex="initial" showMobileMenu={showMobileMenu}>
-              <PushLogoBlackContainer
-                className="headerlogo"
-                flex="initial"
-              >
-                <LinkTo
-                  to="/"
-                  aria-label="Push"
-                >
+              <PushLogoBlackContainer className="headerlogo" flex="initial">
+                <LinkTo to="/" aria-label="Push">
                   <Image
-                    src={require(`@site/static/assets/website/segments/PushLogoTextBlack.webp`).default}
+                    src={
+                      require(
+                        `@site/static/assets/website/segments/PushLogoTextBlack.webp`,
+                      ).default
+                    }
                     srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextBlack@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextBlack@3x.webp`).default} 3x`}
                     alt={`Push Logo`}
                     width="auto"
@@ -270,10 +298,7 @@ function Header() {
                   />
                 </LinkTo>
               </PushLogoBlackContainer>
-              <PushLogoWhiteContainer
-                className="headerlogo"
-                flex="initial"
-              >
+              <PushLogoWhiteContainer className="headerlogo" flex="initial">
                 <LinkTo
                   to="/"
                   aria-label="Push"
@@ -281,24 +306,28 @@ function Header() {
                   padding="0"
                 >
                   <Image
-                    src={require(`@site/static/assets/website/header/Push-Logo.png`).default}
+                    src={
+                      require(
+                        `@site/static/assets/website/header/Push-Logo.png`,
+                      ).default
+                    }
                     srcSet={`${require(`@site/static/assets/website/header/Push-Logo@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/Push-Logo@3x.png`).default} 3x`}
                     alt={`Push Logo`}
                     width="auto"
-                    height="40px"
+                    height={isMobile ? "40px" : "auto"}
                   />
                 </LinkTo>
               </PushLogoWhiteContainer>
 
               <MobileMenuToggleIcon>
                 {isMobileMenuOpen ? (
-                  <AiOutlineClose
-                    size={28}
-                    onClick={toggleMobileMenu}
-                  />
+                  <AiOutlineClose size={28} onClick={toggleMobileMenu} />
                 ) : (
                   <Image
-                    src={require(`@site/static/assets/website/header/bars.png`).default}
+                    src={
+                      require(`@site/static/assets/website/header/bars.png`)
+                        .default
+                    }
                     srcSet={`${require(`@site/static/assets/website/header/bars@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/bars@3x.png`).default} 3x`}
                     alt={`Bars Icon`}
                     width="auto"
@@ -309,212 +338,211 @@ function Header() {
               </MobileMenuToggleIcon>
             </MenuTop>
 
-          <HeaderWrapper>
-            <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
-              <NavigationMenu
-                role="menu"
-                className="navigationMenu"
-                showMobileMenu={isMobileMenuOpen}
-              >
-                <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 0)}
-                    expanded={mobileMenuMap[0]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text0')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    id='text0'
-                  >
-                    <Span
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
-                      color='inherit'
+            <HeaderWrapper>
+              <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
+                <NavigationMenu
+                  role="menu"
+                  className="navigationMenu"
+                  showMobileMenu={isMobileMenuOpen}
+                >
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 0)}
+                      expanded={mobileMenuMap[0]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text0")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                      id="text0"
                     >
-                      {t('header.products.title')}
-                    </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
+                      <Span
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                        color="inherit"
+                      >
+                        {t("header.products.title")}
+                      </Span>
+                      <BsChevronDown size={12} className="chevronIcon" />
+                    </NavigationMenuHeader>
 
-                  <NavigationMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[0]}
-                  >
-                    {HeaderList.products.map((item, index) => 
-                    <HeaderSpace item={item} index={index} />)}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 1)}
-                    expanded={mobileMenuMap[1]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text1')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    id='text1'
-                  >
-                    <Span
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
-                      color='inherit'
+                    <NavigationMenuContent
+                      className="menuContent"
+                      expanded={mobileMenuMap[0]}
                     >
-                      {t('header.developers.title')}
-                    </Span>
+                      {HeaderList.products.map((item, index) => (
+                        <HeaderSpace item={item} index={index} />
+                      ))}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 1)}
+                      expanded={mobileMenuMap[1]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text1")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                      id="text1"
+                    >
+                      <Span
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                        color="inherit"
+                      >
+                        {t("header.developers.title")}
+                      </Span>
 
-                  <NavigationMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[1]}
-                  >
-                    <HeaderDiv>
-                      <HeaderSection>
-                        {HeaderList.developers.slice(0,4).map((item, index) => 
-                          <HeaderSpace item={item} index={index} />)}
+                      <BsChevronDown size={12} className="chevronIcon" />
+                    </NavigationMenuHeader>
+
+                    <NavigationMenuContent
+                      className="menuContent"
+                      expanded={mobileMenuMap[1]}
+                    >
+                      <HeaderDiv>
+                        <HeaderSection>
+                          {HeaderList.developers
+                            .slice(0, 4)
+                            .map((item, index) => (
+                              <HeaderSpace item={item} index={index} />
+                            ))}
                         </HeaderSection>
 
                         <HeaderSection>
-                        {HeaderList.developers.slice(4,7).map((item, index) => 
-                          <HeaderSpace item={item} index={`divide-${index}`} />)}
-                        </HeaderSection>
-                    </HeaderDiv>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 2)}
-                    expanded={mobileMenuMap[2]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text2')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    id='text2'
-                  >
-                    <Span
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
-                      color='inherit'
-                    >
-                      {t('header.community.title')}
-                    </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
-
-                  <NavigationMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[2]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text1')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                  >
-                    {HeaderList.community.map((item, index) => 
-                    <HeaderSpace item={item} index={index} />)}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 3)}
-                    expanded={mobileMenuMap[3]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text3')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    id='text3'
-                  >
-                    <Span
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px"
-                    >
-                      {t('header.resources.title')}
-                    </Span>
-
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </NavigationMenuHeader>
-
-                  <NavigationMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[3]}
-                  >
-                    {HeaderList.resources.map((item, index) => 
-                    <HeaderSpace item={item} index={index} />)}
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenu>
-            </HeaderNavItemV>
-
-            <HeaderFocusItems
-              flex="initial"
-            >
-              <LanguageItem showMobileMenu={showMobileMenu}>
-                <LanguageMenuItem>
-                  <LanguageMenuHeader
-                    onClick={(e) => onMobileHeaderMenuClick(e, 4)}
-                    expanded={mobileMenuMap[4]}
-                    onMouseEnter={(e) => handleMouseEnter(e,'text4')}
-                    onMouseLeave={(e) => handleMouseLeave(e)}
-                    id='text4'
-                  >
-                    <H2 fontSize='16px' fontFamily='FK Grotesk Neue'lineHeight="130%" letterSpacing="normal" fontWeight="500">
-                      {isMobile && i18n &&
-                        SupportedLanguagesList
-                          .filter((item) => item.id === i18n.language)
-                          .map((item, index) => 
-                              <div>
-                                  {item?.language}
-                              </div>
-                        )
-                      }
-                    </H2>
-                    
-                    <Span
-                      fontSize="18px"
-                      fontWeight="500"
-                      letterSpacing="-0.03em"
-                      lineHeight="142%"
-                      padding="16px 0px"
-                    > 
-                              <Image
-                                src={require(`@site/static/assets/website/languages/eng.png`).default}
-                                srcSet={`${require(`@site/static/assets/website/languages/eng@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/eng@3x.png`).default} 3x`}
-                                alt={'Language Header Icon'}
-                                height={24}
-                                width={24}
-                                borderRadius="100%"
+                          {HeaderList.developers
+                            .slice(4, 7)
+                            .map((item, index) => (
+                              <HeaderSpace
+                                item={item}
+                                index={`divide-${index}`}
                               />
-                    </Span>
-                    <BsChevronDown
-                      size={12}
-                      className="chevronIcon"
-                    />
-                  </LanguageMenuHeader>
+                            ))}
+                        </HeaderSection>
+                      </HeaderDiv>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 2)}
+                      expanded={mobileMenuMap[2]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text2")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                      id="text2"
+                    >
+                      <Span
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                        color="inherit"
+                      >
+                        {t("header.community.title")}
+                      </Span>
+                      <BsChevronDown size={12} className="chevronIcon" />
+                    </NavigationMenuHeader>
 
-                  <LanguageMenuContent
-                    className="menuContent"
-                    expanded={mobileMenuMap[4]}
-                  >
-                    {
-                      SupportedLanguagesList.map((item, index) => {
+                    <NavigationMenuContent
+                      className="menuContent"
+                      expanded={mobileMenuMap[2]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text1")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                    >
+                      {HeaderList.community.map((item, index) => (
+                        <HeaderSpace item={item} index={index} />
+                      ))}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 3)}
+                      expanded={mobileMenuMap[3]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text3")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                      id="text3"
+                    >
+                      <Span
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px"
+                      >
+                        {t("header.resources.title")}
+                      </Span>
+
+                      <BsChevronDown size={12} className="chevronIcon" />
+                    </NavigationMenuHeader>
+
+                    <NavigationMenuContent
+                      className="menuContent"
+                      expanded={mobileMenuMap[3]}
+                    >
+                      {HeaderList.resources.map((item, index) => (
+                        <HeaderSpace item={item} index={index} />
+                      ))}
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenu>
+              </HeaderNavItemV>
+
+              <HeaderFocusItems flex="initial">
+                <LanguageItem showMobileMenu={showMobileMenu}>
+                  <LanguageMenuItem>
+                    <LanguageMenuHeader
+                      onClick={(e) => onMobileHeaderMenuClick(e, 4)}
+                      expanded={mobileMenuMap[4]}
+                      onMouseEnter={(e) => handleMouseEnter(e, "text4")}
+                      onMouseLeave={(e) => handleMouseLeave(e)}
+                      id="text4"
+                    >
+                      <H2
+                        fontSize="16px"
+                        fontFamily="FK Grotesk Neue"
+                        lineHeight="130%"
+                        letterSpacing="normal"
+                        fontWeight="500"
+                      >
+                        {isMobile &&
+                          i18n &&
+                          SupportedLanguagesList.filter(
+                            (item) => item.id === i18n.language,
+                          ).map((item, index) => <div>{item?.language}</div>)}
+                      </H2>
+
+                      <Span
+                        fontSize="18px"
+                        fontWeight="500"
+                        letterSpacing="-0.03em"
+                        lineHeight="142%"
+                        padding="16px 0px"
+                      >
+                        <Image
+                          src={
+                            require(
+                              `@site/static/assets/website/languages/eng.png`,
+                            ).default
+                          }
+                          srcSet={`${require(`@site/static/assets/website/languages/eng@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/eng@3x.png`).default} 3x`}
+                          alt={"Language Header Icon"}
+                          height={24}
+                          width={24}
+                          borderRadius="100%"
+                        />
+                      </Span>
+                      <BsChevronDown size={12} className="chevronIcon" />
+                    </LanguageMenuHeader>
+
+                    <LanguageMenuContent
+                      className="menuContent"
+                      expanded={mobileMenuMap[4]}
+                    >
+                      {SupportedLanguagesList.map((item, index) => {
                         return (
                           <LanguageButton
                             key={index}
@@ -536,7 +564,11 @@ function Header() {
                             >
                               <Image
                                 key={index}
-                                src={require(`@site/static/assets/website/languages/${item.srcref}.png`).default}
+                                src={
+                                  require(
+                                    `@site/static/assets/website/languages/${item.srcref}.png`,
+                                  ).default
+                                }
                                 srcSet={`${require(`@site/static/assets/website/languages/${item.srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/${item.srcref}@3x.png`).default} 3x`}
                                 alt={`${item?.alt}`}
                                 height={24}
@@ -551,37 +583,36 @@ function Header() {
                                 alignSelf="flex-start"
                                 padding="8px 30px 8px 10px !important"
                                 color="#FFF !important"
-                                fontFamily = "FK Grotesk Neue"
+                                fontFamily="FK Grotesk Neue"
                               >
                                 {t(item.translatedtitle)}
                               </H3>
                             </ItemH>
                           </LanguageButton>
-                        )
-                      })
-                    }
-                  </LanguageMenuContent>
-                </LanguageMenuItem>
-              </LanguageItem>
+                        );
+                      })}
+                    </LanguageMenuContent>
+                  </LanguageMenuItem>
+                </LanguageItem>
 
-              <DappLauncher
-                showMobileMenu={showMobileMenu}
-                className="launchDappBtn"
-                href="https://app.push.org/"
-                target="_blank"
-                title={t('header.app-button.alt-title')}
-                background="#DD44B9"
-                borderRadius="12px"
-                fontSize="15px"
-                fontWeight="500"
-                letterSpacing="-0.03em"
-                lineHeight="normal"
-                width="100%"
-                // margin="0px 8px 0px 0px"
-              >
-                {t('header.app-button.title')}
-              </DappLauncher>
-            </HeaderFocusItems>
+                <DappLauncher
+                  showMobileMenu={showMobileMenu}
+                  className="launchDappBtn"
+                  href="https://app.push.org/"
+                  target="_blank"
+                  title={t("header.app-button.alt-title")}
+                  background="#DD44B9"
+                  borderRadius="12px"
+                  fontSize="15px"
+                  fontWeight="500"
+                  letterSpacing="-0.03em"
+                  lineHeight="normal"
+                  width="100%"
+                  // margin="0px 8px 0px 0px"
+                >
+                  {t("header.app-button.title")}
+                </DappLauncher>
+              </HeaderFocusItems>
             </HeaderWrapper>
           </HeaderItemH>
         </Content>
@@ -594,10 +625,9 @@ const HeaderWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  @media ${device.laptop} {
+
+  @media ${device.laptopM} {
     flex-direction: column;
-    overflow-y: auto;
-    max-height: calc(100% - 16px);
   }
 `;
 
@@ -605,35 +635,34 @@ const LanguageItem = styled.div`
   list-style: none;
   margin: 0px 24px 0px 0px;
 
-  @media ${device.laptop} {
-    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+  @media ${device.laptopM} {
+    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
     margin: 0px;
     flex: 1;
     width: 100%;
   }
-
 `;
 
 // V2 Designs
 const HeaderItemH = styled(ItemH)`
-  margin: 45px 0 0 0;
+  margin: ${`${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.TOP}px ${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.RIGHT}px ${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.BOTTOM}px ${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.LEFT}px`};
   color: ${GLOBALS.COLORS.FONT_LIGHT};
-  height: 77px;
-  padding: 0px 16px;
+  height: ${GLOBALS.HEADER.HEIGHT}px;
+  padding: ${`${GLOBALS.HEADER.OUTER_PADDING.DESKTOP.TOP}px ${GLOBALS.HEADER.OUTER_PADDING.DESKTOP.RIGHT}px ${GLOBALS.HEADER.OUTER_PADDING.DESKTOP.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.DESKTOP.LEFT}px`};
   flex-direction: row;
   flex-wrap: nowrap;
 
-  @media ${device.laptop} {
-    margin: 25px;
+  @media ${device.laptopM} {
+    margin: ${`${GLOBALS.HEADER.OUTER_MARGIN.TABLET.TOP}px ${GLOBALS.HEADER.OUTER_MARGIN.TABLET.RIGHT}px ${GLOBALS.HEADER.OUTER_MARGIN.TABLET.BOTTOM}px ${GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT}px`};
     flex-direction: column;
-    padding: 16px;
+    padding: ${`${GLOBALS.HEADER.OUTER_PADDING.TABLET.TOP}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT}px`};
     height: fit-content;
   }
 
   @media ${device.mobileL} {
-    margin: 8px;
+    margin: ${`${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.TOP}px ${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.RIGHT}px ${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.BOTTOM}px ${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT}px`};
     flex-direction: column;
-    padding: 12px 16px;
+    padding: ${`${GLOBALS.HEADER.OUTER_PADDING.MOBILE.TOP}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT}px`};
     box-sizing: border-box;
   }
 
@@ -645,8 +674,8 @@ const HeaderItemH = styled(ItemH)`
 
 const HeaderBlurV = styled(ItemV)`
   backdrop-filter: blur(32px);
-  background: rgba(13, 13, 15, 0.50);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(13, 13, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
 
   &.light {
@@ -655,14 +684,21 @@ const HeaderBlurV = styled(ItemV)`
 `;
 
 const HeaderNavItemV = styled(ItemV)`
-  margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+  margin: 0 ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0
+    ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
-  @media ${device.laptop} {
-    margin: ${(props) => (props.showMobileMenu ? '20px 0 20px 0' : '0')};
+  @media ${device.laptopM} {
+    margin: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_PADDING.TABLET.TOP + GLOBALS.HEADER.OUTER_PADDING.TABLET.BOTTOM + 20}px 0 20px 0`
+        : "0"};
   }
 
-  @media ${device.laptop} {
-    // margin-bottom: ${(props) => (props.showMobileMenu && '32px')};
+  @media ${device.laptopM} {
+    margin: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_PADDING.MOBILE.TOP + GLOBALS.HEADER.OUTER_PADDING.MOBILE.BOTTOM + 20}px 0 20px 0`
+        : "0"};
   }
 `;
 
@@ -680,13 +716,8 @@ const PushLogoBlackContainer = styled(ItemV)`
   }
 `;
 
-// V1 Designs
-const HEADER_HEIGHT = 92;
-const HEADER_VERTICAL_GUTTER = 7;
-const BOX_MAX_WIDTH = 1140;
-
 const StyledHeader = styled.header`
-  font-family: 'Strawford';
+  font-family: "Strawford";
 
   /* padding: 0px 160px; */
   position: fixed;
@@ -721,14 +752,6 @@ const StyledHeader = styled.header`
     }
   }
 
-  /* this is IMP for boxing the content at 1140px
-  @media (min-width: 1213px) {
-    padding-left: calc(50% - ${BOX_MAX_WIDTH / 2}px);
-    padding-right: calc(50% - ${BOX_MAX_WIDTH / 2}px);
-  } */
-
-  /* height: ${HEADER_HEIGHT}px; */
-
   z-index: 999;
 
   display: flex;
@@ -736,39 +759,87 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media ${device.laptop} {
-    /* height: ${(props) => (props.showMobileMenu ? '100%' : '48px')}; */
+  @media ${device.laptopM} {
+    max-height: 100%;
+    overflow: scroll;
+
     flex-direction: column;
 
     &.hide {
-      // top: -${HEADER_HEIGHT + HEADER_VERTICAL_GUTTER + 12}px;
       top: -100%;
     }
   }
 `;
 
+const InvisibleWall = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 const MobileMenuToggleIcon = styled.span`
   display: none;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     display: flex;
     cursor: pointer;
   }
 `;
 
+const ADJUST_FOR_BLUR = 8;
 const MenuTop = styled(ItemV)`
   display: flex;
+  z-index: 9999;
+  height: ${GLOBALS.HEADER.HEIGHT}px;
 
   & svg {
     cursor: pointer;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
+    position: ${(props) => (props.showMobileMenu ? "fixed" : "relative")};
+    height: auto;
+    top: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.TABLET.TOP + ADJUST_FOR_BLUR}px`
+        : 0};
+    left: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + ADJUST_FOR_BLUR}px`
+        : 0};
     flex-direction: row;
-    width: 100%;
+    width: ${(props) =>
+      props.showMobileMenu
+        ? `calc(100% - ${GLOBALS.HEADER.OUTER_MARGIN.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR * 2}px)`
+        : "100%"};
+    padding: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_PADDING.TABLET.TOP - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR}px`
+        : "0px"};
     justify-content: space-between;
     align-items: center;
-    // padding: ${(props) => (props.showMobileMenu ? '0px' : '12px 16px')};
+    backdrop-filter: blur(4px);
+  }
+
+  @media ${device.mobileL} {
+    top: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.TOP + ADJUST_FOR_BLUR}px`
+        : 0};
+    left: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + ADJUST_FOR_BLUR}px`
+        : 0};
+    width: ${(props) =>
+      props.showMobileMenu
+        ? `calc(100% - ${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR * 2}px)`
+        : "100%"};
+    padding: ${(props) =>
+      props.showMobileMenu
+        ? `${GLOBALS.HEADER.OUTER_PADDING.MOBILE.TOP - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR}px`
+        : "0px"};
   }
 `;
 
@@ -783,11 +854,11 @@ const NavigationMenu = styled.ul`
 
   z-index: 999;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     flex: 0 0 75%;
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
   }
 `;
 
@@ -811,7 +882,7 @@ const NavigationMenuItem = styled.li`
     font-size: 16px;
     line-height: 150%;
     letter-spacing: normal;
-    color: #6C6C6C;
+    color: #6c6c6c;
   }
 
   // & .chevronIcon {
@@ -837,8 +908,8 @@ const NavigationMenuItem = styled.li`
 const NavMenuItemLink = styled(LinkTo)`
   flex: 1;
   margin: 0 auto;
-  
-  @media ${device.laptop} {
+
+  @media ${device.laptopM} {
     flex: initial;
     margin: 16px;
   }
@@ -848,7 +919,7 @@ const HeaderText = styled.div`
   padding: 0px;
   justify-content: flex-start;
   font-size: 16px;
-  fontWeight: 400;
+  fontweight: 400;
   line-height: 230%;
   letter-spacing: normal;
 
@@ -881,7 +952,7 @@ const LanguageMenuItem = styled.li`
   padding-left: 16px;
 
   & span {
-    font-family: 'Strawford';
+    font-family: "Strawford";
     padding: 4px;
     font-weight: 500;
     font-size: 18px;
@@ -890,15 +961,15 @@ const LanguageMenuItem = styled.li`
 
   // &:hover {
   // & span {
-  //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
+  //   color: ${(props) => (props.expanded ? "#dd44b9" : "")};
   // }
 
   & .chevronIcon {
-    color: #6C6C6C;
+    color: #6c6c6c;
   }
 
   // & .menuContent {
-  //   display: ${(props) => (props.expanded ? 'block' : 'none')};
+  //   display: ${(props) => (props.expanded ? "block" : "none")};
   // }
   // }
 
@@ -909,7 +980,7 @@ const LanguageMenuItem = styled.li`
 
     & .chevronIcon {
       transform: rotate(180deg);
-      color: #FFF;
+      color: #fff;
     }
 
     & .menuContent {
@@ -917,11 +988,10 @@ const LanguageMenuItem = styled.li`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     padding-left: 0px;
     flex: 1;
   }
-
 `;
 
 const NavigationMenuHeader = styled.div`
@@ -936,7 +1006,6 @@ const NavigationMenuHeader = styled.div`
 
   &:hover {
     cursor: pointer;
-
   }
 
   & .chevronIcon {
@@ -945,21 +1014,21 @@ const NavigationMenuHeader = styled.div`
     color: inherit !important;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     justify-content: space-between;
     margin: 24px 0 0px 0;
 
     & span {
-    padding: 0px;
+      padding: 0px;
     }
 
     & .chevronIcon {
       width: 16px;
       height: 16px;
-      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
+      transform: ${(props) =>
+        props.expanded ? "rotate(180deg)" : "none  !important"};
     }
   }
-
 `;
 
 const MenuHeader = styled.div`
@@ -970,7 +1039,7 @@ const MenuHeader = styled.div`
   display: flex;
   align-items: center;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex: initial;
     margin: 0 0;
   }
@@ -991,7 +1060,6 @@ const LanguageMenuHeader = styled.div`
 
   &:hover {
     cursor: pointer;
-
   }
 
   & .chevronIcon {
@@ -1000,7 +1068,7 @@ const LanguageMenuHeader = styled.div`
     color: inherit !important;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     justify-content: flex-end;
 
     & span {
@@ -1010,16 +1078,17 @@ const LanguageMenuHeader = styled.div`
     & .chevronIcon {
       width: 16px;
       height: 16px;
-      transform: ${(props) => (props.expanded ? 'rotate(180deg)' : 'none  !important')};
+      transform: ${(props) =>
+        props.expanded ? "rotate(180deg)" : "none  !important"};
     }
   }
 
-  @media ${device.laptop} {
-     width: 100%;
-    
-     h2 {
-       margin: 0 auto 0 0;
-       padding: 4px;
+  @media ${device.laptopM} {
+    width: 100%;
+
+    h2 {
+      margin: 0 auto 0 0;
+      padding: 4px;
     }
   }
 `;
@@ -1027,7 +1096,7 @@ const LanguageMenuHeader = styled.div`
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
-  font-family: 'Strawford', 'Manrope', sans-serif;
+  font-family: "Strawford", "Manrope", sans-serif;
   display: none;
   position: absolute;
 
@@ -1038,15 +1107,10 @@ const NavigationMenuContent = styled.ul`
   z-index: 1;
   padding: 10px 14px 24px 14px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: #19181B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #19181b;
 
-  @media (min-width: 1025px) {
-    min-width: 470px;
-    max-width: auto;
-  }
-
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     width: 100%;
     position: relative;
     top: 0px;
@@ -1056,29 +1120,21 @@ const NavigationMenuContent = styled.ul`
     flex-direction: column;
     margin: 8px 0 0 0;
     padding: 0px 12px 6px 12px;
-    max-height: 244px;
-    min-height: 244px;
+    max-height: initial;
+    min-height: initial;
 
-    overflow-y: auto;
     position: relative;
     clip-path: inset(0 round 24px);
-    &::-webkit-scrollbar {
-      width: 6px;
-    }
 
-    &::-webkit-scrollbar-thumb {
-      background-color: #CD3FAC;
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 10px;
-    }
-    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+    display: ${(props) => (props.expanded ? "flex" : "none !important")};
     & a {
       justify-content: flex-start;
     }
+  }
+
+  @media ${device.tablet} {
+    max-height: initial;
+    min-height: initial;
   }
 `;
 
@@ -1086,20 +1142,19 @@ const HeaderFocusItems = styled(ItemH)`
   align-self: center;
   flex-wrap: nowrap;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     width: 100%;
     flex: 1;
     // align-self: center;
     // flex-wrap: wrap;
   }
-
 `;
 
 const LanguageMenuContent = styled.div`
   list-style: none;
 
-  font-family: 'Strawford', 'Manrope', sans-serif;
+  font-family: "Strawford", "Manrope", sans-serif;
   display: none;
   position: absolute;
 
@@ -1112,18 +1167,16 @@ const LanguageMenuContent = styled.div`
   z-index: 1;
   padding: 10px 12px;
 
-
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: #19181B;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #19181b;
   // min-width: 202px;
-
 
   & button {
     min-width: 182px;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     min-width: 100%;
 
     position: relative;
@@ -1136,7 +1189,7 @@ const LanguageMenuContent = styled.div`
     margin: 8px 0 0 0;
     padding: 2px 12px 2px 12px;
 
-    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+    display: ${(props) => (props.expanded ? "flex" : "none !important")};
 
     & a {
       justify-content: flex-start;
@@ -1151,18 +1204,16 @@ const LanguageButton = styled(Button)`
     border-radius: 16px;
     border: none;
 
-
     h2 {
-      color: #D98AEC;
+      color: #d98aec;
     }
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     width: 100%;
     flex: 1;
     margin: 8px 0;
   }
-
 `;
 
 const HeaderItem = styled.div`
@@ -1174,36 +1225,33 @@ const HeaderItem = styled.div`
   margin: 14px 0 0 0;
   cursor: pointer;
 
-   @media (min-width: 1025px) {
+  @media (min-width: 1025px) {
     min-width: 450px;
   }
-
 
   &:hover {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
 
-
     h2 {
-      color: #D98AEC;
+      color: #d98aec;
     }
     & ${Image} {
-      filter: brightness(0) saturate(100%) invert(83%) sepia(53%) saturate(5899%) hue-rotate(225deg) brightness(107%) contrast(85%);
+      filter: brightness(0) saturate(100%) invert(83%) sepia(53%)
+        saturate(5899%) hue-rotate(225deg) brightness(107%) contrast(85%);
     }
   }
-  
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     max-width: 100%;
     margin: 6px 0 0 0;
   }
-
 `;
 
 const HeaderImage = styled(Image)`
   margin: 10px;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     margin: 10px 10px 10px 0;
   }
 `;
@@ -1212,7 +1260,7 @@ const HeaderDiv = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     flex-direction: column;
   }
 `;
@@ -1220,6 +1268,7 @@ const HeaderDiv = styled.div`
 const HeaderSection = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 
 const DappLauncher = styled(A)`
@@ -1228,26 +1277,26 @@ const DappLauncher = styled(A)`
   height: 48px;
   min-width: 140px;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
+    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
     flex: 0 1 100%;
-    margin-top: ${(props) => (props.showMobileMenu && '32px')};
+    margin-top: ${(props) => props.showMobileMenu && "32px"};
   }
 `;
 
 const TagItem = styled.b`
-    width: fit-content;
-    border-radius: 12px;
-    border: 1px solid #D98AEC;
-    background: transparent;
-    padding: 2px 5px;
-    color: #D98AEC;
-    // text-align: center;
-    font-size: 9px;
-    font-style: normal;
-    font-weight: bolder;
-    line-height: normal;
+  width: fit-content;
+  border-radius: 12px;
+  border: 1px solid #d98aec;
+  background: transparent;
+  padding: 2px 5px;
+  color: #d98aec;
+  // text-align: center;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: bolder;
+  line-height: normal;
 `;
 
 export default Header;
