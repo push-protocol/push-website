@@ -4,10 +4,35 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push.org/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Wed, 13 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Mar 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Monthly Recap February ⚡]]></title>
+            <link>https://push.org/blog/monthly-recap-february-2024</link>
+            <guid>https://push.org/blog/monthly-recap-february-2024</guid>
+            <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Monthly Recap February ⚡]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Monthly Recap February ⚡" src="https://push.org/assets/images/cover-image-39d7c5c40dcf5a8198d45b278b66ecc1.webp" width="2000" height="1050" class="img_ev3q"></p>
+<p>Push Adoption is on fire. February marked one of our most successful months, and we’re pushing even harder. We sent more than 2.5 Million Notifications and hit the milestone of 169k subscribers. Let’s dive into the exciting updates for February from the PUSH Ecosystem:</p>
+<p><strong>Partnership Updates:</strong></p>
+<p>Push adoption is ablaze! We’ve witnessed numerous clients integrating notifications and messaging. Notable partners include <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains</a>, <a href="https://twitter.com/GriffyCommunity" target="_blank" rel="noopener noreferrer">Griffy</a>, <a href="https://www.cookie3.com/" target="_blank" rel="noopener noreferrer">Cookie3</a>, <a href="https://powerdao.ai/" target="_blank" rel="noopener noreferrer">Power Browser</a>, <a href="https://www.rivo.xyz/" target="_blank" rel="noopener noreferrer">Rivo</a>, <a href="https://bru.finance/" target="_blank" rel="noopener noreferrer">Bru Finance</a>, <a href="https://thedapplist.com/" target="_blank" rel="noopener noreferrer">The Dapp List</a>, <a href="https://outposts.io/" target="_blank" rel="noopener noreferrer">Outposts</a>, and <a href="https://www.blockflow.network/" target="_blank" rel="noopener noreferrer">Block Flow</a> &amp; more…</p>
+<p>We proudly sponsored the <a href="https://ethcincodemayo.com/" target="_blank" rel="noopener noreferrer">ETHCincoDeMayo Hackathon 2024</a>, <a href="https://twitter.com/callusfbi" target="_blank" rel="noopener noreferrer">Farcaster India frames hackathon</a>, partnered for Data economy by <a href="https://filecoin.io/" target="_blank" rel="noopener noreferrer">Filecoin</a>, ETHLima by <a href="https://ethlima.org/" target="_blank" rel="noopener noreferrer">Ethereum Lima</a>, and hosted the <a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">BRB Online</a> with 6 challenges each from <a href="https://www.notion.so/March-24-519415cc4d9f45678982f74429bee0b5?pvs=21" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://shardeum.org/" target="_blank" rel="noopener noreferrer">Shardeum</a>, <a href="https://www.biconomy.io/" target="_blank" rel="noopener noreferrer">Biconomy</a>, <a href="https://timeswap.io/" target="_blank" rel="noopener noreferrer">TimeswapLabs</a>, <a href="https://www.alchemy.com/" target="_blank" rel="noopener noreferrer">Alchemy Platform</a> and <a href="https://push.org/" target="_blank" rel="noopener noreferrer">Push Protocol</a>.</p>
+<p><strong>Product Enhancements:</strong></p>
+<p>To enhance user experience, we’ve introduced guest mode on our <a href="https://app.push.org/" target="_blank" rel="noopener noreferrer">dApp</a>. Our <a href="https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-backend-node" target="_blank" rel="noopener noreferrer">SDK</a> received an update, and our <a href="https://push.org/" target="_blank" rel="noopener noreferrer">website</a> got a fresh revamp. Excitingly, we launched the <a href="https://react-playground.push.org/" target="_blank" rel="noopener noreferrer">Push SDK Demo React app</a>!</p>
+<p><strong>Community Engagement:</strong></p>
+<p>We kept the <a href="https://www.notion.so/March-24-519415cc4d9f45678982f74429bee0b5?pvs=21" target="_blank" rel="noopener noreferrer">community</a> buzzing with exciting initiatives like the “<a href="https://twitter.com/pushprotocol/status/1759622094294331761" target="_blank" rel="noopener noreferrer">Share &amp; Win</a> Challenge”, “<a href="https://twitter.com/pushprotocol/status/1760632158945698090" target="_blank" rel="noopener noreferrer">Decentralize with PUSH</a>” quest contest alongside <a href="https://galxe.com/" target="_blank" rel="noopener noreferrer">Galxe</a>, a giveaway contest with <a href="https://twitter.com/pushprotocol/status/1755581480472883270" target="_blank" rel="noopener noreferrer">Griffy</a> featuring enticing rewards for the winners, and much more…</p>
+<p><strong>Ecosystem Highlights:</strong></p>
+<p>We introduced the Push Grantee: A mobile decentralized video-sharing app: <a href="https://lensplay.xyz/" target="_blank" rel="noopener noreferrer">Lens play</a>, powered by <a href="https://twitter.com/pushprotocol" target="_blank" rel="noopener noreferrer">Push Protocol</a>, <a href="https://www.lens.xyz/" target="_blank" rel="noopener noreferrer">Lens Protocol</a>, and <a href="https://livepeer.org/" target="_blank" rel="noopener noreferrer">Livepeer</a>. We also announced the BRB coding challenge winners for <a href="https://thegraph.com/" target="_blank" rel="noopener noreferrer">The Graph</a>, <a href="https://filecoin.io/" target="_blank" rel="noopener noreferrer">Filecoin</a>, &amp; <a href="https://chainsafe.io/" target="_blank" rel="noopener noreferrer">ChainSafe</a> challenges.</p>
+<p><strong>DAO:</strong></p>
+<p>We nominated new members for the Push Grants Council to keep funding awesome projects.</p>
+<p><img loading="lazy" alt="First Image of Monthly Recap February ⚡" src="https://push.org/assets/images/image-1-fb63f99e0dde1f5b49996626d2618524.webp" width="2000" height="1127" class="img_ev3q"></p>
+<p>As we wrap up another amazing month at Push, big thanks to everyone for contributing to our success! We can't wait to see what March brings - even more collaborations, innovations, and shared success. Stay tuned!</p>]]></content:encoded>
+            <category>Push Protocol</category>
+            <category>Web3</category>
+            <category>Blockchain Technology</category>
+        </item>
         <item>
             <title><![CDATA[How to claim Push Alpha Access NFT]]></title>
             <link>https://push.org/blog/how-to-claim-push-alpha-access-nft</link>
@@ -26,7 +51,7 @@
 <p>Claiming your Push Alpha AccessNFT is a simple process. Here's what you need to do:</p>
 <ol>
 <li>Head over to the Push Protocol Galxe claim page: <a href="https://app.push.org/claim/galxe" target="_blank" rel="noopener noreferrer">https://app.push.org/claim/galxe</a></li>
-<li>Connect your crypto wallet associated with your Galxe account.</li>
+<li>Connect your crypto wallet associated with your Galxe account and switch the network to Polygon Mainnet.</li>
 <li>Follow the on-screen instructions to complete the claim process.</li>
 </ol>]]></content:encoded>
             <category>Push Protocol</category>
@@ -473,72 +498,6 @@ The use of the feature flags in the SDK (See below or ask on Discord as to how t
 <p>We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more!</p>
 <p>Apart from this, the V2 version will have more streamlined response objects and faster calls though it will break backward compatibility which is why we will transition slowly to the new SDK.</p>
 <p>We recommend joining our Discord server (<a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.gg/pushprotocol</a>) -&gt; #dev-announcements channel for information on how to upgrade / best practices / changelog.</p>]]></content:encoded>
-            <category>Push Protocol</category>
-            <category>Web3</category>
-            <category>Blockchain Technology</category>
-            <category>EthGlobal</category>
-        </item>
-        <item>
-            <title><![CDATA[Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔]]></title>
-            <link>https://push.org/blog/push-ethIndia-push-bounties</link>
-            <guid>https://push.org/blog/push-ethIndia-push-bounties</guid>
-            <pubDate>Wed, 06 Dec 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Push x ETHIndia - $10k Push Bounties + IRL Workshop 🔔" src="https://push.org/assets/images/cover-image-ce09335d7d177d86ecfa599de999cce9.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>Hackers, are you ready for Ethereum’s largest hackathon of the year?! We know we are.</p>
-<p>Bounties, exclusive merch, IRL team – we’ve brought it all this year to ETH India! 🔔</p>
-<p>We are honored to be sponsoring and partaking in Ethereum’s largest hackathon of the year and couldn’t be more excited to share with you the bounties and workshops we’ve prepared for enhancing your dApp with our web3 native communication tools.</p>
-<p>Here's everything you need to know.</p>
-<p>Quick redirect to our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a>✨</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ethindia-hackers---ready-set-code-️">ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️<a href="https://push.org/blog/push-ethIndia-push-bounties#ethindia-hackers---ready-set-code-%EF%B8%8F" class="hash-link" aria-label="Direct link to ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️" title="Direct link to ETHIndia Hackers ⸺  Ready, Set, Code! 🛠️">​</a></h3>
-<p>We’re going all-in with a whopping $10,000 in bounties for 13 prize winners spread across 4 bounty categories. No matter what you plan on building, we have both a web3-native communication tool and bounty waiting for you.</p>
-<p>Here’s the breakdown of all the prizes:</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1--namaste-push-protocol--2000">1. 🏆 Namaste Push Protocol ⸺ $2,000<a href="https://push.org/blog/push-ethIndia-push-bounties#1--namaste-push-protocol--2000" class="hash-link" aria-label="Direct link to 1. 🏆 Namaste Push Protocol ⸺ $2,000" title="Direct link to 1. 🏆 Namaste Push Protocol ⸺ $2,000">​</a></h3>
-<b>Number of winners: 1</b>
-<p>Before it was GM GM, this week it’s "Namaste!"</p>
-<p>This bounty celebrates the best use of Push Protocol in social-based DApps. From leveraging Push Notifications for vital alerts to exploring Notification settings for customization, and integrating chat functionality with the power of conditional gating – this is your chance to make a meaningful impact by merging social initiatives with technology.</p>
-<p>Here are a few ideas for inspiration:</p>
-<ul>
-<li><b>SocialImpactHub</b>: A DApp dedicated to social activists, where users can receive notifications about upcoming rallies or events. Consider using conditional gating to enable activists with specific badges or tokens to access private planning rooms.</li>
-<li><b>EcoAlert</b>: An environmental initiative platform where users can chat about sustainable practices and get notified about eco-friendly events or sudden environmental crises.</li>
-<li><b>CommunityCare</b>: A local community dApp where neighbors can communicate in real time, set up events, and receive notifications about local emergencies or activities. With conditional gating, special groups could be set up for neighborhood committees or watch groups.</li>
-<li><b>PushForChange</b>: A fundraising platform that sends out notifications about new charitable campaigns. Users can chat with charity organizers and use conditional gating to access exclusive fundraising events based on their donation history.</li>
-</ul>
-<p>The "Namaste Push Protocol" Prize is all about acknowledging the innovative spirit of developers who want to make a meaningful impact in the world using Push Protocol.</p>
-<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a> ✨</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2--creativity-prize--2500">2. 🏆 Creativity Prize ⸺ $2,500<a href="https://push.org/blog/push-ethIndia-push-bounties#2--creativity-prize--2500" class="hash-link" aria-label="Direct link to 2. 🏆 Creativity Prize ⸺ $2,500" title="Direct link to 2. 🏆 Creativity Prize ⸺ $2,500">​</a></h3>
-<b>Number of winners: 1</b>
-<p>Unleash your innovation! We're seeking the all-around most ingenious solutions built with Push Protocol. Challenge the norm, showcase your creativity, and build with any of Push's communication tools. The best and the most creative solution takes it all!</p>
-<p>🔔Push Notifications
-💬Push Chat + Group Chat
-📹Push Video
-🤖Push ChatAI
-🌌Push Spaces</p>
-<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a>✨</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3--push-chat-conditional-gating-integration-for-dapps--2500">3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500<a href="https://push.org/blog/push-ethIndia-push-bounties#3--push-chat-conditional-gating-integration-for-dapps--2500" class="hash-link" aria-label="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500" title="Direct link to 3. 🏆 Push Chat Conditional Gating Integration for DApps ⸺ $2,500">​</a></h3>
-<b>Number of winners: 1</b>
-<p>Showcase the potential of Push by integrating its Conditional Gating feature into your dApps. Conditional Gating is a feature that allows you to create dynamic and sophisticated permissions for your Group Chats. You can set unique conditions for both joining or messaging in the groups such as needing to hold a certain amount of token XYZ or be a holder of XYZ NFT.</p>
-<p>For more information regarding Conditional Gating and Rules for Group Chats, checkout our documentation here 👉<a href="https://push.org/docs/chat/build/conditional-rules-for-group/" target="_blank" rel="noopener noreferrer">https://push.org/docs/chat/build/conditional-rules-for-group/</a></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4--notificationchannel-settings-implementation--1500">4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500<a href="https://push.org/blog/push-ethIndia-push-bounties#4--notificationchannel-settings-implementation--1500" class="hash-link" aria-label="Direct link to 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500" title="Direct link to 4. 🏆 Notification/Channel Settings Implementation ⸺ $1,500">​</a></h3>
-<b>Number of winners: 1</b>
-<p>Utilize the full potential of Push Notifications by incorporating the Channel/Notification Settings into your dApp.</p>
-<p>Channel/Notification Settings allow you to segment notifications into different categories so that end-users can select only the kinds of notifications they want to receive. For example, a web3 news site could have Notification Settings for different news categories and let users select accordingly and hence customize their notifications. You can build as many notification categories as you’d like choosing between Boolean and Slider Settings types.</p>
-<p>For more information regarding Channel/Notification Settings, checkout our documentation here 👉<a href="https://push.org/docs/notifications/build/create-channel-settings/" target="_blank" rel="noopener noreferrer">https://push.org/docs/notifications/build/create-channel-settings/</a></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5--best-use-of-push-protocol--1500">5. 🏆 Best Use of Push Protocol ⸺ $1,500<a href="https://push.org/blog/push-ethIndia-push-bounties#5--best-use-of-push-protocol--1500" class="hash-link" aria-label="Direct link to 5. 🏆 Best Use of Push Protocol ⸺ $1,500" title="Direct link to 5. 🏆 Best Use of Push Protocol ⸺ $1,500">​</a></h3>
-<p>This bounty recognizes the most exceptional and impactful implementation of the Push Protocol, emphasizing applications that significantly enhance user interaction and experience through effective use of Push features.</p>
-<p>Go wild, get crazy, find new and exciting ways to integrate Push that significantly enhance your UX. Think customer support messaging, user-to-user-to-dApp social interactions, creative notification use cases. The list is endless.</p>
-<p>👉Our all-in-one✨ <a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">Hacker Building Guide for Push Protocol</a> ✨</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="learn-to-build-a-web3-messaging-and-notifications-dapps-irl-">Learn to build a Web3 Messaging and Notifications dApps IRL 🤝<a href="https://push.org/blog/push-ethIndia-push-bounties#learn-to-build-a-web3-messaging-and-notifications-dapps-irl-" class="hash-link" aria-label="Direct link to Learn to build a Web3 Messaging and Notifications dApps IRL 🤝" title="Direct link to Learn to build a Web3 Messaging and Notifications dApps IRL 🤝">​</a></h3>
-<p>Not sure how to get started with building? We got you. We’ll be hosting an IRL workshop with our very own co-founder Harsh Rajat diving into everything you need for "How to Build Web3 Messaging and Notifications Apps."</p>
-<p>This is your chance to meet the Push team directly, network with us, ask your questions, and learn how to enhance the UX of your dApp.</p>
-<p>📅Friday, December 8 – 3:00 pm IST
-🗺️Workshop Room 2
-ETHIndia, we're not just attending; we're bringing the party. Let's code, create, and celebrate the magic of blockchain together.</p>
-<hr>
-<p>Find all the details about the ETHIndia event 👉<a href="https://ethindia.co/" target="_blank" rel="noopener noreferrer">https://ethindia.co/</a></p>
-<p>Your Push documentation hub for building is here 👉<a href="https://push.org/docs/hackers/" target="_blank" rel="noopener noreferrer">https://push.org/docs/hackers/</a></p>
-<p>And of course 24/7 dev support can always be found here 👉<a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.com/invite/pushprotocol</a></p>
-<p>Happy hacking! 🛠️</p>]]></content:encoded>
             <category>Push Protocol</category>
             <category>Web3</category>
             <category>Blockchain Technology</category>
