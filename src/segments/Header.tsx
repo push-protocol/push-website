@@ -761,7 +761,7 @@ const StyledHeader = styled.header`
 
   @media ${device.laptopM} {
     max-height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 
     flex-direction: column;
 
