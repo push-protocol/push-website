@@ -30,20 +30,20 @@ import TabItem from "@theme/TabItem";
 ### Pre-requisites
 
 - In this tutorial, we will only understand the logic part of Aave i.e how Notifications are being triggered in Aave.
-- For step-by-step tutorial of Channel Settings,please refer "Eth Tracker Tutorial(Link here)".
-- Subscribe to this channel Address [Aave Channel]("app.push.org/channels?channel=0xAA940b3501176af328423d975C350d0d1BaAae50","Aave channel on Push")
+- For step-by-step tutorial of Channel Settings,please refer [BTC Tracker Tutorial](https://push.org/docs/notifications/showrunners-scaffold/Examples/eth-tracker-with-showrunners-example/ "BTC Tracker tutorial").
+- Subscribe to this channel Address [Aave Channel](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50/ "Aave channel on Push")
 
 ### Perform following steps to get started with Channel Settings.
 
-Step 1 : Create a Position on [Aave V3/V2[Mainnet]]("https://app.aave.com/","Aave V3 channel on Mainnet") by Supplying and borrowing against some asset.
+Step 1 : Create a Position on [Aave V3/V2 Mainnet](https://app.aave.com/ "Link to Aave") by Supplying and borrowing against some asset.
 Step 2: You should be able to see some health Factor like 1.5 or 1.8.
 Step 3:
 
 - Create a function called `getUserSetings()` which will have main logic part.
 - This function will do following things :
   - Fetch Notification setting set by the user.
-  - If Channel Settings exist and is enabled by the user then get the "lower" and "upper" range values set by the user and pass the values to the "checkHealthFactor" function with susbcriber's address.
-  - If Channel Settings exists but are turned off i.e disabled by the user then pass dummy values of lower and upper values to the "checkHealthFactor" function.
+  - If Channel Settings exist and is enabled by the user then get the `lower` and `upper` range values set by the user and pass the values to the `checkHealthFactor` function with susbcriber's address.
+  - If Channel Settings exists but are turned off i.e disabled by the user then pass dummy values of lower and upper values to the `checkHealthFactor` function.
     (Fun Fact : If you have just supplied assets on Aave and have not borrowed against it then you would have a crazy Health Factor > 3 due to which no notifications will be sent.).
 
 ```javascript
@@ -188,7 +188,7 @@ Step 4:
         simulate: simulate,
       });
     } else {
-      //  this.logInfo(`[Wallet: ${userAddress} is SAFE with Health Factor:: ${healthFactor}`);
+      //  this.logInfo(`Wallet: ${userAddress} is SAFE with Health Factor:: ${healthFactor}`);
     }
     return true;
   }catch(e){
@@ -201,9 +201,9 @@ Step 5 : Our second goal is to give notification about APYs for assets that can 
 
 - So first we will start by getting all the addresses of assets available on Aave.
 
-- In the below code,we are quering the addresses of the assets using "getAllReservesTokens" method, it returns a array in which each element is a array itself with two values i.e [assetName,assetAdderss].
+- In the below code,we are quering the addresses of the assets using `getAllReservesTokens` method, it returns a array in which each element is a array itself with two values i.e [assetName,assetAdderss].
 
-- Up next,we have a for loop in which we are quering the data of APR about each asset using "getReserveData" method.
+- Up next,we have a for loop in which we are quering the data of APR about each asset using `getReserveData` method.
   (APR : It is the rate of interest you get on your asset on yearly basis.
   APY : It is the compounded rate of interest you get on your assets on yearly basis. )
 
@@ -244,7 +244,7 @@ public async getData(){
 }
 ```
 
--Aave uses RAY for storing it's numbers and for more precision,as eth uses wei to store decimal and normal values with 18 digits precision,RAY has 27 digit precision due to which we will first convert it into normal format and then perform operations on it.
+- Aave uses `RAY` for storing it's numbers and for more precision,as eth uses wei to store decimal and normal values with 18 digits precision,RAY has 27 digit precision due to which we will first convert it into normal format and then perform operations on it.
 
 - Next,we are finding the APYs of each assets and pushing it into different arrays which we will use in later stages(Tokens,supplyApy,borrowApy).
 
@@ -294,4 +294,4 @@ if (settings.index == 2 && settings.enabled == true) {
 
 - We are using a similar logic for Borrow APY too which can be decoded easily.
 
-- I hope you enjoyed this tutotial,reach out to [Push Discord]("https://discord.gg/pushprotocol","Push Discord Link") if you stuck somehwere or have any doubts.
+- I hope you enjoyed this tutotial,reach out to [Push Discord](https://discord.gg/pushprotocol/ "Push Discord Link") if you stuck somehwere or have any doubts.

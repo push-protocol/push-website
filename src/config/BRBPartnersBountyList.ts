@@ -165,3 +165,4 @@ export const brbPartnersBountyList = [
   }
 ];
   
+brbPartnersBountyList.sort((a, b) => +a.ended - +b.ended);
