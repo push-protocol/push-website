@@ -39,7 +39,7 @@ const CookieComponent = () => {
 
   return (
     <>
-    {/* {!cookies.pushCookies && showModal && ( */}
+    {!cookies.pushCookies && showModal && (
     <CookieContainer>
       <H2 
         color="#000"
@@ -58,7 +58,7 @@ const CookieComponent = () => {
           <RejectButton onClick={handleReject}>Opt-out</RejectButton>
         </ButtonContainer>
     </CookieContainer>
-    {/* )} */}
+    )}
     </>
   );
 };
