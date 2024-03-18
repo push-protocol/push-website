@@ -295,15 +295,21 @@ article em > code {
   font-weight: 500;
 }
 
-article em > strong > code {
+article em > strong > code,
+article strong > em > code {
   color: #dd44b9;
+  font-size: 80%;
   font-style: normal;
   font-weight: 600;
   padding: 4px 8px;
-  font-size: 80%;
+  background-color: var(--ifm-code-background);
+  border: 0.1rem solid #0000001a;
+  border-radius: var(--ifm-code-border-radius);
+  font-family: var(--ifm-font-family-monospace);
 }
 
-article em > strong > code:hover {
+article em > strong > code:hover,
+article strong > em > code:hover {
   background: #dd44b9;
   color: #fff;
 }
