@@ -2,11 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-03-15T00:00:00.000Z</updated>
+    <updated>2024-03-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[$PUSH Tokenomics V2: Unveiling the New Economic Engine]]></title>
+        <id>https://push.org/blog/push-tokenomics-v2-engine</id>
+        <link href="https://push.org/blog/push-tokenomics-v2-engine"/>
+        <updated>2024-03-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Unveiling the new economic engine of the $PUSH token. The new tokenomics V2 is designed to align the incentives of the community and the protocol.]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of $PUSH tokenomics v2 economic engine ⚡" src="https://push.org/assets/images/cover-image-e58e500bcd8a9ae100665098bc95f10e.webp" width="2000" height="1050" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="overview">Overview<a href="https://push.org/blog/push-tokenomics-v2-engine#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
+<p>Push Protocol recently unveiled Push Nodes, paving way for Push to become blockchain of communication and unleashing a new era for Web3 communication.</p>
+<p>With the public launch of Push Nodes getting closer, we are excited to unveil the new economic engine of the <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> token that will sit at the core of securing, decentralizing and incentiving the Push Network.</p>
+<!-- -->
+<!-- -->
+<div style="width:100%;height:360px"></div>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tokenomics-v2-additions">Tokenomics V2 Additions<a href="https://push.org/blog/push-tokenomics-v2-engine#tokenomics-v2-additions" class="hash-link" aria-label="Direct link to Tokenomics V2 Additions" title="Direct link to Tokenomics V2 Additions">​</a></h2>
+<p><a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> is the native token of the Push Network and it will be used to enable several key functions of the network apart from the already existing utilities defined in the <a title="Deepdive on Push Tokenomics" href="https://push.org/docs/tokenomics/deepdive/$push/">current tokenomics</a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-staking-for-push-validator-nodes">1. Staking for Push Validator Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#1-staking-for-push-validator-nodes" class="hash-link" aria-label="Direct link to 1. Staking for Push Validator Nodes" title="Direct link to 1. Staking for Push Validator Nodes">​</a></h3>
+<p>Push Validator Nodes are going to be the computational backbone of the Push Network. They will be responsible for validating the network and ensuring that the network is secure and reliable. They are also responsible for penalizing and kicking out bad actors from the network.</p>
+<p>Running a Push Validator Nodes will require staking a certain amount of <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> tokens along with having a domain name and a server to run the node.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-staking-for-push-storage-nodes">2. Staking for Push Storage Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#2-staking-for-push-storage-nodes" class="hash-link" aria-label="Direct link to 2. Staking for Push Storage Nodes" title="Direct link to 2. Staking for Push Storage Nodes">​</a></h3>
+<p>Push Storage Nodes are meant to store the data of the Push Network. They will be responsible for storing the data of the network and ensuring that the data is available to the network.</p>
+<p>Running a Push Storage Nodes will also require staking a certain amount of <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a>.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-staking-for-push-delivery-nodes">3. Staking for Push Delivery Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#3-staking-for-push-delivery-nodes" class="hash-link" aria-label="Direct link to 3. Staking for Push Delivery Nodes" title="Direct link to 3. Staking for Push Delivery Nodes">​</a></h3>
+<p>Push Delivery Nodes serve as a light node that enables the last mile delivery of notifications to the end users. Running them will also have staking requirements.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-stake-for-writing-api-calls-on-push-node">4. Stake for Writing API Calls on Push Node<a href="https://push.org/blog/push-tokenomics-v2-engine#4-stake-for-writing-api-calls-on-push-node" class="hash-link" aria-label="Direct link to 4. Stake for Writing API Calls on Push Node" title="Direct link to 4. Stake for Writing API Calls on Push Node">​</a></h3>
+<p>Having a trustless and decentralized network requires a mechanism to ensure that the network is not spammed with unnecessary API calls. To ensure this, a staking mechanism requiring <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> will be introduced for writing API calls on the Push Network for sending notifications.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exciting-times-ahead">Exciting Times Ahead<a href="https://push.org/blog/push-tokenomics-v2-engine#exciting-times-ahead" class="hash-link" aria-label="Direct link to Exciting Times Ahead" title="Direct link to Exciting Times Ahead">​</a></h2>
+<p>We are excited for the economic engine for Push Network and the new tokenomics V2. The new tokenomics will be a game-changer for the Push ecosystem, and we would love to invite the community for a discussion on the addition of the new tokenomics.</p>
+<p>We will be updating the tokenomics page and open a discourse thread for the community to also share their thoughts and feedback soon! Let's Push the boundaries of Web3 together <!-- -->❤️<!-- -->!</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Push Network" term="Push Network"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+        <category label="Push Tokenomics" term="Push Tokenomics"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Monthly Recap February ⚡]]></title>
         <id>https://push.org/blog/monthly-recap-february-2024</id>
@@ -499,51 +537,5 @@ Although the Push Nodes are run by Push Protocol, users can always verify that t
         <category label="Web3" term="Web3"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
         <category label="Year In Review" term="Year In Review"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hyper Scalable Group Chats 💬 ⚡]]></title>
-        <id>https://push.org/blog/hyper-scalable-group-chats</id>
-        <link href="https://push.org/blog/hyper-scalable-group-chats"/>
-        <updated>2023-12-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Hyper Scalable Group Chats 💬 ⚡]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Hyper Scalable Group Chats 💬 ⚡" src="https://push.org/assets/images/cover-image-c6075cf62b4324358bc9b3f688f488f6.webp" width="1600" height="840" class="img_ev3q"></p>
-<p>Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is Push Group Chat, the ability to host conversations with multiple members.</p>
-<p>Whether you're chatting in public groups, enjoying more private discussions, or joining token-gated communities, Push Group Chat makes connecting with others simple and secure. But now, Push is levelling up its scalability and increasing group limits into the thousands. Let's dive into the enhanced possibilities and expanded horizons that await this enhanced Push Group Chat!</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="from-15k-to-25k-members-in-a-single-group-chat-">From 1.5k to 25k Members in a Single Group Chat! 🔥<a href="https://push.org/blog/hyper-scalable-group-chats#from-15k-to-25k-members-in-a-single-group-chat-" class="hash-link" aria-label="Direct link to From 1.5k to 25k Members in a Single Group Chat! 🔥" title="Direct link to From 1.5k to 25k Members in a Single Group Chat! 🔥">​</a></h3>
-<p>Group Chat platforms have always struggled with the number of participants a single group could accommodate. This limitation has hindered the potential for large-scale user interactions and hence restricted how Group Chats can be used to connect with a broader audience. Introducing our newly enhanced Push Group Chat. We’re calling it "hyper scalable" in reference to Push Group Chat’s newfound ability to handle significantly larger group sizes, transcending its prior  limitations. This enhancement signifies a major development for web3-native user interactions , empowering users to engage in more extensive and inclusive group conversations like never before.</p>
-<p>With hyper scalability, Push Group Chat has transformed the landscape of group conversations. Public group limits have skyrocketed from 1500 to an impressive 25,000 members. Similarly, private groups once capped at 50 members, now support up to 5,000 participants. These substantial increases are redefining the potential for group interactions in web3 and  reflect Push Group Chat's commitment to delivering a more dynamic and accommodating messaging experience.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chat-challenging-web2-incumbents">Push Chat Challenging Web2 Incumbents<a href="https://push.org/blog/hyper-scalable-group-chats#push-chat-challenging-web2-incumbents" class="hash-link" aria-label="Direct link to Push Chat Challenging Web2 Incumbents" title="Direct link to Push Chat Challenging Web2 Incumbents">​</a></h3>
-<p>Instant communication has long been dominated by traditional Web2 chat applications like WhatsApp and Signal, but Push Chat is here to challenge that. While the incumbents rely on centralised architectures that leave user data susceptible to potential vulnerabilities, Push Chat pioneers a decentralised approach, ensuring end-to-end encryption and placing control back into the hands of users.</p>
-<p>Moreover, the introduction of hyper scalability in Push Chat takes the competitive edge to new heights. In contrast to the confined group sizes enforced by WhatsApp and Signal, where limitations are approximately 1000 members, Push Chat shatters these constraints by accommodating a staggering 25k members for public groups and 5k for private groups.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chat-benchmarks-letting-the-numbers-speak-for-unprecedented-scale-and-security">Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security<a href="https://push.org/blog/hyper-scalable-group-chats#push-chat-benchmarks-letting-the-numbers-speak-for-unprecedented-scale-and-security" class="hash-link" aria-label="Direct link to Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security" title="Direct link to Push Chat Benchmarks: Letting The Numbers Speak For Unprecedented Scale And Security">​</a></h3>
-<table><tbody><tr><th><p>Public Group Size</p></th><th><p>Time Taken for Sending Message ( ms )</p></th></tr><tr><td>10</td><td>192</td></tr><tr><td>50</td><td>170</td></tr><tr><td>100</td><td>110</td></tr><tr><td>250</td><td>103</td></tr><tr><td>500</td><td>104</td></tr><tr><td>1K</td><td>107</td></tr><tr><td>2.5K</td><td>117</td></tr><tr><td>5K</td><td>167</td></tr><tr><td>10K</td><td>156</td></tr><tr><td>15K</td><td>198</td></tr><tr><td>25K</td><td>343</td></tr></tbody></table>
-<table><tbody><tr><th><p>Public Group Size</p></th><th><p>Time Taken for Joining Grp ( ms )</p></th></tr><tr><td>10</td><td>101</td></tr><tr><td>50</td><td>111</td></tr><tr><td>100</td><td>128</td></tr><tr><td>250</td><td>125</td></tr><tr><td>500</td><td>199</td></tr><tr><td>1K</td><td>190</td></tr><tr><td>2.5K</td><td>328</td></tr><tr><td>5K</td><td>449</td></tr><tr><td>10K</td><td>609</td></tr><tr><td>15K</td><td>803</td></tr><tr><td>25K</td><td>1109</td></tr></tbody></table>
-<table><tbody><tr><th><p>Private Group Size</p></th><th><p>Time Taken for Sending Message ( ms )</p></th></tr><tr><td>10</td><td>300</td></tr><tr><td>50</td><td>170</td></tr><tr><td>100</td><td>169</td></tr><tr><td>250</td><td>193</td></tr><tr><td>500</td><td>231</td></tr><tr><td>1K</td><td>295</td></tr><tr><td>2.5K</td><td>539</td></tr><tr><td>5K</td><td>868</td></tr></tbody></table>
-<table><tbody><tr><th><p>Private Group Size</p></th><th><p>Time Taken for Joining Grp ( ms )</p></th></tr><tr><td>10</td><td>287</td></tr><tr><td>50</td><td>312</td></tr><tr><td>100</td><td>312</td></tr><tr><td>250</td><td>481</td></tr><tr><td>500</td><td>711</td></tr><tr><td>1K</td><td>1192</td></tr><tr><td>2.5K</td><td>5153</td></tr><tr><td>5K</td><td>12769</td></tr></tbody></table>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="whats-made-hyper-scalability-possible">What’s Made Hyper Scalability Possible?<a href="https://push.org/blog/hyper-scalable-group-chats#whats-made-hyper-scalability-possible" class="hash-link" aria-label="Direct link to What’s Made Hyper Scalability Possible?" title="Direct link to What’s Made Hyper Scalability Possible?">​</a></h3>
-<p>In the relentless pursuit of hyper scalability, Push Chat has had to undergo transformational advancements at both the architectural and encryption levels.</p>
-<p>Previously, each message within private groups underwent encryption using the private keys of all group members, resulting in encryption complexity directly proportional to the number of participants.</p>
-<p>Contrastingly, the platform has been upgraded to now dynamically generate session keys and encrypted secrets during every pivotal group state change, such as adding, removing, or joining members. Push Chat ensures that the time-consuming aspect of the encryption process is reserved for moments when the group dynamic undergoes significant transformations. This innovative approach ensures that the encryption process for private group messages remains constant, irrespective of the group's size. By dissociating encryption complexity from the number of participants, Push Chat has effectively eliminated the scalability concerns associated with larger private groups.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="but-waitmore-enhancements-are-on-the-way">But Wait…More Enhancements Are On The Way!<a href="https://push.org/blog/hyper-scalable-group-chats#but-waitmore-enhancements-are-on-the-way" class="hash-link" aria-label="Direct link to But Wait…More Enhancements Are On The Way!" title="Direct link to But Wait…More Enhancements Are On The Way!">​</a></h3>
-<p>We are not stopping at 5k members. We have already made the breakthrough to take this to <b>100,000</b> benchmarked members 😱 for both private and public group chats. The only caveat is that it breaks backward compatibility when messages using the newer architecture are read by older SDKs.</p>
-<p>To address this, we have decided to implement these changes in two phases:
-Incorporate all functionalities that understand the new architecture in Push SDK from 1.4.45 upwards. Devs just need to update to start supporting the reading of those formats.
-The use of the feature flags in the SDK (See below or ask on Discord as to how to enable that: <a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.gg/pushprotocol</a>) enables the new standard as the default allowing devs to tap into it and use that in case they want.</p>
-<p>So, what do you have to do to update this functionality?</p>
-<p>Only one thing: Update the SDK to the latest version (1.4.45 or upwards), that’s it! This will ensure that messages sent using the new message standards are understood and displayed correctly in your dApp / mobile app / etc.</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-enable-push-sdk-feature-flag">How to enable Push SDK Feature Flag<a href="https://push.org/blog/hyper-scalable-group-chats#how-to-enable-push-sdk-feature-flag" class="hash-link" aria-label="Direct link to How to enable Push SDK Feature Flag" title="Direct link to How to enable Push SDK Feature Flag">​</a></h4>
-<p>In-depth details for how to enable this can be found in the <a href="https://push.org/docs/chat/" target="_blank" rel="noopener noreferrer">Push Chat documentation</a> and <a href="https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/restapi" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-sdk-v2-is-coming">Push SDK V2 is Coming<a href="https://push.org/blog/hyper-scalable-group-chats#push-sdk-v2-is-coming" class="hash-link" aria-label="Direct link to Push SDK V2 is Coming" title="Direct link to Push SDK V2 is Coming">​</a></h3>
-<p>We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more!</p>
-<p>Apart from this, the V2 version will have more streamlined response objects and faster calls though it will break backward compatibility which is why we will transition slowly to the new SDK.</p>
-<p>We recommend joining our Discord server (<a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer">https://discord.gg/pushprotocol</a>) -&gt; #dev-announcements channel for information on how to upgrade / best practices / changelog.</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-        <category label="EthGlobal" term="EthGlobal"/>
     </entry>
 </feed>
