@@ -761,13 +761,36 @@ const StyledHeader = styled.header`
 
   @media ${device.laptopM} {
     max-height: 100%;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     flex-direction: column;
 
     &.hide {
       top: -100%;
     }
+
+    /* WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+      width: 3px !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #cb3faa;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none !important;
+    }
+
+    /* Firefox */
+    scrollbar-color: #cb3faa #f1f1f1;
+    scrollbar-width: thin;
   }
 `;
 
