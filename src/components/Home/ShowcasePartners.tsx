@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 
 // Internal Components
-import { A,H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
+import { A, H2, Image, ItemH, ItemV, LinkTo, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import { device, size } from '@site/src/config/globals';
@@ -53,7 +53,7 @@ function PartnerChannels() {
           opacity: 1,
           margin: '14px',
           scrollTrigger: {
-            trigger: "#showcase-section", 
+            trigger: "#showcase", 
             toggleActions: "play none none reverse", 
             start: '25% center', // trigger element, viewport  
             end: "75% center",

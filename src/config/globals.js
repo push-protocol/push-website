@@ -62,8 +62,51 @@ const GLOBALS = {
   STORAGE: {},
 
   CONSTANTS: {
-    HEADER_HEIGHT: 70,
     LEFT_BAR_WIDTH: 260,
+  },
+
+  HEADER: {
+    HEIGHT: 78,
+    OUTER_MARGIN: {
+      DESKTOP: {
+        TOP: 44,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
+      },
+      TABLET: {
+        TOP: 24,
+        LEFT: 24,
+        BOTTOM: 24,
+        RIGHT: 24,
+      },
+      MOBILE: {
+        TOP: 8,
+        LEFT: 8,
+        BOTTOM: 8,
+        RIGHT: 8,
+      },
+    },
+    OUTER_PADDING: {
+      DESKTOP: {
+        TOP: 0,
+        LEFT: 16,
+        BOTTOM: 0,
+        RIGHT: 16,
+      },
+      TABLET: {
+        TOP: 16,
+        LEFT: 16,
+        BOTTOM: 16,
+        RIGHT: 16,
+      },
+      MOBILE: {
+        TOP: 12,
+        LEFT: 16,
+        BOTTOM: 12,
+        RIGHT: 16,
+      },
+    },
   },
 
   ADJUSTMENTS: {

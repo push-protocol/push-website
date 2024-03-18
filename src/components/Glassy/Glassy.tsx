@@ -20,8 +20,6 @@ import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 const Glassy = ({ item }) => {
-  console.log("Item", item);
-
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   // Internationalization
