@@ -60,7 +60,7 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           <ArrowSmall />
         </Button>
       </ItemH>
-      
+
       {brbPartnersBountyList?.map((item, i) => (
         <PartnerLine
           key={i}
@@ -77,73 +77,73 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
           <BountyDescription>
             {item.text}
             {
-            item.ended && item.winners.length > 0 ?
-            
-           
-            <WinnerItem>
-            <Image
-                     src={require(`@site/static/assets/website/brb/Medal.png`).default}
-                    
-                     alt={`Push Logo`}
-                     width="25px"
-                     height="24px"
-                   />
-                {  item.winners.length > 1 ?  "Winners :": "Winner :"}
-             { item.winners.map((winner, index) => (
-<>
-            
-              <a href={winner.github} target='_blank'>
-              <TwitterLink>
-                 {winner.winner} 
-              <Image
-                     src={require(`@site/static/assets/website/brb/Vector.png`).default}
-                    link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
-                     alt={`Push Logo`}
-                     width="8px"
-                     height="8px"
-                   />
-            </TwitterLink> 
-              </a>
-             
+              item.ended && item.winners?.length > 0 ?
 
-                   </>
-                      ))}
-             </WinnerItem>
 
-            : null
-           }
+                <WinnerItem>
+                  <Image
+                    src={require(`@site/static/assets/website/brb/Medal.png`).default}
+
+                    alt={`Push Logo`}
+                    width="25px"
+                    height="24px"
+                  />
+                  {item.winners.length > 1 ? "Winners :" : "Winner :"}
+                  {item.winners.map((winner, index) => (
+                    <>
+
+                      <a href={winner.github} target='_blank'>
+                        <TwitterLink>
+                          {winner.winner}
+                          <Image
+                            src={require(`@site/static/assets/website/brb/Vector.png`).default}
+                            link="https://twitter.com/i/spaces/1lPKqbWRgvEGb"
+                            alt={`Push Logo`}
+                            width="8px"
+                            height="8px"
+                          />
+                        </TwitterLink>
+                      </a>
+
+
+                    </>
+                  ))}
+                </WinnerItem>
+
+                : null
+            }
           </BountyDescription>
           <BountyPrice>
 
-          <BountyItem>
-           
-            <PriceSpan
-              fontSize="32px"
-              fontWeight="400"
-            >
-              ${item.price.toLocaleString()}
-            </PriceSpan>
+            <BountyItem>
 
-            
-              
-                 {item.ended ?
-                
-                 <BountyButton disabled borderColor={"#53536C"} className="buttonId">
-                 <ViewBountyText  >CLOSED</ViewBountyText> 
-                  </BountyButton>
-              
-                 : 
-                 
-                 
-                 <BountyButton className="buttonId">
-                 <ViewBountyText>OPEN</ViewBountyText> 
-              
-              </BountyButton>
-          }
-       
-          
-          </BountyItem>
-          
+              <PriceSpan
+                fontSize="32px"
+                fontWeight="400"
+              >
+                ${item.price.toLocaleString()}
+              </PriceSpan>
+
+
+
+              {item.ended ?
+
+                <BountyButton disabled borderColor={"#53536C"} className="buttonId">
+                  <ViewBountyText  >CLOSED</ViewBountyText>
+                </BountyButton>
+
+                :
+
+
+                <BountyButton className="buttonId">
+                  <ViewBountyText>OPEN</ViewBountyText>
+
+                </BountyButton>
+              }
+
+
+            </BountyItem>
+
           </BountyPrice>
         </PartnerLine>
       ))}
@@ -273,7 +273,7 @@ const BountyButton = styled.div`
   justify-content: flex-end;
   padding: 12px;
   border: 1px solid ${(props) => props.borderColor || '#e64de9'};
-  background: ${(props) => (props.disabled ? "#53536C"  : "#E64DE9" )};
+  background: ${(props) => (props.disabled ? "#53536C" : "#E64DE9")};
   border-radius: 8px;
   cursor: pointer;
 `;

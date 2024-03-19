@@ -40,12 +40,100 @@
     "app-button": {
       "title": "Launch App",
       "alt-title": "Push Dapp"
+    },
+    "products": {
+      "title": "Products",
+      "link1": {
+        "title": "Push Notifications",
+        "subtitle": "Web3 native notification alerts"
+      },
+       "link2": {
+        "title": "Push Chat",
+        "subtitle": "Web3 native chat protocol with groups"
+      },
+      "link3": {
+        "title": "Push Video",
+        "subtitle": "Decentralized video calls"
+      },
+      "link4": {
+        "title": "Push Spaces",
+        "subtitle": "Decentralized audio streaming"
+      }
+    },
+    "developers": {
+      "title": "Developers",
+      "link1": {
+        "title": "Documentation Hub",
+        "subtitle": "Curated wiki of Push Protocol"
+      },
+       "link2": {
+        "title": "Examples",
+        "subtitle": "Gallery of collaborative experiencess"
+      },
+      "link3": {
+        "title": "Notification Quickstart",
+        "subtitle": "Setup notifications in 2 mins"
+      },
+      "link4": {
+        "title": "Chat Quickstart",
+        "subtitle": "Setup chat in 2 mins"
+      },
+      "link5": {
+        "title": "Hackers",
+        "subtitle": "Are you a hacker? Get a head start here"
+      },
+      "link6": {
+        "title": "React Playground",
+        "subtitle": "Plug and play react components"
+      },
+      "link7": {
+        "title": "Developer Discord",
+        "subtitle": "Join our community of developers"
+      }
+    },
+     "community": {
+      "title": "Community",
+      "link1": {
+        "title": "Ecosystem",
+        "subtitle": "Amazing community of developers building with Push"
+      },
+       "link2": {
+        "title": "Push DAO",
+        "subtitle": "Participate in governing Push Protocol"
+      },
+      "link3": {
+        "title": "Grants",
+        "subtitle": "Get a kickstart with Push grants program"
+      },
+      "link4": {
+        "title": "Billion Reasons to Build",
+        "subtitle": "Solve problems and win prizes over $50K"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "link1": {
+        "title": "Blog",
+        "subtitle": "News, ideas and insights on Push and Web3"
+      },
+       "link2": {
+        "title": "FAQ",
+        "subtitle": "Frequently asked questions about Push"
+      },
+      "link3": {
+        "title": "Roadmap",
+        "subtitle": "A living roadmap for the protocol"
+      },
+      "link4": {
+        "title": "Tokenomics",
+        "subtitle": "Token utility and Push network"
+      }
     }
   },
   "home": {
     "hero": {
       "title": "The Communication Protocol of Web3",
-      "description": "Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services.",
+      "description": "Push is a web3 native communication network, enabling cross-chain notifications, messaging, and more for apps, wallets, and services.",
       "start-button": "Start Building",
       "alt-start-button": "Developer Docs",
       "explore-button": "Explore Push Protocol",
@@ -134,7 +222,7 @@
         "title": "Lightweight Code with Rapid API Integration",
         "imagealt": "Illustration showing lines of code required for Push Protocol integration",
         "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
-        "bodytext": "<4 mins",
+        "titletext": "<4 mins",
         "buttontext": "Start building",
         "buttonlink": "/docs/notifications/quickstart",
         "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."
@@ -183,7 +271,7 @@
         "title": "Lightweight Code with Rapid API Integration",
         "imagealt": "Illustration showing 2 lines of code required for Push Protocol integration",
         "imagetitle": "Integrate Push Chat in 2 mins and with 2 lines of code",
-        "bodytext": "<2 mins",
+        "titletext": "<2 mins",
         "buttontext": "Start building",
         "buttonlink": "/docs/chat/quickstart",
         "buttontitle": "Explore the documentation for instant integration of chat via Push Protocol in your dapp"

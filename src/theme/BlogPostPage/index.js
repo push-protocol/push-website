@@ -34,7 +34,6 @@ function BlogPostPageContent({ allPosts, post, children }) {
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
 
-  console.log(metadata, "metatatataa");
 
   return (
     <BlogLayout
