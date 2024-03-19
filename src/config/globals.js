@@ -29,22 +29,22 @@ export const globalsPadding = {};
 export const globalsMargin = {
   DEFAULT: {
     DESKTOP: {
-      TOP: "120px",
+      TOP: "200px",
       RIGHT: "40px",
-      BOTTOM: "120px",
+      BOTTOM: "0px",
       LEFT: "40px",
     },
     TABLET: {
-      TOP: "60px",
-      RIGHT: "25px",
-      BOTTOM: "60px",
-      LEFT: "25px",
+      TOP: "180px",
+      RIGHT: "32px",
+      BOTTOM: "0px",
+      LEFT: "32px",
     },
     MOBILE: {
-      TOP: "40px",
-      RIGHT: "20px",
-      BOTTOM: "40px",
-      LEFT: "20px",
+      TOP: "180px",
+      RIGHT: "16px",
+      BOTTOM: "0px",
+      LEFT: "16px",
     },
   },
 };

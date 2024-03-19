@@ -728,6 +728,7 @@ const StyledHeader = styled.header`
   /* color: #ffffff;
   background: #121315; */
   opacity: 1;
+  background: red;
 
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;

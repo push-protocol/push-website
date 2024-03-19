@@ -63,7 +63,7 @@ import {
   NotifFeaturesList,
   NotifUseCasesList,
 } from "@site/src/config/HomeNotifFeaturesList";
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device, globalsMargin } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
 // Register GSAP plugins
@@ -273,7 +273,10 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* NOTIF SECTION */}
         <NotificationSection id="notification">
-          <Content className="contentBox" alignSelf="center">
+          <Content 
+              className="contentBox" 
+              alignSelf="center" 
+              >
             <ItemV maxWidth={"849px"} margin="0px auto">
               <H2
                 color="#DDD8D8"
@@ -350,7 +353,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="200px 40px 0px 40px"
+            // padding="200px 40px 0px 40px"
           >
             <ItemV maxWidth={"849px"} margin="0px auto" flexDirection="row">
               <H2
@@ -1025,10 +1028,15 @@ const ShowcaseSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
   .contentBox {
-    padding: 180px 40px 0px 40px;
+    padding: ${`180px ${globalsMargin.DEFAULT.DESKTOP.RIGHT} ${globalsMargin.DEFAULT.DESKTOP.BOTTOM} ${globalsMargin.DEFAULT.DESKTOP.LEFT}`};
+    
 
     @media ${device.laptop} {
-      padding: 140px 32px 0px 32px;
+      padding: ${`140px ${globalsMargin.DEFAULT.TABLET.RIGHT} ${globalsMargin.DEFAULT.TABLET.BOTTOM} ${globalsMargin.DEFAULT.TABLET.LEFT}`};
+    }
+
+    @media ${device.mobileL} {
+      padding: ${`140px ${globalsMargin.DEFAULT.MOBILE.RIGHT} ${globalsMargin.DEFAULT.MOBILE.BOTTOM} ${globalsMargin.DEFAULT.MOBILE.LEFT}`};
     }
   }
 `;
@@ -1038,20 +1046,10 @@ const NotificationSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
 
-  .contentBox {
-    padding: 186px 40px 0px 40px;
-    box-sizing: border-box;
-
-    @media ${device.laptop} {
-      padding: 160px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 160px 24px 0px 24px;
-    }
+   .contentBox {
 
     @media ${device.mobileL} {
-      padding: 160px 16px 0px 16px;
+      box-sizing: border-box;
     }
   }
 `;
@@ -1062,19 +1060,9 @@ const ChatSection = styled(Section)`
   padding-bottom: 0px;
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
-    box-sizing: border-box;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
 
     @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
+      box-sizing: border-box;
     }
   }
 `;
@@ -1088,21 +1076,15 @@ const SlideSection = styled(Section)`
   }
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
-
     @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
       .slideGap {
         gap: 23px;
       }
     }
 
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
 
     @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
+      box-sizing: border-box;
       .slideGap {
         gap: 32px;
       }
@@ -1115,19 +1097,10 @@ const TokenomicsSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
 
-  .contentBox {
-    padding: 200px 40px 0px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
+ .contentBox {
 
     @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
+      box-sizing: border-box;
     }
   }
 `;
@@ -1195,18 +1168,16 @@ const FeaturedInSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 200px 0px 0px 0px;
+
+  padding: ${`${globalsMargin.DEFAULT.DESKTOP.TOP} 0 0 0`};
+  
 
   @media ${device.laptop} {
-    padding: 180px 0px 0px 0px;
-  }
-
-  @media ${device.tablet} {
-    padding: 180px 0px 0px 0px;
+    padding: ${`${globalsMargin.DEFAULT.TABLET.TOP} 0 0 0`};
   }
 
   @media ${device.mobileL} {
-    padding: 180px 0px 0px 0px;
+      padding: ${`${globalsMargin.DEFAULT.MOBILE.TOP} 0 0 0`};
   }
 `;
 
@@ -1238,18 +1209,9 @@ const BlogSection = styled(Section)`
   overflow: hidden;
 
   .contentBox {
-    padding: 200px 40px 0px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
 
     @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
+      box-sizing: border-box;
     }
   }
 `;
@@ -1257,20 +1219,13 @@ const BlogSection = styled(Section)`
 const BackedBySection = styled(Section)`
   width: 100%;
   overflow: hidden;
+  padding-bottom: 20px;
 
-  .contentBox {
-    padding: 200px 40px 20px 40px;
 
-    @media ${device.laptop} {
-      padding: 180px 32px 20px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 20px 24px;
-    }
+ .contentBox {
 
     @media ${device.mobileL} {
-      padding: 180px 16px 20px 16px;
+      box-sizing: border-box;
     }
   }
 `;
@@ -1284,15 +1239,6 @@ const InvestorHeader = styled(H2)`
 `;
 
 const InvestorItem = styled(ItemV)`
-  @media (max-width: 1300px) {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
-  }
-
-  @media ${device.tablet} {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
-  }
 `;
 
 const InvestorCard = styled(ItemV)`

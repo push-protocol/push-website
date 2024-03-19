@@ -62,11 +62,10 @@ export const Content = styled.div`
   display: ${(props) => props.display || "flex"};
   flex-direction: ${(props) => props.flexDirection || "column"};
   position: ${(props) => props.position || "relative"};
-
   flex: ${(props) => props.flex || "1"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   width: ${(props) => props.width || "auto"};
-  max-width: ${(props) => props.maxWidth || "1213px"};
+  max-width: ${(props) => props.maxWidth || "1200px"};
   // max-width: 1140px;
   display: flex;
   justify-content: ${(props) => props.justifyContent || "center"};
@@ -78,10 +77,10 @@ export const Content = styled.div`
   @media ${device.laptop} {
     padding: ${(props) =>
       props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
-    // max-width: ${(props) => props.maxWidth || "1213px"};
+    // max-width: ${(props) => props.maxWidth || "1200px"};
   }
 
-  @media ${device.mobileM} {
+  @media ${device.mobileL} {
     padding: ${(props) =>
       props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
     max-width: ${(props) => props.maxWidth || "100%"};
