@@ -49,9 +49,9 @@ const Glassy = ({ item }) => {
   const { message, alignment } = after || "";
 
   // decide video format for bg and header illustration
-  const bgVideoFormat = item.header && item.header.bgvideowebm ? "webm" : "mp4";
+  const bgVideoFormat = item.config && item.config.bgvideowebm ? "webm" : "mp4";
   const headerIllustrationFormat =
-    item.header && item.header.illustrationvideowebm ? "webp" : "mp4";
+    item.header && item.header.illustrationvideowebm ? "webm" : "mp4";
 
   const Tag = ({ item }) => {
     const { background, border, color, title, fontSize } = item || "";
@@ -140,7 +140,7 @@ const Glassy = ({ item }) => {
       <Subcontainer
         id={id}
         padding={padding}
-        bg={hovered ? null : bg}
+        bg={hovered && bgvideosrc ? null : bg}
         title={t(bgtitle)}
         bgsize={item.config.bgsize}
       >
