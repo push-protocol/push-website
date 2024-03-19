@@ -15,7 +15,9 @@ This tutorial explains how you can create channel and trigger notifications dire
 We will be creating a simple contract that allows owner to create a channel using `ipfshash` and send notification for this guide.
 
 <head>
-  <title>Channel Creation and Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation</title>
+  <title>
+    {`Channel Creation and Notification from Smart Contract | Tutorial | Push Notifications | Push Documentation`}
+  </title>
 </head>
 
 ## Prerequisites
@@ -89,11 +91,11 @@ contract Fund  {
   //To create channel
   function createChannelWithEPNS(string memory _ipfsHash) public onlyOwner {
     IERC20Interface(PUSH_ADDRESS).approve(EPNS_CORE_ADDRESS, 50 ether);
-    IEPNSCoreInterface(EPNS_CORE_ADDRESS).createChannelWithFees(
+    IEPNSCoreInterface(EPNS_CORE_ADDRESS).createChannelWithPUSH(
       IEPNSCoreInterface.ChannelType.InterestBearingOpen,
       bytes(string(
       abi.encodePacked(
-        "2",
+        "1",
         "+",
         _ipfsHash
       )

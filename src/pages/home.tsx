@@ -254,7 +254,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               left="0"
               right="0"
               bottom="0"
-              bottom="20px"
+              bottom={`${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.TOP}px`}
             >
               <AnalyticsStats />
             </HeroAnalytics>
@@ -262,7 +262,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </HeroSection>
 
         {/* SHOWCASE SECTION */}
-        <ShowcaseSection id="showcase-section">
+        <ShowcaseSection id="showcase">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -273,7 +273,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ShowcaseSection>
 
         {/* NOTIF SECTION */}
-        <NotificationSection id="notification-section">
+        <NotificationSection id="notification">
           <Content className="contentBox" alignSelf="center">
             <ItemV maxWidth={"849px"} margin="0px auto">
               <H2
@@ -347,11 +347,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </NotificationSection>
 
         {/* CHAT SECTION */}
-        <ChatSection
-          id="chat-section"
-          data-bkg="light"
-          className="lightBackground"
-        >
+        <ChatSection id="chat" data-bkg="light" className="lightBackground">
           <Content
             className="contentBox"
             alignSelf="center"
@@ -417,7 +413,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ChatSection>
 
         {/* PUSH SPACE AND VIDEO SECTION */}
-        <SlideSection id="slide-section">
+        <SlideSection id="otherfeatures">
           <Content className="contentBox" alignSelf="center">
 
             <ItemH
@@ -434,7 +430,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           </Content>
         </SlideSection>
 
-        <TokenomicsSection>
+        <TokenomicsSection id="tokenomics">
           <Content className="contentBox" alignSelf="center">
             <ItemH
               flexDirection={isMobile && "column"}
@@ -514,7 +510,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </TokenomicsSection>
 
         {/* WHY PUSH AND BLOG */}
-        <BlogSection>
+        <BlogSection id="blog">
           <Content className="contentBox" alignSelf="center">
             {/* BLOG SECTION */}
             <ItemH>
@@ -567,8 +563,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               Your gateway to shiny updates and innovations at Push Protocol.{" "}
             </H2>
 
-            {isMobile && (
-              <SlideItem
+            {/* {isMobile && (
+              <SlideLink
                 href="/blog"
                 title="Explore all articles"
                 hoverBackground="transparent"
@@ -583,15 +579,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               >
                 <SpanLink>Explore Blog</SpanLink>
                 <BsArrowRight className="anchorSVGlink" />
-              </SlideItem>
-            )}
+              </SlideLink>
+            )} */}
 
             <RecentBlogPosts recentPosts={recentPosts} />
           </Content>
         </BlogSection>
 
         {/* BACKED BY SECTION */}
-        <BackedBySection>
+        <BackedBySection id="investors">
           <ItemV
             id="integratePush"
             position="absolute"
@@ -712,7 +708,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </BackedBySection>
 
         {/* MEDIA COVERAGE SECTION */}
-        <FeaturedInSection id="mediaFeaturedInSection">
+        <FeaturedInSection id="featured">
           <ItemH justifyContent="center">
             <H2
               color="#FFFFFF"
@@ -753,6 +749,11 @@ const HeroContent = styled(Content)`
     padding-top: 200px;
     padding-bottom: 40px;
   }
+
+  @media ${device.mobileL} {
+    padding-top: 112px;
+    padding-bottom: 40px;
+  }
 `;
 
 const HeroAnimation = styled(ItemH)`
@@ -780,7 +781,7 @@ const HeroItem = styled(ItemV)`
     margin: 0 15%;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     margin: 0 auto;
   }
 `;
