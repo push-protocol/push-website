@@ -153,7 +153,7 @@ export const brbPartnersBountyList = [
     alt: 'Alchemy, Partner of Push, #BRBIndia, pan-India dev tour',
     text: 'Implement creative user experience flows facilitated by Alchemy’s Account Abstraction SDK',
     price: 5000,
-    ended:false
+    ended:true
   },
   {
     srcref: 'push',
@@ -165,3 +165,4 @@ export const brbPartnersBountyList = [
   }
 ];
   
+brbPartnersBountyList.sort((a, b) => +a.ended - +b.ended);
