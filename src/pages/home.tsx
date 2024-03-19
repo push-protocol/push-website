@@ -525,7 +525,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               lineHeight="120%"
               letterSpacing="normal"
             >
-              Your gateway to shiny updates and innovations at Push Protocol.{" "}
+              Your gateway to shiny updates and innovations at Push Protocol.
             </H2>
 
             <RecentBlogPosts recentPosts={recentPosts} />
