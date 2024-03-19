@@ -201,12 +201,28 @@ article ol ul {
 /* ----- */
 /* OVERRIDES */
 /* ----- */
-html,
+/* html, */
 body {
   height: 100%;
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cb3faa;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+}
 
 body {
   margin: 0;
