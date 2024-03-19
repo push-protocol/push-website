@@ -119,12 +119,14 @@ const Glassy = ({ item }) => {
     const degX = normY * 5;
     const degY = -normX * 5;
 
-    // Calculate the distance for the Z translation (for a subtle effect, we limit the translation to 20px)
-    const distZ = Math.sqrt(diffX * diffX + diffY * diffY) / 10;
-    const transZ = Math.min(distZ, 20);
+    if (!item.config.hide3deffect) {
+      // Calculate the distance for the Z translation (for a subtle effect, we limit the translation to 20px)
+      const distZ = Math.sqrt(diffX * diffX + diffY * diffY) / 10;
+      const transZ = Math.min(distZ, 20);
 
-    // Apply the rotation and translation to the container
-    container.style.transform = `rotateX(${degX}deg) rotateY(${degY}deg) translateZ(${transZ}px)`;
+      // Apply the rotation and translation to the container
+      container.style.transform = `rotateX(${degX}deg) rotateY(${degY}deg) translateZ(${transZ}px)`;
+    }
 
     // Apply glow
     const glowwys = document.querySelectorAll(`.${id} > .glowwy`);

@@ -8,12 +8,15 @@ export const OthersFeaturesList = {
         fillheight: true,
         hideonmobile: false,
         bodyjustifycontent: "bottom",
-        hidehovereffect: true
+        hidehovereffect: false,
+        hide3deffect: true,
       },
       body: [
         {
           type: "image",
-          imagesrc: "slides/Push Video",
+          imagesrc: "otherproducts/push-video",
+          videosrc: "otherproducts/push-video-video",
+          videowebm: true,
           imagealt: "home.video-section.alt",
           imagetitle: "home.video-section.title",
         },
@@ -25,7 +28,7 @@ export const OthersFeaturesList = {
           bodytextweight: "700",
           uppercase: true,
           margin: "12px 0 0 0",
-          align: 'left'
+          align: "left",
         },
         {
           type: "text",
@@ -35,7 +38,7 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "24px",
           bodytextweight: "500",
           margin: "-12px 0 0 0",
-          align: 'left',
+          align: "left",
           bodytextwidth: "70%",
           mobilebodytextwidth: "85%",
         },
@@ -47,17 +50,17 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "17px",
           bodytextweight: "400",
           margin: "-8px 0 0 0",
-          align: 'left',
+          align: "left",
           bodytextwidth: "70%",
           mobilebodytextwidth: "85%",
         },
         {
           type: "styled-link",
-          href: 'https://push.org/docs/video/',
-          hrefText: 'home.video-section.itemLink',
+          href: "https://push.org/docs/video/",
+          hrefText: "home.video-section.itemLink",
           margin: "4px 0 0 0",
-          align: 'left'
-        }
+          align: "left",
+        },
       ],
     },
     {
@@ -69,12 +72,15 @@ export const OthersFeaturesList = {
         hideonmobile: false,
         bodyjustifycontent: "bottom",
         bodyfullwidth: false,
-        hidehovereffect: true
+        hidehovereffect: false,
+        hide3deffect: true,
       },
       body: [
         {
           type: "image",
-          imagesrc: "slides/Push Spaces",
+          imagesrc: "otherproducts/push-spaces",
+          videosrc: "otherproducts/push-spaces-video",
+          videowebm: true,
           imagealt: "home.space-section.alt",
           imagetitle: "home.space-section.title",
         },
@@ -86,7 +92,7 @@ export const OthersFeaturesList = {
           bodytextweight: "700",
           uppercase: true,
           margin: "12px 0 0 0",
-          align: 'left'
+          align: "left",
         },
         {
           type: "text",
@@ -96,7 +102,7 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "24px",
           bodytextweight: "500",
           margin: "-12px 0 0 0",
-          align: 'left',
+          align: "left",
           bodytextwidth: "70%",
           mobilebodytextwidth: "85%",
         },
@@ -108,17 +114,17 @@ export const OthersFeaturesList = {
           mobilebodytextsize: "17px",
           bodytextweight: "400",
           margin: "-8px 0 0 0",
-          align: 'left',
+          align: "left",
           bodytextwidth: "70%",
           mobilebodytextwidth: "85%",
         },
         {
           type: "styled-link",
-          href: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
-          hrefText: 'home.space-section.itemLink',
+          href: "https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces",
+          hrefText: "home.space-section.itemLink",
           margin: "4px 0 0 0",
-          align: 'left'
-        }
+          align: "left",
+        },
       ],
     },
   ],

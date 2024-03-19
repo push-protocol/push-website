@@ -11,8 +11,6 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 
 // External Components
 import Spline from "@splinetool/react-spline";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
 import styled from "styled-components";
@@ -67,39 +65,9 @@ import { OthersFeaturesList } from "@site/src/config/HomeOthersFeaturesList";
 import GLOBALS, { device } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
   const { t, i18n } = useTranslation();
-
-  // Hero Shrink Animation
-  useLayoutEffect(() => {
-    gsap.to("#herobg", {
-      scrollTrigger: {
-        trigger: "#herobg",
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
-
-    gsap.to("#integratePush", {
-      scrollTrigger: {
-        trigger: "#mediaFeaturedInSection",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
-  }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
   const isMobile = useMediaQuery(device.mobileL);
@@ -415,17 +383,14 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* PUSH SPACE AND VIDEO SECTION */}
         <SlideSection id="otherfeatures">
           <Content className="contentBox" alignSelf="center">
-
             <ItemH
               flexDirection={isMobile ? "column" : "row"}
               flexWrap="nowrap"
               className="slideGap"
             >
-
               {OthersFeaturesList?.products.map((item) => (
-                  <Glassy item={item} />
-                ))}
-
+                <Glassy item={item} />
+              ))}
             </ItemH>
           </Content>
         </SlideSection>
@@ -562,25 +527,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             >
               Your gateway to shiny updates and innovations at Push Protocol.{" "}
             </H2>
-
-            {/* {isMobile && (
-              <SlideLink
-                href="/blog"
-                title="Explore all articles"
-                hoverBackground="transparent"
-                hover="transparent"
-                background="transparent"
-                filter="none"
-                color="#fff"
-                borderRadius="0"
-                padding="0px 0px"
-                fontFamily="FK Grotesk Neue"
-                margin={"24px 0 0 0"}
-              >
-                <SpanLink>Explore Blog</SpanLink>
-                <BsArrowRight className="anchorSVGlink" />
-              </SlideLink>
-            )} */}
 
             <RecentBlogPosts recentPosts={recentPosts} />
           </Content>
