@@ -57,7 +57,8 @@ const CookieComponent = () => {
           <AcceptButton onClick={handleAccept}>Accept</AcceptButton>
           <RejectButton onClick={handleReject}>Opt-out</RejectButton>
         </ButtonContainer>
-    </CookieContainer>)}
+    </CookieContainer>
+    )}
     </>
   );
 };
@@ -77,6 +78,8 @@ const CookieContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(12px);
 
   h2 {
 

@@ -11,8 +11,6 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 
 // External Components
 import Spline from "@splinetool/react-spline";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import { BsArrowRight, BsArrowUpRight, BsFileX } from "react-icons/bs";
 import styled from "styled-components";
@@ -64,41 +62,12 @@ import {
   NotifUseCasesList,
 } from "@site/src/config/HomeNotifFeaturesList";
 import GLOBALS, { device, globalsMargin } from "@site/src/config/globals";
+import { OthersFeaturesList } from "@site/src/config/HomeOthersFeaturesList";
 import { PageMeta } from "@site/src/config/pageMeta";
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
   const { t, i18n } = useTranslation();
-
-  // Hero Shrink Animation
-  useLayoutEffect(() => {
-    gsap.to("#herobg", {
-      scrollTrigger: {
-        trigger: "#herobg",
-        start: "center center",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
-
-    gsap.to("#integratePush", {
-      scrollTrigger: {
-        trigger: "#mediaFeaturedInSection",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        markers: false,
-      },
-      scale: 0.985,
-      borderRadius: GLOBALS.ADJUSTMENTS.RADIUS.LARGE,
-    });
-  }, []);
 
   const [showMoreTeamMembers, setShowMoreTeamMembers] = useState(false);
   const isMobile = useMediaQuery(device.mobileL);
@@ -422,81 +391,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               flexWrap="nowrap"
               className="slideGap"
             >
-              {slideSection.map((item) => (
-                <SlideItem>
-                  <Image
-                    width={"100%"}
-                    height={"auto"}
-                    src={
-                      require(
-                        `@site/static/assets/website/slides/${item.imageref}.png`,
-                      ).default
-                    }
-                    srcSet={`${require(`@site/static/assets/website/slides/${item.imageref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/slides/${item.imageref}@3x.png`).default} 3x`}
-                    alt={t(item?.alt)}
-                    title={t(item?.title)}
-                    loading="lazy"
-                  />
-
-                  <SlideContent
-                    alignItems="flex-start"
-                    margin="0 auto 0 0"
-                    justifyContent="flex-end"
-                  >
-                    <H2
-                      textAlign="left"
-                      color="#D98AEC"
-                      textTransform="uppercase"
-                      fontSize="14px"
-                      fontWeight="700"
-                      lineHeight="130%"
-                      letterSpacing="0.56px"
-                      fontFamily="FK Grotesk Neue"
-                    >
-                      {t(item.title)}
-                    </H2>
-
-                    <H2
-                      color="#FFF"
-                      fontSize={isTablet ? "24px" : "30px"}
-                      fontWeight="500"
-                      margin="8px 0 0 0"
-                      fontFamily="FK Grotesk Neue"
-                      className="textTitle"
-                      lineHeight="normal"
-                      letterSpacing="normal"
-                    >
-                      {t(item.subtitle)}
-                    </H2>
-
-                    <H3
-                      color="#FFF"
-                      fontSize={isTablet ? "17px" : "19px"}
-                      fontWeight="400"
-                      fontFamily="FK Grotesk Neue"
-                      color="#BBBCD0"
-                      lineHeight="130%"
-                      letterSpacing="normal"
-                      margin="12px 0px 0px 0px"
-                    >
-                      {t(item.content)}
-                    </H3>
-
-                    <SlideLink
-                      href={item.link}
-                      title={"new"}
-                      target="_blank"
-                      padding="0px 0px"
-                      className="button"
-                      margin="24px 0px 0px 0px"
-                      background="transparent"
-                      alignItems="center"
-                    >
-                      <SpanLink>{t(item.itemLink)}</SpanLink>
-                      <BsArrowRight className="anchorSVGlink" />
-                    </SlideLink>
-                  </SlideContent>
-                </SlideItem>
+              {OthersFeaturesList?.products.map((item) => (
+                <Glassy item={item} />
               ))}
             </ItemH>
           </Content>
@@ -632,27 +528,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               lineHeight="120%"
               letterSpacing="normal"
             >
-              Your gateway to shiny updates and innovations at Push Protocol.{" "}
+              Your gateway to shiny updates and innovations at Push Protocol.
             </H2>
-
-            {/* {isMobile && (
-              <SlideLink
-                href="/blog"
-                title="Explore all articles"
-                hoverBackground="transparent"
-                hover="transparent"
-                background="transparent"
-                filter="none"
-                color="#fff"
-                borderRadius="0"
-                padding="0px 0px"
-                fontFamily="FK Grotesk Neue"
-                margin={"24px 0 0 0"}
-              >
-                <SpanLink>Explore Blog</SpanLink>
-                <BsArrowRight className="anchorSVGlink" />
-              </SlideLink>
-            )} */}
 
             <RecentBlogPosts recentPosts={recentPosts} />
           </Content>

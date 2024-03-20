@@ -51,54 +51,6 @@ if (typeof window !== "undefined") {
   lastScrollY = window.scrollY;
 }
 
-function useScrollDirection(mobileMenuActive: unknown) {
-  const [scrollDirection, setScrollDirection] = useState(null);
-  const [bkg, setBkg] = useState("dark");
-
-  useEffect(() => {
-    const updateScrollDirection = () => {
-      let scrollY = 0;
-
-      if (typeof window !== "undefined") {
-        scrollY = window.scrollY;
-      }
-
-      let direction = scrollY > lastScrollY ? "scrollDown" : "scrollUp";
-
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA ||
-          scrollY - lastScrollY < -SCROLL_DELTA)
-      ) {
-        // check if isMobileMenuOpen then override
-        if (mobileMenuActive) {
-          direction = "scrollUp";
-        }
-
-        setScrollDirection(direction);
-      }
-
-      // hacky way, optimize later when time
-      // if (scrollY > 970) {
-      //   setBkg('light');
-      // } else {
-      //   setBkg('dark');
-      // }
-
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-
-    // add event listener
-    window.addEventListener("scroll", updateScrollDirection, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
-    };
-  }, [scrollDirection, mobileMenuActive]);
-
-  return [scrollDirection, bkg];
-}
-
 const defaultMobileMenuState = {
   0: false,
   1: false,
@@ -110,9 +62,8 @@ const defaultMobileMenuState = {
 function Header() {
   const isMobile = useMediaQuery(device.laptopM);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-
+  const [scrollDirection, setScrollDirection] = useState(null);
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // Internationalization
@@ -120,10 +71,7 @@ function Header() {
 
   const showMobileMenu = isMobile && isMobileMenuOpen;
 
-  // if mobile view then show only DARK header.
-  // console.log(bkg);
   const headerClass = `${scrollDirection === "scrollDown" ? "hide" : "show"}`;
-  const themeClass = `${bkg}`;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -157,6 +105,41 @@ function Header() {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen, isMobile]);
+
+  // Use Effect
+  useEffect(() => {
+    const updateScrollDirection = () => {
+      let scrollY = 0;
+
+      if (typeof window !== "undefined") {
+        scrollY = window.scrollY;
+      }
+
+      let direction = scrollY > lastScrollY ? "scrollDown" : "scrollUp";
+
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > SCROLL_DELTA ||
+          scrollY - lastScrollY < -SCROLL_DELTA)
+      ) {
+        // check if isMobileMenuOpen then override
+        if (isMobileMenuOpen) {
+          direction = "scrollUp";
+        }
+
+        setScrollDirection(direction);
+      }
+
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    // add event listener
+    window.addEventListener("scroll", updateScrollDirection, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollDirection); // clean up
+    };
+  }, []);
 
   const HeaderSpace = ({ item, index }) => {
     const openLink = (e, href, id) => {

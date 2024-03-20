@@ -372,9 +372,6 @@ article .markdown > p > code {
 /* ----- */
 /* Tabs CodeBlock CSS Overrids */
 /* ----- */
-.codetabs {
-}
-
 .codetabs li {
   padding: 10px 10px;
   display: flex;
