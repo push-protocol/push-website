@@ -29,7 +29,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
-import GLOBALS, { device } from '@site/src/config/globals';
+import GLOBALS, { device, globalsMargin } from '@site/src/config/globals';
 import { PageMeta } from "@site/src/config/pageMeta";
 
 
@@ -349,16 +349,16 @@ export default function HomepageFeatures(): JSX.Element {
 const DocsHeroSection = styled(Section)`
   background: ${GLOBALS.COLORS.BG_DARK};
 
-  padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP}`};
+  padding: ${`120px ${globalsMargin.DEFAULT.DESKTOP.RIGHT} 120px ${globalsMargin.DEFAULT.DESKTOP.LEFT}`};
   padding-bottom: 0px;
 
   @media ${device.laptop} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}`};
+    padding: ${`60px ${globalsMargin.DEFAULT.DESKTOP.RIGHT} 60px ${globalsMargin.DEFAULT.DESKTOP.LEFT}`};
     padding-bottom: 0px;
   }
 
   @media ${device.mobileM} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding: ${`40px ${globalsMargin.DEFAULT.DESKTOP.RIGHT} 40px ${globalsMargin.DEFAULT.DESKTOP.LEFT}`};
     padding-bottom: 0px;
   }
 `;
