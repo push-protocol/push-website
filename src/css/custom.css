@@ -201,14 +201,20 @@ article ol ul {
 /* ----- */
 /* OVERRIDES */
 /* ----- */
-/* html, */
+
+
+html,
 body {
   height: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 6px !important;
+  width: 4px !important;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -217,19 +223,19 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: black;
 }
 
 ::-webkit-scrollbar-button {
   display: none !important;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
-}
+} */
 
 .home-wrapper {
   font-style: var(--ifm-font-family-homepage) !important;
@@ -757,6 +763,24 @@ li {
     width: 100%;
     gap: 32px;
   }
+
+  ::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cb3faa;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+}
+
 }
 
 /* ------------------ */

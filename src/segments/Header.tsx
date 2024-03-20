@@ -699,6 +699,7 @@ const PushLogoBlackContainer = styled(ItemV)`
   }
 `;
 
+// const StyledHeader = styled.header`
 const StyledHeader = styled.header`
   font-family: "Strawford";
 
@@ -706,11 +707,14 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 4px;
 
   /* color: #ffffff;
   background: #121315; */
   opacity: 1;
+  // background: red;
+  // min-width: 100%;
+  // box-sizing: border-box;
 
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
@@ -746,6 +750,7 @@ const StyledHeader = styled.header`
     max-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    right: 4px;
 
     flex-direction: column;
 
