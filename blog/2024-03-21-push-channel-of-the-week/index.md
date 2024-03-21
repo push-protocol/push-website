@@ -2,12 +2,12 @@
 slug: push-channel-of-the-week
 title: "Announcing Push Channel of the Week 🏆"
 authors: [push]
-image: "imagepath"
+image: "./cover-image.webp"
 description: "Announcing Push Channel of the Week 🏆"
 text: "Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - Push Channel of the Week!"
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
-![Cover Image of Monthly Recap February ⚡](imagepath)
+![Cover Image of Push Channel of the Week!🏆](./cover-image.webp)
 
 <!--truncate-->
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
@@ -20,9 +20,9 @@ The initiative also honors our partner channels for their dedication to consiste
 Time to unveil our winner channels for **March**!
 
 ## Week 1: Bankless
-## Push x Bankless: Serving the latest Bankless content updates to your wallet address with Push Notifications.
+## Push x Bankless: Serving the latest Bankless content updates to your wallet address with Push Notifications🔔.
 
-![Banner celebrating Bankless as March - week 1 channel of week](./imagename.webp)
+![Banner celebrating Bankless as March - week 1 channel of week](./image1.webp)
 
 ### What is Bankless?
 
@@ -50,7 +50,9 @@ You can opt-in to Bankless for free (with no gas fees!) from the Bankless profil
 https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 ## Week 2: Crypto Jobs List
-##Push x Crypto Jobs List: Get the latest web3 job notifications to your wallet address with Push!
+## Push x Crypto Jobs List: Get the latest web3 job💼 notifications to your wallet address with Push!
+
+![Banner celebrating Crypto Jobs List as March - week 2 channel of week](./image2.webp)
 
 ### What is Crypto Job List?
 
@@ -70,5 +72,8 @@ You can opt-in to the  Crypto Job List for free (with no gas fees!) from the Cr
 https://app.push.org/channels/0x30a1627fDdc0dBB7dD00b881D25A45B443f294bB and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 
-Keep an eye on the next winner👀!
+
+
+
+Stay tuned for the next winner! 👀
 Let us know about your favorite channel on [Push Protocol Discord](https://discord.com/invite/pushprotocol)
