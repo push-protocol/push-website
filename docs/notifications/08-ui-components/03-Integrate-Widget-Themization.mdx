@@ -1,11 +1,11 @@
 ---
-id: docs-notifications-develop-widget-themization
+id: docs-notifications-ui-components-integrate-widget-themization
 title: Widget Themization
 hide_title: true
 slug: ./widget-themization
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 20
-image: "/assets/docs/previews/docs_notifications_develop--widget_themization.png"
+sidebar_position: 3
+image: "/assets/docs/previews/docs_notifications_ui_components_themization.png"
 ---
 
 # Themization overview
@@ -27,27 +27,27 @@ import { ModalContainer } from "@site/src/css/SharedStyling";
 
 ```typescript
 interface IBorder {
-   modal?: string;
+  modal?: string;
   modalInnerComponents?: string;
-  sliderThumb?:string;
-  divider?:string;
-  image?:string;
+  sliderThumb?: string;
+  divider?: string;
+  image?: string;
 }
 interface IBorderRadius {
-   modal?: string;
+  modal?: string;
   modalInnerComponents?: string;
 }
 interface IBackgroundColor {
-   buttonBackground?: string;
+  buttonBackground?: string;
   buttonDisableBackground?: string;
   modalBackground?: string;
   toastSuccessBackground?: string;
   toastErrorBackground?: string;
   toastShadowBackground?: string;
-  sliderThumbBackground?:string;
-  sliderActiveBackground?:string;
-  sliderInActiveBackground?:string;
-  imageBackgroundColor?:string;
+  sliderThumbBackground?: string;
+  sliderActiveBackground?: string;
+  sliderInActiveBackground?: string;
+  imageBackgroundColor?: string;
 }
 
 interface ITextColor {
@@ -58,8 +58,6 @@ interface ITextColor {
   modalSubTitleText?: string;
   modalHighlightedText?: string;
 }
-
-
 
 export interface IWidgetTheme {
   borderRadius?: IBorderRadius;
