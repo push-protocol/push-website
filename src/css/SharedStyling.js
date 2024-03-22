@@ -65,24 +65,20 @@ export const Content = styled.div`
   flex: ${(props) => props.flex || "1"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   width: ${(props) => props.width || "auto"};
-  max-width: ${(props) => props.maxWidth || "1200px"};
-  // max-width: 1140px;
+  max-width: ${(props) => props.maxWidth || GLOBALS.STRUCTURE.MAX_WIDTH};
   display: flex;
   justify-content: ${(props) => props.justifyContent || "center"};
   box-sizing: ${(props) => props.boxSizing || "content-box"};
   margin: ${(props) => props.margin || "initial"};
-  padding: ${(props) =>
-    props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP};
+  padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.DESKTOP};
 
   @media ${device.laptop} {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
+    padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.TABLET};
     // max-width: ${(props) => props.maxWidth || "1200px"};
   }
 
   @media ${device.mobileL} {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
+    padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.MOBILE};
     max-width: ${(props) => props.maxWidth || "100%"};
   }
 `;

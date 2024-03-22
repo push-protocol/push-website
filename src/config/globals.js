@@ -1,25 +1,25 @@
 // Define Size and Device
 export const size = {
-  mobileS: "320px",
-  mobileM: "395px",
-  mobileL: "470px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopM: "1260px",
-  laptopL: "1440px",
-  desktop: "2560px",
+  mobileS: 320,
+  mobileM: 395,
+  mobileL: 470,
+  tablet: 768,
+  laptop: 1024,
+  laptopM: 1260,
+  laptopL: 1440,
+  desktop: 2560,
 };
 
 export const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopM: `(max-width: ${size.laptopM})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
+  mobileS: `(max-width: ${size.mobileS}px)`,
+  mobileM: `(max-width: ${size.mobileM}px)`,
+  mobileL: `(max-width: ${size.mobileL}px)`,
+  tablet: `(max-width: ${size.tablet}px)`,
+  laptop: `(max-width: ${size.laptop}px)`,
+  laptopM: `(max-width: ${size.laptopM}px)`,
+  laptopL: `(max-width: ${size.laptopL}px)`,
+  desktop: `(max-width: ${size.desktop}px)`,
+  desktopL: `(max-width: ${size.desktop}px)`,
 };
 
 // Define Padding
@@ -44,6 +44,30 @@ export const globalsMargin = {
       TOP: "180px",
       RIGHT: "16px",
       BOTTOM: "0px",
+      LEFT: "16px",
+    },
+  },
+};
+
+// Define Margin
+export const structure = {
+  PADDING: {
+    DESKTOP: {
+      TOP: "100px",
+      RIGHT: "48px",
+      BOTTOM: "100px",
+      LEFT: "48px",
+    },
+    TABLET: {
+      TOP: "90px",
+      RIGHT: "32px",
+      BOTTOM: "90px",
+      LEFT: "32px",
+    },
+    MOBILE: {
+      TOP: "90px",
+      RIGHT: "16px",
+      BOTTOM: "90px",
       LEFT: "16px",
     },
   },
@@ -109,6 +133,15 @@ const GLOBALS = {
     },
   },
 
+  STRUCTURE: {
+    MAX_WIDTH: `${size.laptopM}px`,
+    PADDING: {
+      DESKTOP: `${structure.PADDING.DESKTOP.TOP} ${structure.PADDING.DESKTOP.RIGHT} ${structure.PADDING.DESKTOP.BOTTOM} ${structure.PADDING.DESKTOP.LEFT}`,
+      TABLET: `${structure.PADDING.TABLET.TOP} ${structure.PADDING.TABLET.RIGHT} ${structure.PADDING.TABLET.BOTTOM} ${structure.PADDING.TABLET.LEFT}`,
+      MOBILE: `${structure.PADDING.MOBILE.TOP} ${structure.PADDING.MOBILE.RIGHT} ${structure.PADDING.MOBILE.BOTTOM} ${structure.PADDING.MOBILE.LEFT}`,
+    },
+  },
+
   ADJUSTMENTS: {
     PADDING: {
       HUGE: "60px",
@@ -118,12 +151,6 @@ const GLOBALS = {
     MARGIN: {
       VERTICAL: "30px",
       HORIZONTAL: "20px",
-
-      DEFAULT: {
-        DESKTOP: `${globalsMargin.DEFAULT.DESKTOP.TOP} ${globalsMargin.DEFAULT.DESKTOP.RIGHT} ${globalsMargin.DEFAULT.DESKTOP.BOTTOM} ${globalsMargin.DEFAULT.DESKTOP.LEFT}`,
-        TABLET: `${globalsMargin.DEFAULT.TABLET.TOP} ${globalsMargin.DEFAULT.TABLET.RIGHT} ${globalsMargin.DEFAULT.TABLET.BOTTOM} ${globalsMargin.DEFAULT.TABLET.LEFT}`,
-        MOBILE: `${globalsMargin.DEFAULT.MOBILE.TOP} ${globalsMargin.DEFAULT.MOBILE.RIGHT} ${globalsMargin.DEFAULT.MOBILE.BOTTOM} ${globalsMargin.DEFAULT.MOBILE.LEFT}`,
-      },
     },
     RADIUS: {
       LARGE: "48px",

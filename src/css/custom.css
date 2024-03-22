@@ -202,8 +202,6 @@ article ol ul {
 /* OVERRIDES */
 /* ----- */
 
-
-html,
 body {
   height: 100%;
   overflow-x: hidden;
@@ -211,23 +209,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-::-webkit-scrollbar {
-  width: 4px !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cb3faa;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-::-webkit-scrollbar-button {
-  display: none !important;
 }
 
 /* body {
@@ -763,24 +744,6 @@ li {
     width: 100%;
     gap: 32px;
   }
-
-  ::-webkit-scrollbar {
-  width: 4px !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cb3faa;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-}
-
-::-webkit-scrollbar-button {
-  display: none !important;
-}
-
 }
 
 /* ------------------ */

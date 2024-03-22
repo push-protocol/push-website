@@ -44,9 +44,6 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 // Import Assets
-import BNBChainSVG from "@site/static/assets/BNBChain.svg";
-import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
@@ -61,8 +58,8 @@ import {
   NotifFeaturesList,
   NotifUseCasesList,
 } from "@site/src/config/HomeNotifFeaturesList";
-import GLOBALS, { device, globalsMargin } from "@site/src/config/globals";
 import { OthersFeaturesList } from "@site/src/config/HomeOthersFeaturesList";
+import GLOBALS, { device, globalsMargin } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
@@ -144,7 +141,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </script>
       </Head>
 
-      <HomeWrapper className="home-wrapper">
+      <HomeWrapper>
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
@@ -232,7 +229,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* SHOWCASE SECTION */}
         <ShowcaseSection id="showcase">
           <Content
-            className="contentBox"
             alignSelf="center"
             // padding="180px 40px 0px 40px"
           >
@@ -242,10 +238,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* NOTIF SECTION */}
         <NotificationSection id="notification">
-          <Content 
-              className="contentBox" 
-              alignSelf="center" 
-              >
+          <Content alignSelf="center">
             <ItemV maxWidth={"849px"} margin="0px auto">
               <H2
                 color="#DDD8D8"
@@ -320,7 +313,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* CHAT SECTION */}
         <ChatSection id="chat" data-bkg="light" className="lightBackground">
           <Content
-            className="contentBox"
             alignSelf="center"
             // padding="200px 40px 0px 40px"
           >
@@ -385,7 +377,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* PUSH SPACE AND VIDEO SECTION */}
         <SlideSection id="otherfeatures">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <ItemH
               flexDirection={isMobile ? "column" : "row"}
               flexWrap="nowrap"
@@ -399,7 +391,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </SlideSection>
 
         <TokenomicsSection id="tokenomics">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <ItemH
               flexDirection={isMobile && "column"}
               gap={isMobile ? "8px" : isTablet ? "16px" : "74px"}
@@ -479,7 +471,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* WHY PUSH AND BLOG */}
         <BlogSection id="blog">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             {/* BLOG SECTION */}
             <ItemH>
               <ItemH justifyContent="flex-start" alignItems="center" gap="8px">
@@ -546,7 +538,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             left="0"
           />
 
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <InvestorItem alignItems="stretch">
               <InvestorHeader
                 color="#FFFFFF"
@@ -839,7 +831,7 @@ const HeroAnalytics = styled(ItemH)`
       rgba(202, 55, 237, 0) 82%
     );
   }
-  
+
   // margin: 140px 0 0px 0;
   max-width: 1200px;
   margin: 0 auto;
@@ -908,44 +900,18 @@ const ShowcaseSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
-  .contentBox {
-    padding: ${`180px ${globalsMargin.DEFAULT.DESKTOP.RIGHT} ${globalsMargin.DEFAULT.DESKTOP.BOTTOM} ${globalsMargin.DEFAULT.DESKTOP.LEFT}`};
-    
-
-    @media ${device.laptop} {
-      padding: ${`140px ${globalsMargin.DEFAULT.TABLET.RIGHT} ${globalsMargin.DEFAULT.TABLET.BOTTOM} ${globalsMargin.DEFAULT.TABLET.LEFT}`};
-    }
-
-    @media ${device.mobileL} {
-      padding: ${`140px ${globalsMargin.DEFAULT.MOBILE.RIGHT} ${globalsMargin.DEFAULT.MOBILE.BOTTOM} ${globalsMargin.DEFAULT.MOBILE.LEFT}`};
-    }
-  }
 `;
 
 const NotificationSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
-
-   .contentBox {
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-    }
-  }
 `;
 
 const ChatSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
-
-  .contentBox {
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-    }
-  }
 `;
 
 const SlideSection = styled(Section)`
@@ -953,22 +919,18 @@ const SlideSection = styled(Section)`
   overflow: hidden;
   padding-bottom: 0px;
   .slideGap {
-    gap: 29px;
+    gap: 30px;
   }
 
-  .contentBox {
-    @media ${device.laptop} {
-      .slideGap {
-        gap: 23px;
-      }
+  @media ${device.laptop} {
+    .slideGap {
+      gap: 24px;
     }
+  }
 
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-      .slideGap {
-        gap: 32px;
-      }
+  @media ${device.mobileL} {
+    .slideGap {
+      gap: 32px;
     }
   }
 `;
@@ -977,13 +939,6 @@ const TokenomicsSection = styled(Section)`
   width: 100%;
   overflow: hidden;
   padding-bottom: 0px;
-
- .contentBox {
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-    }
-  }
 `;
 
 const TokenItem = styled.div`
@@ -1051,14 +1006,13 @@ const FeaturedInSection = styled.div`
   width: 100%;
 
   padding: ${`${globalsMargin.DEFAULT.DESKTOP.TOP} 0 0 0`};
-  
 
   @media ${device.laptop} {
     padding: ${`${globalsMargin.DEFAULT.TABLET.TOP} 0 0 0`};
   }
 
   @media ${device.mobileL} {
-      padding: ${`${globalsMargin.DEFAULT.MOBILE.TOP} 0 0 0`};
+    padding: ${`${globalsMargin.DEFAULT.MOBILE.TOP} 0 0 0`};
   }
 `;
 
@@ -1088,13 +1042,6 @@ const SlideContent = styled(ItemV)`
 const BlogSection = styled(Section)`
   width: 100%;
   overflow: hidden;
-
-  .contentBox {
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-    }
-  }
 `;
 
 const BackedBySection = styled(Section)`
@@ -1102,12 +1049,8 @@ const BackedBySection = styled(Section)`
   overflow: hidden;
   padding-bottom: 20px;
 
-
- .contentBox {
-
-    @media ${device.mobileL} {
-      box-sizing: border-box;
-    }
+  @media ${device.mobileL} {
+    box-sizing: border-box;
   }
 `;
 
@@ -1119,8 +1062,7 @@ const InvestorHeader = styled(H2)`
   }
 `;
 
-const InvestorItem = styled(ItemV)`
-`;
+const InvestorItem = styled(ItemV)``;
 
 const InvestorCard = styled(ItemV)`
   border: 1px solid rgba(255, 255, 255, 0.1);
