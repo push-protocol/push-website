@@ -59,7 +59,7 @@ import {
   NotifUseCasesList,
 } from "@site/src/config/HomeNotifFeaturesList";
 import { OthersFeaturesList } from "@site/src/config/HomeOthersFeaturesList";
-import GLOBALS, { device, globalsMargin } from "@site/src/config/globals";
+import GLOBALS, { device } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
@@ -650,22 +650,23 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection id="featured">
-          <ItemH justifyContent="center">
-            <H2
-              color="#FFFFFF"
-              fontWeight="500"
-              letterSpacing="normal"
-              fontSize={isMobile ? "24px" : "36px"}
-              fontFamily="FK Grotesk Neue"
-              lineHeight="130%"
-              textAlign="center"
-            >
-              {t("home.featured-section.title")}
-            </H2>
-          </ItemH>
-          {/* </Content> */}
+          <Content className="fluid">
+            <ItemH justifyContent="center">
+              <H2
+                color="#FFFFFF"
+                fontWeight="500"
+                letterSpacing="normal"
+                fontSize={isMobile ? "24px" : "36px"}
+                fontFamily="FK Grotesk Neue"
+                lineHeight="130%"
+                textAlign="center"
+              >
+                {t("home.featured-section.title")}
+              </H2>
+            </ItemH>
 
-          <FeaturedList />
+            <FeaturedList />
+          </Content>
         </FeaturedInSection>
       </HomeWrapper>
     </Layout>
@@ -1004,16 +1005,6 @@ const FeaturedInSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  padding: ${`${globalsMargin.DEFAULT.DESKTOP.TOP} 0 0 0`};
-
-  @media ${device.laptop} {
-    padding: ${`${globalsMargin.DEFAULT.TABLET.TOP} 0 0 0`};
-  }
-
-  @media ${device.mobileL} {
-    padding: ${`${globalsMargin.DEFAULT.MOBILE.TOP} 0 0 0`};
-  }
 `;
 
 const SlideContent = styled(ItemV)`

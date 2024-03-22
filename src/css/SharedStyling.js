@@ -72,14 +72,29 @@ export const Content = styled.div`
   margin: ${(props) => props.margin || "initial"};
   padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.DESKTOP};
 
+  &.fluid {
+    padding: ${(props) =>
+      props.padding || GLOBALS.STRUCTURE.PADDING.FLUID.DESKTOP};
+    max-width: 100%;
+  }
+
   @media ${device.laptop} {
     padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.TABLET};
-    // max-width: ${(props) => props.maxWidth || "1200px"};
+
+    &.fluid {
+      padding: ${(props) =>
+        props.padding || GLOBALS.STRUCTURE.PADDING.FLUID.TABLET};
+    }
   }
 
   @media ${device.mobileL} {
     padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.MOBILE};
     max-width: ${(props) => props.maxWidth || "100%"};
+
+    &.fluid {
+      padding: ${(props) =>
+        props.padding || GLOBALS.STRUCTURE.PADDING.FLUID.MOBILE};
+    }
   }
 `;
 

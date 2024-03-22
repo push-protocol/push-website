@@ -707,7 +707,7 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  right: 4px;
+  right: 0;
 
   /* color: #ffffff;
   background: #121315; */

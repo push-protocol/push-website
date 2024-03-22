@@ -22,33 +22,6 @@ export const device = {
   desktopL: `(max-width: ${size.desktop}px)`,
 };
 
-// Define Padding
-export const globalsPadding = {};
-
-// Define Margin
-export const globalsMargin = {
-  DEFAULT: {
-    DESKTOP: {
-      TOP: "200px",
-      RIGHT: "40px",
-      BOTTOM: "0px",
-      LEFT: "40px",
-    },
-    TABLET: {
-      TOP: "180px",
-      RIGHT: "32px",
-      BOTTOM: "0px",
-      LEFT: "32px",
-    },
-    MOBILE: {
-      TOP: "180px",
-      RIGHT: "16px",
-      BOTTOM: "0px",
-      LEFT: "16px",
-    },
-  },
-};
-
 // Define Margin
 export const structure = {
   PADDING: {
@@ -139,6 +112,12 @@ const GLOBALS = {
       DESKTOP: `${structure.PADDING.DESKTOP.TOP} ${structure.PADDING.DESKTOP.RIGHT} ${structure.PADDING.DESKTOP.BOTTOM} ${structure.PADDING.DESKTOP.LEFT}`,
       TABLET: `${structure.PADDING.TABLET.TOP} ${structure.PADDING.TABLET.RIGHT} ${structure.PADDING.TABLET.BOTTOM} ${structure.PADDING.TABLET.LEFT}`,
       MOBILE: `${structure.PADDING.MOBILE.TOP} ${structure.PADDING.MOBILE.RIGHT} ${structure.PADDING.MOBILE.BOTTOM} ${structure.PADDING.MOBILE.LEFT}`,
+
+      FLUID: {
+        DESKTOP: `${structure.PADDING.DESKTOP.TOP} 0 ${structure.PADDING.DESKTOP.BOTTOM} 0`,
+        TABLET: `${structure.PADDING.TABLET.TOP} 0 ${structure.PADDING.TABLET.BOTTOM} 0`,
+        MOBILE: `${structure.PADDING.MOBILE.TOP} 0 ${structure.PADDING.MOBILE.BOTTOM} 0`,
+      },
     },
   },
 
