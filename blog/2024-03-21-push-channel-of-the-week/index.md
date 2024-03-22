@@ -42,12 +42,12 @@ The web3 landscape is transforming at an extremely fast rate, with loads of buil
 
 With such an ever-evolving landscape, there needs to be some beacon of knowledge that keeps us in pace with the on-chain world. The bankless podcasts and articles are one such beacon of knowledge, guiding us with insightful podcasts and articles every week, covering everything that is going on in the current web3 world.
 
-Staying in the loop with Bankless is easier than ever. By subscribing to the Bankless channel on [Push DApp](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF), you'll receive instant notifications directly to your **wallet address**, ensuring you never miss your daily web3 knowledge meal.
+Staying in the loop with Bankless is easier than ever. By subscribing to the [Bankless channel on Push DApp](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), you'll receive instant notifications directly to your **wallet address**, ensuring you never miss your daily web3 knowledge meal.
 
 ### How to Opt-In to the Bankless Channel?
 
-You can opt-in to Bankless for free (with no gas fees!) from the Bankless profile page here👇
-https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF and receive immediate on-chain updates directly linked to your chosen wallet address.
+You can opt-in to Bankless for free (with no gas fees!) from the [Bankless Channel profile page](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week)
+ and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 ## Week 2: Crypto Jobs List
 ## Push x Crypto Jobs List: Get the latest web3 job💼 notifications to your wallet address with Push!
@@ -68,8 +68,7 @@ The Crypto Jobs List channel on Push ensures you receive instant notifications a
 
 ### How to Opt-In to the Crypto Job List Channel?
 
-You can opt-in to the  Crypto Job List for free (with no gas fees!) from the Crypto Job List’s profile page here👇
-https://app.push.org/channels/0x30a1627fDdc0dBB7dD00b881D25A45B443f294bB and receive immediate on-chain updates directly linked to your chosen wallet address.
+You can opt-in to the  Crypto Job List for free (with no gas fees!) from the [Crypto Job List channel profile page](https://app.push.org/channels/0x30a1627fDdc0dBB7dD00b881D25A45B443f294bB?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 
 
