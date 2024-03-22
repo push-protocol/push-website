@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // Internal Configs
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device, structure } from "@site/src/config/globals";
 /**
  * Usage Hierarchy
  *
@@ -65,10 +65,12 @@ export const Content = styled.div`
   flex: ${(props) => props.flex || "1"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   width: ${(props) => props.width || "auto"};
-  max-width: ${(props) => props.maxWidth || GLOBALS.STRUCTURE.MAX_WIDTH};
+  max-width: ${(props) =>
+    props.maxWidth ||
+    `${GLOBALS.STRUCTURE.MAX_WIDTH + structure.PADDING.DESKTOP.LEFT + structure.PADDING.DESKTOP.RIGHT}px`};
   display: flex;
   justify-content: ${(props) => props.justifyContent || "center"};
-  box-sizing: ${(props) => props.boxSizing || "content-box"};
+  box-sizing: ${(props) => props.boxSizing || "border-box"};
   margin: ${(props) => props.margin || "initial"};
   padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.DESKTOP};
 
@@ -78,22 +80,42 @@ export const Content = styled.div`
     max-width: 100%;
   }
 
+  &.vertfluid {
+    padding: ${(props) =>
+      props.padding || GLOBALS.STRUCTURE.PADDING.VERTICAL_FLUID.DESKTOP};
+  }
+
   @media ${device.laptop} {
+    max-width: ${(props) =>
+      props.maxWidth ||
+      `${GLOBALS.STRUCTURE.MAX_WIDTH + structure.PADDING.TABLET.LEFT + structure.PADDING.TABLET.RIGHT}px`};
     padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.TABLET};
 
     &.fluid {
       padding: ${(props) =>
         props.padding || GLOBALS.STRUCTURE.PADDING.FLUID.TABLET};
     }
+
+    &.vertfluid {
+      padding: ${(props) =>
+        props.padding || GLOBALS.STRUCTURE.PADDING.VERTICAL_FLUID.TABLET};
+    }
   }
 
   @media ${device.mobileL} {
     padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.MOBILE};
-    max-width: ${(props) => props.maxWidth || "100%"};
+    max-width: ${(props) =>
+      props.maxWidth ||
+      `${GLOBALS.STRUCTURE.MAX_WIDTH + structure.PADDING.MOBILE.LEFT + structure.PADDING.MOBILE.RIGHT}px`};
 
     &.fluid {
       padding: ${(props) =>
         props.padding || GLOBALS.STRUCTURE.PADDING.FLUID.MOBILE};
+    }
+
+    &.vertfluid {
+      padding: ${(props) =>
+        props.padding || GLOBALS.STRUCTURE.PADDING.VERTICAL_FLUID.MOBILE};
     }
   }
 `;

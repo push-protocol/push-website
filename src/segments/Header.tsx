@@ -247,7 +247,7 @@ function Header() {
 
       {/* HEADER SECTION */}
       <Section onClick={(e) => e.stopPropagation()}>
-        <Content padding="0">
+        <Content className="vertfluid">
           {/* Header Content Begins */}
           <HeaderItemH
             alignSelf="stretch"

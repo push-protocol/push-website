@@ -514,8 +514,6 @@ const Container = styled.div`
   justify-content: space-between;
 
   // for glassy effect
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1;
 
@@ -538,11 +536,7 @@ const Container = styled.div`
     bottom: 1px;
     right: 1px;
     border-radius: inherit;
-    /* background: #000000; */
-    // background: #09090b;
     background: ${(props) => (props.hideEffect ? "transparent" : "#0d0d0f")};
-    // background: #0A0A0D;
-    // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 

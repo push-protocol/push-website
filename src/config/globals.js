@@ -26,22 +26,22 @@ export const device = {
 export const structure = {
   PADDING: {
     DESKTOP: {
-      TOP: "100px",
-      RIGHT: "48px",
-      BOTTOM: "100px",
-      LEFT: "48px",
+      TOP: 100,
+      RIGHT: 48,
+      BOTTOM: 100,
+      LEFT: 48,
     },
     TABLET: {
-      TOP: "90px",
-      RIGHT: "32px",
-      BOTTOM: "90px",
-      LEFT: "32px",
+      TOP: 90,
+      RIGHT: 32,
+      BOTTOM: 90,
+      LEFT: 32,
     },
     MOBILE: {
-      TOP: "90px",
-      RIGHT: "16px",
-      BOTTOM: "90px",
-      LEFT: "16px",
+      TOP: 90,
+      RIGHT: 16,
+      BOTTOM: 90,
+      LEFT: 16,
     },
   },
 };
@@ -107,16 +107,22 @@ const GLOBALS = {
   },
 
   STRUCTURE: {
-    MAX_WIDTH: `${size.laptopM}px`,
+    MAX_WIDTH: size.laptopM,
     PADDING: {
-      DESKTOP: `${structure.PADDING.DESKTOP.TOP} ${structure.PADDING.DESKTOP.RIGHT} ${structure.PADDING.DESKTOP.BOTTOM} ${structure.PADDING.DESKTOP.LEFT}`,
-      TABLET: `${structure.PADDING.TABLET.TOP} ${structure.PADDING.TABLET.RIGHT} ${structure.PADDING.TABLET.BOTTOM} ${structure.PADDING.TABLET.LEFT}`,
-      MOBILE: `${structure.PADDING.MOBILE.TOP} ${structure.PADDING.MOBILE.RIGHT} ${structure.PADDING.MOBILE.BOTTOM} ${structure.PADDING.MOBILE.LEFT}`,
+      DESKTOP: `${structure.PADDING.DESKTOP.TOP}px ${structure.PADDING.DESKTOP.RIGHT}px ${structure.PADDING.DESKTOP.BOTTOM}px ${structure.PADDING.DESKTOP.LEFT}px`,
+      TABLET: `${structure.PADDING.TABLET.TOP}px ${structure.PADDING.TABLET.RIGHT}px ${structure.PADDING.TABLET.BOTTOM}px ${structure.PADDING.TABLET.LEFT}px`,
+      MOBILE: `${structure.PADDING.MOBILE.TOP}px ${structure.PADDING.MOBILE.RIGHT}px ${structure.PADDING.MOBILE.BOTTOM}px ${structure.PADDING.MOBILE.LEFT}px`,
 
       FLUID: {
-        DESKTOP: `${structure.PADDING.DESKTOP.TOP} 0 ${structure.PADDING.DESKTOP.BOTTOM} 0`,
-        TABLET: `${structure.PADDING.TABLET.TOP} 0 ${structure.PADDING.TABLET.BOTTOM} 0`,
-        MOBILE: `${structure.PADDING.MOBILE.TOP} 0 ${structure.PADDING.MOBILE.BOTTOM} 0`,
+        DESKTOP: `${structure.PADDING.DESKTOP.TOP}px 0 ${structure.PADDING.DESKTOP.BOTTOM}px 0`,
+        TABLET: `${structure.PADDING.TABLET.TOP}px 0 ${structure.PADDING.TABLET.BOTTOM}px 0`,
+        MOBILE: `${structure.PADDING.MOBILE.TOP}px 0 ${structure.PADDING.MOBILE.BOTTOM}px 0`,
+      },
+
+      VERTICAL_FLUID: {
+        DESKTOP: `0 ${structure.PADDING.DESKTOP.RIGHT}px 0 ${structure.PADDING.DESKTOP.LEFT}px`,
+        TABLET: `0 ${structure.PADDING.TABLET.RIGHT}px 0 ${structure.PADDING.TABLET.LEFT}px`,
+        MOBILE: `0 ${structure.PADDING.MOBILE.RIGHT}px 0 ${structure.PADDING.MOBILE.LEFT}px`,
       },
     },
   },
