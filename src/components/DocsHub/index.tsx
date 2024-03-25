@@ -4,49 +4,61 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import Head from '@docusaurus/Head';
-import Link from '@docusaurus/Link';
-import { useLocation } from '@docusaurus/router';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import CodeBlock from '@theme/CodeBlock';
-import Layout from '@theme/Layout';
-import React, { useState } from 'react';
+import Head from "@docusaurus/Head";
+import Link from "@docusaurus/Link";
+import { useLocation } from "@docusaurus/router";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import CodeBlock from "@theme/CodeBlock";
+import Layout from "@theme/Layout";
+import React, { useState } from "react";
 import "./styles.css";
 
 // External Components
-import clsx from 'clsx';
+import clsx from "clsx";
 import styled, { keyframes } from "styled-components";
 
 // Internal Components
-import { A, Button, Content, H1, H2, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
-import Footer from '@site/src/segments/Footer';
+import {
+  A,
+  Button,
+  Content,
+  H1,
+  H2,
+  Image,
+  ItemH,
+  ItemV,
+  Section,
+  Span,
+} from "@site/src/css/SharedStyling";
+import Footer from "@site/src/segments/Footer";
 
 // Import Assets
 import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
-import { FiArrowUpRight } from 'react-icons/fi';
+import { FiArrowUpRight } from "react-icons/fi";
 
 // Internal Configs
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
-import { ITechDocItem, QuickstartItems, SdkItemsList, TechDocItems } from "@site/src/config/DocsHubList";
-import GLOBALS, { device } from '@site/src/config/globals';
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import Spinner, {
+  SPINNER_TYPE,
+} from "@site/src/components/reusables/spinners/SpinnerUnit";
+import {
+  ITechDocItem,
+  QuickstartItems,
+  SdkItemsList,
+  TechDocItems,
+} from "@site/src/config/DocsHubList";
+import GLOBALS, { device } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 
-
-
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
-  
   return (
     <PopularQuickiesCard>
       <PopularQuickiesHeader>
         <PopularQuickiesTitle>{`${title}`}</PopularQuickiesTitle>
       </PopularQuickiesHeader>
-      
+
       <PopularQuickiesContent>
-        <PopularQuickiesCodeBlock
-          language="jsx"
-          showLineNumbers={true}
-        >
+        <PopularQuickiesCodeBlock language="jsx" showLineNumbers={true}>
           {codeblock}
         </PopularQuickiesCodeBlock>
       </PopularQuickiesContent>
@@ -54,28 +66,37 @@ function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   );
 }
 
-function TechDocItem({ title, srcref, alt, description, codeblock, link, target }: ITechDocItem) {
+function TechDocItem({
+  title,
+  srcref,
+  alt,
+  description,
+  codeblock,
+  link,
+  target,
+}: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
   return (
     <TechDocCard>
-    {/* <Link to={link} target='_blank'> */}
+      {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-      onClick={(e) => {e.preventDefault(); target === '_self' ? window.location.href = link : window.open(link, target)}}
-      hoverBackground="transparent"
+        onClick={(e) => {
+          e.preventDefault();
+          target === "_self"
+            ? (window.location.href = link)
+            : window.open(link, target);
+        }}
+        hoverBackground="transparent"
       >
-      
-      <ItemV
-          alignSelf="stretch"
-          margin="0px 8%"
-        >
-          <ItemV
-            padding="0px 0px 30px 0px"
-            alignItems="flex-start"
-          >
+        <ItemV alignSelf="stretch" margin="0px 8%">
+          <ItemV padding="0px 0px 30px 0px" alignItems="flex-start">
             <TechDocIcon>
               <Image
-                src={require(`@site/static/assets/docs/docshub/${srcref}.webp`).default}
+                src={
+                  require(`@site/static/assets/docs/docshub/${srcref}.webp`)
+                    .default
+                }
                 srcSet={`${require(`@site/static/assets/docs/docshub/${srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/docs/docshub/${srcref}@3x.webp`).default} 3x`}
                 alt={`${alt}`}
               />
@@ -83,100 +104,119 @@ function TechDocItem({ title, srcref, alt, description, codeblock, link, target 
             <TechDocTitle>{title}</TechDocTitle>
           </ItemV>
 
-         
-          
-          {codeblock &&
-            <TechDocSwitcher
-              gap="10px"
-            >
-              <TechDocButton 
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                setContent(0);
-              }}
-                background={content == 0 ? 'var(--ifm-color-primary)' : 'var(--ifm-color-background)'}
-                color={content == 0 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
+          {codeblock && (
+            <TechDocSwitcher gap="10px">
+              <TechDocButton
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  setContent(0);
+                }}
+                background={
+                  content == 0
+                    ? "var(--ifm-color-primary)"
+                    : "var(--ifm-color-background)"
+                }
+                color={
+                  content == 0
+                    ? "var(--ifm-color-primary-inverse)"
+                    : "var(--ifm-color-content)"
+                }
               >
                 Overview
               </TechDocButton>
-              <TechDocButton 
+              <TechDocButton
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
                   setContent(1);
                 }}
-                background={content == 1 ? 'var(--ifm-color-primary)' : 'var(--ifm-color-background)'}
-                color={content == 1 ? 'var(--ifm-color-primary-inverse)' : 'var(--ifm-color-content)'}
+                background={
+                  content == 1
+                    ? "var(--ifm-color-primary)"
+                    : "var(--ifm-color-background)"
+                }
+                color={
+                  content == 1
+                    ? "var(--ifm-color-primary-inverse)"
+                    : "var(--ifm-color-content)"
+                }
               >
                 API
-              </TechDocButton> 
+              </TechDocButton>
             </TechDocSwitcher>
-          }
+          )}
 
-          <ItemV
-            alignItems="stretch"
-          >
-            {content == 0 &&
-              <TechDocOverview>{description}</TechDocOverview>
-            }
+          <ItemV alignItems="stretch">
+            {content == 0 && <TechDocOverview>{description}</TechDocOverview>}
           </ItemV>
-          </ItemV>
+        </ItemV>
 
-        {content == 1 && codeblock && 
-        <Div onClick={(e) => {
-          e.stopPropagation();
-          e.preventDefault();
-        }}>
-          <TechDocCodeBlock
-            language="jsx"
-          
-            
+        {content == 1 && codeblock && (
+          <Div
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+            }}
           >
-            {codeblock}
-          </TechDocCodeBlock>
+            <TechDocCodeBlock language="jsx">{codeblock}</TechDocCodeBlock>
           </Div>
-        }
+        )}
       </TechDocContent>
     </TechDocCard>
   );
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
-  
+  const { siteConfig } = useDocusaurusContext();
+
   return (
-    <Layout title={PageMeta.DOCS.pageTitle} description={PageMeta.DOCS.pageDescription} showNavbar={false}>
+    <Layout
+      title={PageMeta.DOCS.pageTitle}
+      description={PageMeta.DOCS.pageDescription}
+      showNavbar={false}
+    >
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/docs" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | Documentation Hub" />
-        <meta property="og:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta property="og:image" content="/assets/previews/docsfbpreview.png" />
+        <meta
+          property="og:description"
+          content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly."
+        />
+        <meta
+          property="og:image"
+          content="/assets/previews/docsfbpreview.png"
+        />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | Documentation Hub" />
-        <meta name="twitter:description" content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly." />
-        <meta name="twitter:image" content="/assets/previews/docstwtpreview.png" />
+        <meta
+          name="twitter:description"
+          content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly."
+        />
+        <meta
+          name="twitter:image"
+          content="/assets/previews/docstwtpreview.png"
+        />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",
             "@type": "Organization",
-            "name": "Push Protocol",
-            "description": "The Communication Protocol of Web3",
-            "url": "https://push.org",
-            "logo": "/assets/website/favicon.ico",
-            "sameAs": [
+            name: "Push Protocol",
+            description: "The Communication Protocol of Web3",
+            url: "https://push.org",
+            logo: "/assets/website/favicon.ico",
+            sameAs: [
               "https://twitter.com/pushprotocol",
-              "https://www.linkedin.com/company/push-protocol/mycompany/"
-            ]
+              "https://www.linkedin.com/company/push-protocol/mycompany/",
+            ],
           })}
         </script>
-        
       </Head>
 
       {/* DOCS HERO SECTION */}
@@ -188,30 +228,27 @@ export default function HomepageFeatures(): JSX.Element {
           right="0"
           height="100px"
           background={GLOBALS.COLORS.BG_DARK}
-        >
-        </ItemV>
-        <Content
-          padding="0px"
-        >
+        ></ItemV>
+        <Content padding="0px">
           <HeroHeader>
-            <ItemV
-              zIndex="1"
-            >
+            <ItemV zIndex="1">
               <H1>Push Documentation Hub</H1>
-              <Span 
+              <Span
                 color={GLOBALS.COLORS.FONT_LIGHT}
                 padding="0 0 60px 0"
                 textAlign="center"
               >
-                Get started with building native web3 communition for your protocol!
+                Get started with building native web3 communition for your
+                protocol!
               </Span>
-              <HeroButton
-                to="#techdocs">
-                <Span padding="0 10px 0 0" fontSize="18px">Get Started</Span>
+              <HeroButton to="#techdocs">
+                <Span padding="0 10px 0 0" fontSize="18px">
+                  Get Started
+                </Span>
                 <FiArrowUpRight size={16} />
               </HeroButton>
             </ItemV>
-            
+
             <ItemV
               position="absolute"
               bottom="-25%"
@@ -232,16 +269,12 @@ export default function HomepageFeatures(): JSX.Element {
             </ItemV>
           </HeroHeader>
         </Content>
-        
-      
       </DocsHeroSection>
 
       {/* QUICKSTART SECTION */}
       <HomepageSection alignItems="flex-start">
         <FluidContent>
-          <HomepageSubHeader>
-            Popular Quickstart
-          </HomepageSubHeader>
+          <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
 
           <PopularQuickiesList>
             {QuickstartItems.map((item, idx) => {
@@ -250,7 +283,7 @@ export default function HomepageFeatures(): JSX.Element {
                   <PopularQuickiesHeader>
                     <PopularQuickiesTitle>{`${item.title}`}</PopularQuickiesTitle>
                   </PopularQuickiesHeader>
-                  
+
                   <PopularQuickiesContent>
                     <PopularQuickiesCodeBlock
                       language="jsx"
@@ -266,7 +299,6 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-
       {/* TECH DOCS SECTION */}
       <HomepageSection>
         <FluidContent>
@@ -281,19 +313,16 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-    
       {/* SDK SECTION */}
       <HomepageSection>
         <FluidContent>
           <ItemH justifyContent="flex-start">
-            <HomepageSubHeader>
-              Push SDK
-            </HomepageSubHeader>
-            <Link to='https://www.npmjs.com/package/@pushprotocol/restapi' target='_blank'>
-              <Span
-                fontSize="18px"
-                margin="0 5px 0 10px"
-              >
+            <HomepageSubHeader>Push SDK</HomepageSubHeader>
+            <Link
+              to="https://www.npmjs.com/package/@pushprotocol/restapi"
+              target="_blank"
+            >
+              <Span fontSize="18px" margin="0 5px 0 10px">
                 Explore SDK
               </Span>
               <Span>
@@ -301,18 +330,12 @@ export default function HomepageFeatures(): JSX.Element {
               </Span>
             </Link>
           </ItemH>
-            
-          
+
           <PushSdkCardList justifyContent="flex-start">
             {SdkItemsList.map((item, idx) => (
               <PushSdkCard>
-                <PushSdkContent
-                  href={item.link}
-                  target="_blank"
-                >
-                  <PushSdkContentTitle>
-                    {item.title}
-                  </PushSdkContentTitle>
+                <PushSdkContent href={item.link} target="_blank">
+                  <PushSdkContentTitle>{item.title}</PushSdkContentTitle>
                   <PushSdkContentArrow>
                     <FiArrowUpRight size={24} />
                   </PushSdkContentArrow>
@@ -320,7 +343,7 @@ export default function HomepageFeatures(): JSX.Element {
               </PushSdkCard>
             ))}
           </PushSdkCardList>
-          
+
           {/* <div className='Faqs-main-container'>
             <div className='sub-container'>
               <span className="hero_home_Faq_header">
@@ -349,16 +372,16 @@ export default function HomepageFeatures(): JSX.Element {
 const DocsHeroSection = styled(Section)`
   background: ${GLOBALS.COLORS.BG_DARK};
 
-  padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP}`};
+  padding: ${GLOBALS.STRUCTURE.PADDING.DESKTOP};
   padding-bottom: 0px;
 
   @media ${device.laptop} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}`};
+    padding: ${GLOBALS.STRUCTURE.PADDING.TABLET};
     padding-bottom: 0px;
   }
 
   @media ${device.mobileM} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding: ${GLOBALS.STRUCTURE.PADDING.MOBILE};
     padding-bottom: 0px;
   }
 `;
@@ -399,7 +422,7 @@ const pulseStaticAnim = keyframes`
     opacity: 0.25;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
   }
-`
+`;
 
 const PulseStatic = styled.div`
   width: 40px;
@@ -409,7 +432,7 @@ const PulseStatic = styled.div`
   position: absolute;
   animation: ${pulseStaticAnim} 5s ease-out forwards;
   z-index: 2;
-`
+`;
 
 const Pulse = styled.div`
   width: 40px;
@@ -417,14 +440,14 @@ const Pulse = styled.div`
   background: var(--ifm-color-primary-preferred);
   border-radius: 50%;
   position: relative;
-`
+`;
 
 const pulsateAnim = keyframes`
   100% { 
     opacity: 0;
     transform: scale(12);
   }
-`
+`;
 
 const Pulsate = styled.span`
   position: absolute;
@@ -434,8 +457,8 @@ const Pulsate = styled.span`
   border-radius: inherit;
   opacity: 0.8;
   animation: ${pulsateAnim} 6s ease-out infinite;
-  animation-delay: calc(1s * ${props => (props.stagger ? props.stagger : 1)});
-`
+  animation-delay: calc(1s * ${(props) => (props.stagger ? props.stagger : 1)});
+`;
 
 const FluidContent = styled(Content)`
   align-self: center;
@@ -448,7 +471,7 @@ const FluidContent = styled(Content)`
     width: 100%;
     box-sizing: border-box;
   }
-`
+`;
 
 const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
@@ -488,7 +511,7 @@ const PopularQuickiesList = styled(ItemH)`
 
 const PopularQuickiesCard = styled(ItemV)`
   margin: 0px;
-  align-self: flex-start; 
+  align-self: flex-start;
   flex: 0 0 calc(50% - 21.33px);
   min-width: 280px;
   max-width: calc(50% - 21.33px);
@@ -497,26 +520,26 @@ const PopularQuickiesCard = styled(ItemV)`
 
   /* WebKit browsers (Chrome, Safari) */
   *::-webkit-scrollbar {
-      width: 6px;
+    width: 6px;
   }
-  
+
   *::-webkit-scrollbar-thumb {
-      background: #CB3FAA;
-      border-radius: 6px;
+    background: #cb3faa;
+    border-radius: 6px;
   }
-  
+
   *::-webkit-scrollbar-track {
-      background: #f1f1f1;
+    background: #f1f1f1;
   }
-  
+
   *::-webkit-scrollbar-button {
-      display: none !important;
+    display: none !important;
   }
-  
+
   /* Firefox */
   * {
-      scrollbar-color: #CB3FAA #f1f1f1;
-      scrollbar-width: thin;
+    scrollbar-color: #cb3faa #f1f1f1;
+    scrollbar-width: thin;
   }
 
   box-sizing: border-box;
@@ -548,13 +571,17 @@ const PopularQuickiesHeader = styled(ItemH)`
     left: 0.5em;
     border-radius: 100%;
     background: #4a4a4a;
-    box-shadow: 1em 0em #4a4a4a, 2em 0em #4a4a4a;
+    box-shadow:
+      1em 0em #4a4a4a,
+      2em 0em #4a4a4a;
     transition: all 0.3s ease-in-out;
   }
 
   &:hover:before {
     background: rgba(255, 0, 0, 0.8);
-    box-shadow: 1em 0em rgba(255, 255, 0, 0.8), 2em 0em rgba(0, 255, 0, 0.8);
+    box-shadow:
+      1em 0em rgba(255, 255, 0, 0.8),
+      2em 0em rgba(0, 255, 0, 0.8);
   }
 `;
 
@@ -582,11 +609,11 @@ const TechDocCardList = styled(ItemH)`
   gap: 32px;
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
 const TechDocCard = styled(ItemV)`
   margin: 0px;
-  align-self: flex-start; 
+  align-self: flex-start;
   flex: 0 0 calc(33.33% - 21.33px);
   min-width: 280px;
   max-width: calc(33.33% - 21.33px);
@@ -611,16 +638,17 @@ const TechDocContent = styled.div`
   flex-direction: column;
   max-width: 100%;
   cursor: pointer;
-  
+
   & svg path {
     stroke: var(--ifm-color-primary-text);
   }
-  
+
   &:hover {
     border: 1px solid var(--ifm-color-primary-preferred);
 
     & ${Image} {
-      filter: invert(36%) sepia(21%) saturate(4402%) hue-rotate(291deg) brightness(89%) contrast(94%);
+      filter: invert(36%) sepia(21%) saturate(4402%) hue-rotate(291deg)
+        brightness(89%) contrast(94%);
     }
   }
 `;
@@ -647,7 +675,6 @@ const TechDocButton = styled(Button)`
   font-weight: 600;
 `;
 
-
 const TechDocOverview = styled(Span)`
   font-family: var(--ifm-font-family-base);
   font-weight: 400;
@@ -668,26 +695,26 @@ const TechDocCodeBlock = styled(CodeBlock)`
 
   /* WebKit browsers (Chrome, Safari) */
   *::-webkit-scrollbar {
-      width: 6px;
+    width: 6px;
   }
-  
+
   *::-webkit-scrollbar-thumb {
-      background: #CB3FAA;
-      border-radius: 6px;
+    background: #cb3faa;
+    border-radius: 6px;
   }
-  
+
   *::-webkit-scrollbar-track {
-      background: #f1f1f1;
+    background: #f1f1f1;
   }
-  
+
   *::-webkit-scrollbar-button {
-      display: none !important;
+    display: none !important;
   }
-  
+
   /* Firefox */
   * {
-      scrollbar-color: #CB3FAA #f1f1f1;
-      scrollbar-width: thin;
+    scrollbar-color: #cb3faa #f1f1f1;
+    scrollbar-width: thin;
   }
 `;
 
@@ -696,10 +723,10 @@ const PushSdkCardList = styled(ItemH)`
   margin-top: 30px;
   margin-bottom: 70px;
   align-items: center;
-`
+`;
 
 const PushSdkCard = styled(ItemH)`
-  align-self: flex-start; 
+  align-self: flex-start;
   flex: 0 0 calc(33.33% - 21.33px);
   min-width: 250px;
   max-width: calc(33.33% - 21.33px);
@@ -708,7 +735,7 @@ const PushSdkCard = styled(ItemH)`
     flex: 1;
     max-width: initial;
   }
-`
+`;
 
 const PushSdkContent = styled(A)`
   color: var(--ifm-color-primary-text);
@@ -730,13 +757,13 @@ const PushSdkContent = styled(A)`
   }
 
   &:hover {
-    border: 1px solid var(--ifm-color-primary-preferred);;
+    border: 1px solid var(--ifm-color-primary-preferred);
 
     & svg {
-      color: var(--ifm-color-primary-preferred);;
+      color: var(--ifm-color-primary-preferred);
     }
   }
-`
+`;
 
 const PushSdkContentTitle = styled(Span)`
   font-family: var(--ifm-font-family-base);
@@ -746,11 +773,10 @@ const PushSdkContentTitle = styled(Span)`
   font-weight: bold;
   letter-spacing: -0.03em;
   flex: 1;
-`
+`;
 
 const PushSdkContentArrow = styled(Span)`
   display: flex;
   align-items: center;
-`
-const Div = styled.div`
 `;
+const Div = styled.div``;
