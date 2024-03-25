@@ -50,7 +50,7 @@ export const Section = styled.section`
   flex: ${(props) => props.flex || "1"};
   flex-direction: ${(props) => props.flexDirection || "row"};
   justify-content: ${(props) => props.justifyContent || "center"};
-  width: ${(props) => props.width || "auto"};
+  width: ${(props) => props.width || "100%"};
   margin: ${(props) => props.margin || "0px"};
   min-height: ${(props) => props.minHeight || "auto"};
   overflow: ${(props) => props.overflow || "initial"};
@@ -73,6 +73,7 @@ export const Content = styled.div`
   box-sizing: ${(props) => props.boxSizing || "border-box"};
   margin: ${(props) => props.margin || "initial"};
   padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.DESKTOP};
+  overflow: ${(props) => props.overflow || "hidden"};
 
   &.fluid {
     padding: ${(props) =>

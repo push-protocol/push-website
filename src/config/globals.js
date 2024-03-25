@@ -73,15 +73,15 @@ const GLOBALS = {
       },
       TABLET: {
         TOP: 24,
-        LEFT: 24,
-        BOTTOM: 24,
-        RIGHT: 24,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
       },
       MOBILE: {
         TOP: 8,
-        LEFT: 8,
-        BOTTOM: 8,
-        RIGHT: 8,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
       },
     },
     OUTER_PADDING: {

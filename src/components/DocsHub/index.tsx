@@ -372,16 +372,16 @@ export default function HomepageFeatures(): JSX.Element {
 const DocsHeroSection = styled(Section)`
   background: ${GLOBALS.COLORS.BG_DARK};
 
-  padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.DESKTOP}`};
+  padding: ${GLOBALS.STRUCTURE.PADDING.DESKTOP};
   padding-bottom: 0px;
 
   @media ${device.laptop} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET}`};
+    padding: ${GLOBALS.STRUCTURE.PADDING.TABLET};
     padding-bottom: 0px;
   }
 
   @media ${device.mobileM} {
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding: ${GLOBALS.STRUCTURE.PADDING.MOBILE};
     padding-bottom: 0px;
   }
 `;
