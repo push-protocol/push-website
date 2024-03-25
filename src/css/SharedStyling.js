@@ -62,6 +62,7 @@ export const Content = styled.div`
   display: ${(props) => props.display || "flex"};
   flex-direction: ${(props) => props.flexDirection || "column"};
   position: ${(props) => props.position || "relative"};
+
   flex: ${(props) => props.flex || "1"};
   align-self: ${(props) => props.alignSelf || "stretch"};
   width: ${(props) => props.width || "auto"};

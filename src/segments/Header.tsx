@@ -719,7 +719,6 @@ const PushLogoBlackContainer = styled(ItemV)`
   }
 `;
 
-// const StyledHeader = styled.header`
 const StyledHeader = styled.header`
   font-family: "Strawford";
 
