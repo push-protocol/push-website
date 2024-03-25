@@ -2,28 +2,37 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from 'react';
+import React from "react";
 
 // External Components
-import { useTranslation } from 'react-i18next';
-import { BsArrowUpRight } from 'react-icons/bs';
-import styled from 'styled-components';
+import { useTranslation } from "react-i18next";
+import { BsArrowUpRight } from "react-icons/bs";
+import styled from "styled-components";
 
 // Internal Components
-import { A, Content, Image, ItemH, ItemV, LinkTo, Section, Span } from '@site/src/css/SharedStyling';
-import PushBellSVG from '@site/static/assets/pushBell.svg';
-import FooterFollowusFigure from '@site/static/assets/website/illustrations/footerfollowus.svg';
-import FooterJoinusFigure from '@site/static/assets/website/illustrations/footerjoinus.svg';
-import AndroidSVG from '@site/static/assets/website/shared/android.svg';
-import AppleSVG from '@site/static/assets/website/shared/apple.svg';
-import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
-import GithubSVG from '@site/static/assets/website/shared/github.svg';
-import TelegramSVG from '@site/static/assets/website/shared/telegram.svg';
-import TwitterSVG from '@site/static/assets/website/shared/twitter.svg';
-import { MailingSignup } from '../components/MailingSignup/MailingSignup';
+import {
+  A,
+  Content,
+  Image,
+  ItemH,
+  ItemV,
+  LinkTo,
+  Section,
+  Span,
+} from "@site/src/css/SharedStyling";
+import PushBellSVG from "@site/static/assets/pushBell.svg";
+import FooterFollowusFigure from "@site/static/assets/website/illustrations/footerfollowus.svg";
+import FooterJoinusFigure from "@site/static/assets/website/illustrations/footerjoinus.svg";
+import AndroidSVG from "@site/static/assets/website/shared/android.svg";
+import AppleSVG from "@site/static/assets/website/shared/apple.svg";
+import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
+import GithubSVG from "@site/static/assets/website/shared/github.svg";
+import TelegramSVG from "@site/static/assets/website/shared/telegram.svg";
+import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
+import { MailingSignup } from "../components/MailingSignup/MailingSignup";
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import { device } from "@site/src/config/globals";
 
 function Footer() {
   // Internationalization
@@ -35,24 +44,16 @@ function Footer() {
 
   return (
     <StyledFooter>
-      <FooterSection
-        id="footer"
-        background="#0D0D0F"
-        padding="70px 0 0 0"
-      >
-        <Content
-          className="contentBox"
-          padding="40px 0px"
-          alignSelf="center"
-        >
+      <FooterSection id="footer" background="#0D0D0F" padding="70px 0 0 0">
+        <Content className="contentBox" padding="40px 0px" alignSelf="center">
           {/* Information Cards */}
 
           <ItemH gap="32px">
             <InfoCard>
               <FooterJoinusFigure
                 className="figureSvg"
-                alt={t('footer.info-section.positions-card.image-alt')}
-                title={t('footer.info-section.positions-card.image-title')}
+                alt={t("footer.info-section.positions-card.image-alt")}
+                title={t("footer.info-section.positions-card.image-title")}
               />
 
               <InfoDetails>
@@ -62,14 +63,14 @@ function Footer() {
                   fontSize="24px"
                   lineHeight="142%"
                 >
-                  {t('footer.info-section.positions-card.text')}
+                  {t("footer.info-section.positions-card.text")}
                 </Span>
                 <FooterAnchorPrimary
                   href="https://angel.co/company/push-protocol"
-                  title={t('footer.info-section.positions-card.link-text')}
+                  title={t("footer.info-section.positions-card.link-text")}
                   target="_blank"
                 >
-                  {t('footer.info-section.positions-card.link-text')}&nbsp;
+                  {t("footer.info-section.positions-card.link-text")}&nbsp;
                   <BsArrowUpRight className="anchorSVGlink" />
                 </FooterAnchorPrimary>
               </InfoDetails>
@@ -78,8 +79,8 @@ function Footer() {
             <InfoCard>
               <FooterFollowusFigure
                 className="figureSvg"
-                alt={t('footer.info-section.docs-card.image-alt')}
-                title={t('footer.info-section.docs-card.image-title')}
+                alt={t("footer.info-section.docs-card.image-alt")}
+                title={t("footer.info-section.docs-card.image-title")}
               />
 
               <InfoDetails>
@@ -89,13 +90,13 @@ function Footer() {
                   fontSize="24px"
                   lineHeight="142%"
                 >
-                  {t('footer.info-section.docs-card.text')}
+                  {t("footer.info-section.docs-card.text")}
                 </Span>
                 <FooterAnchorPrimary
                   href="/docs"
-                  title={t('footer.info-section.docs-card.link-text')}
+                  title={t("footer.info-section.docs-card.link-text")}
                 >
-                  {t('footer.info-section.docs-card.link-text')}&nbsp;
+                  {t("footer.info-section.docs-card.link-text")}&nbsp;
                   <BsArrowUpRight className="anchorSVGlink" />
                 </FooterAnchorPrimary>
               </InfoDetails>
@@ -103,190 +104,198 @@ function Footer() {
           </ItemH>
 
           {/* footer links */}
-          <ItemH
-            gap="32px"
-            margin="120px 0 0 0"
-          >
+          <ItemH gap="32px" margin="120px 0 0 0">
             <FooterContainer>
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    fontWeight="400"
-                    fontSize="18px"
-                    lineHeight="142%"
-                  >
-                    {t('footer.links-section.company-column.title')}
+                  <Span fontWeight="400" fontSize="18px" lineHeight="142%">
+                    {t("footer.links-section.company-column.title")}
                   </Span>
 
                   <FooterAnchorSecondary
                     as={LinkTo}
                     to="/frens"
-                    title={t('footer.links-section.company-column.push-ecosystem-link')}
+                    title={t(
+                      "footer.links-section.company-column.push-ecosystem-link",
+                    )}
                     onClick={scrollToTop}
                   >
-                    {t('footer.links-section.company-column.push-ecosystem-link')}
+                    {t(
+                      "footer.links-section.company-column.push-ecosystem-link",
+                    )}
                   </FooterAnchorSecondary>
                   <FooterAnchorSecondary
                     href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
-                    title={t('footer.links-section.company-column.media-kit-link')}
+                    title={t(
+                      "footer.links-section.company-column.media-kit-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.company-column.media-kit-link')}
+                    {t("footer.links-section.company-column.media-kit-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     as={LinkTo}
                     to="/tos"
-                    title={t('footer.links-section.company-column.terms-link')}
+                    title={t("footer.links-section.company-column.terms-link")}
                     onClick={scrollToTop}
                   >
-                    {t('footer.links-section.company-column.terms-link')}
+                    {t("footer.links-section.company-column.terms-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     as={LinkTo}
                     to="/privacy"
-                    title={t('footer.links-section.company-column.privacy-link')}
+                    title={t(
+                      "footer.links-section.company-column.privacy-link",
+                    )}
                     onClick={scrollToTop}
                   >
-                    {t('footer.links-section.company-column.privacy-link')}
+                    {t("footer.links-section.company-column.privacy-link")}
                   </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    fontWeight="400"
-                    fontSize="18px"
-                    lineHeight="142%"
-                  >
-                    {t('footer.links-section.governance-column.title')}
+                  <Span fontWeight="400" fontSize="18px" lineHeight="142%">
+                    {t("footer.links-section.governance-column.title")}
                   </Span>
 
                   <FooterAnchorSecondary
                     href="https://gov.push.org"
-                    title={t('footer.links-section.governance-column.push-governance-link')}
+                    title={t(
+                      "footer.links-section.governance-column.push-governance-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.governance-column.push-governance-link')}
+                    {t(
+                      "footer.links-section.governance-column.push-governance-link",
+                    )}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="https://push.org/docs/dao"
-                    title={t('footer.links-section.governance-column.guides-link')}
+                    title={t(
+                      "footer.links-section.governance-column.guides-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.governance-column.guides-link')}
+                    {t("footer.links-section.governance-column.guides-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="https://gov.push.org/top?period=yearly"
-                    title={t('footer.links-section.governance-column.forum-link')}
+                    title={t(
+                      "footer.links-section.governance-column.forum-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.governance-column.forum-link')}
+                    {t("footer.links-section.governance-column.forum-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                    title={t('footer.links-section.governance-column.grants-link')}
+                    title={t(
+                      "footer.links-section.governance-column.grants-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.governance-column.grants-link')}
+                    {t("footer.links-section.governance-column.grants-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="https://snapshot.org/#/epns.eth"
-                    title={t('footer.links-section.governance-column.snapshot-link')}
+                    title={t(
+                      "footer.links-section.governance-column.snapshot-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.governance-column.snapshot-link')}
+                    {t("footer.links-section.governance-column.snapshot-link")}
                   </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    fontWeight="400"
-                    fontSize="18px"
-                    lineHeight="142%"
-                  >
-                    {t('footer.links-section.resources-column.title')}
+                  <Span fontWeight="400" fontSize="18px" lineHeight="142%">
+                    {t("footer.links-section.resources-column.title")}
                   </Span>
                   <FooterAnchorSecondary
                     href="/blog"
-                    title={t('footer.links-section.resources-column.blog-link')}
+                    title={t("footer.links-section.resources-column.blog-link")}
                     target="_blank"
                   >
-                    {t('footer.links-section.resources-column.blog-link')}
+                    {t("footer.links-section.resources-column.blog-link")}
                   </FooterAnchorSecondary>
-                  
+
                   <FooterAnchorSecondary
                     href="https://github.com/ethereum-push-notification-service"
-                    title={t('footer.links-section.resources-column.github-link')}
+                    title={t(
+                      "footer.links-section.resources-column.github-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.resources-column.github-link')}
+                    {t("footer.links-section.resources-column.github-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="https://discord.gg/pushprotocol"
-                    title={t('footer.links-section.resources-column.discord-link')}
+                    title={t(
+                      "footer.links-section.resources-column.discord-link",
+                    )}
                     target="_blank"
                   >
-                    {t('footer.links-section.resources-column.discord-link')}
+                    {t("footer.links-section.resources-column.discord-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     href="/docs"
-                    title={t('footer.links-section.resources-column.dev-guides-link')}
+                    title={t(
+                      "footer.links-section.resources-column.dev-guides-link",
+                    )}
                   >
-                    {t('footer.links-section.resources-column.dev-guides-link')}
+                    {t("footer.links-section.resources-column.dev-guides-link")}
                   </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    fontWeight="400"
-                    fontSize="18px"
-                    lineHeight="142%"
-                  >
-                    {t('footer.links-section.subscribe-column.title')}
+                  <Span fontWeight="400" fontSize="18px" lineHeight="142%">
+                    {t("footer.links-section.subscribe-column.title")}
                   </Span>
 
                   <FooterAnchorSecondary
                     href="mailto:support@push.org"
                     target="_blank"
                   >
-                    {t('footer.links-section.subscribe-column.contact-us-link')}
+                    {t("footer.links-section.subscribe-column.contact-us-link")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     as={LinkTo}
                     to="/faq"
-                    title={t('footer.links-section.subscribe-column.faq-link')}
+                    title={t("footer.links-section.subscribe-column.faq-link")}
                     onClick={scrollToTop}
                   >
-                    {t('footer.links-section.subscribe-column.faq-link')}
+                    {t("footer.links-section.subscribe-column.faq-link")}
                   </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span
-                    fontWeight="400"
-                    fontSize="18px"
-                    lineHeight="142%"
-                  >
-                    {t('footer.links-section.support-column.title')}
+                  <Span fontWeight="400" fontSize="18px" lineHeight="142%">
+                    {t("footer.links-section.support-column.title")}
                   </Span>
 
-                  <MailingSignup showArrow={true} background='#0000' borderColor='#2a2a39' inputWidth='90%'/>
+                  <MailingSignup
+                    showArrow={true}
+                    background="#0000"
+                    borderColor="#2a2a39"
+                    inputWidth="90%"
+                  />
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>
@@ -307,7 +316,11 @@ function Footer() {
                 onClick={scrollToTop}
               >
                 <Image
-                  src={require(`@site/static/assets/website/segments/PushLogoTextWhite.webp`).default}
+                  src={
+                    require(
+                      `@site/static/assets/website/segments/PushLogoTextWhite.webp`,
+                    ).default
+                  }
                   srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextWhite@3x.webp`).default} 3x`}
                   alt={`Push Logo`}
                   width="auto"
@@ -321,20 +334,14 @@ function Footer() {
                 title="Push Github"
                 target="_blank"
               >
-                <GithubSVG
-                  width={22}
-                  height={22}
-                />
+                <GithubSVG width={22} height={22} />
               </FooterAnchorIcon>
               <FooterAnchorIcon
                 href="https://twitter.com/pushprotocol"
                 title="Push Twitter"
                 target="_blank"
               >
-                <TwitterSVG
-                  width={22}
-                  height={22}
-                />
+                <TwitterSVG width={22} height={22} />
               </FooterAnchorIcon>
 
               <FooterAnchorIcon
@@ -342,20 +349,14 @@ function Footer() {
                 title="Push Telegram"
                 target="_blank"
               >
-                <TelegramSVG
-                  width={22}
-                  height={22}
-                />
+                <TelegramSVG width={22} height={22} />
               </FooterAnchorIcon>
               <FooterAnchorIcon
                 href="https://discord.gg/pushprotocol"
                 title="Push Discord"
                 target="_blank"
               >
-                <DiscordSVG
-                  width={22}
-                  height={22}
-                />
+                <DiscordSVG width={22} height={22} />
               </FooterAnchorIcon>
             </ItemH>
 
@@ -370,10 +371,7 @@ function Footer() {
                 title="Push iOS app"
                 target="_blank"
               >
-                <AppleSVG
-                  width={22}
-                  height={22}
-                />
+                <AppleSVG width={22} height={22} />
               </FooterAnchorIcon>
 
               <FooterAnchorIcon
@@ -381,10 +379,7 @@ function Footer() {
                 title="Push Android app"
                 target="_blank"
               >
-                <AndroidSVG
-                  width={22}
-                  height={22}
-                />
+                <AndroidSVG width={22} height={22} />
               </FooterAnchorIcon>
 
               <FooterAnchorIcon
@@ -392,10 +387,7 @@ function Footer() {
                 title="Push Dapp"
                 target="_blank"
               >
-                <PushBellSVG
-                  width={22}
-                  height={22}
-                />
+                <PushBellSVG width={22} height={22} />
               </FooterAnchorIcon>
             </ItemH>
           </SocialLinks>
@@ -406,7 +398,7 @@ function Footer() {
 }
 
 const StyledFooter = styled.footer`
-  font-family: 'Strawford';
+  font-family: "Strawford";
   display: flex;
   position: relative;
 `;
@@ -506,7 +498,7 @@ const SocialLinks = styled(ItemH)`
   &:before {
     position: absolute;
     z-index: 1;
-    content: '';
+    content: "";
     top: -24px;
     left: 0;
     height: 1px;
@@ -564,6 +556,10 @@ const FooterAnchorSecondary = styled(A)`
   justify-content: flex-start;
   background: transparent;
   border-radius: 0;
+
+  &:hover {
+    color: #dd44b9 !important;
+  }
 
   &:before {
     background: transparent;
