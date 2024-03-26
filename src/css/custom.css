@@ -45,6 +45,9 @@
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
   --ifm-color-update-indicator: #575d73;
+  --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
+  --ifm-navbar-search-bg: rgba(0, 0, 0, 0.10);
+  --ifm-search-text-color: #bbbcd0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -79,6 +82,12 @@
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
   --ifm-color-update-indicator: #575d73;
+  --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
+  --ifm-navbar-search-bg: rgba(255, 255, 255, 0.10);
+  --ifm-search-text-color: #9b9cab;
+
+
+
 }
 
 /* ----- */
@@ -229,6 +238,19 @@ a:hover {
   box-shadow: none;
 }
 
+.navbar__link {
+  color: #6C6C6C !important;
+  padding: 4px 3px;
+}
+
+.navbar__items--right {
+  gap: 32px;
+}
+
+.navbarSearchContainer_src-theme-Navbar-Search-styles-module {
+  padding: 0px !important;
+}
+
 @media (max-width: 1024px) {
   .navbar--fixed-top {
     width: 100%;
@@ -236,10 +258,19 @@ a:hover {
 }
 
 .navbar__inner {
-  background-color: rgba(246, 248, 248, 0.75) !important;
+  /* background-color: rgba(246, 248, 248, 0.75) !important;
   border-radius: 32px !important;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); */
+  border-radius: 24px;
+  border: var(--ifm-docs-navbar-border);
+  /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
+  /* background: rgba(13, 13, 15, 0.80) !important; */
+  background: transparent;
   padding: 10px 20px;
+}
+
+.navbar__brand {
+  margin-right: 0rem !important;
 }
 
 [data-theme="dark"] .navbar__inner {
@@ -269,6 +300,11 @@ a:hover {
 .theme-doc-sidebar-container {
   border-right: 0px !important;
 }
+
+/* .DocSearch-Button-Container {
+    padding: 4px;
+    align-items: flex-start !important;
+} */
 
 /* ----- */
 /* Article CSS Overrids */
@@ -623,20 +659,21 @@ li {
   .DocSearch-Button {
     min-width: 253px !important;
     border-radius: 8px !important;
-    background-color: #ffffff;
+    background-color: var(--ifm-navbar-search-bg);
   }
 
   .DocSearch-Button .DocSearch-Search-Icon {
     width: 15px !important;
     height: 15px !important;
+    color: var(--ifm-search-text-color) !important;
   }
 
   .DocSearch-Button-Placeholder {
-    font-family: var(--ifm-font-family-base) !important;
+    font-family: var(--ifm-font-family-homepage) !important;
     font-weight: 500 !important;
-    font-size: 16px !important;
-    color: #3a3d47 !important;
-    letter-spacing: -0.03em !important;
+    font-size: 15px !important;
+    color: var(--ifm-search-text-color) !important;
+    letter-spacing: normal !important;
   }
 
   .DocSearch-Button-Key {

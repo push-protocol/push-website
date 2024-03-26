@@ -90,7 +90,6 @@ function Header() {
         [menuIndex]: !oldMap[menuIndex],
       };
     });
-    // }
   };
 
   useEffect(() => {

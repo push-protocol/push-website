@@ -39,8 +39,8 @@ const config = {
   },
 
   // Themes
-  themes: ['@docusaurus/theme-mermaid'],
-  
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -148,14 +148,19 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "/assets/docs/PushLogoTextDark.svg",
+          src: "/assets/website/docshub/PushLogo@3x.png",
           srcDark: "/assets/docs/PushLogoTextWhite.svg",
         },
         items: [
           {
             to: "/docs/",
+            position: "left",
+            label: "Docs",
+          },
+          {
+            to: "https://github.com/ethereum-push-notification-service/",
+            label: "GitHub",
             position: "right",
-            label: "Docs Hub",
           },
           { to: "/blog", label: "Blog", position: "right" },
           {
@@ -165,12 +170,7 @@ const config = {
           },
           {
             to: "https://app.push.org/",
-            label: "App",
-            position: "right",
-          },
-          {
-            href: "https://github.com/ethereum-push-notification-service/",
-            label: "GitHub",
+            label: "Launch App",
             position: "right",
           },
         ],

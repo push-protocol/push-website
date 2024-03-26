@@ -119,4 +119,30 @@ export const HeaderList = {
       id: "tokenomics",
     },
   ],
+  docshub: [
+    {
+      title: "Notification Docs",
+      subtitle: "Web3 native notification alerts",
+      srcrefoff: "inbox-icon-off",
+      id: "notification",
+    },
+    {
+      title: "Chat Docs",
+      subtitle: "Web3 native chat protocol with groups",
+      srcrefoff: "chat-icon-off",
+      id: "chat",
+    },
+    {
+      title: "Video Docs",
+      subtitle: "Decentralized video calls",
+      srcrefoff: "video-icon-off",
+      id: "otherfeatures",
+    },
+    {
+      title: "Spaces Docs",
+      subtitle: "Decentralized audio streaming",
+      srcrefoff: "spaces-icon-off",
+      id: "otherfeatures",
+    },
+  ]
 };
