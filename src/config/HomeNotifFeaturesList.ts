@@ -4,7 +4,18 @@ export const NotifFeaturesList = {
       config: {
         id: "native",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box1.title",
@@ -25,7 +36,18 @@ export const NotifFeaturesList = {
       config: {
         id: "cross-chain",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box2.title",
@@ -46,8 +68,18 @@ export const NotifFeaturesList = {
       config: {
         id: "custom-notif",
         padding: "24px",
-        hideonmobile: false,
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box3.title",
@@ -69,9 +101,19 @@ export const NotifFeaturesList = {
     {
       config: {
         id: "lightweight",
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         link: {
           url: "https://push.org",
           linktitle: "Lightweight Code with Rapid API Integration",
@@ -106,6 +148,12 @@ export const NotifFeaturesList = {
       config: {
         id: "interoperable",
         height: "202px",
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
         bg: require("@site/static/assets/website/home/notifs/interoperable.webp")
           .default,
@@ -113,7 +161,12 @@ export const NotifFeaturesList = {
         bgvideowebm: true,
         bgtitle: "home.notification-section.box5.bgtitle",
         bgsize: "cover",
-        hideonmobile: true,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box5.title",
@@ -126,7 +179,18 @@ export const NotifFeaturesList = {
       config: {
         id: "anti-spam",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box6.title",
@@ -141,12 +205,22 @@ export const NotifFeaturesList = {
     {
       config: {
         id: "snap",
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
         padding: "24px",
         bg: require("@site/static/assets/website/home/notifs/snap-bg.png")
           .default,
         bgvideowebm: true,
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box7.title",
@@ -179,7 +253,18 @@ export const NotifFeaturesList = {
         id: "increase",
         height: "260px",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box8.title",

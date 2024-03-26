@@ -3488,10 +3488,10 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.25.tgz#f077fdc0b5d0078d30893396ff4827a13f99e817"
   integrity sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==
 
-"@pushprotocol/restapi@0.0.1-alpha.71":
-  version "0.0.1-alpha.71"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/restapi/-/restapi-0.0.1-alpha.71.tgz#c6a8b48e68e04089959f204d32293322577b6fde"
-  integrity sha512-mJBbIDu2rEAUYa2mUDf/egdvxzKJMgIFr/uto3sMg8pOnVwAIKwJpu6X98ejjF536UkFVPiRelq3hE3TGL20yw==
+"@pushprotocol/restapi@0.0.1-alpha.75":
+  version "0.0.1-alpha.75"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/restapi/-/restapi-0.0.1-alpha.75.tgz#802e42393e149d882864c9afa969edcb15bc18cc"
+  integrity sha512-2QY3GPTPJi9hhrAfeP+fiJK3yHl30QTGBlaW/zhhD5Chx1liNPErwesBxFhey7KMZbpxaLNYiDcKVlhYEnNmzw==
   dependencies:
     "@metamask/eth-sig-util" "^5.0.2"
     axios "^0.27.2"
@@ -3518,10 +3518,10 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@1.3.1-alpha.7":
-  version "1.3.1-alpha.7"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.3.1-alpha.7.tgz#8fc3097bd32b5c22a48f9d41912570d2d5c4bd33"
-  integrity sha512-1kR+TOUli0RK03lrGmgl7P5NV29AKm4WvMjARSuvr2Zgpgfcbs1iHVOu5he0yCK3d9FVkhVC7HA2qHjPJlj2TQ==
+"@pushprotocol/uiweb@1.3.1-alpha.11":
+  version "1.3.1-alpha.11"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.3.1-alpha.11.tgz#1539d7b85bfcc6102adc60778ef7a320aaf382de"
+  integrity sha512-uLXS3bvkb6drU4yUz7anKzHGbS46ocDyov/pyUjkVsq3NXg0mEr0+rmRWu6ozd2n+7GQoCbpBwK+NPRj34lXKg==
   dependencies:
     "@livekit/components-react" "^1.2.2"
     "@livekit/components-styles" "^1.0.6"

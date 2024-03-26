@@ -2,7 +2,15 @@
 // @ts-nocheck
 /* eslint-disable */
 
-import { device } from "@site/src/config/globals";
+// React + Web3 Essentials
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+// External Components
+import ReactPlayer from "react-player";
+import styled from "styled-components";
+
+// Internal Components
 import {
   A,
   Button,
@@ -14,12 +22,13 @@ import {
   Span,
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+
+// Import Assets
 import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { BsArrowRight } from "react-icons/bs";
-import ReactPlayer from "react-player";
-import styled from "styled-components";
+
+// Internal Configs
+import { device, size } from "@site/src/config/globals";
 
 const Glassy = ({ item }) => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -36,7 +45,6 @@ const Glassy = ({ item }) => {
     height,
     padding,
     mobilepadding,
-    hideonmobile,
     bg,
     bgvideosrc,
     bgtitle,
@@ -61,6 +69,7 @@ const Glassy = ({ item }) => {
   const { message, alignment } = after || "";
 
   // decide video format for bg and header illustration
+  const disableVideoAt = size.tablet;
   const bgVideoFormat = item.config && item.config.bgvideowebm ? "webm" : "mp4";
   const headerIllustrationFormat =
     item.header && item.header.illustrationvideowebm ? "webm" : "mp4";
@@ -119,7 +128,11 @@ const Glassy = ({ item }) => {
     const degX = normY * 5;
     const degY = -normX * 5;
 
-    if (!item.config.hide3deffect) {
+    if (
+      !item.config.hide3deffect &&
+      typeof window !== "undefined" &&
+      window.innerWidth > size.tablet
+    ) {
       // Calculate the distance for the Z translation (for a subtle effect, we limit the translation to 20px)
       const distZ = Math.sqrt(diffX * diffX + diffY * diffY) / 10;
       const transZ = Math.min(distZ, 20);
@@ -143,8 +156,8 @@ const Glassy = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       height={height}
-      fillheight={item.config.fillheight}
-      hideonmobile={hideonmobile}
+      fluid={item.config.fluid}
+      hide={item.config.hide ? item.config.hide : null}
       hideEffect={hidehovereffect}
       className={`${hovered ? "active" : ""} ${id}`}
     >
@@ -162,7 +175,11 @@ const Glassy = ({ item }) => {
         id={id}
         padding={padding}
         mobilepadding={mobilepadding}
-        bg={hovered && bgvideosrc ? null : bg}
+        bg={
+          hovered && window.innerWidth > disableVideoAt && bgvideosrc
+            ? null
+            : bg
+        }
         title={t(bgtitle)}
         bgsize={item.config.bgsize}
       >
@@ -174,7 +191,13 @@ const Glassy = ({ item }) => {
                 `@site/static/assets/website/home/${bgvideosrc}.${bgVideoFormat}`,
               ).default
             }
-            playing={hovered ? true : false}
+            playing={
+              hovered &&
+              typeof window !== "undefined" &&
+              window.innerWidth > size.tablet
+                ? true
+                : false
+            }
             loop={false}
             muted={true}
             width="100%"
@@ -192,7 +215,10 @@ const Glassy = ({ item }) => {
               bottom: 0,
               right: 0,
               left: 0,
-              visibility: hovered && bgvideosrc ? "visible" : "hidden",
+              visibility:
+                hovered && window.innerWidth > disableVideoAt && bgvideosrc
+                  ? "visible"
+                  : "hidden",
             }}
           />
         )}
@@ -237,36 +263,40 @@ const Glassy = ({ item }) => {
 
             {illustration && (
               <HeaderImageWrapper>
-                {item.header.illustrationvideo && (
-                  <ReactPlayer
-                    url={
-                      require(
-                        `@site/static/assets/website/home/${item.header.illustrationvideo}.${headerIllustrationFormat}`,
-                      ).default
-                    }
-                    config={{
-                      file: {
-                        attributes: {
-                          controlsList: "nofullscreen",
+                {item.header.illustrationvideo &&
+                  typeof window !== "undefined" &&
+                  window.innerWidth > size.tablet && (
+                    <ReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/home/${item.header.illustrationvideo}.${headerIllustrationFormat}`,
+                        ).default
+                      }
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: "nofullscreen",
+                          },
                         },
-                      },
-                    }}
-                    playing={hovered ? true : false}
-                    loop={true}
-                    muted={true}
-                    width="100%"
-                    height="100%"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      visibility:
-                        hovered && item.header.illustrationvideo
-                          ? "visible"
-                          : "hidden",
-                    }}
-                  />
-                )}
+                      }}
+                      playing={hovered ? true : false}
+                      loop={true}
+                      muted={true}
+                      width="100%"
+                      height="100%"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        visibility:
+                          hovered &&
+                          window.innerWidth > disableVideoAt &&
+                          item.header.illustrationvideo
+                            ? "visible"
+                            : "hidden",
+                      }}
+                    />
+                  )}
 
                 <GridImage
                   src={
@@ -281,7 +311,9 @@ const Glassy = ({ item }) => {
                   height={isTablet ? "auto" : "37px"}
                   style={{
                     visibility:
-                      hovered && item.header.illustrationvideo
+                      hovered &&
+                      window.innerWidth > disableVideoAt &&
+                      item.header.illustrationvideo
                         ? "hidden"
                         : "visible",
                   }}
@@ -348,7 +380,11 @@ const Glassy = ({ item }) => {
                             top: 0,
                             left: 0,
                             visibility:
-                              hovered && object.videosrc ? "visible" : "hidden",
+                              hovered &&
+                              window.innerWidth > disableVideoAt &&
+                              object.videosrc
+                                ? "visible"
+                                : "hidden",
                           }}
                         />
                       )}
@@ -364,7 +400,11 @@ const Glassy = ({ item }) => {
                         title={t(object.imagetitle)}
                         style={{
                           visibility:
-                            hovered && object.videosrc ? "hidden" : "visible",
+                            hovered &&
+                            window.innerWidth > disableVideoAt &&
+                            object.videosrc
+                              ? "hidden"
+                              : "visible",
                         }}
                         type={object.type}
                       />
@@ -502,7 +542,9 @@ const Glassy = ({ item }) => {
 };
 
 const Container = styled.div`
-  flex: ${(props) => (props.fillheight ? "1" : "initial")};
+  flex: ${(props) =>
+    props.fluid && props.fluid.desktop ? "1 0 auto" : "initial"};
+  align-self: flex-start;
   position: relative;
   width: 100%;
   min-height: ${(props) => props.height || "auto"};
@@ -510,12 +552,11 @@ const Container = styled.div`
   box-sizing: border-box;
   overflow: hidden !important;
   display: flex;
+  display: ${(props) => props.hide && props.hide.desktop && "none"};
   flex-direction: column;
   justify-content: space-between;
 
   // for glassy effect
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1;
 
@@ -538,22 +579,27 @@ const Container = styled.div`
     bottom: 1px;
     right: 1px;
     border-radius: inherit;
-    /* background: #000000; */
-    // background: #09090b;
     background: ${(props) => (props.hideEffect ? "transparent" : "#0d0d0f")};
-    // background: #0A0A0D;
-    // background: linear-gradient(211deg, #18181F 3.81%, #0D0D0F 94.55%);
     z-index: -8; /* Glowwy comes as -9 */
   }
 
   @media ${device.laptopM} {
+    flex: ${(props) =>
+      props.fluid && props.fluid.laptop ? "1 0 auto" : "initial"};
+    display: ${(props) => props.hide && props.hide.laptop && "none"};
   }
 
   @media ${device.tablet} {
+    flex: ${(props) =>
+      props.fluid && props.fluid.tablet ? "1 0 auto" : "initial"};
+    width: ${(props) => (props.fluid && props.fluid.tablet ? "auto" : "100%")};
+    display: ${(props) => props.hide && props.hide.tablet && "none"};
   }
 
   @media ${device.mobileL} {
-    display: ${(props) => props.hideonmobile && "none !important"};
+    flex: ${(props) => (props.fluid && props.fluid.mobile ? "1" : "initial")};
+    width: ${(props) => (props.fluid && props.fluid.mobile ? "auto" : "100%")};
+    display: ${(props) => props.hide && props.hide.mobile && "none"};
   }
 `;
 
@@ -584,6 +630,7 @@ const Glowwy = styled(GlowwyBorder)`
 
 const Subcontainer = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;

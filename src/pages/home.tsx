@@ -25,7 +25,6 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
-import { slideSection } from "@site/src/config/SlideSection";
 import {
   A,
   B,
@@ -44,9 +43,6 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 // Import Assets
-import BNBChainSVG from "@site/static/assets/BNBChain.svg";
-import EthLogoTextSVG from "@site/static/assets/ethereum-logo-landscape.svg";
-import PolygonLogoTextSVG from "@site/static/assets/polygon_logo_text_black.svg";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
@@ -144,16 +140,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </script>
       </Head>
 
-      <HomeWrapper className="home-wrapper">
+      <HomeWrapper>
         {/* HERO SECTION */}
         <HeroSection
           id="hero"
           minHeight="100vh"
           width="100%"
-          overflow="hidden"
           className="darkBackground"
         >
-          <HeroContent alignSelf="center">
+          <HeroContent alignSelf="center" overflow="visible">
             <HeroAnimation>
               <Spline scene="https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode" />
             </HeroAnimation>
@@ -232,7 +227,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         {/* SHOWCASE SECTION */}
         <ShowcaseSection id="showcase">
           <Content
-            className="contentBox"
             alignSelf="center"
             // padding="180px 40px 0px 40px"
           >
@@ -242,7 +236,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* NOTIF SECTION */}
         <NotificationSection id="notification">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <ItemV maxWidth={"849px"} margin="0px auto">
               <H2
                 color="#DDD8D8"
@@ -260,27 +254,27 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </H2>
             </ItemV>
 
-            <NotificationGridSystem>
-              <NotificationGridItem maxWidth="282px">
+            <NotificationFeatures>
+              <NotificationFeatureItem flex="1">
                 {NotifFeaturesList?.first?.map((item) => (
                   <Glassy item={item} />
                 ))}
-              </NotificationGridItem>
+              </NotificationFeatureItem>
 
-              <NotificationGridItem maxWidth="588px" main={true}>
+              <NotificationFeatureItem flex="2">
                 {NotifFeaturesList?.second?.map((item) => (
                   <Glassy item={item} />
                 ))}
-              </NotificationGridItem>
+              </NotificationFeatureItem>
 
-              <NotificationGridItem maxWidth="282px" lastRow={true}>
+              <NotificationFeatureItem onFocusCapturelex="1">
                 {NotifFeaturesList?.third?.map((item) => (
                   <Glassy item={item} />
                 ))}
-              </NotificationGridItem>
-            </NotificationGridSystem>
+              </NotificationFeatureItem>
+            </NotificationFeatures>
 
-            <ItemV padding="0 0 15px 0">
+            <ItemV padding="0 0 15px 0" overflow="hidden">
               <GridMarquee
                 speed={1}
                 gradientWidth={8}
@@ -316,11 +310,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* CHAT SECTION */}
         <ChatSection id="chat" data-bkg="light" className="lightBackground">
-          <Content
-            className="contentBox"
-            alignSelf="center"
-            padding="200px 40px 0px 40px"
-          >
+          <Content alignSelf="center">
             <ItemV maxWidth={"849px"} margin="0px auto" flexDirection="row">
               <H2
                 color="#DDD8D8"
@@ -336,23 +326,23 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </H2>
             </ItemV>
 
-            <ChatGridSystem>
-              <ChatGridItem maxWidth="282px">
+            <ChatFeatures>
+              <ChatFeatureItem flex="1">
                 {ChatFeaturesList?.first?.map((item) => <Glassy item={item} />)}
-              </ChatGridItem>
+              </ChatFeatureItem>
 
-              <ChatGridItem maxWidth="588px" main={true}>
+              <ChatFeatureItem flex="2">
                 {ChatFeaturesList?.second?.map((item) => (
                   <Glassy item={item} />
                 ))}
-              </ChatGridItem>
+              </ChatFeatureItem>
 
-              <ChatGridItem maxWidth="282px" lastRow={true}>
+              <ChatFeatureItem flex="1">
                 {ChatFeaturesList?.third?.map((item) => <Glassy item={item} />)}
-              </ChatGridItem>
-            </ChatGridSystem>
+              </ChatFeatureItem>
+            </ChatFeatures>
 
-            <ItemV padding="0 0 15px 0">
+            <ItemV padding="0 0 15px 0" overflow="hidden">
               <GridMarquee
                 speed={1}
                 gradientWidth={8}
@@ -381,22 +371,20 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
         </ChatSection>
 
         {/* PUSH SPACE AND VIDEO SECTION */}
-        <SlideSection id="otherfeatures">
-          <Content className="contentBox" alignSelf="center">
-            <ItemH
-              flexDirection={isMobile ? "column" : "row"}
-              flexWrap="nowrap"
-              className="slideGap"
-            >
+        <OtherFeaturesSection id="otherfeatures">
+          <Content>
+            <OtherFeatures>
               {OthersFeaturesList?.products.map((item) => (
-                <Glassy item={item} />
+                <OtherFeatureItem>
+                  <Glassy item={item} />
+                </OtherFeatureItem>
               ))}
-            </ItemH>
+            </OtherFeatures>
           </Content>
-        </SlideSection>
+        </OtherFeaturesSection>
 
         <TokenomicsSection id="tokenomics">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <ItemH
               flexDirection={isMobile && "column"}
               gap={isMobile ? "8px" : isTablet ? "16px" : "74px"}
@@ -476,7 +464,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* WHY PUSH AND BLOG */}
         <BlogSection id="blog">
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             {/* BLOG SECTION */}
             <ItemH>
               <ItemH justifyContent="flex-start" alignItems="center" gap="8px">
@@ -543,7 +531,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             left="0"
           />
 
-          <Content className="contentBox" alignSelf="center">
+          <Content alignSelf="center">
             <InvestorItem alignItems="stretch">
               <InvestorHeader
                 color="#FFFFFF"
@@ -655,27 +643,58 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* MEDIA COVERAGE SECTION */}
         <FeaturedInSection id="featured">
-          <ItemH justifyContent="center">
-            <H2
-              color="#FFFFFF"
-              fontWeight="500"
-              letterSpacing="normal"
-              fontSize={isMobile ? "24px" : "36px"}
-              fontFamily="FK Grotesk Neue"
-              lineHeight="130%"
-              textAlign="center"
-            >
-              {t("home.featured-section.title")}
-            </H2>
-          </ItemH>
-          {/* </Content> */}
+          <Content className="fluid">
+            <ItemH justifyContent="center">
+              <H2
+                color="#FFFFFF"
+                fontWeight="500"
+                letterSpacing="normal"
+                fontSize={isMobile ? "24px" : "36px"}
+                fontFamily="FK Grotesk Neue"
+                lineHeight="130%"
+                textAlign="center"
+              >
+                {t("home.featured-section.title")}
+              </H2>
+            </ItemH>
 
-          <FeaturedList />
+            <FeaturedList />
+          </Content>
         </FeaturedInSection>
       </HomeWrapper>
     </Layout>
   );
 }
+
+const HomeWrapper = styled(ItemV)`
+  background: #0d0d0f;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  font-family: FK Grotesk Neue !important;
+
+  box-sizing: border-box;
+  & #hero .contentBox {
+    row-gap: 18px;
+  }
+
+  & .pushMissingSvg {
+    width: 500px;
+    @media ${device.laptop} {
+      width: 400px;
+    }
+    @media ${device.tablet} {
+      width: 100%;
+    }
+  }
+  @media ${device.tablet} {
+    width: 100%;
+
+    & svg.figureSvg {
+      width: 100%;
+    }
+  }
+`;
 
 const HeroSection = styled(Section)`
   overflow-y: visible;
@@ -837,6 +856,10 @@ const HeroAnalytics = styled(ItemH)`
     );
   }
 
+  // margin: 140px 0 0px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+
   @media ${device.laptop} {
     margin: 40px 0 0px 0;
     flex: initial;
@@ -845,169 +868,19 @@ const HeroAnalytics = styled(ItemH)`
   }
 `;
 
-const MemberImage = styled(ImageHolder)``;
-
-const Gradient = styled.div`
-  // background: linear-gradient(90deg, rgba(202, 55, 237, 0.00) 17.99%, #CA37ED 50.08%, rgba(202, 55, 237, 0.00) 79.26%);
-  // width: 100%;
-  // height: 200px;
-`;
-
-/**
- * Responsive Styled Components for Shared Styling
- */
-
-const ResponsiveH2 = styled(H2)`
-  @media ${device.tablet} {
-    font-size: 32px;
-  }
-`;
-
-const HomeWrapper = styled(ItemV)`
-  background: #0d0d0f;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden !important;
-  font-family: FK Grotesk Neue !important;
-
-  box-sizing: border-box;
-  & #hero .contentBox {
-    row-gap: 18px;
-  }
-
-  & .pushMissingSvg {
-    width: 500px;
-    @media ${device.laptop} {
-      width: 400px;
-    }
-    @media ${device.tablet} {
-      width: 100%;
-    }
-  }
-  @media ${device.tablet} {
-    width: 100%;
-
-    & svg.figureSvg {
-      width: 100%;
-    }
-  }
-`;
-
 /**
  * Home Page Sections
  */
 
-const ShowcaseSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 0px;
-  .contentBox {
-    padding: 180px 40px 0px 40px;
+const ShowcaseSection = styled(Section)``;
 
-    @media ${device.laptop} {
-      padding: 140px 32px 0px 32px;
-    }
-  }
-`;
+const NotificationSection = styled(Section)``;
 
-const NotificationSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 0px;
+const ChatSection = styled(Section)``;
 
-  .contentBox {
-    padding: 186px 40px 0px 40px;
-    box-sizing: border-box;
+const OtherFeaturesSection = styled(Section)``;
 
-    @media ${device.laptop} {
-      padding: 160px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 160px 24px 0px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 160px 16px 0px 16px;
-    }
-  }
-`;
-
-const ChatSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 0px;
-
-  .contentBox {
-    padding: 200px 40px 0px 40px;
-    box-sizing: border-box;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
-    }
-  }
-`;
-
-const SlideSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 0px;
-  .slideGap {
-    gap: 29px;
-  }
-
-  .contentBox {
-    padding: 200px 40px 0px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-      .slideGap {
-        gap: 23px;
-      }
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
-      .slideGap {
-        gap: 32px;
-      }
-    }
-  }
-`;
-
-const TokenomicsSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 0px;
-
-  .contentBox {
-    padding: 200px 40px 0px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
-    }
-  }
-`;
+const TokenomicsSection = styled(Section)``;
 
 const TokenItem = styled.div`
   width: 100%;
@@ -1037,120 +910,15 @@ const TokenImage = styled(Image)`
   }
 `;
 
-const SlideItem = styled(ItemH)`
-  padding: 48px;
-  width: 100%;
-  border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(60px);
-  min-height: 750px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 32px;
-
-  @media ${device.laptop} {
-    min-height: auto;
-    max-height: auto;
-    padding: 32px;
-    gap: 32px;
-    padding: 48px 32px;
-  }
-
-  img {
-    margin: 0;
-    padding: 0;
-    display: block;
-  }
-
-  @media ${device.mobileL} {
-    gap: 64px;
-  }
-`;
-
 const FeaturedInSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 200px 0px 0px 0px;
-
-  @media ${device.laptop} {
-    padding: 180px 0px 0px 0px;
-  }
-
-  @media ${device.tablet} {
-    padding: 180px 0px 0px 0px;
-  }
-
-  @media ${device.mobileL} {
-    padding: 180px 0px 0px 0px;
-  }
 `;
 
-const SlideContent = styled(ItemV)`
-  .textTitle {
-    overflow: hidden;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
+const BlogSection = styled(Section)``;
 
-  max-width: 70%;
-
-  @media ${device.laptop} {
-    max-width: 80%;
-  }
-
-  @media ${device.tablet} {
-    max-width: 85%;
-  }
-
-  @media ${device.mobileL} {
-    max-width: 90%;
-  }
-`;
-
-const BlogSection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-
-  .contentBox {
-    padding: 200px 40px 0px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 0px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 0px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 180px 16px 0px 16px;
-    }
-  }
-`;
-
-const BackedBySection = styled(Section)`
-  width: 100%;
-  overflow: hidden;
-
-  .contentBox {
-    padding: 200px 40px 20px 40px;
-
-    @media ${device.laptop} {
-      padding: 180px 32px 20px 32px;
-    }
-
-    @media ${device.tablet} {
-      padding: 180px 24px 20px 24px;
-    }
-
-    @media ${device.mobileL} {
-      padding: 180px 16px 20px 16px;
-    }
-  }
-`;
+const BackedBySection = styled(Section)``;
 
 const InvestorHeader = styled(H2)`
   width: 720px;
@@ -1160,17 +928,7 @@ const InvestorHeader = styled(H2)`
   }
 `;
 
-const InvestorItem = styled(ItemV)`
-  @media (max-width: 1300px) {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.TABLET};
-  }
-
-  @media ${device.tablet} {
-    padding: ${(props) =>
-      props.padding || GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE};
-  }
-`;
+const InvestorItem = styled(ItemV)``;
 
 const InvestorCard = styled(ItemV)`
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1208,77 +966,12 @@ const InvestorSubtitle = styled(Span)`
   text-transform: uppercase;
 `;
 
-const NotificationGridItem = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  max-width: ${(props) => props.maxWidth || "100%"};
-  min-width: ${(props) => props.maxWidth || "100%"};
-  gap: 24px;
-
-  &:nth-child(2) {
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-grow: 1;
-    flex-shrink: 1;
-  }
-
-  @media ${device.laptopM} {
-    max-width: ${(props) => props.main && "100%"};
-    min-width: ${(props) => (props.lastRow ? "100%" : "0")};
-    flex-grow: ${(props) => (props.main ? "1" : "0")};
-    flex-direction: ${(props) => (props.lastRow ? "row" : "column")};
-
-    & .anti-spam {
-      max-width: 255px !important;
-    }
-
-    .receive,
-    .increase {
-      flex: 1 0 calc((100% - 303px) / 2) !important;
-      min-height: 321px;
-    }
-
-    &:nth-child(1) {
-      max-width: 255px !important;
-    }
-
-    &:nth-child(2) {
-      flex: 1 1 10%;
-    }
-  }
-
-  @media ${device.tablet} {
-    &:nth-child(1) {
-      max-width: 215px !important;
-    }
-
-    .anti-spam {
-      max-width: 215px !important;
-    }
-  }
-
-  @media ${device.mobileL} {
-    max-width: 100% !important;
-    min-width: 100% !important;
-    flex-direction: column;
-    gap: 16px;
-
-    .anti-spam {
-      max-width: 100% !important;
-      min-width: 100% !important;
-    }
-  }
-`;
-
-const NotificationGridSystem = styled.div`
+const NotificationFeatures = styled(ItemH)`
   font-family: FK Grotesk Neue;
-  width: 1200px;
-  display: flex;
-  flex-direction: row;
   gap: 24px;
   flex-wrap: wrap;
   margin-top: 72px;
+  justify-content: flex-start;
 
   @media ${device.laptopM} {
     width: 100%;
@@ -1293,139 +986,77 @@ const NotificationGridSystem = styled.div`
   }
 `;
 
-const ChatGridItem = styled.div`
+const NotificationFeatureItem = styled(ItemV)`
   display: flex;
   flex-direction: column;
 
-  max-width: ${(props) => props.maxWidth || "100%"};
-  min-width: ${(props) => props.maxWidth || "100%"};
+  width: 100%;
+
   gap: 24px;
 
+  @media ${device.laptopM} {
+    &:nth-child(3) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media ${device.tablet} {
+    &:nth-child(1) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    &:nth-child(3) {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media ${device.mobileL} {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &:nth-child(n) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    gap: 16px;
+  }
+`;
+
+const ChatFeatures = styled(NotificationFeatures)``;
+
+const ChatFeatureItem = styled(NotificationFeatureItem)`
   &:nth-child(2) {
     flex-wrap: wrap;
     flex-direction: row;
-    flex-grow: 1;
-    flex-shrink: 1;
   }
 
   .hyperscalable {
-    flex: 1 0 calc(50% - 12px);
+    width: calc(50% - 12px);
   }
 
   .plug-play {
-    flex: 1 0 calc(50% - 12px);
-  }
-
-  @media ${device.laptopM} {
-    // max-width: 100%;
-    max-width: ${(props) => props.main && "100%"};
-    min-width: ${(props) => (props.lastRow ? "100%" : "0")};
-    flex-grow: ${(props) => (props.main ? "1" : "0")};
-
-    flex-direction: ${(props) => (props.lastRow ? "row" : "column")};
-
-    &:nth-child(1) {
-      max-width: 255px !important;
-    }
-
-    &:nth-child(2) {
-      flex: 1 1 10%;
-    }
-
-    &:nth-child(3) {
-      display: grid;
-      grid-template-columns: 255px 1fr 1fr;
-      grid-auto-flow: column;
-    }
-
-    .chain-agnostic {
-      grid-column: 1;
-    }
-
-    .token-gated {
-      grid-column: 2;
-      grid-row: span 3 / span 3;
-    }
-
-    .e2e {
-      grid-column: 3;
-      grid-row: 1;
-    }
-
-    .web3-standard {
-      grid-column: 3;
-      grid-row: 2;
-    }
-  }
-
-  @media ${device.tablet} {
-    &:nth-child(1) {
-      max-width: 215px !important;
-    }
-
-    &:nth-child(3) {
-      display: grid;
-      grid-template-columns: 215px 1fr 1fr;
-      grid-auto-flow: column;
-    }
+    width: calc(50% - 12px);
   }
 
   @media ${device.mobileL} {
-    max-width: 100% !important;
-    min-width: 100% !important;
-
-    &:nth-child(3) {
-      display: grid;
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-    }
-
     .hyperscalable {
-      flex: 1 0 100%;
+      width: 100%;
     }
 
     .plug-play {
-      flex: 1 1 0;
-    }
-
-    .chain-agnostic {
-      grid-column: 1;
-    }
-
-    .token-gated {
-      grid-column: 1;
-    }
-
-    .e2e {
-      grid-column: 1;
-    }
-
-    .web3-standard {
-      grid-column: 1;
+      width: 100%;
     }
   }
 `;
 
-const ChatGridSystem = styled.div`
-  font-family: FK Grotesk Neue;
-  width: 1200px;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 72px;
-
-  @media ${device.laptopM} {
-    width: 100%;
-  }
-
-  @media ${device.mobileL} {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 24px;
-    gap: 16px;
-  }
+const OtherFeatures = styled(NotificationFeatures)`
+  margin-top: 0px;
+  justify-content: flex-start;
 `;
+
+const OtherFeatureItem = styled(NotificationFeatureItem)``;
 
 const TagItem = styled.b`
   width: fit-content;
