@@ -310,7 +310,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* CHAT SECTION */}
         <ChatSection id="chat" data-bkg="light" className="lightBackground">
-          <Content alignSelf="center" padding="200px 40px 0px 40px">
+          <Content alignSelf="center">
             <ItemV maxWidth={"849px"} margin="0px auto" flexDirection="row">
               <H2
                 color="#DDD8D8"
