@@ -90,7 +90,7 @@ const GridItem = styled.div`
 
   @media (max-width: 1200px) {
     width: 100% !important;
-    padding: ${`${GLOBALS.STRUCTURE.PADDING.MOBILE}`};
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
     box-sizing: border-box;
     margin: 10px auto 0 auto;
     gap: 30px;
@@ -113,7 +113,7 @@ const ListItem = styled.div`
 
   @media (max-width: 1200px) {
     width: 100% !important;
-    padding: ${`${GLOBALS.STRUCTURE.PADDING.MOBILE}`};
+    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
     box-sizing: border-box;
     margin: 10px auto 0 auto;
   }

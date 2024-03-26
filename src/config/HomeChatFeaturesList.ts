@@ -4,18 +4,8 @@ export const ChatFeaturesList = {
       config: {
         id: "share",
         padding: "24px 24px 0px 24px",
-        fluid: {
-          desktop: true,
-          laptop: true,
-          tablet: true,
-          mobile: false,
-        },
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: true,
-        },
+        fillheight: true,
+        hideonmobile: false,
         bodyjustifycontent: "bottom",
       },
       header: {
@@ -37,18 +27,7 @@ export const ChatFeaturesList = {
       config: {
         id: "chat-requests",
         padding: "24px",
-        fluid: {
-          desktop: false,
-          laptop: true,
-          tablet: true,
-          mobile: false,
-        },
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: true,
-        },
+        hideonmobile: true,
       },
       header: {
         title: "home.chat-section.box2.title",
@@ -65,18 +44,7 @@ export const ChatFeaturesList = {
       config: {
         id: "secure",
         padding: "24px",
-        fluid: {
-          desktop: false,
-          laptop: true,
-          tablet: true,
-          mobile: false,
-        },
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: true,
-        },
+        hideonmobile: true,
       },
       header: {
         title: "home.chat-section.box3.title",
@@ -98,21 +66,10 @@ export const ChatFeaturesList = {
       config: {
         id: "lightweight-code",
         padding: "24px",
-        fluid: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        hideonmobile: false,
         link: {
           url: "https://push.org",
           linktitle: "Lightweight Code with Rapid API Integration",
-        },
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
         },
       },
       header: {
@@ -143,13 +100,8 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "hyperscalable",
-        height: "280px",
-        fluid: {
-          desktop: true,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        height: "237px",
+        fillheight: true,
         padding: "24px",
         bg: require("@site/static/assets/website/home/chats/hyper@3x.webp")
           .default,
@@ -157,12 +109,7 @@ export const ChatFeaturesList = {
         bgvideosrc: "chats/hyper-video",
         bgvideowebm: true,
         bgsize: "contain",
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        hideonmobile: false,
       },
       header: {
         title: "home.chat-section.box5.title",
@@ -176,20 +123,10 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "plug-play",
-        height: "280px",
-        fluid: {
-          desktop: true,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        height: "237px",
+        fillheight: true,
         padding: "24px 24px 24px",
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        hideonmobile: false,
       },
       header: {
         title: "home.chat-section.box6.title",
@@ -212,18 +149,7 @@ export const ChatFeaturesList = {
       config: {
         id: "chain-agnostic",
         padding: "24px",
-        fluid: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: true,
-        },
+        hideonmobile: true,
       },
       header: {
         title: "home.chat-section.box7.title",
@@ -239,19 +165,9 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "token-gated",
-        fluid: {
-          desktop: true,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        fillheight: true,
         padding: "24px",
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
+        hideonmobile: false,
       },
       body: [
         {
@@ -271,18 +187,7 @@ export const ChatFeaturesList = {
       config: {
         id: "e2e",
         padding: "24px",
-        fluid: {
-          desktop: true,
-          laptop: false,
-          tablet: false,
-          mobile: false,
-        },
-        hide: {
-          desktop: false,
-          laptop: true,
-          tablet: true,
-          mobile: false,
-        },
+        hideonmobile: false,
       },
       header: {
         title: "home.chat-section.box9.title",
@@ -299,12 +204,7 @@ export const ChatFeaturesList = {
       config: {
         id: "web3-standard",
         padding: "24px",
-        hide: {
-          desktop: false,
-          laptop: false,
-          tablet: false,
-          mobile: true,
-        },
+        hideonmobile: true,
       },
       header: {
         title: "home.chat-section.box10.title",

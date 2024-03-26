@@ -44,8 +44,8 @@ function Footer() {
 
   return (
     <StyledFooter>
-      <FooterSection id="footer" background="#0D0D0F">
-        <FooterContent alignSelf="center">
+      <FooterSection id="footer" background="#0D0D0F" padding="70px 0 0 0">
+        <Content className="contentBox" padding="40px 0px" alignSelf="center">
           {/* Information Cards */}
 
           <ItemH gap="32px">
@@ -391,7 +391,7 @@ function Footer() {
               </FooterAnchorIcon>
             </ItemH>
           </SocialLinks>
-        </FooterContent>
+        </Content>
       </FooterSection>
     </StyledFooter>
   );
@@ -405,10 +405,10 @@ const StyledFooter = styled.footer`
 
 const FooterSection = styled(Section)`
   flex-direction: column;
-`;
-
-const FooterContent = styled(Content)`
-  padding-bottom: 20px;
+  @media ${device.tablet} {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
 `;
 
 const InfoCard = styled(ItemV)`

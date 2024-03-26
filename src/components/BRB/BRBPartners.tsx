@@ -2,33 +2,33 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from "react";
+import React from 'react';
 
 // External Components
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Internal Components
-import { Button, Image, ItemH, ItemV } from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import { Button, Image, ItemH, ItemV } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import { brbPartnersList } from "@site/src/config/BRBPartnersList";
+import { brbPartnersList } from '@site/src/config/BRBPartnersList';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
-export const Partners = ({
-  sectionRef,
-}: {
-  sectionRef: React.MutableRefObject<null>;
-}) => {
+export const Partners = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
+
   return (
     <PartnersContainer ref={sectionRef}>
       <Header>Partners</Header>
       <PartnersList>
         {brbPartnersList.map((partnerRow, i) => {
           return (
-            <PartnerContent key={i} gap="0px 164px">
+            <PartnerContent
+              key={i}
+              gap="0px 164px"
+            >
               {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
@@ -52,15 +52,11 @@ export const Partners = ({
                         }}
                       >
                         <PartnersLogo
-                          src={
-                            require(
-                              `@site/static/assets/website/brb/partners/${item.srcref}.webp`,
-                            ).default
-                          }
+                          src={require(`@site/static/assets/website/brb/partners/${item.srcref}.webp`).default}
                           srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
                           alt={`${item?.alt}`}
                           style={{
-                            scale: `${item?.srcref === "chainsafe" ? "1.2" : "1"}`,
+                            scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}`,
                           }}
                         />
                       </PartnersButton>
@@ -76,7 +72,9 @@ export const Partners = ({
   );
 };
 
-const PartnersList = styled(ItemV)``;
+const PartnersList = styled(ItemV)`
+
+`
 
 const PartnersContainer = styled.div`
   width: 100%;
@@ -113,6 +111,7 @@ const PartnersLogo = styled(Image)`
 `;
 
 const PartnerContent = styled(ItemH)`
+
   @media ${device.tablet} {
     flex-direction: column;
   }
@@ -139,10 +138,10 @@ const PartnerItemContent = styled(ItemH)`
     width: 300px;
     max-widthw: 300px;
   }
-`;
+`
 
 const PartnersButton = styled(Button)`
-  cursor: ${(props) => (props.disabled ? "default !important" : "pointer")};
+  cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;
   }

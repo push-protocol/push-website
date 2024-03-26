@@ -5,7 +5,6 @@
 
 // React + Web3 Essentials
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 
 // External Components
 import { gsap } from "gsap";
@@ -38,7 +37,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 // Internal Configs
 import { SupportedLanguagesList } from "@site/src/config/SupportedLanguagesList";
-import GLOBALS, { device, structure } from "@site/src/config/globals";
+import GLOBALS, { device } from "@site/src/config/globals";
 import { HeaderList } from "../config/HeaderList";
 
 // Register GSAP plugins
@@ -66,9 +65,6 @@ function Header() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
-
-  // for navigation
-  const history = useHistory();
 
   // Internationalization
   const { t, i18n } = useTranslation();
@@ -146,27 +142,11 @@ function Header() {
   }, []);
 
   const HeaderSpace = ({ item, index }) => {
-    const openLink = (e, href, id, target) => {
+    const openLink = (e, href, id) => {
       e.stopPropagation();
 
       if (href) {
-        if (target && target !== "_blank") {
-          if (target === "_self") {
-            // check if url is external
-            if (href.includes("http")) {
-              window.location.href = href;
-            } else {
-              history.push(href);
-            }
-          }
-        } else {
-          // check if url is internal and if so append the base url
-          if (href.includes("http")) {
-            window.open(href, target);
-          } else {
-            window.open(`${window.location.origin}${href}`, target);
-          }
-        }
+        window.open(href, "_blank");
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
@@ -177,11 +157,11 @@ function Header() {
         document.getElementById(id).scrollIntoView({
           behavior: "smooth",
         });
+        console.log("here here");
       } else return;
     };
-
     return (
-      <HeaderItem onClick={(e) => openLink(e, item.href, item.id, item.target)}>
+      <HeaderItem onClick={(e) => openLink(e, item.href, item.id)}>
         {item.srcrefoff && (
           <HeaderImage
             key={index}
@@ -191,7 +171,7 @@ function Header() {
               ).default
             }
             srcSet={`${require(`@site/static/assets/website/header/${item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${item.srcrefoff}@3x.png`).default} 3x`}
-            alt={`${t(item.title)}`}
+            alt={`${item?.title}`}
             height={24}
             width={24}
           />
@@ -267,7 +247,7 @@ function Header() {
 
       {/* HEADER SECTION */}
       <Section onClick={(e) => e.stopPropagation()}>
-        <Content className="vertfluid" overflow="visible">
+        <Content padding="0">
           {/* Header Content Begins */}
           <HeaderItemH
             alignSelf="stretch"
@@ -728,6 +708,8 @@ const StyledHeader = styled.header`
   left: 0;
   right: 0;
 
+  /* color: #ffffff;
+  background: #121315; */
   opacity: 1;
 
   border-bottom-left-radius: 32px;
@@ -831,12 +813,12 @@ const MenuTop = styled(ItemV)`
         : 0};
     left: ${(props) =>
       props.showMobileMenu
-        ? `${structure.PADDING.TABLET.LEFT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + ADJUST_FOR_BLUR}px`
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + ADJUST_FOR_BLUR}px`
         : 0};
     flex-direction: row;
     width: ${(props) =>
       props.showMobileMenu
-        ? `calc(100% - ${structure.PADDING.TABLET.LEFT + structure.PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR * 2}px)`
+        ? `calc(100% - ${GLOBALS.HEADER.OUTER_MARGIN.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR * 2}px)`
         : "100%"};
     padding: ${(props) =>
       props.showMobileMenu
@@ -854,11 +836,11 @@ const MenuTop = styled(ItemV)`
         : 0};
     left: ${(props) =>
       props.showMobileMenu
-        ? `${structure.PADDING.MOBILE.LEFT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + ADJUST_FOR_BLUR}px`
+        ? `${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + ADJUST_FOR_BLUR}px`
         : 0};
     width: ${(props) =>
       props.showMobileMenu
-        ? `calc(100% - ${structure.PADDING.MOBILE.LEFT + structure.PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR * 2}px)`
+        ? `calc(100% - ${GLOBALS.HEADER.OUTER_MARGIN.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR * 2}px)`
         : "100%"};
     padding: ${(props) =>
       props.showMobileMenu

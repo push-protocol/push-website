@@ -30,8 +30,7 @@ export const HeaderList = {
       title: "header.developers.link1.title",
       subtitle: "header.developers.link1.subtitle",
       srcrefoff: "docs-icon-off",
-      href: "/docs",
-      target: "_blank",
+      href: "https://push.org/docs",
     },
     {
       title: "header.developers.link2.title",
@@ -43,22 +42,19 @@ export const HeaderList = {
       title: "header.developers.link3.title",
       subtitle: "header.developers.link3.subtitle",
       srcrefoff: "inbox-icon-off",
-      href: "/docs/notifications/quickstart/",
-      target: "_blank",
+      href: "https://push.org/docs/notifications/quickstart/",
     },
     {
       title: "header.developers.link4.title",
       subtitle: "header.developers.link4.subtitle",
       srcrefoff: "chat-icon-off",
-      href: "/docs/chat/quickstart/",
-      target: "_blank",
+      href: "https://push.org/docs/chat/quickstart/",
     },
     {
       title: "header.developers.link5.title",
       subtitle: "header.developers.link5.subtitle",
       srcrefoff: "hacker-icon-off",
-      href: "/docs/hackers/",
-      target: "_blank",
+      href: "https://push.org/docs/hackers/",
     },
     {
       title: "header.developers.link6.title",
@@ -67,8 +63,7 @@ export const HeaderList = {
         text: "NEW",
       },
       srcrefoff: "react-icon-off",
-      href: "/docs/video/playground/push-react-component-playground-example/",
-      target: "_blank",
+      href: "https://push.org/docs/video/playground/push-react-component-playground-example/",
     },
     {
       title: "header.developers.link7.title",
@@ -81,40 +76,34 @@ export const HeaderList = {
     {
       title: "header.community.link1.title",
       subtitle: "header.community.link1.subtitle",
-      href: "/frens",
-      target: "_self",
+      href: "https://push.org/frens/",
     },
     {
       title: "header.community.link2.title",
       subtitle: "header.community.link2.subtitle",
-      href: "/docs/dao",
-      target: "_self",
+      href: "https://push.org/docs/dao/",
     },
     {
       title: "header.community.link3.title",
       subtitle: "header.community.link3.subtitle",
-      href: "/docs/dao/contribute-to-push-dao/contribute-push-grants/",
-      target: "_self",
+      href: "https://push.org/docs/dao/contribute-to-push-dao/contribute-push-grants/",
     },
     {
       title: "header.community.link4.title",
       subtitle: "header.community.link4.subtitle",
-      href: "/brb",
-      target: "_self",
+      href: "https://push.org/brb/",
     },
   ],
   resources: [
     {
       title: "header.resources.link1.title",
       subtitle: "header.resources.link1.subtitle",
-      href: "/blog",
-      target: "_self",
+      href: "https://push.org/blog",
     },
     {
       title: "header.resources.link2.title",
       subtitle: "header.resources.link2.subtitle",
-      href: "/faq",
-      target: "_self",
+      href: "https://push.org/faq",
     },
     {
       title: "header.resources.link3.title",
@@ -122,8 +111,7 @@ export const HeaderList = {
       tagitem: {
         text: "NEW",
       },
-      href: "/docs/roadmap",
-      target: "_self",
+      href: "https://push.org/docs/roadmap/",
     },
     {
       title: "header.resources.link4.title",
