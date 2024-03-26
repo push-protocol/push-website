@@ -128,7 +128,11 @@ const Glassy = ({ item }) => {
     const degX = normY * 5;
     const degY = -normX * 5;
 
-    if (!item.config.hide3deffect && window.innerWidth > size.tablet) {
+    if (
+      !item.config.hide3deffect &&
+      typeof window !== "undefined" &&
+      window.innerWidth > size.tablet
+    ) {
       // Calculate the distance for the Z translation (for a subtle effect, we limit the translation to 20px)
       const distZ = Math.sqrt(diffX * diffX + diffY * diffY) / 10;
       const transZ = Math.min(distZ, 20);
@@ -187,7 +191,13 @@ const Glassy = ({ item }) => {
                 `@site/static/assets/website/home/${bgvideosrc}.${bgVideoFormat}`,
               ).default
             }
-            playing={hovered && window.innerWidth > size.tablet ? true : false}
+            playing={
+              hovered &&
+              typeof window !== "undefined" &&
+              window.innerWidth > size.tablet
+                ? true
+                : false
+            }
             loop={false}
             muted={true}
             width="100%"
@@ -254,6 +264,7 @@ const Glassy = ({ item }) => {
             {illustration && (
               <HeaderImageWrapper>
                 {item.header.illustrationvideo &&
+                  typeof window !== "undefined" &&
                   window.innerWidth > size.tablet && (
                     <ReactPlayer
                       url={
