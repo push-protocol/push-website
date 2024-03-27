@@ -134,7 +134,7 @@ await aliceVideoCall.request([recipient]);
     title: 'Examples',
     srcref: 'star',
     alt: 'Logo representing examples repo - Push Protocol',
-    link: 'https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples',
+    link: 'https://github.com/push-protocol/push-website/push-sdk/tree/main/packages/examples',
     target: '_blank',
     description: 'Examples to showcase the power of Push Protocol’s communication stack.',
   },
@@ -185,7 +185,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'SDK Starter Kit',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/ethereum-push-notification-service/push-sdk',
+    link: 'https://github.com/push-protocol/push-website/push-sdk',
   },
   {
     title: 'REST API',

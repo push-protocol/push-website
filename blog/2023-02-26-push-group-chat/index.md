@@ -25,14 +25,14 @@ The public launch of Push Chat is a major step forward in realizing our vision o
 Come check out Push Chat for yourself!👉 https://app.push.org/#/chat
 
 ## How Does Push Chat Work?
-With Push Chat now available to the public, web3 users can enjoy a seamless, secure, and truly private messaging experience. Using advanced technologies such as IPFS, encryption, and message pinning on Push Nodes, Push Chat ensures a no-message drop experience for the users. Additionally, each message and notification carries a unique [verification proof](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification) that allows the front-end to confirm the authenticity of the sender and message content.
+With Push Chat now available to the public, web3 users can enjoy a seamless, secure, and truly private messaging experience. Using advanced technologies such as IPFS, encryption, and message pinning on Push Nodes, Push Chat ensures a no-message drop experience for the users. Additionally, each message and notification carries a unique [verification proof](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification) that allows the front-end to confirm the authenticity of the sender and message content.
 
 Push Protocol first announced Push Chat at Devcon in October 2022. The alpha was released to select members of the Push community. We’re excited now to make Push Chat available to anyone in the Push ecosystem.
 
 You can learn more details about Push Nodes, sending and receiving messages on Push Chat, storage, and security of messages [here](https://medium.com/push-protocol/were-still-pushing-a-deeper-look-into-push-chat-90fdea8d9e8e).
 
 ## Push Chat: Paving the Way for Decentralized Communication
-As the web becomes more decentralized, it’s crucial for applications to protect user data and prevent censorship. The Push Protocol team is taking on this fundamental problem in web3 with a two-step strategy that ensures [immutability of content](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification) and elimination of censorship.
+As the web becomes more decentralized, it’s crucial for applications to protect user data and prevent censorship. The Push Protocol team is taking on this fundamental problem in web3 with a two-step strategy that ensures [immutability of content](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification) and elimination of censorship.
 
 ## What makes Push Chat an ideal messaging solution for web3 dapps and their users?
 First, it is a permissionless protocol, meaning that any address on any platform can use their account to chat with any other account across web3, without the need to sign up with personal information. Second, Push Chat is forward-compatible, allowing it to adapt to any changes made to existing or new platforms. This ensures Push Chat remains a reliable and adaptable solution. Third, the user-friendly interface of Push Chat provides a familiar user experience that users can quickly learn. Finally, our Push Chat SDK allows developers to easily integrate the messaging layer into their application or service, improving their CI/CD processes.

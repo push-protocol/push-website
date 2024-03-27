@@ -36,7 +36,7 @@ There are three types of PIPs:
 3. <b>Informational</b> PIP provides general guidelines or information to the Push community but does not propose a new feature. Informational PIPs do not necessarily represent a Push community consensus or recommendation, so users and implementers are free to ignore Informational PIPs or follow their advice.
 
 ## Why do PIPs matter?
-PIPs play a central role in how changes happen and are documented in the Push ecosystem. They are the way for people to propose, debate, and adopt changes. There are [different types of PIPs](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions#type) including core PIPs for low-level protocol changes that affect consensus and improvements in API/RPC as well as PRCs for application standards. For example, [Verification Proof](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification/Verification) or [Identity](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification/Identity) for Notifications is described in PRC to create a standard.
+PIPs play a central role in how changes happen and are documented in the Push ecosystem. They are the way for people to propose, debate, and adopt changes. There are [different types of PIPs](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions#type) including core PIPs for low-level protocol changes that affect consensus and improvements in API/RPC as well as PRCs for application standards. For example, [Verification Proof](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification/Verification) or [Identity](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification/Identity) for Notifications is described in PRC to create a standard.
 
 ## What is the lifecycle of a PIP?
 Just like passing a new law, the approval process of a PIP involves various stages of discussion, editing, and review. Variations in this process are based on the type of proposal we have at hand and the timeline for discussion which might be set by the editor. In broad terms, all PIPs follow a standard process that includes the following steps:
@@ -65,12 +65,12 @@ Developers can contribute to the Push ecosystem in the capacity of their interes
 ![Small PIP](./image-2.webp)
 
 ## Come contribute to grow the Push ecosystem!
-If you’re interested to read more about PIPs, check out the [PIPs Github](https://github.com/ethereum-push-notification-service/PIPs) repository where you can find additional information, including:
+If you’re interested to read more about PIPs, check out the [PIPs Github](https://github.com/push-protocol/push-website/PIPs) repository where you can find additional information, including:
 
-- [PIP template for submission](https://github.com/ethereum-push-notification-service/PIPs/blob/main/pip-template.md)
+- [PIP template for submission](https://github.com/push-protocol/push-website/PIPs/blob/main/pip-template.md)
 - [PIP forum](https://gov.push.org/c/pip/29)
 - [PIP-1 — Purpose and Guidelines](https://gov.push.org/c/pip/29)
-- [Definitions of Types, and categories of PIPs](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions)
+- [Definitions of Types, and categories of PIPs](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions)
 
 We invite all members interested in contributing to the future of native communication in Web3 to check out the [Push Discord](https://discord.gg/pushprotocol) and [PIP forum](https://gov.push.org/c/pip/29) and come meet the pioneers behind Push.
 

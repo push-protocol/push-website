@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_slider_settings_with_showrunners_example--not
 
 # Notification Settings in BTC Tracker Channel
 
-This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
+This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
 
 <head>
   <title>
@@ -25,7 +25,7 @@ import TabItem from "@theme/TabItem";
 
 Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a slider type notification settings implementation where you as a user can specify the time interval and/or required percentage change of a token on which he/she would like to get notified.
 
-We will choose the [BTC Tracker](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/btcTicker "Push Channel BTC Tracker") channel to demonstrate this example.
+We will choose the [BTC Tracker](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main/src/sample_showrunners/btcTicker "Push Channel BTC Tracker") channel to demonstrate this example.
 
 ## Creating BTC Tracker in Showrunners
 
@@ -597,7 +597,7 @@ else if (userSettings[1]?.enabled === true) {
 🤯Those were a lots of code out there. Let's understand what is actually happening there and what conditions trigger the notifications in different cases.
 
 **Case 1: Both percent change and time interval is enabled** - When a user opts in to both these settings, what the user want is to receive a notification for their selected tokens when there is a particular change in price and it occured within the time interval.
-  So, the basic logic here is:
+So, the basic logic here is:
 
 ```jsx
 if (userDBValue.lastCycle + settingUserValue2 == CYCLES) {

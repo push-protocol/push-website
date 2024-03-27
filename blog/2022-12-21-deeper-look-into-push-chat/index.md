@@ -33,7 +33,7 @@ Push Protocol’s vision has remained to be the de-facto layer of communication 
 ## How Push Chat works?
 Push Chat uses IPFS, encryption, and pinning of the messages on Push Nodes to enable a seamless, no-message drop experience for the user. Each message (and notification) carries a verification proof which the front-end can use to determine that the message content and sender are actually the ones that sent these messages out. You can read about notification verification proofs and the various supported formats here:
 
-[PIPs/definitions/Standard/PRC/Notification at main · ethereum-push-notification-service/PIPs](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification?source=post_page-----90fdea8d9e8e--------------------------------)
+[PIPs/definitions/Standard/PRC/Notification at main · ethereum-push-notification-service/PIPs](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification?source=post_page-----90fdea8d9e8e--------------------------------)
 
 ## What are Push Nodes?
 <i><b>Push Nodes</b></i> are a network of nodes, where each node can have a different role in the network that is responsible for validating and dispatching each notification and chat message between addresses.
@@ -88,7 +88,7 @@ To achieve decentralization, the Push team has broken that into two phases, one 
 ### 1) Content can’t be changed
 With verification proof, the immutability of the content is always ensured (1), read more here:
 
-[PIPs/definitions/Standard/PRC/Notification at main · ethereum-push-notification-service/PIPs](https://github.com/ethereum-push-notification-service/PIPs/tree/main/definitions/Standard/PRC/Notification?source=post_page-----90fdea8d9e8e--------------------------------)
+[PIPs/definitions/Standard/PRC/Notification at main · ethereum-push-notification-service/PIPs](https://github.com/push-protocol/push-website/PIPs/tree/main/definitions/Standard/PRC/Notification?source=post_page-----90fdea8d9e8e--------------------------------)
 
 ### 2) Content can’t be censored
 This is achieved by developing Push Nodes that enables anyone to run the node in a permissionless way with PoS to incentivize and penalize behavior. Alpha Push Nodes are scheduled to happen somewhere between Q1 / Q2 of 2023.

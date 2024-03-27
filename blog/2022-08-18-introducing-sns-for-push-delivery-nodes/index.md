@@ -51,7 +51,7 @@ It works by writing all the user web3 wallet communication into Amazon SNS as a 
 ### 3 Steps for Getting Started With Hosted SNS Module
 Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
 
-<b>Step 1</b>: Implement a webhook to listen to AWS SNS. Here’s a boilerplate along with specs to get you npm installed and running: https://github.com/ethereum-push-notification-service/epns-sns-boilerplate
+<b>Step 1</b>: Implement a webhook to listen to AWS SNS. Here’s a boilerplate along with specs to get you npm installed and running: https://github.com/push-protocol/push-website/epns-sns-boilerplate
 
 <b>Step 2</b>: You will need to open an endpoint either at a dedicated IP that listens to SNS or, if you are testing locally, have to expose the public endpoint for which tons of software is available.
 
@@ -66,5 +66,5 @@ Here’s a time-lapse of how everything works… see you on the other side 😃
 
 #### Useful links:
 - EPNS SNS boilerplate specs
-https://github.com/ethereum-push-notification-service/epns-sns-boilerplate
+https://github.com/push-protocol/push-website/epns-sns-boilerplate
 - Documentation: https://docs.epns.io/developers/developer-zone/receiving-notifications

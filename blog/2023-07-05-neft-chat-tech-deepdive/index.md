@@ -331,8 +331,8 @@ When ownership of an NFT tied to a chat profile is transferred from one individu
 By giving control over the password transfer to the previous NFT owner, Push NFT Chat respects the privacy and consent of all parties involved. It provides a transparent process where the previous owner can choose to share or withhold the password, allowing for a seamless transition of NFT ownership while maintaining the security and confidentiality of the chat history.
 
 ## Exploring Additional Capabilities of Push NFT Chat
-- [Creating Public / Private Groups for NFT Chat Profiles](https://github.com/ethereum-push-notification-service/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1390)
-- [Listening to Chat Socket Events for NFT Chat Profiles](https://github.com/ethereum-push-notification-service/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1546)
+- [Creating Public / Private Groups for NFT Chat Profiles](https://github.com/push-protocol/push-website/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1390)
+- [Listening to Chat Socket Events for NFT Chat Profiles](https://github.com/push-protocol/push-website/push-sdk/blob/88bafe49d489cfe399efa7166407a50574995b16/packages/examples/sdk-backend-node/src/main.ts#L1546)
 
 
 

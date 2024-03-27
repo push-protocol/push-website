@@ -20,7 +20,9 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <head>
-  <title>Get Started | Showrunners Scaffold | Push Notifications | Push Documentation</title>
+  <title>
+    Get Started | Showrunners Scaffold | Push Notifications | Push Documentation
+  </title>
 </head>
 
 ## Setup showrunner
@@ -38,7 +40,7 @@ You should have the following installed on your system:
 The initial step in setting up the showrunners is cloning the showrunners repo
 
 ```zsh
-git clone https://github.com/ethereum-push-notification-service/push-showrunners-framework
+git clone https://github.com/push-protocol/push-website/push-showrunners-framework
 ```
 
 This repository will contain the showrunner framework that you require to instantly build your channels logic.
@@ -171,16 +173,16 @@ Hello World channel exists to simply demonstrate how easy it is to send notifica
   - Just copy and paste the private key of your channel instead of `YOUR_CHANNEL_PRIVATE_KEY_HERE`
   - For `CHAIN_ID_HERE`, You will need to paste the multi chain id format, some examples of supported formats are:
 
-  | Network name       | Chain_ID | Required ENV setting      | Remarks                                                                                |
-  | ------------------ | -------- | ------------------------- | -------------------------------------------------------------------------------------- |
-  | `Ethereum Mainnet` | 1        | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:1` if you deployed your channel on Ethereum Mainnet.                 |
-  | `Polygon Mainnet`  | 137      | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:137` if you deployed your channel on Polygon Mainnet.                |
-  | `BNB Mainnet`      | 56       | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:111551116` if you deployed your channel on BNB Mainnet.              |
-  | `Arbitrum Mainnet` | 42151    | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:42151` if you deployed your channel on Arbitrum Mainnet.             |
-  | `Ethereum Testnet` | 11155111 | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:11155111` if you deployed your channel on Ethereum Testnet.          |
-  | `Polygon Mumbai`   | 80001    | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:80001` if you deployed your channel on Polygon Mumbai.               |
-  | `BNB Testnet`      | 97       | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:97` if you deployed your channel on BNB Testnet.                     |
-  | `Arbitrum Goerli`  | 421613   | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:421613` if you deployed your channel on Arbitrum Goerli.             |
+  | Network name       | Chain_ID | Required ENV setting      | Remarks                                                                       |
+  | ------------------ | -------- | ------------------------- | ----------------------------------------------------------------------------- |
+  | `Ethereum Mainnet` | 1        | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:1` if you deployed your channel on Ethereum Mainnet.        |
+  | `Polygon Mainnet`  | 137      | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:137` if you deployed your channel on Polygon Mainnet.       |
+  | `BNB Mainnet`      | 56       | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:111551116` if you deployed your channel on BNB Mainnet.     |
+  | `Arbitrum Mainnet` | 42151    | `SHOWRUNNERS_ENV=prod`    | Note: Use `eip155:42151` if you deployed your channel on Arbitrum Mainnet.    |
+  | `Ethereum Testnet` | 11155111 | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:11155111` if you deployed your channel on Ethereum Testnet. |
+  | `Polygon Mumbai`   | 80001    | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:80001` if you deployed your channel on Polygon Mumbai.      |
+  | `BNB Testnet`      | 97       | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:97` if you deployed your channel on BNB Testnet.            |
+  | `Arbitrum Goerli`  | 421613   | `SHOWRUNNERS_ENV=staging` | Note: Use `eip155:421613` if you deployed your channel on Arbitrum Goerli.    |
 
 Now run `npm start` or `yarn start` again and you should be able to see the following screen:
 

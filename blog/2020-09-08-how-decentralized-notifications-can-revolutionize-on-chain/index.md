@@ -104,4 +104,4 @@ _Consider joining our buzzing Social Media Community!_
 > 
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
 > 
-> Github_:_ [_https://github.com/ethereum-push-notification-service_](https://github.com/ethereum-push-notification-service)
+> Github_:_ [_https://github.com/ethereum-push-notification-service_](https://github.com/push-protocol/push-website)

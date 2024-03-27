@@ -22,20 +22,20 @@ More detailed information can be found on our [Roadmap 2021 blog post](https://m
 - Includes a highly customizable scheduling engine that allows for setting up recurrent verifications to trigger notifications.
 - This framework relies entirely on the EPNS Backend SDK explained below. However, this doesn’t limit developers to use the SDK directly if a full Showrunners framework implementation is not necessary.
 
-✅ [Showrunners Framework Github](https://github.com/ethereum-push-notification-service/epns-showrunners-staging)
+✅ [Showrunners Framework Github](https://github.com/push-protocol/push-website/epns-showrunners-staging)
 
 ### Back-end SDK in short
 - Allows developers & protocols for easy access to EPNS common functionalities from within their backends. For instance: getSubscribedUsers and sendNotification.
 - This SDK also comes packed with tooling for easy debugging and testing of notifications through the simulate object.
 - npm package available at https://www.npmjs.com/package/@epnsproject/backend-sdk
 
-✅ [EPNS Backend SDK Github](https://github.com/ethereum-push-notification-service/epns-backendsdk-staging)
+✅ [EPNS Backend SDK Github](https://github.com/push-protocol/push-website/epns-backendsdk-staging)
 
 ### Do you want to try the EPNS Backend SDK?
 We have several resources for those interested in start experimenting with the Showrunners framework and the Backend SDK or contributing to them
 
 ### Example Apps
-To help developers get started with the Showrunners Framework and using the new SDK, our public [Showrunners repo](https://github.com/ethereum-push-notification-service/epns-showrunners-staging) includes sample implementations that we have worked for our Pilot Program Collaborations. This repository aims to serve as a reference for a comprehensive Showrunners implementation containing both simple and complex demonstrations of how to integrate EPNS with other popular protocols and services.
+To help developers get started with the Showrunners Framework and using the new SDK, our public [Showrunners repo](https://github.com/push-protocol/push-website/epns-showrunners-staging) includes sample implementations that we have worked for our Pilot Program Collaborations. This repository aims to serve as a reference for a comprehensive Showrunners implementation containing both simple and complex demonstrations of how to integrate EPNS with other popular protocols and services.
 
 [This video](https://drive.google.com/file/d/1nh-HiVDc-OeNTFbYSdaDMwTmSfGwPAut/view?usp=sharing) briefly describes the implementation we worked for Uniswap to notify users when a new Governance Proposal is submitted. It also shows how to use Postman to trigger notifications for debugging and testing purposes; and how a full round-trip looks like — from the moment a new proposal is submitted until the user gets the notification in their Mobile App and click on it to view it.
 

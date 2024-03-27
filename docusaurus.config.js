@@ -19,7 +19,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
+  organizationName: "push-protocol", // Usually your GitHub org/user name.
   projectName: "push-website", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
@@ -39,8 +39,8 @@ const config = {
   },
 
   // Themes
-  themes: ['@docusaurus/theme-mermaid'],
-  
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -124,8 +124,7 @@ const config = {
           sidebarCollapsed: false,
           // Please change this to your repo.
           // Remove this to remove the 'edit this page' links.
-          editUrl:
-            "https://github.com/ethereum-push-notification-service/push-website/blob/main",
+          editUrl: "https://github.com/push-protocol/push-website/blob/main",
         },
         blog: false,
         theme: {
@@ -169,7 +168,7 @@ const config = {
             position: "right",
           },
           {
-            href: "https://github.com/ethereum-push-notification-service/",
+            href: "https://github.com/push-protocol",
             label: "GitHub",
             position: "right",
           },

@@ -291,7 +291,7 @@ That’s it! You now know how to use the components of the <b>@pushprotocol/uiwe
 
 We’ll cover the other parts of the SDK in the coming posts. More reference material is available in the [Push Protocol SDK documentation](https://push.org/docs/).
 
-In addition, try out the [Push SDK sandbox](https://github.com/ethereum-push-notification-service/push-sdk-sandbox).
+In addition, try out the [Push SDK sandbox](https://github.com/push-protocol/push-website/push-sdk-sandbox).
 
 Keep PUSHING! #PoweredbyPush
 
