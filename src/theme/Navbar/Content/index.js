@@ -86,15 +86,13 @@ export default function NavbarContent() {
   // for navigation
   const history = useHistory();
 
-  const theme = useThemeConfig();
-  const navbarStyle = useThemeConfig().navbar.style;
-  console.log(theme, "hteme", navbarStyle);
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === "search");
 
-  const isMobile = useMediaQuery(device.laptopM);
+  const isLaptop = useMediaQuery(device.laptopM);
+  const isTablet = useMediaQuery(device.tablet);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
@@ -103,7 +101,7 @@ export default function NavbarContent() {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const showMobileMenu = isMobile && isMobileMenuOpen;
+  const showMobileMenu = isLaptop && isMobileMenuOpen;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -112,7 +110,7 @@ export default function NavbarContent() {
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
-    // if (isMobile) {
+    // if (isLaptop) {
     setMobileMenuMap((oldMap) => {
       return {
         ...defaultMobileMenuState,
@@ -229,13 +227,13 @@ export default function NavbarContent() {
           <NavbarLogo />
           {/* <NavbarItems items={leftItems} /> */}
 
-          {!isMobile && (
+          {!isTablet && (
             <NavItem to="/docs" aria-label="Push Docs">
               Docs
             </NavItem>
           )}
 
-          {!isMobile && (
+          {!isLaptop && (
             <NavigationMenuItem>
               <NavigationMenuHeader
                 onClick={(e) => onMobileHeaderMenuClick(e, 0)}
