@@ -53,7 +53,8 @@
   --ifm-navbar-dropdown-bg: #fff;
   --ifm-navbar-dropdown-subtext: #6c6e73;
   --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
-  --ifm-navbar-dropdown-image: "none";
+  --ifm-navbar-dropdown-image: grayscale(100%) brightness(70%) contrast(130%);
+
 
 }
 
@@ -97,7 +98,8 @@
   --ifm-navbar-dropdown-bg: #19181b;
   --ifm-navbar-dropdown-subtext: #bbbcd0;
   --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
-  --ifm-navbar-dropdown-image: "grayscale(100%) brightness(70%) contrast(130%)";
+  --ifm-navbar-dropdown-image: "none";
+
 
 }
 
