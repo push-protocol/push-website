@@ -25,7 +25,7 @@ Following the drop rules of [Rockstars of Push (prev EPNS) Volume 1](https://med
 So what are some ideas for you to get Volume 2 drops? Well, in no particular order, here are some things community members have done for us in the past which we love 💖
 
 - Development blogs, workshops, explanations or any #buidl related things, the more creative it gets, the better
-- Provided PRs for improvements on several of our SDKs / Frontend / Repos: https://github.com/ethereum-push-notification-service
+- Provided PRs for improvements on several of our SDKs / Frontend / Repos: https://github.com/push-protocol/push-website
 - Written a blog post explaining an element of the protocol or token design very clearly 🤓
 - Created some killer memes about Push Protocol & push notifications for web3 💪
 - Or do anything which you have a knack for whether it’s getting people to build with Push, explanations, content, design, tweet threads, or whatever
