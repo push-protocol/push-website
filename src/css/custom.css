@@ -246,12 +246,23 @@ a:hover {
   padding: 4px 3px;
 }
 
+.navbar__logo img {
+  border-radius: 0px !important;
+}
+
 .navbar__items--right {
   gap: 32px;
 }
 
 .navbarSearchContainer_src-theme-Navbar-Search-styles-module {
   padding: 0px !important;
+}
+
+@media (max-width: 996px) {
+  .navbarSearchContainer_src-theme-Navbar-Search-styles-module {
+    padding: 0px !important;
+    right: 40px !important;
+  }
 }
 
 @media (max-width: 1024px) {

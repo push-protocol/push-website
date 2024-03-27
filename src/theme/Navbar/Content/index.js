@@ -7,6 +7,7 @@
 
 // React + Web3 Essentials
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { useThemeConfig, ErrorCauseBoundary } from "@docusaurus/theme-common";
 import {
@@ -82,6 +83,12 @@ function NavbarContentLayout({ left, right }) {
   );
 }
 export default function NavbarContent() {
+  // for navigation
+  const history = useHistory();
+
+  const theme = useThemeConfig();
+  const navbarStyle = useThemeConfig().navbar.style;
+  console.log(theme, "hteme", navbarStyle);
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
@@ -115,11 +122,27 @@ export default function NavbarContent() {
   };
 
   const HeaderSpace = ({ item, index }) => {
-    const openLink = (e, href, id) => {
+    const openLink = (e, href, id, target) => {
       e.stopPropagation();
 
       if (href) {
-        window.open(href, "_blank");
+        if (target && target !== "_blank") {
+          if (target === "_self") {
+            // check if url is external
+            if (href.includes("http")) {
+              window.location.href = href;
+            } else {
+              history.push(href);
+            }
+          }
+        } else {
+          // check if url is internal and if so append the base url
+          if (href.includes("http")) {
+            window.open(href, target);
+          } else {
+            window.open(`${window.location.origin}${href}`, target);
+          }
+        }
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
@@ -132,6 +155,7 @@ export default function NavbarContent() {
         });
       } else return;
     };
+
     return (
       <HeaderItem onClick={(e) => openLink(e, item.href, item.id)}>
         {item.srcrefoff && (

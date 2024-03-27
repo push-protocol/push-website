@@ -148,8 +148,8 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "/assets/website/docshub/PushLogo@3x.png",
-          srcDark: "/assets/docs/PushLogoTextWhite.svg",
+          src: "/assets/website/docshub/PushLogoBlack@3x.png",
+          srcDark: "/assets/website/docshub/PushLogo@3x.png",
         },
         items: [
           {
