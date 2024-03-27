@@ -98,4 +98,4 @@ This article will be updated in the coming days.
 ===================
 
 Become part of our buzzing community! Join the conversation on one of our channels:  
-[Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/ethereum-push-notification-service)
+[Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/push-protocol/push-website)

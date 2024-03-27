@@ -18,11 +18,13 @@ We will walk through coding and interacting with the [aave](https://aave.com/) s
 
 And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-You can access the [code](https://github.com/ethereum-push-notification-service/push-showrunners-framework-staging/tree/main/src/sample_showrunners/aave) for the channel and get some vibe for how the code is looking !!
+You can access the [code](https://github.com/push-protocol/push-website/push-showrunners-framework-staging/tree/main/src/sample_showrunners/aave) for the channel and get some vibe for how the code is looking !!
 
 <head>
-  <title>DeFi based trigger | Example | Showrunners Scaffold | Push Notifications |
-    Push Documentation</title>
+  <title>
+    DeFi based trigger | Example | Showrunners Scaffold | Push Notifications |
+    Push Documentation
+  </title>
 </head>
 
 ### Pre-requisites
@@ -1575,20 +1577,28 @@ export default () => {
   dailyRule.dayOfWeek = new schedule.Range(0, 6);
 
   // AAVE CHANNEL RUNS EVERY 24 Hours
-  logger.info(`     🛵 Scheduling Showrunner - Aave Channel [on 6 Hours] [${new Date(Date.now())}]`);
-  schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
-    const aaveChannel = Container.get(AaveChannel);
-    const taskName = 'Aave users address checks and sendMessageToNode()';
+  logger.info(
+    `     🛵 Scheduling Showrunner - Aave Channel [on 6 Hours] [${new Date(Date.now())}]`,
+  );
+  schedule.scheduleJob(
+    { start: startTime, rule: dailyRule },
+    async function () {
+      const aaveChannel = Container.get(AaveChannel);
+      const taskName = "Aave users address checks and sendMessageToNode()";
 
-    try {
-      await aaveChannel.sendMessageToNode(false);
-      logger.info(`[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`);
-    }
-    catch (err) {
-      logger.error(`[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`);
-      logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
-    }
-  });
+      try {
+        await aaveChannel.sendMessageToNode(false);
+        logger.info(
+          `[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`,
+        );
+      } catch (err) {
+        logger.error(
+          `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+        );
+        logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
+      }
+    },
+  );
 };
 ```
 
