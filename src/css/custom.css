@@ -45,12 +45,12 @@
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
   --ifm-color-update-indicator: #575d73;
+  --ifm-navbar-bg: #fff;
   --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-search-bg: rgba(0, 0, 0, 0.10);
   --ifm-search-text-color: #bbbcd0;
   --ifm-navbar-text-color: #6c6e73;
   --ifm-navbar-dropdown-bg: #fff;
-  --ifm-navbar-dropdown-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-dropdown-subtext: #6c6e73;
   --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
   --ifm-navbar-dropdown-image: "none";
@@ -89,12 +89,12 @@
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
   --ifm-color-update-indicator: #575d73;
-  --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
+  --ifm-navbar-bg: rgba(13, 13, 15, 0.80);
+  --ifm-docs-navbar-border: 1px solid rgba(255, 255, 255, 0.10);
   --ifm-navbar-search-bg: rgba(255, 255, 255, 0.10);
   --ifm-search-text-color: #9b9cab;
   --ifm-navbar-text-color: #6c6c6c;
   --ifm-navbar-dropdown-bg: #19181b;
-  --ifm-navbar-dropdown-border: 1px solid rgba(255, 255, 255, 0.10);
   --ifm-navbar-dropdown-subtext: #bbbcd0;
   --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
   --ifm-navbar-dropdown-image: "grayscale(100%) brightness(70%) contrast(130%)";
@@ -258,6 +258,9 @@ a:hover {
   font-family: var(--ifm-font-family-homepage) !important;
 
 }
+.navbar__link:hover {
+  color: #DD45B9 !important;
+}
 
 .navbar__logo img {
   border-radius: 0px !important;
@@ -269,6 +272,13 @@ a:hover {
 
 .navbarSearchContainer_src-theme-Navbar-Search-styles-module {
   padding: 0px !important;
+}
+
+.navbar__inner {
+  border-radius: 24px;
+  border: var(--ifm-docs-navbar-border) !important;
+  background: var(--ifm-navbar-bg) !important;
+  padding: 10px 20px;
 }
 
 @media (max-width: 996px) {
@@ -284,25 +294,15 @@ a:hover {
   }
 }
 
-.navbar__inner {
-  /* background-color: rgba(246, 248, 248, 0.75) !important;
-  border-radius: 32px !important;
-  backdrop-filter: blur(10px); */
-  border-radius: 24px;
-  border: var(--ifm-docs-navbar-border);
-  /* border: 1px solid rgba(255, 255, 255, 0.80) !important; */
-  /* background: rgba(13, 13, 15, 0.80) !important; */
-  background: transparent;
-  padding: 10px 20px;
-}
+
 
 .navbar__brand {
   margin-right: 0rem !important;
 }
 
-[data-theme="dark"] .navbar__inner {
+/* [data-theme="dark"] .navbar__inner {
   background-color: rgba(18, 19, 21, 0.75) !important;
-}
+} */
 
 .navbar-sidebar__back {
   display: none;

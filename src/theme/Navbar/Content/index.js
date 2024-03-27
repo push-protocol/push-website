@@ -146,10 +146,6 @@ export default function NavbarContent() {
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
-        // gsap.to(window, {
-        //   duration: 0.75,
-        //   scrollTo: { y: `#${id}` },
-        // });
         document.getElementById(id).scrollIntoView({
           behavior: "smooth",
         });
@@ -183,12 +179,6 @@ export default function NavbarContent() {
             fontWeight="500"
           >
             {t(item.title)}
-
-            {/* {item.tagitem && (
-              <TagItem style={{ marginLeft: "10px" }}>
-                {item.tagitem.text}
-              </TagItem>
-            )} */}
           </H2>
 
           <H3
@@ -387,12 +377,10 @@ const NavigationMenuContent = styled.ul`
   top: 44px;
   left: 100%;
   transform: translateX(-20%);
-  // transform: translateX(-50%);
   z-index: 188;
   padding: 10px 14px 24px 14px;
   border-radius: 24px;
-  border: var(--ifm-navbar-dropdown-border);
-  // background: #19181b;
+  border: var(--ifm-docs-navbar-border);
   background: var(--ifm-navbar-dropdown-bg);
 
   @media ${device.laptopM} {
