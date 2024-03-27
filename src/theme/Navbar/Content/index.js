@@ -177,7 +177,7 @@ export default function NavbarContent() {
           <H2
             fontSize="16px"
             fontFamily="FK Grotesk Neue"
-            color="#FFF"
+            color="var(--ifm-color-primary-text)"
             lineHeight="130%"
             letterSpacing="normal"
             fontWeight="500"
@@ -194,7 +194,7 @@ export default function NavbarContent() {
           <H3
             fontSize="14px"
             fontFamily="FK Grotesk Neue"
-            color="#BBBCD0"
+            color="var(--ifm-navbar-dropdown-subtext)"
             lineHeight="130%"
             letterSpacing="normal"
             fontWeight="400"
@@ -313,12 +313,12 @@ const NavigationMenuItem = styled.div`
     font-size: 16px;
     line-height: 150%;
     letter-spacing: normal;
-    color: #6c6c6c;
+    // color: #6c6c6c;
   }
 
   &:hover {
     & span {
-      color: #fff;
+      // color: #fff;
     }
 
     & .chevronIcon {
@@ -340,10 +340,13 @@ const NavigationMenuHeader = styled.div`
   padding: 12px 0px;
 
   & span {
-    color: #fff;
-    // color: inherit !important;
+    color: var(--ifm-navbar-text-color);
     padding: 0px 4px 0px 12px;
-    border-left: 1px solid #fff;
+    border-left: 1px solid var(--ifm-color-primary-text);
+
+    &:hover {
+      color: var(--ifm-navbar-text-color);
+    }
   }
 
   &:hover {
@@ -353,8 +356,7 @@ const NavigationMenuHeader = styled.div`
   & .chevronIcon {
     transition-duration: 0.4s;
     transition-property: transform;
-    // color: inherit !important;
-    color: #fff;
+    color: var(--ifm-navbar-text-color);
   }
 
   @media ${device.laptopM} {
@@ -386,11 +388,12 @@ const NavigationMenuContent = styled.ul`
   left: 100%;
   transform: translateX(-20%);
   // transform: translateX(-50%);
-  z-index: 1;
+  z-index: 188;
   padding: 10px 14px 24px 14px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #19181b;
+  border: var(--ifm-navbar-dropdown-border);
+  // background: #19181b;
+  background: var(--ifm-navbar-dropdown-bg);
 
   @media ${device.laptopM} {
     width: 100%;
@@ -433,8 +436,12 @@ const HeaderItem = styled.div`
     min-width: 450px;
   }
 
+  & ${Image} {
+    filter: var(--ifm-navbar-dropdown-image);
+  }
+
   &:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--ifm-navbar-dropdown-hover);
     border-radius: 16px;
 
     h2 {
@@ -461,7 +468,7 @@ const HeaderImage = styled(Image)`
 `;
 
 const NavItem = styled(LinkTo)`
-  color: #fff;
+  color: var(--ifm-color-primary-text);
 
   font-family: "FK Grotesk Neue";
   font-size: 15px;
@@ -471,6 +478,6 @@ const NavItem = styled(LinkTo)`
   letter-spacing: normal;
 
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--ifm-navbar-search-bg);
   padding: 0px 12px;
 `;

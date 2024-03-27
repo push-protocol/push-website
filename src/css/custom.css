@@ -48,6 +48,13 @@
   --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-search-bg: rgba(0, 0, 0, 0.10);
   --ifm-search-text-color: #bbbcd0;
+  --ifm-navbar-text-color: #6c6e73;
+  --ifm-navbar-dropdown-bg: #fff;
+  --ifm-navbar-dropdown-border: 1px solid rgba(0, 0, 0, 0.10);
+  --ifm-navbar-dropdown-subtext: #6c6e73;
+  --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
+  --ifm-navbar-dropdown-image: "none";
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -85,8 +92,12 @@
   --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-search-bg: rgba(255, 255, 255, 0.10);
   --ifm-search-text-color: #9b9cab;
-
-
+  --ifm-navbar-text-color: #6c6c6c;
+  --ifm-navbar-dropdown-bg: #19181b;
+  --ifm-navbar-dropdown-border: 1px solid rgba(255, 255, 255, 0.10);
+  --ifm-navbar-dropdown-subtext: #bbbcd0;
+  --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
+  --ifm-navbar-dropdown-image: "grayscale(100%) brightness(70%) contrast(130%)";
 
 }
 
@@ -242,8 +253,10 @@ a:hover {
 }
 
 .navbar__link {
-  color: #6C6C6C !important;
+  color: var(--ifm-navbar-text-color) !important;
   padding: 4px 3px;
+  font-family: var(--ifm-font-family-homepage) !important;
+
 }
 
 .navbar__logo img {
@@ -313,6 +326,10 @@ a:hover {
 
 .theme-doc-sidebar-container {
   border-right: 0px !important;
+}
+
+.sidebarLogo_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module img {
+  display: none !important;
 }
 
 /* .DocSearch-Button-Container {
