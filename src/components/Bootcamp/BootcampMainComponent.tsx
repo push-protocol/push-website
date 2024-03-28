@@ -32,6 +32,9 @@ import {
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import Accordion from "../Accordion"
+import BootcampCurriculum from "./BootcampCurriculum";
+import { bootcampFaq } from "@site/src/config/BootcampFaq";
+
 // import { BRBAlert } from "./BRBAlert";
 
 // Import Assets
@@ -119,6 +122,7 @@ const defaultMobileMenuState = {
 
 export const BootcampMainComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
   const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
@@ -207,19 +211,23 @@ export const BootcampMainComponent = () => {
     window.open("/", "_self");
   };
 
-    const accordionItems = [
-    { title: 'What is BRB Bootcamp?', content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.` },
-    { title: 'How can I join in the bootcamp?', content: 'Answer 2' },
-    { title: 'Can I get completion certificate?', content: 'Answer 2' },
-    { title: 'How can I join in the bootcamp?', content: 'Answer 2' },
-    { title: 'What is the pricing?', content: 'Answer 2' },
-    { title: 'What is duration of the bootcamp?', content: 'Answer 2' },
-    { title: 'How to contact BRB?', content: 'Answer 2' },
-    // Add more items as needed
-  ];
+   const bootcampLorem = [
+    { 
+        title: "Small cohort size",
+        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        href: ""
+    },
+     { 
+        title: "Small cohort size",
+        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        href: ""
+    },
+     { 
+        title: "Small cohort size",
+        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        href: ""
+    }
+  ]
 
   return (
     <BootcampWrapper background="#000">
@@ -430,8 +438,9 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
             <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 
-            <CardItem>
-                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
+            {bootcampLorem?.map((item) => (
+              <CardItem>
+                <div style={{height: '48px', width: '48px', background: 'grey', borderRadius: '100%'}}></div>
 
                  <H3 
                     color="#FFF"
@@ -440,7 +449,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
                     textAlign="center"
                     fontWeight="400"
                     margin="12px 0 0 0"
-                >Small cohort size </H3>
+                >{item.title}</H3>
 
                 <H3 
                     color="#FFF"
@@ -450,56 +459,28 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
                     fontWeight="300"
                     margin="12px 0 0 0"
                     lineHeight="normal"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
+                >{item.subtitle}</H3>
             </CardItem>
+            ))}
 
-            <CardItem>
-                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
-
-                 <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "24px" : "28px"}
-                    fontFamily="Glancyr, sans-serif"
-                    textAlign="center"
-                    fontWeight="400"
-                    margin="12px 0 0 0"
-                >Small cohort size </H3>
-
-                <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "14px" : "18px"}
-                    fontFamily="Glancyr, sans-serif"
-                    textAlign="center"
-                    fontWeight="300"
-                    margin="12px 0 0 0"
-                    lineHeight="normal"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
-            </CardItem>
-
-            <CardItem>
-                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
-
-                 <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "24px" : "28px"}
-                    fontFamily="Glancyr, sans-serif"
-                    textAlign="center"
-                    fontWeight="400"
-                    margin="12px 0 0 0"
-                >Small cohort size </H3>
-
-                <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "14px" : "18px"}
-                    fontFamily="Glancyr, sans-serif"
-                    textAlign="center"
-                    fontWeight="300"
-                    margin="12px 0 0 0"
-                    lineHeight="normal"
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
-            </CardItem>
+          
             </ItemH>
 
+        </Content>
+      </Section>
+
+      <Section>
+        <Content>
+
+              <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Curriculum</H2>
+            
+            <BootcampCurriculum />
         </Content>
       </Section>
 
@@ -542,7 +523,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
             >FAQ</H2>
 
           <AccordionGrid>
-            <Accordion items={accordionItems} />
+            <Accordion items={bootcampFaq} />
           </AccordionGrid>
           </ItemH>
         </Content>
@@ -550,26 +531,26 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
       <Section>
         <Content>
-          <ItemH gap={isMobile ? "24px" : "175px"}>
-          <ItemV>
-            <H2 
-                color="#FFF"
-                fontSize={isMobile ? "32px" : "46px"}
-                fontFamily="Glancyr, sans-serif"
-                // textAlign="left"
-                fontWeight="400"
-                margin={!isLaptop ? "0 auto 0 0" : "0 auto"}
-            >Ready to Join?</H2>
+          <ItemH gap={isTablet ? "24px" : "175px"} flexDirection={isTablet && 'column'}>
+              <ItemV>
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "46px"}
+                    fontFamily="Glancyr, sans-serif"
+                    // textAlign="left"
+                    fontWeight="400"
+                    margin={!isLaptop ? "0 auto 0 0" : "0 auto"}
+                >Ready to Join?</H2>
 
-            <H3 
-                color="#FFF"
-                fontSize={isMobile ? "14px" : "20px"}
-                fontFamily="Glancyr, sans-serif"
-                textAlign={isLaptop && "center"}
-                fontWeight="300"
-                margin={!isLaptop ? "8px 0 0 0"  : "12px auto 0 auto"}
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</H3>
-          </ItemV>
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "20px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign={isLaptop && "center"}
+                    fontWeight="300"
+                    margin={!isLaptop ? "8px 0 0 0"  : "12px auto 0 auto"}
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</H3>
+              </ItemV>
 
 
               <ButtonItem
@@ -579,6 +560,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
                 fontSize="18px"
                 padding="16px 32px"
                 fontWeight="400"
+                width={isMobile && "250px !important"}
                 onClick={() => handleSectionNavigation("bounties")}
               >
                 Apply Now
@@ -1352,6 +1334,14 @@ const CardItem = styled(ItemV)`
     background: #2A2A38;
     padding: 64px 32px;
     border-radius: 48px;
+
+    @media ${device.tablet} {
+      padding: 32px 16px;
+    }
+
+    @media ${device.mobileL} {
+      padding: 64px 32px;
+    }
 `;
 
 const AccordionGrid = styled.div`
