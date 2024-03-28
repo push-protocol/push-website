@@ -308,7 +308,7 @@ const sidebars = {
         {
           label: "SDK Starter Kit",
           type: "link",
-          href: "https://github.com/ethereum-push-notification-service/push-sdk",
+          href: "https://github.com/push-protocol/push-website/push-sdk",
         },
         {
           label: "REST API",
@@ -362,7 +362,7 @@ const sidebars = {
         {
           label: "Awesome Push Repository",
           type: "link",
-          href: "https://github.com/ethereum-push-notification-service/awesome-push",
+          href: "https://github.com/push-protocol/push-website/awesome-push",
         },
         {
           label: "Push Grants Program",

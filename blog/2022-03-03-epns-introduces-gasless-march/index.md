@@ -50,7 +50,7 @@ As of today, a majority of the total token holders (almost 90%) haven’t activa
 
 For a limited time, EPNS is going to cover the gas costs for a large group of these token holders who haven't delegated. This should make the ability to participate more accessible, by making it free!
 
-The development team has been working on this behind the scenes and today opened up the [backend repo](https://github.com/ethereum-push-notification-service/epns-incentives-backend) to the public. This feature release allows the EPNS project team to cover the gas fees for delegators when they initiate the transaction on-chain.
+The development team has been working on this behind the scenes and today opened up the [backend repo](https://github.com/push-protocol/push-website/epns-incentives-backend) to the public. This feature release allows the EPNS project team to cover the gas fees for delegators when they initiate the transaction on-chain.
 
 > **_Who’s eligible?_**
 > 

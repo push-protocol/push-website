@@ -93,6 +93,6 @@ _Connect with us if you have any questions!_
 > 
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
 > 
-> [_Github_](https://github.com/ethereum-push-notification-service)_:_ [_https://github.com/ethereum-push-notification-service_](https://github.com/ethereum-push-notification-service)
+> [_Github_](https://github.com/push-protocol/push-website)_:_ [_https://github.com/ethereum-push-notification-service_](https://github.com/push-protocol/push-website)
 
 _Reference:_ [_EPNS Whitepaper_](https://whitepaper.epns.io/)

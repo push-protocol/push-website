@@ -31,9 +31,9 @@ If you have used the mobile App before you should already be familiar with the b
 👉 Chrome Browser Extension: https://chrome.google.com/webstore/detail/epns-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg/
 
 #### Repos
-👉 Production Environment Repo: https://github.com/ethereum-push-notification-service/epns-browser-ext
+👉 Production Environment Repo: https://github.com/push-protocol/push-website/epns-browser-ext
 
-👉 Staging Environment Repo: https://github.com/ethereum-push-notification-service/epns-browser-ext-staging
+👉 Staging Environment Repo: https://github.com/push-protocol/push-website/epns-browser-ext-staging
 
 #### Getting Started
 Setting up your extension to start receiving notifications is super easy.

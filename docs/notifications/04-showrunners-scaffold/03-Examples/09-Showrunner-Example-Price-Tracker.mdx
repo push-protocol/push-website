@@ -10,7 +10,7 @@ image: "/assets/docs/previews/price_tracker_with_showrunners_example--price_trac
 
 # Price Tracker in Showrunners
 
-This example is intended to get you understand channel Settings with a real-world application. For the example we are going to look at a scenario where users can choose a their preferred tokens, a time interval and a price percentage change and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
+This example is intended to get you understand channel Settings with a real-world application. For the example we are going to look at a scenario where users can choose a their preferred tokens, a time interval and a price percentage change and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
 
 <head>
   <title>
@@ -19,12 +19,12 @@ This example is intended to get you understand channel Settings with a real-worl
   </title>
 </head>
 
-import Tabs from "@theme/Tabs"; 
+import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ## What we gonna build?
 
-Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a [Price Tracker](https://github.com/ethereum-push-notification-service/push-showrunners-framework/tree/main/src/sample_showrunners/priceTracker/ "Price tracker github repo") and Channel Settings implementation where you as a user can specify conditions on which you would like to get notified.
+Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a [Price Tracker](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main/src/sample_showrunners/priceTracker/ "Price tracker github repo") and Channel Settings implementation where you as a user can specify conditions on which you would like to get notified.
 
 ## Creating Price Tracker in Showrunners
 
@@ -128,7 +128,8 @@ Our objective is to create a channel to send notifications about price movements
 So, to achieve this we will follow the following logic:
 
 - Create a function `triggerUserNotification` which will be called every 3 hours by the Cron job we are setting in Jobs file.
-```js
+
+````js
   public async triggerUserNotification(simulate) {
     const logger = this.logger;
 
@@ -180,15 +181,15 @@ public async getNewPrice(simulate) {
       }
     }catch(e){console.log("Error occured"+e)}
 }
-```
+````
 
-- first,we are creating a variable to store Cycles value in db so that we can track user's time interval settings and 
-to decide on which cron job to send notification.
-- up next, we will fetch the current subscribers of the channel using `subscribers()`,this method will return us an array 
-of 10 elemnts in which each element will have a address and user's channel settings for that address which will denote
-what are the fields a user is interested in/opted in.  
+- first,we are creating a variable to store Cycles value in db so that we can track user's time interval settings and
+  to decide on which cron job to send notification.
+- up next, we will fetch the current subscribers of the channel using `subscribers()`,this method will return us an array
+  of 10 elemnts in which each element will have a address and user's channel settings for that address which will denote
+  what are the fields a user is interested in/opted in.
 - further we are incrementing the user's cycle value by 3 for every cron job they have executed/taken part in,this will helpe
-us to track when to send notification to user and in which cycle.
+  us to track when to send notification to user and in which cycle.
 
 ```js
  // Global variables from DB
@@ -228,7 +229,8 @@ us to track when to send notification to user and in which cycle.
 ```
 
 - Loop across each subscriber to fetch their `userSettings`
-```js 
+
+```js
 await Promise.all(
     userData?.subscribers?.map(async (subscriberObj: { settings: string; subscriber: any }) => {
         // Converting String to JS object
@@ -259,9 +261,11 @@ await Promise.all(
 
 ```js
 if (mapObj.user == true) {
-    // Get current price of the token
-    const currentToken = tokenInfo.find((obj) => obj.symbol === mapObj.description);
-    const currentPrice = currentToken?.price;
+  // Get current price of the token
+  const currentToken = tokenInfo.find(
+    (obj) => obj.symbol === mapObj.description,
+  );
+  const currentPrice = currentToken?.price;
 }
 ```
 
@@ -295,26 +299,31 @@ const changePercentage = (
 
 /* Conditions go here */
 ```
+
 - This code block is responsible for handling price tracking notifications based on user settings.
-- Craft the 4 major conditions :<br/> 
+- Craft the 4 major conditions :<br/>
 
 i. **User opted for both time interval and percentage change** <br/>
-  -  It checks if the price alert and time interval slider are enabled for a subscriber.
-  -  If both are enabled, it fetches the user values for settings and the user's last cycle values from the database.
-  -  It then compares the change percentage with the user-defined price value and checks if the last cycle value matches the current cycle.
-  -  If the conditions are met, it updates the user's mapped value in the database and builds a payload for the notification.
-  -  The payload includes the percentage change, description, and current price.
+
+- It checks if the price alert and time interval slider are enabled for a subscriber.
+- If both are enabled, it fetches the user values for settings and the user's last cycle values from the database.
+- It then compares the change percentage with the user-defined price value and checks if the last cycle value matches the current cycle.
+- If the conditions are met, it updates the user's mapped value in the database and builds a payload for the notification.
+- The payload includes the percentage change, description, and current price.
 
 ii. **Only percentage change** <br/>
-  -  If only the price alert slider is enabled, it fetches the user value for the price setting and compares it with the change percentage.
+
+- If only the price alert slider is enabled, it fetches the user value for the price setting and compares it with the change percentage.
 
 iii. **Only Time interval** <br/>
-  -  If only the time interval slider is enabled, it fetches the user value for the time setting and the user's last cycle values from the database.
-  -  It then checks if the sum of the last cycle value and the user value matches the current cycle.
-  -  If the condition is met, it updates the user's mapped value in the database and builds a payload for the notification. 
+
+- If only the time interval slider is enabled, it fetches the user value for the time setting and the user's last cycle values from the database.
+- It then checks if the sum of the last cycle value and the user value matches the current cycle.
+- If the condition is met, it updates the user's mapped value in the database and builds a payload for the notification.
 
 iv. **Receive general notifications** <br/>
-  -  If none of the sliders are enabled, it builds a payload for the notification without any conditions.
+
+- If none of the sliders are enabled, it builds a payload for the notification without any conditions.
 
 ```js
 // The 4 conditions here
@@ -322,93 +331,109 @@ iv. **Receive general notifications** <br/>
 // index - 10 ---> Price Change
 
 if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
-    this.logInfo(`Price Alert & Time Interval Slider case: ${subscriberObj.subscriber}`);
+  this.logInfo(
+    `Price Alert & Time Interval Slider case: ${subscriberObj.subscriber}`,
+  );
 
-    // Fetch user values for settings
-    let userValueTime = userSettings[9].user == 0 ? 3 : userSettings[9].user;
-    let userValuePrice = userSettings[10].user;
+  // Fetch user values for settings
+  let userValueTime = userSettings[9].user == 0 ? 3 : userSettings[9].user;
+  let userValuePrice = userSettings[10].user;
 
-    // Fetch user last cycle values
-    const userDBValue =
-        (await priceTrackerModel.findOne({ _id: subscriberObj.subscriber })) ||
-        (await priceTrackerModel.create({
-            _id: subscriberObj.subscriber,
-            lastCycle: priceTrackerGlobalData.cycles,
-        }));
+  // Fetch user last cycle values
+  const userDBValue =
+    (await priceTrackerModel.findOne({ _id: subscriberObj.subscriber })) ||
+    (await priceTrackerModel.create({
+      _id: subscriberObj.subscriber,
+      lastCycle: priceTrackerGlobalData.cycles,
+    }));
 
-    this.logInfo(`Mapped value of ${userDBValue._id} is ${userDBValue.lastCycle} from both price and time`);
-    this.logInfo(`User value of ${userDBValue._id} is ${userValueTime} from both price and time`);
+  this.logInfo(
+    `Mapped value of ${userDBValue._id} is ${userDBValue.lastCycle} from both price and time`,
+  );
+  this.logInfo(
+    `User value of ${userDBValue._id} is ${userValueTime} from both price and time`,
+  );
 
-    // Condition to trigger notification
-    if (Math.abs(Number(changePercentage)) >= userValuePrice && userDBValue.lastCycle + userValueTime == CYCLES) {
-        // UPDATE the users mapped value in DB
-        await priceTrackerModel.findOneAndUpdate(
-            { _id: subscriberObj.subscriber },
-            { lastCycle: CYCLES },
-            { upsert: true },
-        );
-        // Build the payload of the notification
-        const payloadMsg =
-            Number(changePercentage) > 0
-                ? `Percentage Change(${mapObj.description}): [s: +${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`
-                : `Percentage Change(${mapObj.description}): [d: -${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`;
-        this.logInfo(`Address: ${subscriberObj.subscriber} Data: ${payloadMsg}`);
+  // Condition to trigger notification
+  if (
+    Math.abs(Number(changePercentage)) >= userValuePrice &&
+    userDBValue.lastCycle + userValueTime == CYCLES
+  ) {
+    // UPDATE the users mapped value in DB
+    await priceTrackerModel.findOneAndUpdate(
+      { _id: subscriberObj.subscriber },
+      { lastCycle: CYCLES },
+      { upsert: true },
+    );
+    // Build the payload of the notification
+    const payloadMsg =
+      Number(changePercentage) > 0
+        ? `Percentage Change(${mapObj.description}): [s: +${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`
+        : `Percentage Change(${mapObj.description}): [d: -${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`;
+    this.logInfo(`Address: ${subscriberObj.subscriber} Data: ${payloadMsg}`);
 
-        notifData2.push({ key: `${Math.abs(Number(changePercentage))}`, notif: `${payloadMsg}` });
-    }
+    notifData2.push({
+      key: `${Math.abs(Number(changePercentage))}`,
+      notif: `${payloadMsg}`,
+    });
+  }
 } else if (userSettings[10]?.enabled == true) {
-    this.logInfo(`Price Alert Slider only case: ${subscriberObj.subscriber}`);
+  this.logInfo(`Price Alert Slider only case: ${subscriberObj.subscriber}`);
 
-    // Fetch user values for settings
-    let userValue = userSettings[10].user;
+  // Fetch user values for settings
+  let userValue = userSettings[10].user;
 
-    // Condition to trigger notification
-    if (Math.abs(Number(changePercentage)) >= userValue) {
-        // Build the payload of the notification
-        const payloadMsg =
-            Number(changePercentage) > 0
-                ? `Percentage Change(${mapObj.description}): [s: +${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`
-                : `Percentage Change(${mapObj.description}): [d: -${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`;
+  // Condition to trigger notification
+  if (Math.abs(Number(changePercentage)) >= userValue) {
+    // Build the payload of the notification
+    const payloadMsg =
+      Number(changePercentage) > 0
+        ? `Percentage Change(${mapObj.description}): [s: +${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`
+        : `Percentage Change(${mapObj.description}): [d: -${Math.abs(Number(changePercentage))}% ($${currentPrice})]\n`;
 
-        notifData2.push({ key: `${Math.abs(Number(changePercentage))}`, notif: `${payloadMsg}` });
-    }
+    notifData2.push({
+      key: `${Math.abs(Number(changePercentage))}`,
+      notif: `${payloadMsg}`,
+    });
+  }
 } else if (userSettings[9]?.enabled == true) {
-    this.logInfo(`Time Interval Slider only case: ${subscriberObj.subscriber}`);
+  this.logInfo(`Time Interval Slider only case: ${subscriberObj.subscriber}`);
 
-    // Fetch user values for settings
-    let userValue = userSettings[9].user == 0 ? 3 : userSettings[9].user;
+  // Fetch user values for settings
+  let userValue = userSettings[9].user == 0 ? 3 : userSettings[9].user;
 
-    const userDBValue =
-        (await priceTrackerModel.findOne({ _id: subscriberObj.subscriber })) ||
-        (await priceTrackerModel.create({
-            _id: subscriberObj.subscriber,
-            lastCycle: priceTrackerGlobalData.cycles,
-        }));
+  const userDBValue =
+    (await priceTrackerModel.findOne({ _id: subscriberObj.subscriber })) ||
+    (await priceTrackerModel.create({
+      _id: subscriberObj.subscriber,
+      lastCycle: priceTrackerGlobalData.cycles,
+    }));
 
-    if (userDBValue.lastCycle + userValue == CYCLES) {
-        // UPDATE the users mapped value in DB
-        await priceTrackerModel.findOneAndUpdate(
-            { _id: subscriberObj.subscriber },
-            { lastCycle: CYCLES },
-            { upsert: true },
-        );
+  if (userDBValue.lastCycle + userValue == CYCLES) {
+    // UPDATE the users mapped value in DB
+    await priceTrackerModel.findOneAndUpdate(
+      { _id: subscriberObj.subscriber },
+      { lastCycle: CYCLES },
+      { upsert: true },
+    );
 
-        // Build the payload of the notification
-        const payloadMsg = `${mapObj.description} at[d:$${currentPrice}]\n`;
-
-        notifData2.push({ key: `${currentPrice}`, notif: `${payloadMsg}` });
-    }
-} else {
     // Build the payload of the notification
     const payloadMsg = `${mapObj.description} at[d:$${currentPrice}]\n`;
 
     notifData2.push({ key: `${currentPrice}`, notif: `${payloadMsg}` });
+  }
+} else {
+  // Build the payload of the notification
+  const payloadMsg = `${mapObj.description} at[d:$${currentPrice}]\n`;
+
+  notifData2.push({ key: `${currentPrice}`, notif: `${payloadMsg}` });
 }
 ```
 
 🤯Those were a lots of code out there. Let's understand what is actually happening there and what coditions trigger the notifications in different cases.
 
-**Case 1: Both percent change and time interval is enabled**<br/> 
+**Case 1: Both percent change and time interval is enabled**<br/>
+
 - When a user opts in to both these settings, what the user want is to receive a notification for their selected tokens when there is a particular change in price and it occured within the time interval.
   So, the basic logic here is:
 
@@ -420,6 +445,7 @@ if (
 ) {
 }
 ```
+
 Also, there are 3 conditions that you need to lookout for:<br/>
 i. What happens when time is triggered but not percentage?<br/>
 ii. What happens if a user opts-in, opts-out and then again after several days opt-in?<br/>
@@ -469,7 +495,7 @@ const priceTrackerSchema = new Schema<PriceTrackerData>({
   },
   lastCycle: {
     type: Number,
-  }, 
+  },
   settingsValue: {
     type: Number,
   }

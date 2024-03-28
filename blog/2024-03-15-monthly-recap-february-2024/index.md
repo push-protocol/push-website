@@ -23,7 +23,7 @@ We proudly sponsored the [ETHCincoDeMayo Hackathon 2024](https://ethcincodemayo.
 
 **Product Enhancements:**
 
-To enhance user experience, we’ve introduced guest mode on our [dApp](https://app.push.org/). Our [SDK](https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-backend-node) received an update, and our [website](https://push.org/) got a fresh revamp. Excitingly, we launched the [Push SDK Demo React app](https://react-playground.push.org/)!
+To enhance user experience, we’ve introduced guest mode on our [dApp](https://app.push.org/). Our [SDK](https://github.com/push-protocol/push-website/push-sdk/tree/main/packages/examples/sdk-backend-node) received an update, and our [website](https://push.org/) got a fresh revamp. Excitingly, we launched the [Push SDK Demo React app](https://react-playground.push.org/)!
 
 **Community Engagement:**
 
