@@ -21,6 +21,9 @@ import Schedules from "@site/src/components/BRB/BRBSchedules";
 import { ChatComponent } from "@site/src/components/PushChat/PushChatComponent";
 import {
   Button,
+  Content,
+  H2,
+  H3,
   Image,
   ItemH,
   ItemV,
@@ -28,6 +31,7 @@ import {
   Span,
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import Accordion from "../Accordion"
 // import { BRBAlert } from "./BRBAlert";
 
 // Import Assets
@@ -37,6 +41,7 @@ import ImageBRB from "@site/static/assets/Image-BRB.png";
 import MobileBRB from "@site/static/assets/Mobile-BRB.png";
 import PlaygroundBg from "@site/static/assets/PlaygroundBg.png";
 import FirstImage from "@site/static/assets/website/bootcamp/bg-image1.png";
+import SecondImage from "@site/static/assets/website/bootcamp/bg-image2.png";
 import X from "@site/static/assets/X-BRB.svg";
 import PushLogo from "@site/static/assets/pushIcon.svg";
 import { AiOutlineClose } from "react-icons/ai";
@@ -114,6 +119,7 @@ const defaultMobileMenuState = {
 
 export const BootcampMainComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
+  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
@@ -201,6 +207,20 @@ export const BootcampMainComponent = () => {
     window.open("/", "_self");
   };
 
+    const accordionItems = [
+    { title: 'What is BRB Bootcamp?', content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.` },
+    { title: 'How can I join in the bootcamp?', content: 'Answer 2' },
+    { title: 'Can I get completion certificate?', content: 'Answer 2' },
+    { title: 'How can I join in the bootcamp?', content: 'Answer 2' },
+    { title: 'What is the pricing?', content: 'Answer 2' },
+    { title: 'What is duration of the bootcamp?', content: 'Answer 2' },
+    { title: 'How to contact BRB?', content: 'Answer 2' },
+    // Add more items as needed
+  ];
+
   return (
     <BootcampWrapper background="#000">
       {/* header style */}
@@ -214,7 +234,10 @@ export const BootcampMainComponent = () => {
           setIsAlertVisible={setIsAlertVisible}
         /> */}
 
-        <Section padding="0 0 0 0">
+        <Section>
+          {/* <Content
+            padding="0px 0px 0px 0px" 
+            alignSelf="center"> */}
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
               <PushLogoBlackContainer className="headerlogo" flex="initial">
@@ -326,9 +349,10 @@ export const BootcampMainComponent = () => {
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
+          {/* </Content> */}
         </Section>
       </StyledHeader>
-
+                  
       <ItemTop>
         <ItemV
           id="new"
@@ -378,6 +402,271 @@ export const BootcampMainComponent = () => {
         </NavButtons>
       </ItemTop>
       </BootcampBG>
+
+      <Section>
+        <Content className="fluid" overflow="visible" padding="0px 0px 0px 0px">
+          <BootcampLowerBG />
+        </Content>
+      </Section>
+
+      <Section>
+        <Content>
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Lorem ipsum dolor sit amet</H2>
+
+            <H3 
+                color="#FFF"
+                fontSize={isMobile ? "14px" : "20px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="300"
+                margin="8px 0 0 0"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </H3>
+
+            <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
+
+            <CardItem>
+                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
+
+                 <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "24px" : "28px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="400"
+                    margin="12px 0 0 0"
+                >Small cohort size </H3>
+
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "18px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="300"
+                    margin="12px 0 0 0"
+                    lineHeight="normal"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
+            </CardItem>
+
+            <CardItem>
+                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
+
+                 <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "24px" : "28px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="400"
+                    margin="12px 0 0 0"
+                >Small cohort size </H3>
+
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "18px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="300"
+                    margin="12px 0 0 0"
+                    lineHeight="normal"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
+            </CardItem>
+
+            <CardItem>
+                <div style={{height: '48px', width: '48px', background: 'red', borderRadius: '100%'}}></div>
+
+                 <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "24px" : "28px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="400"
+                    margin="12px 0 0 0"
+                >Small cohort size </H3>
+
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "18px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="300"
+                    margin="12px 0 0 0"
+                    lineHeight="normal"
+                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</H3>
+            </CardItem>
+            </ItemH>
+
+        </Content>
+      </Section>
+
+       <Section>
+        <Content>
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Bootcamp Certification</H2>
+
+            <H3 
+                color="#FFF"
+                fontSize={isMobile ? "14px" : "20px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="300"
+                margin="8px 0 0 0"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</H3>
+
+
+            <div style={{height: '369px', width: isMobile ? '100%' : '510px', background: '#6c6c6c', borderRadius: '32px', margin: '64px auto 0 auto'}}></div>
+
+        </Content>
+      </Section>  
+
+      <Section>
+        <Content>
+      
+          <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign={isLaptop && "center"}
+                margin={isLaptop && "0 auto"}
+                fontWeight="400"
+            >FAQ</H2>
+
+          <AccordionGrid>
+            <Accordion items={accordionItems} />
+          </AccordionGrid>
+          </ItemH>
+        </Content>
+      </Section>
+
+      <Section>
+        <Content>
+          <ItemH gap={isMobile ? "24px" : "175px"}>
+          <ItemV>
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                // textAlign="left"
+                fontWeight="400"
+                margin={!isLaptop ? "0 auto 0 0" : "0 auto"}
+            >Ready to Join?</H2>
+
+            <H3 
+                color="#FFF"
+                fontSize={isMobile ? "14px" : "20px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign={isLaptop && "center"}
+                fontWeight="300"
+                margin={!isLaptop ? "8px 0 0 0"  : "12px auto 0 auto"}
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</H3>
+          </ItemV>
+
+
+              <ButtonItem
+                borderRadius="24px"
+                background="#E64DE9"
+                border="1px solid #FC6DFF"
+                fontSize="18px"
+                padding="16px 32px"
+                fontWeight="400"
+                onClick={() => handleSectionNavigation("bounties")}
+              >
+                Apply Now
+              </ButtonItem>
+          </ItemH>
+
+
+
+        </Content>
+      </Section>
+
+        <Section id="support">
+          <Content>
+          <ItemH gap={isMobile ? "24px" : "28px"}>
+            <ItemV
+              minWidth="280px"
+              background="#000"
+              padding="20px 48px"
+              gap="14px"
+              borderRadius="48px"
+              background="#2a2a39"
+            >
+              <SpanContent
+                fontSize={isMobile ? "89px" : "112px"}
+                fontWeight="400"
+                color="#E64DE9"
+                letterSpacing="0.01"
+              >
+                Drop us a GM!
+              </SpanContent>
+            </ItemV>
+
+            <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
+              >
+                <i>
+                  <Discord />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#6F8BEE">
+                  24x7 Support on Discord
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://twitter.com/pushprotocol")}
+              >
+                <i>
+                  <X className="discord" />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#63BFF3">
+                  Updates & Announcements
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+            </ItemV>
+          </ItemH>
+          </Content>
+      </Section>
+
+     
+      
+      
 
       {/* <BRBParallax /> */}
 
@@ -492,7 +781,7 @@ const MemberImage = styled(Image)`
 
 const ItemTop = styled.main`
   width: 100%;
-  margin: 261px 0 261px 0;
+  margin: 323px 0 0 0;
 
   @media ${device.mobileL} {
     width: 100%;
@@ -507,9 +796,9 @@ const BootcampBG = styled.div`
 //   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-//   background-size: 100% 100%;
   font-family: "Strawford", sans-serif;
-  width: 1536px;
+  width: 100vw;
+  // width: 1536px;
 //   height: 700px;
   margin: 0 auto;
   @media (max-width: 1650px)  {
@@ -519,15 +808,35 @@ const BootcampBG = styled.div`
   @media ${device.mobileL} {
     width: 100%;
   }
-`
+`;
+
+const BootcampLowerBG = styled.div`
+  background-image: url(${SecondImage});
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+//   background-size: 100% 100%;
+  width: 100%;
+  // height: 100%;
+  height: 700px;
+  // @media (max-width: 1650px)  {
+  //   width: 100%;
+  //   background-size: cover;
+  // }
+  // @media ${device.mobileL} {
+  //   width: 100%;
+  // }
+`;
 
 const ButtonItem = styled(Button)`
-  vertical-align: middle;
   font-size: 18px;
   font-style: normal;
   font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
-  line-height: 18px;
+  line-height: normal;
+  padding: 16px 64px 22px 64px;
+  border-radius: 24px; 
+
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
     border: 1px solid transparent;
@@ -545,8 +854,10 @@ const ButtonItem = styled(Button)`
 
 const ButtonBar = styled(Button)`
   letter-spacing: 0.03em;
-  line-height: 18px;
   font-family: Glancyr, sans-serif;
+  line-height: normal;
+  padding: 16px 32px 22px 32px;
+
   &:hover {
     border: 1px solid #e64de9;
   }
@@ -1034,4 +1345,21 @@ const BottomGrad = styled.div`
   align-items: flex-end;
   padding-bottom: 57px;
   box-sizing: border-box;
+`;
+
+
+const CardItem = styled(ItemV)`
+    background: #2A2A38;
+    padding: 64px 32px;
+    border-radius: 48px;
+`;
+
+const AccordionGrid = styled.div`
+    max-width: 877px;
+    min-width: 877px;
+
+  @media ${device.laptop} {
+    max-width: 100%;
+    min-width: 100%;
+  }
 `;
