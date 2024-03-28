@@ -22,7 +22,7 @@ import { bootcampCurriculum } from "@site/src/config/BootcampCurriculum";
 
 const BootcampCurriculum = () => {
     const isMobile = useMediaQuery(device.mobileL);
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);

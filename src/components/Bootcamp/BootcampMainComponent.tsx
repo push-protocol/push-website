@@ -44,7 +44,6 @@ import ImageBRB from "@site/static/assets/Image-BRB.png";
 import MobileBRB from "@site/static/assets/Mobile-BRB.png";
 import PlaygroundBg from "@site/static/assets/PlaygroundBg.png";
 import FirstImage from "@site/static/assets/website/bootcamp/bg-image1.png";
-import SecondImage from "@site/static/assets/website/bootcamp/bg-image2.png";
 import X from "@site/static/assets/X-BRB.svg";
 import PushLogo from "@site/static/assets/pushIcon.svg";
 import { AiOutlineClose } from "react-icons/ai";
@@ -286,34 +285,26 @@ export const BootcampMainComponent = () => {
                 showMobileMenu={isMobileMenuOpen}
               >
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("bounties")}
+                  onClick={() => handleSectionNavigation("bootcamp")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">Bounties</Span>
+                    <Span fontSize="18px">Why BRB Bootcamp?</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("schedule")}
+                  onClick={() => handleSectionNavigation("curriculum")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">Schedule</Span>
+                    <Span fontSize="18px">Curriculum</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("online")}
+                  onClick={() => handleSectionNavigation("faq")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Online</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("playground")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Chat</Span>
+                    <Span fontSize="18px">FAQ</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
@@ -412,8 +403,14 @@ export const BootcampMainComponent = () => {
       </BootcampBG>
 
       <Section>
-        <Content className="fluid" overflow="visible" padding="0px 0px 0px 0px">
-          <BootcampLowerBG />
+        <Content className="fluid" overflow="visible" padding="0px 0px 100px 0px">
+          {/* <BootcampLowerBG /> */}
+
+          <Image
+              src={require(`@site/static/assets/website/bootcamp/bg-image2.png`).default}
+              srcSet={`${require(`@site/static/assets/website/bootcamp/bg-image2@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/bg-image2@3x.png`).default} 3x`}
+              alt={`Image showing BRB Chat is powered by Push Chat`}
+          />
         </Content>
       </Section>
 
@@ -469,7 +466,7 @@ export const BootcampMainComponent = () => {
         </Content>
       </Section>
 
-      <Section>
+      <Section id="curriculum">
         <Content>
 
               <H2 
@@ -509,7 +506,7 @@ export const BootcampMainComponent = () => {
         </Content>
       </Section>  
 
-      <Section>
+      <Section id="faq">
         <Content>
       
           <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
@@ -646,106 +643,6 @@ export const BootcampMainComponent = () => {
           </Content>
       </Section>
 
-     
-      
-      
-
-      {/* <BRBParallax /> */}
-
-      {/* <PartnersDiv id="partners">
-        <Partners />
-      </PartnersDiv>
-
-      <CommunityPartners />
-
-      <BountyDiv id="bounties">
-        <PartnerBounties />
-      </BountyDiv>
-
-      <ScheduleDiv id="schedule">
-        <Schedules />
-      </ScheduleDiv>
-
-      <BRBOnlineDiv id="online">
-        <BRBOnline />
-      </BRBOnlineDiv>
-
-      <PlaygroundDiv id="playground">
-        <ChatComponent />
-      </PlaygroundDiv>
-
-      <ItemFooter id="support">
-        <ItemH gap="28px">
-          <ItemV
-            minWidth="280px"
-            background="#000"
-            padding="20px 48px"
-            gap="14px"
-            borderRadius="48px"
-            background="#2a2a39"
-          >
-            <SpanContent
-              fontSize="112px"
-              fontWeight="400"
-              color="#E64DE9"
-              letterSpacing="0.01"
-            >
-              Drop us a GM!
-            </SpanContent>
-          </ItemV>
-
-          <ItemV gap="28px" minWidth="280px" alignItems="stretch">
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
-            >
-              <i>
-                <Discord />
-              </i>
-
-              <Span fontSize="36px" fontWeight="400" color="#6F8BEE">
-                24x7 Support on Discord
-              </Span>
-
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
-
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://twitter.com/pushprotocol")}
-            >
-              <i>
-                <X className="discord" />
-              </i>
-
-              <Span fontSize="36px" fontWeight="400" color="#63BFF3">
-                Updates & Announcements
-              </Span>
-
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
-          </ItemV>
-        </ItemH>
-      </ItemFooter> */}
-
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
           © 2023 Push. All rights reserved.
@@ -779,7 +676,7 @@ const BootcampBG = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   font-family: "Strawford", sans-serif;
-  width: 100vw;
+  width: 100%;
   // width: 1536px;
 //   height: 700px;
   margin: 0 auto;
@@ -792,23 +689,6 @@ const BootcampBG = styled.div`
   }
 `;
 
-const BootcampLowerBG = styled.div`
-  background-image: url(${SecondImage});
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-//   background-size: 100% 100%;
-  width: 100%;
-  // height: 100%;
-  height: 700px;
-  // @media (max-width: 1650px)  {
-  //   width: 100%;
-  //   background-size: cover;
-  // }
-  // @media ${device.mobileL} {
-  //   width: 100%;
-  // }
-`;
 
 const ButtonItem = styled(Button)`
   font-size: 18px;
