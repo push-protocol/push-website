@@ -85,14 +85,16 @@ function NavbarContentLayout({ left, right }) {
 export default function NavbarContent() {
   // for navigation
   const history = useHistory();
+  const theme = useThemeConfig();
+  console.log(theme, "kokokoko");
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === "search");
 
-  const isLaptop = useMediaQuery(device.laptopM);
-  const isTablet = useMediaQuery(device.tablet);
+  const isLaptopM = useMediaQuery(device.laptopM);
+  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
@@ -101,7 +103,7 @@ export default function NavbarContent() {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const showMobileMenu = isLaptop && isMobileMenuOpen;
+  const showMobileMenu = isLaptopM && isMobileMenuOpen;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -110,7 +112,7 @@ export default function NavbarContent() {
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
 
-    // if (isLaptop) {
+    // if (isLaptopM) {
     setMobileMenuMap((oldMap) => {
       return {
         ...defaultMobileMenuState,
@@ -227,13 +229,13 @@ export default function NavbarContent() {
           <NavbarLogo />
           {/* <NavbarItems items={leftItems} /> */}
 
-          {!isTablet && (
+          {!isLaptopM && (
             <NavItem to="/docs" aria-label="Push Docs">
               Docs
             </NavItem>
           )}
 
-          {!isLaptop && (
+          {!isLaptopM && (
             <NavigationMenuItem>
               <NavigationMenuHeader
                 onClick={(e) => onMobileHeaderMenuClick(e, 0)}
@@ -466,4 +468,8 @@ const NavItem = styled(LinkTo)`
   border-radius: 8px;
   background: var(--ifm-navbar-search-bg);
   padding: 0px 12px;
+
+  &:hover {
+    color: var(--ifm-color-primary-text);
+  }
 `;

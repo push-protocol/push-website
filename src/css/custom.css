@@ -45,7 +45,7 @@
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
   --ifm-color-update-indicator: #575d73;
-  --ifm-navbar-bg: #fff;
+  --ifm-navbar-bg: rgba(255, 255, 255, 0.80);
   --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-search-bg: rgba(0, 0, 0, 0.10);
   --ifm-search-text-color: #bbbcd0;
@@ -245,6 +245,10 @@ a:hover {
   display: none !important;
 }
 
+.PushDocs .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .PushDocs .docRoot_UBD9 {
+  /* margin: 73px auto 0 auto !important; */
+}
+
 .navbar--fixed-top {
   background-color: transparent;
   margin: auto !important;
@@ -252,6 +256,7 @@ a:hover {
   height: 92px;
   border: 0px;
   box-shadow: none;
+  /* top: 26px !important; */
 }
 
 .navbar__link {
@@ -281,6 +286,12 @@ a:hover {
   border: var(--ifm-docs-navbar-border) !important;
   background: var(--ifm-navbar-bg) !important;
   padding: 10px 20px;
+  backdrop-filter: blur(32px) !important;
+  font-family: var(--ifm-font-family-homepage) !important;
+}
+
+.navbar-sidebar a {
+  font-family: var(--ifm-font-family-homepage) !important;
 }
 
 @media (max-width: 996px) {
