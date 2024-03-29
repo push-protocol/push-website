@@ -295,6 +295,18 @@ a:hover {
   font-family: var(--ifm-font-family-homepage) !important;
 }
 
+.sidebar_njMd .sidebarLogo_isFc img {
+  display: none !important;
+}
+
+/* .themedComponent_mlkZ  {
+  display: none !important;
+} */
+
+.sidebarLogo_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module img {
+  display: none !important;
+}
+
 @media (max-width: 996px) {
   .navbarSearchContainer_src-theme-Navbar-Search-styles-module {
     padding: 0px !important;
@@ -342,9 +354,9 @@ a:hover {
   border-right: 0px !important;
 }
 
-.sidebarLogo_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module img {
-  display: none !important;
-}
+
+
+
 
 /* .DocSearch-Button-Container {
     padding: 4px;
