@@ -247,7 +247,7 @@ a:hover {
 }
 
 .PushDocs .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .PushDocs .docRoot_UBD9 {
-  margin: 23px auto 0 auto !important;
+  margin-top: 23px !important;
 }
 
 .navbar--fixed-top {
