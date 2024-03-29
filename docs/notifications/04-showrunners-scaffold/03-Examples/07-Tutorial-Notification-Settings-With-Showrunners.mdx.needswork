@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_notifications_tutorials_push_react_component_
 This tutorial is intended to get you up and going by providing a step-by-step tutorial in integrating notification settings in the showrunners framework. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/), [Showrunners Framework](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/) and [Channel Settings Demo](https://github.com/push-protocol/push-website/push-showrunners-framework/tree/main/src/sample_showrunners/bank) for better understanding!
 
 <head>
-  <title>Notification Settings with Showrunners tutorial | Push Notification | Push Documentation</title>
+  <title>{`Notification Settings with Showrunners tutorial | Push Notification | Push Documentation`}</title>
 </head>
 
 import Tabs from '@theme/Tabs'
