@@ -223,19 +223,19 @@ export default function HomepageFeatures(): JSX.Element {
       <DocsHeroSection>
         <ItemV
           position="absolute"
-          top="-100px"
+          top="-149px"
           left="0"
           right="0"
-          height="100px"
-          background={GLOBALS.COLORS.BG_DARK}
+          height="149px"
+          background={"var(--ifm-docs-hero-bg)"}
         ></ItemV>
         <Content padding="0px">
           <HeroHeader>
             <ItemV zIndex="1">
-              <H1>Push Documentation Hub</H1>
+              <H1 color="var(--ifm-color-primary-text)" margin="0 !important">Push Documentation Hub</H1>
               <Span
-                color={GLOBALS.COLORS.FONT_LIGHT}
-                padding="0 0 60px 0"
+                color="var(--ifm-color-primary-text)"
+                padding="0 0 64px 0"
                 textAlign="center"
               >
                 Get started with building native web3 communition for your
@@ -370,7 +370,8 @@ export default function HomepageFeatures(): JSX.Element {
 }
 
 const DocsHeroSection = styled(Section)`
-  background: ${GLOBALS.COLORS.BG_DARK};
+  background: var(--ifm-docs-hero-bg);
+  // background: ${GLOBALS.COLORS.BG_DARK};
 
   padding: ${GLOBALS.STRUCTURE.PADDING.DESKTOP};
   padding-bottom: 0px;

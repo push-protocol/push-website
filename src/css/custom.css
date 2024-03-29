@@ -48,12 +48,13 @@
   --ifm-navbar-bg: rgba(255, 255, 255, 0.80);
   --ifm-docs-navbar-border: 1px solid rgba(0, 0, 0, 0.10);
   --ifm-navbar-search-bg: rgba(0, 0, 0, 0.10);
-  --ifm-search-text-color: #bbbcd0;
+  --ifm-search-text-color: #9b9cab;
   --ifm-navbar-text-color: #6c6e73;
   --ifm-navbar-dropdown-bg: #fff;
   --ifm-navbar-dropdown-subtext: #6c6e73;
   --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
   --ifm-navbar-dropdown-image: grayscale(100%) brightness(70%) contrast(130%);
+  --ifm-docs-hero-bg: #EFEFEF;
 
 
 }
@@ -93,13 +94,13 @@
   --ifm-navbar-bg: rgba(13, 13, 15, 0.80);
   --ifm-docs-navbar-border: 1px solid rgba(255, 255, 255, 0.10);
   --ifm-navbar-search-bg: rgba(255, 255, 255, 0.10);
-  --ifm-search-text-color: #9b9cab;
+  --ifm-search-text-color: #bbbcd0;
   --ifm-navbar-text-color: #6c6c6c;
   --ifm-navbar-dropdown-bg: #19181b;
   --ifm-navbar-dropdown-subtext: #bbbcd0;
   --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
   --ifm-navbar-dropdown-image: "none";
-
+  --ifm-docs-hero-bg: #0D0C0F;
 
 }
 
@@ -246,12 +247,12 @@ a:hover {
 }
 
 .PushDocs .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module, .PushDocs .docRoot_UBD9 {
-  /* margin: 73px auto 0 auto !important; */
+  margin: 23px auto 0 auto !important;
 }
 
 .navbar--fixed-top {
   background-color: transparent;
-  margin: auto !important;
+  margin: 26px auto 0 auto !important;
   width: 86%;
   height: 92px;
   border: 0px;
@@ -703,7 +704,7 @@ li {
   .DocSearch-Button {
     min-width: 253px !important;
     border-radius: 8px !important;
-    background-color: var(--ifm-navbar-search-bg);
+    background-color: var(--ifm-navbar-search-bg) !important;
   }
 
   .DocSearch-Button .DocSearch-Search-Icon {

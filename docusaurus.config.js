@@ -158,7 +158,7 @@ const config = {
             label: "Docs",
           },
           {
-            to: "https://github.com/ethereum-push-notification-service/",
+            to: "https://github.com/push-protocol",
             label: "GitHub",
             position: "right",
           },
@@ -171,11 +171,6 @@ const config = {
           {
             to: "https://app.push.org/",
             label: "Launch App",
-            position: "right",
-          },
-          {
-            href: "https://github.com/push-protocol",
-            label: "GitHub",
             position: "right",
           },
         ],
