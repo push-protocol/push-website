@@ -400,7 +400,7 @@ const HeroHeader = styled(ItemV)`
 
 const HeroButton = styled(Link)`
   align-items: center;
-  background-color: #dd44b9;
+  background-color: #D548EC;
   border-radius: 16px;
   color: #fff;
   display: flex;
@@ -438,7 +438,8 @@ const PulseStatic = styled.div`
 const Pulse = styled.div`
   width: 40px;
   height: 40px;
-  background: var(--ifm-color-primary-preferred);
+  // background: var(--ifm-color-primary-preferred);
+  background: rgba(213, 72, 236, 0.40);
   border-radius: 50%;
   position: relative;
 `;
