@@ -12,7 +12,7 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 <!--truncate-->
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
 
-The Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel, each week!
+With more than **170,000** active subscribers and **67 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
 
 Every week, the Push team meticulously evaluates over **500+** channels to identify one that stands out the most.
 The initiative also honors our partner channels for their dedication to consistently delivering valuable, real-time notifications to users ensuring a smooth on-chain communication experience.
@@ -36,14 +36,6 @@ The Bankless Channel on Push DApp helps you keep informed on:
 - **Blogs and Article Alerts📰**
 - **And product announcements📢**
 
-### Why Opt-In to Bankless?
-
-The web3 landscape is transforming at an extremely fast rate, with loads of building, loads of market actions, and unfortunately, loads of rug pulls as well.
-
-With such an ever-evolving landscape, there needs to be some beacon of knowledge that keeps us in pace with the on-chain world. The bankless podcasts and articles are one such beacon of knowledge, guiding us with insightful podcasts and articles every week, covering everything that is going on in the current web3 world.
-
-Staying in the loop with Bankless is easier than ever. By subscribing to the [Bankless channel on Push DApp](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), you'll receive instant notifications directly to your **wallet address**, ensuring you never miss your daily web3 knowledge meal.
-
 ### How to Opt-In to the Bankless Channel?
 
 You can opt-in to Bankless for free (with no gas fees!) from the [Bankless Channel profile page](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week)
@@ -60,18 +52,30 @@ You can opt-in to Bankless for free (with no gas fees!) from the [Bankless Chann
 
 The portal not only lists technical jobs for developers, architects, and security engineers but also community, growth, and business professionals like growth hackers, marketing managers, community mods, and even meme officers!
 
-### Why opt into the Crypto Job List channel?
-
-As the market begins to show positive signals, a plethora of fresh work opportunities are emerging. However, a dedicated and reliable platform is needed to provide on-the-go updates dependably.
-
-The Crypto Jobs List channel on Push ensures you receive instant notifications about any new opportunity💼. And that too, delivered directly to your wallet address. No email hassle!
-
 ### How to Opt-In to the Crypto Job List Channel?
 
 You can opt-in to the  Crypto Job List for free (with no gas fees!) from the [Crypto Job List channel profile page](https://app.push.org/channels/0x30a1627fDdc0dBB7dD00b881D25A45B443f294bB?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
+## Week 3: ETH Gas Price Tracker
+## Push x ETH Gas Price Tracker: Latest Gas Price⛽ updates delivered straight to your wallet!
 
+![Banner celebrating ETH Gas Price Tracker as March - week 3 channel of week](./image3.webp)
 
+### What is the ETH Gas Price Tracker?
+
+The ETH Gas Price Tracker meticulously monitors the highs and lows of Ethereum gas prices and sends periodic push notifications signaling the current gas trend straight to the user's wallet address.
+
+### What kinds of notifications does ETH Gas Price Tracker power?
+
+The channel  monitors the Gas price movement and lets you when :
+
+- Ethereum gas prices are off the roof📈
+- Prices settled to normal👀
+- and when prices are lowest than ever!!😁
+
+### How to Opt-In to the ETH Gas Price Tracker Channel?
+
+You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from the [ETH Gas Price Tracker Profile Page](https://app.push.org/channels/0x2B8ffb4460550Dbe8Ec1cEA9C1B61322dB56B082) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 
 Stay tuned for the next winner! 👀
