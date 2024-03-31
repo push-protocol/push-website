@@ -7,7 +7,9 @@
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
+import { useColorMode } from "@docusaurus/theme-common";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+
 import CodeBlock from "@theme/CodeBlock";
 import Layout from "@theme/Layout";
 import React, { useState } from "react";
@@ -74,6 +76,7 @@ function TechDocItem({
   codeblock,
   link,
   target,
+  docutheme,
 }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
 
@@ -91,7 +94,7 @@ function TechDocItem({
       >
         <ItemV alignSelf="stretch" margin="0px 8%">
           <ItemV padding="0px 0px 30px 0px" alignItems="flex-start">
-            <TechDocIcon>
+            <TechDocIcon docutheme={docutheme}>
               <Image
                 src={
                   require(`@site/static/assets/docs/docshub/${srcref}.webp`)
@@ -169,6 +172,7 @@ function TechDocItem({
 
 export default function HomepageFeatures(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  const { colorMode, setColorMode } = useColorMode();
 
   return (
     <Layout
@@ -232,7 +236,9 @@ export default function HomepageFeatures(): JSX.Element {
         <Content padding="0px">
           <HeroHeader>
             <ItemV zIndex="1">
-              <H1 color="var(--ifm-color-primary-text)" margin="0 !important">Push Documentation Hub</H1>
+              <H1 color="var(--ifm-color-primary-text)" margin="0 !important">
+                Push Documentation Hub
+              </H1>
               <Span
                 color="var(--ifm-color-primary-text)"
                 padding="0 0 64px 0"
@@ -307,7 +313,7 @@ export default function HomepageFeatures(): JSX.Element {
           </HomepageSubHeader>
           <TechDocCardList>
             {TechDocItems.map((props, idx) => (
-              <TechDocItem key={idx} {...props} />
+              <TechDocItem key={idx} docutheme={colorMode} {...props} />
             ))}
           </TechDocCardList>
         </FluidContent>
@@ -400,7 +406,7 @@ const HeroHeader = styled(ItemV)`
 
 const HeroButton = styled(Link)`
   align-items: center;
-  background-color: #D548EC;
+  background-color: #d548ec;
   border-radius: 16px;
   color: #fff;
   display: flex;
@@ -439,7 +445,7 @@ const Pulse = styled.div`
   width: 40px;
   height: 40px;
   // background: var(--ifm-color-primary-preferred);
-  background: rgba(213, 72, 236, 0.40);
+  background: rgba(213, 72, 236, 0.4);
   border-radius: 50%;
   position: relative;
 `;
@@ -477,7 +483,10 @@ const FluidContent = styled(Content)`
 
 const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
+
   & ${Image} {
+    filter: ${(props) => (props.docutheme === "dark" ? "invert(100%)" : "")};
+
     height: 44px;
     width: 44px;
     margin: 0 0 1rem 0;
