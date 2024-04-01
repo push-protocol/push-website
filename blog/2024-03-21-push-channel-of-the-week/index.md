@@ -75,7 +75,7 @@ The channel  monitors the Gas price movement and lets you when :
 
 ### How to Opt-In to the ETH Gas Price Tracker Channel?
 
-You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from the [ETH Gas Price Tracker Profile Page](https://app.push.org/channels/0x2B8ffb4460550Dbe8Ec1cEA9C1B61322dB56B082) and receive immediate on-chain updates directly linked to your chosen wallet address.
+You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from the [ETH Gas Price Tracker Profile Page](https://app.push.org/channels/0x2B8ffb4460550Dbe8Ec1cEA9C1B61322dB56B082?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 
 Stay tuned for the next winner! 👀
