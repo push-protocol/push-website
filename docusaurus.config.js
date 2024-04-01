@@ -147,14 +147,25 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "/assets/docs/PushLogoTextDark.svg",
-          srcDark: "/assets/docs/PushLogoTextWhite.svg",
+          src: "/assets/website/docshub/PushLogoBlack@3x.png",
+          srcDark: "/assets/website/docshub/PushLogo@3x.png",
+          href: "/docs",
         },
         items: [
           {
+            to: "/",
+            position: "left",
+            label: "Homepage",
+          },
+          {
             to: "/docs/",
+            position: "left",
+            label: "Docs",
+          },
+          {
+            to: "https://github.com/push-protocol",
+            label: "GitHub",
             position: "right",
-            label: "Docs Hub",
           },
           { to: "/blog", label: "Blog", position: "right" },
           {
@@ -164,12 +175,7 @@ const config = {
           },
           {
             to: "https://app.push.org/",
-            label: "App",
-            position: "right",
-          },
-          {
-            href: "https://github.com/push-protocol",
-            label: "GitHub",
+            label: "Launch App",
             position: "right",
           },
         ],
