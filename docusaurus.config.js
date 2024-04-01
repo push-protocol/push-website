@@ -153,6 +153,11 @@ const config = {
         },
         items: [
           {
+            to: "/",
+            position: "left",
+            label: "Homepage",
+          },
+          {
             to: "/docs/",
             position: "left",
             label: "Docs",

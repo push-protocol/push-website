@@ -7,23 +7,14 @@
 
 // React + Web3 Essentials
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
-import { useThemeConfig, ErrorCauseBoundary } from "@docusaurus/theme-common";
+import { ErrorCauseBoundary, useThemeConfig } from "@docusaurus/theme-common";
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from "@docusaurus/theme-common/internal";
-import styled from "styled-components";
-import NavbarItem from "@theme/NavbarItem";
-import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle";
-import SearchBar from "@theme/SearchBar";
-import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
-import NavbarLogo from "@theme/Navbar/Logo";
-import NavbarSearch from "@theme/Navbar/Search";
-import styles from "./styles.module.css";
 import GLOBALS, { device } from "@site/src/config/globals";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import {
   A,
   Button,
@@ -37,9 +28,18 @@ import {
   Section,
   Span,
 } from "@site/src/css/SharedStyling";
-import { BsChevronDown } from "react-icons/bs";
-import { HeaderList } from "../../../config/HeaderList";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle";
+import NavbarLogo from "@theme/Navbar/Logo";
+import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
+import NavbarSearch from "@theme/Navbar/Search";
+import NavbarItem from "@theme/NavbarItem";
+import SearchBar from "@theme/SearchBar";
 import { useTranslation } from "react-i18next";
+import { BsChevronDown } from "react-icons/bs";
+import styled from "styled-components";
+import { HeaderList } from "../../../config/HeaderList";
+import styles from "./styles.module.css";
 
 const defaultMobileMenuState = {
   0: false,
@@ -53,6 +53,7 @@ function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items;
 }
+
 function NavbarItems({ items }) {
   return (
     <>
@@ -86,7 +87,8 @@ export default function NavbarContent() {
   // for navigation
   const history = useHistory();
   const theme = useThemeConfig();
-  console.log(theme, "kokokoko");
+  const location = useLocation();
+  const pathname = location.pathname;
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
@@ -153,7 +155,7 @@ export default function NavbarContent() {
     };
 
     return (
-      <HeaderItem onClick={(e) => openLink(e, item.href, item.id)}>
+      <HeaderItem onClick={(e) => openLink(e, item.href, item.id, item.target)}>
         {item.srcrefoff && (
           <HeaderImage
             key={index}
@@ -229,11 +231,17 @@ export default function NavbarContent() {
           <NavbarLogo />
           {/* <NavbarItems items={leftItems} /> */}
 
-          {!isLaptopM && (
-            <NavItem to="/docs" aria-label="Push Docs">
-              Docs
-            </NavItem>
-          )}
+          {/* Change Header from docs to blog if required */}
+          {!isLaptopM &&
+            (pathname.startsWith("/docs") ? (
+              <NavItem to="/docs" aria-label="Push Docs">
+                Docs
+              </NavItem>
+            ) : (
+              <NavItem to="/blog" aria-label="Push Blog">
+                Blog
+              </NavItem>
+            ))}
 
           {!isLaptopM && (
             <NavigationMenuItem>

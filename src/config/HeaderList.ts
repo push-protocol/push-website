@@ -167,5 +167,5 @@ export const HeaderList = {
       href: "/",
       target: "_self",
     },
-  ]
+  ],
 };
