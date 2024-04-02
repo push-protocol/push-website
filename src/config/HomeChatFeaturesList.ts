@@ -127,7 +127,7 @@ export const ChatFeaturesList = {
         {
           type: "button",
           buttontext: "home.chat-section.box4.buttontext",
-          buttonlink: "https://push.org",
+          buttonlink: "/docs/chat",
           buttontitle: "home.chat-section.box4.buttontitle",
         },
         {
