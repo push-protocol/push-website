@@ -18,10 +18,10 @@ import { Content, ItemV, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import MobileSpaceBg from '@site/static/assets/mobile-space-background.webp';
-import MobileSpaceImage from '@site/static/assets/mobile-space-image.webp';
-import SpaceBg from '@site/static/assets/space-background.webp';
-import SpaceImage from '@site/static/assets/space-image.webp';
+import MobileSpaceBg from '@site/static/assets/website/spaces/mobile-space-background.webp';
+import MobileSpaceImage from '@site/static/assets/website/spaces/mobile-space-image.webp';
+import SpaceBg from '@site/static/assets/website/spaces/space-background.webp';
+import SpaceImage from '@site/static/assets/website/spaces/space-image.webp';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
