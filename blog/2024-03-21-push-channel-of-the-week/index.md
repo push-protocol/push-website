@@ -19,6 +19,9 @@ The initiative also honors our partner channels for their dedication to consiste
 
 Time to unveil our winner channels for **March**!
 
+# Winners For Month - March 🏆
+
+
 ## Week 1: Bankless
 ## Push x Bankless: Serving the latest Bankless content updates to your wallet address with Push Notifications🔔.
 
@@ -76,6 +79,36 @@ The channel  monitors the Gas price movement and lets you when :
 ### How to Opt-In to the ETH Gas Price Tracker Channel?
 
 You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from the [ETH Gas Price Tracker Profile Page](https://app.push.org/channels/0x2B8ffb4460550Dbe8Ec1cEA9C1B61322dB56B082?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
+
+
+This winds up the winner’s list for March.
+
+Its time to push forward into April!
+
+
+# Winners For Month - April 🏆
+
+
+## Week 1: Aave
+## Push x Aave: Get timely updates related to your loan health ⏰ and more, delivered straight to your wallet!
+
+### What is Aave?
+
+[Aave](https://aave.com/) is a decentralized non-custodial liquidity market protocol where users can participate as suppliers by providing liquidity to the market to earn a passive income, or as borrowers, by borrowing assets in a collateralized fashion.
+
+### What kinds of notifications does the Aave channel power?
+
+The Push Aave channel helps you receive crucial updates on your active loans as well as on the supply, and borrowing APYs for various tokens.
+
+The channel provides a special feature ✨that enables you to customize your notification preferences by setting ranges 🎚 for:
+- **Loan Health Factor** ⚖: Choose your desired health factor range to stay informed against liquidation risks.
+- **Token Supply Rate Alerts** 🌊: Choose your minimum supply APY threshold in **%** and receive instant notifications when a token lies within the set range.
+- **Token Borrow Rate Alerts**⏰: Choose your minimum borrow APY threshold in **%** and receive instant notifications when a token lies within the set range.
+
+### How to opt-in to the Aave Channel?
+
+To opt-in to the Aave channel at no cost (with no gas fees!), you can simply visit the [Aave channel profile page](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on opt-in and receive immediate on-chain updates directly linked to your chosen wallet address.
+
 
 
 Stay tuned for the next winner! 👀
