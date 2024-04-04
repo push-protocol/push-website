@@ -212,18 +212,18 @@ export const BootcampMainComponent = () => {
 
    const bootcampLorem = [
     { 
-        title: "Small cohort size",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        title: "Skill Up, Stress Down",
+        subtitle: "Tech, UI/UX, marketing, and pitching in one place for your success.",
         href: ""
     },
      { 
-        title: "Small cohort size",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        title: "80 Seats, Infinite Possibilities",
+        subtitle: "With only 80 seats, experience unparalleled quality, one-on-one peer interactions, and direct conversations with founders.",
         href: ""
     },
      { 
-        title: "Small cohort size",
-        subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
+        title: "Skill, Connect, Earn",
+        subtitle: "Polish your prowess, collide with potential co-founders, and collect PUSH tokens as you conquer each challenge.",
         href: ""
     }
   ]
@@ -370,9 +370,7 @@ export const BootcampMainComponent = () => {
         </ItemV>
 
         <NavText id="elems0">
-          Get ready for an epic tech showdown across 18 cities in India, where
-          amazing minds come together to solve one big problem, with a chance to
-          win over $50,000 USD in prizes!
+          BRB Bootcamp is an 8-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
         </NavText>
 
         <NavButtons id="elems" ref={elem0}>
@@ -422,7 +420,7 @@ export const BootcampMainComponent = () => {
                 fontFamily="Glancyr, sans-serif"
                 textAlign="center"
                 fontWeight="400"
-            >Lorem ipsum dolor sit amet</H2>
+            >BRB BOOTCAMP: Ready, Set, Grow</H2>
 
             <H3 
                 color="#FFF"
@@ -431,7 +429,7 @@ export const BootcampMainComponent = () => {
                 textAlign="center"
                 fontWeight="300"
                 margin="8px 0 0 0"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod </H3>
+            >Join us to learn how to build multidimensional projects in instructor-led sessions. Registration for the 2024 cohort is open from April 15th</H3>
 
             <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 
@@ -546,7 +544,7 @@ export const BootcampMainComponent = () => {
                     textAlign={isLaptop && "center"}
                     fontWeight="300"
                     margin={!isLaptop ? "8px 0 0 0"  : "12px auto 0 auto"}
-                >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</H3>
+                >Apply now to be one of the 80. Dive into a journey of learning, connecting, and rewarding experiences.</H3>
               </ItemV>
 
 
@@ -1214,6 +1212,7 @@ const CardItem = styled(ItemV)`
     background: #2A2A38;
     padding: 64px 32px;
     border-radius: 48px;
+    justify-content: flex-start;
 
     @media ${device.tablet} {
       padding: 32px 16px;
