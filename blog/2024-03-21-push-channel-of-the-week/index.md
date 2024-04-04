@@ -92,6 +92,8 @@ Its time to push forward into April!
 ## Week 1: Aave
 ## Push x Aave: Get timely updates related to your loan health ⏰ and more, delivered straight to your wallet!
 
+![Banner celebrating Aave as April - week 1 channel of week](./image4.webp)
+
 ### What is Aave?
 
 [Aave](https://aave.com/) is a decentralized non-custodial liquidity market protocol where users can participate as suppliers by providing liquidity to the market to earn a passive income, or as borrowers, by borrowing assets in a collateralized fashion.
