@@ -131,4 +131,41 @@ export const HeaderList = {
       id: "tokenomics",
     },
   ],
+  docshub: [
+    {
+      title: "Notification Docs",
+      subtitle: "Web3 native notification alerts",
+      srcrefoff: "inbox-icon-off",
+      href: "/docs/notifications",
+      target: "_self",
+    },
+    {
+      title: "Chat Docs",
+      subtitle: "Web3 native chat protocol with groups",
+      srcrefoff: "chat-icon-off",
+      href: "/docs/chat",
+      target: "_self",
+    },
+    {
+      title: "Video Docs",
+      subtitle: "Decentralized video calls",
+      srcrefoff: "video-icon-off",
+      href: "/docs/video",
+      target: "_self",
+    },
+    {
+      title: "Spaces Docs",
+      subtitle: "Decentralized audio streaming",
+      srcrefoff: "spaces-icon-off",
+      href: "https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces",
+      target: "_blank",
+    },
+    {
+      title: "Push Home",
+      subtitle: "Back to Push Homepage",
+      srcrefoff: "home",
+      href: "/",
+      target: "_self",
+    },
+  ],
 };

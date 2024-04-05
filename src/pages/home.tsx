@@ -216,7 +216,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               zIndex="9"
               left="0"
               right="0"
-              bottom="0"
               bottom={`${GLOBALS.HEADER.OUTER_MARGIN.DESKTOP.TOP}px`}
             >
               <AnalyticsStats />
@@ -856,8 +855,6 @@ const HeroAnalytics = styled(ItemH)`
     );
   }
 
-  // margin: 140px 0 0px 0;
-  max-width: 1200px;
   margin: 0 auto;
 
   @media ${device.laptop} {
