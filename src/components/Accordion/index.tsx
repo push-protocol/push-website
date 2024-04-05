@@ -67,6 +67,10 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
 
 const AccordionSection = styled.div`
     border-bottom: 1px solid #2A2A39;
+
+    h3 {
+        white-space: pre-wrap;
+    }
 `;
 
 const AccordionParent = styled.div`

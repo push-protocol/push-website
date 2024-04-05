@@ -25,9 +25,9 @@ export const bootcampFaq = [
     },
     { 
         title: 'What topics does the BRB Bootcamp curriculum cover?', 
-        content: `Our curriculum spans several key areas, including:\n
-        - Basics of Blockchain and Solidity\n
-        - UI & UX Design Principles\n
+        content: `Our curriculum spans several key areas, including:
+        - Basics of Blockchain and Solidity
+        - UI & UX Design Principles
         - Marketing Strategies in the Digital Age
         - Fundraising and Startup Building
         - Project Pitching and Communication Skills` 

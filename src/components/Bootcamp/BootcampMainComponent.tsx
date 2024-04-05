@@ -34,6 +34,7 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 import Accordion from "../Accordion"
 import BootcampCurriculum from "./BootcampCurriculum";
 import { bootcampFaq } from "@site/src/config/BootcampFaq";
+import { bootcampCards } from "@site/src/config/BootcampCard";
 
 // import { BRBAlert } from "./BRBAlert";
 
@@ -210,23 +211,7 @@ export const BootcampMainComponent = () => {
     window.open("/", "_self");
   };
 
-   const bootcampLorem = [
-    { 
-        title: "Skill Up, Stress Down",
-        subtitle: "Tech, UI/UX, marketing, and pitching in one place for your success.",
-        href: ""
-    },
-     { 
-        title: "80 Seats, Infinite Possibilities",
-        subtitle: "With only 80 seats, experience unparalleled quality, one-on-one peer interactions, and direct conversations with founders.",
-        href: ""
-    },
-     { 
-        title: "Skill, Connect, Earn",
-        subtitle: "Polish your prowess, collide with potential co-founders, and collect PUSH tokens as you conquer each challenge.",
-        href: ""
-    }
-  ]
+ 
 
   return (
     <BootcampWrapper background="#000">
@@ -370,7 +355,7 @@ export const BootcampMainComponent = () => {
         </ItemV>
 
         <NavText id="elems0">
-          BRB Bootcamp is an 8-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
+          An 8-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
         </NavText>
 
         <NavButtons id="elems" ref={elem0}>
@@ -383,7 +368,7 @@ export const BootcampMainComponent = () => {
             fontWeight="400"
             onClick={() => handleSectionNavigation("bounties")}
           >
-            Apply Now
+            Join Waitlist
           </ButtonItem>
           <ButtonBar
             borderRadius="24px"
@@ -420,7 +405,7 @@ export const BootcampMainComponent = () => {
                 fontFamily="Glancyr, sans-serif"
                 textAlign="center"
                 fontWeight="400"
-            >BRB BOOTCAMP: Ready, Set, Grow</H2>
+            >Ready, Set, Grow</H2>
 
             <H3 
                 color="#FFF"
@@ -429,13 +414,22 @@ export const BootcampMainComponent = () => {
                 textAlign="center"
                 fontWeight="300"
                 margin="8px 0 0 0"
-            >Join us to learn how to build multidimensional projects in instructor-led sessions. Registration for the 2024 cohort is open from April 15th</H3>
+                lineHeight="normal"
+            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 15th</H3>
 
             <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 
-            {bootcampLorem?.map((item) => (
+            {bootcampCards?.map((item) => (
               <CardItem>
-                <div style={{height: '48px', width: '48px', background: 'grey', borderRadius: '100%'}}></div>
+                <CardImage
+                  src={
+                    require(
+                      `@site/static/assets/website/bootcamp/${item.href}.png`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/bootcamp/${item.href}@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/${item.href}@3x.png`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
 
                  <H3 
                     color="#FFF"
@@ -487,7 +481,7 @@ export const BootcampMainComponent = () => {
                 fontFamily="Glancyr, sans-serif"
                 textAlign="center"
                 fontWeight="400"
-            >Bootcamp Certification</H2>
+            >Bootcamp Rewards</H2>
 
             <H3 
                 color="#FFF"
@@ -496,10 +490,18 @@ export const BootcampMainComponent = () => {
                 textAlign="center"
                 fontWeight="300"
                 margin="8px 0 0 0"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</H3>
+            >Complete the BRB Bootcamp to earn a NFT certificate</H3>
 
 
-            <div style={{height: '369px', width: isMobile ? '100%' : '510px', background: '#6c6c6c', borderRadius: '32px', margin: '64px auto 0 auto'}}></div>
+            <RewardsImage
+                  src={
+                    require(
+                      `@site/static/assets/website/bootcamp/rewards.png`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/bootcamp/rewards@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/rewards@3x.png`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
 
         </Content>
       </Section>  
@@ -927,6 +929,21 @@ const MenuTop = styled(ItemV)`
     justify-content: space-between;
     align-items: center;
   }
+`;
+
+const RewardsImage = styled(Image)`
+      width: 577px;
+      margin: 64px auto 0 auto;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
+`;
+
+const CardImage = styled(Image)`
+      width: 90px;
+      height: 90px;
+
 `;
 
 const PushLogoBlackContainer = styled(ItemV)`
