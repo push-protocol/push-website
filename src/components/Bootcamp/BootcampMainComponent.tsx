@@ -121,6 +121,8 @@ const defaultMobileMenuState = {
 };
 
 export const BootcampMainComponent = () => {
+  const d = new Date();
+  let year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const isLaptop = useMediaQuery(device.laptop);
@@ -210,6 +212,8 @@ export const BootcampMainComponent = () => {
   const openHomePage = () => {
     window.open("/", "_self");
   };
+
+  
 
  
 
@@ -645,7 +649,7 @@ export const BootcampMainComponent = () => {
 
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
-          © 2023 Push. All rights reserved.
+          © {year || ""} Push. All rights reserved.
         </Span>
       </BottomGrad>
     </BootcampWrapper>
