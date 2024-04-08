@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Ethereum
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Scaling Web3Notifs on Polygon’s Layer-2](./cover-image.webp)
@@ -24,19 +25,18 @@ Our relationship with Polygon started in September of 2020 when [EPNS secured a 
 
 We are humbled to announce that our partnership with Matic has extended into our partnership with Polygon, and will allow us to work in collaboration with this amazing team to further develop the [EPNS](http://epns.io) protocol.
 
-During our “pilot program” collaboration with Polygon, we will build a channel for them with EPNS (see our [litepaper](https://github.com/push-protocol/epns-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more). Anyone can subscribe to the Polygon channel and begin receiving notifications to their wallets immediately. The notifications are customizable, and will include alerts such as when the funds have been moved from Polygon L2 to Ethereum L1 among other important events. By building this channel in collaboration with the Polygon team, we will also have the opportunity to better understand precisely what dapps want from the EPNS protocol.
+During our “pilot program” collaboration with Polygon, we will build a channel for them with EPNS (see our [litepaper](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more). Anyone can subscribe to the Polygon channel and begin receiving notifications to their wallets immediately. The notifications are customizable, and will include alerts such as when the funds have been moved from Polygon L2 to Ethereum L1 among other important events. By building this channel in collaboration with the Polygon team, we will also have the opportunity to better understand precisely what dapps want from the EPNS protocol.
 
 Our partnership with Polygon will consist of:
 
-*   Implementation of Polygon’s infrastructure in the EPNS protocol to deliver scalable, low-cost notifications.
-*   Creating a channel for Polygon and delivering notifications important for their network.
-*   Co-development of notification infrastructure to support Polygon’s vision of the “Internet of Blockchains.”
-*   Development of notifications for the MATIC community and Polygon project. Co-development of push notifications for the Ethereum ecosystem.
+- Implementation of Polygon’s infrastructure in the EPNS protocol to deliver scalable, low-cost notifications.
+- Creating a channel for Polygon and delivering notifications important for their network.
+- Co-development of notification infrastructure to support Polygon’s vision of the “Internet of Blockchains.”
+- Development of notifications for the MATIC community and Polygon project. Co-development of push notifications for the Ethereum ecosystem.
 
 Polygon plays a critical role for the entire ecosystem, as it provides a platform for Ethereum scaling and infrastructure development that will greatly increase the capabilities of the entire Ethereum network. It is a pleasure and an honor to have the opportunity to work with this amazing team in bringing decentralized notifications to new heights.
 
-**About Polygon (Formerly Matic)**
-----------------------------------
+## **About Polygon (Formerly Matic)**
 
 Polygon is the first well-structured, easy-to-use platform for Ethereum scaling and infrastructure development. Its core component is Polygon SDK, a modular, flexible framework that supports building and connecting Secured Chains like Plasma, Optimistic Rollups, zkRollups, Validium etc and Standalone Chains like Matic POS, designed for flexibility and independence. Polygon’s Layer 2 Chains have seen widespread adoption with 90+ Dapps, ~7M txns and ~200K unique users.
 

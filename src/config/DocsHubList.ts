@@ -142,6 +142,7 @@ await aliceVideoCall.request([recipient]);
     target: "_blank",
     description:
       "Examples to showcase the power of Push Protocol’s communication stack.",
+  },
   {
     title: "Hackers",
     srcref: "hackers",
