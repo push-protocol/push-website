@@ -19,7 +19,7 @@ import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import PlaygroundBg from '@site/static/assets/PlaygroundBg.png';
+import PlaygroundBg from '@site/static/assets/website/brb/PlaygroundBg.png';
 import Brand from '@site/static/assets/website/brb/others/brand-header.svg';
 import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';

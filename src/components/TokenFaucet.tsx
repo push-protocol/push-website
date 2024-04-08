@@ -19,8 +19,8 @@ import {
 } from "@site/src/css/SharedStyling";
 
 // Import Assets
-import Discord from "@site/static/assets/Discord-BRB.svg";
-import X from "@site/static/assets/X-BRB.svg";
+import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
+import X from "@site/static/assets/website/brb/X-BRB.svg";
 import Close from "@site/static/assets/website/brb/others/Close.svg";
 import DiscordCompleted from "@site/static/assets/website/brb/others/Discord-Completed.svg";
 import XCompleted from "@site/static/assets/website/brb/others/X-Completed.svg";
