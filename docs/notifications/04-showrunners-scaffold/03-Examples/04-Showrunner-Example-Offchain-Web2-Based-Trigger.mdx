@@ -41,7 +41,7 @@ In the news article type of channels we most try to get the RSS-FEED URL. They a
 
 In the case of Defiant, they have provided the feed [URL](https://thedefiant.io/feed/)&#x20;
 
-#### [Channel File](https://github.com/push-protocol/push-website/epns-showrunners-framework/blob/main/src/showrunners/defiant/defiantChannel.ts)
+#### [Channel File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/showrunners/defiant/defiantChannel.ts)
 
 The channel file is the brain for every channel notification logic. The file follows basic steps of input obtainment, some processed logic and conditions and when the condition for logic is satisfied the code generates the notification.
 
@@ -211,7 +211,7 @@ async sendNewArticleNotification(info, simulate) {
 We first fetch the timestamp from the local database and then create a variable called the comparer date which is basically a timestamp for the latest notification which was sent.\
 This timestamp is then used to compare the RSS Feed timestamp and then generate a notification.
 
-#### [Jobs File](https://github.com/push-protocol/push-website/epns-showrunners-framework/blob/main/src/showrunners/defiant/defiantJobs.ts)
+#### [Jobs File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/showrunners/defiant/defiantJobs.ts)
 
 This folder is responsible to run the Cron Jobs. Expanding on the “Cron Jobs”, this is a function which uses a module called Node-Schedule to run a code at a specific, repeating time interval. Though the main logic resides in the Channel file, the logic is constantly run by this file, so that as soon as the function satisfies the condition when its called, a notification is sent.
 

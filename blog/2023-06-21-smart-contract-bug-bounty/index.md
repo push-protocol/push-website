@@ -44,18 +44,18 @@ The rewards by threat/severity level are as follows:
 ## Assets in Scope
 There are 5 Push smart contract assets you can identify and report potential vulnerabilities for. To aid you in your bug-hunting journey, we have made all of these assets easily accessible right here:
 
-[PushCoreV2 Github](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/PushCoreV2.sol) 👉Smart Contract — PushCoreV2.sol
+[PushCoreV2 Github](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/PushCoreV2.sol) 👉Smart Contract — PushCoreV2.sol
 
-[CoreStorageV2 Github](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/EPNSCoreStorageV2.sol)👉Smart Contract — EPNSCoreStorageV2.sol
+[CoreStorageV2 Github](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/EPNSCoreStorageV2.sol)👉Smart Contract — EPNSCoreStorageV2.sol
 
-[CoreStorageV1_5 Github](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/EPNSCoreStorageV1_5.sol)👉Smart Contract — EPNSCoreStorageV1_5.sol
+[CoreStorageV1_5 Github](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSCore/EPNSCoreStorageV1_5.sol)👉Smart Contract — EPNSCoreStorageV1_5.sol
 
-[PushCommV2 Github](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/PushCommV2.sol)👉Smart Contract — PushCommV2.sol
+[PushCommV2 Github](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/PushCommV2.sol)👉Smart Contract — PushCommV2.sol
 
-[CommStorageV1_5.sol](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/EPNSCommStorageV1_5.sol)👉Smart Contract — EPNSCommStorageV1_5.sol
+[CommStorageV1_5.sol](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/EPNSCommStorageV1_5.sol)👉Smart Contract — EPNSCommStorageV1_5.sol
 
 ## Developer Resources
-1. All Push Protocol code can also [be found at this page here](https://github.com/push-protocol/push-website/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/EPNSCommStorageV1_5.sol).
+1. All Push Protocol code can also [be found at this page here](https://github.com/push-protocol/push-smart-contracts/blob/bug_bounty_dev/contracts/EPNSComm/EPNSCommStorageV1_5.sol).
 2. Deep dive into [Push v2 contract features at this page here](https://docs.google.com/document/d/1GZsrj1XiiwFCPv453Ct-TziZyoLuwLjCdQuaF1AJ-V8/edit).
 3. Join our Discord for technical support https://discord.com/invite/pushprotocol
 4. Additional resources to learn more about Push Contracts: [Push Smart Contracts](/docs/notifications/push-smart-contracts/ "Guide to Push smart contracts")

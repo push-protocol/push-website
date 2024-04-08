@@ -12,6 +12,7 @@ tags: [ Blockchain
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of In 2009, Push Notifications Changed Web2.0. In 2020, EPNS is Bringing them to Web3.0](./cover-image.webp)
@@ -26,8 +27,7 @@ Apple took the notification idea Blackberry introduced in 2003 and evolved it in
 
 Apple did what they do best — found a way to incentivize continuous consumer use of its products. Before APNS was introduced, an application was effectively closed and out of sight if it was not being actively used. APNS enabled publishers and services to entice users to re-launch their apps by sending them short, optimized messages. With that opportunity available to apps, we saw entire ecosystems, business models, job titles, and revenue streams spring into existence.
 
-Push Notifications
-==================
+# Push Notifications
 
 Push notifications are now so engraved into our daily mobile experience that it’s difficult to exactly remember our digital experience a decade ago when the feature was nearly non-existent. We rely on them so much that we don’t necessarily recognize their intrinsic value. At best, we take notifications for granted. At worst, we consider them a nuisance. Rarely do we remember how fundamentally they have changed our digital behavior and relationship with businesses.
 
@@ -37,8 +37,7 @@ Push notifications allowed businesses to step up their marketing game, increased
 
 Next up was to replicate the impact of push notifications on Web2 onto Web3 while improving the impact by adhering to the principles of decentralization, user ownership, and incentivization.
 
-The flawed user experience in Web 3.0
-=====================================
+# The flawed user experience in Web 3.0
 
 Decentralized, peer-to-peer blockchain technology is leading the way for Web3.0 but currently suffers from the subpar user experience.
 
@@ -48,14 +47,13 @@ Users are so used to push notifications and the value it provides in Web2.0 that
 
 A few examples of the flawed user experience we have in Web 3.0 right now:
 
-*   You just traded on a DEX (Decentralized Exchange), but want to know if it went through? Looks like you’ve got to go back and check. **_No Notifications for You!_**
-*   Have a registered domain on a blockchain (example ENS), and want to be alerted when it is time for renewal? Too bad, schedule a reminder on your calendar and keep your fingers crossed. **_No Notifications for You!_**
-*   Are you providing a Web3.0 service and want to update your users on critical governance voting to help save your compromised protocol? Too bad, post a tweet or a Medium post and hope it reaches the required audience. **_No Notifications for You!_**
+- You just traded on a DEX (Decentralized Exchange), but want to know if it went through? Looks like you’ve got to go back and check. **_No Notifications for You!_**
+- Have a registered domain on a blockchain (example ENS), and want to be alerted when it is time for renewal? Too bad, schedule a reminder on your calendar and keep your fingers crossed. **_No Notifications for You!_**
+- Are you providing a Web3.0 service and want to update your users on critical governance voting to help save your compromised protocol? Too bad, post a tweet or a Medium post and hope it reaches the required audience. **_No Notifications for You!_**
 
 This is a huge gap in Web3.0, where users still have to return to apps and services to check on the status of their actions. This isn’t purposeful negligence of user experience; there exists no efficient, decentralized, Web3.0-based protocol for services to deliver notifications to users. Until now.
 
-EPNS Brings UX 2.0 to Web 3.0
-=============================
+# EPNS Brings UX 2.0 to Web 3.0
 
 This is where [**Ethereum Push Notification Service**](http://epns.io) (EPNS) comes in. EPNS allows services to send decentralized notifications to user wallets. Not only do users receive notifications, but the users also **earn** from **receiving** these notifications. Using the EPNS protocol; any dApp, service, or smart contract can send notifications to users (wallet addresses) in a platform-agnostic way. This is the critical missing piece of blockchain and will revolutionize the Web3.0 space!
 
@@ -65,10 +63,10 @@ With EPNS, one can bridge the gap between the user expectations that are already
 
 With the EPNS Showrunner Channels, you can even see the actual value provided by these notifications first hand!
 
-*   **Crypto Price Tracker:** Track the price of popular cryptocurrencies such as BTC and ETH on an hourly basis with the help of the Crypto Price Tracker Channel and stay updated always on the price of your favorite cryptos and avoid liquidation. As they say “one week in Crypto & DeFi is equal to one year in normal time”, and you can keep track of it all right at your fingertips.
-*   **ENS Domain Expiry:** Are you someone who has registered a domain on ENS (Ethereum Name Service)? If yes, then you may find solace that you no longer have to set reminders for yourself to renew your domain name, EPNS does that for you!
-*   **Wallet Crypto Movement Tracker:** Just traded on a DEX or transferred your funds to another account and would like to know if it went through? You might think this is possible now, but you would be astonished that this is not the case! Imagine if you never received a notification from a Traditional Bank when you completed a transaction online, you would be scrambling to check the confirmation of the transaction! What makes Web3 any different? EPNS solves this for you.
-*   **Compound Liquidation Alert:** Invested in DeFi and don’t want to get liquidated overnight? “Don’t worry, EPNS has got you!”. With the Compound Liquidation Showrunner Channel, you will be alerted when your assets are about to be liquidated!
+- **Crypto Price Tracker:** Track the price of popular cryptocurrencies such as BTC and ETH on an hourly basis with the help of the Crypto Price Tracker Channel and stay updated always on the price of your favorite cryptos and avoid liquidation. As they say “one week in Crypto & DeFi is equal to one year in normal time”, and you can keep track of it all right at your fingertips.
+- **ENS Domain Expiry:** Are you someone who has registered a domain on ENS (Ethereum Name Service)? If yes, then you may find solace that you no longer have to set reminders for yourself to renew your domain name, EPNS does that for you!
+- **Wallet Crypto Movement Tracker:** Just traded on a DEX or transferred your funds to another account and would like to know if it went through? You might think this is possible now, but you would be astonished that this is not the case! Imagine if you never received a notification from a Traditional Bank when you completed a transaction online, you would be scrambling to check the confirmation of the transaction! What makes Web3 any different? EPNS solves this for you.
+- **Compound Liquidation Alert:** Invested in DeFi and don’t want to get liquidated overnight? “Don’t worry, EPNS has got you!”. With the Compound Liquidation Showrunner Channel, you will be alerted when your assets are about to be liquidated!
 
 These are just a few Showrunners that the EPNS has been working on to demonstrate the value of using such a revolutionary product.
 
@@ -82,8 +80,7 @@ In addition to this whole dynamic of enhanced user experience, EPNS also incenti
 
 With rich text formatting, images, and videos along with your notifications, EPNS changes the very concept of the boring old text-based notification we are all used to and adds some style and flavor to it as well (imagine Twitter, but for notifications).
 
-Conclusion
-==========
+# Conclusion
 
 It’s time for the world to see what decentralization can achieve. EPNS will be one of the key stepping stones for widespread and mainstream adoption of Web3.0 and blockchain technologies.
 
@@ -93,5 +90,4 @@ Listen up Web3.0 world, EPNS has got you 💖💖💖. Push notifications have c
 
 Don’t forget to 🌩⚡👉 ️ [FEEL THE THUNDER](https://epns.io/) 👈⚡🌩️
 
-Stay in touch with EPNS! [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)
-
+Stay in touch with Push! [Twitter](http://x.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)

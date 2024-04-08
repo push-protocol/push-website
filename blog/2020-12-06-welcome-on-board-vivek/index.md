@@ -12,12 +12,12 @@ tags: [ Gitcoin
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Welcome on board, Vivek!💖💖💖](./cover-image.webp)
 
 <!--truncate-->
-
 
 We are thrilled to welcome our new Advisor— [Vivek Singh](https://twitter.com/vsinghdothings)!
 
@@ -35,4 +35,4 @@ In taking the advisor role, Vivek said:
 
 Thanks Vivek for your mentorship and we are honored to welcome you to the EPNS family!
 
-Stay in touch with EPNS! [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)
+Stay in touch with Push! [Twitter](http://x.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)
