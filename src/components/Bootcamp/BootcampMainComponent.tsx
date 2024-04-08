@@ -39,14 +39,14 @@ import { bootcampCards } from "@site/src/config/BootcampCard";
 // import { BRBAlert } from "./BRBAlert";
 
 // Import Assets
-import ArrowIcon from "@site/static/assets/ArrowIcon.svg";
-import Discord from "@site/static/assets/Discord-BRB.svg";
-import ImageBRB from "@site/static/assets/Image-BRB.png";
-import MobileBRB from "@site/static/assets/Mobile-BRB.png";
-import PlaygroundBg from "@site/static/assets/PlaygroundBg.png";
+import ArrowIcon from "@site/static/assets/website/brb/ArrowIcon.svg";
+import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
+import ImageBRB from "@site/static/assets/website/brb/Image-BRB.png";
+import MobileBRB from "@site/static/assets/website/brb/Mobile-BRB.png";
+import PlaygroundBg from "@site/static/assets/website/brb/PlaygroundBg.png";
 import FirstImage from "@site/static/assets/website/bootcamp/bg-image1.png";
-import X from "@site/static/assets/X-BRB.svg";
-import PushLogo from "@site/static/assets/pushIcon.svg";
+import X from "@site/static/assets/website/brb/X-BRB.svg";
+import PushLogo from "@site/static/assets/website/brb/pushIcon.svg";
 import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
