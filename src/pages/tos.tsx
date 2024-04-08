@@ -107,20 +107,21 @@ function TermsOfService() {
         </TopSection>
 
         {/* TOS SECTION */}
-        <TosSection
+        <Section
           curve="bottom"
-          padding="80px 0px 40px 0px"
+          // padding="80px 0px 40px 0px"
           data-bkg="light"
         >
           <Content
             className="contentBox"
             alignSelf="center"
-            padding="40px 0px"
+            flex="1"
+            // padding="40px 0px"
           >
             <ItemH
               alignSelf="stretch"
               justifyContent="flex-start"
-              margin="0px 20px 40px 20px"
+              margin="0px 0px 40px 0px"
               flexDirection="column"
             >
               <ItemH
@@ -1349,7 +1350,7 @@ function TermsOfService() {
               </ItemH>
             </ItemH>
           </Content>
-        </TosSection>
+        </Section>
       </TosWrapper>
     </Layout>
   );
@@ -1372,13 +1373,6 @@ const ListGroup = styled.div`
   flex-direction: column;
 `;
 
-const TosSection = styled(Section)`
-  width: 100%
-  padding: 80px 0px 0px 0px;
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-  }
-`;
 
 const TopSection = styled(Section)`
   width: 100%;
