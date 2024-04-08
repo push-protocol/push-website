@@ -390,7 +390,7 @@ export const BootcampMainComponent = () => {
       </BootcampBG>
 
       <Section>
-        <Content className="fluid" overflow="visible" padding="0px 0px 100px 0px">
+        <Content className="fluid" overflow="visible" padding={isMobile ? "0px 0px" : "0px 0px 100px 0px"}>
           {/* <BootcampLowerBG /> */}
 
           <Image
@@ -696,10 +696,10 @@ const BootcampBG = styled.div`
 
 const ButtonItem = styled(Button)`
   font-size: 18px;
-  font-style: normal;
+  font-weight: 400;
   font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
-  line-height: normal;
+  line-height: 18px;
   padding: 16px 64px 22px 64px;
   border-radius: 24px; 
 
@@ -719,10 +719,14 @@ const ButtonItem = styled(Button)`
 `;
 
 const ButtonBar = styled(Button)`
+  font-size: 18px;
   letter-spacing: 0.03em;
   font-family: Glancyr, sans-serif;
-  line-height: normal;
   padding: 16px 32px 22px 32px;
+  line-height: 18px;
+  border-radius: 24px; 
+  font-weight: 400;
+
 
   &:hover {
     border: 1px solid #e64de9;
