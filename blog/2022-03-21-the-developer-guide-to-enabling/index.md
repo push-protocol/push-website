@@ -191,7 +191,7 @@ const epnsUnSubscribe = () => {
 Link to GitHub code with a working example
 ==========================================
 
-[https://github.com/push-protocol/push-website/epns-opt-demo](https://github.com/push-protocol/push-website/epns-opt-demo)
+[https://github.com/push-protocol/push-opt-demo](https://github.com/push-protocol/push-opt-demo)
 
 Mainnet URLs
 ============

@@ -33,7 +33,7 @@ Once the channel is created, the channel owner could start sending notifications
 
 The back-end SDK allows developers & protocols to access EPNS Protocol functionalities from within their backends and implement custom logic for notifications. This SDK also comes packed with tooling for easy debugging and testing of notifications through the _simulate_ object.
 
-Check-out our  [**Starter guide to implementing the EPNS backend SDK**](https://github.com/push-protocol/push-website/backend-sdk-starter-code)**.** The quickest way to get started using our SDK.
+Check-out our  [**Starter guide to implementing the EPNS backend SDK**](https://github.com/push-protocol/backend-sdk-starter-code)**.** The quickest way to get started using our SDK.
 
 Here is how you can integrate the SDK to your back-end server:
 
@@ -82,11 +82,11 @@ const tx = await sdk.sendNotification(
       );
 ```
 
-More details on the parameters for the backend SDK can be found in [the documentation](https://github.com/push-protocol/push-website/epns-backend-sdk-staging).
+More details on the parameters for the backend SDK can be found in [the documentation](https://github.com/push-protocol/push-backend-sdk-staging).
 
 The owner of the address specified as the recipient can log into [our staging](https://staging-app.epns.io/) or [production environment](http://app.epns.io/) in order to see the notification received, or get our chrome extension or mobile application in order to receive the notification.
 
-For more complex logic in your notifications you can refer to [the documentation](https://github.com/push-protocol/push-website/epns-backend-sdk-staging), or clone our [starter guide to implementing our backend SDK](https://github.com/push-protocol/push-website/backend-sdk-starter-code) which contains a working example.
+For more complex logic in your notifications you can refer to [the documentation](https://github.com/push-protocol/push-backend-sdk-staging), or clone our [starter guide to implementing our backend SDK](https://github.com/push-protocol/backend-sdk-starter-code) which contains a working example.
 
 Integrating with the Frontend SDK
 =================================
@@ -159,7 +159,7 @@ cta="www.cta.com"
 Subscribing to channels from your own DApp
 ==========================================
 
-In order to implement signing we take advantage of [EIP-712](https://eips.ethereum.org/EIPS/eip-712) (more details on the **signer** parameter can be found [here](https://eips.ethereum.org/EIPS/eip-712)), you can also take a look at our working [example](https://github.com/push-protocol/push-website/epns-frontend-sdk-staging/blob/main/sample_codes/loadNotifications/src/App.js)
+In order to implement signing we take advantage of [EIP-712](https://eips.ethereum.org/EIPS/eip-712) (more details on the **signer** parameter can be found [here](https://eips.ethereum.org/EIPS/eip-712)), you can also take a look at our working [example](https://github.com/push-protocol/push-frontend-sdk-staging/blob/main/sample_codes/loadNotifications/src/App.js)
 
 **Step 1:** Create a button component:
 
@@ -215,9 +215,9 @@ Starter Repositories URLs
 =========================
 
 **Frontend SDK starter code** —  
-[https://github.com/push-protocol/push-website/epns-frontend-sdk-staging/tree/main/sample\_codes/loadNotifications](https://github.com/push-protocol/push-website/epns-frontend-sdk-staging/tree/main/sample_codes/loadNotifications)
+[https://github.com/push-protocol/push-frontend-sdk-staging/tree/main/sample_codes/loadNotifications](https://github.com/push-protocol/push-frontend-sdk-staging/tree/main/sample_codes/loadNotifications)
 
 **Backend SDK starter code —**
 
-[https://github.com/push-protocol/push-website/backend-sdk-starter-code](https://github.com/push-protocol/push-website/backend-sdk-starter-code)
+[https://github.com/push-protocol/backend-sdk-starter-code](https://github.com/push-protocol/backend-sdk-starter-code)
 

@@ -102,6 +102,6 @@ _Consider joining our buzzing Social Media Community!_
 > 
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
 > 
-> _Github:_ [_https://github.com/ethereum-push-notification-service_](https://github.com/push-protocol/push-website)
+> _Github:_ [_https://github.com/push-protocol_](https://github.com/push-protocol)
 
 _References:_ [_Blockchain Governance & Game Theory_](https://medium.com/@robin.rrt123/blockchain-governance-game-theory-2bd28e6513e3) _— Robin Roy |_ [_Why On-Chain Governance?_](https://medium.com/polkadot-network/why-on-chain-governance-82ecf28f314c) _— Phil Lucsok |_ [_Voting vs Signaling_](https://medium.com/strongblock-consulting/voting-vs-signaling-in-blockchain-governance-24ddacdaab9d) _— Thomas Cox_

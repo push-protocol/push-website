@@ -75,7 +75,7 @@ The result is a fractured and siloed approach towards communication in the block
 
 **Integrate EPNS to your dApp and improve UX for all Web3 users**
 
-*   This is probably the easiest, As EPNS is a communication layer, the best and quickest way to get this going is to integrate EPNS in your dApp via our frontend [**sdk & tutorial**](https://github.com/push-protocol/push-website/embed-demo-app)  here
+*   This is probably the easiest, As EPNS is a communication layer, the best and quickest way to get this going is to integrate EPNS in your dApp via our frontend [**sdk & tutorial**](https://github.com/push-protocol/embed-demo-app)  here
 *   This will not only improve the user experience for your dApp as users can now instantly see all their notifications across all their activities that they have opted in for but it also vastly improves the entire UX of the Web3 space.
 
 **_Screen1_**_\- User is connected to their wallet and has loaded their dApp._
@@ -141,4 +141,4 @@ As you get cracking on BUIDLing with us we thought we’ll sign off with some me
 
 All the best!  👍🤞👍🍀
 
-[**Website**](http://epns.io/) **|** [**dApp (live tutorial)**](https://github.com/push-protocol/push-website/embed-demo-app)**|** [**RoadMap 2022**](https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a) **|** [**Twitter**](http://twitter.com/epnsproject) **|** [**Telegram**](https://t.me/epnsproject) **|** [**Discord**](https://discord.com/invite/YVPB99F9W5)
+[**Website**](http://epns.io/) **|** [**dApp (live tutorial)**](https://github.com/push-protocol/embed-demo-app)**|** [**RoadMap 2022**](https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a) **|** [**Twitter**](http://twitter.com/epnsproject) **|** [**Telegram**](https://t.me/epnsproject) **|** [**Discord**](https://discord.com/invite/YVPB99F9W5)

@@ -525,7 +525,7 @@ const IntegratingPush = [
           </AMod>
           ,
           <AMod
-            href="https://github.com/push-protocol/push-website/push-sdk"
+            href="https://github.com/push-protocol/push-sdk"
             target={'_blank'}
           >
             Github
@@ -541,7 +541,7 @@ const IntegratingPush = [
           </AMod>
           ,
           <AMod
-            href="https://github.com/push-protocol/push-website/push-for-hackers"
+            href="https://github.com/push-protocol/push-for-hackers"
             target={'_blank'}
           >
             Github
@@ -549,7 +549,7 @@ const IntegratingPush = [
         </Span>
         <Span>
           <AMod
-            href="https://github.com/push-protocol/push-website/push-showrunners-framework"
+            href="https://github.com/push-protocol/push-showrunners-framework"
             target={'_blank'}
           >
             Showrunners Framework

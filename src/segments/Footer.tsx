@@ -230,7 +230,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://github.com/push-protocol/push-website"
+                    href="https://github.com/push-protocol"
                     title={t(
                       "footer.links-section.resources-column.github-link",
                     )}
@@ -330,7 +330,7 @@ function Footer() {
               </LinkTo>
 
               <FooterAnchorIcon
-                href="https://github.com/push-protocol/push-website"
+                href="https://github.com/push-protocol"
                 title="Push Github"
                 target="_blank"
               >

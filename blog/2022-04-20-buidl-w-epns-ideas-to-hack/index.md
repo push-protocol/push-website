@@ -133,7 +133,7 @@ During the event our team is on-ground. You Can Tweet [**@epnsproject**](http://
 
 **All the best! We’re happy and excited as #W3BUIDLingTogether!**
 
-[**Website**](http://epns.io/) **|** [**dApp**](https://github.com/push-protocol/push-website/embed-demo-app) **(live tutorial)|** [**RoadMap 2022**](https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a) **|** [**Twitter**](http://twitter.com/epnsproject) **|** [**Telegram**](https://t.me/epnsproject) **|** [**Discord**](https://discord.com/invite/YVPB99F9W5)
+[**Website**](http://epns.io/) **|** [**dApp**](https://github.com/push-protocol/embed-demo-app) **(live tutorial)|** [**RoadMap 2022**](https://medium.com/ethereum-push-notification-service/epns-roadmap-2022-2698ab153c1a) **|** [**Twitter**](http://twitter.com/epnsproject) **|** [**Telegram**](https://t.me/epnsproject) **|** [**Discord**](https://discord.com/invite/YVPB99F9W5)
 
 **About EPNS**
 ==============
