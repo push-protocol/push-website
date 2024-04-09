@@ -8,6 +8,7 @@ import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import { useColorMode } from "@docusaurus/theme-common";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import CodeBlock from "@theme/CodeBlock";
@@ -191,7 +192,10 @@ export default function HomepageFeatures(): JSX.Element {
         />
         <meta
           property="og:image"
-          content="/assets/previews/docsfbpreview.png"
+          content={useBaseUrl(
+            require("/static/assets/previews/docspreview.png").default,
+            { absolute: true },
+          )}
         />
 
         {/* <!-- Twitter Meta Tags --> */}
@@ -204,7 +208,10 @@ export default function HomepageFeatures(): JSX.Element {
         />
         <meta
           name="twitter:image"
-          content="/assets/previews/docstwtpreview.png"
+          content={useBaseUrl(
+            require("/static/assets/previews/docspreview.png").default,
+            { absolute: true },
+          )}
         />
 
         <script type="application/ld+json">

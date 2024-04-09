@@ -288,7 +288,7 @@ So, what do you have to do to update this functionality?
 Only one thing: Update the SDK to the latest version (1.4.45 or upwards), that’s it! This will ensure that messages sent using the new message standards are understood and displayed correctly in your dApp / mobile app / etc.
 
 #### How to enable Push SDK Feature Flag
-In-depth details for how to enable this can be found in the [Push Chat documentation](https://push.org/docs/chat/) and [GitHub repository](https://github.com/push-protocol/push-website/push-sdk/tree/main/packages/restapi).
+In-depth details for how to enable this can be found in the [Push Chat documentation](https://push.org/docs/chat/) and [GitHub repository](https://github.com/push-protocol/push-sdk/tree/main/packages/restapi).
 
 ### Push SDK V2 is Coming
 We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more! 

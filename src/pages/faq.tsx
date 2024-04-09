@@ -3,14 +3,14 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Layout from '@theme/Layout';
-import React from 'react';
+import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Layout from "@theme/Layout";
+import React from "react";
 
 // External Components
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
 
 // Internal Components
 import {
@@ -26,17 +26,16 @@ import {
   Section,
   Span,
   ULV2,
-} from '@site/src/css/SharedStyling';
+} from "@site/src/css/SharedStyling";
 
 // Import Assets
-import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
-import { BsChevronExpand } from 'react-icons/bs';
+import ImageFAQ from "@site/static/assets/website/faq/faq-projects.webp";
+import { BsChevronExpand } from "react-icons/bs";
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
+import { device } from "@site/src/config/globals";
 import { PageMeta } from "@site/src/config/pageMeta";
 import { General, Notifs, Chat, IntegratingPush, Governance, Token } from "@site/src/config/FAQList";
-
 
 
 function FAQ() {
@@ -68,10 +67,7 @@ function FAQ() {
     return (
       <ItemH flexDirection="column">
         {body?.map(({ question, section, renderAnswer }, index) => (
-          <QnAItem
-            key={index}
-            justifyContent="flex-start"
-          >
+          <QnAItem key={index} justifyContent="flex-start">
             <Question
               onClick={() => {
                 toggleShowAnswer(index, section);
@@ -80,10 +76,7 @@ function FAQ() {
               isOpen={showAnswers[index] && active === section}
             >
               <Span fontSize="16px">{question}</Span>
-              <BsChevronExpand
-                size={20}
-                color={'#ddd'}
-              />
+              <BsChevronExpand size={20} color={"#ddd"} />
             </Question>
 
             {showAnswers[index] && active === section && renderAnswer()}
@@ -94,34 +87,56 @@ function FAQ() {
   };
 
   return (
-    <Layout title={PageMeta.FAQS.pageTitle} description={PageMeta.FAQS.pageDescription} showNavbar='website'>
+    <Layout
+      title={PageMeta.FAQS.pageTitle}
+      description={PageMeta.FAQS.pageDescription}
+      showNavbar="website"
+    >
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
         <meta property="og:url" content="https://push.org/faq" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push | FAQ" />
-        <meta property="og:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
-        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/faqpreview.png").default, { absolute: true})} />
+        <meta
+          property="og:description"
+          content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently."
+        />
+        <meta
+          property="og:image"
+          content={useBaseUrl(
+            require("/static/assets/previews/faqpreview.png").default,
+            { absolute: true },
+          )}
+        />
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pushprotocol" />
         <meta name="twitter:title" content="Push | FAQ" />
-        <meta name="twitter:description" content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently." />
-        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/faqpreview.png").default, { absolute: true})} />
+        <meta
+          name="twitter:description"
+          content="Find answers to your most common questions in our FAQ section. Get clear and concise explanations on a variety of topics to solve your queries quickly and efficiently."
+        />
+        <meta
+          property="twitter:image"
+          content={useBaseUrl(
+            require("/static/assets/previews/faqpreview.png").default,
+            { absolute: true },
+          )}
+        />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",
             "@type": "Organization",
-            "name": "Push Protocol",
-            "description": "The Communication Protocol of Web3",
-            "url": "https://push.org",
-            "logo": "/assets/website/favicon.ico",
-            "sameAs": [
+            name: "Push Protocol",
+            description: "The Communication Protocol of Web3",
+            url: "https://push.org",
+            logo: "/assets/website/favicon.ico",
+            sameAs: [
               "https://twitter.com/pushprotocol",
-              "https://www.linkedin.com/company/push-protocol/mycompany/"
-            ]
+              "https://www.linkedin.com/company/push-protocol/mycompany/",
+            ],
           })}
         </script>
       </Head>
@@ -135,26 +150,21 @@ function FAQ() {
             padding="40px 0px"
             margin="0 auto"
           >
-            <ItemH
-              flexDirection="column"
-            >
-              <H2 
-                  color="#fff"
-                  textAlign="center" 
-                  fontSize="36px"
-                  >{t('faq.hero.title')}</H2>
+            <ItemH flexDirection="column">
+              <H2 color="#fff" textAlign="center" fontSize="36px">
+                {t("faq.hero.title")}
+              </H2>
               <H3
-                  fontSize="16px"
-                  fontWeight="300"
-                  margin="30px 0px 30px 0px"
-                  letterSpacing="0.1em"
-                  color='#fff'
-                  textAlign="center"
-                  style={{ maxWidth: '400px' }}
-                >
-                  {t('faq.hero.update-text')}
+                fontSize="16px"
+                fontWeight="300"
+                margin="30px 0px 30px 0px"
+                letterSpacing="0.1em"
+                color="#fff"
+                textAlign="center"
+                style={{ maxWidth: "400px" }}
+              >
+                {t("faq.hero.update-text")}
               </H3>
-              
             </ItemH>
           </Content>
         </TopSection>
@@ -167,9 +177,7 @@ function FAQ() {
             className="contentBox"
             alignSelf="stretch"
           >
-            <ItemV
-              alignItems="flex-start"
-            >
+            <ItemV alignItems="flex-start">
               {/* Questions and answers */}
               <Title>General</Title>
               <Items body={General} />
@@ -205,10 +213,10 @@ const Question = styled(Button)`
   width: 100%;
   padding: 10px 15px;
   border-radius: 0px;
-  background: ${(props) => (props.isOpen ? '#e20880' : '#fff')};
+  background: ${(props) => (props.isOpen ? "#e20880" : "#fff")};
 
   & span {
-    color: ${(props) => (props.isOpen ? '#FFF !important' : '#000')};
+    color: ${(props) => (props.isOpen ? "#FFF !important" : "#000")};
   }
 
   &:hover {
@@ -235,9 +243,9 @@ const QnAItem = styled(ItemH)`
   & ${Question} {
     // background: transparent;
     justify-content: flex-start;
-  
-  &:hover {
-  }
+
+    &:hover {
+    }
 
     & ${Span} {
       font-weight: 400;
@@ -282,7 +290,7 @@ const Image = styled.img`
 `;
 
 const Title = styled.div`
-  font-family: 'Strawford';
+  font-family: "Strawford";
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
@@ -304,7 +312,4 @@ const TopSection = styled(Section)`
   }
 `;
 
-
 export default FAQ;
-
-

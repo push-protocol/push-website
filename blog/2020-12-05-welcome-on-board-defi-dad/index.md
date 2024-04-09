@@ -12,6 +12,7 @@ tags: [ Advisor
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Welcome on board, DeFi Dad!👁️⚡👁️](./cover-image.webp)
@@ -32,4 +33,4 @@ In taking the advisor role, DeFi Dad said:
 
 We love DeFi Dad 💖💖💖 and are honored to welcome him to the EPNS fam.
 
-Stay in touch with EPNS! [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)
+Stay in touch with Push! [Twitter](http://x.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)

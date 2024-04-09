@@ -20,9 +20,9 @@ import {
   Section,
   Span,
 } from "@site/src/css/SharedStyling";
-import PushBellSVG from "@site/static/assets/website/footer/pushBell.svg";
 import FooterFollowusFigure from "@site/static/assets/website/footer/footerfollowus.svg";
 import FooterJoinusFigure from "@site/static/assets/website/footer/footerjoinus.svg";
+import PushBellSVG from "@site/static/assets/website/footer/pushBell.svg";
 import AndroidSVG from "@site/static/assets/website/shared/android.svg";
 import AppleSVG from "@site/static/assets/website/shared/apple.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
@@ -230,7 +230,7 @@ function Footer() {
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
-                    href="https://github.com/push-protocol/push-website"
+                    href="https://github.com/push-protocol/"
                     title={t(
                       "footer.links-section.resources-column.github-link",
                     )}
@@ -330,7 +330,7 @@ function Footer() {
               </LinkTo>
 
               <FooterAnchorIcon
-                href="https://github.com/push-protocol/push-website"
+                href="https://github.com/push-protocol/"
                 title="Push Github"
                 target="_blank"
               >

@@ -32,9 +32,6 @@ export default function Index(): JSX.Element {
         </Section>
 
       </Layout>
-
-
-   <Footer />
   </>
   );
 }

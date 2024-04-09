@@ -16,7 +16,7 @@ This is a step-by-step introductory tutorial that will teach you how to build a 
 
 We will walk through coding and interacting with the [Digible ](https://www.digible.io/)to create the notification regarding the NFTs listed there. And don’t worry if you don’t understand what any these words mean yet, I'll explain everything!
 
-You can access the [code](https://github.com/push-protocol/push-website/push-showrunners-framework-staging/tree/main/src/sample_showrunners/digible) for the channel and get some vibe for how the code is looking !!
+You can access the [code](https://github.com/push-protocol/push-showrunners-framework-staging/tree/main/src/sample_showrunners/digible) for the channel and get some vibe for how the code is looking !!
 
 <head>
   <title>
@@ -43,7 +43,7 @@ Digible has provided us with the Contract Addresses and ABIs for the concerned e
 
 To get the Idea of when the function is called we monitor the block numbers of every transaction in the given contract address if it concerned to call the monitored event.Whenever we observe a new block number, we trigger a notification and also update the latest block number in our temporary storage for further monitoring.
 
-#### [Channel File](https://github.com/push-protocol/push-website/push-showrunners-framework/blob/main/src/sample_showrunners/digible/digibleChannel.ts)
+#### [Channel File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/sample_showrunners/digible/digibleChannel.ts)
 
 The channel file is the brain for every channel notification logic. The file follows basic steps of input obtainment, some processed logic and conditions and when the condition for logic is satisfied the code generates the notification.
 
@@ -200,7 +200,7 @@ await this.sendNotification({
 });
 ```
 
-#### [Jobs File](https://github.com/push-protocol/push-website/push-showrunners-framework/blob/main/src/sample_showrunners/digible/digibleJobs.ts)
+#### [Jobs File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/sample_showrunners/digible/digibleJobs.ts)
 
 This folder is responsible to run the Cron Jobs. Expanding on the “Cron Jobs”, this is a function which uses a module called Node-Schedule to run a code at a specific, repeating time interval. Though the main logic resides in the Channel file, the logic is constantly run by this file, so that as soon as the function satisfies the condition when its called, a notification is sent.
 
