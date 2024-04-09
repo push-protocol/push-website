@@ -278,8 +278,8 @@ export default function HomepageFeatures(): JSX.Element {
       </DocsHeroSection>
 
       {/* QUICKSTART SECTION */}
-      <HomepageSection alignItems="flex-start">
-        <FluidContent>
+      <Section alignItems="flex-start">
+        <Content>
           <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
 
           <PopularQuickiesList>
@@ -302,12 +302,12 @@ export default function HomepageFeatures(): JSX.Element {
               );
             })}
           </PopularQuickiesList>
-        </FluidContent>
-      </HomepageSection>
+        </Content>
+      </Section>
 
       {/* TECH DOCS SECTION */}
-      <HomepageSection>
-        <FluidContent>
+      <Section>
+        <Content>
           <HomepageSubHeader id="techdocs">
             Technical Documentation
           </HomepageSubHeader>
@@ -316,12 +316,12 @@ export default function HomepageFeatures(): JSX.Element {
               <TechDocItem key={idx} docutheme={colorMode} {...props} />
             ))}
           </TechDocCardList>
-        </FluidContent>
-      </HomepageSection>
+        </Content>
+      </Section>
 
       {/* SDK SECTION */}
-      <HomepageSection>
-        <FluidContent>
+      <Section>
+        <Content>
           <ItemH justifyContent="flex-start">
             <HomepageSubHeader>Push SDK</HomepageSubHeader>
             <Link
@@ -367,8 +367,8 @@ export default function HomepageFeatures(): JSX.Element {
             <FAQ />
 
           </div> */}
-        </FluidContent>
-      </HomepageSection>
+        </Content>
+      </Section>
 
       <Footer />
     </Layout>
@@ -468,19 +468,6 @@ const Pulsate = styled.span`
   animation-delay: calc(1s * ${(props) => (props.stagger ? props.stagger : 1)});
 `;
 
-const FluidContent = styled(Content)`
-  align-self: center;
-  width: 68%;
-  max-width: initial;
-  padding-top: 0px;
-  padding-bottom: 0px;
-
-  @media ${device.laptopL} {
-    width: 100%;
-    box-sizing: border-box;
-  }
-`;
-
 const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
 
@@ -491,14 +478,6 @@ const TechDocIcon = styled(ItemV)`
     width: 44px;
     margin: 0 0 1rem 0;
   }
-`;
-
-const HomepageSection = styled(Section)`
-  margin-top: 70px;
-  margin-bottom: 30px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
 `;
 
 const HomepageSubHeader = styled(H2)`

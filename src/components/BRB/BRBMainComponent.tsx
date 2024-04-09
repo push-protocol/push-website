@@ -212,7 +212,7 @@ export const BRBMainComponent = () => {
           setIsAlertVisible={setIsAlertVisible}
         />
 
-        <Section padding="0 0 0 0">
+        <Section>
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
               <PushLogoBlackContainer className="headerlogo" flex="initial">

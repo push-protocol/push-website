@@ -70,7 +70,6 @@ function TermsOfService() {
         </script>
         </Head>
         
-      <TosWrapper>
         <TopSection>
           <Content
             className="contentBox"
@@ -109,14 +108,10 @@ function TermsOfService() {
         {/* TOS SECTION */}
         <Section
           curve="bottom"
-          // padding="80px 0px 40px 0px"
           data-bkg="light"
         >
           <Content
             className="contentBox"
-            alignSelf="center"
-            flex="1"
-            // padding="40px 0px"
           >
             <ItemH
               alignSelf="stretch"
@@ -1351,17 +1346,10 @@ function TermsOfService() {
             </ItemH>
           </Content>
         </Section>
-      </TosWrapper>
     </Layout>
   );
 }
 
-
-const TosWrapper = styled.div`
-  @media ${device.tablet} {
-    width: 100%;
-  }
-`;
 
 const TermsHeaderGroup = styled.div`
   display: flex;

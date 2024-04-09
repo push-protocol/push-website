@@ -55,7 +55,6 @@ function Privacy() {
         </script>
       </Head>
         
-      <PrivacyWrapper>
         <TopSection>
           <Content
             className="contentBox"
@@ -89,17 +88,13 @@ function Privacy() {
           </Content>
         </TopSection>
 
-        <PrivacySection>
+        <Section>
           <Content
             className="contentBox"
-            alignSelf="center"
-            psdding="0px"
-            padding="40px 0px"
           >
             <ItemH
               alignSelf="stretch"
               justifyContent="flex-start"
-              margin="0px 20px 40px 20px"
               flexDirection="column"
             >
               <ItemH
@@ -830,29 +825,14 @@ function Privacy() {
               </ItemH>
             </ItemH>
           </Content>
-        </PrivacySection>
-      </PrivacyWrapper>
+        </Section>
     </Layout>
   );
 }
 
-const PrivacyWrapper = styled.div`
-  @media ${device.tablet} {
-    width: 100%;
-  }
-`;
-
 const ListGroup = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const PrivacySection = styled(Section)`
-  width: 100%;
-  padding: 80px 0px 0px 0px;
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-  }
 `;
 
 const TopSection = styled(Section)`
