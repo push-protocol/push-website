@@ -142,13 +142,14 @@ function FAQ() {
       </Head>
 
         
-        <TopSection>
+        <HeroSection 
+          background="#121315"
+          minHeight="70vh"
+          >
           <Content
             className="contentBox"
             flex="1"
             alignSelf="center"
-            padding="40px 0px"
-            margin="0 auto"
           >
             <ItemH flexDirection="column">
               <H2 color="#fff" textAlign="center" fontSize="36px">
@@ -167,7 +168,7 @@ function FAQ() {
               </H3>
             </ItemH>
           </Content>
-        </TopSection>
+        </HeroSection>
 
         <Section
           curve="bottom"
@@ -175,7 +176,7 @@ function FAQ() {
         >
           <Content
             className="contentBox"
-            alignSelf="stretch"
+            alignSelf="center"
           >
             <ItemV alignItems="flex-start">
               {/* Questions and answers */}
@@ -298,18 +299,8 @@ const Title = styled.div`
   margin-top: 50px;
 `;
 
-const TopSection = styled(Section)`
-  width: 100%;
-  padding: 180px 0px 20px 0px;
-  min-height: 70vh;
-  background: #121315;
+const HeroSection = styled(Section)`
   border-radius: 0 0 48px 48px;
-
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 export default FAQ;

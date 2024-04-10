@@ -55,12 +55,13 @@ function PrivacyMobile() {
         </script>
       </Head>
         
-        <TopSection>
+        <HeroSection 
+          background="#121315"
+          minHeight="70vh"
+        >
           <Content
             className="contentBox"
             flex="1"
-            alignSelf="center"
-            padding="40px 0px"
           >
             <ItemV>
               <HeroHeader textAlign="center">PRIVACY POLICY MOBILE APPS</HeroHeader>
@@ -85,7 +86,7 @@ function PrivacyMobile() {
               </H3>
             </ItemV>
           </Content>
-        </TopSection>
+        </HeroSection>
 
         <Section
           curve="bottom"
@@ -781,18 +782,8 @@ const ListGroup = styled.div`
   flex-direction: column;
 `;
 
-const TopSection = styled(Section)`
-  width: 100%;
-  padding: 180px 0px 20px 0px;
-  min-height: 70vh;
-  background: #121315;
+const HeroSection = styled(Section)`
   border-radius: 0 0 48px 48px;
-
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 export default PrivacyMobile;

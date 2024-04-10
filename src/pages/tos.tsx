@@ -70,10 +70,11 @@ function TermsOfService() {
         </script>
         </Head>
         
-        <TopSection>
-          <Content
+        <HeroSection
+          background="#121315"
+          minHeight="70vh">
+          <HeroContent
             className="contentBox"
-            padding="80px 0px 20px 0px"
             flex="1"
             alignSelf="center"
           >
@@ -102,8 +103,8 @@ function TermsOfService() {
                 ACTION RIGHTS AS DETAILED IN <B color="#fff">SCHEDULE B</B>. PLEASE READ THE AGREEMENT CAREFULLY.
               </P>
             </ItemV>
-          </Content>
-        </TopSection>
+          </HeroContent>
+        </HeroSection>
 
         {/* TOS SECTION */}
         <Section
@@ -1362,17 +1363,23 @@ const ListGroup = styled.div`
 `;
 
 
-const TopSection = styled(Section)`
-  width: 100%;
-  padding: 180px 0px 20px 0px;
-  min-height: 70vh;
-  background: #121315;
+const HeroSection = styled(Section)`
   border-radius: 0 0 48px 48px;
+`;
 
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
+const HeroContent = styled(Content)`
+  align-self: stretch;
+  padding-top: 250px;
+  padding-bottom: 40px;
+
+  @media ${device.laptop} {
+    padding-top: 200px;
+    padding-bottom: 40px;
+  }
+
+  @media ${device.mobileL} {
+    padding-top: 112px;
+    padding-bottom: 40px;
   }
 `;
 
