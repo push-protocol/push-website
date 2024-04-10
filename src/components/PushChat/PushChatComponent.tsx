@@ -207,10 +207,7 @@ const PlayGround = styled(Section)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 80%;
+  width: 100%;
   height: 75vh;
   margin: 0 auto;
-  @media ${device.mobileL} {
-    width: 95%;
-  }
 `;

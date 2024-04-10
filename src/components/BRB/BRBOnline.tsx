@@ -103,19 +103,20 @@ const Header = styled.h3`
 `;
 
 const GridItem = styled.div`
-  width: 1280px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 33px;
 
   @media ${device.tablet} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 90%;
+    width: 100%;
 }
 
   @media ${device.mobileL} {
       grid-template-columns: repeat(1, minmax(0, 1fr));
-      width: 90%;
+      width: 100%;
+      gap: 16px;
   }
 `;
 

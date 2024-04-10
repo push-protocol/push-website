@@ -152,10 +152,10 @@ export const PartnerBounties = ({ sectionRef }: { sectionRef: React.MutableRefOb
 };
 
 const TwitterLink = styled.div`
-color: #E64DE9;
-display: flex;
-align-items: center;
-gap:6px;
+  color: #E64DE9;
+  display: flex;
+  align-items: center;
+  gap:6px;
 `
 const WinnerItem = styled.div`
 
@@ -170,23 +170,24 @@ font-size: 16px;
   color: #fff;
 `
 const BountyPrice = styled.div`
-margin-left: auto;
-display: flex;
-justify-content: flex-end;
-flex-direction: column;
-gap: 8;
-width: 60%;
-
-@media ${device.tablet} {
-  width:100%;
-}
-
-@media ${device.mobileL} {
   margin-left: auto;
-  width: 100%;
-  justify-content: center;
-}
-`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 8px;
+  width: 60%;
+
+  @media ${device.tablet} {
+    width:100%;
+  }
+
+  @media ${device.mobileL} {
+    margin-left: auto;
+    width: 100%;
+    justify-content: center;
+  }
+`;
+
 const PartnerBountiesContainer = styled.div`
   width: 100%;
   display: flex;
@@ -212,7 +213,7 @@ const Header = styled.h3`
 
 const PartnerLine = styled.div`
   background: #1b1b25;
-  width: 1280px;
+  width: 100%;
   height: 120px;
   margin: 0 auto;
   display: flex;
@@ -226,7 +227,7 @@ const PartnerLine = styled.div`
   position: relative;
 
   @media (max-width: 1281px) {
-    width: 90%;
+    width: 100%;
   }
 
   &:hover {
@@ -242,6 +243,11 @@ const PartnerLine = styled.div`
     height: auto;
     flex-direction: column;
     align-items: flex-start;
+    margin: 12px 0px;
+  }
+
+  @media ${device.mobileL} {
+    margin: 8px 0px;
   }
 `;
 
