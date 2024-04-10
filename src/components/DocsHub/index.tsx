@@ -378,7 +378,7 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-      <Footer />
+      {/* <Footer /> */}
     </Layout>
   );
 }

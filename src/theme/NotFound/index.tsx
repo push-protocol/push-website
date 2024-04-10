@@ -23,15 +23,19 @@ export default function Index(): JSX.Element {
   return (
     <>
       <PageMetadata title={title} />
+      
       <Layout>
-       
          <Section>
           <Content>
              <NotFoundContent />
           </Content>
         </Section>
 
+
+      {/* <div>koko</div> */}
+      {/* <Footer /> */}
       </Layout>
+
   </>
   );
 }

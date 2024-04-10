@@ -35,18 +35,15 @@ export default function Layout(props) {
   } = props;
 
   useKeyboardNavigation();
+  const pathname = location.pathname;
 
   return (
     <LayoutProvider>
       <PageMetadata title={title} description={description} />
-
       <SkipToContent />
-
       <AnnouncementBar />
-
       {(showNavbar === undefined || showNavbar === "docusaurus") && <Navbar />}
       {showNavbar === "website" && <Header />}
-
       <div
         id={SkipToContentFallbackId}
         className={clsx(
