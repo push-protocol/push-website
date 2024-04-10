@@ -12,10 +12,11 @@ import Layout from '@theme/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 
 // Internal Components
-import { Content, Section } from "@site/src/css/SharedStyling";
 import Footer from "@site/src/segments/Footer";
 
 export default function Index(): JSX.Element {
+  const pathname = location.pathname;
+
   const title = translate({
     id: 'theme.NotFound.title',
     message: 'Page Not Found',
@@ -24,16 +25,8 @@ export default function Index(): JSX.Element {
     <>
       <PageMetadata title={title} />
       
-      <Layout>
-         <Section>
-          <Content>
+      <Layout showNavbar={!location.pathname.startsWith("/docs") && !location.pathname.startsWith("/blogs") && "website"}>
              <NotFoundContent />
-          </Content>
-        </Section>
-
-
-      {/* <div>koko</div> */}
-      {/* <Footer /> */}
       </Layout>
 
   </>

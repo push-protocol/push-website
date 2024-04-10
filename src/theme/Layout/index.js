@@ -35,7 +35,6 @@ export default function Layout(props) {
   } = props;
 
   useKeyboardNavigation();
-  const pathname = location.pathname;
 
   return (
     <LayoutProvider>
