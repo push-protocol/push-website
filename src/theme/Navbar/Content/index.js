@@ -232,17 +232,16 @@ export default function NavbarContent() {
           {/* <NavbarItems items={leftItems} /> */}
 
           {/* Change Header from docs to blog if required */}
-          {!isLaptopM && pathname.startsWith("/docs") && (
-            <NavItem to="/docs" aria-label="Push Docs">
-              Docs
-            </NavItem>
-          )}
-
-          {!isLaptopM && pathname.startsWith("/blog") && (
-            <NavItem to="/blog" aria-label="Push Blog">
-              Blog
-            </NavItem>
-          )}
+          {!isLaptopM &&
+            (pathname.startsWith("/docs") ? (
+              <NavItem to="/docs" aria-label="Push Docs">
+                Docs
+              </NavItem>
+            ) : (
+              <NavItem to="/blog" aria-label="Push Blog">
+                Blog
+              </NavItem>
+            ))}
 
           {!isLaptopM && (
             <NavigationMenuItem>
