@@ -396,7 +396,7 @@ export const Chat = [
   },
 ];
 
-const IntegratingPush = [
+export const IntegratingPush = [
   {
     question: 'How can I integrate Push as a service/developer?',
     section: 'IntegratingPush',
