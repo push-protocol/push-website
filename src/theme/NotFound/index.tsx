@@ -25,7 +25,7 @@ export default function Index(): JSX.Element {
     <>
       <PageMetadata title={title} />
       
-      <Layout showNavbar={!location.pathname.startsWith("/docs") && !location.pathname.startsWith("/blog") ? "website" : "docusaurus"}>
+      <Layout showNavbar={!location.pathname.startsWith("/docs") && !location.pathname.startsWith("/blog") ? "website" : "docusaurus"} noFooter={true}>
              <NotFoundContent />
       </Layout>
 
