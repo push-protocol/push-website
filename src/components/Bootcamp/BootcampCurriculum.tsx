@@ -35,6 +35,7 @@ const BootcampCurriculum = () => {
                             color="#FFF"
                             fontSize="20px"
                             fontFamily="Glancyr, sans-serif"
+                            margin="0 auto 0 0"
                             fontWeight="400"
                             lineHeight="32px">
                                 <Span color="#E64DE9" fontSize="20px">Session {++index}: </Span> {session?.title} </H3>

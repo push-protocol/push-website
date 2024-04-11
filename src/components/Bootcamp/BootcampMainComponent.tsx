@@ -359,7 +359,7 @@ export const BootcampMainComponent = () => {
         </ItemV>
 
         <NavText id="elems0">
-          An 8-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
+          An 6-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
         </NavText>
 
         <NavButtons id="elems" ref={elem0}>
@@ -370,9 +370,9 @@ export const BootcampMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="400"
-            onClick={() => handleSectionNavigation("bounties")}
+            onClick={() => openLink("https://zv9atndluia.typeform.com/to/ToIpDLT2")}
           >
-            Join Waitlist
+            Apply Now
           </ButtonItem>
           <ButtonBar
             borderRadius="24px"
@@ -419,7 +419,7 @@ export const BootcampMainComponent = () => {
                 fontWeight="300"
                 margin="8px 0 0 0"
                 lineHeight="normal"
-            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 15th</H3>
+            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 23rd</H3>
 
             <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 

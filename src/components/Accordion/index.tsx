@@ -7,6 +7,7 @@ import {
   Content,
   H2,
   H3,
+  LinkTo,
   Image,
   ItemH,
   ItemV,
@@ -52,13 +53,29 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                                 <AiOutlineMinus color="#FFF" size={22} /> : <AiOutlinePlus color="#FFF" size={22} />}
                         </div>
                     </AccordionParent>
-                    {activeIndex === index && <H3   
-                                                color="#FFF"
-                                                fontSize="16px"
-                                                fontFamily="Glancyr, sans-serif"
-                                                fontWeight="300"
-                                                lineHeight="140%"
-                                                padding="0 0 24px 0">{item.content}</H3>}
+                    {activeIndex === index && (
+                    <>
+                            <H3   
+                                color="#FFF"
+                                fontSize="16px"
+                                fontFamily="Glancyr, sans-serif"
+                                fontWeight="300"
+                                lineHeight="140%"
+                                padding="0 0 24px 0">
+                                
+                                {item.content}
+
+                                {item.link && (<a
+                                color="#FFF"
+                                fontSize="16px"
+                                fontFamily="Glancyr, sans-serif"
+                                fontWeight="300"
+                                lineHeight="140%" 
+                                letterSpacing="normal"
+                                target="_blank"
+                                href={item.link}> - Link</a>)}
+                            </H3>
+                    </>)}                                                
                 </AccordionSection>
             ))}
         </div>

@@ -17,7 +17,8 @@ export const bootcampFaq = [
     },
     { 
         title: 'Is there any financial aid or scholarship available for participants?', 
-        content: `While there is a staking requirement, we are committed to making our program accessible. We offer a limited number of scholarships to highly motivated candidates who demonstrate financial need. Details on how to apply for these scholarships are available on our website.` 
+        content: `While there is a staking requirement, we are committed to making our program accessible. We offer a limited number of scholarships to highly motivated candidates who demonstrate financial need. Details on how to apply for these scholarships are available on our website` ,
+        link: "https://www.notion.so/Financial-Aid-2950f906e1cd4e1ab9a3762ea7dadc4b?pvs=4"
     },
     { 
         title: 'Can participants from non-technical backgrounds succeed in the BRB Bootcamp?', 
