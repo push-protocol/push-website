@@ -11,12 +11,14 @@ import Translate from '@docusaurus/Translate';
 import type {Props} from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
 import { Content, Section } from "@site/src/css/SharedStyling";
+import { useLocation } from "@docusaurus/router";
 
 // Internal Components
 import Footer from "@site/src/segments/Footer";
 
 
 export default function NotFoundContent({className}: Props): JSX.Element {
+  const location = useLocation();
   const pathname = location.pathname;
 
   return (
