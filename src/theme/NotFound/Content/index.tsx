@@ -10,9 +10,19 @@ import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import type {Props} from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
+import { Content, Section } from "@site/src/css/SharedStyling";
+
+// Internal Components
+import Footer from "@site/src/segments/Footer";
+
 
 export default function NotFoundContent({className}: Props): JSX.Element {
+  const pathname = location.pathname;
+
   return (
+    <>
+    <Section>
+    <Content>
     <main className={clsx('container margin-vert--xl', className)}>
       <div className="row">
         <div className="col col--6 col--offset-3">
@@ -41,5 +51,10 @@ export default function NotFoundContent({className}: Props): JSX.Element {
         </div>
       </div>
     </main>
+     </Content>
+    </Section>
+
+      {location.pathname.startsWith("/docs") && (<Footer />)}
+    </>
   );
 }
