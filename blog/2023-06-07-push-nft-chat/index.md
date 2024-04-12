@@ -42,7 +42,7 @@ https://www.npmjs.com/package/@pushprotocol/restapi#for-chat
 
 <i>Developer Hint</i>: This example repo covers all functionalities that can be implemented from the SDK:
 
-https://github.com/ethereum-push-notification-service/push-sdk/tree/main/packages/examples/sdk-backend-node
+https://github.com/push-protocol/push-sdk/tree/main/packages/examples/sdk-backend-node
 </blockquote>
 
 ## How does Push NFT Chat work?

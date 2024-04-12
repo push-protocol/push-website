@@ -1,6 +1,6 @@
+import Link from "@docusaurus/Link";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Link from "@docusaurus/Link";
 
 // Internal Components
 import {
@@ -13,14 +13,14 @@ import {
   ItemV,
   Span,
 } from "@site/src/css/SharedStyling";
-import { BsLinkedin, BsTwitter, BsYoutube, BsX } from "react-icons/bs";
-import { BiLink, BiShareAlt } from "react-icons/bi";
-import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import BlogPostItemHeader from "@theme/BlogPostItem/Header";
-import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
-import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
 import BlogPostItem from "@theme/BlogPostItem";
+import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
+import BlogPostItemHeader from "@theme/BlogPostItem/Header";
+import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
+import { BiLink, BiShareAlt } from "react-icons/bi";
+import { BsLinkedin, BsTwitter, BsX, BsYoutube } from "react-icons/bs";
+import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
@@ -157,7 +157,7 @@ const GridItem = styled.div`
 
   @media (max-width: 820px) {
     width: 100% !important;
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding: ${`${GLOBALS.STRUCTURE.PADDING.MOBILE}`};
     box-sizing: border-box;
     margin: 10px auto 0 auto;
     gap: 30px;

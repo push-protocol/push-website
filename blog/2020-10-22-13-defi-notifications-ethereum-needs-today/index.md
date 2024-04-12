@@ -163,4 +163,4 @@ EPNS is the hero we need and deserve in DeFi.
 References: [Market Order vs Limit Order](https://cryptortrust.com/2020/09/08/trading-token-market-order-vs-limit-order/#:~:text=Market%20orders%20allow%20you%20to,order%20and%20the%20limit%20order.) | [Loopring Review](https://www.coinbureau.com/review/loopring-lrc/) | [Yearn Vaults](https://docs.yearn.finance/faq#vaults) | [CDP Defi Saver](https://medium.com/defi-saver/introducing-1-transaction-cdp-closing-powered-by-flash-loans-8a83456226f4) | [Collateralized Loans](https://defirate.com/collateralized-loan/) | [PoolTogether](https://www.argent.xyz/blog/how-to-use-pooltogether/)
 
 Become part of our buzzing community! Join the conversation on one of our channels:  
-[Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/ethereum-push-notification-service)
+[Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/push-protocol)

@@ -11,6 +11,7 @@ tags: [ Blockchain
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Building the Cities of the Future with EPNS](./cover-image.webp)
@@ -23,8 +24,7 @@ Two major industries that are rigorously researching and making immense strides 
 
 Let us take a quick dive into the lives of people at Blockville, a fictional city, by exploring how the fictional citizens of Blockville interact with various processes in their beloved city, we would get a good idea of how blockchain and EPNS could eventually impact our lives and that too from a user perspective (without getting into the nitty-gritty technical jargon).
 
-**The curious case of Blockville**
-==================================
+# **The curious case of Blockville**
 
 Blockville, the city of the future. While people from the past envisioned flying cars in the future, that is not quite the case yet. Blockville — the world’s first blockchain-powered city, the first completely decentralized city, is what they call it. Every system and process is decentralized, from the fleet of autonomous vehicles, to even the election of the government! All with help of the primary infrastructure of communication that they proudly use, EPNS! Your electric vehicle is low on charge? Get notified, and you get to decide whether to redirect to the closest charging station or take your chance and get back home where you already have one set up. Major news to be announced by media and news outlets? EPNS delivers it right to the fingertips of Blockville citizens, and the best part about all of this? Blockville citizens not only receive notifications but earn passive income from these notifications targeted at them. Are elections going on? Use EPNS to signal or vote using on-chain governance voting and even get the chance to predict the outcome of these city mayoral elections with the help of decentralized prediction markets!
 
@@ -54,9 +54,8 @@ Kevin heads back to where his son stays, and can now peacefully enjoy his holida
 
 These were just a few daily use-cases for the citizens of Blockville. With a city powered by blockchain, there is more to be explored. With the use of EPNS, the use of blockchain and Web3 has just been made easier, even for big industries like Healthcare and Insurance. The possibilities for EPNS are endless!
 
-About Ethereum Push Notification Service (EPNS)
-===============================================
+# About Ethereum Push Notification Service (EPNS)
 
 EPNS is a decentralized notification protocol that enables users (wallet addresses) to receive notifications. Using the protocol, any dApp, service or smart contract can send notifications to users in a platform-agnostic fashion (mobile, tablet, web, user wallets, etc).
 
-Stay in touch with EPNS! [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website,](http://epns.io/) [Discord](https://discord.gg/YVPB99F9W5)
+Stay in touch with Push! [Twitter](http://x.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website,](http://epns.io/) [Discord](https://discord.gg/YVPB99F9W5)

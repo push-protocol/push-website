@@ -54,7 +54,7 @@ In the new topic window, fill the following 3 fields according to the screenshot
 *   Below the title, choose the Push Grants Program — Proposals category
 *   #tag the two terms pictured in the bottom right field
 
-Doing those 3 things will outline the proposal structure, for users will need to draft their proposals following the [**proposal template**](https://github.com/ethereum-push-notification-service/epns-grants/blob/main/proposal-template.md).
+Doing those 3 things will outline the proposal structure, for users will need to draft their proposals following the [**proposal template**](https://github.com/push-protocol/push-grants/blob/main/proposal-template.md).
 
 **An application is accepted only when it gets approved on Snapshot.**
 

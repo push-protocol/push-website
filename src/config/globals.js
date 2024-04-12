@@ -1,50 +1,47 @@
 // Define Size and Device
 export const size = {
-  mobileS: "320px",
-  mobileM: "395px",
-  mobileL: "470px",
-  tablet: "768px",
-  laptop: "1024px",
-  laptopM: "1260px",
-  laptopL: "1440px",
-  desktop: "2560px",
+  mobileS: 320,
+  mobileM: 395,
+  mobileL: 470,
+  tablet: 768,
+  laptop: 1024,
+  laptopM: 1260,
+  laptopL: 1440,
+  desktop: 2560,
 };
 
 export const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopM: `(max-width: ${size.laptopM})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(max-width: ${size.desktop})`,
-  desktopL: `(max-width: ${size.desktop})`,
+  mobileS: `(max-width: ${size.mobileS}px)`,
+  mobileM: `(max-width: ${size.mobileM}px)`,
+  mobileL: `(max-width: ${size.mobileL}px)`,
+  tablet: `(max-width: ${size.tablet}px)`,
+  laptop: `(max-width: ${size.laptop}px)`,
+  laptopM: `(max-width: ${size.laptopM}px)`,
+  laptopL: `(max-width: ${size.laptopL}px)`,
+  desktop: `(max-width: ${size.desktop}px)`,
+  desktopL: `(max-width: ${size.desktop}px)`,
 };
 
-// Define Padding
-export const globalsPadding = {};
-
 // Define Margin
-export const globalsMargin = {
-  DEFAULT: {
+export const structure = {
+  PADDING: {
     DESKTOP: {
-      TOP: "120px",
-      RIGHT: "40px",
-      BOTTOM: "120px",
-      LEFT: "40px",
+      TOP: 100,
+      RIGHT: 48,
+      BOTTOM: 100,
+      LEFT: 48,
     },
     TABLET: {
-      TOP: "60px",
-      RIGHT: "25px",
-      BOTTOM: "60px",
-      LEFT: "25px",
+      TOP: 90,
+      RIGHT: 32,
+      BOTTOM: 90,
+      LEFT: 32,
     },
     MOBILE: {
-      TOP: "40px",
-      RIGHT: "20px",
-      BOTTOM: "40px",
-      LEFT: "20px",
+      TOP: 90,
+      RIGHT: 16,
+      BOTTOM: 90,
+      LEFT: 16,
     },
   },
 };
@@ -62,8 +59,72 @@ const GLOBALS = {
   STORAGE: {},
 
   CONSTANTS: {
-    HEADER_HEIGHT: 70,
     LEFT_BAR_WIDTH: 260,
+  },
+
+  HEADER: {
+    HEIGHT: 78,
+    OUTER_MARGIN: {
+      DESKTOP: {
+        TOP: 44,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
+      },
+      TABLET: {
+        TOP: 24,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
+      },
+      MOBILE: {
+        TOP: 8,
+        LEFT: 0,
+        BOTTOM: 0,
+        RIGHT: 0,
+      },
+    },
+    OUTER_PADDING: {
+      DESKTOP: {
+        TOP: 0,
+        LEFT: 16,
+        BOTTOM: 0,
+        RIGHT: 16,
+      },
+      TABLET: {
+        TOP: 16,
+        LEFT: 16,
+        BOTTOM: 16,
+        RIGHT: 16,
+      },
+      MOBILE: {
+        TOP: 12,
+        LEFT: 16,
+        BOTTOM: 12,
+        RIGHT: 16,
+      },
+    },
+  },
+
+  STRUCTURE: {
+    MAX_WIDTH: size.laptopM,
+    PADDING: {
+      DESKTOP: `${structure.PADDING.DESKTOP.TOP}px ${structure.PADDING.DESKTOP.RIGHT}px ${structure.PADDING.DESKTOP.BOTTOM}px ${structure.PADDING.DESKTOP.LEFT}px`,
+      TABLET: `${structure.PADDING.TABLET.TOP}px ${structure.PADDING.TABLET.RIGHT}px ${structure.PADDING.TABLET.BOTTOM}px ${structure.PADDING.TABLET.LEFT}px`,
+      MOBILE: `${structure.PADDING.MOBILE.TOP}px ${structure.PADDING.MOBILE.RIGHT}px ${structure.PADDING.MOBILE.BOTTOM}px ${structure.PADDING.MOBILE.LEFT}px`,
+
+      FLUID: {
+        DESKTOP: `${structure.PADDING.DESKTOP.TOP}px 0 ${structure.PADDING.DESKTOP.BOTTOM}px 0`,
+        TABLET: `${structure.PADDING.TABLET.TOP}px 0 ${structure.PADDING.TABLET.BOTTOM}px 0`,
+        MOBILE: `${structure.PADDING.MOBILE.TOP}px 0 ${structure.PADDING.MOBILE.BOTTOM}px 0`,
+      },
+
+      VERTICAL_FLUID: {
+        DESKTOP: `0 ${structure.PADDING.DESKTOP.RIGHT}px 0 ${structure.PADDING.DESKTOP.LEFT}px`,
+        TABLET: `0 ${structure.PADDING.TABLET.RIGHT}px 0 ${structure.PADDING.TABLET.LEFT}px`,
+        MOBILE: `0 ${structure.PADDING.MOBILE.RIGHT}px 0 ${structure.PADDING.MOBILE.LEFT}px`,
+      },
+    },
   },
 
   ADJUSTMENTS: {
@@ -75,12 +136,6 @@ const GLOBALS = {
     MARGIN: {
       VERTICAL: "30px",
       HORIZONTAL: "20px",
-
-      DEFAULT: {
-        DESKTOP: `${globalsMargin.DEFAULT.DESKTOP.TOP} ${globalsMargin.DEFAULT.DESKTOP.RIGHT} ${globalsMargin.DEFAULT.DESKTOP.BOTTOM} ${globalsMargin.DEFAULT.DESKTOP.LEFT}`,
-        TABLET: `${globalsMargin.DEFAULT.TABLET.TOP} ${globalsMargin.DEFAULT.TABLET.RIGHT} ${globalsMargin.DEFAULT.TABLET.BOTTOM} ${globalsMargin.DEFAULT.TABLET.LEFT}`,
-        MOBILE: `${globalsMargin.DEFAULT.MOBILE.TOP} ${globalsMargin.DEFAULT.MOBILE.RIGHT} ${globalsMargin.DEFAULT.MOBILE.BOTTOM} ${globalsMargin.DEFAULT.MOBILE.LEFT}`,
-      },
     },
     RADIUS: {
       LARGE: "48px",

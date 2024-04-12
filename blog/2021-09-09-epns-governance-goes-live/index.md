@@ -96,15 +96,15 @@ Note: This is a Discourse-hosted forum for governance-related discussion. Commun
 
 **How to submit a Draft Proposals**
 
-*   Users need to [follow this template](https://github.com/ethereum-push-notification-service/governance/blob/main/draft-proposal-template.md) and post a new proposal draft under [Governance Proposals](https://gov.epns.io/c/governance-proposals/8).
-*   PUSH Champions then check the submitted draft proposal to ensure it follows the [governance rules](https://github.com/ethereum-push-notification-service/governance/blob/main/governance-rules.md). Some proposals will be asked to resubmit based on the Champions’ discretion.
+*   Users need to [follow this template](https://github.com/push-protocol/push-governance/blob/main/Push%20Improvement%20Proposals%20(PIP)/pip-draft-proposal-template.md) and post a new proposal draft under [Governance Proposals](https://gov.epns.io/c/governance-proposals/8).
+*   PUSH Champions then check the submitted draft proposal to ensure it follows the [governance rules](https://github.com/push-protocol/push-governance/blob/main/Push%20Improvement%20Proposals%20(PIP)/governance-rules.md). Some proposals will be asked to resubmit based on the Champions’ discretion.
 *   Draft proposals are then promoted to the [Governance Discussions](https://gov.epns.io/c/governance-discussions/5) section provided they meet the promotion criteria mentioned below.
 
 **Promotion Criteria**
 
 Champions will move the proposal from the Governance Proposals section to the Governance Discussion section if they meet the following criteria:
 
-*   Must follow the [Draft Proposal Template](https://github.com/ethereum-push-notification-service/governance/blob/main/draft-proposal-template.md)
+*   Must follow the [Draft Proposal Template](https://github.com/push-protocol/push-governance/blob/main/Push%20Improvement%20Proposals%20(PIP)/pip-draft-proposal-template.md)
 *   Must be submitted under [Governance Proposal](https://gov.epns.io/c/proposals-lobby/8) section
 *   Must be live for 5+ days
 *   Must have 5 Likes (minimum)
@@ -158,7 +158,7 @@ Here below is the flow for the first version of the governance process:
 The draft proposals that pass the promotion criteria of Discussion phase are termed as formal proposals as they would be sent for formal voting. The rules for submission of a formal proposal on snapshot are as follows:
 
 *   Formal proposals need to be submitted to Snapshot and must be given at least 7 days for the community to vote on the proposal.
-*   PUSH Champions will be moderating the proposals on Snapshot by the [rules mentioned here](https://github.com/ethereum-push-notification-service/governance/blob/main/governance-rules.md#a-proposal-is-created-on-snapshot).
+*   PUSH Champions will be moderating the proposals on Snapshot by the [rules mentioned here](https://github.com/push-protocol/push-governance/blob/main/Push%20Improvement%20Proposals%20(PIP)/governance-rules.md#a-proposal-is-created-on-snapshot).
 *   Only the users or a PUSH Delegatee can submit the proposals on the snapshot.
 *   All proposals on Snapshot must give at least 7 days for the community to vote on the proposal.
 

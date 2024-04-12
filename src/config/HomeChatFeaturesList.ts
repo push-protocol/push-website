@@ -4,8 +4,18 @@ export const ChatFeaturesList = {
       config: {
         id: "share",
         padding: "24px 24px 0px 24px",
-        fillheight: true,
-        hideonmobile: false,
+        fluid: {
+          desktop: true,
+          laptop: true,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
         bodyjustifycontent: "bottom",
       },
       header: {
@@ -17,6 +27,7 @@ export const ChatFeaturesList = {
           type: "image",
           imagesrc: "chats/share",
           videosrc: "chats/share-video",
+          videowebm: true,
           imagealt: "home.chat-section.box1.imagealt",
           imagetitle: "home.chat-section.box1.imagetitle",
         },
@@ -26,13 +37,25 @@ export const ChatFeaturesList = {
       config: {
         id: "chat-requests",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: true,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.chat-section.box2.title",
         align: "left",
         illustration: "chats/requests",
         illustrationvideo: "chats/requests-video",
+        illustrationvideowebm: true,
         subheader: "home.chat-section.box2.subheader",
         iconalt: "home.chat-section.box2.iconalt",
         icontitle: "home.chat-section.box2.icontitle",
@@ -42,7 +65,18 @@ export const ChatFeaturesList = {
       config: {
         id: "secure",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: true,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.chat-section.box3.title",
@@ -64,10 +98,21 @@ export const ChatFeaturesList = {
       config: {
         id: "lightweight-code",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         link: {
           url: "https://push.org",
           linktitle: "Lightweight Code with Rapid API Integration",
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
         },
       },
       header: {
@@ -82,13 +127,14 @@ export const ChatFeaturesList = {
         {
           type: "button",
           buttontext: "home.chat-section.box4.buttontext",
-          buttonlink: "https://push.org",
+          buttonlink: "/docs/chat",
           buttontitle: "home.chat-section.box4.buttontitle",
         },
         {
           type: "image",
-          imagesrc: 'chats/lightweight-chat',
-          videosrc: 'chats/lightweight-chat-video',
+          imagesrc: "chats/lightweight-chat",
+          videosrc: "chats/lightweight-chat-video",
+          videowebm: true,
           imagealt: "home.chat-section.box4.imagealt",
           imagetitle: "home.chat-section.box4.imagetitle",
         },
@@ -97,15 +143,26 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "hyperscalable",
-        height: "237px",
-        fillheight: true,
+        height: "280px",
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
         bg: require("@site/static/assets/website/home/chats/hyper@3x.webp")
           .default,
         bgtitle: "home.chat-section.box5.bgtitle",
-        bgvideosrc: 'chats/hyper-video',
+        bgvideosrc: "chats/hyper-video",
+        bgvideowebm: true,
         bgsize: "contain",
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.chat-section.box5.title",
@@ -119,10 +176,20 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "plug-play",
-        height: "237px",
-        fillheight: true,
+        height: "280px",
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px 24px 24px",
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.chat-section.box6.title",
@@ -133,6 +200,7 @@ export const ChatFeaturesList = {
           type: "image",
           imagesrc: "chats/plug-play",
           videosrc: "chats/plug-play-video",
+          videowebm: true,
           imagealt: "home.chat-section.box6.imagealt",
           imagetitle: "home.chat-section.box6.imagetitle",
         },
@@ -144,13 +212,25 @@ export const ChatFeaturesList = {
       config: {
         id: "chain-agnostic",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.chat-section.box7.title",
         align: "left",
         illustration: "chats/chain-agnostic",
         illustrationvideo: "chats/chain-agnostic-video",
+        illustrationvideowebm: true,
         subheader: "home.chat-section.box7.subheader",
         iconalt: "home.chat-section.box7.imagealt",
         icontitle: "home.chat-section.box7.imagetitle",
@@ -159,15 +239,26 @@ export const ChatFeaturesList = {
     {
       config: {
         id: "token-gated",
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       body: [
         {
           type: "image",
           imagesrc: "chats/token-gated",
           videosrc: "chats/token-gated-video",
+          videowebm: true,
           imagealt: "home.chat-section.box8.imagealt",
           imagetitle: "home.chat-section.box8.imagetitle",
         },
@@ -180,13 +271,25 @@ export const ChatFeaturesList = {
       config: {
         id: "e2e",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: true,
+          tablet: true,
+          mobile: false,
+        },
       },
       header: {
         title: "home.chat-section.box9.title",
         align: "left",
         illustration: "chats/e2e",
         illustrationvideo: "chats/e2e-video",
+        illustrationvideowebm: true,
         subheader: "home.chat-section.box9.subheader",
         iconalt: "home.chat-section.box9.imagealt",
         icontitle: "home.chat-section.box9.imagetitle",
@@ -196,7 +299,12 @@ export const ChatFeaturesList = {
       config: {
         id: "web3-standard",
         padding: "24px",
-        hideonmobile: true,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.chat-section.box10.title",
@@ -207,6 +315,7 @@ export const ChatFeaturesList = {
           type: "image",
           imagesrc: "chats/web3-standard",
           videosrc: "chats/web3-standard-video",
+          videowebm: true,
           imagealt: "home.chat-section.box10.imagealt",
           imagetitle: "home.chat-section.box10.imagetitle",
         },
@@ -217,27 +326,27 @@ export const ChatFeaturesList = {
 
 export const ChatUseCasesList = [
   {
-    url: 'https://blog.ethereum.org/2020/08/19/esp-beyond-grants',
-    title: 'Infrastructure',
+    url: "https://blog.ethereum.org/2020/08/19/esp-beyond-grants",
+    title: "Infrastructure",
   },
   {
-    url: 'https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/',
-    title: 'Social',
+    url: "https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation/",
+    title: "Social",
   },
   {
-    url: 'https://defiprime.com/ethereum-push-notification-service',
-    title: 'Blockchain',
+    url: "https://defiprime.com/ethereum-push-notification-service",
+    title: "Blockchain",
   },
   {
-    url: 'https://twitter.com/pushprotocol/status/1336359832081768448',
-    title: 'Gaming',
+    url: "https://twitter.com/pushprotocol/status/1336359832081768448",
+    title: "Gaming",
   },
   {
-    url: 'https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn',
-    title: 'DAO',
+    url: "https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn",
+    title: "DAO",
   },
   {
-      url: 'https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn',
-      title: 'NFT',
-    },
+    url: "https://beincrypto.com/learn/web3-communication-networks/?utm_source=twitter&utm_medium=URL&utm_campaign=learn",
+    title: "NFT",
+  },
 ];

@@ -65,7 +65,7 @@ EIP-712 is a more advanced and safer signature method. It is a standard for hash
 How the frontend works
 ----------------------
 
-[Frontend repository](https://github.com/ethereum-push-notification-service/epns-incentives-dapp)
+[Frontend repository](https://github.com/push-protocol/push-incentives-dapp)
 
 1.  Sign the delegate parameters needed for _delegateBySig_ contract function
 
@@ -106,7 +106,7 @@ await postReq("/gov/gasless\_delegate", { delegator: account, signature: signatu
 How the backend works
 ---------------------
 
-[Backend repository](https://github.com/ethereum-push-notification-service/epns-incentives-backend)
+[Backend repository](https://github.com/push-protocol/push-incentives-backend)
 
 Once the incentives frontend triggers the Delegate API, the following conditions are checked before proceeding to pay for the delegation from the backend wallet.
 

@@ -4,8 +4,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
 import {
   HtmlClassNameProvider,
   ThemeClassNames,
@@ -14,15 +12,17 @@ import {
   BlogPostProvider,
   useBlogPost,
 } from "@docusaurus/theme-common/internal";
+import GLOBALS, { device } from "@site/src/config/globals";
 import BlogLayout from "@theme/BlogLayout";
 import BlogPostItem from "@theme/BlogPostItem";
-import BlogPostPaginator from "@theme/BlogPostPaginator";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
+import BlogPostPaginator from "@theme/BlogPostPaginator";
 import TOC from "@theme/TOC";
+import clsx from "clsx";
+import React from "react";
+import styled from "styled-components";
 import FooterItem from "./FooterItem";
 import MorePosts from "./MorePosts";
-import styled from "styled-components";
-import GLOBALS, { device } from "@site/src/config/globals";
 
 function BlogPostPageContent({ allPosts, post, children }) {
   const { metadata, toc } = useBlogPost();
@@ -33,8 +33,6 @@ function BlogPostPageContent({ allPosts, post, children }) {
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-
-  console.log(metadata, "metatatataa");
 
   return (
     <BlogLayout
@@ -96,7 +94,7 @@ const BlogItem = styled.div`
 
   @media (max-width: 820px) {
     width: 100% !important;
-    padding: ${`${GLOBALS.ADJUSTMENTS.MARGIN.DEFAULT.MOBILE}`};
+    padding: ${`${GLOBALS.STRUCTURE.PADDING.MOBILE}`};
     box-sizing: border-box;
   }
 `;

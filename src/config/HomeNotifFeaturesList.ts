@@ -4,7 +4,18 @@ export const NotifFeaturesList = {
       config: {
         id: "native",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box1.title",
@@ -15,6 +26,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/web3-native",
           videosrc: "notifs/web3-native-video",
+          videowebm: true,
           imagealt: "home.notification-section.box1.imagealt",
           imagetitle: "home.notification-section.box1.imagetitle",
         },
@@ -24,7 +36,18 @@ export const NotifFeaturesList = {
       config: {
         id: "cross-chain",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box2.title",
@@ -35,6 +58,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/cross-chain",
           videosrc: "notifs/cross-chain-video",
+          videowebm: true,
           imagealt: "home.notification-section.box2.imagealt",
           imagetitle: "home.notification-section.box2.imagetitle",
         },
@@ -44,8 +68,18 @@ export const NotifFeaturesList = {
       config: {
         id: "custom-notif",
         padding: "24px",
-        hideonmobile: false,
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box3.title",
@@ -56,6 +90,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/notif",
           videosrc: "notifs/notif-video",
+          videowebm: true,
           imagealt: "home.notification-section.box3.imagealt",
           imagetitle: "home.notification-section.box3.imagetitle",
         },
@@ -66,9 +101,19 @@ export const NotifFeaturesList = {
     {
       config: {
         id: "lightweight",
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
-        hideonmobile: false,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         link: {
           url: "https://push.org",
           linktitle: "Lightweight Code with Rapid API Integration",
@@ -93,6 +138,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/lightweight-notif",
           videosrc: "notifs/lightweight-notif-video",
+          videowebm: true,
           imagealt: "home.notification-section.box4.imagealt",
           imagetitle: "home.notification-section.box4.imagetitle",
         },
@@ -102,13 +148,25 @@ export const NotifFeaturesList = {
       config: {
         id: "interoperable",
         height: "202px",
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
         padding: "24px",
         bg: require("@site/static/assets/website/home/notifs/interoperable.webp")
           .default,
         bgvideosrc: "notifs/interoperable-video",
+        bgvideowebm: true,
         bgtitle: "home.notification-section.box5.bgtitle",
         bgsize: "cover",
-        hideonmobile: true,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box5.title",
@@ -121,13 +179,25 @@ export const NotifFeaturesList = {
       config: {
         id: "anti-spam",
         padding: "24px",
-        hideonmobile: false,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box6.title",
         align: "left",
         illustration: "notifs/anti-spam",
         illustrationvideo: "notifs/anti-spam-video",
+        illustrationvideowebm: true,
         imagealt: "home.notification-section.box6.iconalt",
         imagetitle: "home.notification-section.box6.icontitle",
       },
@@ -135,9 +205,22 @@ export const NotifFeaturesList = {
     {
       config: {
         id: "snap",
-        fillheight: true,
+        fluid: {
+          desktop: true,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
         padding: "24px",
-        hideonmobile: false,
+        bg: require("@site/static/assets/website/home/notifs/snap-bg.png")
+          .default,
+        bgvideowebm: true,
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: false,
+          mobile: false,
+        },
       },
       header: {
         title: "home.notification-section.box7.title",
@@ -156,6 +239,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/snap",
           videosrc: "notifs/snap-video",
+          videowebm: true,
           imagealt: "home.notification-section.box7.imagealt",
           imagetitle: "home.notification-section.box7.imagetitle",
         },
@@ -169,7 +253,18 @@ export const NotifFeaturesList = {
         id: "increase",
         height: "260px",
         padding: "24px",
-        hideonmobile: true,
+        fluid: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: false,
+        },
+        hide: {
+          desktop: false,
+          laptop: false,
+          tablet: true,
+          mobile: true,
+        },
       },
       header: {
         title: "home.notification-section.box8.title",
@@ -180,6 +275,7 @@ export const NotifFeaturesList = {
           type: "image",
           imagesrc: "notifs/engage",
           videosrc: "notifs/engage-video",
+          videowebm: true,
           imagealt: "home.notification-section.box8.imagealt",
           imagetitle: "home.notification-section.box8.imagetitle",
         },

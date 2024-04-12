@@ -18,7 +18,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 <!--truncate-->
 
-The Ethereum Push Notification Service(EPNS) Litepaper can be also downloaded from [here](https://github.com/ethereum-push-notification-service/epns-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf). The content of the Litepaper is included in the article below.
+The Ethereum Push Notification Service(EPNS) Litepaper can be also downloaded from [here](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf). The content of the Litepaper is included in the article below.
 
 Abstract
 ========

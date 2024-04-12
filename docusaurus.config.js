@@ -19,7 +19,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "ethereum-push-notification-service", // Usually your GitHub org/user name.
+  organizationName: "push-protocol", // Usually your GitHub org/user name.
   projectName: "push-website", // Usually your repo name.
   deploymentBranch: "gh-pages",
 
@@ -39,8 +39,8 @@ const config = {
   },
 
   // Themes
-  themes: ['@docusaurus/theme-mermaid'],
-  
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -124,8 +124,7 @@ const config = {
           sidebarCollapsed: false,
           // Please change this to your repo.
           // Remove this to remove the 'edit this page' links.
-          editUrl:
-            "https://github.com/ethereum-push-notification-service/push-website/blob/main",
+          editUrl: "https://github.com/push-protocol/push-website/blob/main",
         },
         blog: false,
         theme: {
@@ -148,14 +147,25 @@ const config = {
         // title: 'Title with Logo',
         logo: {
           alt: "Push Logo",
-          src: "/assets/docs/PushLogoTextDark.svg",
-          srcDark: "/assets/docs/PushLogoTextWhite.svg",
+          src: "/assets/website/docshub/PushLogoBlack@3x.png",
+          srcDark: "/assets/website/docshub/PushLogo@3x.png",
+          href: "/docs",
         },
         items: [
           {
+            to: "/",
+            position: "left",
+            label: "Homepage",
+          },
+          {
             to: "/docs/",
+            position: "left",
+            label: "Docs",
+          },
+          {
+            to: "https://github.com/push-protocol",
+            label: "GitHub",
             position: "right",
-            label: "Docs Hub",
           },
           { to: "/blog", label: "Blog", position: "right" },
           {
@@ -165,12 +175,7 @@ const config = {
           },
           {
             to: "https://app.push.org/",
-            label: "App",
-            position: "right",
-          },
-          {
-            href: "https://github.com/ethereum-push-notification-service/",
-            label: "GitHub",
+            label: "Launch App",
             position: "right",
           },
         ],

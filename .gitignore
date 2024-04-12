@@ -4,9 +4,13 @@
 # Production
 /build
 
+# Yarn
+.yarn
+
 # Generated files
 .docusaurus
 .cache-loader
+.yarn
 
 # Misc
 .DS_Store

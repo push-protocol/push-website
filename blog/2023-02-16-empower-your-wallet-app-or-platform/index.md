@@ -39,7 +39,7 @@ For a pure web3 experience, listening to Push Storage Nodes or utilizing their R
 - Docker (For local setup)
 - Google FCM Account Setup
 ### Step 1: Clone Push delivery node repo
-Git clone can be found here: https://github.com/ethereum-push-notification-service/push-delivery-node.git
+Git clone can be found here: https://github.com/push-protocol/push-delivery-node.git
 
 ### Step 2: Environment configuration
 Refer env sample file. The MYSQL DB credentials and Redis URL needs to be updated. The remaining conf need not be edited as of now.
@@ -103,8 +103,8 @@ curl - location - request POST 'https://<delivery_node_url>/apis/v1/pushtokens/r
 ```
 
 ## Useful Links
-- <i>Delivery Node Repo Link:</i> <a href='https://github.com/ethereum-push-notification-service/push-delivery-node'>https://github.com/ethereum-push-notification-service/push-delivery-node</a>
-- <i>Demo Mobile App Repo Link:</i> <a href='https://github.com/ethereum-push-notification-service/demo-push-mobile-app'>https://github.com/ethereum-push-notification-service/demo-push-mobile-app</a>
+- <i>Delivery Node Repo Link:</i> <a href='https://github.com/push-protocol/push-delivery-node'>https://github.com/push-protocol/push-delivery-node</a>
+- <i>Demo Mobile App Repo Link:</i> <a href='https://github.com/push-protocol/demo-push-mobile-app'>https://github.com/push-protocol/demo-push-mobile-app</a>
 - <i>Delivery Node Setup Video Tutorial:</i>
 
 <VideoContainer>

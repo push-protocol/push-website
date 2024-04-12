@@ -24,7 +24,7 @@ Towards this effort, we’re excited to announce that we are working with the [A
 
 Our pilot program with [Alpha Finance Lab](https://twitter.com/AlphaFinanceLab) and their Alpha Homora product will consist of:
 
-*   Building a channel for Alpha Homora on our protocol (see our [litepaper](https://github.com/ethereum-push-notification-service/epns-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more).
+*   Building a channel for Alpha Homora on our protocol (see our [litepaper](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more).
 *   Exploring and creating notifications use cases like upcoming liquidation of leveraged positions etc.
 *   Working with Alpha Homora team to enable technical discussions towards building a decentralized communication layer that is scalable and powerful for the whole of Web3.0.
 

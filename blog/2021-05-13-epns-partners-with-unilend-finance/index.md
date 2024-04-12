@@ -54,7 +54,7 @@ By integrating with EPNS, the communication between services and users are great
 **The Crossover — What we will achieve**
 ----------------------------------------
 
-EPNS will work with the UniLend team to set up channel _(see our_ [_litepaper_](https://github.com/ethereum-push-notification-service/epns-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) _for definitions of channels, services, and more)_ to allow users to receive notifications directly on user wallets without any hassle, these channels will allow for use cases that encourage users to be more in control of information, and hence be more confident to make more educated decisions on their trades and stay on top of their DeFi game always.
+EPNS will work with the UniLend team to set up channel _(see our_ [_litepaper_](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) _for definitions of channels, services, and more)_ to allow users to receive notifications directly on user wallets without any hassle, these channels will allow for use cases that encourage users to be more in control of information, and hence be more confident to make more educated decisions on their trades and stay on top of their DeFi game always.
 
 UniLend users through EPNS will be able to:
 
