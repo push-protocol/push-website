@@ -41,13 +41,15 @@ import { bootcampCards } from "@site/src/config/BootcampCard";
 // Import Assets
 import ArrowIcon from "@site/static/assets/website/brb/ArrowIcon.svg";
 import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
+import Query from "@site/static/assets/website/bootcamp/query.svg";
+import Github from "@site/static/assets/website/bootcamp/github-dis.svg";
 import ImageBRB from "@site/static/assets/website/brb/Image-BRB.png";
 import MobileBRB from "@site/static/assets/website/brb/Mobile-BRB.png";
 import PlaygroundBg from "@site/static/assets/website/brb/PlaygroundBg.png";
 import FirstImage from "@site/static/assets/website/bootcamp/bg-image1.png";
 import X from "@site/static/assets/website/brb/X-BRB.svg";
 import PushLogo from "@site/static/assets/website/brb/pushIcon.svg";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineGithub } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Internal Configs
@@ -381,7 +383,7 @@ export const BootcampMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="400"
-            onClick={() => handleSectionNavigation("playground")}
+            onClick={() => handleSectionNavigation("faq")}
           >
              Learn More
           </ButtonBar>
@@ -391,7 +393,6 @@ export const BootcampMainComponent = () => {
 
       <Section>
         <Content className="fluid" overflow="visible" padding={isMobile ? "0px 0px" : "0px 0px 100px 0px"}>
-          {/* <BootcampLowerBG /> */}
 
           <Image
               src={require(`@site/static/assets/website/bootcamp/bg-image2.png`).default}
@@ -494,7 +495,7 @@ export const BootcampMainComponent = () => {
                 textAlign="center"
                 fontWeight="300"
                 margin="8px 0 0 0"
-            >Complete the BRB Bootcamp to earn a NFT certificate</H3>
+            >Beyond unmeasurable learning, you will also earn a NFT Certificate, Earn Push Tokens, and Social badges</H3>
 
 
             <RewardsImage
@@ -562,7 +563,8 @@ export const BootcampMainComponent = () => {
                 padding="16px 32px"
                 fontWeight="400"
                 width={isMobile && "250px !important"}
-                onClick={() => handleSectionNavigation("bounties")}
+                onClick={() => openLink("https://zv9atndluia.typeform.com/to/ToIpDLT2")}
+
               >
                 Apply Now
               </ButtonItem>
@@ -576,23 +578,60 @@ export const BootcampMainComponent = () => {
         <Section id="support">
           <Content>
           <ItemH gap={isMobile ? "24px" : "28px"}>
-            <ItemV
-              minWidth="280px"
-              background="#000"
-              padding="20px 48px"
-              gap="14px"
-              borderRadius="48px"
-              background="#2a2a39"
-            >
-              <SpanContent
-                fontSize={isMobile ? "89px" : "112px"}
-                fontWeight="400"
-                color="#E64DE9"
-                letterSpacing="0.01"
+            <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://app.push.org/chat")}
               >
-                Drop us a GM!
-              </SpanContent>
+                <i>
+                  <Query className='same' />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#F576F8">
+                  Ask our Ai for any Push Queries
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://github.com/push-protocol")}
+              >
+                <i>
+                  <AiOutlineGithub color='#fff' size={isMobile ? '55': '75'}  />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#3ADB84">
+                  Github Discussions
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
             </ItemV>
+                  
+
+
+
+
 
             <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
               <FooterBar
@@ -600,7 +639,7 @@ export const BootcampMainComponent = () => {
                 onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
               >
                 <i>
-                  <Discord />
+                  <Discord className='expand' />
                 </i>
 
                 <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#6F8BEE">
@@ -624,7 +663,7 @@ export const BootcampMainComponent = () => {
                 onClick={() => openLink("https://twitter.com/pushprotocol")}
               >
                 <i>
-                  <X className="discord" />
+                  <X className="discord expand" />
                 </i>
 
                 <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#63BFF3">
@@ -1186,7 +1225,16 @@ const FooterBar = styled.div`
   }
 
   & i {
-    & svg {
+    & .same {
+      max-width: 75px !important;
+      min-width: 75px !important;
+
+      @media ${device.mobileL} {
+        max-width: 52px !important;
+        min-width: 52px !important;
+      }
+    }
+    & .expand {
       transform: scale(1.8) !important;
       margin-right: 24px;
 
