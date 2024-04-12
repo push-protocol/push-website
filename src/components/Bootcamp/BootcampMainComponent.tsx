@@ -222,6 +222,7 @@ export const BootcampMainComponent = () => {
       textColor: "#F576F8",
       href: "https://app.push.org/chat",
       iconhref: "ArrowIcon",
+      mainicon: "<Query className='same' />"
     }
   ],
 }
