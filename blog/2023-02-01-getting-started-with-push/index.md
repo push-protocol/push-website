@@ -11,7 +11,7 @@ tags: [ Web3, Blockchain, SDK, Push Notification Service, Developer]
 ![Cover image of Getting Started With Push SDK REST API⚙️](./cover-image.webp)
 <!--truncate-->
 
-The [PUSH-SDK](https://github.com/push-protocol/push-website/push-sdk), is a growing JavaScript-based SDK that allows developers to add push notification functionality to their dapps. Using the SDK, developers can:
+The [PUSH-SDK](https://github.com/push-protocol/push-sdk), is a growing JavaScript-based SDK that allows developers to add push notification functionality to their dapps. Using the SDK, developers can:
 
 - Build PUSH features into their dapps
 - Get access to Push Nodes APIs
@@ -238,7 +238,7 @@ That’s it! You now know how to use the main features of the Push Protocol REST
 We’ll cover other parts of the Push SDK in coming posts so stay tuned!
 
 - [Push Protocol SDK documentation here](https://www.npmjs.com/package/@pushprotocol/restapi) — if you’d like more reference material to chew on.
-- [Push SDK on GitHub](https://github.com/push-protocol/push-website/push-sdk)
+- [Push SDK on GitHub](https://github.com/push-protocol/push-sdk)
 - [Our Discord](https://discord.gg/pushprotocol) — we’ve got devs ready to give your project whatever support and consultation you need.
 - [Push developer docs](/docs/) to get started on building right away!
 

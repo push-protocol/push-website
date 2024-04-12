@@ -12,6 +12,7 @@ tags: [ Gitcoin
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Proud to Support Gitcoin Grants Round 8 Hackathon](./cover-image.webp)
@@ -28,19 +29,17 @@ EPNS was built at [**ETHGlobal**](https://medium.com/u/3d1733b8e86a?source=post_
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/gitcoin/status/1334250927948242953&amp;image=" allowfullscreen="" frameborder="0" height="466" width="680" title="" class="eo n ff dy bg" scrolling="no"></iframe>
 
-EPNS Bounties
-=============
+# EPNS Bounties
 
 We currently have 3exciting bounties to start working on:
 
-*   [Front-end SDK](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/1/100024360) ($1,500)— which is aimed to facilitate the integration of EPNS into your favorite dApps.
-*   [Document the EPNS Procotol](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/2/100024361) ($400)— take this opportunity to learn more about what's happening under the hood!
-*   [BUILD](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/3/100024421) our dApp notification displayer ($2,000) — by listening to EPNS protocol with [The Graph](https://medium.com/u/c2f061b81210?source=post_page-----5a829c357aa--------------------------------).
+- [Front-end SDK](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/1/100024360) ($1,500)— which is aimed to facilitate the integration of EPNS into your favorite dApps.
+- [Document the EPNS Procotol](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/2/100024361) ($400)— take this opportunity to learn more about what's happening under the hood!
+- [BUILD](https://gitcoin.co/issue/ethereum-push-notification-service/epns-protocol/3/100024421) our dApp notification displayer ($2,000) — by listening to EPNS protocol with [The Graph](https://medium.com/u/c2f061b81210?source=post_page-----5a829c357aa--------------------------------).
 
 **But wait… that's not it!**, we have a few more bounties baking in the oven that will be up & running this week in our [Gitcoin EPNS bounties page](https://gitcoin.co/hackathon/gr8/?org=ethereum-push-notification-service). Make sure you keep an eye on us 🧐.
 
-Let’s get started
-=================
+# Let’s get started
 
 Learn about EPNS bounties, ask questions and learn about upcoming updates by joining our social platforms:
 
@@ -50,22 +49,18 @@ Telegram: [https://t.me/epnsproject](https://t.me/epnsproject)
 
 Twitter: [https://twitter.com/epnsproject](https://twitter.com/epnsproject)
 
-Workshop Schedule
-=================
+# Workshop Schedule
 
 We will be shortly announcing more information about **workshops**, and other updates about our hackathon tasks through all of our media channels.
 
-Winners
-=======
+# Winners
 
 Winners will be announced on January 7th, 2021.
 
 Good luck and Happy Hacking!
 
-About Ethereum Push Notification Service (EPNS)
-===============================================
+# About Ethereum Push Notification Service (EPNS)
 
 EPNS is a decentralized notifications protocol which enables users (wallet addresses) to receive notifications. Using the protocol, any dApp, smart contract or service can send notifications to users(wallet addresses) in a platform agnostic fashion (mobile, web, or user wallets). The DeFi aspect of the protocol also ensures that the user receives and earns from those notifications.
 
-Stay in touch with EPNS! [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website,](http://epns.io) [Discord](https://discord.gg/32Jarc42)
-
+Stay in touch with Push! [Twitter](http://x.com/pushprotocol), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website,](http://epns.io) [Discord](https://discord.gg/32Jarc42)
