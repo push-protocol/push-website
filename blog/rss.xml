@@ -4,10 +4,38 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push.org/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Thu, 21 Mar 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Apr 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Monthly Recap March 🎉]]></title>
+            <link>https://push.org/blog/monthly-recap-march-2024</link>
+            <guid>https://push.org/blog/monthly-recap-march-2024</guid>
+            <pubDate>Fri, 12 Apr 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Monthly Recap March 🎉]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Monthly Recap March  🎉" src="https://push.org/assets/images/cover-image-ed990a83f5cd87f9d453eeb2377fe67e.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>March was a productive month for us at the Push Ecosystem. We achieved some significant milestones that we’re excited to share with you.</p>
+<p>We sent out over 4 million notifications and reached 174,000 subscribers. But our journey doesn’t stop here. Let’s dive into the exciting updates for March from the Push Ecosystem:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates<a href="https://push.org/blog/monthly-recap-march-2024#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates" title="Direct link to Partnership Updates">​</a></h3>
+<p>We’ve seen a surge in clients integrating our notifications and messaging services. Some of our notable partners include <a href="https://get-verso.com/" target="_blank" rel="noopener noreferrer">Verso Wallet</a>, <a href="https://www.dexynth.com/" target="_blank" rel="noopener noreferrer">DEXYNTH</a>, <a href="https://outposts.io/" target="_blank" rel="noopener noreferrer">Outposts</a>, <a href="https://twitter.com/bitgetglobal" target="_blank" rel="noopener noreferrer">Bitget</a>, <a href="https://alphax.finance/" target="_blank" rel="noopener noreferrer">AlphaX</a>, <a href="https://arbitrum.foundation/" target="_blank" rel="noopener noreferrer">Arbitrum</a>, <a href="https://roseon.world/" target="_blank" rel="noopener noreferrer">RoseonX</a>, and many more. They’ve all integrated Push notifications and chat into their platforms.</p>
+<p>In addition, we partnered with the <a href="https://learnweb3.io/" target="_blank" rel="noopener noreferrer">LearnWeb3IO</a> hackathon to support future builders.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-enhancements">Product Enhancements<a href="https://push.org/blog/monthly-recap-march-2024#product-enhancements" class="hash-link" aria-label="Direct link to Product Enhancements" title="Direct link to Product Enhancements">​</a></h3>
+<p>We introduced the Push <a href="https://app.push.org/?/snap" target="_blank" rel="noopener noreferrer">MetaMask Snooze Snap</a>, which allows users to snooze notifications for up to 72 hours. This feature helps users manage their notifications at their own pace.We introduced a 'guest' mode on our dApp, making it easier than ever to explore Push without connecting your wallet</p>
+<p>We also benchmarked our <a href="https://push.org/blog/benchmarking-push-chat-message/" target="_blank" rel="noopener noreferrer">Push Chat Architecture</a> to make Push Chat work more efficiently. We launched the <a href="https://www.notion.so/Push-x-Berachain-Spaces-Creative-Changes-5756710613b74055baa39ba4d534fe33?pvs=21" target="_blank" rel="noopener noreferrer">Price Tracker Channel</a> to help users get notified directly when their chosen cryptocurrency hits their desired price target.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-engagement">Community Engagement<a href="https://push.org/blog/monthly-recap-march-2024#community-engagement" class="hash-link" aria-label="Direct link to Community Engagement" title="Direct link to Community Engagement">​</a></h3>
+<p>We’ve been actively engaging with our vibrant community through various initiatives. We hosted a demo session for Push Nodes and awarded Push Alpha access NFT to over 700 users.</p>
+<p>Our “Decentralize with Push Campaign” led to the acquisition of more than 4,200 new users. We also unveiled <a href="https://push.org/blog/push-tokenomics-v2-engine/" target="_blank" rel="noopener noreferrer">Tokenomics V2</a> for the $PUSH token.</p>
+<p>To celebrate the listing of the $PUSH token on the Bitget Global exchange, we ran a quest campaign. We also announced the ultra-rare role “Push Chad” for our community.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights<a href="https://push.org/blog/monthly-recap-march-2024#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights" title="Direct link to Ecosystem Highlights">​</a></h3>
+<p>In March, we featured ETH Gas Price Tracker, <a href="https://cryptojobslist.com/" target="_blank" rel="noopener noreferrer">CryptoJobsList</a>, <a href="https://aave.com/" target="_blank" rel="noopener noreferrer">Aave</a>, and <a href="https://www.bankless.com/" target="_blank" rel="noopener noreferrer">Bankless</a> as the Push Channel of the Week.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dao">DAO<a href="https://push.org/blog/monthly-recap-march-2024#dao" class="hash-link" aria-label="Direct link to DAO" title="Direct link to DAO">​</a></h3>
+<p>We launched the Push Grants V3 initiative to support builders in the Push Ecosystem. We also welcomed <a href="https://twitter.com/ExpatCrypto3" target="_blank" rel="noopener noreferrer">Ian</a> as our new DAO Relations Lead and <a href="https://twitter.com/carlaupgrade" target="_blank" rel="noopener noreferrer">Carla</a> as our Community DAO Relations role for push_dao.</p>
+<p>We’re excited about the progress we’ve made and look forward to what the future holds for the Push Ecosystem. Stay tuned for more updates!</p>]]></content:encoded>
+            <category>Push Protocol</category>
+            <category>Web3</category>
+            <category>Blockchain Technology</category>
+        </item>
         <item>
             <title><![CDATA[Announcing Push Channel of the Week 🏆]]></title>
             <link>https://push.org/blog/push-channel-of-the-week</link>
@@ -435,45 +463,6 @@ Although the Push Nodes are run by Push Protocol, users can always verify that t
             <category>Web3</category>
             <category>Blockchain Technology</category>
             <category>Unstoppable Domains</category>
-        </item>
-        <item>
-            <title><![CDATA[Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔]]></title>
-            <link>https://push.org/blog/announcing-winners-of-billion-reasons</link>
-            <guid>https://push.org/blog/announcing-winners-of-billion-reasons</guid>
-            <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Announcing Winners of Billion Reasons To Build Coding Challenge 🎉🔔" src="https://push.org/assets/images/cover-image-821023ae379df1f3bcfe70b5277f820d.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>In August last year, we started an exciting journey with the <a href="https://push.org/blog/a-billion-reasons-to-build-finding-india-s-best-web3-developers/" target="_blank" rel="noopener noreferrer">launch</a> of our Billion Reasons to Build (BRB) developer tour across India. The mission of the campaign was simple – to provide developers the opportunity to create real-world impact by giving them a hard problem to solve from leading protocols. This of course included rewards.</p>
-<p>To create a variety of challenges, we teamed up with 12 of the most prominent protocols in web3 including Ethereum Foundation, ETHGlobal, Polygon, Filecoin, The Graph, Aragon, Timeswap, Alchemy, Shardeum, Flipkart, Biconomy, and Chainsafe to create a running hackathon.</p>
-<p>Each partner in the BRB hackathon presented their own unique Coding Challenge – a complex problem with a substantial bounty for the builder who could solve it.</p>
-<p>Today, we're thrilled to announce that 2 of these Coding Challenges have been solved!</p>
-<p>Here are the 2 challenges, the importance behind each of them, and the masterminds behind the game-changing solutions.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="quantum-proofing-ethereum-network--solved-by-aditya-bisht">Quantum-proofing Ethereum Network – solved by Aditya Bisht<a href="https://push.org/blog/announcing-winners-of-billion-reasons#quantum-proofing-ethereum-network--solved-by-aditya-bisht" class="hash-link" aria-label="Direct link to Quantum-proofing Ethereum Network – solved by Aditya Bisht" title="Direct link to Quantum-proofing Ethereum Network – solved by Aditya Bisht">​</a></h3>
-<p>Coding Challenge Owner: <a href="https://ethereum.foundation/" target="_blank" rel="noopener noreferrer">Ethereum Foundation</a></p>
-<p>Challenge: Figure out a way to quantum-proof the Ethereum Network, read more <a href="https://www.notion.so/pushprotocol/Ethereum-Foundation-07179dcf7f7e44efb7d2b2c9d2296264?pvs=4" target="_blank" rel="noopener noreferrer">here</a></p>
-<p>Winning Builder: <a href="https://twitter.com/bisht__13" target="_blank" rel="noopener noreferrer">Aditya Bisht</a></p>
-<p>Quantum computing is a looming threat to blockchain networks. Its powerful computing capabilities mean it can be used to reverse-engineer secret keys from public keys. To retain security and integrity in the Ethereum Network, the challenge was presented to find a way to quantum-proof the network using account abstraction.</p>
-<p>We’d like to congratulate <b>Aditya Bisht</b> for successfully solving the challenge and contributing to the security and robustness of the Ethereum Network.</p>
-<p>He shared his excitement with us – “Faced with intriguing complexities and the convergence of overlapping domains, the challenge not only pushed the boundaries but also contributed to advancing the ZK domain. Immense gratitude to the mentors from the Ethereum foundation and the unwavering support from Push. This victory is a testament to the collaborative spirit propelling the Ethereum project forward.” – Aditya</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="all-new-dao-permissions--solved-by-samuel-mens">All-new DAO Permissions – solved by Samuel Mens<a href="https://push.org/blog/announcing-winners-of-billion-reasons#all-new-dao-permissions--solved-by-samuel-mens" class="hash-link" aria-label="Direct link to All-new DAO Permissions – solved by Samuel Mens" title="Direct link to All-new DAO Permissions – solved by Samuel Mens">​</a></h3>
-<p>Coding Challenge Owner: <a href="https://aragon.org/" target="_blank" rel="noopener noreferrer">Aragon</a></p>
-<p>Challenge: Create a permission management protocol for allocating selective permissions to specific individuals and subDAOs, read more <a href="https://www.notion.so/pushprotocol/Aragon-f5467edc3c2a4f8d9d5693a0a6e680de?pvs=4" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<p>Winning Builder: <a href="http://plopmenz/" target="_blank" rel="noopener noreferrer">Samuel Mens</a></p>
-<p>DAOs and organizations rely on being able to give certain permissions, roles, and responsibilities to specific individuals and teams (subDAOs) in order to build more efficiently. But keeping track of which wallets have which permissions can be confusing, not to mention how easy it is to lose track of these permissions across a single DAO. As such, the problem statement required a builder to find a way that enables a DAO to efficiently manage permissions.</p>
-<p>With that, we’d like to congratulate Samuel Mens who built two plugins and a UI that allow you to manage both subDAOs and NFT-based permissions using <a href="https://twitter.com/hatsprotocol" target="_blank" rel="noopener noreferrer">@hatsprotocol</a> and Aragon OSx. For all DAOs that are built using Aragon, there is now a whole new level of on-chain governance management tools available.</p>
-<blockquote><i><p>"I've been part of the Aragon community since their launch of OSx and have built several plugins. I had this idea for a pretty ambitious plugin, which alligned very well with the BRB Hackathon bounty. I am very grateful for Push Protocol for providing this opportunity, giving me the motivation to actually built it and go the extra mile."</p></i><div><p>– Samuel Mens</p></div></blockquote>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="meet-the-winners-on-jan-16th">Meet the winners on Jan 16th<a href="https://push.org/blog/announcing-winners-of-billion-reasons#meet-the-winners-on-jan-16th" class="hash-link" aria-label="Direct link to Meet the winners on Jan 16th" title="Direct link to Meet the winners on Jan 16th">​</a></h3>
-<p>We’re excited to host a Twitter Space on Jan 16th, 3PM UTC to talk to our partners and winners of the phase-1 and learn more about their journey and experiences. Don’t forget to join us for the <a href="https://twitter.com/i/spaces/1lPKqbWRgvEGb" target="_blank" rel="noopener noreferrer">Twitter Space</a>.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="brb-goes-online-with-9-challenges-still-available-to-solve">BRB Goes Online With 9 Challenges Still Available To Solve<a href="https://push.org/blog/announcing-winners-of-billion-reasons#brb-goes-online-with-9-challenges-still-available-to-solve" class="hash-link" aria-label="Direct link to BRB Goes Online With 9 Challenges Still Available To Solve" title="Direct link to BRB Goes Online With 9 Challenges Still Available To Solve">​</a></h3>
-<p>Thanks to the incredible success of the BRB so far, we are excited to announce the extension of the initiative. We’re calling it <b>BRB Online</b>. This online campaign will mean the BRB Coding Challenges will continue to run indefinitely until solved, allowing more developers worldwide to build for and collaborate with leading web3 projects.</p>
-<p>Be sure to check out the remaining Coding Challenges here 👉<a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">https://push.org/brb/</a></p>
-<p>Richa Joshi, Co-founder at Push Protocol, shared her excitement:
-</p><blockquote><i>“The success of BRB has inspired us to take the initiative online. Developers worldwide can now continually access BRB challenges and collaborate directly with some of web3’s leading projects.”</i></blockquote><p></p>
-<p>We are extremely proud to support the BRB winners and look forward to announcing the winners of all the remaining partner challenges. The journey continues, and we are eager to witness the success and growth of the BRB initiative, shaping a future marked by collaboration, innovation, and possibilities.</p>]]></content:encoded>
-            <category>Push Protocol</category>
-            <category>Web3</category>
-            <category>Blockchain Technology</category>
-            <category>Billion Reasons to Build</category>
         </item>
     </channel>
 </rss>
