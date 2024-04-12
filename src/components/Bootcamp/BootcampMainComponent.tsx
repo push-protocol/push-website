@@ -215,6 +215,17 @@ export const BootcampMainComponent = () => {
     window.open("/", "_self");
   };
 
+  const BootcampFooter = {
+  first: [
+    {
+      text: "Ask our Ai for any Push Queries",
+      textColor: "#F576F8",
+      href: "https://app.push.org/chat",
+      iconhref: "ArrowIcon",
+    }
+  ],
+}
+
   
 
  
@@ -569,14 +580,10 @@ export const BootcampMainComponent = () => {
                 Apply Now
               </ButtonItem>
           </ItemH>
-
-
-
         </Content>
       </Section>
 
-        <Section id="support">
-          <Content>
+        <ItemFooter id="support">
           <ItemH gap={isMobile ? "24px" : "28px"}>
             <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
               <FooterBar
@@ -683,8 +690,7 @@ export const BootcampMainComponent = () => {
               </FooterBar>
             </ItemV>
           </ItemH>
-          </Content>
-      </Section>
+      </ItemFooter>
 
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
