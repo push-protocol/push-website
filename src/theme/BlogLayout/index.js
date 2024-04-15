@@ -12,12 +12,20 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import BlogSidebar from "@theme/BlogSidebar";
 import styled from "styled-components";
+import { PageMeta } from "@site/src/config/pageMeta";
 
 export default function BlogLayout(props) {
   const { sidebar, toc, children, ...layoutProps } = props;
   const hasSidebar = sidebar && sidebar.items.length > 0;
+
+  console.log(layoutProps, "layout", props);
   return (
-    <Layout {...layoutProps}>
+    <Layout
+      title={PageMeta.BLOG.pageTitle}
+      description={PageMeta.BLOG.pageDescription}
+      // showNavbar={false}
+      {...layoutProps}
+    >
       <Head>
         {/* <!-- HTML Meta Tags --> */}
         <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
@@ -28,7 +36,7 @@ export default function BlogLayout(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://push.org" />
+        <meta property="og:url" content="https://push.org/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Push Protocol (Previously EPNS)" />
         <meta

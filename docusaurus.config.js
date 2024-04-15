@@ -171,7 +171,6 @@ const config = {
             to: "/blog",
             label: "Blog",
             position: "right",
-            image: "/assets/previews/blogpreview.png",
           },
           {
             to: "https://discord.com/invite/pushprotocol",
