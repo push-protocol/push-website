@@ -138,7 +138,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "/assets/docs/social-card.jpg",
+      image: "/assets/previews/blogpreview.png",
       themeconfig: {
         sidebarCollapsible: true,
       },
