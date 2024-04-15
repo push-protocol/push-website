@@ -5,6 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
+import Head from "@docusaurus/Head";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 import clsx from "clsx";
 import Layout from "@theme/Layout";
 import BlogSidebar from "@theme/BlogSidebar";
