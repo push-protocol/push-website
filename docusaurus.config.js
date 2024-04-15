@@ -167,7 +167,12 @@ const config = {
             label: "GitHub",
             position: "right",
           },
-          { to: "/blog", label: "Blog", position: "right" },
+          {
+            to: "/blog",
+            label: "Blog",
+            position: "right",
+            image: "/assets/previews/blogpreview.png",
+          },
           {
             to: "https://discord.com/invite/pushprotocol",
             label: "Discord",
