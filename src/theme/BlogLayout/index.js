@@ -15,6 +15,63 @@ export default function BlogLayout(props) {
   const hasSidebar = sidebar && sidebar.items.length > 0;
   return (
     <Layout {...layoutProps}>
+      <Head>
+        {/* <!-- HTML Meta Tags --> */}
+        <title>Push (Previously EPNS) | Communication Protocol of Web3</title>
+        <meta
+          name="description"
+          content="Push is the missing piece of Web3 | Push Protocol is a web3 communication network, enabling cross-chain notifications and messaging for dapps, wallets, and services."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* <!-- Facebook Meta Tags --> */}
+        <meta property="og:url" content="https://push.org" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Push Protocol (Previously EPNS)" />
+        <meta
+          property="og:description"
+          content="Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources"
+        />
+        <meta
+          property="og:image"
+          content={useBaseUrl(
+            require("/static/assets/previews/blogpreview.png").default,
+            { absolute: true },
+          )}
+        />
+
+        {/* <!-- Twitter Meta Tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pushprotocol" />
+        <meta name="twitter:title" content="Push Protocol (Previously EPNS)" />
+        <meta
+          name="twitter:description"
+          content="Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources. Whether you're a developer, entrepreneur, or enthusiast, find valuable content to fuel your passion and drive success. Explore now and elevate your knowledge."
+        />
+        <meta
+          property="twitter:image"
+          content={useBaseUrl(
+            require("/static/assets/previews/blogpreview.png").default,
+            { absolute: true },
+          )}
+        />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Organization",
+            name: "Push Protocol",
+            description: "The Communication Protocol of Web3",
+            url: "https://push.org",
+            logo: "/assets/website/favicon.ico",
+            sameAs: [
+              "https://twitter.com/pushprotocol",
+              "https://www.linkedin.com/company/push-protocol/mycompany/",
+            ],
+          })}
+        </script>
+      </Head>
+
       {toc ? (
         <BlogItem className="">
           <TOC className=""></TOC>
