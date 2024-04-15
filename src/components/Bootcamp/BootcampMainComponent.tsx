@@ -1216,6 +1216,10 @@ const FooterBar = styled.div`
     flex-wrap: wrap;
   }
 
+  @media ${device.mobileL} {
+    gap: 6px;
+  }
+
   & ${Span} {
     max-width: 312px;
 
