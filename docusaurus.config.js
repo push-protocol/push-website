@@ -138,7 +138,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "/assets/docs/social-card.jpg",
+      // image: "/assets/docs/social-card.jpg",
       themeconfig: {
         sidebarCollapsible: true,
       },
@@ -167,7 +167,11 @@ const config = {
             label: "GitHub",
             position: "right",
           },
-          { to: "/blog", label: "Blog", position: "right" },
+          {
+            to: "/blog",
+            label: "Blog",
+            position: "right",
+          },
           {
             to: "https://discord.com/invite/pushprotocol",
             label: "Discord",
