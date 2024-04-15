@@ -288,7 +288,7 @@ export const BootcampMainComponent = () => {
                 showMobileMenu={isMobileMenuOpen}
               >
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("bootcamp")}
+                  onClick={() => handleSectionNavigation("ready")}
                 >
                   <NavigationMenuHeader>
                     <Span fontSize="18px">Why BRB Bootcamp?</Span>
@@ -414,7 +414,7 @@ export const BootcampMainComponent = () => {
         </Content>
       </Section>
 
-      <Section>
+      <Section id="ready">
         <Content>
             <H2 
                 color="#FFF"
@@ -589,14 +589,14 @@ export const BootcampMainComponent = () => {
             <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
               <FooterBar
                 style={{ cursor: "pointer" }}
-                onClick={() => openLink("https://app.push.org/chat")}
+                onClick={() => openLink("https://app.push.org/chat/0x71Ffa5771E8019787190D098586EFe02026a3c8C")}
               >
                 <i>
                   <Query className='same' />
                 </i>
 
                 <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#F576F8">
-                  Ask our Ai for any Push Queries
+                  Ask our AI for any Push Queries
                 </Span>
 
                 <Image
