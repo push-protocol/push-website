@@ -24,7 +24,6 @@ export default function BlogLayout(props) {
       title={PageMeta.BLOG.pageTitle}
       description={PageMeta.BLOG.pageDescription}
       // showNavbar={false}
-      {...layoutProps}
     >
       <Head>
         {/* <!-- HTML Meta Tags --> */}
