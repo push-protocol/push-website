@@ -25,6 +25,8 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
+import Accordion from "@site/src/components/Accordion";
+import { HomepageFaq } from "@site/src/config/HomepageFAQ";
 import {
   A,
   B,
@@ -660,6 +662,44 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <FeaturedList />
           </Content>
         </FeaturedInSection>
+
+        <FAQSection>
+          <Content>
+
+            <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
+              <ItemV>
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "36px"}
+                    fontFamily="FK Grotesk Neue"
+                    textAlign={isTablet && "center"}
+                    margin={isTablet && "0 auto"}
+                    fontWeight="500"
+                    lineHeight="130%"
+                >
+                  Frequently Asked Questions
+                </H2>
+
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "19px" : "19px"}
+                    fontFamily="FK Grotesk Neue"
+                    // textAlign={isTablet && "center"}
+                    // margin={isTablet && "0 auto"}
+                    fontWeight="400"
+                    lineHeight="140%"
+                >
+                 Get answers for some of the Popular Questions asked by Push Community!
+                </H3>
+                </ItemV>
+
+              <AccordionGrid>
+                <Accordion items={HomepageFaq} />
+              </AccordionGrid>
+          </ItemH>
+
+          </Content>
+        </FAQSection>
       </HomeWrapper>
     </Layout>
   );
@@ -878,6 +918,8 @@ const ChatSection = styled(Section)``;
 const OtherFeaturesSection = styled(Section)``;
 
 const TokenomicsSection = styled(Section)``;
+
+const FAQSection = styled(Section)``;
 
 const TokenItem = styled.div`
   width: 100%;
@@ -1152,3 +1194,14 @@ const SpanLink = styled(Span)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)``;
+
+
+const AccordionGrid = styled.div`
+    max-width: 877px;
+    min-width: 877px;
+
+  @media ${device.laptop} {
+    max-width: 100%;
+    min-width: 100%;
+  }
+`;
