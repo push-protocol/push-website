@@ -1,14 +1,14 @@
 ---
-id: docs-chat-develop-manage-chat-requests
-title: Chat Requests
+id: docs-chat-develop-manage-chat
+title: Manage Chat
 hide_title: true
-slug: ./chat-requests
+slug: ./manage-chat
 displayed_sidebar: pushChatSidebar
 sidebar_position: 4
-image: "/assets/docs/previews/docs_chat_develop_manage--chat_requests.png"
+image: "/assets/docs/previews/docs_chat_develop--manage_chat.png"
 ---
 
-# Chat requests overview
+# Manage Chat overview
 
 You can send a message using [chat.send API](/docs/chat/build/send-message) to either an existing chat connection or to initiate a new chat to a wallet you haven't chatted with before (which is called sending a chat request).
 
@@ -114,10 +114,14 @@ const statusOfChatWithBob = await userAlice.chat.info(chatId, bobAddress);
 <Details summary="Expected response (When Alice's chat request has already been accepted by Bob)">
 ```typescript
 {
-    "meta": {
-        "group": false
-    },
-    "list": "CHATS"
+  meta: { group: false },
+  list: 'CHATS',
+  participants: [
+    'eip155:0x68580b23781547969de5033e39470D2039a9938e',
+    'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4'
+  ],
+  chatId: '66f23e09c14f221c6d370ad2d8f38f2629acedbd7a7b4d1fd0490437e8f1e43d',
+  recipient: '0x68580b23781547969de5033e39470D2039a9938e'
 }
 
 ````
@@ -131,18 +135,21 @@ const statusOfChatWithBob = await userAlice.chat.info(chatId, bobAddress);
 <Details summary="Expected response (When Alice's Chat request is pending or not yet accepted by Bob)">
 ```typescript
 {
-    "meta": {
-        "group": false
-    },
-    "list": "REQUESTS"
+  meta: { group: false },
+  list: 'REQUESTS',
+  participants: [
+    'eip155:0x68580b23781547969de5033e39470D2039a9938e',
+    'eip155:0xb44a29524433dBC639C35124459c741bC241d4f4'
+  ],
+  chatId: '66f23e09c14f221c6d370ad2d8f38f2629acedbd7a7b4d1fd0490437e8f1e43d',
+  recipient: '0x68580b23781547969de5033e39470D2039a9938e'
 }
-
-````
+```
 
 | Param        | Type      | Remarks                                                                       |
 | ------------ | --------- | ----------------------------------------------------------------------------- |
 | `meta.group` | `boolean` | returns `true` when the passed chatId is of a group chat and vice versa.      |
-| `list`       | `string`  | returns `REQUESTS` when the chat request has been accepted by the other user. |
+| `list`       | `string`  | returns `REQUESTS` when the chat request is pending and not yet accepted. |
 
 </Details>
 
@@ -267,3 +274,4 @@ const bobUnblockAlice = await userBob.chat.unblock([aliceAddress]);
 }
 ```
 </Details>
+````
