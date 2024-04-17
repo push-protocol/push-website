@@ -39,11 +39,11 @@ npm i @makerdao/dai-plugin-mcd @makerdao/dai
 
 For starting with showrunners and setting it up follow this guide here. // need to add link
 
-First we need to create a folder in `src/showrunners/<`your_channel_name>`
+First we need to create a folder in `src/showrunners/<your_channel_name>`
 
 ### Step 3. Adding necessary files into the folder
 
-#### Adding contarctAddress.json file
+#### Adding `contarctAddress.json` file
 
 ```jsx
 // Contains every vault address
@@ -347,7 +347,7 @@ First we need to create a folder in `src/showrunners/<`your_channel_name>`
 
 This file contains every vault address and by so, we will be fetching next price of every vault.
 
-#### Adding oasisChannel.ts file
+#### Adding `oasisChannel.ts` file
 
 ```jsx
 import { Service, Inject, Container } from 'typedi';
@@ -838,7 +838,7 @@ Phewww!! That's a lot of code!
 
 After setting up all the methods, this function will be sending the notifications with all the helpers including in it.
 
-#### Adding oasisJobs.ts file
+#### Adding `oasisJobs.ts` file
 
 ```jsx
 // Do Scheduling
@@ -891,7 +891,7 @@ export default () => {
 
 After setting up the channel file, we are setting up a three hour rule for hitting the notification triggering method every 3 hours.
 
-#### Adding oasisRoutes.ts file
+#### Adding `oasisRoutes.ts` file
 
 ```jsx
 import { Router, Request, Response, NextFunction } from 'express';
