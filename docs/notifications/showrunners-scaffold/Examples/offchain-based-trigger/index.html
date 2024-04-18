@@ -15,8 +15,8 @@
 <link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Push | The Communication Protocol of Web3 RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Push | The Communication Protocol of Web3 Atom Feed">
 <link rel="alternate" type="application/json" href="/blog/feed.json" title="Push | The Communication Protocol of Web3 JSON Feed"><link rel="stylesheet" href="/assets/css/styles.b1a2c268.css">
-<script src="/assets/js/runtime~main.1d68ce4b.js" defer="defer"></script>
-<script src="/assets/js/main.cbcafaa0.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.966ed7fd.js" defer="defer"></script>
+<script src="/assets/js/main.6a42be7e.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div class="PushDocs DocusaurusNavbar"><style data-styled="" data-styled-version="6.1.8">.hbjDIO{align-items:center;align-self:stretch;background:transparent;display:flex;flex:1;flex-direction:row;justify-content:center;width:100%;margin:0px;min-height:auto;overflow:initial;padding:0px;position:relative;}/*!sc*/
@@ -365,7 +365,7 @@ data-styled.g94[id="Content__NavItem-sc-uc7jkx-5"]{content:"dpQAZt,"}/*!sc*/
 <p><strong>Data Provided</strong></p>
 <p>In the news article type of channels we most try to get the RSS-FEED URL. They are easy to operate on due to a Module called &quot;xml2js&quot; which converts the XML code to Java script making it usable to our codebase.</p>
 <p>In the case of Defiant, they have provided the feed <a href="https://thedefiant.io/feed/" target="_blank" rel="noopener noreferrer">URL</a> </p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="channel-file"><a href="https://github.com/push-protocol/push-showrunners-framework/blob/main/src/showrunners/defiant/defiantChannel.ts" target="_blank" rel="noopener noreferrer">Channel File</a><a href="#channel-file" class="hash-link" aria-label="Direct link to channel-file" title="Direct link to channel-file">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="channel-file"><a href="#channel-file">Channel File</a><a href="#channel-file" class="hash-link" aria-label="Direct link to channel-file" title="Direct link to channel-file">​</a></h4>
 <p>The channel file is the brain for every channel notification logic. The file follows basic steps of input obtainment, some processed logic and conditions and when the condition for logic is satisfied the code generates the notification.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-channel-class-creation-the-boilerplate">The Channel Class Creation (The Boilerplate)<a href="#the-channel-class-creation-the-boilerplate" class="hash-link" aria-label="Direct link to The Channel Class Creation (The Boilerplate)" title="Direct link to The Channel Class Creation (The Boilerplate)">​</a></h4>
 <p>Every development procedure initiates with creating a channel specific class with contains various information regarding the concerned channel, such as:</p>
@@ -394,7 +394,7 @@ data-styled.g94[id="Content__NavItem-sc-uc7jkx-5"]{content:"dpQAZt,"}/*!sc*/
 <p><strong>Fetching the Dates for comparison</strong></p>
 <p>We first fetch the timestamp from the local database and then create a variable called the comparer date which is basically a timestamp for the latest notification which was sent.<br>
 <!-- -->This timestamp is then used to compare the RSS Feed timestamp and then generate a notification.</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="jobs-file"><a href="https://github.com/push-protocol/push-showrunners-framework/blob/main/src/showrunners/defiant/defiantJobs.ts" target="_blank" rel="noopener noreferrer">Jobs File</a><a href="#jobs-file" class="hash-link" aria-label="Direct link to jobs-file" title="Direct link to jobs-file">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="jobs-file"><a href="#jobs-file">Jobs File</a><a href="#jobs-file" class="hash-link" aria-label="Direct link to jobs-file" title="Direct link to jobs-file">​</a></h4>
 <p>This folder is responsible to run the Cron Jobs. Expanding on the “Cron Jobs”, this is a function which uses a module called Node-Schedule to run a code at a specific, repeating time interval. Though the main logic resides in the Channel file, the logic is constantly run by this file, so that as soon as the function satisfies the condition when its called, a notification is sent.</p>
 <p><strong>Creation of a Time Rule</strong></p>
 <p>This involves creating a type of countdown values for a specific job to run.This is customised on the basis of the requirement of a certain use case. For example in this case we create a Daily Rule which makes the channel logic run once in every 24 Hours interval.</p>
