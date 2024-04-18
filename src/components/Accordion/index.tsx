@@ -27,7 +27,7 @@ interface AccordionProps {
     items: AccordionItem[];
 }
 
-const Accordion: React.FC<AccordionProps> = ({ items }) => {
+const Accordion: React.FC<AccordionProps> = ({ items, fontFamily }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
     const toggleAccordion = (index: number) => {
@@ -41,8 +41,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                     <AccordionParent onClick={() => toggleAccordion(index)}>
                         <H2
                             color="#FFF"
-                            fontSize="24px"
-                            fontFamily="Glancyr, sans-serif"
+                            fontSize="22px"
+                            fontFamily={fontFamily}
                             fontWeight="400"
                             lineHeight="140%"
                             >
@@ -58,8 +58,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                             <H3   
                                 color="#FFF"
                                 fontSize="16px"
-                                // fontFamily="Glancyr, sans-serif"
-                                fontWeight="300"
+                                fontFamily={fontFamily}
+                                fontWeight="400"
                                 lineHeight="140%"
                                 padding="0 0 24px 0">
                                 
@@ -67,8 +67,8 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
 
                                 {item.link && (<a
                                 color="#FFF"
+                                fontFamily={fontFamily}
                                 fontSize="16px"
-                                // fontFamily="Glancyr, sans-serif"
                                 fontWeight="300"
                                 lineHeight="140%" 
                                 letterSpacing="normal"

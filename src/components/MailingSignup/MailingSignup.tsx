@@ -44,7 +44,7 @@ export const MailingSignup = (props: signupType) => {
         <SignupInputField
           type="text"
           name="email"
-          placeholder="Email"
+          placeholder="Email Address"
           background={props.background}
           inputWidth={props.inputWidth}
           tabIndex={0}
@@ -121,9 +121,8 @@ const Wrapper = styled.form`
   column-gap: 6px;
   align-items: center;
   background: ${(props) => props.background || "#ffffff"};
-  border-radius: 21px;
-  border: 1px solid ${(props) => props.border || "#ffffff"};
-  padding: 5px;
+  border-bottom: 1px solid ${(props) => props.border || "#ffffff"};
+  padding: 5px 0px;
   justify-content: space-between;
 
   @media ${device.tablet} {
@@ -155,25 +154,25 @@ const SignupInputField = styled.input`
   all: unset;
 
   box-sizing: border-box;
-  font-family: "Strawford";
+  font-family: FK Grotesk Neue;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: normal;
   letter-spacing: -0.03em;
-  color: #9c9cbe;
+  color: #A5ABB8;
   background: ${(props) => props.background || "#ffffff"};
   // min-width: 220px;
   width: ${(props) => props.inputWidth || "100%"};
-  padding: 6px;
-  padding-left: 8px;
+  // padding: 0px;
+  // padding-left: 8px;
 
   @media ${device.laptop} {
     min-width: auto;
   }
 
   &:placeholder {
-    color: #a5a7b4;
+    color: #A5ABB8; 
     opacity: 1;
   }
 `;

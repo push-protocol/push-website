@@ -48,6 +48,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
+import BgImage from "@site/static/assets/website/home/faq/footerbg@3x.webp";
 
 // Internal Configs
 import {
@@ -667,7 +668,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content>
 
             <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
-              <ItemV>
+              <ItemV alignItems="flex-start" justifyContent="flex-start">
                 <H2 
                     color="#FFF"
                     fontSize={isMobile ? "32px" : "36px"}
@@ -691,15 +692,85 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 >
                  Get answers for some of the Popular Questions asked by Push Community!
                 </H3>
+
+                  <FaqLink
+                    href="/blog"
+                    title="Exlore all articles"
+                    fontSize="16px"
+                    margin="24px 0 0 0"
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    fontFamily="FK Grotesk Neue"
+                  >
+                    <SpanLink>Ask us on Discord</SpanLink>
+                    <BsArrowRight className="anchorSVGlink" />
+                  </FaqLink>
                 </ItemV>
 
-              <AccordionGrid>
-                <Accordion items={HomepageFaq} />
-              </AccordionGrid>
+              <ItemV alignItems="flex-start" justifyContent="flex-start">
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "32px"}
+                    fontFamily="FK Grotesk Neue"
+                    // textAlign={isTablet && "center"}
+                    // margin={isTablet && "0 auto"}
+                    fontWeight="500"
+                    lineHeight="100%"
+                >
+                  General
+                </H2>
+
+                <AccordionGrid>
+                  <Accordion items={HomepageFaq} fontFamily="FK Grotesk Neue" />
+                </AccordionGrid>
+              </ItemV>
           </ItemH>
 
           </Content>
         </FAQSection>
+
+        <Section>
+          <Content>
+
+            <ImageBackgroundDiv>
+              <ItemV alignItems="center" justifyContent="center" height="100%">
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "32px"}
+                    fontFamily="FK Grotesk Neue"
+                    fontWeight="500"
+                    lineHeight="140%"
+                >
+                  Take your user engagement to the next level.
+                </H2>
+
+                 <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "19px" : "19px"}
+                    fontFamily="FK Grotesk Neue"
+                    fontWeight="400"
+                    lineHeight="192%"
+                >
+                  Engage users, build communities, and enable a thriving ecosystem with Push.
+                </H3>
+
+                 <FaqLink
+                    href="/blog"
+                    title="Exlore all articles"
+                    fontSize="16px"
+                    margin="48px 0 0 0"
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    fontFamily="FK Grotesk Neue"
+                  >
+                    <SpanLink>Start Building</SpanLink>
+                  </FaqLink>
+              </ItemV>
+
+            </ImageBackgroundDiv>
+
+          </Content>
+        </Section>
       </HomeWrapper>
     </Layout>
   );
@@ -1167,6 +1238,21 @@ const SlideLink = styled(A)`
   }
 `;
 
+const FaqLink = styled(A)`
+  overflow: inherit;
+  .anchorSVGlink {
+    color: #fff;
+    top: 3px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    .anchorSVGlink {
+      color: #fff;
+    }
+  }
+`;
+
 const SpanLink = styled(Span)`
   position: relative;
   text-decoration: none;
@@ -1204,4 +1290,14 @@ const AccordionGrid = styled.div`
     max-width: 100%;
     min-width: 100%;
   }
+`;
+
+const ImageBackgroundDiv = styled.div`
+  // width: 650px;
+  height: 600px; 
+  background-image: url(${BgImage}); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-position: center;
+  margin: 0 auto;
 `;
