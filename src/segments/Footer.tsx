@@ -6,7 +6,7 @@ import React from "react";
 
 // External Components
 import { useTranslation } from "react-i18next";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight, BsTwitterX } from "react-icons/bs";
 import styled from "styled-components";
 
 // Internal Components
@@ -30,7 +30,7 @@ import AppleSVG from "@site/static/assets/website/shared/apple.svg";
 import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
 import GithubSVG from "@site/static/assets/website/shared/github.svg";
 import TelegramSVG from "@site/static/assets/website/shared/telegram.svg";
-import TwitterSVG from "@site/static/assets/website/shared/twitter.svg";
+import TwitterSVG from "@site/static/assets/website/shared/twitter-icon.svg";
 import { MailingSignup } from "../components/MailingSignup/MailingSignup";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
@@ -113,13 +113,13 @@ function Footer() {
           <ItemH flex="1" margin="0px 0 0 0">
             <FooterContainer>
               <FooterColumn>
-                <FooterLinks>
+                <FooterLinkItem>
                      <LinkTo
                         className="pushLogo"
                         to="/"
                         title="Push"
                         onClick={scrollToTop}
-                        justifyContent="flex-start"
+                        justifyContent={isMobile ? "center" : "flex-start"}
                         padding="0px 0px"
                       >
                         <Image
@@ -147,7 +147,7 @@ function Footer() {
                     borderColor="rgba(255, 255, 255, 0.30)"
                     inputWidth="90%"
                   />
-                </FooterLinks>
+                </FooterLinkItem>
               </FooterColumn>
 
               <FooterColumn>
@@ -362,19 +362,21 @@ function Footer() {
                   className="pushLinks"
                 >
               
+                  
+                  <FooterAnchorIcon
+                    href="https://twitter.com/pushprotocol"
+                    title="Push Twitter"
+                    target="_blank"
+                  >
+                    <BsTwitterX size={22} />
+                  </FooterAnchorIcon>
+
                   <FooterAnchorIcon
                     href="https://github.com/push-protocol/"
                     title="Push Github"
                     target="_blank"
                   >
                     <GithubSVG width={24} height={24} />
-                  </FooterAnchorIcon>
-                  <FooterAnchorIcon
-                    href="https://twitter.com/pushprotocol"
-                    title="Push Twitter"
-                    target="_blank"
-                  >
-                    <TwitterSVG width={24} height={24} />
                   </FooterAnchorIcon>
 
                   <FooterAnchorIcon
@@ -522,6 +524,7 @@ const FooterColumn = styled.div`
 
   align-items: center;
 
+
   @media ${device.tablet} {
     flex-basis: 50%;
     padding: 12px;
@@ -530,18 +533,18 @@ const FooterColumn = styled.div`
     align-items: flex-start;
 
     & span {
-      font-size: 20px;
+      font-size: 16px;
     }
 
     // &:last-child {
     //   flex-basis: 100%;
     // }
+    
   }
 
   @media ${device.mobileL} {
     &:first-child {
         flex-basis: 100%;
-        background: red;
     }
   }
 `;
@@ -550,22 +553,24 @@ const FooterLinks = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 154px;
+  @media ${device.mobileL} {
+    min-width: 100%;
+  }
+`;
+
+const FooterLinkItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  @media ${device.mobileL} {
+    min-width: 100%;
+  }
 `;
 
 const SocialLinks = styled(ItemH)`
   margin: 64px 0 0px 0;
   position: relative;
 
-  // &:before {
-  //   position: absolute;
-  //   z-index: 1;
-  //   content: "";
-  //   top: -24px;
-  //   left: 0;
-  //   height: 1px;
-  //   width: 100%;
-  //   background: #2a2a39;
-  // }
 
   @media ${device.tablet} {
     flex-direction: column;
@@ -581,6 +586,10 @@ const SocialLinks = styled(ItemH)`
     & .pushPlatformLinks {
       justify-content: center;
     }
+  }
+  @media ${device.mobileL} {
+    flex-direction: column-reverse;
+    gap: 16px;
   }
 `;
 

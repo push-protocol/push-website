@@ -48,7 +48,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
-import BgImage from "@site/static/assets/website/home/faq/footerbg@3x.webp";
+import BgImage from "@site/static/assets/website/home/faq/footerbg@3x.png";
 
 // Internal Configs
 import {
@@ -673,8 +673,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     color="#FFF"
                     fontSize={isMobile ? "32px" : "36px"}
                     fontFamily="FK Grotesk Neue"
-                    textAlign={isTablet && "center"}
-                    margin={isTablet && "0 auto"}
+                    textAlign={isMobile && "center"}
+                    margin={isMobile && "0 auto"}
                     fontWeight="500"
                     lineHeight="130%"
                 >
@@ -685,8 +685,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     color="#FFF"
                     fontSize={isMobile ? "19px" : "19px"}
                     fontFamily="FK Grotesk Neue"
-                    // textAlign={isTablet && "center"}
-                    // margin={isTablet && "0 auto"}
+                    textAlign={isMobile && "center"}
+                    margin={isMobile && "24px auto"}
                     fontWeight="400"
                     lineHeight="140%"
                 >
@@ -697,7 +697,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     href="/blog"
                     title="Exlore all articles"
                     fontSize="16px"
-                    margin="24px 0 0 0"
+                    margin={isTablet ? "0 auto" : "24px 0 0 0"}
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     color={GLOBALS.COLORS.FONT_LIGHT}
                     fontFamily="FK Grotesk Neue"
@@ -713,7 +713,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     fontSize={isMobile ? "32px" : "32px"}
                     fontFamily="FK Grotesk Neue"
                     // textAlign={isTablet && "center"}
-                    // margin={isTablet && "0 auto"}
+                    margin={isMobile && "40px 0 0 0"}
                     fontWeight="500"
                     lineHeight="100%"
                 >
@@ -723,6 +723,20 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <AccordionGrid>
                   <Accordion items={HomepageFaq} fontFamily="FK Grotesk Neue" />
                 </AccordionGrid>
+                <SlideLink
+                    href={`https://push.org/faq`}
+                    title={"new"}
+                    target="_blank"
+                    padding="0px 0px"
+                    className="button"
+                    margin={isMobile ? "24px auto 0px 0px" : "24px 0px 0px auto"}
+                    background="transparent"
+                    alignItems="center"
+                    justifyContent="flex-end"
+                  >
+                    <SpanLink>Explore FAQs</SpanLink>
+                    <BsArrowRight className="anchorSVGlink" />
+                  </SlideLink>
               </ItemV>
           </ItemH>
 
@@ -733,23 +747,28 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content>
 
             <ImageBackgroundDiv>
-              <ItemV alignItems="center" justifyContent="center" height="100%">
+              <ItemV alignItems="center" justifyContent="flex-end" height="100%">
                 <H2 
                     color="#FFF"
-                    fontSize={isMobile ? "32px" : "32px"}
+                    fontSize={isMobile ? "2opx" : "32px"}
                     fontFamily="FK Grotesk Neue"
                     fontWeight="500"
                     lineHeight="140%"
+                    textAlign={isTablet && "center"}
+                    margin={isTablet && "0 auto"}
+
                 >
                   Take your user engagement to the next level.
                 </H2>
 
                  <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "19px" : "19px"}
+                    color="#a5abb8"
+                    fontSize={isMobile ? "14px" : "19px"}
                     fontFamily="FK Grotesk Neue"
                     fontWeight="400"
                     lineHeight="192%"
+                    textAlign={isTablet && "center"}
+                    margin={isTablet && "0 auto"}
                 >
                   Engage users, build communities, and enable a thriving ecosystem with Push.
                 </H3>
@@ -1293,11 +1312,20 @@ const AccordionGrid = styled.div`
 `;
 
 const ImageBackgroundDiv = styled.div`
-  // width: 650px;
-  height: 600px; 
+  width: 100%;
+  // height: 100%;
+  min-height: 400px;
+  // height: 500px;
   background-image: url(${BgImage}); 
-  background-size: cover;
+  background-size: auto 400px;
   background-repeat: no-repeat;
-  // background-position: center;
+  background-position: top center;
   margin: 0 auto;
+
+  @media ${device.mobileL} {
+    width: 100%;
+    background-size: contain;
+    background-position: top center;
+    min-height: 330px;
+  }
 `;
