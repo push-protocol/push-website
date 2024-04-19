@@ -3,6 +3,7 @@
 
 // React + Web3 Essentials
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 // External Components
 import { useTranslation } from "react-i18next";
@@ -36,6 +37,7 @@ import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
 // Internal Configs
 import { device } from "@site/src/config/globals";
+import { HeaderList } from "@site/src/config/HeaderList";
 
 function Footer() {
   // Internationalization
@@ -43,9 +45,42 @@ function Footer() {
    const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
+  // for navigation
+  const history = useHistory();
+
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);
   };
+
+    const openLink = (e, href, id, target) => {
+      e.stopPropagation();
+
+      if (href) {
+        if (target && target !== "_blank") {
+          if (target === "_self") {
+            // check if url is external
+            if (href.includes("http")) {
+              window.location.href = href;
+            } else {
+              history.push(href);
+            }
+            scrollToTop();
+          }
+        } else {
+          // check if url is internal and if so append the base url
+          if (href.includes("http")) {
+            window.open(href, target);
+          } else {
+            window.open(`${window.location.origin}${href}`, target);
+          }
+          // scrollToTop();
+        }
+      } else if (id) {
+        document.getElementById(id).scrollIntoView({
+          behavior: "smooth",
+        });
+      } else return;
+    };
 
   return (
     <StyledFooter>
@@ -153,178 +188,77 @@ function Footer() {
               <FooterColumn>
                 <FooterLinks>
                   <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("footer.links-section.company-column.title")}
+                    {t("header.products.title")}
                   </Span>
 
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/frens"
-                    title={t(
-                      "footer.links-section.company-column.push-ecosystem-link",
-                    )}
-                    onClick={scrollToTop}
-                  >
-                    {t(
-                      "footer.links-section.company-column.push-ecosystem-link",
-                    )}
-                  </FooterAnchorSecondary>
-                  <FooterAnchorSecondary
-                    href="https://www.notion.so/pushprotocol/Push-Brand-Guide-Media-Kit-6f9db19d513c4365a1faa6c244515498"
-                    title={t(
-                      "footer.links-section.company-column.media-kit-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.company-column.media-kit-link")}
-                  </FooterAnchorSecondary>
+                    {HeaderList.products.map((item, index) => (
+                      <FooterAnchorSecondary
+                        as={"div"}
+                        title={t(item.title)}
+                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
+                      >
+                        {t(item.title)}
+                      </FooterAnchorSecondary>
+                    ))}
 
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/tos"
-                    title={t("footer.links-section.company-column.terms-link")}
-                    onClick={scrollToTop}
-                  >
-                    {t("footer.links-section.company-column.terms-link")}
-                  </FooterAnchorSecondary>
+                </FooterLinks>
+              </FooterColumn>
 
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/privacy"
-                    title={t(
-                      "footer.links-section.company-column.privacy-link",
-                    )}
-                    onClick={scrollToTop}
-                  >
-                    {t("footer.links-section.company-column.privacy-link")}
-                  </FooterAnchorSecondary>
+
+              <FooterColumn>
+                <FooterLinks>
+                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
+                    {t("header.developers.title")}
+                  </Span>
+
+                    {HeaderList.developers.map((item, index) => (
+                      <FooterAnchorSecondary
+                        as={"div"}
+                        title={t(item.title)}
+                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
+                      >
+                        {t(item.title)}
+                      </FooterAnchorSecondary>
+                    ))}
+
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
                   <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("footer.links-section.governance-column.title")}
+                    {t("header.community.title")}
                   </Span>
 
-                  <FooterAnchorSecondary
-                    href="https://gov.push.org"
-                    title={t(
-                      "footer.links-section.governance-column.push-governance-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t(
-                      "footer.links-section.governance-column.push-governance-link",
-                    )}
-                  </FooterAnchorSecondary>
+                    {HeaderList.community.map((item, index) => (
+                      <FooterAnchorSecondary
+                        as={"div"}
+                        title={t(item.title)}
+                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
+                      >
+                        {t(item.title)}
+                      </FooterAnchorSecondary>
+                    ))}
 
-                  <FooterAnchorSecondary
-                    href="https://push.org/docs/dao"
-                    title={t(
-                      "footer.links-section.governance-column.guides-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.governance-column.guides-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="https://gov.push.org/top?period=yearly"
-                    title={t(
-                      "footer.links-section.governance-column.forum-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.governance-column.forum-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="https://www.notion.so/Push-Grants-Program-8c9f7934f7e5418faf96e7a5bdcaac4a"
-                    title={t(
-                      "footer.links-section.governance-column.grants-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.governance-column.grants-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="https://snapshot.org/#/epns.eth"
-                    title={t(
-                      "footer.links-section.governance-column.snapshot-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.governance-column.snapshot-link")}
-                  </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
                   <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("footer.links-section.resources-column.title")}
-                  </Span>
-                  <FooterAnchorSecondary
-                    href="/blog"
-                    title={t("footer.links-section.resources-column.blog-link")}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.resources-column.blog-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="https://github.com/push-protocol/"
-                    title={t(
-                      "footer.links-section.resources-column.github-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.resources-column.github-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="https://discord.gg/pushprotocol"
-                    title={t(
-                      "footer.links-section.resources-column.discord-link",
-                    )}
-                    target="_blank"
-                  >
-                    {t("footer.links-section.resources-column.discord-link")}
-                  </FooterAnchorSecondary>
-
-                  <FooterAnchorSecondary
-                    href="/docs"
-                    title={t(
-                      "footer.links-section.resources-column.dev-guides-link",
-                    )}
-                  >
-                    {t("footer.links-section.resources-column.dev-guides-link")}
-                  </FooterAnchorSecondary>
-                </FooterLinks>
-              </FooterColumn>
-
-              <FooterColumn>
-                <FooterLinks>
-                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("footer.links-section.subscribe-column.title")}
+                    {t("header.resources.title")}
                   </Span>
 
-                  <FooterAnchorSecondary
-                    href="mailto:support@push.org"
-                    target="_blank"
-                  >
-                    {t("footer.links-section.subscribe-column.contact-us-link")}
-                  </FooterAnchorSecondary>
+                    {HeaderList.resources.map((item, index) => (
+                      <FooterAnchorSecondary
+                        as={"div"}
+                        title={t(item.title)}
+                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
+                      >
+                        {t(item.title)}
+                      </FooterAnchorSecondary>
+                    ))}
 
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/faq"
-                    title={t("footer.links-section.subscribe-column.faq-link")}
-                    onClick={scrollToTop}
-                  >
-                    {t("footer.links-section.subscribe-column.faq-link")}
-                  </FooterAnchorSecondary>
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>

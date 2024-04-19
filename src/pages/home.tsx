@@ -743,7 +743,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           </Content>
         </FAQSection>
 
-        <Section>
+        <BgSection>
           <Content>
 
             <ImageBackgroundDiv>
@@ -789,7 +789,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             </ImageBackgroundDiv>
 
           </Content>
-        </Section>
+        </BgSection>
       </HomeWrapper>
     </Layout>
   );
@@ -1010,6 +1010,29 @@ const OtherFeaturesSection = styled(Section)``;
 const TokenomicsSection = styled(Section)``;
 
 const FAQSection = styled(Section)``;
+
+const BgSection = styled(Section)`
+  // border-radius: 531.848px;
+  // background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 71.5%);
+  // filter: blur(95.11041259765625px);
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    top: 0;
+    background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 71.5%);
+    filter: blur(95.11041259765625px);
+    border-radius: 531.848px;
+    margin: auto auto;
+
+    @media ${device.mobileL} {
+      height: 300px;
+      width: 300px;
+    }
+  }
+`;
 
 const TokenItem = styled.div`
   width: 100%;
