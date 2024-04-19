@@ -42,7 +42,7 @@ import { HeaderList } from "@site/src/config/HeaderList";
 function Footer() {
   // Internationalization
   const { t } = useTranslation();
-   const isMobile = useMediaQuery(device.mobileL);
+  const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
   // for navigation
@@ -272,15 +272,17 @@ function Footer() {
               gap="12px"
               className="pushLinks">
               <FooterAnchorSecondary
-                    href="mailto:support@push.org"
-                    target="_blank"
+                    as={LinkTo}
+                    to="/privacy"
+                    title={t("footer.links-section.subscribe-column.faq-link")}
+                    onClick={scrollToTop}
                   >
                     Privacy Policy
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
                     as={LinkTo}
-                    to="/faq"
+                    to="/tos"
                     title={t("footer.links-section.subscribe-column.faq-link")}
                     onClick={scrollToTop}
                   >

@@ -26,7 +26,7 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
 import Accordion from "@site/src/components/Accordion";
-import { HomepageFaq } from "@site/src/config/HomepageFAQ";
+import { General, Notifs } from "@site/src/config/HomepageFAQ";
 import {
   A,
   B,
@@ -489,7 +489,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <ItemH justifyContent="flex-end">
                   <SlideLink
                     href="/blog"
-                    title="Exlore all articles"
+                    title="Explore all articles"
                     hoverBackground="transparent"
                     hover="transparent"
                     background="transparent"
@@ -694,15 +694,16 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </H3>
 
                   <FaqLink
-                    href="/blog"
-                    title="Exlore all articles"
+                    href="https://discord.gg/pushprotocol"
+                    target="_blank"
+                    title="Discord"
                     fontSize="16px"
-                    margin={isTablet ? "0 auto" : "24px 0 0 0"}
+                    margin={isMobile ? "0 auto" : "24px 0 0 0"}
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     color={GLOBALS.COLORS.FONT_LIGHT}
                     fontFamily="FK Grotesk Neue"
                   >
-                    <SpanLink>Ask us on Discord</SpanLink>
+                    <p>Ask us on Discord</p>
                     <BsArrowRight className="anchorSVGlink" />
                   </FaqLink>
                 </ItemV>
@@ -710,9 +711,8 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <ItemV alignItems="flex-start" justifyContent="flex-start">
                 <H2 
                     color="#FFF"
-                    fontSize={isMobile ? "32px" : "32px"}
+                    fontSize={isMobile ? "24px" : "32px"}
                     fontFamily="FK Grotesk Neue"
-                    // textAlign={isTablet && "center"}
                     margin={isMobile && "40px 0 0 0"}
                     fontWeight="500"
                     lineHeight="100%"
@@ -721,10 +721,26 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </H2>
 
                 <AccordionGrid>
-                  <Accordion items={HomepageFaq} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={General} fontFamily="FK Grotesk Neue" />
                 </AccordionGrid>
+
+                 <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "24px" : "32px"}
+                    fontFamily="FK Grotesk Neue"
+                    margin={"40px 0 0 0"}
+                    fontWeight="500"
+                    lineHeight="100%"
+                >
+                  Push Notifications
+                </H2>
+
+                <AccordionGrid>
+                  <Accordion items={Notifs} fontFamily="FK Grotesk Neue" firstOpen={false} />
+                </AccordionGrid>
+
                 <SlideLink
-                    href={`https://push.org/faq`}
+                    href={"/faq"}
                     title={"new"}
                     target="_blank"
                     padding="0px 0px"
@@ -774,15 +790,15 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </H3>
 
                  <FaqLink
-                    href="/blog"
-                    title="Exlore all articles"
+                    href="/docs"
+                    title="Explore docs"
                     fontSize="16px"
                     margin="48px 0 0 0"
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     color={GLOBALS.COLORS.FONT_LIGHT}
                     fontFamily="FK Grotesk Neue"
                   >
-                    <SpanLink>Start Building</SpanLink>
+                    <p>Start Building</p>
                   </FaqLink>
               </ItemV>
 
@@ -1281,14 +1297,21 @@ const SlideLink = styled(A)`
 `;
 
 const FaqLink = styled(A)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   overflow: inherit;
+
+  p {
+    margin: 0px !important;
+  }
   .anchorSVGlink {
     color: #fff;
-    top: 3px;
+    top: 0px;
   }
 
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
     .anchorSVGlink {
       color: #fff;
     }
@@ -1336,9 +1359,7 @@ const AccordionGrid = styled.div`
 
 const ImageBackgroundDiv = styled.div`
   width: 100%;
-  // height: 100%;
   min-height: 400px;
-  // height: 500px;
   background-image: url(${BgImage}); 
   background-size: auto 400px;
   background-repeat: no-repeat;
@@ -1351,4 +1372,12 @@ const ImageBackgroundDiv = styled.div`
     background-position: top center;
     min-height: 330px;
   }
+
+  @media ${device.tablet} {
+    width: 100%;
+    background-size: contain;
+    background-position: top center;
+    min-height: 400px;
+  }
 `;
+
