@@ -70,7 +70,7 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
                     <>
                             <H3   
                                 color="#FFF"
-                                fontSize={isMobile ? "16px" : "16px"}
+                                fontSize={isMobile ? "16px" : "19px"}
                                 fontFamily={fontFamily}
                                 fontWeight="400"
                                 lineHeight="140%"

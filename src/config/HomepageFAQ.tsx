@@ -19,6 +19,10 @@ import {
 // Import Assets
 import ImageFAQ from "@site/static/assets/website/faq/faq-projects.webp";
 
+// Internal Configs
+import GLOBALS, { device } from "@site/src/config/globals";
+
+
 export const General = [
   {
     question: "What is Push?",
@@ -303,10 +307,14 @@ const Answer = styled(ItemH)`
 
   & ${Span} {
         color: #FFF;
-        font-size: 16px;
+        font-size: 19px;
         font-family: FK Grotesk Neue;
         font-weight: 400;
         line-height: 140%;
+
+        @media ${device.mobileL} {
+           font-size: 16px;
+        }
   }
 `;
 

@@ -681,18 +681,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                   Frequently Asked Questions
                 </H2>
 
-                <H3 
-                    color="#FFF"
-                    fontSize={isMobile ? "19px" : "19px"}
-                    fontFamily="FK Grotesk Neue"
-                    textAlign={isMobile && "center"}
-                    margin={isMobile && "24px auto"}
-                    fontWeight="400"
-                    lineHeight="140%"
-                >
-                 Get answers for some of the Popular Questions asked by Push Community!
-                </H3>
-
                   <FaqLink
                     href="https://discord.gg/pushprotocol"
                     target="_blank"
@@ -766,7 +754,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <ItemV alignItems="center" justifyContent="flex-end" height="100%">
                 <H2 
                     color="#FFF"
-                    fontSize={isMobile ? "2opx" : "32px"}
+                    fontSize={isMobile ? "20px" : "32px"}
                     fontFamily="FK Grotesk Neue"
                     fontWeight="500"
                     lineHeight="140%"
@@ -1006,7 +994,7 @@ const HeroAnalytics = styled(ItemH)`
   @media ${device.laptop} {
     margin: 40px 0 0px 0;
     flex: initial;
-    position: relative;
+    position: relative; 
     bottom: auto;
   }
 `;
@@ -1038,7 +1026,7 @@ const BgSection = styled(Section)`
     height: 500px;
     width: 500px;
     top: 0;
-    background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 71.5%);
+    background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 51.5%);
     filter: blur(95.11041259765625px);
     border-radius: 531.848px;
     margin: auto auto;
