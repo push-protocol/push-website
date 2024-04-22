@@ -12,7 +12,7 @@ image: "/assets/docs/previews/docs_chat_ui_components--integrate_support_bot_v2.
 
 
 
-The Support Chat V2 component is an upgraded version that offers enhanced functionality and is now integrated into the ChatUIProvider. It inherits all the features of the previous support chat, allowing users to initiate conversations with any wallet seamlessly. Additionally, it introduces support for group chats, expanding its versatility and usability.
+The Support Chat V2 component is an upgraded version that offers enhanced functionality and is now integrated into the ChatUIProvider. It inherits all the features of the previous support chat, allowing users to initiate conversations with any wallet or group seamlessly. Additionally, it introduces support for group chats, expanding its versatility and usability.
 
 With its integration into the ChatUIProvider, using the Support Chat V2 component is as straightforward as any other chat component. Simply wrap it with the ChatUIProvider parent wrapper to leverage its capabilities and provide users with an intuitive and powerful chat experience.
 
@@ -75,7 +75,7 @@ yarn add @pushprotocol/restapi
 
 ## Prerequisites
 
-Make your parent component is wrapped with ChatUIProvider. For example —
+Make sure your parent component is wrapped within ChatUIProvider. For example —
 
 ```typescript
 import { ChatUIProvider } from "@pushprotocol/uiweb";
@@ -118,8 +118,8 @@ Import the SDK package in the component file where you want to render the suppor
 
 | Prop            | Type          | Default      | Remarks |
 |-----------------|---------------|--------------|---------|
-| _ `supportAddress`_  | `string`    | `-`          | support user's address(receiver) |
-| `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title |
+| _ `supportAddress`_  | `string`    | `-`          | recipient's address or chatId  |
+| `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title. |
 | `welcomeComponent`    | `React.ReactNode`      | - | Custom React component that will be displayed if wallet is not connected. This is the welcome screen of the support chat v2 component.                                                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.
