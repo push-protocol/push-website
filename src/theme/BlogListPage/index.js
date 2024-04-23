@@ -19,6 +19,7 @@ import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import { PageMeta } from "@site/src/config/pageMeta";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
@@ -33,7 +34,10 @@ function BlogListPageMetadata(props) {
   const title = isBlogOnlyMode ? siteTitle : blogTitle;
   return (
     <>
-      <PageMetadata title={title} description={blogDescription} />
+      <PageMetadata
+        title={PageMeta.BLOG.pageTitle}
+        description={PageMeta.BLOG.pageDescription}
+      />
       <SearchMetadata tag="blog_posts_list" />
     </>
   );
