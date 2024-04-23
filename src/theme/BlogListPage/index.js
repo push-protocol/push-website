@@ -21,6 +21,7 @@ import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { PageMeta } from "@site/src/config/pageMeta";
 import { useLocation } from "@docusaurus/router";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
