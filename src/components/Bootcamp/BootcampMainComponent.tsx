@@ -432,7 +432,7 @@ export const BootcampMainComponent = () => {
                 fontWeight="300"
                 margin="8px 0 0 0"
                 lineHeight="normal"
-            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 23rd</H3>
+            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 30th</H3>
 
             <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 
@@ -507,7 +507,7 @@ export const BootcampMainComponent = () => {
                 textAlign="center"
                 fontWeight="300"
                 margin="8px 0 0 0"
-            >Beyond unmeasurable learning, you will also earn a NFT Certificate, Earn Push Tokens, and Social badges</H3>
+            >Beyond unmeasurable learning, you will also earn a NFT Certificate, Earn Push Tokens, Rewards and Social badges</H3>
 
 
             <RewardsImage
