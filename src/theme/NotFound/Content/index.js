@@ -13,6 +13,8 @@ import BlogListPage from "../../BlogListPage";
 import { BlogListPageContent } from "../../BlogListPage";
 
 import DocSidebar from "@theme/DocSidebar";
+import DocSidebarDesktop from "@theme/DocSidebar/Desktop";
+import Content from "@theme/DocSidebar/Desktop/Content";
 import DocSidebarItems from "@theme/DocSidebarItems";
 import { ThemeClassNames } from "@docusaurus/theme-common";
 import MainStyles from "@docusaurus/theme-classic/lib/theme/DocRoot/Layout/Main/styles.module.css";
@@ -24,6 +26,14 @@ import DocBreadcrumbs from "@docusaurus/theme-classic/lib/theme/DocBreadcrumbs/s
 
 import MDXContent from "@theme/MDXContent";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import styles from "./styles.module.css";
+import { useThemeConfig } from "@docusaurus/theme-common";
+import Logo from "@theme/Logo";
+import {
+  DocsSidebarProvider,
+  useDocRootMetadata,
+} from "@docusaurus/theme-common/internal";
+import generateSidebar from "@site/plugins/generate-docusaurus-sidebar";
 
 export default function NotFoundContent({ className }) {
   const { siteConfig } = useDocusaurusContext();
@@ -41,17 +51,61 @@ export default function NotFoundContent({ className }) {
       title: item.label,
     }),
   );
-  console.log(sidebars, pushNotificationSidebarItems, "sidebarssss");
+
+  const {
+    navbar: { hideOnScroll },
+    docs: {
+      sidebar: { hideable },
+    },
+  } = useThemeConfig();
+
+  // console.log(sidebars, pushNotificationSidebarItems, "sidebarssss");
+  const sidebarContent = generateSidebar({
+    baseDir: "../../../sidebars",
+    sourceDir: "",
+  });
 
   // console.log(id, "iddd");
   return (
     <StyledContainer>
-      <aside className={"newDocs"}>
-        <DocSidebar
+      <div>
+        {/* Render the sidebar content */}
+        <ul>
+          {sidebarContent.map((item, index) => (
+            <li key={index}>
+              {item.type === "category" ? (
+                <div>
+                  <h3>{item.label}</h3>
+                  <ul>
+                    {item.items.map((subItem, subIndex) => (
+                      <li key={subIndex}>{subItem}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <div>{item.id}</div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <aside className={"PushDocs"}>
+        <DocSidebar sidebar={sidebars} path="/"></DocSidebar>
+      </aside>
+      {/* <aside
+        // className={"newDocs"}
+        className={clsx(
+          styles.sidebar,
+          hideOnScroll && styles.sidebarWithHideableNavbar,
+          isHidden && styles.sidebarHidden,
+        )}
+      >
+        <DocSidebarDesktop
           sidebar={sidebars.pushNotificationSidebar}
           // path="/myCustomPage"
-        ></DocSidebar>
-      </aside>
+        ></DocSidebarDesktop>
+      </aside> */}
       {/* <BlogSidebar
         className={clsx("docSidebar", className)}
         sidebar={sidebars.pushNotificationSidebar}

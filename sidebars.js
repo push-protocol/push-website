@@ -12,6 +12,25 @@
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
+
+const generateSidebar = require("./plugins/generate-docusaurus-sidebar.js");
+
+const guides = generateSidebar({
+  baseDir: "./docs/notifications",
+  sourceDir: "",
+});
+
+module.exports = {
+  //   docs: [
+  //     "mdx",
+  //     { Intro: ["doc2"] },
+  //     {
+  //       "More Docs": ["doc1", "doc3"],
+  //     },
+  //   ],
+  guides,
+};
+
 const sidebars = {
   pushNotificationSidebar: [
     {

@@ -15,9 +15,9 @@ function NotFound() {
   return (
     <>
       <PageMetadata title={title} />
-      {/* <Layout.Main> */}
-      {/* <NotFoundContent /> */}
-      {/* </Layout.Main> */}
+      <Layout>
+        <NotFoundContent />
+      </Layout>
     </>
   );
 }
