@@ -20,6 +20,7 @@ import clsx from "clsx";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { PageMeta } from "@site/src/config/pageMeta";
+import { useLocation } from "@docusaurus/router";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
@@ -30,13 +31,33 @@ function BlogListPageMetadata(props) {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
   const { blogDescription, blogTitle, permalink } = metadata;
+  const location = useLocation();
+  const pathname = location.pathname;
   const isBlogOnlyMode = permalink === "/";
-  const title = isBlogOnlyMode ? siteTitle : blogTitle;
+
+  const isBlogMainPage =
+    pathname.includes("/page/") || pathname == "/blog" || pathname == "/blog";
+  const title = isBlogMainPage ? PageMeta.BLOG.pageTitle : siteTitle;
+  const description = isBlogMainPage
+    ? PageMeta.BLOG.pageDescription
+    : blogDescription;
+
+  console.log(
+    title,
+    description,
+    // blogTitle,
+    // siteTitle,
+    "new new",
+  );
   return (
     <>
       <PageMetadata
-        title={PageMeta.BLOG.pageTitle}
-        description={PageMeta.BLOG.pageDescription}
+        title={title}
+        description={description}
+        image={useBaseUrl(
+          require("/static/assets/previews/blogpreview.png").default,
+          { absolute: true },
+        )}
       />
       <SearchMetadata tag="blog_posts_list" />
     </>
