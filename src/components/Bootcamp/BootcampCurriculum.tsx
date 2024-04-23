@@ -38,7 +38,7 @@ const BootcampCurriculum = () => {
                             margin="0 auto 0 0"
                             fontWeight="400"
                             lineHeight="32px">
-                                <Span color="#E64DE9" fontSize="20px">Session {++index}: </Span> {session?.title} </H3>
+                                <Span color="#E64DE9" fontSize="20px">Session {session?.session}: </Span> {session?.title} </H3>
 
                             <ItemH gap="24px" justifyContent="flex-start" alignItems="center">
                                 <ItemH gap="8px" flex="0" alignItems="center">

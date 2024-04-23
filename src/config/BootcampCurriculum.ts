@@ -3,12 +3,14 @@
         title: "Week 1", 
         session: [
          { 
-            title: "Basics of web3: Overview of blockchain technology, decentralization, consensus mechanisms, and tokenomics basics.",
+            session: "1",
+            title: "Understanding Web3 Fundamentals",
             time: "2 hrs",
             date: "TBA"
          },
          { 
-            title: "Introduction to Smart Contract Development and Web3 Wallets",
+            session: "2",
+            title: "Solidity and wallet fundamentals",
             time: "2 hrs",
             date: "TBA"
          },
@@ -18,12 +20,14 @@
         title: "Week 2", 
         session: [
          { 
+            session: "3",
             title: "Advanced Solidity and Testing Essentials",
             time: "2 hrs",
             date: "TBA"
          },
          { 
-            title: "Integrating Smart Contracts with Frontend using Ethers.js and React",
+            session: "4",
+            title: "Advanced Solidity: Design, Security, and Optimization",
             time: "2 hrs",
             date: "TBA"
          },
@@ -33,12 +37,14 @@
         title: "Week 3", 
         session: [
          { 
-            title: "Intro to Push Protocol, Walkthrough of Notification, Chat, and Video. Creating basic channel and sending notifications through dapp and SC.",
+            session: "5",
+            title: "Interacting with Smart Contracts from the Frontend",
             time: "2 hrs",
             date: "TBA"
          },
          { 
-            title: "Creating a full-fledged  dapp or any dapp that integrates Push Protocol , walkthrough via SDK",
+            session: "6",
+            title: "Exploring Decentralized Communication: Push Notifications, Chat, and Video",
             time: "2 hrs",
             date: "TBA"
          },
@@ -48,12 +54,14 @@
         title: "Week 4", 
         session: [
          { 
-            title: " Initial 30 minutes doubt solving",
+            session: "7",
+            title: "Pushing the Boundaries(Challenge): Building a full-fledged DApp",
             time: "2 hrs",
             date: "TBA"
          },
          { 
-            title: "Building Communities and Web3 Marketing",
+            session: "8",
+            title: "A UI/UX guide to designing an accessible and user-centric product",
             time: "2 hrs",
             date: "TBA"
          },
@@ -63,12 +71,31 @@
         title: "Week 5", 
         session: [
          { 
-            title: "How to build your startup, fund raise, apply for grants",
+            session: "9",
+            title: "Empowering Communities through Web3 Marketing",
             time: "2 hrs",
             date: "TBA"
          },
          { 
-            title: "Q&A , Telling about career opportunities, Mini dapp LIVE coding session",
+            session: "10",
+            title: "How to build your startup, fund raise, apply for grants",
+            time: "2 hrs",
+            date: "TBA"
+         },
+        ] 
+    },
+    { 
+        title: "Week 6", 
+        session: [
+         { 
+            session: "11",
+            title: "Exploring Career Paths",
+            time: "2 hrs",
+            date: "TBA"
+         },
+         { 
+            session: "12",
+            title: "Pitching Day",
             time: "2 hrs",
             date: "TBA"
          },
