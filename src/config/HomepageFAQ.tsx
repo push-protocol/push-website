@@ -148,16 +148,10 @@ export const General = [
     ),
   },
   {
-    question: "Is Push a blockchain? Is Push decentralised?",
+    question: "Is Push decentralised?",
     section: "General",
     renderAnswer: () => (
       <Answer>
-        <Span>
-          Push behaves similar to blockchain but is an open network. This means
-          that data is validated and indexed but doesn't have to be aligned into
-          blocks as the proof of data validity is supplied with the
-          communication payload itself.
-        </Span>
         <Span>
           Push operates on network of nodes called Push Nodes which are
           responsible for the validation, storage, and delivery of notifications
