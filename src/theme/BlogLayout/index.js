@@ -36,7 +36,7 @@ export default function BlogLayout(props) {
         <meta
           property="og:image"
           content={useBaseUrl(
-            require("/static/assets/previews/blogpreview.png").default,
+            require("/static/assets/previews/docspreview.png").default,
             { absolute: true },
           )}
         />
@@ -52,7 +52,7 @@ export default function BlogLayout(props) {
         <meta
           name="twitter:image"
           content={useBaseUrl(
-            require("/static/assets/previews/blogpreview.png").default,
+            require("/static/assets/previews/docspreview.png").default,
             { absolute: true },
           )}
         />
