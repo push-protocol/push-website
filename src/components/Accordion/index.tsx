@@ -1,5 +1,21 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
+import styled from "styled-components";
+import {
+  Button,
+  Content,
+  H2,
+  H3,
+  LinkTo,
+  Image,
+  ItemH,
+  ItemV,
+  Section,
+  Span,
+} from "@site/src/css/SharedStyling";
+
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+
 
 // External Components
 import styled from "styled-components";
@@ -43,6 +59,7 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
     const isMobile = useMediaQuery(device.mobileL);
     const isTablet = useMediaQuery(device.tablet);
 
+
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
@@ -60,6 +77,12 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
                             lineHeight="140%"
                             >
                             {item.title || item.question} 
+                            fontSize="24px"
+                            fontFamily="Glancyr, sans-serif"
+                            fontWeight="400"
+                            lineHeight="140%"
+                            >
+                            {item.title} 
                         </H2>
                         <div>
                             {activeIndex === index ? 
@@ -73,6 +96,7 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
                                 fontSize={isMobile ? "16px" : "19px"}
                                 fontFamily={fontFamily}
                                 fontWeight="400"
+
                                 lineHeight="140%"
                                 padding="0 0 24px 0">
                                 
@@ -91,6 +115,7 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
                     </>)}   
 
                     {activeIndex === index && item.renderAnswer !== undefined && item.renderAnswer()}                                             
+
                 </AccordionSection>
             ))}
         </div>
