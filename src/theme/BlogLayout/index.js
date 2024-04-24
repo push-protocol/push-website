@@ -29,9 +29,7 @@ export default function BlogLayout(props) {
   return (
     <Layout
       title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ""}
-      // title={PageMeta.BLOG.pageTitle}
       description={isBlogMainPage ? PageMeta.BLOG.pageDescription : ""}
-      // description={PageMeta.BLOG.pageDescription}
     >
       {isBlogMainPage && (
         <Head>

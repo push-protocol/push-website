@@ -38,7 +38,7 @@ function BlogListPageMetadata(props) {
   const isBlogOnlyMode = permalink === "/";
   const isBlogMainPage =
     pathname.includes("/page/") || pathname == "/blog/" || pathname == "/blog";
-  const title = isBlogOnlyMode ? blogTitle : siteTitle;
+  const title = isBlogOnlyMode ? : siteTitle : blogTitle;
   return (
     <>
       {!isBlogMainPage && (
