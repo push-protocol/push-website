@@ -1,7 +1,6 @@
+// External Components
 import React, { useState } from 'react';
 import styles from './styles.module.css';
-
-// External Components
 import styled from "styled-components";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 

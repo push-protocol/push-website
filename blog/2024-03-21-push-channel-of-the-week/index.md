@@ -12,7 +12,7 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 <!--truncate-->
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
 
-With more than **170,000** active subscribers and **67 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
+With more than **175,000** active subscribers and **70 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
 
 Every week, the Push team meticulously evaluates over **500+** channels to identify one that stands out the most.
 The initiative also honors our partner channels for their dedication to consistently delivering valuable, real-time notifications to users ensuring a smooth on-chain communication experience.
@@ -66,11 +66,11 @@ You can opt-in to the  Crypto Job List for free (with no gas fees!) from the [C
 
 ### What is the ETH Gas Price Tracker?
 
-The ETH Gas Price Tracker meticulously monitors the highs and lows of Ethereum gas prices and sends periodic push notifications signaling the current gas trend straight to the user's wallet address.
+The ETH Gas Price Tracker meticulously monitors the highs and lows of [Ethereum](https://ethereum.org/en/) gas prices and sends periodic push notifications signaling the current gas trend straight to the user's wallet address.
 
 ### What kinds of notifications does ETH Gas Price Tracker power?
 
-The channel  monitors the Gas price movement and lets you when :
+ETH Gas Price Tracker monitors Ethereum's Gas price movements and keeps you informed when :
 
 - Ethereum gas prices are off the roof📈
 - Prices settled to normal👀
@@ -110,6 +110,56 @@ The channel provides a special feature ✨that enables you to customize your not
 ### How to opt-in to the Aave Channel?
 
 To opt-in to the Aave channel at no cost (with no gas fees!), you can simply visit the [Aave channel profile page](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on opt-in and receive immediate on-chain updates directly linked to your chosen wallet address.
+
+## Week 2: BTC Tracker
+## Push x BTC Tracker: Get the latest Bitcoin price updates delivered to your wallet address with Push!
+
+![Banner celebrating BTC Tracker as April - week 2 channel of week](./image5.webp)
+
+### What is BTC Tracker
+
+The BTC Tracker channel monitors precise price movements of Bitcoin and sends periodic push notifications straight to the subscriber’s wallet address so that you’re in a constant loop with the market!
+
+### What kinds of notifications does the BTC Tracker power?
+
+The channel powers periodic BTC price update notifications which include :
+
+- BTC Price data.💲
+- Hourly, Daily and Monthly BTC Price Action shift in **%**.📈📉
+
+You can even customize your notification preferences by adjusting the ranges 🎚 for:
+
+- BTC price range Threshold in **%**
+- Price alert notification frequency⚡
+
+### How to opt-in to the BTC Tracker Channel?
+
+To opt-in to the BTC Tracker channel, simply visit the [BTC Tracker Profile Page](https://app.push.org/channels/0x03EAAAa48ea78d1E66eA3458364d553AD981871E?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on “**Opt-In**”,
+Sign the transaction ( Gasless 🚫⛽) and that’s it. 
+You are all set!
+
+
+## Week 3: ENS
+## Push x ENS: Push x ENS: Domain expiry alerts delivered straight to your wallet address with Push!
+
+![Banner celebrating ENS as April - week 3 channel of week](./image6.webp)
+
+### What is ENS?
+
+[ENS (Ethereum Name Service)](https://ens.domains/) is a decentralized domain naming system built on top of the Ethereum blockchain. It works similarly to the Domain Name System (DNS) we use for traditional websites on the internet, but instead of translating domain names (like [https://app.push.org/channels](https://app.push.org/channels) to IP addresses, ENS translates human-readable names (like alice.eth) into respective Ethereum addresses.
+
+### What kinds of notifications does the ENS channel power?
+
+On subscribing to the ENS channel with the address that has your actively registered ENS domain, the ENS channel monitors your ENS domain’s expiry dates and starts sending push notifications up to 7 days in advance, before your domain expires.
+
+And the best part, opting-in to the ENS channel is completely FREE and GASLESS!🚫⛽
+
+### How to opt-in to the ENS Channel?
+
+To opt-in to the ENS Channel channel, visit the [ENS Channel channel profile page](https://app.push.org/channels/0x983110309620D911731Ac0932219af06091b6744?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on **opt-in** and receive domain expiry updates directly linked to your chosen wallet address.
+
+
+
 
 
 

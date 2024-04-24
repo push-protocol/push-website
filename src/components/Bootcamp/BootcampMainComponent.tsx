@@ -17,10 +17,13 @@ import BRBParallax from "@site/src/components/BRB/BRBParallax";
 import { PartnerBounties } from "@site/src/components/BRB/BRBPartnerBounties";
 import { Partners } from "@site/src/components/BRB/BRBPartners";
 import Schedules from "@site/src/components/BRB/BRBSchedules";
-import ImageHolder from "@site/src/components/ImageHolder";
+// import ImageHolder from "@site/src/components/ImageHolder";
 import { ChatComponent } from "@site/src/components/PushChat/PushChatComponent";
 import {
   Button,
+  Content,
+  H2,
+  H3,
   Image,
   ItemH,
   ItemV,
@@ -28,22 +31,30 @@ import {
   Span,
 } from "@site/src/css/SharedStyling";
 import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import { BRBAlert } from "./BRBAlert";
+import Accordion from "../Accordion"
+import BootcampCurriculum from "./BootcampCurriculum";
+import { bootcampFaq } from "@site/src/config/BootcampFaq";
+import { bootcampCards } from "@site/src/config/BootcampCard";
+
+// import { BRBAlert } from "./BRBAlert";
 
 // Import Assets
 import ArrowIcon from "@site/static/assets/website/brb/ArrowIcon.svg";
 import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
+import Query from "@site/static/assets/website/bootcamp/query.svg";
+import Github from "@site/static/assets/website/bootcamp/github-dis.svg";
 import ImageBRB from "@site/static/assets/website/brb/Image-BRB.png";
 import MobileBRB from "@site/static/assets/website/brb/Mobile-BRB.png";
 import PlaygroundBg from "@site/static/assets/website/brb/PlaygroundBg.png";
+import FirstImage from "@site/static/assets/website/bootcamp/bg-image1.png";
 import X from "@site/static/assets/website/brb/X-BRB.svg";
 import PushLogo from "@site/static/assets/website/brb/pushIcon.svg";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineGithub } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
-import BRBOnline from "./BRBOnline";
+// import BRBOnline from "./BRBOnline";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -111,10 +122,12 @@ const defaultMobileMenuState = {
   // add next [index]: false for new main Nav menu item
 };
 
-export const BRBMainComponent = () => {
+export const BootcampMainComponent = () => {
   const d = new Date();
   let year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
+  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
@@ -202,19 +215,39 @@ export const BRBMainComponent = () => {
     window.open("/", "_self");
   };
 
+  const BootcampFooter = {
+  first: [
+    {
+      text: "Ask our Ai for any Push Queries",
+      textColor: "#F576F8",
+      href: "https://app.push.org/chat",
+      iconhref: "ArrowIcon",
+      mainicon: "<Query className='same' />"
+    }
+  ],
+}
+
+  
+
+ 
+
   return (
-    <BrbWrapper background="#000">
+    <BootcampWrapper background="#000">
       {/* header style */}
+      <BootcampBG>
       <StyledHeader
         showMobileMenu={showMobileMenu}
         className={`header ${headerClass}`}
       >
-        <BRBAlert
+        {/* <BRBAlert
           isAlertVisible={isAlertVisible}
           setIsAlertVisible={setIsAlertVisible}
-        />
+        /> */}
 
-        <Section padding="0 0 0 0">
+        <Section>
+          {/* <Content
+            padding="0px 0px 0px 0px" 
+            alignSelf="center"> */}
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop flex="initial">
               <PushLogoBlackContainer className="headerlogo" flex="initial">
@@ -225,7 +258,7 @@ export const BRBMainComponent = () => {
                 <Span
                   fontSize="24px"
                   fontWeight="400"
-                  style={{fontFamily: "Glancyr" }}
+                  style={{ fontFamily: "Glancyr" }}
                 >
                   #BRB
                 </Span>
@@ -254,45 +287,27 @@ export const BRBMainComponent = () => {
                 className="navigationMenu"
                 showMobileMenu={isMobileMenuOpen}
               >
-                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
-                  <NavigationMenuHeader>
-                    <Span
-                      fontSize="18px"
-                    >
-                      Partners
-                    </Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem> */}
-
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("bounties")}
+                  onClick={() => handleSectionNavigation("ready")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">Bounties</Span>
+                    <Span fontSize="18px">Why BRB Bootcamp?</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("schedule")}
+                  onClick={() => handleSectionNavigation("curriculum")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">Schedule</Span>
+                    <Span fontSize="18px">Curriculum</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("online")}
+                  onClick={() => handleSectionNavigation("faq")}
                 >
                   <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Online</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("playground")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Chat</Span>
+                    <Span fontSize="18px">FAQ</Span>
                   </NavigationMenuHeader>
                 </NavigationMenuItem>
 
@@ -336,9 +351,10 @@ export const BRBMainComponent = () => {
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
+          {/* </Content> */}
         </Section>
       </StyledHeader>
-
+                  
       <ItemTop>
         <ItemV
           id="new"
@@ -346,15 +362,18 @@ export const BRBMainComponent = () => {
         >
           <MemberImage
             className="pushMissingSvg"
-            src={isMobile ? MobileBRB : ImageBRB}
-            srcSet={isMobile ? MobileBRB : ImageBRB}
+            src={
+                require(
+                `@site/static/assets/website/bootcamp/bootcamp.png`,
+                ).default
+            }
+            srcSet={`${require(`@site/static/assets/website/bootcamp/bootcamp@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/bootcamp@3x.png`).default} 3x, ${require(`@site/static/assets/website/bootcamp/bootcamp@4x.png`).default} 4x`}
+            alt={'BRB Bootcamp'}
           />
         </ItemV>
 
         <NavText id="elems0">
-          Get ready for an epic tech showdown across 18 cities in India, where
-          amazing minds come together to solve one big problem, with a chance to
-          win over $50,000 USD in prizes!
+          An 6-week virtual program designed to teach participants about smart contracts, Web3 UX, building a startup, and other aspects of the Web3 ecosystem.
         </NavText>
 
         <NavButtons id="elems" ref={elem0}>
@@ -365,9 +384,9 @@ export const BRBMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="400"
-            onClick={() => handleSectionNavigation("bounties")}
+            onClick={() => openLink("https://zv9atndluia.typeform.com/to/ToIpDLT2")}
           >
-            Register Now
+            Apply Now
           </ButtonItem>
           <ButtonBar
             borderRadius="24px"
@@ -376,120 +395,314 @@ export const BRBMainComponent = () => {
             fontSize="18px"
             padding="16px 32px"
             fontWeight="400"
-            onClick={() => handleSectionNavigation("playground")}
+            onClick={() => handleSectionNavigation("faq")}
           >
-            Join the conversation
+             Learn More
           </ButtonBar>
         </NavButtons>
       </ItemTop>
+      </BootcampBG>
 
-      <BRBParallax />
+      <Section>
+        <Content className="fluid" overflow="visible" padding={isMobile ? "0px 0px" : "0px 0px 100px 0px"}>
 
-      <PartnersDiv id="partners">
-        <Partners />
-      </PartnersDiv>
+          <Image
+              src={require(`@site/static/assets/website/bootcamp/bg-image2.png`).default}
+              srcSet={`${require(`@site/static/assets/website/bootcamp/bg-image2@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/bg-image2@3x.png`).default} 3x`}
+              alt={`Image showing BRB Chat is powered by Push Chat`}
+          />
+        </Content>
+      </Section>
 
-      <CommunityPartners />
+      <Section id="ready">
+        <Content>
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Ready, Set, Grow</H2>
 
-      <BountyDiv id="bounties">
-        <PartnerBounties />
-      </BountyDiv>
+            <H3 
+                color="#FFF"
+                fontSize={isMobile ? "14px" : "20px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="300"
+                margin="8px 0 0 0"
+                lineHeight="normal"
+            >Join us to learn how to build multidimensional projects in instructor-led sessions. {!isMobile && <br />} Registration for the 2024 cohort is open from April 30th</H3>
 
-      <ScheduleDiv id="schedule">
-        <Schedules />
-      </ScheduleDiv>
+            <ItemH flexDirection={isMobile && 'column'} margin={"64px 0 0 0"} gap={isMobile ? "16px" : "32px"}>
 
-      <BRBOnlineDiv id="online">
-        <BRBOnline />
-      </BRBOnlineDiv>
+            {bootcampCards?.map((item) => (
+              <CardItem>
+                <CardImage
+                  src={
+                    require(
+                      `@site/static/assets/website/bootcamp/${item.href}.png`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/bootcamp/${item.href}@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/${item.href}@3x.png`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
 
-      <PlaygroundDiv id="playground">
-        <ChatComponent />
-      </PlaygroundDiv>
+                 <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "24px" : "28px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="400"
+                    margin="12px 0 0 0"
+                >{item.title}</H3>
 
-      <ItemFooter id="support">
-        <ItemH gap="28px">
-          <ItemV
-            minWidth="280px"
-            background="#000"
-            padding="20px 48px"
-            gap="14px"
-            borderRadius="48px"
-            background="#2a2a39"
-          >
-            <SpanContent
-              fontSize="112px"
-              fontWeight="400"
-              color="#E64DE9"
-              letterSpacing="0.01"
-            >
-              Drop us a GM!
-            </SpanContent>
-          </ItemV>
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "18px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign="center"
+                    fontWeight="300"
+                    margin="12px 0 0 0"
+                    lineHeight="normal"
+                >{item.subtitle}</H3>
+            </CardItem>
+            ))}
 
-          <ItemV gap="28px" minWidth="280px" alignItems="stretch">
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
-            >
-              <i>
-                <Discord />
-              </i>
+          
+            </ItemH>
 
-              <Span fontSize="36px" fontWeight="400" color="#6F8BEE">
-                24x7 Support on Discord
-              </Span>
+        </Content>
+      </Section>
 
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
+      <Section id="curriculum">
+        <Content>
 
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://twitter.com/pushprotocol")}
-            >
-              <i>
-                <X className="discord" />
-              </i>
+              <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Curriculum</H2>
+            
+            <BootcampCurriculum />
+        </Content>
+      </Section>
 
-              <Span fontSize="36px" fontWeight="400" color="#63BFF3">
-                Updates & Announcements
-              </Span>
+       <Section>
+        <Content>
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="400"
+            >Bootcamp Rewards</H2>
 
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
-          </ItemV>
-        </ItemH>
+            <H3 
+                color="#FFF"
+                fontSize={isMobile ? "14px" : "20px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign="center"
+                fontWeight="300"
+                margin="8px 0 0 0"
+            >Beyond unmeasurable learning, you will also earn a NFT Certificate, Earn Push Tokens, Rewards and Social badges</H3>
+
+
+            <RewardsImage
+                  src={
+                    require(
+                      `@site/static/assets/website/bootcamp/rewards.png`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/bootcamp/rewards@2x.png`).default} 2x, ${require(`@site/static/assets/website/bootcamp/rewards@3x.png`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
+
+        </Content>
+      </Section>  
+
+      <Section id="faq">
+        <Content>
+      
+          <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
+            <H2 
+                color="#FFF"
+                fontSize={isMobile ? "32px" : "46px"}
+                fontFamily="Glancyr, sans-serif"
+                textAlign={isLaptop && "center"}
+                margin={isLaptop && "0 auto"}
+                fontWeight="400"
+            >FAQ</H2>
+
+          <AccordionGrid>
+            <Accordion items={bootcampFaq} fontFamily="Glancyr, sans-serif" />
+          </AccordionGrid>
+          </ItemH>
+        </Content>
+      </Section>
+
+      <Section>
+        <Content>
+          <ItemH gap={isTablet ? "24px" : "175px"} flexDirection={isTablet && 'column'}>
+              <ItemV>
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "46px"}
+                    fontFamily="Glancyr, sans-serif"
+                    // textAlign="left"
+                    fontWeight="400"
+                    margin={!isLaptop ? "0 auto 0 0" : "0 auto"}
+                >Ready to Join?</H2>
+
+                <H3 
+                    color="#FFF"
+                    fontSize={isMobile ? "14px" : "20px"}
+                    fontFamily="Glancyr, sans-serif"
+                    textAlign={isLaptop && "center"}
+                    fontWeight="300"
+                    margin={!isLaptop ? "8px 0 0 0"  : "12px auto 0 auto"}
+                >Apply now to be one of the 80. Dive into a journey of learning, connecting, and rewarding experiences.</H3>
+              </ItemV>
+
+
+              <ButtonItem
+                borderRadius="24px"
+                background="#E64DE9"
+                border="1px solid #FC6DFF"
+                fontSize="18px"
+                padding="16px 32px"
+                fontWeight="400"
+                width={isMobile && "250px !important"}
+                onClick={() => openLink("https://zv9atndluia.typeform.com/to/ToIpDLT2")}
+
+              >
+                Apply Now
+              </ButtonItem>
+          </ItemH>
+        </Content>
+      </Section>
+
+        <ItemFooter id="support">
+          <ItemH gap={isMobile ? "24px" : "28px"}>
+            <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://app.push.org/chat/0x71Ffa5771E8019787190D098586EFe02026a3c8C")}
+              >
+                <i>
+                  <Query className='same' />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#F576F8">
+                  Ask our AI for any Push Queries
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://github.com/orgs/push-protocol/discussions")}
+              >
+                <i>
+                  <AiOutlineGithub color='#fff' size={isMobile ? '55': '75'}  />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#3ADB84">
+                  Github Discussions
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+            </ItemV>
+                  
+
+
+
+
+
+            <ItemV gap={isMobile ? "24px" : "28px"} minWidth="280px" alignItems="stretch">
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
+              >
+                <i>
+                  <Discord className='expand' />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#6F8BEE">
+                  24x7 Support on Discord
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+
+              <FooterBar
+                style={{ cursor: "pointer" }}
+                onClick={() => openLink("https://twitter.com/pushprotocol")}
+              >
+                <i>
+                  <X className="discord expand" />
+                </i>
+
+                <Span fontSize={isMobile ? "24px" : "36px"} fontWeight="400" color="#63BFF3">
+                  Updates & Announcements
+                </Span>
+
+                <Image
+                  width={65}
+                  src={
+                    require(
+                      `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                  alt={`Image showing BRB Chat is powered by Push Chat`}
+                />
+              </FooterBar>
+            </ItemV>
+          </ItemH>
       </ItemFooter>
 
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
           © {year || ""} Push. All rights reserved.
-          
         </Span>
       </BottomGrad>
-    </BrbWrapper>
+    </BootcampWrapper>
   );
 };
 
-const MemberImage = styled(ImageHolder)`
+const MemberImage = styled(Image)`
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -497,7 +710,7 @@ const MemberImage = styled(ImageHolder)`
 
 const ItemTop = styled.main`
   width: 100%;
-  margin: 261px 0 261px 0;
+  margin: 323px 0 0 0;
 
   @media ${device.mobileL} {
     width: 100%;
@@ -505,12 +718,37 @@ const ItemTop = styled.main`
   }
 `;
 
+const BootcampBG = styled.div`
+  flex-direction: column;
+  background-image: url(${FirstImage});
+  background-position: top;
+//   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "Strawford", sans-serif;
+  width: 100%;
+  // width: 1536px;
+//   height: 700px;
+  margin: 0 auto;
+  @media (max-width: 1650px)  {
+    width: 100%;
+    background-size: cover;
+  }
+  @media ${device.mobileL} {
+    width: 100%;
+  }
+`;
+
+
 const ButtonItem = styled(Button)`
-  vertical-align: middle;
   font-size: 18px;
-  font-style: normal;
+  font-weight: 400;
   font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
+  line-height: 18px;
+  padding: 16px 64px 22px 64px;
+  border-radius: 24px; 
+
   &:hover {
     box-shadow: 0px 4px 12px 0px rgba(230, 77, 233, 0.5);
     border: 1px solid transparent;
@@ -527,8 +765,15 @@ const ButtonItem = styled(Button)`
 `;
 
 const ButtonBar = styled(Button)`
+  font-size: 18px;
   letter-spacing: 0.03em;
   font-family: Glancyr, sans-serif;
+  padding: 16px 32px 22px 32px;
+  line-height: 18px;
+  border-radius: 24px; 
+  font-weight: 400;
+
+
   &:hover {
     border: 1px solid #e64de9;
   }
@@ -537,7 +782,7 @@ const ButtonBar = styled(Button)`
   }
 `;
 
-const BrbWrapper = styled(ItemV)`
+const BootcampWrapper = styled(ItemV)`
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -548,7 +793,7 @@ const BrbWrapper = styled(ItemV)`
   font-family: Glancyr, sans-serif;
 
   & .pushMissingSvg {
-    width: 900px;
+    width: 680px;
     @media ${device.tablet} {
       width: 50%;
     }
@@ -738,6 +983,21 @@ const MenuTop = styled(ItemV)`
     justify-content: space-between;
     align-items: center;
   }
+`;
+
+const RewardsImage = styled(Image)`
+      width: 577px;
+      margin: 64px auto 0 auto;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
+`;
+
+const CardImage = styled(Image)`
+      width: 90px;
+      height: 90px;
+
 `;
 
 const PushLogoBlackContainer = styled(ItemV)`
@@ -956,6 +1216,10 @@ const FooterBar = styled.div`
     flex-wrap: wrap;
   }
 
+  @media ${device.mobileL} {
+    gap: 6px;
+  }
+
   & ${Span} {
     max-width: 312px;
 
@@ -972,7 +1236,16 @@ const FooterBar = styled.div`
   }
 
   & i {
-    & svg {
+    & .same {
+      max-width: 75px !important;
+      min-width: 75px !important;
+
+      @media ${device.mobileL} {
+        max-width: 52px !important;
+        min-width: 52px !important;
+      }
+    }
+    & .expand {
       transform: scale(1.8) !important;
       margin-right: 24px;
 
@@ -1016,4 +1289,30 @@ const BottomGrad = styled.div`
   align-items: flex-end;
   padding-bottom: 57px;
   box-sizing: border-box;
+`;
+
+
+const CardItem = styled(ItemV)`
+    background: #2A2A38;
+    padding: 64px 32px;
+    border-radius: 48px;
+    justify-content: flex-start;
+
+    @media ${device.tablet} {
+      padding: 32px 16px;
+    }
+
+    @media ${device.mobileL} {
+      padding: 64px 32px;
+    }
+`;
+
+const AccordionGrid = styled.div`
+    max-width: 877px;
+    min-width: 877px;
+
+  @media ${device.laptop} {
+    max-width: 100%;
+    min-width: 100%;
+  }
 `;
