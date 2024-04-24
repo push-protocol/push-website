@@ -34,32 +34,16 @@ function BlogListPageMetadata(props) {
   const { blogDescription, blogTitle, permalink } = metadata;
   const location = useLocation();
   const pathname = location.pathname;
+
   const isBlogOnlyMode = permalink === "/";
-
   const isBlogMainPage =
-    pathname.includes("/page/") || pathname == "/blog" || pathname == "/blog";
-  const title = isBlogMainPage ? PageMeta.BLOG.pageTitle : siteTitle;
-  const description = isBlogMainPage
-    ? PageMeta.BLOG.pageDescription
-    : blogDescription;
-
-  console.log(
-    title,
-    description,
-    // blogTitle,
-    // siteTitle,
-    "new new",
-  );
+    pathname.includes("/page/") || pathname == "/blog/" || pathname == "/blog";
+  const title = isBlogOnlyMode ? blogTitle : siteTitle;
   return (
     <>
-      {/* <PageMetadata
-        title={title}
-        description={description}
-        image={useBaseUrl(
-          require("/static/assets/previews/blogpreview.png").default,
-          { absolute: true },
-        )}
-      /> */}
+      {!isBlogMainPage && (
+        <PageMetadata title={title} description={blogDescription} />
+      )}
       <SearchMetadata tag="blog_posts_list" />
     </>
   );
