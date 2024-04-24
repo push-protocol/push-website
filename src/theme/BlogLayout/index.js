@@ -35,10 +35,13 @@ export default function BlogLayout(props) {
         />
         <meta
           property="og:image"
-          content={useBaseUrl(
-            require("/static/assets/previews/blogpreview.png").default,
-            { absolute: true },
-          )}
+          // content={useBaseUrl(
+          //   require("/static/assets/previews/blogpreview.png").default,
+          //   { absolute: true },
+          // )}
+          content={
+            require("@site/static/assets/previews/blogpreview.png").default
+          }
         />
 
         {/* <!-- Twitter Meta Tags --> */}
@@ -51,10 +54,13 @@ export default function BlogLayout(props) {
         />
         <meta
           name="twitter:image"
-          content={useBaseUrl(
-            require("/static/assets/previews/blogpreview.png").default,
-            { absolute: true },
-          )}
+          // content={useBaseUrl(
+          //   require("/static/assets/previews/blogpreview.png").default,
+          //   { absolute: true },
+          // )}
+          content={
+            require("@site/static/assets/previews/blogpreview.png").default
+          }
         />
         <script type="application/ld+json">
           {JSON.stringify({
