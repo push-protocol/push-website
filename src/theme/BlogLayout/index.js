@@ -23,7 +23,6 @@ export default function BlogLayout(props) {
     <Layout
       title={PageMeta.BLOG.pageTitle}
       description={PageMeta.BLOG.pageDescription}
-      showNavbar={false}
     >
       <Head>
         {/* <!-- Facebook Meta Tags --> */}

@@ -52,14 +52,14 @@ function BlogListPageMetadata(props) {
   );
   return (
     <>
-      <PageMetadata
+      {/* <PageMetadata
         title={title}
         description={description}
         image={useBaseUrl(
           require("/static/assets/previews/blogpreview.png").default,
           { absolute: true },
         )}
-      />
+      /> */}
       <SearchMetadata tag="blog_posts_list" />
     </>
   );
@@ -95,12 +95,10 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
-      <div>
-        <BlogLayout></BlogLayout>
-      </div>
-
-      <BlogListPageMetadata {...props} />
-      <BlogListPageContent {...props} />
+      <BlogLayout>
+        <BlogListPageMetadata {...props} />
+        <BlogListPageContent {...props} />
+      </BlogLayout>
     </HtmlClassNameProvider>
   );
 }
