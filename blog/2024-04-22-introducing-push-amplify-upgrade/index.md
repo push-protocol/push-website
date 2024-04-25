@@ -11,7 +11,8 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 
 ### Notifications get a facelift with Channel History and Profile Page:
 
-Push users can soon expect improved **channel history**, allowing for easier access to past conversations and content. Users can review past notifications and stay updated on important alerts from their favorite DeFi protocols and NFT brands.
+Push users can soon expect improved **channel history**, allowing for easier access to past conversations and content. 
+Users can review past notifications and stay updated on important alerts from their favorite DeFi protocols and NFT brands.
 
 ![Push Profile Pages and History GIF](./image3.gif)
 <!-- video for channel profile -->
@@ -20,9 +21,11 @@ Push users can soon expect improved **channel history**, allowing for easier acc
 
 ### Push Group Chat UI & Hyperscalability:
 
-The revamped Push Protocol group chat takes community management for NFT projects to the next level. It seamlessly integrates token gating, allowing access only to holders of your specific NFT. This fosters an exclusive space for discussions and collaboration. But it doesn't stop there! Push Protocol's partnership with [Guild.xyz](https://guild.xyz/explorer) allows you to define additional access tiers within the chat using Guild roles. Imagine VIP channels for early adopters or dedicated areas for high-volume traders. Plus, integration with [Unstoppable Domains](https://unstoppabledomains.com/) lets users join using their human-readable addresses (like **yourname.nft**) for a smooth and familiar experience. This revamped group chat empowers you to cultivate a thriving NFT community with targeted communication and a strong sense of belonging.
+The revamped Push Protocol group chat takes community management for NFT projects to the next level. It seamlessly integrates token gating, allowing access only to holders of your specific NFT. This fosters an exclusive space for discussions and collaboration. But it doesn't stop there! Push Protocol's partnership with [Guild.xyz](https://guild.xyz/explorer) allows you to define additional access tiers within the chat using Guild roles. Imagine VIP channels for early adopters or dedicated areas for high-volume traders.
 
-![Push Chat Infographic](./image1.webp)
+Plus, integration with [Unstoppable Domains](https://unstoppabledomains.com/) lets users join using their human-readable addresses (like **yourname.nft**) for a smooth and familiar experience. This revamped group chat empowers you to cultivate a thriving NFT community with targeted communication and a strong sense of belonging.
+
+![Push Chat Infographic](./image1.webp "Easily create and manage our NFT communities with Push Chat")
 <!-- push group chat diagram -->
 
 ## Push for Web 3 Builders
@@ -37,7 +40,7 @@ The Push Network will comprise three different types of Nodes. This includes:
 
 The network is guarded by a smart contract to maintain node staking and slashing. This is where the [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ "$PUSH at Coinmarketcap.com") token is used.
 
-![Push Delivery Nodes infograpic](./image2.webp)
+![Push Delivery Nodes infograpic](./image2.webp "Push Delivery Nodes")
 <!-- delivery node reused graphic -->
 
 ### Push DAO -  A Decentralized Push Protocol Powerhouse:
@@ -64,16 +67,17 @@ Push DAO is a community-driven force, empowering Push Protocol's growth and futu
 1. **Staking for Push Validator Nodes**
 Push Validator Nodes are going to be the computational backbone of the Push Network. They will be responsible for validating the network and ensuring that the network is secure and reliable. They are also responsible for penalizing and kicking out bad actors from the network.
 
-Running a Push Validator Nodes will require staking a certain amount of $PUSH tokens along with having a domain name and a server to run the node.
+  Running a Push Validator Node will require staking a certain amount of [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ "$PUSH at Coinmarketcap.com") tokens along with having a domain name and a server to run   the node.
 
-1. **Staking for Push Storage Nodes**
+2. **Staking for Push Storage Nodes**
 Push Storage Nodes are meant to store the data of the Push Network. They will be responsible for storing the data of the network and ensuring that the data is available to the network.
 
-Running a Push Storage Nodes will also require staking a certain amount of [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ "$PUSH at Coinmarketcap.com").
+  Running a Push Storage Node will also require staking a certain amount of [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ "$PUSH at Coinmarketcap.com").
 
-1. **Staking for Push Delivery Nodes**
+3. **Staking for Push Delivery Nodes**
 Push Delivery Nodes serve as a light node that enables the last mile delivery of notifications to the end users. Running them will also have staking requirements.
-2. **Stake for Writing API Calls on Push Node**
+
+4. **Stake for Writing API Calls on Push Node**
 Having a trustless and decentralized network requires a mechanism to ensure that the network is not spammed with unnecessary API calls. To ensure this, a staking mechanism requiring [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ "$PUSH at Coinmarketcap.com") will be introduced for writing API calls on the Push Network for sending notifications.
 
 This is just the beginning of **Push Tokenomics V2** and we are super excited to unveil even more exciting utilities as we progress- Join the Push Fam community on [Twitter](https://x.com/pushprotocol) and [Discord](https://discord.com/invite/pushprotocol) for more updates!
