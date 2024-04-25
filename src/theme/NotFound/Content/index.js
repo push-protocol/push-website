@@ -33,7 +33,6 @@ import {
   DocsSidebarProvider,
   useDocRootMetadata,
 } from "@docusaurus/theme-common/internal";
-import generateSidebar from "@site/plugins/generate-docusaurus-sidebar";
 
 export default function NotFoundContent({ className }) {
   const { siteConfig } = useDocusaurusContext();
@@ -60,38 +59,15 @@ export default function NotFoundContent({ className }) {
   } = useThemeConfig();
 
   // console.log(sidebars, pushNotificationSidebarItems, "sidebarssss");
-  const sidebarContent = generateSidebar({
-    baseDir: "../../../sidebars",
-    sourceDir: "",
-  });
 
   // console.log(id, "iddd");
   return (
     <StyledContainer>
-      <div>
-        {/* Render the sidebar content */}
-        <ul>
-          {sidebarContent.map((item, index) => (
-            <li key={index}>
-              {item.type === "category" ? (
-                <div>
-                  <h3>{item.label}</h3>
-                  <ul>
-                    {item.items.map((subItem, subIndex) => (
-                      <li key={subIndex}>{subItem}</li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <div>{item.id}</div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <aside className={"PushDocs"}>
-        <DocSidebar sidebar={sidebars} path="/"></DocSidebar>
+        <DocSidebar
+          sidebar={sidebars.pushNotificationSidebar}
+          path="/"
+        ></DocSidebar>
       </aside>
       {/* <aside
         // className={"newDocs"}

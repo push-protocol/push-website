@@ -16,7 +16,8 @@
 //
 // sidebar_category: the name of the category
 // sidebar_category_order: the sort order of the category
-//
+
+// eslint-disable-next-line
 const fs = require("fs");
 const path = require("path");
 

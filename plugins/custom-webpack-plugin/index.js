@@ -1,17 +1,19 @@
 // eslint-disable-next-line
-const webpack = require('webpack');
-const fs = require('fs');
-const path = require('path');
-
+const webpack = require("webpack");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = function (context, options) {
   // Read the file
-  const filePath = path.join(context.siteDir, '/docs/roadmap/01-Push-Roadmap.mdx');
+  const filePath = path.join(
+    context.siteDir,
+    "/docs/roadmap/01-Push-Roadmap.mdx",
+  );
 
   // Get the last modified date of the file
   const stats = fs.statSync(filePath);
   const lastUpdated = stats.mtime;
-  
+
   return {
     name: "custom-docusaurus-plugin",
     // eslint-disable-next-line
@@ -40,9 +42,15 @@ module.exports = function (context, options) {
           ],
         },
         plugins: [
-          new webpack.DefinePlugin({ 
-            LAST_UPDATED: JSON.stringify(lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
-          })
+          new webpack.DefinePlugin({
+            LAST_UPDATED: JSON.stringify(
+              lastUpdated.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }),
+            ),
+          }),
         ],
       };
     },

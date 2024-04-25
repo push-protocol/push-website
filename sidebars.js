@@ -20,16 +20,16 @@ const guides = generateSidebar({
   sourceDir: "",
 });
 
-module.exports = {
-  //   docs: [
-  //     "mdx",
-  //     { Intro: ["doc2"] },
-  //     {
-  //       "More Docs": ["doc1", "doc3"],
-  //     },
-  //   ],
-  guides,
-};
+// module.exports = {
+//   //   docs: [
+//   //     "mdx",
+//   //     { Intro: ["doc2"] },
+//   //     {
+//   //       "More Docs": ["doc1", "doc3"],
+//   //     },
+//   //   ],
+//   guides,
+// };
 
 const sidebars = {
   pushNotificationSidebar: [
