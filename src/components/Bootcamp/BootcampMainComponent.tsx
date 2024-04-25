@@ -613,7 +613,7 @@ export const BootcampMainComponent = () => {
 
               <FooterBar
                 style={{ cursor: "pointer" }}
-                onClick={() => openLink("https://github.com/orgs/push-protocol/discussions")}
+                onClick={() => openLink("https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp")}
               >
                 <i>
                   <AiOutlineGithub color='#fff' size={isMobile ? '55': '75'}  />
