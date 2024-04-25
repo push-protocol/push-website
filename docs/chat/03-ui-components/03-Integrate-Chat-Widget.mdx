@@ -1,25 +1,26 @@
 ---
-id: docs-chat-ui-components-integrate-support-bot-v2
-title: Integrate Support Bot V2
+id: docs-chat-ui-components-integrate-chat-widget
+title: Integrate Chat Widget
 hide_title: true
-slug: ./integrate-support-bot-v2
+slug: ./integrate-chat-widget
 displayed_sidebar: pushChatSidebar
 sidebar_position: 3
-image: "/assets/docs/previews/docs_chat_ui_components--integrate_support_bot_v2.png"
+image: "/assets/docs/previews/docs_chat_ui_components--integrate_chat_widget.png"
 ---
 
-# Integrate Support Bot V2
+# Integrate Chat Widget V2
 
 
 
-The Support Chat V2 component is an upgraded version that offers enhanced functionality and is now integrated into the ChatUIProvider. It inherits all the features of the previous support chat, allowing users to initiate conversations with any wallet or group seamlessly. Additionally, it introduces support for group chats, expanding its versatility and usability.
 
-With its integration into the ChatUIProvider, using the Support Chat V2 component is as straightforward as any other chat component. Simply wrap it with the ChatUIProvider parent wrapper to leverage its capabilities and provide users with an intuitive and powerful chat experience.
+Introducing the ChatWidget: a compact yet comprehensive chat experience condensed into widget form , allowing users to initiate conversations with any wallet or group seamlessly.
 
-![Support chat component using Push Chat protocol](/assets/docs/chat/ui-components/integrate-support-bot-v2/support-chat-v2-preview.png)
+With its integration into the ChatUIProvider, using the Chat Widget component is as straightforward as any other chat component. Simply wrap it with the ChatUIProvider parent wrapper to leverage its capabilities and provide users with an intuitive and powerful chat experience.
+
+![Chat Widget using Push Chat protocol](/assets/docs/chat/ui-components/integrate-chat-widget/chat-widget-preview.png)
 
 <head>
-  <title>Integrate Support Bot V2 | UI Components | Push Chat | Push Documentation</title>
+  <title>Integrate Chat Widget V2 | UI Components | Push Chat | Push Documentation</title>
 </head>
 
 import Tabs from "@theme/Tabs";
@@ -92,20 +93,20 @@ export function App({ Component }) {
 
 ## Usage
 
-Import the SDK package in the component file where you want to render the support chat v2 component.
+Import the SDK package in the component file where you want to render the chat widget component.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
   ```typescript
-  import { SupportChatV2, ChatUIProvider } from "@pushprotocol/uiweb";
+  import { ChatWidget, ChatUIProvider } from "@pushprotocol/uiweb";
 
   // Push Chat is interoperable and you can receive it on any of the supported platforms
   // We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app 
   // https://app.push.org/#receive-notifications
    <ChatUIProvider>
-     <SupportChatV2
-    supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address, this belongs to you
+     <ChatWidget
+    chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d"
   />
     </ChatUIProvider>
   
@@ -118,9 +119,9 @@ Import the SDK package in the component file where you want to render the suppor
 
 | Prop            | Type          | Default      | Remarks |
 |-----------------|---------------|--------------|---------|
-| _ `supportAddress`_  | `string`    | `-`          | recipient's address or chatId  |
+| _ `chatId`_  | `string`    | `-`          | recipient's address or chatId  |
 | `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title. |
-| `welcomeComponent`    | `React.ReactNode`      | - | Custom React component that will be displayed if wallet is not connected. This is the welcome screen of the support chat v2 component.                                                                                                     |
+| `welcomeComponent`    | `React.ReactNode`      | - | Custom React component that will be displayed if wallet is not connected. This is the welcome screen of the chat widget component.                                                                                                     |
 
 > Note: Parameters _`in this style`_ are mandatory.
 > Note: Refer [ChatUIProvider](/docs/chat/ui-components/Advanced/ChatUIProvider/) for details on its paramters.
@@ -134,13 +135,13 @@ You can also customize the chat according to your preference —
 
   ```typescript
   import React from 'react';
-  import { SupportChatV2, ChatUIProvider  } from '@pushprotocol/uiweb';
+  import { ChatWidget, ChatUIProvider  } from '@pushprotocol/uiweb';
 
   
     return (
       <ChatUIProvider>
-     <SupportChatV2
-    supportAddress="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //support address, this belongs to you
+     <ChatWidget
+    chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //chatId or recipient's address
      welcomeComponent={<div style={{display: "flex",flexDirection:'column',border:'1px solid black',overflow:'auto',height:'100%',width:'100%'}}>
             <p>Welcome</p>
             </div}
@@ -160,15 +161,15 @@ customPropMinimized="true"
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
-// import { ChatUIProvider, SupportChatV2, lightChatTheme } from @pushprotocol/uiweb;
+// import { ChatUIProvider, ChatWidget, lightChatTheme } from @pushprotocol/uiweb;
 function App(props) {
-const customisedSupportChatTheme: IChatTheme = {
+const customisedChatWidgetTheme: IChatTheme = {
  ...lightChatTheme,
   border: {
     ...lightChatTheme.border,
     chatProfile: '1px solid #E4E8EF',
     messageInput: '1px solid #E4E8EF',
-    supportChat:'1px solid #E4E8EF',
+    chatWidget:'1px solid #E4E8EF',
     chatReceivedBubble:'1px solid #E4E8EF',
   }
 };
@@ -187,9 +188,9 @@ const customisedSupportChatTheme: IChatTheme = {
       <p />
      
 
-      <ChatUIProvider theme={customisedSupportChatTheme}>
-     <SupportChatV2
-    supportAddress="pushai.eth" //support address, this belongs to you
+      <ChatUIProvider theme={customisedChatWidgetTheme}>
+     <ChatWidget
+    chatId="pushai.eth" //chatId or recipient's address
   />
     </ChatUIProvider>
     </>
