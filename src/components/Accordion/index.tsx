@@ -1,7 +1,10 @@
+// External Components
 import React, { useState } from 'react';
-
 import styles from './styles.module.css';
 import styled from "styled-components";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+
+// Internal Components
 import {
   Button,
   Content,
@@ -14,21 +17,31 @@ import {
   Section,
   Span,
 } from "@site/src/css/SharedStyling";
+import useMediaQuery from "@site/src/hooks/useMediaQuery";
 
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+// Internal Configs
+import { device } from "@site/src/config/globals";
 
 
 interface AccordionItem {
-    title: string;
-    content: string;
+    title?: string;
+    question?: string;
+    content?: string;
+    link?: string;
+    renderAnswer?: string;
 }
 
 interface AccordionProps {
     items: AccordionItem[];
+    fontFamily?: string;
+    firstOpen?: boolean;
+    textColor?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ items }) => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen, textColor }) => {
+    const [activeIndex, setActiveIndex] = useState<number | null>(firstOpen === false ? null : 0);
+    const isMobile = useMediaQuery(device.mobileL);
+    const isTablet = useMediaQuery(device.tablet);
 
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -41,41 +54,43 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
                     <AccordionParent onClick={() => toggleAccordion(index)}>
                         <H2
                             color="#FFF"
-                            fontSize="24px"
-                            fontFamily="Glancyr, sans-serif"
+                            fontSize={isMobile ? "20px" : "22px"}
+                            fontFamily={fontFamily}
                             fontWeight="400"
                             lineHeight="140%"
                             >
-                            {item.title} 
+                            {item.title || item.question} 
                         </H2>
                         <div>
                             {activeIndex === index ? 
                                 <AiOutlineMinus color="#FFF" size={22} /> : <AiOutlinePlus color="#FFF" size={22} />}
                         </div>
                     </AccordionParent>
-                    {activeIndex === index && (
+                    {activeIndex === index && item.content !== undefined && (
                     <>
                             <H3   
-                                color="#FFF"
-                                fontSize="16px"
-                                fontFamily="Glancyr, sans-serif"
-                                fontWeight="300"
-                                lineHeight="140%"
+                                color={textColor || "#FFF"}
+                                fontSize={isMobile ? "16px" : "19px"}
+                                fontFamily={fontFamily}
+                                fontWeight="400"
+                                lineHeight="150%"
                                 padding="0 0 24px 0">
                                 
                                 {item.content}
 
                                 {item.link && (<a
                                 color="#FFF"
+                                fontFamily={fontFamily}
                                 fontSize="16px"
-                                fontFamily="Glancyr, sans-serif"
                                 fontWeight="300"
                                 lineHeight="140%" 
                                 letterSpacing="normal"
                                 target="_blank"
                                 href={item.link}> - Link</a>)}
                             </H3>
-                    </>)}                                                
+                    </>)}   
+
+                    {activeIndex === index && item.renderAnswer !== undefined && item.renderAnswer()}                                             
                 </AccordionSection>
             ))}
         </div>
@@ -98,6 +113,7 @@ const AccordionParent = styled.div`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    gap: 24px;
 `;
 
 export default Accordion;

@@ -537,7 +537,7 @@ export const BootcampMainComponent = () => {
             >FAQ</H2>
 
           <AccordionGrid>
-            <Accordion items={bootcampFaq} />
+            <Accordion items={bootcampFaq} fontFamily="Glancyr, sans-serif" />
           </AccordionGrid>
           </ItemH>
         </Content>
