@@ -104,12 +104,14 @@ export default function Root({ children }) {
       {/* Main react children */}
       {children}
 
-      {excludeDefaultConfigAt("/BRB") && excludeDefaultConfigAt("/DOCS") && (
-        <>
-          <Footer />
-          <CookieComponent />
-        </>
-      )}
+      {excludeDefaultConfigAt("/BRB") &&
+        excludeDefaultConfigAt("/DOCS") &&
+        excludeDefaultConfigAt("/BOOTCAMP") && (
+          <>
+            <Footer />
+            <CookieComponent />
+          </>
+        )}
     </div>
   );
 }

@@ -44,7 +44,11 @@ export const PageMeta = {
     pageDescription: 'One stop shop for all your Push Protocol documentation needs'
   },
   BLOG: {
-    pageTitle: 'Blog',
+    pageTitle: 'Push Blog',
     pageDescription: 'Learn about the latest updates and news from Push Protocol'
-  }
+  },
+  BOOTCAMP: {
+    pageTitle: 'Bootcamp Campaign',
+    pageDescription: 'Bootcamp Campaign Landing PAge'
+  },
 };

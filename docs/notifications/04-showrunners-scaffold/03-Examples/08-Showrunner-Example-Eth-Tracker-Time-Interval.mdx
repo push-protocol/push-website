@@ -1,11 +1,11 @@
 ---
-id: docs-slider-settings-with-showrunners-example
-title: Notification Settings in Eth Tracker
+id: docs-slider-settings-with-eth-tracker-showrunners-example
+title: Notification Settings in ETH Tracker
 hide_title: true
 slug: ./eth-tracker-with-showrunners-example
 displayed_sidebar: pushNotificationSidebar
-sidebar_position: 7
-image: "/assets/docs/previews/docs_slider_settings_with_showrunners_example--notification_settings_in_eth_tracker.png"
+sidebar_position: 8
+image: "/assets/docs/previews/docs_slider_settings_with_eth_tracker_showrunners_example--notification_settings_in_eth_tracker.png"
 ---
 
 # Slider Notification Settings in Showrunners
@@ -71,16 +71,17 @@ Let's get to building it.
 
 ### Fetch subscribers data
 
-To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-subscriptions/ "Channel Settings Docs").
+To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-channel/#get-channel-subscribers-api "Channel Settings Docs").
 
-```jsx
-// userAlice.notification.subscriptions({options?})
-const aliceSubscriptions = await userAlice.notification.subscriptions();
-```
+ ```jsx
 
-The returned data will look something like this⬇️
+const userData: any = await userAlice.channel.subscribers({
+    page: i,
+    limit: 10,
+    setting: true,
+  });
 
-```jsx
+// Output :   
 {
   "itemcount": 5,
   "subscribers": [

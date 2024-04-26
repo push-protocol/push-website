@@ -41,9 +41,11 @@ To learn more about how to import interface and the function call of send notifi
 ### Code
 
 ```solidity
-pragma solidity ^0.6.2;
+pragma solidity ^0.8.20;
+// SPDX-License-Identifier: UNLICENSED
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.0/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.5.0/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/blob/v4.9.0/contracts/utils/StringsUpgradeable.sol";
 
 // PUSH Comm Contract Interface
 interface IPUSHCommInterface {
@@ -51,22 +53,28 @@ interface IPUSHCommInterface {
 }
 
 contract Push is ERC20 {
-    // EPNS COMM ADDRESS ON ETHEREUM KOVAN, CHECK THIS: https://docs.epns.io/developers/developer-tooling/epns-smart-contracts/epns-contract-addresses
-    address public EPNS_COMM_ADDRESS = 0x87da9Af1899ad477C67FeA31ce89c1d2435c77DC;
+
+    using StringsUpgradeable for uint256;
+    using StringsUpgradeable for address;
+
+    // EPNS COMM ADDRESS ON ETHEREUM SEPOLIA, CHECK THIS: https://docs.epns.io/developers/developer-tooling/epns-smart-contracts/epns-contract-addresses
+    address public EPNS_COMM_ADDRESS = 0x0C34d54a09CFe75BCcd878A469206Ae77E0fe6e7;
 
     constructor ()
         ERC20("Push Token", "PUSH")
-        public {
+     {
         _mint(msg.sender, 1000 * 10 ** uint(decimals()));
     }
 
     function transfer(address to, uint amount) override public returns (bool success) {
         address owner = _msgSender();
         _transfer(owner, to, amount);
+        address sender = msg.sender;
+        uint256 readableAmount = amount / 10 ** uint(decimals());
 
         //"0+3+Hooray! ", msg.sender, " sent ", token amount, " PUSH to you!"
         IPUSHCommInterface(EPNS_COMM_ADDRESS).sendNotification(
-            0x050Ca75E3957c37dDF26D58046d8F9967B88190c, // from channel
+            0x554d29160f779Adf0a4328597cD33Ea1Df4D9Ee9, // from channel
             to, // to recipient, put address(this) in case you want Broadcast or Subset. For Targeted put the address to which you want to send
             bytes(
                 string(
@@ -79,9 +87,9 @@ contract Push is ERC20 {
                         "Tranfer Alert", // this is notification title
                         "+", // segregator
                         "Hooray! ", // notification body
-                        addressToString(msg.sender), // notification body
+                        sender.toHexString(), // notification body
                         " sent ", // notification body
-                        uint2str(amount.div(10 ** uint(decimals()))), // notification body
+                        readableAmount.toString(), // notification body
                         " PUSH to you!" // notification body
                     )
                 )
@@ -89,40 +97,6 @@ contract Push is ERC20 {
         );
 
         return true;
-    }
-
-    // Helper function to convert address to string
-    function addressToString(address _address) internal pure returns(string memory) {
-        bytes32 _bytes = bytes32(uint256(uint160(_address)));
-        bytes memory HEX = "0123456789abcdef";
-        bytes memory _string = new bytes(42);
-        _string[0] = '0';
-        _string[1] = 'x';
-        for(uint i = 0; i < 20; i++) {
-            _string[2+i*2] = HEX[uint8(_bytes[i + 12] >> 4)];
-            _string[3+i*2] = HEX[uint8(_bytes[i + 12] & 0x0f)];
-        }
-        return string(_string);
-    }
-
-    // Helper function to convert uint to string
-    function uint2str(uint _i) internal pure returns (string memory _uintAsString) {
-        if (_i == 0) {
-            return "0";
-        }
-        uint j = _i;
-        uint len;
-        while (j != 0) {
-            len++;
-            j /= 10;
-        }
-        bytes memory bstr = new bytes(len);
-        uint k = len - 1;
-        while (_i != 0) {
-            bstr[k--] = byte(uint8(48 + _i % 10));
-            _i /= 10;
-        }
-        return string(bstr);
     }
 }
 ```

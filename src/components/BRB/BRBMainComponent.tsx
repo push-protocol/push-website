@@ -113,6 +113,8 @@ const defaultMobileMenuState = {
 };
 
 export const BRBMainComponent = () => {
+  const d = new Date();
+  let year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
@@ -222,6 +224,7 @@ export const BRBMainComponent = () => {
                       style={{ margin: "0px 9px 0px 4px" }}
                       onClick={openHomePage}
                     />
+
                     <Span
                       fontSize="24px"
                       fontWeight="400"
@@ -500,7 +503,8 @@ export const BRBMainComponent = () => {
 
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
-          © 2023 Push. All rights reserved.
+          © {year || ""} Push. All rights reserved.
+          
         </Span>
       </BottomGrad>
     </BrbWrapper>
