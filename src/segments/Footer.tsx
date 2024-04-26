@@ -4,6 +4,8 @@
 // React + Web3 Essentials
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useLocation } from "@docusaurus/router";
+
 
 // External Components
 import { useTranslation } from "react-i18next";
@@ -47,6 +49,8 @@ function Footer() {
 
   // for navigation
   const history = useHistory();
+  const location = useLocation();
+
 
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);
@@ -76,9 +80,16 @@ function Footer() {
           // scrollToTop();
         }
       } else if (id) {
-        document.getElementById(id).scrollIntoView({
-          behavior: "smooth",
-        });
+        if(location.pathname !== "/" && id){
+              history.push('/')
+              setTimeout(() => {
+                document.getElementById(id).scrollIntoView({behavior: "smooth"});
+              }, 1500);
+        }
+
+        if(location.pathname === "/"){
+                document.getElementById(id).scrollIntoView({behavior: "smooth"});
+        }
       } else return;
     };
 
