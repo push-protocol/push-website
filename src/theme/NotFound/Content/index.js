@@ -33,6 +33,7 @@ import {
   DocsSidebarProvider,
   useDocRootMetadata,
 } from "@docusaurus/theme-common/internal";
+import generateSidebar from "@site/plugins/generate-docusaurus-sidebar";
 
 export default function NotFoundContent({ className }) {
   const { siteConfig } = useDocusaurusContext();
@@ -51,6 +52,11 @@ export default function NotFoundContent({ className }) {
     }),
   );
 
+  const guides = generateSidebar({
+    baseDir: "./docs/notifications",
+    sourceDir: "",
+  });
+
   const {
     navbar: { hideOnScroll },
     docs: {
@@ -63,12 +69,13 @@ export default function NotFoundContent({ className }) {
   // console.log(id, "iddd");
   return (
     <StyledContainer>
-      <aside className={"PushDocs"}>
+      {/* <aside className={"PushDocs"}>
         <DocSidebar
           sidebar={sidebars.pushNotificationSidebar}
           path="/"
         ></DocSidebar>
-      </aside>
+      </aside> */}
+
       {/* <aside
         // className={"newDocs"}
         className={clsx(

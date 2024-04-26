@@ -39,8 +39,8 @@ const config = {
   },
 
   // Themes
-  themes: ['@docusaurus/theme-mermaid'],
-  
+  themes: ["@docusaurus/theme-mermaid"],
+
   // Static linking
   staticDirectories: ["public", "static"],
 
@@ -70,6 +70,7 @@ const config = {
         },
       },
     ],
+    require.resolve("./plugins/generate-docusaurus-sidebar"),
     require.resolve("./plugins/custom-webpack-plugin"),
     [
       "@docusaurus/plugin-client-redirects",

@@ -40,6 +40,7 @@ function findInFrontMatter(contents, property) {
 }
 
 function generateSidebar({ baseDir, sourceDir }) {
+  if (baseDir == undefined || sourceDir == undefined) return;
   const searchIn = path.join(baseDir, sourceDir);
 
   const files = fs.readdirSync(searchIn, { withFileTypes: true });

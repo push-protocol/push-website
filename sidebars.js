@@ -13,12 +13,12 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 
-const generateSidebar = require("./plugins/generate-docusaurus-sidebar.js");
+// const generateSidebar = require("./plugins/generate-docusaurus-sidebar.js");
 
-const guides = generateSidebar({
-  baseDir: "./docs/notifications",
-  sourceDir: "",
-});
+// const guides = generateSidebar({
+//   baseDir: "./docs/notifications",
+//   sourceDir: "",
+// });
 
 // module.exports = {
 //   //   docs: [
