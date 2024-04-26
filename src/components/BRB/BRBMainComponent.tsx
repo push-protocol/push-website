@@ -228,7 +228,7 @@ export const BRBMainComponent = () => {
                     <Span
                       fontSize="24px"
                       fontWeight="400"
-                      style={{ maxHeight: "24px", fontFamily: "Glancyr" }}
+                      style={{ fontFamily: "Glancyr" }}
                     >
                       #BRB
                     </Span>
