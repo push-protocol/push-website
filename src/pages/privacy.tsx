@@ -55,13 +55,12 @@ function Privacy() {
         </script>
       </Head>
         
-      <PrivacyWrapper>
-        <TopSection>
+        <HeroSection
+          background="#121315"
+          minHeight="70vh">
           <Content
             className="contentBox"
             flex="1"
-            alignSelf="center"
-            padding="40px 0px"
           >
             <ItemV>
               <HeroHeader textAlign="center">{t('privacy.hero.title')}</HeroHeader>
@@ -87,19 +86,15 @@ function Privacy() {
               </H3>
             </ItemV>
           </Content>
-        </TopSection>
+        </HeroSection>
 
-        <PrivacySection>
+        <Section>
           <Content
             className="contentBox"
-            alignSelf="center"
-            psdding="0px"
-            padding="40px 0px"
           >
             <ItemH
               alignSelf="stretch"
               justifyContent="flex-start"
-              margin="0px 20px 40px 20px"
               flexDirection="column"
             >
               <ItemH
@@ -830,43 +825,18 @@ function Privacy() {
               </ItemH>
             </ItemH>
           </Content>
-        </PrivacySection>
-      </PrivacyWrapper>
+        </Section>
     </Layout>
   );
 }
-
-const PrivacyWrapper = styled.div`
-  @media ${device.tablet} {
-    width: 100%;
-  }
-`;
 
 const ListGroup = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const PrivacySection = styled(Section)`
-  width: 100%;
-  padding: 80px 0px 0px 0px;
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-  }
-`;
-
-const TopSection = styled(Section)`
-  width: 100%;
-  padding: 180px 0px 20px 0px;
-  min-height: 70vh;
-  background: #121315;
+const HeroSection = styled(Section)`
   border-radius: 0 0 48px 48px;
-
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 export default Privacy;

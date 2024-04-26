@@ -266,6 +266,7 @@
     regexpu-core "^5.3.1"
     semver "^6.3.1"
 
+
 "@babel/helper-define-polyfill-provider@^0.6.1", "@babel/helper-define-polyfill-provider@^0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@babel/helper-define-polyfill-provider/-/helper-define-polyfill-provider-0.6.2.tgz#18594f789c3594acb24cfdb4a7f7b7d2e8bd912d"
@@ -1239,6 +1240,7 @@
   integrity sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==
 
 "@bufbuild/protobuf@^1.3.0":
+
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@bufbuild/protobuf/-/protobuf-1.9.0.tgz#fffac3183059a41ceef5311e07e3724d426a95c4"
   integrity sha512-W7gp8Q/v1NlCZLsv8pQ3Y0uCu/SHgXOVFK+eUluUKWXmsb6VHkpNx0apdOWWcDbB9sJoKeP8uPrjmehJz6xETQ==
@@ -5052,6 +5054,7 @@
     bignumber.js "^9.1.0"
     ethers "5.5.4"
     joi "17.9.1"
+
 
 "@web3-onboard/core@^2.21.1", "@web3-onboard/core@^2.21.6":
   version "2.21.6"
@@ -9859,6 +9862,7 @@ json5@^2.1.2, json5@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
+
 
 jsonfile@^6.0.1:
   version "6.1.0"

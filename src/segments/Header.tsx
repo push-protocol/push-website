@@ -6,6 +6,8 @@
 // React + Web3 Essentials
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useLocation } from "@docusaurus/router";
+
 
 // External Components
 import { gsap } from "gsap";
@@ -65,6 +67,7 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
+  const location = useLocation();
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // for navigation
@@ -145,7 +148,7 @@ function Header() {
   }, []);
 
   const HeaderSpace = ({ item, index }) => {
-    const openLink = (e, href, id, target) => {
+    const openLink = async (e, href, id, target) => {
       e.stopPropagation();
 
       if (href) {
@@ -173,9 +176,17 @@ function Header() {
         //   duration: 0.75,
         //   scrollTo: { y: `#${id}` },
         // });
-        document.getElementById(id).scrollIntoView({
-          behavior: "smooth",
-        });
+        if(location.pathname !== "/" && id){
+              history.push('/')
+              setTimeout(() => {
+                document.getElementById(id).scrollIntoView({behavior: "smooth"});
+              }, 1500);
+        }
+
+        if(location.pathname === "/"){
+                document.getElementById(id).scrollIntoView({behavior: "smooth"});
+        }
+      
       } else return;
     };
 

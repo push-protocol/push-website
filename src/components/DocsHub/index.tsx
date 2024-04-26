@@ -312,6 +312,7 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
+
       {/* TECH DOCS SECTION */}
       <HomepageSection>
         <FluidContent>
@@ -475,6 +476,18 @@ const Pulsate = styled.span`
   animation-delay: calc(1s * ${(props) => (props.stagger ? props.stagger : 1)});
 `;
 
+const TechDocIcon = styled(ItemV)`
+  align-self: flex-start;
+
+  & ${Image} {
+    filter: ${(props) => (props.docutheme === "dark" ? "invert(100%)" : "")};
+
+    height: 44px;
+    width: 44px;
+    margin: 0 0 1rem 0;
+  }
+`;
+
 const FluidContent = styled(Content)`
   align-self: center;
   width: 68%;
@@ -488,17 +501,6 @@ const FluidContent = styled(Content)`
   }
 `;
 
-const TechDocIcon = styled(ItemV)`
-  align-self: flex-start;
-
-  & ${Image} {
-    filter: ${(props) => (props.docutheme === "dark" ? "invert(100%)" : "")};
-
-    height: 44px;
-    width: 44px;
-    margin: 0 0 1rem 0;
-  }
-`;
 
 const HomepageSection = styled(Section)`
   margin-top: 70px;
