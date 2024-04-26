@@ -300,7 +300,7 @@ const Answer = styled(ItemH)`
   padding: 0 0 24px 0;
 
   & ${Span} {
-        color: #FFF;
+        color: #BBBCD0;
         font-size: 19px;
         font-family: FK Grotesk Neue;
         font-weight: 400;
@@ -309,6 +309,10 @@ const Answer = styled(ItemH)`
         @media ${device.mobileL} {
            font-size: 16px;
         }
+  }
+
+  & Span:not(:first-child) {
+    margin-top: 24px;
   }
 `;
 

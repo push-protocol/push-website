@@ -171,7 +171,7 @@ function Footer() {
                         />
                       </LinkTo>
 
-                  <Span fontWeight="500" fontSize="16px" lineHeight="142%" margin="48px 0 12px 0">
+                  <Span fontWeight="500" fontSize="16px" lineHeight="142%" margin={isMobile ? "32px auto 12px auto" : "48px 0 12px 0"}>
                     {/* {t("footer.links-section.support-column.title")} */}
                     Get the latest Push news
                   </Span>
@@ -290,7 +290,7 @@ function Footer() {
                   </FooterAnchorSecondary>
             </ItemH>
 
-            <ItemV flexDirection={isTablet ? "column" : "row"} gap="16px" justifyContent="flex-end">
+            <ItemV flexDirection={isTablet ? "column" : "row"} gap={isMobile ? "24px" : "16px"} justifyContent="flex-end">
                 <ItemH
                   // justifyContent="flex-start"
                   flex="0"
@@ -463,7 +463,7 @@ const FooterColumn = styled.div`
 
   @media ${device.tablet} {
     flex-basis: 50%;
-    padding: 12px;
+    padding: 0px;
     row-gap: 16px;
 
     align-items: flex-start;
@@ -491,6 +491,7 @@ const FooterLinks = styled.div`
   min-width: 154px;
   @media ${device.mobileL} {
     min-width: 100%;
+    margin-top: 32px;
   }
 `;
 
@@ -525,7 +526,7 @@ const SocialLinks = styled(ItemH)`
   }
   @media ${device.mobileL} {
     flex-direction: column-reverse;
-    gap: 16px;
+    gap: 24px;
   }
 `;
 
@@ -553,7 +554,7 @@ const FooterAnchorPrimary = styled(A)`
 `;
 
 const FooterAnchorSecondary = styled(A)`
-  color: #a5abb8 !important;
+  color: #6C6C6C !important;
   padding: 0px;
   font-size: 14px;
   font-weight: 200;
@@ -564,7 +565,7 @@ const FooterAnchorSecondary = styled(A)`
   border-radius: 0;
 
   &:hover {
-    color: #dd44b9 !important;
+    color: #fff !important;
     background: transparent !important;
   }
 

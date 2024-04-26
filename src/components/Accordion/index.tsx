@@ -35,9 +35,10 @@ interface AccordionProps {
     items: AccordionItem[];
     fontFamily?: string;
     firstOpen?: boolean;
+    textColor?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) => {
+const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen, textColor }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(firstOpen === false ? null : 0);
     const isMobile = useMediaQuery(device.mobileL);
     const isTablet = useMediaQuery(device.tablet);
@@ -68,11 +69,11 @@ const Accordion: React.FC<AccordionProps> = ({ items, fontFamily, firstOpen }) =
                     {activeIndex === index && item.content !== undefined && (
                     <>
                             <H3   
-                                color="#FFF"
+                                color={textColor || "#FFF"}
                                 fontSize={isMobile ? "16px" : "19px"}
                                 fontFamily={fontFamily}
                                 fontWeight="400"
-                                lineHeight="140%"
+                                lineHeight="150%"
                                 padding="0 0 24px 0">
                                 
                                 {item.content}
@@ -112,6 +113,7 @@ const AccordionParent = styled.div`
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    gap: 24px;
 `;
 
 export default Accordion;

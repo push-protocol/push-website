@@ -686,7 +686,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     target="_blank"
                     title="Discord"
                     fontSize="16px"
-                    margin={isMobile ? "0 auto" : "24px 0 0 0"}
+                    margin={isMobile ? "24px auto 0 auto" : "24px 0 0 0"}
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     color={GLOBALS.COLORS.FONT_LIGHT}
                     fontFamily="FK Grotesk Neue"
@@ -697,31 +697,13 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </ItemV>
 
               <ItemV alignItems="flex-start" justifyContent="flex-start">
-                <H2 
-                    color="#FFF"
-                    fontSize={isMobile ? "24px" : "32px"}
-                    fontFamily="FK Grotesk Neue"
-                    margin={isMobile && "40px 0 0 0"}
-                    fontWeight="500"
-                    lineHeight="100%"
-                >
-                  General
-                </H2>
 
                 <AccordionGrid>
-                  <Accordion items={General} fontFamily="FK Grotesk Neue" />
-                </AccordionGrid>
-
-                 <H2 
-                    color="#FFF"
-                    fontSize={isMobile ? "24px" : "32px"}
+                  <Accordion 
+                    items={General} 
                     fontFamily="FK Grotesk Neue"
-                    margin={"40px 0 0 0"}
-                    fontWeight="500"
-                    lineHeight="100%"
-                >
-                  Push Notifications
-                </H2>
+                    textColor="#BBBCD0 !important" />
+                </AccordionGrid>
 
                 <AccordionGrid>
                   <Accordion items={Notifs} fontFamily="FK Grotesk Neue" firstOpen={false} />
@@ -1016,10 +998,6 @@ const TokenomicsSection = styled(Section)``;
 const FAQSection = styled(Section)``;
 
 const BgSection = styled(Section)`
-  // border-radius: 531.848px;
-  // background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 71.5%);
-  // filter: blur(95.11041259765625px);
-
   &:after {
     content: "";
     position: absolute;

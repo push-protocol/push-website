@@ -266,7 +266,7 @@ export const H3 = styled.h3`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.img`7
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "auto"};
   display: ${(props) => props.display || "flex"};

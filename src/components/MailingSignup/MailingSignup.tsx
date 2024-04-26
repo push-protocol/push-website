@@ -82,7 +82,7 @@ export const MailingSignup = (props: signupType) => {
         </ResponseSpan>
       )}
       {!apiResponse && emailError && (
-        <ResponseSpan className="msg" color="red">
+        <ResponseSpan className="msg" color="#D98AEC">
           {emailError}
         </ResponseSpan>
       )}
@@ -107,7 +107,7 @@ const Box = styled.div`
   }
 
   @media ${device.tablet} {
-    & ${Span} {
+    & .msg {
       font-size: 18px;
       margin: 10px auto 0px auto;
     }
