@@ -733,7 +733,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
           <Content>
 
             <ImageBackgroundDiv>
-              <ItemV alignItems="center" justifyContent="flex-end" height="100%">
+              <ItemV alignItems="center" justifyContent="flex-end" height="100%" zIndex="888">
                 <H2 
                     color="#FFF"
                     fontSize={isMobile ? "20px" : "32px"}
@@ -1003,7 +1003,7 @@ const BgSection = styled(Section)`
     position: absolute;
     height: 500px;
     width: 500px;
-    top: 0;
+    top: 25px;
     background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 51.5%);
     filter: blur(95.11041259765625px);
     border-radius: 531.848px;
