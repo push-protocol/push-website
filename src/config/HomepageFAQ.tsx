@@ -317,11 +317,12 @@ const Answer = styled(ItemH)`
 `;
 
 const Image = styled.img`
-  width: 400px;
+  width: 80%;
+  height: auto;
 `;
 
 const AMod = styled(A)`
-  color: #CE3FAC !important;
+  color: white !important;
   font-weight: 400;
   text-decoration: underline;
   background: transparent;
