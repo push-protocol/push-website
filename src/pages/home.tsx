@@ -706,7 +706,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </AccordionGrid>
 
                 <AccordionGrid>
-                  <Accordion items={Notifs} fontFamily="FK Grotesk Neue" firstOpen={false} />
+                  <Accordion items={Notifs.slice(0,2)} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
 
                 <SlideLink
