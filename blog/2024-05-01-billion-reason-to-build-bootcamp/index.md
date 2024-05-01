@@ -32,23 +32,25 @@ For a **comprehensive dive into our 6-week curriculum**, covering everything fro
 
 ## How can I become a part of this?
 
-To make this bootcamp a quality-oriented program only 80 students from applications all over the world will get this opportunity. But this doesn’t change the fact that this program restricts you based on your experience or skills. 
+To make this bootcamp a quality-oriented program only 80 students from applications worldwide will get this opportunity. 
 
-The only factor of differentiation is “How passionate you are to join this bootcamp?”
+No matter what background, experience, and skills you have this bootcamp is for you if you are interested in tech, marketing, or design and are willing to engage actively with our curriculum.
+
+The selection for the Bootcamp will be completely dependent on 
 
 Registrations will start from 30th April 2024 and will end by 17th May!
 
 To be a part of it you can apply through ⬇️
 
-Application Link - https://zv9atndluia.typeform.com/to/ToIpDLT2 
+Application Link - https://bit.ly/brbbootcamp 
 
 After this, our team will shortlist the top 80 people who will become a part of this learning journey with us.
 
-## **Push Builders: More things to check out!**
-
 Check out the [BRB Bootcamp Discussion](https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp) GitHub page to get all the updates and announcements for the Bootcamp.
+
+## Push Builders: More things to know!
 
 For the latest on development, hackathons, and exclusive insights, follow Push Builders on X [@pushbuilders](https://twitter.com/pushbuilders) & [@pushprotocol](https://twitter.com/pushprotocol). It's your gateway to all things BRB Bootcamp.
 
-Engage with us and the Web3 community on Discord at https://discord.com/invite/pushprotocol. 
+Join our Discord BRB Bootcamp channel to get any support for any questions/help yu  
 Let's drive the future of Web3 together.
