@@ -232,6 +232,10 @@ const FAQText = styled(H3)`
   font-style: normal;
   font-weight: 500;
   line-height: 100%; 
+
+  @media ${device.mobileL} {
+    font-size: 28px;
+  }
 `;
 
 export default FAQ;
