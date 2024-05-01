@@ -43,10 +43,6 @@ export default function BlogLayout(props) {
           />
           <meta
             property="og:image"
-            // content={useBaseUrl(
-            //   require("/static/assets/previews/blogpreview.png").default,
-            //   { absolute: true },
-            // )}
             content={
               require("@site/static/assets/previews/blogpreview.png").default
             }
