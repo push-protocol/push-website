@@ -10,9 +10,11 @@ import {
   HeroHeader,
   ItemH,
   ItemV,
+  LI,
   P,
   Section,
   Span,
+  UL,
   ULV2,
 } from "@site/src/css/SharedStyling";
 
@@ -289,8 +291,394 @@ export const Notifs = [
         </Span>
       </Answer>
     ),
-  }
-]
+  },
+  {
+    question: "Do I need a channel to receive notifications?",
+    section: "Notifs",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          No, a channel is only required if you want to send a notification. In
+          order to receive notifications, you just need to connect your wallet
+          to the dapp/mobile app/browser extension and Opt-in to the already
+          existing channels that you want to get notifications from.{" "}
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "Do I need a channel to send notifications?",
+    section: "Notifs",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Yes, any protocol that wants to send notifications will need to
+          activate themselves on Push protocol, read{" "}
+          <AMod
+            href="/docs/notifications/tutorials/create-your-channel/"
+            target={"_blank"}
+          >
+            How to create channel
+          </AMod>{" "}
+          for more details.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question:
+      "Does Push only handle on-chain notifications? Does Push only handles events based notifications?",
+    section: "Notifs",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          No, Push is extremely versatile and can handle on-chain (coming from
+          smart contracts) or off-chain (coming from backend) notifications
+          apart from notifications generated via sub-graphs.
+        </Span>
+        <Span>
+          The logic of notification depends on what the xyz protocol wants to
+          send to you which already ranges from a variety of use cases such as
+          near loan liquidations, NFT rebids, on-chain or off chain governance,
+          web3 news, airdrop alerts and so much more. If you imagine a use case
+          that your users will benefit from, chances are Push will be able to
+          enable dispatching those notifications to your users (wallet
+          addresses).
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "Do I have to pay to send notifications?",
+    section: "Notifs",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          No, Push doesn’t take any fees for you to send notification. Although,
+          there is a nominal charge of 50 PUSH required during Channel creation,
+          which is put in place to prevent spamming.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "What are some use cases of notifications?",
+    section: "Notifs",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          The most popular ones are Governance, Loan Pool & Staking and
+          Marketing related notifications though we have many other interesting
+          use cases depending upon the protocols on the channel.
+        </Span>
+      </Answer>
+    ),
+  },
+];
+
+
+export const Chat = [
+  {
+    question: "Is Push Chat end-to-end encrypted?",
+    section: "Chat",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP
+          Keys. Read more about{" "}
+          <AMod href="/docs/chat" target={"_blank"}>
+            how it works here.
+          </AMod>
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "How are messages stored in Push Chat?",
+    section: "Chat",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Messages are all stored on IPFS in an encrypted manner. So only the
+          wallets that are part of the chat can decrypt the messages.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "Will Push charge messaging fees?",
+    section: "Chat",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          For now Push is not charging any fees for you to message anyone. There
+          are plans to introduce a freemium model in future.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "Does Push Chat have notifications?",
+    section: "Chat",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Yes. Push Chat has notifications built-in. So there is no need to
+          create a channel or do any extra step to send Push Chat notifications.
+        </Span>
+      </Answer>
+    ),
+  },
+];
+
+export const IntegratingPush = [
+  {
+    question: "How can I integrate Push as a service/developer?",
+    section: "IntegratingPush",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Push can be used as a utility for communication. A service/developer
+          can integrate Push to communicate critical information to its users
+          and to improve the user experience through notifications and chat
+          (Push Chat)
+        </Span>
+        <Span>
+          The{" "}
+          <AMod href="/docs/notifications/quickstart/" target={"_blank"}>
+            Push JS SDK
+          </AMod>{" "}
+          is a major component that makes the integration seamless. A few
+          integration ideas using SDK include
+        </Span>
+        <UL>
+          <LIFaq>
+            integrate <b>Opt-in</b> feature on your frontend so users wouldn't
+            have to leave your website to enable notifications from your Channel
+          </LIFaq>
+          <LIFaq>show the notifications on your frontend</LIFaq>
+          <LIFaq>send critical information as notifications</LIFaq>
+          <LIFaq>
+            integrate <b>Push Chat</b> on your frontend and enable 2-way
+            communication between your users or use chat as a way to provide
+            support to your users.
+          </LIFaq>
+        </UL>
+        <Span>
+          Other ways of integrating Push notifications are via{" "}
+          <AMod
+            href="/docs/notifications/build/send-notification-via-smart-contract/"
+            target={"_blank"}
+          >
+            smart contracts
+          </AMod>
+          ,{" "}
+          <AMod
+            href="/docs/notifications/tutorials/send-notification-via-subgraph"
+            target={"_blank"}
+          >
+            subgraphs
+          </AMod>
+          , and{" "}
+          <AMod href="/docs/notifications" target={"_blank"}>
+            more as outlined here!
+          </AMod>
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "How can I test Push integration during the development?",
+    section: "IntegratingPush",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Push has a{" "}
+          <AMod href="https://staging.push.org/#/channels" target={"_blank"}>
+            Staging dApp
+          </AMod>{" "}
+          for developers that points to Ethereum Sepolia testnet, Polygon Mumbai
+          testnet and BNB testnet.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "Where can I find the code samples for integration?",
+    section: "IntegratingPush",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Push Chat integration -{" "}
+          <AMod href="/docs/chat" target={"_blank"}>
+            Docs
+          </AMod>
+          ,
+          <AMod
+            href="https://github.com/push-protocol/push-sdk"
+            target={"_blank"}
+          >
+            Github
+          </AMod>
+       
+          {" "}Push Notifications -{" "}
+          <AMod href="/docs/notifications" target={"_blank"}>
+            Docs
+          </AMod>
+          ,
+          <AMod
+            href="https://github.com/push-protocol/push-for-hackers"
+            target={"_blank"}
+          >
+            Github
+          </AMod>
+
+          <br/>
+      
+          <AMod
+            href="https://github.com/push-protocol/push-showrunners-framework"
+            target={"_blank"}
+          >
+           Showrunners Framework
+          </AMod>
+          , a scaffold solution to integrate Push Notification can also used to
+          get started.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question:
+      "How I can be assisted in case of any blockers during integration?",
+    section: "IntegratingPush",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          You can just drop your queries on the{" "}
+          <AMod href="https://discord.com/invite/pushprotocol">
+            Push Discord
+          </AMod>{" "}
+          and the community managers will be able to assist you.
+        </Span>
+      </Answer>
+    ),
+  },
+];
+
+export const Governance = [
+  {
+    question:
+      "I want to apply for a grant to build on Push Protocol, how can I do this?",
+    section: "Governance",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Reach out to the Push team on{" "}
+          <AMod
+            href="https://discord.com/invite/pushprotocol"
+            target={"_blank"}
+          >
+            Discord
+          </AMod>{" "}
+          or schedule a pitch in the office hours or directly dropping a
+          proposal on the{" "}
+          <AMod href="https://gov.push.org/c/grants/10" target={"_blank"}>
+            Push Governance Forum.
+          </AMod>
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question:
+      "If I have queries about grants where’s the best place to direct them?",
+    section: "Governance",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          The{" "}
+          <AMod
+            href="https://discord.com/invite/pushprotocol"
+            target={"_blank"}
+          >
+            Push Discord
+          </AMod>{" "}
+          is really active when it comes to Push DAO related conversations, try
+          redirecting your queries there and we will be there to help you out.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "How can I attend PushDAO Calls and Meetings?",
+    section: "Governance",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Office Hours are hosted on the{" "}
+          <AMod href="https://discord.com/invite/pushprotocol">
+            Push Discord
+          </AMod>{" "}
+          for DAO related meetings, try joining the discord for more
+          information.
+        </Span>
+      </Answer>
+    ),
+  },
+];
+
+export const Token = [
+  {
+    question: "What’s the utility of $PUSH token?",
+    section: "Token",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          Push Protocol aims to achieve a circular economy for its protocol by
+          engendering a communication layer that is run by the community and for
+          the community. The goal is for every participant to be rewarded for
+          their participation while simultaneously discouraging behaviour that
+          would be detrimental to the network.
+        </Span>
+        <Span>
+          $PUSH is the native token of Push Protocol. It achieves the circular
+          economy today through four major use cases: securing the network,
+          network utility, Push DAO and governance, and reward pool fee.
+        </Span>
+        <Span>
+          Read in detail 👉{" "}
+          <AMod href="https://push.org/docs/tokenomics/" target={"_blank"}>
+            Pusheconomics
+          </AMod>
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: "From where can I get $PUSH?",
+    section: "Token",
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          You can swap any token to $PUSH from{" "}
+          <AMod
+            href="https://app.uniswap.org/#/swap?inputCurrency=0xf418588522d5dd018b425e472991e52ebbeeeeee"
+            target={"_blank"}
+          >
+            Uniswap
+          </AMod>{" "}
+          or from any of the{" "}
+          <AMod
+            href="https://coinmarketcap.com/currencies/epns/markets/"
+            target={"_blank"}
+          >
+            listed exchanges.
+          </AMod>
+        </Span>
+      </Answer>
+    ),
+  },
+];
 
 const Answer = styled(ItemH)`
   align-items: stretch;
@@ -322,9 +710,24 @@ const Image = styled.img`
 `;
 
 const AMod = styled(A)`
-  color: white !important;
+  color: #e79cff !important;
   font-weight: 400;
-  text-decoration: underline;
   background: transparent;
   padding: 0px;
+  text-decoration: none;
+
+  &:hover{
+  text-decoration: underline;
+  }
 `;  
+
+const ULFaq = styled(UL)``;
+
+const LIFaq = styled(LI)`
+    color: #BBBCD0;
+    font-size: 19px;
+    font-family: FK Grotesk Neue;
+    font-weight: 400;
+    line-height: 140%;
+    list-style-type: circle;
+  `;
