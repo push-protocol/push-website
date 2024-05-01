@@ -710,11 +710,15 @@ const Image = styled.img`
 `;
 
 const AMod = styled(A)`
-  color: white !important;
+  color: #e79cff !important;
   font-weight: 400;
-  text-decoration: underline;
   background: transparent;
   padding: 0px;
+  text-decoration: none;
+
+  &:hover{
+  text-decoration: underline;
+  }
 `;  
 
 const ULFaq = styled(UL)``;

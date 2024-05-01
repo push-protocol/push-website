@@ -50,51 +50,6 @@ function FAQ() {
   const isTablet = useMediaQuery(device.tablet);
 
 
-//   const [showAnswers, setShowAnswers] = React.useState([]);
-//   const [active, setActiveSection] = React.useState();
-
-//   const toggleShowAnswer = (id, section) => {
-//     setActiveSection(section);
-//     if (active === section) {
-//       setShowAnswers((oldAnswers) => {
-//         return {
-//           ...oldAnswers,
-//           [id]: !oldAnswers[id],
-//         };
-//       });
-//     } else {
-//       setShowAnswers([]);
-//       setShowAnswers((oldAnswers) => {
-//         return {
-//           [id]: !oldAnswers[id],
-//         };
-//       });
-//     }
-//   };
-
-//   const Items = ({ body }) => {
-//     return (
-//       <ItemH flexDirection="column">
-//         {body?.map(({ question, section, renderAnswer }, index) => (
-//           <QnAItem key={index} justifyContent="flex-start">
-//             <Question
-//               onClick={() => {
-//                 toggleShowAnswer(index, section);
-//               }}
-//               hover="#e20880"
-//               isOpen={showAnswers[index] && active === section}
-//             >
-//               <Span fontSize="16px">{question}</Span>
-//               <BsChevronExpand size={20} color={"#ddd"} />
-//             </Question>
-
-//             {showAnswers[index] && active === section && renderAnswer()}
-//           </QnAItem>
-//         ))}
-//       </ItemH>
-//     );
-//   };
-
   return (
     <Layout
       title={PageMeta.FAQS.pageTitle}
@@ -150,68 +105,12 @@ function FAQ() {
         </script>
       </Head>
 
-      {/* <FAQWrapper>
-        <TopSection>
-          <Content
-            className="contentBox"
-            flex="1"
-            alignSelf="center"
-            padding="40px 0px"
-            margin="0 auto"
-          >
-            <ItemH flexDirection="column">
-              <H2 color="#fff" textAlign="center" fontSize="36px">
-                {t("faq.hero.title")}
-              </H2>
-              <H3
-                fontSize="16px"
-                fontWeight="300"
-                margin="30px 0px 30px 0px"
-                letterSpacing="0.1em"
-                color="#fff"
-                textAlign="center"
-                style={{ maxWidth: "400px" }}
-              >
-                {t("faq.hero.update-text")}
-              </H3>
-            </ItemH>
-          </Content>
-        </TopSection>
 
-        <FAQSection curve="bottom" data-bkg="light">
-          <Content
-            className="contentBox"
-            alignSelf="stretch"
-            padding="0px 0px 40px"
-          >
-            <ItemV alignItems="flex-start">
-              <Title>General</Title>
-              <Items body={General} />
+      <FAQWrapper>
+            <FAQSection>
+                <Content>
 
-              <Title>Push Notifications</Title>
-              <Items body={Notifs} />
-
-              <Title>Push Chat</Title>
-              <Items body={Chat} />
-
-              <Title>Integrating Push</Title>
-              <Items body={IntegratingPush} />
-
-              <Title>Push Governance</Title>
-              <Items body={Governance} />
-
-              <Title>$PUSH Token</Title>
-              <Items body={Token} />
-            </ItemV>
-          </Content>
-        </FAQSection>
-      </FAQWrapper> */}
-
-<FAQWrapper>
-      <FAQSection>
-          <Content>
-
-            <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
+            <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between" gap={!isMobile && "24px"}>
               <ItemV alignItems="flex-start" justifyContent="flex-start">
                 <H2 
                     color="#FFF"
@@ -222,7 +121,7 @@ function FAQ() {
                     fontWeight="500"
                     lineHeight="130%"
                 >
-                  Frequently Asked Questions
+                  Frequently Asked <br /> Questions
                 </H2>
 
                   <FaqLink
@@ -241,34 +140,34 @@ function FAQ() {
                 </ItemV>
 
               <ItemV alignItems="flex-start" justifyContent="flex-start">
-                <FAQText margin={isMobile && "64px 0 0 0"}>General</FAQText>
+                <FAQText margin={isMobile && "64px 0 8px 0"}>General</FAQText>
                 <AccordionGrid>
                   <Accordion items={General} fontFamily="FK Grotesk Neue" />
                 </AccordionGrid>
 
-                <FAQText margin="64px 0 0 0">Push Notifications</FAQText>
+                <FAQText margin="64px 0 8px 0">Push Notifications</FAQText>
                 <AccordionGrid>
-                  <Accordion items={Notifs} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={Notifs} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
 
-                <FAQText margin="64px 0 0 0">Push Chat</FAQText>
+                <FAQText margin="64px 0 8px 0">Push Chat</FAQText>
                 <AccordionGrid>
-                  <Accordion items={Chat} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={Chat} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
 
-                <FAQText margin="64px 0 0 0">Integrating Push</FAQText>
+                <FAQText margin="64px 0 8px 0">Integrating Push</FAQText>
                 <AccordionGrid>
-                  <Accordion items={IntegratingPush} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={IntegratingPush} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
 
-                <FAQText margin="64px 0 0 0">Push Governance</FAQText>
+                <FAQText margin="64px 0 8px 0">Push Governance</FAQText>
                 <AccordionGrid>
-                  <Accordion items={Governance} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={Governance} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
 
-                <FAQText margin="64px 0 0 0">Push Token</FAQText>
+                <FAQText margin="64px 0 8px 0">Push Token</FAQText>
                 <AccordionGrid>
-                  <Accordion items={Token} fontFamily="FK Grotesk Neue" />
+                  <Accordion items={Token} fontFamily="FK Grotesk Neue" firstOpen={false} />
                 </AccordionGrid>
               </ItemV>
           </ItemH>
