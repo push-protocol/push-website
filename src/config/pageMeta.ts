@@ -48,7 +48,7 @@ export const PageMeta = {
     pageDescription: 'Learn about the latest updates and news from Push Protocol'
   },
   BOOTCAMP: {
-    pageTitle: 'Bootcamp Campaign',
-    pageDescription: 'Bootcamp Campaign Landing PAge'
+    pageTitle: 'BRB Bootcamp Campaign',
+    pageDescription: 'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project'
   },
 };

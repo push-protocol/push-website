@@ -12,6 +12,8 @@ tags: [Push Protocol, Web3, Blockchain Technology, BRB]
 
 <!--truncate-->
 
+(BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project)
+
 BRB was initiated with a vision to solve the [1 HARD problem](https://twitter.com/pushprotocol/status/1694711099336347979) with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes! 
 
 Now, we are back with a bigger step "[Billion Reasons to Build (BRB) Bootcamp](https://twitter.com/pushprotocol/status/1785312909649707485)" a global virtual program designed to cover every aspect of the Web3 ecosystem, far beyond technology alone 💯"
