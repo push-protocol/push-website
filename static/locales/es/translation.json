@@ -352,6 +352,14 @@
     "investors-section": {
       "title": "Respaldado por empresarios exitosos y fondos de capital de riesgo."
     },
+    "network-section": {
+      "title": "¡Aprende cómo Push Network se convierte en L2 para la comunicación web3!",
+      "first-text": "Red de Prueba de Participación",
+      "second-text": "Fondo de Tarifas y Economía Circular",
+      "third-text": "Apostar en Push para Llamadas de API a la Red",
+      "fourth-text": "Definir Participación en el Fondo de Tarifas",
+      "fifth-text": "Gobernanza y Votación"
+      },
     "featured-section": {
       "title": "Artículos destacados",
       "article1": {
@@ -386,6 +394,11 @@
         "text": "Push Protocol, completó recientemente la Fase 1 de su gira de desarrollo (BRB) en India. Un participante del hackathon resolvió con éxito un desafío presentado por nuestro equipo: cuentas Ethereum de prueba cuántica.",
         "link-text": "Leer Artículo"
       }
+    },
+    "bg-section": {
+        "title": "Lleva tu compromiso con el usuario al siguiente nivel.",
+        "subtitle": "Involucra a los usuarios, construye comunidades y habilita un ecosistema próspero con Push.",
+        "buttonText": "Comenzar a construir"
     }
   },
   "frens": {
@@ -439,6 +452,11 @@
     "know-more": "¡Empezar!"
   },
   "footer": {
+     "mail-section": {
+        "title": "Obtén las últimas noticias de Push",
+        "privacy": "Política de privacidad",
+        "tos": "Términos y condiciones"
+      },
     "info-section": {
       "positions-card": {
         "text": "Unete y construye el futuro de las Comunicaciones en Web3.",

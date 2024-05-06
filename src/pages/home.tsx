@@ -418,7 +418,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     lineHeight="130%"
                     letterSpacing="normal"
                   >
-                    Learn how Push Network becomes L2 for web3 communication!
+                    {t("home.network-section.title")}
                   </H2>
                 </ItemV>
 
@@ -437,14 +437,22 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemV>
 
               <ItemV>
-                <TokenItem>Proof of Stake Network</TokenItem>
-                <TokenItem>Fee Pool and Circular Economy</TokenItem>
                 <TokenItem>
-                  Stake Push for API Calls to the Network
+                    {t("home.network-section.first-text")}
+                </TokenItem>
+                <TokenItem>
+                    {t("home.network-section.second-text")}
+                </TokenItem>
+                <TokenItem>
+                    {t("home.network-section.third-text")}
                   <TagItem style={{ marginLeft: "10px" }}>NEW</TagItem>
                 </TokenItem>
-                <TokenItem>Define Fee Pool Share</TokenItem>
-                <TokenItem>Governance and Voting</TokenItem>
+                <TokenItem>
+                  {t("home.network-section.fourth-text")}
+                </TokenItem>
+                <TokenItem>
+                  {t("home.network-section.fifth-text")}
+                </TokenItem>
               </ItemV>
             </ItemH>
             <SlideLink
@@ -744,7 +752,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     margin={isTablet && "0 auto"}
 
                 >
-                  Take your user engagement to the next level.
+                  {t("home.bg-section.title")}
                 </H2>
 
                  <H3 
@@ -756,7 +764,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     textAlign={isTablet && "center"}
                     margin={isTablet && "0 auto"}
                 >
-                  Engage users, build communities, and enable a thriving ecosystem with Push.
+                  {t("home.bg-section.subtitle")}
                 </H3>
 
                  <FaqLink
@@ -768,7 +776,9 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     color={GLOBALS.COLORS.FONT_LIGHT}
                     fontFamily="FK Grotesk Neue"
                   >
-                    <p>Start Building</p>
+                    <p>
+                      {t("home.bg-section.buttonText")}
+                    </p>
                   </FaqLink>
               </ItemV>
 
