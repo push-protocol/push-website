@@ -95,66 +95,9 @@ function Footer() {
 
   return (
     <StyledFooter>
-      {/* <FooterSection id="footer" background="#0D0D0F"> */}
       <FooterSection id="footer">
         <Content alignSelf="center">
-          {/* Information Cards */}
-
-          {/* <ItemH gap="32px">
-            <InfoCard>
-              <FooterJoinusFigure
-                className="figureSvg"
-                alt={t("footer.info-section.positions-card.image-alt")}
-                title={t("footer.info-section.positions-card.image-title")}
-              />
-
-              <InfoDetails>
-                <Span
-                  color="#FFF"
-                  fontWeight="500"
-                  fontSize="24px"
-                  lineHeight="142%"
-                >
-                  {t("footer.info-section.positions-card.text")}
-                </Span>
-                <FooterAnchorPrimary
-                  href="https://angel.co/company/push-protocol"
-                  title={t("footer.info-section.positions-card.link-text")}
-                  target="_blank"
-                >
-                  {t("footer.info-section.positions-card.link-text")}&nbsp;
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </FooterAnchorPrimary>
-              </InfoDetails>
-            </InfoCard>
-
-            <InfoCard>
-              <FooterFollowusFigure
-                className="figureSvg"
-                alt={t("footer.info-section.docs-card.image-alt")}
-                title={t("footer.info-section.docs-card.image-title")}
-              />
-
-              <InfoDetails>
-                <Span
-                  color="#FFF"
-                  fontWeight="500"
-                  fontSize="24px"
-                  lineHeight="142%"
-                >
-                  {t("footer.info-section.docs-card.text")}
-                </Span>
-                <FooterAnchorPrimary
-                  href="/docs"
-                  title={t("footer.info-section.docs-card.link-text")}
-                >
-                  {t("footer.info-section.docs-card.link-text")}&nbsp;
-                  <BsArrowUpRight className="anchorSVGlink" />
-                </FooterAnchorPrimary>
-              </InfoDetails>
-            </InfoCard>
-          </ItemH> */}
-
+        
           {/* footer links */}
           <ItemH flex="1" margin="0px 0 0 0">
             <FooterContainer>
@@ -183,8 +126,8 @@ function Footer() {
                       </LinkTo>
 
                   <Span fontWeight="500" fontSize="16px" lineHeight="142%" margin={isMobile ? "32px auto 12px auto" : "48px 0 12px 0"}>
-                    {/* {t("footer.links-section.support-column.title")} */}
-                    Get the latest Push news
+                    {/* Get the latest Push news */}
+                    {t("footer.mail-section.title")}
                   </Span>
 
                   <MailingSignup
@@ -288,7 +231,7 @@ function Footer() {
                     title={t("footer.links-section.subscribe-column.faq-link")}
                     onClick={scrollToTop}
                   >
-                    Privacy Policy
+                    {t("footer.mail-section.privacy")}
                   </FooterAnchorSecondary>
 
                   <FooterAnchorSecondary
@@ -297,7 +240,7 @@ function Footer() {
                     title={t("footer.links-section.subscribe-column.faq-link")}
                     onClick={scrollToTop}
                   >
-                    Terms and conditions
+                    {t("footer.mail-section.tos")}
                   </FooterAnchorSecondary>
             </ItemH>
 

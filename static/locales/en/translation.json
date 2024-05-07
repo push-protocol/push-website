@@ -352,6 +352,14 @@
     "investors-section": {
       "title": "Backed by successful entrepreneurs and venture capital funds."
     },
+    "network-section":{
+      "title": "Learn how Push Network becomes L2 for web3 communication!",
+      "first-text": "Proof of Stake Network",
+      "second-text": "Fee Pool and Circular Economy",
+      "third-text": "Stake Push for API Calls to the Network",
+      "fourth-text": "Define Fee Pool Share",
+      "fifth-text": "Governance and Voting"
+    },
     "featured-section": {
       "title": "Featured Stories",
       "article1": {
@@ -386,6 +394,11 @@
         "text": "Push Protocol, recently completed Phase 1 of its (BRB) dev tour in India. A hackathon participant successfully solved a challenge brought forth by our team: Quantum Proofing Ethereum accounts.",
         "link-text": "Read More"
       }
+    },
+    "bg-section": {
+        "title": "Take your user engagement to the next level.",
+        "subtitle": "Engage users, build communities, and enable a thriving ecosystem with Push.",
+        "buttonText": "Start Building"
     }
   },
   "frens": {
@@ -439,6 +452,11 @@
     "know-more": "Get started!"
   },
   "footer": {
+     "mail-section": {
+        "title": "Get the latest Push news",
+        "privacy": "Privacy Policy",
+        "tos": "Terms and conditions"
+      },
     "info-section": {
       "positions-card": {
         "text": "Join us and build the future of Web3 Communication.",
