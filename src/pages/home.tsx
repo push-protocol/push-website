@@ -252,7 +252,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <B color="#fff">
                   {t("home.notification-section.header.main-text")}
                 </B>
-                {t("home.notification-section.header.other-text")}
+                {" "}{t("home.notification-section.header.other-text")}
               </H2>
             </ItemV>
 
