@@ -70,11 +70,11 @@ function TermsOfService() {
         </script>
         </Head>
         
-      <TosWrapper>
-        <TopSection>
-          <Content
+        <HeroSection
+          background="#121315"
+          minHeight="70vh">
+          <HeroContent
             className="contentBox"
-            padding="80px 0px 20px 0px"
             flex="1"
             alignSelf="center"
           >
@@ -103,24 +103,21 @@ function TermsOfService() {
                 ACTION RIGHTS AS DETAILED IN <B color="#fff">SCHEDULE B</B>. PLEASE READ THE AGREEMENT CAREFULLY.
               </P>
             </ItemV>
-          </Content>
-        </TopSection>
+          </HeroContent>
+        </HeroSection>
 
         {/* TOS SECTION */}
-        <TosSection
+        <Section
           curve="bottom"
-          padding="80px 0px 40px 0px"
           data-bkg="light"
         >
           <Content
             className="contentBox"
-            alignSelf="center"
-            padding="40px 0px"
           >
             <ItemH
               alignSelf="stretch"
               justifyContent="flex-start"
-              margin="0px 20px 40px 20px"
+              margin="0px 0px 40px 0px"
               flexDirection="column"
             >
               <ItemH
@@ -1349,18 +1346,11 @@ function TermsOfService() {
               </ItemH>
             </ItemH>
           </Content>
-        </TosSection>
-      </TosWrapper>
+        </Section>
     </Layout>
   );
 }
 
-
-const TosWrapper = styled.div`
-  @media ${device.tablet} {
-    width: 100%;
-  }
-`;
 
 const TermsHeaderGroup = styled.div`
   display: flex;
@@ -1372,25 +1362,24 @@ const ListGroup = styled.div`
   flex-direction: column;
 `;
 
-const TosSection = styled(Section)`
-  width: 100%
-  padding: 80px 0px 0px 0px;
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-  }
+
+const HeroSection = styled(Section)`
+  border-radius: 0 0 48px 48px;
 `;
 
-const TopSection = styled(Section)`
-  width: 100%;
-  padding: 180px 0px 20px 0px;
-  min-height: 70vh;
-  background: #121315;
-  border-radius: 0 0 48px 48px;
+const HeroContent = styled(Content)`
+  align-self: stretch;
+  padding-top: 250px;
+  padding-bottom: 40px;
 
-  @media ${device.tablet} {
-    padding: 80px 20px 0px 20px;
-    display: flex;
-    justify-content: center;
+  @media ${device.laptop} {
+    padding-top: 200px;
+    padding-bottom: 40px;
+  }
+
+  @media ${device.mobileL} {
+    padding-top: 112px;
+    padding-bottom: 40px;
   }
 `;
 

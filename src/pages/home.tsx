@@ -25,6 +25,8 @@ import ShowcasePartners from "@site/src/components/Home/ShowcasePartners";
 import ImageHolder from "@site/src/components/ImageHolder";
 import { MailingSignup } from "@site/src/components/MailingSignup/MailingSignup";
 import NewMarqueeAnimation from "@site/src/components/NewMarqueeAnimation";
+import Accordion from "@site/src/components/Accordion";
+import { General, Notifs } from "@site/src/config/HomepageFAQ";
 import {
   A,
   B,
@@ -46,6 +48,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import StarColoredIcon from "@site/static/assets/website/illustrations/starColoredIcon.svg";
 import StarIcon from "@site/static/assets/website/illustrations/starIcon.svg";
 import StarSolidIcon from "@site/static/assets/website/illustrations/starSolidIcon.svg";
+import BgImage from "@site/static/assets/website/home/faq/footerbg@3x.png";
 
 // Internal Configs
 import {
@@ -249,7 +252,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <B color="#fff">
                   {t("home.notification-section.header.main-text")}
                 </B>
-                {t("home.notification-section.header.other-text")}
+                {" "}{t("home.notification-section.header.other-text")}
               </H2>
             </ItemV>
 
@@ -415,7 +418,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                     lineHeight="130%"
                     letterSpacing="normal"
                   >
-                    Learn how Push Network becomes L2 for web3 communication!
+                    {t("home.network-section.title")}
                   </H2>
                 </ItemV>
 
@@ -434,14 +437,22 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemV>
 
               <ItemV>
-                <TokenItem>Proof of Stake Network</TokenItem>
-                <TokenItem>Fee Pool and Circular Economy</TokenItem>
                 <TokenItem>
-                  Stake Push for API Calls to the Network
+                    {t("home.network-section.first-text")}
+                </TokenItem>
+                <TokenItem>
+                    {t("home.network-section.second-text")}
+                </TokenItem>
+                <TokenItem>
+                    {t("home.network-section.third-text")}
                   <TagItem style={{ marginLeft: "10px" }}>NEW</TagItem>
                 </TokenItem>
-                <TokenItem>Define Fee Pool Share</TokenItem>
-                <TokenItem>Governance and Voting</TokenItem>
+                <TokenItem>
+                  {t("home.network-section.fourth-text")}
+                </TokenItem>
+                <TokenItem>
+                  {t("home.network-section.fifth-text")}
+                </TokenItem>
               </ItemV>
             </ItemH>
             <SlideLink
@@ -486,7 +497,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 <ItemH justifyContent="flex-end">
                   <SlideLink
                     href="/blog"
-                    title="Exlore all articles"
+                    title="Explore all articles"
                     hoverBackground="transparent"
                     hover="transparent"
                     background="transparent"
@@ -660,6 +671,121 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <FeaturedList />
           </Content>
         </FeaturedInSection>
+
+        <FAQSection>
+          <Content>
+
+            <ItemH flexDirection={isMobile && 'column'} alignItems="flex-start" justifyContent="space-between">
+              <ItemV alignItems="flex-start" justifyContent="flex-start">
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "32px" : "36px"}
+                    fontFamily="FK Grotesk Neue"
+                    textAlign={isMobile && "center"}
+                    margin={isMobile && "0 auto"}
+                    fontWeight="500"
+                    lineHeight="130%"
+                >
+                  Frequently Asked Questions
+                </H2>
+
+                  <FaqLink
+                    href="https://discord.gg/pushprotocol"
+                    target="_blank"
+                    title="Discord"
+                    fontSize="16px"
+                    margin={isMobile ? "24px auto 0 auto" : "24px 0 0 0"}
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    fontFamily="FK Grotesk Neue"
+                  >
+                    <p>Ask us on Discord</p>
+                    <BsArrowRight className="anchorSVGlink" />
+                  </FaqLink>
+                </ItemV>
+
+              <ItemV alignItems="flex-start" justifyContent="flex-start">
+
+                <AccordionGrid>
+                  <Accordion 
+                    items={General} 
+                    fontFamily="FK Grotesk Neue"
+                    textColor="#BBBCD0 !important" />
+                </AccordionGrid>
+
+                <AccordionGrid>
+                  <Accordion items={Notifs.slice(0,2)} fontFamily="FK Grotesk Neue" firstOpen={false} />
+                </AccordionGrid>
+
+                <SlideLink
+                    href={"/faq"}
+                    title={"new"}
+                    target="_blank"
+                    padding="0px 0px"
+                    className="button"
+                    margin={isMobile ? "24px auto 0px 0px" : "24px 0px 0px auto"}
+                    background="transparent"
+                    alignItems="center"
+                    justifyContent="flex-end"
+                  >
+                    <SpanLink>Explore FAQs</SpanLink>
+                    <BsArrowRight className="anchorSVGlink" />
+                  </SlideLink>
+              </ItemV>
+          </ItemH>
+
+          </Content>
+        </FAQSection>
+
+        <BgSection>
+          <Content>
+
+            <ImageBackgroundDiv>
+              <ItemV alignItems="center" justifyContent="flex-end" height="100%" zIndex="888">
+                <H2 
+                    color="#FFF"
+                    fontSize={isMobile ? "20px" : "32px"}
+                    fontFamily="FK Grotesk Neue"
+                    fontWeight="500"
+                    lineHeight="140%"
+                    textAlign={isTablet && "center"}
+                    margin={isTablet && "0 auto"}
+
+                >
+                  {t("home.bg-section.title")}
+                </H2>
+
+                 <H3 
+                    color="#a5abb8"
+                    fontSize={isMobile ? "14px" : "19px"}
+                    fontFamily="FK Grotesk Neue"
+                    fontWeight="400"
+                    lineHeight="192%"
+                    textAlign={isTablet && "center"}
+                    margin={isTablet && "0 auto"}
+                >
+                  {t("home.bg-section.subtitle")}
+                </H3>
+
+                 <FaqLink
+                    href="/docs"
+                    title="Explore docs"
+                    fontSize="16px"
+                    margin="48px 0 0 0"
+                    background={GLOBALS.COLORS.HIGHLIGHT}
+                    color={GLOBALS.COLORS.FONT_LIGHT}
+                    fontFamily="FK Grotesk Neue"
+                  >
+                    <p>
+                      {t("home.bg-section.buttonText")}
+                    </p>
+                  </FaqLink>
+              </ItemV>
+
+            </ImageBackgroundDiv>
+
+          </Content>
+        </BgSection>
       </HomeWrapper>
     </Layout>
   );
@@ -860,7 +986,7 @@ const HeroAnalytics = styled(ItemH)`
   @media ${device.laptop} {
     margin: 40px 0 0px 0;
     flex: initial;
-    position: relative;
+    position: relative; 
     bottom: auto;
   }
 `;
@@ -878,6 +1004,27 @@ const ChatSection = styled(Section)``;
 const OtherFeaturesSection = styled(Section)``;
 
 const TokenomicsSection = styled(Section)``;
+
+const FAQSection = styled(Section)``;
+
+const BgSection = styled(Section)`
+  &:after {
+    content: "";
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    top: 25px;
+    background: radial-gradient(98.72% 98.72% at 50% 1.28%, rgba(206, 56, 231, 0.43) 0%, rgba(45, 20, 148, 0.26) 51.5%);
+    filter: blur(95.11041259765625px);
+    border-radius: 531.848px;
+    margin: auto auto;
+
+    @media ${device.mobileL} {
+      height: 300px;
+      width: 300px;
+    }
+  }
+`;
 
 const TokenItem = styled.div`
   width: 100%;
@@ -1125,6 +1272,28 @@ const SlideLink = styled(A)`
   }
 `;
 
+const FaqLink = styled(A)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: inherit;
+
+  p {
+    margin: 0px !important;
+  }
+  .anchorSVGlink {
+    color: #fff;
+    top: 0px;
+  }
+
+  &:hover {
+    text-decoration: none !important;
+    .anchorSVGlink {
+      color: #fff;
+    }
+  }
+`;
+
 const SpanLink = styled(Span)`
   position: relative;
   text-decoration: none;
@@ -1152,3 +1321,39 @@ const SpanLink = styled(Span)`
 `;
 
 const MarqueeAnimationContainer = styled(ItemV)``;
+
+
+const AccordionGrid = styled.div`
+    max-width: 877px;
+    min-width: 877px;
+
+  @media ${device.laptop} {
+    max-width: 100%;
+    min-width: 100%;
+  }
+`;
+
+const ImageBackgroundDiv = styled.div`
+  width: 100%;
+  min-height: 400px;
+  background-image: url(${BgImage}); 
+  background-size: auto 400px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 0 auto;
+
+  @media ${device.mobileL} {
+    width: 100%;
+    background-size: contain;
+    background-position: top center;
+    min-height: 330px;
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
+    background-size: contain;
+    background-position: top center;
+    min-height: 400px;
+  }
+`;
+

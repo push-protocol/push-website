@@ -19,6 +19,9 @@ import SearchMetadata from "@theme/SearchMetadata";
 import clsx from "clsx";
 import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
+import { PageMeta } from "@site/src/config/pageMeta";
+import { useLocation } from "@docusaurus/router";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 // Internal Configs
 import GLOBALS, { device } from "@site/src/config/globals";
@@ -29,11 +32,18 @@ function BlogListPageMetadata(props) {
     siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
   const { blogDescription, blogTitle, permalink } = metadata;
+  const location = useLocation();
+  const pathname = location.pathname;
+
   const isBlogOnlyMode = permalink === "/";
+  const isBlogMainPage =
+    pathname.includes("/page/") || pathname == "/blog/" || pathname == "/blog";
   const title = isBlogOnlyMode ? siteTitle : blogTitle;
   return (
     <>
-      <PageMetadata title={title} description={blogDescription} />
+      {!isBlogMainPage && (
+        <PageMetadata title={title} description={blogDescription} />
+      )}
       <SearchMetadata tag="blog_posts_list" />
     </>
   );
@@ -69,12 +79,10 @@ export default function BlogListPage(props) {
         ThemeClassNames.page.blogListPage,
       )}
     >
-      <div>
-        <BlogLayout></BlogLayout>
-      </div>
-
-      <BlogListPageMetadata {...props} />
-      <BlogListPageContent {...props} />
+      <BlogLayout>
+        <BlogListPageMetadata {...props} />
+        <BlogListPageContent {...props} />
+      </BlogLayout>
     </HtmlClassNameProvider>
   );
 }

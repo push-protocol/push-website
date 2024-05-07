@@ -21,6 +21,7 @@ import ImageHolder from "@site/src/components/ImageHolder";
 import { ChatComponent } from "@site/src/components/PushChat/PushChatComponent";
 import {
   Button,
+  Content,
   Image,
   ItemH,
   ItemV,
@@ -42,7 +43,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 // Internal Configs
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device, structure } from "@site/src/config/globals";
 import BRBOnline from "./BRBOnline";
 
 // Register GSAP plugins
@@ -112,6 +113,8 @@ const defaultMobileMenuState = {
 };
 
 export const BRBMainComponent = () => {
+  const d = new Date();
+  let year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
@@ -212,128 +215,131 @@ export const BRBMainComponent = () => {
           setIsAlertVisible={setIsAlertVisible}
         />
 
-        <Section padding="0 0 0 0">
-          <NavList isMobileMenuOpen={isMobileMenuOpen}>
-            <MenuTop flex="initial">
-              <PushLogoBlackContainer className="headerlogo" flex="initial">
-                <PushLogo
-                  style={{ margin: "0px 9px 0px 4px" }}
-                  onClick={openHomePage}
-                />
-                <Span
-                  fontSize="24px"
-                  fontWeight="400"
-                  style={{ maxHeight: "24px", fontFamily: "Glancyr" }}
-                >
-                  #BRB
-                </Span>
-              </PushLogoBlackContainer>
+        <Section>
+          <Content alignSelf="center" className="contentBox">
+              <NavList isMobileMenuOpen={isMobileMenuOpen}>
+                <MenuTop flex="initial">
+                  <PushLogoBlackContainer className="headerlogo" flex="initial">
+                    <PushLogo
+                      style={{ margin: "0px 9px 0px 4px" }}
+                      onClick={openHomePage}
+                    />
 
-              <MobileMenuToggleIcon>
-                {isMobileMenuOpen ? (
-                  <AiOutlineClose
-                    size={28}
-                    color="#fff"
-                    onClick={toggleMobileMenu}
-                  />
-                ) : (
-                  <GiHamburgerMenu
-                    size={28}
-                    color="#fff"
-                    onClick={toggleMobileMenu}
-                  />
-                )}
-              </MobileMenuToggleIcon>
-            </MenuTop>
-
-            <HeaderNavItemV showMobileMenu={isMobileMenuOpen} margin>
-              <NavigationMenu
-                role="menu"
-                className="navigationMenu"
-                showMobileMenu={isMobileMenuOpen}
-              >
-                {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
-                  <NavigationMenuHeader>
                     <Span
-                      fontSize="18px"
+                      fontSize="24px"
+                      fontWeight="400"
+                      style={{ fontFamily: "Glancyr" }}
                     >
-                      Partners
+                      #BRB
                     </Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem> */}
+                  </PushLogoBlackContainer>
 
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("bounties")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">Bounties</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                  <MobileMenuToggleIcon>
+                    {isMobileMenuOpen ? (
+                      <AiOutlineClose
+                        size={28}
+                        color="#fff"
+                        onClick={toggleMobileMenu}
+                      />
+                    ) : (
+                      <GiHamburgerMenu
+                        size={28}
+                        color="#fff"
+                        onClick={toggleMobileMenu}
+                      />
+                    )}
+                  </MobileMenuToggleIcon>
+                </MenuTop>
 
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("schedule")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">Schedule</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                <HeaderNavItemV showMobileMenu={isMobileMenuOpen} margin>
+                  <NavigationMenu
+                    role="menu"
+                    className="navigationMenu"
+                    showMobileMenu={isMobileMenuOpen}
+                  >
+                    {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
+                      <NavigationMenuHeader>
+                        <Span
+                          fontSize="18px"
+                        >
+                          Partners
+                        </Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem> */}
 
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("online")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Online</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                    <NavigationMenuItem
+                      onClick={() => handleSectionNavigation("bounties")}
+                    >
+                      <NavigationMenuHeader>
+                        <Span fontSize="18px">Bounties</Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
 
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("playground")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">BRB Chat</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                    <NavigationMenuItem
+                      onClick={() => handleSectionNavigation("schedule")}
+                    >
+                      <NavigationMenuHeader>
+                        <Span fontSize="18px">Schedule</Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
 
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation("support")}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize="18px">Support</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-              </NavigationMenu>
-            </HeaderNavItemV>
+                    <NavigationMenuItem
+                      onClick={() => handleSectionNavigation("online")}
+                    >
+                      <NavigationMenuHeader>
+                        <Span fontSize="18px">BRB Online</Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
 
-            <HeaderFocusItems flex="initial" alignSelf="stretch">
-              <IconMenu
-                role="menu"
-                className="navigationMenu"
-                showMobileMenu={isMobileMenuOpen}
-              >
-                <NavigationMenuItem
-                  onClick={() => {
-                    if (isMobileMenuOpen) toggleMobileMenu();
-                    openLink("https://discord.gg/cTRqvYzXpW");
-                  }}
-                >
-                  <NavigationMenuHeader>
-                    <Discord />
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                    <NavigationMenuItem
+                      onClick={() => handleSectionNavigation("playground")}
+                    >
+                      <NavigationMenuHeader>
+                        <Span fontSize="18px">BRB Chat</Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
 
-                <NavigationMenuItem
-                  onClick={() => {
-                    if (isMobileMenuOpen) toggleMobileMenu();
-                    openLink("https://twitter.com/pushprotocol");
-                  }}
-                >
-                  <NavigationMenuHeader>
-                    <X />
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-              </IconMenu>
-            </HeaderFocusItems>
-          </NavList>
+                    <NavigationMenuItem
+                      onClick={() => handleSectionNavigation("support")}
+                    >
+                      <NavigationMenuHeader>
+                        <Span fontSize="18px">Support</Span>
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
+                  </NavigationMenu>
+                </HeaderNavItemV>
+
+                <HeaderFocusItems flex="initial" alignSelf="stretch">
+                  <IconMenu
+                    role="menu"
+                    className="navigationMenu"
+                    showMobileMenu={isMobileMenuOpen}
+                  >
+                    <NavigationMenuItem
+                      onClick={() => {
+                        if (isMobileMenuOpen) toggleMobileMenu();
+                        openLink("https://discord.gg/cTRqvYzXpW");
+                      }}
+                    >
+                      <NavigationMenuHeader>
+                        <Discord />
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
+
+                    <NavigationMenuItem
+                      onClick={() => {
+                        if (isMobileMenuOpen) toggleMobileMenu();
+                        openLink("https://twitter.com/pushprotocol");
+                      }}
+                    >
+                      <NavigationMenuHeader>
+                        <X />
+                      </NavigationMenuHeader>
+                    </NavigationMenuItem>
+                  </IconMenu>
+                </HeaderFocusItems>
+              </NavList>
+          </Content>
         </Section>
       </StyledHeader>
 
@@ -383,103 +389,122 @@ export const BRBMainComponent = () => {
 
       <BRBParallax />
 
-      <PartnersDiv id="partners">
-        <Partners />
-      </PartnersDiv>
+      <Section id="partners">
+        <Content>
+          <Partners />
+        </Content>
+      </Section>
 
-      <CommunityPartners />
+      <Section>
+        <Content className="fluid">
+          <CommunityPartners />
+          </Content>
+      </Section>
 
-      <BountyDiv id="bounties">
-        <PartnerBounties />
-      </BountyDiv>
+      <Section id="bounties">
+        <Content>
+          <PartnerBounties />
+        </Content>
+      </Section>
 
-      <ScheduleDiv id="schedule">
-        <Schedules />
-      </ScheduleDiv>
+      <Section id="schedule">
+        <Content className="fluid">
+          <Schedules />
+        </Content>
+      </Section>
 
-      <BRBOnlineDiv id="online">
-        <BRBOnline />
-      </BRBOnlineDiv>
+      <Section id="online">
+        <Content>
+          <BRBOnline />
+        </Content>
+      </Section>
 
-      <PlaygroundDiv id="playground">
-        <ChatComponent />
-      </PlaygroundDiv>
+      <Section id="playground">
+        <Content>
+          <ChatComponent />
+        </Content>
+      </Section>
 
-      <ItemFooter id="support">
-        <ItemH gap="28px">
-          <ItemV
-            minWidth="280px"
-            background="#000"
-            padding="20px 48px"
-            gap="14px"
-            borderRadius="48px"
-            background="#2a2a39"
-          >
-            <SpanContent
-              fontSize="112px"
-              fontWeight="400"
-              color="#E64DE9"
-              letterSpacing="0.01"
-            >
-              Drop us a GM!
-            </SpanContent>
-          </ItemV>
+      <Section id="support">
+        <Content>
+          <ItemFooter>
+            <ItemH gap="28px">
+              <ItemV
+                minWidth="280px"
+                background="#000"
+                padding="20px 48px"
+                gap="14px"
+                borderRadius="48px"
+                background="#2a2a39"
+              >
+                <SpanContent
+                  fontSize="112px"
+                  fontWeight="400"
+                  color="#E64DE9"
+                  letterSpacing="0.01"
+                >
+                  Drop us a GM!
+                </SpanContent>
+              </ItemV>
 
-          <ItemV gap="28px" minWidth="280px" alignItems="stretch">
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
-            >
-              <i>
-                <Discord />
-              </i>
+              <ItemV gap="28px" minWidth="280px" alignItems="stretch">
+                <FooterBar
+                  style={{ cursor: "pointer" }}
+                  onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
+                >
+                  <i>
+                    <Discord />
+                  </i>
 
-              <Span fontSize="36px" fontWeight="400" color="#6F8BEE">
-                24x7 Support on Discord
-              </Span>
+                  <Span fontSize="36px" fontWeight="400" color="#6F8BEE">
+                    24x7 Support on Discord
+                  </Span>
 
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
+                  <Image
+                    width={65}
+                    src={
+                      require(
+                        `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                    alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
+                </FooterBar>
 
-            <FooterBar
-              style={{ cursor: "pointer" }}
-              onClick={() => openLink("https://twitter.com/pushprotocol")}
-            >
-              <i>
-                <X className="discord" />
-              </i>
+                <FooterBar
+                  style={{ cursor: "pointer" }}
+                  onClick={() => openLink("https://twitter.com/pushprotocol")}
+                >
+                  <i>
+                    <X className="discord" />
+                  </i>
 
-              <Span fontSize="36px" fontWeight="400" color="#63BFF3">
-                Updates & Announcements
-              </Span>
+                  <Span fontSize="36px" fontWeight="400" color="#63BFF3">
+                    Updates & Announcements
+                  </Span>
 
-              <Image
-                width={65}
-                src={
-                  require(
-                    `@site/static/assets/website/brb/others/ArrowIcon.webp`,
-                  ).default
-                }
-                srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
-                alt={`Image showing BRB Chat is powered by Push Chat`}
-              />
-            </FooterBar>
-          </ItemV>
-        </ItemH>
-      </ItemFooter>
+                  <Image
+                    width={65}
+                    src={
+                      require(
+                        `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
+                    alt={`Image showing BRB Chat is powered by Push Chat`}
+                  />
+                </FooterBar>
+              </ItemV>
+            </ItemH>
+          </ItemFooter>
+      </Content>
+      </Section>
 
       <BottomGrad>
         <Span fontSize="18px" fontWeight="400" color="#FFF">
-          © 2023 Push. All rights reserved.
+          © {year || ""} Push. All rights reserved.
+          
         </Span>
       </BottomGrad>
     </BrbWrapper>
@@ -557,7 +582,7 @@ const BrbWrapper = styled(ItemV)`
 
 const NavList = styled.div`
   position: relative;
-  width: 1243px;
+  width: 100%;
   height: ${(props) => (!props.isMobileMenuOpen ? "78px" : "auto")};
   max-height: ${(props) => (!props.isMobileMenuOpen ? "78px" : "auto")};
   display: flex;
@@ -570,54 +595,16 @@ const NavList = styled.div`
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(12px);
   padding: 0px 23px;
-  margin-top: 51px;
+  margin: 51px auto 0 auto;
 
   @media ${device.laptop} {
     flex-direction: column;
     width: 100%;
     padding: 14px 10px 14px 20px;
-    margin: 10px 10px;
+    margin: 10px auto;
     box-sizing: border-box;
     align-items: center;
     border-radius: ${(props) => (props.isMobileMenuOpen ? "32px" : "55px")};
-  }
-`;
-
-const ScheduleDiv = styled.div`
-  margin: 120px 0px 0px 0px;
-  width: 100%;
-`;
-
-const BountyDiv = styled.div`
-  width: 100%;
-`;
-
-const BRBOnlineDiv = styled.div`
-  width: 100%;
-`;
-
-const PartnersDiv = styled.div`
-  z-index: 20;
-  width: 100%;
-`;
-
-const PlaygroundDiv = styled.div`
-  width: 100%;
-  margin: 0 0px 120px 0px;
-`;
-
-const Playground = styled(Section)`
-  flex-direction: column;
-  background-image: url(${PlaygroundBg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  font-family: "Strawford", sans-serif;
-  width: 80%;
-  height: 75vh;
-  margin: 0 auto;
-  @media ${device.mobileL} {
-    width: 95%;
   }
 `;
 
@@ -666,6 +653,19 @@ const StyledHeader = styled.header`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  & .contentBox {
+    padding: 0px ${structure.PADDING.DESKTOP.RIGHT}px !important;
+    max-width: ${GLOBALS.STRUCTURE.MAX_WIDTH}px !important;
+
+    @media ${device.tablet} {
+      padding: 0px ${structure.PADDING.TABLET.RIGHT}px !important;
+    }
+
+    @media ${device.mobile} {
+      padding: 0px ${structure.PADDING.MOBILE.RIGHT}px !important;
+    }
+  }
 
   @media ${device.laptop} {
     flex-direction: column;
@@ -885,13 +885,7 @@ const ItemFooter = styled(ItemV)`
   top: 80px;
   display: flex;
   align-self: center;
-
-  max-width: 1243px;
   width: 100%;
-
-  @media ${device.laptop} {
-    width: 90%;
-  }
 `;
 
 const SpanContent = styled(Span)`
