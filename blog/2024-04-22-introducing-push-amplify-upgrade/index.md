@@ -4,14 +4,16 @@ title: " Introducing Push Amplify Upgrade! "
 authors: [push]
 image: "./cover-image.webp"
 description: "Introducing Push Amplify Upgrade!"
-text: "Push users can soon expect improved **channel history**, allowing for easier access to past conversations and content. Users can review past notifications and stay updated on important alerts from their favorite DeFi protocols and NFT brands."
+text: "Discover how Push is amplifying the Web3 communication space with its latest upgrades! Explore enhanced channel histories, token-gated group chats, Push Tokenomics V2, and Push DAO upgrades."
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 ![Cover Image of Push Amplify Upgrade ](./cover-image.webp)
 
 ### Notifications get a facelift with Channel History and Profile Page:
 
-Push users can soon expect improved **channel history**, allowing for easier access to past conversations and content. 
+Introducing enhanced **channel history**!
+
+With channel history, Push users can seamlessly access a channel's past conversations and content. 
 Users can review past notifications and stay updated on important alerts from their favorite DeFi protocols and NFT brands.
 
 ![Push Profile Pages and History GIF](./image3.gif)
@@ -21,7 +23,10 @@ Users can review past notifications and stay updated on important alerts from th
 
 ### Push Group Chat UI & Hyperscalability:
 
-The revamped Push Protocol group chat takes community management for NFT projects to the next level. It seamlessly integrates token gating, allowing access only to holders of your specific NFT. This fosters an exclusive space for discussions and collaboration. But it doesn't stop there! Push Protocol's partnership with [Guild.xyz](https://guild.xyz/explorer) allows you to define additional access tiers within the chat using Guild roles. Imagine VIP channels for early adopters or dedicated areas for high-volume traders.
+The revamped Push Protocol group chat takes community management for NFT projects to the next level. It seamlessly integrates token gating, allowing access only to holders of your specific NFT. This fosters an exclusive space for discussions and collaboration. 
+
+But it doesn't stop there! 
+Push Protocol's partnership with [Guild.xyz](https://guild.xyz/explorer) allows you to define additional access tiers within the chat using Guild roles. Imagine VIP channels for early adopters or dedicated areas for high-volume traders.
 
 Plus, integration with [Unstoppable Domains](https://unstoppabledomains.com/) lets users join using their human-readable addresses (like **yourname.nft**) for a smooth and familiar experience. This revamped group chat empowers you to cultivate a thriving NFT community with targeted communication and a strong sense of belonging.
 
