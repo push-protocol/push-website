@@ -9,6 +9,8 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 ![Cover Image of Push Amplify Upgrade ](./cover-image.webp)
 
+<!--truncate-->
+
 ### Notifications get a facelift with Channel History and Profile Page:
 
 Introducing enhanced **channel history**!
