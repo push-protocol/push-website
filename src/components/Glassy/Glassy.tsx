@@ -589,6 +589,13 @@ const Container = styled.div`
     display: ${(props) => props.hide && props.hide.laptop && "none"};
   }
 
+  @media ${device.tablet} {
+    flex: ${(props) =>
+      props.fluid && props.fluid.tablet ? "1 0 auto" : "initial"};
+    width: ${(props) => (props.fluid && props.fluid.tablet ? "auto" : "100%")};
+  }
+
+
   @media ${device.mobileL} {
     flex: ${(props) => (props.fluid && props.fluid.mobile ? "1" : "initial")};
     width: ${(props) => (props.fluid && props.fluid.mobile ? "auto" : "100%")};
