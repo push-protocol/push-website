@@ -1145,15 +1145,15 @@ const NotificationFeatureItem = styled(ItemV)`
     }
   }
 
-  @media ${device.tablet} {
-    &:nth-child(1) {
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-    &:nth-child(3) {
-      flex-wrap: wrap;
-    }
-  }
+  // @media ${device.tablet} {
+  //   &:nth-child(1) {
+  //     flex-wrap: wrap;
+  //     flex-direction: row;
+  //   }
+  //   &:nth-child(3) {
+  //     flex-wrap: wrap;
+  //   }
+  // }
 
   @media ${device.mobileL} {
     flex-direction: column;

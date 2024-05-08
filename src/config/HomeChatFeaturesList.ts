@@ -40,7 +40,7 @@ export const ChatFeaturesList = {
         fluid: {
           desktop: false,
           laptop: true,
-          tablet: true,
+          tablet: false,
           mobile: false,
         },
         hide: {
@@ -68,7 +68,7 @@ export const ChatFeaturesList = {
         fluid: {
           desktop: false,
           laptop: true,
-          tablet: true,
+          tablet: false,
           mobile: false,
         },
         hide: {

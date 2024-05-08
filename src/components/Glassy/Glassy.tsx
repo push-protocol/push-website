@@ -593,8 +593,8 @@ const Container = styled.div`
     flex: ${(props) =>
       props.fluid && props.fluid.tablet ? "1 0 auto" : "initial"};
     width: ${(props) => (props.fluid && props.fluid.tablet ? "auto" : "100%")};
-    display: ${(props) => props.hide && props.hide.tablet && "none"};
   }
+
 
   @media ${device.mobileL} {
     flex: ${(props) => (props.fluid && props.fluid.mobile ? "1" : "initial")};
@@ -644,12 +644,6 @@ const Subcontainer = styled.div`
   border-radius: inherit;
   position: relative;
   margin: 1px;
-
-  @media ${device.laptopM} {
-  }
-
-  @media ${device.tablet} {
-  }
 
   @media ${device.mobileL} {
     padding: ${(props) => props.mobilepadding || "24px"};
@@ -820,9 +814,9 @@ const BodyInner = styled(ItemV)`
 const BodyTextItem = styled(ItemV)`
   max-width: ${(props) => props.bodytextwidth};
 
-  @media ${device.tablet} {
-    max-width: ${(props) => props.mobilebodytextwidth};
-  }
+  // @media ${device.tablet} {
+  //   max-width: ${(props) => props.mobilebodytextwidth};
+  // }
 `;
 
 const BodyImageWrapper = styled.div`

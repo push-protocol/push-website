@@ -182,7 +182,7 @@ export const NotifFeaturesList = {
         fluid: {
           desktop: false,
           laptop: false,
-          tablet: true,
+          tablet: false,
           mobile: false,
         },
         hide: {
@@ -208,7 +208,7 @@ export const NotifFeaturesList = {
         fluid: {
           desktop: true,
           laptop: false,
-          tablet: true,
+          tablet: false,
           mobile: false,
         },
         padding: "24px",
@@ -256,7 +256,7 @@ export const NotifFeaturesList = {
         fluid: {
           desktop: false,
           laptop: false,
-          tablet: true,
+          tablet: false,
           mobile: false,
         },
         hide: {
