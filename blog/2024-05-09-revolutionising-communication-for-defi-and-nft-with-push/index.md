@@ -33,16 +33,16 @@ For instance, DAOs like [BitDAO](https://www.mantle.xyz/) can send any new propo
 
 - **Enhanced User Experience:** Streamline communication by eliminating the need for users to constantly check social media or email for updates.
 
-Defi Protocol's like the [Angle Protocol](https://app.push.org/channels/0xA2dEe32662F6243dA539bf6A8613F9A9e39843D3) leverages Push, to notify its subscriber users with periodic position status updates!
+Defi Protocol's like the [Angle Protocol](https://app.push.org/channels/0xA2dEe32662F6243dA539bf6A8613F9A9e39843D3?utm_source=Dapp&utm_medium=blog&utm_campaign=amplify_upgrade) leverages Push, to notify its subscriber users with periodic position status updates!
 
 
 
 **Here's how Push Protocol notifications work in action:**
 
-- DeFi platforms like [Aave](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50) send real-time health factor warning alerts to their users, helping them avoid liquidation risks.
+- DeFi platforms like [Aave](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=Dapp&utm_medium=blog&utm_campaign=amplify_upgrade) send real-time health factor warning alerts to their users, helping them avoid liquidation risks.
 
 - NFT marketplaces or communities can notify its users about upcoming drops or exclusive minting opportunities.
-Similar to the [Pudgy Penguin's Unstopabble Domains group chat](https://x.com/pushprotocol/status/1777929898784444842) powered by Push Protocol.
+Similar to the [Pudgy Penguin's Unstopabble Domains token gated group chat](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=google&utm_medium=twitter&utm_campaign=amplify_upgrade) powered by Push Protocol.
 
 
 By leveraging Push Protocol notifications, DeFi and NFT brands can create a more informed and responsive user base, ultimately leading to a stronger and more successful ecosystem.
