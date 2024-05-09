@@ -27,20 +27,21 @@ Think of [Lido](https://lido.fi/), broadcasting regular reward updates to its us
 
 
 - **Improved Transparency:** Ensure users are always in the loop with critical announcements and governance proposals delivered directly to their wallets.
+
 For instance, DAOs like [BitDAO](https://www.mantle.xyz/) can send any new proposal alerts staright to the voting member's wallet address.
 
 
 - **Enhanced User Experience:** Streamline communication by eliminating the need for users to constantly check social media or email for updates.
 
-Protocol's like the [Angle Protocol](https://app.push.org/channels/0xA2dEe32662F6243dA539bf6A8613F9A9e39843D3) leverage Push, to notify its subscriber users with periodic position status updates!
+Defi Protocol's like the [Angle Protocol](https://app.push.org/channels/0xA2dEe32662F6243dA539bf6A8613F9A9e39843D3) leverages Push, to notify its subscriber users with periodic position status updates!
 
 
 
 **Here's how Push Protocol notifications work in action:**
 
-- DeFi platforms like [Aave](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50) send real-time alerts to its users about changes in interest rates and health factor alerts on their loaned assets.
+- DeFi platforms like [Aave](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50) send real-time health factor warning alerts to their users, helping them avoid liquidation risks.
 
-- An NFT marketplaces or communities can notify users about upcoming drops or exclusive minting opportunities.
+- NFT marketplaces or communities can notify its users about upcoming drops or exclusive minting opportunities.
 Similar to the [Pudgy Penguin's Unstopabble Domains group chat](https://x.com/pushprotocol/status/1777929898784444842) powered by Push Protocol.
 
 
