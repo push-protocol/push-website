@@ -9,6 +9,8 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 ![Cover Image of Revolutionising Communication for DeFi and NFT Brands with Push ](./cover-image.webp)
 
+<!--truncate-->
+
 ## Revolutionising Communication for DeFi and NFT Brands with Push
 
 The decentralized revolution is upon us, with DeFi (Decentralized Finance) and NFTs (Non-Fungible Tokens) leading the charge. However, fostering strong communication and community engagement in these fast-paced ecosystems can be a challenge.
