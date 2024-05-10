@@ -40,7 +40,7 @@ Imagine offering exclusive channels within your main chat, accessible only to us
 
 - A limited-edition NFT collection can create a token-gated chat where holders can discuss upcoming collaborations and access exclusive artwork previews.
 
-Similar to the [Pudgy Penguin's Unstopabble Domains token gated group chat](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=google&utm_medium=twitter&utm_campaign=amplify_upgrade) powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!
+Similar to the [Pudgy Penguin's Unstopabble Domains token gated group chat](https://twitter.com/pushprotocol/status/1777929898784444842?utm_source=google&utm_medium=twitter&utm_campaign=amplify_upgrade) powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!
 
 - A DeFi platform like [Curve](https://curve.fi/#/ethereum/pools) can offer a tiered chat system, with basic access for all token holders and a dedicated channel for high-level stakers to discuss governance proposals and advanced strategies.
 
