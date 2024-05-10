@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[91421],{18224:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/blockchain-technology/page/7","page":7,"postsPerPage":10,"totalPages":7,"totalCount":64,"previousPage":"/blog/tags/blockchain-technology/page/6","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
