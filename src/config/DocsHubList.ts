@@ -205,7 +205,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: "React Native",
     Svg: require("@site/static/assets/docs/arrowupright.svg").default,
     PinkSvg: require("@site/static/assets/docs/ArrowUpRight-pink.svg").default,
-    link: "https://www.npmjs.com/package/@pushprotocol/reactnative",
+    link: "https://www.npmjs.com/package/@pushprotocol/react-native-sdk",
   },
   {
     title: "Socket",
