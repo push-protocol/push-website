@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- .playgroundContainer {
+.playgroundContainer {
   margin-bottom: var(--ifm-leading);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);

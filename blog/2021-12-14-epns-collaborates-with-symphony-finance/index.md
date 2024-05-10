@@ -11,6 +11,7 @@ tags: [Newsletter
 ,Ethereum
 ,Symphony ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Collaborates With Symphony Finance To Facilitate Push Notifications for Limit Order](./cover-image.webp)
@@ -31,8 +32,7 @@ Apart from yield generation YOLO has other great features like “Liquidity Aggr
 
 For all these processes in Symphony Finance to run smoothly, the protocol needs a means of direct communication with its users, and what better than EPNS to make this happen.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 Through our collaboration with Symphony Finance, we aim to facilitate decentralized push notifications for investors, traders, and users of the protocol. These decentralized notifications can become a reliable means for the protocol to communicate with its users.
 

@@ -1,19 +1,17 @@
 ---
-
 slug: push-protocol-s-bug-bounty-program-goes-live
 title: Push Protocol’s Bug Bounty Program Goes Live!
 authors: [push]
 image: './cover-image.webp'
-text: "Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉"
-tags: [ Web3, Bug Bounty, Blockchain Technology, Bounty Program, Announcements]
-
+text: 'Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉'
+tags: [Web3, Bug Bounty, Blockchain Technology, Bounty Program, Announcements]
 ---
 
 ![Cover image of Push Protocol’s Bug Bounty Program Goes Live!](./cover-image.webp)
+
 <!--truncate-->
 
 Its official! The Push DAO has ratified the proposal to implement Push Protocol’s Bug Bounty Program🎉
-
 
 <b>And the program starts TODAY!</b>
 
@@ -66,4 +64,3 @@ You can reach out to us through any of our communication channels, however we su
 You can find us on [Discord here](https://discord.com/invite/pushprotocol).
 
 Thanks again for being a part of what makes Push Protocol incredible!
-

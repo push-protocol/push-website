@@ -3,20 +3,22 @@ slug: epns-monthly-blocks
 title: 'EPNS Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
-text: "We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month."
+text: 'We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month.'
 tags: [Epnsproject, Blockchain, Notifications, Ethereum]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Monthly Blocks](./cover-image.webp)
+
 <!--truncate-->
 
 We made it to a wonderful end of Q2! Lots of foundational work have happened throughout this first half of the year in preparation for all the great things coming for EPNS in the remaining part of 2022. Let’s go briefly over the happenings of this month.
 
-
 ![What's new Image](./image-1.webp)
 
 ### Development 🏗️
+
 The development shop have been working non-stop on several different items. Not only new feature development, but also fine turning and optimization to ensure we are ready to scale and fulfill the most demanding needs of the web3.
 
 Let’s go over some of the optimizations first:
@@ -37,8 +39,8 @@ This month we also announced that <b>EPNS Core Smart Contracts v1.5</b> is in au
 
 Finally, given our big focus on the developer community, this month we hosted a [two-day virtual workshop for developers](https://twitter.com/epnsproject/status/1537747598563454977?s=20&amp%3Bt=5sCBA1L66oeSknEf2daTsA&utm_source=substack&utm_medium=email) on EPNS basics & building a dApp, and had a wonderful time sharing with all hackers from [ETH NYC](https://twitter.com/epnsproject/status/1541466249825091584?s=20&t=im07nJLlpEmhWljYo73dHA).
 
-
 ### Frens of EPNS 🎎
+
 Every month we have the pleasure to collaborate with more and more important teams building cools stuff in the web3 space. This month is not the exception!
 
 - [<b>H2O:</b>](https://twitter.com/epnsproject/status/1533737279562297350?s=20&t=j8CeYXy-_t5LXS8C2Ruaow) to receive notifications whenever their loans approach liquidation. This allows users to take appropriate action o
@@ -47,11 +49,12 @@ Every month we have the pleasure to collaborate with more and more important tea
 
 - [<b>Digible:</b>](https://twitter.com/pushprotocol/status/1534947343724081152?s=20&t=j8CeYXy-_t5LXS8C2Ruaow) : the Digible channel went Live! Allowing users to receive timely notifications about their NFTs in the Digible marketplace.
 
- - [<b>Stox:</b>](https://twitter.com/pushprotocol/status/1536757201435471872?s=20&t=w1JGdsczeh4RJWdxXG4Btw) to notify Stox users about their NFT sales directly into the Stox app!
+- [<b>Stox:</b>](https://twitter.com/pushprotocol/status/1536757201435471872?s=20&t=w1JGdsczeh4RJWdxXG4Btw) to notify Stox users about their NFT sales directly into the Stox app!
 
- - [<b>Pine Protocol:</b>](https://twitter.com/epnsproject/status/1542553551901278211?s=20&t=im07nJLlpEmhWljYo73dHA) for users to opt-in to receive notifications about their loans approaching liquidation and about to expire.
+- [<b>Pine Protocol:</b>](https://twitter.com/epnsproject/status/1542553551901278211?s=20&t=im07nJLlpEmhWljYo73dHA) for users to opt-in to receive notifications about their loans approaching liquidation and about to expire.
 
 ### Governance 🗳️
+
 A very active month on the Governance front! This month we had the opportunity to work on both Push Improvement Proposals (PIPs) and Push Grants.
 
 - Push Grants Approved: [Social3 & Chainwhiz](https://twitter.com/epnsproject/status/1532285894752980993?s=20&t=cPtxoqQMC9IS7mrJBhU-HA) were approved on Snapshot. Both teams attended our Twitter spaces Friday PUSH to share about what they are building and whats to come.
@@ -62,6 +65,7 @@ A very active month on the Governance front! This month we had the opportunity t
 Finally, make sure to check out the [article about Push Governance](https://twitter.com/epnsproject/status/1534585061139304448?s=20&t=j8CeYXy-_t5LXS8C2Ruaow) from our PGP Grantee Thumbsupfinance.
 
 ### News & Community 🎪
+
 We are glad and humbled that our team keeps joining several different media outlets and events to share more about what we are building, why is a critical building block in the space, and whats coming very soon.
 
 We also take the opportunity to thank builders and community members that keeps us motivated to keep going on our mission to build the communication layer for the web3.
@@ -81,7 +85,3 @@ The team is hyped and excited about everything to come in this second half of th
 Let’s keep PUSHing! 💪🏼
 
 The EPNS team
-
-
-
-

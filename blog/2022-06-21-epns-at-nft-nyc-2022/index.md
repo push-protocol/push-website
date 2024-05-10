@@ -3,16 +3,17 @@ slug: epns-at-nft-nyc-2022-all-set-for-the-nft-verse
 title: 'EPNS at NFT NYC 2022: All set for the NFTVerse'
 authors: [push]
 image: './cover-image.webp'
-text: "We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!"
+text: 'We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!'
 tags: [Nft, Ethereum, Blockchain, Cryptocurrency, Crypto]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS at NFT NYC 2022: All set for the NFTVerse](./cover-image.webp)
+
 <!--truncate-->
 
 We’re all set and headed to the biggest NFT Party in the world! Touted as the Superbowl of the NFTs and the new CES for NFTs by our frens at Coinbase and Ledger respectively, hsow can we miss this event!
-
 
 So excited to be part of this <b>4th Annual NFT Industry Event</b> in person and the EPNS Team is going to be doing some really exciting things while we’re at NFT NYC!
 
@@ -48,7 +49,6 @@ We kicked off [The Rockstars of EPNS](https://medium.com/ethereum-push-notificat
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/epnsproject/status/1519367021695172615&amp;image=https%3A//i.embed.ly/1/image%3Furl%3Dhttps%253A%252F%252Fabs.twimg.com%252Ferrors%252Flogo46x38.png%26key%3Da19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0" height="689" width="680" title="EPNS | $PUSH on Twitter: &quot;1/ And just like that, this amazing ride of 52 weeks of #RockstarsOfEpns has come to an end🥺We've never felt so loved!💕Thank you everyone for all the love &amp; support over these past 52 weeks &amp; more!✨But what next?👀 Dive in to learn what's coming!👇https://t.co/azt3vlmUhN pic.twitter.com/9nc6ebO376 / Twitter&quot;" class="ek n fc dx bg" scrolling="no"></iframe>
 
-
 At EPNS we are huge fans of the NFT space and the emerging creator economy and we were so thrilled to be witnessing a wave of adoption among creators and artists.
 
 So, we decided to throw our hat in the ring by supporting artists, celebrating our origins, and giving back to the community along the way. And that was just in time for the $PUSH token sale and the EPNS mainnet launch! 🙌
@@ -73,9 +73,7 @@ The what and why web3 communication is important for NFTs. Use cases of web3 com
 
 Speaking of NFTVerse, you might want to check out our latest blog we wrote on <b>Why engaging with your users within the NFTVerse matters!</b>
 
-
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/epnsproject/status/1537480225256136704&amp;image=https%3A//i.embed.ly/1/image%3Furl%3Dhttps%253A%252F%252Fabs.twimg.com%252Ferrors%252Flogo46x38.png%26key%3Da19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0" height="689" width="680" title="EPNS | $PUSH on Twitter: &quot;As we approach #NFTNYC2022 &amp; the #NFTVerse grows we feel a strong need for a native communication layer to accelerate growth! 🌱In our latest blog we share exactly Why Engaging with Users Within the NFTVerse Matters &amp; how #Web3Comm will help! 👩🏾‍🤝‍👩🏻🤝📰👉 https://t.co/w7URfE6Pkz pic.twitter.com/LCWGkk55jh / Twitter&quot;" class="ek n fc dx bg" scrolling="no"></iframe>
-
 
 #### Lastly, What’s #MYNFTStory
 
@@ -108,5 +106,3 @@ A chance to share your NFTStory and heck, even WIN something BIG!
 With so many awesome happenings at this great event, we’re really looking forward to being part of them and interacting with all you community members! Given that it’s been a while since we’ve been to an IRL event post ETHAmsterdam.
 
 Speaking of which, post NFT NYC, we’ll also be doing a Hackathon as part of ETHGLobal’s ETHNYC! So stay tuned for more details on that one soon.
-
-

@@ -9,6 +9,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Timeswap Partners with EPNS To Bring Push Notifications to Its Users](./cover-image.webp)
@@ -29,18 +30,16 @@ The platform also allows projects on the Ethereum network to borrow funds using 
 
 Because of the flexible timeframes, it is possible that borrowers miss the maturity period or even lenders miss out on withdrawing funds after maturity. This is where the partnership with EPNS could be game-changing.
 
-EPNS Helps Timeswap Create a Rich User Experience
-=================================================
+# EPNS Helps Timeswap Create a Rich User Experience
 
 Through our partnership with Timeswap, we aim to create a reliable communication channel for the protocol to be able to efficiently communicate with its users. Users of Timeswap can now subscribe to EPNS to receive notifications about their loans.
 
-*   Borrowers can receive notifications whenever the maturity date of the loan approaches so that they can pay it back on time.
-*   The lenders can receive notifications when it is time for them to withdraw their deposits after maturity.
+- Borrowers can receive notifications whenever the maturity date of the loan approaches so that they can pay it back on time.
+- The lenders can receive notifications when it is time for them to withdraw their deposits after maturity.
 
 The incorporation of EPNS Push notifications can assist Timeswap in its efforts to revolutionize money markets creating a hassle-free, no friction experience for its users. We hope to become an integral part of the protocol in the near future.
 
-About TimeSwap
-==============
+# About TimeSwap
 
 Timeswap is the first fully permissionless, oracle-less, non-liquidatable, fixed maturity lending & borrowing protocol. Timeswap uses an AMM for interest rate discovery and collateral ratio determination. The protocol allows lenders and borrowers to set ‘interest’ and ‘insurance’ parameters that are determined along a constant product bonding curve, effectively allowing users to structure bonds against a pooled counterparty. Liquidity Providers can create pools with fixed maturities for any pair of tokens, allowing for the creation of debt markets across long tail assets. For more information, please visit [www.timeswap.io.](http://www.timeswap.io.)
 

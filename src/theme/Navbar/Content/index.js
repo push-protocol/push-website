@@ -6,15 +6,15 @@
  */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
-import { ErrorCauseBoundary, useThemeConfig } from "@docusaurus/theme-common";
+import { ErrorCauseBoundary, useThemeConfig } from '@docusaurus/theme-common';
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
-} from "@docusaurus/theme-common/internal";
-import GLOBALS, { device } from "@site/src/config/globals";
+} from '@docusaurus/theme-common/internal';
+import GLOBALS, { device } from '@site/src/config/globals';
 import {
   A,
   Button,
@@ -27,19 +27,19 @@ import {
   LinkTo,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import NavbarColorModeToggle from "@theme/Navbar/ColorModeToggle";
-import NavbarLogo from "@theme/Navbar/Logo";
-import NavbarMobileSidebarToggle from "@theme/Navbar/MobileSidebar/Toggle";
-import NavbarSearch from "@theme/Navbar/Search";
-import NavbarItem from "@theme/NavbarItem";
-import SearchBar from "@theme/SearchBar";
-import { useTranslation } from "react-i18next";
-import { BsChevronDown } from "react-icons/bs";
-import styled from "styled-components";
-import { HeaderList } from "../../../config/HeaderList";
-import styles from "./styles.module.css";
+} from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
+import NavbarLogo from '@theme/Navbar/Logo';
+import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
+import NavbarSearch from '@theme/Navbar/Search';
+import NavbarItem from '@theme/NavbarItem';
+import SearchBar from '@theme/SearchBar';
+import { useTranslation } from 'react-i18next';
+import { BsChevronDown } from 'react-icons/bs';
+import styled from 'styled-components';
+import { HeaderList } from '../../../config/HeaderList';
+import styles from './styles.module.css';
 
 const defaultMobileMenuState = {
   0: false,
@@ -65,7 +65,7 @@ function NavbarItems({ items }) {
               `A theme navbar item failed to render.
 Please double-check the following navbar item (themeConfig.navbar.items) of your Docusaurus config:
 ${JSON.stringify(item, null, 2)}`,
-              { cause: error },
+              { cause: error }
             )
           }
         >
@@ -77,9 +77,9 @@ ${JSON.stringify(item, null, 2)}`,
 }
 function NavbarContentLayout({ left, right }) {
   return (
-    <div className="navbar__inner">
-      <div className="navbar__items">{left}</div>
-      <div className="navbar__items navbar__items--right">{right}</div>
+    <div className='navbar__inner'>
+      <div className='navbar__items'>{left}</div>
+      <div className='navbar__items navbar__items--right'>{right}</div>
     </div>
   );
 }
@@ -93,7 +93,7 @@ export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
-  const searchBarItem = items.find((item) => item.type === "search");
+  const searchBarItem = items.find((item) => item.type === 'search');
 
   const isLaptopM = useMediaQuery(device.laptopM);
   const isLaptop = useMediaQuery(device.laptop);
@@ -128,10 +128,10 @@ export default function NavbarContent() {
       e.stopPropagation();
 
       if (href) {
-        if (target && target !== "_blank") {
-          if (target === "_self") {
+        if (target && target !== '_blank') {
+          if (target === '_self') {
             // check if url is external
-            if (href.includes("http")) {
+            if (href.includes('http')) {
               window.location.href = href;
             } else {
               history.push(href);
@@ -139,7 +139,7 @@ export default function NavbarContent() {
           }
         } else {
           // check if url is internal and if so append the base url
-          if (href.includes("http")) {
+          if (href.includes('http')) {
             window.open(href, target);
           } else {
             window.open(`${window.location.origin}${href}`, target);
@@ -149,7 +149,7 @@ export default function NavbarContent() {
         if (showMobileMenu) toggleMobileMenu();
 
         document.getElementById(id).scrollIntoView({
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       } else return;
     };
@@ -161,7 +161,7 @@ export default function NavbarContent() {
             key={index}
             src={
               require(
-                `@site/static/assets/website/header/${item.srcrefoff}.png`,
+                `@site/static/assets/website/header/${item.srcrefoff}.png`
               ).default
             }
             srcSet={`${require(`@site/static/assets/website/header/${item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${item.srcrefoff}@3x.png`).default} 3x`}
@@ -171,25 +171,25 @@ export default function NavbarContent() {
           />
         )}
 
-        <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+        <ItemH flexDirection='column' alignItems='flex-start' gap='4px'>
           <H2
-            fontSize="16px"
-            fontFamily="FK Grotesk Neue"
-            color="var(--ifm-color-primary-text)"
-            lineHeight="130%"
-            letterSpacing="normal"
-            fontWeight="500"
+            fontSize='16px'
+            fontFamily='FK Grotesk Neue'
+            color='var(--ifm-color-primary-text)'
+            lineHeight='130%'
+            letterSpacing='normal'
+            fontWeight='500'
           >
             {t(item.title)}
           </H2>
 
           <H3
-            fontSize="14px"
-            fontFamily="FK Grotesk Neue"
-            color="var(--ifm-navbar-dropdown-subtext)"
-            lineHeight="130%"
-            letterSpacing="normal"
-            fontWeight="400"
+            fontSize='14px'
+            fontFamily='FK Grotesk Neue'
+            color='var(--ifm-navbar-dropdown-subtext)'
+            lineHeight='130%'
+            letterSpacing='normal'
+            fontWeight='400'
           >
             {t(item.subtitle)}
           </H3>
@@ -198,15 +198,15 @@ export default function NavbarContent() {
     );
   };
 
-  const textIds = ["text0", "text1", "text2", "text3", "text4"];
+  const textIds = ['text0', 'text1', 'text2', 'text3', 'text4'];
 
   const handleMouseEnter = (e, activeId) => {
     textIds.forEach((id) => {
       if (id !== activeId) {
         const element = document.getElementById(id);
         if (element) {
-          element.style.color = "#6C6C6C";
-          element.style.transitionDuration = "1s";
+          element.style.color = '#6C6C6C';
+          element.style.transitionDuration = '1s';
         }
       }
     });
@@ -216,8 +216,8 @@ export default function NavbarContent() {
     textIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
-        element.style.color = "#fff";
-        element.style.transitionDuration = "1s";
+        element.style.color = '#fff';
+        element.style.transitionDuration = '1s';
       }
     });
   };
@@ -233,12 +233,12 @@ export default function NavbarContent() {
 
           {/* Change Header from docs to blog if required */}
           {!isLaptopM &&
-            (pathname.startsWith("/docs") ? (
-              <NavItem to="/docs" aria-label="Push Docs">
+            (pathname.startsWith('/docs') ? (
+              <NavItem to='/docs' aria-label='Push Docs'>
                 Docs
               </NavItem>
             ) : (
-              <NavItem to="/blog" aria-label="Push Blog">
+              <NavItem to='/blog' aria-label='Push Blog'>
                 Blog
               </NavItem>
             ))}
@@ -248,25 +248,25 @@ export default function NavbarContent() {
               <NavigationMenuHeader
                 onClick={(e) => onMobileHeaderMenuClick(e, 0)}
                 expanded={mobileMenuMap[0]}
-                onMouseEnter={(e) => handleMouseEnter(e, "text0")}
+                onMouseEnter={(e) => handleMouseEnter(e, 'text0')}
                 onMouseLeave={(e) => handleMouseLeave(e)}
-                id="text0"
+                id='text0'
               >
                 <Span
-                  fontSize="18px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="142%"
-                  padding="16px"
-                  color="inherit"
+                  fontSize='18px'
+                  fontWeight='500'
+                  letterSpacing='-0.03em'
+                  lineHeight='142%'
+                  padding='16px'
+                  color='inherit'
                 >
                   Explore
                 </Span>
-                <BsChevronDown size={12} className="chevronIcon" />
+                <BsChevronDown size={12} className='chevronIcon' />
               </NavigationMenuHeader>
 
               <NavigationMenuContent
-                className="menuContent"
+                className='menuContent'
                 expanded={mobileMenuMap[0]}
               >
                 {HeaderList.docshub.map((item, index) => (
@@ -304,7 +304,7 @@ const NavigationMenuItem = styled.div`
   }
 
   & span {
-    font-family: "FK Grotesk Neue";
+    font-family: 'FK Grotesk Neue';
 
     padding: 4px;
     font-weight: 500;
@@ -369,7 +369,7 @@ const NavigationMenuHeader = styled.div`
       width: 16px;
       height: 16px;
       transform: ${(props) =>
-        props.expanded ? "rotate(180deg)" : "none  !important"};
+        props.expanded ? 'rotate(180deg)' : 'none  !important'};
     }
   }
 `;
@@ -377,7 +377,7 @@ const NavigationMenuHeader = styled.div`
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
-  font-family: "Strawford", "Manrope", sans-serif;
+  font-family: 'Strawford', 'Manrope', sans-serif;
   display: none;
   position: absolute;
 
@@ -407,7 +407,7 @@ const NavigationMenuContent = styled.ul`
     position: relative;
     clip-path: inset(0 round 24px);
 
-    display: ${(props) => (props.expanded ? "flex" : "none !important")};
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
     & a {
       justify-content: flex-start;
     }
@@ -466,7 +466,7 @@ const HeaderImage = styled(Image)`
 const NavItem = styled(LinkTo)`
   color: var(--ifm-color-primary-text);
 
-  font-family: "FK Grotesk Neue";
+  font-family: 'FK Grotesk Neue';
   font-size: 15px;
   font-style: normal;
   font-weight: 500;

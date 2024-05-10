@@ -1,14 +1,14 @@
 // React + Web3 Essentials
-import { useLocation } from "@docusaurus/router";
-import React from "react";
+import { useLocation } from '@docusaurus/router';
+import React from 'react';
 
 // External Components
-import i18nInitialize from "@site/src/utils/i18n";
+import i18nInitialize from '@site/src/utils/i18n';
 
 // Internal Components
-import Footer from "@site/src/segments/Footer";
-import ServerStyle from "@site/src/theme/ServerStyle";
-import CookieComponent from "../components/CookieComponent";
+import Footer from '@site/src/segments/Footer';
+import ServerStyle from '@site/src/theme/ServerStyle';
+import CookieComponent from '../components/CookieComponent';
 
 // Initialize Internalization
 i18nInitialize();
@@ -17,30 +17,30 @@ export default function Root({ children }) {
   // superimposed conditions
   const superimposedConditions = [
     {
-      classname: "DocsHub PushDocs DocusaurusNavbar NavBarDark",
-      pathname: "/DOCS",
-      condition: "exact",
+      classname: 'DocsHub PushDocs DocusaurusNavbar NavBarDark',
+      pathname: '/DOCS',
+      condition: 'exact',
     },
     {
-      classname: "PushDocs DocusaurusNavbar",
-      pathname: "/DOCS",
-      condition: "subpaths",
+      classname: 'PushDocs DocusaurusNavbar',
+      pathname: '/DOCS',
+      condition: 'subpaths',
     },
     {
-      classname: "BlogHub PushBlog DocusaurusNavbar",
-      pathname: "/BLOG",
-      condition: "exact",
+      classname: 'BlogHub PushBlog DocusaurusNavbar',
+      pathname: '/BLOG',
+      condition: 'exact',
     },
     {
-      classname: "PushBlog DocusaurusNavbar",
-      pathname: "/BLOG",
-      condition: "subpaths",
+      classname: 'PushBlog DocusaurusNavbar',
+      pathname: '/BLOG',
+      condition: 'subpaths',
     },
   ];
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
-    let result = "";
+    let result = '';
     for (var i = 0; i < conditions.length; i++) {
       const item = conditions[i];
 
@@ -74,7 +74,7 @@ export default function Root({ children }) {
         : null;
 
     result = modstr === pathname ? true : false;
-    if (condition === "exact" || condition === "subpaths") {
+    if (condition === 'exact' || condition === 'subpaths') {
       // check if sub path exist in pathname and change result;
       if (
         str.length > pathname.length &&
@@ -82,13 +82,13 @@ export default function Root({ children }) {
       ) {
         // path has more
         const remainingLength =
-          str.substring(pathname.length, pathname.length + 1) === "/"
+          str.substring(pathname.length, pathname.length + 1) === '/'
             ? str.length - pathname.length - 1
             : str.length - pathname.length;
 
-        if (condition === "exact") {
+        if (condition === 'exact') {
           result = remainingLength == 0 ? true : false;
-        } else if (condition === "subpaths") {
+        } else if (condition === 'subpaths') {
           result = remainingLength > 0 ? true : false;
         }
       }
@@ -104,9 +104,9 @@ export default function Root({ children }) {
       {/* Main react children */}
       {children}
 
-      {excludeDefaultConfigAt("/BRB") &&
-        excludeDefaultConfigAt("/DOCS") &&
-        excludeDefaultConfigAt("/BOOTCAMP") && (
+      {excludeDefaultConfigAt('/BRB') &&
+        excludeDefaultConfigAt('/DOCS') &&
+        excludeDefaultConfigAt('/BOOTCAMP') && (
           <>
             <Footer />
             <CookieComponent />

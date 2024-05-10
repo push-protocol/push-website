@@ -5,7 +5,7 @@ hide_title: true
 slug: ./subscription-manager-widget
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 2
-image: "/assets/docs/previews/docs_notifications_ui_components_integrate_subscription_manager_widget--integrating_subscription_manager_widget.png"
+image: '/assets/docs/previews/docs_notifications_ui_components_integrate_subscription_manager_widget--integrating_subscription_manager_widget.png'
 ---
 
 # SubscriptionManagerWidget
@@ -18,9 +18,9 @@ Subscription and managing settings become effortless tasks with this modal compo
   <title>SubscriptionManager | Push Notifications | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import { ModalContainer } from "@site/src/css/SharedStyling";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer } from '@site/src/css/SharedStyling';
 
 ## Usage
 
@@ -49,7 +49,7 @@ export default SubscriptionManagerTest;
 <ModalContainer>
   <img
     src={
-      require("/static/assets/docs/notifications/widgets/integrate-subscription-manager-widget.png")
+      require('/static/assets/docs/notifications/widgets/integrate-subscription-manager-widget.png')
         .default
     }
   />
@@ -84,10 +84,10 @@ function App(props) {
   return (
     <>
       <WidgetUIProvider>
-        <div style={{ height: "75vh", position: "relative" }}>
+        <div style={{ height: '75vh', position: 'relative' }}>
           <SubscriptionManager
-            channelAddress="eip155:1:0xB88460Bb2696CAb9D66013A05dFF29a28330689D"
-            onClose={() => console.debug("on close modal")}
+            channelAddress='eip155:1:0xB88460Bb2696CAb9D66013A05dFF29a28330689D'
+            onClose={() => console.debug('on close modal')}
             modalPositionType={MODAL_POSITION_TYPE.RELATIVE}
           />
         </div>

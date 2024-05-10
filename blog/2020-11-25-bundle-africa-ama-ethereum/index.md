@@ -13,6 +13,7 @@ tags: [ Ama
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of 🎙Bundle Africa AMA — Ethereum To The Moon](./cover-image.webp)
@@ -25,8 +26,7 @@ Ethereum Push Notification Service (EPNS) Founder and Project Lead, Harsh Rajat,
 
 Find the AMA transcript below:
 
-Segment 1: Introduction
-=======================
+# Segment 1: Introduction
 
 Joshua ⚡| Bundle Team: Hello Everyone! Good Evening! It’s my pleasure to welcome you to another exciting AMA. This time with the Harsh Rajat and Richa Joshi.
 
@@ -128,8 +128,7 @@ Harsh:🙏
 
 Richa: 🙏🙏
 
-Segment 2: Community Questions
-==============================
+# Segment 2: Community Questions
 
 Joshua ⚡| Bundle Team: So, this brings us to segment 2, we’ll open the group so our members can ask questions, then you’ll will select and answer the 5 most insightful questions.
 
@@ -239,9 +238,9 @@ Another great question. ETH works on the concept of gas, which means that any op
 
 Since ETH is more like a decentralized computer for all the smart contracts running over it, this also means that apart from the transfer of ETH from one party to another, it is also used for countless other operations (like calculations you do in your code) for different things in a smart contract.
 
-These things can be computationally expensive at times or might be meager which means they have different gas requirements, and since gas price is measured in ether, the gas fee is always done as gas\_required\_for\_an\_operation X current\_gas\_price
+These things can be computationally expensive at times or might be meager which means they have different gas requirements, and since gas price is measured in ether, the gas fee is always done as gas_required_for_an_operation X current_gas_price
 
-This means that if the current\_gas\_price (measured in ETH) goes up than the transaction becomes more expensive to perform. As with the rule of demand and supply, if the gas fee is higher, the network becomes expensive to use and thereby will have less people using it.
+This means that if the current_gas_price (measured in ETH) goes up than the transaction becomes more expensive to perform. As with the rule of demand and supply, if the gas fee is higher, the network becomes expensive to use and thereby will have less people using it.
 
 This is the reason why gas fee affect eth workablitily
 

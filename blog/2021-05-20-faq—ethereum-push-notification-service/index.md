@@ -11,19 +11,18 @@ tags: [ FAQ
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of FAQ — Ethereum Push Notification Service (EPNS)](./cover-image.webp)
 
 <!--truncate-->
 
-**Q. What does EPNS do?**
--------------------------
+## **Q. What does EPNS do?**
 
 Ethereum Push Notification Service (EPNS) is a platform-agnostic, decentralized notification protocol for Ethereum-based Web 3.0 applications. It enables users to receive notifications for on-chain or off-chain activity. EPNS allows Web3 actors (users, dapps, service providers) to create notifications that are triggered if and when a smart contract reaches certain conditions. Other Web3 participants can search, browse, and subscribe to specific notifications and more confidently interact with dapps. In doing so, EPNS combines the seamless user experience of Web 2.0 apps with the security and power of Web 3.0.
 
-Q. What are some of the use cases for EPNS?
--------------------------------------------
+## Q. What are some of the use cases for EPNS?
 
 We believe almost any application in the Web3 ecosystem can benefit from notifications. Some of the highest-impact immediate opportunities are:
 
@@ -35,13 +34,11 @@ We believe almost any application in the Web3 ecosystem can benefit from notific
 
 **ENS/Consumer Apps:** Apps like the Ethereum Name Service (ENS) and .Crypto can notify users when their subscriptions are about to expire, rather than expecting users to remember or check in regularly to remind themselves of upcoming dates.
 
-**Q. Why should I use EPNS?**
------------------------------
+## **Q. Why should I use EPNS?**
 
 Because for so long, as a Web3.0 user, you waited on Twitter or Telegram for important updates and communications from your favorite dApps. Developers suffered while sending necessary information regarding their app or product over social media, hoping for their users to see it. Of course, without certainty. Consequently, users missed out on crucial notifications, alerts, notices, and offers. EPNS solves these, plus incentivizes both senders and receivers with usage rewards.
 
-**Q. What are the EPNS Products?**
-----------------------------------
+## **Q. What are the EPNS Products?**
 
 The EPNS product suite comprises the following elements:
 
@@ -55,8 +52,7 @@ The EPNS product suite comprises the following elements:
 
 Learn more about the EPNS ecosystem and compliments in our [EPNS Roadmap 2021](https://medium.com/ethereum-push-notification-service/epns-roadmap-2021-c4ededc57a12).
 
-Q. What are the main components of the EPNS Protocol?
------------------------------------------------------
+## Q. What are the main components of the EPNS Protocol?
 
 Apart from the technological framework, the EPNS protocol consists of Users, who are further divided into Subscribers and Channels.
 
@@ -65,13 +61,11 @@ Apart from the technological framework, the EPNS protocol consists of Users, who
 3.  **Subscriber:** A user who subscribes to channels on EPNS for receiving notifications. EPNS adopts the opt-in model for subscriptions, meaning that channels can send notifications only to voluntary participants. Subscriptions can either be direct or indirect, and you can unsubscribe at any time.
 4.  **Users**: Any user who is present in the protocol registry.
 
-**Q. What are the types of Channels on EPNS?**
-----------------------------------------------
+## **Q. What are the types of Channels on EPNS?**
 
 Channels on EPNS can be of 3 types (in future can be more)— Open, Closed, and Mutual. An Open Channel is open to all and anyone can join. In Closed Channels, subscribers can join only on invitation by the channel. Combining these two, a Mutual Channel is such that Subscribers can send requests which the channel has to accept. Apart from these three, there are two special, automated, and opt-in channels — EPNS Channel and EPNS Alerter Channel. These send notifications to Subscribers and Channels respectively.
 
-Q. **How does the EPNS communication layer actually works ?**
--------------------------------------------------------------
+## Q. **How does the EPNS communication layer actually works ?**
 
 The communication layer basically can be categorized in two segments:
 
@@ -81,35 +75,29 @@ The communication layer basically can be categorized in two segments:
 
 These two segments ensures that communication is standardized, authenticated and can be listened to by any crypto wallet, mobile apps or any other infra service. Detailed read of the protocol can be found here: [https://whitepaper.epns.io](https://whitepaper.epns.io)
 
-**Q. How do Channels send notifications?**
-------------------------------------------
+## **Q. How do Channels send notifications?**
 
 EPNS is designed in a way such that Channels send notifications in the form of JSON (JavaScript Object Notation) payloads. This allows for the flexible and streamlined transfer of the notification’s data from a decentralized storage environment. Further, the information is transmitted and recorded on-chain, following due validation. Leveraging EPNS Infra, decentralized protocols can also send notifications to centralized environments. To send notifications, Channels have to bear a fee, payable in ETH or DAI. Apart from directly sending notifications to Subscribers, Channels can also delegate declared wallet addresses to transmit notifications on their behalf. For further details and mathematical expositions, read the [relevant sections from our White Paper](https://whitepaper.epns.io/protocol-specs-section/specifications).
 
-**Q. How can I activate or deactivate a Channel?**
---------------------------------------------------
+## **Q. How can I activate or deactivate a Channel?**
 
 To activate a Channel, you need to stake 50 DAI or higher, which adds to the staking pool used for distributing token incentives. You can also deactivate the channel by unstaking, but this involves a penalty of 20 DAI — half of it remains in the Stake Pool and the rest goes to the Fee Pool. This mechanism minimizes the risks of bad actors getting onboard.
 
-**Q. Can I get spammed on EPNS?**
----------------------------------
+## **Q. Can I get spammed on EPNS?**
 
 In order to avoid spam, a spam score has been set from 0–1. 0 means that the channel has an excellent score while 1 means the channel is unhealthy. The range adjusts based on positive actions such as a higher number of subscribers, with the passing of time while negative actions are higher than usual unsubscribers, higher than usual notifications, etc. This is guided by the protocol and at a certain range, the protocol will start throttling the notifications or even stop them until the score comes back to a healthier range.
 
-**Q. What are $PUSH tokens and how can I use them?**
-----------------------------------------------------
+## **Q. What are $PUSH tokens and how can I use them?**
 
 $PUSH is a governance token that also carries usage mining incentives and the ability to split the fee pool in the future whenever the community chooses to enable that, it’s designed to incentivize all actors in the ecosystem to participate and check each other! Keeping this short but a much better version of what all things it does and how it ties to the ecosystem can be found here: [https://medium.com/ethereum-push-notification-service/push-token-economics-d7f566c29b1a](https://medium.com/ethereum-push-notification-service/push-token-economics-d7f566c29b1a)
 
-Q. What incentive mechanism are currently available?
-----------------------------------------------------
+## Q. What incentive mechanism are currently available?
 
 Incentives for participation both in terms of token rewards and otherwise is importance to ensure strong network effects. We already created the following incentives for governance:
 
-*   Introduced liquidity mining and staking on [https://incentives.epns.io](https://incentives.epns.io/)
-*   Introduced $ROCKSTAR of EPNS NFTs and $PUSH rewards to signal gratitude to early community and to reward new community and their participation in the ecosystem. [Read more about it here](https://medium.com/ethereum-push-notification-service/the-first-nft-collection-from-epns-677e23173c95).
+- Introduced liquidity mining and staking on [https://incentives.epns.io](https://incentives.epns.io/)
+- Introduced $ROCKSTAR of EPNS NFTs and $PUSH rewards to signal gratitude to early community and to reward new community and their participation in the ecosystem. [Read more about it here](https://medium.com/ethereum-push-notification-service/the-first-nft-collection-from-epns-677e23173c95).
 
-Q. How can I keep up with EPNS?
--------------------------------
+## Q. How can I keep up with EPNS?
 
 Join our [Telegram](https://t.me/epnsproject), follow us on [Twitter](https://twitter.com/epnsproject), and sign up for our 5 minute [weekly product updates](https://epns.substack.com/).

@@ -28,8 +28,8 @@ function useMediaQuery(query: string): boolean {
     // Listen matchMedia
     if (matchMedia.addListener) {
       matchMedia.addListener(handleChange);
-    } else { 
-      matchMedia.addEventListener('change', handleChange, {passive: true});
+    } else {
+      matchMedia.addEventListener('change', handleChange, { passive: true });
     }
 
     return () => {

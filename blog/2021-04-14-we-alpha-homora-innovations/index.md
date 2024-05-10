@@ -12,6 +12,7 @@ tags: [ Gitcoin
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of We 💖 Alpha Homora, innovations in DeFi with EPNS](./cover-image.webp)
@@ -24,13 +25,13 @@ Towards this effort, we’re excited to announce that we are working with the [A
 
 Our pilot program with [Alpha Finance Lab](https://twitter.com/AlphaFinanceLab) and their Alpha Homora product will consist of:
 
-*   Building a channel for Alpha Homora on our protocol (see our [litepaper](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more).
-*   Exploring and creating notifications use cases like upcoming liquidation of leveraged positions etc.
-*   Working with Alpha Homora team to enable technical discussions towards building a decentralized communication layer that is scalable and powerful for the whole of Web3.0.
+- Building a channel for Alpha Homora on our protocol (see our [litepaper](https://github.com/push-protocol/push-whitepaper/blob/master/Ethereum%20Push%20Notification%20Service%20Litepaper.pdf) for definitions of channels, services, and more).
+- Exploring and creating notifications use cases like upcoming liquidation of leveraged positions etc.
+- Working with Alpha Homora team to enable technical discussions towards building a decentralized communication layer that is scalable and powerful for the whole of Web3.0.
 
 We are eager to begin this journey with the amazing Alpha Finance Lab team to continue growing DeFi to new heights.
 
-**_Pilot Program Updates_**  **_as of June 24th, 2021_**
+**_Pilot Program Updates_** **_as of June 24th, 2021_**
 
 With Alpha Homora we created a channel to which users can opt-in to receive notifications about their loan positions when they reach a risky level.
 
@@ -40,8 +41,7 @@ Currently, the threshold is defined programmatically as this implementation reli
 
 Working on this case gave us food for thought, and developed into internal brainstorming sessions to understand how to address some settings like this via the protocol.
 
-**About Alpha Finance Lab**
----------------------------
+## **About Alpha Finance Lab**
 
 Alpha Finance Lab is an ecosystem of DeFi products that will interoperate to maximize returns while minimizing downside risks for users. Each Alpha product focuses on capturing unaddressed demand in DeFi in an innovative and user friendly way.
 

@@ -12,6 +12,7 @@ tags: [ Funding
 ,Community
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Programmable Money 2.0 meets EPNS](./cover-image.webp)
@@ -26,8 +27,8 @@ We’re thrilled to announce our partnership with the Superfluid team to further
 
 Our pilot program with Superfluid will consist of:
 
-*   Exploring adding automated notification capabilities triggered by the basic functions available in the Superfluid Protocol. Such as: Starting, Editing and Cancelling a stream.
-*   Working with the Superfluid team to enable technical discussion towards building a decentralized communication layer that is scalable and powerful.
+- Exploring adding automated notification capabilities triggered by the basic functions available in the Superfluid Protocol. Such as: Starting, Editing and Cancelling a stream.
+- Working with the Superfluid team to enable technical discussion towards building a decentralized communication layer that is scalable and powerful.
 
 Superfluid adds a new building block that is poised to change the game and allow builders to create a whole new generation of DeFi applications. We are honored with this amazing opportunity of working together with the Superfluid team in developing **Real Time Finance**.
 

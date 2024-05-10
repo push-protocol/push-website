@@ -9,6 +9,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Partners With MakerDAO Development and UX Core Unit to Enable Push Notifications for Protocol Governance Updates](./cover-image.webp)
@@ -21,8 +22,7 @@ All the present-day blockchain networks have robust governance and consensus pro
 
 This is why we’ve partnered with the MakerDAO Development and UX (DUX) Core Unit to enable decentralized push notifications for polling and governance updates.
 
-How MakerDAO can Leverage Decentralized Notifications
-=====================================================
+# How MakerDAO can Leverage Decentralized Notifications
 
 MakerDAO is a decentralized protocol that lets users generate Dai against a variety of crypto assets locked in a specialized smart contract called Vault. The project was built with a long-term goal of unleashing the full potential of DeFi by bringing innovative financial tools to the ecosystem.
 
@@ -34,24 +34,20 @@ In this context, all the community members need to keep a constant watch on the 
 
 By enabling decentralized push notification for the community through EPNS, Maker Governance participants will be able to more easily stay informed of governance-related activities.
 
-What Does the Collaboration Warrant?
-====================================
+# What Does the Collaboration Warrant?
 
 By partnering with the MakerDAO Development and UX (DUX) Core Unit, we aim to build a proper communication medium between the network and users. This will reduce users’ dependency on third-party media and ensure that they receive timely polling and governance updates. This, in turn, will reduce friction and ensure that all users participate in the network governance. Users can subscribe to receive notifications whenever:
 
-*   A new poll is created
-*   A new executive proposal is created
-*   A poll ends
-*   An executive proposal ends
-*   An executive proposal is passed
+- A new poll is created
+- A new executive proposal is created
+- A poll ends
+- An executive proposal ends
+- An executive proposal is passed
 
 As MakerDAO continues working towards revolutionizing DeFi, we are pleased to be partnering with them in an effort to improve the network’s communication with its users. We are hopeful that EPNS push notifications will become an integral part of the Maker protocol.
 
-About MakerDAO
-==============
+# About MakerDAO
 
 MakerDAO is a decentralized autonomous organization that enables the generation of Dai, against digital assets without the need for a middleman. Dai is the world’s first decentralized stablecoin on the Ethereum blockchain.
 
 Stay in touch: [Website](https://makerdao.com/) | [Whitepaper](https://makerdao.com/whitepaper/DaiDec17WP.pdf) | [Reddit](https://www.reddit.com/r/MakerDAO/) | [Twitter](http://twitter.com/makerdao) | [Telegram](https://t.me/makerdaoofficial)
-
-

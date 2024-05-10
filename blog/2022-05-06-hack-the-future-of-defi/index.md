@@ -1,10 +1,10 @@
 ---
 slug: hack-the-future-of-defi
-title: "Hack the future of DeFi powered with Web3 communication aka EPNS"
-description: "Hack the future of DeFi powered with Web3 communication aka EPNS"
+title: 'Hack the future of DeFi powered with Web3 communication aka EPNS'
+description: 'Hack the future of DeFi powered with Web3 communication aka EPNS'
 authors: [push]
-image: "./cover-image.webp"
-text: "EPNS and NFT TiX strike a strategic alliance to bring decentralized push notifications for users."
+image: './cover-image.webp'
+text: 'EPNS and NFT TiX strike a strategic alliance to bring decentralized push notifications for users.'
 tags: [Nft, Epnsproject, Blockchain, Newsletter, Ethereum]
 ---
 

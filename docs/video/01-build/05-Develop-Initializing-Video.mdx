@@ -5,7 +5,7 @@ hide_title: true
 slug: ./initializing-video
 displayed_sidebar: pushVideoSidebar
 sidebar_position: 5
-image: "/assets/docs/previews/docs_video_develop--initializing_video.png"
+image: '/assets/docs/previews/docs_video_develop--initializing_video.png'
 ---
 
 # Initialising Video API Overview
@@ -16,12 +16,13 @@ Push Video API abstract away connection and encryption methods to enable seamles
   <title>Initializing Video API | Push Video | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 
 ## Prerequisites
-- You need to [initialize use](/docs/video/build/initialize-user/ "Initialize User for Push Video") and [setup video stream](/docs/video/build/setup-video-stream "Setup video stream for Push Video") before initializing video.
+
+- You need to [initialize use](/docs/video/build/initialize-user/ 'Initialize User for Push Video') and [setup video stream](/docs/video/build/setup-video-stream 'Setup video stream for Push Video') before initializing video.
 - You also need to declare `data`, `setData` which are essentially a state/variable to hold video call-related data with a callback function to react to changes in video state.
 
 ## Initialize video API
@@ -71,7 +72,6 @@ const aliceVideoCall = await userAlice.video.initialize(setData, {
   </TabItem>
 </Tabs>
 
-
 ---
 
 ### Initialize video parameters
@@ -86,7 +86,6 @@ const aliceVideoCall = await userAlice.video.initialize(setData, {
 | -            | `options.media`          | `MediaStream` | -       | Local stream. For backend use. Defaults to `null`.                                                                                                                          |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
 
 ## Understanding Video Lifecycle
 
@@ -201,15 +200,15 @@ The `CONSTANTS.VIDEO.INITIAL_DATA` looks like the following:
 Creating and initializing the `data` variable is shown below:
 
 ```typescript
-import { TYPES, CONSTANTS } from "@pushprotocol/restapi";
+import { TYPES, CONSTANTS } from '@pushprotocol/restapi';
 
 // 1. For a vanilla JS project
 let data: TYPES.VIDEO.DATA = CONSTANTS.VIDEO.INITIAL_DATA;
 
 // 2. For a React project
-import { useState } from "react";
+import { useState } from 'react';
 const [data, setData] = useState<TYPES.VIDEO.DATA>(
-  CONSTANTS.VIDEO.INITIAL_DATA,
+  CONSTANTS.VIDEO.INITIAL_DATA
 );
 ```
 

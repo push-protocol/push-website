@@ -6,4 +6,7 @@
  */
 /// <reference types="react" />
 import type { Props } from '@theme/BlogPostItem/Container';
-export default function BlogPostItemContainer({ children, className, }: Props): JSX.Element;
+export default function BlogPostItemContainer({
+  children,
+  className,
+}: Props): JSX.Element;

@@ -12,6 +12,7 @@ tags: [ Uniswap
 ,Protocol
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Accelerating DeFi with EPNS](./cover-image.webp)
@@ -36,7 +37,7 @@ In the future, we anticipate a few trends that will increase the need for decent
 
 Altogether, the growing DeFi ecosystem we envision needs a way for users to separate the signal from the noise. EPNS is that solution. We are humbled and grateful to be collaborating with one of the brightest teams in the space to build precisely what the ecosystem needs: a decentralized notification service optimized to connect Web3 users and dapps.
 
-**_Pilot Program Updates_**  **_as of June 24th, 2021_**
+**_Pilot Program Updates_** **_as of June 24th, 2021_**
 
 With Uniswap we implemented EPNS decentralized notifications to let users know when a new proposal is submitted.
 

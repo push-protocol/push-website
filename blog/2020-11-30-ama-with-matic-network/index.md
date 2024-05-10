@@ -12,14 +12,14 @@ tags: [ Crypto
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of 🎙 AMA with Matic Network](./cover-image.webp)
 
 <!--truncate-->
 
-Why Layer-2 solution is required to bring Web2.0 experience to Web3.0!
-======================================================================
+# Why Layer-2 solution is required to bring Web2.0 experience to Web3.0!
 
 [Ethereum Push Notification Service](https://epns.io/) (EPNS) Founder and Project Lead, [Harsh Rajat](https://twitter.com/harshrajat), and Co-founder, [Richa Joshi](https://twitter.com/Riijo), joined [Matic Network](https://matic.network/) community on 26th November 2020 for a live AMA session on their telegram group. We enjoyed answering some awesome questions about EPNS, Matic layer -2 partnership and discuss why layer-2 solution is required to bring Web2.0 experience to Web3.0!
 
@@ -28,8 +28,7 @@ _**_Time_**_: 3PM UTC_
 
 _Find the full AMA transcript below:_
 
-Part 1: Introduction
-====================
+# Part 1: Introduction
 
 > Q1. Hello Richa and Harsh, welcome to the Matic community 🙂. Could you please tell us a little about yourself and EPNS?
 
@@ -151,9 +150,9 @@ ps: The Matic team and the way they help us in any and all technical and non-tec
 
 **Answer. Harsh:** We actually thought a ton about it and there are couple of ways by which we mitigate the issue (everything happens on protocol :)):
 
-1) **Users in Control**: Users have to opt in to receive notifications from a service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
+1. **Users in Control**: Users have to opt in to receive notifications from a service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
 
-2) **Spam Health Score**: To ensure that a service doesn’t turn malicious later on, we attach a spam score to them as well which is adjusted by both positive (higher number of subscribers, passage of time, etc) and negative (unusual number of notifications, higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
+2. **Spam Health Score**: To ensure that a service doesn’t turn malicious later on, we attach a spam score to them as well which is adjusted by both positive (higher number of subscribers, passage of time, etc) and negative (unusual number of notifications, higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
 
 > Q8. How can someone set up his EPNS account and are there any requirements before anyone can start using EPNS?
 
@@ -169,8 +168,7 @@ Sure, this really depends on the channel you join, some channels might put up hi
 
 **Answer. Richa:** Yes, though it can happen both ways :). Either a third party developer (or us) creates a channel that combines them and you as a user select just like you said or we partner with them.
 
-Closing Remarks
-===============
+# Closing Remarks
 
 Thanks Arun and the Matic community for hosting and supporting us. It was delightful and we loved the questions 🙂 You guys are awesome!!
 

@@ -13,6 +13,7 @@ tags: [ Ethereum
 ,Blockchain
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of The All-New EPNS Dapp UI is finally here](./cover-image.webp)
@@ -35,8 +36,7 @@ After a few internal discussions and taking in some valuable community feedback,
 
 Let’s dive-in, in and get a brief idea of what’s new in the dApp and explore some of its cool features.
 
-TLDR;
------
+## TLDR;
 
 Some of the important new features in the dApp are as follows:
 
@@ -60,8 +60,7 @@ Some of the important new features in the dApp are as follows:
 
 While these are the features that are currently available on the main EPNS dApp, there are a couple of more really interesting ones that are in the works and will be launched eventually.
 
-The Merge of Governance & Incentives dApp
------------------------------------------
+## The Merge of Governance & Incentives dApp
 
 With our new UI, the navigation experience through our multiple other dApp is now a lot more effective.
 
@@ -69,8 +68,7 @@ Also, the EPNS dApp now includes the Governance section and allows a user to sea
 
 Similarly, users can now interact with the incentives dApp as well, right from the main EPNS dApp without the need to switch between multiple tabs on your browser.
 
-Notification Search & Filter
-----------------------------
+## Notification Search & Filter
 
 Notifications are important, undoubtedly. However, given the fact that the _Web3 world never sleeps 😀,_ there could be a scenario where your inbox is loaded with different notifications.
 
@@ -84,13 +82,12 @@ This feature enables the user to search for very specific notifications they wou
 
 Additionally, the UI provides the users with different kinds of filters that they can easily apply to their notifications.
 
-*   **_Notifications based on Channels:_** This allows the users to search for notifications that were sent out by a particular channel.
-*   **_Search by keyword:_** With this filter in place, users can directly search for any notifications based on keywords within a specific notification.
-*   **_Start Date_:** Notifications can be filtered out from any given start date.
-*   **_End Date_:** Notifications can be filtered out from any given end date
+- **_Notifications based on Channels:_** This allows the users to search for notifications that were sent out by a particular channel.
+- **_Search by keyword:_** With this filter in place, users can directly search for any notifications based on keywords within a specific notification.
+- **_Start Date_:** Notifications can be filtered out from any given start date.
+- **_End Date_:** Notifications can be filtered out from any given end date
 
-Inbox VS Spam Box
------------------
+## Inbox VS Spam Box
 
 Unlike the previous user interface, the new one has specific sections for your **inbox** and **spambox** respectively.
 
@@ -100,8 +97,7 @@ However, the spam box shall also include an opt-in button for every notification
 
 ![Third image of The All-New EPNS Dapp UI is finally here](./image-3.webp)
 
-Developer Section
------------------
+## Developer Section
 
 While the creation of a channel is an important step for you to set up your service and start sending notifications, it's not a mandatory step. A user who is simply interested in receiving notifications of the web3 world is only required to opt-in to his/her favorite channel and that’s it.
 
@@ -109,16 +105,15 @@ Therefore, in order to avoid confusion on this specific part, the new interface 
 
 Moreover, the developer section, as of now, shall include 3 important parts:
 
-*   **_Main Channel Creation page_**: This shall be the main channel creation page where the users will have to deposit the required amount and pay for the gas(_the real ether 😀_). Channel creation on this page shall ensure that your channel is now created in the production environment and is live on the EPNS Core smart contract.
-*   **_Test Channel Creation page_**: However, in order to get a clear understanding of how the channel creation process works, the developer section of the dApp shall also include a test channel page. This shall not be connected to Ethereum mainnet but with the Kovan testnet and hence no real fees shall be involved in the process. Hence, this can be used as a test playground to understand the different steps involved in channel creation. Once the developer is confident enough, they can go ahead and create a real channel on the main page.
-*   **_Developer Docs_**: Documentation can be of great help to get a better understanding of any piece of software. Hence, the developer section, being comparatively more technical than all other sections of the dApp shall also include the developer documentation link.
+- **_Main Channel Creation page_**: This shall be the main channel creation page where the users will have to deposit the required amount and pay for the gas(_the real ether 😀_). Channel creation on this page shall ensure that your channel is now created in the production environment and is live on the EPNS Core smart contract.
+- **_Test Channel Creation page_**: However, in order to get a clear understanding of how the channel creation process works, the developer section of the dApp shall also include a test channel page. This shall not be connected to Ethereum mainnet but with the Kovan testnet and hence no real fees shall be involved in the process. Hence, this can be used as a test playground to understand the different steps involved in channel creation. Once the developer is confident enough, they can go ahead and create a real channel on the main page.
+- **_Developer Docs_**: Documentation can be of great help to get a better understanding of any piece of software. Hence, the developer section, being comparatively more technical than all other sections of the dApp shall also include the developer documentation link.
 
 ![Fourth image of The All-New EPNS Dapp UI is finally here](./image-4.webp)
 
 <ImageText>Developer Section in dApp</ImageText>
 
-Dynamic User Journey
---------------------
+## Dynamic User Journey
 
 Navigating through a decentralized application can be tough, and we certainly understand that.
 
@@ -128,22 +123,19 @@ Although our user interface is minimalist and incredibly simple to navigate, the
 
 This is also built, considering the fact, that not every user is a web3 expert and we wholeheartedly want to enhance the user experience of new web3 users with our simple and intuitive dApp design.
 
-Olvy Integrations
------------------
+## Olvy Integrations
 
 As an additional feature, we also included the Olvy integrations with both of our dApp, i.e., [prod](https://app.epns.io/) and [staging](http://staging-app.epns.io/).
 
 Every new release, announcement, and important development shall now be beautifully shared via olvy and directly appear on the dApp itself.
 
-The Dark Mode
--------------
+## The Dark Mode
 
 Last but not the least, the **Dapp** now has the incredibly beautiful dark mode as well.
 
 _I might be slightly more inclined towards the dark theme, but, who isn’t?_
 
-Wrapping it Up
-==============
+# Wrapping it Up
 
 All in all, I’d like to say, this has been a great start to the new year!
 
@@ -152,4 +144,3 @@ I mean given so many developments across the incentives and governance bit, bein
 I think it has given an impetus to how we’ve tried to better the overall experience and of course, we’re looking to soar higher and higher from hereon!
 
 We’re excited about Q2! What about you?
-

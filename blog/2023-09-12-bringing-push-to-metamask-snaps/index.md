@@ -3,7 +3,7 @@ slug: bringing-push-to-meta-mask-snaps
 title: Bringing Push to MetaMask Snaps
 authors: [push]
 image: './cover-image.webp'
-text: "Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for MetaMask! To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask Snaps — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet."
+text: 'Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for MetaMask! To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask Snaps — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet.'
 tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
@@ -14,10 +14,10 @@ import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # Web3 Notifications directly in your MetaMask wallet.
 
 Today we are excited to announce the launch of our brand new Push Snap — enabling Push Notification enhancements for [MetaMask](https://metamask.io/)!
-
 
 To create new and enhanced web3 user experiences, MetaMask and Consensys have worked to introduce new integration possibilities for MetMask wallet holders via MetaMask [Snaps](https://metamask.io/snaps/) — new features and functionality created by third-party developers that MetaMask users worldwide can install directly into their wallet.
 
@@ -74,8 +74,6 @@ As such, your MetaMask wallet is your new notification hub, ensuring you never m
 The Push Protocol Snap V1 has successfully passed the Consensys audit which you can [view in its entirety here](https://consensys.io/diligence/audits/2023/07/push-protocol-snap-for-metamask/).
 
 Have questions? Reach out to us on our [Discord](https://discord.gg/pushprotocol) — we’re always happy to help!
-
-
 
 <!-- [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
 

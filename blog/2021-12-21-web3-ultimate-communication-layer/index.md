@@ -11,6 +11,7 @@ tags: [ Mainnet
 ,Notifications
 ,Blockchain ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Web3’s Ultimate Communication Layer is Around the Corner](./cover-image.gif)
@@ -37,8 +38,7 @@ With the launch of our mainnet, businesses, service providers, and dApps in Web3
 
 Since the EPNS token generation event in Spring 2021, we have partnered with dozens of DeFi, gaming, NFT, and infrastructure projects to build channel and notification prototypes with them. Many of these will be immediately available at mainnet launch.
 
-Becoming Blockchain Agnostic
-============================
+# Becoming Blockchain Agnostic
 
 As our name suggests, our initial focus was to enable this communication network for Ethereum. Once we succeeded in building that technology, we updated our goal to become the _default communication layer for all of Web3._ We now have a solution to be blockchain-agnostic, meaning businesses across any L1 or L2 will be able to effectively communicate and collaborate through EPNS.
 
@@ -52,8 +52,6 @@ PUSH Nodes track the events and smart contracts of different protocols across bl
 
 To learn more about Core, Communicator, and Nodes — [see here.](https://medium.com/ethereum-push-notification-service/push-nodes-p2p-web3s-way-to-communicate-6a473577d173)
 
-For the New-Age Internet
-========================
+# For the New-Age Internet
 
 Push notifications played a vital role in the success of businesses across industries in Web2. Now, by bringing a similar service in the Web3 space, EPNS will ensure it can fast pace the growth of the new age internet services, becoming an integral part of its operations.
-

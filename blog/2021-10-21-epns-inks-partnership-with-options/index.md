@@ -9,6 +9,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Inks Partnership With Options Protocol Pods Finance](./cover-image.webp)
@@ -29,21 +30,18 @@ For the smooth running of this process, there needs to be a proper communication
 
 This is why we’ve partnered with Pods Finance to create a robust communication channel for the users and the network.
 
-What Does the Partnership Entail
-================================
+# What Does the Partnership Entail
 
 Through our partnership with Pods Finance, we at EPNS aim to facilitate decentralized push notifications for their users. These notifications help users stay on track with options contracts and exercise them at the right time. Users of Pods Finance can subscribe to receive notifications whenever
 
-*   The price of the underlying asset approaches the sell threshold.
-*   The price of the asset approaches the buy threshold.
-*   The expiry date of the contract approaches.
+- The price of the underlying asset approaches the sell threshold.
+- The price of the asset approaches the buy threshold.
+- The expiry date of the contract approaches.
 
 As Pods Finance continues to revolutionize crypto derivatives, we’re pleased to partner with them to amplify their efforts and take the protocol to new heights. We hope to be an integral part of the Pods ecosystem.
 
-About Pods
-==========
+# About Pods
 
 Pods is a decentralized non-custodial options protocol. Users can create options and trade them through an Options AMM on the Ethereum Blockchain. Pods is the easiest way to hedge crypto in DeFi. Join the Pods community
 
 [App](https://app.pods.finance/) | [Website](https://pods.finance/) | [Documentation](https://docs.pods.finance/) | [Blog](https://blog.pods.finance/) | [Twitter](https://twitter.com/PodsFinance) | [Youtube](https://www.youtube.com/channel/UCRbBvHcv2jVDFj7Mk5m1mSw) | [Telegram](https://t.me/podsfinance) | [Discord](https://discord.gg/Qf7utym)
-

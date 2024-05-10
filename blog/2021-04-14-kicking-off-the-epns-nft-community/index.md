@@ -12,6 +12,7 @@ tags: [ Nft
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Kicking off the EPNS NFT Community Drops!](./cover-image.webp)
@@ -28,10 +29,10 @@ We’ll be distributing one NFT a week (every Monday) to one community member wh
 
 So what are some ideas? Well, in no particular order, here are some things community members have done for us in the past which we love 💖
 
-*   Created some killer memes about EPNS and push notifications for web3 💪
-*   Written a blog post explaining an element of the protocol or token design very clearly 🤓
-*   Provided some top notch UX feedback on the protocol/dapp and how we can improve it 👨‍💻
-*   Discovered a bug! And brought it to our attention so we could address it 🐛
+- Created some killer memes about EPNS and push notifications for web3 💪
+- Written a blog post explaining an element of the protocol or token design very clearly 🤓
+- Provided some top notch UX feedback on the protocol/dapp and how we can improve it 👨‍💻
+- Discovered a bug! And brought it to our attention so we could address it 🐛
 
 Those are just some ideas — but feel free to get creative, academic, weird (or all 3!).
 

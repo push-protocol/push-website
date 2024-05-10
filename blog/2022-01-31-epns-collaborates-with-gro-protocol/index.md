@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Newsletter
 ,Blockchain ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Collaborates With Gro Protocol to Enable Decentralized Notifications for Users](./cover-image.webp)
@@ -29,21 +30,18 @@ PWRD is a protected savings product that consists of stablecoin baskets and the 
 
 The protocol’s native GRO token acts as a medium of exchange within the network and it can be earned through airdrops, liquidity mining, and vesting bonuses. In this regard, there is a need for a reliable channel of communication between users and the protocol to keep users updated about the status of their GRO tokens and EPNS helps build this channel.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 Through our pilot collaboration with Gro Protocol, we aim to create a means of seamless communication between users and the protocol through decentralized push notifications. Gro Protocol will have an official channel on EPNS that is set to go live in February this year. Users can subscribe to this channel to receive notifications whenever
 
-*   New airdrops are available for users to claim.
-*   Airdrops are about to expire.
-*   They are eligible to claim GRO tokens from Vesting Bonus Pool.
+- New airdrops are available for users to claim.
+- Airdrops are about to expire.
+- They are eligible to claim GRO tokens from Vesting Bonus Pool.
 
 As Gro Protocol works towards making DeFi accessible to everyday users, we’re pleased to collaborate with them on this journey and hope to be an integral part of their operations.
 
-**About Gro Protocol**
-======================
+# **About Gro Protocol**
 
 [Gro](https://www.gro.xyz) is a DeFi protocol offering leveraged and protected stablecoin yields through risk tranching. Its products include PWRD, Vault and Labs. Gro protocol uses an automated portfolio of stablecoin yield strategies to balance yield against risk. PWRD users are protected from loss by Vault users, who take a leveraged share of protocol returns from PWRD. As Gro focuses almost entirely on stablecoins, market price volatility is minimized, even in higher risk products.
 
 To learn more about Gro: [dApp](http://app.gro.xyz) | [Docs](https://docs.gro.xyz) | [Medium](https://groprotocol.medium.com/) | [Twitter](http://www.twitter.com/groprotocol) | [Discord](http://discord.gg/gro) | [Telegram](https://t.me/gro_announcements) | [Youtube](https://www.youtube.com/channel/UCSQeNePRCe-rfCs1eLjOhTw)
-

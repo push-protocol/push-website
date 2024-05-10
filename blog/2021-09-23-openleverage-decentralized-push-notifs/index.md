@@ -11,6 +11,7 @@ tags: [ Epnsproject
 ,Openleverage
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of OpenLeverage Leverages Decentralized Push Notifications with EPNS](./cover-image.webp)
@@ -23,13 +24,12 @@ OpenLeverage is a permissionless margin trading protocol, which enables traders 
 
 With the huge potential OpenLeverage possesses, we at EPNS, are glad to announce our pilot program collaboration with OpenLeverage. During this pilot program we will be working with OpenLeverage to:
 
-*   Provide notifications when prices move beyond a certain threshold.
-*   Provide notifications when your position is about to be liquidated or is approaching liquidation.
+- Provide notifications when prices move beyond a certain threshold.
+- Provide notifications when your position is about to be liquidated or is approaching liquidation.
 
 We are delighted that OpenLeverage is “leveraging” EPNS to push decentralized notifications and take one more step towards decentralizing the communication layer of DeFi and Web3.
 
-**About OpenLeverage.Finance**
-==============================
+# **About OpenLeverage.Finance**
 
 OpenLeverage is a permissionless margin trading protocol, which enables traders to long or short any trading pair on DEXs efficiently and securely.
 

@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Roadmaps
 ]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./cover-image.webp)
@@ -27,8 +28,7 @@ We think the biggest credit goes to the love, support and backing of our AWESOME
 
 Welcome to the EPNS 2020 Rewind! 🎉🎉🎉 where we summarize the major highlights of the year and go through loads of awesome nostalgic vibes!
 
-🌟**Reaching for the Stars — Our Journey**🌟
-============================================
+# 🌟**Reaching for the Stars — Our Journey**🌟
 
 2020 marked the birth of EPNS. Since the ideation of EPNS back in January, it took us a couple of months to bring the idea to Ethereum Foundation who guided us to ETHGlobal HackMoney where we hacked and #buidl EPNS protocol and product MVP. With awesome guidance and mentorship from the folks at ETHGlobal team, AAVE, etc. the idea was refined, vetted, and validated thoroughly.
 
@@ -69,8 +69,7 @@ Apart from all the grants, accelerators, and hackathons, we were also fortunate 
 
 ![Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./image-3.webp)
 
-🌟**Our Backbone — The Tech/Protocol**🌟
-========================================
+# 🌟**Our Backbone — The Tech/Protocol**🌟
 
 EPNS aims to significantly improve the Web3 infrastructure by providing a critical yet, a missing piece in Web3 that directly correlates to User Experience — a decentralized communication middleware for Web3 services to send notifications to users wallets.
 
@@ -88,46 +87,41 @@ Our vision of being a **Web3 Standard for Notification** is tightly coupled with
 
 ![Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./image-5.webp)
 
-🌟**Seed Announcement**🌟
-=========================
+# 🌟**Seed Announcement**🌟
 
-The awesome journey and folks enabled us to raise our seed round which got announced during the start of December! We were able to successfully raised $750k at a valuation of $5 million. **$PUSH for the win!** More than the raise! we are humbled and grateful for the support of Web3 Leaders and notable VCs who backed our vision of decentralized notifications and are our long term partners!
+The awesome journey and folks enabled us to raise our seed round which got announced during the start of December! We were able to successfully raised $750k at a valuation of $5 million. **$PUSH for the win!\*\* More than the raise! we are humbled and grateful for the support of Web3 Leaders and notable VCs who backed our vision of decentralized notifications and are our long term partners!
 
 ![Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./image-6.webp)
 
 Visit [epns.io](http://epns.io) for all our awesome investors ❤️
 
-🌟Website 2.0 — epns.io🌟
-=========================
+# 🌟Website 2.0 — epns.io🌟
 
 We were thrilled for finally having a website that let’s us put out and explain our vision to the World. We launched it along with our seed announcement and with a heavily biased recommendation we ask everyone to check it out: [Website](https://epns.io/).
 
-🌟**Conferences, Talks, AMAs…Events Galore!!!**🌟
-=================================================
+# 🌟**Conferences, Talks, AMAs…Events Galore!!!**🌟
 
 With most of us living the digital life this year, it also meant that there were no more physical barriers to attend events and host conferences. This year was packed with lots of amazing virtual events and talks that we were thrilled to be a part of.
 
 Here is a quick round-up of some of the many events we had been a part of in 2020.
 
-**Ask Me Anything:**
---------------------
+## **Ask Me Anything:**
 
-*   EPNS AMA with Matic
-*   EPNS AMA with Bundle Africa
-*   EPNS AMA with AMA Lovers Club
+- EPNS AMA with Matic
+- EPNS AMA with Bundle Africa
+- EPNS AMA with AMA Lovers Club
 
-**Conferences and Workshops:**
-------------------------------
+## **Conferences and Workshops:**
 
-*   2.5 Talk Show at ETHBerlin
-*   ETHCon Korea
-*   Gitcoin: Welcome to Web3
-*   EDCON 2020
-*   BlockHash LIVE 2020
-*   Chainlink Hackathon Workshop
-*   Gitcoin Grants #GR8 Hackathon Workshop
-*   Ethereum Enterprise Alliance (EEA) Asia Pacific 2020
-*   ETHIndia Mentorship session
+- 2.5 Talk Show at ETHBerlin
+- ETHCon Korea
+- Gitcoin: Welcome to Web3
+- EDCON 2020
+- BlockHash LIVE 2020
+- Chainlink Hackathon Workshop
+- Gitcoin Grants #GR8 Hackathon Workshop
+- Ethereum Enterprise Alliance (EEA) Asia Pacific 2020
+- ETHIndia Mentorship session
 
 ![Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./image-7.webp)
 
@@ -135,13 +129,11 @@ And so many more!! We are very grateful to all the organizers and sponsors for g
 
 There is nothing better than speaking to the community and educating everyone about the possibilities of DeFi, Game Theory, and Decentralized Notifications and then answering their questions and queries. We loved every second of talking to you all, and we hope to speak with the community at large more in the year to come.
 
-🌟**EPNS Featured!**🌟
-======================
+# 🌟**EPNS Featured!**🌟
 
 EPNS was proud to be featured in a number of articles, newsletters, and other publications. Some notable ones include **Ethereum Foundation Official Blog**, **TheBlock**, **EtherWorld**, **TheDailyGewi** & **EthHub** by **Anthony Sassano**, **Alex Saunders** of **Nugget’s News**, **DeFiDad**, **CoinTelegraph**, **DeFiTimes**, **YourStory**, **MojKripto**, **Product Hunt Launch** 🚀, **Dapp.com** and many many more 😃!
 
-🌟**Our Heart Beat — The Community**🌟
-======================================
+# 🌟**Our Heart Beat — The Community**🌟
 
 EPNS would have never reached where it is without the awesome Web3 community backing us. The love you showed kept us going, made us hustle and even helped us keep sane and energized during sleepless nights! We do what we do to ultimately build something that could prove useful for the community and enable a better Web3 experience and you by your support on all mediums… be it Twitter, or Telegram, or Medium kept us going ❤️!
 
@@ -153,28 +145,25 @@ We thank you for your support through out this year and for helping us grow!
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/epnsproject/status/1274574944119091201%3Fs%3D20&amp;image=" allowfullscreen="" frameborder="0" height="720" width="680" title="" class="eo n ff dy bg" scrolling="no"></iframe>
 
-🌟EPNS through Cool Stats🌟
-===========================
+# 🌟EPNS through Cool Stats🌟
 
-*   **Most Popular Blog Articles for 2020**
-*   [Ethereum Push Notification Service Successfully Raises $750k USD in Seed Round](https://medium.com/ethereum-push-notification-service/ethereum-push-notification-service-successfully-raises-750k-usd-in-seed-round-bec41eadd84d) **1k Views**
-*   [EPNS Game Theory Explained](https://medium.com/ethereum-push-notification-service/epns-game-theory-explained-25425bbe4eae) **400+ views**
-*   [13 DeFi Notifications Ethereum Needs today](https://medium.com/ethereum-push-notification-service/13-defi-notifications-ethereum-needs-today-df4dcc98a797) **300+views**
-*   Twitter**:** **5.8k followers**
-*   Telegram**:** **780 members**
-*   Our Weekly series**,** A Minute With EPNS — **11 series** published with over **70 sign-ups** ✍️
+- **Most Popular Blog Articles for 2020**
+- [Ethereum Push Notification Service Successfully Raises $750k USD in Seed Round](https://medium.com/ethereum-push-notification-service/ethereum-push-notification-service-successfully-raises-750k-usd-in-seed-round-bec41eadd84d) **1k Views**
+- [EPNS Game Theory Explained](https://medium.com/ethereum-push-notification-service/epns-game-theory-explained-25425bbe4eae) **400+ views**
+- [13 DeFi Notifications Ethereum Needs today](https://medium.com/ethereum-push-notification-service/13-defi-notifications-ethereum-needs-today-df4dcc98a797) **300+views**
+- Twitter**:** **5.8k followers**
+- Telegram**:** **780 members**
+- Our Weekly series**,** A Minute With EPNS — **11 series** published with over **70 sign-ups** ✍️
 
-🌟Hello 2021 !!🌟
-=================
+# 🌟Hello 2021 !!🌟
 
 As we step into the year 2021, we have a lot of things planned for EPNS. Few major milestones includes:
 
-*   **#1** Protocol Audit + Mainnet launch!
-*   **#2** Beta releases with loads of feature for the dApp, Mobile Apps, Extension and integrations!
-*   **#3** Layer 2 scaling, continued addition of governance features, and more!
+- **#1** Protocol Audit + Mainnet launch!
+- **#2** Beta releases with loads of feature for the dApp, Mobile Apps, Extension and integrations!
+- **#3** Layer 2 scaling, continued addition of governance features, and more!
 
-🌟…**And That’s A Wrap!! (+) Holiday Wishes**🌟
-===============================================
+# 🌟…**And That’s A Wrap!! (+) Holiday Wishes**🌟
 
 The year 2020, was a roller coaster ride. The pandemic gave us a world of uncertainty, but we try to hold on and push past it. During this holiday season, we wish all of you reading this to stay safe and have a wonderful 2021!
 
@@ -190,8 +179,6 @@ It’s going to be one hell of a ride in 2021. Stay Tuned 💖💖💖
 
 ![Image of It’s A Wrap For 2020. A Rewind On All Things EPNS!!](./image-8.gif)
 
-
 We send you our best wishes for an amazing 2021 🤗l!!
 
 Follow us on [Twitter](http://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Newsletter](https://epns.substack.com/), [Website](http://epns.io)
-

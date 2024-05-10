@@ -3,22 +3,24 @@ slug: epns-monthly-blocks-august
 title: EPNS Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
-text: "This August was definitely a wild ride and we couldn’t have had more fun.🎢 Let’s take a look at all the happenings this month!"
-tags: [ Newsletter, Epnsproject, Blockchain, Ethereum]
+text: 'This August was definitely a wild ride and we couldn’t have had more fun.🎢 Let’s take a look at all the happenings this month!'
+tags: [Newsletter, Epnsproject, Blockchain, Ethereum]
 ---
 
 ![Cover image of EPNS Monthly Blocks](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # August 2022<br/>
 
 This August was definitely a wild ride and we couldn’t have had more fun.🎢 Let’s take a look at all the happenings this month!
 
-
 ![What's New](./image-1.webp)
 
 ## Development 🏗️
+
 The Development team had a very busy and successful month. New features, improvements & optimizations, and lots of progress on all fronts.
 
 One of the biggest news we released this month is the official launch of the <a href="https://twitter.com/epnsproject/status/1560271342255030272?s=20&t=2TfqW862B366mF0cWxBDWQ&utm_source=substack&utm_medium=email"><b>SNS Module for Push Delivery Nodes</b></a>. A decentralized solution for devs to receive web3 communication directly to the platform they are building.
@@ -39,11 +41,12 @@ Now, let’s go over the other cool features and optimizations that have been in
 
 We greatly appreciate all the feedback and suggestions received from all buidlers. It has been instrumental in shaping our tooling to ensure implementing solutions on top of EPNS is a breeze!
 
-Keep BUIDLing! 
+Keep BUIDLing!
 
 <center><b>.  .  .</b></center>
 
 ## Collaborations 🎎
+
 - Thrilled to announce our collaboration with <a href="https://twitter.com/epnsproject/status/1557773985554632704?s=20&t=PVAqZUWRAc1av5x49Il0eQ&utm_source=substack&utm_medium=email"><b>Socket</b></a> to enable users to receive a notification once their assets are bridged from one chain to another!
 - <a href="https://twitter.com/epnsproject/status/1555191864198070276?s=20&t=36Isc08JB9n7jfI0E9bzlg&utm_source=substack&utm_medium=email"><b>Pine Protocol</b></a> channel went LIVE! Now users can get notified when their loans are approaching liquidation, or when one of their loans is about to expire.
 - <a href="https://twitter.com/epnsproject/status/1554527559865745408?s=20&t=36Isc08JB9n7jfI0E9bzlg&utm_source=substack&utm_medium=email"><b>Li.Fi Protocol</b></a> channel also made it Live! Users can now opt-in to get notified once their bridge transactions get confirmed!
@@ -51,6 +54,7 @@ Keep BUIDLing!
 <center><b>.  .  .</b></center>
 
 ## PUSH DAO 🏛️
+
 As we are gearing towards the next step in our DAOfication process, lots of pieces need to be orchestrated to ensure we have a solid foundation that allows us to scale and grow as we need.
 
 A proposal to implement <a href="https://twitter.com/epnsproject/status/1560003393850056704?s=20&t=2TfqW862B366mF0cWxBDWQ&utm_source=substack&utm_medium=email"><b>Fast-tracking of Proposals</b></a> was approved by the vast majority. This will give the DAO the tools to react faster on proposals that see immediate traction in the discussion forum, allowing them to take quick action on opportunities or react faster in case of unexpected situations.
@@ -68,6 +72,7 @@ There was also tons of action with Push Grants! The community has been very acti
 It’s truly amazing to see the community getting more engaged and participating in conversations. The quality of the conversations has also been getting to new higher levels, and that tells us we are making strides in the right direction.
 
 ## Community 🎪
+
 A beautiful month with lots of opportunities for our team to get closer to our community!
 
 - EPNS Team attended <a href="https://twitter.com/epnsproject/status/1557810225524121603?s=20&t=PVAqZUWRAc1av5x49Il0eQ&utm_source=substack&utm_medium=email"><b>EthLatam & Web3Conf India</b></a> Conferences.
@@ -85,5 +90,3 @@ Months like this give us the boost of energy needed to finish the year strong, a
 Let’s keep PUSHing! 💪🏼
 
 The EPNS team
-
-

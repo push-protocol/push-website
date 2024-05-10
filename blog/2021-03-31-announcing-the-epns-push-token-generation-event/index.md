@@ -12,6 +12,7 @@ tags: [ Token
 ,Announcements
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Announcing the EPNS $PUSH Token Generation Event](./cover-image.webp)
@@ -26,8 +27,7 @@ $PUSH is the native governance token for the EPNS protocol. $PUSH grants its own
 
 The total token supply of $PUSH will be 100,000,000. The supply will be broken down across **community, investors, team, advisors,** and **foundation.**
 
-Community
-=========
+# Community
 
 53% of $PUSH supply is reserved for **community allocation.**
 
@@ -39,34 +39,30 @@ We also want to take this opportunity to say **thank you** to the wonderful comm
 
 1.55% of the total supply is reserved for **gratitude allocations** at the time of token genesis.
 
-*   1.03% will be distributed to over 900 early users of the EPNS beta product (snapshot taken on March 20, 2021).
-*   0.28% will be distributed to those who donated during Gitcoin Grants rounds 6 and 7; over 200 addresses.
-*   0.24% is reserved for distribution through a community NFT activation immediately following token genesis. Stay tuned for more on this soon! 🎨🙃
+- 1.03% will be distributed to over 900 early users of the EPNS beta product (snapshot taken on March 20, 2021).
+- 0.28% will be distributed to those who donated during Gitcoin Grants rounds 6 and 7; over 200 addresses.
+- 0.24% is reserved for distribution through a community NFT activation immediately following token genesis. Stay tuned for more on this soon! 🎨🙃
 
 5.51% of the total $PUSH supply is reserved for **LP Rewards and Staking.**
 
-*   For the 3.01% reserved for LP rewards, 35,000 will be unlocked every week, with 100 fewer $PUSH released every week (i.e. 34,900 released during week 2). This will continue for 100 weeks.
-*   For the 2.51% reserved for staking, 30,000 will be unlocked every week, with 100 fewer $PUSH released every week (i.e. 29,900 released during week 2). This will continue for 100 weeks.
+- For the 3.01% reserved for LP rewards, 35,000 will be unlocked every week, with 100 fewer $PUSH released every week (i.e. 34,900 released during week 2). This will continue for 100 weeks.
+- For the 2.51% reserved for staking, 30,000 will be unlocked every week, with 100 fewer $PUSH released every week (i.e. 29,900 released during week 2). This will continue for 100 weeks.
 
-Investors
-=========
+# Investors
 
 20.5% of the total $PUSH allocation is reserved for early **investors** of the protocol, divided among our [seed and extended seed rounds of investment](https://medium.com/ethereum-push-notification-service/epns-closes-10x-oversubscribed-extended-seed-round-ae03c60ae0f8).
 
 Investor allocations are subject to a cliff and vesting period. 20% of investor allocation will unlock 3 months after the TGE, with the rest vesting over 21 months.
 
-Team
-====
+# Team
 
 The **EPNS team** is allocated 16% of the total $PUSH supply. The founders are subject to a 12 month cliff after TGE, followed by a 48 month vesting period. The rest of the team is subject to a 9 month cliff after TGE, followed by a 48 month vesting period.
 
-Advisors
-========
+# Advisors
 
 Our **advisors** have been allocated 3.5% of the total $PUSH supply. Our advisors joined us long before we got to this moment, and have graciously guided us along this journey, agreeing to push back their vesting periods to align with others. Our advisors are subject to a 6–9 month cliff, followed by a 12–36 month vesting period.
 
-Foundation
-==========
+# Foundation
 
 7% of the total token supply is reserved for the **Foundation**. The Foundation is a reserve of $PUSH that can be applied towards ecosystem developments, market making, protocol activations, and more.
 
@@ -76,15 +72,13 @@ The Foundation has a vesting period of 6–48 months.
 
 ![Second Image of Announcing the EPNS $PUSH Token Generation Event](./image-2.webp)
 
-What’s next? What is the timeline?
-==================================
+# What’s next? What is the timeline?
 
 The $PUSH TGE will happen soon! Shortly following the TGE, we’ll be launching EPNS on the Ethereum mainnet to bring decentralized notifications to all.
 
 Follow us on [Twitter](https://twitter.com/epnsproject?lang=en) and join us on [Telegram](https://t.me/epnsproject) to stay up to date with TGE announcements and EPNS information.
 
-Disclaimer
-----------
+## Disclaimer
 
 ⚠️ Everything related to $PUSH tokens, smart contracts and their addresses will be only available on official channels. EPNS team members will **NEVER** **DM** you ever about anything. Official channels are:
 

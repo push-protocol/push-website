@@ -11,18 +11,19 @@ tags: [ Web3, Blockchain Technology, Crypto, Push Notification, Pushprotocol]
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push 2022 Year in Review🎉](./cover-image.webp)
+
 <!--truncate-->
 
 2022 was a marvelous year for Push thanks to our fantastic team and growing community of talented developers.
 
 To everyone who has helped support the Push project — devs, community members, partners, co-sponsors, we thank you!
 
-
 This year alone, Push achieved several major milestones including rebranding from EPNS to Push, raising our Series A, launching Push on Ethereum mainnet, pushing web3 communication beyond Ethereum, new product releases, several news features, and of course, collaborations with some of the best web3 projects out there.
 
 With that, here’s a glimpse at everything we got up to in 2022.
 
 ## Rebrand complete, LIVE on Ethereum & Polygon, and more…🚀
+
 This year, we’ve made some major strides in realizing our mission of bringing decentralized communication to web3.
 
 To start with, we evolved from EPNS (Ethereum Push Notification Service) to [Push](https://twitter.com/pushprotocol/status/1574771582790406144). As our ambitions grew beyond just notifications, we felt we needed a brand refresh that would better accommodate our vision of becoming web3’s most widely used communication protocol.
@@ -44,6 +45,7 @@ A fantastic rebrand however needs similarly fantastic project developments behin
 Since going live with all these features, we’ve seen increased adoption and utility of the Push protocol.
 
 ## Push by the Numbers📈
+
 2022 saw more notifications, live channels, and channel subscribers than we’ve ever had before.
 
 As we’ve continued to refine, improve, and develop our communication tools, more protocols are harnessing the power of notifications than ever before — and we’re happy to be leading the way. In fact, in Q1 and Q3 Push saw more than 20%+ QoQ growth.
@@ -59,6 +61,7 @@ Here’s a look at the numbers:
 <ImageText>Number of Push Notifications — Powered by </ImageText>
 
 ## The Push Fam Continues to Expand 🌱
+
 2022 was a fantastic year for making new frens and building new partnerships. Some of the most renowned projects in the web3 space joined forces with us to enable decentralized communication on their dApps.
 
 We are thrilled to be working with some of the most ambitious projects in web3 and enabling native web3 communication for their protocols.
@@ -69,6 +72,7 @@ Here’s a look at our ecosystem today:
 <ImageText>Frens of Push 2022</ImageText>
 
 ## IRL Events🛠️
+
 2022 kept us busy with a long list of conferences and events. We were honored to be able to attend some of the most prestigious conferences and hackathons this year and get to meet a lot of our community in person.
 
 We attended ETHDenver, Devconnect, ETHAmsterdam, ETHNewYork, EthCC, Unfold, Devcon Bogotá, ETHSF, and ETHIndia, and co-hosted [Zero-to-Dapp conference](https://www.youtube.com/playlist?list=PLyWTqFLqKt9ZJOmEsEbkrn1nPCy69INhl) along with The Graph, Arbitrum, and Router.
@@ -87,8 +91,8 @@ Here are a few sights from hackathons this year:
 ![EthIndia3](./image-7.jpg)
 ![EthIndia4](./image-8.jpg)
 
-
 ## Push in the News📰
+
 With all the progress Push had this year, publications took note. A host of our launches and collaborations were featured in a variety of prominent publications.
 
 Some of our favorite headlines were:
@@ -99,6 +103,7 @@ Some of our favorite headlines were:
 - Blockworks: [Polygon Onboards New Web3-native Communication Network](https://blockworks.co/news/polygon-onboards-new-web3-native-communication-network)
 
 ## Our Community, Our Strength🤝
+
 Community is everything for Push, and 2022 would not have been such a successful year without your help. To all the devs who built using Push, all $PUSH token holders, and users who subscribe to channels — we thank you for being a part of our community!
 
 To foster our community’s growth, we started the [Push Grants Program](https://medium.com/push-protocol/push-grants-program-its-here-f2bfba29388f) earlier this year with the goal of funding builders in the web3 space. With feedback and learnings from the first iteration of the program, [PGP v2.0](https://twitter.com/pushprotocol/status/1604867953190739973) went live later this year and we’ve seen tons of projects begin to apply.
@@ -114,6 +119,7 @@ Push now has new initiatives for fostering Push notifications and chat integrati
 We have no doubt setting these initiatives up in 2022 is going to lead to a massive year for us in 2023!
 
 ## You’re the Real Rockstars👨‍🎤
+
 We launched the second version of Push Rockstars this year: Rockstars Of Push Vol. 2 and had 24 winners to date, 100+ submissions, and over 20M+ of $PUSH token voting!
 
 From educational threads to YouTube demos, the Push community never failed to surprise us with fantastic Push-related content.
@@ -121,6 +127,7 @@ From educational threads to YouTube demos, the Push community never failed to su
 Thanks to all the Rockstars of Push for your love and ongoing support.
 
 ## What’s Next for Us?🚀
+
 As always, we continue to build.
 
 Everything we’ve done this year has been a stepping stone to prepare us for a massive 2023. We’ll be looking to set new records for Push integrations, utility, and partnerships, all while bringing exciting new developments that best serve the communication needs of web3.
@@ -128,4 +135,3 @@ Everything we’ve done this year has been a stepping stone to prepare us for a 
 Happy Holidays from the Push team, and we look forward to building with you in 2023.
 
 ![Offsite](./image-11.jpg)
-

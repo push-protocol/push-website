@@ -1,9 +1,9 @@
 ---
 slug: were-still-pushing-a-deeper-look-into-push-chat
-title: "We’re Still Pushing: A Deeper Look Into Push Chat"
+title: 'We’re Still Pushing: A Deeper Look Into Push Chat'
 authors: [push]
-image: "./cover-image.webp"
-text: "Launched in early October, Push Chat is providing secure and instant communication for all by connecting users and dapps across web3."
+image: './cover-image.webp'
+text: 'Launched in early October, Push Chat is providing secure and instant communication for all by connecting users and dapps across web3.'
 tags: [Web3, Developer, Push Notification, PushChat, Messaging]
 ---
 

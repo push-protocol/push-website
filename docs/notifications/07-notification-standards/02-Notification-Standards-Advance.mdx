@@ -5,7 +5,7 @@ hide_title: true
 slug: ./notification-standards-advance
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 2
-image: "/assets/docs/previews/docs_notifications_ns_notif_standards_advance--notification_standards_(advance).png"
+image: '/assets/docs/previews/docs_notifications_ns_notif_standards_advance--notification_standards_(advance).png'
 ---
 
 # What is a Notification in Push protocol?
@@ -14,13 +14,15 @@ Notifications follow composable blocks that helps achieve modular structure and 
 
 These notifications are tied to wallet address of the user and are indexed by push nodes allowing any crypto frontend such as wallet, dapp or mobile app to query and display these notifications for the wallet users along with sending them out as push notifications.
 
-![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png "Representation of composable blocks of notification")
+![Notification Composable Block](/assets/docs/notifications/notification-standards/notification-standards-advanced/notificationComposableBlock.png 'Representation of composable blocks of notification')
 
 <head>
-  <title>Notification Standards (Advance) | Push Notifications | Push Documentation</title>
+  <title>
+    Notification Standards (Advance) | Push Notifications | Push Documentation
+  </title>
 </head>
 
-import Details from "@theme/Details";
+import Details from '@theme/Details';
 
 ## Composability Structure
 
@@ -517,22 +519,23 @@ Notification Feeds have the ability to display customized content. By adopting a
 
 ### Specifications
 
+| Markdown Format                                  | Use Case         | Styling effects                                       |
+| ------------------------------------------------ | ---------------- | ----------------------------------------------------- |
+| `**Bold**`                                       | For Emphasis     | For Bold                                              |
+| `*Italic*`                                       | For Emphasis     | For Italics                                           |
+| `***Bold&Italics***`                             | For Emphasis     | For Bold and Italics                                  |
+| `\n`                                             | For Segregation  | For new line                                          |
+| `<span color="white">Hello World</span>`         | For colored text | For white color                                       |
+| `<span color="#ANYHEXCODE"> Hello world </span>` | For colored text | Supports any color hexcode                            |
+| `<span color="primary">Hello World </span>`      | For colored text | Push Primary colored Text                             |
+| `<span color="secondary">Hello World </span>`    | For colored text | Push Secondary colored Text                           |
+| `<span color="tertiary">Hello World </span>`     | For colored text | Push Tertiary colored Text                            |
+| `[PUSH website](https://push.org)`               | For URL's        | Underlined, Red Colored Text                          |
+| `[timestamp: 1699032018]`                        | For Timestamp    | converts Epoch timestamps to human readable timestamp |
 
-| Markdown Format                                                                | Use Case         | Styling effects                                       |
-| ------------------------------------------------------------------------------ | ---------------- | ----------------------------------------------------- |
-| `**Bold**`                                                                       | For Emphasis     | For Bold                                              |
-| `*Italic*`                                                                       | For Emphasis     | For Italics                                           |
-| `***Bold&Italics***`                                                             | For Emphasis     | For Bold and Italics                                  |
-| `\n`                                                                             | For Segregation  | For new line                                          |
-| `<span color="white">Hello World</span>`                               | For colored text | For white color                                       |
-| `<span color="#ANYHEXCODE"> Hello world </span>`                       | For colored text | Supports any color hexcode                            |
-| `<span color="primary">Hello World </span>`                            | For colored text | Push Primary colored Text                             |
-| `<span color="secondary">Hello World </span>`                          | For colored text | Push Secondary colored Text                           |
-| `<span color="tertiary">Hello World </span>`                           | For colored text | Push Tertiary colored Text                            |
-| `[PUSH website](https://push.org)` | For URL's        | Underlined, Red Colored Text                          |
-| `[timestamp: 1699032018]`                                                               | For Timestamp    | converts Epoch timestamps to human readable timestamp |
 ### Push Notification markdown live playground
-```jsx live 
+
+```jsx live
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 // import { NotificationItem } from @pushprotocol/restapi;
@@ -540,14 +543,16 @@ function App(props) {
   return (
     <>
       <h2>Markdown Notification to style your notification as per your need</h2>
-          <NotificationItem
-           notificationTitle={"Title"}
-           notificationBody={"***Bold&Italic*** \n **Bold** \n *Italic* \n <span color='green'>green text</span> \n [PUSH website](https://push.org) \n [timestamp: 1699347011]"}
-           image={"https://push.org/assets/pushIcon.svg"}
-           chainName={"ETH_TEST_SEPOLIA"}
-           icon={"https://push.org/assets/pushIcon.svg"}
-           app={"PUSH"}
-          />
+      <NotificationItem
+        notificationTitle={'Title'}
+        notificationBody={
+          "***Bold&Italic*** \n **Bold** \n *Italic* \n <span color='green'>green text</span> \n [PUSH website](https://push.org) \n [timestamp: 1699347011]"
+        }
+        image={'https://push.org/assets/pushIcon.svg'}
+        chainName={'ETH_TEST_SEPOLIA'}
+        icon={'https://push.org/assets/pushIcon.svg'}
+        app={'PUSH'}
+      />
     </>
   );
 }
@@ -565,7 +570,6 @@ function App(props) {
 ```
 
 </Details>
-
 
 <Details summary="For Bold">
 

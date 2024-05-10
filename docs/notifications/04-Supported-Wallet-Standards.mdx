@@ -5,7 +5,7 @@ hide_title: true
 slug: ./supported-wallet-standards
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 4
-image: "/assets/docs/previews/docs_notifications--supported_wallet_standards.png"
+image: '/assets/docs/previews/docs_notifications--supported_wallet_standards.png'
 ---
 
 # Supported Wallet Standards
@@ -13,7 +13,9 @@ image: "/assets/docs/previews/docs_notifications--supported_wallet_standards.png
 Push Notification is chain agnostic and even supports messaging wallet addresses, NFT addresses, all evms (and even non-EVM in the future). Below is the list of evergrowing standards that Push is compatible with, either of which you can use as per your requirements —
 
 <head>
-  <title>Supported Wallet Standards | Push Notifications | Push Documentation</title>
+  <title>
+    Supported Wallet Standards | Push Notifications | Push Documentation
+  </title>
 </head>
 
 ### Standard Wallet Address
@@ -23,10 +25,10 @@ Push Notification is chain agnostic and even supports messaging wallet addresses
 
 ```typescript
 // Sending to standard wallet address - defaults to EVM format
-await userAlice.channel.send(["0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"], {
+await userAlice.channel.send(['0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'], {
   notification: {
-    title: "Hello World",
-    body: "Web3 native notification!",
+    title: 'Hello World',
+    body: 'Web3 native notification!',
   },
 });
 ```
@@ -41,13 +43,13 @@ await userAlice.channel.send(["0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"], {
 ```typescript
 // Sending to chain agnostic wallet address, support eip155 currently
 await userAlice.channel.send(
-  ["eip155:1:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"],
+  ['eip155:1:0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'],
   {
     notification: {
-      title: "Hello World",
-      body: "Web3 native notification!",
+      title: 'Hello World',
+      body: 'Web3 native notification!',
     },
-  },
+  }
 );
 ```
 
@@ -59,12 +61,12 @@ await userAlice.channel.send(
 ```typescript
 // Sending to nft format, any nfts supported including .lens, .crypto, .polygon or your crypto punks
 await userAlice.chat.send(
-  "nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528",
+  'nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528',
   {
     notification: {
-      title: "Hello World",
-      body: "Web3 native notification!",
+      title: 'Hello World',
+      body: 'Web3 native notification!',
     },
-  },
+  }
 );
 ```

@@ -1,6 +1,6 @@
 // ./custom-blog-plugin.js
 
-const blogPluginExports = require("@docusaurus/plugin-content-blog");
+const blogPluginExports = require('@docusaurus/plugin-content-blog');
 
 const defaultBlogPlugin = blogPluginExports.default;
 
@@ -35,7 +35,7 @@ async function blogPluginExtended(...pluginArgs) {
               description: blogPost.metadata.description,
               frontMatter: blogPost.metadata.frontMatter,
               content: blogPost,
-            }),
+            })
           ),
 
           // Inject the MDX excerpt as a JSX component prop
@@ -61,7 +61,7 @@ async function blogPluginExtended(...pluginArgs) {
               description: blogPost.metadata.description,
               frontMatter: blogPost.metadata.frontMatter,
               content: blogPost,
-            }),
+            })
           ),
 
           // Inject the MDX excerpt as a JSX component prop
@@ -79,25 +79,25 @@ async function blogPluginExtended(...pluginArgs) {
 
       actions.addRoute({
         // Add route for the home page
-        path: "/",
+        path: '/',
         exact: true,
 
         // The component to use for the "Home" page route
-        component: "@site/src/pages/home.tsx",
+        component: '@site/src/pages/home.tsx',
 
         // These are the props that will be passed to our "Home" page component
         modules: {
           homePageBlogMetadata: await actions.createData(
-            "home-page-blog-metadata.json",
+            'home-page-blog-metadata.json',
             JSON.stringify({
               blogTitle: pluginOptions.blogTitle,
               blogDescription: pluginOptions.blogDescription,
               totalPosts: content.blogPosts.length,
               totalRecentPosts: recentPosts.length,
-            }),
+            })
           ),
           recentPosts: await Promise.all(
-            recentPosts.map(createRecentPostModule),
+            recentPosts.map(createRecentPostModule)
           ),
         },
       });
@@ -111,7 +111,7 @@ async function blogPluginExtended(...pluginArgs) {
           exact: true,
 
           // The component to use for the "blog" page route
-          component: "@site/src/theme/BlogPostPage/index.js",
+          component: '@site/src/theme/BlogPostPage/index.js',
 
           // These are the props that will be passed to our "blog" page component
           modules: {
@@ -122,7 +122,7 @@ async function blogPluginExtended(...pluginArgs) {
                 blogDescription: pluginOptions.blogDescription,
                 totalPosts: content.blogPosts.length,
                 totalRecentPosts: recentPosts.length,
-              }),
+              })
             ),
             allPosts: await Promise.all(allPosts.map(createMorePostModule)),
           },

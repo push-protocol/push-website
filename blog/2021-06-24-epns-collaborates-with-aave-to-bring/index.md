@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Ethereum
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Collaborates with Aave to Bring Push Notifications to Aave Users](./cover-image.gif)
@@ -31,8 +32,7 @@ Aave has played a foundational role in giving shape to the DeFi ecosystem as it 
 
 For more updates on our journey as we transform DeFi and push notifications, stay tuned.
 
-**About Aave**
---------------
+## **About Aave**
 
 Aave is a decentralized, open source, and non-custodial liquidity market protocol where users can earn interest on deposits and borrow digital assets.
 

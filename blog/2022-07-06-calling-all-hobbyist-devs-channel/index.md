@@ -3,16 +3,17 @@ slug: calling-all-hobbyist-devs-channel-creation-gas-fee-is-now-refundable
 title: 'Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable'
 authors: [push]
 image: './cover-image.webp'
-text: "The main goal of EPNS is to be the gold standard of notifications in the web3 world. To receive a specific notification a user has to set up a channel by which they can send notifications. "
+text: 'The main goal of EPNS is to be the gold standard of notifications in the web3 world. To receive a specific notification a user has to set up a channel by which they can send notifications. '
 tags: [Epnsproject, Blockchain, Notifications, Governance, Gas Fees]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Calling all Hobbyist Devs! Channel Creation Gas Fee is now Refundable](./cover-image.webp)
+
 <!--truncate-->
 
 The main goal of EPNS is to be the gold standard of notifications in the web3 world. To receive a specific notification a user has to set up a channel by which they can send notifications. A full guide on setting up channels can be found [here](https://docs.epns.io/users/hello-world-channel/sending-notifications). More information on EPNS DAPP can be seen [here](https://app.epns.io/#/live_walkthrough).
-
 
 The community had recently voted on and passed<b> PIP-06: Reimburse channel-creation gas fees in $PUSH on developer request</b>. The results were immensely in favor of the proposal with 1.6M votes FOR and 2.6K votes AGAINST.
 
@@ -28,6 +29,3 @@ The process to redeem your gas fees are:
 The EPNS team will review the form and send devs $PUSH relative to the market price. Note that the<b> request must be sent within 24 hours of channel creation</b>. This proposal is funded through Push Governance and was voted on in [snapshot](https://snapshot.org/#/epns.eth/proposal/0x1fd82313d4356e5d7963c60649f0376e995cf326ff348269293026e6064e1f38).
 
 EPNS also offers grants to promising projects also decided by the community. Here are some of the projects that are being voted on by our community right now - https://gov.epns.io/c/grants/10.
-
-
-

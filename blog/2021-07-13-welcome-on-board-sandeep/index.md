@@ -12,6 +12,7 @@ tags: [ Annoucements
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Welcome on board, Sandeep](./cover-image.webp)

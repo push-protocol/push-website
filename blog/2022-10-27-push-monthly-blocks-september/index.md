@@ -9,17 +9,19 @@ tags: [ Newsletter, Blockchain, Push Protocol, Ethereum]
 ---
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # September 2022<br/>
 
 Hi <b>Push</b> frens!✨ This one is a very special Monthly Blocks edition as it is the first Push Protocol edition. Let’s take time to recap briefly all the happenings this month!
 
-
 ![What's New](./image-1.webp)
 
 ## Development 🏗️
+
 Let’s jump into the good stuff immediately. The development team have been making strides in all areas in preparation for many good news to come very soon!
 
 - Wallet-to-Wallet integration tests & design in progress
@@ -40,6 +42,7 @@ As seen above, so many of the efforts going on with the development team are int
 <center><b>.  .  .</b></center>
 
 ## Frens of Push 🎎
+
 As usual, every month we make new collaborations along the way. Which reinforce us that we are on the right track and more teams are looking to implement web3 communications into their projects.
 
 These are our new frens this month:
@@ -53,6 +56,7 @@ New use cases means new challenges and improvement opportunities for Push, and g
 <center><b>.  .  .</b></center>
 
 ## Community 🎡
+
 1. Hosted our [Twitter Space: Buidlers & Hackathons](https://twitter.com/i/spaces/1MYGNgZNyLVJw?utm_source=substack&utm_medium=email) with our frens from <b>SuperFluid</b> and <b>EarniFi</b>
 2. Don’t miss reading our article: [Come buidl the Future of Web3 Communication With EPNS at ETHOnline 2022!](https://medium.com/push-protocol/buidling-the-future-of-web3-communication-with-epns-at-ethonline-2022-ec720bf1bc82)
 3. Push very own Pranshu, spoke during <a href="https://twitter.com/epnsproject/status/1573172723173707776?s=20&t=poWPFv7Y52GztOceiRq2wg&utm_source=substack&utm_medium=email"><b>Buidl Asia 2022</b></a> about ‘Building the communication layer of web3 with EPNS’.
@@ -68,5 +72,3 @@ We are entering into a very exciting phase for the project where many things tha
 Keep <b>Pushing</b> 💪
 
 — The Push Team
-
-

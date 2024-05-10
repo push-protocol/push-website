@@ -1,11 +1,11 @@
 name: Bug Report
 description: Report a bug/issue that you found in the PUSH website or any other bug you encounter.
-title: "[BUG]: bug name"
+title: '[BUG]: bug name'
 labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: "## Before you continue, please search our open/closed issues to see if a similar issue has been addressed."
+      value: '## Before you continue, please search our open/closed issues to see if a similar issue has been addressed.'
 
   - type: checkboxes
     attributes:
@@ -25,7 +25,7 @@ body:
   - type: textarea
     id: screenshot
     attributes:
-      label: "Screenshots"
+      label: 'Screenshots'
       description: If applicable, add screenshots to help explain your problem.
       value: |
         ![DESCRIPTION](LINK.png)
@@ -36,7 +36,7 @@ body:
   - type: textarea
     id: expected-behaviour
     attributes:
-      label: "Expected Behaviour"
+      label: 'Expected Behaviour'
       description: Describe the expecting behavior.
       placeholder: Short and explicit description of your desired behaviour...
     validations:
@@ -53,7 +53,7 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: "Error Message"
+      label: 'Error Message'
       description: Copy and paste any relevant error message.
       render: bash
     validations:
@@ -68,7 +68,7 @@ body:
   - type: dropdown
     id: browsers
     attributes:
-      label: "Browsers"
+      label: 'Browsers'
       description: What browsers are you seeing the problem on ?
       multiple: true
       options:

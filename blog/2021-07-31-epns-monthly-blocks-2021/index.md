@@ -4,9 +4,10 @@ title: 'EPNS Monthly Blocks'
 authors: [push]
 image: './cover-image.webp'
 description: 'EPNS Monthly Blocks'
-text: "Just as expected July started strong and fun for us. A month with many new Frens, substantial progress on the development front, and lots of awesome news for the project."
+text: 'Just as expected July started strong and fun for us. A month with many new Frens, substantial progress on the development front, and lots of awesome news for the project.'
 tags: [Ethereum, Epnsproject, Blockchain]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Monthly Blocks](./cover-image.webp)
@@ -20,6 +21,7 @@ Time to recap all the happenings during this month!
 ![First Image of EPNS Monthly Blocks](./image-1.webp)
 
 #### Meet our new Frens 🙌
+
 [Snapshot](https://medium.com/ethereum-push-notification-service/epns-partners-with-snapshot-to-deliver-notifications-to-improve-community-governance-5730559cb84b): Through this collaboration all token holder delegates for a specific governance project will receive notifications for new proposals. We will also be implementing a notification that will allow users to sign the proposals right form the notifications if they want to.
 
 [TrueFi](https://medium.com/ethereum-push-notification-service/truefi-taking-defi-to-new-horizons-with-epns-cc4d230d550a): We launched this channel early in the month to notify users when new loans are available for voting, and to receive alerts when loans are coming due.
@@ -35,6 +37,7 @@ Time to recap all the happenings during this month!
 [YAM Finance](https://medium.com/ethereum-push-notification-service/bringing-power-of-web3notif-to-the-awesome-yam-community-95d8a39ed86c): We are currently working with the Yam.Finance team to create a channel to notify YAM users about new governance proposals. We will keep the community informed when the channel will go live.
 
 #### Community Activities
+
 With new projects & teams coming on board with EPNS for Pilot Program Collaborations, we also want to make sure we give our communities the opportunity to learn more about what the integration means and what are the plans for the future.
 
 With this in mind — we have been coordinating with our new Frens a series of cross AMAs and community calls. This ensures our communities grow strong together and have the chance to ask questions, and even participate in other activities such as our shared Meme Contests 😸.
@@ -42,6 +45,7 @@ With this in mind — we have been coordinating with our new Frens a series of c
 AMA transcripts are available through our [Medium](https://medium.com/ethereum-push-notification-service/).
 
 ### Development 🚧
+
 EPNS keeps evolving into a much stronger protocol with a more complete feature set thanks to feedback from collaborators and the community. These are the main development activities that kept us busy this month.
 
 <b>Progressive Decentralized Governance</b>: this is one of our top priority items that we are aiming to align and have well-tested by the moment our protocol goes to Mainnet (end of Q3). Currently we are in the process of deploying and validating all governance tools and rules. The first step towards this Progressive Decentralized Governance will take place in August 2021💣.
@@ -65,6 +69,7 @@ Also, It’s not a monthly review recap unless we have an alpha drop 🙀
 ![Second Image of EPNS Monthly Blocks](./image-2.webp)
 
 #### EPNS Community Incentives
+
 This month the community incentives come not only in the form of great continued APR percentages in our UNI-LP and PUSH pools. We still APR of 108% / 39% for LP / PUSH Staking.
 
 ![Third Image of EPNS Monthly Blocks](./image-3.webp)
@@ -78,6 +83,7 @@ The next biggest success among community incentives has been our Rockstars NFT, 
 <blockquote><i>Want participate and win $ROCKSTAR, Start over here: https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf</i></blockquote>
 
 #### EPNS in the News
+
 This month allowed us to gain a high level of media coverage and gain traction, as EPNS was featured in many conferences, events, and even television 📺.
 
 - [Messari Hub](https://messari.io/asset/epns-ethereum-push-notification-service?utm_source=newsletter&utm_medium=top&utm_campaign=epns-hub-announcement) welcomes EPNS!
@@ -89,6 +95,7 @@ This month allowed us to gain a high level of media coverage and gain traction, 
 - Harsh Rajat presenting ["Crypto: Digital assets of the future"](https://www.msn.com/en-in/money/news/cryptocurrency-trends-in-india-with-harsh-rajat-crypto-digital-assets-of-the-future-cnbc-tv18/vp-AAMxAeN) at CNBC-TV18
 
 #### Other Highlights
+
 - Thrilled to announce [Sandeep Nailwal, Co-founder of Polygon joining EPNS as Advisor](https://medium.com/ethereum-push-notification-service/welcome-on-board-sandeep-93173579dc65) 👏🏽
 - Don’t miss our [Frens of EPNS](https://medium.com/ethereum-push-notification-service/epns-ends-h1-2021-with-25-collaborations-and-118m-volume-on-uniswap-582ddf3fa79) article. A look back at what we’ve achieved during the first half of 2021.
 - Rockstars of Ethereum: make sure to check out our last episode with [Matthew Gould from Unstoppable Web](https://www.youtube.com/watch?v=Zfnitb7ZAww).
@@ -96,16 +103,8 @@ This month allowed us to gain a high level of media coverage and gain traction, 
 
 ![Fifth Image of EPNS Monthly Blocks](./image-5.webp)
 
-
 Exciting times ahead looking towards the remainder of the year! All the ambitious goals for EPNS combined with the awesome support from the community is the perfect combination for success.
 
 Lets PUSH together!
 
 The EPNS team
-
-
-
-
-
-
-

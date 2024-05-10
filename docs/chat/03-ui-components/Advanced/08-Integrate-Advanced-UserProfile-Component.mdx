@@ -5,24 +5,25 @@ hide_title: true
 slug: ./userprofile-component
 displayed_sidebar: pushChatSidebar
 sidebar_position: 7
-image: "/assets/docs/previews/docs_chat_ui_components_advanced--userprofile_component.png"
+image: '/assets/docs/previews/docs_chat_ui_components_advanced--userprofile_component.png'
 ---
 
 # UserProfile
-
 
 Streamlined solution for effortless profile management: a user-friendly component designed to seamlessly display and edit user profile details.
 
 This smart component streamlines profile editing with a one-liner integration, simplifying complex tasks for users.
 
 <head>
-  <title>UserProfile | UI Components (@pushprotocol/uiweb) | Push Chat | Push
-    Documentation</title>
+  <title>
+    UserProfile | UI Components (@pushprotocol/uiweb) | Push Chat | Push
+    Documentation
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import { ModalContainer } from "@site/src/css/SharedStyling";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer } from '@site/src/css/SharedStyling';
 
 ## Usage
 
@@ -48,7 +49,7 @@ export default UserProfileTest;
 <ModalContainer>
   <img
     src={
-      require("/static/assets/docs/chat/ui-components/advanced/integrate-advanced-userprofile-component/user-profile.png")
+      require('/static/assets/docs/chat/ui-components/advanced/integrate-advanced-userprofile-component/user-profile.png')
         .default
     }
   />
@@ -61,8 +62,8 @@ export default UserProfileTest;
 
 ### Customization parameters
 
-| Param               | Type                  | Default | Remarks                                                                                                                                                                                                       |
-| ------------------- | --------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Param                                | Type                  | Default | Remarks                                                                                                                                                                                                              |
+| ------------------------------------ | --------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `updateUserProfileModalBackground`   | `ModalBackgroundType` | -       | Default value is `"OVERLAY"`, decides the update user profile modal background, possible values are `"OVERLAY"` &#124 `"BLUR"` &#124 `"TRANSPARENT"`                                                                 |
 | `updateUserProfileModalPositionType` | `ModalPositionType`   | -       | Default value is `"GLOBAL"`, decides the update user profile modal position, it can be either relative to immediate parent(RELATIVE) or the entire screen(GLOBAL), possible values are `"RELATIVE"` &#124 `"GLOBAL"` |
 
@@ -73,7 +74,7 @@ export default UserProfileTest;
 ### Push UserProfile Component live playground
 
 ```jsx live
-customPropMinimized="true"
+customPropMinimized = 'true';
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -85,7 +86,7 @@ function App(props) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     // Get provider
-    await provider.send("eth_requestAccounts", []);
+    await provider.send('eth_requestAccounts', []);
 
     // Grabbing signer from provider
     const signer = provider.getSigner();
@@ -98,13 +99,13 @@ function App(props) {
     setSigner(null);
   };
   const buttonStyle = {
-    padding: "10px 20px",
-    backgroundColor: "#dd44b9",
-    color: "#FFF",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "20px",
+    padding: '10px 20px',
+    backgroundColor: '#dd44b9',
+    color: '#FFF',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    marginTop: '20px',
   };
   return (
     <>
@@ -120,16 +121,18 @@ function App(props) {
         style={buttonStyle}
         onClick={signer ? disconnectWallet : connectWallet}
       >
-        {signer ? "Disconnect wallet" : "Connect Wallet"}
+        {signer ? 'Disconnect wallet' : 'Connect Wallet'}
       </button>
 
       <ChatUIProvider signer={signer}>
         <div
-          style={{ maxHeight: "75vh", margin: "20px auto", position: "relative" }}
+          style={{
+            maxHeight: '75vh',
+            margin: '20px auto',
+            position: 'relative',
+          }}
         >
-          <UserProfile
-           
-          />
+          <UserProfile />
         </div>
       </ChatUIProvider>
     </>

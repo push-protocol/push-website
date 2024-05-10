@@ -11,17 +11,16 @@ tags: [ Ama
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Push Notifications to Back Backstop Liquidity Platform B.Protocol](./cover-image.webp)
 
 <!--truncate-->
 
-
 Many lending platform users are receiving suboptimal value owing to a liquidation process that provides low incentives for liquidators to back liquidations and enriches miners through gas wars when bidding for them. B.Protocol has developed a decentralized backstop liquidity protocol that aggregates popular lending protocols under a model that provides additional yield to both lenders and borrowers. EPNS is pleased to announce the launch of a pilot program to provide decentralized push notifications to support B.Protocol’s more efficient lending model.
 
-Sharing Lending Platform Profits With Push Notifications
-========================================================
+# Sharing Lending Platform Profits With Push Notifications
 
 B.Protocol has developed a decentralized backstop liquidity protocol that enables backstop liquidity providers (BLP) the rights to liquidate under-collateralized loans on Compound, MakerDAO, and soon other platforms as well. Since liquidators no longer bid up gas prices to be the highest priority transaction for undercollateralized loans, profits are higher. The BLPs share their higher profits with platform users. As a result, lenders and borrowers receive additional yield to standard interest rates.
 
@@ -31,26 +30,24 @@ On lending protocols such as Compound, for example, when the liquidation price i
 
 The B.Protocol smart contract connects the different lending platforms, providing lenders and borrowers a choice of interest rates and fees. Managing lending and liquidation, however, involves messages from multiple platforms with no central messaging service. One essential element is missing, decentralized push notifications. DeFi lending platform users are highly dependent on notification services to manage loan services, including:
 
-*   Data price feeds such as the best lending interest rates and liquidity pool fees
-*   Real-time notifications on transaction status and gas price alerts
-*   Collateralization ratios and liquidation alerts
-*   Notices of liquidation events and auctions
+- Data price feeds such as the best lending interest rates and liquidity pool fees
+- Real-time notifications on transaction status and gas price alerts
+- Collateralization ratios and liquidation alerts
+- Notices of liquidation events and auctions
 
 Though B.Protocol simplifies lending and liquidation by connecting lending platforms, the lack of a decentralized push notification service, until now, means important notifications may be distributed to multiple places, such as email or a Telegram account. A push notification service would allow all platform users to receive and take timely action on important lending notifications while still protecting data privacy as B.Protocol users interact with internal and external data sources.
 
 > _EPNS, much like B.Protocol, is building a new building block that was missing until now in DeFi. We are super excited to collaborate with the team at EPNS in order to bring our users real time notifications in a decentralized manner to keep them updated with their funds on the lending markets we are integrated with. Yaron Velner, Founder and lead developer of B.Protocol_
 
-The EPNS Solution
-=================
+# The EPNS Solution
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All notifications go directly to the user’s wallet where they can take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to B.Protocol users include:
 
-*   EPNS will send all data notifications directly to B.Protocol user wallets.
-*   The EPNS and B.Protocol teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of DeFi data users and markets.
-*   EPNS channels and users can customize their notification settings for different data notification requirements.
+- EPNS will send all data notifications directly to B.Protocol user wallets.
+- The EPNS and B.Protocol teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of DeFi data users and markets.
+- EPNS channels and users can customize their notification settings for different data notification requirements.
 
-How EPNS Will Support B.Protocol
-================================
+# How EPNS Will Support B.Protocol
 
 Under this pilot program, EPNS is building a dedicated channel for B.Protocol (see our lightpaper for definitions of channels, services, and more). B.Protocol users can subscribe to the B.Protocol channel to receive customized notifications to their wallets. Through collaboration with the B.Protocol team, we will gain insight into the push notification needs of users of lending platforms and what they want from the EPNS protocol.
 
@@ -64,8 +61,7 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be partnering with B.Protocol and anticipate EPNS push notifications becoming an indispensable tool in decentralized lending markets.
 
-About B.Protocol
-----------------
+## About B.Protocol
 
 B.Protocol is a backstop liquidity protocol for decentralized lending platforms. A new DeFi lego primitive, bringing traditional finance systems best practices into DeFi, aiming to stabilize the ever growing market of DeFi assets which are crucially dependent on adequate liquidation processes. By creating better liquidation systems we unleash better capital efficiency for the entire DeFi ecosystem. B.Protocol is a fully decentralized protocol which is being governed by $BPRO token holders.
 

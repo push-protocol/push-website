@@ -47,7 +47,7 @@
         "title": "Push Notifications",
         "subtitle": "Web3 native notification alerts"
       },
-       "link2": {
+      "link2": {
         "title": "Push Chat",
         "subtitle": "Web3 native chat protocol with groups"
       },
@@ -66,7 +66,7 @@
         "title": "Documentation Hub",
         "subtitle": "Curated wiki of Push Protocol"
       },
-       "link2": {
+      "link2": {
         "title": "Examples",
         "subtitle": "Gallery of collaborative experiencess"
       },
@@ -91,13 +91,13 @@
         "subtitle": "Join our community of developers"
       }
     },
-     "community": {
+    "community": {
       "title": "Community",
       "link1": {
         "title": "Ecosystem",
         "subtitle": "Amazing community of developers building with Push"
       },
-       "link2": {
+      "link2": {
         "title": "Push DAO",
         "subtitle": "Participate in governing Push Protocol"
       },
@@ -116,7 +116,7 @@
         "title": "Blog",
         "subtitle": "News, ideas and insights on Push and Web3"
       },
-       "link2": {
+      "link2": {
         "title": "FAQ",
         "subtitle": "Frequently asked questions about Push"
       },
@@ -352,7 +352,7 @@
     "investors-section": {
       "title": "Backed by successful entrepreneurs and venture capital funds."
     },
-    "network-section":{
+    "network-section": {
       "title": "Learn how Push Network becomes L2 for web3 communication!",
       "first-text": "Proof of Stake Network",
       "second-text": "Fee Pool and Circular Economy",
@@ -396,9 +396,9 @@
       }
     },
     "bg-section": {
-        "title": "Take your user engagement to the next level.",
-        "subtitle": "Engage users, build communities, and enable a thriving ecosystem with Push.",
-        "buttonText": "Start Building"
+      "title": "Take your user engagement to the next level.",
+      "subtitle": "Engage users, build communities, and enable a thriving ecosystem with Push.",
+      "buttonText": "Start Building"
     }
   },
   "frens": {
@@ -452,11 +452,11 @@
     "know-more": "Get started!"
   },
   "footer": {
-     "mail-section": {
-        "title": "Get the latest Push news",
-        "privacy": "Privacy Policy",
-        "tos": "Terms and conditions"
-      },
+    "mail-section": {
+      "title": "Get the latest Push news",
+      "privacy": "Privacy Policy",
+      "tos": "Terms and conditions"
+    },
     "info-section": {
       "positions-card": {
         "text": "Join us and build the future of Web3 Communication.",

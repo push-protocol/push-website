@@ -5,7 +5,7 @@ hide_title: true
 slug: ./notification-settings-with-showrunners-example
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 7
-image: "/assets/docs/previews/docs_notifications_settings_with_showrunners_example--showrunners_x_notification_settings.png"
+image: '/assets/docs/previews/docs_notifications_settings_with_showrunners_example--showrunners_x_notification_settings.png'
 ---
 
 # Trigger Notification Settings in Showrunners
@@ -19,8 +19,8 @@ This tutorial is intended to get you up and going by providing a step-by-step tu
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ### Setup the Showrunners in your local machine
 
@@ -42,7 +42,7 @@ yarn run dev
 After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
-import { CONSTANTS, PushAPI } from "@pushprotocol/restapi";
+import { CONSTANTS, PushAPI } from '@pushprotocol/restapi';
 ```
 
 #### [Channel File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts)
@@ -75,14 +75,14 @@ Design your own payload with custom values in the when you want to trigger notif
 ```jsx
 const payload = {
   notification: {
-    title: "Title",
-    body: "Notif Body",
+    title: 'Title',
+    body: 'Notif Body',
   },
   payload: {
-    title: "Title",
-    body: "Payload body",
-    cta: "https://google.com/",
-    embed: "https://avatars.githubusercontent.com/u/64157541?s=200&v=4",
+    title: 'Title',
+    body: 'Payload body',
+    cta: 'https://google.com/',
+    embed: 'https://avatars.githubusercontent.com/u/64157541?s=200&v=4',
     // index of the notification the channel wants to trigger, in this for 1nd index which is for Boolean type
     category: 1, // Depending upon your use-case
   },

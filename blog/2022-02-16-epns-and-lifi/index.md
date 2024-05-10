@@ -4,8 +4,8 @@ title: 'EPNS and LiFi Team Up To Improve User Experience Through Push Notificati
 description: 'EPNS and LiFi Team Up To Improve User Experience Through Push Notifications'
 authors: [push]
 image: './cover-image.webp'
-text: "Despite its monumental success over the past couple of years, the decentralized finance (DeFi) industry still largely remains to be fragmented. Every blockchain network within the industry seems to have created walled gardens for themselves that make it difficult for users to bypass."
-tags: [ Newsletter,Epnsproject,Defi,Ethereum,Blockchain]
+text: 'Despite its monumental success over the past couple of years, the decentralized finance (DeFi) industry still largely remains to be fragmented. Every blockchain network within the industry seems to have created walled gardens for themselves that make it difficult for users to bypass.'
+tags: [Newsletter, Epnsproject, Defi, Ethereum, Blockchain]
 ---
 
 ![Cover image of EPNS and LiFi Team Up To Improve User Experience Through Push Notifications](./cover-image.webp)
@@ -24,8 +24,7 @@ Using Li.Fi, users will be able to take advantage of superior yield farming, sta
 
 Now, given that users of Li.Fi can conduct multiple cross-chain transactions, it is quite a laborious task for them to manually check for transaction confirmations. Li.Fi needs a communication channel through which it can directly update users about the status of their transactions. This is where EPNS comes into play.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 Through our pilot partnership with Li.Fi, we aim to provide a way for the protocol to seamlessly communicate with its users without depending on external media. Users of Li.Fi will directly receive push notifications about the status of their transactions through bridges. Instead of them having to check time and again, the protocol will notify users when their assets are successfully bridged to the other side. This saves users a lot of time and effort and improves their overall user experience within DeFi.
 

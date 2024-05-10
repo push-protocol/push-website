@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Ethereum
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of DeFi Aggregator Frontier to Support Web3 Notifs](./cover-image.webp)
@@ -26,19 +27,17 @@ Our pilot collaboration with Frontier will ensure that we brainstorm with their 
 
 Our pilot program with Frontier will consist of:
 
-*   Exploring protocol usage within Frontier app.
-*   Implementing and ironing out any features required to enable smooth integration.
-*   Working with the Frontier team to enable technical discussions towards building a SDK that is deployable as a plug and play solution for all crypto wallets.
-*   Possible integration with Frontier wallet in the future.
+- Exploring protocol usage within Frontier app.
+- Implementing and ironing out any features required to enable smooth integration.
+- Working with the Frontier team to enable technical discussions towards building a SDK that is deployable as a plug and play solution for all crypto wallets.
+- Possible integration with Frontier wallet in the future.
 
 We are honored to be working with the Frontier team. With the growing horizons of DeFi across protocols and chains, we are excited to be part of one of the best projects that greatly enhanced user experience and simplified DeFi usage for all the users!
 
 Decentralized Notifs FTW!!
 
-**About Frontier**
-------------------
+## **About Frontier**
 
 Frontier is a Chain Agnostic DeFi Aggregation layer. Using Frontier, Users can Track and Manage DeFi positions, Stake Assets, Swap or Exchange Assets and explore more DeFi Applications in one single place.
 
 Stay in touch with Frontier Wallet! [Website](https://frontierwallet.com/), [Twitter](https://twitter.com/FrontierDotXYZ), [Telegram](https://t.me/frontierwallet), [Medium](https://medium.com/frontier-wallet)
-

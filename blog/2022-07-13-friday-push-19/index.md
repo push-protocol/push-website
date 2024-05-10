@@ -3,20 +3,23 @@ slug: friday-push-19
 title: 'Friday PUSH #19'
 authors: [push]
 image: './cover-image.webp'
-text: "Last Friday we had a very special Friday PUSH with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month."
+text: 'Last Friday we had a very special Friday PUSH with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month.'
 tags: [Ethereum, Hackathons, Twitter, Crypto, Blockchain]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Friday PUSH #19](./cover-image.webp)
+
 <!--truncate-->
+
 <ImageText>#MeetTheBUIDLers (of ETHNewYork 2022) — PUSH Call #19</ImageText>
 
 <!--customheaderpoint-->
+
 # Meet the ETHNewYork BUIDLers 🏗️
 
 Last Friday we had a very special <b>Friday PUSH</b> with very special guests. We were accompanied by Jacob from ETH Global, and some of the teams that decided to implement EPNS during the ETHNewYork hackathon last month.
-
 
 <blockquote><i>
 This Friday PUSH was held on July 8th, 2022 at 2PM UTC
@@ -77,4 +80,3 @@ Working together with these amazing teams and people during ETHNewYork was a won
 Till next Friday Push!
 
 The EPNS Team 💪
-

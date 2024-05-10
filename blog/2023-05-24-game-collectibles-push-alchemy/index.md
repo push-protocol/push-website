@@ -1,19 +1,17 @@
 ---
-
 slug: how-to-build-a-game-collectibles-d-app-with-push-and-alchemy
 title: How to Build a Game Collectibles dApp with Push and Alchemy🎮
 authors: [push]
 image: './cover-image.webp'
-text: "This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem."
-tags: [ Web3, Development, Gaming,  Blockchain Development, Blockchain Technology]
-
+text: 'This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem.'
+tags: [Web3, Development, Gaming, Blockchain Development, Blockchain Technology]
 ---
 
 ![Cover image of How to Build a Game Collectibles dApp with Push and Alchemy🎮](./cover-image.webp)
+
 <!--truncate-->
 
 <b>TL;DR:</b> This blog post delves into the world of blockchain-based gaming collectibles and how using Alchemy and Push Protocol can revolutionize the development process. Alchemy provides a powerful infrastructure of nodes and enhanced APIs for managing blockchain interactions, while Push Protocol enables real-time communication within the gaming ecosystem.
-
 
 By the end of this tutorial, you’ll have learned:
 
@@ -152,7 +150,7 @@ The benefits of using Alchemy include:
 
 ## Push Protocol
 
-Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](/docs/ "Push developer docs") for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](/docs/ 'Push developer docs') for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
@@ -177,11 +175,11 @@ const collectibleChannel = await pushClient.subscribe('collectibles');
 
 ```js
 collectibleChannel.on('new_collectible', (data) => {
- console.log('New collectible created:', data);
+  console.log('New collectible created:', data);
 });
 
 collectibleChannel.on('trade', (data) => {
- console.log('Collectible traded:', data);
+  console.log('Collectible traded:', data);
 });
 ```
 
@@ -221,4 +219,3 @@ Building blockchain-based gaming collectibles dApps with Alchemy and Push Protoc
 [Alchemy](https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244) provides the leading blockchain development platform powering millions of users for 99% of countries worldwide. Our mission is to provide developers with the fundamental building blocks they need to create the future of technology and lower the barrier to entry for developers to build blockchain applications.
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>
-

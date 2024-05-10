@@ -23,7 +23,11 @@ import Arrow from '@site/static/assets/website/brb/schedules/arrow.svg';
 import { citiesList } from '@site/src/config/BRBScheduleList';
 import { device } from '@site/src/config/globals';
 
-const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> }) => {
+const Schedules = ({
+  sectionRef,
+}: {
+  sectionRef: React.MutableRefObject<null>;
+}) => {
   const isMobile = useMediaQuery('(max-width: 480px)');
 
   const [index, setIndex] = useState(0);
@@ -64,11 +68,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
       const splide = splideRef.current.splide;
       splide.Components.Controller.go(4);
     }
-    
   }, [splideRef]);
 
   // const isMobile = useDeviceWidthCheck(600);
-
 
   return (
     <Container ref={sectionRef}>
@@ -92,24 +94,22 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
           fixedWidth: isMobile ? '100vw' : '413px',
         }}
         hasTrack={false}
-        aria-label="..."
+        aria-label='...'
       >
-        <SplideTrack
-          style={{ paddingBottom: '29px' }}
-          ref={scrollRef}
-        >
+        <SplideTrack style={{ paddingBottom: '29px' }} ref={scrollRef}>
           {citiesList.map((item, i) => {
             return (
-              <SplideContainer
-                className="splide__slide is-visible"
-                key={item}
-              >
+              <SplideContainer className='splide__slide is-visible' key={item}>
                 {item?.map((schedule, index) => {
                   return (
                     <ScheduleCardContainer
                       key={index}
                       className={schedule.hasEnded ? 'disabled' : ''}
-                      background={schedule.hasEnded ? '#2A2A39' : schedule?.backgroundColor}
+                      background={
+                        schedule.hasEnded
+                          ? '#2A2A39'
+                          : schedule?.backgroundColor
+                      }
                       title={`${schedule?.title}`}
                       onClick={() => {
                         if (!schedule.hasEnded) {
@@ -119,43 +119,51 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                     >
                       <ImageContainer>
                         <Image
-                          src={require(`@site/static/assets/website/brb/schedules/${schedule.srcref}.webp`).default}
+                          src={
+                            require(
+                              `@site/static/assets/website/brb/schedules/${schedule.srcref}.webp`
+                            ).default
+                          }
                           srcSet={`${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/schedules/${schedule.srcref}@3x.webp`).default} 3x`}
                           alt={`${schedule?.alt}`}
-                          loading="lazy"
+                          loading='lazy'
                         />
                       </ImageContainer>
                       <svg
                         style={{ visibility: 'hidden', position: 'absolute' }}
-                        width="0"
-                        height="0"
-                        xmlns="http://www.w3.org/2000/svg"
-                        version="1.1"
+                        width='0'
+                        height='0'
+                        xmlns='http://www.w3.org/2000/svg'
+                        version='1.1'
                       >
                         <defs>
-                          <filter id="goo">
+                          <filter id='goo'>
                             <feGaussianBlur
-                              in="SourceGraphic"
-                              stdDeviation="8"
-                              result="blur"
+                              in='SourceGraphic'
+                              stdDeviation='8'
+                              result='blur'
                             />
                             <feColorMatrix
-                              in="blur"
-                              mode="matrix"
-                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                              result="goo"
+                              in='blur'
+                              mode='matrix'
+                              values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9'
+                              result='goo'
                             />
                             <feComposite
-                              in="SourceGraphic"
-                              in2="goo"
-                              operator="atop"
+                              in='SourceGraphic'
+                              in2='goo'
+                              operator='atop'
                             />
                           </filter>
                         </defs>
                       </svg>
                       <ScheduleData>
                         <PlaceContainer>
-                          <PlaceName color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}>{schedule?.place}</PlaceName>
+                          <PlaceName
+                            color={schedule.hasEnded ? '#FFF' : '#b0ffc3'}
+                          >
+                            {schedule?.place}
+                          </PlaceName>
                           {!schedule.hasEnded && <Arrow />}
                         </PlaceContainer>
                         <DateContainer
@@ -165,7 +173,9 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
                           {schedule?.date}
                         </DateContainer>
                       </ScheduleData>
-                      {i === citiesList?.length - 1 && <span ref={isEndRef}></span>}
+                      {i === citiesList?.length - 1 && (
+                        <span ref={isEndRef}></span>
+                      )}
                     </ScheduleCardContainer>
                   );
                 })}
@@ -175,32 +185,43 @@ const Schedules = ({ sectionRef }: { sectionRef: React.MutableRefObject<null> })
         </SplideTrack>
 
         <div style={{ position: 'relative' }}>
-          <ActionContainer className="splide__arrows">
+          <ActionContainer className='splide__arrows'>
             <SplideArrow
               background={index > 0 ? '#E64DE9' : '#2A2A39'}
-              onClick={() => (index !== 0 ? setIndex((prev) => prev - 1) : null)}
-              title="Previous page"
-              className="splide__arrow splide__arrow--prev"
+              onClick={() =>
+                index !== 0 ? setIndex((prev) => prev - 1) : null
+              }
+              title='Previous page'
+              className='splide__arrow splide__arrow--prev'
             >
               <Left />
             </SplideArrow>
             {/* <Button background={direction === 'right' ? '#E64DE9' : '#2A2A39'} onClick={() => setDirection('right')} className="splide__arrow splide__arrow--next"> */}
             <SplideArrow
               background={!isLastSchedule ? '#E64DE9' : '#2A2A39'}
-              onClick={() => (!isLastSchedule ? setIndex((prev) => prev + 1) : null)}
-              title="Next page"
-              className="splide__arrow splide__arrow--next"
+              onClick={() =>
+                !isLastSchedule ? setIndex((prev) => prev + 1) : null
+              }
+              title='Next page'
+              className='splide__arrow splide__arrow--next'
             >
               <Right />
             </SplideArrow>
             <Button
-              border="1px solid #E64DE9"
-              onClick={() => window.open('https://pushprotocol.notion.site/Dev-Doc-Billion-Reasons-to-Buidl-One-place-to-start-b900d90937f440fcb737ffcd32078699?pvs=4', '_blank')}
-              title="Participate Virtually"
+              border='1px solid #E64DE9'
+              onClick={() =>
+                window.open(
+                  'https://pushprotocol.notion.site/Dev-Doc-Billion-Reasons-to-Buidl-One-place-to-start-b900d90937f440fcb737ffcd32078699?pvs=4',
+                  '_blank'
+                )
+              }
+              title='Participate Virtually'
             >
               <ItemH>
-                <ParticipateButtonInnerText>Participate Virtually</ParticipateButtonInnerText>
-                <ItemV width="15px">
+                <ParticipateButtonInnerText>
+                  Participate Virtually
+                </ParticipateButtonInnerText>
+                <ItemV width='15px'>
                   <ArrowSmall />
                 </ItemV>
               </ItemH>
@@ -228,7 +249,7 @@ const ArrowSmall = styled(Arrow)`
 `;
 
 const ParticipateButtonInnerText = styled(Span)`
-  font-family: "Glancyr", sans-serif;
+  font-family: 'Glancyr', sans-serif;
   @media ${device.mobileS} {
     flex: 1;
   }
@@ -271,11 +292,10 @@ const ScheduleCardContainer = styled.button`
   cursor: pointer;
 
   &.disabled {
-     /* Custom Styles */
+    /* Custom Styles */
     cursor: not-allowed;
     filter: saturate(0);
   }
-
 
   &:hover {
     transform: scale(1.05);
@@ -332,7 +352,7 @@ const PlaceContainer = styled.div`
 `;
 
 const PlaceName = styled(Span)`
-  font-family: "Green Brooks", sans-serif;
+  font-family: 'Green Brooks', sans-serif;
   font-size: 42px;
   font-weight: 400;
   // color: #b0ffc3;
@@ -345,7 +365,7 @@ const DateContainer = styled(Span)`
   color: ${(props) => props.color};
   font-size: 20px;
   font-weight: 400;
-  font-family: "Glancyr", sans-serif;
+  font-family: 'Glancyr', sans-serif;
   letter-spacing: 0.6px;
   display: flex;
   align-items: flex-end;

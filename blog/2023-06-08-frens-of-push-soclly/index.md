@@ -3,15 +3,15 @@ slug: unleashing-a-new-era-of-social-networking-push-x-soclly
 title: 'Unleashing a New Era of Social Networking | Push x SOCLLY🌿'
 authors: [push]
 image: './cover-image.webp'
-text: "This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿."
+text: 'This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿.'
 tags: [Frensofpush, Web3, Partnership, Blockchain Development]
 ---
 
 ![Cover image of Unleashing a New Era of Social Networking | Push x SOCLLY🌿](./cover-image.webp)
+
 <!--truncate-->
 
 This week we are thrilled to feature an excitingly innovative decentralized social network as our newest Frens of Push, SOCLLY🌿.
-
 
 SOCLLY is revolutionizing the web3 social networking space by putting power in the hands of creators. With a strong emphasis on collaboration, freedom, and monetization, SOCLLY provides a dynamic platform where creators can thrive and connect with their audience on their own terms.
 
@@ -21,8 +21,8 @@ But that’s only the beginning. With the foundation set, SOCLLY and Push Chat a
 
 In conversation with co-founders Prayag and Naresh, we talk about the problem SOCLLY solves, their vision, and the integration of Push Chat. Prayag and Naresh and absolutely thrilled about the future use cases that Push Chat will bring to the platform, calling it a potential game-changer in web3 communication.
 
-
 ### 1. Hi Prayag and Naresh, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?
+
 I am Prayag Singh, one of the co-founders at SOCLLY. My professional journey began in earnest in 2016, post-graduation, when I embraced the role of an automation engineer for two years. In 2018, the intriguing world of blockchain technology came to my attention through Bitcoin, sparking the onset of an exciting new phase in my career.
 
 As I delved into the nuances of the Bitcoin whitepaper, I found myself captivated by the potential and implications of the technology. I was already acquainted with the concept of a peer-to-peer network through Torrent. Still, I hadn’t realized until then the transformative potential of this technology in revolutionizing the financial sector and its aptitude for facilitating global payments.
@@ -42,6 +42,7 @@ This inspiration was the fruit of numerous conversations with creators and educa
 Our team spent one and a half years meticulously crafting SOCLLY, and we eagerly await the opportunity to see its transformative effect on the web3 community.
 
 ### 2. Tell us about SOCLLY — what’s it about, and what problem does SOCLLY solve?
+
 SOCLLY is an innovative decentralized social network powered by Lens Protocol which works as a gateway of freedom for creators. SOCLLY allows individuals to monetize their content, time, and skills by becoming creators and sharing their unique perspectives with the world. It is a dynamic platform that fosters collaboration, engagement, and monetization opportunities for creators across various domains. By leveraging the capabilities of blockchain technology, SOCLLY addresses several challenges creators face in traditional social media platforms.
 
 Below are the key features of SOCLLY:
@@ -57,6 +58,7 @@ Below are the key features of SOCLLY:
 SOCLLY aspires to transform the social media paradigm by equipping creators with a decentralized platform that fosters enriched collaborative possibilities, ensures transactional security and transparency, and engenders deeper levels of community interaction and engagement.
 
 ### 3. How do developers use SOCLLY?
+
 SOCLLY is a decentralized social network powered by Lens Protocol, meaning developers require a lens handle to access the platform(as a user). We don’t have an SDK yet. However, we plan to introduce an SDK for developers in the future. This SDK will enable developers to leverage the SOCLLY platform and its existing ecosystem to build user experiences.
 
 In line with the methodology utilized in Push, developers would have an opportunity to utilize the provided SDK to craft personalized applications and interfaces, thereby harnessing the array of capabilities and features presented by SOCLLY. Such SDK integration paves the way for developers to augment the user experience, incorporate novel functionalities, and contribute to the ever-expanding ecosystem of SOCLLY.
@@ -66,6 +68,7 @@ SOCLLY aims to stimulate innovation, collaboration, and the inception of various
 As SOCLLY propels forward, incorporating the SDK will empower developers to adopt an instrumental role in shaping the platform’s future, thus further enhancing the experiences of its user base.
 
 ### 4. What’s the 2023 plan for SOCLLY its ecosystem?
+
 Looking ahead to 2023, SOCLLY has an ambitious plan to develop its ecosystem further. Building upon the success of Push Chat, SOCLLY aims to extend its services to different Ethereum-based chains, enabling users to engage with the platform across multiple blockchain networks seamlessly. This expansion will offer a broader user base and increased accessibility to the unique features and opportunities provided by SOCLLY.
 
 In line with this vision, SOCLLY has already commenced work on an exciting new feature called Paid Tweets, also known as Paid Promotions. The introduction of this feature is anticipated in the coming weeks, which will grant creators and users on SOCLLY the capability to amplify their content via sponsored tweets. By capitalizing on this feature, creators can bolster their prominence and outreach within the SOCLLY ecosystem, thus fostering an environment ripe for expansion and interaction.
@@ -75,6 +78,7 @@ Moreover, SOCLLY is currently incorporating Push Spaces, a cooperative space und
 SOCLLY is poised to enhance the user experience, expand its offerings, and create a vibrant ecosystem for creators and users alike through these strategic initiatives. The team at SOCLLY is committed to delivering these new features, ensuring that SOCLLY remains at the forefront of decentralized social networking and continues to provide valuable opportunities and services to its community.
 
 ### 5. How is SOCLLY building with Push Chat?
+
 SOCLLY is diligently incorporating Push Chat into its platform to augment its offerings and ensure a seamless experience for creators and users. This partnership enables the integration of robust chat functionalities within the SOCLLY ecosystem.
 
 Using Push Chat’s features, SOCLLY facilitates real-time dialogues for creators and users, promoting superior engagement and collaboration. This integration streamlines communication between creators and their audiences, enriching the user experience.
@@ -84,14 +88,17 @@ Furthermore, the amalgamation with Push Chat empowers SOCLLY to access the expan
 Overall, the alliance between SOCLLY and Push Chat merges the respective strengths of the two platforms, thereby crafting a compelling and engaging experience for creators and users. The integration of Push Chat’s conversation functionalities serves to streamline communication, encourage cooperation, and foster a vibrant community within SOCLLY’s decentralized social network.
 
 ### 6. How have you seen Push Chat integration enhance your UX?
+
 The integration of Push Chat into our platform has significantly enriched the user experience, offering a streamlined and accessible communication conduit with creators, thereby promoting direct and efficient exchanges. Our partnership with Push Chat emphasizes our commitment to continually enhancing user experience, as demonstrated by the positive user engagement and satisfaction from newly added features such as Reply and React.
 
 Looking forward, we anticipate future Push Chat developments with enthusiasm. Our team is proactively pursuing adding more features to uplift the user experience further. Through the continuous evolution of Push Chat, we aspire to cultivate an increasingly dynamic and interactive ecosystem for our users.
 
 ### 7. What cool use cases do you see Push and Push Chat being used for in the future?
+
 Push Chat presents a promising future with diverse potential use cases, primarily emerging as an alternative to traditional messaging platforms like WhatsApp for web3 users. It promises a secure and decentralized communication channel that encourages direct and transparent interactions among creators and communities within the web3 ecosystem. As it continues to evolve and add new features, we foresee the emergence of innovative use cases, further enabling users to harness the power of decentralized communication. In essence, Push Chat holds the potential to redefine communication for web3 users, offering a superior, privacy-centric, and decentralized alternative to mainstream messaging platforms.
 
 ### 8. What haven’t we asked you about that you wish we had?
+
 SOCLLY prioritizes user feedback and actively invites community engagement to shape our development roadmap. We offer multiple avenues for users to voice their ideas and concerns. Moreover, we are committed to fostering sustainability and social impact. It includes incorporating sustainable practices in our operations and seeking partnerships that support philanthropic initiatives. Our long-term plan features user-empowered contributions to social impact through the platform. We aim to cultivate a community-led ecosystem that drives significant and enduring impact.
 
 <i>
@@ -99,9 +106,7 @@ SOCLLY prioritizes user feedback and actively invites community engagement to sh
 </i>
 
 ## About SOCLLY
+
 SOCLLY is a decentralized social network with a creator-centric apporach. With a strong focus on democratizing access to finance and revolutionizing digital interactions, SOCLLY offers a gateway of freedom for creators and educators to monetize their time and skills.
 
 Find more about SOCLLY: [Website](https://www.soclly.com/), [Twitter](https://twitter.com/socllyhq), [Discord](https://discord.com/invite/eUM646fTua), [LinkedIn](https://www.linkedin.com/in/soclly-hq-264304215/), [Facebook](https://www.facebook.com/SocllyHQ)
-
-
-

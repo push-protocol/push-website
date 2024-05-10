@@ -10,13 +10,12 @@ tags: [ Push Protocol, NewsLetter, Web3, Blockchain Technology, Blockchain Devel
 ---
 
 ![Cover image of May Monthly Recap ☀️](./cover-image.webp)
-<!--truncate-->
 
+<!--truncate-->
 
 Welcome to another exciting month at Push!
 
 May flew by in the blink of an eye, and we have a whirlwind of exciting updates and achievements to share with you. From groundbreaking developments to valuable partnerships and community activities, the past month has been nothing short of extraordinary.
-
 
 Get ready to dive in!
 
@@ -48,6 +47,7 @@ May was ablaze with thrilling partnerships and collaborations. Here’s a glimps
 - Push Chat has now gone live on [Soclly Mainnet](https://twitter.com/pushprotocol/status/1661069485594345472?s=20), empowering users to connect and engage with ease.
 
 ![Ecosystem](./image-1.webp)
+
 <center>Push Protocol Ecosystem as of May</center>
 
 ## In The Media
@@ -67,6 +67,7 @@ In addition to our ambassadors, we are thrilled to announce [CopperX](https://tw
 To foster community engagement, we have initiated Governance bi-weekly calls to provide a platform for all community members and stakeholders to actively participate in shaping the future of Push Protocol. Stay tuned and be a part of the discussion on our [Discord](https://discord.com/invite/pushprotocol).
 
 ## Community
+
 Our community has been actively engaging in various activities, discussions, and meetups. Here’s a roundup of the recent items this last month:
 
 - One of the highlights was an engaging [Twitter Spaces](https://twitter.com/pushprotocol/status/1653457074657820672?s=20) session hosted in Spanish by our very own Jaf. Joined by esteemed members from projects including Platzi, Diffie, Shapeshift, and Bankless DAO, the conversation revolved around exploring existing web3 opportunities.
@@ -79,4 +80,3 @@ Our community has been actively engaging in various activities, discussions, and
 As we move on to June, we are energized and inspired by all the amazing progress we’ve made together.
 
 Thank you for being a part of the Push journey. Stay tuned for more updates!
-

@@ -7,15 +7,16 @@ text: "It feels so great to be here in NYC! One of the coolest cities in the wor
 And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!"
 tags: [Ethereum, Blockchain ,Hacking,Cryptocurrency,Software Development]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of ETHNewYork: BUIDL the future of Web3 comm with EPNS 🗽🚀🔔](./cover-image.webp)
+
 <!--truncate-->
 
 <b>Hello Hello Hello ETHNewYork!</b>
 
 It feels so great to be here in NYC! One of the coolest cities in the world! The city of diversity and dynamism!
-
 
 And of course having to meet some of the most amazing, coolest and rockstar BUIDlers of Web3!
 
@@ -24,9 +25,11 @@ As you join us from <b>June 24th-26th for ETHNewYork</b> alongside developers an
 And to help you out with this Hackathon, we thought we’d quickly set up a blog to help you build on top of EPNS protocol for our amazing prize pool and then some..
 
 ### About Ethereum Push Notification Service
+
 EPNS is a decentralized communication protocol for Web3! Using which any dApps, smart contracts, backends or protocols can send comm (starting with on chain / off chain / gasless notifs) tied to user wallet in an open, gasless, multichain and platform agnostic fashion. Open comm layer allows any crypto wallet / frontend to tap into the network and get the comm across.
 
 ### Prize Overview — For ETHNewYork Hackathon
+
 - 1st PRIZE — $ 2000 USDC
 - 2nd PRIZE — $1500 USDC
 - 3rd PRIZE — $ 500 USDC
@@ -35,9 +38,11 @@ EPNS is a decentralized communication protocol for Web3! Using which any dApps, 
 But that’s not just it! Over and above this we have an exciting grants program for you as well!
 
 ### Push Grants Program approved for $1 Million!
+
 This you’ll also be able to partake in and it’s running all the way up until the second quarter of this year! You’ll be able to find more details of this in our blog [here](https://medium.com/ethereum-push-notification-service/push-grants-program-going-live-6841515f95d8)!
 
 ### 🔗 Important Reference links for Developers
+
 - [EPNS Documentation Hub](https://docs.epns.io/)
 - [EPNS Discord](https://discord.gg/n4EYGyPJcF)
 
@@ -47,6 +52,7 @@ Also, while you’re at the venue, come to our table & grab our Cheat Sheet! Wil
 <ImageText>Cheat Sheet for Devs and Hackers</ImageText>
 
 ### TL;DR — Quick Demo Video to get you started
+
 While you read through the blog for references, links and all the useful tips to BUIDL with us, if you prefer to, we have made a Workshop Video for you to view directly, which would also be provided to you by the ETHGlobal team and will show up on their channels.
 
 <VideoContainer>
@@ -54,6 +60,7 @@ While you read through the blog for references, links and all the useful tips to
 </VideoContainer>
 
 ### Ideas to Buidl. Solve. Conquer.
+
 For those who’d prefer to go the reading way here’s how you can Buidl. Solve. Conquer this weekend!
 
 As the blockchain ecosystem has evolved into a composable, multi-chain network, native Web3 communication is growing more and more necessary for user experience, developer operations, investor security, protocol architecture, and a lot more.
@@ -112,6 +119,7 @@ Besides these there are a ton of other applications that’ll most Web3 users in
 Hope these ideas are some that you find exciting to build, and if you do have any queries feel free to reach out to us on Twitter @epnsproject
 
 ### ☎️ Who do we reach out to for assistance?
+
 Feel free to reach out to us at <b>ETHNewYork</b>, our Co-Founder Richa and the EPNS team will be at the venue till the end of the hackathon. And of course on the <b>#sponsor-epns</b> channel on <b>ETHGlobal Discord</b>
 
 ![Push Team Image](./image-4.jpeg)
@@ -121,15 +129,14 @@ Feel free to reach out to us at <b>ETHNewYork</b>, our Co-Founder Richa and the 
 - [Jaf](http://twitter.com/jafetsc), Integration Lead [Jaf | EPNS#7611 on Discord]
 
 ### 🎁EPNS Merch up for grabs!
+
 While of course we’ll get to know you when we meet up, interact with you guys, and will have some snacks for y’all awesome teams during the hackathon, we also got some goodies as giveaways for you to take back home as memories. So feel free to drop by at our table and grab some of our awesome merch!
 
 ![EPNS Merch up for grabs Image](./image-5.webp)
 
 ### Throwback: ETHAmsterdam Hackathon
+
 As you get cracking on BUIDLing with us we thought we’ll sign off with some memorable moments from our last hackathon at [ETHAmsterdam](https://twitter.com/epnsproject/status/1518558686498594816) and you’d know, when we go all out with our hackathons, we go all out!
 
 ![Push team at hackathon Image](./image-6.jpeg)
 All the best! 👍🤞👍🍀
-
-
-

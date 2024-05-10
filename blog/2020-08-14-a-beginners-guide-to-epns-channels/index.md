@@ -12,6 +12,7 @@ tags: [ Ethereum
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of A Beginner’s Guide to EPNS Channels!](./cover-image.webp)
@@ -26,8 +27,7 @@ All this sounds great! But now the question arises from someone who is providing
 
 And the solution, my dear friend, is actually really (and I do mean REALLY) simple! But before I answer that question for you, let’s just lay down a general idea of what a channel is and what can it really do.
 
-Channels
-========
+# Channels
 
 > Any user on the protocol who activates themselves on it to send notifications is called a **Channel**.
 
@@ -35,8 +35,7 @@ In other words, anyone who is a user of the protocol has the ability to become a
 
 A service just needs to follow a one-time procedure in order to upgrade itself to create a channel and the channel owner will always be the first subscriber of the channel as soon as the channel is activated, it’s not possible to remove the channel owner (subscriber) from their own channel.
 
-Types Of Channels
------------------
+## Types Of Channels
 
 Just like any other feature provided in the protocol, EPNS provides the channel owner full freedom in what kind of a channel it wants to create based on its business use case! This allows channel owners to be flexible and adapt their own channel to the use case they wish to accomplish from the protocol. Currently, the protocol offers 3 main types of channels with the promise to add even more types in the near future!
 
@@ -52,8 +51,7 @@ Let’s take the example of MakerDAO. MakerDAO can create an official channel wh
 
 A channel can be updated as long as there are no subscribers. The channel becomes immutable as soon as a new subscriber joins the channel.
 
-What must I do to activate a Channel?
-=====================================
+# What must I do to activate a Channel?
 
 So far we have explored what a channel is and the different types of channels there are. So what must a user do to activate itself as a channel?
 
@@ -65,8 +63,7 @@ But where do these tokens come from?
 
 When a channel is activated, the channel is required to stake fees in DAI of 50 DAI or higher, this is used to create a staking pool which in turn interacts with the AAVE Protocol to earn interest. This interest is then distributed back to all the subscribers of the channel of that service in a weighted manner, favouring early subscribers more than the later ones. So if a channel stakes more DAI, then it incentivizes more users to subscribe to their channel in order to earn higher interests!
 
-What can a Channel Owner do?
-----------------------------
+## What can a Channel Owner do?
 
 So, you’ve activated yourself as a channel, you’ve staked your DAI, you’ve even started to get subscribers. Now what? Well, now you may send various types of notifications to your subscribers! Gone are the old days of dreading a boring old plain text notification, now you may even add images, videos and link to your own website through the EPNS protocol!
 
@@ -80,8 +77,7 @@ Although notifications and its types may be an article on itself, here is a smal
 
 4\. **Targeted Notification**: Targeted notifications go to a single subscriber of a channel; the notification payload, in this case, is not encrypted.
 
-Conclusion
-==========
+# Conclusion
 
 EPNS is a decentralized DeFi Notification protocol that enables users (wallet addresses) to receive notifications and earn from them. It enables wallet addresses to receive notifications in a platform-agnostic fashion from both decentralized and centralized carriers.
 
@@ -90,9 +86,9 @@ With incentives for users to subscribe to channels in order to gain weighted int
 _Connect with us if you have any questions!_
 
 > _Telegram:_ [_https://t.me/epnsproject_](https://t.me/epnsproject)
-> 
+>
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
-> 
+>
 > [_Github_](https://github.com/push-protocol)_:_ [_https://github.com/push-protocol_](https://github.com/push-protocol)
 
 _Reference:_ [_EPNS Whitepaper_](https://whitepaper.epns.io/)

@@ -9,6 +9,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Push Notifications to Back Incentivized Web3 Community Building](./cover-image.webp)
@@ -25,25 +26,23 @@ The protocol uses crypto incentives to help Web3 contributors build skills and o
 
 RabbitHole has developed a healthy network of leading DeFi protocols ready to assign tasks to new contributors and reward them for their participation. Ensuring all future contributors are informed of tasks and rewards, however, involves messages from multiple platforms yet no central messaging service exists. One essential element is missing, decentralized push notifications. The RabbitHole network users are highly dependent on notification services to communicate important information, including notifications on:
 
-*   When rewards have been distributed
-*   New quests issued by protocols
-*   When a quest is starting and ending
+- When rewards have been distributed
+- New quests issued by protocols
+- When a quest is starting and ending
 
 As RabbitHole decentralizes into a DAO, users will also rely on push notifs to actively take part in the platform’s self-governance process. Yet the lack of a decentralized push notification service, until now, means important notifications may be distributed to multiple places, such as email or a Telegram account. A push notification service would allow all platform users to receive and take timely action on important campaign notifications while still protecting data privacy as RabbitHole users interact with internal and external data sources.
 
 \[“Rabbithole is delighted to see solutions come along that reduce information asymmetry. As we build out our infrastructure for quests EPNS is a valuable partner in helping onboard informed users into web3” commented Tim Black, Product Manager at RabbitHole.\]
 
-The EPNS Solution
-=================
+# The EPNS Solution
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All notifications go directly to the user’s wallet where they can take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to RabbitHole users include:
 
-*   EPNS will send all data notifications directly to RabbitHole user wallets.
-*   The EPNS and RabbitHole teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of the different contributors to projects.
-*   EPNS channels and users can customize their notification settings for different data notification requirements.
+- EPNS will send all data notifications directly to RabbitHole user wallets.
+- The EPNS and RabbitHole teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of the different contributors to projects.
+- EPNS channels and users can customize their notification settings for different data notification requirements.
 
-How EPNS Will Support RabbitHole
-================================
+# How EPNS Will Support RabbitHole
 
 Under this pilot program, EPNS is building a dedicated channel for RabbitHole (see our [litepaper](https://whitepaper.epns.io) for definitions of channels, services, and more). RabbitHole users can subscribe to the RabbitHole channel to receive customized notifications to their wallets. Through collaboration with the RabbitHole team, we will gain insight into the push notification needs of users of community-building platforms and what they want from the EPNS protocol.
 
@@ -59,10 +58,8 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be partnering with RabbitHole and anticipate EPNS push notifications becoming an indispensable tool in the development of Web3 communities.
 
-About RabbitHole
-================
+# About RabbitHole
 
 RabbitHole is a blockchain application interaction and activity incentive platform. Users can acquire XP, level up, and earn rewards for interacting with blockchain protocols. RabbitHole breaks down each decentralized application into gamified tasks so users can understand the main functions of the application while simultaneously bootstrapping the network.
 
 [Website](https://rabbithole.gg/) | [Discord](https://discord.com/invite/V7WMqbs) | [Twitter](https://twitter.com/rabbithole_gg) | [Mirror](https://rabbithole.mirror.xyz/)
-

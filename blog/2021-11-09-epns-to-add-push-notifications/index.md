@@ -10,6 +10,7 @@ tags: [ Ethereum
 ,Domains
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS to Add Push Notifications to ENS Decentralized Domain Name Services](./cover-image.webp)
@@ -28,17 +29,15 @@ Anyone can register an ENS domain name or import DNS names. Second level DNS suf
 
 Because domain names are often renewed on an annual basis, lacking a decentralized push notification service, until now, means important notifications may be distributed to multiple places, such as email or a Telegram account. Consequently, the risk of missing a renewal date and the domain name expiring is high. A push notification service would allow you to receive all renewal notices and take timely action on important notifications while still protecting data privacy as ENS users interact with internal and external data sources.
 
-The EPNS Solution
-=================
+# The EPNS Solution
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All notifications go directly to the user’s wallet where they can take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to ENS users include:
 
-*   EPNS will send all data notifications directly to ENS user wallets.
-*   The EPNS and ENS teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of decentralized domain name owners.
-*   EPNS channels and users can customize their notification settings for different data notification requirements.
+- EPNS will send all data notifications directly to ENS user wallets.
+- The EPNS and ENS teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of decentralized domain name owners.
+- EPNS channels and users can customize their notification settings for different data notification requirements.
 
-How EPNS Will Support ENS
-=========================
+# How EPNS Will Support ENS
 
 Under this pilot program, EPNS is building a dedicated channel for ENS (see our [litepaper](https://whitepaper.epns.io) for definitions of channels, services, and more). ENS users can subscribe to the ENS channel to receive customized notifications to their wallets. Through collaboration with the ENS team, we will gain insight into the push notification needs of users of domain name services and what they want from the EPNS protocol.
 
@@ -50,7 +49,6 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be partnering with ENS and anticipate EPNS push notifications becoming an indispensable tool in the Web 3 ecosystem.
 
-About ENS
-=========
+# About ENS
 
 The [Ethereum Name Service (ENS)](https://ens.domains/) is an open source blockchain-based naming protocol. Started at the Ethereum Foundation in early 2017, ENS spun off with a separate organization in 2018. ENS development is managed by the Singaporean non-profit True Names LTD and is a public good, a basic piece of Internet infrastructure that belongs to the community. We welcome all feedback and contributions!

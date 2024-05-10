@@ -4,16 +4,16 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import Head from "@docusaurus/Head";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import { useLocation } from "@docusaurus/router";
+import React from 'react';
+import Head from '@docusaurus/Head';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useLocation } from '@docusaurus/router';
 
-import clsx from "clsx";
-import Layout from "@theme/Layout";
-import BlogSidebar from "@theme/BlogSidebar";
-import styled from "styled-components";
-import { PageMeta } from "@site/src/config/pageMeta";
+import clsx from 'clsx';
+import Layout from '@theme/Layout';
+import BlogSidebar from '@theme/BlogSidebar';
+import styled from 'styled-components';
+import { PageMeta } from '@site/src/config/pageMeta';
 
 export default function BlogLayout(props) {
   const { sidebar, toc, children, ...layoutProps } = props;
@@ -23,60 +23,60 @@ export default function BlogLayout(props) {
   const pathname = location.pathname;
 
   const isBlogMainPage =
-    pathname.includes("/page/") || pathname == "/blog/" || pathname == "/blog";
+    pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
 
-  console.log(layoutProps, "layout", props);
+  console.log(layoutProps, 'layout', props);
   return (
     <Layout
-      title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ""}
-      description={isBlogMainPage ? PageMeta.BLOG.pageDescription : ""}
+      title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ''}
+      description={isBlogMainPage ? PageMeta.BLOG.pageDescription : ''}
     >
       {isBlogMainPage && (
         <Head>
           {/* <!-- Facebook Meta Tags --> */}
-          <meta property="og:url" content="https://push.org/blog" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Push Blog" />
+          <meta property='og:url' content='https://push.org/blog' />
+          <meta property='og:type' content='website' />
+          <meta property='og:title' content='Push Blog' />
           <meta
-            property="og:description"
-            content="Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources."
+            property='og:description'
+            content='Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
           />
           <meta
-            property="og:image"
+            property='og:image'
             content={
-              require("@site/static/assets/previews/blogpreview.png").default
+              require('@site/static/assets/previews/blogpreview.png').default
             }
           />
 
           {/* <!-- Twitter Meta Tags --> */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@pushprotocol" />
-          <meta name="twitter:title" content="Push Blog" />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:site' content='@pushprotocol' />
+          <meta name='twitter:title' content='Push Blog' />
           <meta
-            name="twitter:description"
-            content="Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources."
+            name='twitter:description'
+            content='Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
           />
           <meta
-            name="twitter:image"
+            name='twitter:image'
             // content={useBaseUrl(
             //   require("/static/assets/previews/blogpreview.png").default,
             //   { absolute: true },
             // )}
             content={
-              require("@site/static/assets/previews/blogpreview.png").default
+              require('@site/static/assets/previews/blogpreview.png').default
             }
           />
-          <script type="application/ld+json">
+          <script type='application/ld+json'>
             {JSON.stringify({
-              "@context": "https://schema.org/",
-              "@type": "Organization",
-              name: "Push Protocol",
-              description: "The Communication Protocol of Web3",
-              url: "https://push.org",
-              logo: "/assets/website/favicon.ico",
+              '@context': 'https://schema.org/',
+              '@type': 'Organization',
+              name: 'Push Protocol',
+              description: 'The Communication Protocol of Web3',
+              url: 'https://push.org',
+              logo: '/assets/website/favicon.ico',
               sameAs: [
-                "https://twitter.com/pushprotocol",
-                "https://www.linkedin.com/company/push-protocol/mycompany/",
+                'https://twitter.com/pushprotocol',
+                'https://www.linkedin.com/company/push-protocol/mycompany/',
               ],
             })}
           </script>
@@ -84,24 +84,24 @@ export default function BlogLayout(props) {
       )}
 
       {toc ? (
-        <BlogItem className="">
-          <TOC className=""></TOC>
+        <BlogItem className=''>
+          <TOC className=''></TOC>
           <main
-            className="mainItem"
+            className='mainItem'
             itemScope
-            itemType="http://schema.org/Blog"
+            itemType='http://schema.org/Blog'
           >
             {children}
           </main>
-          <TOC className="">{toc}</TOC>
+          <TOC className=''>{toc}</TOC>
         </BlogItem>
       ) : (
-        <div className="container">
+        <div className='container'>
           <BlogSidebar sidebar={sidebar} />
           <main
-            className="mainItem"
+            className='mainItem'
             itemScope
-            itemType="http://schema.org/Blog"
+            itemType='http://schema.org/Blog'
           >
             {children}
           </main>

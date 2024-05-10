@@ -4,42 +4,41 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React,{ useState } from 'react'
+import React, { useState } from 'react';
 
 // External Components
-import styled from "styled-components";
-import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsArrowRight ,BsFileX } from "react-icons/bs";
-import { FiArrowUpRight } from "react-icons/fi";
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { BsArrowUpRight, BsArrowRight, BsFileX } from 'react-icons/bs';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Components
 import {
-    A,
-    B,
-    Button,
-    Content,
-    H1,
-    H2,
-    H3,
-    Image,
-    ItemH,
-    ItemV,
-    Section,
-    Span
-  } from "@site/src/css/SharedStyling";
-import MarqueeAnimation from "@site/src/components/MarqueeAnimation";
+  A,
+  B,
+  Button,
+  Content,
+  H1,
+  H2,
+  H3,
+  Image,
+  ItemH,
+  ItemV,
+  Section,
+  Span,
+} from '@site/src/css/SharedStyling';
+import MarqueeAnimation from '@site/src/components/MarqueeAnimation';
 
 // Internal Configs
-import { MediaList } from "@site/src/config/HomeMediaList";
+import { MediaList } from '@site/src/config/HomeMediaList';
 
 // Setup some constants
 const MARQUEE_ANIMATION_SPEED = 40;
 
 const FeaturedList = () => {
-    // Internationalization
+  // Internationalization
   const { t, i18n } = useTranslation();
   const [hovered, setHovered] = useState(false);
-
 
   // handle mouse entry
   const handleMouseEnter = (e, id) => {
@@ -66,26 +65,26 @@ const FeaturedList = () => {
 
     // Apply glow
     const glowwys = document.querySelectorAll(`.${id} > .glowwy`);
-    glowwys.forEach(glowwy => {
+    glowwys.forEach((glowwy) => {
       glowwy.style.top = `${y}px`;
       glowwy.style.right = `${x}px`;
     });
   };
 
   return (
-    <FeaturedCardList className="featuredInMarquee">
-            <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
-            {MediaList.map((item) => {
-                return (
-                <FeaturedCard 
-                            id={item.srcref}
-                            key={item.srcref} 
-                            // className={`${hovered === item.srcref ? "active" : ""} ${item.srcref}`}
-                            // onMouseLeave={(e)=>handleMouseLeave(e, item.srcref)}
-                            // onMouseEnter={(e)=>handleMouseEnter(e, item.srcref)}
-                            // onMouseMove={(e)=>handleMouseMove(e, item.srcref)}>
-                            >
-                    {/* <GlowwyBorder 
+    <FeaturedCardList className='featuredInMarquee'>
+      <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
+        {MediaList.map((item) => {
+          return (
+            <FeaturedCard
+              id={item.srcref}
+              key={item.srcref}
+              // className={`${hovered === item.srcref ? "active" : ""} ${item.srcref}`}
+              // onMouseLeave={(e)=>handleMouseLeave(e, item.srcref)}
+              // onMouseEnter={(e)=>handleMouseEnter(e, item.srcref)}
+              // onMouseMove={(e)=>handleMouseMove(e, item.srcref)}>
+            >
+              {/* <GlowwyBorder 
                             className={`${hovered === item.srcref ? "active" : ""} glowwy`}
                         />
 
@@ -93,52 +92,51 @@ const FeaturedList = () => {
                             className={`${hovered === item.srcref ? "active" : ""} glowwy`}
                         />
                             */}
-                           
-                                <FeaturedCardTitle>
-                                {t(item.translatedtitle)}
-                                </FeaturedCardTitle>
-                                <ArticleSource>
-                                <Image
-                                    width={item.title ? '64px' : 'auto'}
-                                    borderRadius={item.title ? '50%' : '0'}
-                                    src={require(`@site/static/assets/website/coverage/${item.srcref}.webp`).default}
-                                    srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
-                                    alt={`${item?.alt}`}
-                                    loading="lazy"
-                                />
-                                <A
-                                    href={item.url}
-                                    title={t(item.urltranslatedtitle)}
-                                    display="flex"
-                                    alignItems="center"
-                                    target="_blank"
-                                    background="transparent"
-                                    hoverBackground="transparent"
-                                    hover="transparent"
-                                    filter="none"
-                                    borderRadius="16px"
-                                    padding="0"
-                                >
-                                    <SpanLink>
-                                        {t(item.urltranslatedtitle)}
-                                    </SpanLink>
-                                    <FiArrowUpRight className="anchorSVG" />
-                                </A>
-                                </ArticleSource>
-                            </FeaturedCard>
-                );
-            })}
-            </MarqueeAnimation>
-        </FeaturedCardList>
-  )
-}
 
+              <FeaturedCardTitle>{t(item.translatedtitle)}</FeaturedCardTitle>
+              <ArticleSource>
+                <Image
+                  width={item.title ? '64px' : 'auto'}
+                  borderRadius={item.title ? '50%' : '0'}
+                  src={
+                    require(
+                      `@site/static/assets/website/coverage/${item.srcref}.webp`
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/coverage/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/coverage/${item.srcref}@3x.webp`).default} 3x`}
+                  alt={`${item?.alt}`}
+                  loading='lazy'
+                />
+                <A
+                  href={item.url}
+                  title={t(item.urltranslatedtitle)}
+                  display='flex'
+                  alignItems='center'
+                  target='_blank'
+                  background='transparent'
+                  hoverBackground='transparent'
+                  hover='transparent'
+                  filter='none'
+                  borderRadius='16px'
+                  padding='0'
+                >
+                  <SpanLink>{t(item.urltranslatedtitle)}</SpanLink>
+                  <FiArrowUpRight className='anchorSVG' />
+                </A>
+              </ArticleSource>
+            </FeaturedCard>
+          );
+        })}
+      </MarqueeAnimation>
+    </FeaturedCardList>
+  );
+};
 
 const FeaturedCardList = styled(ItemH)`
   margin: 72px 0 0 0;
   flex-flow: nowrap;
-`
-const FeaturedCard = styled(ItemV)`    
+`;
+const FeaturedCard = styled(ItemV)`
   width: 522px;
   height: 285px;
   padding: 32px;
@@ -147,21 +145,24 @@ const FeaturedCard = styled(ItemV)`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 12px;
   overflow: hidden !important;
-
 
   & a {
     border-radius: 0px;
   }
   &:hover {
     // background: linear-gradient(251.72deg, rgb(221, 68, 185) 14.29%, rgb(139, 111, 217) 86.35%);
-    background: linear-gradient(234deg, #3E1548 2.83%, #280E2F 24.75%, #0D0D0F 57.42%);
+    background: linear-gradient(
+      234deg,
+      #3e1548 2.83%,
+      #280e2f 24.75%,
+      #0d0d0f 57.42%
+    );
     & a {
-    //   color: #fff !important;
-    //   border-radius: 0px;
-    
+      //   color: #fff !important;
+      //   border-radius: 0px;
     }
   }
 
@@ -172,7 +173,7 @@ const FeaturedCard = styled(ItemV)`
     position: relative;
     top: 0px;
   }
-`
+`;
 
 const FeaturedCardTitle = styled(Span)`
   flex: initial;
@@ -204,19 +205,18 @@ const ArticleSource = styled(ItemH)`
   }
 `;
 
-
 const GlowwyBorder = styled.div`
   width: 0px;
   height: 0px;
   border-radius: 50%;
   box-shadow:
     0 0 49px 19px rgb(202, 55, 237),
-    0 0 80px 40px #CA37ED,
+    0 0 80px 40px #ca37ed,
     0 0 100px 50px rgb(202, 55, 237);
-    // box-shadow:
-    // 0 0 59px 29px rgb(202, 55, 237),
-    // 0 0 100px 60px #CA37ED,
-    // 0 0 140px 90px rgb(202, 55, 237);
+  // box-shadow:
+  // 0 0 59px 29px rgb(202, 55, 237),
+  // 0 0 100px 60px #CA37ED,
+  // 0 0 140px 90px rgb(202, 55, 237);
   position: absolute;
   z-index: 9;
   display: none;
@@ -237,9 +237,9 @@ const SpanLink = styled(Span)`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #FFF;
+  color: #fff;
   font-family: FK Grotesk Neue;
-  line-height: 142%; 
+  line-height: 142%;
 
   &:after {
     content: '';
@@ -259,4 +259,4 @@ const SpanLink = styled(Span)`
   }
 `;
 
-export default FeaturedList
+export default FeaturedList;

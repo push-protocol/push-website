@@ -5,7 +5,7 @@ hide_title: true
 slug: ./advance-protocol-based-trigger-oasis-protocol
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 6
-image: "/assets/docs/previews/docs_notifications_showrunners_examples_advance_protocol_based_trigger_oasis_protocol--advance_-_protocol_based_trigger_(oasis_protocol).png"
+image: '/assets/docs/previews/docs_notifications_showrunners_examples_advance_protocol_based_trigger_oasis_protocol--advance_-_protocol_based_trigger_(oasis_protocol).png'
 ---
 
 # Advance - Protocol based trigger (Oasis protocol example) via showrunner scaffold
@@ -592,16 +592,16 @@ export default class oasisChannel extends EPNSChannel {
 Let's understand this code by sections -
 
 ```jsx
-import { Service, Inject, Container } from "typedi";
-import config, { defaultSdkSettings, settings } from "../../config";
+import { Service, Inject, Container } from 'typedi';
+import config, { defaultSdkSettings, settings } from '../../config';
 
-import Maker from "@makerdao/dai";
-import McdPlugin from "@makerdao/dai-plugin-mcd";
-import { EPNSChannel } from "../../helpers/epnschannel";
-import { Logger } from "winston";
-import { ethers } from "ethers";
-import BigNumber from "bignumber.js";
-import mainnetAddress from "./contractAddress.json";
+import Maker from '@makerdao/dai';
+import McdPlugin from '@makerdao/dai-plugin-mcd';
+import { EPNSChannel } from '../../helpers/epnschannel';
+import { Logger } from 'winston';
+import { ethers } from 'ethers';
+import BigNumber from 'bignumber.js';
+import mainnetAddress from './contractAddress.json';
 ```
 
 Here we are importing all the necessary files and packages for our channel file to gear up.
@@ -855,11 +855,11 @@ After setting up all the methods, this function will be sending the notification
 // Execute a cron job every 5 Minutes = */5 * * * *
 // Starts from seconds = * * * * * *
 
-import logger from "../../loaders/logger";
+import logger from '../../loaders/logger';
 
-import { Container } from "typedi";
-import schedule from "node-schedule";
-import OasisChannel from "./oasisChannel";
+import { Container } from 'typedi';
+import schedule from 'node-schedule';
+import OasisChannel from './oasisChannel';
 export default () => {
   const startTime = new Date(new Date().setHours(0, 0, 0, 0));
 
@@ -869,13 +869,13 @@ export default () => {
 
   // OASIS CHANNEL
   logger.info(
-    `     🛵 Scheduling Showrunner - Oasis Channel[3 Hours] [${new Date(Date.now())}]`,
+    `     🛵 Scheduling Showrunner - Oasis Channel[3 Hours] [${new Date(Date.now())}]`
   );
   schedule.scheduleJob(
     { start: startTime, rule: threeHourRule },
     async function () {
       const oasis = Container.get(OasisChannel);
-      const taskName = "Oasis check vault situation and sendMessageToNode()";
+      const taskName = 'Oasis check vault situation and sendMessageToNode()';
 
       try {
         await oasis.sendMessageToNode(false);
@@ -884,7 +884,7 @@ export default () => {
         logger.error(`❌ Cron Task Failed -- ${taskName}`);
         logger.error(`Error Object: %o`, err);
       }
-    },
+    }
   );
 };
 ```

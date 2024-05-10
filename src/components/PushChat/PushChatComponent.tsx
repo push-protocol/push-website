@@ -9,12 +9,25 @@ import styled from 'styled-components';
 // import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
-import { PushChatTheme, darkChatTheme } from '@site/src/components/BRB/PushChatTheme';
+import {
+  PushChatTheme,
+  darkChatTheme,
+} from '@site/src/components/BRB/PushChatTheme';
 import { Modal } from '@site/src/components/Modal';
 import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
-import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
-import { A, Button, Image, ItemH, ItemV, Section, Span } from '@site/src/css/SharedStyling';
+import Spinner, {
+  SPINNER_TYPE,
+} from '@site/src/components/reusables/spinners/SpinnerUnit';
+import {
+  A,
+  Button,
+  Image,
+  ItemH,
+  ItemV,
+  Section,
+  Span,
+} from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
@@ -37,76 +50,79 @@ export const ChatComponent = () => {
     <Container>
       <Header>
         Join the conversation
-        <BrandA
-          href="/docs/chat"
-          target="_blank"
-        >
+        <BrandA href='/docs/chat' target='_blank'>
           <Image
-            src={require(`@site/static/assets/website/brb/others/brand-header.webp`).default}
+            src={
+              require(
+                `@site/static/assets/website/brb/others/brand-header.webp`
+              ).default
+            }
             srcSet={`${require(`@site/static/assets/website/brb/others/brand-header@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/brand-header@3x.webp`).default} 3x`}
             alt={`Image showing BRB Chat is powered by Push Chat`}
-            loading="lazy"
+            loading='lazy'
           />
         </BrandA>
       </Header>
 
       <PlayGround>
-         {/* 
+        {/* 
           b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1 -> test group
           4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
           */}
-        <BrowserOnly fallback={<Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>}>
-            {() => {
-              const uiweb = require("@pushprotocol/uiweb");
-              
-              const ChatUIProvider = uiweb.ChatUIProvider;
-              const ChatView = uiweb.ChatView;
-              const MODAL_POSITION_TYPE = uiweb.MODAL_POSITION_TYPE;
+        <BrowserOnly
+          fallback={
+            <Spinner
+              size={42}
+              color={GLOBALS.COLORS.PRIMARY_COLOR}
+              type={SPINNER_TYPE.PROCESSING}
+            />
+          }
+        >
+          {() => {
+            const uiweb = require('@pushprotocol/uiweb');
 
-              return (
-                <>
-                  <ChatUIProvider theme={PushChatTheme}>
-                    <ChatView
-                      chatId="4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68"
-                      limit={10}
-                      isConnected={true}
-                      onVerificationFail={()=>setShowFaucet(true)}
-                      verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
-                    />
-                  </ChatUIProvider>
-                </>
-              )
-              
-            }}
-          </BrowserOnly>
-        
+            const ChatUIProvider = uiweb.ChatUIProvider;
+            const ChatView = uiweb.ChatView;
+            const MODAL_POSITION_TYPE = uiweb.MODAL_POSITION_TYPE;
+
+            return (
+              <>
+                <ChatUIProvider theme={PushChatTheme}>
+                  <ChatView
+                    chatId='4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68'
+                    limit={10}
+                    isConnected={true}
+                    onVerificationFail={() => setShowFaucet(true)}
+                    verificationFailModalPosition={MODAL_POSITION_TYPE.RELATIVE}
+                  />
+                </ChatUIProvider>
+              </>
+            );
+          }}
+        </BrowserOnly>
       </PlayGround>
 
       <BottomBar>
         <TokenGated />
-        <Span
-          fontSize='16px'
-          color="#fff"
-          fontWeight="400"
-        >
+        <Span fontSize='16px' color='#fff' fontWeight='400'>
           This is a token gated group. You can join but will need{' '}
-          <span style={{ color: '#E64DE9', fontWeight: '400' }}>1 $PUSH</span> in your wallet to be able to send
-          messages.
+          <span style={{ color: '#E64DE9', fontWeight: '400' }}>1 $PUSH</span>{' '}
+          in your wallet to be able to send messages.
         </Span>
         <ButtonItem
-          background="#E64DE9"
-          padding="8px"
-          margin="0px 0px 0px 16px"
-          fontWeight="500"
-          fontSize="16px"
-          fontFamily="Glancyr, sans-serif"
+          background='#E64DE9'
+          padding='8px'
+          margin='0px 0px 0px 16px'
+          fontWeight='500'
+          fontSize='16px'
+          fontFamily='Glancyr, sans-serif'
           onClick={() => setShowFaucet(true)}
         >
           Get Free Push Tokens
           <WhiteArrow />
         </ButtonItem>
       </BottomBar>
-      
+
       {showFaucet && (
         <Modal>
           <TokenFaucet handleFaucet={setShowFaucet} />

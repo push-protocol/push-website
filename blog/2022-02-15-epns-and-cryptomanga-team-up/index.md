@@ -11,12 +11,12 @@ tags: [ Newsletter
 ,Blockchain
 ,Nft]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS x CryptoManga: Decentralized Communication for Decentralized Gaming](./cover-image.webp)
 
 <!--truncate-->
-
 
 The colossal rise of NFT-gaming in the past couple of years has led to a new dawn of the global gaming ecosystem. We now have a multitude of decentralized gaming projects that allow gamers across the globe to monetize their game-time and create multiple sources of income. Among all these projects, CryptoManga is an emergent NFT-gaming platform that is steadily climbing the popularity charts for its unmatched story-telling combined with compelling gameplay.
 
@@ -32,19 +32,17 @@ Notably, the CryptoManga ecosystem is community-driven and is dependent on the u
 
 In this context, CryptoManga needs a decentralized communication medium to connect with users and ensure that they do not miss out on governance updates. And, through our partnership with them, we aim to build this medium.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 As a pilot collaboration, CryptoManga will soon have an official channel of its own on the EPNS platform. Users can subscribe to this channel to have a direct source of communication with the CryptoManga platform. This channel will send out decentralized push notifications to all subscribed users to keep them updated with platform governance activities. Users can expect to receive notifications whenever
 
-*   New governance proposals are listed on the platform
-*   The status of the proposals change
-*   The results of the proposals are declared
+- New governance proposals are listed on the platform
+- The status of the proposals change
+- The results of the proposals are declared
 
 As CryptoManga embarks on a journey to revolutionize the NFT-gaming space, we’re pleased to collaborate with the platform and hope to continue this alliance into the future.
 
-**About CryptoManga**
-=====================
+# **About CryptoManga**
 
 CryptoManga is a collection of unique 5,555 NFTs representing the ownership of digital pseudonymous shells and identities that exist within a heterotopia of the Deathless City, a post-civilization world where the power structures have become nomadic and deterritorial.
 

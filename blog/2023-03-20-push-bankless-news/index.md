@@ -1,19 +1,17 @@
 ---
-
 slug: bankless-nation-and-push-partner-to-enable-news-notifications
 title: Bankless Nation and Push Partner to Enable News Notifications 🔔
 authors: [push]
 image: './cover-image.gif'
-text: "Bankless, the world’s most popular crypto email and global community, is partnering with Push to update its users with the latest crypto developments and analysis. Through this collaboration, Bankless users will be able to receive important notifications and alerts directly on their devices, ensuring they never miss an opportunity to take advantage of the latest DeFi trends."
-tags: [ Web3, Push Protocol, Bankless]
-
+text: 'Bankless, the world’s most popular crypto email and global community, is partnering with Push to update its users with the latest crypto developments and analysis. Through this collaboration, Bankless users will be able to receive important notifications and alerts directly on their devices, ensuring they never miss an opportunity to take advantage of the latest DeFi trends.'
+tags: [Web3, Push Protocol, Bankless]
 ---
 
 ![Cover image of Bankless Nation and Push Partner to Enable News Notifications 🔔](./cover-image.gif)
+
 <!--truncate-->
 
 Bankless, the world’s most popular crypto email and global community, is partnering with Push to update its users with the latest crypto developments and analysis. Through this collaboration, Bankless users will be able to receive important notifications and alerts directly on their devices, ensuring they never miss an opportunity to take advantage of the latest DeFi trends.
-
 
 Bankless has become one of the most popular media outlets covering the crypto and DeFi ecosystem. As a hub for news, analysis, and education on all things crypto, Bankless is at the forefront of bringing the DeFi movement to a wider audience. With its focus on open and transparent value transfer, Bankless is on a mission to educate every individual about the benefits of open and decentralized finance.
 
@@ -42,4 +40,3 @@ The Bankless channel is LIVE, opt-in via Push now!
 Bankless is an education platform dedicated to bringing insights around crypto and DeFi to the masses. With podcasts, newsletters, blogs, and other educational resources, Bankless provides all the knowledge you need to navigate the DeFi ecosystem. The Bankless Nation is a thriving community of individuals who are passionate about creating a truly “bankless” world.
 
 Become a citizen of the Bankless Nation: [Website](https://www.bankless.com/), [Twitter](https://twitter.com/BanklessHQ), [Youtube](https://www.youtube.com/@Bankless), [Instagram](https://www.instagram.com/bankless/), [Podcast](https://www.bankless.com/listen)
-

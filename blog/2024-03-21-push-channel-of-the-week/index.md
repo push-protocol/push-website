@@ -1,15 +1,17 @@
 ---
 slug: push-channel-of-the-week
-title: "Announcing Push Channel of the Week 🏆"
+title: 'Announcing Push Channel of the Week 🏆'
 authors: [push]
-image: "./cover-image.webp"
-description: "Announcing Push Channel of the Week 🏆"
+image: './cover-image.webp'
+description: 'Announcing Push Channel of the Week 🏆'
 text: "Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - Push Channel of the Week!"
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
+
 ![Cover Image of Push Channel of the Week!🏆](./cover-image.webp)
 
 <!--truncate-->
+
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
 
 With more than **175,000** active subscribers and **70 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
@@ -21,8 +23,8 @@ Time to unveil our winner channels for **March**!
 
 # Winners For Month - March 🏆
 
-
 ## Week 1: Bankless
+
 ## Push x Bankless: Serving the latest Bankless content updates to your wallet address with Push Notifications🔔.
 
 ![Banner celebrating Bankless as March - week 1 channel of week](./image1.webp)
@@ -42,9 +44,10 @@ The Bankless Channel on Push DApp helps you keep informed on:
 ### How to Opt-In to the Bankless Channel?
 
 You can opt-in to Bankless for free (with no gas fees!) from the [Bankless Channel profile page](https://app.push.org/channels/0x4E15B14B9950A04370E36f2Ec05546ED5867ADeF?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week)
- and receive immediate on-chain updates directly linked to your chosen wallet address.
+and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 ## Week 2: Crypto Jobs List
+
 ## Push x Crypto Jobs List: Get the latest web3 job💼 notifications to your wallet address with Push!
 
 ![Banner celebrating Crypto Jobs List as March - week 2 channel of week](./image2.webp)
@@ -60,6 +63,7 @@ The portal not only lists technical jobs for developers, architects, and securit
 You can opt-in to the  Crypto Job List for free (with no gas fees!) from the [Crypto Job List channel profile page](https://app.push.org/channels/0x30a1627fDdc0dBB7dD00b881D25A45B443f294bB?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 ## Week 3: ETH Gas Price Tracker
+
 ## Push x ETH Gas Price Tracker: Latest Gas Price⛽ updates delivered straight to your wallet!
 
 ![Banner celebrating ETH Gas Price Tracker as March - week 3 channel of week](./image3.webp)
@@ -80,16 +84,14 @@ ETH Gas Price Tracker monitors Ethereum's Gas price movements and keeps you info
 
 You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from the [ETH Gas Price Tracker Profile Page](https://app.push.org/channels/0x2B8ffb4460550Dbe8Ec1cEA9C1B61322dB56B082?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) and receive immediate on-chain updates directly linked to your chosen wallet address.
 
-
 This winds up the winner’s list for March.
 
 Its time to push forward into April!
 
-
 # Winners For Month - April 🏆
 
-
 ## Week 1: Aave
+
 ## Push x Aave: Get timely updates related to your loan health ⏰ and more, delivered straight to your wallet!
 
 ![Banner celebrating Aave as April - week 1 channel of week](./image4.webp)
@@ -103,6 +105,7 @@ Its time to push forward into April!
 The Push Aave channel helps you receive crucial updates on your active loans as well as on the supply, and borrowing APYs for various tokens.
 
 The channel provides a special feature ✨that enables you to customize your notification preferences by setting ranges 🎚 for:
+
 - **Loan Health Factor** ⚖: Choose your desired health factor range to stay informed against liquidation risks.
 - **Token Supply Rate Alerts** 🌊: Choose your minimum supply APY threshold in **%** and receive instant notifications when a token lies within the set range.
 - **Token Borrow Rate Alerts**⏰: Choose your minimum borrow APY threshold in **%** and receive instant notifications when a token lies within the set range.
@@ -112,6 +115,7 @@ The channel provides a special feature ✨that enables you to customize your not
 To opt-in to the Aave channel at no cost (with no gas fees!), you can simply visit the [Aave channel profile page](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on opt-in and receive immediate on-chain updates directly linked to your chosen wallet address.
 
 ## Week 2: BTC Tracker
+
 ## Push x BTC Tracker: Get the latest Bitcoin price updates delivered to your wallet address with Push!
 
 ![Banner celebrating BTC Tracker as April - week 2 channel of week](./image5.webp)
@@ -135,11 +139,11 @@ You can even customize your notification preferences by adjusting the ranges �
 ### How to opt-in to the BTC Tracker Channel?
 
 To opt-in to the BTC Tracker channel, simply visit the [BTC Tracker Profile Page](https://app.push.org/channels/0x03EAAAa48ea78d1E66eA3458364d553AD981871E?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on “**Opt-In**”,
-Sign the transaction ( Gasless 🚫⛽) and that’s it. 
+Sign the transaction ( Gasless 🚫⛽) and that’s it.
 You are all set!
 
-
 ## Week 3: ENS
+
 ## Push x ENS: Push x ENS: Domain expiry alerts delivered straight to your wallet address with Push!
 
 ![Banner celebrating ENS as April - week 3 channel of week](./image6.webp)
@@ -157,11 +161,6 @@ And the best part, opting-in to the ENS channel is completely FREE and GASLESS!�
 ### How to opt-in to the ENS Channel?
 
 To opt-in to the ENS Channel channel, visit the [ENS Channel channel profile page](https://app.push.org/channels/0x983110309620D911731Ac0932219af06091b6744?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on **opt-in** and receive domain expiry updates directly linked to your chosen wallet address.
-
-
-
-
-
 
 Stay tuned for the next winner! 👀
 Let us know about your favorite channel on [Push Protocol Discord](https://discord.com/invite/pushprotocol)

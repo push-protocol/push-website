@@ -11,12 +11,12 @@ tags: [ Announcements
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Advancing CLR.fund Funding Protocol with Web3Notifs](./cover-image.webp)
 
 <!--truncate-->
-
 
 The love and support provided of the community has always been the strength of the Ethereum Ecosystem. This support was transformed with the advent of innovative grants protocols that converted this mechanism into funding for awesome and exceptional projects!
 
@@ -28,14 +28,13 @@ With this pilot program with the CLR.fund team we are looking forward to:
 
 Enable creating a new communication layer within the CLR platform, that allows the users to receive decentralized notifications regarding events like:
 
-*   When a round has started or finalized
-*   When a contributions is received
-*   When funds are claimed
-*   When a tally is published
-*   Working with the CLR.fund team to enable technical brainstorming towards improving the EPNS protocol to become more scalable and powerful.
+- When a round has started or finalized
+- When a contributions is received
+- When funds are claimed
+- When a tally is published
+- Working with the CLR.fund team to enable technical brainstorming towards improving the EPNS protocol to become more scalable and powerful.
 
-**About clr.fund**
-------------------
+## **About clr.fund**
 
 Clr.fund is a protocol for efficiently allocating funds to public goods that benefit the Ethereum Ecosystem according to the preferences of the Ethereum Ecosystem. Clr.fund strives for credible neutrality, decentralization, permissionlessness, trustlessness, and pseudonymity.
 

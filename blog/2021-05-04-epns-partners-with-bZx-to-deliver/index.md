@@ -12,19 +12,18 @@ tags: [ Announcements
 ,Partnerships
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Partners With bZx to Deliver Crucial Margin Trading Push Notifications to Wallets](./cover-image.webp)
 
 <!--truncate-->
 
-**Bringing a Pro Trading Edge to DeFi Margin Lending**
-------------------------------------------------------
+## **Bringing a Pro Trading Edge to DeFi Margin Lending**
 
 Decentralized finance brings many benefits to [margin trading](https://www.investopedia.com/terms/m/margin.asp), but with the lack of a decentralized push notification service to instantly deliver important trade notifications, DeFi users risk losing trading opportunities. To bridge the communication gap, we are excited to announce the launch of a pilot program to provide decentralized push notifications to the users of bZx — the most powerful open finance protocol in the DeFi market for developing decentralized margin lending applications.
 
-**Why bZx Users Need Decentralized Notifications**
---------------------------------------------------
+## **Why bZx Users Need Decentralized Notifications**
 
 Both lenders and borrowers benefit from margin trading — the use of borrowed funds to leverage trade positions — on the decentralized bZx platform. Features such as holding assets off-exchange, reduced hacking risk, multi-protocol trading features, and lower fees allow lenders to lend at more attractive interest rates and traders to increase their purchasing power through loans. Owing to these advantages, the bZx platform currently supports a [daily trading volume of $36 million](https://coinmarketcap.com/currencies/bzx-protocol/). Yet without a decentralized push notification service, traders lose opportunities to both increase rewards and lower risks when trading on margin.
 
@@ -32,17 +31,15 @@ Both lenders and borrowers benefit from margin trading — the use of borrowed f
 
 On bZx, lenders can instantly issue non-custodial margin loans straight from their wallets to the borrower’s wallet secured by smart contracts. However, important trade notifications — such as alerts on price, margin rates, margin calls — to manage the higher risks of using leverage are often delayed. Lacking a decentralized notification service, notices are often sent via Telegram, Twitter or through other non-direct mediums. While trade orders are broadcast through text, email, and morse code.
 
-**The EPNS Solution**
----------------------
+## **The EPNS Solution**
 
 Alternatively, bZx users could use a decentralized push notification service and receive timely notifications through a single source of communication. Instead of relying on tweets, Telegram messages, and emails, traders gain an edge through instant notifications to their wallets. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to bZx users include:
 
-*   EPNS will send all margin lending and trading notifications directly to bZx user wallets.
-*   The EPNS and bZx teams will adapt the highly customizable EPNS protocol to meet the myriad of push notification needs of the users of both traditional and multi-protocol lending products.
-*   EPNS channels and users can customize their notification settings for different DeFi products.
+- EPNS will send all margin lending and trading notifications directly to bZx user wallets.
+- The EPNS and bZx teams will adapt the highly customizable EPNS protocol to meet the myriad of push notification needs of the users of both traditional and multi-protocol lending products.
+- EPNS channels and users can customize their notification settings for different DeFi products.
 
-**EPNS Collaboration With bZx: What We Plan to Achieve**
---------------------------------------------------------
+## **EPNS Collaboration With bZx: What We Plan to Achieve**
 
 During our “pilot program” collaboration with bZx, we will build a channel for bZx (see our [litepaper](https://medium.com/ethereum-push-notification-service/ethereum-push-notification-service-litepaper-e7ca0a662862) for definitions of channels, services, and more). Anyone can subscribe to the bZx channel and begin receiving notifications to their wallets immediately. The notifications are customizable and can include transaction notices, margin alerts, margin calls and any other DeFi notifications. By building this channel in collaboration with the bZx team, we will have the opportunity to better understand precisely what margin trading dApps want from the EPNS protocol.
 
@@ -54,8 +51,7 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are honored to be partnering with the bZx margin trading platform and anticipate EPNS push notifications becoming an in-demand service of the margin trading dApps building on bZx.
 
-**About bZx**
--------------
+## **About bZx**
 
 bZx is a financial protocol for lending and borrowing through a tokenized margin trading and lending system built on Ethereum. iTokens and pTokens can be composed into novel financial products, used as collateral for loans, or listed on any exchange to instantly enable margin lending and trading. bZx Protocol allows anyone to build applications that empower lenders, borrowers, and traders with the most flexible decentralized finance protocol on Ethereum.
 

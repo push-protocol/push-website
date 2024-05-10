@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Blockchain
 ,Tokenization]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and RealT Join Forces to Facilitate Notifications for Users](./cover-image.webp)
@@ -31,17 +32,12 @@ RealT offers a specially curated list of properties to its community of users an
 
 With the development of its ecosystem and different up-coming use cases, RealT wanted to bring decentralized push notification to its users. In this regard, RealT needs a proper communication channel that allows the platform to keep its users updated on different status of the coming sales, tokens and rent delivery. And through this collaboration, we aim to build this communication channel for RealT.
 
-What Does the Collaboration Entail?
-===================================
+# What Does the Collaboration Entail?
 
 As a result of our pilot collaboration, RealT will have an official channel on the EPNS platform. Users who choose to subscribe to this channel will get directly connected for seamless communication in a decentralized manner. They can receive push notifications about the various happenings on the platform.
 
 As RealT continues to revolutionize the real estate industry, we are pleased to collaborate with them to ensure the smooth running of their processes in an effort to improve the network. We are hopeful that EPNS push notifications will become an integral part of the RealT network.
 
-**About RealToken (RealT)**
-===========================
+# **About RealToken (RealT)**
 
 RealT is a platform which allows investors around the globe to buy into the real estate market through fully-compliant, fractional, tokenized ownership. RealToken reinvented traditional real estate ownership by providing investors a simple, intelligent, and user-friendly method to buy a property, leveraging the US legal system through an LLC or Inc structure. RealT establishes an LLC or Inc for each property, and tokenizes those interests into security offerings. Currently, RealT’s real estate offerings are based in the US, but has plans in the near-term to expand globally.
-
-
-

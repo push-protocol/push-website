@@ -5,7 +5,7 @@ hide_title: true
 slug: ./send-notification-via-subgraph
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 6
-image: "/assets/docs/previews/docs_notifications_tutorial_send_notification_via_subgraph--send_notification_via_your_subgraph.png"
+image: '/assets/docs/previews/docs_notifications_tutorial_send_notification_via_subgraph--send_notification_via_your_subgraph.png'
 ---
 
 # Overview
@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_notifications_tutorial_send_notification_via_
 This is an introductory guide to take you through the entire process of how to send notifications from a Subgraph using Push.
 
 :::caution
-Subgraph notifications are currenly supported on staging environtment from [Push dApp](https://staging.push.org "Link to Push staging dApp")
+Subgraph notifications are currenly supported on staging environtment from [Push dApp](https://staging.push.org 'Link to Push staging dApp')
 :::
 
 <head>
@@ -31,13 +31,13 @@ A **Subgraph** defines which data **The Graph** will index from a blockchain, an
 
 Currently, Push only supports the subgraphs deployed on **Hosted Service of The Graph Protocol**. Providing support to Subgraph Studio would be part of the next iteration.
 
-For more information on how to deploy a subgraph on the hosted service for your smart contract or dApp, check out [this documentation](https://thegraph.com/docs/en/deploying/deploying-a-subgraph-to-hosted/ "Tutorial on how to deploy your hosted subgraph from The Graph").
+For more information on how to deploy a subgraph on the hosted service for your smart contract or dApp, check out [this documentation](https://thegraph.com/docs/en/deploying/deploying-a-subgraph-to-hosted/ 'Tutorial on how to deploy your hosted subgraph from The Graph').
 
 ## Notifications from Subgraphs 💡
 
 Subgraphs retrieve and store data from the blockchain for a particular smart contract. This data can be used to analyze a variety of things related to the smart contract.
 
-For example, the [Uniswap Subgraph](https://thegraph.com/hosted-service/subgraph/uniswap/uniswap-v2 "Subgraph of Uniswap V2 protocol") stores data related to the total volume across all trading pairs, volume data per trading pair, and even data for a particular token.
+For example, the [Uniswap Subgraph](https://thegraph.com/hosted-service/subgraph/uniswap/uniswap-v2 'Subgraph of Uniswap V2 protocol') stores data related to the total volume across all trading pairs, volume data per trading pair, and even data for a particular token.
 
 **What if you intelligently fetch the data from a Subgraph and generate useful alerts 🤔?**
 This will be extremely helpful for the end-users of your dApp and entities connected to your smart contract making the user experience smoother.
@@ -48,7 +48,7 @@ Push protocol has developed an in-house `helper function` specifically for The G
 
 Push Nodes can, later on, fetch the notifications defined on a Subgraph and push them accordingly to Subscribers of the Channel.
 
-![Notifications via The Graph architecture](/assets/docs/notifications/tutorials/tutorial-send-notification-via-subgraph/graphdiagram.png "Flow diagram of how notifications are sent")
+![Notifications via The Graph architecture](/assets/docs/notifications/tutorials/tutorial-send-notification-via-subgraph/graphdiagram.png 'Flow diagram of how notifications are sent')
 
 ## Push X Graph Integration Example
 
@@ -56,7 +56,7 @@ Integrate Push Protocol with an ERC-20 contract's subgraph to **send out notific
 
 ### Prerequisites
 
-1. Have a Push Notification Channel ready - see the docs [here](/docs/notifications/tutorials/create-your-channel/ "Tutorial on how to create your channel") to create a channel.
+1. Have a Push Notification Channel ready - see the docs [here](/docs/notifications/tutorials/create-your-channel/ 'Tutorial on how to create your channel') to create a channel.
 2. Install the **graph CLI**.
 
 ```zsh
@@ -65,9 +65,9 @@ npm install -g @graphprotocol/graph-cli
 yarn global add @graphprotocol/graph-cli
 ```
 
-3. Link your Github to [The Graph's hosted service](https://thegraph.com/hosted-service "Link to The Graph hosted service").
+3. Link your Github to [The Graph's hosted service](https://thegraph.com/hosted-service 'Link to The Graph hosted service').
 
-4. Add a subgraph named **MySubgraphXYZ** (or a name of your choice) from your [Hosted Service Dashboard](https://thegraph.com/hosted-service/dashboard "Add subgraph from your dashboard").
+4. Add a subgraph named **MySubgraphXYZ** (or a name of your choice) from your [Hosted Service Dashboard](https://thegraph.com/hosted-service/dashboard 'Add subgraph from your dashboard').
 
 ### Contract deployment
 
@@ -75,7 +75,7 @@ yarn global add @graphprotocol/graph-cli
 Skip this step if you a have deployed contract already that you want to query
 :::
 
-1. Copy and Deploy the sample ERC-20 contract using [Remix IDE](https://remix.ethereum.org/ "Remix IDE from Ethereum") —
+1. Copy and Deploy the sample ERC-20 contract using [Remix IDE](https://remix.ethereum.org/ 'Remix IDE from Ethereum') —
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -214,7 +214,7 @@ type EpnsPushNotification @entity {
 ```ts
 // Note: Push Protocol supports only The Graph Hosted Service at present
 
-export const subgraphID = "<GITHUB_USERNAME>/<SUBGRAPH_NAME>";
+export const subgraphID = '<GITHUB_USERNAME>/<SUBGRAPH_NAME>';
 
 // example
 // export const subgraphID = "aiswaryawalter/push-graph-test"
@@ -227,31 +227,31 @@ Make sure the above step is complete, as Subgraph ID will be imported in the nex
 3. Create a file named `PushNotification.ts` in the `src/` folder of your subgraph. We’ll call this our Helper File. Now, copy the below-provided TypeScript code and paste it into the newly created Helper file —
 
 ```ts
-import { BigInt, log } from "@graphprotocol/graph-ts";
+import { BigInt, log } from '@graphprotocol/graph-ts';
 import {
   EpnsNotificationCounter,
   EpnsPushNotification,
-} from "../generated/schema";
-import { subgraphID } from "./push-token";
+} from '../generated/schema';
+import { subgraphID } from './push-token';
 
 export function sendPushNotification(
   recipient: string,
-  notification: string,
+  notification: string
 ): void {
   let id1 = subgraphID;
-  log.info("New id of EpnsNotificationCounter is: {}", [id1]);
+  log.info('New id of EpnsNotificationCounter is: {}', [id1]);
   let epnsNotificationCounter = EpnsNotificationCounter.load(id1);
   if (epnsNotificationCounter == null) {
     epnsNotificationCounter = new EpnsNotificationCounter(id1);
     epnsNotificationCounter.totalCount = BigInt.fromI32(0);
   }
   epnsNotificationCounter.totalCount = epnsNotificationCounter.totalCount.plus(
-    BigInt.fromI32(1),
+    BigInt.fromI32(1)
   );
 
   let count = epnsNotificationCounter.totalCount.toHexString();
   let id2 = `${subgraphID}+${count}`;
-  log.info("New id of EpnsPushNotification is: {}", [id2]);
+  log.info('New id of EpnsPushNotification is: {}', [id2]);
   let epnsPushNotification = EpnsPushNotification.load(id2);
   if (epnsPushNotification == null) {
     epnsPushNotification = new EpnsPushNotification(id2);
@@ -267,7 +267,7 @@ export function sendPushNotification(
 4. Import the helper function in the mappings file
 
 ```ts
-import { sendPushNotification } from "./PushNotification";
+import { sendPushNotification } from './PushNotification';
 ```
 
 :::note
@@ -276,25 +276,25 @@ Follow steps 5, 6 and 7 within the respective handler functions from which the n
 
 5. **Define Notification Payload Items:** In the event handler mapping from which you need to send the notification, define the notification payload items such as recipient of the notification, type, title, message, etc. These variables will be further used to define the notification variable.
 
-It’s highly recommended to take a look at [types of notifications](/docs/notifications/build/types-of-notification/ "Article explaining types of notifications") to understand which one you want to send.
+It’s highly recommended to take a look at [types of notifications](/docs/notifications/build/types-of-notification/ 'Article explaining types of notifications') to understand which one you want to send.
 
 For a quick reference, the `recipient` differs with the payload type. For example, **broadcast** (type = 1) and special multi-payload notifications have the **channel address** as the `recipient`.
 
 ```ts
 let recipient = event.params.to.toHexString(),
-  type = "3",
-  title = "PUSH Received",
+  type = '3',
+  title = 'PUSH Received',
   body = `Received ${event.params.tokens.div(
-    power,
+    power
   )} PUSH from ${event.params.from.toHexString()}`,
-  subject = "PUSH Received",
+  subject = 'PUSH Received',
   message = `Received ${event.params.tokens.div(
-    power,
+    power
   )} PUSH from ${event.params.from.toHexString()}`,
   image =
-    "https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S",
-  secret = "null",
-  cta = "https://push.org/";
+    'https://play-lh.googleusercontent.com/i911_wMmFilaAAOTLvlQJZMXoxBF34BMSzRmascHezvurtslYUgOHamxgEnMXTklsF-S',
+  secret = 'null',
+  cta = 'https://push.org/';
 ```
 
 6. **Define Notification:** The notification variable is defined in the given below format 👇🏼
@@ -346,7 +346,7 @@ graph deploy --product hosted-service <GITHUB_USER>/<SUBGRAPH NAME>
 }
 ```
 
-Here is the [final Subgraph with Push integration](https://github.com/push-protocol/push-sdk/tree/main/packages/examples/subgraph-notification "Example of subgraph that has Push notifications enabled").
+Here is the [final Subgraph with Push integration](https://github.com/push-protocol/push-sdk/tree/main/packages/examples/subgraph-notification 'Example of subgraph that has Push notifications enabled').
 
 ### Attach subgraph to your channel
 
@@ -360,7 +360,7 @@ https://thegraph.com/hosted-service/subgraph/aiswaryawalter/push-graph-test
 
 If you have **already created your channel**, you can follow the below steps to enable notifications from your subgraph by following these steps —
 
-1. Go to [Push staging dApp](https://staging.push.org "Link to staging dApp of Push") → Channel Dashboard → Add Subgraph Details
+1. Go to [Push staging dApp](https://staging.push.org 'Link to staging dApp of Push') → Channel Dashboard → Add Subgraph Details
 
 2. Enter your `Subgraph ID` and `Poll Interval`
 
@@ -371,10 +371,10 @@ This is an on-chain transaction that stores the above data to Push Core Contract
 :::
 
 :::note
-If you don’t have a channel yet, you can easily create one by following this guide [here](/docs/notifications/tutorials/create-your-channel/ "Tutorial on how to create your channel")
+If you don’t have a channel yet, you can easily create one by following this guide [here](/docs/notifications/tutorials/create-your-channel/ 'Tutorial on how to create your channel')
 :::
 
-![Push dApp subgraph option reference](/assets/docs/notifications/tutorials/tutorial-send-notification-via-subgraph/subgraphdetails.png "Illustation of how subgraph option on Push dApp looks like")
+![Push dApp subgraph option reference](/assets/docs/notifications/tutorials/tutorial-send-notification-via-subgraph/subgraphdetails.png 'Illustation of how subgraph option on Push dApp looks like')
 
 ### Testing notification
 

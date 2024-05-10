@@ -26,41 +26,45 @@ export const Alert = () => {
 
   const alertMessage = 'Push Metamask Snap is now live,';
 
-  const alertMessageEs = 'Push Metamask Snap ya está disponible, '
-  const alertMessageHi= 'पुश मेटामास्क स्नैप अब लाइव है, '
+  const alertMessageEs = 'Push Metamask Snap ya está disponible, ';
+  const alertMessageHi = 'पुश मेटामास्क स्नैप अब लाइव है, ';
 
   const alertLink = `https://snaps.metamask.io/snap/npm/pushprotocol/snap/`;
 
   // Internationalization
   const { t, i18n } = useTranslation();
 
-  const openLink = () => {
-    
-  };
+  const openLink = () => {};
 
   return (
     <Section>
       {isAlertVisible && (
         <AlertContainer>
-          <AlertText onClick={() => {window.open(alertLink, '_blank');}}>
-            {i18n.language === 'es' ? alertMessageEs : (i18n.language === 'hi' ? alertMessageHi : alertMessage)}
+          <AlertText
+            onClick={() => {
+              window.open(alertLink, '_blank');
+            }}
+          >
+            {i18n.language === 'es'
+              ? alertMessageEs
+              : i18n.language === 'hi'
+                ? alertMessageHi
+                : alertMessage}
 
-            <KnowMoreLink>
-              {t('alert.know-more')}
-            </KnowMoreLink>
+            <KnowMoreLink>{t('alert.know-more')}</KnowMoreLink>
 
-            <FiArrowUpRight className="icon" />
+            <FiArrowUpRight className='icon' />
           </AlertText>
 
-        <CancelIcon>
-          <AiOutlineClose
-            size="1.25rem"
-            color="#7f7b80"
-            className="icon"
-            onClick={hideAlertHandler}
-          />
-        </CancelIcon>
-      </AlertContainer>
+          <CancelIcon>
+            <AiOutlineClose
+              size='1.25rem'
+              color='#7f7b80'
+              className='icon'
+              onClick={hideAlertHandler}
+            />
+          </CancelIcon>
+        </AlertContainer>
       )}
     </Section>
   );

@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Blockchain
 ,Defi ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Dan Finlay of Metamask — Volume 2 Ep 02 Recap](./cover-image.webp)

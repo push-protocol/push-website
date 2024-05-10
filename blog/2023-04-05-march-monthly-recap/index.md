@@ -12,12 +12,12 @@ tags: [ Blockchain Technology, NewsLetter, Monthly Recap, Web3]
 ---
 
 ![Cover image of March Monthly Recap🌄](./cover-image.png)
+
 <!--truncate-->
 
 Welcome to another exciting month at Push!
 
 As we reflect on the past few weeks, we are thrilled to share some of the major milestones we’ve achieved in the world of decentralized communication. From the introduction of exciting new Push Chat and Notification features to the highly anticipated launch of Push Chat Mobile, we’ve been working hard to enhance the Push Protocol.
-
 
 Let’s take a dive into everything that happened in March!
 
@@ -93,4 +93,3 @@ Have you contributed to Push in the last year? Then don’t forget to claim your
 As we conclude an incredible month at Push, we are thrilled to witness the growth and development of Push in the world of web3 and decentralized communication.
 
 We are committed to continuing our efforts in building a strong, engaged community that shares our vision for the future of web3 and want to thank you all for joining this journey with us. Until next time!
-

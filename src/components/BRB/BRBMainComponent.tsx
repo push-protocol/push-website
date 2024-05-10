@@ -1,24 +1,24 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // React + Web3 Essentials
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
-import BrowserOnly from "@docusaurus/BrowserOnly";
-import { gsap } from "gsap";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { gsap } from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 // Internal Components
-import { CommunityPartners } from "@site/src/components/BRB/BRBCommunityPartners";
-import BRBParallax from "@site/src/components/BRB/BRBParallax";
-import { PartnerBounties } from "@site/src/components/BRB/BRBPartnerBounties";
-import { Partners } from "@site/src/components/BRB/BRBPartners";
-import Schedules from "@site/src/components/BRB/BRBSchedules";
-import ImageHolder from "@site/src/components/ImageHolder";
-import { ChatComponent } from "@site/src/components/PushChat/PushChatComponent";
+import { CommunityPartners } from '@site/src/components/BRB/BRBCommunityPartners';
+import BRBParallax from '@site/src/components/BRB/BRBParallax';
+import { PartnerBounties } from '@site/src/components/BRB/BRBPartnerBounties';
+import { Partners } from '@site/src/components/BRB/BRBPartners';
+import Schedules from '@site/src/components/BRB/BRBSchedules';
+import ImageHolder from '@site/src/components/ImageHolder';
+import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
 import {
   Button,
   Content,
@@ -27,24 +27,24 @@ import {
   ItemV,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import { BRBAlert } from "./BRBAlert";
+} from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { BRBAlert } from './BRBAlert';
 
 // Import Assets
-import ArrowIcon from "@site/static/assets/website/brb/ArrowIcon.svg";
-import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
-import ImageBRB from "@site/static/assets/website/brb/Image-BRB.png";
-import MobileBRB from "@site/static/assets/website/brb/Mobile-BRB.png";
-import PlaygroundBg from "@site/static/assets/website/brb/PlaygroundBg.png";
-import X from "@site/static/assets/website/brb/X-BRB.svg";
-import PushLogo from "@site/static/assets/website/brb/pushIcon.svg";
-import { AiOutlineClose } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi";
+import ArrowIcon from '@site/static/assets/website/brb/ArrowIcon.svg';
+import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
+import ImageBRB from '@site/static/assets/website/brb/Image-BRB.png';
+import MobileBRB from '@site/static/assets/website/brb/Mobile-BRB.png';
+import PlaygroundBg from '@site/static/assets/website/brb/PlaygroundBg.png';
+import X from '@site/static/assets/website/brb/X-BRB.svg';
+import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
+import { AiOutlineClose } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
-import GLOBALS, { device, structure } from "@site/src/config/globals";
-import BRBOnline from "./BRBOnline";
+import GLOBALS, { device, structure } from '@site/src/config/globals';
+import BRBOnline from './BRBOnline';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -53,22 +53,22 @@ gsap.registerPlugin(ScrollToPlugin);
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   lastScrollY = window.scrollY;
 }
 
 function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
-  const [bkg, setBkg] = useState("dark");
+  const [bkg, setBkg] = useState('dark');
 
   useEffect(() => {
     const updateScrollDirection = () => {
       let scrollY = 0;
 
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         scrollY = window.scrollY;
       }
-      let direction = scrollY > lastScrollY ? "scrollDown" : "scrollUp";
+      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
       if (
         direction !== scrollDirection &&
@@ -77,7 +77,7 @@ function useScrollDirection(mobileMenuActive) {
       ) {
         // check if isMobileMenuOpen then override
         if (mobileMenuActive) {
-          direction = "scrollUp";
+          direction = 'scrollUp';
         }
 
         setScrollDirection(direction);
@@ -94,10 +94,10 @@ function useScrollDirection(mobileMenuActive) {
     };
 
     // add event listener
-    window.addEventListener("scroll", updateScrollDirection, { passive: true });
+    window.addEventListener('scroll', updateScrollDirection, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
     };
   }, [scrollDirection, mobileMenuActive]);
 
@@ -131,7 +131,7 @@ export const BRBMainComponent = () => {
   };
 
   const showMobileMenu = isMobile && isMobileMenuOpen;
-  const headerClass = `${scrollDirection === "scrollDown" ? "hide" : "show"}`;
+  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
   const onMobileHeaderMenuClick = (e, menuIndex) => {
     e.preventDefault();
@@ -166,7 +166,7 @@ export const BRBMainComponent = () => {
   };
 
   const openLink = (link: string) => {
-    window.open(link, "_blank");
+    window.open(link, '_blank');
   };
 
   const elem0 = useRef(null);
@@ -174,9 +174,9 @@ export const BRBMainComponent = () => {
 
   const newTl = gsap.timeline({
     scrollTrigger: {
-      trigger: "#new",
-      start: "top top",
-      end: "+=100",
+      trigger: '#new',
+      start: 'top top',
+      end: '+=100',
       scrub: true,
       pinSpacing: true,
     },
@@ -200,11 +200,11 @@ export const BRBMainComponent = () => {
   }, []);
 
   const openHomePage = () => {
-    window.open("/", "_self");
+    window.open('/', '_self');
   };
 
   return (
-    <BrbWrapper background="#000">
+    <BrbWrapper background='#000'>
       {/* header style */}
       <StyledHeader
         showMobileMenu={showMobileMenu}
@@ -216,48 +216,48 @@ export const BRBMainComponent = () => {
         />
 
         <Section>
-          <Content alignSelf="center" className="contentBox">
-              <NavList isMobileMenuOpen={isMobileMenuOpen}>
-                <MenuTop flex="initial">
-                  <PushLogoBlackContainer className="headerlogo" flex="initial">
-                    <PushLogo
-                      style={{ margin: "0px 9px 0px 4px" }}
-                      onClick={openHomePage}
-                    />
+          <Content alignSelf='center' className='contentBox'>
+            <NavList isMobileMenuOpen={isMobileMenuOpen}>
+              <MenuTop flex='initial'>
+                <PushLogoBlackContainer className='headerlogo' flex='initial'>
+                  <PushLogo
+                    style={{ margin: '0px 9px 0px 4px' }}
+                    onClick={openHomePage}
+                  />
 
-                    <Span
-                      fontSize="24px"
-                      fontWeight="400"
-                      style={{ fontFamily: "Glancyr" }}
-                    >
-                      #BRB
-                    </Span>
-                  </PushLogoBlackContainer>
-
-                  <MobileMenuToggleIcon>
-                    {isMobileMenuOpen ? (
-                      <AiOutlineClose
-                        size={28}
-                        color="#fff"
-                        onClick={toggleMobileMenu}
-                      />
-                    ) : (
-                      <GiHamburgerMenu
-                        size={28}
-                        color="#fff"
-                        onClick={toggleMobileMenu}
-                      />
-                    )}
-                  </MobileMenuToggleIcon>
-                </MenuTop>
-
-                <HeaderNavItemV showMobileMenu={isMobileMenuOpen} margin>
-                  <NavigationMenu
-                    role="menu"
-                    className="navigationMenu"
-                    showMobileMenu={isMobileMenuOpen}
+                  <Span
+                    fontSize='24px'
+                    fontWeight='400'
+                    style={{ fontFamily: 'Glancyr' }}
                   >
-                    {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
+                    #BRB
+                  </Span>
+                </PushLogoBlackContainer>
+
+                <MobileMenuToggleIcon>
+                  {isMobileMenuOpen ? (
+                    <AiOutlineClose
+                      size={28}
+                      color='#fff'
+                      onClick={toggleMobileMenu}
+                    />
+                  ) : (
+                    <GiHamburgerMenu
+                      size={28}
+                      color='#fff'
+                      onClick={toggleMobileMenu}
+                    />
+                  )}
+                </MobileMenuToggleIcon>
+              </MenuTop>
+
+              <HeaderNavItemV showMobileMenu={isMobileMenuOpen} margin>
+                <NavigationMenu
+                  role='menu'
+                  className='navigationMenu'
+                  showMobileMenu={isMobileMenuOpen}
+                >
+                  {/* <NavigationMenuItem onClick={() => handleSectionNavigation('partners')}>
                       <NavigationMenuHeader>
                         <Span
                           fontSize="18px"
@@ -267,120 +267,120 @@ export const BRBMainComponent = () => {
                       </NavigationMenuHeader>
                     </NavigationMenuItem> */}
 
-                    <NavigationMenuItem
-                      onClick={() => handleSectionNavigation("bounties")}
-                    >
-                      <NavigationMenuHeader>
-                        <Span fontSize="18px">Bounties</Span>
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem
-                      onClick={() => handleSectionNavigation("schedule")}
-                    >
-                      <NavigationMenuHeader>
-                        <Span fontSize="18px">Schedule</Span>
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem
-                      onClick={() => handleSectionNavigation("online")}
-                    >
-                      <NavigationMenuHeader>
-                        <Span fontSize="18px">BRB Online</Span>
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem
-                      onClick={() => handleSectionNavigation("playground")}
-                    >
-                      <NavigationMenuHeader>
-                        <Span fontSize="18px">BRB Chat</Span>
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-
-                    <NavigationMenuItem
-                      onClick={() => handleSectionNavigation("support")}
-                    >
-                      <NavigationMenuHeader>
-                        <Span fontSize="18px">Support</Span>
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-                  </NavigationMenu>
-                </HeaderNavItemV>
-
-                <HeaderFocusItems flex="initial" alignSelf="stretch">
-                  <IconMenu
-                    role="menu"
-                    className="navigationMenu"
-                    showMobileMenu={isMobileMenuOpen}
+                  <NavigationMenuItem
+                    onClick={() => handleSectionNavigation('bounties')}
                   >
-                    <NavigationMenuItem
-                      onClick={() => {
-                        if (isMobileMenuOpen) toggleMobileMenu();
-                        openLink("https://discord.gg/cTRqvYzXpW");
-                      }}
-                    >
-                      <NavigationMenuHeader>
-                        <Discord />
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
+                    <NavigationMenuHeader>
+                      <Span fontSize='18px'>Bounties</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
 
-                    <NavigationMenuItem
-                      onClick={() => {
-                        if (isMobileMenuOpen) toggleMobileMenu();
-                        openLink("https://twitter.com/pushprotocol");
-                      }}
-                    >
-                      <NavigationMenuHeader>
-                        <X />
-                      </NavigationMenuHeader>
-                    </NavigationMenuItem>
-                  </IconMenu>
-                </HeaderFocusItems>
-              </NavList>
+                  <NavigationMenuItem
+                    onClick={() => handleSectionNavigation('schedule')}
+                  >
+                    <NavigationMenuHeader>
+                      <Span fontSize='18px'>Schedule</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem
+                    onClick={() => handleSectionNavigation('online')}
+                  >
+                    <NavigationMenuHeader>
+                      <Span fontSize='18px'>BRB Online</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem
+                    onClick={() => handleSectionNavigation('playground')}
+                  >
+                    <NavigationMenuHeader>
+                      <Span fontSize='18px'>BRB Chat</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem
+                    onClick={() => handleSectionNavigation('support')}
+                  >
+                    <NavigationMenuHeader>
+                      <Span fontSize='18px'>Support</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+                </NavigationMenu>
+              </HeaderNavItemV>
+
+              <HeaderFocusItems flex='initial' alignSelf='stretch'>
+                <IconMenu
+                  role='menu'
+                  className='navigationMenu'
+                  showMobileMenu={isMobileMenuOpen}
+                >
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://discord.gg/cTRqvYzXpW');
+                    }}
+                  >
+                    <NavigationMenuHeader>
+                      <Discord />
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
+                  <NavigationMenuItem
+                    onClick={() => {
+                      if (isMobileMenuOpen) toggleMobileMenu();
+                      openLink('https://twitter.com/pushprotocol');
+                    }}
+                  >
+                    <NavigationMenuHeader>
+                      <X />
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+                </IconMenu>
+              </HeaderFocusItems>
+            </NavList>
           </Content>
         </Section>
       </StyledHeader>
 
       <ItemTop>
         <ItemV
-          id="new"
-          margin={isAlertVisible && isMobile ? "5em 0 0 0" : "0 0 0 0"}
+          id='new'
+          margin={isAlertVisible && isMobile ? '5em 0 0 0' : '0 0 0 0'}
         >
           <MemberImage
-            className="pushMissingSvg"
+            className='pushMissingSvg'
             src={isMobile ? MobileBRB : ImageBRB}
             srcSet={isMobile ? MobileBRB : ImageBRB}
           />
         </ItemV>
 
-        <NavText id="elems0">
+        <NavText id='elems0'>
           Get ready for an epic tech showdown across 18 cities in India, where
           amazing minds come together to solve one big problem, with a chance to
           win over $50,000 USD in prizes!
         </NavText>
 
-        <NavButtons id="elems" ref={elem0}>
+        <NavButtons id='elems' ref={elem0}>
           <ButtonItem
-            borderRadius="24px"
-            background="#E64DE9"
-            border="1px solid #FC6DFF"
-            fontSize="18px"
-            padding="16px 32px"
-            fontWeight="400"
-            onClick={() => handleSectionNavigation("bounties")}
+            borderRadius='24px'
+            background='#E64DE9'
+            border='1px solid #FC6DFF'
+            fontSize='18px'
+            padding='16px 32px'
+            fontWeight='400'
+            onClick={() => handleSectionNavigation('bounties')}
           >
             Register Now
           </ButtonItem>
           <ButtonBar
-            borderRadius="24px"
-            background="#000"
-            border="1px solid #E64DE9"
-            fontSize="18px"
-            padding="16px 32px"
-            fontWeight="400"
-            onClick={() => handleSectionNavigation("playground")}
+            borderRadius='24px'
+            background='#000'
+            border='1px solid #E64DE9'
+            fontSize='18px'
+            padding='16px 32px'
+            fontWeight='400'
+            onClick={() => handleSectionNavigation('playground')}
           >
             Join the conversation
           </ButtonBar>
@@ -389,74 +389,74 @@ export const BRBMainComponent = () => {
 
       <BRBParallax />
 
-      <Section id="partners">
+      <Section id='partners'>
         <Content>
           <Partners />
         </Content>
       </Section>
 
       <Section>
-        <Content className="fluid">
+        <Content className='fluid'>
           <CommunityPartners />
-          </Content>
+        </Content>
       </Section>
 
-      <Section id="bounties">
+      <Section id='bounties'>
         <Content>
           <PartnerBounties />
         </Content>
       </Section>
 
-      <Section id="schedule">
-        <Content className="fluid">
+      <Section id='schedule'>
+        <Content className='fluid'>
           <Schedules />
         </Content>
       </Section>
 
-      <Section id="online">
+      <Section id='online'>
         <Content>
           <BRBOnline />
         </Content>
       </Section>
 
-      <Section id="playground">
+      <Section id='playground'>
         <Content>
           <ChatComponent />
         </Content>
       </Section>
 
-      <Section id="support">
+      <Section id='support'>
         <Content>
           <ItemFooter>
-            <ItemH gap="28px">
+            <ItemH gap='28px'>
               <ItemV
-                minWidth="280px"
-                background="#000"
-                padding="20px 48px"
-                gap="14px"
-                borderRadius="48px"
-                background="#2a2a39"
+                minWidth='280px'
+                background='#000'
+                padding='20px 48px'
+                gap='14px'
+                borderRadius='48px'
+                background='#2a2a39'
               >
                 <SpanContent
-                  fontSize="112px"
-                  fontWeight="400"
-                  color="#E64DE9"
-                  letterSpacing="0.01"
+                  fontSize='112px'
+                  fontWeight='400'
+                  color='#E64DE9'
+                  letterSpacing='0.01'
                 >
                   Drop us a GM!
                 </SpanContent>
               </ItemV>
 
-              <ItemV gap="28px" minWidth="280px" alignItems="stretch">
+              <ItemV gap='28px' minWidth='280px' alignItems='stretch'>
                 <FooterBar
-                  style={{ cursor: "pointer" }}
-                  onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
                 >
                   <i>
                     <Discord />
                   </i>
 
-                  <Span fontSize="36px" fontWeight="400" color="#6F8BEE">
+                  <Span fontSize='36px' fontWeight='400' color='#6F8BEE'>
                     24x7 Support on Discord
                   </Span>
 
@@ -464,7 +464,7 @@ export const BRBMainComponent = () => {
                     width={65}
                     src={
                       require(
-                        `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                        `@site/static/assets/website/brb/others/ArrowIcon.webp`
                       ).default
                     }
                     srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
@@ -473,14 +473,14 @@ export const BRBMainComponent = () => {
                 </FooterBar>
 
                 <FooterBar
-                  style={{ cursor: "pointer" }}
-                  onClick={() => openLink("https://twitter.com/pushprotocol")}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => openLink('https://twitter.com/pushprotocol')}
                 >
                   <i>
-                    <X className="discord" />
+                    <X className='discord' />
                   </i>
 
-                  <Span fontSize="36px" fontWeight="400" color="#63BFF3">
+                  <Span fontSize='36px' fontWeight='400' color='#63BFF3'>
                     Updates & Announcements
                   </Span>
 
@@ -488,7 +488,7 @@ export const BRBMainComponent = () => {
                     width={65}
                     src={
                       require(
-                        `@site/static/assets/website/brb/others/ArrowIcon.webp`,
+                        `@site/static/assets/website/brb/others/ArrowIcon.webp`
                       ).default
                     }
                     srcSet={`${require(`@site/static/assets/website/brb/others/ArrowIcon@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/others/ArrowIcon@3x.webp`).default} 3x`}
@@ -498,13 +498,12 @@ export const BRBMainComponent = () => {
               </ItemV>
             </ItemH>
           </ItemFooter>
-      </Content>
+        </Content>
       </Section>
 
       <BottomGrad>
-        <Span fontSize="18px" fontWeight="400" color="#FFF">
-          © {year || ""} Push. All rights reserved.
-          
+        <Span fontSize='18px' fontWeight='400' color='#FFF'>
+          © {year || ''} Push. All rights reserved.
         </Span>
       </BottomGrad>
     </BrbWrapper>
@@ -583,8 +582,8 @@ const BrbWrapper = styled(ItemV)`
 const NavList = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (!props.isMobileMenuOpen ? "78px" : "auto")};
-  max-height: ${(props) => (!props.isMobileMenuOpen ? "78px" : "auto")};
+  height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
+  max-height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -604,12 +603,12 @@ const NavList = styled.div`
     margin: 10px auto;
     box-sizing: border-box;
     align-items: center;
-    border-radius: ${(props) => (props.isMobileMenuOpen ? "32px" : "55px")};
+    border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
   }
 `;
 
 const StyledHeader = styled.header`
-  font-family: "Strawford", sans-serif;
+  font-family: 'Strawford', sans-serif;
 
   /* padding: 0px 160px; */
 
@@ -763,7 +762,7 @@ const HeaderNavItemV = styled(ItemV)`
     ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
 
   @media ${device.laptop} {
-    margin: ${(props) => (props.showMobileMenu ? "30px 20px 20px 20px" : "0")};
+    margin: ${(props) => (props.showMobileMenu ? '30px 20px 20px 20px' : '0')};
   }
 `;
 
@@ -793,7 +792,7 @@ const NavigationMenu = styled.ul`
     flex-direction: column;
     flex: 0 0 75%;
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
 
@@ -811,7 +810,7 @@ const IconMenu = styled.ul`
     flex: 1;
     margin: 10px 20px 20px 20px;
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
 
@@ -875,7 +874,7 @@ const NavigationMenuHeader = styled.div`
       width: 16px;
       height: 16px;
       transform: ${(props) =>
-        props.expanded ? "rotate(180deg)" : "none  !important"};
+        props.expanded ? 'rotate(180deg)' : 'none  !important'};
     }
   }
 `;

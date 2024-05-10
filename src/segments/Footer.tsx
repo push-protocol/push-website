@@ -2,15 +2,14 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { useLocation } from "@docusaurus/router";
-
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from '@docusaurus/router';
 
 // External Components
-import { useTranslation } from "react-i18next";
-import { BsArrowUpRight, BsTwitterX } from "react-icons/bs";
-import styled from "styled-components";
+import { useTranslation } from 'react-i18next';
+import { BsArrowUpRight, BsTwitterX } from 'react-icons/bs';
+import styled from 'styled-components';
 
 // Internal Components
 import {
@@ -22,24 +21,24 @@ import {
   LinkTo,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import FooterFollowusFigure from "@site/static/assets/website/footer/footerfollowus.svg";
-import FooterJoinusFigure from "@site/static/assets/website/footer/footerjoinus.svg";
-import AppStoreSVG from "@site/static/assets/website/footer/appstore.svg";
-import GooglePlaySVG from "@site/static/assets/website/footer/googleplay.svg";
-import PushBellSVG from "@site/static/assets/website/footer/pushBell.svg";
-import AndroidSVG from "@site/static/assets/website/shared/android.svg";
-import AppleSVG from "@site/static/assets/website/shared/apple.svg";
-import DiscordSVG from "@site/static/assets/website/shared/discord.svg";
-import GithubSVG from "@site/static/assets/website/shared/github.svg";
-import TelegramSVG from "@site/static/assets/website/shared/telegram.svg";
-import TwitterSVG from "@site/static/assets/website/shared/twitter-icon.svg";
-import { MailingSignup } from "../components/MailingSignup/MailingSignup";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+} from '@site/src/css/SharedStyling';
+import FooterFollowusFigure from '@site/static/assets/website/footer/footerfollowus.svg';
+import FooterJoinusFigure from '@site/static/assets/website/footer/footerjoinus.svg';
+import AppStoreSVG from '@site/static/assets/website/footer/appstore.svg';
+import GooglePlaySVG from '@site/static/assets/website/footer/googleplay.svg';
+import PushBellSVG from '@site/static/assets/website/footer/pushBell.svg';
+import AndroidSVG from '@site/static/assets/website/shared/android.svg';
+import AppleSVG from '@site/static/assets/website/shared/apple.svg';
+import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
+import GithubSVG from '@site/static/assets/website/shared/github.svg';
+import TelegramSVG from '@site/static/assets/website/shared/telegram.svg';
+import TwitterSVG from '@site/static/assets/website/shared/twitter-icon.svg';
+import { MailingSignup } from '../components/MailingSignup/MailingSignup';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
-import { HeaderList } from "@site/src/config/HeaderList";
+import { device } from '@site/src/config/globals';
+import { HeaderList } from '@site/src/config/HeaderList';
 
 function Footer() {
   // Internationalization
@@ -51,168 +50,194 @@ function Footer() {
   const history = useHistory();
   const location = useLocation();
 
-
   const scrollToTop = () => {
     document.documentElement.scrollTo(0, 0);
   };
 
-    const openLink = (e, href, id, target) => {
-      e.stopPropagation();
+  const openLink = (e, href, id, target) => {
+    e.stopPropagation();
 
-      if (href) {
-        if (target && target !== "_blank") {
-          if (target === "_self") {
-            // check if url is external
-            if (href.includes("http")) {
-              window.location.href = href;
-            } else {
-              history.push(href);
-            }
-            scrollToTop();
-          }
-        } else {
-          // check if url is internal and if so append the base url
-          if (href.includes("http")) {
-            window.open(href, target);
+    if (href) {
+      if (target && target !== '_blank') {
+        if (target === '_self') {
+          // check if url is external
+          if (href.includes('http')) {
+            window.location.href = href;
           } else {
-            window.open(`${window.location.origin}${href}`, target);
+            history.push(href);
           }
-          // scrollToTop();
+          scrollToTop();
         }
-      } else if (id) {
-        if(location.pathname !== "/" && id){
-              history.push('/')
-              setTimeout(() => {
-                document.getElementById(id).scrollIntoView({behavior: "smooth"});
-              }, 1500);
+      } else {
+        // check if url is internal and if so append the base url
+        if (href.includes('http')) {
+          window.open(href, target);
+        } else {
+          window.open(`${window.location.origin}${href}`, target);
         }
+        // scrollToTop();
+      }
+    } else if (id) {
+      if (location.pathname !== '/' && id) {
+        history.push('/');
+        setTimeout(() => {
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }, 1500);
+      }
 
-        if(location.pathname === "/"){
-                document.getElementById(id).scrollIntoView({behavior: "smooth"});
-        }
-      } else return;
-    };
+      if (location.pathname === '/') {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      }
+    } else return;
+  };
 
   return (
     <StyledFooter>
-      <FooterSection id="footer">
-        <Content alignSelf="center">
-        
+      <FooterSection id='footer'>
+        <Content alignSelf='center'>
           {/* footer links */}
-          <ItemH flex="1" margin="0px 0 0 0">
+          <ItemH flex='1' margin='0px 0 0 0'>
             <FooterContainer>
               <FooterColumn>
                 <FooterLinkItem>
-                     <LinkTo
-                        className="pushLogo"
-                        to="/"
-                        title="Push"
-                        onClick={scrollToTop}
-                        justifyContent={isMobile ? "center" : "flex-start"}
-                        padding="0px 0px"
-                      >
-                        <Image
-                          src={
-                            require(
-                              `@site/static/assets/website/segments/PushLogoTextWhite.webp`,
-                            ).default
-                          }
-                          srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextWhite@3x.webp`).default} 3x`}
-                          alt={`Push Logo`}
-                          width="auto"
-                          height="auto"
-                          loading="lazy"
-                        />
-                      </LinkTo>
+                  <LinkTo
+                    className='pushLogo'
+                    to='/'
+                    title='Push'
+                    onClick={scrollToTop}
+                    justifyContent={isMobile ? 'center' : 'flex-start'}
+                    padding='0px 0px'
+                  >
+                    <Image
+                      src={
+                        require(
+                          `@site/static/assets/website/segments/PushLogoTextWhite.webp`
+                        ).default
+                      }
+                      srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextWhite@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextWhite@3x.webp`).default} 3x`}
+                      alt={`Push Logo`}
+                      width='auto'
+                      height='auto'
+                      loading='lazy'
+                    />
+                  </LinkTo>
 
-                  <Span fontWeight="500" fontSize="16px" lineHeight="142%" margin={isMobile ? "32px auto 12px auto" : "48px 0 12px 0"}>
+                  <Span
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='142%'
+                    margin={isMobile ? '32px auto 12px auto' : '48px 0 12px 0'}
+                  >
                     {/* Get the latest Push news */}
-                    {t("footer.mail-section.title")}
+                    {t('footer.mail-section.title')}
                   </Span>
 
                   <MailingSignup
                     showArrow={true}
-                    background="#0000"
-                    borderColor="rgba(255, 255, 255, 0.30)"
-                    inputWidth="90%"
+                    background='#0000'
+                    borderColor='rgba(255, 255, 255, 0.30)'
+                    inputWidth='90%'
                   />
                 </FooterLinkItem>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("header.products.title")}
+                  <Span
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='150%'
+                    margin='0 0 8px 0'
+                  >
+                    {t('header.products.title')}
                   </Span>
 
-                    {HeaderList.products.map((item, index) => (
-                      <FooterAnchorSecondary
-                        as={"div"}
-                        title={t(item.title)}
-                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
-                      >
-                        {t(item.title)}
-                      </FooterAnchorSecondary>
-                    ))}
-
-                </FooterLinks>
-              </FooterColumn>
-
-
-              <FooterColumn>
-                <FooterLinks>
-                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("header.developers.title")}
-                  </Span>
-
-                    {HeaderList.developers.map((item, index) => (
-                      <FooterAnchorSecondary
-                        as={"div"}
-                        title={t(item.title)}
-                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
-                      >
-                        {t(item.title)}
-                      </FooterAnchorSecondary>
-                    ))}
-
+                  {HeaderList.products.map((item, index) => (
+                    <FooterAnchorSecondary
+                      as={'div'}
+                      title={t(item.title)}
+                      onClick={(e) =>
+                        openLink(e, item.href, item.id, item.target)
+                      }
+                    >
+                      {t(item.title)}
+                    </FooterAnchorSecondary>
+                  ))}
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("header.community.title")}
+                  <Span
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='150%'
+                    margin='0 0 8px 0'
+                  >
+                    {t('header.developers.title')}
                   </Span>
 
-                    {HeaderList.community.map((item, index) => (
-                      <FooterAnchorSecondary
-                        as={"div"}
-                        title={t(item.title)}
-                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
-                      >
-                        {t(item.title)}
-                      </FooterAnchorSecondary>
-                    ))}
-
+                  {HeaderList.developers.map((item, index) => (
+                    <FooterAnchorSecondary
+                      as={'div'}
+                      title={t(item.title)}
+                      onClick={(e) =>
+                        openLink(e, item.href, item.id, item.target)
+                      }
+                    >
+                      {t(item.title)}
+                    </FooterAnchorSecondary>
+                  ))}
                 </FooterLinks>
               </FooterColumn>
 
               <FooterColumn>
                 <FooterLinks>
-                  <Span fontWeight="500" fontSize="16px" lineHeight="150%" margin="0 0 8px 0">
-                    {t("header.resources.title")}
+                  <Span
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='150%'
+                    margin='0 0 8px 0'
+                  >
+                    {t('header.community.title')}
                   </Span>
 
-                    {HeaderList.resources.map((item, index) => (
-                      <FooterAnchorSecondary
-                        as={"div"}
-                        title={t(item.title)}
-                        onClick={(e) => openLink(e, item.href, item.id, item.target)}
-                      >
-                        {t(item.title)}
-                      </FooterAnchorSecondary>
-                    ))}
+                  {HeaderList.community.map((item, index) => (
+                    <FooterAnchorSecondary
+                      as={'div'}
+                      title={t(item.title)}
+                      onClick={(e) =>
+                        openLink(e, item.href, item.id, item.target)
+                      }
+                    >
+                      {t(item.title)}
+                    </FooterAnchorSecondary>
+                  ))}
+                </FooterLinks>
+              </FooterColumn>
 
+              <FooterColumn>
+                <FooterLinks>
+                  <Span
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='150%'
+                    margin='0 0 8px 0'
+                  >
+                    {t('header.resources.title')}
+                  </Span>
+
+                  {HeaderList.resources.map((item, index) => (
+                    <FooterAnchorSecondary
+                      as={'div'}
+                      title={t(item.title)}
+                      onClick={(e) =>
+                        openLink(e, item.href, item.id, item.target)
+                      }
+                    >
+                      {t(item.title)}
+                    </FooterAnchorSecondary>
+                  ))}
                 </FooterLinks>
               </FooterColumn>
             </FooterContainer>
@@ -220,119 +245,121 @@ function Footer() {
 
           {/* Social Icon Links */}
           <SocialLinks>
-            <ItemH 
-              justifyContent="flex-start"
-              flex="1"
-              gap="12px"
-              className="pushLinks">
+            <ItemH
+              justifyContent='flex-start'
+              flex='1'
+              gap='12px'
+              className='pushLinks'
+            >
               <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/privacy"
-                    title={t("footer.links-section.subscribe-column.faq-link")}
-                    onClick={scrollToTop}
-                  >
-                    {t("footer.mail-section.privacy")}
-                  </FooterAnchorSecondary>
+                as={LinkTo}
+                to='/privacy'
+                title={t('footer.links-section.subscribe-column.faq-link')}
+                onClick={scrollToTop}
+              >
+                {t('footer.mail-section.privacy')}
+              </FooterAnchorSecondary>
 
-                  <FooterAnchorSecondary
-                    as={LinkTo}
-                    to="/tos"
-                    title={t("footer.links-section.subscribe-column.faq-link")}
-                    onClick={scrollToTop}
-                  >
-                    {t("footer.mail-section.tos")}
-                  </FooterAnchorSecondary>
+              <FooterAnchorSecondary
+                as={LinkTo}
+                to='/tos'
+                title={t('footer.links-section.subscribe-column.faq-link')}
+                onClick={scrollToTop}
+              >
+                {t('footer.mail-section.tos')}
+              </FooterAnchorSecondary>
             </ItemH>
 
-            <ItemV flexDirection={isTablet ? "column" : "row"} gap={isMobile ? "24px" : "16px"} justifyContent="flex-end">
-                <ItemH
-                  // justifyContent="flex-start"
-                  flex="0"
-                  gap="16px"
-                  className="pushLinks"
+            <ItemV
+              flexDirection={isTablet ? 'column' : 'row'}
+              gap={isMobile ? '24px' : '16px'}
+              justifyContent='flex-end'
+            >
+              <ItemH
+                // justifyContent="flex-start"
+                flex='0'
+                gap='16px'
+                className='pushLinks'
+              >
+                <FooterAnchorIcon
+                  href='https://twitter.com/pushprotocol'
+                  title='Push Twitter'
+                  target='_blank'
                 >
-              
-                  
-                  <FooterAnchorIcon
-                    href="https://twitter.com/pushprotocol"
-                    title="Push Twitter"
-                    target="_blank"
-                  >
-                    <BsTwitterX size={22} />
-                  </FooterAnchorIcon>
+                  <BsTwitterX size={22} />
+                </FooterAnchorIcon>
 
-                  <FooterAnchorIcon
-                    href="https://github.com/push-protocol/"
-                    title="Push Github"
-                    target="_blank"
-                  >
-                    <GithubSVG width={24} height={24} />
-                  </FooterAnchorIcon>
-
-                  <FooterAnchorIcon
-                    href="https://t.me/epnsproject"
-                    title="Push Telegram"
-                    target="_blank"
-                  >
-                    <TelegramSVG width={24} height={24} />
-                  </FooterAnchorIcon>
-                  <FooterAnchorIcon
-                    href="https://discord.gg/pushprotocol"
-                    title="Push Discord"
-                    target="_blank"
-                  >
-                    <DiscordSVG width={24} height={24} />
-                  </FooterAnchorIcon>
-                </ItemH>
-
-                <ItemH
-                  // justifyContent="flex-end"
-                  flex="0"
-                  gap="12px"
-                  className="pushPlatformLinks"
+                <FooterAnchorIcon
+                  href='https://github.com/push-protocol/'
+                  title='Push Github'
+                  target='_blank'
                 >
-                  <A
-                    href="https://apps.apple.com/app/ethereum-push-service-epns/id1528614910"
-                    title="Push iOS app"
-                    target="_blank"
-                    padding="0px 0px"
-                    borderRadius="0px"
-                  >
-                    <Image
-                          src={
-                            require(
-                              `@site/static/assets/website/footer/appstore.png`,
-                            ).default
-                          }
-                          srcSet={`${require(`@site/static/assets/website/footer/appstore@2x.png`).default} 2x, ${require(`@site/static/assets/website/footer/appstore@3x.png`).default} 3x`}
-                          alt={`Push Logo`}
-                          width="auto"
-                          height="30px"
-                          loading="lazy"
-                        />
-                  </A>
+                  <GithubSVG width={24} height={24} />
+                </FooterAnchorIcon>
 
-                  <A
-                    href="https://play.google.com/store/apps/details?id=io.epns.epns"
-                    title="Push Android app"
-                    target="_blank"
-                    padding="0px 0px"
-                    borderRadius="0px"
-                  >
-                    <Image
-                          src={
-                            require(
-                              `@site/static/assets/website/footer/googleplay.png`,
-                            ).default
-                          }
-                          srcSet={`${require(`@site/static/assets/website/footer/googleplay@2x.png`).default} 2x, ${require(`@site/static/assets/website/footer/googleplay@3x.png`).default} 3x`}
-                          alt={`Push Logo`}
-                          width="auto"
-                          height="30px"
-                          loading="lazy"
-                        />
-                  </A>
-                </ItemH>
+                <FooterAnchorIcon
+                  href='https://t.me/epnsproject'
+                  title='Push Telegram'
+                  target='_blank'
+                >
+                  <TelegramSVG width={24} height={24} />
+                </FooterAnchorIcon>
+                <FooterAnchorIcon
+                  href='https://discord.gg/pushprotocol'
+                  title='Push Discord'
+                  target='_blank'
+                >
+                  <DiscordSVG width={24} height={24} />
+                </FooterAnchorIcon>
+              </ItemH>
+
+              <ItemH
+                // justifyContent="flex-end"
+                flex='0'
+                gap='12px'
+                className='pushPlatformLinks'
+              >
+                <A
+                  href='https://apps.apple.com/app/ethereum-push-service-epns/id1528614910'
+                  title='Push iOS app'
+                  target='_blank'
+                  padding='0px 0px'
+                  borderRadius='0px'
+                >
+                  <Image
+                    src={
+                      require(`@site/static/assets/website/footer/appstore.png`)
+                        .default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/footer/appstore@2x.png`).default} 2x, ${require(`@site/static/assets/website/footer/appstore@3x.png`).default} 3x`}
+                    alt={`Push Logo`}
+                    width='auto'
+                    height='30px'
+                    loading='lazy'
+                  />
+                </A>
+
+                <A
+                  href='https://play.google.com/store/apps/details?id=io.epns.epns'
+                  title='Push Android app'
+                  target='_blank'
+                  padding='0px 0px'
+                  borderRadius='0px'
+                >
+                  <Image
+                    src={
+                      require(
+                        `@site/static/assets/website/footer/googleplay.png`
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/footer/googleplay@2x.png`).default} 2x, ${require(`@site/static/assets/website/footer/googleplay@3x.png`).default} 3x`}
+                    alt={`Push Logo`}
+                    width='auto'
+                    height='30px'
+                    loading='lazy'
+                  />
+                </A>
+              </ItemH>
             </ItemV>
           </SocialLinks>
         </Content>
@@ -414,7 +441,6 @@ const FooterColumn = styled.div`
 
   align-items: center;
 
-
   @media ${device.tablet} {
     flex-basis: 50%;
     padding: 0px;
@@ -429,12 +455,11 @@ const FooterColumn = styled.div`
     // &:last-child {
     //   flex-basis: 100%;
     // }
-    
   }
 
   @media ${device.mobileL} {
     &:first-child {
-        flex-basis: 100%;
+      flex-basis: 100%;
     }
   }
 `;
@@ -461,7 +486,6 @@ const FooterLinkItem = styled.div`
 const SocialLinks = styled(ItemH)`
   margin: 64px 0 0px 0;
   position: relative;
-
 
   @media ${device.tablet} {
     flex-direction: column;
@@ -508,7 +532,7 @@ const FooterAnchorPrimary = styled(A)`
 `;
 
 const FooterAnchorSecondary = styled(A)`
-  color: #6C6C6C !important;
+  color: #6c6c6c !important;
   padding: 0px;
   font-size: 14px;
   font-weight: 200;

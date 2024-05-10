@@ -1,20 +1,17 @@
 ---
-
 slug: enhancing-security-and-ux-through-communication-push-notifications-for-safe-wallet
 title: Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚
 authors: [push]
 image: './cover-image.gif'
-text: "We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️"
-tags: [ Web3, Blockchain Development, Blockchain Technology, Announcements]
-
+text: 'We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️'
+tags: [Web3, Blockchain Development, Blockchain Technology, Announcements]
 ---
 
 ![Cover image of Enhancing Security and UX Through Communication | Push Notifications for Safe Wallet💜💚](./cover-image.gif)
+
 <!--truncate-->
 
-
 We’re excited to announce that Push protocol is integrating with Safe, the ultimate decentralized custody and collective asset management platform🎉🛡️
-
 
 This integration is designed to take the Safe user experience to the next level. Now with Push notifications, Safe users can rest easy knowing they are in complete control and up to date on the status of their assets with real-time notifications to keep them informed.
 
@@ -41,4 +38,3 @@ We’re excited to be working alongside the Safe team and paving the way for a s
 Safe (previously Gnosis Safe) is a on-chain asset custody protocol, securing ~$40 Billion in assets today. It is establishing a universal ‘smart account’ standard for secure custody of digital assets, data, and identity. With `Safe{Wallet}`, it’s flagship web and mobile wallet and `Safe{Core}` account abstraction infrastructure, it is on a mission to unlock digital ownership for everyone in web3 including DAOs, enterprises, retail and institutional users.
 
 Find all about it: [Website](https://safe.global/), [Twitter](https://twitter.com/safe), [Discord](https://discord.com/invite/nrQVY2566v), [Blog](https://safe.mirror.xyz/), [GitHub](https://github.com/safe-global), [Docs](https://docs.safe.global/)
-

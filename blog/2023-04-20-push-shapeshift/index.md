@@ -1,20 +1,17 @@
 ---
-
 slug: shaping-the-future-of-the-dex-user-experience-push-x-shape-shift
 title: Shaping The Future of The DEX User Experience | Push x ShapeShift🦊
 authors: [push]
 image: './cover-image.webp'
-text: "This week, we’re thrilled to spotlight our latest fren ShapeShift revolutionizing the way you trade, track, buy, and earn cryptocurrency."
-tags: [ Frensofpush, Web3, Partnerships, Shapeshift]
-
+text: 'This week, we’re thrilled to spotlight our latest fren ShapeShift revolutionizing the way you trade, track, buy, and earn cryptocurrency.'
+tags: [Frensofpush, Web3, Partnerships, Shapeshift]
 ---
 
 ![Cover image of Shaping The Future of The DEX User Experience | Push x ShapeShift🦊](./cover-image.webp)
+
 <!--truncate-->
 
-
 This week, we’re thrilled to spotlight our latest fren [ShapeShift](https://shapeshift.com/) revolutionizing the way you trade, track, buy, and earn cryptocurrency.
-
 
 ShapeShift is a decentralized exchange that focuses on non-custodial and multi-chain trading. ShapeShift is community-owned, open-source, and completely decentralized. With a user-friendly interface and secure transactions, ShapeShift has become a top choice among web3 traders and investors alike.
 
@@ -80,4 +77,3 @@ A: Zero! ShapeShift is an open-source public good :)
 ShapeShift is a non-custodial crypto exchange that offers a secure and simple way to trade crypto across multiple blockchains. Currently supporting 11 chains, the DeFi platform also offers various other ways to earn passive income on your crypto assets. ShapeShift’s decentralized and democratic approach to governance empowers its users, making it a truly community-owned platform.
 
 Find out more about ShapeShift: [Website](https://shapeshift.com/), [Twitter](https://twitter.com/ShapeShift), [Telegram](https://t.me/shapeshiftofficial), [Discord](https://discord.com/invite/shapeshift), [Facebook](https://www.facebook.com/ShapeShiftPlatform/), [Instagram](https://www.instagram.com/shapeshift_io/), [Medium](https://medium.com/@ShapeShift.com), [YouTube](https://www.youtube.com/channel/UCrZ2Ml63kLwZJ6amqoGaZeQ)
-

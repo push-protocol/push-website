@@ -1,19 +1,17 @@
 ---
-
 slug: web3-and-push-protocol-through-the-lens-of-first-principle-thinking
 title: Web3 & Push Protocol through the Lens of First Principle Thinking🔍
 authors: [push]
 image: './cover-image.gif'
-text: "First-principle thinking means breaking down a complex problem into its most basic, foundational elements."
-tags: [ Pn101, First Principles Thinking, Web3, Blockchain Technology]
-
+text: 'First-principle thinking means breaking down a complex problem into its most basic, foundational elements.'
+tags: [Pn101, First Principles Thinking, Web3, Blockchain Technology]
 ---
 
 ![Cover image of Web3 & Push Protocol through the Lens of First Principle Thinking🔍](./cover-image.gif)
+
 <!--truncate-->
 
 First-principle thinking means breaking down a complex problem into its most basic, foundational elements.
-
 
 One example of applying First-principle thinking is Richard Feynman’s (an American theoretical physicist) famous essay that starts with basic algebra such as addition and subtraction and explains calculus in just [four pages](https://www.feynmanlectures.caltech.edu/I_22.html) through fully connected coherent reasoning.
 
@@ -22,6 +20,7 @@ One example of applying First-principle thinking is Richard Feynman’s (an Amer
 With that, let’s explore the Push Protocol by applying First Principle Thinking:
 
 ## The Internet.
+
 The internet is a global network of computers and devices connected by a set of standardized communication protocols. These protocols define how information is transmitted across the network, including how data is encoded, transmitted, and received.
 
 These devices are connected together through a variety of wired and wireless connections, including fiber optic cables, copper wires, and radio waves.
@@ -31,6 +30,7 @@ The internet is based on a set of standard protocols, including TCP/IP (Transmis
 These protocols allow computers and devices to communicate with each other regardless of their location or type. They also provide a foundation for a wide range of applications and services, including email, web browsing, social networking, and online commerce.
 
 ## How the Internet got Centralized.
+
 The internet started out as a decentralized network, with no central authority in control. However, over time, the internet has become increasingly centralized as companies and organizations have gained more power and control over critical aspects of the network.
 
 One of the main reasons for this centralization is the growth of large internet service providers (ISPs) and content providers. These companies have become dominant players in the online ecosystem, controlling vast amounts of data and traffic, and using their power to influence how the internet is used and accessed.
@@ -40,6 +40,7 @@ Another factor contributing to centralization is the development of proprietary 
 In addition, there are certain technical limitations of the internet itself that can contribute to centralization. For example, the Domain Name System (DNS), which is used to translate domain names into IP addresses, is controlled by a small number of organizations, making it a point of centralization.
 
 ## The Blockchain.
+
 A blockchain is a distributed, decentralized ledger that is used to record transactions or information in a secure and transparent manner.
 
 At its core, a blockchain consists of a network of computers that work together to validate and record each transaction. Each transaction is added to a basic containers of information in a blockchain which are known as block, which is then added to the existing chain of blocks, creating an immutable and transparent ledger that is visible to all participants in the network.
@@ -60,6 +61,7 @@ Decentralized communication protocols on the blockchain offer several benefits t
 Overall, a decentralized communication protocol on blockchain is needed to provide greater security, privacy, censorship resistance, ownership, control, and transparency than traditional centralized communication systems. By leveraging the power of blockchain technology, decentralized communication protocols can help to create a more open, secure, and democratic internet for everyone.
 
 ## The Push Protocol
+
 Push protocol is a decentralized communication protocol. Push protocol enables cross-chain notifications and messaging for dapps, wallets, and services through an open, gasless, and platform-agnostic mechanism.
 
 This means that different applications and services can communicate with each other in a secure and open way, regardless of the blockchain platform they are built on.
@@ -69,5 +71,5 @@ The Push protocol provides an open communication layer that allows any crypto wa
 Push has empowered the web3 space by delivering 25 million+ notifications, 70k+ subscribers, and over 150 integrations so far.
 
 ![Ecosystem](./image-3.png)
-<center>The Push Ecosystem</center>
 
+<center>The Push Ecosystem</center>

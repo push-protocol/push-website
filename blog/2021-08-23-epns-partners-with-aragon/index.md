@@ -10,6 +10,7 @@ tags: [ Epnsproject
 ,Newsletter
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Partners with Aragon to power unstoppable Decentralized Governance.](./cover-image.webp)
@@ -24,9 +25,9 @@ We at EPNS are glad to announce that we are working with Aragon to bring decentr
 
 **Create a notifications channel —** governance related actions will trigger push notifications for every token holder. This will keep everyone updated on the future of the protocol and the direction it is heading:
 
-*   Aragon Govern — token holders will be notified when transactions are scheduled, disputed and executed to ensure they are aware of everything the organization is doing.
-*   Aragon Court — Guardians will be notified when they are drafted, when their vote is required and when a dispute is settled.
-*   Aragon Client — token holders will be notified at every stage of the proposal lifecycle: when a proposal is made, when voting is required and when the outcome is executed, to encourage the community to actively participate in DAO governance.
+- Aragon Govern — token holders will be notified when transactions are scheduled, disputed and executed to ensure they are aware of everything the organization is doing.
+- Aragon Court — Guardians will be notified when they are drafted, when their vote is required and when a dispute is settled.
+- Aragon Client — token holders will be notified at every stage of the proposal lifecycle: when a proposal is made, when voting is required and when the outcome is executed, to encourage the community to actively participate in DAO governance.
 
 **Include custom governance Call to Actions** — Integrated Call to Action (CTA) for the receiver of the notification, to be able to vote or signal their preference with ease, right on the notifications interface.
 

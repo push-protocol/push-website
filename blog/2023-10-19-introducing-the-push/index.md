@@ -14,11 +14,12 @@ tags: [Push Protocol, Web3, Blockchain Technology, Decentralization]
 
 In light of the recent success of our Push Ambassador Program in India, we are thrilled to be extending our Ambassador Program to the continent of Africa.
 
-The Push Ambassador Africa Program marks an exciting expansion of our community initiative and will focus on increasing the Push footprint and promoting a vibrant web3 enthusiast community throughout Africa. 
+The Push Ambassador Africa Program marks an exciting expansion of our community initiative and will focus on increasing the Push footprint and promoting a vibrant web3 enthusiast community throughout Africa.
 
 We are extremely excited to start this new chapter and welcome new web3 ambassadors from across Africa to the Push family.
 
 ### Looking for New Ambassadors!
+
 With the Push Ambassador Africa program we aim to create a thriving network of ambassadors who will represent the Push Protocol brand throughout Africa. As a Push Ambassador, your responsibilities are as follows:
 
 - Work with existing campus club structure in various respective campuses
@@ -31,6 +32,7 @@ With the Push Ambassador Africa program we aim to create a thriving network of a
 We are in search of passionate web3 enthusiasts who are eager to become key contributors to Push Protocol. As such, you are invited to apply to be a part of the first set of ambassadors in our inaugural expansion phase to Africa.
 
 ### Requirements — who can apply?
+
 Diversity and appreciating various abilities are important to us. With that, you only need to meet the following conditions:
 
 - Need to be a citizen of an African country (all nationalities are welcome)
@@ -44,24 +46,29 @@ Diversity and appreciating various abilities are important to us. With that, you
 If this sounds like you or someone you know — apply!
 
 ### What are the steps to become a Push Ambassador in Africa?
+
 #### Step 1: Application
+
 Applying is simple — fill out the form below to submit your application.
 
 Link: https://docs.google.com/forms/d/e/1FAIpQLSf8qjQaBaNLy5NJw0FOGWRx_pFJc9CezyPkqamkIAr4SJ1RRw/viewform
 
-To increase your chances of being chosen, make sure to review the above prerequisites! 
+To increase your chances of being chosen, make sure to review the above prerequisites!
 
 <b><i>NB: Application ends 5th November, 2023.</i></b>
 
 #### Step 2: Interviews
+
 If you’re shortlisted, get ready for a friendly chat with members from our team for further consideration and prospective onboarding. We’ll dive deeper into your interests and experiences to get to know you better.
-        
+
 #### Step 3: Party time
-Congratulations on your success! You will be invited to an onboarding session with the Push DAO community lead. This training will help you familiarize yourself better with both Push and your weekly responsibilities as a Push ambassador. 
+
+Congratulations on your success! You will be invited to an onboarding session with the Push DAO community lead. This training will help you familiarize yourself better with both Push and your weekly responsibilities as a Push ambassador.
 
 As a chosen ambassador, the community lead will be at your side to make sure you are supported every step of the way. We're here to support you with any additional help you need so you can shine in your new ambassador role to the fullest.
 
 ### Benefits of Joining the Push Fam!
+
 Becoming a Push Ambassador gives you to a host of benefits such as:
 
 - <b>Experience:</b> Work alongside leading web3 cofounders, devs and leaders who will always be there to share insights and knowledge with you.
@@ -74,9 +81,4 @@ Application Link 👉 https://docs.google.com/forms/d/e/1FAIpQLSf8qjQaBaNLy5NJw0
 
 The Push Ambassador Africa Program centers around individuals who have the potential to enhance brand visibility, facilitate partnerships, nurture a growing user community, and are passionate about helping decentralize communication.
 
-If everything you’ve read so far excites you –  apply [here](https://docs.google.com/forms/d/e/1FAIpQLSf8qjQaBaNLy5NJw0FOGWRx_pFJc9CezyPkqamkIAr4SJ1RRw/viewform) now!
-
-
-
-
-
+If everything you’ve read so far excites you – apply [here](https://docs.google.com/forms/d/e/1FAIpQLSf8qjQaBaNLy5NJw0FOGWRx_pFJc9CezyPkqamkIAr4SJ1RRw/viewform) now!

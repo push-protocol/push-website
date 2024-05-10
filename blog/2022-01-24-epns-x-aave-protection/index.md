@@ -10,6 +10,7 @@ tags: [ Ethereum
 ,Epnsproject
 ,Newsletter ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS x AAVE: Protection Against Asset Liquidation](./cover-image.webp)
@@ -32,9 +33,6 @@ Borrowers on AAVE can subscribe to the channel to get notified whenever their co
 
 A simple communication mechanism like this, could hugely benefit both the users and the protocol. Users would have a significantly improved user-experience where they no longer are worried or constantly in need of manually checking updates. For the protocol, this means increased user-engagement, increased decentralization, and overall better communication with its users.
 
-The Way Forward
-===============
+# The Way Forward
 
 DeFi’s lending protocols with their yield farming opportunities and higher rewards shaped the foundations of the industry itself. They transformed the way global financial markets perceived digital assets and cemented their place in the bigger picture. We aim to collaborate with many more DeFi protocols to increase the ease of communication in the industry. By doing so, we aim to safeguard user assets and their newfound trust in DeFi.
-
-

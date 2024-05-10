@@ -1,22 +1,21 @@
 ---
-
 slug: launch-of-the-push-ambassadors-program-english-espanol
 title: Launch of The Push Ambassadors Program 💜 (English + Español)
 authors: [push]
 image: './cover-image.webp'
-text: "After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community."
-tags: [ Web3, Ambassador Program, Blockchain Technology]
-
+text: 'After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community.'
+tags: [Web3, Ambassador Program, Blockchain Technology]
 ---
 
 ![Cover image of Launch of The Push Ambassadors Program 💜 (English + Español)](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # Programa de Embajadores de Push protocol!<br/>
 
 🔵<b>EN |</b> After a wonderful 2022 during which the Push team had the opportunity to participate in so many events and got to know hackers and frens from all around the world, we’d like to share some exciting news in our process to grow the Push DAO and work closer with the community.
-
 
 Today, we are excited to announce the <b>Push Ambassadors Program💜</b>
 
@@ -33,6 +32,7 @@ Hoy, nos complace anunciar el <b>Programa de Embajadores de Push💜</b>
 El programa de Embajadores es una iniciativa única que permite a las personas representar a Push de diferentes maneras y no se trata solo de promocionar la marca, sino también de construir relaciones con usuarios y posibles colaboradores. Se motiva a los embajadores a interactuar con diferentes comunidades, escuchar sus comentarios y proporcionar información valiosa al equipo de Push. Esta retroalimentación ayuda a Push a mejorar sus productos y servicios, así como para crear una mejor experiencia de usuario.
 
 ## How does it work? | ¿Cómo funciona?
+
 🔵<b>EN |</b> During this first iteration the program will focus on the LATAM (Latin America) region and will be run in Spanish. One of the most important outcomes is to create a replicable structure and processes that can be installed in many communities to come.
 
 The Push DAO Lead will work closely with the selected participants ensuring they are knowledgeable about Push, all its products and its values. These group of individuals will receive training to learn about Push and will count with support from Push for their role. This training helps them to understand the brand’s message, and stay up-to-date with products and participation of Push in events. Ambassadors will also receive incentives for their work as rewards for your contributions.
@@ -60,4 +60,3 @@ Seleccionaremos más embajadores para otras comunidades durante el año y anunci
 🔵<b>EN |</b> The Ambassadors program is an excellent way to build a community of passionate advocates who can promote Push to a specific audience. This program helps to increase brand awareness, drive collaborations, and build a loyal user base. If you are passionate about Push and possess the necessary skills to communicate its message effectively, then becoming an Ambassador could be an excellent opportunity for you.
 
 🔴<b>ES </b>| El programa de Embajadores es una excelente manera de construir una comunidad de personas apasionadas que pueden promocionar Push a un público específico. Este programa ayuda a aumentar el conocimiento de la marca, impulsar collaboraciones y construir una base de usuarios leales. Si eres apasionado por Push y tienes las habilidades necesarias para comunicar su mensaje de manera efectiva, convertirse en Embajador podría ser una excelente oportunidad para ti.
-

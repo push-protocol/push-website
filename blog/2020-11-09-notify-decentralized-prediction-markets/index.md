@@ -12,6 +12,7 @@ tags: [ Prediction Markets
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Notify Decentralized Prediction Markets (DPM) with EPNS](./cover-image.webp)
@@ -62,8 +63,7 @@ Augur also saw significant action, reporting $8.6 million in total election volu
 
 [Vitalik Buterin](https://twitter.com/VitalikButerin) also got into the discussion during the eve of election night to mention that DPMs have proven to be a much more accurate representation of the elections, by stating 3 hypotheses that he shared on Twitter (as seen below).
 
-**The Need for Notifications in DPMs**
-======================================
+# **The Need for Notifications in DPMs**
 
 Betting on or buying shares of predictions sounds cool for the most part, but DPMs don’t currently have a method to let you know when new predictions are made open or when existing ones are closed.
 
@@ -71,15 +71,13 @@ With the help of EPNS, DPMs will be able to send notifications and allow their u
 
 Some use cases are mentioned below but are not limited to them. They are :
 
-**1\. When new Prediction pools are listed**
---------------------------------------------
+## **1\. When new Prediction pools are listed**
 
 _“Will Trump be re-elected for 2021?”, “Will Bitcoin cross $16k?”, “Will FC Barcelona beat Real Madrid in the next El Clasico?”._
 
 As days pass if DPMs want to stay relevant they must list relevant prediction pools on their platform, and also let their users know about it! Prediction markets get more accurate as more people participate in it. By adding notifications to the picture, DPMs can ensure that interested people will stake their funds into the pools as well as users can stay updated on what are the possible predictions they can invest in!
 
-**2\. When prediction markets fluctuate**
------------------------------------------
+## **2\. When prediction markets fluctuate**
 
 Market outcomes and predictions can fluctuate as time passes as more data on the topic come to light. Often this leads to one side of the prediction being favored more and hence gets more costly.
 
@@ -87,20 +85,17 @@ Consider you take the case of dice and you are to predict the outcome when rolle
 
 Letting users know when the price changes drastically or when the market favoring changes, will allow them to make educated decisions on whether to sell, hold, or buy shares.
 
-**3\. When the market closes**
-------------------------------
+## **3\. When the market closes**
 
 Since prediction markets are tied to some real-world event or probable outcome, and within a definite time, markets will close a listing when the real-world event occurs and hence will result in users either gaining or losing based on the shares they have in hand.
 
 With notifications, a participant in the prediction market can be notified when the market closes and also be aware of how much they have won or lost. This in turn also allows the participants in the market who won to claim their shares and withdraw money in a timely manner. In case there is any delay in the result of the outcome of the event, then this information can be passed on to the user as well.
 
-**4\. General Predictions**
----------------------------
+## **4\. General Predictions**
 
 DPMs can help create network effects and also help you plan your actions accordingly. For example, if a DPM notifies you that there is an 80% chance that the price of ETH will cross $500 in the first week of December with the release of Ethereum 2.0, you would plan to stock up on some ETH before the price increase, hence creating scarcity and eventually increasing its price. Similarly, if you get notified that there is a 65% chance of there being a traffic jam at 8 am on Monday, then you would plan accordingly to get to work. Convenient, isn’t it?
 
-**Conclusion**
-==============
+# **Conclusion**
 
 Looking at the above use cases one can deduce that notifications are crucial for every stage of a prediction lifecycle for a decentralized prediction market. DPMs are still quite early in the game, and sometimes the user participation levels are quite low because of the lack of stake or interest in existing predictions being listed on such platforms. One could hope these platforms to grow day by day and eventually beat their centralized counterparts into being more mainstream, and they already have proved to be more accurate. Another way to look at it is that “are DPMs too advanced an ambition or a concept too early for its time?” One can only wait and see where this goes.
 

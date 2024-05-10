@@ -1,20 +1,24 @@
 ---
-
 slug: how-to-create-a-decentralized-reputation-system-with-alchemy-and-push-protocol
 title: How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅
 authors: [push]
 image: './cover-image.webp'
-text: "This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging."
-tags: [ Devtools, Reputation System, Web3,  Blockchain Development, Blockchain Technology]
-
+text: 'This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging.'
+tags:
+  [
+    Devtools,
+    Reputation System,
+    Web3,
+    Blockchain Development,
+    Blockchain Technology,
+  ]
 ---
 
 ![Cover image of How to Create a Decentralized Reputation System with Alchemy and Push Protocol ✅](./cover-image.webp)
+
 <!--truncate-->
 
-
 <b>TL;DR:</b> This article outlines the process of creating a decentralized reputation system using Alchemy and Push Protocol. We explore the advantages of these tools, provide a development guide, and discuss utilizing Push Protocol for decentralized messaging.
-
 
 By the end of this tutorial, you’ll have learned:
 
@@ -162,17 +166,17 @@ Here is a sample workflow to integrate Alchemy:
 <b>Step 2:</b> Replace your Ethereum node URL with your Alchemy API endpoint.
 
 ```js
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 
-const alchemyApiKey = "your_alchemy_api_key";
-const provider = new ethers.providers.AlchemyProvider("goerli", alchemyApiKey);
+const alchemyApiKey = 'your_alchemy_api_key';
+const provider = new ethers.providers.AlchemyProvider('goerli', alchemyApiKey);
 ```
 
 <b>Step 3:</b> Use Alchemy’s monitoring tools to track your dApp’s performance and usage.
 
 ## Push Protocol
 
-[Push Protocol](https://push.org/) can be used to create a real-time messaging system for your decentralized reputation system, allowing users to receive updates about their reputation scores and feedback instantly. Follow the [official documentation](/docs/ "Push developer docs") for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+[Push Protocol](https://push.org/) can be used to create a real-time messaging system for your decentralized reputation system, allowing users to receive updates about their reputation scores and feedback instantly. Follow the [official documentation](/docs/ 'Push developer docs') for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
@@ -185,37 +189,37 @@ npm install ethers @pushprotocol/restapi @pushprotocol/socket
 Initialize the Push Protocol client in your frontend.
 
 ```js
-import { Client } from "@pushprotocol/socket";
+import { Client } from '@pushprotocol/socket';
 
 const pushClient = new Client({
- applicationId: "your_application_id",
- applicationToken: "your_application_token",
+  applicationId: 'your_application_id',
+  applicationToken: 'your_application_token',
 });
 ```
 
 Create channels for various reputation-related events, such as new feedback, score updates, and user interactions.
 
 ```js
-const feedbackChannel = pushClient.channel("feedback");
+const feedbackChannel = pushClient.channel('feedback');
 
-const scoreUpdatesChannel = pushClient.channel("scoreUpdates");
+const scoreUpdatesChannel = pushClient.channel('scoreUpdates');
 
-const userInteractionsChannel = pushClient.channel("userInteractions");
+const userInteractionsChannel = pushClient.channel('userInteractions');
 ```
 
 Implement listeners in your frontend to receive and display real-time updates.
 
 ```js
-feedbackChannel.on("newFeedback", (data) => {
- // Handle new feedback data and update the user interface
+feedbackChannel.on('newFeedback', (data) => {
+  // Handle new feedback data and update the user interface
 });
 
-scoreUpdatesChannel.on("scoreUpdate", (data) => {
- // Handle score updates and refresh the user interface
+scoreUpdatesChannel.on('scoreUpdate', (data) => {
+  // Handle score updates and refresh the user interface
 });
 
-userInteractionsChannel.on("userInteraction", (data) => {
- // Handle user interactions and update the user interface accordingly
+userInteractionsChannel.on('userInteraction', (data) => {
+  // Handle user interactions and update the user interface accordingly
 });
 ```
 
@@ -225,13 +229,14 @@ By integrating Push Protocol, you can enhance user experience and provide real-t
 
 Developers seeking more in-depth guidance can refer to the following resources:
 
-- Alchemy documentation: https://docs.alchemy.com/Push 
-- Protocol documentation: https://docs.pushprotocol.io/Solidity 
+- Alchemy documentation: https://docs.alchemy.com/Push
+- Protocol documentation: https://docs.pushprotocol.io/Solidity
 - documentation: https://soliditylang.org/
 
 ## Tips to Remember for Building a Successful Decentralized Reputation System
 
 To create a successful decentralized reputation system using Push Protocol and Alchemy:
+
 - Focus on user experience and ensure that the reputation scores and feedback mechanisms are intuitive and easy to use. Leverage Push’s communication tools like instant chat and video chat to provide seamless support and foster user engagement.
 - Utilize Alchemy’s infrastructure to enhance the reliability, speed, and performance of your reputation system, ensuring a smooth experience for all users.
 - Implement robust security measures, such as thorough testing, audits, and best practices for handling private keys and user data. Alchemy’s suite of developer tools can help streamline this process, while Push Protocol’s end-to-end encryption ensures secure communication channels.
@@ -251,4 +256,3 @@ We thank the Alchemy team for their support and collaboration. If you’d like t
 [Alchemy](https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244) provides the leading blockchain development platform powering millions of users for 99% of countries worldwide. Our mission is to provide developers with the fundamental building blocks they need to create the future of technology and lower the barrier to entry for developers to build blockchain applications.
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>.
-

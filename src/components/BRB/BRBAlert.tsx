@@ -16,8 +16,7 @@ import { ItemH, Section } from '@site/src/css/SharedStyling';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
-export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
-
+export const BRBAlert = ({ isAlertVisible, setIsAlertVisible }) => {
   const hideAlertHandler = () => {
     setIsAlertVisible(false);
   };
@@ -29,38 +28,45 @@ export const BRBAlert = ({isAlertVisible, setIsAlertVisible}) => {
   // Internationalization
   const { t, i18n } = useTranslation();
 
-
   return (
     <Section>
       {isAlertVisible && (
         <AlertContainer>
-          <AlertText onClick={() => {window.open(alertLink, '_blank');}}>
+          <AlertText
+            onClick={() => {
+              window.open(alertLink, '_blank');
+            }}
+          >
             {/* {i18n.language === 'es' ? alertMessageEs : (i18n.language === 'hi' ? alertMessageHi : alertMessage)} */}
             {alertMessage}
 
-            <KnowMoreLink>
-           
-            </KnowMoreLink>
+            <KnowMoreLink></KnowMoreLink>
 
-            <FiArrowUpRight className="icon" />
+            <FiArrowUpRight className='icon' />
           </AlertText>
 
-        <CancelIcon>
-          <AiOutlineClose
-            size="1.25rem"
-            color="#7f7b80"
-            className="icon"
-            onClick={hideAlertHandler}
-          />
-        </CancelIcon>
-      </AlertContainer>
+          <CancelIcon>
+            <AiOutlineClose
+              size='1.25rem'
+              color='#7f7b80'
+              className='icon'
+              onClick={hideAlertHandler}
+            />
+          </CancelIcon>
+        </AlertContainer>
       )}
     </Section>
   );
 };
 
 const AlertContainer = styled(ItemH)`
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.50) -2.55%, rgba(42, 42, 57, 0.50) 32.62%, rgba(213, 86, 244, 0.50) 68.34%, rgba(0, 0, 0, 0.50) 102.97%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) -2.55%,
+    rgba(42, 42, 57, 0.5) 32.62%,
+    rgba(213, 86, 244, 0.5) 68.34%,
+    rgba(0, 0, 0, 0.5) 102.97%
+  );
   backdrop-filter: blur(15px);
   padding: 1rem 0;
   width: 100%;

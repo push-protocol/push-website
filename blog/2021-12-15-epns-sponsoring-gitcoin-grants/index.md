@@ -10,6 +10,7 @@ tags: [Gitcoin
 ,Web3
 ,Ethereum ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS sponsoring Gitcoin Grants Round 12!](./cover-image.webp)
@@ -27,7 +28,6 @@ How it started 👇👇👇
 How it’s going 🧵
 
 [Link](https://x.com/pushprotocol/status/1435620157800419329?s=20)
-
 
 The bond between EPNS and Gitcoin has been ever-growing since its inception in Gitcoin KERNEL, where EPNS was incubated and molded in our early days. In addition to all the early support we’ve received from the Gitcoin team, we are also indebted to the community for believing in us. Our existing collab with Gitcoin, which was [announced earlier this year](https://medium.com/ethereum-push-notification-service/gitcoin-growing-open-source-using-web3-notifs-36a9ec6e97dc), focuses on the EPNS platform to deliver notifications during the grants process, which would help in connecting grantees and grantors.
 
