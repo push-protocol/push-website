@@ -48,3 +48,6 @@ Similar to the [Pudgy Penguin's Unstopabble Domains token gated group chat](http
 
 
 By leveraging Push Protocol notifications, DeFi and NFT brands can create a more informed and responsive user base, ultimately leading to a stronger and more successful ecosystem.
+
+
+**Want to AMPLIFY🔊 your insights on Push's latest upgrades in areas of new Protocol features, Decentralization, and Tokenomics? Explore our [latest blog post](https://push.org/blog/amplify-campaign/?utm_source=google&utm_medium=blog&utm_campaign=amplify_upgrade) to discover how these advancements can benefit you!📈**

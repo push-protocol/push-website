@@ -50,3 +50,5 @@ Push Protocol empowers NFT brands and DeFi protocols to build vibrant, engaged c
 **Ready to build a thriving community around your project?**
 
 **Explore Push Protocol Group Chat today and unlock the power of secure, token-gated communication!**
+
+To know more about how Push Protocol can your elevate your project's UX by delivering seamless notifications to your userbase, [read here](https://push.org/blog/revolutionising-communication-for-defi-and-nft-with-push/?utm_source=google&utm_medium=blog&utm_campaign=amplify_upgrade)👈.
