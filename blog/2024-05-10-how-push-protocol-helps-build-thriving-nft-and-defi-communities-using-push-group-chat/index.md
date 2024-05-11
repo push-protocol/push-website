@@ -1,5 +1,5 @@
 ---
-slug: amplify-campaign
+slug: how-push-protocol-helps-build-thriving-nft-and-defi
 title: "How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats"
 authors: [push]
 image: "./cover-image.webp"
