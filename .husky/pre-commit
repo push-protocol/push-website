@@ -1,4 +1,4 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+# This pre-commit file
+#!/bin/bash
 
-yarn precise-commits
+npm run lint

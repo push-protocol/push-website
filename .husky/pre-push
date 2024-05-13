@@ -1,0 +1,4 @@
+# This pre-push file
+#!/bin/bash
+
+npm run test
