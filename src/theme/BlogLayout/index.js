@@ -26,7 +26,6 @@ export default function BlogLayout(props) {
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
 
   console.log(layoutProps, 'layout', propsing);
-
   return (
     <Layout
       title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ''}
