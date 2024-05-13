@@ -23,7 +23,7 @@ The initiative also honors our partner channels for their dedication to consiste
 
 
 ## Week 1: ETH Tracker
-### Push x Bankless: Serving regular ETH Price updates to your wallet address with Push Notifications🔔.
+### Push x  ETH Tracker: Serving regular ETH Price updates to your wallet address with Push Notifications🔔.
 
 ![Banner celebrating ETH Tracker as May - week 1 channel of week](./image9.webp)
 
