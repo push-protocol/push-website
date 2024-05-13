@@ -15,8 +15,6 @@ import BlogSidebar from '@theme/BlogSidebar';
 import styled from 'styled-components';
 import { PageMeta } from '@site/src/config/pageMeta';
 
-var a;
-
 export default function BlogLayout(props) {
   const { sidebar, toc, children, ...layoutProps } = props;
   const hasSidebar = sidebar && sidebar.items.length > 0;
@@ -27,7 +25,7 @@ export default function BlogLayout(props) {
   const isBlogMainPage =
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
 
-  console.log(layoutProps, 'layout', props);
+  console.log(layoutProps, 'layout', propsing);
 
   return (
     <Layout
