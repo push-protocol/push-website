@@ -8,10 +8,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@docusaurus/recommended',
-    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  // parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -19,9 +19,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@docusaurus', 'react'],
+  plugins: ['@docusaurus'],
   rules: {
-    'react/prop-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
   settings: {
     react: {
