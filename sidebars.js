@@ -318,7 +318,7 @@ const sidebars = {
         {
           label: 'React Native',
           type: 'link',
-          href: 'https://www.npmjs.com/package/@pushprotocol/reactnative',
+          href: 'https://www.npmjs.com/package/@pushprotocol/react-native-sdk',
         },
         {
           label: 'Socket',
