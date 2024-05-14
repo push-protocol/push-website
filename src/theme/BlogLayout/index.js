@@ -6,18 +6,15 @@
  */
 import React from 'react';
 import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useLocation } from '@docusaurus/router';
 
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import BlogSidebar from '@theme/BlogSidebar';
 import styled from 'styled-components';
 import { PageMeta } from '@site/src/config/pageMeta';
 
 export default function BlogLayout(props) {
-  const { sidebar, toc, children, ...layoutProps } = props;
-  const hasSidebar = sidebar && sidebar.items.length > 0;
+  const { sidebar, toc, children } = props;
 
   const location = useLocation();
   const pathname = location.pathname;
@@ -25,7 +22,6 @@ export default function BlogLayout(props) {
   const isBlogMainPage =
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
 
-  console.log(layoutProps, 'layout', propsing);
   return (
     <Layout
       title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ''}
@@ -58,10 +54,6 @@ export default function BlogLayout(props) {
           />
           <meta
             name='twitter:image'
-            // content={useBaseUrl(
-            //   require("/static/assets/previews/blogpreview.png").default,
-            //   { absolute: true },
-            // )}
             content={
               require('@site/static/assets/previews/blogpreview.png').default
             }

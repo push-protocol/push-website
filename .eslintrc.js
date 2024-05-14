@@ -1,13 +1,31 @@
+/* eslint-disable no-undef */
 module.exports = {
-  extends: ['plugin:prettier/recommended'],
-  parser: '@babel/eslint-parser',
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@docusaurus/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
+  // parser: '@babel/eslint-parser',
   parserOptions: {
-    sourceType: 'module',
-    allowImportExportEverywhere: true,
-    // requireConfigFile: false,
-    ecmaVersion: 'latest',
     ecmaFeatures: {
       jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['@docusaurus', 'react'],
+  rules: {
+    'react/prop-types': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
 };
