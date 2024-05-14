@@ -22,6 +22,7 @@ export default function BlogLayout(props) {
   const isBlogMainPage =
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
 
+  // console.log(layoutProps, 'layout', propsing);
   return (
     <Layout
       title={isBlogMainPage ? PageMeta.BLOG.pageTitle : ''}
@@ -54,6 +55,10 @@ export default function BlogLayout(props) {
           />
           <meta
             name='twitter:image'
+            // content={useBaseUrl(
+            //   require("/static/assets/previews/blogpreview.png").default,
+            //   { absolute: true },
+            // )}
             content={
               require('@site/static/assets/previews/blogpreview.png').default
             }

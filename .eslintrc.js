@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@docusaurus/recommended',
+    // 'plugin:@docusaurus/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@docusaurus'],
+  // plugins: ['@docusaurus'],
   rules: {
     '@typescript-eslint/no-var-requires': 'off',
   },
