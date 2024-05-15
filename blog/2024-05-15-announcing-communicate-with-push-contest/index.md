@@ -8,7 +8,7 @@ text: "The grandest campaign with the grandest prize is here. Know how you can g
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
 ![Cover Image of the Communicate With Push Contest🏆](./cover-image.webp)
-
+<!--truncate-->
 
 ## Announcing Communicate With Push Contest!
 
