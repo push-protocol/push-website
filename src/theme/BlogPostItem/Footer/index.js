@@ -48,7 +48,7 @@ export default function BlogPostItemFooter() {
                 'col--3': tagsExists,
               })}
             >
-              <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+              <ReadMoreLink blogPostTitle={title} to={metadata?.permalink} />
             </div>
           )}
         </footer>
@@ -56,7 +56,7 @@ export default function BlogPostItemFooter() {
 
       {!isBlogPostPage && truncatedPost && (
         <div>
-          <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+          <ReadMoreLink blogPostTitle={title} to={metadata?.permalink} />
         </div>
       )}
     </>

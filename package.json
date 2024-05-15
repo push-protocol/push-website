@@ -79,7 +79,8 @@
     "styled-components": "^6.0.8",
     "swiper": "^11.0.3",
     "url": "^0.11.3",
-    "vanilla-tilt": "^1.8.0"
+    "vanilla-tilt": "^1.8.0",
+    "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
     "@docusaurus/eslint-plugin": "^3.3.2",

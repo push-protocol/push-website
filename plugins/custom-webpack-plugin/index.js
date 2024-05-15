@@ -29,6 +29,7 @@ module.exports = function (context, options) {
             url: require.resolve('url'),
             zlib: require.resolve('browserify-zlib'),
             crypto: require.resolve('crypto-browserify'),
+            vm: require.resolve('vm-browserify'),
           },
         },
         module: {
