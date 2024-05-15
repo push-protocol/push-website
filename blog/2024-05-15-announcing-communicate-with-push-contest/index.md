@@ -10,7 +10,7 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 ![Cover Image of the Communicate With Push Contest🏆](./cover-image.webp)
 
 
-## Announcing Communicate With Push Contest
+## Announcing Communicate With Push Contest!
 
 
 Push Protocol, the leader in decentralized notifications and chat, is launching the Communicate with PUSH contest! Dive into Web3 and win exclusive rewards!
