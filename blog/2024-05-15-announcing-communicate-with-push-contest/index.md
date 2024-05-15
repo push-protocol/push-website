@@ -40,4 +40,4 @@ Top 2,500 participants win a Push Alpha Access Pass NFT, granting access to the 
 - **Prepare for Airdrops & Prizes:** Stay ahead of the curve and win exciting rewards as Push unveils new features.
 
 
-### Ready to join the revolution? Head to the [Galxe quest page](https://bit.ly/3WIwsuF) now!
+### Ready to join the revolution? Head to the [Galxe quest page](https://bit.ly/4anuEL5) now!
