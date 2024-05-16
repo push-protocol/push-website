@@ -5,7 +5,7 @@ authors: [push]
 image: "./cover-image.webp"
 description: "QuickSwap: Leading Asset Exchange on Polygon Joins Frens Of Push "
 text: "We're back with Frens of Push, offering a deep dive into the top protocols and Push ecosystem partners. This week, our fren is QuickSwap, the leading DEX & AMM on Polygon."
-tags: [Push Protocol, Web3, Blockchain Technology, QuickSwap]
+tags: [Push Protocol, Web3, Blockchain Technology, QuickSwap, frensofpush]
 ---
 ![Cover Image of QuickSwap: Leading Asset Exchange on Polygon Joins Frens Of Push  ](./cover-image.webp)
 
