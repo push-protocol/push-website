@@ -36,7 +36,7 @@ Our primary aim is to bring our new roadmap to life, complete with the AI Layer,
 
 **4. How is the Roseon Exchange using Push’s web3 communication layer?**
 
-At present, RoseonX users stay informed about updates through the Push feature by opting into [RoseonX channels](https://www.notion.so/Blog-e7b75aa4cbf04d82bc305248fcbd482c?pvs=21). We're also in the process of integrating Push directly into RoseonX, allowing users to receive notifications right within our DEX.
+At present, RoseonX users stay informed about updates through the Push feature by opting into [RoseonX channels](http://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE). We're also in the process of integrating Push directly into RoseonX, allowing users to receive notifications right within our DEX.
 
 **5. How would you describe your experience using Push? What benefits have you seen?**
 
